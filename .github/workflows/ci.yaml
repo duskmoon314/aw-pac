@@ -1,0 +1,52 @@
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+name: Continuous integration
+
+jobs:
+  ci-linux:
+    runs-on: ubuntu-20.04
+    continue-on-error: ${{ matrix.experimental || false }}
+    strategy:
+      matrix:
+        rust: [nightly, stable]
+
+        include:
+          # Nightly is only for reference and allowed to fail
+          - rust: nightly
+            experimental: true
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: ${{ matrix.rust }}
+          override: true
+      - name: Install Rust targets
+        run: rustup target install --toolchain=${{ matrix.rust }} riscv64imac-unknown-none-elf
+      - name: Build crate for riscv64imac-unknown-none-elf
+        run: cargo build --target riscv64imac-unknown-none-elf
+
+  # On macOS and Windows, we at least make sure that the crate builds and links.
+  build-other:
+    strategy:
+      matrix:
+        os:
+          - macOS-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+      - name: Install Rust targets
+        run: rustup target install riscv64imac-unknown-none-elf
+      - name: Build crate for riscv64imac-unknown-none-elf
+        run: cargo build --target riscv64imac-unknown-none-elf
