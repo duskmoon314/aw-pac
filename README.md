@@ -1,5 +1,8 @@
 # `d1-pac`
 
+[![crates.io](https://img.shields.io/crates/v/d1-pac.svg)](https://crates.io/crates/d1-pac)
+[![Continuous integration](https://github.com/duskmoon314/d1-pac/actions/workflows/ci.yaml/badge.svg)](https://github.com/duskmoon314/d1-pac/actions/workflows/ci.yaml)
+
 > Peripheral access API for Allwinner D1 SoC generated from unofficial SVD file
 
 This project is currently developed and maintained by [duskmoon (Campbell He)](https://github.com/duskmoon314).
