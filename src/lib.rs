@@ -35,6 +35,34 @@ pub union Vector {
 #[doc(hidden)]
 #[no_mangle]
 pub static __EXTERNAL_INTERRUPTS: [Vector; 0] = [];
+#[doc = "Clock Controller Unit"]
+pub struct CCU {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CCU {}
+impl CCU {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ccu::RegisterBlock = 0x0200_1000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ccu::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for CCU {
+    type Target = ccu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for CCU {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CCU").finish()
+    }
+}
+#[doc = "Clock Controller Unit"]
+pub mod ccu;
 #[doc = "Core-Local Interruptor"]
 pub struct CLINT {
     _marker: PhantomData<*const ()>,
@@ -91,6 +119,34 @@ impl core::fmt::Debug for TIMER {
 }
 #[doc = "Timer Module, includes timer0, timer1, watchdog and audio video synchronization"]
 pub mod timer;
+#[doc = "High Speed Timer"]
+pub struct HSTIMER {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for HSTIMER {}
+impl HSTIMER {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const hstimer::RegisterBlock = 0x0300_8000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const hstimer::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for HSTIMER {
+    type Target = hstimer::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for HSTIMER {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HSTIMER").finish()
+    }
+}
+#[doc = "High Speed Timer"]
+pub mod hstimer;
 #[doc = "Platform Level Interrupt Control"]
 pub struct PLIC {
     _marker: PhantomData<*const ()>,
@@ -119,6 +175,62 @@ impl core::fmt::Debug for PLIC {
 }
 #[doc = "Platform Level Interrupt Control"]
 pub mod plic;
+#[doc = "Two Wire Interface"]
+pub struct TWI0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TWI0 {}
+impl TWI0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const twi0::RegisterBlock = 0x0250_2000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const twi0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TWI0 {
+    type Target = twi0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TWI0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TWI0").finish()
+    }
+}
+#[doc = "Two Wire Interface"]
+pub mod twi0;
+#[doc = "Serial Peripheral Interface"]
+pub struct SPI0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI0 {}
+impl SPI0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const spi0::RegisterBlock = 0x0402_5000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const spi0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SPI0 {
+    type Target = spi0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SPI0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SPI0").finish()
+    }
+}
+#[doc = "Serial Peripheral Interface"]
+pub mod spi0;
 #[doc = "Universal Asynchronous Receiver Transmitter"]
 pub struct UART0 {
     _marker: PhantomData<*const ()>,
@@ -180,12 +292,20 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
 #[allow(non_snake_case)]
 pub struct Peripherals {
+    #[doc = "CCU"]
+    pub CCU: CCU,
     #[doc = "CLINT"]
     pub CLINT: CLINT,
     #[doc = "TIMER"]
     pub TIMER: TIMER,
+    #[doc = "HSTIMER"]
+    pub HSTIMER: HSTIMER,
     #[doc = "PLIC"]
     pub PLIC: PLIC,
+    #[doc = "TWI0"]
+    pub TWI0: TWI0,
+    #[doc = "SPI0"]
+    pub SPI0: SPI0,
     #[doc = "UART0"]
     pub UART0: UART0,
     #[doc = "GPIO"]
@@ -208,13 +328,25 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
+            CCU: CCU {
+                _marker: PhantomData,
+            },
             CLINT: CLINT {
                 _marker: PhantomData,
             },
             TIMER: TIMER {
                 _marker: PhantomData,
             },
+            HSTIMER: HSTIMER {
+                _marker: PhantomData,
+            },
             PLIC: PLIC {
+                _marker: PhantomData,
+            },
+            TWI0: TWI0 {
+                _marker: PhantomData,
+            },
+            SPI0: SPI0 {
                 _marker: PhantomData,
             },
             UART0: UART0 {

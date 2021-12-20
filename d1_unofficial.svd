@@ -13,6 +13,625 @@
 
   <peripherals>
     <peripheral>
+      <name>CCU</name>
+      <description>Clock Controller Unit</description>
+      <baseAddress>0x02001000</baseAddress>
+      <groupName>System</groupName>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x10000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>PLL_CPU_CTRL</name>
+          <description>PLL_CPU Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>PLL_DDR_CTRL</name>
+          <description>PLL_DDR Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>PLL_PERI_CTRL</name>
+          <description>PLL_PERI Control Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO0_CTRL</name>
+          <description>PLL_VIDEO0 Control Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO1_CTRL</name>
+          <description>PLL_VIDEO1 Control Register</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VE_CTRL</name>
+          <description>PLL_VE Control Register</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO0_CTRL</name>
+          <description>PLL_AUDIO0 Control Register</description>
+          <addressOffset>0x0078</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO1_CTRL</name>
+          <description>PLL_AUDIO1 Control Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>PLL_DDR_PAT0_CTRL</name>
+          <description>PLL_DDR Pattern0 Control Register</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <name>PLL_DDR_PAT1_CTRL</name>
+          <description>PLL_DDR Pattern1 Control Register</description>
+          <addressOffset>0x0114</addressOffset>
+        </register>
+        <register>
+          <name>PLL_PERI_PAT0_CTRL</name>
+          <description>PLL_PERI Pattern0 Control Register</description>
+          <addressOffset>0x0120</addressOffset>
+        </register>
+        <register>
+          <name>PLL_PERI_PAT1_CTRL</name>
+          <description>PLL_PERI Pattern1 Control Register</description>
+          <addressOffset>0x0124</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO0_PAT0_CTRL</name>
+          <description>PLL_VIDEO0 Pattern0 Control Register</description>
+          <addressOffset>0x0140</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO0_PAT1_CTRL</name>
+          <description>PLL_VIDEO0 Pattern1 Control Register</description>
+          <addressOffset>0x0144</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO1_PAT0_CTRL</name>
+          <description>PLL_VIDEO1 Pattern0 Control Register</description>
+          <addressOffset>0x0148</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO1_PAT1_CTRL</name>
+          <description>PLL_VIDEO1 Pattern1 Control Register</description>
+          <addressOffset>0x014C</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VE_PAT0_CTRL</name>
+          <description>PLL_VE Pattern0 Control Register</description>
+          <addressOffset>0x0158</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VE_PAT1_CTRL</name>
+          <description>PLL_VE Pattern1 Control Register</description>
+          <addressOffset>0x015C</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO0_PAT0_CTRL</name>
+          <description>PLL_AUDIO0 Pattern0 Control Register</description>
+          <addressOffset>0x0178</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO0_PAT1_CTRL</name>
+          <description>PLL_AUDIO0 Pattern1 Control Register</description>
+          <addressOffset>0x017C</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO1_PAT0_CTRL</name>
+          <description>PLL_AUDIO1 Pattern0 Control Register</description>
+          <addressOffset>0x0180</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO1_PAT1_CTRL</name>
+          <description>PLL_AUDIO1 Pattern1 Control Register</description>
+          <addressOffset>0x0184</addressOffset>
+        </register>
+        <register>
+          <name>PLL_CPU_BIAS</name>
+          <description>PLL_CPU Bias Register</description>
+          <addressOffset>0x0300</addressOffset>
+        </register>
+        <register>
+          <name>PLL_DDR_BIAS</name>
+          <description>PLL_DDR Bias Register</description>
+          <addressOffset>0x0310</addressOffset>
+        </register>
+        <register>
+          <name>PLL_PERI_BIAS</name>
+          <description>PLL_PERI Bias Register</description>
+          <addressOffset>0x0320</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO0_BIAS</name>
+          <description>PLL_VIDEO0 Bias Register</description>
+          <addressOffset>0x0340</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VIDEO1_BIAS</name>
+          <description>PLL_VIDEO1 Bias Register</description>
+          <addressOffset>0x0348</addressOffset>
+        </register>
+        <register>
+          <name>PLL_VE_BIAS</name>
+          <description>PLL_VE Bias Register</description>
+          <addressOffset>0x0358</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO0_BIAS</name>
+          <description>PLL_AUDIO0 Bias Register</description>
+          <addressOffset>0x0378</addressOffset>
+        </register>
+        <register>
+          <name>PLL_AUDIO1_BIAS</name>
+          <description>PLL_AUDIO1 Bias Register</description>
+          <addressOffset>0x0380</addressOffset>
+        </register>
+        <register>
+          <name>PLL_CPU_TUN</name>
+          <description>PLL_CPU Tuning Register</description>
+          <addressOffset>0x0400</addressOffset>
+        </register>
+        <register>
+          <name>CPU_AXI_CFG</name>
+          <description>CPU_AXI Configuration Register</description>
+          <addressOffset>0x0500</addressOffset>
+        </register>
+        <register>
+          <name>CPU_GATING</name>
+          <description>CPU_GATING Configuration Register</description>
+          <addressOffset>0x0504</addressOffset>
+        </register>
+        <register>
+          <name>PSI_CLK</name>
+          <description>PSI Clock Register</description>
+          <addressOffset>0x0510</addressOffset>
+        </register>
+        <register>
+          <name>APB0_CLK</name>
+          <description>APB0 Clock Register</description>
+          <addressOffset>0x0520</addressOffset>
+        </register>
+        <register>
+          <name>APB1_CLK</name>
+          <description>APB1 Clock Register</description>
+          <addressOffset>0x0524</addressOffset>
+        </register>
+        <register>
+          <name>MBUS_CLK</name>
+          <description>MBUS Clock Register</description>
+          <addressOffset>0x0540</addressOffset>
+        </register>
+        <register>
+          <name>DE_CLK</name>
+          <description>DE Clock Register</description>
+          <addressOffset>0x0600</addressOffset>
+        </register>
+        <register>
+          <name>DE_BGR</name>
+          <description>DE Bus Gating Reset Register</description>
+          <addressOffset>0x060C</addressOffset>
+        </register>
+        <register>
+          <name>DI_CLK</name>
+          <description>DI Clock Register</description>
+          <addressOffset>0x0620</addressOffset>
+        </register>
+        <register>
+          <name>DI_BGR</name>
+          <description>DI Bus Gating Reset Register</description>
+          <addressOffset>0x062C</addressOffset>
+        </register>
+        <register>
+          <name>G2D_CLK</name>
+          <description>G2D Clock Register</description>
+          <addressOffset>0x0630</addressOffset>
+        </register>
+        <register>
+          <name>G2D_BGR</name>
+          <description>G2D Bus Gating Reset Register</description>
+          <addressOffset>0x063C</addressOffset>
+        </register>
+        <register>
+          <name>CE_CLK</name>
+          <description>CE Clock Register</description>
+          <addressOffset>0x0680</addressOffset>
+        </register>
+        <register>
+          <name>CE_BGR</name>
+          <description>CE Bus Gating Reset Register</description>
+          <addressOffset>0x068C</addressOffset>
+        </register>
+        <register>
+          <name>VE_CLK</name>
+          <description>VE Clock Register</description>
+          <addressOffset>0x0690</addressOffset>
+        </register>
+        <register>
+          <name>VE_BGR</name>
+          <description>VE Bus Gating Reset Register</description>
+          <addressOffset>0x069C</addressOffset>
+        </register>
+        <register>
+          <name>DMA_BGR</name>
+          <description>DMA Bus Gating Reset Register</description>
+          <addressOffset>0x070C</addressOffset>
+        </register>
+        <register>
+          <name>MSGBOX_BGR</name>
+          <description>MSGBOX Bus Gating Reset Register</description>
+          <addressOffset>0x071C</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_BGR</name>
+          <description>SPINLOCK Bus Gating Reset Register</description>
+          <addressOffset>0x072C</addressOffset>
+        </register>
+        <register>
+          <name>HSTIMER_BGR</name>
+          <description>HSTIMER Bus Gating Reset Register</description>
+          <addressOffset>0x073C</addressOffset>
+        </register>
+        <register>
+          <name>AVS_CLK</name>
+          <description>AVS Clock Register</description>
+          <addressOffset>0x0740</addressOffset>
+        </register>
+        <register>
+          <name>DBGSYS_BGR</name>
+          <description>DBGSYS Bus Gating Reset Register</description>
+          <addressOffset>0x078C</addressOffset>
+        </register>
+        <register>
+          <name>PWM_BGR</name>
+          <description>PWM Bus Gating Reset Register</description>
+          <addressOffset>0x07AC</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_BGR</name>
+          <description>IOMMU Bus Gating Reset Register</description>
+          <addressOffset>0x07BC</addressOffset>
+        </register>
+        <register>
+          <name>DRAM_CLK</name>
+          <description>DRAM Clock Register</description>
+          <addressOffset>0x0800</addressOffset>
+        </register>
+        <register>
+          <name>MBUS_MAT_CLK_GATING</name>
+          <description>MBUS Master Clock Gating Register</description>
+          <addressOffset>0x0804</addressOffset>
+        </register>
+        <register>
+          <name>DRAM_BGR</name>
+          <description>DRAM Bus Gating Reset Register</description>
+          <addressOffset>0x080C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC0_CLK</name>
+          <description>SMHC0 Clock Register</description>
+          <addressOffset>0x0830</addressOffset>
+        </register>
+        <register>
+          <name>SMHC1_CLK</name>
+          <description>SMHC1 Clock Register</description>
+          <addressOffset>0x0834</addressOffset>
+        </register>
+        <register>
+          <name>SMHC2_CLK</name>
+          <description>SMHC2 Clock Register</description>
+          <addressOffset>0x0838</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_BGR</name>
+          <description>SMHC Bus Gating Reset Register</description>
+          <addressOffset>0x084C</addressOffset>
+        </register>
+        <register>
+          <name>UART_BGR</name>
+          <description>UART Bus Gating Reset Register</description>
+          <addressOffset>0x090C</addressOffset>
+        </register>
+        <register>
+          <name>TWI_BGR</name>
+          <description>TWI Bus Gating Reset Register</description>
+          <addressOffset>0x091C</addressOffset>
+        </register>
+        <register>
+          <name>SPI0_CLK</name>
+          <description>SPI0 Clock Register</description>
+          <addressOffset>0x0940</addressOffset>
+        </register>
+        <register>
+          <name>SPI1_CLK</name>
+          <description>SPI1 Clock Register</description>
+          <addressOffset>0x0944</addressOffset>
+        </register>
+        <register>
+          <name>SPI_BGR</name>
+          <description>SPI Bus Gating Reset Register</description>
+          <addressOffset>0x096C</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_25M_CLK</name>
+          <description>EMAC_25M Clock Register</description>
+          <addressOffset>0x0970</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_BGR</name>
+          <description>EMAC Bus Gating Reset Register</description>
+          <addressOffset>0x097C</addressOffset>
+        </register>
+        <register>
+          <name>IRTX_CLK</name>
+          <description>IRTX Clock Register</description>
+          <addressOffset>0x09C0</addressOffset>
+        </register>
+        <register>
+          <name>IRTX_BGR</name>
+          <description>IRTX Bus Gating Reset Register</description>
+          <addressOffset>0x09CC</addressOffset>
+        </register>
+        <register>
+          <name>GPADC_BGR</name>
+          <description>GPADC Bus Gating Reset Register</description>
+          <addressOffset>0x09EC</addressOffset>
+        </register>
+        <register>
+          <name>THS_BGR</name>
+          <description>THS Bus Gating Reset Register</description>
+          <addressOffset>0x09FC</addressOffset>
+        </register>
+        <register>
+          <name>I2S0_CLK</name>
+          <description>I2S0 Clock Register</description>
+          <addressOffset>0x0A10</addressOffset>
+        </register>
+        <register>
+          <name>I2S1_CLK</name>
+          <description>I2S1 Clock Register</description>
+          <addressOffset>0x0A14</addressOffset>
+        </register>
+        <register>
+          <name>I2S2_CLK</name>
+          <description>I2S2 Clock Register</description>
+          <addressOffset>0x0A18</addressOffset>
+        </register>
+        <register>
+          <name>I2S2_ASRC_CLK</name>
+          <description>I2S2_ASRC Clock Register</description>
+          <addressOffset>0x0A1C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_BGR</name>
+          <description>I2S Bus Gating Reset Register</description>
+          <addressOffset>0x0A20</addressOffset>
+        </register>
+        <register>
+          <name>OWA_TX_CLK</name>
+          <description>OWA_TX Clock Register</description>
+          <addressOffset>0x0A24</addressOffset>
+        </register>
+        <register>
+          <name>OWA_RX_CLK</name>
+          <description>OWA_RX Clock Register</description>
+          <addressOffset>0x0A28</addressOffset>
+        </register>
+        <register>
+          <name>OWA_BGR</name>
+          <description>OWA Bus Gating Reset Register</description>
+          <addressOffset>0x0A2C</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_CLK</name>
+          <description>DMIC Clock Register</description>
+          <addressOffset>0x0A40</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_BGR</name>
+          <description>DMIC Bus Gating Reset Register</description>
+          <addressOffset>0x0A4C</addressOffset>
+        </register>
+        <register>
+          <name>AUDIO_CODEC_DAC_CLK</name>
+          <description>AUDIO_CODEC_DAC Clock Register</description>
+          <addressOffset>0x0A50</addressOffset>
+        </register>
+        <register>
+          <name>AUDIO_CODEC_ADC_CLK</name>
+          <description>AUDIO_CODEC_ADC Clock Register</description>
+          <addressOffset>0x0A54</addressOffset>
+        </register>
+        <register>
+          <name>AUDIO_CODEC_BGR</name>
+          <description>AUDIO_CODEC Bus Gating Reset Register</description>
+          <addressOffset>0x0A5C</addressOffset>
+        </register>
+        <register>
+          <name>USB0_CLK</name>
+          <description>USB0 Clock Register</description>
+          <addressOffset>0x0A70</addressOffset>
+        </register>
+        <register>
+          <name>USB1_CLK</name>
+          <description>USB1 Clock Register</description>
+          <addressOffset>0x0A74</addressOffset>
+        </register>
+        <register>
+          <name>USB_BGR</name>
+          <description>USB Bus Gating Reset Register</description>
+          <addressOffset>0x0A8C</addressOffset>
+        </register>
+        <register>
+          <name>DPSS_TOP_BGR</name>
+          <description>DPSS_TOP Bus Gating Reset Register</description>
+          <addressOffset>0x0ABC</addressOffset>
+        </register>
+        <register>
+          <name>DSI_CLK</name>
+          <description>DSI Clock Register</description>
+          <addressOffset>0x0B24</addressOffset>
+        </register>
+        <register>
+          <name>DSI_BGR</name>
+          <description>DSI Bus Gating Reset Register</description>
+          <addressOffset>0x0B4C</addressOffset>
+        </register>
+        <register>
+          <name>TCONLCD_CLK</name>
+          <description>TCONLCD Clock Register</description>
+          <addressOffset>0x0B60</addressOffset>
+        </register>
+        <register>
+          <name>TCONLCD_BGR</name>
+          <description>TCONLCD Bus Gating Reset Register</description>
+          <addressOffset>0x0B7C</addressOffset>
+        </register>
+        <register>
+          <name>TCONTV_CLK</name>
+          <description>TCONTV Clock Register</description>
+          <addressOffset>0x0B80</addressOffset>
+        </register>
+        <register>
+          <name>TCONTV_BGR</name>
+          <description>TCONTV Bus Gating Reset Register</description>
+          <addressOffset>0x0B9C</addressOffset>
+        </register>
+        <register>
+          <name>LVDS_BGR</name>
+          <description>LVDS Bus Gating Reset Register</description>
+          <addressOffset>0x0BAC</addressOffset>
+        </register>
+        <register>
+          <name>TVE_CLK</name>
+          <description>TVE Clock Register</description>
+          <addressOffset>0x0BB0</addressOffset>
+        </register>
+        <register>
+          <name>TVE_BGR</name>
+          <description>TVE Bus Gating Reset Register</description>
+          <addressOffset>0x0BBC</addressOffset>
+        </register>
+        <register>
+          <name>TVD_CLK</name>
+          <description>TVD Clock Register</description>
+          <addressOffset>0x0BC0</addressOffset>
+        </register>
+        <register>
+          <name>TVD_BGR</name>
+          <description>TVD Bus Gating Reset Register</description>
+          <addressOffset>0x0BDC</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_CLK</name>
+          <description>LEDC Clock Register</description>
+          <addressOffset>0x0BF0</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_BGR</name>
+          <description>LEDC Bus Gating Reset Register</description>
+          <addressOffset>0x0BFC</addressOffset>
+        </register>
+        <register>
+          <name>CSI_CLK</name>
+          <description>CSI Clock Register</description>
+          <addressOffset>0x0C04</addressOffset>
+        </register>
+        <register>
+          <name>CSI_MASTER_CLK</name>
+          <description>CSI Master Clock Register</description>
+          <addressOffset>0x0C08</addressOffset>
+        </register>
+        <register>
+          <name>CSI_BGR</name>
+          <description>CSI Bus Gating Reset Register</description>
+          <addressOffset>0x0C1C</addressOffset>
+        </register>
+        <register>
+          <name>TPADC_CLK</name>
+          <description>TPADC Clock Register</description>
+          <addressOffset>0x0C50</addressOffset>
+        </register>
+        <register>
+          <name>TPADC_BGR</name>
+          <description>TPADC Bus Gating Reset Register</description>
+          <addressOffset>0x0C5C</addressOffset>
+        </register>
+        <register>
+          <name>DSP_CLK</name>
+          <description>DSP Clock Register</description>
+          <addressOffset>0x0C70</addressOffset>
+        </register>
+        <register>
+          <name>DSP_BGR</name>
+          <description>DSP Bus Gating Reset Register</description>
+          <addressOffset>0x0C7C</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_CLK</name>
+          <description>RISC-V Clock Register</description>
+          <addressOffset>0x0D00</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_GATING</name>
+          <description>RISC-V GATING Configuration Register</description>
+          <addressOffset>0x0D04</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_CFG_BGR</name>
+          <description>RISC-V_CFG Bus Gating Reset Register</description>
+          <addressOffset>0x0D0C</addressOffset>
+        </register>
+        <register>
+          <name>PLL_LOCK_DBG_CTRL</name>
+          <description>PLL Lock Debug Control Register</description>
+          <addressOffset>0x0F04</addressOffset>
+        </register>
+        <register>
+          <name>FRE_DET_CTRL</name>
+          <description>Frequency Detect Control Register</description>
+          <addressOffset>0x0F08</addressOffset>
+        </register>
+        <register>
+          <name>FRE_UP_LIM</name>
+          <description>Frequency Up Limit Register</description>
+          <addressOffset>0x0F0C</addressOffset>
+        </register>
+        <register>
+          <name>FRE_DOWN_LIM</name>
+          <description>Frequency Down Limit Register</description>
+          <addressOffset>0x0F10</addressOffset>
+        </register>
+        <register>
+          <name>CCU_FAN_GATE</name>
+          <description>CCU FANOUT CLOCK GATE Register</description>
+          <addressOffset>0x0F30</addressOffset>
+        </register>
+        <register>
+          <name>CLK27M_FAN</name>
+          <description>CLK27M FANOUT Register</description>
+          <addressOffset>0x0F34</addressOffset>
+        </register>
+        <register>
+          <name>PCLK_FAN</name>
+          <description>PCLK FANOUT Register</description>
+          <addressOffset>0x0F38</addressOffset>
+        </register>
+        <register>
+          <name>CCU_FAN</name>
+          <description>CCU FANOUT Register</description>
+          <addressOffset>0x0F3C</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>CLINT</name>
       <baseAddress>0x14000000</baseAddress>
       <groupName>System</groupName>
@@ -355,6 +974,80 @@
           <name>avs_cnt_div</name>
           <description>AVS Counter Divisor Register</description>
           <addressOffset>0x00CC</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>HSTimer</name>
+      <description>High Speed Timer</description>
+      <groupName>System</groupName>
+      <baseAddress>0x03008000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>HS_TMR_IRQ_EN</name>
+          <description>HS Timer IRQ Enable Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR_IRQ_STAS</name>
+          <description>HS Timer Status Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR0_CTRL</name>
+          <description>HS Timer0 Control Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR0_INTV_LO</name>
+          <description>HS Timer0 Interval Value Low Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR0_INTV_HI</name>
+          <description>HS Timer0 Interval Value High Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR0_CURNT_LO</name>
+          <description>HS Timer0 Current Value Low Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR0_CURNT_HI</name>
+          <description>HS Timer0 Current Value High Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR1_CTRL</name>
+          <description>HS Timer1 Control Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR1_INTV_LO</name>
+          <description>HS Timer1 Interval Value Low Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR1_INTV_HI</name>
+          <description>HS Timer1 Interval Value High Register</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR1_CURNT_LO</name>
+          <description>HS Timer1 Current Value Low Register</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>HS_TMR1_CURNT_HI</name>
+          <description>HS Timer1 Current Value High Register</description>
+          <addressOffset>0x0050</addressOffset>
         </register>
       </registers>
     </peripheral>
@@ -955,6 +1648,221 @@
               <bitRange>[9:0]</bitRange>
             </field>
           </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TWI0</name>
+      <baseAddress>0x02502000</baseAddress>
+      <groupName>Interfaces</groupName>
+      <description>Two Wire Interface</description>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>TWI_ADDR</name>
+          <description>TWI Slave Address Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>TWI_XADDR</name>
+          <description>TWI Extended Slave Address Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DATA</name>
+          <description>TWI Data Byte Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>TWI_CNTR</name>
+          <description>TWI Control Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>TWI_STAT</name>
+          <description>TWI Status Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>TWI_CCR</name>
+          <description>TWI Clock Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>TWI_SRST</name>
+          <description>TWI Software Reset Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>TWI_EFR</name>
+          <description>TWI Enhance Feature Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>TWI_LCR</name>
+          <description>TWI Line Control Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_CTRL</name>
+          <description>TWI_DRV Control Register</description>
+          <addressOffset>0x0200</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_CFG</name>
+          <description>TWI_DRV Transmission Configuration Register</description>
+          <addressOffset>0x0204</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_SLV</name>
+          <description>TWI_DRV Slave ID Register</description>
+          <addressOffset>0x0208</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_FMT</name>
+          <description>TWI_DRV Packet Format Register</description>
+          <addressOffset>0x020C</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_BUS_CTRL</name>
+          <description>TWI_DRV Bus Control Register</description>
+          <addressOffset>0x0210</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_INT_CTRL</name>
+          <description>TWI_DRV Interrupt Control Register</description>
+          <addressOffset>0x0214</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_DMA_CFG</name>
+          <description>TWI_DRV DMA Configure Register</description>
+          <addressOffset>0x0218</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_FIFO_CON</name>
+          <description>TWI_DRV FIFO Content Register</description>
+          <addressOffset>0x021C</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_SEND_FIFO_ACC</name>
+          <description>TWI_DRV Send Data FIFO Access Register</description>
+          <addressOffset>0x0300</addressOffset>
+        </register>
+        <register>
+          <name>TWI_DRV_RECV_FIFO_ACC</name>
+          <description>TWI_DRV Receive Data FIFO Access Register</description>
+          <addressOffset>0x0304</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>SPI0</name>
+      <baseAddress>0x04025000</baseAddress>
+      <groupName>Interfaces</groupName>
+      <description>Serial Peripheral Interface</description>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>SPI_GCR</name>
+          <description>SPI Global Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>SPI_TCR</name>
+          <description>SPI Transfer Control Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>SPI_IER</name>
+          <description>SPI Interrupt Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>SPI_ISR</name>
+          <description>SPI Interrupt Status Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>SPI_FCR</name>
+          <description>SPI FIFO Control Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>SPI_FSR</name>
+          <description>SPI FIFO Status Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>SPI_WCR</name>
+          <description>SPI Wait Clock Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>SPI_SAMP_DL</name>
+          <description>SPI Sample Delay Control Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>SPI_MBC</name>
+          <description>SPI Master Burst Counter Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>SPI_MTC</name>
+          <description>SPI Master Transmit Counter Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>SPI_BCC</name>
+          <description>SPI Master Burst Control Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>SPI_BATCR</name>
+          <description>SPI Bit</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        -Aligned Transfer Configure Register
+        <register>
+          <name>SPI_BA_CCR</name>
+          <description>SPI Bit</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        -Aligned Clock Configuration Register
+        <register>
+          <name>SPI_TBR</name>
+          <description>SPI TX Bit Register</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>SPI_RBR</name>
+          <description>SPI RX Bit Register</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>SPI_NDMA_MODE_CTL</name>
+          <description>SPI Normal DMA Mode Control Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>SPI_TXD</name>
+          <description>SPI TX Data Register</description>
+          <addressOffset>0x0200</addressOffset>
+        </register>
+        <register>
+          <name>SPI_RXD</name>
+          <description>SPI RX Data Register</description>
+          <addressOffset>0x0300</addressOffset>
         </register>
       </registers>
     </peripheral>
