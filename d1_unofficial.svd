@@ -974,174 +974,1130 @@
           <name>RBR</name>
           <description>UART Receive Buffer Register</description>
           <addressOffset>0x0000</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>rbr</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THR</name>
           <description>UART Transmit Holding Register</description>
           <addressOffset>0x0000</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>thr</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DLL</name>
           <description>UART Divisor Latch Low Register</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>dll</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DLH</name>
           <description>UART Divisor Latch High Register</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>dlh</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>IER</name>
           <description>UART Interrupt Enable Register</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>ptime</name>
+              <description>Programmable THRE Interrupt Mode Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rs485_int_en</name>
+              <description>RS485 Interrupt Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>edssi</name>
+              <description>Enable Modem Status Interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>elsi</name>
+              <description>Enable Receiver Line Status Interrupt</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>etbei</name>
+              <description>Enable Transmit Holding Register Empty Interrupt</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>erbfi</name>
+              <description>Enable Received Data Available Interrupt</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>IIR</name>
           <description>UART Interrupt Identity Register</description>
           <addressOffset>0x0008</addressOffset>
+          <access>read-only</access>
+          <field>
+            <name>feflag</name>
+            <description>FIFOs Enable Flag</description>
+            <bitRange>[7:6]</bitRange>
+            <enumeratedValues>
+              <enumeratedValue>
+                <name>disable</name>
+                <value>0b00</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>enable</name>
+                <value>0b11</value>
+              </enumeratedValue>
+            </enumeratedValues>
+          </field>
+          <field>
+            <name>iid</name>
+            <description>Interrupt ID</description>
+            <bitRange>[3:0]</bitRange>
+            <enumeratedValues>
+              <enumeratedValue>
+                <name>modem_status</name>
+                <value>0b0000</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>no_interrupt_pending</name>
+                <value>0b0001</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>thr_empty</name>
+                <value>0b0010</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>rs485_interrupt</name>
+                <value>0b0011</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>received_data_available</name>
+                <value>0b0100</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>receiver_line_status</name>
+                <value>0b0110</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>busy_detect</name>
+                <value>0b0111</value>
+              </enumeratedValue>
+              <enumeratedValue>
+                <name>character_timeout</name>
+                <value>0b1100</value>
+              </enumeratedValue>
+            </enumeratedValues>
+          </field>
         </register>
         <register>
           <name>FCR</name>
           <description>UART FIFO Control Register</description>
           <addressOffset>0x0008</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>rt</name>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>one_character</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>quarter_full</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>half_full</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>two_less_than_full</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tft</name>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>two_characters</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>quarter_full</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>half_full</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dmam</name>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>mode_0</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>mode_1</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>xfifor</name>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>rfifor</name>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>fifoe</name>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LCR</name>
           <description>UART Line Control Register</description>
           <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>dlab</name>
+              <description>Divisor Latch Access Bit</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>rx_buffer</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>divisor_latch</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bc</name>
+              <description>Break Control Bit</description>
+              <bitRange>[6:6]</bitRange>
+            </field>
+            <field>
+              <name>eps</name>
+              <description>Even Parity Select</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>odd</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>even</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rs485_data</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rs485_addr</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pen</name>
+              <description>Parity Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>stop</name>
+              <description>Number of stop bits</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>one</name>
+                  <description>1 stop bit</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>two</name>
+                  <description>1.5 stop bits when DLS(LCR[1:0]) is zero, else 2 stop bits</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dls</name>
+              <description>Data Length Select</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>five</name>
+                  <description>5 bits</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>six</name>
+                  <description>6 bits</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>seven</name>
+                  <description>7 bits</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>eight</name>
+                  <description>8 bits</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>MCR</name>
           <description>UART Modem Control Register</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>function</name>
+              <description>UART Function: Select IrDA or RS485</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UART</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IrDA_SIR</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RS485</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reserved</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>afce</name>
+              <description>Auto Flow Control Enable</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>loop</name>
+              <description>Loop Back Mode</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>loop_back</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rts</name>
+              <description>Request to Send</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>deasserted</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>asserted</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dtr</name>
+              <description>Data Terminal Ready</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>deasserted</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>asserted</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LSR</name>
           <description>UART Line Status Register</description>
           <addressOffset>0x0014</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>fifoerr</name>
+              <description>RX Data Error in FIFO</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>error</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>temt</name>
+              <description>Transmitter Empty</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>thre</name>
+              <description>TX Holding Register Empty</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bi</name>
+              <description>Break Interrupt</description>
+              <bitRange>[4:4]</bitRange>
+            </field>
+            <field>
+              <name>fe</name>
+              <description>Framing Error</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>error</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>pe</name>
+              <description>Parity Error</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>error</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>oe</name>
+              <description>Overrun Error</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>error</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dr</name>
+              <description>Data Ready</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ready</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>MSR</name>
           <description>UART Modem Status Register</description>
           <addressOffset>0x0018</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>dcd</name>
+              <description>Line State of Data Carrier Detect</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>deasserted</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>asserted</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ri</name>
+              <description>Line State of Ring Indicator</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>deasserted</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>asserted</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dsr</name>
+              <description>Line State of Data Set Ready</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>deasserted</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>asserted</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cts</name>
+              <description>Line State of Clear To Send</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>deasserted</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>asserted</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddcd</name>
+              <description>Delta Data Carrier Detect</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_change</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>change</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>teri</name>
+              <description>Trailing Edge Ring Indicator</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_change</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>change</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddsr</name>
+              <description>Delta Data Set Ready</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_change</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>change</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dcts</name>
+              <description>Delta Clear to Send</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_change</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>change</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SCH</name>
           <description>UART Scratch Register</description>
           <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>scratch</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>USR</name>
           <description>UART Status Register</description>
           <addressOffset>0x007C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>rff</name>
+              <description>RX FIFO Full</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_full</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>full</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rfne</name>
+              <description>RX FIFO Not Empty</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_empty</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tfe</name>
+              <description>TX FIFO Empty</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_empty</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tfnf</name>
+              <description>TX FIFO Not Full</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>full</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_full</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>busy</name>
+              <description>UART Busy Bit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>busy</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TFL</name>
           <description>UART Transmit FIFO Level Register</description>
           <addressOffset>0x0080</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>tfl</name>
+              <description>TX FIFO Level</description>
+              <bitRange>[8:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RFL</name>
           <description>UART Receive FIFO Level Register</description>
           <addressOffset>0x0084</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>rfl</name>
+              <description>RX FIFO Level</description>
+              <bitRange>[8:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>HSK</name>
           <description>UART DMA Handshake Configuration Register</description>
           <addressOffset>0x0088</addressOffset>
+          <fields>
+            <field>
+              <name>hsk</name>
+              <description>Handshake configuration</description>
+              <bitRange>[7:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>wait_cycle</name>
+                  <value>0xA5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>handshake</name>
+                  <value>0xE5</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMA_REQ_EN</name>
           <description>UART DMA Request Enable Register</description>
           <addressOffset>0x008C</addressOffset>
+          <fields>
+            <field>
+              <name>timeout_enable</name>
+              <description>DMA Timeout Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tx_req_enable</name>
+              <description>DMA TX REQ Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_req_enable</name>
+              <description>DMA RX REQ Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>HALT</name>
           <description>UART Halt TX Register</description>
           <addressOffset>0x00A4</addressOffset>
+          <fields>
+            <field>
+              <name>pte</name>
+              <description>The sending of TX_REQ</description>
+              <bitRange>[7:7]</bitRange>
+            </field>
+            <field>
+              <name>dma_pte_rx</name>
+              <description>The Transmission of RX_DRQ</description>
+              <bitRange>[6:6]</bitRange>
+            </field>
+            <field>
+              <name>sir_rx_invert</name>
+              <description>SIR RX Pulse Polarity Invert</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_invert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>invert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sir_tx_invert</name>
+              <description>SIR TX Pulse Polarity Invert</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_invert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>invert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>change_update</name>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>finished</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>update_trigger</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>chcfg_at_busy</name>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>halt_tx</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DBG_DLL</name>
           <description>UART Debug DLL Register</description>
           <addressOffset>0x00B0</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>DBG_DLL</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DBG_DLH</name>
           <description>UART Debug DLH Register</description>
           <addressOffset>0x00B4</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>DBG_DLH</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>A_FCC</name>
+          <name>FCC</name>
           <description>UART FIFO Clock Control Register</description>
           <addressOffset>0x00F0</addressOffset>
+          <fields>
+            <field>
+              <name>fifo_depth</name>
+              <bitRange>[31:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>rx_fifo_clock_mode</name>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>wr_apb</name>
+                  <description>Sync mode, writing/reading clocks use apb clock</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>w_apb_r_ahb</name>
+                  <description>Sync mode, writing clock uses apb clock, reading clock uses ahb clock</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tx_fifo_clock_enable</name>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_fifo_clock_enable</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>A_RXDMA_CTRL</name>
+          <name>RXDMA_CTRL</name>
           <description>UART RXDMA Control Register</description>
           <addressOffset>0x0100</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_STR</name>
+          <name>RXDMA_STR</name>
           <description>UART RXDMA Start Register</description>
           <addressOffset>0x0104</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_STA</name>
+          <name>RXDMA_STA</name>
           <description>UART RXDMA Status Register</description>
           <addressOffset>0x0108</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_LMT</name>
+          <name>RXDMA_LMT</name>
           <description>UART RXDMA Limit Register</description>
           <addressOffset>0x010C</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_SADDRL</name>
+          <name>RXDMA_SADDRL</name>
           <description>UART RXDMA Buffer Start Address Low Register</description>
           <addressOffset>0x0110</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_SADDRH</name>
+          <name>RXDMA_SADDRH</name>
           <description>UART RXDMA Buffer Start Address High Register</description>
           <addressOffset>0x0114</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_BL</name>
+          <name>RXDMA_BL</name>
           <description>UART RXDMA Buffer Length Register</description>
           <addressOffset>0x0118</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_IE</name>
+          <name>RXDMA_IE</name>
           <description>UART RXDMA Interrupt Enable Register</description>
           <addressOffset>0x0120</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_IS</name>
+          <name>RXDMA_IS</name>
           <description>UART RXDMA Interrupt Status Register</description>
           <addressOffset>0x0124</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_WADDRL</name>
+          <name>RXDMA_WADDRL</name>
           <description>UART RXDMA Write Address Low Register</description>
           <addressOffset>0x0128</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_WADDRH</name>
+          <name>RXDMA_WADDRH</name>
           <description>UART RXDMA Write Address High Register</description>
           <addressOffset>0x012C</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_RADDRL</name>
+          <name>RXDMA_RADDRL</name>
           <description>UART RXDMA Read Address Low Register</description>
           <addressOffset>0x0130</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_RADDRH</name>
+          <name>RXDMA_RADDRH</name>
           <description>UART RXDMA Read Address High Register</description>
           <addressOffset>0x0134</addressOffset>
         </register>
         <register>
-          <name>A_RXDMA_DCNT</name>
+          <name>RXDMA_DCNT</name>
           <description>UART RXDMA Data Count Register</description>
           <addressOffset>0x0138</addressOffset>
         </register>

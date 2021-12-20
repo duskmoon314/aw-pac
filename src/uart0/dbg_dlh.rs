@@ -13,36 +13,29 @@ impl From<crate::R<DBG_DLH_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DBG_DLH` writer"]
-pub struct W(crate::W<DBG_DLH_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DBG_DLH_SPEC>;
+#[doc = "Field `DBG_DLH` reader - "]
+pub struct DBG_DLH_R(crate::FieldReader<u8, u8>);
+impl DBG_DLH_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        DBG_DLH_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DBG_DLH_R {
+    type Target = crate::FieldReader<u8, u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl core::ops::DerefMut for W {
+impl R {
+    #[doc = "Bits 0:7"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn dbg_dlh(&self) -> DBG_DLH_R {
+        DBG_DLH_R::new((self.bits & 0xff) as u8)
     }
 }
-impl From<crate::W<DBG_DLH_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DBG_DLH_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "UART Debug DLH Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbg_dlh](index.html) module"]
+#[doc = "UART Debug DLH Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbg_dlh](index.html) module"]
 pub struct DBG_DLH_SPEC;
 impl crate::RegisterSpec for DBG_DLH_SPEC {
     type Ux = u32;
@@ -50,10 +43,6 @@ impl crate::RegisterSpec for DBG_DLH_SPEC {
 #[doc = "`read()` method returns [dbg_dlh::R](R) reader structure"]
 impl crate::Readable for DBG_DLH_SPEC {
     type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dbg_dlh::W](W) writer structure"]
-impl crate::Writable for DBG_DLH_SPEC {
-    type Writer = W;
 }
 #[doc = "`reset()` method sets DBG_DLH to value 0"]
 impl crate::Resettable for DBG_DLH_SPEC {

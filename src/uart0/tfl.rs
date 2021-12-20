@@ -13,36 +13,29 @@ impl From<crate::R<TFL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TFL` writer"]
-pub struct W(crate::W<TFL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TFL_SPEC>;
+#[doc = "Field `tfl` reader - TX FIFO Level"]
+pub struct TFL_R(crate::FieldReader<u16, u16>);
+impl TFL_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u16) -> Self {
+        TFL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TFL_R {
+    type Target = crate::FieldReader<u16, u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl core::ops::DerefMut for W {
+impl R {
+    #[doc = "Bits 0:8 - TX FIFO Level"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn tfl(&self) -> TFL_R {
+        TFL_R::new((self.bits & 0x01ff) as u16)
     }
 }
-impl From<crate::W<TFL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TFL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "UART Transmit FIFO Level Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tfl](index.html) module"]
+#[doc = "UART Transmit FIFO Level Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tfl](index.html) module"]
 pub struct TFL_SPEC;
 impl crate::RegisterSpec for TFL_SPEC {
     type Ux = u32;
@@ -50,10 +43,6 @@ impl crate::RegisterSpec for TFL_SPEC {
 #[doc = "`read()` method returns [tfl::R](R) reader structure"]
 impl crate::Readable for TFL_SPEC {
     type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tfl::W](W) writer structure"]
-impl crate::Writable for TFL_SPEC {
-    type Writer = W;
 }
 #[doc = "`reset()` method sets TFL to value 0"]
 impl crate::Resettable for TFL_SPEC {

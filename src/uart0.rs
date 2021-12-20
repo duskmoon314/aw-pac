@@ -35,37 +35,37 @@ pub struct RegisterBlock {
     pub dbg_dlh: crate::Reg<dbg_dlh::DBG_DLH_SPEC>,
     _reserved16: [u8; 0x38],
     #[doc = "0xf0 - UART FIFO Clock Control Register"]
-    pub a_fcc: crate::Reg<a_fcc::A_FCC_SPEC>,
+    pub fcc: crate::Reg<fcc::FCC_SPEC>,
     _reserved17: [u8; 0x0c],
     #[doc = "0x100 - UART RXDMA Control Register"]
-    pub a_rxdma_ctrl: crate::Reg<a_rxdma_ctrl::A_RXDMA_CTRL_SPEC>,
+    pub rxdma_ctrl: crate::Reg<rxdma_ctrl::RXDMA_CTRL_SPEC>,
     #[doc = "0x104 - UART RXDMA Start Register"]
-    pub a_rxdma_str: crate::Reg<a_rxdma_str::A_RXDMA_STR_SPEC>,
+    pub rxdma_str: crate::Reg<rxdma_str::RXDMA_STR_SPEC>,
     #[doc = "0x108 - UART RXDMA Status Register"]
-    pub a_rxdma_sta: crate::Reg<a_rxdma_sta::A_RXDMA_STA_SPEC>,
+    pub rxdma_sta: crate::Reg<rxdma_sta::RXDMA_STA_SPEC>,
     #[doc = "0x10c - UART RXDMA Limit Register"]
-    pub a_rxdma_lmt: crate::Reg<a_rxdma_lmt::A_RXDMA_LMT_SPEC>,
+    pub rxdma_lmt: crate::Reg<rxdma_lmt::RXDMA_LMT_SPEC>,
     #[doc = "0x110 - UART RXDMA Buffer Start Address Low Register"]
-    pub a_rxdma_saddrl: crate::Reg<a_rxdma_saddrl::A_RXDMA_SADDRL_SPEC>,
+    pub rxdma_saddrl: crate::Reg<rxdma_saddrl::RXDMA_SADDRL_SPEC>,
     #[doc = "0x114 - UART RXDMA Buffer Start Address High Register"]
-    pub a_rxdma_saddrh: crate::Reg<a_rxdma_saddrh::A_RXDMA_SADDRH_SPEC>,
+    pub rxdma_saddrh: crate::Reg<rxdma_saddrh::RXDMA_SADDRH_SPEC>,
     #[doc = "0x118 - UART RXDMA Buffer Length Register"]
-    pub a_rxdma_bl: crate::Reg<a_rxdma_bl::A_RXDMA_BL_SPEC>,
+    pub rxdma_bl: crate::Reg<rxdma_bl::RXDMA_BL_SPEC>,
     _reserved24: [u8; 0x04],
     #[doc = "0x120 - UART RXDMA Interrupt Enable Register"]
-    pub a_rxdma_ie: crate::Reg<a_rxdma_ie::A_RXDMA_IE_SPEC>,
+    pub rxdma_ie: crate::Reg<rxdma_ie::RXDMA_IE_SPEC>,
     #[doc = "0x124 - UART RXDMA Interrupt Status Register"]
-    pub a_rxdma_is: crate::Reg<a_rxdma_is::A_RXDMA_IS_SPEC>,
+    pub rxdma_is: crate::Reg<rxdma_is::RXDMA_IS_SPEC>,
     #[doc = "0x128 - UART RXDMA Write Address Low Register"]
-    pub a_rxdma_waddrl: crate::Reg<a_rxdma_waddrl::A_RXDMA_WADDRL_SPEC>,
+    pub rxdma_waddrl: crate::Reg<rxdma_waddrl::RXDMA_WADDRL_SPEC>,
     #[doc = "0x12c - UART RXDMA Write Address High Register"]
-    pub a_rxdma_waddrh: crate::Reg<a_rxdma_waddrh::A_RXDMA_WADDRH_SPEC>,
+    pub rxdma_waddrh: crate::Reg<rxdma_waddrh::RXDMA_WADDRH_SPEC>,
     #[doc = "0x130 - UART RXDMA Read Address Low Register"]
-    pub a_rxdma_raddrl: crate::Reg<a_rxdma_raddrl::A_RXDMA_RADDRL_SPEC>,
+    pub rxdma_raddrl: crate::Reg<rxdma_raddrl::RXDMA_RADDRL_SPEC>,
     #[doc = "0x134 - UART RXDMA Read Address High Register"]
-    pub a_rxdma_raddrh: crate::Reg<a_rxdma_raddrh::A_RXDMA_RADDRH_SPEC>,
+    pub rxdma_raddrh: crate::Reg<rxdma_raddrh::RXDMA_RADDRH_SPEC>,
     #[doc = "0x138 - UART RXDMA Data Count Register"]
-    pub a_rxdma_dcnt: crate::Reg<a_rxdma_dcnt::A_RXDMA_DCNT_SPEC>,
+    pub rxdma_dcnt: crate::Reg<rxdma_dcnt::RXDMA_DCNT_SPEC>,
 }
 impl RegisterBlock {
     #[doc = "0x00 - UART Divisor Latch Low Register"]
@@ -198,63 +198,63 @@ pub mod dbg_dll;
 pub type DBG_DLH = crate::Reg<dbg_dlh::DBG_DLH_SPEC>;
 #[doc = "UART Debug DLH Register"]
 pub mod dbg_dlh;
-#[doc = "A_FCC register accessor: an alias for `Reg<A_FCC_SPEC>`"]
-pub type A_FCC = crate::Reg<a_fcc::A_FCC_SPEC>;
+#[doc = "FCC register accessor: an alias for `Reg<FCC_SPEC>`"]
+pub type FCC = crate::Reg<fcc::FCC_SPEC>;
 #[doc = "UART FIFO Clock Control Register"]
-pub mod a_fcc;
-#[doc = "A_RXDMA_CTRL register accessor: an alias for `Reg<A_RXDMA_CTRL_SPEC>`"]
-pub type A_RXDMA_CTRL = crate::Reg<a_rxdma_ctrl::A_RXDMA_CTRL_SPEC>;
+pub mod fcc;
+#[doc = "RXDMA_CTRL register accessor: an alias for `Reg<RXDMA_CTRL_SPEC>`"]
+pub type RXDMA_CTRL = crate::Reg<rxdma_ctrl::RXDMA_CTRL_SPEC>;
 #[doc = "UART RXDMA Control Register"]
-pub mod a_rxdma_ctrl;
-#[doc = "A_RXDMA_STR register accessor: an alias for `Reg<A_RXDMA_STR_SPEC>`"]
-pub type A_RXDMA_STR = crate::Reg<a_rxdma_str::A_RXDMA_STR_SPEC>;
+pub mod rxdma_ctrl;
+#[doc = "RXDMA_STR register accessor: an alias for `Reg<RXDMA_STR_SPEC>`"]
+pub type RXDMA_STR = crate::Reg<rxdma_str::RXDMA_STR_SPEC>;
 #[doc = "UART RXDMA Start Register"]
-pub mod a_rxdma_str;
-#[doc = "A_RXDMA_STA register accessor: an alias for `Reg<A_RXDMA_STA_SPEC>`"]
-pub type A_RXDMA_STA = crate::Reg<a_rxdma_sta::A_RXDMA_STA_SPEC>;
+pub mod rxdma_str;
+#[doc = "RXDMA_STA register accessor: an alias for `Reg<RXDMA_STA_SPEC>`"]
+pub type RXDMA_STA = crate::Reg<rxdma_sta::RXDMA_STA_SPEC>;
 #[doc = "UART RXDMA Status Register"]
-pub mod a_rxdma_sta;
-#[doc = "A_RXDMA_LMT register accessor: an alias for `Reg<A_RXDMA_LMT_SPEC>`"]
-pub type A_RXDMA_LMT = crate::Reg<a_rxdma_lmt::A_RXDMA_LMT_SPEC>;
+pub mod rxdma_sta;
+#[doc = "RXDMA_LMT register accessor: an alias for `Reg<RXDMA_LMT_SPEC>`"]
+pub type RXDMA_LMT = crate::Reg<rxdma_lmt::RXDMA_LMT_SPEC>;
 #[doc = "UART RXDMA Limit Register"]
-pub mod a_rxdma_lmt;
-#[doc = "A_RXDMA_SADDRL register accessor: an alias for `Reg<A_RXDMA_SADDRL_SPEC>`"]
-pub type A_RXDMA_SADDRL = crate::Reg<a_rxdma_saddrl::A_RXDMA_SADDRL_SPEC>;
+pub mod rxdma_lmt;
+#[doc = "RXDMA_SADDRL register accessor: an alias for `Reg<RXDMA_SADDRL_SPEC>`"]
+pub type RXDMA_SADDRL = crate::Reg<rxdma_saddrl::RXDMA_SADDRL_SPEC>;
 #[doc = "UART RXDMA Buffer Start Address Low Register"]
-pub mod a_rxdma_saddrl;
-#[doc = "A_RXDMA_SADDRH register accessor: an alias for `Reg<A_RXDMA_SADDRH_SPEC>`"]
-pub type A_RXDMA_SADDRH = crate::Reg<a_rxdma_saddrh::A_RXDMA_SADDRH_SPEC>;
+pub mod rxdma_saddrl;
+#[doc = "RXDMA_SADDRH register accessor: an alias for `Reg<RXDMA_SADDRH_SPEC>`"]
+pub type RXDMA_SADDRH = crate::Reg<rxdma_saddrh::RXDMA_SADDRH_SPEC>;
 #[doc = "UART RXDMA Buffer Start Address High Register"]
-pub mod a_rxdma_saddrh;
-#[doc = "A_RXDMA_BL register accessor: an alias for `Reg<A_RXDMA_BL_SPEC>`"]
-pub type A_RXDMA_BL = crate::Reg<a_rxdma_bl::A_RXDMA_BL_SPEC>;
+pub mod rxdma_saddrh;
+#[doc = "RXDMA_BL register accessor: an alias for `Reg<RXDMA_BL_SPEC>`"]
+pub type RXDMA_BL = crate::Reg<rxdma_bl::RXDMA_BL_SPEC>;
 #[doc = "UART RXDMA Buffer Length Register"]
-pub mod a_rxdma_bl;
-#[doc = "A_RXDMA_IE register accessor: an alias for `Reg<A_RXDMA_IE_SPEC>`"]
-pub type A_RXDMA_IE = crate::Reg<a_rxdma_ie::A_RXDMA_IE_SPEC>;
+pub mod rxdma_bl;
+#[doc = "RXDMA_IE register accessor: an alias for `Reg<RXDMA_IE_SPEC>`"]
+pub type RXDMA_IE = crate::Reg<rxdma_ie::RXDMA_IE_SPEC>;
 #[doc = "UART RXDMA Interrupt Enable Register"]
-pub mod a_rxdma_ie;
-#[doc = "A_RXDMA_IS register accessor: an alias for `Reg<A_RXDMA_IS_SPEC>`"]
-pub type A_RXDMA_IS = crate::Reg<a_rxdma_is::A_RXDMA_IS_SPEC>;
+pub mod rxdma_ie;
+#[doc = "RXDMA_IS register accessor: an alias for `Reg<RXDMA_IS_SPEC>`"]
+pub type RXDMA_IS = crate::Reg<rxdma_is::RXDMA_IS_SPEC>;
 #[doc = "UART RXDMA Interrupt Status Register"]
-pub mod a_rxdma_is;
-#[doc = "A_RXDMA_WADDRL register accessor: an alias for `Reg<A_RXDMA_WADDRL_SPEC>`"]
-pub type A_RXDMA_WADDRL = crate::Reg<a_rxdma_waddrl::A_RXDMA_WADDRL_SPEC>;
+pub mod rxdma_is;
+#[doc = "RXDMA_WADDRL register accessor: an alias for `Reg<RXDMA_WADDRL_SPEC>`"]
+pub type RXDMA_WADDRL = crate::Reg<rxdma_waddrl::RXDMA_WADDRL_SPEC>;
 #[doc = "UART RXDMA Write Address Low Register"]
-pub mod a_rxdma_waddrl;
-#[doc = "A_RXDMA_WADDRH register accessor: an alias for `Reg<A_RXDMA_WADDRH_SPEC>`"]
-pub type A_RXDMA_WADDRH = crate::Reg<a_rxdma_waddrh::A_RXDMA_WADDRH_SPEC>;
+pub mod rxdma_waddrl;
+#[doc = "RXDMA_WADDRH register accessor: an alias for `Reg<RXDMA_WADDRH_SPEC>`"]
+pub type RXDMA_WADDRH = crate::Reg<rxdma_waddrh::RXDMA_WADDRH_SPEC>;
 #[doc = "UART RXDMA Write Address High Register"]
-pub mod a_rxdma_waddrh;
-#[doc = "A_RXDMA_RADDRL register accessor: an alias for `Reg<A_RXDMA_RADDRL_SPEC>`"]
-pub type A_RXDMA_RADDRL = crate::Reg<a_rxdma_raddrl::A_RXDMA_RADDRL_SPEC>;
+pub mod rxdma_waddrh;
+#[doc = "RXDMA_RADDRL register accessor: an alias for `Reg<RXDMA_RADDRL_SPEC>`"]
+pub type RXDMA_RADDRL = crate::Reg<rxdma_raddrl::RXDMA_RADDRL_SPEC>;
 #[doc = "UART RXDMA Read Address Low Register"]
-pub mod a_rxdma_raddrl;
-#[doc = "A_RXDMA_RADDRH register accessor: an alias for `Reg<A_RXDMA_RADDRH_SPEC>`"]
-pub type A_RXDMA_RADDRH = crate::Reg<a_rxdma_raddrh::A_RXDMA_RADDRH_SPEC>;
+pub mod rxdma_raddrl;
+#[doc = "RXDMA_RADDRH register accessor: an alias for `Reg<RXDMA_RADDRH_SPEC>`"]
+pub type RXDMA_RADDRH = crate::Reg<rxdma_raddrh::RXDMA_RADDRH_SPEC>;
 #[doc = "UART RXDMA Read Address High Register"]
-pub mod a_rxdma_raddrh;
-#[doc = "A_RXDMA_DCNT register accessor: an alias for `Reg<A_RXDMA_DCNT_SPEC>`"]
-pub type A_RXDMA_DCNT = crate::Reg<a_rxdma_dcnt::A_RXDMA_DCNT_SPEC>;
+pub mod rxdma_raddrh;
+#[doc = "RXDMA_DCNT register accessor: an alias for `Reg<RXDMA_DCNT_SPEC>`"]
+pub type RXDMA_DCNT = crate::Reg<rxdma_dcnt::RXDMA_DCNT_SPEC>;
 #[doc = "UART RXDMA Data Count Register"]
-pub mod a_rxdma_dcnt;
+pub mod rxdma_dcnt;

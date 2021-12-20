@@ -13,36 +13,29 @@ impl From<crate::R<DBG_DLL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DBG_DLL` writer"]
-pub struct W(crate::W<DBG_DLL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DBG_DLL_SPEC>;
+#[doc = "Field `DBG_DLL` reader - "]
+pub struct DBG_DLL_R(crate::FieldReader<u8, u8>);
+impl DBG_DLL_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        DBG_DLL_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DBG_DLL_R {
+    type Target = crate::FieldReader<u8, u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl core::ops::DerefMut for W {
+impl R {
+    #[doc = "Bits 0:7"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn dbg_dll(&self) -> DBG_DLL_R {
+        DBG_DLL_R::new((self.bits & 0xff) as u8)
     }
 }
-impl From<crate::W<DBG_DLL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DBG_DLL_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "UART Debug DLL Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbg_dll](index.html) module"]
+#[doc = "UART Debug DLL Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbg_dll](index.html) module"]
 pub struct DBG_DLL_SPEC;
 impl crate::RegisterSpec for DBG_DLL_SPEC {
     type Ux = u32;
@@ -50,10 +43,6 @@ impl crate::RegisterSpec for DBG_DLL_SPEC {
 #[doc = "`read()` method returns [dbg_dll::R](R) reader structure"]
 impl crate::Readable for DBG_DLL_SPEC {
     type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dbg_dll::W](W) writer structure"]
-impl crate::Writable for DBG_DLL_SPEC {
-    type Writer = W;
 }
 #[doc = "`reset()` method sets DBG_DLL to value 0"]
 impl crate::Resettable for DBG_DLL_SPEC {
