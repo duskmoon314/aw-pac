@@ -27,6 +27,139 @@
           <name>PLL_CPU_CTRL</name>
           <description>PLL_CPU Control Register</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_EN</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <description>It indicates that the PLL has been stable.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_TIME</name>
+              <description>PLL Lock Time\n\nThe bit indicates the step amplitude from one frequency to another.</description>
+              <bitRange>[26:24]</bitRange>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N\n\nN = PLL_N + 1\n\nPLL_N is from 0 to 254</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <description>21 - 29 Clock Cycles</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <description>22 - 28 Clock Cycles</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <description>20 - 30 Clock Cycles</description>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <description>24 - 26 Clock Cycles</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <description>23 - 27 Clock Cycles</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_M</name>
+              <description>PLL M\n\nM = PLL_FACTOR_M + 1\n\nPLL_FACTOR_M is from 0 to 3</description>
+              <bitRange>[1:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_DDR_CTRL</name>
