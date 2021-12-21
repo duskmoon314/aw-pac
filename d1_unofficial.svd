@@ -797,6 +797,12 @@
           <addressOffset>0x4004</addressOffset>
         </register>
         <register>
+          <name>mtime</name>
+          <description>MTIME\n\nREF: opensbi</description>
+          <addressOffset>0xBFF8</addressOffset>
+          <access>read-only</access>
+        </register>
+        <register>
           <name>ssip</name>
           <description>SSIP Register for hart 0</description>
           <addressOffset>0xC000</addressOffset>

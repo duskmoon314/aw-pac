@@ -8,10 +8,13 @@ pub struct RegisterBlock {
     pub mtimecmpl: crate::Reg<mtimecmpl::MTIMECMPL_SPEC>,
     #[doc = "0x4004 - MTIMECMPH Register for hart 0"]
     pub mtimecmph: crate::Reg<mtimecmph::MTIMECMPH_SPEC>,
-    _reserved3: [u8; 0x7ff8],
+    _reserved3: [u8; 0x7ff0],
+    #[doc = "0xbff8 - MTIME\n\nREF: opensbi"]
+    pub mtime: crate::Reg<mtime::MTIME_SPEC>,
+    _reserved4: [u8; 0x04],
     #[doc = "0xc000 - SSIP Register for hart 0"]
     pub ssip: crate::Reg<ssip::SSIP_SPEC>,
-    _reserved4: [u8; 0x0ffc],
+    _reserved5: [u8; 0x0ffc],
     #[doc = "0xd000 - STIMECMPL Register for hart 0"]
     pub stimecmpl: crate::Reg<stimecmpl::STIMECMPL_SPEC>,
     #[doc = "0xd004 - STIMECMPH Register for hart 0"]
@@ -29,6 +32,10 @@ pub mod mtimecmpl;
 pub type MTIMECMPH = crate::Reg<mtimecmph::MTIMECMPH_SPEC>;
 #[doc = "MTIMECMPH Register for hart 0"]
 pub mod mtimecmph;
+#[doc = "mtime register accessor: an alias for `Reg<MTIME_SPEC>`"]
+pub type MTIME = crate::Reg<mtime::MTIME_SPEC>;
+#[doc = "MTIME\n\nREF: opensbi"]
+pub mod mtime;
 #[doc = "ssip register accessor: an alias for `Reg<SSIP_SPEC>`"]
 pub type SSIP = crate::Reg<ssip::SSIP_SPEC>;
 #[doc = "SSIP Register for hart 0"]
