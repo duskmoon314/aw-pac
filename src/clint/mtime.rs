@@ -16,7 +16,7 @@ impl From<crate::R<MTIME_SPEC>> for R {
 #[doc = "MTIME\n\nREF: opensbi\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mtime](index.html) module"]
 pub struct MTIME_SPEC;
 impl crate::RegisterSpec for MTIME_SPEC {
-    type Ux = u32;
+    type Ux = u64;
 }
 #[doc = "`read()` method returns [mtime::R](R) reader structure"]
 impl crate::Readable for MTIME_SPEC {

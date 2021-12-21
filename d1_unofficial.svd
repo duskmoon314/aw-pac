@@ -801,6 +801,7 @@
           <description>MTIME\n\nREF: opensbi</description>
           <addressOffset>0xBFF8</addressOffset>
           <access>read-only</access>
+          <size>64</size>
         </register>
         <register>
           <name>ssip</name>

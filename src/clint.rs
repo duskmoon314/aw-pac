@@ -9,9 +9,8 @@ pub struct RegisterBlock {
     #[doc = "0x4004 - MTIMECMPH Register for hart 0"]
     pub mtimecmph: crate::Reg<mtimecmph::MTIMECMPH_SPEC>,
     _reserved3: [u8; 0x7ff0],
-    #[doc = "0xbff8 - MTIME\n\nREF: opensbi"]
+    #[doc = "0xbff8..0xc000 - MTIME\n\nREF: opensbi"]
     pub mtime: crate::Reg<mtime::MTIME_SPEC>,
-    _reserved4: [u8; 0x04],
     #[doc = "0xc000 - SSIP Register for hart 0"]
     pub ssip: crate::Reg<ssip::SSIP_SPEC>,
     _reserved5: [u8; 0x0ffc],
