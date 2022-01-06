@@ -25,7 +25,14 @@ use generic::*;
 #[doc = r"Common register and bit access and modify traits"]
 pub mod generic;
 #[cfg(feature = "rt")]
-extern "C" {}
+extern "C" {
+    fn UART0();
+    fn UART1();
+    fn UART2();
+    fn UART3();
+    fn UART4();
+    fn UART5();
+}
 #[doc(hidden)]
 pub union Vector {
     pub _handler: unsafe extern "C" fn(),
@@ -34,7 +41,35 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 0] = [];
+pub static __EXTERNAL_INTERRUPTS: [Vector; 24] = [
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: UART0 },
+    Vector { _handler: UART1 },
+    Vector { _handler: UART2 },
+    Vector { _handler: UART3 },
+    Vector { _handler: UART4 },
+    Vector { _handler: UART5 },
+];
+#[doc(hidden)]
+pub mod interrupt;
+pub use self::interrupt::Interrupt;
 #[doc = "Clock Controller Unit"]
 pub struct CCU {
     _marker: PhantomData<*const ()>,
@@ -259,6 +294,146 @@ impl core::fmt::Debug for UART0 {
 }
 #[doc = "Universal Asynchronous Receiver Transmitter"]
 pub mod uart0;
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub struct UART1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UART1 {}
+impl UART1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const uart1::RegisterBlock = 0x0250_0400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uart1::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for UART1 {
+    type Target = uart1::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for UART1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART1").finish()
+    }
+}
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub mod uart1;
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub struct UART2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UART2 {}
+impl UART2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const uart2::RegisterBlock = 0x0250_0800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uart2::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for UART2 {
+    type Target = uart2::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for UART2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART2").finish()
+    }
+}
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub mod uart2;
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub struct UART3 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UART3 {}
+impl UART3 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const uart3::RegisterBlock = 0x0250_0c00 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uart3::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for UART3 {
+    type Target = uart3::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for UART3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART3").finish()
+    }
+}
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub mod uart3;
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub struct UART4 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UART4 {}
+impl UART4 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const uart4::RegisterBlock = 0x0250_1000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uart4::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for UART4 {
+    type Target = uart4::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for UART4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART4").finish()
+    }
+}
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub mod uart4;
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub struct UART5 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for UART5 {}
+impl UART5 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const uart5::RegisterBlock = 0x0250_1400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const uart5::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for UART5 {
+    type Target = uart5::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for UART5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UART5").finish()
+    }
+}
+#[doc = "Universal Asynchronous Receiver Transmitter"]
+pub mod uart5;
 #[doc = "Gerneral Purpose Input/Output"]
 pub struct GPIO {
     _marker: PhantomData<*const ()>,
@@ -308,6 +483,16 @@ pub struct Peripherals {
     pub SPI0: SPI0,
     #[doc = "UART0"]
     pub UART0: UART0,
+    #[doc = "UART1"]
+    pub UART1: UART1,
+    #[doc = "UART2"]
+    pub UART2: UART2,
+    #[doc = "UART3"]
+    pub UART3: UART3,
+    #[doc = "UART4"]
+    pub UART4: UART4,
+    #[doc = "UART5"]
+    pub UART5: UART5,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
 }
@@ -350,6 +535,21 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             UART0: UART0 {
+                _marker: PhantomData,
+            },
+            UART1: UART1 {
+                _marker: PhantomData,
+            },
+            UART2: UART2 {
+                _marker: PhantomData,
+            },
+            UART3: UART3 {
+                _marker: PhantomData,
+            },
+            UART4: UART4 {
+                _marker: PhantomData,
+            },
+            UART5: UART5 {
                 _marker: PhantomData,
             },
             GPIO: GPIO {

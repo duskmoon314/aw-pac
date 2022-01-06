@@ -1,12 +1,13 @@
 [package]
 name = "d1-pac"
-version = "0.0.4"
+version = "0.0.5"
 edition = "2021"
 authors = ["duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>"]
 description = "Peripheral access API for Allwinner D1 SoC generated from unofficial SVD file"
 categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["no-std", "riscv", "register", "peripheral"]
 license = "MIT OR Apache-2.0"
+repository = "https://github.com/duskmoon314/d1-pac"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

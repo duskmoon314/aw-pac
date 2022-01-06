@@ -42,7 +42,7 @@ impl W {
         self
     }
 }
-#[doc = "SPI Bit\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_ba_ccr](index.html) module"]
+#[doc = "SPI Bit-Aligned Clock Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_ba_ccr](index.html) module"]
 pub struct SPI_BA_CCR_SPEC;
 impl crate::RegisterSpec for SPI_BA_CCR_SPEC {
     type Ux = u32;
