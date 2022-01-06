@@ -14,6 +14,14 @@ pub enum Interrupt {
     UART4 = 22,
     #[doc = "23 - UART5"]
     UART5 = 23,
+    #[doc = "25 - TWI0"]
+    TWI0 = 25,
+    #[doc = "26 - TWI1"]
+    TWI1 = 26,
+    #[doc = "27 - TWI2"]
+    TWI2 = 27,
+    #[doc = "28 - TWI3"]
+    TWI3 = 28,
 }
 #[doc = r" TryFromInterruptError"]
 #[derive(Debug, Copy, Clone)]
@@ -29,6 +37,10 @@ impl Interrupt {
             21 => Ok(Interrupt::UART3),
             22 => Ok(Interrupt::UART4),
             23 => Ok(Interrupt::UART5),
+            25 => Ok(Interrupt::TWI0),
+            26 => Ok(Interrupt::TWI1),
+            27 => Ok(Interrupt::TWI2),
+            28 => Ok(Interrupt::TWI3),
             _ => Err(TryFromInterruptError(())),
         }
     }

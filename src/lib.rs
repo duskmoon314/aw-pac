@@ -32,6 +32,10 @@ extern "C" {
     fn UART3();
     fn UART4();
     fn UART5();
+    fn TWI0();
+    fn TWI1();
+    fn TWI2();
+    fn TWI3();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -41,7 +45,7 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 24] = [
+pub static __EXTERNAL_INTERRUPTS: [Vector; 29] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -66,6 +70,11 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 24] = [
     Vector { _handler: UART3 },
     Vector { _handler: UART4 },
     Vector { _handler: UART5 },
+    Vector { _reserved: 0 },
+    Vector { _handler: TWI0 },
+    Vector { _handler: TWI1 },
+    Vector { _handler: TWI2 },
+    Vector { _handler: TWI3 },
 ];
 #[doc(hidden)]
 pub mod interrupt;
@@ -238,6 +247,90 @@ impl core::fmt::Debug for TWI0 {
 }
 #[doc = "Two Wire Interface"]
 pub mod twi0;
+#[doc = "Two Wire Interface"]
+pub struct TWI1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TWI1 {}
+impl TWI1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const twi1::RegisterBlock = 0x0250_2400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const twi1::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TWI1 {
+    type Target = twi1::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TWI1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TWI1").finish()
+    }
+}
+#[doc = "Two Wire Interface"]
+pub mod twi1;
+#[doc = "Two Wire Interface"]
+pub struct TWI2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TWI2 {}
+impl TWI2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const twi2::RegisterBlock = 0x0250_2800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const twi2::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TWI2 {
+    type Target = twi2::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TWI2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TWI2").finish()
+    }
+}
+#[doc = "Two Wire Interface"]
+pub mod twi2;
+#[doc = "Two Wire Interface"]
+pub struct TWI3 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TWI3 {}
+impl TWI3 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const twi3::RegisterBlock = 0x0250_2c00 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const twi3::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TWI3 {
+    type Target = twi3::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TWI3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TWI3").finish()
+    }
+}
+#[doc = "Two Wire Interface"]
+pub mod twi3;
 #[doc = "Serial Peripheral Interface"]
 pub struct SPI0 {
     _marker: PhantomData<*const ()>,
@@ -479,6 +572,12 @@ pub struct Peripherals {
     pub PLIC: PLIC,
     #[doc = "TWI0"]
     pub TWI0: TWI0,
+    #[doc = "TWI1"]
+    pub TWI1: TWI1,
+    #[doc = "TWI2"]
+    pub TWI2: TWI2,
+    #[doc = "TWI3"]
+    pub TWI3: TWI3,
     #[doc = "SPI0"]
     pub SPI0: SPI0,
     #[doc = "UART0"]
@@ -529,6 +628,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {
+                _marker: PhantomData,
+            },
+            TWI1: TWI1 {
+                _marker: PhantomData,
+            },
+            TWI2: TWI2 {
+                _marker: PhantomData,
+            },
+            TWI3: TWI3 {
                 _marker: PhantomData,
             },
             SPI0: SPI0 {

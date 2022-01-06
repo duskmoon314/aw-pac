@@ -1803,101 +1803,3612 @@
         <size>0x400</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>TWI0</name>
+        <value>25</value>
+      </interrupt>
       <registers>
         <register>
           <name>TWI_ADDR</name>
           <description>TWI Slave Address Register</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>SLA</name>
+              <description>Slave Address</description>
+              <bitRange>[7:1]</bitRange>
+            </field>
+            <field>
+              <name>GCE</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_XADDR</name>
           <description>TWI Extended Slave Address Register</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>SLAX</name>
+              <description>Extend Slave Address\n\nSLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DATA</name>
           <description>TWI Data Byte Register</description>
           <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>data</name>
+              <description>Data byte transmitted or received</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_CNTR</name>
           <description>TWI Control Register</description>
           <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>int_en</name>
+              <description>Interrupt Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>The interrupt line always low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>The interrupt line will go high when INT_FLAG is set</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bus_en</name>
+              <description>TWI Bus Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ignored</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>respond</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>m_sta</name>
+              <description>Master Mode Start</description>
+              <bitRange>[5:5]</bitRange>
+            </field>
+            <field>
+              <name>m_stp</name>
+              <description>Master Mode Stop</description>
+              <bitRange>[4:4]</bitRange>
+            </field>
+            <field>
+              <name>int_flag</name>
+              <description>Interrupt Flag</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>a_ack</name>
+              <description>Assert Acknowledge</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_STAT</name>
           <description>TWI Status Register</description>
           <addressOffset>0x0010</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>sta</name>
+              <bitRange>[7:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>Bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_at</name>
+                  <description>Data byte received in master mode, ACK transmitted</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ant</name>
+                  <description>Data byte received in master mode, not ACK transmitted</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawr_at</name>
+                  <description>Slave address + Write bit received, ACK transmitted</description>
+                  <value>0x60</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sawr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Write bit received, ACK transmitted</description>
+                  <value>0x68</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>gcar_at</name>
+                  <description>General Call address received, ACK transmitted</description>
+                  <value>0x70</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_gcar_at</name>
+                  <description>Arbitration lost in the address as master, General Call address received, ACK transmitted</description>
+                  <value>0x78</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_at</name>
+                  <description>Data byte received after slave address received, ACK transmitted</description>
+                  <value>0x80</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_ant</name>
+                  <description>Data byte received after slave address received, not ACK transmitted</description>
+                  <value>0x88</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_at</name>
+                  <description>Data byte received after General Call received, ACK transmitted</description>
+                  <value>0x90</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_ant</name>
+                  <description>Data byte received after General Call received, not ACK transmitted</description>
+                  <value>0x98</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>srscrs</name>
+                  <description>STOP or repeated START condition received in slave mode</description>
+                  <value>0xA0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sarr_at</name>
+                  <description>Slave address + Read bit received, ACK transmitted</description>
+                  <value>0xA8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sarr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Read bit received, ACK transmitted</description>
+                  <value>0xB0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_ar</name>
+                  <description>Data byte transmitted in slave mode, ACK received</description>
+                  <value>0xB8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_anr</name>
+                  <description>Data byte transmitted in slave mode, ACK not received</description>
+                  <value>0xC0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>lbts_ar</name>
+                  <description>The Last byte transmitted in slave mode, ACK received</description>
+                  <value>0xC8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_ar</name>
+                  <description>Second Address byte + Write bit transmitted, ACK received</description>
+                  <value>0xD0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_anr</name>
+                  <description>Second Address byte + Write bit transmitted, ACK not received</description>
+                  <value>0xD8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>nrsi</name>
+                  <description>No relevant status information, INT_FLAG=0</description>
+                  <value>0xF8</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_CCR</name>
           <description>TWI Clock Control Register</description>
           <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[6:3]</bitRange>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[2:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_SRST</name>
           <description>TWI Software Reset Register</description>
           <addressOffset>0x0018</addressOffset>
+          <fields>
+            <field>
+              <name>soft_rst</name>
+              <description>Soft Reset</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_EFR</name>
           <description>TWI Enhance Feature Register</description>
           <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>dbn</name>
+              <description>Data Byte Number Follow Read Command Control</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B0</name>
+                  <description>No data byte can be written after the read command</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B1</name>
+                  <description>1-byte data can be written after the read command</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B2</name>
+                  <description>2-byte data can be written after the read command</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B3</name>
+                  <description>3-byte data can be written after the read command</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_LCR</name>
           <description>TWI Line Control Register</description>
           <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>scl_state</name>
+              <description>Current State of TWI_SCL</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_state</name>
+              <description>Current State of TWI_SDA</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl</name>
+              <description>TWI_SCL Line State Control Bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl_en</name>
+              <description>TWI_SCL Line State Control Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl</name>
+              <description>TWI_SDA Line State Control Bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl_en</name>
+              <description>TWI_SDA Line State Control Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_CTRL</name>
           <description>TWI_DRV Control Register</description>
           <addressOffset>0x0200</addressOffset>
+          <fields>
+            <field>
+              <name>start_tran</name>
+              <description>Start transmission</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>restart_mode</name>
+              <description>Restart mode</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>restart</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>stop_restart</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>read_tran_mode</name>
+              <description>Read transition mode</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>send</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_send</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tran_result</name>
+              <description>Transition result</description>
+              <bitRange>[27:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ok</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>fail</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_sta</name>
+              <description>TWI status</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ar</name>
+                  <description>Data byte received in master mode, ACK received</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_anr</name>
+                  <description>Data byte received in master mode, ACK not received</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>t_s9sc</name>
+                  <description>Timeout when sending the 9th SCL clock</description>
+                  <value>0x01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>timeout_n</name>
+              <description>Timeout number</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>soft_reset</name>
+              <description>Software reset</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reset</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_drv_en</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_CFG</name>
           <description>TWI_DRV Transmission Configuration Register</description>
           <addressOffset>0x0204</addressOffset>
+          <fields>
+            <field>
+              <name>pkt_interval</name>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>packet_cnt</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_SLV</name>
           <description>TWI_DRV Slave ID Register</description>
           <addressOffset>0x0208</addressOffset>
+          <fields>
+            <field>
+              <name>slv_id</name>
+              <description>Slave device ID</description>
+              <bitRange>[15:9]</bitRange>
+            </field>
+            <field>
+              <name>cmd</name>
+              <description>R/W operation to slave device</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>write</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>read</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>slv_id_x</name>
+              <description>SLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_FMT</name>
           <description>TWI_DRV Packet Format Register</description>
           <addressOffset>0x020C</addressOffset>
+          <fields>
+            <field>
+              <name>addr_byte</name>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>data_byte</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_BUS_CTRL</name>
           <description>TWI_DRV Bus Control Register</description>
           <addressOffset>0x0210</addressOffset>
+          <fields>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[14:12]</bitRange>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[11:8]</bitRange>
+            </field>
+            <field>
+              <name>scl_sta</name>
+              <description>SCL current status</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>sda_sta</name>
+              <description>SDA current status</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>scl_mov</name>
+              <description>SCL manual output value</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>sda_mov</name>
+              <description>SDA manual output value</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>scl_moe</name>
+              <description>SCL manual output enable</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>sda_moe</name>
+              <description>SDA manual output enable</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_INT_CTRL</name>
           <description>TWI_DRV Interrupt Control Register</description>
           <addressOffset>0x0214</addressOffset>
+          <fields>
+            <field>
+              <name>rx_req_int_en</name>
+              <bitRange>[19:19]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_int_en</name>
+              <bitRange>[18:18]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_int_en</name>
+              <bitRange>[17:17]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_int_en</name>
+              <bitRange>[16:16]</bitRange>
+            </field>
+            <field>
+              <name>rx_req_pd</name>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_pd</name>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_pd</name>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_pd</name>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_DMA_CFG</name>
           <description>TWI_DRV DMA Configure Register</description>
           <addressOffset>0x0218</addressOffset>
+          <fields>
+            <field>
+              <name>dma_rx_en</name>
+              <bitRange>[24:23]</bitRange>
+            </field>
+            <field>
+              <name>rx_trig</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>dma_tx_en</name>
+              <bitRange>[8:8]</bitRange>
+            </field>
+            <field>
+              <name>tx_trig</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_FIFO_CON</name>
           <description>TWI_DRV FIFO Content Register</description>
           <addressOffset>0x021C</addressOffset>
+          <fields>
+            <field>
+              <name>recv_fifo_clear</name>
+              <bitRange>[22:22]</bitRange>
+            </field>
+            <field>
+              <name>recv_fifo_content</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_clear</name>
+              <bitRange>[6:6]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_content</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_SEND_FIFO_ACC</name>
           <description>TWI_DRV Send Data FIFO Access Register</description>
           <addressOffset>0x0300</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>send_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_DRV_RECV_FIFO_ACC</name>
           <description>TWI_DRV Receive Data FIFO Access Register</description>
           <addressOffset>0x0304</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>recv_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TWI1</name>
+      <description>Two Wire Interface</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02502400</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>TWI1</name>
+        <value>26</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>TWI_ADDR</name>
+          <description>TWI Slave Address Register</description>
+          <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>SLA</name>
+              <description>Slave Address</description>
+              <bitRange>[7:1]</bitRange>
+            </field>
+            <field>
+              <name>GCE</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_XADDR</name>
+          <description>TWI Extended Slave Address Register</description>
+          <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>SLAX</name>
+              <description>Extend Slave Address\n\nSLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DATA</name>
+          <description>TWI Data Byte Register</description>
+          <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>data</name>
+              <description>Data byte transmitted or received</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_CNTR</name>
+          <description>TWI Control Register</description>
+          <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>int_en</name>
+              <description>Interrupt Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>The interrupt line always low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>The interrupt line will go high when INT_FLAG is set</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bus_en</name>
+              <description>TWI Bus Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ignored</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>respond</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>m_sta</name>
+              <description>Master Mode Start</description>
+              <bitRange>[5:5]</bitRange>
+            </field>
+            <field>
+              <name>m_stp</name>
+              <description>Master Mode Stop</description>
+              <bitRange>[4:4]</bitRange>
+            </field>
+            <field>
+              <name>int_flag</name>
+              <description>Interrupt Flag</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>a_ack</name>
+              <description>Assert Acknowledge</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_STAT</name>
+          <description>TWI Status Register</description>
+          <addressOffset>0x0010</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>sta</name>
+              <bitRange>[7:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>Bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_at</name>
+                  <description>Data byte received in master mode, ACK transmitted</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ant</name>
+                  <description>Data byte received in master mode, not ACK transmitted</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawr_at</name>
+                  <description>Slave address + Write bit received, ACK transmitted</description>
+                  <value>0x60</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sawr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Write bit received, ACK transmitted</description>
+                  <value>0x68</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>gcar_at</name>
+                  <description>General Call address received, ACK transmitted</description>
+                  <value>0x70</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_gcar_at</name>
+                  <description>Arbitration lost in the address as master, General Call address received, ACK transmitted</description>
+                  <value>0x78</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_at</name>
+                  <description>Data byte received after slave address received, ACK transmitted</description>
+                  <value>0x80</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_ant</name>
+                  <description>Data byte received after slave address received, not ACK transmitted</description>
+                  <value>0x88</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_at</name>
+                  <description>Data byte received after General Call received, ACK transmitted</description>
+                  <value>0x90</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_ant</name>
+                  <description>Data byte received after General Call received, not ACK transmitted</description>
+                  <value>0x98</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>srscrs</name>
+                  <description>STOP or repeated START condition received in slave mode</description>
+                  <value>0xA0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sarr_at</name>
+                  <description>Slave address + Read bit received, ACK transmitted</description>
+                  <value>0xA8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sarr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Read bit received, ACK transmitted</description>
+                  <value>0xB0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_ar</name>
+                  <description>Data byte transmitted in slave mode, ACK received</description>
+                  <value>0xB8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_anr</name>
+                  <description>Data byte transmitted in slave mode, ACK not received</description>
+                  <value>0xC0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>lbts_ar</name>
+                  <description>The Last byte transmitted in slave mode, ACK received</description>
+                  <value>0xC8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_ar</name>
+                  <description>Second Address byte + Write bit transmitted, ACK received</description>
+                  <value>0xD0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_anr</name>
+                  <description>Second Address byte + Write bit transmitted, ACK not received</description>
+                  <value>0xD8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>nrsi</name>
+                  <description>No relevant status information, INT_FLAG=0</description>
+                  <value>0xF8</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_CCR</name>
+          <description>TWI Clock Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[6:3]</bitRange>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[2:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_SRST</name>
+          <description>TWI Software Reset Register</description>
+          <addressOffset>0x0018</addressOffset>
+          <fields>
+            <field>
+              <name>soft_rst</name>
+              <description>Soft Reset</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_EFR</name>
+          <description>TWI Enhance Feature Register</description>
+          <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>dbn</name>
+              <description>Data Byte Number Follow Read Command Control</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B0</name>
+                  <description>No data byte can be written after the read command</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B1</name>
+                  <description>1-byte data can be written after the read command</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B2</name>
+                  <description>2-byte data can be written after the read command</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B3</name>
+                  <description>3-byte data can be written after the read command</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_LCR</name>
+          <description>TWI Line Control Register</description>
+          <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>scl_state</name>
+              <description>Current State of TWI_SCL</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_state</name>
+              <description>Current State of TWI_SDA</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl</name>
+              <description>TWI_SCL Line State Control Bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl_en</name>
+              <description>TWI_SCL Line State Control Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl</name>
+              <description>TWI_SDA Line State Control Bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl_en</name>
+              <description>TWI_SDA Line State Control Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_CTRL</name>
+          <description>TWI_DRV Control Register</description>
+          <addressOffset>0x0200</addressOffset>
+          <fields>
+            <field>
+              <name>start_tran</name>
+              <description>Start transmission</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>restart_mode</name>
+              <description>Restart mode</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>restart</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>stop_restart</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>read_tran_mode</name>
+              <description>Read transition mode</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>send</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_send</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tran_result</name>
+              <description>Transition result</description>
+              <bitRange>[27:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ok</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>fail</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_sta</name>
+              <description>TWI status</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ar</name>
+                  <description>Data byte received in master mode, ACK received</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_anr</name>
+                  <description>Data byte received in master mode, ACK not received</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>t_s9sc</name>
+                  <description>Timeout when sending the 9th SCL clock</description>
+                  <value>0x01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>timeout_n</name>
+              <description>Timeout number</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>soft_reset</name>
+              <description>Software reset</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reset</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_drv_en</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_CFG</name>
+          <description>TWI_DRV Transmission Configuration Register</description>
+          <addressOffset>0x0204</addressOffset>
+          <fields>
+            <field>
+              <name>pkt_interval</name>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>packet_cnt</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_SLV</name>
+          <description>TWI_DRV Slave ID Register</description>
+          <addressOffset>0x0208</addressOffset>
+          <fields>
+            <field>
+              <name>slv_id</name>
+              <description>Slave device ID</description>
+              <bitRange>[15:9]</bitRange>
+            </field>
+            <field>
+              <name>cmd</name>
+              <description>R/W operation to slave device</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>write</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>read</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>slv_id_x</name>
+              <description>SLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_FMT</name>
+          <description>TWI_DRV Packet Format Register</description>
+          <addressOffset>0x020C</addressOffset>
+          <fields>
+            <field>
+              <name>addr_byte</name>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>data_byte</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_BUS_CTRL</name>
+          <description>TWI_DRV Bus Control Register</description>
+          <addressOffset>0x0210</addressOffset>
+          <fields>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[14:12]</bitRange>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[11:8]</bitRange>
+            </field>
+            <field>
+              <name>scl_sta</name>
+              <description>SCL current status</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>sda_sta</name>
+              <description>SDA current status</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>scl_mov</name>
+              <description>SCL manual output value</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>sda_mov</name>
+              <description>SDA manual output value</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>scl_moe</name>
+              <description>SCL manual output enable</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>sda_moe</name>
+              <description>SDA manual output enable</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_INT_CTRL</name>
+          <description>TWI_DRV Interrupt Control Register</description>
+          <addressOffset>0x0214</addressOffset>
+          <fields>
+            <field>
+              <name>rx_req_int_en</name>
+              <bitRange>[19:19]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_int_en</name>
+              <bitRange>[18:18]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_int_en</name>
+              <bitRange>[17:17]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_int_en</name>
+              <bitRange>[16:16]</bitRange>
+            </field>
+            <field>
+              <name>rx_req_pd</name>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_pd</name>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_pd</name>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_pd</name>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_DMA_CFG</name>
+          <description>TWI_DRV DMA Configure Register</description>
+          <addressOffset>0x0218</addressOffset>
+          <fields>
+            <field>
+              <name>dma_rx_en</name>
+              <bitRange>[24:23]</bitRange>
+            </field>
+            <field>
+              <name>rx_trig</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>dma_tx_en</name>
+              <bitRange>[8:8]</bitRange>
+            </field>
+            <field>
+              <name>tx_trig</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_FIFO_CON</name>
+          <description>TWI_DRV FIFO Content Register</description>
+          <addressOffset>0x021C</addressOffset>
+          <fields>
+            <field>
+              <name>recv_fifo_clear</name>
+              <bitRange>[22:22]</bitRange>
+            </field>
+            <field>
+              <name>recv_fifo_content</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_clear</name>
+              <bitRange>[6:6]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_content</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_SEND_FIFO_ACC</name>
+          <description>TWI_DRV Send Data FIFO Access Register</description>
+          <addressOffset>0x0300</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>send_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_RECV_FIFO_ACC</name>
+          <description>TWI_DRV Receive Data FIFO Access Register</description>
+          <addressOffset>0x0304</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>recv_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TWI2</name>
+      <description>Two Wire Interface</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02502800</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>TWI2</name>
+        <value>27</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>TWI_ADDR</name>
+          <description>TWI Slave Address Register</description>
+          <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>SLA</name>
+              <description>Slave Address</description>
+              <bitRange>[7:1]</bitRange>
+            </field>
+            <field>
+              <name>GCE</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_XADDR</name>
+          <description>TWI Extended Slave Address Register</description>
+          <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>SLAX</name>
+              <description>Extend Slave Address\n\nSLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DATA</name>
+          <description>TWI Data Byte Register</description>
+          <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>data</name>
+              <description>Data byte transmitted or received</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_CNTR</name>
+          <description>TWI Control Register</description>
+          <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>int_en</name>
+              <description>Interrupt Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>The interrupt line always low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>The interrupt line will go high when INT_FLAG is set</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bus_en</name>
+              <description>TWI Bus Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ignored</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>respond</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>m_sta</name>
+              <description>Master Mode Start</description>
+              <bitRange>[5:5]</bitRange>
+            </field>
+            <field>
+              <name>m_stp</name>
+              <description>Master Mode Stop</description>
+              <bitRange>[4:4]</bitRange>
+            </field>
+            <field>
+              <name>int_flag</name>
+              <description>Interrupt Flag</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>a_ack</name>
+              <description>Assert Acknowledge</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_STAT</name>
+          <description>TWI Status Register</description>
+          <addressOffset>0x0010</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>sta</name>
+              <bitRange>[7:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>Bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_at</name>
+                  <description>Data byte received in master mode, ACK transmitted</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ant</name>
+                  <description>Data byte received in master mode, not ACK transmitted</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawr_at</name>
+                  <description>Slave address + Write bit received, ACK transmitted</description>
+                  <value>0x60</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sawr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Write bit received, ACK transmitted</description>
+                  <value>0x68</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>gcar_at</name>
+                  <description>General Call address received, ACK transmitted</description>
+                  <value>0x70</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_gcar_at</name>
+                  <description>Arbitration lost in the address as master, General Call address received, ACK transmitted</description>
+                  <value>0x78</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_at</name>
+                  <description>Data byte received after slave address received, ACK transmitted</description>
+                  <value>0x80</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_ant</name>
+                  <description>Data byte received after slave address received, not ACK transmitted</description>
+                  <value>0x88</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_at</name>
+                  <description>Data byte received after General Call received, ACK transmitted</description>
+                  <value>0x90</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_ant</name>
+                  <description>Data byte received after General Call received, not ACK transmitted</description>
+                  <value>0x98</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>srscrs</name>
+                  <description>STOP or repeated START condition received in slave mode</description>
+                  <value>0xA0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sarr_at</name>
+                  <description>Slave address + Read bit received, ACK transmitted</description>
+                  <value>0xA8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sarr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Read bit received, ACK transmitted</description>
+                  <value>0xB0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_ar</name>
+                  <description>Data byte transmitted in slave mode, ACK received</description>
+                  <value>0xB8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_anr</name>
+                  <description>Data byte transmitted in slave mode, ACK not received</description>
+                  <value>0xC0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>lbts_ar</name>
+                  <description>The Last byte transmitted in slave mode, ACK received</description>
+                  <value>0xC8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_ar</name>
+                  <description>Second Address byte + Write bit transmitted, ACK received</description>
+                  <value>0xD0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_anr</name>
+                  <description>Second Address byte + Write bit transmitted, ACK not received</description>
+                  <value>0xD8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>nrsi</name>
+                  <description>No relevant status information, INT_FLAG=0</description>
+                  <value>0xF8</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_CCR</name>
+          <description>TWI Clock Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[6:3]</bitRange>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[2:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_SRST</name>
+          <description>TWI Software Reset Register</description>
+          <addressOffset>0x0018</addressOffset>
+          <fields>
+            <field>
+              <name>soft_rst</name>
+              <description>Soft Reset</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_EFR</name>
+          <description>TWI Enhance Feature Register</description>
+          <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>dbn</name>
+              <description>Data Byte Number Follow Read Command Control</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B0</name>
+                  <description>No data byte can be written after the read command</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B1</name>
+                  <description>1-byte data can be written after the read command</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B2</name>
+                  <description>2-byte data can be written after the read command</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B3</name>
+                  <description>3-byte data can be written after the read command</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_LCR</name>
+          <description>TWI Line Control Register</description>
+          <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>scl_state</name>
+              <description>Current State of TWI_SCL</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_state</name>
+              <description>Current State of TWI_SDA</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl</name>
+              <description>TWI_SCL Line State Control Bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl_en</name>
+              <description>TWI_SCL Line State Control Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl</name>
+              <description>TWI_SDA Line State Control Bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl_en</name>
+              <description>TWI_SDA Line State Control Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_CTRL</name>
+          <description>TWI_DRV Control Register</description>
+          <addressOffset>0x0200</addressOffset>
+          <fields>
+            <field>
+              <name>start_tran</name>
+              <description>Start transmission</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>restart_mode</name>
+              <description>Restart mode</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>restart</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>stop_restart</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>read_tran_mode</name>
+              <description>Read transition mode</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>send</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_send</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tran_result</name>
+              <description>Transition result</description>
+              <bitRange>[27:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ok</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>fail</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_sta</name>
+              <description>TWI status</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ar</name>
+                  <description>Data byte received in master mode, ACK received</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_anr</name>
+                  <description>Data byte received in master mode, ACK not received</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>t_s9sc</name>
+                  <description>Timeout when sending the 9th SCL clock</description>
+                  <value>0x01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>timeout_n</name>
+              <description>Timeout number</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>soft_reset</name>
+              <description>Software reset</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reset</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_drv_en</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_CFG</name>
+          <description>TWI_DRV Transmission Configuration Register</description>
+          <addressOffset>0x0204</addressOffset>
+          <fields>
+            <field>
+              <name>pkt_interval</name>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>packet_cnt</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_SLV</name>
+          <description>TWI_DRV Slave ID Register</description>
+          <addressOffset>0x0208</addressOffset>
+          <fields>
+            <field>
+              <name>slv_id</name>
+              <description>Slave device ID</description>
+              <bitRange>[15:9]</bitRange>
+            </field>
+            <field>
+              <name>cmd</name>
+              <description>R/W operation to slave device</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>write</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>read</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>slv_id_x</name>
+              <description>SLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_FMT</name>
+          <description>TWI_DRV Packet Format Register</description>
+          <addressOffset>0x020C</addressOffset>
+          <fields>
+            <field>
+              <name>addr_byte</name>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>data_byte</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_BUS_CTRL</name>
+          <description>TWI_DRV Bus Control Register</description>
+          <addressOffset>0x0210</addressOffset>
+          <fields>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[14:12]</bitRange>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[11:8]</bitRange>
+            </field>
+            <field>
+              <name>scl_sta</name>
+              <description>SCL current status</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>sda_sta</name>
+              <description>SDA current status</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>scl_mov</name>
+              <description>SCL manual output value</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>sda_mov</name>
+              <description>SDA manual output value</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>scl_moe</name>
+              <description>SCL manual output enable</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>sda_moe</name>
+              <description>SDA manual output enable</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_INT_CTRL</name>
+          <description>TWI_DRV Interrupt Control Register</description>
+          <addressOffset>0x0214</addressOffset>
+          <fields>
+            <field>
+              <name>rx_req_int_en</name>
+              <bitRange>[19:19]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_int_en</name>
+              <bitRange>[18:18]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_int_en</name>
+              <bitRange>[17:17]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_int_en</name>
+              <bitRange>[16:16]</bitRange>
+            </field>
+            <field>
+              <name>rx_req_pd</name>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_pd</name>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_pd</name>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_pd</name>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_DMA_CFG</name>
+          <description>TWI_DRV DMA Configure Register</description>
+          <addressOffset>0x0218</addressOffset>
+          <fields>
+            <field>
+              <name>dma_rx_en</name>
+              <bitRange>[24:23]</bitRange>
+            </field>
+            <field>
+              <name>rx_trig</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>dma_tx_en</name>
+              <bitRange>[8:8]</bitRange>
+            </field>
+            <field>
+              <name>tx_trig</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_FIFO_CON</name>
+          <description>TWI_DRV FIFO Content Register</description>
+          <addressOffset>0x021C</addressOffset>
+          <fields>
+            <field>
+              <name>recv_fifo_clear</name>
+              <bitRange>[22:22]</bitRange>
+            </field>
+            <field>
+              <name>recv_fifo_content</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_clear</name>
+              <bitRange>[6:6]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_content</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_SEND_FIFO_ACC</name>
+          <description>TWI_DRV Send Data FIFO Access Register</description>
+          <addressOffset>0x0300</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>send_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_RECV_FIFO_ACC</name>
+          <description>TWI_DRV Receive Data FIFO Access Register</description>
+          <addressOffset>0x0304</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>recv_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TWI3</name>
+      <description>Two Wire Interface</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02502c00</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>TWI3</name>
+        <value>28</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>TWI_ADDR</name>
+          <description>TWI Slave Address Register</description>
+          <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>SLA</name>
+              <description>Slave Address</description>
+              <bitRange>[7:1]</bitRange>
+            </field>
+            <field>
+              <name>GCE</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_XADDR</name>
+          <description>TWI Extended Slave Address Register</description>
+          <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>SLAX</name>
+              <description>Extend Slave Address\n\nSLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DATA</name>
+          <description>TWI Data Byte Register</description>
+          <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>data</name>
+              <description>Data byte transmitted or received</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_CNTR</name>
+          <description>TWI Control Register</description>
+          <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>int_en</name>
+              <description>Interrupt Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>The interrupt line always low</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>The interrupt line will go high when INT_FLAG is set</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bus_en</name>
+              <description>TWI Bus Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ignored</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>respond</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>m_sta</name>
+              <description>Master Mode Start</description>
+              <bitRange>[5:5]</bitRange>
+            </field>
+            <field>
+              <name>m_stp</name>
+              <description>Master Mode Stop</description>
+              <bitRange>[4:4]</bitRange>
+            </field>
+            <field>
+              <name>int_flag</name>
+              <description>Interrupt Flag</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>a_ack</name>
+              <description>Assert Acknowledge</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_STAT</name>
+          <description>TWI Status Register</description>
+          <addressOffset>0x0010</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>sta</name>
+              <bitRange>[7:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>Bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_at</name>
+                  <description>Data byte received in master mode, ACK transmitted</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ant</name>
+                  <description>Data byte received in master mode, not ACK transmitted</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawr_at</name>
+                  <description>Slave address + Write bit received, ACK transmitted</description>
+                  <value>0x60</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sawr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Write bit received, ACK transmitted</description>
+                  <value>0x68</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>gcar_at</name>
+                  <description>General Call address received, ACK transmitted</description>
+                  <value>0x70</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_gcar_at</name>
+                  <description>Arbitration lost in the address as master, General Call address received, ACK transmitted</description>
+                  <value>0x78</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_at</name>
+                  <description>Data byte received after slave address received, ACK transmitted</description>
+                  <value>0x80</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_sar_ant</name>
+                  <description>Data byte received after slave address received, not ACK transmitted</description>
+                  <value>0x88</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_at</name>
+                  <description>Data byte received after General Call received, ACK transmitted</description>
+                  <value>0x90</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbr_gcr_ant</name>
+                  <description>Data byte received after General Call received, not ACK transmitted</description>
+                  <value>0x98</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>srscrs</name>
+                  <description>STOP or repeated START condition received in slave mode</description>
+                  <value>0xA0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sarr_at</name>
+                  <description>Slave address + Read bit received, ACK transmitted</description>
+                  <value>0xA8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_am_sarr_at</name>
+                  <description>Arbitration lost in the address as master, slave address + Read bit received, ACK transmitted</description>
+                  <value>0xB0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_ar</name>
+                  <description>Data byte transmitted in slave mode, ACK received</description>
+                  <value>0xB8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbts_anr</name>
+                  <description>Data byte transmitted in slave mode, ACK not received</description>
+                  <value>0xC0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>lbts_ar</name>
+                  <description>The Last byte transmitted in slave mode, ACK received</description>
+                  <value>0xC8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_ar</name>
+                  <description>Second Address byte + Write bit transmitted, ACK received</description>
+                  <value>0xD0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sawt_anr</name>
+                  <description>Second Address byte + Write bit transmitted, ACK not received</description>
+                  <value>0xD8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>nrsi</name>
+                  <description>No relevant status information, INT_FLAG=0</description>
+                  <value>0xF8</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_CCR</name>
+          <description>TWI Clock Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[6:3]</bitRange>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[2:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_SRST</name>
+          <description>TWI Software Reset Register</description>
+          <addressOffset>0x0018</addressOffset>
+          <fields>
+            <field>
+              <name>soft_rst</name>
+              <description>Soft Reset</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_EFR</name>
+          <description>TWI Enhance Feature Register</description>
+          <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>dbn</name>
+              <description>Data Byte Number Follow Read Command Control</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B0</name>
+                  <description>No data byte can be written after the read command</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B1</name>
+                  <description>1-byte data can be written after the read command</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B2</name>
+                  <description>2-byte data can be written after the read command</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B3</name>
+                  <description>3-byte data can be written after the read command</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_LCR</name>
+          <description>TWI Line Control Register</description>
+          <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>scl_state</name>
+              <description>Current State of TWI_SCL</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_state</name>
+              <description>Current State of TWI_SDA</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl</name>
+              <description>TWI_SCL Line State Control Bit</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>scl_ctl_en</name>
+              <description>TWI_SCL Line State Control Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl</name>
+              <description>TWI_SDA Line State Control Bit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sda_ctl_en</name>
+              <description>TWI_SDA Line State Control Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_CTRL</name>
+          <description>TWI_DRV Control Register</description>
+          <addressOffset>0x0200</addressOffset>
+          <fields>
+            <field>
+              <name>start_tran</name>
+              <description>Start transmission</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>restart_mode</name>
+              <description>Restart mode</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>restart</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>stop_restart</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>read_tran_mode</name>
+              <description>Read transition mode</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>send</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_send</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tran_result</name>
+              <description>Transition result</description>
+              <bitRange>[27:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ok</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>fail</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_sta</name>
+              <description>TWI status</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>be</name>
+                  <description>bus error</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sct</name>
+                  <description>START condition transmitted</description>
+                  <value>0x08</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rsct</name>
+                  <description>Repeated START condition transmitted</description>
+                  <value>0x10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_ar</name>
+                  <description>Address + Write bit transmitted, ACK received</description>
+                  <value>0x18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>awbt_anr</name>
+                  <description>Address + Write bit transmitted, ACK not received</description>
+                  <value>0x20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_ar</name>
+                  <description>Data byte transmitted in master mode, ACK received</description>
+                  <value>0x28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbtm_anr</name>
+                  <description>Data byte transmitted in master mode, ACK not received</description>
+                  <value>0x30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>al_a_db</name>
+                  <description>Arbitration lost in address or data byte</description>
+                  <value>0x38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_ar</name>
+                  <description>Address + Read bit transmitted, ACK received</description>
+                  <value>0x40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>arbt_anr</name>
+                  <description>Address + Read bit transmitted, ACK not received</description>
+                  <value>0x48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_ar</name>
+                  <description>Data byte received in master mode, ACK received</description>
+                  <value>0x50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dbrm_anr</name>
+                  <description>Data byte received in master mode, ACK not received</description>
+                  <value>0x58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>t_s9sc</name>
+                  <description>Timeout when sending the 9th SCL clock</description>
+                  <value>0x01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>timeout_n</name>
+              <description>Timeout number</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>soft_reset</name>
+              <description>Software reset</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reset</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>twi_drv_en</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_CFG</name>
+          <description>TWI_DRV Transmission Configuration Register</description>
+          <addressOffset>0x0204</addressOffset>
+          <fields>
+            <field>
+              <name>pkt_interval</name>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>packet_cnt</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_SLV</name>
+          <description>TWI_DRV Slave ID Register</description>
+          <addressOffset>0x0208</addressOffset>
+          <fields>
+            <field>
+              <name>slv_id</name>
+              <description>Slave device ID</description>
+              <bitRange>[15:9]</bitRange>
+            </field>
+            <field>
+              <name>cmd</name>
+              <description>R/W operation to slave device</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>write</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>read</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>slv_id_x</name>
+              <description>SLAX[7:0]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_FMT</name>
+          <description>TWI_DRV Packet Format Register</description>
+          <addressOffset>0x020C</addressOffset>
+          <fields>
+            <field>
+              <name>addr_byte</name>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>data_byte</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_BUS_CTRL</name>
+          <description>TWI_DRV Bus Control Register</description>
+          <addressOffset>0x0210</addressOffset>
+          <fields>
+            <field>
+              <name>clk_count_mode</name>
+              <bitRange>[16:16]</bitRange>
+              <access>write-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>oscl</name>
+                  <description>scl clock high period count on oscl</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>iscl</name>
+                  <description>scl clock high period count on iscl</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_duty</name>
+              <description>Setting duty cycle of clock as master</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P50</name>
+                  <description>50%</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P40</name>
+                  <description>40%</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>clk_n</name>
+              <bitRange>[14:12]</bitRange>
+            </field>
+            <field>
+              <name>clk_m</name>
+              <bitRange>[11:8]</bitRange>
+            </field>
+            <field>
+              <name>scl_sta</name>
+              <description>SCL current status</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>sda_sta</name>
+              <description>SDA current status</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>scl_mov</name>
+              <description>SCL manual output value</description>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>sda_mov</name>
+              <description>SDA manual output value</description>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>scl_moe</name>
+              <description>SCL manual output enable</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>sda_moe</name>
+              <description>SDA manual output enable</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_INT_CTRL</name>
+          <description>TWI_DRV Interrupt Control Register</description>
+          <addressOffset>0x0214</addressOffset>
+          <fields>
+            <field>
+              <name>rx_req_int_en</name>
+              <bitRange>[19:19]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_int_en</name>
+              <bitRange>[18:18]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_int_en</name>
+              <bitRange>[17:17]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_int_en</name>
+              <bitRange>[16:16]</bitRange>
+            </field>
+            <field>
+              <name>rx_req_pd</name>
+              <bitRange>[3:3]</bitRange>
+            </field>
+            <field>
+              <name>tx_req_pd</name>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>tran_err_pd</name>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>tran_com_pd</name>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_DMA_CFG</name>
+          <description>TWI_DRV DMA Configure Register</description>
+          <addressOffset>0x0218</addressOffset>
+          <fields>
+            <field>
+              <name>dma_rx_en</name>
+              <bitRange>[24:23]</bitRange>
+            </field>
+            <field>
+              <name>rx_trig</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>dma_tx_en</name>
+              <bitRange>[8:8]</bitRange>
+            </field>
+            <field>
+              <name>tx_trig</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_FIFO_CON</name>
+          <description>TWI_DRV FIFO Content Register</description>
+          <addressOffset>0x021C</addressOffset>
+          <fields>
+            <field>
+              <name>recv_fifo_clear</name>
+              <bitRange>[22:22]</bitRange>
+            </field>
+            <field>
+              <name>recv_fifo_content</name>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_clear</name>
+              <bitRange>[6:6]</bitRange>
+            </field>
+            <field>
+              <name>send_fifo_content</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_SEND_FIFO_ACC</name>
+          <description>TWI_DRV Send Data FIFO Access Register</description>
+          <addressOffset>0x0300</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>send_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>TWI_DRV_RECV_FIFO_ACC</name>
+          <description>TWI_DRV Receive Data FIFO Access Register</description>
+          <addressOffset>0x0304</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>recv_data_fifo</name>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
