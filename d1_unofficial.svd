@@ -19213,5 +19213,167 @@
       </registers>
     </peripheral>
 
+    <peripheral>
+      <name>PWM</name>
+      <description>Pulse Width Modulation</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02000C00</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>PWM</name>
+        <value>34</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>PIER</name>
+          <description>PWM IRQ Enable Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>PISR</name>
+          <description>PWM IRQ Status Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>CIER</name>
+          <description>Capture IRQ Enable Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>CISR</name>
+          <description>Capture IRQ Status Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>PCCR01</name>
+          <description>PWM01 Clock Configuration Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>PCCR23</name>
+          <description>PWM23 Clock Configuration Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>PCCR45</name>
+          <description>PWM45 Clock Configuration Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>PCCR67</name>
+          <description>PWM67 Clock Configuration Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>PCGR</name>
+          <description>PWM Clock Gating Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>PDZCR01</name>
+          <description>PWM01 Dead Zone Control Register</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>PDZCR23</name>
+          <description>PWM23 Dead Zone Control Register</description>
+          <addressOffset>0x0064</addressOffset>
+        </register>
+        <register>
+          <name>PDZCR45</name>
+          <description>PWM45 Dead Zone Control Register</description>
+          <addressOffset>0x0068</addressOffset>
+        </register>
+        <register>
+          <name>PDZCR67</name>
+          <description>PWM67 Dead Zone Control Register</description>
+          <addressOffset>0x006C</addressOffset>
+        </register>
+        <register>
+          <name>PER</name>
+          <description>PWM Enable Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>PGR0</name>
+          <description>PWM Group0 Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <name>PGR1</name>
+          <description>PWM Group1 Register</description>
+          <addressOffset>0x0094</addressOffset>
+        </register>
+        <register>
+          <name>PGR2</name>
+          <description>PWM Group2 Register</description>
+          <addressOffset>0x0098</addressOffset>
+        </register>
+        <register>
+          <name>PGR3</name>
+          <description>PWM Group3 Register</description>
+          <addressOffset>0x009C</addressOffset>
+        </register>
+        <register>
+          <name>CER</name>
+          <description>Capture Enable Register</description>
+          <addressOffset>0x00C0</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x0020</dimIncrement>
+          <name>pcr%s</name>
+          <description>PWM Control Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x0020</dimIncrement>
+          <name>ppr%s</name>
+          <description>PWM Period Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x0020</dimIncrement>
+          <name>pcntr%s</name>
+          <description>PWM Count Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x0020</dimIncrement>
+          <name>ppcntr%s</name>
+          <description>PWM Pulse Count Register</description>
+          <addressOffset>0x010c</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x0020</dimIncrement>
+          <name>ccr%s</name>
+          <description>Capture Control Register</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x0020</dimIncrement>
+          <name>crlr%s</name>
+          <description>Capture Rise Lock Register</description>
+          <addressOffset>0x0114</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x0020</dimIncrement>
+          <name>cflr%s</name>
+          <description>Capture Fall Lock Register</description>
+          <addressOffset>0x0118</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>

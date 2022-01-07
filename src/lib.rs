@@ -38,6 +38,7 @@ extern "C" {
     fn TWI3();
     fn SPI0();
     fn SPI1();
+    fn PWM();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -47,7 +48,7 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 33] = [
+pub static __EXTERNAL_INTERRUPTS: [Vector; 35] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -81,6 +82,8 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 33] = [
     Vector { _reserved: 0 },
     Vector { _handler: SPI0 },
     Vector { _handler: SPI1 },
+    Vector { _reserved: 0 },
+    Vector { _handler: PWM },
 ];
 #[doc(hidden)]
 pub mod interrupt;
@@ -589,6 +592,34 @@ impl core::fmt::Debug for GPIO {
 }
 #[doc = "Gerneral Purpose Input/Output"]
 pub mod gpio;
+#[doc = "Pulse Width Modulation"]
+pub struct PWM {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for PWM {}
+impl PWM {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const pwm::RegisterBlock = 0x0200_0c00 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const pwm::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for PWM {
+    type Target = pwm::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for PWM {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWM").finish()
+    }
+}
+#[doc = "Pulse Width Modulation"]
+pub mod pwm;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -630,6 +661,8 @@ pub struct Peripherals {
     pub SPI_DBI: SPI_DBI,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
+    #[doc = "PWM"]
+    pub PWM: PWM,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -700,6 +733,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             GPIO: GPIO {
+                _marker: PhantomData,
+            },
+            PWM: PWM {
                 _marker: PhantomData,
             },
         }

@@ -26,6 +26,8 @@ pub enum Interrupt {
     SPI0 = 31,
     #[doc = "32 - SPI1"]
     SPI1 = 32,
+    #[doc = "34 - PWM"]
+    PWM = 34,
 }
 #[doc = r" TryFromInterruptError"]
 #[derive(Debug, Copy, Clone)]
@@ -47,6 +49,7 @@ impl Interrupt {
             28 => Ok(Interrupt::TWI3),
             31 => Ok(Interrupt::SPI0),
             32 => Ok(Interrupt::SPI1),
+            34 => Ok(Interrupt::PWM),
             _ => Err(TryFromInterruptError(())),
         }
     }

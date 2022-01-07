@@ -10,4 +10,5 @@ PROVIDE(TWI2 = DefaultHandler);
 PROVIDE(TWI3 = DefaultHandler);
 PROVIDE(SPI0 = DefaultHandler);
 PROVIDE(SPI1 = DefaultHandler);
+PROVIDE(PWM = DefaultHandler);
 
