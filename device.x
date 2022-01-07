@@ -9,4 +9,5 @@ PROVIDE(TWI1 = DefaultHandler);
 PROVIDE(TWI2 = DefaultHandler);
 PROVIDE(TWI3 = DefaultHandler);
 PROVIDE(SPI0 = DefaultHandler);
+PROVIDE(SPI1 = DefaultHandler);
 

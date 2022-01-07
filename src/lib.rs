@@ -37,6 +37,7 @@ extern "C" {
     fn TWI2();
     fn TWI3();
     fn SPI0();
+    fn SPI1();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -46,7 +47,7 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 32] = [
+pub static __EXTERNAL_INTERRUPTS: [Vector; 33] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -79,6 +80,7 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 32] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _handler: SPI0 },
+    Vector { _handler: SPI1 },
 ];
 #[doc(hidden)]
 pub mod interrupt;
@@ -531,6 +533,34 @@ impl core::fmt::Debug for SPI0 {
 }
 #[doc = "Serial Peripheral Interface"]
 pub mod spi0;
+#[doc = "Serial Peripheral Interface Display Bus Interface"]
+pub struct SPI_DBI {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI_DBI {}
+impl SPI_DBI {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const spi_dbi::RegisterBlock = 0x0402_6000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const spi_dbi::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SPI_DBI {
+    type Target = spi_dbi::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SPI_DBI {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SPI_DBI").finish()
+    }
+}
+#[doc = "Serial Peripheral Interface Display Bus Interface"]
+pub mod spi_dbi;
 #[doc = "Gerneral Purpose Input/Output"]
 pub struct GPIO {
     _marker: PhantomData<*const ()>,
@@ -596,6 +626,8 @@ pub struct Peripherals {
     pub UART5: UART5,
     #[doc = "SPI0"]
     pub SPI0: SPI0,
+    #[doc = "SPI_DBI"]
+    pub SPI_DBI: SPI_DBI,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
 }
@@ -662,6 +694,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             SPI0: SPI0 {
+                _marker: PhantomData,
+            },
+            SPI_DBI: SPI_DBI {
                 _marker: PhantomData,
             },
             GPIO: GPIO {
