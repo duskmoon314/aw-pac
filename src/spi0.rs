@@ -32,18 +32,18 @@ pub struct RegisterBlock {
     pub spi_batc: crate::Reg<spi_batc::SPI_BATC_SPEC>,
     #[doc = "0x44 - SPI Bit-Aligned Clock Configuration Register"]
     pub spi_ba_ccr: crate::Reg<spi_ba_ccr::SPI_BA_CCR_SPEC>,
-    #[doc = "0x48 - SPI TX Bit Register"]
+    #[doc = "0x48 - SPI TX Bit Register\n\nVTB \\[31:0\\]: The Value of the Transmit Bits"]
     pub spi_tbr: crate::Reg<spi_tbr::SPI_TBR_SPEC>,
-    #[doc = "0x4c - SPI RX Bit Register"]
+    #[doc = "0x4c - SPI RX Bit Register\n\nVRB \\[31:0\\]: The Value of the Receive Bits"]
     pub spi_rbr: crate::Reg<spi_rbr::SPI_RBR_SPEC>,
     _reserved15: [u8; 0x38],
     #[doc = "0x88 - SPI Normal DMA Mode Control Register"]
     pub spi_ndma_mode_ctl: crate::Reg<spi_ndma_mode_ctl::SPI_NDMA_MODE_CTL_SPEC>,
     _reserved16: [u8; 0x0174],
-    #[doc = "0x200 - SPI TX Data Register"]
+    #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data"]
     pub spi_txd: crate::Reg<spi_txd::SPI_TXD_SPEC>,
     _reserved17: [u8; 0xfc],
-    #[doc = "0x300 - SPI RX Data Register"]
+    #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data"]
     pub spi_rxd: crate::Reg<spi_rxd::SPI_RXD_SPEC>,
 }
 #[doc = "SPI_GCR register accessor: an alias for `Reg<SPI_GCR_SPEC>`"]
@@ -100,11 +100,11 @@ pub type SPI_BA_CCR = crate::Reg<spi_ba_ccr::SPI_BA_CCR_SPEC>;
 pub mod spi_ba_ccr;
 #[doc = "SPI_TBR register accessor: an alias for `Reg<SPI_TBR_SPEC>`"]
 pub type SPI_TBR = crate::Reg<spi_tbr::SPI_TBR_SPEC>;
-#[doc = "SPI TX Bit Register"]
+#[doc = "SPI TX Bit Register\n\nVTB \\[31:0\\]: The Value of the Transmit Bits"]
 pub mod spi_tbr;
 #[doc = "SPI_RBR register accessor: an alias for `Reg<SPI_RBR_SPEC>`"]
 pub type SPI_RBR = crate::Reg<spi_rbr::SPI_RBR_SPEC>;
-#[doc = "SPI RX Bit Register"]
+#[doc = "SPI RX Bit Register\n\nVRB \\[31:0\\]: The Value of the Receive Bits"]
 pub mod spi_rbr;
 #[doc = "SPI_NDMA_MODE_CTL register accessor: an alias for `Reg<SPI_NDMA_MODE_CTL_SPEC>`"]
 pub type SPI_NDMA_MODE_CTL = crate::Reg<spi_ndma_mode_ctl::SPI_NDMA_MODE_CTL_SPEC>;
@@ -112,9 +112,9 @@ pub type SPI_NDMA_MODE_CTL = crate::Reg<spi_ndma_mode_ctl::SPI_NDMA_MODE_CTL_SPE
 pub mod spi_ndma_mode_ctl;
 #[doc = "SPI_TXD register accessor: an alias for `Reg<SPI_TXD_SPEC>`"]
 pub type SPI_TXD = crate::Reg<spi_txd::SPI_TXD_SPEC>;
-#[doc = "SPI TX Data Register"]
+#[doc = "SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data"]
 pub mod spi_txd;
 #[doc = "SPI_RXD register accessor: an alias for `Reg<SPI_RXD_SPEC>`"]
 pub type SPI_RXD = crate::Reg<spi_rxd::SPI_RXD_SPEC>;
-#[doc = "SPI RX Data Register"]
+#[doc = "SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data"]
 pub mod spi_rxd;

@@ -159,9 +159,9 @@ impl<'a> TP_EN_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MODE_SELEC_A {
     #[doc = "0: Old mode of Sample Timing"]
-    OLD = 0,
+    OLD_MODE = 0,
     #[doc = "1: New mode of Sample Timing"]
-    NEW = 1,
+    NEW_MODE = 1,
 }
 impl From<MODE_SELEC_A> for bool {
     #[inline(always)]
@@ -180,19 +180,19 @@ impl MODE_SELEC_R {
     #[inline(always)]
     pub fn variant(&self) -> MODE_SELEC_A {
         match self.bits {
-            false => MODE_SELEC_A::OLD,
-            true => MODE_SELEC_A::NEW,
+            false => MODE_SELEC_A::OLD_MODE,
+            true => MODE_SELEC_A::NEW_MODE,
         }
     }
-    #[doc = "Checks if the value of the field is `OLD`"]
+    #[doc = "Checks if the value of the field is `OLD_MODE`"]
     #[inline(always)]
-    pub fn is_old(&self) -> bool {
-        **self == MODE_SELEC_A::OLD
+    pub fn is_old_mode(&self) -> bool {
+        **self == MODE_SELEC_A::OLD_MODE
     }
-    #[doc = "Checks if the value of the field is `NEW`"]
+    #[doc = "Checks if the value of the field is `NEW_MODE`"]
     #[inline(always)]
-    pub fn is_new(&self) -> bool {
-        **self == MODE_SELEC_A::NEW
+    pub fn is_new_mode(&self) -> bool {
+        **self == MODE_SELEC_A::NEW_MODE
     }
 }
 impl core::ops::Deref for MODE_SELEC_R {
@@ -214,13 +214,13 @@ impl<'a> MODE_SELEC_W<'a> {
     }
     #[doc = "Old mode of Sample Timing"]
     #[inline(always)]
-    pub fn old(self) -> &'a mut W {
-        self.variant(MODE_SELEC_A::OLD)
+    pub fn old_mode(self) -> &'a mut W {
+        self.variant(MODE_SELEC_A::OLD_MODE)
     }
     #[doc = "New mode of Sample Timing"]
     #[inline(always)]
-    pub fn new(self) -> &'a mut W {
-        self.variant(MODE_SELEC_A::NEW)
+    pub fn new_mode(self) -> &'a mut W {
+        self.variant(MODE_SELEC_A::NEW_MODE)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]

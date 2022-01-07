@@ -159,7 +159,7 @@ impl<'a> TC_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TF_UDR_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_UNDERRUN = 0,
     #[doc = "1: `1`"]
     UNDERRUN = 1,
 }
@@ -180,14 +180,14 @@ impl TF_UDR_R {
     #[inline(always)]
     pub fn variant(&self) -> TF_UDR_A {
         match self.bits {
-            false => TF_UDR_A::NOT,
+            false => TF_UDR_A::NOT_UNDERRUN,
             true => TF_UDR_A::UNDERRUN,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_UNDERRUN`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == TF_UDR_A::NOT
+    pub fn is_not_underrun(&self) -> bool {
+        **self == TF_UDR_A::NOT_UNDERRUN
     }
     #[doc = "Checks if the value of the field is `UNDERRUN`"]
     #[inline(always)]
@@ -214,8 +214,8 @@ impl<'a> TF_UDR_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(TF_UDR_A::NOT)
+    pub fn not_underrun(self) -> &'a mut W {
+        self.variant(TF_UDR_A::NOT_UNDERRUN)
     }
     #[doc = "`1`"]
     #[inline(always)]
@@ -243,9 +243,9 @@ impl<'a> TF_UDR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TF_OVF_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_OVERFLOW = 0,
     #[doc = "1: `1`"]
-    OVERFLOWED = 1,
+    OVERFLOW = 1,
 }
 impl From<TF_OVF_A> for bool {
     #[inline(always)]
@@ -264,19 +264,19 @@ impl TF_OVF_R {
     #[inline(always)]
     pub fn variant(&self) -> TF_OVF_A {
         match self.bits {
-            false => TF_OVF_A::NOT,
-            true => TF_OVF_A::OVERFLOWED,
+            false => TF_OVF_A::NOT_OVERFLOW,
+            true => TF_OVF_A::OVERFLOW,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_OVERFLOW`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == TF_OVF_A::NOT
+    pub fn is_not_overflow(&self) -> bool {
+        **self == TF_OVF_A::NOT_OVERFLOW
     }
-    #[doc = "Checks if the value of the field is `OVERFLOWED`"]
+    #[doc = "Checks if the value of the field is `OVERFLOW`"]
     #[inline(always)]
-    pub fn is_overflowed(&self) -> bool {
-        **self == TF_OVF_A::OVERFLOWED
+    pub fn is_overflow(&self) -> bool {
+        **self == TF_OVF_A::OVERFLOW
     }
 }
 impl core::ops::Deref for TF_OVF_R {
@@ -298,13 +298,13 @@ impl<'a> TF_OVF_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(TF_OVF_A::NOT)
+    pub fn not_overflow(self) -> &'a mut W {
+        self.variant(TF_OVF_A::NOT_OVERFLOW)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn overflowed(self) -> &'a mut W {
-        self.variant(TF_OVF_A::OVERFLOWED)
+    pub fn overflow(self) -> &'a mut W {
+        self.variant(TF_OVF_A::OVERFLOW)
     }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
@@ -327,7 +327,7 @@ impl<'a> TF_OVF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_UDR_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_UNDERRUN = 0,
     #[doc = "1: `1`"]
     UNDERRUN = 1,
 }
@@ -348,14 +348,14 @@ impl RF_UDR_R {
     #[inline(always)]
     pub fn variant(&self) -> RF_UDR_A {
         match self.bits {
-            false => RF_UDR_A::NOT,
+            false => RF_UDR_A::NOT_UNDERRUN,
             true => RF_UDR_A::UNDERRUN,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_UNDERRUN`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == RF_UDR_A::NOT
+    pub fn is_not_underrun(&self) -> bool {
+        **self == RF_UDR_A::NOT_UNDERRUN
     }
     #[doc = "Checks if the value of the field is `UNDERRUN`"]
     #[inline(always)]
@@ -382,8 +382,8 @@ impl<'a> RF_UDR_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(RF_UDR_A::NOT)
+    pub fn not_underrun(self) -> &'a mut W {
+        self.variant(RF_UDR_A::NOT_UNDERRUN)
     }
     #[doc = "`1`"]
     #[inline(always)]
@@ -411,7 +411,7 @@ impl<'a> RF_UDR_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_OVF_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_OVERFLOW = 0,
     #[doc = "1: `1`"]
     OVERFLOW = 1,
 }
@@ -432,14 +432,14 @@ impl RF_OVF_R {
     #[inline(always)]
     pub fn variant(&self) -> RF_OVF_A {
         match self.bits {
-            false => RF_OVF_A::NOT,
+            false => RF_OVF_A::NOT_OVERFLOW,
             true => RF_OVF_A::OVERFLOW,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_OVERFLOW`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == RF_OVF_A::NOT
+    pub fn is_not_overflow(&self) -> bool {
+        **self == RF_OVF_A::NOT_OVERFLOW
     }
     #[doc = "Checks if the value of the field is `OVERFLOW`"]
     #[inline(always)]
@@ -466,8 +466,8 @@ impl<'a> RF_OVF_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(RF_OVF_A::NOT)
+    pub fn not_overflow(self) -> &'a mut W {
+        self.variant(RF_OVF_A::NOT_OVERFLOW)
     }
     #[doc = "`1`"]
     #[inline(always)]
@@ -495,7 +495,7 @@ impl<'a> RF_OVF_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TF_FULL_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_FULL = 0,
     #[doc = "1: `1`"]
     FULL = 1,
 }
@@ -516,14 +516,14 @@ impl TF_FULL_R {
     #[inline(always)]
     pub fn variant(&self) -> TF_FULL_A {
         match self.bits {
-            false => TF_FULL_A::NOT,
+            false => TF_FULL_A::NOT_FULL,
             true => TF_FULL_A::FULL,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_FULL`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == TF_FULL_A::NOT
+    pub fn is_not_full(&self) -> bool {
+        **self == TF_FULL_A::NOT_FULL
     }
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
@@ -550,8 +550,8 @@ impl<'a> TF_FULL_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(TF_FULL_A::NOT)
+    pub fn not_full(self) -> &'a mut W {
+        self.variant(TF_FULL_A::NOT_FULL)
     }
     #[doc = "`1`"]
     #[inline(always)]
@@ -579,7 +579,7 @@ impl<'a> TF_FULL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TF_EMP_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_EMPTY = 0,
     #[doc = "1: `1`"]
     EMPTY = 1,
 }
@@ -600,14 +600,14 @@ impl TF_EMP_R {
     #[inline(always)]
     pub fn variant(&self) -> TF_EMP_A {
         match self.bits {
-            false => TF_EMP_A::NOT,
+            false => TF_EMP_A::NOT_EMPTY,
             true => TF_EMP_A::EMPTY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == TF_EMP_A::NOT
+    pub fn is_not_empty(&self) -> bool {
+        **self == TF_EMP_A::NOT_EMPTY
     }
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
@@ -634,8 +634,8 @@ impl<'a> TF_EMP_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(TF_EMP_A::NOT)
+    pub fn not_empty(self) -> &'a mut W {
+        self.variant(TF_EMP_A::NOT_EMPTY)
     }
     #[doc = "`1`"]
     #[inline(always)]
@@ -700,7 +700,7 @@ impl<'a> TF_READY_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_FULL_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_FULL = 0,
     #[doc = "1: `1`"]
     FULL = 1,
 }
@@ -721,14 +721,14 @@ impl RF_FULL_R {
     #[inline(always)]
     pub fn variant(&self) -> RF_FULL_A {
         match self.bits {
-            false => RF_FULL_A::NOT,
+            false => RF_FULL_A::NOT_FULL,
             true => RF_FULL_A::FULL,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_FULL`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == RF_FULL_A::NOT
+    pub fn is_not_full(&self) -> bool {
+        **self == RF_FULL_A::NOT_FULL
     }
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
@@ -755,8 +755,8 @@ impl<'a> RF_FULL_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(RF_FULL_A::NOT)
+    pub fn not_full(self) -> &'a mut W {
+        self.variant(RF_FULL_A::NOT_FULL)
     }
     #[doc = "`1`"]
     #[inline(always)]
@@ -784,7 +784,7 @@ impl<'a> RF_FULL_W<'a> {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_EMP_A {
     #[doc = "0: `0`"]
-    NOT = 0,
+    NOT_EMPTY = 0,
     #[doc = "1: `1`"]
     EMPTY = 1,
 }
@@ -805,14 +805,14 @@ impl RF_EMP_R {
     #[inline(always)]
     pub fn variant(&self) -> RF_EMP_A {
         match self.bits {
-            false => RF_EMP_A::NOT,
+            false => RF_EMP_A::NOT_EMPTY,
             true => RF_EMP_A::EMPTY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT`"]
+    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
     #[inline(always)]
-    pub fn is_not(&self) -> bool {
-        **self == RF_EMP_A::NOT
+    pub fn is_not_empty(&self) -> bool {
+        **self == RF_EMP_A::NOT_EMPTY
     }
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
@@ -839,8 +839,8 @@ impl<'a> RF_EMP_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not(self) -> &'a mut W {
-        self.variant(RF_EMP_A::NOT)
+    pub fn not_empty(self) -> &'a mut W {
+        self.variant(RF_EMP_A::NOT_EMPTY)
     }
     #[doc = "`1`"]
     #[inline(always)]

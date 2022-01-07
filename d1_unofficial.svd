@@ -13555,12 +13555,12 @@
               <bitRange>[2:2]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>old</name>
+                  <name>old_mode</name>
                   <description>Old mode of Sample Timing</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>new</name>
+                  <name>new_mode</name>
                   <description>New mode of Sample Timing</description>
                   <value>1</value>
                 </enumeratedValue>
@@ -14091,7 +14091,7 @@
               <bitRange>[11:11]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_underrun</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -14106,11 +14106,11 @@
               <bitRange>[10:10]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_overflow</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>overflowed</name>
+                  <name>overflow</name>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -14121,7 +14121,7 @@
               <bitRange>[9:9]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_underrun</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -14136,7 +14136,7 @@
               <bitRange>[8:8]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_overflow</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -14151,7 +14151,7 @@
               <bitRange>[6:6]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_full</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -14166,7 +14166,7 @@
               <bitRange>[5:5]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_empty</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -14186,7 +14186,7 @@
               <bitRange>[2:2]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_full</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -14201,7 +14201,7 @@
               <bitRange>[1:1]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>not</name>
+                  <name>not_empty</name>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
@@ -14645,27 +14645,13 @@
         </register>
         <register>
           <name>SPI_TBR</name>
-          <description>SPI TX Bit Register</description>
+          <description>SPI TX Bit Register\n\nVTB [31:0]: The Value of the Transmit Bits</description>
           <addressOffset>0x0048</addressOffset>
-          <fields>
-            <field>
-              <name>vtb</name>
-              <description>The Value of the Transmit Bits</description>
-              <bitRange>[31:0]</bitRange>
-            </field>
-          </fields>
         </register>
         <register>
           <name>SPI_RBR</name>
-          <description>SPI RX Bit Register</description>
+          <description>SPI RX Bit Register\n\nVRB [31:0]: The Value of the Receive Bits</description>
           <addressOffset>0x004C</addressOffset>
-          <fields>
-            <field>
-              <name>vrb</name>
-              <description>The Value of the Receive Bits</description>
-              <bitRange>[31:0]</bitRange>
-            </field>
-          </fields>
         </register>
         <register>
           <name>SPI_NDMA_MODE_CTL</name>
@@ -14718,27 +14704,13 @@
         </register>
         <register>
           <name>SPI_TXD</name>
-          <description>SPI TX Data Register</description>
+          <description>SPI TX Data Register\n\nTDATA [31:0]: Transmit Data</description>
           <addressOffset>0x0200</addressOffset>
-          <fields>
-            <field>
-              <name>tdata</name>
-              <description>Transmit Data</description>
-              <bitRange>[31:0]</bitRange>
-            </field>
-          </fields>
         </register>
         <register>
           <name>SPI_RXD</name>
-          <description>SPI RX Data Register</description>
+          <description>SPI RX Data Register\n\nRDATA [31:0]: Receive Data</description>
           <addressOffset>0x0300</addressOffset>
-          <fields>
-            <field>
-              <name>rdata</name>
-              <description>Receive Data</description>
-              <bitRange>[31:0]</bitRange>
-            </field>
-          </fields>
         </register>
       </registers>
     </peripheral>
