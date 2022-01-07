@@ -5414,110 +5414,6 @@
     </peripheral>
 
     <peripheral>
-      <name>SPI0</name>
-      <description>Serial Peripheral Interface</description>
-      <groupName>Interfaces</groupName>
-      <baseAddress>0x04025000</baseAddress>
-      <addressBlock>
-        <offset>0</offset>
-        <size>0x1000</size>
-        <usage>registers</usage>
-      </addressBlock>
-      <registers>
-        <register>
-          <name>SPI_GCR</name>
-          <description>SPI Global Control Register</description>
-          <addressOffset>0x0004</addressOffset>
-        </register>
-        <register>
-          <name>SPI_TCR</name>
-          <description>SPI Transfer Control Register</description>
-          <addressOffset>0x0008</addressOffset>
-        </register>
-        <register>
-          <name>SPI_IER</name>
-          <description>SPI Interrupt Control Register</description>
-          <addressOffset>0x0010</addressOffset>
-        </register>
-        <register>
-          <name>SPI_ISR</name>
-          <description>SPI Interrupt Status Register</description>
-          <addressOffset>0x0014</addressOffset>
-        </register>
-        <register>
-          <name>SPI_FCR</name>
-          <description>SPI FIFO Control Register</description>
-          <addressOffset>0x0018</addressOffset>
-        </register>
-        <register>
-          <name>SPI_FSR</name>
-          <description>SPI FIFO Status Register</description>
-          <addressOffset>0x001C</addressOffset>
-        </register>
-        <register>
-          <name>SPI_WCR</name>
-          <description>SPI Wait Clock Register</description>
-          <addressOffset>0x0020</addressOffset>
-        </register>
-        <register>
-          <name>SPI_SAMP_DL</name>
-          <description>SPI Sample Delay Control Register</description>
-          <addressOffset>0x0028</addressOffset>
-        </register>
-        <register>
-          <name>SPI_MBC</name>
-          <description>SPI Master Burst Counter Register</description>
-          <addressOffset>0x0030</addressOffset>
-        </register>
-        <register>
-          <name>SPI_MTC</name>
-          <description>SPI Master Transmit Counter Register</description>
-          <addressOffset>0x0034</addressOffset>
-        </register>
-        <register>
-          <name>SPI_BCC</name>
-          <description>SPI Master Burst Control Register</description>
-          <addressOffset>0x0038</addressOffset>
-        </register>
-        <register>
-          <name>SPI_BATCR</name>
-          <description>SPI Bit-Aligned Transfer Configure Register</description>
-          <addressOffset>0x0040</addressOffset>
-        </register>
-        <register>
-          <name>SPI_BA_CCR</name>
-          <description>SPI Bit-Aligned Clock Configuration Register</description>
-          <addressOffset>0x0044</addressOffset>
-        </register>
-        <register>
-          <name>SPI_TBR</name>
-          <description>SPI TX Bit Register</description>
-          <addressOffset>0x0048</addressOffset>
-        </register>
-        <register>
-          <name>SPI_RBR</name>
-          <description>SPI RX Bit Register</description>
-          <addressOffset>0x004C</addressOffset>
-        </register>
-        <register>
-          <name>SPI_NDMA_MODE_CTL</name>
-          <description>SPI Normal DMA Mode Control Register</description>
-          <addressOffset>0x0088</addressOffset>
-        </register>
-        <register>
-          <name>SPI_TXD</name>
-          <description>SPI TX Data Register</description>
-          <addressOffset>0x0200</addressOffset>
-        </register>
-        <register>
-          <name>SPI_RXD</name>
-          <description>SPI RX Data Register</description>
-          <addressOffset>0x0300</addressOffset>
-        </register>
-      </registers>
-    </peripheral>
-
-    <peripheral>
       <name>UART0</name>
       <description>Universal Asynchronous Receiver Transmitter</description>
       <groupName>Interfaces</groupName>
@@ -13605,6 +13501,1242 @@
             <field>
               <name>data_count</name>
               <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>SPI0</name>
+      <description>Serial Peripheral Interface</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x04025000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>SPI0</name>
+        <value>31</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>SPI_GCR</name>
+          <description>SPI Global Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>srst</name>
+              <description>Soft reset</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>tp_en</name>
+              <description>Transmit Pause Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <description>normal operation, ignore RXFIFO status</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>stop_when_full</name>
+                  <description>Stop transmit data when RXFIFO full</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mode_selec</name>
+              <description>Sample timing Mode Select</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>old</name>
+                  <description>Old mode of Sample Timing</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>new</name>
+                  <description>New mode of Sample Timing</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mode</name>
+              <description>SPI Function Mode Select</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>slave</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>master</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>en</name>
+              <description>SPI Module Enable Control</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_TCR</name>
+          <description>SPI Transfer Control Register</description>
+          <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>xch</name>
+              <description>Exchange Burst</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>initiate_exchange</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sdc1</name>
+              <description>Master Sample Data Control register1</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <description>normal operation, do not delay the internal read sample point</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>delay</name>
+                  <description>delay the internal read sample point</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sddm</name>
+              <description>Sending Data Delay Mode</description>
+              <bitRange>[14:14]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <description>normal sending</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>delay</name>
+                  <description>delay sending</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sdm</name>
+              <description>Master Sample Data Mode</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>delay</name>
+                  <description>delay sample mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <description>normal sample mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fbs</name>
+              <description>First Transmit Bit Select</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>msb</name>
+                  <description>MSB first</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>lsb</name>
+                  <description>LSB first</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sdc</name>
+              <description>Master Sample Data Control</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <description>Normal operation, do not delay the internal read sample point</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>delay</name>
+                  <description>Delay the internal read sample point</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rpsm</name>
+              <description>Rapids Mode Select</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <description>Normal write mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>rapid</name>
+                  <description>Rapid write mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddb</name>
+              <description>Dummy Burst Type</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>zero</name>
+                  <description>The bit value of dummy SPI burst is zero</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>one</name>
+                  <description>The bit value of dummy SPI burst is one</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dhb</name>
+              <description>Discard Hash Burst</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>receive</name>
+                  <description>Receiving all SPI bursts in the BC period</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>discard</name>
+                  <description>Discard unused SPI bursts</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ss_level</name>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ss_owner</name>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>spi_controller</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>software</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ss_sel</name>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ss0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ss1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ss2</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ss3</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ssctl</name>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>assert</name>
+                  <description>SPI_SSx remains asserted between SPI bursts</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>negate</name>
+                  <description>Negate SPI_SSx between SPI bursts</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>spol</name>
+              <description>SPI Chip Select Signal Polarity Control</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>Active high polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>Active low polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cpol</name>
+              <description>SPI Clock Polarity Control</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>Active high polarity</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>Active low polarity</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cpha</name>
+              <description>SPI Clock/Data Phase Control</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P0</name>
+                  <description>Phase 0 (Leading edge for sample data)</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P1</name>
+                  <description>Phase 1 (Leading edge for setup data)</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_IER</name>
+          <description>SPI Interrupt Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>ss_int_en</name>
+              <description>SSI Interrupt Enable</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tc_int_en</name>
+              <description>Transfer Completed Interrupt Enable</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_udr_int_en</name>
+              <description>TXFIFO Underrun Interrupt Enable</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_ovf_int_en</name>
+              <description>TXFIFO Overflow Interrupt Enable</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_udr_int_en</name>
+              <description>RXFIFO Underrun Interrupt Enable</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_ovf_int_en</name>
+              <description>RXFIFO Overflow Interrupt Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_full_int_en</name>
+              <description>TXFIFO Full Interrupt Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_emp_int_en</name>
+              <description>TXFIFO Empty Interrupt Enable</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_erq_int_en</name>
+              <description>TXFIFO Empty Request Interrupt Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_full_int_en</name>
+              <description>RXFIFO Full Interrupt Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_emp_int_en</name>
+              <description>RXFIFO Empty Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_rdy_int_en</name>
+              <description>RXFIFO Ready Request Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_ISR</name>
+          <description>SPI Interrupt Status Register</description>
+          <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>ssi</name>
+              <description>SS Invalid Enable</description>
+              <bitRange>[13:13]</bitRange>
+            </field>
+            <field>
+              <name>tc</name>
+              <description>Transfer Completed</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>busy</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>transfer_completed</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_udr</name>
+              <description>TXFIFO Underrun</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>underrun</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_ovf</name>
+              <description>TXFIFO Overflow</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>overflowed</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_udr</name>
+              <description>RXFIFO Underrun</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>underrun</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_ovf</name>
+              <description>RXFIFO Overflow</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>overflow</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_full</name>
+              <description>TXFIFO Full</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>full</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_emp</name>
+              <description>TXFIFO Empty</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_ready</name>
+              <description>TXFIFO Ready</description>
+              <bitRange>[4:4]</bitRange>
+            </field>
+            <field>
+              <name>rf_full</name>
+              <description>RXFIFO Full</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>full</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_emp</name>
+              <description>RXFIFO Empty</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_rdy</name>
+              <description>RXFIFO Ready</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_FCR</name>
+          <description>SPI FIFO Control Register</description>
+          <addressOffset>0x0018</addressOffset>
+          <fields>
+            <field>
+              <name>tf_rst</name>
+              <description>TXFIFO Reset</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>tf_test_en</name>
+              <description>TXFIFO Test Mode Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_drq_en</name>
+              <description>TXFIFO DMA Request Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tf_trig_level</name>
+              <description>TXFIFO Empty Request Trigger Level</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>rf_rst</name>
+              <description>RXFIFO Reset</description>
+              <bitRange>[15:15]</bitRange>
+            </field>
+            <field>
+              <name>rf_test_en</name>
+              <description>RXFIFO Test Mode Enable</description>
+              <bitRange>[14:14]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_drq_en</name>
+              <description>RXFIFO DMA Request Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rf_trig_level</name>
+              <description>RXFIFO Ready Request Trigger Level</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_FSR</name>
+          <description>SPI FIFO Status Register</description>
+          <addressOffset>0x001C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>tb_wr</name>
+              <description>TXFIFO Write Buffer Write Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>tb_cnt</name>
+              <description>TXFIFO Write Buffer Counter</description>
+              <bitRange>[30:28]</bitRange>
+            </field>
+            <field>
+              <name>tf_cnt</name>
+              <description>TXFIFO Counter\n\nThese bits indicate the number of bytes in TXFIFO</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>rb_wr</name>
+              <description>RXFIFO Write Buffer Write Enable</description>
+              <bitRange>[15:15]</bitRange>
+            </field>
+            <field>
+              <name>rb_cnt</name>
+              <description>RXFIFO Write Buffer Counter</description>
+              <bitRange>[14:12]</bitRange>
+            </field>
+            <field>
+              <name>rf_cnt</name>
+              <description>RXFIFO Counter\n\nThese bits indicate the number of bytes in RXFIFO</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_WCR</name>
+          <description>SPI Wait Clock Register</description>
+          <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>swc</name>
+              <description>Dual mode direction switch wait clock counter</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <field>
+              <name>wwc</name>
+              <description>Wait clock counter</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_SAMP_DL</name>
+          <description>SPI Sample Delay Control Register</description>
+          <addressOffset>0x0028</addressOffset>
+          <fields>
+            <field>
+              <name>samp_dl_cal_start</name>
+              <description>Sample Delay Calibration Start</description>
+              <bitRange>[15:15]</bitRange>
+            </field>
+            <field>
+              <name>samp_dl_cal_done</name>
+              <description>Sample Delay Calibration Dont</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>samp_dl</name>
+              <description>Sample Delay</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>samp_dl_sw_en</name>
+              <description>Sample Delay Software Enable</description>
+              <bitRange>[7:7]</bitRange>
+            </field>
+            <field>
+              <name>samp_dl_sw</name>
+              <description>Sample Delay Software</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_MBC</name>
+          <description>SPI Master Burst Counter Register</description>
+          <addressOffset>0x0030</addressOffset>
+          <fields>
+            <field>
+              <name>mbc</name>
+              <description>Master Burst Counter</description>
+              <bitRange>[23:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_MTC</name>
+          <description>SPI Master Transmit Counter Register</description>
+          <addressOffset>0x0034</addressOffset>
+          <fields>
+            <field>
+              <name>mwtc</name>
+              <description>Master Write Transmit Counter</description>
+              <bitRange>[23:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_BCC</name>
+          <description>SPI Master Burst Control Register</description>
+          <addressOffset>0x0038</addressOffset>
+          <fields>
+            <field>
+              <name>quad_en</name>
+              <description>Quad Mode Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>drm</name>
+              <description>Master Dual Mode RX Enable</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>single</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>dual</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dbc</name>
+              <description>Master Dummy Burst Counter</description>
+              <bitRange>[27:24]</bitRange>
+            </field>
+            <field>
+              <name>stc</name>
+              <description>Master Single Mode Transmit Counter</description>
+              <bitRange>[23:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_BATC</name>
+          <description>SPI Bit-Aligned Transfer Configure Register</description>
+          <addressOffset>0x0040</addressOffset>
+          <fields>
+            <field>
+              <name>tce</name>
+              <description>Transfer Control Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>init</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>msms</name>
+              <description>Master Sample Standard</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>delay</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>standard</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tbc</name>
+              <description>Transfer Bits Completed</description>
+              <bitRange>[25:25]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>busy</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>completed</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tbc_int_en</name>
+              <description>Transfer Bits Completed Interrupt Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_frm_len</name>
+              <description>Configure the length of serial data frame of RX</description>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>tx_frm_len</name>
+              <description>Configure the length of serial data frame of TX</description>
+              <bitRange>[13:8]</bitRange>
+            </field>
+            <field>
+              <name>ss_level</name>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ss_owner</name>
+              <description>SS Output Owner Select</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SPI_controller</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Software</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>spol</name>
+              <description>SPI Chip Select Signal Polarity Control</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ss_sel</name>
+              <description>SPI Chip Select</description>
+              <bitRange>[3:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SS0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SS1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SS2</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SS3</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>wms</name>
+              <description>Work Mode Select</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>byte_aligned</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reserved</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>bit_aligned_3wire</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>bit_aligned_standard</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_BA_CCR</name>
+          <description>SPI Bit-Aligned Clock Configuration Register</description>
+          <addressOffset>0x0044</addressOffset>
+          <fields>
+            <field>
+              <name>cdr_n</name>
+              <description>Clock Divide Rate</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_TBR</name>
+          <description>SPI TX Bit Register</description>
+          <addressOffset>0x0048</addressOffset>
+          <fields>
+            <field>
+              <name>vtb</name>
+              <description>The Value of the Transmit Bits</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_RBR</name>
+          <description>SPI RX Bit Register</description>
+          <addressOffset>0x004C</addressOffset>
+          <fields>
+            <field>
+              <name>vrb</name>
+              <description>The Value of the Receive Bits</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_NDMA_MODE_CTL</name>
+          <description>SPI Normal DMA Mode Control Register</description>
+          <addressOffset>0x0088</addressOffset>
+          <fields>
+            <field>
+              <name>spi_act_m</name>
+              <description>SPI NDMA Active Mode</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>drq_control</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>controller_control</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>spi_ack_m</name>
+              <description>SPI NDMA Acknowledge Mode</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ignore</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>after_detect</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>spi_dma_wait</name>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_TXD</name>
+          <description>SPI TX Data Register</description>
+          <addressOffset>0x0200</addressOffset>
+          <fields>
+            <field>
+              <name>tdata</name>
+              <description>Transmit Data</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SPI_RXD</name>
+          <description>SPI RX Data Register</description>
+          <addressOffset>0x0300</addressOffset>
+          <fields>
+            <field>
+              <name>rdata</name>
+              <description>Receive Data</description>
+              <bitRange>[31:0]</bitRange>
             </field>
           </fields>
         </register>

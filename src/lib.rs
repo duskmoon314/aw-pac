@@ -36,6 +36,7 @@ extern "C" {
     fn TWI1();
     fn TWI2();
     fn TWI3();
+    fn SPI0();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -45,7 +46,7 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 29] = [
+pub static __EXTERNAL_INTERRUPTS: [Vector; 32] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -75,6 +76,9 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 29] = [
     Vector { _handler: TWI1 },
     Vector { _handler: TWI2 },
     Vector { _handler: TWI3 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: SPI0 },
 ];
 #[doc(hidden)]
 pub mod interrupt;
@@ -331,34 +335,6 @@ impl core::fmt::Debug for TWI3 {
 }
 #[doc = "Two Wire Interface"]
 pub mod twi3;
-#[doc = "Serial Peripheral Interface"]
-pub struct SPI0 {
-    _marker: PhantomData<*const ()>,
-}
-unsafe impl Send for SPI0 {}
-impl SPI0 {
-    #[doc = r"Pointer to the register block"]
-    pub const PTR: *const spi0::RegisterBlock = 0x0402_5000 as *const _;
-    #[doc = r"Return the pointer to the register block"]
-    #[inline(always)]
-    pub const fn ptr() -> *const spi0::RegisterBlock {
-        Self::PTR
-    }
-}
-impl Deref for SPI0 {
-    type Target = spi0::RegisterBlock;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        unsafe { &*Self::PTR }
-    }
-}
-impl core::fmt::Debug for SPI0 {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("SPI0").finish()
-    }
-}
-#[doc = "Serial Peripheral Interface"]
-pub mod spi0;
 #[doc = "Universal Asynchronous Receiver Transmitter"]
 pub struct UART0 {
     _marker: PhantomData<*const ()>,
@@ -527,6 +503,34 @@ impl core::fmt::Debug for UART5 {
 }
 #[doc = "Universal Asynchronous Receiver Transmitter"]
 pub mod uart5;
+#[doc = "Serial Peripheral Interface"]
+pub struct SPI0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPI0 {}
+impl SPI0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const spi0::RegisterBlock = 0x0402_5000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const spi0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SPI0 {
+    type Target = spi0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SPI0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SPI0").finish()
+    }
+}
+#[doc = "Serial Peripheral Interface"]
+pub mod spi0;
 #[doc = "Gerneral Purpose Input/Output"]
 pub struct GPIO {
     _marker: PhantomData<*const ()>,
@@ -578,8 +582,6 @@ pub struct Peripherals {
     pub TWI2: TWI2,
     #[doc = "TWI3"]
     pub TWI3: TWI3,
-    #[doc = "SPI0"]
-    pub SPI0: SPI0,
     #[doc = "UART0"]
     pub UART0: UART0,
     #[doc = "UART1"]
@@ -592,6 +594,8 @@ pub struct Peripherals {
     pub UART4: UART4,
     #[doc = "UART5"]
     pub UART5: UART5,
+    #[doc = "SPI0"]
+    pub SPI0: SPI0,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
 }
@@ -639,9 +643,6 @@ impl Peripherals {
             TWI3: TWI3 {
                 _marker: PhantomData,
             },
-            SPI0: SPI0 {
-                _marker: PhantomData,
-            },
             UART0: UART0 {
                 _marker: PhantomData,
             },
@@ -658,6 +659,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             UART5: UART5 {
+                _marker: PhantomData,
+            },
+            SPI0: SPI0 {
                 _marker: PhantomData,
             },
             GPIO: GPIO {

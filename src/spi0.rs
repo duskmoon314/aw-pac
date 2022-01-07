@@ -29,7 +29,7 @@ pub struct RegisterBlock {
     pub spi_bcc: crate::Reg<spi_bcc::SPI_BCC_SPEC>,
     _reserved11: [u8; 0x04],
     #[doc = "0x40 - SPI Bit-Aligned Transfer Configure Register"]
-    pub spi_batcr: crate::Reg<spi_batcr::SPI_BATCR_SPEC>,
+    pub spi_batc: crate::Reg<spi_batc::SPI_BATC_SPEC>,
     #[doc = "0x44 - SPI Bit-Aligned Clock Configuration Register"]
     pub spi_ba_ccr: crate::Reg<spi_ba_ccr::SPI_BA_CCR_SPEC>,
     #[doc = "0x48 - SPI TX Bit Register"]
@@ -90,10 +90,10 @@ pub mod spi_mtc;
 pub type SPI_BCC = crate::Reg<spi_bcc::SPI_BCC_SPEC>;
 #[doc = "SPI Master Burst Control Register"]
 pub mod spi_bcc;
-#[doc = "SPI_BATCR register accessor: an alias for `Reg<SPI_BATCR_SPEC>`"]
-pub type SPI_BATCR = crate::Reg<spi_batcr::SPI_BATCR_SPEC>;
+#[doc = "SPI_BATC register accessor: an alias for `Reg<SPI_BATC_SPEC>`"]
+pub type SPI_BATC = crate::Reg<spi_batc::SPI_BATC_SPEC>;
 #[doc = "SPI Bit-Aligned Transfer Configure Register"]
-pub mod spi_batcr;
+pub mod spi_batc;
 #[doc = "SPI_BA_CCR register accessor: an alias for `Reg<SPI_BA_CCR_SPEC>`"]
 pub type SPI_BA_CCR = crate::Reg<spi_ba_ccr::SPI_BA_CCR_SPEC>;
 #[doc = "SPI Bit-Aligned Clock Configuration Register"]

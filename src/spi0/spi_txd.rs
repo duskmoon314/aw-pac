@@ -34,7 +34,46 @@ impl From<crate::W<SPI_TXD_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tdata` reader - Transmit Data"]
+pub struct TDATA_R(crate::FieldReader<u32, u32>);
+impl TDATA_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u32) -> Self {
+        TDATA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TDATA_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `tdata` writer - Transmit Data"]
+pub struct TDATA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TDATA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u32) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xffff_ffff) | (value as u32 & 0xffff_ffff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:31 - Transmit Data"]
+    #[inline(always)]
+    pub fn tdata(&self) -> TDATA_R {
+        TDATA_R::new((self.bits & 0xffff_ffff) as u32)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - Transmit Data"]
+    #[inline(always)]
+    pub fn tdata(&mut self) -> TDATA_W {
+        TDATA_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
