@@ -19372,42 +19372,42 @@
       </interrupt>
       <registers>
         <register>
-          <name>TP_CTRL_REG0</name>
+          <name>TP_CTRL0</name>
           <description>TP Control Register 0</description>
           <addressOffset>0x0000</addressOffset>
         </register>
         <register>
-          <name>TP_CTRL_REG1</name>
+          <name>TP_CTRL1</name>
           <description>TP Control Register 1</description>
           <addressOffset>0x0004</addressOffset>
         </register>
         <register>
-          <name>TP_CTRL_REG2</name>
+          <name>TP_CTRL2</name>
           <description>TP Control Register 2</description>
           <addressOffset>0x0008</addressOffset>
         </register>
         <register>
-          <name>TP_CTRL_REG3</name>
+          <name>TP_CTRL3</name>
           <description>TP Control Register 3</description>
           <addressOffset>0x000C</addressOffset>
         </register>
         <register>
-          <name>TP_INT_FIFO_CTRL_REG</name>
+          <name>TP_INT_FIFO_CTRL</name>
           <description>TP Interrupt FIFO Control Register</description>
           <addressOffset>0x0010</addressOffset>
         </register>
         <register>
-          <name>TP_INT_FIFO_STAT_REG</name>
+          <name>TP_INT_FIFO_STAT</name>
           <description>TP Interrupt FIFO Status Register</description>
           <addressOffset>0x0014</addressOffset>
         </register>
         <register>
-          <name>TP_CALI_DATA_REG</name>
+          <name>TP_CALI_DATA</name>
           <description>TP Calibration Data Register</description>
           <addressOffset>0x001C</addressOffset>
         </register>
         <register>
-          <name>TP_DATA_REG</name>
+          <name>TP_DATA</name>
           <description>TP Data Register</description>
           <addressOffset>0x0024</addressOffset>
         </register>
@@ -19610,6 +19610,229 @@
           <name>cflr%s</name>
           <description>Capture Fall Lock Register</description>
           <addressOffset>0x0118</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>LEDC</name>
+      <description>LEDC</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02008000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>LEDC</name>
+        <value>36</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>LEDC_CTRL</name>
+          <description>LEDC Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>LED_T01_TIMING_CTRL</name>
+          <description>LEDC T0 T1 Timing Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_DATA_FINISH_CNT</name>
+          <description>LEDC Data Finish Counter Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>LED_RESET_TIMING_CTRL</name>
+          <description>LEDC Reset Timing Control Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_WAIT_TIME0_CTRL</name>
+          <description>LEDC Wait Time0 Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_DATA</name>
+          <description>LEDC Data Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_DMA_CTRL</name>
+          <description>LEDC DMA Control Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_INT_CTRL</name>
+          <description>LEDC Interrupt Control Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_INT_STS</name>
+          <description>LEDC Interrupt Status Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>LEDC_WAIT_TIME1_CTRL</name>
+          <description>LEDC Wait Time1 Control Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <dim>32</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>LEDC_FIFO_DATA%s</name>
+          <description>LEDC FIFO Data Register</description>
+          <addressOffset>0x0030</addressOffset>
+          <access>read-only</access>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>EMAC</name>
+      <description>Ethernet Medium Access Controller</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x04500000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x10000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>EMAC</name>
+        <value>62</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>EMAC_BASIC_CTL0</name>
+          <description>EMAC Basic Control Register0</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_BASIC_CTL1</name>
+          <description>EMAC Basic Control Register1</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_INT_STA</name>
+          <description>EMAC Interrupt Status Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_INT_EN</name>
+          <description>EMAC Interrupt Enable Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TX_CTL0</name>
+          <description>EMAC Transmit Control Register0</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TX_CTL1</name>
+          <description>EMAC Transmit Control Register1</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TX_FLOW_CTL</name>
+          <description>EMAC Transmit Flow Control Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TX_DMA_DESC_LIST</name>
+          <description>EMAC Transmit Descriptor List Address Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_CTL0</name>
+          <description>EMAC Receive Control Register0</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_CTL1</name>
+          <description>EMAC Receive Control Register1</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_DMA_DESC_LIST</name>
+          <description>EMAC Receive Descriptor List Address Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_FRM_FLT</name>
+          <description>EMAC Receive Frame Filter Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_HASH0</name>
+          <description>EMAC Hash Table Register0</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_HASH1</name>
+          <description>EMAC Hash Table Register1</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_MII_CMD</name>
+          <description>EMAC Management Interface Command Register</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_MII_DATA</name>
+          <description>EMAC Management Interface Data Register</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x08</dimIncrement>
+          <name>EMAC_ADDR_HIGH%s</name>
+          <description>EMAC MAC Address High Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x08</dimIncrement>
+          <name>EMAC_ADDR_LOW%s</name>
+          <description>EMAC MAC Address Low Register</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TX_DMA_STA</name>
+          <description>EMAC Transmit DMA Status Register</description>
+          <addressOffset>0x00B0</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TX_CUR_DESC</name>
+          <description>EMAC Current Transmit Descriptor Register</description>
+          <addressOffset>0x00B4</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_TX_CUR_BUF</name>
+          <description>EMAC Current Transmit Buffer Address Register</description>
+          <addressOffset>0x00B8</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_DMA_STA</name>
+          <description>EMAC Receive DMA Status Register</description>
+          <addressOffset>0x00C0</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_CUR_DESC</name>
+          <description>EMAC Current Receive Descriptor Register</description>
+          <addressOffset>0x00C4</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RX_CUR_BUF</name>
+          <description>EMAC Current Receive Buffer Address Register</description>
+          <addressOffset>0x00C8</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_RGMII_STA</name>
+          <description>EMAC RGMII Status Register</description>
+          <addressOffset>0x00D0</addressOffset>
         </register>
       </registers>
     </peripheral>

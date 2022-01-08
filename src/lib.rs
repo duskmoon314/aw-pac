@@ -39,6 +39,8 @@ extern "C" {
     fn SPI0();
     fn SPI1();
     fn PWM();
+    fn LEDC();
+    fn EMAC();
     fn HSTIMER0();
     fn HSTIMER1();
     fn GPADC();
@@ -98,6 +100,7 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 94] = [
     Vector { _reserved: 0 },
     Vector { _handler: PWM },
     Vector { _reserved: 0 },
+    Vector { _handler: LEDC },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -123,8 +126,7 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 94] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: EMAC },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -776,6 +778,62 @@ impl core::fmt::Debug for PWM {
 }
 #[doc = "Pulse Width Modulation"]
 pub mod pwm;
+#[doc = "LEDC"]
+pub struct LEDC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for LEDC {}
+impl LEDC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ledc::RegisterBlock = 0x0200_8000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ledc::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for LEDC {
+    type Target = ledc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for LEDC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LEDC").finish()
+    }
+}
+#[doc = "LEDC"]
+pub mod ledc;
+#[doc = "Ethernet Medium Access Controller"]
+pub struct EMAC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for EMAC {}
+impl EMAC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const emac::RegisterBlock = 0x0450_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const emac::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for EMAC {
+    type Target = emac::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for EMAC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EMAC").finish()
+    }
+}
+#[doc = "Ethernet Medium Access Controller"]
+pub mod emac;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -825,6 +883,10 @@ pub struct Peripherals {
     pub LRADC: LRADC,
     #[doc = "PWM"]
     pub PWM: PWM,
+    #[doc = "LEDC"]
+    pub LEDC: LEDC,
+    #[doc = "EMAC"]
+    pub EMAC: EMAC,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -907,6 +969,12 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             PWM: PWM {
+                _marker: PhantomData,
+            },
+            LEDC: LEDC {
+                _marker: PhantomData,
+            },
+            EMAC: EMAC {
                 _marker: PhantomData,
             },
         }

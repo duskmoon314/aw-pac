@@ -28,6 +28,10 @@ pub enum Interrupt {
     SPI1 = 32,
     #[doc = "34 - PWM"]
     PWM = 34,
+    #[doc = "36 - LEDC"]
+    LEDC = 36,
+    #[doc = "62 - EMAC"]
+    EMAC = 62,
     #[doc = "71 - HSTIMER0"]
     HSTIMER0 = 71,
     #[doc = "72 - HSTIMER1"]
@@ -76,6 +80,8 @@ impl Interrupt {
             31 => Ok(Interrupt::SPI0),
             32 => Ok(Interrupt::SPI1),
             34 => Ok(Interrupt::PWM),
+            36 => Ok(Interrupt::LEDC),
+            62 => Ok(Interrupt::EMAC),
             71 => Ok(Interrupt::HSTIMER0),
             72 => Ok(Interrupt::HSTIMER1),
             73 => Ok(Interrupt::GPADC),
