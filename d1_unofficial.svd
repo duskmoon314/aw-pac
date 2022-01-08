@@ -16514,6 +16514,252 @@
     </peripheral>
 
     <peripheral>
+      <name>USB0</name>
+      <description>USB2.0 DRD</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x04100000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>USB0_DEVICE</name>
+        <value>45</value>
+      </interrupt>
+      <interrupt>
+        <name>USB0_EHCI</name>
+        <value>46</value>
+      </interrupt>
+      <interrupt>
+        <name>USB0_OHCI</name>
+        <value>47</value>
+      </interrupt>
+    </peripheral>
+
+    <peripheral>
+      <name>USB1</name>
+      <description>USB2.0 HOST</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x04200000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x100000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>USB1_EHCI</name>
+        <value>49</value>
+      </interrupt>
+      <interrupt>
+        <name>USB1_OHCI</name>
+        <value>50</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>E_CAPLENGTH</name>
+          <description>EHCI Capability Register Length Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>E_HCIVERSION</name>
+          <description>EHCI Host Interface Version Number Register</description>
+          <addressOffset>0x0002</addressOffset>
+        </register>
+        <register>
+          <name>E_HCSPARAMS</name>
+          <description>EHCI Host Control Structural Parameter Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>E_HCCPARAMS</name>
+          <description>EHCI Host Control Capability Parameter Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>E_HCSPPORTROUTE</name>
+          <description>EHCI Companion Port Route Description</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>E_USBCMD</name>
+          <description>EHCI USB Command Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>E_USBSTS</name>
+          <description>EHCI USB Status Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>E_USBINTR</name>
+          <description>EHCI USB Interrupt Enable Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>E_FRINDEX</name>
+          <description>EHCI USB Frame Index Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>E_CTRLDSSEGMENT</name>
+          <description>EHCI 4G Segment Selector Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>E_PERIODICLISTBASE</name>
+          <description>EHCI Frame List Base Address Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>E_ASYNCLISTADDR</name>
+          <description>EHCI Next Asynchronous List Address Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>E_CONFIGFLAG</name>
+          <description>EHCI Configured Flag Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>E_PORTSC</name>
+          <description>EHCI Port Status/Control Register</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>O_HcControl</name>
+          <description>OHCI Control Register</description>
+          <addressOffset>0x0404</addressOffset>
+        </register>
+        <register>
+          <name>O_HcCommandStatus</name>
+          <description>OHCI Command Status Register</description>
+          <addressOffset>0x0408</addressOffset>
+        </register>
+        <register>
+          <name>O_HcInterruptStatus</name>
+          <description>OHCI Interrupt Status Register</description>
+          <addressOffset>0x040C</addressOffset>
+        </register>
+        <register>
+          <name>O_HcInterruptEnable</name>
+          <description>OHCI Interrupt Enable Register</description>
+          <addressOffset>0x0410</addressOffset>
+        </register>
+        <register>
+          <name>O_HcInterruptDisable</name>
+          <description>OHCI Interrupt Disable Register</description>
+          <addressOffset>0x0414</addressOffset>
+        </register>
+        <register>
+          <name>O_HcHCCA</name>
+          <description>OHCI HCCA Base</description>
+          <addressOffset>0x0418</addressOffset>
+        </register>
+        <register>
+          <name>O_HcPeriodCurrentED</name>
+          <description>OHCI Period Current ED Base</description>
+          <addressOffset>0x041C</addressOffset>
+        </register>
+        <register>
+          <name>O_HcControlHeadED</name>
+          <description>OHCI Control Head ED Base</description>
+          <addressOffset>0x0420</addressOffset>
+        </register>
+        <register>
+          <name>O_HcControlCurrentED</name>
+          <description>OHCI Control Current ED Base</description>
+          <addressOffset>0x0424</addressOffset>
+        </register>
+        <register>
+          <name>O_HcBulkHeadED</name>
+          <description>OHCI Bulk Head ED Base</description>
+          <addressOffset>0x0428</addressOffset>
+        </register>
+        <register>
+          <name>O_HcBulkCurrentED</name>
+          <description>OHCI Bulk Current ED Base</description>
+          <addressOffset>0x042C</addressOffset>
+        </register>
+        <register>
+          <name>O_HcDoneHead</name>
+          <description>OHCI Done Head Base</description>
+          <addressOffset>0x0430</addressOffset>
+        </register>
+        <register>
+          <name>O_HcFmInterval</name>
+          <description>OHCI Frame Interval Register</description>
+          <addressOffset>0x0434</addressOffset>
+        </register>
+        <register>
+          <name>O_HcFmRemaining</name>
+          <description>OHCI Frame Remaining Register</description>
+          <addressOffset>0x0438</addressOffset>
+        </register>
+        <register>
+          <name>O_HcFmNumber</name>
+          <description>OHCI Frame Number Register</description>
+          <addressOffset>0x043C</addressOffset>
+        </register>
+        <register>
+          <name>O_HcPerioddicStart</name>
+          <description>OHCI Periodic Start Register</description>
+          <addressOffset>0x0440</addressOffset>
+        </register>
+        <register>
+          <name>O_HcLSThreshold</name>
+          <description>OHCI LS Threshold Register</description>
+          <addressOffset>0x0444</addressOffset>
+        </register>
+        <register>
+          <name>O_HcRhDescriptorA</name>
+          <description>OHCI Root Hub Descriptor Register A</description>
+          <addressOffset>0x0448</addressOffset>
+        </register>
+        <register>
+          <name>O_HcRhDesriptorB</name>
+          <description>OHCI Root Hub Descriptor Register B</description>
+          <addressOffset>0x044C</addressOffset>
+        </register>
+        <register>
+          <name>O_HcRhStatus</name>
+          <description>OHCI Root Hub Status Register</description>
+          <addressOffset>0x0450</addressOffset>
+        </register>
+        <register>
+          <name>O_HcRhPortStatus</name>
+          <description>OHCI Root Hub Port Status Register</description>
+          <addressOffset>0x0454</addressOffset>
+        </register>
+        <register>
+          <name>HCI_Interface</name>
+          <description>HCI Interface Register</description>
+          <addressOffset>0x0800</addressOffset>
+        </register>
+        <register>
+          <name>HCI_CTRL3</name>
+          <description>HCI Control Register</description>
+          <addressOffset>0x0808</addressOffset>
+        </register>
+        <register>
+          <name>PHY_Control</name>
+          <description>PHY Control Register</description>
+          <addressOffset>0x0810</addressOffset>
+        </register>
+        <register>
+          <name>PHY_STATUS</name>
+          <description>PHY Status Register</description>
+          <addressOffset>0x0824</addressOffset>
+        </register>
+        <register>
+          <name>HCI_SIE_PORT_DISABLE_CONTROL</name>
+          <description>HCI SIE Port Disable Control Register</description>
+          <addressOffset>0x0828</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>GPIO</name>
       <description>Gerneral Purpose Input/Output</description>
       <groupName>Interfaces</groupName>

@@ -41,6 +41,11 @@ extern "C" {
     fn PWM();
     fn IR_TX();
     fn LEDC();
+    fn USB0_DEVICE();
+    fn USB0_EHCI();
+    fn USB0_OHCI();
+    fn USB1_EHCI();
+    fn USB1_OHCI();
     fn EMAC();
     fn HSTIMER0();
     fn HSTIMER1();
@@ -111,12 +116,22 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
+    Vector {
+        _handler: USB0_DEVICE,
+    },
+    Vector {
+        _handler: USB0_EHCI,
+    },
+    Vector {
+        _handler: USB0_OHCI,
+    },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: USB1_EHCI,
+    },
+    Vector {
+        _handler: USB1_OHCI,
+    },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -714,6 +729,34 @@ impl core::fmt::Debug for SPI_DBI {
 }
 #[doc = "Serial Peripheral Interface Display Bus Interface"]
 pub mod spi_dbi;
+#[doc = "USB2.0 HOST"]
+pub struct USB1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for USB1 {}
+impl USB1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const usb1::RegisterBlock = 0x0420_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const usb1::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for USB1 {
+    type Target = usb1::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for USB1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB1").finish()
+    }
+}
+#[doc = "USB2.0 HOST"]
+pub mod usb1;
 #[doc = "Gerneral Purpose Input/Output"]
 pub struct GPIO {
     _marker: PhantomData<*const ()>,
@@ -1005,6 +1048,8 @@ pub struct Peripherals {
     pub SPI0: SPI0,
     #[doc = "SPI_DBI"]
     pub SPI_DBI: SPI_DBI,
+    #[doc = "USB1"]
+    pub USB1: USB1,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
     #[doc = "GPADC"]
@@ -1090,6 +1135,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             SPI_DBI: SPI_DBI {
+                _marker: PhantomData,
+            },
+            USB1: USB1 {
                 _marker: PhantomData,
             },
             GPIO: GPIO {
