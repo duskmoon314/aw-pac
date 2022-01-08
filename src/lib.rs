@@ -39,6 +39,7 @@ extern "C" {
     fn SPI0();
     fn SPI1();
     fn PWM();
+    fn IR_TX();
     fn LEDC();
     fn EMAC();
     fn HSTIMER0();
@@ -54,6 +55,7 @@ extern "C" {
     fn GPIOD_NS();
     fn GPIOE_NS();
     fn GPIOF_NS();
+    fn IR_RX();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -63,7 +65,7 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 94] = [
+pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -99,7 +101,7 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 94] = [
     Vector { _handler: SPI1 },
     Vector { _reserved: 0 },
     Vector { _handler: PWM },
-    Vector { _reserved: 0 },
+    Vector { _handler: IR_TX },
     Vector { _handler: LEDC },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -158,6 +160,80 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 94] = [
     Vector { _handler: GPIOE_NS },
     Vector { _reserved: 0 },
     Vector { _handler: GPIOF_NS },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: IR_RX },
 ];
 #[doc(hidden)]
 pub mod interrupt;
@@ -834,6 +910,62 @@ impl core::fmt::Debug for EMAC {
 }
 #[doc = "Ethernet Medium Access Controller"]
 pub mod emac;
+#[doc = "Counsumer Infrared Receiver"]
+pub struct CIR_RX {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CIR_RX {}
+impl CIR_RX {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const cir_rx::RegisterBlock = 0x0704_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const cir_rx::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for CIR_RX {
+    type Target = cir_rx::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for CIR_RX {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CIR_RX").finish()
+    }
+}
+#[doc = "Counsumer Infrared Receiver"]
+pub mod cir_rx;
+#[doc = "Counsumer Infrared Transmitter"]
+pub struct CIR_TX {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CIR_TX {}
+impl CIR_TX {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const cir_tx::RegisterBlock = 0x0200_3000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const cir_tx::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for CIR_TX {
+    type Target = cir_tx::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for CIR_TX {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CIR_TX").finish()
+    }
+}
+#[doc = "Counsumer Infrared Transmitter"]
+pub mod cir_tx;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -887,6 +1019,10 @@ pub struct Peripherals {
     pub LEDC: LEDC,
     #[doc = "EMAC"]
     pub EMAC: EMAC,
+    #[doc = "CIR_RX"]
+    pub CIR_RX: CIR_RX,
+    #[doc = "CIR_TX"]
+    pub CIR_TX: CIR_TX,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -975,6 +1111,12 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             EMAC: EMAC {
+                _marker: PhantomData,
+            },
+            CIR_RX: CIR_RX {
+                _marker: PhantomData,
+            },
+            CIR_TX: CIR_TX {
                 _marker: PhantomData,
             },
         }

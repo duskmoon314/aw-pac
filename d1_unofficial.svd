@@ -19837,5 +19837,141 @@
       </registers>
     </peripheral>
 
+    <peripheral>
+      <name>CIR_RX</name>
+      <description>Counsumer Infrared Receiver</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x07040000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>IR_RX</name>
+        <value>167</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>CIR_CTL</name>
+          <description>CIR Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>CIR_RXPCFG</name>
+          <description>CIR Receiver Pulse Configure Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>CIR_RXFIFO</name>
+          <description>CIR Receiver FIFO Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>CIR_RXINT</name>
+          <description>CIR Receiver Interrupt Control Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>CIR_RXSTA</name>
+          <description>CIR Receiver Status Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>CIR_RXCFG</name>
+          <description>CIR Receiver Configure Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>CIR_TX</name>
+      <description>Counsumer Infrared Transmitter</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02003000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>IR_TX</name>
+        <value>35</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>CIR_TGLR</name>
+          <description>CIR Transmit Global Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TMCR</name>
+          <description>CIR Transmit Modulation Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TCR</name>
+          <description>CIR Transmit Control Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>CIR_IDC_H</name>
+          <description>CIR Transmit Idle Duration Threshold High Bit Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>CIR_IDC_L</name>
+          <description>CIR Transmit Idle Duration Threshold Low Bit Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TICR_H</name>
+          <description>CIR Transmit Idle Counter High Bit Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TICR_L</name>
+          <description>CIR Transmit Idle Counter Low Bit Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TEL</name>
+          <description>CIR TX FIFO Empty Level Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TXINT</name>
+          <description>CIR Transmit Interrupt Control Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TAC</name>
+          <description>CIR Transmit FIFO Available Counter Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TXSTA</name>
+          <description>CIR Transmit Status Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TXT</name>
+          <description>CIR Transmit Threshold Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>CIR_DMA</name>
+          <description>CIR DMA Control Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>CIR_TXFIFO</name>
+          <description>CIR Transmit FIFO Data Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>

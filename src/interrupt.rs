@@ -28,6 +28,8 @@ pub enum Interrupt {
     SPI1 = 32,
     #[doc = "34 - PWM"]
     PWM = 34,
+    #[doc = "35 - IR_TX"]
+    IR_TX = 35,
     #[doc = "36 - LEDC"]
     LEDC = 36,
     #[doc = "62 - EMAC"]
@@ -58,6 +60,8 @@ pub enum Interrupt {
     GPIOE_NS = 91,
     #[doc = "93 - GPIOF_NS"]
     GPIOF_NS = 93,
+    #[doc = "167 - IR_RX"]
+    IR_RX = 167,
 }
 #[doc = r" TryFromInterruptError"]
 #[derive(Debug, Copy, Clone)]
@@ -80,6 +84,7 @@ impl Interrupt {
             31 => Ok(Interrupt::SPI0),
             32 => Ok(Interrupt::SPI1),
             34 => Ok(Interrupt::PWM),
+            35 => Ok(Interrupt::IR_TX),
             36 => Ok(Interrupt::LEDC),
             62 => Ok(Interrupt::EMAC),
             71 => Ok(Interrupt::HSTIMER0),
@@ -95,6 +100,7 @@ impl Interrupt {
             89 => Ok(Interrupt::GPIOD_NS),
             91 => Ok(Interrupt::GPIOE_NS),
             93 => Ok(Interrupt::GPIOF_NS),
+            167 => Ok(Interrupt::IR_RX),
             _ => Err(TryFromInterruptError(())),
         }
     }

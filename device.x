@@ -11,6 +11,7 @@ PROVIDE(TWI3 = DefaultHandler);
 PROVIDE(SPI0 = DefaultHandler);
 PROVIDE(SPI1 = DefaultHandler);
 PROVIDE(PWM = DefaultHandler);
+PROVIDE(IR_TX = DefaultHandler);
 PROVIDE(LEDC = DefaultHandler);
 PROVIDE(EMAC = DefaultHandler);
 PROVIDE(HSTIMER0 = DefaultHandler);
@@ -26,4 +27,5 @@ PROVIDE(GPIOC_NS = DefaultHandler);
 PROVIDE(GPIOD_NS = DefaultHandler);
 PROVIDE(GPIOE_NS = DefaultHandler);
 PROVIDE(GPIOF_NS = DefaultHandler);
+PROVIDE(IR_RX = DefaultHandler);
 
