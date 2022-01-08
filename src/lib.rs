@@ -39,6 +39,19 @@ extern "C" {
     fn SPI0();
     fn SPI1();
     fn PWM();
+    fn HSTIMER0();
+    fn HSTIMER1();
+    fn GPADC();
+    fn TIMER0();
+    fn TIMER1();
+    fn LRADC();
+    fn TPADC();
+    fn WATCHDOG();
+    fn GPIOB_NS();
+    fn GPIOC_NS();
+    fn GPIOD_NS();
+    fn GPIOE_NS();
+    fn GPIOF_NS();
 }
 #[doc(hidden)]
 pub union Vector {
@@ -48,7 +61,7 @@ pub union Vector {
 #[cfg(feature = "rt")]
 #[doc(hidden)]
 #[no_mangle]
-pub static __EXTERNAL_INTERRUPTS: [Vector; 35] = [
+pub static __EXTERNAL_INTERRUPTS: [Vector; 94] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -84,6 +97,65 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 35] = [
     Vector { _handler: SPI1 },
     Vector { _reserved: 0 },
     Vector { _handler: PWM },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: HSTIMER0 },
+    Vector { _handler: HSTIMER1 },
+    Vector { _handler: GPADC },
+    Vector { _reserved: 0 },
+    Vector { _handler: TIMER0 },
+    Vector { _handler: TIMER1 },
+    Vector { _handler: LRADC },
+    Vector { _handler: TPADC },
+    Vector { _handler: WATCHDOG },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: GPIOB_NS },
+    Vector { _reserved: 0 },
+    Vector { _handler: GPIOC_NS },
+    Vector { _reserved: 0 },
+    Vector { _handler: GPIOD_NS },
+    Vector { _reserved: 0 },
+    Vector { _handler: GPIOE_NS },
+    Vector { _reserved: 0 },
+    Vector { _handler: GPIOF_NS },
 ];
 #[doc(hidden)]
 pub mod interrupt;
@@ -592,6 +664,90 @@ impl core::fmt::Debug for GPIO {
 }
 #[doc = "Gerneral Purpose Input/Output"]
 pub mod gpio;
+#[doc = "General Purpose ADC"]
+pub struct GPADC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for GPADC {}
+impl GPADC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const gpadc::RegisterBlock = 0x0200_9000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const gpadc::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for GPADC {
+    type Target = gpadc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for GPADC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPADC").finish()
+    }
+}
+#[doc = "General Purpose ADC"]
+pub mod gpadc;
+#[doc = "Touch Panel ADC"]
+pub struct TPADC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TPADC {}
+impl TPADC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tpadc::RegisterBlock = 0x0200_9c00 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tpadc::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TPADC {
+    type Target = tpadc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TPADC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TPADC").finish()
+    }
+}
+#[doc = "Touch Panel ADC"]
+pub mod tpadc;
+#[doc = "Low Rate ADC"]
+pub struct LRADC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for LRADC {}
+impl LRADC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const lradc::RegisterBlock = 0x0200_9800 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const lradc::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for LRADC {
+    type Target = lradc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for LRADC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LRADC").finish()
+    }
+}
+#[doc = "Low Rate ADC"]
+pub mod lradc;
 #[doc = "Pulse Width Modulation"]
 pub struct PWM {
     _marker: PhantomData<*const ()>,
@@ -661,6 +817,12 @@ pub struct Peripherals {
     pub SPI_DBI: SPI_DBI,
     #[doc = "GPIO"]
     pub GPIO: GPIO,
+    #[doc = "GPADC"]
+    pub GPADC: GPADC,
+    #[doc = "TPADC"]
+    pub TPADC: TPADC,
+    #[doc = "LRADC"]
+    pub LRADC: LRADC,
     #[doc = "PWM"]
     pub PWM: PWM,
 }
@@ -733,6 +895,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             GPIO: GPIO {
+                _marker: PhantomData,
+            },
+            GPADC: GPADC {
+                _marker: PhantomData,
+            },
+            TPADC: TPADC {
+                _marker: PhantomData,
+            },
+            LRADC: LRADC {
                 _marker: PhantomData,
             },
             PWM: PWM {

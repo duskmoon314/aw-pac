@@ -838,6 +838,18 @@
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>TIMER0</name>
+        <value>75</value>
+      </interrupt>
+      <interrupt>
+        <name>TIMER1</name>
+        <value>76</value>
+      </interrupt>
+      <interrupt>
+        <name>WATCHDOG</name>
+        <value>79</value>
+      </interrupt>
       <registers>
         <register>
           <name>tmr_irq_en</name>
@@ -1129,6 +1141,14 @@
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>HSTIMER0</name>
+        <value>71</value>
+      </interrupt>
+      <interrupt>
+        <name>HSTIMER1</name>
+        <value>72</value>
+      </interrupt>
       <registers>
         <register>
           <name>HS_TMR_IRQ_EN</name>
@@ -16503,6 +16523,26 @@
         <size>0x800</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>GPIOB_NS</name>
+        <value>85</value>
+      </interrupt>
+      <interrupt>
+        <name>GPIOC_NS</name>
+        <value>87</value>
+      </interrupt>
+      <interrupt>
+        <name>GPIOD_NS</name>
+        <value>89</value>
+      </interrupt>
+      <interrupt>
+        <name>GPIOE_NS</name>
+        <value>91</value>
+      </interrupt>
+      <interrupt>
+        <name>GPIOF_NS</name>
+        <value>93</value>
+      </interrupt>
       <registers>
         <register>
           <name>pb_cfg0</name>
@@ -19209,6 +19249,205 @@
           <name>pio_pow_vol_sel_ctl</name>
           <description>PIO Group Power Voltage Select Control Register</description>
           <addressOffset>0x0350</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>GPADC</name>
+      <description>General Purpose ADC</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02009000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>GPADC</name>
+        <value>73</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>GP_SR_CON</name>
+          <description>GPADC Sample Rate Configure Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>GP_CTRL</name>
+          <description>GPADC Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>GP_CS_EN</name>
+          <description>GPADC Compare and Select Enable Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>GP_FIFO_INTC</name>
+          <description>GPADC FIFO Interrupt Control Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>GP_FIFO_INTS</name>
+          <description>GPADC FIFO Interrupt Status Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>GP_FIFO_DATA</name>
+          <description>GPADC FIFO Data Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>GP_CDATA</name>
+          <description>GPADC Calibration Data Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>GP_DATAL_INTC</name>
+          <description>GPADC Data Low Interrupt Configure Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>GP_DATAH_INTC</name>
+          <description>GPADC Data High Interrupt Configure Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>GP_DATA_INTC</name>
+          <description>GPADC Data Interrupt Configure Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>GP_DATAL_INTS</name>
+          <description>GPADC Data Low Interrupt Status Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>GP_DATAH_INTS</name>
+          <description>GPADC Data High Interrupt Status Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>GP_DATA_INTS</name>
+          <description>GPADC Data Interrupt Status Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>GP_CH0_CMP_DATA</name>
+          <description>GPADC CH0 Compare Data Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>GP_CH1_CMP_DATA</name>
+          <description>GPADC CH1 Compare Data Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>GP_CH0_DATA</name>
+          <description>GPADC CH0 Data Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>GP_CH1_DATA</name>
+          <description>GPADC CH1 Data Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TPADC</name>
+      <description>Touch Panel ADC</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02009C00</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>TPADC</name>
+        <value>78</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>TP_CTRL_REG0</name>
+          <description>TP Control Register 0</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>TP_CTRL_REG1</name>
+          <description>TP Control Register 1</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>TP_CTRL_REG2</name>
+          <description>TP Control Register 2</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>TP_CTRL_REG3</name>
+          <description>TP Control Register 3</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>TP_INT_FIFO_CTRL_REG</name>
+          <description>TP Interrupt FIFO Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>TP_INT_FIFO_STAT_REG</name>
+          <description>TP Interrupt FIFO Status Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>TP_CALI_DATA_REG</name>
+          <description>TP Calibration Data Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>TP_DATA_REG</name>
+          <description>TP Data Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>LRADC</name>
+      <description>Low Rate ADC</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x02009800</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>LRADC</name>
+        <value>77</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>LRADC_CTRL</name>
+          <description>LRADC Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>LRADC_INTC</name>
+          <description>LRADC Interrupt Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>LRADC_INTS</name>
+          <description>LRADC Interrupt Status Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>LRADC_DATA</name>
+          <description>LRADC Data Register</description>
+          <addressOffset>0x000C</addressOffset>
         </register>
       </registers>
     </peripheral>

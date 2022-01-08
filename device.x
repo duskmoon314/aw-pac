@@ -11,4 +11,17 @@ PROVIDE(TWI3 = DefaultHandler);
 PROVIDE(SPI0 = DefaultHandler);
 PROVIDE(SPI1 = DefaultHandler);
 PROVIDE(PWM = DefaultHandler);
+PROVIDE(HSTIMER0 = DefaultHandler);
+PROVIDE(HSTIMER1 = DefaultHandler);
+PROVIDE(GPADC = DefaultHandler);
+PROVIDE(TIMER0 = DefaultHandler);
+PROVIDE(TIMER1 = DefaultHandler);
+PROVIDE(LRADC = DefaultHandler);
+PROVIDE(TPADC = DefaultHandler);
+PROVIDE(WATCHDOG = DefaultHandler);
+PROVIDE(GPIOB_NS = DefaultHandler);
+PROVIDE(GPIOC_NS = DefaultHandler);
+PROVIDE(GPIOD_NS = DefaultHandler);
+PROVIDE(GPIOE_NS = DefaultHandler);
+PROVIDE(GPIOF_NS = DefaultHandler);
 

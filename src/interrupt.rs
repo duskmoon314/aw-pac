@@ -28,6 +28,32 @@ pub enum Interrupt {
     SPI1 = 32,
     #[doc = "34 - PWM"]
     PWM = 34,
+    #[doc = "71 - HSTIMER0"]
+    HSTIMER0 = 71,
+    #[doc = "72 - HSTIMER1"]
+    HSTIMER1 = 72,
+    #[doc = "73 - GPADC"]
+    GPADC = 73,
+    #[doc = "75 - TIMER0"]
+    TIMER0 = 75,
+    #[doc = "76 - TIMER1"]
+    TIMER1 = 76,
+    #[doc = "77 - LRADC"]
+    LRADC = 77,
+    #[doc = "78 - TPADC"]
+    TPADC = 78,
+    #[doc = "79 - WATCHDOG"]
+    WATCHDOG = 79,
+    #[doc = "85 - GPIOB_NS"]
+    GPIOB_NS = 85,
+    #[doc = "87 - GPIOC_NS"]
+    GPIOC_NS = 87,
+    #[doc = "89 - GPIOD_NS"]
+    GPIOD_NS = 89,
+    #[doc = "91 - GPIOE_NS"]
+    GPIOE_NS = 91,
+    #[doc = "93 - GPIOF_NS"]
+    GPIOF_NS = 93,
 }
 #[doc = r" TryFromInterruptError"]
 #[derive(Debug, Copy, Clone)]
@@ -50,6 +76,19 @@ impl Interrupt {
             31 => Ok(Interrupt::SPI0),
             32 => Ok(Interrupt::SPI1),
             34 => Ok(Interrupt::PWM),
+            71 => Ok(Interrupt::HSTIMER0),
+            72 => Ok(Interrupt::HSTIMER1),
+            73 => Ok(Interrupt::GPADC),
+            75 => Ok(Interrupt::TIMER0),
+            76 => Ok(Interrupt::TIMER1),
+            77 => Ok(Interrupt::LRADC),
+            78 => Ok(Interrupt::TPADC),
+            79 => Ok(Interrupt::WATCHDOG),
+            85 => Ok(Interrupt::GPIOB_NS),
+            87 => Ok(Interrupt::GPIOC_NS),
+            89 => Ok(Interrupt::GPIOD_NS),
+            91 => Ok(Interrupt::GPIOE_NS),
+            93 => Ok(Interrupt::GPIOF_NS),
             _ => Err(TryFromInterruptError(())),
         }
     }
