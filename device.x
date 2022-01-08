@@ -19,6 +19,7 @@ PROVIDE(USB0_OHCI = DefaultHandler);
 PROVIDE(USB1_EHCI = DefaultHandler);
 PROVIDE(USB1_OHCI = DefaultHandler);
 PROVIDE(EMAC = DefaultHandler);
+PROVIDE(CE_NS = DefaultHandler);
 PROVIDE(HSTIMER0 = DefaultHandler);
 PROVIDE(HSTIMER1 = DefaultHandler);
 PROVIDE(GPADC = DefaultHandler);

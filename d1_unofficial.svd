@@ -20219,5 +20219,69 @@
       </registers>
     </peripheral>
 
+    <peripheral>
+      <name>CE_NS</name>
+      <description>Crypoto Engine</description>
+      <groupName>Interfaces</groupName>
+      <baseAddress>0x03040000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x800</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>CE_NS</name>
+        <value>68</value>
+      </interrupt>
+
+      <registers>
+        <register>
+          <name>CE_TDA</name>
+          <description>Task Descriptor Address</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>CE_ICR</name>
+          <description>Interrupt Control Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>CE_ISR</name>
+          <description>Interrupt Status Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>CE_TLR</name>
+          <description>Task Load Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>CE_TSR</name>
+          <description>Task Status Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>CE_ESR</name>
+          <description>Error Status Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>CE_CSA</name>
+          <description>DMA Current Source Address</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>CE_CDA</name>
+          <description>DMA Current Destination Address</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>CE_TPR</name>
+          <description>Throughput Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
   </peripherals>
 </device>

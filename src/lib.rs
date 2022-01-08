@@ -47,6 +47,7 @@ extern "C" {
     fn USB1_EHCI();
     fn USB1_OHCI();
     fn EMAC();
+    fn CE_NS();
     fn HSTIMER0();
     fn HSTIMER1();
     fn GPADC();
@@ -149,7 +150,7 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: CE_NS },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _handler: HSTIMER0 },
@@ -1009,6 +1010,34 @@ impl core::fmt::Debug for CIR_TX {
 }
 #[doc = "Counsumer Infrared Transmitter"]
 pub mod cir_tx;
+#[doc = "Crypoto Engine"]
+pub struct CE_NS {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CE_NS {}
+impl CE_NS {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const ce_ns::RegisterBlock = 0x0304_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const ce_ns::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for CE_NS {
+    type Target = ce_ns::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for CE_NS {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CE_NS").finish()
+    }
+}
+#[doc = "Crypoto Engine"]
+pub mod ce_ns;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
@@ -1068,6 +1097,8 @@ pub struct Peripherals {
     pub CIR_RX: CIR_RX,
     #[doc = "CIR_TX"]
     pub CIR_TX: CIR_TX,
+    #[doc = "CE_NS"]
+    pub CE_NS: CE_NS,
 }
 impl Peripherals {
     #[doc = r"Returns all the peripherals *once*"]
@@ -1165,6 +1196,9 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             CIR_TX: CIR_TX {
+                _marker: PhantomData,
+            },
+            CE_NS: CE_NS {
                 _marker: PhantomData,
             },
         }
