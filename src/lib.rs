@@ -47,20 +47,26 @@ extern "C" {
     fn USB1_EHCI();
     fn USB1_OHCI();
     fn EMAC();
+    fn DMAC_NS();
     fn CE_NS();
+    fn SPINLOCK();
     fn HSTIMER0();
     fn HSTIMER1();
     fn GPADC();
+    fn THS();
     fn TIMER0();
     fn TIMER1();
     fn LRADC();
     fn TPADC();
     fn WATCHDOG();
+    fn IOMMU();
     fn GPIOB_NS();
     fn GPIOC_NS();
     fn GPIOD_NS();
     fn GPIOE_NS();
     fn GPIOF_NS();
+    fn RISCV_MBOX_RISCV();
+    fn RISCV_MBOX_DSP();
     fn IR_RX();
 }
 #[doc(hidden)]
@@ -148,21 +154,21 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: DMAC_NS },
     Vector { _reserved: 0 },
     Vector { _handler: CE_NS },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: SPINLOCK },
     Vector { _handler: HSTIMER0 },
     Vector { _handler: HSTIMER1 },
     Vector { _handler: GPADC },
-    Vector { _reserved: 0 },
+    Vector { _handler: THS },
     Vector { _handler: TIMER0 },
     Vector { _handler: TIMER1 },
     Vector { _handler: LRADC },
     Vector { _handler: TPADC },
     Vector { _handler: WATCHDOG },
-    Vector { _reserved: 0 },
+    Vector { _handler: IOMMU },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -226,8 +232,12 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: RISCV_MBOX_RISCV,
+    },
+    Vector {
+        _handler: RISCV_MBOX_DSP,
+    },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -282,6 +292,62 @@ impl core::fmt::Debug for CCU {
 }
 #[doc = "Clock Controller Unit"]
 pub mod ccu;
+#[doc = "System Configuration"]
+pub struct SYS_CFG {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SYS_CFG {}
+impl SYS_CFG {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const sys_cfg::RegisterBlock = 0x0300_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const sys_cfg::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SYS_CFG {
+    type Target = sys_cfg::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SYS_CFG {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYS_CFG").finish()
+    }
+}
+#[doc = "System Configuration"]
+pub mod sys_cfg;
+#[doc = "RISC-V System Configuration"]
+pub struct RISCV_CFG {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for RISCV_CFG {}
+impl RISCV_CFG {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const riscv_cfg::RegisterBlock = 0x0601_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const riscv_cfg::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for RISCV_CFG {
+    type Target = riscv_cfg::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for RISCV_CFG {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RISCV_CFG").finish()
+    }
+}
+#[doc = "RISC-V System Configuration"]
+pub mod riscv_cfg;
 #[doc = "Core-Local Interruptor"]
 pub struct CLINT {
     _marker: PhantomData<*const ()>,
@@ -394,6 +460,202 @@ impl core::fmt::Debug for PLIC {
 }
 #[doc = "Platform Level Interrupt Control"]
 pub mod plic;
+#[doc = "Direct Memory Access Controller"]
+pub struct DMAC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DMAC {}
+impl DMAC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const dmac::RegisterBlock = 0x0300_2000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const dmac::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for DMAC {
+    type Target = dmac::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for DMAC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMAC").finish()
+    }
+}
+#[doc = "Direct Memory Access Controller"]
+pub mod dmac;
+#[doc = "Thermal Sensor Controller"]
+pub struct THC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for THC {}
+impl THC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const thc::RegisterBlock = 0x0200_9400 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const thc::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for THC {
+    type Target = thc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for THC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("THC").finish()
+    }
+}
+#[doc = "Thermal Sensor Controller"]
+pub mod thc;
+#[doc = "I/O Memory Management Unit"]
+pub struct IOMMU {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for IOMMU {}
+impl IOMMU {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const iommu::RegisterBlock = 0x0201_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const iommu::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for IOMMU {
+    type Target = iommu::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for IOMMU {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IOMMU").finish()
+    }
+}
+#[doc = "I/O Memory Management Unit"]
+pub mod iommu;
+#[doc = "DSP Message Box"]
+pub struct DSP_MSGBOX {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DSP_MSGBOX {}
+impl DSP_MSGBOX {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const dsp_msgbox::RegisterBlock = 0x0170_1000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const dsp_msgbox::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for DSP_MSGBOX {
+    type Target = dsp_msgbox::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for DSP_MSGBOX {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DSP_MSGBOX").finish()
+    }
+}
+#[doc = "DSP Message Box"]
+pub mod dsp_msgbox;
+#[doc = "RISC-V Message Box"]
+pub struct RISC_V_MSGBOX {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for RISC_V_MSGBOX {}
+impl RISC_V_MSGBOX {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const risc_v_msgbox::RegisterBlock = 0x0601_f000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const risc_v_msgbox::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for RISC_V_MSGBOX {
+    type Target = risc_v_msgbox::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for RISC_V_MSGBOX {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RISC_V_MSGBOX").finish()
+    }
+}
+#[doc = "RISC-V Message Box"]
+pub mod risc_v_msgbox;
+#[doc = "Spinlock"]
+pub struct SPINLOCK {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SPINLOCK {}
+impl SPINLOCK {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const spinlock::RegisterBlock = 0x0300_5000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const spinlock::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SPINLOCK {
+    type Target = spinlock::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SPINLOCK {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SPINLOCK").finish()
+    }
+}
+#[doc = "Spinlock"]
+pub mod spinlock;
+#[doc = "Real Time CLock"]
+pub struct RTC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for RTC {}
+impl RTC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const rtc::RegisterBlock = 0x0709_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const rtc::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for RTC {
+    type Target = rtc::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for RTC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RTC").finish()
+    }
+}
+#[doc = "Real Time CLock"]
+pub mod rtc;
 #[doc = "Two Wire Interface"]
 pub struct TWI0 {
     _marker: PhantomData<*const ()>,
@@ -1045,6 +1307,10 @@ static mut DEVICE_PERIPHERALS: bool = false;
 pub struct Peripherals {
     #[doc = "CCU"]
     pub CCU: CCU,
+    #[doc = "SYS_CFG"]
+    pub SYS_CFG: SYS_CFG,
+    #[doc = "RISCV_CFG"]
+    pub RISCV_CFG: RISCV_CFG,
     #[doc = "CLINT"]
     pub CLINT: CLINT,
     #[doc = "TIMER"]
@@ -1053,6 +1319,20 @@ pub struct Peripherals {
     pub HSTIMER: HSTIMER,
     #[doc = "PLIC"]
     pub PLIC: PLIC,
+    #[doc = "DMAC"]
+    pub DMAC: DMAC,
+    #[doc = "THC"]
+    pub THC: THC,
+    #[doc = "IOMMU"]
+    pub IOMMU: IOMMU,
+    #[doc = "DSP_MSGBOX"]
+    pub DSP_MSGBOX: DSP_MSGBOX,
+    #[doc = "RISC_V_MSGBOX"]
+    pub RISC_V_MSGBOX: RISC_V_MSGBOX,
+    #[doc = "SPINLOCK"]
+    pub SPINLOCK: SPINLOCK,
+    #[doc = "RTC"]
+    pub RTC: RTC,
     #[doc = "TWI0"]
     pub TWI0: TWI0,
     #[doc = "TWI1"]
@@ -1120,6 +1400,12 @@ impl Peripherals {
             CCU: CCU {
                 _marker: PhantomData,
             },
+            SYS_CFG: SYS_CFG {
+                _marker: PhantomData,
+            },
+            RISCV_CFG: RISCV_CFG {
+                _marker: PhantomData,
+            },
             CLINT: CLINT {
                 _marker: PhantomData,
             },
@@ -1130,6 +1416,27 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             PLIC: PLIC {
+                _marker: PhantomData,
+            },
+            DMAC: DMAC {
+                _marker: PhantomData,
+            },
+            THC: THC {
+                _marker: PhantomData,
+            },
+            IOMMU: IOMMU {
+                _marker: PhantomData,
+            },
+            DSP_MSGBOX: DSP_MSGBOX {
+                _marker: PhantomData,
+            },
+            RISC_V_MSGBOX: RISC_V_MSGBOX {
+                _marker: PhantomData,
+            },
+            SPINLOCK: SPINLOCK {
+                _marker: PhantomData,
+            },
+            RTC: RTC {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {

@@ -44,14 +44,20 @@ pub enum Interrupt {
     USB1_OHCI = 50,
     #[doc = "62 - EMAC"]
     EMAC = 62,
+    #[doc = "66 - DMAC_NS"]
+    DMAC_NS = 66,
     #[doc = "68 - CE_NS"]
     CE_NS = 68,
+    #[doc = "70 - SPINLOCK"]
+    SPINLOCK = 70,
     #[doc = "71 - HSTIMER0"]
     HSTIMER0 = 71,
     #[doc = "72 - HSTIMER1"]
     HSTIMER1 = 72,
     #[doc = "73 - GPADC"]
     GPADC = 73,
+    #[doc = "74 - THS"]
+    THS = 74,
     #[doc = "75 - TIMER0"]
     TIMER0 = 75,
     #[doc = "76 - TIMER1"]
@@ -62,6 +68,8 @@ pub enum Interrupt {
     TPADC = 78,
     #[doc = "79 - WATCHDOG"]
     WATCHDOG = 79,
+    #[doc = "80 - IOMMU"]
+    IOMMU = 80,
     #[doc = "85 - GPIOB_NS"]
     GPIOB_NS = 85,
     #[doc = "87 - GPIOC_NS"]
@@ -72,6 +80,10 @@ pub enum Interrupt {
     GPIOE_NS = 91,
     #[doc = "93 - GPIOF_NS"]
     GPIOF_NS = 93,
+    #[doc = "144 - RISC-V_MBOX_RISC-V"]
+    RISCV_MBOX_RISCV = 144,
+    #[doc = "145 - RISC-V_MBOX_DSP"]
+    RISCV_MBOX_DSP = 145,
     #[doc = "167 - IR_RX"]
     IR_RX = 167,
 }
@@ -104,20 +116,26 @@ impl Interrupt {
             49 => Ok(Interrupt::USB1_EHCI),
             50 => Ok(Interrupt::USB1_OHCI),
             62 => Ok(Interrupt::EMAC),
+            66 => Ok(Interrupt::DMAC_NS),
             68 => Ok(Interrupt::CE_NS),
+            70 => Ok(Interrupt::SPINLOCK),
             71 => Ok(Interrupt::HSTIMER0),
             72 => Ok(Interrupt::HSTIMER1),
             73 => Ok(Interrupt::GPADC),
+            74 => Ok(Interrupt::THS),
             75 => Ok(Interrupt::TIMER0),
             76 => Ok(Interrupt::TIMER1),
             77 => Ok(Interrupt::LRADC),
             78 => Ok(Interrupt::TPADC),
             79 => Ok(Interrupt::WATCHDOG),
+            80 => Ok(Interrupt::IOMMU),
             85 => Ok(Interrupt::GPIOB_NS),
             87 => Ok(Interrupt::GPIOC_NS),
             89 => Ok(Interrupt::GPIOD_NS),
             91 => Ok(Interrupt::GPIOE_NS),
             93 => Ok(Interrupt::GPIOF_NS),
+            144 => Ok(Interrupt::RISCV_MBOX_RISCV),
+            145 => Ok(Interrupt::RISCV_MBOX_DSP),
             167 => Ok(Interrupt::IR_RX),
             _ => Err(TryFromInterruptError(())),
         }

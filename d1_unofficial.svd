@@ -766,6 +766,209 @@
     </peripheral>
 
     <peripheral>
+      <name>SYS_CFG</name>
+      <description>System Configuration</description>
+      <groupName>System</groupName>
+      <baseAddress>0x03000000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>DSP_BOOT_RAMMAP</name>
+          <description>DSP Boot SRAM Remap Control Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>VER</name>
+          <description>Version Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>EMAC_EPHY_CLK0</name>
+          <description>EMAC-EPHY Clock Register 0</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>SYS_LDO_CTRL</name>
+          <description>System LDO Control Register</description>
+          <addressOffset>0x0150</addressOffset>
+        </register>
+        <register>
+          <name>RESCAL_CTRL</name>
+          <description>Resistor Calibration Control Register</description>
+          <addressOffset>0x0160</addressOffset>
+        </register>
+        <register>
+          <name>RES240_CTRL</name>
+          <description>240ohms Resistor Manual Control Register</description>
+          <addressOffset>0x0168</addressOffset>
+        </register>
+        <register>
+          <name>RESCAL_STATUS</name>
+          <description>Resistor Calibration Status Register</description>
+          <addressOffset>0x016C</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>RISCV_CFG</name>
+      <description>RISC-V System Configuration</description>
+      <groupName>System</groupName>
+      <baseAddress>0x06010000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>RISCV_STA_ADD0_REG</name>
+          <description>RISCV Start Address0 Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_STA_ADD1_REG</name>
+          <description>RISCV Start Address1 Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>RF1P_CFG_REG</name>
+          <description>RF1P Configuration Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>ROM_CFG_REG</name>
+          <description>ROM Configuration Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>WAKEUP_EN_REG</name>
+          <description>Wakeup Enable Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>WAKEUP_MASK0_REG</name>
+          <description>Wakeup Mask0 Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>WAKEUP_MASK1_REG</name>
+          <description>Wakeup Mask1 Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>WAKEUP_MASK2_REG</name>
+          <description>Wakeup Mask2 Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>WAKEUP_MASK3_REG</name>
+          <description>Wakeup Mask3 Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>WAKEUP_MASK4_REG</name>
+          <description>Wakeup Mask4 Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>TS_TMODE_SEL_REG</name>
+          <description>Timestamp Test Mode Select Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>SRAM_ADDR_TWIST_REG</name>
+          <description>SRAM Address Twist Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>WORK_MODE_REG</name>
+          <description>Work Mode Register</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>RETITE_PC0_REG</name>
+          <description>Retire PC0 Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>RETITE_PC1_REG</name>
+          <description>Retire PC1 Register</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>IRQ_MODE0_REG</name>
+          <description>IRQ Mode0 Register</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>IRQ_MODE1_REG</name>
+          <description>IRQ Mode1 Register</description>
+          <addressOffset>0x0064</addressOffset>
+        </register>
+        <register>
+          <name>IRQ_MODE2_REG</name>
+          <description>IRQ Mode2 Register</description>
+          <addressOffset>0x0068</addressOffset>
+        </register>
+        <register>
+          <name>IRQ_MODE3_REG</name>
+          <description>IRQ Mode3 Register</description>
+          <addressOffset>0x006C</addressOffset>
+        </register>
+        <register>
+          <name>IRQ_MODE4_REG</name>
+          <description>IRQ Mode4 Register</description>
+          <addressOffset>0x0070</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_CTRL</name>
+          <description>RISCV AXI PMU Control Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_PRD</name>
+          <description>RISCV AXI PMU Period Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_LAT_RD</name>
+          <description>RISCV AXI PMU Read Latency Register</description>
+          <addressOffset>0x010C</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_LAT_WR</name>
+          <description>RISCV AXI PMU Write Latency Register</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_REQ_RD</name>
+          <description>RISCV AXI PMU Read Request Register</description>
+          <addressOffset>0x0114</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_REQ_WR</name>
+          <description>RISCV AXI PMU Write Request Register</description>
+          <addressOffset>0x0118</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_BW_RD</name>
+          <description>RISCV AXI PMU Read Bandwidth Register</description>
+          <addressOffset>0x011C</addressOffset>
+        </register>
+        <register>
+          <name>RISCV_AXI_PMU_BW_WR</name>
+          <description>RISCV AXI PMU Write Bandwidth Register</description>
+          <addressOffset>0x0120</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>CLINT</name>
       <description>Core-Local Interruptor</description>
       <groupName>System</groupName>
@@ -1809,6 +2012,1231 @@
               <bitRange>[9:0]</bitRange>
             </field>
           </fields>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>DMAC</name>
+      <description>Direct Memory Access Controller</description>
+      <groupName>System</groupName>
+      <baseAddress>0x03002000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>DMAC_NS</name>
+        <value>66</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>DMAC_IRQ_EN_REG0</name>
+          <description>DMAC IRQ Enable Register 0</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>DMAC_IRQ_EN_REG1</name>
+          <description>DMAC IRQ Enable Register 1</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>DMAC_IRQ_PEND_REG0</name>
+          <description>DMAC IRQ Pending Register 0</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>DMAC_IRQ_PEND_REG1</name>
+          <description>DMAC IRQ Pending Register 1</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>DMAC_AUTO_GATE_REG</name>
+          <description>DMAC Auto Gating Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>DMAC_STA_REG</name>
+          <description>DMAC Status Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_EN_REG%s</name>
+          <description>DMAC Channel Enable Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_PAU_REG%s</name>
+          <description>DMAC Channel Pause Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_DESC_ADDR_REG%s</name>
+          <description>DMAC Channel Start Address Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_CFG_REG%s</name>
+          <description>DMAC Channel Configuration Register</description>
+          <addressOffset>0x010C</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_CUR_SRC_REG%s</name>
+          <description>DMAC Channel Current Source Register</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_CUR_DEST_REG%s</name>
+          <description>DMAC Channel Current Destination Register</description>
+          <addressOffset>0x0114</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_BCNT_LEFT_REG%s</name>
+          <description>DMAC Channel Byte Counter Left Register</description>
+          <addressOffset>0x0118</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_PARA_REG%s</name>
+          <description>DMAC Channel Parameter Register</description>
+          <addressOffset>0x011C</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_MODE_REG%s</name>
+          <description>DMAC Mode Register</description>
+          <addressOffset>0x0128</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_FDESC_ADDR_REG%s</name>
+          <description>DMAC Former Descriptor Address Register</description>
+          <addressOffset>0x012C</addressOffset>
+        </register>
+        <register>
+          <dim>16</dim>
+          <dimIncrement>0x0040</dimIncrement>
+          <name>DMAC_PKG_NUM_REG%s</name>
+          <description>DMAC Package Number Register</description>
+          <addressOffset>0x0130</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>THC</name>
+      <description>Thermal Sensor Controller</description>
+      <groupName>System</groupName>
+      <baseAddress>0x02009400</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>THS</name>
+        <value>74</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>THS_CTRL</name>
+          <description>THS Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>THS_EN</name>
+          <description>THS Enable Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>THS_PER</name>
+          <description>THS Period Control Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>THS_DATA_INTC</name>
+          <description>THS Data Interrupt Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>THS_SHUT_INTC</name>
+          <description>THS Shut Interrupt Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>THS_ALARM_INTC</name>
+          <description>THS Alarm Interrupt Control Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>THS_DATA_INTS</name>
+          <description>THS Data Interrupt Status Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>THS_SHUT_INTS</name>
+          <description>THS Shut Interrupt Status Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>THS_ALARMO_INTS</name>
+          <description>THS Alarm off Interrupt Status Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>THS_ALARM_INTS</name>
+          <description>THS Alarm Interrupt Status Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>THS_FILTER</name>
+          <description>THS Median Filter Control Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>THS_ALARM_CTRL</name>
+          <description>THS Alarm Threshold Control Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>THS_SHUTDOWN_CTRL</name>
+          <description>THS Shutdown Threshold Control Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>THS_CDATA</name>
+          <description>THS Calibration Data</description>
+          <addressOffset>0x00A0</addressOffset>
+        </register>
+        <register>
+          <name>THS_DATA</name>
+          <description>THS Data Register</description>
+          <addressOffset>0x00C0</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>IOMMU</name>
+      <description>I/O Memory Management Unit</description>
+      <groupName>System</groupName>
+      <baseAddress>0x02010000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x10000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>IOMMU</name>
+        <value>80</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>IOMMU_RESET_REG</name>
+          <description>IOMMU Reset Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_ENABLE_REG</name>
+          <description>IOMMU Enable Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_BYPASS_REG</name>
+          <description>IOMMU Bypass Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_AUTO_GATING_REG</name>
+          <description>IOMMU Auto Gating Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_WBUF_CTRL_REG</name>
+          <description>IOMMU Write Buffer Control Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_OOO_CTRL_REG</name>
+          <description>IOMMU Out of Order Control Register</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_4KB_BDY_PRT_CTRL_REG</name>
+          <description>IOMMU 4KB Boundary Protect Control Register</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TTB_REG</name>
+          <description>IOMMU Translation Table Base Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_ENABLE_REG</name>
+          <description>IOMMU TLB Enable Register</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_PREFETCH_REG</name>
+          <description>IOMMU TLB Prefetch Register</description>
+          <addressOffset>0x0070</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_FLUSH_ENABLE_REG</name>
+          <description>IOMMU TLB Flush Enable Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_IVLD_MODE_SEL_REG</name>
+          <description>IOMMU TLB Invalidation Mode Select Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_IVLD_STA_ADDR_REG</name>
+          <description>IOMMU TLB Invalidation Start Address Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_IVLD_END_ADDR_REG</name>
+          <description>IOMMU TLB Invalidation End Address Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_IVLD_ADDR_REG</name>
+          <description>IOMMU TLB Invalidation Address Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_IVLD_ADDR_MASK_REG</name>
+          <description>IOMMU TLB Invalidation Address Mask Register</description>
+          <addressOffset>0x0094</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_TLB_IVLD_ENABLE_REG</name>
+          <description>IOMMU TLB Invalidation Enable Register</description>
+          <addressOffset>0x0098</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PC_IVLD_MODE_SEL_REG</name>
+          <description>IOMMU PC Invalidation Mode Select Register</description>
+          <addressOffset>0x009C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PC_IVLD_ADDR_REG</name>
+          <description>IOMMU PC Invalidation Address Register</description>
+          <addressOffset>0x00A0</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PC_IVLD_STA_ADDR_REG</name>
+          <description>IOMMU PC Invalidation Start Address Register</description>
+          <addressOffset>0x00A4</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PC_IVLD_ENABLE_REG</name>
+          <description>IOMMU PC Invalidation Enable Register</description>
+          <addressOffset>0x00A8</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PC_IVLD_END_ADDR_REG</name>
+          <description>IOMMU PC Invalidation End Address Register</description>
+          <addressOffset>0x00AC</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL0_REG</name>
+          <description>IOMMU Domain Authority Control 0 Register</description>
+          <addressOffset>0x00B0</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL1_REG</name>
+          <description>IOMMU Domain Authority Control 1 Register</description>
+          <addressOffset>0x00B4</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL2_REG</name>
+          <description>IOMMU Domain Authority Control 2 Register</description>
+          <addressOffset>0x00B8</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL3_REG</name>
+          <description>IOMMU Domain Authority Control 3 Register</description>
+          <addressOffset>0x00BC</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL4_REG</name>
+          <description>IOMMU Domain Authority Control 4 Register</description>
+          <addressOffset>0x00C0</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL5_REG</name>
+          <description>IOMMU Domain Authority Control 5 Register</description>
+          <addressOffset>0x00C4</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL6_REG</name>
+          <description>IOMMU Domain Authority Control 6 Register</description>
+          <addressOffset>0x00C8</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_CTRL7_REG</name>
+          <description>IOMMU Domain Authority Control 7 Register</description>
+          <addressOffset>0x00CC</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_DM_AUT_OVWT_REG</name>
+          <description>IOMMU Domain Authority Overwrite Register</description>
+          <addressOffset>0x00D0</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ENABLE_REG</name>
+          <description>IOMMU Interrupt Enable Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_CLR_REG</name>
+          <description>IOMMU Interrupt Clear Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_STA_REG</name>
+          <description>IOMMU Interrupt Status Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR0_REG</name>
+          <description>IOMMU Interrupt Error Address 0</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR1_REG</name>
+          <description>IOMMU Interrupt Error Address 1</description>
+          <addressOffset>0x0114</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR2_REG</name>
+          <description>IOMMU Interrupt Error Address 2</description>
+          <addressOffset>0x0118</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR3_REG</name>
+          <description>IOMMU Interrupt Error Address 3</description>
+          <addressOffset>0x011C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR4_REG</name>
+          <description>IOMMU Interrupt Error Address 4</description>
+          <addressOffset>0x0120</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR5_REG</name>
+          <description>IOMMU Interrupt Error Address 5</description>
+          <addressOffset>0x0124</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR6_REG</name>
+          <description>IOMMU Interrupt Error Address 6</description>
+          <addressOffset>0x0128</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR7_REG</name>
+          <description>IOMMU Interrupt Error Address 7</description>
+          <addressOffset>0x0130</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_ADDR8_REG</name>
+          <description>IOMMU Interrupt Error Address 8</description>
+          <addressOffset>0x0134</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA0_REG</name>
+          <description>IOMMU Interrupt Error Data 0 Register</description>
+          <addressOffset>0x0150</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA1_REG</name>
+          <description>IOMMU Interrupt Error Data 1 Register</description>
+          <addressOffset>0x0154</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA2_REG</name>
+          <description>IOMMU Interrupt Error Data 2 Register</description>
+          <addressOffset>0x0158</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA3_REG</name>
+          <description>IOMMU Interrupt Error Data 3 Register</description>
+          <addressOffset>0x015C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA4_REG</name>
+          <description>IOMMU Interrupt Error Data 4 Register</description>
+          <addressOffset>0x0160</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA5_REG</name>
+          <description>IOMMU Interrupt Error Data 5 Register</description>
+          <addressOffset>0x0164</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA6_REG</name>
+          <description>IOMMU Interrupt Error Data 6 Register</description>
+          <addressOffset>0x0168</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA7_REG</name>
+          <description>IOMMU Interrupt Error Data 7 Register</description>
+          <addressOffset>0x0170</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_INT_ERR_DATA8_REG</name>
+          <description>IOMMU Interrupt Error Data 8 Register</description>
+          <addressOffset>0x0174</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_L1PG_INT_REG</name>
+          <description>IOMMU L1 Page Table Interrupt Register</description>
+          <addressOffset>0x0180</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_L2PG_INT_REG</name>
+          <description>IOMMU L2 Page Table Interrupt Register</description>
+          <addressOffset>0x0184</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_VA_REG</name>
+          <description>IOMMU Virtual Address Register</description>
+          <addressOffset>0x0190</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_VA_DATA_REG</name>
+          <description>IOMMU Virtual Address Data Register</description>
+          <addressOffset>0x0194</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_VA_CONFIG_REG</name>
+          <description>IOMMU Virtual Address Configuration Register</description>
+          <addressOffset>0x0198</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ENABLE_REG</name>
+          <description>IOMMU PMU Enable Register</description>
+          <addressOffset>0x0200</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_CLR_REG</name>
+          <description>IOMMU PMU Clear Register</description>
+          <addressOffset>0x0210</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW0_REG</name>
+          <description>IOMMU PMU Access Low 0 Register</description>
+          <addressOffset>0x0230</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH0_REG</name>
+          <description>IOMMU PMU Access High 0 Register</description>
+          <addressOffset>0x0234</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW0_REG</name>
+          <description>IOMMU PMU Hit Low 0 Register</description>
+          <addressOffset>0x0238</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH0_REG</name>
+          <description>IOMMU PMU Hit High 0 Register</description>
+          <addressOffset>0x023C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW1_REG</name>
+          <description>IOMMU PMU Access Low 1 Register</description>
+          <addressOffset>0x0240</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH1_REG</name>
+          <description>IOMMU PMU Access High 1 Register</description>
+          <addressOffset>0x0244</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW1_REG</name>
+          <description>IOMMU PMU Hit Low 1 Register</description>
+          <addressOffset>0x0248</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH1_REG</name>
+          <description>IOMMU PMU Hit High 1 Register</description>
+          <addressOffset>0x024C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW2_REG</name>
+          <description>IOMMU PMU Access Low 2 Register</description>
+          <addressOffset>0x0250</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH2_REG</name>
+          <description>IOMMU PMU Access High 2 Register</description>
+          <addressOffset>0x0254</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW2_REG</name>
+          <description>IOMMU PMU Hit Low 2 Register</description>
+          <addressOffset>0x0258</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH2_REG</name>
+          <description>IOMMU PMU Hit High 2 Register</description>
+          <addressOffset>0x025C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW3_REG</name>
+          <description>IOMMU PMU Access Low 3 Register</description>
+          <addressOffset>0x0260</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH3_REG</name>
+          <description>IOMMU PMU Access High 3 Register</description>
+          <addressOffset>0x0264</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW3_REG</name>
+          <description>IOMMU PMU Hit Low 3 Register</description>
+          <addressOffset>0x0268</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH3_REG</name>
+          <description>IOMMU PMU Hit High 3 Register</description>
+          <addressOffset>0x026C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW4_REG</name>
+          <description>IOMMU PMU Access Low 4 Register</description>
+          <addressOffset>0x0270</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH4_REG</name>
+          <description>IOMMU PMU Access High 4 Register</description>
+          <addressOffset>0x0274</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW4_REG</name>
+          <description>IOMMU PMU Hit Low 4 Register</description>
+          <addressOffset>0x0278</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH4_REG</name>
+          <description>IOMMU PMU Hit High 4 Register</description>
+          <addressOffset>0x027C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW5_REG</name>
+          <description>IOMMU PMU Access Low 5 Register</description>
+          <addressOffset>0x0280</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH5_REG</name>
+          <description>IOMMU PMU Access High 5 Register</description>
+          <addressOffset>0x0284</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW5_REG</name>
+          <description>IOMMU PMU Hit Low 5 Register</description>
+          <addressOffset>0x0288</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH5_REG</name>
+          <description>IOMMU PMU Hit High 5 Register</description>
+          <addressOffset>0x028C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW6_REG</name>
+          <description>IOMMU PMU Access Low 6 Register</description>
+          <addressOffset>0x0290</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH6_REG</name>
+          <description>IOMMU PMU Access High 6 Register</description>
+          <addressOffset>0x0294</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW6_REG</name>
+          <description>IOMMU PMU Hit Low 6 Register</description>
+          <addressOffset>0x0298</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH6_REG</name>
+          <description>IOMMU PMU Hit High 6 Register</description>
+          <addressOffset>0x029C</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW7_REG</name>
+          <description>IOMMU PMU Access Low 7 Register</description>
+          <addressOffset>0x02D0</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH7_REG</name>
+          <description>IOMMU PMU Access High 7 Register</description>
+          <addressOffset>0x02D4</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW7_REG</name>
+          <description>IOMMU PMU Hit Low 7 Register</description>
+          <addressOffset>0x02D8</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH7_REG</name>
+          <description>IOMMU PMU Hit High 7 Register</description>
+          <addressOffset>0x02DC</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_LOW8_REG</name>
+          <description>IOMMU PMU Access Low 8 Register</description>
+          <addressOffset>0x02E0</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ACCESS_HIGH8_REG</name>
+          <description>IOMMU PMU Access High 8 Register</description>
+          <addressOffset>0x02E4</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_LOW8_REG</name>
+          <description>IOMMU PMU Hit Low 8 Register</description>
+          <addressOffset>0x02E8</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_HIT_HIGH8_REG</name>
+          <description>IOMMU PMU Hit High 8 Register</description>
+          <addressOffset>0x02EC</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_LOW0_REG</name>
+          <description>IOMMU Total Latency Low 0 Register</description>
+          <addressOffset>0x0300</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_HIGH0_REG</name>
+          <description>IOMMU Total Latency High 0 Register</description>
+          <addressOffset>0x0304</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ML0_REG</name>
+          <description>IOMMU Max Latency 0 Register</description>
+          <addressOffset>0x0308</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_LOW1_REG</name>
+          <description>IOMMU Total Latency Low 1 Register</description>
+          <addressOffset>0x0310</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_HIGH1_REG</name>
+          <description>IOMMU Total Latency High 1 Register</description>
+          <addressOffset>0x0314</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ML1_REG</name>
+          <description>IOMMU Max Latency 1 Register</description>
+          <addressOffset>0x0318</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_LOW2_REG</name>
+          <description>IOMMU Total Latency Low 2 Register</description>
+          <addressOffset>0x0320</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_HIGH2_REG</name>
+          <description>IOMMU Total Latency High 2 Register</description>
+          <addressOffset>0x0324</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ML2_REG</name>
+          <description>IOMMU Max Latency 2 Register</description>
+          <addressOffset>0x0328</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_LOW3_REG</name>
+          <description>IOMMU Total Latency Low 3 Register</description>
+          <addressOffset>0x0330</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_HIGH3_REG</name>
+          <description>IOMMU Total Latency High 3 Register</description>
+          <addressOffset>0x0334</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ML3_REG</name>
+          <description>IOMMU Max Latency 3 Register</description>
+          <addressOffset>0x0338</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_LOW4_REG</name>
+          <description>IOMMU Total Latency Low 4 Register</description>
+          <addressOffset>0x0340</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_HIGH4_REG</name>
+          <description>IOMMU Total Latency High 4 Register</description>
+          <addressOffset>0x0344</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ML4_REG</name>
+          <description>IOMMU Max Latency 4 Register</description>
+          <addressOffset>0x0348</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_LOW5_REG</name>
+          <description>IOMMU Total Latency Low 5 Register</description>
+          <addressOffset>0x0350</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_HIGH5_REG</name>
+          <description>IOMMU Total Latency High 5 Register</description>
+          <addressOffset>0x0354</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ML5_REG</name>
+          <description>IOMMU Max Latency 5 Register</description>
+          <addressOffset>0x0358</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_LOW6_REG</name>
+          <description>IOMMU Total Latency Low 6 Register</description>
+          <addressOffset>0x0360</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_TL_HIGH6_REG</name>
+          <description>IOMMU Total Latency High 6 Register</description>
+          <addressOffset>0x0364</addressOffset>
+        </register>
+        <register>
+          <name>IOMMU_PMU_ML6_REG</name>
+          <description>IOMMU Max Latency 6 Register</description>
+          <addressOffset>0x0368</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>DSP_MSGBOX</name>
+      <description>DSP Message Box</description>
+      <groupName>System</groupName>
+      <baseAddress>0x01701000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_RD_IRQ_EN_REG_%s</name>
+          <description>MSGBOX Read IRQ Enable Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_RD_IRQ_STATUS_REG_%s</name>
+          <description>MSGBOX Read IRQ Status Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_WR_IRQ_EN_REG_%s</name>
+          <description>MSGBOX Write IRQ Enable Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_WR_IRQ_STATUS_REG_%s</name>
+          <description>MSGBOX Write IRQ Status Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_DEBUG_REG_%s</name>
+          <description>MSGBOX Debug Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_FIFO_STATUS_REG_N%s</name>
+          <description>MSGBOX FIFO Status Register</description>
+          <addressOffset>0x0050</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_FIFO_STATUS_REG_P%s</name>
+            <description>MSGBOX FIFO Status Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_MSG_STATUS_REG_N%s</name>
+          <description>MSGBOX Message Status Register</description>
+          <addressOffset>0x0060</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_MSG_STATUS_REG_P%s</name>
+            <description>MSGBOX Message Status Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_MSG_REG_N%s</name>
+          <description>MSGBOX Message Queue Register</description>
+          <addressOffset>0x0070</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_MSG_REG_P%s</name>
+            <description>MSGBOX Message Queue Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_WR_INT_THRESHOLD_REG_N%s</name>
+          <description>MSGBOX Write IRQ Threshold Register</description>
+          <addressOffset>0x0080</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_WR_INT_THRESHOLD_REG_P%s</name>
+            <description>MSGBOX Write IRQ Threshold Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>RISC_V_MSGBOX</name>
+      <description>RISC-V Message Box</description>
+      <groupName>System</groupName>
+      <baseAddress>0x0601F000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>RISC-V_MBOX_RISC-V</name>
+        <value>144</value>
+      </interrupt>
+      <interrupt>
+        <name>RISC-V_MBOX_DSP</name>
+        <value>145</value>
+      </interrupt>
+      <registers>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_RD_IRQ_EN_REG_%s</name>
+          <description>MSGBOX Read IRQ Enable Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_RD_IRQ_STATUS_REG_%s</name>
+          <description>MSGBOX Read IRQ Status Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_WR_IRQ_EN_REG_%s</name>
+          <description>MSGBOX Write IRQ Enable Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_WR_IRQ_STATUS_REG_%s</name>
+          <description>MSGBOX Write IRQ Status Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_DEBUG_REG_%s</name>
+          <description>MSGBOX Debug Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_FIFO_STATUS_REG_N%s</name>
+          <description>MSGBOX FIFO Status Register</description>
+          <addressOffset>0x0050</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_FIFO_STATUS_REG_P%s</name>
+            <description>MSGBOX FIFO Status Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_MSG_STATUS_REG_N%s</name>
+          <description>MSGBOX Message Status Register</description>
+          <addressOffset>0x0060</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_MSG_STATUS_REG_P%s</name>
+            <description>MSGBOX Message Status Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_MSG_REG_N%s</name>
+          <description>MSGBOX Message Queue Register</description>
+          <addressOffset>0x0070</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_MSG_REG_P%s</name>
+            <description>MSGBOX Message Queue Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0100</dimIncrement>
+          <name>MSGBOX_WR_INT_THRESHOLD_REG_N%s</name>
+          <description>MSGBOX Write IRQ Threshold Register</description>
+          <addressOffset>0x0080</addressOffset>
+          <register>
+            <dim>3</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_WR_INT_THRESHOLD_REG_P%s</name>
+            <description>MSGBOX Write IRQ Threshold Register</description>
+            <addressOffset>0</addressOffset>
+          </register>
+        </cluster>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>Spinlock</name>
+      <description>Spinlock</description>
+      <groupName>System</groupName>
+      <baseAddress>0x03005000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>SPINLOCK</name>
+        <value>70</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>SPINLOCK_SYSTATUS_REG</name>
+          <description>Spinlock System Status Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_STATUS_REG</name>
+          <description>Spinlock Status Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_IRQ_EN_REG</name>
+          <description>Spinlock Interrupt Enable Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_IRQ_STA_REG</name>
+          <description>Spinlock Interrupt Status Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_LOCKID0_REG</name>
+          <description>Spinlock Lockid0 Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_LOCKID1_REG</name>
+          <description>Spinlock Lockid1 Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_LOCKID2_REG</name>
+          <description>Spinlock Lockid2 Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_LOCKID3_REG</name>
+          <description>Spinlock Lockid3 Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>SPINLOCK_LOCKID4_REG</name>
+          <description>Spinlock Lockid4 Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <dim>32</dim>
+          <dimIncrement>0x0004</dimIncrement>
+          <name>SPINLOCK_LOCK_REG%s</name>
+          <description>Spinlock Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>RTC</name>
+      <description>Real Time CLock</description>
+      <groupName>System</groupName>
+      <baseAddress>0x07090000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>LOSC_CTRL_REG</name>
+          <description>Low Oscillator Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>LOSC_AUTO_SWT_STA_REG</name>
+          <description>LOSC Auto Switch Status Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>INTOSC_CLK_PRESCAL_REG</name>
+          <description>Internal OSC Clock Pre-scalar Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>RTC_DAY_REG</name>
+          <description>RTC Year-Month-Day Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>RTC_HH_MM_SS_REG</name>
+          <description>RTC Hour-Minute-Second Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>ALARM0_DAY_SET_REG</name>
+          <description>Alarm 0 Day Setting Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>ALARM0_CUR_VLU_REG</name>
+          <description>Alarm 0 Counter Current Value Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>ALARM0_ENABLE_REG</name>
+          <description>Alarm 0 Enable Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>ALARM0_IRQ_EN</name>
+          <description>Alarm 0 IRQ Enable Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>ALARM0_IRQ_STA_REG</name>
+          <description>Alarm 0 IRQ Status Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>ALARM_CONFIG_REG</name>
+          <description>Alarm Configuration Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>_32K_FOUT_CTRL_GATING_REG</name>
+          <description>32K Fanout Control Gating Register</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <dim>8</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>GP_DATA_REG%s</name>
+          <description>General Purpose Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>FBOOT_INFO_REG0</name>
+          <description>Fast Boot Information Register0</description>
+          <addressOffset>0x0120</addressOffset>
+        </register>
+        <register>
+          <name>FBOOT_INFO_REG1</name>
+          <description>Fast Boot Information Register1</description>
+          <addressOffset>0x0124</addressOffset>
+        </register>
+        <register>
+          <name>DCXO_CTRL_REG</name>
+          <description>DCXO Control Register</description>
+          <addressOffset>0x0160</addressOffset>
+        </register>
+        <register>
+          <name>RTC_VIO_REG</name>
+          <description>RTC_VIO Regulation Register</description>
+          <addressOffset>0x0190</addressOffset>
+        </register>
+        <register>
+          <name>IC_CHARA_REG</name>
+          <description>IC Characteristic Register</description>
+          <addressOffset>0x01F0</addressOffset>
+        </register>
+        <register>
+          <name>VDD_OFF_GATING_CTRL_REG</name>
+          <description>VDD Off Gating Control Register</description>
+          <addressOffset>0x01F4</addressOffset>
+        </register>
+        <register>
+          <name>EFUSE_HV_PWRSWT_CTRL_REG</name>
+          <description>Efuse High Voltage Power Switch Control Register</description>
+          <addressOffset>0x0204</addressOffset>
+        </register>
+        <register>
+          <name>RTC_SPI_CLK_CTRL_REG</name>
+          <description>RTC SPI Clock Control Register</description>
+          <addressOffset>0x0310</addressOffset>
         </register>
       </registers>
     </peripheral>
