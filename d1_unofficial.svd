@@ -29258,7 +29258,7 @@
     <peripheral>
       <name>CE_NS</name>
       <description>Crypoto Engine</description>
-      <groupName>Interfaces</groupName>
+      <groupName>SecuritySystem</groupName>
       <baseAddress>0x03040000</baseAddress>
       <addressBlock>
         <offset>0</offset>
