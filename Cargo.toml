@@ -1,6 +1,6 @@
 [package]
 name = "d1-pac"
-version = "0.0.10"
+version = "0.0.11"
 edition = "2021"
 authors = ["duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>"]
 description = "Peripheral access API for Allwinner D1 SoC generated from unofficial SVD file"
