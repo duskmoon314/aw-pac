@@ -9379,13 +9379,17 @@
     <peripheral>
       <name>I2S_PCM0</name>
       <description>I2S/PCM</description>
-      <groupName>Memory</groupName>
+      <groupName>Audio</groupName>
       <baseAddress>0x02032000</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>I2S_PCM0</name>
+        <value>42</value>
+      </interrupt>
       <registers>
         <register>
           <name>I2S_PCM_CTL</name>
@@ -9588,13 +9592,17 @@
     <peripheral>
       <name>I2S_PCM1</name>
       <description>I2S/PCM</description>
-      <groupName>Memory</groupName>
+      <groupName>Audio</groupName>
       <baseAddress>0x02033000</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>I2S_PCM1</name>
+        <value>43</value>
+      </interrupt>
       <registers>
         <register>
           <name>I2S_PCM_CTL</name>
@@ -9797,13 +9805,17 @@
     <peripheral>
       <name>I2S_PCM2</name>
       <description>I2S/PCM</description>
-      <groupName>Memory</groupName>
+      <groupName>Audio</groupName>
       <baseAddress>0x02034000</baseAddress>
       <addressBlock>
         <offset>0</offset>
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>I2S_PCM2</name>
+        <value>44</value>
+      </interrupt>
       <registers>
         <register>
           <name>I2S_PCM_CTL</name>
@@ -9999,6 +10011,840 @@
           <name>ASRCMBISTSTAT</name>
           <description>ASRC MBIST Test Status Register</description>
           <addressOffset>0x00A0</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>DMIC</name>
+      <description>DMIC</description>
+      <groupName>Audio</groupName>
+      <baseAddress>0x02031000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>DMIC</name>
+        <value>40</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>DMIC_EN</name>
+          <description>DMIC Enable Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_SR</name>
+          <description>DMIC Sample Rate Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_CTR</name>
+          <description>DMIC Control Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_DATA</name>
+          <description>DMIC Data Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_INTC</name>
+          <description>DMIC Interrupt Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_INTS</name>
+          <description>DMIC Interrupt Status Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_RXFIFO_CTR</name>
+          <description>DMIC RXFIFO Control Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_RXFIFO_STA</name>
+          <description>DMIC RXFIFO Status Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_CH_NUM</name>
+          <description>DMIC Channel Numbers Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_CH_MAP</name>
+          <description>DMIC Channel Mapping Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>DMIC_CNT</name>
+          <description>DMIC Counter Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>DATA0_DATA1_VOL_CTR</name>
+          <description>Data0 and Data1 Volume Control Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>DATA2_DATA3_VOL_CTR</name>
+          <description>Data2 And Data3 Volume Control Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>HPF_EN_CTR</name>
+          <description>High Pass Filter Enable Control Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>HPF_COEF_REG</name>
+          <description>High Pass Filter Coefficient Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>HPF_GAIN_REG</name>
+          <description>High Pass Filter Gain Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>OWA</name>
+      <description>One Wire Audio</description>
+      <groupName>Audio</groupName>
+      <baseAddress>0x02036000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>OWA</name>
+        <value>39</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>OWA_GEN_CTL</name>
+          <description>OWA General Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>OWA_TX_CFIG</name>
+          <description>OWA TX Configuration Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>OWA_RX_CFIG</name>
+          <description>OWA RX Configuration Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>OWA_ISTA</name>
+          <description>OWA Interrupt Status Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>OWA_RXFIFO</name>
+          <description>OWA RXFIFO Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>OWA_FCTL</name>
+          <description>OWA FIFO Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>OWA_FSTA</name>
+          <description>OWA FIFO Status Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>OWA_INT</name>
+          <description>OWA Interrupt Control Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>OWA_TX_FIFO</name>
+          <description>OWA TX FIFO Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>OWA_TX_CNT</name>
+          <description>OWA TX Counter Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>OWA_RX_CNT</name>
+          <description>OWA RX Counter Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>OWA_TX_CHSTA0</name>
+          <description>OWA TX Channel Status Register0</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>OWA_TX_CHSTA1</name>
+          <description>OWA TX Channel Status Register1</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>OWA_RXCHSTA0</name>
+          <description>OWA RX Channel Status Register0</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>OWA_RXCHSTA1</name>
+          <description>OWA RX Channel Status Register1</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>OWA_EXP_CTL</name>
+          <description>OWA Expand Control Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>OWA_EXP_ISTA</name>
+          <description>OWA Expand Interrupt Status Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>OWA_EXP_INFO_0</name>
+          <description>OWA Expand Infomation Register0</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>OWA_EXP_INFO_1</name>
+          <description>OWA Expand Infomation Register1</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>OWA_EXP_DBG_0</name>
+          <description>OWA Expand Debug Register0</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>OWA_EXP_DBG_1</name>
+          <description>OWA Expand Debug Register1</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>AudioCodec</name>
+      <description>Audio Codec</description>
+      <groupName>Audio</groupName>
+      <baseAddress>0x02030000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>AUDIO_CODEC</name>
+        <value>41</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>AC_DAC_DPC</name>
+          <description>DAC Digital Part Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>DAC_VOL_CTRL</name>
+          <description>DAC Volume Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_FIFOC</name>
+          <description>DAC FIFO Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_FIFOS</name>
+          <description>DAC FIFO Status Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_TXDATA</name>
+          <description>DAC TX DATA Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_CNT</name>
+          <description>DAC TX FIFO Counter Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DG</name>
+          <description>DAC Debug Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_FIFOC</name>
+          <description>ADC FIFO Control Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>ADC_VOL_CTRL1</name>
+          <description>ADC Volume Control1 Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_FIFOS</name>
+          <description>ADC FIFO Status Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_RXDATA</name>
+          <description>ADC RX Data Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_CNT</name>
+          <description>ADC RX Counter Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DG</name>
+          <description>ADC Debug Register</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>ADC_DIG_CTRL</name>
+          <description>ADC Digtial Control Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>VRA1SPEEDUP_DOWN_CTRL</name>
+          <description>VRA1 Speedup Down Control Register</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DAP_CTRL</name>
+          <description>DAC DAP Control Register</description>
+          <addressOffset>0x00F0</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DAP_CTR</name>
+          <description>ADC DAP Control Register</description>
+          <addressOffset>0x00F8</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HHPFC</name>
+          <description>DAC DRC High HPF Coef Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LHPFC</name>
+          <description>DAC DRC Low HPF Coef Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_CTRL</name>
+          <description>DAC DRC Control Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LPFHAT</name>
+          <description>DAC DRC Left Peak Filter High Attack Time Coef Register</description>
+          <addressOffset>0x010C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LPFLAT</name>
+          <description>DAC DRC Left Peak Filter Low Attack Time Coef Register</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_RPFHAT</name>
+          <description>DAC DRC Right Peak Filter High Attack Time Coef Register</description>
+          <addressOffset>0x0114</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_RPFLAT</name>
+          <description>DAC DRC Peak Filter Low Attack Time Coef Register</description>
+          <addressOffset>0x0118</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LPFHRT</name>
+          <description>DAC DRC Left Peak Filter High Release Time Coef Register</description>
+          <addressOffset>0x011C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LPFLRT</name>
+          <description>DAC DRC Left Peak Filter Low Release Time Coef Register</description>
+          <addressOffset>0x0120</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_RPFHRT</name>
+          <description>DAC DRC Right Peak filter High Release Time Coef Register</description>
+          <addressOffset>0x0124</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_RPFLRT</name>
+          <description>DAC DRC Right Peak filter Low Release Time Coef Register</description>
+          <addressOffset>0x0128</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LRMSHAT</name>
+          <description>DAC DRC Left RMS Filter High Coef Register</description>
+          <addressOffset>0x012C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LRMSLAT</name>
+          <description>DAC DRC Left RMS Filter Low Coef Register</description>
+          <addressOffset>0x0130</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_RRMSHAT</name>
+          <description>DAC DRC Right RMS Filter High Coef Register</description>
+          <addressOffset>0x0134</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_RRMSLAT</name>
+          <description>DAC DRC Right RMS Filter Low Coef Register</description>
+          <addressOffset>0x0138</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HCT</name>
+          <description>DAC DRC Compressor Threshold High Setting Register</description>
+          <addressOffset>0x013C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LCT</name>
+          <description>DAC DRC Compressor Slope High Setting Register</description>
+          <addressOffset>0x0140</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HKC</name>
+          <description>DAC DRC Compressor Slope High Setting Register</description>
+          <addressOffset>0x0144</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LKC</name>
+          <description>DAC DRC Compressor Slope Low Setting Register</description>
+          <addressOffset>0x0148</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HOPC</name>
+          <description>DAC DRC Compressor High Output at Compressor Threshold Register</description>
+          <addressOffset>0x014C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LOPC</name>
+          <description>DAC DRC Compressor Low Output at Compressor Threshold Register</description>
+          <addressOffset>0x0150</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HLT</name>
+          <description>DAC DRC Limiter Threshold High Setting Register</description>
+          <addressOffset>0x0154</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LLT</name>
+          <description>DAC DRC Limiter Threshold Low Setting Register</description>
+          <addressOffset>0x0158</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HKl</name>
+          <description>DAC DRC Limiter Slope High Setting Register</description>
+          <addressOffset>0x015C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LKl</name>
+          <description>DAC DRC Limiter Slope Low Setting Register</description>
+          <addressOffset>0x0160</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HOPL</name>
+          <description>DAC DRC Limiter High Output at Limiter Threshold</description>
+          <addressOffset>0x0164</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LOPL</name>
+          <description>DAC DRC Limiter Low Output at Limiter Threshold</description>
+          <addressOffset>0x0168</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HET</name>
+          <description>DAC DRC Expander Threshold High Setting Register</description>
+          <addressOffset>0x016C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LET</name>
+          <description>DAC DRC Expander Threshold Low Setting Register</description>
+          <addressOffset>0x0170</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HKE</name>
+          <description>DAC DRC Expander Slope High Setting Register</description>
+          <addressOffset>0x0174</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LKE</name>
+          <description>DAC DRC Expander Slope Low Setting Register</description>
+          <addressOffset>0x0178</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HOPE</name>
+          <description>DAC DRC Expander High Output at Expander Threshold</description>
+          <addressOffset>0x017C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LOPE</name>
+          <description>DAC DRC Expander Low Output at Expander Threshold</description>
+          <addressOffset>0x0180</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HKN</name>
+          <description>DAC DRC Linear Slope High Setting Register</description>
+          <addressOffset>0x0184</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_LKN</name>
+          <description>DAC DRC Linear Slope Low Setting Register</description>
+          <addressOffset>0x0188</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_SFHAT</name>
+          <description>DAC DRC Smooth filter Gain High Attack Time Coef Register</description>
+          <addressOffset>0x018C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_SFLAT</name>
+          <description>DAC DRC Smooth filter Gain Low Attack Time Coef Register</description>
+          <addressOffset>0x0190</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_SFHRT</name>
+          <description>DAC DRC Smooth filter Gain High Release Time Coef Register</description>
+          <addressOffset>0x0194</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_SFLRT</name>
+          <description>DAC DRC Smooth filter Gain Low Release Time Coef Register</description>
+          <addressOffset>0x0198</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_MXGHS</name>
+          <description>DAC DRC MAX Gain High Setting Register</description>
+          <addressOffset>0x019C</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_MXGLS</name>
+          <description>DAC DRC MAX Gain Low Setting Register</description>
+          <addressOffset>0x01A0</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_MNGHS</name>
+          <description>DAC DRC MIN Gain High Setting Register</description>
+          <addressOffset>0x01A4</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_MNGLS</name>
+          <description>DAC DRC MIN Gain Low Setting Register</description>
+          <addressOffset>0x01A8</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_EPSHC</name>
+          <description>DAC DRC Expander Smooth Time High Coef Register</description>
+          <addressOffset>0x01AC</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_EPSLC</name>
+          <description>DAC DRC Expander Smooth Time Low Coef Register</description>
+          <addressOffset>0x01B0</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HPFHGAIN</name>
+          <description>DAC DRC HPF Gain High Coef Register</description>
+          <addressOffset>0x01B8</addressOffset>
+        </register>
+        <register>
+          <name>AC_DAC_DRC_HPFLGAIN</name>
+          <description>DAC DRC HPF Gain Low Coef Register</description>
+          <addressOffset>0x01BC</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HHPFC</name>
+          <description>ADC DRC High HPF Coef Register</description>
+          <addressOffset>0x0200</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LHPFC</name>
+          <description>ADC DRC Low HPF Coef Register</description>
+          <addressOffset>0x0204</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_CTRL</name>
+          <description>ADC DRC Control Register</description>
+          <addressOffset>0x0208</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LPFHAT</name>
+          <description>ADC DRC Left Peak Filter High Attack Time Coef Register</description>
+          <addressOffset>0x020C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LPFLAT</name>
+          <description>ADC DRC Left Peak Filter Low Attack Time Coef Register</description>
+          <addressOffset>0x0210</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_RPFHAT</name>
+          <description>ADC DRC Right Peak Filter High Attack Time Coef Register</description>
+          <addressOffset>0x0214</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_RPFLAT</name>
+          <description>ADC DRC Right Peak Filter Low Attack Time Coef Register</description>
+          <addressOffset>0x0218</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LPFHRT</name>
+          <description>ADC DRC Left Peak Filter High Release Time Coef Register</description>
+          <addressOffset>0x021C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LPFLRT</name>
+          <description>ADC DRC Left Peak Filter Low Release Time Coef Register</description>
+          <addressOffset>0x0220</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_RPFHRT</name>
+          <description>ADC DRC Right Peak Filter High Release Time Coef Register</description>
+          <addressOffset>0x0224</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_RPFLRT</name>
+          <description>ADC DRC Right Peak Filter Low Release Time Coef Register</description>
+          <addressOffset>0x0228</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LRMSHAT</name>
+          <description>ADC DRC Left RMS Filter High Coef Register</description>
+          <addressOffset>0x022C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LRMSLAT</name>
+          <description>ADC DRC Left RMS Filter Low Coef Register</description>
+          <addressOffset>0x0230</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_RRMSHAT</name>
+          <description>ADC DRC Right RMS Filter High Coef Register</description>
+          <addressOffset>0x0234</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_RRMSLAT</name>
+          <description>ADC DRC Right RMS Filter Low Coef Register</description>
+          <addressOffset>0x0238</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HCT</name>
+          <description>ADC DRC Compressor Threshold High Setting Register</description>
+          <addressOffset>0x023C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LCT</name>
+          <description>ADC DRC Compressor Slope High Setting Register</description>
+          <addressOffset>0x0240</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HKC</name>
+          <description>ADC DRC Compressor Slope High Setting Register</description>
+          <addressOffset>0x0244</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LKC</name>
+          <description>ADC DRC Compressor Slope Low Setting Register</description>
+          <addressOffset>0x0248</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HOPC</name>
+          <description>ADC DRC Compressor High Output at Compressor Threshold Register</description>
+          <addressOffset>0x024C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LOPC</name>
+          <description>ADC DRC Compressor Low Output at Compressor Threshold Register</description>
+          <addressOffset>0x0250</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HLT</name>
+          <description>ADC DRC Limiter Threshold High Setting Register</description>
+          <addressOffset>0x0254</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LLT</name>
+          <description>ADC DRC Limiter Threshold Low Setting Register</description>
+          <addressOffset>0x0258</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HKl</name>
+          <description>ADC DRC Limiter Slope High Setting Register</description>
+          <addressOffset>0x025C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LKl</name>
+          <description>ADC DRC Limiter Slope Low Setting Register</description>
+          <addressOffset>0x0260</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HOPL</name>
+          <description>ADC DRC Limiter High Output at Limiter Threshold</description>
+          <addressOffset>0x0264</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LOPL</name>
+          <description>ADC DRC Limiter Low Output at Limiter Threshold</description>
+          <addressOffset>0x0268</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HET</name>
+          <description>ADC DRC Expander Threshold High Setting Register</description>
+          <addressOffset>0x026C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LET</name>
+          <description>ADC DRC Expander Threshold Low Setting Register</description>
+          <addressOffset>0x0270</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HKE</name>
+          <description>ADC DRC Expander Slope High Setting Register</description>
+          <addressOffset>0x0274</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LKE</name>
+          <description>ADC DRC Expander Slope Low Setting Register</description>
+          <addressOffset>0x0278</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HOPE</name>
+          <description>ADC DRC Expander High Output at Expander Threshold</description>
+          <addressOffset>0x027C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LOPE</name>
+          <description>ADC DRC Expander Low Output at Expander Threshold</description>
+          <addressOffset>0x0280</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HKN</name>
+          <description>ADC DRC Linear Slope High Setting Register</description>
+          <addressOffset>0x0284</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_LKN</name>
+          <description>ADC DRC Linear Slope Low Setting Register</description>
+          <addressOffset>0x0288</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_SFHAT</name>
+          <description>ADC DRC Smooth filter Gain High Attack Time Coef Register</description>
+          <addressOffset>0x028C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_SFLAT</name>
+          <description>ADC DRC Smooth filter Gain Low Attack Time Coef Register</description>
+          <addressOffset>0x0290</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_SFHRT</name>
+          <description>ADC DRC Smooth filter Gain High Release Time Coef Register</description>
+          <addressOffset>0x0294</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_SFLRT</name>
+          <description>ADC DRC Smooth filter Gain Low Release Time Coef Register</description>
+          <addressOffset>0x0298</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_MXGHS</name>
+          <description>ADC DRC MAX Gain High Setting Register</description>
+          <addressOffset>0x029C</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_MXGLS</name>
+          <description>ADC DRC MAX Gain Low Setting Register</description>
+          <addressOffset>0x02A0</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_MNGLS</name>
+          <description>ADC DRC MIN Gain High Setting Register</description>
+          <addressOffset>0x02A4</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_MXGLS</name>
+          <description>ADC DRC MIN Gain Low Setting Register</description>
+          <addressOffset>0x02A8</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_EPSHC</name>
+          <description>ADC DRC Expander Smooth Time High Coef Register</description>
+          <addressOffset>0x02AC</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_EPSLC</name>
+          <description>ADC DRC Expander Smooth Time Low Coef Register</description>
+          <addressOffset>0x02B0</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HPFHGAIN</name>
+          <description>ADC DRC HPF Gain High Coef Register</description>
+          <addressOffset>0x02B8</addressOffset>
+        </register>
+        <register>
+          <name>AC_ADC_DRC_HPFLGAIN</name>
+          <description>ADC DRC HPF Gain Low Coef Register</description>
+          <addressOffset>0x02BC</addressOffset>
+        </register>
+        <register>
+          <name>ADC1_REG</name>
+          <description>ADC1 Analog Control Register</description>
+          <addressOffset>0x0300</addressOffset>
+        </register>
+        <register>
+          <name>ADC2_REG</name>
+          <description>ADC2 Analog Control Register</description>
+          <addressOffset>0x0304</addressOffset>
+        </register>
+        <register>
+          <name>ADC3_REG</name>
+          <description>ADC3 Analog Control Register</description>
+          <addressOffset>0x0308</addressOffset>
+        </register>
+        <register>
+          <name>DAC_REG</name>
+          <description>DAC Analog Control Register</description>
+          <addressOffset>0x0310</addressOffset>
+        </register>
+        <register>
+          <name>MICBIAS_REG</name>
+          <description>MICBIAS Analog Control Register</description>
+          <addressOffset>0x0318</addressOffset>
+        </register>
+        <register>
+          <name>RAMP_REG</name>
+          <description>BIAS Analog Control Register</description>
+          <addressOffset>0x031C</addressOffset>
+        </register>
+        <register>
+          <name>BIAS_REG</name>
+          <description>BIAS Analog Control Register</description>
+          <addressOffset>0x0320</addressOffset>
+        </register>
+        <register>
+          <name>ADC5_REG</name>
+          <description>ADC5 Analog Control Register</description>
+          <addressOffset>0x0330</addressOffset>
         </register>
       </registers>
     </peripheral>

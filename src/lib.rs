@@ -41,6 +41,12 @@ extern "C" {
     fn PWM();
     fn IR_TX();
     fn LEDC();
+    fn OWA();
+    fn DMIC();
+    fn AUDIO_CODEC();
+    fn I2S_PCM0();
+    fn I2S_PCM1();
+    fn I2S_PCM2();
     fn USB0_DEVICE();
     fn USB0_EHCI();
     fn USB0_OHCI();
@@ -117,12 +123,14 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _handler: LEDC },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: OWA },
+    Vector { _handler: DMIC },
+    Vector {
+        _handler: AUDIO_CODEC,
+    },
+    Vector { _handler: I2S_PCM0 },
+    Vector { _handler: I2S_PCM1 },
+    Vector { _handler: I2S_PCM2 },
     Vector {
         _handler: USB0_DEVICE,
     },
@@ -936,6 +944,90 @@ impl core::fmt::Debug for I2S_PCM2 {
 }
 #[doc = "I2S/PCM"]
 pub mod i2s_pcm2;
+#[doc = "DMIC"]
+pub struct DMIC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for DMIC {}
+impl DMIC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const dmic::RegisterBlock = 0x0203_1000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const dmic::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for DMIC {
+    type Target = dmic::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for DMIC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMIC").finish()
+    }
+}
+#[doc = "DMIC"]
+pub mod dmic;
+#[doc = "One Wire Audio"]
+pub struct OWA {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for OWA {}
+impl OWA {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const owa::RegisterBlock = 0x0203_6000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const owa::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for OWA {
+    type Target = owa::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for OWA {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OWA").finish()
+    }
+}
+#[doc = "One Wire Audio"]
+pub mod owa;
+#[doc = "Audio Codec"]
+pub struct AUDIOCODEC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for AUDIOCODEC {}
+impl AUDIOCODEC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const audio_codec::RegisterBlock = 0x0203_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const audio_codec::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for AUDIOCODEC {
+    type Target = audio_codec::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for AUDIOCODEC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AUDIOCODEC").finish()
+    }
+}
+#[doc = "Audio Codec"]
+pub mod audio_codec;
 #[doc = "Two Wire Interface"]
 pub struct TWI0 {
     _marker: PhantomData<*const ()>,
@@ -1633,6 +1725,12 @@ pub struct Peripherals {
     pub I2S_PCM1: I2S_PCM1,
     #[doc = "I2S_PCM2"]
     pub I2S_PCM2: I2S_PCM2,
+    #[doc = "DMIC"]
+    pub DMIC: DMIC,
+    #[doc = "OWA"]
+    pub OWA: OWA,
+    #[doc = "AUDIOCODEC"]
+    pub AUDIOCODEC: AUDIOCODEC,
     #[doc = "TWI0"]
     pub TWI0: TWI0,
     #[doc = "TWI1"]
@@ -1767,6 +1865,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             I2S_PCM2: I2S_PCM2 {
+                _marker: PhantomData,
+            },
+            DMIC: DMIC {
+                _marker: PhantomData,
+            },
+            OWA: OWA {
+                _marker: PhantomData,
+            },
+            AUDIOCODEC: AUDIOCODEC {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {
