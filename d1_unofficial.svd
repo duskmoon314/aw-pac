@@ -4529,6 +4529,633 @@
     </peripheral>
 
     <peripheral>
+      <name>I2S_PCM0</name>
+      <description>I2S/PCM</description>
+      <groupName>Memory</groupName>
+      <baseAddress>0x02032000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>I2S_PCM_CTL</name>
+          <description>I2S/PCM Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FMT0</name>
+          <description>I2S/PCM Format Register 0</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FMT1</name>
+          <description>I2S/PCM Format Register 1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_ISTA</name>
+          <description>I2S/PCM Interrupt Status Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXFIFO</name>
+          <description>I2S/PCM RXFIFO Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FCTL</name>
+          <description>I2S/PCM FIFO Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FSTA</name>
+          <description>I2S/PCM FIFO Status Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_INT</name>
+          <description>I2S/PCM DMA and Interrupt Control Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TXFIFO</name>
+          <description>I2S/PCM TXFIFO Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_CLKD</name>
+          <description>I2S/PCM Clock Divide Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TXCNT</name>
+          <description>I2S/PCM TX Sample Counter Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCNT</name>
+          <description>I2S/PCM RX Sample Counter Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_CHCFG</name>
+          <description>I2S/PCM Channel Configuration Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHSEL</name>
+          <description>I2S/PCM TX0 Channel Select Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHSEL</name>
+          <description>I2S/PCM TX1 Channel Select Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHSEL</name>
+          <description>I2S/PCM TX2 Channel Select Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHSEL</name>
+          <description>I2S/PCM TX3 Channel Select Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHMAP0</name>
+          <description>I2S/PCM TX0 Channel Mapping Register0</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHMAP1</name>
+          <description>I2S/PCM TX0 Channel Mapping Register1</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHMAP0</name>
+          <description>I2S/PCM TX1 Channel Mapping Register0</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHMAP1</name>
+          <description>I2S/PCM TX1 Channel Mapping Register1</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHMAP0</name>
+          <description>I2S/PCM TX2 Channel Mapping Register0</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHMAP1</name>
+          <description>I2S/PCM TX2 Channel Mapping Register1</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHMAP0</name>
+          <description>I2S/PCM TX3 Channel Mapping Register0</description>
+          <addressOffset>0x005C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHMAP1</name>
+          <description>I2S/PCM TX3 Channel Mapping Register1</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHSEL</name>
+          <description>I2S/PCM RX Channel Select Register</description>
+          <addressOffset>0x0064</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP0</name>
+          <description>I2S/PCM RX Channel Mapping Register0</description>
+          <addressOffset>0x0068</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP1</name>
+          <description>I2S/PCM RX Channel Mapping Register1</description>
+          <addressOffset>0x006C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP2</name>
+          <description>I2S/PCM RX Channel Mapping Register2</description>
+          <addressOffset>0x0070</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP3</name>
+          <description>I2S/PCM RX Channel Mapping Register3</description>
+          <addressOffset>0x0074</addressOffset>
+        </register>
+        <register>
+          <name>MCLKCFG</name>
+          <description>ASRC MCLK Configuration Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>FsoutCFG</name>
+          <description>ASRC Out Sample Rate Configuration Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>FsinEXTCFG</name>
+          <description>ASRC Input Sample Pulse Extend Configuration Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>ASRCCFG</name>
+          <description>ASRC Enable Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMANCFG</name>
+          <description>ASRC Manual Ratio Configuration Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <name>ASRCRATIOSTAT</name>
+          <description>ASRC Status Register</description>
+          <addressOffset>0x0094</addressOffset>
+        </register>
+        <register>
+          <name>ASRCFIFOSTAT</name>
+          <description>ASRC FIFO Level Status Register</description>
+          <addressOffset>0x0098</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMBISTCFG</name>
+          <description>ASRC MBIST Test Configuration Register</description>
+          <addressOffset>0x009C</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMBISTSTAT</name>
+          <description>ASRC MBIST Test Status Register</description>
+          <addressOffset>0x00A0</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>I2S_PCM1</name>
+      <description>I2S/PCM</description>
+      <groupName>Memory</groupName>
+      <baseAddress>0x02033000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>I2S_PCM_CTL</name>
+          <description>I2S/PCM Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FMT0</name>
+          <description>I2S/PCM Format Register 0</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FMT1</name>
+          <description>I2S/PCM Format Register 1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_ISTA</name>
+          <description>I2S/PCM Interrupt Status Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXFIFO</name>
+          <description>I2S/PCM RXFIFO Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FCTL</name>
+          <description>I2S/PCM FIFO Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FSTA</name>
+          <description>I2S/PCM FIFO Status Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_INT</name>
+          <description>I2S/PCM DMA and Interrupt Control Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TXFIFO</name>
+          <description>I2S/PCM TXFIFO Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_CLKD</name>
+          <description>I2S/PCM Clock Divide Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TXCNT</name>
+          <description>I2S/PCM TX Sample Counter Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCNT</name>
+          <description>I2S/PCM RX Sample Counter Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_CHCFG</name>
+          <description>I2S/PCM Channel Configuration Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHSEL</name>
+          <description>I2S/PCM TX0 Channel Select Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHSEL</name>
+          <description>I2S/PCM TX1 Channel Select Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHSEL</name>
+          <description>I2S/PCM TX2 Channel Select Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHSEL</name>
+          <description>I2S/PCM TX3 Channel Select Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHMAP0</name>
+          <description>I2S/PCM TX0 Channel Mapping Register0</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHMAP1</name>
+          <description>I2S/PCM TX0 Channel Mapping Register1</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHMAP0</name>
+          <description>I2S/PCM TX1 Channel Mapping Register0</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHMAP1</name>
+          <description>I2S/PCM TX1 Channel Mapping Register1</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHMAP0</name>
+          <description>I2S/PCM TX2 Channel Mapping Register0</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHMAP1</name>
+          <description>I2S/PCM TX2 Channel Mapping Register1</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHMAP0</name>
+          <description>I2S/PCM TX3 Channel Mapping Register0</description>
+          <addressOffset>0x005C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHMAP1</name>
+          <description>I2S/PCM TX3 Channel Mapping Register1</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHSEL</name>
+          <description>I2S/PCM RX Channel Select Register</description>
+          <addressOffset>0x0064</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP0</name>
+          <description>I2S/PCM RX Channel Mapping Register0</description>
+          <addressOffset>0x0068</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP1</name>
+          <description>I2S/PCM RX Channel Mapping Register1</description>
+          <addressOffset>0x006C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP2</name>
+          <description>I2S/PCM RX Channel Mapping Register2</description>
+          <addressOffset>0x0070</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP3</name>
+          <description>I2S/PCM RX Channel Mapping Register3</description>
+          <addressOffset>0x0074</addressOffset>
+        </register>
+        <register>
+          <name>MCLKCFG</name>
+          <description>ASRC MCLK Configuration Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>FsoutCFG</name>
+          <description>ASRC Out Sample Rate Configuration Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>FsinEXTCFG</name>
+          <description>ASRC Input Sample Pulse Extend Configuration Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>ASRCCFG</name>
+          <description>ASRC Enable Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMANCFG</name>
+          <description>ASRC Manual Ratio Configuration Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <name>ASRCRATIOSTAT</name>
+          <description>ASRC Status Register</description>
+          <addressOffset>0x0094</addressOffset>
+        </register>
+        <register>
+          <name>ASRCFIFOSTAT</name>
+          <description>ASRC FIFO Level Status Register</description>
+          <addressOffset>0x0098</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMBISTCFG</name>
+          <description>ASRC MBIST Test Configuration Register</description>
+          <addressOffset>0x009C</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMBISTSTAT</name>
+          <description>ASRC MBIST Test Status Register</description>
+          <addressOffset>0x00A0</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>I2S_PCM2</name>
+      <description>I2S/PCM</description>
+      <groupName>Memory</groupName>
+      <baseAddress>0x02034000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>I2S_PCM_CTL</name>
+          <description>I2S/PCM Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FMT0</name>
+          <description>I2S/PCM Format Register 0</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FMT1</name>
+          <description>I2S/PCM Format Register 1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_ISTA</name>
+          <description>I2S/PCM Interrupt Status Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXFIFO</name>
+          <description>I2S/PCM RXFIFO Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FCTL</name>
+          <description>I2S/PCM FIFO Control Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_FSTA</name>
+          <description>I2S/PCM FIFO Status Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_INT</name>
+          <description>I2S/PCM DMA and Interrupt Control Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TXFIFO</name>
+          <description>I2S/PCM TXFIFO Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_CLKD</name>
+          <description>I2S/PCM Clock Divide Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TXCNT</name>
+          <description>I2S/PCM TX Sample Counter Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCNT</name>
+          <description>I2S/PCM RX Sample Counter Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_CHCFG</name>
+          <description>I2S/PCM Channel Configuration Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHSEL</name>
+          <description>I2S/PCM TX0 Channel Select Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHSEL</name>
+          <description>I2S/PCM TX1 Channel Select Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHSEL</name>
+          <description>I2S/PCM TX2 Channel Select Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHSEL</name>
+          <description>I2S/PCM TX3 Channel Select Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHMAP0</name>
+          <description>I2S/PCM TX0 Channel Mapping Register0</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX0CHMAP1</name>
+          <description>I2S/PCM TX0 Channel Mapping Register1</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHMAP0</name>
+          <description>I2S/PCM TX1 Channel Mapping Register0</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX1CHMAP1</name>
+          <description>I2S/PCM TX1 Channel Mapping Register1</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHMAP0</name>
+          <description>I2S/PCM TX2 Channel Mapping Register0</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX2CHMAP1</name>
+          <description>I2S/PCM TX2 Channel Mapping Register1</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHMAP0</name>
+          <description>I2S/PCM TX3 Channel Mapping Register0</description>
+          <addressOffset>0x005C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_TX3CHMAP1</name>
+          <description>I2S/PCM TX3 Channel Mapping Register1</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHSEL</name>
+          <description>I2S/PCM RX Channel Select Register</description>
+          <addressOffset>0x0064</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP0</name>
+          <description>I2S/PCM RX Channel Mapping Register0</description>
+          <addressOffset>0x0068</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP1</name>
+          <description>I2S/PCM RX Channel Mapping Register1</description>
+          <addressOffset>0x006C</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP2</name>
+          <description>I2S/PCM RX Channel Mapping Register2</description>
+          <addressOffset>0x0070</addressOffset>
+        </register>
+        <register>
+          <name>I2S_PCM_RXCHMAP3</name>
+          <description>I2S/PCM RX Channel Mapping Register3</description>
+          <addressOffset>0x0074</addressOffset>
+        </register>
+        <register>
+          <name>MCLKCFG</name>
+          <description>ASRC MCLK Configuration Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>FsoutCFG</name>
+          <description>ASRC Out Sample Rate Configuration Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>FsinEXTCFG</name>
+          <description>ASRC Input Sample Pulse Extend Configuration Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>ASRCCFG</name>
+          <description>ASRC Enable Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMANCFG</name>
+          <description>ASRC Manual Ratio Configuration Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <name>ASRCRATIOSTAT</name>
+          <description>ASRC Status Register</description>
+          <addressOffset>0x0094</addressOffset>
+        </register>
+        <register>
+          <name>ASRCFIFOSTAT</name>
+          <description>ASRC FIFO Level Status Register</description>
+          <addressOffset>0x0098</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMBISTCFG</name>
+          <description>ASRC MBIST Test Configuration Register</description>
+          <addressOffset>0x009C</addressOffset>
+        </register>
+        <register>
+          <name>ASRCMBISTSTAT</name>
+          <description>ASRC MBIST Test Status Register</description>
+          <addressOffset>0x00A0</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>TWI0</name>
       <description>Two Wire Interface</description>
       <groupName>Interfaces</groupName>

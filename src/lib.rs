@@ -852,6 +852,90 @@ impl core::fmt::Debug for SMHC2 {
 }
 #[doc = "SD/MMC Host Controller"]
 pub mod smhc2;
+#[doc = "I2S/PCM"]
+pub struct I2S_PCM0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2S_PCM0 {}
+impl I2S_PCM0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const i2s_pcm0::RegisterBlock = 0x0203_2000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2s_pcm0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for I2S_PCM0 {
+    type Target = i2s_pcm0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for I2S_PCM0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2S_PCM0").finish()
+    }
+}
+#[doc = "I2S/PCM"]
+pub mod i2s_pcm0;
+#[doc = "I2S/PCM"]
+pub struct I2S_PCM1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2S_PCM1 {}
+impl I2S_PCM1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const i2s_pcm1::RegisterBlock = 0x0203_3000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2s_pcm1::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for I2S_PCM1 {
+    type Target = i2s_pcm1::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for I2S_PCM1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2S_PCM1").finish()
+    }
+}
+#[doc = "I2S/PCM"]
+pub mod i2s_pcm1;
+#[doc = "I2S/PCM"]
+pub struct I2S_PCM2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for I2S_PCM2 {}
+impl I2S_PCM2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const i2s_pcm2::RegisterBlock = 0x0203_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const i2s_pcm2::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for I2S_PCM2 {
+    type Target = i2s_pcm2::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for I2S_PCM2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2S_PCM2").finish()
+    }
+}
+#[doc = "I2S/PCM"]
+pub mod i2s_pcm2;
 #[doc = "Two Wire Interface"]
 pub struct TWI0 {
     _marker: PhantomData<*const ()>,
@@ -1543,6 +1627,12 @@ pub struct Peripherals {
     pub SMHC1: SMHC1,
     #[doc = "SMHC2"]
     pub SMHC2: SMHC2,
+    #[doc = "I2S_PCM0"]
+    pub I2S_PCM0: I2S_PCM0,
+    #[doc = "I2S_PCM1"]
+    pub I2S_PCM1: I2S_PCM1,
+    #[doc = "I2S_PCM2"]
+    pub I2S_PCM2: I2S_PCM2,
     #[doc = "TWI0"]
     pub TWI0: TWI0,
     #[doc = "TWI1"]
@@ -1668,6 +1758,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             SMHC2: SMHC2 {
+                _marker: PhantomData,
+            },
+            I2S_PCM0: I2S_PCM0 {
+                _marker: PhantomData,
+            },
+            I2S_PCM1: I2S_PCM1 {
+                _marker: PhantomData,
+            },
+            I2S_PCM2: I2S_PCM2 {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {
