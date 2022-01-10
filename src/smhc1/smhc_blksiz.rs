@@ -34,7 +34,46 @@ impl From<crate::W<SMHC_BLKSIZ_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `BLK_SZ` reader - Block SIze"]
+pub struct BLK_SZ_R(crate::FieldReader<u16, u16>);
+impl BLK_SZ_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u16) -> Self {
+        BLK_SZ_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BLK_SZ_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `BLK_SZ` writer - Block SIze"]
+pub struct BLK_SZ_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> BLK_SZ_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:15 - Block SIze"]
+    #[inline(always)]
+    pub fn blk_sz(&self) -> BLK_SZ_R {
+        BLK_SZ_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - Block SIze"]
+    #[inline(always)]
+    pub fn blk_sz(&mut self) -> BLK_SZ_W {
+        BLK_SZ_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

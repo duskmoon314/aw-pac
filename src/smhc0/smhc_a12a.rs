@@ -34,7 +34,46 @@ impl From<crate::W<SMHC_A12A_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SD_A12A` reader - "]
+pub struct SD_A12A_R(crate::FieldReader<u16, u16>);
+impl SD_A12A_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u16) -> Self {
+        SD_A12A_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for SD_A12A_R {
+    type Target = crate::FieldReader<u16, u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `SD_A12A` writer - "]
+pub struct SD_A12A_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> SD_A12A_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:15"]
+    #[inline(always)]
+    pub fn sd_a12a(&self) -> SD_A12A_R {
+        SD_A12A_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15"]
+    #[inline(always)]
+    pub fn sd_a12a(&mut self) -> SD_A12A_W {
+        SD_A12A_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

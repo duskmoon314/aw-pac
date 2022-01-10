@@ -34,7 +34,56 @@ impl From<crate::W<SMHC_EXT_CMD_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `AUTO_CMD23_EN` reader - Send CMD23 Automatically"]
+pub struct AUTO_CMD23_EN_R(crate::FieldReader<bool, bool>);
+impl AUTO_CMD23_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        AUTO_CMD23_EN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for AUTO_CMD23_EN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `AUTO_CMD23_EN` writer - Send CMD23 Automatically"]
+pub struct AUTO_CMD23_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> AUTO_CMD23_EN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Send CMD23 Automatically"]
+    #[inline(always)]
+    pub fn auto_cmd23_en(&self) -> AUTO_CMD23_EN_R {
+        AUTO_CMD23_EN_R::new((self.bits & 0x01) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Send CMD23 Automatically"]
+    #[inline(always)]
+    pub fn auto_cmd23_en(&mut self) -> AUTO_CMD23_EN_W {
+        AUTO_CMD23_EN_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -38,9 +38,9 @@ pub struct RegisterBlock {
     #[doc = "0x44 - FIFO Function Select Register"]
     pub smhc_funs: crate::Reg<smhc_funs::SMHC_FUNS_SPEC>,
     #[doc = "0x48 - Transferred Byte Count between Controller and Card"]
-    pub smhc_tcbcnt: crate::Reg<smhc_tcbcnt::SMHC_TCBCNT_SPEC>,
+    pub smhc_tbc0: crate::Reg<smhc_tbc0::SMHC_TBC0_SPEC>,
     #[doc = "0x4c - Transferred Byte Count between Host Memory and Internal FIFO"]
-    pub smhc_tbbcnt: crate::Reg<smhc_tbbcnt::SMHC_TBBCNT_SPEC>,
+    pub smhc_tbc1: crate::Reg<smhc_tbc1::SMHC_TBC1_SPEC>,
     #[doc = "0x50 - Current Debug Control Register"]
     pub smhc_dbgc: crate::Reg<smhc_dbgc::SMHC_DBGC_SPEC>,
     #[doc = "0x54 - CRC Status Detect Control Registers"]
@@ -159,14 +159,14 @@ pub mod smhc_fifoth;
 pub type SMHC_FUNS = crate::Reg<smhc_funs::SMHC_FUNS_SPEC>;
 #[doc = "FIFO Function Select Register"]
 pub mod smhc_funs;
-#[doc = "SMHC_TCBCNT register accessor: an alias for `Reg<SMHC_TCBCNT_SPEC>`"]
-pub type SMHC_TCBCNT = crate::Reg<smhc_tcbcnt::SMHC_TCBCNT_SPEC>;
+#[doc = "SMHC_TBC0 register accessor: an alias for `Reg<SMHC_TBC0_SPEC>`"]
+pub type SMHC_TBC0 = crate::Reg<smhc_tbc0::SMHC_TBC0_SPEC>;
 #[doc = "Transferred Byte Count between Controller and Card"]
-pub mod smhc_tcbcnt;
-#[doc = "SMHC_TBBCNT register accessor: an alias for `Reg<SMHC_TBBCNT_SPEC>`"]
-pub type SMHC_TBBCNT = crate::Reg<smhc_tbbcnt::SMHC_TBBCNT_SPEC>;
+pub mod smhc_tbc0;
+#[doc = "SMHC_TBC1 register accessor: an alias for `Reg<SMHC_TBC1_SPEC>`"]
+pub type SMHC_TBC1 = crate::Reg<smhc_tbc1::SMHC_TBC1_SPEC>;
 #[doc = "Transferred Byte Count between Host Memory and Internal FIFO"]
-pub mod smhc_tbbcnt;
+pub mod smhc_tbc1;
 #[doc = "SMHC_DBGC register accessor: an alias for `Reg<SMHC_DBGC_SPEC>`"]
 pub type SMHC_DBGC = crate::Reg<smhc_dbgc::SMHC_DBGC_SPEC>;
 #[doc = "Current Debug Control Register"]
