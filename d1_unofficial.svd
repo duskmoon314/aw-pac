@@ -3887,6 +3887,787 @@
     </peripheral>
 
     <peripheral>
+      <name>CSIC</name>
+      <description>CMOS Sensor Interface Controller</description>
+      <groupName>VideoInputInterfaces</groupName>
+      <baseAddress>0x05800000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x400000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>CSI_DMA0</name>
+        <value>111</value>
+      </interrupt>
+      <interrupt>
+        <name>CSI_DMA1</name>
+        <value>112</value>
+      </interrupt>
+      <interrupt>
+        <name>CSI_TOP_PKT</name>
+        <value>122</value>
+      </interrupt>
+      <registers>
+        <cluster>
+          <name>CSIC_CCU</name>
+          <description>CSIC_CCU</description>
+          <addressOffset>0x0000</addressOffset>
+          <register>
+            <name>CCU_CLK_MODE_REG</name>
+            <description>CCU Clock Mode Register</description>
+            <addressOffset>0x0000</addressOffset>
+          </register>
+          <register>
+            <name>CCU_PARSER_CLK_EN_REG</name>
+            <description>CCU Parser Clock Enable Register</description>
+            <addressOffset>0x0004</addressOffset>
+          </register>
+          <register>
+            <name>CCU_POST0_CLK_EN_REG</name>
+            <description>CCU Post0 Clock Enable Register</description>
+            <addressOffset>0x000C</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <name>CSIC_TOP</name>
+          <description>CSIC_TOP</description>
+          <addressOffset>0x0800</addressOffset>
+          <register>
+            <name>CSIC_TOP_EN_REG</name>
+            <description>CSIC TOP Enable Register</description>
+            <addressOffset>0x0000</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PTN_GEN_EN_REG</name>
+            <description>CSIC Pattern Generation Enable Register</description>
+            <addressOffset>0x0004</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PTN_CTRL_REG</name>
+            <description>CSIC Pattern Control Register</description>
+            <addressOffset>0x0008</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PTN_LEN_REG</name>
+            <description>CSIC Pattern Generation Length Register</description>
+            <addressOffset>0x0020</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PTN_ADDR_REG</name>
+            <description>CSIC Pattern Generation Address Register</description>
+            <addressOffset>0x0024</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PTN_ISP_SIZE_REG</name>
+            <description>CSIC Pattern ISP Size Register</description>
+            <addressOffset>0x0028</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA0_INPUT_SEL_REG</name>
+            <description>CSIC DMA0 Input Select Register</description>
+            <addressOffset>0x00A0</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA1_INPUT_SEL_REG</name>
+            <description>CSIC DMA1 Input Select Register</description>
+            <addressOffset>0x00A4</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_BIST_CS_REG</name>
+            <description>CSIC BIST CS Register</description>
+            <addressOffset>0x00DC</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_BIST_CONTROL_REG</name>
+            <description>CSIC BIST Control Register</description>
+            <addressOffset>0x00E0</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_BIST_START_REG</name>
+            <description>CSIC BIST Start Register</description>
+            <addressOffset>0x00E4</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_BIST_END_REG</name>
+            <description>CSIC BIST End Register</description>
+            <addressOffset>0x00E8</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_BIST_DATA_MASK_REG</name>
+            <description>CSIC BIST Data Mask Register</description>
+            <addressOffset>0x00EC</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_MBUS_REQ_MAX_REG</name>
+            <description>CSIC MBUS REQ MAX Register</description>
+            <addressOffset>0x00F0</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_MULF_MOD_REG</name>
+            <description>CSIC Multi-Frame Mode Register</description>
+            <addressOffset>0x0100</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_MULF_INT_REG</name>
+            <description>CSIC Multi-Frame Interrupt Register</description>
+            <addressOffset>0x0104</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <name>CSIC_PARSER0</name>
+          <description>CSIC_PARSER0</description>
+          <addressOffset>0x1000</addressOffset>
+          <register>
+            <name>PRS_EN_REG</name>
+            <description>Parser Enable Register</description>
+            <addressOffset>0x0000</addressOffset>
+          </register>
+          <register>
+            <name>PRS_NCSIC_IF_CFG_REG</name>
+            <description>Parser NCSIC Interface Configuration Register</description>
+            <addressOffset>0x0004</addressOffset>
+          </register>
+          <register>
+            <name>PRS_CAP_REG</name>
+            <description>Parser Capture Register</description>
+            <addressOffset>0x000C</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PRS_SIGNAL_STA_REG</name>
+            <description>CSIC Parser Signal Status Register</description>
+            <addressOffset>0x0010</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PRS_NCSIC_BT656_HEAD_CFG_REG</name>
+            <description>CSIC Parser NCSIC BT656 Header Configuration Register</description>
+            <addressOffset>0x0014</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_INFMT_REG</name>
+            <description>Parser Channel_0 Input Format Register</description>
+            <addressOffset>0x0024</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_OUTPUT_HSIZE_REG</name>
+            <description>Parser Channel_0 Output Horizontal Size Register</description>
+            <addressOffset>0x0028</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_OUTPUT_VSIZE_REG</name>
+            <description>Parser Channel_0 Output Vertical Size Register</description>
+            <addressOffset>0x002C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_INPUT_PARA0_REG</name>
+            <description>Parser Channel_0 Input Parameter0 Register</description>
+            <addressOffset>0x0030</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_INPUT_PARA1_REG</name>
+            <description>Parser Channel_0 Input Parameter1 Register</description>
+            <addressOffset>0x0034</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_INPUT_PARA2_REG</name>
+            <description>Parser Channel_0 Input Parameter2 Register</description>
+            <addressOffset>0x0038</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_INPUT_PARA3_REG</name>
+            <description>Parser Channel_0 Input Parameter3 Register</description>
+            <addressOffset>0x003C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_INT_EN_REG</name>
+            <description>Parser Channel_0 Interrupt Enable Register</description>
+            <addressOffset>0x0040</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C0_INT_STA_REG</name>
+            <description>Parser Channel_0 Interrupt Status Register</description>
+            <addressOffset>0x0044</addressOffset>
+          </register>
+          <register>
+            <name>PRS_CH0_LINE_TIME_REG</name>
+            <description>Parser Channel_0 Line Time Register</description>
+            <addressOffset>0x0048</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_INFMT_REG</name>
+            <description>Parser Channel_1 Input Format Register</description>
+            <addressOffset>0x0124</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_OUTPUT_HSIZE_REG</name>
+            <description>Parser Channel_1 Output Horizontal Size</description>
+            <addressOffset>0x0128</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_OUTPUT_VSIZE_REG</name>
+            <description>Parser Channel_1 Output Vertical Size Register</description>
+            <addressOffset>0x012C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_INPUT_PARA0_REG</name>
+            <description>Parser Channel_1 Input Parameter0 Register</description>
+            <addressOffset>0x0130</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_INPUT_PARA1_REG</name>
+            <description>Parser Channel_1 Input Parameter1 Register</description>
+            <addressOffset>0x0134</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_INPUT_PARA2_REG</name>
+            <description>Parser Channel_1 Input Parameter2 Register</description>
+            <addressOffset>0x0138</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_INPUT_PARA3_REG</name>
+            <description>Parser Channel_1 Input Parameter3 Register</description>
+            <addressOffset>0x013C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_INT_EN_REG</name>
+            <description>Parser Channel_1 Interrupt Enable Register</description>
+            <addressOffset>0x0140</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C1_INT_STA_REG</name>
+            <description>Parser Channel_1 Interrupt Status Register</description>
+            <addressOffset>0x0144</addressOffset>
+          </register>
+          <register>
+            <name>PRS_CH1_LINE_TIME_REG</name>
+            <description>Parser Channel_1 Line Time Register</description>
+            <addressOffset>0x0148</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_INFMT_REG</name>
+            <description>Parser Channel_2 Input Format Register</description>
+            <addressOffset>0x0224</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_OUTPUT_HSIZE_REG</name>
+            <description>Parser Channel_2 Output Horizontal Size Register</description>
+            <addressOffset>0x0228</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_OUTPUT_VSIZE_REG</name>
+            <description>Parser Channel_2 Output Vertical Size Register</description>
+            <addressOffset>0x022C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_INPUT_PARA0_REG</name>
+            <description>Parser Channel_2 Input Parameter0 Register</description>
+            <addressOffset>0x0230</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_INPUT_PARA1_REG</name>
+            <description>Parser Channel_2 Input Parameter1 Register</description>
+            <addressOffset>0x0234</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_INPUT_PARA2_REG</name>
+            <description>Parser Channel_2 Input Parameter2 Register</description>
+            <addressOffset>0x0238</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_INPUT_PARA3_REG</name>
+            <description>Parser Channel_2 Input Parameter3 Register</description>
+            <addressOffset>0x023C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_INT_EN_REG</name>
+            <description>Parser Channel_2 Interrupt Enable Register</description>
+            <addressOffset>0x0240</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C2_INT_STA_REG</name>
+            <description>Parser Channel_2 Interrupt Status Register</description>
+            <addressOffset>0x0244</addressOffset>
+          </register>
+          <register>
+            <name>PRS_CH2_LINE_TIME_REG</name>
+            <description>Parser Channel_2 Line Time Register</description>
+            <addressOffset>0x0248</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_INFMT_REG</name>
+            <description>Parser Channel_3 Input Format Register</description>
+            <addressOffset>0x0324</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_OUTPUT_HSIZE_REG</name>
+            <description>Parser Channel_3 Output Horizontal Size Register</description>
+            <addressOffset>0x0328</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_OUTPUT_VSIZE_REG</name>
+            <description>Parser Channel_3 Output Vertical Size Register</description>
+            <addressOffset>0x032C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_INPUT_PARA0_REG</name>
+            <description>Parser Channel_3 Input Parameter0 Register</description>
+            <addressOffset>0x0330</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_INPUT_PARA1_REG</name>
+            <description>Parser Channel_3 Input Parameter1 Register</description>
+            <addressOffset>0x0334</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_INPUT_PARA2_REG</name>
+            <description>Parser Channel_3 Input Parameter2 Register</description>
+            <addressOffset>0x0338</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_INPUT_PARA3_REG</name>
+            <description>Parser Channel_3 Input Parameter3 Register</description>
+            <addressOffset>0x033C</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_INT_EN_REG</name>
+            <description>Parser Channel_3 Interrupt Enable Register</description>
+            <addressOffset>0x0340</addressOffset>
+          </register>
+          <register>
+            <name>PRS_C3_INT_STA_REG</name>
+            <description>Parser Channel_3 Interrupt Status Register</description>
+            <addressOffset>0x0344</addressOffset>
+          </register>
+          <register>
+            <name>PRS_CH3_LINE_TIME_REG</name>
+            <description>Parser Channel_3 Line Time Register</description>
+            <addressOffset>0x0348</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_REG</name>
+            <description>CSIC Parser NCSIC RX Signal0 Delay Adjust Register</description>
+            <addressOffset>0x0500</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_REG</name>
+            <description>CSIC Parser NCSIC RX Signal5 Delay Adjust Register</description>
+            <addressOffset>0x0514</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_PRS_NCSIC_RX_SIGNAL6_DLY_ADJ_REG</name>
+            <description>CSIC Parser NCSIC RX Signal6 Delay Adjust Register</description>
+            <addressOffset>0x0518</addressOffset>
+          </register>
+        </cluster>
+        <cluster>
+          <dim>2</dim>
+          <dimIncrement>0x0200</dimIncrement>
+          <name>CSIC_DMA%s</name>
+          <description>CSIC_DMA</description>
+          <addressOffset>0x9000</addressOffset>
+          <register>
+            <name>CSIC_DMA_EN_REG</name>
+            <description>CSIC DMA Enable Register</description>
+            <addressOffset>0x0000</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_CFG_REG</name>
+            <description>CSIC DMA Configuration Register</description>
+            <addressOffset>0x0004</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_HSIZE_REG</name>
+            <description>CSIC DMA Horizontal Size Register</description>
+            <addressOffset>0x0010</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_VSIZE_REG</name>
+            <description>CSIC DMA Vertical Size Register</description>
+            <addressOffset>0x0014</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_F0_BUFA_REG</name>
+            <description>CSIC DMA FIFO 0 Output Buffer-A Address Register</description>
+            <addressOffset>0x0020</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_F0_BUFA_RESULT_REG</name>
+            <description>CSIC DMA FIFO 0 Output Buffer-A Address Result Register</description>
+            <addressOffset>0x0024</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_F1_BUFA_REG</name>
+            <description>CSIC DMA FIFO 1 Output Buffer-A Address Register</description>
+            <addressOffset>0x0028</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_F1_BUFA_RESULT_REG</name>
+            <description>CSIC DMA FIFO 1 Output Buffer-A Address Result Register</description>
+            <addressOffset>0x002C</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_F2_BUFA_REG</name>
+            <description>CSIC DMA FIFO 2 Output Buffer-A Address Register</description>
+            <addressOffset>0x0030</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_F2_BUFA_RESULT_REG</name>
+            <description>CSIC DMA FIFO 2 Output Buffer-A Address Result Register</description>
+            <addressOffset>0x0034</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_BUF_LEN_REG</name>
+            <description>CSIC DMA Buffer Length Register</description>
+            <addressOffset>0x0038</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_FLIP_SIZE_REG</name>
+            <description>CSIC DMA Flip Size Register</description>
+            <addressOffset>0x003C</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_VI_TO_TH0_REG</name>
+            <description>CSIC DMA Video Input Timeout Threshold0 Register</description>
+            <addressOffset>0x0040</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_VI_TO_TH1_REG</name>
+            <description>CSIC DMA Video Input Timeout Threshold1 Register</description>
+            <addressOffset>0x0044</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_VI_TO_CNT_VAL_REG</name>
+            <description>CSIC DMA Video Input Timeout Counter Value Register</description>
+            <addressOffset>0x0048</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_CAP_STA_REG</name>
+            <description>CSIC DMA Capture Status Register</description>
+            <addressOffset>0x004C</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_INT_EN_REG</name>
+            <description>CSIC DMA Interrupt Enable Register</description>
+            <addressOffset>0x0050</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_INT_STA_REG</name>
+            <description>CSIC DMA Interrupt Status Register</description>
+            <addressOffset>0x0054</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_LINE_CNT_REG</name>
+            <description>CSIC DMA LINE Counter Register</description>
+            <addressOffset>0x0058</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_FRM_CNT_REG</name>
+            <description>CSIC DMA Frame Counter Register</description>
+            <addressOffset>0x005C</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_FRM_CLK_CNT_REG</name>
+            <description>CSIC DMA Frame Clock Counter Register</description>
+            <addressOffset>0x0060</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_ACC_ITNL_CLK_CNT_REG</name>
+            <description>CSIC DMA Accumulated And Internal Clock Counter Register</description>
+            <addressOffset>0x0064</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_FIFO_STAT_REG</name>
+            <description>CSIC DMA FIFO Statistic Register</description>
+            <addressOffset>0x0068</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_FIFO_THRS_REG</name>
+            <description>CSIC DMA FIFO Threshold Register</description>
+            <addressOffset>0x006C</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_PCLK_STAT_REG</name>
+            <description>CSIC DMA PCLK Statistic Register</description>
+            <addressOffset>0x0070</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_BUF_ADDR_FIFO0_ENTRY_REG</name>
+            <description>CSIC DMA BUF Address FIFO0 Entry Register</description>
+            <addressOffset>0x0080</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_BUF_ADDR_FIFO1_ENTRY_REG</name>
+            <description>CSIC DMA BUF Address FIFO1 Entry Register</description>
+            <addressOffset>0x0084</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_BUF_ADDR_FIFO2_ENTRY_REG</name>
+            <description>CSIC DMA BUF Address FIFO2 Entry Register</description>
+            <addressOffset>0x0088</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_BUF_TH_REG</name>
+            <description>CSIC DMA BUF Threshold Register</description>
+            <addressOffset>0x008C</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_BUF_ADDR_FIFO_CON_REG</name>
+            <description>CSIC DMA BUF Address FIFO Content Register</description>
+            <addressOffset>0x0090</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_DMA_STORED_FRM_CNT_REG</name>
+            <description>CSIC DMA Stored Frame Counter Register</description>
+            <addressOffset>0x0094</addressOffset>
+          </register>
+          <register>
+            <name>CSIC_FEATURE_REG</name>
+            <description>CSIC DMA Feature List Register</description>
+            <addressOffset>0x01F4</addressOffset>
+          </register>
+        </cluster>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TVD_TOP</name>
+      <description>Television Decoder TOP</description>
+      <groupName>VideoInputInterfaces</groupName>
+      <baseAddress>0x05C00000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>TVD</name>
+        <value>123</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>TVD_TOP_MAP</name>
+          <description>TVD TOP MAP Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>TVD_3D_CTL1</name>
+          <description>TVD 3D DMA CONTROL Register1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>TVD_3D_CTL2</name>
+          <description>TVD 3D DMA CONTROL Register2</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>TVD_3D_CTL3</name>
+          <description>TVD 3D DMA CONTROL Register3</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>TVD_3D_CTL4</name>
+          <description>TVD 3D DMA CONTROL Register4</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>TVD_3D_CTL5</name>
+          <description>TVD 3D DMA CONTROL Register5</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>TVD_TOP_CTL%s</name>
+          <description>TVD TOP CONTROL Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>TVD_ADC_CTL%s</name>
+          <description>TVD ADC CONTROL Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>TVD_ADC_CFG%s</name>
+          <description>TVD ADC CONFIGURATION Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TVD0</name>
+      <description>Television Decoder</description>
+      <groupName>VideoInputInterfaces</groupName>
+      <baseAddress>0x05C01000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>TVD_EN</name>
+          <description>TVD MODULE CONTROL Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>TVD_MODE</name>
+          <description>TVD MODE CONTROL Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>TVD_CLAMP_AGC1</name>
+          <description>TVD CLAMP And AGC CONTROL Register1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>TVD_CLAMP_AGC2</name>
+          <description>TVD CLAMP And AGC CONTROL Register2</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>TVD_HLOCK1</name>
+          <description>TVD HLOCK CONTROL Register1</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>TVD_HLOCK2</name>
+          <description>TVD HLOCK CONTROL Register2</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>TVD_HLOCK3</name>
+          <description>TVD HLOCK CONTROL Register3</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>TVD_HLOCK4</name>
+          <description>TVD HLOCK CONTROL Register4</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>TVD_HLOCK5</name>
+          <description>TVD HLOCK CONTROL Register5</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>TVD_VLOCK1</name>
+          <description>TVD VLOCK CONTROL Register1</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>TVD_VLOCK2</name>
+          <description>TVD VLOCK CONTROL Register2</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>TVD_CLOCK1</name>
+          <description>TVD CHROMA LOCK CONTROL Register1</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>TVD_CLOCK2</name>
+          <description>TVD CHROMA LOCK CONTROL Register2</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>TVD_YC_SEP1</name>
+          <description>TVD YC SEPERATION CONROL Register1</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>TVD_YC_SEP2</name>
+          <description>TVD YC SEPERATION CONROL Register2</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>TVD_ENHANCE1</name>
+          <description>TVD ENHANCEMENT CONTROL Register1</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>TVD_ENHANCE2</name>
+          <description>TVD ENHANCEMENT CONTROL Register2</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>TVD_ENHANCE3</name>
+          <description>TVD ENHANCEMENT CONTROL Register3</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>TVD_WB1</name>
+          <description>TVD WB DMA CONTROL Register1</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>TVD_WB2</name>
+          <description>TVD WB DMA CONTROL Register2</description>
+          <addressOffset>0x0064</addressOffset>
+        </register>
+        <register>
+          <name>TVD_WB3</name>
+          <description>TVD WB DMA CONTROL Register3</description>
+          <addressOffset>0x0068</addressOffset>
+        </register>
+        <register>
+          <name>TVD_WB4</name>
+          <description>TVD WB DMA CONTROL Register4</description>
+          <addressOffset>0x006C</addressOffset>
+        </register>
+        <register>
+          <name>TVD_IRQ_CTL</name>
+          <description>TVD DMA Interrupt Control Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>TVD_IRQ_STATUS</name>
+          <description>TVD DMA Interrupt Status Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <name>TVD_DEBUG1</name>
+          <description>TVD DEBUG CONTROL Register1</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>TVD_STATUS1</name>
+          <description>TVD DEBUG STATUS Register1</description>
+          <addressOffset>0x0180</addressOffset>
+        </register>
+        <register>
+          <name>TVD_STATUS2</name>
+          <description>TVD DEBUG STATUS Register2</description>
+          <addressOffset>0x0184</addressOffset>
+        </register>
+        <register>
+          <name>TVD_STATUS3</name>
+          <description>TVD DEBUG STATUS Register3</description>
+          <addressOffset>0x0188</addressOffset>
+        </register>
+        <register>
+          <name>TVD_STATUS4</name>
+          <description>TVD DEBUG STATUS Register4</description>
+          <addressOffset>0x018C</addressOffset>
+        </register>
+        <register>
+          <name>TVD_STATUS5</name>
+          <description>TVD DEBUG STATUS Register5</description>
+          <addressOffset>0x0190</addressOffset>
+        </register>
+        <register>
+          <name>TVD_STATUS6</name>
+          <description>TVD DEBUG STATUS Register6</description>
+          <addressOffset>0x0194</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>SMHC0</name>
       <description>SD/MMC Host Controller</description>
       <groupName>Memory</groupName>
@@ -10777,12 +11558,12 @@
           <addressOffset>0x02A0</addressOffset>
         </register>
         <register>
-          <name>AC_ADC_DRC_MNGLS</name>
+          <name>AC_ADC_DRC_MNGHS</name>
           <description>ADC DRC MIN Gain High Setting Register</description>
           <addressOffset>0x02A4</addressOffset>
         </register>
         <register>
-          <name>AC_ADC_DRC_MXGLS</name>
+          <name>AC_ADC_DRC_MNGLS</name>
           <description>ADC DRC MIN Gain Low Setting Register</description>
           <addressOffset>0x02A8</addressOffset>
         </register>

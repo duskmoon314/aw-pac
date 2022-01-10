@@ -92,6 +92,14 @@ pub enum Interrupt {
     GPIOE_NS = 91,
     #[doc = "93 - GPIOF_NS"]
     GPIOF_NS = 93,
+    #[doc = "111 - CSI_DMA0"]
+    CSI_DMA0 = 111,
+    #[doc = "112 - CSI_DMA1"]
+    CSI_DMA1 = 112,
+    #[doc = "122 - CSI_TOP_PKT"]
+    CSI_TOP_PKT = 122,
+    #[doc = "123 - TVD"]
+    TVD = 123,
     #[doc = "144 - RISC-V_MBOX_RISC-V"]
     RISCV_MBOX_RISCV = 144,
     #[doc = "145 - RISC-V_MBOX_DSP"]
@@ -152,6 +160,10 @@ impl Interrupt {
             89 => Ok(Interrupt::GPIOD_NS),
             91 => Ok(Interrupt::GPIOE_NS),
             93 => Ok(Interrupt::GPIOF_NS),
+            111 => Ok(Interrupt::CSI_DMA0),
+            112 => Ok(Interrupt::CSI_DMA1),
+            122 => Ok(Interrupt::CSI_TOP_PKT),
+            123 => Ok(Interrupt::TVD),
             144 => Ok(Interrupt::RISCV_MBOX_RISCV),
             145 => Ok(Interrupt::RISCV_MBOX_DSP),
             167 => Ok(Interrupt::IR_RX),

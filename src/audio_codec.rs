@@ -222,9 +222,9 @@ pub struct RegisterBlock {
     #[doc = "0x2a0 - ADC DRC MAX Gain Low Setting Register"]
     pub ac_adc_drc_mxgls: crate::Reg<ac_adc_drc_mxgls::AC_ADC_DRC_MXGLS_SPEC>,
     #[doc = "0x2a4 - ADC DRC MIN Gain High Setting Register"]
-    pub ac_adc_drc_mngls: crate::Reg<ac_adc_drc_mngls::AC_ADC_DRC_MNGLS_SPEC>,
+    pub ac_adc_drc_mnghs: crate::Reg<ac_adc_drc_mnghs::AC_ADC_DRC_MNGHS_SPEC>,
     #[doc = "0x2a8 - ADC DRC MIN Gain Low Setting Register"]
-    pub ac_adc_drc_mxgls: crate::Reg<ac_adc_drc_mxgls::AC_ADC_DRC_MXGLS_SPEC>,
+    pub ac_adc_drc_mngls: crate::Reg<ac_adc_drc_mngls::AC_ADC_DRC_MNGLS_SPEC>,
     #[doc = "0x2ac - ADC DRC Expander Smooth Time High Coef Register"]
     pub ac_adc_drc_epshc: crate::Reg<ac_adc_drc_epshc::AC_ADC_DRC_EPSHC_SPEC>,
     #[doc = "0x2b0 - ADC DRC Expander Smooth Time Low Coef Register"]
@@ -675,14 +675,14 @@ pub mod ac_adc_drc_mxghs;
 pub type AC_ADC_DRC_MXGLS = crate::Reg<ac_adc_drc_mxgls::AC_ADC_DRC_MXGLS_SPEC>;
 #[doc = "ADC DRC MAX Gain Low Setting Register"]
 pub mod ac_adc_drc_mxgls;
+#[doc = "AC_ADC_DRC_MNGHS register accessor: an alias for `Reg<AC_ADC_DRC_MNGHS_SPEC>`"]
+pub type AC_ADC_DRC_MNGHS = crate::Reg<ac_adc_drc_mnghs::AC_ADC_DRC_MNGHS_SPEC>;
+#[doc = "ADC DRC MIN Gain High Setting Register"]
+pub mod ac_adc_drc_mnghs;
 #[doc = "AC_ADC_DRC_MNGLS register accessor: an alias for `Reg<AC_ADC_DRC_MNGLS_SPEC>`"]
 pub type AC_ADC_DRC_MNGLS = crate::Reg<ac_adc_drc_mngls::AC_ADC_DRC_MNGLS_SPEC>;
-#[doc = "ADC DRC MIN Gain High Setting Register"]
-pub mod ac_adc_drc_mngls;
-#[doc = "AC_ADC_DRC_MXGLS register accessor: an alias for `Reg<AC_ADC_DRC_MXGLS_SPEC>`"]
-pub type AC_ADC_DRC_MXGLS = crate::Reg<ac_adc_drc_mxgls::AC_ADC_DRC_MXGLS_SPEC>;
 #[doc = "ADC DRC MIN Gain Low Setting Register"]
-pub mod ac_adc_drc_mxgls;
+pub mod ac_adc_drc_mngls;
 #[doc = "AC_ADC_DRC_EPSHC register accessor: an alias for `Reg<AC_ADC_DRC_EPSHC_SPEC>`"]
 pub type AC_ADC_DRC_EPSHC = crate::Reg<ac_adc_drc_epshc::AC_ADC_DRC_EPSHC_SPEC>;
 #[doc = "ADC DRC Expander Smooth Time High Coef Register"]

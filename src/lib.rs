@@ -71,6 +71,10 @@ extern "C" {
     fn GPIOD_NS();
     fn GPIOE_NS();
     fn GPIOF_NS();
+    fn CSI_DMA0();
+    fn CSI_DMA1();
+    fn CSI_TOP_PKT();
+    fn TVD();
     fn RISCV_MBOX_RISCV();
     fn RISCV_MBOX_DSP();
     fn IR_RX();
@@ -207,6 +211,8 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
+    Vector { _handler: CSI_DMA0 },
+    Vector { _handler: CSI_DMA1 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -216,10 +222,10 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: CSI_TOP_PKT,
+    },
+    Vector { _handler: TVD },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -776,6 +782,90 @@ impl core::fmt::Debug for TVE {
 }
 #[doc = "TV Encoder"]
 pub mod tve;
+#[doc = "CMOS Sensor Interface Controller"]
+pub struct CSIC {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for CSIC {}
+impl CSIC {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const csic::RegisterBlock = 0x0580_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const csic::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for CSIC {
+    type Target = csic::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for CSIC {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CSIC").finish()
+    }
+}
+#[doc = "CMOS Sensor Interface Controller"]
+pub mod csic;
+#[doc = "Television Decoder TOP"]
+pub struct TVD_TOP {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TVD_TOP {}
+impl TVD_TOP {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tvd_top::RegisterBlock = 0x05c0_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tvd_top::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TVD_TOP {
+    type Target = tvd_top::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TVD_TOP {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TVD_TOP").finish()
+    }
+}
+#[doc = "Television Decoder TOP"]
+pub mod tvd_top;
+#[doc = "Television Decoder"]
+pub struct TVD0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TVD0 {}
+impl TVD0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tvd0::RegisterBlock = 0x05c0_1000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tvd0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TVD0 {
+    type Target = tvd0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TVD0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TVD0").finish()
+    }
+}
+#[doc = "Television Decoder"]
+pub mod tvd0;
 #[doc = "SD/MMC Host Controller"]
 pub struct SMHC0 {
     _marker: PhantomData<*const ()>,
@@ -1713,6 +1803,12 @@ pub struct Peripherals {
     pub TVE_TOP: TVE_TOP,
     #[doc = "TVE"]
     pub TVE: TVE,
+    #[doc = "CSIC"]
+    pub CSIC: CSIC,
+    #[doc = "TVD_TOP"]
+    pub TVD_TOP: TVD_TOP,
+    #[doc = "TVD0"]
+    pub TVD0: TVD0,
     #[doc = "SMHC0"]
     pub SMHC0: SMHC0,
     #[doc = "SMHC1"]
@@ -1847,6 +1943,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             TVE: TVE {
+                _marker: PhantomData,
+            },
+            CSIC: CSIC {
+                _marker: PhantomData,
+            },
+            TVD_TOP: TVD_TOP {
+                _marker: PhantomData,
+            },
+            TVD0: TVD0 {
                 _marker: PhantomData,
             },
             SMHC0: SMHC0 {
