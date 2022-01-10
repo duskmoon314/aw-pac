@@ -3242,6 +3242,651 @@
     </peripheral>
 
     <peripheral>
+      <name>TCON_LCD0</name>
+      <description>Timing COntroller LCD</description>
+      <groupName>VideoOutputInterfaces</groupName>
+      <baseAddress>0x05461000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>LCD_GCTL_REG</name>
+          <description>LCD Global Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>LCD_GINT0_REG</name>
+          <description>LCD Global Interrupt Register0</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>LCD_GINT1_REG</name>
+          <description>LCD Global Interrupt Register1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>LCD_FRM_CTL_REG</name>
+          <description>LCD FRM Control Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <dim>6</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>LCD_FRM_SEED_REG%s</name>
+          <description>LCD FRM Seed Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <dim>4</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>LCD_FRM_TAB_REG%s</name>
+          <description>LCD FRM Table Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>LCD_3D_FIFO_REG</name>
+          <description>LCD 3D FIFO Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CTL_REG</name>
+          <description>LCD Control Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>LCD_DCLK_REG</name>
+          <description>LCD Data Clock Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>LCD_BASIC0_REG</name>
+          <description>LCD Basic Timing Register0</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>LCD_BASIC1_REG</name>
+          <description>LCD Basic Timing Register1</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>LCD_BASIC2_REG</name>
+          <description>LCD Basic Timing Register2</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>LCD_BASIC3_REG</name>
+          <description>LCD Basic Timing Register3</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>LCD_HV_IF_REG</name>
+          <description>LCD HV Panel Interface Register</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_IF_REG</name>
+          <description>LCD CPU Panel Interface Register</description>
+          <addressOffset>0x0060</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_WR_REG</name>
+          <description>LCD CPU Panel Write Data Register</description>
+          <addressOffset>0x0064</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_RD0_REG</name>
+          <description>LCD CPU Panel Read Data Register0</description>
+          <addressOffset>0x0068</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_RD1_REG</name>
+          <description>LCD CPU Panel Read Data Register1</description>
+          <addressOffset>0x006C</addressOffset>
+        </register>
+        <register>
+          <name>LCD_LVDS_IF_REG</name>
+          <description>LCD LVDS Configure Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>LCD_IO_POL_REG</name>
+          <description>LCD IO Polarity Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>LCD_IO_TRI_REG</name>
+          <description>LCD IO Control Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>LCD_DEBUG_REG</name>
+          <description>LCD Debug Register</description>
+          <addressOffset>0x00FC</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CEU_CTL_REG</name>
+          <description>LCD CEU Control Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <!-- It appears that the documentation for this register is incorrect -->
+          <!-- Need More Information -->
+          <dim>3</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>LCD_CEU_COEF_MUL_REG%s</name>
+          <description>LCD CEU Coefficient Register0</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <dim>3</dim>
+          <dimIncrement>0x10</dimIncrement>
+          <name>LCD_CEU_COEF_ADD_REG%s</name>
+          <description>LCD CEU Coefficient Register1</description>
+          <addressOffset>0x011C</addressOffset>
+        </register>
+        <register>
+          <dim>3</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>LCD_CEU_COEF_RANG_REG%s</name>
+          <description>LCD CEU Coefficient Register2</description>
+          <addressOffset>0x0140</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_TRI0_REG</name>
+          <description>LCD CPU Panel Trigger Register0</description>
+          <addressOffset>0x0160</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_TRI1_REG</name>
+          <description>LCD CPU Panel Trigger Register1</description>
+          <addressOffset>0x0164</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_TRI2_REG</name>
+          <description>LCD CPU Panel Trigger Register2</description>
+          <addressOffset>0x0168</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_TRI3_REG</name>
+          <description>LCD CPU Panel Trigger Register3</description>
+          <addressOffset>0x016C</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_TRI4_REG</name>
+          <description>LCD CPU Panel Trigger Register4</description>
+          <addressOffset>0x0170</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CPU_TRI5_REG</name>
+          <description>LCD CPU Panel Trigger Register5</description>
+          <addressOffset>0x0174</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CMAP_CTL_REG</name>
+          <description>LCD Color Map Control Register</description>
+          <addressOffset>0x0180</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CMAP_ODD0_REG</name>
+          <description>LCD Color Map Odd Line Register0</description>
+          <addressOffset>0x0190</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CMAP_ODD1_REG</name>
+          <description>LCD Color Map Odd Line Register1</description>
+          <addressOffset>0x0194</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CMAP_EVEN0_REG</name>
+          <description>LCD Color Map Even Line Register0</description>
+          <addressOffset>0x0198</addressOffset>
+        </register>
+        <register>
+          <name>LCD_CMAP_EVEN1_REG</name>
+          <description>LCD Color Map Even Line Register1</description>
+          <addressOffset>0x019C</addressOffset>
+        </register>
+        <register>
+          <name>LCD_SAFE_PERIOD_REG</name>
+          <description>LCD Safe Period Register</description>
+          <addressOffset>0x01F0</addressOffset>
+        </register>
+        <register>
+          <name>LCD_LVDS0_ANA_REG</name>
+          <description>LCD LVDS Analog Register 0</description>
+          <addressOffset>0x0220</addressOffset>
+        </register>
+        <register>
+          <name>LCD_LVDS1_ANA_REG</name>
+          <description>LCD LVDS Analog Register 1</description>
+          <addressOffset>0x0224</addressOffset>
+        </register>
+        <register>
+          <name>LCD_SYNC_CTL_REG</name>
+          <description>LCD Sync Control Register</description>
+          <addressOffset>0x0230</addressOffset>
+        </register>
+        <register>
+          <name>LCD_SYNC_POS_REG</name>
+          <description>LCD Sync Position Register</description>
+          <addressOffset>0x0234</addressOffset>
+        </register>
+        <register>
+          <name>LCD_SLAVE_STOP_POS_REG</name>
+          <description>LCD Slave Stop Position Register</description>
+          <addressOffset>0x0238</addressOffset>
+        </register>
+        <register>
+          <name>LCD_LVDS1_IF_REG</name>
+          <description>LCD LVDS1 IF Register</description>
+          <addressOffset>0x0244</addressOffset>
+        </register>
+        <register>
+          <dim>256</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>LCD_GAMMA_TABLE_REG%s</name>
+          <description>LCD Gamma Table Register</description>
+          <addressOffset>0x0400</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TCON_TV0</name>
+      <description>Timing COntroller TV</description>
+      <groupName>VideoOutputInterfaces</groupName>
+      <baseAddress>0x05470000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>TV_GCTL_REG</name>
+          <description>TV Global Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>TV_GINT0_REG</name>
+          <description>TV Global Interrupt Register0</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>TV_GINT1_REG</name>
+          <description>TV Global Interrupt Register1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>TV_SRC_CTL_REG</name>
+          <description>TV Source Control Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>TV_CTL_REG</name>
+          <description>TV Control Register</description>
+          <addressOffset>0x0090</addressOffset>
+        </register>
+        <register>
+          <name>TV_BASIC0_REG</name>
+          <description>TV Basic Timing Register0</description>
+          <addressOffset>0x0094</addressOffset>
+        </register>
+        <register>
+          <name>TV_BASIC1_REG</name>
+          <description>TV Basic Timing Register1</description>
+          <addressOffset>0x0098</addressOffset>
+        </register>
+        <register>
+          <name>TV_BASIC2_REG</name>
+          <description>TV Basic Timing Register2</description>
+          <addressOffset>0x009C</addressOffset>
+        </register>
+        <register>
+          <name>TV_BASIC3_REG</name>
+          <description>TV Basic Timing Register3</description>
+          <addressOffset>0x00A0</addressOffset>
+        </register>
+        <register>
+          <name>TV_BASIC4_REG</name>
+          <description>TV Basic Timing Register4</description>
+          <addressOffset>0x00A4</addressOffset>
+        </register>
+        <register>
+          <name>TV_BASIC5_REG</name>
+          <description>TV Basic Timing Register5</description>
+          <addressOffset>0x00A8</addressOffset>
+        </register>
+        <register>
+          <name>TV_IO_POL_REG</name>
+          <description>TV SYNC Signal Polarity Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>TV_IO_TRI_REG</name>
+          <description>TV SYNC Signal IO Control Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>TV_DEBUG_REG</name>
+          <description>TV Debug Register</description>
+          <addressOffset>0x00FC</addressOffset>
+        </register>
+        <register>
+          <name>TV_CEU_CTL_REG</name>
+          <description>TV CEU Control Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <dim>11</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>TV_CEU_COEF_MUL_REG%s</name>
+          <description>TV CEU Coefficient Register0</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <dim>3</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>TV_CEU_COEF_RANG_REG%s</name>
+          <description>TV CEU Coefficient Register2</description>
+          <addressOffset>0x0140</addressOffset>
+        </register>
+        <register>
+          <name>TV_SAFE_PERIOD_REG</name>
+          <description>TV Safe Period Register</description>
+          <addressOffset>0x01F0</addressOffset>
+        </register>
+        <register>
+          <name>TV_FILL_CTL_REG</name>
+          <description>TV Fill Data Control Register</description>
+          <addressOffset>0x0300</addressOffset>
+        </register>
+        <register>
+          <dim>3</dim>
+          <dimIncrement>0x0C</dimIncrement>
+          <name>TV_FILL_BEGIN_REG%s</name>
+          <description>TV Fill Data Begin Register</description>
+          <addressOffset>0x0304</addressOffset>
+        </register>
+        <register>
+          <dim>3</dim>
+          <dimIncrement>0x0C</dimIncrement>
+          <name>TV_FILL_END_REG%s</name>
+          <description>TV Fill Data End Register</description>
+          <addressOffset>0x0308</addressOffset>
+        </register>
+        <register>
+          <dim>3</dim>
+          <dimIncrement>0x0C</dimIncrement>
+          <name>TV_FILL_DATA_REG%s</name>
+          <description>TV Fill Data Value Register</description>
+          <addressOffset>0x030C</addressOffset>
+        </register>
+        <register>
+          <name>TV_DATA_IO_POL0_REG</name>
+          <description>TCON Data IO Polarity Control0</description>
+          <addressOffset>0x0330</addressOffset>
+        </register>
+        <register>
+          <name>TV_DATA_IO_POL1_REG</name>
+          <description>TCON Data IO Polarity Control1</description>
+          <addressOffset>0x0334</addressOffset>
+        </register>
+        <register>
+          <name>TV_DATA_IO_TRI0_REG</name>
+          <description>TCON Data IO Enable Control0</description>
+          <addressOffset>0x0338</addressOffset>
+        </register>
+        <register>
+          <name>TV_DATA_IO_TRI1_REG</name>
+          <description>TCON Data IO Enable Control1</description>
+          <addressOffset>0x033C</addressOffset>
+        </register>
+        <register>
+          <name>TV_PIXELDEPTH_MODE_REG</name>
+          <description>TV Pixeldepth Mode Control Register</description>
+          <addressOffset>0x0340</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TVE_TOP</name>
+      <description>TV Encoder TOP</description>
+      <groupName>VideoOutputInterfaces</groupName>
+      <baseAddress>0x05600000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x4000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>TVE_DAC_MAP</name>
+          <description>TV Encoder DAC MAP Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>TVE_DAC_STATUS</name>
+          <description>TV Encoder DAC STAUTS Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>TVE_DAC_CFG0</name>
+          <description>TV Encoder DAC CFG0 Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>TVE_DAC_CFG1</name>
+          <description>TV Encoder DAC CFG1 Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_DAC_CFG2</name>
+          <description>TV Encoder DAC CFG2 Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>TVE_DAC_CFG3</name>
+          <description>TV Encoder DAC CFG2 Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>TVE_DAC_TEST</name>
+          <description>TV Encoder DAC TEST Register</description>
+          <addressOffset>0x00F0</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>TVE</name>
+      <description>TV Encoder</description>
+      <groupName>VideoOutputInterfaces</groupName>
+      <baseAddress>0x05604000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x4000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>TVE_000_REG</name>
+          <description>TV Encoder Clock Gating Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>TVE_004_REG</name>
+          <description>TV Encoder Configuration Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>TVE_008_REG</name>
+          <description>TV Encoder DAC Register1</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>TVE_00C_REG</name>
+          <description>TV Encoder Notch and DAC Delay Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_010_REG</name>
+          <description>TV Encoder Chroma Frequency Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>TVE_014_REG</name>
+          <description>TV Encoder Front/Back Porch Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>TVE_018_REG</name>
+          <description>TV Encoder HD Mode VSYNC Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>TVE_01C_REG</name>
+          <description>TV Encoder Line Number Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_020_REG</name>
+          <description>TV Encoder Level Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>TVE_024_REG</name>
+          <description>TV Encoder DAC Register2</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>TVE_030_REG</name>
+          <description>TV Encoder Auto Detection Enable Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>TVE_034_REG</name>
+          <description>TV Encoder Auto Detection Interrupt Status Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>TVE_038_REG</name>
+          <description>TV Encoder Auto Detection Status Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>TVE_03C_REG</name>
+          <description>TV Encoder Auto Detection De-bounce Setting Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_0F8_REG</name>
+          <description>TV Encoder Auto Detect Configuration Register0</description>
+          <addressOffset>0x00F8</addressOffset>
+        </register>
+        <register>
+          <name>TVE_0FC_REG</name>
+          <description>TV Encoder Auto Detect Configuration Register1</description>
+          <addressOffset>0x00FC</addressOffset>
+        </register>
+        <register>
+          <name>TVE_100_REG</name>
+          <description>TV Encoder Color Burst Phase Reset Configuration Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>TVE_104_REG</name>
+          <description>TV Encoder VSYNC Number Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <name>TVE_108_REG</name>
+          <description>TV Encoder Notch Filter Frequency Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <name>TVE_10C_REG</name>
+          <description>TV Encoder Cb/Cr Level/Gain Register</description>
+          <addressOffset>0x010C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_110_REG</name>
+          <description>TV Encoder Tint and Color Burst Phase Register</description>
+          <addressOffset>0x0110</addressOffset>
+        </register>
+        <register>
+          <name>TVE_114_REG</name>
+          <description>TV Encoder Burst Width Register</description>
+          <addressOffset>0x0114</addressOffset>
+        </register>
+        <register>
+          <name>TVE_118_REG</name>
+          <description>TV Encoder Cb/Cr Gain Register</description>
+          <addressOffset>0x0118</addressOffset>
+        </register>
+        <register>
+          <name>TVE_11C_REG</name>
+          <description>TV Encoder Sync and VBI Level Register</description>
+          <addressOffset>0x011C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_120_REG</name>
+          <description>TV Encoder White Level Register</description>
+          <addressOffset>0x0120</addressOffset>
+        </register>
+        <register>
+          <name>TVE_124_REG</name>
+          <description>TV Encoder Video Active Line Register</description>
+          <addressOffset>0x0124</addressOffset>
+        </register>
+        <register>
+          <name>TVE_128_REG</name>
+          <description>TV Encoder Video Chroma BW and CompGain Register</description>
+          <addressOffset>0x0128</addressOffset>
+        </register>
+        <register>
+          <name>TVE_12C_REG</name>
+          <description>TV Encoder Register</description>
+          <addressOffset>0x012C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_130_REG</name>
+          <description>TV Encoder Re-sync Parameters Register</description>
+          <addressOffset>0x0130</addressOffset>
+        </register>
+        <register>
+          <name>TVE_134_REG</name>
+          <description>TV Encoder Slave Parameter Register</description>
+          <addressOffset>0x0134</addressOffset>
+        </register>
+        <register>
+          <name>TVE_138_REG</name>
+          <description>TV Encoder Configuration Register0</description>
+          <addressOffset>0x0138</addressOffset>
+        </register>
+        <register>
+          <name>TVE_13C_REG</name>
+          <description>TV Encoder Configuration Register1</description>
+          <addressOffset>0x013C</addressOffset>
+        </register>
+        <register>
+          <name>TVE_380_REG</name>
+          <description>TV Encoder Low Pass Control Register</description>
+          <addressOffset>0x0380</addressOffset>
+        </register>
+        <register>
+          <name>TVE_384_REG</name>
+          <description>TV Encoder Low Pass Filter Control Register</description>
+          <addressOffset>0x0384</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>TWI0</name>
       <description>Two Wire Interface</description>
       <groupName>Interfaces</groupName>

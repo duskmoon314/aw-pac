@@ -656,6 +656,118 @@ impl core::fmt::Debug for RTC {
 }
 #[doc = "Real Time CLock"]
 pub mod rtc;
+#[doc = "Timing COntroller LCD"]
+pub struct TCON_LCD0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TCON_LCD0 {}
+impl TCON_LCD0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tcon_lcd0::RegisterBlock = 0x0546_1000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tcon_lcd0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TCON_LCD0 {
+    type Target = tcon_lcd0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TCON_LCD0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TCON_LCD0").finish()
+    }
+}
+#[doc = "Timing COntroller LCD"]
+pub mod tcon_lcd0;
+#[doc = "Timing COntroller TV"]
+pub struct TCON_TV0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TCON_TV0 {}
+impl TCON_TV0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tcon_tv0::RegisterBlock = 0x0547_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tcon_tv0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TCON_TV0 {
+    type Target = tcon_tv0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TCON_TV0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TCON_TV0").finish()
+    }
+}
+#[doc = "Timing COntroller TV"]
+pub mod tcon_tv0;
+#[doc = "TV Encoder TOP"]
+pub struct TVE_TOP {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TVE_TOP {}
+impl TVE_TOP {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tve_top::RegisterBlock = 0x0560_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tve_top::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TVE_TOP {
+    type Target = tve_top::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TVE_TOP {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TVE_TOP").finish()
+    }
+}
+#[doc = "TV Encoder TOP"]
+pub mod tve_top;
+#[doc = "TV Encoder"]
+pub struct TVE {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for TVE {}
+impl TVE {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const tve::RegisterBlock = 0x0560_4000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const tve::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for TVE {
+    type Target = tve::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for TVE {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TVE").finish()
+    }
+}
+#[doc = "TV Encoder"]
+pub mod tve;
 #[doc = "Two Wire Interface"]
 pub struct TWI0 {
     _marker: PhantomData<*const ()>,
@@ -1333,6 +1445,14 @@ pub struct Peripherals {
     pub SPINLOCK: SPINLOCK,
     #[doc = "RTC"]
     pub RTC: RTC,
+    #[doc = "TCON_LCD0"]
+    pub TCON_LCD0: TCON_LCD0,
+    #[doc = "TCON_TV0"]
+    pub TCON_TV0: TCON_TV0,
+    #[doc = "TVE_TOP"]
+    pub TVE_TOP: TVE_TOP,
+    #[doc = "TVE"]
+    pub TVE: TVE,
     #[doc = "TWI0"]
     pub TWI0: TWI0,
     #[doc = "TWI1"]
@@ -1437,6 +1557,18 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             RTC: RTC {
+                _marker: PhantomData,
+            },
+            TCON_LCD0: TCON_LCD0 {
+                _marker: PhantomData,
+            },
+            TCON_TV0: TCON_TV0 {
+                _marker: PhantomData,
+            },
+            TVE_TOP: TVE_TOP {
+                _marker: PhantomData,
+            },
+            TVE: TVE {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {
