@@ -768,6 +768,90 @@ impl core::fmt::Debug for TVE {
 }
 #[doc = "TV Encoder"]
 pub mod tve;
+#[doc = "SD/MMC Host Controller"]
+pub struct SMHC0 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SMHC0 {}
+impl SMHC0 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const smhc0::RegisterBlock = 0x0402_0000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const smhc0::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SMHC0 {
+    type Target = smhc0::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SMHC0 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SMHC0").finish()
+    }
+}
+#[doc = "SD/MMC Host Controller"]
+pub mod smhc0;
+#[doc = "SD/MMC Host Controller"]
+pub struct SMHC1 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SMHC1 {}
+impl SMHC1 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const smhc1::RegisterBlock = 0x0402_1000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const smhc1::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SMHC1 {
+    type Target = smhc1::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SMHC1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SMHC1").finish()
+    }
+}
+#[doc = "SD/MMC Host Controller"]
+pub mod smhc1;
+#[doc = "SD/MMC Host Controller"]
+pub struct SMHC2 {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SMHC2 {}
+impl SMHC2 {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const smhc2::RegisterBlock = 0x0402_2000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const smhc2::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SMHC2 {
+    type Target = smhc2::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SMHC2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SMHC2").finish()
+    }
+}
+#[doc = "SD/MMC Host Controller"]
+pub mod smhc2;
 #[doc = "Two Wire Interface"]
 pub struct TWI0 {
     _marker: PhantomData<*const ()>,
@@ -1453,6 +1537,12 @@ pub struct Peripherals {
     pub TVE_TOP: TVE_TOP,
     #[doc = "TVE"]
     pub TVE: TVE,
+    #[doc = "SMHC0"]
+    pub SMHC0: SMHC0,
+    #[doc = "SMHC1"]
+    pub SMHC1: SMHC1,
+    #[doc = "SMHC2"]
+    pub SMHC2: SMHC2,
     #[doc = "TWI0"]
     pub TWI0: TWI0,
     #[doc = "TWI1"]
@@ -1569,6 +1659,15 @@ impl Peripherals {
                 _marker: PhantomData,
             },
             TVE: TVE {
+                _marker: PhantomData,
+            },
+            SMHC0: SMHC0 {
+                _marker: PhantomData,
+            },
+            SMHC1: SMHC1 {
+                _marker: PhantomData,
+            },
+            SMHC2: SMHC2 {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {

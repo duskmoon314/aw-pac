@@ -3887,6 +3887,648 @@
     </peripheral>
 
     <peripheral>
+      <name>SMHC0</name>
+      <description>SD/MMC Host Controller</description>
+      <groupName>Memory</groupName>
+      <baseAddress>0x04020000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>SMHC_CTRL</name>
+          <description>Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CLKDIV</name>
+          <description>Clock Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TMOUT</name>
+          <description>Time Out Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CTYPE</name>
+          <description>Bus Width Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_BLKSIZ</name>
+          <description>Block Size Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_BYTCNT</name>
+          <description>Byte Count Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CMD</name>
+          <description>Command Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CMDARG</name>
+          <description>Command Argument Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP0</name>
+          <description>Response 0 Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP1</name>
+          <description>Response 1 Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP2</name>
+          <description>Response 2 Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP3</name>
+          <description>Response 3 Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_INTMASK</name>
+          <description>Interrupt Mask Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_MINTSTS</name>
+          <description>Masked Interrupt Status Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RINTSTS</name>
+          <description>Raw Interrupt Status Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_STATUS</name>
+          <description>Status Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FIFOTH</name>
+          <description>FIFO Water Level Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FUNS</name>
+          <description>FIFO Function Select Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TCBCNT</name>
+          <description>Transferred Byte Count between Controller and Card</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TBBCNT</name>
+          <description>Transferred Byte Count between Host Memory and Internal FIFO</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DBGC</name>
+          <description>Current Debug Control Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CSDC</name>
+          <description>CRC Status Detect Control Registers</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_A12A</name>
+          <description>Auto Command 12 Argument Register</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_NTSR</name>
+          <description>SD New Timing Set Register</description>
+          <addressOffset>0x005C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_HWRST</name>
+          <description>Hardware Reset Register</description>
+          <addressOffset>0x0078</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDMAC</name>
+          <description>IDMAC Control Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DLBA</name>
+          <description>Descriptor List Base Address Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDST</name>
+          <description>IDMAC Status Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDIE</name>
+          <description>IDMAC Interrupt Enable Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_THLD</name>
+          <description>Card Threshold Control Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_SFC</name>
+          <description>Sample FIFO Control Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_A23A</name>
+          <description>Auto Command 23 Argument Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <name>EMMC_DDR_SBIT_DET</name>
+          <description>eMMC4.5 DDR Start Bit Detection Control Register</description>
+          <addressOffset>0x010C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_EXT_CMD</name>
+          <description>Extended Command Register</description>
+          <addressOffset>0x0138</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_EXT_RESP</name>
+          <description>Extended Response Register</description>
+          <addressOffset>0x013C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DRV_DL</name>
+          <description>Drive Delay Control Register</description>
+          <addressOffset>0x0140</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_SMAP_DL</name>
+          <description>Sample Delay Control Register</description>
+          <addressOffset>0x0144</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DS_DL</name>
+          <description>Data Strobe Delay Control Register</description>
+          <addressOffset>0x0148</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_HS400_DL</name>
+          <description>HS400 Delay Control Register</description>
+          <addressOffset>0x014C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FIFO</name>
+          <description>Read/Write FIFO</description>
+          <addressOffset>0x0200</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>SMHC1</name>
+      <description>SD/MMC Host Controller</description>
+      <groupName>Memory</groupName>
+      <baseAddress>0x04021000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>SMHC_CTRL</name>
+          <description>Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CLKDIV</name>
+          <description>Clock Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TMOUT</name>
+          <description>Time Out Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CTYPE</name>
+          <description>Bus Width Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_BLKSIZ</name>
+          <description>Block Size Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_BYTCNT</name>
+          <description>Byte Count Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CMD</name>
+          <description>Command Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CMDARG</name>
+          <description>Command Argument Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP0</name>
+          <description>Response 0 Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP1</name>
+          <description>Response 1 Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP2</name>
+          <description>Response 2 Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP3</name>
+          <description>Response 3 Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_INTMASK</name>
+          <description>Interrupt Mask Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_MINTSTS</name>
+          <description>Masked Interrupt Status Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RINTSTS</name>
+          <description>Raw Interrupt Status Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_STATUS</name>
+          <description>Status Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FIFOTH</name>
+          <description>FIFO Water Level Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FUNS</name>
+          <description>FIFO Function Select Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TCBCNT</name>
+          <description>Transferred Byte Count between Controller and Card</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TBBCNT</name>
+          <description>Transferred Byte Count between Host Memory and Internal FIFO</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DBGC</name>
+          <description>Current Debug Control Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CSDC</name>
+          <description>CRC Status Detect Control Registers</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_A12A</name>
+          <description>Auto Command 12 Argument Register</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_NTSR</name>
+          <description>SD New Timing Set Register</description>
+          <addressOffset>0x005C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_HWRST</name>
+          <description>Hardware Reset Register</description>
+          <addressOffset>0x0078</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDMAC</name>
+          <description>IDMAC Control Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DLBA</name>
+          <description>Descriptor List Base Address Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDST</name>
+          <description>IDMAC Status Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDIE</name>
+          <description>IDMAC Interrupt Enable Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_THLD</name>
+          <description>Card Threshold Control Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_SFC</name>
+          <description>Sample FIFO Control Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_A23A</name>
+          <description>Auto Command 23 Argument Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <name>EMMC_DDR_SBIT_DET</name>
+          <description>eMMC4.5 DDR Start Bit Detection Control Register</description>
+          <addressOffset>0x010C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_EXT_CMD</name>
+          <description>Extended Command Register</description>
+          <addressOffset>0x0138</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_EXT_RESP</name>
+          <description>Extended Response Register</description>
+          <addressOffset>0x013C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DRV_DL</name>
+          <description>Drive Delay Control Register</description>
+          <addressOffset>0x0140</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_SMAP_DL</name>
+          <description>Sample Delay Control Register</description>
+          <addressOffset>0x0144</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DS_DL</name>
+          <description>Data Strobe Delay Control Register</description>
+          <addressOffset>0x0148</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_HS400_DL</name>
+          <description>HS400 Delay Control Register</description>
+          <addressOffset>0x014C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FIFO</name>
+          <description>Read/Write FIFO</description>
+          <addressOffset>0x0200</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
+      <name>SMHC2</name>
+      <description>SD/MMC Host Controller</description>
+      <groupName>Memory</groupName>
+      <baseAddress>0x04022000</baseAddress>
+      <addressBlock>
+        <offset>0</offset>
+        <size>0x1000</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <registers>
+        <register>
+          <name>SMHC_CTRL</name>
+          <description>Control Register</description>
+          <addressOffset>0x0000</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CLKDIV</name>
+          <description>Clock Control Register</description>
+          <addressOffset>0x0004</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TMOUT</name>
+          <description>Time Out Register</description>
+          <addressOffset>0x0008</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CTYPE</name>
+          <description>Bus Width Register</description>
+          <addressOffset>0x000C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_BLKSIZ</name>
+          <description>Block Size Register</description>
+          <addressOffset>0x0010</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_BYTCNT</name>
+          <description>Byte Count Register</description>
+          <addressOffset>0x0014</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CMD</name>
+          <description>Command Register</description>
+          <addressOffset>0x0018</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CMDARG</name>
+          <description>Command Argument Register</description>
+          <addressOffset>0x001C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP0</name>
+          <description>Response 0 Register</description>
+          <addressOffset>0x0020</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP1</name>
+          <description>Response 1 Register</description>
+          <addressOffset>0x0024</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP2</name>
+          <description>Response 2 Register</description>
+          <addressOffset>0x0028</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RESP3</name>
+          <description>Response 3 Register</description>
+          <addressOffset>0x002C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_INTMASK</name>
+          <description>Interrupt Mask Register</description>
+          <addressOffset>0x0030</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_MINTSTS</name>
+          <description>Masked Interrupt Status Register</description>
+          <addressOffset>0x0034</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_RINTSTS</name>
+          <description>Raw Interrupt Status Register</description>
+          <addressOffset>0x0038</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_STATUS</name>
+          <description>Status Register</description>
+          <addressOffset>0x003C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FIFOTH</name>
+          <description>FIFO Water Level Register</description>
+          <addressOffset>0x0040</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FUNS</name>
+          <description>FIFO Function Select Register</description>
+          <addressOffset>0x0044</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TCBCNT</name>
+          <description>Transferred Byte Count between Controller and Card</description>
+          <addressOffset>0x0048</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_TBBCNT</name>
+          <description>Transferred Byte Count between Host Memory and Internal FIFO</description>
+          <addressOffset>0x004C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DBGC</name>
+          <description>Current Debug Control Register</description>
+          <addressOffset>0x0050</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_CSDC</name>
+          <description>CRC Status Detect Control Registers</description>
+          <addressOffset>0x0054</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_A12A</name>
+          <description>Auto Command 12 Argument Register</description>
+          <addressOffset>0x0058</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_NTSR</name>
+          <description>SD New Timing Set Register</description>
+          <addressOffset>0x005C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_HWRST</name>
+          <description>Hardware Reset Register</description>
+          <addressOffset>0x0078</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDMAC</name>
+          <description>IDMAC Control Register</description>
+          <addressOffset>0x0080</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DLBA</name>
+          <description>Descriptor List Base Address Register</description>
+          <addressOffset>0x0084</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDST</name>
+          <description>IDMAC Status Register</description>
+          <addressOffset>0x0088</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_IDIE</name>
+          <description>IDMAC Interrupt Enable Register</description>
+          <addressOffset>0x008C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_THLD</name>
+          <description>Card Threshold Control Register</description>
+          <addressOffset>0x0100</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_SFC</name>
+          <description>Sample FIFO Control Register</description>
+          <addressOffset>0x0104</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_A23A</name>
+          <description>Auto Command 23 Argument Register</description>
+          <addressOffset>0x0108</addressOffset>
+        </register>
+        <register>
+          <name>EMMC_DDR_SBIT_DET</name>
+          <description>eMMC4.5 DDR Start Bit Detection Control Register</description>
+          <addressOffset>0x010C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_EXT_CMD</name>
+          <description>Extended Command Register</description>
+          <addressOffset>0x0138</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_EXT_RESP</name>
+          <description>Extended Response Register</description>
+          <addressOffset>0x013C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DRV_DL</name>
+          <description>Drive Delay Control Register</description>
+          <addressOffset>0x0140</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_SMAP_DL</name>
+          <description>Sample Delay Control Register</description>
+          <addressOffset>0x0144</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_DS_DL</name>
+          <description>Data Strobe Delay Control Register</description>
+          <addressOffset>0x0148</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_HS400_DL</name>
+          <description>HS400 Delay Control Register</description>
+          <addressOffset>0x014C</addressOffset>
+        </register>
+        <register>
+          <name>SMHC_FIFO</name>
+          <description>Read/Write FIFO</description>
+          <addressOffset>0x0200</addressOffset>
+        </register>
+      </registers>
+    </peripheral>
+
+    <peripheral>
       <name>TWI0</name>
       <description>Two Wire Interface</description>
       <groupName>Interfaces</groupName>
