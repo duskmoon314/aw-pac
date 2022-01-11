@@ -53,35 +53,41 @@ pub struct RegisterBlock {
     pub pe_cfg0: crate::Reg<pe_cfg0::PE_CFG0_SPEC>,
     #[doc = "0xc4 - PE Configure Register 1"]
     pub pe_cfg1: crate::Reg<pe_cfg1::PE_CFG1_SPEC>,
-    _reserved21: [u8; 0x08],
+    #[doc = "0xc8 - PE Configure Register 2"]
+    pub pe_cfg2: crate::Reg<pe_cfg2::PE_CFG2_SPEC>,
+    _reserved22: [u8; 0x04],
     #[doc = "0xd0 - PE Data Register"]
     pub pe_dat: crate::Reg<pe_dat::PE_DAT_SPEC>,
     #[doc = "0xd4 - PE Multi_Driving Register 0"]
     pub pe_drv0: crate::Reg<pe_drv0::PE_DRV0_SPEC>,
     #[doc = "0xd8 - PE Multi_Driving Register 1"]
     pub pe_drv1: crate::Reg<pe_drv1::PE_DRV1_SPEC>,
-    _reserved24: [u8; 0x08],
+    #[doc = "0xdc - PE Multi_Driving Register 2"]
+    pub pe_drv2: crate::Reg<pe_drv2::PE_DRV2_SPEC>,
+    _reserved26: [u8; 0x04],
     #[doc = "0xe4 - PE Pull Register 0"]
     pub pe_pull0: crate::Reg<pe_pull0::PE_PULL0_SPEC>,
-    _reserved25: [u8; 0x08],
+    #[doc = "0xe8 - PE Pull Register 1"]
+    pub pe_pull1: crate::Reg<pe_pull1::PE_PULL1_SPEC>,
+    _reserved28: [u8; 0x04],
     #[doc = "0xf0 - PF Configure Register 0"]
     pub pf_cfg0: crate::Reg<pf_cfg0::PF_CFG0_SPEC>,
-    _reserved26: [u8; 0x0c],
+    _reserved29: [u8; 0x0c],
     #[doc = "0x100 - PF Data Register"]
     pub pf_dat: crate::Reg<pf_dat::PF_DAT_SPEC>,
     #[doc = "0x104 - PF Multi_Driving Register 0"]
     pub pf_drv0: crate::Reg<pf_drv0::PF_DRV0_SPEC>,
-    _reserved28: [u8; 0x0c],
+    _reserved31: [u8; 0x0c],
     #[doc = "0x114 - PF Pull Register 0"]
     pub pf_pull0: crate::Reg<pf_pull0::PF_PULL0_SPEC>,
-    _reserved29: [u8; 0x08],
+    _reserved32: [u8; 0x08],
     #[doc = "0x120 - PG Configure Register 0"]
     pub pg_cfg0: crate::Reg<pg_cfg0::PG_CFG0_SPEC>,
     #[doc = "0x124 - PG Configure Register 1"]
     pub pg_cfg1: crate::Reg<pg_cfg1::PG_CFG1_SPEC>,
     #[doc = "0x128 - PG Configure Register 2"]
     pub pg_cfg2: crate::Reg<pg_cfg2::PG_CFG2_SPEC>,
-    _reserved32: [u8; 0x04],
+    _reserved35: [u8; 0x04],
     #[doc = "0x130 - PG Data Register"]
     pub pg_dat: crate::Reg<pg_dat::PG_DAT_SPEC>,
     #[doc = "0x134 - PG Multi_Driving Register 0"]
@@ -90,93 +96,93 @@ pub struct RegisterBlock {
     pub pg_drv1: crate::Reg<pg_drv1::PG_DRV1_SPEC>,
     #[doc = "0x13c - PG Multi_Driving Register 2"]
     pub pg_drv2: crate::Reg<pg_drv2::PG_DRV2_SPEC>,
-    _reserved36: [u8; 0x04],
+    _reserved39: [u8; 0x04],
     #[doc = "0x144 - PG Pull Register 0"]
     pub pg_pull0: crate::Reg<pg_pull0::PG_PULL0_SPEC>,
     #[doc = "0x148 - PG Pull Register 1"]
     pub pg_pull1: crate::Reg<pg_pull1::PG_PULL1_SPEC>,
-    _reserved38: [u8; 0xd4],
+    _reserved41: [u8; 0xd4],
     #[doc = "0x220 - PB External Interrupt Configure Register 0"]
     pub pb_eint_cfg0: crate::Reg<pb_eint_cfg0::PB_EINT_CFG0_SPEC>,
     #[doc = "0x224 - PB External Interrupt Configure Register 1"]
     pub pb_eint_cfg1: crate::Reg<pb_eint_cfg1::PB_EINT_CFG1_SPEC>,
-    _reserved40: [u8; 0x08],
+    _reserved43: [u8; 0x08],
     #[doc = "0x230 - PB External Interrupt Control Register"]
     pub pb_eint_ctl: crate::Reg<pb_eint_ctl::PB_EINT_CTL_SPEC>,
     #[doc = "0x234 - PB External Interrupt Status Register"]
     pub pb_eint_status: crate::Reg<pb_eint_status::PB_EINT_STATUS_SPEC>,
     #[doc = "0x238 - PB External Interrupt Debounce Register"]
     pub pb_eint_deb: crate::Reg<pb_eint_deb::PB_EINT_DEB_SPEC>,
-    _reserved43: [u8; 0x04],
+    _reserved46: [u8; 0x04],
     #[doc = "0x240 - PC External Interrupt Configure Register 0"]
     pub pc_eint_cfg0: crate::Reg<pc_eint_cfg0::PC_EINT_CFG0_SPEC>,
-    _reserved44: [u8; 0x0c],
+    _reserved47: [u8; 0x0c],
     #[doc = "0x250 - PC External Interrupt Control Register"]
     pub pc_eint_ctl: crate::Reg<pc_eint_ctl::PC_EINT_CTL_SPEC>,
     #[doc = "0x254 - PC External Interrupt Status Register"]
     pub pc_eint_status: crate::Reg<pc_eint_status::PC_EINT_STATUS_SPEC>,
     #[doc = "0x258 - PC External Interrupt Debounce Register"]
     pub pc_eint_deb: crate::Reg<pc_eint_deb::PC_EINT_DEB_SPEC>,
-    _reserved47: [u8; 0x04],
+    _reserved50: [u8; 0x04],
     #[doc = "0x260 - PD External Interrupt Configure Register 0"]
     pub pd_eint_cfg0: crate::Reg<pd_eint_cfg0::PD_EINT_CFG0_SPEC>,
     #[doc = "0x264 - PD External Interrupt Configure Register 1"]
     pub pd_eint_cfg1: crate::Reg<pd_eint_cfg1::PD_EINT_CFG1_SPEC>,
     #[doc = "0x268 - PD External Interrupt Configure Register 2"]
     pub pd_eint_cfg2: crate::Reg<pd_eint_cfg2::PD_EINT_CFG2_SPEC>,
-    _reserved50: [u8; 0x04],
+    _reserved53: [u8; 0x04],
     #[doc = "0x270 - PD External Interrupt Control Register"]
     pub pd_eint_ctl: crate::Reg<pd_eint_ctl::PD_EINT_CTL_SPEC>,
     #[doc = "0x274 - PD External Interrupt Status Register"]
     pub pd_eint_status: crate::Reg<pd_eint_status::PD_EINT_STATUS_SPEC>,
     #[doc = "0x278 - PD External Interrupt Debounce Register"]
     pub pd_eint_deb: crate::Reg<pd_eint_deb::PD_EINT_DEB_SPEC>,
-    _reserved53: [u8; 0x04],
+    _reserved56: [u8; 0x04],
     #[doc = "0x280 - PE External Interrupt Configure Register 0"]
     pub pe_eint_cfg0: crate::Reg<pe_eint_cfg0::PE_EINT_CFG0_SPEC>,
     #[doc = "0x284 - PE External Interrupt Configure Register 1"]
     pub pe_eint_cfg1: crate::Reg<pe_eint_cfg1::PE_EINT_CFG1_SPEC>,
     #[doc = "0x288 - PE External Interrupt Configure Register 2"]
     pub pe_eint_cfg2: crate::Reg<pe_eint_cfg2::PE_EINT_CFG2_SPEC>,
-    _reserved56: [u8; 0x04],
+    _reserved59: [u8; 0x04],
     #[doc = "0x290 - PE External Interrupt Control Register"]
     pub pe_eint_ctl: crate::Reg<pe_eint_ctl::PE_EINT_CTL_SPEC>,
     #[doc = "0x294 - PE External Interrupt Status Register"]
     pub pe_eint_status: crate::Reg<pe_eint_status::PE_EINT_STATUS_SPEC>,
     #[doc = "0x298 - PE External Interrupt Debounce Register"]
     pub pe_eint_deb: crate::Reg<pe_eint_deb::PE_EINT_DEB_SPEC>,
-    _reserved59: [u8; 0x04],
+    _reserved62: [u8; 0x04],
     #[doc = "0x2a0 - PF External Interrupt Configure Register 0"]
     pub pf_eint_cfg0: crate::Reg<pf_eint_cfg0::PF_EINT_CFG0_SPEC>,
-    _reserved60: [u8; 0x0c],
+    _reserved63: [u8; 0x0c],
     #[doc = "0x2b0 - PF External Interrupt Control Register"]
     pub pf_eint_ctl: crate::Reg<pf_eint_ctl::PF_EINT_CTL_SPEC>,
     #[doc = "0x2b4 - PF External Interrupt Status Register"]
     pub pf_eint_status: crate::Reg<pf_eint_status::PF_EINT_STATUS_SPEC>,
     #[doc = "0x2b8 - PF External Interrupt Debounce Register"]
     pub pf_eint_deb: crate::Reg<pf_eint_deb::PF_EINT_DEB_SPEC>,
-    _reserved63: [u8; 0x04],
+    _reserved66: [u8; 0x04],
     #[doc = "0x2c0 - PG External Interrupt Configure Register 0"]
     pub pg_eint_cfg0: crate::Reg<pg_eint_cfg0::PG_EINT_CFG0_SPEC>,
     #[doc = "0x2c4 - PG External Interrupt Configure Register 1"]
     pub pg_eint_cfg1: crate::Reg<pg_eint_cfg1::PG_EINT_CFG1_SPEC>,
     #[doc = "0x2c8 - PG External Interrupt Configure Register 2"]
     pub pg_eint_cfg2: crate::Reg<pg_eint_cfg2::PG_EINT_CFG2_SPEC>,
-    _reserved66: [u8; 0x04],
+    _reserved69: [u8; 0x04],
     #[doc = "0x2d0 - PG External Interrupt Control Register"]
     pub pg_eint_ctl: crate::Reg<pg_eint_ctl::PG_EINT_CTL_SPEC>,
     #[doc = "0x2d4 - PG External Interrupt Status Register"]
     pub pg_eint_status: crate::Reg<pg_eint_status::PG_EINT_STATUS_SPEC>,
     #[doc = "0x2d8 - PG External Interrupt Debounce Register"]
     pub pg_eint_deb: crate::Reg<pg_eint_deb::PG_EINT_DEB_SPEC>,
-    _reserved69: [u8; 0x64],
+    _reserved72: [u8; 0x64],
     #[doc = "0x340 - PIO Group Withstand Voltage Mode Select Register"]
     pub pio_pow_mod_sel: crate::Reg<pio_pow_mod_sel::PIO_POW_MOD_SEL_SPEC>,
     #[doc = "0x344 - PIO Group Withstand Voltage Mode Select Control Register"]
     pub pio_pow_ms_ctl: crate::Reg<pio_pow_ms_ctl::PIO_POW_MS_CTL_SPEC>,
     #[doc = "0x348 - PIO Group Power Value Register"]
     pub pio_pow_val: crate::Reg<pio_pow_val::PIO_POW_VAL_SPEC>,
-    _reserved72: [u8; 0x04],
+    _reserved75: [u8; 0x04],
     #[doc = "0x350 - PIO Group Power Voltage Select Control Register"]
     pub pio_pow_vol_sel_ctl: crate::Reg<pio_pow_vol_sel_ctl::PIO_POW_VOL_SEL_CTL_SPEC>,
 }
@@ -264,6 +270,10 @@ pub mod pe_cfg0;
 pub type PE_CFG1 = crate::Reg<pe_cfg1::PE_CFG1_SPEC>;
 #[doc = "PE Configure Register 1"]
 pub mod pe_cfg1;
+#[doc = "pe_cfg2 register accessor: an alias for `Reg<PE_CFG2_SPEC>`"]
+pub type PE_CFG2 = crate::Reg<pe_cfg2::PE_CFG2_SPEC>;
+#[doc = "PE Configure Register 2"]
+pub mod pe_cfg2;
 #[doc = "pe_dat register accessor: an alias for `Reg<PE_DAT_SPEC>`"]
 pub type PE_DAT = crate::Reg<pe_dat::PE_DAT_SPEC>;
 #[doc = "PE Data Register"]
@@ -276,10 +286,18 @@ pub mod pe_drv0;
 pub type PE_DRV1 = crate::Reg<pe_drv1::PE_DRV1_SPEC>;
 #[doc = "PE Multi_Driving Register 1"]
 pub mod pe_drv1;
+#[doc = "pe_drv2 register accessor: an alias for `Reg<PE_DRV2_SPEC>`"]
+pub type PE_DRV2 = crate::Reg<pe_drv2::PE_DRV2_SPEC>;
+#[doc = "PE Multi_Driving Register 2"]
+pub mod pe_drv2;
 #[doc = "pe_pull0 register accessor: an alias for `Reg<PE_PULL0_SPEC>`"]
 pub type PE_PULL0 = crate::Reg<pe_pull0::PE_PULL0_SPEC>;
 #[doc = "PE Pull Register 0"]
 pub mod pe_pull0;
+#[doc = "pe_pull1 register accessor: an alias for `Reg<PE_PULL1_SPEC>`"]
+pub type PE_PULL1 = crate::Reg<pe_pull1::PE_PULL1_SPEC>;
+#[doc = "PE Pull Register 1"]
+pub mod pe_pull1;
 #[doc = "pf_cfg0 register accessor: an alias for `Reg<PF_CFG0_SPEC>`"]
 pub type PF_CFG0 = crate::Reg<pf_cfg0::PF_CFG0_SPEC>;
 #[doc = "PF Configure Register 0"]

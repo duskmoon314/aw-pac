@@ -34,7 +34,140 @@ impl From<crate::W<PE_EINT_DEB_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DEB_CLK_PRE_SCALE` reader - Debounce Clock Pre_scale n"]
+pub struct DEB_CLK_PRE_SCALE_R(crate::FieldReader<u8, u8>);
+impl DEB_CLK_PRE_SCALE_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        DEB_CLK_PRE_SCALE_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DEB_CLK_PRE_SCALE_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DEB_CLK_PRE_SCALE` writer - Debounce Clock Pre_scale n"]
+pub struct DEB_CLK_PRE_SCALE_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DEB_CLK_PRE_SCALE_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
+        self.w
+    }
+}
+#[doc = "PIO Interrupt Clock Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PIO_INT_CLK_SELECT_A {
+    #[doc = "0: `0`"]
+    LOSC_32KHZ = 0,
+    #[doc = "1: `1`"]
+    HOSC_24MHZ = 1,
+}
+impl From<PIO_INT_CLK_SELECT_A> for bool {
+    #[inline(always)]
+    fn from(variant: PIO_INT_CLK_SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `PIO_INT_CLK_SELECT` reader - PIO Interrupt Clock Select"]
+pub struct PIO_INT_CLK_SELECT_R(crate::FieldReader<bool, PIO_INT_CLK_SELECT_A>);
+impl PIO_INT_CLK_SELECT_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        PIO_INT_CLK_SELECT_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PIO_INT_CLK_SELECT_A {
+        match self.bits {
+            false => PIO_INT_CLK_SELECT_A::LOSC_32KHZ,
+            true => PIO_INT_CLK_SELECT_A::HOSC_24MHZ,
+        }
+    }
+    #[doc = "Checks if the value of the field is `LOSC_32KHZ`"]
+    #[inline(always)]
+    pub fn is_losc_32khz(&self) -> bool {
+        **self == PIO_INT_CLK_SELECT_A::LOSC_32KHZ
+    }
+    #[doc = "Checks if the value of the field is `HOSC_24MHZ`"]
+    #[inline(always)]
+    pub fn is_hosc_24mhz(&self) -> bool {
+        **self == PIO_INT_CLK_SELECT_A::HOSC_24MHZ
+    }
+}
+impl core::ops::Deref for PIO_INT_CLK_SELECT_R {
+    type Target = crate::FieldReader<bool, PIO_INT_CLK_SELECT_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PIO_INT_CLK_SELECT` writer - PIO Interrupt Clock Select"]
+pub struct PIO_INT_CLK_SELECT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PIO_INT_CLK_SELECT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PIO_INT_CLK_SELECT_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn losc_32khz(self) -> &'a mut W {
+        self.variant(PIO_INT_CLK_SELECT_A::LOSC_32KHZ)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn hosc_24mhz(self) -> &'a mut W {
+        self.variant(PIO_INT_CLK_SELECT_A::HOSC_24MHZ)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 4:6 - Debounce Clock Pre_scale n"]
+    #[inline(always)]
+    pub fn deb_clk_pre_scale(&self) -> DEB_CLK_PRE_SCALE_R {
+        DEB_CLK_PRE_SCALE_R::new(((self.bits >> 4) & 0x07) as u8)
+    }
+    #[doc = "Bit 0 - PIO Interrupt Clock Select"]
+    #[inline(always)]
+    pub fn pio_int_clk_select(&self) -> PIO_INT_CLK_SELECT_R {
+        PIO_INT_CLK_SELECT_R::new((self.bits & 0x01) != 0)
+    }
+}
 impl W {
+    #[doc = "Bits 4:6 - Debounce Clock Pre_scale n"]
+    #[inline(always)]
+    pub fn deb_clk_pre_scale(&mut self) -> DEB_CLK_PRE_SCALE_W {
+        DEB_CLK_PRE_SCALE_W { w: self }
+    }
+    #[doc = "Bit 0 - PIO Interrupt Clock Select"]
+    #[inline(always)]
+    pub fn pio_int_clk_select(&mut self) -> PIO_INT_CLK_SELECT_W {
+        PIO_INT_CLK_SELECT_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

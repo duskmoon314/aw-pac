@@ -1,22 +1,22 @@
-#[doc = "Register `pe_drv0` reader"]
-pub struct R(crate::R<PE_DRV0_SPEC>);
+#[doc = "Register `pe_drv2` reader"]
+pub struct R(crate::R<PE_DRV2_SPEC>);
 impl core::ops::Deref for R {
-    type Target = crate::R<PE_DRV0_SPEC>;
+    type Target = crate::R<PE_DRV2_SPEC>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl From<crate::R<PE_DRV0_SPEC>> for R {
+impl From<crate::R<PE_DRV2_SPEC>> for R {
     #[inline(always)]
-    fn from(reader: crate::R<PE_DRV0_SPEC>) -> Self {
+    fn from(reader: crate::R<PE_DRV2_SPEC>) -> Self {
         R(reader)
     }
 }
-#[doc = "Register `pe_drv0` writer"]
-pub struct W(crate::W<PE_DRV0_SPEC>);
+#[doc = "Register `pe_drv2` writer"]
+pub struct W(crate::W<PE_DRV2_SPEC>);
 impl core::ops::Deref for W {
-    type Target = crate::W<PE_DRV0_SPEC>;
+    type Target = crate::W<PE_DRV2_SPEC>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -28,9 +28,9 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl From<crate::W<PE_DRV0_SPEC>> for W {
+impl From<crate::W<PE_DRV2_SPEC>> for W {
     #[inline(always)]
-    fn from(writer: crate::W<PE_DRV0_SPEC>) -> Self {
+    fn from(writer: crate::W<PE_DRV2_SPEC>) -> Self {
         W(writer)
     }
 }
@@ -53,7 +53,7 @@ impl From<PE_DRV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `PE(0-7)_DRV` reader - PE Multi_Driving Select"]
+#[doc = "Fields `PE(16-17)_DRV` reader - PE Multi_Driving Select"]
 pub struct PE_DRV_R(crate::FieldReader<u8, PE_DRV_A>);
 impl PE_DRV_R {
     #[inline(always)]
@@ -99,7 +99,7 @@ impl core::ops::Deref for PE_DRV_R {
         &self.0
     }
 }
-#[doc = "Fields `PE(0-7)_DRV` writer - PE Multi_Driving Select"]
+#[doc = "Fields `PE(16-17)_DRV` writer - PE Multi_Driving Select"]
 pub struct PE_DRV_W<'a> {
     w: &'a mut W,
     offset: usize,
@@ -142,47 +142,17 @@ impl R {
     #[doc = "PE Multi_Driving Select"]
     #[inline(always)]
     pub unsafe fn pe_drv(&self, n: usize) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> n * 4) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> (n - 16) * 4) & 0x03) as u8)
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe0_drv(&self) -> PE_DRV_R {
+    pub fn pe16_drv(&self) -> PE_DRV_R {
         PE_DRV_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 4:5 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe1_drv(&self) -> PE_DRV_R {
+    pub fn pe17_drv(&self) -> PE_DRV_R {
         PE_DRV_R::new(((self.bits >> 4) & 0x03) as u8)
-    }
-    #[doc = "Bits 8:9 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe2_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 8) & 0x03) as u8)
-    }
-    #[doc = "Bits 12:13 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe3_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 12) & 0x03) as u8)
-    }
-    #[doc = "Bits 16:17 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe4_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 16) & 0x03) as u8)
-    }
-    #[doc = "Bits 20:21 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe5_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 20) & 0x03) as u8)
-    }
-    #[doc = "Bits 24:25 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe6_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 24) & 0x03) as u8)
-    }
-    #[doc = "Bits 28:29 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe7_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 28) & 0x03) as u8)
     }
 }
 impl W {
@@ -191,63 +161,18 @@ impl W {
     pub unsafe fn pe_drv(&mut self, n: usize) -> PE_DRV_W {
         PE_DRV_W {
             w: self,
-            offset: n * 4,
+            offset: (n - 16) * 4,
         }
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe0_drv(&mut self) -> PE_DRV_W {
+    pub fn pe16_drv(&mut self) -> PE_DRV_W {
         PE_DRV_W { w: self, offset: 0 }
     }
     #[doc = "Bits 4:5 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe1_drv(&mut self) -> PE_DRV_W {
+    pub fn pe17_drv(&mut self) -> PE_DRV_W {
         PE_DRV_W { w: self, offset: 4 }
-    }
-    #[doc = "Bits 8:9 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe2_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W { w: self, offset: 8 }
-    }
-    #[doc = "Bits 12:13 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe3_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 12,
-        }
-    }
-    #[doc = "Bits 16:17 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe4_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 16,
-        }
-    }
-    #[doc = "Bits 20:21 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe5_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 20,
-        }
-    }
-    #[doc = "Bits 24:25 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe6_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 24,
-        }
-    }
-    #[doc = "Bits 28:29 - PE Multi_Driving Select"]
-    #[inline(always)]
-    pub fn pe7_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 28,
-        }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -256,21 +181,21 @@ impl W {
         self
     }
 }
-#[doc = "PE Multi_Driving Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_drv0](index.html) module"]
-pub struct PE_DRV0_SPEC;
-impl crate::RegisterSpec for PE_DRV0_SPEC {
+#[doc = "PE Multi_Driving Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pe_drv2](index.html) module"]
+pub struct PE_DRV2_SPEC;
+impl crate::RegisterSpec for PE_DRV2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pe_drv0::R](R) reader structure"]
-impl crate::Readable for PE_DRV0_SPEC {
+#[doc = "`read()` method returns [pe_drv2::R](R) reader structure"]
+impl crate::Readable for PE_DRV2_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [pe_drv0::W](W) writer structure"]
-impl crate::Writable for PE_DRV0_SPEC {
+#[doc = "`write(|w| ..)` method takes [pe_drv2::W](W) writer structure"]
+impl crate::Writable for PE_DRV2_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets pe_drv0 to value 0"]
-impl crate::Resettable for PE_DRV0_SPEC {
+#[doc = "`reset()` method sets pe_drv2 to value 0"]
+impl crate::Resettable for PE_DRV2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
         0
