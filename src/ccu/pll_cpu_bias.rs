@@ -34,7 +34,93 @@ impl From<crate::W<PLL_CPU_BIAS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PLL_VCO_RST_IN` reader - VCO reset in"]
+pub struct PLL_VCO_RST_IN_R(crate::FieldReader<bool, bool>);
+impl PLL_VCO_RST_IN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        PLL_VCO_RST_IN_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_VCO_RST_IN_R {
+    type Target = crate::FieldReader<bool, bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_VCO_RST_IN` writer - VCO reset in"]
+pub struct PLL_VCO_RST_IN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PLL_VCO_RST_IN_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w
+    }
+}
+#[doc = "Field `PLL_CP` reader - PLL current bias control"]
+pub struct PLL_CP_R(crate::FieldReader<u8, u8>);
+impl PLL_CP_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        PLL_CP_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PLL_CP_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PLL_CP` writer - PLL current bias control"]
+pub struct PLL_CP_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PLL_CP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 31 - VCO reset in"]
+    #[inline(always)]
+    pub fn pll_vco_rst_in(&self) -> PLL_VCO_RST_IN_R {
+        PLL_VCO_RST_IN_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+    #[doc = "Bits 16:20 - PLL current bias control"]
+    #[inline(always)]
+    pub fn pll_cp(&self) -> PLL_CP_R {
+        PLL_CP_R::new(((self.bits >> 16) & 0x1f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bit 31 - VCO reset in"]
+    #[inline(always)]
+    pub fn pll_vco_rst_in(&mut self) -> PLL_VCO_RST_IN_W {
+        PLL_VCO_RST_IN_W { w: self }
+    }
+    #[doc = "Bits 16:20 - PLL current bias control"]
+    #[inline(always)]
+    pub fn pll_cp(&mut self) -> PLL_CP_W {
+        PLL_CP_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

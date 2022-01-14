@@ -60,7 +60,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>LOCK_EN</name>
+              <name>LOCK_ENABLE</name>
               <description>Lock Enable</description>
               <bitRange>[29:29]</bitRange>
               <enumeratedValues>
@@ -86,7 +86,6 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>locked</name>
-                  <description>It indicates that the PLL has been stable.</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -108,12 +107,12 @@
             </field>
             <field>
               <name>PLL_LOCK_TIME</name>
-              <description>PLL Lock Time\n\nThe bit indicates the step amplitude from one frequency to another.</description>
+              <description>PLL Lock Time</description>
               <bitRange>[26:24]</bitRange>
             </field>
             <field>
               <name>PLL_N</name>
-              <description>PLL N\n\nN = PLL_N + 1\n\nPLL_N is from 0 to 254</description>
+              <description>PLL N</description>
               <bitRange>[15:8]</bitRange>
             </field>
             <field>
@@ -123,17 +122,14 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>CC_21_29</name>
-                  <description>21 - 29 Clock Cycles</description>
                   <value>0b00</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>CC_22_28</name>
-                  <description>22 - 28 Clock Cycles</description>
                   <value>0b01</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>CC_20_30</name>
-                  <description>20 - 30 Clock Cycles</description>
                   <value>0b1x</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -145,19 +141,17 @@
               <enumeratedValues>
                 <enumeratedValue>
                   <name>CC_24_26</name>
-                  <description>24 - 26 Clock Cycles</description>
                   <value>0</value>
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>CC_23_27</name>
-                  <description>23 - 27 Clock Cycles</description>
                   <value>1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
             <field>
               <name>PLL_M</name>
-              <description>PLL M\n\nM = PLL_FACTOR_M + 1\n\nPLL_FACTOR_M is from 0 to 3</description>
+              <description>PLL M</description>
               <bitRange>[1:0]</bitRange>
             </field>
           </fields>
@@ -166,146 +160,1881 @@
           <name>PLL_DDR_CTRL</name>
           <description>PLL_DDR Control Register</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_ENABLE</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_SDM_EN</name>
+              <description>PLL SDM Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_INPUT_DIV2</name>
+              <description>PLL Input Div M1</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_DIV2</name>
+              <description>PLL Output Div M0</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_PERI_CTRL</name>
           <description>PLL_PERI Control Register</description>
           <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_ENABLE</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_SDM_EN</name>
+              <description>PLL SDM Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_P1</name>
+              <description>PLL Output Div P1</description>
+              <bitRange>[22:20]</bitRange>
+            </field>
+            <field>
+              <name>PLL_P0</name>
+              <description>PLL Output Div P0</description>
+              <bitRange>[18:16]</bitRange>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_INPUT_DIV2</name>
+              <description>PLL Input Div M</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO0_CTRL</name>
           <description>PLL_VIDEO0 Control Register</description>
           <addressOffset>0x0040</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_ENABLE</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_SDM_EN</name>
+              <description>PLL SDM Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_INPUT_DIV2</name>
+              <description>PLL Input Div M</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_DIV2</name>
+              <description>PLL Output Div D</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO1_CTRL</name>
           <description>PLL_VIDEO1 Control Register</description>
           <addressOffset>0x0048</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_ENABLE</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_SDM_EN</name>
+              <description>PLL SDM Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_INPUT_DIV2</name>
+              <description>PLL Input Div M</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_DIV2</name>
+              <description>PLL Output Div D</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VE_CTRL</name>
           <description>PLL_VE Control Register</description>
           <addressOffset>0x0058</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_ENABLE</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_SDM_EN</name>
+              <description>PLL SDM Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_INPUT_DIV2</name>
+              <description>PLL Input Div M1</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_DIV2</name>
+              <description>PLL Output Div M0</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO0_CTRL</name>
           <description>PLL_AUDIO0 Control Register</description>
           <addressOffset>0x0078</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_ENABLE</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_SDM_EN</name>
+              <description>PLL SDM Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_P</name>
+              <description>PLL Post-div P</description>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_INPUT_DIV2</name>
+              <description>PLL Input Div M1</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_DIV2</name>
+              <description>PLL Output Div M0</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO1_CTRL</name>
           <description>PLL_AUDIO1 Control Register</description>
           <addressOffset>0x0080</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_EN</name>
+              <description>PLL Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LDO_EN</name>
+              <description>LDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK_ENABLE</name>
+              <description>Lock Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOCK</name>
+              <description>PLL Lock Status</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>unlocked</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locked</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_OUTPUT_GATE</name>
+              <description>PLL Output Gating Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_SDM_EN</name>
+              <description>PLL SDM Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_P1</name>
+              <description>PLL Output Div P1</description>
+              <bitRange>[22:20]</bitRange>
+            </field>
+            <field>
+              <name>PLL_P0</name>
+              <description>PLL Output Div P0</description>
+              <bitRange>[18:16]</bitRange>
+            </field>
+            <field>
+              <name>PLL_N</name>
+              <description>PLL N</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_UNLOCK_MDSEL</name>
+              <description>PLL Unlock Level</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_21_29</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_22_28</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_20_30</name>
+                  <value>0b1x</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_LOCK_MDSEL</name>
+              <description>PLL Lock Level</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CC_24_26</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CC_23_27</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_INPUT_DIV2</name>
+              <description>PLL Input Div M</description>
+              <bitRange>[1:1]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_DDR_PAT0_CTRL</name>
           <description>PLL_DDR Pattern0 Control Register</description>
           <addressOffset>0x0110</addressOffset>
+          <fields>
+            <field>
+              <name>SIG_DELT_PAT_EN</name>
+              <description>Sigma-Delta Pattern Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>SPR_FREQ_MODE</name>
+              <description>Spread Frequency Mode</description>
+              <bitRange>[30:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DC0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DC1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_1</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_n</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_STEP</name>
+              <description>Wave Step</description>
+              <bitRange>[28:20]</bitRange>
+            </field>
+            <field>
+              <name>SDM_CLK_SEL</name>
+              <description>SDM Clock Select</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_24_M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_12_M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FREQ</name>
+              <description>Frequency</description>
+              <bitRange>[18:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_31_5_k</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_k</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_5_k</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_33_k</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_BOT</name>
+              <description>Wave Bottom</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_DDR_PAT1_CTRL</name>
           <description>PLL_DDR Pattern1 Control Register</description>
           <addressOffset>0x0114</addressOffset>
+          <fields>
+            <field>
+              <name>DITHER_EN</name>
+              <description>Dither Enable</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_EN</name>
+              <description>Fraction Enable</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_IN</name>
+              <description>Fraction In</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_PERI_PAT0_CTRL</name>
           <description>PLL_PERI Pattern0 Control Register</description>
           <addressOffset>0x0120</addressOffset>
+          <fields>
+            <field>
+              <name>SIG_DELT_PAT_EN</name>
+              <description>Sigma-Delta Pattern Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>SPR_FREQ_MODE</name>
+              <description>Spread Frequency Mode</description>
+              <bitRange>[30:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DC0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DC1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_1</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_n</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_STEP</name>
+              <description>Wave Step</description>
+              <bitRange>[28:20]</bitRange>
+            </field>
+            <field>
+              <name>SDM_CLK_SEL</name>
+              <description>SDM Clock Select</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_24_M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_12_M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FREQ</name>
+              <description>Frequency</description>
+              <bitRange>[18:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_31_5_k</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_k</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_5_k</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_33_k</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_BOT</name>
+              <description>Wave Bottom</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_PERI_PAT1_CTRL</name>
           <description>PLL_PERI Pattern1 Control Register</description>
           <addressOffset>0x0124</addressOffset>
+          <fields>
+            <field>
+              <name>DITHER_EN</name>
+              <description>Dither Enable</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_EN</name>
+              <description>Fraction Enable</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_IN</name>
+              <description>Fraction In</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO0_PAT0_CTRL</name>
           <description>PLL_VIDEO0 Pattern0 Control Register</description>
           <addressOffset>0x0140</addressOffset>
+          <fields>
+            <field>
+              <name>SIG_DELT_PAT_EN</name>
+              <description>Sigma-Delta Pattern Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>SPR_FREQ_MODE</name>
+              <description>Spread Frequency Mode</description>
+              <bitRange>[30:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DC0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DC1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_1</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_n</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_STEP</name>
+              <description>Wave Step</description>
+              <bitRange>[28:20]</bitRange>
+            </field>
+            <field>
+              <name>SDM_CLK_SEL</name>
+              <description>SDM Clock Select</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_24_M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_12_M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FREQ</name>
+              <description>Frequency</description>
+              <bitRange>[18:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_31_5_k</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_k</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_5_k</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_33_k</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_BOT</name>
+              <description>Wave Bottom</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO0_PAT1_CTRL</name>
           <description>PLL_VIDEO0 Pattern1 Control Register</description>
           <addressOffset>0x0144</addressOffset>
+          <fields>
+            <field>
+              <name>DITHER_EN</name>
+              <description>Dither Enable</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_EN</name>
+              <description>Fraction Enable</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_IN</name>
+              <description>Fraction In</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO1_PAT0_CTRL</name>
           <description>PLL_VIDEO1 Pattern0 Control Register</description>
           <addressOffset>0x0148</addressOffset>
+          <fields>
+            <field>
+              <name>SIG_DELT_PAT_EN</name>
+              <description>Sigma-Delta Pattern Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>SPR_FREQ_MODE</name>
+              <description>Spread Frequency Mode</description>
+              <bitRange>[30:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DC0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DC1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_1</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_n</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_STEP</name>
+              <description>Wave Step</description>
+              <bitRange>[28:20]</bitRange>
+            </field>
+            <field>
+              <name>SDM_CLK_SEL</name>
+              <description>SDM Clock Select</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_24_M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_12_M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FREQ</name>
+              <description>Frequency</description>
+              <bitRange>[18:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_31_5_k</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_k</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_5_k</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_33_k</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_BOT</name>
+              <description>Wave Bottom</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO1_PAT1_CTRL</name>
           <description>PLL_VIDEO1 Pattern1 Control Register</description>
           <addressOffset>0x014C</addressOffset>
+          <fields>
+            <field>
+              <name>DITHER_EN</name>
+              <description>Dither Enable</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_EN</name>
+              <description>Fraction Enable</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_IN</name>
+              <description>Fraction In</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VE_PAT0_CTRL</name>
           <description>PLL_VE Pattern0 Control Register</description>
           <addressOffset>0x0158</addressOffset>
+          <fields>
+            <field>
+              <name>SIG_DELT_PAT_EN</name>
+              <description>Sigma-Delta Pattern Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>SPR_FREQ_MODE</name>
+              <description>Spread Frequency Mode</description>
+              <bitRange>[30:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DC0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DC1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_1</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_n</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_STEP</name>
+              <description>Wave Step</description>
+              <bitRange>[28:20]</bitRange>
+            </field>
+            <field>
+              <name>SDM_CLK_SEL</name>
+              <description>SDM Clock Select</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_24_M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_12_M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FREQ</name>
+              <description>Frequency</description>
+              <bitRange>[18:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_31_5_k</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_k</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_5_k</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_33_k</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_BOT</name>
+              <description>Wave Bottom</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VE_PAT1_CTRL</name>
           <description>PLL_VE Pattern1 Control Register</description>
           <addressOffset>0x015C</addressOffset>
+          <fields>
+            <field>
+              <name>DITHER_EN</name>
+              <description>Dither Enable</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_EN</name>
+              <description>Fraction Enable</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_IN</name>
+              <description>Fraction In</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO0_PAT0_CTRL</name>
           <description>PLL_AUDIO0 Pattern0 Control Register</description>
           <addressOffset>0x0178</addressOffset>
+          <fields>
+            <field>
+              <name>SIG_DELT_PAT_EN</name>
+              <description>Sigma-Delta Pattern Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>SPR_FREQ_MODE</name>
+              <description>Spread Frequency Mode</description>
+              <bitRange>[30:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DC0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DC1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_1</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_n</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_STEP</name>
+              <description>Wave Step</description>
+              <bitRange>[28:20]</bitRange>
+            </field>
+            <field>
+              <name>SDM_CLK_SEL</name>
+              <description>SDM Clock Select</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_24_M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_12_M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FREQ</name>
+              <description>Frequency</description>
+              <bitRange>[18:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_31_5_k</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_k</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_5_k</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_33_k</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_BOT</name>
+              <description>Wave Bottom</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO0_PAT1_CTRL</name>
           <description>PLL_AUDIO0 Pattern1 Control Register</description>
           <addressOffset>0x017C</addressOffset>
+          <fields>
+            <field>
+              <name>DITHER_EN</name>
+              <description>Dither Enable</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_EN</name>
+              <description>Fraction Enable</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_IN</name>
+              <description>Fraction In</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO1_PAT0_CTRL</name>
           <description>PLL_AUDIO1 Pattern0 Control Register</description>
           <addressOffset>0x0180</addressOffset>
+          <fields>
+            <field>
+              <name>SIG_DELT_PAT_EN</name>
+              <description>Sigma-Delta Pattern Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>SPR_FREQ_MODE</name>
+              <description>Spread Frequency Mode</description>
+              <bitRange>[30:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DC0</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DC1</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_1</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Triangular_n</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_STEP</name>
+              <description>Wave Step</description>
+              <bitRange>[28:20]</bitRange>
+            </field>
+            <field>
+              <name>SDM_CLK_SEL</name>
+              <description>SDM Clock Select</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_24_M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_12_M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FREQ</name>
+              <description>Frequency</description>
+              <bitRange>[18:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_31_5_k</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_k</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_32_5_k</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_33_k</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAVE_BOT</name>
+              <description>Wave Bottom</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO1_PAT1_CTRL</name>
           <description>PLL_AUDIO1 Pattern1 Control Register</description>
           <addressOffset>0x0184</addressOffset>
+          <fields>
+            <field>
+              <name>DITHER_EN</name>
+              <description>Dither Enable</description>
+              <bitRange>[24:24]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_EN</name>
+              <description>Fraction Enable</description>
+              <bitRange>[20:20]</bitRange>
+            </field>
+            <field>
+              <name>FRAC_IN</name>
+              <description>Fraction In</description>
+              <bitRange>[16:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_CPU_BIAS</name>
           <description>PLL_CPU Bias Register</description>
           <addressOffset>0x0300</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_VCO_RST_IN</name>
+              <description>VCO reset in</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_DDR_BIAS</name>
           <description>PLL_DDR Bias Register</description>
           <addressOffset>0x0310</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_PERI_BIAS</name>
           <description>PLL_PERI Bias Register</description>
           <addressOffset>0x0320</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO0_BIAS</name>
           <description>PLL_VIDEO0 Bias Register</description>
           <addressOffset>0x0340</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VIDEO1_BIAS</name>
           <description>PLL_VIDEO1 Bias Register</description>
           <addressOffset>0x0348</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_VE_BIAS</name>
           <description>PLL_VE Bias Register</description>
           <addressOffset>0x0358</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO0_BIAS</name>
           <description>PLL_AUDIO0 Bias Register</description>
           <addressOffset>0x0378</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_AUDIO1_BIAS</name>
           <description>PLL_AUDIO1 Bias Register</description>
           <addressOffset>0x0380</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_CP</name>
+              <description>PLL current bias control</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_CPU_TUN</name>
