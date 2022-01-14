@@ -125,6 +125,38 @@ impl<'a> PE_PULL_W<'a> {
         self.w
     }
 }
+#[doc = "Fields `PE(0-15)_PULL` const generic writer - PE Pull_up/down Select"]
+pub struct PE_PULL_CGW<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> PE_PULL_CGW<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PE_PULL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn pull_disable(self) -> &'a mut W {
+        self.variant(PE_PULL_A::PULL_DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pull_up(self) -> &'a mut W {
+        self.variant(PE_PULL_A::PULL_UP)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn pull_down(self) -> &'a mut W {
+        self.variant(PE_PULL_A::PULL_DOWN)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w
+    }
+}
 impl R {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
@@ -223,116 +255,83 @@ impl W {
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe0_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W { w: self, offset: 0 }
+    pub fn pe0_pull(&mut self) -> PE_PULL_CGW<0> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 2:3 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe1_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W { w: self, offset: 2 }
+    pub fn pe1_pull(&mut self) -> PE_PULL_CGW<2> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 4:5 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe2_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W { w: self, offset: 4 }
+    pub fn pe2_pull(&mut self) -> PE_PULL_CGW<4> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 6:7 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe3_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W { w: self, offset: 6 }
+    pub fn pe3_pull(&mut self) -> PE_PULL_CGW<6> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 8:9 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe4_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W { w: self, offset: 8 }
+    pub fn pe4_pull(&mut self) -> PE_PULL_CGW<8> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 10:11 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe5_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 10,
-        }
+    pub fn pe5_pull(&mut self) -> PE_PULL_CGW<10> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 12:13 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe6_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 12,
-        }
+    pub fn pe6_pull(&mut self) -> PE_PULL_CGW<12> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 14:15 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe7_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 14,
-        }
+    pub fn pe7_pull(&mut self) -> PE_PULL_CGW<14> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 16:17 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe8_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 16,
-        }
+    pub fn pe8_pull(&mut self) -> PE_PULL_CGW<16> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 18:19 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe9_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 18,
-        }
+    pub fn pe9_pull(&mut self) -> PE_PULL_CGW<18> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 20:21 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe10_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 20,
-        }
+    pub fn pe10_pull(&mut self) -> PE_PULL_CGW<20> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 22:23 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe11_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 22,
-        }
+    pub fn pe11_pull(&mut self) -> PE_PULL_CGW<22> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 24:25 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe12_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 24,
-        }
+    pub fn pe12_pull(&mut self) -> PE_PULL_CGW<24> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 26:27 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe13_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 26,
-        }
+    pub fn pe13_pull(&mut self) -> PE_PULL_CGW<26> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 28:29 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe14_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 28,
-        }
+    pub fn pe14_pull(&mut self) -> PE_PULL_CGW<28> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 30:31 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe15_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W {
-            w: self,
-            offset: 30,
-        }
+    pub fn pe15_pull(&mut self) -> PE_PULL_CGW<30> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

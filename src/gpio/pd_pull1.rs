@@ -125,6 +125,38 @@ impl<'a> PD_PULL_W<'a> {
         self.w
     }
 }
+#[doc = "Fields `PD(16-22)_PULL` const generic writer - PD Pull_up/down Select"]
+pub struct PD_PULL_CGW<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> PD_PULL_CGW<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PD_PULL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn pull_disable(self) -> &'a mut W {
+        self.variant(PD_PULL_A::PULL_DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pull_up(self) -> &'a mut W {
+        self.variant(PD_PULL_A::PULL_UP)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn pull_down(self) -> &'a mut W {
+        self.variant(PD_PULL_A::PULL_DOWN)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w
+    }
+}
 impl R {
     #[doc = "PD Pull_up/down Select"]
     #[inline(always)]
@@ -178,44 +210,38 @@ impl W {
     }
     #[doc = "Bits 0:1 - PD Pull_up/down Select"]
     #[inline(always)]
-    pub fn pd16_pull(&mut self) -> PD_PULL_W {
-        PD_PULL_W { w: self, offset: 0 }
+    pub fn pd16_pull(&mut self) -> PD_PULL_CGW<0> {
+        PD_PULL_CGW { w: self }
     }
     #[doc = "Bits 2:3 - PD Pull_up/down Select"]
     #[inline(always)]
-    pub fn pd17_pull(&mut self) -> PD_PULL_W {
-        PD_PULL_W { w: self, offset: 2 }
+    pub fn pd17_pull(&mut self) -> PD_PULL_CGW<2> {
+        PD_PULL_CGW { w: self }
     }
     #[doc = "Bits 4:5 - PD Pull_up/down Select"]
     #[inline(always)]
-    pub fn pd18_pull(&mut self) -> PD_PULL_W {
-        PD_PULL_W { w: self, offset: 4 }
+    pub fn pd18_pull(&mut self) -> PD_PULL_CGW<4> {
+        PD_PULL_CGW { w: self }
     }
     #[doc = "Bits 6:7 - PD Pull_up/down Select"]
     #[inline(always)]
-    pub fn pd19_pull(&mut self) -> PD_PULL_W {
-        PD_PULL_W { w: self, offset: 6 }
+    pub fn pd19_pull(&mut self) -> PD_PULL_CGW<6> {
+        PD_PULL_CGW { w: self }
     }
     #[doc = "Bits 8:9 - PD Pull_up/down Select"]
     #[inline(always)]
-    pub fn pd20_pull(&mut self) -> PD_PULL_W {
-        PD_PULL_W { w: self, offset: 8 }
+    pub fn pd20_pull(&mut self) -> PD_PULL_CGW<8> {
+        PD_PULL_CGW { w: self }
     }
     #[doc = "Bits 10:11 - PD Pull_up/down Select"]
     #[inline(always)]
-    pub fn pd21_pull(&mut self) -> PD_PULL_W {
-        PD_PULL_W {
-            w: self,
-            offset: 10,
-        }
+    pub fn pd21_pull(&mut self) -> PD_PULL_CGW<10> {
+        PD_PULL_CGW { w: self }
     }
     #[doc = "Bits 12:13 - PD Pull_up/down Select"]
     #[inline(always)]
-    pub fn pd22_pull(&mut self) -> PD_PULL_W {
-        PD_PULL_W {
-            w: self,
-            offset: 12,
-        }
+    pub fn pd22_pull(&mut self) -> PD_PULL_CGW<12> {
+        PD_PULL_CGW { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

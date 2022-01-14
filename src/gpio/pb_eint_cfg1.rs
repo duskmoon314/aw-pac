@@ -151,6 +151,48 @@ impl<'a> EINT_CFG_W<'a> {
         self.w
     }
 }
+#[doc = "Fields `EINT(8-12)_CFG` const generic writer - External INT Mode"]
+pub struct EINT_CFG_CGW<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> EINT_CFG_CGW<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: EINT_CFG_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn positive_edge(self) -> &'a mut W {
+        self.variant(EINT_CFG_A::POSITIVE_EDGE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn negative_edge(self) -> &'a mut W {
+        self.variant(EINT_CFG_A::NEGATIVE_EDGE)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn high_level(self) -> &'a mut W {
+        self.variant(EINT_CFG_A::HIGH_LEVEL)
+    }
+    #[doc = "`11`"]
+    #[inline(always)]
+    pub fn low_level(self) -> &'a mut W {
+        self.variant(EINT_CFG_A::LOW_LEVEL)
+    }
+    #[doc = "`100`"]
+    #[inline(always)]
+    pub fn double_edge(self) -> &'a mut W {
+        self.variant(EINT_CFG_A::DOUBLE_EDGE)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << O)) | ((value as u32 & 0x0f) << O);
+        self.w
+    }
+}
 impl R {
     #[doc = "External INT Mode"]
     #[inline(always)]
@@ -194,34 +236,28 @@ impl W {
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]
-    pub fn eint8_cfg(&mut self) -> EINT_CFG_W {
-        EINT_CFG_W { w: self, offset: 0 }
+    pub fn eint8_cfg(&mut self) -> EINT_CFG_CGW<0> {
+        EINT_CFG_CGW { w: self }
     }
     #[doc = "Bits 4:7 - External INT Mode"]
     #[inline(always)]
-    pub fn eint9_cfg(&mut self) -> EINT_CFG_W {
-        EINT_CFG_W { w: self, offset: 4 }
+    pub fn eint9_cfg(&mut self) -> EINT_CFG_CGW<4> {
+        EINT_CFG_CGW { w: self }
     }
     #[doc = "Bits 8:11 - External INT Mode"]
     #[inline(always)]
-    pub fn eint10_cfg(&mut self) -> EINT_CFG_W {
-        EINT_CFG_W { w: self, offset: 8 }
+    pub fn eint10_cfg(&mut self) -> EINT_CFG_CGW<8> {
+        EINT_CFG_CGW { w: self }
     }
     #[doc = "Bits 12:15 - External INT Mode"]
     #[inline(always)]
-    pub fn eint11_cfg(&mut self) -> EINT_CFG_W {
-        EINT_CFG_W {
-            w: self,
-            offset: 12,
-        }
+    pub fn eint11_cfg(&mut self) -> EINT_CFG_CGW<12> {
+        EINT_CFG_CGW { w: self }
     }
     #[doc = "Bits 16:19 - External INT Mode"]
     #[inline(always)]
-    pub fn eint12_cfg(&mut self) -> EINT_CFG_W {
-        EINT_CFG_W {
-            w: self,
-            offset: 16,
-        }
+    pub fn eint12_cfg(&mut self) -> EINT_CFG_CGW<16> {
+        EINT_CFG_CGW { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

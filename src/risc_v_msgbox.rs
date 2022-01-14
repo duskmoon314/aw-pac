@@ -17,18 +17,18 @@ pub struct RegisterBlock {
     #[doc = "0x40 - MSGBOX Debug Register"]
     pub msgbox_debug_reg_0: crate::Reg<msgbox_debug_reg_::MSGBOX_DEBUG_REG__SPEC>,
     _reserved5: [u8; 0x0c],
-    #[doc = "0x50..0x5c - MSGBOX FIFO Status Register"]
-    pub msgbox_fifo_status_reg_n0: MSGBOX_FIFO_STATUS_REG_N,
-    _reserved6: [u8; 0x04],
-    #[doc = "0x60..0x6c - MSGBOX Message Status Register"]
-    pub msgbox_msg_status_reg_n0: MSGBOX_MSG_STATUS_REG_N,
-    _reserved7: [u8; 0x04],
-    #[doc = "0x70..0x7c - MSGBOX Message Queue Register"]
-    pub msgbox_msg_reg_n0: MSGBOX_MSG_REG_N,
-    _reserved8: [u8; 0x04],
-    #[doc = "0x80..0x8c - MSGBOX Write IRQ Threshold Register"]
-    pub msgbox_wr_int_threshold_reg_n0: MSGBOX_WR_INT_THRESHOLD_REG_N,
-    _reserved9: [u8; 0x94],
+    #[doc = "0x50 - MSGBOX FIFO Status Register"]
+    pub msgbox_fifo_status_reg_n: crate::ArrayProxy<MSGBOX_FIFO_STATUS_REG_N, 2, 0x0100>,
+    _reserved6: [u8; 0x10],
+    #[doc = "0x60 - MSGBOX Message Status Register"]
+    pub msgbox_msg_status_reg_n: crate::ArrayProxy<MSGBOX_MSG_STATUS_REG_N, 2, 0x0100>,
+    _reserved7: [u8; 0x10],
+    #[doc = "0x70 - MSGBOX Message Queue Register"]
+    pub msgbox_msg_reg_n: crate::ArrayProxy<MSGBOX_MSG_REG_N, 2, 0x0100>,
+    _reserved8: [u8; 0x10],
+    #[doc = "0x80 - MSGBOX Write IRQ Threshold Register"]
+    pub msgbox_wr_int_threshold_reg_n: crate::ArrayProxy<MSGBOX_WR_INT_THRESHOLD_REG_N, 2, 0x0100>,
+    _reserved9: [u8; 0xa0],
     #[doc = "0x120 - MSGBOX Read IRQ Enable Register"]
     pub msgbox_rd_irq_en_reg_1: crate::Reg<msgbox_rd_irq_en_reg_::MSGBOX_RD_IRQ_EN_REG__SPEC>,
     #[doc = "0x124 - MSGBOX Read IRQ Status Register"]
@@ -43,18 +43,6 @@ pub struct RegisterBlock {
     _reserved13: [u8; 0x08],
     #[doc = "0x140 - MSGBOX Debug Register"]
     pub msgbox_debug_reg_1: crate::Reg<msgbox_debug_reg_::MSGBOX_DEBUG_REG__SPEC>,
-    _reserved14: [u8; 0x0c],
-    #[doc = "0x150..0x15c - MSGBOX FIFO Status Register"]
-    pub msgbox_fifo_status_reg_n1: MSGBOX_FIFO_STATUS_REG_N,
-    _reserved15: [u8; 0x04],
-    #[doc = "0x160..0x16c - MSGBOX Message Status Register"]
-    pub msgbox_msg_status_reg_n1: MSGBOX_MSG_STATUS_REG_N,
-    _reserved16: [u8; 0x04],
-    #[doc = "0x170..0x17c - MSGBOX Message Queue Register"]
-    pub msgbox_msg_reg_n1: MSGBOX_MSG_REG_N,
-    _reserved17: [u8; 0x04],
-    #[doc = "0x180..0x18c - MSGBOX Write IRQ Threshold Register"]
-    pub msgbox_wr_int_threshold_reg_n1: MSGBOX_WR_INT_THRESHOLD_REG_N,
 }
 #[doc = r"Register block"]
 #[repr(C)]

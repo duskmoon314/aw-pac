@@ -125,6 +125,38 @@ impl<'a> PE_PULL_W<'a> {
         self.w
     }
 }
+#[doc = "Fields `PE(16-17)_PULL` const generic writer - PE Pull_up/down Select"]
+pub struct PE_PULL_CGW<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> PE_PULL_CGW<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PE_PULL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn pull_disable(self) -> &'a mut W {
+        self.variant(PE_PULL_A::PULL_DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pull_up(self) -> &'a mut W {
+        self.variant(PE_PULL_A::PULL_UP)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn pull_down(self) -> &'a mut W {
+        self.variant(PE_PULL_A::PULL_DOWN)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w
+    }
+}
 impl R {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
@@ -153,13 +185,13 @@ impl W {
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe16_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W { w: self, offset: 0 }
+    pub fn pe16_pull(&mut self) -> PE_PULL_CGW<0> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Bits 2:3 - PE Pull_up/down Select"]
     #[inline(always)]
-    pub fn pe17_pull(&mut self) -> PE_PULL_W {
-        PE_PULL_W { w: self, offset: 2 }
+    pub fn pe17_pull(&mut self) -> PE_PULL_CGW<2> {
+        PE_PULL_CGW { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

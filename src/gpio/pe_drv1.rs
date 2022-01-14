@@ -138,6 +138,43 @@ impl<'a> PE_DRV_W<'a> {
         self.w
     }
 }
+#[doc = "Fields `PE(8-15)_DRV` const generic writer - PE Multi_Driving Select"]
+pub struct PE_DRV_CGW<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> PE_DRV_CGW<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PE_DRV_A) -> &'a mut W {
+        self.bits(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn l0(self) -> &'a mut W {
+        self.variant(PE_DRV_A::L0)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn l1(self) -> &'a mut W {
+        self.variant(PE_DRV_A::L1)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn l2(self) -> &'a mut W {
+        self.variant(PE_DRV_A::L2)
+    }
+    #[doc = "`11`"]
+    #[inline(always)]
+    pub fn l3(self) -> &'a mut W {
+        self.variant(PE_DRV_A::L3)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w
+    }
+}
 impl R {
     #[doc = "PE Multi_Driving Select"]
     #[inline(always)]
@@ -196,58 +233,43 @@ impl W {
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe8_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W { w: self, offset: 0 }
+    pub fn pe8_drv(&mut self) -> PE_DRV_CGW<0> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Bits 4:5 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe9_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W { w: self, offset: 4 }
+    pub fn pe9_drv(&mut self) -> PE_DRV_CGW<4> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Bits 8:9 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe10_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W { w: self, offset: 8 }
+    pub fn pe10_drv(&mut self) -> PE_DRV_CGW<8> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Bits 12:13 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe11_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 12,
-        }
+    pub fn pe11_drv(&mut self) -> PE_DRV_CGW<12> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Bits 16:17 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe12_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 16,
-        }
+    pub fn pe12_drv(&mut self) -> PE_DRV_CGW<16> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Bits 20:21 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe13_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 20,
-        }
+    pub fn pe13_drv(&mut self) -> PE_DRV_CGW<20> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Bits 24:25 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe14_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 24,
-        }
+    pub fn pe14_drv(&mut self) -> PE_DRV_CGW<24> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Bits 28:29 - PE Multi_Driving Select"]
     #[inline(always)]
-    pub fn pe15_drv(&mut self) -> PE_DRV_W {
-        PE_DRV_W {
-            w: self,
-            offset: 28,
-        }
+    pub fn pe15_drv(&mut self) -> PE_DRV_CGW<28> {
+        PE_DRV_CGW { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -10,11 +10,8 @@ pub struct RegisterBlock {
     #[doc = "0x1000..0x151c - CSIC_PARSER0"]
     pub csic_parser0: CSIC_PARSER0,
     _reserved3: [u8; 0x7ae4],
-    #[doc = "0x9000..0x91f8 - CSIC_DMA"]
-    pub csic_dma0: CSIC_DMA,
-    _reserved4: [u8; 0x08],
-    #[doc = "0x9200..0x93f8 - CSIC_DMA"]
-    pub csic_dma1: CSIC_DMA,
+    #[doc = "0x9000 - CSIC_DMA"]
+    pub csic_dma: crate::ArrayProxy<CSIC_DMA, 2, 0x0200>,
 }
 #[doc = r"Register block"]
 #[repr(C)]

@@ -125,6 +125,38 @@ impl<'a> PG_PULL_W<'a> {
         self.w
     }
 }
+#[doc = "Fields `PG(16-18)_PULL` const generic writer - PG Pull_up/down Select"]
+pub struct PG_PULL_CGW<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> PG_PULL_CGW<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PG_PULL_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn pull_disable(self) -> &'a mut W {
+        self.variant(PG_PULL_A::PULL_DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pull_up(self) -> &'a mut W {
+        self.variant(PG_PULL_A::PULL_UP)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn pull_down(self) -> &'a mut W {
+        self.variant(PG_PULL_A::PULL_DOWN)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w
+    }
+}
 impl R {
     #[doc = "PG Pull_up/down Select"]
     #[inline(always)]
@@ -158,18 +190,18 @@ impl W {
     }
     #[doc = "Bits 0:1 - PG Pull_up/down Select"]
     #[inline(always)]
-    pub fn pg16_pull(&mut self) -> PG_PULL_W {
-        PG_PULL_W { w: self, offset: 0 }
+    pub fn pg16_pull(&mut self) -> PG_PULL_CGW<0> {
+        PG_PULL_CGW { w: self }
     }
     #[doc = "Bits 2:3 - PG Pull_up/down Select"]
     #[inline(always)]
-    pub fn pg17_pull(&mut self) -> PG_PULL_W {
-        PG_PULL_W { w: self, offset: 2 }
+    pub fn pg17_pull(&mut self) -> PG_PULL_CGW<2> {
+        PG_PULL_CGW { w: self }
     }
     #[doc = "Bits 4:5 - PG Pull_up/down Select"]
     #[inline(always)]
-    pub fn pg18_pull(&mut self) -> PG_PULL_W {
-        PG_PULL_W { w: self, offset: 4 }
+    pub fn pg18_pull(&mut self) -> PG_PULL_CGW<4> {
+        PG_PULL_CGW { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
