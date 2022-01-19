@@ -179,7 +179,7 @@ impl R {
     #[doc = "PC Multi_Driving Select"]
     #[inline(always)]
     pub unsafe fn pc_drv(&self, n: usize) -> PC_DRV_R {
-        PC_DRV_R::new(((self.bits >> n * 4) & 0x03) as u8)
+        PC_DRV_R::new(((self.bits >> (n * 4)) & 0x03) as u8)
     }
     #[doc = "Bits 0:1 - PC Multi_Driving Select"]
     #[inline(always)]

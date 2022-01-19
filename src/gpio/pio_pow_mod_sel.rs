@@ -250,31 +250,31 @@ impl R {
     #[doc = "PX_POWER POWER MODE Select"]
     #[inline(always)]
     pub unsafe fn p_pwr_mod_sel(&self, n: usize) -> P_PWR_MOD_SEL_R {
-        P_PWR_MOD_SEL_R::new(((self.bits >> n + 2) & 0x01) != 0)
+        P_PWR_MOD_SEL_R::new(((self.bits >> (n + 2)) & 0x01) != 0)
     }
     #[doc = "Bit 2 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pC_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn pc_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pD_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn pd_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pE_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn pe_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pF_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn pf_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pG_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn pg_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }
@@ -294,27 +294,27 @@ impl W {
     }
     #[doc = "Bit 2 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pC_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<2> {
+    pub fn pc_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<2> {
         P_PWR_MOD_SEL_CGW { w: self }
     }
     #[doc = "Bit 3 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pD_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<3> {
+    pub fn pd_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<3> {
         P_PWR_MOD_SEL_CGW { w: self }
     }
     #[doc = "Bit 4 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pE_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<4> {
+    pub fn pe_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<4> {
         P_PWR_MOD_SEL_CGW { w: self }
     }
     #[doc = "Bit 5 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pF_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<5> {
+    pub fn pf_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<5> {
         P_PWR_MOD_SEL_CGW { w: self }
     }
     #[doc = "Bit 6 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pG_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<6> {
+    pub fn pg_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<6> {
         P_PWR_MOD_SEL_CGW { w: self }
     }
     #[doc = "Writes raw bits to the register."]

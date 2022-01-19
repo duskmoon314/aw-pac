@@ -161,7 +161,7 @@ impl R {
     #[doc = "PC Pull_up/down Select"]
     #[inline(always)]
     pub unsafe fn pc_pull(&self, n: usize) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> n * 2) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> (n * 2)) & 0x03) as u8)
     }
     #[doc = "Bits 0:1 - PC Pull_up/down Select"]
     #[inline(always)]

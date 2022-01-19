@@ -161,7 +161,7 @@ impl R {
     #[doc = "PF Pull_up/down Select"]
     #[inline(always)]
     pub unsafe fn pf_pull(&self, n: usize) -> PF_PULL_R {
-        PF_PULL_R::new(((self.bits >> n * 2) & 0x03) as u8)
+        PF_PULL_R::new(((self.bits >> (n * 2)) & 0x03) as u8)
     }
     #[doc = "Bits 0:1 - PF Pull_up/down Select"]
     #[inline(always)]

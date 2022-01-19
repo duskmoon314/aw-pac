@@ -2040,426 +2040,4253 @@
           <name>PLL_CPU_TUN</name>
           <description>PLL_CPU Tuning Register</description>
           <addressOffset>0x0400</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_VCO</name>
+              <description>VCO range control</description>
+              <bitRange>[30:28]</bitRange>
+            </field>
+            <field>
+              <name>PLL_VCO_GAIN</name>
+              <description>KVCO gain control</description>
+              <bitRange>[26:24]</bitRange>
+            </field>
+            <field>
+              <name>PLL_CNT_INT</name>
+              <description>Counter initial control</description>
+              <bitRange>[22:16]</bitRange>
+            </field>
+            <field>
+              <name>PLL_REG_OD</name>
+              <description>PLL-REG-OD0 for verify</description>
+              <bitRange>[15:15]</bitRange>
+            </field>
+            <field>
+              <name>PLL_B_IN</name>
+              <description>PLL-B-IN [6:0] for verify</description>
+              <bitRange>[14:8]</bitRange>
+            </field>
+            <field>
+              <name>PLL_REG_OD1</name>
+              <description>PLL-REG-OD1 for verify</description>
+              <bitRange>[7:7]</bitRange>
+            </field>
+            <field>
+              <name>PLL_B_OUT</name>
+              <description>PLL-B-OUT [6:0] for verify</description>
+              <bitRange>[6:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CPU_AXI_CFG</name>
           <description>CPU_AXI Configuration Register</description>
           <addressOffset>0x0500</addressOffset>
+          <fields>
+            <field>
+              <name>CPU_CLK_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK32K</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK16M_RC</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_CPU_P</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_800M</name>
+                  <value>0b110</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PLL_CPU_OUT_EXT_DIVP</name>
+              <description>PLL Output External Divider P</description>
+              <bitRange>[17:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CPU_DIV2</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+            </field>
+            <field>
+              <name>CPU_DIV1</name>
+              <description>Factor M</description>
+              <bitRange>[1:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CPU_GATING</name>
           <description>CPU_GATING Configuration Register</description>
           <addressOffset>0x0504</addressOffset>
+          <fields>
+            <field>
+              <name>CPU_GATING</name>
+              <description>Gating Special Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CPU_GATING_FIELD</name>
+              <description>CPU Gating Field</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+
+          </fields>
         </register>
         <register>
           <name>PSI_CLK</name>
           <description>PSI Clock Register</description>
           <addressOffset>0x0510</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK32K</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK16M_RC</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[1:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>APB0_CLK</name>
-          <description>APB0 Clock Register</description>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>APB%s_CLK</name>
+          <description>APB Clock Register</description>
           <addressOffset>0x0520</addressOffset>
-        </register>
-        <register>
-          <name>APB1_CLK</name>
-          <description>APB1 Clock Register</description>
-          <addressOffset>0x0524</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK32K</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PSI_CLK</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>MBUS_CLK</name>
           <description>MBUS Clock Register</description>
           <addressOffset>0x0540</addressOffset>
+          <fields>
+            <field>
+              <name>MBUS_RST</name>
+              <description>MBUS Reset</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DE_CLK</name>
           <description>DE Clock Register</description>
           <addressOffset>0x0600</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_4X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_4X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DE_BGR</name>
           <description>DE Bus Gating Reset Register</description>
           <addressOffset>0x060C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DI_CLK</name>
           <description>DI Clock Register</description>
           <addressOffset>0x0620</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_4X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_4X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DI_BGR</name>
           <description>DI Bus Gating Reset Register</description>
           <addressOffset>0x062C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>G2D_CLK</name>
           <description>G2D Clock Register</description>
           <addressOffset>0x0630</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_4X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_4X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>G2D_BGR</name>
           <description>G2D Bus Gating Reset Register</description>
           <addressOffset>0x063C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_CLK</name>
           <description>CE Clock Register</description>
           <addressOffset>0x0680</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_BGR</name>
           <description>CE Bus Gating Reset Register</description>
           <addressOffset>0x068C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>VE_CLK</name>
           <description>VE Clock Register</description>
           <addressOffset>0x0690</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>VEPLL</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>VE_BGR</name>
           <description>VE Bus Gating Reset Register</description>
           <addressOffset>0x069C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMA_BGR</name>
           <description>DMA Bus Gating Reset Register</description>
           <addressOffset>0x070C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>MSGBOX_BGR</name>
           <description>MSGBOX Bus Gating Reset Register</description>
           <addressOffset>0x071C</addressOffset>
+          <fields>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>MSGBOX%s_RST</name>
+              <description>CPU, DSP, RISC-V MSGBOX Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>MSGBOX%s_GATING</name>
+              <description>Gating Clock for CPU, DSP, RISC-V MSGBOX</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPINLOCK_BGR</name>
           <description>SPINLOCK Bus Gating Reset Register</description>
           <addressOffset>0x072C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>HSTIMER_BGR</name>
           <description>HSTIMER Bus Gating Reset Register</description>
           <addressOffset>0x073C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>AVS_CLK</name>
           <description>AVS Clock Register</description>
           <addressOffset>0x0740</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DBGSYS_BGR</name>
           <description>DBGSYS Bus Gating Reset Register</description>
           <addressOffset>0x078C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PWM_BGR</name>
           <description>PWM Bus Gating Reset Register</description>
           <addressOffset>0x07AC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>IOMMU_BGR</name>
           <description>IOMMU Bus Gating Reset Register</description>
           <addressOffset>0x07BC</addressOffset>
+          <fields>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DRAM_CLK</name>
           <description>DRAM Clock Register</description>
           <addressOffset>0x0800</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SDRCLK_UPD</name>
+              <description>SDRCLK Configuration 0 Update</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>invalid</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>valid</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_DDR</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_800M</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DRAM_DIV2</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DRAM_DIV1</name>
+              <description>Factor M</description>
+              <bitRange>[1:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>MBUS_MAT_CLK_GATING</name>
           <description>MBUS Master Clock Gating Register</description>
           <addressOffset>0x0804</addressOffset>
+          <fields>
+            <field>
+              <name>RISCV_MCLK_EN</name>
+              <description>Gating MBUS Clock</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>G2D_MCLK_EN</name>
+              <description>Gating MBUS Clock</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CSI_MCLK_EN</name>
+              <description>Gating MBUS Clock</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TVIN_MCLK_EN</name>
+              <description>Gating MBUS Clock</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CE_MCLK_EN</name>
+              <description>Gating MBUS Clock</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>VE_MCLK_EN</name>
+              <description>Gating MBUS Clock</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_MCLK_EN</name>
+              <description>Gating MBUS Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DRAM_BGR</name>
           <description>DRAM Bus Gating Reset Register</description>
           <addressOffset>0x080C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SMHC0_CLK</name>
           <description>SMHC0 Clock Register</description>
           <addressOffset>0x0830</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SMHC1_CLK</name>
           <description>SMHC1 Clock Register</description>
           <addressOffset>0x0834</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SMHC2_CLK</name>
           <description>SMHC2 Clock Register</description>
           <addressOffset>0x0838</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_800M</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SMHC_BGR</name>
           <description>SMHC Bus Gating Reset Register</description>
           <addressOffset>0x084C</addressOffset>
+          <fields>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>SMHC%s_RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>SMHC%s_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>UART_BGR</name>
           <description>UART Bus Gating Reset Register</description>
           <addressOffset>0x090C</addressOffset>
+          <fields>
+            <field>
+              <dim>6</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>UART%s_RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>6</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>UART%s_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TWI_BGR</name>
           <description>TWI Bus Gating Reset Register</description>
           <addressOffset>0x091C</addressOffset>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>TWI%s_RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>TWI%s_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPI0_CLK</name>
           <description>SPI0 Clock Register</description>
           <addressOffset>0x0940</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPI1_CLK</name>
           <description>SPI1 Clock Register</description>
           <addressOffset>0x0944</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPI_BGR</name>
           <description>SPI Bus Gating Reset Register</description>
           <addressOffset>0x096C</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>SPI%s_RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>SPI%s_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_25M_CLK</name>
           <description>EMAC_25M Clock Register</description>
           <addressOffset>0x0970</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Special Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_GATING</name>
+              <description>Gating the Source Clock of Special Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_BGR</name>
           <description>EMAC Bus Gating Reset Register</description>
           <addressOffset>0x097C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>IRTX_CLK</name>
           <description>IRTX Clock Register</description>
           <addressOffset>0x09C0</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>IRTX_BGR</name>
           <description>IRTX Bus Gating Reset Register</description>
           <addressOffset>0x09CC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GPADC_BGR</name>
           <description>GPADC Bus Gating Reset Register</description>
           <addressOffset>0x09EC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_BGR</name>
           <description>THS Bus Gating Reset Register</description>
           <addressOffset>0x09FC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>I2S0_CLK</name>
-          <description>I2S0 Clock Register</description>
+          <dim>3</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>I2S%s_CLK</name>
+          <description>I2S Clock Register</description>
           <addressOffset>0x0A10</addressOffset>
-        </register>
-        <register>
-          <name>I2S1_CLK</name>
-          <description>I2S1 Clock Register</description>
-          <addressOffset>0x0A14</addressOffset>
-        </register>
-        <register>
-          <name>I2S2_CLK</name>
-          <description>I2S2 Clock Register</description>
-          <addressOffset>0x0A18</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_1X</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_4X</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>I2S2_ASRC_CLK</name>
           <description>I2S2_ASRC Clock Register</description>
           <addressOffset>0x0A1C</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_4X</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>I2S_BGR</name>
           <description>I2S Bus Gating Reset Register</description>
           <addressOffset>0x0A20</addressOffset>
+          <fields>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>I2S%s_RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>I2S%s_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>OWA_TX_CLK</name>
           <description>OWA_TX Clock Register</description>
           <addressOffset>0x0A24</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_1X</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_4X</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>OWA_RX_CLK</name>
           <description>OWA_RX Clock Register</description>
           <addressOffset>0x0A28</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>OWA_BGR</name>
           <description>OWA Bus Gating Reset Register</description>
           <addressOffset>0x0A2C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMIC_CLK</name>
           <description>DMIC Clock Register</description>
           <addressOffset>0x0A40</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMIC_BGR</name>
           <description>DMIC Bus Gating Reset Register</description>
           <addressOffset>0x0A4C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>AUDIO_CODEC_DAC_CLK</name>
           <description>AUDIO_CODEC_DAC Clock Register</description>
           <addressOffset>0x0A50</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_1X</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>AUDIO_CODEC_ADC_CLK</name>
           <description>AUDIO_CODEC_ADC Clock Register</description>
           <addressOffset>0x0A54</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_1X</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>AUDIO_CODEC_BGR</name>
           <description>AUDIO_CODEC Bus Gating Reset Register</description>
           <addressOffset>0x0A5C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>USB0_CLK</name>
           <description>USB0 Clock Register</description>
           <addressOffset>0x0A70</addressOffset>
+          <fields>
+            <field>
+              <name>CLKEN</name>
+              <description>Gating Special Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RSTN</name>
+              <description>PHY Reset</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK12M_SEL</name>
+              <description>OHCI 12M Source Select</description>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DIV_48M</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_24M</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTC_32K</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>USB1_CLK</name>
           <description>USB1 Clock Register</description>
           <addressOffset>0x0A74</addressOffset>
+          <fields>
+            <field>
+              <name>CLKEN</name>
+              <description>Gating Special Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RSTN</name>
+              <description>PHY Reset</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK12M_SEL</name>
+              <description>OHCI 12M Source Select</description>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DIV_48M</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_24M</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RTC_32K</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>USB_BGR</name>
           <description>USB Bus Gating Reset Register</description>
           <addressOffset>0x0A8C</addressOffset>
+          <fields>
+            <field>
+              <name>USBOTG0_RST</name>
+              <description>USBOTG0 Reset</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>USBEHCI%s_RST</name>
+              <description>USBEHCI Reset</description>
+              <bitRange>[20:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>USBOHCI%s_RST</name>
+              <description>USBOHCI Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>USBOTG0_GATING</name>
+              <description>USBOTG0 Gating Clock</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>USBEHCI%s_GATING</name>
+              <description>USBEHCI Gating Clock</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>USBOHCI%s_GATING</name>
+              <description>USBOHCI Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>LRADC_BGR</name>
+          <description>LRADC Bus Gating Reset Register</description>
+          <addressOffset>0x0A9C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DPSS_TOP_BGR</name>
           <description>DPSS_TOP Bus Gating Reset Register</description>
           <addressOffset>0x0ABC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DSI_CLK</name>
           <description>DSI Clock Register</description>
           <addressOffset>0x0B24</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_2X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DSI_BGR</name>
           <description>DSI Bus Gating Reset Register</description>
           <addressOffset>0x0B4C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TCONLCD_CLK</name>
           <description>TCONLCD Clock Register</description>
           <addressOffset>0x0B60</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_1X</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_4X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_1X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_4X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TCONLCD_BGR</name>
           <description>TCONLCD Bus Gating Reset Register</description>
           <addressOffset>0x0B7C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TCONTV_CLK</name>
           <description>TCONTV Clock Register</description>
           <addressOffset>0x0B80</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_1X</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_4X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_1X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_4X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TCONTV_BGR</name>
           <description>TCONTV Bus Gating Reset Register</description>
           <addressOffset>0x0B9C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LVDS_BGR</name>
           <description>LVDS Bus Gating Reset Register</description>
           <addressOffset>0x0BAC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TVE_CLK</name>
           <description>TVE Clock Register</description>
           <addressOffset>0x0BB0</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_1X</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_4X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_1X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_4X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TVE_BGR</name>
           <description>TVE Bus Gating Reset Register</description>
           <addressOffset>0x0BBC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TOP_RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TOP_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TVD_CLK</name>
           <description>TVD Clock Register</description>
           <addressOffset>0x0BC0</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_1X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TVD_BGR</name>
           <description>TVD Bus Gating Reset Register</description>
           <addressOffset>0x0BDC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TOP_RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TOP_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_CLK</name>
           <description>LEDC Clock Register</description>
           <addressOffset>0x0BF0</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_N</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N1</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N2</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_BGR</name>
           <description>LEDC Bus Gating Reset Register</description>
           <addressOffset>0x0BFC</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CSI_CLK</name>
           <description>CSI Clock Register</description>
           <addressOffset>0x0C04</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_2X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CSI_MASTER_CLK</name>
           <description>CSI Master Clock Register</description>
           <addressOffset>0x0C08</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_1X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_1X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV5</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CSI_BGR</name>
           <description>CSI Bus Gating Reset Register</description>
           <addressOffset>0x0C1C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TPADC_CLK</name>
           <description>TPADC Clock Register</description>
           <addressOffset>0x0C50</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0_1X</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TPADC_BGR</name>
           <description>TPADC Bus Gating Reset Register</description>
           <addressOffset>0x0C5C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DSP_CLK</name>
           <description>DSP Clock Register</description>
           <addressOffset>0x0C70</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Off</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>On</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK32K</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK16M_RC</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FACTOR_M</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DSP_BGR</name>
           <description>DSP Bus Gating Reset Register</description>
           <addressOffset>0x0C7C</addressOffset>
+          <fields>
+            <field>
+              <name>DBG_RST</name>
+              <description>Reset</description>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CFG_RST</name>
+              <description>Reset</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CFG_GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RISCV_CLK</name>
           <description>RISC-V Clock Register</description>
           <addressOffset>0x0D00</addressOffset>
+          <fields>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[26:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK32K</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK16M_RC</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_800M</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_1X</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_CPU</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1_DIV2</name>
+                  <value>0b110</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>AXI_DIV_CFG</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+            </field>
+            <field>
+              <name>DIV_CFG</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RISCV_GATING</name>
           <description>RISC-V GATING Configuration Register</description>
           <addressOffset>0x0D04</addressOffset>
+          <fields>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING_FIELD</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RISCV_CFG_BGR</name>
           <description>RISC-V_CFG Bus Gating Reset Register</description>
           <addressOffset>0x0D0C</addressOffset>
+          <fields>
+            <field>
+              <name>RST</name>
+              <description>Reset</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Assert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GATING</name>
+              <description>Gating Clock</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PLL_LOCK_DBG_CTRL</name>
           <description>PLL Lock Debug Control Register</description>
           <addressOffset>0x0F04</addressOffset>
+          <fields>
+            <field>
+              <name>PLL_LOCK_FLAG_EN</name>
+              <description>Debug Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[22:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_CPUX</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_DDR</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_PERI_2X</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_4X</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_4X</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VE</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO0</name>
+                  <value>0b110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_AUDIO1</name>
+                  <value>0b111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>FRE_DET_CTRL</name>
           <description>Frequency Detect Control Register</description>
           <addressOffset>0x0F08</addressOffset>
+          <fields>
+            <field>
+              <name>ERROR_FLAG</name>
+              <description>Error Flag</description>
+              <bitRange>[31:31]</bitRange>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>W0C</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Error</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DET_TIME</name>
+              <description>Detect Time</description>
+              <bitRange>[8:4]</bitRange>
+            </field>
+            <field>
+              <name>FRE_DET_IRQ_EN</name>
+              <description>Frequence Detect IRQ Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FRE_DET_FUN_EN</name>
+              <description>Frequence Detect Function Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>FRE_UP_LIM</name>
@@ -2475,21 +6302,217 @@
           <name>CCU_FAN_GATE</name>
           <description>CCU FANOUT CLOCK GATE Register</description>
           <addressOffset>0x0F30</addressOffset>
+          <fields>
+            <field>
+              <name>CLK32K_EN</name>
+              <description>Gating for CLK32K</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK25M_EN</name>
+              <description>Gating for CLK25M</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK16M_EN</name>
+              <description>Gating for CLK16M</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK12M_EN</name>
+              <description>Gating for CLK12M</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK24M_EN</name>
+              <description>Gating for CLK24M</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CLK27M_FAN</name>
           <description>CLK27M FANOUT Register</description>
           <addressOffset>0x0F34</addressOffset>
+          <fields>
+            <field>
+              <name>GATING</name>
+              <description>Gating for CLK27M</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK_SRC_SEL</name>
+              <description>Clock Source Select</description>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL_VIDEO0_1X</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PLL_VIDEO1_1X</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DIV1</name>
+              <description>Factor N</description>
+              <bitRange>[9:8]</bitRange>
+            </field>
+            <field>
+              <name>DIV0</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PCLK_FAN</name>
           <description>PCLK FANOUT Register</description>
           <addressOffset>0x0F38</addressOffset>
+          <fields>
+            <field>
+              <name>GATING</name>
+              <description>Gating for PCLK</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DIV</name>
+              <description>Factor M</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CCU_FAN</name>
           <description>CCU FANOUT Register</description>
           <addressOffset>0x0F3C</addressOffset>
+          <fields>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CLK_FANOUT%s_EN</name>
+              <description>Gating for CLK_FANOUT</description>
+              <bitRange>[21:21]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OFF</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ON</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>3</dimIncrement>
+              <name>CLK_FANOUT%s_SEL</name>
+              <bitRange>[2:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CLK32K</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK12M</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK16M</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK24M</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK25M</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CLK27M</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PCLK</name>
+                  <value>0b110</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

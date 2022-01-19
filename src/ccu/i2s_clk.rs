@@ -1,22 +1,22 @@
-#[doc = "Register `SMHC1_CLK` reader"]
-pub struct R(crate::R<SMHC1_CLK_SPEC>);
+#[doc = "Register `I2S%s_CLK` reader"]
+pub struct R(crate::R<I2S_CLK_SPEC>);
 impl core::ops::Deref for R {
-    type Target = crate::R<SMHC1_CLK_SPEC>;
+    type Target = crate::R<I2S_CLK_SPEC>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl From<crate::R<SMHC1_CLK_SPEC>> for R {
+impl From<crate::R<I2S_CLK_SPEC>> for R {
     #[inline(always)]
-    fn from(reader: crate::R<SMHC1_CLK_SPEC>) -> Self {
+    fn from(reader: crate::R<I2S_CLK_SPEC>) -> Self {
         R(reader)
     }
 }
-#[doc = "Register `SMHC1_CLK` writer"]
-pub struct W(crate::W<SMHC1_CLK_SPEC>);
+#[doc = "Register `I2S%s_CLK` writer"]
+pub struct W(crate::W<I2S_CLK_SPEC>);
 impl core::ops::Deref for W {
-    type Target = crate::W<SMHC1_CLK_SPEC>;
+    type Target = crate::W<I2S_CLK_SPEC>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -28,9 +28,9 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl From<crate::W<SMHC1_CLK_SPEC>> for W {
+impl From<crate::W<I2S_CLK_SPEC>> for W {
     #[inline(always)]
-    fn from(writer: crate::W<SMHC1_CLK_SPEC>) -> Self {
+    fn from(writer: crate::W<I2S_CLK_SPEC>) -> Self {
         W(writer)
     }
 }
@@ -123,13 +123,13 @@ impl<'a> CLK_GATING_W<'a> {
 #[repr(u8)]
 pub enum CLK_SRC_SEL_A {
     #[doc = "0: `0`"]
-    HOSC = 0,
+    PLL_AUDIO0_1X = 0,
     #[doc = "1: `1`"]
-    PLL_PERI_1X = 1,
+    PLL_AUDIO0_4X = 1,
     #[doc = "2: `10`"]
-    PLL_PERI_2X = 2,
+    PLL_AUDIO1_DIV2 = 2,
     #[doc = "3: `11`"]
-    PLL_AUDIO1_DIV2 = 3,
+    PLL_AUDIO1_DIV5 = 3,
 }
 impl From<CLK_SRC_SEL_A> for u8 {
     #[inline(always)]
@@ -148,32 +148,32 @@ impl CLK_SRC_SEL_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<CLK_SRC_SEL_A> {
         match self.bits {
-            0 => Some(CLK_SRC_SEL_A::HOSC),
-            1 => Some(CLK_SRC_SEL_A::PLL_PERI_1X),
-            2 => Some(CLK_SRC_SEL_A::PLL_PERI_2X),
-            3 => Some(CLK_SRC_SEL_A::PLL_AUDIO1_DIV2),
+            0 => Some(CLK_SRC_SEL_A::PLL_AUDIO0_1X),
+            1 => Some(CLK_SRC_SEL_A::PLL_AUDIO0_4X),
+            2 => Some(CLK_SRC_SEL_A::PLL_AUDIO1_DIV2),
+            3 => Some(CLK_SRC_SEL_A::PLL_AUDIO1_DIV5),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `HOSC`"]
+    #[doc = "Checks if the value of the field is `PLL_AUDIO0_1X`"]
     #[inline(always)]
-    pub fn is_hosc(&self) -> bool {
-        **self == CLK_SRC_SEL_A::HOSC
+    pub fn is_pll_audio0_1x(&self) -> bool {
+        **self == CLK_SRC_SEL_A::PLL_AUDIO0_1X
     }
-    #[doc = "Checks if the value of the field is `PLL_PERI_1X`"]
+    #[doc = "Checks if the value of the field is `PLL_AUDIO0_4X`"]
     #[inline(always)]
-    pub fn is_pll_peri_1x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_PERI_1X
-    }
-    #[doc = "Checks if the value of the field is `PLL_PERI_2X`"]
-    #[inline(always)]
-    pub fn is_pll_peri_2x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_PERI_2X
+    pub fn is_pll_audio0_4x(&self) -> bool {
+        **self == CLK_SRC_SEL_A::PLL_AUDIO0_4X
     }
     #[doc = "Checks if the value of the field is `PLL_AUDIO1_DIV2`"]
     #[inline(always)]
     pub fn is_pll_audio1_div2(&self) -> bool {
         **self == CLK_SRC_SEL_A::PLL_AUDIO1_DIV2
+    }
+    #[doc = "Checks if the value of the field is `PLL_AUDIO1_DIV5`"]
+    #[inline(always)]
+    pub fn is_pll_audio1_div5(&self) -> bool {
+        **self == CLK_SRC_SEL_A::PLL_AUDIO1_DIV5
     }
 }
 impl core::ops::Deref for CLK_SRC_SEL_R {
@@ -195,23 +195,23 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     }
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn hosc(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::HOSC)
+    pub fn pll_audio0_1x(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::PLL_AUDIO0_1X)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn pll_peri_1x(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::PLL_PERI_1X)
+    pub fn pll_audio0_4x(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::PLL_AUDIO0_4X)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn pll_peri_2x(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::PLL_PERI_2X)
+    pub fn pll_audio1_div2(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::PLL_AUDIO1_DIV2)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pll_audio1_div2(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::PLL_AUDIO1_DIV2)
+    pub fn pll_audio1_div5(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::PLL_AUDIO1_DIV5)
     }
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
@@ -345,7 +345,7 @@ impl<'a> FACTOR_M_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
+        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
         self.w
     }
 }
@@ -365,10 +365,10 @@ impl R {
     pub fn factor_n(&self) -> FACTOR_N_R {
         FACTOR_N_R::new(((self.bits >> 8) & 0x03) as u8)
     }
-    #[doc = "Bits 0:3 - Factor M"]
+    #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     pub fn factor_m(&self) -> FACTOR_M_R {
-        FACTOR_M_R::new((self.bits & 0x0f) as u8)
+        FACTOR_M_R::new((self.bits & 0x1f) as u8)
     }
 }
 impl W {
@@ -387,7 +387,7 @@ impl W {
     pub fn factor_n(&mut self) -> FACTOR_N_W {
         FACTOR_N_W { w: self }
     }
-    #[doc = "Bits 0:3 - Factor M"]
+    #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     pub fn factor_m(&mut self) -> FACTOR_M_W {
         FACTOR_M_W { w: self }
@@ -399,21 +399,21 @@ impl W {
         self
     }
 }
-#[doc = "SMHC1 Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smhc1_clk](index.html) module"]
-pub struct SMHC1_CLK_SPEC;
-impl crate::RegisterSpec for SMHC1_CLK_SPEC {
+#[doc = "I2S Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2s_clk](index.html) module"]
+pub struct I2S_CLK_SPEC;
+impl crate::RegisterSpec for I2S_CLK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [smhc1_clk::R](R) reader structure"]
-impl crate::Readable for SMHC1_CLK_SPEC {
+#[doc = "`read()` method returns [i2s_clk::R](R) reader structure"]
+impl crate::Readable for I2S_CLK_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [smhc1_clk::W](W) writer structure"]
-impl crate::Writable for SMHC1_CLK_SPEC {
+#[doc = "`write(|w| ..)` method takes [i2s_clk::W](W) writer structure"]
+impl crate::Writable for I2S_CLK_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC1_CLK to value 0"]
-impl crate::Resettable for SMHC1_CLK_SPEC {
+#[doc = "`reset()` method sets I2S%s_CLK to value 0"]
+impl crate::Resettable for I2S_CLK_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
         0

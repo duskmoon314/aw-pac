@@ -34,7 +34,103 @@ impl From<crate::W<AVS_CLK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Gating Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CLK_GATING_A {
+    #[doc = "0: `0`"]
+    OFF = 0,
+    #[doc = "1: `1`"]
+    ON = 1,
+}
+impl From<CLK_GATING_A> for bool {
+    #[inline(always)]
+    fn from(variant: CLK_GATING_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `CLK_GATING` reader - Gating Clock"]
+pub struct CLK_GATING_R(crate::FieldReader<bool, CLK_GATING_A>);
+impl CLK_GATING_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        CLK_GATING_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLK_GATING_A {
+        match self.bits {
+            false => CLK_GATING_A::OFF,
+            true => CLK_GATING_A::ON,
+        }
+    }
+    #[doc = "Checks if the value of the field is `OFF`"]
+    #[inline(always)]
+    pub fn is_off(&self) -> bool {
+        **self == CLK_GATING_A::OFF
+    }
+    #[doc = "Checks if the value of the field is `ON`"]
+    #[inline(always)]
+    pub fn is_on(&self) -> bool {
+        **self == CLK_GATING_A::ON
+    }
+}
+impl core::ops::Deref for CLK_GATING_R {
+    type Target = crate::FieldReader<bool, CLK_GATING_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `CLK_GATING` writer - Gating Clock"]
+pub struct CLK_GATING_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CLK_GATING_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLK_GATING_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn off(self) -> &'a mut W {
+        self.variant(CLK_GATING_A::OFF)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn on(self) -> &'a mut W {
+        self.variant(CLK_GATING_A::ON)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 31 - Gating Clock"]
+    #[inline(always)]
+    pub fn clk_gating(&self) -> CLK_GATING_R {
+        CLK_GATING_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 31 - Gating Clock"]
+    #[inline(always)]
+    pub fn clk_gating(&mut self) -> CLK_GATING_W {
+        CLK_GATING_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

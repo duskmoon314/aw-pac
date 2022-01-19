@@ -93,120 +93,114 @@ pub struct RegisterBlock {
     #[doc = "0x510 - PSI Clock Register"]
     pub psi_clk: crate::Reg<psi_clk::PSI_CLK_SPEC>,
     _reserved34: [u8; 0x0c],
-    #[doc = "0x520 - APB0 Clock Register"]
-    pub apb0_clk: crate::Reg<apb0_clk::APB0_CLK_SPEC>,
-    #[doc = "0x524 - APB1 Clock Register"]
-    pub apb1_clk: crate::Reg<apb1_clk::APB1_CLK_SPEC>,
-    _reserved36: [u8; 0x18],
+    #[doc = "0x520..0x528 - APB Clock Register"]
+    pub apb_clk: [crate::Reg<apb_clk::APB_CLK_SPEC>; 2],
+    _reserved35: [u8; 0x18],
     #[doc = "0x540 - MBUS Clock Register"]
     pub mbus_clk: crate::Reg<mbus_clk::MBUS_CLK_SPEC>,
-    _reserved37: [u8; 0xbc],
+    _reserved36: [u8; 0xbc],
     #[doc = "0x600 - DE Clock Register"]
     pub de_clk: crate::Reg<de_clk::DE_CLK_SPEC>,
-    _reserved38: [u8; 0x08],
+    _reserved37: [u8; 0x08],
     #[doc = "0x60c - DE Bus Gating Reset Register"]
     pub de_bgr: crate::Reg<de_bgr::DE_BGR_SPEC>,
-    _reserved39: [u8; 0x10],
+    _reserved38: [u8; 0x10],
     #[doc = "0x620 - DI Clock Register"]
     pub di_clk: crate::Reg<di_clk::DI_CLK_SPEC>,
-    _reserved40: [u8; 0x08],
+    _reserved39: [u8; 0x08],
     #[doc = "0x62c - DI Bus Gating Reset Register"]
     pub di_bgr: crate::Reg<di_bgr::DI_BGR_SPEC>,
     #[doc = "0x630 - G2D Clock Register"]
     pub g2d_clk: crate::Reg<g2d_clk::G2D_CLK_SPEC>,
-    _reserved42: [u8; 0x08],
+    _reserved41: [u8; 0x08],
     #[doc = "0x63c - G2D Bus Gating Reset Register"]
     pub g2d_bgr: crate::Reg<g2d_bgr::G2D_BGR_SPEC>,
-    _reserved43: [u8; 0x40],
+    _reserved42: [u8; 0x40],
     #[doc = "0x680 - CE Clock Register"]
     pub ce_clk: crate::Reg<ce_clk::CE_CLK_SPEC>,
-    _reserved44: [u8; 0x08],
+    _reserved43: [u8; 0x08],
     #[doc = "0x68c - CE Bus Gating Reset Register"]
     pub ce_bgr: crate::Reg<ce_bgr::CE_BGR_SPEC>,
     #[doc = "0x690 - VE Clock Register"]
     pub ve_clk: crate::Reg<ve_clk::VE_CLK_SPEC>,
-    _reserved46: [u8; 0x08],
+    _reserved45: [u8; 0x08],
     #[doc = "0x69c - VE Bus Gating Reset Register"]
     pub ve_bgr: crate::Reg<ve_bgr::VE_BGR_SPEC>,
-    _reserved47: [u8; 0x6c],
+    _reserved46: [u8; 0x6c],
     #[doc = "0x70c - DMA Bus Gating Reset Register"]
     pub dma_bgr: crate::Reg<dma_bgr::DMA_BGR_SPEC>,
-    _reserved48: [u8; 0x0c],
+    _reserved47: [u8; 0x0c],
     #[doc = "0x71c - MSGBOX Bus Gating Reset Register"]
     pub msgbox_bgr: crate::Reg<msgbox_bgr::MSGBOX_BGR_SPEC>,
-    _reserved49: [u8; 0x0c],
+    _reserved48: [u8; 0x0c],
     #[doc = "0x72c - SPINLOCK Bus Gating Reset Register"]
     pub spinlock_bgr: crate::Reg<spinlock_bgr::SPINLOCK_BGR_SPEC>,
-    _reserved50: [u8; 0x0c],
+    _reserved49: [u8; 0x0c],
     #[doc = "0x73c - HSTIMER Bus Gating Reset Register"]
     pub hstimer_bgr: crate::Reg<hstimer_bgr::HSTIMER_BGR_SPEC>,
     #[doc = "0x740 - AVS Clock Register"]
     pub avs_clk: crate::Reg<avs_clk::AVS_CLK_SPEC>,
-    _reserved52: [u8; 0x48],
+    _reserved51: [u8; 0x48],
     #[doc = "0x78c - DBGSYS Bus Gating Reset Register"]
     pub dbgsys_bgr: crate::Reg<dbgsys_bgr::DBGSYS_BGR_SPEC>,
-    _reserved53: [u8; 0x1c],
+    _reserved52: [u8; 0x1c],
     #[doc = "0x7ac - PWM Bus Gating Reset Register"]
     pub pwm_bgr: crate::Reg<pwm_bgr::PWM_BGR_SPEC>,
-    _reserved54: [u8; 0x0c],
+    _reserved53: [u8; 0x0c],
     #[doc = "0x7bc - IOMMU Bus Gating Reset Register"]
     pub iommu_bgr: crate::Reg<iommu_bgr::IOMMU_BGR_SPEC>,
-    _reserved55: [u8; 0x40],
+    _reserved54: [u8; 0x40],
     #[doc = "0x800 - DRAM Clock Register"]
     pub dram_clk: crate::Reg<dram_clk::DRAM_CLK_SPEC>,
     #[doc = "0x804 - MBUS Master Clock Gating Register"]
     pub mbus_mat_clk_gating: crate::Reg<mbus_mat_clk_gating::MBUS_MAT_CLK_GATING_SPEC>,
-    _reserved57: [u8; 0x04],
+    _reserved56: [u8; 0x04],
     #[doc = "0x80c - DRAM Bus Gating Reset Register"]
     pub dram_bgr: crate::Reg<dram_bgr::DRAM_BGR_SPEC>,
-    _reserved58: [u8; 0x20],
+    _reserved57: [u8; 0x20],
     #[doc = "0x830 - SMHC0 Clock Register"]
     pub smhc0_clk: crate::Reg<smhc0_clk::SMHC0_CLK_SPEC>,
     #[doc = "0x834 - SMHC1 Clock Register"]
     pub smhc1_clk: crate::Reg<smhc1_clk::SMHC1_CLK_SPEC>,
     #[doc = "0x838 - SMHC2 Clock Register"]
     pub smhc2_clk: crate::Reg<smhc2_clk::SMHC2_CLK_SPEC>,
-    _reserved61: [u8; 0x10],
+    _reserved60: [u8; 0x10],
     #[doc = "0x84c - SMHC Bus Gating Reset Register"]
     pub smhc_bgr: crate::Reg<smhc_bgr::SMHC_BGR_SPEC>,
-    _reserved62: [u8; 0xbc],
+    _reserved61: [u8; 0xbc],
     #[doc = "0x90c - UART Bus Gating Reset Register"]
     pub uart_bgr: crate::Reg<uart_bgr::UART_BGR_SPEC>,
-    _reserved63: [u8; 0x0c],
+    _reserved62: [u8; 0x0c],
     #[doc = "0x91c - TWI Bus Gating Reset Register"]
     pub twi_bgr: crate::Reg<twi_bgr::TWI_BGR_SPEC>,
-    _reserved64: [u8; 0x20],
+    _reserved63: [u8; 0x20],
     #[doc = "0x940 - SPI0 Clock Register"]
     pub spi0_clk: crate::Reg<spi0_clk::SPI0_CLK_SPEC>,
     #[doc = "0x944 - SPI1 Clock Register"]
     pub spi1_clk: crate::Reg<spi1_clk::SPI1_CLK_SPEC>,
-    _reserved66: [u8; 0x24],
+    _reserved65: [u8; 0x24],
     #[doc = "0x96c - SPI Bus Gating Reset Register"]
     pub spi_bgr: crate::Reg<spi_bgr::SPI_BGR_SPEC>,
     #[doc = "0x970 - EMAC_25M Clock Register"]
     pub emac_25m_clk: crate::Reg<emac_25m_clk::EMAC_25M_CLK_SPEC>,
-    _reserved68: [u8; 0x08],
+    _reserved67: [u8; 0x08],
     #[doc = "0x97c - EMAC Bus Gating Reset Register"]
     pub emac_bgr: crate::Reg<emac_bgr::EMAC_BGR_SPEC>,
-    _reserved69: [u8; 0x40],
+    _reserved68: [u8; 0x40],
     #[doc = "0x9c0 - IRTX Clock Register"]
     pub irtx_clk: crate::Reg<irtx_clk::IRTX_CLK_SPEC>,
-    _reserved70: [u8; 0x08],
+    _reserved69: [u8; 0x08],
     #[doc = "0x9cc - IRTX Bus Gating Reset Register"]
     pub irtx_bgr: crate::Reg<irtx_bgr::IRTX_BGR_SPEC>,
-    _reserved71: [u8; 0x1c],
+    _reserved70: [u8; 0x1c],
     #[doc = "0x9ec - GPADC Bus Gating Reset Register"]
     pub gpadc_bgr: crate::Reg<gpadc_bgr::GPADC_BGR_SPEC>,
-    _reserved72: [u8; 0x0c],
+    _reserved71: [u8; 0x0c],
     #[doc = "0x9fc - THS Bus Gating Reset Register"]
     pub ths_bgr: crate::Reg<ths_bgr::THS_BGR_SPEC>,
-    _reserved73: [u8; 0x10],
-    #[doc = "0xa10 - I2S0 Clock Register"]
-    pub i2s0_clk: crate::Reg<i2s0_clk::I2S0_CLK_SPEC>,
-    #[doc = "0xa14 - I2S1 Clock Register"]
-    pub i2s1_clk: crate::Reg<i2s1_clk::I2S1_CLK_SPEC>,
-    #[doc = "0xa18 - I2S2 Clock Register"]
-    pub i2s2_clk: crate::Reg<i2s2_clk::I2S2_CLK_SPEC>,
+    _reserved72: [u8; 0x10],
+    #[doc = "0xa10..0xa1c - I2S Clock Register"]
+    pub i2s_clk: [crate::Reg<i2s_clk::I2S_CLK_SPEC>; 3],
     #[doc = "0xa1c - I2S2_ASRC Clock Register"]
     pub i2s2_asrc_clk: crate::Reg<i2s2_asrc_clk::I2S2_ASRC_CLK_SPEC>,
     #[doc = "0xa20 - I2S Bus Gating Reset Register"]
@@ -217,95 +211,98 @@ pub struct RegisterBlock {
     pub owa_rx_clk: crate::Reg<owa_rx_clk::OWA_RX_CLK_SPEC>,
     #[doc = "0xa2c - OWA Bus Gating Reset Register"]
     pub owa_bgr: crate::Reg<owa_bgr::OWA_BGR_SPEC>,
-    _reserved81: [u8; 0x10],
+    _reserved78: [u8; 0x10],
     #[doc = "0xa40 - DMIC Clock Register"]
     pub dmic_clk: crate::Reg<dmic_clk::DMIC_CLK_SPEC>,
-    _reserved82: [u8; 0x08],
+    _reserved79: [u8; 0x08],
     #[doc = "0xa4c - DMIC Bus Gating Reset Register"]
     pub dmic_bgr: crate::Reg<dmic_bgr::DMIC_BGR_SPEC>,
     #[doc = "0xa50 - AUDIO_CODEC_DAC Clock Register"]
     pub audio_codec_dac_clk: crate::Reg<audio_codec_dac_clk::AUDIO_CODEC_DAC_CLK_SPEC>,
     #[doc = "0xa54 - AUDIO_CODEC_ADC Clock Register"]
     pub audio_codec_adc_clk: crate::Reg<audio_codec_adc_clk::AUDIO_CODEC_ADC_CLK_SPEC>,
-    _reserved85: [u8; 0x04],
+    _reserved82: [u8; 0x04],
     #[doc = "0xa5c - AUDIO_CODEC Bus Gating Reset Register"]
     pub audio_codec_bgr: crate::Reg<audio_codec_bgr::AUDIO_CODEC_BGR_SPEC>,
-    _reserved86: [u8; 0x10],
+    _reserved83: [u8; 0x10],
     #[doc = "0xa70 - USB0 Clock Register"]
     pub usb0_clk: crate::Reg<usb0_clk::USB0_CLK_SPEC>,
     #[doc = "0xa74 - USB1 Clock Register"]
     pub usb1_clk: crate::Reg<usb1_clk::USB1_CLK_SPEC>,
-    _reserved88: [u8; 0x14],
+    _reserved85: [u8; 0x14],
     #[doc = "0xa8c - USB Bus Gating Reset Register"]
     pub usb_bgr: crate::Reg<usb_bgr::USB_BGR_SPEC>,
-    _reserved89: [u8; 0x2c],
+    _reserved86: [u8; 0x0c],
+    #[doc = "0xa9c - LRADC Bus Gating Reset Register"]
+    pub lradc_bgr: crate::Reg<lradc_bgr::LRADC_BGR_SPEC>,
+    _reserved87: [u8; 0x1c],
     #[doc = "0xabc - DPSS_TOP Bus Gating Reset Register"]
     pub dpss_top_bgr: crate::Reg<dpss_top_bgr::DPSS_TOP_BGR_SPEC>,
-    _reserved90: [u8; 0x64],
+    _reserved88: [u8; 0x64],
     #[doc = "0xb24 - DSI Clock Register"]
     pub dsi_clk: crate::Reg<dsi_clk::DSI_CLK_SPEC>,
-    _reserved91: [u8; 0x24],
+    _reserved89: [u8; 0x24],
     #[doc = "0xb4c - DSI Bus Gating Reset Register"]
     pub dsi_bgr: crate::Reg<dsi_bgr::DSI_BGR_SPEC>,
-    _reserved92: [u8; 0x10],
+    _reserved90: [u8; 0x10],
     #[doc = "0xb60 - TCONLCD Clock Register"]
     pub tconlcd_clk: crate::Reg<tconlcd_clk::TCONLCD_CLK_SPEC>,
-    _reserved93: [u8; 0x18],
+    _reserved91: [u8; 0x18],
     #[doc = "0xb7c - TCONLCD Bus Gating Reset Register"]
     pub tconlcd_bgr: crate::Reg<tconlcd_bgr::TCONLCD_BGR_SPEC>,
     #[doc = "0xb80 - TCONTV Clock Register"]
     pub tcontv_clk: crate::Reg<tcontv_clk::TCONTV_CLK_SPEC>,
-    _reserved95: [u8; 0x18],
+    _reserved93: [u8; 0x18],
     #[doc = "0xb9c - TCONTV Bus Gating Reset Register"]
     pub tcontv_bgr: crate::Reg<tcontv_bgr::TCONTV_BGR_SPEC>,
-    _reserved96: [u8; 0x0c],
+    _reserved94: [u8; 0x0c],
     #[doc = "0xbac - LVDS Bus Gating Reset Register"]
     pub lvds_bgr: crate::Reg<lvds_bgr::LVDS_BGR_SPEC>,
     #[doc = "0xbb0 - TVE Clock Register"]
     pub tve_clk: crate::Reg<tve_clk::TVE_CLK_SPEC>,
-    _reserved98: [u8; 0x08],
+    _reserved96: [u8; 0x08],
     #[doc = "0xbbc - TVE Bus Gating Reset Register"]
     pub tve_bgr: crate::Reg<tve_bgr::TVE_BGR_SPEC>,
     #[doc = "0xbc0 - TVD Clock Register"]
     pub tvd_clk: crate::Reg<tvd_clk::TVD_CLK_SPEC>,
-    _reserved100: [u8; 0x18],
+    _reserved98: [u8; 0x18],
     #[doc = "0xbdc - TVD Bus Gating Reset Register"]
     pub tvd_bgr: crate::Reg<tvd_bgr::TVD_BGR_SPEC>,
-    _reserved101: [u8; 0x10],
+    _reserved99: [u8; 0x10],
     #[doc = "0xbf0 - LEDC Clock Register"]
     pub ledc_clk: crate::Reg<ledc_clk::LEDC_CLK_SPEC>,
-    _reserved102: [u8; 0x08],
+    _reserved100: [u8; 0x08],
     #[doc = "0xbfc - LEDC Bus Gating Reset Register"]
     pub ledc_bgr: crate::Reg<ledc_bgr::LEDC_BGR_SPEC>,
-    _reserved103: [u8; 0x04],
+    _reserved101: [u8; 0x04],
     #[doc = "0xc04 - CSI Clock Register"]
     pub csi_clk: crate::Reg<csi_clk::CSI_CLK_SPEC>,
     #[doc = "0xc08 - CSI Master Clock Register"]
     pub csi_master_clk: crate::Reg<csi_master_clk::CSI_MASTER_CLK_SPEC>,
-    _reserved105: [u8; 0x10],
+    _reserved103: [u8; 0x10],
     #[doc = "0xc1c - CSI Bus Gating Reset Register"]
     pub csi_bgr: crate::Reg<csi_bgr::CSI_BGR_SPEC>,
-    _reserved106: [u8; 0x30],
+    _reserved104: [u8; 0x30],
     #[doc = "0xc50 - TPADC Clock Register"]
     pub tpadc_clk: crate::Reg<tpadc_clk::TPADC_CLK_SPEC>,
-    _reserved107: [u8; 0x08],
+    _reserved105: [u8; 0x08],
     #[doc = "0xc5c - TPADC Bus Gating Reset Register"]
     pub tpadc_bgr: crate::Reg<tpadc_bgr::TPADC_BGR_SPEC>,
-    _reserved108: [u8; 0x10],
+    _reserved106: [u8; 0x10],
     #[doc = "0xc70 - DSP Clock Register"]
     pub dsp_clk: crate::Reg<dsp_clk::DSP_CLK_SPEC>,
-    _reserved109: [u8; 0x08],
+    _reserved107: [u8; 0x08],
     #[doc = "0xc7c - DSP Bus Gating Reset Register"]
     pub dsp_bgr: crate::Reg<dsp_bgr::DSP_BGR_SPEC>,
-    _reserved110: [u8; 0x80],
+    _reserved108: [u8; 0x80],
     #[doc = "0xd00 - RISC-V Clock Register"]
     pub riscv_clk: crate::Reg<riscv_clk::RISCV_CLK_SPEC>,
     #[doc = "0xd04 - RISC-V GATING Configuration Register"]
     pub riscv_gating: crate::Reg<riscv_gating::RISCV_GATING_SPEC>,
-    _reserved112: [u8; 0x04],
+    _reserved110: [u8; 0x04],
     #[doc = "0xd0c - RISC-V_CFG Bus Gating Reset Register"]
     pub riscv_cfg_bgr: crate::Reg<riscv_cfg_bgr::RISCV_CFG_BGR_SPEC>,
-    _reserved113: [u8; 0x01f4],
+    _reserved111: [u8; 0x01f4],
     #[doc = "0xf04 - PLL Lock Debug Control Register"]
     pub pll_lock_dbg_ctrl: crate::Reg<pll_lock_dbg_ctrl::PLL_LOCK_DBG_CTRL_SPEC>,
     #[doc = "0xf08 - Frequency Detect Control Register"]
@@ -314,7 +311,7 @@ pub struct RegisterBlock {
     pub fre_up_lim: crate::Reg<fre_up_lim::FRE_UP_LIM_SPEC>,
     #[doc = "0xf10 - Frequency Down Limit Register"]
     pub fre_down_lim: crate::Reg<fre_down_lim::FRE_DOWN_LIM_SPEC>,
-    _reserved117: [u8; 0x1c],
+    _reserved115: [u8; 0x1c],
     #[doc = "0xf30 - CCU FANOUT CLOCK GATE Register"]
     pub ccu_fan_gate: crate::Reg<ccu_fan_gate::CCU_FAN_GATE_SPEC>,
     #[doc = "0xf34 - CLK27M FANOUT Register"]
@@ -460,14 +457,10 @@ pub mod cpu_gating;
 pub type PSI_CLK = crate::Reg<psi_clk::PSI_CLK_SPEC>;
 #[doc = "PSI Clock Register"]
 pub mod psi_clk;
-#[doc = "APB0_CLK register accessor: an alias for `Reg<APB0_CLK_SPEC>`"]
-pub type APB0_CLK = crate::Reg<apb0_clk::APB0_CLK_SPEC>;
-#[doc = "APB0 Clock Register"]
-pub mod apb0_clk;
-#[doc = "APB1_CLK register accessor: an alias for `Reg<APB1_CLK_SPEC>`"]
-pub type APB1_CLK = crate::Reg<apb1_clk::APB1_CLK_SPEC>;
-#[doc = "APB1 Clock Register"]
-pub mod apb1_clk;
+#[doc = "APB_CLK register accessor: an alias for `Reg<APB_CLK_SPEC>`"]
+pub type APB_CLK = crate::Reg<apb_clk::APB_CLK_SPEC>;
+#[doc = "APB Clock Register"]
+pub mod apb_clk;
 #[doc = "MBUS_CLK register accessor: an alias for `Reg<MBUS_CLK_SPEC>`"]
 pub type MBUS_CLK = crate::Reg<mbus_clk::MBUS_CLK_SPEC>;
 #[doc = "MBUS Clock Register"]
@@ -616,18 +609,10 @@ pub mod gpadc_bgr;
 pub type THS_BGR = crate::Reg<ths_bgr::THS_BGR_SPEC>;
 #[doc = "THS Bus Gating Reset Register"]
 pub mod ths_bgr;
-#[doc = "I2S0_CLK register accessor: an alias for `Reg<I2S0_CLK_SPEC>`"]
-pub type I2S0_CLK = crate::Reg<i2s0_clk::I2S0_CLK_SPEC>;
-#[doc = "I2S0 Clock Register"]
-pub mod i2s0_clk;
-#[doc = "I2S1_CLK register accessor: an alias for `Reg<I2S1_CLK_SPEC>`"]
-pub type I2S1_CLK = crate::Reg<i2s1_clk::I2S1_CLK_SPEC>;
-#[doc = "I2S1 Clock Register"]
-pub mod i2s1_clk;
-#[doc = "I2S2_CLK register accessor: an alias for `Reg<I2S2_CLK_SPEC>`"]
-pub type I2S2_CLK = crate::Reg<i2s2_clk::I2S2_CLK_SPEC>;
-#[doc = "I2S2 Clock Register"]
-pub mod i2s2_clk;
+#[doc = "I2S_CLK register accessor: an alias for `Reg<I2S_CLK_SPEC>`"]
+pub type I2S_CLK = crate::Reg<i2s_clk::I2S_CLK_SPEC>;
+#[doc = "I2S Clock Register"]
+pub mod i2s_clk;
 #[doc = "I2S2_ASRC_CLK register accessor: an alias for `Reg<I2S2_ASRC_CLK_SPEC>`"]
 pub type I2S2_ASRC_CLK = crate::Reg<i2s2_asrc_clk::I2S2_ASRC_CLK_SPEC>;
 #[doc = "I2S2_ASRC Clock Register"]
@@ -680,6 +665,10 @@ pub mod usb1_clk;
 pub type USB_BGR = crate::Reg<usb_bgr::USB_BGR_SPEC>;
 #[doc = "USB Bus Gating Reset Register"]
 pub mod usb_bgr;
+#[doc = "LRADC_BGR register accessor: an alias for `Reg<LRADC_BGR_SPEC>`"]
+pub type LRADC_BGR = crate::Reg<lradc_bgr::LRADC_BGR_SPEC>;
+#[doc = "LRADC Bus Gating Reset Register"]
+pub mod lradc_bgr;
 #[doc = "DPSS_TOP_BGR register accessor: an alias for `Reg<DPSS_TOP_BGR_SPEC>`"]
 pub type DPSS_TOP_BGR = crate::Reg<dpss_top_bgr::DPSS_TOP_BGR_SPEC>;
 #[doc = "DPSS_TOP Bus Gating Reset Register"]

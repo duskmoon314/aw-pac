@@ -52,31 +52,31 @@ impl R {
     #[doc = "PX_Port Power Value"]
     #[inline(always)]
     pub unsafe fn p_pwr_val(&self, n: usize) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> n + 2) & 0x01) != 0)
+        P_PWR_VAL_R::new(((self.bits >> (n + 2)) & 0x01) != 0)
     }
     #[doc = "Bit 2 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pC_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn pc_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pD_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn pd_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pE_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn pe_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pF_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn pf_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pG_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn pg_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 6) & 0x01) != 0)
     }
 }

@@ -179,7 +179,7 @@ impl R {
     #[doc = "PE Multi_Driving Select"]
     #[inline(always)]
     pub unsafe fn pe_drv(&self, n: usize) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> (n - 8) * 4) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> ((n - 8) * 4)) & 0x03) as u8)
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
     #[inline(always)]

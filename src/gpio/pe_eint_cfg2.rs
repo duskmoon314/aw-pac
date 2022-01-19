@@ -197,7 +197,7 @@ impl R {
     #[doc = "External INT Mode"]
     #[inline(always)]
     pub unsafe fn eint_cfg(&self, n: usize) -> EINT_CFG_R {
-        EINT_CFG_R::new(((self.bits >> (n - 16) * 4) & 0x0f) as u8)
+        EINT_CFG_R::new(((self.bits >> ((n - 16) * 4)) & 0x0f) as u8)
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]

@@ -161,7 +161,7 @@ impl R {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
     pub unsafe fn pe_pull(&self, n: usize) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> n * 2) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> (n * 2)) & 0x03) as u8)
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
     #[inline(always)]
