@@ -8129,61 +8129,187 @@
           <name>HS_TMR_IRQ_EN</name>
           <description>HS Timer IRQ Enable Register</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>HS_TMR%s_INT_EN</name>
+              <description>HSTimer Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>HS_TMR_IRQ_STAS</name>
           <description>HS Timer Status Register</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>HS_TMR%s_IRQ_PEND</name>
+              <description>HSTimer IRQ Pending</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>HS_TMR0_CTRL</name>
-          <description>HS Timer0 Control Register</description>
+          <dim>2</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>HS_TMR%s_CTRL</name>
+          <description>HS Timer Control Register</description>
           <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>HS_TMR_TEST</name>
+              <description>Select the operating mode for HSTimer</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Test</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>HS_TMR_MODE</name>
+              <description>Select the timing mode for HSTimer</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>periodic</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>one_shot</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>HS_TMR_CLK</name>
+              <description>Select the pre-scale for the HSTimer clock sources</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P1</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P4</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P8</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P16</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>HS_TMR_RELOAD</name>
+              <description>HSTimer Reload</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToSet</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reload</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>HS_TMR_EN</name>
+              <description>HSTimer Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>stop_pause</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>HS_TMR0_INTV_LO</name>
-          <description>HS Timer0 Interval Value Low Register</description>
+          <dim>2</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>HS_TMR%s_INTV_LO</name>
+          <description>HS Timer Interval Value Low Register</description>
           <addressOffset>0x0024</addressOffset>
         </register>
         <register>
-          <name>HS_TMR0_INTV_HI</name>
-          <description>HS Timer0 Interval Value High Register</description>
+          <dim>2</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>HS_TMR%s_INTV_HI</name>
+          <description>HS Timer Interval Value High Register</description>
           <addressOffset>0x0028</addressOffset>
+          <fields>
+            <field>
+              <name>HS_TMR_INTV_VALUE_HI</name>
+              <bitRange>[23:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>HS_TMR0_CURNT_LO</name>
-          <description>HS Timer0 Current Value Low Register</description>
+          <dim>2</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>HS_TMR%s_CURNT_LO</name>
+          <description>HS Timer Current Value Low Register</description>
           <addressOffset>0x002C</addressOffset>
         </register>
         <register>
-          <name>HS_TMR0_CURNT_HI</name>
-          <description>HS Timer0 Current Value High Register</description>
+          <dim>2</dim>
+          <dimIncrement>0x20</dimIncrement>
+          <name>HS_TMR%s_CURNT_HI</name>
+          <description>HS Timer Current Value High Register</description>
           <addressOffset>0x0030</addressOffset>
-        </register>
-        <register>
-          <name>HS_TMR1_CTRL</name>
-          <description>HS Timer1 Control Register</description>
-          <addressOffset>0x0040</addressOffset>
-        </register>
-        <register>
-          <name>HS_TMR1_INTV_LO</name>
-          <description>HS Timer1 Interval Value Low Register</description>
-          <addressOffset>0x0044</addressOffset>
-        </register>
-        <register>
-          <name>HS_TMR1_INTV_HI</name>
-          <description>HS Timer1 Interval Value High Register</description>
-          <addressOffset>0x0048</addressOffset>
-        </register>
-        <register>
-          <name>HS_TMR1_CURNT_LO</name>
-          <description>HS Timer1 Current Value Low Register</description>
-          <addressOffset>0x004C</addressOffset>
-        </register>
-        <register>
-          <name>HS_TMR1_CURNT_HI</name>
-          <description>HS Timer1 Current Value High Register</description>
-          <addressOffset>0x0050</addressOffset>
+          <fields>
+            <field>
+              <name>HS_TMR_CUR_VALUE_HI</name>
+              <bitRange>[23:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
