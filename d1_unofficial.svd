@@ -6532,36 +6532,734 @@
           <name>DSP_BOOT_RAMMAP</name>
           <description>DSP Boot SRAM Remap Control Register</description>
           <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>DSP_BOOT_SRAM_REMAP_ENABLE</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DSP_SYS</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SYS_BOOT</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>VER</name>
           <description>Version Register</description>
           <addressOffset>0x0024</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>BOOT_SEL_PAD_STA</name>
+              <bitRange>[12:11]</bitRange>
+            </field>
+            <field>
+              <name>FEL_SEL_PAD_STA</name>
+              <description>Fel Select Pin Status</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RUN_FEL</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TRY_MEDIA_BOOT</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_EPHY_CLK0</name>
           <description>EMAC-EPHY Clock Register 0</description>
           <addressOffset>0x0030</addressOffset>
+          <fields>
+            <field>
+              <name>BPS_EFUSE</name>
+              <bitRange>[31:28]</bitRange>
+            </field>
+            <field>
+              <name>XMII_SEL</name>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Internal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>External</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EPHY_MODE</name>
+              <bitRange>[26:25]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Simulation</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AFE_Test</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PHY_ADDR</name>
+              <bitRange>[24:20]</bitRange>
+            </field>
+            <field>
+              <name>CLK_SEL</name>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F25M</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F24M</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LED_POL</name>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>High</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Low</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SHUTDOWN</name>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Power_up</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Shut_down</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PHY_SELECT</name>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>External</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Internal</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RMII_EN</name>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ETXDC</name>
+              <bitRange>[12:10]</bitRange>
+            </field>
+            <field>
+              <name>ERXDC</name>
+              <bitRange>[9:5]</bitRange>
+            </field>
+            <field>
+              <name>ERXIE</name>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ETXIE</name>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EPIT</name>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MII</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RGMII</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ETCS</name>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MII</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>External_GMII_RGMII</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Internal_GMII_RGMII</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SYS_LDO_CTRL</name>
           <description>System LDO Control Register</description>
           <addressOffset>0x0150</addressOffset>
+          <fields>
+            <field>
+              <name>SPARE</name>
+              <bitRange>[31:24]</bitRange>
+            </field>
+            <field>
+              <name>LDOB_TRIM</name>
+              <bitRange>[15:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>O1_167</name>
+                  <value>0b000000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_18</name>
+                  <value>0b000001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_193</name>
+                  <value>0b000010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_207</name>
+                  <value>0b000011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_22</name>
+                  <value>0b000100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_233</name>
+                  <value>0b000101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_247</name>
+                  <value>0b000110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_260</name>
+                  <value>0b000111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_273</name>
+                  <value>0b001000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_287</name>
+                  <value>0b001001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_3</name>
+                  <value>0b001010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_313</name>
+                  <value>0b001011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_327</name>
+                  <value>0b001100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_340</name>
+                  <value>0b001101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_353</name>
+                  <value>0b001110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_367</name>
+                  <value>0b001111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_38</name>
+                  <value>0b010000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_393</name>
+                  <value>0b010001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_407</name>
+                  <value>0b010010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_42</name>
+                  <value>0b010011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_433</name>
+                  <value>0b010100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_447</name>
+                  <value>0b010101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_46</name>
+                  <value>0b010110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_473</name>
+                  <value>0b010111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_487</name>
+                  <value>0b011000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_5</name>
+                  <value>0b011001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_513</name>
+                  <value>0b011010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_527</name>
+                  <value>0b011011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_54</name>
+                  <value>0b011100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_553</name>
+                  <value>0b011101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_567</name>
+                  <value>0b011110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_58</name>
+                  <value>0b011111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_593</name>
+                  <value>0b100000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_607</name>
+                  <value>0b100001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_627</name>
+                  <value>0b100010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_64</name>
+                  <value>0b100011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_653</name>
+                  <value>0b100100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_667</name>
+                  <value>0b100101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_680</name>
+                  <value>0b100110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_693</name>
+                  <value>0b100111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_707</name>
+                  <value>0b101000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_720</name>
+                  <value>0b101001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_733</name>
+                  <value>0b101010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_747</name>
+                  <value>0b101011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_76</name>
+                  <value>0b101100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_773</name>
+                  <value>0b101101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_787</name>
+                  <value>0b101110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_8</name>
+                  <value>0b101111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_813</name>
+                  <value>0b110000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_827</name>
+                  <value>0b110001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_84</name>
+                  <value>0b110010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_853</name>
+                  <value>0b110011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_867</name>
+                  <value>0b110100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_88</name>
+                  <value>0b110101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_893</name>
+                  <value>0b110110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_907</name>
+                  <value>0b110111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_92</name>
+                  <value>0b111000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_933</name>
+                  <value>0b111001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_947</name>
+                  <value>0b111010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_96</name>
+                  <value>0b111011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_973</name>
+                  <value>0b111100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_987</name>
+                  <value>0b111101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O2</name>
+                  <value>0b111110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O2_013</name>
+                  <value>0b111111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LDOA_TRIM</name>
+              <bitRange>[7:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>O1_593</name>
+                  <value>0b00000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_607</name>
+                  <value>0b00001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_627</name>
+                  <value>0b00010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_64</name>
+                  <value>0b00011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_653</name>
+                  <value>0b00100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_667</name>
+                  <value>0b00101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_680</name>
+                  <value>0b00110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_693</name>
+                  <value>0b00111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_707</name>
+                  <value>0b01000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_720</name>
+                  <value>0b01001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_733</name>
+                  <value>0b01010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_747</name>
+                  <value>0b01011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_76</name>
+                  <value>0b01100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_773</name>
+                  <value>0b01101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_787</name>
+                  <value>0b01110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_8</name>
+                  <value>0b01111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_813</name>
+                  <value>0b10000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_827</name>
+                  <value>0b10001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_84</name>
+                  <value>0b10010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_853</name>
+                  <value>0b10011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_867</name>
+                  <value>0b10100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_88</name>
+                  <value>0b10101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_893</name>
+                  <value>0b10110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_907</name>
+                  <value>0b10111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_92</name>
+                  <value>0b11000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_933</name>
+                  <value>0b11001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_947</name>
+                  <value>0b11010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_96</name>
+                  <value>0b11011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_973</name>
+                  <value>0b11100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O1_987</name>
+                  <value>0b11101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O2</name>
+                  <value>0b11110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O2_013</name>
+                  <value>0b11111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RESCAL_CTRL</name>
           <description>Resistor Calibration Control Register</description>
           <addressOffset>0x0160</addressOffset>
+          <fields>
+            <field>
+              <name>DDR_RES240_Trimming_SEL</name>
+              <description>240ohms Resistor Trimming Source Select</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESCAL</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RES240_TRIM</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RESCAL_MODE</name>
+              <description>RESCAL Calibration Mode Select</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Auto_Calibration</name>
+                  <value>0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CAL_ANA_EN</name>
+              <description>Calibration Circuits Analog Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CAL_EN</name>
+              <description>Auto Calibration Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RES240_CTRL</name>
           <description>240ohms Resistor Manual Control Register</description>
           <addressOffset>0x0168</addressOffset>
+          <fields>
+            <field>
+              <name>DDR_RES240_TRIM</name>
+              <description>240ohms Resistor trimming bit</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RESCAL_STATUS</name>
           <description>Resistor Calibration Status Register</description>
           <addressOffset>0x016C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>COUT</name>
+              <description>Calibration Circuits Analog COmpare Output</description>
+              <bitRange>[8:8]</bitRange>
+            </field>
+            <field>
+              <name>RES_CAL_DO</name>
+              <description>RESCAL Calibration Results Output</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
@@ -6586,101 +7284,202 @@
           <name>RISCV_STA_ADD1_REG</name>
           <description>RISCV Start Address1 Register</description>
           <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>STA_ADD_H</name>
+              <description>Start Address High 8-bit</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RF1P_CFG_REG</name>
           <description>RF1P Configuration Register</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>RF1P_CFG</name>
+              <description>RF1P Configuration</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ROM_CFG_REG</name>
           <description>ROM Configuration Register</description>
           <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>ROM_CFG</name>
+              <description>ROM Configuration</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>WAKEUP_EN_REG</name>
           <description>Wakeup Enable Register</description>
           <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>WP_EN</name>
+              <description>Wakeup Enable</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>WAKEUP_MASK0_REG</name>
-          <description>Wakeup Mask0 Register</description>
+          <dim>5</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>WAKEUP_MASK%s_REG</name>
+          <description>Wakeup Mask Register</description>
           <addressOffset>0x0024</addressOffset>
-        </register>
-        <register>
-          <name>WAKEUP_MASK1_REG</name>
-          <description>Wakeup Mask1 Register</description>
-          <addressOffset>0x0028</addressOffset>
-        </register>
-        <register>
-          <name>WAKEUP_MASK2_REG</name>
-          <description>Wakeup Mask2 Register</description>
-          <addressOffset>0x002C</addressOffset>
-        </register>
-        <register>
-          <name>WAKEUP_MASK3_REG</name>
-          <description>Wakeup Mask3 Register</description>
-          <addressOffset>0x0030</addressOffset>
-        </register>
-        <register>
-          <name>WAKEUP_MASK4_REG</name>
-          <description>Wakeup Mask4 Register</description>
-          <addressOffset>0x0034</addressOffset>
         </register>
         <register>
           <name>TS_TMODE_SEL_REG</name>
           <description>Timestamp Test Mode Select Register</description>
           <addressOffset>0x0040</addressOffset>
+          <fields>
+            <field>
+              <name>TS_TEST_MODE_EN</name>
+              <description>Timestamp Test Mode Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Test</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SRAM_ADDR_TWIST_REG</name>
           <description>SRAM Address Twist Register</description>
           <addressOffset>0x0044</addressOffset>
+          <fields>
+            <field>
+              <name>SRAM_TS_KF</name>
+              <description>SRAM Twist Keyfield</description>
+              <bitRange>[31:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>SRAM_ADDR_TS_FG</name>
+              <description>SRAM Address Twist Flag</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>WORK_MODE_REG</name>
           <description>Work Mode Register</description>
           <addressOffset>0x0048</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>WM_STA</name>
+              <description>Work Mode Status</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Normal</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Low_Power</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Debug</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RETITE_PC0_REG</name>
           <description>Retire PC0 Register</description>
           <addressOffset>0x0050</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>RETITE_PC1_REG</name>
           <description>Retire PC1 Register</description>
           <addressOffset>0x0054</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>RT_SIG</name>
+              <description>Retire Signal</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_have</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>have</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RT_PC_H</name>
+              <description>Retire PC[39:32]</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>IRQ_MODE0_REG</name>
-          <description>IRQ Mode0 Register</description>
+          <dim>5</dim>
+          <dimIncrement>0x04</dimIncrement>
+          <name>IRQ_MODE%s_REG</name>
+          <description>IRQ Mode Register</description>
           <addressOffset>0x0060</addressOffset>
-        </register>
-        <register>
-          <name>IRQ_MODE1_REG</name>
-          <description>IRQ Mode1 Register</description>
-          <addressOffset>0x0064</addressOffset>
-        </register>
-        <register>
-          <name>IRQ_MODE2_REG</name>
-          <description>IRQ Mode2 Register</description>
-          <addressOffset>0x0068</addressOffset>
-        </register>
-        <register>
-          <name>IRQ_MODE3_REG</name>
-          <description>IRQ Mode3 Register</description>
-          <addressOffset>0x006C</addressOffset>
-        </register>
-        <register>
-          <name>IRQ_MODE4_REG</name>
-          <description>IRQ Mode4 Register</description>
-          <addressOffset>0x0070</addressOffset>
         </register>
         <register>
           <name>RISCV_AXI_PMU_CTRL</name>
           <description>RISCV AXI PMU Control Register</description>
           <addressOffset>0x0104</addressOffset>
+          <fields>
+            <field>
+              <name>PMU_CLR</name>
+              <description>PMU Clear</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>clear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_operation</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>cleared</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PMU_EN</name>
+              <description>PMU Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RISCV_AXI_PMU_PRD</name>
@@ -6691,31 +7490,37 @@
           <name>RISCV_AXI_PMU_LAT_RD</name>
           <description>RISCV AXI PMU Read Latency Register</description>
           <addressOffset>0x010C</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>RISCV_AXI_PMU_LAT_WR</name>
           <description>RISCV AXI PMU Write Latency Register</description>
           <addressOffset>0x0110</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>RISCV_AXI_PMU_REQ_RD</name>
           <description>RISCV AXI PMU Read Request Register</description>
           <addressOffset>0x0114</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>RISCV_AXI_PMU_REQ_WR</name>
           <description>RISCV AXI PMU Write Request Register</description>
           <addressOffset>0x0118</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>RISCV_AXI_PMU_BW_RD</name>
           <description>RISCV AXI PMU Read Bandwidth Register</description>
           <addressOffset>0x011C</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>RISCV_AXI_PMU_BW_WR</name>
           <description>RISCV AXI PMU Write Bandwidth Register</description>
           <addressOffset>0x0120</addressOffset>
+          <access>read-only</access>
         </register>
       </registers>
     </peripheral>

@@ -13,36 +13,81 @@ impl From<crate::R<VER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `VER` writer"]
-pub struct W(crate::W<VER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<VER_SPEC>;
+#[doc = "Field `BOOT_SEL_PAD_STA` reader - "]
+pub struct BOOT_SEL_PAD_STA_R(crate::FieldReader<u8, u8>);
+impl BOOT_SEL_PAD_STA_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        BOOT_SEL_PAD_STA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for BOOT_SEL_PAD_STA_R {
+    type Target = crate::FieldReader<u8, u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "Fel Select Pin Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FEL_SEL_PAD_STA_A {
+    #[doc = "0: `0`"]
+    RUN_FEL = 0,
+    #[doc = "1: `1`"]
+    TRY_MEDIA_BOOT = 1,
+}
+impl From<FEL_SEL_PAD_STA_A> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    fn from(variant: FEL_SEL_PAD_STA_A) -> Self {
+        variant as u8 != 0
     }
 }
-impl From<crate::W<VER_SPEC>> for W {
+#[doc = "Field `FEL_SEL_PAD_STA` reader - Fel Select Pin Status"]
+pub struct FEL_SEL_PAD_STA_R(crate::FieldReader<bool, FEL_SEL_PAD_STA_A>);
+impl FEL_SEL_PAD_STA_R {
     #[inline(always)]
-    fn from(writer: crate::W<VER_SPEC>) -> Self {
-        W(writer)
+    pub(crate) fn new(bits: bool) -> Self {
+        FEL_SEL_PAD_STA_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FEL_SEL_PAD_STA_A {
+        match self.bits {
+            false => FEL_SEL_PAD_STA_A::RUN_FEL,
+            true => FEL_SEL_PAD_STA_A::TRY_MEDIA_BOOT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `RUN_FEL`"]
+    #[inline(always)]
+    pub fn is_run_fel(&self) -> bool {
+        **self == FEL_SEL_PAD_STA_A::RUN_FEL
+    }
+    #[doc = "Checks if the value of the field is `TRY_MEDIA_BOOT`"]
+    #[inline(always)]
+    pub fn is_try_media_boot(&self) -> bool {
+        **self == FEL_SEL_PAD_STA_A::TRY_MEDIA_BOOT
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
+impl core::ops::Deref for FEL_SEL_PAD_STA_R {
+    type Target = crate::FieldReader<bool, FEL_SEL_PAD_STA_A>;
     #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ver](index.html) module"]
+impl R {
+    #[doc = "Bits 11:12"]
+    #[inline(always)]
+    pub fn boot_sel_pad_sta(&self) -> BOOT_SEL_PAD_STA_R {
+        BOOT_SEL_PAD_STA_R::new(((self.bits >> 11) & 0x03) as u8)
+    }
+    #[doc = "Bit 8 - Fel Select Pin Status"]
+    #[inline(always)]
+    pub fn fel_sel_pad_sta(&self) -> FEL_SEL_PAD_STA_R {
+        FEL_SEL_PAD_STA_R::new(((self.bits >> 8) & 0x01) != 0)
+    }
+}
+#[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ver](index.html) module"]
 pub struct VER_SPEC;
 impl crate::RegisterSpec for VER_SPEC {
     type Ux = u32;
@@ -50,10 +95,6 @@ impl crate::RegisterSpec for VER_SPEC {
 #[doc = "`read()` method returns [ver::R](R) reader structure"]
 impl crate::Readable for VER_SPEC {
     type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ver::W](W) writer structure"]
-impl crate::Writable for VER_SPEC {
-    type Writer = W;
 }
 #[doc = "`reset()` method sets VER to value 0"]
 impl crate::Resettable for VER_SPEC {

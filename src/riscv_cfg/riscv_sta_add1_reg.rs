@@ -34,7 +34,46 @@ impl From<crate::W<RISCV_STA_ADD1_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `STA_ADD_H` reader - Start Address High 8-bit"]
+pub struct STA_ADD_H_R(crate::FieldReader<u8, u8>);
+impl STA_ADD_H_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        STA_ADD_H_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for STA_ADD_H_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `STA_ADD_H` writer - Start Address High 8-bit"]
+pub struct STA_ADD_H_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> STA_ADD_H_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:7 - Start Address High 8-bit"]
+    #[inline(always)]
+    pub fn sta_add_h(&self) -> STA_ADD_H_R {
+        STA_ADD_H_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:7 - Start Address High 8-bit"]
+    #[inline(always)]
+    pub fn sta_add_h(&mut self) -> STA_ADD_H_W {
+        STA_ADD_H_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

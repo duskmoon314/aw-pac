@@ -34,7 +34,46 @@ impl From<crate::W<RES240_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DDR_RES240_TRIM` reader - 240ohms Resistor trimming bit"]
+pub struct DDR_RES240_TRIM_R(crate::FieldReader<u8, u8>);
+impl DDR_RES240_TRIM_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        DDR_RES240_TRIM_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for DDR_RES240_TRIM_R {
+    type Target = crate::FieldReader<u8, u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DDR_RES240_TRIM` writer - 240ohms Resistor trimming bit"]
+pub struct DDR_RES240_TRIM_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DDR_RES240_TRIM_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:5 - 240ohms Resistor trimming bit"]
+    #[inline(always)]
+    pub fn ddr_res240_trim(&self) -> DDR_RES240_TRIM_R {
+        DDR_RES240_TRIM_R::new((self.bits & 0x3f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:5 - 240ohms Resistor trimming bit"]
+    #[inline(always)]
+    pub fn ddr_res240_trim(&mut self) -> DDR_RES240_TRIM_W {
+        DDR_RES240_TRIM_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
