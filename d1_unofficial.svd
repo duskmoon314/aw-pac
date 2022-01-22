@@ -7847,31 +7847,237 @@
           <name>wdog_soft_rst</name>
           <description>Watchdog Software Reset Register</description>
           <addressOffset>0x00A8</addressOffset>
+          <fields>
+            <field>
+              <name>KEY_FIELD</name>
+              <description>Key Field</description>
+              <bitRange>[31:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>SOFT_RST_EN</name>
+              <description>Soft Reset Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Deassert</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Reset</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>wdog_ctrl</name>
           <description>Watchdog Control Register</description>
           <addressOffset>0x00B0</addressOffset>
+          <fields>
+            <field>
+              <name>WDOG_KEY_FIELD</name>
+              <description>Watchdog Key Field</description>
+              <bitRange>[12:1]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WDOG_RESTART</name>
+              <description>Watchdog Restart</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToSet</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>restart</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>wdog_cfg</name>
           <description>Watchdog Configuration Register</description>
           <addressOffset>0x00B4</addressOffset>
+          <fields>
+            <field>
+              <name>KEY_FIELD</name>
+              <description>Key Field</description>
+              <bitRange>[31:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WDOG_CLK_SRC</name>
+              <description>Select the clock source for the watchdog.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC_32K</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOSC_32K</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDOG_MODE</name>
+              <description>Configure the operating mode for the watchdog</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>whold_system</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>only_interrupt</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>wdog_mode</name>
           <description>Watchdog Mode Register</description>
           <addressOffset>0x00B8</addressOffset>
+          <fields>
+            <field>
+              <name>KEY_FIELD</name>
+              <description>Key Field</description>
+              <bitRange>[31:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>WDOG_INTV_VALUE</name>
+              <description>Watchdog Interval Value</description>
+              <bitRange>[7:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C16000</name>
+                  <value>0b0000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C32000</name>
+                  <value>0b0001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C64000</name>
+                  <value>0b0010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C96000</name>
+                  <value>0b0011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C128000</name>
+                  <value>0b0100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C160000</name>
+                  <value>0b0101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C192000</name>
+                  <value>0b0110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C256000</name>
+                  <value>0b0111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C320000</name>
+                  <value>0b1000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C384000</name>
+                  <value>0b1001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C448000</name>
+                  <value>0b1010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C512000</name>
+                  <value>0b1011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WDOG_EN</name>
+              <description>Watchdog Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>wdog_output_cfg</name>
           <description>Watchdog Output Configuration Register</description>
           <addressOffset>0x00BC</addressOffset>
+          <fields>
+            <field>
+              <name>WDOG_OUTPUT_CONFIG</name>
+              <description>Configure the valid time for the watchdog reset signal.</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>avs_cnt_ctl</name>
           <description>AVS Counter Control Register</description>
           <addressOffset>0x00C0</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>AVS_CNT%s_PS</name>
+              <description>Audio Video Sync Counter Pause Control</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_pause</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pause</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>AVS_CNT%s_EN</name>
+              <description>Audio Video Sync Counter Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>avs_cnt0</name>
@@ -7887,6 +8093,15 @@
           <name>avs_cnt_div</name>
           <description>AVS Counter Divisor Register</description>
           <addressOffset>0x00CC</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>16</dimIncrement>
+              <name>AVS_CNT%s_D</name>
+              <description>The divisor factor of AVS</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
