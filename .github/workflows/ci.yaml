@@ -12,11 +12,14 @@ jobs:
     strategy:
       matrix:
         rust: [nightly, stable]
+        crate: [d1-pac]
 
         include:
           # Nightly is only for reference and allowed to fail
           - rust: nightly
             experimental: true
+          - crate: d1-pac
+            target: riscv64imac-unknown-none-elf
 
     steps:
       - uses: actions/checkout@v2
@@ -26,9 +29,9 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true
       - name: Install Rust targets
-        run: rustup target install --toolchain=${{ matrix.rust }} riscv64imac-unknown-none-elf
-      - name: Build crate for riscv64imac-unknown-none-elf
-        run: cargo build --target riscv64imac-unknown-none-elf
+        run: rustup target add --toolchain=${{ matrix.rust }} ${{ matrix.target }}
+      - name: Build crate
+        run: cargo build --package ${{ matrix.crate }} --target ${{ matrix.target }}
 
   # On macOS and Windows, we at least make sure that the crate builds and links.
   build-other:
@@ -37,6 +40,12 @@ jobs:
         os:
           - macOS-latest
           - windows-latest
+        crate: [d1-pac]
+
+        include:
+          - crate: d1-pac
+            target: riscv64imac-unknown-none-elf
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -47,6 +56,6 @@ jobs:
           toolchain: stable
           override: true
       - name: Install Rust targets
-        run: rustup target install riscv64imac-unknown-none-elf
-      - name: Build crate for riscv64imac-unknown-none-elf
-        run: cargo build --target riscv64imac-unknown-none-elf
+        run: rustup target add ${{ matrix.target }}
+      - name: Build crate
+        run: cargo build --package ${{ matrix.crate }} --target ${{ matrix.target }}
