@@ -1,0 +1,10 @@
+_svd: "d1_unofficial.svd"
+
+_modify:
+  name: "allwinner_r528_unofficial"
+  version: "1.3"
+
+_delete:
+  - CLINT
+  - RISCV_CFG
+  - RISC_V_MSGBOX

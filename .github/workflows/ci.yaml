@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         rust: [nightly, stable]
-        crate: [d1-pac]
+        crate: [d1-pac, r528-pac]
 
         include:
           # Nightly is only for reference and allowed to fail
@@ -20,6 +20,8 @@ jobs:
             experimental: true
           - crate: d1-pac
             target: riscv64imac-unknown-none-elf
+          - crate: r528-pac
+            target: armv7a-none-eabi
 
     steps:
       - uses: actions/checkout@v2
@@ -40,11 +42,13 @@ jobs:
         os:
           - macOS-latest
           - windows-latest
-        crate: [d1-pac]
+        crate: [d1-pac, r528-pac]
 
         include:
           - crate: d1-pac
             target: riscv64imac-unknown-none-elf
+          - crate: r528-pac
+            target: armv7a-none-eabi
 
     runs-on: ${{ matrix.os }}
 
