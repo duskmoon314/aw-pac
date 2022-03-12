@@ -40743,36 +40743,658 @@
           <name>EMAC_BASIC_CTL0</name>
           <description>EMAC Basic Control Register0</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>SPEED</name>
+              <description>EMAC Working Speed</description>
+              <bitRange>[3:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S1000</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Reserved</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S10</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S100</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOOPBACK</name>
+              <description>EMAC Loopback Mode For Test</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DUPLEX</name>
+              <description>EMAC Transfer Mode</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Half_Duplex</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Full_Duplex</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_BASIC_CTL1</name>
           <description>EMAC Basic Control Register1</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>BURST_LEN</name>
+              <description>The burst length of RX and TX DMA transfer</description>
+              <bitRange>[29:24]</bitRange>
+            </field>
+            <field>
+              <name>RX_TX_PRI</name>
+              <description>RX TX DMA Priority</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Same</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RoT</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SOFT_RST</name>
+              <description>Soft Reset all Registers and Logic</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_valid</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>reset</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_INT_STA</name>
           <description>EMAC Interrupt Status Register</description>
           <addressOffset>0x0008</addressOffset>
+          <modifiedWriteValues>oneToClear</modifiedWriteValues>
+          <fields>
+            <field>
+              <name>RGMII_LINK_STA_P</name>
+              <description>RMII Link Status Changed Interrupt Pending</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>No_Pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_EARLY_P</name>
+              <description>RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_OVERFLOW_P</name>
+              <description>RX FIFO Overflow Error Interrupt Pending</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_TIMEOUT_P</name>
+              <description>RX Timeout Interrupt Pending</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_DMA_STOPPED_P</name>
+              <description>When this bit asserted, the RX DMA FSM is stopped.</description>
+              <bitRange>[10:10]</bitRange>
+            </field>
+            <field>
+              <name>RX_BUF_UA_P</name>
+              <description>RX Buffer UA Interrupt Pending</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_P</name>
+              <description>Frame RX Completed Interrupt Pending</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_EARLY_P</name>
+              <description>Total interrupt pending which the frame is transmitted to FIFO</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_UNDERFLOW_P</name>
+              <description>TX FIFO Underflow Interrupt Pending</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_TIMEOUT_P</name>
+              <description>Transmitter Timeout Interrupt Pending</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_BUF_UA_P</name>
+              <description>TX Buffer UA Interrupt Pending</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_DMA_STOPPED_P</name>
+              <description>Transmission DMA Stopped Interrupt Pending</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_P</name>
+              <description>Frame Transmission Interrupt Pending</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_INT_EN</name>
           <description>EMAC Interrupt Enable Register</description>
           <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>RX_EARLY_INT_EN</name>
+              <description>Early Receive Interrupt</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_OVERFLOW_INT_EN</name>
+              <description>Receive Overflow Interrupt</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_TIMEOUT_INT_EN</name>
+              <description>Receive Timeout Interrupt</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_DMA_STOPPED_INT_EN</name>
+              <description>Receive DMA FSM Stopped Interrupt</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_BUF_UA_INT_EN</name>
+              <description>Receive Buffer Unavailable Interrupt</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_INT_EN</name>
+              <description>Receive Interrupt</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_EARLY_INT_EN</name>
+              <description>Early Transmit Interrupt</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_UNDERFLOW_INT_EN</name>
+              <description>Transmit Underflow Interrupt</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_TIMEOUT_INT_EN</name>
+              <description>Transmit Timeout Interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_BUF_UA_INT_EN</name>
+              <description>Transmit Buffer Available Interrupt</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_DMA_STOPPED_INT_EN</name>
+              <description>Transmit DMA FSM Stopped Interrupt</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_INT_EN</name>
+              <description>Transmit Interrupt</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_TX_CTL0</name>
           <description>EMAC Transmit Control Register0</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>TX_EN</name>
+              <description>Enable Transmitter</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_FRM_LEN_CTL</name>
+              <description>Frame Transmit Length Control</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B2048</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B16384</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_TX_CTL1</name>
           <description>EMAC Transmit Control Register1</description>
           <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>TX_DMA_START</name>
+              <description>Transmit DMA FSM Start</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_valid</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_DMA_EN</name>
+              <description>Transmit DMA Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>stop</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_TH</name>
+              <description>Threshold value of TX DMA FIFO</description>
+              <bitRange>[10:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>T64</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T128</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T192</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T256</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_MD</name>
+              <description>Transmission Mode</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>greater_than_th</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locate_full_frame</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FLUSH_TX_FIFO</name>
+              <description>Flush the data in the TX FIFO</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_TX_FLOW_CTL</name>
           <description>EMAC Transmit Flow Control Register</description>
           <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>TX_FLOW_CTL_STA</name>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>TX_PAUSE_FRM_SLOT</name>
+              <bitRange>[21:20]</bitRange>
+            </field>
+            <field>
+              <name>PAUSE_TIME</name>
+              <bitRange>[19:4]</bitRange>
+            </field>
+            <field>
+              <name>ZQP_FRM_EN</name>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TX_FLOW_CTL_EN</name>
+              <description>TX Flow Control Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_TX_DMA_DESC_LIST</name>
@@ -40783,11 +41405,248 @@
           <name>EMAC_RX_CTL0</name>
           <description>EMAC Receive Control Register0</description>
           <addressOffset>0x0024</addressOffset>
+          <fields>
+            <field>
+              <name>RX_EN</name>
+              <description>Enable Receiver</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_FRM_LEN_CTL</name>
+              <description>Frame Receive Length Control</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B2048</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B16384</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>JUMBO_FRM_EN</name>
+              <description>Jumbo Frame Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>STRIP_FCS</name>
+              <bitRange>[28:28]</bitRange>
+            </field>
+            <field>
+              <name>CHECK_CRC</name>
+              <description>Check CRC Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>check</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_PAUSE_FRM_MD</name>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>only_multicast</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>also_unicast_mac0</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_FLOW_CTL_EN</name>
+              <bitRange>[16:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_RX_CTL1</name>
           <description>EMAC Receive Control Register1</description>
           <addressOffset>0x0028</addressOffset>
+          <fields>
+            <field>
+              <name>RX_DMA_START</name>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>RX_EMA_EN</name>
+              <description>Receive DMA Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>stop</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_FIFO_FLOW_CTL</name>
+              <description>Receive FIFO Flow Control Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_FLOW_CTL_TH_DEACT</name>
+              <description>Threshold for Deactivating Flow Control</description>
+              <bitRange>[23:22]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FM1K</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FM2K</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FM3K</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FM4K</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_FLOW_CTL_TH_ACT</name>
+              <description>Threshold for Activating Flow Control</description>
+              <bitRange>[21:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FM1K</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FM2K</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FM3K</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FM4K</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_TH</name>
+              <description>Threshold for RX DMA FIFO Start</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>T64</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T32</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T96</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T128</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_ERR_FRM</name>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>drop</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>forward</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_RUNT_FRM</name>
+              <bitRange>[2:2]</bitRange>
+            </field>
+            <field>
+              <name>RX_MD</name>
+              <description>Receive Mode</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>greater_than_th</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>locate_full_frame</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FLUSH_RX_FRM</name>
+              <description>Flush Receive Frames</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_RX_DMA_DESC_LIST</name>
@@ -40798,6 +41657,175 @@
           <name>EMAC_RX_FRM_FLT</name>
           <description>EMAC Receive Frame Filter Register</description>
           <addressOffset>0x0038</addressOffset>
+          <fields>
+            <field>
+              <name>DIS_ADDR_FILTER</name>
+              <description>Disable Address Filter</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DIS_BROADCAST</name>
+              <description>Disable Receive Broadcast Frames</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Receive</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Drop</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_ALL_MULTICAST</name>
+              <description>Receive All Multicast Frames Filter</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Filter</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Receive_all</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CTL_FRM_FILTER</name>
+              <description>Receive Control Frames Filter</description>
+              <bitRange>[13:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Drop_all</name>
+                  <value>0b0x</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Receive_all</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Receive_all_when_filter</name>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>HASH_MULTICAST</name>
+              <description>Filter Multicast Frames Set</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DA_field</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>hash_table</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>HASH_UNICAST</name>
+              <description>Filter Unicast Frames Set</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DA_field</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>hash_table</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SA_FILTER_EN</name>
+              <description>Receive SA Filter Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>receive_update</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>update_drop_unmatched</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SA_INV_FILTER</name>
+              <description>Receive SA Invert Filter Set</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>matched</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>unmatched</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DA_INV_FILTER</name>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>inverse_cmp_da</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FLT_MD</name>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>passed_when_matched</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>receive_when_passed</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RX_ALL</name>
+              <description>Receive All Frame</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>receive_when_passed</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>receive_all_update</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_RX_HASH0</name>
@@ -40813,18 +41841,132 @@
           <name>EMAC_MII_CMD</name>
           <description>EMAC Management Interface Command Register</description>
           <addressOffset>0x0048</addressOffset>
+          <fields>
+            <field>
+              <name>MDC_DIV_RATIO_M</name>
+              <description>MDC Clock DIvider Ratio</description>
+              <bitRange>[22:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R16</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R32</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R64</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R128</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PHY_ADDR</name>
+              <description>PHY Address</description>
+              <bitRange>[16:12]</bitRange>
+            </field>
+            <field>
+              <name>PHY_REG_ADDR</name>
+              <description>PHY Register Address</description>
+              <bitRange>[8:4]</bitRange>
+            </field>
+            <field>
+              <name>MII_WR</name>
+              <description>MII Write and Read</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>W</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>MII_BUSY</name>
+              <description>MII Status</description>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_MII_DATA</name>
           <description>EMAC Management Interface Data Register</description>
           <addressOffset>0x004C</addressOffset>
+          <fields>
+            <field>
+              <name>MII_DATA</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <dim>8</dim>
-          <dimIncrement>0x08</dimIncrement>
-          <name>EMAC_ADDR_HIGH%s</name>
+          <name>EMAC_ADDR_HIGH0</name>
           <description>EMAC MAC Address High Register</description>
           <addressOffset>0x0050</addressOffset>
+          <fields>
+            <field>
+              <name>MAC_ADDR_HIGH0</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <dim>7</dim>
+          <dimIncrement>0x08</dimIncrement>
+          <dimIndex>1-7</dimIndex>
+          <name>EMAC_ADDR_HIGH%s</name>
+          <description>EMAC MAC Address High Register</description>
+          <addressOffset>0x0058</addressOffset>
+          <fields>
+            <field>
+              <name>MAC_ADDR_CTL</name>
+              <description>MAC Address Valid</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>invalid</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>valid</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>MAC_ADDR_TYPE</name>
+              <description>MAC Address Type</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>dst</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>src</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>MAC_ADDR_BYTE_CTL</name>
+              <description>MAC Address Byte Control Mask</description>
+              <bitRange>[29:24]</bitRange>
+            </field>
+            <field>
+              <name>MAC_ADDR_HIGH</name>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
@@ -40837,36 +41979,159 @@
           <name>EMAC_TX_DMA_STA</name>
           <description>EMAC Transmit DMA Status Register</description>
           <addressOffset>0x00B0</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>TX_DMA_STA</name>
+              <description>The State of Transmit DMA FSM</description>
+              <bitRange>[2:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>stop</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_fetch_desc</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_wait_sta</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_trans_data</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>suspend</name>
+                  <value>0b110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_close_desc</name>
+                  <value>0b111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_TX_CUR_DESC</name>
           <description>EMAC Current Transmit Descriptor Register</description>
           <addressOffset>0x00B4</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>EMAC_TX_CUR_BUF</name>
           <description>EMAC Current Transmit Buffer Address Register</description>
           <addressOffset>0x00B8</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>EMAC_RX_DMA_STA</name>
           <description>EMAC Receive DMA Status Register</description>
           <addressOffset>0x00C0</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>RX_DMA_STA</name>
+              <description>The State of RX DMA FSM</description>
+              <bitRange>[2:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>stop</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_fetch_desc</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_wait_frm</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>suspend</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_close_desc</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>run_trans_data</name>
+                  <value>0b111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EMAC_RX_CUR_DESC</name>
           <description>EMAC Current Receive Descriptor Register</description>
           <addressOffset>0x00C4</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>EMAC_RX_CUR_BUF</name>
           <description>EMAC Current Receive Buffer Address Register</description>
           <addressOffset>0x00C8</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <name>EMAC_RGMII_STA</name>
           <description>EMAC RGMII Status Register</description>
           <addressOffset>0x00D0</addressOffset>
+          <fields>
+            <field>
+              <name>RGMII_LINK</name>
+              <description>The link status of the RGMII interface</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>down</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>up</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RGMII_LINK_SPD</name>
+              <description>The link speed of the RGMII interface</description>
+              <bitRange>[2:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S2_5</name>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S25</name>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S125</name>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RGMII_LINK_MD</name>
+              <description>The link mode of the RGMII interface</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>half_duplex</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>full_duplex</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

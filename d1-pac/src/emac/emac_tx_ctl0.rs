@@ -34,7 +34,197 @@ impl From<crate::W<EMAC_TX_CTL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Enable Transmitter\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TX_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TX_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TX_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TX_EN` reader - Enable Transmitter"]
+pub struct TX_EN_R(crate::FieldReader<bool, TX_EN_A>);
+impl TX_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        TX_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TX_EN_A {
+        match self.bits {
+            false => TX_EN_A::DISABLE,
+            true => TX_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == TX_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == TX_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for TX_EN_R {
+    type Target = crate::FieldReader<bool, TX_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX_EN` writer - Enable Transmitter"]
+pub struct TX_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TX_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TX_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TX_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TX_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w
+    }
+}
+#[doc = "Frame Transmit Length Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TX_FRM_LEN_CTL_A {
+    #[doc = "0: `0`"]
+    B2048 = 0,
+    #[doc = "1: `1`"]
+    B16384 = 1,
+}
+impl From<TX_FRM_LEN_CTL_A> for bool {
+    #[inline(always)]
+    fn from(variant: TX_FRM_LEN_CTL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TX_FRM_LEN_CTL` reader - Frame Transmit Length Control"]
+pub struct TX_FRM_LEN_CTL_R(crate::FieldReader<bool, TX_FRM_LEN_CTL_A>);
+impl TX_FRM_LEN_CTL_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        TX_FRM_LEN_CTL_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TX_FRM_LEN_CTL_A {
+        match self.bits {
+            false => TX_FRM_LEN_CTL_A::B2048,
+            true => TX_FRM_LEN_CTL_A::B16384,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B2048`"]
+    #[inline(always)]
+    pub fn is_b2048(&self) -> bool {
+        **self == TX_FRM_LEN_CTL_A::B2048
+    }
+    #[doc = "Checks if the value of the field is `B16384`"]
+    #[inline(always)]
+    pub fn is_b16384(&self) -> bool {
+        **self == TX_FRM_LEN_CTL_A::B16384
+    }
+}
+impl core::ops::Deref for TX_FRM_LEN_CTL_R {
+    type Target = crate::FieldReader<bool, TX_FRM_LEN_CTL_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TX_FRM_LEN_CTL` writer - Frame Transmit Length Control"]
+pub struct TX_FRM_LEN_CTL_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TX_FRM_LEN_CTL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TX_FRM_LEN_CTL_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn b2048(self) -> &'a mut W {
+        self.variant(TX_FRM_LEN_CTL_A::B2048)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn b16384(self) -> &'a mut W {
+        self.variant(TX_FRM_LEN_CTL_A::B16384)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 31 - Enable Transmitter"]
+    #[inline(always)]
+    pub fn tx_en(&self) -> TX_EN_R {
+        TX_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+    #[doc = "Bit 30 - Frame Transmit Length Control"]
+    #[inline(always)]
+    pub fn tx_frm_len_ctl(&self) -> TX_FRM_LEN_CTL_R {
+        TX_FRM_LEN_CTL_R::new(((self.bits >> 30) & 0x01) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 31 - Enable Transmitter"]
+    #[inline(always)]
+    pub fn tx_en(&mut self) -> TX_EN_W {
+        TX_EN_W { w: self }
+    }
+    #[doc = "Bit 30 - Frame Transmit Length Control"]
+    #[inline(always)]
+    pub fn tx_frm_len_ctl(&mut self) -> TX_FRM_LEN_CTL_W {
+        TX_FRM_LEN_CTL_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
