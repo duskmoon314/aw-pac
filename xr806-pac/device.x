@@ -1,0 +1,22 @@
+PROVIDE(DMA = DefaultHandler);
+PROVIDE(UART0 = DefaultHandler);
+PROVIDE(UART1 = DefaultHandler);
+PROVIDE(SPI0 = DefaultHandler);
+PROVIDE(TWI0 = DefaultHandler);
+PROVIDE(TWI1 = DefaultHandler);
+PROVIDE(TIMER0 = DefaultHandler);
+PROVIDE(TIMER1 = DefaultHandler);
+PROVIDE(DAUDIO = DefaultHandler);
+PROVIDE(SS = DefaultHandler);
+PROVIDE(GPADC = DefaultHandler);
+PROVIDE(GPIOB = DefaultHandler);
+PROVIDE(IRRX = DefaultHandler);
+PROVIDE(IRTX = DefaultHandler);
+PROVIDE(UART2 = DefaultHandler);
+PROVIDE(AUDIO_PWM = DefaultHandler);
+PROVIDE(SMCARD = DefaultHandler);
+PROVIDE(SDMA = DefaultHandler);
+PROVIDE(LPUART0 = DefaultHandler);
+PROVIDE(LPUART1 = DefaultHandler);
+PROVIDE(RCCAL = DefaultHandler);
+
