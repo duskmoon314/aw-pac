@@ -40667,51 +40667,423 @@
           <name>LEDC_CTRL</name>
           <description>LEDC Control Register</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>TOTAL_DATA_LENGTH</name>
+              <bitRange>[28:16]</bitRange>
+            </field>
+            <field>
+              <name>RESET_LED_EN</name>
+              <bitRange>[10:10]</bitRange>
+            </field>
+            <field>
+              <name>LED_RGB_MODE</name>
+              <bitRange>[8:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>GRB</name>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GBR</name>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RGB</name>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RBG</name>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BGR</name>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BRG</name>
+                  <value>0b101</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <dimIndex>B,R,G,TOP</dimIndex>
+              <name>LED_MSB_%s</name>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LSB</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MSB</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LEDC_SOFT_RESET</name>
+              <bitRange>[1:1]</bitRange>
+            </field>
+            <field>
+              <name>LEDC_EN</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LED_T01_TIMING_CTRL</name>
           <description>LEDC T0 T1 Timing Control Register</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>T1H_TIME</name>
+              <bitRange>[26:21]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0x3f</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+            <field>
+              <name>T1L_TIME</name>
+              <bitRange>[20:16]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0x1f</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+            <field>
+              <name>T0H_TIME</name>
+              <bitRange>[10:6]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0x1f</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+            <field>
+              <name>T0L_TIME</name>
+              <bitRange>[5:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0x1f</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_DATA_FINISH_CNT</name>
           <description>LEDC Data Finish Counter Register</description>
           <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>LED_WAIT_DATA_TIME</name>
+              <bitRange>[29:16]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>0x1FFF</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+            <field>
+              <name>LED_DATA_FINISH_CNT</name>
+              <bitRange>[12:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LED_RESET_TIMING_CTRL</name>
           <description>LEDC Reset Timing Control Register</description>
           <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>TR_TIME</name>
+              <bitRange>[28:16]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>1</minimum>
+                  <maximum>0x1FFF</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+            <field>
+              <name>LED_NUM</name>
+              <bitRange>[9:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_WAIT_TIME0_CTRL</name>
           <description>LEDC Wait Time0 Control Register</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>WAIT_TIM0_EN</name>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TOTAL_WAIT_TIME0</name>
+              <bitRange>[7:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>1</minimum>
+                  <maximum>0xFF</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_DATA</name>
           <description>LEDC Data Register</description>
           <addressOffset>0x0014</addressOffset>
+          <access>write-only</access>
         </register>
         <register>
           <name>LEDC_DMA_CTRL</name>
           <description>LEDC DMA Control Register</description>
           <addressOffset>0x0018</addressOffset>
+          <fields>
+            <field>
+              <name>LEDC_DMA_EN</name>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LEDC_FIFO_TRIG_LEVEL</name>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_INT_CTRL</name>
           <description>LEDC Interrupt Control Register</description>
           <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>GLOBAL_INT_EN</name>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_OVERFLOW_INT_EN</name>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAITDATA_TIMEOUT_INT_EN</name>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_CPUREQ_INT_EN</name>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LED_TRANS_FINISH_INT_EN</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_INT_STS</name>
           <description>LEDC Interrupt Status Register</description>
           <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>FIFO_EMPTY</name>
+              <bitRange>[17:17]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>FIFO_FULL</name>
+              <bitRange>[16:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>FIFO_WLW</name>
+              <bitRange>[15:10]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>FIFO_OVERFLOW_INT</name>
+              <bitRange>[4:4]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_overflow</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>overflow</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>WAITDATA_TIMEOUT_INT</name>
+              <bitRange>[3:3]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_timeout</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>timeout</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_CPUREQ_INT</name>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_request</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>request</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LEC_TRANS_FINISH_INT</name>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_trans_complete</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>trans_complete</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LEDC_WAIT_TIME1_CTRL</name>
           <description>LEDC Wait Time1 Control Register</description>
           <addressOffset>0x0028</addressOffset>
+          <fields>
+            <field>
+              <name>WAIT_TIM1_EN</name>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TOTAL_WAIT_TIME1</name>
+              <bitRange>[30:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0x80</minimum>
+                  <maximum>0x7FFFFFFF</maximum>
+                </range>
+              </writeConstraint>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>32</dim>

@@ -34,7 +34,140 @@ impl From<crate::W<LEDC_WAIT_TIME1_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WAIT_TIM1_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<WAIT_TIM1_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAIT_TIM1_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `WAIT_TIM1_EN` reader - "]
+pub struct WAIT_TIM1_EN_R(crate::FieldReader<bool, WAIT_TIM1_EN_A>);
+impl WAIT_TIM1_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        WAIT_TIM1_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAIT_TIM1_EN_A {
+        match self.bits {
+            false => WAIT_TIM1_EN_A::DISABLE,
+            true => WAIT_TIM1_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == WAIT_TIM1_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == WAIT_TIM1_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for WAIT_TIM1_EN_R {
+    type Target = crate::FieldReader<bool, WAIT_TIM1_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WAIT_TIM1_EN` writer - "]
+pub struct WAIT_TIM1_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WAIT_TIM1_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAIT_TIM1_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(WAIT_TIM1_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(WAIT_TIM1_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w
+    }
+}
+#[doc = "Field `TOTAL_WAIT_TIME1` reader - "]
+pub struct TOTAL_WAIT_TIME1_R(crate::FieldReader<u32, u32>);
+impl TOTAL_WAIT_TIME1_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u32) -> Self {
+        TOTAL_WAIT_TIME1_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TOTAL_WAIT_TIME1_R {
+    type Target = crate::FieldReader<u32, u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TOTAL_WAIT_TIME1` writer - "]
+pub struct TOTAL_WAIT_TIME1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TOTAL_WAIT_TIME1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u32) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x7fff_ffff) | (value as u32 & 0x7fff_ffff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 31"]
+    #[inline(always)]
+    pub fn wait_tim1_en(&self) -> WAIT_TIM1_EN_R {
+        WAIT_TIM1_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+    }
+    #[doc = "Bits 0:30"]
+    #[inline(always)]
+    pub fn total_wait_time1(&self) -> TOTAL_WAIT_TIME1_R {
+        TOTAL_WAIT_TIME1_R::new((self.bits & 0x7fff_ffff) as u32)
+    }
+}
 impl W {
+    #[doc = "Bit 31"]
+    #[inline(always)]
+    pub fn wait_tim1_en(&mut self) -> WAIT_TIM1_EN_W {
+        WAIT_TIM1_EN_W { w: self }
+    }
+    #[doc = "Bits 0:30"]
+    #[inline(always)]
+    pub fn total_wait_time1(&mut self) -> TOTAL_WAIT_TIME1_W {
+        TOTAL_WAIT_TIME1_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -34,7 +34,479 @@ impl From<crate::W<LEDC_INT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GLOBAL_INT_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<GLOBAL_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: GLOBAL_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `GLOBAL_INT_EN` reader - "]
+pub struct GLOBAL_INT_EN_R(crate::FieldReader<bool, GLOBAL_INT_EN_A>);
+impl GLOBAL_INT_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        GLOBAL_INT_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GLOBAL_INT_EN_A {
+        match self.bits {
+            false => GLOBAL_INT_EN_A::DISABLE,
+            true => GLOBAL_INT_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == GLOBAL_INT_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == GLOBAL_INT_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for GLOBAL_INT_EN_R {
+    type Target = crate::FieldReader<bool, GLOBAL_INT_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GLOBAL_INT_EN` writer - "]
+pub struct GLOBAL_INT_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GLOBAL_INT_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: GLOBAL_INT_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(GLOBAL_INT_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(GLOBAL_INT_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FIFO_OVERFLOW_INT_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<FIFO_OVERFLOW_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: FIFO_OVERFLOW_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `FIFO_OVERFLOW_INT_EN` reader - "]
+pub struct FIFO_OVERFLOW_INT_EN_R(crate::FieldReader<bool, FIFO_OVERFLOW_INT_EN_A>);
+impl FIFO_OVERFLOW_INT_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        FIFO_OVERFLOW_INT_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIFO_OVERFLOW_INT_EN_A {
+        match self.bits {
+            false => FIFO_OVERFLOW_INT_EN_A::DISABLE,
+            true => FIFO_OVERFLOW_INT_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == FIFO_OVERFLOW_INT_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == FIFO_OVERFLOW_INT_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for FIFO_OVERFLOW_INT_EN_R {
+    type Target = crate::FieldReader<bool, FIFO_OVERFLOW_INT_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FIFO_OVERFLOW_INT_EN` writer - "]
+pub struct FIFO_OVERFLOW_INT_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FIFO_OVERFLOW_INT_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FIFO_OVERFLOW_INT_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(FIFO_OVERFLOW_INT_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(FIFO_OVERFLOW_INT_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WAITDATA_TIMEOUT_INT_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<WAITDATA_TIMEOUT_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: WAITDATA_TIMEOUT_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `WAITDATA_TIMEOUT_INT_EN` reader - "]
+pub struct WAITDATA_TIMEOUT_INT_EN_R(crate::FieldReader<bool, WAITDATA_TIMEOUT_INT_EN_A>);
+impl WAITDATA_TIMEOUT_INT_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        WAITDATA_TIMEOUT_INT_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WAITDATA_TIMEOUT_INT_EN_A {
+        match self.bits {
+            false => WAITDATA_TIMEOUT_INT_EN_A::DISABLE,
+            true => WAITDATA_TIMEOUT_INT_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == WAITDATA_TIMEOUT_INT_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == WAITDATA_TIMEOUT_INT_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for WAITDATA_TIMEOUT_INT_EN_R {
+    type Target = crate::FieldReader<bool, WAITDATA_TIMEOUT_INT_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `WAITDATA_TIMEOUT_INT_EN` writer - "]
+pub struct WAITDATA_TIMEOUT_INT_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> WAITDATA_TIMEOUT_INT_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WAITDATA_TIMEOUT_INT_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(WAITDATA_TIMEOUT_INT_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(WAITDATA_TIMEOUT_INT_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FIFO_CPUREQ_INT_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<FIFO_CPUREQ_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: FIFO_CPUREQ_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `FIFO_CPUREQ_INT_EN` reader - "]
+pub struct FIFO_CPUREQ_INT_EN_R(crate::FieldReader<bool, FIFO_CPUREQ_INT_EN_A>);
+impl FIFO_CPUREQ_INT_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        FIFO_CPUREQ_INT_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIFO_CPUREQ_INT_EN_A {
+        match self.bits {
+            false => FIFO_CPUREQ_INT_EN_A::DISABLE,
+            true => FIFO_CPUREQ_INT_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == FIFO_CPUREQ_INT_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == FIFO_CPUREQ_INT_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for FIFO_CPUREQ_INT_EN_R {
+    type Target = crate::FieldReader<bool, FIFO_CPUREQ_INT_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `FIFO_CPUREQ_INT_EN` writer - "]
+pub struct FIFO_CPUREQ_INT_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FIFO_CPUREQ_INT_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FIFO_CPUREQ_INT_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(FIFO_CPUREQ_INT_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(FIFO_CPUREQ_INT_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LED_TRANS_FINISH_INT_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<LED_TRANS_FINISH_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: LED_TRANS_FINISH_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `LED_TRANS_FINISH_INT_EN` reader - "]
+pub struct LED_TRANS_FINISH_INT_EN_R(crate::FieldReader<bool, LED_TRANS_FINISH_INT_EN_A>);
+impl LED_TRANS_FINISH_INT_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        LED_TRANS_FINISH_INT_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LED_TRANS_FINISH_INT_EN_A {
+        match self.bits {
+            false => LED_TRANS_FINISH_INT_EN_A::DISABLE,
+            true => LED_TRANS_FINISH_INT_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == LED_TRANS_FINISH_INT_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == LED_TRANS_FINISH_INT_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for LED_TRANS_FINISH_INT_EN_R {
+    type Target = crate::FieldReader<bool, LED_TRANS_FINISH_INT_EN_A>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `LED_TRANS_FINISH_INT_EN` writer - "]
+pub struct LED_TRANS_FINISH_INT_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> LED_TRANS_FINISH_INT_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LED_TRANS_FINISH_INT_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LED_TRANS_FINISH_INT_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LED_TRANS_FINISH_INT_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 5"]
+    #[inline(always)]
+    pub fn global_int_en(&self) -> GLOBAL_INT_EN_R {
+        GLOBAL_INT_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+    }
+    #[doc = "Bit 4"]
+    #[inline(always)]
+    pub fn fifo_overflow_int_en(&self) -> FIFO_OVERFLOW_INT_EN_R {
+        FIFO_OVERFLOW_INT_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+    }
+    #[doc = "Bit 3"]
+    #[inline(always)]
+    pub fn waitdata_timeout_int_en(&self) -> WAITDATA_TIMEOUT_INT_EN_R {
+        WAITDATA_TIMEOUT_INT_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    pub fn fifo_cpureq_int_en(&self) -> FIFO_CPUREQ_INT_EN_R {
+        FIFO_CPUREQ_INT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+    }
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn led_trans_finish_int_en(&self) -> LED_TRANS_FINISH_INT_EN_R {
+        LED_TRANS_FINISH_INT_EN_R::new((self.bits & 0x01) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 5"]
+    #[inline(always)]
+    pub fn global_int_en(&mut self) -> GLOBAL_INT_EN_W {
+        GLOBAL_INT_EN_W { w: self }
+    }
+    #[doc = "Bit 4"]
+    #[inline(always)]
+    pub fn fifo_overflow_int_en(&mut self) -> FIFO_OVERFLOW_INT_EN_W {
+        FIFO_OVERFLOW_INT_EN_W { w: self }
+    }
+    #[doc = "Bit 3"]
+    #[inline(always)]
+    pub fn waitdata_timeout_int_en(&mut self) -> WAITDATA_TIMEOUT_INT_EN_W {
+        WAITDATA_TIMEOUT_INT_EN_W { w: self }
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    pub fn fifo_cpureq_int_en(&mut self) -> FIFO_CPUREQ_INT_EN_W {
+        FIFO_CPUREQ_INT_EN_W { w: self }
+    }
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn led_trans_finish_int_en(&mut self) -> LED_TRANS_FINISH_INT_EN_W {
+        LED_TRANS_FINISH_INT_EN_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
