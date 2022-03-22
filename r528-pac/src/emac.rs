@@ -37,7 +37,7 @@ pub struct RegisterBlock {
     #[doc = "0x4c - EMAC Management Interface Data Register"]
     pub emac_mii_data: crate::Reg<emac_mii_data::EMAC_MII_DATA_SPEC>,
     #[doc = "0x50 - EMAC MAC Address High Register"]
-    pub emac_addr_high0: crate::Reg<emac_addr_high::EMAC_ADDR_HIGH_SPEC>,
+    pub emac_addr_high0: crate::Reg<emac_addr_high0::EMAC_ADDR_HIGH0_SPEC>,
     #[doc = "0x54 - EMAC MAC Address Low Register"]
     pub emac_addr_low0: crate::Reg<emac_addr_low::EMAC_ADDR_LOW_SPEC>,
     #[doc = "0x58 - EMAC MAC Address High Register"]
@@ -150,6 +150,10 @@ pub mod emac_mii_cmd;
 pub type EMAC_MII_DATA = crate::Reg<emac_mii_data::EMAC_MII_DATA_SPEC>;
 #[doc = "EMAC Management Interface Data Register"]
 pub mod emac_mii_data;
+#[doc = "EMAC_ADDR_HIGH0 register accessor: an alias for `Reg<EMAC_ADDR_HIGH0_SPEC>`"]
+pub type EMAC_ADDR_HIGH0 = crate::Reg<emac_addr_high0::EMAC_ADDR_HIGH0_SPEC>;
+#[doc = "EMAC MAC Address High Register"]
+pub mod emac_addr_high0;
 #[doc = "EMAC_ADDR_HIGH register accessor: an alias for `Reg<EMAC_ADDR_HIGH_SPEC>`"]
 pub type EMAC_ADDR_HIGH = crate::Reg<emac_addr_high::EMAC_ADDR_HIGH_SPEC>;
 #[doc = "EMAC MAC Address High Register"]

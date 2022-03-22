@@ -2,13 +2,13 @@
 
 [![crates.io](https://img.shields.io/crates/v/r528-pac.svg)](https://crates.io/crates/r528-pac)
 
-> Peripheral access API for Allwinner R528 SoC generated from unofficial SVD file
+> Peripheral access API for Allwinner R528 SoC (also called T113) generated from unofficial SVD file
 
 This project is currently developed and maintained by [duskmoon (Campbell He)](https://github.com/duskmoon314).
 
 ## Introduction
 
-r528 is an SoC developed and sold by Allwinner.
+R528 is an SoC developed and sold by Allwinner.
 
 This crate provides an unofficial version CMSIS-SVD file of R528 SoC and a Rust crate generated via `svd2rust`.
 
