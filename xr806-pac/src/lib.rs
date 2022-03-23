@@ -172,6 +172,34 @@ unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
         self as u16
     }
 }
+#[doc = "SYSCTL"]
+pub struct SYSCTL {
+    _marker: PhantomData<*const ()>,
+}
+unsafe impl Send for SYSCTL {}
+impl SYSCTL {
+    #[doc = r"Pointer to the register block"]
+    pub const PTR: *const sysctl::RegisterBlock = 0x4000_a000 as *const _;
+    #[doc = r"Return the pointer to the register block"]
+    #[inline(always)]
+    pub const fn ptr() -> *const sysctl::RegisterBlock {
+        Self::PTR
+    }
+}
+impl Deref for SYSCTL {
+    type Target = sysctl::RegisterBlock;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        unsafe { &*Self::PTR }
+    }
+}
+impl core::fmt::Debug for SYSCTL {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYSCTL").finish()
+    }
+}
+#[doc = "SYSCTL"]
+pub mod sysctl;
 #[doc = "UART0"]
 pub struct UART0 {
     _marker: PhantomData<*const ()>,
@@ -317,6 +345,8 @@ static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r"All the peripherals"]
 #[allow(non_snake_case)]
 pub struct Peripherals {
+    #[doc = "SYSCTL"]
+    pub SYSCTL: SYSCTL,
     #[doc = "UART0"]
     pub UART0: UART0,
     #[doc = "UART1"]
@@ -345,6 +375,9 @@ impl Peripherals {
     pub unsafe fn steal() -> Self {
         DEVICE_PERIPHERALS = true;
         Peripherals {
+            SYSCTL: SYSCTL {
+                _marker: PhantomData,
+            },
             UART0: UART0 {
                 _marker: PhantomData,
             },

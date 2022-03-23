@@ -6,10 +6,11 @@ This project is currently developed and maintained by [duskmoon (Campbell He)](h
 
 ## SoC List
 
-| SoC name           | crate                                                                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------------------- |
-| D1H(D1), D1S, F133 | [d1-pac ![crates.io](https://img.shields.io/crates/v/d1-pac.svg)](https://crates.io/crates/d1-pac)       |
-| R528, T113         | [r528-pac ![crates.io](https://img.shields.io/crates/v/r528-pac.svg)](https://crates.io/crates/r528-pac) |
+| SoC name           | crate                                                                                                       |
+| ------------------ | ----------------------------------------------------------------------------------------------------------- |
+| D1H(D1), D1S, F133 | [d1-pac ![crates.io](https://img.shields.io/crates/v/d1-pac.svg)](https://crates.io/crates/d1-pac)          |
+| R528, T113         | [r528-pac ![crates.io](https://img.shields.io/crates/v/r528-pac.svg)](https://crates.io/crates/r528-pac)    |
+| XR806              | [xr806-pac ![crates.io](https://img.shields.io/crates/v/xr806-pac.svg)](https://crates.io/crates/xr806-pac) |
 
 ## License
 
