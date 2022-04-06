@@ -67,7 +67,7 @@ impl<'a> PLL_VCO_RST_IN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -102,7 +102,7 @@ impl R {
     #[doc = "Bit 31 - VCO reset in"]
     #[inline(always)]
     pub fn pll_vco_rst_in(&self) -> PLL_VCO_RST_IN_R {
-        PLL_VCO_RST_IN_R::new(((self.bits >> 31) & 0x01) != 0)
+        PLL_VCO_RST_IN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]

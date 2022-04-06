@@ -74,7 +74,7 @@ impl R {
     #[doc = "Bits 0:1 - Work Mode Status"]
     #[inline(always)]
     pub fn wm_sta(&self) -> WM_STA_R {
-        WM_STA_R::new((self.bits & 0x03) as u8)
+        WM_STA_R::new((self.bits & 3) as u8)
     }
 }
 #[doc = "Work Mode Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [work_mode_reg](index.html) module"]

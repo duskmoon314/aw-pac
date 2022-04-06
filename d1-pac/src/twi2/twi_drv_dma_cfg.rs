@@ -57,7 +57,7 @@ impl<'a> DMA_RX_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 23)) | ((value as u32 & 0x03) << 23);
+        self.w.bits = (self.w.bits & !(3 << 23)) | ((value as u32 & 3) << 23);
         self.w
     }
 }
@@ -121,7 +121,7 @@ impl<'a> DMA_TX_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -156,7 +156,7 @@ impl R {
     #[doc = "Bits 23:24"]
     #[inline(always)]
     pub fn dma_rx_en(&self) -> DMA_RX_EN_R {
-        DMA_RX_EN_R::new(((self.bits >> 23) & 0x03) as u8)
+        DMA_RX_EN_R::new(((self.bits >> 23) & 3) as u8)
     }
     #[doc = "Bits 16:21"]
     #[inline(always)]
@@ -166,7 +166,7 @@ impl R {
     #[doc = "Bit 8"]
     #[inline(always)]
     pub fn dma_tx_en(&self) -> DMA_TX_EN_R {
-        DMA_TX_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        DMA_TX_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 0:5"]
     #[inline(always)]

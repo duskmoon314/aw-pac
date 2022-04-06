@@ -67,7 +67,7 @@ impl<'a> DS_DL_CAL_START_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -134,7 +134,7 @@ impl<'a> DS_DL_SW_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -169,12 +169,12 @@ impl R {
     #[doc = "Bit 15 - Data Strobe Delay Calibration Start"]
     #[inline(always)]
     pub fn ds_dl_cal_start(&self) -> DS_DL_CAL_START_R {
-        DS_DL_CAL_START_R::new(((self.bits >> 15) & 0x01) != 0)
+        DS_DL_CAL_START_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 14 - Data Strobe Delay Calibration Done"]
     #[inline(always)]
     pub fn ds_dl_cal_done(&self) -> DS_DL_CAL_DONE_R {
-        DS_DL_CAL_DONE_R::new(((self.bits >> 14) & 0x01) != 0)
+        DS_DL_CAL_DONE_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bits 8:13 - Data Strobe Delay"]
     #[inline(always)]
@@ -184,7 +184,7 @@ impl R {
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
     pub fn ds_dl_sw_en(&self) -> DS_DL_SW_EN_R {
-        DS_DL_SW_EN_R::new(((self.bits >> 7) & 0x01) != 0)
+        DS_DL_SW_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 0:5 - Data Storbe Delay Software"]
     #[inline(always)]

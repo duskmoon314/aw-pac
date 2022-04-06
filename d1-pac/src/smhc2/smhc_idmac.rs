@@ -52,7 +52,7 @@ impl<'a> DES_LOAD_CTRL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -89,7 +89,7 @@ impl<'a> IDMAC_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -126,7 +126,7 @@ impl<'a> FIX_BUST_CTRL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -163,7 +163,7 @@ impl<'a> IDMAC_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -171,17 +171,17 @@ impl R {
     #[doc = "Bit 7 - IDMAC Enable"]
     #[inline(always)]
     pub fn idmac_enb(&self) -> IDMAC_ENB_R {
-        IDMAC_ENB_R::new(((self.bits >> 7) & 0x01) != 0)
+        IDMAC_ENB_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 1 - Fixed Burst"]
     #[inline(always)]
     pub fn fix_bust_ctrl(&self) -> FIX_BUST_CTRL_R {
-        FIX_BUST_CTRL_R::new(((self.bits >> 1) & 0x01) != 0)
+        FIX_BUST_CTRL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - DMA Reset"]
     #[inline(always)]
     pub fn idmac_rst(&self) -> IDMAC_RST_R {
-        IDMAC_RST_R::new((self.bits & 0x01) != 0)
+        IDMAC_RST_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

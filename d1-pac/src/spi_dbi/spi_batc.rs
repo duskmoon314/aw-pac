@@ -114,7 +114,7 @@ impl<'a> TCE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> MSMS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> TBC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(1 << 25)) | ((value as u32 & 1) << 25);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> TBC_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -504,7 +504,7 @@ impl<'a> SS_LEVEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -588,7 +588,7 @@ impl<'a> SS_OWNER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -672,7 +672,7 @@ impl<'a> SPOL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -774,7 +774,7 @@ impl<'a> SS_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(3 << 2)) | ((value as u32 & 3) << 2);
         self.w
     }
 }
@@ -863,7 +863,7 @@ impl<'a> WMS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
+        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
         self.w
     }
 }
@@ -871,22 +871,22 @@ impl R {
     #[doc = "Bit 31 - Transfer Control Enable"]
     #[inline(always)]
     pub fn tce(&self) -> TCE_R {
-        TCE_R::new(((self.bits >> 31) & 0x01) != 0)
+        TCE_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - Master Sample Standard"]
     #[inline(always)]
     pub fn msms(&self) -> MSMS_R {
-        MSMS_R::new(((self.bits >> 30) & 0x01) != 0)
+        MSMS_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 25 - Transfer Bits Completed"]
     #[inline(always)]
     pub fn tbc(&self) -> TBC_R {
-        TBC_R::new(((self.bits >> 25) & 0x01) != 0)
+        TBC_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 24 - Transfer Bits Completed Interrupt Enable"]
     #[inline(always)]
     pub fn tbc_int_en(&self) -> TBC_INT_EN_R {
-        TBC_INT_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        TBC_INT_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 16:21 - Configure the length of serial data frame of RX"]
     #[inline(always)]
@@ -901,27 +901,27 @@ impl R {
     #[doc = "Bit 7"]
     #[inline(always)]
     pub fn ss_level(&self) -> SS_LEVEL_R {
-        SS_LEVEL_R::new(((self.bits >> 7) & 0x01) != 0)
+        SS_LEVEL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - SS Output Owner Select"]
     #[inline(always)]
     pub fn ss_owner(&self) -> SS_OWNER_R {
-        SS_OWNER_R::new(((self.bits >> 6) & 0x01) != 0)
+        SS_OWNER_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - SPI Chip Select Signal Polarity Control"]
     #[inline(always)]
     pub fn spol(&self) -> SPOL_R {
-        SPOL_R::new(((self.bits >> 5) & 0x01) != 0)
+        SPOL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 2:3 - SPI Chip Select"]
     #[inline(always)]
     pub fn ss_sel(&self) -> SS_SEL_R {
-        SS_SEL_R::new(((self.bits >> 2) & 0x03) as u8)
+        SS_SEL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 0:1 - Work Mode Select"]
     #[inline(always)]
     pub fn wms(&self) -> WMS_R {
-        WMS_R::new((self.bits & 0x03) as u8)
+        WMS_R::new((self.bits & 3) as u8)
     }
 }
 impl W {

@@ -98,7 +98,7 @@ impl R {
     #[doc = "Bits 0:2 - The State of RX DMA FSM"]
     #[inline(always)]
     pub fn rx_dma_sta(&self) -> RX_DMA_STA_R {
-        RX_DMA_STA_R::new((self.bits & 0x07) as u8)
+        RX_DMA_STA_R::new((self.bits & 7) as u8)
     }
 }
 #[doc = "EMAC Receive DMA Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emac_rx_dma_sta](index.html) module"]

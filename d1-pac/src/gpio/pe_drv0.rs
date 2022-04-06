@@ -133,8 +133,7 @@ impl<'a> PE_DRV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
+        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
         self.w
     }
 }
@@ -171,7 +170,7 @@ impl<'a, const O: usize> PE_DRV_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
         self.w
     }
 }
@@ -179,47 +178,47 @@ impl R {
     #[doc = "PE Multi_Driving Select"]
     #[inline(always)]
     pub unsafe fn pe_drv(&self, n: usize) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> (n * 4)) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> (n * 4)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe0_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new((self.bits & 0x03) as u8)
+        PE_DRV_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe1_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 4) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe2_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 8) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe3_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 12) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:17 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe4_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 16) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 20:21 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe5_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 20) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 24:25 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe6_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 24) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 28:29 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe7_drv(&self) -> PE_DRV_R {
-        PE_DRV_R::new(((self.bits >> 28) & 0x03) as u8)
+        PE_DRV_R::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {

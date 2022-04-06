@@ -114,7 +114,7 @@ impl<'a> GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -190,7 +190,7 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
+        self.w.bits = (self.w.bits & !(3 << 24)) | ((value as u32 & 3) << 24);
         self.w
     }
 }
@@ -217,7 +217,7 @@ impl<'a> DIV1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
         self.w
     }
 }
@@ -252,17 +252,17 @@ impl R {
     #[doc = "Bit 31 - Gating for CLK27M"]
     #[inline(always)]
     pub fn gating(&self) -> GATING_R {
-        GATING_R::new(((self.bits >> 31) & 0x01) != 0)
+        GATING_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 24) & 0x03) as u8)
+        CLK_SRC_SEL_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn div1(&self) -> DIV1_R {
-        DIV1_R::new(((self.bits >> 8) & 0x03) as u8)
+        DIV1_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]

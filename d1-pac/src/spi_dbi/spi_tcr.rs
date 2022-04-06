@@ -114,7 +114,7 @@ impl<'a> XCH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> SDC1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> SDDM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(1 << 14)) | ((value as u32 & 1) << 14);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> SDM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
         self.w
     }
 }
@@ -450,7 +450,7 @@ impl<'a> FBS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
         self.w
     }
 }
@@ -534,7 +534,7 @@ impl<'a> SDC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -618,7 +618,7 @@ impl<'a> RPSM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -702,7 +702,7 @@ impl<'a> DDB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -786,7 +786,7 @@ impl<'a> DHB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -870,7 +870,7 @@ impl<'a> SS_LEVEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -954,7 +954,7 @@ impl<'a> SS_OWNER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -1056,7 +1056,7 @@ impl<'a> SS_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
         self.w
     }
 }
@@ -1140,7 +1140,7 @@ impl<'a> SSCTL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -1224,7 +1224,7 @@ impl<'a> SPOL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -1308,7 +1308,7 @@ impl<'a> CPOL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -1392,7 +1392,7 @@ impl<'a> CPHA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -1400,82 +1400,82 @@ impl R {
     #[doc = "Bit 31 - Exchange Burst"]
     #[inline(always)]
     pub fn xch(&self) -> XCH_R {
-        XCH_R::new(((self.bits >> 31) & 0x01) != 0)
+        XCH_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 15 - Master Sample Data Control register1"]
     #[inline(always)]
     pub fn sdc1(&self) -> SDC1_R {
-        SDC1_R::new(((self.bits >> 15) & 0x01) != 0)
+        SDC1_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 14 - Sending Data Delay Mode"]
     #[inline(always)]
     pub fn sddm(&self) -> SDDM_R {
-        SDDM_R::new(((self.bits >> 14) & 0x01) != 0)
+        SDDM_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 13 - Master Sample Data Mode"]
     #[inline(always)]
     pub fn sdm(&self) -> SDM_R {
-        SDM_R::new(((self.bits >> 13) & 0x01) != 0)
+        SDM_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 12 - First Transmit Bit Select"]
     #[inline(always)]
     pub fn fbs(&self) -> FBS_R {
-        FBS_R::new(((self.bits >> 12) & 0x01) != 0)
+        FBS_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11 - Master Sample Data Control"]
     #[inline(always)]
     pub fn sdc(&self) -> SDC_R {
-        SDC_R::new(((self.bits >> 11) & 0x01) != 0)
+        SDC_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - Rapids Mode Select"]
     #[inline(always)]
     pub fn rpsm(&self) -> RPSM_R {
-        RPSM_R::new(((self.bits >> 10) & 0x01) != 0)
+        RPSM_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9 - Dummy Burst Type"]
     #[inline(always)]
     pub fn ddb(&self) -> DDB_R {
-        DDB_R::new(((self.bits >> 9) & 0x01) != 0)
+        DDB_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Discard Hash Burst"]
     #[inline(always)]
     pub fn dhb(&self) -> DHB_R {
-        DHB_R::new(((self.bits >> 8) & 0x01) != 0)
+        DHB_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     pub fn ss_level(&self) -> SS_LEVEL_R {
-        SS_LEVEL_R::new(((self.bits >> 7) & 0x01) != 0)
+        SS_LEVEL_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     pub fn ss_owner(&self) -> SS_OWNER_R {
-        SS_OWNER_R::new(((self.bits >> 6) & 0x01) != 0)
+        SS_OWNER_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
     pub fn ss_sel(&self) -> SS_SEL_R {
-        SS_SEL_R::new(((self.bits >> 4) & 0x03) as u8)
+        SS_SEL_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn ssctl(&self) -> SSCTL_R {
-        SSCTL_R::new(((self.bits >> 3) & 0x01) != 0)
+        SSCTL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - SPI Chip Select Signal Polarity Control"]
     #[inline(always)]
     pub fn spol(&self) -> SPOL_R {
-        SPOL_R::new(((self.bits >> 2) & 0x01) != 0)
+        SPOL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - SPI Clock Polarity Control"]
     #[inline(always)]
     pub fn cpol(&self) -> CPOL_R {
-        CPOL_R::new(((self.bits >> 1) & 0x01) != 0)
+        CPOL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - SPI Clock/Data Phase Control"]
     #[inline(always)]
     pub fn cpha(&self) -> CPHA_R {
-        CPHA_R::new((self.bits & 0x01) != 0)
+        CPHA_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

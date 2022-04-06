@@ -114,7 +114,7 @@ impl<'a> MASK_DATA0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> CCLK_CTRL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> CCLK_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -317,17 +317,17 @@ impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn mask_data0(&self) -> MASK_DATA0_R {
-        MASK_DATA0_R::new(((self.bits >> 31) & 0x01) != 0)
+        MASK_DATA0_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 17 - Card Clock Output Control"]
     #[inline(always)]
     pub fn cclk_ctrl(&self) -> CCLK_CTRL_R {
-        CCLK_CTRL_R::new(((self.bits >> 17) & 0x01) != 0)
+        CCLK_CTRL_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 16 - Card Clock Enable"]
     #[inline(always)]
     pub fn cclk_enb(&self) -> CCLK_ENB_R {
-        CCLK_ENB_R::new(((self.bits >> 16) & 0x01) != 0)
+        CCLK_ENB_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 0:7 - Card Clock Divider"]
     #[inline(always)]

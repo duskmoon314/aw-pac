@@ -57,7 +57,7 @@ impl<'a> DEB_CLK_PRE_SCALE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
+        self.w.bits = (self.w.bits & !(7 << 4)) | ((value as u32 & 7) << 4);
         self.w
     }
 }
@@ -141,7 +141,7 @@ impl<'a> PIO_INT_CLK_SELECT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -149,12 +149,12 @@ impl R {
     #[doc = "Bits 4:6 - Debounce Clock Pre_scale n"]
     #[inline(always)]
     pub fn deb_clk_pre_scale(&self) -> DEB_CLK_PRE_SCALE_R {
-        DEB_CLK_PRE_SCALE_R::new(((self.bits >> 4) & 0x07) as u8)
+        DEB_CLK_PRE_SCALE_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 0 - PIO Interrupt Clock Select"]
     #[inline(always)]
     pub fn pio_int_clk_select(&self) -> PIO_INT_CLK_SELECT_R {
-        PIO_INT_CLK_SELECT_R::new((self.bits & 0x01) != 0)
+        PIO_INT_CLK_SELECT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

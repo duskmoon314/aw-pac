@@ -114,7 +114,7 @@ impl<'a> START_TRAN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> RESTART_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(1 << 29)) | ((value as u32 & 1) << 29);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> READ_TRAN_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(1 << 28)) | ((value as u32 & 1) << 28);
         self.w
     }
 }
@@ -606,7 +606,7 @@ impl<'a> SOFT_RESET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -690,7 +690,7 @@ impl<'a> TWI_DRV_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -698,17 +698,17 @@ impl R {
     #[doc = "Bit 31 - Start transmission"]
     #[inline(always)]
     pub fn start_tran(&self) -> START_TRAN_R {
-        START_TRAN_R::new(((self.bits >> 31) & 0x01) != 0)
+        START_TRAN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 29 - Restart mode"]
     #[inline(always)]
     pub fn restart_mode(&self) -> RESTART_MODE_R {
-        RESTART_MODE_R::new(((self.bits >> 29) & 0x01) != 0)
+        RESTART_MODE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 28 - Read transition mode"]
     #[inline(always)]
     pub fn read_tran_mode(&self) -> READ_TRAN_MODE_R {
-        READ_TRAN_MODE_R::new(((self.bits >> 28) & 0x01) != 0)
+        READ_TRAN_MODE_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bits 24:27 - Transition result"]
     #[inline(always)]
@@ -728,12 +728,12 @@ impl R {
     #[doc = "Bit 1 - Software reset"]
     #[inline(always)]
     pub fn soft_reset(&self) -> SOFT_RESET_R {
-        SOFT_RESET_R::new(((self.bits >> 1) & 0x01) != 0)
+        SOFT_RESET_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn twi_drv_en(&self) -> TWI_DRV_EN_R {
-        TWI_DRV_EN_R::new((self.bits & 0x01) != 0)
+        TWI_DRV_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

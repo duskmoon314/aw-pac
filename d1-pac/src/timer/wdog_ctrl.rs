@@ -126,7 +126,7 @@ impl<'a> WDOG_RESTART_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -134,7 +134,7 @@ impl R {
     #[doc = "Bit 0 - Watchdog Restart"]
     #[inline(always)]
     pub fn wdog_restart(&self) -> WDOG_RESTART_R {
-        WDOG_RESTART_R::new((self.bits & 0x01) != 0)
+        WDOG_RESTART_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

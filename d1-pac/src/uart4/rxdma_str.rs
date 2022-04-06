@@ -67,7 +67,7 @@ impl<'a> START_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -75,7 +75,7 @@ impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn start(&self) -> START_R {
-        START_R::new((self.bits & 0x01) != 0)
+        START_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

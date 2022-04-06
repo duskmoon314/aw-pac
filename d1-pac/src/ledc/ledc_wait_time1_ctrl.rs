@@ -114,7 +114,7 @@ impl<'a> WAIT_TIM1_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -149,7 +149,7 @@ impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn wait_tim1_en(&self) -> WAIT_TIM1_EN_R {
-        WAIT_TIM1_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        WAIT_TIM1_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 0:30"]
     #[inline(always)]

@@ -112,7 +112,7 @@ impl R {
     #[doc = "Bit 12"]
     #[inline(always)]
     pub fn te_val(&self) -> TE_VAL_R {
-        TE_VAL_R::new(((self.bits >> 12) & 0x01) != 0)
+        TE_VAL_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
@@ -127,12 +127,12 @@ impl R {
     #[doc = "Bits 2:3"]
     #[inline(always)]
     pub fn dbi_txcs(&self) -> DBI_TXCS_R {
-        DBI_TXCS_R::new(((self.bits >> 2) & 0x03) as u8)
+        DBI_TXCS_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 0:1"]
     #[inline(always)]
     pub fn mem_cs(&self) -> MEM_CS_R {
-        MEM_CS_R::new((self.bits & 0x03) as u8)
+        MEM_CS_R::new((self.bits & 3) as u8)
     }
 }
 #[doc = "DBI BEBUG 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbi_debug_0](index.html) module"]

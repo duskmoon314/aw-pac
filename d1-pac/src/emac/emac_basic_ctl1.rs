@@ -141,7 +141,7 @@ impl<'a> RX_TX_PRI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -225,7 +225,7 @@ impl<'a> SOFT_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -238,12 +238,12 @@ impl R {
     #[doc = "Bit 1 - RX TX DMA Priority"]
     #[inline(always)]
     pub fn rx_tx_pri(&self) -> RX_TX_PRI_R {
-        RX_TX_PRI_R::new(((self.bits >> 1) & 0x01) != 0)
+        RX_TX_PRI_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Soft Reset all Registers and Logic"]
     #[inline(always)]
     pub fn soft_rst(&self) -> SOFT_RST_R {
-        SOFT_RST_R::new((self.bits & 0x01) != 0)
+        SOFT_RST_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

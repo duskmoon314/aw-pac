@@ -120,8 +120,7 @@ impl<'a> PG_PULL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
+        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> PG_PULL_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
         self.w
     }
 }
@@ -161,87 +160,87 @@ impl R {
     #[doc = "PG Pull_up/down Select"]
     #[inline(always)]
     pub unsafe fn pg_pull(&self, n: usize) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> (n * 2)) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> (n * 2)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg0_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new((self.bits & 0x03) as u8)
+        PG_PULL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg1_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 2) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg2_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 4) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg3_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 6) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg4_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 8) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg5_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 10) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg6_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 12) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg7_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 14) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 14) & 3) as u8)
     }
     #[doc = "Bits 16:17 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg8_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 16) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg9_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 18) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:21 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg10_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 20) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 22:23 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg11_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 22) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 24:25 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg12_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 24) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg13_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 26) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bits 28:29 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg14_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 28) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg15_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 30) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {

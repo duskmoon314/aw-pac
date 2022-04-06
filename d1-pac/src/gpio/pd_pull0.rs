@@ -120,8 +120,7 @@ impl<'a> PD_PULL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
+        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> PD_PULL_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
         self.w
     }
 }
@@ -161,87 +160,87 @@ impl R {
     #[doc = "PD Pull_up/down Select"]
     #[inline(always)]
     pub unsafe fn pd_pull(&self, n: usize) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> (n * 2)) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> (n * 2)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd0_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new((self.bits & 0x03) as u8)
+        PD_PULL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd1_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 2) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd2_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 4) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd3_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 6) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd4_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 8) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd5_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 10) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd6_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 12) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd7_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 14) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 14) & 3) as u8)
     }
     #[doc = "Bits 16:17 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd8_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 16) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd9_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 18) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:21 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd10_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 20) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 22:23 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd11_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 22) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 24:25 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd12_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 24) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd13_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 26) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bits 28:29 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd14_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 28) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - PD Pull_up/down Select"]
     #[inline(always)]
     pub fn pd15_pull(&self) -> PD_PULL_R {
-        PD_PULL_R::new(((self.bits >> 30) & 0x03) as u8)
+        PD_PULL_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {

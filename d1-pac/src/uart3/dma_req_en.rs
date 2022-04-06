@@ -114,7 +114,7 @@ impl<'a> TIMEOUT_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> TX_REQ_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> RX_REQ_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -290,17 +290,17 @@ impl R {
     #[doc = "Bit 2 - DMA Timeout Enable"]
     #[inline(always)]
     pub fn timeout_enable(&self) -> TIMEOUT_ENABLE_R {
-        TIMEOUT_ENABLE_R::new(((self.bits >> 2) & 0x01) != 0)
+        TIMEOUT_ENABLE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - DMA TX REQ Enable"]
     #[inline(always)]
     pub fn tx_req_enable(&self) -> TX_REQ_ENABLE_R {
-        TX_REQ_ENABLE_R::new(((self.bits >> 1) & 0x01) != 0)
+        TX_REQ_ENABLE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - DMA RX REQ Enable"]
     #[inline(always)]
     pub fn rx_req_enable(&self) -> RX_REQ_ENABLE_R {
-        RX_REQ_ENABLE_R::new((self.bits & 0x01) != 0)
+        RX_REQ_ENABLE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

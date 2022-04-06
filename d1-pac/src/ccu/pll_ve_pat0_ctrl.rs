@@ -67,7 +67,7 @@ impl<'a> SIG_DELT_PAT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -169,7 +169,7 @@ impl<'a> SPR_FREQ_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 29)) | ((value as u32 & 0x03) << 29);
+        self.w.bits = (self.w.bits & !(3 << 29)) | ((value as u32 & 3) << 29);
         self.w
     }
 }
@@ -280,7 +280,7 @@ impl<'a> SDM_CLK_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(1 << 19)) | ((value as u32 & 1) << 19);
         self.w
     }
 }
@@ -382,7 +382,7 @@ impl<'a> FREQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 17)) | ((value as u32 & 0x03) << 17);
+        self.w.bits = (self.w.bits & !(3 << 17)) | ((value as u32 & 3) << 17);
         self.w
     }
 }
@@ -417,12 +417,12 @@ impl R {
     #[doc = "Bit 31 - Sigma-Delta Pattern Enable"]
     #[inline(always)]
     pub fn sig_delt_pat_en(&self) -> SIG_DELT_PAT_EN_R {
-        SIG_DELT_PAT_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        SIG_DELT_PAT_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 29:30 - Spread Frequency Mode"]
     #[inline(always)]
     pub fn spr_freq_mode(&self) -> SPR_FREQ_MODE_R {
-        SPR_FREQ_MODE_R::new(((self.bits >> 29) & 0x03) as u8)
+        SPR_FREQ_MODE_R::new(((self.bits >> 29) & 3) as u8)
     }
     #[doc = "Bits 20:28 - Wave Step"]
     #[inline(always)]
@@ -432,12 +432,12 @@ impl R {
     #[doc = "Bit 19 - SDM Clock Select"]
     #[inline(always)]
     pub fn sdm_clk_sel(&self) -> SDM_CLK_SEL_R {
-        SDM_CLK_SEL_R::new(((self.bits >> 19) & 0x01) != 0)
+        SDM_CLK_SEL_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bits 17:18 - Frequency"]
     #[inline(always)]
     pub fn freq(&self) -> FREQ_R {
-        FREQ_R::new(((self.bits >> 17) & 0x03) as u8)
+        FREQ_R::new(((self.bits >> 17) & 3) as u8)
     }
     #[doc = "Bits 0:16 - Wave Bottom"]
     #[inline(always)]

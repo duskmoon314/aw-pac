@@ -79,12 +79,12 @@ impl R {
     #[doc = "Bits 11:12"]
     #[inline(always)]
     pub fn boot_sel_pad_sta(&self) -> BOOT_SEL_PAD_STA_R {
-        BOOT_SEL_PAD_STA_R::new(((self.bits >> 11) & 0x03) as u8)
+        BOOT_SEL_PAD_STA_R::new(((self.bits >> 11) & 3) as u8)
     }
     #[doc = "Bit 8 - Fel Select Pin Status"]
     #[inline(always)]
     pub fn fel_sel_pad_sta(&self) -> FEL_SEL_PAD_STA_R {
-        FEL_SEL_PAD_STA_R::new(((self.bits >> 8) & 0x01) != 0)
+        FEL_SEL_PAD_STA_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 #[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ver](index.html) module"]

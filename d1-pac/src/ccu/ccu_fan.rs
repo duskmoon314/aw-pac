@@ -115,8 +115,7 @@ impl<'a> CLK_FANOUT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> CLK_FANOUT_EN_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -295,8 +294,7 @@ impl<'a> CLK_FANOUT_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x07 << self.offset)) | ((value as u32 & 0x07) << self.offset);
+        self.w.bits = (self.w.bits & !(7 << self.offset)) | ((value as u32 & 7) << self.offset);
         self.w
     }
 }
@@ -348,7 +346,7 @@ impl<'a, const O: usize> CLK_FANOUT_SEL_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << O)) | ((value as u32 & 0x07) << O);
+        self.w.bits = (self.w.bits & !(7 << O)) | ((value as u32 & 7) << O);
         self.w
     }
 }
@@ -356,42 +354,42 @@ impl R {
     #[doc = "Gating for CLK_FANOUT"]
     #[inline(always)]
     pub unsafe fn clk_fanout_en(&self, n: usize) -> CLK_FANOUT_EN_R {
-        CLK_FANOUT_EN_R::new(((self.bits >> (n + 21)) & 0x01) != 0)
+        CLK_FANOUT_EN_R::new(((self.bits >> (n + 21)) & 1) != 0)
     }
     #[doc = "Bit 21 - Gating for CLK_FANOUT"]
     #[inline(always)]
     pub fn clk_fanout0_en(&self) -> CLK_FANOUT_EN_R {
-        CLK_FANOUT_EN_R::new(((self.bits >> 21) & 0x01) != 0)
+        CLK_FANOUT_EN_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Gating for CLK_FANOUT"]
     #[inline(always)]
     pub fn clk_fanout1_en(&self) -> CLK_FANOUT_EN_R {
-        CLK_FANOUT_EN_R::new(((self.bits >> 22) & 0x01) != 0)
+        CLK_FANOUT_EN_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Gating for CLK_FANOUT"]
     #[inline(always)]
     pub fn clk_fanout2_en(&self) -> CLK_FANOUT_EN_R {
-        CLK_FANOUT_EN_R::new(((self.bits >> 23) & 0x01) != 0)
+        CLK_FANOUT_EN_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = ""]
     #[inline(always)]
     pub unsafe fn clk_fanout_sel(&self, n: usize) -> CLK_FANOUT_SEL_R {
-        CLK_FANOUT_SEL_R::new(((self.bits >> (n * 3)) & 0x07) as u8)
+        CLK_FANOUT_SEL_R::new(((self.bits >> (n * 3)) & 7) as u8)
     }
     #[doc = "Bits 0:2"]
     #[inline(always)]
     pub fn clk_fanout0_sel(&self) -> CLK_FANOUT_SEL_R {
-        CLK_FANOUT_SEL_R::new((self.bits & 0x07) as u8)
+        CLK_FANOUT_SEL_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:5"]
     #[inline(always)]
     pub fn clk_fanout1_sel(&self) -> CLK_FANOUT_SEL_R {
-        CLK_FANOUT_SEL_R::new(((self.bits >> 3) & 0x07) as u8)
+        CLK_FANOUT_SEL_R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bits 6:8"]
     #[inline(always)]
     pub fn clk_fanout2_sel(&self) -> CLK_FANOUT_SEL_R {
-        CLK_FANOUT_SEL_R::new(((self.bits >> 6) & 0x07) as u8)
+        CLK_FANOUT_SEL_R::new(((self.bits >> 6) & 7) as u8)
     }
 }
 impl W {

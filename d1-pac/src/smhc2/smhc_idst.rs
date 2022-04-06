@@ -116,7 +116,7 @@ impl<'a> ABN_INT_SUM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -153,7 +153,7 @@ impl<'a> NOR_INT_SUM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -190,7 +190,7 @@ impl<'a> ERR_FLAG_SUM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -227,7 +227,7 @@ impl<'a> DES_UNAVL_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -264,7 +264,7 @@ impl<'a> FATAL_BERR_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -301,7 +301,7 @@ impl<'a> RX_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -338,7 +338,7 @@ impl<'a> TX_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -346,42 +346,42 @@ impl R {
     #[doc = "Bits 10:12 - Error Bits"]
     #[inline(always)]
     pub fn idmac_err_sta(&self) -> IDMAC_ERR_STA_R {
-        IDMAC_ERR_STA_R::new(((self.bits >> 10) & 0x07) as u8)
+        IDMAC_ERR_STA_R::new(((self.bits >> 10) & 7) as u8)
     }
     #[doc = "Bit 9 - Abnormal Interrupt Summary"]
     #[inline(always)]
     pub fn abn_int_sum(&self) -> ABN_INT_SUM_R {
-        ABN_INT_SUM_R::new(((self.bits >> 9) & 0x01) != 0)
+        ABN_INT_SUM_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Normal Interrupt Summary"]
     #[inline(always)]
     pub fn nor_int_sum(&self) -> NOR_INT_SUM_R {
-        NOR_INT_SUM_R::new(((self.bits >> 8) & 0x01) != 0)
+        NOR_INT_SUM_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 5 - Card Error Summary"]
     #[inline(always)]
     pub fn err_flag_sum(&self) -> ERR_FLAG_SUM_R {
-        ERR_FLAG_SUM_R::new(((self.bits >> 5) & 0x01) != 0)
+        ERR_FLAG_SUM_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
     pub fn des_unavl_int(&self) -> DES_UNAVL_INT_R {
-        DES_UNAVL_INT_R::new(((self.bits >> 4) & 0x01) != 0)
+        DES_UNAVL_INT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
     #[inline(always)]
     pub fn fatal_berr_int(&self) -> FATAL_BERR_INT_R {
-        FATAL_BERR_INT_R::new(((self.bits >> 2) & 0x01) != 0)
+        FATAL_BERR_INT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Receive Interrupt"]
     #[inline(always)]
     pub fn rx_int(&self) -> RX_INT_R {
-        RX_INT_R::new(((self.bits >> 1) & 0x01) != 0)
+        RX_INT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
     pub fn tx_int(&self) -> TX_INT_R {
-        TX_INT_R::new((self.bits & 0x01) != 0)
+        TX_INT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

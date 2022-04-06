@@ -47,7 +47,7 @@ impl R {
     #[doc = "Bit 8 - Calibration Circuits Analog COmpare Output"]
     #[inline(always)]
     pub fn cout(&self) -> COUT_R {
-        COUT_R::new(((self.bits >> 8) & 0x01) != 0)
+        COUT_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 0:5 - RESCAL Calibration Results Output"]
     #[inline(always)]

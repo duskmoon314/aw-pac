@@ -57,7 +57,7 @@ impl<'a> PLL_VCO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
+        self.w.bits = (self.w.bits & !(7 << 28)) | ((value as u32 & 7) << 28);
         self.w
     }
 }
@@ -84,7 +84,7 @@ impl<'a> PLL_VCO_GAIN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(7 << 24)) | ((value as u32 & 7) << 24);
         self.w
     }
 }
@@ -148,7 +148,7 @@ impl<'a> PLL_REG_OD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -214,7 +214,7 @@ impl<'a> PLL_REG_OD1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -238,12 +238,12 @@ impl R {
     #[doc = "Bits 28:30 - VCO range control"]
     #[inline(always)]
     pub fn pll_vco(&self) -> PLL_VCO_R {
-        PLL_VCO_R::new(((self.bits >> 28) & 0x07) as u8)
+        PLL_VCO_R::new(((self.bits >> 28) & 7) as u8)
     }
     #[doc = "Bits 24:26 - KVCO gain control"]
     #[inline(always)]
     pub fn pll_vco_gain(&self) -> PLL_VCO_GAIN_R {
-        PLL_VCO_GAIN_R::new(((self.bits >> 24) & 0x07) as u8)
+        PLL_VCO_GAIN_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 16:22 - Counter initial control"]
     #[inline(always)]
@@ -253,7 +253,7 @@ impl R {
     #[doc = "Bit 15 - PLL-REG-OD0 for verify"]
     #[inline(always)]
     pub fn pll_reg_od(&self) -> PLL_REG_OD_R {
-        PLL_REG_OD_R::new(((self.bits >> 15) & 0x01) != 0)
+        PLL_REG_OD_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\]
 for verify"]
@@ -264,7 +264,7 @@ for verify"]
     #[doc = "Bit 7 - PLL-REG-OD1 for verify"]
     #[inline(always)]
     pub fn pll_reg_od1(&self) -> PLL_REG_OD1_R {
-        PLL_REG_OD1_R::new(((self.bits >> 7) & 0x01) != 0)
+        PLL_REG_OD1_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 0:6 - PLL-B-OUT \\[6:0\\]
 for verify"]

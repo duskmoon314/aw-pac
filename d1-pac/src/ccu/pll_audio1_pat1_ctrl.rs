@@ -67,7 +67,7 @@ impl<'a> DITHER_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -104,7 +104,7 @@ impl<'a> FRAC_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(1 << 20)) | ((value as u32 & 1) << 20);
         self.w
     }
 }
@@ -139,12 +139,12 @@ impl R {
     #[doc = "Bit 24 - Dither Enable"]
     #[inline(always)]
     pub fn dither_en(&self) -> DITHER_EN_R {
-        DITHER_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        DITHER_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 20 - Fraction Enable"]
     #[inline(always)]
     pub fn frac_en(&self) -> FRAC_EN_R {
-        FRAC_EN_R::new(((self.bits >> 20) & 0x01) != 0)
+        FRAC_EN_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bits 0:16 - Fraction In"]
     #[inline(always)]

@@ -114,7 +114,7 @@ impl<'a> ABT_RDATA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> READ_WAIT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> HOST_SEND_MIMC_IRQRESQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -290,17 +290,17 @@ impl R {
     #[doc = "Bit 2 - Abort Read Data"]
     #[inline(always)]
     pub fn abt_rdata(&self) -> ABT_RDATA_R {
-        ABT_RDATA_R::new(((self.bits >> 2) & 0x01) != 0)
+        ABT_RDATA_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Read Wait"]
     #[inline(always)]
     pub fn read_wait(&self) -> READ_WAIT_R {
-        READ_WAIT_R::new(((self.bits >> 1) & 0x01) != 0)
+        READ_WAIT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Host Send MMC IRQ Response"]
     #[inline(always)]
     pub fn host_send_mimc_irqresq(&self) -> HOST_SEND_MIMC_IRQRESQ_R {
-        HOST_SEND_MIMC_IRQRESQ_R::new((self.bits & 0x01) != 0)
+        HOST_SEND_MIMC_IRQRESQ_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

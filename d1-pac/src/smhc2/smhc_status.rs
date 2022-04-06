@@ -522,7 +522,7 @@ impl R {
     #[doc = "Bit 31 - DMA Request"]
     #[inline(always)]
     pub fn dma_req(&self) -> DMA_REQ_R {
-        DMA_REQ_R::new(((self.bits >> 31) & 0x01) != 0)
+        DMA_REQ_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 17:25 - FIFO Level"]
     #[inline(always)]
@@ -537,18 +537,18 @@ impl R {
     #[doc = "Bit 10 - Data FSM Busy"]
     #[inline(always)]
     pub fn fsm_busy(&self) -> FSM_BUSY_R {
-        FSM_BUSY_R::new(((self.bits >> 10) & 0x01) != 0)
+        FSM_BUSY_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9 - Card Data Busy"]
     #[inline(always)]
     pub fn card_busy(&self) -> CARD_BUSY_R {
-        CARD_BUSY_R::new(((self.bits >> 9) & 0x01) != 0)
+        CARD_BUSY_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Data\\[3\\]
 Statuss"]
     #[inline(always)]
     pub fn card_present(&self) -> CARD_PRESENT_R {
-        CARD_PRESENT_R::new(((self.bits >> 8) & 0x01) != 0)
+        CARD_PRESENT_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 4:7 - Command FSM States"]
     #[inline(always)]
@@ -558,22 +558,22 @@ Statuss"]
     #[doc = "Bit 3 - sFIFO Full"]
     #[inline(always)]
     pub fn fifo_full(&self) -> FIFO_FULL_R {
-        FIFO_FULL_R::new(((self.bits >> 3) & 0x01) != 0)
+        FIFO_FULL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - FIFO Empty"]
     #[inline(always)]
     pub fn fifo_empty(&self) -> FIFO_EMPTY_R {
-        FIFO_EMPTY_R::new(((self.bits >> 2) & 0x01) != 0)
+        FIFO_EMPTY_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - FIFO TX Water Level Flag"]
     #[inline(always)]
     pub fn fifo_tx_level(&self) -> FIFO_TX_LEVEL_R {
-        FIFO_TX_LEVEL_R::new(((self.bits >> 1) & 0x01) != 0)
+        FIFO_TX_LEVEL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - FIFO RX Water Level Flag"]
     #[inline(always)]
     pub fn fifo_rx_level(&self) -> FIFO_RX_LEVEL_R {
-        FIFO_RX_LEVEL_R::new((self.bits & 0x01) != 0)
+        FIFO_RX_LEVEL_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smhc_status](index.html) module"]

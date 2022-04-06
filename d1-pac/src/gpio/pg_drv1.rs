@@ -133,8 +133,7 @@ impl<'a> PG_DRV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
+        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
         self.w
     }
 }
@@ -171,7 +170,7 @@ impl<'a, const O: usize> PG_DRV_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
         self.w
     }
 }
@@ -179,47 +178,47 @@ impl R {
     #[doc = "PG Multi_Driving Select"]
     #[inline(always)]
     pub unsafe fn pg_drv(&self, n: usize) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> ((n - 8) * 4)) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> ((n - 8) * 4)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg8_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new((self.bits & 0x03) as u8)
+        PG_DRV_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg9_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> 4) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg10_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> 8) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg11_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> 12) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:17 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg12_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> 16) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 20:21 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg13_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> 20) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 24:25 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg14_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> 24) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 28:29 - PG Multi_Driving Select"]
     #[inline(always)]
     pub fn pg15_drv(&self) -> PG_DRV_R {
-        PG_DRV_R::new(((self.bits >> 28) & 0x03) as u8)
+        PG_DRV_R::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {

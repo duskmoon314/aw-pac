@@ -67,7 +67,7 @@ impl<'a> RX_DMA_START_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -151,7 +151,7 @@ impl<'a> RX_EMA_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -235,7 +235,7 @@ impl<'a> RX_FIFO_FLOW_CTL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -337,7 +337,7 @@ impl<'a> RX_FLOW_CTL_TH_DEACT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 22)) | ((value as u32 & 0x03) << 22);
+        self.w.bits = (self.w.bits & !(3 << 22)) | ((value as u32 & 3) << 22);
         self.w
     }
 }
@@ -439,7 +439,7 @@ impl<'a> RX_FLOW_CTL_TH_ACT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
+        self.w.bits = (self.w.bits & !(3 << 20)) | ((value as u32 & 3) << 20);
         self.w
     }
 }
@@ -541,7 +541,7 @@ impl<'a> RX_TH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
         self.w
     }
 }
@@ -625,7 +625,7 @@ impl<'a> RX_ERR_FRM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -662,7 +662,7 @@ impl<'a> RX_RUNT_FRM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -746,7 +746,7 @@ impl<'a> RX_MD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -830,7 +830,7 @@ impl<'a> FLUSH_RX_FRM_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -838,52 +838,52 @@ impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn rx_dma_start(&self) -> RX_DMA_START_R {
-        RX_DMA_START_R::new(((self.bits >> 31) & 0x01) != 0)
+        RX_DMA_START_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - Receive DMA Enable"]
     #[inline(always)]
     pub fn rx_ema_en(&self) -> RX_EMA_EN_R {
-        RX_EMA_EN_R::new(((self.bits >> 30) & 0x01) != 0)
+        RX_EMA_EN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 24 - Receive FIFO Flow Control Enable"]
     #[inline(always)]
     pub fn rx_fifo_flow_ctl(&self) -> RX_FIFO_FLOW_CTL_R {
-        RX_FIFO_FLOW_CTL_R::new(((self.bits >> 24) & 0x01) != 0)
+        RX_FIFO_FLOW_CTL_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 22:23 - Threshold for Deactivating Flow Control"]
     #[inline(always)]
     pub fn rx_flow_ctl_th_deact(&self) -> RX_FLOW_CTL_TH_DEACT_R {
-        RX_FLOW_CTL_TH_DEACT_R::new(((self.bits >> 22) & 0x03) as u8)
+        RX_FLOW_CTL_TH_DEACT_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 20:21 - Threshold for Activating Flow Control"]
     #[inline(always)]
     pub fn rx_flow_ctl_th_act(&self) -> RX_FLOW_CTL_TH_ACT_R {
-        RX_FLOW_CTL_TH_ACT_R::new(((self.bits >> 20) & 0x03) as u8)
+        RX_FLOW_CTL_TH_ACT_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 4:5 - Threshold for RX DMA FIFO Start"]
     #[inline(always)]
     pub fn rx_th(&self) -> RX_TH_R {
-        RX_TH_R::new(((self.bits >> 4) & 0x03) as u8)
+        RX_TH_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn rx_err_frm(&self) -> RX_ERR_FRM_R {
-        RX_ERR_FRM_R::new(((self.bits >> 3) & 0x01) != 0)
+        RX_ERR_FRM_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn rx_runt_frm(&self) -> RX_RUNT_FRM_R {
-        RX_RUNT_FRM_R::new(((self.bits >> 2) & 0x01) != 0)
+        RX_RUNT_FRM_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Receive Mode"]
     #[inline(always)]
     pub fn rx_md(&self) -> RX_MD_R {
-        RX_MD_R::new(((self.bits >> 1) & 0x01) != 0)
+        RX_MD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Flush Receive Frames"]
     #[inline(always)]
     pub fn flush_rx_frm(&self) -> FLUSH_RX_FRM_R {
-        FLUSH_RX_FRM_R::new((self.bits & 0x01) != 0)
+        FLUSH_RX_FRM_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

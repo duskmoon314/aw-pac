@@ -114,7 +114,7 @@ impl<'a> RISCV_MCLK_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> G2D_MCLK_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> CSI_MCLK_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> TVIN_MCLK_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -450,7 +450,7 @@ impl<'a> CE_MCLK_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -534,7 +534,7 @@ impl<'a> VE_MCLK_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -618,7 +618,7 @@ impl<'a> DMA_MCLK_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -626,37 +626,37 @@ impl R {
     #[doc = "Bit 11 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn riscv_mclk_en(&self) -> RISCV_MCLK_EN_R {
-        RISCV_MCLK_EN_R::new(((self.bits >> 11) & 0x01) != 0)
+        RISCV_MCLK_EN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn g2d_mclk_en(&self) -> G2D_MCLK_EN_R {
-        G2D_MCLK_EN_R::new(((self.bits >> 10) & 0x01) != 0)
+        G2D_MCLK_EN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 8 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn csi_mclk_en(&self) -> CSI_MCLK_EN_R {
-        CSI_MCLK_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        CSI_MCLK_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 7 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn tvin_mclk_en(&self) -> TVIN_MCLK_EN_R {
-        TVIN_MCLK_EN_R::new(((self.bits >> 7) & 0x01) != 0)
+        TVIN_MCLK_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 2 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn ce_mclk_en(&self) -> CE_MCLK_EN_R {
-        CE_MCLK_EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        CE_MCLK_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn ve_mclk_en(&self) -> VE_MCLK_EN_R {
-        VE_MCLK_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        VE_MCLK_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn dma_mclk_en(&self) -> DMA_MCLK_EN_R {
-        DMA_MCLK_EN_R::new((self.bits & 0x01) != 0)
+        DMA_MCLK_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

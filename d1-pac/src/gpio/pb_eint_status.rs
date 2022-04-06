@@ -115,8 +115,7 @@ impl<'a> EINT_STATUS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> EINT_STATUS_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -161,67 +160,67 @@ impl R {
     #[doc = "External INT Pending Bit"]
     #[inline(always)]
     pub unsafe fn eint_status(&self, n: usize) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> n) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint0_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new((self.bits & 0x01) != 0)
+        EINT_STATUS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint1_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 1) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint2_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 2) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint3_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 3) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint4_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 4) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint5_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 5) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint6_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 6) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint7_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 7) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint8_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 8) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint9_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 9) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint10_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 10) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint11_status(&self) -> EINT_STATUS_R {
-        EINT_STATUS_R::new(((self.bits >> 11) & 0x01) != 0)
+        EINT_STATUS_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
 impl W {

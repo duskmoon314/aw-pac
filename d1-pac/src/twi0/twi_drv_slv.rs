@@ -141,7 +141,7 @@ impl<'a> CMD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -181,7 +181,7 @@ impl R {
     #[doc = "Bit 8 - R/W operation to slave device"]
     #[inline(always)]
     pub fn cmd(&self) -> CMD_R {
-        CMD_R::new(((self.bits >> 8) & 0x01) != 0)
+        CMD_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
     #[inline(always)]

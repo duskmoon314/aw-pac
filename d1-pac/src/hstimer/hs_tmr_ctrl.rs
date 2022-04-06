@@ -114,7 +114,7 @@ impl<'a> HS_TMR_TEST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> HS_TMR_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -313,7 +313,7 @@ impl<'a> HS_TMR_CLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
+        self.w.bits = (self.w.bits & !(7 << 4)) | ((value as u32 & 7) << 4);
         self.w
     }
 }
@@ -397,7 +397,7 @@ impl<'a> HS_TMR_RELOAD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -481,7 +481,7 @@ impl<'a> HS_TMR_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -489,27 +489,27 @@ impl R {
     #[doc = "Bit 31 - Select the operating mode for HSTimer"]
     #[inline(always)]
     pub fn hs_tmr_test(&self) -> HS_TMR_TEST_R {
-        HS_TMR_TEST_R::new(((self.bits >> 31) & 0x01) != 0)
+        HS_TMR_TEST_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 7 - Select the timing mode for HSTimer"]
     #[inline(always)]
     pub fn hs_tmr_mode(&self) -> HS_TMR_MODE_R {
-        HS_TMR_MODE_R::new(((self.bits >> 7) & 0x01) != 0)
+        HS_TMR_MODE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 4:6 - Select the pre-scale for the HSTimer clock sources"]
     #[inline(always)]
     pub fn hs_tmr_clk(&self) -> HS_TMR_CLK_R {
-        HS_TMR_CLK_R::new(((self.bits >> 4) & 0x07) as u8)
+        HS_TMR_CLK_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bit 1 - HSTimer Reload"]
     #[inline(always)]
     pub fn hs_tmr_reload(&self) -> HS_TMR_RELOAD_R {
-        HS_TMR_RELOAD_R::new(((self.bits >> 1) & 0x01) != 0)
+        HS_TMR_RELOAD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - HSTimer Enable"]
     #[inline(always)]
     pub fn hs_tmr_en(&self) -> HS_TMR_EN_R {
-        HS_TMR_EN_R::new((self.bits & 0x01) != 0)
+        HS_TMR_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

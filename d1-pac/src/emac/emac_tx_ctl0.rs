@@ -114,7 +114,7 @@ impl<'a> TX_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> TX_FRM_LEN_CTL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -206,12 +206,12 @@ impl R {
     #[doc = "Bit 31 - Enable Transmitter"]
     #[inline(always)]
     pub fn tx_en(&self) -> TX_EN_R {
-        TX_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        TX_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - Frame Transmit Length Control"]
     #[inline(always)]
     pub fn tx_frm_len_ctl(&self) -> TX_FRM_LEN_CTL_R {
-        TX_FRM_LEN_CTL_R::new(((self.bits >> 30) & 0x01) != 0)
+        TX_FRM_LEN_CTL_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
 impl W {

@@ -67,7 +67,7 @@ impl<'a> RECV_FIFO_CLEAR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(1 << 22)) | ((value as u32 & 1) << 22);
         self.w
     }
 }
@@ -131,7 +131,7 @@ impl<'a> SEND_FIFO_CLEAR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -166,7 +166,7 @@ impl R {
     #[doc = "Bit 22"]
     #[inline(always)]
     pub fn recv_fifo_clear(&self) -> RECV_FIFO_CLEAR_R {
-        RECV_FIFO_CLEAR_R::new(((self.bits >> 22) & 0x01) != 0)
+        RECV_FIFO_CLEAR_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bits 16:21"]
     #[inline(always)]
@@ -176,7 +176,7 @@ impl R {
     #[doc = "Bit 6"]
     #[inline(always)]
     pub fn send_fifo_clear(&self) -> SEND_FIFO_CLEAR_R {
-        SEND_FIFO_CLEAR_R::new(((self.bits >> 6) & 0x01) != 0)
+        SEND_FIFO_CLEAR_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 0:5"]
     #[inline(always)]

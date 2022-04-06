@@ -67,7 +67,7 @@ impl<'a> CARD_REMOVAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -104,7 +104,7 @@ impl<'a> CARD_INSERT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -141,7 +141,7 @@ impl<'a> SDIOI_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -178,7 +178,7 @@ impl<'a> DEE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -215,7 +215,7 @@ impl<'a> ACD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(1 << 14)) | ((value as u32 & 1) << 14);
         self.w
     }
 }
@@ -252,7 +252,7 @@ impl<'a> DSE_BC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
         self.w
     }
 }
@@ -289,7 +289,7 @@ impl<'a> CB_IW_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
         self.w
     }
 }
@@ -326,7 +326,7 @@ impl<'a> FU_FO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -363,7 +363,7 @@ impl<'a> DSTO_VSD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -400,7 +400,7 @@ impl<'a> DTO_BDS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -437,7 +437,7 @@ impl<'a> RTO_BACK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -474,7 +474,7 @@ impl<'a> DCE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -511,7 +511,7 @@ impl<'a> RCE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -548,7 +548,7 @@ impl<'a> DRR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -585,7 +585,7 @@ impl<'a> DTR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -622,7 +622,7 @@ impl<'a> DTC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -659,7 +659,7 @@ impl<'a> CC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -696,7 +696,7 @@ impl<'a> RE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -704,92 +704,92 @@ impl R {
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]
     pub fn card_removal(&self) -> CARD_REMOVAL_R {
-        CARD_REMOVAL_R::new(((self.bits >> 31) & 0x01) != 0)
+        CARD_REMOVAL_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - Card Inserted"]
     #[inline(always)]
     pub fn card_insert(&self) -> CARD_INSERT_R {
-        CARD_INSERT_R::new(((self.bits >> 30) & 0x01) != 0)
+        CARD_INSERT_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 16 - SDIO Interrupt"]
     #[inline(always)]
     pub fn sdioi_int(&self) -> SDIOI_INT_R {
-        SDIOI_INT_R::new(((self.bits >> 16) & 0x01) != 0)
+        SDIOI_INT_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 15 - Data End-bit Error"]
     #[inline(always)]
     pub fn dee(&self) -> DEE_R {
-        DEE_R::new(((self.bits >> 15) & 0x01) != 0)
+        DEE_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 14 - Auto Command Done"]
     #[inline(always)]
     pub fn acd(&self) -> ACD_R {
-        ACD_R::new(((self.bits >> 14) & 0x01) != 0)
+        ACD_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 13 - Data Start Error/Busy Clear"]
     #[inline(always)]
     pub fn dse_bc(&self) -> DSE_BC_R {
-        DSE_BC_R::new(((self.bits >> 13) & 0x01) != 0)
+        DSE_BC_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 12 - Command Busy and Illegal Write"]
     #[inline(always)]
     pub fn cb_iw(&self) -> CB_IW_R {
-        CB_IW_R::new(((self.bits >> 12) & 0x01) != 0)
+        CB_IW_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11 - FIFO Underrun/Overflow"]
     #[inline(always)]
     pub fn fu_fo(&self) -> FU_FO_R {
-        FU_FO_R::new(((self.bits >> 11) & 0x01) != 0)
+        FU_FO_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - Data Starvation Timeout/V1.8 Switch Done"]
     #[inline(always)]
     pub fn dsto_vsd(&self) -> DSTO_VSD_R {
-        DSTO_VSD_R::new(((self.bits >> 10) & 0x01) != 0)
+        DSTO_VSD_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9 - Data Timeout/Boot Data Start"]
     #[inline(always)]
     pub fn dto_bds(&self) -> DTO_BDS_R {
-        DTO_BDS_R::new(((self.bits >> 9) & 0x01) != 0)
+        DTO_BDS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Response Timeout/Boot ACK Received"]
     #[inline(always)]
     pub fn rto_back(&self) -> RTO_BACK_R {
-        RTO_BACK_R::new(((self.bits >> 8) & 0x01) != 0)
+        RTO_BACK_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 7 - Data CRC Error"]
     #[inline(always)]
     pub fn dce(&self) -> DCE_R {
-        DCE_R::new(((self.bits >> 7) & 0x01) != 0)
+        DCE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - Response CRC Error"]
     #[inline(always)]
     pub fn rce(&self) -> RCE_R {
-        RCE_R::new(((self.bits >> 6) & 0x01) != 0)
+        RCE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - Data Receive Request"]
     #[inline(always)]
     pub fn drr(&self) -> DRR_R {
-        DRR_R::new(((self.bits >> 5) & 0x01) != 0)
+        DRR_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Data Transmit Request"]
     #[inline(always)]
     pub fn dtr(&self) -> DTR_R {
-        DTR_R::new(((self.bits >> 4) & 0x01) != 0)
+        DTR_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Data Transfer Complete"]
     #[inline(always)]
     pub fn dtc(&self) -> DTC_R {
-        DTC_R::new(((self.bits >> 3) & 0x01) != 0)
+        DTC_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Command Complete"]
     #[inline(always)]
     pub fn cc(&self) -> CC_R {
-        CC_R::new(((self.bits >> 2) & 0x01) != 0)
+        CC_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Response Error"]
     #[inline(always)]
     pub fn re(&self) -> RE_R {
-        RE_R::new(((self.bits >> 1) & 0x01) != 0)
+        RE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {

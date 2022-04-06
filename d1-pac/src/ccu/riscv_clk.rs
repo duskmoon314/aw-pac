@@ -171,7 +171,7 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(7 << 24)) | ((value as u32 & 7) << 24);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> AXI_DIV_CFG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
         self.w
     }
 }
@@ -233,12 +233,12 @@ impl R {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 24) & 0x07) as u8)
+        CLK_SRC_SEL_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn axi_div_cfg(&self) -> AXI_DIV_CFG_R {
-        AXI_DIV_CFG_R::new(((self.bits >> 8) & 0x03) as u8)
+        AXI_DIV_CFG_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]

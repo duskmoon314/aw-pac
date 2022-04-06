@@ -67,7 +67,7 @@ impl<'a> AUTO_CMD23_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -75,7 +75,7 @@ impl R {
     #[doc = "Bit 0 - Send CMD23 Automatically"]
     #[inline(always)]
     pub fn auto_cmd23_en(&self) -> AUTO_CMD23_EN_R {
-        AUTO_CMD23_EN_R::new((self.bits & 0x01) != 0)
+        AUTO_CMD23_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

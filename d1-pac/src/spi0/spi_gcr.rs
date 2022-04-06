@@ -67,7 +67,7 @@ impl<'a> SRST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -151,7 +151,7 @@ impl<'a> TP_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -235,7 +235,7 @@ impl<'a> MODE_SELEC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -319,7 +319,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -403,7 +403,7 @@ impl<'a> EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -411,27 +411,27 @@ impl R {
     #[doc = "Bit 31 - Soft reset"]
     #[inline(always)]
     pub fn srst(&self) -> SRST_R {
-        SRST_R::new(((self.bits >> 31) & 0x01) != 0)
+        SRST_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 7 - Transmit Pause Enable"]
     #[inline(always)]
     pub fn tp_en(&self) -> TP_EN_R {
-        TP_EN_R::new(((self.bits >> 7) & 0x01) != 0)
+        TP_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 2 - Sample timing Mode Select"]
     #[inline(always)]
     pub fn mode_selec(&self) -> MODE_SELEC_R {
-        MODE_SELEC_R::new(((self.bits >> 2) & 0x01) != 0)
+        MODE_SELEC_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - SPI Function Mode Select"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 1) & 0x01) != 0)
+        MODE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - SPI Module Enable Control"]
     #[inline(always)]
     pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 0x01) != 0)
+        EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

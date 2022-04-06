@@ -107,12 +107,12 @@ impl R {
     #[doc = "Bit 31 - TXFIFO Write Buffer Write Enable"]
     #[inline(always)]
     pub fn tb_wr(&self) -> TB_WR_R {
-        TB_WR_R::new(((self.bits >> 31) & 0x01) != 0)
+        TB_WR_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 28:30 - TXFIFO Write Buffer Counter"]
     #[inline(always)]
     pub fn tb_cnt(&self) -> TB_CNT_R {
-        TB_CNT_R::new(((self.bits >> 28) & 0x07) as u8)
+        TB_CNT_R::new(((self.bits >> 28) & 7) as u8)
     }
     #[doc = "Bits 16:23 - TXFIFO Counter\n\nThese bits indicate the number of bytes in TXFIFO"]
     #[inline(always)]
@@ -122,12 +122,12 @@ impl R {
     #[doc = "Bit 15 - RXFIFO Write Buffer Write Enable"]
     #[inline(always)]
     pub fn rb_wr(&self) -> RB_WR_R {
-        RB_WR_R::new(((self.bits >> 15) & 0x01) != 0)
+        RB_WR_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 12:14 - RXFIFO Write Buffer Counter"]
     #[inline(always)]
     pub fn rb_cnt(&self) -> RB_CNT_R {
-        RB_CNT_R::new(((self.bits >> 12) & 0x07) as u8)
+        RB_CNT_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 0:7 - RXFIFO Counter\n\nThese bits indicate the number of bytes in RXFIFO"]
     #[inline(always)]

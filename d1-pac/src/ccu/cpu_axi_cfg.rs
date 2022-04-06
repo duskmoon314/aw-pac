@@ -171,7 +171,7 @@ impl<'a> CPU_CLK_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(7 << 24)) | ((value as u32 & 7) << 24);
         self.w
     }
 }
@@ -260,7 +260,7 @@ impl<'a> PLL_CPU_OUT_EXT_DIVP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 16)) | ((value as u32 & 0x03) << 16);
+        self.w.bits = (self.w.bits & !(3 << 16)) | ((value as u32 & 3) << 16);
         self.w
     }
 }
@@ -287,7 +287,7 @@ impl<'a> CPU_DIV2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
         self.w
     }
 }
@@ -314,7 +314,7 @@ impl<'a> CPU_DIV1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
+        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
         self.w
     }
 }
@@ -322,22 +322,22 @@ impl R {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
     pub fn cpu_clk_sel(&self) -> CPU_CLK_SEL_R {
-        CPU_CLK_SEL_R::new(((self.bits >> 24) & 0x07) as u8)
+        CPU_CLK_SEL_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 16:17 - PLL Output External Divider P"]
     #[inline(always)]
     pub fn pll_cpu_out_ext_divp(&self) -> PLL_CPU_OUT_EXT_DIVP_R {
-        PLL_CPU_OUT_EXT_DIVP_R::new(((self.bits >> 16) & 0x03) as u8)
+        PLL_CPU_OUT_EXT_DIVP_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn cpu_div2(&self) -> CPU_DIV2_R {
-        CPU_DIV2_R::new(((self.bits >> 8) & 0x03) as u8)
+        CPU_DIV2_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
     pub fn cpu_div1(&self) -> CPU_DIV1_R {
-        CPU_DIV1_R::new((self.bits & 0x03) as u8)
+        CPU_DIV1_R::new((self.bits & 3) as u8)
     }
 }
 impl W {

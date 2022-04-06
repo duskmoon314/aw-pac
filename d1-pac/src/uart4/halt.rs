@@ -67,7 +67,7 @@ impl<'a> PTE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -104,7 +104,7 @@ impl<'a> DMA_PTE_RX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -188,7 +188,7 @@ impl<'a> SIR_RX_INVERT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -272,7 +272,7 @@ impl<'a> SIR_TX_INVERT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -356,7 +356,7 @@ impl<'a> CHANGE_UPDATE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -440,7 +440,7 @@ impl<'a> CHCFG_AT_BUSY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -524,7 +524,7 @@ impl<'a> HALT_TX_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -532,37 +532,37 @@ impl R {
     #[doc = "Bit 7 - The sending of TX_REQ"]
     #[inline(always)]
     pub fn pte(&self) -> PTE_R {
-        PTE_R::new(((self.bits >> 7) & 0x01) != 0)
+        PTE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - The Transmission of RX_DRQ"]
     #[inline(always)]
     pub fn dma_pte_rx(&self) -> DMA_PTE_RX_R {
-        DMA_PTE_RX_R::new(((self.bits >> 6) & 0x01) != 0)
+        DMA_PTE_RX_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - SIR RX Pulse Polarity Invert"]
     #[inline(always)]
     pub fn sir_rx_invert(&self) -> SIR_RX_INVERT_R {
-        SIR_RX_INVERT_R::new(((self.bits >> 5) & 0x01) != 0)
+        SIR_RX_INVERT_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - SIR TX Pulse Polarity Invert"]
     #[inline(always)]
     pub fn sir_tx_invert(&self) -> SIR_TX_INVERT_R {
-        SIR_TX_INVERT_R::new(((self.bits >> 4) & 0x01) != 0)
+        SIR_TX_INVERT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn change_update(&self) -> CHANGE_UPDATE_R {
-        CHANGE_UPDATE_R::new(((self.bits >> 2) & 0x01) != 0)
+        CHANGE_UPDATE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn chcfg_at_busy(&self) -> CHCFG_AT_BUSY_R {
-        CHCFG_AT_BUSY_R::new(((self.bits >> 1) & 0x01) != 0)
+        CHCFG_AT_BUSY_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn halt_tx(&self) -> HALT_TX_R {
-        HALT_TX_R::new((self.bits & 0x01) != 0)
+        HALT_TX_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

@@ -114,7 +114,7 @@ impl<'a> MODE_SELECT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> CMD_DAT_RX_PHASE_CLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> DAT_CRC_STATUS_RX_PHASE_CLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(1 << 22)) | ((value as u32 & 1) << 22);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> DAT_TRANS_RX_PHASE_CLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(1 << 21)) | ((value as u32 & 1) << 21);
         self.w
     }
 }
@@ -450,7 +450,7 @@ impl<'a> DAT_RECV_RX_PHASE_CLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(1 << 20)) | ((value as u32 & 1) << 20);
         self.w
     }
 }
@@ -534,7 +534,7 @@ impl<'a> CMD_SEND_RX_PHASE_CLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -636,7 +636,7 @@ impl<'a> DAT_SAMPLE_TIMING_PHASE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
         self.w
     }
 }
@@ -738,7 +738,7 @@ impl<'a> CMD_SAMPLE_TIMING_PHASE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
         self.w
     }
 }
@@ -822,7 +822,7 @@ impl<'a> HS400_NEW_SAMPLE_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -830,47 +830,47 @@ impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn mode_select(&self) -> MODE_SELECT_R {
-        MODE_SELECT_R::new(((self.bits >> 31) & 0x01) != 0)
+        MODE_SELECT_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 24 - Clear the input phase of command lines and data lines during the update clock operation"]
     #[inline(always)]
     pub fn cmd_dat_rx_phase_clr(&self) -> CMD_DAT_RX_PHASE_CLR_R {
-        CMD_DAT_RX_PHASE_CLR_R::new(((self.bits >> 24) & 0x01) != 0)
+        CMD_DAT_RX_PHASE_CLR_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 22 - Clear the input phase of data lines before receiving the CRC status"]
     #[inline(always)]
     pub fn dat_crc_status_rx_phase_clr(&self) -> DAT_CRC_STATUS_RX_PHASE_CLR_R {
-        DAT_CRC_STATUS_RX_PHASE_CLR_R::new(((self.bits >> 22) & 0x01) != 0)
+        DAT_CRC_STATUS_RX_PHASE_CLR_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 21 - Clear the input phase of data lines before transferring the data"]
     #[inline(always)]
     pub fn dat_trans_rx_phase_clr(&self) -> DAT_TRANS_RX_PHASE_CLR_R {
-        DAT_TRANS_RX_PHASE_CLR_R::new(((self.bits >> 21) & 0x01) != 0)
+        DAT_TRANS_RX_PHASE_CLR_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 20 - Clear the input phase of data lines before receiving the data"]
     #[inline(always)]
     pub fn dat_recv_rx_phase_clr(&self) -> DAT_RECV_RX_PHASE_CLR_R {
-        DAT_RECV_RX_PHASE_CLR_R::new(((self.bits >> 20) & 0x01) != 0)
+        DAT_RECV_RX_PHASE_CLR_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 16 - Clear command rx phase before sending the command"]
     #[inline(always)]
     pub fn cmd_send_rx_phase_clr(&self) -> CMD_SEND_RX_PHASE_CLR_R {
-        CMD_SEND_RX_PHASE_CLR_R::new(((self.bits >> 16) & 0x01) != 0)
+        CMD_SEND_RX_PHASE_CLR_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 8:9"]
     #[inline(always)]
     pub fn dat_sample_timing_phase(&self) -> DAT_SAMPLE_TIMING_PHASE_R {
-        DAT_SAMPLE_TIMING_PHASE_R::new(((self.bits >> 8) & 0x03) as u8)
+        DAT_SAMPLE_TIMING_PHASE_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
     pub fn cmd_sample_timing_phase(&self) -> CMD_SAMPLE_TIMING_PHASE_R {
-        CMD_SAMPLE_TIMING_PHASE_R::new(((self.bits >> 4) & 0x03) as u8)
+        CMD_SAMPLE_TIMING_PHASE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn hs400_new_sample_en(&self) -> HS400_NEW_SAMPLE_EN_R {
-        HS400_NEW_SAMPLE_EN_R::new((self.bits & 0x01) != 0)
+        HS400_NEW_SAMPLE_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

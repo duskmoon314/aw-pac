@@ -94,7 +94,7 @@ impl<'a> TIMEOUT_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -196,7 +196,7 @@ impl<'a> AHB_BURST_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
         self.w
     }
 }
@@ -298,7 +298,7 @@ impl<'a> BLK_SIZE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(3 << 2)) | ((value as u32 & 3) << 2);
         self.w
     }
 }
@@ -382,7 +382,7 @@ impl<'a> MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -466,7 +466,7 @@ impl<'a> ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -479,27 +479,27 @@ impl R {
     #[doc = "Bit 6 - RXDMA Timeout Enable"]
     #[inline(always)]
     pub fn timeout_enable(&self) -> TIMEOUT_ENABLE_R {
-        TIMEOUT_ENABLE_R::new(((self.bits >> 6) & 0x01) != 0)
+        TIMEOUT_ENABLE_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Set for AHB port burst supported"]
     #[inline(always)]
     pub fn ahb_burst_mode(&self) -> AHB_BURST_MODE_R {
-        AHB_BURST_MODE_R::new(((self.bits >> 4) & 0x03) as u8)
+        AHB_BURST_MODE_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
     pub fn blk_size(&self) -> BLK_SIZE_R {
-        BLK_SIZE_R::new(((self.bits >> 2) & 0x03) as u8)
+        BLK_SIZE_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
-        MODE_R::new(((self.bits >> 1) & 0x01) != 0)
+        MODE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
-        ENABLE_R::new((self.bits & 0x01) != 0)
+        ENABLE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

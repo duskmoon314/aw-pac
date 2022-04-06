@@ -114,7 +114,7 @@ impl<'a> FIFO_AC_MOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> TIME_UNIT_CMD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> TIME_UNIT_DAT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> DDR_MOD_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -453,7 +453,7 @@ impl<'a> CD_DBC_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -537,7 +537,7 @@ impl<'a> DMA_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -621,7 +621,7 @@ impl<'a> INE_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -658,7 +658,7 @@ impl<'a> DMA_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -742,7 +742,7 @@ impl<'a> FIFO_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -826,7 +826,7 @@ impl<'a> SOFT_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -834,53 +834,53 @@ impl R {
     #[doc = "Bit 31 - FIFO Accesss Mode"]
     #[inline(always)]
     pub fn fifo_ac_mod(&self) -> FIFO_AC_MOD_R {
-        FIFO_AC_MOD_R::new(((self.bits >> 31) & 0x01) != 0)
+        FIFO_AC_MOD_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 12 - Time unit for command line"]
     #[inline(always)]
     pub fn time_unit_cmd(&self) -> TIME_UNIT_CMD_R {
-        TIME_UNIT_CMD_R::new(((self.bits >> 12) & 0x01) != 0)
+        TIME_UNIT_CMD_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11 - Time unit for data line"]
     #[inline(always)]
     pub fn time_unit_dat(&self) -> TIME_UNIT_DAT_R {
-        TIME_UNIT_DAT_R::new(((self.bits >> 11) & 0x01) != 0)
+        TIME_UNIT_DAT_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - DDR Mode Select"]
     #[inline(always)]
     pub fn ddr_mod_sel(&self) -> DDR_MOD_SEL_R {
-        DDR_MOD_SEL_R::new(((self.bits >> 10) & 0x01) != 0)
+        DDR_MOD_SEL_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 8 - Card Detect (Data\\[3\\]
 status) De-bounce Enable"]
     #[inline(always)]
     pub fn cd_dbc_enb(&self) -> CD_DBC_ENB_R {
-        CD_DBC_ENB_R::new(((self.bits >> 8) & 0x01) != 0)
+        CD_DBC_ENB_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 5 - DMA Global Enable"]
     #[inline(always)]
     pub fn dma_enb(&self) -> DMA_ENB_R {
-        DMA_ENB_R::new(((self.bits >> 5) & 0x01) != 0)
+        DMA_ENB_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - GLobal Interrupt Enable"]
     #[inline(always)]
     pub fn ine_enb(&self) -> INE_ENB_R {
-        INE_ENB_R::new(((self.bits >> 4) & 0x01) != 0)
+        INE_ENB_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 2 - DMA Reset"]
     #[inline(always)]
     pub fn dma_rst(&self) -> DMA_RST_R {
-        DMA_RST_R::new(((self.bits >> 2) & 0x01) != 0)
+        DMA_RST_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - FIFO Reset"]
     #[inline(always)]
     pub fn fifo_rst(&self) -> FIFO_RST_R {
-        FIFO_RST_R::new(((self.bits >> 1) & 0x01) != 0)
+        FIFO_RST_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Software Reset"]
     #[inline(always)]
     pub fn soft_rst(&self) -> SOFT_RST_R {
-        SOFT_RST_R::new((self.bits & 0x01) != 0)
+        SOFT_RST_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

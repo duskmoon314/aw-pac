@@ -114,7 +114,7 @@ impl<'a> DLAB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -151,7 +151,7 @@ impl<'a> BC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -253,7 +253,7 @@ impl<'a> EPS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 4)) | ((value as u32 & 0x03) << 4);
+        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
         self.w
     }
 }
@@ -337,7 +337,7 @@ impl<'a> PEN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -421,7 +421,7 @@ impl<'a> STOP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -523,7 +523,7 @@ impl<'a> DLS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
+        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
         self.w
     }
 }
@@ -531,32 +531,32 @@ impl R {
     #[doc = "Bit 7 - Divisor Latch Access Bit"]
     #[inline(always)]
     pub fn dlab(&self) -> DLAB_R {
-        DLAB_R::new(((self.bits >> 7) & 0x01) != 0)
+        DLAB_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - Break Control Bit"]
     #[inline(always)]
     pub fn bc(&self) -> BC_R {
-        BC_R::new(((self.bits >> 6) & 0x01) != 0)
+        BC_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 4:5 - Even Parity Select"]
     #[inline(always)]
     pub fn eps(&self) -> EPS_R {
-        EPS_R::new(((self.bits >> 4) & 0x03) as u8)
+        EPS_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bit 3 - Parity Enable"]
     #[inline(always)]
     pub fn pen(&self) -> PEN_R {
-        PEN_R::new(((self.bits >> 3) & 0x01) != 0)
+        PEN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Number of stop bits"]
     #[inline(always)]
     pub fn stop(&self) -> STOP_R {
-        STOP_R::new(((self.bits >> 2) & 0x01) != 0)
+        STOP_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 0:1 - Data Length Select"]
     #[inline(always)]
     pub fn dls(&self) -> DLS_R {
-        DLS_R::new((self.bits & 0x03) as u8)
+        DLS_R::new((self.bits & 3) as u8)
     }
 }
 impl W {

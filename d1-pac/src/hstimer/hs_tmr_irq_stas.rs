@@ -115,8 +115,7 @@ impl<'a> HS_TMR_IRQ_PEND_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> HS_TMR_IRQ_PEND_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -161,17 +160,17 @@ impl R {
     #[doc = "HSTimer IRQ Pending"]
     #[inline(always)]
     pub unsafe fn hs_tmr_irq_pend(&self, n: usize) -> HS_TMR_IRQ_PEND_R {
-        HS_TMR_IRQ_PEND_R::new(((self.bits >> n) & 0x01) != 0)
+        HS_TMR_IRQ_PEND_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - HSTimer IRQ Pending"]
     #[inline(always)]
     pub fn hs_tmr0_irq_pend(&self) -> HS_TMR_IRQ_PEND_R {
-        HS_TMR_IRQ_PEND_R::new((self.bits & 0x01) != 0)
+        HS_TMR_IRQ_PEND_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - HSTimer IRQ Pending"]
     #[inline(always)]
     pub fn hs_tmr1_irq_pend(&self) -> HS_TMR_IRQ_PEND_R {
-        HS_TMR_IRQ_PEND_R::new(((self.bits >> 1) & 0x01) != 0)
+        HS_TMR_IRQ_PEND_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {

@@ -132,7 +132,7 @@ impl<'a> SPI_ACT_M_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(3 << 6)) | ((value as u32 & 3) << 6);
         self.w
     }
 }
@@ -216,7 +216,7 @@ impl<'a> SPI_ACK_M_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -251,12 +251,12 @@ impl R {
     #[doc = "Bits 6:7 - SPI NDMA Active Mode"]
     #[inline(always)]
     pub fn spi_act_m(&self) -> SPI_ACT_M_R {
-        SPI_ACT_M_R::new(((self.bits >> 6) & 0x03) as u8)
+        SPI_ACT_M_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bit 5 - SPI NDMA Acknowledge Mode"]
     #[inline(always)]
     pub fn spi_ack_m(&self) -> SPI_ACK_M_R {
-        SPI_ACK_M_R::new(((self.bits >> 5) & 0x01) != 0)
+        SPI_ACK_M_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 0:4"]
     #[inline(always)]

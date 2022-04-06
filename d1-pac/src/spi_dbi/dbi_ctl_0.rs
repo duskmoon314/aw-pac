@@ -114,7 +114,7 @@ impl<'a> CMDT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -225,7 +225,7 @@ impl<'a> DAT_SEQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
+        self.w.bits = (self.w.bits & !(1 << 19)) | ((value as u32 & 1) << 19);
         self.w
     }
 }
@@ -353,7 +353,7 @@ impl<'a> RGB_SEQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
+        self.w.bits = (self.w.bits & !(7 << 16)) | ((value as u32 & 7) << 16);
         self.w
     }
 }
@@ -437,7 +437,7 @@ impl<'a> TRAN_MOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -552,7 +552,7 @@ impl<'a> DAT_FMT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
+        self.w.bits = (self.w.bits & !(7 << 12)) | ((value as u32 & 7) << 12);
         self.w
     }
 }
@@ -667,7 +667,7 @@ impl<'a> DBI_INTERFACE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
+        self.w.bits = (self.w.bits & !(7 << 8)) | ((value as u32 & 7) << 8);
         self.w
     }
 }
@@ -884,7 +884,7 @@ impl<'a> DUM_VAL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -968,7 +968,7 @@ impl<'a> RGB_BO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -1052,7 +1052,7 @@ impl<'a> ELEMENT_A_POS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -1136,7 +1136,7 @@ impl<'a> VI_SRC_TYPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -1144,7 +1144,7 @@ impl R {
     #[doc = "Bit 31 - Command Type"]
     #[inline(always)]
     pub fn cmdt(&self) -> CMDT_R {
-        CMDT_R::new(((self.bits >> 31) & 0x01) != 0)
+        CMDT_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 20:30 - Write Command Dummy Cycles"]
     #[inline(always)]
@@ -1154,27 +1154,27 @@ impl R {
     #[doc = "Bit 19 - Output Data Sequence"]
     #[inline(always)]
     pub fn dat_seq(&self) -> DAT_SEQ_R {
-        DAT_SEQ_R::new(((self.bits >> 19) & 0x01) != 0)
+        DAT_SEQ_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bits 16:18 - Output RGB Sequence"]
     #[inline(always)]
     pub fn rgb_seq(&self) -> RGB_SEQ_R {
-        RGB_SEQ_R::new(((self.bits >> 16) & 0x07) as u8)
+        RGB_SEQ_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bit 15 - Transmit Mode"]
     #[inline(always)]
     pub fn tran_mod(&self) -> TRAN_MOD_R {
-        TRAN_MOD_R::new(((self.bits >> 15) & 0x01) != 0)
+        TRAN_MOD_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 12:14 - Output Data Format"]
     #[inline(always)]
     pub fn dat_fmt(&self) -> DAT_FMT_R {
-        DAT_FMT_R::new(((self.bits >> 12) & 0x07) as u8)
+        DAT_FMT_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 8:10"]
     #[inline(always)]
     pub fn dbi_interface(&self) -> DBI_INTERFACE_R {
-        DBI_INTERFACE_R::new(((self.bits >> 8) & 0x07) as u8)
+        DBI_INTERFACE_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 4:7 - RGB Source Format"]
     #[inline(always)]
@@ -1184,22 +1184,22 @@ impl R {
     #[doc = "Bit 3 - Dummy Cycle Value"]
     #[inline(always)]
     pub fn dum_val(&self) -> DUM_VAL_R {
-        DUM_VAL_R::new(((self.bits >> 3) & 0x01) != 0)
+        DUM_VAL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - RGB Bit Order"]
     #[inline(always)]
     pub fn rgb_bo(&self) -> RGB_BO_R {
-        RGB_BO_R::new(((self.bits >> 2) & 0x01) != 0)
+        RGB_BO_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Element A Position"]
     #[inline(always)]
     pub fn element_a_pos(&self) -> ELEMENT_A_POS_R {
-        ELEMENT_A_POS_R::new(((self.bits >> 1) & 0x01) != 0)
+        ELEMENT_A_POS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Video Source Type"]
     #[inline(always)]
     pub fn vi_src_type(&self) -> VI_SRC_TYPE_R {
-        VI_SRC_TYPE_R::new((self.bits & 0x01) != 0)
+        VI_SRC_TYPE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

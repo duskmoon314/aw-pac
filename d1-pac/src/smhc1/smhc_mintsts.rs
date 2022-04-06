@@ -287,92 +287,92 @@ impl R {
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]
     pub fn m_card_removal_int(&self) -> M_CARD_REMOVAL_INT_R {
-        M_CARD_REMOVAL_INT_R::new(((self.bits >> 31) & 0x01) != 0)
+        M_CARD_REMOVAL_INT_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - Card Inserted"]
     #[inline(always)]
     pub fn m_card_insert(&self) -> M_CARD_INSERT_R {
-        M_CARD_INSERT_R::new(((self.bits >> 30) & 0x01) != 0)
+        M_CARD_INSERT_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 16 - SDIO Interrupt"]
     #[inline(always)]
     pub fn m_sdio_int(&self) -> M_SDIO_INT_R {
-        M_SDIO_INT_R::new(((self.bits >> 16) & 0x01) != 0)
+        M_SDIO_INT_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 15 - Data End-bit Error"]
     #[inline(always)]
     pub fn m_dee_int(&self) -> M_DEE_INT_R {
-        M_DEE_INT_R::new(((self.bits >> 15) & 0x01) != 0)
+        M_DEE_INT_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 14 - Auto Command Done"]
     #[inline(always)]
     pub fn m_acd_int(&self) -> M_ACD_INT_R {
-        M_ACD_INT_R::new(((self.bits >> 14) & 0x01) != 0)
+        M_ACD_INT_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 13 - Data Start Error/Busy Clear"]
     #[inline(always)]
     pub fn m_dse_bc_int(&self) -> M_DSE_BC_INT_R {
-        M_DSE_BC_INT_R::new(((self.bits >> 13) & 0x01) != 0)
+        M_DSE_BC_INT_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 12 - Command Busy and Illegal Write"]
     #[inline(always)]
     pub fn m_cb_iw_int(&self) -> M_CB_IW_INT_R {
-        M_CB_IW_INT_R::new(((self.bits >> 12) & 0x01) != 0)
+        M_CB_IW_INT_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11 - FIFO Underrun/Overflow"]
     #[inline(always)]
     pub fn m_fu_fo_int(&self) -> M_FU_FO_INT_R {
-        M_FU_FO_INT_R::new(((self.bits >> 11) & 0x01) != 0)
+        M_FU_FO_INT_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - Data Starvation Timeout/V1.8 Switch Done"]
     #[inline(always)]
     pub fn m_dsto_vsd_int(&self) -> M_DSTO_VSD_INT_R {
-        M_DSTO_VSD_INT_R::new(((self.bits >> 10) & 0x01) != 0)
+        M_DSTO_VSD_INT_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9 - Data Timeout/Boot Data Start"]
     #[inline(always)]
     pub fn m_dto_bds_int(&self) -> M_DTO_BDS_INT_R {
-        M_DTO_BDS_INT_R::new(((self.bits >> 9) & 0x01) != 0)
+        M_DTO_BDS_INT_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Response Timeout/Boot ACK Received"]
     #[inline(always)]
     pub fn m_rto_back_int(&self) -> M_RTO_BACK_INT_R {
-        M_RTO_BACK_INT_R::new(((self.bits >> 8) & 0x01) != 0)
+        M_RTO_BACK_INT_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 7 - Data CRC Error"]
     #[inline(always)]
     pub fn m_dce_int(&self) -> M_DCE_INT_R {
-        M_DCE_INT_R::new(((self.bits >> 7) & 0x01) != 0)
+        M_DCE_INT_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - Response CRC Error"]
     #[inline(always)]
     pub fn m_rce_int(&self) -> M_RCE_INT_R {
-        M_RCE_INT_R::new(((self.bits >> 6) & 0x01) != 0)
+        M_RCE_INT_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - Data Receive Request"]
     #[inline(always)]
     pub fn m_drr_int(&self) -> M_DRR_INT_R {
-        M_DRR_INT_R::new(((self.bits >> 5) & 0x01) != 0)
+        M_DRR_INT_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Data Transmit Request"]
     #[inline(always)]
     pub fn m_dtr_int(&self) -> M_DTR_INT_R {
-        M_DTR_INT_R::new(((self.bits >> 4) & 0x01) != 0)
+        M_DTR_INT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Data Transfer Complete"]
     #[inline(always)]
     pub fn m_dtc_int(&self) -> M_DTC_INT_R {
-        M_DTC_INT_R::new(((self.bits >> 3) & 0x01) != 0)
+        M_DTC_INT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Command Complete"]
     #[inline(always)]
     pub fn m_cc_int(&self) -> M_CC_INT_R {
-        M_CC_INT_R::new(((self.bits >> 2) & 0x01) != 0)
+        M_CC_INT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Response Errors"]
     #[inline(always)]
     pub fn m_re_int(&self) -> M_RE_INT_R {
-        M_RE_INT_R::new(((self.bits >> 1) & 0x01) != 0)
+        M_RE_INT_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 #[doc = "Masked Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smhc_mintsts](index.html) module"]

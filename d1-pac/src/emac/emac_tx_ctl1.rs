@@ -114,7 +114,7 @@ impl<'a> TX_DMA_START_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> TX_DMA_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -300,7 +300,7 @@ impl<'a> TX_TH_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
+        self.w.bits = (self.w.bits & !(7 << 8)) | ((value as u32 & 7) << 8);
         self.w
     }
 }
@@ -384,7 +384,7 @@ impl<'a> TX_MD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -468,7 +468,7 @@ impl<'a> FLUSH_TX_FIFO_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -476,27 +476,27 @@ impl R {
     #[doc = "Bit 31 - Transmit DMA FSM Start"]
     #[inline(always)]
     pub fn tx_dma_start(&self) -> TX_DMA_START_R {
-        TX_DMA_START_R::new(((self.bits >> 31) & 0x01) != 0)
+        TX_DMA_START_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - Transmit DMA Enable"]
     #[inline(always)]
     pub fn tx_dma_en(&self) -> TX_DMA_EN_R {
-        TX_DMA_EN_R::new(((self.bits >> 30) & 0x01) != 0)
+        TX_DMA_EN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bits 8:10 - Threshold value of TX DMA FIFO"]
     #[inline(always)]
     pub fn tx_th(&self) -> TX_TH_R {
-        TX_TH_R::new(((self.bits >> 8) & 0x07) as u8)
+        TX_TH_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bit 1 - Transmission Mode"]
     #[inline(always)]
     pub fn tx_md(&self) -> TX_MD_R {
-        TX_MD_R::new(((self.bits >> 1) & 0x01) != 0)
+        TX_MD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Flush the data in the TX FIFO"]
     #[inline(always)]
     pub fn flush_tx_fifo(&self) -> FLUSH_TX_FIFO_R {
-        FLUSH_TX_FIFO_R::new((self.bits & 0x01) != 0)
+        FLUSH_TX_FIFO_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

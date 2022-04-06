@@ -114,7 +114,7 @@ impl<'a> PLL_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> PLL_LDO_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> LOCK_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(1 << 29)) | ((value as u32 & 1) << 29);
         self.w
     }
 }
@@ -413,7 +413,7 @@ impl<'a> PLL_OUTPUT_GATE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(1 << 27)) | ((value as u32 & 1) << 27);
         self.w
     }
 }
@@ -497,7 +497,7 @@ impl<'a> PLL_SDM_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -524,7 +524,7 @@ impl<'a> PLL_P1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
+        self.w.bits = (self.w.bits & !(7 << 20)) | ((value as u32 & 7) << 20);
         self.w
     }
 }
@@ -551,7 +551,7 @@ impl<'a> PLL_P0_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
+        self.w.bits = (self.w.bits & !(7 << 16)) | ((value as u32 & 7) << 16);
         self.w
     }
 }
@@ -667,7 +667,7 @@ impl<'a> PLL_UNLOCK_MDSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 6)) | ((value as u32 & 0x03) << 6);
+        self.w.bits = (self.w.bits & !(3 << 6)) | ((value as u32 & 3) << 6);
         self.w
     }
 }
@@ -751,7 +751,7 @@ impl<'a> PLL_LOCK_MDSEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -788,7 +788,7 @@ impl<'a> PLL_INPUT_DIV2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -796,42 +796,42 @@ impl R {
     #[doc = "Bit 31 - PLL Enable"]
     #[inline(always)]
     pub fn pll_en(&self) -> PLL_EN_R {
-        PLL_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        PLL_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - LDO Enable"]
     #[inline(always)]
     pub fn pll_ldo_en(&self) -> PLL_LDO_EN_R {
-        PLL_LDO_EN_R::new(((self.bits >> 30) & 0x01) != 0)
+        PLL_LDO_EN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 29 - Lock Enable"]
     #[inline(always)]
     pub fn lock_enable(&self) -> LOCK_ENABLE_R {
-        LOCK_ENABLE_R::new(((self.bits >> 29) & 0x01) != 0)
+        LOCK_ENABLE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 28 - PLL Lock Status"]
     #[inline(always)]
     pub fn lock(&self) -> LOCK_R {
-        LOCK_R::new(((self.bits >> 28) & 0x01) != 0)
+        LOCK_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 27 - PLL Output Gating Enable"]
     #[inline(always)]
     pub fn pll_output_gate(&self) -> PLL_OUTPUT_GATE_R {
-        PLL_OUTPUT_GATE_R::new(((self.bits >> 27) & 0x01) != 0)
+        PLL_OUTPUT_GATE_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 24 - PLL SDM Enable"]
     #[inline(always)]
     pub fn pll_sdm_en(&self) -> PLL_SDM_EN_R {
-        PLL_SDM_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        PLL_SDM_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 20:22 - PLL Output Div P1"]
     #[inline(always)]
     pub fn pll_p1(&self) -> PLL_P1_R {
-        PLL_P1_R::new(((self.bits >> 20) & 0x07) as u8)
+        PLL_P1_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 16:18 - PLL Output Div P0"]
     #[inline(always)]
     pub fn pll_p0(&self) -> PLL_P0_R {
-        PLL_P0_R::new(((self.bits >> 16) & 0x07) as u8)
+        PLL_P0_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bits 8:15 - PLL N"]
     #[inline(always)]
@@ -841,17 +841,17 @@ impl R {
     #[doc = "Bits 6:7 - PLL Unlock Level"]
     #[inline(always)]
     pub fn pll_unlock_mdsel(&self) -> PLL_UNLOCK_MDSEL_R {
-        PLL_UNLOCK_MDSEL_R::new(((self.bits >> 6) & 0x03) as u8)
+        PLL_UNLOCK_MDSEL_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bit 5 - PLL Lock Level"]
     #[inline(always)]
     pub fn pll_lock_mdsel(&self) -> PLL_LOCK_MDSEL_R {
-        PLL_LOCK_MDSEL_R::new(((self.bits >> 5) & 0x01) != 0)
+        PLL_LOCK_MDSEL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 1 - PLL Input Div M"]
     #[inline(always)]
     pub fn pll_input_div2(&self) -> PLL_INPUT_DIV2_R {
-        PLL_INPUT_DIV2_R::new(((self.bits >> 1) & 0x01) != 0)
+        PLL_INPUT_DIV2_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {

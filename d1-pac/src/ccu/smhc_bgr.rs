@@ -115,8 +115,7 @@ impl<'a> SMHC_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> SMHC_RST_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -238,8 +237,7 @@ impl<'a> SMHC_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -276,7 +274,7 @@ impl<'a, const O: usize> SMHC_GATING_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -284,42 +282,42 @@ impl R {
     #[doc = "Reset"]
     #[inline(always)]
     pub unsafe fn smhc_rst(&self, n: usize) -> SMHC_RST_R {
-        SMHC_RST_R::new(((self.bits >> (n + 16)) & 0x01) != 0)
+        SMHC_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn smhc0_rst(&self) -> SMHC_RST_R {
-        SMHC_RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        SMHC_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
     pub fn smhc1_rst(&self) -> SMHC_RST_R {
-        SMHC_RST_R::new(((self.bits >> 17) & 0x01) != 0)
+        SMHC_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
     pub fn smhc2_rst(&self) -> SMHC_RST_R {
-        SMHC_RST_R::new(((self.bits >> 18) & 0x01) != 0)
+        SMHC_RST_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn smhc_gating(&self, n: usize) -> SMHC_GATING_R {
-        SMHC_GATING_R::new(((self.bits >> n) & 0x01) != 0)
+        SMHC_GATING_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
     pub fn smhc0_gating(&self) -> SMHC_GATING_R {
-        SMHC_GATING_R::new((self.bits & 0x01) != 0)
+        SMHC_GATING_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
     pub fn smhc1_gating(&self) -> SMHC_GATING_R {
-        SMHC_GATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        SMHC_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
     pub fn smhc2_gating(&self) -> SMHC_GATING_R {
-        SMHC_GATING_R::new(((self.bits >> 2) & 0x01) != 0)
+        SMHC_GATING_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {

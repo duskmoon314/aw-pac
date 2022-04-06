@@ -67,7 +67,7 @@ impl<'a> TX_FLOW_CTL_STA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -94,7 +94,7 @@ impl<'a> TX_PAUSE_FRM_SLOT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 20)) | ((value as u32 & 0x03) << 20);
+        self.w.bits = (self.w.bits & !(3 << 20)) | ((value as u32 & 3) << 20);
         self.w
     }
 }
@@ -205,7 +205,7 @@ impl<'a> ZQP_FRM_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -289,7 +289,7 @@ impl<'a> TX_FLOW_CTL_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -297,12 +297,12 @@ impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn tx_flow_ctl_sta(&self) -> TX_FLOW_CTL_STA_R {
-        TX_FLOW_CTL_STA_R::new(((self.bits >> 31) & 0x01) != 0)
+        TX_FLOW_CTL_STA_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 20:21"]
     #[inline(always)]
     pub fn tx_pause_frm_slot(&self) -> TX_PAUSE_FRM_SLOT_R {
-        TX_PAUSE_FRM_SLOT_R::new(((self.bits >> 20) & 0x03) as u8)
+        TX_PAUSE_FRM_SLOT_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 4:19"]
     #[inline(always)]
@@ -312,12 +312,12 @@ impl R {
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn zqp_frm_en(&self) -> ZQP_FRM_EN_R {
-        ZQP_FRM_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        ZQP_FRM_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - TX Flow Control Enable"]
     #[inline(always)]
     pub fn tx_flow_ctl_en(&self) -> TX_FLOW_CTL_EN_R {
-        TX_FLOW_CTL_EN_R::new((self.bits & 0x01) != 0)
+        TX_FLOW_CTL_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

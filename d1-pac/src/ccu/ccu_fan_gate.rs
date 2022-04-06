@@ -114,7 +114,7 @@ impl<'a> CLK32K_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> CLK25M_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> CLK16M_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> CLK12M_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -450,7 +450,7 @@ impl<'a> CLK24M_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -458,27 +458,27 @@ impl R {
     #[doc = "Bit 4 - Gating for CLK32K"]
     #[inline(always)]
     pub fn clk32k_en(&self) -> CLK32K_EN_R {
-        CLK32K_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        CLK32K_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Gating for CLK25M"]
     #[inline(always)]
     pub fn clk25m_en(&self) -> CLK25M_EN_R {
-        CLK25M_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+        CLK25M_EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Gating for CLK16M"]
     #[inline(always)]
     pub fn clk16m_en(&self) -> CLK16M_EN_R {
-        CLK16M_EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        CLK16M_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Gating for CLK12M"]
     #[inline(always)]
     pub fn clk12m_en(&self) -> CLK12M_EN_R {
-        CLK12M_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        CLK12M_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Gating for CLK24M"]
     #[inline(always)]
     pub fn clk24m_en(&self) -> CLK24M_EN_R {
-        CLK24M_EN_R::new((self.bits & 0x01) != 0)
+        CLK24M_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

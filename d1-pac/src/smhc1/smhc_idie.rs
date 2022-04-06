@@ -67,7 +67,7 @@ impl<'a> ERR_SUM_INT_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -104,7 +104,7 @@ impl<'a> DES_UNAVL_INT_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -141,7 +141,7 @@ impl<'a> FERR_INT_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -178,7 +178,7 @@ impl<'a> RX_INT_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -215,7 +215,7 @@ impl<'a> TX_INT_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -223,27 +223,27 @@ impl R {
     #[doc = "Bit 5 - Card Error Summary Interrupt Enable"]
     #[inline(always)]
     pub fn err_sum_int_enb(&self) -> ERR_SUM_INT_ENB_R {
-        ERR_SUM_INT_ENB_R::new(((self.bits >> 5) & 0x01) != 0)
+        ERR_SUM_INT_ENB_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
     pub fn des_unavl_int_enb(&self) -> DES_UNAVL_INT_ENB_R {
-        DES_UNAVL_INT_ENB_R::new(((self.bits >> 4) & 0x01) != 0)
+        DES_UNAVL_INT_ENB_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 2 - Fatal Bus Error Enable"]
     #[inline(always)]
     pub fn ferr_int_enb(&self) -> FERR_INT_ENB_R {
-        FERR_INT_ENB_R::new(((self.bits >> 2) & 0x01) != 0)
+        FERR_INT_ENB_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Receive Interrupt Enables"]
     #[inline(always)]
     pub fn rx_int_enb(&self) -> RX_INT_ENB_R {
-        RX_INT_ENB_R::new(((self.bits >> 1) & 0x01) != 0)
+        RX_INT_ENB_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Transmit Interrupt Enable"]
     #[inline(always)]
     pub fn tx_int_enb(&self) -> TX_INT_ENB_R {
-        TX_INT_ENB_R::new((self.bits & 0x01) != 0)
+        TX_INT_ENB_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

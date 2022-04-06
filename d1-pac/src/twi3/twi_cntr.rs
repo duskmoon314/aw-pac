@@ -114,7 +114,7 @@ impl<'a> INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> BUS_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -235,7 +235,7 @@ impl<'a> M_STA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -272,7 +272,7 @@ impl<'a> M_STP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -309,7 +309,7 @@ impl<'a> INT_FLAG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -346,7 +346,7 @@ impl<'a> A_ACK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -430,7 +430,7 @@ impl<'a> CLK_COUNT_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -438,37 +438,37 @@ impl R {
     #[doc = "Bit 7 - Interrupt Enable"]
     #[inline(always)]
     pub fn int_en(&self) -> INT_EN_R {
-        INT_EN_R::new(((self.bits >> 7) & 0x01) != 0)
+        INT_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - TWI Bus Enable"]
     #[inline(always)]
     pub fn bus_en(&self) -> BUS_EN_R {
-        BUS_EN_R::new(((self.bits >> 6) & 0x01) != 0)
+        BUS_EN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - Master Mode Start"]
     #[inline(always)]
     pub fn m_sta(&self) -> M_STA_R {
-        M_STA_R::new(((self.bits >> 5) & 0x01) != 0)
+        M_STA_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Master Mode Stop"]
     #[inline(always)]
     pub fn m_stp(&self) -> M_STP_R {
-        M_STP_R::new(((self.bits >> 4) & 0x01) != 0)
+        M_STP_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Interrupt Flag"]
     #[inline(always)]
     pub fn int_flag(&self) -> INT_FLAG_R {
-        INT_FLAG_R::new(((self.bits >> 3) & 0x01) != 0)
+        INT_FLAG_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Assert Acknowledge"]
     #[inline(always)]
     pub fn a_ack(&self) -> A_ACK_R {
-        A_ACK_R::new(((self.bits >> 2) & 0x01) != 0)
+        A_ACK_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn clk_count_mode(&self) -> CLK_COUNT_MODE_R {
-        CLK_COUNT_MODE_R::new((self.bits & 0x01) != 0)
+        CLK_COUNT_MODE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

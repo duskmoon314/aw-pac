@@ -132,7 +132,7 @@ impl<'a> DBN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
+        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
         self.w
     }
 }
@@ -140,7 +140,7 @@ impl R {
     #[doc = "Bits 0:1 - Data Byte Number Follow Read Command Control"]
     #[inline(always)]
     pub fn dbn(&self) -> DBN_R {
-        DBN_R::new((self.bits & 0x03) as u8)
+        DBN_R::new((self.bits & 3) as u8)
     }
 }
 impl W {

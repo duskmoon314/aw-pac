@@ -67,7 +67,7 @@ impl<'a> DBI_SOFT_TRG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -169,7 +169,7 @@ impl<'a> DBI_EN_MODE_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 29)) | ((value as u32 & 0x03) << 29);
+        self.w.bits = (self.w.bits & !(3 << 29)) | ((value as u32 & 3) << 29);
         self.w
     }
 }
@@ -258,7 +258,7 @@ impl<'a> RGB666_FMT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 26)) | ((value as u32 & 0x03) << 26);
+        self.w.bits = (self.w.bits & !(3 << 26)) | ((value as u32 & 3) << 26);
         self.w
     }
 }
@@ -342,7 +342,7 @@ impl<'a> DBI_RXCLK_INV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 25)) | ((value as u32 & 0x01) << 25);
+        self.w.bits = (self.w.bits & !(1 << 25)) | ((value as u32 & 1) << 25);
         self.w
     }
 }
@@ -426,7 +426,7 @@ impl<'a> DBI_CLKO_MOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -463,7 +463,7 @@ impl<'a> DBI_CLKO_INV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 23)) | ((value as u32 & 0x01) << 23);
+        self.w.bits = (self.w.bits & !(1 << 23)) | ((value as u32 & 1) << 23);
         self.w
     }
 }
@@ -500,7 +500,7 @@ impl<'a> DCX_DATA_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 22)) | ((value as u32 & 0x01) << 22);
+        self.w.bits = (self.w.bits & !(1 << 22)) | ((value as u32 & 1) << 22);
         self.w
     }
 }
@@ -537,7 +537,7 @@ impl<'a> RGB16_DATA_SOURCE_SELECT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(1 << 21)) | ((value as u32 & 1) << 21);
         self.w
     }
 }
@@ -574,7 +574,7 @@ impl<'a> RDAT_LSB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 20)) | ((value as u32 & 0x01) << 20);
+        self.w.bits = (self.w.bits & !(1 << 20)) | ((value as u32 & 1) << 20);
         self.w
     }
 }
@@ -636,47 +636,47 @@ impl R {
     #[doc = "Bit 31 - DBI Soft Trigger"]
     #[inline(always)]
     pub fn dbi_soft_trg(&self) -> DBI_SOFT_TRG_R {
-        DBI_SOFT_TRG_R::new(((self.bits >> 31) & 0x01) != 0)
+        DBI_SOFT_TRG_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 29:30 - DBI Enable Mode Select"]
     #[inline(always)]
     pub fn dbi_en_mode_sel(&self) -> DBI_EN_MODE_SEL_R {
-        DBI_EN_MODE_SEL_R::new(((self.bits >> 29) & 0x03) as u8)
+        DBI_EN_MODE_SEL_R::new(((self.bits >> 29) & 3) as u8)
     }
     #[doc = "Bits 26:27 - 2 Data Lane RGB666 Format"]
     #[inline(always)]
     pub fn rgb666_fmt(&self) -> RGB666_FMT_R {
-        RGB666_FMT_R::new(((self.bits >> 26) & 0x03) as u8)
+        RGB666_FMT_R::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bit 25 - DBI RX Clock Inverse"]
     #[inline(always)]
     pub fn dbi_rxclk_inv(&self) -> DBI_RXCLK_INV_R {
-        DBI_RXCLK_INV_R::new(((self.bits >> 25) & 0x01) != 0)
+        DBI_RXCLK_INV_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 24 - DBI Output Clock Mode"]
     #[inline(always)]
     pub fn dbi_clko_mod(&self) -> DBI_CLKO_MOD_R {
-        DBI_CLKO_MOD_R::new(((self.bits >> 24) & 0x01) != 0)
+        DBI_CLKO_MOD_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bit 23 - DBI Clock Output Inverse"]
     #[inline(always)]
     pub fn dbi_clko_inv(&self) -> DBI_CLKO_INV_R {
-        DBI_CLKO_INV_R::new(((self.bits >> 23) & 0x01) != 0)
+        DBI_CLKO_INV_R::new(((self.bits >> 23) & 1) != 0)
     }
     #[doc = "Bit 22 - DCX Data Value"]
     #[inline(always)]
     pub fn dcx_data(&self) -> DCX_DATA_R {
-        DCX_DATA_R::new(((self.bits >> 22) & 0x01) != 0)
+        DCX_DATA_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 21 - RGB 16 Data Source Select"]
     #[inline(always)]
     pub fn rgb16_data_source_select(&self) -> RGB16_DATA_SOURCE_SELECT_R {
-        RGB16_DATA_SOURCE_SELECT_R::new(((self.bits >> 21) & 0x01) != 0)
+        RGB16_DATA_SOURCE_SELECT_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 20 - Bit Order of Read Data"]
     #[inline(always)]
     pub fn rdat_lsb(&self) -> RDAT_LSB_R {
-        RDAT_LSB_R::new(((self.bits >> 20) & 0x01) != 0)
+        RDAT_LSB_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bits 8:15 - Read Command Dummy Cycles"]
     #[inline(always)]

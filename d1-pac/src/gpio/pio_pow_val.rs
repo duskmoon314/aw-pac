@@ -47,37 +47,37 @@ impl R {
     #[doc = "Bit 12 - VCC_IO Power Value"]
     #[inline(always)]
     pub fn vccio_pws_val(&self) -> VCCIO_PWS_VAL_R {
-        VCCIO_PWS_VAL_R::new(((self.bits >> 12) & 0x01) != 0)
+        VCCIO_PWS_VAL_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "PX_Port Power Value"]
     #[inline(always)]
     pub unsafe fn p_pwr_val(&self, n: usize) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> (n + 2)) & 0x01) != 0)
+        P_PWR_VAL_R::new(((self.bits >> (n + 2)) & 1) != 0)
     }
     #[doc = "Bit 2 - PX_Port Power Value"]
     #[inline(always)]
     pub fn pc_pwr_val(&self) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> 2) & 0x01) != 0)
+        P_PWR_VAL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - PX_Port Power Value"]
     #[inline(always)]
     pub fn pd_pwr_val(&self) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> 3) & 0x01) != 0)
+        P_PWR_VAL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - PX_Port Power Value"]
     #[inline(always)]
     pub fn pe_pwr_val(&self) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> 4) & 0x01) != 0)
+        P_PWR_VAL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - PX_Port Power Value"]
     #[inline(always)]
     pub fn pf_pwr_val(&self) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> 5) & 0x01) != 0)
+        P_PWR_VAL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - PX_Port Power Value"]
     #[inline(always)]
     pub fn pg_pwr_val(&self) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> 6) & 0x01) != 0)
+        P_PWR_VAL_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 #[doc = "PIO Group Power Value Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio_pow_val](index.html) module"]

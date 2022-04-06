@@ -114,7 +114,7 @@ impl<'a> VCC_PF_PWR_VOL_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -122,7 +122,7 @@ impl R {
     #[doc = "Bit 0 - VCC_PF Power Voltage Select Control"]
     #[inline(always)]
     pub fn vcc_pf_pwr_vol_sel(&self) -> VCC_PF_PWR_VOL_SEL_R {
-        VCC_PF_PWR_VOL_SEL_R::new((self.bits & 0x01) != 0)
+        VCC_PF_PWR_VOL_SEL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

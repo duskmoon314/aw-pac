@@ -115,8 +115,7 @@ impl<'a> AVS_CNT_PS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> AVS_CNT_PS_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -238,8 +237,7 @@ impl<'a> AVS_CNT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -276,7 +274,7 @@ impl<'a, const O: usize> AVS_CNT_EN_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -284,32 +282,32 @@ impl R {
     #[doc = "Audio Video Sync Counter Pause Control"]
     #[inline(always)]
     pub unsafe fn avs_cnt_ps(&self, n: usize) -> AVS_CNT_PS_R {
-        AVS_CNT_PS_R::new(((self.bits >> (n + 8)) & 0x01) != 0)
+        AVS_CNT_PS_R::new(((self.bits >> (n + 8)) & 1) != 0)
     }
     #[doc = "Bit 8 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
     pub fn avs_cnt0_ps(&self) -> AVS_CNT_PS_R {
-        AVS_CNT_PS_R::new(((self.bits >> 8) & 0x01) != 0)
+        AVS_CNT_PS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
     pub fn avs_cnt1_ps(&self) -> AVS_CNT_PS_R {
-        AVS_CNT_PS_R::new(((self.bits >> 9) & 0x01) != 0)
+        AVS_CNT_PS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Audio Video Sync Counter Enable"]
     #[inline(always)]
     pub unsafe fn avs_cnt_en(&self, n: usize) -> AVS_CNT_EN_R {
-        AVS_CNT_EN_R::new(((self.bits >> n) & 0x01) != 0)
+        AVS_CNT_EN_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Audio Video Sync Counter Enable"]
     #[inline(always)]
     pub fn avs_cnt0_en(&self) -> AVS_CNT_EN_R {
-        AVS_CNT_EN_R::new((self.bits & 0x01) != 0)
+        AVS_CNT_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Audio Video Sync Counter Enable"]
     #[inline(always)]
     pub fn avs_cnt1_en(&self) -> AVS_CNT_EN_R {
-        AVS_CNT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        AVS_CNT_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {

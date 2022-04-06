@@ -115,8 +115,7 @@ impl<'a> SPI_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> SPI_RST_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -238,8 +237,7 @@ impl<'a> SPI_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -276,7 +274,7 @@ impl<'a, const O: usize> SPI_GATING_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -284,32 +282,32 @@ impl R {
     #[doc = "Reset"]
     #[inline(always)]
     pub unsafe fn spi_rst(&self, n: usize) -> SPI_RST_R {
-        SPI_RST_R::new(((self.bits >> (n + 16)) & 0x01) != 0)
+        SPI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn spi0_rst(&self) -> SPI_RST_R {
-        SPI_RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        SPI_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
     pub fn spi1_rst(&self) -> SPI_RST_R {
-        SPI_RST_R::new(((self.bits >> 17) & 0x01) != 0)
+        SPI_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn spi_gating(&self, n: usize) -> SPI_GATING_R {
-        SPI_GATING_R::new(((self.bits >> n) & 0x01) != 0)
+        SPI_GATING_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
     pub fn spi0_gating(&self) -> SPI_GATING_R {
-        SPI_GATING_R::new((self.bits & 0x01) != 0)
+        SPI_GATING_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
     pub fn spi1_gating(&self) -> SPI_GATING_R {
-        SPI_GATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        SPI_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {

@@ -114,7 +114,7 @@ impl<'a> MAC_ADDR_CTL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> MAC_ADDR_TYPE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -260,12 +260,12 @@ impl R {
     #[doc = "Bit 31 - MAC Address Valid"]
     #[inline(always)]
     pub fn mac_addr_ctl(&self) -> MAC_ADDR_CTL_R {
-        MAC_ADDR_CTL_R::new(((self.bits >> 31) & 0x01) != 0)
+        MAC_ADDR_CTL_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - MAC Address Type"]
     #[inline(always)]
     pub fn mac_addr_type(&self) -> MAC_ADDR_TYPE_R {
-        MAC_ADDR_TYPE_R::new(((self.bits >> 30) & 0x01) != 0)
+        MAC_ADDR_TYPE_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bits 24:29 - MAC Address Byte Control Mask"]
     #[inline(always)]

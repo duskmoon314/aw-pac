@@ -115,8 +115,7 @@ impl<'a> TWI_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> TWI_RST_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -238,8 +237,7 @@ impl<'a> TWI_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -276,7 +274,7 @@ impl<'a, const O: usize> TWI_GATING_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -284,52 +282,52 @@ impl R {
     #[doc = "Reset"]
     #[inline(always)]
     pub unsafe fn twi_rst(&self, n: usize) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> (n + 16)) & 0x01) != 0)
+        TWI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn twi0_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        TWI_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
     pub fn twi1_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 17) & 0x01) != 0)
+        TWI_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
     pub fn twi2_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 18) & 0x01) != 0)
+        TWI_RST_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Reset"]
     #[inline(always)]
     pub fn twi3_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 19) & 0x01) != 0)
+        TWI_RST_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn twi_gating(&self, n: usize) -> TWI_GATING_R {
-        TWI_GATING_R::new(((self.bits >> n) & 0x01) != 0)
+        TWI_GATING_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
     pub fn twi0_gating(&self) -> TWI_GATING_R {
-        TWI_GATING_R::new((self.bits & 0x01) != 0)
+        TWI_GATING_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
     pub fn twi1_gating(&self) -> TWI_GATING_R {
-        TWI_GATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        TWI_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
     pub fn twi2_gating(&self) -> TWI_GATING_R {
-        TWI_GATING_R::new(((self.bits >> 2) & 0x01) != 0)
+        TWI_GATING_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Gating Clock"]
     #[inline(always)]
     pub fn twi3_gating(&self) -> TWI_GATING_R {
-        TWI_GATING_R::new(((self.bits >> 3) & 0x01) != 0)
+        TWI_GATING_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {

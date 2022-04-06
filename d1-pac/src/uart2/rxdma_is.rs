@@ -67,7 +67,7 @@ impl<'a> BUFFER_OVERRUN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -104,7 +104,7 @@ impl<'a> TIMEOUT_DONE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -141,7 +141,7 @@ impl<'a> BLK_DONE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -178,7 +178,7 @@ impl<'a> LIMIT_DONE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -186,22 +186,22 @@ impl R {
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn buffer_overrun(&self) -> BUFFER_OVERRUN_R {
-        BUFFER_OVERRUN_R::new(((self.bits >> 3) & 0x01) != 0)
+        BUFFER_OVERRUN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn timeout_done(&self) -> TIMEOUT_DONE_R {
-        TIMEOUT_DONE_R::new(((self.bits >> 2) & 0x01) != 0)
+        TIMEOUT_DONE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn blk_done(&self) -> BLK_DONE_R {
-        BLK_DONE_R::new(((self.bits >> 1) & 0x01) != 0)
+        BLK_DONE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn limit_done(&self) -> LIMIT_DONE_R {
-        LIMIT_DONE_R::new((self.bits & 0x01) != 0)
+        LIMIT_DONE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

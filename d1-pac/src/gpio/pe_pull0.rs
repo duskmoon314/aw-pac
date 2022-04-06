@@ -120,8 +120,7 @@ impl<'a> PE_PULL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
+        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> PE_PULL_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
         self.w
     }
 }
@@ -161,87 +160,87 @@ impl R {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
     pub unsafe fn pe_pull(&self, n: usize) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> (n * 2)) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> (n * 2)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe0_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new((self.bits & 0x03) as u8)
+        PE_PULL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe1_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 2) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe2_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 4) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe3_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 6) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe4_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 8) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe5_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 10) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe6_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 12) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe7_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 14) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 14) & 3) as u8)
     }
     #[doc = "Bits 16:17 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe8_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 16) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 18:19 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe9_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 18) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 18) & 3) as u8)
     }
     #[doc = "Bits 20:21 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe10_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 20) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 22:23 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe11_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 22) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 22) & 3) as u8)
     }
     #[doc = "Bits 24:25 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe12_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 24) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bits 26:27 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe13_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 26) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 26) & 3) as u8)
     }
     #[doc = "Bits 28:29 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe14_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 28) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 28) & 3) as u8)
     }
     #[doc = "Bits 30:31 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe15_pull(&self) -> PE_PULL_R {
-        PE_PULL_R::new(((self.bits >> 30) & 0x03) as u8)
+        PE_PULL_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
 impl W {

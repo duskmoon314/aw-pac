@@ -114,7 +114,7 @@ impl<'a> CLK_DUTY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -168,7 +168,7 @@ impl<'a> CLK_N_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07) | (value as u32 & 0x07);
+        self.w.bits = (self.w.bits & !7) | (value as u32 & 7);
         self.w
     }
 }
@@ -176,7 +176,7 @@ impl R {
     #[doc = "Bit 7 - Setting duty cycle of clock as master"]
     #[inline(always)]
     pub fn clk_duty(&self) -> CLK_DUTY_R {
-        CLK_DUTY_R::new(((self.bits >> 7) & 0x01) != 0)
+        CLK_DUTY_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 3:6"]
     #[inline(always)]
@@ -186,7 +186,7 @@ impl R {
     #[doc = "Bits 0:2"]
     #[inline(always)]
     pub fn clk_n(&self) -> CLK_N_R {
-        CLK_N_R::new((self.bits & 0x07) as u8)
+        CLK_N_R::new((self.bits & 7) as u8)
     }
 }
 impl W {

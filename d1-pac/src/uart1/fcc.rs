@@ -129,7 +129,7 @@ impl<'a> RX_FIFO_CLOCK_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -213,7 +213,7 @@ impl<'a> TX_FIFO_CLOCK_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -297,7 +297,7 @@ impl<'a> RX_FIFO_CLOCK_ENABLE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -310,17 +310,17 @@ impl R {
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn rx_fifo_clock_mode(&self) -> RX_FIFO_CLOCK_MODE_R {
-        RX_FIFO_CLOCK_MODE_R::new(((self.bits >> 2) & 0x01) != 0)
+        RX_FIFO_CLOCK_MODE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn tx_fifo_clock_enable(&self) -> TX_FIFO_CLOCK_ENABLE_R {
-        TX_FIFO_CLOCK_ENABLE_R::new(((self.bits >> 1) & 0x01) != 0)
+        TX_FIFO_CLOCK_ENABLE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn rx_fifo_clock_enable(&self) -> RX_FIFO_CLOCK_ENABLE_R {
-        RX_FIFO_CLOCK_ENABLE_R::new((self.bits & 0x01) != 0)
+        RX_FIFO_CLOCK_ENABLE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

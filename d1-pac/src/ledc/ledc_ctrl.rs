@@ -94,7 +94,7 @@ impl<'a> RESET_LED_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -222,7 +222,7 @@ impl<'a> LED_RGB_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 6)) | ((value as u32 & 0x07) << 6);
+        self.w.bits = (self.w.bits & !(7 << 6)) | ((value as u32 & 7) << 6);
         self.w
     }
 }
@@ -307,8 +307,7 @@ impl<'a> LED_MSB__W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -345,7 +344,7 @@ impl<'a, const O: usize> LED_MSB__CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -382,7 +381,7 @@ impl<'a> LEDC_SOFT_RESET_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -466,7 +465,7 @@ impl<'a> LEDC_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -479,47 +478,47 @@ impl R {
     #[doc = "Bit 10"]
     #[inline(always)]
     pub fn reset_led_en(&self) -> RESET_LED_EN_R {
-        RESET_LED_EN_R::new(((self.bits >> 10) & 0x01) != 0)
+        RESET_LED_EN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bits 6:8"]
     #[inline(always)]
     pub fn led_rgb_mode(&self) -> LED_RGB_MODE_R {
-        LED_RGB_MODE_R::new(((self.bits >> 6) & 0x07) as u8)
+        LED_RGB_MODE_R::new(((self.bits >> 6) & 7) as u8)
     }
     #[doc = ""]
     #[inline(always)]
     pub unsafe fn led_msb_(&self, n: usize) -> LED_MSB__R {
-        LED_MSB__R::new(((self.bits >> (n + 2)) & 0x01) != 0)
+        LED_MSB__R::new(((self.bits >> (n + 2)) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn led_msb_b(&self) -> LED_MSB__R {
-        LED_MSB__R::new(((self.bits >> 2) & 0x01) != 0)
+        LED_MSB__R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn led_msb_r(&self) -> LED_MSB__R {
-        LED_MSB__R::new(((self.bits >> 3) & 0x01) != 0)
+        LED_MSB__R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn led_msb_g(&self) -> LED_MSB__R {
-        LED_MSB__R::new(((self.bits >> 4) & 0x01) != 0)
+        LED_MSB__R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
     pub fn led_msb_top(&self) -> LED_MSB__R {
-        LED_MSB__R::new(((self.bits >> 5) & 0x01) != 0)
+        LED_MSB__R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn ledc_soft_reset(&self) -> LEDC_SOFT_RESET_R {
-        LEDC_SOFT_RESET_R::new(((self.bits >> 1) & 0x01) != 0)
+        LEDC_SOFT_RESET_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn ledc_en(&self) -> LEDC_EN_R {
-        LEDC_EN_R::new((self.bits & 0x01) != 0)
+        LEDC_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

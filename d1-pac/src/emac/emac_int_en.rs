@@ -114,7 +114,7 @@ impl<'a> RX_EARLY_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> RX_OVERFLOW_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> RX_TIMEOUT_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> RX_DMA_STOPPED_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -450,7 +450,7 @@ impl<'a> RX_BUF_UA_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -534,7 +534,7 @@ impl<'a> RX_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -618,7 +618,7 @@ impl<'a> TX_EARLY_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -702,7 +702,7 @@ impl<'a> TX_UNDERFLOW_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -786,7 +786,7 @@ impl<'a> TX_TIMEOUT_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -870,7 +870,7 @@ impl<'a> TX_BUF_UA_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -954,7 +954,7 @@ impl<'a> TX_DMA_STOPPED_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -1038,7 +1038,7 @@ impl<'a> TX_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -1046,62 +1046,62 @@ impl R {
     #[doc = "Bit 13 - Early Receive Interrupt"]
     #[inline(always)]
     pub fn rx_early_int_en(&self) -> RX_EARLY_INT_EN_R {
-        RX_EARLY_INT_EN_R::new(((self.bits >> 13) & 0x01) != 0)
+        RX_EARLY_INT_EN_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 12 - Receive Overflow Interrupt"]
     #[inline(always)]
     pub fn rx_overflow_int_en(&self) -> RX_OVERFLOW_INT_EN_R {
-        RX_OVERFLOW_INT_EN_R::new(((self.bits >> 12) & 0x01) != 0)
+        RX_OVERFLOW_INT_EN_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11 - Receive Timeout Interrupt"]
     #[inline(always)]
     pub fn rx_timeout_int_en(&self) -> RX_TIMEOUT_INT_EN_R {
-        RX_TIMEOUT_INT_EN_R::new(((self.bits >> 11) & 0x01) != 0)
+        RX_TIMEOUT_INT_EN_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - Receive DMA FSM Stopped Interrupt"]
     #[inline(always)]
     pub fn rx_dma_stopped_int_en(&self) -> RX_DMA_STOPPED_INT_EN_R {
-        RX_DMA_STOPPED_INT_EN_R::new(((self.bits >> 10) & 0x01) != 0)
+        RX_DMA_STOPPED_INT_EN_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9 - Receive Buffer Unavailable Interrupt"]
     #[inline(always)]
     pub fn rx_buf_ua_int_en(&self) -> RX_BUF_UA_INT_EN_R {
-        RX_BUF_UA_INT_EN_R::new(((self.bits >> 9) & 0x01) != 0)
+        RX_BUF_UA_INT_EN_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Receive Interrupt"]
     #[inline(always)]
     pub fn rx_int_en(&self) -> RX_INT_EN_R {
-        RX_INT_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        RX_INT_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 5 - Early Transmit Interrupt"]
     #[inline(always)]
     pub fn tx_early_int_en(&self) -> TX_EARLY_INT_EN_R {
-        TX_EARLY_INT_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        TX_EARLY_INT_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Transmit Underflow Interrupt"]
     #[inline(always)]
     pub fn tx_underflow_int_en(&self) -> TX_UNDERFLOW_INT_EN_R {
-        TX_UNDERFLOW_INT_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        TX_UNDERFLOW_INT_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Transmit Timeout Interrupt"]
     #[inline(always)]
     pub fn tx_timeout_int_en(&self) -> TX_TIMEOUT_INT_EN_R {
-        TX_TIMEOUT_INT_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+        TX_TIMEOUT_INT_EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Transmit Buffer Available Interrupt"]
     #[inline(always)]
     pub fn tx_buf_ua_int_en(&self) -> TX_BUF_UA_INT_EN_R {
-        TX_BUF_UA_INT_EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        TX_BUF_UA_INT_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Transmit DMA FSM Stopped Interrupt"]
     #[inline(always)]
     pub fn tx_dma_stopped_int_en(&self) -> TX_DMA_STOPPED_INT_EN_R {
-        TX_DMA_STOPPED_INT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        TX_DMA_STOPPED_INT_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
     pub fn tx_int_en(&self) -> TX_INT_EN_R {
-        TX_INT_EN_R::new((self.bits & 0x01) != 0)
+        TX_INT_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

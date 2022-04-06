@@ -114,7 +114,7 @@ impl<'a> BUFFER_READ_ADDRESS_UPDATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> BUSY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -206,12 +206,12 @@ impl R {
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn buffer_read_address_updating(&self) -> BUFFER_READ_ADDRESS_UPDATING_R {
-        BUFFER_READ_ADDRESS_UPDATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        BUFFER_READ_ADDRESS_UPDATING_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new((self.bits & 0x01) != 0)
+        BUSY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

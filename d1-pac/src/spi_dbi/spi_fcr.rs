@@ -67,7 +67,7 @@ impl<'a> TF_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -151,7 +151,7 @@ impl<'a> TF_TEST_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -235,7 +235,7 @@ impl<'a> TF_DRQ_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -299,7 +299,7 @@ impl<'a> RF_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -383,7 +383,7 @@ impl<'a> RF_TEST_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(1 << 14)) | ((value as u32 & 1) << 14);
         self.w
     }
 }
@@ -467,7 +467,7 @@ impl<'a> RF_DRQ_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -502,17 +502,17 @@ impl R {
     #[doc = "Bit 31 - TXFIFO Reset"]
     #[inline(always)]
     pub fn tf_rst(&self) -> TF_RST_R {
-        TF_RST_R::new(((self.bits >> 31) & 0x01) != 0)
+        TF_RST_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - TXFIFO Test Mode Enable"]
     #[inline(always)]
     pub fn tf_test_en(&self) -> TF_TEST_EN_R {
-        TF_TEST_EN_R::new(((self.bits >> 30) & 0x01) != 0)
+        TF_TEST_EN_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 24 - TXFIFO DMA Request Enable"]
     #[inline(always)]
     pub fn tf_drq_en(&self) -> TF_DRQ_EN_R {
-        TF_DRQ_EN_R::new(((self.bits >> 24) & 0x01) != 0)
+        TF_DRQ_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "Bits 16:23 - TXFIFO Empty Request Trigger Level"]
     #[inline(always)]
@@ -522,17 +522,17 @@ impl R {
     #[doc = "Bit 15 - RXFIFO Reset"]
     #[inline(always)]
     pub fn rf_rst(&self) -> RF_RST_R {
-        RF_RST_R::new(((self.bits >> 15) & 0x01) != 0)
+        RF_RST_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 14 - RXFIFO Test Mode Enable"]
     #[inline(always)]
     pub fn rf_test_en(&self) -> RF_TEST_EN_R {
-        RF_TEST_EN_R::new(((self.bits >> 14) & 0x01) != 0)
+        RF_TEST_EN_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 8 - RXFIFO DMA Request Enable"]
     #[inline(always)]
     pub fn rf_drq_en(&self) -> RF_DRQ_EN_R {
-        RF_DRQ_EN_R::new(((self.bits >> 8) & 0x01) != 0)
+        RF_DRQ_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 0:7 - RXFIFO Ready Request Trigger Level"]
     #[inline(always)]

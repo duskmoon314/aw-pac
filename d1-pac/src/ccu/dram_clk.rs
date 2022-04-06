@@ -114,7 +114,7 @@ impl<'a> CLK_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> SDRCLK_UPD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(1 << 27)) | ((value as u32 & 1) << 27);
         self.w
     }
 }
@@ -300,7 +300,7 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
+        self.w.bits = (self.w.bits & !(7 << 24)) | ((value as u32 & 7) << 24);
         self.w
     }
 }
@@ -402,7 +402,7 @@ impl<'a> DRAM_DIV2_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
+        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
         self.w
     }
 }
@@ -429,7 +429,7 @@ impl<'a> DRAM_DIV1_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
+        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
         self.w
     }
 }
@@ -437,27 +437,27 @@ impl R {
     #[doc = "Bit 31 - Gating Clock"]
     #[inline(always)]
     pub fn clk_gating(&self) -> CLK_GATING_R {
-        CLK_GATING_R::new(((self.bits >> 31) & 0x01) != 0)
+        CLK_GATING_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 27 - SDRCLK Configuration 0 Update"]
     #[inline(always)]
     pub fn sdrclk_upd(&self) -> SDRCLK_UPD_R {
-        SDRCLK_UPD_R::new(((self.bits >> 27) & 0x01) != 0)
+        SDRCLK_UPD_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 24) & 0x07) as u8)
+        CLK_SRC_SEL_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn dram_div2(&self) -> DRAM_DIV2_R {
-        DRAM_DIV2_R::new(((self.bits >> 8) & 0x03) as u8)
+        DRAM_DIV2_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
     pub fn dram_div1(&self) -> DRAM_DIV1_R {
-        DRAM_DIV1_R::new((self.bits & 0x03) as u8)
+        DRAM_DIV1_R::new((self.bits & 3) as u8)
     }
 }
 impl W {

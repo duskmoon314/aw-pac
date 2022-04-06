@@ -141,7 +141,7 @@ impl<'a> XMII_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(1 << 27)) | ((value as u32 & 1) << 27);
         self.w
     }
 }
@@ -230,7 +230,7 @@ impl<'a> EPHY_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 25)) | ((value as u32 & 0x03) << 25);
+        self.w.bits = (self.w.bits & !(3 << 25)) | ((value as u32 & 3) << 25);
         self.w
     }
 }
@@ -341,7 +341,7 @@ impl<'a> CLK_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
+        self.w.bits = (self.w.bits & !(1 << 18)) | ((value as u32 & 1) << 18);
         self.w
     }
 }
@@ -425,7 +425,7 @@ impl<'a> LED_POL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
         self.w
     }
 }
@@ -509,7 +509,7 @@ impl<'a> SHUTDOWN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -593,7 +593,7 @@ impl<'a> PHY_SELECT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -677,7 +677,7 @@ impl<'a> RMII_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
         self.w
     }
 }
@@ -704,7 +704,7 @@ impl<'a> ETXDC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 10)) | ((value as u32 & 0x07) << 10);
+        self.w.bits = (self.w.bits & !(7 << 10)) | ((value as u32 & 7) << 10);
         self.w
     }
 }
@@ -815,7 +815,7 @@ impl<'a> ERXIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -899,7 +899,7 @@ impl<'a> ETXIE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -983,7 +983,7 @@ impl<'a> EPIT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -1072,7 +1072,7 @@ impl<'a> ETCS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03) | (value as u32 & 0x03);
+        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
         self.w
     }
 }
@@ -1085,12 +1085,12 @@ impl R {
     #[doc = "Bit 27"]
     #[inline(always)]
     pub fn xmii_sel(&self) -> XMII_SEL_R {
-        XMII_SEL_R::new(((self.bits >> 27) & 0x01) != 0)
+        XMII_SEL_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bits 25:26"]
     #[inline(always)]
     pub fn ephy_mode(&self) -> EPHY_MODE_R {
-        EPHY_MODE_R::new(((self.bits >> 25) & 0x03) as u8)
+        EPHY_MODE_R::new(((self.bits >> 25) & 3) as u8)
     }
     #[doc = "Bits 20:24"]
     #[inline(always)]
@@ -1100,32 +1100,32 @@ impl R {
     #[doc = "Bit 18"]
     #[inline(always)]
     pub fn clk_sel(&self) -> CLK_SEL_R {
-        CLK_SEL_R::new(((self.bits >> 18) & 0x01) != 0)
+        CLK_SEL_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     pub fn led_pol(&self) -> LED_POL_R {
-        LED_POL_R::new(((self.bits >> 17) & 0x01) != 0)
+        LED_POL_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn shutdown(&self) -> SHUTDOWN_R {
-        SHUTDOWN_R::new(((self.bits >> 16) & 0x01) != 0)
+        SHUTDOWN_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
     pub fn phy_select(&self) -> PHY_SELECT_R {
-        PHY_SELECT_R::new(((self.bits >> 15) & 0x01) != 0)
+        PHY_SELECT_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
     pub fn rmii_en(&self) -> RMII_EN_R {
-        RMII_EN_R::new(((self.bits >> 13) & 0x01) != 0)
+        RMII_EN_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bits 10:12"]
     #[inline(always)]
     pub fn etxdc(&self) -> ETXDC_R {
-        ETXDC_R::new(((self.bits >> 10) & 0x07) as u8)
+        ETXDC_R::new(((self.bits >> 10) & 7) as u8)
     }
     #[doc = "Bits 5:9"]
     #[inline(always)]
@@ -1135,22 +1135,22 @@ impl R {
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn erxie(&self) -> ERXIE_R {
-        ERXIE_R::new(((self.bits >> 4) & 0x01) != 0)
+        ERXIE_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn etxie(&self) -> ETXIE_R {
-        ETXIE_R::new(((self.bits >> 3) & 0x01) != 0)
+        ETXIE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn epit(&self) -> EPIT_R {
-        EPIT_R::new(((self.bits >> 2) & 0x01) != 0)
+        EPIT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bits 0:1"]
     #[inline(always)]
     pub fn etcs(&self) -> ETCS_R {
-        ETCS_R::new((self.bits & 0x03) as u8)
+        ETCS_R::new((self.bits & 3) as u8)
     }
 }
 impl W {

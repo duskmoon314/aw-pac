@@ -67,7 +67,7 @@ impl<'a> SSI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
         self.w
     }
 }
@@ -151,7 +151,7 @@ impl<'a> TC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
         self.w
     }
 }
@@ -235,7 +235,7 @@ impl<'a> TF_UDR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -319,7 +319,7 @@ impl<'a> TF_OVF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -403,7 +403,7 @@ impl<'a> RF_UDR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -487,7 +487,7 @@ impl<'a> RF_OVF_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -571,7 +571,7 @@ impl<'a> TF_FULL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -655,7 +655,7 @@ impl<'a> TF_EMP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -692,7 +692,7 @@ impl<'a> TF_READY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -776,7 +776,7 @@ impl<'a> RF_FULL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -860,7 +860,7 @@ impl<'a> RF_EMP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -897,7 +897,7 @@ impl<'a> RF_RDY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -905,62 +905,62 @@ impl R {
     #[doc = "Bit 13 - SS Invalid Enable"]
     #[inline(always)]
     pub fn ssi(&self) -> SSI_R {
-        SSI_R::new(((self.bits >> 13) & 0x01) != 0)
+        SSI_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 12 - Transfer Completed"]
     #[inline(always)]
     pub fn tc(&self) -> TC_R {
-        TC_R::new(((self.bits >> 12) & 0x01) != 0)
+        TC_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11 - TXFIFO Underrun"]
     #[inline(always)]
     pub fn tf_udr(&self) -> TF_UDR_R {
-        TF_UDR_R::new(((self.bits >> 11) & 0x01) != 0)
+        TF_UDR_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - TXFIFO Overflow"]
     #[inline(always)]
     pub fn tf_ovf(&self) -> TF_OVF_R {
-        TF_OVF_R::new(((self.bits >> 10) & 0x01) != 0)
+        TF_OVF_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9 - RXFIFO Underrun"]
     #[inline(always)]
     pub fn rf_udr(&self) -> RF_UDR_R {
-        RF_UDR_R::new(((self.bits >> 9) & 0x01) != 0)
+        RF_UDR_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - RXFIFO Overflow"]
     #[inline(always)]
     pub fn rf_ovf(&self) -> RF_OVF_R {
-        RF_OVF_R::new(((self.bits >> 8) & 0x01) != 0)
+        RF_OVF_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 6 - TXFIFO Full"]
     #[inline(always)]
     pub fn tf_full(&self) -> TF_FULL_R {
-        TF_FULL_R::new(((self.bits >> 6) & 0x01) != 0)
+        TF_FULL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - TXFIFO Empty"]
     #[inline(always)]
     pub fn tf_emp(&self) -> TF_EMP_R {
-        TF_EMP_R::new(((self.bits >> 5) & 0x01) != 0)
+        TF_EMP_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - TXFIFO Ready"]
     #[inline(always)]
     pub fn tf_ready(&self) -> TF_READY_R {
-        TF_READY_R::new(((self.bits >> 4) & 0x01) != 0)
+        TF_READY_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 2 - RXFIFO Full"]
     #[inline(always)]
     pub fn rf_full(&self) -> RF_FULL_R {
-        RF_FULL_R::new(((self.bits >> 2) & 0x01) != 0)
+        RF_FULL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - RXFIFO Empty"]
     #[inline(always)]
     pub fn rf_emp(&self) -> RF_EMP_R {
-        RF_EMP_R::new(((self.bits >> 1) & 0x01) != 0)
+        RF_EMP_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - RXFIFO Ready"]
     #[inline(always)]
     pub fn rf_rdy(&self) -> RF_RDY_R {
-        RF_RDY_R::new((self.bits & 0x01) != 0)
+        RF_RDY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

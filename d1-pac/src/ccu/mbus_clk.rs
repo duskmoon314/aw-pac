@@ -114,7 +114,7 @@ impl<'a> MBUS_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -122,7 +122,7 @@ impl R {
     #[doc = "Bit 30 - MBUS Reset"]
     #[inline(always)]
     pub fn mbus_rst(&self) -> MBUS_RST_R {
-        MBUS_RST_R::new(((self.bits >> 30) & 0x01) != 0)
+        MBUS_RST_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
 impl W {

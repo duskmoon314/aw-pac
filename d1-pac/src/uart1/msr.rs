@@ -393,42 +393,42 @@ impl R {
     #[doc = "Bit 7 - Line State of Data Carrier Detect"]
     #[inline(always)]
     pub fn dcd(&self) -> DCD_R {
-        DCD_R::new(((self.bits >> 7) & 0x01) != 0)
+        DCD_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - Line State of Ring Indicator"]
     #[inline(always)]
     pub fn ri(&self) -> RI_R {
-        RI_R::new(((self.bits >> 6) & 0x01) != 0)
+        RI_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - Line State of Data Set Ready"]
     #[inline(always)]
     pub fn dsr(&self) -> DSR_R {
-        DSR_R::new(((self.bits >> 5) & 0x01) != 0)
+        DSR_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Line State of Clear To Send"]
     #[inline(always)]
     pub fn cts(&self) -> CTS_R {
-        CTS_R::new(((self.bits >> 4) & 0x01) != 0)
+        CTS_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Delta Data Carrier Detect"]
     #[inline(always)]
     pub fn ddcd(&self) -> DDCD_R {
-        DDCD_R::new(((self.bits >> 3) & 0x01) != 0)
+        DDCD_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Trailing Edge Ring Indicator"]
     #[inline(always)]
     pub fn teri(&self) -> TERI_R {
-        TERI_R::new(((self.bits >> 2) & 0x01) != 0)
+        TERI_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Delta Data Set Ready"]
     #[inline(always)]
     pub fn ddsr(&self) -> DDSR_R {
-        DDSR_R::new(((self.bits >> 1) & 0x01) != 0)
+        DDSR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Delta Clear to Send"]
     #[inline(always)]
     pub fn dcts(&self) -> DCTS_R {
-        DCTS_R::new((self.bits & 0x01) != 0)
+        DCTS_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "UART Modem Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [msr](index.html) module"]

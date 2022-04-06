@@ -114,7 +114,7 @@ impl<'a> HS400_MD_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> HALF_START_BIT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -206,12 +206,12 @@ impl R {
     #[doc = "Bit 31 - HS400 Mode Enable"]
     #[inline(always)]
     pub fn hs400_md_en(&self) -> HS400_MD_EN_R {
-        HS400_MD_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        HS400_MD_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 0 - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
     #[inline(always)]
     pub fn half_start_bit(&self) -> HALF_START_BIT_R {
-        HALF_START_BIT_R::new((self.bits & 0x01) != 0)
+        HALF_START_BIT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

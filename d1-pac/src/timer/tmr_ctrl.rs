@@ -114,7 +114,7 @@ impl<'a> TMR_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -268,7 +268,7 @@ impl<'a> TMR_CLK_PRES_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 4)) | ((value as u32 & 0x07) << 4);
+        self.w.bits = (self.w.bits & !(7 << 4)) | ((value as u32 & 7) << 4);
         self.w
     }
 }
@@ -344,7 +344,7 @@ impl<'a> TMR_CLK_SRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 2)) | ((value as u32 & 0x03) << 2);
+        self.w.bits = (self.w.bits & !(3 << 2)) | ((value as u32 & 3) << 2);
         self.w
     }
 }
@@ -428,7 +428,7 @@ impl<'a> TMR_RELOAD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -512,7 +512,7 @@ impl<'a> TMR_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -520,27 +520,27 @@ impl R {
     #[doc = "Bit 7"]
     #[inline(always)]
     pub fn tmr_mode(&self) -> TMR_MODE_R {
-        TMR_MODE_R::new(((self.bits >> 7) & 0x01) != 0)
+        TMR_MODE_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 4:6"]
     #[inline(always)]
     pub fn tmr_clk_pres(&self) -> TMR_CLK_PRES_R {
-        TMR_CLK_PRES_R::new(((self.bits >> 4) & 0x07) as u8)
+        TMR_CLK_PRES_R::new(((self.bits >> 4) & 7) as u8)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
     pub fn tmr_clk_src(&self) -> TMR_CLK_SRC_R {
-        TMR_CLK_SRC_R::new(((self.bits >> 2) & 0x03) as u8)
+        TMR_CLK_SRC_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn tmr_reload(&self) -> TMR_RELOAD_R {
-        TMR_RELOAD_R::new(((self.bits >> 1) & 0x01) != 0)
+        TMR_RELOAD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn tmr_en(&self) -> TMR_EN_R {
-        TMR_EN_R::new((self.bits & 0x01) != 0)
+        TMR_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

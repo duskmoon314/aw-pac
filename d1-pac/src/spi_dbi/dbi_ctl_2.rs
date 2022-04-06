@@ -67,7 +67,7 @@ impl<'a> DBI_FIFO_DRQ_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -131,7 +131,7 @@ impl<'a> DBI_SDQ_OUT_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -168,7 +168,7 @@ impl<'a> DBI_DCX_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -257,7 +257,7 @@ impl<'a> DBI_SDI_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 3)) | ((value as u32 & 0x03) << 3);
+        self.w.bits = (self.w.bits & !(3 << 3)) | ((value as u32 & 3) << 3);
         self.w
     }
 }
@@ -294,7 +294,7 @@ impl<'a> TE_DBC_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -331,7 +331,7 @@ impl<'a> TE_TRIG_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -368,7 +368,7 @@ impl<'a> TE_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -376,7 +376,7 @@ impl R {
     #[doc = "Bit 15 - DBI FIFO DMA Request Enable"]
     #[inline(always)]
     pub fn dbi_fifo_drq_en(&self) -> DBI_FIFO_DRQ_EN_R {
-        DBI_FIFO_DRQ_EN_R::new(((self.bits >> 15) & 0x01) != 0)
+        DBI_FIFO_DRQ_EN_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 8:14 - DBI FIFO Empty Request Trigger Level"]
     #[inline(always)]
@@ -386,32 +386,32 @@ impl R {
     #[doc = "Bit 6 - DBI SDI PIN Output Select"]
     #[inline(always)]
     pub fn dbi_sdq_out_sel(&self) -> DBI_SDQ_OUT_SEL_R {
-        DBI_SDQ_OUT_SEL_R::new(((self.bits >> 6) & 0x01) != 0)
+        DBI_SDQ_OUT_SEL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - DBI DCX PIN Function Select"]
     #[inline(always)]
     pub fn dbi_dcx_sel(&self) -> DBI_DCX_SEL_R {
-        DBI_DCX_SEL_R::new(((self.bits >> 5) & 0x01) != 0)
+        DBI_DCX_SEL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 3:4 - DBI SDI PIN FUnction Select"]
     #[inline(always)]
     pub fn dbi_sdi_sel(&self) -> DBI_SDI_SEL_R {
-        DBI_SDI_SEL_R::new(((self.bits >> 3) & 0x03) as u8)
+        DBI_SDI_SEL_R::new(((self.bits >> 3) & 3) as u8)
     }
     #[doc = "Bit 2 - TE debounce function select"]
     #[inline(always)]
     pub fn te_dbc_sel(&self) -> TE_DBC_SEL_R {
-        TE_DBC_SEL_R::new(((self.bits >> 2) & 0x01) != 0)
+        TE_DBC_SEL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - TE edge trigger select"]
     #[inline(always)]
     pub fn te_trig_sel(&self) -> TE_TRIG_SEL_R {
-        TE_TRIG_SEL_R::new(((self.bits >> 1) & 0x01) != 0)
+        TE_TRIG_SEL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - TE Enable"]
     #[inline(always)]
     pub fn te_en(&self) -> TE_EN_R {
-        TE_EN_R::new((self.bits & 0x01) != 0)
+        TE_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

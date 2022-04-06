@@ -114,7 +114,7 @@ impl<'a> PTIME_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> RS485_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> EDSSI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -366,7 +366,7 @@ impl<'a> ELSI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -450,7 +450,7 @@ impl<'a> ETBEI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -534,7 +534,7 @@ impl<'a> ERBFI_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -542,32 +542,32 @@ impl R {
     #[doc = "Bit 7 - Programmable THRE Interrupt Mode Enable"]
     #[inline(always)]
     pub fn ptime(&self) -> PTIME_R {
-        PTIME_R::new(((self.bits >> 7) & 0x01) != 0)
+        PTIME_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 4 - RS485 Interrupt Enable"]
     #[inline(always)]
     pub fn rs485_int_en(&self) -> RS485_INT_EN_R {
-        RS485_INT_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        RS485_INT_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Enable Modem Status Interrupt"]
     #[inline(always)]
     pub fn edssi(&self) -> EDSSI_R {
-        EDSSI_R::new(((self.bits >> 3) & 0x01) != 0)
+        EDSSI_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable Receiver Line Status Interrupt"]
     #[inline(always)]
     pub fn elsi(&self) -> ELSI_R {
-        ELSI_R::new(((self.bits >> 2) & 0x01) != 0)
+        ELSI_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Enable Transmit Holding Register Empty Interrupt"]
     #[inline(always)]
     pub fn etbei(&self) -> ETBEI_R {
-        ETBEI_R::new(((self.bits >> 1) & 0x01) != 0)
+        ETBEI_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Enable Received Data Available Interrupt"]
     #[inline(always)]
     pub fn erbfi(&self) -> ERBFI_R {
-        ERBFI_R::new((self.bits & 0x01) != 0)
+        ERBFI_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

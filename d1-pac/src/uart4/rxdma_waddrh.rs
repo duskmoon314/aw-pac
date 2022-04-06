@@ -32,7 +32,7 @@ impl R {
     #[doc = "Bits 0:1 - RXDMA Current Write Address \\[33:32\\]"]
     #[inline(always)]
     pub fn waddr(&self) -> WADDR_R {
-        WADDR_R::new((self.bits & 0x03) as u8)
+        WADDR_R::new((self.bits & 3) as u8)
     }
 }
 #[doc = "UART RXDMA Write Address High Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdma_waddrh](index.html) module"]

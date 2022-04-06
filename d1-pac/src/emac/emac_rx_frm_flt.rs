@@ -114,7 +114,7 @@ impl<'a> DIS_ADDR_FILTER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> DIS_BROADCAST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> RX_ALL_MULTICAST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -371,7 +371,7 @@ impl<'a> CTL_FRM_FILTER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 12)) | ((value as u32 & 0x03) << 12);
+        self.w.bits = (self.w.bits & !(3 << 12)) | ((value as u32 & 3) << 12);
         self.w
     }
 }
@@ -455,7 +455,7 @@ impl<'a> HASH_MULTICAST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -539,7 +539,7 @@ impl<'a> HASH_UNICAST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -623,7 +623,7 @@ impl<'a> SA_FILTER_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -707,7 +707,7 @@ impl<'a> SA_INV_FILTER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -791,7 +791,7 @@ impl<'a> DA_INV_FILTER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -875,7 +875,7 @@ impl<'a> FLT_MD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -959,7 +959,7 @@ impl<'a> RX_ALL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -967,57 +967,57 @@ impl R {
     #[doc = "Bit 31 - Disable Address Filter"]
     #[inline(always)]
     pub fn dis_addr_filter(&self) -> DIS_ADDR_FILTER_R {
-        DIS_ADDR_FILTER_R::new(((self.bits >> 31) & 0x01) != 0)
+        DIS_ADDR_FILTER_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 17 - Disable Receive Broadcast Frames"]
     #[inline(always)]
     pub fn dis_broadcast(&self) -> DIS_BROADCAST_R {
-        DIS_BROADCAST_R::new(((self.bits >> 17) & 0x01) != 0)
+        DIS_BROADCAST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 16 - Receive All Multicast Frames Filter"]
     #[inline(always)]
     pub fn rx_all_multicast(&self) -> RX_ALL_MULTICAST_R {
-        RX_ALL_MULTICAST_R::new(((self.bits >> 16) & 0x01) != 0)
+        RX_ALL_MULTICAST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 12:13 - Receive Control Frames Filter"]
     #[inline(always)]
     pub fn ctl_frm_filter(&self) -> CTL_FRM_FILTER_R {
-        CTL_FRM_FILTER_R::new(((self.bits >> 12) & 0x03) as u8)
+        CTL_FRM_FILTER_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bit 9 - Filter Multicast Frames Set"]
     #[inline(always)]
     pub fn hash_multicast(&self) -> HASH_MULTICAST_R {
-        HASH_MULTICAST_R::new(((self.bits >> 9) & 0x01) != 0)
+        HASH_MULTICAST_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Filter Unicast Frames Set"]
     #[inline(always)]
     pub fn hash_unicast(&self) -> HASH_UNICAST_R {
-        HASH_UNICAST_R::new(((self.bits >> 8) & 0x01) != 0)
+        HASH_UNICAST_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 6 - Receive SA Filter Enable"]
     #[inline(always)]
     pub fn sa_filter_en(&self) -> SA_FILTER_EN_R {
-        SA_FILTER_EN_R::new(((self.bits >> 6) & 0x01) != 0)
+        SA_FILTER_EN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - Receive SA Invert Filter Set"]
     #[inline(always)]
     pub fn sa_inv_filter(&self) -> SA_INV_FILTER_R {
-        SA_INV_FILTER_R::new(((self.bits >> 5) & 0x01) != 0)
+        SA_INV_FILTER_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn da_inv_filter(&self) -> DA_INV_FILTER_R {
-        DA_INV_FILTER_R::new(((self.bits >> 4) & 0x01) != 0)
+        DA_INV_FILTER_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn flt_md(&self) -> FLT_MD_R {
-        FLT_MD_R::new(((self.bits >> 1) & 0x01) != 0)
+        FLT_MD_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Receive All Frame"]
     #[inline(always)]
     pub fn rx_all(&self) -> RX_ALL_R {
-        RX_ALL_R::new((self.bits & 0x01) != 0)
+        RX_ALL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

@@ -163,7 +163,7 @@ impl R {
     #[doc = "Bits 6:7 - FIFOs Enable Flag"]
     #[inline(always)]
     pub fn feflag(&self) -> FEFLAG_R {
-        FEFLAG_R::new(((self.bits >> 6) & 0x03) as u8)
+        FEFLAG_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 0:3 - Interrupt ID"]
     #[inline(always)]

@@ -133,8 +133,7 @@ impl<'a> PD_DRV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
+        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
         self.w
     }
 }
@@ -171,7 +170,7 @@ impl<'a, const O: usize> PD_DRV_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
         self.w
     }
 }
@@ -179,42 +178,42 @@ impl R {
     #[doc = "PD Multi_Driving Select"]
     #[inline(always)]
     pub unsafe fn pd_drv(&self, n: usize) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> ((n - 16) * 4)) & 0x03) as u8)
+        PD_DRV_R::new(((self.bits >> ((n - 16) * 4)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PD Multi_Driving Select"]
     #[inline(always)]
     pub fn pd16_drv(&self) -> PD_DRV_R {
-        PD_DRV_R::new((self.bits & 0x03) as u8)
+        PD_DRV_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - PD Multi_Driving Select"]
     #[inline(always)]
     pub fn pd17_drv(&self) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> 4) & 0x03) as u8)
+        PD_DRV_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PD Multi_Driving Select"]
     #[inline(always)]
     pub fn pd18_drv(&self) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> 8) & 0x03) as u8)
+        PD_DRV_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PD Multi_Driving Select"]
     #[inline(always)]
     pub fn pd19_drv(&self) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> 12) & 0x03) as u8)
+        PD_DRV_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:17 - PD Multi_Driving Select"]
     #[inline(always)]
     pub fn pd20_drv(&self) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> 16) & 0x03) as u8)
+        PD_DRV_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 20:21 - PD Multi_Driving Select"]
     #[inline(always)]
     pub fn pd21_drv(&self) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> 20) & 0x03) as u8)
+        PD_DRV_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 24:25 - PD Multi_Driving Select"]
     #[inline(always)]
     pub fn pd22_drv(&self) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> 24) & 0x03) as u8)
+        PD_DRV_R::new(((self.bits >> 24) & 3) as u8)
     }
 }
 impl W {

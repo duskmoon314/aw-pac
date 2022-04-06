@@ -114,7 +114,7 @@ impl<'a> DDR_RES240_TRIMMING_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -186,7 +186,7 @@ impl<'a> RESCAL_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -270,7 +270,7 @@ impl<'a> CAL_ANA_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -354,7 +354,7 @@ impl<'a> CAL_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -362,22 +362,22 @@ impl R {
     #[doc = "Bit 8 - 240ohms Resistor Trimming Source Select"]
     #[inline(always)]
     pub fn ddr_res240_trimming_sel(&self) -> DDR_RES240_TRIMMING_SEL_R {
-        DDR_RES240_TRIMMING_SEL_R::new(((self.bits >> 8) & 0x01) != 0)
+        DDR_RES240_TRIMMING_SEL_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 2 - RESCAL Calibration Mode Select"]
     #[inline(always)]
     pub fn rescal_mode(&self) -> RESCAL_MODE_R {
-        RESCAL_MODE_R::new(((self.bits >> 2) & 0x01) != 0)
+        RESCAL_MODE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Calibration Circuits Analog Enable"]
     #[inline(always)]
     pub fn cal_ana_en(&self) -> CAL_ANA_EN_R {
-        CAL_ANA_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        CAL_ANA_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Auto Calibration Enable"]
     #[inline(always)]
     pub fn cal_en(&self) -> CAL_EN_R {
-        CAL_EN_R::new((self.bits & 0x01) != 0)
+        CAL_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

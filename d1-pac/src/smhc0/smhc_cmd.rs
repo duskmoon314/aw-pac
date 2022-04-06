@@ -67,7 +67,7 @@ impl<'a> CMD_LOAD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -151,7 +151,7 @@ impl<'a> VOL_SW_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(1 << 28)) | ((value as u32 & 1) << 28);
         self.w
     }
 }
@@ -188,7 +188,7 @@ impl<'a> BOOT_ABT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(1 << 27)) | ((value as u32 & 1) << 27);
         self.w
     }
 }
@@ -225,7 +225,7 @@ impl<'a> EXP_BOOT_ACK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 26)) | ((value as u32 & 0x01) << 26);
+        self.w.bits = (self.w.bits & !(1 << 26)) | ((value as u32 & 1) << 26);
         self.w
     }
 }
@@ -314,7 +314,7 @@ impl<'a> BOOT_MOD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 24)) | ((value as u32 & 0x03) << 24);
+        self.w.bits = (self.w.bits & !(3 << 24)) | ((value as u32 & 3) << 24);
         self.w
     }
 }
@@ -398,7 +398,7 @@ impl<'a> PRG_CLK_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 21)) | ((value as u32 & 0x01) << 21);
+        self.w.bits = (self.w.bits & !(1 << 21)) | ((value as u32 & 1) << 21);
         self.w
     }
 }
@@ -482,7 +482,7 @@ impl<'a> SEND_INIT_SEQ_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -566,7 +566,7 @@ impl<'a> STOP_ABT_CMD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(1 << 14)) | ((value as u32 & 1) << 14);
         self.w
     }
 }
@@ -650,7 +650,7 @@ impl<'a> WAIT_PRE_OVER_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
         self.w
     }
 }
@@ -734,7 +734,7 @@ impl<'a> STOP_CMD_FLAG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
         self.w
     }
 }
@@ -818,7 +818,7 @@ impl<'a> TRANS_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -902,7 +902,7 @@ impl<'a> TRANS_DIR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -986,7 +986,7 @@ impl<'a> DATA_TRANS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -1070,7 +1070,7 @@ impl<'a> CHK_RESP_CRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -1154,7 +1154,7 @@ impl<'a> LONG_RESP_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
+        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
         self.w
     }
 }
@@ -1238,7 +1238,7 @@ impl<'a> RESP_RCV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -1273,82 +1273,82 @@ impl R {
     #[doc = "Bit 31 - Start Command"]
     #[inline(always)]
     pub fn cmd_load(&self) -> CMD_LOAD_R {
-        CMD_LOAD_R::new(((self.bits >> 31) & 0x01) != 0)
+        CMD_LOAD_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 28 - Voltage Switch"]
     #[inline(always)]
     pub fn vol_sw(&self) -> VOL_SW_R {
-        VOL_SW_R::new(((self.bits >> 28) & 0x01) != 0)
+        VOL_SW_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 27 - Boot Abort"]
     #[inline(always)]
     pub fn boot_abt(&self) -> BOOT_ABT_R {
-        BOOT_ABT_R::new(((self.bits >> 27) & 0x01) != 0)
+        BOOT_ABT_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 26 - Expect Boot Acknowledge"]
     #[inline(always)]
     pub fn exp_boot_ack(&self) -> EXP_BOOT_ACK_R {
-        EXP_BOOT_ACK_R::new(((self.bits >> 26) & 0x01) != 0)
+        EXP_BOOT_ACK_R::new(((self.bits >> 26) & 1) != 0)
     }
     #[doc = "Bits 24:25 - Boot Mode"]
     #[inline(always)]
     pub fn boot_mod(&self) -> BOOT_MOD_R {
-        BOOT_MOD_R::new(((self.bits >> 24) & 0x03) as u8)
+        BOOT_MOD_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 21 - Change Clock"]
     #[inline(always)]
     pub fn prg_clk(&self) -> PRG_CLK_R {
-        PRG_CLK_R::new(((self.bits >> 21) & 0x01) != 0)
+        PRG_CLK_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 15 - Send Initialization"]
     #[inline(always)]
     pub fn send_init_seq(&self) -> SEND_INIT_SEQ_R {
-        SEND_INIT_SEQ_R::new(((self.bits >> 15) & 0x01) != 0)
+        SEND_INIT_SEQ_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bit 14 - Stop Abort Command"]
     #[inline(always)]
     pub fn stop_abt_cmd(&self) -> STOP_ABT_CMD_R {
-        STOP_ABT_CMD_R::new(((self.bits >> 14) & 0x01) != 0)
+        STOP_ABT_CMD_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 13 - Wait for Data Transfer Over"]
     #[inline(always)]
     pub fn wait_pre_over(&self) -> WAIT_PRE_OVER_R {
-        WAIT_PRE_OVER_R::new(((self.bits >> 13) & 0x01) != 0)
+        WAIT_PRE_OVER_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 12 - Send Stop CMD Automatically (CMD12)"]
     #[inline(always)]
     pub fn stop_cmd_flag(&self) -> STOP_CMD_FLAG_R {
-        STOP_CMD_FLAG_R::new(((self.bits >> 12) & 0x01) != 0)
+        STOP_CMD_FLAG_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11 - Transfer Mode"]
     #[inline(always)]
     pub fn trans_mode(&self) -> TRANS_MODE_R {
-        TRANS_MODE_R::new(((self.bits >> 11) & 0x01) != 0)
+        TRANS_MODE_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10 - Transfer Direction"]
     #[inline(always)]
     pub fn trans_dir(&self) -> TRANS_DIR_R {
-        TRANS_DIR_R::new(((self.bits >> 10) & 0x01) != 0)
+        TRANS_DIR_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9 - Data Transfer"]
     #[inline(always)]
     pub fn data_trans(&self) -> DATA_TRANS_R {
-        DATA_TRANS_R::new(((self.bits >> 9) & 0x01) != 0)
+        DATA_TRANS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8 - Check Response CRC"]
     #[inline(always)]
     pub fn chk_resp_crc(&self) -> CHK_RESP_CRC_R {
-        CHK_RESP_CRC_R::new(((self.bits >> 8) & 0x01) != 0)
+        CHK_RESP_CRC_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 7 - Response Type"]
     #[inline(always)]
     pub fn long_resp(&self) -> LONG_RESP_R {
-        LONG_RESP_R::new(((self.bits >> 7) & 0x01) != 0)
+        LONG_RESP_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - Response Receive"]
     #[inline(always)]
     pub fn resp_rcv(&self) -> RESP_RCV_R {
-        RESP_RCV_R::new(((self.bits >> 6) & 0x01) != 0)
+        RESP_RCV_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bits 0:5 - CMD Index"]
     #[inline(always)]

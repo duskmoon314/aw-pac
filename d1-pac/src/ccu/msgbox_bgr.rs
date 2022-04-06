@@ -115,8 +115,7 @@ impl<'a> MSGBOX_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> MSGBOX_RST_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -238,8 +237,7 @@ impl<'a> MSGBOX_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -276,7 +274,7 @@ impl<'a, const O: usize> MSGBOX_GATING_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -284,42 +282,42 @@ impl R {
     #[doc = "CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
     pub unsafe fn msgbox_rst(&self, n: usize) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> (n + 16)) & 0x01) != 0)
+        MSGBOX_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
     pub fn msgbox0_rst(&self) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        MSGBOX_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
     pub fn msgbox1_rst(&self) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> 17) & 0x01) != 0)
+        MSGBOX_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
     pub fn msgbox2_rst(&self) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> 18) & 0x01) != 0)
+        MSGBOX_RST_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
     pub unsafe fn msgbox_gating(&self, n: usize) -> MSGBOX_GATING_R {
-        MSGBOX_GATING_R::new(((self.bits >> n) & 0x01) != 0)
+        MSGBOX_GATING_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
     pub fn msgbox0_gating(&self) -> MSGBOX_GATING_R {
-        MSGBOX_GATING_R::new((self.bits & 0x01) != 0)
+        MSGBOX_GATING_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
     pub fn msgbox1_gating(&self) -> MSGBOX_GATING_R {
-        MSGBOX_GATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        MSGBOX_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
     pub fn msgbox2_gating(&self) -> MSGBOX_GATING_R {
-        MSGBOX_GATING_R::new(((self.bits >> 2) & 0x01) != 0)
+        MSGBOX_GATING_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {

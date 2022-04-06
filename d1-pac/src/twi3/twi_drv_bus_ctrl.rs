@@ -81,7 +81,7 @@ impl<'a> CLK_COUNT_MODE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -165,7 +165,7 @@ impl<'a> CLK_DUTY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
+        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
         self.w
     }
 }
@@ -192,7 +192,7 @@ impl<'a> CLK_N_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
+        self.w.bits = (self.w.bits & !(7 << 12)) | ((value as u32 & 7) << 12);
         self.w
     }
 }
@@ -286,7 +286,7 @@ impl<'a> SCL_MOV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -323,7 +323,7 @@ impl<'a> SDA_MOV_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -360,7 +360,7 @@ impl<'a> SCL_MOE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -397,7 +397,7 @@ impl<'a> SDA_MOE_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -405,12 +405,12 @@ impl R {
     #[doc = "Bit 15 - Setting duty cycle of clock as master"]
     #[inline(always)]
     pub fn clk_duty(&self) -> CLK_DUTY_R {
-        CLK_DUTY_R::new(((self.bits >> 15) & 0x01) != 0)
+        CLK_DUTY_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 12:14"]
     #[inline(always)]
     pub fn clk_n(&self) -> CLK_N_R {
-        CLK_N_R::new(((self.bits >> 12) & 0x07) as u8)
+        CLK_N_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
@@ -420,32 +420,32 @@ impl R {
     #[doc = "Bit 7 - SCL current status"]
     #[inline(always)]
     pub fn scl_sta(&self) -> SCL_STA_R {
-        SCL_STA_R::new(((self.bits >> 7) & 0x01) != 0)
+        SCL_STA_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - SDA current status"]
     #[inline(always)]
     pub fn sda_sta(&self) -> SDA_STA_R {
-        SDA_STA_R::new(((self.bits >> 6) & 0x01) != 0)
+        SDA_STA_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 3 - SCL manual output value"]
     #[inline(always)]
     pub fn scl_mov(&self) -> SCL_MOV_R {
-        SCL_MOV_R::new(((self.bits >> 3) & 0x01) != 0)
+        SCL_MOV_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - SDA manual output value"]
     #[inline(always)]
     pub fn sda_mov(&self) -> SDA_MOV_R {
-        SDA_MOV_R::new(((self.bits >> 2) & 0x01) != 0)
+        SDA_MOV_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - SCL manual output enable"]
     #[inline(always)]
     pub fn scl_moe(&self) -> SCL_MOE_R {
-        SCL_MOE_R::new(((self.bits >> 1) & 0x01) != 0)
+        SCL_MOE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - SDA manual output enable"]
     #[inline(always)]
     pub fn sda_moe(&self) -> SDA_MOE_R {
-        SDA_MOE_R::new((self.bits & 0x01) != 0)
+        SDA_MOE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

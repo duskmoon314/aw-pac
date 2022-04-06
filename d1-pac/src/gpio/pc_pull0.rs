@@ -120,8 +120,7 @@ impl<'a> PC_PULL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
+        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
         self.w
     }
 }
@@ -153,7 +152,7 @@ impl<'a, const O: usize> PC_PULL_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
+        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
         self.w
     }
 }
@@ -161,47 +160,47 @@ impl R {
     #[doc = "PC Pull_up/down Select"]
     #[inline(always)]
     pub unsafe fn pc_pull(&self, n: usize) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> (n * 2)) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> (n * 2)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc0_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new((self.bits & 0x03) as u8)
+        PC_PULL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc1_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> 2) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc2_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> 4) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc3_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> 6) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> 6) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc4_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> 8) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 10:11 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc5_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> 10) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> 10) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc6_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> 12) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 14:15 - PC Pull_up/down Select"]
     #[inline(always)]
     pub fn pc7_pull(&self) -> PC_PULL_R {
-        PC_PULL_R::new(((self.bits >> 14) & 0x03) as u8)
+        PC_PULL_R::new(((self.bits >> 14) & 3) as u8)
     }
 }
 impl W {

@@ -114,7 +114,7 @@ impl<'a> ERROR_FLAG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -225,7 +225,7 @@ impl<'a> FRE_DET_IRQ_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -309,7 +309,7 @@ impl<'a> FRE_DET_FUN_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -317,7 +317,7 @@ impl R {
     #[doc = "Bit 31 - Error Flag"]
     #[inline(always)]
     pub fn error_flag(&self) -> ERROR_FLAG_R {
-        ERROR_FLAG_R::new(((self.bits >> 31) & 0x01) != 0)
+        ERROR_FLAG_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 4:8 - Detect Time"]
     #[inline(always)]
@@ -327,12 +327,12 @@ impl R {
     #[doc = "Bit 1 - Frequence Detect IRQ Enable"]
     #[inline(always)]
     pub fn fre_det_irq_en(&self) -> FRE_DET_IRQ_EN_R {
-        FRE_DET_IRQ_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        FRE_DET_IRQ_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Frequence Detect Function Enable"]
     #[inline(always)]
     pub fn fre_det_fun_en(&self) -> FRE_DET_FUN_EN_R {
-        FRE_DET_FUN_EN_R::new((self.bits & 0x01) != 0)
+        FRE_DET_FUN_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

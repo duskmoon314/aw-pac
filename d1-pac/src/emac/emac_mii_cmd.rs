@@ -132,7 +132,7 @@ impl<'a> MDC_DIV_RATIO_M_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
+        self.w.bits = (self.w.bits & !(7 << 20)) | ((value as u32 & 7) << 20);
         self.w
     }
 }
@@ -270,7 +270,7 @@ impl<'a> MII_WR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -307,7 +307,7 @@ impl<'a> MII_BUSY_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -315,7 +315,7 @@ impl R {
     #[doc = "Bits 20:22 - MDC Clock DIvider Ratio"]
     #[inline(always)]
     pub fn mdc_div_ratio_m(&self) -> MDC_DIV_RATIO_M_R {
-        MDC_DIV_RATIO_M_R::new(((self.bits >> 20) & 0x07) as u8)
+        MDC_DIV_RATIO_M_R::new(((self.bits >> 20) & 7) as u8)
     }
     #[doc = "Bits 12:16 - PHY Address"]
     #[inline(always)]
@@ -330,12 +330,12 @@ impl R {
     #[doc = "Bit 1 - MII Write and Read"]
     #[inline(always)]
     pub fn mii_wr(&self) -> MII_WR_R {
-        MII_WR_R::new(((self.bits >> 1) & 0x01) != 0)
+        MII_WR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - MII Status"]
     #[inline(always)]
     pub fn mii_busy(&self) -> MII_BUSY_R {
-        MII_BUSY_R::new((self.bits & 0x01) != 0)
+        MII_BUSY_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

@@ -79,7 +79,7 @@ impl R {
     #[doc = "Bit 31 - Retire Signal"]
     #[inline(always)]
     pub fn rt_sig(&self) -> RT_SIG_R {
-        RT_SIG_R::new(((self.bits >> 31) & 0x01) != 0)
+        RT_SIG_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 0:7 - Retire PC\\[39:32\\]"]
     #[inline(always)]

@@ -114,7 +114,7 @@ impl<'a> USBOTG0_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
         self.w
     }
 }
@@ -199,8 +199,7 @@ impl<'a> USBEHCI_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -237,7 +236,7 @@ impl<'a, const O: usize> USBEHCI_RST_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -322,8 +321,7 @@ impl<'a> USBOHCI_RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -360,7 +358,7 @@ impl<'a, const O: usize> USBOHCI_RST_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -444,7 +442,7 @@ impl<'a> USBOTG0_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -529,8 +527,7 @@ impl<'a> USBEHCI_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -567,7 +564,7 @@ impl<'a, const O: usize> USBEHCI_GATING_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -652,8 +649,7 @@ impl<'a> USBOHCI_GATING_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
+        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
         self.w
     }
 }
@@ -690,7 +686,7 @@ impl<'a, const O: usize> USBOHCI_GATING_CGW<'a, O> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
         self.w
     }
 }
@@ -698,72 +694,72 @@ impl R {
     #[doc = "Bit 24 - USBOTG0 Reset"]
     #[inline(always)]
     pub fn usbotg0_rst(&self) -> USBOTG0_RST_R {
-        USBOTG0_RST_R::new(((self.bits >> 24) & 0x01) != 0)
+        USBOTG0_RST_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "USBEHCI Reset"]
     #[inline(always)]
     pub unsafe fn usbehci_rst(&self, n: usize) -> USBEHCI_RST_R {
-        USBEHCI_RST_R::new(((self.bits >> (n + 20)) & 0x01) != 0)
+        USBEHCI_RST_R::new(((self.bits >> (n + 20)) & 1) != 0)
     }
     #[doc = "Bit 20 - USBEHCI Reset"]
     #[inline(always)]
     pub fn usbehci0_rst(&self) -> USBEHCI_RST_R {
-        USBEHCI_RST_R::new(((self.bits >> 20) & 0x01) != 0)
+        USBEHCI_RST_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - USBEHCI Reset"]
     #[inline(always)]
     pub fn usbehci1_rst(&self) -> USBEHCI_RST_R {
-        USBEHCI_RST_R::new(((self.bits >> 21) & 0x01) != 0)
+        USBEHCI_RST_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "USBOHCI Reset"]
     #[inline(always)]
     pub unsafe fn usbohci_rst(&self, n: usize) -> USBOHCI_RST_R {
-        USBOHCI_RST_R::new(((self.bits >> (n + 16)) & 0x01) != 0)
+        USBOHCI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - USBOHCI Reset"]
     #[inline(always)]
     pub fn usbohci0_rst(&self) -> USBOHCI_RST_R {
-        USBOHCI_RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        USBOHCI_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - USBOHCI Reset"]
     #[inline(always)]
     pub fn usbohci1_rst(&self) -> USBOHCI_RST_R {
-        USBOHCI_RST_R::new(((self.bits >> 17) & 0x01) != 0)
+        USBOHCI_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 8 - USBOTG0 Gating Clock"]
     #[inline(always)]
     pub fn usbotg0_gating(&self) -> USBOTG0_GATING_R {
-        USBOTG0_GATING_R::new(((self.bits >> 8) & 0x01) != 0)
+        USBOTG0_GATING_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "USBEHCI Gating Clock"]
     #[inline(always)]
     pub unsafe fn usbehci_gating(&self, n: usize) -> USBEHCI_GATING_R {
-        USBEHCI_GATING_R::new(((self.bits >> (n + 4)) & 0x01) != 0)
+        USBEHCI_GATING_R::new(((self.bits >> (n + 4)) & 1) != 0)
     }
     #[doc = "Bit 4 - USBEHCI Gating Clock"]
     #[inline(always)]
     pub fn usbehci0_gating(&self) -> USBEHCI_GATING_R {
-        USBEHCI_GATING_R::new(((self.bits >> 4) & 0x01) != 0)
+        USBEHCI_GATING_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - USBEHCI Gating Clock"]
     #[inline(always)]
     pub fn usbehci1_gating(&self) -> USBEHCI_GATING_R {
-        USBEHCI_GATING_R::new(((self.bits >> 5) & 0x01) != 0)
+        USBEHCI_GATING_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "USBOHCI Gating Clock"]
     #[inline(always)]
     pub unsafe fn usbohci_gating(&self, n: usize) -> USBOHCI_GATING_R {
-        USBOHCI_GATING_R::new(((self.bits >> n) & 0x01) != 0)
+        USBOHCI_GATING_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - USBOHCI Gating Clock"]
     #[inline(always)]
     pub fn usbohci0_gating(&self) -> USBOHCI_GATING_R {
-        USBOHCI_GATING_R::new((self.bits & 0x01) != 0)
+        USBOHCI_GATING_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - USBOHCI Gating Clock"]
     #[inline(always)]
     pub fn usbohci1_gating(&self) -> USBOHCI_GATING_R {
-        USBOHCI_GATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        USBOHCI_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {

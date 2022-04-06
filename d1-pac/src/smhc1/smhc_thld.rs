@@ -141,7 +141,7 @@ impl<'a> CARD_WR_THLD_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -225,7 +225,7 @@ impl<'a> BCIG_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -309,7 +309,7 @@ impl<'a> CARD_RD_THLD_ENB_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -322,17 +322,17 @@ impl R {
     #[doc = "Bit 2 - Card Read/Write Threshold Enable"]
     #[inline(always)]
     pub fn card_wr_thld_enb(&self) -> CARD_WR_THLD_ENB_R {
-        CARD_WR_THLD_ENB_R::new(((self.bits >> 2) & 0x01) != 0)
+        CARD_WR_THLD_ENB_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Busy Clear Interrupt Generation"]
     #[inline(always)]
     pub fn bcig(&self) -> BCIG_R {
-        BCIG_R::new(((self.bits >> 1) & 0x01) != 0)
+        BCIG_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Card Read Threshold Enable"]
     #[inline(always)]
     pub fn card_rd_thld_enb(&self) -> CARD_RD_THLD_ENB_R {
-        CARD_RD_THLD_ENB_R::new((self.bits & 0x01) != 0)
+        CARD_RD_THLD_ENB_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

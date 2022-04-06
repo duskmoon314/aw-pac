@@ -67,7 +67,7 @@ impl<'a> DBI_FIFO_EMPTY_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 14)) | ((value as u32 & 0x01) << 14);
+        self.w.bits = (self.w.bits & !(1 << 14)) | ((value as u32 & 1) << 14);
         self.w
     }
 }
@@ -104,7 +104,7 @@ impl<'a> DBI_FIFO_FULL_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 13)) | ((value as u32 & 0x01) << 13);
+        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
         self.w
     }
 }
@@ -141,7 +141,7 @@ impl<'a> TIMER_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 12)) | ((value as u32 & 0x01) << 12);
+        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
         self.w
     }
 }
@@ -178,7 +178,7 @@ impl<'a> RD_DONE_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 11)) | ((value as u32 & 0x01) << 11);
+        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
         self.w
     }
 }
@@ -215,7 +215,7 @@ impl<'a> TE_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 10)) | ((value as u32 & 0x01) << 10);
+        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
         self.w
     }
 }
@@ -252,7 +252,7 @@ impl<'a> FRAM_DONE_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 9)) | ((value as u32 & 0x01) << 9);
+        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
         self.w
     }
 }
@@ -289,7 +289,7 @@ impl<'a> LINE_DONE_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
+        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
         self.w
     }
 }
@@ -326,7 +326,7 @@ impl<'a> DBI_FIFO_EMPTY_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 6)) | ((value as u32 & 0x01) << 6);
+        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
         self.w
     }
 }
@@ -363,7 +363,7 @@ impl<'a> DBI_FIFO_FULL_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -400,7 +400,7 @@ impl<'a> TIMER_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -437,7 +437,7 @@ impl<'a> RD_DONE_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -474,7 +474,7 @@ impl<'a> TE_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
         self.w
     }
 }
@@ -511,7 +511,7 @@ impl<'a> FRAM_DONE_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -548,7 +548,7 @@ impl<'a> LINE_DONE_INT_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -556,72 +556,72 @@ impl R {
     #[doc = "Bit 14"]
     #[inline(always)]
     pub fn dbi_fifo_empty_int(&self) -> DBI_FIFO_EMPTY_INT_R {
-        DBI_FIFO_EMPTY_INT_R::new(((self.bits >> 14) & 0x01) != 0)
+        DBI_FIFO_EMPTY_INT_R::new(((self.bits >> 14) & 1) != 0)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
     pub fn dbi_fifo_full_int(&self) -> DBI_FIFO_FULL_INT_R {
-        DBI_FIFO_FULL_INT_R::new(((self.bits >> 13) & 0x01) != 0)
+        DBI_FIFO_FULL_INT_R::new(((self.bits >> 13) & 1) != 0)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
     pub fn timer_int(&self) -> TIMER_INT_R {
-        TIMER_INT_R::new(((self.bits >> 12) & 0x01) != 0)
+        TIMER_INT_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
     pub fn rd_done_int(&self) -> RD_DONE_INT_R {
-        RD_DONE_INT_R::new(((self.bits >> 11) & 0x01) != 0)
+        RD_DONE_INT_R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
     pub fn te_int(&self) -> TE_INT_R {
-        TE_INT_R::new(((self.bits >> 10) & 0x01) != 0)
+        TE_INT_R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
     pub fn fram_done_int(&self) -> FRAM_DONE_INT_R {
-        FRAM_DONE_INT_R::new(((self.bits >> 9) & 0x01) != 0)
+        FRAM_DONE_INT_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     pub fn line_done_int(&self) -> LINE_DONE_INT_R {
-        LINE_DONE_INT_R::new(((self.bits >> 8) & 0x01) != 0)
+        LINE_DONE_INT_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     pub fn dbi_fifo_empty_int_en(&self) -> DBI_FIFO_EMPTY_INT_EN_R {
-        DBI_FIFO_EMPTY_INT_EN_R::new(((self.bits >> 6) & 0x01) != 0)
+        DBI_FIFO_EMPTY_INT_EN_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
     pub fn dbi_fifo_full_int_en(&self) -> DBI_FIFO_FULL_INT_EN_R {
-        DBI_FIFO_FULL_INT_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        DBI_FIFO_FULL_INT_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn timer_int_en(&self) -> TIMER_INT_EN_R {
-        TIMER_INT_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        TIMER_INT_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn rd_done_int_en(&self) -> RD_DONE_INT_EN_R {
-        RD_DONE_INT_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+        RD_DONE_INT_EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn te_int_en(&self) -> TE_INT_EN_R {
-        TE_INT_EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        TE_INT_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn fram_done_int_en(&self) -> FRAM_DONE_INT_EN_R {
-        FRAM_DONE_INT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        FRAM_DONE_INT_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn line_done_int_en(&self) -> LINE_DONE_INT_EN_R {
-        LINE_DONE_INT_EN_R::new((self.bits & 0x01) != 0)
+        LINE_DONE_INT_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

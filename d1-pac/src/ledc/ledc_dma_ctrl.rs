@@ -114,7 +114,7 @@ impl<'a> LEDC_DMA_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
+        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
         self.w
     }
 }
@@ -149,7 +149,7 @@ impl R {
     #[doc = "Bit 5"]
     #[inline(always)]
     pub fn ledc_dma_en(&self) -> LEDC_DMA_EN_R {
-        LEDC_DMA_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        LEDC_DMA_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 0:4"]
     #[inline(always)]

@@ -114,7 +114,7 @@ impl<'a> RST_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -122,7 +122,7 @@ impl R {
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn rst(&self) -> RST_R {
-        RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {

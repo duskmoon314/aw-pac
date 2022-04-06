@@ -132,7 +132,7 @@ impl<'a> BSIZE_OF_TRANS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
+        self.w.bits = (self.w.bits & !(7 << 28)) | ((value as u32 & 7) << 28);
         self.w
     }
 }
@@ -194,7 +194,7 @@ impl R {
     #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
     #[inline(always)]
     pub fn bsize_of_trans(&self) -> BSIZE_OF_TRANS_R {
-        BSIZE_OF_TRANS_R::new(((self.bits >> 28) & 0x07) as u8)
+        BSIZE_OF_TRANS_R::new(((self.bits >> 28) & 7) as u8)
     }
     #[doc = "Bits 16:23 - RX Trigger Level"]
     #[inline(always)]

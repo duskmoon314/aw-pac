@@ -312,42 +312,42 @@ impl R {
     #[doc = "Bit 7 - RX Data Error in FIFO"]
     #[inline(always)]
     pub fn fifoerr(&self) -> FIFOERR_R {
-        FIFOERR_R::new(((self.bits >> 7) & 0x01) != 0)
+        FIFOERR_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 6 - Transmitter Empty"]
     #[inline(always)]
     pub fn temt(&self) -> TEMT_R {
-        TEMT_R::new(((self.bits >> 6) & 0x01) != 0)
+        TEMT_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 5 - TX Holding Register Empty"]
     #[inline(always)]
     pub fn thre(&self) -> THRE_R {
-        THRE_R::new(((self.bits >> 5) & 0x01) != 0)
+        THRE_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 4 - Break Interrupt"]
     #[inline(always)]
     pub fn bi(&self) -> BI_R {
-        BI_R::new(((self.bits >> 4) & 0x01) != 0)
+        BI_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Framing Error"]
     #[inline(always)]
     pub fn fe(&self) -> FE_R {
-        FE_R::new(((self.bits >> 3) & 0x01) != 0)
+        FE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Parity Error"]
     #[inline(always)]
     pub fn pe(&self) -> PE_R {
-        PE_R::new(((self.bits >> 2) & 0x01) != 0)
+        PE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Overrun Error"]
     #[inline(always)]
     pub fn oe(&self) -> OE_R {
-        OE_R::new(((self.bits >> 1) & 0x01) != 0)
+        OE_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Data Ready"]
     #[inline(always)]
     pub fn dr(&self) -> DR_R {
-        DR_R::new((self.bits & 0x01) != 0)
+        DR_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "UART Line Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lsr](index.html) module"]

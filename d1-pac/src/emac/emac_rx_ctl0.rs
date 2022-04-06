@@ -114,7 +114,7 @@ impl<'a> RX_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> RX_FRM_LEN_CTL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
+        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
         self.w
     }
 }
@@ -282,7 +282,7 @@ impl<'a> JUMBO_FRM_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
+        self.w.bits = (self.w.bits & !(1 << 29)) | ((value as u32 & 1) << 29);
         self.w
     }
 }
@@ -319,7 +319,7 @@ impl<'a> STRIP_FCS_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
+        self.w.bits = (self.w.bits & !(1 << 28)) | ((value as u32 & 1) << 28);
         self.w
     }
 }
@@ -403,7 +403,7 @@ impl<'a> CHECK_CRC_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 27)) | ((value as u32 & 0x01) << 27);
+        self.w.bits = (self.w.bits & !(1 << 27)) | ((value as u32 & 1) << 27);
         self.w
     }
 }
@@ -487,7 +487,7 @@ impl<'a> RX_PAUSE_FRM_MD_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
+        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
         self.w
     }
 }
@@ -524,7 +524,7 @@ impl<'a> RX_FLOW_CTL_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
+        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
         self.w
     }
 }
@@ -532,37 +532,37 @@ impl R {
     #[doc = "Bit 31 - Enable Receiver"]
     #[inline(always)]
     pub fn rx_en(&self) -> RX_EN_R {
-        RX_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        RX_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bit 30 - Frame Receive Length Control"]
     #[inline(always)]
     pub fn rx_frm_len_ctl(&self) -> RX_FRM_LEN_CTL_R {
-        RX_FRM_LEN_CTL_R::new(((self.bits >> 30) & 0x01) != 0)
+        RX_FRM_LEN_CTL_R::new(((self.bits >> 30) & 1) != 0)
     }
     #[doc = "Bit 29 - Jumbo Frame Enable"]
     #[inline(always)]
     pub fn jumbo_frm_en(&self) -> JUMBO_FRM_EN_R {
-        JUMBO_FRM_EN_R::new(((self.bits >> 29) & 0x01) != 0)
+        JUMBO_FRM_EN_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 28"]
     #[inline(always)]
     pub fn strip_fcs(&self) -> STRIP_FCS_R {
-        STRIP_FCS_R::new(((self.bits >> 28) & 0x01) != 0)
+        STRIP_FCS_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bit 27 - Check CRC Enable"]
     #[inline(always)]
     pub fn check_crc(&self) -> CHECK_CRC_R {
-        CHECK_CRC_R::new(((self.bits >> 27) & 0x01) != 0)
+        CHECK_CRC_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     pub fn rx_pause_frm_md(&self) -> RX_PAUSE_FRM_MD_R {
-        RX_PAUSE_FRM_MD_R::new(((self.bits >> 17) & 0x01) != 0)
+        RX_PAUSE_FRM_MD_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn rx_flow_ctl_en(&self) -> RX_FLOW_CTL_EN_R {
-        RX_FLOW_CTL_EN_R::new(((self.bits >> 16) & 0x01) != 0)
+        RX_FLOW_CTL_EN_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {

@@ -114,7 +114,7 @@ impl<'a> PMU_CLR_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -198,7 +198,7 @@ impl<'a> PMU_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -206,12 +206,12 @@ impl R {
     #[doc = "Bit 1 - PMU Clear"]
     #[inline(always)]
     pub fn pmu_clr(&self) -> PMU_CLR_R {
-        PMU_CLR_R::new(((self.bits >> 1) & 0x01) != 0)
+        PMU_CLR_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - PMU Enable"]
     #[inline(always)]
     pub fn pmu_en(&self) -> PMU_EN_R {
-        PMU_EN_R::new((self.bits & 0x01) != 0)
+        PMU_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

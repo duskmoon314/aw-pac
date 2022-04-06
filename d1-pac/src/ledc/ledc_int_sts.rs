@@ -159,7 +159,7 @@ impl<'a> FIFO_OVERFLOW_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
+        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
         self.w
     }
 }
@@ -243,7 +243,7 @@ impl<'a> WAITDATA_TIMEOUT_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
+        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
         self.w
     }
 }
@@ -327,7 +327,7 @@ impl<'a> FIFO_CPUREQ_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
         self.w
     }
 }
@@ -411,7 +411,7 @@ impl<'a> LEC_TRANS_FINISH_INT_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
         self.w
     }
 }
@@ -419,12 +419,12 @@ impl R {
     #[doc = "Bit 17"]
     #[inline(always)]
     pub fn fifo_empty(&self) -> FIFO_EMPTY_R {
-        FIFO_EMPTY_R::new(((self.bits >> 17) & 0x01) != 0)
+        FIFO_EMPTY_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn fifo_full(&self) -> FIFO_FULL_R {
-        FIFO_FULL_R::new(((self.bits >> 16) & 0x01) != 0)
+        FIFO_FULL_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bits 10:15"]
     #[inline(always)]
@@ -434,22 +434,22 @@ impl R {
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn fifo_overflow_int(&self) -> FIFO_OVERFLOW_INT_R {
-        FIFO_OVERFLOW_INT_R::new(((self.bits >> 4) & 0x01) != 0)
+        FIFO_OVERFLOW_INT_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn waitdata_timeout_int(&self) -> WAITDATA_TIMEOUT_INT_R {
-        WAITDATA_TIMEOUT_INT_R::new(((self.bits >> 3) & 0x01) != 0)
+        WAITDATA_TIMEOUT_INT_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn fifo_cpureq_int(&self) -> FIFO_CPUREQ_INT_R {
-        FIFO_CPUREQ_INT_R::new(((self.bits >> 1) & 0x01) != 0)
+        FIFO_CPUREQ_INT_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn lec_trans_finish_int(&self) -> LEC_TRANS_FINISH_INT_R {
-        LEC_TRANS_FINISH_INT_R::new((self.bits & 0x01) != 0)
+        LEC_TRANS_FINISH_INT_R::new((self.bits & 1) != 0)
     }
 }
 impl W {

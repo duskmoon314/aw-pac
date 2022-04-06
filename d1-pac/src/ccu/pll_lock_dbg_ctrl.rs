@@ -114,7 +114,7 @@ impl<'a> PLL_LOCK_FLAG_EN_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
+        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
         self.w
     }
 }
@@ -268,7 +268,7 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     #[doc = r"Writes raw bits to the field"]
     #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
+        self.w.bits = (self.w.bits & !(7 << 20)) | ((value as u32 & 7) << 20);
         self.w
     }
 }
@@ -276,12 +276,12 @@ impl R {
     #[doc = "Bit 31 - Debug Enable"]
     #[inline(always)]
     pub fn pll_lock_flag_en(&self) -> PLL_LOCK_FLAG_EN_R {
-        PLL_LOCK_FLAG_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        PLL_LOCK_FLAG_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 20:22 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 20) & 0x07) as u8)
+        CLK_SRC_SEL_R::new(((self.bits >> 20) & 7) as u8)
     }
 }
 impl W {

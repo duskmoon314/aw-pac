@@ -252,27 +252,27 @@ impl R {
     #[doc = "Bit 4 - RX FIFO Full"]
     #[inline(always)]
     pub fn rff(&self) -> RFF_R {
-        RFF_R::new(((self.bits >> 4) & 0x01) != 0)
+        RFF_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - RX FIFO Not Empty"]
     #[inline(always)]
     pub fn rfne(&self) -> RFNE_R {
-        RFNE_R::new(((self.bits >> 3) & 0x01) != 0)
+        RFNE_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - TX FIFO Empty"]
     #[inline(always)]
     pub fn tfe(&self) -> TFE_R {
-        TFE_R::new(((self.bits >> 2) & 0x01) != 0)
+        TFE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - TX FIFO Not Full"]
     #[inline(always)]
     pub fn tfnf(&self) -> TFNF_R {
-        TFNF_R::new(((self.bits >> 1) & 0x01) != 0)
+        TFNF_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - UART Busy Bit"]
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
-        BUSY_R::new((self.bits & 0x01) != 0)
+        BUSY_R::new((self.bits & 1) != 0)
     }
 }
 #[doc = "UART Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usr](index.html) module"]
