@@ -82,7 +82,7 @@ impl From<WDOG_INTV_VALUE_A> for u8 {
     }
 }
 #[doc = "Field `WDOG_INTV_VALUE` reader - Watchdog Interval Value"]
-pub struct WDOG_INTV_VALUE_R(crate::FieldReader<u8, WDOG_INTV_VALUE_A>);
+pub struct WDOG_INTV_VALUE_R(crate::FieldReader<u8>);
 impl WDOG_INTV_VALUE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -169,7 +169,7 @@ impl WDOG_INTV_VALUE_R {
     }
 }
 impl core::ops::Deref for WDOG_INTV_VALUE_R {
-    type Target = crate::FieldReader<u8, WDOG_INTV_VALUE_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -267,7 +267,7 @@ impl From<WDOG_EN_A> for bool {
     }
 }
 #[doc = "Field `WDOG_EN` reader - Watchdog Enable"]
-pub struct WDOG_EN_R(crate::FieldReader<bool, WDOG_EN_A>);
+pub struct WDOG_EN_R(crate::FieldReader<bool>);
 impl WDOG_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -293,7 +293,7 @@ impl WDOG_EN_R {
     }
 }
 impl core::ops::Deref for WDOG_EN_R {
-    type Target = crate::FieldReader<bool, WDOG_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -35,7 +35,7 @@ impl From<crate::W<LEDC_DATA_FINISH_CNT_SPEC>> for W {
     }
 }
 #[doc = "Field `LED_WAIT_DATA_TIME` reader - "]
-pub struct LED_WAIT_DATA_TIME_R(crate::FieldReader<u16, u16>);
+pub struct LED_WAIT_DATA_TIME_R(crate::FieldReader<u16>);
 impl LED_WAIT_DATA_TIME_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -43,7 +43,7 @@ impl LED_WAIT_DATA_TIME_R {
     }
 }
 impl core::ops::Deref for LED_WAIT_DATA_TIME_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -62,7 +62,7 @@ impl<'a> LED_WAIT_DATA_TIME_W<'a> {
     }
 }
 #[doc = "Field `LED_DATA_FINISH_CNT` reader - "]
-pub struct LED_DATA_FINISH_CNT_R(crate::FieldReader<u16, u16>);
+pub struct LED_DATA_FINISH_CNT_R(crate::FieldReader<u16>);
 impl LED_DATA_FINISH_CNT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -70,7 +70,7 @@ impl LED_DATA_FINISH_CNT_R {
     }
 }
 impl core::ops::Deref for LED_DATA_FINISH_CNT_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

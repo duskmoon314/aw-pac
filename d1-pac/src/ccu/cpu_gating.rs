@@ -49,7 +49,7 @@ impl From<CPU_GATING_A> for bool {
     }
 }
 #[doc = "Field `CPU_GATING` reader - Gating Special Clock"]
-pub struct CPU_GATING_R(crate::FieldReader<bool, CPU_GATING_A>);
+pub struct CPU_GATING_R(crate::FieldReader<bool>);
 impl CPU_GATING_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl CPU_GATING_R {
     }
 }
 impl core::ops::Deref for CPU_GATING_R {
-    type Target = crate::FieldReader<bool, CPU_GATING_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -119,7 +119,7 @@ impl<'a> CPU_GATING_W<'a> {
     }
 }
 #[doc = "Field `CPU_GATING_FIELD` reader - CPU Gating Field"]
-pub struct CPU_GATING_FIELD_R(crate::FieldReader<u16, u16>);
+pub struct CPU_GATING_FIELD_R(crate::FieldReader<u16>);
 impl CPU_GATING_FIELD_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -127,7 +127,7 @@ impl CPU_GATING_FIELD_R {
     }
 }
 impl core::ops::Deref for CPU_GATING_FIELD_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

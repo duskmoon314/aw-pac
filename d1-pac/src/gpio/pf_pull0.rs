@@ -52,7 +52,7 @@ impl From<PF_PULL_A> for u8 {
     }
 }
 #[doc = "Fields `PF(0-6)_PULL` reader - PF Pull_up/down Select"]
-pub struct PF_PULL_R(crate::FieldReader<u8, PF_PULL_A>);
+pub struct PF_PULL_R(crate::FieldReader<u8>);
 impl PF_PULL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -85,50 +85,17 @@ impl PF_PULL_R {
     }
 }
 impl core::ops::Deref for PF_PULL_R {
-    type Target = crate::FieldReader<u8, PF_PULL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `PF(0-6)_PULL` writer - PF Pull_up/down Select"]
-pub struct PF_PULL_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> PF_PULL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PF_PULL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn pull_disable(self) -> &'a mut W {
-        self.variant(PF_PULL_A::PULL_DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pull_up(self) -> &'a mut W {
-        self.variant(PF_PULL_A::PULL_UP)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn pull_down(self) -> &'a mut W {
-        self.variant(PF_PULL_A::PULL_DOWN)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `PF(0-6)_PULL` const generic writer - PF Pull_up/down Select"]
-pub struct PF_PULL_CGW<'a, const O: usize> {
+pub struct PF_PULL_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> PF_PULL_CGW<'a, O> {
+impl<'a, const O: usize> PF_PULL_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PF_PULL_A) -> &'a mut W {
@@ -201,46 +168,43 @@ impl R {
 impl W {
     #[doc = "PF Pull_up/down Select"]
     #[inline(always)]
-    pub unsafe fn pf_pull(&mut self, n: usize) -> PF_PULL_W {
-        PF_PULL_W {
-            w: self,
-            offset: n * 2,
-        }
+    pub unsafe fn pf_pull<const O: usize>(&mut self) -> PF_PULL_W<O> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Bits 0:1 - PF Pull_up/down Select"]
     #[inline(always)]
-    pub fn pf0_pull(&mut self) -> PF_PULL_CGW<0> {
-        PF_PULL_CGW { w: self }
+    pub fn pf0_pull(&mut self) -> PF_PULL_W<0> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Bits 2:3 - PF Pull_up/down Select"]
     #[inline(always)]
-    pub fn pf1_pull(&mut self) -> PF_PULL_CGW<2> {
-        PF_PULL_CGW { w: self }
+    pub fn pf1_pull(&mut self) -> PF_PULL_W<2> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Bits 4:5 - PF Pull_up/down Select"]
     #[inline(always)]
-    pub fn pf2_pull(&mut self) -> PF_PULL_CGW<4> {
-        PF_PULL_CGW { w: self }
+    pub fn pf2_pull(&mut self) -> PF_PULL_W<4> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Bits 6:7 - PF Pull_up/down Select"]
     #[inline(always)]
-    pub fn pf3_pull(&mut self) -> PF_PULL_CGW<6> {
-        PF_PULL_CGW { w: self }
+    pub fn pf3_pull(&mut self) -> PF_PULL_W<6> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Bits 8:9 - PF Pull_up/down Select"]
     #[inline(always)]
-    pub fn pf4_pull(&mut self) -> PF_PULL_CGW<8> {
-        PF_PULL_CGW { w: self }
+    pub fn pf4_pull(&mut self) -> PF_PULL_W<8> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Bits 10:11 - PF Pull_up/down Select"]
     #[inline(always)]
-    pub fn pf5_pull(&mut self) -> PF_PULL_CGW<10> {
-        PF_PULL_CGW { w: self }
+    pub fn pf5_pull(&mut self) -> PF_PULL_W<10> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Bits 12:13 - PF Pull_up/down Select"]
     #[inline(always)]
-    pub fn pf6_pull(&mut self) -> PF_PULL_CGW<12> {
-        PF_PULL_CGW { w: self }
+    pub fn pf6_pull(&mut self) -> PF_PULL_W<12> {
+        PF_PULL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -60,7 +60,7 @@ impl From<CPU_CLK_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CPU_CLK_SEL` reader - Clock Source Select"]
-pub struct CPU_CLK_SEL_R(crate::FieldReader<u8, CPU_CLK_SEL_A>);
+pub struct CPU_CLK_SEL_R(crate::FieldReader<u8>);
 impl CPU_CLK_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -117,7 +117,7 @@ impl CPU_CLK_SEL_R {
     }
 }
 impl core::ops::Deref for CPU_CLK_SEL_R {
-    type Target = crate::FieldReader<u8, CPU_CLK_SEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -193,7 +193,7 @@ impl From<PLL_CPU_OUT_EXT_DIVP_A> for u8 {
     }
 }
 #[doc = "Field `PLL_CPU_OUT_EXT_DIVP` reader - PLL Output External Divider P"]
-pub struct PLL_CPU_OUT_EXT_DIVP_R(crate::FieldReader<u8, PLL_CPU_OUT_EXT_DIVP_A>);
+pub struct PLL_CPU_OUT_EXT_DIVP_R(crate::FieldReader<u8>);
 impl PLL_CPU_OUT_EXT_DIVP_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -226,7 +226,7 @@ impl PLL_CPU_OUT_EXT_DIVP_R {
     }
 }
 impl core::ops::Deref for PLL_CPU_OUT_EXT_DIVP_R {
-    type Target = crate::FieldReader<u8, PLL_CPU_OUT_EXT_DIVP_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -265,7 +265,7 @@ impl<'a> PLL_CPU_OUT_EXT_DIVP_W<'a> {
     }
 }
 #[doc = "Field `CPU_DIV2` reader - Factor N"]
-pub struct CPU_DIV2_R(crate::FieldReader<u8, u8>);
+pub struct CPU_DIV2_R(crate::FieldReader<u8>);
 impl CPU_DIV2_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -273,7 +273,7 @@ impl CPU_DIV2_R {
     }
 }
 impl core::ops::Deref for CPU_DIV2_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -292,7 +292,7 @@ impl<'a> CPU_DIV2_W<'a> {
     }
 }
 #[doc = "Field `CPU_DIV1` reader - Factor M"]
-pub struct CPU_DIV1_R(crate::FieldReader<u8, u8>);
+pub struct CPU_DIV1_R(crate::FieldReader<u8>);
 impl CPU_DIV1_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -300,7 +300,7 @@ impl CPU_DIV1_R {
     }
 }
 impl core::ops::Deref for CPU_DIV1_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

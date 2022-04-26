@@ -35,7 +35,7 @@ impl From<crate::W<RISCV_STA_ADD1_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `STA_ADD_H` reader - Start Address High 8-bit"]
-pub struct STA_ADD_H_R(crate::FieldReader<u8, u8>);
+pub struct STA_ADD_H_R(crate::FieldReader<u8>);
 impl STA_ADD_H_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl STA_ADD_H_R {
     }
 }
 impl core::ops::Deref for STA_ADD_H_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

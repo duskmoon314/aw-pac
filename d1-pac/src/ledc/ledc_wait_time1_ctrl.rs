@@ -49,7 +49,7 @@ impl From<WAIT_TIM1_EN_A> for bool {
     }
 }
 #[doc = "Field `WAIT_TIM1_EN` reader - "]
-pub struct WAIT_TIM1_EN_R(crate::FieldReader<bool, WAIT_TIM1_EN_A>);
+pub struct WAIT_TIM1_EN_R(crate::FieldReader<bool>);
 impl WAIT_TIM1_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl WAIT_TIM1_EN_R {
     }
 }
 impl core::ops::Deref for WAIT_TIM1_EN_R {
-    type Target = crate::FieldReader<bool, WAIT_TIM1_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -119,7 +119,7 @@ impl<'a> WAIT_TIM1_EN_W<'a> {
     }
 }
 #[doc = "Field `TOTAL_WAIT_TIME1` reader - "]
-pub struct TOTAL_WAIT_TIME1_R(crate::FieldReader<u32, u32>);
+pub struct TOTAL_WAIT_TIME1_R(crate::FieldReader<u32>);
 impl TOTAL_WAIT_TIME1_R {
     #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
@@ -127,7 +127,7 @@ impl TOTAL_WAIT_TIME1_R {
     }
 }
 impl core::ops::Deref for TOTAL_WAIT_TIME1_R {
-    type Target = crate::FieldReader<u32, u32>;
+    type Target = crate::FieldReader<u32>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

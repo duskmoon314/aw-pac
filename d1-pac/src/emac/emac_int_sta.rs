@@ -49,7 +49,7 @@ impl From<RGMII_LINK_STA_P_A> for bool {
     }
 }
 #[doc = "Field `RGMII_LINK_STA_P` reader - RMII Link Status Changed Interrupt Pending"]
-pub struct RGMII_LINK_STA_P_R(crate::FieldReader<bool, RGMII_LINK_STA_P_A>);
+pub struct RGMII_LINK_STA_P_R(crate::FieldReader<bool>);
 impl RGMII_LINK_STA_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl RGMII_LINK_STA_P_R {
     }
 }
 impl core::ops::Deref for RGMII_LINK_STA_P_R {
-    type Target = crate::FieldReader<bool, RGMII_LINK_STA_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<RX_EARLY_P_A> for bool {
     }
 }
 #[doc = "Field `RX_EARLY_P` reader - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
-pub struct RX_EARLY_P_R(crate::FieldReader<bool, RX_EARLY_P_A>);
+pub struct RX_EARLY_P_R(crate::FieldReader<bool>);
 impl RX_EARLY_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl RX_EARLY_P_R {
     }
 }
 impl core::ops::Deref for RX_EARLY_P_R {
-    type Target = crate::FieldReader<bool, RX_EARLY_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<RX_OVERFLOW_P_A> for bool {
     }
 }
 #[doc = "Field `RX_OVERFLOW_P` reader - RX FIFO Overflow Error Interrupt Pending"]
-pub struct RX_OVERFLOW_P_R(crate::FieldReader<bool, RX_OVERFLOW_P_A>);
+pub struct RX_OVERFLOW_P_R(crate::FieldReader<bool>);
 impl RX_OVERFLOW_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl RX_OVERFLOW_P_R {
     }
 }
 impl core::ops::Deref for RX_OVERFLOW_P_R {
-    type Target = crate::FieldReader<bool, RX_OVERFLOW_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -301,7 +301,7 @@ impl From<RX_TIMEOUT_P_A> for bool {
     }
 }
 #[doc = "Field `RX_TIMEOUT_P` reader - RX Timeout Interrupt Pending"]
-pub struct RX_TIMEOUT_P_R(crate::FieldReader<bool, RX_TIMEOUT_P_A>);
+pub struct RX_TIMEOUT_P_R(crate::FieldReader<bool>);
 impl RX_TIMEOUT_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -327,7 +327,7 @@ impl RX_TIMEOUT_P_R {
     }
 }
 impl core::ops::Deref for RX_TIMEOUT_P_R {
-    type Target = crate::FieldReader<bool, RX_TIMEOUT_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -371,7 +371,7 @@ impl<'a> RX_TIMEOUT_P_W<'a> {
     }
 }
 #[doc = "Field `RX_DMA_STOPPED_P` reader - When this bit asserted, the RX DMA FSM is stopped."]
-pub struct RX_DMA_STOPPED_P_R(crate::FieldReader<bool, bool>);
+pub struct RX_DMA_STOPPED_P_R(crate::FieldReader<bool>);
 impl RX_DMA_STOPPED_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -379,7 +379,7 @@ impl RX_DMA_STOPPED_P_R {
     }
 }
 impl core::ops::Deref for RX_DMA_STOPPED_P_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -422,7 +422,7 @@ impl From<RX_BUF_UA_P_A> for bool {
     }
 }
 #[doc = "Field `RX_BUF_UA_P` reader - RX Buffer UA Interrupt Pending"]
-pub struct RX_BUF_UA_P_R(crate::FieldReader<bool, RX_BUF_UA_P_A>);
+pub struct RX_BUF_UA_P_R(crate::FieldReader<bool>);
 impl RX_BUF_UA_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -448,7 +448,7 @@ impl RX_BUF_UA_P_R {
     }
 }
 impl core::ops::Deref for RX_BUF_UA_P_R {
-    type Target = crate::FieldReader<bool, RX_BUF_UA_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -506,7 +506,7 @@ impl From<RX_P_A> for bool {
     }
 }
 #[doc = "Field `RX_P` reader - Frame RX Completed Interrupt Pending"]
-pub struct RX_P_R(crate::FieldReader<bool, RX_P_A>);
+pub struct RX_P_R(crate::FieldReader<bool>);
 impl RX_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -532,7 +532,7 @@ impl RX_P_R {
     }
 }
 impl core::ops::Deref for RX_P_R {
-    type Target = crate::FieldReader<bool, RX_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -590,7 +590,7 @@ impl From<TX_EARLY_P_A> for bool {
     }
 }
 #[doc = "Field `TX_EARLY_P` reader - Total interrupt pending which the frame is transmitted to FIFO"]
-pub struct TX_EARLY_P_R(crate::FieldReader<bool, TX_EARLY_P_A>);
+pub struct TX_EARLY_P_R(crate::FieldReader<bool>);
 impl TX_EARLY_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -616,7 +616,7 @@ impl TX_EARLY_P_R {
     }
 }
 impl core::ops::Deref for TX_EARLY_P_R {
-    type Target = crate::FieldReader<bool, TX_EARLY_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -674,7 +674,7 @@ impl From<TX_UNDERFLOW_P_A> for bool {
     }
 }
 #[doc = "Field `TX_UNDERFLOW_P` reader - TX FIFO Underflow Interrupt Pending"]
-pub struct TX_UNDERFLOW_P_R(crate::FieldReader<bool, TX_UNDERFLOW_P_A>);
+pub struct TX_UNDERFLOW_P_R(crate::FieldReader<bool>);
 impl TX_UNDERFLOW_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -700,7 +700,7 @@ impl TX_UNDERFLOW_P_R {
     }
 }
 impl core::ops::Deref for TX_UNDERFLOW_P_R {
-    type Target = crate::FieldReader<bool, TX_UNDERFLOW_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -758,7 +758,7 @@ impl From<TX_TIMEOUT_P_A> for bool {
     }
 }
 #[doc = "Field `TX_TIMEOUT_P` reader - Transmitter Timeout Interrupt Pending"]
-pub struct TX_TIMEOUT_P_R(crate::FieldReader<bool, TX_TIMEOUT_P_A>);
+pub struct TX_TIMEOUT_P_R(crate::FieldReader<bool>);
 impl TX_TIMEOUT_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -784,7 +784,7 @@ impl TX_TIMEOUT_P_R {
     }
 }
 impl core::ops::Deref for TX_TIMEOUT_P_R {
-    type Target = crate::FieldReader<bool, TX_TIMEOUT_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -842,7 +842,7 @@ impl From<TX_BUF_UA_P_A> for bool {
     }
 }
 #[doc = "Field `TX_BUF_UA_P` reader - TX Buffer UA Interrupt Pending"]
-pub struct TX_BUF_UA_P_R(crate::FieldReader<bool, TX_BUF_UA_P_A>);
+pub struct TX_BUF_UA_P_R(crate::FieldReader<bool>);
 impl TX_BUF_UA_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -868,7 +868,7 @@ impl TX_BUF_UA_P_R {
     }
 }
 impl core::ops::Deref for TX_BUF_UA_P_R {
-    type Target = crate::FieldReader<bool, TX_BUF_UA_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -926,7 +926,7 @@ impl From<TX_DMA_STOPPED_P_A> for bool {
     }
 }
 #[doc = "Field `TX_DMA_STOPPED_P` reader - Transmission DMA Stopped Interrupt Pending"]
-pub struct TX_DMA_STOPPED_P_R(crate::FieldReader<bool, TX_DMA_STOPPED_P_A>);
+pub struct TX_DMA_STOPPED_P_R(crate::FieldReader<bool>);
 impl TX_DMA_STOPPED_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -952,7 +952,7 @@ impl TX_DMA_STOPPED_P_R {
     }
 }
 impl core::ops::Deref for TX_DMA_STOPPED_P_R {
-    type Target = crate::FieldReader<bool, TX_DMA_STOPPED_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1010,7 +1010,7 @@ impl From<TX_P_A> for bool {
     }
 }
 #[doc = "Field `TX_P` reader - Frame Transmission Interrupt Pending"]
-pub struct TX_P_R(crate::FieldReader<bool, TX_P_A>);
+pub struct TX_P_R(crate::FieldReader<bool>);
 impl TX_P_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -1036,7 +1036,7 @@ impl TX_P_R {
     }
 }
 impl core::ops::Deref for TX_P_R {
-    type Target = crate::FieldReader<bool, TX_P_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

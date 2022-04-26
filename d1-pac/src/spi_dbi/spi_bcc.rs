@@ -49,7 +49,7 @@ impl From<QUAD_EN_A> for bool {
     }
 }
 #[doc = "Field `quad_en` reader - Quad Mode Enable"]
-pub struct QUAD_EN_R(crate::FieldReader<bool, QUAD_EN_A>);
+pub struct QUAD_EN_R(crate::FieldReader<bool>);
 impl QUAD_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl QUAD_EN_R {
     }
 }
 impl core::ops::Deref for QUAD_EN_R {
-    type Target = crate::FieldReader<bool, QUAD_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<DRM_A> for bool {
     }
 }
 #[doc = "Field `drm` reader - Master Dual Mode RX Enable"]
-pub struct DRM_R(crate::FieldReader<bool, DRM_A>);
+pub struct DRM_R(crate::FieldReader<bool>);
 impl DRM_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl DRM_R {
     }
 }
 impl core::ops::Deref for DRM_R {
-    type Target = crate::FieldReader<bool, DRM_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -203,7 +203,7 @@ impl<'a> DRM_W<'a> {
     }
 }
 #[doc = "Field `dbc` reader - Master Dummy Burst Counter"]
-pub struct DBC_R(crate::FieldReader<u8, u8>);
+pub struct DBC_R(crate::FieldReader<u8>);
 impl DBC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -211,7 +211,7 @@ impl DBC_R {
     }
 }
 impl core::ops::Deref for DBC_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -230,7 +230,7 @@ impl<'a> DBC_W<'a> {
     }
 }
 #[doc = "Field `stc` reader - Master Single Mode Transmit Counter"]
-pub struct STC_R(crate::FieldReader<u32, u32>);
+pub struct STC_R(crate::FieldReader<u32>);
 impl STC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
@@ -238,7 +238,7 @@ impl STC_R {
     }
 }
 impl core::ops::Deref for STC_R {
-    type Target = crate::FieldReader<u32, u32>;
+    type Target = crate::FieldReader<u32>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

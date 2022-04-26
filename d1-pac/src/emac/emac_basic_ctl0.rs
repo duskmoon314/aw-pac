@@ -52,7 +52,7 @@ impl From<SPEED_A> for u8 {
     }
 }
 #[doc = "Field `SPEED` reader - EMAC Working Speed"]
-pub struct SPEED_R(crate::FieldReader<u8, SPEED_A>);
+pub struct SPEED_R(crate::FieldReader<u8>);
 impl SPEED_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -85,7 +85,7 @@ impl SPEED_R {
     }
 }
 impl core::ops::Deref for SPEED_R {
-    type Target = crate::FieldReader<u8, SPEED_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -138,7 +138,7 @@ impl From<LOOPBACK_A> for bool {
     }
 }
 #[doc = "Field `LOOPBACK` reader - EMAC Loopback Mode For Test"]
-pub struct LOOPBACK_R(crate::FieldReader<bool, LOOPBACK_A>);
+pub struct LOOPBACK_R(crate::FieldReader<bool>);
 impl LOOPBACK_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -164,7 +164,7 @@ impl LOOPBACK_R {
     }
 }
 impl core::ops::Deref for LOOPBACK_R {
-    type Target = crate::FieldReader<bool, LOOPBACK_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -222,7 +222,7 @@ impl From<DUPLEX_A> for bool {
     }
 }
 #[doc = "Field `DUPLEX` reader - EMAC Transfer Mode"]
-pub struct DUPLEX_R(crate::FieldReader<bool, DUPLEX_A>);
+pub struct DUPLEX_R(crate::FieldReader<bool>);
 impl DUPLEX_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -248,7 +248,7 @@ impl DUPLEX_R {
     }
 }
 impl core::ops::Deref for DUPLEX_R {
-    type Target = crate::FieldReader<bool, DUPLEX_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

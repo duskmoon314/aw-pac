@@ -54,7 +54,7 @@ impl From<PG_DRV_A> for u8 {
     }
 }
 #[doc = "Fields `PG(16-18)_DRV` reader - PG Multi_Driving Select"]
-pub struct PG_DRV_R(crate::FieldReader<u8, PG_DRV_A>);
+pub struct PG_DRV_R(crate::FieldReader<u8>);
 impl PG_DRV_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -93,55 +93,17 @@ impl PG_DRV_R {
     }
 }
 impl core::ops::Deref for PG_DRV_R {
-    type Target = crate::FieldReader<u8, PG_DRV_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `PG(16-18)_DRV` writer - PG Multi_Driving Select"]
-pub struct PG_DRV_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> PG_DRV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG_DRV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn l0(self) -> &'a mut W {
-        self.variant(PG_DRV_A::L0)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn l1(self) -> &'a mut W {
-        self.variant(PG_DRV_A::L1)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn l2(self) -> &'a mut W {
-        self.variant(PG_DRV_A::L2)
-    }
-    #[doc = "`11`"]
-    #[inline(always)]
-    pub fn l3(self) -> &'a mut W {
-        self.variant(PG_DRV_A::L3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `PG(16-18)_DRV` const generic writer - PG Multi_Driving Select"]
-pub struct PG_DRV_CGW<'a, const O: usize> {
+pub struct PG_DRV_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> PG_DRV_CGW<'a, O> {
+impl<'a, const O: usize> PG_DRV_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PG_DRV_A) -> &'a mut W {
@@ -199,26 +161,23 @@ impl R {
 impl W {
     #[doc = "PG Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pg_drv(&mut self, n: usize) -> PG_DRV_W {
-        PG_DRV_W {
-            w: self,
-            offset: (n - 16) * 4,
-        }
+    pub unsafe fn pg_drv<const O: usize>(&mut self) -> PG_DRV_W<O> {
+        PG_DRV_W { w: self }
     }
     #[doc = "Bits 0:1 - PG Multi_Driving Select"]
     #[inline(always)]
-    pub fn pg16_drv(&mut self) -> PG_DRV_CGW<0> {
-        PG_DRV_CGW { w: self }
+    pub fn pg16_drv(&mut self) -> PG_DRV_W<0> {
+        PG_DRV_W { w: self }
     }
     #[doc = "Bits 4:5 - PG Multi_Driving Select"]
     #[inline(always)]
-    pub fn pg17_drv(&mut self) -> PG_DRV_CGW<4> {
-        PG_DRV_CGW { w: self }
+    pub fn pg17_drv(&mut self) -> PG_DRV_W<4> {
+        PG_DRV_W { w: self }
     }
     #[doc = "Bits 8:9 - PG Multi_Driving Select"]
     #[inline(always)]
-    pub fn pg18_drv(&mut self) -> PG_DRV_CGW<8> {
-        PG_DRV_CGW { w: self }
+    pub fn pg18_drv(&mut self) -> PG_DRV_W<8> {
+        PG_DRV_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

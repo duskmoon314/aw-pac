@@ -49,7 +49,7 @@ impl From<PLL_EN_A> for bool {
     }
 }
 #[doc = "Field `PLL_EN` reader - PLL Enable"]
-pub struct PLL_EN_R(crate::FieldReader<bool, PLL_EN_A>);
+pub struct PLL_EN_R(crate::FieldReader<bool>);
 impl PLL_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl PLL_EN_R {
     }
 }
 impl core::ops::Deref for PLL_EN_R {
-    type Target = crate::FieldReader<bool, PLL_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<PLL_LDO_EN_A> for bool {
     }
 }
 #[doc = "Field `PLL_LDO_EN` reader - LDO Enable"]
-pub struct PLL_LDO_EN_R(crate::FieldReader<bool, PLL_LDO_EN_A>);
+pub struct PLL_LDO_EN_R(crate::FieldReader<bool>);
 impl PLL_LDO_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl PLL_LDO_EN_R {
     }
 }
 impl core::ops::Deref for PLL_LDO_EN_R {
-    type Target = crate::FieldReader<bool, PLL_LDO_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<LOCK_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `LOCK_ENABLE` reader - Lock Enable"]
-pub struct LOCK_ENABLE_R(crate::FieldReader<bool, LOCK_ENABLE_A>);
+pub struct LOCK_ENABLE_R(crate::FieldReader<bool>);
 impl LOCK_ENABLE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl LOCK_ENABLE_R {
     }
 }
 impl core::ops::Deref for LOCK_ENABLE_R {
-    type Target = crate::FieldReader<bool, LOCK_ENABLE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -301,7 +301,7 @@ impl From<LOCK_A> for bool {
     }
 }
 #[doc = "Field `LOCK` reader - PLL Lock Status"]
-pub struct LOCK_R(crate::FieldReader<bool, LOCK_A>);
+pub struct LOCK_R(crate::FieldReader<bool>);
 impl LOCK_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -327,7 +327,7 @@ impl LOCK_R {
     }
 }
 impl core::ops::Deref for LOCK_R {
-    type Target = crate::FieldReader<bool, LOCK_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -348,7 +348,7 @@ impl From<PLL_OUTPUT_GATE_A> for bool {
     }
 }
 #[doc = "Field `PLL_OUTPUT_GATE` reader - PLL Output Gating Enable"]
-pub struct PLL_OUTPUT_GATE_R(crate::FieldReader<bool, PLL_OUTPUT_GATE_A>);
+pub struct PLL_OUTPUT_GATE_R(crate::FieldReader<bool>);
 impl PLL_OUTPUT_GATE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -374,7 +374,7 @@ impl PLL_OUTPUT_GATE_R {
     }
 }
 impl core::ops::Deref for PLL_OUTPUT_GATE_R {
-    type Target = crate::FieldReader<bool, PLL_OUTPUT_GATE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -432,7 +432,7 @@ impl From<PLL_SDM_EN_A> for bool {
     }
 }
 #[doc = "Field `PLL_SDM_EN` reader - PLL SDM Enable"]
-pub struct PLL_SDM_EN_R(crate::FieldReader<bool, PLL_SDM_EN_A>);
+pub struct PLL_SDM_EN_R(crate::FieldReader<bool>);
 impl PLL_SDM_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -458,7 +458,7 @@ impl PLL_SDM_EN_R {
     }
 }
 impl core::ops::Deref for PLL_SDM_EN_R {
-    type Target = crate::FieldReader<bool, PLL_SDM_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -502,7 +502,7 @@ impl<'a> PLL_SDM_EN_W<'a> {
     }
 }
 #[doc = "Field `PLL_N` reader - PLL N"]
-pub struct PLL_N_R(crate::FieldReader<u8, u8>);
+pub struct PLL_N_R(crate::FieldReader<u8>);
 impl PLL_N_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -510,7 +510,7 @@ impl PLL_N_R {
     }
 }
 impl core::ops::Deref for PLL_N_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -546,7 +546,7 @@ impl From<PLL_UNLOCK_MDSEL_A> for u8 {
     }
 }
 #[doc = "Field `PLL_UNLOCK_MDSEL` reader - PLL Unlock Level"]
-pub struct PLL_UNLOCK_MDSEL_R(crate::FieldReader<u8, PLL_UNLOCK_MDSEL_A>);
+pub struct PLL_UNLOCK_MDSEL_R(crate::FieldReader<u8>);
 impl PLL_UNLOCK_MDSEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -579,7 +579,7 @@ impl PLL_UNLOCK_MDSEL_R {
     }
 }
 impl core::ops::Deref for PLL_UNLOCK_MDSEL_R {
-    type Target = crate::FieldReader<u8, PLL_UNLOCK_MDSEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -632,7 +632,7 @@ impl From<PLL_LOCK_MDSEL_A> for bool {
     }
 }
 #[doc = "Field `PLL_LOCK_MDSEL` reader - PLL Lock Level"]
-pub struct PLL_LOCK_MDSEL_R(crate::FieldReader<bool, PLL_LOCK_MDSEL_A>);
+pub struct PLL_LOCK_MDSEL_R(crate::FieldReader<bool>);
 impl PLL_LOCK_MDSEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -658,7 +658,7 @@ impl PLL_LOCK_MDSEL_R {
     }
 }
 impl core::ops::Deref for PLL_LOCK_MDSEL_R {
-    type Target = crate::FieldReader<bool, PLL_LOCK_MDSEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -702,7 +702,7 @@ impl<'a> PLL_LOCK_MDSEL_W<'a> {
     }
 }
 #[doc = "Field `PLL_INPUT_DIV2` reader - PLL Input Div M1"]
-pub struct PLL_INPUT_DIV2_R(crate::FieldReader<bool, bool>);
+pub struct PLL_INPUT_DIV2_R(crate::FieldReader<bool>);
 impl PLL_INPUT_DIV2_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -710,7 +710,7 @@ impl PLL_INPUT_DIV2_R {
     }
 }
 impl core::ops::Deref for PLL_INPUT_DIV2_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -739,7 +739,7 @@ impl<'a> PLL_INPUT_DIV2_W<'a> {
     }
 }
 #[doc = "Field `PLL_OUTPUT_DIV2` reader - PLL Output Div M0"]
-pub struct PLL_OUTPUT_DIV2_R(crate::FieldReader<bool, bool>);
+pub struct PLL_OUTPUT_DIV2_R(crate::FieldReader<bool>);
 impl PLL_OUTPUT_DIV2_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -747,7 +747,7 @@ impl PLL_OUTPUT_DIV2_R {
     }
 }
 impl core::ops::Deref for PLL_OUTPUT_DIV2_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

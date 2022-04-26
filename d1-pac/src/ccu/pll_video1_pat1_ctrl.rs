@@ -35,7 +35,7 @@ impl From<crate::W<PLL_VIDEO1_PAT1_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DITHER_EN` reader - Dither Enable"]
-pub struct DITHER_EN_R(crate::FieldReader<bool, bool>);
+pub struct DITHER_EN_R(crate::FieldReader<bool>);
 impl DITHER_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl DITHER_EN_R {
     }
 }
 impl core::ops::Deref for DITHER_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -72,7 +72,7 @@ impl<'a> DITHER_EN_W<'a> {
     }
 }
 #[doc = "Field `FRAC_EN` reader - Fraction Enable"]
-pub struct FRAC_EN_R(crate::FieldReader<bool, bool>);
+pub struct FRAC_EN_R(crate::FieldReader<bool>);
 impl FRAC_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -80,7 +80,7 @@ impl FRAC_EN_R {
     }
 }
 impl core::ops::Deref for FRAC_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -109,7 +109,7 @@ impl<'a> FRAC_EN_W<'a> {
     }
 }
 #[doc = "Field `FRAC_IN` reader - Fraction In"]
-pub struct FRAC_IN_R(crate::FieldReader<u32, u32>);
+pub struct FRAC_IN_R(crate::FieldReader<u32>);
 impl FRAC_IN_R {
     #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
@@ -117,7 +117,7 @@ impl FRAC_IN_R {
     }
 }
 impl core::ops::Deref for FRAC_IN_R {
-    type Target = crate::FieldReader<u32, u32>;
+    type Target = crate::FieldReader<u32>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

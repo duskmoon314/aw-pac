@@ -14,7 +14,7 @@ impl From<crate::R<DBI_DEBUG_1_SPEC>> for R {
     }
 }
 #[doc = "Field `lcnt` reader - "]
-pub struct LCNT_R(crate::FieldReader<u16, u16>);
+pub struct LCNT_R(crate::FieldReader<u16>);
 impl LCNT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -22,14 +22,14 @@ impl LCNT_R {
     }
 }
 impl core::ops::Deref for LCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
 #[doc = "Field `ccnt` reader - "]
-pub struct CCNT_R(crate::FieldReader<u16, u16>);
+pub struct CCNT_R(crate::FieldReader<u16>);
 impl CCNT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -37,7 +37,7 @@ impl CCNT_R {
     }
 }
 impl core::ops::Deref for CCNT_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

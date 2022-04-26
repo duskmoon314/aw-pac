@@ -35,7 +35,7 @@ impl From<crate::W<EMAC_TX_FLOW_CTL_SPEC>> for W {
     }
 }
 #[doc = "Field `TX_FLOW_CTL_STA` reader - "]
-pub struct TX_FLOW_CTL_STA_R(crate::FieldReader<bool, bool>);
+pub struct TX_FLOW_CTL_STA_R(crate::FieldReader<bool>);
 impl TX_FLOW_CTL_STA_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl TX_FLOW_CTL_STA_R {
     }
 }
 impl core::ops::Deref for TX_FLOW_CTL_STA_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -72,7 +72,7 @@ impl<'a> TX_FLOW_CTL_STA_W<'a> {
     }
 }
 #[doc = "Field `TX_PAUSE_FRM_SLOT` reader - "]
-pub struct TX_PAUSE_FRM_SLOT_R(crate::FieldReader<u8, u8>);
+pub struct TX_PAUSE_FRM_SLOT_R(crate::FieldReader<u8>);
 impl TX_PAUSE_FRM_SLOT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -80,7 +80,7 @@ impl TX_PAUSE_FRM_SLOT_R {
     }
 }
 impl core::ops::Deref for TX_PAUSE_FRM_SLOT_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -99,7 +99,7 @@ impl<'a> TX_PAUSE_FRM_SLOT_W<'a> {
     }
 }
 #[doc = "Field `PAUSE_TIME` reader - "]
-pub struct PAUSE_TIME_R(crate::FieldReader<u16, u16>);
+pub struct PAUSE_TIME_R(crate::FieldReader<u16>);
 impl PAUSE_TIME_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -107,7 +107,7 @@ impl PAUSE_TIME_R {
     }
 }
 impl core::ops::Deref for PAUSE_TIME_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -140,7 +140,7 @@ impl From<ZQP_FRM_EN_A> for bool {
     }
 }
 #[doc = "Field `ZQP_FRM_EN` reader - "]
-pub struct ZQP_FRM_EN_R(crate::FieldReader<bool, ZQP_FRM_EN_A>);
+pub struct ZQP_FRM_EN_R(crate::FieldReader<bool>);
 impl ZQP_FRM_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -166,7 +166,7 @@ impl ZQP_FRM_EN_R {
     }
 }
 impl core::ops::Deref for ZQP_FRM_EN_R {
-    type Target = crate::FieldReader<bool, ZQP_FRM_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -224,7 +224,7 @@ impl From<TX_FLOW_CTL_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_FLOW_CTL_EN` reader - TX Flow Control Enable"]
-pub struct TX_FLOW_CTL_EN_R(crate::FieldReader<bool, TX_FLOW_CTL_EN_A>);
+pub struct TX_FLOW_CTL_EN_R(crate::FieldReader<bool>);
 impl TX_FLOW_CTL_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -250,7 +250,7 @@ impl TX_FLOW_CTL_EN_R {
     }
 }
 impl core::ops::Deref for TX_FLOW_CTL_EN_R {
-    type Target = crate::FieldReader<bool, TX_FLOW_CTL_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

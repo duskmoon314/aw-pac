@@ -66,7 +66,7 @@ impl From<PE15_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE15_SELECT` reader - PE15 Select"]
-pub struct PE15_SELECT_R(crate::FieldReader<u8, PE15_SELECT_A>);
+pub struct PE15_SELECT_R(crate::FieldReader<u8>);
 impl PE15_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -141,7 +141,7 @@ impl PE15_SELECT_R {
     }
 }
 impl core::ops::Deref for PE15_SELECT_R {
-    type Target = crate::FieldReader<u8, PE15_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -246,7 +246,7 @@ impl From<PE14_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE14_SELECT` reader - PE14 Select"]
-pub struct PE14_SELECT_R(crate::FieldReader<u8, PE14_SELECT_A>);
+pub struct PE14_SELECT_R(crate::FieldReader<u8>);
 impl PE14_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -321,7 +321,7 @@ impl PE14_SELECT_R {
     }
 }
 impl core::ops::Deref for PE14_SELECT_R {
-    type Target = crate::FieldReader<u8, PE14_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -426,7 +426,7 @@ impl From<PE13_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE13_SELECT` reader - PE13 Select"]
-pub struct PE13_SELECT_R(crate::FieldReader<u8, PE13_SELECT_A>);
+pub struct PE13_SELECT_R(crate::FieldReader<u8>);
 impl PE13_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -501,7 +501,7 @@ impl PE13_SELECT_R {
     }
 }
 impl core::ops::Deref for PE13_SELECT_R {
-    type Target = crate::FieldReader<u8, PE13_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -604,7 +604,7 @@ impl From<PE12_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE12_SELECT` reader - PE12 Select"]
-pub struct PE12_SELECT_R(crate::FieldReader<u8, PE12_SELECT_A>);
+pub struct PE12_SELECT_R(crate::FieldReader<u8>);
 impl PE12_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -673,7 +673,7 @@ impl PE12_SELECT_R {
     }
 }
 impl core::ops::Deref for PE12_SELECT_R {
-    type Target = crate::FieldReader<u8, PE12_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -773,7 +773,7 @@ impl From<PE11_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE11_SELECT` reader - PE11 Select"]
-pub struct PE11_SELECT_R(crate::FieldReader<u8, PE11_SELECT_A>);
+pub struct PE11_SELECT_R(crate::FieldReader<u8>);
 impl PE11_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -848,7 +848,7 @@ impl PE11_SELECT_R {
     }
 }
 impl core::ops::Deref for PE11_SELECT_R {
-    type Target = crate::FieldReader<u8, PE11_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -953,7 +953,7 @@ impl From<PE10_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE10_SELECT` reader - PE10 Select"]
-pub struct PE10_SELECT_R(crate::FieldReader<u8, PE10_SELECT_A>);
+pub struct PE10_SELECT_R(crate::FieldReader<u8>);
 impl PE10_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -1028,7 +1028,7 @@ impl PE10_SELECT_R {
     }
 }
 impl core::ops::Deref for PE10_SELECT_R {
-    type Target = crate::FieldReader<u8, PE10_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1133,7 +1133,7 @@ impl From<PE9_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE9_SELECT` reader - PE9 Select"]
-pub struct PE9_SELECT_R(crate::FieldReader<u8, PE9_SELECT_A>);
+pub struct PE9_SELECT_R(crate::FieldReader<u8>);
 impl PE9_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -1208,7 +1208,7 @@ impl PE9_SELECT_R {
     }
 }
 impl core::ops::Deref for PE9_SELECT_R {
-    type Target = crate::FieldReader<u8, PE9_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1313,7 +1313,7 @@ impl From<PE8_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE8_SELECT` reader - PE8 Select"]
-pub struct PE8_SELECT_R(crate::FieldReader<u8, PE8_SELECT_A>);
+pub struct PE8_SELECT_R(crate::FieldReader<u8>);
 impl PE8_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -1388,7 +1388,7 @@ impl PE8_SELECT_R {
     }
 }
 impl core::ops::Deref for PE8_SELECT_R {
-    type Target = crate::FieldReader<u8, PE8_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

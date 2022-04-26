@@ -49,7 +49,7 @@ impl From<I2S_RST_A> for bool {
     }
 }
 #[doc = "Fields `I2S(0-2)_RST` reader - Reset"]
-pub struct I2S_RST_R(crate::FieldReader<bool, I2S_RST_A>);
+pub struct I2S_RST_R(crate::FieldReader<bool>);
 impl I2S_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,55 +75,17 @@ impl I2S_RST_R {
     }
 }
 impl core::ops::Deref for I2S_RST_R {
-    type Target = crate::FieldReader<bool, I2S_RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `I2S(0-2)_RST` writer - Reset"]
-pub struct I2S_RST_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> I2S_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: I2S_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(I2S_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(I2S_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `I2S(0-2)_RST` const generic writer - Reset"]
-pub struct I2S_RST_CGW<'a, const O: usize> {
+pub struct I2S_RST_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> I2S_RST_CGW<'a, O> {
+impl<'a, const O: usize> I2S_RST_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: I2S_RST_A) -> &'a mut W {
@@ -171,7 +133,7 @@ impl From<I2S_GATING_A> for bool {
     }
 }
 #[doc = "Fields `I2S(0-2)_GATING` reader - Gating Clock"]
-pub struct I2S_GATING_R(crate::FieldReader<bool, I2S_GATING_A>);
+pub struct I2S_GATING_R(crate::FieldReader<bool>);
 impl I2S_GATING_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -197,55 +159,17 @@ impl I2S_GATING_R {
     }
 }
 impl core::ops::Deref for I2S_GATING_R {
-    type Target = crate::FieldReader<bool, I2S_GATING_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `I2S(0-2)_GATING` writer - Gating Clock"]
-pub struct I2S_GATING_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> I2S_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: I2S_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(I2S_GATING_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(I2S_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `I2S(0-2)_GATING` const generic writer - Gating Clock"]
-pub struct I2S_GATING_CGW<'a, const O: usize> {
+pub struct I2S_GATING_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> I2S_GATING_CGW<'a, O> {
+impl<'a, const O: usize> I2S_GATING_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: I2S_GATING_A) -> &'a mut W {
@@ -323,46 +247,43 @@ impl R {
 impl W {
     #[doc = "Reset"]
     #[inline(always)]
-    pub unsafe fn i2s_rst(&mut self, n: usize) -> I2S_RST_W {
-        I2S_RST_W {
-            w: self,
-            offset: n + 16,
-        }
+    pub unsafe fn i2s_rst<const O: usize>(&mut self) -> I2S_RST_W<O> {
+        I2S_RST_W { w: self }
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn i2s0_rst(&mut self) -> I2S_RST_CGW<16> {
-        I2S_RST_CGW { w: self }
+    pub fn i2s0_rst(&mut self) -> I2S_RST_W<16> {
+        I2S_RST_W { w: self }
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
-    pub fn i2s1_rst(&mut self) -> I2S_RST_CGW<17> {
-        I2S_RST_CGW { w: self }
+    pub fn i2s1_rst(&mut self) -> I2S_RST_W<17> {
+        I2S_RST_W { w: self }
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
-    pub fn i2s2_rst(&mut self) -> I2S_RST_CGW<18> {
-        I2S_RST_CGW { w: self }
+    pub fn i2s2_rst(&mut self) -> I2S_RST_W<18> {
+        I2S_RST_W { w: self }
     }
     #[doc = "Gating Clock"]
     #[inline(always)]
-    pub unsafe fn i2s_gating(&mut self, n: usize) -> I2S_GATING_W {
-        I2S_GATING_W { w: self, offset: n }
+    pub unsafe fn i2s_gating<const O: usize>(&mut self) -> I2S_GATING_W<O> {
+        I2S_GATING_W { w: self }
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
-    pub fn i2s0_gating(&mut self) -> I2S_GATING_CGW<0> {
-        I2S_GATING_CGW { w: self }
+    pub fn i2s0_gating(&mut self) -> I2S_GATING_W<0> {
+        I2S_GATING_W { w: self }
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
-    pub fn i2s1_gating(&mut self) -> I2S_GATING_CGW<1> {
-        I2S_GATING_CGW { w: self }
+    pub fn i2s1_gating(&mut self) -> I2S_GATING_W<1> {
+        I2S_GATING_W { w: self }
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
-    pub fn i2s2_gating(&mut self) -> I2S_GATING_CGW<2> {
-        I2S_GATING_CGW { w: self }
+    pub fn i2s2_gating(&mut self) -> I2S_GATING_W<2> {
+        I2S_GATING_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

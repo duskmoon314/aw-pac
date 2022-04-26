@@ -35,7 +35,7 @@ impl From<crate::W<DBI_CTL_1_SPEC>> for W {
     }
 }
 #[doc = "Field `dbi_soft_trg` reader - DBI Soft Trigger"]
-pub struct DBI_SOFT_TRG_R(crate::FieldReader<bool, bool>);
+pub struct DBI_SOFT_TRG_R(crate::FieldReader<bool>);
 impl DBI_SOFT_TRG_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl DBI_SOFT_TRG_R {
     }
 }
 impl core::ops::Deref for DBI_SOFT_TRG_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -91,7 +91,7 @@ impl From<DBI_EN_MODE_SEL_A> for u8 {
     }
 }
 #[doc = "Field `dbi_en_mode_sel` reader - DBI Enable Mode Select"]
-pub struct DBI_EN_MODE_SEL_R(crate::FieldReader<u8, DBI_EN_MODE_SEL_A>);
+pub struct DBI_EN_MODE_SEL_R(crate::FieldReader<u8>);
 impl DBI_EN_MODE_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -130,7 +130,7 @@ impl DBI_EN_MODE_SEL_R {
     }
 }
 impl core::ops::Deref for DBI_EN_MODE_SEL_R {
-    type Target = crate::FieldReader<u8, DBI_EN_MODE_SEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -191,7 +191,7 @@ impl From<RGB666_FMT_A> for u8 {
     }
 }
 #[doc = "Field `RGB666_FMT` reader - 2 Data Lane RGB666 Format"]
-pub struct RGB666_FMT_R(crate::FieldReader<u8, RGB666_FMT_A>);
+pub struct RGB666_FMT_R(crate::FieldReader<u8>);
 impl RGB666_FMT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -224,7 +224,7 @@ impl RGB666_FMT_R {
     }
 }
 impl core::ops::Deref for RGB666_FMT_R {
-    type Target = crate::FieldReader<u8, RGB666_FMT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -277,7 +277,7 @@ impl From<DBI_RXCLK_INV_A> for bool {
     }
 }
 #[doc = "Field `dbi_rxclk_inv` reader - DBI RX Clock Inverse"]
-pub struct DBI_RXCLK_INV_R(crate::FieldReader<bool, DBI_RXCLK_INV_A>);
+pub struct DBI_RXCLK_INV_R(crate::FieldReader<bool>);
 impl DBI_RXCLK_INV_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -303,7 +303,7 @@ impl DBI_RXCLK_INV_R {
     }
 }
 impl core::ops::Deref for DBI_RXCLK_INV_R {
-    type Target = crate::FieldReader<bool, DBI_RXCLK_INV_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -361,7 +361,7 @@ impl From<DBI_CLKO_MOD_A> for bool {
     }
 }
 #[doc = "Field `dbi_clko_mod` reader - DBI Output Clock Mode"]
-pub struct DBI_CLKO_MOD_R(crate::FieldReader<bool, DBI_CLKO_MOD_A>);
+pub struct DBI_CLKO_MOD_R(crate::FieldReader<bool>);
 impl DBI_CLKO_MOD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -387,7 +387,7 @@ impl DBI_CLKO_MOD_R {
     }
 }
 impl core::ops::Deref for DBI_CLKO_MOD_R {
-    type Target = crate::FieldReader<bool, DBI_CLKO_MOD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -431,7 +431,7 @@ impl<'a> DBI_CLKO_MOD_W<'a> {
     }
 }
 #[doc = "Field `dbi_clko_inv` reader - DBI Clock Output Inverse"]
-pub struct DBI_CLKO_INV_R(crate::FieldReader<bool, bool>);
+pub struct DBI_CLKO_INV_R(crate::FieldReader<bool>);
 impl DBI_CLKO_INV_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -439,7 +439,7 @@ impl DBI_CLKO_INV_R {
     }
 }
 impl core::ops::Deref for DBI_CLKO_INV_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -468,7 +468,7 @@ impl<'a> DBI_CLKO_INV_W<'a> {
     }
 }
 #[doc = "Field `dcx_data` reader - DCX Data Value"]
-pub struct DCX_DATA_R(crate::FieldReader<bool, bool>);
+pub struct DCX_DATA_R(crate::FieldReader<bool>);
 impl DCX_DATA_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -476,7 +476,7 @@ impl DCX_DATA_R {
     }
 }
 impl core::ops::Deref for DCX_DATA_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -505,7 +505,7 @@ impl<'a> DCX_DATA_W<'a> {
     }
 }
 #[doc = "Field `RGB16_data_source_select` reader - RGB 16 Data Source Select"]
-pub struct RGB16_DATA_SOURCE_SELECT_R(crate::FieldReader<bool, bool>);
+pub struct RGB16_DATA_SOURCE_SELECT_R(crate::FieldReader<bool>);
 impl RGB16_DATA_SOURCE_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -513,7 +513,7 @@ impl RGB16_DATA_SOURCE_SELECT_R {
     }
 }
 impl core::ops::Deref for RGB16_DATA_SOURCE_SELECT_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -542,7 +542,7 @@ impl<'a> RGB16_DATA_SOURCE_SELECT_W<'a> {
     }
 }
 #[doc = "Field `rdat_lsb` reader - Bit Order of Read Data"]
-pub struct RDAT_LSB_R(crate::FieldReader<bool, bool>);
+pub struct RDAT_LSB_R(crate::FieldReader<bool>);
 impl RDAT_LSB_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -550,7 +550,7 @@ impl RDAT_LSB_R {
     }
 }
 impl core::ops::Deref for RDAT_LSB_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -579,7 +579,7 @@ impl<'a> RDAT_LSB_W<'a> {
     }
 }
 #[doc = "Field `rcdc` reader - Read Command Dummy Cycles"]
-pub struct RCDC_R(crate::FieldReader<u8, u8>);
+pub struct RCDC_R(crate::FieldReader<u8>);
 impl RCDC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -587,7 +587,7 @@ impl RCDC_R {
     }
 }
 impl core::ops::Deref for RCDC_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -606,7 +606,7 @@ impl<'a> RCDC_W<'a> {
     }
 }
 #[doc = "Field `rdbn` reader - Read Data Number of Bytes"]
-pub struct RDBN_R(crate::FieldReader<u8, u8>);
+pub struct RDBN_R(crate::FieldReader<u8>);
 impl RDBN_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -614,7 +614,7 @@ impl RDBN_R {
     }
 }
 impl core::ops::Deref for RDBN_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

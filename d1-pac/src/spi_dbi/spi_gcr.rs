@@ -35,7 +35,7 @@ impl From<crate::W<SPI_GCR_SPEC>> for W {
     }
 }
 #[doc = "Field `srst` reader - Soft reset"]
-pub struct SRST_R(crate::FieldReader<bool, bool>);
+pub struct SRST_R(crate::FieldReader<bool>);
 impl SRST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl SRST_R {
     }
 }
 impl core::ops::Deref for SRST_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -86,7 +86,7 @@ impl From<TP_EN_A> for bool {
     }
 }
 #[doc = "Field `tp_en` reader - Transmit Pause Enable"]
-pub struct TP_EN_R(crate::FieldReader<bool, TP_EN_A>);
+pub struct TP_EN_R(crate::FieldReader<bool>);
 impl TP_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -112,7 +112,7 @@ impl TP_EN_R {
     }
 }
 impl core::ops::Deref for TP_EN_R {
-    type Target = crate::FieldReader<bool, TP_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -170,7 +170,7 @@ impl From<MODE_SELEC_A> for bool {
     }
 }
 #[doc = "Field `mode_selec` reader - Sample timing Mode Select"]
-pub struct MODE_SELEC_R(crate::FieldReader<bool, MODE_SELEC_A>);
+pub struct MODE_SELEC_R(crate::FieldReader<bool>);
 impl MODE_SELEC_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -196,7 +196,7 @@ impl MODE_SELEC_R {
     }
 }
 impl core::ops::Deref for MODE_SELEC_R {
-    type Target = crate::FieldReader<bool, MODE_SELEC_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -254,7 +254,7 @@ impl From<MODE_A> for bool {
     }
 }
 #[doc = "Field `mode` reader - SPI Function Mode Select"]
-pub struct MODE_R(crate::FieldReader<bool, MODE_A>);
+pub struct MODE_R(crate::FieldReader<bool>);
 impl MODE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -280,7 +280,7 @@ impl MODE_R {
     }
 }
 impl core::ops::Deref for MODE_R {
-    type Target = crate::FieldReader<bool, MODE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -338,7 +338,7 @@ impl From<EN_A> for bool {
     }
 }
 #[doc = "Field `en` reader - SPI Module Enable Control"]
-pub struct EN_R(crate::FieldReader<bool, EN_A>);
+pub struct EN_R(crate::FieldReader<bool>);
 impl EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -364,7 +364,7 @@ impl EN_R {
     }
 }
 impl core::ops::Deref for EN_R {
-    type Target = crate::FieldReader<bool, EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

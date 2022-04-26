@@ -35,7 +35,7 @@ impl From<crate::W<DBI_VIDEO_SZIE_SPEC>> for W {
     }
 }
 #[doc = "Field `v_size` reader - "]
-pub struct V_SIZE_R(crate::FieldReader<u16, u16>);
+pub struct V_SIZE_R(crate::FieldReader<u16>);
 impl V_SIZE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -43,7 +43,7 @@ impl V_SIZE_R {
     }
 }
 impl core::ops::Deref for V_SIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -62,7 +62,7 @@ impl<'a> V_SIZE_W<'a> {
     }
 }
 #[doc = "Field `h_size` reader - "]
-pub struct H_SIZE_R(crate::FieldReader<u16, u16>);
+pub struct H_SIZE_R(crate::FieldReader<u16>);
 impl H_SIZE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -70,7 +70,7 @@ impl H_SIZE_R {
     }
 }
 impl core::ops::Deref for H_SIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

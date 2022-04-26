@@ -49,7 +49,7 @@ impl From<RX_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_EN` reader - Enable Receiver"]
-pub struct RX_EN_R(crate::FieldReader<bool, RX_EN_A>);
+pub struct RX_EN_R(crate::FieldReader<bool>);
 impl RX_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl RX_EN_R {
     }
 }
 impl core::ops::Deref for RX_EN_R {
-    type Target = crate::FieldReader<bool, RX_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<RX_FRM_LEN_CTL_A> for bool {
     }
 }
 #[doc = "Field `RX_FRM_LEN_CTL` reader - Frame Receive Length Control"]
-pub struct RX_FRM_LEN_CTL_R(crate::FieldReader<bool, RX_FRM_LEN_CTL_A>);
+pub struct RX_FRM_LEN_CTL_R(crate::FieldReader<bool>);
 impl RX_FRM_LEN_CTL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl RX_FRM_LEN_CTL_R {
     }
 }
 impl core::ops::Deref for RX_FRM_LEN_CTL_R {
-    type Target = crate::FieldReader<bool, RX_FRM_LEN_CTL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<JUMBO_FRM_EN_A> for bool {
     }
 }
 #[doc = "Field `JUMBO_FRM_EN` reader - Jumbo Frame Enable"]
-pub struct JUMBO_FRM_EN_R(crate::FieldReader<bool, JUMBO_FRM_EN_A>);
+pub struct JUMBO_FRM_EN_R(crate::FieldReader<bool>);
 impl JUMBO_FRM_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl JUMBO_FRM_EN_R {
     }
 }
 impl core::ops::Deref for JUMBO_FRM_EN_R {
-    type Target = crate::FieldReader<bool, JUMBO_FRM_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -287,7 +287,7 @@ impl<'a> JUMBO_FRM_EN_W<'a> {
     }
 }
 #[doc = "Field `STRIP_FCS` reader - "]
-pub struct STRIP_FCS_R(crate::FieldReader<bool, bool>);
+pub struct STRIP_FCS_R(crate::FieldReader<bool>);
 impl STRIP_FCS_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -295,7 +295,7 @@ impl STRIP_FCS_R {
     }
 }
 impl core::ops::Deref for STRIP_FCS_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -338,7 +338,7 @@ impl From<CHECK_CRC_A> for bool {
     }
 }
 #[doc = "Field `CHECK_CRC` reader - Check CRC Enable"]
-pub struct CHECK_CRC_R(crate::FieldReader<bool, CHECK_CRC_A>);
+pub struct CHECK_CRC_R(crate::FieldReader<bool>);
 impl CHECK_CRC_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -364,7 +364,7 @@ impl CHECK_CRC_R {
     }
 }
 impl core::ops::Deref for CHECK_CRC_R {
-    type Target = crate::FieldReader<bool, CHECK_CRC_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -422,7 +422,7 @@ impl From<RX_PAUSE_FRM_MD_A> for bool {
     }
 }
 #[doc = "Field `RX_PAUSE_FRM_MD` reader - "]
-pub struct RX_PAUSE_FRM_MD_R(crate::FieldReader<bool, RX_PAUSE_FRM_MD_A>);
+pub struct RX_PAUSE_FRM_MD_R(crate::FieldReader<bool>);
 impl RX_PAUSE_FRM_MD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -448,7 +448,7 @@ impl RX_PAUSE_FRM_MD_R {
     }
 }
 impl core::ops::Deref for RX_PAUSE_FRM_MD_R {
-    type Target = crate::FieldReader<bool, RX_PAUSE_FRM_MD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -492,7 +492,7 @@ impl<'a> RX_PAUSE_FRM_MD_W<'a> {
     }
 }
 #[doc = "Field `RX_FLOW_CTL_EN` reader - "]
-pub struct RX_FLOW_CTL_EN_R(crate::FieldReader<bool, bool>);
+pub struct RX_FLOW_CTL_EN_R(crate::FieldReader<bool>);
 impl RX_FLOW_CTL_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -500,7 +500,7 @@ impl RX_FLOW_CTL_EN_R {
     }
 }
 impl core::ops::Deref for RX_FLOW_CTL_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -49,7 +49,7 @@ impl From<RST_A> for bool {
     }
 }
 #[doc = "Field `RST` reader - Reset"]
-pub struct RST_R(crate::FieldReader<bool, RST_A>);
+pub struct RST_R(crate::FieldReader<bool>);
 impl RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl RST_R {
     }
 }
 impl core::ops::Deref for RST_R {
-    type Target = crate::FieldReader<bool, RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<TOP_RST_A> for bool {
     }
 }
 #[doc = "Field `TOP_RST` reader - Reset"]
-pub struct TOP_RST_R(crate::FieldReader<bool, TOP_RST_A>);
+pub struct TOP_RST_R(crate::FieldReader<bool>);
 impl TOP_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl TOP_RST_R {
     }
 }
 impl core::ops::Deref for TOP_RST_R {
-    type Target = crate::FieldReader<bool, TOP_RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<GATING_A> for bool {
     }
 }
 #[doc = "Field `GATING` reader - Gating Clock"]
-pub struct GATING_R(crate::FieldReader<bool, GATING_A>);
+pub struct GATING_R(crate::FieldReader<bool>);
 impl GATING_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl GATING_R {
     }
 }
 impl core::ops::Deref for GATING_R {
-    type Target = crate::FieldReader<bool, GATING_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -301,7 +301,7 @@ impl From<TOP_GATING_A> for bool {
     }
 }
 #[doc = "Field `TOP_GATING` reader - Gating Clock"]
-pub struct TOP_GATING_R(crate::FieldReader<bool, TOP_GATING_A>);
+pub struct TOP_GATING_R(crate::FieldReader<bool>);
 impl TOP_GATING_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -327,7 +327,7 @@ impl TOP_GATING_R {
     }
 }
 impl core::ops::Deref for TOP_GATING_R {
-    type Target = crate::FieldReader<bool, TOP_GATING_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

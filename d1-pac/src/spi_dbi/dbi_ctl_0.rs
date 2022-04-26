@@ -49,7 +49,7 @@ impl From<CMDT_A> for bool {
     }
 }
 #[doc = "Field `cmdt` reader - Command Type"]
-pub struct CMDT_R(crate::FieldReader<bool, CMDT_A>);
+pub struct CMDT_R(crate::FieldReader<bool>);
 impl CMDT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl CMDT_R {
     }
 }
 impl core::ops::Deref for CMDT_R {
-    type Target = crate::FieldReader<bool, CMDT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -119,7 +119,7 @@ impl<'a> CMDT_W<'a> {
     }
 }
 #[doc = "Field `wcdc` reader - Write Command Dummy Cycles"]
-pub struct WCDC_R(crate::FieldReader<u16, u16>);
+pub struct WCDC_R(crate::FieldReader<u16>);
 impl WCDC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -127,7 +127,7 @@ impl WCDC_R {
     }
 }
 impl core::ops::Deref for WCDC_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -160,7 +160,7 @@ impl From<DAT_SEQ_A> for bool {
     }
 }
 #[doc = "Field `dat_seq` reader - Output Data Sequence"]
-pub struct DAT_SEQ_R(crate::FieldReader<bool, DAT_SEQ_A>);
+pub struct DAT_SEQ_R(crate::FieldReader<bool>);
 impl DAT_SEQ_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -186,7 +186,7 @@ impl DAT_SEQ_R {
     }
 }
 impl core::ops::Deref for DAT_SEQ_R {
-    type Target = crate::FieldReader<bool, DAT_SEQ_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -253,7 +253,7 @@ impl From<RGB_SEQ_A> for u8 {
     }
 }
 #[doc = "Field `rgb_seq` reader - Output RGB Sequence"]
-pub struct RGB_SEQ_R(crate::FieldReader<u8, RGB_SEQ_A>);
+pub struct RGB_SEQ_R(crate::FieldReader<u8>);
 impl RGB_SEQ_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -304,7 +304,7 @@ impl RGB_SEQ_R {
     }
 }
 impl core::ops::Deref for RGB_SEQ_R {
-    type Target = crate::FieldReader<u8, RGB_SEQ_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -372,7 +372,7 @@ impl From<TRAN_MOD_A> for bool {
     }
 }
 #[doc = "Field `tran_mod` reader - Transmit Mode"]
-pub struct TRAN_MOD_R(crate::FieldReader<bool, TRAN_MOD_A>);
+pub struct TRAN_MOD_R(crate::FieldReader<bool>);
 impl TRAN_MOD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -398,7 +398,7 @@ impl TRAN_MOD_R {
     }
 }
 impl core::ops::Deref for TRAN_MOD_R {
-    type Target = crate::FieldReader<bool, TRAN_MOD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -463,7 +463,7 @@ impl From<DAT_FMT_A> for u8 {
     }
 }
 #[doc = "Field `dat_fmt` reader - Output Data Format"]
-pub struct DAT_FMT_R(crate::FieldReader<u8, DAT_FMT_A>);
+pub struct DAT_FMT_R(crate::FieldReader<u8>);
 impl DAT_FMT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -508,7 +508,7 @@ impl DAT_FMT_R {
     }
 }
 impl core::ops::Deref for DAT_FMT_R {
-    type Target = crate::FieldReader<u8, DAT_FMT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -578,7 +578,7 @@ impl From<DBI_INTERFACE_A> for u8 {
     }
 }
 #[doc = "Field `dbi_interface` reader - "]
-pub struct DBI_INTERFACE_R(crate::FieldReader<u8, DBI_INTERFACE_A>);
+pub struct DBI_INTERFACE_R(crate::FieldReader<u8>);
 impl DBI_INTERFACE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -623,7 +623,7 @@ impl DBI_INTERFACE_R {
     }
 }
 impl core::ops::Deref for DBI_INTERFACE_R {
-    type Target = crate::FieldReader<u8, DBI_INTERFACE_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -703,7 +703,7 @@ impl From<RGB_SRC_FMT_A> for u8 {
     }
 }
 #[doc = "Field `rgb_src_fmt` reader - RGB Source Format"]
-pub struct RGB_SRC_FMT_R(crate::FieldReader<u8, RGB_SRC_FMT_A>);
+pub struct RGB_SRC_FMT_R(crate::FieldReader<u8>);
 impl RGB_SRC_FMT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -778,7 +778,7 @@ impl RGB_SRC_FMT_R {
     }
 }
 impl core::ops::Deref for RGB_SRC_FMT_R {
-    type Target = crate::FieldReader<u8, RGB_SRC_FMT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -852,7 +852,7 @@ impl<'a> RGB_SRC_FMT_W<'a> {
     }
 }
 #[doc = "Field `dum_val` reader - Dummy Cycle Value"]
-pub struct DUM_VAL_R(crate::FieldReader<bool, bool>);
+pub struct DUM_VAL_R(crate::FieldReader<bool>);
 impl DUM_VAL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -860,7 +860,7 @@ impl DUM_VAL_R {
     }
 }
 impl core::ops::Deref for DUM_VAL_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -903,7 +903,7 @@ impl From<RGB_BO_A> for bool {
     }
 }
 #[doc = "Field `rgb_bo` reader - RGB Bit Order"]
-pub struct RGB_BO_R(crate::FieldReader<bool, RGB_BO_A>);
+pub struct RGB_BO_R(crate::FieldReader<bool>);
 impl RGB_BO_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -929,7 +929,7 @@ impl RGB_BO_R {
     }
 }
 impl core::ops::Deref for RGB_BO_R {
-    type Target = crate::FieldReader<bool, RGB_BO_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -987,7 +987,7 @@ impl From<ELEMENT_A_POS_A> for bool {
     }
 }
 #[doc = "Field `element_a_pos` reader - Element A Position"]
-pub struct ELEMENT_A_POS_R(crate::FieldReader<bool, ELEMENT_A_POS_A>);
+pub struct ELEMENT_A_POS_R(crate::FieldReader<bool>);
 impl ELEMENT_A_POS_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -1013,7 +1013,7 @@ impl ELEMENT_A_POS_R {
     }
 }
 impl core::ops::Deref for ELEMENT_A_POS_R {
-    type Target = crate::FieldReader<bool, ELEMENT_A_POS_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1071,7 +1071,7 @@ impl From<VI_SRC_TYPE_A> for bool {
     }
 }
 #[doc = "Field `vi_src_type` reader - Video Source Type"]
-pub struct VI_SRC_TYPE_R(crate::FieldReader<bool, VI_SRC_TYPE_A>);
+pub struct VI_SRC_TYPE_R(crate::FieldReader<bool>);
 impl VI_SRC_TYPE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -1097,7 +1097,7 @@ impl VI_SRC_TYPE_R {
     }
 }
 impl core::ops::Deref for VI_SRC_TYPE_R {
-    type Target = crate::FieldReader<bool, VI_SRC_TYPE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

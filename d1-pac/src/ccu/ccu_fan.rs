@@ -49,7 +49,7 @@ impl From<CLK_FANOUT_EN_A> for bool {
     }
 }
 #[doc = "Fields `CLK_FANOUT(0-2)_EN` reader - Gating for CLK_FANOUT"]
-pub struct CLK_FANOUT_EN_R(crate::FieldReader<bool, CLK_FANOUT_EN_A>);
+pub struct CLK_FANOUT_EN_R(crate::FieldReader<bool>);
 impl CLK_FANOUT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,55 +75,17 @@ impl CLK_FANOUT_EN_R {
     }
 }
 impl core::ops::Deref for CLK_FANOUT_EN_R {
-    type Target = crate::FieldReader<bool, CLK_FANOUT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `CLK_FANOUT(0-2)_EN` writer - Gating for CLK_FANOUT"]
-pub struct CLK_FANOUT_EN_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> CLK_FANOUT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_FANOUT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn off(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_EN_A::OFF)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn on(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_EN_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `CLK_FANOUT(0-2)_EN` const generic writer - Gating for CLK_FANOUT"]
-pub struct CLK_FANOUT_EN_CGW<'a, const O: usize> {
+pub struct CLK_FANOUT_EN_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> CLK_FANOUT_EN_CGW<'a, O> {
+impl<'a, const O: usize> CLK_FANOUT_EN_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLK_FANOUT_EN_A) -> &'a mut W {
@@ -182,7 +144,7 @@ impl From<CLK_FANOUT_SEL_A> for u8 {
     }
 }
 #[doc = "Fields `CLK_FANOUT(0-2)_SEL` reader - "]
-pub struct CLK_FANOUT_SEL_R(crate::FieldReader<u8, CLK_FANOUT_SEL_A>);
+pub struct CLK_FANOUT_SEL_R(crate::FieldReader<u8>);
 impl CLK_FANOUT_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -239,70 +201,17 @@ impl CLK_FANOUT_SEL_R {
     }
 }
 impl core::ops::Deref for CLK_FANOUT_SEL_R {
-    type Target = crate::FieldReader<u8, CLK_FANOUT_SEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `CLK_FANOUT(0-2)_SEL` writer - "]
-pub struct CLK_FANOUT_SEL_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> CLK_FANOUT_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_FANOUT_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn clk32k(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_SEL_A::CLK32K)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn clk12m(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_SEL_A::CLK12M)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn clk16m(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_SEL_A::CLK16M)
-    }
-    #[doc = "`11`"]
-    #[inline(always)]
-    pub fn clk24m(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_SEL_A::CLK24M)
-    }
-    #[doc = "`100`"]
-    #[inline(always)]
-    pub fn clk25m(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_SEL_A::CLK25M)
-    }
-    #[doc = "`101`"]
-    #[inline(always)]
-    pub fn clk27m(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_SEL_A::CLK27M)
-    }
-    #[doc = "`110`"]
-    #[inline(always)]
-    pub fn pclk(self) -> &'a mut W {
-        self.variant(CLK_FANOUT_SEL_A::PCLK)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(7 << self.offset)) | ((value as u32 & 7) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `CLK_FANOUT(0-2)_SEL` const generic writer - "]
-pub struct CLK_FANOUT_SEL_CGW<'a, const O: usize> {
+pub struct CLK_FANOUT_SEL_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> CLK_FANOUT_SEL_CGW<'a, O> {
+impl<'a, const O: usize> CLK_FANOUT_SEL_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: CLK_FANOUT_SEL_A) -> &'a mut W {
@@ -395,49 +304,43 @@ impl R {
 impl W {
     #[doc = "Gating for CLK_FANOUT"]
     #[inline(always)]
-    pub unsafe fn clk_fanout_en(&mut self, n: usize) -> CLK_FANOUT_EN_W {
-        CLK_FANOUT_EN_W {
-            w: self,
-            offset: n + 21,
-        }
+    pub unsafe fn clk_fanout_en<const O: usize>(&mut self) -> CLK_FANOUT_EN_W<O> {
+        CLK_FANOUT_EN_W { w: self }
     }
     #[doc = "Bit 21 - Gating for CLK_FANOUT"]
     #[inline(always)]
-    pub fn clk_fanout0_en(&mut self) -> CLK_FANOUT_EN_CGW<21> {
-        CLK_FANOUT_EN_CGW { w: self }
+    pub fn clk_fanout0_en(&mut self) -> CLK_FANOUT_EN_W<21> {
+        CLK_FANOUT_EN_W { w: self }
     }
     #[doc = "Bit 22 - Gating for CLK_FANOUT"]
     #[inline(always)]
-    pub fn clk_fanout1_en(&mut self) -> CLK_FANOUT_EN_CGW<22> {
-        CLK_FANOUT_EN_CGW { w: self }
+    pub fn clk_fanout1_en(&mut self) -> CLK_FANOUT_EN_W<22> {
+        CLK_FANOUT_EN_W { w: self }
     }
     #[doc = "Bit 23 - Gating for CLK_FANOUT"]
     #[inline(always)]
-    pub fn clk_fanout2_en(&mut self) -> CLK_FANOUT_EN_CGW<23> {
-        CLK_FANOUT_EN_CGW { w: self }
+    pub fn clk_fanout2_en(&mut self) -> CLK_FANOUT_EN_W<23> {
+        CLK_FANOUT_EN_W { w: self }
     }
     #[doc = ""]
     #[inline(always)]
-    pub unsafe fn clk_fanout_sel(&mut self, n: usize) -> CLK_FANOUT_SEL_W {
-        CLK_FANOUT_SEL_W {
-            w: self,
-            offset: n * 3,
-        }
+    pub unsafe fn clk_fanout_sel<const O: usize>(&mut self) -> CLK_FANOUT_SEL_W<O> {
+        CLK_FANOUT_SEL_W { w: self }
     }
     #[doc = "Bits 0:2"]
     #[inline(always)]
-    pub fn clk_fanout0_sel(&mut self) -> CLK_FANOUT_SEL_CGW<0> {
-        CLK_FANOUT_SEL_CGW { w: self }
+    pub fn clk_fanout0_sel(&mut self) -> CLK_FANOUT_SEL_W<0> {
+        CLK_FANOUT_SEL_W { w: self }
     }
     #[doc = "Bits 3:5"]
     #[inline(always)]
-    pub fn clk_fanout1_sel(&mut self) -> CLK_FANOUT_SEL_CGW<3> {
-        CLK_FANOUT_SEL_CGW { w: self }
+    pub fn clk_fanout1_sel(&mut self) -> CLK_FANOUT_SEL_W<3> {
+        CLK_FANOUT_SEL_W { w: self }
     }
     #[doc = "Bits 6:8"]
     #[inline(always)]
-    pub fn clk_fanout2_sel(&mut self) -> CLK_FANOUT_SEL_CGW<6> {
-        CLK_FANOUT_SEL_CGW { w: self }
+    pub fn clk_fanout2_sel(&mut self) -> CLK_FANOUT_SEL_W<6> {
+        CLK_FANOUT_SEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

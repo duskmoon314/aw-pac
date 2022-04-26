@@ -35,7 +35,7 @@ impl From<crate::W<RES240_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `DDR_RES240_TRIM` reader - 240ohms Resistor trimming bit"]
-pub struct DDR_RES240_TRIM_R(crate::FieldReader<u8, u8>);
+pub struct DDR_RES240_TRIM_R(crate::FieldReader<u8>);
 impl DDR_RES240_TRIM_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl DDR_RES240_TRIM_R {
     }
 }
 impl core::ops::Deref for DDR_RES240_TRIM_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

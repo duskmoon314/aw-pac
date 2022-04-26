@@ -62,7 +62,7 @@ impl From<PF6_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PF6_SELECT` reader - PF6 Select"]
-pub struct PF6_SELECT_R(crate::FieldReader<u8, PF6_SELECT_A>);
+pub struct PF6_SELECT_R(crate::FieldReader<u8>);
 impl PF6_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -125,7 +125,7 @@ impl PF6_SELECT_R {
     }
 }
 impl core::ops::Deref for PF6_SELECT_R {
-    type Target = crate::FieldReader<u8, PF6_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -216,7 +216,7 @@ impl From<PF5_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PF5_SELECT` reader - PF5 Select"]
-pub struct PF5_SELECT_R(crate::FieldReader<u8, PF5_SELECT_A>);
+pub struct PF5_SELECT_R(crate::FieldReader<u8>);
 impl PF5_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -279,7 +279,7 @@ impl PF5_SELECT_R {
     }
 }
 impl core::ops::Deref for PF5_SELECT_R {
-    type Target = crate::FieldReader<u8, PF5_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -372,7 +372,7 @@ impl From<PF4_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PF4_SELECT` reader - PF4 Select"]
-pub struct PF4_SELECT_R(crate::FieldReader<u8, PF4_SELECT_A>);
+pub struct PF4_SELECT_R(crate::FieldReader<u8>);
 impl PF4_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -441,7 +441,7 @@ impl PF4_SELECT_R {
     }
 }
 impl core::ops::Deref for PF4_SELECT_R {
-    type Target = crate::FieldReader<u8, PF4_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -537,7 +537,7 @@ impl From<PF3_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PF3_SELECT` reader - PF3 Select"]
-pub struct PF3_SELECT_R(crate::FieldReader<u8, PF3_SELECT_A>);
+pub struct PF3_SELECT_R(crate::FieldReader<u8>);
 impl PF3_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -600,7 +600,7 @@ impl PF3_SELECT_R {
     }
 }
 impl core::ops::Deref for PF3_SELECT_R {
-    type Target = crate::FieldReader<u8, PF3_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -693,7 +693,7 @@ impl From<PF2_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PF2_SELECT` reader - PF2 Select"]
-pub struct PF2_SELECT_R(crate::FieldReader<u8, PF2_SELECT_A>);
+pub struct PF2_SELECT_R(crate::FieldReader<u8>);
 impl PF2_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -762,7 +762,7 @@ impl PF2_SELECT_R {
     }
 }
 impl core::ops::Deref for PF2_SELECT_R {
-    type Target = crate::FieldReader<u8, PF2_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -860,7 +860,7 @@ impl From<PF1_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PF1_SELECT` reader - PF1 Select"]
-pub struct PF1_SELECT_R(crate::FieldReader<u8, PF1_SELECT_A>);
+pub struct PF1_SELECT_R(crate::FieldReader<u8>);
 impl PF1_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -929,7 +929,7 @@ impl PF1_SELECT_R {
     }
 }
 impl core::ops::Deref for PF1_SELECT_R {
-    type Target = crate::FieldReader<u8, PF1_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1027,7 +1027,7 @@ impl From<PF0_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PF0_SELECT` reader - PF0 Select"]
-pub struct PF0_SELECT_R(crate::FieldReader<u8, PF0_SELECT_A>);
+pub struct PF0_SELECT_R(crate::FieldReader<u8>);
 impl PF0_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -1096,7 +1096,7 @@ impl PF0_SELECT_R {
     }
 }
 impl core::ops::Deref for PF0_SELECT_R {
-    type Target = crate::FieldReader<u8, PF0_SELECT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

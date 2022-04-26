@@ -49,7 +49,7 @@ impl From<ERROR_FLAG_A> for bool {
     }
 }
 #[doc = "Field `ERROR_FLAG` reader - Error Flag"]
-pub struct ERROR_FLAG_R(crate::FieldReader<bool, ERROR_FLAG_A>);
+pub struct ERROR_FLAG_R(crate::FieldReader<bool>);
 impl ERROR_FLAG_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl ERROR_FLAG_R {
     }
 }
 impl core::ops::Deref for ERROR_FLAG_R {
-    type Target = crate::FieldReader<bool, ERROR_FLAG_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -119,7 +119,7 @@ impl<'a> ERROR_FLAG_W<'a> {
     }
 }
 #[doc = "Field `DET_TIME` reader - Detect Time"]
-pub struct DET_TIME_R(crate::FieldReader<u8, u8>);
+pub struct DET_TIME_R(crate::FieldReader<u8>);
 impl DET_TIME_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -127,7 +127,7 @@ impl DET_TIME_R {
     }
 }
 impl core::ops::Deref for DET_TIME_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -160,7 +160,7 @@ impl From<FRE_DET_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `FRE_DET_IRQ_EN` reader - Frequence Detect IRQ Enable"]
-pub struct FRE_DET_IRQ_EN_R(crate::FieldReader<bool, FRE_DET_IRQ_EN_A>);
+pub struct FRE_DET_IRQ_EN_R(crate::FieldReader<bool>);
 impl FRE_DET_IRQ_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -186,7 +186,7 @@ impl FRE_DET_IRQ_EN_R {
     }
 }
 impl core::ops::Deref for FRE_DET_IRQ_EN_R {
-    type Target = crate::FieldReader<bool, FRE_DET_IRQ_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -244,7 +244,7 @@ impl From<FRE_DET_FUN_EN_A> for bool {
     }
 }
 #[doc = "Field `FRE_DET_FUN_EN` reader - Frequence Detect Function Enable"]
-pub struct FRE_DET_FUN_EN_R(crate::FieldReader<bool, FRE_DET_FUN_EN_A>);
+pub struct FRE_DET_FUN_EN_R(crate::FieldReader<bool>);
 impl FRE_DET_FUN_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -270,7 +270,7 @@ impl FRE_DET_FUN_EN_R {
     }
 }
 impl core::ops::Deref for FRE_DET_FUN_EN_R {
-    type Target = crate::FieldReader<bool, FRE_DET_FUN_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

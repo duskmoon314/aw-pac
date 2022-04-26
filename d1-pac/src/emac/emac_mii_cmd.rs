@@ -54,7 +54,7 @@ impl From<MDC_DIV_RATIO_M_A> for u8 {
     }
 }
 #[doc = "Field `MDC_DIV_RATIO_M` reader - MDC Clock DIvider Ratio"]
-pub struct MDC_DIV_RATIO_M_R(crate::FieldReader<u8, MDC_DIV_RATIO_M_A>);
+pub struct MDC_DIV_RATIO_M_R(crate::FieldReader<u8>);
 impl MDC_DIV_RATIO_M_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -93,7 +93,7 @@ impl MDC_DIV_RATIO_M_R {
     }
 }
 impl core::ops::Deref for MDC_DIV_RATIO_M_R {
-    type Target = crate::FieldReader<u8, MDC_DIV_RATIO_M_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -137,7 +137,7 @@ impl<'a> MDC_DIV_RATIO_M_W<'a> {
     }
 }
 #[doc = "Field `PHY_ADDR` reader - PHY Address"]
-pub struct PHY_ADDR_R(crate::FieldReader<u8, u8>);
+pub struct PHY_ADDR_R(crate::FieldReader<u8>);
 impl PHY_ADDR_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -145,7 +145,7 @@ impl PHY_ADDR_R {
     }
 }
 impl core::ops::Deref for PHY_ADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -164,7 +164,7 @@ impl<'a> PHY_ADDR_W<'a> {
     }
 }
 #[doc = "Field `PHY_REG_ADDR` reader - PHY Register Address"]
-pub struct PHY_REG_ADDR_R(crate::FieldReader<u8, u8>);
+pub struct PHY_REG_ADDR_R(crate::FieldReader<u8>);
 impl PHY_REG_ADDR_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -172,7 +172,7 @@ impl PHY_REG_ADDR_R {
     }
 }
 impl core::ops::Deref for PHY_REG_ADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -205,7 +205,7 @@ impl From<MII_WR_A> for bool {
     }
 }
 #[doc = "Field `MII_WR` reader - MII Write and Read"]
-pub struct MII_WR_R(crate::FieldReader<bool, MII_WR_A>);
+pub struct MII_WR_R(crate::FieldReader<bool>);
 impl MII_WR_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -231,7 +231,7 @@ impl MII_WR_R {
     }
 }
 impl core::ops::Deref for MII_WR_R {
-    type Target = crate::FieldReader<bool, MII_WR_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -275,7 +275,7 @@ impl<'a> MII_WR_W<'a> {
     }
 }
 #[doc = "Field `MII_BUSY` reader - MII Status"]
-pub struct MII_BUSY_R(crate::FieldReader<bool, bool>);
+pub struct MII_BUSY_R(crate::FieldReader<bool>);
 impl MII_BUSY_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -283,7 +283,7 @@ impl MII_BUSY_R {
     }
 }
 impl core::ops::Deref for MII_BUSY_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

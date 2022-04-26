@@ -49,7 +49,7 @@ impl From<CLKEN_A> for bool {
     }
 }
 #[doc = "Field `CLKEN` reader - Gating Special Clock"]
-pub struct CLKEN_R(crate::FieldReader<bool, CLKEN_A>);
+pub struct CLKEN_R(crate::FieldReader<bool>);
 impl CLKEN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl CLKEN_R {
     }
 }
 impl core::ops::Deref for CLKEN_R {
-    type Target = crate::FieldReader<bool, CLKEN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<RSTN_A> for bool {
     }
 }
 #[doc = "Field `RSTN` reader - PHY Reset"]
-pub struct RSTN_R(crate::FieldReader<bool, RSTN_A>);
+pub struct RSTN_R(crate::FieldReader<bool>);
 impl RSTN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl RSTN_R {
     }
 }
 impl core::ops::Deref for RSTN_R {
-    type Target = crate::FieldReader<bool, RSTN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -220,7 +220,7 @@ impl From<CLK12M_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK12M_SEL` reader - OHCI 12M Source Select"]
-pub struct CLK12M_SEL_R(crate::FieldReader<u8, CLK12M_SEL_A>);
+pub struct CLK12M_SEL_R(crate::FieldReader<u8>);
 impl CLK12M_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -253,7 +253,7 @@ impl CLK12M_SEL_R {
     }
 }
 impl core::ops::Deref for CLK12M_SEL_R {
-    type Target = crate::FieldReader<u8, CLK12M_SEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

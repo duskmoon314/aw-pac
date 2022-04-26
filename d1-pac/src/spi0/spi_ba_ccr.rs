@@ -35,7 +35,7 @@ impl From<crate::W<SPI_BA_CCR_SPEC>> for W {
     }
 }
 #[doc = "Field `cdr_n` reader - Clock Divide Rate"]
-pub struct CDR_N_R(crate::FieldReader<u8, u8>);
+pub struct CDR_N_R(crate::FieldReader<u8>);
 impl CDR_N_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl CDR_N_R {
     }
 }
 impl core::ops::Deref for CDR_N_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

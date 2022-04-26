@@ -49,7 +49,7 @@ impl From<DSP_BOOT_SRAM_REMAP_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `DSP_BOOT_SRAM_REMAP_ENABLE` reader - "]
-pub struct DSP_BOOT_SRAM_REMAP_ENABLE_R(crate::FieldReader<bool, DSP_BOOT_SRAM_REMAP_ENABLE_A>);
+pub struct DSP_BOOT_SRAM_REMAP_ENABLE_R(crate::FieldReader<bool>);
 impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
     }
 }
 impl core::ops::Deref for DSP_BOOT_SRAM_REMAP_ENABLE_R {
-    type Target = crate::FieldReader<bool, DSP_BOOT_SRAM_REMAP_ENABLE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

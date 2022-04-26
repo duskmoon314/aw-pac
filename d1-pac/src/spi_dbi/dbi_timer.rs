@@ -49,7 +49,7 @@ impl From<DBI_TM_EN_A> for bool {
     }
 }
 #[doc = "Field `dbi_tm_en` reader - DBI Timer Enable"]
-pub struct DBI_TM_EN_R(crate::FieldReader<bool, DBI_TM_EN_A>);
+pub struct DBI_TM_EN_R(crate::FieldReader<bool>);
 impl DBI_TM_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl DBI_TM_EN_R {
     }
 }
 impl core::ops::Deref for DBI_TM_EN_R {
-    type Target = crate::FieldReader<bool, DBI_TM_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -119,7 +119,7 @@ impl<'a> DBI_TM_EN_W<'a> {
     }
 }
 #[doc = "Field `dbi_timer_value` reader - "]
-pub struct DBI_TIMER_VALUE_R(crate::FieldReader<u32, u32>);
+pub struct DBI_TIMER_VALUE_R(crate::FieldReader<u32>);
 impl DBI_TIMER_VALUE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
@@ -127,7 +127,7 @@ impl DBI_TIMER_VALUE_R {
     }
 }
 impl core::ops::Deref for DBI_TIMER_VALUE_R {
-    type Target = crate::FieldReader<u32, u32>;
+    type Target = crate::FieldReader<u32>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

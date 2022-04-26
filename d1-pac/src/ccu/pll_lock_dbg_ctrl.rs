@@ -49,7 +49,7 @@ impl From<PLL_LOCK_FLAG_EN_A> for bool {
     }
 }
 #[doc = "Field `PLL_LOCK_FLAG_EN` reader - Debug Enable"]
-pub struct PLL_LOCK_FLAG_EN_R(crate::FieldReader<bool, PLL_LOCK_FLAG_EN_A>);
+pub struct PLL_LOCK_FLAG_EN_R(crate::FieldReader<bool>);
 impl PLL_LOCK_FLAG_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl PLL_LOCK_FLAG_EN_R {
     }
 }
 impl core::ops::Deref for PLL_LOCK_FLAG_EN_R {
-    type Target = crate::FieldReader<bool, PLL_LOCK_FLAG_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -146,7 +146,7 @@ impl From<CLK_SRC_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
-pub struct CLK_SRC_SEL_R(crate::FieldReader<u8, CLK_SRC_SEL_A>);
+pub struct CLK_SRC_SEL_R(crate::FieldReader<u8>);
 impl CLK_SRC_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -209,7 +209,7 @@ impl CLK_SRC_SEL_R {
     }
 }
 impl core::ops::Deref for CLK_SRC_SEL_R {
-    type Target = crate::FieldReader<u8, CLK_SRC_SEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

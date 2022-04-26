@@ -35,7 +35,7 @@ impl From<crate::W<SPI_SAMP_DL_SPEC>> for W {
     }
 }
 #[doc = "Field `samp_dl_cal_start` reader - Sample Delay Calibration Start"]
-pub struct SAMP_DL_CAL_START_R(crate::FieldReader<bool, bool>);
+pub struct SAMP_DL_CAL_START_R(crate::FieldReader<bool>);
 impl SAMP_DL_CAL_START_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl SAMP_DL_CAL_START_R {
     }
 }
 impl core::ops::Deref for SAMP_DL_CAL_START_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -72,7 +72,7 @@ impl<'a> SAMP_DL_CAL_START_W<'a> {
     }
 }
 #[doc = "Field `samp_dl_cal_done` reader - Sample Delay Calibration Dont"]
-pub struct SAMP_DL_CAL_DONE_R(crate::FieldReader<bool, bool>);
+pub struct SAMP_DL_CAL_DONE_R(crate::FieldReader<bool>);
 impl SAMP_DL_CAL_DONE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -80,14 +80,14 @@ impl SAMP_DL_CAL_DONE_R {
     }
 }
 impl core::ops::Deref for SAMP_DL_CAL_DONE_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
 #[doc = "Field `samp_dl` reader - Sample Delay"]
-pub struct SAMP_DL_R(crate::FieldReader<u8, u8>);
+pub struct SAMP_DL_R(crate::FieldReader<u8>);
 impl SAMP_DL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -95,14 +95,14 @@ impl SAMP_DL_R {
     }
 }
 impl core::ops::Deref for SAMP_DL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
 #[doc = "Field `samp_dl_sw_en` reader - Sample Delay Software Enable"]
-pub struct SAMP_DL_SW_EN_R(crate::FieldReader<bool, bool>);
+pub struct SAMP_DL_SW_EN_R(crate::FieldReader<bool>);
 impl SAMP_DL_SW_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -110,7 +110,7 @@ impl SAMP_DL_SW_EN_R {
     }
 }
 impl core::ops::Deref for SAMP_DL_SW_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -139,7 +139,7 @@ impl<'a> SAMP_DL_SW_EN_W<'a> {
     }
 }
 #[doc = "Field `samp_dl_sw` reader - Sample Delay Software"]
-pub struct SAMP_DL_SW_R(crate::FieldReader<u8, u8>);
+pub struct SAMP_DL_SW_R(crate::FieldReader<u8>);
 impl SAMP_DL_SW_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -147,7 +147,7 @@ impl SAMP_DL_SW_R {
     }
 }
 impl core::ops::Deref for SAMP_DL_SW_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

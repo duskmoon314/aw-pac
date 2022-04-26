@@ -49,7 +49,7 @@ impl From<WDOG_IRQ_PEND_A> for bool {
     }
 }
 #[doc = "Field `wdog_irq_pend` reader - "]
-pub struct WDOG_IRQ_PEND_R(crate::FieldReader<bool, WDOG_IRQ_PEND_A>);
+pub struct WDOG_IRQ_PEND_R(crate::FieldReader<bool>);
 impl WDOG_IRQ_PEND_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl WDOG_IRQ_PEND_R {
     }
 }
 impl core::ops::Deref for WDOG_IRQ_PEND_R {
-    type Target = crate::FieldReader<bool, WDOG_IRQ_PEND_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

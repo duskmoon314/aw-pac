@@ -35,7 +35,7 @@ impl From<crate::W<PE_DAT_SPEC>> for W {
     }
 }
 #[doc = "Field `PE_DAT` reader - PE Data"]
-pub struct PE_DAT_R(crate::FieldReader<u32, u32>);
+pub struct PE_DAT_R(crate::FieldReader<u32>);
 impl PE_DAT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
@@ -43,7 +43,7 @@ impl PE_DAT_R {
     }
 }
 impl core::ops::Deref for PE_DAT_R {
-    type Target = crate::FieldReader<u32, u32>;
+    type Target = crate::FieldReader<u32>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

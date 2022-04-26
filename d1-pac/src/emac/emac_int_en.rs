@@ -49,7 +49,7 @@ impl From<RX_EARLY_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_EARLY_INT_EN` reader - Early Receive Interrupt"]
-pub struct RX_EARLY_INT_EN_R(crate::FieldReader<bool, RX_EARLY_INT_EN_A>);
+pub struct RX_EARLY_INT_EN_R(crate::FieldReader<bool>);
 impl RX_EARLY_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl RX_EARLY_INT_EN_R {
     }
 }
 impl core::ops::Deref for RX_EARLY_INT_EN_R {
-    type Target = crate::FieldReader<bool, RX_EARLY_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<RX_OVERFLOW_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_OVERFLOW_INT_EN` reader - Receive Overflow Interrupt"]
-pub struct RX_OVERFLOW_INT_EN_R(crate::FieldReader<bool, RX_OVERFLOW_INT_EN_A>);
+pub struct RX_OVERFLOW_INT_EN_R(crate::FieldReader<bool>);
 impl RX_OVERFLOW_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl RX_OVERFLOW_INT_EN_R {
     }
 }
 impl core::ops::Deref for RX_OVERFLOW_INT_EN_R {
-    type Target = crate::FieldReader<bool, RX_OVERFLOW_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<RX_TIMEOUT_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_TIMEOUT_INT_EN` reader - Receive Timeout Interrupt"]
-pub struct RX_TIMEOUT_INT_EN_R(crate::FieldReader<bool, RX_TIMEOUT_INT_EN_A>);
+pub struct RX_TIMEOUT_INT_EN_R(crate::FieldReader<bool>);
 impl RX_TIMEOUT_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl RX_TIMEOUT_INT_EN_R {
     }
 }
 impl core::ops::Deref for RX_TIMEOUT_INT_EN_R {
-    type Target = crate::FieldReader<bool, RX_TIMEOUT_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -301,7 +301,7 @@ impl From<RX_DMA_STOPPED_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_DMA_STOPPED_INT_EN` reader - Receive DMA FSM Stopped Interrupt"]
-pub struct RX_DMA_STOPPED_INT_EN_R(crate::FieldReader<bool, RX_DMA_STOPPED_INT_EN_A>);
+pub struct RX_DMA_STOPPED_INT_EN_R(crate::FieldReader<bool>);
 impl RX_DMA_STOPPED_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -327,7 +327,7 @@ impl RX_DMA_STOPPED_INT_EN_R {
     }
 }
 impl core::ops::Deref for RX_DMA_STOPPED_INT_EN_R {
-    type Target = crate::FieldReader<bool, RX_DMA_STOPPED_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -385,7 +385,7 @@ impl From<RX_BUF_UA_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_BUF_UA_INT_EN` reader - Receive Buffer Unavailable Interrupt"]
-pub struct RX_BUF_UA_INT_EN_R(crate::FieldReader<bool, RX_BUF_UA_INT_EN_A>);
+pub struct RX_BUF_UA_INT_EN_R(crate::FieldReader<bool>);
 impl RX_BUF_UA_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -411,7 +411,7 @@ impl RX_BUF_UA_INT_EN_R {
     }
 }
 impl core::ops::Deref for RX_BUF_UA_INT_EN_R {
-    type Target = crate::FieldReader<bool, RX_BUF_UA_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -469,7 +469,7 @@ impl From<RX_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_INT_EN` reader - Receive Interrupt"]
-pub struct RX_INT_EN_R(crate::FieldReader<bool, RX_INT_EN_A>);
+pub struct RX_INT_EN_R(crate::FieldReader<bool>);
 impl RX_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -495,7 +495,7 @@ impl RX_INT_EN_R {
     }
 }
 impl core::ops::Deref for RX_INT_EN_R {
-    type Target = crate::FieldReader<bool, RX_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -553,7 +553,7 @@ impl From<TX_EARLY_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_EARLY_INT_EN` reader - Early Transmit Interrupt"]
-pub struct TX_EARLY_INT_EN_R(crate::FieldReader<bool, TX_EARLY_INT_EN_A>);
+pub struct TX_EARLY_INT_EN_R(crate::FieldReader<bool>);
 impl TX_EARLY_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -579,7 +579,7 @@ impl TX_EARLY_INT_EN_R {
     }
 }
 impl core::ops::Deref for TX_EARLY_INT_EN_R {
-    type Target = crate::FieldReader<bool, TX_EARLY_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -637,7 +637,7 @@ impl From<TX_UNDERFLOW_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_UNDERFLOW_INT_EN` reader - Transmit Underflow Interrupt"]
-pub struct TX_UNDERFLOW_INT_EN_R(crate::FieldReader<bool, TX_UNDERFLOW_INT_EN_A>);
+pub struct TX_UNDERFLOW_INT_EN_R(crate::FieldReader<bool>);
 impl TX_UNDERFLOW_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -663,7 +663,7 @@ impl TX_UNDERFLOW_INT_EN_R {
     }
 }
 impl core::ops::Deref for TX_UNDERFLOW_INT_EN_R {
-    type Target = crate::FieldReader<bool, TX_UNDERFLOW_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -721,7 +721,7 @@ impl From<TX_TIMEOUT_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_TIMEOUT_INT_EN` reader - Transmit Timeout Interrupt"]
-pub struct TX_TIMEOUT_INT_EN_R(crate::FieldReader<bool, TX_TIMEOUT_INT_EN_A>);
+pub struct TX_TIMEOUT_INT_EN_R(crate::FieldReader<bool>);
 impl TX_TIMEOUT_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -747,7 +747,7 @@ impl TX_TIMEOUT_INT_EN_R {
     }
 }
 impl core::ops::Deref for TX_TIMEOUT_INT_EN_R {
-    type Target = crate::FieldReader<bool, TX_TIMEOUT_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -805,7 +805,7 @@ impl From<TX_BUF_UA_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_BUF_UA_INT_EN` reader - Transmit Buffer Available Interrupt"]
-pub struct TX_BUF_UA_INT_EN_R(crate::FieldReader<bool, TX_BUF_UA_INT_EN_A>);
+pub struct TX_BUF_UA_INT_EN_R(crate::FieldReader<bool>);
 impl TX_BUF_UA_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -831,7 +831,7 @@ impl TX_BUF_UA_INT_EN_R {
     }
 }
 impl core::ops::Deref for TX_BUF_UA_INT_EN_R {
-    type Target = crate::FieldReader<bool, TX_BUF_UA_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -889,7 +889,7 @@ impl From<TX_DMA_STOPPED_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_DMA_STOPPED_INT_EN` reader - Transmit DMA FSM Stopped Interrupt"]
-pub struct TX_DMA_STOPPED_INT_EN_R(crate::FieldReader<bool, TX_DMA_STOPPED_INT_EN_A>);
+pub struct TX_DMA_STOPPED_INT_EN_R(crate::FieldReader<bool>);
 impl TX_DMA_STOPPED_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -915,7 +915,7 @@ impl TX_DMA_STOPPED_INT_EN_R {
     }
 }
 impl core::ops::Deref for TX_DMA_STOPPED_INT_EN_R {
-    type Target = crate::FieldReader<bool, TX_DMA_STOPPED_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -973,7 +973,7 @@ impl From<TX_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_INT_EN` reader - Transmit Interrupt"]
-pub struct TX_INT_EN_R(crate::FieldReader<bool, TX_INT_EN_A>);
+pub struct TX_INT_EN_R(crate::FieldReader<bool>);
 impl TX_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -999,7 +999,7 @@ impl TX_INT_EN_R {
     }
 }
 impl core::ops::Deref for TX_INT_EN_R {
-    type Target = crate::FieldReader<bool, TX_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -35,7 +35,7 @@ impl From<crate::W<PLL_AUDIO1_BIAS_SPEC>> for W {
     }
 }
 #[doc = "Field `PLL_CP` reader - PLL current bias control"]
-pub struct PLL_CP_R(crate::FieldReader<u8, u8>);
+pub struct PLL_CP_R(crate::FieldReader<u8>);
 impl PLL_CP_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl PLL_CP_R {
     }
 }
 impl core::ops::Deref for PLL_CP_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

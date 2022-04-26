@@ -54,7 +54,7 @@ impl From<SPI_ACT_M_A> for u8 {
     }
 }
 #[doc = "Field `spi_act_m` reader - SPI NDMA Active Mode"]
-pub struct SPI_ACT_M_R(crate::FieldReader<u8, SPI_ACT_M_A>);
+pub struct SPI_ACT_M_R(crate::FieldReader<u8>);
 impl SPI_ACT_M_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -93,7 +93,7 @@ impl SPI_ACT_M_R {
     }
 }
 impl core::ops::Deref for SPI_ACT_M_R {
-    type Target = crate::FieldReader<u8, SPI_ACT_M_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -151,7 +151,7 @@ impl From<SPI_ACK_M_A> for bool {
     }
 }
 #[doc = "Field `spi_ack_m` reader - SPI NDMA Acknowledge Mode"]
-pub struct SPI_ACK_M_R(crate::FieldReader<bool, SPI_ACK_M_A>);
+pub struct SPI_ACK_M_R(crate::FieldReader<bool>);
 impl SPI_ACK_M_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -177,7 +177,7 @@ impl SPI_ACK_M_R {
     }
 }
 impl core::ops::Deref for SPI_ACK_M_R {
-    type Target = crate::FieldReader<bool, SPI_ACK_M_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -221,7 +221,7 @@ impl<'a> SPI_ACK_M_W<'a> {
     }
 }
 #[doc = "Field `spi_dma_wait` reader - "]
-pub struct SPI_DMA_WAIT_R(crate::FieldReader<u8, u8>);
+pub struct SPI_DMA_WAIT_R(crate::FieldReader<u8>);
 impl SPI_DMA_WAIT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -229,7 +229,7 @@ impl SPI_DMA_WAIT_R {
     }
 }
 impl core::ops::Deref for SPI_DMA_WAIT_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

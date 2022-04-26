@@ -35,7 +35,7 @@ impl From<crate::W<LEDC_INT_STS_SPEC>> for W {
     }
 }
 #[doc = "Field `FIFO_EMPTY` reader - "]
-pub struct FIFO_EMPTY_R(crate::FieldReader<bool, bool>);
+pub struct FIFO_EMPTY_R(crate::FieldReader<bool>);
 impl FIFO_EMPTY_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,14 +43,14 @@ impl FIFO_EMPTY_R {
     }
 }
 impl core::ops::Deref for FIFO_EMPTY_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
 #[doc = "Field `FIFO_FULL` reader - "]
-pub struct FIFO_FULL_R(crate::FieldReader<bool, bool>);
+pub struct FIFO_FULL_R(crate::FieldReader<bool>);
 impl FIFO_FULL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -58,14 +58,14 @@ impl FIFO_FULL_R {
     }
 }
 impl core::ops::Deref for FIFO_FULL_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
 #[doc = "Field `FIFO_WLW` reader - "]
-pub struct FIFO_WLW_R(crate::FieldReader<u8, u8>);
+pub struct FIFO_WLW_R(crate::FieldReader<u8>);
 impl FIFO_WLW_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -73,7 +73,7 @@ impl FIFO_WLW_R {
     }
 }
 impl core::ops::Deref for FIFO_WLW_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -94,7 +94,7 @@ impl From<FIFO_OVERFLOW_INT_A> for bool {
     }
 }
 #[doc = "Field `FIFO_OVERFLOW_INT` reader - "]
-pub struct FIFO_OVERFLOW_INT_R(crate::FieldReader<bool, FIFO_OVERFLOW_INT_A>);
+pub struct FIFO_OVERFLOW_INT_R(crate::FieldReader<bool>);
 impl FIFO_OVERFLOW_INT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -120,7 +120,7 @@ impl FIFO_OVERFLOW_INT_R {
     }
 }
 impl core::ops::Deref for FIFO_OVERFLOW_INT_R {
-    type Target = crate::FieldReader<bool, FIFO_OVERFLOW_INT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -178,7 +178,7 @@ impl From<WAITDATA_TIMEOUT_INT_A> for bool {
     }
 }
 #[doc = "Field `WAITDATA_TIMEOUT_INT` reader - "]
-pub struct WAITDATA_TIMEOUT_INT_R(crate::FieldReader<bool, WAITDATA_TIMEOUT_INT_A>);
+pub struct WAITDATA_TIMEOUT_INT_R(crate::FieldReader<bool>);
 impl WAITDATA_TIMEOUT_INT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -204,7 +204,7 @@ impl WAITDATA_TIMEOUT_INT_R {
     }
 }
 impl core::ops::Deref for WAITDATA_TIMEOUT_INT_R {
-    type Target = crate::FieldReader<bool, WAITDATA_TIMEOUT_INT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -262,7 +262,7 @@ impl From<FIFO_CPUREQ_INT_A> for bool {
     }
 }
 #[doc = "Field `FIFO_CPUREQ_INT` reader - "]
-pub struct FIFO_CPUREQ_INT_R(crate::FieldReader<bool, FIFO_CPUREQ_INT_A>);
+pub struct FIFO_CPUREQ_INT_R(crate::FieldReader<bool>);
 impl FIFO_CPUREQ_INT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -288,7 +288,7 @@ impl FIFO_CPUREQ_INT_R {
     }
 }
 impl core::ops::Deref for FIFO_CPUREQ_INT_R {
-    type Target = crate::FieldReader<bool, FIFO_CPUREQ_INT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -346,7 +346,7 @@ impl From<LEC_TRANS_FINISH_INT_A> for bool {
     }
 }
 #[doc = "Field `LEC_TRANS_FINISH_INT` reader - "]
-pub struct LEC_TRANS_FINISH_INT_R(crate::FieldReader<bool, LEC_TRANS_FINISH_INT_A>);
+pub struct LEC_TRANS_FINISH_INT_R(crate::FieldReader<bool>);
 impl LEC_TRANS_FINISH_INT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -372,7 +372,7 @@ impl LEC_TRANS_FINISH_INT_R {
     }
 }
 impl core::ops::Deref for LEC_TRANS_FINISH_INT_R {
-    type Target = crate::FieldReader<bool, LEC_TRANS_FINISH_INT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

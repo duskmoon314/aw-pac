@@ -28,7 +28,7 @@ impl From<RT_SIG_A> for bool {
     }
 }
 #[doc = "Field `RT_SIG` reader - Retire Signal"]
-pub struct RT_SIG_R(crate::FieldReader<bool, RT_SIG_A>);
+pub struct RT_SIG_R(crate::FieldReader<bool>);
 impl RT_SIG_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -54,14 +54,14 @@ impl RT_SIG_R {
     }
 }
 impl core::ops::Deref for RT_SIG_R {
-    type Target = crate::FieldReader<bool, RT_SIG_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
 #[doc = "Field `RT_PC_H` reader - Retire PC\\[39:32\\]"]
-pub struct RT_PC_H_R(crate::FieldReader<u8, u8>);
+pub struct RT_PC_H_R(crate::FieldReader<u8>);
 impl RT_PC_H_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -69,7 +69,7 @@ impl RT_PC_H_R {
     }
 }
 impl core::ops::Deref for RT_PC_H_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

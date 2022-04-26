@@ -49,7 +49,7 @@ impl From<RISCV_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `RISCV_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct RISCV_MCLK_EN_R(crate::FieldReader<bool, RISCV_MCLK_EN_A>);
+pub struct RISCV_MCLK_EN_R(crate::FieldReader<bool>);
 impl RISCV_MCLK_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl RISCV_MCLK_EN_R {
     }
 }
 impl core::ops::Deref for RISCV_MCLK_EN_R {
-    type Target = crate::FieldReader<bool, RISCV_MCLK_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<G2D_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `G2D_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct G2D_MCLK_EN_R(crate::FieldReader<bool, G2D_MCLK_EN_A>);
+pub struct G2D_MCLK_EN_R(crate::FieldReader<bool>);
 impl G2D_MCLK_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl G2D_MCLK_EN_R {
     }
 }
 impl core::ops::Deref for G2D_MCLK_EN_R {
-    type Target = crate::FieldReader<bool, G2D_MCLK_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<CSI_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `CSI_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct CSI_MCLK_EN_R(crate::FieldReader<bool, CSI_MCLK_EN_A>);
+pub struct CSI_MCLK_EN_R(crate::FieldReader<bool>);
 impl CSI_MCLK_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl CSI_MCLK_EN_R {
     }
 }
 impl core::ops::Deref for CSI_MCLK_EN_R {
-    type Target = crate::FieldReader<bool, CSI_MCLK_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -301,7 +301,7 @@ impl From<TVIN_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `TVIN_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct TVIN_MCLK_EN_R(crate::FieldReader<bool, TVIN_MCLK_EN_A>);
+pub struct TVIN_MCLK_EN_R(crate::FieldReader<bool>);
 impl TVIN_MCLK_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -327,7 +327,7 @@ impl TVIN_MCLK_EN_R {
     }
 }
 impl core::ops::Deref for TVIN_MCLK_EN_R {
-    type Target = crate::FieldReader<bool, TVIN_MCLK_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -385,7 +385,7 @@ impl From<CE_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `CE_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct CE_MCLK_EN_R(crate::FieldReader<bool, CE_MCLK_EN_A>);
+pub struct CE_MCLK_EN_R(crate::FieldReader<bool>);
 impl CE_MCLK_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -411,7 +411,7 @@ impl CE_MCLK_EN_R {
     }
 }
 impl core::ops::Deref for CE_MCLK_EN_R {
-    type Target = crate::FieldReader<bool, CE_MCLK_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -469,7 +469,7 @@ impl From<VE_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `VE_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct VE_MCLK_EN_R(crate::FieldReader<bool, VE_MCLK_EN_A>);
+pub struct VE_MCLK_EN_R(crate::FieldReader<bool>);
 impl VE_MCLK_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -495,7 +495,7 @@ impl VE_MCLK_EN_R {
     }
 }
 impl core::ops::Deref for VE_MCLK_EN_R {
-    type Target = crate::FieldReader<bool, VE_MCLK_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -553,7 +553,7 @@ impl From<DMA_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `DMA_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct DMA_MCLK_EN_R(crate::FieldReader<bool, DMA_MCLK_EN_A>);
+pub struct DMA_MCLK_EN_R(crate::FieldReader<bool>);
 impl DMA_MCLK_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -579,7 +579,7 @@ impl DMA_MCLK_EN_R {
     }
 }
 impl core::ops::Deref for DMA_MCLK_EN_R {
-    type Target = crate::FieldReader<bool, DMA_MCLK_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

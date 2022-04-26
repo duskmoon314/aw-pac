@@ -35,7 +35,7 @@ impl From<crate::W<EMAC_ADDR_HIGH0_SPEC>> for W {
     }
 }
 #[doc = "Field `MAC_ADDR_HIGH0` reader - "]
-pub struct MAC_ADDR_HIGH0_R(crate::FieldReader<u16, u16>);
+pub struct MAC_ADDR_HIGH0_R(crate::FieldReader<u16>);
 impl MAC_ADDR_HIGH0_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -43,7 +43,7 @@ impl MAC_ADDR_HIGH0_R {
     }
 }
 impl core::ops::Deref for MAC_ADDR_HIGH0_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

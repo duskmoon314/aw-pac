@@ -31,7 +31,7 @@ impl From<WM_STA_A> for u8 {
     }
 }
 #[doc = "Field `WM_STA` reader - Work Mode Status"]
-pub struct WM_STA_R(crate::FieldReader<u8, WM_STA_A>);
+pub struct WM_STA_R(crate::FieldReader<u8>);
 impl WM_STA_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -64,7 +64,7 @@ impl WM_STA_R {
     }
 }
 impl core::ops::Deref for WM_STA_R {
-    type Target = crate::FieldReader<u8, WM_STA_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -49,7 +49,7 @@ impl From<MSGBOX_RST_A> for bool {
     }
 }
 #[doc = "Fields `MSGBOX(0-2)_RST` reader - CPU, DSP, RISC-V MSGBOX Reset"]
-pub struct MSGBOX_RST_R(crate::FieldReader<bool, MSGBOX_RST_A>);
+pub struct MSGBOX_RST_R(crate::FieldReader<bool>);
 impl MSGBOX_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,55 +75,17 @@ impl MSGBOX_RST_R {
     }
 }
 impl core::ops::Deref for MSGBOX_RST_R {
-    type Target = crate::FieldReader<bool, MSGBOX_RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `MSGBOX(0-2)_RST` writer - CPU, DSP, RISC-V MSGBOX Reset"]
-pub struct MSGBOX_RST_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> MSGBOX_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MSGBOX_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(MSGBOX_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(MSGBOX_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `MSGBOX(0-2)_RST` const generic writer - CPU, DSP, RISC-V MSGBOX Reset"]
-pub struct MSGBOX_RST_CGW<'a, const O: usize> {
+pub struct MSGBOX_RST_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> MSGBOX_RST_CGW<'a, O> {
+impl<'a, const O: usize> MSGBOX_RST_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MSGBOX_RST_A) -> &'a mut W {
@@ -171,7 +133,7 @@ impl From<MSGBOX_GATING_A> for bool {
     }
 }
 #[doc = "Fields `MSGBOX(0-2)_GATING` reader - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
-pub struct MSGBOX_GATING_R(crate::FieldReader<bool, MSGBOX_GATING_A>);
+pub struct MSGBOX_GATING_R(crate::FieldReader<bool>);
 impl MSGBOX_GATING_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -197,55 +159,17 @@ impl MSGBOX_GATING_R {
     }
 }
 impl core::ops::Deref for MSGBOX_GATING_R {
-    type Target = crate::FieldReader<bool, MSGBOX_GATING_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `MSGBOX(0-2)_GATING` writer - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
-pub struct MSGBOX_GATING_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> MSGBOX_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MSGBOX_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(MSGBOX_GATING_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(MSGBOX_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `MSGBOX(0-2)_GATING` const generic writer - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
-pub struct MSGBOX_GATING_CGW<'a, const O: usize> {
+pub struct MSGBOX_GATING_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> MSGBOX_GATING_CGW<'a, O> {
+impl<'a, const O: usize> MSGBOX_GATING_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: MSGBOX_GATING_A) -> &'a mut W {
@@ -323,46 +247,43 @@ impl R {
 impl W {
     #[doc = "CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub unsafe fn msgbox_rst(&mut self, n: usize) -> MSGBOX_RST_W {
-        MSGBOX_RST_W {
-            w: self,
-            offset: n + 16,
-        }
+    pub unsafe fn msgbox_rst<const O: usize>(&mut self) -> MSGBOX_RST_W<O> {
+        MSGBOX_RST_W { w: self }
     }
     #[doc = "Bit 16 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub fn msgbox0_rst(&mut self) -> MSGBOX_RST_CGW<16> {
-        MSGBOX_RST_CGW { w: self }
+    pub fn msgbox0_rst(&mut self) -> MSGBOX_RST_W<16> {
+        MSGBOX_RST_W { w: self }
     }
     #[doc = "Bit 17 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub fn msgbox1_rst(&mut self) -> MSGBOX_RST_CGW<17> {
-        MSGBOX_RST_CGW { w: self }
+    pub fn msgbox1_rst(&mut self) -> MSGBOX_RST_W<17> {
+        MSGBOX_RST_W { w: self }
     }
     #[doc = "Bit 18 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub fn msgbox2_rst(&mut self) -> MSGBOX_RST_CGW<18> {
-        MSGBOX_RST_CGW { w: self }
+    pub fn msgbox2_rst(&mut self) -> MSGBOX_RST_W<18> {
+        MSGBOX_RST_W { w: self }
     }
     #[doc = "Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
-    pub unsafe fn msgbox_gating(&mut self, n: usize) -> MSGBOX_GATING_W {
-        MSGBOX_GATING_W { w: self, offset: n }
+    pub unsafe fn msgbox_gating<const O: usize>(&mut self) -> MSGBOX_GATING_W<O> {
+        MSGBOX_GATING_W { w: self }
     }
     #[doc = "Bit 0 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
-    pub fn msgbox0_gating(&mut self) -> MSGBOX_GATING_CGW<0> {
-        MSGBOX_GATING_CGW { w: self }
+    pub fn msgbox0_gating(&mut self) -> MSGBOX_GATING_W<0> {
+        MSGBOX_GATING_W { w: self }
     }
     #[doc = "Bit 1 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
-    pub fn msgbox1_gating(&mut self) -> MSGBOX_GATING_CGW<1> {
-        MSGBOX_GATING_CGW { w: self }
+    pub fn msgbox1_gating(&mut self) -> MSGBOX_GATING_W<1> {
+        MSGBOX_GATING_W { w: self }
     }
     #[doc = "Bit 2 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
-    pub fn msgbox2_gating(&mut self) -> MSGBOX_GATING_CGW<2> {
-        MSGBOX_GATING_CGW { w: self }
+    pub fn msgbox2_gating(&mut self) -> MSGBOX_GATING_W<2> {
+        MSGBOX_GATING_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

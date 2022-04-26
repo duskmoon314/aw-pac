@@ -49,7 +49,7 @@ impl From<GATING_A> for bool {
     }
 }
 #[doc = "Field `GATING` reader - Gating Clock"]
-pub struct GATING_R(crate::FieldReader<bool, GATING_A>);
+pub struct GATING_R(crate::FieldReader<bool>);
 impl GATING_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl GATING_R {
     }
 }
 impl core::ops::Deref for GATING_R {
-    type Target = crate::FieldReader<bool, GATING_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

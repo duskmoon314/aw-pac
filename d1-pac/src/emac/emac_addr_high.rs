@@ -49,7 +49,7 @@ impl From<MAC_ADDR_CTL_A> for bool {
     }
 }
 #[doc = "Field `MAC_ADDR_CTL` reader - MAC Address Valid"]
-pub struct MAC_ADDR_CTL_R(crate::FieldReader<bool, MAC_ADDR_CTL_A>);
+pub struct MAC_ADDR_CTL_R(crate::FieldReader<bool>);
 impl MAC_ADDR_CTL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl MAC_ADDR_CTL_R {
     }
 }
 impl core::ops::Deref for MAC_ADDR_CTL_R {
-    type Target = crate::FieldReader<bool, MAC_ADDR_CTL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<MAC_ADDR_TYPE_A> for bool {
     }
 }
 #[doc = "Field `MAC_ADDR_TYPE` reader - MAC Address Type"]
-pub struct MAC_ADDR_TYPE_R(crate::FieldReader<bool, MAC_ADDR_TYPE_A>);
+pub struct MAC_ADDR_TYPE_R(crate::FieldReader<bool>);
 impl MAC_ADDR_TYPE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl MAC_ADDR_TYPE_R {
     }
 }
 impl core::ops::Deref for MAC_ADDR_TYPE_R {
-    type Target = crate::FieldReader<bool, MAC_ADDR_TYPE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -203,7 +203,7 @@ impl<'a> MAC_ADDR_TYPE_W<'a> {
     }
 }
 #[doc = "Field `MAC_ADDR_BYTE_CTL` reader - MAC Address Byte Control Mask"]
-pub struct MAC_ADDR_BYTE_CTL_R(crate::FieldReader<u8, u8>);
+pub struct MAC_ADDR_BYTE_CTL_R(crate::FieldReader<u8>);
 impl MAC_ADDR_BYTE_CTL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -211,7 +211,7 @@ impl MAC_ADDR_BYTE_CTL_R {
     }
 }
 impl core::ops::Deref for MAC_ADDR_BYTE_CTL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -230,7 +230,7 @@ impl<'a> MAC_ADDR_BYTE_CTL_W<'a> {
     }
 }
 #[doc = "Field `MAC_ADDR_HIGH` reader - "]
-pub struct MAC_ADDR_HIGH_R(crate::FieldReader<u16, u16>);
+pub struct MAC_ADDR_HIGH_R(crate::FieldReader<u16>);
 impl MAC_ADDR_HIGH_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -238,7 +238,7 @@ impl MAC_ADDR_HIGH_R {
     }
 }
 impl core::ops::Deref for MAC_ADDR_HIGH_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

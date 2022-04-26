@@ -54,7 +54,7 @@ impl From<PF_DRV_A> for u8 {
     }
 }
 #[doc = "Fields `PF(0-6)_DRV` reader - PF Multi_Driving Select"]
-pub struct PF_DRV_R(crate::FieldReader<u8, PF_DRV_A>);
+pub struct PF_DRV_R(crate::FieldReader<u8>);
 impl PF_DRV_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -93,55 +93,17 @@ impl PF_DRV_R {
     }
 }
 impl core::ops::Deref for PF_DRV_R {
-    type Target = crate::FieldReader<u8, PF_DRV_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `PF(0-6)_DRV` writer - PF Multi_Driving Select"]
-pub struct PF_DRV_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> PF_DRV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PF_DRV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn l0(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L0)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn l1(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L1)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn l2(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L2)
-    }
-    #[doc = "`11`"]
-    #[inline(always)]
-    pub fn l3(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << self.offset)) | ((value as u32 & 3) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `PF(0-6)_DRV` const generic writer - PF Multi_Driving Select"]
-pub struct PF_DRV_CGW<'a, const O: usize> {
+pub struct PF_DRV_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> PF_DRV_CGW<'a, O> {
+impl<'a, const O: usize> PF_DRV_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: PF_DRV_A) -> &'a mut W {
@@ -219,46 +181,43 @@ impl R {
 impl W {
     #[doc = "PF Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pf_drv(&mut self, n: usize) -> PF_DRV_W {
-        PF_DRV_W {
-            w: self,
-            offset: n * 4,
-        }
+    pub unsafe fn pf_drv<const O: usize>(&mut self) -> PF_DRV_W<O> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Bits 0:1 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf0_drv(&mut self) -> PF_DRV_CGW<0> {
-        PF_DRV_CGW { w: self }
+    pub fn pf0_drv(&mut self) -> PF_DRV_W<0> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Bits 4:5 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf1_drv(&mut self) -> PF_DRV_CGW<4> {
-        PF_DRV_CGW { w: self }
+    pub fn pf1_drv(&mut self) -> PF_DRV_W<4> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Bits 8:9 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf2_drv(&mut self) -> PF_DRV_CGW<8> {
-        PF_DRV_CGW { w: self }
+    pub fn pf2_drv(&mut self) -> PF_DRV_W<8> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Bits 12:13 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf3_drv(&mut self) -> PF_DRV_CGW<12> {
-        PF_DRV_CGW { w: self }
+    pub fn pf3_drv(&mut self) -> PF_DRV_W<12> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Bits 16:17 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf4_drv(&mut self) -> PF_DRV_CGW<16> {
-        PF_DRV_CGW { w: self }
+    pub fn pf4_drv(&mut self) -> PF_DRV_W<16> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Bits 20:21 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf5_drv(&mut self) -> PF_DRV_CGW<20> {
-        PF_DRV_CGW { w: self }
+    pub fn pf5_drv(&mut self) -> PF_DRV_W<20> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Bits 24:25 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf6_drv(&mut self) -> PF_DRV_CGW<24> {
-        PF_DRV_CGW { w: self }
+    pub fn pf6_drv(&mut self) -> PF_DRV_W<24> {
+        PF_DRV_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

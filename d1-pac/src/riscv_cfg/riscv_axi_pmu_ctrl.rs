@@ -49,7 +49,7 @@ impl From<PMU_CLR_A> for bool {
     }
 }
 #[doc = "Field `PMU_CLR` reader - PMU Clear"]
-pub struct PMU_CLR_R(crate::FieldReader<bool, PMU_CLR_A>);
+pub struct PMU_CLR_R(crate::FieldReader<bool>);
 impl PMU_CLR_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl PMU_CLR_R {
     }
 }
 impl core::ops::Deref for PMU_CLR_R {
-    type Target = crate::FieldReader<bool, PMU_CLR_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<PMU_EN_A> for bool {
     }
 }
 #[doc = "Field `PMU_EN` reader - PMU Enable"]
-pub struct PMU_EN_R(crate::FieldReader<bool, PMU_EN_A>);
+pub struct PMU_EN_R(crate::FieldReader<bool>);
 impl PMU_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl PMU_EN_R {
     }
 }
 impl core::ops::Deref for PMU_EN_R {
-    type Target = crate::FieldReader<bool, PMU_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

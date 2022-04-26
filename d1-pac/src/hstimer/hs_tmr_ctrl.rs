@@ -49,7 +49,7 @@ impl From<HS_TMR_TEST_A> for bool {
     }
 }
 #[doc = "Field `HS_TMR_TEST` reader - Select the operating mode for HSTimer"]
-pub struct HS_TMR_TEST_R(crate::FieldReader<bool, HS_TMR_TEST_A>);
+pub struct HS_TMR_TEST_R(crate::FieldReader<bool>);
 impl HS_TMR_TEST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl HS_TMR_TEST_R {
     }
 }
 impl core::ops::Deref for HS_TMR_TEST_R {
-    type Target = crate::FieldReader<bool, HS_TMR_TEST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<HS_TMR_MODE_A> for bool {
     }
 }
 #[doc = "Field `HS_TMR_MODE` reader - Select the timing mode for HSTimer"]
-pub struct HS_TMR_MODE_R(crate::FieldReader<bool, HS_TMR_MODE_A>);
+pub struct HS_TMR_MODE_R(crate::FieldReader<bool>);
 impl HS_TMR_MODE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl HS_TMR_MODE_R {
     }
 }
 impl core::ops::Deref for HS_TMR_MODE_R {
-    type Target = crate::FieldReader<bool, HS_TMR_MODE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -224,7 +224,7 @@ impl From<HS_TMR_CLK_A> for u8 {
     }
 }
 #[doc = "Field `HS_TMR_CLK` reader - Select the pre-scale for the HSTimer clock sources"]
-pub struct HS_TMR_CLK_R(crate::FieldReader<u8, HS_TMR_CLK_A>);
+pub struct HS_TMR_CLK_R(crate::FieldReader<u8>);
 impl HS_TMR_CLK_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -269,7 +269,7 @@ impl HS_TMR_CLK_R {
     }
 }
 impl core::ops::Deref for HS_TMR_CLK_R {
-    type Target = crate::FieldReader<u8, HS_TMR_CLK_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -332,7 +332,7 @@ impl From<HS_TMR_RELOAD_A> for bool {
     }
 }
 #[doc = "Field `HS_TMR_RELOAD` reader - HSTimer Reload"]
-pub struct HS_TMR_RELOAD_R(crate::FieldReader<bool, HS_TMR_RELOAD_A>);
+pub struct HS_TMR_RELOAD_R(crate::FieldReader<bool>);
 impl HS_TMR_RELOAD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -358,7 +358,7 @@ impl HS_TMR_RELOAD_R {
     }
 }
 impl core::ops::Deref for HS_TMR_RELOAD_R {
-    type Target = crate::FieldReader<bool, HS_TMR_RELOAD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -416,7 +416,7 @@ impl From<HS_TMR_EN_A> for bool {
     }
 }
 #[doc = "Field `HS_TMR_EN` reader - HSTimer Enable"]
-pub struct HS_TMR_EN_R(crate::FieldReader<bool, HS_TMR_EN_A>);
+pub struct HS_TMR_EN_R(crate::FieldReader<bool>);
 impl HS_TMR_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -442,7 +442,7 @@ impl HS_TMR_EN_R {
     }
 }
 impl core::ops::Deref for HS_TMR_EN_R {
-    type Target = crate::FieldReader<bool, HS_TMR_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

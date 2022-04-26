@@ -49,7 +49,7 @@ impl From<MBUS_RST_A> for bool {
     }
 }
 #[doc = "Field `MBUS_RST` reader - MBUS Reset"]
-pub struct MBUS_RST_R(crate::FieldReader<bool, MBUS_RST_A>);
+pub struct MBUS_RST_R(crate::FieldReader<bool>);
 impl MBUS_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl MBUS_RST_R {
     }
 }
 impl core::ops::Deref for MBUS_RST_R {
-    type Target = crate::FieldReader<bool, MBUS_RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

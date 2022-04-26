@@ -35,7 +35,7 @@ impl From<crate::W<DBI_CTL_2_SPEC>> for W {
     }
 }
 #[doc = "Field `dbi_fifo_drq_en` reader - DBI FIFO DMA Request Enable"]
-pub struct DBI_FIFO_DRQ_EN_R(crate::FieldReader<bool, bool>);
+pub struct DBI_FIFO_DRQ_EN_R(crate::FieldReader<bool>);
 impl DBI_FIFO_DRQ_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl DBI_FIFO_DRQ_EN_R {
     }
 }
 impl core::ops::Deref for DBI_FIFO_DRQ_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -72,7 +72,7 @@ impl<'a> DBI_FIFO_DRQ_EN_W<'a> {
     }
 }
 #[doc = "Field `dbi_trig_level` reader - DBI FIFO Empty Request Trigger Level"]
-pub struct DBI_TRIG_LEVEL_R(crate::FieldReader<u8, u8>);
+pub struct DBI_TRIG_LEVEL_R(crate::FieldReader<u8>);
 impl DBI_TRIG_LEVEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -80,7 +80,7 @@ impl DBI_TRIG_LEVEL_R {
     }
 }
 impl core::ops::Deref for DBI_TRIG_LEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -99,7 +99,7 @@ impl<'a> DBI_TRIG_LEVEL_W<'a> {
     }
 }
 #[doc = "Field `dbi_sdq_out_sel` reader - DBI SDI PIN Output Select"]
-pub struct DBI_SDQ_OUT_SEL_R(crate::FieldReader<bool, bool>);
+pub struct DBI_SDQ_OUT_SEL_R(crate::FieldReader<bool>);
 impl DBI_SDQ_OUT_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -107,7 +107,7 @@ impl DBI_SDQ_OUT_SEL_R {
     }
 }
 impl core::ops::Deref for DBI_SDQ_OUT_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -136,7 +136,7 @@ impl<'a> DBI_SDQ_OUT_SEL_W<'a> {
     }
 }
 #[doc = "Field `dbi_dcx_sel` reader - DBI DCX PIN Function Select"]
-pub struct DBI_DCX_SEL_R(crate::FieldReader<bool, bool>);
+pub struct DBI_DCX_SEL_R(crate::FieldReader<bool>);
 impl DBI_DCX_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -144,7 +144,7 @@ impl DBI_DCX_SEL_R {
     }
 }
 impl core::ops::Deref for DBI_DCX_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -190,7 +190,7 @@ impl From<DBI_SDI_SEL_A> for u8 {
     }
 }
 #[doc = "Field `dbi_sdi_sel` reader - DBI SDI PIN FUnction Select"]
-pub struct DBI_SDI_SEL_R(crate::FieldReader<u8, DBI_SDI_SEL_A>);
+pub struct DBI_SDI_SEL_R(crate::FieldReader<u8>);
 impl DBI_SDI_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -223,7 +223,7 @@ impl DBI_SDI_SEL_R {
     }
 }
 impl core::ops::Deref for DBI_SDI_SEL_R {
-    type Target = crate::FieldReader<u8, DBI_SDI_SEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -262,7 +262,7 @@ impl<'a> DBI_SDI_SEL_W<'a> {
     }
 }
 #[doc = "Field `te_dbc_sel` reader - TE debounce function select"]
-pub struct TE_DBC_SEL_R(crate::FieldReader<bool, bool>);
+pub struct TE_DBC_SEL_R(crate::FieldReader<bool>);
 impl TE_DBC_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -270,7 +270,7 @@ impl TE_DBC_SEL_R {
     }
 }
 impl core::ops::Deref for TE_DBC_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -299,7 +299,7 @@ impl<'a> TE_DBC_SEL_W<'a> {
     }
 }
 #[doc = "Field `te_trig_sel` reader - TE edge trigger select"]
-pub struct TE_TRIG_SEL_R(crate::FieldReader<bool, bool>);
+pub struct TE_TRIG_SEL_R(crate::FieldReader<bool>);
 impl TE_TRIG_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -307,7 +307,7 @@ impl TE_TRIG_SEL_R {
     }
 }
 impl core::ops::Deref for TE_TRIG_SEL_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -336,7 +336,7 @@ impl<'a> TE_TRIG_SEL_W<'a> {
     }
 }
 #[doc = "Field `te_en` reader - TE Enable"]
-pub struct TE_EN_R(crate::FieldReader<bool, bool>);
+pub struct TE_EN_R(crate::FieldReader<bool>);
 impl TE_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -344,7 +344,7 @@ impl TE_EN_R {
     }
 }
 impl core::ops::Deref for TE_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

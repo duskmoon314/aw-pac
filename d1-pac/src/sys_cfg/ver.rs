@@ -14,7 +14,7 @@ impl From<crate::R<VER_SPEC>> for R {
     }
 }
 #[doc = "Field `BOOT_SEL_PAD_STA` reader - "]
-pub struct BOOT_SEL_PAD_STA_R(crate::FieldReader<u8, u8>);
+pub struct BOOT_SEL_PAD_STA_R(crate::FieldReader<u8>);
 impl BOOT_SEL_PAD_STA_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -22,7 +22,7 @@ impl BOOT_SEL_PAD_STA_R {
     }
 }
 impl core::ops::Deref for BOOT_SEL_PAD_STA_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -43,7 +43,7 @@ impl From<FEL_SEL_PAD_STA_A> for bool {
     }
 }
 #[doc = "Field `FEL_SEL_PAD_STA` reader - Fel Select Pin Status"]
-pub struct FEL_SEL_PAD_STA_R(crate::FieldReader<bool, FEL_SEL_PAD_STA_A>);
+pub struct FEL_SEL_PAD_STA_R(crate::FieldReader<bool>);
 impl FEL_SEL_PAD_STA_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -69,7 +69,7 @@ impl FEL_SEL_PAD_STA_R {
     }
 }
 impl core::ops::Deref for FEL_SEL_PAD_STA_R {
-    type Target = crate::FieldReader<bool, FEL_SEL_PAD_STA_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

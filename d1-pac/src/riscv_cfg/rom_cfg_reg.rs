@@ -35,7 +35,7 @@ impl From<crate::W<ROM_CFG_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `ROM_CFG` reader - ROM Configuration"]
-pub struct ROM_CFG_R(crate::FieldReader<u8, u8>);
+pub struct ROM_CFG_R(crate::FieldReader<u8>);
 impl ROM_CFG_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl ROM_CFG_R {
     }
 }
 impl core::ops::Deref for ROM_CFG_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

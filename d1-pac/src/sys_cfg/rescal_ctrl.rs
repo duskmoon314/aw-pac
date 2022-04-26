@@ -49,7 +49,7 @@ impl From<DDR_RES240_TRIMMING_SEL_A> for bool {
     }
 }
 #[doc = "Field `DDR_RES240_Trimming_SEL` reader - 240ohms Resistor Trimming Source Select"]
-pub struct DDR_RES240_TRIMMING_SEL_R(crate::FieldReader<bool, DDR_RES240_TRIMMING_SEL_A>);
+pub struct DDR_RES240_TRIMMING_SEL_R(crate::FieldReader<bool>);
 impl DDR_RES240_TRIMMING_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl DDR_RES240_TRIMMING_SEL_R {
     }
 }
 impl core::ops::Deref for DDR_RES240_TRIMMING_SEL_R {
-    type Target = crate::FieldReader<bool, DDR_RES240_TRIMMING_SEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -131,7 +131,7 @@ impl From<RESCAL_MODE_A> for bool {
     }
 }
 #[doc = "Field `RESCAL_MODE` reader - RESCAL Calibration Mode Select"]
-pub struct RESCAL_MODE_R(crate::FieldReader<bool, RESCAL_MODE_A>);
+pub struct RESCAL_MODE_R(crate::FieldReader<bool>);
 impl RESCAL_MODE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -152,7 +152,7 @@ impl RESCAL_MODE_R {
     }
 }
 impl core::ops::Deref for RESCAL_MODE_R {
-    type Target = crate::FieldReader<bool, RESCAL_MODE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -205,7 +205,7 @@ impl From<CAL_ANA_EN_A> for bool {
     }
 }
 #[doc = "Field `CAL_ANA_EN` reader - Calibration Circuits Analog Enable"]
-pub struct CAL_ANA_EN_R(crate::FieldReader<bool, CAL_ANA_EN_A>);
+pub struct CAL_ANA_EN_R(crate::FieldReader<bool>);
 impl CAL_ANA_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -231,7 +231,7 @@ impl CAL_ANA_EN_R {
     }
 }
 impl core::ops::Deref for CAL_ANA_EN_R {
-    type Target = crate::FieldReader<bool, CAL_ANA_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -289,7 +289,7 @@ impl From<CAL_EN_A> for bool {
     }
 }
 #[doc = "Field `CAL_EN` reader - Auto Calibration Enable"]
-pub struct CAL_EN_R(crate::FieldReader<bool, CAL_EN_A>);
+pub struct CAL_EN_R(crate::FieldReader<bool>);
 impl CAL_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -315,7 +315,7 @@ impl CAL_EN_R {
     }
 }
 impl core::ops::Deref for CAL_EN_R {
-    type Target = crate::FieldReader<bool, CAL_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

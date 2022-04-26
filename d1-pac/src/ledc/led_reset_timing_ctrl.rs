@@ -35,7 +35,7 @@ impl From<crate::W<LED_RESET_TIMING_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TR_TIME` reader - "]
-pub struct TR_TIME_R(crate::FieldReader<u16, u16>);
+pub struct TR_TIME_R(crate::FieldReader<u16>);
 impl TR_TIME_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -43,7 +43,7 @@ impl TR_TIME_R {
     }
 }
 impl core::ops::Deref for TR_TIME_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -62,7 +62,7 @@ impl<'a> TR_TIME_W<'a> {
     }
 }
 #[doc = "Field `LED_NUM` reader - "]
-pub struct LED_NUM_R(crate::FieldReader<u16, u16>);
+pub struct LED_NUM_R(crate::FieldReader<u16>);
 impl LED_NUM_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -70,7 +70,7 @@ impl LED_NUM_R {
     }
 }
 impl core::ops::Deref for LED_NUM_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

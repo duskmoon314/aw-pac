@@ -49,7 +49,7 @@ impl From<HS_TMR_IRQ_PEND_A> for bool {
     }
 }
 #[doc = "Fields `HS_TMR(0-1)_IRQ_PEND` reader - HSTimer IRQ Pending"]
-pub struct HS_TMR_IRQ_PEND_R(crate::FieldReader<bool, HS_TMR_IRQ_PEND_A>);
+pub struct HS_TMR_IRQ_PEND_R(crate::FieldReader<bool>);
 impl HS_TMR_IRQ_PEND_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,55 +75,17 @@ impl HS_TMR_IRQ_PEND_R {
     }
 }
 impl core::ops::Deref for HS_TMR_IRQ_PEND_R {
-    type Target = crate::FieldReader<bool, HS_TMR_IRQ_PEND_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `HS_TMR(0-1)_IRQ_PEND` writer - HSTimer IRQ Pending"]
-pub struct HS_TMR_IRQ_PEND_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> HS_TMR_IRQ_PEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HS_TMR_IRQ_PEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn no_effect(self) -> &'a mut W {
-        self.variant(HS_TMR_IRQ_PEND_A::NO_EFFECT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pending(self) -> &'a mut W {
-        self.variant(HS_TMR_IRQ_PEND_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `HS_TMR(0-1)_IRQ_PEND` const generic writer - HSTimer IRQ Pending"]
-pub struct HS_TMR_IRQ_PEND_CGW<'a, const O: usize> {
+pub struct HS_TMR_IRQ_PEND_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> HS_TMR_IRQ_PEND_CGW<'a, O> {
+impl<'a, const O: usize> HS_TMR_IRQ_PEND_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: HS_TMR_IRQ_PEND_A) -> &'a mut W {
@@ -176,18 +138,18 @@ impl R {
 impl W {
     #[doc = "HSTimer IRQ Pending"]
     #[inline(always)]
-    pub unsafe fn hs_tmr_irq_pend(&mut self, n: usize) -> HS_TMR_IRQ_PEND_W {
-        HS_TMR_IRQ_PEND_W { w: self, offset: n }
+    pub unsafe fn hs_tmr_irq_pend<const O: usize>(&mut self) -> HS_TMR_IRQ_PEND_W<O> {
+        HS_TMR_IRQ_PEND_W { w: self }
     }
     #[doc = "Bit 0 - HSTimer IRQ Pending"]
     #[inline(always)]
-    pub fn hs_tmr0_irq_pend(&mut self) -> HS_TMR_IRQ_PEND_CGW<0> {
-        HS_TMR_IRQ_PEND_CGW { w: self }
+    pub fn hs_tmr0_irq_pend(&mut self) -> HS_TMR_IRQ_PEND_W<0> {
+        HS_TMR_IRQ_PEND_W { w: self }
     }
     #[doc = "Bit 1 - HSTimer IRQ Pending"]
     #[inline(always)]
-    pub fn hs_tmr1_irq_pend(&mut self) -> HS_TMR_IRQ_PEND_CGW<1> {
-        HS_TMR_IRQ_PEND_CGW { w: self }
+    pub fn hs_tmr1_irq_pend(&mut self) -> HS_TMR_IRQ_PEND_W<1> {
+        HS_TMR_IRQ_PEND_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

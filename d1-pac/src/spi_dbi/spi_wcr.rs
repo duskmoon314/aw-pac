@@ -35,7 +35,7 @@ impl From<crate::W<SPI_WCR_SPEC>> for W {
     }
 }
 #[doc = "Field `swc` reader - Dual mode direction switch wait clock counter"]
-pub struct SWC_R(crate::FieldReader<u8, u8>);
+pub struct SWC_R(crate::FieldReader<u8>);
 impl SWC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl SWC_R {
     }
 }
 impl core::ops::Deref for SWC_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -62,7 +62,7 @@ impl<'a> SWC_W<'a> {
     }
 }
 #[doc = "Field `wwc` reader - Wait clock counter"]
-pub struct WWC_R(crate::FieldReader<u16, u16>);
+pub struct WWC_R(crate::FieldReader<u16>);
 impl WWC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -70,7 +70,7 @@ impl WWC_R {
     }
 }
 impl core::ops::Deref for WWC_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

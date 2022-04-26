@@ -60,7 +60,7 @@ impl From<CLK_SRC_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
-pub struct CLK_SRC_SEL_R(crate::FieldReader<u8, CLK_SRC_SEL_A>);
+pub struct CLK_SRC_SEL_R(crate::FieldReader<u8>);
 impl CLK_SRC_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -117,7 +117,7 @@ impl CLK_SRC_SEL_R {
     }
 }
 impl core::ops::Deref for CLK_SRC_SEL_R {
-    type Target = crate::FieldReader<u8, CLK_SRC_SEL_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -176,7 +176,7 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     }
 }
 #[doc = "Field `AXI_DIV_CFG` reader - Factor N"]
-pub struct AXI_DIV_CFG_R(crate::FieldReader<u8, u8>);
+pub struct AXI_DIV_CFG_R(crate::FieldReader<u8>);
 impl AXI_DIV_CFG_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -184,7 +184,7 @@ impl AXI_DIV_CFG_R {
     }
 }
 impl core::ops::Deref for AXI_DIV_CFG_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -203,7 +203,7 @@ impl<'a> AXI_DIV_CFG_W<'a> {
     }
 }
 #[doc = "Field `DIV_CFG` reader - Factor M"]
-pub struct DIV_CFG_R(crate::FieldReader<u8, u8>);
+pub struct DIV_CFG_R(crate::FieldReader<u8>);
 impl DIV_CFG_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -211,7 +211,7 @@ impl DIV_CFG_R {
     }
 }
 impl core::ops::Deref for DIV_CFG_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

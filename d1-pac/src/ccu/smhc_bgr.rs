@@ -49,7 +49,7 @@ impl From<SMHC_RST_A> for bool {
     }
 }
 #[doc = "Fields `SMHC(0-2)_RST` reader - Reset"]
-pub struct SMHC_RST_R(crate::FieldReader<bool, SMHC_RST_A>);
+pub struct SMHC_RST_R(crate::FieldReader<bool>);
 impl SMHC_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,55 +75,17 @@ impl SMHC_RST_R {
     }
 }
 impl core::ops::Deref for SMHC_RST_R {
-    type Target = crate::FieldReader<bool, SMHC_RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `SMHC(0-2)_RST` writer - Reset"]
-pub struct SMHC_RST_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> SMHC_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SMHC_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(SMHC_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(SMHC_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `SMHC(0-2)_RST` const generic writer - Reset"]
-pub struct SMHC_RST_CGW<'a, const O: usize> {
+pub struct SMHC_RST_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> SMHC_RST_CGW<'a, O> {
+impl<'a, const O: usize> SMHC_RST_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SMHC_RST_A) -> &'a mut W {
@@ -171,7 +133,7 @@ impl From<SMHC_GATING_A> for bool {
     }
 }
 #[doc = "Fields `SMHC(0-2)_GATING` reader - Gating Clock"]
-pub struct SMHC_GATING_R(crate::FieldReader<bool, SMHC_GATING_A>);
+pub struct SMHC_GATING_R(crate::FieldReader<bool>);
 impl SMHC_GATING_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -197,55 +159,17 @@ impl SMHC_GATING_R {
     }
 }
 impl core::ops::Deref for SMHC_GATING_R {
-    type Target = crate::FieldReader<bool, SMHC_GATING_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `SMHC(0-2)_GATING` writer - Gating Clock"]
-pub struct SMHC_GATING_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> SMHC_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SMHC_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(SMHC_GATING_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(SMHC_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `SMHC(0-2)_GATING` const generic writer - Gating Clock"]
-pub struct SMHC_GATING_CGW<'a, const O: usize> {
+pub struct SMHC_GATING_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> SMHC_GATING_CGW<'a, O> {
+impl<'a, const O: usize> SMHC_GATING_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: SMHC_GATING_A) -> &'a mut W {
@@ -323,46 +247,43 @@ impl R {
 impl W {
     #[doc = "Reset"]
     #[inline(always)]
-    pub unsafe fn smhc_rst(&mut self, n: usize) -> SMHC_RST_W {
-        SMHC_RST_W {
-            w: self,
-            offset: n + 16,
-        }
+    pub unsafe fn smhc_rst<const O: usize>(&mut self) -> SMHC_RST_W<O> {
+        SMHC_RST_W { w: self }
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn smhc0_rst(&mut self) -> SMHC_RST_CGW<16> {
-        SMHC_RST_CGW { w: self }
+    pub fn smhc0_rst(&mut self) -> SMHC_RST_W<16> {
+        SMHC_RST_W { w: self }
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
-    pub fn smhc1_rst(&mut self) -> SMHC_RST_CGW<17> {
-        SMHC_RST_CGW { w: self }
+    pub fn smhc1_rst(&mut self) -> SMHC_RST_W<17> {
+        SMHC_RST_W { w: self }
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
-    pub fn smhc2_rst(&mut self) -> SMHC_RST_CGW<18> {
-        SMHC_RST_CGW { w: self }
+    pub fn smhc2_rst(&mut self) -> SMHC_RST_W<18> {
+        SMHC_RST_W { w: self }
     }
     #[doc = "Gating Clock"]
     #[inline(always)]
-    pub unsafe fn smhc_gating(&mut self, n: usize) -> SMHC_GATING_W {
-        SMHC_GATING_W { w: self, offset: n }
+    pub unsafe fn smhc_gating<const O: usize>(&mut self) -> SMHC_GATING_W<O> {
+        SMHC_GATING_W { w: self }
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
-    pub fn smhc0_gating(&mut self) -> SMHC_GATING_CGW<0> {
-        SMHC_GATING_CGW { w: self }
+    pub fn smhc0_gating(&mut self) -> SMHC_GATING_W<0> {
+        SMHC_GATING_W { w: self }
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
-    pub fn smhc1_gating(&mut self) -> SMHC_GATING_CGW<1> {
-        SMHC_GATING_CGW { w: self }
+    pub fn smhc1_gating(&mut self) -> SMHC_GATING_W<1> {
+        SMHC_GATING_W { w: self }
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
-    pub fn smhc2_gating(&mut self) -> SMHC_GATING_CGW<2> {
-        SMHC_GATING_CGW { w: self }
+    pub fn smhc2_gating(&mut self) -> SMHC_GATING_W<2> {
+        SMHC_GATING_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

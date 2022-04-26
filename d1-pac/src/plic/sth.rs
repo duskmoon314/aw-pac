@@ -110,7 +110,7 @@ impl From<PRIORITY_A> for u8 {
     }
 }
 #[doc = "Field `priority` reader - "]
-pub struct PRIORITY_R(crate::FieldReader<u8, PRIORITY_A>);
+pub struct PRIORITY_R(crate::FieldReader<u8>);
 impl PRIORITY_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -317,7 +317,7 @@ impl PRIORITY_R {
     }
 }
 impl core::ops::Deref for PRIORITY_R {
-    type Target = crate::FieldReader<u8, PRIORITY_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

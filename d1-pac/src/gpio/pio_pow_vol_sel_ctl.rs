@@ -49,7 +49,7 @@ impl From<VCC_PF_PWR_VOL_SEL_A> for bool {
     }
 }
 #[doc = "Field `VCC_PF_PWR_VOL_SEL` reader - VCC_PF Power Voltage Select Control"]
-pub struct VCC_PF_PWR_VOL_SEL_R(crate::FieldReader<bool, VCC_PF_PWR_VOL_SEL_A>);
+pub struct VCC_PF_PWR_VOL_SEL_R(crate::FieldReader<bool>);
 impl VCC_PF_PWR_VOL_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl VCC_PF_PWR_VOL_SEL_R {
     }
 }
 impl core::ops::Deref for VCC_PF_PWR_VOL_SEL_R {
-    type Target = crate::FieldReader<bool, VCC_PF_PWR_VOL_SEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

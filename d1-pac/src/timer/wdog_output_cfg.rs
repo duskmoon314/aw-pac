@@ -35,7 +35,7 @@ impl From<crate::W<WDOG_OUTPUT_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `WDOG_OUTPUT_CONFIG` reader - Configure the valid time for the watchdog reset signal."]
-pub struct WDOG_OUTPUT_CONFIG_R(crate::FieldReader<u16, u16>);
+pub struct WDOG_OUTPUT_CONFIG_R(crate::FieldReader<u16>);
 impl WDOG_OUTPUT_CONFIG_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -43,7 +43,7 @@ impl WDOG_OUTPUT_CONFIG_R {
     }
 }
 impl core::ops::Deref for WDOG_OUTPUT_CONFIG_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

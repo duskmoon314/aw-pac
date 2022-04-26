@@ -54,6 +54,12 @@ pub enum Interrupt {
     USB1_EHCI = 49,
     #[doc = "50 - USB1_OHCI"]
     USB1_OHCI = 50,
+    #[doc = "56 - SMHC0"]
+    SMHC0 = 56,
+    #[doc = "57 - SMHC1"]
+    SMHC1 = 57,
+    #[doc = "58 - SMHC2"]
+    SMHC2 = 58,
     #[doc = "62 - EMAC"]
     EMAC = 62,
     #[doc = "66 - DMAC_NS"]
@@ -141,6 +147,9 @@ impl Interrupt {
             47 => Ok(Interrupt::USB0_OHCI),
             49 => Ok(Interrupt::USB1_EHCI),
             50 => Ok(Interrupt::USB1_OHCI),
+            56 => Ok(Interrupt::SMHC0),
+            57 => Ok(Interrupt::SMHC1),
+            58 => Ok(Interrupt::SMHC2),
             62 => Ok(Interrupt::EMAC),
             66 => Ok(Interrupt::DMAC_NS),
             68 => Ok(Interrupt::CE_NS),

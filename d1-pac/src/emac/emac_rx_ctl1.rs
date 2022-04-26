@@ -35,7 +35,7 @@ impl From<crate::W<EMAC_RX_CTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `RX_DMA_START` reader - "]
-pub struct RX_DMA_START_R(crate::FieldReader<bool, bool>);
+pub struct RX_DMA_START_R(crate::FieldReader<bool>);
 impl RX_DMA_START_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl RX_DMA_START_R {
     }
 }
 impl core::ops::Deref for RX_DMA_START_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -86,7 +86,7 @@ impl From<RX_EMA_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_EMA_EN` reader - Receive DMA Enable"]
-pub struct RX_EMA_EN_R(crate::FieldReader<bool, RX_EMA_EN_A>);
+pub struct RX_EMA_EN_R(crate::FieldReader<bool>);
 impl RX_EMA_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -112,7 +112,7 @@ impl RX_EMA_EN_R {
     }
 }
 impl core::ops::Deref for RX_EMA_EN_R {
-    type Target = crate::FieldReader<bool, RX_EMA_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -170,7 +170,7 @@ impl From<RX_FIFO_FLOW_CTL_A> for bool {
     }
 }
 #[doc = "Field `RX_FIFO_FLOW_CTL` reader - Receive FIFO Flow Control Enable"]
-pub struct RX_FIFO_FLOW_CTL_R(crate::FieldReader<bool, RX_FIFO_FLOW_CTL_A>);
+pub struct RX_FIFO_FLOW_CTL_R(crate::FieldReader<bool>);
 impl RX_FIFO_FLOW_CTL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -196,7 +196,7 @@ impl RX_FIFO_FLOW_CTL_R {
     }
 }
 impl core::ops::Deref for RX_FIFO_FLOW_CTL_R {
-    type Target = crate::FieldReader<bool, RX_FIFO_FLOW_CTL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -259,7 +259,7 @@ impl From<RX_FLOW_CTL_TH_DEACT_A> for u8 {
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_DEACT` reader - Threshold for Deactivating Flow Control"]
-pub struct RX_FLOW_CTL_TH_DEACT_R(crate::FieldReader<u8, RX_FLOW_CTL_TH_DEACT_A>);
+pub struct RX_FLOW_CTL_TH_DEACT_R(crate::FieldReader<u8>);
 impl RX_FLOW_CTL_TH_DEACT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -298,7 +298,7 @@ impl RX_FLOW_CTL_TH_DEACT_R {
     }
 }
 impl core::ops::Deref for RX_FLOW_CTL_TH_DEACT_R {
-    type Target = crate::FieldReader<u8, RX_FLOW_CTL_TH_DEACT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -361,7 +361,7 @@ impl From<RX_FLOW_CTL_TH_ACT_A> for u8 {
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_ACT` reader - Threshold for Activating Flow Control"]
-pub struct RX_FLOW_CTL_TH_ACT_R(crate::FieldReader<u8, RX_FLOW_CTL_TH_ACT_A>);
+pub struct RX_FLOW_CTL_TH_ACT_R(crate::FieldReader<u8>);
 impl RX_FLOW_CTL_TH_ACT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -400,7 +400,7 @@ impl RX_FLOW_CTL_TH_ACT_R {
     }
 }
 impl core::ops::Deref for RX_FLOW_CTL_TH_ACT_R {
-    type Target = crate::FieldReader<u8, RX_FLOW_CTL_TH_ACT_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -463,7 +463,7 @@ impl From<RX_TH_A> for u8 {
     }
 }
 #[doc = "Field `RX_TH` reader - Threshold for RX DMA FIFO Start"]
-pub struct RX_TH_R(crate::FieldReader<u8, RX_TH_A>);
+pub struct RX_TH_R(crate::FieldReader<u8>);
 impl RX_TH_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -502,7 +502,7 @@ impl RX_TH_R {
     }
 }
 impl core::ops::Deref for RX_TH_R {
-    type Target = crate::FieldReader<u8, RX_TH_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -560,7 +560,7 @@ impl From<RX_ERR_FRM_A> for bool {
     }
 }
 #[doc = "Field `RX_ERR_FRM` reader - "]
-pub struct RX_ERR_FRM_R(crate::FieldReader<bool, RX_ERR_FRM_A>);
+pub struct RX_ERR_FRM_R(crate::FieldReader<bool>);
 impl RX_ERR_FRM_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -586,7 +586,7 @@ impl RX_ERR_FRM_R {
     }
 }
 impl core::ops::Deref for RX_ERR_FRM_R {
-    type Target = crate::FieldReader<bool, RX_ERR_FRM_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -630,7 +630,7 @@ impl<'a> RX_ERR_FRM_W<'a> {
     }
 }
 #[doc = "Field `RX_RUNT_FRM` reader - "]
-pub struct RX_RUNT_FRM_R(crate::FieldReader<bool, bool>);
+pub struct RX_RUNT_FRM_R(crate::FieldReader<bool>);
 impl RX_RUNT_FRM_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -638,7 +638,7 @@ impl RX_RUNT_FRM_R {
     }
 }
 impl core::ops::Deref for RX_RUNT_FRM_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -681,7 +681,7 @@ impl From<RX_MD_A> for bool {
     }
 }
 #[doc = "Field `RX_MD` reader - Receive Mode"]
-pub struct RX_MD_R(crate::FieldReader<bool, RX_MD_A>);
+pub struct RX_MD_R(crate::FieldReader<bool>);
 impl RX_MD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -707,7 +707,7 @@ impl RX_MD_R {
     }
 }
 impl core::ops::Deref for RX_MD_R {
-    type Target = crate::FieldReader<bool, RX_MD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -765,7 +765,7 @@ impl From<FLUSH_RX_FRM_A> for bool {
     }
 }
 #[doc = "Field `FLUSH_RX_FRM` reader - Flush Receive Frames"]
-pub struct FLUSH_RX_FRM_R(crate::FieldReader<bool, FLUSH_RX_FRM_A>);
+pub struct FLUSH_RX_FRM_R(crate::FieldReader<bool>);
 impl FLUSH_RX_FRM_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -791,7 +791,7 @@ impl FLUSH_RX_FRM_R {
     }
 }
 impl core::ops::Deref for FLUSH_RX_FRM_R {
-    type Target = crate::FieldReader<bool, FLUSH_RX_FRM_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

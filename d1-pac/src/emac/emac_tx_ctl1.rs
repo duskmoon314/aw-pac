@@ -49,7 +49,7 @@ impl From<TX_DMA_START_A> for bool {
     }
 }
 #[doc = "Field `TX_DMA_START` reader - Transmit DMA FSM Start"]
-pub struct TX_DMA_START_R(crate::FieldReader<bool, TX_DMA_START_A>);
+pub struct TX_DMA_START_R(crate::FieldReader<bool>);
 impl TX_DMA_START_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl TX_DMA_START_R {
     }
 }
 impl core::ops::Deref for TX_DMA_START_R {
-    type Target = crate::FieldReader<bool, TX_DMA_START_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<TX_DMA_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_DMA_EN` reader - Transmit DMA Enable"]
-pub struct TX_DMA_EN_R(crate::FieldReader<bool, TX_DMA_EN_A>);
+pub struct TX_DMA_EN_R(crate::FieldReader<bool>);
 impl TX_DMA_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl TX_DMA_EN_R {
     }
 }
 impl core::ops::Deref for TX_DMA_EN_R {
-    type Target = crate::FieldReader<bool, TX_DMA_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -222,7 +222,7 @@ impl From<TX_TH_A> for u8 {
     }
 }
 #[doc = "Field `TX_TH` reader - Threshold value of TX DMA FIFO"]
-pub struct TX_TH_R(crate::FieldReader<u8, TX_TH_A>);
+pub struct TX_TH_R(crate::FieldReader<u8>);
 impl TX_TH_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -261,7 +261,7 @@ impl TX_TH_R {
     }
 }
 impl core::ops::Deref for TX_TH_R {
-    type Target = crate::FieldReader<u8, TX_TH_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -319,7 +319,7 @@ impl From<TX_MD_A> for bool {
     }
 }
 #[doc = "Field `TX_MD` reader - Transmission Mode"]
-pub struct TX_MD_R(crate::FieldReader<bool, TX_MD_A>);
+pub struct TX_MD_R(crate::FieldReader<bool>);
 impl TX_MD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -345,7 +345,7 @@ impl TX_MD_R {
     }
 }
 impl core::ops::Deref for TX_MD_R {
-    type Target = crate::FieldReader<bool, TX_MD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -403,7 +403,7 @@ impl From<FLUSH_TX_FIFO_A> for bool {
     }
 }
 #[doc = "Field `FLUSH_TX_FIFO` reader - Flush the data in the TX FIFO"]
-pub struct FLUSH_TX_FIFO_R(crate::FieldReader<bool, FLUSH_TX_FIFO_A>);
+pub struct FLUSH_TX_FIFO_R(crate::FieldReader<bool>);
 impl FLUSH_TX_FIFO_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -429,7 +429,7 @@ impl FLUSH_TX_FIFO_R {
     }
 }
 impl core::ops::Deref for FLUSH_TX_FIFO_R {
-    type Target = crate::FieldReader<bool, FLUSH_TX_FIFO_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

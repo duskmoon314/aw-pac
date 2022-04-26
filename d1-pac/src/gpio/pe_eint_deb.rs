@@ -35,7 +35,7 @@ impl From<crate::W<PE_EINT_DEB_SPEC>> for W {
     }
 }
 #[doc = "Field `DEB_CLK_PRE_SCALE` reader - Debounce Clock Pre_scale n"]
-pub struct DEB_CLK_PRE_SCALE_R(crate::FieldReader<u8, u8>);
+pub struct DEB_CLK_PRE_SCALE_R(crate::FieldReader<u8>);
 impl DEB_CLK_PRE_SCALE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl DEB_CLK_PRE_SCALE_R {
     }
 }
 impl core::ops::Deref for DEB_CLK_PRE_SCALE_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -76,7 +76,7 @@ impl From<PIO_INT_CLK_SELECT_A> for bool {
     }
 }
 #[doc = "Field `PIO_INT_CLK_SELECT` reader - PIO Interrupt Clock Select"]
-pub struct PIO_INT_CLK_SELECT_R(crate::FieldReader<bool, PIO_INT_CLK_SELECT_A>);
+pub struct PIO_INT_CLK_SELECT_R(crate::FieldReader<bool>);
 impl PIO_INT_CLK_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -102,7 +102,7 @@ impl PIO_INT_CLK_SELECT_R {
     }
 }
 impl core::ops::Deref for PIO_INT_CLK_SELECT_R {
-    type Target = crate::FieldReader<bool, PIO_INT_CLK_SELECT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

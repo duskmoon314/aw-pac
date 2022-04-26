@@ -49,7 +49,7 @@ impl From<VCC_IO_PWR_MOD_SEL_A> for bool {
     }
 }
 #[doc = "Field `VCC_IO_PWR_MOD_SEL` reader - VCC_IO POWER MODE Select"]
-pub struct VCC_IO_PWR_MOD_SEL_R(crate::FieldReader<bool, VCC_IO_PWR_MOD_SEL_A>);
+pub struct VCC_IO_PWR_MOD_SEL_R(crate::FieldReader<bool>);
 impl VCC_IO_PWR_MOD_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl VCC_IO_PWR_MOD_SEL_R {
     }
 }
 impl core::ops::Deref for VCC_IO_PWR_MOD_SEL_R {
-    type Target = crate::FieldReader<bool, VCC_IO_PWR_MOD_SEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<P_PWR_MOD_SEL_A> for bool {
     }
 }
 #[doc = "Fields `P(0-4)_PWR_MOD_SEL` reader - PX_POWER POWER MODE Select"]
-pub struct P_PWR_MOD_SEL_R(crate::FieldReader<bool, P_PWR_MOD_SEL_A>);
+pub struct P_PWR_MOD_SEL_R(crate::FieldReader<bool>);
 impl P_PWR_MOD_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,55 +159,17 @@ impl P_PWR_MOD_SEL_R {
     }
 }
 impl core::ops::Deref for P_PWR_MOD_SEL_R {
-    type Target = crate::FieldReader<bool, P_PWR_MOD_SEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `P(0-4)_PWR_MOD_SEL` writer - PX_POWER POWER MODE Select"]
-pub struct P_PWR_MOD_SEL_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> P_PWR_MOD_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: P_PWR_MOD_SEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "3.3 V"]
-    #[inline(always)]
-    pub fn v33(self) -> &'a mut W {
-        self.variant(P_PWR_MOD_SEL_A::V33)
-    }
-    #[doc = "1.8 V"]
-    #[inline(always)]
-    pub fn v18(self) -> &'a mut W {
-        self.variant(P_PWR_MOD_SEL_A::V18)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `P(0-4)_PWR_MOD_SEL` const generic writer - PX_POWER POWER MODE Select"]
-pub struct P_PWR_MOD_SEL_CGW<'a, const O: usize> {
+pub struct P_PWR_MOD_SEL_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> P_PWR_MOD_SEL_CGW<'a, O> {
+impl<'a, const O: usize> P_PWR_MOD_SEL_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: P_PWR_MOD_SEL_A) -> &'a mut W {
@@ -285,36 +247,33 @@ impl W {
     }
     #[doc = "PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub unsafe fn p_pwr_mod_sel(&mut self, n: usize) -> P_PWR_MOD_SEL_W {
-        P_PWR_MOD_SEL_W {
-            w: self,
-            offset: n + 2,
-        }
+    pub unsafe fn p_pwr_mod_sel<const O: usize>(&mut self) -> P_PWR_MOD_SEL_W<O> {
+        P_PWR_MOD_SEL_W { w: self }
     }
     #[doc = "Bit 2 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pc_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<2> {
-        P_PWR_MOD_SEL_CGW { w: self }
+    pub fn pc_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<2> {
+        P_PWR_MOD_SEL_W { w: self }
     }
     #[doc = "Bit 3 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pd_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<3> {
-        P_PWR_MOD_SEL_CGW { w: self }
+    pub fn pd_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<3> {
+        P_PWR_MOD_SEL_W { w: self }
     }
     #[doc = "Bit 4 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pe_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<4> {
-        P_PWR_MOD_SEL_CGW { w: self }
+    pub fn pe_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<4> {
+        P_PWR_MOD_SEL_W { w: self }
     }
     #[doc = "Bit 5 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pf_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<5> {
-        P_PWR_MOD_SEL_CGW { w: self }
+    pub fn pf_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<5> {
+        P_PWR_MOD_SEL_W { w: self }
     }
     #[doc = "Bit 6 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pg_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_CGW<6> {
-        P_PWR_MOD_SEL_CGW { w: self }
+    pub fn pg_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<6> {
+        P_PWR_MOD_SEL_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,7 +35,7 @@ impl From<crate::W<SYS_LDO_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SPARE` reader - "]
-pub struct SPARE_R(crate::FieldReader<u8, u8>);
+pub struct SPARE_R(crate::FieldReader<u8>);
 impl SPARE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl SPARE_R {
     }
 }
 impl core::ops::Deref for SPARE_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -201,7 +201,7 @@ impl From<LDOB_TRIM_A> for u8 {
     }
 }
 #[doc = "Field `LDOB_TRIM` reader - "]
-pub struct LDOB_TRIM_R(crate::FieldReader<u8, LDOB_TRIM_A>);
+pub struct LDOB_TRIM_R(crate::FieldReader<u8>);
 impl LDOB_TRIM_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -600,7 +600,7 @@ impl LDOB_TRIM_R {
     }
 }
 impl core::ops::Deref for LDOB_TRIM_R {
-    type Target = crate::FieldReader<u8, LDOB_TRIM_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1019,7 +1019,7 @@ impl From<LDOA_TRIM_A> for u8 {
     }
 }
 #[doc = "Field `LDOA_TRIM` reader - "]
-pub struct LDOA_TRIM_R(crate::FieldReader<u8, LDOA_TRIM_A>);
+pub struct LDOA_TRIM_R(crate::FieldReader<u8>);
 impl LDOA_TRIM_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -1226,7 +1226,7 @@ impl LDOA_TRIM_R {
     }
 }
 impl core::ops::Deref for LDOA_TRIM_R {
-    type Target = crate::FieldReader<u8, LDOA_TRIM_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

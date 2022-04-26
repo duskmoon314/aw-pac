@@ -49,7 +49,7 @@ impl From<RST_A> for bool {
     }
 }
 #[doc = "Field `RST` reader - Reset"]
-pub struct RST_R(crate::FieldReader<bool, RST_A>);
+pub struct RST_R(crate::FieldReader<bool>);
 impl RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl RST_R {
     }
 }
 impl core::ops::Deref for RST_R {
-    type Target = crate::FieldReader<bool, RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

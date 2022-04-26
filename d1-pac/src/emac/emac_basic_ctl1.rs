@@ -35,7 +35,7 @@ impl From<crate::W<EMAC_BASIC_CTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `BURST_LEN` reader - The burst length of RX and TX DMA transfer"]
-pub struct BURST_LEN_R(crate::FieldReader<u8, u8>);
+pub struct BURST_LEN_R(crate::FieldReader<u8>);
 impl BURST_LEN_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl BURST_LEN_R {
     }
 }
 impl core::ops::Deref for BURST_LEN_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -76,7 +76,7 @@ impl From<RX_TX_PRI_A> for bool {
     }
 }
 #[doc = "Field `RX_TX_PRI` reader - RX TX DMA Priority"]
-pub struct RX_TX_PRI_R(crate::FieldReader<bool, RX_TX_PRI_A>);
+pub struct RX_TX_PRI_R(crate::FieldReader<bool>);
 impl RX_TX_PRI_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -102,7 +102,7 @@ impl RX_TX_PRI_R {
     }
 }
 impl core::ops::Deref for RX_TX_PRI_R {
-    type Target = crate::FieldReader<bool, RX_TX_PRI_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -160,7 +160,7 @@ impl From<SOFT_RST_A> for bool {
     }
 }
 #[doc = "Field `SOFT_RST` reader - Soft Reset all Registers and Logic"]
-pub struct SOFT_RST_R(crate::FieldReader<bool, SOFT_RST_A>);
+pub struct SOFT_RST_R(crate::FieldReader<bool>);
 impl SOFT_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -186,7 +186,7 @@ impl SOFT_RST_R {
     }
 }
 impl core::ops::Deref for SOFT_RST_R {
-    type Target = crate::FieldReader<bool, SOFT_RST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

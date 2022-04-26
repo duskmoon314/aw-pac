@@ -49,7 +49,7 @@ impl From<TMR1_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `tmr1_irq_en` reader - "]
-pub struct TMR1_IRQ_EN_R(crate::FieldReader<bool, TMR1_IRQ_EN_A>);
+pub struct TMR1_IRQ_EN_R(crate::FieldReader<bool>);
 impl TMR1_IRQ_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl TMR1_IRQ_EN_R {
     }
 }
 impl core::ops::Deref for TMR1_IRQ_EN_R {
-    type Target = crate::FieldReader<bool, TMR1_IRQ_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<TMR0_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `tmr0_irq_en` reader - "]
-pub struct TMR0_IRQ_EN_R(crate::FieldReader<bool, TMR0_IRQ_EN_A>);
+pub struct TMR0_IRQ_EN_R(crate::FieldReader<bool>);
 impl TMR0_IRQ_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl TMR0_IRQ_EN_R {
     }
 }
 impl core::ops::Deref for TMR0_IRQ_EN_R {
-    type Target = crate::FieldReader<bool, TMR0_IRQ_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

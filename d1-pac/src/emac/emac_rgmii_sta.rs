@@ -49,7 +49,7 @@ impl From<RGMII_LINK_A> for bool {
     }
 }
 #[doc = "Field `RGMII_LINK` reader - The link status of the RGMII interface"]
-pub struct RGMII_LINK_R(crate::FieldReader<bool, RGMII_LINK_A>);
+pub struct RGMII_LINK_R(crate::FieldReader<bool>);
 impl RGMII_LINK_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl RGMII_LINK_R {
     }
 }
 impl core::ops::Deref for RGMII_LINK_R {
-    type Target = crate::FieldReader<bool, RGMII_LINK_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -136,7 +136,7 @@ impl From<RGMII_LINK_SPD_A> for u8 {
     }
 }
 #[doc = "Field `RGMII_LINK_SPD` reader - The link speed of the RGMII interface"]
-pub struct RGMII_LINK_SPD_R(crate::FieldReader<u8, RGMII_LINK_SPD_A>);
+pub struct RGMII_LINK_SPD_R(crate::FieldReader<u8>);
 impl RGMII_LINK_SPD_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -169,7 +169,7 @@ impl RGMII_LINK_SPD_R {
     }
 }
 impl core::ops::Deref for RGMII_LINK_SPD_R {
-    type Target = crate::FieldReader<u8, RGMII_LINK_SPD_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -222,7 +222,7 @@ impl From<RGMII_LINK_MD_A> for bool {
     }
 }
 #[doc = "Field `RGMII_LINK_MD` reader - The link mode of the RGMII interface"]
-pub struct RGMII_LINK_MD_R(crate::FieldReader<bool, RGMII_LINK_MD_A>);
+pub struct RGMII_LINK_MD_R(crate::FieldReader<bool>);
 impl RGMII_LINK_MD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -248,7 +248,7 @@ impl RGMII_LINK_MD_R {
     }
 }
 impl core::ops::Deref for RGMII_LINK_MD_R {
-    type Target = crate::FieldReader<bool, RGMII_LINK_MD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

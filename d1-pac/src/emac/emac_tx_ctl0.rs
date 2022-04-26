@@ -49,7 +49,7 @@ impl From<TX_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_EN` reader - Enable Transmitter"]
-pub struct TX_EN_R(crate::FieldReader<bool, TX_EN_A>);
+pub struct TX_EN_R(crate::FieldReader<bool>);
 impl TX_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl TX_EN_R {
     }
 }
 impl core::ops::Deref for TX_EN_R {
-    type Target = crate::FieldReader<bool, TX_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<TX_FRM_LEN_CTL_A> for bool {
     }
 }
 #[doc = "Field `TX_FRM_LEN_CTL` reader - Frame Transmit Length Control"]
-pub struct TX_FRM_LEN_CTL_R(crate::FieldReader<bool, TX_FRM_LEN_CTL_A>);
+pub struct TX_FRM_LEN_CTL_R(crate::FieldReader<bool>);
 impl TX_FRM_LEN_CTL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl TX_FRM_LEN_CTL_R {
     }
 }
 impl core::ops::Deref for TX_FRM_LEN_CTL_R {
-    type Target = crate::FieldReader<bool, TX_FRM_LEN_CTL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

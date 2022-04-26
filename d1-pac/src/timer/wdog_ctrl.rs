@@ -61,7 +61,7 @@ impl From<WDOG_RESTART_A> for bool {
     }
 }
 #[doc = "Field `WDOG_RESTART` reader - Watchdog Restart"]
-pub struct WDOG_RESTART_R(crate::FieldReader<bool, WDOG_RESTART_A>);
+pub struct WDOG_RESTART_R(crate::FieldReader<bool>);
 impl WDOG_RESTART_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -87,7 +87,7 @@ impl WDOG_RESTART_R {
     }
 }
 impl core::ops::Deref for WDOG_RESTART_R {
-    type Target = crate::FieldReader<bool, WDOG_RESTART_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -56,7 +56,7 @@ impl From<EINT_CFG_A> for u8 {
     }
 }
 #[doc = "Fields `EINT(8-12)_CFG` reader - External INT Mode"]
-pub struct EINT_CFG_R(crate::FieldReader<u8, EINT_CFG_A>);
+pub struct EINT_CFG_R(crate::FieldReader<u8>);
 impl EINT_CFG_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -101,61 +101,17 @@ impl EINT_CFG_R {
     }
 }
 impl core::ops::Deref for EINT_CFG_R {
-    type Target = crate::FieldReader<u8, EINT_CFG_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `EINT(8-12)_CFG` writer - External INT Mode"]
-pub struct EINT_CFG_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> EINT_CFG_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EINT_CFG_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn positive_edge(self) -> &'a mut W {
-        self.variant(EINT_CFG_A::POSITIVE_EDGE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn negative_edge(self) -> &'a mut W {
-        self.variant(EINT_CFG_A::NEGATIVE_EDGE)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn high_level(self) -> &'a mut W {
-        self.variant(EINT_CFG_A::HIGH_LEVEL)
-    }
-    #[doc = "`11`"]
-    #[inline(always)]
-    pub fn low_level(self) -> &'a mut W {
-        self.variant(EINT_CFG_A::LOW_LEVEL)
-    }
-    #[doc = "`100`"]
-    #[inline(always)]
-    pub fn double_edge(self) -> &'a mut W {
-        self.variant(EINT_CFG_A::DOUBLE_EDGE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x0f << self.offset)) | ((value as u32 & 0x0f) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `EINT(8-12)_CFG` const generic writer - External INT Mode"]
-pub struct EINT_CFG_CGW<'a, const O: usize> {
+pub struct EINT_CFG_W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> EINT_CFG_CGW<'a, O> {
+impl<'a, const O: usize> EINT_CFG_W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: EINT_CFG_A) -> &'a mut W {
@@ -228,36 +184,33 @@ impl R {
 impl W {
     #[doc = "External INT Mode"]
     #[inline(always)]
-    pub unsafe fn eint_cfg(&mut self, n: usize) -> EINT_CFG_W {
-        EINT_CFG_W {
-            w: self,
-            offset: (n - 8) * 4,
-        }
+    pub unsafe fn eint_cfg<const O: usize>(&mut self) -> EINT_CFG_W<O> {
+        EINT_CFG_W { w: self }
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]
-    pub fn eint8_cfg(&mut self) -> EINT_CFG_CGW<0> {
-        EINT_CFG_CGW { w: self }
+    pub fn eint8_cfg(&mut self) -> EINT_CFG_W<0> {
+        EINT_CFG_W { w: self }
     }
     #[doc = "Bits 4:7 - External INT Mode"]
     #[inline(always)]
-    pub fn eint9_cfg(&mut self) -> EINT_CFG_CGW<4> {
-        EINT_CFG_CGW { w: self }
+    pub fn eint9_cfg(&mut self) -> EINT_CFG_W<4> {
+        EINT_CFG_W { w: self }
     }
     #[doc = "Bits 8:11 - External INT Mode"]
     #[inline(always)]
-    pub fn eint10_cfg(&mut self) -> EINT_CFG_CGW<8> {
-        EINT_CFG_CGW { w: self }
+    pub fn eint10_cfg(&mut self) -> EINT_CFG_W<8> {
+        EINT_CFG_W { w: self }
     }
     #[doc = "Bits 12:15 - External INT Mode"]
     #[inline(always)]
-    pub fn eint11_cfg(&mut self) -> EINT_CFG_CGW<12> {
-        EINT_CFG_CGW { w: self }
+    pub fn eint11_cfg(&mut self) -> EINT_CFG_W<12> {
+        EINT_CFG_W { w: self }
     }
     #[doc = "Bits 16:19 - External INT Mode"]
     #[inline(always)]
-    pub fn eint12_cfg(&mut self) -> EINT_CFG_CGW<16> {
-        EINT_CFG_CGW { w: self }
+    pub fn eint12_cfg(&mut self) -> EINT_CFG_W<16> {
+        EINT_CFG_W { w: self }
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

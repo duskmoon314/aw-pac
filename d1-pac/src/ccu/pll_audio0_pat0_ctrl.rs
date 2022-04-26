@@ -35,7 +35,7 @@ impl From<crate::W<PLL_AUDIO0_PAT0_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SIG_DELT_PAT_EN` reader - Sigma-Delta Pattern Enable"]
-pub struct SIG_DELT_PAT_EN_R(crate::FieldReader<bool, bool>);
+pub struct SIG_DELT_PAT_EN_R(crate::FieldReader<bool>);
 impl SIG_DELT_PAT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl SIG_DELT_PAT_EN_R {
     }
 }
 impl core::ops::Deref for SIG_DELT_PAT_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -91,7 +91,7 @@ impl From<SPR_FREQ_MODE_A> for u8 {
     }
 }
 #[doc = "Field `SPR_FREQ_MODE` reader - Spread Frequency Mode"]
-pub struct SPR_FREQ_MODE_R(crate::FieldReader<u8, SPR_FREQ_MODE_A>);
+pub struct SPR_FREQ_MODE_R(crate::FieldReader<u8>);
 impl SPR_FREQ_MODE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -130,7 +130,7 @@ impl SPR_FREQ_MODE_R {
     }
 }
 impl core::ops::Deref for SPR_FREQ_MODE_R {
-    type Target = crate::FieldReader<u8, SPR_FREQ_MODE_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -174,7 +174,7 @@ impl<'a> SPR_FREQ_MODE_W<'a> {
     }
 }
 #[doc = "Field `WAVE_STEP` reader - Wave Step"]
-pub struct WAVE_STEP_R(crate::FieldReader<u16, u16>);
+pub struct WAVE_STEP_R(crate::FieldReader<u16>);
 impl WAVE_STEP_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -182,7 +182,7 @@ impl WAVE_STEP_R {
     }
 }
 impl core::ops::Deref for WAVE_STEP_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -215,7 +215,7 @@ impl From<SDM_CLK_SEL_A> for bool {
     }
 }
 #[doc = "Field `SDM_CLK_SEL` reader - SDM Clock Select"]
-pub struct SDM_CLK_SEL_R(crate::FieldReader<bool, SDM_CLK_SEL_A>);
+pub struct SDM_CLK_SEL_R(crate::FieldReader<bool>);
 impl SDM_CLK_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -241,7 +241,7 @@ impl SDM_CLK_SEL_R {
     }
 }
 impl core::ops::Deref for SDM_CLK_SEL_R {
-    type Target = crate::FieldReader<bool, SDM_CLK_SEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -304,7 +304,7 @@ impl From<FREQ_A> for u8 {
     }
 }
 #[doc = "Field `FREQ` reader - Frequency"]
-pub struct FREQ_R(crate::FieldReader<u8, FREQ_A>);
+pub struct FREQ_R(crate::FieldReader<u8>);
 impl FREQ_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -343,7 +343,7 @@ impl FREQ_R {
     }
 }
 impl core::ops::Deref for FREQ_R {
-    type Target = crate::FieldReader<u8, FREQ_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -387,7 +387,7 @@ impl<'a> FREQ_W<'a> {
     }
 }
 #[doc = "Field `WAVE_BOT` reader - Wave Bottom"]
-pub struct WAVE_BOT_R(crate::FieldReader<u32, u32>);
+pub struct WAVE_BOT_R(crate::FieldReader<u32>);
 impl WAVE_BOT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
@@ -395,7 +395,7 @@ impl WAVE_BOT_R {
     }
 }
 impl core::ops::Deref for WAVE_BOT_R {
-    type Target = crate::FieldReader<u32, u32>;
+    type Target = crate::FieldReader<u32>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

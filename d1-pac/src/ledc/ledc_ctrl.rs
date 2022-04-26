@@ -35,7 +35,7 @@ impl From<crate::W<LEDC_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TOTAL_DATA_LENGTH` reader - "]
-pub struct TOTAL_DATA_LENGTH_R(crate::FieldReader<u16, u16>);
+pub struct TOTAL_DATA_LENGTH_R(crate::FieldReader<u16>);
 impl TOTAL_DATA_LENGTH_R {
     #[inline(always)]
     pub(crate) fn new(bits: u16) -> Self {
@@ -43,7 +43,7 @@ impl TOTAL_DATA_LENGTH_R {
     }
 }
 impl core::ops::Deref for TOTAL_DATA_LENGTH_R {
-    type Target = crate::FieldReader<u16, u16>;
+    type Target = crate::FieldReader<u16>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -62,7 +62,7 @@ impl<'a> TOTAL_DATA_LENGTH_W<'a> {
     }
 }
 #[doc = "Field `RESET_LED_EN` reader - "]
-pub struct RESET_LED_EN_R(crate::FieldReader<bool, bool>);
+pub struct RESET_LED_EN_R(crate::FieldReader<bool>);
 impl RESET_LED_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -70,7 +70,7 @@ impl RESET_LED_EN_R {
     }
 }
 impl core::ops::Deref for RESET_LED_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -122,7 +122,7 @@ impl From<LED_RGB_MODE_A> for u8 {
     }
 }
 #[doc = "Field `LED_RGB_MODE` reader - "]
-pub struct LED_RGB_MODE_R(crate::FieldReader<u8, LED_RGB_MODE_A>);
+pub struct LED_RGB_MODE_R(crate::FieldReader<u8>);
 impl LED_RGB_MODE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -173,7 +173,7 @@ impl LED_RGB_MODE_R {
     }
 }
 impl core::ops::Deref for LED_RGB_MODE_R {
-    type Target = crate::FieldReader<u8, LED_RGB_MODE_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -241,7 +241,7 @@ impl From<LED_MSB__A> for bool {
     }
 }
 #[doc = "Fields `LED_MSB_(0-3)` reader - "]
-pub struct LED_MSB__R(crate::FieldReader<bool, LED_MSB__A>);
+pub struct LED_MSB__R(crate::FieldReader<bool>);
 impl LED_MSB__R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -267,55 +267,17 @@ impl LED_MSB__R {
     }
 }
 impl core::ops::Deref for LED_MSB__R {
-    type Target = crate::FieldReader<bool, LED_MSB__A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-#[doc = "Fields `LED_MSB_(0-3)` writer - "]
-pub struct LED_MSB__W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> LED_MSB__W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LED_MSB__A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn lsb(self) -> &'a mut W {
-        self.variant(LED_MSB__A::LSB)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn msb(self) -> &'a mut W {
-        self.variant(LED_MSB__A::MSB)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << self.offset)) | ((value as u32 & 1) << self.offset);
-        self.w
-    }
-}
 #[doc = "Fields `LED_MSB_(0-3)` const generic writer - "]
-pub struct LED_MSB__CGW<'a, const O: usize> {
+pub struct LED_MSB__W<'a, const O: usize> {
     w: &'a mut W,
 }
-impl<'a, const O: usize> LED_MSB__CGW<'a, O> {
+impl<'a, const O: usize> LED_MSB__W<'a, O> {
     #[doc = r"Writes `variant` to the field"]
     #[inline(always)]
     pub fn variant(self, variant: LED_MSB__A) -> &'a mut W {
@@ -349,7 +311,7 @@ impl<'a, const O: usize> LED_MSB__CGW<'a, O> {
     }
 }
 #[doc = "Field `LEDC_SOFT_RESET` reader - "]
-pub struct LEDC_SOFT_RESET_R(crate::FieldReader<bool, bool>);
+pub struct LEDC_SOFT_RESET_R(crate::FieldReader<bool>);
 impl LEDC_SOFT_RESET_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -357,7 +319,7 @@ impl LEDC_SOFT_RESET_R {
     }
 }
 impl core::ops::Deref for LEDC_SOFT_RESET_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -400,7 +362,7 @@ impl From<LEDC_EN_A> for bool {
     }
 }
 #[doc = "Field `LEDC_EN` reader - "]
-pub struct LEDC_EN_R(crate::FieldReader<bool, LEDC_EN_A>);
+pub struct LEDC_EN_R(crate::FieldReader<bool>);
 impl LEDC_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -426,7 +388,7 @@ impl LEDC_EN_R {
     }
 }
 impl core::ops::Deref for LEDC_EN_R {
-    type Target = crate::FieldReader<bool, LEDC_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -539,31 +501,28 @@ impl W {
     }
     #[doc = ""]
     #[inline(always)]
-    pub unsafe fn led_msb_(&mut self, n: usize) -> LED_MSB__W {
-        LED_MSB__W {
-            w: self,
-            offset: n + 2,
-        }
+    pub unsafe fn led_msb_<const O: usize>(&mut self) -> LED_MSB__W<O> {
+        LED_MSB__W { w: self }
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn led_msb_b(&mut self) -> LED_MSB__CGW<2> {
-        LED_MSB__CGW { w: self }
+    pub fn led_msb_b(&mut self) -> LED_MSB__W<2> {
+        LED_MSB__W { w: self }
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn led_msb_r(&mut self) -> LED_MSB__CGW<3> {
-        LED_MSB__CGW { w: self }
+    pub fn led_msb_r(&mut self) -> LED_MSB__W<3> {
+        LED_MSB__W { w: self }
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    pub fn led_msb_g(&mut self) -> LED_MSB__CGW<4> {
-        LED_MSB__CGW { w: self }
+    pub fn led_msb_g(&mut self) -> LED_MSB__W<4> {
+        LED_MSB__W { w: self }
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    pub fn led_msb_top(&mut self) -> LED_MSB__CGW<5> {
-        LED_MSB__CGW { w: self }
+    pub fn led_msb_top(&mut self) -> LED_MSB__W<5> {
+        LED_MSB__W { w: self }
     }
     #[doc = "Bit 1"]
     #[inline(always)]

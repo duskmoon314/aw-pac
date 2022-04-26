@@ -35,7 +35,7 @@ impl From<crate::W<HS_TMR_CURNT_HI_SPEC>> for W {
     }
 }
 #[doc = "Field `HS_TMR_CUR_VALUE_HI` reader - "]
-pub struct HS_TMR_CUR_VALUE_HI_R(crate::FieldReader<u32, u32>);
+pub struct HS_TMR_CUR_VALUE_HI_R(crate::FieldReader<u32>);
 impl HS_TMR_CUR_VALUE_HI_R {
     #[inline(always)]
     pub(crate) fn new(bits: u32) -> Self {
@@ -43,7 +43,7 @@ impl HS_TMR_CUR_VALUE_HI_R {
     }
 }
 impl core::ops::Deref for HS_TMR_CUR_VALUE_HI_R {
-    type Target = crate::FieldReader<u32, u32>;
+    type Target = crate::FieldReader<u32>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

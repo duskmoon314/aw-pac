@@ -37,7 +37,7 @@ impl From<TX_DMA_STA_A> for u8 {
     }
 }
 #[doc = "Field `TX_DMA_STA` reader - The State of Transmit DMA FSM"]
-pub struct TX_DMA_STA_R(crate::FieldReader<u8, TX_DMA_STA_A>);
+pub struct TX_DMA_STA_R(crate::FieldReader<u8>);
 impl TX_DMA_STA_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -88,7 +88,7 @@ impl TX_DMA_STA_R {
     }
 }
 impl core::ops::Deref for TX_DMA_STA_R {
-    type Target = crate::FieldReader<u8, TX_DMA_STA_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

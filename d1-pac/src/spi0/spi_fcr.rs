@@ -35,7 +35,7 @@ impl From<crate::W<SPI_FCR_SPEC>> for W {
     }
 }
 #[doc = "Field `tf_rst` reader - TXFIFO Reset"]
-pub struct TF_RST_R(crate::FieldReader<bool, bool>);
+pub struct TF_RST_R(crate::FieldReader<bool>);
 impl TF_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl TF_RST_R {
     }
 }
 impl core::ops::Deref for TF_RST_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -86,7 +86,7 @@ impl From<TF_TEST_EN_A> for bool {
     }
 }
 #[doc = "Field `tf_test_en` reader - TXFIFO Test Mode Enable"]
-pub struct TF_TEST_EN_R(crate::FieldReader<bool, TF_TEST_EN_A>);
+pub struct TF_TEST_EN_R(crate::FieldReader<bool>);
 impl TF_TEST_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -112,7 +112,7 @@ impl TF_TEST_EN_R {
     }
 }
 impl core::ops::Deref for TF_TEST_EN_R {
-    type Target = crate::FieldReader<bool, TF_TEST_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -170,7 +170,7 @@ impl From<TF_DRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `tf_drq_en` reader - TXFIFO DMA Request Enable"]
-pub struct TF_DRQ_EN_R(crate::FieldReader<bool, TF_DRQ_EN_A>);
+pub struct TF_DRQ_EN_R(crate::FieldReader<bool>);
 impl TF_DRQ_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -196,7 +196,7 @@ impl TF_DRQ_EN_R {
     }
 }
 impl core::ops::Deref for TF_DRQ_EN_R {
-    type Target = crate::FieldReader<bool, TF_DRQ_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -240,7 +240,7 @@ impl<'a> TF_DRQ_EN_W<'a> {
     }
 }
 #[doc = "Field `tf_trig_level` reader - TXFIFO Empty Request Trigger Level"]
-pub struct TF_TRIG_LEVEL_R(crate::FieldReader<u8, u8>);
+pub struct TF_TRIG_LEVEL_R(crate::FieldReader<u8>);
 impl TF_TRIG_LEVEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -248,7 +248,7 @@ impl TF_TRIG_LEVEL_R {
     }
 }
 impl core::ops::Deref for TF_TRIG_LEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -267,7 +267,7 @@ impl<'a> TF_TRIG_LEVEL_W<'a> {
     }
 }
 #[doc = "Field `rf_rst` reader - RXFIFO Reset"]
-pub struct RF_RST_R(crate::FieldReader<bool, bool>);
+pub struct RF_RST_R(crate::FieldReader<bool>);
 impl RF_RST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -275,7 +275,7 @@ impl RF_RST_R {
     }
 }
 impl core::ops::Deref for RF_RST_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -318,7 +318,7 @@ impl From<RF_TEST_EN_A> for bool {
     }
 }
 #[doc = "Field `rf_test_en` reader - RXFIFO Test Mode Enable"]
-pub struct RF_TEST_EN_R(crate::FieldReader<bool, RF_TEST_EN_A>);
+pub struct RF_TEST_EN_R(crate::FieldReader<bool>);
 impl RF_TEST_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -344,7 +344,7 @@ impl RF_TEST_EN_R {
     }
 }
 impl core::ops::Deref for RF_TEST_EN_R {
-    type Target = crate::FieldReader<bool, RF_TEST_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -402,7 +402,7 @@ impl From<RF_DRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `rf_drq_en` reader - RXFIFO DMA Request Enable"]
-pub struct RF_DRQ_EN_R(crate::FieldReader<bool, RF_DRQ_EN_A>);
+pub struct RF_DRQ_EN_R(crate::FieldReader<bool>);
 impl RF_DRQ_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -428,7 +428,7 @@ impl RF_DRQ_EN_R {
     }
 }
 impl core::ops::Deref for RF_DRQ_EN_R {
-    type Target = crate::FieldReader<bool, RF_DRQ_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -472,7 +472,7 @@ impl<'a> RF_DRQ_EN_W<'a> {
     }
 }
 #[doc = "Field `rf_trig_level` reader - RXFIFO Ready Request Trigger Level"]
-pub struct RF_TRIG_LEVEL_R(crate::FieldReader<u8, u8>);
+pub struct RF_TRIG_LEVEL_R(crate::FieldReader<u8>);
 impl RF_TRIG_LEVEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -480,7 +480,7 @@ impl RF_TRIG_LEVEL_R {
     }
 }
 impl core::ops::Deref for RF_TRIG_LEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

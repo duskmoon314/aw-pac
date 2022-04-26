@@ -35,7 +35,7 @@ impl From<crate::W<PF_DAT_SPEC>> for W {
     }
 }
 #[doc = "Field `PF_DAT` reader - PF Data"]
-pub struct PF_DAT_R(crate::FieldReader<u8, u8>);
+pub struct PF_DAT_R(crate::FieldReader<u8>);
 impl PF_DAT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl PF_DAT_R {
     }
 }
 impl core::ops::Deref for PF_DAT_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -61,7 +61,7 @@ impl From<SOFT_RST_EN_A> for bool {
     }
 }
 #[doc = "Field `SOFT_RST_EN` reader - Soft Reset Enable"]
-pub struct SOFT_RST_EN_R(crate::FieldReader<bool, SOFT_RST_EN_A>);
+pub struct SOFT_RST_EN_R(crate::FieldReader<bool>);
 impl SOFT_RST_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -87,7 +87,7 @@ impl SOFT_RST_EN_R {
     }
 }
 impl core::ops::Deref for SOFT_RST_EN_R {
-    type Target = crate::FieldReader<bool, SOFT_RST_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

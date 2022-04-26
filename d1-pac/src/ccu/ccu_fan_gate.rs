@@ -49,7 +49,7 @@ impl From<CLK32K_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK32K_EN` reader - Gating for CLK32K"]
-pub struct CLK32K_EN_R(crate::FieldReader<bool, CLK32K_EN_A>);
+pub struct CLK32K_EN_R(crate::FieldReader<bool>);
 impl CLK32K_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl CLK32K_EN_R {
     }
 }
 impl core::ops::Deref for CLK32K_EN_R {
-    type Target = crate::FieldReader<bool, CLK32K_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<CLK25M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK25M_EN` reader - Gating for CLK25M"]
-pub struct CLK25M_EN_R(crate::FieldReader<bool, CLK25M_EN_A>);
+pub struct CLK25M_EN_R(crate::FieldReader<bool>);
 impl CLK25M_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl CLK25M_EN_R {
     }
 }
 impl core::ops::Deref for CLK25M_EN_R {
-    type Target = crate::FieldReader<bool, CLK25M_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<CLK16M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK16M_EN` reader - Gating for CLK16M"]
-pub struct CLK16M_EN_R(crate::FieldReader<bool, CLK16M_EN_A>);
+pub struct CLK16M_EN_R(crate::FieldReader<bool>);
 impl CLK16M_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl CLK16M_EN_R {
     }
 }
 impl core::ops::Deref for CLK16M_EN_R {
-    type Target = crate::FieldReader<bool, CLK16M_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -301,7 +301,7 @@ impl From<CLK12M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK12M_EN` reader - Gating for CLK12M"]
-pub struct CLK12M_EN_R(crate::FieldReader<bool, CLK12M_EN_A>);
+pub struct CLK12M_EN_R(crate::FieldReader<bool>);
 impl CLK12M_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -327,7 +327,7 @@ impl CLK12M_EN_R {
     }
 }
 impl core::ops::Deref for CLK12M_EN_R {
-    type Target = crate::FieldReader<bool, CLK12M_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -385,7 +385,7 @@ impl From<CLK24M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK24M_EN` reader - Gating for CLK24M"]
-pub struct CLK24M_EN_R(crate::FieldReader<bool, CLK24M_EN_A>);
+pub struct CLK24M_EN_R(crate::FieldReader<bool>);
 impl CLK24M_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -411,7 +411,7 @@ impl CLK24M_EN_R {
     }
 }
 impl core::ops::Deref for CLK24M_EN_R {
-    type Target = crate::FieldReader<bool, CLK24M_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

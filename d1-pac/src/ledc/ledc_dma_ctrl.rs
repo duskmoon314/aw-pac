@@ -49,7 +49,7 @@ impl From<LEDC_DMA_EN_A> for bool {
     }
 }
 #[doc = "Field `LEDC_DMA_EN` reader - "]
-pub struct LEDC_DMA_EN_R(crate::FieldReader<bool, LEDC_DMA_EN_A>);
+pub struct LEDC_DMA_EN_R(crate::FieldReader<bool>);
 impl LEDC_DMA_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl LEDC_DMA_EN_R {
     }
 }
 impl core::ops::Deref for LEDC_DMA_EN_R {
-    type Target = crate::FieldReader<bool, LEDC_DMA_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -119,7 +119,7 @@ impl<'a> LEDC_DMA_EN_W<'a> {
     }
 }
 #[doc = "Field `LEDC_FIFO_TRIG_LEVEL` reader - "]
-pub struct LEDC_FIFO_TRIG_LEVEL_R(crate::FieldReader<u8, u8>);
+pub struct LEDC_FIFO_TRIG_LEVEL_R(crate::FieldReader<u8>);
 impl LEDC_FIFO_TRIG_LEVEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -127,7 +127,7 @@ impl LEDC_FIFO_TRIG_LEVEL_R {
     }
 }
 impl core::ops::Deref for LEDC_FIFO_TRIG_LEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -49,7 +49,7 @@ impl From<DIS_ADDR_FILTER_A> for bool {
     }
 }
 #[doc = "Field `DIS_ADDR_FILTER` reader - Disable Address Filter"]
-pub struct DIS_ADDR_FILTER_R(crate::FieldReader<bool, DIS_ADDR_FILTER_A>);
+pub struct DIS_ADDR_FILTER_R(crate::FieldReader<bool>);
 impl DIS_ADDR_FILTER_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl DIS_ADDR_FILTER_R {
     }
 }
 impl core::ops::Deref for DIS_ADDR_FILTER_R {
-    type Target = crate::FieldReader<bool, DIS_ADDR_FILTER_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<DIS_BROADCAST_A> for bool {
     }
 }
 #[doc = "Field `DIS_BROADCAST` reader - Disable Receive Broadcast Frames"]
-pub struct DIS_BROADCAST_R(crate::FieldReader<bool, DIS_BROADCAST_A>);
+pub struct DIS_BROADCAST_R(crate::FieldReader<bool>);
 impl DIS_BROADCAST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl DIS_BROADCAST_R {
     }
 }
 impl core::ops::Deref for DIS_BROADCAST_R {
-    type Target = crate::FieldReader<bool, DIS_BROADCAST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<RX_ALL_MULTICAST_A> for bool {
     }
 }
 #[doc = "Field `RX_ALL_MULTICAST` reader - Receive All Multicast Frames Filter"]
-pub struct RX_ALL_MULTICAST_R(crate::FieldReader<bool, RX_ALL_MULTICAST_A>);
+pub struct RX_ALL_MULTICAST_R(crate::FieldReader<bool>);
 impl RX_ALL_MULTICAST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl RX_ALL_MULTICAST_R {
     }
 }
 impl core::ops::Deref for RX_ALL_MULTICAST_R {
-    type Target = crate::FieldReader<bool, RX_ALL_MULTICAST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -304,7 +304,7 @@ impl From<CTL_FRM_FILTER_A> for u8 {
     }
 }
 #[doc = "Field `CTL_FRM_FILTER` reader - Receive Control Frames Filter"]
-pub struct CTL_FRM_FILTER_R(crate::FieldReader<u8, CTL_FRM_FILTER_A>);
+pub struct CTL_FRM_FILTER_R(crate::FieldReader<u8>);
 impl CTL_FRM_FILTER_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -337,7 +337,7 @@ impl CTL_FRM_FILTER_R {
     }
 }
 impl core::ops::Deref for CTL_FRM_FILTER_R {
-    type Target = crate::FieldReader<u8, CTL_FRM_FILTER_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -390,7 +390,7 @@ impl From<HASH_MULTICAST_A> for bool {
     }
 }
 #[doc = "Field `HASH_MULTICAST` reader - Filter Multicast Frames Set"]
-pub struct HASH_MULTICAST_R(crate::FieldReader<bool, HASH_MULTICAST_A>);
+pub struct HASH_MULTICAST_R(crate::FieldReader<bool>);
 impl HASH_MULTICAST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -416,7 +416,7 @@ impl HASH_MULTICAST_R {
     }
 }
 impl core::ops::Deref for HASH_MULTICAST_R {
-    type Target = crate::FieldReader<bool, HASH_MULTICAST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -474,7 +474,7 @@ impl From<HASH_UNICAST_A> for bool {
     }
 }
 #[doc = "Field `HASH_UNICAST` reader - Filter Unicast Frames Set"]
-pub struct HASH_UNICAST_R(crate::FieldReader<bool, HASH_UNICAST_A>);
+pub struct HASH_UNICAST_R(crate::FieldReader<bool>);
 impl HASH_UNICAST_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -500,7 +500,7 @@ impl HASH_UNICAST_R {
     }
 }
 impl core::ops::Deref for HASH_UNICAST_R {
-    type Target = crate::FieldReader<bool, HASH_UNICAST_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -558,7 +558,7 @@ impl From<SA_FILTER_EN_A> for bool {
     }
 }
 #[doc = "Field `SA_FILTER_EN` reader - Receive SA Filter Enable"]
-pub struct SA_FILTER_EN_R(crate::FieldReader<bool, SA_FILTER_EN_A>);
+pub struct SA_FILTER_EN_R(crate::FieldReader<bool>);
 impl SA_FILTER_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -584,7 +584,7 @@ impl SA_FILTER_EN_R {
     }
 }
 impl core::ops::Deref for SA_FILTER_EN_R {
-    type Target = crate::FieldReader<bool, SA_FILTER_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -642,7 +642,7 @@ impl From<SA_INV_FILTER_A> for bool {
     }
 }
 #[doc = "Field `SA_INV_FILTER` reader - Receive SA Invert Filter Set"]
-pub struct SA_INV_FILTER_R(crate::FieldReader<bool, SA_INV_FILTER_A>);
+pub struct SA_INV_FILTER_R(crate::FieldReader<bool>);
 impl SA_INV_FILTER_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -668,7 +668,7 @@ impl SA_INV_FILTER_R {
     }
 }
 impl core::ops::Deref for SA_INV_FILTER_R {
-    type Target = crate::FieldReader<bool, SA_INV_FILTER_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -726,7 +726,7 @@ impl From<DA_INV_FILTER_A> for bool {
     }
 }
 #[doc = "Field `DA_INV_FILTER` reader - "]
-pub struct DA_INV_FILTER_R(crate::FieldReader<bool, DA_INV_FILTER_A>);
+pub struct DA_INV_FILTER_R(crate::FieldReader<bool>);
 impl DA_INV_FILTER_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -752,7 +752,7 @@ impl DA_INV_FILTER_R {
     }
 }
 impl core::ops::Deref for DA_INV_FILTER_R {
-    type Target = crate::FieldReader<bool, DA_INV_FILTER_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -810,7 +810,7 @@ impl From<FLT_MD_A> for bool {
     }
 }
 #[doc = "Field `FLT_MD` reader - "]
-pub struct FLT_MD_R(crate::FieldReader<bool, FLT_MD_A>);
+pub struct FLT_MD_R(crate::FieldReader<bool>);
 impl FLT_MD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -836,7 +836,7 @@ impl FLT_MD_R {
     }
 }
 impl core::ops::Deref for FLT_MD_R {
-    type Target = crate::FieldReader<bool, FLT_MD_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -894,7 +894,7 @@ impl From<RX_ALL_A> for bool {
     }
 }
 #[doc = "Field `RX_ALL` reader - Receive All Frame"]
-pub struct RX_ALL_R(crate::FieldReader<bool, RX_ALL_A>);
+pub struct RX_ALL_R(crate::FieldReader<bool>);
 impl RX_ALL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -920,7 +920,7 @@ impl RX_ALL_R {
     }
 }
 impl core::ops::Deref for RX_ALL_R {
-    type Target = crate::FieldReader<bool, RX_ALL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

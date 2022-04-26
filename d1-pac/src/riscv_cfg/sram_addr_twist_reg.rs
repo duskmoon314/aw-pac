@@ -47,7 +47,7 @@ impl<'a> SRAM_TS_KF_W<'a> {
     }
 }
 #[doc = "Field `SRAM_ADDR_TS_FG` reader - SRAM Address Twist Flag"]
-pub struct SRAM_ADDR_TS_FG_R(crate::FieldReader<bool, bool>);
+pub struct SRAM_ADDR_TS_FG_R(crate::FieldReader<bool>);
 impl SRAM_ADDR_TS_FG_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -55,7 +55,7 @@ impl SRAM_ADDR_TS_FG_R {
     }
 }
 impl core::ops::Deref for SRAM_ADDR_TS_FG_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -49,7 +49,7 @@ impl From<TS_TEST_MODE_EN_A> for bool {
     }
 }
 #[doc = "Field `TS_TEST_MODE_EN` reader - Timestamp Test Mode Enable"]
-pub struct TS_TEST_MODE_EN_R(crate::FieldReader<bool, TS_TEST_MODE_EN_A>);
+pub struct TS_TEST_MODE_EN_R(crate::FieldReader<bool>);
 impl TS_TEST_MODE_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl TS_TEST_MODE_EN_R {
     }
 }
 impl core::ops::Deref for TS_TEST_MODE_EN_R {
-    type Target = crate::FieldReader<bool, TS_TEST_MODE_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

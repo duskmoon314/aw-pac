@@ -35,7 +35,7 @@ impl From<crate::W<PLL_CPU_TUN_SPEC>> for W {
     }
 }
 #[doc = "Field `PLL_VCO` reader - VCO range control"]
-pub struct PLL_VCO_R(crate::FieldReader<u8, u8>);
+pub struct PLL_VCO_R(crate::FieldReader<u8>);
 impl PLL_VCO_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl PLL_VCO_R {
     }
 }
 impl core::ops::Deref for PLL_VCO_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -62,7 +62,7 @@ impl<'a> PLL_VCO_W<'a> {
     }
 }
 #[doc = "Field `PLL_VCO_GAIN` reader - KVCO gain control"]
-pub struct PLL_VCO_GAIN_R(crate::FieldReader<u8, u8>);
+pub struct PLL_VCO_GAIN_R(crate::FieldReader<u8>);
 impl PLL_VCO_GAIN_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -70,7 +70,7 @@ impl PLL_VCO_GAIN_R {
     }
 }
 impl core::ops::Deref for PLL_VCO_GAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -89,7 +89,7 @@ impl<'a> PLL_VCO_GAIN_W<'a> {
     }
 }
 #[doc = "Field `PLL_CNT_INT` reader - Counter initial control"]
-pub struct PLL_CNT_INT_R(crate::FieldReader<u8, u8>);
+pub struct PLL_CNT_INT_R(crate::FieldReader<u8>);
 impl PLL_CNT_INT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -97,7 +97,7 @@ impl PLL_CNT_INT_R {
     }
 }
 impl core::ops::Deref for PLL_CNT_INT_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -116,7 +116,7 @@ impl<'a> PLL_CNT_INT_W<'a> {
     }
 }
 #[doc = "Field `PLL_REG_OD` reader - PLL-REG-OD0 for verify"]
-pub struct PLL_REG_OD_R(crate::FieldReader<bool, bool>);
+pub struct PLL_REG_OD_R(crate::FieldReader<bool>);
 impl PLL_REG_OD_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -124,7 +124,7 @@ impl PLL_REG_OD_R {
     }
 }
 impl core::ops::Deref for PLL_REG_OD_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -154,7 +154,7 @@ impl<'a> PLL_REG_OD_W<'a> {
 }
 #[doc = "Field `PLL_B_IN` reader - PLL-B-IN \\[6:0\\]
 for verify"]
-pub struct PLL_B_IN_R(crate::FieldReader<u8, u8>);
+pub struct PLL_B_IN_R(crate::FieldReader<u8>);
 impl PLL_B_IN_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -162,7 +162,7 @@ impl PLL_B_IN_R {
     }
 }
 impl core::ops::Deref for PLL_B_IN_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -182,7 +182,7 @@ impl<'a> PLL_B_IN_W<'a> {
     }
 }
 #[doc = "Field `PLL_REG_OD1` reader - PLL-REG-OD1 for verify"]
-pub struct PLL_REG_OD1_R(crate::FieldReader<bool, bool>);
+pub struct PLL_REG_OD1_R(crate::FieldReader<bool>);
 impl PLL_REG_OD1_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -190,7 +190,7 @@ impl PLL_REG_OD1_R {
     }
 }
 impl core::ops::Deref for PLL_REG_OD1_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -220,7 +220,7 @@ impl<'a> PLL_REG_OD1_W<'a> {
 }
 #[doc = "Field `PLL_B_OUT` reader - PLL-B-OUT \\[6:0\\]
 for verify"]
-pub struct PLL_B_OUT_R(crate::FieldReader<u8, u8>);
+pub struct PLL_B_OUT_R(crate::FieldReader<u8>);
 impl PLL_B_OUT_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -228,7 +228,7 @@ impl PLL_B_OUT_R {
     }
 }
 impl core::ops::Deref for PLL_B_OUT_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

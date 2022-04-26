@@ -35,7 +35,7 @@ impl From<crate::W<EMAC_EPHY_CLK0_SPEC>> for W {
     }
 }
 #[doc = "Field `BPS_EFUSE` reader - "]
-pub struct BPS_EFUSE_R(crate::FieldReader<u8, u8>);
+pub struct BPS_EFUSE_R(crate::FieldReader<u8>);
 impl BPS_EFUSE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -43,7 +43,7 @@ impl BPS_EFUSE_R {
     }
 }
 impl core::ops::Deref for BPS_EFUSE_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -76,7 +76,7 @@ impl From<XMII_SEL_A> for bool {
     }
 }
 #[doc = "Field `XMII_SEL` reader - "]
-pub struct XMII_SEL_R(crate::FieldReader<bool, XMII_SEL_A>);
+pub struct XMII_SEL_R(crate::FieldReader<bool>);
 impl XMII_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -102,7 +102,7 @@ impl XMII_SEL_R {
     }
 }
 impl core::ops::Deref for XMII_SEL_R {
-    type Target = crate::FieldReader<bool, XMII_SEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -163,7 +163,7 @@ impl From<EPHY_MODE_A> for u8 {
     }
 }
 #[doc = "Field `EPHY_MODE` reader - "]
-pub struct EPHY_MODE_R(crate::FieldReader<u8, EPHY_MODE_A>);
+pub struct EPHY_MODE_R(crate::FieldReader<u8>);
 impl EPHY_MODE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -196,7 +196,7 @@ impl EPHY_MODE_R {
     }
 }
 impl core::ops::Deref for EPHY_MODE_R {
-    type Target = crate::FieldReader<u8, EPHY_MODE_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -235,7 +235,7 @@ impl<'a> EPHY_MODE_W<'a> {
     }
 }
 #[doc = "Field `PHY_ADDR` reader - "]
-pub struct PHY_ADDR_R(crate::FieldReader<u8, u8>);
+pub struct PHY_ADDR_R(crate::FieldReader<u8>);
 impl PHY_ADDR_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -243,7 +243,7 @@ impl PHY_ADDR_R {
     }
 }
 impl core::ops::Deref for PHY_ADDR_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -276,7 +276,7 @@ impl From<CLK_SEL_A> for bool {
     }
 }
 #[doc = "Field `CLK_SEL` reader - "]
-pub struct CLK_SEL_R(crate::FieldReader<bool, CLK_SEL_A>);
+pub struct CLK_SEL_R(crate::FieldReader<bool>);
 impl CLK_SEL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -302,7 +302,7 @@ impl CLK_SEL_R {
     }
 }
 impl core::ops::Deref for CLK_SEL_R {
-    type Target = crate::FieldReader<bool, CLK_SEL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -360,7 +360,7 @@ impl From<LED_POL_A> for bool {
     }
 }
 #[doc = "Field `LED_POL` reader - "]
-pub struct LED_POL_R(crate::FieldReader<bool, LED_POL_A>);
+pub struct LED_POL_R(crate::FieldReader<bool>);
 impl LED_POL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -386,7 +386,7 @@ impl LED_POL_R {
     }
 }
 impl core::ops::Deref for LED_POL_R {
-    type Target = crate::FieldReader<bool, LED_POL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -444,7 +444,7 @@ impl From<SHUTDOWN_A> for bool {
     }
 }
 #[doc = "Field `SHUTDOWN` reader - "]
-pub struct SHUTDOWN_R(crate::FieldReader<bool, SHUTDOWN_A>);
+pub struct SHUTDOWN_R(crate::FieldReader<bool>);
 impl SHUTDOWN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -470,7 +470,7 @@ impl SHUTDOWN_R {
     }
 }
 impl core::ops::Deref for SHUTDOWN_R {
-    type Target = crate::FieldReader<bool, SHUTDOWN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -528,7 +528,7 @@ impl From<PHY_SELECT_A> for bool {
     }
 }
 #[doc = "Field `PHY_SELECT` reader - "]
-pub struct PHY_SELECT_R(crate::FieldReader<bool, PHY_SELECT_A>);
+pub struct PHY_SELECT_R(crate::FieldReader<bool>);
 impl PHY_SELECT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -554,7 +554,7 @@ impl PHY_SELECT_R {
     }
 }
 impl core::ops::Deref for PHY_SELECT_R {
-    type Target = crate::FieldReader<bool, PHY_SELECT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -612,7 +612,7 @@ impl From<RMII_EN_A> for bool {
     }
 }
 #[doc = "Field `RMII_EN` reader - "]
-pub struct RMII_EN_R(crate::FieldReader<bool, RMII_EN_A>);
+pub struct RMII_EN_R(crate::FieldReader<bool>);
 impl RMII_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -638,7 +638,7 @@ impl RMII_EN_R {
     }
 }
 impl core::ops::Deref for RMII_EN_R {
-    type Target = crate::FieldReader<bool, RMII_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -682,7 +682,7 @@ impl<'a> RMII_EN_W<'a> {
     }
 }
 #[doc = "Field `ETXDC` reader - "]
-pub struct ETXDC_R(crate::FieldReader<u8, u8>);
+pub struct ETXDC_R(crate::FieldReader<u8>);
 impl ETXDC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -690,7 +690,7 @@ impl ETXDC_R {
     }
 }
 impl core::ops::Deref for ETXDC_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -709,7 +709,7 @@ impl<'a> ETXDC_W<'a> {
     }
 }
 #[doc = "Field `ERXDC` reader - "]
-pub struct ERXDC_R(crate::FieldReader<u8, u8>);
+pub struct ERXDC_R(crate::FieldReader<u8>);
 impl ERXDC_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -717,7 +717,7 @@ impl ERXDC_R {
     }
 }
 impl core::ops::Deref for ERXDC_R {
-    type Target = crate::FieldReader<u8, u8>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -750,7 +750,7 @@ impl From<ERXIE_A> for bool {
     }
 }
 #[doc = "Field `ERXIE` reader - "]
-pub struct ERXIE_R(crate::FieldReader<bool, ERXIE_A>);
+pub struct ERXIE_R(crate::FieldReader<bool>);
 impl ERXIE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -776,7 +776,7 @@ impl ERXIE_R {
     }
 }
 impl core::ops::Deref for ERXIE_R {
-    type Target = crate::FieldReader<bool, ERXIE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -834,7 +834,7 @@ impl From<ETXIE_A> for bool {
     }
 }
 #[doc = "Field `ETXIE` reader - "]
-pub struct ETXIE_R(crate::FieldReader<bool, ETXIE_A>);
+pub struct ETXIE_R(crate::FieldReader<bool>);
 impl ETXIE_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -860,7 +860,7 @@ impl ETXIE_R {
     }
 }
 impl core::ops::Deref for ETXIE_R {
-    type Target = crate::FieldReader<bool, ETXIE_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -918,7 +918,7 @@ impl From<EPIT_A> for bool {
     }
 }
 #[doc = "Field `EPIT` reader - "]
-pub struct EPIT_R(crate::FieldReader<bool, EPIT_A>);
+pub struct EPIT_R(crate::FieldReader<bool>);
 impl EPIT_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -944,7 +944,7 @@ impl EPIT_R {
     }
 }
 impl core::ops::Deref for EPIT_R {
-    type Target = crate::FieldReader<bool, EPIT_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1005,7 +1005,7 @@ impl From<ETCS_A> for u8 {
     }
 }
 #[doc = "Field `ETCS` reader - "]
-pub struct ETCS_R(crate::FieldReader<u8, ETCS_A>);
+pub struct ETCS_R(crate::FieldReader<u8>);
 impl ETCS_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -1038,7 +1038,7 @@ impl ETCS_R {
     }
 }
 impl core::ops::Deref for ETCS_R {
-    type Target = crate::FieldReader<u8, ETCS_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

@@ -49,7 +49,7 @@ impl From<CTRL_A> for bool {
     }
 }
 #[doc = "Field `ctrl` reader - PLIC Control"]
-pub struct CTRL_R(crate::FieldReader<bool, CTRL_A>);
+pub struct CTRL_R(crate::FieldReader<bool>);
 impl CTRL_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl CTRL_R {
     }
 }
 impl core::ops::Deref for CTRL_R {
-    type Target = crate::FieldReader<bool, CTRL_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

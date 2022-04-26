@@ -61,7 +61,7 @@ impl From<WDOG_CLK_SRC_A> for bool {
     }
 }
 #[doc = "Field `WDOG_CLK_SRC` reader - Select the clock source for the watchdog."]
-pub struct WDOG_CLK_SRC_R(crate::FieldReader<bool, WDOG_CLK_SRC_A>);
+pub struct WDOG_CLK_SRC_R(crate::FieldReader<bool>);
 impl WDOG_CLK_SRC_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -87,7 +87,7 @@ impl WDOG_CLK_SRC_R {
     }
 }
 impl core::ops::Deref for WDOG_CLK_SRC_R {
-    type Target = crate::FieldReader<bool, WDOG_CLK_SRC_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -146,7 +146,7 @@ impl From<WDOG_MODE_A> for u8 {
     }
 }
 #[doc = "Field `WDOG_MODE` reader - Configure the operating mode for the watchdog"]
-pub struct WDOG_MODE_R(crate::FieldReader<u8, WDOG_MODE_A>);
+pub struct WDOG_MODE_R(crate::FieldReader<u8>);
 impl WDOG_MODE_R {
     #[inline(always)]
     pub(crate) fn new(bits: u8) -> Self {
@@ -173,7 +173,7 @@ impl WDOG_MODE_R {
     }
 }
 impl core::ops::Deref for WDOG_MODE_R {
-    type Target = crate::FieldReader<u8, WDOG_MODE_A>;
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

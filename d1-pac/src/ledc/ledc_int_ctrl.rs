@@ -49,7 +49,7 @@ impl From<GLOBAL_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `GLOBAL_INT_EN` reader - "]
-pub struct GLOBAL_INT_EN_R(crate::FieldReader<bool, GLOBAL_INT_EN_A>);
+pub struct GLOBAL_INT_EN_R(crate::FieldReader<bool>);
 impl GLOBAL_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -75,7 +75,7 @@ impl GLOBAL_INT_EN_R {
     }
 }
 impl core::ops::Deref for GLOBAL_INT_EN_R {
-    type Target = crate::FieldReader<bool, GLOBAL_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -133,7 +133,7 @@ impl From<FIFO_OVERFLOW_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `FIFO_OVERFLOW_INT_EN` reader - "]
-pub struct FIFO_OVERFLOW_INT_EN_R(crate::FieldReader<bool, FIFO_OVERFLOW_INT_EN_A>);
+pub struct FIFO_OVERFLOW_INT_EN_R(crate::FieldReader<bool>);
 impl FIFO_OVERFLOW_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -159,7 +159,7 @@ impl FIFO_OVERFLOW_INT_EN_R {
     }
 }
 impl core::ops::Deref for FIFO_OVERFLOW_INT_EN_R {
-    type Target = crate::FieldReader<bool, FIFO_OVERFLOW_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -217,7 +217,7 @@ impl From<WAITDATA_TIMEOUT_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `WAITDATA_TIMEOUT_INT_EN` reader - "]
-pub struct WAITDATA_TIMEOUT_INT_EN_R(crate::FieldReader<bool, WAITDATA_TIMEOUT_INT_EN_A>);
+pub struct WAITDATA_TIMEOUT_INT_EN_R(crate::FieldReader<bool>);
 impl WAITDATA_TIMEOUT_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -243,7 +243,7 @@ impl WAITDATA_TIMEOUT_INT_EN_R {
     }
 }
 impl core::ops::Deref for WAITDATA_TIMEOUT_INT_EN_R {
-    type Target = crate::FieldReader<bool, WAITDATA_TIMEOUT_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -301,7 +301,7 @@ impl From<FIFO_CPUREQ_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `FIFO_CPUREQ_INT_EN` reader - "]
-pub struct FIFO_CPUREQ_INT_EN_R(crate::FieldReader<bool, FIFO_CPUREQ_INT_EN_A>);
+pub struct FIFO_CPUREQ_INT_EN_R(crate::FieldReader<bool>);
 impl FIFO_CPUREQ_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -327,7 +327,7 @@ impl FIFO_CPUREQ_INT_EN_R {
     }
 }
 impl core::ops::Deref for FIFO_CPUREQ_INT_EN_R {
-    type Target = crate::FieldReader<bool, FIFO_CPUREQ_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -385,7 +385,7 @@ impl From<LED_TRANS_FINISH_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `LED_TRANS_FINISH_INT_EN` reader - "]
-pub struct LED_TRANS_FINISH_INT_EN_R(crate::FieldReader<bool, LED_TRANS_FINISH_INT_EN_A>);
+pub struct LED_TRANS_FINISH_INT_EN_R(crate::FieldReader<bool>);
 impl LED_TRANS_FINISH_INT_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -411,7 +411,7 @@ impl LED_TRANS_FINISH_INT_EN_R {
     }
 }
 impl core::ops::Deref for LED_TRANS_FINISH_INT_EN_R {
-    type Target = crate::FieldReader<bool, LED_TRANS_FINISH_INT_EN_A>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0

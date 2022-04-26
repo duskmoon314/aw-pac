@@ -35,7 +35,7 @@ impl From<crate::W<WAKEUP_EN_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `WP_EN` reader - Wakeup Enable"]
-pub struct WP_EN_R(crate::FieldReader<bool, bool>);
+pub struct WP_EN_R(crate::FieldReader<bool>);
 impl WP_EN_R {
     #[inline(always)]
     pub(crate) fn new(bits: bool) -> Self {
@@ -43,7 +43,7 @@ impl WP_EN_R {
     }
 }
 impl core::ops::Deref for WP_EN_R {
-    type Target = crate::FieldReader<bool, bool>;
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
