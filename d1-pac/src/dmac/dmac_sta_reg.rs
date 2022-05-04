@@ -109,22 +109,6 @@ impl core::ops::Deref for DMA_STATUS_R {
         &self.0
     }
 }
-#[doc = "Field `DMA_STATUS` reader - DMA Channel\\[15:0\\]
-Status"]
-pub struct DMA_STATUS_R(crate::FieldReader<u16>);
-impl DMA_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        DMA_STATUS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_STATUS_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
 impl R {
     #[doc = "Bit 31 - MBUS FIFO Status"]
     #[inline(always)]
@@ -232,12 +216,6 @@ Status"]
     #[inline(always)]
     pub fn dma_status15(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 15) & 1) != 0)
-    }
-    #[doc = "Bits 0:15 - DMA Channel\\[15:0\\]
-Status"]
-    #[inline(always)]
-    pub fn dma_status(&self) -> DMA_STATUS_R {
-        DMA_STATUS_R::new((self.bits & 0xffff) as u16)
     }
 }
 #[doc = "DMAC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmac_sta_reg](index.html) module"]

@@ -9258,11 +9258,6 @@
                 </enumeratedValue>
               </enumeratedValues>
             </field>
-            <field>
-              <name>DMA_STATUS</name>
-              <description>DMA Channel[15:0] Status</description>
-              <bitRange>[15:0]</bitRange>
-            </field>
           </fields>
         </register>
         <register>
