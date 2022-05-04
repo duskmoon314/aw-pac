@@ -34,7 +34,123 @@ impl From<crate::W<GP_DATAH_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Channel Voltage High Available Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH_HIG_IRQ_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<CH_HIG_IRQ_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH_HIG_IRQ_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `CH(0-1)_HIG_IRQ_EN` reader - Channel Voltage High Available Interrupt Enable"]
+pub struct CH_HIG_IRQ_EN_R(crate::FieldReader<bool>);
+impl CH_HIG_IRQ_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        CH_HIG_IRQ_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH_HIG_IRQ_EN_A {
+        match self.bits {
+            false => CH_HIG_IRQ_EN_A::DISABLE,
+            true => CH_HIG_IRQ_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == CH_HIG_IRQ_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == CH_HIG_IRQ_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for CH_HIG_IRQ_EN_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Fields `CH(0-1)_HIG_IRQ_EN` const generic writer - Channel Voltage High Available Interrupt Enable"]
+pub struct CH_HIG_IRQ_EN_W<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> CH_HIG_IRQ_EN_W<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH_HIG_IRQ_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH_HIG_IRQ_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CH_HIG_IRQ_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Channel Voltage High Available Interrupt Enable"]
+    #[inline(always)]
+    pub unsafe fn ch_hig_irq_en(&self, n: usize) -> CH_HIG_IRQ_EN_R {
+        CH_HIG_IRQ_EN_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Channel Voltage High Available Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch0_hig_irq_en(&self) -> CH_HIG_IRQ_EN_R {
+        CH_HIG_IRQ_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - Channel Voltage High Available Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch1_hig_irq_en(&self) -> CH_HIG_IRQ_EN_R {
+        CH_HIG_IRQ_EN_R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Channel Voltage High Available Interrupt Enable"]
+    #[inline(always)]
+    pub unsafe fn ch_hig_irq_en<const O: usize>(&mut self) -> CH_HIG_IRQ_EN_W<O> {
+        CH_HIG_IRQ_EN_W { w: self }
+    }
+    #[doc = "Bit 0 - Channel Voltage High Available Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch0_hig_irq_en(&mut self) -> CH_HIG_IRQ_EN_W<0> {
+        CH_HIG_IRQ_EN_W { w: self }
+    }
+    #[doc = "Bit 1 - Channel Voltage High Available Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch1_hig_irq_en(&mut self) -> CH_HIG_IRQ_EN_W<1> {
+        CH_HIG_IRQ_EN_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

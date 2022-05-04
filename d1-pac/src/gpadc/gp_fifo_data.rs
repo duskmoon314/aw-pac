@@ -34,6 +34,28 @@ impl From<crate::W<GP_FIFO_DATA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `GP_FIFO_DATA` reader - GPADC Data in FIFO"]
+pub struct GP_FIFO_DATA_R(crate::FieldReader<u16>);
+impl GP_FIFO_DATA_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u16) -> Self {
+        GP_FIFO_DATA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GP_FIFO_DATA_R {
+    type Target = crate::FieldReader<u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl R {
+    #[doc = "Bits 0:11 - GPADC Data in FIFO"]
+    #[inline(always)]
+    pub fn gp_fifo_data(&self) -> GP_FIFO_DATA_R {
+        GP_FIFO_DATA_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -27483,87 +27483,560 @@
         <register>
           <name>GP_SR_CON</name>
           <description>GPADC Sample Rate Configure Register</description>
-          <addressOffset>0x0000</addressOffset>
+          <addressOffset>0x0</addressOffset>
+          <resetValue>0x1DF002F</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>FS_DIV</name>
+              <description>ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TACQ</name>
+              <description>ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_CTRL</name>
           <description>GPADC Control Register</description>
-          <addressOffset>0x0004</addressOffset>
+          <addressOffset>0x4</addressOffset>
+          <resetValue>0x800000</resetValue>
+          <resetMask>0xBF0000</resetMask>
+          <fields>
+            <field>
+              <name>ADC_FIRST_DLY</name>
+              <description>ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples</description>
+              <bitRange>[31:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ADC_AUTOCALI_EN</name>
+              <description>ADC Auto Calibration</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ADC_OP_BIAS</name>
+              <description>ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier</description>
+              <bitRange>[21:20]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>GPADC_WORK_MODE</name>
+              <description>GPADC Work Mode</description>
+              <bitRange>[19:18]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Single</name>
+                  <description>Single conversion mode</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Continuous</name>
+                  <description>Continuous conversion mode</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Burst</name>
+                  <description>Burst conversion mode</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC_CALI_EN</name>
+              <description>ADC Calibration</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Start</name>
+                  <description>Start Calibration, it is cleared to 0 after calibration</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC_EN</name>
+              <description>ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc.</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_CS_EN</name>
           <description>GPADC Compare and Select Enable Register</description>
-          <addressOffset>0x0008</addressOffset>
+          <addressOffset>0x8</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x30003</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>ADC_CH%s_CMP_EN</name>
+              <description>Channel Compare Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>ADC_CH%s_SELECT</name>
+              <description>Analog Input Channel Select</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_FIFO_INTC</name>
           <description>GPADC FIFO Interrupt Control Register</description>
-          <addressOffset>0x000C</addressOffset>
+          <addressOffset>0xC</addressOffset>
+          <resetValue>0x1F00</resetValue>
+          <resetMask>0x73F10</resetMask>
+          <fields>
+            <field>
+              <name>FIFO_DATA_DRQ_EN</name>
+              <description>ADC FIFO Date DRQ Enable</description>
+              <bitRange>[18:18]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_OVERRUN_IRQ_EN</name>
+              <description>ADC FIFO Overrun IRQ Enable</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_DATA_IRQ_EN</name>
+              <description>ADC FIFO Data Available IRQ Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_TRIG_LEVEL</name>
+              <description>Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>FIFO_FLUSH</name>
+              <description>ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0.</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_FIFO_INTS</name>
           <description>GPADC FIFO Interrupt Status Register</description>
-          <addressOffset>0x0010</addressOffset>
+          <addressOffset>0x10</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x33F00</resetMask>
+          <fields>
+            <field>
+              <name>FIFO_OVERRUN_PENDING</name>
+              <description>ADC FIFO Overrun IRQ Pending</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>np_pending</name>
+                  <description>No Pending IRQ</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <description>FIFO Overrun Pending IRQ</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_DATA_PENDING</name>
+              <description>ADC FIFO Data Available Pending Bit</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <description>NO Pending IRQ</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <description>FIFO Available Pending IRQ</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RXA_CNT</name>
+              <description>ADC FIFO available sample word counter</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_FIFO_DATA</name>
           <description>GPADC FIFO Data Register</description>
-          <addressOffset>0x0014</addressOffset>
+          <addressOffset>0x14</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFF</resetMask>
+          <fields>
+            <field>
+              <name>GP_FIFO_DATA</name>
+              <description>GPADC Data in FIFO</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_CDATA</name>
           <description>GPADC Calibration Data Register</description>
-          <addressOffset>0x0018</addressOffset>
+          <addressOffset>0x18</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFF</resetMask>
+          <fields>
+            <field>
+              <name>GP_CDATA</name>
+              <description>GPADC Calibration Data</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_DATAL_INTC</name>
           <description>GPADC Data Low Interrupt Configure Register</description>
-          <addressOffset>0x0020</addressOffset>
+          <addressOffset>0x20</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CH%s_LOW_IRQ_EN</name>
+              <description>Channel Voltage Low Available Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_DATAH_INTC</name>
           <description>GPADC Data High Interrupt Configure Register</description>
-          <addressOffset>0x0024</addressOffset>
+          <addressOffset>0x24</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CH%s_HIG_IRQ_EN</name>
+              <description>Channel Voltage High Available Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_DATA_INTC</name>
           <description>GPADC Data Interrupt Configure Register</description>
-          <addressOffset>0x0028</addressOffset>
+          <addressOffset>0x28</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CH%s_DATA_IRQ_EN</name>
+              <description>Channel Data Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_DATAL_INTS</name>
           <description>GPADC Data Low Interrupt Status Register</description>
-          <addressOffset>0x0030</addressOffset>
+          <addressOffset>0x30</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CH%s_LOW_PENGDING</name>
+              <description>Channel Voltage Low Available Interrupt Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <description>NO Pending IRQ</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <description>Channel Voltage Low Available Pending IRQ</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_DATAH_INTS</name>
           <description>GPADC Data High Interrupt Status Register</description>
-          <addressOffset>0x0034</addressOffset>
+          <addressOffset>0x34</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CH%s_HIG_PENGDING</name>
+              <description>Channel Voltage High Available Interrupt Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <description>No Pending IRQ</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Channel</name>
+                  <description>Channel Voltage High Available Pending IRQ</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_DATA_INTS</name>
           <description>GPADC Data Interrupt Status Register</description>
-          <addressOffset>0x0038</addressOffset>
+          <addressOffset>0x38</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3</resetMask>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CH%s_DATA_PENGDING</name>
+              <description>Channel Data Available Interrupt Status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <description>No Pending IRQ</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Channel</name>
+                  <description>Channel Data Available Pending IRQ</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_CH0_CMP_DATA</name>
           <description>GPADC CH0 Compare Data Register</description>
-          <addressOffset>0x0040</addressOffset>
+          <addressOffset>0x40</addressOffset>
+          <resetValue>0xBFF0400</resetValue>
+          <resetMask>0xFFF0FFF</resetMask>
+          <fields>
+            <field>
+              <name>CH0_CMP_HIG_DATA</name>
+              <description>Channel 0 Voltage High Value</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CH0_CMP_LOW_DATA</name>
+              <description>Channel 0 Voltage Low Value</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_CH1_CMP_DATA</name>
           <description>GPADC CH1 Compare Data Register</description>
-          <addressOffset>0x0044</addressOffset>
+          <addressOffset>0x44</addressOffset>
+          <resetValue>0xBFF0400</resetValue>
+          <resetMask>0xFFF0FFF</resetMask>
+          <fields>
+            <field>
+              <name>CH1_CMP_HIG_DATA</name>
+              <description>Channel 1 Voltage High Value</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CH1_CMP_LOW_DATA</name>
+              <description>Channel 1 Voltage Low Value</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_CH0_DATA</name>
           <description>GPADC CH0 Data Register</description>
-          <addressOffset>0x0080</addressOffset>
+          <addressOffset>0x80</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFF</resetMask>
+          <fields>
+            <field>
+              <name>GP_CH0_DATA</name>
+              <description>Channel 0 Data</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>GP_CH1_DATA</name>
           <description>GPADC CH1 Data Register</description>
-          <addressOffset>0x0084</addressOffset>
+          <addressOffset>0x84</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFF</resetMask>
+          <fields>
+            <field>
+              <name>GP_CH1_DATA</name>
+              <description>Channel 1 Data</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
@@ -27587,41 +28060,603 @@
           <name>TP_CTRL0</name>
           <description>TP Control Register 0</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>ADC_FIRST_DLY</name>
+              <description>ADC First Convert Delay Time (T_FCDT) Setting</description>
+              <bitRange>[31:24]</bitRange>
+            </field>
+            <field>
+              <name>ADC_FIRST_DLY_MODE</name>
+              <description>ADC First Convert Delay Mode Select</description>
+              <bitRange>[23:23]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C16</name>
+                  <description>CLK_IN / 16</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C16_256</name>
+                  <description>CLK_IN / 16 * 256</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC_CLK_DIVIDER</name>
+              <description>ADC Clock Divider (CLK_IN)</description>
+              <bitRange>[21:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C2</name>
+                  <description>CLK / 2</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C3</name>
+                  <description>CLK / 3</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C6</name>
+                  <description>CLK / 6</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C1</name>
+                  <description>CLK / 1</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FS_DIV</name>
+              <description>ADC Sample Frequency Divider</description>
+              <bitRange>[19:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C2P0</name>
+                  <description>CLK_IN / 2 ^ (20 - 0)</description>
+                  <value>0b0000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P1</name>
+                  <description>CLK_IN / 2 ^ (20 - 1)</description>
+                  <value>0b0001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P2</name>
+                  <description>CLK_IN / 2 ^ (20 - 2)</description>
+                  <value>0b0010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P3</name>
+                  <description>CLK_IN / 2 ^ (20 - 3)</description>
+                  <value>0b0011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P4</name>
+                  <description>CLK_IN / 2 ^ (20 - 4)</description>
+                  <value>0b0100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P5</name>
+                  <description>CLK_IN / 2 ^ (20 - 5)</description>
+                  <value>0b0101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P6</name>
+                  <description>CLK_IN / 2 ^ (20 - 6)</description>
+                  <value>0b0110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P7</name>
+                  <description>CLK_IN / 2 ^ (20 - 7)</description>
+                  <value>0b0111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P8</name>
+                  <description>CLK_IN / 2 ^ (20 - 8)</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P9</name>
+                  <description>CLK_IN / 2 ^ (20 - 9)</description>
+                  <value>0b1001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P10</name>
+                  <description>CLK_IN / 2 ^ (20 - 10)</description>
+                  <value>0b1010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P11</name>
+                  <description>CLK_IN / 2 ^ (20 - 11)</description>
+                  <value>0b1011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P12</name>
+                  <description>CLK_IN / 2 ^ (20 - 12)</description>
+                  <value>0b1100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P13</name>
+                  <description>CLK_IN / 2 ^ (20 - 13)</description>
+                  <value>0b1101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P14</name>
+                  <description>CLK_IN / 2 ^ (20 - 14)</description>
+                  <value>0b1110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C2P15</name>
+                  <description>CLK_IN / 2 ^ (20 - 15)</description>
+                  <value>0b1111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TACQ</name>
+              <description>Touch panel ADC acquire time</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TP_CTRL1</name>
           <description>TP Control Register 1</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>STYLUS_UP_DEBOUNCE</name>
+              <description>Stylus Up Debounce Time Setting</description>
+              <bitRange>[19:12]</bitRange>
+            </field>
+            <field>
+              <name>STYLUS_UP_DEBOUNCE_EN</name>
+              <description>Stylus Up Debounce Function Select</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CHOPPER_EN</name>
+              <description>T-sensor Chopping Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TOUCH_PAN_CALI_EN</name>
+              <description>Touch Panel Calibration</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>start</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_DUAL_EN</name>
+              <description>Touch Panel Double Point Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_EN</name>
+              <description>TP Function Enable</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_MODE_SELECT</name>
+              <description>Touch Panel Mode and Auxiliary ADC Mode Select</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>TP</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AuxiliaryADC</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>ADC_CHAN%s_SELECT</name>
+              <description>Analog Input Channel Select</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TP_CTRL2</name>
           <description>TP Control Register 2</description>
           <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>TP_SENSITIVE_ADJUST</name>
+              <description>Internal Pull-up Resistor Control</description>
+              <bitRange>[31:28]</bitRange>
+            </field>
+            <field>
+              <name>TP_FIFO_MODE_SELECT</name>
+              <description>TP Access Data Mode Select</description>
+              <bitRange>[27:26]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>X1Y1</name>
+                  <description>FIFO store X1 Y1 data for single touch no pressure mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>X1Y1dXdY</name>
+                  <description>FIFO store X1 Y1 ΔX ΔY data for dual touch no pressure mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>X1Y1X2Y2</name>
+                  <description>FIFO store X1 Y1 X2 Y2 data for dual touch no pressure mode</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>X1Y1X2Y2Z1Z2</name>
+                  <description>FIFO store X1 Y1 X2 Y2 Z1 Z2 data for dual touch and pressure mode</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PRE_MEA_EN</name>
+              <description>TP Pressure Measurement Enable Control</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PRE_MEA_THRE_CNT</name>
+              <description>TP Pressure Measurement Threshold Control</description>
+              <bitRange>[23:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TP_CTRL3</name>
           <description>TP Control Register 3</description>
           <addressOffset>0x000C</addressOffset>
+          <fields>
+            <field>
+              <name>FILTER_EN</name>
+              <description>Filter Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FILTER_TYPE</name>
+              <description>Filter Type</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>T42</name>
+                  <description>4 / 2</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T53</name>
+                  <description>5 / 3</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T84</name>
+                  <description>8 / 4</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T168</name>
+                  <description>16 / 8</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TP_INT_FIFO_CTRL</name>
           <description>TP Interrupt FIFO Control Register</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>TP_OVERRUN_IRQ_EN</name>
+              <description>TP FIFO Overrun Interrupt Enable</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_DATA_IRQ_EN</name>
+              <description>TP FIFO Data Interrupt Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_DATA_XY_CHANGE</name>
+              <description>TP FIFO XY Data Interchange Function Select</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_FIFO_TRIG_LEVEL</name>
+              <description>TP FIFO Data Available Trigger Level</description>
+              <bitRange>[12:8]</bitRange>
+            </field>
+            <field>
+              <name>TP_DATA_ERQ_EN</name>
+              <description>TP FIFO Data Available DRQ Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_FIFO_FLUSH</name>
+              <description>TP FIFO Flush</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>flush</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_UP_IRQ_EN</name>
+              <description>TP Last Touch (Stylus UP) IRQ Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_DOWN_IRQ_EN</name>
+              <description>TP First Touch (Stylus DOWN) IRQ Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TP_INT_FIFO_STAT</name>
           <description>TP Interrupt FIFO Status Register</description>
           <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>FIFO_OVERRUN_PENDING</name>
+              <description>TP FIFO Overrun Pending</description>
+              <bitRange>[17:17]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FIFO_DATA_PENDING</name>
+              <description>TP FIFO Data Available Pending</description>
+              <bitRange>[16:16]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RXA_CNT</name>
+              <description>TP FIFO Available Sample Word Count</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>TP_IDLE_FLG</name>
+              <description>TP Idle Flag</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_idle</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_UP_PENDING</name>
+              <description>TP Last Touch (Stylus UP) Pending</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TP_DOWN_PENDING</name>
+              <description>TP First Touch (Stylus DOWN) Pending</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TP_CALI_DATA</name>
           <description>TP Calibration Data Register</description>
           <addressOffset>0x001C</addressOffset>
+          <fields>
+            <field>
+              <name>TP_CDAT</name>
+              <description>TP Common Data</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TP_DATA</name>
           <description>TP Data Register</description>
           <addressOffset>0x0024</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>TP_DATA</name>
+              <description>TP Data</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
@@ -27645,21 +28680,318 @@
           <name>LRADC_CTRL</name>
           <description>LRADC Control Register</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <name>FIRST_CONVERT_DLY</name>
+              <description>ADC First Convert Delay Setting</description>
+              <bitRange>[31:24]</bitRange>
+            </field>
+            <field>
+              <name>CONTINUE_TIME_SELECT</name>
+              <description>Continuous Mode Time Select</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <field>
+              <name>KEY_MODE_SELECT</name>
+              <description>Key Mode Select</description>
+              <bitRange>[13:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>single</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>continuous</name>
+                  <value>2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LEVELA_B_CNT</name>
+              <description>Level A to B time threshold select</description>
+              <bitRange>[11:8]</bitRange>
+            </field>
+            <field>
+              <name>LRADC_HOLD_KEY_EN</name>
+              <description>LRADC Hold Key Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LRADC_CHANNEL_EN</name>
+              <description>LRADC Channel Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LEVELB_VOL</name>
+              <description>Level B Corresponding Data Value Setting (the real voltage value)</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>V39</name>
+                  <description>1.221 V</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V36</name>
+                  <description>1.157 V</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V33</name>
+                  <description>1.093 V</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LRADC_SAMPLE_RATE</name>
+              <description>LRADC Sample Rate</description>
+              <bitRange>[3:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R2k</name>
+                  <description>2kHz</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R1k</name>
+                  <description>1kHz</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R500</name>
+                  <description>500Hz</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R250</name>
+                  <description>250Hz</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LRADC_EN</name>
+              <description>LRADC Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LRADC_INTC</name>
           <description>LRADC Interrupt Control Register</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>ADC0_KEYUP_IRQ_EN</name>
+              <description>ADC0 Key Up Interrupt Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_ALRDY_HOLD_IRQ_EN</name>
+              <description>ADC0 Already Hold Key Interrupt Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_HOLD_IRQ_EN</name>
+              <description>ADC0 Hold Key Interrupt Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_KEYDOWN_IRQ_EN</name>
+              <description>ADC0 Key Down Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_DATA_IRQ_EN</name>
+              <description>ADC0 Data Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LRADC_INTS</name>
           <description>LRADC Interrupt Status Register</description>
           <addressOffset>0x0008</addressOffset>
+          <fields>
+            <field>
+              <name>ADC0_KEYUP_PENDING</name>
+              <description>ADC0 Key Up Pending</description>
+              <bitRange>[4:4]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_ALRDY_HOLD_PENDING</name>
+              <description>ADC0 Already Hold Key Pending</description>
+              <bitRange>[3:3]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_HOLD_PENDING</name>
+              <description>ADC0 Hold Key Pending</description>
+              <bitRange>[2:2]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_KEYDOWN_PENDING</name>
+              <description>ADC0 Key Down Pending</description>
+              <bitRange>[1:1]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ADC0_DATA_PENDING</name>
+              <description>ADC0 Data Pending</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_pending</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LRADC_DATA</name>
           <description>LRADC Data Register</description>
           <addressOffset>0x000C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>LRADC_DATA</name>
+              <description>LRADC Data</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
@@ -29836,52 +31168,213 @@
         <name>CE_NS</name>
         <value>68</value>
       </interrupt>
-
       <registers>
         <register>
           <name>CE_TDA</name>
           <description>Task Descriptor Address</description>
-          <addressOffset>0x0000</addressOffset>
+          <addressOffset>0x0</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>TASK</name>
+              <description>Task Descriptor Address\n\nConfigure as the first address of the descriptor structure.</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_ICR</name>
           <description>Interrupt Control Register</description>
-          <addressOffset>0x0008</addressOffset>
+          <addressOffset>0x8</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>TASK%s_IRQ_EN</name>
+              <description>Task Channel 3-0 Interrupt Enable</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_ISR</name>
           <description>Interrupt Status Register</description>
-          <addressOffset>0x000C</addressOffset>
+          <addressOffset>0xC</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>TASK%s_PENDING</name>
+              <description>Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the  end flag.</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_finished</name>
+                  <description>Task not finished</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>finished</name>
+                  <description>Task finished</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_TLR</name>
           <description>Task Load Register</description>
-          <addressOffset>0x0010</addressOffset>
+          <addressOffset>0x10</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>TASK_LOAD</name>
+              <description>Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO  is not full.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_TSR</name>
           <description>Task Status Register</description>
-          <addressOffset>0x0014</addressOffset>
+          <addressOffset>0x14</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3</resetMask>
+          <fields>
+            <field>
+              <name>RUNNING_CHANNEL_NUMBER</name>
+              <description>Running Channel Number</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>T0</name>
+                  <description>Task channel 0</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T1</name>
+                  <description>Task channel 1</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T2</name>
+                  <description>Task channel 2</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T3</name>
+                  <description>Task channel 3</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_ESR</name>
           <description>Error Status Register</description>
-          <addressOffset>0x0018</addressOffset>
+          <addressOffset>0x18</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFF</resetMask>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>TASK_CHANNEL%s_ERROR_TYPE</name>
+              <description>Task Channel Error Type</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>algorithm_not_support</name>
+                  <description>Algorithm not support</description>
+                  <value>0bxxx1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>data_length_error</name>
+                  <description>Data length error</description>
+                  <value>0bxx1x</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>keysram_access_error</name>
+                  <description>keysram access error for AES</description>
+                  <value>0bx1xx</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_CSA</name>
-          <description>DMA Current Source Address</description>
-          <addressOffset>0x0024</addressOffset>
+          <description>Current Source Address Register</description>
+          <addressOffset>0x24</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>CUR_SRC_ADDR</name>
+              <description>Current source address</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_CDA</name>
-          <description>DMA Current Destination Address</description>
-          <addressOffset>0x0028</addressOffset>
+          <description>Current Destination Address Register</description>
+          <addressOffset>0x28</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>CUR_DST_ADDR</name>
+              <description>Current destination address</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CE_TPR</name>
           <description>Throughput Register</description>
-          <addressOffset>0x002C</addressOffset>
+          <addressOffset>0x2C</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>TP_NUM</name>
+              <description>It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0.</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>clear</modifiedWriteValues>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

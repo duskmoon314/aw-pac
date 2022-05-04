@@ -34,7 +34,237 @@ impl From<crate::W<GP_CS_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Channel Compare Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADC_CH_CMP_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<ADC_CH_CMP_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC_CH_CMP_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `ADC_CH(0-1)_CMP_EN` reader - Channel Compare Enable"]
+pub struct ADC_CH_CMP_EN_R(crate::FieldReader<bool>);
+impl ADC_CH_CMP_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC_CH_CMP_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC_CH_CMP_EN_A {
+        match self.bits {
+            false => ADC_CH_CMP_EN_A::DISABLE,
+            true => ADC_CH_CMP_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == ADC_CH_CMP_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == ADC_CH_CMP_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for ADC_CH_CMP_EN_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Fields `ADC_CH(0-1)_CMP_EN` const generic writer - Channel Compare Enable"]
+pub struct ADC_CH_CMP_EN_W<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> ADC_CH_CMP_EN_W<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC_CH_CMP_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ADC_CH_CMP_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ADC_CH_CMP_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
+        self.w
+    }
+}
+#[doc = "Analog Input Channel Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADC_CH_SELECT_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<ADC_CH_SELECT_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC_CH_SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `ADC_CH(0-1)_SELECT` reader - Analog Input Channel Select"]
+pub struct ADC_CH_SELECT_R(crate::FieldReader<bool>);
+impl ADC_CH_SELECT_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        ADC_CH_SELECT_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC_CH_SELECT_A {
+        match self.bits {
+            false => ADC_CH_SELECT_A::DISABLE,
+            true => ADC_CH_SELECT_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == ADC_CH_SELECT_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == ADC_CH_SELECT_A::ENABLE
+    }
+}
+impl core::ops::Deref for ADC_CH_SELECT_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Fields `ADC_CH(0-1)_SELECT` const generic writer - Analog Input Channel Select"]
+pub struct ADC_CH_SELECT_W<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> ADC_CH_SELECT_W<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ADC_CH_SELECT_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ADC_CH_SELECT_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ADC_CH_SELECT_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Channel Compare Enable"]
+    #[inline(always)]
+    pub unsafe fn adc_ch_cmp_en(&self, n: usize) -> ADC_CH_CMP_EN_R {
+        ADC_CH_CMP_EN_R::new(((self.bits >> (n + 16)) & 1) != 0)
+    }
+    #[doc = "Bit 16 - Channel Compare Enable"]
+    #[inline(always)]
+    pub fn adc_ch0_cmp_en(&self) -> ADC_CH_CMP_EN_R {
+        ADC_CH_CMP_EN_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 17 - Channel Compare Enable"]
+    #[inline(always)]
+    pub fn adc_ch1_cmp_en(&self) -> ADC_CH_CMP_EN_R {
+        ADC_CH_CMP_EN_R::new(((self.bits >> 17) & 1) != 0)
+    }
+    #[doc = "Analog Input Channel Select"]
+    #[inline(always)]
+    pub unsafe fn adc_ch_select(&self, n: usize) -> ADC_CH_SELECT_R {
+        ADC_CH_SELECT_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Analog Input Channel Select"]
+    #[inline(always)]
+    pub fn adc_ch0_select(&self) -> ADC_CH_SELECT_R {
+        ADC_CH_SELECT_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - Analog Input Channel Select"]
+    #[inline(always)]
+    pub fn adc_ch1_select(&self) -> ADC_CH_SELECT_R {
+        ADC_CH_SELECT_R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Channel Compare Enable"]
+    #[inline(always)]
+    pub unsafe fn adc_ch_cmp_en<const O: usize>(&mut self) -> ADC_CH_CMP_EN_W<O> {
+        ADC_CH_CMP_EN_W { w: self }
+    }
+    #[doc = "Bit 16 - Channel Compare Enable"]
+    #[inline(always)]
+    pub fn adc_ch0_cmp_en(&mut self) -> ADC_CH_CMP_EN_W<16> {
+        ADC_CH_CMP_EN_W { w: self }
+    }
+    #[doc = "Bit 17 - Channel Compare Enable"]
+    #[inline(always)]
+    pub fn adc_ch1_cmp_en(&mut self) -> ADC_CH_CMP_EN_W<17> {
+        ADC_CH_CMP_EN_W { w: self }
+    }
+    #[doc = "Analog Input Channel Select"]
+    #[inline(always)]
+    pub unsafe fn adc_ch_select<const O: usize>(&mut self) -> ADC_CH_SELECT_W<O> {
+        ADC_CH_SELECT_W { w: self }
+    }
+    #[doc = "Bit 0 - Analog Input Channel Select"]
+    #[inline(always)]
+    pub fn adc_ch0_select(&mut self) -> ADC_CH_SELECT_W<0> {
+        ADC_CH_SELECT_W { w: self }
+    }
+    #[doc = "Bit 1 - Analog Input Channel Select"]
+    #[inline(always)]
+    pub fn adc_ch1_select(&mut self) -> ADC_CH_SELECT_W<1> {
+        ADC_CH_SELECT_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

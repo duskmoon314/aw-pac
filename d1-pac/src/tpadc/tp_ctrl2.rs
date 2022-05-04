@@ -34,7 +34,289 @@ impl From<crate::W<TP_CTRL2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TP_SENSITIVE_ADJUST` reader - Internal Pull-up Resistor Control"]
+pub struct TP_SENSITIVE_ADJUST_R(crate::FieldReader<u8>);
+impl TP_SENSITIVE_ADJUST_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        TP_SENSITIVE_ADJUST_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TP_SENSITIVE_ADJUST_R {
+    type Target = crate::FieldReader<u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TP_SENSITIVE_ADJUST` writer - Internal Pull-up Resistor Control"]
+pub struct TP_SENSITIVE_ADJUST_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TP_SENSITIVE_ADJUST_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
+        self.w
+    }
+}
+#[doc = "TP Access Data Mode Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum TP_FIFO_MODE_SELECT_A {
+    #[doc = "0: FIFO store X1 Y1 data for single touch no pressure mode"]
+    X1Y1 = 0,
+    #[doc = "1: FIFO store X1 Y1 ΔX ΔY data for dual touch no pressure mode"]
+    X1Y1DXDY = 1,
+    #[doc = "2: FIFO store X1 Y1 X2 Y2 data for dual touch no pressure mode"]
+    X1Y1X2Y2 = 2,
+    #[doc = "3: FIFO store X1 Y1 X2 Y2 Z1 Z2 data for dual touch and pressure mode"]
+    X1Y1X2Y2Z1Z2 = 3,
+}
+impl From<TP_FIFO_MODE_SELECT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TP_FIFO_MODE_SELECT_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `TP_FIFO_MODE_SELECT` reader - TP Access Data Mode Select"]
+pub struct TP_FIFO_MODE_SELECT_R(crate::FieldReader<u8>);
+impl TP_FIFO_MODE_SELECT_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        TP_FIFO_MODE_SELECT_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP_FIFO_MODE_SELECT_A {
+        match self.bits {
+            0 => TP_FIFO_MODE_SELECT_A::X1Y1,
+            1 => TP_FIFO_MODE_SELECT_A::X1Y1DXDY,
+            2 => TP_FIFO_MODE_SELECT_A::X1Y1X2Y2,
+            3 => TP_FIFO_MODE_SELECT_A::X1Y1X2Y2Z1Z2,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `X1Y1`"]
+    #[inline(always)]
+    pub fn is_x1y1(&self) -> bool {
+        **self == TP_FIFO_MODE_SELECT_A::X1Y1
+    }
+    #[doc = "Checks if the value of the field is `X1Y1DXDY`"]
+    #[inline(always)]
+    pub fn is_x1y1d_xd_y(&self) -> bool {
+        **self == TP_FIFO_MODE_SELECT_A::X1Y1DXDY
+    }
+    #[doc = "Checks if the value of the field is `X1Y1X2Y2`"]
+    #[inline(always)]
+    pub fn is_x1y1x2y2(&self) -> bool {
+        **self == TP_FIFO_MODE_SELECT_A::X1Y1X2Y2
+    }
+    #[doc = "Checks if the value of the field is `X1Y1X2Y2Z1Z2`"]
+    #[inline(always)]
+    pub fn is_x1y1x2y2z1z2(&self) -> bool {
+        **self == TP_FIFO_MODE_SELECT_A::X1Y1X2Y2Z1Z2
+    }
+}
+impl core::ops::Deref for TP_FIFO_MODE_SELECT_R {
+    type Target = crate::FieldReader<u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `TP_FIFO_MODE_SELECT` writer - TP Access Data Mode Select"]
+pub struct TP_FIFO_MODE_SELECT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TP_FIFO_MODE_SELECT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TP_FIFO_MODE_SELECT_A) -> &'a mut W {
+        self.bits(variant.into())
+    }
+    #[doc = "FIFO store X1 Y1 data for single touch no pressure mode"]
+    #[inline(always)]
+    pub fn x1y1(self) -> &'a mut W {
+        self.variant(TP_FIFO_MODE_SELECT_A::X1Y1)
+    }
+    #[doc = "FIFO store X1 Y1 ΔX ΔY data for dual touch no pressure mode"]
+    #[inline(always)]
+    pub fn x1y1d_xd_y(self) -> &'a mut W {
+        self.variant(TP_FIFO_MODE_SELECT_A::X1Y1DXDY)
+    }
+    #[doc = "FIFO store X1 Y1 X2 Y2 data for dual touch no pressure mode"]
+    #[inline(always)]
+    pub fn x1y1x2y2(self) -> &'a mut W {
+        self.variant(TP_FIFO_MODE_SELECT_A::X1Y1X2Y2)
+    }
+    #[doc = "FIFO store X1 Y1 X2 Y2 Z1 Z2 data for dual touch and pressure mode"]
+    #[inline(always)]
+    pub fn x1y1x2y2z1z2(self) -> &'a mut W {
+        self.variant(TP_FIFO_MODE_SELECT_A::X1Y1X2Y2Z1Z2)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(3 << 26)) | ((value as u32 & 3) << 26);
+        self.w
+    }
+}
+#[doc = "TP Pressure Measurement Enable Control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PRE_MEA_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<PRE_MEA_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PRE_MEA_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `PRE_MEA_EN` reader - TP Pressure Measurement Enable Control"]
+pub struct PRE_MEA_EN_R(crate::FieldReader<bool>);
+impl PRE_MEA_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        PRE_MEA_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PRE_MEA_EN_A {
+        match self.bits {
+            false => PRE_MEA_EN_A::DISABLE,
+            true => PRE_MEA_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        **self == PRE_MEA_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        **self == PRE_MEA_EN_A::ENABLE
+    }
+}
+impl core::ops::Deref for PRE_MEA_EN_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRE_MEA_EN` writer - TP Pressure Measurement Enable Control"]
+pub struct PRE_MEA_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PRE_MEA_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PRE_MEA_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PRE_MEA_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PRE_MEA_EN_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
+        self.w
+    }
+}
+#[doc = "Field `PRE_MEA_THRE_CNT` reader - TP Pressure Measurement Threshold Control"]
+pub struct PRE_MEA_THRE_CNT_R(crate::FieldReader<u32>);
+impl PRE_MEA_THRE_CNT_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u32) -> Self {
+        PRE_MEA_THRE_CNT_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for PRE_MEA_THRE_CNT_R {
+    type Target = crate::FieldReader<u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `PRE_MEA_THRE_CNT` writer - TP Pressure Measurement Threshold Control"]
+pub struct PRE_MEA_THRE_CNT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> PRE_MEA_THRE_CNT_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u32) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 28:31 - Internal Pull-up Resistor Control"]
+    #[inline(always)]
+    pub fn tp_sensitive_adjust(&self) -> TP_SENSITIVE_ADJUST_R {
+        TP_SENSITIVE_ADJUST_R::new(((self.bits >> 28) & 0x0f) as u8)
+    }
+    #[doc = "Bits 26:27 - TP Access Data Mode Select"]
+    #[inline(always)]
+    pub fn tp_fifo_mode_select(&self) -> TP_FIFO_MODE_SELECT_R {
+        TP_FIFO_MODE_SELECT_R::new(((self.bits >> 26) & 3) as u8)
+    }
+    #[doc = "Bit 24 - TP Pressure Measurement Enable Control"]
+    #[inline(always)]
+    pub fn pre_mea_en(&self) -> PRE_MEA_EN_R {
+        PRE_MEA_EN_R::new(((self.bits >> 24) & 1) != 0)
+    }
+    #[doc = "Bits 0:23 - TP Pressure Measurement Threshold Control"]
+    #[inline(always)]
+    pub fn pre_mea_thre_cnt(&self) -> PRE_MEA_THRE_CNT_R {
+        PRE_MEA_THRE_CNT_R::new((self.bits & 0x00ff_ffff) as u32)
+    }
+}
 impl W {
+    #[doc = "Bits 28:31 - Internal Pull-up Resistor Control"]
+    #[inline(always)]
+    pub fn tp_sensitive_adjust(&mut self) -> TP_SENSITIVE_ADJUST_W {
+        TP_SENSITIVE_ADJUST_W { w: self }
+    }
+    #[doc = "Bits 26:27 - TP Access Data Mode Select"]
+    #[inline(always)]
+    pub fn tp_fifo_mode_select(&mut self) -> TP_FIFO_MODE_SELECT_W {
+        TP_FIFO_MODE_SELECT_W { w: self }
+    }
+    #[doc = "Bit 24 - TP Pressure Measurement Enable Control"]
+    #[inline(always)]
+    pub fn pre_mea_en(&mut self) -> PRE_MEA_EN_W {
+        PRE_MEA_EN_W { w: self }
+    }
+    #[doc = "Bits 0:23 - TP Pressure Measurement Threshold Control"]
+    #[inline(always)]
+    pub fn pre_mea_thre_cnt(&mut self) -> PRE_MEA_THRE_CNT_W {
+        PRE_MEA_THRE_CNT_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

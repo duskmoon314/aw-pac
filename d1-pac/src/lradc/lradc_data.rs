@@ -13,36 +13,29 @@ impl From<crate::R<LRADC_DATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LRADC_DATA` writer"]
-pub struct W(crate::W<LRADC_DATA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LRADC_DATA_SPEC>;
+#[doc = "Field `LRADC_DATA` reader - LRADC Data"]
+pub struct LRADC_DATA_R(crate::FieldReader<u8>);
+impl LRADC_DATA_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        LRADC_DATA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for LRADC_DATA_R {
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl core::ops::DerefMut for W {
+impl R {
+    #[doc = "Bits 0:5 - LRADC Data"]
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    pub fn lradc_data(&self) -> LRADC_DATA_R {
+        LRADC_DATA_R::new((self.bits & 0x3f) as u8)
     }
 }
-impl From<crate::W<LRADC_DATA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LRADC_DATA_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "LRADC Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lradc_data](index.html) module"]
+#[doc = "LRADC Data Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lradc_data](index.html) module"]
 pub struct LRADC_DATA_SPEC;
 impl crate::RegisterSpec for LRADC_DATA_SPEC {
     type Ux = u32;
@@ -50,10 +43,6 @@ impl crate::RegisterSpec for LRADC_DATA_SPEC {
 #[doc = "`read()` method returns [lradc_data::R](R) reader structure"]
 impl crate::Readable for LRADC_DATA_SPEC {
     type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lradc_data::W](W) writer structure"]
-impl crate::Writable for LRADC_DATA_SPEC {
-    type Writer = W;
 }
 #[doc = "`reset()` method sets LRADC_DATA to value 0"]
 impl crate::Resettable for LRADC_DATA_SPEC {

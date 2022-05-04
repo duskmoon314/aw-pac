@@ -34,7 +34,46 @@ impl From<crate::W<GP_CDATA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `GP_CDATA` reader - GPADC Calibration Data"]
+pub struct GP_CDATA_R(crate::FieldReader<u16>);
+impl GP_CDATA_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u16) -> Self {
+        GP_CDATA_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for GP_CDATA_R {
+    type Target = crate::FieldReader<u16>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `GP_CDATA` writer - GPADC Calibration Data"]
+pub struct GP_CDATA_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> GP_CDATA_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:11 - GPADC Calibration Data"]
+    #[inline(always)]
+    pub fn gp_cdata(&self) -> GP_CDATA_R {
+        GP_CDATA_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:11 - GPADC Calibration Data"]
+    #[inline(always)]
+    pub fn gp_cdata(&mut self) -> GP_CDATA_W {
+        GP_CDATA_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

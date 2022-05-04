@@ -34,6 +34,28 @@ impl From<crate::W<CE_CDA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CUR_DST_ADDR` reader - Current destination address"]
+pub struct CUR_DST_ADDR_R(crate::FieldReader<u32>);
+impl CUR_DST_ADDR_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u32) -> Self {
+        CUR_DST_ADDR_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for CUR_DST_ADDR_R {
+    type Target = crate::FieldReader<u32>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl R {
+    #[doc = "Bits 0:31 - Current destination address"]
+    #[inline(always)]
+    pub fn cur_dst_addr(&self) -> CUR_DST_ADDR_R {
+        CUR_DST_ADDR_R::new(self.bits)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -42,7 +64,7 @@ impl W {
         self
     }
 }
-#[doc = "DMA Current Destination Address\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ce_cda](index.html) module"]
+#[doc = "Current Destination Address Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ce_cda](index.html) module"]
 pub struct CE_CDA_SPEC;
 impl crate::RegisterSpec for CE_CDA_SPEC {
     type Ux = u32;

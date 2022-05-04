@@ -34,7 +34,123 @@ impl From<crate::W<GP_DATAL_INTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Channel Voltage Low Available Interrupt Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH_LOW_PENGDING_A {
+    #[doc = "0: NO Pending IRQ"]
+    NO_PENDING = 0,
+    #[doc = "1: Channel Voltage Low Available Pending IRQ"]
+    PENDING = 1,
+}
+impl From<CH_LOW_PENGDING_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH_LOW_PENGDING_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `CH(0-1)_LOW_PENGDING` reader - Channel Voltage Low Available Interrupt Status"]
+pub struct CH_LOW_PENGDING_R(crate::FieldReader<bool>);
+impl CH_LOW_PENGDING_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        CH_LOW_PENGDING_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH_LOW_PENGDING_A {
+        match self.bits {
+            false => CH_LOW_PENGDING_A::NO_PENDING,
+            true => CH_LOW_PENGDING_A::PENDING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
+    #[inline(always)]
+    pub fn is_no_pending(&self) -> bool {
+        **self == CH_LOW_PENGDING_A::NO_PENDING
+    }
+    #[doc = "Checks if the value of the field is `PENDING`"]
+    #[inline(always)]
+    pub fn is_pending(&self) -> bool {
+        **self == CH_LOW_PENGDING_A::PENDING
+    }
+}
+impl core::ops::Deref for CH_LOW_PENGDING_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Fields `CH(0-1)_LOW_PENGDING` const generic writer - Channel Voltage Low Available Interrupt Status"]
+pub struct CH_LOW_PENGDING_W<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> CH_LOW_PENGDING_W<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CH_LOW_PENGDING_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "NO Pending IRQ"]
+    #[inline(always)]
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(CH_LOW_PENGDING_A::NO_PENDING)
+    }
+    #[doc = "Channel Voltage Low Available Pending IRQ"]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut W {
+        self.variant(CH_LOW_PENGDING_A::PENDING)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Channel Voltage Low Available Interrupt Status"]
+    #[inline(always)]
+    pub unsafe fn ch_low_pengding(&self, n: usize) -> CH_LOW_PENGDING_R {
+        CH_LOW_PENGDING_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Channel Voltage Low Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch0_low_pengding(&self) -> CH_LOW_PENGDING_R {
+        CH_LOW_PENGDING_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - Channel Voltage Low Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch1_low_pengding(&self) -> CH_LOW_PENGDING_R {
+        CH_LOW_PENGDING_R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Channel Voltage Low Available Interrupt Status"]
+    #[inline(always)]
+    pub unsafe fn ch_low_pengding<const O: usize>(&mut self) -> CH_LOW_PENGDING_W<O> {
+        CH_LOW_PENGDING_W { w: self }
+    }
+    #[doc = "Bit 0 - Channel Voltage Low Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch0_low_pengding(&mut self) -> CH_LOW_PENGDING_W<0> {
+        CH_LOW_PENGDING_W { w: self }
+    }
+    #[doc = "Bit 1 - Channel Voltage Low Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch1_low_pengding(&mut self) -> CH_LOW_PENGDING_W<1> {
+        CH_LOW_PENGDING_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
