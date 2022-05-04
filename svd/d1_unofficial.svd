@@ -7,7 +7,7 @@
   <description>Allwinner's D1-H chip unofficial SVD file maintained by community</description>
 
   <addressUnitBits>8</addressUnitBits>
-  <width>32</width>
+  <width>64</width>
   <size>32</size>
   <access>read-write</access>
   <resetValue>0x00000000</resetValue>
@@ -8934,31 +8934,336 @@
           <name>DMAC_IRQ_EN_REG0</name>
           <description>DMAC IRQ Enable Register 0</description>
           <addressOffset>0x0000</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>DMA%s_HLAF_IRQ_EN</name>
+              <description>Enable the half package interrupt of DMA</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>DMA%s_PKG_IRQ_EN</name>
+              <description>Enable the package end interrupt of DMA</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>DMA%s_QUEUE_IRQ_EN</name>
+              <description>Enable the queue end interrupt of DMA</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMAC_IRQ_EN_REG1</name>
           <description>DMAC IRQ Enable Register 1</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>DMA%s_HLAF_IRQ_EN</name>
+              <description>Enable the half package interrupt of DMA</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>DMA%s_PKG_IRQ_EN</name>
+              <description>Enable the package end interrupt of DMA</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>DMA%s_QUEUE_IRQ_EN</name>
+              <description>Enable the queue end interrupt of DMA</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMAC_IRQ_PEND_REG0</name>
           <description>DMAC IRQ Pending Register 0</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>DMA%s_HLAF_IRQ_PEND</name>
+              <description>The IRQ pending bit for the half package interrupt of DMA</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>DMA%s_PKG_IRQ_PEND</name>
+              <description>The IRQ pending bit for the package end interrupt of DMA</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <name>DMA%s_QUEUE_IRQ_PEND</name>
+              <description>The IRQ pending bit for the queue end interrupt of DMA</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMAC_IRQ_PEND_REG1</name>
           <description>DMAC IRQ Pending Register 1</description>
           <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>DMA%s_HLAF_IRQ_PEND</name>
+              <description>The IRQ pending bit for the half package interrupt of DMA</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>DMA%s_PKG_IRQ_PEND</name>
+              <description>The IRQ pending bit for the package end interrupt of DMA</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>DMA%s_QUEUE_IRQ_PEND</name>
+              <description>The IRQ pending bit for the queue end interrupt of DMA</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMAC_AUTO_GATE_REG</name>
           <description>DMAC Auto Gating Register</description>
           <addressOffset>0x0028</addressOffset>
+          <fields>
+            <field>
+              <name>DMA_MCLK_CIRCUIT</name>
+              <description>Auto gating bit of DMA MCLK interfact circuit</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_COMMON_CIRCUIT</name>
+              <description>Auto gating bit of DMA common circuit</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_CHAN_CIRCUIT</name>
+              <description>Auto gating bit of DMA channel circuit</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DMAC_STA_REG</name>
           <description>DMAC Status Register</description>
           <addressOffset>0x0030</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>MBUS_FIFO_STATUS</name>
+              <description>MBUS FIFO Status</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>empty</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>not_empty</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>16</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>DMA_STATUS%s</name>
+              <description>DMA Channel[15:0] Status</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>idle</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>busy</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_STATUS</name>
+              <description>DMA Channel[15:0] Status</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -8966,6 +9271,23 @@
           <name>DMAC_EN_REG%s</name>
           <description>DMAC Channel Enable Register</description>
           <addressOffset>0x0100</addressOffset>
+          <fields>
+            <field>
+              <name>DMA_EN</name>
+              <description>DMA Channel Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -8973,6 +9295,23 @@
           <name>DMAC_PAU_REG%s</name>
           <description>DMAC Channel Pause Register</description>
           <addressOffset>0x0104</addressOffset>
+          <fields>
+            <field>
+              <name>DMA_PAUSE</name>
+              <description>Pause the DMA Channel Transfer Data</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>resume</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pause</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -8980,6 +9319,18 @@
           <name>DMAC_DESC_ADDR_REG%s</name>
           <description>DMAC Channel Start Address Register</description>
           <addressOffset>0x0108</addressOffset>
+          <fields>
+            <field>
+              <name>DMA_DESC_ADDR</name>
+              <description>Lower 30 bits of DMA channel descriptor address</description>
+              <bitRange>[31:2]</bitRange>
+            </field>
+            <field>
+              <name>DMA_DESC_HIGH_ADDR</name>
+              <description>Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit[1:0], bit[31:2], 2'b00}</description>
+              <bitRange>[1:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -8987,6 +9338,163 @@
           <name>DMAC_CFG_REG%s</name>
           <description>DMAC Channel Configuration Register</description>
           <addressOffset>0x010C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>BMODE_SEL</name>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normal</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>bmode</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_DEST_DATA_WIDTH</name>
+              <description>DMA Destination Data Width</description>
+              <bitRange>[26:25]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B8</name>
+                  <description>8 bit</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B16</name>
+                  <description>16 bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B32</name>
+                  <description>32 bit</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B64</name>
+                  <description>64 bit</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_ADDR_MODE</name>
+              <description>DMA Destination Address Mode</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>linear</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>io</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_DEST_BLOCK_SIZE</name>
+              <description>DMA Destination Block Size</description>
+              <bitRange>[23:22]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S1</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S4</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S8</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S16</name>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_DEST_DRQ_TYPE</name>
+              <description>DMA Destination DRQ Type</description>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>DMA_SRC_DATA_WIDTH</name>
+              <description>DMA Source Data Width</description>
+              <bitRange>[10:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B8</name>
+                  <description>8 bit</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B16</name>
+                  <description>16 bit</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B32</name>
+                  <description>32 bit</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B64</name>
+                  <description>64 bit</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_SRC_ADDR_MODE</name>
+              <description>DMA Source Address Mode</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>linear</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>io</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_SRC_BLOCK_SIZE</name>
+              <description>DMA Source Block Size</description>
+              <bitRange>[7:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S1</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S4</name>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S8</name>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S16</name>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_SRC_DRQ_TYPE</name>
+              <description>DMA Source DRQ Type</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -8994,6 +9502,7 @@
           <name>DMAC_CUR_SRC_REG%s</name>
           <description>DMAC Channel Current Source Register</description>
           <addressOffset>0x0110</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <dim>16</dim>
@@ -9001,6 +9510,7 @@
           <name>DMAC_CUR_DEST_REG%s</name>
           <description>DMAC Channel Current Destination Register</description>
           <addressOffset>0x0114</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <dim>16</dim>
@@ -9008,6 +9518,14 @@
           <name>DMAC_BCNT_LEFT_REG%s</name>
           <description>DMAC Channel Byte Counter Left Register</description>
           <addressOffset>0x0118</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>DMA_BCNT_LEFT</name>
+              <description>DMA Channel Byte Counter Left</description>
+              <bitRange>[24:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -9015,6 +9533,14 @@
           <name>DMAC_PARA_REG%s</name>
           <description>DMAC Channel Parameter Register</description>
           <addressOffset>0x011C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>WAIT_CYC</name>
+              <description>Wait Clock Cycle</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -9022,6 +9548,38 @@
           <name>DMAC_MODE_REG%s</name>
           <description>DMAC Mode Register</description>
           <addressOffset>0x0128</addressOffset>
+          <fields>
+            <field>
+              <name>DMA_DST_MODE</name>
+              <description>Destination Communication Mode Select</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>waiting</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>handshake</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DMA_SRC_MODE</name>
+              <description>Source Communication Mode Select</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>waiting</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>handshake</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>16</dim>
@@ -9029,6 +9587,7 @@
           <name>DMAC_FDESC_ADDR_REG%s</name>
           <description>DMAC Former Descriptor Address Register</description>
           <addressOffset>0x012C</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <dim>16</dim>
@@ -9036,6 +9595,7 @@
           <name>DMAC_PKG_NUM_REG%s</name>
           <description>DMAC Package Number Register</description>
           <addressOffset>0x0130</addressOffset>
+          <access>read-only</access>
         </register>
       </registers>
     </peripheral>

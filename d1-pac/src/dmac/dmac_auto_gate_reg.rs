@@ -34,7 +34,291 @@ impl From<crate::W<DMAC_AUTO_GATE_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Auto gating bit of DMA MCLK interfact circuit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_MCLK_CIRCUIT_A {
+    #[doc = "0: `0`"]
+    ENABLED = 0,
+    #[doc = "1: `1`"]
+    DISABLED = 1,
+}
+impl From<DMA_MCLK_CIRCUIT_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_MCLK_CIRCUIT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `DMA_MCLK_CIRCUIT` reader - Auto gating bit of DMA MCLK interfact circuit"]
+pub struct DMA_MCLK_CIRCUIT_R(crate::FieldReader<bool>);
+impl DMA_MCLK_CIRCUIT_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_MCLK_CIRCUIT_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_MCLK_CIRCUIT_A {
+        match self.bits {
+            false => DMA_MCLK_CIRCUIT_A::ENABLED,
+            true => DMA_MCLK_CIRCUIT_A::DISABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        **self == DMA_MCLK_CIRCUIT_A::ENABLED
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        **self == DMA_MCLK_CIRCUIT_A::DISABLED
+    }
+}
+impl core::ops::Deref for DMA_MCLK_CIRCUIT_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DMA_MCLK_CIRCUIT` writer - Auto gating bit of DMA MCLK interfact circuit"]
+pub struct DMA_MCLK_CIRCUIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DMA_MCLK_CIRCUIT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_MCLK_CIRCUIT_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DMA_MCLK_CIRCUIT_A::ENABLED)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(DMA_MCLK_CIRCUIT_A::DISABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
+        self.w
+    }
+}
+#[doc = "Auto gating bit of DMA common circuit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_COMMON_CIRCUIT_A {
+    #[doc = "0: `0`"]
+    ENABLED = 0,
+    #[doc = "1: `1`"]
+    DISABLED = 1,
+}
+impl From<DMA_COMMON_CIRCUIT_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_COMMON_CIRCUIT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `DMA_COMMON_CIRCUIT` reader - Auto gating bit of DMA common circuit"]
+pub struct DMA_COMMON_CIRCUIT_R(crate::FieldReader<bool>);
+impl DMA_COMMON_CIRCUIT_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_COMMON_CIRCUIT_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_COMMON_CIRCUIT_A {
+        match self.bits {
+            false => DMA_COMMON_CIRCUIT_A::ENABLED,
+            true => DMA_COMMON_CIRCUIT_A::DISABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        **self == DMA_COMMON_CIRCUIT_A::ENABLED
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        **self == DMA_COMMON_CIRCUIT_A::DISABLED
+    }
+}
+impl core::ops::Deref for DMA_COMMON_CIRCUIT_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DMA_COMMON_CIRCUIT` writer - Auto gating bit of DMA common circuit"]
+pub struct DMA_COMMON_CIRCUIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DMA_COMMON_CIRCUIT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_COMMON_CIRCUIT_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DMA_COMMON_CIRCUIT_A::ENABLED)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(DMA_COMMON_CIRCUIT_A::DISABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
+        self.w
+    }
+}
+#[doc = "Auto gating bit of DMA channel circuit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_CHAN_CIRCUIT_A {
+    #[doc = "0: `0`"]
+    ENABLED = 0,
+    #[doc = "1: `1`"]
+    DISABLED = 1,
+}
+impl From<DMA_CHAN_CIRCUIT_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_CHAN_CIRCUIT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `DMA_CHAN_CIRCUIT` reader - Auto gating bit of DMA channel circuit"]
+pub struct DMA_CHAN_CIRCUIT_R(crate::FieldReader<bool>);
+impl DMA_CHAN_CIRCUIT_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_CHAN_CIRCUIT_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_CHAN_CIRCUIT_A {
+        match self.bits {
+            false => DMA_CHAN_CIRCUIT_A::ENABLED,
+            true => DMA_CHAN_CIRCUIT_A::DISABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        **self == DMA_CHAN_CIRCUIT_A::ENABLED
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        **self == DMA_CHAN_CIRCUIT_A::DISABLED
+    }
+}
+impl core::ops::Deref for DMA_CHAN_CIRCUIT_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DMA_CHAN_CIRCUIT` writer - Auto gating bit of DMA channel circuit"]
+pub struct DMA_CHAN_CIRCUIT_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DMA_CHAN_CIRCUIT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_CHAN_CIRCUIT_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DMA_CHAN_CIRCUIT_A::ENABLED)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(DMA_CHAN_CIRCUIT_A::DISABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 2 - Auto gating bit of DMA MCLK interfact circuit"]
+    #[inline(always)]
+    pub fn dma_mclk_circuit(&self) -> DMA_MCLK_CIRCUIT_R {
+        DMA_MCLK_CIRCUIT_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 1 - Auto gating bit of DMA common circuit"]
+    #[inline(always)]
+    pub fn dma_common_circuit(&self) -> DMA_COMMON_CIRCUIT_R {
+        DMA_COMMON_CIRCUIT_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Auto gating bit of DMA channel circuit"]
+    #[inline(always)]
+    pub fn dma_chan_circuit(&self) -> DMA_CHAN_CIRCUIT_R {
+        DMA_CHAN_CIRCUIT_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 2 - Auto gating bit of DMA MCLK interfact circuit"]
+    #[inline(always)]
+    pub fn dma_mclk_circuit(&mut self) -> DMA_MCLK_CIRCUIT_W {
+        DMA_MCLK_CIRCUIT_W { w: self }
+    }
+    #[doc = "Bit 1 - Auto gating bit of DMA common circuit"]
+    #[inline(always)]
+    pub fn dma_common_circuit(&mut self) -> DMA_COMMON_CIRCUIT_W {
+        DMA_COMMON_CIRCUIT_W { w: self }
+    }
+    #[doc = "Bit 0 - Auto gating bit of DMA channel circuit"]
+    #[inline(always)]
+    pub fn dma_chan_circuit(&mut self) -> DMA_CHAN_CIRCUIT_W {
+        DMA_CHAN_CIRCUIT_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

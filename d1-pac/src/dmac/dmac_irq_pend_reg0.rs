@@ -34,7 +34,531 @@ impl From<crate::W<DMAC_IRQ_PEND_REG0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "The IRQ pending bit for the half package interrupt of DMA\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_HLAF_IRQ_PEND_A {
+    #[doc = "0: `0`"]
+    NO_EFFECT = 0,
+    #[doc = "1: `1`"]
+    PENDING = 1,
+}
+impl From<DMA_HLAF_IRQ_PEND_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_HLAF_IRQ_PEND_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `DMA(0-7)_HLAF_IRQ_PEND` reader - The IRQ pending bit for the half package interrupt of DMA"]
+pub struct DMA_HLAF_IRQ_PEND_R(crate::FieldReader<bool>);
+impl DMA_HLAF_IRQ_PEND_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_HLAF_IRQ_PEND_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_HLAF_IRQ_PEND_A {
+        match self.bits {
+            false => DMA_HLAF_IRQ_PEND_A::NO_EFFECT,
+            true => DMA_HLAF_IRQ_PEND_A::PENDING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[inline(always)]
+    pub fn is_no_effect(&self) -> bool {
+        **self == DMA_HLAF_IRQ_PEND_A::NO_EFFECT
+    }
+    #[doc = "Checks if the value of the field is `PENDING`"]
+    #[inline(always)]
+    pub fn is_pending(&self) -> bool {
+        **self == DMA_HLAF_IRQ_PEND_A::PENDING
+    }
+}
+impl core::ops::Deref for DMA_HLAF_IRQ_PEND_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Fields `DMA(0-7)_HLAF_IRQ_PEND` const generic writer - The IRQ pending bit for the half package interrupt of DMA"]
+pub struct DMA_HLAF_IRQ_PEND_W<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> DMA_HLAF_IRQ_PEND_W<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_HLAF_IRQ_PEND_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn no_effect(self) -> &'a mut W {
+        self.variant(DMA_HLAF_IRQ_PEND_A::NO_EFFECT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut W {
+        self.variant(DMA_HLAF_IRQ_PEND_A::PENDING)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
+        self.w
+    }
+}
+#[doc = "The IRQ pending bit for the package end interrupt of DMA\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_PKG_IRQ_PEND_A {
+    #[doc = "0: `0`"]
+    NO_EFFECT = 0,
+    #[doc = "1: `1`"]
+    PENDING = 1,
+}
+impl From<DMA_PKG_IRQ_PEND_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_PKG_IRQ_PEND_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `DMA(0-7)_PKG_IRQ_PEND` reader - The IRQ pending bit for the package end interrupt of DMA"]
+pub struct DMA_PKG_IRQ_PEND_R(crate::FieldReader<bool>);
+impl DMA_PKG_IRQ_PEND_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_PKG_IRQ_PEND_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_PKG_IRQ_PEND_A {
+        match self.bits {
+            false => DMA_PKG_IRQ_PEND_A::NO_EFFECT,
+            true => DMA_PKG_IRQ_PEND_A::PENDING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[inline(always)]
+    pub fn is_no_effect(&self) -> bool {
+        **self == DMA_PKG_IRQ_PEND_A::NO_EFFECT
+    }
+    #[doc = "Checks if the value of the field is `PENDING`"]
+    #[inline(always)]
+    pub fn is_pending(&self) -> bool {
+        **self == DMA_PKG_IRQ_PEND_A::PENDING
+    }
+}
+impl core::ops::Deref for DMA_PKG_IRQ_PEND_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Fields `DMA(0-7)_PKG_IRQ_PEND` const generic writer - The IRQ pending bit for the package end interrupt of DMA"]
+pub struct DMA_PKG_IRQ_PEND_W<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> DMA_PKG_IRQ_PEND_W<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_PKG_IRQ_PEND_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn no_effect(self) -> &'a mut W {
+        self.variant(DMA_PKG_IRQ_PEND_A::NO_EFFECT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut W {
+        self.variant(DMA_PKG_IRQ_PEND_A::PENDING)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
+        self.w
+    }
+}
+#[doc = "The IRQ pending bit for the queue end interrupt of DMA\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_QUEUE_IRQ_PEND_A {
+    #[doc = "0: `0`"]
+    NO_EFFECT = 0,
+    #[doc = "1: `1`"]
+    PENDING = 1,
+}
+impl From<DMA_QUEUE_IRQ_PEND_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_QUEUE_IRQ_PEND_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `DMA(0-7)_QUEUE_IRQ_PEND` reader - The IRQ pending bit for the queue end interrupt of DMA"]
+pub struct DMA_QUEUE_IRQ_PEND_R(crate::FieldReader<bool>);
+impl DMA_QUEUE_IRQ_PEND_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_QUEUE_IRQ_PEND_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_QUEUE_IRQ_PEND_A {
+        match self.bits {
+            false => DMA_QUEUE_IRQ_PEND_A::NO_EFFECT,
+            true => DMA_QUEUE_IRQ_PEND_A::PENDING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[inline(always)]
+    pub fn is_no_effect(&self) -> bool {
+        **self == DMA_QUEUE_IRQ_PEND_A::NO_EFFECT
+    }
+    #[doc = "Checks if the value of the field is `PENDING`"]
+    #[inline(always)]
+    pub fn is_pending(&self) -> bool {
+        **self == DMA_QUEUE_IRQ_PEND_A::PENDING
+    }
+}
+impl core::ops::Deref for DMA_QUEUE_IRQ_PEND_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Fields `DMA(0-7)_QUEUE_IRQ_PEND` const generic writer - The IRQ pending bit for the queue end interrupt of DMA"]
+pub struct DMA_QUEUE_IRQ_PEND_W<'a, const O: usize> {
+    w: &'a mut W,
+}
+impl<'a, const O: usize> DMA_QUEUE_IRQ_PEND_W<'a, O> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_QUEUE_IRQ_PEND_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn no_effect(self) -> &'a mut W {
+        self.variant(DMA_QUEUE_IRQ_PEND_A::NO_EFFECT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut W {
+        self.variant(DMA_QUEUE_IRQ_PEND_A::PENDING)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
+        self.w
+    }
+}
+impl R {
+    #[doc = "The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub unsafe fn dma_hlaf_irq_pend(&self, n: usize) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> (n * 4)) & 1) != 0)
+    }
+    #[doc = "Bit 0 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma0_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 4 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma1_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 8 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma2_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    #[doc = "Bit 12 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma3_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> 12) & 1) != 0)
+    }
+    #[doc = "Bit 16 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma4_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 20 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma5_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> 20) & 1) != 0)
+    }
+    #[doc = "Bit 24 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma6_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> 24) & 1) != 0)
+    }
+    #[doc = "Bit 28 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma7_hlaf_irq_pend(&self) -> DMA_HLAF_IRQ_PEND_R {
+        DMA_HLAF_IRQ_PEND_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    #[doc = "The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub unsafe fn dma_pkg_irq_pend(&self, n: usize) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> (n * 4 + 1)) & 1) != 0)
+    }
+    #[doc = "Bit 1 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma0_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 5 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma1_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 9 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma2_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 9) & 1) != 0)
+    }
+    #[doc = "Bit 13 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma3_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 13) & 1) != 0)
+    }
+    #[doc = "Bit 17 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma4_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 17) & 1) != 0)
+    }
+    #[doc = "Bit 21 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma5_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 21) & 1) != 0)
+    }
+    #[doc = "Bit 25 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma6_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 25) & 1) != 0)
+    }
+    #[doc = "Bit 29 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma7_pkg_irq_pend(&self) -> DMA_PKG_IRQ_PEND_R {
+        DMA_PKG_IRQ_PEND_R::new(((self.bits >> 29) & 1) != 0)
+    }
+    #[doc = "The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub unsafe fn dma_queue_irq_pend(&self, n: usize) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> (n * 4 + 2)) & 1) != 0)
+    }
+    #[doc = "Bit 2 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma0_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 6 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma1_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 10 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma2_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 14 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma3_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 14) & 1) != 0)
+    }
+    #[doc = "Bit 18 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma4_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 18) & 1) != 0)
+    }
+    #[doc = "Bit 22 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma5_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 22) & 1) != 0)
+    }
+    #[doc = "Bit 26 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma6_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 26) & 1) != 0)
+    }
+    #[doc = "Bit 30 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma7_queue_irq_pend(&self) -> DMA_QUEUE_IRQ_PEND_R {
+        DMA_QUEUE_IRQ_PEND_R::new(((self.bits >> 30) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub unsafe fn dma_hlaf_irq_pend<const O: usize>(&mut self) -> DMA_HLAF_IRQ_PEND_W<O> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 0 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma0_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<0> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 4 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma1_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<4> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 8 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma2_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<8> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 12 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma3_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<12> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 16 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma4_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<16> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 20 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma5_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<20> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 24 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma6_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<24> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 28 - The IRQ pending bit for the half package interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma7_hlaf_irq_pend(&mut self) -> DMA_HLAF_IRQ_PEND_W<28> {
+        DMA_HLAF_IRQ_PEND_W { w: self }
+    }
+    #[doc = "The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub unsafe fn dma_pkg_irq_pend<const O: usize>(&mut self) -> DMA_PKG_IRQ_PEND_W<O> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 1 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma0_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<1> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 5 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma1_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<5> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 9 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma2_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<9> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 13 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma3_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<13> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 17 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma4_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<17> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 21 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma5_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<21> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 25 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma6_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<25> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 29 - The IRQ pending bit for the package end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma7_pkg_irq_pend(&mut self) -> DMA_PKG_IRQ_PEND_W<29> {
+        DMA_PKG_IRQ_PEND_W { w: self }
+    }
+    #[doc = "The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub unsafe fn dma_queue_irq_pend<const O: usize>(&mut self) -> DMA_QUEUE_IRQ_PEND_W<O> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 2 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma0_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<2> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 6 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma1_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<6> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 10 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma2_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<10> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 14 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma3_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<14> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 18 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma4_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<18> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 22 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma5_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<22> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 26 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma6_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<26> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
+    #[doc = "Bit 30 - The IRQ pending bit for the queue end interrupt of DMA"]
+    #[inline(always)]
+    pub fn dma7_queue_irq_pend(&mut self) -> DMA_QUEUE_IRQ_PEND_W<30> {
+        DMA_QUEUE_IRQ_PEND_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -34,7 +34,103 @@ impl From<crate::W<DMAC_EN_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "DMA Channel Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_EN_A {
+    #[doc = "0: `0`"]
+    DISABLED = 0,
+    #[doc = "1: `1`"]
+    ENABLED = 1,
+}
+impl From<DMA_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `DMA_EN` reader - DMA Channel Enable"]
+pub struct DMA_EN_R(crate::FieldReader<bool>);
+impl DMA_EN_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: bool) -> Self {
+        DMA_EN_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_EN_A {
+        match self.bits {
+            false => DMA_EN_A::DISABLED,
+            true => DMA_EN_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        **self == DMA_EN_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        **self == DMA_EN_A::ENABLED
+    }
+}
+impl core::ops::Deref for DMA_EN_R {
+    type Target = crate::FieldReader<bool>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `DMA_EN` writer - DMA Channel Enable"]
+pub struct DMA_EN_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DMA_EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DMA_EN_A) -> &'a mut W {
+        self.bit(variant.into())
+    }
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(DMA_EN_A::DISABLED)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DMA_EN_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bit 0 - DMA Channel Enable"]
+    #[inline(always)]
+    pub fn dma_en(&self) -> DMA_EN_R {
+        DMA_EN_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - DMA Channel Enable"]
+    #[inline(always)]
+    pub fn dma_en(&mut self) -> DMA_EN_W {
+        DMA_EN_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
