@@ -13,36 +13,131 @@ impl From<crate::R<SPINLOCK_SYSTATUS_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SPINLOCK_SYSTATUS_REG` writer"]
-pub struct W(crate::W<SPINLOCK_SYSTATUS_REG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SPINLOCK_SYSTATUS_REG_SPEC>;
+#[doc = "Number of lock registers implemented\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum LOCKS_NUM_A {
+    #[doc = "0: 256 lock registers"]
+    N256 = 0,
+    #[doc = "1: 32 lock registers"]
+    N32 = 1,
+    #[doc = "2: 64 lock registers"]
+    N64 = 2,
+    #[doc = "3: 128 lock registers"]
+    N128 = 3,
+}
+impl From<LOCKS_NUM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LOCKS_NUM_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `LOCKS_NUM` reader - Number of lock registers implemented"]
+pub struct LOCKS_NUM_R(crate::FieldReader<u8>);
+impl LOCKS_NUM_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        LOCKS_NUM_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOCKS_NUM_A {
+        match self.bits {
+            0 => LOCKS_NUM_A::N256,
+            1 => LOCKS_NUM_A::N32,
+            2 => LOCKS_NUM_A::N64,
+            3 => LOCKS_NUM_A::N128,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `N256`"]
+    #[inline(always)]
+    pub fn is_n256(&self) -> bool {
+        **self == LOCKS_NUM_A::N256
+    }
+    #[doc = "Checks if the value of the field is `N32`"]
+    #[inline(always)]
+    pub fn is_n32(&self) -> bool {
+        **self == LOCKS_NUM_A::N32
+    }
+    #[doc = "Checks if the value of the field is `N64`"]
+    #[inline(always)]
+    pub fn is_n64(&self) -> bool {
+        **self == LOCKS_NUM_A::N64
+    }
+    #[doc = "Checks if the value of the field is `N128`"]
+    #[inline(always)]
+    pub fn is_n128(&self) -> bool {
+        **self == LOCKS_NUM_A::N128
+    }
+}
+impl core::ops::Deref for LOCKS_NUM_R {
+    type Target = crate::FieldReader<u8>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl core::ops::DerefMut for W {
+#[doc = "In-Use flag0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IU0_A {
+    #[doc = "0: All lock registers 0-31 are not taken"]
+    ALL_NOT_TAKEN = 0,
+    #[doc = "1: At least one of the lock registers 0-31 is taken"]
+    AT_LEAST_ONE_TAKEN = 1,
+}
+impl From<IU0_A> for bool {
     #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
+    fn from(variant: IU0_A) -> Self {
+        variant as u8 != 0
     }
 }
-impl From<crate::W<SPINLOCK_SYSTATUS_REG_SPEC>> for W {
+#[doc = "Field `IU0` reader - In-Use flag0"]
+pub struct IU0_R(crate::FieldReader<bool>);
+impl IU0_R {
     #[inline(always)]
-    fn from(writer: crate::W<SPINLOCK_SYSTATUS_REG_SPEC>) -> Self {
-        W(writer)
+    pub(crate) fn new(bits: bool) -> Self {
+        IU0_R(crate::FieldReader::new(bits))
+    }
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IU0_A {
+        match self.bits {
+            false => IU0_A::ALL_NOT_TAKEN,
+            true => IU0_A::AT_LEAST_ONE_TAKEN,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ALL_NOT_TAKEN`"]
+    #[inline(always)]
+    pub fn is_all_not_taken(&self) -> bool {
+        **self == IU0_A::ALL_NOT_TAKEN
+    }
+    #[doc = "Checks if the value of the field is `AT_LEAST_ONE_TAKEN`"]
+    #[inline(always)]
+    pub fn is_at_least_one_taken(&self) -> bool {
+        **self == IU0_A::AT_LEAST_ONE_TAKEN
     }
 }
-impl W {
-    #[doc = "Writes raw bits to the register."]
+impl core::ops::Deref for IU0_R {
+    type Target = crate::FieldReader<bool>;
     #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
+    fn deref(&self) -> &Self::Target {
+        &self.0
     }
 }
-#[doc = "Spinlock System Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spinlock_systatus_reg](index.html) module"]
+impl R {
+    #[doc = "Bits 28:29 - Number of lock registers implemented"]
+    #[inline(always)]
+    pub fn locks_num(&self) -> LOCKS_NUM_R {
+        LOCKS_NUM_R::new(((self.bits >> 28) & 3) as u8)
+    }
+    #[doc = "Bit 8 - In-Use flag0"]
+    #[inline(always)]
+    pub fn iu0(&self) -> IU0_R {
+        IU0_R::new(((self.bits >> 8) & 1) != 0)
+    }
+}
+#[doc = "Spinlock System Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spinlock_systatus_reg](index.html) module"]
 pub struct SPINLOCK_SYSTATUS_REG_SPEC;
 impl crate::RegisterSpec for SPINLOCK_SYSTATUS_REG_SPEC {
     type Ux = u32;
@@ -50,10 +145,6 @@ impl crate::RegisterSpec for SPINLOCK_SYSTATUS_REG_SPEC {
 #[doc = "`read()` method returns [spinlock_systatus_reg::R](R) reader structure"]
 impl crate::Readable for SPINLOCK_SYSTATUS_REG_SPEC {
     type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [spinlock_systatus_reg::W](W) writer structure"]
-impl crate::Writable for SPINLOCK_SYSTATUS_REG_SPEC {
-    type Writer = W;
 }
 #[doc = "`reset()` method sets SPINLOCK_SYSTATUS_REG to value 0"]
 impl crate::Resettable for SPINLOCK_SYSTATUS_REG_SPEC {

@@ -10528,46 +10528,135 @@
           <name>SPINLOCK_SYSTATUS_REG</name>
           <description>Spinlock System Status Register</description>
           <addressOffset>0x0000</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>LOCKS_NUM</name>
+              <description>Number of lock registers implemented</description>
+              <bitRange>[29:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N256</name>
+                  <description>256 lock registers</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N32</name>
+                  <description>32 lock registers</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N64</name>
+                  <description>64 lock registers</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N128</name>
+                  <description>128 lock registers</description>
+                  <value>3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>IU0</name>
+              <description>In-Use flag0</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>all_not_taken</name>
+                  <description>All lock registers 0-31 are not taken</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>at_least_one_taken</name>
+                  <description>At least one of the lock registers 0-31 is taken</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPINLOCK_STATUS_REG</name>
           <description>Spinlock Status Register</description>
           <addressOffset>0x0010</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <dim>32</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>LOCK_REG%s_STATUS</name>
+              <description>Lock[i] status</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>free</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>taken</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPINLOCK_IRQ_EN_REG</name>
           <description>Spinlock Interrupt Enable Register</description>
           <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <dim>32</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>LOCK%s_IRQ_EN</name>
+              <description>Lock[i] Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disabled</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enabled</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>SPINLOCK_IRQ_STA_REG</name>
           <description>Spinlock Interrupt Status Register</description>
           <addressOffset>0x0040</addressOffset>
+          <fields>
+            <field>
+              <dim>32</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>LOCK%s_IRQ_STATUS</name>
+              <description>Lock[i] Interrupt Status</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>SPINLOCK_LOCKID0_REG</name>
-          <description>Spinlock Lockid0 Register</description>
+          <dim>5</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>SPINLOCK_LOCKID%s_REG</name>
+          <description>Spinlock Lockid Register</description>
           <addressOffset>0x0080</addressOffset>
-        </register>
-        <register>
-          <name>SPINLOCK_LOCKID1_REG</name>
-          <description>Spinlock Lockid1 Register</description>
-          <addressOffset>0x0084</addressOffset>
-        </register>
-        <register>
-          <name>SPINLOCK_LOCKID2_REG</name>
-          <description>Spinlock Lockid2 Register</description>
-          <addressOffset>0x0088</addressOffset>
-        </register>
-        <register>
-          <name>SPINLOCK_LOCKID3_REG</name>
-          <description>Spinlock Lockid3 Register</description>
-          <addressOffset>0x008C</addressOffset>
-        </register>
-        <register>
-          <name>SPINLOCK_LOCKID4_REG</name>
-          <description>Spinlock Lockid4 Register</description>
-          <addressOffset>0x0090</addressOffset>
+          <access>read-only</access>
         </register>
         <register>
           <dim>32</dim>
@@ -10575,6 +10664,25 @@
           <name>SPINLOCK_LOCK_REG%s</name>
           <description>Spinlock Register</description>
           <addressOffset>0x0100</addressOffset>
+          <fields>
+            <field>
+              <name>TAKEN</name>
+              <description>Lock State</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>free</name>
+                  <description>Read 0x0: The lock was previously Not Taken (free). The requester is granted the lock.\n\nWrite 0x0: Set the lock to Not Taken (free).</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>taken</name>
+                  <description>Read 0x1: The lock was previously Taken. The requester is not granted the lock and must retry.\n\nWrite 0x1: No update to the lock value.</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
