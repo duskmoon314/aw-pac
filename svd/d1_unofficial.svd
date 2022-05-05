@@ -31036,32 +31036,998 @@
         <register>
           <name>CIR_CTL</name>
           <description>CIR Control Register</description>
-          <addressOffset>0x0000</addressOffset>
+          <addressOffset>0x0</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xF3</resetMask>
+          <fields>
+            <field>
+              <name>APAM</name>
+              <description>Active Pulse Accept Mode</description>
+              <bitRange>[7:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>both_valid</name>
+                  <description>Both positive and negative pulses are valid as a leading code</description>
+                  <value>0b0x</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>only_negative</name>
+                  <description>Only negative pulse is valid as a leading code</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>only_positive</name>
+                  <description>Only positive pulse is valid as a leading code</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CIREN</name>
+              <description>CIR Enable</description>
+              <bitRange>[5:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>CIR mode enable</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RXEN</name>
+              <description>Receiver Block Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>GEN</name>
+              <description>Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_RXPCFG</name>
           <description>CIR Receiver Pulse Configure Register</description>
-          <addressOffset>0x0010</addressOffset>
+          <addressOffset>0x10</addressOffset>
+          <resetValue>0x4</resetValue>
+          <resetMask>0x4</resetMask>
+          <fields>
+            <field>
+              <name>RPPI</name>
+              <description>Receiver Pulse Polarity Invert</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_invert</name>
+                  <description>Do not invert receiver signal</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>invert</name>
+                  <description>Invert receiver signal</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_RXFIFO</name>
           <description>CIR Receiver FIFO Register</description>
-          <addressOffset>0x0020</addressOffset>
+          <addressOffset>0x20</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>RBF</name>
+              <description>Receiver Byte FIFO</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_RXINT</name>
           <description>CIR Receiver Interrupt Control Register</description>
-          <addressOffset>0x002C</addressOffset>
+          <addressOffset>0x2C</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3F33</resetMask>
+          <fields>
+            <field>
+              <name>RAL</name>
+              <description>RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DRQ_EN</name>
+              <description>RX FIFO DMA Enable</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RAI_EN</name>
+              <description>RX FIFO Available Interrupt Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RPEI_EN</name>
+              <description>Receiver Packet End Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ROI_EN</name>
+              <description>Receiver FIFO Overrun Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_RXSTA</name>
           <description>CIR Receiver Status Register</description>
-          <addressOffset>0x0030</addressOffset>
+          <addressOffset>0x30</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x7F93</resetMask>
+          <fields>
+            <field>
+              <name>RAC</name>
+              <description>RX FIFO Available Counter</description>
+              <bitRange>[14:8]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B0</name>
+                  <description>No available data in RX FIFO</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B1</name>
+                  <description>1 byte available in RX FIFO</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B2</name>
+                  <description>2 bytes available in RX FIFO</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B3</name>
+                  <description>3 bytes available in RX FIFO</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B4</name>
+                  <description>4 bytes available in RX FIFO</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B5</name>
+                  <description>5 bytes available in RX FIFO</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B6</name>
+                  <description>6 bytes available in RX FIFO</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B7</name>
+                  <description>7 bytes available in RX FIFO</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B8</name>
+                  <description>8 bytes available in RX FIFO</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B9</name>
+                  <description>9 bytes available in RX FIFO</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B10</name>
+                  <description>10 bytes available in RX FIFO</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B11</name>
+                  <description>11 bytes available in RX FIFO</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B12</name>
+                  <description>12 bytes available in RX FIFO</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B13</name>
+                  <description>13 bytes available in RX FIFO</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B14</name>
+                  <description>14 bytes available in RX FIFO</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B15</name>
+                  <description>15 bytes available in RX FIFO</description>
+                  <value>15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B16</name>
+                  <description>16 bytes available in RX FIFO</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B17</name>
+                  <description>17 bytes available in RX FIFO</description>
+                  <value>17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B18</name>
+                  <description>18 bytes available in RX FIFO</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B19</name>
+                  <description>19 bytes available in RX FIFO</description>
+                  <value>19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B20</name>
+                  <description>20 bytes available in RX FIFO</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B21</name>
+                  <description>21 bytes available in RX FIFO</description>
+                  <value>21</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B22</name>
+                  <description>22 bytes available in RX FIFO</description>
+                  <value>22</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B23</name>
+                  <description>23 bytes available in RX FIFO</description>
+                  <value>23</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B24</name>
+                  <description>24 bytes available in RX FIFO</description>
+                  <value>24</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B25</name>
+                  <description>25 bytes available in RX FIFO</description>
+                  <value>25</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B26</name>
+                  <description>26 bytes available in RX FIFO</description>
+                  <value>26</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B27</name>
+                  <description>27 bytes available in RX FIFO</description>
+                  <value>27</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B28</name>
+                  <description>28 bytes available in RX FIFO</description>
+                  <value>28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B29</name>
+                  <description>29 bytes available in RX FIFO</description>
+                  <value>29</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B30</name>
+                  <description>30 bytes available in RX FIFO</description>
+                  <value>30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B31</name>
+                  <description>31 bytes available in RX FIFO</description>
+                  <value>31</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B32</name>
+                  <description>32 bytes available in RX FIFO</description>
+                  <value>32</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B33</name>
+                  <description>33 bytes available in RX FIFO</description>
+                  <value>33</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B34</name>
+                  <description>34 bytes available in RX FIFO</description>
+                  <value>34</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B35</name>
+                  <description>35 bytes available in RX FIFO</description>
+                  <value>35</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B36</name>
+                  <description>36 bytes available in RX FIFO</description>
+                  <value>36</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B37</name>
+                  <description>37 bytes available in RX FIFO</description>
+                  <value>37</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B38</name>
+                  <description>38 bytes available in RX FIFO</description>
+                  <value>38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B39</name>
+                  <description>39 bytes available in RX FIFO</description>
+                  <value>39</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B40</name>
+                  <description>40 bytes available in RX FIFO</description>
+                  <value>40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B41</name>
+                  <description>41 bytes available in RX FIFO</description>
+                  <value>41</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B42</name>
+                  <description>42 bytes available in RX FIFO</description>
+                  <value>42</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B43</name>
+                  <description>43 bytes available in RX FIFO</description>
+                  <value>43</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B44</name>
+                  <description>44 bytes available in RX FIFO</description>
+                  <value>44</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B45</name>
+                  <description>45 bytes available in RX FIFO</description>
+                  <value>45</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B46</name>
+                  <description>46 bytes available in RX FIFO</description>
+                  <value>46</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B47</name>
+                  <description>47 bytes available in RX FIFO</description>
+                  <value>47</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B48</name>
+                  <description>48 bytes available in RX FIFO</description>
+                  <value>48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B49</name>
+                  <description>49 bytes available in RX FIFO</description>
+                  <value>49</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B50</name>
+                  <description>50 bytes available in RX FIFO</description>
+                  <value>50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B51</name>
+                  <description>51 bytes available in RX FIFO</description>
+                  <value>51</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B52</name>
+                  <description>52 bytes available in RX FIFO</description>
+                  <value>52</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B53</name>
+                  <description>53 bytes available in RX FIFO</description>
+                  <value>53</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B54</name>
+                  <description>54 bytes available in RX FIFO</description>
+                  <value>54</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B55</name>
+                  <description>55 bytes available in RX FIFO</description>
+                  <value>55</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B56</name>
+                  <description>56 bytes available in RX FIFO</description>
+                  <value>56</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B57</name>
+                  <description>57 bytes available in RX FIFO</description>
+                  <value>57</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B58</name>
+                  <description>58 bytes available in RX FIFO</description>
+                  <value>58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B59</name>
+                  <description>59 bytes available in RX FIFO</description>
+                  <value>59</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B60</name>
+                  <description>60 bytes available in RX FIFO</description>
+                  <value>60</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B61</name>
+                  <description>61 bytes available in RX FIFO</description>
+                  <value>61</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B62</name>
+                  <description>62 bytes available in RX FIFO</description>
+                  <value>62</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B63</name>
+                  <description>63 bytes available in RX FIFO</description>
+                  <value>63</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B64</name>
+                  <description>64 bytes available in RX FIFO</description>
+                  <value>64</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>STAT</name>
+              <description>Status of CIR</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Idle</name>
+                  <description>Idle</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Busy</name>
+                  <description>Busy</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RA</name>
+              <description>RX FIFO Available</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_available</name>
+                  <description>RX FIFO not available according to its level</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>available</name>
+                  <description>RX FIFO available according to its level  Writing 1 clears this bit.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RPE</name>
+              <description>Receiver Packet End Flag</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_detected</name>
+                  <description>STO was not detected. In CIR mode, one CIR symbol is receiving or not detected.</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STO_field</name>
+                  <description>STO field or packet abort symbol (7'b0000,000 and 8'b0000,0000 for MIR and FIR) is detected. In CIR mode, one CIR symbol is received.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ROI</name>
+              <description>Receiver FIFO Overrun</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_overrun</name>
+                  <description>Receiver FIFO not overrun</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>overrun</name>
+                  <description>Receiver FIFO overrun</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_RXCFG</name>
           <description>CIR Receiver Configure Register</description>
-          <addressOffset>0x0034</addressOffset>
+          <addressOffset>0x34</addressOffset>
+          <resetValue>0x1828</resetValue>
+          <resetMask>0x1FFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>SCS2</name>
+              <description>Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below.</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ATHC</name>
+              <description>Active Threshold Control for CIR</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>sample</name>
+                  <description>ATHR in a unit of (Sample Clock)</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>sample_128</name>
+                  <description>ATHR in a unit of (128*Sample Clocks)</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ATHR</name>
+              <description>Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock)). </description>
+              <bitRange>[22:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ITHR</name>
+              <description>Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished.</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>NTHR</name>
+              <description>Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less  than NTHR, the pulse is taken as noise and should be discarded  by hardware.</description>
+              <bitRange>[7:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>T0</name>
+                  <description>All samples are recorded into RX FIFO</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T1</name>
+                  <description>If the signal is only one sample duration, it is taken as noise and discarded.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T2</name>
+                  <description>If the signal is less than 2 sample duration, it is taken as noise and discarded</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T3</name>
+                  <description>If the signal is less than 3 sample duration, it is taken as noise and discarded</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T4</name>
+                  <description>If the signal is less than 4 sample duration, it is taken as noise and discarded</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T5</name>
+                  <description>If the signal is less than 5 sample duration, it is taken as noise and discarded</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T6</name>
+                  <description>If the signal is less than 6 sample duration, it is taken as noise and discarded</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T7</name>
+                  <description>If the signal is less than 7 sample duration, it is taken as noise and discarded</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T8</name>
+                  <description>If the signal is less than 8 sample duration, it is taken as noise and discarded</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T9</name>
+                  <description>If the signal is less than 9 sample duration, it is taken as noise and discarded</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T10</name>
+                  <description>If the signal is less than 10 sample duration, it is taken as noise and discarded</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T11</name>
+                  <description>If the signal is less than 11 sample duration, it is taken as noise and discarded</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T12</name>
+                  <description>If the signal is less than 12 sample duration, it is taken as noise and discarded</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T13</name>
+                  <description>If the signal is less than 13 sample duration, it is taken as noise and discarded</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T14</name>
+                  <description>If the signal is less than 14 sample duration, it is taken as noise and discarded</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T15</name>
+                  <description>If the signal is less than 15 sample duration, it is taken as noise and discarded</description>
+                  <value>15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T16</name>
+                  <description>If the signal is less than 16 sample duration, it is taken as noise and discarded</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T17</name>
+                  <description>If the signal is less than 17 sample duration, it is taken as noise and discarded</description>
+                  <value>17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T18</name>
+                  <description>If the signal is less than 18 sample duration, it is taken as noise and discarded</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T19</name>
+                  <description>If the signal is less than 19 sample duration, it is taken as noise and discarded</description>
+                  <value>19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T20</name>
+                  <description>If the signal is less than 20 sample duration, it is taken as noise and discarded</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T21</name>
+                  <description>If the signal is less than 21 sample duration, it is taken as noise and discarded</description>
+                  <value>21</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T22</name>
+                  <description>If the signal is less than 22 sample duration, it is taken as noise and discarded</description>
+                  <value>22</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T23</name>
+                  <description>If the signal is less than 23 sample duration, it is taken as noise and discarded</description>
+                  <value>23</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T24</name>
+                  <description>If the signal is less than 24 sample duration, it is taken as noise and discarded</description>
+                  <value>24</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T25</name>
+                  <description>If the signal is less than 25 sample duration, it is taken as noise and discarded</description>
+                  <value>25</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T26</name>
+                  <description>If the signal is less than 26 sample duration, it is taken as noise and discarded</description>
+                  <value>26</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T27</name>
+                  <description>If the signal is less than 27 sample duration, it is taken as noise and discarded</description>
+                  <value>27</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T28</name>
+                  <description>If the signal is less than 28 sample duration, it is taken as noise and discarded</description>
+                  <value>28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T29</name>
+                  <description>If the signal is less than 29 sample duration, it is taken as noise and discarded</description>
+                  <value>29</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T30</name>
+                  <description>If the signal is less than 30 sample duration, it is taken as noise and discarded</description>
+                  <value>30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T31</name>
+                  <description>If the signal is less than 31 sample duration, it is taken as noise and discarded</description>
+                  <value>31</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T32</name>
+                  <description>If the signal is less than 32 sample duration, it is taken as noise and discarded</description>
+                  <value>32</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T33</name>
+                  <description>If the signal is less than 33 sample duration, it is taken as noise and discarded</description>
+                  <value>33</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T34</name>
+                  <description>If the signal is less than 34 sample duration, it is taken as noise and discarded</description>
+                  <value>34</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T35</name>
+                  <description>If the signal is less than 35 sample duration, it is taken as noise and discarded</description>
+                  <value>35</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T36</name>
+                  <description>If the signal is less than 36 sample duration, it is taken as noise and discarded</description>
+                  <value>36</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T37</name>
+                  <description>If the signal is less than 37 sample duration, it is taken as noise and discarded</description>
+                  <value>37</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T38</name>
+                  <description>If the signal is less than 38 sample duration, it is taken as noise and discarded</description>
+                  <value>38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T39</name>
+                  <description>If the signal is less than 39 sample duration, it is taken as noise and discarded</description>
+                  <value>39</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T40</name>
+                  <description>If the signal is less than 40 sample duration, it is taken as noise and discarded</description>
+                  <value>40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T41</name>
+                  <description>If the signal is less than 41 sample duration, it is taken as noise and discarded</description>
+                  <value>41</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T42</name>
+                  <description>If the signal is less than 42 sample duration, it is taken as noise and discarded</description>
+                  <value>42</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T43</name>
+                  <description>If the signal is less than 43 sample duration, it is taken as noise and discarded</description>
+                  <value>43</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T44</name>
+                  <description>If the signal is less than 44 sample duration, it is taken as noise and discarded</description>
+                  <value>44</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T45</name>
+                  <description>If the signal is less than 45 sample duration, it is taken as noise and discarded</description>
+                  <value>45</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T46</name>
+                  <description>If the signal is less than 46 sample duration, it is taken as noise and discarded</description>
+                  <value>46</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T47</name>
+                  <description>If the signal is less than 47 sample duration, it is taken as noise and discarded</description>
+                  <value>47</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T48</name>
+                  <description>If the signal is less than 48 sample duration, it is taken as noise and discarded</description>
+                  <value>48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T49</name>
+                  <description>If the signal is less than 49 sample duration, it is taken as noise and discarded</description>
+                  <value>49</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T50</name>
+                  <description>If the signal is less than 50 sample duration, it is taken as noise and discarded</description>
+                  <value>50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T51</name>
+                  <description>If the signal is less than 51 sample duration, it is taken as noise and discarded</description>
+                  <value>51</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T52</name>
+                  <description>If the signal is less than 52 sample duration, it is taken as noise and discarded</description>
+                  <value>52</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T53</name>
+                  <description>If the signal is less than 53 sample duration, it is taken as noise and discarded</description>
+                  <value>53</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T54</name>
+                  <description>If the signal is less than 54 sample duration, it is taken as noise and discarded</description>
+                  <value>54</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T55</name>
+                  <description>If the signal is less than 55 sample duration, it is taken as noise and discarded</description>
+                  <value>55</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T56</name>
+                  <description>If the signal is less than 56 sample duration, it is taken as noise and discarded</description>
+                  <value>56</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T57</name>
+                  <description>If the signal is less than 57 sample duration, it is taken as noise and discarded</description>
+                  <value>57</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T58</name>
+                  <description>If the signal is less than 58 sample duration, it is taken as noise and discarded</description>
+                  <value>58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T59</name>
+                  <description>If the signal is less than 59 sample duration, it is taken as noise and discarded</description>
+                  <value>59</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T60</name>
+                  <description>If the signal is less than 60 sample duration, it is taken as noise and discarded</description>
+                  <value>60</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T61</name>
+                  <description>If the signal is less than 61 sample duration, it is taken as noise and discarded</description>
+                  <value>61</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>SCS</name>
+              <description>Sample Clock Select for CIR</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
