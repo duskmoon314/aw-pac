@@ -34,6 +34,28 @@ impl From<crate::W<CIR_TICR_H_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TIC_H` reader - Transmit Idle Counter_H (High 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero."]
+pub struct TIC_H_R(crate::FieldReader<u8>);
+impl TIC_H_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        TIC_H_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for TIC_H_R {
+    type Target = crate::FieldReader<u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+impl R {
+    #[doc = "Bits 0:7 - Transmit Idle Counter_H (High 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero."]
+    #[inline(always)]
+    pub fn tic_h(&self) -> TIC_H_R {
+        TIC_H_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

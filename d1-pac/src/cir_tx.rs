@@ -27,7 +27,7 @@ pub struct RegisterBlock {
     #[doc = "0x30 - CIR Transmit Threshold Register"]
     pub cir_txt: crate::Reg<cir_txt::CIR_TXT_SPEC>,
     #[doc = "0x34 - CIR DMA Control Register"]
-    pub cir_dma: crate::Reg<cir_dma::CIR_DMA_SPEC>,
+    pub cir_dma_ctl: crate::Reg<cir_dma_ctl::CIR_DMA_CTL_SPEC>,
     _reserved13: [u8; 0x48],
     #[doc = "0x80 - CIR Transmit FIFO Data Register"]
     pub cir_txfifo: crate::Reg<cir_txfifo::CIR_TXFIFO_SPEC>,
@@ -80,10 +80,10 @@ pub mod cir_txsta;
 pub type CIR_TXT = crate::Reg<cir_txt::CIR_TXT_SPEC>;
 #[doc = "CIR Transmit Threshold Register"]
 pub mod cir_txt;
-#[doc = "CIR_DMA register accessor: an alias for `Reg<CIR_DMA_SPEC>`"]
-pub type CIR_DMA = crate::Reg<cir_dma::CIR_DMA_SPEC>;
+#[doc = "CIR_DMA_CTL register accessor: an alias for `Reg<CIR_DMA_CTL_SPEC>`"]
+pub type CIR_DMA_CTL = crate::Reg<cir_dma_ctl::CIR_DMA_CTL_SPEC>;
 #[doc = "CIR DMA Control Register"]
-pub mod cir_dma;
+pub mod cir_dma_ctl;
 #[doc = "CIR_TXFIFO register accessor: an alias for `Reg<CIR_TXFIFO_SPEC>`"]
 pub type CIR_TXFIFO = crate::Reg<cir_txfifo::CIR_TXFIFO_SPEC>;
 #[doc = "CIR Transmit FIFO Data Register"]

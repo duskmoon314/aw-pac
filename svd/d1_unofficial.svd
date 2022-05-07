@@ -32050,72 +32050,1129 @@
         <register>
           <name>CIR_TGLR</name>
           <description>CIR Transmit Global Register</description>
-          <addressOffset>0x0000</addressOffset>
+          <addressOffset>0x0</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xE7</resetMask>
+          <fields>
+            <field>
+              <name>IMS</name>
+              <description>Internal Modulation Select</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_modulated</name>
+                  <description>The transmitting signal is not modulated</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>modulated</name>
+                  <description>The transmitting signal is modulated internally</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DRMC</name>
+              <description>Duty ratio of modulated carrier is high level/low level.</description>
+              <bitRange>[6:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>equal</name>
+                  <description>Low level is equal to high level</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>double</name>
+                  <description>Low level is the double of high level</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>triple</name>
+                  <description>Low level is the triple of high level</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TPPI</name>
+              <description>Transmit Pulse Polarity Invert</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_invert</name>
+                  <description>Not invert transmit pulse</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>invert</name>
+                  <description>Invert transmit pulse</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TR</name>
+              <description>Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle.</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>TXEN</name>
+              <description>Transmit Block Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable the CIR Transmitter</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable the CIR Transmitter</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TMCR</name>
           <description>CIR Transmit Modulation Control Register</description>
-          <addressOffset>0x0004</addressOffset>
+          <addressOffset>0x4</addressOffset>
+          <resetValue>0x9E</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>RFMC</name>
+              <description>Reference Frequency of modulated carrier.\n\nReference Frequency of modulated carrier based on a division of a fixed functional clock (FCLK). The range of the modulated carrier is usually 30 kHz to 60 kHz. Most consumer electronics is 38 kHz.\n\nThe default modulated carrier is 38 kHz when FCLK is 12 MHz.\n\nRFMC= FCLK/((N+1)*(DRMC+2)).</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TCR</name>
           <description>CIR Transmit Control Register</description>
-          <addressOffset>0x0008</addressOffset>
+          <addressOffset>0x8</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x8F</resetMask>
+          <fields>
+            <field>
+              <name>CSS</name>
+              <description>Cyclical Pulse Start/Stop Control</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Stop</name>
+                  <description>Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted.</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Start</name>
+                  <description>Start. Start to transmit when it is set to '1'.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RCS</name>
+              <description>Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock.</description>
+              <bitRange>[3:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ir_clk</name>
+                  <description>CIR Transmit reference clock is ir_clk</description>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ir_clk_2</name>
+                  <description>CIR Transmit reference clock is ir_clk/2</description>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ir_clk_4</name>
+                  <description>CIR Transmit reference clock is ir_clk/4</description>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ir_clk_8</name>
+                  <description>CIR Transmit reference clock is ir_clk/8</description>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ir_clk_64</name>
+                  <description>CIR Transmit reference clock is ir_clk/64</description>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ir_clk_128</name>
+                  <description>CIR Transmit reference clock is ir_clk/128</description>
+                  <value>0b101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ir_clk_256</name>
+                  <description>CIR Transmit reference clock is ir_clk/256</description>
+                  <value>0b110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ir_clk_512</name>
+                  <description>CIR Transmit reference clock is ir_clk/512</description>
+                  <value>0b111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TTS</name>
+              <description>Type of the transmission signal</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>non_cyclical</name>
+                  <description>The transmitting wave is a single non-cyclical pulse.</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>cyclical</name>
+                  <description>The transmitting wave is a cyclical short-pulse.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_IDC_H</name>
           <description>CIR Transmit Idle Duration Threshold High Bit Register</description>
-          <addressOffset>0x000C</addressOffset>
+          <addressOffset>0xC</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <name>IDC_H</name>
+              <description>Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time.  </description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_IDC_L</name>
           <description>CIR Transmit Idle Duration Threshold Low Bit Register</description>
-          <addressOffset>0x0010</addressOffset>
+          <addressOffset>0x10</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>IDC_L</name>
+              <description>Idle Duration Counter Threshold (Low 8 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time.</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TICR_H</name>
           <description>CIR Transmit Idle Counter High Bit Register</description>
-          <addressOffset>0x0014</addressOffset>
+          <addressOffset>0x14</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>TIC_H</name>
+              <description>Transmit Idle Counter_H (High 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero.  </description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TICR_L</name>
           <description>CIR Transmit Idle Counter Low Bit Register</description>
-          <addressOffset>0x0018</addressOffset>
+          <addressOffset>0x18</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>TIC_L</name>
+              <description>Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero.  </description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TEL</name>
           <description>CIR TX FIFO Empty Level Register</description>
-          <addressOffset>0x0020</addressOffset>
+          <addressOffset>0x20</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>TEL</name>
+              <description>TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1  </description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TXINT</name>
           <description>CIR Transmit Interrupt Control Register</description>
-          <addressOffset>0x0024</addressOffset>
+          <addressOffset>0x24</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x7</resetMask>
+          <fields>
+            <field>
+              <name>DRQ_EN</name>
+              <description>TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails.</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TAI_EN</name>
+              <description>TX FIFO Available Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TPEI_TUI_EN</name>
+              <description>Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TAC</name>
           <description>CIR Transmit FIFO Available Counter Register</description>
-          <addressOffset>0x0028</addressOffset>
+          <addressOffset>0x28</addressOffset>
+          <resetValue>0x80</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>TAC</name>
+              <description>TX FIFO Available Space Counter</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B0</name>
+                  <description>No available space in TX FIFO</description>
+                  <value>0x00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B1</name>
+                  <description>1 byte available space in TX FIFO</description>
+                  <value>0x01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B2</name>
+                  <description>2 bytes available space in TX FIFO</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B3</name>
+                  <description>3 bytes available space in TX FIFO</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B4</name>
+                  <description>4 bytes available space in TX FIFO</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B5</name>
+                  <description>5 bytes available space in TX FIFO</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B6</name>
+                  <description>6 bytes available space in TX FIFO</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B7</name>
+                  <description>7 bytes available space in TX FIFO</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B8</name>
+                  <description>8 bytes available space in TX FIFO</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B9</name>
+                  <description>9 bytes available space in TX FIFO</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B10</name>
+                  <description>10 bytes available space in TX FIFO</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B11</name>
+                  <description>11 bytes available space in TX FIFO</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B12</name>
+                  <description>12 bytes available space in TX FIFO</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B13</name>
+                  <description>13 bytes available space in TX FIFO</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B14</name>
+                  <description>14 bytes available space in TX FIFO</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B15</name>
+                  <description>15 bytes available space in TX FIFO</description>
+                  <value>15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B16</name>
+                  <description>16 bytes available space in TX FIFO</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B17</name>
+                  <description>17 bytes available space in TX FIFO</description>
+                  <value>17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B18</name>
+                  <description>18 bytes available space in TX FIFO</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B19</name>
+                  <description>19 bytes available space in TX FIFO</description>
+                  <value>19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B20</name>
+                  <description>20 bytes available space in TX FIFO</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B21</name>
+                  <description>21 bytes available space in TX FIFO</description>
+                  <value>21</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B22</name>
+                  <description>22 bytes available space in TX FIFO</description>
+                  <value>22</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B23</name>
+                  <description>23 bytes available space in TX FIFO</description>
+                  <value>23</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B24</name>
+                  <description>24 bytes available space in TX FIFO</description>
+                  <value>24</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B25</name>
+                  <description>25 bytes available space in TX FIFO</description>
+                  <value>25</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B26</name>
+                  <description>26 bytes available space in TX FIFO</description>
+                  <value>26</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B27</name>
+                  <description>27 bytes available space in TX FIFO</description>
+                  <value>27</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B28</name>
+                  <description>28 bytes available space in TX FIFO</description>
+                  <value>28</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B29</name>
+                  <description>29 bytes available space in TX FIFO</description>
+                  <value>29</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B30</name>
+                  <description>30 bytes available space in TX FIFO</description>
+                  <value>30</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B31</name>
+                  <description>31 bytes available space in TX FIFO</description>
+                  <value>31</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B32</name>
+                  <description>32 bytes available space in TX FIFO</description>
+                  <value>32</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B33</name>
+                  <description>33 bytes available space in TX FIFO</description>
+                  <value>33</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B34</name>
+                  <description>34 bytes available space in TX FIFO</description>
+                  <value>34</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B35</name>
+                  <description>35 bytes available space in TX FIFO</description>
+                  <value>35</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B36</name>
+                  <description>36 bytes available space in TX FIFO</description>
+                  <value>36</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B37</name>
+                  <description>37 bytes available space in TX FIFO</description>
+                  <value>37</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B38</name>
+                  <description>38 bytes available space in TX FIFO</description>
+                  <value>38</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B39</name>
+                  <description>39 bytes available space in TX FIFO</description>
+                  <value>39</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B40</name>
+                  <description>40 bytes available space in TX FIFO</description>
+                  <value>40</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B41</name>
+                  <description>41 bytes available space in TX FIFO</description>
+                  <value>41</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B42</name>
+                  <description>42 bytes available space in TX FIFO</description>
+                  <value>42</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B43</name>
+                  <description>43 bytes available space in TX FIFO</description>
+                  <value>43</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B44</name>
+                  <description>44 bytes available space in TX FIFO</description>
+                  <value>44</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B45</name>
+                  <description>45 bytes available space in TX FIFO</description>
+                  <value>45</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B46</name>
+                  <description>46 bytes available space in TX FIFO</description>
+                  <value>46</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B47</name>
+                  <description>47 bytes available space in TX FIFO</description>
+                  <value>47</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B48</name>
+                  <description>48 bytes available space in TX FIFO</description>
+                  <value>48</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B49</name>
+                  <description>49 bytes available space in TX FIFO</description>
+                  <value>49</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B50</name>
+                  <description>50 bytes available space in TX FIFO</description>
+                  <value>50</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B51</name>
+                  <description>51 bytes available space in TX FIFO</description>
+                  <value>51</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B52</name>
+                  <description>52 bytes available space in TX FIFO</description>
+                  <value>52</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B53</name>
+                  <description>53 bytes available space in TX FIFO</description>
+                  <value>53</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B54</name>
+                  <description>54 bytes available space in TX FIFO</description>
+                  <value>54</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B55</name>
+                  <description>55 bytes available space in TX FIFO</description>
+                  <value>55</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B56</name>
+                  <description>56 bytes available space in TX FIFO</description>
+                  <value>56</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B57</name>
+                  <description>57 bytes available space in TX FIFO</description>
+                  <value>57</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B58</name>
+                  <description>58 bytes available space in TX FIFO</description>
+                  <value>58</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B59</name>
+                  <description>59 bytes available space in TX FIFO</description>
+                  <value>59</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B60</name>
+                  <description>60 bytes available space in TX FIFO</description>
+                  <value>60</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B61</name>
+                  <description>61 bytes available space in TX FIFO</description>
+                  <value>61</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B62</name>
+                  <description>62 bytes available space in TX FIFO</description>
+                  <value>62</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B63</name>
+                  <description>63 bytes available space in TX FIFO</description>
+                  <value>63</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B64</name>
+                  <description>64 bytes available space in TX FIFO</description>
+                  <value>64</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B65</name>
+                  <description>65 bytes available space in TX FIFO</description>
+                  <value>65</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B66</name>
+                  <description>66 bytes available space in TX FIFO</description>
+                  <value>66</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B67</name>
+                  <description>67 bytes available space in TX FIFO</description>
+                  <value>67</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B68</name>
+                  <description>68 bytes available space in TX FIFO</description>
+                  <value>68</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B69</name>
+                  <description>69 bytes available space in TX FIFO</description>
+                  <value>69</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B70</name>
+                  <description>70 bytes available space in TX FIFO</description>
+                  <value>70</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B71</name>
+                  <description>71 bytes available space in TX FIFO</description>
+                  <value>71</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B72</name>
+                  <description>72 bytes available space in TX FIFO</description>
+                  <value>72</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B73</name>
+                  <description>73 bytes available space in TX FIFO</description>
+                  <value>73</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B74</name>
+                  <description>74 bytes available space in TX FIFO</description>
+                  <value>74</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B75</name>
+                  <description>75 bytes available space in TX FIFO</description>
+                  <value>75</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B76</name>
+                  <description>76 bytes available space in TX FIFO</description>
+                  <value>76</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B77</name>
+                  <description>77 bytes available space in TX FIFO</description>
+                  <value>77</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B78</name>
+                  <description>78 bytes available space in TX FIFO</description>
+                  <value>78</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B79</name>
+                  <description>79 bytes available space in TX FIFO</description>
+                  <value>79</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B80</name>
+                  <description>80 bytes available space in TX FIFO</description>
+                  <value>80</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B81</name>
+                  <description>81 bytes available space in TX FIFO</description>
+                  <value>81</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B82</name>
+                  <description>82 bytes available space in TX FIFO</description>
+                  <value>82</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B83</name>
+                  <description>83 bytes available space in TX FIFO</description>
+                  <value>83</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B84</name>
+                  <description>84 bytes available space in TX FIFO</description>
+                  <value>84</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B85</name>
+                  <description>85 bytes available space in TX FIFO</description>
+                  <value>85</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B86</name>
+                  <description>86 bytes available space in TX FIFO</description>
+                  <value>86</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B87</name>
+                  <description>87 bytes available space in TX FIFO</description>
+                  <value>87</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B88</name>
+                  <description>88 bytes available space in TX FIFO</description>
+                  <value>88</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B89</name>
+                  <description>89 bytes available space in TX FIFO</description>
+                  <value>89</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B90</name>
+                  <description>90 bytes available space in TX FIFO</description>
+                  <value>90</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B91</name>
+                  <description>91 bytes available space in TX FIFO</description>
+                  <value>91</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B92</name>
+                  <description>92 bytes available space in TX FIFO</description>
+                  <value>92</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B93</name>
+                  <description>93 bytes available space in TX FIFO</description>
+                  <value>93</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B94</name>
+                  <description>94 bytes available space in TX FIFO</description>
+                  <value>94</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B95</name>
+                  <description>95 bytes available space in TX FIFO</description>
+                  <value>95</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B96</name>
+                  <description>96 bytes available space in TX FIFO</description>
+                  <value>96</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B97</name>
+                  <description>97 bytes available space in TX FIFO</description>
+                  <value>97</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B98</name>
+                  <description>98 bytes available space in TX FIFO</description>
+                  <value>98</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B99</name>
+                  <description>99 bytes available space in TX FIFO</description>
+                  <value>99</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B100</name>
+                  <description>100 bytes available space in TX FIFO</description>
+                  <value>100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B101</name>
+                  <description>101 bytes available space in TX FIFO</description>
+                  <value>101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B102</name>
+                  <description>102 bytes available space in TX FIFO</description>
+                  <value>102</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B103</name>
+                  <description>103 bytes available space in TX FIFO</description>
+                  <value>103</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B104</name>
+                  <description>104 bytes available space in TX FIFO</description>
+                  <value>104</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B105</name>
+                  <description>105 bytes available space in TX FIFO</description>
+                  <value>105</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B106</name>
+                  <description>106 bytes available space in TX FIFO</description>
+                  <value>106</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B107</name>
+                  <description>107 bytes available space in TX FIFO</description>
+                  <value>107</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B108</name>
+                  <description>108 bytes available space in TX FIFO</description>
+                  <value>108</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B109</name>
+                  <description>109 bytes available space in TX FIFO</description>
+                  <value>109</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B110</name>
+                  <description>110 bytes available space in TX FIFO</description>
+                  <value>110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B111</name>
+                  <description>111 bytes available space in TX FIFO</description>
+                  <value>111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B112</name>
+                  <description>112 bytes available space in TX FIFO</description>
+                  <value>112</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B113</name>
+                  <description>113 bytes available space in TX FIFO</description>
+                  <value>113</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B114</name>
+                  <description>114 bytes available space in TX FIFO</description>
+                  <value>114</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B115</name>
+                  <description>115 bytes available space in TX FIFO</description>
+                  <value>115</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B116</name>
+                  <description>116 bytes available space in TX FIFO</description>
+                  <value>116</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B117</name>
+                  <description>117 bytes available space in TX FIFO</description>
+                  <value>117</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B118</name>
+                  <description>118 bytes available space in TX FIFO</description>
+                  <value>118</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B119</name>
+                  <description>119 bytes available space in TX FIFO</description>
+                  <value>119</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B120</name>
+                  <description>120 bytes available space in TX FIFO</description>
+                  <value>120</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B121</name>
+                  <description>121 bytes available space in TX FIFO</description>
+                  <value>121</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B122</name>
+                  <description>122 bytes available space in TX FIFO</description>
+                  <value>122</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B123</name>
+                  <description>123 bytes available space in TX FIFO</description>
+                  <value>123</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B124</name>
+                  <description>124 bytes available space in TX FIFO</description>
+                  <value>124</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B125</name>
+                  <description>125 bytes available space in TX FIFO</description>
+                  <value>125</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B126</name>
+                  <description>126 bytes available space in TX FIFO</description>
+                  <value>126</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B127</name>
+                  <description>127 bytes available space in TX FIFO</description>
+                  <value>127</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B128</name>
+                  <description>128 bytes available space in TX FIFO</description>
+                  <value>128</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TXSTA</name>
           <description>CIR Transmit Status Register</description>
-          <addressOffset>0x002C</addressOffset>
+          <addressOffset>0x2C</addressOffset>
+          <resetValue>0x2</resetValue>
+          <resetMask>0xF</resetMask>
+          <fields>
+            <field>
+              <name>STCT</name>
+              <description>Status of CIR Transmitter</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Idle</name>
+                  <description>Idle</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Active</name>
+                  <description>Active</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DRQ</name>
+              <description>DMA Request Flag</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>TAI</name>
+              <description>TX FIFO Available Interrupt Flag</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_available</name>
+                  <description>TX FIFO not available by its level</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>available</name>
+                  <description>TX FIFO available by its level Writing 1 clears this bit.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>TPE_TUR</name>
+              <description>Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_complete_or_transmit</name>
+                  <description>Transmissions of address, control and data fields not completed / No transmitter FIFO underrun</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>complete_or_transmit</name>
+                  <description>Transmissions of address, control and data fields completed / Transmitter FIFO underrun</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TXT</name>
           <description>CIR Transmit Threshold Register</description>
-          <addressOffset>0x0030</addressOffset>
+          <addressOffset>0x30</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>NCTT</name>
+              <description>Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field.</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>CIR_DMA</name>
+          <name>CIR_DMA_CTL</name>
           <description>CIR DMA Control Register</description>
-          <addressOffset>0x0034</addressOffset>
+          <addressOffset>0x34</addressOffset>
+          <resetValue>0xA5</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>DMA</name>
+              <description>Handshake Configuration</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>waiting_cycle</name>
+                  <description>DMA waiting cycle mode</description>
+                  <value>0xA5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>handshake</name>
+                  <description>DMA handshake mode</description>
+                  <value>0xEA</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIR_TXFIFO</name>
           <description>CIR Transmit FIFO Data Register</description>
-          <addressOffset>0x0080</addressOffset>
+          <addressOffset>0x80</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <name>TBF</name>
+              <description>Transmit Byte FIFO\n\nWhen the transmission is triggered, the data in the FIFO will be transmitted until the data number is transmitted completely.</description>
+              <bitRange>[7:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

@@ -34,7 +34,46 @@ impl From<crate::W<CIR_IDC_L_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IDC_L` reader - Idle Duration Counter Threshold (Low 8 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+pub struct IDC_L_R(crate::FieldReader<u8>);
+impl IDC_L_R {
+    #[inline(always)]
+    pub(crate) fn new(bits: u8) -> Self {
+        IDC_L_R(crate::FieldReader::new(bits))
+    }
+}
+impl core::ops::Deref for IDC_L_R {
+    type Target = crate::FieldReader<u8>;
+    #[inline(always)]
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+#[doc = "Field `IDC_L` writer - Idle Duration Counter Threshold (Low 8 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+pub struct IDC_L_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> IDC_L_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
+        self.w
+    }
+}
+impl R {
+    #[doc = "Bits 0:7 - Idle Duration Counter Threshold (Low 8 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+    #[inline(always)]
+    pub fn idc_l(&self) -> IDC_L_R {
+        IDC_L_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:7 - Idle Duration Counter Threshold (Low 8 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+    #[inline(always)]
+    pub fn idc_l(&mut self) -> IDC_L_W {
+        IDC_L_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

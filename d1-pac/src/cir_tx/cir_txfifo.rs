@@ -34,7 +34,24 @@ impl From<crate::W<CIR_TXFIFO_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TBF` writer - Transmit Byte FIFO\n\nWhen the transmission is triggered, the data in the FIFO will be transmitted until the data number is transmitted completely."]
+pub struct TBF_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> TBF_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
+        self.w
+    }
+}
 impl W {
+    #[doc = "Bits 0:7 - Transmit Byte FIFO\n\nWhen the transmission is triggered, the data in the FIFO will be transmitted until the data number is transmitted completely."]
+    #[inline(always)]
+    pub fn tbf(&mut self) -> TBF_W {
+        TBF_W { w: self }
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
