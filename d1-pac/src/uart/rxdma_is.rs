@@ -35,153 +35,21 @@ impl From<crate::W<RXDMA_IS_SPEC>> for W {
     }
 }
 #[doc = "Field `buffer_overrun` reader - "]
-pub struct BUFFER_OVERRUN_R(crate::FieldReader<bool>);
-impl BUFFER_OVERRUN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BUFFER_OVERRUN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BUFFER_OVERRUN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BUFFER_OVERRUN_R = crate::BitReader<bool>;
 #[doc = "Field `buffer_overrun` writer - "]
-pub struct BUFFER_OVERRUN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BUFFER_OVERRUN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
-}
+pub type BUFFER_OVERRUN_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 3>;
 #[doc = "Field `timeout_done` reader - "]
-pub struct TIMEOUT_DONE_R(crate::FieldReader<bool>);
-impl TIMEOUT_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMEOUT_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMEOUT_DONE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMEOUT_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `timeout_done` writer - "]
-pub struct TIMEOUT_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMEOUT_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type TIMEOUT_DONE_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 2>;
 #[doc = "Field `blk_done` reader - "]
-pub struct BLK_DONE_R(crate::FieldReader<bool>);
-impl BLK_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BLK_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BLK_DONE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BLK_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `blk_done` writer - "]
-pub struct BLK_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BLK_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type BLK_DONE_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 1>;
 #[doc = "Field `limit_done` reader - "]
-pub struct LIMIT_DONE_R(crate::FieldReader<bool>);
-impl LIMIT_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LIMIT_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LIMIT_DONE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LIMIT_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `limit_done` writer - "]
-pub struct LIMIT_DONE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LIMIT_DONE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type LIMIT_DONE_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 3"]
     #[inline(always)]
@@ -208,22 +76,22 @@ impl W {
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn buffer_overrun(&mut self) -> BUFFER_OVERRUN_W {
-        BUFFER_OVERRUN_W { w: self }
+        BUFFER_OVERRUN_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn timeout_done(&mut self) -> TIMEOUT_DONE_W {
-        TIMEOUT_DONE_W { w: self }
+        TIMEOUT_DONE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn blk_done(&mut self) -> BLK_DONE_W {
-        BLK_DONE_W { w: self }
+        BLK_DONE_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn limit_done(&mut self) -> LIMIT_DONE_W {
-        LIMIT_DONE_W { w: self }
+        LIMIT_DONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

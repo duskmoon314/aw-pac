@@ -35,79 +35,13 @@ impl From<crate::W<HALT_SPEC>> for W {
     }
 }
 #[doc = "Field `pte` reader - The sending of TX_REQ"]
-pub struct PTE_R(crate::FieldReader<bool>);
-impl PTE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PTE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PTE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PTE_R = crate::BitReader<bool>;
 #[doc = "Field `pte` writer - The sending of TX_REQ"]
-pub struct PTE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PTE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
-    }
-}
+pub type PTE_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, bool, 7>;
 #[doc = "Field `dma_pte_rx` reader - The Transmission of RX_DRQ"]
-pub struct DMA_PTE_RX_R(crate::FieldReader<bool>);
-impl DMA_PTE_RX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_PTE_RX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_PTE_RX_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_PTE_RX_R = crate::BitReader<bool>;
 #[doc = "Field `dma_pte_rx` writer - The Transmission of RX_DRQ"]
-pub struct DMA_PTE_RX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_PTE_RX_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
-        self.w
-    }
-}
+pub type DMA_PTE_RX_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, bool, 6>;
 #[doc = "SIR RX Pulse Polarity Invert\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIR_RX_INVERT_A {
@@ -123,13 +57,9 @@ impl From<SIR_RX_INVERT_A> for bool {
     }
 }
 #[doc = "Field `sir_rx_invert` reader - SIR RX Pulse Polarity Invert"]
-pub struct SIR_RX_INVERT_R(crate::FieldReader<bool>);
+pub type SIR_RX_INVERT_R = crate::BitReader<SIR_RX_INVERT_A>;
 impl SIR_RX_INVERT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SIR_RX_INVERT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SIR_RX_INVERT_A {
         match self.bits {
@@ -140,31 +70,17 @@ impl SIR_RX_INVERT_R {
     #[doc = "Checks if the value of the field is `NOT_INVERT`"]
     #[inline(always)]
     pub fn is_not_invert(&self) -> bool {
-        **self == SIR_RX_INVERT_A::NOT_INVERT
+        *self == SIR_RX_INVERT_A::NOT_INVERT
     }
     #[doc = "Checks if the value of the field is `INVERT`"]
     #[inline(always)]
     pub fn is_invert(&self) -> bool {
-        **self == SIR_RX_INVERT_A::INVERT
-    }
-}
-impl core::ops::Deref for SIR_RX_INVERT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SIR_RX_INVERT_A::INVERT
     }
 }
 #[doc = "Field `sir_rx_invert` writer - SIR RX Pulse Polarity Invert"]
-pub struct SIR_RX_INVERT_W<'a> {
-    w: &'a mut W,
-}
+pub type SIR_RX_INVERT_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, SIR_RX_INVERT_A, 5>;
 impl<'a> SIR_RX_INVERT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SIR_RX_INVERT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -174,22 +90,6 @@ impl<'a> SIR_RX_INVERT_W<'a> {
     #[inline(always)]
     pub fn invert(self) -> &'a mut W {
         self.variant(SIR_RX_INVERT_A::INVERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
     }
 }
 #[doc = "SIR TX Pulse Polarity Invert\n\nValue on reset: 0"]
@@ -207,13 +107,9 @@ impl From<SIR_TX_INVERT_A> for bool {
     }
 }
 #[doc = "Field `sir_tx_invert` reader - SIR TX Pulse Polarity Invert"]
-pub struct SIR_TX_INVERT_R(crate::FieldReader<bool>);
+pub type SIR_TX_INVERT_R = crate::BitReader<SIR_TX_INVERT_A>;
 impl SIR_TX_INVERT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SIR_TX_INVERT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SIR_TX_INVERT_A {
         match self.bits {
@@ -224,31 +120,17 @@ impl SIR_TX_INVERT_R {
     #[doc = "Checks if the value of the field is `NOT_INVERT`"]
     #[inline(always)]
     pub fn is_not_invert(&self) -> bool {
-        **self == SIR_TX_INVERT_A::NOT_INVERT
+        *self == SIR_TX_INVERT_A::NOT_INVERT
     }
     #[doc = "Checks if the value of the field is `INVERT`"]
     #[inline(always)]
     pub fn is_invert(&self) -> bool {
-        **self == SIR_TX_INVERT_A::INVERT
-    }
-}
-impl core::ops::Deref for SIR_TX_INVERT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SIR_TX_INVERT_A::INVERT
     }
 }
 #[doc = "Field `sir_tx_invert` writer - SIR TX Pulse Polarity Invert"]
-pub struct SIR_TX_INVERT_W<'a> {
-    w: &'a mut W,
-}
+pub type SIR_TX_INVERT_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, SIR_TX_INVERT_A, 4>;
 impl<'a> SIR_TX_INVERT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SIR_TX_INVERT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -258,22 +140,6 @@ impl<'a> SIR_TX_INVERT_W<'a> {
     #[inline(always)]
     pub fn invert(self) -> &'a mut W {
         self.variant(SIR_TX_INVERT_A::INVERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -291,13 +157,9 @@ impl From<CHANGE_UPDATE_A> for bool {
     }
 }
 #[doc = "Field `change_update` reader - "]
-pub struct CHANGE_UPDATE_R(crate::FieldReader<bool>);
+pub type CHANGE_UPDATE_R = crate::BitReader<CHANGE_UPDATE_A>;
 impl CHANGE_UPDATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHANGE_UPDATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHANGE_UPDATE_A {
         match self.bits {
@@ -308,31 +170,17 @@ impl CHANGE_UPDATE_R {
     #[doc = "Checks if the value of the field is `FINISHED`"]
     #[inline(always)]
     pub fn is_finished(&self) -> bool {
-        **self == CHANGE_UPDATE_A::FINISHED
+        *self == CHANGE_UPDATE_A::FINISHED
     }
     #[doc = "Checks if the value of the field is `UPDATE_TRIGGER`"]
     #[inline(always)]
     pub fn is_update_trigger(&self) -> bool {
-        **self == CHANGE_UPDATE_A::UPDATE_TRIGGER
-    }
-}
-impl core::ops::Deref for CHANGE_UPDATE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHANGE_UPDATE_A::UPDATE_TRIGGER
     }
 }
 #[doc = "Field `change_update` writer - "]
-pub struct CHANGE_UPDATE_W<'a> {
-    w: &'a mut W,
-}
+pub type CHANGE_UPDATE_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, CHANGE_UPDATE_A, 2>;
 impl<'a> CHANGE_UPDATE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHANGE_UPDATE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn finished(self) -> &'a mut W {
@@ -342,22 +190,6 @@ impl<'a> CHANGE_UPDATE_W<'a> {
     #[inline(always)]
     pub fn update_trigger(self) -> &'a mut W {
         self.variant(CHANGE_UPDATE_A::UPDATE_TRIGGER)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -375,13 +207,9 @@ impl From<CHCFG_AT_BUSY_A> for bool {
     }
 }
 #[doc = "Field `chcfg_at_busy` reader - "]
-pub struct CHCFG_AT_BUSY_R(crate::FieldReader<bool>);
+pub type CHCFG_AT_BUSY_R = crate::BitReader<CHCFG_AT_BUSY_A>;
 impl CHCFG_AT_BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CHCFG_AT_BUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CHCFG_AT_BUSY_A {
         match self.bits {
@@ -392,31 +220,17 @@ impl CHCFG_AT_BUSY_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == CHCFG_AT_BUSY_A::DISABLE
+        *self == CHCFG_AT_BUSY_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == CHCFG_AT_BUSY_A::ENABLE
-    }
-}
-impl core::ops::Deref for CHCFG_AT_BUSY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CHCFG_AT_BUSY_A::ENABLE
     }
 }
 #[doc = "Field `chcfg_at_busy` writer - "]
-pub struct CHCFG_AT_BUSY_W<'a> {
-    w: &'a mut W,
-}
+pub type CHCFG_AT_BUSY_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, CHCFG_AT_BUSY_A, 1>;
 impl<'a> CHCFG_AT_BUSY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CHCFG_AT_BUSY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -426,22 +240,6 @@ impl<'a> CHCFG_AT_BUSY_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(CHCFG_AT_BUSY_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -459,13 +257,9 @@ impl From<HALT_TX_A> for bool {
     }
 }
 #[doc = "Field `halt_tx` reader - "]
-pub struct HALT_TX_R(crate::FieldReader<bool>);
+pub type HALT_TX_R = crate::BitReader<HALT_TX_A>;
 impl HALT_TX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HALT_TX_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HALT_TX_A {
         match self.bits {
@@ -476,31 +270,17 @@ impl HALT_TX_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HALT_TX_A::DISABLED
+        *self == HALT_TX_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HALT_TX_A::ENABLED
-    }
-}
-impl core::ops::Deref for HALT_TX_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HALT_TX_A::ENABLED
     }
 }
 #[doc = "Field `halt_tx` writer - "]
-pub struct HALT_TX_W<'a> {
-    w: &'a mut W,
-}
+pub type HALT_TX_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, HALT_TX_A, 0>;
 impl<'a> HALT_TX_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HALT_TX_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -510,22 +290,6 @@ impl<'a> HALT_TX_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HALT_TX_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -569,37 +333,37 @@ impl W {
     #[doc = "Bit 7 - The sending of TX_REQ"]
     #[inline(always)]
     pub fn pte(&mut self) -> PTE_W {
-        PTE_W { w: self }
+        PTE_W::new(self)
     }
     #[doc = "Bit 6 - The Transmission of RX_DRQ"]
     #[inline(always)]
     pub fn dma_pte_rx(&mut self) -> DMA_PTE_RX_W {
-        DMA_PTE_RX_W { w: self }
+        DMA_PTE_RX_W::new(self)
     }
     #[doc = "Bit 5 - SIR RX Pulse Polarity Invert"]
     #[inline(always)]
     pub fn sir_rx_invert(&mut self) -> SIR_RX_INVERT_W {
-        SIR_RX_INVERT_W { w: self }
+        SIR_RX_INVERT_W::new(self)
     }
     #[doc = "Bit 4 - SIR TX Pulse Polarity Invert"]
     #[inline(always)]
     pub fn sir_tx_invert(&mut self) -> SIR_TX_INVERT_W {
-        SIR_TX_INVERT_W { w: self }
+        SIR_TX_INVERT_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn change_update(&mut self) -> CHANGE_UPDATE_W {
-        CHANGE_UPDATE_W { w: self }
+        CHANGE_UPDATE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn chcfg_at_busy(&mut self) -> CHCFG_AT_BUSY_W {
-        CHCFG_AT_BUSY_W { w: self }
+        CHCFG_AT_BUSY_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn halt_tx(&mut self) -> HALT_TX_W {
-        HALT_TX_W { w: self }
+        HALT_TX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

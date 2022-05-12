@@ -14,20 +14,7 @@ impl From<crate::R<DMAC_PARA_REG_SPEC>> for R {
     }
 }
 #[doc = "Field `WAIT_CYC` reader - Wait Clock Cycle"]
-pub struct WAIT_CYC_R(crate::FieldReader<u8>);
-impl WAIT_CYC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WAIT_CYC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WAIT_CYC_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WAIT_CYC_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Wait Clock Cycle"]
     #[inline(always)]

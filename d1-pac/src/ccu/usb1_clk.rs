@@ -49,13 +49,9 @@ impl From<CLKEN_A> for bool {
     }
 }
 #[doc = "Field `CLKEN` reader - Gating Special Clock"]
-pub struct CLKEN_R(crate::FieldReader<bool>);
+pub type CLKEN_R = crate::BitReader<CLKEN_A>;
 impl CLKEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLKEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLKEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CLKEN_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CLKEN_A::OFF
+        *self == CLKEN_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CLKEN_A::ON
-    }
-}
-impl core::ops::Deref for CLKEN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLKEN_A::ON
     }
 }
 #[doc = "Field `CLKEN` writer - Gating Special Clock"]
-pub struct CLKEN_W<'a> {
-    w: &'a mut W,
-}
+pub type CLKEN_W<'a> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, CLKEN_A, 31>;
 impl<'a> CLKEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLKEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> CLKEN_W<'a> {
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(CLKEN_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
     }
 }
 #[doc = "PHY Reset\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<RSTN_A> for bool {
     }
 }
 #[doc = "Field `RSTN` reader - PHY Reset"]
-pub struct RSTN_R(crate::FieldReader<bool>);
+pub type RSTN_R = crate::BitReader<RSTN_A>;
 impl RSTN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RSTN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RSTN_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl RSTN_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == RSTN_A::ASSERT
+        *self == RSTN_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == RSTN_A::DEASSERT
-    }
-}
-impl core::ops::Deref for RSTN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RSTN_A::DEASSERT
     }
 }
 #[doc = "Field `RSTN` writer - PHY Reset"]
-pub struct RSTN_W<'a> {
-    w: &'a mut W,
-}
+pub type RSTN_W<'a> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, RSTN_A, 30>;
 impl<'a> RSTN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RSTN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> RSTN_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(RSTN_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
-        self.w
     }
 }
 #[doc = "OHCI 12M Source Select\n\nValue on reset: 0"]
@@ -220,13 +152,9 @@ impl From<CLK12M_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK12M_SEL` reader - OHCI 12M Source Select"]
-pub struct CLK12M_SEL_R(crate::FieldReader<u8>);
+pub type CLK12M_SEL_R = crate::FieldReader<u8, CLK12M_SEL_A>;
 impl CLK12M_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK12M_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLK12M_SEL_A> {
         match self.bits {
@@ -239,36 +167,22 @@ impl CLK12M_SEL_R {
     #[doc = "Checks if the value of the field is `DIV_48M`"]
     #[inline(always)]
     pub fn is_div_48m(&self) -> bool {
-        **self == CLK12M_SEL_A::DIV_48M
+        *self == CLK12M_SEL_A::DIV_48M
     }
     #[doc = "Checks if the value of the field is `DIV_24M`"]
     #[inline(always)]
     pub fn is_div_24m(&self) -> bool {
-        **self == CLK12M_SEL_A::DIV_24M
+        *self == CLK12M_SEL_A::DIV_24M
     }
     #[doc = "Checks if the value of the field is `RTC_32K`"]
     #[inline(always)]
     pub fn is_rtc_32k(&self) -> bool {
-        **self == CLK12M_SEL_A::RTC_32K
-    }
-}
-impl core::ops::Deref for CLK12M_SEL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK12M_SEL_A::RTC_32K
     }
 }
 #[doc = "Field `CLK12M_SEL` writer - OHCI 12M Source Select"]
-pub struct CLK12M_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK12M_SEL_W<'a> = crate::FieldWriter<'a, u32, USB1_CLK_SPEC, u8, CLK12M_SEL_A, 2, 24>;
 impl<'a> CLK12M_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK12M_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn div_48m(self) -> &'a mut W {
@@ -283,12 +197,6 @@ impl<'a> CLK12M_SEL_W<'a> {
     #[inline(always)]
     pub fn rtc_32k(self) -> &'a mut W {
         self.variant(CLK12M_SEL_A::RTC_32K)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 24)) | ((value as u32 & 3) << 24);
-        self.w
     }
 }
 impl R {
@@ -312,17 +220,17 @@ impl W {
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
     pub fn clken(&mut self) -> CLKEN_W {
-        CLKEN_W { w: self }
+        CLKEN_W::new(self)
     }
     #[doc = "Bit 30 - PHY Reset"]
     #[inline(always)]
     pub fn rstn(&mut self) -> RSTN_W {
-        RSTN_W { w: self }
+        RSTN_W::new(self)
     }
     #[doc = "Bits 24:25 - OHCI 12M Source Select"]
     #[inline(always)]
     pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W {
-        CLK12M_SEL_W { w: self }
+        CLK12M_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,13 +49,9 @@ impl From<MASK_DATA0_A> for bool {
     }
 }
 #[doc = "Field `MASK_DATA0` reader - "]
-pub struct MASK_DATA0_R(crate::FieldReader<bool>);
+pub type MASK_DATA0_R = crate::BitReader<MASK_DATA0_A>;
 impl MASK_DATA0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MASK_DATA0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MASK_DATA0_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MASK_DATA0_R {
     #[doc = "Checks if the value of the field is `NOT_MASK`"]
     #[inline(always)]
     pub fn is_not_mask(&self) -> bool {
-        **self == MASK_DATA0_A::NOT_MASK
+        *self == MASK_DATA0_A::NOT_MASK
     }
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == MASK_DATA0_A::MASK
-    }
-}
-impl core::ops::Deref for MASK_DATA0_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MASK_DATA0_A::MASK
     }
 }
 #[doc = "Field `MASK_DATA0` writer - "]
-pub struct MASK_DATA0_W<'a> {
-    w: &'a mut W,
-}
+pub type MASK_DATA0_W<'a> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, MASK_DATA0_A, 31>;
 impl<'a> MASK_DATA0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MASK_DATA0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Do not mask data0 when update clock"]
     #[inline(always)]
     pub fn not_mask(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> MASK_DATA0_W<'a> {
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
         self.variant(MASK_DATA0_A::MASK)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
     }
 }
 #[doc = "Card Clock Output Control\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<CCLK_CTRL_A> for bool {
     }
 }
 #[doc = "Field `CCLK_CTRL` reader - Card Clock Output Control"]
-pub struct CCLK_CTRL_R(crate::FieldReader<bool>);
+pub type CCLK_CTRL_R = crate::BitReader<CCLK_CTRL_A>;
 impl CCLK_CTRL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CCLK_CTRL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCLK_CTRL_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl CCLK_CTRL_R {
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CCLK_CTRL_A::ON
+        *self == CCLK_CTRL_A::ON
     }
     #[doc = "Checks if the value of the field is `OFF_IDLE`"]
     #[inline(always)]
     pub fn is_off_idle(&self) -> bool {
-        **self == CCLK_CTRL_A::OFF_IDLE
-    }
-}
-impl core::ops::Deref for CCLK_CTRL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CCLK_CTRL_A::OFF_IDLE
     }
 }
 #[doc = "Field `CCLK_CTRL` writer - Card Clock Output Control"]
-pub struct CCLK_CTRL_W<'a> {
-    w: &'a mut W,
-}
+pub type CCLK_CTRL_W<'a> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_CTRL_A, 17>;
 impl<'a> CCLK_CTRL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCLK_CTRL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Card clock is always on"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> CCLK_CTRL_W<'a> {
     #[inline(always)]
     pub fn off_idle(self) -> &'a mut W {
         self.variant(CCLK_CTRL_A::OFF_IDLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
-        self.w
     }
 }
 #[doc = "Card Clock Enable\n\nValue on reset: 0"]
@@ -217,13 +149,9 @@ impl From<CCLK_ENB_A> for bool {
     }
 }
 #[doc = "Field `CCLK_ENB` reader - Card Clock Enable"]
-pub struct CCLK_ENB_R(crate::FieldReader<bool>);
+pub type CCLK_ENB_R = crate::BitReader<CCLK_ENB_A>;
 impl CCLK_ENB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CCLK_ENB_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CCLK_ENB_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl CCLK_ENB_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CCLK_ENB_A::OFF
+        *self == CCLK_ENB_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CCLK_ENB_A::ON
-    }
-}
-impl core::ops::Deref for CCLK_ENB_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CCLK_ENB_A::ON
     }
 }
 #[doc = "Field `CCLK_ENB` writer - Card Clock Enable"]
-pub struct CCLK_ENB_W<'a> {
-    w: &'a mut W,
-}
+pub type CCLK_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_ENB_A, 16>;
 impl<'a> CCLK_ENB_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CCLK_ENB_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Card Clock is off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -269,50 +183,11 @@ impl<'a> CCLK_ENB_W<'a> {
     pub fn on(self) -> &'a mut W {
         self.variant(CCLK_ENB_A::ON)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
-    }
 }
 #[doc = "Field `CCLK_DIV` reader - Card Clock Divider"]
-pub struct CCLK_DIV_R(crate::FieldReader<u8>);
-impl CCLK_DIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CCLK_DIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CCLK_DIV_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CCLK_DIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CCLK_DIV` writer - Card Clock Divider"]
-pub struct CCLK_DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CCLK_DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CCLK_DIV_W<'a> = crate::FieldWriter<'a, u32, SMHC_CLKDIV_SPEC, u8, u8, 8, 0>;
 impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
@@ -339,22 +214,22 @@ impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn mask_data0(&mut self) -> MASK_DATA0_W {
-        MASK_DATA0_W { w: self }
+        MASK_DATA0_W::new(self)
     }
     #[doc = "Bit 17 - Card Clock Output Control"]
     #[inline(always)]
     pub fn cclk_ctrl(&mut self) -> CCLK_CTRL_W {
-        CCLK_CTRL_W { w: self }
+        CCLK_CTRL_W::new(self)
     }
     #[doc = "Bit 16 - Card Clock Enable"]
     #[inline(always)]
     pub fn cclk_enb(&mut self) -> CCLK_ENB_W {
-        CCLK_ENB_W { w: self }
+        CCLK_ENB_W::new(self)
     }
     #[doc = "Bits 0:7 - Card Clock Divider"]
     #[inline(always)]
     pub fn cclk_div(&mut self) -> CCLK_DIV_W {
-        CCLK_DIV_W { w: self }
+        CCLK_DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

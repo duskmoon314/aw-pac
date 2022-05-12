@@ -14,20 +14,7 @@ impl From<crate::R<DMAC_BCNT_LEFT_REG_SPEC>> for R {
     }
 }
 #[doc = "Field `DMA_BCNT_LEFT` reader - DMA Channel Byte Counter Left"]
-pub struct DMA_BCNT_LEFT_R(crate::FieldReader<u32>);
-impl DMA_BCNT_LEFT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DMA_BCNT_LEFT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_BCNT_LEFT_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_BCNT_LEFT_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:24 - DMA Channel Byte Counter Left"]
     #[inline(always)]

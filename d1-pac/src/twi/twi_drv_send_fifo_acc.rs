@@ -20,22 +20,13 @@ impl From<crate::W<TWI_DRV_SEND_FIFO_ACC_SPEC>> for W {
     }
 }
 #[doc = "Field `send_data_fifo` writer - "]
-pub struct SEND_DATA_FIFO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEND_DATA_FIFO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SEND_DATA_FIFO_W<'a> =
+    crate::FieldWriter<'a, u32, TWI_DRV_SEND_FIFO_ACC_SPEC, u8, u8, 8, 0>;
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
     pub fn send_data_fifo(&mut self) -> SEND_DATA_FIFO_W {
-        SEND_DATA_FIFO_W { w: self }
+        SEND_DATA_FIFO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,13 +49,9 @@ impl From<TIMEOUT_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `timeout_enable` reader - DMA Timeout Enable"]
-pub struct TIMEOUT_ENABLE_R(crate::FieldReader<bool>);
+pub type TIMEOUT_ENABLE_R = crate::BitReader<TIMEOUT_ENABLE_A>;
 impl TIMEOUT_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMEOUT_ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TIMEOUT_ENABLE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl TIMEOUT_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TIMEOUT_ENABLE_A::DISABLE
+        *self == TIMEOUT_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TIMEOUT_ENABLE_A::ENABLE
-    }
-}
-impl core::ops::Deref for TIMEOUT_ENABLE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TIMEOUT_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `timeout_enable` writer - DMA Timeout Enable"]
-pub struct TIMEOUT_ENABLE_W<'a> {
-    w: &'a mut W,
-}
+pub type TIMEOUT_ENABLE_W<'a> = crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TIMEOUT_ENABLE_A, 2>;
 impl<'a> TIMEOUT_ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TIMEOUT_ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> TIMEOUT_ENABLE_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TIMEOUT_ENABLE_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "DMA TX REQ Enable\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<TX_REQ_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `tx_req_enable` reader - DMA TX REQ Enable"]
-pub struct TX_REQ_ENABLE_R(crate::FieldReader<bool>);
+pub type TX_REQ_ENABLE_R = crate::BitReader<TX_REQ_ENABLE_A>;
 impl TX_REQ_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_REQ_ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_REQ_ENABLE_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl TX_REQ_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_REQ_ENABLE_A::DISABLE
+        *self == TX_REQ_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_REQ_ENABLE_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_REQ_ENABLE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_REQ_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `tx_req_enable` writer - DMA TX REQ Enable"]
-pub struct TX_REQ_ENABLE_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_REQ_ENABLE_W<'a> = crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TX_REQ_ENABLE_A, 1>;
 impl<'a> TX_REQ_ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_REQ_ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> TX_REQ_ENABLE_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_REQ_ENABLE_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "DMA RX REQ Enable\n\nValue on reset: 0"]
@@ -217,13 +149,9 @@ impl From<RX_REQ_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `rx_req_enable` reader - DMA RX REQ Enable"]
-pub struct RX_REQ_ENABLE_R(crate::FieldReader<bool>);
+pub type RX_REQ_ENABLE_R = crate::BitReader<RX_REQ_ENABLE_A>;
 impl RX_REQ_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_REQ_ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_REQ_ENABLE_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl RX_REQ_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_REQ_ENABLE_A::DISABLE
+        *self == RX_REQ_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_REQ_ENABLE_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_REQ_ENABLE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_REQ_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `rx_req_enable` writer - DMA RX REQ Enable"]
-pub struct RX_REQ_ENABLE_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_REQ_ENABLE_W<'a> = crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, RX_REQ_ENABLE_A, 0>;
 impl<'a> RX_REQ_ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_REQ_ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,22 +182,6 @@ impl<'a> RX_REQ_ENABLE_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_REQ_ENABLE_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -307,17 +205,17 @@ impl W {
     #[doc = "Bit 2 - DMA Timeout Enable"]
     #[inline(always)]
     pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W {
-        TIMEOUT_ENABLE_W { w: self }
+        TIMEOUT_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - DMA TX REQ Enable"]
     #[inline(always)]
     pub fn tx_req_enable(&mut self) -> TX_REQ_ENABLE_W {
-        TX_REQ_ENABLE_W { w: self }
+        TX_REQ_ENABLE_W::new(self)
     }
     #[doc = "Bit 0 - DMA RX REQ Enable"]
     #[inline(always)]
     pub fn rx_req_enable(&mut self) -> RX_REQ_ENABLE_W {
-        RX_REQ_ENABLE_W { w: self }
+        RX_REQ_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

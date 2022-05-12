@@ -35,36 +35,14 @@ impl From<crate::W<AVS_CNT_DIV_SPEC>> for W {
     }
 }
 #[doc = "Fields `AVS_CNT(0-1)_D` reader - The divisor factor of AVS"]
-pub struct AVS_CNT_D_R(crate::FieldReader<u16>);
-impl AVS_CNT_D_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        AVS_CNT_D_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AVS_CNT_D_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `AVS_CNT(0-1)_D` const generic writer - The divisor factor of AVS"]
-pub struct AVS_CNT_D_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> AVS_CNT_D_W<'a, O> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0fff << O)) | ((value as u32 & 0x0fff) << O);
-        self.w
-    }
-}
+pub type AVS_CNT_D_R = crate::FieldReader<u16, u16>;
+#[doc = "Fields `AVS_CNT(0-1)_D` writer - The divisor factor of AVS"]
+pub type AVS_CNT_D_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AVS_CNT_DIV_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "The divisor factor of AVS"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_d(&self, n: usize) -> AVS_CNT_D_R {
+    pub unsafe fn avs_cnt_d(&self, n: u8) -> AVS_CNT_D_R {
         AVS_CNT_D_R::new(((self.bits >> (n * 16)) & 0x0fff) as u16)
     }
     #[doc = "Bits 0:11 - The divisor factor of AVS"]
@@ -81,18 +59,18 @@ impl R {
 impl W {
     #[doc = "The divisor factor of AVS"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_d<const O: usize>(&mut self) -> AVS_CNT_D_W<O> {
-        AVS_CNT_D_W { w: self }
+    pub unsafe fn avs_cnt_d<const O: u8>(&mut self) -> AVS_CNT_D_W<O> {
+        AVS_CNT_D_W::new(self)
     }
     #[doc = "Bits 0:11 - The divisor factor of AVS"]
     #[inline(always)]
     pub fn avs_cnt0_d(&mut self) -> AVS_CNT_D_W<0> {
-        AVS_CNT_D_W { w: self }
+        AVS_CNT_D_W::new(self)
     }
     #[doc = "Bits 16:27 - The divisor factor of AVS"]
     #[inline(always)]
     pub fn avs_cnt1_d(&mut self) -> AVS_CNT_D_W<16> {
-        AVS_CNT_D_W { w: self }
+        AVS_CNT_D_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,13 +49,9 @@ impl From<SCL_STATE_A> for bool {
     }
 }
 #[doc = "Field `scl_state` reader - Current State of TWI_SCL"]
-pub struct SCL_STATE_R(crate::FieldReader<bool>);
+pub type SCL_STATE_R = crate::BitReader<SCL_STATE_A>;
 impl SCL_STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SCL_STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SCL_STATE_A {
         match self.bits {
@@ -66,19 +62,12 @@ impl SCL_STATE_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SCL_STATE_A::LOW
+        *self == SCL_STATE_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SCL_STATE_A::HIGH
-    }
-}
-impl core::ops::Deref for SCL_STATE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SCL_STATE_A::HIGH
     }
 }
 #[doc = "Current State of TWI_SDA\n\nValue on reset: 0"]
@@ -96,13 +85,9 @@ impl From<SDA_STATE_A> for bool {
     }
 }
 #[doc = "Field `sda_state` reader - Current State of TWI_SDA"]
-pub struct SDA_STATE_R(crate::FieldReader<bool>);
+pub type SDA_STATE_R = crate::BitReader<SDA_STATE_A>;
 impl SDA_STATE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SDA_STATE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDA_STATE_A {
         match self.bits {
@@ -113,19 +98,12 @@ impl SDA_STATE_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SDA_STATE_A::LOW
+        *self == SDA_STATE_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SDA_STATE_A::HIGH
-    }
-}
-impl core::ops::Deref for SDA_STATE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SDA_STATE_A::HIGH
     }
 }
 #[doc = "TWI_SCL Line State Control Bit\n\nValue on reset: 0"]
@@ -143,13 +121,9 @@ impl From<SCL_CTL_A> for bool {
     }
 }
 #[doc = "Field `scl_ctl` reader - TWI_SCL Line State Control Bit"]
-pub struct SCL_CTL_R(crate::FieldReader<bool>);
+pub type SCL_CTL_R = crate::BitReader<SCL_CTL_A>;
 impl SCL_CTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SCL_CTL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SCL_CTL_A {
         match self.bits {
@@ -160,31 +134,17 @@ impl SCL_CTL_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SCL_CTL_A::LOW
+        *self == SCL_CTL_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SCL_CTL_A::HIGH
-    }
-}
-impl core::ops::Deref for SCL_CTL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SCL_CTL_A::HIGH
     }
 }
 #[doc = "Field `scl_ctl` writer - TWI_SCL Line State Control Bit"]
-pub struct SCL_CTL_W<'a> {
-    w: &'a mut W,
-}
+pub type SCL_CTL_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SCL_CTL_A, 3>;
 impl<'a> SCL_CTL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SCL_CTL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -194,22 +154,6 @@ impl<'a> SCL_CTL_W<'a> {
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(SCL_CTL_A::HIGH)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
     }
 }
 #[doc = "TWI_SCL Line State Control Enable\n\nValue on reset: 0"]
@@ -227,13 +171,9 @@ impl From<SCL_CTL_EN_A> for bool {
     }
 }
 #[doc = "Field `scl_ctl_en` reader - TWI_SCL Line State Control Enable"]
-pub struct SCL_CTL_EN_R(crate::FieldReader<bool>);
+pub type SCL_CTL_EN_R = crate::BitReader<SCL_CTL_EN_A>;
 impl SCL_CTL_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SCL_CTL_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SCL_CTL_EN_A {
         match self.bits {
@@ -244,31 +184,17 @@ impl SCL_CTL_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == SCL_CTL_EN_A::DISABLE
+        *self == SCL_CTL_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == SCL_CTL_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for SCL_CTL_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SCL_CTL_EN_A::ENABLE
     }
 }
 #[doc = "Field `scl_ctl_en` writer - TWI_SCL Line State Control Enable"]
-pub struct SCL_CTL_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type SCL_CTL_EN_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SCL_CTL_EN_A, 2>;
 impl<'a> SCL_CTL_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SCL_CTL_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -278,22 +204,6 @@ impl<'a> SCL_CTL_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(SCL_CTL_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "TWI_SDA Line State Control Bit\n\nValue on reset: 0"]
@@ -311,13 +221,9 @@ impl From<SDA_CTL_A> for bool {
     }
 }
 #[doc = "Field `sda_ctl` reader - TWI_SDA Line State Control Bit"]
-pub struct SDA_CTL_R(crate::FieldReader<bool>);
+pub type SDA_CTL_R = crate::BitReader<SDA_CTL_A>;
 impl SDA_CTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SDA_CTL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDA_CTL_A {
         match self.bits {
@@ -328,31 +234,17 @@ impl SDA_CTL_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SDA_CTL_A::LOW
+        *self == SDA_CTL_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SDA_CTL_A::HIGH
-    }
-}
-impl core::ops::Deref for SDA_CTL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SDA_CTL_A::HIGH
     }
 }
 #[doc = "Field `sda_ctl` writer - TWI_SDA Line State Control Bit"]
-pub struct SDA_CTL_W<'a> {
-    w: &'a mut W,
-}
+pub type SDA_CTL_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SDA_CTL_A, 1>;
 impl<'a> SDA_CTL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SDA_CTL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -362,22 +254,6 @@ impl<'a> SDA_CTL_W<'a> {
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(SDA_CTL_A::HIGH)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "TWI_SDA Line State Control Enable\n\nValue on reset: 0"]
@@ -395,13 +271,9 @@ impl From<SDA_CTL_EN_A> for bool {
     }
 }
 #[doc = "Field `sda_ctl_en` reader - TWI_SDA Line State Control Enable"]
-pub struct SDA_CTL_EN_R(crate::FieldReader<bool>);
+pub type SDA_CTL_EN_R = crate::BitReader<SDA_CTL_EN_A>;
 impl SDA_CTL_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SDA_CTL_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SDA_CTL_EN_A {
         match self.bits {
@@ -412,31 +284,17 @@ impl SDA_CTL_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == SDA_CTL_EN_A::DISABLE
+        *self == SDA_CTL_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == SDA_CTL_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for SDA_CTL_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SDA_CTL_EN_A::ENABLE
     }
 }
 #[doc = "Field `sda_ctl_en` writer - TWI_SDA Line State Control Enable"]
-pub struct SDA_CTL_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type SDA_CTL_EN_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SDA_CTL_EN_A, 0>;
 impl<'a> SDA_CTL_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SDA_CTL_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -446,22 +304,6 @@ impl<'a> SDA_CTL_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(SDA_CTL_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -500,22 +342,22 @@ impl W {
     #[doc = "Bit 3 - TWI_SCL Line State Control Bit"]
     #[inline(always)]
     pub fn scl_ctl(&mut self) -> SCL_CTL_W {
-        SCL_CTL_W { w: self }
+        SCL_CTL_W::new(self)
     }
     #[doc = "Bit 2 - TWI_SCL Line State Control Enable"]
     #[inline(always)]
     pub fn scl_ctl_en(&mut self) -> SCL_CTL_EN_W {
-        SCL_CTL_EN_W { w: self }
+        SCL_CTL_EN_W::new(self)
     }
     #[doc = "Bit 1 - TWI_SDA Line State Control Bit"]
     #[inline(always)]
     pub fn sda_ctl(&mut self) -> SDA_CTL_W {
-        SDA_CTL_W { w: self }
+        SDA_CTL_W::new(self)
     }
     #[doc = "Bit 0 - TWI_SDA Line State Control Enable"]
     #[inline(always)]
     pub fn sda_ctl_en(&mut self) -> SDA_CTL_EN_W {
-        SDA_CTL_EN_W { w: self }
+        SDA_CTL_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,20 +35,7 @@ impl From<crate::W<CE_CDA_SPEC>> for W {
     }
 }
 #[doc = "Field `CUR_DST_ADDR` reader - Current destination address"]
-pub struct CUR_DST_ADDR_R(crate::FieldReader<u32>);
-impl CUR_DST_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        CUR_DST_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CUR_DST_ADDR_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CUR_DST_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current destination address"]
     #[inline(always)]

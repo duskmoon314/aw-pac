@@ -35,32 +35,9 @@ impl From<crate::W<EMAC_BASIC_CTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `BURST_LEN` reader - The burst length of RX and TX DMA transfer"]
-pub struct BURST_LEN_R(crate::FieldReader<u8>);
-impl BURST_LEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BURST_LEN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BURST_LEN_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BURST_LEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BURST_LEN` writer - The burst length of RX and TX DMA transfer"]
-pub struct BURST_LEN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> BURST_LEN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
-    }
-}
+pub type BURST_LEN_W<'a> = crate::FieldWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, u8, u8, 6, 24>;
 #[doc = "RX TX DMA Priority\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_TX_PRI_A {
@@ -76,13 +53,9 @@ impl From<RX_TX_PRI_A> for bool {
     }
 }
 #[doc = "Field `RX_TX_PRI` reader - RX TX DMA Priority"]
-pub struct RX_TX_PRI_R(crate::FieldReader<bool>);
+pub type RX_TX_PRI_R = crate::BitReader<RX_TX_PRI_A>;
 impl RX_TX_PRI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_TX_PRI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_TX_PRI_A {
         match self.bits {
@@ -93,31 +66,17 @@ impl RX_TX_PRI_R {
     #[doc = "Checks if the value of the field is `SAME`"]
     #[inline(always)]
     pub fn is_same(&self) -> bool {
-        **self == RX_TX_PRI_A::SAME
+        *self == RX_TX_PRI_A::SAME
     }
     #[doc = "Checks if the value of the field is `ROT`"]
     #[inline(always)]
     pub fn is_ro_t(&self) -> bool {
-        **self == RX_TX_PRI_A::ROT
-    }
-}
-impl core::ops::Deref for RX_TX_PRI_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_TX_PRI_A::ROT
     }
 }
 #[doc = "Field `RX_TX_PRI` writer - RX TX DMA Priority"]
-pub struct RX_TX_PRI_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_TX_PRI_W<'a> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, RX_TX_PRI_A, 1>;
 impl<'a> RX_TX_PRI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_TX_PRI_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn same(self) -> &'a mut W {
@@ -127,22 +86,6 @@ impl<'a> RX_TX_PRI_W<'a> {
     #[inline(always)]
     pub fn ro_t(self) -> &'a mut W {
         self.variant(RX_TX_PRI_A::ROT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Soft Reset all Registers and Logic\n\nValue on reset: 0"]
@@ -160,13 +103,9 @@ impl From<SOFT_RST_A> for bool {
     }
 }
 #[doc = "Field `SOFT_RST` reader - Soft Reset all Registers and Logic"]
-pub struct SOFT_RST_R(crate::FieldReader<bool>);
+pub type SOFT_RST_R = crate::BitReader<SOFT_RST_A>;
 impl SOFT_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SOFT_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SOFT_RST_A {
         match self.bits {
@@ -177,31 +116,17 @@ impl SOFT_RST_R {
     #[doc = "Checks if the value of the field is `NO_VALID`"]
     #[inline(always)]
     pub fn is_no_valid(&self) -> bool {
-        **self == SOFT_RST_A::NO_VALID
+        *self == SOFT_RST_A::NO_VALID
     }
     #[doc = "Checks if the value of the field is `RESET`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == SOFT_RST_A::RESET
-    }
-}
-impl core::ops::Deref for SOFT_RST_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SOFT_RST_A::RESET
     }
 }
 #[doc = "Field `SOFT_RST` writer - Soft Reset all Registers and Logic"]
-pub struct SOFT_RST_W<'a> {
-    w: &'a mut W,
-}
+pub type SOFT_RST_W<'a> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, SOFT_RST_A, 0>;
 impl<'a> SOFT_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SOFT_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_valid(self) -> &'a mut W {
@@ -211,22 +136,6 @@ impl<'a> SOFT_RST_W<'a> {
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
         self.variant(SOFT_RST_A::RESET)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -250,17 +159,17 @@ impl W {
     #[doc = "Bits 24:29 - The burst length of RX and TX DMA transfer"]
     #[inline(always)]
     pub fn burst_len(&mut self) -> BURST_LEN_W {
-        BURST_LEN_W { w: self }
+        BURST_LEN_W::new(self)
     }
     #[doc = "Bit 1 - RX TX DMA Priority"]
     #[inline(always)]
     pub fn rx_tx_pri(&mut self) -> RX_TX_PRI_W {
-        RX_TX_PRI_W { w: self }
+        RX_TX_PRI_W::new(self)
     }
     #[doc = "Bit 0 - Soft Reset all Registers and Logic"]
     #[inline(always)]
     pub fn soft_rst(&mut self) -> SOFT_RST_W {
-        SOFT_RST_W { w: self }
+        SOFT_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

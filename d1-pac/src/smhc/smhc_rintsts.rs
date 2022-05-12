@@ -35,671 +35,77 @@ impl From<crate::W<SMHC_RINTSTS_SPEC>> for W {
     }
 }
 #[doc = "Field `CARD_REMOVAL` reader - Card Removed"]
-pub struct CARD_REMOVAL_R(crate::FieldReader<bool>);
-impl CARD_REMOVAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CARD_REMOVAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CARD_REMOVAL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CARD_REMOVAL_R = crate::BitReader<bool>;
 #[doc = "Field `CARD_REMOVAL` writer - Card Removed"]
-pub struct CARD_REMOVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CARD_REMOVAL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
-    }
-}
+pub type CARD_REMOVAL_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 31>;
 #[doc = "Field `CARD_INSERT` reader - Card Inserted"]
-pub struct CARD_INSERT_R(crate::FieldReader<bool>);
-impl CARD_INSERT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CARD_INSERT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CARD_INSERT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CARD_INSERT_R = crate::BitReader<bool>;
 #[doc = "Field `CARD_INSERT` writer - Card Inserted"]
-pub struct CARD_INSERT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CARD_INSERT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
-        self.w
-    }
-}
+pub type CARD_INSERT_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 30>;
 #[doc = "Field `SDIOI_INT` reader - SDIO Interrupt"]
-pub struct SDIOI_INT_R(crate::FieldReader<bool>);
-impl SDIOI_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SDIOI_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SDIOI_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SDIOI_INT_R = crate::BitReader<bool>;
 #[doc = "Field `SDIOI_INT` writer - SDIO Interrupt"]
-pub struct SDIOI_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SDIOI_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
-    }
-}
+pub type SDIOI_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 16>;
 #[doc = "Field `DEE` reader - Data End-bit Error"]
-pub struct DEE_R(crate::FieldReader<bool>);
-impl DEE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DEE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DEE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DEE_R = crate::BitReader<bool>;
 #[doc = "Field `DEE` writer - Data End-bit Error"]
-pub struct DEE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DEE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
-        self.w
-    }
-}
+pub type DEE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 15>;
 #[doc = "Field `ACD` reader - Auto Command Done"]
-pub struct ACD_R(crate::FieldReader<bool>);
-impl ACD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ACD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ACD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ACD_R = crate::BitReader<bool>;
 #[doc = "Field `ACD` writer - Auto Command Done"]
-pub struct ACD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ACD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 14)) | ((value as u32 & 1) << 14);
-        self.w
-    }
-}
+pub type ACD_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 14>;
 #[doc = "Field `DSE_BC` reader - Data Start Error/Busy Clear"]
-pub struct DSE_BC_R(crate::FieldReader<bool>);
-impl DSE_BC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DSE_BC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSE_BC_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DSE_BC_R = crate::BitReader<bool>;
 #[doc = "Field `DSE_BC` writer - Data Start Error/Busy Clear"]
-pub struct DSE_BC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSE_BC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
-        self.w
-    }
-}
+pub type DSE_BC_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 13>;
 #[doc = "Field `CB_IW` reader - Command Busy and Illegal Write"]
-pub struct CB_IW_R(crate::FieldReader<bool>);
-impl CB_IW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CB_IW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CB_IW_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CB_IW_R = crate::BitReader<bool>;
 #[doc = "Field `CB_IW` writer - Command Busy and Illegal Write"]
-pub struct CB_IW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CB_IW_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
-        self.w
-    }
-}
+pub type CB_IW_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 12>;
 #[doc = "Field `FU_FO` reader - FIFO Underrun/Overflow"]
-pub struct FU_FO_R(crate::FieldReader<bool>);
-impl FU_FO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FU_FO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FU_FO_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FU_FO_R = crate::BitReader<bool>;
 #[doc = "Field `FU_FO` writer - FIFO Underrun/Overflow"]
-pub struct FU_FO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FU_FO_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
-        self.w
-    }
-}
+pub type FU_FO_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 11>;
 #[doc = "Field `DSTO_VSD` reader - Data Starvation Timeout/V1.8 Switch Done"]
-pub struct DSTO_VSD_R(crate::FieldReader<bool>);
-impl DSTO_VSD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DSTO_VSD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DSTO_VSD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DSTO_VSD_R = crate::BitReader<bool>;
 #[doc = "Field `DSTO_VSD` writer - Data Starvation Timeout/V1.8 Switch Done"]
-pub struct DSTO_VSD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DSTO_VSD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
-        self.w
-    }
-}
+pub type DSTO_VSD_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 10>;
 #[doc = "Field `DTO_BDS` reader - Data Timeout/Boot Data Start"]
-pub struct DTO_BDS_R(crate::FieldReader<bool>);
-impl DTO_BDS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTO_BDS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTO_BDS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTO_BDS_R = crate::BitReader<bool>;
 #[doc = "Field `DTO_BDS` writer - Data Timeout/Boot Data Start"]
-pub struct DTO_BDS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTO_BDS_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
-        self.w
-    }
-}
+pub type DTO_BDS_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 9>;
 #[doc = "Field `RTO_BACK` reader - Response Timeout/Boot ACK Received"]
-pub struct RTO_BACK_R(crate::FieldReader<bool>);
-impl RTO_BACK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RTO_BACK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RTO_BACK_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RTO_BACK_R = crate::BitReader<bool>;
 #[doc = "Field `RTO_BACK` writer - Response Timeout/Boot ACK Received"]
-pub struct RTO_BACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RTO_BACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
-    }
-}
+pub type RTO_BACK_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 8>;
 #[doc = "Field `DCE` reader - Data CRC Error"]
-pub struct DCE_R(crate::FieldReader<bool>);
-impl DCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DCE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DCE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DCE_R = crate::BitReader<bool>;
 #[doc = "Field `DCE` writer - Data CRC Error"]
-pub struct DCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DCE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
-    }
-}
+pub type DCE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 7>;
 #[doc = "Field `RCE` reader - Response CRC Error"]
-pub struct RCE_R(crate::FieldReader<bool>);
-impl RCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RCE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RCE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RCE_R = crate::BitReader<bool>;
 #[doc = "Field `RCE` writer - Response CRC Error"]
-pub struct RCE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RCE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
-        self.w
-    }
-}
+pub type RCE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 6>;
 #[doc = "Field `DRR` reader - Data Receive Request"]
-pub struct DRR_R(crate::FieldReader<bool>);
-impl DRR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DRR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DRR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DRR_R = crate::BitReader<bool>;
 #[doc = "Field `DRR` writer - Data Receive Request"]
-pub struct DRR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DRR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
-    }
-}
+pub type DRR_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 5>;
 #[doc = "Field `DTR` reader - Data Transmit Request"]
-pub struct DTR_R(crate::FieldReader<bool>);
-impl DTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTR_R = crate::BitReader<bool>;
 #[doc = "Field `DTR` writer - Data Transmit Request"]
-pub struct DTR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
-    }
-}
+pub type DTR_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 4>;
 #[doc = "Field `DTC` reader - Data Transfer Complete"]
-pub struct DTC_R(crate::FieldReader<bool>);
-impl DTC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DTC_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DTC_R = crate::BitReader<bool>;
 #[doc = "Field `DTC` writer - Data Transfer Complete"]
-pub struct DTC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DTC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
-}
+pub type DTC_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 3>;
 #[doc = "Field `CC` reader - Command Complete"]
-pub struct CC_R(crate::FieldReader<bool>);
-impl CC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CC_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CC_R = crate::BitReader<bool>;
 #[doc = "Field `CC` writer - Command Complete"]
-pub struct CC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CC_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type CC_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 2>;
 #[doc = "Field `RE` reader - Response Error"]
-pub struct RE_R(crate::FieldReader<bool>);
-impl RE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RE_R = crate::BitReader<bool>;
 #[doc = "Field `RE` writer - Response Error"]
-pub struct RE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type RE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 1>;
 impl R {
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]
@@ -796,92 +202,92 @@ impl W {
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]
     pub fn card_removal(&mut self) -> CARD_REMOVAL_W {
-        CARD_REMOVAL_W { w: self }
+        CARD_REMOVAL_W::new(self)
     }
     #[doc = "Bit 30 - Card Inserted"]
     #[inline(always)]
     pub fn card_insert(&mut self) -> CARD_INSERT_W {
-        CARD_INSERT_W { w: self }
+        CARD_INSERT_W::new(self)
     }
     #[doc = "Bit 16 - SDIO Interrupt"]
     #[inline(always)]
     pub fn sdioi_int(&mut self) -> SDIOI_INT_W {
-        SDIOI_INT_W { w: self }
+        SDIOI_INT_W::new(self)
     }
     #[doc = "Bit 15 - Data End-bit Error"]
     #[inline(always)]
     pub fn dee(&mut self) -> DEE_W {
-        DEE_W { w: self }
+        DEE_W::new(self)
     }
     #[doc = "Bit 14 - Auto Command Done"]
     #[inline(always)]
     pub fn acd(&mut self) -> ACD_W {
-        ACD_W { w: self }
+        ACD_W::new(self)
     }
     #[doc = "Bit 13 - Data Start Error/Busy Clear"]
     #[inline(always)]
     pub fn dse_bc(&mut self) -> DSE_BC_W {
-        DSE_BC_W { w: self }
+        DSE_BC_W::new(self)
     }
     #[doc = "Bit 12 - Command Busy and Illegal Write"]
     #[inline(always)]
     pub fn cb_iw(&mut self) -> CB_IW_W {
-        CB_IW_W { w: self }
+        CB_IW_W::new(self)
     }
     #[doc = "Bit 11 - FIFO Underrun/Overflow"]
     #[inline(always)]
     pub fn fu_fo(&mut self) -> FU_FO_W {
-        FU_FO_W { w: self }
+        FU_FO_W::new(self)
     }
     #[doc = "Bit 10 - Data Starvation Timeout/V1.8 Switch Done"]
     #[inline(always)]
     pub fn dsto_vsd(&mut self) -> DSTO_VSD_W {
-        DSTO_VSD_W { w: self }
+        DSTO_VSD_W::new(self)
     }
     #[doc = "Bit 9 - Data Timeout/Boot Data Start"]
     #[inline(always)]
     pub fn dto_bds(&mut self) -> DTO_BDS_W {
-        DTO_BDS_W { w: self }
+        DTO_BDS_W::new(self)
     }
     #[doc = "Bit 8 - Response Timeout/Boot ACK Received"]
     #[inline(always)]
     pub fn rto_back(&mut self) -> RTO_BACK_W {
-        RTO_BACK_W { w: self }
+        RTO_BACK_W::new(self)
     }
     #[doc = "Bit 7 - Data CRC Error"]
     #[inline(always)]
     pub fn dce(&mut self) -> DCE_W {
-        DCE_W { w: self }
+        DCE_W::new(self)
     }
     #[doc = "Bit 6 - Response CRC Error"]
     #[inline(always)]
     pub fn rce(&mut self) -> RCE_W {
-        RCE_W { w: self }
+        RCE_W::new(self)
     }
     #[doc = "Bit 5 - Data Receive Request"]
     #[inline(always)]
     pub fn drr(&mut self) -> DRR_W {
-        DRR_W { w: self }
+        DRR_W::new(self)
     }
     #[doc = "Bit 4 - Data Transmit Request"]
     #[inline(always)]
     pub fn dtr(&mut self) -> DTR_W {
-        DTR_W { w: self }
+        DTR_W::new(self)
     }
     #[doc = "Bit 3 - Data Transfer Complete"]
     #[inline(always)]
     pub fn dtc(&mut self) -> DTC_W {
-        DTC_W { w: self }
+        DTC_W::new(self)
     }
     #[doc = "Bit 2 - Command Complete"]
     #[inline(always)]
     pub fn cc(&mut self) -> CC_W {
-        CC_W { w: self }
+        CC_W::new(self)
     }
     #[doc = "Bit 1 - Response Error"]
     #[inline(always)]
     pub fn re(&mut self) -> RE_W {
-        RE_W { w: self }
+        RE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,59 +35,13 @@ impl From<crate::W<LED_RESET_TIMING_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `TR_TIME` reader - "]
-pub struct TR_TIME_R(crate::FieldReader<u16>);
-impl TR_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TR_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TR_TIME_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TR_TIME_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TR_TIME` writer - "]
-pub struct TR_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TR_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1fff << 16)) | ((value as u32 & 0x1fff) << 16);
-        self.w
-    }
-}
+pub type TR_TIME_W<'a> = crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 13, 16>;
 #[doc = "Field `LED_NUM` reader - "]
-pub struct LED_NUM_R(crate::FieldReader<u16>);
-impl LED_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LED_NUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LED_NUM_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LED_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LED_NUM` writer - "]
-pub struct LED_NUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LED_NUM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type LED_NUM_W<'a> = crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 10, 0>;
 impl R {
     #[doc = "Bits 16:28"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 16:28"]
     #[inline(always)]
     pub fn tr_time(&mut self) -> TR_TIME_W {
-        TR_TIME_W { w: self }
+        TR_TIME_W::new(self)
     }
     #[doc = "Bits 0:9"]
     #[inline(always)]
     pub fn led_num(&mut self) -> LED_NUM_W {
-        LED_NUM_W { w: self }
+        LED_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

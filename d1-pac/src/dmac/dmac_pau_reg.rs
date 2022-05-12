@@ -49,13 +49,9 @@ impl From<DMA_PAUSE_A> for bool {
     }
 }
 #[doc = "Field `DMA_PAUSE` reader - Pause the DMA Channel Transfer Data"]
-pub struct DMA_PAUSE_R(crate::FieldReader<bool>);
+pub type DMA_PAUSE_R = crate::BitReader<DMA_PAUSE_A>;
 impl DMA_PAUSE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_PAUSE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_PAUSE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DMA_PAUSE_R {
     #[doc = "Checks if the value of the field is `RESUME`"]
     #[inline(always)]
     pub fn is_resume(&self) -> bool {
-        **self == DMA_PAUSE_A::RESUME
+        *self == DMA_PAUSE_A::RESUME
     }
     #[doc = "Checks if the value of the field is `PAUSE`"]
     #[inline(always)]
     pub fn is_pause(&self) -> bool {
-        **self == DMA_PAUSE_A::PAUSE
-    }
-}
-impl core::ops::Deref for DMA_PAUSE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_PAUSE_A::PAUSE
     }
 }
 #[doc = "Field `DMA_PAUSE` writer - Pause the DMA Channel Transfer Data"]
-pub struct DMA_PAUSE_W<'a> {
-    w: &'a mut W,
-}
+pub type DMA_PAUSE_W<'a> = crate::BitWriter<'a, u32, DMAC_PAU_REG_SPEC, DMA_PAUSE_A, 0>;
 impl<'a> DMA_PAUSE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMA_PAUSE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn resume(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> DMA_PAUSE_W<'a> {
     #[inline(always)]
     pub fn pause(self) -> &'a mut W {
         self.variant(DMA_PAUSE_A::PAUSE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -129,7 +95,7 @@ impl W {
     #[doc = "Bit 0 - Pause the DMA Channel Transfer Data"]
     #[inline(always)]
     pub fn dma_pause(&mut self) -> DMA_PAUSE_W {
-        DMA_PAUSE_W { w: self }
+        DMA_PAUSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -50,13 +50,9 @@ impl From<HSK_A> for u8 {
     }
 }
 #[doc = "Field `hsk` reader - Handshake configuration"]
-pub struct HSK_R(crate::FieldReader<u8>);
+pub type HSK_R = crate::FieldReader<u8, HSK_A>;
 impl HSK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HSK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<HSK_A> {
         match self.bits {
@@ -68,31 +64,17 @@ impl HSK_R {
     #[doc = "Checks if the value of the field is `WAIT_CYCLE`"]
     #[inline(always)]
     pub fn is_wait_cycle(&self) -> bool {
-        **self == HSK_A::WAIT_CYCLE
+        *self == HSK_A::WAIT_CYCLE
     }
     #[doc = "Checks if the value of the field is `HANDSHAKE`"]
     #[inline(always)]
     pub fn is_handshake(&self) -> bool {
-        **self == HSK_A::HANDSHAKE
-    }
-}
-impl core::ops::Deref for HSK_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HSK_A::HANDSHAKE
     }
 }
 #[doc = "Field `hsk` writer - Handshake configuration"]
-pub struct HSK_W<'a> {
-    w: &'a mut W,
-}
+pub type HSK_W<'a> = crate::FieldWriter<'a, u32, HSK_SPEC, u8, HSK_A, 8, 0>;
 impl<'a> HSK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HSK_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`10100101`"]
     #[inline(always)]
     pub fn wait_cycle(self) -> &'a mut W {
@@ -102,12 +84,6 @@ impl<'a> HSK_W<'a> {
     #[inline(always)]
     pub fn handshake(self) -> &'a mut W {
         self.variant(HSK_A::HANDSHAKE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
     }
 }
 impl R {
@@ -121,7 +97,7 @@ impl W {
     #[doc = "Bits 0:7 - Handshake configuration"]
     #[inline(always)]
     pub fn hsk(&mut self) -> HSK_W {
-        HSK_W { w: self }
+        HSK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

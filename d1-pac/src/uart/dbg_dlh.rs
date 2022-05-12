@@ -14,20 +14,7 @@ impl From<crate::R<DBG_DLH_SPEC>> for R {
     }
 }
 #[doc = "Field `DBG_DLH` reader - "]
-pub struct DBG_DLH_R(crate::FieldReader<u8>);
-impl DBG_DLH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBG_DLH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBG_DLH_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBG_DLH_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]

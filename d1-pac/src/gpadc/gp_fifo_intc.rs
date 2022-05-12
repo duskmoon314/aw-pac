@@ -49,13 +49,9 @@ impl From<FIFO_DATA_DRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `FIFO_DATA_DRQ_EN` reader - ADC FIFO Date DRQ Enable"]
-pub struct FIFO_DATA_DRQ_EN_R(crate::FieldReader<bool>);
+pub type FIFO_DATA_DRQ_EN_R = crate::BitReader<FIFO_DATA_DRQ_EN_A>;
 impl FIFO_DATA_DRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_DATA_DRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_DATA_DRQ_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl FIFO_DATA_DRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == FIFO_DATA_DRQ_EN_A::DISABLE
+        *self == FIFO_DATA_DRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == FIFO_DATA_DRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for FIFO_DATA_DRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_DATA_DRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `FIFO_DATA_DRQ_EN` writer - ADC FIFO Date DRQ Enable"]
-pub struct FIFO_DATA_DRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type FIFO_DATA_DRQ_EN_W<'a> =
+    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_DRQ_EN_A, 18>;
 impl<'a> FIFO_DATA_DRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIFO_DATA_DRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> FIFO_DATA_DRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(FIFO_DATA_DRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 18)) | ((value as u32 & 1) << 18);
-        self.w
     }
 }
 #[doc = "ADC FIFO Overrun IRQ Enable\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<FIFO_OVERRUN_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `FIFO_OVERRUN_IRQ_EN` reader - ADC FIFO Overrun IRQ Enable"]
-pub struct FIFO_OVERRUN_IRQ_EN_R(crate::FieldReader<bool>);
+pub type FIFO_OVERRUN_IRQ_EN_R = crate::BitReader<FIFO_OVERRUN_IRQ_EN_A>;
 impl FIFO_OVERRUN_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_OVERRUN_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_OVERRUN_IRQ_EN_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl FIFO_OVERRUN_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == FIFO_OVERRUN_IRQ_EN_A::DISABLE
+        *self == FIFO_OVERRUN_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == FIFO_OVERRUN_IRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for FIFO_OVERRUN_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_OVERRUN_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `FIFO_OVERRUN_IRQ_EN` writer - ADC FIFO Overrun IRQ Enable"]
-pub struct FIFO_OVERRUN_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type FIFO_OVERRUN_IRQ_EN_W<'a> =
+    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_OVERRUN_IRQ_EN_A, 17>;
 impl<'a> FIFO_OVERRUN_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIFO_OVERRUN_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,22 +134,6 @@ impl<'a> FIFO_OVERRUN_IRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(FIFO_OVERRUN_IRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
-        self.w
     }
 }
 #[doc = "ADC FIFO Data Available IRQ Enable\n\nValue on reset: 0"]
@@ -217,13 +151,9 @@ impl From<FIFO_DATA_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `FIFO_DATA_IRQ_EN` reader - ADC FIFO Data Available IRQ Enable"]
-pub struct FIFO_DATA_IRQ_EN_R(crate::FieldReader<bool>);
+pub type FIFO_DATA_IRQ_EN_R = crate::BitReader<FIFO_DATA_IRQ_EN_A>;
 impl FIFO_DATA_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_DATA_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_DATA_IRQ_EN_A {
         match self.bits {
@@ -234,31 +164,18 @@ impl FIFO_DATA_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == FIFO_DATA_IRQ_EN_A::DISABLE
+        *self == FIFO_DATA_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == FIFO_DATA_IRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for FIFO_DATA_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_DATA_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `FIFO_DATA_IRQ_EN` writer - ADC FIFO Data Available IRQ Enable"]
-pub struct FIFO_DATA_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type FIFO_DATA_IRQ_EN_W<'a> =
+    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_IRQ_EN_A, 16>;
 impl<'a> FIFO_DATA_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIFO_DATA_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -269,87 +186,15 @@ impl<'a> FIFO_DATA_IRQ_EN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(FIFO_DATA_IRQ_EN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
-    }
 }
 #[doc = "Field `FIFO_TRIG_LEVEL` reader - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
-pub struct FIFO_TRIG_LEVEL_R(crate::FieldReader<u8>);
-impl FIFO_TRIG_LEVEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FIFO_TRIG_LEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFO_TRIG_LEVEL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIFO_TRIG_LEVEL` writer - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
-pub struct FIFO_TRIG_LEVEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFO_TRIG_LEVEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 8)) | ((value as u32 & 0x3f) << 8);
-        self.w
-    }
-}
+pub type FIFO_TRIG_LEVEL_W<'a> = crate::FieldWriter<'a, u32, GP_FIFO_INTC_SPEC, u8, u8, 6, 8>;
 #[doc = "Field `FIFO_FLUSH` reader - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
-pub struct FIFO_FLUSH_R(crate::FieldReader<bool>);
-impl FIFO_FLUSH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_FLUSH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFO_FLUSH_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFO_FLUSH_R = crate::BitReader<bool>;
 #[doc = "Field `FIFO_FLUSH` writer - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
-pub struct FIFO_FLUSH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFO_FLUSH_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
-    }
-}
+pub type FIFO_FLUSH_W<'a> = crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, bool, 4>;
 impl R {
     #[doc = "Bit 18 - ADC FIFO Date DRQ Enable"]
     #[inline(always)]
@@ -381,27 +226,27 @@ impl W {
     #[doc = "Bit 18 - ADC FIFO Date DRQ Enable"]
     #[inline(always)]
     pub fn fifo_data_drq_en(&mut self) -> FIFO_DATA_DRQ_EN_W {
-        FIFO_DATA_DRQ_EN_W { w: self }
+        FIFO_DATA_DRQ_EN_W::new(self)
     }
     #[doc = "Bit 17 - ADC FIFO Overrun IRQ Enable"]
     #[inline(always)]
     pub fn fifo_overrun_irq_en(&mut self) -> FIFO_OVERRUN_IRQ_EN_W {
-        FIFO_OVERRUN_IRQ_EN_W { w: self }
+        FIFO_OVERRUN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 16 - ADC FIFO Data Available IRQ Enable"]
     #[inline(always)]
     pub fn fifo_data_irq_en(&mut self) -> FIFO_DATA_IRQ_EN_W {
-        FIFO_DATA_IRQ_EN_W { w: self }
+        FIFO_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 8:13 - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
     #[inline(always)]
     pub fn fifo_trig_level(&mut self) -> FIFO_TRIG_LEVEL_W {
-        FIFO_TRIG_LEVEL_W { w: self }
+        FIFO_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 4 - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
     #[inline(always)]
     pub fn fifo_flush(&mut self) -> FIFO_FLUSH_W {
-        FIFO_FLUSH_W { w: self }
+        FIFO_FLUSH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

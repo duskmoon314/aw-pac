@@ -49,13 +49,9 @@ impl From<VCCIO_WS_VOL_MOD_SEL_A> for bool {
     }
 }
 #[doc = "Field `VCCIO_WS_VOL_MOD_SEL` reader - VCC_IO Withstand Voltage Mode Select Control"]
-pub struct VCCIO_WS_VOL_MOD_SEL_R(crate::FieldReader<bool>);
+pub type VCCIO_WS_VOL_MOD_SEL_R = crate::BitReader<VCCIO_WS_VOL_MOD_SEL_A>;
 impl VCCIO_WS_VOL_MOD_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VCCIO_WS_VOL_MOD_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCCIO_WS_VOL_MOD_SEL_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl VCCIO_WS_VOL_MOD_SEL_R {
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == VCCIO_WS_VOL_MOD_SEL_A::ENABLE
+        *self == VCCIO_WS_VOL_MOD_SEL_A::ENABLE
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == VCCIO_WS_VOL_MOD_SEL_A::DISABLE
-    }
-}
-impl core::ops::Deref for VCCIO_WS_VOL_MOD_SEL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VCCIO_WS_VOL_MOD_SEL_A::DISABLE
     }
 }
 #[doc = "Field `VCCIO_WS_VOL_MOD_SEL` writer - VCC_IO Withstand Voltage Mode Select Control"]
-pub struct VCCIO_WS_VOL_MOD_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type VCCIO_WS_VOL_MOD_SEL_W<'a> =
+    crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCCIO_WS_VOL_MOD_SEL_A, 12>;
 impl<'a> VCCIO_WS_VOL_MOD_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VCCIO_WS_VOL_MOD_SEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> VCCIO_WS_VOL_MOD_SEL_W<'a> {
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
         self.variant(VCCIO_WS_VOL_MOD_SEL_A::DISABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
-        self.w
     }
 }
 #[doc = "VCC_PX Withstand Voltage Mode Select Control\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<VCC_P_WS_VOL_MOD_SEL_A> for bool {
     }
 }
 #[doc = "Fields `VCC_P(0-4)_WS_VOL_MOD_SEL` reader - VCC_PX Withstand Voltage Mode Select Control"]
-pub struct VCC_P_WS_VOL_MOD_SEL_R(crate::FieldReader<bool>);
+pub type VCC_P_WS_VOL_MOD_SEL_R = crate::BitReader<VCC_P_WS_VOL_MOD_SEL_A>;
 impl VCC_P_WS_VOL_MOD_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VCC_P_WS_VOL_MOD_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCC_P_WS_VOL_MOD_SEL_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl VCC_P_WS_VOL_MOD_SEL_R {
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == VCC_P_WS_VOL_MOD_SEL_A::ENABLE
+        *self == VCC_P_WS_VOL_MOD_SEL_A::ENABLE
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == VCC_P_WS_VOL_MOD_SEL_A::DISABLE
+        *self == VCC_P_WS_VOL_MOD_SEL_A::DISABLE
     }
 }
-impl core::ops::Deref for VCC_P_WS_VOL_MOD_SEL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `VCC_P(0-4)_WS_VOL_MOD_SEL` const generic writer - VCC_PX Withstand Voltage Mode Select Control"]
-pub struct VCC_P_WS_VOL_MOD_SEL_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> VCC_P_WS_VOL_MOD_SEL_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VCC_P_WS_VOL_MOD_SEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Fields `VCC_P(0-4)_WS_VOL_MOD_SEL` writer - VCC_PX Withstand Voltage Mode Select Control"]
+pub type VCC_P_WS_VOL_MOD_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCC_P_WS_VOL_MOD_SEL_A, O>;
+impl<'a, const O: u8> VCC_P_WS_VOL_MOD_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -185,22 +135,6 @@ impl<'a, const O: usize> VCC_P_WS_VOL_MOD_SEL_W<'a, O> {
     pub fn disable(self) -> &'a mut W {
         self.variant(VCC_P_WS_VOL_MOD_SEL_A::DISABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 12 - VCC_IO Withstand Voltage Mode Select Control"]
@@ -210,7 +144,7 @@ impl R {
     }
     #[doc = "VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub unsafe fn vcc_p_ws_vol_mod_sel(&self, n: usize) -> VCC_P_WS_VOL_MOD_SEL_R {
+    pub unsafe fn vcc_p_ws_vol_mod_sel(&self, n: u8) -> VCC_P_WS_VOL_MOD_SEL_R {
         VCC_P_WS_VOL_MOD_SEL_R::new(((self.bits >> (n + 2)) & 1) != 0)
     }
     #[doc = "Bit 2 - VCC_PX Withstand Voltage Mode Select Control"]
@@ -243,37 +177,37 @@ impl W {
     #[doc = "Bit 12 - VCC_IO Withstand Voltage Mode Select Control"]
     #[inline(always)]
     pub fn vccio_ws_vol_mod_sel(&mut self) -> VCCIO_WS_VOL_MOD_SEL_W {
-        VCCIO_WS_VOL_MOD_SEL_W { w: self }
+        VCCIO_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub unsafe fn vcc_p_ws_vol_mod_sel<const O: usize>(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<O> {
-        VCC_P_WS_VOL_MOD_SEL_W { w: self }
+    pub unsafe fn vcc_p_ws_vol_mod_sel<const O: u8>(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<O> {
+        VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 2 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     pub fn vcc_pc_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<2> {
-        VCC_P_WS_VOL_MOD_SEL_W { w: self }
+        VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 3 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     pub fn vcc_pd_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<3> {
-        VCC_P_WS_VOL_MOD_SEL_W { w: self }
+        VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 4 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     pub fn vcc_pe_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<4> {
-        VCC_P_WS_VOL_MOD_SEL_W { w: self }
+        VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 5 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     pub fn vcc_pf_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<5> {
-        VCC_P_WS_VOL_MOD_SEL_W { w: self }
+        VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 6 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     pub fn vcc_pg_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<6> {
-        VCC_P_WS_VOL_MOD_SEL_W { w: self }
+        VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

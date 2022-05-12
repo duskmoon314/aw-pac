@@ -14,20 +14,7 @@ impl From<crate::R<RXDMA_WADDRH_SPEC>> for R {
     }
 }
 #[doc = "Field `waddr` reader - RXDMA Current Write Address \\[33:32\\]"]
-pub struct WADDR_R(crate::FieldReader<u8>);
-impl WADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WADDR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WADDR_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:1 - RXDMA Current Write Address \\[33:32\\]"]
     #[inline(always)]

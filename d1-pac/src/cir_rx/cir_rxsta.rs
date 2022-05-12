@@ -176,13 +176,9 @@ impl From<RAC_A> for u8 {
     }
 }
 #[doc = "Field `RAC` reader - RX FIFO Available Counter"]
-pub struct RAC_R(crate::FieldReader<u8>);
+pub type RAC_R = crate::FieldReader<u8, RAC_A>;
 impl RAC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RAC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RAC_A> {
         match self.bits {
@@ -257,334 +253,327 @@ impl RAC_R {
     #[doc = "Checks if the value of the field is `B0`"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
-        **self == RAC_A::B0
+        *self == RAC_A::B0
     }
     #[doc = "Checks if the value of the field is `B1`"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
-        **self == RAC_A::B1
+        *self == RAC_A::B1
     }
     #[doc = "Checks if the value of the field is `B2`"]
     #[inline(always)]
     pub fn is_b2(&self) -> bool {
-        **self == RAC_A::B2
+        *self == RAC_A::B2
     }
     #[doc = "Checks if the value of the field is `B3`"]
     #[inline(always)]
     pub fn is_b3(&self) -> bool {
-        **self == RAC_A::B3
+        *self == RAC_A::B3
     }
     #[doc = "Checks if the value of the field is `B4`"]
     #[inline(always)]
     pub fn is_b4(&self) -> bool {
-        **self == RAC_A::B4
+        *self == RAC_A::B4
     }
     #[doc = "Checks if the value of the field is `B5`"]
     #[inline(always)]
     pub fn is_b5(&self) -> bool {
-        **self == RAC_A::B5
+        *self == RAC_A::B5
     }
     #[doc = "Checks if the value of the field is `B6`"]
     #[inline(always)]
     pub fn is_b6(&self) -> bool {
-        **self == RAC_A::B6
+        *self == RAC_A::B6
     }
     #[doc = "Checks if the value of the field is `B7`"]
     #[inline(always)]
     pub fn is_b7(&self) -> bool {
-        **self == RAC_A::B7
+        *self == RAC_A::B7
     }
     #[doc = "Checks if the value of the field is `B8`"]
     #[inline(always)]
     pub fn is_b8(&self) -> bool {
-        **self == RAC_A::B8
+        *self == RAC_A::B8
     }
     #[doc = "Checks if the value of the field is `B9`"]
     #[inline(always)]
     pub fn is_b9(&self) -> bool {
-        **self == RAC_A::B9
+        *self == RAC_A::B9
     }
     #[doc = "Checks if the value of the field is `B10`"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
-        **self == RAC_A::B10
+        *self == RAC_A::B10
     }
     #[doc = "Checks if the value of the field is `B11`"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
-        **self == RAC_A::B11
+        *self == RAC_A::B11
     }
     #[doc = "Checks if the value of the field is `B12`"]
     #[inline(always)]
     pub fn is_b12(&self) -> bool {
-        **self == RAC_A::B12
+        *self == RAC_A::B12
     }
     #[doc = "Checks if the value of the field is `B13`"]
     #[inline(always)]
     pub fn is_b13(&self) -> bool {
-        **self == RAC_A::B13
+        *self == RAC_A::B13
     }
     #[doc = "Checks if the value of the field is `B14`"]
     #[inline(always)]
     pub fn is_b14(&self) -> bool {
-        **self == RAC_A::B14
+        *self == RAC_A::B14
     }
     #[doc = "Checks if the value of the field is `B15`"]
     #[inline(always)]
     pub fn is_b15(&self) -> bool {
-        **self == RAC_A::B15
+        *self == RAC_A::B15
     }
     #[doc = "Checks if the value of the field is `B16`"]
     #[inline(always)]
     pub fn is_b16(&self) -> bool {
-        **self == RAC_A::B16
+        *self == RAC_A::B16
     }
     #[doc = "Checks if the value of the field is `B17`"]
     #[inline(always)]
     pub fn is_b17(&self) -> bool {
-        **self == RAC_A::B17
+        *self == RAC_A::B17
     }
     #[doc = "Checks if the value of the field is `B18`"]
     #[inline(always)]
     pub fn is_b18(&self) -> bool {
-        **self == RAC_A::B18
+        *self == RAC_A::B18
     }
     #[doc = "Checks if the value of the field is `B19`"]
     #[inline(always)]
     pub fn is_b19(&self) -> bool {
-        **self == RAC_A::B19
+        *self == RAC_A::B19
     }
     #[doc = "Checks if the value of the field is `B20`"]
     #[inline(always)]
     pub fn is_b20(&self) -> bool {
-        **self == RAC_A::B20
+        *self == RAC_A::B20
     }
     #[doc = "Checks if the value of the field is `B21`"]
     #[inline(always)]
     pub fn is_b21(&self) -> bool {
-        **self == RAC_A::B21
+        *self == RAC_A::B21
     }
     #[doc = "Checks if the value of the field is `B22`"]
     #[inline(always)]
     pub fn is_b22(&self) -> bool {
-        **self == RAC_A::B22
+        *self == RAC_A::B22
     }
     #[doc = "Checks if the value of the field is `B23`"]
     #[inline(always)]
     pub fn is_b23(&self) -> bool {
-        **self == RAC_A::B23
+        *self == RAC_A::B23
     }
     #[doc = "Checks if the value of the field is `B24`"]
     #[inline(always)]
     pub fn is_b24(&self) -> bool {
-        **self == RAC_A::B24
+        *self == RAC_A::B24
     }
     #[doc = "Checks if the value of the field is `B25`"]
     #[inline(always)]
     pub fn is_b25(&self) -> bool {
-        **self == RAC_A::B25
+        *self == RAC_A::B25
     }
     #[doc = "Checks if the value of the field is `B26`"]
     #[inline(always)]
     pub fn is_b26(&self) -> bool {
-        **self == RAC_A::B26
+        *self == RAC_A::B26
     }
     #[doc = "Checks if the value of the field is `B27`"]
     #[inline(always)]
     pub fn is_b27(&self) -> bool {
-        **self == RAC_A::B27
+        *self == RAC_A::B27
     }
     #[doc = "Checks if the value of the field is `B28`"]
     #[inline(always)]
     pub fn is_b28(&self) -> bool {
-        **self == RAC_A::B28
+        *self == RAC_A::B28
     }
     #[doc = "Checks if the value of the field is `B29`"]
     #[inline(always)]
     pub fn is_b29(&self) -> bool {
-        **self == RAC_A::B29
+        *self == RAC_A::B29
     }
     #[doc = "Checks if the value of the field is `B30`"]
     #[inline(always)]
     pub fn is_b30(&self) -> bool {
-        **self == RAC_A::B30
+        *self == RAC_A::B30
     }
     #[doc = "Checks if the value of the field is `B31`"]
     #[inline(always)]
     pub fn is_b31(&self) -> bool {
-        **self == RAC_A::B31
+        *self == RAC_A::B31
     }
     #[doc = "Checks if the value of the field is `B32`"]
     #[inline(always)]
     pub fn is_b32(&self) -> bool {
-        **self == RAC_A::B32
+        *self == RAC_A::B32
     }
     #[doc = "Checks if the value of the field is `B33`"]
     #[inline(always)]
     pub fn is_b33(&self) -> bool {
-        **self == RAC_A::B33
+        *self == RAC_A::B33
     }
     #[doc = "Checks if the value of the field is `B34`"]
     #[inline(always)]
     pub fn is_b34(&self) -> bool {
-        **self == RAC_A::B34
+        *self == RAC_A::B34
     }
     #[doc = "Checks if the value of the field is `B35`"]
     #[inline(always)]
     pub fn is_b35(&self) -> bool {
-        **self == RAC_A::B35
+        *self == RAC_A::B35
     }
     #[doc = "Checks if the value of the field is `B36`"]
     #[inline(always)]
     pub fn is_b36(&self) -> bool {
-        **self == RAC_A::B36
+        *self == RAC_A::B36
     }
     #[doc = "Checks if the value of the field is `B37`"]
     #[inline(always)]
     pub fn is_b37(&self) -> bool {
-        **self == RAC_A::B37
+        *self == RAC_A::B37
     }
     #[doc = "Checks if the value of the field is `B38`"]
     #[inline(always)]
     pub fn is_b38(&self) -> bool {
-        **self == RAC_A::B38
+        *self == RAC_A::B38
     }
     #[doc = "Checks if the value of the field is `B39`"]
     #[inline(always)]
     pub fn is_b39(&self) -> bool {
-        **self == RAC_A::B39
+        *self == RAC_A::B39
     }
     #[doc = "Checks if the value of the field is `B40`"]
     #[inline(always)]
     pub fn is_b40(&self) -> bool {
-        **self == RAC_A::B40
+        *self == RAC_A::B40
     }
     #[doc = "Checks if the value of the field is `B41`"]
     #[inline(always)]
     pub fn is_b41(&self) -> bool {
-        **self == RAC_A::B41
+        *self == RAC_A::B41
     }
     #[doc = "Checks if the value of the field is `B42`"]
     #[inline(always)]
     pub fn is_b42(&self) -> bool {
-        **self == RAC_A::B42
+        *self == RAC_A::B42
     }
     #[doc = "Checks if the value of the field is `B43`"]
     #[inline(always)]
     pub fn is_b43(&self) -> bool {
-        **self == RAC_A::B43
+        *self == RAC_A::B43
     }
     #[doc = "Checks if the value of the field is `B44`"]
     #[inline(always)]
     pub fn is_b44(&self) -> bool {
-        **self == RAC_A::B44
+        *self == RAC_A::B44
     }
     #[doc = "Checks if the value of the field is `B45`"]
     #[inline(always)]
     pub fn is_b45(&self) -> bool {
-        **self == RAC_A::B45
+        *self == RAC_A::B45
     }
     #[doc = "Checks if the value of the field is `B46`"]
     #[inline(always)]
     pub fn is_b46(&self) -> bool {
-        **self == RAC_A::B46
+        *self == RAC_A::B46
     }
     #[doc = "Checks if the value of the field is `B47`"]
     #[inline(always)]
     pub fn is_b47(&self) -> bool {
-        **self == RAC_A::B47
+        *self == RAC_A::B47
     }
     #[doc = "Checks if the value of the field is `B48`"]
     #[inline(always)]
     pub fn is_b48(&self) -> bool {
-        **self == RAC_A::B48
+        *self == RAC_A::B48
     }
     #[doc = "Checks if the value of the field is `B49`"]
     #[inline(always)]
     pub fn is_b49(&self) -> bool {
-        **self == RAC_A::B49
+        *self == RAC_A::B49
     }
     #[doc = "Checks if the value of the field is `B50`"]
     #[inline(always)]
     pub fn is_b50(&self) -> bool {
-        **self == RAC_A::B50
+        *self == RAC_A::B50
     }
     #[doc = "Checks if the value of the field is `B51`"]
     #[inline(always)]
     pub fn is_b51(&self) -> bool {
-        **self == RAC_A::B51
+        *self == RAC_A::B51
     }
     #[doc = "Checks if the value of the field is `B52`"]
     #[inline(always)]
     pub fn is_b52(&self) -> bool {
-        **self == RAC_A::B52
+        *self == RAC_A::B52
     }
     #[doc = "Checks if the value of the field is `B53`"]
     #[inline(always)]
     pub fn is_b53(&self) -> bool {
-        **self == RAC_A::B53
+        *self == RAC_A::B53
     }
     #[doc = "Checks if the value of the field is `B54`"]
     #[inline(always)]
     pub fn is_b54(&self) -> bool {
-        **self == RAC_A::B54
+        *self == RAC_A::B54
     }
     #[doc = "Checks if the value of the field is `B55`"]
     #[inline(always)]
     pub fn is_b55(&self) -> bool {
-        **self == RAC_A::B55
+        *self == RAC_A::B55
     }
     #[doc = "Checks if the value of the field is `B56`"]
     #[inline(always)]
     pub fn is_b56(&self) -> bool {
-        **self == RAC_A::B56
+        *self == RAC_A::B56
     }
     #[doc = "Checks if the value of the field is `B57`"]
     #[inline(always)]
     pub fn is_b57(&self) -> bool {
-        **self == RAC_A::B57
+        *self == RAC_A::B57
     }
     #[doc = "Checks if the value of the field is `B58`"]
     #[inline(always)]
     pub fn is_b58(&self) -> bool {
-        **self == RAC_A::B58
+        *self == RAC_A::B58
     }
     #[doc = "Checks if the value of the field is `B59`"]
     #[inline(always)]
     pub fn is_b59(&self) -> bool {
-        **self == RAC_A::B59
+        *self == RAC_A::B59
     }
     #[doc = "Checks if the value of the field is `B60`"]
     #[inline(always)]
     pub fn is_b60(&self) -> bool {
-        **self == RAC_A::B60
+        *self == RAC_A::B60
     }
     #[doc = "Checks if the value of the field is `B61`"]
     #[inline(always)]
     pub fn is_b61(&self) -> bool {
-        **self == RAC_A::B61
+        *self == RAC_A::B61
     }
     #[doc = "Checks if the value of the field is `B62`"]
     #[inline(always)]
     pub fn is_b62(&self) -> bool {
-        **self == RAC_A::B62
+        *self == RAC_A::B62
     }
     #[doc = "Checks if the value of the field is `B63`"]
     #[inline(always)]
     pub fn is_b63(&self) -> bool {
-        **self == RAC_A::B63
+        *self == RAC_A::B63
     }
     #[doc = "Checks if the value of the field is `B64`"]
     #[inline(always)]
     pub fn is_b64(&self) -> bool {
-        **self == RAC_A::B64
-    }
-}
-impl core::ops::Deref for RAC_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RAC_A::B64
     }
 }
 #[doc = "Status of CIR\n\nValue on reset: 0"]
@@ -602,13 +591,9 @@ impl From<STAT_A> for bool {
     }
 }
 #[doc = "Field `STAT` reader - Status of CIR"]
-pub struct STAT_R(crate::FieldReader<bool>);
+pub type STAT_R = crate::BitReader<STAT_A>;
 impl STAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        STAT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> STAT_A {
         match self.bits {
@@ -619,19 +604,12 @@ impl STAT_R {
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == STAT_A::IDLE
+        *self == STAT_A::IDLE
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == STAT_A::BUSY
-    }
-}
-impl core::ops::Deref for STAT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STAT_A::BUSY
     }
 }
 #[doc = "RX FIFO Available\n\nValue on reset: 0"]
@@ -649,13 +627,9 @@ impl From<RA_A> for bool {
     }
 }
 #[doc = "Field `RA` reader - RX FIFO Available"]
-pub struct RA_R(crate::FieldReader<bool>);
+pub type RA_R = crate::BitReader<RA_A>;
 impl RA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RA_A {
         match self.bits {
@@ -666,31 +640,17 @@ impl RA_R {
     #[doc = "Checks if the value of the field is `NO_AVAILABLE`"]
     #[inline(always)]
     pub fn is_no_available(&self) -> bool {
-        **self == RA_A::NO_AVAILABLE
+        *self == RA_A::NO_AVAILABLE
     }
     #[doc = "Checks if the value of the field is `AVAILABLE`"]
     #[inline(always)]
     pub fn is_available(&self) -> bool {
-        **self == RA_A::AVAILABLE
-    }
-}
-impl core::ops::Deref for RA_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RA_A::AVAILABLE
     }
 }
 #[doc = "Field `RA` writer - RX FIFO Available"]
-pub struct RA_W<'a> {
-    w: &'a mut W,
-}
+pub type RA_W<'a> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RA_A, 4>;
 impl<'a> RA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "RX FIFO not available according to its level"]
     #[inline(always)]
     pub fn no_available(self) -> &'a mut W {
@@ -700,22 +660,6 @@ impl<'a> RA_W<'a> {
     #[inline(always)]
     pub fn available(self) -> &'a mut W {
         self.variant(RA_A::AVAILABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
     }
 }
 #[doc = "Receiver Packet End Flag\n\nValue on reset: 0"]
@@ -733,13 +677,9 @@ impl From<RPE_A> for bool {
     }
 }
 #[doc = "Field `RPE` reader - Receiver Packet End Flag"]
-pub struct RPE_R(crate::FieldReader<bool>);
+pub type RPE_R = crate::BitReader<RPE_A>;
 impl RPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RPE_A {
         match self.bits {
@@ -750,31 +690,17 @@ impl RPE_R {
     #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
-        **self == RPE_A::NOT_DETECTED
+        *self == RPE_A::NOT_DETECTED
     }
     #[doc = "Checks if the value of the field is `STO_FIELD`"]
     #[inline(always)]
     pub fn is_sto_field(&self) -> bool {
-        **self == RPE_A::STO_FIELD
-    }
-}
-impl core::ops::Deref for RPE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RPE_A::STO_FIELD
     }
 }
 #[doc = "Field `RPE` writer - Receiver Packet End Flag"]
-pub struct RPE_W<'a> {
-    w: &'a mut W,
-}
+pub type RPE_W<'a> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RPE_A, 1>;
 impl<'a> RPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RPE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
     #[inline(always)]
     pub fn not_detected(self) -> &'a mut W {
@@ -784,22 +710,6 @@ impl<'a> RPE_W<'a> {
     #[inline(always)]
     pub fn sto_field(self) -> &'a mut W {
         self.variant(RPE_A::STO_FIELD)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Receiver FIFO Overrun\n\nValue on reset: 0"]
@@ -817,13 +727,9 @@ impl From<ROI_A> for bool {
     }
 }
 #[doc = "Field `ROI` reader - Receiver FIFO Overrun"]
-pub struct ROI_R(crate::FieldReader<bool>);
+pub type ROI_R = crate::BitReader<ROI_A>;
 impl ROI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ROI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ROI_A {
         match self.bits {
@@ -834,31 +740,17 @@ impl ROI_R {
     #[doc = "Checks if the value of the field is `NOT_OVERRUN`"]
     #[inline(always)]
     pub fn is_not_overrun(&self) -> bool {
-        **self == ROI_A::NOT_OVERRUN
+        *self == ROI_A::NOT_OVERRUN
     }
     #[doc = "Checks if the value of the field is `OVERRUN`"]
     #[inline(always)]
     pub fn is_overrun(&self) -> bool {
-        **self == ROI_A::OVERRUN
-    }
-}
-impl core::ops::Deref for ROI_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ROI_A::OVERRUN
     }
 }
 #[doc = "Field `ROI` writer - Receiver FIFO Overrun"]
-pub struct ROI_W<'a> {
-    w: &'a mut W,
-}
+pub type ROI_W<'a> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, ROI_A, 0>;
 impl<'a> ROI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ROI_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Receiver FIFO not overrun"]
     #[inline(always)]
     pub fn not_overrun(self) -> &'a mut W {
@@ -868,22 +760,6 @@ impl<'a> ROI_W<'a> {
     #[inline(always)]
     pub fn overrun(self) -> &'a mut W {
         self.variant(ROI_A::OVERRUN)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -917,17 +793,17 @@ impl W {
     #[doc = "Bit 4 - RX FIFO Available"]
     #[inline(always)]
     pub fn ra(&mut self) -> RA_W {
-        RA_W { w: self }
+        RA_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Packet End Flag"]
     #[inline(always)]
     pub fn rpe(&mut self) -> RPE_W {
-        RPE_W { w: self }
+        RPE_W::new(self)
     }
     #[doc = "Bit 0 - Receiver FIFO Overrun"]
     #[inline(always)]
     pub fn roi(&mut self) -> ROI_W {
-        ROI_W { w: self }
+        ROI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

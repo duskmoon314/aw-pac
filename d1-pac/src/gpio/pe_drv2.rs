@@ -54,13 +54,9 @@ impl From<PE_DRV_A> for u8 {
     }
 }
 #[doc = "Fields `PE(16-17)_DRV` reader - PE Multi_Driving Select"]
-pub struct PE_DRV_R(crate::FieldReader<u8>);
+pub type PE_DRV_R = crate::FieldReader<u8, PE_DRV_A>;
 impl PE_DRV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PE_DRV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PE_DRV_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl PE_DRV_R {
     #[doc = "Checks if the value of the field is `L0`"]
     #[inline(always)]
     pub fn is_l0(&self) -> bool {
-        **self == PE_DRV_A::L0
+        *self == PE_DRV_A::L0
     }
     #[doc = "Checks if the value of the field is `L1`"]
     #[inline(always)]
     pub fn is_l1(&self) -> bool {
-        **self == PE_DRV_A::L1
+        *self == PE_DRV_A::L1
     }
     #[doc = "Checks if the value of the field is `L2`"]
     #[inline(always)]
     pub fn is_l2(&self) -> bool {
-        **self == PE_DRV_A::L2
+        *self == PE_DRV_A::L2
     }
     #[doc = "Checks if the value of the field is `L3`"]
     #[inline(always)]
     pub fn is_l3(&self) -> bool {
-        **self == PE_DRV_A::L3
+        *self == PE_DRV_A::L3
     }
 }
-impl core::ops::Deref for PE_DRV_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `PE(16-17)_DRV` const generic writer - PE Multi_Driving Select"]
-pub struct PE_DRV_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> PE_DRV_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PE_DRV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+#[doc = "Fields `PE(16-17)_DRV` writer - PE Multi_Driving Select"]
+pub type PE_DRV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PE_DRV2_SPEC, u8, PE_DRV_A, 2, O>;
+impl<'a, const O: u8> PE_DRV_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn l0(self) -> &'a mut W {
@@ -129,17 +112,11 @@ impl<'a, const O: usize> PE_DRV_W<'a, O> {
     pub fn l3(self) -> &'a mut W {
         self.variant(PE_DRV_A::L3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "PE Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pe_drv(&self, n: usize) -> PE_DRV_R {
+    pub unsafe fn pe_drv(&self, n: u8) -> PE_DRV_R {
         PE_DRV_R::new(((self.bits >> ((n - 16) * 4)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
@@ -156,18 +133,18 @@ impl R {
 impl W {
     #[doc = "PE Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pe_drv<const O: usize>(&mut self) -> PE_DRV_W<O> {
-        PE_DRV_W { w: self }
+    pub unsafe fn pe_drv<const O: u8>(&mut self) -> PE_DRV_W<O> {
+        PE_DRV_W::new(self)
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe16_drv(&mut self) -> PE_DRV_W<0> {
-        PE_DRV_W { w: self }
+        PE_DRV_W::new(self)
     }
     #[doc = "Bits 4:5 - PE Multi_Driving Select"]
     #[inline(always)]
     pub fn pe17_drv(&mut self) -> PE_DRV_W<4> {
-        PE_DRV_W { w: self }
+        PE_DRV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

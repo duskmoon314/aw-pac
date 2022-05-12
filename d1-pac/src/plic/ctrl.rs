@@ -49,13 +49,9 @@ impl From<CTRL_A> for bool {
     }
 }
 #[doc = "Field `ctrl` reader - PLIC Control"]
-pub struct CTRL_R(crate::FieldReader<bool>);
+pub type CTRL_R = crate::BitReader<CTRL_A>;
 impl CTRL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTRL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTRL_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CTRL_R {
     #[doc = "Checks if the value of the field is `M`"]
     #[inline(always)]
     pub fn is_m(&self) -> bool {
-        **self == CTRL_A::M
+        *self == CTRL_A::M
     }
     #[doc = "Checks if the value of the field is `MS`"]
     #[inline(always)]
     pub fn is_ms(&self) -> bool {
-        **self == CTRL_A::MS
-    }
-}
-impl core::ops::Deref for CTRL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTRL_A::MS
     }
 }
 #[doc = "Field `ctrl` writer - PLIC Control"]
-pub struct CTRL_W<'a> {
-    w: &'a mut W,
-}
+pub type CTRL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CTRL_A, 0>;
 impl<'a> CTRL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CTRL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Only the machine mode can access to all registers in PLIC. Supervisor mode can only access the interrupt threshold register and the interrupt response/completion register."]
     #[inline(always)]
     pub fn m(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> CTRL_W<'a> {
     #[inline(always)]
     pub fn ms(self) -> &'a mut W {
         self.variant(CTRL_A::MS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -129,7 +95,7 @@ impl W {
     #[doc = "Bit 0 - PLIC Control"]
     #[inline(always)]
     pub fn ctrl(&mut self) -> CTRL_W {
-        CTRL_W { w: self }
+        CTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

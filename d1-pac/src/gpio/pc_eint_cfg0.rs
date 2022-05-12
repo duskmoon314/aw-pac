@@ -56,13 +56,9 @@ impl From<EINT_CFG_A> for u8 {
     }
 }
 #[doc = "Fields `EINT(0-7)_CFG` reader - External INT Mode"]
-pub struct EINT_CFG_R(crate::FieldReader<u8>);
+pub type EINT_CFG_R = crate::FieldReader<u8, EINT_CFG_A>;
 impl EINT_CFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        EINT_CFG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<EINT_CFG_A> {
         match self.bits {
@@ -77,46 +73,33 @@ impl EINT_CFG_R {
     #[doc = "Checks if the value of the field is `POSITIVE_EDGE`"]
     #[inline(always)]
     pub fn is_positive_edge(&self) -> bool {
-        **self == EINT_CFG_A::POSITIVE_EDGE
+        *self == EINT_CFG_A::POSITIVE_EDGE
     }
     #[doc = "Checks if the value of the field is `NEGATIVE_EDGE`"]
     #[inline(always)]
     pub fn is_negative_edge(&self) -> bool {
-        **self == EINT_CFG_A::NEGATIVE_EDGE
+        *self == EINT_CFG_A::NEGATIVE_EDGE
     }
     #[doc = "Checks if the value of the field is `HIGH_LEVEL`"]
     #[inline(always)]
     pub fn is_high_level(&self) -> bool {
-        **self == EINT_CFG_A::HIGH_LEVEL
+        *self == EINT_CFG_A::HIGH_LEVEL
     }
     #[doc = "Checks if the value of the field is `LOW_LEVEL`"]
     #[inline(always)]
     pub fn is_low_level(&self) -> bool {
-        **self == EINT_CFG_A::LOW_LEVEL
+        *self == EINT_CFG_A::LOW_LEVEL
     }
     #[doc = "Checks if the value of the field is `DOUBLE_EDGE`"]
     #[inline(always)]
     pub fn is_double_edge(&self) -> bool {
-        **self == EINT_CFG_A::DOUBLE_EDGE
+        *self == EINT_CFG_A::DOUBLE_EDGE
     }
 }
-impl core::ops::Deref for EINT_CFG_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `EINT(0-7)_CFG` const generic writer - External INT Mode"]
-pub struct EINT_CFG_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> EINT_CFG_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EINT_CFG_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Fields `EINT(0-7)_CFG` writer - External INT Mode"]
+pub type EINT_CFG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_EINT_CFG0_SPEC, u8, EINT_CFG_A, 4, O>;
+impl<'a, const O: u8> EINT_CFG_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn positive_edge(self) -> &'a mut W {
@@ -142,17 +125,11 @@ impl<'a, const O: usize> EINT_CFG_W<'a, O> {
     pub fn double_edge(self) -> &'a mut W {
         self.variant(EINT_CFG_A::DOUBLE_EDGE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << O)) | ((value as u32 & 0x0f) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "External INT Mode"]
     #[inline(always)]
-    pub unsafe fn eint_cfg(&self, n: usize) -> EINT_CFG_R {
+    pub unsafe fn eint_cfg(&self, n: u8) -> EINT_CFG_R {
         EINT_CFG_R::new(((self.bits >> (n * 4)) & 0x0f) as u8)
     }
     #[doc = "Bits 0:3 - External INT Mode"]
@@ -199,48 +176,48 @@ impl R {
 impl W {
     #[doc = "External INT Mode"]
     #[inline(always)]
-    pub unsafe fn eint_cfg<const O: usize>(&mut self) -> EINT_CFG_W<O> {
-        EINT_CFG_W { w: self }
+    pub unsafe fn eint_cfg<const O: u8>(&mut self) -> EINT_CFG_W<O> {
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]
     pub fn eint0_cfg(&mut self) -> EINT_CFG_W<0> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 4:7 - External INT Mode"]
     #[inline(always)]
     pub fn eint1_cfg(&mut self) -> EINT_CFG_W<4> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 8:11 - External INT Mode"]
     #[inline(always)]
     pub fn eint2_cfg(&mut self) -> EINT_CFG_W<8> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 12:15 - External INT Mode"]
     #[inline(always)]
     pub fn eint3_cfg(&mut self) -> EINT_CFG_W<12> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 16:19 - External INT Mode"]
     #[inline(always)]
     pub fn eint4_cfg(&mut self) -> EINT_CFG_W<16> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 20:23 - External INT Mode"]
     #[inline(always)]
     pub fn eint5_cfg(&mut self) -> EINT_CFG_W<20> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 24:27 - External INT Mode"]
     #[inline(always)]
     pub fn eint6_cfg(&mut self) -> EINT_CFG_W<24> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Bits 28:31 - External INT Mode"]
     #[inline(always)]
     pub fn eint7_cfg(&mut self) -> EINT_CFG_W<28> {
-        EINT_CFG_W { w: self }
+        EINT_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

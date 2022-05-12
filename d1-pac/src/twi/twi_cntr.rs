@@ -49,13 +49,9 @@ impl From<INT_EN_A> for bool {
     }
 }
 #[doc = "Field `int_en` reader - Interrupt Enable"]
-pub struct INT_EN_R(crate::FieldReader<bool>);
+pub type INT_EN_R = crate::BitReader<INT_EN_A>;
 impl INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> INT_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl INT_EN_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == INT_EN_A::LOW
+        *self == INT_EN_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == INT_EN_A::HIGH
-    }
-}
-impl core::ops::Deref for INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == INT_EN_A::HIGH
     }
 }
 #[doc = "Field `int_en` writer - Interrupt Enable"]
-pub struct INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type INT_EN_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, INT_EN_A, 7>;
 impl<'a> INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "The interrupt line always low"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> INT_EN_W<'a> {
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
         self.variant(INT_EN_A::HIGH)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
     }
 }
 #[doc = "TWI Bus Enable\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<BUS_EN_A> for bool {
     }
 }
 #[doc = "Field `bus_en` reader - TWI Bus Enable"]
-pub struct BUS_EN_R(crate::FieldReader<bool>);
+pub type BUS_EN_R = crate::BitReader<BUS_EN_A>;
 impl BUS_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BUS_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUS_EN_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl BUS_EN_R {
     #[doc = "Checks if the value of the field is `IGNORED`"]
     #[inline(always)]
     pub fn is_ignored(&self) -> bool {
-        **self == BUS_EN_A::IGNORED
+        *self == BUS_EN_A::IGNORED
     }
     #[doc = "Checks if the value of the field is `RESPOND`"]
     #[inline(always)]
     pub fn is_respond(&self) -> bool {
-        **self == BUS_EN_A::RESPOND
-    }
-}
-impl core::ops::Deref for BUS_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BUS_EN_A::RESPOND
     }
 }
 #[doc = "Field `bus_en` writer - TWI Bus Enable"]
-pub struct BUS_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type BUS_EN_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, BUS_EN_A, 6>;
 impl<'a> BUS_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BUS_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignored(self) -> &'a mut W {
@@ -185,171 +133,23 @@ impl<'a> BUS_EN_W<'a> {
     pub fn respond(self) -> &'a mut W {
         self.variant(BUS_EN_A::RESPOND)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
-        self.w
-    }
 }
 #[doc = "Field `m_sta` reader - Master Mode Start"]
-pub struct M_STA_R(crate::FieldReader<bool>);
-impl M_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_STA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_STA_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_STA_R = crate::BitReader<bool>;
 #[doc = "Field `m_sta` writer - Master Mode Start"]
-pub struct M_STA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_STA_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
-    }
-}
+pub type M_STA_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 5>;
 #[doc = "Field `m_stp` reader - Master Mode Stop"]
-pub struct M_STP_R(crate::FieldReader<bool>);
-impl M_STP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_STP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_STP_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_STP_R = crate::BitReader<bool>;
 #[doc = "Field `m_stp` writer - Master Mode Stop"]
-pub struct M_STP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> M_STP_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
-    }
-}
+pub type M_STP_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 4>;
 #[doc = "Field `int_flag` reader - Interrupt Flag"]
-pub struct INT_FLAG_R(crate::FieldReader<bool>);
-impl INT_FLAG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        INT_FLAG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for INT_FLAG_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type INT_FLAG_R = crate::BitReader<bool>;
 #[doc = "Field `int_flag` writer - Interrupt Flag"]
-pub struct INT_FLAG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> INT_FLAG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
-}
+pub type INT_FLAG_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 3>;
 #[doc = "Field `a_ack` reader - Assert Acknowledge"]
-pub struct A_ACK_R(crate::FieldReader<bool>);
-impl A_ACK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        A_ACK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for A_ACK_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type A_ACK_R = crate::BitReader<bool>;
 #[doc = "Field `a_ack` writer - Assert Acknowledge"]
-pub struct A_ACK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> A_ACK_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type A_ACK_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 2>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_COUNT_MODE_A {
@@ -365,13 +165,9 @@ impl From<CLK_COUNT_MODE_A> for bool {
     }
 }
 #[doc = "Field `clk_count_mode` reader - "]
-pub struct CLK_COUNT_MODE_R(crate::FieldReader<bool>);
+pub type CLK_COUNT_MODE_R = crate::BitReader<CLK_COUNT_MODE_A>;
 impl CLK_COUNT_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK_COUNT_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK_COUNT_MODE_A {
         match self.bits {
@@ -382,31 +178,17 @@ impl CLK_COUNT_MODE_R {
     #[doc = "Checks if the value of the field is `OSCL`"]
     #[inline(always)]
     pub fn is_oscl(&self) -> bool {
-        **self == CLK_COUNT_MODE_A::OSCL
+        *self == CLK_COUNT_MODE_A::OSCL
     }
     #[doc = "Checks if the value of the field is `ISCL`"]
     #[inline(always)]
     pub fn is_iscl(&self) -> bool {
-        **self == CLK_COUNT_MODE_A::ISCL
-    }
-}
-impl core::ops::Deref for CLK_COUNT_MODE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK_COUNT_MODE_A::ISCL
     }
 }
 #[doc = "Field `clk_count_mode` writer - "]
-pub struct CLK_COUNT_MODE_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK_COUNT_MODE_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, CLK_COUNT_MODE_A, 0>;
 impl<'a> CLK_COUNT_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_COUNT_MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "scl clock high period count on oscl"]
     #[inline(always)]
     pub fn oscl(self) -> &'a mut W {
@@ -416,22 +198,6 @@ impl<'a> CLK_COUNT_MODE_W<'a> {
     #[inline(always)]
     pub fn iscl(self) -> &'a mut W {
         self.variant(CLK_COUNT_MODE_A::ISCL)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -475,37 +241,37 @@ impl W {
     #[doc = "Bit 7 - Interrupt Enable"]
     #[inline(always)]
     pub fn int_en(&mut self) -> INT_EN_W {
-        INT_EN_W { w: self }
+        INT_EN_W::new(self)
     }
     #[doc = "Bit 6 - TWI Bus Enable"]
     #[inline(always)]
     pub fn bus_en(&mut self) -> BUS_EN_W {
-        BUS_EN_W { w: self }
+        BUS_EN_W::new(self)
     }
     #[doc = "Bit 5 - Master Mode Start"]
     #[inline(always)]
     pub fn m_sta(&mut self) -> M_STA_W {
-        M_STA_W { w: self }
+        M_STA_W::new(self)
     }
     #[doc = "Bit 4 - Master Mode Stop"]
     #[inline(always)]
     pub fn m_stp(&mut self) -> M_STP_W {
-        M_STP_W { w: self }
+        M_STP_W::new(self)
     }
     #[doc = "Bit 3 - Interrupt Flag"]
     #[inline(always)]
     pub fn int_flag(&mut self) -> INT_FLAG_W {
-        INT_FLAG_W { w: self }
+        INT_FLAG_W::new(self)
     }
     #[doc = "Bit 2 - Assert Acknowledge"]
     #[inline(always)]
     pub fn a_ack(&mut self) -> A_ACK_W {
-        A_ACK_W { w: self }
+        A_ACK_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W {
-        CLK_COUNT_MODE_W { w: self }
+        CLK_COUNT_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

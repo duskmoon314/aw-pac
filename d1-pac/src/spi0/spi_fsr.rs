@@ -14,95 +14,17 @@ impl From<crate::R<SPI_FSR_SPEC>> for R {
     }
 }
 #[doc = "Field `tb_wr` reader - TXFIFO Write Buffer Write Enable"]
-pub struct TB_WR_R(crate::FieldReader<bool>);
-impl TB_WR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TB_WR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TB_WR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TB_WR_R = crate::BitReader<bool>;
 #[doc = "Field `tb_cnt` reader - TXFIFO Write Buffer Counter"]
-pub struct TB_CNT_R(crate::FieldReader<u8>);
-impl TB_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TB_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TB_CNT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TB_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `tf_cnt` reader - TXFIFO Counter\n\nThese bits indicate the number of bytes in TXFIFO"]
-pub struct TF_CNT_R(crate::FieldReader<u8>);
-impl TF_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TF_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TF_CNT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TF_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rb_wr` reader - RXFIFO Write Buffer Write Enable"]
-pub struct RB_WR_R(crate::FieldReader<bool>);
-impl RB_WR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RB_WR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RB_WR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RB_WR_R = crate::BitReader<bool>;
 #[doc = "Field `rb_cnt` reader - RXFIFO Write Buffer Counter"]
-pub struct RB_CNT_R(crate::FieldReader<u8>);
-impl RB_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RB_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RB_CNT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RB_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rf_cnt` reader - RXFIFO Counter\n\nThese bits indicate the number of bytes in RXFIFO"]
-pub struct RF_CNT_R(crate::FieldReader<u8>);
-impl RF_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RF_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RF_CNT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RF_CNT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 31 - TXFIFO Write Buffer Write Enable"]
     #[inline(always)]

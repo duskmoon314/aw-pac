@@ -54,13 +54,9 @@ impl From<CLK_SRC_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
-pub struct CLK_SRC_SEL_R(crate::FieldReader<u8>);
+pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_SRC_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK_SRC_SEL_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl CLK_SRC_SEL_R {
     #[doc = "Checks if the value of the field is `HOSC`"]
     #[inline(always)]
     pub fn is_hosc(&self) -> bool {
-        **self == CLK_SRC_SEL_A::HOSC
+        *self == CLK_SRC_SEL_A::HOSC
     }
     #[doc = "Checks if the value of the field is `CLK32K`"]
     #[inline(always)]
     pub fn is_clk32k(&self) -> bool {
-        **self == CLK_SRC_SEL_A::CLK32K
+        *self == CLK_SRC_SEL_A::CLK32K
     }
     #[doc = "Checks if the value of the field is `CLK16M_RC`"]
     #[inline(always)]
     pub fn is_clk16m_rc(&self) -> bool {
-        **self == CLK_SRC_SEL_A::CLK16M_RC
+        *self == CLK_SRC_SEL_A::CLK16M_RC
     }
     #[doc = "Checks if the value of the field is `PLL_PERI_1X`"]
     #[inline(always)]
     pub fn is_pll_peri_1x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_PERI_1X
-    }
-}
-impl core::ops::Deref for CLK_SRC_SEL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK_SRC_SEL_A::PLL_PERI_1X
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub struct CLK_SRC_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK_SRC_SEL_W<'a> =
+    crate::FieldWriterSafe<'a, u32, PSI_CLK_SPEC, u8, CLK_SRC_SEL_A, 2, 24>;
 impl<'a> CLK_SRC_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_SRC_SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn hosc(self) -> &'a mut W {
@@ -128,12 +111,6 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     #[inline(always)]
     pub fn pll_peri_1x(self) -> &'a mut W {
         self.variant(CLK_SRC_SEL_A::PLL_PERI_1X)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 24)) | ((value as u32 & 3) << 24);
-        self.w
     }
 }
 #[doc = "Factor N\n\nValue on reset: 0"]
@@ -156,13 +133,9 @@ impl From<FACTOR_N_A> for u8 {
     }
 }
 #[doc = "Field `FACTOR_N` reader - Factor N"]
-pub struct FACTOR_N_R(crate::FieldReader<u8>);
+pub type FACTOR_N_R = crate::FieldReader<u8, FACTOR_N_A>;
 impl FACTOR_N_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FACTOR_N_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FACTOR_N_A {
         match self.bits {
@@ -176,41 +149,27 @@ impl FACTOR_N_R {
     #[doc = "Checks if the value of the field is `N1`"]
     #[inline(always)]
     pub fn is_n1(&self) -> bool {
-        **self == FACTOR_N_A::N1
+        *self == FACTOR_N_A::N1
     }
     #[doc = "Checks if the value of the field is `N2`"]
     #[inline(always)]
     pub fn is_n2(&self) -> bool {
-        **self == FACTOR_N_A::N2
+        *self == FACTOR_N_A::N2
     }
     #[doc = "Checks if the value of the field is `N4`"]
     #[inline(always)]
     pub fn is_n4(&self) -> bool {
-        **self == FACTOR_N_A::N4
+        *self == FACTOR_N_A::N4
     }
     #[doc = "Checks if the value of the field is `N8`"]
     #[inline(always)]
     pub fn is_n8(&self) -> bool {
-        **self == FACTOR_N_A::N8
-    }
-}
-impl core::ops::Deref for FACTOR_N_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FACTOR_N_A::N8
     }
 }
 #[doc = "Field `FACTOR_N` writer - Factor N"]
-pub struct FACTOR_N_W<'a> {
-    w: &'a mut W,
-}
+pub type FACTOR_N_W<'a> = crate::FieldWriterSafe<'a, u32, PSI_CLK_SPEC, u8, FACTOR_N_A, 2, 8>;
 impl<'a> FACTOR_N_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FACTOR_N_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn n1(self) -> &'a mut W {
@@ -231,40 +190,11 @@ impl<'a> FACTOR_N_W<'a> {
     pub fn n8(self) -> &'a mut W {
         self.variant(FACTOR_N_A::N8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
-        self.w
-    }
 }
 #[doc = "Field `FACTOR_M` reader - Factor M"]
-pub struct FACTOR_M_R(crate::FieldReader<u8>);
-impl FACTOR_M_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FACTOR_M_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FACTOR_M_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FACTOR_M_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FACTOR_M` writer - Factor M"]
-pub struct FACTOR_M_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FACTOR_M_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
-}
+pub type FACTOR_M_W<'a> = crate::FieldWriter<'a, u32, PSI_CLK_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
@@ -286,17 +216,17 @@ impl W {
     #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
-        CLK_SRC_SEL_W { w: self }
+        CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn factor_n(&mut self) -> FACTOR_N_W {
-        FACTOR_N_W { w: self }
+        FACTOR_N_W::new(self)
     }
     #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
     pub fn factor_m(&mut self) -> FACTOR_M_W {
-        FACTOR_M_W { w: self }
+        FACTOR_M_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

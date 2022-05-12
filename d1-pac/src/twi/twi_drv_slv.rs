@@ -35,32 +35,9 @@ impl From<crate::W<TWI_DRV_SLV_SPEC>> for W {
     }
 }
 #[doc = "Field `slv_id` reader - Slave device ID"]
-pub struct SLV_ID_R(crate::FieldReader<u8>);
-impl SLV_ID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLV_ID_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLV_ID_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLV_ID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `slv_id` writer - Slave device ID"]
-pub struct SLV_ID_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLV_ID_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 9)) | ((value as u32 & 0x7f) << 9);
-        self.w
-    }
-}
+pub type SLV_ID_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 7, 9>;
 #[doc = "R/W operation to slave device\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_A {
@@ -76,13 +53,9 @@ impl From<CMD_A> for bool {
     }
 }
 #[doc = "Field `cmd` reader - R/W operation to slave device"]
-pub struct CMD_R(crate::FieldReader<bool>);
+pub type CMD_R = crate::BitReader<CMD_A>;
 impl CMD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CMD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMD_A {
         match self.bits {
@@ -93,31 +66,17 @@ impl CMD_R {
     #[doc = "Checks if the value of the field is `WRITE`"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
-        **self == CMD_A::WRITE
+        *self == CMD_A::WRITE
     }
     #[doc = "Checks if the value of the field is `READ`"]
     #[inline(always)]
     pub fn is_read(&self) -> bool {
-        **self == CMD_A::READ
-    }
-}
-impl core::ops::Deref for CMD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMD_A::READ
     }
 }
 #[doc = "Field `cmd` writer - R/W operation to slave device"]
-pub struct CMD_W<'a> {
-    w: &'a mut W,
-}
+pub type CMD_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_SLV_SPEC, CMD_A, 8>;
 impl<'a> CMD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn write(self) -> &'a mut W {
@@ -128,50 +87,11 @@ impl<'a> CMD_W<'a> {
     pub fn read(self) -> &'a mut W {
         self.variant(CMD_A::READ)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
-    }
 }
 #[doc = "Field `slv_id_x` reader - SLAX\\[7:0\\]"]
-pub struct SLV_ID_X_R(crate::FieldReader<u8>);
-impl SLV_ID_X_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLV_ID_X_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLV_ID_X_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLV_ID_X_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `slv_id_x` writer - SLAX\\[7:0\\]"]
-pub struct SLV_ID_X_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLV_ID_X_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SLV_ID_X_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 8, 0>;
 impl R {
     #[doc = "Bits 9:15 - Slave device ID"]
     #[inline(always)]
@@ -193,17 +113,17 @@ impl W {
     #[doc = "Bits 9:15 - Slave device ID"]
     #[inline(always)]
     pub fn slv_id(&mut self) -> SLV_ID_W {
-        SLV_ID_W { w: self }
+        SLV_ID_W::new(self)
     }
     #[doc = "Bit 8 - R/W operation to slave device"]
     #[inline(always)]
     pub fn cmd(&mut self) -> CMD_W {
-        CMD_W { w: self }
+        CMD_W::new(self)
     }
     #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
     #[inline(always)]
     pub fn slv_id_x(&mut self) -> SLV_ID_X_W {
-        SLV_ID_X_W { w: self }
+        SLV_ID_X_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

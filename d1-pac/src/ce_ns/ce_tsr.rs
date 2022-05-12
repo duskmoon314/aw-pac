@@ -54,13 +54,9 @@ impl From<RUNNING_CHANNEL_NUMBER_A> for u8 {
     }
 }
 #[doc = "Field `RUNNING_CHANNEL_NUMBER` reader - Running Channel Number"]
-pub struct RUNNING_CHANNEL_NUMBER_R(crate::FieldReader<u8>);
+pub type RUNNING_CHANNEL_NUMBER_R = crate::FieldReader<u8, RUNNING_CHANNEL_NUMBER_A>;
 impl RUNNING_CHANNEL_NUMBER_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RUNNING_CHANNEL_NUMBER_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RUNNING_CHANNEL_NUMBER_A {
         match self.bits {
@@ -74,29 +70,22 @@ impl RUNNING_CHANNEL_NUMBER_R {
     #[doc = "Checks if the value of the field is `T0`"]
     #[inline(always)]
     pub fn is_t0(&self) -> bool {
-        **self == RUNNING_CHANNEL_NUMBER_A::T0
+        *self == RUNNING_CHANNEL_NUMBER_A::T0
     }
     #[doc = "Checks if the value of the field is `T1`"]
     #[inline(always)]
     pub fn is_t1(&self) -> bool {
-        **self == RUNNING_CHANNEL_NUMBER_A::T1
+        *self == RUNNING_CHANNEL_NUMBER_A::T1
     }
     #[doc = "Checks if the value of the field is `T2`"]
     #[inline(always)]
     pub fn is_t2(&self) -> bool {
-        **self == RUNNING_CHANNEL_NUMBER_A::T2
+        *self == RUNNING_CHANNEL_NUMBER_A::T2
     }
     #[doc = "Checks if the value of the field is `T3`"]
     #[inline(always)]
     pub fn is_t3(&self) -> bool {
-        **self == RUNNING_CHANNEL_NUMBER_A::T3
-    }
-}
-impl core::ops::Deref for RUNNING_CHANNEL_NUMBER_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RUNNING_CHANNEL_NUMBER_A::T3
     }
 }
 impl R {

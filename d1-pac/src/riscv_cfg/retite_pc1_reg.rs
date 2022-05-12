@@ -28,13 +28,9 @@ impl From<RT_SIG_A> for bool {
     }
 }
 #[doc = "Field `RT_SIG` reader - Retire Signal"]
-pub struct RT_SIG_R(crate::FieldReader<bool>);
+pub type RT_SIG_R = crate::BitReader<RT_SIG_A>;
 impl RT_SIG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RT_SIG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RT_SIG_A {
         match self.bits {
@@ -45,36 +41,16 @@ impl RT_SIG_R {
     #[doc = "Checks if the value of the field is `NOT_HAVE`"]
     #[inline(always)]
     pub fn is_not_have(&self) -> bool {
-        **self == RT_SIG_A::NOT_HAVE
+        *self == RT_SIG_A::NOT_HAVE
     }
     #[doc = "Checks if the value of the field is `HAVE`"]
     #[inline(always)]
     pub fn is_have(&self) -> bool {
-        **self == RT_SIG_A::HAVE
-    }
-}
-impl core::ops::Deref for RT_SIG_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RT_SIG_A::HAVE
     }
 }
 #[doc = "Field `RT_PC_H` reader - Retire PC\\[39:32\\]"]
-pub struct RT_PC_H_R(crate::FieldReader<u8>);
-impl RT_PC_H_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RT_PC_H_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RT_PC_H_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RT_PC_H_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 31 - Retire Signal"]
     #[inline(always)]

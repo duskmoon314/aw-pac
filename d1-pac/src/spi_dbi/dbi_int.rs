@@ -35,523 +35,61 @@ impl From<crate::W<DBI_INT_SPEC>> for W {
     }
 }
 #[doc = "Field `dbi_fifo_empty_int` reader - "]
-pub struct DBI_FIFO_EMPTY_INT_R(crate::FieldReader<bool>);
-impl DBI_FIFO_EMPTY_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBI_FIFO_EMPTY_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_FIFO_EMPTY_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_FIFO_EMPTY_INT_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_empty_int` writer - "]
-pub struct DBI_FIFO_EMPTY_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBI_FIFO_EMPTY_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 14)) | ((value as u32 & 1) << 14);
-        self.w
-    }
-}
+pub type DBI_FIFO_EMPTY_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 14>;
 #[doc = "Field `dbi_fifo_full_int` reader - "]
-pub struct DBI_FIFO_FULL_INT_R(crate::FieldReader<bool>);
-impl DBI_FIFO_FULL_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBI_FIFO_FULL_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_FIFO_FULL_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_FIFO_FULL_INT_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_full_int` writer - "]
-pub struct DBI_FIFO_FULL_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBI_FIFO_FULL_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
-        self.w
-    }
-}
+pub type DBI_FIFO_FULL_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 13>;
 #[doc = "Field `timer_int` reader - "]
-pub struct TIMER_INT_R(crate::FieldReader<bool>);
-impl TIMER_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_INT_R = crate::BitReader<bool>;
 #[doc = "Field `timer_int` writer - "]
-pub struct TIMER_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
-        self.w
-    }
-}
+pub type TIMER_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 12>;
 #[doc = "Field `rd_done_int` reader - "]
-pub struct RD_DONE_INT_R(crate::FieldReader<bool>);
-impl RD_DONE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RD_DONE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RD_DONE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RD_DONE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `rd_done_int` writer - "]
-pub struct RD_DONE_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RD_DONE_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
-        self.w
-    }
-}
+pub type RD_DONE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 11>;
 #[doc = "Field `te_int` reader - "]
-pub struct TE_INT_R(crate::FieldReader<bool>);
-impl TE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `te_int` writer - "]
-pub struct TE_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TE_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
-        self.w
-    }
-}
+pub type TE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 10>;
 #[doc = "Field `fram_done_int` reader - "]
-pub struct FRAM_DONE_INT_R(crate::FieldReader<bool>);
-impl FRAM_DONE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FRAM_DONE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRAM_DONE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRAM_DONE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `fram_done_int` writer - "]
-pub struct FRAM_DONE_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRAM_DONE_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
-        self.w
-    }
-}
+pub type FRAM_DONE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 9>;
 #[doc = "Field `line_done_int` reader - "]
-pub struct LINE_DONE_INT_R(crate::FieldReader<bool>);
-impl LINE_DONE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LINE_DONE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINE_DONE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINE_DONE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `line_done_int` writer - "]
-pub struct LINE_DONE_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LINE_DONE_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
-    }
-}
+pub type LINE_DONE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 8>;
 #[doc = "Field `dbi_fifo_empty_int_en` reader - "]
-pub struct DBI_FIFO_EMPTY_INT_EN_R(crate::FieldReader<bool>);
-impl DBI_FIFO_EMPTY_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBI_FIFO_EMPTY_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_FIFO_EMPTY_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_FIFO_EMPTY_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_empty_int_en` writer - "]
-pub struct DBI_FIFO_EMPTY_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBI_FIFO_EMPTY_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
-        self.w
-    }
-}
+pub type DBI_FIFO_EMPTY_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 6>;
 #[doc = "Field `dbi_fifo_full_int_en` reader - "]
-pub struct DBI_FIFO_FULL_INT_EN_R(crate::FieldReader<bool>);
-impl DBI_FIFO_FULL_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBI_FIFO_FULL_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_FIFO_FULL_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_FIFO_FULL_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_full_int_en` writer - "]
-pub struct DBI_FIFO_FULL_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBI_FIFO_FULL_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
-    }
-}
+pub type DBI_FIFO_FULL_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 5>;
 #[doc = "Field `timer_int_en` reader - "]
-pub struct TIMER_INT_EN_R(crate::FieldReader<bool>);
-impl TIMER_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TIMER_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIMER_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIMER_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `timer_int_en` writer - "]
-pub struct TIMER_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TIMER_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
-    }
-}
+pub type TIMER_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 4>;
 #[doc = "Field `rd_done_int_en` reader - "]
-pub struct RD_DONE_INT_EN_R(crate::FieldReader<bool>);
-impl RD_DONE_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RD_DONE_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RD_DONE_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RD_DONE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `rd_done_int_en` writer - "]
-pub struct RD_DONE_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RD_DONE_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
-}
+pub type RD_DONE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 3>;
 #[doc = "Field `te_int_en` reader - "]
-pub struct TE_INT_EN_R(crate::FieldReader<bool>);
-impl TE_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TE_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TE_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `te_int_en` writer - "]
-pub struct TE_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TE_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type TE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 2>;
 #[doc = "Field `fram_done_int_en` reader - "]
-pub struct FRAM_DONE_INT_EN_R(crate::FieldReader<bool>);
-impl FRAM_DONE_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FRAM_DONE_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FRAM_DONE_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FRAM_DONE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `fram_done_int_en` writer - "]
-pub struct FRAM_DONE_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FRAM_DONE_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type FRAM_DONE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 1>;
 #[doc = "Field `line_done_int_en` reader - "]
-pub struct LINE_DONE_INT_EN_R(crate::FieldReader<bool>);
-impl LINE_DONE_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LINE_DONE_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LINE_DONE_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LINE_DONE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `line_done_int_en` writer - "]
-pub struct LINE_DONE_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LINE_DONE_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type LINE_DONE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 14"]
     #[inline(always)]
@@ -628,72 +166,72 @@ impl W {
     #[doc = "Bit 14"]
     #[inline(always)]
     pub fn dbi_fifo_empty_int(&mut self) -> DBI_FIFO_EMPTY_INT_W {
-        DBI_FIFO_EMPTY_INT_W { w: self }
+        DBI_FIFO_EMPTY_INT_W::new(self)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
     pub fn dbi_fifo_full_int(&mut self) -> DBI_FIFO_FULL_INT_W {
-        DBI_FIFO_FULL_INT_W { w: self }
+        DBI_FIFO_FULL_INT_W::new(self)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
     pub fn timer_int(&mut self) -> TIMER_INT_W {
-        TIMER_INT_W { w: self }
+        TIMER_INT_W::new(self)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
     pub fn rd_done_int(&mut self) -> RD_DONE_INT_W {
-        RD_DONE_INT_W { w: self }
+        RD_DONE_INT_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
     pub fn te_int(&mut self) -> TE_INT_W {
-        TE_INT_W { w: self }
+        TE_INT_W::new(self)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
     pub fn fram_done_int(&mut self) -> FRAM_DONE_INT_W {
-        FRAM_DONE_INT_W { w: self }
+        FRAM_DONE_INT_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     pub fn line_done_int(&mut self) -> LINE_DONE_INT_W {
-        LINE_DONE_INT_W { w: self }
+        LINE_DONE_INT_W::new(self)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     pub fn dbi_fifo_empty_int_en(&mut self) -> DBI_FIFO_EMPTY_INT_EN_W {
-        DBI_FIFO_EMPTY_INT_EN_W { w: self }
+        DBI_FIFO_EMPTY_INT_EN_W::new(self)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
     pub fn dbi_fifo_full_int_en(&mut self) -> DBI_FIFO_FULL_INT_EN_W {
-        DBI_FIFO_FULL_INT_EN_W { w: self }
+        DBI_FIFO_FULL_INT_EN_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     pub fn timer_int_en(&mut self) -> TIMER_INT_EN_W {
-        TIMER_INT_EN_W { w: self }
+        TIMER_INT_EN_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn rd_done_int_en(&mut self) -> RD_DONE_INT_EN_W {
-        RD_DONE_INT_EN_W { w: self }
+        RD_DONE_INT_EN_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn te_int_en(&mut self) -> TE_INT_EN_W {
-        TE_INT_EN_W { w: self }
+        TE_INT_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn fram_done_int_en(&mut self) -> FRAM_DONE_INT_EN_W {
-        FRAM_DONE_INT_EN_W { w: self }
+        FRAM_DONE_INT_EN_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn line_done_int_en(&mut self) -> LINE_DONE_INT_EN_W {
-        LINE_DONE_INT_EN_W { w: self }
+        LINE_DONE_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

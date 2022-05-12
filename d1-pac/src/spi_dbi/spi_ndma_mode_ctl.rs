@@ -54,13 +54,9 @@ impl From<SPI_ACT_M_A> for u8 {
     }
 }
 #[doc = "Field `spi_act_m` reader - SPI NDMA Active Mode"]
-pub struct SPI_ACT_M_R(crate::FieldReader<u8>);
+pub type SPI_ACT_M_R = crate::FieldReader<u8, SPI_ACT_M_A>;
 impl SPI_ACT_M_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SPI_ACT_M_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SPI_ACT_M_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl SPI_ACT_M_R {
     #[doc = "Checks if the value of the field is `LOW`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
-        **self == SPI_ACT_M_A::LOW
+        *self == SPI_ACT_M_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
-        **self == SPI_ACT_M_A::HIGH
+        *self == SPI_ACT_M_A::HIGH
     }
     #[doc = "Checks if the value of the field is `DRQ_CONTROL`"]
     #[inline(always)]
     pub fn is_drq_control(&self) -> bool {
-        **self == SPI_ACT_M_A::DRQ_CONTROL
+        *self == SPI_ACT_M_A::DRQ_CONTROL
     }
     #[doc = "Checks if the value of the field is `CONTROLLER_CONTROL`"]
     #[inline(always)]
     pub fn is_controller_control(&self) -> bool {
-        **self == SPI_ACT_M_A::CONTROLLER_CONTROL
-    }
-}
-impl core::ops::Deref for SPI_ACT_M_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SPI_ACT_M_A::CONTROLLER_CONTROL
     }
 }
 #[doc = "Field `spi_act_m` writer - SPI NDMA Active Mode"]
-pub struct SPI_ACT_M_W<'a> {
-    w: &'a mut W,
-}
+pub type SPI_ACT_M_W<'a> =
+    crate::FieldWriterSafe<'a, u32, SPI_NDMA_MODE_CTL_SPEC, u8, SPI_ACT_M_A, 2, 6>;
 impl<'a> SPI_ACT_M_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SPI_ACT_M_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -129,12 +112,6 @@ impl<'a> SPI_ACT_M_W<'a> {
     pub fn controller_control(self) -> &'a mut W {
         self.variant(SPI_ACT_M_A::CONTROLLER_CONTROL)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 6)) | ((value as u32 & 3) << 6);
-        self.w
-    }
 }
 #[doc = "SPI NDMA Acknowledge Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -151,13 +128,9 @@ impl From<SPI_ACK_M_A> for bool {
     }
 }
 #[doc = "Field `spi_ack_m` reader - SPI NDMA Acknowledge Mode"]
-pub struct SPI_ACK_M_R(crate::FieldReader<bool>);
+pub type SPI_ACK_M_R = crate::BitReader<SPI_ACK_M_A>;
 impl SPI_ACK_M_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SPI_ACK_M_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SPI_ACK_M_A {
         match self.bits {
@@ -168,31 +141,17 @@ impl SPI_ACK_M_R {
     #[doc = "Checks if the value of the field is `IGNORE`"]
     #[inline(always)]
     pub fn is_ignore(&self) -> bool {
-        **self == SPI_ACK_M_A::IGNORE
+        *self == SPI_ACK_M_A::IGNORE
     }
     #[doc = "Checks if the value of the field is `AFTER_DETECT`"]
     #[inline(always)]
     pub fn is_after_detect(&self) -> bool {
-        **self == SPI_ACK_M_A::AFTER_DETECT
-    }
-}
-impl core::ops::Deref for SPI_ACK_M_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SPI_ACK_M_A::AFTER_DETECT
     }
 }
 #[doc = "Field `spi_ack_m` writer - SPI NDMA Acknowledge Mode"]
-pub struct SPI_ACK_M_W<'a> {
-    w: &'a mut W,
-}
+pub type SPI_ACK_M_W<'a> = crate::BitWriter<'a, u32, SPI_NDMA_MODE_CTL_SPEC, SPI_ACK_M_A, 5>;
 impl<'a> SPI_ACK_M_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SPI_ACK_M_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -203,50 +162,11 @@ impl<'a> SPI_ACK_M_W<'a> {
     pub fn after_detect(self) -> &'a mut W {
         self.variant(SPI_ACK_M_A::AFTER_DETECT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
-    }
 }
 #[doc = "Field `spi_dma_wait` reader - "]
-pub struct SPI_DMA_WAIT_R(crate::FieldReader<u8>);
-impl SPI_DMA_WAIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SPI_DMA_WAIT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPI_DMA_WAIT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPI_DMA_WAIT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `spi_dma_wait` writer - "]
-pub struct SPI_DMA_WAIT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPI_DMA_WAIT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type SPI_DMA_WAIT_W<'a> = crate::FieldWriter<'a, u32, SPI_NDMA_MODE_CTL_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bits 6:7 - SPI NDMA Active Mode"]
     #[inline(always)]
@@ -268,17 +188,17 @@ impl W {
     #[doc = "Bits 6:7 - SPI NDMA Active Mode"]
     #[inline(always)]
     pub fn spi_act_m(&mut self) -> SPI_ACT_M_W {
-        SPI_ACT_M_W { w: self }
+        SPI_ACT_M_W::new(self)
     }
     #[doc = "Bit 5 - SPI NDMA Acknowledge Mode"]
     #[inline(always)]
     pub fn spi_ack_m(&mut self) -> SPI_ACK_M_W {
-        SPI_ACK_M_W { w: self }
+        SPI_ACK_M_W::new(self)
     }
     #[doc = "Bits 0:4"]
     #[inline(always)]
     pub fn spi_dma_wait(&mut self) -> SPI_DMA_WAIT_W {
-        SPI_DMA_WAIT_W { w: self }
+        SPI_DMA_WAIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

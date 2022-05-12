@@ -35,32 +35,9 @@ impl From<crate::W<RXDMA_DCNT_SPEC>> for W {
     }
 }
 #[doc = "Field `data_count` reader - "]
-pub struct DATA_COUNT_R(crate::FieldReader<u16>);
-impl DATA_COUNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        DATA_COUNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DATA_COUNT_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DATA_COUNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `data_count` writer - "]
-pub struct DATA_COUNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DATA_COUNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type DATA_COUNT_W<'a> = crate::FieldWriter<'a, u32, RXDMA_DCNT_SPEC, u16, u16, 16, 0>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn data_count(&mut self) -> DATA_COUNT_W {
-        DATA_COUNT_W { w: self }
+        DATA_COUNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

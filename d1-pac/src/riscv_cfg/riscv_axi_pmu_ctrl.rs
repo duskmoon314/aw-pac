@@ -49,13 +49,9 @@ impl From<PMU_CLR_A> for bool {
     }
 }
 #[doc = "Field `PMU_CLR` reader - PMU Clear"]
-pub struct PMU_CLR_R(crate::FieldReader<bool>);
+pub type PMU_CLR_R = crate::BitReader<PMU_CLR_A>;
 impl PMU_CLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PMU_CLR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PMU_CLR_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl PMU_CLR_R {
     #[doc = "Checks if the value of the field is `NO_OPERATION`"]
     #[inline(always)]
     pub fn is_no_operation(&self) -> bool {
-        **self == PMU_CLR_A::NO_OPERATION
+        *self == PMU_CLR_A::NO_OPERATION
     }
     #[doc = "Checks if the value of the field is `CLEARED`"]
     #[inline(always)]
     pub fn is_cleared(&self) -> bool {
-        **self == PMU_CLR_A::CLEARED
-    }
-}
-impl core::ops::Deref for PMU_CLR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PMU_CLR_A::CLEARED
     }
 }
 #[doc = "Field `PMU_CLR` writer - PMU Clear"]
-pub struct PMU_CLR_W<'a> {
-    w: &'a mut W,
-}
+pub type PMU_CLR_W<'a> = crate::BitWriter0C<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_CLR_A, 1>;
 impl<'a> PMU_CLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PMU_CLR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_operation(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> PMU_CLR_W<'a> {
     #[inline(always)]
     pub fn cleared(self) -> &'a mut W {
         self.variant(PMU_CLR_A::CLEARED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "PMU Enable\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<PMU_EN_A> for bool {
     }
 }
 #[doc = "Field `PMU_EN` reader - PMU Enable"]
-pub struct PMU_EN_R(crate::FieldReader<bool>);
+pub type PMU_EN_R = crate::BitReader<PMU_EN_A>;
 impl PMU_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PMU_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PMU_EN_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl PMU_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == PMU_EN_A::DISABLED
+        *self == PMU_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == PMU_EN_A::ENABLED
-    }
-}
-impl core::ops::Deref for PMU_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PMU_EN_A::ENABLED
     }
 }
 #[doc = "Field `PMU_EN` writer - PMU Enable"]
-pub struct PMU_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type PMU_EN_W<'a> = crate::BitWriter<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_EN_A, 0>;
 impl<'a> PMU_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PMU_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> PMU_EN_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(PMU_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -218,12 +150,12 @@ impl W {
     #[doc = "Bit 1 - PMU Clear"]
     #[inline(always)]
     pub fn pmu_clr(&mut self) -> PMU_CLR_W {
-        PMU_CLR_W { w: self }
+        PMU_CLR_W::new(self)
     }
     #[doc = "Bit 0 - PMU Enable"]
     #[inline(always)]
     pub fn pmu_en(&mut self) -> PMU_EN_W {
-        PMU_EN_W { w: self }
+        PMU_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

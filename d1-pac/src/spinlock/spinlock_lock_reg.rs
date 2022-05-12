@@ -49,13 +49,9 @@ impl From<TAKEN_A> for bool {
     }
 }
 #[doc = "Field `TAKEN` reader - Lock State"]
-pub struct TAKEN_R(crate::FieldReader<bool>);
+pub type TAKEN_R = crate::BitReader<TAKEN_A>;
 impl TAKEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TAKEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAKEN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl TAKEN_R {
     #[doc = "Checks if the value of the field is `FREE`"]
     #[inline(always)]
     pub fn is_free(&self) -> bool {
-        **self == TAKEN_A::FREE
+        *self == TAKEN_A::FREE
     }
     #[doc = "Checks if the value of the field is `TAKEN`"]
     #[inline(always)]
     pub fn is_taken(&self) -> bool {
-        **self == TAKEN_A::TAKEN
-    }
-}
-impl core::ops::Deref for TAKEN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAKEN_A::TAKEN
     }
 }
 #[doc = "Field `TAKEN` writer - Lock State"]
-pub struct TAKEN_W<'a> {
-    w: &'a mut W,
-}
+pub type TAKEN_W<'a> = crate::BitWriter<'a, u32, SPINLOCK_LOCK_REG_SPEC, TAKEN_A, 0>;
 impl<'a> TAKEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TAKEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Read 0x0: The lock was previously Not Taken (free). The requester is granted the lock.\n\nWrite 0x0: Set the lock to Not Taken (free)."]
     #[inline(always)]
     pub fn free(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> TAKEN_W<'a> {
     #[inline(always)]
     pub fn taken(self) -> &'a mut W {
         self.variant(TAKEN_A::TAKEN)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -129,7 +95,7 @@ impl W {
     #[doc = "Bit 0 - Lock State"]
     #[inline(always)]
     pub fn taken(&mut self) -> TAKEN_W {
-        TAKEN_W { w: self }
+        TAKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

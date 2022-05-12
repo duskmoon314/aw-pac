@@ -26,13 +26,9 @@ impl From<FIFOERR_A> for bool {
     }
 }
 #[doc = "Field `fifoerr` reader - RX Data Error in FIFO"]
-pub struct FIFOERR_R(crate::FieldReader<bool>);
+pub type FIFOERR_R = crate::BitReader<FIFOERR_A>;
 impl FIFOERR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFOERR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FIFOERR_A> {
         match self.bits {
@@ -43,14 +39,7 @@ impl FIFOERR_R {
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        **self == FIFOERR_A::ERROR
-    }
-}
-impl core::ops::Deref for FIFOERR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFOERR_A::ERROR
     }
 }
 #[doc = "Transmitter Empty\n\nValue on reset: 0"]
@@ -66,13 +55,9 @@ impl From<TEMT_A> for bool {
     }
 }
 #[doc = "Field `temt` reader - Transmitter Empty"]
-pub struct TEMT_R(crate::FieldReader<bool>);
+pub type TEMT_R = crate::BitReader<TEMT_A>;
 impl TEMT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TEMT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TEMT_A> {
         match self.bits {
@@ -83,14 +68,7 @@ impl TEMT_R {
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
-        **self == TEMT_A::EMPTY
-    }
-}
-impl core::ops::Deref for TEMT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TEMT_A::EMPTY
     }
 }
 #[doc = "TX Holding Register Empty\n\nValue on reset: 0"]
@@ -106,13 +84,9 @@ impl From<THRE_A> for bool {
     }
 }
 #[doc = "Field `thre` reader - TX Holding Register Empty"]
-pub struct THRE_R(crate::FieldReader<bool>);
+pub type THRE_R = crate::BitReader<THRE_A>;
 impl THRE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        THRE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<THRE_A> {
         match self.bits {
@@ -123,31 +97,11 @@ impl THRE_R {
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
-        **self == THRE_A::EMPTY
-    }
-}
-impl core::ops::Deref for THRE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == THRE_A::EMPTY
     }
 }
 #[doc = "Field `bi` reader - Break Interrupt"]
-pub struct BI_R(crate::FieldReader<bool>);
-impl BI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for BI_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type BI_R = crate::BitReader<bool>;
 #[doc = "Framing Error\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FE_A {
@@ -161,13 +115,9 @@ impl From<FE_A> for bool {
     }
 }
 #[doc = "Field `fe` reader - Framing Error"]
-pub struct FE_R(crate::FieldReader<bool>);
+pub type FE_R = crate::BitReader<FE_A>;
 impl FE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FE_A> {
         match self.bits {
@@ -178,14 +128,7 @@ impl FE_R {
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        **self == FE_A::ERROR
-    }
-}
-impl core::ops::Deref for FE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FE_A::ERROR
     }
 }
 #[doc = "Parity Error\n\nValue on reset: 0"]
@@ -201,13 +144,9 @@ impl From<PE_A> for bool {
     }
 }
 #[doc = "Field `pe` reader - Parity Error"]
-pub struct PE_R(crate::FieldReader<bool>);
+pub type PE_R = crate::BitReader<PE_A>;
 impl PE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PE_A> {
         match self.bits {
@@ -218,14 +157,7 @@ impl PE_R {
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        **self == PE_A::ERROR
-    }
-}
-impl core::ops::Deref for PE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PE_A::ERROR
     }
 }
 #[doc = "Overrun Error\n\nValue on reset: 0"]
@@ -241,13 +173,9 @@ impl From<OE_A> for bool {
     }
 }
 #[doc = "Field `oe` reader - Overrun Error"]
-pub struct OE_R(crate::FieldReader<bool>);
+pub type OE_R = crate::BitReader<OE_A>;
 impl OE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        OE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<OE_A> {
         match self.bits {
@@ -258,14 +186,7 @@ impl OE_R {
     #[doc = "Checks if the value of the field is `ERROR`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
-        **self == OE_A::ERROR
-    }
-}
-impl core::ops::Deref for OE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == OE_A::ERROR
     }
 }
 #[doc = "Data Ready\n\nValue on reset: 0"]
@@ -281,13 +202,9 @@ impl From<DR_A> for bool {
     }
 }
 #[doc = "Field `dr` reader - Data Ready"]
-pub struct DR_R(crate::FieldReader<bool>);
+pub type DR_R = crate::BitReader<DR_A>;
 impl DR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DR_A> {
         match self.bits {
@@ -298,14 +215,7 @@ impl DR_R {
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == DR_A::READY
-    }
-}
-impl core::ops::Deref for DR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DR_A::READY
     }
 }
 impl R {

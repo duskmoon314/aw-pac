@@ -52,13 +52,9 @@ impl From<PE_PULL_A> for u8 {
     }
 }
 #[doc = "Fields `PE(16-17)_PULL` reader - PE Pull_up/down Select"]
-pub struct PE_PULL_R(crate::FieldReader<u8>);
+pub type PE_PULL_R = crate::FieldReader<u8, PE_PULL_A>;
 impl PE_PULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PE_PULL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PE_PULL_A {
         match self.bits {
@@ -71,36 +67,23 @@ impl PE_PULL_R {
     #[doc = "Checks if the value of the field is `PULL_DISABLE`"]
     #[inline(always)]
     pub fn is_pull_disable(&self) -> bool {
-        **self == PE_PULL_A::PULL_DISABLE
+        *self == PE_PULL_A::PULL_DISABLE
     }
     #[doc = "Checks if the value of the field is `PULL_UP`"]
     #[inline(always)]
     pub fn is_pull_up(&self) -> bool {
-        **self == PE_PULL_A::PULL_UP
+        *self == PE_PULL_A::PULL_UP
     }
     #[doc = "Checks if the value of the field is `PULL_DOWN`"]
     #[inline(always)]
     pub fn is_pull_down(&self) -> bool {
-        **self == PE_PULL_A::PULL_DOWN
+        *self == PE_PULL_A::PULL_DOWN
     }
 }
-impl core::ops::Deref for PE_PULL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `PE(16-17)_PULL` const generic writer - PE Pull_up/down Select"]
-pub struct PE_PULL_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> PE_PULL_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PE_PULL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Fields `PE(16-17)_PULL` writer - PE Pull_up/down Select"]
+pub type PE_PULL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PE_PULL1_SPEC, u8, PE_PULL_A, 2, O>;
+impl<'a, const O: u8> PE_PULL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn pull_disable(self) -> &'a mut W {
@@ -116,17 +99,11 @@ impl<'a, const O: usize> PE_PULL_W<'a, O> {
     pub fn pull_down(self) -> &'a mut W {
         self.variant(PE_PULL_A::PULL_DOWN)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
-    pub unsafe fn pe_pull(&self, n: usize) -> PE_PULL_R {
+    pub unsafe fn pe_pull(&self, n: u8) -> PE_PULL_R {
         PE_PULL_R::new(((self.bits >> ((n - 16) * 2)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
@@ -143,18 +120,18 @@ impl R {
 impl W {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
-    pub unsafe fn pe_pull<const O: usize>(&mut self) -> PE_PULL_W<O> {
-        PE_PULL_W { w: self }
+    pub unsafe fn pe_pull<const O: u8>(&mut self) -> PE_PULL_W<O> {
+        PE_PULL_W::new(self)
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe16_pull(&mut self) -> PE_PULL_W<0> {
-        PE_PULL_W { w: self }
+        PE_PULL_W::new(self)
     }
     #[doc = "Bits 2:3 - PE Pull_up/down Select"]
     #[inline(always)]
     pub fn pe17_pull(&mut self) -> PE_PULL_W<2> {
-        PE_PULL_W { w: self }
+        PE_PULL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

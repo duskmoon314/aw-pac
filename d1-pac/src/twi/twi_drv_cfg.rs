@@ -35,59 +35,13 @@ impl From<crate::W<TWI_DRV_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `pkt_interval` reader - "]
-pub struct PKT_INTERVAL_R(crate::FieldReader<u16>);
-impl PKT_INTERVAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        PKT_INTERVAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PKT_INTERVAL_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PKT_INTERVAL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `pkt_interval` writer - "]
-pub struct PKT_INTERVAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PKT_INTERVAL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type PKT_INTERVAL_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_CFG_SPEC, u16, u16, 16, 16>;
 #[doc = "Field `packet_cnt` reader - "]
-pub struct PACKET_CNT_R(crate::FieldReader<u16>);
-impl PACKET_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        PACKET_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PACKET_CNT_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PACKET_CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `packet_cnt` writer - "]
-pub struct PACKET_CNT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PACKET_CNT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type PACKET_CNT_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_CFG_SPEC, u16, u16, 16, 0>;
 impl R {
     #[doc = "Bits 16:31"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 16:31"]
     #[inline(always)]
     pub fn pkt_interval(&mut self) -> PKT_INTERVAL_W {
-        PKT_INTERVAL_W { w: self }
+        PKT_INTERVAL_W::new(self)
     }
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn packet_cnt(&mut self) -> PACKET_CNT_W {
-        PACKET_CNT_W { w: self }
+        PACKET_CNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

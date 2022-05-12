@@ -35,17 +35,7 @@ impl From<crate::W<WDOG_SOFT_RST_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY_FIELD` writer - Key Field"]
-pub struct KEY_FIELD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_FIELD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type KEY_FIELD_W<'a> = crate::FieldWriter<'a, u32, WDOG_SOFT_RST_SPEC, u16, u16, 16, 16>;
 #[doc = "Soft Reset Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOFT_RST_EN_A {
@@ -61,13 +51,9 @@ impl From<SOFT_RST_EN_A> for bool {
     }
 }
 #[doc = "Field `SOFT_RST_EN` reader - Soft Reset Enable"]
-pub struct SOFT_RST_EN_R(crate::FieldReader<bool>);
+pub type SOFT_RST_EN_R = crate::BitReader<SOFT_RST_EN_A>;
 impl SOFT_RST_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SOFT_RST_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SOFT_RST_EN_A {
         match self.bits {
@@ -78,31 +64,17 @@ impl SOFT_RST_EN_R {
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == SOFT_RST_EN_A::DEASSERT
+        *self == SOFT_RST_EN_A::DEASSERT
     }
     #[doc = "Checks if the value of the field is `RESET`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == SOFT_RST_EN_A::RESET
-    }
-}
-impl core::ops::Deref for SOFT_RST_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SOFT_RST_EN_A::RESET
     }
 }
 #[doc = "Field `SOFT_RST_EN` writer - Soft Reset Enable"]
-pub struct SOFT_RST_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type SOFT_RST_EN_W<'a> = crate::BitWriter<'a, u32, WDOG_SOFT_RST_SPEC, SOFT_RST_EN_A, 0>;
 impl<'a> SOFT_RST_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SOFT_RST_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
@@ -112,22 +84,6 @@ impl<'a> SOFT_RST_EN_W<'a> {
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
         self.variant(SOFT_RST_EN_A::RESET)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -141,12 +97,12 @@ impl W {
     #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
     pub fn key_field(&mut self) -> KEY_FIELD_W {
-        KEY_FIELD_W { w: self }
+        KEY_FIELD_W::new(self)
     }
     #[doc = "Bit 0 - Soft Reset Enable"]
     #[inline(always)]
     pub fn soft_rst_en(&mut self) -> SOFT_RST_EN_W {
-        SOFT_RST_EN_W { w: self }
+        SOFT_RST_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

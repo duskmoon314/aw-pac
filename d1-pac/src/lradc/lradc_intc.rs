@@ -49,13 +49,9 @@ impl From<ADC0_KEYUP_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `ADC0_KEYUP_IRQ_EN` reader - ADC0 Key Up Interrupt Enable"]
-pub struct ADC0_KEYUP_IRQ_EN_R(crate::FieldReader<bool>);
+pub type ADC0_KEYUP_IRQ_EN_R = crate::BitReader<ADC0_KEYUP_IRQ_EN_A>;
 impl ADC0_KEYUP_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_KEYUP_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_KEYUP_IRQ_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl ADC0_KEYUP_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ADC0_KEYUP_IRQ_EN_A::DISABLE
+        *self == ADC0_KEYUP_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ADC0_KEYUP_IRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for ADC0_KEYUP_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_KEYUP_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `ADC0_KEYUP_IRQ_EN` writer - ADC0 Key Up Interrupt Enable"]
-pub struct ADC0_KEYUP_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_KEYUP_IRQ_EN_W<'a> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYUP_IRQ_EN_A, 4>;
 impl<'a> ADC0_KEYUP_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_KEYUP_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> ADC0_KEYUP_IRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(ADC0_KEYUP_IRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
     }
 }
 #[doc = "ADC0 Already Hold Key Interrupt Enable\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<ADC0_ALRDY_HOLD_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `ADC0_ALRDY_HOLD_IRQ_EN` reader - ADC0 Already Hold Key Interrupt Enable"]
-pub struct ADC0_ALRDY_HOLD_IRQ_EN_R(crate::FieldReader<bool>);
+pub type ADC0_ALRDY_HOLD_IRQ_EN_R = crate::BitReader<ADC0_ALRDY_HOLD_IRQ_EN_A>;
 impl ADC0_ALRDY_HOLD_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_ALRDY_HOLD_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_ALRDY_HOLD_IRQ_EN_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl ADC0_ALRDY_HOLD_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ADC0_ALRDY_HOLD_IRQ_EN_A::DISABLE
+        *self == ADC0_ALRDY_HOLD_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ADC0_ALRDY_HOLD_IRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for ADC0_ALRDY_HOLD_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_ALRDY_HOLD_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `ADC0_ALRDY_HOLD_IRQ_EN` writer - ADC0 Already Hold Key Interrupt Enable"]
-pub struct ADC0_ALRDY_HOLD_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_ALRDY_HOLD_IRQ_EN_W<'a> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_ALRDY_HOLD_IRQ_EN_A, 3>;
 impl<'a> ADC0_ALRDY_HOLD_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_ALRDY_HOLD_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,22 +134,6 @@ impl<'a> ADC0_ALRDY_HOLD_IRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(ADC0_ALRDY_HOLD_IRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
     }
 }
 #[doc = "ADC0 Hold Key Interrupt Enable\n\nValue on reset: 0"]
@@ -217,13 +151,9 @@ impl From<ADC0_HOLD_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `ADC0_HOLD_IRQ_EN` reader - ADC0 Hold Key Interrupt Enable"]
-pub struct ADC0_HOLD_IRQ_EN_R(crate::FieldReader<bool>);
+pub type ADC0_HOLD_IRQ_EN_R = crate::BitReader<ADC0_HOLD_IRQ_EN_A>;
 impl ADC0_HOLD_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_HOLD_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_HOLD_IRQ_EN_A {
         match self.bits {
@@ -234,31 +164,17 @@ impl ADC0_HOLD_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ADC0_HOLD_IRQ_EN_A::DISABLE
+        *self == ADC0_HOLD_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ADC0_HOLD_IRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for ADC0_HOLD_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_HOLD_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `ADC0_HOLD_IRQ_EN` writer - ADC0 Hold Key Interrupt Enable"]
-pub struct ADC0_HOLD_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_HOLD_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_HOLD_IRQ_EN_A, 2>;
 impl<'a> ADC0_HOLD_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_HOLD_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,22 +184,6 @@ impl<'a> ADC0_HOLD_IRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(ADC0_HOLD_IRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "ADC0 Key Down Interrupt Enable\n\nValue on reset: 0"]
@@ -301,13 +201,9 @@ impl From<ADC0_KEYDOWN_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `ADC0_KEYDOWN_IRQ_EN` reader - ADC0 Key Down Interrupt Enable"]
-pub struct ADC0_KEYDOWN_IRQ_EN_R(crate::FieldReader<bool>);
+pub type ADC0_KEYDOWN_IRQ_EN_R = crate::BitReader<ADC0_KEYDOWN_IRQ_EN_A>;
 impl ADC0_KEYDOWN_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_KEYDOWN_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_KEYDOWN_IRQ_EN_A {
         match self.bits {
@@ -318,31 +214,18 @@ impl ADC0_KEYDOWN_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ADC0_KEYDOWN_IRQ_EN_A::DISABLE
+        *self == ADC0_KEYDOWN_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ADC0_KEYDOWN_IRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for ADC0_KEYDOWN_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_KEYDOWN_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `ADC0_KEYDOWN_IRQ_EN` writer - ADC0 Key Down Interrupt Enable"]
-pub struct ADC0_KEYDOWN_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_KEYDOWN_IRQ_EN_W<'a> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYDOWN_IRQ_EN_A, 1>;
 impl<'a> ADC0_KEYDOWN_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_KEYDOWN_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -352,22 +235,6 @@ impl<'a> ADC0_KEYDOWN_IRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(ADC0_KEYDOWN_IRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "ADC0 Data Interrupt Enable\n\nValue on reset: 0"]
@@ -385,13 +252,9 @@ impl From<ADC0_DATA_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `ADC0_DATA_IRQ_EN` reader - ADC0 Data Interrupt Enable"]
-pub struct ADC0_DATA_IRQ_EN_R(crate::FieldReader<bool>);
+pub type ADC0_DATA_IRQ_EN_R = crate::BitReader<ADC0_DATA_IRQ_EN_A>;
 impl ADC0_DATA_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_DATA_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_DATA_IRQ_EN_A {
         match self.bits {
@@ -402,31 +265,17 @@ impl ADC0_DATA_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ADC0_DATA_IRQ_EN_A::DISABLE
+        *self == ADC0_DATA_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ADC0_DATA_IRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for ADC0_DATA_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_DATA_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `ADC0_DATA_IRQ_EN` writer - ADC0 Data Interrupt Enable"]
-pub struct ADC0_DATA_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_DATA_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_DATA_IRQ_EN_A, 0>;
 impl<'a> ADC0_DATA_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_DATA_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -436,22 +285,6 @@ impl<'a> ADC0_DATA_IRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(ADC0_DATA_IRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -485,27 +318,27 @@ impl W {
     #[doc = "Bit 4 - ADC0 Key Up Interrupt Enable"]
     #[inline(always)]
     pub fn adc0_keyup_irq_en(&mut self) -> ADC0_KEYUP_IRQ_EN_W {
-        ADC0_KEYUP_IRQ_EN_W { w: self }
+        ADC0_KEYUP_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 3 - ADC0 Already Hold Key Interrupt Enable"]
     #[inline(always)]
     pub fn adc0_alrdy_hold_irq_en(&mut self) -> ADC0_ALRDY_HOLD_IRQ_EN_W {
-        ADC0_ALRDY_HOLD_IRQ_EN_W { w: self }
+        ADC0_ALRDY_HOLD_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - ADC0 Hold Key Interrupt Enable"]
     #[inline(always)]
     pub fn adc0_hold_irq_en(&mut self) -> ADC0_HOLD_IRQ_EN_W {
-        ADC0_HOLD_IRQ_EN_W { w: self }
+        ADC0_HOLD_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - ADC0 Key Down Interrupt Enable"]
     #[inline(always)]
     pub fn adc0_keydown_irq_en(&mut self) -> ADC0_KEYDOWN_IRQ_EN_W {
-        ADC0_KEYDOWN_IRQ_EN_W { w: self }
+        ADC0_KEYDOWN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - ADC0 Data Interrupt Enable"]
     #[inline(always)]
     pub fn adc0_data_irq_en(&mut self) -> ADC0_DATA_IRQ_EN_W {
-        ADC0_DATA_IRQ_EN_W { w: self }
+        ADC0_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,13 +49,9 @@ impl From<CPU_GATING_A> for bool {
     }
 }
 #[doc = "Field `CPU_GATING` reader - Gating Special Clock"]
-pub struct CPU_GATING_R(crate::FieldReader<bool>);
+pub type CPU_GATING_R = crate::BitReader<CPU_GATING_A>;
 impl CPU_GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CPU_GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CPU_GATING_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CPU_GATING_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CPU_GATING_A::OFF
+        *self == CPU_GATING_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CPU_GATING_A::ON
-    }
-}
-impl core::ops::Deref for CPU_GATING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CPU_GATING_A::ON
     }
 }
 #[doc = "Field `CPU_GATING` writer - Gating Special Clock"]
-pub struct CPU_GATING_W<'a> {
-    w: &'a mut W,
-}
+pub type CPU_GATING_W<'a> = crate::BitWriter<'a, u32, CPU_GATING_SPEC, CPU_GATING_A, 31>;
 impl<'a> CPU_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPU_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -101,50 +83,11 @@ impl<'a> CPU_GATING_W<'a> {
     pub fn on(self) -> &'a mut W {
         self.variant(CPU_GATING_A::ON)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
-    }
 }
 #[doc = "Field `CPU_GATING_FIELD` reader - CPU Gating Field"]
-pub struct CPU_GATING_FIELD_R(crate::FieldReader<u16>);
-impl CPU_GATING_FIELD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        CPU_GATING_FIELD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPU_GATING_FIELD_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPU_GATING_FIELD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CPU_GATING_FIELD` writer - CPU Gating Field"]
-pub struct CPU_GATING_FIELD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPU_GATING_FIELD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type CPU_GATING_FIELD_W<'a> = crate::FieldWriter<'a, u32, CPU_GATING_SPEC, u16, u16, 16, 0>;
 impl R {
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
@@ -161,12 +104,12 @@ impl W {
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
     pub fn cpu_gating(&mut self) -> CPU_GATING_W {
-        CPU_GATING_W { w: self }
+        CPU_GATING_W::new(self)
     }
     #[doc = "Bits 0:15 - CPU Gating Field"]
     #[inline(always)]
     pub fn cpu_gating_field(&mut self) -> CPU_GATING_FIELD_W {
-        CPU_GATING_FIELD_W { w: self }
+        CPU_GATING_FIELD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

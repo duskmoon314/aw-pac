@@ -50,13 +50,9 @@ impl From<TASK_PENDING_A> for u8 {
     }
 }
 #[doc = "Fields `TASK(0-3)_PENDING` reader - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
-pub struct TASK_PENDING_R(crate::FieldReader<u8>);
+pub type TASK_PENDING_R = crate::FieldReader<u8, TASK_PENDING_A>;
 impl TASK_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TASK_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TASK_PENDING_A> {
         match self.bits {
@@ -68,31 +64,18 @@ impl TASK_PENDING_R {
     #[doc = "Checks if the value of the field is `NOT_FINISHED`"]
     #[inline(always)]
     pub fn is_not_finished(&self) -> bool {
-        **self == TASK_PENDING_A::NOT_FINISHED
+        *self == TASK_PENDING_A::NOT_FINISHED
     }
     #[doc = "Checks if the value of the field is `FINISHED`"]
     #[inline(always)]
     pub fn is_finished(&self) -> bool {
-        **self == TASK_PENDING_A::FINISHED
+        *self == TASK_PENDING_A::FINISHED
     }
 }
-impl core::ops::Deref for TASK_PENDING_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `TASK(0-3)_PENDING` const generic writer - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
-pub struct TASK_PENDING_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> TASK_PENDING_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TASK_PENDING_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+#[doc = "Fields `TASK(0-3)_PENDING` writer - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
+pub type TASK_PENDING_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CE_ISR_SPEC, u8, TASK_PENDING_A, 4, O>;
+impl<'a, const O: u8> TASK_PENDING_W<'a, O> {
     #[doc = "Task not finished"]
     #[inline(always)]
     pub fn not_finished(self) -> &'a mut W {
@@ -103,17 +86,11 @@ impl<'a, const O: usize> TASK_PENDING_W<'a, O> {
     pub fn finished(self) -> &'a mut W {
         self.variant(TASK_PENDING_A::FINISHED)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << O)) | ((value as u32 & 0x0f) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
-    pub unsafe fn task_pending(&self, n: usize) -> TASK_PENDING_R {
+    pub unsafe fn task_pending(&self, n: u8) -> TASK_PENDING_R {
         TASK_PENDING_R::new(((self.bits >> n) & 0x0f) as u8)
     }
     #[doc = "Bits 0:3 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
@@ -140,28 +117,28 @@ impl R {
 impl W {
     #[doc = "Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
-    pub unsafe fn task_pending<const O: usize>(&mut self) -> TASK_PENDING_W<O> {
-        TASK_PENDING_W { w: self }
+    pub unsafe fn task_pending<const O: u8>(&mut self) -> TASK_PENDING_W<O> {
+        TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 0:3 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
     pub fn task0_pending(&mut self) -> TASK_PENDING_W<0> {
-        TASK_PENDING_W { w: self }
+        TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 1:4 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
     pub fn task1_pending(&mut self) -> TASK_PENDING_W<1> {
-        TASK_PENDING_W { w: self }
+        TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 2:5 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
     pub fn task2_pending(&mut self) -> TASK_PENDING_W<2> {
-        TASK_PENDING_W { w: self }
+        TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 3:6 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
     pub fn task3_pending(&mut self) -> TASK_PENDING_W<3> {
-        TASK_PENDING_W { w: self }
+        TASK_PENDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,301 +35,37 @@ impl From<crate::W<TWI_DRV_INT_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `rx_req_int_en` reader - "]
-pub struct RX_REQ_INT_EN_R(crate::FieldReader<bool>);
-impl RX_REQ_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_REQ_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_REQ_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_REQ_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `rx_req_int_en` writer - "]
-pub struct RX_REQ_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_REQ_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 19)) | ((value as u32 & 1) << 19);
-        self.w
-    }
-}
+pub type RX_REQ_INT_EN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 19>;
 #[doc = "Field `tx_req_int_en` reader - "]
-pub struct TX_REQ_INT_EN_R(crate::FieldReader<bool>);
-impl TX_REQ_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_REQ_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_REQ_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_REQ_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `tx_req_int_en` writer - "]
-pub struct TX_REQ_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_REQ_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 18)) | ((value as u32 & 1) << 18);
-        self.w
-    }
-}
+pub type TX_REQ_INT_EN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 18>;
 #[doc = "Field `tran_err_int_en` reader - "]
-pub struct TRAN_ERR_INT_EN_R(crate::FieldReader<bool>);
-impl TRAN_ERR_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAN_ERR_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAN_ERR_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAN_ERR_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `tran_err_int_en` writer - "]
-pub struct TRAN_ERR_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAN_ERR_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
-        self.w
-    }
-}
+pub type TRAN_ERR_INT_EN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 17>;
 #[doc = "Field `tran_com_int_en` reader - "]
-pub struct TRAN_COM_INT_EN_R(crate::FieldReader<bool>);
-impl TRAN_COM_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAN_COM_INT_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAN_COM_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAN_COM_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `tran_com_int_en` writer - "]
-pub struct TRAN_COM_INT_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAN_COM_INT_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
-    }
-}
+pub type TRAN_COM_INT_EN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 16>;
 #[doc = "Field `rx_req_pd` reader - "]
-pub struct RX_REQ_PD_R(crate::FieldReader<bool>);
-impl RX_REQ_PD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_REQ_PD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_REQ_PD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_REQ_PD_R = crate::BitReader<bool>;
 #[doc = "Field `rx_req_pd` writer - "]
-pub struct RX_REQ_PD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_REQ_PD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
-}
+pub type RX_REQ_PD_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 3>;
 #[doc = "Field `tx_req_pd` reader - "]
-pub struct TX_REQ_PD_R(crate::FieldReader<bool>);
-impl TX_REQ_PD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_REQ_PD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_REQ_PD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_REQ_PD_R = crate::BitReader<bool>;
 #[doc = "Field `tx_req_pd` writer - "]
-pub struct TX_REQ_PD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_REQ_PD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type TX_REQ_PD_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 2>;
 #[doc = "Field `tran_err_pd` reader - "]
-pub struct TRAN_ERR_PD_R(crate::FieldReader<bool>);
-impl TRAN_ERR_PD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAN_ERR_PD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAN_ERR_PD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAN_ERR_PD_R = crate::BitReader<bool>;
 #[doc = "Field `tran_err_pd` writer - "]
-pub struct TRAN_ERR_PD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAN_ERR_PD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type TRAN_ERR_PD_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 1>;
 #[doc = "Field `tran_com_pd` reader - "]
-pub struct TRAN_COM_PD_R(crate::FieldReader<bool>);
-impl TRAN_COM_PD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAN_COM_PD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TRAN_COM_PD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TRAN_COM_PD_R = crate::BitReader<bool>;
 #[doc = "Field `tran_com_pd` writer - "]
-pub struct TRAN_COM_PD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TRAN_COM_PD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type TRAN_COM_PD_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 19"]
     #[inline(always)]
@@ -376,42 +112,42 @@ impl W {
     #[doc = "Bit 19"]
     #[inline(always)]
     pub fn rx_req_int_en(&mut self) -> RX_REQ_INT_EN_W {
-        RX_REQ_INT_EN_W { w: self }
+        RX_REQ_INT_EN_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
     pub fn tx_req_int_en(&mut self) -> TX_REQ_INT_EN_W {
-        TX_REQ_INT_EN_W { w: self }
+        TX_REQ_INT_EN_W::new(self)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     pub fn tran_err_int_en(&mut self) -> TRAN_ERR_INT_EN_W {
-        TRAN_ERR_INT_EN_W { w: self }
+        TRAN_ERR_INT_EN_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn tran_com_int_en(&mut self) -> TRAN_COM_INT_EN_W {
-        TRAN_COM_INT_EN_W { w: self }
+        TRAN_COM_INT_EN_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn rx_req_pd(&mut self) -> RX_REQ_PD_W {
-        RX_REQ_PD_W { w: self }
+        RX_REQ_PD_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn tx_req_pd(&mut self) -> TX_REQ_PD_W {
-        TX_REQ_PD_W { w: self }
+        TX_REQ_PD_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn tran_err_pd(&mut self) -> TRAN_ERR_PD_W {
-        TRAN_ERR_PD_W { w: self }
+        TRAN_ERR_PD_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn tran_com_pd(&mut self) -> TRAN_COM_PD_W {
-        TRAN_COM_PD_W { w: self }
+        TRAN_COM_PD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

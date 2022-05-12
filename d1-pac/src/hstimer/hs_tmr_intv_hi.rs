@@ -35,32 +35,10 @@ impl From<crate::W<HS_TMR_INTV_HI_SPEC>> for W {
     }
 }
 #[doc = "Field `HS_TMR_INTV_VALUE_HI` reader - "]
-pub struct HS_TMR_INTV_VALUE_HI_R(crate::FieldReader<u32>);
-impl HS_TMR_INTV_VALUE_HI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        HS_TMR_INTV_VALUE_HI_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS_TMR_INTV_VALUE_HI_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS_TMR_INTV_VALUE_HI_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `HS_TMR_INTV_VALUE_HI` writer - "]
-pub struct HS_TMR_INTV_VALUE_HI_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HS_TMR_INTV_VALUE_HI_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type HS_TMR_INTV_VALUE_HI_W<'a> =
+    crate::FieldWriter<'a, u32, HS_TMR_INTV_HI_SPEC, u32, u32, 24, 0>;
 impl R {
     #[doc = "Bits 0:23"]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:23"]
     #[inline(always)]
     pub fn hs_tmr_intv_value_hi(&mut self) -> HS_TMR_INTV_VALUE_HI_W {
-        HS_TMR_INTV_VALUE_HI_W { w: self }
+        HS_TMR_INTV_VALUE_HI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

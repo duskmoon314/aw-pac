@@ -49,13 +49,9 @@ impl From<TS_TEST_MODE_EN_A> for bool {
     }
 }
 #[doc = "Field `TS_TEST_MODE_EN` reader - Timestamp Test Mode Enable"]
-pub struct TS_TEST_MODE_EN_R(crate::FieldReader<bool>);
+pub type TS_TEST_MODE_EN_R = crate::BitReader<TS_TEST_MODE_EN_A>;
 impl TS_TEST_MODE_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TS_TEST_MODE_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TS_TEST_MODE_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl TS_TEST_MODE_EN_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == TS_TEST_MODE_EN_A::NORMAL
+        *self == TS_TEST_MODE_EN_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `TEST`"]
     #[inline(always)]
     pub fn is_test(&self) -> bool {
-        **self == TS_TEST_MODE_EN_A::TEST
-    }
-}
-impl core::ops::Deref for TS_TEST_MODE_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TS_TEST_MODE_EN_A::TEST
     }
 }
 #[doc = "Field `TS_TEST_MODE_EN` writer - Timestamp Test Mode Enable"]
-pub struct TS_TEST_MODE_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TS_TEST_MODE_EN_W<'a> =
+    crate::BitWriter<'a, u32, TS_TMODE_SEL_REG_SPEC, TS_TEST_MODE_EN_A, 0>;
 impl<'a> TS_TEST_MODE_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TS_TEST_MODE_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> TS_TEST_MODE_EN_W<'a> {
     #[inline(always)]
     pub fn test(self) -> &'a mut W {
         self.variant(TS_TEST_MODE_EN_A::TEST)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -129,7 +96,7 @@ impl W {
     #[doc = "Bit 0 - Timestamp Test Mode Enable"]
     #[inline(always)]
     pub fn ts_test_mode_en(&mut self) -> TS_TEST_MODE_EN_W {
-        TS_TEST_MODE_EN_W { w: self }
+        TS_TEST_MODE_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -51,13 +51,9 @@ impl From<LOCK_IRQ_STATUS_A> for bool {
 }
 #[doc = "Fields `LOCK(0-31)_IRQ_STATUS` reader - Lock\\[i\\]
 Interrupt Status"]
-pub struct LOCK_IRQ_STATUS_R(crate::FieldReader<bool>);
+pub type LOCK_IRQ_STATUS_R = crate::BitReader<LOCK_IRQ_STATUS_A>;
 impl LOCK_IRQ_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCK_IRQ_STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOCK_IRQ_STATUS_A {
         match self.bits {
@@ -68,32 +64,19 @@ impl LOCK_IRQ_STATUS_R {
     #[doc = "Checks if the value of the field is `NO_EFFECT`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
-        **self == LOCK_IRQ_STATUS_A::NO_EFFECT
+        *self == LOCK_IRQ_STATUS_A::NO_EFFECT
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == LOCK_IRQ_STATUS_A::PENDING
+        *self == LOCK_IRQ_STATUS_A::PENDING
     }
 }
-impl core::ops::Deref for LOCK_IRQ_STATUS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `LOCK(0-31)_IRQ_STATUS` const generic writer - Lock\\[i\\]
+#[doc = "Fields `LOCK(0-31)_IRQ_STATUS` writer - Lock\\[i\\]
 Interrupt Status"]
-pub struct LOCK_IRQ_STATUS_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> LOCK_IRQ_STATUS_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOCK_IRQ_STATUS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type LOCK_IRQ_STATUS_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, SPINLOCK_IRQ_STA_REG_SPEC, LOCK_IRQ_STATUS_A, O>;
+impl<'a, const O: u8> LOCK_IRQ_STATUS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -104,28 +87,12 @@ impl<'a, const O: usize> LOCK_IRQ_STATUS_W<'a, O> {
     pub fn pending(self) -> &'a mut W {
         self.variant(LOCK_IRQ_STATUS_A::PENDING)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
-    pub unsafe fn lock_irq_status(&self, n: usize) -> LOCK_IRQ_STATUS_R {
+    pub unsafe fn lock_irq_status(&self, n: u8) -> LOCK_IRQ_STATUS_R {
         LOCK_IRQ_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Lock\\[i\\]
@@ -325,200 +292,200 @@ impl W {
     #[doc = "Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
-    pub unsafe fn lock_irq_status<const O: usize>(&mut self) -> LOCK_IRQ_STATUS_W<O> {
-        LOCK_IRQ_STATUS_W { w: self }
+    pub unsafe fn lock_irq_status<const O: u8>(&mut self) -> LOCK_IRQ_STATUS_W<O> {
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 0 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock0_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<0> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 1 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock1_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<1> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 2 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock2_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<2> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 3 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock3_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<3> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 4 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock4_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<4> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 5 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock5_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<5> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 6 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock6_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<6> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 7 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock7_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<7> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 8 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock8_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<8> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 9 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock9_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<9> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 10 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock10_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<10> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 11 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock11_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<11> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 12 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock12_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<12> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 13 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock13_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<13> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 14 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock14_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<14> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 15 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock15_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<15> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 16 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock16_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<16> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 17 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock17_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<17> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 18 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock18_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<18> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 19 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock19_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<19> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 20 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock20_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<20> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 21 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock21_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<21> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 22 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock22_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<22> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 23 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock23_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<23> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 24 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock24_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<24> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 25 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock25_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<25> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 26 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock26_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<26> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 27 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock27_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<27> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 28 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock28_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<28> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 29 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock29_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<29> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 30 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock30_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<30> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Bit 31 - Lock\\[i\\]
 Interrupt Status"]
     #[inline(always)]
     pub fn lock31_irq_status(&mut self) -> LOCK_IRQ_STATUS_W<31> {
-        LOCK_IRQ_STATUS_W { w: self }
+        LOCK_IRQ_STATUS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

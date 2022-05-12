@@ -39,15 +39,8 @@ impl From<RT_AW> for u8 {
     }
 }
 #[doc = "Field `rt` writer - "]
-pub struct RT_W<'a> {
-    w: &'a mut W,
-}
+pub type RT_W<'a> = crate::FieldWriterSafe<'a, u32, FCR_SPEC, u8, RT_AW, 2, 6>;
 impl<'a> RT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RT_AW) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn one_character(self) -> &'a mut W {
@@ -67,12 +60,6 @@ impl<'a> RT_W<'a> {
     #[inline(always)]
     pub fn two_less_than_full(self) -> &'a mut W {
         self.variant(RT_AW::TWO_LESS_THAN_FULL)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 6)) | ((value as u32 & 3) << 6);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -95,15 +82,8 @@ impl From<TFT_AW> for u8 {
     }
 }
 #[doc = "Field `tft` writer - "]
-pub struct TFT_W<'a> {
-    w: &'a mut W,
-}
+pub type TFT_W<'a> = crate::FieldWriterSafe<'a, u32, FCR_SPEC, u8, TFT_AW, 2, 4>;
 impl<'a> TFT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TFT_AW) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn empty(self) -> &'a mut W {
@@ -124,12 +104,6 @@ impl<'a> TFT_W<'a> {
     pub fn half_full(self) -> &'a mut W {
         self.variant(TFT_AW::HALF_FULL)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
-        self.w
-    }
 }
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -146,15 +120,8 @@ impl From<DMAM_AW> for bool {
     }
 }
 #[doc = "Field `dmam` writer - "]
-pub struct DMAM_W<'a> {
-    w: &'a mut W,
-}
+pub type DMAM_W<'a> = crate::BitWriter<'a, u32, FCR_SPEC, DMAM_AW, 3>;
 impl<'a> DMAM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMAM_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mode_0(self) -> &'a mut W {
@@ -165,119 +132,43 @@ impl<'a> DMAM_W<'a> {
     pub fn mode_1(self) -> &'a mut W {
         self.variant(DMAM_AW::MODE_1)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
 }
 #[doc = "Field `xfifor` writer - "]
-pub struct XFIFOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> XFIFOR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type XFIFOR_W<'a> = crate::BitWriter<'a, u32, FCR_SPEC, bool, 2>;
 #[doc = "Field `rfifor` writer - "]
-pub struct RFIFOR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RFIFOR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type RFIFOR_W<'a> = crate::BitWriter<'a, u32, FCR_SPEC, bool, 1>;
 #[doc = "Field `fifoe` writer - "]
-pub struct FIFOE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FIFOE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type FIFOE_W<'a> = crate::BitWriter<'a, u32, FCR_SPEC, bool, 0>;
 impl W {
     #[doc = "Bits 6:7"]
     #[inline(always)]
     pub fn rt(&mut self) -> RT_W {
-        RT_W { w: self }
+        RT_W::new(self)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
     pub fn tft(&mut self) -> TFT_W {
-        TFT_W { w: self }
+        TFT_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn dmam(&mut self) -> DMAM_W {
-        DMAM_W { w: self }
+        DMAM_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn xfifor(&mut self) -> XFIFOR_W {
-        XFIFOR_W { w: self }
+        XFIFOR_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn rfifor(&mut self) -> RFIFOR_W {
-        RFIFOR_W { w: self }
+        RFIFOR_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn fifoe(&mut self) -> FIFOE_W {
-        FIFOE_W { w: self }
+        FIFOE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

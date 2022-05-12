@@ -35,32 +35,9 @@ impl From<crate::W<TP_CALI_DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `TP_CDAT` reader - TP Common Data"]
-pub struct TP_CDAT_R(crate::FieldReader<u16>);
-impl TP_CDAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TP_CDAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TP_CDAT_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TP_CDAT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TP_CDAT` writer - TP Common Data"]
-pub struct TP_CDAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TP_CDAT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type TP_CDAT_W<'a> = crate::FieldWriter<'a, u32, TP_CALI_DATA_SPEC, u16, u16, 12, 0>;
 impl R {
     #[doc = "Bits 0:11 - TP Common Data"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:11 - TP Common Data"]
     #[inline(always)]
     pub fn tp_cdat(&mut self) -> TP_CDAT_W {
-        TP_CDAT_W { w: self }
+        TP_CDAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

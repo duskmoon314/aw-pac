@@ -14,35 +14,9 @@ impl From<crate::R<PIO_POW_VAL_SPEC>> for R {
     }
 }
 #[doc = "Field `VCCIO_PWS_VAL` reader - VCC_IO Power Value"]
-pub struct VCCIO_PWS_VAL_R(crate::FieldReader<bool>);
-impl VCCIO_PWS_VAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VCCIO_PWS_VAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for VCCIO_PWS_VAL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type VCCIO_PWS_VAL_R = crate::BitReader<bool>;
 #[doc = "Fields `P(0-4)_PWR_VAL` reader - PX_Port Power Value"]
-pub struct P_PWR_VAL_R(crate::FieldReader<bool>);
-impl P_PWR_VAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        P_PWR_VAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for P_PWR_VAL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type P_PWR_VAL_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 12 - VCC_IO Power Value"]
     #[inline(always)]
@@ -51,7 +25,7 @@ impl R {
     }
     #[doc = "PX_Port Power Value"]
     #[inline(always)]
-    pub unsafe fn p_pwr_val(&self, n: usize) -> P_PWR_VAL_R {
+    pub unsafe fn p_pwr_val(&self, n: u8) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> (n + 2)) & 1) != 0)
     }
     #[doc = "Bit 2 - PX_Port Power Value"]

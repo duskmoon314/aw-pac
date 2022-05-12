@@ -35,32 +35,9 @@ impl From<crate::W<PLL_AUDIO0_BIAS_SPEC>> for W {
     }
 }
 #[doc = "Field `PLL_CP` reader - PLL current bias control"]
-pub struct PLL_CP_R(crate::FieldReader<u8>);
-impl PLL_CP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLL_CP_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_CP_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_CP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_CP` writer - PLL current bias control"]
-pub struct PLL_CP_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_CP_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type PLL_CP_W<'a> = crate::FieldWriter<'a, u32, PLL_AUDIO0_BIAS_SPEC, u8, u8, 5, 16>;
 impl R {
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]
     pub fn pll_cp(&mut self) -> PLL_CP_W {
-        PLL_CP_W { w: self }
+        PLL_CP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

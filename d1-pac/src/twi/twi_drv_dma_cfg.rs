@@ -35,123 +35,21 @@ impl From<crate::W<TWI_DRV_DMA_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `dma_rx_en` reader - "]
-pub struct DMA_RX_EN_R(crate::FieldReader<u8>);
-impl DMA_RX_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_RX_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_RX_EN_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_RX_EN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dma_rx_en` writer - "]
-pub struct DMA_RX_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_RX_EN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 23)) | ((value as u32 & 3) << 23);
-        self.w
-    }
-}
+pub type DMA_RX_EN_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 2, 23>;
 #[doc = "Field `rx_trig` reader - "]
-pub struct RX_TRIG_R(crate::FieldReader<u8>);
-impl RX_TRIG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_TRIG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_TRIG_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_TRIG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rx_trig` writer - "]
-pub struct RX_TRIG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_TRIG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | ((value as u32 & 0x3f) << 16);
-        self.w
-    }
-}
+pub type RX_TRIG_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 6, 16>;
 #[doc = "Field `dma_tx_en` reader - "]
-pub struct DMA_TX_EN_R(crate::FieldReader<bool>);
-impl DMA_TX_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_TX_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_TX_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_TX_EN_R = crate::BitReader<bool>;
 #[doc = "Field `dma_tx_en` writer - "]
-pub struct DMA_TX_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_TX_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
-    }
-}
+pub type DMA_TX_EN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, bool, 8>;
 #[doc = "Field `tx_trig` reader - "]
-pub struct TX_TRIG_R(crate::FieldReader<u8>);
-impl TX_TRIG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TX_TRIG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_TRIG_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_TRIG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `tx_trig` writer - "]
-pub struct TX_TRIG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_TRIG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type TX_TRIG_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 6, 0>;
 impl R {
     #[doc = "Bits 23:24"]
     #[inline(always)]
@@ -178,22 +76,22 @@ impl W {
     #[doc = "Bits 23:24"]
     #[inline(always)]
     pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W {
-        DMA_RX_EN_W { w: self }
+        DMA_RX_EN_W::new(self)
     }
     #[doc = "Bits 16:21"]
     #[inline(always)]
     pub fn rx_trig(&mut self) -> RX_TRIG_W {
-        RX_TRIG_W { w: self }
+        RX_TRIG_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
     pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W {
-        DMA_TX_EN_W { w: self }
+        DMA_TX_EN_W::new(self)
     }
     #[doc = "Bits 0:5"]
     #[inline(always)]
     pub fn tx_trig(&mut self) -> TX_TRIG_W {
-        TX_TRIG_W { w: self }
+        TX_TRIG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

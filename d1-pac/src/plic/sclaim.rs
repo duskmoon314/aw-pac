@@ -35,32 +35,9 @@ impl From<crate::W<SCLAIM_SPEC>> for W {
     }
 }
 #[doc = "Field `sclaim` reader - "]
-pub struct SCLAIM_R(crate::FieldReader<u16>);
-impl SCLAIM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        SCLAIM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCLAIM_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCLAIM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `sclaim` writer - "]
-pub struct SCLAIM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCLAIM_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x03ff) | (value as u32 & 0x03ff);
-        self.w
-    }
-}
+pub type SCLAIM_W<'a> = crate::FieldWriter<'a, u32, SCLAIM_SPEC, u16, u16, 10, 0>;
 impl R {
     #[doc = "Bits 0:9"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:9"]
     #[inline(always)]
     pub fn sclaim(&mut self) -> SCLAIM_W {
-        SCLAIM_W { w: self }
+        SCLAIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

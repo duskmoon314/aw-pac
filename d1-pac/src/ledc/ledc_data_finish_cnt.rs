@@ -35,47 +35,12 @@ impl From<crate::W<LEDC_DATA_FINISH_CNT_SPEC>> for W {
     }
 }
 #[doc = "Field `LED_WAIT_DATA_TIME` reader - "]
-pub struct LED_WAIT_DATA_TIME_R(crate::FieldReader<u16>);
-impl LED_WAIT_DATA_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LED_WAIT_DATA_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LED_WAIT_DATA_TIME_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LED_WAIT_DATA_TIME_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LED_WAIT_DATA_TIME` writer - "]
-pub struct LED_WAIT_DATA_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LED_WAIT_DATA_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3fff << 16)) | ((value as u32 & 0x3fff) << 16);
-        self.w
-    }
-}
+pub type LED_WAIT_DATA_TIME_W<'a> =
+    crate::FieldWriter<'a, u32, LEDC_DATA_FINISH_CNT_SPEC, u16, u16, 14, 16>;
 #[doc = "Field `LED_DATA_FINISH_CNT` reader - "]
-pub struct LED_DATA_FINISH_CNT_R(crate::FieldReader<u16>);
-impl LED_DATA_FINISH_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        LED_DATA_FINISH_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LED_DATA_FINISH_CNT_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LED_DATA_FINISH_CNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 16:29"]
     #[inline(always)]
@@ -92,7 +57,7 @@ impl W {
     #[doc = "Bits 16:29"]
     #[inline(always)]
     pub fn led_wait_data_time(&mut self) -> LED_WAIT_DATA_TIME_W {
-        LED_WAIT_DATA_TIME_W { w: self }
+        LED_WAIT_DATA_TIME_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

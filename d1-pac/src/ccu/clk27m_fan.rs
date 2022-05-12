@@ -49,13 +49,9 @@ impl From<GATING_A> for bool {
     }
 }
 #[doc = "Field `GATING` reader - Gating for CLK27M"]
-pub struct GATING_R(crate::FieldReader<bool>);
+pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GATING_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl GATING_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == GATING_A::OFF
+        *self == GATING_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == GATING_A::ON
-    }
-}
-impl core::ops::Deref for GATING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GATING_A::ON
     }
 }
 #[doc = "Field `GATING` writer - Gating for CLK27M"]
-pub struct GATING_W<'a> {
-    w: &'a mut W,
-}
+pub type GATING_W<'a> = crate::BitWriter<'a, u32, CLK27M_FAN_SPEC, GATING_A, 31>;
 impl<'a> GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> GATING_W<'a> {
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(GATING_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
     }
 }
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
@@ -134,13 +100,9 @@ impl From<CLK_SRC_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
-pub struct CLK_SRC_SEL_R(crate::FieldReader<u8>);
+pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_SRC_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLK_SRC_SEL_A> {
         match self.bits {
@@ -152,31 +114,17 @@ impl CLK_SRC_SEL_R {
     #[doc = "Checks if the value of the field is `PLL_VIDEO0_1X`"]
     #[inline(always)]
     pub fn is_pll_video0_1x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_VIDEO0_1X
+        *self == CLK_SRC_SEL_A::PLL_VIDEO0_1X
     }
     #[doc = "Checks if the value of the field is `PLL_VIDEO1_1X`"]
     #[inline(always)]
     pub fn is_pll_video1_1x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_VIDEO1_1X
-    }
-}
-impl core::ops::Deref for CLK_SRC_SEL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK_SRC_SEL_A::PLL_VIDEO1_1X
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub struct CLK_SRC_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK_SRC_SEL_W<'a> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, CLK_SRC_SEL_A, 2, 24>;
 impl<'a> CLK_SRC_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_SRC_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn pll_video0_1x(self) -> &'a mut W {
@@ -187,67 +135,15 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     pub fn pll_video1_1x(self) -> &'a mut W {
         self.variant(CLK_SRC_SEL_A::PLL_VIDEO1_1X)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 24)) | ((value as u32 & 3) << 24);
-        self.w
-    }
 }
 #[doc = "Field `DIV1` reader - Factor N"]
-pub struct DIV1_R(crate::FieldReader<u8>);
-impl DIV1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIV1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIV1_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIV1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV1` writer - Factor N"]
-pub struct DIV1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
-        self.w
-    }
-}
+pub type DIV1_W<'a> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 2, 8>;
 #[doc = "Field `DIV0` reader - Factor M"]
-pub struct DIV0_R(crate::FieldReader<u8>);
-impl DIV0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIV0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIV0_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIV0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV0` writer - Factor M"]
-pub struct DIV0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type DIV0_W<'a> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bit 31 - Gating for CLK27M"]
     #[inline(always)]
@@ -274,22 +170,22 @@ impl W {
     #[doc = "Bit 31 - Gating for CLK27M"]
     #[inline(always)]
     pub fn gating(&mut self) -> GATING_W {
-        GATING_W { w: self }
+        GATING_W::new(self)
     }
     #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
-        CLK_SRC_SEL_W { w: self }
+        CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn div1(&mut self) -> DIV1_W {
-        DIV1_W { w: self }
+        DIV1_W::new(self)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     pub fn div0(&mut self) -> DIV0_W {
-        DIV0_W { w: self }
+        DIV0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

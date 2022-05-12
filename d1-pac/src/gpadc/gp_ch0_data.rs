@@ -35,20 +35,7 @@ impl From<crate::W<GP_CH0_DATA_SPEC>> for W {
     }
 }
 #[doc = "Field `GP_CH0_DATA` reader - Channel 0 Data"]
-pub struct GP_CH0_DATA_R(crate::FieldReader<u16>);
-impl GP_CH0_DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        GP_CH0_DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for GP_CH0_DATA_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type GP_CH0_DATA_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:11 - Channel 0 Data"]
     #[inline(always)]

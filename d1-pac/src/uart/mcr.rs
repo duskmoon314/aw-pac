@@ -52,13 +52,9 @@ impl From<FUNCTION_A> for u8 {
     }
 }
 #[doc = "Field `function` reader - UART Function: Select IrDA or RS485"]
-pub struct FUNCTION_R(crate::FieldReader<u8>);
+pub type FUNCTION_R = crate::FieldReader<u8, FUNCTION_A>;
 impl FUNCTION_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FUNCTION_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FUNCTION_A {
         match self.bits {
@@ -71,36 +67,22 @@ impl FUNCTION_R {
     #[doc = "Checks if the value of the field is `UART`"]
     #[inline(always)]
     pub fn is_uart(&self) -> bool {
-        **self == FUNCTION_A::UART
+        *self == FUNCTION_A::UART
     }
     #[doc = "Checks if the value of the field is `IRDA_SIR`"]
     #[inline(always)]
     pub fn is_ir_da_sir(&self) -> bool {
-        **self == FUNCTION_A::IRDA_SIR
+        *self == FUNCTION_A::IRDA_SIR
     }
     #[doc = "Checks if the value of the field is `RS485`"]
     #[inline(always)]
     pub fn is_rs485(&self) -> bool {
-        **self == FUNCTION_A::RS485
-    }
-}
-impl core::ops::Deref for FUNCTION_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FUNCTION_A::RS485
     }
 }
 #[doc = "Field `function` writer - UART Function: Select IrDA or RS485"]
-pub struct FUNCTION_W<'a> {
-    w: &'a mut W,
-}
+pub type FUNCTION_W<'a> = crate::FieldWriter<'a, u32, MCR_SPEC, u8, FUNCTION_A, 2, 6>;
 impl<'a> FUNCTION_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FUNCTION_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn uart(self) -> &'a mut W {
@@ -115,12 +97,6 @@ impl<'a> FUNCTION_W<'a> {
     #[inline(always)]
     pub fn rs485(self) -> &'a mut W {
         self.variant(FUNCTION_A::RS485)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 6)) | ((value as u32 & 3) << 6);
-        self.w
     }
 }
 #[doc = "Auto Flow Control Enable\n\nValue on reset: 0"]
@@ -138,13 +114,9 @@ impl From<AFCE_A> for bool {
     }
 }
 #[doc = "Field `afce` reader - Auto Flow Control Enable"]
-pub struct AFCE_R(crate::FieldReader<bool>);
+pub type AFCE_R = crate::BitReader<AFCE_A>;
 impl AFCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        AFCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AFCE_A {
         match self.bits {
@@ -155,31 +127,17 @@ impl AFCE_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == AFCE_A::DISABLED
+        *self == AFCE_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == AFCE_A::ENABLED
-    }
-}
-impl core::ops::Deref for AFCE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AFCE_A::ENABLED
     }
 }
 #[doc = "Field `afce` writer - Auto Flow Control Enable"]
-pub struct AFCE_W<'a> {
-    w: &'a mut W,
-}
+pub type AFCE_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, AFCE_A, 5>;
 impl<'a> AFCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AFCE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -189,22 +147,6 @@ impl<'a> AFCE_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(AFCE_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
     }
 }
 #[doc = "Loop Back Mode\n\nValue on reset: 0"]
@@ -222,13 +164,9 @@ impl From<LOOP_A> for bool {
     }
 }
 #[doc = "Field `loop` reader - Loop Back Mode"]
-pub struct LOOP_R(crate::FieldReader<bool>);
+pub type LOOP_R = crate::BitReader<LOOP_A>;
 impl LOOP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LOOP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOOP_A {
         match self.bits {
@@ -239,31 +177,17 @@ impl LOOP_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == LOOP_A::NORMAL
+        *self == LOOP_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `LOOP_BACK`"]
     #[inline(always)]
     pub fn is_loop_back(&self) -> bool {
-        **self == LOOP_A::LOOP_BACK
-    }
-}
-impl core::ops::Deref for LOOP_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOOP_A::LOOP_BACK
     }
 }
 #[doc = "Field `loop` writer - Loop Back Mode"]
-pub struct LOOP_W<'a> {
-    w: &'a mut W,
-}
+pub type LOOP_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, LOOP_A, 4>;
 impl<'a> LOOP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LOOP_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -273,22 +197,6 @@ impl<'a> LOOP_W<'a> {
     #[inline(always)]
     pub fn loop_back(self) -> &'a mut W {
         self.variant(LOOP_A::LOOP_BACK)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
     }
 }
 #[doc = "Request to Send\n\nValue on reset: 0"]
@@ -306,13 +214,9 @@ impl From<RTS_A> for bool {
     }
 }
 #[doc = "Field `rts` reader - Request to Send"]
-pub struct RTS_R(crate::FieldReader<bool>);
+pub type RTS_R = crate::BitReader<RTS_A>;
 impl RTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RTS_A {
         match self.bits {
@@ -323,31 +227,17 @@ impl RTS_R {
     #[doc = "Checks if the value of the field is `DEASSERTED`"]
     #[inline(always)]
     pub fn is_deasserted(&self) -> bool {
-        **self == RTS_A::DEASSERTED
+        *self == RTS_A::DEASSERTED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        **self == RTS_A::ASSERTED
-    }
-}
-impl core::ops::Deref for RTS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RTS_A::ASSERTED
     }
 }
 #[doc = "Field `rts` writer - Request to Send"]
-pub struct RTS_W<'a> {
-    w: &'a mut W,
-}
+pub type RTS_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, RTS_A, 1>;
 impl<'a> RTS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RTS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn deasserted(self) -> &'a mut W {
@@ -357,22 +247,6 @@ impl<'a> RTS_W<'a> {
     #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
         self.variant(RTS_A::ASSERTED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Data Terminal Ready\n\nValue on reset: 0"]
@@ -390,13 +264,9 @@ impl From<DTR_A> for bool {
     }
 }
 #[doc = "Field `dtr` reader - Data Terminal Ready"]
-pub struct DTR_R(crate::FieldReader<bool>);
+pub type DTR_R = crate::BitReader<DTR_A>;
 impl DTR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DTR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DTR_A {
         match self.bits {
@@ -407,31 +277,17 @@ impl DTR_R {
     #[doc = "Checks if the value of the field is `DEASSERTED`"]
     #[inline(always)]
     pub fn is_deasserted(&self) -> bool {
-        **self == DTR_A::DEASSERTED
+        *self == DTR_A::DEASSERTED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        **self == DTR_A::ASSERTED
-    }
-}
-impl core::ops::Deref for DTR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DTR_A::ASSERTED
     }
 }
 #[doc = "Field `dtr` writer - Data Terminal Ready"]
-pub struct DTR_W<'a> {
-    w: &'a mut W,
-}
+pub type DTR_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, DTR_A, 0>;
 impl<'a> DTR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DTR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn deasserted(self) -> &'a mut W {
@@ -441,22 +297,6 @@ impl<'a> DTR_W<'a> {
     #[inline(always)]
     pub fn asserted(self) -> &'a mut W {
         self.variant(DTR_A::ASSERTED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -490,27 +330,27 @@ impl W {
     #[doc = "Bits 6:7 - UART Function: Select IrDA or RS485"]
     #[inline(always)]
     pub fn function(&mut self) -> FUNCTION_W {
-        FUNCTION_W { w: self }
+        FUNCTION_W::new(self)
     }
     #[doc = "Bit 5 - Auto Flow Control Enable"]
     #[inline(always)]
     pub fn afce(&mut self) -> AFCE_W {
-        AFCE_W { w: self }
+        AFCE_W::new(self)
     }
     #[doc = "Bit 4 - Loop Back Mode"]
     #[inline(always)]
     pub fn loop_(&mut self) -> LOOP_W {
-        LOOP_W { w: self }
+        LOOP_W::new(self)
     }
     #[doc = "Bit 1 - Request to Send"]
     #[inline(always)]
     pub fn rts(&mut self) -> RTS_W {
-        RTS_W { w: self }
+        RTS_W::new(self)
     }
     #[doc = "Bit 0 - Data Terminal Ready"]
     #[inline(always)]
     pub fn dtr(&mut self) -> DTR_W {
-        DTR_W { w: self }
+        DTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

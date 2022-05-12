@@ -28,13 +28,9 @@ impl From<MBUS_FIFO_STATUS_A> for bool {
     }
 }
 #[doc = "Field `MBUS_FIFO_STATUS` reader - MBUS FIFO Status"]
-pub struct MBUS_FIFO_STATUS_R(crate::FieldReader<bool>);
+pub type MBUS_FIFO_STATUS_R = crate::BitReader<MBUS_FIFO_STATUS_A>;
 impl MBUS_FIFO_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MBUS_FIFO_STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MBUS_FIFO_STATUS_A {
         match self.bits {
@@ -45,19 +41,12 @@ impl MBUS_FIFO_STATUS_R {
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
-        **self == MBUS_FIFO_STATUS_A::EMPTY
+        *self == MBUS_FIFO_STATUS_A::EMPTY
     }
     #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
     #[inline(always)]
     pub fn is_not_empty(&self) -> bool {
-        **self == MBUS_FIFO_STATUS_A::NOT_EMPTY
-    }
-}
-impl core::ops::Deref for MBUS_FIFO_STATUS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MBUS_FIFO_STATUS_A::NOT_EMPTY
     }
 }
 #[doc = "DMA Channel\\[15:0\\]
@@ -77,13 +66,9 @@ impl From<DMA_STATUS_A> for bool {
 }
 #[doc = "Fields `DMA_STATUS(0-15)` reader - DMA Channel\\[15:0\\]
 Status"]
-pub struct DMA_STATUS_R(crate::FieldReader<bool>);
+pub type DMA_STATUS_R = crate::BitReader<DMA_STATUS_A>;
 impl DMA_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_STATUS_A {
         match self.bits {
@@ -94,19 +79,12 @@ impl DMA_STATUS_R {
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == DMA_STATUS_A::IDLE
+        *self == DMA_STATUS_A::IDLE
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == DMA_STATUS_A::BUSY
-    }
-}
-impl core::ops::Deref for DMA_STATUS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_STATUS_A::BUSY
     }
 }
 impl R {
@@ -118,7 +96,7 @@ impl R {
     #[doc = "DMA Channel\\[15:0\\]
 Status"]
     #[inline(always)]
-    pub unsafe fn dma_status(&self, n: usize) -> DMA_STATUS_R {
+    pub unsafe fn dma_status(&self, n: u8) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - DMA Channel\\[15:0\\]

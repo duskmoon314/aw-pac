@@ -49,13 +49,9 @@ impl From<IMS_A> for bool {
     }
 }
 #[doc = "Field `IMS` reader - Internal Modulation Select"]
-pub struct IMS_R(crate::FieldReader<bool>);
+pub type IMS_R = crate::BitReader<IMS_A>;
 impl IMS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IMS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IMS_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl IMS_R {
     #[doc = "Checks if the value of the field is `NOT_MODULATED`"]
     #[inline(always)]
     pub fn is_not_modulated(&self) -> bool {
-        **self == IMS_A::NOT_MODULATED
+        *self == IMS_A::NOT_MODULATED
     }
     #[doc = "Checks if the value of the field is `MODULATED`"]
     #[inline(always)]
     pub fn is_modulated(&self) -> bool {
-        **self == IMS_A::MODULATED
-    }
-}
-impl core::ops::Deref for IMS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IMS_A::MODULATED
     }
 }
 #[doc = "Field `IMS` writer - Internal Modulation Select"]
-pub struct IMS_W<'a> {
-    w: &'a mut W,
-}
+pub type IMS_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, IMS_A, 7>;
 impl<'a> IMS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: IMS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "The transmitting signal is not modulated"]
     #[inline(always)]
     pub fn not_modulated(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> IMS_W<'a> {
     #[inline(always)]
     pub fn modulated(self) -> &'a mut W {
         self.variant(IMS_A::MODULATED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
     }
 }
 #[doc = "Duty ratio of modulated carrier is high level/low level.\n\nValue on reset: 0"]
@@ -136,13 +102,9 @@ impl From<DRMC_A> for u8 {
     }
 }
 #[doc = "Field `DRMC` reader - Duty ratio of modulated carrier is high level/low level."]
-pub struct DRMC_R(crate::FieldReader<u8>);
+pub type DRMC_R = crate::FieldReader<u8, DRMC_A>;
 impl DRMC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DRMC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DRMC_A> {
         match self.bits {
@@ -155,36 +117,22 @@ impl DRMC_R {
     #[doc = "Checks if the value of the field is `EQUAL`"]
     #[inline(always)]
     pub fn is_equal(&self) -> bool {
-        **self == DRMC_A::EQUAL
+        *self == DRMC_A::EQUAL
     }
     #[doc = "Checks if the value of the field is `DOUBLE`"]
     #[inline(always)]
     pub fn is_double(&self) -> bool {
-        **self == DRMC_A::DOUBLE
+        *self == DRMC_A::DOUBLE
     }
     #[doc = "Checks if the value of the field is `TRIPLE`"]
     #[inline(always)]
     pub fn is_triple(&self) -> bool {
-        **self == DRMC_A::TRIPLE
-    }
-}
-impl core::ops::Deref for DRMC_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DRMC_A::TRIPLE
     }
 }
 #[doc = "Field `DRMC` writer - Duty ratio of modulated carrier is high level/low level."]
-pub struct DRMC_W<'a> {
-    w: &'a mut W,
-}
+pub type DRMC_W<'a> = crate::FieldWriter<'a, u32, CIR_TGLR_SPEC, u8, DRMC_A, 2, 5>;
 impl<'a> DRMC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DRMC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "Low level is equal to high level"]
     #[inline(always)]
     pub fn equal(self) -> &'a mut W {
@@ -199,12 +147,6 @@ impl<'a> DRMC_W<'a> {
     #[inline(always)]
     pub fn triple(self) -> &'a mut W {
         self.variant(DRMC_A::TRIPLE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 5)) | ((value as u32 & 3) << 5);
-        self.w
     }
 }
 #[doc = "Transmit Pulse Polarity Invert\n\nValue on reset: 0"]
@@ -222,13 +164,9 @@ impl From<TPPI_A> for bool {
     }
 }
 #[doc = "Field `TPPI` reader - Transmit Pulse Polarity Invert"]
-pub struct TPPI_R(crate::FieldReader<bool>);
+pub type TPPI_R = crate::BitReader<TPPI_A>;
 impl TPPI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TPPI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TPPI_A {
         match self.bits {
@@ -239,31 +177,17 @@ impl TPPI_R {
     #[doc = "Checks if the value of the field is `NOT_INVERT`"]
     #[inline(always)]
     pub fn is_not_invert(&self) -> bool {
-        **self == TPPI_A::NOT_INVERT
+        *self == TPPI_A::NOT_INVERT
     }
     #[doc = "Checks if the value of the field is `INVERT`"]
     #[inline(always)]
     pub fn is_invert(&self) -> bool {
-        **self == TPPI_A::INVERT
-    }
-}
-impl core::ops::Deref for TPPI_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TPPI_A::INVERT
     }
 }
 #[doc = "Field `TPPI` writer - Transmit Pulse Polarity Invert"]
-pub struct TPPI_W<'a> {
-    w: &'a mut W,
-}
+pub type TPPI_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TPPI_A, 2>;
 impl<'a> TPPI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TPPI_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Not invert transmit pulse"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -274,60 +198,11 @@ impl<'a> TPPI_W<'a> {
     pub fn invert(self) -> &'a mut W {
         self.variant(TPPI_A::INVERT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
 }
 #[doc = "Field `TR` reader - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
-pub struct TR_R(crate::FieldReader<bool>);
-impl TR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TR_R = crate::BitReader<bool>;
 #[doc = "Field `TR` writer - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
-pub struct TR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type TR_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, bool, 1>;
 #[doc = "Transmit Block Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEN_A {
@@ -343,13 +218,9 @@ impl From<TXEN_A> for bool {
     }
 }
 #[doc = "Field `TXEN` reader - Transmit Block Enable"]
-pub struct TXEN_R(crate::FieldReader<bool>);
+pub type TXEN_R = crate::BitReader<TXEN_A>;
 impl TXEN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TXEN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TXEN_A {
         match self.bits {
@@ -360,31 +231,17 @@ impl TXEN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TXEN_A::DISABLE
+        *self == TXEN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TXEN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TXEN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TXEN_A::ENABLE
     }
 }
 #[doc = "Field `TXEN` writer - Transmit Block Enable"]
-pub struct TXEN_W<'a> {
-    w: &'a mut W,
-}
+pub type TXEN_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TXEN_A, 0>;
 impl<'a> TXEN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TXEN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable the CIR Transmitter"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -394,22 +251,6 @@ impl<'a> TXEN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TXEN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -443,27 +284,27 @@ impl W {
     #[doc = "Bit 7 - Internal Modulation Select"]
     #[inline(always)]
     pub fn ims(&mut self) -> IMS_W {
-        IMS_W { w: self }
+        IMS_W::new(self)
     }
     #[doc = "Bits 5:6 - Duty ratio of modulated carrier is high level/low level."]
     #[inline(always)]
     pub fn drmc(&mut self) -> DRMC_W {
-        DRMC_W { w: self }
+        DRMC_W::new(self)
     }
     #[doc = "Bit 2 - Transmit Pulse Polarity Invert"]
     #[inline(always)]
     pub fn tppi(&mut self) -> TPPI_W {
-        TPPI_W { w: self }
+        TPPI_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
     #[inline(always)]
     pub fn tr(&mut self) -> TR_W {
-        TR_W { w: self }
+        TR_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Block Enable"]
     #[inline(always)]
     pub fn txen(&mut self) -> TXEN_W {
-        TXEN_W { w: self }
+        TXEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

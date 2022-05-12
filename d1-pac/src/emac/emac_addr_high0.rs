@@ -35,32 +35,9 @@ impl From<crate::W<EMAC_ADDR_HIGH0_SPEC>> for W {
     }
 }
 #[doc = "Field `MAC_ADDR_HIGH0` reader - "]
-pub struct MAC_ADDR_HIGH0_R(crate::FieldReader<u16>);
-impl MAC_ADDR_HIGH0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MAC_ADDR_HIGH0_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAC_ADDR_HIGH0_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAC_ADDR_HIGH0_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAC_ADDR_HIGH0` writer - "]
-pub struct MAC_ADDR_HIGH0_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAC_ADDR_HIGH0_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type MAC_ADDR_HIGH0_W<'a> = crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH0_SPEC, u16, u16, 16, 0>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn mac_addr_high0(&mut self) -> MAC_ADDR_HIGH0_W {
-        MAC_ADDR_HIGH0_W { w: self }
+        MAC_ADDR_HIGH0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

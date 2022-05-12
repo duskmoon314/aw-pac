@@ -35,54 +35,11 @@ impl From<crate::W<SRAM_ADDR_TWIST_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `SRAM_TS_KF` writer - SRAM Twist Keyfield"]
-pub struct SRAM_TS_KF_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRAM_TS_KF_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type SRAM_TS_KF_W<'a> = crate::FieldWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, u16, u16, 16, 16>;
 #[doc = "Field `SRAM_ADDR_TS_FG` reader - SRAM Address Twist Flag"]
-pub struct SRAM_ADDR_TS_FG_R(crate::FieldReader<bool>);
-impl SRAM_ADDR_TS_FG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SRAM_ADDR_TS_FG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SRAM_ADDR_TS_FG_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SRAM_ADDR_TS_FG_R = crate::BitReader<bool>;
 #[doc = "Field `SRAM_ADDR_TS_FG` writer - SRAM Address Twist Flag"]
-pub struct SRAM_ADDR_TS_FG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SRAM_ADDR_TS_FG_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type SRAM_ADDR_TS_FG_W<'a> = crate::BitWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - SRAM Address Twist Flag"]
     #[inline(always)]
@@ -94,12 +51,12 @@ impl W {
     #[doc = "Bits 16:31 - SRAM Twist Keyfield"]
     #[inline(always)]
     pub fn sram_ts_kf(&mut self) -> SRAM_TS_KF_W {
-        SRAM_TS_KF_W { w: self }
+        SRAM_TS_KF_W::new(self)
     }
     #[doc = "Bit 0 - SRAM Address Twist Flag"]
     #[inline(always)]
     pub fn sram_addr_ts_fg(&mut self) -> SRAM_ADDR_TS_FG_W {
-        SRAM_ADDR_TS_FG_W { w: self }
+        SRAM_ADDR_TS_FG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

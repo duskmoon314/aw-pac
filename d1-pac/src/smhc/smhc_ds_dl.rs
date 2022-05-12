@@ -35,136 +35,21 @@ impl From<crate::W<SMHC_DS_DL_SPEC>> for W {
     }
 }
 #[doc = "Field `DS_DL_CAL_START` reader - Data Strobe Delay Calibration Start"]
-pub struct DS_DL_CAL_START_R(crate::FieldReader<bool>);
-impl DS_DL_CAL_START_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DS_DL_CAL_START_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DS_DL_CAL_START_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DS_DL_CAL_START_R = crate::BitReader<bool>;
 #[doc = "Field `DS_DL_CAL_START` writer - Data Strobe Delay Calibration Start"]
-pub struct DS_DL_CAL_START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DS_DL_CAL_START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
-        self.w
-    }
-}
+pub type DS_DL_CAL_START_W<'a> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, 15>;
 #[doc = "Field `DS_DL_CAL_DONE` reader - Data Strobe Delay Calibration Done"]
-pub struct DS_DL_CAL_DONE_R(crate::FieldReader<bool>);
-impl DS_DL_CAL_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DS_DL_CAL_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DS_DL_CAL_DONE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DS_DL_CAL_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `DS_DL` reader - Data Strobe Delay"]
-pub struct DS_DL_R(crate::FieldReader<u8>);
-impl DS_DL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DS_DL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DS_DL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DS_DL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DS_DL_SW_EN` reader - Sample Delay Software Enable"]
-pub struct DS_DL_SW_EN_R(crate::FieldReader<bool>);
-impl DS_DL_SW_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DS_DL_SW_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DS_DL_SW_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DS_DL_SW_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DS_DL_SW_EN` writer - Sample Delay Software Enable"]
-pub struct DS_DL_SW_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DS_DL_SW_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
-    }
-}
+pub type DS_DL_SW_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, 7>;
 #[doc = "Field `DS_DL_SW` reader - Data Storbe Delay Software"]
-pub struct DS_DL_SW_R(crate::FieldReader<u8>);
-impl DS_DL_SW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DS_DL_SW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DS_DL_SW_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DS_DL_SW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DS_DL_SW` writer - Data Storbe Delay Software"]
-pub struct DS_DL_SW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DS_DL_SW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type DS_DL_SW_W<'a> = crate::FieldWriter<'a, u32, SMHC_DS_DL_SPEC, u8, u8, 6, 0>;
 impl R {
     #[doc = "Bit 15 - Data Strobe Delay Calibration Start"]
     #[inline(always)]
@@ -196,17 +81,17 @@ impl W {
     #[doc = "Bit 15 - Data Strobe Delay Calibration Start"]
     #[inline(always)]
     pub fn ds_dl_cal_start(&mut self) -> DS_DL_CAL_START_W {
-        DS_DL_CAL_START_W { w: self }
+        DS_DL_CAL_START_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
     pub fn ds_dl_sw_en(&mut self) -> DS_DL_SW_EN_W {
-        DS_DL_SW_EN_W { w: self }
+        DS_DL_SW_EN_W::new(self)
     }
     #[doc = "Bits 0:5 - Data Storbe Delay Software"]
     #[inline(always)]
     pub fn ds_dl_sw(&mut self) -> DS_DL_SW_W {
-        DS_DL_SW_W { w: self }
+        DS_DL_SW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

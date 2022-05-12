@@ -50,13 +50,9 @@ impl From<IDMAC_ERR_STA_A> for u8 {
     }
 }
 #[doc = "Field `IDMAC_ERR_STA` reader - Error Bits"]
-pub struct IDMAC_ERR_STA_R(crate::FieldReader<u8>);
+pub type IDMAC_ERR_STA_R = crate::FieldReader<u8, IDMAC_ERR_STA_A>;
 impl IDMAC_ERR_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        IDMAC_ERR_STA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<IDMAC_ERR_STA_A> {
         match self.bits {
@@ -68,280 +64,42 @@ impl IDMAC_ERR_STA_R {
     #[doc = "Checks if the value of the field is `TRANSMISSION`"]
     #[inline(always)]
     pub fn is_transmission(&self) -> bool {
-        **self == IDMAC_ERR_STA_A::TRANSMISSION
+        *self == IDMAC_ERR_STA_A::TRANSMISSION
     }
     #[doc = "Checks if the value of the field is `RECEPTION`"]
     #[inline(always)]
     pub fn is_reception(&self) -> bool {
-        **self == IDMAC_ERR_STA_A::RECEPTION
-    }
-}
-impl core::ops::Deref for IDMAC_ERR_STA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IDMAC_ERR_STA_A::RECEPTION
     }
 }
 #[doc = "Field `ABN_INT_SUM` reader - Abnormal Interrupt Summary"]
-pub struct ABN_INT_SUM_R(crate::FieldReader<bool>);
-impl ABN_INT_SUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ABN_INT_SUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ABN_INT_SUM_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ABN_INT_SUM_R = crate::BitReader<bool>;
 #[doc = "Field `ABN_INT_SUM` writer - Abnormal Interrupt Summary"]
-pub struct ABN_INT_SUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ABN_INT_SUM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
-        self.w
-    }
-}
+pub type ABN_INT_SUM_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 9>;
 #[doc = "Field `NOR_INT_SUM` reader - Normal Interrupt Summary"]
-pub struct NOR_INT_SUM_R(crate::FieldReader<bool>);
-impl NOR_INT_SUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        NOR_INT_SUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for NOR_INT_SUM_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type NOR_INT_SUM_R = crate::BitReader<bool>;
 #[doc = "Field `NOR_INT_SUM` writer - Normal Interrupt Summary"]
-pub struct NOR_INT_SUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> NOR_INT_SUM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
-    }
-}
+pub type NOR_INT_SUM_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 8>;
 #[doc = "Field `ERR_FLAG_SUM` reader - Card Error Summary"]
-pub struct ERR_FLAG_SUM_R(crate::FieldReader<bool>);
-impl ERR_FLAG_SUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ERR_FLAG_SUM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERR_FLAG_SUM_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERR_FLAG_SUM_R = crate::BitReader<bool>;
 #[doc = "Field `ERR_FLAG_SUM` writer - Card Error Summary"]
-pub struct ERR_FLAG_SUM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR_FLAG_SUM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
-    }
-}
+pub type ERR_FLAG_SUM_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 5>;
 #[doc = "Field `DES_UNAVL_INT` reader - Descriptor Unavailable Interrupt"]
-pub struct DES_UNAVL_INT_R(crate::FieldReader<bool>);
-impl DES_UNAVL_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DES_UNAVL_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DES_UNAVL_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DES_UNAVL_INT_R = crate::BitReader<bool>;
 #[doc = "Field `DES_UNAVL_INT` writer - Descriptor Unavailable Interrupt"]
-pub struct DES_UNAVL_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DES_UNAVL_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
-    }
-}
+pub type DES_UNAVL_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 4>;
 #[doc = "Field `FATAL_BERR_INT` reader - Fatal Bus Error Interrupt"]
-pub struct FATAL_BERR_INT_R(crate::FieldReader<bool>);
-impl FATAL_BERR_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FATAL_BERR_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FATAL_BERR_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FATAL_BERR_INT_R = crate::BitReader<bool>;
 #[doc = "Field `FATAL_BERR_INT` writer - Fatal Bus Error Interrupt"]
-pub struct FATAL_BERR_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FATAL_BERR_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type FATAL_BERR_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 2>;
 #[doc = "Field `RX_INT` reader - Receive Interrupt"]
-pub struct RX_INT_R(crate::FieldReader<bool>);
-impl RX_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_INT_R = crate::BitReader<bool>;
 #[doc = "Field `RX_INT` writer - Receive Interrupt"]
-pub struct RX_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type RX_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 1>;
 #[doc = "Field `TX_INT` reader - Transmit Interrupt"]
-pub struct TX_INT_R(crate::FieldReader<bool>);
-impl TX_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_INT_R = crate::BitReader<bool>;
 #[doc = "Field `TX_INT` writer - Transmit Interrupt"]
-pub struct TX_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_INT_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type TX_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 0>;
 impl R {
     #[doc = "Bits 10:12 - Error Bits"]
     #[inline(always)]
@@ -388,37 +146,37 @@ impl W {
     #[doc = "Bit 9 - Abnormal Interrupt Summary"]
     #[inline(always)]
     pub fn abn_int_sum(&mut self) -> ABN_INT_SUM_W {
-        ABN_INT_SUM_W { w: self }
+        ABN_INT_SUM_W::new(self)
     }
     #[doc = "Bit 8 - Normal Interrupt Summary"]
     #[inline(always)]
     pub fn nor_int_sum(&mut self) -> NOR_INT_SUM_W {
-        NOR_INT_SUM_W { w: self }
+        NOR_INT_SUM_W::new(self)
     }
     #[doc = "Bit 5 - Card Error Summary"]
     #[inline(always)]
     pub fn err_flag_sum(&mut self) -> ERR_FLAG_SUM_W {
-        ERR_FLAG_SUM_W { w: self }
+        ERR_FLAG_SUM_W::new(self)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
     pub fn des_unavl_int(&mut self) -> DES_UNAVL_INT_W {
-        DES_UNAVL_INT_W { w: self }
+        DES_UNAVL_INT_W::new(self)
     }
     #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
     #[inline(always)]
     pub fn fatal_berr_int(&mut self) -> FATAL_BERR_INT_W {
-        FATAL_BERR_INT_W { w: self }
+        FATAL_BERR_INT_W::new(self)
     }
     #[doc = "Bit 1 - Receive Interrupt"]
     #[inline(always)]
     pub fn rx_int(&mut self) -> RX_INT_W {
-        RX_INT_W { w: self }
+        RX_INT_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
     pub fn tx_int(&mut self) -> TX_INT_W {
-        TX_INT_W { w: self }
+        TX_INT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

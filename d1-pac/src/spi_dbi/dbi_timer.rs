@@ -49,13 +49,9 @@ impl From<DBI_TM_EN_A> for bool {
     }
 }
 #[doc = "Field `dbi_tm_en` reader - DBI Timer Enable"]
-pub struct DBI_TM_EN_R(crate::FieldReader<bool>);
+pub type DBI_TM_EN_R = crate::BitReader<DBI_TM_EN_A>;
 impl DBI_TM_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBI_TM_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DBI_TM_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DBI_TM_EN_R {
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == DBI_TM_EN_A::ENABLE
+        *self == DBI_TM_EN_A::ENABLE
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == DBI_TM_EN_A::DISABLE
-    }
-}
-impl core::ops::Deref for DBI_TM_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DBI_TM_EN_A::DISABLE
     }
 }
 #[doc = "Field `dbi_tm_en` writer - DBI Timer Enable"]
-pub struct DBI_TM_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type DBI_TM_EN_W<'a> = crate::BitWriter<'a, u32, DBI_TIMER_SPEC, DBI_TM_EN_A, 31>;
 impl<'a> DBI_TM_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DBI_TM_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -101,50 +83,11 @@ impl<'a> DBI_TM_EN_W<'a> {
     pub fn disable(self) -> &'a mut W {
         self.variant(DBI_TM_EN_A::DISABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
-    }
 }
 #[doc = "Field `dbi_timer_value` reader - "]
-pub struct DBI_TIMER_VALUE_R(crate::FieldReader<u32>);
-impl DBI_TIMER_VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DBI_TIMER_VALUE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_TIMER_VALUE_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_TIMER_VALUE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `dbi_timer_value` writer - "]
-pub struct DBI_TIMER_VALUE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBI_TIMER_VALUE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff_ffff) | (value as u32 & 0x7fff_ffff);
-        self.w
-    }
-}
+pub type DBI_TIMER_VALUE_W<'a> = crate::FieldWriter<'a, u32, DBI_TIMER_SPEC, u32, u32, 31, 0>;
 impl R {
     #[doc = "Bit 31 - DBI Timer Enable"]
     #[inline(always)]
@@ -161,12 +104,12 @@ impl W {
     #[doc = "Bit 31 - DBI Timer Enable"]
     #[inline(always)]
     pub fn dbi_tm_en(&mut self) -> DBI_TM_EN_W {
-        DBI_TM_EN_W { w: self }
+        DBI_TM_EN_W::new(self)
     }
     #[doc = "Bits 0:30"]
     #[inline(always)]
     pub fn dbi_timer_value(&mut self) -> DBI_TIMER_VALUE_W {
-        DBI_TIMER_VALUE_W { w: self }
+        DBI_TIMER_VALUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

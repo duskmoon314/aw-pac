@@ -49,13 +49,9 @@ impl From<MAC_ADDR_CTL_A> for bool {
     }
 }
 #[doc = "Field `MAC_ADDR_CTL` reader - MAC Address Valid"]
-pub struct MAC_ADDR_CTL_R(crate::FieldReader<bool>);
+pub type MAC_ADDR_CTL_R = crate::BitReader<MAC_ADDR_CTL_A>;
 impl MAC_ADDR_CTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MAC_ADDR_CTL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MAC_ADDR_CTL_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MAC_ADDR_CTL_R {
     #[doc = "Checks if the value of the field is `INVALID`"]
     #[inline(always)]
     pub fn is_invalid(&self) -> bool {
-        **self == MAC_ADDR_CTL_A::INVALID
+        *self == MAC_ADDR_CTL_A::INVALID
     }
     #[doc = "Checks if the value of the field is `VALID`"]
     #[inline(always)]
     pub fn is_valid(&self) -> bool {
-        **self == MAC_ADDR_CTL_A::VALID
-    }
-}
-impl core::ops::Deref for MAC_ADDR_CTL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MAC_ADDR_CTL_A::VALID
     }
 }
 #[doc = "Field `MAC_ADDR_CTL` writer - MAC Address Valid"]
-pub struct MAC_ADDR_CTL_W<'a> {
-    w: &'a mut W,
-}
+pub type MAC_ADDR_CTL_W<'a> = crate::BitWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, MAC_ADDR_CTL_A, 31>;
 impl<'a> MAC_ADDR_CTL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MAC_ADDR_CTL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn invalid(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> MAC_ADDR_CTL_W<'a> {
     #[inline(always)]
     pub fn valid(self) -> &'a mut W {
         self.variant(MAC_ADDR_CTL_A::VALID)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
     }
 }
 #[doc = "MAC Address Type\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<MAC_ADDR_TYPE_A> for bool {
     }
 }
 #[doc = "Field `MAC_ADDR_TYPE` reader - MAC Address Type"]
-pub struct MAC_ADDR_TYPE_R(crate::FieldReader<bool>);
+pub type MAC_ADDR_TYPE_R = crate::BitReader<MAC_ADDR_TYPE_A>;
 impl MAC_ADDR_TYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MAC_ADDR_TYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MAC_ADDR_TYPE_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl MAC_ADDR_TYPE_R {
     #[doc = "Checks if the value of the field is `DST`"]
     #[inline(always)]
     pub fn is_dst(&self) -> bool {
-        **self == MAC_ADDR_TYPE_A::DST
+        *self == MAC_ADDR_TYPE_A::DST
     }
     #[doc = "Checks if the value of the field is `SRC`"]
     #[inline(always)]
     pub fn is_src(&self) -> bool {
-        **self == MAC_ADDR_TYPE_A::SRC
-    }
-}
-impl core::ops::Deref for MAC_ADDR_TYPE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MAC_ADDR_TYPE_A::SRC
     }
 }
 #[doc = "Field `MAC_ADDR_TYPE` writer - MAC Address Type"]
-pub struct MAC_ADDR_TYPE_W<'a> {
-    w: &'a mut W,
-}
+pub type MAC_ADDR_TYPE_W<'a> = crate::BitWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, MAC_ADDR_TYPE_A, 30>;
 impl<'a> MAC_ADDR_TYPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MAC_ADDR_TYPE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn dst(self) -> &'a mut W {
@@ -185,77 +133,15 @@ impl<'a> MAC_ADDR_TYPE_W<'a> {
     pub fn src(self) -> &'a mut W {
         self.variant(MAC_ADDR_TYPE_A::SRC)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
-        self.w
-    }
 }
 #[doc = "Field `MAC_ADDR_BYTE_CTL` reader - MAC Address Byte Control Mask"]
-pub struct MAC_ADDR_BYTE_CTL_R(crate::FieldReader<u8>);
-impl MAC_ADDR_BYTE_CTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MAC_ADDR_BYTE_CTL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAC_ADDR_BYTE_CTL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAC_ADDR_BYTE_CTL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MAC_ADDR_BYTE_CTL` writer - MAC Address Byte Control Mask"]
-pub struct MAC_ADDR_BYTE_CTL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAC_ADDR_BYTE_CTL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 24)) | ((value as u32 & 0x3f) << 24);
-        self.w
-    }
-}
+pub type MAC_ADDR_BYTE_CTL_W<'a> = crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u8, u8, 6, 24>;
 #[doc = "Field `MAC_ADDR_HIGH` reader - "]
-pub struct MAC_ADDR_HIGH_R(crate::FieldReader<u16>);
-impl MAC_ADDR_HIGH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        MAC_ADDR_HIGH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MAC_ADDR_HIGH_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MAC_ADDR_HIGH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAC_ADDR_HIGH` writer - "]
-pub struct MAC_ADDR_HIGH_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MAC_ADDR_HIGH_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xffff) | (value as u32 & 0xffff);
-        self.w
-    }
-}
+pub type MAC_ADDR_HIGH_W<'a> = crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u16, u16, 16, 0>;
 impl R {
     #[doc = "Bit 31 - MAC Address Valid"]
     #[inline(always)]
@@ -282,22 +168,22 @@ impl W {
     #[doc = "Bit 31 - MAC Address Valid"]
     #[inline(always)]
     pub fn mac_addr_ctl(&mut self) -> MAC_ADDR_CTL_W {
-        MAC_ADDR_CTL_W { w: self }
+        MAC_ADDR_CTL_W::new(self)
     }
     #[doc = "Bit 30 - MAC Address Type"]
     #[inline(always)]
     pub fn mac_addr_type(&mut self) -> MAC_ADDR_TYPE_W {
-        MAC_ADDR_TYPE_W { w: self }
+        MAC_ADDR_TYPE_W::new(self)
     }
     #[doc = "Bits 24:29 - MAC Address Byte Control Mask"]
     #[inline(always)]
     pub fn mac_addr_byte_ctl(&mut self) -> MAC_ADDR_BYTE_CTL_W {
-        MAC_ADDR_BYTE_CTL_W { w: self }
+        MAC_ADDR_BYTE_CTL_W::new(self)
     }
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn mac_addr_high(&mut self) -> MAC_ADDR_HIGH_W {
-        MAC_ADDR_HIGH_W { w: self }
+        MAC_ADDR_HIGH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

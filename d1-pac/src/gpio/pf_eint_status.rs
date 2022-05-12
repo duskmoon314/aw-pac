@@ -49,13 +49,9 @@ impl From<EINT_STATUS_A> for bool {
     }
 }
 #[doc = "Fields `EINT(0-6)_STATUS` reader - External INT Pending Bit"]
-pub struct EINT_STATUS_R(crate::FieldReader<bool>);
+pub type EINT_STATUS_R = crate::BitReader<EINT_STATUS_A>;
 impl EINT_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EINT_STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EINT_STATUS_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl EINT_STATUS_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == EINT_STATUS_A::NO_PENDING
+        *self == EINT_STATUS_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == EINT_STATUS_A::PENDING
+        *self == EINT_STATUS_A::PENDING
     }
 }
-impl core::ops::Deref for EINT_STATUS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `EINT(0-6)_STATUS` const generic writer - External INT Pending Bit"]
-pub struct EINT_STATUS_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> EINT_STATUS_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EINT_STATUS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Fields `EINT(0-6)_STATUS` writer - External INT Pending Bit"]
+pub type EINT_STATUS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PF_EINT_STATUS_SPEC, EINT_STATUS_A, O>;
+impl<'a, const O: u8> EINT_STATUS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -101,27 +84,11 @@ impl<'a, const O: usize> EINT_STATUS_W<'a, O> {
     pub fn pending(self) -> &'a mut W {
         self.variant(EINT_STATUS_A::PENDING)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "External INT Pending Bit"]
     #[inline(always)]
-    pub unsafe fn eint_status(&self, n: usize) -> EINT_STATUS_R {
+    pub unsafe fn eint_status(&self, n: u8) -> EINT_STATUS_R {
         EINT_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - External INT Pending Bit"]
@@ -163,43 +130,43 @@ impl R {
 impl W {
     #[doc = "External INT Pending Bit"]
     #[inline(always)]
-    pub unsafe fn eint_status<const O: usize>(&mut self) -> EINT_STATUS_W<O> {
-        EINT_STATUS_W { w: self }
+    pub unsafe fn eint_status<const O: u8>(&mut self) -> EINT_STATUS_W<O> {
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 0 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint0_status(&mut self) -> EINT_STATUS_W<0> {
-        EINT_STATUS_W { w: self }
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 1 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint1_status(&mut self) -> EINT_STATUS_W<1> {
-        EINT_STATUS_W { w: self }
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 2 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint2_status(&mut self) -> EINT_STATUS_W<2> {
-        EINT_STATUS_W { w: self }
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 3 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint3_status(&mut self) -> EINT_STATUS_W<3> {
-        EINT_STATUS_W { w: self }
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 4 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint4_status(&mut self) -> EINT_STATUS_W<4> {
-        EINT_STATUS_W { w: self }
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 5 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint5_status(&mut self) -> EINT_STATUS_W<5> {
-        EINT_STATUS_W { w: self }
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 6 - External INT Pending Bit"]
     #[inline(always)]
     pub fn eint6_status(&mut self) -> EINT_STATUS_W<6> {
-        EINT_STATUS_W { w: self }
+        EINT_STATUS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

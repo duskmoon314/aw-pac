@@ -35,32 +35,9 @@ impl From<crate::W<CE_TDA_SPEC>> for W {
     }
 }
 #[doc = "Field `TASK` reader - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
-pub struct TASK_R(crate::FieldReader<u32>);
-impl TASK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TASK_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TASK_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TASK_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TASK` writer - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
-pub struct TASK_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TASK_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = value;
-        self.w
-    }
-}
+pub type TASK_W<'a> = crate::FieldWriter<'a, u32, CE_TDA_SPEC, u32, u32, 32, 0>;
 impl R {
     #[doc = "Bits 0:31 - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:31 - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
     #[inline(always)]
     pub fn task(&mut self) -> TASK_W {
-        TASK_W { w: self }
+        TASK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

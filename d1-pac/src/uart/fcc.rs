@@ -35,20 +35,7 @@ impl From<crate::W<FCC_SPEC>> for W {
     }
 }
 #[doc = "Field `fifo_depth` reader - "]
-pub struct FIFO_DEPTH_R(crate::FieldReader<u32>);
-impl FIFO_DEPTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        FIFO_DEPTH_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFO_DEPTH_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFO_DEPTH_R = crate::FieldReader<u32, u32>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_FIFO_CLOCK_MODE_A {
@@ -64,13 +51,9 @@ impl From<RX_FIFO_CLOCK_MODE_A> for bool {
     }
 }
 #[doc = "Field `rx_fifo_clock_mode` reader - "]
-pub struct RX_FIFO_CLOCK_MODE_R(crate::FieldReader<bool>);
+pub type RX_FIFO_CLOCK_MODE_R = crate::BitReader<RX_FIFO_CLOCK_MODE_A>;
 impl RX_FIFO_CLOCK_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_FIFO_CLOCK_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_FIFO_CLOCK_MODE_A {
         match self.bits {
@@ -81,31 +64,17 @@ impl RX_FIFO_CLOCK_MODE_R {
     #[doc = "Checks if the value of the field is `WR_APB`"]
     #[inline(always)]
     pub fn is_wr_apb(&self) -> bool {
-        **self == RX_FIFO_CLOCK_MODE_A::WR_APB
+        *self == RX_FIFO_CLOCK_MODE_A::WR_APB
     }
     #[doc = "Checks if the value of the field is `W_APB_R_AHB`"]
     #[inline(always)]
     pub fn is_w_apb_r_ahb(&self) -> bool {
-        **self == RX_FIFO_CLOCK_MODE_A::W_APB_R_AHB
-    }
-}
-impl core::ops::Deref for RX_FIFO_CLOCK_MODE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_FIFO_CLOCK_MODE_A::W_APB_R_AHB
     }
 }
 #[doc = "Field `rx_fifo_clock_mode` writer - "]
-pub struct RX_FIFO_CLOCK_MODE_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_FIFO_CLOCK_MODE_W<'a> = crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_MODE_A, 2>;
 impl<'a> RX_FIFO_CLOCK_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_FIFO_CLOCK_MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Sync mode, writing/reading clocks use apb clock"]
     #[inline(always)]
     pub fn wr_apb(self) -> &'a mut W {
@@ -115,22 +84,6 @@ impl<'a> RX_FIFO_CLOCK_MODE_W<'a> {
     #[inline(always)]
     pub fn w_apb_r_ahb(self) -> &'a mut W {
         self.variant(RX_FIFO_CLOCK_MODE_A::W_APB_R_AHB)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -148,13 +101,9 @@ impl From<TX_FIFO_CLOCK_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `tx_fifo_clock_enable` reader - "]
-pub struct TX_FIFO_CLOCK_ENABLE_R(crate::FieldReader<bool>);
+pub type TX_FIFO_CLOCK_ENABLE_R = crate::BitReader<TX_FIFO_CLOCK_ENABLE_A>;
 impl TX_FIFO_CLOCK_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_FIFO_CLOCK_ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_FIFO_CLOCK_ENABLE_A {
         match self.bits {
@@ -165,31 +114,18 @@ impl TX_FIFO_CLOCK_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_FIFO_CLOCK_ENABLE_A::DISABLE
+        *self == TX_FIFO_CLOCK_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_FIFO_CLOCK_ENABLE_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_FIFO_CLOCK_ENABLE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_FIFO_CLOCK_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `tx_fifo_clock_enable` writer - "]
-pub struct TX_FIFO_CLOCK_ENABLE_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_FIFO_CLOCK_ENABLE_W<'a> =
+    crate::BitWriter<'a, u32, FCC_SPEC, TX_FIFO_CLOCK_ENABLE_A, 1>;
 impl<'a> TX_FIFO_CLOCK_ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_FIFO_CLOCK_ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -199,22 +135,6 @@ impl<'a> TX_FIFO_CLOCK_ENABLE_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_FIFO_CLOCK_ENABLE_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -232,13 +152,9 @@ impl From<RX_FIFO_CLOCK_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `rx_fifo_clock_enable` reader - "]
-pub struct RX_FIFO_CLOCK_ENABLE_R(crate::FieldReader<bool>);
+pub type RX_FIFO_CLOCK_ENABLE_R = crate::BitReader<RX_FIFO_CLOCK_ENABLE_A>;
 impl RX_FIFO_CLOCK_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_FIFO_CLOCK_ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_FIFO_CLOCK_ENABLE_A {
         match self.bits {
@@ -249,31 +165,18 @@ impl RX_FIFO_CLOCK_ENABLE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_FIFO_CLOCK_ENABLE_A::DISABLE
+        *self == RX_FIFO_CLOCK_ENABLE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_FIFO_CLOCK_ENABLE_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_FIFO_CLOCK_ENABLE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_FIFO_CLOCK_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `rx_fifo_clock_enable` writer - "]
-pub struct RX_FIFO_CLOCK_ENABLE_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_FIFO_CLOCK_ENABLE_W<'a> =
+    crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_ENABLE_A, 0>;
 impl<'a> RX_FIFO_CLOCK_ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_FIFO_CLOCK_ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -283,22 +186,6 @@ impl<'a> RX_FIFO_CLOCK_ENABLE_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_FIFO_CLOCK_ENABLE_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -327,17 +214,17 @@ impl W {
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn rx_fifo_clock_mode(&mut self) -> RX_FIFO_CLOCK_MODE_W {
-        RX_FIFO_CLOCK_MODE_W { w: self }
+        RX_FIFO_CLOCK_MODE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn tx_fifo_clock_enable(&mut self) -> TX_FIFO_CLOCK_ENABLE_W {
-        TX_FIFO_CLOCK_ENABLE_W { w: self }
+        TX_FIFO_CLOCK_ENABLE_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn rx_fifo_clock_enable(&mut self) -> RX_FIFO_CLOCK_ENABLE_W {
-        RX_FIFO_CLOCK_ENABLE_W { w: self }
+        RX_FIFO_CLOCK_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,13 +49,9 @@ impl From<CH_LOW_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Fields `CH(0-1)_LOW_IRQ_EN` reader - Channel Voltage Low Available Interrupt Enable"]
-pub struct CH_LOW_IRQ_EN_R(crate::FieldReader<bool>);
+pub type CH_LOW_IRQ_EN_R = crate::BitReader<CH_LOW_IRQ_EN_A>;
 impl CH_LOW_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH_LOW_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH_LOW_IRQ_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl CH_LOW_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == CH_LOW_IRQ_EN_A::DISABLE
+        *self == CH_LOW_IRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == CH_LOW_IRQ_EN_A::ENABLE
+        *self == CH_LOW_IRQ_EN_A::ENABLE
     }
 }
-impl core::ops::Deref for CH_LOW_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `CH(0-1)_LOW_IRQ_EN` const generic writer - Channel Voltage Low Available Interrupt Enable"]
-pub struct CH_LOW_IRQ_EN_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> CH_LOW_IRQ_EN_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH_LOW_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Fields `CH(0-1)_LOW_IRQ_EN` writer - Channel Voltage Low Available Interrupt Enable"]
+pub type CH_LOW_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, GP_DATAL_INTC_SPEC, CH_LOW_IRQ_EN_A, O>;
+impl<'a, const O: u8> CH_LOW_IRQ_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -101,27 +84,11 @@ impl<'a, const O: usize> CH_LOW_IRQ_EN_W<'a, O> {
     pub fn enable(self) -> &'a mut W {
         self.variant(CH_LOW_IRQ_EN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "Channel Voltage Low Available Interrupt Enable"]
     #[inline(always)]
-    pub unsafe fn ch_low_irq_en(&self, n: usize) -> CH_LOW_IRQ_EN_R {
+    pub unsafe fn ch_low_irq_en(&self, n: u8) -> CH_LOW_IRQ_EN_R {
         CH_LOW_IRQ_EN_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Channel Voltage Low Available Interrupt Enable"]
@@ -138,18 +105,18 @@ impl R {
 impl W {
     #[doc = "Channel Voltage Low Available Interrupt Enable"]
     #[inline(always)]
-    pub unsafe fn ch_low_irq_en<const O: usize>(&mut self) -> CH_LOW_IRQ_EN_W<O> {
-        CH_LOW_IRQ_EN_W { w: self }
+    pub unsafe fn ch_low_irq_en<const O: u8>(&mut self) -> CH_LOW_IRQ_EN_W<O> {
+        CH_LOW_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - Channel Voltage Low Available Interrupt Enable"]
     #[inline(always)]
     pub fn ch0_low_irq_en(&mut self) -> CH_LOW_IRQ_EN_W<0> {
-        CH_LOW_IRQ_EN_W { w: self }
+        CH_LOW_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - Channel Voltage Low Available Interrupt Enable"]
     #[inline(always)]
     pub fn ch1_low_irq_en(&mut self) -> CH_LOW_IRQ_EN_W<1> {
-        CH_LOW_IRQ_EN_W { w: self }
+        CH_LOW_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,96 +35,17 @@ impl From<crate::W<GP_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `ADC_FIRST_DLY` reader - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
-pub struct ADC_FIRST_DLY_R(crate::FieldReader<u8>);
-impl ADC_FIRST_DLY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ADC_FIRST_DLY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC_FIRST_DLY_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC_FIRST_DLY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ADC_FIRST_DLY` writer - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
-pub struct ADC_FIRST_DLY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC_FIRST_DLY_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type ADC_FIRST_DLY_W<'a> = crate::FieldWriter<'a, u32, GP_CTRL_SPEC, u8, u8, 8, 24>;
 #[doc = "Field `ADC_AUTOCALI_EN` reader - ADC Auto Calibration"]
-pub struct ADC_AUTOCALI_EN_R(crate::FieldReader<bool>);
-impl ADC_AUTOCALI_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC_AUTOCALI_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC_AUTOCALI_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC_AUTOCALI_EN_R = crate::BitReader<bool>;
 #[doc = "Field `ADC_AUTOCALI_EN` writer - ADC Auto Calibration"]
-pub struct ADC_AUTOCALI_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC_AUTOCALI_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 23)) | ((value as u32 & 1) << 23);
-        self.w
-    }
-}
+pub type ADC_AUTOCALI_EN_W<'a> = crate::BitWriter<'a, u32, GP_CTRL_SPEC, bool, 23>;
 #[doc = "Field `ADC_OP_BIAS` reader - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
-pub struct ADC_OP_BIAS_R(crate::FieldReader<u8>);
-impl ADC_OP_BIAS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ADC_OP_BIAS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ADC_OP_BIAS_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ADC_OP_BIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ADC_OP_BIAS` writer - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
-pub struct ADC_OP_BIAS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ADC_OP_BIAS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 20)) | ((value as u32 & 3) << 20);
-        self.w
-    }
-}
+pub type ADC_OP_BIAS_W<'a> = crate::FieldWriter<'a, u32, GP_CTRL_SPEC, u8, u8, 2, 20>;
 #[doc = "GPADC Work Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -143,13 +64,9 @@ impl From<GPADC_WORK_MODE_A> for u8 {
     }
 }
 #[doc = "Field `GPADC_WORK_MODE` reader - GPADC Work Mode"]
-pub struct GPADC_WORK_MODE_R(crate::FieldReader<u8>);
+pub type GPADC_WORK_MODE_R = crate::FieldReader<u8, GPADC_WORK_MODE_A>;
 impl GPADC_WORK_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        GPADC_WORK_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<GPADC_WORK_MODE_A> {
         match self.bits {
@@ -162,36 +79,23 @@ impl GPADC_WORK_MODE_R {
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == GPADC_WORK_MODE_A::SINGLE
+        *self == GPADC_WORK_MODE_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `CONTINUOUS`"]
     #[inline(always)]
     pub fn is_continuous(&self) -> bool {
-        **self == GPADC_WORK_MODE_A::CONTINUOUS
+        *self == GPADC_WORK_MODE_A::CONTINUOUS
     }
     #[doc = "Checks if the value of the field is `BURST`"]
     #[inline(always)]
     pub fn is_burst(&self) -> bool {
-        **self == GPADC_WORK_MODE_A::BURST
-    }
-}
-impl core::ops::Deref for GPADC_WORK_MODE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GPADC_WORK_MODE_A::BURST
     }
 }
 #[doc = "Field `GPADC_WORK_MODE` writer - GPADC Work Mode"]
-pub struct GPADC_WORK_MODE_W<'a> {
-    w: &'a mut W,
-}
+pub type GPADC_WORK_MODE_W<'a> =
+    crate::FieldWriter<'a, u32, GP_CTRL_SPEC, u8, GPADC_WORK_MODE_A, 2, 18>;
 impl<'a> GPADC_WORK_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GPADC_WORK_MODE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "Single conversion mode"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
@@ -207,12 +111,6 @@ impl<'a> GPADC_WORK_MODE_W<'a> {
     pub fn burst(self) -> &'a mut W {
         self.variant(GPADC_WORK_MODE_A::BURST)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 18)) | ((value as u32 & 3) << 18);
-        self.w
-    }
 }
 #[doc = "ADC Calibration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -227,13 +125,9 @@ impl From<ADC_CALI_EN_A> for bool {
     }
 }
 #[doc = "Field `ADC_CALI_EN` reader - ADC Calibration"]
-pub struct ADC_CALI_EN_R(crate::FieldReader<bool>);
+pub type ADC_CALI_EN_R = crate::BitReader<ADC_CALI_EN_A>;
 impl ADC_CALI_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC_CALI_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<ADC_CALI_EN_A> {
         match self.bits {
@@ -244,46 +138,16 @@ impl ADC_CALI_EN_R {
     #[doc = "Checks if the value of the field is `START`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
-        **self == ADC_CALI_EN_A::START
-    }
-}
-impl core::ops::Deref for ADC_CALI_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC_CALI_EN_A::START
     }
 }
 #[doc = "Field `ADC_CALI_EN` writer - ADC Calibration"]
-pub struct ADC_CALI_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC_CALI_EN_W<'a> = crate::BitWriter<'a, u32, GP_CTRL_SPEC, ADC_CALI_EN_A, 17>;
 impl<'a> ADC_CALI_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC_CALI_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Start Calibration, it is cleared to 0 after calibration"]
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
         self.variant(ADC_CALI_EN_A::START)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
-        self.w
     }
 }
 #[doc = "ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc.\n\nValue on reset: 0"]
@@ -301,13 +165,9 @@ impl From<ADC_EN_A> for bool {
     }
 }
 #[doc = "Field `ADC_EN` reader - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
-pub struct ADC_EN_R(crate::FieldReader<bool>);
+pub type ADC_EN_R = crate::BitReader<ADC_EN_A>;
 impl ADC_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC_EN_A {
         match self.bits {
@@ -318,31 +178,17 @@ impl ADC_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == ADC_EN_A::DISABLE
+        *self == ADC_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == ADC_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for ADC_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC_EN_A::ENABLE
     }
 }
 #[doc = "Field `ADC_EN` writer - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
-pub struct ADC_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC_EN_W<'a> = crate::BitWriter<'a, u32, GP_CTRL_SPEC, ADC_EN_A, 16>;
 impl<'a> ADC_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -352,22 +198,6 @@ impl<'a> ADC_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(ADC_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
     }
 }
 impl R {
@@ -406,32 +236,32 @@ impl W {
     #[doc = "Bits 24:31 - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
     #[inline(always)]
     pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W {
-        ADC_FIRST_DLY_W { w: self }
+        ADC_FIRST_DLY_W::new(self)
     }
     #[doc = "Bit 23 - ADC Auto Calibration"]
     #[inline(always)]
     pub fn adc_autocali_en(&mut self) -> ADC_AUTOCALI_EN_W {
-        ADC_AUTOCALI_EN_W { w: self }
+        ADC_AUTOCALI_EN_W::new(self)
     }
     #[doc = "Bits 20:21 - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
     #[inline(always)]
     pub fn adc_op_bias(&mut self) -> ADC_OP_BIAS_W {
-        ADC_OP_BIAS_W { w: self }
+        ADC_OP_BIAS_W::new(self)
     }
     #[doc = "Bits 18:19 - GPADC Work Mode"]
     #[inline(always)]
     pub fn gpadc_work_mode(&mut self) -> GPADC_WORK_MODE_W {
-        GPADC_WORK_MODE_W { w: self }
+        GPADC_WORK_MODE_W::new(self)
     }
     #[doc = "Bit 17 - ADC Calibration"]
     #[inline(always)]
     pub fn adc_cali_en(&mut self) -> ADC_CALI_EN_W {
-        ADC_CALI_EN_W { w: self }
+        ADC_CALI_EN_W::new(self)
     }
     #[doc = "Bit 16 - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
     #[inline(always)]
     pub fn adc_en(&mut self) -> ADC_EN_W {
-        ADC_EN_W { w: self }
+        ADC_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

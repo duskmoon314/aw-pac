@@ -49,13 +49,9 @@ impl From<TMR_MODE_A> for bool {
     }
 }
 #[doc = "Field `tmr_mode` reader - "]
-pub struct TMR_MODE_R(crate::FieldReader<bool>);
+pub type TMR_MODE_R = crate::BitReader<TMR_MODE_A>;
 impl TMR_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TMR_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TMR_MODE_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl TMR_MODE_R {
     #[doc = "Checks if the value of the field is `PERIODIC`"]
     #[inline(always)]
     pub fn is_periodic(&self) -> bool {
-        **self == TMR_MODE_A::PERIODIC
+        *self == TMR_MODE_A::PERIODIC
     }
     #[doc = "Checks if the value of the field is `SINGLE_COUNTING`"]
     #[inline(always)]
     pub fn is_single_counting(&self) -> bool {
-        **self == TMR_MODE_A::SINGLE_COUNTING
-    }
-}
-impl core::ops::Deref for TMR_MODE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TMR_MODE_A::SINGLE_COUNTING
     }
 }
 #[doc = "Field `tmr_mode` writer - "]
-pub struct TMR_MODE_W<'a> {
-    w: &'a mut W,
-}
+pub type TMR_MODE_W<'a> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_MODE_A, 7>;
 impl<'a> TMR_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TMR_MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn periodic(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> TMR_MODE_W<'a> {
     #[inline(always)]
     pub fn single_counting(self) -> &'a mut W {
         self.variant(TMR_MODE_A::SINGLE_COUNTING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -146,13 +112,9 @@ impl From<TMR_CLK_PRES_A> for u8 {
     }
 }
 #[doc = "Field `tmr_clk_pres` reader - "]
-pub struct TMR_CLK_PRES_R(crate::FieldReader<u8>);
+pub type TMR_CLK_PRES_R = crate::FieldReader<u8, TMR_CLK_PRES_A>;
 impl TMR_CLK_PRES_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TMR_CLK_PRES_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TMR_CLK_PRES_A {
         match self.bits {
@@ -170,61 +132,48 @@ impl TMR_CLK_PRES_R {
     #[doc = "Checks if the value of the field is `P1`"]
     #[inline(always)]
     pub fn is_p1(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P1
+        *self == TMR_CLK_PRES_A::P1
     }
     #[doc = "Checks if the value of the field is `P2`"]
     #[inline(always)]
     pub fn is_p2(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P2
+        *self == TMR_CLK_PRES_A::P2
     }
     #[doc = "Checks if the value of the field is `P4`"]
     #[inline(always)]
     pub fn is_p4(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P4
+        *self == TMR_CLK_PRES_A::P4
     }
     #[doc = "Checks if the value of the field is `P8`"]
     #[inline(always)]
     pub fn is_p8(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P8
+        *self == TMR_CLK_PRES_A::P8
     }
     #[doc = "Checks if the value of the field is `P16`"]
     #[inline(always)]
     pub fn is_p16(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P16
+        *self == TMR_CLK_PRES_A::P16
     }
     #[doc = "Checks if the value of the field is `P32`"]
     #[inline(always)]
     pub fn is_p32(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P32
+        *self == TMR_CLK_PRES_A::P32
     }
     #[doc = "Checks if the value of the field is `P64`"]
     #[inline(always)]
     pub fn is_p64(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P64
+        *self == TMR_CLK_PRES_A::P64
     }
     #[doc = "Checks if the value of the field is `P128`"]
     #[inline(always)]
     pub fn is_p128(&self) -> bool {
-        **self == TMR_CLK_PRES_A::P128
-    }
-}
-impl core::ops::Deref for TMR_CLK_PRES_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TMR_CLK_PRES_A::P128
     }
 }
 #[doc = "Field `tmr_clk_pres` writer - "]
-pub struct TMR_CLK_PRES_W<'a> {
-    w: &'a mut W,
-}
+pub type TMR_CLK_PRES_W<'a> =
+    crate::FieldWriterSafe<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_PRES_A, 3, 4>;
 impl<'a> TMR_CLK_PRES_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TMR_CLK_PRES_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn p1(self) -> &'a mut W {
@@ -265,12 +214,6 @@ impl<'a> TMR_CLK_PRES_W<'a> {
     pub fn p128(self) -> &'a mut W {
         self.variant(TMR_CLK_PRES_A::P128)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(7 << 4)) | ((value as u32 & 7) << 4);
-        self.w
-    }
 }
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -288,13 +231,9 @@ impl From<TMR_CLK_SRC_A> for u8 {
     }
 }
 #[doc = "Field `tmr_clk_src` reader - "]
-pub struct TMR_CLK_SRC_R(crate::FieldReader<u8>);
+pub type TMR_CLK_SRC_R = crate::FieldReader<u8, TMR_CLK_SRC_A>;
 impl TMR_CLK_SRC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TMR_CLK_SRC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TMR_CLK_SRC_A> {
         match self.bits {
@@ -306,31 +245,17 @@ impl TMR_CLK_SRC_R {
     #[doc = "Checks if the value of the field is `LOSC`"]
     #[inline(always)]
     pub fn is_losc(&self) -> bool {
-        **self == TMR_CLK_SRC_A::LOSC
+        *self == TMR_CLK_SRC_A::LOSC
     }
     #[doc = "Checks if the value of the field is `OSC24_M`"]
     #[inline(always)]
     pub fn is_osc24_m(&self) -> bool {
-        **self == TMR_CLK_SRC_A::OSC24_M
-    }
-}
-impl core::ops::Deref for TMR_CLK_SRC_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TMR_CLK_SRC_A::OSC24_M
     }
 }
 #[doc = "Field `tmr_clk_src` writer - "]
-pub struct TMR_CLK_SRC_W<'a> {
-    w: &'a mut W,
-}
+pub type TMR_CLK_SRC_W<'a> = crate::FieldWriter<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_SRC_A, 2, 2>;
 impl<'a> TMR_CLK_SRC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TMR_CLK_SRC_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn losc(self) -> &'a mut W {
@@ -340,12 +265,6 @@ impl<'a> TMR_CLK_SRC_W<'a> {
     #[inline(always)]
     pub fn osc24_m(self) -> &'a mut W {
         self.variant(TMR_CLK_SRC_A::OSC24_M)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 2)) | ((value as u32 & 3) << 2);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -363,13 +282,9 @@ impl From<TMR_RELOAD_A> for bool {
     }
 }
 #[doc = "Field `tmr_reload` reader - "]
-pub struct TMR_RELOAD_R(crate::FieldReader<bool>);
+pub type TMR_RELOAD_R = crate::BitReader<TMR_RELOAD_A>;
 impl TMR_RELOAD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TMR_RELOAD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TMR_RELOAD_A {
         match self.bits {
@@ -380,31 +295,17 @@ impl TMR_RELOAD_R {
     #[doc = "Checks if the value of the field is `NO_EFFECT`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
-        **self == TMR_RELOAD_A::NO_EFFECT
+        *self == TMR_RELOAD_A::NO_EFFECT
     }
     #[doc = "Checks if the value of the field is `RELOAD`"]
     #[inline(always)]
     pub fn is_reload(&self) -> bool {
-        **self == TMR_RELOAD_A::RELOAD
-    }
-}
-impl core::ops::Deref for TMR_RELOAD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TMR_RELOAD_A::RELOAD
     }
 }
 #[doc = "Field `tmr_reload` writer - "]
-pub struct TMR_RELOAD_W<'a> {
-    w: &'a mut W,
-}
+pub type TMR_RELOAD_W<'a> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_RELOAD_A, 1>;
 impl<'a> TMR_RELOAD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TMR_RELOAD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -414,22 +315,6 @@ impl<'a> TMR_RELOAD_W<'a> {
     #[inline(always)]
     pub fn reload(self) -> &'a mut W {
         self.variant(TMR_RELOAD_A::RELOAD)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -447,13 +332,9 @@ impl From<TMR_EN_A> for bool {
     }
 }
 #[doc = "Field `tmr_en` reader - "]
-pub struct TMR_EN_R(crate::FieldReader<bool>);
+pub type TMR_EN_R = crate::BitReader<TMR_EN_A>;
 impl TMR_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TMR_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TMR_EN_A {
         match self.bits {
@@ -464,31 +345,17 @@ impl TMR_EN_R {
     #[doc = "Checks if the value of the field is `STOP_PAUSE`"]
     #[inline(always)]
     pub fn is_stop_pause(&self) -> bool {
-        **self == TMR_EN_A::STOP_PAUSE
+        *self == TMR_EN_A::STOP_PAUSE
     }
     #[doc = "Checks if the value of the field is `START`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
-        **self == TMR_EN_A::START
-    }
-}
-impl core::ops::Deref for TMR_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TMR_EN_A::START
     }
 }
 #[doc = "Field `tmr_en` writer - "]
-pub struct TMR_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TMR_EN_W<'a> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_EN_A, 0>;
 impl<'a> TMR_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TMR_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn stop_pause(self) -> &'a mut W {
@@ -498,22 +365,6 @@ impl<'a> TMR_EN_W<'a> {
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
         self.variant(TMR_EN_A::START)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -547,27 +398,27 @@ impl W {
     #[doc = "Bit 7"]
     #[inline(always)]
     pub fn tmr_mode(&mut self) -> TMR_MODE_W {
-        TMR_MODE_W { w: self }
+        TMR_MODE_W::new(self)
     }
     #[doc = "Bits 4:6"]
     #[inline(always)]
     pub fn tmr_clk_pres(&mut self) -> TMR_CLK_PRES_W {
-        TMR_CLK_PRES_W { w: self }
+        TMR_CLK_PRES_W::new(self)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
     pub fn tmr_clk_src(&mut self) -> TMR_CLK_SRC_W {
-        TMR_CLK_SRC_W { w: self }
+        TMR_CLK_SRC_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn tmr_reload(&mut self) -> TMR_RELOAD_W {
-        TMR_RELOAD_W { w: self }
+        TMR_RELOAD_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn tmr_en(&mut self) -> TMR_EN_W {
-        TMR_EN_W { w: self }
+        TMR_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

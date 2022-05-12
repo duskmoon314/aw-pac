@@ -49,13 +49,9 @@ impl From<DMA_HLAF_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Fields `DMA(0-7)_HLAF_IRQ_EN` reader - Enable the half package interrupt of DMA"]
-pub struct DMA_HLAF_IRQ_EN_R(crate::FieldReader<bool>);
+pub type DMA_HLAF_IRQ_EN_R = crate::BitReader<DMA_HLAF_IRQ_EN_A>;
 impl DMA_HLAF_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_HLAF_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_HLAF_IRQ_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl DMA_HLAF_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DMA_HLAF_IRQ_EN_A::DISABLED
+        *self == DMA_HLAF_IRQ_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DMA_HLAF_IRQ_EN_A::ENABLED
+        *self == DMA_HLAF_IRQ_EN_A::ENABLED
     }
 }
-impl core::ops::Deref for DMA_HLAF_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `DMA(0-7)_HLAF_IRQ_EN` const generic writer - Enable the half package interrupt of DMA"]
-pub struct DMA_HLAF_IRQ_EN_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> DMA_HLAF_IRQ_EN_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMA_HLAF_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Fields `DMA(0-7)_HLAF_IRQ_EN` writer - Enable the half package interrupt of DMA"]
+pub type DMA_HLAF_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_IRQ_EN_REG0_SPEC, DMA_HLAF_IRQ_EN_A, O>;
+impl<'a, const O: u8> DMA_HLAF_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a, const O: usize> DMA_HLAF_IRQ_EN_W<'a, O> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(DMA_HLAF_IRQ_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
     }
 }
 #[doc = "Enable the package end interrupt of DMA\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<DMA_PKG_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Fields `DMA(0-7)_PKG_IRQ_EN` reader - Enable the package end interrupt of DMA"]
-pub struct DMA_PKG_IRQ_EN_R(crate::FieldReader<bool>);
+pub type DMA_PKG_IRQ_EN_R = crate::BitReader<DMA_PKG_IRQ_EN_A>;
 impl DMA_PKG_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_PKG_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_PKG_IRQ_EN_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl DMA_PKG_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DMA_PKG_IRQ_EN_A::DISABLED
+        *self == DMA_PKG_IRQ_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DMA_PKG_IRQ_EN_A::ENABLED
+        *self == DMA_PKG_IRQ_EN_A::ENABLED
     }
 }
-impl core::ops::Deref for DMA_PKG_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `DMA(0-7)_PKG_IRQ_EN` const generic writer - Enable the package end interrupt of DMA"]
-pub struct DMA_PKG_IRQ_EN_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> DMA_PKG_IRQ_EN_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMA_PKG_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Fields `DMA(0-7)_PKG_IRQ_EN` writer - Enable the package end interrupt of DMA"]
+pub type DMA_PKG_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_IRQ_EN_REG0_SPEC, DMA_PKG_IRQ_EN_A, O>;
+impl<'a, const O: u8> DMA_PKG_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -184,22 +134,6 @@ impl<'a, const O: usize> DMA_PKG_IRQ_EN_W<'a, O> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(DMA_PKG_IRQ_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
     }
 }
 #[doc = "Enable the queue end interrupt of DMA\n\nValue on reset: 0"]
@@ -217,13 +151,9 @@ impl From<DMA_QUEUE_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Fields `DMA(0-7)_QUEUE_IRQ_EN` reader - Enable the queue end interrupt of DMA"]
-pub struct DMA_QUEUE_IRQ_EN_R(crate::FieldReader<bool>);
+pub type DMA_QUEUE_IRQ_EN_R = crate::BitReader<DMA_QUEUE_IRQ_EN_A>;
 impl DMA_QUEUE_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_QUEUE_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_QUEUE_IRQ_EN_A {
         match self.bits {
@@ -234,31 +164,18 @@ impl DMA_QUEUE_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DMA_QUEUE_IRQ_EN_A::DISABLED
+        *self == DMA_QUEUE_IRQ_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DMA_QUEUE_IRQ_EN_A::ENABLED
+        *self == DMA_QUEUE_IRQ_EN_A::ENABLED
     }
 }
-impl core::ops::Deref for DMA_QUEUE_IRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `DMA(0-7)_QUEUE_IRQ_EN` const generic writer - Enable the queue end interrupt of DMA"]
-pub struct DMA_QUEUE_IRQ_EN_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> DMA_QUEUE_IRQ_EN_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMA_QUEUE_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Fields `DMA(0-7)_QUEUE_IRQ_EN` writer - Enable the queue end interrupt of DMA"]
+pub type DMA_QUEUE_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_IRQ_EN_REG0_SPEC, DMA_QUEUE_IRQ_EN_A, O>;
+impl<'a, const O: u8> DMA_QUEUE_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -269,27 +186,11 @@ impl<'a, const O: usize> DMA_QUEUE_IRQ_EN_W<'a, O> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(DMA_QUEUE_IRQ_EN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "Enable the half package interrupt of DMA"]
     #[inline(always)]
-    pub unsafe fn dma_hlaf_irq_en(&self, n: usize) -> DMA_HLAF_IRQ_EN_R {
+    pub unsafe fn dma_hlaf_irq_en(&self, n: u8) -> DMA_HLAF_IRQ_EN_R {
         DMA_HLAF_IRQ_EN_R::new(((self.bits >> (n * 4)) & 1) != 0)
     }
     #[doc = "Bit 0 - Enable the half package interrupt of DMA"]
@@ -334,7 +235,7 @@ impl R {
     }
     #[doc = "Enable the package end interrupt of DMA"]
     #[inline(always)]
-    pub unsafe fn dma_pkg_irq_en(&self, n: usize) -> DMA_PKG_IRQ_EN_R {
+    pub unsafe fn dma_pkg_irq_en(&self, n: u8) -> DMA_PKG_IRQ_EN_R {
         DMA_PKG_IRQ_EN_R::new(((self.bits >> (n * 4 + 1)) & 1) != 0)
     }
     #[doc = "Bit 1 - Enable the package end interrupt of DMA"]
@@ -379,7 +280,7 @@ impl R {
     }
     #[doc = "Enable the queue end interrupt of DMA"]
     #[inline(always)]
-    pub unsafe fn dma_queue_irq_en(&self, n: usize) -> DMA_QUEUE_IRQ_EN_R {
+    pub unsafe fn dma_queue_irq_en(&self, n: u8) -> DMA_QUEUE_IRQ_EN_R {
         DMA_QUEUE_IRQ_EN_R::new(((self.bits >> (n * 4 + 2)) & 1) != 0)
     }
     #[doc = "Bit 2 - Enable the queue end interrupt of DMA"]
@@ -426,138 +327,138 @@ impl R {
 impl W {
     #[doc = "Enable the half package interrupt of DMA"]
     #[inline(always)]
-    pub unsafe fn dma_hlaf_irq_en<const O: usize>(&mut self) -> DMA_HLAF_IRQ_EN_W<O> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+    pub unsafe fn dma_hlaf_irq_en<const O: u8>(&mut self) -> DMA_HLAF_IRQ_EN_W<O> {
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma0_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<0> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma1_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<4> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 8 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma2_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<8> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 12 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma3_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<12> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 16 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma4_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<16> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 20 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma5_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<20> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 24 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma6_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<24> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 28 - Enable the half package interrupt of DMA"]
     #[inline(always)]
     pub fn dma7_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<28> {
-        DMA_HLAF_IRQ_EN_W { w: self }
+        DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Enable the package end interrupt of DMA"]
     #[inline(always)]
-    pub unsafe fn dma_pkg_irq_en<const O: usize>(&mut self) -> DMA_PKG_IRQ_EN_W<O> {
-        DMA_PKG_IRQ_EN_W { w: self }
+    pub unsafe fn dma_pkg_irq_en<const O: u8>(&mut self) -> DMA_PKG_IRQ_EN_W<O> {
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma0_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<1> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 5 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma1_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<5> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 9 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma2_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<9> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 13 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma3_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<13> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 17 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma4_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<17> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 21 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma5_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<21> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 25 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma6_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<25> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 29 - Enable the package end interrupt of DMA"]
     #[inline(always)]
     pub fn dma7_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<29> {
-        DMA_PKG_IRQ_EN_W { w: self }
+        DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Enable the queue end interrupt of DMA"]
     #[inline(always)]
-    pub unsafe fn dma_queue_irq_en<const O: usize>(&mut self) -> DMA_QUEUE_IRQ_EN_W<O> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+    pub unsafe fn dma_queue_irq_en<const O: u8>(&mut self) -> DMA_QUEUE_IRQ_EN_W<O> {
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma0_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<2> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 6 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma1_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<6> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 10 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma2_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<10> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 14 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma3_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<14> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 18 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma4_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<18> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 22 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma5_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<22> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 26 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma6_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<26> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 30 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
     pub fn dma7_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<30> {
-        DMA_QUEUE_IRQ_EN_W { w: self }
+        DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

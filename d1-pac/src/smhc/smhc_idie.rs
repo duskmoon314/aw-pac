@@ -35,190 +35,25 @@ impl From<crate::W<SMHC_IDIE_SPEC>> for W {
     }
 }
 #[doc = "Field `ERR_SUM_INT_ENB` reader - Card Error Summary Interrupt Enable"]
-pub struct ERR_SUM_INT_ENB_R(crate::FieldReader<bool>);
-impl ERR_SUM_INT_ENB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ERR_SUM_INT_ENB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ERR_SUM_INT_ENB_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ERR_SUM_INT_ENB_R = crate::BitReader<bool>;
 #[doc = "Field `ERR_SUM_INT_ENB` writer - Card Error Summary Interrupt Enable"]
-pub struct ERR_SUM_INT_ENB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ERR_SUM_INT_ENB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
-    }
-}
+pub type ERR_SUM_INT_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, 5>;
 #[doc = "Field `DES_UNAVL_INT_ENB` reader - Descriptor Unavailable Interrupt"]
-pub struct DES_UNAVL_INT_ENB_R(crate::FieldReader<bool>);
-impl DES_UNAVL_INT_ENB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DES_UNAVL_INT_ENB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DES_UNAVL_INT_ENB_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DES_UNAVL_INT_ENB_R = crate::BitReader<bool>;
 #[doc = "Field `DES_UNAVL_INT_ENB` writer - Descriptor Unavailable Interrupt"]
-pub struct DES_UNAVL_INT_ENB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DES_UNAVL_INT_ENB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
-    }
-}
+pub type DES_UNAVL_INT_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, 4>;
 #[doc = "Field `FERR_INT_ENB` reader - Fatal Bus Error Enable"]
-pub struct FERR_INT_ENB_R(crate::FieldReader<bool>);
-impl FERR_INT_ENB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FERR_INT_ENB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FERR_INT_ENB_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FERR_INT_ENB_R = crate::BitReader<bool>;
 #[doc = "Field `FERR_INT_ENB` writer - Fatal Bus Error Enable"]
-pub struct FERR_INT_ENB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> FERR_INT_ENB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type FERR_INT_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, 2>;
 #[doc = "Field `RX_INT_ENB` reader - Receive Interrupt Enables"]
-pub struct RX_INT_ENB_R(crate::FieldReader<bool>);
-impl RX_INT_ENB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_INT_ENB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_INT_ENB_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_INT_ENB_R = crate::BitReader<bool>;
 #[doc = "Field `RX_INT_ENB` writer - Receive Interrupt Enables"]
-pub struct RX_INT_ENB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_INT_ENB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type RX_INT_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, 1>;
 #[doc = "Field `TX_INT_ENB` reader - Transmit Interrupt Enable"]
-pub struct TX_INT_ENB_R(crate::FieldReader<bool>);
-impl TX_INT_ENB_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_INT_ENB_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_INT_ENB_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_INT_ENB_R = crate::BitReader<bool>;
 #[doc = "Field `TX_INT_ENB` writer - Transmit Interrupt Enable"]
-pub struct TX_INT_ENB_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_INT_ENB_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type TX_INT_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 5 - Card Error Summary Interrupt Enable"]
     #[inline(always)]
@@ -250,27 +85,27 @@ impl W {
     #[doc = "Bit 5 - Card Error Summary Interrupt Enable"]
     #[inline(always)]
     pub fn err_sum_int_enb(&mut self) -> ERR_SUM_INT_ENB_W {
-        ERR_SUM_INT_ENB_W { w: self }
+        ERR_SUM_INT_ENB_W::new(self)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
     pub fn des_unavl_int_enb(&mut self) -> DES_UNAVL_INT_ENB_W {
-        DES_UNAVL_INT_ENB_W { w: self }
+        DES_UNAVL_INT_ENB_W::new(self)
     }
     #[doc = "Bit 2 - Fatal Bus Error Enable"]
     #[inline(always)]
     pub fn ferr_int_enb(&mut self) -> FERR_INT_ENB_W {
-        FERR_INT_ENB_W { w: self }
+        FERR_INT_ENB_W::new(self)
     }
     #[doc = "Bit 1 - Receive Interrupt Enables"]
     #[inline(always)]
     pub fn rx_int_enb(&mut self) -> RX_INT_ENB_W {
-        RX_INT_ENB_W { w: self }
+        RX_INT_ENB_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Interrupt Enable"]
     #[inline(always)]
     pub fn tx_int_enb(&mut self) -> TX_INT_ENB_W {
-        TX_INT_ENB_W { w: self }
+        TX_INT_ENB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

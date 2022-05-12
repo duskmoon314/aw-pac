@@ -49,13 +49,9 @@ impl From<SS_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `ss_int_en` reader - SSI Interrupt Enable"]
-pub struct SS_INT_EN_R(crate::FieldReader<bool>);
+pub type SS_INT_EN_R = crate::BitReader<SS_INT_EN_A>;
 impl SS_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SS_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> SS_INT_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl SS_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == SS_INT_EN_A::DISABLE
+        *self == SS_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == SS_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for SS_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == SS_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `ss_int_en` writer - SSI Interrupt Enable"]
-pub struct SS_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type SS_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, SS_INT_EN_A, 13>;
 impl<'a> SS_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: SS_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> SS_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(SS_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
-        self.w
     }
 }
 #[doc = "Transfer Completed Interrupt Enable\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<TC_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `tc_int_en` reader - Transfer Completed Interrupt Enable"]
-pub struct TC_INT_EN_R(crate::FieldReader<bool>);
+pub type TC_INT_EN_R = crate::BitReader<TC_INT_EN_A>;
 impl TC_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TC_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TC_INT_EN_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl TC_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TC_INT_EN_A::DISABLE
+        *self == TC_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TC_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TC_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TC_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `tc_int_en` writer - Transfer Completed Interrupt Enable"]
-pub struct TC_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TC_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TC_INT_EN_A, 12>;
 impl<'a> TC_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TC_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> TC_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TC_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
-        self.w
     }
 }
 #[doc = "TXFIFO Underrun Interrupt Enable\n\nValue on reset: 0"]
@@ -217,13 +149,9 @@ impl From<TF_UDR_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `tf_udr_int_en` reader - TXFIFO Underrun Interrupt Enable"]
-pub struct TF_UDR_INT_EN_R(crate::FieldReader<bool>);
+pub type TF_UDR_INT_EN_R = crate::BitReader<TF_UDR_INT_EN_A>;
 impl TF_UDR_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TF_UDR_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TF_UDR_INT_EN_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl TF_UDR_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TF_UDR_INT_EN_A::DISABLE
+        *self == TF_UDR_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TF_UDR_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TF_UDR_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TF_UDR_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `tf_udr_int_en` writer - TXFIFO Underrun Interrupt Enable"]
-pub struct TF_UDR_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TF_UDR_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_UDR_INT_EN_A, 11>;
 impl<'a> TF_UDR_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TF_UDR_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,22 +182,6 @@ impl<'a> TF_UDR_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TF_UDR_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
-        self.w
     }
 }
 #[doc = "TXFIFO Overflow Interrupt Enable\n\nValue on reset: 0"]
@@ -301,13 +199,9 @@ impl From<TF_OVF_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `tf_ovf_int_en` reader - TXFIFO Overflow Interrupt Enable"]
-pub struct TF_OVF_INT_EN_R(crate::FieldReader<bool>);
+pub type TF_OVF_INT_EN_R = crate::BitReader<TF_OVF_INT_EN_A>;
 impl TF_OVF_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TF_OVF_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TF_OVF_INT_EN_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl TF_OVF_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TF_OVF_INT_EN_A::DISABLE
+        *self == TF_OVF_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TF_OVF_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TF_OVF_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TF_OVF_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `tf_ovf_int_en` writer - TXFIFO Overflow Interrupt Enable"]
-pub struct TF_OVF_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TF_OVF_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_OVF_INT_EN_A, 10>;
 impl<'a> TF_OVF_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TF_OVF_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -352,22 +232,6 @@ impl<'a> TF_OVF_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TF_OVF_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
-        self.w
     }
 }
 #[doc = "RXFIFO Underrun Interrupt Enable\n\nValue on reset: 0"]
@@ -385,13 +249,9 @@ impl From<RF_UDR_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `rf_udr_int_en` reader - RXFIFO Underrun Interrupt Enable"]
-pub struct RF_UDR_INT_EN_R(crate::FieldReader<bool>);
+pub type RF_UDR_INT_EN_R = crate::BitReader<RF_UDR_INT_EN_A>;
 impl RF_UDR_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RF_UDR_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RF_UDR_INT_EN_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl RF_UDR_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RF_UDR_INT_EN_A::DISABLE
+        *self == RF_UDR_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RF_UDR_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RF_UDR_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RF_UDR_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `rf_udr_int_en` writer - RXFIFO Underrun Interrupt Enable"]
-pub struct RF_UDR_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RF_UDR_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_UDR_INT_EN_A, 9>;
 impl<'a> RF_UDR_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RF_UDR_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -436,22 +282,6 @@ impl<'a> RF_UDR_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RF_UDR_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
-        self.w
     }
 }
 #[doc = "RXFIFO Overflow Interrupt Enable\n\nValue on reset: 0"]
@@ -469,13 +299,9 @@ impl From<RF_OVF_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `rf_ovf_int_en` reader - RXFIFO Overflow Interrupt Enable"]
-pub struct RF_OVF_INT_EN_R(crate::FieldReader<bool>);
+pub type RF_OVF_INT_EN_R = crate::BitReader<RF_OVF_INT_EN_A>;
 impl RF_OVF_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RF_OVF_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RF_OVF_INT_EN_A {
         match self.bits {
@@ -486,31 +312,17 @@ impl RF_OVF_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RF_OVF_INT_EN_A::DISABLE
+        *self == RF_OVF_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RF_OVF_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RF_OVF_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RF_OVF_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `rf_ovf_int_en` writer - RXFIFO Overflow Interrupt Enable"]
-pub struct RF_OVF_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RF_OVF_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_OVF_INT_EN_A, 8>;
 impl<'a> RF_OVF_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RF_OVF_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -520,22 +332,6 @@ impl<'a> RF_OVF_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RF_OVF_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
     }
 }
 #[doc = "TXFIFO Full Interrupt Enable\n\nValue on reset: 0"]
@@ -553,13 +349,9 @@ impl From<TF_FULL_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `tf_full_int_en` reader - TXFIFO Full Interrupt Enable"]
-pub struct TF_FULL_INT_EN_R(crate::FieldReader<bool>);
+pub type TF_FULL_INT_EN_R = crate::BitReader<TF_FULL_INT_EN_A>;
 impl TF_FULL_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TF_FULL_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TF_FULL_INT_EN_A {
         match self.bits {
@@ -570,31 +362,17 @@ impl TF_FULL_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TF_FULL_INT_EN_A::DISABLE
+        *self == TF_FULL_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TF_FULL_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TF_FULL_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TF_FULL_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `tf_full_int_en` writer - TXFIFO Full Interrupt Enable"]
-pub struct TF_FULL_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TF_FULL_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_FULL_INT_EN_A, 6>;
 impl<'a> TF_FULL_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TF_FULL_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -604,22 +382,6 @@ impl<'a> TF_FULL_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TF_FULL_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
-        self.w
     }
 }
 #[doc = "TXFIFO Empty Interrupt Enable\n\nValue on reset: 0"]
@@ -637,13 +399,9 @@ impl From<TF_EMP_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `tf_emp_int_en` reader - TXFIFO Empty Interrupt Enable"]
-pub struct TF_EMP_INT_EN_R(crate::FieldReader<bool>);
+pub type TF_EMP_INT_EN_R = crate::BitReader<TF_EMP_INT_EN_A>;
 impl TF_EMP_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TF_EMP_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TF_EMP_INT_EN_A {
         match self.bits {
@@ -654,31 +412,17 @@ impl TF_EMP_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TF_EMP_INT_EN_A::DISABLE
+        *self == TF_EMP_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TF_EMP_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TF_EMP_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TF_EMP_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `tf_emp_int_en` writer - TXFIFO Empty Interrupt Enable"]
-pub struct TF_EMP_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TF_EMP_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_EMP_INT_EN_A, 5>;
 impl<'a> TF_EMP_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TF_EMP_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -688,22 +432,6 @@ impl<'a> TF_EMP_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TF_EMP_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
     }
 }
 #[doc = "TXFIFO Empty Request Interrupt Enable\n\nValue on reset: 0"]
@@ -721,13 +449,9 @@ impl From<TF_ERQ_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `tf_erq_int_en` reader - TXFIFO Empty Request Interrupt Enable"]
-pub struct TF_ERQ_INT_EN_R(crate::FieldReader<bool>);
+pub type TF_ERQ_INT_EN_R = crate::BitReader<TF_ERQ_INT_EN_A>;
 impl TF_ERQ_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TF_ERQ_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TF_ERQ_INT_EN_A {
         match self.bits {
@@ -738,31 +462,17 @@ impl TF_ERQ_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TF_ERQ_INT_EN_A::DISABLE
+        *self == TF_ERQ_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TF_ERQ_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TF_ERQ_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TF_ERQ_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `tf_erq_int_en` writer - TXFIFO Empty Request Interrupt Enable"]
-pub struct TF_ERQ_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TF_ERQ_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_ERQ_INT_EN_A, 4>;
 impl<'a> TF_ERQ_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TF_ERQ_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -772,22 +482,6 @@ impl<'a> TF_ERQ_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TF_ERQ_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
     }
 }
 #[doc = "RXFIFO Full Interrupt Enable\n\nValue on reset: 0"]
@@ -805,13 +499,9 @@ impl From<RF_FULL_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `rf_full_int_en` reader - RXFIFO Full Interrupt Enable"]
-pub struct RF_FULL_INT_EN_R(crate::FieldReader<bool>);
+pub type RF_FULL_INT_EN_R = crate::BitReader<RF_FULL_INT_EN_A>;
 impl RF_FULL_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RF_FULL_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RF_FULL_INT_EN_A {
         match self.bits {
@@ -822,31 +512,17 @@ impl RF_FULL_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RF_FULL_INT_EN_A::DISABLE
+        *self == RF_FULL_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RF_FULL_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RF_FULL_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RF_FULL_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `rf_full_int_en` writer - RXFIFO Full Interrupt Enable"]
-pub struct RF_FULL_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RF_FULL_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_FULL_INT_EN_A, 2>;
 impl<'a> RF_FULL_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RF_FULL_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -856,22 +532,6 @@ impl<'a> RF_FULL_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RF_FULL_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "RXFIFO Empty Interrupt Enable\n\nValue on reset: 0"]
@@ -889,13 +549,9 @@ impl From<RF_EMP_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `rf_emp_int_en` reader - RXFIFO Empty Interrupt Enable"]
-pub struct RF_EMP_INT_EN_R(crate::FieldReader<bool>);
+pub type RF_EMP_INT_EN_R = crate::BitReader<RF_EMP_INT_EN_A>;
 impl RF_EMP_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RF_EMP_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RF_EMP_INT_EN_A {
         match self.bits {
@@ -906,31 +562,17 @@ impl RF_EMP_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RF_EMP_INT_EN_A::DISABLE
+        *self == RF_EMP_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RF_EMP_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RF_EMP_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RF_EMP_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `rf_emp_int_en` writer - RXFIFO Empty Interrupt Enable"]
-pub struct RF_EMP_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RF_EMP_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_EMP_INT_EN_A, 1>;
 impl<'a> RF_EMP_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RF_EMP_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -940,22 +582,6 @@ impl<'a> RF_EMP_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RF_EMP_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "RXFIFO Ready Request Interrupt Enable\n\nValue on reset: 0"]
@@ -973,13 +599,9 @@ impl From<RF_RDY_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `rf_rdy_int_en` reader - RXFIFO Ready Request Interrupt Enable"]
-pub struct RF_RDY_INT_EN_R(crate::FieldReader<bool>);
+pub type RF_RDY_INT_EN_R = crate::BitReader<RF_RDY_INT_EN_A>;
 impl RF_RDY_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RF_RDY_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RF_RDY_INT_EN_A {
         match self.bits {
@@ -990,31 +612,17 @@ impl RF_RDY_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RF_RDY_INT_EN_A::DISABLE
+        *self == RF_RDY_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RF_RDY_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RF_RDY_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RF_RDY_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `rf_rdy_int_en` writer - RXFIFO Ready Request Interrupt Enable"]
-pub struct RF_RDY_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RF_RDY_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_RDY_INT_EN_A, 0>;
 impl<'a> RF_RDY_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RF_RDY_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -1024,22 +632,6 @@ impl<'a> RF_RDY_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RF_RDY_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -1108,62 +700,62 @@ impl W {
     #[doc = "Bit 13 - SSI Interrupt Enable"]
     #[inline(always)]
     pub fn ss_int_en(&mut self) -> SS_INT_EN_W {
-        SS_INT_EN_W { w: self }
+        SS_INT_EN_W::new(self)
     }
     #[doc = "Bit 12 - Transfer Completed Interrupt Enable"]
     #[inline(always)]
     pub fn tc_int_en(&mut self) -> TC_INT_EN_W {
-        TC_INT_EN_W { w: self }
+        TC_INT_EN_W::new(self)
     }
     #[doc = "Bit 11 - TXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
     pub fn tf_udr_int_en(&mut self) -> TF_UDR_INT_EN_W {
-        TF_UDR_INT_EN_W { w: self }
+        TF_UDR_INT_EN_W::new(self)
     }
     #[doc = "Bit 10 - TXFIFO Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn tf_ovf_int_en(&mut self) -> TF_OVF_INT_EN_W {
-        TF_OVF_INT_EN_W { w: self }
+        TF_OVF_INT_EN_W::new(self)
     }
     #[doc = "Bit 9 - RXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
     pub fn rf_udr_int_en(&mut self) -> RF_UDR_INT_EN_W {
-        RF_UDR_INT_EN_W { w: self }
+        RF_UDR_INT_EN_W::new(self)
     }
     #[doc = "Bit 8 - RXFIFO Overflow Interrupt Enable"]
     #[inline(always)]
     pub fn rf_ovf_int_en(&mut self) -> RF_OVF_INT_EN_W {
-        RF_OVF_INT_EN_W { w: self }
+        RF_OVF_INT_EN_W::new(self)
     }
     #[doc = "Bit 6 - TXFIFO Full Interrupt Enable"]
     #[inline(always)]
     pub fn tf_full_int_en(&mut self) -> TF_FULL_INT_EN_W {
-        TF_FULL_INT_EN_W { w: self }
+        TF_FULL_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - TXFIFO Empty Interrupt Enable"]
     #[inline(always)]
     pub fn tf_emp_int_en(&mut self) -> TF_EMP_INT_EN_W {
-        TF_EMP_INT_EN_W { w: self }
+        TF_EMP_INT_EN_W::new(self)
     }
     #[doc = "Bit 4 - TXFIFO Empty Request Interrupt Enable"]
     #[inline(always)]
     pub fn tf_erq_int_en(&mut self) -> TF_ERQ_INT_EN_W {
-        TF_ERQ_INT_EN_W { w: self }
+        TF_ERQ_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - RXFIFO Full Interrupt Enable"]
     #[inline(always)]
     pub fn rf_full_int_en(&mut self) -> RF_FULL_INT_EN_W {
-        RF_FULL_INT_EN_W { w: self }
+        RF_FULL_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - RXFIFO Empty Interrupt Enable"]
     #[inline(always)]
     pub fn rf_emp_int_en(&mut self) -> RF_EMP_INT_EN_W {
-        RF_EMP_INT_EN_W { w: self }
+        RF_EMP_INT_EN_W::new(self)
     }
     #[doc = "Bit 0 - RXFIFO Ready Request Interrupt Enable"]
     #[inline(always)]
     pub fn rf_rdy_int_en(&mut self) -> RF_RDY_INT_EN_W {
-        RF_RDY_INT_EN_W { w: self }
+        RF_RDY_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -14,65 +14,13 @@ impl From<crate::R<SMHC_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `DMA_REQ` reader - DMA Request"]
-pub struct DMA_REQ_R(crate::FieldReader<bool>);
-impl DMA_REQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_REQ_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_REQ_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_REQ_R = crate::BitReader<bool>;
 #[doc = "Field `FIFO_LEVEL` reader - FIFO Level"]
-pub struct FIFO_LEVEL_R(crate::FieldReader<u16>);
-impl FIFO_LEVEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        FIFO_LEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FIFO_LEVEL_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FIFO_LEVEL_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `RESP_IDX` reader - Response Index"]
-pub struct RESP_IDX_R(crate::FieldReader<u8>);
-impl RESP_IDX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RESP_IDX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RESP_IDX_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RESP_IDX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FSM_BUSY` reader - Data FSM Busy"]
-pub struct FSM_BUSY_R(crate::FieldReader<bool>);
-impl FSM_BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FSM_BUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for FSM_BUSY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type FSM_BUSY_R = crate::BitReader<bool>;
 #[doc = "Card Data Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_BUSY_A {
@@ -88,13 +36,9 @@ impl From<CARD_BUSY_A> for bool {
     }
 }
 #[doc = "Field `CARD_BUSY` reader - Card Data Busy"]
-pub struct CARD_BUSY_R(crate::FieldReader<bool>);
+pub type CARD_BUSY_R = crate::BitReader<CARD_BUSY_A>;
 impl CARD_BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CARD_BUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CARD_BUSY_A {
         match self.bits {
@@ -105,19 +49,12 @@ impl CARD_BUSY_R {
     #[doc = "Checks if the value of the field is `NOT_BUSY`"]
     #[inline(always)]
     pub fn is_not_busy(&self) -> bool {
-        **self == CARD_BUSY_A::NOT_BUSY
+        *self == CARD_BUSY_A::NOT_BUSY
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == CARD_BUSY_A::BUSY
-    }
-}
-impl core::ops::Deref for CARD_BUSY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CARD_BUSY_A::BUSY
     }
 }
 #[doc = "Data\\[3\\]
@@ -137,13 +74,9 @@ impl From<CARD_PRESENT_A> for bool {
 }
 #[doc = "Field `CARD_PRESENT` reader - Data\\[3\\]
 Statuss"]
-pub struct CARD_PRESENT_R(crate::FieldReader<bool>);
+pub type CARD_PRESENT_R = crate::BitReader<CARD_PRESENT_A>;
 impl CARD_PRESENT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CARD_PRESENT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CARD_PRESENT_A {
         match self.bits {
@@ -154,19 +87,12 @@ impl CARD_PRESENT_R {
     #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
-        **self == CARD_PRESENT_A::NOT_PRESENT
+        *self == CARD_PRESENT_A::NOT_PRESENT
     }
     #[doc = "Checks if the value of the field is `PRESENT`"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
-        **self == CARD_PRESENT_A::PRESENT
-    }
-}
-impl core::ops::Deref for CARD_PRESENT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CARD_PRESENT_A::PRESENT
     }
 }
 #[doc = "Command FSM States\n\nValue on reset: 0"]
@@ -213,13 +139,9 @@ impl From<FSM_STA_A> for u8 {
     }
 }
 #[doc = "Field `FSM_STA` reader - Command FSM States"]
-pub struct FSM_STA_R(crate::FieldReader<u8>);
+pub type FSM_STA_R = crate::FieldReader<u8, FSM_STA_A>;
 impl FSM_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FSM_STA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FSM_STA_A {
         match self.bits {
@@ -245,89 +167,82 @@ impl FSM_STA_R {
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == FSM_STA_A::IDLE
+        *self == FSM_STA_A::IDLE
     }
     #[doc = "Checks if the value of the field is `SIS`"]
     #[inline(always)]
     pub fn is_sis(&self) -> bool {
-        **self == FSM_STA_A::SIS
+        *self == FSM_STA_A::SIS
     }
     #[doc = "Checks if the value of the field is `TXCSB`"]
     #[inline(always)]
     pub fn is_txcsb(&self) -> bool {
-        **self == FSM_STA_A::TXCSB
+        *self == FSM_STA_A::TXCSB
     }
     #[doc = "Checks if the value of the field is `TXCTB`"]
     #[inline(always)]
     pub fn is_txctb(&self) -> bool {
-        **self == FSM_STA_A::TXCTB
+        *self == FSM_STA_A::TXCTB
     }
     #[doc = "Checks if the value of the field is `TXCIA`"]
     #[inline(always)]
     pub fn is_txcia(&self) -> bool {
-        **self == FSM_STA_A::TXCIA
+        *self == FSM_STA_A::TXCIA
     }
     #[doc = "Checks if the value of the field is `TXCC`"]
     #[inline(always)]
     pub fn is_txcc(&self) -> bool {
-        **self == FSM_STA_A::TXCC
+        *self == FSM_STA_A::TXCC
     }
     #[doc = "Checks if the value of the field is `TXCEB`"]
     #[inline(always)]
     pub fn is_txceb(&self) -> bool {
-        **self == FSM_STA_A::TXCEB
+        *self == FSM_STA_A::TXCEB
     }
     #[doc = "Checks if the value of the field is `RXRSB`"]
     #[inline(always)]
     pub fn is_rxrsb(&self) -> bool {
-        **self == FSM_STA_A::RXRSB
+        *self == FSM_STA_A::RXRSB
     }
     #[doc = "Checks if the value of the field is `RXRIR`"]
     #[inline(always)]
     pub fn is_rxrir(&self) -> bool {
-        **self == FSM_STA_A::RXRIR
+        *self == FSM_STA_A::RXRIR
     }
     #[doc = "Checks if the value of the field is `RXRTB`"]
     #[inline(always)]
     pub fn is_rxrtb(&self) -> bool {
-        **self == FSM_STA_A::RXRTB
+        *self == FSM_STA_A::RXRTB
     }
     #[doc = "Checks if the value of the field is `RXRCI`"]
     #[inline(always)]
     pub fn is_rxrci(&self) -> bool {
-        **self == FSM_STA_A::RXRCI
+        *self == FSM_STA_A::RXRCI
     }
     #[doc = "Checks if the value of the field is `RXRD`"]
     #[inline(always)]
     pub fn is_rxrd(&self) -> bool {
-        **self == FSM_STA_A::RXRD
+        *self == FSM_STA_A::RXRD
     }
     #[doc = "Checks if the value of the field is `RXRC`"]
     #[inline(always)]
     pub fn is_rxrc(&self) -> bool {
-        **self == FSM_STA_A::RXRC
+        *self == FSM_STA_A::RXRC
     }
     #[doc = "Checks if the value of the field is `RXREB`"]
     #[inline(always)]
     pub fn is_rxreb(&self) -> bool {
-        **self == FSM_STA_A::RXREB
+        *self == FSM_STA_A::RXREB
     }
     #[doc = "Checks if the value of the field is `CPWN`"]
     #[inline(always)]
     pub fn is_cpwn(&self) -> bool {
-        **self == FSM_STA_A::CPWN
+        *self == FSM_STA_A::CPWN
     }
     #[doc = "Checks if the value of the field is `WAIT`"]
     #[inline(always)]
     pub fn is_wait(&self) -> bool {
-        **self == FSM_STA_A::WAIT
-    }
-}
-impl core::ops::Deref for FSM_STA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FSM_STA_A::WAIT
     }
 }
 #[doc = "sFIFO Full\n\nValue on reset: 0"]
@@ -345,13 +260,9 @@ impl From<FIFO_FULL_A> for bool {
     }
 }
 #[doc = "Field `FIFO_FULL` reader - sFIFO Full"]
-pub struct FIFO_FULL_R(crate::FieldReader<bool>);
+pub type FIFO_FULL_R = crate::BitReader<FIFO_FULL_A>;
 impl FIFO_FULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_FULL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_FULL_A {
         match self.bits {
@@ -362,19 +273,12 @@ impl FIFO_FULL_R {
     #[doc = "Checks if the value of the field is `NOT_FULL`"]
     #[inline(always)]
     pub fn is_not_full(&self) -> bool {
-        **self == FIFO_FULL_A::NOT_FULL
+        *self == FIFO_FULL_A::NOT_FULL
     }
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
-        **self == FIFO_FULL_A::FULL
-    }
-}
-impl core::ops::Deref for FIFO_FULL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_FULL_A::FULL
     }
 }
 #[doc = "FIFO Empty\n\nValue on reset: 0"]
@@ -392,13 +296,9 @@ impl From<FIFO_EMPTY_A> for bool {
     }
 }
 #[doc = "Field `FIFO_EMPTY` reader - FIFO Empty"]
-pub struct FIFO_EMPTY_R(crate::FieldReader<bool>);
+pub type FIFO_EMPTY_R = crate::BitReader<FIFO_EMPTY_A>;
 impl FIFO_EMPTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_EMPTY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_EMPTY_A {
         match self.bits {
@@ -409,19 +309,12 @@ impl FIFO_EMPTY_R {
     #[doc = "Checks if the value of the field is `NOT_SEMPTY`"]
     #[inline(always)]
     pub fn is_not_sempty(&self) -> bool {
-        **self == FIFO_EMPTY_A::NOT_SEMPTY
+        *self == FIFO_EMPTY_A::NOT_SEMPTY
     }
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
-        **self == FIFO_EMPTY_A::EMPTY
-    }
-}
-impl core::ops::Deref for FIFO_EMPTY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_EMPTY_A::EMPTY
     }
 }
 #[doc = "FIFO TX Water Level Flag\n\nValue on reset: 0"]
@@ -439,13 +332,9 @@ impl From<FIFO_TX_LEVEL_A> for bool {
     }
 }
 #[doc = "Field `FIFO_TX_LEVEL` reader - FIFO TX Water Level Flag"]
-pub struct FIFO_TX_LEVEL_R(crate::FieldReader<bool>);
+pub type FIFO_TX_LEVEL_R = crate::BitReader<FIFO_TX_LEVEL_A>;
 impl FIFO_TX_LEVEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_TX_LEVEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_TX_LEVEL_A {
         match self.bits {
@@ -456,19 +345,12 @@ impl FIFO_TX_LEVEL_R {
     #[doc = "Checks if the value of the field is `NOT_REACH`"]
     #[inline(always)]
     pub fn is_not_reach(&self) -> bool {
-        **self == FIFO_TX_LEVEL_A::NOT_REACH
+        *self == FIFO_TX_LEVEL_A::NOT_REACH
     }
     #[doc = "Checks if the value of the field is `REACH`"]
     #[inline(always)]
     pub fn is_reach(&self) -> bool {
-        **self == FIFO_TX_LEVEL_A::REACH
-    }
-}
-impl core::ops::Deref for FIFO_TX_LEVEL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_TX_LEVEL_A::REACH
     }
 }
 #[doc = "FIFO RX Water Level Flag\n\nValue on reset: 0"]
@@ -486,13 +368,9 @@ impl From<FIFO_RX_LEVEL_A> for bool {
     }
 }
 #[doc = "Field `FIFO_RX_LEVEL` reader - FIFO RX Water Level Flag"]
-pub struct FIFO_RX_LEVEL_R(crate::FieldReader<bool>);
+pub type FIFO_RX_LEVEL_R = crate::BitReader<FIFO_RX_LEVEL_A>;
 impl FIFO_RX_LEVEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_RX_LEVEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_RX_LEVEL_A {
         match self.bits {
@@ -503,19 +381,12 @@ impl FIFO_RX_LEVEL_R {
     #[doc = "Checks if the value of the field is `NOT_REACH`"]
     #[inline(always)]
     pub fn is_not_reach(&self) -> bool {
-        **self == FIFO_RX_LEVEL_A::NOT_REACH
+        *self == FIFO_RX_LEVEL_A::NOT_REACH
     }
     #[doc = "Checks if the value of the field is `REACH`"]
     #[inline(always)]
     pub fn is_reach(&self) -> bool {
-        **self == FIFO_RX_LEVEL_A::REACH
-    }
-}
-impl core::ops::Deref for FIFO_RX_LEVEL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_RX_LEVEL_A::REACH
     }
 }
 impl R {

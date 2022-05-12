@@ -35,42 +35,9 @@ impl From<crate::W<WAKEUP_EN_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `WP_EN` reader - Wakeup Enable"]
-pub struct WP_EN_R(crate::FieldReader<bool>);
-impl WP_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WP_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WP_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WP_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WP_EN` writer - Wakeup Enable"]
-pub struct WP_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WP_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type WP_EN_W<'a> = crate::BitWriter<'a, u32, WAKEUP_EN_REG_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - Wakeup Enable"]
     #[inline(always)]
@@ -82,7 +49,7 @@ impl W {
     #[doc = "Bit 0 - Wakeup Enable"]
     #[inline(always)]
     pub fn wp_en(&mut self) -> WP_EN_W {
-        WP_EN_W { w: self }
+        WP_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

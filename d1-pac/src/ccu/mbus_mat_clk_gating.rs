@@ -49,13 +49,9 @@ impl From<RISCV_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `RISCV_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct RISCV_MCLK_EN_R(crate::FieldReader<bool>);
+pub type RISCV_MCLK_EN_R = crate::BitReader<RISCV_MCLK_EN_A>;
 impl RISCV_MCLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RISCV_MCLK_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RISCV_MCLK_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl RISCV_MCLK_EN_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == RISCV_MCLK_EN_A::MASK
+        *self == RISCV_MCLK_EN_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == RISCV_MCLK_EN_A::PASS
-    }
-}
-impl core::ops::Deref for RISCV_MCLK_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RISCV_MCLK_EN_A::PASS
     }
 }
 #[doc = "Field `RISCV_MCLK_EN` writer - Gating MBUS Clock"]
-pub struct RISCV_MCLK_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RISCV_MCLK_EN_W<'a> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, RISCV_MCLK_EN_A, 11>;
 impl<'a> RISCV_MCLK_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RISCV_MCLK_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> RISCV_MCLK_EN_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(RISCV_MCLK_EN_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
-        self.w
     }
 }
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<G2D_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `G2D_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct G2D_MCLK_EN_R(crate::FieldReader<bool>);
+pub type G2D_MCLK_EN_R = crate::BitReader<G2D_MCLK_EN_A>;
 impl G2D_MCLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        G2D_MCLK_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> G2D_MCLK_EN_A {
         match self.bits {
@@ -150,31 +113,17 @@ impl G2D_MCLK_EN_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == G2D_MCLK_EN_A::MASK
+        *self == G2D_MCLK_EN_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == G2D_MCLK_EN_A::PASS
-    }
-}
-impl core::ops::Deref for G2D_MCLK_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == G2D_MCLK_EN_A::PASS
     }
 }
 #[doc = "Field `G2D_MCLK_EN` writer - Gating MBUS Clock"]
-pub struct G2D_MCLK_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type G2D_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, G2D_MCLK_EN_A, 10>;
 impl<'a> G2D_MCLK_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: G2D_MCLK_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -184,22 +133,6 @@ impl<'a> G2D_MCLK_EN_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(G2D_MCLK_EN_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
-        self.w
     }
 }
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
@@ -217,13 +150,9 @@ impl From<CSI_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `CSI_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct CSI_MCLK_EN_R(crate::FieldReader<bool>);
+pub type CSI_MCLK_EN_R = crate::BitReader<CSI_MCLK_EN_A>;
 impl CSI_MCLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CSI_MCLK_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSI_MCLK_EN_A {
         match self.bits {
@@ -234,31 +163,17 @@ impl CSI_MCLK_EN_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == CSI_MCLK_EN_A::MASK
+        *self == CSI_MCLK_EN_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == CSI_MCLK_EN_A::PASS
-    }
-}
-impl core::ops::Deref for CSI_MCLK_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CSI_MCLK_EN_A::PASS
     }
 }
 #[doc = "Field `CSI_MCLK_EN` writer - Gating MBUS Clock"]
-pub struct CSI_MCLK_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CSI_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CSI_MCLK_EN_A, 8>;
 impl<'a> CSI_MCLK_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSI_MCLK_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -268,22 +183,6 @@ impl<'a> CSI_MCLK_EN_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(CSI_MCLK_EN_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
     }
 }
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
@@ -301,13 +200,9 @@ impl From<TVIN_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `TVIN_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct TVIN_MCLK_EN_R(crate::FieldReader<bool>);
+pub type TVIN_MCLK_EN_R = crate::BitReader<TVIN_MCLK_EN_A>;
 impl TVIN_MCLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TVIN_MCLK_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TVIN_MCLK_EN_A {
         match self.bits {
@@ -318,31 +213,18 @@ impl TVIN_MCLK_EN_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == TVIN_MCLK_EN_A::MASK
+        *self == TVIN_MCLK_EN_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == TVIN_MCLK_EN_A::PASS
-    }
-}
-impl core::ops::Deref for TVIN_MCLK_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TVIN_MCLK_EN_A::PASS
     }
 }
 #[doc = "Field `TVIN_MCLK_EN` writer - Gating MBUS Clock"]
-pub struct TVIN_MCLK_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TVIN_MCLK_EN_W<'a> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, TVIN_MCLK_EN_A, 7>;
 impl<'a> TVIN_MCLK_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TVIN_MCLK_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -352,22 +234,6 @@ impl<'a> TVIN_MCLK_EN_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(TVIN_MCLK_EN_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
     }
 }
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
@@ -385,13 +251,9 @@ impl From<CE_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `CE_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct CE_MCLK_EN_R(crate::FieldReader<bool>);
+pub type CE_MCLK_EN_R = crate::BitReader<CE_MCLK_EN_A>;
 impl CE_MCLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CE_MCLK_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CE_MCLK_EN_A {
         match self.bits {
@@ -402,31 +264,17 @@ impl CE_MCLK_EN_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == CE_MCLK_EN_A::MASK
+        *self == CE_MCLK_EN_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == CE_MCLK_EN_A::PASS
-    }
-}
-impl core::ops::Deref for CE_MCLK_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CE_MCLK_EN_A::PASS
     }
 }
 #[doc = "Field `CE_MCLK_EN` writer - Gating MBUS Clock"]
-pub struct CE_MCLK_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CE_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CE_MCLK_EN_A, 2>;
 impl<'a> CE_MCLK_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CE_MCLK_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -436,22 +284,6 @@ impl<'a> CE_MCLK_EN_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(CE_MCLK_EN_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
@@ -469,13 +301,9 @@ impl From<VE_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `VE_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct VE_MCLK_EN_R(crate::FieldReader<bool>);
+pub type VE_MCLK_EN_R = crate::BitReader<VE_MCLK_EN_A>;
 impl VE_MCLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VE_MCLK_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VE_MCLK_EN_A {
         match self.bits {
@@ -486,31 +314,17 @@ impl VE_MCLK_EN_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == VE_MCLK_EN_A::MASK
+        *self == VE_MCLK_EN_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == VE_MCLK_EN_A::PASS
-    }
-}
-impl core::ops::Deref for VE_MCLK_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VE_MCLK_EN_A::PASS
     }
 }
 #[doc = "Field `VE_MCLK_EN` writer - Gating MBUS Clock"]
-pub struct VE_MCLK_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type VE_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, VE_MCLK_EN_A, 1>;
 impl<'a> VE_MCLK_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VE_MCLK_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -520,22 +334,6 @@ impl<'a> VE_MCLK_EN_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(VE_MCLK_EN_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
@@ -553,13 +351,9 @@ impl From<DMA_MCLK_EN_A> for bool {
     }
 }
 #[doc = "Field `DMA_MCLK_EN` reader - Gating MBUS Clock"]
-pub struct DMA_MCLK_EN_R(crate::FieldReader<bool>);
+pub type DMA_MCLK_EN_R = crate::BitReader<DMA_MCLK_EN_A>;
 impl DMA_MCLK_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_MCLK_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_MCLK_EN_A {
         match self.bits {
@@ -570,31 +364,17 @@ impl DMA_MCLK_EN_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == DMA_MCLK_EN_A::MASK
+        *self == DMA_MCLK_EN_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == DMA_MCLK_EN_A::PASS
-    }
-}
-impl core::ops::Deref for DMA_MCLK_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_MCLK_EN_A::PASS
     }
 }
 #[doc = "Field `DMA_MCLK_EN` writer - Gating MBUS Clock"]
-pub struct DMA_MCLK_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type DMA_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, DMA_MCLK_EN_A, 0>;
 impl<'a> DMA_MCLK_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMA_MCLK_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -604,22 +384,6 @@ impl<'a> DMA_MCLK_EN_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(DMA_MCLK_EN_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -663,37 +427,37 @@ impl W {
     #[doc = "Bit 11 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn riscv_mclk_en(&mut self) -> RISCV_MCLK_EN_W {
-        RISCV_MCLK_EN_W { w: self }
+        RISCV_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 10 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn g2d_mclk_en(&mut self) -> G2D_MCLK_EN_W {
-        G2D_MCLK_EN_W { w: self }
+        G2D_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 8 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn csi_mclk_en(&mut self) -> CSI_MCLK_EN_W {
-        CSI_MCLK_EN_W { w: self }
+        CSI_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 7 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn tvin_mclk_en(&mut self) -> TVIN_MCLK_EN_W {
-        TVIN_MCLK_EN_W { w: self }
+        TVIN_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 2 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn ce_mclk_en(&mut self) -> CE_MCLK_EN_W {
-        CE_MCLK_EN_W { w: self }
+        CE_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 1 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn ve_mclk_en(&mut self) -> VE_MCLK_EN_W {
-        VE_MCLK_EN_W { w: self }
+        VE_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 0 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn dma_mclk_en(&mut self) -> DMA_MCLK_EN_W {
-        DMA_MCLK_EN_W { w: self }
+        DMA_MCLK_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

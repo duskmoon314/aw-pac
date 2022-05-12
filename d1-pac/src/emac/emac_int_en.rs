@@ -49,13 +49,9 @@ impl From<RX_EARLY_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_EARLY_INT_EN` reader - Early Receive Interrupt"]
-pub struct RX_EARLY_INT_EN_R(crate::FieldReader<bool>);
+pub type RX_EARLY_INT_EN_R = crate::BitReader<RX_EARLY_INT_EN_A>;
 impl RX_EARLY_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_EARLY_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_EARLY_INT_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RX_EARLY_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_EARLY_INT_EN_A::DISABLE
+        *self == RX_EARLY_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_EARLY_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_EARLY_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_EARLY_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `RX_EARLY_INT_EN` writer - Early Receive Interrupt"]
-pub struct RX_EARLY_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_EARLY_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_EARLY_INT_EN_A, 13>;
 impl<'a> RX_EARLY_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_EARLY_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> RX_EARLY_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_EARLY_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 13)) | ((value as u32 & 1) << 13);
-        self.w
     }
 }
 #[doc = "Receive Overflow Interrupt\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<RX_OVERFLOW_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_OVERFLOW_INT_EN` reader - Receive Overflow Interrupt"]
-pub struct RX_OVERFLOW_INT_EN_R(crate::FieldReader<bool>);
+pub type RX_OVERFLOW_INT_EN_R = crate::BitReader<RX_OVERFLOW_INT_EN_A>;
 impl RX_OVERFLOW_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_OVERFLOW_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_OVERFLOW_INT_EN_A {
         match self.bits {
@@ -150,31 +112,18 @@ impl RX_OVERFLOW_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_OVERFLOW_INT_EN_A::DISABLE
+        *self == RX_OVERFLOW_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_OVERFLOW_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_OVERFLOW_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_OVERFLOW_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `RX_OVERFLOW_INT_EN` writer - Receive Overflow Interrupt"]
-pub struct RX_OVERFLOW_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_OVERFLOW_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_OVERFLOW_INT_EN_A, 12>;
 impl<'a> RX_OVERFLOW_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_OVERFLOW_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,22 +133,6 @@ impl<'a> RX_OVERFLOW_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_OVERFLOW_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 12)) | ((value as u32 & 1) << 12);
-        self.w
     }
 }
 #[doc = "Receive Timeout Interrupt\n\nValue on reset: 0"]
@@ -217,13 +150,9 @@ impl From<RX_TIMEOUT_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_TIMEOUT_INT_EN` reader - Receive Timeout Interrupt"]
-pub struct RX_TIMEOUT_INT_EN_R(crate::FieldReader<bool>);
+pub type RX_TIMEOUT_INT_EN_R = crate::BitReader<RX_TIMEOUT_INT_EN_A>;
 impl RX_TIMEOUT_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_TIMEOUT_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_TIMEOUT_INT_EN_A {
         match self.bits {
@@ -234,31 +163,18 @@ impl RX_TIMEOUT_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_TIMEOUT_INT_EN_A::DISABLE
+        *self == RX_TIMEOUT_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_TIMEOUT_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_TIMEOUT_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_TIMEOUT_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `RX_TIMEOUT_INT_EN` writer - Receive Timeout Interrupt"]
-pub struct RX_TIMEOUT_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_TIMEOUT_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_TIMEOUT_INT_EN_A, 11>;
 impl<'a> RX_TIMEOUT_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_TIMEOUT_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,22 +184,6 @@ impl<'a> RX_TIMEOUT_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_TIMEOUT_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 11)) | ((value as u32 & 1) << 11);
-        self.w
     }
 }
 #[doc = "Receive DMA FSM Stopped Interrupt\n\nValue on reset: 0"]
@@ -301,13 +201,9 @@ impl From<RX_DMA_STOPPED_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_DMA_STOPPED_INT_EN` reader - Receive DMA FSM Stopped Interrupt"]
-pub struct RX_DMA_STOPPED_INT_EN_R(crate::FieldReader<bool>);
+pub type RX_DMA_STOPPED_INT_EN_R = crate::BitReader<RX_DMA_STOPPED_INT_EN_A>;
 impl RX_DMA_STOPPED_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_DMA_STOPPED_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_DMA_STOPPED_INT_EN_A {
         match self.bits {
@@ -318,31 +214,18 @@ impl RX_DMA_STOPPED_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_DMA_STOPPED_INT_EN_A::DISABLE
+        *self == RX_DMA_STOPPED_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_DMA_STOPPED_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_DMA_STOPPED_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_DMA_STOPPED_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `RX_DMA_STOPPED_INT_EN` writer - Receive DMA FSM Stopped Interrupt"]
-pub struct RX_DMA_STOPPED_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_DMA_STOPPED_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_DMA_STOPPED_INT_EN_A, 10>;
 impl<'a> RX_DMA_STOPPED_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_DMA_STOPPED_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -352,22 +235,6 @@ impl<'a> RX_DMA_STOPPED_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_DMA_STOPPED_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 10)) | ((value as u32 & 1) << 10);
-        self.w
     }
 }
 #[doc = "Receive Buffer Unavailable Interrupt\n\nValue on reset: 0"]
@@ -385,13 +252,9 @@ impl From<RX_BUF_UA_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_BUF_UA_INT_EN` reader - Receive Buffer Unavailable Interrupt"]
-pub struct RX_BUF_UA_INT_EN_R(crate::FieldReader<bool>);
+pub type RX_BUF_UA_INT_EN_R = crate::BitReader<RX_BUF_UA_INT_EN_A>;
 impl RX_BUF_UA_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_BUF_UA_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_BUF_UA_INT_EN_A {
         match self.bits {
@@ -402,31 +265,18 @@ impl RX_BUF_UA_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_BUF_UA_INT_EN_A::DISABLE
+        *self == RX_BUF_UA_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_BUF_UA_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_BUF_UA_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_BUF_UA_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `RX_BUF_UA_INT_EN` writer - Receive Buffer Unavailable Interrupt"]
-pub struct RX_BUF_UA_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_BUF_UA_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_BUF_UA_INT_EN_A, 9>;
 impl<'a> RX_BUF_UA_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_BUF_UA_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -436,22 +286,6 @@ impl<'a> RX_BUF_UA_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_BUF_UA_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 9)) | ((value as u32 & 1) << 9);
-        self.w
     }
 }
 #[doc = "Receive Interrupt\n\nValue on reset: 0"]
@@ -469,13 +303,9 @@ impl From<RX_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_INT_EN` reader - Receive Interrupt"]
-pub struct RX_INT_EN_R(crate::FieldReader<bool>);
+pub type RX_INT_EN_R = crate::BitReader<RX_INT_EN_A>;
 impl RX_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_INT_EN_A {
         match self.bits {
@@ -486,31 +316,17 @@ impl RX_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_INT_EN_A::DISABLE
+        *self == RX_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `RX_INT_EN` writer - Receive Interrupt"]
-pub struct RX_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_INT_EN_A, 8>;
 impl<'a> RX_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -520,22 +336,6 @@ impl<'a> RX_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 8)) | ((value as u32 & 1) << 8);
-        self.w
     }
 }
 #[doc = "Early Transmit Interrupt\n\nValue on reset: 0"]
@@ -553,13 +353,9 @@ impl From<TX_EARLY_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_EARLY_INT_EN` reader - Early Transmit Interrupt"]
-pub struct TX_EARLY_INT_EN_R(crate::FieldReader<bool>);
+pub type TX_EARLY_INT_EN_R = crate::BitReader<TX_EARLY_INT_EN_A>;
 impl TX_EARLY_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_EARLY_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_EARLY_INT_EN_A {
         match self.bits {
@@ -570,31 +366,17 @@ impl TX_EARLY_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_EARLY_INT_EN_A::DISABLE
+        *self == TX_EARLY_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_EARLY_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_EARLY_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_EARLY_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `TX_EARLY_INT_EN` writer - Early Transmit Interrupt"]
-pub struct TX_EARLY_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_EARLY_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_EARLY_INT_EN_A, 5>;
 impl<'a> TX_EARLY_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_EARLY_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -604,22 +386,6 @@ impl<'a> TX_EARLY_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_EARLY_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 5)) | ((value as u32 & 1) << 5);
-        self.w
     }
 }
 #[doc = "Transmit Underflow Interrupt\n\nValue on reset: 0"]
@@ -637,13 +403,9 @@ impl From<TX_UNDERFLOW_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_UNDERFLOW_INT_EN` reader - Transmit Underflow Interrupt"]
-pub struct TX_UNDERFLOW_INT_EN_R(crate::FieldReader<bool>);
+pub type TX_UNDERFLOW_INT_EN_R = crate::BitReader<TX_UNDERFLOW_INT_EN_A>;
 impl TX_UNDERFLOW_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_UNDERFLOW_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_UNDERFLOW_INT_EN_A {
         match self.bits {
@@ -654,31 +416,18 @@ impl TX_UNDERFLOW_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_UNDERFLOW_INT_EN_A::DISABLE
+        *self == TX_UNDERFLOW_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_UNDERFLOW_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_UNDERFLOW_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_UNDERFLOW_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `TX_UNDERFLOW_INT_EN` writer - Transmit Underflow Interrupt"]
-pub struct TX_UNDERFLOW_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_UNDERFLOW_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_UNDERFLOW_INT_EN_A, 4>;
 impl<'a> TX_UNDERFLOW_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_UNDERFLOW_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -688,22 +437,6 @@ impl<'a> TX_UNDERFLOW_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_UNDERFLOW_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
     }
 }
 #[doc = "Transmit Timeout Interrupt\n\nValue on reset: 0"]
@@ -721,13 +454,9 @@ impl From<TX_TIMEOUT_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_TIMEOUT_INT_EN` reader - Transmit Timeout Interrupt"]
-pub struct TX_TIMEOUT_INT_EN_R(crate::FieldReader<bool>);
+pub type TX_TIMEOUT_INT_EN_R = crate::BitReader<TX_TIMEOUT_INT_EN_A>;
 impl TX_TIMEOUT_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_TIMEOUT_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_TIMEOUT_INT_EN_A {
         match self.bits {
@@ -738,31 +467,18 @@ impl TX_TIMEOUT_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_TIMEOUT_INT_EN_A::DISABLE
+        *self == TX_TIMEOUT_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_TIMEOUT_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_TIMEOUT_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_TIMEOUT_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `TX_TIMEOUT_INT_EN` writer - Transmit Timeout Interrupt"]
-pub struct TX_TIMEOUT_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_TIMEOUT_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_TIMEOUT_INT_EN_A, 3>;
 impl<'a> TX_TIMEOUT_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_TIMEOUT_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -772,22 +488,6 @@ impl<'a> TX_TIMEOUT_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_TIMEOUT_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
     }
 }
 #[doc = "Transmit Buffer Available Interrupt\n\nValue on reset: 0"]
@@ -805,13 +505,9 @@ impl From<TX_BUF_UA_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_BUF_UA_INT_EN` reader - Transmit Buffer Available Interrupt"]
-pub struct TX_BUF_UA_INT_EN_R(crate::FieldReader<bool>);
+pub type TX_BUF_UA_INT_EN_R = crate::BitReader<TX_BUF_UA_INT_EN_A>;
 impl TX_BUF_UA_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_BUF_UA_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_BUF_UA_INT_EN_A {
         match self.bits {
@@ -822,31 +518,18 @@ impl TX_BUF_UA_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_BUF_UA_INT_EN_A::DISABLE
+        *self == TX_BUF_UA_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_BUF_UA_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_BUF_UA_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_BUF_UA_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `TX_BUF_UA_INT_EN` writer - Transmit Buffer Available Interrupt"]
-pub struct TX_BUF_UA_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_BUF_UA_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_BUF_UA_INT_EN_A, 2>;
 impl<'a> TX_BUF_UA_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_BUF_UA_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -856,22 +539,6 @@ impl<'a> TX_BUF_UA_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_BUF_UA_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "Transmit DMA FSM Stopped Interrupt\n\nValue on reset: 0"]
@@ -889,13 +556,9 @@ impl From<TX_DMA_STOPPED_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_DMA_STOPPED_INT_EN` reader - Transmit DMA FSM Stopped Interrupt"]
-pub struct TX_DMA_STOPPED_INT_EN_R(crate::FieldReader<bool>);
+pub type TX_DMA_STOPPED_INT_EN_R = crate::BitReader<TX_DMA_STOPPED_INT_EN_A>;
 impl TX_DMA_STOPPED_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_DMA_STOPPED_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_DMA_STOPPED_INT_EN_A {
         match self.bits {
@@ -906,31 +569,18 @@ impl TX_DMA_STOPPED_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_DMA_STOPPED_INT_EN_A::DISABLE
+        *self == TX_DMA_STOPPED_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_DMA_STOPPED_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_DMA_STOPPED_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_DMA_STOPPED_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `TX_DMA_STOPPED_INT_EN` writer - Transmit DMA FSM Stopped Interrupt"]
-pub struct TX_DMA_STOPPED_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_DMA_STOPPED_INT_EN_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_DMA_STOPPED_INT_EN_A, 1>;
 impl<'a> TX_DMA_STOPPED_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_DMA_STOPPED_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -940,22 +590,6 @@ impl<'a> TX_DMA_STOPPED_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_DMA_STOPPED_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Transmit Interrupt\n\nValue on reset: 0"]
@@ -973,13 +607,9 @@ impl From<TX_INT_EN_A> for bool {
     }
 }
 #[doc = "Field `TX_INT_EN` reader - Transmit Interrupt"]
-pub struct TX_INT_EN_R(crate::FieldReader<bool>);
+pub type TX_INT_EN_R = crate::BitReader<TX_INT_EN_A>;
 impl TX_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TX_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TX_INT_EN_A {
         match self.bits {
@@ -990,31 +620,17 @@ impl TX_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TX_INT_EN_A::DISABLE
+        *self == TX_INT_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TX_INT_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TX_INT_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `TX_INT_EN` writer - Transmit Interrupt"]
-pub struct TX_INT_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TX_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_INT_EN_A, 0>;
 impl<'a> TX_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TX_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -1024,22 +640,6 @@ impl<'a> TX_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TX_INT_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -1108,62 +708,62 @@ impl W {
     #[doc = "Bit 13 - Early Receive Interrupt"]
     #[inline(always)]
     pub fn rx_early_int_en(&mut self) -> RX_EARLY_INT_EN_W {
-        RX_EARLY_INT_EN_W { w: self }
+        RX_EARLY_INT_EN_W::new(self)
     }
     #[doc = "Bit 12 - Receive Overflow Interrupt"]
     #[inline(always)]
     pub fn rx_overflow_int_en(&mut self) -> RX_OVERFLOW_INT_EN_W {
-        RX_OVERFLOW_INT_EN_W { w: self }
+        RX_OVERFLOW_INT_EN_W::new(self)
     }
     #[doc = "Bit 11 - Receive Timeout Interrupt"]
     #[inline(always)]
     pub fn rx_timeout_int_en(&mut self) -> RX_TIMEOUT_INT_EN_W {
-        RX_TIMEOUT_INT_EN_W { w: self }
+        RX_TIMEOUT_INT_EN_W::new(self)
     }
     #[doc = "Bit 10 - Receive DMA FSM Stopped Interrupt"]
     #[inline(always)]
     pub fn rx_dma_stopped_int_en(&mut self) -> RX_DMA_STOPPED_INT_EN_W {
-        RX_DMA_STOPPED_INT_EN_W { w: self }
+        RX_DMA_STOPPED_INT_EN_W::new(self)
     }
     #[doc = "Bit 9 - Receive Buffer Unavailable Interrupt"]
     #[inline(always)]
     pub fn rx_buf_ua_int_en(&mut self) -> RX_BUF_UA_INT_EN_W {
-        RX_BUF_UA_INT_EN_W { w: self }
+        RX_BUF_UA_INT_EN_W::new(self)
     }
     #[doc = "Bit 8 - Receive Interrupt"]
     #[inline(always)]
     pub fn rx_int_en(&mut self) -> RX_INT_EN_W {
-        RX_INT_EN_W { w: self }
+        RX_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - Early Transmit Interrupt"]
     #[inline(always)]
     pub fn tx_early_int_en(&mut self) -> TX_EARLY_INT_EN_W {
-        TX_EARLY_INT_EN_W { w: self }
+        TX_EARLY_INT_EN_W::new(self)
     }
     #[doc = "Bit 4 - Transmit Underflow Interrupt"]
     #[inline(always)]
     pub fn tx_underflow_int_en(&mut self) -> TX_UNDERFLOW_INT_EN_W {
-        TX_UNDERFLOW_INT_EN_W { w: self }
+        TX_UNDERFLOW_INT_EN_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Timeout Interrupt"]
     #[inline(always)]
     pub fn tx_timeout_int_en(&mut self) -> TX_TIMEOUT_INT_EN_W {
-        TX_TIMEOUT_INT_EN_W { w: self }
+        TX_TIMEOUT_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Transmit Buffer Available Interrupt"]
     #[inline(always)]
     pub fn tx_buf_ua_int_en(&mut self) -> TX_BUF_UA_INT_EN_W {
-        TX_BUF_UA_INT_EN_W { w: self }
+        TX_BUF_UA_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - Transmit DMA FSM Stopped Interrupt"]
     #[inline(always)]
     pub fn tx_dma_stopped_int_en(&mut self) -> TX_DMA_STOPPED_INT_EN_W {
-        TX_DMA_STOPPED_INT_EN_W { w: self }
+        TX_DMA_STOPPED_INT_EN_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
     pub fn tx_int_en(&mut self) -> TX_INT_EN_W {
-        TX_INT_EN_W { w: self }
+        TX_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

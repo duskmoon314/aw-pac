@@ -35,20 +35,7 @@ impl From<crate::W<CIR_TICR_L_SPEC>> for W {
     }
 }
 #[doc = "Field `TIC_L` reader - Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero."]
-pub struct TIC_L_R(crate::FieldReader<u8>);
-impl TIC_L_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TIC_L_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TIC_L_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TIC_L_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero."]
     #[inline(always)]

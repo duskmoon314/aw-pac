@@ -35,136 +35,21 @@ impl From<crate::W<SMHC_HS400_DL_SPEC>> for W {
     }
 }
 #[doc = "Field `HS400_DL_CAL_START` reader - HS400 Delay Calibration Start"]
-pub struct HS400_DL_CAL_START_R(crate::FieldReader<bool>);
-impl HS400_DL_CAL_START_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HS400_DL_CAL_START_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS400_DL_CAL_START_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS400_DL_CAL_START_R = crate::BitReader<bool>;
 #[doc = "Field `HS400_DL_CAL_START` writer - HS400 Delay Calibration Start"]
-pub struct HS400_DL_CAL_START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HS400_DL_CAL_START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
-        self.w
-    }
-}
+pub type HS400_DL_CAL_START_W<'a> = crate::BitWriter<'a, u32, SMHC_HS400_DL_SPEC, bool, 15>;
 #[doc = "Field `HS400_DL_CAL_DONE` reader - HS400 Delay Calibration Done"]
-pub struct HS400_DL_CAL_DONE_R(crate::FieldReader<bool>);
-impl HS400_DL_CAL_DONE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HS400_DL_CAL_DONE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS400_DL_CAL_DONE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS400_DL_CAL_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `HS400_DL` reader - HS400 Delay"]
-pub struct HS400_DL_R(crate::FieldReader<u8>);
-impl HS400_DL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HS400_DL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS400_DL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS400_DL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HS400_DL_SW_EN` reader - Sample Delay Software Enable"]
-pub struct HS400_DL_SW_EN_R(crate::FieldReader<bool>);
-impl HS400_DL_SW_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HS400_DL_SW_EN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS400_DL_SW_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS400_DL_SW_EN_R = crate::BitReader<bool>;
 #[doc = "Field `HS400_DL_SW_EN` writer - Sample Delay Software Enable"]
-pub struct HS400_DL_SW_EN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HS400_DL_SW_EN_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
-    }
-}
+pub type HS400_DL_SW_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_HS400_DL_SPEC, bool, 7>;
 #[doc = "Field `HS400_DL_SW` reader - HS400 Delay Software"]
-pub struct HS400_DL_SW_R(crate::FieldReader<u8>);
-impl HS400_DL_SW_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        HS400_DL_SW_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for HS400_DL_SW_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type HS400_DL_SW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HS400_DL_SW` writer - HS400 Delay Software"]
-pub struct HS400_DL_SW_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> HS400_DL_SW_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
-}
+pub type HS400_DL_SW_W<'a> = crate::FieldWriter<'a, u32, SMHC_HS400_DL_SPEC, u8, u8, 4, 0>;
 impl R {
     #[doc = "Bit 15 - HS400 Delay Calibration Start"]
     #[inline(always)]
@@ -196,17 +81,17 @@ impl W {
     #[doc = "Bit 15 - HS400 Delay Calibration Start"]
     #[inline(always)]
     pub fn hs400_dl_cal_start(&mut self) -> HS400_DL_CAL_START_W {
-        HS400_DL_CAL_START_W { w: self }
+        HS400_DL_CAL_START_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
     pub fn hs400_dl_sw_en(&mut self) -> HS400_DL_SW_EN_W {
-        HS400_DL_SW_EN_W { w: self }
+        HS400_DL_SW_EN_W::new(self)
     }
     #[doc = "Bits 0:3 - HS400 Delay Software"]
     #[inline(always)]
     pub fn hs400_dl_sw(&mut self) -> HS400_DL_SW_W {
-        HS400_DL_SW_W { w: self }
+        HS400_DL_SW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

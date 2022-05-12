@@ -52,13 +52,9 @@ impl From<CARD_WID_A> for u8 {
     }
 }
 #[doc = "Field `CARD_WID` reader - Card Width"]
-pub struct CARD_WID_R(crate::FieldReader<u8>);
+pub type CARD_WID_R = crate::FieldReader<u8, CARD_WID_A>;
 impl CARD_WID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CARD_WID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CARD_WID_A> {
         match self.bits {
@@ -71,36 +67,22 @@ impl CARD_WID_R {
     #[doc = "Checks if the value of the field is `B1`"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
-        **self == CARD_WID_A::B1
+        *self == CARD_WID_A::B1
     }
     #[doc = "Checks if the value of the field is `B4`"]
     #[inline(always)]
     pub fn is_b4(&self) -> bool {
-        **self == CARD_WID_A::B4
+        *self == CARD_WID_A::B4
     }
     #[doc = "Checks if the value of the field is `B8`"]
     #[inline(always)]
     pub fn is_b8(&self) -> bool {
-        **self == CARD_WID_A::B8
-    }
-}
-impl core::ops::Deref for CARD_WID_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CARD_WID_A::B8
     }
 }
 #[doc = "Field `CARD_WID` writer - Card Width"]
-pub struct CARD_WID_W<'a> {
-    w: &'a mut W,
-}
+pub type CARD_WID_W<'a> = crate::FieldWriter<'a, u32, SMHC_CTYPE_SPEC, u8, CARD_WID_A, 2, 0>;
 impl<'a> CARD_WID_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CARD_WID_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "1-bit width"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut W {
@@ -116,12 +98,6 @@ impl<'a> CARD_WID_W<'a> {
     pub fn b8(self) -> &'a mut W {
         self.variant(CARD_WID_A::B8)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Card Width"]
@@ -134,7 +110,7 @@ impl W {
     #[doc = "Bits 0:1 - Card Width"]
     #[inline(always)]
     pub fn card_wid(&mut self) -> CARD_WID_W {
-        CARD_WID_W { w: self }
+        CARD_WID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

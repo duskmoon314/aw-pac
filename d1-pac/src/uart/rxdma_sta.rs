@@ -49,13 +49,9 @@ impl From<BUFFER_READ_ADDRESS_UPDATING_A> for bool {
     }
 }
 #[doc = "Field `buffer_read_address_updating` reader - "]
-pub struct BUFFER_READ_ADDRESS_UPDATING_R(crate::FieldReader<bool>);
+pub type BUFFER_READ_ADDRESS_UPDATING_R = crate::BitReader<BUFFER_READ_ADDRESS_UPDATING_A>;
 impl BUFFER_READ_ADDRESS_UPDATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BUFFER_READ_ADDRESS_UPDATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUFFER_READ_ADDRESS_UPDATING_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl BUFFER_READ_ADDRESS_UPDATING_R {
     #[doc = "Checks if the value of the field is `READY`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
-        **self == BUFFER_READ_ADDRESS_UPDATING_A::READY
+        *self == BUFFER_READ_ADDRESS_UPDATING_A::READY
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == BUFFER_READ_ADDRESS_UPDATING_A::BUSY
-    }
-}
-impl core::ops::Deref for BUFFER_READ_ADDRESS_UPDATING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BUFFER_READ_ADDRESS_UPDATING_A::BUSY
     }
 }
 #[doc = "Field `buffer_read_address_updating` writer - "]
-pub struct BUFFER_READ_ADDRESS_UPDATING_W<'a> {
-    w: &'a mut W,
-}
+pub type BUFFER_READ_ADDRESS_UPDATING_W<'a> =
+    crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUFFER_READ_ADDRESS_UPDATING_A, 1>;
 impl<'a> BUFFER_READ_ADDRESS_UPDATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BUFFER_READ_ADDRESS_UPDATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ready(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> BUFFER_READ_ADDRESS_UPDATING_W<'a> {
     #[inline(always)]
     pub fn busy(self) -> &'a mut W {
         self.variant(BUFFER_READ_ADDRESS_UPDATING_A::BUSY)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<BUSY_A> for bool {
     }
 }
 #[doc = "Field `busy` reader - "]
-pub struct BUSY_R(crate::FieldReader<bool>);
+pub type BUSY_R = crate::BitReader<BUSY_A>;
 impl BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUSY_A {
         match self.bits {
@@ -150,31 +113,17 @@ impl BUSY_R {
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == BUSY_A::IDLE
+        *self == BUSY_A::IDLE
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == BUSY_A::BUSY
-    }
-}
-impl core::ops::Deref for BUSY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BUSY_A::BUSY
     }
 }
 #[doc = "Field `busy` writer - "]
-pub struct BUSY_W<'a> {
-    w: &'a mut W,
-}
+pub type BUSY_W<'a> = crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUSY_A, 0>;
 impl<'a> BUSY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BUSY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn idle(self) -> &'a mut W {
@@ -184,22 +133,6 @@ impl<'a> BUSY_W<'a> {
     #[inline(always)]
     pub fn busy(self) -> &'a mut W {
         self.variant(BUSY_A::BUSY)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -218,12 +151,12 @@ impl W {
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn buffer_read_address_updating(&mut self) -> BUFFER_READ_ADDRESS_UPDATING_W {
-        BUFFER_READ_ADDRESS_UPDATING_W { w: self }
+        BUFFER_READ_ADDRESS_UPDATING_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn busy(&mut self) -> BUSY_W {
-        BUSY_W { w: self }
+        BUSY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

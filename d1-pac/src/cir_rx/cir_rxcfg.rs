@@ -35,42 +35,9 @@ impl From<crate::W<CIR_RXCFG_SPEC>> for W {
     }
 }
 #[doc = "Field `SCS2` reader - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
-pub struct SCS2_R(crate::FieldReader<bool>);
-impl SCS2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SCS2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCS2_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCS2_R = crate::BitReader<bool>;
 #[doc = "Field `SCS2` writer - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
-pub struct SCS2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCS2_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
-        self.w
-    }
-}
+pub type SCS2_W<'a> = crate::BitWriter<'a, u32, CIR_RXCFG_SPEC, bool, 24>;
 #[doc = "Active Threshold Control for CIR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ATHC_A {
@@ -86,13 +53,9 @@ impl From<ATHC_A> for bool {
     }
 }
 #[doc = "Field `ATHC` reader - Active Threshold Control for CIR"]
-pub struct ATHC_R(crate::FieldReader<bool>);
+pub type ATHC_R = crate::BitReader<ATHC_A>;
 impl ATHC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ATHC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ATHC_A {
         match self.bits {
@@ -103,31 +66,17 @@ impl ATHC_R {
     #[doc = "Checks if the value of the field is `SAMPLE`"]
     #[inline(always)]
     pub fn is_sample(&self) -> bool {
-        **self == ATHC_A::SAMPLE
+        *self == ATHC_A::SAMPLE
     }
     #[doc = "Checks if the value of the field is `SAMPLE_128`"]
     #[inline(always)]
     pub fn is_sample_128(&self) -> bool {
-        **self == ATHC_A::SAMPLE_128
-    }
-}
-impl core::ops::Deref for ATHC_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ATHC_A::SAMPLE_128
     }
 }
 #[doc = "Field `ATHC` writer - Active Threshold Control for CIR"]
-pub struct ATHC_W<'a> {
-    w: &'a mut W,
-}
+pub type ATHC_W<'a> = crate::BitWriter<'a, u32, CIR_RXCFG_SPEC, ATHC_A, 23>;
 impl<'a> ATHC_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ATHC_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "ATHR in a unit of (Sample Clock)"]
     #[inline(always)]
     pub fn sample(self) -> &'a mut W {
@@ -138,77 +87,15 @@ impl<'a> ATHC_W<'a> {
     pub fn sample_128(self) -> &'a mut W {
         self.variant(ATHC_A::SAMPLE_128)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 23)) | ((value as u32 & 1) << 23);
-        self.w
-    }
 }
 #[doc = "Field `ATHR` reader - Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock))."]
-pub struct ATHR_R(crate::FieldReader<u8>);
-impl ATHR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ATHR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ATHR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ATHR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ATHR` writer - Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock))."]
-pub struct ATHR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ATHR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type ATHR_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 7, 16>;
 #[doc = "Field `ITHR` reader - Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished."]
-pub struct ITHR_R(crate::FieldReader<u8>);
-impl ITHR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        ITHR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for ITHR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type ITHR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ITHR` writer - Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished."]
-pub struct ITHR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> ITHR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
-}
+pub type ITHR_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 8, 8>;
 #[doc = "Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware.\n\nValue on reset: 10"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -345,13 +232,9 @@ impl From<NTHR_A> for u8 {
     }
 }
 #[doc = "Field `NTHR` reader - Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware."]
-pub struct NTHR_R(crate::FieldReader<u8>);
+pub type NTHR_R = crate::FieldReader<u8, NTHR_A>;
 impl NTHR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        NTHR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<NTHR_A> {
         match self.bits {
@@ -423,331 +306,317 @@ impl NTHR_R {
     #[doc = "Checks if the value of the field is `T0`"]
     #[inline(always)]
     pub fn is_t0(&self) -> bool {
-        **self == NTHR_A::T0
+        *self == NTHR_A::T0
     }
     #[doc = "Checks if the value of the field is `T1`"]
     #[inline(always)]
     pub fn is_t1(&self) -> bool {
-        **self == NTHR_A::T1
+        *self == NTHR_A::T1
     }
     #[doc = "Checks if the value of the field is `T2`"]
     #[inline(always)]
     pub fn is_t2(&self) -> bool {
-        **self == NTHR_A::T2
+        *self == NTHR_A::T2
     }
     #[doc = "Checks if the value of the field is `T3`"]
     #[inline(always)]
     pub fn is_t3(&self) -> bool {
-        **self == NTHR_A::T3
+        *self == NTHR_A::T3
     }
     #[doc = "Checks if the value of the field is `T4`"]
     #[inline(always)]
     pub fn is_t4(&self) -> bool {
-        **self == NTHR_A::T4
+        *self == NTHR_A::T4
     }
     #[doc = "Checks if the value of the field is `T5`"]
     #[inline(always)]
     pub fn is_t5(&self) -> bool {
-        **self == NTHR_A::T5
+        *self == NTHR_A::T5
     }
     #[doc = "Checks if the value of the field is `T6`"]
     #[inline(always)]
     pub fn is_t6(&self) -> bool {
-        **self == NTHR_A::T6
+        *self == NTHR_A::T6
     }
     #[doc = "Checks if the value of the field is `T7`"]
     #[inline(always)]
     pub fn is_t7(&self) -> bool {
-        **self == NTHR_A::T7
+        *self == NTHR_A::T7
     }
     #[doc = "Checks if the value of the field is `T8`"]
     #[inline(always)]
     pub fn is_t8(&self) -> bool {
-        **self == NTHR_A::T8
+        *self == NTHR_A::T8
     }
     #[doc = "Checks if the value of the field is `T9`"]
     #[inline(always)]
     pub fn is_t9(&self) -> bool {
-        **self == NTHR_A::T9
+        *self == NTHR_A::T9
     }
     #[doc = "Checks if the value of the field is `T10`"]
     #[inline(always)]
     pub fn is_t10(&self) -> bool {
-        **self == NTHR_A::T10
+        *self == NTHR_A::T10
     }
     #[doc = "Checks if the value of the field is `T11`"]
     #[inline(always)]
     pub fn is_t11(&self) -> bool {
-        **self == NTHR_A::T11
+        *self == NTHR_A::T11
     }
     #[doc = "Checks if the value of the field is `T12`"]
     #[inline(always)]
     pub fn is_t12(&self) -> bool {
-        **self == NTHR_A::T12
+        *self == NTHR_A::T12
     }
     #[doc = "Checks if the value of the field is `T13`"]
     #[inline(always)]
     pub fn is_t13(&self) -> bool {
-        **self == NTHR_A::T13
+        *self == NTHR_A::T13
     }
     #[doc = "Checks if the value of the field is `T14`"]
     #[inline(always)]
     pub fn is_t14(&self) -> bool {
-        **self == NTHR_A::T14
+        *self == NTHR_A::T14
     }
     #[doc = "Checks if the value of the field is `T15`"]
     #[inline(always)]
     pub fn is_t15(&self) -> bool {
-        **self == NTHR_A::T15
+        *self == NTHR_A::T15
     }
     #[doc = "Checks if the value of the field is `T16`"]
     #[inline(always)]
     pub fn is_t16(&self) -> bool {
-        **self == NTHR_A::T16
+        *self == NTHR_A::T16
     }
     #[doc = "Checks if the value of the field is `T17`"]
     #[inline(always)]
     pub fn is_t17(&self) -> bool {
-        **self == NTHR_A::T17
+        *self == NTHR_A::T17
     }
     #[doc = "Checks if the value of the field is `T18`"]
     #[inline(always)]
     pub fn is_t18(&self) -> bool {
-        **self == NTHR_A::T18
+        *self == NTHR_A::T18
     }
     #[doc = "Checks if the value of the field is `T19`"]
     #[inline(always)]
     pub fn is_t19(&self) -> bool {
-        **self == NTHR_A::T19
+        *self == NTHR_A::T19
     }
     #[doc = "Checks if the value of the field is `T20`"]
     #[inline(always)]
     pub fn is_t20(&self) -> bool {
-        **self == NTHR_A::T20
+        *self == NTHR_A::T20
     }
     #[doc = "Checks if the value of the field is `T21`"]
     #[inline(always)]
     pub fn is_t21(&self) -> bool {
-        **self == NTHR_A::T21
+        *self == NTHR_A::T21
     }
     #[doc = "Checks if the value of the field is `T22`"]
     #[inline(always)]
     pub fn is_t22(&self) -> bool {
-        **self == NTHR_A::T22
+        *self == NTHR_A::T22
     }
     #[doc = "Checks if the value of the field is `T23`"]
     #[inline(always)]
     pub fn is_t23(&self) -> bool {
-        **self == NTHR_A::T23
+        *self == NTHR_A::T23
     }
     #[doc = "Checks if the value of the field is `T24`"]
     #[inline(always)]
     pub fn is_t24(&self) -> bool {
-        **self == NTHR_A::T24
+        *self == NTHR_A::T24
     }
     #[doc = "Checks if the value of the field is `T25`"]
     #[inline(always)]
     pub fn is_t25(&self) -> bool {
-        **self == NTHR_A::T25
+        *self == NTHR_A::T25
     }
     #[doc = "Checks if the value of the field is `T26`"]
     #[inline(always)]
     pub fn is_t26(&self) -> bool {
-        **self == NTHR_A::T26
+        *self == NTHR_A::T26
     }
     #[doc = "Checks if the value of the field is `T27`"]
     #[inline(always)]
     pub fn is_t27(&self) -> bool {
-        **self == NTHR_A::T27
+        *self == NTHR_A::T27
     }
     #[doc = "Checks if the value of the field is `T28`"]
     #[inline(always)]
     pub fn is_t28(&self) -> bool {
-        **self == NTHR_A::T28
+        *self == NTHR_A::T28
     }
     #[doc = "Checks if the value of the field is `T29`"]
     #[inline(always)]
     pub fn is_t29(&self) -> bool {
-        **self == NTHR_A::T29
+        *self == NTHR_A::T29
     }
     #[doc = "Checks if the value of the field is `T30`"]
     #[inline(always)]
     pub fn is_t30(&self) -> bool {
-        **self == NTHR_A::T30
+        *self == NTHR_A::T30
     }
     #[doc = "Checks if the value of the field is `T31`"]
     #[inline(always)]
     pub fn is_t31(&self) -> bool {
-        **self == NTHR_A::T31
+        *self == NTHR_A::T31
     }
     #[doc = "Checks if the value of the field is `T32`"]
     #[inline(always)]
     pub fn is_t32(&self) -> bool {
-        **self == NTHR_A::T32
+        *self == NTHR_A::T32
     }
     #[doc = "Checks if the value of the field is `T33`"]
     #[inline(always)]
     pub fn is_t33(&self) -> bool {
-        **self == NTHR_A::T33
+        *self == NTHR_A::T33
     }
     #[doc = "Checks if the value of the field is `T34`"]
     #[inline(always)]
     pub fn is_t34(&self) -> bool {
-        **self == NTHR_A::T34
+        *self == NTHR_A::T34
     }
     #[doc = "Checks if the value of the field is `T35`"]
     #[inline(always)]
     pub fn is_t35(&self) -> bool {
-        **self == NTHR_A::T35
+        *self == NTHR_A::T35
     }
     #[doc = "Checks if the value of the field is `T36`"]
     #[inline(always)]
     pub fn is_t36(&self) -> bool {
-        **self == NTHR_A::T36
+        *self == NTHR_A::T36
     }
     #[doc = "Checks if the value of the field is `T37`"]
     #[inline(always)]
     pub fn is_t37(&self) -> bool {
-        **self == NTHR_A::T37
+        *self == NTHR_A::T37
     }
     #[doc = "Checks if the value of the field is `T38`"]
     #[inline(always)]
     pub fn is_t38(&self) -> bool {
-        **self == NTHR_A::T38
+        *self == NTHR_A::T38
     }
     #[doc = "Checks if the value of the field is `T39`"]
     #[inline(always)]
     pub fn is_t39(&self) -> bool {
-        **self == NTHR_A::T39
+        *self == NTHR_A::T39
     }
     #[doc = "Checks if the value of the field is `T40`"]
     #[inline(always)]
     pub fn is_t40(&self) -> bool {
-        **self == NTHR_A::T40
+        *self == NTHR_A::T40
     }
     #[doc = "Checks if the value of the field is `T41`"]
     #[inline(always)]
     pub fn is_t41(&self) -> bool {
-        **self == NTHR_A::T41
+        *self == NTHR_A::T41
     }
     #[doc = "Checks if the value of the field is `T42`"]
     #[inline(always)]
     pub fn is_t42(&self) -> bool {
-        **self == NTHR_A::T42
+        *self == NTHR_A::T42
     }
     #[doc = "Checks if the value of the field is `T43`"]
     #[inline(always)]
     pub fn is_t43(&self) -> bool {
-        **self == NTHR_A::T43
+        *self == NTHR_A::T43
     }
     #[doc = "Checks if the value of the field is `T44`"]
     #[inline(always)]
     pub fn is_t44(&self) -> bool {
-        **self == NTHR_A::T44
+        *self == NTHR_A::T44
     }
     #[doc = "Checks if the value of the field is `T45`"]
     #[inline(always)]
     pub fn is_t45(&self) -> bool {
-        **self == NTHR_A::T45
+        *self == NTHR_A::T45
     }
     #[doc = "Checks if the value of the field is `T46`"]
     #[inline(always)]
     pub fn is_t46(&self) -> bool {
-        **self == NTHR_A::T46
+        *self == NTHR_A::T46
     }
     #[doc = "Checks if the value of the field is `T47`"]
     #[inline(always)]
     pub fn is_t47(&self) -> bool {
-        **self == NTHR_A::T47
+        *self == NTHR_A::T47
     }
     #[doc = "Checks if the value of the field is `T48`"]
     #[inline(always)]
     pub fn is_t48(&self) -> bool {
-        **self == NTHR_A::T48
+        *self == NTHR_A::T48
     }
     #[doc = "Checks if the value of the field is `T49`"]
     #[inline(always)]
     pub fn is_t49(&self) -> bool {
-        **self == NTHR_A::T49
+        *self == NTHR_A::T49
     }
     #[doc = "Checks if the value of the field is `T50`"]
     #[inline(always)]
     pub fn is_t50(&self) -> bool {
-        **self == NTHR_A::T50
+        *self == NTHR_A::T50
     }
     #[doc = "Checks if the value of the field is `T51`"]
     #[inline(always)]
     pub fn is_t51(&self) -> bool {
-        **self == NTHR_A::T51
+        *self == NTHR_A::T51
     }
     #[doc = "Checks if the value of the field is `T52`"]
     #[inline(always)]
     pub fn is_t52(&self) -> bool {
-        **self == NTHR_A::T52
+        *self == NTHR_A::T52
     }
     #[doc = "Checks if the value of the field is `T53`"]
     #[inline(always)]
     pub fn is_t53(&self) -> bool {
-        **self == NTHR_A::T53
+        *self == NTHR_A::T53
     }
     #[doc = "Checks if the value of the field is `T54`"]
     #[inline(always)]
     pub fn is_t54(&self) -> bool {
-        **self == NTHR_A::T54
+        *self == NTHR_A::T54
     }
     #[doc = "Checks if the value of the field is `T55`"]
     #[inline(always)]
     pub fn is_t55(&self) -> bool {
-        **self == NTHR_A::T55
+        *self == NTHR_A::T55
     }
     #[doc = "Checks if the value of the field is `T56`"]
     #[inline(always)]
     pub fn is_t56(&self) -> bool {
-        **self == NTHR_A::T56
+        *self == NTHR_A::T56
     }
     #[doc = "Checks if the value of the field is `T57`"]
     #[inline(always)]
     pub fn is_t57(&self) -> bool {
-        **self == NTHR_A::T57
+        *self == NTHR_A::T57
     }
     #[doc = "Checks if the value of the field is `T58`"]
     #[inline(always)]
     pub fn is_t58(&self) -> bool {
-        **self == NTHR_A::T58
+        *self == NTHR_A::T58
     }
     #[doc = "Checks if the value of the field is `T59`"]
     #[inline(always)]
     pub fn is_t59(&self) -> bool {
-        **self == NTHR_A::T59
+        *self == NTHR_A::T59
     }
     #[doc = "Checks if the value of the field is `T60`"]
     #[inline(always)]
     pub fn is_t60(&self) -> bool {
-        **self == NTHR_A::T60
+        *self == NTHR_A::T60
     }
     #[doc = "Checks if the value of the field is `T61`"]
     #[inline(always)]
     pub fn is_t61(&self) -> bool {
-        **self == NTHR_A::T61
-    }
-}
-impl core::ops::Deref for NTHR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == NTHR_A::T61
     }
 }
 #[doc = "Field `NTHR` writer - Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware."]
-pub struct NTHR_W<'a> {
-    w: &'a mut W,
-}
+pub type NTHR_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, NTHR_A, 6, 2>;
 impl<'a> NTHR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: NTHR_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "All samples are recorded into RX FIFO"]
     #[inline(always)]
     pub fn t0(self) -> &'a mut W {
@@ -1058,40 +927,11 @@ impl<'a> NTHR_W<'a> {
     pub fn t61(self) -> &'a mut W {
         self.variant(NTHR_A::T61)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 2)) | ((value as u32 & 0x3f) << 2);
-        self.w
-    }
 }
 #[doc = "Field `SCS` reader - Sample Clock Select for CIR"]
-pub struct SCS_R(crate::FieldReader<u8>);
-impl SCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCS_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCS` writer - Sample Clock Select for CIR"]
-pub struct SCS_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCS_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
-}
+pub type SCS_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bit 24 - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
     #[inline(always)]
@@ -1128,32 +968,32 @@ impl W {
     #[doc = "Bit 24 - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
     #[inline(always)]
     pub fn scs2(&mut self) -> SCS2_W {
-        SCS2_W { w: self }
+        SCS2_W::new(self)
     }
     #[doc = "Bit 23 - Active Threshold Control for CIR"]
     #[inline(always)]
     pub fn athc(&mut self) -> ATHC_W {
-        ATHC_W { w: self }
+        ATHC_W::new(self)
     }
     #[doc = "Bits 16:22 - Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock))."]
     #[inline(always)]
     pub fn athr(&mut self) -> ATHR_W {
-        ATHR_W { w: self }
+        ATHR_W::new(self)
     }
     #[doc = "Bits 8:15 - Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished."]
     #[inline(always)]
     pub fn ithr(&mut self) -> ITHR_W {
-        ITHR_W { w: self }
+        ITHR_W::new(self)
     }
     #[doc = "Bits 2:7 - Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware."]
     #[inline(always)]
     pub fn nthr(&mut self) -> NTHR_W {
-        NTHR_W { w: self }
+        NTHR_W::new(self)
     }
     #[doc = "Bits 0:1 - Sample Clock Select for CIR"]
     #[inline(always)]
     pub fn scs(&mut self) -> SCS_W {
-        SCS_W { w: self }
+        SCS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

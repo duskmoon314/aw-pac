@@ -83,13 +83,9 @@ impl From<STA_A> for u8 {
     }
 }
 #[doc = "Field `sta` reader - "]
-pub struct STA_R(crate::FieldReader<u8>);
+pub type STA_R = crate::FieldReader<u8, STA_A>;
 impl STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        STA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<STA_A> {
         match self.bits {
@@ -128,154 +124,147 @@ impl STA_R {
     #[doc = "Checks if the value of the field is `BE`"]
     #[inline(always)]
     pub fn is_be(&self) -> bool {
-        **self == STA_A::BE
+        *self == STA_A::BE
     }
     #[doc = "Checks if the value of the field is `SCT`"]
     #[inline(always)]
     pub fn is_sct(&self) -> bool {
-        **self == STA_A::SCT
+        *self == STA_A::SCT
     }
     #[doc = "Checks if the value of the field is `RSCT`"]
     #[inline(always)]
     pub fn is_rsct(&self) -> bool {
-        **self == STA_A::RSCT
+        *self == STA_A::RSCT
     }
     #[doc = "Checks if the value of the field is `AWBT_AR`"]
     #[inline(always)]
     pub fn is_awbt_ar(&self) -> bool {
-        **self == STA_A::AWBT_AR
+        *self == STA_A::AWBT_AR
     }
     #[doc = "Checks if the value of the field is `AWBT_ANR`"]
     #[inline(always)]
     pub fn is_awbt_anr(&self) -> bool {
-        **self == STA_A::AWBT_ANR
+        *self == STA_A::AWBT_ANR
     }
     #[doc = "Checks if the value of the field is `DBTM_AR`"]
     #[inline(always)]
     pub fn is_dbtm_ar(&self) -> bool {
-        **self == STA_A::DBTM_AR
+        *self == STA_A::DBTM_AR
     }
     #[doc = "Checks if the value of the field is `DBTM_ANR`"]
     #[inline(always)]
     pub fn is_dbtm_anr(&self) -> bool {
-        **self == STA_A::DBTM_ANR
+        *self == STA_A::DBTM_ANR
     }
     #[doc = "Checks if the value of the field is `AL_A_DB`"]
     #[inline(always)]
     pub fn is_al_a_db(&self) -> bool {
-        **self == STA_A::AL_A_DB
+        *self == STA_A::AL_A_DB
     }
     #[doc = "Checks if the value of the field is `ARBT_AR`"]
     #[inline(always)]
     pub fn is_arbt_ar(&self) -> bool {
-        **self == STA_A::ARBT_AR
+        *self == STA_A::ARBT_AR
     }
     #[doc = "Checks if the value of the field is `ARBT_ANR`"]
     #[inline(always)]
     pub fn is_arbt_anr(&self) -> bool {
-        **self == STA_A::ARBT_ANR
+        *self == STA_A::ARBT_ANR
     }
     #[doc = "Checks if the value of the field is `DBRM_AT`"]
     #[inline(always)]
     pub fn is_dbrm_at(&self) -> bool {
-        **self == STA_A::DBRM_AT
+        *self == STA_A::DBRM_AT
     }
     #[doc = "Checks if the value of the field is `DBRM_ANT`"]
     #[inline(always)]
     pub fn is_dbrm_ant(&self) -> bool {
-        **self == STA_A::DBRM_ANT
+        *self == STA_A::DBRM_ANT
     }
     #[doc = "Checks if the value of the field is `SAWR_AT`"]
     #[inline(always)]
     pub fn is_sawr_at(&self) -> bool {
-        **self == STA_A::SAWR_AT
+        *self == STA_A::SAWR_AT
     }
     #[doc = "Checks if the value of the field is `AL_AM_SAWR_AT`"]
     #[inline(always)]
     pub fn is_al_am_sawr_at(&self) -> bool {
-        **self == STA_A::AL_AM_SAWR_AT
+        *self == STA_A::AL_AM_SAWR_AT
     }
     #[doc = "Checks if the value of the field is `GCAR_AT`"]
     #[inline(always)]
     pub fn is_gcar_at(&self) -> bool {
-        **self == STA_A::GCAR_AT
+        *self == STA_A::GCAR_AT
     }
     #[doc = "Checks if the value of the field is `AL_AM_GCAR_AT`"]
     #[inline(always)]
     pub fn is_al_am_gcar_at(&self) -> bool {
-        **self == STA_A::AL_AM_GCAR_AT
+        *self == STA_A::AL_AM_GCAR_AT
     }
     #[doc = "Checks if the value of the field is `DBR_SAR_AT`"]
     #[inline(always)]
     pub fn is_dbr_sar_at(&self) -> bool {
-        **self == STA_A::DBR_SAR_AT
+        *self == STA_A::DBR_SAR_AT
     }
     #[doc = "Checks if the value of the field is `DBR_SAR_ANT`"]
     #[inline(always)]
     pub fn is_dbr_sar_ant(&self) -> bool {
-        **self == STA_A::DBR_SAR_ANT
+        *self == STA_A::DBR_SAR_ANT
     }
     #[doc = "Checks if the value of the field is `DBR_GCR_AT`"]
     #[inline(always)]
     pub fn is_dbr_gcr_at(&self) -> bool {
-        **self == STA_A::DBR_GCR_AT
+        *self == STA_A::DBR_GCR_AT
     }
     #[doc = "Checks if the value of the field is `DBR_GCR_ANT`"]
     #[inline(always)]
     pub fn is_dbr_gcr_ant(&self) -> bool {
-        **self == STA_A::DBR_GCR_ANT
+        *self == STA_A::DBR_GCR_ANT
     }
     #[doc = "Checks if the value of the field is `SRSCRS`"]
     #[inline(always)]
     pub fn is_srscrs(&self) -> bool {
-        **self == STA_A::SRSCRS
+        *self == STA_A::SRSCRS
     }
     #[doc = "Checks if the value of the field is `SARR_AT`"]
     #[inline(always)]
     pub fn is_sarr_at(&self) -> bool {
-        **self == STA_A::SARR_AT
+        *self == STA_A::SARR_AT
     }
     #[doc = "Checks if the value of the field is `AL_AM_SARR_AT`"]
     #[inline(always)]
     pub fn is_al_am_sarr_at(&self) -> bool {
-        **self == STA_A::AL_AM_SARR_AT
+        *self == STA_A::AL_AM_SARR_AT
     }
     #[doc = "Checks if the value of the field is `DBTS_AR`"]
     #[inline(always)]
     pub fn is_dbts_ar(&self) -> bool {
-        **self == STA_A::DBTS_AR
+        *self == STA_A::DBTS_AR
     }
     #[doc = "Checks if the value of the field is `DBTS_ANR`"]
     #[inline(always)]
     pub fn is_dbts_anr(&self) -> bool {
-        **self == STA_A::DBTS_ANR
+        *self == STA_A::DBTS_ANR
     }
     #[doc = "Checks if the value of the field is `LBTS_AR`"]
     #[inline(always)]
     pub fn is_lbts_ar(&self) -> bool {
-        **self == STA_A::LBTS_AR
+        *self == STA_A::LBTS_AR
     }
     #[doc = "Checks if the value of the field is `SAWT_AR`"]
     #[inline(always)]
     pub fn is_sawt_ar(&self) -> bool {
-        **self == STA_A::SAWT_AR
+        *self == STA_A::SAWT_AR
     }
     #[doc = "Checks if the value of the field is `SAWT_ANR`"]
     #[inline(always)]
     pub fn is_sawt_anr(&self) -> bool {
-        **self == STA_A::SAWT_ANR
+        *self == STA_A::SAWT_ANR
     }
     #[doc = "Checks if the value of the field is `NRSI`"]
     #[inline(always)]
     pub fn is_nrsi(&self) -> bool {
-        **self == STA_A::NRSI
-    }
-}
-impl core::ops::Deref for STA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == STA_A::NRSI
     }
 }
 impl R {

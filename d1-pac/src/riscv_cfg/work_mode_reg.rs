@@ -31,13 +31,9 @@ impl From<WM_STA_A> for u8 {
     }
 }
 #[doc = "Field `WM_STA` reader - Work Mode Status"]
-pub struct WM_STA_R(crate::FieldReader<u8>);
+pub type WM_STA_R = crate::FieldReader<u8, WM_STA_A>;
 impl WM_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WM_STA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WM_STA_A> {
         match self.bits {
@@ -50,24 +46,17 @@ impl WM_STA_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == WM_STA_A::NORMAL
+        *self == WM_STA_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `LOW_POWER`"]
     #[inline(always)]
     pub fn is_low_power(&self) -> bool {
-        **self == WM_STA_A::LOW_POWER
+        *self == WM_STA_A::LOW_POWER
     }
     #[doc = "Checks if the value of the field is `DEBUG`"]
     #[inline(always)]
     pub fn is_debug(&self) -> bool {
-        **self == WM_STA_A::DEBUG
-    }
-}
-impl core::ops::Deref for WM_STA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WM_STA_A::DEBUG
     }
 }
 impl R {

@@ -49,13 +49,9 @@ impl From<ADC0_KEYUP_PENDING_A> for bool {
     }
 }
 #[doc = "Field `ADC0_KEYUP_PENDING` reader - ADC0 Key Up Pending"]
-pub struct ADC0_KEYUP_PENDING_R(crate::FieldReader<bool>);
+pub type ADC0_KEYUP_PENDING_R = crate::BitReader<ADC0_KEYUP_PENDING_A>;
 impl ADC0_KEYUP_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_KEYUP_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_KEYUP_PENDING_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl ADC0_KEYUP_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == ADC0_KEYUP_PENDING_A::NO_PENDING
+        *self == ADC0_KEYUP_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == ADC0_KEYUP_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for ADC0_KEYUP_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_KEYUP_PENDING_A::PENDING
     }
 }
 #[doc = "Field `ADC0_KEYUP_PENDING` writer - ADC0 Key Up Pending"]
-pub struct ADC0_KEYUP_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_KEYUP_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYUP_PENDING_A, 4>;
 impl<'a> ADC0_KEYUP_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_KEYUP_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> ADC0_KEYUP_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(ADC0_KEYUP_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 4)) | ((value as u32 & 1) << 4);
-        self.w
     }
 }
 #[doc = "ADC0 Already Hold Key Pending\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<ADC0_ALRDY_HOLD_PENDING_A> for bool {
     }
 }
 #[doc = "Field `ADC0_ALRDY_HOLD_PENDING` reader - ADC0 Already Hold Key Pending"]
-pub struct ADC0_ALRDY_HOLD_PENDING_R(crate::FieldReader<bool>);
+pub type ADC0_ALRDY_HOLD_PENDING_R = crate::BitReader<ADC0_ALRDY_HOLD_PENDING_A>;
 impl ADC0_ALRDY_HOLD_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_ALRDY_HOLD_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_ALRDY_HOLD_PENDING_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl ADC0_ALRDY_HOLD_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == ADC0_ALRDY_HOLD_PENDING_A::NO_PENDING
+        *self == ADC0_ALRDY_HOLD_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == ADC0_ALRDY_HOLD_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for ADC0_ALRDY_HOLD_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_ALRDY_HOLD_PENDING_A::PENDING
     }
 }
 #[doc = "Field `ADC0_ALRDY_HOLD_PENDING` writer - ADC0 Already Hold Key Pending"]
-pub struct ADC0_ALRDY_HOLD_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_ALRDY_HOLD_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_ALRDY_HOLD_PENDING_A, 3>;
 impl<'a> ADC0_ALRDY_HOLD_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_ALRDY_HOLD_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -184,22 +134,6 @@ impl<'a> ADC0_ALRDY_HOLD_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(ADC0_ALRDY_HOLD_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
     }
 }
 #[doc = "ADC0 Hold Key Pending\n\nValue on reset: 0"]
@@ -217,13 +151,9 @@ impl From<ADC0_HOLD_PENDING_A> for bool {
     }
 }
 #[doc = "Field `ADC0_HOLD_PENDING` reader - ADC0 Hold Key Pending"]
-pub struct ADC0_HOLD_PENDING_R(crate::FieldReader<bool>);
+pub type ADC0_HOLD_PENDING_R = crate::BitReader<ADC0_HOLD_PENDING_A>;
 impl ADC0_HOLD_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_HOLD_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_HOLD_PENDING_A {
         match self.bits {
@@ -234,31 +164,18 @@ impl ADC0_HOLD_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == ADC0_HOLD_PENDING_A::NO_PENDING
+        *self == ADC0_HOLD_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == ADC0_HOLD_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for ADC0_HOLD_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_HOLD_PENDING_A::PENDING
     }
 }
 #[doc = "Field `ADC0_HOLD_PENDING` writer - ADC0 Hold Key Pending"]
-pub struct ADC0_HOLD_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_HOLD_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_HOLD_PENDING_A, 2>;
 impl<'a> ADC0_HOLD_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_HOLD_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -268,22 +185,6 @@ impl<'a> ADC0_HOLD_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(ADC0_HOLD_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "ADC0 Key Down Pending\n\nValue on reset: 0"]
@@ -301,13 +202,9 @@ impl From<ADC0_KEYDOWN_PENDING_A> for bool {
     }
 }
 #[doc = "Field `ADC0_KEYDOWN_PENDING` reader - ADC0 Key Down Pending"]
-pub struct ADC0_KEYDOWN_PENDING_R(crate::FieldReader<bool>);
+pub type ADC0_KEYDOWN_PENDING_R = crate::BitReader<ADC0_KEYDOWN_PENDING_A>;
 impl ADC0_KEYDOWN_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_KEYDOWN_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_KEYDOWN_PENDING_A {
         match self.bits {
@@ -318,31 +215,18 @@ impl ADC0_KEYDOWN_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == ADC0_KEYDOWN_PENDING_A::NO_PENDING
+        *self == ADC0_KEYDOWN_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == ADC0_KEYDOWN_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for ADC0_KEYDOWN_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_KEYDOWN_PENDING_A::PENDING
     }
 }
 #[doc = "Field `ADC0_KEYDOWN_PENDING` writer - ADC0 Key Down Pending"]
-pub struct ADC0_KEYDOWN_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_KEYDOWN_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYDOWN_PENDING_A, 1>;
 impl<'a> ADC0_KEYDOWN_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_KEYDOWN_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -352,22 +236,6 @@ impl<'a> ADC0_KEYDOWN_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(ADC0_KEYDOWN_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "ADC0 Data Pending\n\nValue on reset: 0"]
@@ -385,13 +253,9 @@ impl From<ADC0_DATA_PENDING_A> for bool {
     }
 }
 #[doc = "Field `ADC0_DATA_PENDING` reader - ADC0 Data Pending"]
-pub struct ADC0_DATA_PENDING_R(crate::FieldReader<bool>);
+pub type ADC0_DATA_PENDING_R = crate::BitReader<ADC0_DATA_PENDING_A>;
 impl ADC0_DATA_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ADC0_DATA_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ADC0_DATA_PENDING_A {
         match self.bits {
@@ -402,31 +266,18 @@ impl ADC0_DATA_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == ADC0_DATA_PENDING_A::NO_PENDING
+        *self == ADC0_DATA_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == ADC0_DATA_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for ADC0_DATA_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ADC0_DATA_PENDING_A::PENDING
     }
 }
 #[doc = "Field `ADC0_DATA_PENDING` writer - ADC0 Data Pending"]
-pub struct ADC0_DATA_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type ADC0_DATA_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_DATA_PENDING_A, 0>;
 impl<'a> ADC0_DATA_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ADC0_DATA_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -436,22 +287,6 @@ impl<'a> ADC0_DATA_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(ADC0_DATA_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -485,27 +320,27 @@ impl W {
     #[doc = "Bit 4 - ADC0 Key Up Pending"]
     #[inline(always)]
     pub fn adc0_keyup_pending(&mut self) -> ADC0_KEYUP_PENDING_W {
-        ADC0_KEYUP_PENDING_W { w: self }
+        ADC0_KEYUP_PENDING_W::new(self)
     }
     #[doc = "Bit 3 - ADC0 Already Hold Key Pending"]
     #[inline(always)]
     pub fn adc0_alrdy_hold_pending(&mut self) -> ADC0_ALRDY_HOLD_PENDING_W {
-        ADC0_ALRDY_HOLD_PENDING_W { w: self }
+        ADC0_ALRDY_HOLD_PENDING_W::new(self)
     }
     #[doc = "Bit 2 - ADC0 Hold Key Pending"]
     #[inline(always)]
     pub fn adc0_hold_pending(&mut self) -> ADC0_HOLD_PENDING_W {
-        ADC0_HOLD_PENDING_W { w: self }
+        ADC0_HOLD_PENDING_W::new(self)
     }
     #[doc = "Bit 1 - ADC0 Key Down Pending"]
     #[inline(always)]
     pub fn adc0_keydown_pending(&mut self) -> ADC0_KEYDOWN_PENDING_W {
-        ADC0_KEYDOWN_PENDING_W { w: self }
+        ADC0_KEYDOWN_PENDING_W::new(self)
     }
     #[doc = "Bit 0 - ADC0 Data Pending"]
     #[inline(always)]
     pub fn adc0_data_pending(&mut self) -> ADC0_DATA_PENDING_W {
-        ADC0_DATA_PENDING_W { w: self }
+        ADC0_DATA_PENDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

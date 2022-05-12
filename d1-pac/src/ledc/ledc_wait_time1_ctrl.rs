@@ -49,13 +49,9 @@ impl From<WAIT_TIM1_EN_A> for bool {
     }
 }
 #[doc = "Field `WAIT_TIM1_EN` reader - "]
-pub struct WAIT_TIM1_EN_R(crate::FieldReader<bool>);
+pub type WAIT_TIM1_EN_R = crate::BitReader<WAIT_TIM1_EN_A>;
 impl WAIT_TIM1_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WAIT_TIM1_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WAIT_TIM1_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl WAIT_TIM1_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == WAIT_TIM1_EN_A::DISABLE
+        *self == WAIT_TIM1_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == WAIT_TIM1_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for WAIT_TIM1_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WAIT_TIM1_EN_A::ENABLE
     }
 }
 #[doc = "Field `WAIT_TIM1_EN` writer - "]
-pub struct WAIT_TIM1_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type WAIT_TIM1_EN_W<'a> =
+    crate::BitWriter<'a, u32, LEDC_WAIT_TIME1_CTRL_SPEC, WAIT_TIM1_EN_A, 31>;
 impl<'a> WAIT_TIM1_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WAIT_TIM1_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -101,50 +84,12 @@ impl<'a> WAIT_TIM1_EN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(WAIT_TIM1_EN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
-    }
 }
 #[doc = "Field `TOTAL_WAIT_TIME1` reader - "]
-pub struct TOTAL_WAIT_TIME1_R(crate::FieldReader<u32>);
-impl TOTAL_WAIT_TIME1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        TOTAL_WAIT_TIME1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TOTAL_WAIT_TIME1_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TOTAL_WAIT_TIME1_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TOTAL_WAIT_TIME1` writer - "]
-pub struct TOTAL_WAIT_TIME1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TOTAL_WAIT_TIME1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x7fff_ffff) | (value as u32 & 0x7fff_ffff);
-        self.w
-    }
-}
+pub type TOTAL_WAIT_TIME1_W<'a> =
+    crate::FieldWriter<'a, u32, LEDC_WAIT_TIME1_CTRL_SPEC, u32, u32, 31, 0>;
 impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
@@ -161,12 +106,12 @@ impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn wait_tim1_en(&mut self) -> WAIT_TIM1_EN_W {
-        WAIT_TIM1_EN_W { w: self }
+        WAIT_TIM1_EN_W::new(self)
     }
     #[doc = "Bits 0:30"]
     #[inline(always)]
     pub fn total_wait_time1(&mut self) -> TOTAL_WAIT_TIME1_W {
-        TOTAL_WAIT_TIME1_W { w: self }
+        TOTAL_WAIT_TIME1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

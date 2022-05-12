@@ -49,13 +49,9 @@ impl From<RST_A> for bool {
     }
 }
 #[doc = "Field `RST` reader - Reset"]
-pub struct RST_R(crate::FieldReader<bool>);
+pub type RST_R = crate::BitReader<RST_A>;
 impl RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RST_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == RST_A::ASSERT
+        *self == RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for RST_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RST_A::DEASSERT
     }
 }
 #[doc = "Field `RST` writer - Reset"]
-pub struct RST_W<'a> {
-    w: &'a mut W,
-}
+pub type RST_W<'a> = crate::BitWriter<'a, u32, VE_BGR_SPEC, RST_A, 16>;
 impl<'a> RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> RST_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
     }
 }
 #[doc = "Gating Clock\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<GATING_A> for bool {
     }
 }
 #[doc = "Field `GATING` reader - Gating Clock"]
-pub struct GATING_R(crate::FieldReader<bool>);
+pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GATING_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl GATING_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == GATING_A::MASK
+        *self == GATING_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == GATING_A::PASS
-    }
-}
-impl core::ops::Deref for GATING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GATING_A::PASS
     }
 }
 #[doc = "Field `GATING` writer - Gating Clock"]
-pub struct GATING_W<'a> {
-    w: &'a mut W,
-}
+pub type GATING_W<'a> = crate::BitWriter<'a, u32, VE_BGR_SPEC, GATING_A, 0>;
 impl<'a> GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> GATING_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -218,12 +150,12 @@ impl W {
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn rst(&mut self) -> RST_W {
-        RST_W { w: self }
+        RST_W::new(self)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
     pub fn gating(&mut self) -> GATING_W {
-        GATING_W { w: self }
+        GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -37,13 +37,9 @@ impl From<RX_DMA_STA_A> for u8 {
     }
 }
 #[doc = "Field `RX_DMA_STA` reader - The State of RX DMA FSM"]
-pub struct RX_DMA_STA_R(crate::FieldReader<u8>);
+pub type RX_DMA_STA_R = crate::FieldReader<u8, RX_DMA_STA_A>;
 impl RX_DMA_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_DMA_STA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RX_DMA_STA_A> {
         match self.bits {
@@ -59,39 +55,32 @@ impl RX_DMA_STA_R {
     #[doc = "Checks if the value of the field is `STOP`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
-        **self == RX_DMA_STA_A::STOP
+        *self == RX_DMA_STA_A::STOP
     }
     #[doc = "Checks if the value of the field is `RUN_FETCH_DESC`"]
     #[inline(always)]
     pub fn is_run_fetch_desc(&self) -> bool {
-        **self == RX_DMA_STA_A::RUN_FETCH_DESC
+        *self == RX_DMA_STA_A::RUN_FETCH_DESC
     }
     #[doc = "Checks if the value of the field is `RUN_WAIT_FRM`"]
     #[inline(always)]
     pub fn is_run_wait_frm(&self) -> bool {
-        **self == RX_DMA_STA_A::RUN_WAIT_FRM
+        *self == RX_DMA_STA_A::RUN_WAIT_FRM
     }
     #[doc = "Checks if the value of the field is `SUSPEND`"]
     #[inline(always)]
     pub fn is_suspend(&self) -> bool {
-        **self == RX_DMA_STA_A::SUSPEND
+        *self == RX_DMA_STA_A::SUSPEND
     }
     #[doc = "Checks if the value of the field is `RUN_CLOSE_DESC`"]
     #[inline(always)]
     pub fn is_run_close_desc(&self) -> bool {
-        **self == RX_DMA_STA_A::RUN_CLOSE_DESC
+        *self == RX_DMA_STA_A::RUN_CLOSE_DESC
     }
     #[doc = "Checks if the value of the field is `RUN_TRANS_DATA`"]
     #[inline(always)]
     pub fn is_run_trans_data(&self) -> bool {
-        **self == RX_DMA_STA_A::RUN_TRANS_DATA
-    }
-}
-impl core::ops::Deref for RX_DMA_STA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_DMA_STA_A::RUN_TRANS_DATA
     }
 }
 impl R {

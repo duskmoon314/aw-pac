@@ -54,13 +54,9 @@ impl From<PC_DRV_A> for u8 {
     }
 }
 #[doc = "Fields `PC(0-7)_DRV` reader - PC Multi_Driving Select"]
-pub struct PC_DRV_R(crate::FieldReader<u8>);
+pub type PC_DRV_R = crate::FieldReader<u8, PC_DRV_A>;
 impl PC_DRV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PC_DRV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PC_DRV_A {
         match self.bits {
@@ -74,41 +70,28 @@ impl PC_DRV_R {
     #[doc = "Checks if the value of the field is `L0`"]
     #[inline(always)]
     pub fn is_l0(&self) -> bool {
-        **self == PC_DRV_A::L0
+        *self == PC_DRV_A::L0
     }
     #[doc = "Checks if the value of the field is `L1`"]
     #[inline(always)]
     pub fn is_l1(&self) -> bool {
-        **self == PC_DRV_A::L1
+        *self == PC_DRV_A::L1
     }
     #[doc = "Checks if the value of the field is `L2`"]
     #[inline(always)]
     pub fn is_l2(&self) -> bool {
-        **self == PC_DRV_A::L2
+        *self == PC_DRV_A::L2
     }
     #[doc = "Checks if the value of the field is `L3`"]
     #[inline(always)]
     pub fn is_l3(&self) -> bool {
-        **self == PC_DRV_A::L3
+        *self == PC_DRV_A::L3
     }
 }
-impl core::ops::Deref for PC_DRV_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `PC(0-7)_DRV` const generic writer - PC Multi_Driving Select"]
-pub struct PC_DRV_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> PC_DRV_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PC_DRV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+#[doc = "Fields `PC(0-7)_DRV` writer - PC Multi_Driving Select"]
+pub type PC_DRV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PC_DRV0_SPEC, u8, PC_DRV_A, 2, O>;
+impl<'a, const O: u8> PC_DRV_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn l0(self) -> &'a mut W {
@@ -129,17 +112,11 @@ impl<'a, const O: usize> PC_DRV_W<'a, O> {
     pub fn l3(self) -> &'a mut W {
         self.variant(PC_DRV_A::L3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << O)) | ((value as u32 & 3) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "PC Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pc_drv(&self, n: usize) -> PC_DRV_R {
+    pub unsafe fn pc_drv(&self, n: u8) -> PC_DRV_R {
         PC_DRV_R::new(((self.bits >> (n * 4)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PC Multi_Driving Select"]
@@ -186,48 +163,48 @@ impl R {
 impl W {
     #[doc = "PC Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pc_drv<const O: usize>(&mut self) -> PC_DRV_W<O> {
-        PC_DRV_W { w: self }
+    pub unsafe fn pc_drv<const O: u8>(&mut self) -> PC_DRV_W<O> {
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 0:1 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc0_drv(&mut self) -> PC_DRV_W<0> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 4:5 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc1_drv(&mut self) -> PC_DRV_W<4> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 8:9 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc2_drv(&mut self) -> PC_DRV_W<8> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 12:13 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc3_drv(&mut self) -> PC_DRV_W<12> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 16:17 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc4_drv(&mut self) -> PC_DRV_W<16> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 20:21 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc5_drv(&mut self) -> PC_DRV_W<20> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 24:25 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc6_drv(&mut self) -> PC_DRV_W<24> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Bits 28:29 - PC Multi_Driving Select"]
     #[inline(always)]
     pub fn pc7_drv(&mut self) -> PC_DRV_W<28> {
-        PC_DRV_W { w: self }
+        PC_DRV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

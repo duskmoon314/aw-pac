@@ -35,42 +35,9 @@ impl From<crate::W<EMAC_RX_CTL1_SPEC>> for W {
     }
 }
 #[doc = "Field `RX_DMA_START` reader - "]
-pub struct RX_DMA_START_R(crate::FieldReader<bool>);
-impl RX_DMA_START_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_DMA_START_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_DMA_START_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_DMA_START_R = crate::BitReader<bool>;
 #[doc = "Field `RX_DMA_START` writer - "]
-pub struct RX_DMA_START_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_DMA_START_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
-    }
-}
+pub type RX_DMA_START_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, 31>;
 #[doc = "Receive DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_EMA_EN_A {
@@ -86,13 +53,9 @@ impl From<RX_EMA_EN_A> for bool {
     }
 }
 #[doc = "Field `RX_EMA_EN` reader - Receive DMA Enable"]
-pub struct RX_EMA_EN_R(crate::FieldReader<bool>);
+pub type RX_EMA_EN_R = crate::BitReader<RX_EMA_EN_A>;
 impl RX_EMA_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_EMA_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_EMA_EN_A {
         match self.bits {
@@ -103,31 +66,17 @@ impl RX_EMA_EN_R {
     #[doc = "Checks if the value of the field is `STOP`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
-        **self == RX_EMA_EN_A::STOP
+        *self == RX_EMA_EN_A::STOP
     }
     #[doc = "Checks if the value of the field is `START`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
-        **self == RX_EMA_EN_A::START
-    }
-}
-impl core::ops::Deref for RX_EMA_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_EMA_EN_A::START
     }
 }
 #[doc = "Field `RX_EMA_EN` writer - Receive DMA Enable"]
-pub struct RX_EMA_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_EMA_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_EMA_EN_A, 30>;
 impl<'a> RX_EMA_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_EMA_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn stop(self) -> &'a mut W {
@@ -137,22 +86,6 @@ impl<'a> RX_EMA_EN_W<'a> {
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
         self.variant(RX_EMA_EN_A::START)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 30)) | ((value as u32 & 1) << 30);
-        self.w
     }
 }
 #[doc = "Receive FIFO Flow Control Enable\n\nValue on reset: 0"]
@@ -170,13 +103,9 @@ impl From<RX_FIFO_FLOW_CTL_A> for bool {
     }
 }
 #[doc = "Field `RX_FIFO_FLOW_CTL` reader - Receive FIFO Flow Control Enable"]
-pub struct RX_FIFO_FLOW_CTL_R(crate::FieldReader<bool>);
+pub type RX_FIFO_FLOW_CTL_R = crate::BitReader<RX_FIFO_FLOW_CTL_A>;
 impl RX_FIFO_FLOW_CTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_FIFO_FLOW_CTL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_FIFO_FLOW_CTL_A {
         match self.bits {
@@ -187,31 +116,18 @@ impl RX_FIFO_FLOW_CTL_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == RX_FIFO_FLOW_CTL_A::DISABLE
+        *self == RX_FIFO_FLOW_CTL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == RX_FIFO_FLOW_CTL_A::ENABLE
-    }
-}
-impl core::ops::Deref for RX_FIFO_FLOW_CTL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_FIFO_FLOW_CTL_A::ENABLE
     }
 }
 #[doc = "Field `RX_FIFO_FLOW_CTL` writer - Receive FIFO Flow Control Enable"]
-pub struct RX_FIFO_FLOW_CTL_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_FIFO_FLOW_CTL_W<'a> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_FIFO_FLOW_CTL_A, 24>;
 impl<'a> RX_FIFO_FLOW_CTL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_FIFO_FLOW_CTL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -221,22 +137,6 @@ impl<'a> RX_FIFO_FLOW_CTL_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(RX_FIFO_FLOW_CTL_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
-        self.w
     }
 }
 #[doc = "Threshold for Deactivating Flow Control\n\nValue on reset: 0"]
@@ -259,13 +159,9 @@ impl From<RX_FLOW_CTL_TH_DEACT_A> for u8 {
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_DEACT` reader - Threshold for Deactivating Flow Control"]
-pub struct RX_FLOW_CTL_TH_DEACT_R(crate::FieldReader<u8>);
+pub type RX_FLOW_CTL_TH_DEACT_R = crate::FieldReader<u8, RX_FLOW_CTL_TH_DEACT_A>;
 impl RX_FLOW_CTL_TH_DEACT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_FLOW_CTL_TH_DEACT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_FLOW_CTL_TH_DEACT_A {
         match self.bits {
@@ -279,41 +175,28 @@ impl RX_FLOW_CTL_TH_DEACT_R {
     #[doc = "Checks if the value of the field is `FM1K`"]
     #[inline(always)]
     pub fn is_fm1k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_DEACT_A::FM1K
+        *self == RX_FLOW_CTL_TH_DEACT_A::FM1K
     }
     #[doc = "Checks if the value of the field is `FM2K`"]
     #[inline(always)]
     pub fn is_fm2k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_DEACT_A::FM2K
+        *self == RX_FLOW_CTL_TH_DEACT_A::FM2K
     }
     #[doc = "Checks if the value of the field is `FM3K`"]
     #[inline(always)]
     pub fn is_fm3k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_DEACT_A::FM3K
+        *self == RX_FLOW_CTL_TH_DEACT_A::FM3K
     }
     #[doc = "Checks if the value of the field is `FM4K`"]
     #[inline(always)]
     pub fn is_fm4k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_DEACT_A::FM4K
-    }
-}
-impl core::ops::Deref for RX_FLOW_CTL_TH_DEACT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_FLOW_CTL_TH_DEACT_A::FM4K
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_DEACT` writer - Threshold for Deactivating Flow Control"]
-pub struct RX_FLOW_CTL_TH_DEACT_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_FLOW_CTL_TH_DEACT_W<'a> =
+    crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_DEACT_A, 2, 22>;
 impl<'a> RX_FLOW_CTL_TH_DEACT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_FLOW_CTL_TH_DEACT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn fm1k(self) -> &'a mut W {
@@ -333,12 +216,6 @@ impl<'a> RX_FLOW_CTL_TH_DEACT_W<'a> {
     #[inline(always)]
     pub fn fm4k(self) -> &'a mut W {
         self.variant(RX_FLOW_CTL_TH_DEACT_A::FM4K)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 22)) | ((value as u32 & 3) << 22);
-        self.w
     }
 }
 #[doc = "Threshold for Activating Flow Control\n\nValue on reset: 0"]
@@ -361,13 +238,9 @@ impl From<RX_FLOW_CTL_TH_ACT_A> for u8 {
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_ACT` reader - Threshold for Activating Flow Control"]
-pub struct RX_FLOW_CTL_TH_ACT_R(crate::FieldReader<u8>);
+pub type RX_FLOW_CTL_TH_ACT_R = crate::FieldReader<u8, RX_FLOW_CTL_TH_ACT_A>;
 impl RX_FLOW_CTL_TH_ACT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_FLOW_CTL_TH_ACT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_FLOW_CTL_TH_ACT_A {
         match self.bits {
@@ -381,41 +254,28 @@ impl RX_FLOW_CTL_TH_ACT_R {
     #[doc = "Checks if the value of the field is `FM1K`"]
     #[inline(always)]
     pub fn is_fm1k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_ACT_A::FM1K
+        *self == RX_FLOW_CTL_TH_ACT_A::FM1K
     }
     #[doc = "Checks if the value of the field is `FM2K`"]
     #[inline(always)]
     pub fn is_fm2k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_ACT_A::FM2K
+        *self == RX_FLOW_CTL_TH_ACT_A::FM2K
     }
     #[doc = "Checks if the value of the field is `FM3K`"]
     #[inline(always)]
     pub fn is_fm3k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_ACT_A::FM3K
+        *self == RX_FLOW_CTL_TH_ACT_A::FM3K
     }
     #[doc = "Checks if the value of the field is `FM4K`"]
     #[inline(always)]
     pub fn is_fm4k(&self) -> bool {
-        **self == RX_FLOW_CTL_TH_ACT_A::FM4K
-    }
-}
-impl core::ops::Deref for RX_FLOW_CTL_TH_ACT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_FLOW_CTL_TH_ACT_A::FM4K
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_ACT` writer - Threshold for Activating Flow Control"]
-pub struct RX_FLOW_CTL_TH_ACT_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_FLOW_CTL_TH_ACT_W<'a> =
+    crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_ACT_A, 2, 20>;
 impl<'a> RX_FLOW_CTL_TH_ACT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_FLOW_CTL_TH_ACT_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn fm1k(self) -> &'a mut W {
@@ -435,12 +295,6 @@ impl<'a> RX_FLOW_CTL_TH_ACT_W<'a> {
     #[inline(always)]
     pub fn fm4k(self) -> &'a mut W {
         self.variant(RX_FLOW_CTL_TH_ACT_A::FM4K)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 20)) | ((value as u32 & 3) << 20);
-        self.w
     }
 }
 #[doc = "Threshold for RX DMA FIFO Start\n\nValue on reset: 0"]
@@ -463,13 +317,9 @@ impl From<RX_TH_A> for u8 {
     }
 }
 #[doc = "Field `RX_TH` reader - Threshold for RX DMA FIFO Start"]
-pub struct RX_TH_R(crate::FieldReader<u8>);
+pub type RX_TH_R = crate::FieldReader<u8, RX_TH_A>;
 impl RX_TH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_TH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_TH_A {
         match self.bits {
@@ -483,41 +333,27 @@ impl RX_TH_R {
     #[doc = "Checks if the value of the field is `T64`"]
     #[inline(always)]
     pub fn is_t64(&self) -> bool {
-        **self == RX_TH_A::T64
+        *self == RX_TH_A::T64
     }
     #[doc = "Checks if the value of the field is `T32`"]
     #[inline(always)]
     pub fn is_t32(&self) -> bool {
-        **self == RX_TH_A::T32
+        *self == RX_TH_A::T32
     }
     #[doc = "Checks if the value of the field is `T96`"]
     #[inline(always)]
     pub fn is_t96(&self) -> bool {
-        **self == RX_TH_A::T96
+        *self == RX_TH_A::T96
     }
     #[doc = "Checks if the value of the field is `T128`"]
     #[inline(always)]
     pub fn is_t128(&self) -> bool {
-        **self == RX_TH_A::T128
-    }
-}
-impl core::ops::Deref for RX_TH_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_TH_A::T128
     }
 }
 #[doc = "Field `RX_TH` writer - Threshold for RX DMA FIFO Start"]
-pub struct RX_TH_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_TH_W<'a> = crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_TH_A, 2, 4>;
 impl<'a> RX_TH_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_TH_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn t64(self) -> &'a mut W {
@@ -538,12 +374,6 @@ impl<'a> RX_TH_W<'a> {
     pub fn t128(self) -> &'a mut W {
         self.variant(RX_TH_A::T128)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
-        self.w
-    }
 }
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -560,13 +390,9 @@ impl From<RX_ERR_FRM_A> for bool {
     }
 }
 #[doc = "Field `RX_ERR_FRM` reader - "]
-pub struct RX_ERR_FRM_R(crate::FieldReader<bool>);
+pub type RX_ERR_FRM_R = crate::BitReader<RX_ERR_FRM_A>;
 impl RX_ERR_FRM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_ERR_FRM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_ERR_FRM_A {
         match self.bits {
@@ -577,31 +403,17 @@ impl RX_ERR_FRM_R {
     #[doc = "Checks if the value of the field is `DROP`"]
     #[inline(always)]
     pub fn is_drop(&self) -> bool {
-        **self == RX_ERR_FRM_A::DROP
+        *self == RX_ERR_FRM_A::DROP
     }
     #[doc = "Checks if the value of the field is `FORWARD`"]
     #[inline(always)]
     pub fn is_forward(&self) -> bool {
-        **self == RX_ERR_FRM_A::FORWARD
-    }
-}
-impl core::ops::Deref for RX_ERR_FRM_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_ERR_FRM_A::FORWARD
     }
 }
 #[doc = "Field `RX_ERR_FRM` writer - "]
-pub struct RX_ERR_FRM_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_ERR_FRM_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_ERR_FRM_A, 3>;
 impl<'a> RX_ERR_FRM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_ERR_FRM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn drop(self) -> &'a mut W {
@@ -612,60 +424,11 @@ impl<'a> RX_ERR_FRM_W<'a> {
     pub fn forward(self) -> &'a mut W {
         self.variant(RX_ERR_FRM_A::FORWARD)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
 }
 #[doc = "Field `RX_RUNT_FRM` reader - "]
-pub struct RX_RUNT_FRM_R(crate::FieldReader<bool>);
-impl RX_RUNT_FRM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_RUNT_FRM_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_RUNT_FRM_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_RUNT_FRM_R = crate::BitReader<bool>;
 #[doc = "Field `RX_RUNT_FRM` writer - "]
-pub struct RX_RUNT_FRM_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_RUNT_FRM_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type RX_RUNT_FRM_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, 2>;
 #[doc = "Receive Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_MD_A {
@@ -681,13 +444,9 @@ impl From<RX_MD_A> for bool {
     }
 }
 #[doc = "Field `RX_MD` reader - Receive Mode"]
-pub struct RX_MD_R(crate::FieldReader<bool>);
+pub type RX_MD_R = crate::BitReader<RX_MD_A>;
 impl RX_MD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RX_MD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RX_MD_A {
         match self.bits {
@@ -698,31 +457,17 @@ impl RX_MD_R {
     #[doc = "Checks if the value of the field is `GREATER_THAN_TH`"]
     #[inline(always)]
     pub fn is_greater_than_th(&self) -> bool {
-        **self == RX_MD_A::GREATER_THAN_TH
+        *self == RX_MD_A::GREATER_THAN_TH
     }
     #[doc = "Checks if the value of the field is `LOCATE_FULL_FRAME`"]
     #[inline(always)]
     pub fn is_locate_full_frame(&self) -> bool {
-        **self == RX_MD_A::LOCATE_FULL_FRAME
-    }
-}
-impl core::ops::Deref for RX_MD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RX_MD_A::LOCATE_FULL_FRAME
     }
 }
 #[doc = "Field `RX_MD` writer - Receive Mode"]
-pub struct RX_MD_W<'a> {
-    w: &'a mut W,
-}
+pub type RX_MD_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_MD_A, 1>;
 impl<'a> RX_MD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RX_MD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn greater_than_th(self) -> &'a mut W {
@@ -732,22 +477,6 @@ impl<'a> RX_MD_W<'a> {
     #[inline(always)]
     pub fn locate_full_frame(self) -> &'a mut W {
         self.variant(RX_MD_A::LOCATE_FULL_FRAME)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Flush Receive Frames\n\nValue on reset: 0"]
@@ -765,13 +494,9 @@ impl From<FLUSH_RX_FRM_A> for bool {
     }
 }
 #[doc = "Field `FLUSH_RX_FRM` reader - Flush Receive Frames"]
-pub struct FLUSH_RX_FRM_R(crate::FieldReader<bool>);
+pub type FLUSH_RX_FRM_R = crate::BitReader<FLUSH_RX_FRM_A>;
 impl FLUSH_RX_FRM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FLUSH_RX_FRM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FLUSH_RX_FRM_A {
         match self.bits {
@@ -782,31 +507,17 @@ impl FLUSH_RX_FRM_R {
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == FLUSH_RX_FRM_A::ENABLE
+        *self == FLUSH_RX_FRM_A::ENABLE
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == FLUSH_RX_FRM_A::DISABLE
-    }
-}
-impl core::ops::Deref for FLUSH_RX_FRM_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FLUSH_RX_FRM_A::DISABLE
     }
 }
 #[doc = "Field `FLUSH_RX_FRM` writer - Flush Receive Frames"]
-pub struct FLUSH_RX_FRM_W<'a> {
-    w: &'a mut W,
-}
+pub type FLUSH_RX_FRM_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, FLUSH_RX_FRM_A, 0>;
 impl<'a> FLUSH_RX_FRM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FLUSH_RX_FRM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -816,22 +527,6 @@ impl<'a> FLUSH_RX_FRM_W<'a> {
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
         self.variant(FLUSH_RX_FRM_A::DISABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -890,52 +585,52 @@ impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn rx_dma_start(&mut self) -> RX_DMA_START_W {
-        RX_DMA_START_W { w: self }
+        RX_DMA_START_W::new(self)
     }
     #[doc = "Bit 30 - Receive DMA Enable"]
     #[inline(always)]
     pub fn rx_ema_en(&mut self) -> RX_EMA_EN_W {
-        RX_EMA_EN_W { w: self }
+        RX_EMA_EN_W::new(self)
     }
     #[doc = "Bit 24 - Receive FIFO Flow Control Enable"]
     #[inline(always)]
     pub fn rx_fifo_flow_ctl(&mut self) -> RX_FIFO_FLOW_CTL_W {
-        RX_FIFO_FLOW_CTL_W { w: self }
+        RX_FIFO_FLOW_CTL_W::new(self)
     }
     #[doc = "Bits 22:23 - Threshold for Deactivating Flow Control"]
     #[inline(always)]
     pub fn rx_flow_ctl_th_deact(&mut self) -> RX_FLOW_CTL_TH_DEACT_W {
-        RX_FLOW_CTL_TH_DEACT_W { w: self }
+        RX_FLOW_CTL_TH_DEACT_W::new(self)
     }
     #[doc = "Bits 20:21 - Threshold for Activating Flow Control"]
     #[inline(always)]
     pub fn rx_flow_ctl_th_act(&mut self) -> RX_FLOW_CTL_TH_ACT_W {
-        RX_FLOW_CTL_TH_ACT_W { w: self }
+        RX_FLOW_CTL_TH_ACT_W::new(self)
     }
     #[doc = "Bits 4:5 - Threshold for RX DMA FIFO Start"]
     #[inline(always)]
     pub fn rx_th(&mut self) -> RX_TH_W {
-        RX_TH_W { w: self }
+        RX_TH_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     pub fn rx_err_frm(&mut self) -> RX_ERR_FRM_W {
-        RX_ERR_FRM_W { w: self }
+        RX_ERR_FRM_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     pub fn rx_runt_frm(&mut self) -> RX_RUNT_FRM_W {
-        RX_RUNT_FRM_W { w: self }
+        RX_RUNT_FRM_W::new(self)
     }
     #[doc = "Bit 1 - Receive Mode"]
     #[inline(always)]
     pub fn rx_md(&mut self) -> RX_MD_W {
-        RX_MD_W { w: self }
+        RX_MD_W::new(self)
     }
     #[doc = "Bit 0 - Flush Receive Frames"]
     #[inline(always)]
     pub fn flush_rx_frm(&mut self) -> FLUSH_RX_FRM_W {
-        FLUSH_RX_FRM_W { w: self }
+        FLUSH_RX_FRM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

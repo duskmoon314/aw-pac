@@ -35,59 +35,15 @@ impl From<crate::W<DMAC_DESC_ADDR_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `DMA_DESC_ADDR` reader - Lower 30 bits of DMA channel descriptor address"]
-pub struct DMA_DESC_ADDR_R(crate::FieldReader<u32>);
-impl DMA_DESC_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        DMA_DESC_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_DESC_ADDR_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_DESC_ADDR_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DMA_DESC_ADDR` writer - Lower 30 bits of DMA channel descriptor address"]
-pub struct DMA_DESC_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_DESC_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3fff_ffff << 2)) | ((value as u32 & 0x3fff_ffff) << 2);
-        self.w
-    }
-}
+pub type DMA_DESC_ADDR_W<'a> =
+    crate::FieldWriter<'a, u32, DMAC_DESC_ADDR_REG_SPEC, u32, u32, 30, 2>;
 #[doc = "Field `DMA_DESC_HIGH_ADDR` reader - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
-pub struct DMA_DESC_HIGH_ADDR_R(crate::FieldReader<u8>);
-impl DMA_DESC_HIGH_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_DESC_HIGH_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_DESC_HIGH_ADDR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_DESC_HIGH_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DMA_DESC_HIGH_ADDR` writer - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
-pub struct DMA_DESC_HIGH_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DMA_DESC_HIGH_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
-}
+pub type DMA_DESC_HIGH_ADDR_W<'a> =
+    crate::FieldWriter<'a, u32, DMAC_DESC_ADDR_REG_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bits 2:31 - Lower 30 bits of DMA channel descriptor address"]
     #[inline(always)]
@@ -104,12 +60,12 @@ impl W {
     #[doc = "Bits 2:31 - Lower 30 bits of DMA channel descriptor address"]
     #[inline(always)]
     pub fn dma_desc_addr(&mut self) -> DMA_DESC_ADDR_W {
-        DMA_DESC_ADDR_W { w: self }
+        DMA_DESC_ADDR_W::new(self)
     }
     #[doc = "Bits 0:1 - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
     #[inline(always)]
     pub fn dma_desc_high_addr(&mut self) -> DMA_DESC_HIGH_ADDR_W {
-        DMA_DESC_HIGH_ADDR_W { w: self }
+        DMA_DESC_HIGH_ADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,15 +49,9 @@ impl From<CLK_COUNT_MODE_AW> for bool {
     }
 }
 #[doc = "Field `clk_count_mode` writer - "]
-pub struct CLK_COUNT_MODE_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK_COUNT_MODE_W<'a> =
+    crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, CLK_COUNT_MODE_AW, 16>;
 impl<'a> CLK_COUNT_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_COUNT_MODE_AW) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "scl clock high period count on oscl"]
     #[inline(always)]
     pub fn oscl(self) -> &'a mut W {
@@ -67,22 +61,6 @@ impl<'a> CLK_COUNT_MODE_W<'a> {
     #[inline(always)]
     pub fn iscl(self) -> &'a mut W {
         self.variant(CLK_COUNT_MODE_AW::ISCL)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
     }
 }
 #[doc = "Setting duty cycle of clock as master\n\nValue on reset: 0"]
@@ -100,13 +78,9 @@ impl From<CLK_DUTY_A> for bool {
     }
 }
 #[doc = "Field `clk_duty` reader - Setting duty cycle of clock as master"]
-pub struct CLK_DUTY_R(crate::FieldReader<bool>);
+pub type CLK_DUTY_R = crate::BitReader<CLK_DUTY_A>;
 impl CLK_DUTY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK_DUTY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK_DUTY_A {
         match self.bits {
@@ -117,31 +91,17 @@ impl CLK_DUTY_R {
     #[doc = "Checks if the value of the field is `P50`"]
     #[inline(always)]
     pub fn is_p50(&self) -> bool {
-        **self == CLK_DUTY_A::P50
+        *self == CLK_DUTY_A::P50
     }
     #[doc = "Checks if the value of the field is `P40`"]
     #[inline(always)]
     pub fn is_p40(&self) -> bool {
-        **self == CLK_DUTY_A::P40
-    }
-}
-impl core::ops::Deref for CLK_DUTY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK_DUTY_A::P40
     }
 }
 #[doc = "Field `clk_duty` writer - Setting duty cycle of clock as master"]
-pub struct CLK_DUTY_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK_DUTY_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, CLK_DUTY_A, 15>;
 impl<'a> CLK_DUTY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_DUTY_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "50%"]
     #[inline(always)]
     pub fn p50(self) -> &'a mut W {
@@ -152,255 +112,35 @@ impl<'a> CLK_DUTY_W<'a> {
     pub fn p40(self) -> &'a mut W {
         self.variant(CLK_DUTY_A::P40)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 15)) | ((value as u32 & 1) << 15);
-        self.w
-    }
 }
 #[doc = "Field `clk_n` reader - "]
-pub struct CLK_N_R(crate::FieldReader<u8>);
-impl CLK_N_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_N_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_N_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_N_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `clk_n` writer - "]
-pub struct CLK_N_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_N_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(7 << 12)) | ((value as u32 & 7) << 12);
-        self.w
-    }
-}
+pub type CLK_N_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 3, 12>;
 #[doc = "Field `clk_m` reader - "]
-pub struct CLK_M_R(crate::FieldReader<u8>);
-impl CLK_M_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_M_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CLK_M_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CLK_M_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `clk_m` writer - "]
-pub struct CLK_M_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CLK_M_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
-}
+pub type CLK_M_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 4, 8>;
 #[doc = "Field `scl_sta` reader - SCL current status"]
-pub struct SCL_STA_R(crate::FieldReader<bool>);
-impl SCL_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SCL_STA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCL_STA_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCL_STA_R = crate::BitReader<bool>;
 #[doc = "Field `sda_sta` reader - SDA current status"]
-pub struct SDA_STA_R(crate::FieldReader<bool>);
-impl SDA_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SDA_STA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SDA_STA_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SDA_STA_R = crate::BitReader<bool>;
 #[doc = "Field `scl_mov` reader - SCL manual output value"]
-pub struct SCL_MOV_R(crate::FieldReader<bool>);
-impl SCL_MOV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SCL_MOV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCL_MOV_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCL_MOV_R = crate::BitReader<bool>;
 #[doc = "Field `scl_mov` writer - SCL manual output value"]
-pub struct SCL_MOV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCL_MOV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
-    }
-}
+pub type SCL_MOV_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, 3>;
 #[doc = "Field `sda_mov` reader - SDA manual output value"]
-pub struct SDA_MOV_R(crate::FieldReader<bool>);
-impl SDA_MOV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SDA_MOV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SDA_MOV_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SDA_MOV_R = crate::BitReader<bool>;
 #[doc = "Field `sda_mov` writer - SDA manual output value"]
-pub struct SDA_MOV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SDA_MOV_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
-    }
-}
+pub type SDA_MOV_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, 2>;
 #[doc = "Field `scl_moe` reader - SCL manual output enable"]
-pub struct SCL_MOE_R(crate::FieldReader<bool>);
-impl SCL_MOE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SCL_MOE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SCL_MOE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SCL_MOE_R = crate::BitReader<bool>;
 #[doc = "Field `scl_moe` writer - SCL manual output enable"]
-pub struct SCL_MOE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SCL_MOE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
-}
+pub type SCL_MOE_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, 1>;
 #[doc = "Field `sda_moe` reader - SDA manual output enable"]
-pub struct SDA_MOE_R(crate::FieldReader<bool>);
-impl SDA_MOE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SDA_MOE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SDA_MOE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SDA_MOE_R = crate::BitReader<bool>;
 #[doc = "Field `sda_moe` writer - SDA manual output enable"]
-pub struct SDA_MOE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SDA_MOE_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type SDA_MOE_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 15 - Setting duty cycle of clock as master"]
     #[inline(always)]
@@ -452,42 +192,42 @@ impl W {
     #[doc = "Bit 16"]
     #[inline(always)]
     pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W {
-        CLK_COUNT_MODE_W { w: self }
+        CLK_COUNT_MODE_W::new(self)
     }
     #[doc = "Bit 15 - Setting duty cycle of clock as master"]
     #[inline(always)]
     pub fn clk_duty(&mut self) -> CLK_DUTY_W {
-        CLK_DUTY_W { w: self }
+        CLK_DUTY_W::new(self)
     }
     #[doc = "Bits 12:14"]
     #[inline(always)]
     pub fn clk_n(&mut self) -> CLK_N_W {
-        CLK_N_W { w: self }
+        CLK_N_W::new(self)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
     pub fn clk_m(&mut self) -> CLK_M_W {
-        CLK_M_W { w: self }
+        CLK_M_W::new(self)
     }
     #[doc = "Bit 3 - SCL manual output value"]
     #[inline(always)]
     pub fn scl_mov(&mut self) -> SCL_MOV_W {
-        SCL_MOV_W { w: self }
+        SCL_MOV_W::new(self)
     }
     #[doc = "Bit 2 - SDA manual output value"]
     #[inline(always)]
     pub fn sda_mov(&mut self) -> SDA_MOV_W {
-        SDA_MOV_W { w: self }
+        SDA_MOV_W::new(self)
     }
     #[doc = "Bit 1 - SCL manual output enable"]
     #[inline(always)]
     pub fn scl_moe(&mut self) -> SCL_MOE_W {
-        SCL_MOE_W { w: self }
+        SCL_MOE_W::new(self)
     }
     #[doc = "Bit 0 - SDA manual output enable"]
     #[inline(always)]
     pub fn sda_moe(&mut self) -> SDA_MOE_W {
-        SDA_MOE_W { w: self }
+        SDA_MOE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

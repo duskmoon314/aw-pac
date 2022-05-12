@@ -49,13 +49,9 @@ impl From<ABT_RDATA_A> for bool {
     }
 }
 #[doc = "Field `ABT_RDATA` reader - Abort Read Data"]
-pub struct ABT_RDATA_R(crate::FieldReader<bool>);
+pub type ABT_RDATA_R = crate::BitReader<ABT_RDATA_A>;
 impl ABT_RDATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ABT_RDATA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ABT_RDATA_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl ABT_RDATA_R {
     #[doc = "Checks if the value of the field is `IGNORED`"]
     #[inline(always)]
     pub fn is_ignored(&self) -> bool {
-        **self == ABT_RDATA_A::IGNORED
+        *self == ABT_RDATA_A::IGNORED
     }
     #[doc = "Checks if the value of the field is `ABORT`"]
     #[inline(always)]
     pub fn is_abort(&self) -> bool {
-        **self == ABT_RDATA_A::ABORT
-    }
-}
-impl core::ops::Deref for ABT_RDATA_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ABT_RDATA_A::ABORT
     }
 }
 #[doc = "Field `ABT_RDATA` writer - Abort Read Data"]
-pub struct ABT_RDATA_W<'a> {
-    w: &'a mut W,
-}
+pub type ABT_RDATA_W<'a> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, ABT_RDATA_A, 2>;
 impl<'a> ABT_RDATA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ABT_RDATA_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignored(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> ABT_RDATA_W<'a> {
     #[inline(always)]
     pub fn abort(self) -> &'a mut W {
         self.variant(ABT_RDATA_A::ABORT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "Read Wait\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<READ_WAIT_A> for bool {
     }
 }
 #[doc = "Field `READ_WAIT` reader - Read Wait"]
-pub struct READ_WAIT_R(crate::FieldReader<bool>);
+pub type READ_WAIT_R = crate::BitReader<READ_WAIT_A>;
 impl READ_WAIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        READ_WAIT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> READ_WAIT_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl READ_WAIT_R {
     #[doc = "Checks if the value of the field is `CLEAR`"]
     #[inline(always)]
     pub fn is_clear(&self) -> bool {
-        **self == READ_WAIT_A::CLEAR
+        *self == READ_WAIT_A::CLEAR
     }
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == READ_WAIT_A::ASSERT
-    }
-}
-impl core::ops::Deref for READ_WAIT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == READ_WAIT_A::ASSERT
     }
 }
 #[doc = "Field `READ_WAIT` writer - Read Wait"]
-pub struct READ_WAIT_W<'a> {
-    w: &'a mut W,
-}
+pub type READ_WAIT_W<'a> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, READ_WAIT_A, 1>;
 impl<'a> READ_WAIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: READ_WAIT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Clear SDIO read wait"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> READ_WAIT_W<'a> {
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
         self.variant(READ_WAIT_A::ASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Host Send MMC IRQ Response\n\nValue on reset: 0"]
@@ -217,13 +149,9 @@ impl From<HOST_SEND_MIMC_IRQRESQ_A> for bool {
     }
 }
 #[doc = "Field `HOST_SEND_MIMC_IRQRESQ` reader - Host Send MMC IRQ Response"]
-pub struct HOST_SEND_MIMC_IRQRESQ_R(crate::FieldReader<bool>);
+pub type HOST_SEND_MIMC_IRQRESQ_R = crate::BitReader<HOST_SEND_MIMC_IRQRESQ_A>;
 impl HOST_SEND_MIMC_IRQRESQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HOST_SEND_MIMC_IRQRESQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HOST_SEND_MIMC_IRQRESQ_A {
         match self.bits {
@@ -234,31 +162,18 @@ impl HOST_SEND_MIMC_IRQRESQ_R {
     #[doc = "Checks if the value of the field is `IGNORED`"]
     #[inline(always)]
     pub fn is_ignored(&self) -> bool {
-        **self == HOST_SEND_MIMC_IRQRESQ_A::IGNORED
+        *self == HOST_SEND_MIMC_IRQRESQ_A::IGNORED
     }
     #[doc = "Checks if the value of the field is `SEND`"]
     #[inline(always)]
     pub fn is_send(&self) -> bool {
-        **self == HOST_SEND_MIMC_IRQRESQ_A::SEND
-    }
-}
-impl core::ops::Deref for HOST_SEND_MIMC_IRQRESQ_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HOST_SEND_MIMC_IRQRESQ_A::SEND
     }
 }
 #[doc = "Field `HOST_SEND_MIMC_IRQRESQ` writer - Host Send MMC IRQ Response"]
-pub struct HOST_SEND_MIMC_IRQRESQ_W<'a> {
-    w: &'a mut W,
-}
+pub type HOST_SEND_MIMC_IRQRESQ_W<'a> =
+    crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, HOST_SEND_MIMC_IRQRESQ_A, 0>;
 impl<'a> HOST_SEND_MIMC_IRQRESQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HOST_SEND_MIMC_IRQRESQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignored(self) -> &'a mut W {
@@ -268,22 +183,6 @@ impl<'a> HOST_SEND_MIMC_IRQRESQ_W<'a> {
     #[inline(always)]
     pub fn send(self) -> &'a mut W {
         self.variant(HOST_SEND_MIMC_IRQRESQ_A::SEND)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -307,17 +206,17 @@ impl W {
     #[doc = "Bit 2 - Abort Read Data"]
     #[inline(always)]
     pub fn abt_rdata(&mut self) -> ABT_RDATA_W {
-        ABT_RDATA_W { w: self }
+        ABT_RDATA_W::new(self)
     }
     #[doc = "Bit 1 - Read Wait"]
     #[inline(always)]
     pub fn read_wait(&mut self) -> READ_WAIT_W {
-        READ_WAIT_W { w: self }
+        READ_WAIT_W::new(self)
     }
     #[doc = "Bit 0 - Host Send MMC IRQ Response"]
     #[inline(always)]
     pub fn host_send_mimc_irqresq(&mut self) -> HOST_SEND_MIMC_IRQRESQ_W {
-        HOST_SEND_MIMC_IRQRESQ_W { w: self }
+        HOST_SEND_MIMC_IRQRESQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

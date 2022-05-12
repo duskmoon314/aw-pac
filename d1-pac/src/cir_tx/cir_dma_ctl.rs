@@ -50,13 +50,9 @@ impl From<DMA_A> for u8 {
     }
 }
 #[doc = "Field `DMA` reader - Handshake Configuration"]
-pub struct DMA_R(crate::FieldReader<u8>);
+pub type DMA_R = crate::FieldReader<u8, DMA_A>;
 impl DMA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DMA_A> {
         match self.bits {
@@ -68,31 +64,17 @@ impl DMA_R {
     #[doc = "Checks if the value of the field is `WAITING_CYCLE`"]
     #[inline(always)]
     pub fn is_waiting_cycle(&self) -> bool {
-        **self == DMA_A::WAITING_CYCLE
+        *self == DMA_A::WAITING_CYCLE
     }
     #[doc = "Checks if the value of the field is `HANDSHAKE`"]
     #[inline(always)]
     pub fn is_handshake(&self) -> bool {
-        **self == DMA_A::HANDSHAKE
-    }
-}
-impl core::ops::Deref for DMA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_A::HANDSHAKE
     }
 }
 #[doc = "Field `DMA` writer - Handshake Configuration"]
-pub struct DMA_W<'a> {
-    w: &'a mut W,
-}
+pub type DMA_W<'a> = crate::FieldWriter<'a, u32, CIR_DMA_CTL_SPEC, u8, DMA_A, 8, 0>;
 impl<'a> DMA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DMA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "DMA waiting cycle mode"]
     #[inline(always)]
     pub fn waiting_cycle(self) -> &'a mut W {
@@ -102,12 +84,6 @@ impl<'a> DMA_W<'a> {
     #[inline(always)]
     pub fn handshake(self) -> &'a mut W {
         self.variant(DMA_A::HANDSHAKE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
     }
 }
 impl R {
@@ -121,7 +97,7 @@ impl W {
     #[doc = "Bits 0:7 - Handshake Configuration"]
     #[inline(always)]
     pub fn dma(&mut self) -> DMA_W {
-        DMA_W { w: self }
+        DMA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

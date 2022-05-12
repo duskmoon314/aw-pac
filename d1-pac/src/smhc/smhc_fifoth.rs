@@ -54,13 +54,9 @@ impl From<BSIZE_OF_TRANS_A> for u8 {
     }
 }
 #[doc = "Field `BSIZE_OF_TRANS` reader - sBurst Size of Multiple Transaction"]
-pub struct BSIZE_OF_TRANS_R(crate::FieldReader<u8>);
+pub type BSIZE_OF_TRANS_R = crate::FieldReader<u8, BSIZE_OF_TRANS_A>;
 impl BSIZE_OF_TRANS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        BSIZE_OF_TRANS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<BSIZE_OF_TRANS_A> {
         match self.bits {
@@ -74,41 +70,28 @@ impl BSIZE_OF_TRANS_R {
     #[doc = "Checks if the value of the field is `T1`"]
     #[inline(always)]
     pub fn is_t1(&self) -> bool {
-        **self == BSIZE_OF_TRANS_A::T1
+        *self == BSIZE_OF_TRANS_A::T1
     }
     #[doc = "Checks if the value of the field is `T4`"]
     #[inline(always)]
     pub fn is_t4(&self) -> bool {
-        **self == BSIZE_OF_TRANS_A::T4
+        *self == BSIZE_OF_TRANS_A::T4
     }
     #[doc = "Checks if the value of the field is `T8`"]
     #[inline(always)]
     pub fn is_t8(&self) -> bool {
-        **self == BSIZE_OF_TRANS_A::T8
+        *self == BSIZE_OF_TRANS_A::T8
     }
     #[doc = "Checks if the value of the field is `T16`"]
     #[inline(always)]
     pub fn is_t16(&self) -> bool {
-        **self == BSIZE_OF_TRANS_A::T16
-    }
-}
-impl core::ops::Deref for BSIZE_OF_TRANS_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BSIZE_OF_TRANS_A::T16
     }
 }
 #[doc = "Field `BSIZE_OF_TRANS` writer - sBurst Size of Multiple Transaction"]
-pub struct BSIZE_OF_TRANS_W<'a> {
-    w: &'a mut W,
-}
+pub type BSIZE_OF_TRANS_W<'a> =
+    crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, BSIZE_OF_TRANS_A, 3, 28>;
 impl<'a> BSIZE_OF_TRANS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: BSIZE_OF_TRANS_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "1 transfer"]
     #[inline(always)]
     pub fn t1(self) -> &'a mut W {
@@ -129,67 +112,15 @@ impl<'a> BSIZE_OF_TRANS_W<'a> {
     pub fn t16(self) -> &'a mut W {
         self.variant(BSIZE_OF_TRANS_A::T16)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(7 << 28)) | ((value as u32 & 7) << 28);
-        self.w
-    }
 }
 #[doc = "Field `RX_TL` reader - RX Trigger Level"]
-pub struct RX_TL_R(crate::FieldReader<u8>);
-impl RX_TL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RX_TL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RX_TL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RX_TL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RX_TL` writer - RX Trigger Level"]
-pub struct RX_TL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RX_TL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 16)) | ((value as u32 & 0xff) << 16);
-        self.w
-    }
-}
+pub type RX_TL_W<'a> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, 16>;
 #[doc = "Field `TX_TL` reader - TX Trigger Level"]
-pub struct TX_TL_R(crate::FieldReader<u8>);
-impl TX_TL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TX_TL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TX_TL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TX_TL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TX_TL` writer - TX Trigger Level"]
-pub struct TX_TL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> TX_TL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type TX_TL_W<'a> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, 0>;
 impl R {
     #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
     #[inline(always)]
@@ -211,17 +142,17 @@ impl W {
     #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
     #[inline(always)]
     pub fn bsize_of_trans(&mut self) -> BSIZE_OF_TRANS_W {
-        BSIZE_OF_TRANS_W { w: self }
+        BSIZE_OF_TRANS_W::new(self)
     }
     #[doc = "Bits 16:23 - RX Trigger Level"]
     #[inline(always)]
     pub fn rx_tl(&mut self) -> RX_TL_W {
-        RX_TL_W { w: self }
+        RX_TL_W::new(self)
     }
     #[doc = "Bits 0:7 - TX Trigger Level"]
     #[inline(always)]
     pub fn tx_tl(&mut self) -> TX_TL_W {
-        TX_TL_W { w: self }
+        TX_TL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

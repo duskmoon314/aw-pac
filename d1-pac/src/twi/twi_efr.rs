@@ -54,13 +54,9 @@ impl From<DBN_A> for u8 {
     }
 }
 #[doc = "Field `dbn` reader - Data Byte Number Follow Read Command Control"]
-pub struct DBN_R(crate::FieldReader<u8>);
+pub type DBN_R = crate::FieldReader<u8, DBN_A>;
 impl DBN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DBN_A {
         match self.bits {
@@ -74,41 +70,27 @@ impl DBN_R {
     #[doc = "Checks if the value of the field is `B0`"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
-        **self == DBN_A::B0
+        *self == DBN_A::B0
     }
     #[doc = "Checks if the value of the field is `B1`"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
-        **self == DBN_A::B1
+        *self == DBN_A::B1
     }
     #[doc = "Checks if the value of the field is `B2`"]
     #[inline(always)]
     pub fn is_b2(&self) -> bool {
-        **self == DBN_A::B2
+        *self == DBN_A::B2
     }
     #[doc = "Checks if the value of the field is `B3`"]
     #[inline(always)]
     pub fn is_b3(&self) -> bool {
-        **self == DBN_A::B3
-    }
-}
-impl core::ops::Deref for DBN_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DBN_A::B3
     }
 }
 #[doc = "Field `dbn` writer - Data Byte Number Follow Read Command Control"]
-pub struct DBN_W<'a> {
-    w: &'a mut W,
-}
+pub type DBN_W<'a> = crate::FieldWriterSafe<'a, u32, TWI_EFR_SPEC, u8, DBN_A, 2, 0>;
 impl<'a> DBN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DBN_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "No data byte can be written after the read command"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut W {
@@ -129,12 +111,6 @@ impl<'a> DBN_W<'a> {
     pub fn b3(self) -> &'a mut W {
         self.variant(DBN_A::B3)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:1 - Data Byte Number Follow Read Command Control"]
@@ -147,7 +123,7 @@ impl W {
     #[doc = "Bits 0:1 - Data Byte Number Follow Read Command Control"]
     #[inline(always)]
     pub fn dbn(&mut self) -> DBN_W {
-        DBN_W { w: self }
+        DBN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

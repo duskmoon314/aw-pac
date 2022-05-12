@@ -49,13 +49,9 @@ impl From<HS400_MD_EN_A> for bool {
     }
 }
 #[doc = "Field `HS400_MD_EN` reader - HS400 Mode Enable"]
-pub struct HS400_MD_EN_R(crate::FieldReader<bool>);
+pub type HS400_MD_EN_R = crate::BitReader<HS400_MD_EN_A>;
 impl HS400_MD_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HS400_MD_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HS400_MD_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl HS400_MD_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HS400_MD_EN_A::DISABLED
+        *self == HS400_MD_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HS400_MD_EN_A::ENABLED
-    }
-}
-impl core::ops::Deref for HS400_MD_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HS400_MD_EN_A::ENABLED
     }
 }
 #[doc = "Field `HS400_MD_EN` writer - HS400 Mode Enable"]
-pub struct HS400_MD_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type HS400_MD_EN_W<'a> = crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HS400_MD_EN_A, 31>;
 impl<'a> HS400_MD_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HS400_MD_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> HS400_MD_EN_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HS400_MD_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
     }
 }
 #[doc = "Control for start bit detection mechanism inside mstorage based on duration of start bit\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<HALF_START_BIT_A> for bool {
     }
 }
 #[doc = "Field `HALF_START_BIT` reader - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
-pub struct HALF_START_BIT_R(crate::FieldReader<bool>);
+pub type HALF_START_BIT_R = crate::BitReader<HALF_START_BIT_A>;
 impl HALF_START_BIT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HALF_START_BIT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HALF_START_BIT_A {
         match self.bits {
@@ -150,31 +112,18 @@ impl HALF_START_BIT_R {
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
-        **self == HALF_START_BIT_A::FULL
+        *self == HALF_START_BIT_A::FULL
     }
     #[doc = "Checks if the value of the field is `LESS`"]
     #[inline(always)]
     pub fn is_less(&self) -> bool {
-        **self == HALF_START_BIT_A::LESS
-    }
-}
-impl core::ops::Deref for HALF_START_BIT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HALF_START_BIT_A::LESS
     }
 }
 #[doc = "Field `HALF_START_BIT` writer - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
-pub struct HALF_START_BIT_W<'a> {
-    w: &'a mut W,
-}
+pub type HALF_START_BIT_W<'a> =
+    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HALF_START_BIT_A, 0>;
 impl<'a> HALF_START_BIT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HALF_START_BIT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Full cycle"]
     #[inline(always)]
     pub fn full(self) -> &'a mut W {
@@ -184,22 +133,6 @@ impl<'a> HALF_START_BIT_W<'a> {
     #[inline(always)]
     pub fn less(self) -> &'a mut W {
         self.variant(HALF_START_BIT_A::LESS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -218,12 +151,12 @@ impl W {
     #[doc = "Bit 31 - HS400 Mode Enable"]
     #[inline(always)]
     pub fn hs400_md_en(&mut self) -> HS400_MD_EN_W {
-        HS400_MD_EN_W { w: self }
+        HS400_MD_EN_W::new(self)
     }
     #[doc = "Bit 0 - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
     #[inline(always)]
     pub fn half_start_bit(&mut self) -> HALF_START_BIT_W {
-        HALF_START_BIT_W { w: self }
+        HALF_START_BIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

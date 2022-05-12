@@ -54,13 +54,9 @@ impl From<MDC_DIV_RATIO_M_A> for u8 {
     }
 }
 #[doc = "Field `MDC_DIV_RATIO_M` reader - MDC Clock DIvider Ratio"]
-pub struct MDC_DIV_RATIO_M_R(crate::FieldReader<u8>);
+pub type MDC_DIV_RATIO_M_R = crate::FieldReader<u8, MDC_DIV_RATIO_M_A>;
 impl MDC_DIV_RATIO_M_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MDC_DIV_RATIO_M_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<MDC_DIV_RATIO_M_A> {
         match self.bits {
@@ -74,41 +70,28 @@ impl MDC_DIV_RATIO_M_R {
     #[doc = "Checks if the value of the field is `R16`"]
     #[inline(always)]
     pub fn is_r16(&self) -> bool {
-        **self == MDC_DIV_RATIO_M_A::R16
+        *self == MDC_DIV_RATIO_M_A::R16
     }
     #[doc = "Checks if the value of the field is `R32`"]
     #[inline(always)]
     pub fn is_r32(&self) -> bool {
-        **self == MDC_DIV_RATIO_M_A::R32
+        *self == MDC_DIV_RATIO_M_A::R32
     }
     #[doc = "Checks if the value of the field is `R64`"]
     #[inline(always)]
     pub fn is_r64(&self) -> bool {
-        **self == MDC_DIV_RATIO_M_A::R64
+        *self == MDC_DIV_RATIO_M_A::R64
     }
     #[doc = "Checks if the value of the field is `R128`"]
     #[inline(always)]
     pub fn is_r128(&self) -> bool {
-        **self == MDC_DIV_RATIO_M_A::R128
-    }
-}
-impl core::ops::Deref for MDC_DIV_RATIO_M_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MDC_DIV_RATIO_M_A::R128
     }
 }
 #[doc = "Field `MDC_DIV_RATIO_M` writer - MDC Clock DIvider Ratio"]
-pub struct MDC_DIV_RATIO_M_W<'a> {
-    w: &'a mut W,
-}
+pub type MDC_DIV_RATIO_M_W<'a> =
+    crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, MDC_DIV_RATIO_M_A, 3, 20>;
 impl<'a> MDC_DIV_RATIO_M_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MDC_DIV_RATIO_M_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn r16(self) -> &'a mut W {
@@ -129,67 +112,15 @@ impl<'a> MDC_DIV_RATIO_M_W<'a> {
     pub fn r128(self) -> &'a mut W {
         self.variant(MDC_DIV_RATIO_M_A::R128)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(7 << 20)) | ((value as u32 & 7) << 20);
-        self.w
-    }
 }
 #[doc = "Field `PHY_ADDR` reader - PHY Address"]
-pub struct PHY_ADDR_R(crate::FieldReader<u8>);
-impl PHY_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PHY_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PHY_ADDR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHY_ADDR` writer - PHY Address"]
-pub struct PHY_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHY_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 12)) | ((value as u32 & 0x1f) << 12);
-        self.w
-    }
-}
+pub type PHY_ADDR_W<'a> = crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, 12>;
 #[doc = "Field `PHY_REG_ADDR` reader - PHY Register Address"]
-pub struct PHY_REG_ADDR_R(crate::FieldReader<u8>);
-impl PHY_REG_ADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PHY_REG_ADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PHY_REG_ADDR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PHY_REG_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHY_REG_ADDR` writer - PHY Register Address"]
-pub struct PHY_REG_ADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PHY_REG_ADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 4)) | ((value as u32 & 0x1f) << 4);
-        self.w
-    }
-}
+pub type PHY_REG_ADDR_W<'a> = crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, 4>;
 #[doc = "MII Write and Read\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MII_WR_A {
@@ -205,13 +136,9 @@ impl From<MII_WR_A> for bool {
     }
 }
 #[doc = "Field `MII_WR` reader - MII Write and Read"]
-pub struct MII_WR_R(crate::FieldReader<bool>);
+pub type MII_WR_R = crate::BitReader<MII_WR_A>;
 impl MII_WR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MII_WR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MII_WR_A {
         match self.bits {
@@ -222,31 +149,17 @@ impl MII_WR_R {
     #[doc = "Checks if the value of the field is `R`"]
     #[inline(always)]
     pub fn is_r(&self) -> bool {
-        **self == MII_WR_A::R
+        *self == MII_WR_A::R
     }
     #[doc = "Checks if the value of the field is `W`"]
     #[inline(always)]
     pub fn is_w(&self) -> bool {
-        **self == MII_WR_A::W
-    }
-}
-impl core::ops::Deref for MII_WR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MII_WR_A::W
     }
 }
 #[doc = "Field `MII_WR` writer - MII Write and Read"]
-pub struct MII_WR_W<'a> {
-    w: &'a mut W,
-}
+pub type MII_WR_W<'a> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, MII_WR_A, 1>;
 impl<'a> MII_WR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MII_WR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn r(self) -> &'a mut W {
@@ -257,60 +170,11 @@ impl<'a> MII_WR_W<'a> {
     pub fn w(self) -> &'a mut W {
         self.variant(MII_WR_A::W)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
-    }
 }
 #[doc = "Field `MII_BUSY` reader - MII Status"]
-pub struct MII_BUSY_R(crate::FieldReader<bool>);
-impl MII_BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MII_BUSY_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MII_BUSY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MII_BUSY_R = crate::BitReader<bool>;
 #[doc = "Field `MII_BUSY` writer - MII Status"]
-pub struct MII_BUSY_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MII_BUSY_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type MII_BUSY_W<'a> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, bool, 0>;
 impl R {
     #[doc = "Bits 20:22 - MDC Clock DIvider Ratio"]
     #[inline(always)]
@@ -342,27 +206,27 @@ impl W {
     #[doc = "Bits 20:22 - MDC Clock DIvider Ratio"]
     #[inline(always)]
     pub fn mdc_div_ratio_m(&mut self) -> MDC_DIV_RATIO_M_W {
-        MDC_DIV_RATIO_M_W { w: self }
+        MDC_DIV_RATIO_M_W::new(self)
     }
     #[doc = "Bits 12:16 - PHY Address"]
     #[inline(always)]
     pub fn phy_addr(&mut self) -> PHY_ADDR_W {
-        PHY_ADDR_W { w: self }
+        PHY_ADDR_W::new(self)
     }
     #[doc = "Bits 4:8 - PHY Register Address"]
     #[inline(always)]
     pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W {
-        PHY_REG_ADDR_W { w: self }
+        PHY_REG_ADDR_W::new(self)
     }
     #[doc = "Bit 1 - MII Write and Read"]
     #[inline(always)]
     pub fn mii_wr(&mut self) -> MII_WR_W {
-        MII_WR_W { w: self }
+        MII_WR_W::new(self)
     }
     #[doc = "Bit 0 - MII Status"]
     #[inline(always)]
     pub fn mii_busy(&mut self) -> MII_BUSY_W {
-        MII_BUSY_W { w: self }
+        MII_BUSY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

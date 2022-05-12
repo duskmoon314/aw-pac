@@ -60,13 +60,9 @@ impl From<CPU_CLK_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CPU_CLK_SEL` reader - Clock Source Select"]
-pub struct CPU_CLK_SEL_R(crate::FieldReader<u8>);
+pub type CPU_CLK_SEL_R = crate::FieldReader<u8, CPU_CLK_SEL_A>;
 impl CPU_CLK_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CPU_CLK_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CPU_CLK_SEL_A> {
         match self.bits {
@@ -83,56 +79,43 @@ impl CPU_CLK_SEL_R {
     #[doc = "Checks if the value of the field is `HOSC`"]
     #[inline(always)]
     pub fn is_hosc(&self) -> bool {
-        **self == CPU_CLK_SEL_A::HOSC
+        *self == CPU_CLK_SEL_A::HOSC
     }
     #[doc = "Checks if the value of the field is `CLK32K`"]
     #[inline(always)]
     pub fn is_clk32k(&self) -> bool {
-        **self == CPU_CLK_SEL_A::CLK32K
+        *self == CPU_CLK_SEL_A::CLK32K
     }
     #[doc = "Checks if the value of the field is `CLK16M_RC`"]
     #[inline(always)]
     pub fn is_clk16m_rc(&self) -> bool {
-        **self == CPU_CLK_SEL_A::CLK16M_RC
+        *self == CPU_CLK_SEL_A::CLK16M_RC
     }
     #[doc = "Checks if the value of the field is `PLL_CPU_P`"]
     #[inline(always)]
     pub fn is_pll_cpu_p(&self) -> bool {
-        **self == CPU_CLK_SEL_A::PLL_CPU_P
+        *self == CPU_CLK_SEL_A::PLL_CPU_P
     }
     #[doc = "Checks if the value of the field is `PLL_PERI_1X`"]
     #[inline(always)]
     pub fn is_pll_peri_1x(&self) -> bool {
-        **self == CPU_CLK_SEL_A::PLL_PERI_1X
+        *self == CPU_CLK_SEL_A::PLL_PERI_1X
     }
     #[doc = "Checks if the value of the field is `PLL_PERI_2X`"]
     #[inline(always)]
     pub fn is_pll_peri_2x(&self) -> bool {
-        **self == CPU_CLK_SEL_A::PLL_PERI_2X
+        *self == CPU_CLK_SEL_A::PLL_PERI_2X
     }
     #[doc = "Checks if the value of the field is `PLL_PERI_800M`"]
     #[inline(always)]
     pub fn is_pll_peri_800m(&self) -> bool {
-        **self == CPU_CLK_SEL_A::PLL_PERI_800M
-    }
-}
-impl core::ops::Deref for CPU_CLK_SEL_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CPU_CLK_SEL_A::PLL_PERI_800M
     }
 }
 #[doc = "Field `CPU_CLK_SEL` writer - Clock Source Select"]
-pub struct CPU_CLK_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type CPU_CLK_SEL_W<'a> =
+    crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, CPU_CLK_SEL_A, 3, 24>;
 impl<'a> CPU_CLK_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CPU_CLK_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn hosc(self) -> &'a mut W {
@@ -168,12 +151,6 @@ impl<'a> CPU_CLK_SEL_W<'a> {
     pub fn pll_peri_800m(self) -> &'a mut W {
         self.variant(CPU_CLK_SEL_A::PLL_PERI_800M)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(7 << 24)) | ((value as u32 & 7) << 24);
-        self.w
-    }
 }
 #[doc = "PLL Output External Divider P\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -193,13 +170,9 @@ impl From<PLL_CPU_OUT_EXT_DIVP_A> for u8 {
     }
 }
 #[doc = "Field `PLL_CPU_OUT_EXT_DIVP` reader - PLL Output External Divider P"]
-pub struct PLL_CPU_OUT_EXT_DIVP_R(crate::FieldReader<u8>);
+pub type PLL_CPU_OUT_EXT_DIVP_R = crate::FieldReader<u8, PLL_CPU_OUT_EXT_DIVP_A>;
 impl PLL_CPU_OUT_EXT_DIVP_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLL_CPU_OUT_EXT_DIVP_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PLL_CPU_OUT_EXT_DIVP_A> {
         match self.bits {
@@ -212,36 +185,23 @@ impl PLL_CPU_OUT_EXT_DIVP_R {
     #[doc = "Checks if the value of the field is `P1`"]
     #[inline(always)]
     pub fn is_p1(&self) -> bool {
-        **self == PLL_CPU_OUT_EXT_DIVP_A::P1
+        *self == PLL_CPU_OUT_EXT_DIVP_A::P1
     }
     #[doc = "Checks if the value of the field is `P2`"]
     #[inline(always)]
     pub fn is_p2(&self) -> bool {
-        **self == PLL_CPU_OUT_EXT_DIVP_A::P2
+        *self == PLL_CPU_OUT_EXT_DIVP_A::P2
     }
     #[doc = "Checks if the value of the field is `P4`"]
     #[inline(always)]
     pub fn is_p4(&self) -> bool {
-        **self == PLL_CPU_OUT_EXT_DIVP_A::P4
-    }
-}
-impl core::ops::Deref for PLL_CPU_OUT_EXT_DIVP_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PLL_CPU_OUT_EXT_DIVP_A::P4
     }
 }
 #[doc = "Field `PLL_CPU_OUT_EXT_DIVP` writer - PLL Output External Divider P"]
-pub struct PLL_CPU_OUT_EXT_DIVP_W<'a> {
-    w: &'a mut W,
-}
+pub type PLL_CPU_OUT_EXT_DIVP_W<'a> =
+    crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, PLL_CPU_OUT_EXT_DIVP_A, 2, 16>;
 impl<'a> PLL_CPU_OUT_EXT_DIVP_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PLL_CPU_OUT_EXT_DIVP_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn p1(self) -> &'a mut W {
@@ -257,67 +217,15 @@ impl<'a> PLL_CPU_OUT_EXT_DIVP_W<'a> {
     pub fn p4(self) -> &'a mut W {
         self.variant(PLL_CPU_OUT_EXT_DIVP_A::P4)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 16)) | ((value as u32 & 3) << 16);
-        self.w
-    }
 }
 #[doc = "Field `CPU_DIV2` reader - Factor N"]
-pub struct CPU_DIV2_R(crate::FieldReader<u8>);
-impl CPU_DIV2_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CPU_DIV2_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPU_DIV2_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPU_DIV2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CPU_DIV2` writer - Factor N"]
-pub struct CPU_DIV2_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPU_DIV2_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
-        self.w
-    }
-}
+pub type CPU_DIV2_W<'a> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, 8>;
 #[doc = "Field `CPU_DIV1` reader - Factor M"]
-pub struct CPU_DIV1_R(crate::FieldReader<u8>);
-impl CPU_DIV1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CPU_DIV1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CPU_DIV1_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CPU_DIV1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CPU_DIV1` writer - Factor M"]
-pub struct CPU_DIV1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CPU_DIV1_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
-}
+pub type CPU_DIV1_W<'a> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
@@ -344,22 +252,22 @@ impl W {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
     pub fn cpu_clk_sel(&mut self) -> CPU_CLK_SEL_W {
-        CPU_CLK_SEL_W { w: self }
+        CPU_CLK_SEL_W::new(self)
     }
     #[doc = "Bits 16:17 - PLL Output External Divider P"]
     #[inline(always)]
     pub fn pll_cpu_out_ext_divp(&mut self) -> PLL_CPU_OUT_EXT_DIVP_W {
-        PLL_CPU_OUT_EXT_DIVP_W { w: self }
+        PLL_CPU_OUT_EXT_DIVP_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn cpu_div2(&mut self) -> CPU_DIV2_W {
-        CPU_DIV2_W { w: self }
+        CPU_DIV2_W::new(self)
     }
     #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
     pub fn cpu_div1(&mut self) -> CPU_DIV1_W {
-        CPU_DIV1_W { w: self }
+        CPU_DIV1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -35,32 +35,9 @@ impl From<crate::W<RXDMA_SADDRH_SPEC>> for W {
     }
 }
 #[doc = "Field `saddr` reader - RXDMA Buffer Start Address \\[33:32\\]"]
-pub struct SADDR_R(crate::FieldReader<u8>);
-impl SADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SADDR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `saddr` writer - RXDMA Buffer Start Address \\[33:32\\]"]
-pub struct SADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
-}
+pub type SADDR_W<'a> = crate::FieldWriter<'a, u32, RXDMA_SADDRH_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bits 0:1 - RXDMA Buffer Start Address \\[33:32\\]"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:1 - RXDMA Buffer Start Address \\[33:32\\]"]
     #[inline(always)]
     pub fn saddr(&mut self) -> SADDR_W {
-        SADDR_W { w: self }
+        SADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

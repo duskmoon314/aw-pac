@@ -29,13 +29,9 @@ impl From<FEFLAG_A> for u8 {
     }
 }
 #[doc = "Field `feflag` reader - FIFOs Enable Flag"]
-pub struct FEFLAG_R(crate::FieldReader<u8>);
+pub type FEFLAG_R = crate::FieldReader<u8, FEFLAG_A>;
 impl FEFLAG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FEFLAG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<FEFLAG_A> {
         match self.bits {
@@ -47,19 +43,12 @@ impl FEFLAG_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == FEFLAG_A::DISABLE
+        *self == FEFLAG_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == FEFLAG_A::ENABLE
-    }
-}
-impl core::ops::Deref for FEFLAG_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FEFLAG_A::ENABLE
     }
 }
 #[doc = "Interrupt ID\n\nValue on reset: 0"]
@@ -90,13 +79,9 @@ impl From<IID_A> for u8 {
     }
 }
 #[doc = "Field `iid` reader - Interrupt ID"]
-pub struct IID_R(crate::FieldReader<u8>);
+pub type IID_R = crate::FieldReader<u8, IID_A>;
 impl IID_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        IID_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<IID_A> {
         match self.bits {
@@ -114,49 +99,42 @@ impl IID_R {
     #[doc = "Checks if the value of the field is `MODEM_STATUS`"]
     #[inline(always)]
     pub fn is_modem_status(&self) -> bool {
-        **self == IID_A::MODEM_STATUS
+        *self == IID_A::MODEM_STATUS
     }
     #[doc = "Checks if the value of the field is `NO_INTERRUPT_PENDING`"]
     #[inline(always)]
     pub fn is_no_interrupt_pending(&self) -> bool {
-        **self == IID_A::NO_INTERRUPT_PENDING
+        *self == IID_A::NO_INTERRUPT_PENDING
     }
     #[doc = "Checks if the value of the field is `THR_EMPTY`"]
     #[inline(always)]
     pub fn is_thr_empty(&self) -> bool {
-        **self == IID_A::THR_EMPTY
+        *self == IID_A::THR_EMPTY
     }
     #[doc = "Checks if the value of the field is `RS485_INTERRUPT`"]
     #[inline(always)]
     pub fn is_rs485_interrupt(&self) -> bool {
-        **self == IID_A::RS485_INTERRUPT
+        *self == IID_A::RS485_INTERRUPT
     }
     #[doc = "Checks if the value of the field is `RECEIVED_DATA_AVAILABLE`"]
     #[inline(always)]
     pub fn is_received_data_available(&self) -> bool {
-        **self == IID_A::RECEIVED_DATA_AVAILABLE
+        *self == IID_A::RECEIVED_DATA_AVAILABLE
     }
     #[doc = "Checks if the value of the field is `RECEIVER_LINE_STATUS`"]
     #[inline(always)]
     pub fn is_receiver_line_status(&self) -> bool {
-        **self == IID_A::RECEIVER_LINE_STATUS
+        *self == IID_A::RECEIVER_LINE_STATUS
     }
     #[doc = "Checks if the value of the field is `BUSY_DETECT`"]
     #[inline(always)]
     pub fn is_busy_detect(&self) -> bool {
-        **self == IID_A::BUSY_DETECT
+        *self == IID_A::BUSY_DETECT
     }
     #[doc = "Checks if the value of the field is `CHARACTER_TIMEOUT`"]
     #[inline(always)]
     pub fn is_character_timeout(&self) -> bool {
-        **self == IID_A::CHARACTER_TIMEOUT
-    }
-}
-impl core::ops::Deref for IID_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IID_A::CHARACTER_TIMEOUT
     }
 }
 impl R {

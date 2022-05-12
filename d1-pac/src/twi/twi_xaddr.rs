@@ -35,32 +35,9 @@ impl From<crate::W<TWI_XADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `SLAX` reader - Extend Slave Address\n\nSLAX\\[7:0\\]"]
-pub struct SLAX_R(crate::FieldReader<u8>);
-impl SLAX_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLAX_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLAX_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLAX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SLAX` writer - Extend Slave Address\n\nSLAX\\[7:0\\]"]
-pub struct SLAX_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLAX_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type SLAX_W<'a> = crate::FieldWriter<'a, u32, TWI_XADDR_SPEC, u8, u8, 8, 0>;
 impl R {
     #[doc = "Bits 0:7 - Extend Slave Address\n\nSLAX\\[7:0\\]"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:7 - Extend Slave Address\n\nSLAX\\[7:0\\]"]
     #[inline(always)]
     pub fn slax(&mut self) -> SLAX_W {
-        SLAX_W { w: self }
+        SLAX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

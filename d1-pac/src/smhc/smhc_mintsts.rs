@@ -14,275 +14,41 @@ impl From<crate::R<SMHC_MINTSTS_SPEC>> for R {
     }
 }
 #[doc = "Field `M_CARD_REMOVAL_INT` reader - Card Removed"]
-pub struct M_CARD_REMOVAL_INT_R(crate::FieldReader<bool>);
-impl M_CARD_REMOVAL_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_CARD_REMOVAL_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_CARD_REMOVAL_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_CARD_REMOVAL_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_CARD_INSERT` reader - Card Inserted"]
-pub struct M_CARD_INSERT_R(crate::FieldReader<bool>);
-impl M_CARD_INSERT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_CARD_INSERT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_CARD_INSERT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_CARD_INSERT_R = crate::BitReader<bool>;
 #[doc = "Field `M_SDIO_INT` reader - SDIO Interrupt"]
-pub struct M_SDIO_INT_R(crate::FieldReader<bool>);
-impl M_SDIO_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_SDIO_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_SDIO_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_SDIO_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DEE_INT` reader - Data End-bit Error"]
-pub struct M_DEE_INT_R(crate::FieldReader<bool>);
-impl M_DEE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DEE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DEE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DEE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_ACD_INT` reader - Auto Command Done"]
-pub struct M_ACD_INT_R(crate::FieldReader<bool>);
-impl M_ACD_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_ACD_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_ACD_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_ACD_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DSE_BC_INT` reader - Data Start Error/Busy Clear"]
-pub struct M_DSE_BC_INT_R(crate::FieldReader<bool>);
-impl M_DSE_BC_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DSE_BC_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DSE_BC_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DSE_BC_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_CB_IW_INT` reader - Command Busy and Illegal Write"]
-pub struct M_CB_IW_INT_R(crate::FieldReader<bool>);
-impl M_CB_IW_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_CB_IW_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_CB_IW_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_CB_IW_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_FU_FO_INT` reader - FIFO Underrun/Overflow"]
-pub struct M_FU_FO_INT_R(crate::FieldReader<bool>);
-impl M_FU_FO_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_FU_FO_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_FU_FO_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_FU_FO_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DSTO_VSD_INT` reader - Data Starvation Timeout/V1.8 Switch Done"]
-pub struct M_DSTO_VSD_INT_R(crate::FieldReader<bool>);
-impl M_DSTO_VSD_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DSTO_VSD_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DSTO_VSD_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DSTO_VSD_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DTO_BDS_INT` reader - Data Timeout/Boot Data Start"]
-pub struct M_DTO_BDS_INT_R(crate::FieldReader<bool>);
-impl M_DTO_BDS_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DTO_BDS_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DTO_BDS_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DTO_BDS_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_RTO_BACK_INT` reader - Response Timeout/Boot ACK Received"]
-pub struct M_RTO_BACK_INT_R(crate::FieldReader<bool>);
-impl M_RTO_BACK_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_RTO_BACK_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_RTO_BACK_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_RTO_BACK_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DCE_INT` reader - Data CRC Error"]
-pub struct M_DCE_INT_R(crate::FieldReader<bool>);
-impl M_DCE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DCE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DCE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DCE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_RCE_INT` reader - Response CRC Error"]
-pub struct M_RCE_INT_R(crate::FieldReader<bool>);
-impl M_RCE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_RCE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_RCE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_RCE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DRR_INT` reader - Data Receive Request"]
-pub struct M_DRR_INT_R(crate::FieldReader<bool>);
-impl M_DRR_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DRR_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DRR_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DRR_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DTR_INT` reader - Data Transmit Request"]
-pub struct M_DTR_INT_R(crate::FieldReader<bool>);
-impl M_DTR_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DTR_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DTR_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DTR_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_DTC_INT` reader - Data Transfer Complete"]
-pub struct M_DTC_INT_R(crate::FieldReader<bool>);
-impl M_DTC_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_DTC_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_DTC_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_DTC_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_CC_INT` reader - Command Complete"]
-pub struct M_CC_INT_R(crate::FieldReader<bool>);
-impl M_CC_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_CC_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_CC_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_CC_INT_R = crate::BitReader<bool>;
 #[doc = "Field `M_RE_INT` reader - Response Errors"]
-pub struct M_RE_INT_R(crate::FieldReader<bool>);
-impl M_RE_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        M_RE_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for M_RE_INT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type M_RE_INT_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]

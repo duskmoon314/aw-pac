@@ -49,13 +49,9 @@ impl From<CSS_A> for bool {
     }
 }
 #[doc = "Field `CSS` reader - Cyclical Pulse Start/Stop Control"]
-pub struct CSS_R(crate::FieldReader<bool>);
+pub type CSS_R = crate::BitReader<CSS_A>;
 impl CSS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CSS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CSS_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CSS_R {
     #[doc = "Checks if the value of the field is `STOP`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
-        **self == CSS_A::STOP
+        *self == CSS_A::STOP
     }
     #[doc = "Checks if the value of the field is `START`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
-        **self == CSS_A::START
-    }
-}
-impl core::ops::Deref for CSS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CSS_A::START
     }
 }
 #[doc = "Field `CSS` writer - Cyclical Pulse Start/Stop Control"]
-pub struct CSS_W<'a> {
-    w: &'a mut W,
-}
+pub type CSS_W<'a> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, CSS_A, 7>;
 impl<'a> CSS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CSS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
     #[inline(always)]
     pub fn stop(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> CSS_W<'a> {
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
         self.variant(CSS_A::START)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 7)) | ((value as u32 & 1) << 7);
-        self.w
     }
 }
 #[doc = "Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock.\n\nValue on reset: 0"]
@@ -146,13 +112,9 @@ impl From<RCS_A> for u8 {
     }
 }
 #[doc = "Field `RCS` reader - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
-pub struct RCS_R(crate::FieldReader<u8>);
+pub type RCS_R = crate::FieldReader<u8, RCS_A>;
 impl RCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RCS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RCS_A {
         match self.bits {
@@ -170,61 +132,47 @@ impl RCS_R {
     #[doc = "Checks if the value of the field is `IR_CLK`"]
     #[inline(always)]
     pub fn is_ir_clk(&self) -> bool {
-        **self == RCS_A::IR_CLK
+        *self == RCS_A::IR_CLK
     }
     #[doc = "Checks if the value of the field is `IR_CLK_2`"]
     #[inline(always)]
     pub fn is_ir_clk_2(&self) -> bool {
-        **self == RCS_A::IR_CLK_2
+        *self == RCS_A::IR_CLK_2
     }
     #[doc = "Checks if the value of the field is `IR_CLK_4`"]
     #[inline(always)]
     pub fn is_ir_clk_4(&self) -> bool {
-        **self == RCS_A::IR_CLK_4
+        *self == RCS_A::IR_CLK_4
     }
     #[doc = "Checks if the value of the field is `IR_CLK_8`"]
     #[inline(always)]
     pub fn is_ir_clk_8(&self) -> bool {
-        **self == RCS_A::IR_CLK_8
+        *self == RCS_A::IR_CLK_8
     }
     #[doc = "Checks if the value of the field is `IR_CLK_64`"]
     #[inline(always)]
     pub fn is_ir_clk_64(&self) -> bool {
-        **self == RCS_A::IR_CLK_64
+        *self == RCS_A::IR_CLK_64
     }
     #[doc = "Checks if the value of the field is `IR_CLK_128`"]
     #[inline(always)]
     pub fn is_ir_clk_128(&self) -> bool {
-        **self == RCS_A::IR_CLK_128
+        *self == RCS_A::IR_CLK_128
     }
     #[doc = "Checks if the value of the field is `IR_CLK_256`"]
     #[inline(always)]
     pub fn is_ir_clk_256(&self) -> bool {
-        **self == RCS_A::IR_CLK_256
+        *self == RCS_A::IR_CLK_256
     }
     #[doc = "Checks if the value of the field is `IR_CLK_512`"]
     #[inline(always)]
     pub fn is_ir_clk_512(&self) -> bool {
-        **self == RCS_A::IR_CLK_512
-    }
-}
-impl core::ops::Deref for RCS_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RCS_A::IR_CLK_512
     }
 }
 #[doc = "Field `RCS` writer - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
-pub struct RCS_W<'a> {
-    w: &'a mut W,
-}
+pub type RCS_W<'a> = crate::FieldWriterSafe<'a, u32, CIR_TCR_SPEC, u8, RCS_A, 3, 1>;
 impl<'a> RCS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RCS_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "CIR Transmit reference clock is ir_clk"]
     #[inline(always)]
     pub fn ir_clk(self) -> &'a mut W {
@@ -265,12 +213,6 @@ impl<'a> RCS_W<'a> {
     pub fn ir_clk_512(self) -> &'a mut W {
         self.variant(RCS_A::IR_CLK_512)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(7 << 1)) | ((value as u32 & 7) << 1);
-        self.w
-    }
 }
 #[doc = "Type of the transmission signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -287,13 +229,9 @@ impl From<TTS_A> for bool {
     }
 }
 #[doc = "Field `TTS` reader - Type of the transmission signal"]
-pub struct TTS_R(crate::FieldReader<bool>);
+pub type TTS_R = crate::BitReader<TTS_A>;
 impl TTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TTS_A {
         match self.bits {
@@ -304,31 +242,17 @@ impl TTS_R {
     #[doc = "Checks if the value of the field is `NON_CYCLICAL`"]
     #[inline(always)]
     pub fn is_non_cyclical(&self) -> bool {
-        **self == TTS_A::NON_CYCLICAL
+        *self == TTS_A::NON_CYCLICAL
     }
     #[doc = "Checks if the value of the field is `CYCLICAL`"]
     #[inline(always)]
     pub fn is_cyclical(&self) -> bool {
-        **self == TTS_A::CYCLICAL
-    }
-}
-impl core::ops::Deref for TTS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TTS_A::CYCLICAL
     }
 }
 #[doc = "Field `TTS` writer - Type of the transmission signal"]
-pub struct TTS_W<'a> {
-    w: &'a mut W,
-}
+pub type TTS_W<'a> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, TTS_A, 0>;
 impl<'a> TTS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TTS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "The transmitting wave is a single non-cyclical pulse."]
     #[inline(always)]
     pub fn non_cyclical(self) -> &'a mut W {
@@ -338,22 +262,6 @@ impl<'a> TTS_W<'a> {
     #[inline(always)]
     pub fn cyclical(self) -> &'a mut W {
         self.variant(TTS_A::CYCLICAL)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -377,17 +285,17 @@ impl W {
     #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
     #[inline(always)]
     pub fn css(&mut self) -> CSS_W {
-        CSS_W { w: self }
+        CSS_W::new(self)
     }
     #[doc = "Bits 1:3 - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
     #[inline(always)]
     pub fn rcs(&mut self) -> RCS_W {
-        RCS_W { w: self }
+        RCS_W::new(self)
     }
     #[doc = "Bit 0 - Type of the transmission signal"]
     #[inline(always)]
     pub fn tts(&mut self) -> TTS_W {
-        TTS_W { w: self }
+        TTS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

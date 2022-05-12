@@ -14,20 +14,7 @@ impl From<crate::R<TP_DATA_SPEC>> for R {
     }
 }
 #[doc = "Field `TP_DATA` reader - TP Data"]
-pub struct TP_DATA_R(crate::FieldReader<u16>);
-impl TP_DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        TP_DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TP_DATA_R {
-    type Target = crate::FieldReader<u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TP_DATA_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:11 - TP Data"]
     #[inline(always)]

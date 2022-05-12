@@ -49,13 +49,9 @@ impl From<FIFO_OVERRUN_PENDING_A> for bool {
     }
 }
 #[doc = "Field `FIFO_OVERRUN_PENDING` reader - TP FIFO Overrun Pending"]
-pub struct FIFO_OVERRUN_PENDING_R(crate::FieldReader<bool>);
+pub type FIFO_OVERRUN_PENDING_R = crate::BitReader<FIFO_OVERRUN_PENDING_A>;
 impl FIFO_OVERRUN_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_OVERRUN_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_OVERRUN_PENDING_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl FIFO_OVERRUN_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == FIFO_OVERRUN_PENDING_A::NO_PENDING
+        *self == FIFO_OVERRUN_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == FIFO_OVERRUN_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for FIFO_OVERRUN_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_OVERRUN_PENDING_A::PENDING
     }
 }
 #[doc = "Field `FIFO_OVERRUN_PENDING` writer - TP FIFO Overrun Pending"]
-pub struct FIFO_OVERRUN_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type FIFO_OVERRUN_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_OVERRUN_PENDING_A, 17>;
 impl<'a> FIFO_OVERRUN_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIFO_OVERRUN_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> FIFO_OVERRUN_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(FIFO_OVERRUN_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 17)) | ((value as u32 & 1) << 17);
-        self.w
     }
 }
 #[doc = "TP FIFO Data Available Pending\n\nValue on reset: 0"]
@@ -133,13 +100,9 @@ impl From<FIFO_DATA_PENDING_A> for bool {
     }
 }
 #[doc = "Field `FIFO_DATA_PENDING` reader - TP FIFO Data Available Pending"]
-pub struct FIFO_DATA_PENDING_R(crate::FieldReader<bool>);
+pub type FIFO_DATA_PENDING_R = crate::BitReader<FIFO_DATA_PENDING_A>;
 impl FIFO_DATA_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FIFO_DATA_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FIFO_DATA_PENDING_A {
         match self.bits {
@@ -150,31 +113,18 @@ impl FIFO_DATA_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == FIFO_DATA_PENDING_A::NO_PENDING
+        *self == FIFO_DATA_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == FIFO_DATA_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for FIFO_DATA_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FIFO_DATA_PENDING_A::PENDING
     }
 }
 #[doc = "Field `FIFO_DATA_PENDING` writer - TP FIFO Data Available Pending"]
-pub struct FIFO_DATA_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type FIFO_DATA_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_DATA_PENDING_A, 16>;
 impl<'a> FIFO_DATA_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FIFO_DATA_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -185,38 +135,9 @@ impl<'a> FIFO_DATA_PENDING_W<'a> {
     pub fn pending(self) -> &'a mut W {
         self.variant(FIFO_DATA_PENDING_A::PENDING)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
-    }
 }
 #[doc = "Field `RXA_CNT` reader - TP FIFO Available Sample Word Count"]
-pub struct RXA_CNT_R(crate::FieldReader<u8>);
-impl RXA_CNT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RXA_CNT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RXA_CNT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "TP Idle Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP_IDLE_FLG_A {
@@ -232,13 +153,9 @@ impl From<TP_IDLE_FLG_A> for bool {
     }
 }
 #[doc = "Field `TP_IDLE_FLG` reader - TP Idle Flag"]
-pub struct TP_IDLE_FLG_R(crate::FieldReader<bool>);
+pub type TP_IDLE_FLG_R = crate::BitReader<TP_IDLE_FLG_A>;
 impl TP_IDLE_FLG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TP_IDLE_FLG_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TP_IDLE_FLG_A {
         match self.bits {
@@ -249,19 +166,12 @@ impl TP_IDLE_FLG_R {
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == TP_IDLE_FLG_A::IDLE
+        *self == TP_IDLE_FLG_A::IDLE
     }
     #[doc = "Checks if the value of the field is `NOT_IDLE`"]
     #[inline(always)]
     pub fn is_not_idle(&self) -> bool {
-        **self == TP_IDLE_FLG_A::NOT_IDLE
-    }
-}
-impl core::ops::Deref for TP_IDLE_FLG_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TP_IDLE_FLG_A::NOT_IDLE
     }
 }
 #[doc = "TP Last Touch (Stylus UP) Pending\n\nValue on reset: 0"]
@@ -279,13 +189,9 @@ impl From<TP_UP_PENDING_A> for bool {
     }
 }
 #[doc = "Field `TP_UP_PENDING` reader - TP Last Touch (Stylus UP) Pending"]
-pub struct TP_UP_PENDING_R(crate::FieldReader<bool>);
+pub type TP_UP_PENDING_R = crate::BitReader<TP_UP_PENDING_A>;
 impl TP_UP_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TP_UP_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TP_UP_PENDING_A {
         match self.bits {
@@ -296,31 +202,18 @@ impl TP_UP_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == TP_UP_PENDING_A::NO_PENDING
+        *self == TP_UP_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == TP_UP_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for TP_UP_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TP_UP_PENDING_A::PENDING
     }
 }
 #[doc = "Field `TP_UP_PENDING` writer - TP Last Touch (Stylus UP) Pending"]
-pub struct TP_UP_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type TP_UP_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_UP_PENDING_A, 1>;
 impl<'a> TP_UP_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TP_UP_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -330,22 +223,6 @@ impl<'a> TP_UP_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(TP_UP_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "TP First Touch (Stylus DOWN) Pending\n\nValue on reset: 0"]
@@ -363,13 +240,9 @@ impl From<TP_DOWN_PENDING_A> for bool {
     }
 }
 #[doc = "Field `TP_DOWN_PENDING` reader - TP First Touch (Stylus DOWN) Pending"]
-pub struct TP_DOWN_PENDING_R(crate::FieldReader<bool>);
+pub type TP_DOWN_PENDING_R = crate::BitReader<TP_DOWN_PENDING_A>;
 impl TP_DOWN_PENDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TP_DOWN_PENDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TP_DOWN_PENDING_A {
         match self.bits {
@@ -380,31 +253,18 @@ impl TP_DOWN_PENDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == TP_DOWN_PENDING_A::NO_PENDING
+        *self == TP_DOWN_PENDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == TP_DOWN_PENDING_A::PENDING
-    }
-}
-impl core::ops::Deref for TP_DOWN_PENDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TP_DOWN_PENDING_A::PENDING
     }
 }
 #[doc = "Field `TP_DOWN_PENDING` writer - TP First Touch (Stylus DOWN) Pending"]
-pub struct TP_DOWN_PENDING_W<'a> {
-    w: &'a mut W,
-}
+pub type TP_DOWN_PENDING_W<'a> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_DOWN_PENDING_A, 0>;
 impl<'a> TP_DOWN_PENDING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TP_DOWN_PENDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -414,22 +274,6 @@ impl<'a> TP_DOWN_PENDING_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(TP_DOWN_PENDING_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -468,22 +312,22 @@ impl W {
     #[doc = "Bit 17 - TP FIFO Overrun Pending"]
     #[inline(always)]
     pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W {
-        FIFO_OVERRUN_PENDING_W { w: self }
+        FIFO_OVERRUN_PENDING_W::new(self)
     }
     #[doc = "Bit 16 - TP FIFO Data Available Pending"]
     #[inline(always)]
     pub fn fifo_data_pending(&mut self) -> FIFO_DATA_PENDING_W {
-        FIFO_DATA_PENDING_W { w: self }
+        FIFO_DATA_PENDING_W::new(self)
     }
     #[doc = "Bit 1 - TP Last Touch (Stylus UP) Pending"]
     #[inline(always)]
     pub fn tp_up_pending(&mut self) -> TP_UP_PENDING_W {
-        TP_UP_PENDING_W { w: self }
+        TP_UP_PENDING_W::new(self)
     }
     #[doc = "Bit 0 - TP First Touch (Stylus DOWN) Pending"]
     #[inline(always)]
     pub fn tp_down_pending(&mut self) -> TP_DOWN_PENDING_W {
-        TP_DOWN_PENDING_W { w: self }
+        TP_DOWN_PENDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

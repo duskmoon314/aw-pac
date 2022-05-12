@@ -49,13 +49,9 @@ impl From<HW_RST_A> for bool {
     }
 }
 #[doc = "Field `HW_RST` reader - "]
-pub struct HW_RST_R(crate::FieldReader<bool>);
+pub type HW_RST_R = crate::BitReader<HW_RST_A>;
 impl HW_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HW_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HW_RST_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl HW_RST_R {
     #[doc = "Checks if the value of the field is `ACTIVE`"]
     #[inline(always)]
     pub fn is_active(&self) -> bool {
-        **self == HW_RST_A::ACTIVE
+        *self == HW_RST_A::ACTIVE
     }
     #[doc = "Checks if the value of the field is `RESET`"]
     #[inline(always)]
     pub fn is_reset(&self) -> bool {
-        **self == HW_RST_A::RESET
-    }
-}
-impl core::ops::Deref for HW_RST_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HW_RST_A::RESET
     }
 }
 #[doc = "Field `HW_RST` writer - "]
-pub struct HW_RST_W<'a> {
-    w: &'a mut W,
-}
+pub type HW_RST_W<'a> = crate::BitWriter<'a, u32, SMHC_HWRST_SPEC, HW_RST_A, 0>;
 impl<'a> HW_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HW_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Active mode"]
     #[inline(always)]
     pub fn active(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> HW_RST_W<'a> {
     #[inline(always)]
     pub fn reset(self) -> &'a mut W {
         self.variant(HW_RST_A::RESET)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -129,7 +95,7 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn hw_rst(&mut self) -> HW_RST_W {
-        HW_RST_W { w: self }
+        HW_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

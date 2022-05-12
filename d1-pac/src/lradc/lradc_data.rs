@@ -14,20 +14,7 @@ impl From<crate::R<LRADC_DATA_SPEC>> for R {
     }
 }
 #[doc = "Field `LRADC_DATA` reader - LRADC Data"]
-pub struct LRADC_DATA_R(crate::FieldReader<u8>);
-impl LRADC_DATA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LRADC_DATA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LRADC_DATA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LRADC_DATA_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:5 - LRADC Data"]
     #[inline(always)]

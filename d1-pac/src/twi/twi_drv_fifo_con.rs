@@ -35,133 +35,22 @@ impl From<crate::W<TWI_DRV_FIFO_CON_SPEC>> for W {
     }
 }
 #[doc = "Field `recv_fifo_clear` reader - "]
-pub struct RECV_FIFO_CLEAR_R(crate::FieldReader<bool>);
-impl RECV_FIFO_CLEAR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RECV_FIFO_CLEAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RECV_FIFO_CLEAR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RECV_FIFO_CLEAR_R = crate::BitReader<bool>;
 #[doc = "Field `recv_fifo_clear` writer - "]
-pub struct RECV_FIFO_CLEAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RECV_FIFO_CLEAR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 22)) | ((value as u32 & 1) << 22);
-        self.w
-    }
-}
+pub type RECV_FIFO_CLEAR_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_FIFO_CON_SPEC, bool, 22>;
 #[doc = "Field `recv_fifo_content` reader - "]
-pub struct RECV_FIFO_CONTENT_R(crate::FieldReader<u8>);
-impl RECV_FIFO_CONTENT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RECV_FIFO_CONTENT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RECV_FIFO_CONTENT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RECV_FIFO_CONTENT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `recv_fifo_content` writer - "]
-pub struct RECV_FIFO_CONTENT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RECV_FIFO_CONTENT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 16)) | ((value as u32 & 0x3f) << 16);
-        self.w
-    }
-}
+pub type RECV_FIFO_CONTENT_W<'a> =
+    crate::FieldWriter<'a, u32, TWI_DRV_FIFO_CON_SPEC, u8, u8, 6, 16>;
 #[doc = "Field `send_fifo_clear` reader - "]
-pub struct SEND_FIFO_CLEAR_R(crate::FieldReader<bool>);
-impl SEND_FIFO_CLEAR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SEND_FIFO_CLEAR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEND_FIFO_CLEAR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEND_FIFO_CLEAR_R = crate::BitReader<bool>;
 #[doc = "Field `send_fifo_clear` writer - "]
-pub struct SEND_FIFO_CLEAR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEND_FIFO_CLEAR_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 6)) | ((value as u32 & 1) << 6);
-        self.w
-    }
-}
+pub type SEND_FIFO_CLEAR_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_FIFO_CON_SPEC, bool, 6>;
 #[doc = "Field `send_fifo_content` reader - "]
-pub struct SEND_FIFO_CONTENT_R(crate::FieldReader<u8>);
-impl SEND_FIFO_CONTENT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SEND_FIFO_CONTENT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SEND_FIFO_CONTENT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SEND_FIFO_CONTENT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `send_fifo_content` writer - "]
-pub struct SEND_FIFO_CONTENT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SEND_FIFO_CONTENT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type SEND_FIFO_CONTENT_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_FIFO_CON_SPEC, u8, u8, 6, 0>;
 impl R {
     #[doc = "Bit 22"]
     #[inline(always)]
@@ -188,22 +77,22 @@ impl W {
     #[doc = "Bit 22"]
     #[inline(always)]
     pub fn recv_fifo_clear(&mut self) -> RECV_FIFO_CLEAR_W {
-        RECV_FIFO_CLEAR_W { w: self }
+        RECV_FIFO_CLEAR_W::new(self)
     }
     #[doc = "Bits 16:21"]
     #[inline(always)]
     pub fn recv_fifo_content(&mut self) -> RECV_FIFO_CONTENT_W {
-        RECV_FIFO_CONTENT_W { w: self }
+        RECV_FIFO_CONTENT_W::new(self)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     pub fn send_fifo_clear(&mut self) -> SEND_FIFO_CLEAR_W {
-        SEND_FIFO_CLEAR_W { w: self }
+        SEND_FIFO_CLEAR_W::new(self)
     }
     #[doc = "Bits 0:5"]
     #[inline(always)]
     pub fn send_fifo_content(&mut self) -> SEND_FIFO_CONTENT_W {
-        SEND_FIFO_CONTENT_W { w: self }
+        SEND_FIFO_CONTENT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,13 +49,9 @@ impl From<MODE_SELECT_A> for bool {
     }
 }
 #[doc = "Field `MODE_SELECT` reader - "]
-pub struct MODE_SELECT_R(crate::FieldReader<bool>);
+pub type MODE_SELECT_R = crate::BitReader<MODE_SELECT_A>;
 impl MODE_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MODE_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MODE_SELECT_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MODE_SELECT_R {
     #[doc = "Checks if the value of the field is `OLD_MODE`"]
     #[inline(always)]
     pub fn is_old_mode(&self) -> bool {
-        **self == MODE_SELECT_A::OLD_MODE
+        *self == MODE_SELECT_A::OLD_MODE
     }
     #[doc = "Checks if the value of the field is `NEW_MODE`"]
     #[inline(always)]
     pub fn is_new_mode(&self) -> bool {
-        **self == MODE_SELECT_A::NEW_MODE
-    }
-}
-impl core::ops::Deref for MODE_SELECT_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MODE_SELECT_A::NEW_MODE
     }
 }
 #[doc = "Field `MODE_SELECT` writer - "]
-pub struct MODE_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type MODE_SELECT_W<'a> = crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, MODE_SELECT_A, 31>;
 impl<'a> MODE_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MODE_SELECT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Old mode of Sample/Output Timing"]
     #[inline(always)]
     pub fn old_mode(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> MODE_SELECT_W<'a> {
     #[inline(always)]
     pub fn new_mode(self) -> &'a mut W {
         self.variant(MODE_SELECT_A::NEW_MODE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 31)) | ((value as u32 & 1) << 31);
-        self.w
     }
 }
 #[doc = "Clear the input phase of command lines and data lines during the update clock operation\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<CMD_DAT_RX_PHASE_CLR_A> for bool {
     }
 }
 #[doc = "Field `CMD_DAT_RX_PHASE_CLR` reader - Clear the input phase of command lines and data lines during the update clock operation"]
-pub struct CMD_DAT_RX_PHASE_CLR_R(crate::FieldReader<bool>);
+pub type CMD_DAT_RX_PHASE_CLR_R = crate::BitReader<CMD_DAT_RX_PHASE_CLR_A>;
 impl CMD_DAT_RX_PHASE_CLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CMD_DAT_RX_PHASE_CLR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMD_DAT_RX_PHASE_CLR_A {
         match self.bits {
@@ -150,31 +112,18 @@ impl CMD_DAT_RX_PHASE_CLR_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CMD_DAT_RX_PHASE_CLR_A::DISABLED
+        *self == CMD_DAT_RX_PHASE_CLR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CMD_DAT_RX_PHASE_CLR_A::ENABLED
-    }
-}
-impl core::ops::Deref for CMD_DAT_RX_PHASE_CLR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMD_DAT_RX_PHASE_CLR_A::ENABLED
     }
 }
 #[doc = "Field `CMD_DAT_RX_PHASE_CLR` writer - Clear the input phase of command lines and data lines during the update clock operation"]
-pub struct CMD_DAT_RX_PHASE_CLR_W<'a> {
-    w: &'a mut W,
-}
+pub type CMD_DAT_RX_PHASE_CLR_W<'a> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_DAT_RX_PHASE_CLR_A, 24>;
 impl<'a> CMD_DAT_RX_PHASE_CLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMD_DAT_RX_PHASE_CLR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -184,22 +133,6 @@ impl<'a> CMD_DAT_RX_PHASE_CLR_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(CMD_DAT_RX_PHASE_CLR_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 24)) | ((value as u32 & 1) << 24);
-        self.w
     }
 }
 #[doc = "Clear the input phase of data lines before receiving the CRC status\n\nValue on reset: 0"]
@@ -217,13 +150,9 @@ impl From<DAT_CRC_STATUS_RX_PHASE_CLR_A> for bool {
     }
 }
 #[doc = "Field `DAT_CRC_STATUS_RX_PHASE_CLR` reader - Clear the input phase of data lines before receiving the CRC status"]
-pub struct DAT_CRC_STATUS_RX_PHASE_CLR_R(crate::FieldReader<bool>);
+pub type DAT_CRC_STATUS_RX_PHASE_CLR_R = crate::BitReader<DAT_CRC_STATUS_RX_PHASE_CLR_A>;
 impl DAT_CRC_STATUS_RX_PHASE_CLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DAT_CRC_STATUS_RX_PHASE_CLR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DAT_CRC_STATUS_RX_PHASE_CLR_A {
         match self.bits {
@@ -234,31 +163,18 @@ impl DAT_CRC_STATUS_RX_PHASE_CLR_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DAT_CRC_STATUS_RX_PHASE_CLR_A::DISABLED
+        *self == DAT_CRC_STATUS_RX_PHASE_CLR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DAT_CRC_STATUS_RX_PHASE_CLR_A::ENABLED
-    }
-}
-impl core::ops::Deref for DAT_CRC_STATUS_RX_PHASE_CLR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DAT_CRC_STATUS_RX_PHASE_CLR_A::ENABLED
     }
 }
 #[doc = "Field `DAT_CRC_STATUS_RX_PHASE_CLR` writer - Clear the input phase of data lines before receiving the CRC status"]
-pub struct DAT_CRC_STATUS_RX_PHASE_CLR_W<'a> {
-    w: &'a mut W,
-}
+pub type DAT_CRC_STATUS_RX_PHASE_CLR_W<'a> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_CRC_STATUS_RX_PHASE_CLR_A, 22>;
 impl<'a> DAT_CRC_STATUS_RX_PHASE_CLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DAT_CRC_STATUS_RX_PHASE_CLR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -268,22 +184,6 @@ impl<'a> DAT_CRC_STATUS_RX_PHASE_CLR_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(DAT_CRC_STATUS_RX_PHASE_CLR_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 22)) | ((value as u32 & 1) << 22);
-        self.w
     }
 }
 #[doc = "Clear the input phase of data lines before transferring the data\n\nValue on reset: 0"]
@@ -301,13 +201,9 @@ impl From<DAT_TRANS_RX_PHASE_CLR_A> for bool {
     }
 }
 #[doc = "Field `DAT_TRANS_RX_PHASE_CLR` reader - Clear the input phase of data lines before transferring the data"]
-pub struct DAT_TRANS_RX_PHASE_CLR_R(crate::FieldReader<bool>);
+pub type DAT_TRANS_RX_PHASE_CLR_R = crate::BitReader<DAT_TRANS_RX_PHASE_CLR_A>;
 impl DAT_TRANS_RX_PHASE_CLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DAT_TRANS_RX_PHASE_CLR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DAT_TRANS_RX_PHASE_CLR_A {
         match self.bits {
@@ -318,31 +214,18 @@ impl DAT_TRANS_RX_PHASE_CLR_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DAT_TRANS_RX_PHASE_CLR_A::DISABLED
+        *self == DAT_TRANS_RX_PHASE_CLR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DAT_TRANS_RX_PHASE_CLR_A::ENABLED
-    }
-}
-impl core::ops::Deref for DAT_TRANS_RX_PHASE_CLR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DAT_TRANS_RX_PHASE_CLR_A::ENABLED
     }
 }
 #[doc = "Field `DAT_TRANS_RX_PHASE_CLR` writer - Clear the input phase of data lines before transferring the data"]
-pub struct DAT_TRANS_RX_PHASE_CLR_W<'a> {
-    w: &'a mut W,
-}
+pub type DAT_TRANS_RX_PHASE_CLR_W<'a> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_TRANS_RX_PHASE_CLR_A, 21>;
 impl<'a> DAT_TRANS_RX_PHASE_CLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DAT_TRANS_RX_PHASE_CLR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -352,22 +235,6 @@ impl<'a> DAT_TRANS_RX_PHASE_CLR_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(DAT_TRANS_RX_PHASE_CLR_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 21)) | ((value as u32 & 1) << 21);
-        self.w
     }
 }
 #[doc = "Clear the input phase of data lines before receiving the data\n\nValue on reset: 0"]
@@ -385,13 +252,9 @@ impl From<DAT_RECV_RX_PHASE_CLR_A> for bool {
     }
 }
 #[doc = "Field `DAT_RECV_RX_PHASE_CLR` reader - Clear the input phase of data lines before receiving the data"]
-pub struct DAT_RECV_RX_PHASE_CLR_R(crate::FieldReader<bool>);
+pub type DAT_RECV_RX_PHASE_CLR_R = crate::BitReader<DAT_RECV_RX_PHASE_CLR_A>;
 impl DAT_RECV_RX_PHASE_CLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DAT_RECV_RX_PHASE_CLR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DAT_RECV_RX_PHASE_CLR_A {
         match self.bits {
@@ -402,31 +265,18 @@ impl DAT_RECV_RX_PHASE_CLR_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == DAT_RECV_RX_PHASE_CLR_A::DISABLED
+        *self == DAT_RECV_RX_PHASE_CLR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == DAT_RECV_RX_PHASE_CLR_A::ENABLED
-    }
-}
-impl core::ops::Deref for DAT_RECV_RX_PHASE_CLR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DAT_RECV_RX_PHASE_CLR_A::ENABLED
     }
 }
 #[doc = "Field `DAT_RECV_RX_PHASE_CLR` writer - Clear the input phase of data lines before receiving the data"]
-pub struct DAT_RECV_RX_PHASE_CLR_W<'a> {
-    w: &'a mut W,
-}
+pub type DAT_RECV_RX_PHASE_CLR_W<'a> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_RECV_RX_PHASE_CLR_A, 20>;
 impl<'a> DAT_RECV_RX_PHASE_CLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DAT_RECV_RX_PHASE_CLR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -436,22 +286,6 @@ impl<'a> DAT_RECV_RX_PHASE_CLR_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(DAT_RECV_RX_PHASE_CLR_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 20)) | ((value as u32 & 1) << 20);
-        self.w
     }
 }
 #[doc = "Clear command rx phase before sending the command\n\nValue on reset: 0"]
@@ -469,13 +303,9 @@ impl From<CMD_SEND_RX_PHASE_CLR_A> for bool {
     }
 }
 #[doc = "Field `CMD_SEND_RX_PHASE_CLR` reader - Clear command rx phase before sending the command"]
-pub struct CMD_SEND_RX_PHASE_CLR_R(crate::FieldReader<bool>);
+pub type CMD_SEND_RX_PHASE_CLR_R = crate::BitReader<CMD_SEND_RX_PHASE_CLR_A>;
 impl CMD_SEND_RX_PHASE_CLR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CMD_SEND_RX_PHASE_CLR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMD_SEND_RX_PHASE_CLR_A {
         match self.bits {
@@ -486,31 +316,18 @@ impl CMD_SEND_RX_PHASE_CLR_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == CMD_SEND_RX_PHASE_CLR_A::DISABLED
+        *self == CMD_SEND_RX_PHASE_CLR_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == CMD_SEND_RX_PHASE_CLR_A::ENABLED
-    }
-}
-impl core::ops::Deref for CMD_SEND_RX_PHASE_CLR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMD_SEND_RX_PHASE_CLR_A::ENABLED
     }
 }
 #[doc = "Field `CMD_SEND_RX_PHASE_CLR` writer - Clear command rx phase before sending the command"]
-pub struct CMD_SEND_RX_PHASE_CLR_W<'a> {
-    w: &'a mut W,
-}
+pub type CMD_SEND_RX_PHASE_CLR_W<'a> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_SEND_RX_PHASE_CLR_A, 16>;
 impl<'a> CMD_SEND_RX_PHASE_CLR_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMD_SEND_RX_PHASE_CLR_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -520,22 +337,6 @@ impl<'a> CMD_SEND_RX_PHASE_CLR_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(CMD_SEND_RX_PHASE_CLR_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 16)) | ((value as u32 & 1) << 16);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -558,13 +359,9 @@ impl From<DAT_SAMPLE_TIMING_PHASE_A> for u8 {
     }
 }
 #[doc = "Field `DAT_SAMPLE_TIMING_PHASE` reader - "]
-pub struct DAT_SAMPLE_TIMING_PHASE_R(crate::FieldReader<u8>);
+pub type DAT_SAMPLE_TIMING_PHASE_R = crate::FieldReader<u8, DAT_SAMPLE_TIMING_PHASE_A>;
 impl DAT_SAMPLE_TIMING_PHASE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAT_SAMPLE_TIMING_PHASE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DAT_SAMPLE_TIMING_PHASE_A {
         match self.bits {
@@ -578,41 +375,28 @@ impl DAT_SAMPLE_TIMING_PHASE_R {
     #[doc = "Checks if the value of the field is `O90`"]
     #[inline(always)]
     pub fn is_o90(&self) -> bool {
-        **self == DAT_SAMPLE_TIMING_PHASE_A::O90
+        *self == DAT_SAMPLE_TIMING_PHASE_A::O90
     }
     #[doc = "Checks if the value of the field is `O180`"]
     #[inline(always)]
     pub fn is_o180(&self) -> bool {
-        **self == DAT_SAMPLE_TIMING_PHASE_A::O180
+        *self == DAT_SAMPLE_TIMING_PHASE_A::O180
     }
     #[doc = "Checks if the value of the field is `O270`"]
     #[inline(always)]
     pub fn is_o270(&self) -> bool {
-        **self == DAT_SAMPLE_TIMING_PHASE_A::O270
+        *self == DAT_SAMPLE_TIMING_PHASE_A::O270
     }
     #[doc = "Checks if the value of the field is `O0`"]
     #[inline(always)]
     pub fn is_o0(&self) -> bool {
-        **self == DAT_SAMPLE_TIMING_PHASE_A::O0
-    }
-}
-impl core::ops::Deref for DAT_SAMPLE_TIMING_PHASE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DAT_SAMPLE_TIMING_PHASE_A::O0
     }
 }
 #[doc = "Field `DAT_SAMPLE_TIMING_PHASE` writer - "]
-pub struct DAT_SAMPLE_TIMING_PHASE_W<'a> {
-    w: &'a mut W,
-}
+pub type DAT_SAMPLE_TIMING_PHASE_W<'a> =
+    crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, DAT_SAMPLE_TIMING_PHASE_A, 2, 8>;
 impl<'a> DAT_SAMPLE_TIMING_PHASE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DAT_SAMPLE_TIMING_PHASE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "Sample timing phase offset 90"]
     #[inline(always)]
     pub fn o90(self) -> &'a mut W {
@@ -632,12 +416,6 @@ impl<'a> DAT_SAMPLE_TIMING_PHASE_W<'a> {
     #[inline(always)]
     pub fn o0(self) -> &'a mut W {
         self.variant(DAT_SAMPLE_TIMING_PHASE_A::O0)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 8)) | ((value as u32 & 3) << 8);
-        self.w
     }
 }
 #[doc = "\n\nValue on reset: 0"]
@@ -660,13 +438,9 @@ impl From<CMD_SAMPLE_TIMING_PHASE_A> for u8 {
     }
 }
 #[doc = "Field `CMD_SAMPLE_TIMING_PHASE` reader - "]
-pub struct CMD_SAMPLE_TIMING_PHASE_R(crate::FieldReader<u8>);
+pub type CMD_SAMPLE_TIMING_PHASE_R = crate::FieldReader<u8, CMD_SAMPLE_TIMING_PHASE_A>;
 impl CMD_SAMPLE_TIMING_PHASE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CMD_SAMPLE_TIMING_PHASE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMD_SAMPLE_TIMING_PHASE_A {
         match self.bits {
@@ -680,41 +454,28 @@ impl CMD_SAMPLE_TIMING_PHASE_R {
     #[doc = "Checks if the value of the field is `O90`"]
     #[inline(always)]
     pub fn is_o90(&self) -> bool {
-        **self == CMD_SAMPLE_TIMING_PHASE_A::O90
+        *self == CMD_SAMPLE_TIMING_PHASE_A::O90
     }
     #[doc = "Checks if the value of the field is `O180`"]
     #[inline(always)]
     pub fn is_o180(&self) -> bool {
-        **self == CMD_SAMPLE_TIMING_PHASE_A::O180
+        *self == CMD_SAMPLE_TIMING_PHASE_A::O180
     }
     #[doc = "Checks if the value of the field is `O270`"]
     #[inline(always)]
     pub fn is_o270(&self) -> bool {
-        **self == CMD_SAMPLE_TIMING_PHASE_A::O270
+        *self == CMD_SAMPLE_TIMING_PHASE_A::O270
     }
     #[doc = "Checks if the value of the field is `O0`"]
     #[inline(always)]
     pub fn is_o0(&self) -> bool {
-        **self == CMD_SAMPLE_TIMING_PHASE_A::O0
-    }
-}
-impl core::ops::Deref for CMD_SAMPLE_TIMING_PHASE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMD_SAMPLE_TIMING_PHASE_A::O0
     }
 }
 #[doc = "Field `CMD_SAMPLE_TIMING_PHASE` writer - "]
-pub struct CMD_SAMPLE_TIMING_PHASE_W<'a> {
-    w: &'a mut W,
-}
+pub type CMD_SAMPLE_TIMING_PHASE_W<'a> =
+    crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, CMD_SAMPLE_TIMING_PHASE_A, 2, 4>;
 impl<'a> CMD_SAMPLE_TIMING_PHASE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMD_SAMPLE_TIMING_PHASE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "Sample timing phase offset 90"]
     #[inline(always)]
     pub fn o90(self) -> &'a mut W {
@@ -735,12 +496,6 @@ impl<'a> CMD_SAMPLE_TIMING_PHASE_W<'a> {
     pub fn o0(self) -> &'a mut W {
         self.variant(CMD_SAMPLE_TIMING_PHASE_A::O0)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 4)) | ((value as u32 & 3) << 4);
-        self.w
-    }
 }
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -757,13 +512,9 @@ impl From<HS400_NEW_SAMPLE_EN_A> for bool {
     }
 }
 #[doc = "Field `HS400_NEW_SAMPLE_EN` reader - "]
-pub struct HS400_NEW_SAMPLE_EN_R(crate::FieldReader<bool>);
+pub type HS400_NEW_SAMPLE_EN_R = crate::BitReader<HS400_NEW_SAMPLE_EN_A>;
 impl HS400_NEW_SAMPLE_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HS400_NEW_SAMPLE_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HS400_NEW_SAMPLE_EN_A {
         match self.bits {
@@ -774,31 +525,18 @@ impl HS400_NEW_SAMPLE_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == HS400_NEW_SAMPLE_EN_A::DISABLE
+        *self == HS400_NEW_SAMPLE_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == HS400_NEW_SAMPLE_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for HS400_NEW_SAMPLE_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HS400_NEW_SAMPLE_EN_A::ENABLE
     }
 }
 #[doc = "Field `HS400_NEW_SAMPLE_EN` writer - "]
-pub struct HS400_NEW_SAMPLE_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type HS400_NEW_SAMPLE_EN_W<'a> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, HS400_NEW_SAMPLE_EN_A, 0>;
 impl<'a> HS400_NEW_SAMPLE_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HS400_NEW_SAMPLE_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable hs400 new sample method"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -808,22 +546,6 @@ impl<'a> HS400_NEW_SAMPLE_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(HS400_NEW_SAMPLE_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -877,47 +599,47 @@ impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
     pub fn mode_select(&mut self) -> MODE_SELECT_W {
-        MODE_SELECT_W { w: self }
+        MODE_SELECT_W::new(self)
     }
     #[doc = "Bit 24 - Clear the input phase of command lines and data lines during the update clock operation"]
     #[inline(always)]
     pub fn cmd_dat_rx_phase_clr(&mut self) -> CMD_DAT_RX_PHASE_CLR_W {
-        CMD_DAT_RX_PHASE_CLR_W { w: self }
+        CMD_DAT_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 22 - Clear the input phase of data lines before receiving the CRC status"]
     #[inline(always)]
     pub fn dat_crc_status_rx_phase_clr(&mut self) -> DAT_CRC_STATUS_RX_PHASE_CLR_W {
-        DAT_CRC_STATUS_RX_PHASE_CLR_W { w: self }
+        DAT_CRC_STATUS_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 21 - Clear the input phase of data lines before transferring the data"]
     #[inline(always)]
     pub fn dat_trans_rx_phase_clr(&mut self) -> DAT_TRANS_RX_PHASE_CLR_W {
-        DAT_TRANS_RX_PHASE_CLR_W { w: self }
+        DAT_TRANS_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 20 - Clear the input phase of data lines before receiving the data"]
     #[inline(always)]
     pub fn dat_recv_rx_phase_clr(&mut self) -> DAT_RECV_RX_PHASE_CLR_W {
-        DAT_RECV_RX_PHASE_CLR_W { w: self }
+        DAT_RECV_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 16 - Clear command rx phase before sending the command"]
     #[inline(always)]
     pub fn cmd_send_rx_phase_clr(&mut self) -> CMD_SEND_RX_PHASE_CLR_W {
-        CMD_SEND_RX_PHASE_CLR_W { w: self }
+        CMD_SEND_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bits 8:9"]
     #[inline(always)]
     pub fn dat_sample_timing_phase(&mut self) -> DAT_SAMPLE_TIMING_PHASE_W {
-        DAT_SAMPLE_TIMING_PHASE_W { w: self }
+        DAT_SAMPLE_TIMING_PHASE_W::new(self)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
     pub fn cmd_sample_timing_phase(&mut self) -> CMD_SAMPLE_TIMING_PHASE_W {
-        CMD_SAMPLE_TIMING_PHASE_W { w: self }
+        CMD_SAMPLE_TIMING_PHASE_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn hs400_new_sample_en(&mut self) -> HS400_NEW_SAMPLE_EN_W {
-        HS400_NEW_SAMPLE_EN_W { w: self }
+        HS400_NEW_SAMPLE_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -28,13 +28,9 @@ impl From<RFF_A> for bool {
     }
 }
 #[doc = "Field `rff` reader - RX FIFO Full"]
-pub struct RFF_R(crate::FieldReader<bool>);
+pub type RFF_R = crate::BitReader<RFF_A>;
 impl RFF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RFF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RFF_A {
         match self.bits {
@@ -45,19 +41,12 @@ impl RFF_R {
     #[doc = "Checks if the value of the field is `NOT_FULL`"]
     #[inline(always)]
     pub fn is_not_full(&self) -> bool {
-        **self == RFF_A::NOT_FULL
+        *self == RFF_A::NOT_FULL
     }
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
-        **self == RFF_A::FULL
-    }
-}
-impl core::ops::Deref for RFF_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RFF_A::FULL
     }
 }
 #[doc = "RX FIFO Not Empty\n\nValue on reset: 0"]
@@ -75,13 +64,9 @@ impl From<RFNE_A> for bool {
     }
 }
 #[doc = "Field `rfne` reader - RX FIFO Not Empty"]
-pub struct RFNE_R(crate::FieldReader<bool>);
+pub type RFNE_R = crate::BitReader<RFNE_A>;
 impl RFNE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RFNE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RFNE_A {
         match self.bits {
@@ -92,19 +77,12 @@ impl RFNE_R {
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
-        **self == RFNE_A::EMPTY
+        *self == RFNE_A::EMPTY
     }
     #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
     #[inline(always)]
     pub fn is_not_empty(&self) -> bool {
-        **self == RFNE_A::NOT_EMPTY
-    }
-}
-impl core::ops::Deref for RFNE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RFNE_A::NOT_EMPTY
     }
 }
 #[doc = "TX FIFO Empty\n\nValue on reset: 0"]
@@ -122,13 +100,9 @@ impl From<TFE_A> for bool {
     }
 }
 #[doc = "Field `tfe` reader - TX FIFO Empty"]
-pub struct TFE_R(crate::FieldReader<bool>);
+pub type TFE_R = crate::BitReader<TFE_A>;
 impl TFE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TFE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TFE_A {
         match self.bits {
@@ -139,19 +113,12 @@ impl TFE_R {
     #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
     #[inline(always)]
     pub fn is_not_empty(&self) -> bool {
-        **self == TFE_A::NOT_EMPTY
+        *self == TFE_A::NOT_EMPTY
     }
     #[doc = "Checks if the value of the field is `EMPTY`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
-        **self == TFE_A::EMPTY
-    }
-}
-impl core::ops::Deref for TFE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TFE_A::EMPTY
     }
 }
 #[doc = "TX FIFO Not Full\n\nValue on reset: 0"]
@@ -169,13 +136,9 @@ impl From<TFNF_A> for bool {
     }
 }
 #[doc = "Field `tfnf` reader - TX FIFO Not Full"]
-pub struct TFNF_R(crate::FieldReader<bool>);
+pub type TFNF_R = crate::BitReader<TFNF_A>;
 impl TFNF_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TFNF_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TFNF_A {
         match self.bits {
@@ -186,19 +149,12 @@ impl TFNF_R {
     #[doc = "Checks if the value of the field is `FULL`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
-        **self == TFNF_A::FULL
+        *self == TFNF_A::FULL
     }
     #[doc = "Checks if the value of the field is `NOT_FULL`"]
     #[inline(always)]
     pub fn is_not_full(&self) -> bool {
-        **self == TFNF_A::NOT_FULL
-    }
-}
-impl core::ops::Deref for TFNF_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TFNF_A::NOT_FULL
     }
 }
 #[doc = "UART Busy Bit\n\nValue on reset: 0"]
@@ -216,13 +172,9 @@ impl From<BUSY_A> for bool {
     }
 }
 #[doc = "Field `busy` reader - UART Busy Bit"]
-pub struct BUSY_R(crate::FieldReader<bool>);
+pub type BUSY_R = crate::BitReader<BUSY_A>;
 impl BUSY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BUSY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BUSY_A {
         match self.bits {
@@ -233,19 +185,12 @@ impl BUSY_R {
     #[doc = "Checks if the value of the field is `IDLE`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
-        **self == BUSY_A::IDLE
+        *self == BUSY_A::IDLE
     }
     #[doc = "Checks if the value of the field is `BUSY`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
-        **self == BUSY_A::BUSY
-    }
-}
-impl core::ops::Deref for BUSY_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BUSY_A::BUSY
     }
 }
 impl R {

@@ -35,32 +35,9 @@ impl From<crate::W<PE_DAT_SPEC>> for W {
     }
 }
 #[doc = "Field `PE_DAT` reader - PE Data"]
-pub struct PE_DAT_R(crate::FieldReader<u32>);
-impl PE_DAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        PE_DAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PE_DAT_R {
-    type Target = crate::FieldReader<u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PE_DAT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `PE_DAT` writer - PE Data"]
-pub struct PE_DAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PE_DAT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0003_ffff) | (value as u32 & 0x0003_ffff);
-        self.w
-    }
-}
+pub type PE_DAT_W<'a> = crate::FieldWriter<'a, u32, PE_DAT_SPEC, u32, u32, 18, 0>;
 impl R {
     #[doc = "Bits 0:17 - PE Data"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:17 - PE Data"]
     #[inline(always)]
     pub fn pe_dat(&mut self) -> PE_DAT_W {
-        PE_DAT_W { w: self }
+        PE_DAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

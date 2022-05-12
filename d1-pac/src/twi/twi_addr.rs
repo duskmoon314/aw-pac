@@ -35,32 +35,9 @@ impl From<crate::W<TWI_ADDR_SPEC>> for W {
     }
 }
 #[doc = "Field `SLA` reader - Slave Address"]
-pub struct SLA_R(crate::FieldReader<u8>);
-impl SLA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SLA_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SLA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SLA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SLA` writer - Slave Address"]
-pub struct SLA_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SLA_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 1)) | ((value as u32 & 0x7f) << 1);
-        self.w
-    }
-}
+pub type SLA_W<'a> = crate::FieldWriter<'a, u32, TWI_ADDR_SPEC, u8, u8, 7, 1>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GCE_A {
@@ -76,13 +53,9 @@ impl From<GCE_A> for bool {
     }
 }
 #[doc = "Field `GCE` reader - "]
-pub struct GCE_R(crate::FieldReader<bool>);
+pub type GCE_R = crate::BitReader<GCE_A>;
 impl GCE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        GCE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GCE_A {
         match self.bits {
@@ -93,31 +66,17 @@ impl GCE_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == GCE_A::DISABLE
+        *self == GCE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == GCE_A::ENABLE
-    }
-}
-impl core::ops::Deref for GCE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GCE_A::ENABLE
     }
 }
 #[doc = "Field `GCE` writer - "]
-pub struct GCE_W<'a> {
-    w: &'a mut W,
-}
+pub type GCE_W<'a> = crate::BitWriter<'a, u32, TWI_ADDR_SPEC, GCE_A, 0>;
 impl<'a> GCE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GCE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -127,22 +86,6 @@ impl<'a> GCE_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(GCE_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -161,12 +104,12 @@ impl W {
     #[doc = "Bits 1:7 - Slave Address"]
     #[inline(always)]
     pub fn sla(&mut self) -> SLA_W {
-        SLA_W { w: self }
+        SLA_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn gce(&mut self) -> GCE_W {
-        GCE_W { w: self }
+        GCE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

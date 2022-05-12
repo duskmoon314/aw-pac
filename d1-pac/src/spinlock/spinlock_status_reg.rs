@@ -30,13 +30,9 @@ impl From<LOCK_REG_STATUS_A> for bool {
 }
 #[doc = "Fields `LOCK_REG(0-31)_STATUS` reader - Lock\\[i\\]
 status"]
-pub struct LOCK_REG_STATUS_R(crate::FieldReader<bool>);
+pub type LOCK_REG_STATUS_R = crate::BitReader<LOCK_REG_STATUS_A>;
 impl LOCK_REG_STATUS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LOCK_REG_STATUS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOCK_REG_STATUS_A {
         match self.bits {
@@ -47,26 +43,19 @@ impl LOCK_REG_STATUS_R {
     #[doc = "Checks if the value of the field is `FREE`"]
     #[inline(always)]
     pub fn is_free(&self) -> bool {
-        **self == LOCK_REG_STATUS_A::FREE
+        *self == LOCK_REG_STATUS_A::FREE
     }
     #[doc = "Checks if the value of the field is `TAKEN`"]
     #[inline(always)]
     pub fn is_taken(&self) -> bool {
-        **self == LOCK_REG_STATUS_A::TAKEN
-    }
-}
-impl core::ops::Deref for LOCK_REG_STATUS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCK_REG_STATUS_A::TAKEN
     }
 }
 impl R {
     #[doc = "Lock\\[i\\]
 status"]
     #[inline(always)]
-    pub unsafe fn lock_reg_status(&self, n: usize) -> LOCK_REG_STATUS_R {
+    pub unsafe fn lock_reg_status(&self, n: u8) -> LOCK_REG_STATUS_R {
         LOCK_REG_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Lock\\[i\\]

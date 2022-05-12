@@ -33,13 +33,9 @@ impl From<LOCKS_NUM_A> for u8 {
     }
 }
 #[doc = "Field `LOCKS_NUM` reader - Number of lock registers implemented"]
-pub struct LOCKS_NUM_R(crate::FieldReader<u8>);
+pub type LOCKS_NUM_R = crate::FieldReader<u8, LOCKS_NUM_A>;
 impl LOCKS_NUM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LOCKS_NUM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LOCKS_NUM_A {
         match self.bits {
@@ -53,29 +49,22 @@ impl LOCKS_NUM_R {
     #[doc = "Checks if the value of the field is `N256`"]
     #[inline(always)]
     pub fn is_n256(&self) -> bool {
-        **self == LOCKS_NUM_A::N256
+        *self == LOCKS_NUM_A::N256
     }
     #[doc = "Checks if the value of the field is `N32`"]
     #[inline(always)]
     pub fn is_n32(&self) -> bool {
-        **self == LOCKS_NUM_A::N32
+        *self == LOCKS_NUM_A::N32
     }
     #[doc = "Checks if the value of the field is `N64`"]
     #[inline(always)]
     pub fn is_n64(&self) -> bool {
-        **self == LOCKS_NUM_A::N64
+        *self == LOCKS_NUM_A::N64
     }
     #[doc = "Checks if the value of the field is `N128`"]
     #[inline(always)]
     pub fn is_n128(&self) -> bool {
-        **self == LOCKS_NUM_A::N128
-    }
-}
-impl core::ops::Deref for LOCKS_NUM_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LOCKS_NUM_A::N128
     }
 }
 #[doc = "In-Use flag0\n\nValue on reset: 0"]
@@ -93,13 +82,9 @@ impl From<IU0_A> for bool {
     }
 }
 #[doc = "Field `IU0` reader - In-Use flag0"]
-pub struct IU0_R(crate::FieldReader<bool>);
+pub type IU0_R = crate::BitReader<IU0_A>;
 impl IU0_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        IU0_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> IU0_A {
         match self.bits {
@@ -110,19 +95,12 @@ impl IU0_R {
     #[doc = "Checks if the value of the field is `ALL_NOT_TAKEN`"]
     #[inline(always)]
     pub fn is_all_not_taken(&self) -> bool {
-        **self == IU0_A::ALL_NOT_TAKEN
+        *self == IU0_A::ALL_NOT_TAKEN
     }
     #[doc = "Checks if the value of the field is `AT_LEAST_ONE_TAKEN`"]
     #[inline(always)]
     pub fn is_at_least_one_taken(&self) -> bool {
-        **self == IU0_A::AT_LEAST_ONE_TAKEN
-    }
-}
-impl core::ops::Deref for IU0_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == IU0_A::AT_LEAST_ONE_TAKEN
     }
 }
 impl R {

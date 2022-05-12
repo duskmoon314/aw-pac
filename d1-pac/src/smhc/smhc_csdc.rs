@@ -50,13 +50,9 @@ impl From<CRC_DET_PARA_A> for u8 {
     }
 }
 #[doc = "Field `CRC_DET_PARA` reader - "]
-pub struct CRC_DET_PARA_R(crate::FieldReader<u8>);
+pub type CRC_DET_PARA_R = crate::FieldReader<u8, CRC_DET_PARA_A>;
 impl CRC_DET_PARA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CRC_DET_PARA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CRC_DET_PARA_A> {
         match self.bits {
@@ -68,31 +64,17 @@ impl CRC_DET_PARA_R {
     #[doc = "Checks if the value of the field is `HS400`"]
     #[inline(always)]
     pub fn is_hs400(&self) -> bool {
-        **self == CRC_DET_PARA_A::HS400
+        *self == CRC_DET_PARA_A::HS400
     }
     #[doc = "Checks if the value of the field is `OTHER`"]
     #[inline(always)]
     pub fn is_other(&self) -> bool {
-        **self == CRC_DET_PARA_A::OTHER
-    }
-}
-impl core::ops::Deref for CRC_DET_PARA_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CRC_DET_PARA_A::OTHER
     }
 }
 #[doc = "Field `CRC_DET_PARA` writer - "]
-pub struct CRC_DET_PARA_W<'a> {
-    w: &'a mut W,
-}
+pub type CRC_DET_PARA_W<'a> = crate::FieldWriter<'a, u32, SMHC_CSDC_SPEC, u8, CRC_DET_PARA_A, 4, 0>;
 impl<'a> CRC_DET_PARA_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CRC_DET_PARA_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`110`"]
     #[inline(always)]
     pub fn hs400(self) -> &'a mut W {
@@ -102,12 +84,6 @@ impl<'a> CRC_DET_PARA_W<'a> {
     #[inline(always)]
     pub fn other(self) -> &'a mut W {
         self.variant(CRC_DET_PARA_A::OTHER)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
     }
 }
 impl R {
@@ -121,7 +97,7 @@ impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]
     pub fn crc_det_para(&mut self) -> CRC_DET_PARA_W {
-        CRC_DET_PARA_W { w: self }
+        CRC_DET_PARA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

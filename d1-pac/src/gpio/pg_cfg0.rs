@@ -62,13 +62,9 @@ impl From<PG7_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG7_SELECT` reader - PG7 Select"]
-pub struct PG7_SELECT_R(crate::FieldReader<u8>);
+pub type PG7_SELECT_R = crate::FieldReader<u8, PG7_SELECT_A>;
 impl PG7_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG7_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG7_SELECT_A> {
         match self.bits {
@@ -86,61 +82,47 @@ impl PG7_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG7_SELECT_A::INPUT
+        *self == PG7_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `UART1_RX`"]
     #[inline(always)]
     pub fn is_uart1_rx(&self) -> bool {
-        **self == PG7_SELECT_A::UART1_RX
+        *self == PG7_SELECT_A::UART1_RX
     }
     #[doc = "Checks if the value of the field is `RGMII_TXD3`"]
     #[inline(always)]
     pub fn is_rgmii_txd3(&self) -> bool {
-        **self == PG7_SELECT_A::RGMII_TXD3
+        *self == PG7_SELECT_A::RGMII_TXD3
     }
     #[doc = "Checks if the value of the field is `PG_EINT7`"]
     #[inline(always)]
     pub fn is_pg_eint7(&self) -> bool {
-        **self == PG7_SELECT_A::PG_EINT7
+        *self == PG7_SELECT_A::PG_EINT7
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG7_SELECT_A::OUTPUT
+        *self == PG7_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `TWI2_SDA`"]
     #[inline(always)]
     pub fn is_twi2_sda(&self) -> bool {
-        **self == PG7_SELECT_A::TWI2_SDA
+        *self == PG7_SELECT_A::TWI2_SDA
     }
     #[doc = "Checks if the value of the field is `OWA_IN`"]
     #[inline(always)]
     pub fn is_owa_in(&self) -> bool {
-        **self == PG7_SELECT_A::OWA_IN
+        *self == PG7_SELECT_A::OWA_IN
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG7_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG7_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG7_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG7_SELECT` writer - PG7 Select"]
-pub struct PG7_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG7_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG7_SELECT_A, 4, 28>;
 impl<'a> PG7_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG7_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -181,12 +163,6 @@ impl<'a> PG7_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG7_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 28)) | ((value as u32 & 0x0f) << 28);
-        self.w
-    }
 }
 #[doc = "PG6 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -216,13 +192,9 @@ impl From<PG6_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG6_SELECT` reader - PG6 Select"]
-pub struct PG6_SELECT_R(crate::FieldReader<u8>);
+pub type PG6_SELECT_R = crate::FieldReader<u8, PG6_SELECT_A>;
 impl PG6_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG6_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG6_SELECT_A> {
         match self.bits {
@@ -240,61 +212,47 @@ impl PG6_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG6_SELECT_A::INPUT
+        *self == PG6_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `UART1_TX`"]
     #[inline(always)]
     pub fn is_uart1_tx(&self) -> bool {
-        **self == PG6_SELECT_A::UART1_TX
+        *self == PG6_SELECT_A::UART1_TX
     }
     #[doc = "Checks if the value of the field is `RGMII_TXD2`"]
     #[inline(always)]
     pub fn is_rgmii_txd2(&self) -> bool {
-        **self == PG6_SELECT_A::RGMII_TXD2
+        *self == PG6_SELECT_A::RGMII_TXD2
     }
     #[doc = "Checks if the value of the field is `PG_EINT6`"]
     #[inline(always)]
     pub fn is_pg_eint6(&self) -> bool {
-        **self == PG6_SELECT_A::PG_EINT6
+        *self == PG6_SELECT_A::PG_EINT6
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG6_SELECT_A::OUTPUT
+        *self == PG6_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `TWI2_SCK`"]
     #[inline(always)]
     pub fn is_twi2_sck(&self) -> bool {
-        **self == PG6_SELECT_A::TWI2_SCK
+        *self == PG6_SELECT_A::TWI2_SCK
     }
     #[doc = "Checks if the value of the field is `PWM1`"]
     #[inline(always)]
     pub fn is_pwm1(&self) -> bool {
-        **self == PG6_SELECT_A::PWM1
+        *self == PG6_SELECT_A::PWM1
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG6_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG6_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG6_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG6_SELECT` writer - PG6 Select"]
-pub struct PG6_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG6_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG6_SELECT_A, 4, 24>;
 impl<'a> PG6_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG6_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -335,12 +293,6 @@ impl<'a> PG6_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG6_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
 }
 #[doc = "PG5 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -370,13 +322,9 @@ impl From<PG5_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG5_SELECT` reader - PG5 Select"]
-pub struct PG5_SELECT_R(crate::FieldReader<u8>);
+pub type PG5_SELECT_R = crate::FieldReader<u8, PG5_SELECT_A>;
 impl PG5_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG5_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG5_SELECT_A> {
         match self.bits {
@@ -394,61 +342,47 @@ impl PG5_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG5_SELECT_A::INPUT
+        *self == PG5_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `SDC1_D3`"]
     #[inline(always)]
     pub fn is_sdc1_d3(&self) -> bool {
-        **self == PG5_SELECT_A::SDC1_D3
+        *self == PG5_SELECT_A::SDC1_D3
     }
     #[doc = "Checks if the value of the field is `RGMII_TXD1_RMII_TXD1`"]
     #[inline(always)]
     pub fn is_rgmii_txd1_rmii_txd1(&self) -> bool {
-        **self == PG5_SELECT_A::RGMII_TXD1_RMII_TXD1
+        *self == PG5_SELECT_A::RGMII_TXD1_RMII_TXD1
     }
     #[doc = "Checks if the value of the field is `PG_EINT5`"]
     #[inline(always)]
     pub fn is_pg_eint5(&self) -> bool {
-        **self == PG5_SELECT_A::PG_EINT5
+        *self == PG5_SELECT_A::PG_EINT5
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG5_SELECT_A::OUTPUT
+        *self == PG5_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `UART5_RX`"]
     #[inline(always)]
     pub fn is_uart5_rx(&self) -> bool {
-        **self == PG5_SELECT_A::UART5_RX
+        *self == PG5_SELECT_A::UART5_RX
     }
     #[doc = "Checks if the value of the field is `PWM4`"]
     #[inline(always)]
     pub fn is_pwm4(&self) -> bool {
-        **self == PG5_SELECT_A::PWM4
+        *self == PG5_SELECT_A::PWM4
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG5_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG5_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG5_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG5_SELECT` writer - PG5 Select"]
-pub struct PG5_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG5_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG5_SELECT_A, 4, 20>;
 impl<'a> PG5_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG5_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -489,12 +423,6 @@ impl<'a> PG5_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG5_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 20)) | ((value as u32 & 0x0f) << 20);
-        self.w
-    }
 }
 #[doc = "PG4 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -524,13 +452,9 @@ impl From<PG4_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG4_SELECT` reader - PG4 Select"]
-pub struct PG4_SELECT_R(crate::FieldReader<u8>);
+pub type PG4_SELECT_R = crate::FieldReader<u8, PG4_SELECT_A>;
 impl PG4_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG4_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG4_SELECT_A> {
         match self.bits {
@@ -548,61 +472,47 @@ impl PG4_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG4_SELECT_A::INPUT
+        *self == PG4_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `SDC1_D2`"]
     #[inline(always)]
     pub fn is_sdc1_d2(&self) -> bool {
-        **self == PG4_SELECT_A::SDC1_D2
+        *self == PG4_SELECT_A::SDC1_D2
     }
     #[doc = "Checks if the value of the field is `RGMII_TXD0_RMII_TXD0`"]
     #[inline(always)]
     pub fn is_rgmii_txd0_rmii_txd0(&self) -> bool {
-        **self == PG4_SELECT_A::RGMII_TXD0_RMII_TXD0
+        *self == PG4_SELECT_A::RGMII_TXD0_RMII_TXD0
     }
     #[doc = "Checks if the value of the field is `PG_EINT4`"]
     #[inline(always)]
     pub fn is_pg_eint4(&self) -> bool {
-        **self == PG4_SELECT_A::PG_EINT4
+        *self == PG4_SELECT_A::PG_EINT4
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG4_SELECT_A::OUTPUT
+        *self == PG4_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `UART5_TX`"]
     #[inline(always)]
     pub fn is_uart5_tx(&self) -> bool {
-        **self == PG4_SELECT_A::UART5_TX
+        *self == PG4_SELECT_A::UART5_TX
     }
     #[doc = "Checks if the value of the field is `PWM5`"]
     #[inline(always)]
     pub fn is_pwm5(&self) -> bool {
-        **self == PG4_SELECT_A::PWM5
+        *self == PG4_SELECT_A::PWM5
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG4_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG4_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG4_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG4_SELECT` writer - PG4 Select"]
-pub struct PG4_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG4_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG4_SELECT_A, 4, 16>;
 impl<'a> PG4_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG4_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -643,12 +553,6 @@ impl<'a> PG4_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG4_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 16)) | ((value as u32 & 0x0f) << 16);
-        self.w
-    }
 }
 #[doc = "PG3 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -678,13 +582,9 @@ impl From<PG3_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG3_SELECT` reader - PG3 Select"]
-pub struct PG3_SELECT_R(crate::FieldReader<u8>);
+pub type PG3_SELECT_R = crate::FieldReader<u8, PG3_SELECT_A>;
 impl PG3_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG3_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG3_SELECT_A> {
         match self.bits {
@@ -702,61 +602,47 @@ impl PG3_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG3_SELECT_A::INPUT
+        *self == PG3_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `SDC1_D1`"]
     #[inline(always)]
     pub fn is_sdc1_d1(&self) -> bool {
-        **self == PG3_SELECT_A::SDC1_D1
+        *self == PG3_SELECT_A::SDC1_D1
     }
     #[doc = "Checks if the value of the field is `RGMII_TXCK_RMII_TXCK`"]
     #[inline(always)]
     pub fn is_rgmii_txck_rmii_txck(&self) -> bool {
-        **self == PG3_SELECT_A::RGMII_TXCK_RMII_TXCK
+        *self == PG3_SELECT_A::RGMII_TXCK_RMII_TXCK
     }
     #[doc = "Checks if the value of the field is `PG_EINT3`"]
     #[inline(always)]
     pub fn is_pg_eint3(&self) -> bool {
-        **self == PG3_SELECT_A::PG_EINT3
+        *self == PG3_SELECT_A::PG_EINT3
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG3_SELECT_A::OUTPUT
+        *self == PG3_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `UART3_CTS`"]
     #[inline(always)]
     pub fn is_uart3_cts(&self) -> bool {
-        **self == PG3_SELECT_A::UART3_CTS
+        *self == PG3_SELECT_A::UART3_CTS
     }
     #[doc = "Checks if the value of the field is `UART4_RX`"]
     #[inline(always)]
     pub fn is_uart4_rx(&self) -> bool {
-        **self == PG3_SELECT_A::UART4_RX
+        *self == PG3_SELECT_A::UART4_RX
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG3_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG3_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG3_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG3_SELECT` writer - PG3 Select"]
-pub struct PG3_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG3_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG3_SELECT_A, 4, 12>;
 impl<'a> PG3_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG3_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -797,12 +683,6 @@ impl<'a> PG3_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG3_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 12)) | ((value as u32 & 0x0f) << 12);
-        self.w
-    }
 }
 #[doc = "PG2 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -832,13 +712,9 @@ impl From<PG2_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG2_SELECT` reader - PG2 Select"]
-pub struct PG2_SELECT_R(crate::FieldReader<u8>);
+pub type PG2_SELECT_R = crate::FieldReader<u8, PG2_SELECT_A>;
 impl PG2_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG2_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG2_SELECT_A> {
         match self.bits {
@@ -856,61 +732,47 @@ impl PG2_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG2_SELECT_A::INPUT
+        *self == PG2_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `SDC1_D0`"]
     #[inline(always)]
     pub fn is_sdc1_d0(&self) -> bool {
-        **self == PG2_SELECT_A::SDC1_D0
+        *self == PG2_SELECT_A::SDC1_D0
     }
     #[doc = "Checks if the value of the field is `RGMII_RXD1_RMII_RXD1`"]
     #[inline(always)]
     pub fn is_rgmii_rxd1_rmii_rxd1(&self) -> bool {
-        **self == PG2_SELECT_A::RGMII_RXD1_RMII_RXD1
+        *self == PG2_SELECT_A::RGMII_RXD1_RMII_RXD1
     }
     #[doc = "Checks if the value of the field is `PG_EINT2`"]
     #[inline(always)]
     pub fn is_pg_eint2(&self) -> bool {
-        **self == PG2_SELECT_A::PG_EINT2
+        *self == PG2_SELECT_A::PG_EINT2
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG2_SELECT_A::OUTPUT
+        *self == PG2_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `UART3_RTS`"]
     #[inline(always)]
     pub fn is_uart3_rts(&self) -> bool {
-        **self == PG2_SELECT_A::UART3_RTS
+        *self == PG2_SELECT_A::UART3_RTS
     }
     #[doc = "Checks if the value of the field is `UART4_TX`"]
     #[inline(always)]
     pub fn is_uart4_tx(&self) -> bool {
-        **self == PG2_SELECT_A::UART4_TX
+        *self == PG2_SELECT_A::UART4_TX
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG2_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG2_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG2_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG2_SELECT` writer - PG2 Select"]
-pub struct PG2_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG2_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG2_SELECT_A, 4, 8>;
 impl<'a> PG2_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG2_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -951,12 +813,6 @@ impl<'a> PG2_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG2_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 8)) | ((value as u32 & 0x0f) << 8);
-        self.w
-    }
 }
 #[doc = "PG1 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -986,13 +842,9 @@ impl From<PG1_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG1_SELECT` reader - PG1 Select"]
-pub struct PG1_SELECT_R(crate::FieldReader<u8>);
+pub type PG1_SELECT_R = crate::FieldReader<u8, PG1_SELECT_A>;
 impl PG1_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG1_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG1_SELECT_A> {
         match self.bits {
@@ -1010,61 +862,47 @@ impl PG1_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG1_SELECT_A::INPUT
+        *self == PG1_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `SDC1_CMD`"]
     #[inline(always)]
     pub fn is_sdc1_cmd(&self) -> bool {
-        **self == PG1_SELECT_A::SDC1_CMD
+        *self == PG1_SELECT_A::SDC1_CMD
     }
     #[doc = "Checks if the value of the field is `RGMII_RXD0_RMII_RXD0`"]
     #[inline(always)]
     pub fn is_rgmii_rxd0_rmii_rxd0(&self) -> bool {
-        **self == PG1_SELECT_A::RGMII_RXD0_RMII_RXD0
+        *self == PG1_SELECT_A::RGMII_RXD0_RMII_RXD0
     }
     #[doc = "Checks if the value of the field is `PG_EINT1`"]
     #[inline(always)]
     pub fn is_pg_eint1(&self) -> bool {
-        **self == PG1_SELECT_A::PG_EINT1
+        *self == PG1_SELECT_A::PG_EINT1
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG1_SELECT_A::OUTPUT
+        *self == PG1_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `UART3_RX`"]
     #[inline(always)]
     pub fn is_uart3_rx(&self) -> bool {
-        **self == PG1_SELECT_A::UART3_RX
+        *self == PG1_SELECT_A::UART3_RX
     }
     #[doc = "Checks if the value of the field is `PWM6`"]
     #[inline(always)]
     pub fn is_pwm6(&self) -> bool {
-        **self == PG1_SELECT_A::PWM6
+        *self == PG1_SELECT_A::PWM6
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG1_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG1_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG1_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG1_SELECT` writer - PG1 Select"]
-pub struct PG1_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG1_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG1_SELECT_A, 4, 4>;
 impl<'a> PG1_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG1_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -1105,12 +943,6 @@ impl<'a> PG1_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG1_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
 }
 #[doc = "PG0 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -1140,13 +972,9 @@ impl From<PG0_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PG0_SELECT` reader - PG0 Select"]
-pub struct PG0_SELECT_R(crate::FieldReader<u8>);
+pub type PG0_SELECT_R = crate::FieldReader<u8, PG0_SELECT_A>;
 impl PG0_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG0_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PG0_SELECT_A> {
         match self.bits {
@@ -1164,61 +992,47 @@ impl PG0_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PG0_SELECT_A::INPUT
+        *self == PG0_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `SDC1_CLK`"]
     #[inline(always)]
     pub fn is_sdc1_clk(&self) -> bool {
-        **self == PG0_SELECT_A::SDC1_CLK
+        *self == PG0_SELECT_A::SDC1_CLK
     }
     #[doc = "Checks if the value of the field is `RGMII_RXCTRL_RMII_CRS_DV`"]
     #[inline(always)]
     pub fn is_rgmii_rxctrl_rmii_crs_dv(&self) -> bool {
-        **self == PG0_SELECT_A::RGMII_RXCTRL_RMII_CRS_DV
+        *self == PG0_SELECT_A::RGMII_RXCTRL_RMII_CRS_DV
     }
     #[doc = "Checks if the value of the field is `PG_EINT0`"]
     #[inline(always)]
     pub fn is_pg_eint0(&self) -> bool {
-        **self == PG0_SELECT_A::PG_EINT0
+        *self == PG0_SELECT_A::PG_EINT0
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PG0_SELECT_A::OUTPUT
+        *self == PG0_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `UART3_TX`"]
     #[inline(always)]
     pub fn is_uart3_tx(&self) -> bool {
-        **self == PG0_SELECT_A::UART3_TX
+        *self == PG0_SELECT_A::UART3_TX
     }
     #[doc = "Checks if the value of the field is `PWM7`"]
     #[inline(always)]
     pub fn is_pwm7(&self) -> bool {
-        **self == PG0_SELECT_A::PWM7
+        *self == PG0_SELECT_A::PWM7
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PG0_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PG0_SELECT_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG0_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PG0_SELECT` writer - PG0 Select"]
-pub struct PG0_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PG0_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG0_SPEC, u8, PG0_SELECT_A, 4, 0>;
 impl<'a> PG0_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG0_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -1258,12 +1072,6 @@ impl<'a> PG0_SELECT_W<'a> {
     #[inline(always)]
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PG0_SELECT_A::IO_DISABLE)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
     }
 }
 impl R {
@@ -1312,42 +1120,42 @@ impl W {
     #[doc = "Bits 28:31 - PG7 Select"]
     #[inline(always)]
     pub fn pg7_select(&mut self) -> PG7_SELECT_W {
-        PG7_SELECT_W { w: self }
+        PG7_SELECT_W::new(self)
     }
     #[doc = "Bits 24:27 - PG6 Select"]
     #[inline(always)]
     pub fn pg6_select(&mut self) -> PG6_SELECT_W {
-        PG6_SELECT_W { w: self }
+        PG6_SELECT_W::new(self)
     }
     #[doc = "Bits 20:23 - PG5 Select"]
     #[inline(always)]
     pub fn pg5_select(&mut self) -> PG5_SELECT_W {
-        PG5_SELECT_W { w: self }
+        PG5_SELECT_W::new(self)
     }
     #[doc = "Bits 16:19 - PG4 Select"]
     #[inline(always)]
     pub fn pg4_select(&mut self) -> PG4_SELECT_W {
-        PG4_SELECT_W { w: self }
+        PG4_SELECT_W::new(self)
     }
     #[doc = "Bits 12:15 - PG3 Select"]
     #[inline(always)]
     pub fn pg3_select(&mut self) -> PG3_SELECT_W {
-        PG3_SELECT_W { w: self }
+        PG3_SELECT_W::new(self)
     }
     #[doc = "Bits 8:11 - PG2 Select"]
     #[inline(always)]
     pub fn pg2_select(&mut self) -> PG2_SELECT_W {
-        PG2_SELECT_W { w: self }
+        PG2_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7 - PG1 Select"]
     #[inline(always)]
     pub fn pg1_select(&mut self) -> PG1_SELECT_W {
-        PG1_SELECT_W { w: self }
+        PG1_SELECT_W::new(self)
     }
     #[doc = "Bits 0:3 - PG0 Select"]
     #[inline(always)]
     pub fn pg0_select(&mut self) -> PG0_SELECT_W {
-        PG0_SELECT_W { w: self }
+        PG0_SELECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

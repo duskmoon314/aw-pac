@@ -49,13 +49,9 @@ impl From<CH_LOW_PENGDING_A> for bool {
     }
 }
 #[doc = "Fields `CH(0-1)_LOW_PENGDING` reader - Channel Voltage Low Available Interrupt Status"]
-pub struct CH_LOW_PENGDING_R(crate::FieldReader<bool>);
+pub type CH_LOW_PENGDING_R = crate::BitReader<CH_LOW_PENGDING_A>;
 impl CH_LOW_PENGDING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CH_LOW_PENGDING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CH_LOW_PENGDING_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl CH_LOW_PENGDING_R {
     #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
     pub fn is_no_pending(&self) -> bool {
-        **self == CH_LOW_PENGDING_A::NO_PENDING
+        *self == CH_LOW_PENGDING_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == CH_LOW_PENGDING_A::PENDING
+        *self == CH_LOW_PENGDING_A::PENDING
     }
 }
-impl core::ops::Deref for CH_LOW_PENGDING_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-#[doc = "Fields `CH(0-1)_LOW_PENGDING` const generic writer - Channel Voltage Low Available Interrupt Status"]
-pub struct CH_LOW_PENGDING_W<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> CH_LOW_PENGDING_W<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CH_LOW_PENGDING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+#[doc = "Fields `CH(0-1)_LOW_PENGDING` writer - Channel Voltage Low Available Interrupt Status"]
+pub type CH_LOW_PENGDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, GP_DATAL_INTS_SPEC, CH_LOW_PENGDING_A, O>;
+impl<'a, const O: u8> CH_LOW_PENGDING_W<'a, O> {
     #[doc = "NO Pending IRQ"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -101,27 +84,11 @@ impl<'a, const O: usize> CH_LOW_PENGDING_W<'a, O> {
     pub fn pending(self) -> &'a mut W {
         self.variant(CH_LOW_PENGDING_A::PENDING)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << O)) | ((value as u32 & 1) << O);
-        self.w
-    }
 }
 impl R {
     #[doc = "Channel Voltage Low Available Interrupt Status"]
     #[inline(always)]
-    pub unsafe fn ch_low_pengding(&self, n: usize) -> CH_LOW_PENGDING_R {
+    pub unsafe fn ch_low_pengding(&self, n: u8) -> CH_LOW_PENGDING_R {
         CH_LOW_PENGDING_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Channel Voltage Low Available Interrupt Status"]
@@ -138,18 +105,18 @@ impl R {
 impl W {
     #[doc = "Channel Voltage Low Available Interrupt Status"]
     #[inline(always)]
-    pub unsafe fn ch_low_pengding<const O: usize>(&mut self) -> CH_LOW_PENGDING_W<O> {
-        CH_LOW_PENGDING_W { w: self }
+    pub unsafe fn ch_low_pengding<const O: u8>(&mut self) -> CH_LOW_PENGDING_W<O> {
+        CH_LOW_PENGDING_W::new(self)
     }
     #[doc = "Bit 0 - Channel Voltage Low Available Interrupt Status"]
     #[inline(always)]
     pub fn ch0_low_pengding(&mut self) -> CH_LOW_PENGDING_W<0> {
-        CH_LOW_PENGDING_W { w: self }
+        CH_LOW_PENGDING_W::new(self)
     }
     #[doc = "Bit 1 - Channel Voltage Low Available Interrupt Status"]
     #[inline(always)]
     pub fn ch1_low_pengding(&mut self) -> CH_LOW_PENGDING_W<1> {
-        CH_LOW_PENGDING_W { w: self }
+        CH_LOW_PENGDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

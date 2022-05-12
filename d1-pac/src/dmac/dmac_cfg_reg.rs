@@ -28,13 +28,9 @@ impl From<BMODE_SEL_A> for bool {
     }
 }
 #[doc = "Field `BMODE_SEL` reader - "]
-pub struct BMODE_SEL_R(crate::FieldReader<bool>);
+pub type BMODE_SEL_R = crate::BitReader<BMODE_SEL_A>;
 impl BMODE_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        BMODE_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> BMODE_SEL_A {
         match self.bits {
@@ -45,19 +41,12 @@ impl BMODE_SEL_R {
     #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
-        **self == BMODE_SEL_A::NORMAL
+        *self == BMODE_SEL_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `BMODE`"]
     #[inline(always)]
     pub fn is_bmode(&self) -> bool {
-        **self == BMODE_SEL_A::BMODE
-    }
-}
-impl core::ops::Deref for BMODE_SEL_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == BMODE_SEL_A::BMODE
     }
 }
 #[doc = "DMA Destination Data Width\n\nValue on reset: 0"]
@@ -80,13 +69,9 @@ impl From<DMA_DEST_DATA_WIDTH_A> for u8 {
     }
 }
 #[doc = "Field `DMA_DEST_DATA_WIDTH` reader - DMA Destination Data Width"]
-pub struct DMA_DEST_DATA_WIDTH_R(crate::FieldReader<u8>);
+pub type DMA_DEST_DATA_WIDTH_R = crate::FieldReader<u8, DMA_DEST_DATA_WIDTH_A>;
 impl DMA_DEST_DATA_WIDTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_DEST_DATA_WIDTH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_DEST_DATA_WIDTH_A {
         match self.bits {
@@ -100,29 +85,22 @@ impl DMA_DEST_DATA_WIDTH_R {
     #[doc = "Checks if the value of the field is `B8`"]
     #[inline(always)]
     pub fn is_b8(&self) -> bool {
-        **self == DMA_DEST_DATA_WIDTH_A::B8
+        *self == DMA_DEST_DATA_WIDTH_A::B8
     }
     #[doc = "Checks if the value of the field is `B16`"]
     #[inline(always)]
     pub fn is_b16(&self) -> bool {
-        **self == DMA_DEST_DATA_WIDTH_A::B16
+        *self == DMA_DEST_DATA_WIDTH_A::B16
     }
     #[doc = "Checks if the value of the field is `B32`"]
     #[inline(always)]
     pub fn is_b32(&self) -> bool {
-        **self == DMA_DEST_DATA_WIDTH_A::B32
+        *self == DMA_DEST_DATA_WIDTH_A::B32
     }
     #[doc = "Checks if the value of the field is `B64`"]
     #[inline(always)]
     pub fn is_b64(&self) -> bool {
-        **self == DMA_DEST_DATA_WIDTH_A::B64
-    }
-}
-impl core::ops::Deref for DMA_DEST_DATA_WIDTH_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_DEST_DATA_WIDTH_A::B64
     }
 }
 #[doc = "DMA Destination Address Mode\n\nValue on reset: 0"]
@@ -140,13 +118,9 @@ impl From<DMA_ADDR_MODE_A> for bool {
     }
 }
 #[doc = "Field `DMA_ADDR_MODE` reader - DMA Destination Address Mode"]
-pub struct DMA_ADDR_MODE_R(crate::FieldReader<bool>);
+pub type DMA_ADDR_MODE_R = crate::BitReader<DMA_ADDR_MODE_A>;
 impl DMA_ADDR_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_ADDR_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_ADDR_MODE_A {
         match self.bits {
@@ -157,19 +131,12 @@ impl DMA_ADDR_MODE_R {
     #[doc = "Checks if the value of the field is `LINEAR`"]
     #[inline(always)]
     pub fn is_linear(&self) -> bool {
-        **self == DMA_ADDR_MODE_A::LINEAR
+        *self == DMA_ADDR_MODE_A::LINEAR
     }
     #[doc = "Checks if the value of the field is `IO`"]
     #[inline(always)]
     pub fn is_io(&self) -> bool {
-        **self == DMA_ADDR_MODE_A::IO
-    }
-}
-impl core::ops::Deref for DMA_ADDR_MODE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_ADDR_MODE_A::IO
     }
 }
 #[doc = "DMA Destination Block Size\n\nValue on reset: 0"]
@@ -192,13 +159,9 @@ impl From<DMA_DEST_BLOCK_SIZE_A> for u8 {
     }
 }
 #[doc = "Field `DMA_DEST_BLOCK_SIZE` reader - DMA Destination Block Size"]
-pub struct DMA_DEST_BLOCK_SIZE_R(crate::FieldReader<u8>);
+pub type DMA_DEST_BLOCK_SIZE_R = crate::FieldReader<u8, DMA_DEST_BLOCK_SIZE_A>;
 impl DMA_DEST_BLOCK_SIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_DEST_BLOCK_SIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_DEST_BLOCK_SIZE_A {
         match self.bits {
@@ -212,46 +175,26 @@ impl DMA_DEST_BLOCK_SIZE_R {
     #[doc = "Checks if the value of the field is `S1`"]
     #[inline(always)]
     pub fn is_s1(&self) -> bool {
-        **self == DMA_DEST_BLOCK_SIZE_A::S1
+        *self == DMA_DEST_BLOCK_SIZE_A::S1
     }
     #[doc = "Checks if the value of the field is `S4`"]
     #[inline(always)]
     pub fn is_s4(&self) -> bool {
-        **self == DMA_DEST_BLOCK_SIZE_A::S4
+        *self == DMA_DEST_BLOCK_SIZE_A::S4
     }
     #[doc = "Checks if the value of the field is `S8`"]
     #[inline(always)]
     pub fn is_s8(&self) -> bool {
-        **self == DMA_DEST_BLOCK_SIZE_A::S8
+        *self == DMA_DEST_BLOCK_SIZE_A::S8
     }
     #[doc = "Checks if the value of the field is `S16`"]
     #[inline(always)]
     pub fn is_s16(&self) -> bool {
-        **self == DMA_DEST_BLOCK_SIZE_A::S16
-    }
-}
-impl core::ops::Deref for DMA_DEST_BLOCK_SIZE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_DEST_BLOCK_SIZE_A::S16
     }
 }
 #[doc = "Field `DMA_DEST_DRQ_TYPE` reader - DMA Destination DRQ Type"]
-pub struct DMA_DEST_DRQ_TYPE_R(crate::FieldReader<u8>);
-impl DMA_DEST_DRQ_TYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_DEST_DRQ_TYPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_DEST_DRQ_TYPE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_DEST_DRQ_TYPE_R = crate::FieldReader<u8, u8>;
 #[doc = "DMA Source Data Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -272,13 +215,9 @@ impl From<DMA_SRC_DATA_WIDTH_A> for u8 {
     }
 }
 #[doc = "Field `DMA_SRC_DATA_WIDTH` reader - DMA Source Data Width"]
-pub struct DMA_SRC_DATA_WIDTH_R(crate::FieldReader<u8>);
+pub type DMA_SRC_DATA_WIDTH_R = crate::FieldReader<u8, DMA_SRC_DATA_WIDTH_A>;
 impl DMA_SRC_DATA_WIDTH_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_SRC_DATA_WIDTH_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_SRC_DATA_WIDTH_A {
         match self.bits {
@@ -292,29 +231,22 @@ impl DMA_SRC_DATA_WIDTH_R {
     #[doc = "Checks if the value of the field is `B8`"]
     #[inline(always)]
     pub fn is_b8(&self) -> bool {
-        **self == DMA_SRC_DATA_WIDTH_A::B8
+        *self == DMA_SRC_DATA_WIDTH_A::B8
     }
     #[doc = "Checks if the value of the field is `B16`"]
     #[inline(always)]
     pub fn is_b16(&self) -> bool {
-        **self == DMA_SRC_DATA_WIDTH_A::B16
+        *self == DMA_SRC_DATA_WIDTH_A::B16
     }
     #[doc = "Checks if the value of the field is `B32`"]
     #[inline(always)]
     pub fn is_b32(&self) -> bool {
-        **self == DMA_SRC_DATA_WIDTH_A::B32
+        *self == DMA_SRC_DATA_WIDTH_A::B32
     }
     #[doc = "Checks if the value of the field is `B64`"]
     #[inline(always)]
     pub fn is_b64(&self) -> bool {
-        **self == DMA_SRC_DATA_WIDTH_A::B64
-    }
-}
-impl core::ops::Deref for DMA_SRC_DATA_WIDTH_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_SRC_DATA_WIDTH_A::B64
     }
 }
 #[doc = "DMA Source Address Mode\n\nValue on reset: 0"]
@@ -332,13 +264,9 @@ impl From<DMA_SRC_ADDR_MODE_A> for bool {
     }
 }
 #[doc = "Field `DMA_SRC_ADDR_MODE` reader - DMA Source Address Mode"]
-pub struct DMA_SRC_ADDR_MODE_R(crate::FieldReader<bool>);
+pub type DMA_SRC_ADDR_MODE_R = crate::BitReader<DMA_SRC_ADDR_MODE_A>;
 impl DMA_SRC_ADDR_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DMA_SRC_ADDR_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_SRC_ADDR_MODE_A {
         match self.bits {
@@ -349,19 +277,12 @@ impl DMA_SRC_ADDR_MODE_R {
     #[doc = "Checks if the value of the field is `LINEAR`"]
     #[inline(always)]
     pub fn is_linear(&self) -> bool {
-        **self == DMA_SRC_ADDR_MODE_A::LINEAR
+        *self == DMA_SRC_ADDR_MODE_A::LINEAR
     }
     #[doc = "Checks if the value of the field is `IO`"]
     #[inline(always)]
     pub fn is_io(&self) -> bool {
-        **self == DMA_SRC_ADDR_MODE_A::IO
-    }
-}
-impl core::ops::Deref for DMA_SRC_ADDR_MODE_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_SRC_ADDR_MODE_A::IO
     }
 }
 #[doc = "DMA Source Block Size\n\nValue on reset: 0"]
@@ -384,13 +305,9 @@ impl From<DMA_SRC_BLOCK_SIZE_A> for u8 {
     }
 }
 #[doc = "Field `DMA_SRC_BLOCK_SIZE` reader - DMA Source Block Size"]
-pub struct DMA_SRC_BLOCK_SIZE_R(crate::FieldReader<u8>);
+pub type DMA_SRC_BLOCK_SIZE_R = crate::FieldReader<u8, DMA_SRC_BLOCK_SIZE_A>;
 impl DMA_SRC_BLOCK_SIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_SRC_BLOCK_SIZE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DMA_SRC_BLOCK_SIZE_A {
         match self.bits {
@@ -404,46 +321,26 @@ impl DMA_SRC_BLOCK_SIZE_R {
     #[doc = "Checks if the value of the field is `S1`"]
     #[inline(always)]
     pub fn is_s1(&self) -> bool {
-        **self == DMA_SRC_BLOCK_SIZE_A::S1
+        *self == DMA_SRC_BLOCK_SIZE_A::S1
     }
     #[doc = "Checks if the value of the field is `S4`"]
     #[inline(always)]
     pub fn is_s4(&self) -> bool {
-        **self == DMA_SRC_BLOCK_SIZE_A::S4
+        *self == DMA_SRC_BLOCK_SIZE_A::S4
     }
     #[doc = "Checks if the value of the field is `S8`"]
     #[inline(always)]
     pub fn is_s8(&self) -> bool {
-        **self == DMA_SRC_BLOCK_SIZE_A::S8
+        *self == DMA_SRC_BLOCK_SIZE_A::S8
     }
     #[doc = "Checks if the value of the field is `S16`"]
     #[inline(always)]
     pub fn is_s16(&self) -> bool {
-        **self == DMA_SRC_BLOCK_SIZE_A::S16
-    }
-}
-impl core::ops::Deref for DMA_SRC_BLOCK_SIZE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DMA_SRC_BLOCK_SIZE_A::S16
     }
 }
 #[doc = "Field `DMA_SRC_DRQ_TYPE` reader - DMA Source DRQ Type"]
-pub struct DMA_SRC_DRQ_TYPE_R(crate::FieldReader<u8>);
-impl DMA_SRC_DRQ_TYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DMA_SRC_DRQ_TYPE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DMA_SRC_DRQ_TYPE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DMA_SRC_DRQ_TYPE_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 30"]
     #[inline(always)]

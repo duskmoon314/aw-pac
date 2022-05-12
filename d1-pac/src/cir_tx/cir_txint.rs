@@ -49,13 +49,9 @@ impl From<DRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `DRQ_EN` reader - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
-pub struct DRQ_EN_R(crate::FieldReader<bool>);
+pub type DRQ_EN_R = crate::BitReader<DRQ_EN_A>;
 impl DRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DRQ_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == DRQ_EN_A::DISABLE
+        *self == DRQ_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == DRQ_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for DRQ_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `DRQ_EN` writer - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
-pub struct DRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type DRQ_EN_W<'a> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, DRQ_EN_A, 2>;
 impl<'a> DRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> DRQ_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(DRQ_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "TX FIFO Available Interrupt Enable\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<TAI_EN_A> for bool {
     }
 }
 #[doc = "Field `TAI_EN` reader - TX FIFO Available Interrupt Enable"]
-pub struct TAI_EN_R(crate::FieldReader<bool>);
+pub type TAI_EN_R = crate::BitReader<TAI_EN_A>;
 impl TAI_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TAI_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TAI_EN_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl TAI_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TAI_EN_A::DISABLE
+        *self == TAI_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TAI_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TAI_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAI_EN_A::ENABLE
     }
 }
 #[doc = "Field `TAI_EN` writer - TX FIFO Available Interrupt Enable"]
-pub struct TAI_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TAI_EN_W<'a> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TAI_EN_A, 1>;
 impl<'a> TAI_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TAI_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> TAI_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TAI_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 1)) | ((value as u32 & 1) << 1);
-        self.w
     }
 }
 #[doc = "Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse\n\nValue on reset: 0"]
@@ -217,13 +149,9 @@ impl From<TPEI_TUI_EN_A> for bool {
     }
 }
 #[doc = "Field `TPEI_TUI_EN` reader - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
-pub struct TPEI_TUI_EN_R(crate::FieldReader<bool>);
+pub type TPEI_TUI_EN_R = crate::BitReader<TPEI_TUI_EN_A>;
 impl TPEI_TUI_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TPEI_TUI_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TPEI_TUI_EN_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl TPEI_TUI_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == TPEI_TUI_EN_A::DISABLE
+        *self == TPEI_TUI_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == TPEI_TUI_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for TPEI_TUI_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TPEI_TUI_EN_A::ENABLE
     }
 }
 #[doc = "Field `TPEI_TUI_EN` writer - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
-pub struct TPEI_TUI_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type TPEI_TUI_EN_W<'a> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TPEI_TUI_EN_A, 0>;
 impl<'a> TPEI_TUI_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TPEI_TUI_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,22 +182,6 @@ impl<'a> TPEI_TUI_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(TPEI_TUI_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -307,17 +205,17 @@ impl W {
     #[doc = "Bit 2 - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
     #[inline(always)]
     pub fn drq_en(&mut self) -> DRQ_EN_W {
-        DRQ_EN_W { w: self }
+        DRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - TX FIFO Available Interrupt Enable"]
     #[inline(always)]
     pub fn tai_en(&mut self) -> TAI_EN_W {
-        TAI_EN_W { w: self }
+        TAI_EN_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
     #[inline(always)]
     pub fn tpei_tui_en(&mut self) -> TPEI_TUI_EN_W {
-        TPEI_TUI_EN_W { w: self }
+        TPEI_TUI_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

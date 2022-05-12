@@ -49,13 +49,9 @@ impl From<RGMII_LINK_A> for bool {
     }
 }
 #[doc = "Field `RGMII_LINK` reader - The link status of the RGMII interface"]
-pub struct RGMII_LINK_R(crate::FieldReader<bool>);
+pub type RGMII_LINK_R = crate::BitReader<RGMII_LINK_A>;
 impl RGMII_LINK_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RGMII_LINK_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RGMII_LINK_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RGMII_LINK_R {
     #[doc = "Checks if the value of the field is `DOWN`"]
     #[inline(always)]
     pub fn is_down(&self) -> bool {
-        **self == RGMII_LINK_A::DOWN
+        *self == RGMII_LINK_A::DOWN
     }
     #[doc = "Checks if the value of the field is `UP`"]
     #[inline(always)]
     pub fn is_up(&self) -> bool {
-        **self == RGMII_LINK_A::UP
-    }
-}
-impl core::ops::Deref for RGMII_LINK_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RGMII_LINK_A::UP
     }
 }
 #[doc = "Field `RGMII_LINK` writer - The link status of the RGMII interface"]
-pub struct RGMII_LINK_W<'a> {
-    w: &'a mut W,
-}
+pub type RGMII_LINK_W<'a> = crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_A, 3>;
 impl<'a> RGMII_LINK_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RGMII_LINK_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn down(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> RGMII_LINK_W<'a> {
     #[inline(always)]
     pub fn up(self) -> &'a mut W {
         self.variant(RGMII_LINK_A::UP)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 3)) | ((value as u32 & 1) << 3);
-        self.w
     }
 }
 #[doc = "The link speed of the RGMII interface\n\nValue on reset: 0"]
@@ -136,13 +102,9 @@ impl From<RGMII_LINK_SPD_A> for u8 {
     }
 }
 #[doc = "Field `RGMII_LINK_SPD` reader - The link speed of the RGMII interface"]
-pub struct RGMII_LINK_SPD_R(crate::FieldReader<u8>);
+pub type RGMII_LINK_SPD_R = crate::FieldReader<u8, RGMII_LINK_SPD_A>;
 impl RGMII_LINK_SPD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RGMII_LINK_SPD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RGMII_LINK_SPD_A> {
         match self.bits {
@@ -155,36 +117,23 @@ impl RGMII_LINK_SPD_R {
     #[doc = "Checks if the value of the field is `S2_5`"]
     #[inline(always)]
     pub fn is_s2_5(&self) -> bool {
-        **self == RGMII_LINK_SPD_A::S2_5
+        *self == RGMII_LINK_SPD_A::S2_5
     }
     #[doc = "Checks if the value of the field is `S25`"]
     #[inline(always)]
     pub fn is_s25(&self) -> bool {
-        **self == RGMII_LINK_SPD_A::S25
+        *self == RGMII_LINK_SPD_A::S25
     }
     #[doc = "Checks if the value of the field is `S125`"]
     #[inline(always)]
     pub fn is_s125(&self) -> bool {
-        **self == RGMII_LINK_SPD_A::S125
-    }
-}
-impl core::ops::Deref for RGMII_LINK_SPD_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RGMII_LINK_SPD_A::S125
     }
 }
 #[doc = "Field `RGMII_LINK_SPD` writer - The link speed of the RGMII interface"]
-pub struct RGMII_LINK_SPD_W<'a> {
-    w: &'a mut W,
-}
+pub type RGMII_LINK_SPD_W<'a> =
+    crate::FieldWriter<'a, u32, EMAC_RGMII_STA_SPEC, u8, RGMII_LINK_SPD_A, 2, 1>;
 impl<'a> RGMII_LINK_SPD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RGMII_LINK_SPD_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn s2_5(self) -> &'a mut W {
@@ -199,12 +148,6 @@ impl<'a> RGMII_LINK_SPD_W<'a> {
     #[inline(always)]
     pub fn s125(self) -> &'a mut W {
         self.variant(RGMII_LINK_SPD_A::S125)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(3 << 1)) | ((value as u32 & 3) << 1);
-        self.w
     }
 }
 #[doc = "The link mode of the RGMII interface\n\nValue on reset: 0"]
@@ -222,13 +165,9 @@ impl From<RGMII_LINK_MD_A> for bool {
     }
 }
 #[doc = "Field `RGMII_LINK_MD` reader - The link mode of the RGMII interface"]
-pub struct RGMII_LINK_MD_R(crate::FieldReader<bool>);
+pub type RGMII_LINK_MD_R = crate::BitReader<RGMII_LINK_MD_A>;
 impl RGMII_LINK_MD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RGMII_LINK_MD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RGMII_LINK_MD_A {
         match self.bits {
@@ -239,31 +178,17 @@ impl RGMII_LINK_MD_R {
     #[doc = "Checks if the value of the field is `HALF_DUPLEX`"]
     #[inline(always)]
     pub fn is_half_duplex(&self) -> bool {
-        **self == RGMII_LINK_MD_A::HALF_DUPLEX
+        *self == RGMII_LINK_MD_A::HALF_DUPLEX
     }
     #[doc = "Checks if the value of the field is `FULL_DUPLEX`"]
     #[inline(always)]
     pub fn is_full_duplex(&self) -> bool {
-        **self == RGMII_LINK_MD_A::FULL_DUPLEX
-    }
-}
-impl core::ops::Deref for RGMII_LINK_MD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RGMII_LINK_MD_A::FULL_DUPLEX
     }
 }
 #[doc = "Field `RGMII_LINK_MD` writer - The link mode of the RGMII interface"]
-pub struct RGMII_LINK_MD_W<'a> {
-    w: &'a mut W,
-}
+pub type RGMII_LINK_MD_W<'a> = crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_MD_A, 0>;
 impl<'a> RGMII_LINK_MD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RGMII_LINK_MD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn half_duplex(self) -> &'a mut W {
@@ -273,22 +198,6 @@ impl<'a> RGMII_LINK_MD_W<'a> {
     #[inline(always)]
     pub fn full_duplex(self) -> &'a mut W {
         self.variant(RGMII_LINK_MD_A::FULL_DUPLEX)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -312,17 +221,17 @@ impl W {
     #[doc = "Bit 3 - The link status of the RGMII interface"]
     #[inline(always)]
     pub fn rgmii_link(&mut self) -> RGMII_LINK_W {
-        RGMII_LINK_W { w: self }
+        RGMII_LINK_W::new(self)
     }
     #[doc = "Bits 1:2 - The link speed of the RGMII interface"]
     #[inline(always)]
     pub fn rgmii_link_spd(&mut self) -> RGMII_LINK_SPD_W {
-        RGMII_LINK_SPD_W { w: self }
+        RGMII_LINK_SPD_W::new(self)
     }
     #[doc = "Bit 0 - The link mode of the RGMII interface"]
     #[inline(always)]
     pub fn rgmii_link_md(&mut self) -> RGMII_LINK_MD_W {
-        RGMII_LINK_MD_W { w: self }
+        RGMII_LINK_MD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

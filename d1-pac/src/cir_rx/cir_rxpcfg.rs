@@ -49,13 +49,9 @@ impl From<RPPI_A> for bool {
     }
 }
 #[doc = "Field `RPPI` reader - Receiver Pulse Polarity Invert"]
-pub struct RPPI_R(crate::FieldReader<bool>);
+pub type RPPI_R = crate::BitReader<RPPI_A>;
 impl RPPI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RPPI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RPPI_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RPPI_R {
     #[doc = "Checks if the value of the field is `NOT_INVERT`"]
     #[inline(always)]
     pub fn is_not_invert(&self) -> bool {
-        **self == RPPI_A::NOT_INVERT
+        *self == RPPI_A::NOT_INVERT
     }
     #[doc = "Checks if the value of the field is `INVERT`"]
     #[inline(always)]
     pub fn is_invert(&self) -> bool {
-        **self == RPPI_A::INVERT
-    }
-}
-impl core::ops::Deref for RPPI_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RPPI_A::INVERT
     }
 }
 #[doc = "Field `RPPI` writer - Receiver Pulse Polarity Invert"]
-pub struct RPPI_W<'a> {
-    w: &'a mut W,
-}
+pub type RPPI_W<'a> = crate::BitWriter<'a, u32, CIR_RXPCFG_SPEC, RPPI_A, 2>;
 impl<'a> RPPI_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RPPI_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "Do not invert receiver signal"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> RPPI_W<'a> {
     #[inline(always)]
     pub fn invert(self) -> &'a mut W {
         self.variant(RPPI_A::INVERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 impl R {
@@ -129,7 +95,7 @@ impl W {
     #[doc = "Bit 2 - Receiver Pulse Polarity Invert"]
     #[inline(always)]
     pub fn rppi(&mut self) -> RPPI_W {
-        RPPI_W { w: self }
+        RPPI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

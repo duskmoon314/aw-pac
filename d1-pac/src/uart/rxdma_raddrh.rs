@@ -35,32 +35,9 @@ impl From<crate::W<RXDMA_RADDRH_SPEC>> for W {
     }
 }
 #[doc = "Field `raddr` reader - RXDMA Current Read Address \\[33:32\\]"]
-pub struct RADDR_R(crate::FieldReader<u8>);
-impl RADDR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RADDR_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RADDR_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `raddr` writer - RXDMA Current Read Address \\[33:32\\]"]
-pub struct RADDR_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> RADDR_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
-}
+pub type RADDR_W<'a> = crate::FieldWriter<'a, u32, RXDMA_RADDRH_SPEC, u8, u8, 2, 0>;
 impl R {
     #[doc = "Bits 0:1 - RXDMA Current Read Address \\[33:32\\]"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:1 - RXDMA Current Read Address \\[33:32\\]"]
     #[inline(always)]
     pub fn raddr(&mut self) -> RADDR_W {
-        RADDR_W { w: self }
+        RADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

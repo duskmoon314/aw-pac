@@ -49,13 +49,9 @@ impl From<WDOG_IRQ_PEND_A> for bool {
     }
 }
 #[doc = "Field `wdog_irq_pend` reader - "]
-pub struct WDOG_IRQ_PEND_R(crate::FieldReader<bool>);
+pub type WDOG_IRQ_PEND_R = crate::BitReader<WDOG_IRQ_PEND_A>;
 impl WDOG_IRQ_PEND_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDOG_IRQ_PEND_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WDOG_IRQ_PEND_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl WDOG_IRQ_PEND_R {
     #[doc = "Checks if the value of the field is `NO_EFFECT`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
-        **self == WDOG_IRQ_PEND_A::NO_EFFECT
+        *self == WDOG_IRQ_PEND_A::NO_EFFECT
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
     pub fn is_pending(&self) -> bool {
-        **self == WDOG_IRQ_PEND_A::PENDING
-    }
-}
-impl core::ops::Deref for WDOG_IRQ_PEND_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WDOG_IRQ_PEND_A::PENDING
     }
 }
 #[doc = "Field `wdog_irq_pend` writer - "]
-pub struct WDOG_IRQ_PEND_W<'a> {
-    w: &'a mut W,
-}
+pub type WDOG_IRQ_PEND_W<'a> = crate::BitWriter<'a, u32, WDOG_IRQ_STA_SPEC, WDOG_IRQ_PEND_A, 0>;
 impl<'a> WDOG_IRQ_PEND_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDOG_IRQ_PEND_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> WDOG_IRQ_PEND_W<'a> {
     #[inline(always)]
     pub fn pending(self) -> &'a mut W {
         self.variant(WDOG_IRQ_PEND_A::PENDING)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
     }
 }
 impl R {
@@ -129,7 +95,7 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn wdog_irq_pend(&mut self) -> WDOG_IRQ_PEND_W {
-        WDOG_IRQ_PEND_W { w: self }
+        WDOG_IRQ_PEND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

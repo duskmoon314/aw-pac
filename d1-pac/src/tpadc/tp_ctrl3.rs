@@ -49,13 +49,9 @@ impl From<FILTER_EN_A> for bool {
     }
 }
 #[doc = "Field `FILTER_EN` reader - Filter Enable"]
-pub struct FILTER_EN_R(crate::FieldReader<bool>);
+pub type FILTER_EN_R = crate::BitReader<FILTER_EN_A>;
 impl FILTER_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        FILTER_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FILTER_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl FILTER_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == FILTER_EN_A::DISABLE
+        *self == FILTER_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == FILTER_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for FILTER_EN_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FILTER_EN_A::ENABLE
     }
 }
 #[doc = "Field `FILTER_EN` writer - Filter Enable"]
-pub struct FILTER_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type FILTER_EN_W<'a> = crate::BitWriter<'a, u32, TP_CTRL3_SPEC, FILTER_EN_A, 2>;
 impl<'a> FILTER_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FILTER_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> FILTER_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(FILTER_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(1 << 2)) | ((value as u32 & 1) << 2);
-        self.w
     }
 }
 #[doc = "Filter Type\n\nValue on reset: 0"]
@@ -138,13 +104,9 @@ impl From<FILTER_TYPE_A> for u8 {
     }
 }
 #[doc = "Field `FILTER_TYPE` reader - Filter Type"]
-pub struct FILTER_TYPE_R(crate::FieldReader<u8>);
+pub type FILTER_TYPE_R = crate::FieldReader<u8, FILTER_TYPE_A>;
 impl FILTER_TYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        FILTER_TYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> FILTER_TYPE_A {
         match self.bits {
@@ -158,41 +120,28 @@ impl FILTER_TYPE_R {
     #[doc = "Checks if the value of the field is `T42`"]
     #[inline(always)]
     pub fn is_t42(&self) -> bool {
-        **self == FILTER_TYPE_A::T42
+        *self == FILTER_TYPE_A::T42
     }
     #[doc = "Checks if the value of the field is `T53`"]
     #[inline(always)]
     pub fn is_t53(&self) -> bool {
-        **self == FILTER_TYPE_A::T53
+        *self == FILTER_TYPE_A::T53
     }
     #[doc = "Checks if the value of the field is `T84`"]
     #[inline(always)]
     pub fn is_t84(&self) -> bool {
-        **self == FILTER_TYPE_A::T84
+        *self == FILTER_TYPE_A::T84
     }
     #[doc = "Checks if the value of the field is `T168`"]
     #[inline(always)]
     pub fn is_t168(&self) -> bool {
-        **self == FILTER_TYPE_A::T168
-    }
-}
-impl core::ops::Deref for FILTER_TYPE_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == FILTER_TYPE_A::T168
     }
 }
 #[doc = "Field `FILTER_TYPE` writer - Filter Type"]
-pub struct FILTER_TYPE_W<'a> {
-    w: &'a mut W,
-}
+pub type FILTER_TYPE_W<'a> =
+    crate::FieldWriterSafe<'a, u32, TP_CTRL3_SPEC, u8, FILTER_TYPE_A, 2, 0>;
 impl<'a> FILTER_TYPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: FILTER_TYPE_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "4 / 2"]
     #[inline(always)]
     pub fn t42(self) -> &'a mut W {
@@ -213,12 +162,6 @@ impl<'a> FILTER_TYPE_W<'a> {
     pub fn t168(self) -> &'a mut W {
         self.variant(FILTER_TYPE_A::T168)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !3) | (value as u32 & 3);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 2 - Filter Enable"]
@@ -236,12 +179,12 @@ impl W {
     #[doc = "Bit 2 - Filter Enable"]
     #[inline(always)]
     pub fn filter_en(&mut self) -> FILTER_EN_W {
-        FILTER_EN_W { w: self }
+        FILTER_EN_W::new(self)
     }
     #[doc = "Bits 0:1 - Filter Type"]
     #[inline(always)]
     pub fn filter_type(&mut self) -> FILTER_TYPE_W {
-        FILTER_TYPE_W { w: self }
+        FILTER_TYPE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

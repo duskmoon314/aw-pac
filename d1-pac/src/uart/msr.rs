@@ -28,13 +28,9 @@ impl From<DCD_A> for bool {
     }
 }
 #[doc = "Field `dcd` reader - Line State of Data Carrier Detect"]
-pub struct DCD_R(crate::FieldReader<bool>);
+pub type DCD_R = crate::BitReader<DCD_A>;
 impl DCD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DCD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCD_A {
         match self.bits {
@@ -45,19 +41,12 @@ impl DCD_R {
     #[doc = "Checks if the value of the field is `DEASSERTED`"]
     #[inline(always)]
     pub fn is_deasserted(&self) -> bool {
-        **self == DCD_A::DEASSERTED
+        *self == DCD_A::DEASSERTED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        **self == DCD_A::ASSERTED
-    }
-}
-impl core::ops::Deref for DCD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DCD_A::ASSERTED
     }
 }
 #[doc = "Line State of Ring Indicator\n\nValue on reset: 0"]
@@ -75,13 +64,9 @@ impl From<RI_A> for bool {
     }
 }
 #[doc = "Field `ri` reader - Line State of Ring Indicator"]
-pub struct RI_R(crate::FieldReader<bool>);
+pub type RI_R = crate::BitReader<RI_A>;
 impl RI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RI_A {
         match self.bits {
@@ -92,19 +77,12 @@ impl RI_R {
     #[doc = "Checks if the value of the field is `DEASSERTED`"]
     #[inline(always)]
     pub fn is_deasserted(&self) -> bool {
-        **self == RI_A::DEASSERTED
+        *self == RI_A::DEASSERTED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        **self == RI_A::ASSERTED
-    }
-}
-impl core::ops::Deref for RI_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RI_A::ASSERTED
     }
 }
 #[doc = "Line State of Data Set Ready\n\nValue on reset: 0"]
@@ -122,13 +100,9 @@ impl From<DSR_A> for bool {
     }
 }
 #[doc = "Field `dsr` reader - Line State of Data Set Ready"]
-pub struct DSR_R(crate::FieldReader<bool>);
+pub type DSR_R = crate::BitReader<DSR_A>;
 impl DSR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DSR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DSR_A {
         match self.bits {
@@ -139,19 +113,12 @@ impl DSR_R {
     #[doc = "Checks if the value of the field is `DEASSERTED`"]
     #[inline(always)]
     pub fn is_deasserted(&self) -> bool {
-        **self == DSR_A::DEASSERTED
+        *self == DSR_A::DEASSERTED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        **self == DSR_A::ASSERTED
-    }
-}
-impl core::ops::Deref for DSR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DSR_A::ASSERTED
     }
 }
 #[doc = "Line State of Clear To Send\n\nValue on reset: 0"]
@@ -169,13 +136,9 @@ impl From<CTS_A> for bool {
     }
 }
 #[doc = "Field `cts` reader - Line State of Clear To Send"]
-pub struct CTS_R(crate::FieldReader<bool>);
+pub type CTS_R = crate::BitReader<CTS_A>;
 impl CTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CTS_A {
         match self.bits {
@@ -186,19 +149,12 @@ impl CTS_R {
     #[doc = "Checks if the value of the field is `DEASSERTED`"]
     #[inline(always)]
     pub fn is_deasserted(&self) -> bool {
-        **self == CTS_A::DEASSERTED
+        *self == CTS_A::DEASSERTED
     }
     #[doc = "Checks if the value of the field is `ASSERTED`"]
     #[inline(always)]
     pub fn is_asserted(&self) -> bool {
-        **self == CTS_A::ASSERTED
-    }
-}
-impl core::ops::Deref for CTS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CTS_A::ASSERTED
     }
 }
 #[doc = "Delta Data Carrier Detect\n\nValue on reset: 0"]
@@ -216,13 +172,9 @@ impl From<DDCD_A> for bool {
     }
 }
 #[doc = "Field `ddcd` reader - Delta Data Carrier Detect"]
-pub struct DDCD_R(crate::FieldReader<bool>);
+pub type DDCD_R = crate::BitReader<DDCD_A>;
 impl DDCD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DDCD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DDCD_A {
         match self.bits {
@@ -233,19 +185,12 @@ impl DDCD_R {
     #[doc = "Checks if the value of the field is `NO_CHANGE`"]
     #[inline(always)]
     pub fn is_no_change(&self) -> bool {
-        **self == DDCD_A::NO_CHANGE
+        *self == DDCD_A::NO_CHANGE
     }
     #[doc = "Checks if the value of the field is `CHANGE`"]
     #[inline(always)]
     pub fn is_change(&self) -> bool {
-        **self == DDCD_A::CHANGE
-    }
-}
-impl core::ops::Deref for DDCD_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DDCD_A::CHANGE
     }
 }
 #[doc = "Trailing Edge Ring Indicator\n\nValue on reset: 0"]
@@ -263,13 +208,9 @@ impl From<TERI_A> for bool {
     }
 }
 #[doc = "Field `teri` reader - Trailing Edge Ring Indicator"]
-pub struct TERI_R(crate::FieldReader<bool>);
+pub type TERI_R = crate::BitReader<TERI_A>;
 impl TERI_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TERI_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TERI_A {
         match self.bits {
@@ -280,19 +221,12 @@ impl TERI_R {
     #[doc = "Checks if the value of the field is `NO_CHANGE`"]
     #[inline(always)]
     pub fn is_no_change(&self) -> bool {
-        **self == TERI_A::NO_CHANGE
+        *self == TERI_A::NO_CHANGE
     }
     #[doc = "Checks if the value of the field is `CHANGE`"]
     #[inline(always)]
     pub fn is_change(&self) -> bool {
-        **self == TERI_A::CHANGE
-    }
-}
-impl core::ops::Deref for TERI_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TERI_A::CHANGE
     }
 }
 #[doc = "Delta Data Set Ready\n\nValue on reset: 0"]
@@ -310,13 +244,9 @@ impl From<DDSR_A> for bool {
     }
 }
 #[doc = "Field `ddsr` reader - Delta Data Set Ready"]
-pub struct DDSR_R(crate::FieldReader<bool>);
+pub type DDSR_R = crate::BitReader<DDSR_A>;
 impl DDSR_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DDSR_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DDSR_A {
         match self.bits {
@@ -327,19 +257,12 @@ impl DDSR_R {
     #[doc = "Checks if the value of the field is `NO_CHANGE`"]
     #[inline(always)]
     pub fn is_no_change(&self) -> bool {
-        **self == DDSR_A::NO_CHANGE
+        *self == DDSR_A::NO_CHANGE
     }
     #[doc = "Checks if the value of the field is `CHANGE`"]
     #[inline(always)]
     pub fn is_change(&self) -> bool {
-        **self == DDSR_A::CHANGE
-    }
-}
-impl core::ops::Deref for DDSR_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DDSR_A::CHANGE
     }
 }
 #[doc = "Delta Clear to Send\n\nValue on reset: 0"]
@@ -357,13 +280,9 @@ impl From<DCTS_A> for bool {
     }
 }
 #[doc = "Field `dcts` reader - Delta Clear to Send"]
-pub struct DCTS_R(crate::FieldReader<bool>);
+pub type DCTS_R = crate::BitReader<DCTS_A>;
 impl DCTS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DCTS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DCTS_A {
         match self.bits {
@@ -374,19 +293,12 @@ impl DCTS_R {
     #[doc = "Checks if the value of the field is `NO_CHANGE`"]
     #[inline(always)]
     pub fn is_no_change(&self) -> bool {
-        **self == DCTS_A::NO_CHANGE
+        *self == DCTS_A::NO_CHANGE
     }
     #[doc = "Checks if the value of the field is `CHANGE`"]
     #[inline(always)]
     pub fn is_change(&self) -> bool {
-        **self == DCTS_A::CHANGE
-    }
-}
-impl core::ops::Deref for DCTS_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DCTS_A::CHANGE
     }
 }
 impl R {

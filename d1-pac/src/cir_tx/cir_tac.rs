@@ -304,13 +304,9 @@ impl From<TAC_A> for u8 {
     }
 }
 #[doc = "Field `TAC` reader - TX FIFO Available Space Counter"]
-pub struct TAC_R(crate::FieldReader<u8>);
+pub type TAC_R = crate::FieldReader<u8, TAC_A>;
 impl TAC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TAC_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TAC_A> {
         match self.bits {
@@ -449,654 +445,647 @@ impl TAC_R {
     #[doc = "Checks if the value of the field is `B0`"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
-        **self == TAC_A::B0
+        *self == TAC_A::B0
     }
     #[doc = "Checks if the value of the field is `B1`"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
-        **self == TAC_A::B1
+        *self == TAC_A::B1
     }
     #[doc = "Checks if the value of the field is `B2`"]
     #[inline(always)]
     pub fn is_b2(&self) -> bool {
-        **self == TAC_A::B2
+        *self == TAC_A::B2
     }
     #[doc = "Checks if the value of the field is `B3`"]
     #[inline(always)]
     pub fn is_b3(&self) -> bool {
-        **self == TAC_A::B3
+        *self == TAC_A::B3
     }
     #[doc = "Checks if the value of the field is `B4`"]
     #[inline(always)]
     pub fn is_b4(&self) -> bool {
-        **self == TAC_A::B4
+        *self == TAC_A::B4
     }
     #[doc = "Checks if the value of the field is `B5`"]
     #[inline(always)]
     pub fn is_b5(&self) -> bool {
-        **self == TAC_A::B5
+        *self == TAC_A::B5
     }
     #[doc = "Checks if the value of the field is `B6`"]
     #[inline(always)]
     pub fn is_b6(&self) -> bool {
-        **self == TAC_A::B6
+        *self == TAC_A::B6
     }
     #[doc = "Checks if the value of the field is `B7`"]
     #[inline(always)]
     pub fn is_b7(&self) -> bool {
-        **self == TAC_A::B7
+        *self == TAC_A::B7
     }
     #[doc = "Checks if the value of the field is `B8`"]
     #[inline(always)]
     pub fn is_b8(&self) -> bool {
-        **self == TAC_A::B8
+        *self == TAC_A::B8
     }
     #[doc = "Checks if the value of the field is `B9`"]
     #[inline(always)]
     pub fn is_b9(&self) -> bool {
-        **self == TAC_A::B9
+        *self == TAC_A::B9
     }
     #[doc = "Checks if the value of the field is `B10`"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
-        **self == TAC_A::B10
+        *self == TAC_A::B10
     }
     #[doc = "Checks if the value of the field is `B11`"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
-        **self == TAC_A::B11
+        *self == TAC_A::B11
     }
     #[doc = "Checks if the value of the field is `B12`"]
     #[inline(always)]
     pub fn is_b12(&self) -> bool {
-        **self == TAC_A::B12
+        *self == TAC_A::B12
     }
     #[doc = "Checks if the value of the field is `B13`"]
     #[inline(always)]
     pub fn is_b13(&self) -> bool {
-        **self == TAC_A::B13
+        *self == TAC_A::B13
     }
     #[doc = "Checks if the value of the field is `B14`"]
     #[inline(always)]
     pub fn is_b14(&self) -> bool {
-        **self == TAC_A::B14
+        *self == TAC_A::B14
     }
     #[doc = "Checks if the value of the field is `B15`"]
     #[inline(always)]
     pub fn is_b15(&self) -> bool {
-        **self == TAC_A::B15
+        *self == TAC_A::B15
     }
     #[doc = "Checks if the value of the field is `B16`"]
     #[inline(always)]
     pub fn is_b16(&self) -> bool {
-        **self == TAC_A::B16
+        *self == TAC_A::B16
     }
     #[doc = "Checks if the value of the field is `B17`"]
     #[inline(always)]
     pub fn is_b17(&self) -> bool {
-        **self == TAC_A::B17
+        *self == TAC_A::B17
     }
     #[doc = "Checks if the value of the field is `B18`"]
     #[inline(always)]
     pub fn is_b18(&self) -> bool {
-        **self == TAC_A::B18
+        *self == TAC_A::B18
     }
     #[doc = "Checks if the value of the field is `B19`"]
     #[inline(always)]
     pub fn is_b19(&self) -> bool {
-        **self == TAC_A::B19
+        *self == TAC_A::B19
     }
     #[doc = "Checks if the value of the field is `B20`"]
     #[inline(always)]
     pub fn is_b20(&self) -> bool {
-        **self == TAC_A::B20
+        *self == TAC_A::B20
     }
     #[doc = "Checks if the value of the field is `B21`"]
     #[inline(always)]
     pub fn is_b21(&self) -> bool {
-        **self == TAC_A::B21
+        *self == TAC_A::B21
     }
     #[doc = "Checks if the value of the field is `B22`"]
     #[inline(always)]
     pub fn is_b22(&self) -> bool {
-        **self == TAC_A::B22
+        *self == TAC_A::B22
     }
     #[doc = "Checks if the value of the field is `B23`"]
     #[inline(always)]
     pub fn is_b23(&self) -> bool {
-        **self == TAC_A::B23
+        *self == TAC_A::B23
     }
     #[doc = "Checks if the value of the field is `B24`"]
     #[inline(always)]
     pub fn is_b24(&self) -> bool {
-        **self == TAC_A::B24
+        *self == TAC_A::B24
     }
     #[doc = "Checks if the value of the field is `B25`"]
     #[inline(always)]
     pub fn is_b25(&self) -> bool {
-        **self == TAC_A::B25
+        *self == TAC_A::B25
     }
     #[doc = "Checks if the value of the field is `B26`"]
     #[inline(always)]
     pub fn is_b26(&self) -> bool {
-        **self == TAC_A::B26
+        *self == TAC_A::B26
     }
     #[doc = "Checks if the value of the field is `B27`"]
     #[inline(always)]
     pub fn is_b27(&self) -> bool {
-        **self == TAC_A::B27
+        *self == TAC_A::B27
     }
     #[doc = "Checks if the value of the field is `B28`"]
     #[inline(always)]
     pub fn is_b28(&self) -> bool {
-        **self == TAC_A::B28
+        *self == TAC_A::B28
     }
     #[doc = "Checks if the value of the field is `B29`"]
     #[inline(always)]
     pub fn is_b29(&self) -> bool {
-        **self == TAC_A::B29
+        *self == TAC_A::B29
     }
     #[doc = "Checks if the value of the field is `B30`"]
     #[inline(always)]
     pub fn is_b30(&self) -> bool {
-        **self == TAC_A::B30
+        *self == TAC_A::B30
     }
     #[doc = "Checks if the value of the field is `B31`"]
     #[inline(always)]
     pub fn is_b31(&self) -> bool {
-        **self == TAC_A::B31
+        *self == TAC_A::B31
     }
     #[doc = "Checks if the value of the field is `B32`"]
     #[inline(always)]
     pub fn is_b32(&self) -> bool {
-        **self == TAC_A::B32
+        *self == TAC_A::B32
     }
     #[doc = "Checks if the value of the field is `B33`"]
     #[inline(always)]
     pub fn is_b33(&self) -> bool {
-        **self == TAC_A::B33
+        *self == TAC_A::B33
     }
     #[doc = "Checks if the value of the field is `B34`"]
     #[inline(always)]
     pub fn is_b34(&self) -> bool {
-        **self == TAC_A::B34
+        *self == TAC_A::B34
     }
     #[doc = "Checks if the value of the field is `B35`"]
     #[inline(always)]
     pub fn is_b35(&self) -> bool {
-        **self == TAC_A::B35
+        *self == TAC_A::B35
     }
     #[doc = "Checks if the value of the field is `B36`"]
     #[inline(always)]
     pub fn is_b36(&self) -> bool {
-        **self == TAC_A::B36
+        *self == TAC_A::B36
     }
     #[doc = "Checks if the value of the field is `B37`"]
     #[inline(always)]
     pub fn is_b37(&self) -> bool {
-        **self == TAC_A::B37
+        *self == TAC_A::B37
     }
     #[doc = "Checks if the value of the field is `B38`"]
     #[inline(always)]
     pub fn is_b38(&self) -> bool {
-        **self == TAC_A::B38
+        *self == TAC_A::B38
     }
     #[doc = "Checks if the value of the field is `B39`"]
     #[inline(always)]
     pub fn is_b39(&self) -> bool {
-        **self == TAC_A::B39
+        *self == TAC_A::B39
     }
     #[doc = "Checks if the value of the field is `B40`"]
     #[inline(always)]
     pub fn is_b40(&self) -> bool {
-        **self == TAC_A::B40
+        *self == TAC_A::B40
     }
     #[doc = "Checks if the value of the field is `B41`"]
     #[inline(always)]
     pub fn is_b41(&self) -> bool {
-        **self == TAC_A::B41
+        *self == TAC_A::B41
     }
     #[doc = "Checks if the value of the field is `B42`"]
     #[inline(always)]
     pub fn is_b42(&self) -> bool {
-        **self == TAC_A::B42
+        *self == TAC_A::B42
     }
     #[doc = "Checks if the value of the field is `B43`"]
     #[inline(always)]
     pub fn is_b43(&self) -> bool {
-        **self == TAC_A::B43
+        *self == TAC_A::B43
     }
     #[doc = "Checks if the value of the field is `B44`"]
     #[inline(always)]
     pub fn is_b44(&self) -> bool {
-        **self == TAC_A::B44
+        *self == TAC_A::B44
     }
     #[doc = "Checks if the value of the field is `B45`"]
     #[inline(always)]
     pub fn is_b45(&self) -> bool {
-        **self == TAC_A::B45
+        *self == TAC_A::B45
     }
     #[doc = "Checks if the value of the field is `B46`"]
     #[inline(always)]
     pub fn is_b46(&self) -> bool {
-        **self == TAC_A::B46
+        *self == TAC_A::B46
     }
     #[doc = "Checks if the value of the field is `B47`"]
     #[inline(always)]
     pub fn is_b47(&self) -> bool {
-        **self == TAC_A::B47
+        *self == TAC_A::B47
     }
     #[doc = "Checks if the value of the field is `B48`"]
     #[inline(always)]
     pub fn is_b48(&self) -> bool {
-        **self == TAC_A::B48
+        *self == TAC_A::B48
     }
     #[doc = "Checks if the value of the field is `B49`"]
     #[inline(always)]
     pub fn is_b49(&self) -> bool {
-        **self == TAC_A::B49
+        *self == TAC_A::B49
     }
     #[doc = "Checks if the value of the field is `B50`"]
     #[inline(always)]
     pub fn is_b50(&self) -> bool {
-        **self == TAC_A::B50
+        *self == TAC_A::B50
     }
     #[doc = "Checks if the value of the field is `B51`"]
     #[inline(always)]
     pub fn is_b51(&self) -> bool {
-        **self == TAC_A::B51
+        *self == TAC_A::B51
     }
     #[doc = "Checks if the value of the field is `B52`"]
     #[inline(always)]
     pub fn is_b52(&self) -> bool {
-        **self == TAC_A::B52
+        *self == TAC_A::B52
     }
     #[doc = "Checks if the value of the field is `B53`"]
     #[inline(always)]
     pub fn is_b53(&self) -> bool {
-        **self == TAC_A::B53
+        *self == TAC_A::B53
     }
     #[doc = "Checks if the value of the field is `B54`"]
     #[inline(always)]
     pub fn is_b54(&self) -> bool {
-        **self == TAC_A::B54
+        *self == TAC_A::B54
     }
     #[doc = "Checks if the value of the field is `B55`"]
     #[inline(always)]
     pub fn is_b55(&self) -> bool {
-        **self == TAC_A::B55
+        *self == TAC_A::B55
     }
     #[doc = "Checks if the value of the field is `B56`"]
     #[inline(always)]
     pub fn is_b56(&self) -> bool {
-        **self == TAC_A::B56
+        *self == TAC_A::B56
     }
     #[doc = "Checks if the value of the field is `B57`"]
     #[inline(always)]
     pub fn is_b57(&self) -> bool {
-        **self == TAC_A::B57
+        *self == TAC_A::B57
     }
     #[doc = "Checks if the value of the field is `B58`"]
     #[inline(always)]
     pub fn is_b58(&self) -> bool {
-        **self == TAC_A::B58
+        *self == TAC_A::B58
     }
     #[doc = "Checks if the value of the field is `B59`"]
     #[inline(always)]
     pub fn is_b59(&self) -> bool {
-        **self == TAC_A::B59
+        *self == TAC_A::B59
     }
     #[doc = "Checks if the value of the field is `B60`"]
     #[inline(always)]
     pub fn is_b60(&self) -> bool {
-        **self == TAC_A::B60
+        *self == TAC_A::B60
     }
     #[doc = "Checks if the value of the field is `B61`"]
     #[inline(always)]
     pub fn is_b61(&self) -> bool {
-        **self == TAC_A::B61
+        *self == TAC_A::B61
     }
     #[doc = "Checks if the value of the field is `B62`"]
     #[inline(always)]
     pub fn is_b62(&self) -> bool {
-        **self == TAC_A::B62
+        *self == TAC_A::B62
     }
     #[doc = "Checks if the value of the field is `B63`"]
     #[inline(always)]
     pub fn is_b63(&self) -> bool {
-        **self == TAC_A::B63
+        *self == TAC_A::B63
     }
     #[doc = "Checks if the value of the field is `B64`"]
     #[inline(always)]
     pub fn is_b64(&self) -> bool {
-        **self == TAC_A::B64
+        *self == TAC_A::B64
     }
     #[doc = "Checks if the value of the field is `B65`"]
     #[inline(always)]
     pub fn is_b65(&self) -> bool {
-        **self == TAC_A::B65
+        *self == TAC_A::B65
     }
     #[doc = "Checks if the value of the field is `B66`"]
     #[inline(always)]
     pub fn is_b66(&self) -> bool {
-        **self == TAC_A::B66
+        *self == TAC_A::B66
     }
     #[doc = "Checks if the value of the field is `B67`"]
     #[inline(always)]
     pub fn is_b67(&self) -> bool {
-        **self == TAC_A::B67
+        *self == TAC_A::B67
     }
     #[doc = "Checks if the value of the field is `B68`"]
     #[inline(always)]
     pub fn is_b68(&self) -> bool {
-        **self == TAC_A::B68
+        *self == TAC_A::B68
     }
     #[doc = "Checks if the value of the field is `B69`"]
     #[inline(always)]
     pub fn is_b69(&self) -> bool {
-        **self == TAC_A::B69
+        *self == TAC_A::B69
     }
     #[doc = "Checks if the value of the field is `B70`"]
     #[inline(always)]
     pub fn is_b70(&self) -> bool {
-        **self == TAC_A::B70
+        *self == TAC_A::B70
     }
     #[doc = "Checks if the value of the field is `B71`"]
     #[inline(always)]
     pub fn is_b71(&self) -> bool {
-        **self == TAC_A::B71
+        *self == TAC_A::B71
     }
     #[doc = "Checks if the value of the field is `B72`"]
     #[inline(always)]
     pub fn is_b72(&self) -> bool {
-        **self == TAC_A::B72
+        *self == TAC_A::B72
     }
     #[doc = "Checks if the value of the field is `B73`"]
     #[inline(always)]
     pub fn is_b73(&self) -> bool {
-        **self == TAC_A::B73
+        *self == TAC_A::B73
     }
     #[doc = "Checks if the value of the field is `B74`"]
     #[inline(always)]
     pub fn is_b74(&self) -> bool {
-        **self == TAC_A::B74
+        *self == TAC_A::B74
     }
     #[doc = "Checks if the value of the field is `B75`"]
     #[inline(always)]
     pub fn is_b75(&self) -> bool {
-        **self == TAC_A::B75
+        *self == TAC_A::B75
     }
     #[doc = "Checks if the value of the field is `B76`"]
     #[inline(always)]
     pub fn is_b76(&self) -> bool {
-        **self == TAC_A::B76
+        *self == TAC_A::B76
     }
     #[doc = "Checks if the value of the field is `B77`"]
     #[inline(always)]
     pub fn is_b77(&self) -> bool {
-        **self == TAC_A::B77
+        *self == TAC_A::B77
     }
     #[doc = "Checks if the value of the field is `B78`"]
     #[inline(always)]
     pub fn is_b78(&self) -> bool {
-        **self == TAC_A::B78
+        *self == TAC_A::B78
     }
     #[doc = "Checks if the value of the field is `B79`"]
     #[inline(always)]
     pub fn is_b79(&self) -> bool {
-        **self == TAC_A::B79
+        *self == TAC_A::B79
     }
     #[doc = "Checks if the value of the field is `B80`"]
     #[inline(always)]
     pub fn is_b80(&self) -> bool {
-        **self == TAC_A::B80
+        *self == TAC_A::B80
     }
     #[doc = "Checks if the value of the field is `B81`"]
     #[inline(always)]
     pub fn is_b81(&self) -> bool {
-        **self == TAC_A::B81
+        *self == TAC_A::B81
     }
     #[doc = "Checks if the value of the field is `B82`"]
     #[inline(always)]
     pub fn is_b82(&self) -> bool {
-        **self == TAC_A::B82
+        *self == TAC_A::B82
     }
     #[doc = "Checks if the value of the field is `B83`"]
     #[inline(always)]
     pub fn is_b83(&self) -> bool {
-        **self == TAC_A::B83
+        *self == TAC_A::B83
     }
     #[doc = "Checks if the value of the field is `B84`"]
     #[inline(always)]
     pub fn is_b84(&self) -> bool {
-        **self == TAC_A::B84
+        *self == TAC_A::B84
     }
     #[doc = "Checks if the value of the field is `B85`"]
     #[inline(always)]
     pub fn is_b85(&self) -> bool {
-        **self == TAC_A::B85
+        *self == TAC_A::B85
     }
     #[doc = "Checks if the value of the field is `B86`"]
     #[inline(always)]
     pub fn is_b86(&self) -> bool {
-        **self == TAC_A::B86
+        *self == TAC_A::B86
     }
     #[doc = "Checks if the value of the field is `B87`"]
     #[inline(always)]
     pub fn is_b87(&self) -> bool {
-        **self == TAC_A::B87
+        *self == TAC_A::B87
     }
     #[doc = "Checks if the value of the field is `B88`"]
     #[inline(always)]
     pub fn is_b88(&self) -> bool {
-        **self == TAC_A::B88
+        *self == TAC_A::B88
     }
     #[doc = "Checks if the value of the field is `B89`"]
     #[inline(always)]
     pub fn is_b89(&self) -> bool {
-        **self == TAC_A::B89
+        *self == TAC_A::B89
     }
     #[doc = "Checks if the value of the field is `B90`"]
     #[inline(always)]
     pub fn is_b90(&self) -> bool {
-        **self == TAC_A::B90
+        *self == TAC_A::B90
     }
     #[doc = "Checks if the value of the field is `B91`"]
     #[inline(always)]
     pub fn is_b91(&self) -> bool {
-        **self == TAC_A::B91
+        *self == TAC_A::B91
     }
     #[doc = "Checks if the value of the field is `B92`"]
     #[inline(always)]
     pub fn is_b92(&self) -> bool {
-        **self == TAC_A::B92
+        *self == TAC_A::B92
     }
     #[doc = "Checks if the value of the field is `B93`"]
     #[inline(always)]
     pub fn is_b93(&self) -> bool {
-        **self == TAC_A::B93
+        *self == TAC_A::B93
     }
     #[doc = "Checks if the value of the field is `B94`"]
     #[inline(always)]
     pub fn is_b94(&self) -> bool {
-        **self == TAC_A::B94
+        *self == TAC_A::B94
     }
     #[doc = "Checks if the value of the field is `B95`"]
     #[inline(always)]
     pub fn is_b95(&self) -> bool {
-        **self == TAC_A::B95
+        *self == TAC_A::B95
     }
     #[doc = "Checks if the value of the field is `B96`"]
     #[inline(always)]
     pub fn is_b96(&self) -> bool {
-        **self == TAC_A::B96
+        *self == TAC_A::B96
     }
     #[doc = "Checks if the value of the field is `B97`"]
     #[inline(always)]
     pub fn is_b97(&self) -> bool {
-        **self == TAC_A::B97
+        *self == TAC_A::B97
     }
     #[doc = "Checks if the value of the field is `B98`"]
     #[inline(always)]
     pub fn is_b98(&self) -> bool {
-        **self == TAC_A::B98
+        *self == TAC_A::B98
     }
     #[doc = "Checks if the value of the field is `B99`"]
     #[inline(always)]
     pub fn is_b99(&self) -> bool {
-        **self == TAC_A::B99
+        *self == TAC_A::B99
     }
     #[doc = "Checks if the value of the field is `B100`"]
     #[inline(always)]
     pub fn is_b100(&self) -> bool {
-        **self == TAC_A::B100
+        *self == TAC_A::B100
     }
     #[doc = "Checks if the value of the field is `B101`"]
     #[inline(always)]
     pub fn is_b101(&self) -> bool {
-        **self == TAC_A::B101
+        *self == TAC_A::B101
     }
     #[doc = "Checks if the value of the field is `B102`"]
     #[inline(always)]
     pub fn is_b102(&self) -> bool {
-        **self == TAC_A::B102
+        *self == TAC_A::B102
     }
     #[doc = "Checks if the value of the field is `B103`"]
     #[inline(always)]
     pub fn is_b103(&self) -> bool {
-        **self == TAC_A::B103
+        *self == TAC_A::B103
     }
     #[doc = "Checks if the value of the field is `B104`"]
     #[inline(always)]
     pub fn is_b104(&self) -> bool {
-        **self == TAC_A::B104
+        *self == TAC_A::B104
     }
     #[doc = "Checks if the value of the field is `B105`"]
     #[inline(always)]
     pub fn is_b105(&self) -> bool {
-        **self == TAC_A::B105
+        *self == TAC_A::B105
     }
     #[doc = "Checks if the value of the field is `B106`"]
     #[inline(always)]
     pub fn is_b106(&self) -> bool {
-        **self == TAC_A::B106
+        *self == TAC_A::B106
     }
     #[doc = "Checks if the value of the field is `B107`"]
     #[inline(always)]
     pub fn is_b107(&self) -> bool {
-        **self == TAC_A::B107
+        *self == TAC_A::B107
     }
     #[doc = "Checks if the value of the field is `B108`"]
     #[inline(always)]
     pub fn is_b108(&self) -> bool {
-        **self == TAC_A::B108
+        *self == TAC_A::B108
     }
     #[doc = "Checks if the value of the field is `B109`"]
     #[inline(always)]
     pub fn is_b109(&self) -> bool {
-        **self == TAC_A::B109
+        *self == TAC_A::B109
     }
     #[doc = "Checks if the value of the field is `B110`"]
     #[inline(always)]
     pub fn is_b110(&self) -> bool {
-        **self == TAC_A::B110
+        *self == TAC_A::B110
     }
     #[doc = "Checks if the value of the field is `B111`"]
     #[inline(always)]
     pub fn is_b111(&self) -> bool {
-        **self == TAC_A::B111
+        *self == TAC_A::B111
     }
     #[doc = "Checks if the value of the field is `B112`"]
     #[inline(always)]
     pub fn is_b112(&self) -> bool {
-        **self == TAC_A::B112
+        *self == TAC_A::B112
     }
     #[doc = "Checks if the value of the field is `B113`"]
     #[inline(always)]
     pub fn is_b113(&self) -> bool {
-        **self == TAC_A::B113
+        *self == TAC_A::B113
     }
     #[doc = "Checks if the value of the field is `B114`"]
     #[inline(always)]
     pub fn is_b114(&self) -> bool {
-        **self == TAC_A::B114
+        *self == TAC_A::B114
     }
     #[doc = "Checks if the value of the field is `B115`"]
     #[inline(always)]
     pub fn is_b115(&self) -> bool {
-        **self == TAC_A::B115
+        *self == TAC_A::B115
     }
     #[doc = "Checks if the value of the field is `B116`"]
     #[inline(always)]
     pub fn is_b116(&self) -> bool {
-        **self == TAC_A::B116
+        *self == TAC_A::B116
     }
     #[doc = "Checks if the value of the field is `B117`"]
     #[inline(always)]
     pub fn is_b117(&self) -> bool {
-        **self == TAC_A::B117
+        *self == TAC_A::B117
     }
     #[doc = "Checks if the value of the field is `B118`"]
     #[inline(always)]
     pub fn is_b118(&self) -> bool {
-        **self == TAC_A::B118
+        *self == TAC_A::B118
     }
     #[doc = "Checks if the value of the field is `B119`"]
     #[inline(always)]
     pub fn is_b119(&self) -> bool {
-        **self == TAC_A::B119
+        *self == TAC_A::B119
     }
     #[doc = "Checks if the value of the field is `B120`"]
     #[inline(always)]
     pub fn is_b120(&self) -> bool {
-        **self == TAC_A::B120
+        *self == TAC_A::B120
     }
     #[doc = "Checks if the value of the field is `B121`"]
     #[inline(always)]
     pub fn is_b121(&self) -> bool {
-        **self == TAC_A::B121
+        *self == TAC_A::B121
     }
     #[doc = "Checks if the value of the field is `B122`"]
     #[inline(always)]
     pub fn is_b122(&self) -> bool {
-        **self == TAC_A::B122
+        *self == TAC_A::B122
     }
     #[doc = "Checks if the value of the field is `B123`"]
     #[inline(always)]
     pub fn is_b123(&self) -> bool {
-        **self == TAC_A::B123
+        *self == TAC_A::B123
     }
     #[doc = "Checks if the value of the field is `B124`"]
     #[inline(always)]
     pub fn is_b124(&self) -> bool {
-        **self == TAC_A::B124
+        *self == TAC_A::B124
     }
     #[doc = "Checks if the value of the field is `B125`"]
     #[inline(always)]
     pub fn is_b125(&self) -> bool {
-        **self == TAC_A::B125
+        *self == TAC_A::B125
     }
     #[doc = "Checks if the value of the field is `B126`"]
     #[inline(always)]
     pub fn is_b126(&self) -> bool {
-        **self == TAC_A::B126
+        *self == TAC_A::B126
     }
     #[doc = "Checks if the value of the field is `B127`"]
     #[inline(always)]
     pub fn is_b127(&self) -> bool {
-        **self == TAC_A::B127
+        *self == TAC_A::B127
     }
     #[doc = "Checks if the value of the field is `B128`"]
     #[inline(always)]
     pub fn is_b128(&self) -> bool {
-        **self == TAC_A::B128
-    }
-}
-impl core::ops::Deref for TAC_R {
-    type Target = crate::FieldReader<u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TAC_A::B128
     }
 }
 impl R {

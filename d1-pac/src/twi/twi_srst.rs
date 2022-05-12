@@ -35,42 +35,9 @@ impl From<crate::W<TWI_SRST_SPEC>> for W {
     }
 }
 #[doc = "Field `soft_rst` reader - Soft Reset"]
-pub struct SOFT_RST_R(crate::FieldReader<bool>);
-impl SOFT_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        SOFT_RST_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SOFT_RST_R {
-    type Target = crate::FieldReader<bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SOFT_RST_R = crate::BitReader<bool>;
 #[doc = "Field `soft_rst` writer - Soft Reset"]
-pub struct SOFT_RST_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SOFT_RST_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !1) | (value as u32 & 1);
-        self.w
-    }
-}
+pub type SOFT_RST_W<'a> = crate::BitWriter<'a, u32, TWI_SRST_SPEC, bool, 0>;
 impl R {
     #[doc = "Bit 0 - Soft Reset"]
     #[inline(always)]
@@ -82,7 +49,7 @@ impl W {
     #[doc = "Bit 0 - Soft Reset"]
     #[inline(always)]
     pub fn soft_rst(&mut self) -> SOFT_RST_W {
-        SOFT_RST_W { w: self }
+        SOFT_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
