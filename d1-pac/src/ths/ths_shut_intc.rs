@@ -34,7 +34,69 @@ impl From<crate::W<THS_SHUT_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Enable the shutdown interrupt for the sensor\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SHUT_INT_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<SHUT_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: SHUT_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `SHUT_INT_EN` reader - Enable the shutdown interrupt for the sensor"]
+pub type SHUT_INT_EN_R = crate::BitReader<SHUT_INT_EN_A>;
+impl SHUT_INT_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SHUT_INT_EN_A {
+        match self.bits {
+            false => SHUT_INT_EN_A::DISABLE,
+            true => SHUT_INT_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == SHUT_INT_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == SHUT_INT_EN_A::ENABLE
+    }
+}
+#[doc = "Field `SHUT_INT_EN` writer - Enable the shutdown interrupt for the sensor"]
+pub type SHUT_INT_EN_W<'a> = crate::BitWriter<'a, u32, THS_SHUT_INTC_SPEC, SHUT_INT_EN_A, 0>;
+impl<'a> SHUT_INT_EN_W<'a> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(SHUT_INT_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(SHUT_INT_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Enable the shutdown interrupt for the sensor"]
+    #[inline(always)]
+    pub fn shut_int_en(&self) -> SHUT_INT_EN_R {
+        SHUT_INT_EN_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Enable the shutdown interrupt for the sensor"]
+    #[inline(always)]
+    pub fn shut_int_en(&mut self) -> SHUT_INT_EN_W {
+        SHUT_INT_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

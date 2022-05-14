@@ -9596,7 +9596,7 @@
     </peripheral>
 
     <peripheral>
-      <name>THC</name>
+      <name>THS</name>
       <description>Thermal Sensor Controller</description>
       <groupName>System</groupName>
       <baseAddress>0x02009400</baseAddress>
@@ -9613,80 +9613,376 @@
         <register>
           <name>THS_CTRL</name>
           <description>THS Control Register</description>
-          <addressOffset>0x0000</addressOffset>
+          <addressOffset>0x0</addressOffset>
+          <resetValue>0x1DF002F</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>TACQ</name>
+              <description>ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us.</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_EN</name>
           <description>THS Enable Register</description>
-          <addressOffset>0x0004</addressOffset>
+          <addressOffset>0x4</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>THS_EN</name>
+              <description>Enable temperature measurement sensor</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_PER</name>
           <description>THS Period Control Register</description>
-          <addressOffset>0x0008</addressOffset>
+          <addressOffset>0x8</addressOffset>
+          <resetValue>0x3A000</resetValue>
+          <resetMask>0xFFFFF000</resetMask>
+          <fields>
+            <field>
+              <name>THERMAL_PER</name>
+              <description>Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms.</description>
+              <bitRange>[31:12]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_DATA_INTC</name>
           <description>THS Data Interrupt Control Register</description>
-          <addressOffset>0x0010</addressOffset>
+          <addressOffset>0x10</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>THS_DATA_IRQ_EN</name>
+              <description>Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_SHUT_INTC</name>
           <description>THS Shut Interrupt Control Register</description>
-          <addressOffset>0x0014</addressOffset>
+          <addressOffset>0x14</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>SHUT_INT_EN</name>
+              <description>Enable the shutdown interrupt for the sensor</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_ALARM_INTC</name>
           <description>THS Alarm Interrupt Control Register</description>
-          <addressOffset>0x0018</addressOffset>
+          <addressOffset>0x18</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>ALARM_INT_EN</name>
+              <description>Enable the alarm interrupt for the sensor</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_DATA_INTS</name>
           <description>THS Data Interrupt Status Register</description>
-          <addressOffset>0x0020</addressOffset>
+          <addressOffset>0x20</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>THS_DATA_IRQ_STS</name>
+              <description>Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>No_effect</name>
+                  <description>No effect</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pending</name>
+                  <description>Pending</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_SHUT_INTS</name>
           <description>THS Shut Interrupt Status Register</description>
-          <addressOffset>0x0024</addressOffset>
+          <addressOffset>0x24</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>SHUT_INT_STS</name>
+              <description>Indicates the pending status of the sensor's shutdown interrupt.\n\nWrite 1 to clear the pending status.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>No_effect</name>
+                  <description>No effect</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pending</name>
+                  <description>Pending</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_ALARMO_INTS</name>
-          <description>THS Alarm off Interrupt Status Register</description>
-          <addressOffset>0x0028</addressOffset>
+          <description>THS_ALARM0_INTS</description>
+          <addressOffset>0x28</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>ALARM_OFF_STS</name>
+              <description>Alarm interrupt off pending for sensor\n\nWrite 1 to clear the pending status.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>No_effect</name>
+                  <description>No effect</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pending</name>
+                  <description>Pending</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_ALARM_INTS</name>
           <description>THS Alarm Interrupt Status Register</description>
-          <addressOffset>0x002C</addressOffset>
+          <addressOffset>0x2C</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1</resetMask>
+          <fields>
+            <field>
+              <name>ALARM_INT_STS</name>
+              <description>Alarm interrupt pending for sensor\n\nWrite 1 to clear the pending status.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>No_effect</name>
+                  <description>No effect</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pending</name>
+                  <description>Pending</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_FILTER</name>
           <description>THS Median Filter Control Register</description>
-          <addressOffset>0x0030</addressOffset>
+          <addressOffset>0x30</addressOffset>
+          <resetValue>0x1</resetValue>
+          <resetMask>0x7</resetMask>
+          <fields>
+            <field>
+              <name>FILTER_EN</name>
+              <description>Filter enable</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>FILTER_TYPE</name>
+              <description>Averaging filter type</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>T2</name>
+                  <description>2</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T4</name>
+                  <description>4</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T8</name>
+                  <description>8</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T16</name>
+                  <description>16</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_ALARM_CTRL</name>
           <description>THS Alarm Threshold Control Register</description>
-          <addressOffset>0x0040</addressOffset>
+          <addressOffset>0x40</addressOffset>
+          <resetValue>0x5A00684</resetValue>
+          <resetMask>0xFFF0FFF</resetMask>
+          <fields>
+            <field>
+              <name>ALARM_T_HOT</name>
+              <description>Thermal sensor alarm threshold for hot temperature</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ALARM_T_HYST</name>
+              <description>Thermal sensor alarm threshold for hysteresis temperature</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_SHUTDOWN_CTRL</name>
           <description>THS Shutdown Threshold Control Register</description>
-          <addressOffset>0x0080</addressOffset>
+          <addressOffset>0x80</addressOffset>
+          <resetValue>0x4E9</resetValue>
+          <resetMask>0xFFF</resetMask>
+          <fields>
+            <field>
+              <name>SHUT_T_HOT</name>
+              <description>Thermal sensor shutdown threshold for hot temperature</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_CDATA</name>
           <description>THS Calibration Data</description>
-          <addressOffset>0x00A0</addressOffset>
+          <addressOffset>0xA0</addressOffset>
+          <resetValue>0x800</resetValue>
+          <resetMask>0xFFF</resetMask>
+          <fields>
+            <field>
+              <name>THS_CDATA</name>
+              <description>Thermal sensor calibration data</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>THS_DATA</name>
           <description>THS Data Register</description>
-          <addressOffset>0x00C0</addressOffset>
+          <addressOffset>0xC0</addressOffset>
+          <access>read-only</access>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFF</resetMask>
+          <fields>
+            <field>
+              <name>THS_DATA</name>
+              <description>Temperature measurement data of sensor</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
-      </registers>
-    </peripheral>
+      </registers></peripheral>
 
     <peripheral>
       <name>IOMMU</name>

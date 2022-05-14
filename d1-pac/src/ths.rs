@@ -19,7 +19,7 @@ pub struct RegisterBlock {
     pub ths_data_ints: crate::Reg<ths_data_ints::THS_DATA_INTS_SPEC>,
     #[doc = "0x24 - THS Shut Interrupt Status Register"]
     pub ths_shut_ints: crate::Reg<ths_shut_ints::THS_SHUT_INTS_SPEC>,
-    #[doc = "0x28 - THS Alarm off Interrupt Status Register"]
+    #[doc = "0x28 - THS_ALARM0_INTS"]
     pub ths_alarmo_ints: crate::Reg<ths_alarmo_ints::THS_ALARMO_INTS_SPEC>,
     #[doc = "0x2c - THS Alarm Interrupt Status Register"]
     pub ths_alarm_ints: crate::Reg<ths_alarm_ints::THS_ALARM_INTS_SPEC>,
@@ -72,7 +72,7 @@ pub type THS_SHUT_INTS = crate::Reg<ths_shut_ints::THS_SHUT_INTS_SPEC>;
 pub mod ths_shut_ints;
 #[doc = "THS_ALARMO_INTS register accessor: an alias for `Reg<THS_ALARMO_INTS_SPEC>`"]
 pub type THS_ALARMO_INTS = crate::Reg<ths_alarmo_ints::THS_ALARMO_INTS_SPEC>;
-#[doc = "THS Alarm off Interrupt Status Register"]
+#[doc = "THS_ALARM0_INTS"]
 pub mod ths_alarmo_ints;
 #[doc = "THS_ALARM_INTS register accessor: an alias for `Reg<THS_ALARM_INTS_SPEC>`"]
 pub type THS_ALARM_INTS = crate::Reg<ths_alarm_ints::THS_ALARM_INTS_SPEC>;

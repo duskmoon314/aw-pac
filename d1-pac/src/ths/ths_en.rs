@@ -34,7 +34,69 @@ impl From<crate::W<THS_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Enable temperature measurement sensor\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum THS_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<THS_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: THS_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `THS_EN` reader - Enable temperature measurement sensor"]
+pub type THS_EN_R = crate::BitReader<THS_EN_A>;
+impl THS_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> THS_EN_A {
+        match self.bits {
+            false => THS_EN_A::DISABLE,
+            true => THS_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == THS_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == THS_EN_A::ENABLE
+    }
+}
+#[doc = "Field `THS_EN` writer - Enable temperature measurement sensor"]
+pub type THS_EN_W<'a> = crate::BitWriter<'a, u32, THS_EN_SPEC, THS_EN_A, 0>;
+impl<'a> THS_EN_W<'a> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(THS_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(THS_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Enable temperature measurement sensor"]
+    #[inline(always)]
+    pub fn ths_en(&self) -> THS_EN_R {
+        THS_EN_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Enable temperature measurement sensor"]
+    #[inline(always)]
+    pub fn ths_en(&mut self) -> THS_EN_W {
+        THS_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

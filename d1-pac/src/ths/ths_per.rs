@@ -34,7 +34,23 @@ impl From<crate::W<THS_PER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `THERMAL_PER` reader - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
+pub type THERMAL_PER_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `THERMAL_PER` writer - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
+pub type THERMAL_PER_W<'a> = crate::FieldWriter<'a, u32, THS_PER_SPEC, u32, u32, 20, 12>;
+impl R {
+    #[doc = "Bits 12:31 - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
+    #[inline(always)]
+    pub fn thermal_per(&self) -> THERMAL_PER_R {
+        THERMAL_PER_R::new(((self.bits >> 12) & 0x000f_ffff) as u32)
+    }
+}
 impl W {
+    #[doc = "Bits 12:31 - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
+    #[inline(always)]
+    pub fn thermal_per(&mut self) -> THERMAL_PER_W {
+        THERMAL_PER_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +71,10 @@ impl crate::Readable for THS_PER_SPEC {
 impl crate::Writable for THS_PER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_PER to value 0"]
+#[doc = "`reset()` method sets THS_PER to value 0x0003_a000"]
 impl crate::Resettable for THS_PER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0003_a000
     }
 }

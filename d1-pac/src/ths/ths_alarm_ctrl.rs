@@ -34,7 +34,37 @@ impl From<crate::W<THS_ALARM_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ALARM_T_HOT` reader - Thermal sensor alarm threshold for hot temperature"]
+pub type ALARM_T_HOT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ALARM_T_HOT` writer - Thermal sensor alarm threshold for hot temperature"]
+pub type ALARM_T_HOT_W<'a> = crate::FieldWriter<'a, u32, THS_ALARM_CTRL_SPEC, u16, u16, 12, 16>;
+#[doc = "Field `ALARM_T_HYST` reader - Thermal sensor alarm threshold for hysteresis temperature"]
+pub type ALARM_T_HYST_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ALARM_T_HYST` writer - Thermal sensor alarm threshold for hysteresis temperature"]
+pub type ALARM_T_HYST_W<'a> = crate::FieldWriter<'a, u32, THS_ALARM_CTRL_SPEC, u16, u16, 12, 0>;
+impl R {
+    #[doc = "Bits 16:27 - Thermal sensor alarm threshold for hot temperature"]
+    #[inline(always)]
+    pub fn alarm_t_hot(&self) -> ALARM_T_HOT_R {
+        ALARM_T_HOT_R::new(((self.bits >> 16) & 0x0fff) as u16)
+    }
+    #[doc = "Bits 0:11 - Thermal sensor alarm threshold for hysteresis temperature"]
+    #[inline(always)]
+    pub fn alarm_t_hyst(&self) -> ALARM_T_HYST_R {
+        ALARM_T_HYST_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:27 - Thermal sensor alarm threshold for hot temperature"]
+    #[inline(always)]
+    pub fn alarm_t_hot(&mut self) -> ALARM_T_HOT_W {
+        ALARM_T_HOT_W::new(self)
+    }
+    #[doc = "Bits 0:11 - Thermal sensor alarm threshold for hysteresis temperature"]
+    #[inline(always)]
+    pub fn alarm_t_hyst(&mut self) -> ALARM_T_HYST_W {
+        ALARM_T_HYST_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +85,10 @@ impl crate::Readable for THS_ALARM_CTRL_SPEC {
 impl crate::Writable for THS_ALARM_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_ALARM_CTRL to value 0"]
+#[doc = "`reset()` method sets THS_ALARM_CTRL to value 0x05a0_0684"]
 impl crate::Resettable for THS_ALARM_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x05a0_0684
     }
 }

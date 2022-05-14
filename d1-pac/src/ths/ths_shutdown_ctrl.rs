@@ -34,7 +34,23 @@ impl From<crate::W<THS_SHUTDOWN_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SHUT_T_HOT` reader - Thermal sensor shutdown threshold for hot temperature"]
+pub type SHUT_T_HOT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `SHUT_T_HOT` writer - Thermal sensor shutdown threshold for hot temperature"]
+pub type SHUT_T_HOT_W<'a> = crate::FieldWriter<'a, u32, THS_SHUTDOWN_CTRL_SPEC, u16, u16, 12, 0>;
+impl R {
+    #[doc = "Bits 0:11 - Thermal sensor shutdown threshold for hot temperature"]
+    #[inline(always)]
+    pub fn shut_t_hot(&self) -> SHUT_T_HOT_R {
+        SHUT_T_HOT_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:11 - Thermal sensor shutdown threshold for hot temperature"]
+    #[inline(always)]
+    pub fn shut_t_hot(&mut self) -> SHUT_T_HOT_W {
+        SHUT_T_HOT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +71,10 @@ impl crate::Readable for THS_SHUTDOWN_CTRL_SPEC {
 impl crate::Writable for THS_SHUTDOWN_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_SHUTDOWN_CTRL to value 0"]
+#[doc = "`reset()` method sets THS_SHUTDOWN_CTRL to value 0x04e9"]
 impl crate::Resettable for THS_SHUTDOWN_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x04e9
     }
 }

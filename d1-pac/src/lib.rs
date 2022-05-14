@@ -506,33 +506,33 @@ impl core::fmt::Debug for DMAC {
 #[doc = "Direct Memory Access Controller"]
 pub mod dmac;
 #[doc = "Thermal Sensor Controller"]
-pub struct THC {
+pub struct THS {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for THC {}
-impl THC {
+unsafe impl Send for THS {}
+impl THS {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const thc::RegisterBlock = 0x0200_9400 as *const _;
+    pub const PTR: *const ths::RegisterBlock = 0x0200_9400 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const thc::RegisterBlock {
+    pub const fn ptr() -> *const ths::RegisterBlock {
         Self::PTR
     }
 }
-impl Deref for THC {
-    type Target = thc::RegisterBlock;
+impl Deref for THS {
+    type Target = ths::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for THC {
+impl core::fmt::Debug for THS {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("THC").finish()
+        f.debug_struct("THS").finish()
     }
 }
 #[doc = "Thermal Sensor Controller"]
-pub mod thc;
+pub mod ths;
 #[doc = "I/O Memory Management Unit"]
 pub struct IOMMU {
     _marker: PhantomData<*const ()>,
@@ -1762,8 +1762,8 @@ pub struct Peripherals {
     pub PLIC: PLIC,
     #[doc = "DMAC"]
     pub DMAC: DMAC,
-    #[doc = "THC"]
-    pub THC: THC,
+    #[doc = "THS"]
+    pub THS: THS,
     #[doc = "IOMMU"]
     pub IOMMU: IOMMU,
     #[doc = "DSP_MSGBOX"]
@@ -1894,7 +1894,7 @@ impl Peripherals {
             DMAC: DMAC {
                 _marker: PhantomData,
             },
-            THC: THC {
+            THS: THS {
                 _marker: PhantomData,
             },
             IOMMU: IOMMU {
