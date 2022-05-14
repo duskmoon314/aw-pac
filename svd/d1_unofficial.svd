@@ -29014,146 +29014,1008 @@
         <register>
           <name>PIER</name>
           <description>PWM IRQ Enable Register</description>
-          <addressOffset>0x0000</addressOffset>
+          <addressOffset>0x0</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xF00FF</resetMask>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>PGIE%s</name>
+              <description>PWM Group Interrupt Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>PCIE%s</name>
+              <description>PWM Channel Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>PWM Channel Interrupt Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>PWM Channel Interrupt Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PISR</name>
           <description>PWM IRQ Status Register</description>
-          <addressOffset>0x0004</addressOffset>
+          <addressOffset>0x4</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xF00FF</resetMask>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>PGIS%s</name>
+              <description>PWM Group Interrupt Status</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>PIS%s</name>
+              <description>PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_pending</name>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CIER</name>
           <description>Capture IRQ Enable Register</description>
-          <addressOffset>0x0010</addressOffset>
+          <addressOffset>0x10</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFF</resetMask>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>2</dimIncrement>
+              <name>CFIE%s</name>
+              <description>If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending.</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Capture channel fall lock interrupt disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Capture channel fall lock interrupt enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>2</dimIncrement>
+              <name>CRIE%s</name>
+              <description>If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Capture channel rise lock interrupt disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Capture channel rise lock interrupt enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CISR</name>
           <description>Capture IRQ Status Register</description>
-          <addressOffset>0x0014</addressOffset>
+          <addressOffset>0x14</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFF</resetMask>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>2</dimIncrement>
+              <name>CFIS%s</name>
+              <description>Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt.</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_pending</name>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>2</dimIncrement>
+              <name>CRIS%s</name>
+              <description>Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_pending</name>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pending</name>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PCCR01</name>
           <description>PWM01 Clock Configuration Register</description>
-          <addressOffset>0x0020</addressOffset>
+          <addressOffset>0x20</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x18F</resetMask>
+          <fields>
+            <field>
+              <name>PWM01_CLK_SRC</name>
+              <description>Select PWM01 Clock Source</description>
+              <bitRange>[8:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <description>HOSC</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB0</name>
+                  <description>APB0</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM01_CLK_DIV_M</name>
+              <description>PWM01 Clock Divide M</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M1</name>
+                  <description>/1</description>
+                  <value>0b0000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M2</name>
+                  <description>/2</description>
+                  <value>0b0001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M4</name>
+                  <description>/4</description>
+                  <value>0b0010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M8</name>
+                  <description>/8</description>
+                  <value>0b0011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M16</name>
+                  <description>/16</description>
+                  <value>0b0100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M32</name>
+                  <description>/32</description>
+                  <value>0b0101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M64</name>
+                  <description>/64</description>
+                  <value>0b0110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M128</name>
+                  <description>/128</description>
+                  <value>0b0111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M256</name>
+                  <description>/256</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PCCR23</name>
           <description>PWM23 Clock Configuration Register</description>
-          <addressOffset>0x0024</addressOffset>
+          <addressOffset>0x24</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x18F</resetMask>
+          <fields>
+            <field>
+              <name>PWM23_CLK_SRC_SEL</name>
+              <description>Select PWM23 Clock Source</description>
+              <bitRange>[8:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <description>HOSC</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB0</name>
+                  <description>APB0</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM23_CLK_DIV_M</name>
+              <description>PWM23 Clock Divide M</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M1</name>
+                  <description>/1</description>
+                  <value>0b0000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M2</name>
+                  <description>/2</description>
+                  <value>0b0001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M4</name>
+                  <description>/4</description>
+                  <value>0b0010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M8</name>
+                  <description>/8</description>
+                  <value>0b0011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M16</name>
+                  <description>/16</description>
+                  <value>0b0100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M32</name>
+                  <description>/32</description>
+                  <value>0b0101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M64</name>
+                  <description>/64</description>
+                  <value>0b0110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M128</name>
+                  <description>/128</description>
+                  <value>0b0111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M256</name>
+                  <description>/256</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PCCR45</name>
           <description>PWM45 Clock Configuration Register</description>
-          <addressOffset>0x0028</addressOffset>
+          <addressOffset>0x28</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x18F</resetMask>
+          <fields>
+            <field>
+              <name>PWM45_CLK_SRC_SEL</name>
+              <description>Select PWM45 Clock Source</description>
+              <bitRange>[8:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <description>HOSC</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB0</name>
+                  <description>APB0</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM45_CLK_DIV_M</name>
+              <description>PWM45 Clock Divide M</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M1</name>
+                  <description>/1</description>
+                  <value>0b0000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M2</name>
+                  <description>/2</description>
+                  <value>0b0001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M4</name>
+                  <description>/4</description>
+                  <value>0b0010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M8</name>
+                  <description>/8</description>
+                  <value>0b0011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M16</name>
+                  <description>/16</description>
+                  <value>0b0100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M32</name>
+                  <description>/32</description>
+                  <value>0b0101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M64</name>
+                  <description>/64</description>
+                  <value>0b0110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M128</name>
+                  <description>/128</description>
+                  <value>0b0111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M256</name>
+                  <description>/256</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PCCR67</name>
           <description>PWM67 Clock Configuration Register</description>
-          <addressOffset>0x002C</addressOffset>
+          <addressOffset>0x2C</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x18F</resetMask>
+          <fields>
+            <field>
+              <name>PWM67_CLK_SRC_SEL</name>
+              <description>Select PWM67 Clock Source</description>
+              <bitRange>[8:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <description>HOSC</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>APB0</name>
+                  <description>APB0</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM67_CLK_DIV_M</name>
+              <description>PWM67 Clock Divide M</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M1</name>
+                  <description>/1</description>
+                  <value>0b0000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M2</name>
+                  <description>/2</description>
+                  <value>0b0001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M4</name>
+                  <description>/4</description>
+                  <value>0b0010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M8</name>
+                  <description>/8</description>
+                  <value>0b0011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M16</name>
+                  <description>/16</description>
+                  <value>0b0100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M32</name>
+                  <description>/32</description>
+                  <value>0b0101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M64</name>
+                  <description>/64</description>
+                  <value>0b0110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M128</name>
+                  <description>/128</description>
+                  <value>0b0111</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M256</name>
+                  <description>/256</description>
+                  <value>0b1000</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PCGR</name>
           <description>PWM Clock Gating Register</description>
-          <addressOffset>0x0040</addressOffset>
+          <addressOffset>0x40</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF00FF</resetMask>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>PWM%s_CLK_BYPASS</name>
+              <description>Bypass clock source (after pre-scale) to PWM output</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_bypass</name>
+                  <description>not bypass</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>bypass</name>
+                  <description>bypass</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>PWM%s_CLK_GATING</name>
+              <description>Gating clock for PWM</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Mask</name>
+                  <description>Mask</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pass</name>
+                  <description>Pass</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PDZCR01</name>
           <description>PWM01 Dead Zone Control Register</description>
-          <addressOffset>0x0060</addressOffset>
+          <addressOffset>0x60</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF01</resetMask>
+          <fields>
+            <field>
+              <name>PWM01_DZ_INTV</name>
+              <description>PWM01 Dead Zone Interval Value</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PWM01_DZ_EN</name>
+              <description>PWM01 Dead Zone Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Dead Zone disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Dead Zone enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PDZCR23</name>
           <description>PWM23 Dead Zone Control Register</description>
-          <addressOffset>0x0064</addressOffset>
+          <addressOffset>0x64</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF01</resetMask>
+          <fields>
+            <field>
+              <name>PWM23_DZ_INTV</name>
+              <description>PWM23 Dead Zone Interval Value</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PWM23_DZ_EN</name>
+              <description>PWM23 Dead Zone Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Dead Zone disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Dead Zone enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PDZCR45</name>
           <description>PWM45 Dead Zone Control Register</description>
-          <addressOffset>0x0068</addressOffset>
+          <addressOffset>0x68</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF01</resetMask>
+          <fields>
+            <field>
+              <name>PWM45_DZ_INTV</name>
+              <description>PWM45 Dead Zone Interval Value</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PWM45_DZ_EN</name>
+              <description>PWM45 Dead Zone Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Dead Zone disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Dead Zone enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PDZCR67</name>
           <description>PWM67 Dead Zone Control Register</description>
-          <addressOffset>0x006C</addressOffset>
+          <addressOffset>0x6C</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF01</resetMask>
+          <fields>
+            <field>
+              <name>PWM67_DZ_INTV</name>
+              <description>PWM67 Dead Zone Interval Value</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PWM67_DZ_EN</name>
+              <description>PWM67 Dead Zone Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Dead Zone disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Dead Zone enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>PER</name>
           <description>PWM Enable Register</description>
-          <addressOffset>0x0080</addressOffset>
+          <addressOffset>0x80</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>PWM%s_EN</name>
+              <description>When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>PWM disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>PWM enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>PGR0</name>
-          <description>PWM Group0 Register</description>
-          <addressOffset>0x0090</addressOffset>
-        </register>
-        <register>
-          <name>PGR1</name>
-          <description>PWM Group1 Register</description>
-          <addressOffset>0x0094</addressOffset>
-        </register>
-        <register>
-          <name>PGR2</name>
-          <description>PWM Group2 Register</description>
-          <addressOffset>0x0098</addressOffset>
-        </register>
-        <register>
-          <name>PGR3</name>
-          <description>PWM Group3 Register</description>
-          <addressOffset>0x009C</addressOffset>
+          <dim>4</dim>
+          <dimIncrement>4</dimIncrement>
+          <name>PGR%s</name>
+          <description>PWM Group[g] Register</description>
+          <addressOffset>0x90</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x3FFFF</resetMask>
+          <fields>
+            <field>
+              <name>START</name>
+              <description>The PWM channels selected in CS start to output PWM waveform at the same time.</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>EN</name>
+              <description>PWM Group Enable.</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CS</name>
+              <description>If bit[i] is set, the PWM i is selected as one channel of PWM Group[g].</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>CER</name>
           <description>Capture Enable Register</description>
-          <addressOffset>0x00C0</addressOffset>
+          <addressOffset>0xC0</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFF</resetMask>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>1</dimIncrement>
+              <name>CAP%s_EN</name>
+              <description>When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>disable</name>
+                  <description>Capture disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>enable</name>
+                  <description>Capture enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
-          <dimIncrement>0x0020</dimIncrement>
-          <name>pcr%s</name>
+          <dimIncrement>0x20</dimIncrement>
+          <name>PCR%s</name>
           <description>PWM Control Register</description>
-          <addressOffset>0x0100</addressOffset>
+          <addressOffset>0x100</addressOffset>
+          <fields>
+            <field>
+              <name>PWM_PUL_NUM</name>
+              <description>In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops</description>
+              <bitRange>[31:16]</bitRange>
+            </field>
+            <field>
+              <name>PWM_PERIOD_RDY</name>
+              <description>PWM Period Register Ready</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ready</name>
+                  <description>PWM period register is ready to write</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>busy</name>
+                  <description>PWM period register is busy</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM_PUL_START</name>
+              <description>PWM Pulse Output Start</description>
+              <bitRange>[10:10]</bitRange>
+              <modifiedWriteValues>clear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>no_effect</name>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>start</name>
+                  <description>Output pulse for PWM_CYCLE_NM + 1</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM_MODE</name>
+              <description>PWM Output Mode Select</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>cycle</name>
+                  <description>Cycle mode</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>pulse</name>
+                  <description>Pulse mode</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM_ACT_STA</name>
+              <description>PWM Active State</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>low</name>
+                  <description>low level</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>high</name>
+                  <description>high level</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>PWM_PRESCAL_K</name>
+              <description>PWM pre-scale K, actual pre-scale is (K + 1)</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
-          <dimIncrement>0x0020</dimIncrement>
-          <name>ppr%s</name>
+          <dimIncrement>0x20</dimIncrement>
+          <name>PPR%s</name>
           <description>PWM Period Register</description>
-          <addressOffset>0x0104</addressOffset>
+          <addressOffset>0x104</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>PWM_ENTIRE_CYCLE</name>
+              <description>Number of the entire cycles in the PWM clock.\n\nN: N + 1 cycles</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PWM_ACT_CYCLE</name>
+              <description>Number of the active cycles in the PWM clock.\n\nN: N cycles</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
-          <dimIncrement>0x0020</dimIncrement>
-          <name>pcntr%s</name>
+          <dimIncrement>0x20</dimIncrement>
+          <name>PCNTR%s</name>
           <description>PWM Count Register</description>
-          <addressOffset>0x0108</addressOffset>
+          <addressOffset>0x108</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>PWM_COUNTER_START</name>
+              <description>PWM counter value is set for phase control.</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>PWM_COUNTER_STATUS</name>
+              <description>On PWM output or capture input, reading this register could get the current value of the PWM 16-bit up-counter.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
-          <dimIncrement>0x0020</dimIncrement>
-          <name>ppcntr%s</name>
-          <description>PWM Pulse Count Register</description>
-          <addressOffset>0x010c</addressOffset>
+          <dimIncrement>0x20</dimIncrement>
+          <name>PPCNTR%s</name>
+          <description>PWM Pulse Counter Register</description>
+          <addressOffset>0x10C</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>PWM_PUL_COUNTER_STATUS</name>
+              <description>On PWM output, reading this register could get the current value of the PWM pulse counter.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
-          <dimIncrement>0x0020</dimIncrement>
-          <name>ccr%s</name>
+          <dimIncrement>0x20</dimIncrement>
+          <name>CCR%s</name>
           <description>Capture Control Register</description>
-          <addressOffset>0x0110</addressOffset>
+          <addressOffset>0x110</addressOffset>
+          <resetValue>0x0</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field>
+              <name>CRLF</name>
+              <description>When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit.</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>CFLF</name>
+              <description>When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit.</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>CRTE</name>
+              <description>Rising edge capture trigger enable</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CFTE</name>
+              <description>Falling edge capture trigger enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CAPINV</name>
+              <description>Inverse the signal input from capture channel before 16-bit counter of capture channel.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_inverse</name>
+                  <description>not inverse</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>inverse</name>
+                  <description>inverse</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
-          <dimIncrement>0x0020</dimIncrement>
-          <name>crlr%s</name>
+          <dimIncrement>0x20</dimIncrement>
+          <name>CRLR%s</name>
           <description>Capture Rise Lock Register</description>
-          <addressOffset>0x0114</addressOffset>
+          <addressOffset>0x114</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>CRLR</name>
+              <description>When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to the register.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
-          <dimIncrement>0x0020</dimIncrement>
-          <name>cflr%s</name>
+          <dimIncrement>0x20</dimIncrement>
+          <name>CFLR%s</name>
           <description>Capture Fall Lock Register</description>
-          <addressOffset>0x0118</addressOffset>
+          <addressOffset>0x118</addressOffset>
+          <access>read-only</access>
+          <fields>
+            <field>
+              <name>CFLR</name>
+              <description>When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to the register.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
