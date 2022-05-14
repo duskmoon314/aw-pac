@@ -106,10 +106,12 @@ pub enum Interrupt {
     CSI_TOP_PKT = 122,
     #[doc = "123 - TVD"]
     TVD = 123,
-    #[doc = "144 - RISC-V_MBOX_RISC-V"]
-    RISCV_MBOX_RISCV = 144,
-    #[doc = "145 - RISC-V_MBOX_DSP"]
-    RISCV_MBOX_DSP = 145,
+    #[doc = "140 - DSP_MBOX_RV_W"]
+    DSP_MBOX_RV_W = 140,
+    #[doc = "144 - RV_MBOX_RV"]
+    RV_MBOX_RV = 144,
+    #[doc = "145 - RV_MBOX_DSP"]
+    RV_MBOX_DSP = 145,
     #[doc = "167 - IR_RX"]
     IR_RX = 167,
 }
@@ -173,8 +175,9 @@ impl Interrupt {
             112 => Ok(Interrupt::CSI_DMA1),
             122 => Ok(Interrupt::CSI_TOP_PKT),
             123 => Ok(Interrupt::TVD),
-            144 => Ok(Interrupt::RISCV_MBOX_RISCV),
-            145 => Ok(Interrupt::RISCV_MBOX_DSP),
+            140 => Ok(Interrupt::DSP_MBOX_RV_W),
+            144 => Ok(Interrupt::RV_MBOX_RV),
+            145 => Ok(Interrupt::RV_MBOX_DSP),
             167 => Ok(Interrupt::IR_RX),
             _ => Err(TryFromInterruptError(())),
         }

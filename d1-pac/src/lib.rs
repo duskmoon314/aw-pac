@@ -78,8 +78,9 @@ extern "C" {
     fn CSI_DMA1();
     fn CSI_TOP_PKT();
     fn TVD();
-    fn RISCV_MBOX_RISCV();
-    fn RISCV_MBOX_DSP();
+    fn DSP_MBOX_RV_W();
+    fn RV_MBOX_RV();
+    fn RV_MBOX_DSP();
     fn IR_RX();
 }
 #[doc(hidden)]
@@ -245,15 +246,17 @@ pub static __EXTERNAL_INTERRUPTS: [Vector; 168] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector {
+        _handler: DSP_MBOX_RV_W,
+    },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector {
-        _handler: RISCV_MBOX_RISCV,
+        _handler: RV_MBOX_RV,
     },
     Vector {
-        _handler: RISCV_MBOX_DSP,
+        _handler: RV_MBOX_DSP,
     },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -590,33 +593,33 @@ impl core::fmt::Debug for DSP_MSGBOX {
 #[doc = "DSP Message Box"]
 pub mod dsp_msgbox;
 #[doc = "RISC-V Message Box"]
-pub struct RISC_V_MSGBOX {
+pub struct RV_MSGBOX {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for RISC_V_MSGBOX {}
-impl RISC_V_MSGBOX {
+unsafe impl Send for RV_MSGBOX {}
+impl RV_MSGBOX {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const risc_v_msgbox::RegisterBlock = 0x0601_f000 as *const _;
+    pub const PTR: *const dsp_msgbox::RegisterBlock = 0x0601_f000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const risc_v_msgbox::RegisterBlock {
+    pub const fn ptr() -> *const dsp_msgbox::RegisterBlock {
         Self::PTR
     }
 }
-impl Deref for RISC_V_MSGBOX {
-    type Target = risc_v_msgbox::RegisterBlock;
+impl Deref for RV_MSGBOX {
+    type Target = dsp_msgbox::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for RISC_V_MSGBOX {
+impl core::fmt::Debug for RV_MSGBOX {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("RISC_V_MSGBOX").finish()
+        f.debug_struct("RV_MSGBOX").finish()
     }
 }
 #[doc = "RISC-V Message Box"]
-pub mod risc_v_msgbox;
+pub use dsp_msgbox as rv_msgbox;
 #[doc = "Spinlock"]
 pub struct SPINLOCK {
     _marker: PhantomData<*const ()>,
@@ -1768,8 +1771,8 @@ pub struct Peripherals {
     pub IOMMU: IOMMU,
     #[doc = "DSP_MSGBOX"]
     pub DSP_MSGBOX: DSP_MSGBOX,
-    #[doc = "RISC_V_MSGBOX"]
-    pub RISC_V_MSGBOX: RISC_V_MSGBOX,
+    #[doc = "RV_MSGBOX"]
+    pub RV_MSGBOX: RV_MSGBOX,
     #[doc = "SPINLOCK"]
     pub SPINLOCK: SPINLOCK,
     #[doc = "RTC"]
@@ -1903,7 +1906,7 @@ impl Peripherals {
             DSP_MSGBOX: DSP_MSGBOX {
                 _marker: PhantomData,
             },
-            RISC_V_MSGBOX: RISC_V_MSGBOX {
+            RV_MSGBOX: RV_MSGBOX {
                 _marker: PhantomData,
             },
             SPINLOCK: SPINLOCK {

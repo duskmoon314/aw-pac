@@ -50,7 +50,8 @@ PROVIDE(CSI_DMA0 = DefaultHandler);
 PROVIDE(CSI_DMA1 = DefaultHandler);
 PROVIDE(CSI_TOP_PKT = DefaultHandler);
 PROVIDE(TVD = DefaultHandler);
-PROVIDE(RISCV_MBOX_RISCV = DefaultHandler);
-PROVIDE(RISCV_MBOX_DSP = DefaultHandler);
+PROVIDE(DSP_MBOX_RV_W = DefaultHandler);
+PROVIDE(RV_MBOX_RV = DefaultHandler);
+PROVIDE(RV_MBOX_DSP = DefaultHandler);
 PROVIDE(IR_RX = DefaultHandler);
 

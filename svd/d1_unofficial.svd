@@ -9982,7 +9982,8 @@
             </field>
           </fields>
         </register>
-      </registers></peripheral>
+      </registers>
+    </peripheral>
 
     <peripheral>
       <name>IOMMU</name>
@@ -10592,103 +10593,222 @@
         <size>0x1000</size>
         <usage>registers</usage>
       </addressBlock>
+      <interrupt>
+        <name>DSP_MBOX_RV_W</name>
+        <value>140</value>
+      </interrupt>
       <registers>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_RD_IRQ_EN_REG_%s</name>
-          <description>MSGBOX Read IRQ Enable Register</description>
-          <addressOffset>0x0020</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_RD_IRQ_STATUS_REG_%s</name>
-          <description>MSGBOX Read IRQ Status Register</description>
-          <addressOffset>0x0024</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_WR_IRQ_EN_REG_%s</name>
-          <description>MSGBOX Write IRQ Enable Register</description>
-          <addressOffset>0x0030</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_WR_IRQ_STATUS_REG_%s</name>
-          <description>MSGBOX Write IRQ Status Register</description>
-          <addressOffset>0x0034</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_DEBUG_REG_%s</name>
-          <description>MSGBOX Debug Register</description>
-          <addressOffset>0x0040</addressOffset>
-        </register>
         <cluster>
           <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_FIFO_STATUS_REG_N%s</name>
-          <description>MSGBOX FIFO Status Register</description>
-          <addressOffset>0x0050</addressOffset>
+          <dimIncrement>0x100</dimIncrement>
+          <name>MSGBOX%s</name>
+          <description>Communicate with CPU[N]</description>
+          <addressOffset>0</addressOffset>
           <register>
-            <dim>3</dim>
-            <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_FIFO_STATUS_REG_P%s</name>
-            <description>MSGBOX FIFO Status Register</description>
-            <addressOffset>0</addressOffset>
+            <name>MSGBOX_RD_IRQ_EN_REG</name>
+            <description>Message Box Read Interrupt Enable Register</description>
+            <addressOffset>0x0020</addressOffset>
+            <fields>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x2</dimIncrement>
+                <name>RECEPTION_MQ%s_IRQ_EN</name>
+                <description>Reception Channel[i] Interrupt Enable</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
-        </cluster>
-        <cluster>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_MSG_STATUS_REG_N%s</name>
-          <description>MSGBOX Message Status Register</description>
-          <addressOffset>0x0060</addressOffset>
           <register>
-            <dim>3</dim>
-            <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_MSG_STATUS_REG_P%s</name>
-            <description>MSGBOX Message Status Register</description>
-            <addressOffset>0</addressOffset>
+            <name>MSGBOX_RD_IRQ_STATUS_REG</name>
+            <description>Message Box Read Interrupt Status Register</description>
+            <addressOffset>0x0024</addressOffset>
+            <fields>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x2</dimIncrement>
+                <name>RECEPTION_MQ%s_IRQ_PEND</name>
+                <description>Reception Channel[i] Interrupt Pending</description>
+                <bitRange>[0:0]</bitRange>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>pending</name>
+                    <description>Pending</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
-        </cluster>
-        <cluster>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_MSG_REG_N%s</name>
-          <description>MSGBOX Message Queue Register</description>
-          <addressOffset>0x0070</addressOffset>
           <register>
-            <dim>3</dim>
-            <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_MSG_REG_P%s</name>
-            <description>MSGBOX Message Queue Register</description>
-            <addressOffset>0</addressOffset>
+            <name>MSGBOX_WR_IRQ_EN_REG</name>
+            <description>Message Box Write Interrupt Enable Register</description>
+            <addressOffset>0x0030</addressOffset>
+            <fields>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x2</dimIncrement>
+                <name>TRANSMIT_MQ%s_IRQ_EN</name>
+                <description>Transmit Channel[i] Interrupt Enable</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
-        </cluster>
-        <cluster>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_WR_INT_THRESHOLD_REG_N%s</name>
-          <description>MSGBOX Write IRQ Threshold Register</description>
-          <addressOffset>0x0080</addressOffset>
           <register>
-            <dim>3</dim>
+            <name>MSGBOX_WR_IRQ_STATUS_REG</name>
+            <description>Message Box Write Interrupt Status Register</description>
+            <addressOffset>0x0034</addressOffset>
+            <fields>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x2</dimIncrement>
+                <name>TRANSMIT_MQ%s_IRQ_PEND</name>
+                <description>Transmit Channel[i] Interrupt Pending</description>
+                <bitRange>[0:0]</bitRange>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>no_effect</name>
+                    <description>No effect</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>pending</name>
+                    <description>Pending</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>MSGBOX_DEBUG_REG</name>
+            <description>Message Box Debug Register</description>
+            <addressOffset>0x0040</addressOffset>
+          </register>
+          <register>
+            <dim>4</dim>
             <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_WR_INT_THRESHOLD_REG_P%s</name>
-            <description>MSGBOX Write IRQ Threshold Register</description>
-            <addressOffset>0</addressOffset>
+            <name>MSGBOX_FIFO_STATUS_REG%s</name>
+            <description>Message Box FIFO Status Register</description>
+            <addressOffset>0x0050</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>FIFO_NOT_AVA_FLAG</name>
+                <description>FIFO Not Available Flag</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>available</name>
+                    <description>The Message FIFO queue empty level reaches the configured threshold</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>not_available</name>
+                    <description>The Message FIFO queue empty level does not reach the configured threshold</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <dim>4</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_MSG_STATUS_REG%s</name>
+            <description>Message Box Message Status Register</description>
+            <addressOffset>0x0060</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>MSG_NUM</name>
+                <description>Message Number\n\nNumber of unread messages in the message queue. Here, limit to eight messages per message queue.</description>
+                <bitRange>[3:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <dim>4</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_MSG_REG%s</name>
+            <description>Message Box Message Queue Register</description>
+            <addressOffset>0x0070</addressOffset>
+            <fields>
+              <field>
+                <name>MSG_QUE</name>
+                <description>The message register stores the next to be read message of the message FIFO queue.</description>
+                <bitRange>[31:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <dim>4</dim>
+            <dimIncrement>0x0004</dimIncrement>
+            <name>MSGBOX_WR_INT_THRESHOLD_REG%s</name>
+            <description>Message Box Write Interrupt Threshold Register</description>
+            <addressOffset>0x0080</addressOffset>
+            <fields>
+              <field>
+                <name>MSG_WR_INT_THRESHOLD_CFG</name>
+                <description>Configure the FIFO empty level to trigger the write interrupt for user1</description>
+                <bitRange>[1:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>T1</name>
+                    <value>0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>T2</name>
+                    <value>1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>T4</name>
+                    <value>2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>T8</name>
+                    <value>3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
         </cluster>
       </registers>
     </peripheral>
 
-    <peripheral>
-      <name>RISC_V_MSGBOX</name>
+    <peripheral derivedFrom="DSP_MSGBOX">
+      <name>RV_MSGBOX</name>
       <description>RISC-V Message Box</description>
       <groupName>System</groupName>
       <baseAddress>0x0601F000</baseAddress>
@@ -10698,106 +10818,13 @@
         <usage>registers</usage>
       </addressBlock>
       <interrupt>
-        <name>RISC-V_MBOX_RISC-V</name>
+        <name>RV_MBOX_RV</name>
         <value>144</value>
       </interrupt>
       <interrupt>
-        <name>RISC-V_MBOX_DSP</name>
+        <name>RV_MBOX_DSP</name>
         <value>145</value>
       </interrupt>
-      <registers>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_RD_IRQ_EN_REG_%s</name>
-          <description>MSGBOX Read IRQ Enable Register</description>
-          <addressOffset>0x0020</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_RD_IRQ_STATUS_REG_%s</name>
-          <description>MSGBOX Read IRQ Status Register</description>
-          <addressOffset>0x0024</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_WR_IRQ_EN_REG_%s</name>
-          <description>MSGBOX Write IRQ Enable Register</description>
-          <addressOffset>0x0030</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_WR_IRQ_STATUS_REG_%s</name>
-          <description>MSGBOX Write IRQ Status Register</description>
-          <addressOffset>0x0034</addressOffset>
-        </register>
-        <register>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_DEBUG_REG_%s</name>
-          <description>MSGBOX Debug Register</description>
-          <addressOffset>0x0040</addressOffset>
-        </register>
-        <cluster>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_FIFO_STATUS_REG_N%s</name>
-          <description>MSGBOX FIFO Status Register</description>
-          <addressOffset>0x0050</addressOffset>
-          <register>
-            <dim>3</dim>
-            <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_FIFO_STATUS_REG_P%s</name>
-            <description>MSGBOX FIFO Status Register</description>
-            <addressOffset>0</addressOffset>
-          </register>
-        </cluster>
-        <cluster>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_MSG_STATUS_REG_N%s</name>
-          <description>MSGBOX Message Status Register</description>
-          <addressOffset>0x0060</addressOffset>
-          <register>
-            <dim>3</dim>
-            <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_MSG_STATUS_REG_P%s</name>
-            <description>MSGBOX Message Status Register</description>
-            <addressOffset>0</addressOffset>
-          </register>
-        </cluster>
-        <cluster>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_MSG_REG_N%s</name>
-          <description>MSGBOX Message Queue Register</description>
-          <addressOffset>0x0070</addressOffset>
-          <register>
-            <dim>3</dim>
-            <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_MSG_REG_P%s</name>
-            <description>MSGBOX Message Queue Register</description>
-            <addressOffset>0</addressOffset>
-          </register>
-        </cluster>
-        <cluster>
-          <dim>2</dim>
-          <dimIncrement>0x0100</dimIncrement>
-          <name>MSGBOX_WR_INT_THRESHOLD_REG_N%s</name>
-          <description>MSGBOX Write IRQ Threshold Register</description>
-          <addressOffset>0x0080</addressOffset>
-          <register>
-            <dim>3</dim>
-            <dimIncrement>0x0004</dimIncrement>
-            <name>MSGBOX_WR_INT_THRESHOLD_REG_P%s</name>
-            <description>MSGBOX Write IRQ Threshold Register</description>
-            <addressOffset>0</addressOffset>
-          </register>
-        </cluster>
-      </registers>
     </peripheral>
 
     <peripheral>
