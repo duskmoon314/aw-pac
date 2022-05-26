@@ -18940,13 +18940,37 @@
         </register>
         <register>
           <name>SPI_TXD</name>
-          <description>SPI TX Data Register\n\nTDATA [31:0]: Transmit Data</description>
+          <description>SPI TX Data Register\n\nTDATA [31:0]: Transmit Data in word method</description>
           <addressOffset>0x0200</addressOffset>
+        </register>
+         <register>
+          <name>SPI_TXD_16</name>
+          <description>SPI TX Data Register\n\nTDATA [15:0]: Transmit Data in half-word method</description>
+          <addressOffset>0x0200</addressOffset>
+          <size>16</size>
+        </register>
+        <register>
+          <name>SPI_TXD_8</name>
+          <description>SPI TX Data Register\n\nTDATA [7:0]: Transmit Data in byte method</description>
+          <addressOffset>0x0200</addressOffset>
+          <size>8</size>
         </register>
         <register>
           <name>SPI_RXD</name>
-          <description>SPI RX Data Register\n\nRDATA [31:0]: Receive Data</description>
+          <description>SPI RX Data Register\n\nRDATA [31:0]: Receive Data and access in word method</description>
           <addressOffset>0x0300</addressOffset>
+        </register>
+        <register>
+          <name>SPI_RXD_16</name>
+          <description>SPI RX Data Register\n\nRDATA [15:0]: Receive Data and access in half-word method</description>
+          <addressOffset>0x0300</addressOffset>
+          <size>16</size>
+        </register>
+        <register>
+          <name>SPI_RXD_8</name>
+          <description>SPI RX Data Register\n\nRDATA [7:0]: Receive Data and access in byte method</description>
+          <addressOffset>0x0300</addressOffset>
+          <size>8</size>
         </register>
       </registers>
     </peripheral>
