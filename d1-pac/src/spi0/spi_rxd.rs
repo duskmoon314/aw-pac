@@ -42,7 +42,7 @@ impl W {
         self
     }
 }
-#[doc = "SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_rxd](index.html) module"]
+#[doc = "SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data and access in word method\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_rxd](index.html) module"]
 pub struct SPI_RXD_SPEC;
 impl crate::RegisterSpec for SPI_RXD_SPEC {
     type Ux = u32;

@@ -40,11 +40,59 @@ pub struct RegisterBlock {
     #[doc = "0x88 - SPI Normal DMA Mode Control Register"]
     pub spi_ndma_mode_ctl: crate::Reg<spi_ndma_mode_ctl::SPI_NDMA_MODE_CTL_SPEC>,
     _reserved16: [u8; 0x0174],
-    #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data"]
-    pub spi_txd: crate::Reg<spi_txd::SPI_TXD_SPEC>,
+    _reserved_16_spi_: [u8; 0x04],
     _reserved17: [u8; 0xfc],
-    #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data"]
-    pub spi_rxd: crate::Reg<spi_rxd::SPI_RXD_SPEC>,
+    _reserved_17_spi_: [u8; 0x04],
+}
+impl RegisterBlock {
+    #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[7:0\\]: Transmit Data in byte method"]
+    #[inline(always)]
+    pub fn spi_txd_8(&self) -> &crate::Reg<spi_txd_8::SPI_TXD_8_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(512usize)
+                as *const crate::Reg<spi_txd_8::SPI_TXD_8_SPEC>)
+        }
+    }
+    #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[15:0\\]: Transmit Data in half-word method"]
+    #[inline(always)]
+    pub fn spi_txd_16(&self) -> &crate::Reg<spi_txd_16::SPI_TXD_16_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(512usize)
+                as *const crate::Reg<spi_txd_16::SPI_TXD_16_SPEC>)
+        }
+    }
+    #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data in word method"]
+    #[inline(always)]
+    pub fn spi_txd(&self) -> &crate::Reg<spi_txd::SPI_TXD_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(512usize)
+                as *const crate::Reg<spi_txd::SPI_TXD_SPEC>)
+        }
+    }
+    #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[7:0\\]: Receive Data and access in byte method"]
+    #[inline(always)]
+    pub fn spi_rxd_8(&self) -> &crate::Reg<spi_rxd_8::SPI_RXD_8_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(768usize)
+                as *const crate::Reg<spi_rxd_8::SPI_RXD_8_SPEC>)
+        }
+    }
+    #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[15:0\\]: Receive Data and access in half-word method"]
+    #[inline(always)]
+    pub fn spi_rxd_16(&self) -> &crate::Reg<spi_rxd_16::SPI_RXD_16_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(768usize)
+                as *const crate::Reg<spi_rxd_16::SPI_RXD_16_SPEC>)
+        }
+    }
+    #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data and access in word method"]
+    #[inline(always)]
+    pub fn spi_rxd(&self) -> &crate::Reg<spi_rxd::SPI_RXD_SPEC> {
+        unsafe {
+            &*(((self as *const Self) as *const u8).add(768usize)
+                as *const crate::Reg<spi_rxd::SPI_RXD_SPEC>)
+        }
+    }
 }
 #[doc = "SPI_GCR register accessor: an alias for `Reg<SPI_GCR_SPEC>`"]
 pub type SPI_GCR = crate::Reg<spi_gcr::SPI_GCR_SPEC>;
@@ -112,9 +160,25 @@ pub type SPI_NDMA_MODE_CTL = crate::Reg<spi_ndma_mode_ctl::SPI_NDMA_MODE_CTL_SPE
 pub mod spi_ndma_mode_ctl;
 #[doc = "SPI_TXD register accessor: an alias for `Reg<SPI_TXD_SPEC>`"]
 pub type SPI_TXD = crate::Reg<spi_txd::SPI_TXD_SPEC>;
-#[doc = "SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data"]
+#[doc = "SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data in word method"]
 pub mod spi_txd;
+#[doc = "SPI_TXD_16 register accessor: an alias for `Reg<SPI_TXD_16_SPEC>`"]
+pub type SPI_TXD_16 = crate::Reg<spi_txd_16::SPI_TXD_16_SPEC>;
+#[doc = "SPI TX Data Register\n\nTDATA \\[15:0\\]: Transmit Data in half-word method"]
+pub mod spi_txd_16;
+#[doc = "SPI_TXD_8 register accessor: an alias for `Reg<SPI_TXD_8_SPEC>`"]
+pub type SPI_TXD_8 = crate::Reg<spi_txd_8::SPI_TXD_8_SPEC>;
+#[doc = "SPI TX Data Register\n\nTDATA \\[7:0\\]: Transmit Data in byte method"]
+pub mod spi_txd_8;
 #[doc = "SPI_RXD register accessor: an alias for `Reg<SPI_RXD_SPEC>`"]
 pub type SPI_RXD = crate::Reg<spi_rxd::SPI_RXD_SPEC>;
-#[doc = "SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data"]
+#[doc = "SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data and access in word method"]
 pub mod spi_rxd;
+#[doc = "SPI_RXD_16 register accessor: an alias for `Reg<SPI_RXD_16_SPEC>`"]
+pub type SPI_RXD_16 = crate::Reg<spi_rxd_16::SPI_RXD_16_SPEC>;
+#[doc = "SPI RX Data Register\n\nRDATA \\[15:0\\]: Receive Data and access in half-word method"]
+pub mod spi_rxd_16;
+#[doc = "SPI_RXD_8 register accessor: an alias for `Reg<SPI_RXD_8_SPEC>`"]
+pub type SPI_RXD_8 = crate::Reg<spi_rxd_8::SPI_RXD_8_SPEC>;
+#[doc = "SPI RX Data Register\n\nRDATA \\[7:0\\]: Receive Data and access in byte method"]
+pub mod spi_rxd_8;
