@@ -18943,7 +18943,7 @@
           <description>SPI TX Data Register\n\nTDATA [31:0]: Transmit Data in word method</description>
           <addressOffset>0x0200</addressOffset>
         </register>
-         <register>
+        <register>
           <name>SPI_TXD_16</name>
           <description>SPI TX Data Register\n\nTDATA [15:0]: Transmit Data in half-word method</description>
           <addressOffset>0x0200</addressOffset>
@@ -20796,206 +20796,1849 @@
         <value>50</value>
       </interrupt>
       <registers>
-        <register>
-          <name>E_CAPLENGTH</name>
-          <description>EHCI Capability Register Length Register</description>
+        <cluster>
+          <name>EHCI_CAPABILITY</name>
+          <description>EHCI Capability Register</description>
           <addressOffset>0x0000</addressOffset>
-        </register>
-        <register>
-          <name>E_HCIVERSION</name>
-          <description>EHCI Host Interface Version Number Register</description>
-          <addressOffset>0x0002</addressOffset>
-        </register>
-        <register>
-          <name>E_HCSPARAMS</name>
-          <description>EHCI Host Control Structural Parameter Register</description>
-          <addressOffset>0x0004</addressOffset>
-        </register>
-        <register>
-          <name>E_HCCPARAMS</name>
-          <description>EHCI Host Control Capability Parameter Register</description>
-          <addressOffset>0x0008</addressOffset>
-        </register>
-        <register>
-          <name>E_HCSPPORTROUTE</name>
-          <description>EHCI Companion Port Route Description</description>
-          <addressOffset>0x000C</addressOffset>
-        </register>
-        <register>
-          <name>E_USBCMD</name>
-          <description>EHCI USB Command Register</description>
+          <register>
+            <name>CAPLENGTH</name>
+            <description>EHCI Identification Register</description>
+            <addressOffset>0x0000</addressOffset>
+            <size>16</size>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>CAPLENGTH</name>
+                <description>The value in these bits indicates an offset to add to register base to find the beginning of the Operational Register Space.</description>
+                <bitRange>[7:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HCIVERSION</name>
+            <description>EHCI Host Interface Version Number Register</description>
+            <addressOffset>0x0002</addressOffset>
+            <size>16</size>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>HCIVERSION</name>
+                <description>This is a 16 bit register containing a BCD encoding of the EHCI revision number suported by this host controller</description>
+                <bitRange>[15:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HCSPARAMS</name>
+            <description>EHCI Host Control Structural Parameter Register</description>
+            <addressOffset>0x0004</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>DEBUG_PORT_NUMBER</name>
+                <description>This register identifies which of the host controller ports is the debug port. The value is the port number (one based) of the debug port.</description>
+                <bitRange>[23:20]</bitRange>
+              </field>
+              <field>
+                <name>N_CC</name>
+                <description>Number of Companion Controller (N_CC)\n\nThis field indicates the number of companion controllers associated with this USB2.0 host controller. A zero in this field indicates there are no companion host controllers. And a value larger than zero in this field indicates there are companion USB1.1 host controller(s).</description>
+                <bitRange>[15:12]</bitRange>
+              </field>
+              <field>
+                <name>N_PCC</name>
+                <description>Number of Port per Companion Controller (N_PCC)\n\nThis field indicates the number of ports supported per companion host controller host controller. It is used to indicate the port routing configuration to system software.</description>
+                <bitRange>[11:8]</bitRange>
+              </field>
+              <field>
+                <name>PORT_ROUTING_RULES</name>
+                <description>This field indicates the method used by this implementation for how all ports are mapped to companion controllers.</description>
+                <bitRange>[7:7]</bitRange>
+              </field>
+              <field>
+                <name>N_PORTS</name>
+                <description>This field specifies the number of physical downstream ports implemented on this host controller. The value of this field determines how many port registers are addressable in the Operational Register Space. Valid values are in the range of 0x1 to 0x0f.</description>
+                <bitRange>[3:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HCCPARAMS</name>
+            <description>EHCI Host Controller Capability Parameters Register</description>
+            <addressOffset>0x0008</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>EECP</name>
+                <description>EHCI Extended Capabilities Pointer (EECP)\n\nThis optional field indicates the existence of a capabilities list. A value of 00b indicates no extended capabilities are implemented. A non-zero value in this register indicates the offset in PCI configuration space of the first EHCI extended capabiliby. The pointer value must be 40h or greater if implemented to maintain to consistency of the PCI header defined for this calss of device.</description>
+                <bitRange>[15:8]</bitRange>
+              </field>
+              <field>
+                <name>ISOCHRONOUS_SCHEDULING_THRESHOLD</name>
+                <description>Isochronous Scheduling Threshold\n\nThis field indicates, relative to the current position of the executing host controller, where software can reliably update the isochronous schedule.\n\nWhen bit[7] is zero, the value of the least significant 3 bits indicates the number of micro-frames a host controller can hold a set of isochronous data structures(one or more) before flushing the state. When bit[7] is a one, then host software assumes the host controller may cache an isochronous data structure for an entire frame.</description>
+                <bitRange>[7:4]</bitRange>
+              </field>
+              <field>
+                <name>ASYNCHRONOUS_SCHEDULE_PARK_CAPABILITY</name>
+                <description>Asynchronous Schedule Park Capability\n\nIf this bit is set to a one, then the host controller supports the park feature for high-speed queue heads in the Asynchronous Schedule. The feature can be disabled or enabled and set to a specific level by using the Asynchronous Schedule Park Mode Enable and Asynchronous Schedule Park Mode Count fields in the USBCMD register.</description>
+                <bitRange>[2:2]</bitRange>
+              </field>
+              <field>
+                <name>PROGRAMMABLE_FRAME_LIST_FLAG</name>
+                <description>Programmable Frame List Flag\n\nIf this bit is set to a zero, then system software must use a frame list length of 1024 elements with this host controller. The USBCMD register Frame List Size field is a read-only register and should be set to zero.\n\nIf set to 1, then system software can specify and use the frame list in the USBCMD register Frame List Size field to cofigure the host controller.\n\nThe frame list must always aligned on a 4K page boundary. This requirement ensures that the frame list is always physically contiguous.</description>
+                <bitRange>[1:1]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HCSP_PORTROUTE</name>
+            <description>EHCI Companion Port Route Description</description>
+            <addressOffset>0x000C</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>HCSP_PORTROUTE</name>
+                <description>This optional field is valid only if Port Routing Rules field in HCSPARAMS register is set to a one.\n\nThis field is used to allow a host controller implementation to explicitly describe to which companion host controller each implemented port is mapped. This field is a 15-element nibble array (each 4 bit is one array element). Each array location corresponds one-to-one with a physical port provided by the host controller (e.g. PORTROUTE [0] corresponds to the first PORTSC port, PORTROUTE [1] to the second PORTSC port, etc.). The value of each element indicates to which the companion host controllers this port is routed. Only the first N_PORTS elements have valid information. A value of zero indicates that the port is routed to the lowest numbered function companion host controller. A value of one indicates that the port is routed to the next lowest numbered function companion host controller, and so on.</description>
+                <bitRange>[31:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <name>EHCI_OPERATIONAL</name>
+          <description>EHCI Operational Register</description>
           <addressOffset>0x0010</addressOffset>
-        </register>
-        <register>
-          <name>E_USBSTS</name>
-          <description>EHCI USB Status Register</description>
-          <addressOffset>0x0014</addressOffset>
-        </register>
-        <register>
-          <name>E_USBINTR</name>
-          <description>EHCI USB Interrupt Enable Register</description>
-          <addressOffset>0x0018</addressOffset>
-        </register>
-        <register>
-          <name>E_FRINDEX</name>
-          <description>EHCI USB Frame Index Register</description>
-          <addressOffset>0x001C</addressOffset>
-        </register>
-        <register>
-          <name>E_CTRLDSSEGMENT</name>
-          <description>EHCI 4G Segment Selector Register</description>
-          <addressOffset>0x0020</addressOffset>
-        </register>
-        <register>
-          <name>E_PERIODICLISTBASE</name>
-          <description>EHCI Frame List Base Address Register</description>
-          <addressOffset>0x0024</addressOffset>
-        </register>
-        <register>
-          <name>E_ASYNCLISTADDR</name>
-          <description>EHCI Next Asynchronous List Address Register</description>
-          <addressOffset>0x0028</addressOffset>
-        </register>
-        <register>
-          <name>E_CONFIGFLAG</name>
-          <description>EHCI Configured Flag Register</description>
-          <addressOffset>0x0050</addressOffset>
-        </register>
-        <register>
-          <name>E_PORTSC</name>
-          <description>EHCI Port Status/Control Register</description>
-          <addressOffset>0x0054</addressOffset>
-        </register>
-        <register>
-          <name>O_HcControl</name>
-          <description>OHCI Control Register</description>
-          <addressOffset>0x0404</addressOffset>
-        </register>
-        <register>
-          <name>O_HcCommandStatus</name>
-          <description>OHCI Command Status Register</description>
-          <addressOffset>0x0408</addressOffset>
-        </register>
-        <register>
-          <name>O_HcInterruptStatus</name>
-          <description>OHCI Interrupt Status Register</description>
-          <addressOffset>0x040C</addressOffset>
-        </register>
-        <register>
-          <name>O_HcInterruptEnable</name>
-          <description>OHCI Interrupt Enable Register</description>
-          <addressOffset>0x0410</addressOffset>
-        </register>
-        <register>
-          <name>O_HcInterruptDisable</name>
-          <description>OHCI Interrupt Disable Register</description>
-          <addressOffset>0x0414</addressOffset>
-        </register>
-        <register>
-          <name>O_HcHCCA</name>
-          <description>OHCI HCCA Base</description>
-          <addressOffset>0x0418</addressOffset>
-        </register>
-        <register>
-          <name>O_HcPeriodCurrentED</name>
-          <description>OHCI Period Current ED Base</description>
-          <addressOffset>0x041C</addressOffset>
-        </register>
-        <register>
-          <name>O_HcControlHeadED</name>
-          <description>OHCI Control Head ED Base</description>
-          <addressOffset>0x0420</addressOffset>
-        </register>
-        <register>
-          <name>O_HcControlCurrentED</name>
-          <description>OHCI Control Current ED Base</description>
-          <addressOffset>0x0424</addressOffset>
-        </register>
-        <register>
-          <name>O_HcBulkHeadED</name>
-          <description>OHCI Bulk Head ED Base</description>
-          <addressOffset>0x0428</addressOffset>
-        </register>
-        <register>
-          <name>O_HcBulkCurrentED</name>
-          <description>OHCI Bulk Current ED Base</description>
-          <addressOffset>0x042C</addressOffset>
-        </register>
-        <register>
-          <name>O_HcDoneHead</name>
-          <description>OHCI Done Head Base</description>
-          <addressOffset>0x0430</addressOffset>
-        </register>
-        <register>
-          <name>O_HcFmInterval</name>
-          <description>OHCI Frame Interval Register</description>
-          <addressOffset>0x0434</addressOffset>
-        </register>
-        <register>
-          <name>O_HcFmRemaining</name>
-          <description>OHCI Frame Remaining Register</description>
-          <addressOffset>0x0438</addressOffset>
-        </register>
-        <register>
-          <name>O_HcFmNumber</name>
-          <description>OHCI Frame Number Register</description>
-          <addressOffset>0x043C</addressOffset>
-        </register>
-        <register>
-          <name>O_HcPerioddicStart</name>
-          <description>OHCI Periodic Start Register</description>
-          <addressOffset>0x0440</addressOffset>
-        </register>
-        <register>
-          <name>O_HcLSThreshold</name>
-          <description>OHCI LS Threshold Register</description>
-          <addressOffset>0x0444</addressOffset>
-        </register>
-        <register>
-          <name>O_HcRhDescriptorA</name>
-          <description>OHCI Root Hub Descriptor Register A</description>
-          <addressOffset>0x0448</addressOffset>
-        </register>
-        <register>
-          <name>O_HcRhDesriptorB</name>
-          <description>OHCI Root Hub Descriptor Register B</description>
-          <addressOffset>0x044C</addressOffset>
-        </register>
-        <register>
-          <name>O_HcRhStatus</name>
-          <description>OHCI Root Hub Status Register</description>
-          <addressOffset>0x0450</addressOffset>
-        </register>
-        <register>
-          <name>O_HcRhPortStatus</name>
-          <description>OHCI Root Hub Port Status Register</description>
-          <addressOffset>0x0454</addressOffset>
-        </register>
-        <register>
-          <name>HCI_Interface</name>
-          <description>HCI Interface Register</description>
-          <addressOffset>0x0800</addressOffset>
-        </register>
-        <register>
-          <name>HCI_CTRL3</name>
-          <description>HCI Control Register</description>
-          <addressOffset>0x0808</addressOffset>
-        </register>
-        <register>
-          <name>PHY_Control</name>
-          <description>PHY Control Register</description>
-          <addressOffset>0x0810</addressOffset>
-        </register>
-        <register>
-          <name>PHY_STATUS</name>
-          <description>PHY Status Register</description>
-          <addressOffset>0x0824</addressOffset>
-        </register>
-        <register>
-          <name>HCI_SIE_PORT_DISABLE_CONTROL</name>
-          <description>HCI SIE Port Disable Control Register</description>
-          <addressOffset>0x0828</addressOffset>
-        </register>
+          <register>
+            <name>USBCMD</name>
+            <description>EHCI USB Command Register</description>
+            <addressOffset>0x0000</addressOffset>
+            <fields>
+              <field>
+                <name>INTERRUPT_THRESHOLD_CONTROL</name>
+                <description>Interrupt Threshold Control\n\nThe value in this field is used by system software to select the maximum rate at which the host controller will issue interrupts.</description>
+                <bitRange>[23:16]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>MF1</name>
+                    <description>1 micro-frame</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MF2</name>
+                    <description>2 micro-frames</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MF4</name>
+                    <description>4 micro-frames</description>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MF8</name>
+                    <description>8 micro-frames (default, equates to 1ms)</description>
+                    <value>0x8</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MF16</name>
+                    <description>16 micro-frames (2ms)</description>
+                    <value>0x10</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MF32</name>
+                    <description>32 micro-frames (4ms)</description>
+                    <value>0x20</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MF64</name>
+                    <description>64 micro-frames (8ms)</description>
+                    <value>0x40</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>ASYNCHRONOUS_SCHEDULE_PARK_MODE_ENABLE</name>
+                <description>Asynchronous Schedule Park Mode Enable (OPTIONAL)\n\nIf the Asynchronous Park Capability bit in the HCCPARAMS register is a one, then this bit defaults to a 1 and is R/W. Otherwise the bit must be a zero and is Read Only. Software uses this bit to enable or disable Park mode. When this bit is one, Park mode is enabled. When this bit is zero, Park mode is disabled.</description>
+                <bitRange>[11:11]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>ASYNCHRONOUS_SCHEDULE_PARK_MODE_COUNT</name>
+                <description>Asynchronous Schedule Park Mode Count (OPTIONAL)\n\nAsynchronous Park Capability bit in the HCCPARAMS register is a one, then this field defaults to 0x3 and is W/R. Otherwise it defaults to zero and is R. It contains a count of the number of successive transactions the host controller is allowed to execute from a high-speed queue head on the Asynchronous schedule before continuing traversal of the Asynchronous schedule. Valid value are 0x1 to 0x3.Software must not write a zero to this bit when Park Mode Enable is a one as it will result in undefined behavior.</description>
+                <bitRange>[9:8]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>LIGHT_HOST_CONTROLLER_RESET</name>
+                <description>Light Host Controller Reset (OPTIONAL)\n\nThis control bit is not required. If implemented, it allows the driver to reset the EHCI controller without affecting the state of the ports or relationship to the companion host controllers. For example, the PORSTC registers should not be reset to their default values and the CF bit setting should not go to zero (retaining port ownership relationships). A host software read of this bit as zero indicates the Light Host Controller Reset has completed and it si safe for software to re- initialize the host controller. A host software read of this bit as a one indicates the Light Host</description>
+                <bitRange>[7:7]</bitRange>
+              </field>
+              <field>
+                <name>INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL</name>
+                <description>Interrupt on Async Advance Doorbell\n\nThis bit is used as a doorbell by software to tell the host controller to issue an interrupt the next time it advances asynchronous schedule. Software must write a 1 to this bit to ring the doorbell. When the host controller has evicted all appropriate cached schedule state, it sets the Interrupt on Async Advance status bit in the USBSTS. if the Interrupt on Async Advance Enable bit in the USBINTR register is a one then the host controller will assert an interrupt at the next interrupt threshold.\n\nThe host controller sets this bit to a zero after it has set the Interrupt on Async Advance status bit in the USBSTS register to a one.\n\nSoftware should not write a one to this bit when the asynchronous schedule is disabled. Doing so will yield undefined results.</description>
+                <bitRange>[6:6]</bitRange>
+              </field>
+              <field>
+                <name>ASYNCHRONOUS_SCHEDULE_ENABLE</name>
+                <description>Asynchronous Schedule Enable\n\nThis bit controls whether the host controller skips processing the Asynchronous Schedule.</description>
+                <bitRange>[5:5]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>disable</name>
+                    <description>Do not process the Asynchronous Schedule</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>enable</name>
+                    <description>Use the ASYNLISTADDR register to access the Asynchronous Schedule</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>PERIODIC_SCHEDULE_ENABLE</name>
+                <description>Periodic Schedule Enable\n\nThis bit controls whether the host controller skips processing the Periodic Schedule.</description>
+                <bitRange>[4:4]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>disable</name>
+                    <description>Do not process the Periodic Schedule</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>enable</name>
+                    <description>Use the PERIODICLISTBASE register to access the Periodic Schedule</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>FRAME_LIST_SIZE</name>
+                <description>This field is R/W only if Programmable Frame List Flag in the HCCPARAMS register is set to one. This field specifies the size of the Frame list.</description>
+                <bitRange>[3:2]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>F1024</name>
+                    <description>1024 frames</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>F512</name>
+                    <description>512 frames</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>F256</name>
+                    <description>256 frames</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>HOST_CONTROLLER_RESET</name>
+                <description>Host Controller Reset\n\nThis control bit is used by software to reset the host controller. The effects of this on Root Hub registers are similar to a Chip Hardware Reset.\n\nWhen software writes a one to this bit, the Host Controller resets its internal pipelines, timers, counters, state machines, etc. to their initial value. Any transaction currently in progress on USB is immediately terminated. A USB reset is not driven on downstream ports.\n\nAll operational registers, including port registers and port state machines are set to their initial values. Port ownership reverts to the companion host controller(s). Software must reinitialize the host controller as described in Section 4.1 of the CHEI Specification in order to return the host controller to an operational state. This bit is set to zero by the Host Controller when the reset process is complete. Software cannot terminate the reset process early by writing a zero to this register.\n\nSoftware should not set this bit to a one when the HC Halted bit in the USBSTS register is a zero. Attempting to reset an actively running host controller will result in undefined behavior.</description>
+                <bitRange>[1:1]</bitRange>
+              </field>
+              <field>
+                <name>RUN_STOP</name>
+                <description>Run/Stop\n\nWhen set to a 1, the Host Controller proceeds with execution of the schedule. When set to 0, the Host Controller completes the current and any actively pipelined transactions on the USB and then halts. The Host Controller must halt within 16 micro-frames after software clears this bit. The HC Halted bit indicates when the Host Controller has finished its pending pipelined transactions and has entered the stopped state.\n\nSoftware must not write a one to this field unless the Host Controller is in the Halt State. The default value is 0x0.</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>USBSTS</name>
+            <description>EHCI USB Status Register</description>
+            <addressOffset>0x0014</addressOffset>
+            <resetValue>0x1000</resetValue>
+            <resetMask>0xF03F</resetMask>
+            <fields>
+              <field>
+                <name>ASYNCHRONOUS_SCHEDULE_STATUS</name>
+                <description>Asynchronous Schedule Status\n\nThe bit reports the current real status of Asynchronous Schedule. If this bit is a zero then the status of the Asynchronous Schedule is disabled. If this bit is a one then the status of the Asynchronous Schedule is enabled. The Host Controller is not required to immediately disable or enable the Asynchronous Schedule when software transitions the Asynchronous Schedule Enable bit in the USBCMD register. When this bit and the Asynchronous Schedule Enable bit are the same value, the Asynchronous Schedule is either enabled (1) or disabled (0).</description>
+                <bitRange>[15:15]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>PERIODIC_SCHEDULE_STATUS</name>
+                <description>Periodic Schedule Status\n\nThe bit reports the current real status of the Periodic Schedule. If this bit is a zero then the status of the Periodic Schedule is disabled. If this bit is a one then the status of the Periodic Schedule is enabled. The Host Controller is not required to disable or enable the Periodic Schedule when software transitions the bit in the USBCMD register. When this bit and the bit are the same value, the Periodic Schedule is either enabled (1) or disabled (0).</description>
+                <bitRange>[14:14]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>RECLAMATION</name>
+                <description>Reclamation\n\nThis is a read-only status bit, which is used to detect an empty asynchronous schedule.</description>
+                <bitRange>[13:13]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>HC_HALTED</name>
+                <description>HC Halted\n\nThis bit is a zero whenever the Run/Stop bit is a one. The Host Controller Sets this bit to one after it has stopped executing as a result of the Run/Stop bit being set to 0, either by software or by the Host Controller Hardware (e.g. internal error).\n\nThe default value is '1'</description>
+                <bitRange>[12:12]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>INTERRUPT_ON_ASYNC_ADVANCE</name>
+                <description>Interrupt on Async Advance\n\nSystem software can force the host controller to issue an interrupt the next time the host controller advances the asynchronous schedule by writing a one to the Interrupt on Async Advance Doorbell bit in the USBCMD register. This status bit indicates the assertion of that interrupt source.</description>
+                <bitRange>[5:5]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>HOST_SYSTEM_ERROR</name>
+                <description>Host System Error\n\nThe Host Controller set this bit to 1 when a serious error occurs during a host system access involving the Host Controller module. When this error occurs, the Host Controller clears the Run/Stop bit in the Command register to prevent further execution of the scheduled TDs.</description>
+                <bitRange>[4:4]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>FRAME_LIST_ROLLOVER</name>
+                <description>Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX [13] toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX [12] toggles.</description>
+                <bitRange>[3:3]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>PORT_CHANGE_DETECT</name>
+                <description>Port Change Detect\n\nThe Host Controller sets this bit to a one when any port for which the Port Owner bit is set to zero has a change bit transition from a zero to a one or a Force Port Resume bit transition from a zero to a one as a result of a J-K transition detected on a suspended port. This bit will also be set as a result of the Connect Status Chang being set to a one after system software has relinquished ownership of a connected port by writing a one to a port's Port Owner bit.</description>
+                <bitRange>[2:2]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>USBERRINT</name>
+                <description>USB Error Interrupt(USBERRINT)\n\nThe Host Controller sets this bit to 1 when completion of USB transaction results in an error condition(e.g. error counter underflow).If the TD on which the error interrupt occurred also had its IOC bit set, both. This bit and USBINT bit are set.</description>
+                <bitRange>[1:1]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>USBINT</name>
+                <description>USB Interrupt(USBINT) The Host Controller sets this bit to a one on the completion of a USB transaction, which results in the retirement of a Transfer Descriptor that had its IOC bit set. The Host Controller also sets this bit to 1 when a short packet is detected (actual number of bytes received was less than the expected number of bytes)</description>
+                <bitRange>[0:0]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>USBINTR</name>
+            <description>EHCI USB Interrupt Enable Register</description>
+            <addressOffset>0x08</addressOffset>
+            <fields>
+              <field>
+                <name>INTERRUPT_ON_ASYNC_ADVANCE_ENABLE</name>
+                <description>Interrupt on Async Advance Enable\n\nWhen this bit is 1, and the Interrupt on Async Advance bit in the USBSTS register is 1, the host controller will issue an interrupt at the next interrupt threshold. The interrupt is acknowledged by software clearing the Interrupt on Async Advance bit.</description>
+                <bitRange>[5:5]</bitRange>
+              </field>
+              <field>
+                <name>HOST_SYSTEM_ERROR_ENABLE</name>
+                <description>Host System Error Enable\n\n When this bit is 1, and the Host System Error Status bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Host System Error bit.</description>
+                <bitRange>[4:4]</bitRange>
+              </field>
+              <field>
+                <name>FRAME_LIST_ROLLOVER_ENABLE</name>
+                <description>Frame List Rollover Enable\n\nWhen this bit is 1, and the Frame List Rollover bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Frame List Rollover bit.</description>
+                <bitRange>[3:3]</bitRange>
+              </field>
+              <field>
+                <name>PORT_CHANGE_INTERRUPT_ENABLE</name>
+                <description>Port Change Interrupt Enable\n\nWhen this bit is 1, and the Port Chang Detect bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Port Chang Detect bit.</description>
+                <bitRange>[2:2]</bitRange>
+              </field>
+              <field>
+                <name>USB_ERROR_INTERRUPT_ENABLE</name>
+                <description>USB Error Interrupt Enable\n\nWhen this bit is 1, and the USBERRINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBERRINT bit.</description>
+                <bitRange>[1:1]</bitRange>
+              </field>
+              <field>
+                <name>USB_INTERRUPT_ENABLE</name>
+                <description>USB Interrupt Enable\n\nWhen this bit is 1, and the USBINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBINT bit</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>FRINDEX</name>
+            <description>EHCI Frame Index Register</description>
+            <addressOffset>0x0C</addressOffset>
+            <fields>
+              <field>
+                <name>FRAME_INDEX</name>
+                <description>Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits[N:3] are used for the Frame List current index. It means that each location of the frame list is accessed 8 times (frames or Micro-frames) before moving to the next index. The following illustrates values of N based on the value of the Frame List Size field in the USBCMD register.</description>
+                <bitRange>[13:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>CTRLDSSEGMENT</name>
+            <description>EHCI 4G Segment Selector Register</description>
+            <addressOffset>0x10</addressOffset>
+          </register>
+          <register>
+            <name>PERIODICLISTBASE</name>
+            <description>EHCI Periodic Frame List Base Address Register</description>
+            <addressOffset>0x14</addressOffset>
+            <fields>
+              <field>
+                <name>BASE_ADDRESS</name>
+                <description>Base Address\n\nThese bits correspond to memory address signals [31:12], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence.</description>
+                <bitRange>[31:12]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>ASYNCLISTADDR</name>
+            <description>EHCI Current Asynchronous List Address Register</description>
+            <addressOffset>0x18</addressOffset>
+            <fields>
+              <field>
+                <name>LP</name>
+                <description>Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals [31:5], respectively</description>
+                <bitRange>[31:5]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>CONFIGFLAG</name>
+            <description>EHCI Configure Flag Register</description>
+            <addressOffset>0x40</addressOffset>
+            <fields>
+              <field>
+                <name>CF</name>
+                <description>Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller.</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>PORTSC</name>
+            <description>EHCI Port Status/Control Register</description>
+            <addressOffset>0x44</addressOffset>
+            <resetValue>0x2000</resetValue>
+            <resetMask>0x3F2DFF</resetMask>
+            <fields>
+              <field>
+                <name>WKDSCNNT_E</name>
+                <description>Wake on Disconnect Enable (WKDSCNNT_E)\n\nWriting this bit to a one enables the port to be sensitive to device disconnects as wake-up events.\n\nThis field is zero if Port Power is zero.\n\nThe default value in this field is '0'.</description>
+                <bitRange>[21:21]</bitRange>
+              </field>
+              <field>
+                <name>WKCNNT_E</name>
+                <description>Wake on Connect Enable (WKCNNT_E)\n\nWriting this bit to a one enable the port to be sensitive to device connects as wake-up events.\n\nThis field is zero if Port Power is zero.\n\nThe default value in this field is '0'.</description>
+                <bitRange>[20:20]</bitRange>
+              </field>
+              <field>
+                <name>PORT_TEST_CONTROL</name>
+                <description>Port Test Control\n\nThe value in this field specifies the test mode of the port.</description>
+                <bitRange>[19:16]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NOT_OPERATING</name>
+                    <description>The port is NOT operating in a test mode.</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>TEST_J_STATE</name>
+                    <description>Test J_STATE</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>TEST_K_STATE</name>
+                    <description>Test K_STATE</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>TEST_SE0_NAK</name>
+                    <description>Test SE0_NAK</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>TEST_PACKET</name>
+                    <description>Test Packet</description>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>TEST_FORCE_ENABLE</name>
+                    <description>Test FORCE_ENABLE</description>
+                    <value>0x5</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>PORT_OWNER</name>
+                <description>Port Owner\n\nThis bit unconditionally goes to a 0b when the Configured bit in the CONFIGFLAG register makes a 0b to 1b transition. This bit unconditionally goes to 1b whenever the Configured bit is zero. System software uses this field to release ownership of the port to selected host controller (in the event that the attached device is not a high-speed device).Software writes a one to this bit when the attached device is not a high-speed device. A one in this bit means that a companion host controller owns and controls the port. Default Value = 1b.</description>
+                <bitRange>[13:13]</bitRange>
+              </field>
+              <field>
+                <name>LINE_STATUS</name>
+                <description>Line Status\n\nThese bits relect the current logical levels of the D+ (bit11) and D- (bit10) signal lines. These bits are used for detection of low-speed USB devices prior to port reset and enable sequence. This read only field is valid only when the port enable bit is zero and the current connect status bit is set to a one.</description>
+                <bitRange>[11:10]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>SE0</name>
+                    <description>Not Low-speed device, perform EHCI reset.</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>J_STATE</name>
+                    <description>Not Low-speed device, perform EHCI reset.</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>K_STATE</name>
+                    <description>Low-speed device, release ownership of port.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>UNDEFINED</name>
+                    <description>Not Low-speed device, perform EHCI reset.</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>PORT_RESET</name>
+                <description>Port Reset\n\n1=Port is in Reset. 0=Port is not in Reset. Default value = 0.\n\nWhen software writes a one to this bit (from a zero), the bus reset sequence as defined in the USB Specification Revision 2.0 is started. Software writes a zero to this bit to terminate the bus reset sequence. Software must keep this bit at a one long enough to ensure the reset sequence, as specified in the USB Specification Revision 2.0, completes.\n\n**Note: When software writes this bit to a one, it must also write a zero to the Port Enable bit.**\n\nNote that when software writes a zero to this bit there may be a delay before the bit status changes to a zero. The bit status will not read as a zero until after the reset has completed. If the port is in high-speed mode after reset is complete, the host controller will automatically enable this port (e.g. set the Port Enable bit to a one). A host controller must terminate the reset and stabilize the state of the port within 2 milliseconds of software transitioning this bit from a one to a zero. For example: if the port detects that the attached device is high-speed during reset, then the host controller must have the port in the enabled state with 2ms of software writing this bit to a zero. The HC Halted bit in the USBSTS register should be a zero before software attempts to use this bit. The host controller may hold Port Reset asserted to a one when the HC Halted bit is a one. This field is zero if Port Power is zero.</description>
+                <bitRange>[8:8]</bitRange>
+              </field>
+              <field>
+                <name>SUSPEND</name>
+                <description>Suspend\n\nPort Enabled Bit and Suspend bit of this register define the port states\n\nWhen in suspend state, downstream propagation of data is blocked on this port, except for port reset. The blocking occurs at the end of the current transaction, if a transaction was in progress when this bit was written to 1. In the suspend state, the port is sensitive to resume detection. Not that the bit status does not change until the port is suspend and that there may be a delay in suspending a port if there is a transaction currently in progress on the USB.\n\nA write of zero to this bit is ignored by the host controller. The host controller will unconditionally set this bit to a zero when:\n\n1. Software sets the Force Port Resume bit to a zero(from a one).\n2. Software sets the Port Reset bit to a one(from a zero).\n\nIf host software sets this bit to a one when the port is not enabled(i.e. Port enabled bit is a zero), the results are undefined.\n\nThis field is zero if Port Power is zero.\n\nThe default value in this field is '0'.</description>
+                <bitRange>[7:7]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NOT_SUSPEND</name>
+                    <description>Not suspend</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>SUSPEND</name>
+                    <description>Suspend</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>FORCE_PORT_RESUME</name>
+                <description>Force Port Resume\n\n1 = Resume detected/driven on port. 0 = No resume (K-state) detected/driven on port. Default value = 0.\n\nThis functionality defined for manipulating this bit depends on the value of the Suspend bit. For example, if the port is not suspend and software transitions this bit to a one, then the effects on the bus are undefined.\n\nSoftware sets this bit to 1 to drive resume signaling. The Host Controller sets this bit to a 1 if a J-to-K transition is detected while the port is in the Suspend state. When this bit transitions to a one because a J-to-K transition is detected, the Port Change Detect bit in the USBSTS register is also set to a one. If software sets this bit to a one, the host controller must not set the Port Change Detect bit.\n\nNote that when the EHCI controller owns the port, the resume sequence follows the defined sequence documented in the USB Specification Revision 2.0. The resume signaling (Full-speed 'K') is driven on the port as long as this remains a one. Software must appropriately time the Resume and set this bit to a zero when the appropriate amount of time has elapsed. Writing a zero (from one) causes the port to return high-speed mode (forcing the bus below the port into a high-speed idle). This bit will remain a one until the port has switched to high-speed idle. The host controller must complete this transition within 2 milliseconds of software setting this bit to a zero.\n\nThis field is zero if Port Power is zero.</description>
+                <bitRange>[6:6]</bitRange>
+              </field>
+              <field>
+                <name>OVER_CURRENT_CHANGE</name>
+                <description>Over-current Change\n\nThis bit gets set to a one when there is a change to Over-current Active. Software clears this bit by writing a one to this bit position.</description>
+                <bitRange>[5:5]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>OVER_CURRENT_ACTIVE</name>
+                <description>Over-current Active\n\n0 = This port does not have an over-current condition \n\n1 = This port currently has an over-current condition\n\nThis bit will automatically transition from a one to a zero when the over current condition is removed.\n\nThe default value of this bit is '0'.</description>
+                <bitRange>[4:4]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>PORT_ENABLE_DISABLE_CHANGE</name>
+                <description>Port Enable/Disable Change\n\n1 = Port enabled/disabled status has changed\n\n0 = No change\n\nFor the root hub, this bit gets set to a one only when a port is disabled due to the appropriate conditions existing at the EOF2 point (See Chapter 11 of the USB Specification for the definition of a Port Error). Software clears this bit by writing a 1 to it.\n\nThis field is zero if Port Power is zero.</description>
+                <bitRange>[3:3]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>PORT_ENABLED_DISABLED</name>
+                <description>Port Enabled/Disabled\n\n1=Enable\n\n0=Disable\n\nPorts can only be enabled by the host controller as a part of the reset and enable. Software cannot enable a port by writing a one to this field. The host controller will only set this bit to a one when the reset sequence determines that the attached device is a high- speed device.\n\nPorts can be disabled by either a fault condition(disconnect event or other fault condition) or by host software. Note that the bit status does not change until the port state actually changes. There may be a delay in disabling or enabling a port due to other host controller and bus events.\n\nWhen the port is disabled, downstream propagation of data is blocked on this port except for reset.\n\nThe default value of this field is '0'.\n\nThis field is zero if Port Power is zero.</description>
+                <bitRange>[2:2]</bitRange>
+              </field>
+              <field>
+                <name>CONNECT_STATUS_CHANGE</name>
+                <description>Connect Status Change\n\n1=Change in Current Connect Status\n\n0=No change\n\nIndicates a change has occurred in the current connect status of the port. The host controller sets this bit for all changes to the port device connect status, even if system software has not cleared an existing connect status change. For example, the insertion status changes twice before system software has cleared the changed condition, hub hardware will be 'setting' an already-set bit. Software sets this bit to 0 by writing a 1 to it.\n\nThis field is zero if Port Power is zero.</description>
+                <bitRange>[1:1]</bitRange>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>CURRENT_CONNECT_STATUS</name>
+                <description>Current Connect Status\n\nDevice is present on port when the value of this field is a one, and no device is present on port when the value of this field is a zero. This value reflects the current state of the port, and may not correspond directly to the event that caused the Connect Status Change(Bit 1) to be set.\n\nThis field is zero if Port Power zero.</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <name>OHCI_CONTROL_STATUS_PARTITION</name>
+          <description>OHCI Control and Status Partition Register</description>
+          <addressOffset>0x00404</addressOffset>
+          <register>
+            <name>HC_CONTROL</name>
+            <description>OHCI Control Register</description>
+            <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <name>REMOTE_WAKEUP_ENABLE</name>
+                <description>This bit is used by HCD to enable or disable the remote wakeup feature upon the detection of upstream resume signaling. When this bit is set and the ResumeDetected bit in HcInterruptStatus is set, a remote wakeup is signaled to the host system. Setting this bit has no impact on the generation of hardware interrupt.</description>
+                <bitRange>[10:10]</bitRange>
+              </field>
+              <field>
+                <name>REMOTE_WAKEUP_CONNECTED</name>
+                <description>This bit indicates whether HC supports remote wakeup signaling. If remote wakeup is supported and used by the system, it is the responsibility of system firmware to set this bit during POST. HC clear the bit upon a hardware reset but does not alter it upon a software reset. Remote wakeup signaling of the host system is host-bus-specific and is not described in this specification.</description>
+                <bitRange>[9:9]</bitRange>
+              </field>
+              <field>
+                <name>INTERRUPT_ROUTING</name>
+                <description>InterruptRouting This bit determines the routing of interrupts generated by events registered in HcInterruptStatus. If clear, all interrupt are routed to the normal host bus interrupt mechanism. If set interrupts are routed to the System Management Interrupt. HCD clears this bit upon a hardware reset, but it does not alter this bit upon a software reset. HCD uses this bit as a tag to indicate the ownership of HC.</description>
+                <bitRange>[8:8]</bitRange>
+              </field>
+              <field>
+                <name>HOST_CONTROLLER_FUNCTIONAL_STATE_FOR_USB</name>
+                <description>A transition to USBOperational from another state causes SOF generation to begin 1 ms later. HCD may determine whether HC has begun sending SOFs by reading the StartoFrame field of HcInterruptStatus.\n\nThis field may be changed by HC only when in the USBSUSPEND state. HC may move from the USBSUSPEND state to the USBRESUME state after detecting the resume signaling from a downstream port.\n\nHC enters USBSUSPEND after a software reset, whereas it enters USBRESET after a hardware reset. The latter also resets the Root Hub and asserts subsequent reset signaling to downstream ports.</description>
+                <bitRange>[7:6]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>USB_RESET</name>
+                    <description>USB Reset</description>
+                    <value>0b00</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>USB_RESUME</name>
+                    <description>USB Resume</description>
+                    <value>0b01</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>USB_OPERATIONAL</name>
+                    <description>USB Operational</description>
+                    <value>0b10</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>USB_SUSPEND</name>
+                    <description>USB Suspend</description>
+                    <value>0b11</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>BULK_LIST_ENABLE</name>
+                <description>This bit is set to enable the processing of the Bulk list in the next Frame. If cleared by HCD, the processing of the Bulk list does not occur after the next SOF. HC checks this bit whenever it determines to process the list. When disabled, HCD may modify the list. If HcBulkCurrentED is pointing to an ED to be removed, HCD must advance the pointer by updating HcBulkCurrentED before re-enabling processing of the list.</description>
+                <bitRange>[5:5]</bitRange>
+              </field>
+              <field>
+                <name>CONTROL_LIST_ENABLE</name>
+                <description>This bit is set to enable the processing of the Control list in the next Frame. If cleared by HCD, the processing of the Control list does not occur after the next SOF. HC must check this bit whenever it determines to process the list. When disabled, HCD may modify the list. If HcControlCurrentED is pointing to an ED to be removed, HCD must advance the pointer by updating HcControlCurrentED before re-enabling processing of the list.</description>
+                <bitRange>[3:3]</bitRange>
+              </field>
+              <field>
+                <name>ISOCHRONOUS_ENABLE</name>
+                <description>This bit is used by HCD to enable/disable processing of isochronous EDs. While processing the periodic list in a Frame, HC checks the status of this bit when it finds an Isochronous ED (F=1). If set (enabled), HC continues processing the EDs. If cleared (disabled), HC halts processing of the periodic list (which now contains only isochronous EDs) and begins processing the Bulk/Control lists. Setting this bit is guaranteed to take effect in the next Frame (not the current Frame).</description>
+                <bitRange>[3:3]</bitRange>
+              </field>
+              <field>
+                <name>PERIODIC_LIST_ENABLE</name>
+                <description>This bit is set to enable the processing of periodic list in the next Frame. If cleared by HCD, processing of the periodic list does not occur after the next SOF. HC must check this bit before it starts processing the list.</description>
+                <bitRange>[2:2]</bitRange>
+              </field>
+              <field>
+                <name>CONTROL_BULK_SERVICE_RATIO</name>
+                <description>This specifies the service ratio between Control and Bulk EDs. Before processing any of the nonperiodic lists, HC must compare the ratio specified with its internal count on how many nonempty Control EDs have been processed, in determining whether to continue serving another Control ED or switching to Bulk EDs. The internal count will be retained when crossing the frame boundary. In case of reset, HCD is responsible for restoring this value.</description>
+                <bitRange>[1:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>R1</name>
+                    <description>1:1</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>R2</name>
+                    <description>2:1</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>R3</name>
+                    <description>3:1</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>R4</name>
+                    <description>4:1</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_COMMAND_STATUS</name>
+            <description>OHCI Command Status Register</description>
+            <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>SCHEDULING_OVERRUN_COUNT</name>
+                <description>SchedulingOverrunCoun\n\nThese bits are incremented on each scheduling overrun error. It is initialized to 00b and wraps around at 11b. This will be incremented when a scheduling overrun is detected even if SchedulingOverrun in has already been set. This is used by HCD to monitor any persistent scheduling problem.</description>
+                <bitRange>[17:16]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>OWERSHIP_CHANGE_REQUEST</name>
+                <description>OwershipChangeRequest\n\nThis bit is set by an OS HCD to request a change of control of the HC. When set HC will set the OwnershipChange field in. After the changeover, this bit is cleared and remains so until the next request from OS HCD.</description>
+                <bitRange>[3:3]</bitRange>
+              </field>
+              <field>
+                <name>BULKL_LIST_FILLED</name>
+                <description>BulklListFilled\n\nThis bit is used to indicate whether there are any TDs on the Bulk list. It is set by HCD whenever it adds a TD to an ED in the Bulk list. When HC begins to process the head of the Bulk list, it checks BLF. As long as BulkListFilled is 0, HC will not start processing the Bulk list. If BulkListFilled is 1, HC will start processing the Bulk list and will set BF to 0. If HC finds a TD on the list, then HC will set BulkListFilled to 1 causing the Bulk list processing to continue. If no TD is found on the Bulk list, and if HCD does not set BulkListFilled , then BulkListFilled will still be 0 when HC completes processing the Bulk list and Bulk list processing will stop.</description>
+                <bitRange>[2:2]</bitRange>
+              </field>
+              <field>
+                <name>CONTROL_LIST_FILLED</name>
+                <description>ControlListFilled This bit is used to indicate whether there are any TDs on the Control list. It is set by HCD whenever it adds a TD to an ED in the Control list.\n\nWhen HC begins to process the head of the Control list, it checks CLF. As long as ControlListFilled is 0, HC will not start processing the Control list. If CF is 1, HC will start processing the Control list and will set ControlListFilled to 0. If HC finds a TD on the list, then HC will set ControlListFilled to 1 causing the Control list processing to continue. If no TD is found on the Control list, and if the HCD does not set ControlListFilled , then ControlListFilled will still be 0 when HC completes processing the Control list and Control list processing will stop.</description>
+                <bitRange>[1:1]</bitRange>
+              </field>
+              <field>
+                <name>HOST_CONTROLLER_RESET</name>
+                <description>HostControllerReset\n\nThis bit is by HCD to initiate a software reset of HC. Regardless of the functional state of HC, it moves to the USBSuspend state in which most of the operational registers are reset except those stated otherwise; e.g, the InteruptRouting field of HcControl, and no Host bus accesses are allowed. This bit is cleared by HC upon the completion of the reset operation. The reset operation must be completed within 10 ms. This bit, when set, should not cause a reset to the Root Hub and no subsequent reset signaling should be asserted to its downstream ports.</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_INTERRUPT_STATUS</name>
+            <description>OHCI Interrupt Status Register</description>
+            <addressOffset>0x8</addressOffset>
+            <fields>
+              <field>
+                <name>ROOT_HUB_STATUS_CHANGE</name>
+                <description>RootHubStatusChange\n\nThis bit is set when the content of or the content of any of [ NumberofDownstreamPort ] has changed.</description>
+                <bitRange>[6:6]</bitRange>
+              </field>
+              <field>
+                <name>FRAME_NUMBER_OVERFLOW</name>
+                <description>FrameNumberOverflow\n\nThis bit is set when the MSb of (bit 15) changes value, from 0 to 1 or from 1 to 0, and after has been updated.</description>
+                <bitRange>[5:5]</bitRange>
+              </field>
+              <field>
+                <name>UNRECOVERABLE_ERROR</name>
+                <description>UnrecoverableError\n\nThis bit is set when HC detects a system error not related to USB. HC should not proceed with any processing nor signaling before the system error has been corrected. HCD clears this bit after HC has been reset.</description>
+                <bitRange>[4:4]</bitRange>
+              </field>
+              <field>
+                <name>RESUME_DETECTED</name>
+                <description>ResumeDetected\n\nThis bit is set when HC detects that a device on the USB is asserting resume signaling. It is the transition from no resume signaling to resume signaling causing this bit to be set. This bit is not set when HCD sets the USBRseume state.</description>
+                <bitRange>[3:3]</bitRange>
+              </field>
+              <field>
+                <name>START_OF_FRAME</name>
+                <description>StartofFrame\n\nThis bit is set by HC at each start of frame and after the update of HccaFrameNumber. HC also generates a SOF token at the same time.</description>
+                <bitRange>[2:2]</bitRange>
+              </field>
+              <field>
+                <name>WRITEBACK_DONE_HEAD</name>
+                <description>WritebackDoneHead\n\nThis bit is set immediately after HC has written to. Further updates of the will not occur until this bit has been cleared. HCD should only clear this bit after it has saved the content of HccaDoneHead.</description>
+                <bitRange>[1:1]</bitRange>
+              </field>
+              <field>
+                <name>SCHEDULING_OVERRUN</name>
+                <description>SchedulingOverrun\n\nThis bit is set when the USB schedule for the current Frame overruns and after the update of. A scheduling overrun will also cause the SchedulingOverrunCount of to be incremented.</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_INTERRUPT_ENABLE</name>
+            <description>OHCI Interrupt Enable Register</description>
+            <addressOffset>0xC</addressOffset>
+            <fields>
+              <field>
+                <name>MASTER_INTERRUPT_ENABLE</name>
+                <description>MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable.</description>
+                <bitRange>[31:31]</bitRange>
+              </field>
+              <field>
+                <name>ROOT_HUB_STATUS_CHANGE</name>
+                <description>RootHubStatusChange Interrupt Enable</description>
+                <bitRange>[6:6]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable interrupt generation due to Root Hub Status Change</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>FRAME_NUMBER_OVERFLOW</name>
+                <description>FrameNumberOverflow Interrupt Enable</description>
+                <bitRange>[5:5]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable interrupt generation due to Frame Number Overflow</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>UNRECOVERABLE_ERROR</name>
+                <description>UnrecoverableError Interrupt Enable</description>
+                <bitRange>[4:4]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable interrupt generation due to Unrecoverable Error</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>RESUME_DETECTED</name>
+                <description>ResumeDetected Interrupt Enable</description>
+                <bitRange>[3:3]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable interrupt generation due to Resume Detected</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>START_OF_FRAME</name>
+                <description>StartofFrame Interrupt Enable</description>
+                <bitRange>[2:2]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable interrupt generation due to Start of Frame</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>WRITEBACK_DONE_HEAD</name>
+                <description>WritebackDoneHead Interrupt Enable</description>
+                <bitRange>[1:1]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable interrupt generation due to Writeback Done Head</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>SCHEDULING_OVERRUN</name>
+                <description>SchedulingOverrun Interrupt Enable</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable interrupt generation due to Scheduling Overrun</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_INTERRUPT_DISABLE</name>
+            <description>OHCI Interrupt Disable Register</description>
+            <addressOffset>0x10</addressOffset>
+            <fields>
+              <field>
+                <name>MASTER_INTERRUPT_DISABLE</name>
+                <description>MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field disables interrupt generation due to events specified in the other bits of this register. This field is set after a hardware or software reset.</description>
+                <bitRange>[31:31]</bitRange>
+              </field>
+              <field>
+                <name>ROOT_HUB_STATUS_CHANGE</name>
+                <description>RootHubStatusChange Interrupt Disable</description>
+                <bitRange>[6:6]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable interrupt generation due to Root Hub Status Change</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>FRAME_NUMBER_OVERFLOW</name>
+                <description>FrameNumberOverflow Interrupt Disable</description>
+                <bitRange>[5:5]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable interrupt generation due to Frame Number Overflow</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>UNRECOVERABLE_ERROR</name>
+                <description>UnrecoverableError Interrupt Disable</description>
+                <bitRange>[4:4]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable interrupt generation due to Unrecoverable Error</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>RESUME_DETECTED</name>
+                <description>ResumeDetected Interrupt Disable</description>
+                <bitRange>[3:3]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable interrupt generation due to Resume Detected</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>START_OF_FRAME</name>
+                <description>StartofFrame Interrupt Disable</description>
+                <bitRange>[2:2]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable interrupt generation due to Start of Frame</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>WRITEBACK_DONE_HEAD</name>
+                <description>WritebackDoneHead Interrupt Disable</description>
+                <bitRange>[1:1]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable interrupt generation due to Writeback Done Head</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>SCHEDULING_OVERRUN</name>
+                <description>SchedulingOverrun Interrupt Disable</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>Ignore</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable interrupt generation due to Scheduling Overrun</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <name>OHCI_MEMORY_POINTER_PARTITION</name>
+          <description>OHCI Memory Pointer Partition Register</description>
+          <addressOffset>0x00418</addressOffset>
+          <register>
+            <name>HC_HCCA</name>
+            <description>OHCI HCCA Base</description>
+            <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <name>HCCA_31_8</name>
+                <description>This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver.</description>
+                <bitRange>[31:8]</bitRange>
+              </field>
+              <field>
+                <name>HCCA_7_0</name>
+                <description>The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read.</description>
+                <bitRange>[7:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_PERIOD_CURRENT_ED</name>
+            <description>OHCI Period Current ED Base</description>
+            <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>PCED_31_4</name>
+                <description>This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading.</description>
+                <bitRange>[31:4]</bitRange>
+              </field>
+              <field>
+                <name>PCED_3_0</name>
+                <description>Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field.</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_CONTROL_HEAD_ED</name>
+            <description>OHCI Control Head ED Base</description>
+            <addressOffset>0x8</addressOffset>
+            <fields>
+              <field>
+                <name>EHCD_31_4</name>
+                <description>The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC.</description>
+                <bitRange>[31:4]</bitRange>
+              </field>
+              <field>
+                <name>EHCD_3_0</name>
+                <description>Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field.</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_CONTROL_CURRENT_ED</name>
+            <description>OHCI Control Current ED Base</description>
+            <addressOffset>0xC</addressOffset>
+            <fields>
+              <field>
+                <name>CCED_31_4</name>
+                <description>The pointer is advanced to the next ED after serving the present one. HC will continue processing the list from where it left off in the last Frame. When it reaches the end of the Control list, HC checks the ControlListFilled of in HcCommandStatus. If set, it copies the content of HcControlHeadED to HcControlCurrentED and clears the bit. If not set, it does nothing.\n\nHCD is allowed to modify this register only when the ControlListEnable of HcControl is cleared. When set, HCD only reads the instantaneous value of this register. Initially, this is set to zero to indicate the end of the Control list.</description>
+                <bitRange>[31:4]</bitRange>
+              </field>
+              <field>
+                <name>CCED_3_0</name>
+                <description>Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field.</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_BULK_HEAD_ED</name>
+            <description>OHCI Bulk Head ED Base</description>
+            <addressOffset>0x10</addressOffset>
+            <fields>
+              <field>
+                <name>BHED_31_4</name>
+                <description>The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC.</description>
+                <bitRange>[31:4]</bitRange>
+              </field>
+              <field>
+                <name>BHED_3_0</name>
+                <description>Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field.</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_BULK_CURRENT_ED</name>
+            <description>OHCI Bulk Current ED Base</description>
+            <addressOffset>0x14</addressOffset>
+            <fields>
+              <field>
+                <name>BCED_31_4</name>
+                <description>This is advanced to the next ED after the HC has served the present one. HC continues processing the list from where it left off in the last Frame. When it reaches the end of the Bulk list, HC checks the ControlListFilled of HcControl. If set, it copies the content of HcBulkHeadED to HcBulkCurrentED and clears the bit. If it is not set, it does nothing. HCD is only allowed to modify this register when the BulkListEnable of HcControl is cleared. When set, the HCD only reads the instantaneous value of this register. This is initially set to zero to indicate the end of the Bulk list.</description>
+                <bitRange>[31:4]</bitRange>
+              </field>
+              <field>
+                <name>BCED_3_0</name>
+                <description>Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field.</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_DONE_HEAD</name>
+            <description>OHCI Done Head Base</description>
+            <addressOffset>0x18</addressOffset>
+            <fields>
+              <field>
+                <name>DH_31_4</name>
+                <description>When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus.</description>
+                <bitRange>[31:4]</bitRange>
+              </field>
+              <field>
+                <name>DH_3_0</name>
+                <description>Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field.</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <name>OHCI_FRAME_COUNTER_PARTITION</name>
+          <description>OHCI Frame Counter Partition Register</description>
+          <addressOffset>0x00434</addressOffset>
+          <register>
+            <name>HC_FM_INTERVAL</name>
+            <description>OHCI Frame Interval Register</description>
+            <addressOffset>0x0</addressOffset>
+            <resetValue>0x00002EDF</resetValue>
+            <resetMask>0xFFFF3FFF</resetMask>
+            <fields>
+              <field>
+                <name>FRAME_INTERVAL_TOGGLER</name>
+                <description>FrameIntervalToggler HCD toggles this bit whenever it loads a new value to FrameInterval.</description>
+                <bitRange>[31:31]</bitRange>
+              </field>
+              <field>
+                <name>FS_LARGEST_DATA_PACKET</name>
+                <description>FSLargestDataPacket\n\nThis field specifies a value which is loaded into the Largest Data Packet Counter at the beginning of each frame. The counter value represents the largest amount of data in bits which can be sent or received by the HC in a single transaction at any given time without causing scheduling overrun. The field value is calculated by the HCD.</description>
+                <bitRange>[30:16]</bitRange>
+              </field>
+              <field>
+                <name>FRAME_INTERVAL</name>
+                <description>FrameInterval\n\nThis specifies the interval between two consecutive SOFs in bit times. The nominal value is set to be 11,999. HCD should store the current value of this field before resetting HC. By setting the HostControllerReset field of as this will cause the HC to reset this field to its nominal value. HCD may choose to restore the stored value upon the completion of the Reset sequence.</description>
+                <bitRange>[13:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_FM_REMAINING</name>
+            <description>OHCI Frame Remaining Register</description>
+            <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>FRAME_REMAINING_TOGGLE</name>
+                <description>FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining.</description>
+                <bitRange>[31:31]</bitRange>
+              </field>
+              <field>
+                <name>FRAME_REMAINING</name>
+                <description>FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF.</description>
+                <bitRange>[13:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_FM_NUMBER</name>
+            <description>OHCI Frame Number Register</description>
+            <addressOffset>0x8</addressOffset>
+            <fields>
+              <field>
+                <name>FRAME_NUMBER</name>
+                <description>FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus</description>
+                <bitRange>[15:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_PERIODIC_START</name>
+            <description>OHCI Periodic Start Register</description>
+            <addressOffset>0xC</addressOffset>
+            <fields>
+              <field>
+                <name>PERIODIC_START</name>
+                <description>PeriodicStart\n\nAfter a hardware reset, this field is cleared. This is then set by HCD during the HC initialization. The value is calculated roughly as 10% off from. A typical value will be 0x2A3F (or 0x3e67). When reaches the value specified, processing of the periodic lists will have priority over Control/Bulk processing. HC will therefore start processing the Interrupt list after completing the current Control or Bulk transaction that is in progress.</description>
+                <bitRange>[13:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_LS_THRESHOLD</name>
+            <description>OHCI LS Threshold Register</description>
+            <addressOffset>0x10</addressOffset>
+            <resetValue>0x628</resetValue>
+            <resetMask>0xFFF</resetMask>
+            <fields>
+              <field>
+                <name>LS_THRESHOLD</name>
+                <description>LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead.</description>
+                <bitRange>[11:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <name>OHCI_ROOT_HUB_PARTITION</name>
+          <description>OHCI Root Hub Partition Register</description>
+          <addressOffset>0x00448</addressOffset>
+          <register>
+            <name>HC_RH_DESCRIPTOR_A</name>
+            <description>OHCI Root Hub Descriptor Register A</description>
+            <addressOffset>0x0</addressOffset>
+            <resetValue>0x2001201</resetValue>
+            <resetMask>0xFF001FFF</resetMask>
+            <fields>
+              <field>
+                <name>POWER_ON_TO_POWER_GOOD_TIME</name>
+                <description>PowerOnToPowerGoodTime[POTPGT]\n\nThis byte specifies the duration HCD has to wait before accessing a powered-on port of the Root Hub. It is implementation-specific. The unit of time is 2 ms. The duration is calculated as POTPGT * 2ms.</description>
+                <bitRange>[31:24]</bitRange>
+              </field>
+              <field>
+                <name>NO_OVER_CURRENT_PROTECTION</name>
+                <description>NoOverCurrentProtection\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. When this bit is cleared, the OverCurrentProtectionMode field specifies global or per-port reporting.</description>
+                <bitRange>[12:12]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>REPORT</name>
+                    <description>Over-current status is reported collectively for all downstream ports</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NO_SUPPORT</name>
+                    <description>No over-current protection supported</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>OVER_CURRENT_PROTECTION_MODE</name>
+                <description>OverCurrentProtectionMode\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. At reset, these fields should reflect the same mode as PowerSwitchingMode. This field is valid only if the NoOverCurrentProtection field is cleared. 0 Over-current status is reported collectively for all downstream ports. 1 Over-current status is reported on per-port basis.</description>
+                <bitRange>[11:11]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>REPORT</name>
+                    <description>Over-current status is reported collectively for all downstream ports</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>REPORT_PERPORT</name>
+                    <description>Over-current status is reported on per-port basis</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>DEVICE</name>
+                <description>Device Type This bit specifies that the Root Hub is not a compound device. The Root Hub is not permitted to be a compound device. This field should always read/write 0.</description>
+                <bitRange>[10:10]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>POWER_SWITCHING_MODE</name>
+                <description>PowerSwitchingMode\n\nThis bit is used to specify how the power switching of the Root Hub ports is controlled. It is implementation-specific. This field is only valid if the NoPowerSwitching field is cleared.</description>
+                <bitRange>[9:9]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>SAME_TIME</name>
+                    <description>All ports are powered at the same time</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>INDIVIDUAL</name>
+                    <description>Each port is powered individually. This mode allows port power to be controlled by either the global switch or per- port switching. If the PortPowerControlMask bit is set, the port responds only to port power commands ( Set/ClearPortPower ). If the port mask is cleared, then the port is controlled only by the global power switch ( Set/ClearGlobalPower ).</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>NO_POWER_SWITHCING</name>
+                <description>NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode  specifies global or per-port switching.</description>
+                <bitRange>[8:8]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>SWITCHED</name>
+                    <description>Ports are power switched</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ALWAYS</name>
+                    <description>Ports are always powered on when the HC is powered on</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>NUMBER_DOWNSTREAM_PORTS</name>
+                <description>NumberDownstreamPorts\n\nThese bits specify the number of downstream ports supported by the Root Hub. It is implementation-specific. The minimum number of ports is 1. The maximum number of ports supported.</description>
+                <bitRange>[7:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_RH_DESCRIPTOR_B</name>
+            <description>OHCI Root Hub Descriptor Register B</description>
+            <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>PORT_POWER_CONTROL_MASK</name>
+                <description>PortPowerControlMask\n\nEach bit indicates if a port is affected by a global power control command when PowerSwitchingMode is set. When set, the port's power state is only affected by per-port power control ( Set/ClearPortPower ). When cleared, the port is controlled by the global power switch ( Set/ClearGlobalPower ). If the device is configured to global switching mode ( PowerSwitchingMode = 0 ), this field is not valid.</description>
+                <bitRange>[31:16]</bitRange>
+              </field>
+              <field>
+                <name>DEVICE_REMOVABLE</name>
+                <description>DeviceRemovable\n\nEach bit is dedicated to a port of the Root Hub. When cleared, the attached device is removable. When set, the attached device is not removable.</description>
+                <bitRange>[15:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_RH_STATUS</name>
+            <description>OHCI Root Hub Status Register</description>
+            <addressOffset>0x8</addressOffset>
+            <fields>
+              <field>
+                <name>CLEAR_REMOTE_EAKEUP_ENABLE</name>
+                <description>(write)ClearRemoteWakeupEnable\n\nWrite a '1' clears DeviceRemoteWakeupEnable. Writing a '0' has no effect.</description>
+                <bitRange>[31:31]</bitRange>
+              </field>
+              <field>
+                <name>OVER_CURRENT_INDICATOR_CHANGE</name>
+                <description>This bit is set by hardware when a change has occurred to the OverCurrentIndicator field of this register. The HCD clears this bit by writing a '1'. Writing a '0' has no effect.</description>
+                <bitRange>[17:17]</bitRange>
+              </field>
+              <field>
+                <name>R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER</name>
+                <description>(read)LocalPowerStatusChange\n\nThe Root Hub does not support the local power status features, thus, this bit is always read as '0'.\n\n(write)SetGlobalPower\n\nIn global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn on power to all ports (clear PortPowerStatus ). In per-port power mode, it sets PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect.</description>
+                <bitRange>[16:16]</bitRange>
+              </field>
+              <field>
+                <name>R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE</name>
+                <description>(read)DeviceRemoteWakeupEnable\n\nThis bit enables a ConnectStatusChange bit as a resume event, causing a USBSUSPEND to USBRESUME state transition and setting the ResumeDetected interrupt.\n\n0 ConnectStatusChange is not a remote wakeup event.\n\n1 ConnectStatusChange is a remote wakeup event.\n\n(write)SetRemoteWakeupEnable\n\nWriting a '1' sets DeviceRemoveWakeupEnable. Writing a '0' has no effect.</description>
+                <bitRange>[15:15]</bitRange>
+              </field>
+              <field>
+                <name>OVER_CURRENT_INDICATOR</name>
+                <description>This bit reports overcurrent conditions when the global reporting is implemented. When set, an overcurrent condition exists. When cleared, all power operations are normal.  If per-port overcurrent protection is implemented this bit is always '0'</description>
+                <bitRange>[1:1]</bitRange>
+              </field>
+              <field>
+                <name>R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER</name>
+                <description>(Read)LocalPowerStatus\n\nWhen read, this bit returns the LocalPowerStatus of the Root Hub. The Root Hub does not support the local power status feature; thus, this bit is always read as '0'.\n\n(Write)ClearGlobalPower\n\nWhen write, this bit is operated as the ClearGlobalPower. In global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn off power to all ports (clear PortPowerStatus ). In per-port power mode, it clears PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect.</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HC_RH_PORT_STATUS</name>
+            <description>OHCI Root Hub Port Status Register</description>
+            <addressOffset>0xC</addressOffset>
+            <fields>
+              <field>
+                <name>PORT_RESET_STATUS_CHANGE</name>
+                <description>This bit is set at the end of the 10ms port reset signal. The HCD writes a '1' to clear this bit. Writing a '0' has no effect.</description>
+                <bitRange>[20:20]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NOC_COMPLETE</name>
+                    <description>port reset is not complete</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>COMPLETE</name>
+                    <description>port reset is complete</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>PORT_OVER_CURRENT_INDICATOR_CHANGE</name>
+                <description>This bit is valid only if overcurrent conditions are reported on a per-port basis. This bit is set when Root Hub changes the PortOverCurrentIndicator bit. The HCD writes a ‘1’ to clear this bit. Writing a ‘0’ has no effect.</description>
+                <bitRange>[19:19]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_CHANGE</name>
+                    <description>no change in PortOverCurrentIndicator</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>CHANGE</name>
+                    <description>PortOverCurrentIndicator has changed</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>PORT_SUSPEND_STATUS_CHANGE</name>
+                <description>This bit is set when the full resume sequence has been completed. This sequence includes the 20-s resume pulse, LS EOP, and 3-ms resychronization delay. The HCD writes a '1' to clear this bit. Writing a '0' has no effect. This bit is also cleared when ResetStatusChange is set.</description>
+                <bitRange>[18:18]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NOT_COMPLETE</name>
+                    <description>resume is not completed</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>COMPLETE</name>
+                    <description>resume is completed</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>PORT_ENABLE_STATUS_CHANGE</name>
+                <description>This bit is set when hardware events cause the PortEnableStatus bit to be cleared. Changes from HCD writes do not set this bit. The HCD writes a '1' to clear this bit. Writing a '0' has no effect.</description>
+                <bitRange>[17:17]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_CHANGE</name>
+                    <description>no change in PortEnableStatus</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>CHANGE</name>
+                    <description>PortEnableStatus has changed</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>CONNECT_STATUS_CHANGE</name>
+                <description>This bit is set whenever a connect or disconnect event occurs. The HCD writes a '1' to clear this bit. Writing a '0' has no effect. If CurrentConnectStatus is cleared when a SetPortReset,SetPortEnable , or SetPortSuspend write occurs, this bit is set to force the driver to re-evaluate the connection status since these writes should not occur if the port is disconnected.\n\nNote: If the DeviceRemovable[NDP] bit is set, this bit is set only after a Root Hub reset to inform the system that the device is attached.</description>
+                <bitRange>[16:16]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_CHANGE</name>
+                    <description>no change in CurrentConnectStatus</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>CHANGE</name>
+                    <description>CurrentConnectStatus has changed</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>R_LOW_SPEED_DEVICE_ATTACHED_W_CLEAR_PORT_POWER</name>
+                <description>(read) LowSpeedDeviceAttached\n\nThis bit indicates the speed of the device attached to this port. When set, a Low Speed device is attached to this port. When clear, a Full Speed device is attached to this port. This field is valid only when the CurrentConnectStatus is set.\n\n0 full speed device attached\n\n1 low speed device attached\n\n(write) ClearPortPower\n\nThe HCD clears the PortPowerStatus bit by writing a '1' to this bit. Writing a '0' has no effect.</description>
+                <bitRange>[9:9]</bitRange>
+              </field>
+              <field>
+                <name>R_PORT_POWER_STATUS_W_SET_PORT_POWER</name>
+                <description>(read) PortPowerStatus\n\nThis bit reflects the port’s power status, regardless of the type of power switching implemented. This bit is cleared if an overcurrent condition is detected. HCD sets this bit by writing SetPortPower or SetGlobalPower. HCD clears this bit by writing ClearPortPower or ClearGlobalPower. Which power control switches are enabled is determined by PowerSwitchingMode and PortPortControlMask[NumberDownstreamPort]. In global switching mode(PowerSwitchingMode=0), Set/ClearGlobalPower controls this bit. In per-port power switching (PowerSwitchingMode=1), if the PortPowerControlMask[NDP] bit for the port is set, only Set/ClearPortPower commands are enabled. If the mask is not set, only Set/ClearGlobalPower commands are enabled. When port power is disabled, CurrentConnectStatus, PortEnableStatus, PortSuspendStatus, and PortResetStatus should be reset.\n\n0 port power is off\n\n1 port power is on\n\n(write) SetPortPower\n\nThe HCD writes a ‘1’ to set the PortPowerStatus bit. Writing a ‘0’ has no effect.\n\nNote: This bit is always reads ‘1b’ if power switching is not supported.</description>
+                <bitRange>[8:8]</bitRange>
+              </field>
+              <field>
+                <name>R_PORT_RESET_STATUS_W_SET_PORT_RESET</name>
+                <description>(read) PortResetStatus\n\nWhen this bit is set by a write to SetPortReset , port reset signaling is asserted. When reset is completed, this bit is cleared when PortResetStatusChange is set. This bit cannot be set if CurrentConnectStatus is cleared.\n\n0 port reset signal is not active\n\n1 port reset signal is active\n\n(write) SetPortReset\n\nThe HCD sets the port reset signaling by writing a '1' to this bit. Writing a '0' has no effect. If CurrentConnectStatus is cleared, this write does not set PortResetStatus , but instead sets ConnectStatusChange. This informs the driver that it attempted to reset a disconnected port.</description>
+                <bitRange>[4:4]</bitRange>
+              </field>
+              <field>
+                <name>R_PORT_OVER_CURRENT_INDICATOR_W_CLEAR_SUSPEND_STATUS</name>
+                <description>(read) PortOverCurrentIndicator \n\nThis bit is only valid when the Root Hub is configured in such a way that overcurrent conditions are reported on a per-port basis. If per-port overcurrent reporting is not supported, this bit is set to 0. If cleared, all power operations are normal for this port. If set, an overcurrent condition exists on this port. This bit always reflects the overcurrent input signal. 0 no overcurrent condition. 1 overcurrent condition detected.\n\n(write) ClearSuspendStatus\n\nThe HCD writes a '1' to initiate a resume. Writing a '0' has no effect. A resume is initiated only if PortSuspendStatus is set.</description>
+                <bitRange>[3:3]</bitRange>
+              </field>
+              <field>
+                <name>R_PORT_SUSPEND_STATUS_W_SET_PORT_SUSPEND</name>
+                <description>(read) PortSuspendStatus\n\nThis bit indicates the port is suspended or in the resume sequence. It is set by a SetSuspendState write and cleared when PortSuspendStatusChange is set at the end of the resume interval. This bit cannot be set if CurrentConnectStatus is cleared. This bit is also cleared when PortResetStatusChange is set at the end of the port reset or when the HC is placed in the USBRESUME state. If an upstream resume is in progress, it should propagate to the HC.\n\n0 port is not suspended\n\n1 port is suspended\n\n(write) SetPortSuspend\n\nThe HCD sets the PortSuspendStatus bit by writing a '1' to this bit. Writing a '0' has no effect. If CurrentConnectStatus is cleared, this write does not set PortSuspendStatus ; instead it sets ConnectStatusChange. This informs the driver that it attempted to suspend a disconnected port.</description>
+                <bitRange>[2:2]</bitRange>
+              </field>
+              <field>
+                <name>R_PORT_ENABLE_STATUS_W_SET_PORT_ENABLE</name>
+                <description>(read)PortEnableStatus\n\nThis bit indicates whether the port is enabled or disabled. The Root Hub may clear this bit when an overcurrent condition, disconnect event, switched-off power, or operational bus error such as babble is detected. This change also causes PortEnabledStatusChange to be set. HCD sets this bit by writing SetPortEnable and clears it by writing ClearPortEnable. This bit cannot be set when CurrentConnectStatus is cleared. This bit is also set, if not already, at the completion of a port reset when ResetStatusChange is set or port suspend when SuspendStatusChange is set.\n\n0 port is disabled\n\n1 port is enabled\n\n(write)SetPortEnable\n\nThe HCD sets PortEnableStatus by writing a ‘1’. Writing a ‘0’ has no effect. If CurrentConnectStatus is cleared, this write does not set PortEnableStatus, but instead sets ConnectStatusChange. This informs the driver that it attempted to enable a disconnected Port.</description>
+                <bitRange>[1:1]</bitRange>
+              </field>
+              <field>
+                <name>R_CURRENT_CONNECT_STATUS_W_CLEAR_PORT_ENABLE</name>
+                <description>(read) CurrentConnectStatus\n\nThis bit reflects the current state of the downstream port.\n\n0 No device connected\n\n1 Device connected\n\n(write) ClearPortEnable\n\nThe HCD writes a '1' to clear the PortEnableStatus bit. Writing '0' to this bit has no effect. The CurrentConnectStatus is not affected by any write. Note: This bit is always read '1' when the attached device is nonremovalble (DviceRemoveable[NumberDownstreamPort]).</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+        </cluster>
+        <cluster>
+          <name>HCI_CONTROLLER_PHY_INTERFACE</name>
+          <description>HCI Controller and PHY Interface Register</description>
+          <addressOffset>0x00800</addressOffset>
+          <register>
+            <name>HCI_INTERFACE</name>
+            <description>HCI Interface Register</description>
+            <addressOffset>0x0</addressOffset>
+            <resetValue>0x10000000</resetValue>
+            <resetMask>0x12041F01</resetMask>
+            <fields>
+              <field>
+                <name>DMA_TRANSFER_STATUS_ENABLE</name>
+                <description>DMA Transfer Status Enable</description>
+                <bitRange>[28:28]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>OHCI_COUNT_SELECT</name>
+                <description>OHCI count select</description>
+                <bitRange>[25:25]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>SIMULATION</name>
+                    <description>Simulation mode. The counters will be much shorter then real time</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NORMAL</name>
+                    <description>Normal mode. The counters will count full time</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>RESUME_K_TO_SE0_TRANSITION</name>
+                <bitRange>[18:18]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>WITHIN_2US</name>
+                    <description>Within 2 us of the resume-K to SE0 transition</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>RANDOM</name>
+                    <description>Random time value of the resume-K to SE0 transition</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>PP2VBUS</name>
+                <bitRange>[12:12]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>AUTO</name>
+                    <description>ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>IGNORE</name>
+                    <description>ULPI wrapper will ignore the difference between power status of root hub and ULPI PHY</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>AHB_MASTER_INTERFACE_INCR16_ENABLE</name>
+                <description>Master interface INCR16 enable</description>
+                <bitRange>[11:11]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>USE_INCR16</name>
+                    <description>Use INCR16 when appropriate</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NOT_USE_INCR16</name>
+                    <description>Do not use INCR16, use other enabled INCRX or unspecified length burst INCR</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>AHB_MASTER_INTERFACE_INCR8_ENABLE</name>
+                <description>Master interface INCR8 enable</description>
+                <bitRange>[10:10]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>USE_INCR8</name>
+                    <description>Use INCR8 when appropriate</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NOT_USE_INCR8</name>
+                    <description>Do not use INCR8, use other enabled INCRX or unspecified length burst INCR</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE</name>
+                <description>Master interface burst type INCR4 enable</description>
+                <bitRange>[9:9]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>USE_INCR4</name>
+                    <description>Use INCR4 when appropriate</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NOT_USE_INCR4</name>
+                    <description>Do not use INCR4, use other enabled INCRX or unspecified length burst INCR</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE</name>
+                <description>Master interface INCRX align enable</description>
+                <bitRange>[8:8]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>BURST_X_ALIGN_ADDRESS</name>
+                    <description>Start INCRx burst only on burst x-align address</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ANY_DOUBLE_WORD_BOUNDARY</name>
+                    <description>Start burst on any double word boundary Note: This bit must enable if any bit of bit[11:9] is enabled</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>ULPI_BYPASS_ENABLE</name>
+                <description>ULPI bypass enable</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>UTMI</name>
+                    <description>Enable UTMI interface, disable ULPI interface</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ULPI</name>
+                    <description>Enable ULPI interface, disable UTMI interface</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HCI_CTRL3</name>
+            <description>HCI Control Register</description>
+            <addressOffset>0x8</addressOffset>
+            <resetValue>0x10000</resetValue>
+            <resetMask>0x1000B</resetMask>
+            <fields>
+              <field>
+                <name>LINESTATE_CHANGE_DETECT</name>
+                <description>Linestate Change Detect</description>
+                <bitRange>[16:16]</bitRange>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NOT_DECTED</name>
+                    <description>Linestate change not dected</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DECTED</name>
+                    <description>Linestate change dected Write '1' to clear.</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>REMOTE_WAKEUP_ENABLE</name>
+                <description>Remote Wakeup Enable</description>
+                <bitRange>[3:3]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>LINESTATE_CHANGE_INTERRUPT_ENABLE</name>
+                <description>Linestate Change Interrupt Enable</description>
+                <bitRange>[1:1]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>LINESTATE_CHANGE_DETECT_ENABLE</name>
+                <description>Linestate Change Detect Enable</description>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Enable</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Disable</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>PHY_CONTROL</name>
+            <description>PHY Control Register</description>
+            <addressOffset>0x10</addressOffset>
+            <fields>
+              <field>
+                <name>BIST_EN_A</name>
+                <bitRange>[16:16]</bitRange>
+              </field>
+              <field>
+                <name>VC_ADDR</name>
+                <description>vc_addr</description>
+                <bitRange>[15:8]</bitRange>
+              </field>
+              <field>
+                <name>VC_DI</name>
+                <description>vc_di</description>
+                <bitRange>[7:7]</bitRange>
+              </field>
+              <field>
+                <name>SIDDQ</name>
+                <bitRange>[3:3]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Write 1 to disable phy</description>
+                    <value>0b1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>Write 0 to enable phy</description>
+                    <value>0b0</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>VC_CLK</name>
+                <description>vc_clk</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>PHY_STATUS</name>
+            <description>PHY Status Register</description>
+            <addressOffset>0x24</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>BIST_ERROR</name>
+                <description>Bist_error</description>
+                <bitRange>[17:17]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>BIST_DONE</name>
+                <description>bist_done</description>
+                <bitRange>[16:16]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>VC_DO</name>
+                <description>vc_do</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
+          </register>
+          <register>
+            <name>HCI_SIE_PORT_DISABLE_CONTROL</name>
+            <description>HCI SIE Port Disable Control Register</description>
+            <addressOffset>0x28</addressOffset>
+            <fields>
+              <field>
+                <name>SE0_STATUS</name>
+                <description>SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit[1:0] is 10b or 11b</description>
+                <bitRange>[16:16]</bitRange>
+              </field>
+              <field>
+                <name>RESUME_SEL</name>
+                <description>resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i.</description>
+                <bitRange>[4:4]</bitRange>
+              </field>
+              <field>
+                <name>PORT_DISABLE_CONTROL</name>
+                <description>Port Disable Control</description>
+                <bitRange>[1:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>Port Disable when no-se0 detect before SOF</description>
+                    <value>0b0x</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NO_DISABLE</name>
+                    <description>No Port Disable when no-se0 detect before SOF</description>
+                    <value>0b10</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>DISABLE_3_TIME_DETECT</name>
+                    <description>Port Disable when no-se0 3 time detect before SOF during 8 frames</description>
+                    <value>0b11</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
+          </register>
+        </cluster>
       </registers>
     </peripheral>
 
