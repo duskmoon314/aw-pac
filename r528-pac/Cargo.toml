@@ -8,6 +8,7 @@ categories = ["embedded", "hardware-support", "no-std"]
 keywords = ["no-std", "arm", "cortex-a", "register", "peripheral"]
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/duskmoon314/aw-pac"
+include = ["src/**/*", "README.md"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
