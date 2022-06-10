@@ -49,13 +49,9 @@ impl From<USBOTG0_RST_A> for bool {
     }
 }
 #[doc = "Field `USBOTG0_RST` reader - USBOTG0 Reset"]
-pub struct USBOTG0_RST_R(crate::FieldReader<bool, USBOTG0_RST_A>);
+pub type USBOTG0_RST_R = crate::BitReader<USBOTG0_RST_A>;
 impl USBOTG0_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        USBOTG0_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBOTG0_RST_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl USBOTG0_RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == USBOTG0_RST_A::ASSERT
+        *self == USBOTG0_RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == USBOTG0_RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for USBOTG0_RST_R {
-    type Target = crate::FieldReader<bool, USBOTG0_RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USBOTG0_RST_A::DEASSERT
     }
 }
 #[doc = "Field `USBOTG0_RST` writer - USBOTG0 Reset"]
-pub struct USBOTG0_RST_W<'a> {
-    w: &'a mut W,
-}
+pub type USBOTG0_RST_W<'a> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_RST_A, 24>;
 impl<'a> USBOTG0_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBOTG0_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> USBOTG0_RST_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(USBOTG0_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 24)) | ((value as u32 & 0x01) << 24);
-        self.w
     }
 }
 #[doc = "USBEHCI Reset\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<USBEHCI_RST_A> for bool {
     }
 }
 #[doc = "Fields `USBEHCI(0-1)_RST` reader - USBEHCI Reset"]
-pub struct USBEHCI_RST_R(crate::FieldReader<bool, USBEHCI_RST_A>);
+pub type USBEHCI_RST_R = crate::BitReader<USBEHCI_RST_A>;
 impl USBEHCI_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        USBEHCI_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBEHCI_RST_A {
         match self.bits {
@@ -150,32 +112,17 @@ impl USBEHCI_RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == USBEHCI_RST_A::ASSERT
+        *self == USBEHCI_RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == USBEHCI_RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for USBEHCI_RST_R {
-    type Target = crate::FieldReader<bool, USBEHCI_RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USBEHCI_RST_A::DEASSERT
     }
 }
 #[doc = "Fields `USBEHCI(0-1)_RST` writer - USBEHCI Reset"]
-pub struct USBEHCI_RST_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> USBEHCI_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBEHCI_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USBEHCI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBEHCI_RST_A, O>;
+impl<'a, const O: u8> USBEHCI_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -185,60 +132,6 @@ impl<'a> USBEHCI_RST_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(USBEHCI_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `USBEHCI(0-1)_RST` const generic writer - USBEHCI Reset"]
-pub struct USBEHCI_RST_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> USBEHCI_RST_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBEHCI_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(USBEHCI_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(USBEHCI_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 #[doc = "USBOHCI Reset\n\nValue on reset: 0"]
@@ -256,13 +149,9 @@ impl From<USBOHCI_RST_A> for bool {
     }
 }
 #[doc = "Fields `USBOHCI(0-1)_RST` reader - USBOHCI Reset"]
-pub struct USBOHCI_RST_R(crate::FieldReader<bool, USBOHCI_RST_A>);
+pub type USBOHCI_RST_R = crate::BitReader<USBOHCI_RST_A>;
 impl USBOHCI_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        USBOHCI_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBOHCI_RST_A {
         match self.bits {
@@ -273,32 +162,17 @@ impl USBOHCI_RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == USBOHCI_RST_A::ASSERT
+        *self == USBOHCI_RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == USBOHCI_RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for USBOHCI_RST_R {
-    type Target = crate::FieldReader<bool, USBOHCI_RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USBOHCI_RST_A::DEASSERT
     }
 }
 #[doc = "Fields `USBOHCI(0-1)_RST` writer - USBOHCI Reset"]
-pub struct USBOHCI_RST_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> USBOHCI_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBOHCI_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USBOHCI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOHCI_RST_A, O>;
+impl<'a, const O: u8> USBOHCI_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -308,60 +182,6 @@ impl<'a> USBOHCI_RST_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(USBOHCI_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `USBOHCI(0-1)_RST` const generic writer - USBOHCI Reset"]
-pub struct USBOHCI_RST_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> USBOHCI_RST_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBOHCI_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(USBOHCI_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(USBOHCI_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 #[doc = "USBOTG0 Gating Clock\n\nValue on reset: 0"]
@@ -379,13 +199,9 @@ impl From<USBOTG0_GATING_A> for bool {
     }
 }
 #[doc = "Field `USBOTG0_GATING` reader - USBOTG0 Gating Clock"]
-pub struct USBOTG0_GATING_R(crate::FieldReader<bool, USBOTG0_GATING_A>);
+pub type USBOTG0_GATING_R = crate::BitReader<USBOTG0_GATING_A>;
 impl USBOTG0_GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        USBOTG0_GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBOTG0_GATING_A {
         match self.bits {
@@ -396,31 +212,17 @@ impl USBOTG0_GATING_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == USBOTG0_GATING_A::MASK
+        *self == USBOTG0_GATING_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == USBOTG0_GATING_A::PASS
-    }
-}
-impl core::ops::Deref for USBOTG0_GATING_R {
-    type Target = crate::FieldReader<bool, USBOTG0_GATING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USBOTG0_GATING_A::PASS
     }
 }
 #[doc = "Field `USBOTG0_GATING` writer - USBOTG0 Gating Clock"]
-pub struct USBOTG0_GATING_W<'a> {
-    w: &'a mut W,
-}
+pub type USBOTG0_GATING_W<'a> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_GATING_A, 8>;
 impl<'a> USBOTG0_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBOTG0_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -430,22 +232,6 @@ impl<'a> USBOTG0_GATING_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(USBOTG0_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
     }
 }
 #[doc = "USBEHCI Gating Clock\n\nValue on reset: 0"]
@@ -463,13 +249,9 @@ impl From<USBEHCI_GATING_A> for bool {
     }
 }
 #[doc = "Fields `USBEHCI(0-1)_GATING` reader - USBEHCI Gating Clock"]
-pub struct USBEHCI_GATING_R(crate::FieldReader<bool, USBEHCI_GATING_A>);
+pub type USBEHCI_GATING_R = crate::BitReader<USBEHCI_GATING_A>;
 impl USBEHCI_GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        USBEHCI_GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBEHCI_GATING_A {
         match self.bits {
@@ -480,32 +262,18 @@ impl USBEHCI_GATING_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == USBEHCI_GATING_A::MASK
+        *self == USBEHCI_GATING_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == USBEHCI_GATING_A::PASS
-    }
-}
-impl core::ops::Deref for USBEHCI_GATING_R {
-    type Target = crate::FieldReader<bool, USBEHCI_GATING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USBEHCI_GATING_A::PASS
     }
 }
 #[doc = "Fields `USBEHCI(0-1)_GATING` writer - USBEHCI Gating Clock"]
-pub struct USBEHCI_GATING_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> USBEHCI_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBEHCI_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USBEHCI_GATING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USB_BGR_SPEC, USBEHCI_GATING_A, O>;
+impl<'a, const O: u8> USBEHCI_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -515,60 +283,6 @@ impl<'a> USBEHCI_GATING_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(USBEHCI_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `USBEHCI(0-1)_GATING` const generic writer - USBEHCI Gating Clock"]
-pub struct USBEHCI_GATING_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> USBEHCI_GATING_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBEHCI_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(USBEHCI_GATING_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(USBEHCI_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 #[doc = "USBOHCI Gating Clock\n\nValue on reset: 0"]
@@ -586,13 +300,9 @@ impl From<USBOHCI_GATING_A> for bool {
     }
 }
 #[doc = "Fields `USBOHCI(0-1)_GATING` reader - USBOHCI Gating Clock"]
-pub struct USBOHCI_GATING_R(crate::FieldReader<bool, USBOHCI_GATING_A>);
+pub type USBOHCI_GATING_R = crate::BitReader<USBOHCI_GATING_A>;
 impl USBOHCI_GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        USBOHCI_GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> USBOHCI_GATING_A {
         match self.bits {
@@ -603,32 +313,18 @@ impl USBOHCI_GATING_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == USBOHCI_GATING_A::MASK
+        *self == USBOHCI_GATING_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == USBOHCI_GATING_A::PASS
-    }
-}
-impl core::ops::Deref for USBOHCI_GATING_R {
-    type Target = crate::FieldReader<bool, USBOHCI_GATING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == USBOHCI_GATING_A::PASS
     }
 }
 #[doc = "Fields `USBOHCI(0-1)_GATING` writer - USBOHCI Gating Clock"]
-pub struct USBOHCI_GATING_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> USBOHCI_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBOHCI_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type USBOHCI_GATING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOHCI_GATING_A, O>;
+impl<'a, const O: u8> USBOHCI_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -638,213 +334,150 @@ impl<'a> USBOHCI_GATING_W<'a> {
     #[inline(always)]
     pub fn pass(self) -> &'a mut W {
         self.variant(USBOHCI_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `USBOHCI(0-1)_GATING` const generic writer - USBOHCI Gating Clock"]
-pub struct USBOHCI_GATING_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> USBOHCI_GATING_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: USBOHCI_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(USBOHCI_GATING_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(USBOHCI_GATING_A::PASS)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 impl R {
     #[doc = "Bit 24 - USBOTG0 Reset"]
     #[inline(always)]
     pub fn usbotg0_rst(&self) -> USBOTG0_RST_R {
-        USBOTG0_RST_R::new(((self.bits >> 24) & 0x01) != 0)
+        USBOTG0_RST_R::new(((self.bits >> 24) & 1) != 0)
     }
     #[doc = "USBEHCI Reset"]
     #[inline(always)]
-    pub unsafe fn usbehci_rst(&self, n: usize) -> USBEHCI_RST_R {
-        USBEHCI_RST_R::new(((self.bits >> (n + 20)) & 0x01) != 0)
+    pub unsafe fn usbehci_rst(&self, n: u8) -> USBEHCI_RST_R {
+        USBEHCI_RST_R::new(((self.bits >> (n + 20)) & 1) != 0)
     }
     #[doc = "Bit 20 - USBEHCI Reset"]
     #[inline(always)]
     pub fn usbehci0_rst(&self) -> USBEHCI_RST_R {
-        USBEHCI_RST_R::new(((self.bits >> 20) & 0x01) != 0)
+        USBEHCI_RST_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - USBEHCI Reset"]
     #[inline(always)]
     pub fn usbehci1_rst(&self) -> USBEHCI_RST_R {
-        USBEHCI_RST_R::new(((self.bits >> 21) & 0x01) != 0)
+        USBEHCI_RST_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "USBOHCI Reset"]
     #[inline(always)]
-    pub unsafe fn usbohci_rst(&self, n: usize) -> USBOHCI_RST_R {
-        USBOHCI_RST_R::new(((self.bits >> (n + 16)) & 0x01) != 0)
+    pub unsafe fn usbohci_rst(&self, n: u8) -> USBOHCI_RST_R {
+        USBOHCI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - USBOHCI Reset"]
     #[inline(always)]
     pub fn usbohci0_rst(&self) -> USBOHCI_RST_R {
-        USBOHCI_RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        USBOHCI_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - USBOHCI Reset"]
     #[inline(always)]
     pub fn usbohci1_rst(&self) -> USBOHCI_RST_R {
-        USBOHCI_RST_R::new(((self.bits >> 17) & 0x01) != 0)
+        USBOHCI_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 8 - USBOTG0 Gating Clock"]
     #[inline(always)]
     pub fn usbotg0_gating(&self) -> USBOTG0_GATING_R {
-        USBOTG0_GATING_R::new(((self.bits >> 8) & 0x01) != 0)
+        USBOTG0_GATING_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "USBEHCI Gating Clock"]
     #[inline(always)]
-    pub unsafe fn usbehci_gating(&self, n: usize) -> USBEHCI_GATING_R {
-        USBEHCI_GATING_R::new(((self.bits >> (n + 4)) & 0x01) != 0)
+    pub unsafe fn usbehci_gating(&self, n: u8) -> USBEHCI_GATING_R {
+        USBEHCI_GATING_R::new(((self.bits >> (n + 4)) & 1) != 0)
     }
     #[doc = "Bit 4 - USBEHCI Gating Clock"]
     #[inline(always)]
     pub fn usbehci0_gating(&self) -> USBEHCI_GATING_R {
-        USBEHCI_GATING_R::new(((self.bits >> 4) & 0x01) != 0)
+        USBEHCI_GATING_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - USBEHCI Gating Clock"]
     #[inline(always)]
     pub fn usbehci1_gating(&self) -> USBEHCI_GATING_R {
-        USBEHCI_GATING_R::new(((self.bits >> 5) & 0x01) != 0)
+        USBEHCI_GATING_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "USBOHCI Gating Clock"]
     #[inline(always)]
-    pub unsafe fn usbohci_gating(&self, n: usize) -> USBOHCI_GATING_R {
-        USBOHCI_GATING_R::new(((self.bits >> n) & 0x01) != 0)
+    pub unsafe fn usbohci_gating(&self, n: u8) -> USBOHCI_GATING_R {
+        USBOHCI_GATING_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - USBOHCI Gating Clock"]
     #[inline(always)]
     pub fn usbohci0_gating(&self) -> USBOHCI_GATING_R {
-        USBOHCI_GATING_R::new((self.bits & 0x01) != 0)
+        USBOHCI_GATING_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - USBOHCI Gating Clock"]
     #[inline(always)]
     pub fn usbohci1_gating(&self) -> USBOHCI_GATING_R {
-        USBOHCI_GATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        USBOHCI_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 24 - USBOTG0 Reset"]
     #[inline(always)]
     pub fn usbotg0_rst(&mut self) -> USBOTG0_RST_W {
-        USBOTG0_RST_W { w: self }
+        USBOTG0_RST_W::new(self)
     }
     #[doc = "USBEHCI Reset"]
     #[inline(always)]
-    pub unsafe fn usbehci_rst(&mut self, n: usize) -> USBEHCI_RST_W {
-        USBEHCI_RST_W {
-            w: self,
-            offset: n + 20,
-        }
+    pub unsafe fn usbehci_rst<const O: u8>(&mut self) -> USBEHCI_RST_W<O> {
+        USBEHCI_RST_W::new(self)
     }
     #[doc = "Bit 20 - USBEHCI Reset"]
     #[inline(always)]
-    pub fn usbehci0_rst(&mut self) -> USBEHCI_RST_CGW<20> {
-        USBEHCI_RST_CGW { w: self }
+    pub fn usbehci0_rst(&mut self) -> USBEHCI_RST_W<20> {
+        USBEHCI_RST_W::new(self)
     }
     #[doc = "Bit 21 - USBEHCI Reset"]
     #[inline(always)]
-    pub fn usbehci1_rst(&mut self) -> USBEHCI_RST_CGW<21> {
-        USBEHCI_RST_CGW { w: self }
+    pub fn usbehci1_rst(&mut self) -> USBEHCI_RST_W<21> {
+        USBEHCI_RST_W::new(self)
     }
     #[doc = "USBOHCI Reset"]
     #[inline(always)]
-    pub unsafe fn usbohci_rst(&mut self, n: usize) -> USBOHCI_RST_W {
-        USBOHCI_RST_W {
-            w: self,
-            offset: n + 16,
-        }
+    pub unsafe fn usbohci_rst<const O: u8>(&mut self) -> USBOHCI_RST_W<O> {
+        USBOHCI_RST_W::new(self)
     }
     #[doc = "Bit 16 - USBOHCI Reset"]
     #[inline(always)]
-    pub fn usbohci0_rst(&mut self) -> USBOHCI_RST_CGW<16> {
-        USBOHCI_RST_CGW { w: self }
+    pub fn usbohci0_rst(&mut self) -> USBOHCI_RST_W<16> {
+        USBOHCI_RST_W::new(self)
     }
     #[doc = "Bit 17 - USBOHCI Reset"]
     #[inline(always)]
-    pub fn usbohci1_rst(&mut self) -> USBOHCI_RST_CGW<17> {
-        USBOHCI_RST_CGW { w: self }
+    pub fn usbohci1_rst(&mut self) -> USBOHCI_RST_W<17> {
+        USBOHCI_RST_W::new(self)
     }
     #[doc = "Bit 8 - USBOTG0 Gating Clock"]
     #[inline(always)]
     pub fn usbotg0_gating(&mut self) -> USBOTG0_GATING_W {
-        USBOTG0_GATING_W { w: self }
+        USBOTG0_GATING_W::new(self)
     }
     #[doc = "USBEHCI Gating Clock"]
     #[inline(always)]
-    pub unsafe fn usbehci_gating(&mut self, n: usize) -> USBEHCI_GATING_W {
-        USBEHCI_GATING_W {
-            w: self,
-            offset: n + 4,
-        }
+    pub unsafe fn usbehci_gating<const O: u8>(&mut self) -> USBEHCI_GATING_W<O> {
+        USBEHCI_GATING_W::new(self)
     }
     #[doc = "Bit 4 - USBEHCI Gating Clock"]
     #[inline(always)]
-    pub fn usbehci0_gating(&mut self) -> USBEHCI_GATING_CGW<4> {
-        USBEHCI_GATING_CGW { w: self }
+    pub fn usbehci0_gating(&mut self) -> USBEHCI_GATING_W<4> {
+        USBEHCI_GATING_W::new(self)
     }
     #[doc = "Bit 5 - USBEHCI Gating Clock"]
     #[inline(always)]
-    pub fn usbehci1_gating(&mut self) -> USBEHCI_GATING_CGW<5> {
-        USBEHCI_GATING_CGW { w: self }
+    pub fn usbehci1_gating(&mut self) -> USBEHCI_GATING_W<5> {
+        USBEHCI_GATING_W::new(self)
     }
     #[doc = "USBOHCI Gating Clock"]
     #[inline(always)]
-    pub unsafe fn usbohci_gating(&mut self, n: usize) -> USBOHCI_GATING_W {
-        USBOHCI_GATING_W { w: self, offset: n }
+    pub unsafe fn usbohci_gating<const O: u8>(&mut self) -> USBOHCI_GATING_W<O> {
+        USBOHCI_GATING_W::new(self)
     }
     #[doc = "Bit 0 - USBOHCI Gating Clock"]
     #[inline(always)]
-    pub fn usbohci0_gating(&mut self) -> USBOHCI_GATING_CGW<0> {
-        USBOHCI_GATING_CGW { w: self }
+    pub fn usbohci0_gating(&mut self) -> USBOHCI_GATING_W<0> {
+        USBOHCI_GATING_W::new(self)
     }
     #[doc = "Bit 1 - USBOHCI Gating Clock"]
     #[inline(always)]
-    pub fn usbohci1_gating(&mut self) -> USBOHCI_GATING_CGW<1> {
-        USBOHCI_GATING_CGW { w: self }
+    pub fn usbohci1_gating(&mut self) -> USBOHCI_GATING_W<1> {
+        USBOHCI_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

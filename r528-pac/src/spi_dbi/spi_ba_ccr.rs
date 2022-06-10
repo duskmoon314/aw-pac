@@ -35,32 +35,9 @@ impl From<crate::W<SPI_BA_CCR_SPEC>> for W {
     }
 }
 #[doc = "Field `cdr_n` reader - Clock Divide Rate"]
-pub struct CDR_N_R(crate::FieldReader<u8, u8>);
-impl CDR_N_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CDR_N_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for CDR_N_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type CDR_N_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `cdr_n` writer - Clock Divide Rate"]
-pub struct CDR_N_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> CDR_N_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
-}
+pub type CDR_N_W<'a> = crate::FieldWriter<'a, u32, SPI_BA_CCR_SPEC, u8, u8, 8, 0>;
 impl R {
     #[doc = "Bits 0:7 - Clock Divide Rate"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:7 - Clock Divide Rate"]
     #[inline(always)]
     pub fn cdr_n(&mut self) -> CDR_N_W {
-        CDR_N_W { w: self }
+        CDR_N_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

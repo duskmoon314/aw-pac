@@ -49,13 +49,9 @@ impl From<MBUS_RST_A> for bool {
     }
 }
 #[doc = "Field `MBUS_RST` reader - MBUS Reset"]
-pub struct MBUS_RST_R(crate::FieldReader<bool, MBUS_RST_A>);
+pub type MBUS_RST_R = crate::BitReader<MBUS_RST_A>;
 impl MBUS_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        MBUS_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> MBUS_RST_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl MBUS_RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == MBUS_RST_A::ASSERT
+        *self == MBUS_RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == MBUS_RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for MBUS_RST_R {
-    type Target = crate::FieldReader<bool, MBUS_RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == MBUS_RST_A::DEASSERT
     }
 }
 #[doc = "Field `MBUS_RST` writer - MBUS Reset"]
-pub struct MBUS_RST_W<'a> {
-    w: &'a mut W,
-}
+pub type MBUS_RST_W<'a> = crate::BitWriter<'a, u32, MBUS_CLK_SPEC, MBUS_RST_A, 30>;
 impl<'a> MBUS_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: MBUS_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> MBUS_RST_W<'a> {
     pub fn deassert(self) -> &'a mut W {
         self.variant(MBUS_RST_A::DEASSERT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 30)) | ((value as u32 & 0x01) << 30);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 30 - MBUS Reset"]
     #[inline(always)]
     pub fn mbus_rst(&self) -> MBUS_RST_R {
-        MBUS_RST_R::new(((self.bits >> 30) & 0x01) != 0)
+        MBUS_RST_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 30 - MBUS Reset"]
     #[inline(always)]
     pub fn mbus_rst(&mut self) -> MBUS_RST_W {
-        MBUS_RST_W { w: self }
+        MBUS_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -60,13 +60,9 @@ impl From<CLK_SRC_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
-pub struct CLK_SRC_SEL_R(crate::FieldReader<u8, CLK_SRC_SEL_A>);
+pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_SRC_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<CLK_SRC_SEL_A> {
         match self.bits {
@@ -83,56 +79,42 @@ impl CLK_SRC_SEL_R {
     #[doc = "Checks if the value of the field is `HOSC`"]
     #[inline(always)]
     pub fn is_hosc(&self) -> bool {
-        **self == CLK_SRC_SEL_A::HOSC
+        *self == CLK_SRC_SEL_A::HOSC
     }
     #[doc = "Checks if the value of the field is `CLK32K`"]
     #[inline(always)]
     pub fn is_clk32k(&self) -> bool {
-        **self == CLK_SRC_SEL_A::CLK32K
+        *self == CLK_SRC_SEL_A::CLK32K
     }
     #[doc = "Checks if the value of the field is `CLK16M_RC`"]
     #[inline(always)]
     pub fn is_clk16m_rc(&self) -> bool {
-        **self == CLK_SRC_SEL_A::CLK16M_RC
+        *self == CLK_SRC_SEL_A::CLK16M_RC
     }
     #[doc = "Checks if the value of the field is `PLL_PERI_800M`"]
     #[inline(always)]
     pub fn is_pll_peri_800m(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_PERI_800M
+        *self == CLK_SRC_SEL_A::PLL_PERI_800M
     }
     #[doc = "Checks if the value of the field is `PLL_PERI_1X`"]
     #[inline(always)]
     pub fn is_pll_peri_1x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_PERI_1X
+        *self == CLK_SRC_SEL_A::PLL_PERI_1X
     }
     #[doc = "Checks if the value of the field is `PLL_CPU`"]
     #[inline(always)]
     pub fn is_pll_cpu(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_CPU
+        *self == CLK_SRC_SEL_A::PLL_CPU
     }
     #[doc = "Checks if the value of the field is `PLL_AUDIO1_DIV2`"]
     #[inline(always)]
     pub fn is_pll_audio1_div2(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_AUDIO1_DIV2
-    }
-}
-impl core::ops::Deref for CLK_SRC_SEL_R {
-    type Target = crate::FieldReader<u8, CLK_SRC_SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK_SRC_SEL_A::PLL_AUDIO1_DIV2
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub struct CLK_SRC_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK_SRC_SEL_W<'a> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, 24>;
 impl<'a> CLK_SRC_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_SRC_SEL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn hosc(self) -> &'a mut W {
@@ -168,77 +150,25 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     pub fn pll_audio1_div2(self) -> &'a mut W {
         self.variant(CLK_SRC_SEL_A::PLL_AUDIO1_DIV2)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
-        self.w
-    }
 }
 #[doc = "Field `AXI_DIV_CFG` reader - Factor N"]
-pub struct AXI_DIV_CFG_R(crate::FieldReader<u8, u8>);
-impl AXI_DIV_CFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        AXI_DIV_CFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for AXI_DIV_CFG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type AXI_DIV_CFG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AXI_DIV_CFG` writer - Factor N"]
-pub struct AXI_DIV_CFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> AXI_DIV_CFG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << 8)) | ((value as u32 & 0x03) << 8);
-        self.w
-    }
-}
+pub type AXI_DIV_CFG_W<'a> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 2, 8>;
 #[doc = "Field `DIV_CFG` reader - Factor M"]
-pub struct DIV_CFG_R(crate::FieldReader<u8, u8>);
-impl DIV_CFG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIV_CFG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIV_CFG_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIV_CFG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV_CFG` writer - Factor M"]
-pub struct DIV_CFG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_CFG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type DIV_CFG_W<'a> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 24) & 0x07) as u8)
+        CLK_SRC_SEL_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn axi_div_cfg(&self) -> AXI_DIV_CFG_R {
-        AXI_DIV_CFG_R::new(((self.bits >> 8) & 0x03) as u8)
+        AXI_DIV_CFG_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
@@ -250,17 +180,17 @@ impl W {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
-        CLK_SRC_SEL_W { w: self }
+        CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn axi_div_cfg(&mut self) -> AXI_DIV_CFG_W {
-        AXI_DIV_CFG_W { w: self }
+        AXI_DIV_CFG_W::new(self)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     pub fn div_cfg(&mut self) -> DIV_CFG_W {
-        DIV_CFG_W { w: self }
+        DIV_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

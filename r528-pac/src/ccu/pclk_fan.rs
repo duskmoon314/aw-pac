@@ -49,13 +49,9 @@ impl From<GATING_A> for bool {
     }
 }
 #[doc = "Field `GATING` reader - Gating for PCLK"]
-pub struct GATING_R(crate::FieldReader<bool, GATING_A>);
+pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> GATING_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl GATING_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == GATING_A::OFF
+        *self == GATING_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == GATING_A::ON
-    }
-}
-impl core::ops::Deref for GATING_R {
-    type Target = crate::FieldReader<bool, GATING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == GATING_A::ON
     }
 }
 #[doc = "Field `GATING` writer - Gating for PCLK"]
-pub struct GATING_W<'a> {
-    w: &'a mut W,
-}
+pub type GATING_W<'a> = crate::BitWriter<'a, u32, PCLK_FAN_SPEC, GATING_A, 31>;
 impl<'a> GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -101,55 +83,16 @@ impl<'a> GATING_W<'a> {
     pub fn on(self) -> &'a mut W {
         self.variant(GATING_A::ON)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
 }
 #[doc = "Field `DIV` reader - Factor M"]
-pub struct DIV_R(crate::FieldReader<u8, u8>);
-impl DIV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DIV_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DIV_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV` writer - Factor M"]
-pub struct DIV_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DIV_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type DIV_W<'a> = crate::FieldWriter<'a, u32, PCLK_FAN_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bit 31 - Gating for PCLK"]
     #[inline(always)]
     pub fn gating(&self) -> GATING_R {
-        GATING_R::new(((self.bits >> 31) & 0x01) != 0)
+        GATING_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
@@ -161,12 +104,12 @@ impl W {
     #[doc = "Bit 31 - Gating for PCLK"]
     #[inline(always)]
     pub fn gating(&mut self) -> GATING_W {
-        GATING_W { w: self }
+        GATING_W::new(self)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     pub fn div(&mut self) -> DIV_W {
-        DIV_W { w: self }
+        DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,7 +34,149 @@ impl From<crate::W<CER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CAP_EN_A {
+    #[doc = "0: Capture disable"]
+    DISABLE = 0,
+    #[doc = "1: Capture enable"]
+    ENABLE = 1,
+}
+impl From<CAP_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CAP_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `CAP(0-7)_EN` reader - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+pub type CAP_EN_R = crate::BitReader<CAP_EN_A>;
+impl CAP_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAP_EN_A {
+        match self.bits {
+            false => CAP_EN_A::DISABLE,
+            true => CAP_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == CAP_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == CAP_EN_A::ENABLE
+    }
+}
+#[doc = "Fields `CAP(0-7)_EN` writer - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+pub type CAP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CER_SPEC, CAP_EN_A, O>;
+impl<'a, const O: u8> CAP_EN_W<'a, O> {
+    #[doc = "Capture disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CAP_EN_A::DISABLE)
+    }
+    #[doc = "Capture enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CAP_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub unsafe fn cap_en(&self, n: u8) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap0_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap1_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap2_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap3_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap4_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap5_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap6_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap7_en(&self) -> CAP_EN_R {
+        CAP_EN_R::new(((self.bits >> 7) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub unsafe fn cap_en<const O: u8>(&mut self) -> CAP_EN_W<O> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 0 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap0_en(&mut self) -> CAP_EN_W<0> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 1 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap1_en(&mut self) -> CAP_EN_W<1> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 2 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap2_en(&mut self) -> CAP_EN_W<2> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 3 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap3_en(&mut self) -> CAP_EN_W<3> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 4 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap4_en(&mut self) -> CAP_EN_W<4> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 5 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap5_en(&mut self) -> CAP_EN_W<5> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 6 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap6_en(&mut self) -> CAP_EN_W<6> {
+        CAP_EN_W::new(self)
+    }
+    #[doc = "Bit 7 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+    #[inline(always)]
+    pub fn cap7_en(&mut self) -> CAP_EN_W<7> {
+        CAP_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

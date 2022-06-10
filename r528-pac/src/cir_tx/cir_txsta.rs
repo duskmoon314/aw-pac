@@ -34,7 +34,177 @@ impl From<crate::W<CIR_TXSTA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Status of CIR Transmitter\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STCT_A {
+    #[doc = "0: Idle"]
+    IDLE = 0,
+    #[doc = "1: Active"]
+    ACTIVE = 1,
+}
+impl From<STCT_A> for bool {
+    #[inline(always)]
+    fn from(variant: STCT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `STCT` reader - Status of CIR Transmitter"]
+pub type STCT_R = crate::BitReader<STCT_A>;
+impl STCT_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STCT_A {
+        match self.bits {
+            false => STCT_A::IDLE,
+            true => STCT_A::ACTIVE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == STCT_A::IDLE
+    }
+    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[inline(always)]
+    pub fn is_active(&self) -> bool {
+        *self == STCT_A::ACTIVE
+    }
+}
+#[doc = "Field `DRQ` reader - DMA Request Flag"]
+pub type DRQ_R = crate::BitReader<bool>;
+#[doc = "TX FIFO Available Interrupt Flag\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TAI_A {
+    #[doc = "0: TX FIFO not available by its level"]
+    NOT_AVAILABLE = 0,
+    #[doc = "1: TX FIFO available by its level Writing 1 clears this bit."]
+    AVAILABLE = 1,
+}
+impl From<TAI_A> for bool {
+    #[inline(always)]
+    fn from(variant: TAI_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TAI` reader - TX FIFO Available Interrupt Flag"]
+pub type TAI_R = crate::BitReader<TAI_A>;
+impl TAI_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TAI_A {
+        match self.bits {
+            false => TAI_A::NOT_AVAILABLE,
+            true => TAI_A::AVAILABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_AVAILABLE`"]
+    #[inline(always)]
+    pub fn is_not_available(&self) -> bool {
+        *self == TAI_A::NOT_AVAILABLE
+    }
+    #[doc = "Checks if the value of the field is `AVAILABLE`"]
+    #[inline(always)]
+    pub fn is_available(&self) -> bool {
+        *self == TAI_A::AVAILABLE
+    }
+}
+#[doc = "Field `TAI` writer - TX FIFO Available Interrupt Flag"]
+pub type TAI_W<'a> = crate::BitWriter<'a, u32, CIR_TXSTA_SPEC, TAI_A, 1>;
+impl<'a> TAI_W<'a> {
+    #[doc = "TX FIFO not available by its level"]
+    #[inline(always)]
+    pub fn not_available(self) -> &'a mut W {
+        self.variant(TAI_A::NOT_AVAILABLE)
+    }
+    #[doc = "TX FIFO available by its level Writing 1 clears this bit."]
+    #[inline(always)]
+    pub fn available(self) -> &'a mut W {
+        self.variant(TAI_A::AVAILABLE)
+    }
+}
+#[doc = "Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TPE_TUR_A {
+    #[doc = "0: Transmissions of address, control and data fields not completed / No transmitter FIFO underrun"]
+    NOT_COMPLETE_OR_TRANSMIT = 0,
+    #[doc = "1: Transmissions of address, control and data fields completed / Transmitter FIFO underrun"]
+    COMPLETE_OR_TRANSMIT = 1,
+}
+impl From<TPE_TUR_A> for bool {
+    #[inline(always)]
+    fn from(variant: TPE_TUR_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `TPE_TUR` reader - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+pub type TPE_TUR_R = crate::BitReader<TPE_TUR_A>;
+impl TPE_TUR_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TPE_TUR_A {
+        match self.bits {
+            false => TPE_TUR_A::NOT_COMPLETE_OR_TRANSMIT,
+            true => TPE_TUR_A::COMPLETE_OR_TRANSMIT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_COMPLETE_OR_TRANSMIT`"]
+    #[inline(always)]
+    pub fn is_not_complete_or_transmit(&self) -> bool {
+        *self == TPE_TUR_A::NOT_COMPLETE_OR_TRANSMIT
+    }
+    #[doc = "Checks if the value of the field is `COMPLETE_OR_TRANSMIT`"]
+    #[inline(always)]
+    pub fn is_complete_or_transmit(&self) -> bool {
+        *self == TPE_TUR_A::COMPLETE_OR_TRANSMIT
+    }
+}
+#[doc = "Field `TPE_TUR` writer - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+pub type TPE_TUR_W<'a> = crate::BitWriter1C<'a, u32, CIR_TXSTA_SPEC, TPE_TUR_A, 0>;
+impl<'a> TPE_TUR_W<'a> {
+    #[doc = "Transmissions of address, control and data fields not completed / No transmitter FIFO underrun"]
+    #[inline(always)]
+    pub fn not_complete_or_transmit(self) -> &'a mut W {
+        self.variant(TPE_TUR_A::NOT_COMPLETE_OR_TRANSMIT)
+    }
+    #[doc = "Transmissions of address, control and data fields completed / Transmitter FIFO underrun"]
+    #[inline(always)]
+    pub fn complete_or_transmit(self) -> &'a mut W {
+        self.variant(TPE_TUR_A::COMPLETE_OR_TRANSMIT)
+    }
+}
+impl R {
+    #[doc = "Bit 3 - Status of CIR Transmitter"]
+    #[inline(always)]
+    pub fn stct(&self) -> STCT_R {
+        STCT_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 2 - DMA Request Flag"]
+    #[inline(always)]
+    pub fn drq(&self) -> DRQ_R {
+        DRQ_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 1 - TX FIFO Available Interrupt Flag"]
+    #[inline(always)]
+    pub fn tai(&self) -> TAI_R {
+        TAI_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+    #[inline(always)]
+    pub fn tpe_tur(&self) -> TPE_TUR_R {
+        TPE_TUR_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 1 - TX FIFO Available Interrupt Flag"]
+    #[inline(always)]
+    pub fn tai(&mut self) -> TAI_W {
+        TAI_W::new(self)
+    }
+    #[doc = "Bit 0 - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+    #[inline(always)]
+    pub fn tpe_tur(&mut self) -> TPE_TUR_W {
+        TPE_TUR_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +225,10 @@ impl crate::Readable for CIR_TXSTA_SPEC {
 impl crate::Writable for CIR_TXSTA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TXSTA to value 0"]
+#[doc = "`reset()` method sets CIR_TXSTA to value 0x02"]
 impl crate::Resettable for CIR_TXSTA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x02
     }
 }

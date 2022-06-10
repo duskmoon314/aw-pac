@@ -49,13 +49,9 @@ impl From<DSP_BOOT_SRAM_REMAP_ENABLE_A> for bool {
     }
 }
 #[doc = "Field `DSP_BOOT_SRAM_REMAP_ENABLE` reader - "]
-pub struct DSP_BOOT_SRAM_REMAP_ENABLE_R(crate::FieldReader<bool, DSP_BOOT_SRAM_REMAP_ENABLE_A>);
+pub type DSP_BOOT_SRAM_REMAP_ENABLE_R = crate::BitReader<DSP_BOOT_SRAM_REMAP_ENABLE_A>;
 impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DSP_BOOT_SRAM_REMAP_ENABLE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DSP_BOOT_SRAM_REMAP_ENABLE_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
     #[doc = "Checks if the value of the field is `DSP_SYS`"]
     #[inline(always)]
     pub fn is_dsp_sys(&self) -> bool {
-        **self == DSP_BOOT_SRAM_REMAP_ENABLE_A::DSP_SYS
+        *self == DSP_BOOT_SRAM_REMAP_ENABLE_A::DSP_SYS
     }
     #[doc = "Checks if the value of the field is `SYS_BOOT`"]
     #[inline(always)]
     pub fn is_sys_boot(&self) -> bool {
-        **self == DSP_BOOT_SRAM_REMAP_ENABLE_A::SYS_BOOT
-    }
-}
-impl core::ops::Deref for DSP_BOOT_SRAM_REMAP_ENABLE_R {
-    type Target = crate::FieldReader<bool, DSP_BOOT_SRAM_REMAP_ENABLE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DSP_BOOT_SRAM_REMAP_ENABLE_A::SYS_BOOT
     }
 }
 #[doc = "Field `DSP_BOOT_SRAM_REMAP_ENABLE` writer - "]
-pub struct DSP_BOOT_SRAM_REMAP_ENABLE_W<'a> {
-    w: &'a mut W,
-}
+pub type DSP_BOOT_SRAM_REMAP_ENABLE_W<'a> =
+    crate::BitWriter<'a, u32, DSP_BOOT_RAMMAP_SPEC, DSP_BOOT_SRAM_REMAP_ENABLE_A, 0>;
 impl<'a> DSP_BOOT_SRAM_REMAP_ENABLE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DSP_BOOT_SRAM_REMAP_ENABLE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn dsp_sys(self) -> &'a mut W {
@@ -101,35 +84,19 @@ impl<'a> DSP_BOOT_SRAM_REMAP_ENABLE_W<'a> {
     pub fn sys_boot(self) -> &'a mut W {
         self.variant(DSP_BOOT_SRAM_REMAP_ENABLE_A::SYS_BOOT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn dsp_boot_sram_remap_enable(&self) -> DSP_BOOT_SRAM_REMAP_ENABLE_R {
-        DSP_BOOT_SRAM_REMAP_ENABLE_R::new((self.bits & 0x01) != 0)
+        DSP_BOOT_SRAM_REMAP_ENABLE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn dsp_boot_sram_remap_enable(&mut self) -> DSP_BOOT_SRAM_REMAP_ENABLE_W {
-        DSP_BOOT_SRAM_REMAP_ENABLE_W { w: self }
+        DSP_BOOT_SRAM_REMAP_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

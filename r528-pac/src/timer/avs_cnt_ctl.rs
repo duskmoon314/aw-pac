@@ -49,13 +49,9 @@ impl From<AVS_CNT_PS_A> for bool {
     }
 }
 #[doc = "Fields `AVS_CNT(0-1)_PS` reader - Audio Video Sync Counter Pause Control"]
-pub struct AVS_CNT_PS_R(crate::FieldReader<bool, AVS_CNT_PS_A>);
+pub type AVS_CNT_PS_R = crate::BitReader<AVS_CNT_PS_A>;
 impl AVS_CNT_PS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        AVS_CNT_PS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AVS_CNT_PS_A {
         match self.bits {
@@ -66,32 +62,18 @@ impl AVS_CNT_PS_R {
     #[doc = "Checks if the value of the field is `NOT_PAUSE`"]
     #[inline(always)]
     pub fn is_not_pause(&self) -> bool {
-        **self == AVS_CNT_PS_A::NOT_PAUSE
+        *self == AVS_CNT_PS_A::NOT_PAUSE
     }
     #[doc = "Checks if the value of the field is `PAUSE`"]
     #[inline(always)]
     pub fn is_pause(&self) -> bool {
-        **self == AVS_CNT_PS_A::PAUSE
-    }
-}
-impl core::ops::Deref for AVS_CNT_PS_R {
-    type Target = crate::FieldReader<bool, AVS_CNT_PS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AVS_CNT_PS_A::PAUSE
     }
 }
 #[doc = "Fields `AVS_CNT(0-1)_PS` writer - Audio Video Sync Counter Pause Control"]
-pub struct AVS_CNT_PS_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> AVS_CNT_PS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AVS_CNT_PS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type AVS_CNT_PS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, AVS_CNT_CTL_SPEC, AVS_CNT_PS_A, O>;
+impl<'a, const O: u8> AVS_CNT_PS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_pause(self) -> &'a mut W {
@@ -101,60 +83,6 @@ impl<'a> AVS_CNT_PS_W<'a> {
     #[inline(always)]
     pub fn pause(self) -> &'a mut W {
         self.variant(AVS_CNT_PS_A::PAUSE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `AVS_CNT(0-1)_PS` const generic writer - Audio Video Sync Counter Pause Control"]
-pub struct AVS_CNT_PS_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> AVS_CNT_PS_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AVS_CNT_PS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn not_pause(self) -> &'a mut W {
-        self.variant(AVS_CNT_PS_A::NOT_PAUSE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pause(self) -> &'a mut W {
-        self.variant(AVS_CNT_PS_A::PAUSE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 #[doc = "Audio Video Sync Counter Enable\n\nValue on reset: 0"]
@@ -172,13 +100,9 @@ impl From<AVS_CNT_EN_A> for bool {
     }
 }
 #[doc = "Fields `AVS_CNT(0-1)_EN` reader - Audio Video Sync Counter Enable"]
-pub struct AVS_CNT_EN_R(crate::FieldReader<bool, AVS_CNT_EN_A>);
+pub type AVS_CNT_EN_R = crate::BitReader<AVS_CNT_EN_A>;
 impl AVS_CNT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        AVS_CNT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> AVS_CNT_EN_A {
         match self.bits {
@@ -189,32 +113,18 @@ impl AVS_CNT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == AVS_CNT_EN_A::DISABLED
+        *self == AVS_CNT_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == AVS_CNT_EN_A::ENABLED
-    }
-}
-impl core::ops::Deref for AVS_CNT_EN_R {
-    type Target = crate::FieldReader<bool, AVS_CNT_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == AVS_CNT_EN_A::ENABLED
     }
 }
 #[doc = "Fields `AVS_CNT(0-1)_EN` writer - Audio Video Sync Counter Enable"]
-pub struct AVS_CNT_EN_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> AVS_CNT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AVS_CNT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type AVS_CNT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, AVS_CNT_CTL_SPEC, AVS_CNT_EN_A, O>;
+impl<'a, const O: u8> AVS_CNT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -224,127 +134,70 @@ impl<'a> AVS_CNT_EN_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(AVS_CNT_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `AVS_CNT(0-1)_EN` const generic writer - Audio Video Sync Counter Enable"]
-pub struct AVS_CNT_EN_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> AVS_CNT_EN_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: AVS_CNT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(AVS_CNT_EN_A::DISABLED)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(AVS_CNT_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 impl R {
     #[doc = "Audio Video Sync Counter Pause Control"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_ps(&self, n: usize) -> AVS_CNT_PS_R {
-        AVS_CNT_PS_R::new(((self.bits >> (n + 8)) & 0x01) != 0)
+    pub unsafe fn avs_cnt_ps(&self, n: u8) -> AVS_CNT_PS_R {
+        AVS_CNT_PS_R::new(((self.bits >> (n + 8)) & 1) != 0)
     }
     #[doc = "Bit 8 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
     pub fn avs_cnt0_ps(&self) -> AVS_CNT_PS_R {
-        AVS_CNT_PS_R::new(((self.bits >> 8) & 0x01) != 0)
+        AVS_CNT_PS_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
     pub fn avs_cnt1_ps(&self) -> AVS_CNT_PS_R {
-        AVS_CNT_PS_R::new(((self.bits >> 9) & 0x01) != 0)
+        AVS_CNT_PS_R::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Audio Video Sync Counter Enable"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_en(&self, n: usize) -> AVS_CNT_EN_R {
-        AVS_CNT_EN_R::new(((self.bits >> n) & 0x01) != 0)
+    pub unsafe fn avs_cnt_en(&self, n: u8) -> AVS_CNT_EN_R {
+        AVS_CNT_EN_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Audio Video Sync Counter Enable"]
     #[inline(always)]
     pub fn avs_cnt0_en(&self) -> AVS_CNT_EN_R {
-        AVS_CNT_EN_R::new((self.bits & 0x01) != 0)
+        AVS_CNT_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Audio Video Sync Counter Enable"]
     #[inline(always)]
     pub fn avs_cnt1_en(&self) -> AVS_CNT_EN_R {
-        AVS_CNT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        AVS_CNT_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Audio Video Sync Counter Pause Control"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_ps(&mut self, n: usize) -> AVS_CNT_PS_W {
-        AVS_CNT_PS_W {
-            w: self,
-            offset: n + 8,
-        }
+    pub unsafe fn avs_cnt_ps<const O: u8>(&mut self) -> AVS_CNT_PS_W<O> {
+        AVS_CNT_PS_W::new(self)
     }
     #[doc = "Bit 8 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
-    pub fn avs_cnt0_ps(&mut self) -> AVS_CNT_PS_CGW<8> {
-        AVS_CNT_PS_CGW { w: self }
+    pub fn avs_cnt0_ps(&mut self) -> AVS_CNT_PS_W<8> {
+        AVS_CNT_PS_W::new(self)
     }
     #[doc = "Bit 9 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
-    pub fn avs_cnt1_ps(&mut self) -> AVS_CNT_PS_CGW<9> {
-        AVS_CNT_PS_CGW { w: self }
+    pub fn avs_cnt1_ps(&mut self) -> AVS_CNT_PS_W<9> {
+        AVS_CNT_PS_W::new(self)
     }
     #[doc = "Audio Video Sync Counter Enable"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_en(&mut self, n: usize) -> AVS_CNT_EN_W {
-        AVS_CNT_EN_W { w: self, offset: n }
+    pub unsafe fn avs_cnt_en<const O: u8>(&mut self) -> AVS_CNT_EN_W<O> {
+        AVS_CNT_EN_W::new(self)
     }
     #[doc = "Bit 0 - Audio Video Sync Counter Enable"]
     #[inline(always)]
-    pub fn avs_cnt0_en(&mut self) -> AVS_CNT_EN_CGW<0> {
-        AVS_CNT_EN_CGW { w: self }
+    pub fn avs_cnt0_en(&mut self) -> AVS_CNT_EN_W<0> {
+        AVS_CNT_EN_W::new(self)
     }
     #[doc = "Bit 1 - Audio Video Sync Counter Enable"]
     #[inline(always)]
-    pub fn avs_cnt1_en(&mut self) -> AVS_CNT_EN_CGW<1> {
-        AVS_CNT_EN_CGW { w: self }
+    pub fn avs_cnt1_en(&mut self) -> AVS_CNT_EN_W<1> {
+        AVS_CNT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

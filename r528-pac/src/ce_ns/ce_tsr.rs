@@ -34,6 +34,67 @@ impl From<crate::W<CE_TSR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Running Channel Number\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum RUNNING_CHANNEL_NUMBER_A {
+    #[doc = "0: Task channel 0"]
+    T0 = 0,
+    #[doc = "1: Task channel 1"]
+    T1 = 1,
+    #[doc = "2: Task channel 2"]
+    T2 = 2,
+    #[doc = "3: Task channel 3"]
+    T3 = 3,
+}
+impl From<RUNNING_CHANNEL_NUMBER_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RUNNING_CHANNEL_NUMBER_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `RUNNING_CHANNEL_NUMBER` reader - Running Channel Number"]
+pub type RUNNING_CHANNEL_NUMBER_R = crate::FieldReader<u8, RUNNING_CHANNEL_NUMBER_A>;
+impl RUNNING_CHANNEL_NUMBER_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RUNNING_CHANNEL_NUMBER_A {
+        match self.bits {
+            0 => RUNNING_CHANNEL_NUMBER_A::T0,
+            1 => RUNNING_CHANNEL_NUMBER_A::T1,
+            2 => RUNNING_CHANNEL_NUMBER_A::T2,
+            3 => RUNNING_CHANNEL_NUMBER_A::T3,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `T0`"]
+    #[inline(always)]
+    pub fn is_t0(&self) -> bool {
+        *self == RUNNING_CHANNEL_NUMBER_A::T0
+    }
+    #[doc = "Checks if the value of the field is `T1`"]
+    #[inline(always)]
+    pub fn is_t1(&self) -> bool {
+        *self == RUNNING_CHANNEL_NUMBER_A::T1
+    }
+    #[doc = "Checks if the value of the field is `T2`"]
+    #[inline(always)]
+    pub fn is_t2(&self) -> bool {
+        *self == RUNNING_CHANNEL_NUMBER_A::T2
+    }
+    #[doc = "Checks if the value of the field is `T3`"]
+    #[inline(always)]
+    pub fn is_t3(&self) -> bool {
+        *self == RUNNING_CHANNEL_NUMBER_A::T3
+    }
+}
+impl R {
+    #[doc = "Bits 0:1 - Running Channel Number"]
+    #[inline(always)]
+    pub fn running_channel_number(&self) -> RUNNING_CHANNEL_NUMBER_R {
+        RUNNING_CHANNEL_NUMBER_R::new((self.bits & 3) as u8)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

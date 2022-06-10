@@ -1,6 +1,6 @@
 [package]
 name = "r528-pac"
-version = "0.0.2"
+version = "0.0.3"
 edition = "2021"
 authors = ["duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>"]
 description = "Peripheral access API for Allwinner R528 SoC generated from unofficial SVD file"

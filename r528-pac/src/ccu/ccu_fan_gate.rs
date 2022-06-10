@@ -49,13 +49,9 @@ impl From<CLK32K_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK32K_EN` reader - Gating for CLK32K"]
-pub struct CLK32K_EN_R(crate::FieldReader<bool, CLK32K_EN_A>);
+pub type CLK32K_EN_R = crate::BitReader<CLK32K_EN_A>;
 impl CLK32K_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK32K_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK32K_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CLK32K_EN_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CLK32K_EN_A::OFF
+        *self == CLK32K_EN_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CLK32K_EN_A::ON
-    }
-}
-impl core::ops::Deref for CLK32K_EN_R {
-    type Target = crate::FieldReader<bool, CLK32K_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK32K_EN_A::ON
     }
 }
 #[doc = "Field `CLK32K_EN` writer - Gating for CLK32K"]
-pub struct CLK32K_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK32K_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK32K_EN_A, 4>;
 impl<'a> CLK32K_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK32K_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> CLK32K_EN_W<'a> {
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(CLK32K_EN_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 4)) | ((value as u32 & 0x01) << 4);
-        self.w
     }
 }
 #[doc = "Gating for CLK25M\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<CLK25M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK25M_EN` reader - Gating for CLK25M"]
-pub struct CLK25M_EN_R(crate::FieldReader<bool, CLK25M_EN_A>);
+pub type CLK25M_EN_R = crate::BitReader<CLK25M_EN_A>;
 impl CLK25M_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK25M_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK25M_EN_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl CLK25M_EN_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CLK25M_EN_A::OFF
+        *self == CLK25M_EN_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CLK25M_EN_A::ON
-    }
-}
-impl core::ops::Deref for CLK25M_EN_R {
-    type Target = crate::FieldReader<bool, CLK25M_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK25M_EN_A::ON
     }
 }
 #[doc = "Field `CLK25M_EN` writer - Gating for CLK25M"]
-pub struct CLK25M_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK25M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK25M_EN_A, 3>;
 impl<'a> CLK25M_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK25M_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> CLK25M_EN_W<'a> {
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(CLK25M_EN_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
     }
 }
 #[doc = "Gating for CLK16M\n\nValue on reset: 0"]
@@ -217,13 +149,9 @@ impl From<CLK16M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK16M_EN` reader - Gating for CLK16M"]
-pub struct CLK16M_EN_R(crate::FieldReader<bool, CLK16M_EN_A>);
+pub type CLK16M_EN_R = crate::BitReader<CLK16M_EN_A>;
 impl CLK16M_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK16M_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK16M_EN_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl CLK16M_EN_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CLK16M_EN_A::OFF
+        *self == CLK16M_EN_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CLK16M_EN_A::ON
-    }
-}
-impl core::ops::Deref for CLK16M_EN_R {
-    type Target = crate::FieldReader<bool, CLK16M_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK16M_EN_A::ON
     }
 }
 #[doc = "Field `CLK16M_EN` writer - Gating for CLK16M"]
-pub struct CLK16M_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK16M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK16M_EN_A, 2>;
 impl<'a> CLK16M_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK16M_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -268,22 +182,6 @@ impl<'a> CLK16M_EN_W<'a> {
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(CLK16M_EN_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "Gating for CLK12M\n\nValue on reset: 0"]
@@ -301,13 +199,9 @@ impl From<CLK12M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK12M_EN` reader - Gating for CLK12M"]
-pub struct CLK12M_EN_R(crate::FieldReader<bool, CLK12M_EN_A>);
+pub type CLK12M_EN_R = crate::BitReader<CLK12M_EN_A>;
 impl CLK12M_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK12M_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK12M_EN_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl CLK12M_EN_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CLK12M_EN_A::OFF
+        *self == CLK12M_EN_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CLK12M_EN_A::ON
-    }
-}
-impl core::ops::Deref for CLK12M_EN_R {
-    type Target = crate::FieldReader<bool, CLK12M_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK12M_EN_A::ON
     }
 }
 #[doc = "Field `CLK12M_EN` writer - Gating for CLK12M"]
-pub struct CLK12M_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK12M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK12M_EN_A, 1>;
 impl<'a> CLK12M_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK12M_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -352,22 +232,6 @@ impl<'a> CLK12M_EN_W<'a> {
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
         self.variant(CLK12M_EN_A::ON)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Gating for CLK24M\n\nValue on reset: 0"]
@@ -385,13 +249,9 @@ impl From<CLK24M_EN_A> for bool {
     }
 }
 #[doc = "Field `CLK24M_EN` reader - Gating for CLK24M"]
-pub struct CLK24M_EN_R(crate::FieldReader<bool, CLK24M_EN_A>);
+pub type CLK24M_EN_R = crate::BitReader<CLK24M_EN_A>;
 impl CLK24M_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CLK24M_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK24M_EN_A {
         match self.bits {
@@ -402,31 +262,17 @@ impl CLK24M_EN_R {
     #[doc = "Checks if the value of the field is `OFF`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
-        **self == CLK24M_EN_A::OFF
+        *self == CLK24M_EN_A::OFF
     }
     #[doc = "Checks if the value of the field is `ON`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
-        **self == CLK24M_EN_A::ON
-    }
-}
-impl core::ops::Deref for CLK24M_EN_R {
-    type Target = crate::FieldReader<bool, CLK24M_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK24M_EN_A::ON
     }
 }
 #[doc = "Field `CLK24M_EN` writer - Gating for CLK24M"]
-pub struct CLK24M_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK24M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK24M_EN_A, 0>;
 impl<'a> CLK24M_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK24M_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -437,75 +283,59 @@ impl<'a> CLK24M_EN_W<'a> {
     pub fn on(self) -> &'a mut W {
         self.variant(CLK24M_EN_A::ON)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 4 - Gating for CLK32K"]
     #[inline(always)]
     pub fn clk32k_en(&self) -> CLK32K_EN_R {
-        CLK32K_EN_R::new(((self.bits >> 4) & 0x01) != 0)
+        CLK32K_EN_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 3 - Gating for CLK25M"]
     #[inline(always)]
     pub fn clk25m_en(&self) -> CLK25M_EN_R {
-        CLK25M_EN_R::new(((self.bits >> 3) & 0x01) != 0)
+        CLK25M_EN_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - Gating for CLK16M"]
     #[inline(always)]
     pub fn clk16m_en(&self) -> CLK16M_EN_R {
-        CLK16M_EN_R::new(((self.bits >> 2) & 0x01) != 0)
+        CLK16M_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Gating for CLK12M"]
     #[inline(always)]
     pub fn clk12m_en(&self) -> CLK12M_EN_R {
-        CLK12M_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        CLK12M_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Gating for CLK24M"]
     #[inline(always)]
     pub fn clk24m_en(&self) -> CLK24M_EN_R {
-        CLK24M_EN_R::new((self.bits & 0x01) != 0)
+        CLK24M_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 4 - Gating for CLK32K"]
     #[inline(always)]
     pub fn clk32k_en(&mut self) -> CLK32K_EN_W {
-        CLK32K_EN_W { w: self }
+        CLK32K_EN_W::new(self)
     }
     #[doc = "Bit 3 - Gating for CLK25M"]
     #[inline(always)]
     pub fn clk25m_en(&mut self) -> CLK25M_EN_W {
-        CLK25M_EN_W { w: self }
+        CLK25M_EN_W::new(self)
     }
     #[doc = "Bit 2 - Gating for CLK16M"]
     #[inline(always)]
     pub fn clk16m_en(&mut self) -> CLK16M_EN_W {
-        CLK16M_EN_W { w: self }
+        CLK16M_EN_W::new(self)
     }
     #[doc = "Bit 1 - Gating for CLK12M"]
     #[inline(always)]
     pub fn clk12m_en(&mut self) -> CLK12M_EN_W {
-        CLK12M_EN_W { w: self }
+        CLK12M_EN_W::new(self)
     }
     #[doc = "Bit 0 - Gating for CLK24M"]
     #[inline(always)]
     pub fn clk24m_en(&mut self) -> CLK24M_EN_W {
-        CLK24M_EN_W { w: self }
+        CLK24M_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

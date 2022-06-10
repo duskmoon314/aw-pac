@@ -35,32 +35,10 @@ impl From<crate::W<WDOG_OUTPUT_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `WDOG_OUTPUT_CONFIG` reader - Configure the valid time for the watchdog reset signal."]
-pub struct WDOG_OUTPUT_CONFIG_R(crate::FieldReader<u16, u16>);
-impl WDOG_OUTPUT_CONFIG_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WDOG_OUTPUT_CONFIG_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WDOG_OUTPUT_CONFIG_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WDOG_OUTPUT_CONFIG_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WDOG_OUTPUT_CONFIG` writer - Configure the valid time for the watchdog reset signal."]
-pub struct WDOG_OUTPUT_CONFIG_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WDOG_OUTPUT_CONFIG_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0fff) | (value as u32 & 0x0fff);
-        self.w
-    }
-}
+pub type WDOG_OUTPUT_CONFIG_W<'a> =
+    crate::FieldWriter<'a, u32, WDOG_OUTPUT_CFG_SPEC, u16, u16, 12, 0>;
 impl R {
     #[doc = "Bits 0:11 - Configure the valid time for the watchdog reset signal."]
     #[inline(always)]
@@ -72,7 +50,7 @@ impl W {
     #[doc = "Bits 0:11 - Configure the valid time for the watchdog reset signal."]
     #[inline(always)]
     pub fn wdog_output_config(&mut self) -> WDOG_OUTPUT_CONFIG_W {
-        WDOG_OUTPUT_CONFIG_W { w: self }
+        WDOG_OUTPUT_CONFIG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,7 +34,23 @@ impl From<crate::W<CIR_TEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TEL` reader - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
+pub type TEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `TEL` writer - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
+pub type TEL_W<'a> = crate::FieldWriter<'a, u32, CIR_TEL_SPEC, u8, u8, 8, 0>;
+impl R {
+    #[doc = "Bits 0:7 - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
+    #[inline(always)]
+    pub fn tel(&self) -> TEL_R {
+        TEL_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:7 - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
+    #[inline(always)]
+    pub fn tel(&mut self) -> TEL_W {
+        TEL_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -34,7 +34,39 @@ impl From<crate::W<GP_CH1_CMP_DATA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CH1_CMP_HIG_DATA` reader - Channel 1 Voltage High Value"]
+pub type CH1_CMP_HIG_DATA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `CH1_CMP_HIG_DATA` writer - Channel 1 Voltage High Value"]
+pub type CH1_CMP_HIG_DATA_W<'a> =
+    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, 16>;
+#[doc = "Field `CH1_CMP_LOW_DATA` reader - Channel 1 Voltage Low Value"]
+pub type CH1_CMP_LOW_DATA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `CH1_CMP_LOW_DATA` writer - Channel 1 Voltage Low Value"]
+pub type CH1_CMP_LOW_DATA_W<'a> =
+    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, 0>;
+impl R {
+    #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
+    #[inline(always)]
+    pub fn ch1_cmp_hig_data(&self) -> CH1_CMP_HIG_DATA_R {
+        CH1_CMP_HIG_DATA_R::new(((self.bits >> 16) & 0x0fff) as u16)
+    }
+    #[doc = "Bits 0:11 - Channel 1 Voltage Low Value"]
+    #[inline(always)]
+    pub fn ch1_cmp_low_data(&self) -> CH1_CMP_LOW_DATA_R {
+        CH1_CMP_LOW_DATA_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
+    #[inline(always)]
+    pub fn ch1_cmp_hig_data(&mut self) -> CH1_CMP_HIG_DATA_W {
+        CH1_CMP_HIG_DATA_W::new(self)
+    }
+    #[doc = "Bits 0:11 - Channel 1 Voltage Low Value"]
+    #[inline(always)]
+    pub fn ch1_cmp_low_data(&mut self) -> CH1_CMP_LOW_DATA_W {
+        CH1_CMP_LOW_DATA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +87,10 @@ impl crate::Readable for GP_CH1_CMP_DATA_SPEC {
 impl crate::Writable for GP_CH1_CMP_DATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_CH1_CMP_DATA to value 0"]
+#[doc = "`reset()` method sets GP_CH1_CMP_DATA to value 0x0bff_0400"]
 impl crate::Resettable for GP_CH1_CMP_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0bff_0400
     }
 }

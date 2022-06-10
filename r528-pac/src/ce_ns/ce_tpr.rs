@@ -34,7 +34,23 @@ impl From<crate::W<CE_TPR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TP_NUM` reader - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
+pub type TP_NUM_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `TP_NUM` writer - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
+pub type TP_NUM_W<'a> = crate::FieldWriter<'a, u32, CE_TPR_SPEC, u32, u32, 32, 0>;
+impl R {
+    #[doc = "Bits 0:31 - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
+    #[inline(always)]
+    pub fn tp_num(&self) -> TP_NUM_R {
+        TP_NUM_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
+    #[inline(always)]
+    pub fn tp_num(&mut self) -> TP_NUM_W {
+        TP_NUM_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

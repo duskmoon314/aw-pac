@@ -34,7 +34,112 @@ impl From<crate::W<CE_ICR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Task Channel 3-0 Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum TASK_IRQ_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<TASK_IRQ_EN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TASK_IRQ_EN_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Fields `TASK(0-3)_IRQ_EN` reader - Task Channel 3-0 Interrupt Enable"]
+pub type TASK_IRQ_EN_R = crate::FieldReader<u8, TASK_IRQ_EN_A>;
+impl TASK_IRQ_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<TASK_IRQ_EN_A> {
+        match self.bits {
+            0 => Some(TASK_IRQ_EN_A::DISABLE),
+            1 => Some(TASK_IRQ_EN_A::ENABLE),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TASK_IRQ_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TASK_IRQ_EN_A::ENABLE
+    }
+}
+#[doc = "Fields `TASK(0-3)_IRQ_EN` writer - Task Channel 3-0 Interrupt Enable"]
+pub type TASK_IRQ_EN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CE_ICR_SPEC, u8, TASK_IRQ_EN_A, 4, O>;
+impl<'a, const O: u8> TASK_IRQ_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TASK_IRQ_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TASK_IRQ_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub unsafe fn task_irq_en(&self, n: u8) -> TASK_IRQ_EN_R {
+        TASK_IRQ_EN_R::new(((self.bits >> n) & 0x0f) as u8)
+    }
+    #[doc = "Bits 0:3 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task0_irq_en(&self) -> TASK_IRQ_EN_R {
+        TASK_IRQ_EN_R::new((self.bits & 0x0f) as u8)
+    }
+    #[doc = "Bits 1:4 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task1_irq_en(&self) -> TASK_IRQ_EN_R {
+        TASK_IRQ_EN_R::new(((self.bits >> 1) & 0x0f) as u8)
+    }
+    #[doc = "Bits 2:5 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task2_irq_en(&self) -> TASK_IRQ_EN_R {
+        TASK_IRQ_EN_R::new(((self.bits >> 2) & 0x0f) as u8)
+    }
+    #[doc = "Bits 3:6 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task3_irq_en(&self) -> TASK_IRQ_EN_R {
+        TASK_IRQ_EN_R::new(((self.bits >> 3) & 0x0f) as u8)
+    }
+}
 impl W {
+    #[doc = "Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub unsafe fn task_irq_en<const O: u8>(&mut self) -> TASK_IRQ_EN_W<O> {
+        TASK_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bits 0:3 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task0_irq_en(&mut self) -> TASK_IRQ_EN_W<0> {
+        TASK_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bits 1:4 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task1_irq_en(&mut self) -> TASK_IRQ_EN_W<1> {
+        TASK_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bits 2:5 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task2_irq_en(&mut self) -> TASK_IRQ_EN_W<2> {
+        TASK_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bits 3:6 - Task Channel 3-0 Interrupt Enable"]
+    #[inline(always)]
+    pub fn task3_irq_en(&mut self) -> TASK_IRQ_EN_W<3> {
+        TASK_IRQ_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

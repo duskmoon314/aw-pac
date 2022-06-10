@@ -35,113 +35,21 @@ impl From<crate::W<LED_T01_TIMING_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `T1H_TIME` reader - "]
-pub struct T1H_TIME_R(crate::FieldReader<u8, u8>);
-impl T1H_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        T1H_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T1H_TIME_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T1H_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `T1H_TIME` writer - "]
-pub struct T1H_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T1H_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x3f << 21)) | ((value as u32 & 0x3f) << 21);
-        self.w
-    }
-}
+pub type T1H_TIME_W<'a> = crate::FieldWriterSafe<'a, u32, LED_T01_TIMING_CTRL_SPEC, u8, u8, 6, 21>;
 #[doc = "Field `T1L_TIME` reader - "]
-pub struct T1L_TIME_R(crate::FieldReader<u8, u8>);
-impl T1L_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        T1L_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T1L_TIME_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T1L_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `T1L_TIME` writer - "]
-pub struct T1L_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T1L_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 16)) | ((value as u32 & 0x1f) << 16);
-        self.w
-    }
-}
+pub type T1L_TIME_W<'a> = crate::FieldWriterSafe<'a, u32, LED_T01_TIMING_CTRL_SPEC, u8, u8, 5, 16>;
 #[doc = "Field `T0H_TIME` reader - "]
-pub struct T0H_TIME_R(crate::FieldReader<u8, u8>);
-impl T0H_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        T0H_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0H_TIME_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0H_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `T0H_TIME` writer - "]
-pub struct T0H_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0H_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x1f << 6)) | ((value as u32 & 0x1f) << 6);
-        self.w
-    }
-}
+pub type T0H_TIME_W<'a> = crate::FieldWriterSafe<'a, u32, LED_T01_TIMING_CTRL_SPEC, u8, u8, 5, 6>;
 #[doc = "Field `T0L_TIME` reader - "]
-pub struct T0L_TIME_R(crate::FieldReader<u8, u8>);
-impl T0L_TIME_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        T0L_TIME_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for T0L_TIME_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type T0L_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `T0L_TIME` writer - "]
-pub struct T0L_TIME_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> T0L_TIME_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x3f) | (value as u32 & 0x3f);
-        self.w
-    }
-}
+pub type T0L_TIME_W<'a> = crate::FieldWriter<'a, u32, LED_T01_TIMING_CTRL_SPEC, u8, u8, 6, 0>;
 impl R {
     #[doc = "Bits 21:26"]
     #[inline(always)]
@@ -168,22 +76,22 @@ impl W {
     #[doc = "Bits 21:26"]
     #[inline(always)]
     pub fn t1h_time(&mut self) -> T1H_TIME_W {
-        T1H_TIME_W { w: self }
+        T1H_TIME_W::new(self)
     }
     #[doc = "Bits 16:20"]
     #[inline(always)]
     pub fn t1l_time(&mut self) -> T1L_TIME_W {
-        T1L_TIME_W { w: self }
+        T1L_TIME_W::new(self)
     }
     #[doc = "Bits 6:10"]
     #[inline(always)]
     pub fn t0h_time(&mut self) -> T0H_TIME_W {
-        T0H_TIME_W { w: self }
+        T0H_TIME_W::new(self)
     }
     #[doc = "Bits 0:5"]
     #[inline(always)]
     pub fn t0l_time(&mut self) -> T0L_TIME_W {
-        T0L_TIME_W { w: self }
+        T0L_TIME_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

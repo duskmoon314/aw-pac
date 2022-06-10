@@ -64,13 +64,9 @@ impl From<PE17_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE17_SELECT` reader - PE17 Select"]
-pub struct PE17_SELECT_R(crate::FieldReader<u8, PE17_SELECT_A>);
+pub type PE17_SELECT_R = crate::FieldReader<u8, PE17_SELECT_A>;
 impl PE17_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PE17_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PE17_SELECT_A> {
         match self.bits {
@@ -89,66 +85,52 @@ impl PE17_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PE17_SELECT_A::INPUT
+        *self == PE17_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `TWI3_SDA`"]
     #[inline(always)]
     pub fn is_twi3_sda(&self) -> bool {
-        **self == PE17_SELECT_A::TWI3_SDA
+        *self == PE17_SELECT_A::TWI3_SDA
     }
     #[doc = "Checks if the value of the field is `IR_TX`"]
     #[inline(always)]
     pub fn is_ir_tx(&self) -> bool {
-        **self == PE17_SELECT_A::IR_TX
+        *self == PE17_SELECT_A::IR_TX
     }
     #[doc = "Checks if the value of the field is `DMIC_CLK`"]
     #[inline(always)]
     pub fn is_dmic_clk(&self) -> bool {
-        **self == PE17_SELECT_A::DMIC_CLK
+        *self == PE17_SELECT_A::DMIC_CLK
     }
     #[doc = "Checks if the value of the field is `PE_EINT17`"]
     #[inline(always)]
     pub fn is_pe_eint17(&self) -> bool {
-        **self == PE17_SELECT_A::PE_EINT17
+        *self == PE17_SELECT_A::PE_EINT17
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PE17_SELECT_A::OUTPUT
+        *self == PE17_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `D_JTAG_CK`"]
     #[inline(always)]
     pub fn is_d_jtag_ck(&self) -> bool {
-        **self == PE17_SELECT_A::D_JTAG_CK
+        *self == PE17_SELECT_A::D_JTAG_CK
     }
     #[doc = "Checks if the value of the field is `I2S0_MCLK`"]
     #[inline(always)]
     pub fn is_i2s0_mclk(&self) -> bool {
-        **self == PE17_SELECT_A::I2S0_MCLK
+        *self == PE17_SELECT_A::I2S0_MCLK
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PE17_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PE17_SELECT_R {
-    type Target = crate::FieldReader<u8, PE17_SELECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PE17_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PE17_SELECT` writer - PE17 Select"]
-pub struct PE17_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PE17_SELECT_W<'a> = crate::FieldWriter<'a, u32, PE_CFG2_SPEC, u8, PE17_SELECT_A, 4, 4>;
 impl<'a> PE17_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PE17_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -194,12 +176,6 @@ impl<'a> PE17_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PE17_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
 }
 #[doc = "PE16 Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -231,13 +207,9 @@ impl From<PE16_SELECT_A> for u8 {
     }
 }
 #[doc = "Field `PE16_SELECT` reader - PE16 Select"]
-pub struct PE16_SELECT_R(crate::FieldReader<u8, PE16_SELECT_A>);
+pub type PE16_SELECT_R = crate::FieldReader<u8, PE16_SELECT_A>;
 impl PE16_SELECT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PE16_SELECT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<PE16_SELECT_A> {
         match self.bits {
@@ -256,66 +228,52 @@ impl PE16_SELECT_R {
     #[doc = "Checks if the value of the field is `INPUT`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        **self == PE16_SELECT_A::INPUT
+        *self == PE16_SELECT_A::INPUT
     }
     #[doc = "Checks if the value of the field is `TWI3_SCK`"]
     #[inline(always)]
     pub fn is_twi3_sck(&self) -> bool {
-        **self == PE16_SELECT_A::TWI3_SCK
+        *self == PE16_SELECT_A::TWI3_SCK
     }
     #[doc = "Checks if the value of the field is `PWM7`"]
     #[inline(always)]
     pub fn is_pwm7(&self) -> bool {
-        **self == PE16_SELECT_A::PWM7
+        *self == PE16_SELECT_A::PWM7
     }
     #[doc = "Checks if the value of the field is `DMIC_DATA0`"]
     #[inline(always)]
     pub fn is_dmic_data0(&self) -> bool {
-        **self == PE16_SELECT_A::DMIC_DATA0
+        *self == PE16_SELECT_A::DMIC_DATA0
     }
     #[doc = "Checks if the value of the field is `PE_EINT16`"]
     #[inline(always)]
     pub fn is_pe_eint16(&self) -> bool {
-        **self == PE16_SELECT_A::PE_EINT16
+        *self == PE16_SELECT_A::PE_EINT16
     }
     #[doc = "Checks if the value of the field is `OUTPUT`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        **self == PE16_SELECT_A::OUTPUT
+        *self == PE16_SELECT_A::OUTPUT
     }
     #[doc = "Checks if the value of the field is `D_JTAG_DO`"]
     #[inline(always)]
     pub fn is_d_jtag_do(&self) -> bool {
-        **self == PE16_SELECT_A::D_JTAG_DO
+        *self == PE16_SELECT_A::D_JTAG_DO
     }
     #[doc = "Checks if the value of the field is `I2S0_BCLK`"]
     #[inline(always)]
     pub fn is_i2s0_bclk(&self) -> bool {
-        **self == PE16_SELECT_A::I2S0_BCLK
+        *self == PE16_SELECT_A::I2S0_BCLK
     }
     #[doc = "Checks if the value of the field is `IO_DISABLE`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
-        **self == PE16_SELECT_A::IO_DISABLE
-    }
-}
-impl core::ops::Deref for PE16_SELECT_R {
-    type Target = crate::FieldReader<u8, PE16_SELECT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PE16_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `PE16_SELECT` writer - PE16 Select"]
-pub struct PE16_SELECT_W<'a> {
-    w: &'a mut W,
-}
+pub type PE16_SELECT_W<'a> = crate::FieldWriter<'a, u32, PE_CFG2_SPEC, u8, PE16_SELECT_A, 4, 0>;
 impl<'a> PE16_SELECT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PE16_SELECT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -361,12 +319,6 @@ impl<'a> PE16_SELECT_W<'a> {
     pub fn io_disable(self) -> &'a mut W {
         self.variant(PE16_SELECT_A::IO_DISABLE)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x0f) | (value as u32 & 0x0f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 4:7 - PE17 Select"]
@@ -384,12 +336,12 @@ impl W {
     #[doc = "Bits 4:7 - PE17 Select"]
     #[inline(always)]
     pub fn pe17_select(&mut self) -> PE17_SELECT_W {
-        PE17_SELECT_W { w: self }
+        PE17_SELECT_W::new(self)
     }
     #[doc = "Bits 0:3 - PE16 Select"]
     #[inline(always)]
     pub fn pe16_select(&mut self) -> PE16_SELECT_W {
-        PE16_SELECT_W { w: self }
+        PE16_SELECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

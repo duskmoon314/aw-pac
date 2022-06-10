@@ -34,7 +34,23 @@ impl From<crate::W<TP_CALI_DATA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TP_CDAT` reader - TP Common Data"]
+pub type TP_CDAT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `TP_CDAT` writer - TP Common Data"]
+pub type TP_CDAT_W<'a> = crate::FieldWriter<'a, u32, TP_CALI_DATA_SPEC, u16, u16, 12, 0>;
+impl R {
+    #[doc = "Bits 0:11 - TP Common Data"]
+    #[inline(always)]
+    pub fn tp_cdat(&self) -> TP_CDAT_R {
+        TP_CDAT_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:11 - TP Common Data"]
+    #[inline(always)]
+    pub fn tp_cdat(&mut self) -> TP_CDAT_W {
+        TP_CDAT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

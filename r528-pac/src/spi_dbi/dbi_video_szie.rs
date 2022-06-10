@@ -35,59 +35,13 @@ impl From<crate::W<DBI_VIDEO_SZIE_SPEC>> for W {
     }
 }
 #[doc = "Field `v_size` reader - "]
-pub struct V_SIZE_R(crate::FieldReader<u16, u16>);
-impl V_SIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        V_SIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for V_SIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type V_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `v_size` writer - "]
-pub struct V_SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> V_SIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 16)) | ((value as u32 & 0x07ff) << 16);
-        self.w
-    }
-}
+pub type V_SIZE_W<'a> = crate::FieldWriter<'a, u32, DBI_VIDEO_SZIE_SPEC, u16, u16, 11, 16>;
 #[doc = "Field `h_size` reader - "]
-pub struct H_SIZE_R(crate::FieldReader<u16, u16>);
-impl H_SIZE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        H_SIZE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for H_SIZE_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type H_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `h_size` writer - "]
-pub struct H_SIZE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> H_SIZE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x07ff) | (value as u32 & 0x07ff);
-        self.w
-    }
-}
+pub type H_SIZE_W<'a> = crate::FieldWriter<'a, u32, DBI_VIDEO_SZIE_SPEC, u16, u16, 11, 0>;
 impl R {
     #[doc = "Bits 16:26"]
     #[inline(always)]
@@ -104,12 +58,12 @@ impl W {
     #[doc = "Bits 16:26"]
     #[inline(always)]
     pub fn v_size(&mut self) -> V_SIZE_W {
-        V_SIZE_W { w: self }
+        V_SIZE_W::new(self)
     }
     #[doc = "Bits 0:10"]
     #[inline(always)]
     pub fn h_size(&mut self) -> H_SIZE_W {
-        H_SIZE_W { w: self }
+        H_SIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -15,9 +15,9 @@ pub struct RegisterBlock {
     #[doc = "0x18 - Error Status Register"]
     pub ce_esr: crate::Reg<ce_esr::CE_ESR_SPEC>,
     _reserved6: [u8; 0x08],
-    #[doc = "0x24 - DMA Current Source Address"]
+    #[doc = "0x24 - Current Source Address Register"]
     pub ce_csa: crate::Reg<ce_csa::CE_CSA_SPEC>,
-    #[doc = "0x28 - DMA Current Destination Address"]
+    #[doc = "0x28 - Current Destination Address Register"]
     pub ce_cda: crate::Reg<ce_cda::CE_CDA_SPEC>,
     #[doc = "0x2c - Throughput Register"]
     pub ce_tpr: crate::Reg<ce_tpr::CE_TPR_SPEC>,
@@ -48,11 +48,11 @@ pub type CE_ESR = crate::Reg<ce_esr::CE_ESR_SPEC>;
 pub mod ce_esr;
 #[doc = "CE_CSA register accessor: an alias for `Reg<CE_CSA_SPEC>`"]
 pub type CE_CSA = crate::Reg<ce_csa::CE_CSA_SPEC>;
-#[doc = "DMA Current Source Address"]
+#[doc = "Current Source Address Register"]
 pub mod ce_csa;
 #[doc = "CE_CDA register accessor: an alias for `Reg<CE_CDA_SPEC>`"]
 pub type CE_CDA = crate::Reg<ce_cda::CE_CDA_SPEC>;
-#[doc = "DMA Current Destination Address"]
+#[doc = "Current Destination Address Register"]
 pub mod ce_cda;
 #[doc = "CE_TPR register accessor: an alias for `Reg<CE_TPR_SPEC>`"]
 pub type CE_TPR = crate::Reg<ce_tpr::CE_TPR_SPEC>;

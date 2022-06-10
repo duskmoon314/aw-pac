@@ -34,7 +34,23 @@ impl From<crate::W<CIR_TXT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `NCTT` reader - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
+pub type NCTT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `NCTT` writer - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
+pub type NCTT_W<'a> = crate::FieldWriter<'a, u32, CIR_TXT_SPEC, u8, u8, 8, 0>;
+impl R {
+    #[doc = "Bits 0:7 - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
+    #[inline(always)]
+    pub fn nctt(&self) -> NCTT_R {
+        NCTT_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:7 - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
+    #[inline(always)]
+    pub fn nctt(&mut self) -> NCTT_W {
+        NCTT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

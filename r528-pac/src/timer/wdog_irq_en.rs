@@ -49,13 +49,9 @@ impl From<WDOG_IRQ_EN_A> for bool {
     }
 }
 #[doc = "Field `wdog_irq_en` reader - "]
-pub struct WDOG_IRQ_EN_R(crate::FieldReader<bool, WDOG_IRQ_EN_A>);
+pub type WDOG_IRQ_EN_R = crate::BitReader<WDOG_IRQ_EN_A>;
 impl WDOG_IRQ_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDOG_IRQ_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WDOG_IRQ_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl WDOG_IRQ_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == WDOG_IRQ_EN_A::DISABLED
+        *self == WDOG_IRQ_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == WDOG_IRQ_EN_A::ENABLED
-    }
-}
-impl core::ops::Deref for WDOG_IRQ_EN_R {
-    type Target = crate::FieldReader<bool, WDOG_IRQ_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WDOG_IRQ_EN_A::ENABLED
     }
 }
 #[doc = "Field `wdog_irq_en` writer - "]
-pub struct WDOG_IRQ_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type WDOG_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, WDOG_IRQ_EN_SPEC, WDOG_IRQ_EN_A, 0>;
 impl<'a> WDOG_IRQ_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDOG_IRQ_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> WDOG_IRQ_EN_W<'a> {
     pub fn enabled(self) -> &'a mut W {
         self.variant(WDOG_IRQ_EN_A::ENABLED)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn wdog_irq_en(&self) -> WDOG_IRQ_EN_R {
-        WDOG_IRQ_EN_R::new((self.bits & 0x01) != 0)
+        WDOG_IRQ_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn wdog_irq_en(&mut self) -> WDOG_IRQ_EN_W {
-        WDOG_IRQ_EN_W { w: self }
+        WDOG_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

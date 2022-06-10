@@ -34,7 +34,90 @@ impl From<crate::W<GP_DATAH_INTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Channel Voltage High Available Interrupt Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH_HIG_PENGDING_A {
+    #[doc = "0: No Pending IRQ"]
+    NO_PENDING = 0,
+    #[doc = "1: Channel Voltage High Available Pending IRQ"]
+    CHANNEL = 1,
+}
+impl From<CH_HIG_PENGDING_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH_HIG_PENGDING_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `CH(0-1)_HIG_PENGDING` reader - Channel Voltage High Available Interrupt Status"]
+pub type CH_HIG_PENGDING_R = crate::BitReader<CH_HIG_PENGDING_A>;
+impl CH_HIG_PENGDING_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH_HIG_PENGDING_A {
+        match self.bits {
+            false => CH_HIG_PENGDING_A::NO_PENDING,
+            true => CH_HIG_PENGDING_A::CHANNEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
+    #[inline(always)]
+    pub fn is_no_pending(&self) -> bool {
+        *self == CH_HIG_PENGDING_A::NO_PENDING
+    }
+    #[doc = "Checks if the value of the field is `CHANNEL`"]
+    #[inline(always)]
+    pub fn is_channel(&self) -> bool {
+        *self == CH_HIG_PENGDING_A::CHANNEL
+    }
+}
+#[doc = "Fields `CH(0-1)_HIG_PENGDING` writer - Channel Voltage High Available Interrupt Status"]
+pub type CH_HIG_PENGDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, GP_DATAH_INTS_SPEC, CH_HIG_PENGDING_A, O>;
+impl<'a, const O: u8> CH_HIG_PENGDING_W<'a, O> {
+    #[doc = "No Pending IRQ"]
+    #[inline(always)]
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(CH_HIG_PENGDING_A::NO_PENDING)
+    }
+    #[doc = "Channel Voltage High Available Pending IRQ"]
+    #[inline(always)]
+    pub fn channel(self) -> &'a mut W {
+        self.variant(CH_HIG_PENGDING_A::CHANNEL)
+    }
+}
+impl R {
+    #[doc = "Channel Voltage High Available Interrupt Status"]
+    #[inline(always)]
+    pub unsafe fn ch_hig_pengding(&self, n: u8) -> CH_HIG_PENGDING_R {
+        CH_HIG_PENGDING_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Channel Voltage High Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch0_hig_pengding(&self) -> CH_HIG_PENGDING_R {
+        CH_HIG_PENGDING_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - Channel Voltage High Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch1_hig_pengding(&self) -> CH_HIG_PENGDING_R {
+        CH_HIG_PENGDING_R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Channel Voltage High Available Interrupt Status"]
+    #[inline(always)]
+    pub unsafe fn ch_hig_pengding<const O: u8>(&mut self) -> CH_HIG_PENGDING_W<O> {
+        CH_HIG_PENGDING_W::new(self)
+    }
+    #[doc = "Bit 0 - Channel Voltage High Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch0_hig_pengding(&mut self) -> CH_HIG_PENGDING_W<0> {
+        CH_HIG_PENGDING_W::new(self)
+    }
+    #[doc = "Bit 1 - Channel Voltage High Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch1_hig_pengding(&mut self) -> CH_HIG_PENGDING_W<1> {
+        CH_HIG_PENGDING_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

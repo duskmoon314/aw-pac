@@ -52,13 +52,9 @@ impl From<PG_PULL_A> for u8 {
     }
 }
 #[doc = "Fields `PG(16-18)_PULL` reader - PG Pull_up/down Select"]
-pub struct PG_PULL_R(crate::FieldReader<u8, PG_PULL_A>);
+pub type PG_PULL_R = crate::FieldReader<u8, PG_PULL_A>;
 impl PG_PULL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PG_PULL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PG_PULL_A {
         match self.bits {
@@ -71,37 +67,23 @@ impl PG_PULL_R {
     #[doc = "Checks if the value of the field is `PULL_DISABLE`"]
     #[inline(always)]
     pub fn is_pull_disable(&self) -> bool {
-        **self == PG_PULL_A::PULL_DISABLE
+        *self == PG_PULL_A::PULL_DISABLE
     }
     #[doc = "Checks if the value of the field is `PULL_UP`"]
     #[inline(always)]
     pub fn is_pull_up(&self) -> bool {
-        **self == PG_PULL_A::PULL_UP
+        *self == PG_PULL_A::PULL_UP
     }
     #[doc = "Checks if the value of the field is `PULL_DOWN`"]
     #[inline(always)]
     pub fn is_pull_down(&self) -> bool {
-        **self == PG_PULL_A::PULL_DOWN
-    }
-}
-impl core::ops::Deref for PG_PULL_R {
-    type Target = crate::FieldReader<u8, PG_PULL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PG_PULL_A::PULL_DOWN
     }
 }
 #[doc = "Fields `PG(16-18)_PULL` writer - PG Pull_up/down Select"]
-pub struct PG_PULL_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> PG_PULL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG_PULL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
+pub type PG_PULL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PG_PULL1_SPEC, u8, PG_PULL_A, 2, O>;
+impl<'a, const O: u8> PG_PULL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn pull_disable(self) -> &'a mut W {
@@ -116,92 +98,50 @@ impl<'a> PG_PULL_W<'a> {
     #[inline(always)]
     pub fn pull_down(self) -> &'a mut W {
         self.variant(PG_PULL_A::PULL_DOWN)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `PG(16-18)_PULL` const generic writer - PG Pull_up/down Select"]
-pub struct PG_PULL_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> PG_PULL_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PG_PULL_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn pull_disable(self) -> &'a mut W {
-        self.variant(PG_PULL_A::PULL_DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pull_up(self) -> &'a mut W {
-        self.variant(PG_PULL_A::PULL_UP)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn pull_down(self) -> &'a mut W {
-        self.variant(PG_PULL_A::PULL_DOWN)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
-        self.w
     }
 }
 impl R {
     #[doc = "PG Pull_up/down Select"]
     #[inline(always)]
-    pub unsafe fn pg_pull(&self, n: usize) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> ((n - 16) * 2)) & 0x03) as u8)
+    pub unsafe fn pg_pull(&self, n: u8) -> PG_PULL_R {
+        PG_PULL_R::new(((self.bits >> ((n - 16) * 2)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg16_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new((self.bits & 0x03) as u8)
+        PG_PULL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 2:3 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg17_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 2) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 4:5 - PG Pull_up/down Select"]
     #[inline(always)]
     pub fn pg18_pull(&self) -> PG_PULL_R {
-        PG_PULL_R::new(((self.bits >> 4) & 0x03) as u8)
+        PG_PULL_R::new(((self.bits >> 4) & 3) as u8)
     }
 }
 impl W {
     #[doc = "PG Pull_up/down Select"]
     #[inline(always)]
-    pub unsafe fn pg_pull(&mut self, n: usize) -> PG_PULL_W {
-        PG_PULL_W {
-            w: self,
-            offset: (n - 16) * 2,
-        }
+    pub unsafe fn pg_pull<const O: u8>(&mut self) -> PG_PULL_W<O> {
+        PG_PULL_W::new(self)
     }
     #[doc = "Bits 0:1 - PG Pull_up/down Select"]
     #[inline(always)]
-    pub fn pg16_pull(&mut self) -> PG_PULL_CGW<0> {
-        PG_PULL_CGW { w: self }
+    pub fn pg16_pull(&mut self) -> PG_PULL_W<0> {
+        PG_PULL_W::new(self)
     }
     #[doc = "Bits 2:3 - PG Pull_up/down Select"]
     #[inline(always)]
-    pub fn pg17_pull(&mut self) -> PG_PULL_CGW<2> {
-        PG_PULL_CGW { w: self }
+    pub fn pg17_pull(&mut self) -> PG_PULL_W<2> {
+        PG_PULL_W::new(self)
     }
     #[doc = "Bits 4:5 - PG Pull_up/down Select"]
     #[inline(always)]
-    pub fn pg18_pull(&mut self) -> PG_PULL_CGW<4> {
-        PG_PULL_CGW { w: self }
+    pub fn pg18_pull(&mut self) -> PG_PULL_W<4> {
+        PG_PULL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

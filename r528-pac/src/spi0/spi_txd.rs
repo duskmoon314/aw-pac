@@ -42,7 +42,7 @@ impl W {
         self
     }
 }
-#[doc = "SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_txd](index.html) module"]
+#[doc = "SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data in word method\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_txd](index.html) module"]
 pub struct SPI_TXD_SPEC;
 impl crate::RegisterSpec for SPI_TXD_SPEC {
     type Ux = u32;

@@ -35,32 +35,9 @@ impl From<crate::W<SPI_MBC_SPEC>> for W {
     }
 }
 #[doc = "Field `mbc` reader - Master Burst Counter"]
-pub struct MBC_R(crate::FieldReader<u32, u32>);
-impl MBC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        MBC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MBC_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MBC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `mbc` writer - Master Burst Counter"]
-pub struct MBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> MBC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type MBC_W<'a> = crate::FieldWriter<'a, u32, SPI_MBC_SPEC, u32, u32, 24, 0>;
 impl R {
     #[doc = "Bits 0:23 - Master Burst Counter"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:23 - Master Burst Counter"]
     #[inline(always)]
     pub fn mbc(&mut self) -> MBC_W {
-        MBC_W { w: self }
+        MBC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

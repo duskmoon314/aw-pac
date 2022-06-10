@@ -35,32 +35,9 @@ impl From<crate::W<SYS_LDO_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `SPARE` reader - "]
-pub struct SPARE_R(crate::FieldReader<u8, u8>);
-impl SPARE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SPARE_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SPARE_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SPARE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPARE` writer - "]
-pub struct SPARE_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> SPARE_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 24)) | ((value as u32 & 0xff) << 24);
-        self.w
-    }
-}
+pub type SPARE_W<'a> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, u8, 8, 24>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -201,13 +178,9 @@ impl From<LDOB_TRIM_A> for u8 {
     }
 }
 #[doc = "Field `LDOB_TRIM` reader - "]
-pub struct LDOB_TRIM_R(crate::FieldReader<u8, LDOB_TRIM_A>);
+pub type LDOB_TRIM_R = crate::FieldReader<u8, LDOB_TRIM_A>;
 impl LDOB_TRIM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LDOB_TRIM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LDOB_TRIM_A> {
         match self.bits {
@@ -281,341 +254,327 @@ impl LDOB_TRIM_R {
     #[doc = "Checks if the value of the field is `O1_167`"]
     #[inline(always)]
     pub fn is_o1_167(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_167
+        *self == LDOB_TRIM_A::O1_167
     }
     #[doc = "Checks if the value of the field is `O1_18`"]
     #[inline(always)]
     pub fn is_o1_18(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_18
+        *self == LDOB_TRIM_A::O1_18
     }
     #[doc = "Checks if the value of the field is `O1_193`"]
     #[inline(always)]
     pub fn is_o1_193(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_193
+        *self == LDOB_TRIM_A::O1_193
     }
     #[doc = "Checks if the value of the field is `O1_207`"]
     #[inline(always)]
     pub fn is_o1_207(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_207
+        *self == LDOB_TRIM_A::O1_207
     }
     #[doc = "Checks if the value of the field is `O1_22`"]
     #[inline(always)]
     pub fn is_o1_22(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_22
+        *self == LDOB_TRIM_A::O1_22
     }
     #[doc = "Checks if the value of the field is `O1_233`"]
     #[inline(always)]
     pub fn is_o1_233(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_233
+        *self == LDOB_TRIM_A::O1_233
     }
     #[doc = "Checks if the value of the field is `O1_247`"]
     #[inline(always)]
     pub fn is_o1_247(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_247
+        *self == LDOB_TRIM_A::O1_247
     }
     #[doc = "Checks if the value of the field is `O1_260`"]
     #[inline(always)]
     pub fn is_o1_260(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_260
+        *self == LDOB_TRIM_A::O1_260
     }
     #[doc = "Checks if the value of the field is `O1_273`"]
     #[inline(always)]
     pub fn is_o1_273(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_273
+        *self == LDOB_TRIM_A::O1_273
     }
     #[doc = "Checks if the value of the field is `O1_287`"]
     #[inline(always)]
     pub fn is_o1_287(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_287
+        *self == LDOB_TRIM_A::O1_287
     }
     #[doc = "Checks if the value of the field is `O1_3`"]
     #[inline(always)]
     pub fn is_o1_3(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_3
+        *self == LDOB_TRIM_A::O1_3
     }
     #[doc = "Checks if the value of the field is `O1_313`"]
     #[inline(always)]
     pub fn is_o1_313(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_313
+        *self == LDOB_TRIM_A::O1_313
     }
     #[doc = "Checks if the value of the field is `O1_327`"]
     #[inline(always)]
     pub fn is_o1_327(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_327
+        *self == LDOB_TRIM_A::O1_327
     }
     #[doc = "Checks if the value of the field is `O1_340`"]
     #[inline(always)]
     pub fn is_o1_340(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_340
+        *self == LDOB_TRIM_A::O1_340
     }
     #[doc = "Checks if the value of the field is `O1_353`"]
     #[inline(always)]
     pub fn is_o1_353(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_353
+        *self == LDOB_TRIM_A::O1_353
     }
     #[doc = "Checks if the value of the field is `O1_367`"]
     #[inline(always)]
     pub fn is_o1_367(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_367
+        *self == LDOB_TRIM_A::O1_367
     }
     #[doc = "Checks if the value of the field is `O1_38`"]
     #[inline(always)]
     pub fn is_o1_38(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_38
+        *self == LDOB_TRIM_A::O1_38
     }
     #[doc = "Checks if the value of the field is `O1_393`"]
     #[inline(always)]
     pub fn is_o1_393(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_393
+        *self == LDOB_TRIM_A::O1_393
     }
     #[doc = "Checks if the value of the field is `O1_407`"]
     #[inline(always)]
     pub fn is_o1_407(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_407
+        *self == LDOB_TRIM_A::O1_407
     }
     #[doc = "Checks if the value of the field is `O1_42`"]
     #[inline(always)]
     pub fn is_o1_42(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_42
+        *self == LDOB_TRIM_A::O1_42
     }
     #[doc = "Checks if the value of the field is `O1_433`"]
     #[inline(always)]
     pub fn is_o1_433(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_433
+        *self == LDOB_TRIM_A::O1_433
     }
     #[doc = "Checks if the value of the field is `O1_447`"]
     #[inline(always)]
     pub fn is_o1_447(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_447
+        *self == LDOB_TRIM_A::O1_447
     }
     #[doc = "Checks if the value of the field is `O1_46`"]
     #[inline(always)]
     pub fn is_o1_46(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_46
+        *self == LDOB_TRIM_A::O1_46
     }
     #[doc = "Checks if the value of the field is `O1_473`"]
     #[inline(always)]
     pub fn is_o1_473(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_473
+        *self == LDOB_TRIM_A::O1_473
     }
     #[doc = "Checks if the value of the field is `O1_487`"]
     #[inline(always)]
     pub fn is_o1_487(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_487
+        *self == LDOB_TRIM_A::O1_487
     }
     #[doc = "Checks if the value of the field is `O1_5`"]
     #[inline(always)]
     pub fn is_o1_5(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_5
+        *self == LDOB_TRIM_A::O1_5
     }
     #[doc = "Checks if the value of the field is `O1_513`"]
     #[inline(always)]
     pub fn is_o1_513(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_513
+        *self == LDOB_TRIM_A::O1_513
     }
     #[doc = "Checks if the value of the field is `O1_527`"]
     #[inline(always)]
     pub fn is_o1_527(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_527
+        *self == LDOB_TRIM_A::O1_527
     }
     #[doc = "Checks if the value of the field is `O1_54`"]
     #[inline(always)]
     pub fn is_o1_54(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_54
+        *self == LDOB_TRIM_A::O1_54
     }
     #[doc = "Checks if the value of the field is `O1_553`"]
     #[inline(always)]
     pub fn is_o1_553(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_553
+        *self == LDOB_TRIM_A::O1_553
     }
     #[doc = "Checks if the value of the field is `O1_567`"]
     #[inline(always)]
     pub fn is_o1_567(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_567
+        *self == LDOB_TRIM_A::O1_567
     }
     #[doc = "Checks if the value of the field is `O1_58`"]
     #[inline(always)]
     pub fn is_o1_58(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_58
+        *self == LDOB_TRIM_A::O1_58
     }
     #[doc = "Checks if the value of the field is `O1_593`"]
     #[inline(always)]
     pub fn is_o1_593(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_593
+        *self == LDOB_TRIM_A::O1_593
     }
     #[doc = "Checks if the value of the field is `O1_607`"]
     #[inline(always)]
     pub fn is_o1_607(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_607
+        *self == LDOB_TRIM_A::O1_607
     }
     #[doc = "Checks if the value of the field is `O1_627`"]
     #[inline(always)]
     pub fn is_o1_627(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_627
+        *self == LDOB_TRIM_A::O1_627
     }
     #[doc = "Checks if the value of the field is `O1_64`"]
     #[inline(always)]
     pub fn is_o1_64(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_64
+        *self == LDOB_TRIM_A::O1_64
     }
     #[doc = "Checks if the value of the field is `O1_653`"]
     #[inline(always)]
     pub fn is_o1_653(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_653
+        *self == LDOB_TRIM_A::O1_653
     }
     #[doc = "Checks if the value of the field is `O1_667`"]
     #[inline(always)]
     pub fn is_o1_667(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_667
+        *self == LDOB_TRIM_A::O1_667
     }
     #[doc = "Checks if the value of the field is `O1_680`"]
     #[inline(always)]
     pub fn is_o1_680(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_680
+        *self == LDOB_TRIM_A::O1_680
     }
     #[doc = "Checks if the value of the field is `O1_693`"]
     #[inline(always)]
     pub fn is_o1_693(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_693
+        *self == LDOB_TRIM_A::O1_693
     }
     #[doc = "Checks if the value of the field is `O1_707`"]
     #[inline(always)]
     pub fn is_o1_707(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_707
+        *self == LDOB_TRIM_A::O1_707
     }
     #[doc = "Checks if the value of the field is `O1_720`"]
     #[inline(always)]
     pub fn is_o1_720(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_720
+        *self == LDOB_TRIM_A::O1_720
     }
     #[doc = "Checks if the value of the field is `O1_733`"]
     #[inline(always)]
     pub fn is_o1_733(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_733
+        *self == LDOB_TRIM_A::O1_733
     }
     #[doc = "Checks if the value of the field is `O1_747`"]
     #[inline(always)]
     pub fn is_o1_747(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_747
+        *self == LDOB_TRIM_A::O1_747
     }
     #[doc = "Checks if the value of the field is `O1_76`"]
     #[inline(always)]
     pub fn is_o1_76(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_76
+        *self == LDOB_TRIM_A::O1_76
     }
     #[doc = "Checks if the value of the field is `O1_773`"]
     #[inline(always)]
     pub fn is_o1_773(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_773
+        *self == LDOB_TRIM_A::O1_773
     }
     #[doc = "Checks if the value of the field is `O1_787`"]
     #[inline(always)]
     pub fn is_o1_787(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_787
+        *self == LDOB_TRIM_A::O1_787
     }
     #[doc = "Checks if the value of the field is `O1_8`"]
     #[inline(always)]
     pub fn is_o1_8(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_8
+        *self == LDOB_TRIM_A::O1_8
     }
     #[doc = "Checks if the value of the field is `O1_813`"]
     #[inline(always)]
     pub fn is_o1_813(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_813
+        *self == LDOB_TRIM_A::O1_813
     }
     #[doc = "Checks if the value of the field is `O1_827`"]
     #[inline(always)]
     pub fn is_o1_827(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_827
+        *self == LDOB_TRIM_A::O1_827
     }
     #[doc = "Checks if the value of the field is `O1_84`"]
     #[inline(always)]
     pub fn is_o1_84(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_84
+        *self == LDOB_TRIM_A::O1_84
     }
     #[doc = "Checks if the value of the field is `O1_853`"]
     #[inline(always)]
     pub fn is_o1_853(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_853
+        *self == LDOB_TRIM_A::O1_853
     }
     #[doc = "Checks if the value of the field is `O1_867`"]
     #[inline(always)]
     pub fn is_o1_867(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_867
+        *self == LDOB_TRIM_A::O1_867
     }
     #[doc = "Checks if the value of the field is `O1_88`"]
     #[inline(always)]
     pub fn is_o1_88(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_88
+        *self == LDOB_TRIM_A::O1_88
     }
     #[doc = "Checks if the value of the field is `O1_893`"]
     #[inline(always)]
     pub fn is_o1_893(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_893
+        *self == LDOB_TRIM_A::O1_893
     }
     #[doc = "Checks if the value of the field is `O1_907`"]
     #[inline(always)]
     pub fn is_o1_907(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_907
+        *self == LDOB_TRIM_A::O1_907
     }
     #[doc = "Checks if the value of the field is `O1_92`"]
     #[inline(always)]
     pub fn is_o1_92(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_92
+        *self == LDOB_TRIM_A::O1_92
     }
     #[doc = "Checks if the value of the field is `O1_933`"]
     #[inline(always)]
     pub fn is_o1_933(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_933
+        *self == LDOB_TRIM_A::O1_933
     }
     #[doc = "Checks if the value of the field is `O1_947`"]
     #[inline(always)]
     pub fn is_o1_947(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_947
+        *self == LDOB_TRIM_A::O1_947
     }
     #[doc = "Checks if the value of the field is `O1_96`"]
     #[inline(always)]
     pub fn is_o1_96(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_96
+        *self == LDOB_TRIM_A::O1_96
     }
     #[doc = "Checks if the value of the field is `O1_973`"]
     #[inline(always)]
     pub fn is_o1_973(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_973
+        *self == LDOB_TRIM_A::O1_973
     }
     #[doc = "Checks if the value of the field is `O1_987`"]
     #[inline(always)]
     pub fn is_o1_987(&self) -> bool {
-        **self == LDOB_TRIM_A::O1_987
+        *self == LDOB_TRIM_A::O1_987
     }
     #[doc = "Checks if the value of the field is `O2`"]
     #[inline(always)]
     pub fn is_o2(&self) -> bool {
-        **self == LDOB_TRIM_A::O2
+        *self == LDOB_TRIM_A::O2
     }
     #[doc = "Checks if the value of the field is `O2_013`"]
     #[inline(always)]
     pub fn is_o2_013(&self) -> bool {
-        **self == LDOB_TRIM_A::O2_013
-    }
-}
-impl core::ops::Deref for LDOB_TRIM_R {
-    type Target = crate::FieldReader<u8, LDOB_TRIM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LDOB_TRIM_A::O2_013
     }
 }
 #[doc = "Field `LDOB_TRIM` writer - "]
-pub struct LDOB_TRIM_W<'a> {
-    w: &'a mut W,
-}
+pub type LDOB_TRIM_W<'a> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOB_TRIM_A, 8, 8>;
 impl<'a> LDOB_TRIM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LDOB_TRIM_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn o1_167(self) -> &'a mut W {
@@ -936,12 +895,6 @@ impl<'a> LDOB_TRIM_W<'a> {
     pub fn o2_013(self) -> &'a mut W {
         self.variant(LDOB_TRIM_A::O2_013)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xff << 8)) | ((value as u32 & 0xff) << 8);
-        self.w
-    }
 }
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -1019,13 +972,9 @@ impl From<LDOA_TRIM_A> for u8 {
     }
 }
 #[doc = "Field `LDOA_TRIM` reader - "]
-pub struct LDOA_TRIM_R(crate::FieldReader<u8, LDOA_TRIM_A>);
+pub type LDOA_TRIM_R = crate::FieldReader<u8, LDOA_TRIM_A>;
 impl LDOA_TRIM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LDOA_TRIM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<LDOA_TRIM_A> {
         match self.bits {
@@ -1067,181 +1016,167 @@ impl LDOA_TRIM_R {
     #[doc = "Checks if the value of the field is `O1_593`"]
     #[inline(always)]
     pub fn is_o1_593(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_593
+        *self == LDOA_TRIM_A::O1_593
     }
     #[doc = "Checks if the value of the field is `O1_607`"]
     #[inline(always)]
     pub fn is_o1_607(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_607
+        *self == LDOA_TRIM_A::O1_607
     }
     #[doc = "Checks if the value of the field is `O1_627`"]
     #[inline(always)]
     pub fn is_o1_627(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_627
+        *self == LDOA_TRIM_A::O1_627
     }
     #[doc = "Checks if the value of the field is `O1_64`"]
     #[inline(always)]
     pub fn is_o1_64(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_64
+        *self == LDOA_TRIM_A::O1_64
     }
     #[doc = "Checks if the value of the field is `O1_653`"]
     #[inline(always)]
     pub fn is_o1_653(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_653
+        *self == LDOA_TRIM_A::O1_653
     }
     #[doc = "Checks if the value of the field is `O1_667`"]
     #[inline(always)]
     pub fn is_o1_667(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_667
+        *self == LDOA_TRIM_A::O1_667
     }
     #[doc = "Checks if the value of the field is `O1_680`"]
     #[inline(always)]
     pub fn is_o1_680(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_680
+        *self == LDOA_TRIM_A::O1_680
     }
     #[doc = "Checks if the value of the field is `O1_693`"]
     #[inline(always)]
     pub fn is_o1_693(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_693
+        *self == LDOA_TRIM_A::O1_693
     }
     #[doc = "Checks if the value of the field is `O1_707`"]
     #[inline(always)]
     pub fn is_o1_707(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_707
+        *self == LDOA_TRIM_A::O1_707
     }
     #[doc = "Checks if the value of the field is `O1_720`"]
     #[inline(always)]
     pub fn is_o1_720(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_720
+        *self == LDOA_TRIM_A::O1_720
     }
     #[doc = "Checks if the value of the field is `O1_733`"]
     #[inline(always)]
     pub fn is_o1_733(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_733
+        *self == LDOA_TRIM_A::O1_733
     }
     #[doc = "Checks if the value of the field is `O1_747`"]
     #[inline(always)]
     pub fn is_o1_747(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_747
+        *self == LDOA_TRIM_A::O1_747
     }
     #[doc = "Checks if the value of the field is `O1_76`"]
     #[inline(always)]
     pub fn is_o1_76(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_76
+        *self == LDOA_TRIM_A::O1_76
     }
     #[doc = "Checks if the value of the field is `O1_773`"]
     #[inline(always)]
     pub fn is_o1_773(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_773
+        *self == LDOA_TRIM_A::O1_773
     }
     #[doc = "Checks if the value of the field is `O1_787`"]
     #[inline(always)]
     pub fn is_o1_787(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_787
+        *self == LDOA_TRIM_A::O1_787
     }
     #[doc = "Checks if the value of the field is `O1_8`"]
     #[inline(always)]
     pub fn is_o1_8(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_8
+        *self == LDOA_TRIM_A::O1_8
     }
     #[doc = "Checks if the value of the field is `O1_813`"]
     #[inline(always)]
     pub fn is_o1_813(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_813
+        *self == LDOA_TRIM_A::O1_813
     }
     #[doc = "Checks if the value of the field is `O1_827`"]
     #[inline(always)]
     pub fn is_o1_827(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_827
+        *self == LDOA_TRIM_A::O1_827
     }
     #[doc = "Checks if the value of the field is `O1_84`"]
     #[inline(always)]
     pub fn is_o1_84(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_84
+        *self == LDOA_TRIM_A::O1_84
     }
     #[doc = "Checks if the value of the field is `O1_853`"]
     #[inline(always)]
     pub fn is_o1_853(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_853
+        *self == LDOA_TRIM_A::O1_853
     }
     #[doc = "Checks if the value of the field is `O1_867`"]
     #[inline(always)]
     pub fn is_o1_867(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_867
+        *self == LDOA_TRIM_A::O1_867
     }
     #[doc = "Checks if the value of the field is `O1_88`"]
     #[inline(always)]
     pub fn is_o1_88(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_88
+        *self == LDOA_TRIM_A::O1_88
     }
     #[doc = "Checks if the value of the field is `O1_893`"]
     #[inline(always)]
     pub fn is_o1_893(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_893
+        *self == LDOA_TRIM_A::O1_893
     }
     #[doc = "Checks if the value of the field is `O1_907`"]
     #[inline(always)]
     pub fn is_o1_907(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_907
+        *self == LDOA_TRIM_A::O1_907
     }
     #[doc = "Checks if the value of the field is `O1_92`"]
     #[inline(always)]
     pub fn is_o1_92(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_92
+        *self == LDOA_TRIM_A::O1_92
     }
     #[doc = "Checks if the value of the field is `O1_933`"]
     #[inline(always)]
     pub fn is_o1_933(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_933
+        *self == LDOA_TRIM_A::O1_933
     }
     #[doc = "Checks if the value of the field is `O1_947`"]
     #[inline(always)]
     pub fn is_o1_947(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_947
+        *self == LDOA_TRIM_A::O1_947
     }
     #[doc = "Checks if the value of the field is `O1_96`"]
     #[inline(always)]
     pub fn is_o1_96(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_96
+        *self == LDOA_TRIM_A::O1_96
     }
     #[doc = "Checks if the value of the field is `O1_973`"]
     #[inline(always)]
     pub fn is_o1_973(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_973
+        *self == LDOA_TRIM_A::O1_973
     }
     #[doc = "Checks if the value of the field is `O1_987`"]
     #[inline(always)]
     pub fn is_o1_987(&self) -> bool {
-        **self == LDOA_TRIM_A::O1_987
+        *self == LDOA_TRIM_A::O1_987
     }
     #[doc = "Checks if the value of the field is `O2`"]
     #[inline(always)]
     pub fn is_o2(&self) -> bool {
-        **self == LDOA_TRIM_A::O2
+        *self == LDOA_TRIM_A::O2
     }
     #[doc = "Checks if the value of the field is `O2_013`"]
     #[inline(always)]
     pub fn is_o2_013(&self) -> bool {
-        **self == LDOA_TRIM_A::O2_013
-    }
-}
-impl core::ops::Deref for LDOA_TRIM_R {
-    type Target = crate::FieldReader<u8, LDOA_TRIM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LDOA_TRIM_A::O2_013
     }
 }
 #[doc = "Field `LDOA_TRIM` writer - "]
-pub struct LDOA_TRIM_W<'a> {
-    w: &'a mut W,
-}
+pub type LDOA_TRIM_W<'a> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOA_TRIM_A, 8, 0>;
 impl<'a> LDOA_TRIM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LDOA_TRIM_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn o1_593(self) -> &'a mut W {
@@ -1402,12 +1337,6 @@ impl<'a> LDOA_TRIM_W<'a> {
     pub fn o2_013(self) -> &'a mut W {
         self.variant(LDOA_TRIM_A::O2_013)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0xff) | (value as u32 & 0xff);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 24:31"]
@@ -1430,17 +1359,17 @@ impl W {
     #[doc = "Bits 24:31"]
     #[inline(always)]
     pub fn spare(&mut self) -> SPARE_W {
-        SPARE_W { w: self }
+        SPARE_W::new(self)
     }
     #[doc = "Bits 8:15"]
     #[inline(always)]
     pub fn ldob_trim(&mut self) -> LDOB_TRIM_W {
-        LDOB_TRIM_W { w: self }
+        LDOB_TRIM_W::new(self)
     }
     #[doc = "Bits 0:7"]
     #[inline(always)]
     pub fn ldoa_trim(&mut self) -> LDOA_TRIM_W {
-        LDOA_TRIM_W { w: self }
+        LDOA_TRIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

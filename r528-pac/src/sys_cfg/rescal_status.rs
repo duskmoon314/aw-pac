@@ -14,40 +14,14 @@ impl From<crate::R<RESCAL_STATUS_SPEC>> for R {
     }
 }
 #[doc = "Field `COUT` reader - Calibration Circuits Analog COmpare Output"]
-pub struct COUT_R(crate::FieldReader<bool, bool>);
-impl COUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        COUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for COUT_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type COUT_R = crate::BitReader<bool>;
 #[doc = "Field `RES_CAL_DO` reader - RESCAL Calibration Results Output"]
-pub struct RES_CAL_DO_R(crate::FieldReader<u8, u8>);
-impl RES_CAL_DO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RES_CAL_DO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for RES_CAL_DO_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type RES_CAL_DO_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 8 - Calibration Circuits Analog COmpare Output"]
     #[inline(always)]
     pub fn cout(&self) -> COUT_R {
-        COUT_R::new(((self.bits >> 8) & 0x01) != 0)
+        COUT_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bits 0:5 - RESCAL Calibration Results Output"]
     #[inline(always)]

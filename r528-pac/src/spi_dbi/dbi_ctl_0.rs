@@ -49,13 +49,9 @@ impl From<CMDT_A> for bool {
     }
 }
 #[doc = "Field `cmdt` reader - Command Type"]
-pub struct CMDT_R(crate::FieldReader<bool, CMDT_A>);
+pub type CMDT_R = crate::BitReader<CMDT_A>;
 impl CMDT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CMDT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CMDT_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl CMDT_R {
     #[doc = "Checks if the value of the field is `WRITE`"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
-        **self == CMDT_A::WRITE
+        *self == CMDT_A::WRITE
     }
     #[doc = "Checks if the value of the field is `READ`"]
     #[inline(always)]
     pub fn is_read(&self) -> bool {
-        **self == CMDT_A::READ
-    }
-}
-impl core::ops::Deref for CMDT_R {
-    type Target = crate::FieldReader<bool, CMDT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CMDT_A::READ
     }
 }
 #[doc = "Field `cmdt` writer - Command Type"]
-pub struct CMDT_W<'a> {
-    w: &'a mut W,
-}
+pub type CMDT_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, CMDT_A, 31>;
 impl<'a> CMDT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CMDT_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn write(self) -> &'a mut W {
@@ -101,50 +83,11 @@ impl<'a> CMDT_W<'a> {
     pub fn read(self) -> &'a mut W {
         self.variant(CMDT_A::READ)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
-    }
 }
 #[doc = "Field `wcdc` reader - Write Command Dummy Cycles"]
-pub struct WCDC_R(crate::FieldReader<u16, u16>);
-impl WCDC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        WCDC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for WCDC_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type WCDC_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `wcdc` writer - Write Command Dummy Cycles"]
-pub struct WCDC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> WCDC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07ff << 20)) | ((value as u32 & 0x07ff) << 20);
-        self.w
-    }
-}
+pub type WCDC_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_0_SPEC, u16, u16, 11, 20>;
 #[doc = "Output Data Sequence\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DAT_SEQ_A {
@@ -160,13 +103,9 @@ impl From<DAT_SEQ_A> for bool {
     }
 }
 #[doc = "Field `dat_seq` reader - Output Data Sequence"]
-pub struct DAT_SEQ_R(crate::FieldReader<bool, DAT_SEQ_A>);
+pub type DAT_SEQ_R = crate::BitReader<DAT_SEQ_A>;
 impl DAT_SEQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DAT_SEQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DAT_SEQ_A {
         match self.bits {
@@ -177,31 +116,17 @@ impl DAT_SEQ_R {
     #[doc = "Checks if the value of the field is `MSB`"]
     #[inline(always)]
     pub fn is_msb(&self) -> bool {
-        **self == DAT_SEQ_A::MSB
+        *self == DAT_SEQ_A::MSB
     }
     #[doc = "Checks if the value of the field is `LSB`"]
     #[inline(always)]
     pub fn is_lsb(&self) -> bool {
-        **self == DAT_SEQ_A::LSB
-    }
-}
-impl core::ops::Deref for DAT_SEQ_R {
-    type Target = crate::FieldReader<bool, DAT_SEQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DAT_SEQ_A::LSB
     }
 }
 #[doc = "Field `dat_seq` writer - Output Data Sequence"]
-pub struct DAT_SEQ_W<'a> {
-    w: &'a mut W,
-}
+pub type DAT_SEQ_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, DAT_SEQ_A, 19>;
 impl<'a> DAT_SEQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DAT_SEQ_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn msb(self) -> &'a mut W {
@@ -211,22 +136,6 @@ impl<'a> DAT_SEQ_W<'a> {
     #[inline(always)]
     pub fn lsb(self) -> &'a mut W {
         self.variant(DAT_SEQ_A::LSB)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 19)) | ((value as u32 & 0x01) << 19);
-        self.w
     }
 }
 #[doc = "Output RGB Sequence\n\nValue on reset: 0"]
@@ -253,13 +162,9 @@ impl From<RGB_SEQ_A> for u8 {
     }
 }
 #[doc = "Field `rgb_seq` reader - Output RGB Sequence"]
-pub struct RGB_SEQ_R(crate::FieldReader<u8, RGB_SEQ_A>);
+pub type RGB_SEQ_R = crate::FieldReader<u8, RGB_SEQ_A>;
 impl RGB_SEQ_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RGB_SEQ_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RGB_SEQ_A> {
         match self.bits {
@@ -275,51 +180,37 @@ impl RGB_SEQ_R {
     #[doc = "Checks if the value of the field is `RGB`"]
     #[inline(always)]
     pub fn is_rgb(&self) -> bool {
-        **self == RGB_SEQ_A::RGB
+        *self == RGB_SEQ_A::RGB
     }
     #[doc = "Checks if the value of the field is `RBG`"]
     #[inline(always)]
     pub fn is_rbg(&self) -> bool {
-        **self == RGB_SEQ_A::RBG
+        *self == RGB_SEQ_A::RBG
     }
     #[doc = "Checks if the value of the field is `GRB`"]
     #[inline(always)]
     pub fn is_grb(&self) -> bool {
-        **self == RGB_SEQ_A::GRB
+        *self == RGB_SEQ_A::GRB
     }
     #[doc = "Checks if the value of the field is `GBR`"]
     #[inline(always)]
     pub fn is_gbr(&self) -> bool {
-        **self == RGB_SEQ_A::GBR
+        *self == RGB_SEQ_A::GBR
     }
     #[doc = "Checks if the value of the field is `BRG`"]
     #[inline(always)]
     pub fn is_brg(&self) -> bool {
-        **self == RGB_SEQ_A::BRG
+        *self == RGB_SEQ_A::BRG
     }
     #[doc = "Checks if the value of the field is `BGR`"]
     #[inline(always)]
     pub fn is_bgr(&self) -> bool {
-        **self == RGB_SEQ_A::BGR
-    }
-}
-impl core::ops::Deref for RGB_SEQ_R {
-    type Target = crate::FieldReader<u8, RGB_SEQ_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RGB_SEQ_A::BGR
     }
 }
 #[doc = "Field `rgb_seq` writer - Output RGB Sequence"]
-pub struct RGB_SEQ_W<'a> {
-    w: &'a mut W,
-}
+pub type RGB_SEQ_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_0_SPEC, u8, RGB_SEQ_A, 3, 16>;
 impl<'a> RGB_SEQ_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RGB_SEQ_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn rgb(self) -> &'a mut W {
@@ -350,12 +241,6 @@ impl<'a> RGB_SEQ_W<'a> {
     pub fn bgr(self) -> &'a mut W {
         self.variant(RGB_SEQ_A::BGR)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 16)) | ((value as u32 & 0x07) << 16);
-        self.w
-    }
 }
 #[doc = "Transmit Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -372,13 +257,9 @@ impl From<TRAN_MOD_A> for bool {
     }
 }
 #[doc = "Field `tran_mod` reader - Transmit Mode"]
-pub struct TRAN_MOD_R(crate::FieldReader<bool, TRAN_MOD_A>);
+pub type TRAN_MOD_R = crate::BitReader<TRAN_MOD_A>;
 impl TRAN_MOD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TRAN_MOD_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> TRAN_MOD_A {
         match self.bits {
@@ -389,31 +270,17 @@ impl TRAN_MOD_R {
     #[doc = "Checks if the value of the field is `COMMAND_PARAMETER`"]
     #[inline(always)]
     pub fn is_command_parameter(&self) -> bool {
-        **self == TRAN_MOD_A::COMMAND_PARAMETER
+        *self == TRAN_MOD_A::COMMAND_PARAMETER
     }
     #[doc = "Checks if the value of the field is `VIDEO`"]
     #[inline(always)]
     pub fn is_video(&self) -> bool {
-        **self == TRAN_MOD_A::VIDEO
-    }
-}
-impl core::ops::Deref for TRAN_MOD_R {
-    type Target = crate::FieldReader<bool, TRAN_MOD_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TRAN_MOD_A::VIDEO
     }
 }
 #[doc = "Field `tran_mod` writer - Transmit Mode"]
-pub struct TRAN_MOD_W<'a> {
-    w: &'a mut W,
-}
+pub type TRAN_MOD_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, TRAN_MOD_A, 15>;
 impl<'a> TRAN_MOD_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: TRAN_MOD_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn command_parameter(self) -> &'a mut W {
@@ -423,22 +290,6 @@ impl<'a> TRAN_MOD_W<'a> {
     #[inline(always)]
     pub fn video(self) -> &'a mut W {
         self.variant(TRAN_MOD_A::VIDEO)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
     }
 }
 #[doc = "Output Data Format\n\nValue on reset: 0"]
@@ -463,13 +314,9 @@ impl From<DAT_FMT_A> for u8 {
     }
 }
 #[doc = "Field `dat_fmt` reader - Output Data Format"]
-pub struct DAT_FMT_R(crate::FieldReader<u8, DAT_FMT_A>);
+pub type DAT_FMT_R = crate::FieldReader<u8, DAT_FMT_A>;
 impl DAT_FMT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DAT_FMT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DAT_FMT_A> {
         match self.bits {
@@ -484,46 +331,32 @@ impl DAT_FMT_R {
     #[doc = "Checks if the value of the field is `RGB111`"]
     #[inline(always)]
     pub fn is_rgb111(&self) -> bool {
-        **self == DAT_FMT_A::RGB111
+        *self == DAT_FMT_A::RGB111
     }
     #[doc = "Checks if the value of the field is `RGB444`"]
     #[inline(always)]
     pub fn is_rgb444(&self) -> bool {
-        **self == DAT_FMT_A::RGB444
+        *self == DAT_FMT_A::RGB444
     }
     #[doc = "Checks if the value of the field is `RGB565`"]
     #[inline(always)]
     pub fn is_rgb565(&self) -> bool {
-        **self == DAT_FMT_A::RGB565
+        *self == DAT_FMT_A::RGB565
     }
     #[doc = "Checks if the value of the field is `RGB666`"]
     #[inline(always)]
     pub fn is_rgb666(&self) -> bool {
-        **self == DAT_FMT_A::RGB666
+        *self == DAT_FMT_A::RGB666
     }
     #[doc = "Checks if the value of the field is `RGB888`"]
     #[inline(always)]
     pub fn is_rgb888(&self) -> bool {
-        **self == DAT_FMT_A::RGB888
-    }
-}
-impl core::ops::Deref for DAT_FMT_R {
-    type Target = crate::FieldReader<u8, DAT_FMT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DAT_FMT_A::RGB888
     }
 }
 #[doc = "Field `dat_fmt` writer - Output Data Format"]
-pub struct DAT_FMT_W<'a> {
-    w: &'a mut W,
-}
+pub type DAT_FMT_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_0_SPEC, u8, DAT_FMT_A, 3, 12>;
 impl<'a> DAT_FMT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DAT_FMT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn rgb111(self) -> &'a mut W {
@@ -549,12 +382,6 @@ impl<'a> DAT_FMT_W<'a> {
     pub fn rgb888(self) -> &'a mut W {
         self.variant(DAT_FMT_A::RGB888)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 12)) | ((value as u32 & 0x07) << 12);
-        self.w
-    }
 }
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -578,13 +405,9 @@ impl From<DBI_INTERFACE_A> for u8 {
     }
 }
 #[doc = "Field `dbi_interface` reader - "]
-pub struct DBI_INTERFACE_R(crate::FieldReader<u8, DBI_INTERFACE_A>);
+pub type DBI_INTERFACE_R = crate::FieldReader<u8, DBI_INTERFACE_A>;
 impl DBI_INTERFACE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBI_INTERFACE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<DBI_INTERFACE_A> {
         match self.bits {
@@ -599,46 +422,33 @@ impl DBI_INTERFACE_R {
     #[doc = "Checks if the value of the field is `L3I1`"]
     #[inline(always)]
     pub fn is_l3i1(&self) -> bool {
-        **self == DBI_INTERFACE_A::L3I1
+        *self == DBI_INTERFACE_A::L3I1
     }
     #[doc = "Checks if the value of the field is `L3I2`"]
     #[inline(always)]
     pub fn is_l3i2(&self) -> bool {
-        **self == DBI_INTERFACE_A::L3I2
+        *self == DBI_INTERFACE_A::L3I2
     }
     #[doc = "Checks if the value of the field is `L4I1`"]
     #[inline(always)]
     pub fn is_l4i1(&self) -> bool {
-        **self == DBI_INTERFACE_A::L4I1
+        *self == DBI_INTERFACE_A::L4I1
     }
     #[doc = "Checks if the value of the field is `L4I2`"]
     #[inline(always)]
     pub fn is_l4i2(&self) -> bool {
-        **self == DBI_INTERFACE_A::L4I2
+        *self == DBI_INTERFACE_A::L4I2
     }
     #[doc = "Checks if the value of the field is `D2LI`"]
     #[inline(always)]
     pub fn is_d2li(&self) -> bool {
-        **self == DBI_INTERFACE_A::D2LI
-    }
-}
-impl core::ops::Deref for DBI_INTERFACE_R {
-    type Target = crate::FieldReader<u8, DBI_INTERFACE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DBI_INTERFACE_A::D2LI
     }
 }
 #[doc = "Field `dbi_interface` writer - "]
-pub struct DBI_INTERFACE_W<'a> {
-    w: &'a mut W,
-}
+pub type DBI_INTERFACE_W<'a> =
+    crate::FieldWriter<'a, u32, DBI_CTL_0_SPEC, u8, DBI_INTERFACE_A, 3, 8>;
 impl<'a> DBI_INTERFACE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DBI_INTERFACE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "3 Line Interface I"]
     #[inline(always)]
     pub fn l3i1(self) -> &'a mut W {
@@ -663,12 +473,6 @@ impl<'a> DBI_INTERFACE_W<'a> {
     #[inline(always)]
     pub fn d2li(self) -> &'a mut W {
         self.variant(DBI_INTERFACE_A::D2LI)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 8)) | ((value as u32 & 0x07) << 8);
-        self.w
     }
 }
 #[doc = "RGB Source Format\n\nValue on reset: 0"]
@@ -703,13 +507,9 @@ impl From<RGB_SRC_FMT_A> for u8 {
     }
 }
 #[doc = "Field `rgb_src_fmt` reader - RGB Source Format"]
-pub struct RGB_SRC_FMT_R(crate::FieldReader<u8, RGB_SRC_FMT_A>);
+pub type RGB_SRC_FMT_R = crate::FieldReader<u8, RGB_SRC_FMT_A>;
 impl RGB_SRC_FMT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        RGB_SRC_FMT_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RGB_SRC_FMT_A> {
         match self.bits {
@@ -729,71 +529,57 @@ impl RGB_SRC_FMT_R {
     #[doc = "Checks if the value of the field is `RGB`"]
     #[inline(always)]
     pub fn is_rgb(&self) -> bool {
-        **self == RGB_SRC_FMT_A::RGB
+        *self == RGB_SRC_FMT_A::RGB
     }
     #[doc = "Checks if the value of the field is `RBG`"]
     #[inline(always)]
     pub fn is_rbg(&self) -> bool {
-        **self == RGB_SRC_FMT_A::RBG
+        *self == RGB_SRC_FMT_A::RBG
     }
     #[doc = "Checks if the value of the field is `GRB`"]
     #[inline(always)]
     pub fn is_grb(&self) -> bool {
-        **self == RGB_SRC_FMT_A::GRB
+        *self == RGB_SRC_FMT_A::GRB
     }
     #[doc = "Checks if the value of the field is `GBR`"]
     #[inline(always)]
     pub fn is_gbr(&self) -> bool {
-        **self == RGB_SRC_FMT_A::GBR
+        *self == RGB_SRC_FMT_A::GBR
     }
     #[doc = "Checks if the value of the field is `BRG`"]
     #[inline(always)]
     pub fn is_brg(&self) -> bool {
-        **self == RGB_SRC_FMT_A::BRG
+        *self == RGB_SRC_FMT_A::BRG
     }
     #[doc = "Checks if the value of the field is `BGR`"]
     #[inline(always)]
     pub fn is_bgr(&self) -> bool {
-        **self == RGB_SRC_FMT_A::BGR
+        *self == RGB_SRC_FMT_A::BGR
     }
     #[doc = "Checks if the value of the field is `GRBG_0`"]
     #[inline(always)]
     pub fn is_grbg_0(&self) -> bool {
-        **self == RGB_SRC_FMT_A::GRBG_0
+        *self == RGB_SRC_FMT_A::GRBG_0
     }
     #[doc = "Checks if the value of the field is `GBRG_0`"]
     #[inline(always)]
     pub fn is_gbrg_0(&self) -> bool {
-        **self == RGB_SRC_FMT_A::GBRG_0
+        *self == RGB_SRC_FMT_A::GBRG_0
     }
     #[doc = "Checks if the value of the field is `GRBG_1`"]
     #[inline(always)]
     pub fn is_grbg_1(&self) -> bool {
-        **self == RGB_SRC_FMT_A::GRBG_1
+        *self == RGB_SRC_FMT_A::GRBG_1
     }
     #[doc = "Checks if the value of the field is `GBRG_1`"]
     #[inline(always)]
     pub fn is_gbrg_1(&self) -> bool {
-        **self == RGB_SRC_FMT_A::GBRG_1
-    }
-}
-impl core::ops::Deref for RGB_SRC_FMT_R {
-    type Target = crate::FieldReader<u8, RGB_SRC_FMT_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RGB_SRC_FMT_A::GBRG_1
     }
 }
 #[doc = "Field `rgb_src_fmt` writer - RGB Source Format"]
-pub struct RGB_SRC_FMT_W<'a> {
-    w: &'a mut W,
-}
+pub type RGB_SRC_FMT_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_0_SPEC, u8, RGB_SRC_FMT_A, 4, 4>;
 impl<'a> RGB_SRC_FMT_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RGB_SRC_FMT_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn rgb(self) -> &'a mut W {
@@ -844,50 +630,11 @@ impl<'a> RGB_SRC_FMT_W<'a> {
     pub fn gbrg_1(self) -> &'a mut W {
         self.variant(RGB_SRC_FMT_A::GBRG_1)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
 }
 #[doc = "Field `dum_val` reader - Dummy Cycle Value"]
-pub struct DUM_VAL_R(crate::FieldReader<bool, bool>);
-impl DUM_VAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DUM_VAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DUM_VAL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DUM_VAL_R = crate::BitReader<bool>;
 #[doc = "Field `dum_val` writer - Dummy Cycle Value"]
-pub struct DUM_VAL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DUM_VAL_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 3)) | ((value as u32 & 0x01) << 3);
-        self.w
-    }
-}
+pub type DUM_VAL_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, bool, 3>;
 #[doc = "RGB Bit Order\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RGB_BO_A {
@@ -903,13 +650,9 @@ impl From<RGB_BO_A> for bool {
     }
 }
 #[doc = "Field `rgb_bo` reader - RGB Bit Order"]
-pub struct RGB_BO_R(crate::FieldReader<bool, RGB_BO_A>);
+pub type RGB_BO_R = crate::BitReader<RGB_BO_A>;
 impl RGB_BO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RGB_BO_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RGB_BO_A {
         match self.bits {
@@ -920,31 +663,17 @@ impl RGB_BO_R {
     #[doc = "Checks if the value of the field is `DATA`"]
     #[inline(always)]
     pub fn is_data(&self) -> bool {
-        **self == RGB_BO_A::DATA
+        *self == RGB_BO_A::DATA
     }
     #[doc = "Checks if the value of the field is `SWAP`"]
     #[inline(always)]
     pub fn is_swap(&self) -> bool {
-        **self == RGB_BO_A::SWAP
-    }
-}
-impl core::ops::Deref for RGB_BO_R {
-    type Target = crate::FieldReader<bool, RGB_BO_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RGB_BO_A::SWAP
     }
 }
 #[doc = "Field `rgb_bo` writer - RGB Bit Order"]
-pub struct RGB_BO_W<'a> {
-    w: &'a mut W,
-}
+pub type RGB_BO_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, RGB_BO_A, 2>;
 impl<'a> RGB_BO_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RGB_BO_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn data(self) -> &'a mut W {
@@ -954,22 +683,6 @@ impl<'a> RGB_BO_W<'a> {
     #[inline(always)]
     pub fn swap(self) -> &'a mut W {
         self.variant(RGB_BO_A::SWAP)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "Element A Position\n\nValue on reset: 0"]
@@ -987,13 +700,9 @@ impl From<ELEMENT_A_POS_A> for bool {
     }
 }
 #[doc = "Field `element_a_pos` reader - Element A Position"]
-pub struct ELEMENT_A_POS_R(crate::FieldReader<bool, ELEMENT_A_POS_A>);
+pub type ELEMENT_A_POS_R = crate::BitReader<ELEMENT_A_POS_A>;
 impl ELEMENT_A_POS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        ELEMENT_A_POS_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> ELEMENT_A_POS_A {
         match self.bits {
@@ -1004,31 +713,17 @@ impl ELEMENT_A_POS_R {
     #[doc = "Checks if the value of the field is `_31_24`"]
     #[inline(always)]
     pub fn is_31_24(&self) -> bool {
-        **self == ELEMENT_A_POS_A::_31_24
+        *self == ELEMENT_A_POS_A::_31_24
     }
     #[doc = "Checks if the value of the field is `_7_0`"]
     #[inline(always)]
     pub fn is_7_0(&self) -> bool {
-        **self == ELEMENT_A_POS_A::_7_0
-    }
-}
-impl core::ops::Deref for ELEMENT_A_POS_R {
-    type Target = crate::FieldReader<bool, ELEMENT_A_POS_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == ELEMENT_A_POS_A::_7_0
     }
 }
 #[doc = "Field `element_a_pos` writer - Element A Position"]
-pub struct ELEMENT_A_POS_W<'a> {
-    w: &'a mut W,
-}
+pub type ELEMENT_A_POS_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, ELEMENT_A_POS_A, 1>;
 impl<'a> ELEMENT_A_POS_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: ELEMENT_A_POS_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn _31_24(self) -> &'a mut W {
@@ -1038,22 +733,6 @@ impl<'a> ELEMENT_A_POS_W<'a> {
     #[inline(always)]
     pub fn _7_0(self) -> &'a mut W {
         self.variant(ELEMENT_A_POS_A::_7_0)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Video Source Type\n\nValue on reset: 0"]
@@ -1071,13 +750,9 @@ impl From<VI_SRC_TYPE_A> for bool {
     }
 }
 #[doc = "Field `vi_src_type` reader - Video Source Type"]
-pub struct VI_SRC_TYPE_R(crate::FieldReader<bool, VI_SRC_TYPE_A>);
+pub type VI_SRC_TYPE_R = crate::BitReader<VI_SRC_TYPE_A>;
 impl VI_SRC_TYPE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VI_SRC_TYPE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VI_SRC_TYPE_A {
         match self.bits {
@@ -1088,31 +763,17 @@ impl VI_SRC_TYPE_R {
     #[doc = "Checks if the value of the field is `RGB32`"]
     #[inline(always)]
     pub fn is_rgb32(&self) -> bool {
-        **self == VI_SRC_TYPE_A::RGB32
+        *self == VI_SRC_TYPE_A::RGB32
     }
     #[doc = "Checks if the value of the field is `RGB16`"]
     #[inline(always)]
     pub fn is_rgb16(&self) -> bool {
-        **self == VI_SRC_TYPE_A::RGB16
-    }
-}
-impl core::ops::Deref for VI_SRC_TYPE_R {
-    type Target = crate::FieldReader<bool, VI_SRC_TYPE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VI_SRC_TYPE_A::RGB16
     }
 }
 #[doc = "Field `vi_src_type` writer - Video Source Type"]
-pub struct VI_SRC_TYPE_W<'a> {
-    w: &'a mut W,
-}
+pub type VI_SRC_TYPE_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, VI_SRC_TYPE_A, 0>;
 impl<'a> VI_SRC_TYPE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VI_SRC_TYPE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn rgb32(self) -> &'a mut W {
@@ -1123,28 +784,12 @@ impl<'a> VI_SRC_TYPE_W<'a> {
     pub fn rgb16(self) -> &'a mut W {
         self.variant(VI_SRC_TYPE_A::RGB16)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 31 - Command Type"]
     #[inline(always)]
     pub fn cmdt(&self) -> CMDT_R {
-        CMDT_R::new(((self.bits >> 31) & 0x01) != 0)
+        CMDT_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 20:30 - Write Command Dummy Cycles"]
     #[inline(always)]
@@ -1154,27 +799,27 @@ impl R {
     #[doc = "Bit 19 - Output Data Sequence"]
     #[inline(always)]
     pub fn dat_seq(&self) -> DAT_SEQ_R {
-        DAT_SEQ_R::new(((self.bits >> 19) & 0x01) != 0)
+        DAT_SEQ_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bits 16:18 - Output RGB Sequence"]
     #[inline(always)]
     pub fn rgb_seq(&self) -> RGB_SEQ_R {
-        RGB_SEQ_R::new(((self.bits >> 16) & 0x07) as u8)
+        RGB_SEQ_R::new(((self.bits >> 16) & 7) as u8)
     }
     #[doc = "Bit 15 - Transmit Mode"]
     #[inline(always)]
     pub fn tran_mod(&self) -> TRAN_MOD_R {
-        TRAN_MOD_R::new(((self.bits >> 15) & 0x01) != 0)
+        TRAN_MOD_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 12:14 - Output Data Format"]
     #[inline(always)]
     pub fn dat_fmt(&self) -> DAT_FMT_R {
-        DAT_FMT_R::new(((self.bits >> 12) & 0x07) as u8)
+        DAT_FMT_R::new(((self.bits >> 12) & 7) as u8)
     }
     #[doc = "Bits 8:10"]
     #[inline(always)]
     pub fn dbi_interface(&self) -> DBI_INTERFACE_R {
-        DBI_INTERFACE_R::new(((self.bits >> 8) & 0x07) as u8)
+        DBI_INTERFACE_R::new(((self.bits >> 8) & 7) as u8)
     }
     #[doc = "Bits 4:7 - RGB Source Format"]
     #[inline(always)]
@@ -1184,84 +829,84 @@ impl R {
     #[doc = "Bit 3 - Dummy Cycle Value"]
     #[inline(always)]
     pub fn dum_val(&self) -> DUM_VAL_R {
-        DUM_VAL_R::new(((self.bits >> 3) & 0x01) != 0)
+        DUM_VAL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 2 - RGB Bit Order"]
     #[inline(always)]
     pub fn rgb_bo(&self) -> RGB_BO_R {
-        RGB_BO_R::new(((self.bits >> 2) & 0x01) != 0)
+        RGB_BO_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Element A Position"]
     #[inline(always)]
     pub fn element_a_pos(&self) -> ELEMENT_A_POS_R {
-        ELEMENT_A_POS_R::new(((self.bits >> 1) & 0x01) != 0)
+        ELEMENT_A_POS_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Video Source Type"]
     #[inline(always)]
     pub fn vi_src_type(&self) -> VI_SRC_TYPE_R {
-        VI_SRC_TYPE_R::new((self.bits & 0x01) != 0)
+        VI_SRC_TYPE_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 31 - Command Type"]
     #[inline(always)]
     pub fn cmdt(&mut self) -> CMDT_W {
-        CMDT_W { w: self }
+        CMDT_W::new(self)
     }
     #[doc = "Bits 20:30 - Write Command Dummy Cycles"]
     #[inline(always)]
     pub fn wcdc(&mut self) -> WCDC_W {
-        WCDC_W { w: self }
+        WCDC_W::new(self)
     }
     #[doc = "Bit 19 - Output Data Sequence"]
     #[inline(always)]
     pub fn dat_seq(&mut self) -> DAT_SEQ_W {
-        DAT_SEQ_W { w: self }
+        DAT_SEQ_W::new(self)
     }
     #[doc = "Bits 16:18 - Output RGB Sequence"]
     #[inline(always)]
     pub fn rgb_seq(&mut self) -> RGB_SEQ_W {
-        RGB_SEQ_W { w: self }
+        RGB_SEQ_W::new(self)
     }
     #[doc = "Bit 15 - Transmit Mode"]
     #[inline(always)]
     pub fn tran_mod(&mut self) -> TRAN_MOD_W {
-        TRAN_MOD_W { w: self }
+        TRAN_MOD_W::new(self)
     }
     #[doc = "Bits 12:14 - Output Data Format"]
     #[inline(always)]
     pub fn dat_fmt(&mut self) -> DAT_FMT_W {
-        DAT_FMT_W { w: self }
+        DAT_FMT_W::new(self)
     }
     #[doc = "Bits 8:10"]
     #[inline(always)]
     pub fn dbi_interface(&mut self) -> DBI_INTERFACE_W {
-        DBI_INTERFACE_W { w: self }
+        DBI_INTERFACE_W::new(self)
     }
     #[doc = "Bits 4:7 - RGB Source Format"]
     #[inline(always)]
     pub fn rgb_src_fmt(&mut self) -> RGB_SRC_FMT_W {
-        RGB_SRC_FMT_W { w: self }
+        RGB_SRC_FMT_W::new(self)
     }
     #[doc = "Bit 3 - Dummy Cycle Value"]
     #[inline(always)]
     pub fn dum_val(&mut self) -> DUM_VAL_W {
-        DUM_VAL_W { w: self }
+        DUM_VAL_W::new(self)
     }
     #[doc = "Bit 2 - RGB Bit Order"]
     #[inline(always)]
     pub fn rgb_bo(&mut self) -> RGB_BO_W {
-        RGB_BO_W { w: self }
+        RGB_BO_W::new(self)
     }
     #[doc = "Bit 1 - Element A Position"]
     #[inline(always)]
     pub fn element_a_pos(&mut self) -> ELEMENT_A_POS_W {
-        ELEMENT_A_POS_W { w: self }
+        ELEMENT_A_POS_W::new(self)
     }
     #[doc = "Bit 0 - Video Source Type"]
     #[inline(always)]
     pub fn vi_src_type(&mut self) -> VI_SRC_TYPE_W {
-        VI_SRC_TYPE_W { w: self }
+        VI_SRC_TYPE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

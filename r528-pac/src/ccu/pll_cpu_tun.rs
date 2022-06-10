@@ -35,215 +35,44 @@ impl From<crate::W<PLL_CPU_TUN_SPEC>> for W {
     }
 }
 #[doc = "Field `PLL_VCO` reader - VCO range control"]
-pub struct PLL_VCO_R(crate::FieldReader<u8, u8>);
-impl PLL_VCO_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLL_VCO_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_VCO_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_VCO_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_VCO` writer - VCO range control"]
-pub struct PLL_VCO_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_VCO_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 28)) | ((value as u32 & 0x07) << 28);
-        self.w
-    }
-}
+pub type PLL_VCO_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_TUN_SPEC, u8, u8, 3, 28>;
 #[doc = "Field `PLL_VCO_GAIN` reader - KVCO gain control"]
-pub struct PLL_VCO_GAIN_R(crate::FieldReader<u8, u8>);
-impl PLL_VCO_GAIN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLL_VCO_GAIN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_VCO_GAIN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_VCO_GAIN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_VCO_GAIN` writer - KVCO gain control"]
-pub struct PLL_VCO_GAIN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_VCO_GAIN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 24)) | ((value as u32 & 0x07) << 24);
-        self.w
-    }
-}
+pub type PLL_VCO_GAIN_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_TUN_SPEC, u8, u8, 3, 24>;
 #[doc = "Field `PLL_CNT_INT` reader - Counter initial control"]
-pub struct PLL_CNT_INT_R(crate::FieldReader<u8, u8>);
-impl PLL_CNT_INT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLL_CNT_INT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_CNT_INT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_CNT_INT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_CNT_INT` writer - Counter initial control"]
-pub struct PLL_CNT_INT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_CNT_INT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 16)) | ((value as u32 & 0x7f) << 16);
-        self.w
-    }
-}
+pub type PLL_CNT_INT_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_TUN_SPEC, u8, u8, 7, 16>;
 #[doc = "Field `PLL_REG_OD` reader - PLL-REG-OD0 for verify"]
-pub struct PLL_REG_OD_R(crate::FieldReader<bool, bool>);
-impl PLL_REG_OD_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PLL_REG_OD_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_REG_OD_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_REG_OD_R = crate::BitReader<bool>;
 #[doc = "Field `PLL_REG_OD` writer - PLL-REG-OD0 for verify"]
-pub struct PLL_REG_OD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_REG_OD_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 15)) | ((value as u32 & 0x01) << 15);
-        self.w
-    }
-}
+pub type PLL_REG_OD_W<'a> = crate::BitWriter<'a, u32, PLL_CPU_TUN_SPEC, bool, 15>;
 #[doc = "Field `PLL_B_IN` reader - PLL-B-IN \\[6:0\\]
 for verify"]
-pub struct PLL_B_IN_R(crate::FieldReader<u8, u8>);
-impl PLL_B_IN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLL_B_IN_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_B_IN_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_B_IN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_B_IN` writer - PLL-B-IN \\[6:0\\]
 for verify"]
-pub struct PLL_B_IN_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_B_IN_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x7f << 8)) | ((value as u32 & 0x7f) << 8);
-        self.w
-    }
-}
+pub type PLL_B_IN_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_TUN_SPEC, u8, u8, 7, 8>;
 #[doc = "Field `PLL_REG_OD1` reader - PLL-REG-OD1 for verify"]
-pub struct PLL_REG_OD1_R(crate::FieldReader<bool, bool>);
-impl PLL_REG_OD1_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PLL_REG_OD1_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_REG_OD1_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_REG_OD1_R = crate::BitReader<bool>;
 #[doc = "Field `PLL_REG_OD1` writer - PLL-REG-OD1 for verify"]
-pub struct PLL_REG_OD1_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PLL_REG_OD1_W<'a> {
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 7)) | ((value as u32 & 0x01) << 7);
-        self.w
-    }
-}
+pub type PLL_REG_OD1_W<'a> = crate::BitWriter<'a, u32, PLL_CPU_TUN_SPEC, bool, 7>;
 #[doc = "Field `PLL_B_OUT` reader - PLL-B-OUT \\[6:0\\]
 for verify"]
-pub struct PLL_B_OUT_R(crate::FieldReader<u8, u8>);
-impl PLL_B_OUT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PLL_B_OUT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PLL_B_OUT_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PLL_B_OUT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 28:30 - VCO range control"]
     #[inline(always)]
     pub fn pll_vco(&self) -> PLL_VCO_R {
-        PLL_VCO_R::new(((self.bits >> 28) & 0x07) as u8)
+        PLL_VCO_R::new(((self.bits >> 28) & 7) as u8)
     }
     #[doc = "Bits 24:26 - KVCO gain control"]
     #[inline(always)]
     pub fn pll_vco_gain(&self) -> PLL_VCO_GAIN_R {
-        PLL_VCO_GAIN_R::new(((self.bits >> 24) & 0x07) as u8)
+        PLL_VCO_GAIN_R::new(((self.bits >> 24) & 7) as u8)
     }
     #[doc = "Bits 16:22 - Counter initial control"]
     #[inline(always)]
@@ -253,7 +82,7 @@ impl R {
     #[doc = "Bit 15 - PLL-REG-OD0 for verify"]
     #[inline(always)]
     pub fn pll_reg_od(&self) -> PLL_REG_OD_R {
-        PLL_REG_OD_R::new(((self.bits >> 15) & 0x01) != 0)
+        PLL_REG_OD_R::new(((self.bits >> 15) & 1) != 0)
     }
     #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\]
 for verify"]
@@ -264,7 +93,7 @@ for verify"]
     #[doc = "Bit 7 - PLL-REG-OD1 for verify"]
     #[inline(always)]
     pub fn pll_reg_od1(&self) -> PLL_REG_OD1_R {
-        PLL_REG_OD1_R::new(((self.bits >> 7) & 0x01) != 0)
+        PLL_REG_OD1_R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bits 0:6 - PLL-B-OUT \\[6:0\\]
 for verify"]
@@ -277,33 +106,33 @@ impl W {
     #[doc = "Bits 28:30 - VCO range control"]
     #[inline(always)]
     pub fn pll_vco(&mut self) -> PLL_VCO_W {
-        PLL_VCO_W { w: self }
+        PLL_VCO_W::new(self)
     }
     #[doc = "Bits 24:26 - KVCO gain control"]
     #[inline(always)]
     pub fn pll_vco_gain(&mut self) -> PLL_VCO_GAIN_W {
-        PLL_VCO_GAIN_W { w: self }
+        PLL_VCO_GAIN_W::new(self)
     }
     #[doc = "Bits 16:22 - Counter initial control"]
     #[inline(always)]
     pub fn pll_cnt_int(&mut self) -> PLL_CNT_INT_W {
-        PLL_CNT_INT_W { w: self }
+        PLL_CNT_INT_W::new(self)
     }
     #[doc = "Bit 15 - PLL-REG-OD0 for verify"]
     #[inline(always)]
     pub fn pll_reg_od(&mut self) -> PLL_REG_OD_W {
-        PLL_REG_OD_W { w: self }
+        PLL_REG_OD_W::new(self)
     }
     #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\]
 for verify"]
     #[inline(always)]
     pub fn pll_b_in(&mut self) -> PLL_B_IN_W {
-        PLL_B_IN_W { w: self }
+        PLL_B_IN_W::new(self)
     }
     #[doc = "Bit 7 - PLL-REG-OD1 for verify"]
     #[inline(always)]
     pub fn pll_reg_od1(&mut self) -> PLL_REG_OD1_W {
-        PLL_REG_OD1_W { w: self }
+        PLL_REG_OD1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

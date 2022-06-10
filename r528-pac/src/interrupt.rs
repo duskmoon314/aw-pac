@@ -54,6 +54,12 @@ pub enum Interrupt {
     USB1_EHCI = 49,
     #[doc = "50 - USB1_OHCI"]
     USB1_OHCI = 50,
+    #[doc = "56 - SMHC0"]
+    SMHC0 = 56,
+    #[doc = "57 - SMHC1"]
+    SMHC1 = 57,
+    #[doc = "58 - SMHC2"]
+    SMHC2 = 58,
     #[doc = "62 - EMAC"]
     EMAC = 62,
     #[doc = "66 - DMAC_NS"]
@@ -100,6 +106,12 @@ pub enum Interrupt {
     CSI_TOP_PKT = 122,
     #[doc = "123 - TVD"]
     TVD = 123,
+    #[doc = "140 - DSP_MBOX_RV_W"]
+    DSP_MBOX_RV_W = 140,
+    #[doc = "144 - RV_MBOX_RV"]
+    RV_MBOX_RV = 144,
+    #[doc = "145 - RV_MBOX_DSP"]
+    RV_MBOX_DSP = 145,
     #[doc = "167 - IR_RX"]
     IR_RX = 167,
 }
@@ -137,6 +149,9 @@ impl Interrupt {
             47 => Ok(Interrupt::USB0_OHCI),
             49 => Ok(Interrupt::USB1_EHCI),
             50 => Ok(Interrupt::USB1_OHCI),
+            56 => Ok(Interrupt::SMHC0),
+            57 => Ok(Interrupt::SMHC1),
+            58 => Ok(Interrupt::SMHC2),
             62 => Ok(Interrupt::EMAC),
             66 => Ok(Interrupt::DMAC_NS),
             68 => Ok(Interrupt::CE_NS),
@@ -160,6 +175,9 @@ impl Interrupt {
             112 => Ok(Interrupt::CSI_DMA1),
             122 => Ok(Interrupt::CSI_TOP_PKT),
             123 => Ok(Interrupt::TVD),
+            140 => Ok(Interrupt::DSP_MBOX_RV_W),
+            144 => Ok(Interrupt::RV_MBOX_RV),
+            145 => Ok(Interrupt::RV_MBOX_DSP),
             167 => Ok(Interrupt::IR_RX),
             _ => Err(TryFromInterruptError(())),
         }

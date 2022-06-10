@@ -49,13 +49,9 @@ impl From<HS_TMR_INT_EN_A> for bool {
     }
 }
 #[doc = "Fields `HS_TMR(0-1)_INT_EN` reader - HSTimer Interrupt Enable"]
-pub struct HS_TMR_INT_EN_R(crate::FieldReader<bool, HS_TMR_INT_EN_A>);
+pub type HS_TMR_INT_EN_R = crate::BitReader<HS_TMR_INT_EN_A>;
 impl HS_TMR_INT_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        HS_TMR_INT_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> HS_TMR_INT_EN_A {
         match self.bits {
@@ -66,32 +62,18 @@ impl HS_TMR_INT_EN_R {
     #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        **self == HS_TMR_INT_EN_A::DISABLED
+        *self == HS_TMR_INT_EN_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        **self == HS_TMR_INT_EN_A::ENABLED
-    }
-}
-impl core::ops::Deref for HS_TMR_INT_EN_R {
-    type Target = crate::FieldReader<bool, HS_TMR_INT_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == HS_TMR_INT_EN_A::ENABLED
     }
 }
 #[doc = "Fields `HS_TMR(0-1)_INT_EN` writer - HSTimer Interrupt Enable"]
-pub struct HS_TMR_INT_EN_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> HS_TMR_INT_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HS_TMR_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type HS_TMR_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HS_TMR_IRQ_EN_SPEC, HS_TMR_INT_EN_A, O>;
+impl<'a, const O: u8> HS_TMR_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -101,94 +83,40 @@ impl<'a> HS_TMR_INT_EN_W<'a> {
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
         self.variant(HS_TMR_INT_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `HS_TMR(0-1)_INT_EN` const generic writer - HSTimer Interrupt Enable"]
-pub struct HS_TMR_INT_EN_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> HS_TMR_INT_EN_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: HS_TMR_INT_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(HS_TMR_INT_EN_A::DISABLED)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(HS_TMR_INT_EN_A::ENABLED)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 impl R {
     #[doc = "HSTimer Interrupt Enable"]
     #[inline(always)]
-    pub unsafe fn hs_tmr_int_en(&self, n: usize) -> HS_TMR_INT_EN_R {
-        HS_TMR_INT_EN_R::new(((self.bits >> n) & 0x01) != 0)
+    pub unsafe fn hs_tmr_int_en(&self, n: u8) -> HS_TMR_INT_EN_R {
+        HS_TMR_INT_EN_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - HSTimer Interrupt Enable"]
     #[inline(always)]
     pub fn hs_tmr0_int_en(&self) -> HS_TMR_INT_EN_R {
-        HS_TMR_INT_EN_R::new((self.bits & 0x01) != 0)
+        HS_TMR_INT_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - HSTimer Interrupt Enable"]
     #[inline(always)]
     pub fn hs_tmr1_int_en(&self) -> HS_TMR_INT_EN_R {
-        HS_TMR_INT_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        HS_TMR_INT_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "HSTimer Interrupt Enable"]
     #[inline(always)]
-    pub unsafe fn hs_tmr_int_en(&mut self, n: usize) -> HS_TMR_INT_EN_W {
-        HS_TMR_INT_EN_W { w: self, offset: n }
+    pub unsafe fn hs_tmr_int_en<const O: u8>(&mut self) -> HS_TMR_INT_EN_W<O> {
+        HS_TMR_INT_EN_W::new(self)
     }
     #[doc = "Bit 0 - HSTimer Interrupt Enable"]
     #[inline(always)]
-    pub fn hs_tmr0_int_en(&mut self) -> HS_TMR_INT_EN_CGW<0> {
-        HS_TMR_INT_EN_CGW { w: self }
+    pub fn hs_tmr0_int_en(&mut self) -> HS_TMR_INT_EN_W<0> {
+        HS_TMR_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - HSTimer Interrupt Enable"]
     #[inline(always)]
-    pub fn hs_tmr1_int_en(&mut self) -> HS_TMR_INT_EN_CGW<1> {
-        HS_TMR_INT_EN_CGW { w: self }
+    pub fn hs_tmr1_int_en(&mut self) -> HS_TMR_INT_EN_W<1> {
+        HS_TMR_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

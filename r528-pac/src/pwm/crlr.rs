@@ -1,4 +1,4 @@
-#[doc = "Register `crlr%s` reader"]
+#[doc = "Register `CRLR%s` reader"]
 pub struct R(crate::R<CRLR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CRLR_SPEC>;
@@ -13,36 +13,16 @@ impl From<crate::R<CRLR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `crlr%s` writer"]
-pub struct W(crate::W<CRLR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CRLR_SPEC>;
+#[doc = "Field `CRLR` reader - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to the register."]
+pub type CRLR_R = crate::FieldReader<u16, u16>;
+impl R {
+    #[doc = "Bits 0:15 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to the register."]
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    pub fn crlr(&self) -> CRLR_R {
+        CRLR_R::new((self.bits & 0xffff) as u16)
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CRLR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CRLR_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Capture Rise Lock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crlr](index.html) module"]
+#[doc = "Capture Rise Lock Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [crlr](index.html) module"]
 pub struct CRLR_SPEC;
 impl crate::RegisterSpec for CRLR_SPEC {
     type Ux = u32;
@@ -51,11 +31,7 @@ impl crate::RegisterSpec for CRLR_SPEC {
 impl crate::Readable for CRLR_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [crlr::W](W) writer structure"]
-impl crate::Writable for CRLR_SPEC {
-    type Writer = W;
-}
-#[doc = "`reset()` method sets crlr%s to value 0"]
+#[doc = "`reset()` method sets CRLR%s to value 0"]
 impl crate::Resettable for CRLR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

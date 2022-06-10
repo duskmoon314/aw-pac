@@ -34,7 +34,472 @@ impl From<crate::W<LRADC_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `FIRST_CONVERT_DLY` reader - ADC First Convert Delay Setting"]
+pub type FIRST_CONVERT_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `FIRST_CONVERT_DLY` writer - ADC First Convert Delay Setting"]
+pub type FIRST_CONVERT_DLY_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 8, 24>;
+#[doc = "Field `CONTINUE_TIME_SELECT` reader - Continuous Mode Time Select"]
+pub type CONTINUE_TIME_SELECT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `CONTINUE_TIME_SELECT` writer - Continuous Mode Time Select"]
+pub type CONTINUE_TIME_SELECT_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, 16>;
+#[doc = "Key Mode Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum KEY_MODE_SELECT_A {
+    #[doc = "0: `0`"]
+    NORMAL = 0,
+    #[doc = "1: `1`"]
+    SINGLE = 1,
+    #[doc = "2: `10`"]
+    CONTINUOUS = 2,
+}
+impl From<KEY_MODE_SELECT_A> for u8 {
+    #[inline(always)]
+    fn from(variant: KEY_MODE_SELECT_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `KEY_MODE_SELECT` reader - Key Mode Select"]
+pub type KEY_MODE_SELECT_R = crate::FieldReader<u8, KEY_MODE_SELECT_A>;
+impl KEY_MODE_SELECT_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<KEY_MODE_SELECT_A> {
+        match self.bits {
+            0 => Some(KEY_MODE_SELECT_A::NORMAL),
+            1 => Some(KEY_MODE_SELECT_A::SINGLE),
+            2 => Some(KEY_MODE_SELECT_A::CONTINUOUS),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[inline(always)]
+    pub fn is_normal(&self) -> bool {
+        *self == KEY_MODE_SELECT_A::NORMAL
+    }
+    #[doc = "Checks if the value of the field is `SINGLE`"]
+    #[inline(always)]
+    pub fn is_single(&self) -> bool {
+        *self == KEY_MODE_SELECT_A::SINGLE
+    }
+    #[doc = "Checks if the value of the field is `CONTINUOUS`"]
+    #[inline(always)]
+    pub fn is_continuous(&self) -> bool {
+        *self == KEY_MODE_SELECT_A::CONTINUOUS
+    }
+}
+#[doc = "Field `KEY_MODE_SELECT` writer - Key Mode Select"]
+pub type KEY_MODE_SELECT_W<'a> =
+    crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, KEY_MODE_SELECT_A, 2, 12>;
+impl<'a> KEY_MODE_SELECT_W<'a> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut W {
+        self.variant(KEY_MODE_SELECT_A::NORMAL)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn single(self) -> &'a mut W {
+        self.variant(KEY_MODE_SELECT_A::SINGLE)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn continuous(self) -> &'a mut W {
+        self.variant(KEY_MODE_SELECT_A::CONTINUOUS)
+    }
+}
+#[doc = "Field `LEVELA_B_CNT` reader - Level A to B time threshold select"]
+pub type LEVELA_B_CNT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `LEVELA_B_CNT` writer - Level A to B time threshold select"]
+pub type LEVELA_B_CNT_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, 8>;
+#[doc = "LRADC Hold Key Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LRADC_HOLD_KEY_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<LRADC_HOLD_KEY_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: LRADC_HOLD_KEY_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `LRADC_HOLD_KEY_EN` reader - LRADC Hold Key Enable"]
+pub type LRADC_HOLD_KEY_EN_R = crate::BitReader<LRADC_HOLD_KEY_EN_A>;
+impl LRADC_HOLD_KEY_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LRADC_HOLD_KEY_EN_A {
+        match self.bits {
+            false => LRADC_HOLD_KEY_EN_A::DISABLE,
+            true => LRADC_HOLD_KEY_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == LRADC_HOLD_KEY_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == LRADC_HOLD_KEY_EN_A::ENABLE
+    }
+}
+#[doc = "Field `LRADC_HOLD_KEY_EN` writer - LRADC Hold Key Enable"]
+pub type LRADC_HOLD_KEY_EN_W<'a> =
+    crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_HOLD_KEY_EN_A, 7>;
+impl<'a> LRADC_HOLD_KEY_EN_W<'a> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LRADC_HOLD_KEY_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LRADC_HOLD_KEY_EN_A::ENABLE)
+    }
+}
+#[doc = "LRADC Channel Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LRADC_CHANNEL_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<LRADC_CHANNEL_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: LRADC_CHANNEL_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `LRADC_CHANNEL_EN` reader - LRADC Channel Enable"]
+pub type LRADC_CHANNEL_EN_R = crate::BitReader<LRADC_CHANNEL_EN_A>;
+impl LRADC_CHANNEL_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LRADC_CHANNEL_EN_A {
+        match self.bits {
+            false => LRADC_CHANNEL_EN_A::DISABLE,
+            true => LRADC_CHANNEL_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == LRADC_CHANNEL_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == LRADC_CHANNEL_EN_A::ENABLE
+    }
+}
+#[doc = "Field `LRADC_CHANNEL_EN` writer - LRADC Channel Enable"]
+pub type LRADC_CHANNEL_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_CHANNEL_EN_A, 6>;
+impl<'a> LRADC_CHANNEL_EN_W<'a> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LRADC_CHANNEL_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LRADC_CHANNEL_EN_A::ENABLE)
+    }
+}
+#[doc = "Level B Corresponding Data Value Setting (the real voltage value)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum LEVELB_VOL_A {
+    #[doc = "1: 1.221 V"]
+    V39 = 1,
+    #[doc = "2: 1.157 V"]
+    V36 = 2,
+    #[doc = "3: 1.093 V"]
+    V33 = 3,
+}
+impl From<LEVELB_VOL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LEVELB_VOL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `LEVELB_VOL` reader - Level B Corresponding Data Value Setting (the real voltage value)"]
+pub type LEVELB_VOL_R = crate::FieldReader<u8, LEVELB_VOL_A>;
+impl LEVELB_VOL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<LEVELB_VOL_A> {
+        match self.bits {
+            1 => Some(LEVELB_VOL_A::V39),
+            2 => Some(LEVELB_VOL_A::V36),
+            3 => Some(LEVELB_VOL_A::V33),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `V39`"]
+    #[inline(always)]
+    pub fn is_v39(&self) -> bool {
+        *self == LEVELB_VOL_A::V39
+    }
+    #[doc = "Checks if the value of the field is `V36`"]
+    #[inline(always)]
+    pub fn is_v36(&self) -> bool {
+        *self == LEVELB_VOL_A::V36
+    }
+    #[doc = "Checks if the value of the field is `V33`"]
+    #[inline(always)]
+    pub fn is_v33(&self) -> bool {
+        *self == LEVELB_VOL_A::V33
+    }
+}
+#[doc = "Field `LEVELB_VOL` writer - Level B Corresponding Data Value Setting (the real voltage value)"]
+pub type LEVELB_VOL_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, LEVELB_VOL_A, 2, 4>;
+impl<'a> LEVELB_VOL_W<'a> {
+    #[doc = "1.221 V"]
+    #[inline(always)]
+    pub fn v39(self) -> &'a mut W {
+        self.variant(LEVELB_VOL_A::V39)
+    }
+    #[doc = "1.157 V"]
+    #[inline(always)]
+    pub fn v36(self) -> &'a mut W {
+        self.variant(LEVELB_VOL_A::V36)
+    }
+    #[doc = "1.093 V"]
+    #[inline(always)]
+    pub fn v33(self) -> &'a mut W {
+        self.variant(LEVELB_VOL_A::V33)
+    }
+}
+#[doc = "LRADC Sample Rate\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum LRADC_SAMPLE_RATE_A {
+    #[doc = "0: 2kHz"]
+    R2K = 0,
+    #[doc = "1: 1kHz"]
+    R1K = 1,
+    #[doc = "2: 500Hz"]
+    R500 = 2,
+    #[doc = "3: 250Hz"]
+    R250 = 3,
+}
+impl From<LRADC_SAMPLE_RATE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: LRADC_SAMPLE_RATE_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `LRADC_SAMPLE_RATE` reader - LRADC Sample Rate"]
+pub type LRADC_SAMPLE_RATE_R = crate::FieldReader<u8, LRADC_SAMPLE_RATE_A>;
+impl LRADC_SAMPLE_RATE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LRADC_SAMPLE_RATE_A {
+        match self.bits {
+            0 => LRADC_SAMPLE_RATE_A::R2K,
+            1 => LRADC_SAMPLE_RATE_A::R1K,
+            2 => LRADC_SAMPLE_RATE_A::R500,
+            3 => LRADC_SAMPLE_RATE_A::R250,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `R2K`"]
+    #[inline(always)]
+    pub fn is_r2k(&self) -> bool {
+        *self == LRADC_SAMPLE_RATE_A::R2K
+    }
+    #[doc = "Checks if the value of the field is `R1K`"]
+    #[inline(always)]
+    pub fn is_r1k(&self) -> bool {
+        *self == LRADC_SAMPLE_RATE_A::R1K
+    }
+    #[doc = "Checks if the value of the field is `R500`"]
+    #[inline(always)]
+    pub fn is_r500(&self) -> bool {
+        *self == LRADC_SAMPLE_RATE_A::R500
+    }
+    #[doc = "Checks if the value of the field is `R250`"]
+    #[inline(always)]
+    pub fn is_r250(&self) -> bool {
+        *self == LRADC_SAMPLE_RATE_A::R250
+    }
+}
+#[doc = "Field `LRADC_SAMPLE_RATE` writer - LRADC Sample Rate"]
+pub type LRADC_SAMPLE_RATE_W<'a> =
+    crate::FieldWriterSafe<'a, u32, LRADC_CTRL_SPEC, u8, LRADC_SAMPLE_RATE_A, 2, 2>;
+impl<'a> LRADC_SAMPLE_RATE_W<'a> {
+    #[doc = "2kHz"]
+    #[inline(always)]
+    pub fn r2k(self) -> &'a mut W {
+        self.variant(LRADC_SAMPLE_RATE_A::R2K)
+    }
+    #[doc = "1kHz"]
+    #[inline(always)]
+    pub fn r1k(self) -> &'a mut W {
+        self.variant(LRADC_SAMPLE_RATE_A::R1K)
+    }
+    #[doc = "500Hz"]
+    #[inline(always)]
+    pub fn r500(self) -> &'a mut W {
+        self.variant(LRADC_SAMPLE_RATE_A::R500)
+    }
+    #[doc = "250Hz"]
+    #[inline(always)]
+    pub fn r250(self) -> &'a mut W {
+        self.variant(LRADC_SAMPLE_RATE_A::R250)
+    }
+}
+#[doc = "LRADC Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LRADC_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<LRADC_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: LRADC_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `LRADC_EN` reader - LRADC Enable"]
+pub type LRADC_EN_R = crate::BitReader<LRADC_EN_A>;
+impl LRADC_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LRADC_EN_A {
+        match self.bits {
+            false => LRADC_EN_A::DISABLE,
+            true => LRADC_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == LRADC_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == LRADC_EN_A::ENABLE
+    }
+}
+#[doc = "Field `LRADC_EN` writer - LRADC Enable"]
+pub type LRADC_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_EN_A, 0>;
+impl<'a> LRADC_EN_W<'a> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LRADC_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LRADC_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bits 24:31 - ADC First Convert Delay Setting"]
+    #[inline(always)]
+    pub fn first_convert_dly(&self) -> FIRST_CONVERT_DLY_R {
+        FIRST_CONVERT_DLY_R::new(((self.bits >> 24) & 0xff) as u8)
+    }
+    #[doc = "Bits 16:19 - Continuous Mode Time Select"]
+    #[inline(always)]
+    pub fn continue_time_select(&self) -> CONTINUE_TIME_SELECT_R {
+        CONTINUE_TIME_SELECT_R::new(((self.bits >> 16) & 0x0f) as u8)
+    }
+    #[doc = "Bits 12:13 - Key Mode Select"]
+    #[inline(always)]
+    pub fn key_mode_select(&self) -> KEY_MODE_SELECT_R {
+        KEY_MODE_SELECT_R::new(((self.bits >> 12) & 3) as u8)
+    }
+    #[doc = "Bits 8:11 - Level A to B time threshold select"]
+    #[inline(always)]
+    pub fn levela_b_cnt(&self) -> LEVELA_B_CNT_R {
+        LEVELA_B_CNT_R::new(((self.bits >> 8) & 0x0f) as u8)
+    }
+    #[doc = "Bit 7 - LRADC Hold Key Enable"]
+    #[inline(always)]
+    pub fn lradc_hold_key_en(&self) -> LRADC_HOLD_KEY_EN_R {
+        LRADC_HOLD_KEY_EN_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bit 6 - LRADC Channel Enable"]
+    #[inline(always)]
+    pub fn lradc_channel_en(&self) -> LRADC_CHANNEL_EN_R {
+        LRADC_CHANNEL_EN_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bits 4:5 - Level B Corresponding Data Value Setting (the real voltage value)"]
+    #[inline(always)]
+    pub fn levelb_vol(&self) -> LEVELB_VOL_R {
+        LEVELB_VOL_R::new(((self.bits >> 4) & 3) as u8)
+    }
+    #[doc = "Bits 2:3 - LRADC Sample Rate"]
+    #[inline(always)]
+    pub fn lradc_sample_rate(&self) -> LRADC_SAMPLE_RATE_R {
+        LRADC_SAMPLE_RATE_R::new(((self.bits >> 2) & 3) as u8)
+    }
+    #[doc = "Bit 0 - LRADC Enable"]
+    #[inline(always)]
+    pub fn lradc_en(&self) -> LRADC_EN_R {
+        LRADC_EN_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bits 24:31 - ADC First Convert Delay Setting"]
+    #[inline(always)]
+    pub fn first_convert_dly(&mut self) -> FIRST_CONVERT_DLY_W {
+        FIRST_CONVERT_DLY_W::new(self)
+    }
+    #[doc = "Bits 16:19 - Continuous Mode Time Select"]
+    #[inline(always)]
+    pub fn continue_time_select(&mut self) -> CONTINUE_TIME_SELECT_W {
+        CONTINUE_TIME_SELECT_W::new(self)
+    }
+    #[doc = "Bits 12:13 - Key Mode Select"]
+    #[inline(always)]
+    pub fn key_mode_select(&mut self) -> KEY_MODE_SELECT_W {
+        KEY_MODE_SELECT_W::new(self)
+    }
+    #[doc = "Bits 8:11 - Level A to B time threshold select"]
+    #[inline(always)]
+    pub fn levela_b_cnt(&mut self) -> LEVELA_B_CNT_W {
+        LEVELA_B_CNT_W::new(self)
+    }
+    #[doc = "Bit 7 - LRADC Hold Key Enable"]
+    #[inline(always)]
+    pub fn lradc_hold_key_en(&mut self) -> LRADC_HOLD_KEY_EN_W {
+        LRADC_HOLD_KEY_EN_W::new(self)
+    }
+    #[doc = "Bit 6 - LRADC Channel Enable"]
+    #[inline(always)]
+    pub fn lradc_channel_en(&mut self) -> LRADC_CHANNEL_EN_W {
+        LRADC_CHANNEL_EN_W::new(self)
+    }
+    #[doc = "Bits 4:5 - Level B Corresponding Data Value Setting (the real voltage value)"]
+    #[inline(always)]
+    pub fn levelb_vol(&mut self) -> LEVELB_VOL_W {
+        LEVELB_VOL_W::new(self)
+    }
+    #[doc = "Bits 2:3 - LRADC Sample Rate"]
+    #[inline(always)]
+    pub fn lradc_sample_rate(&mut self) -> LRADC_SAMPLE_RATE_W {
+        LRADC_SAMPLE_RATE_W::new(self)
+    }
+    #[doc = "Bit 0 - LRADC Enable"]
+    #[inline(always)]
+    pub fn lradc_en(&mut self) -> LRADC_EN_W {
+        LRADC_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

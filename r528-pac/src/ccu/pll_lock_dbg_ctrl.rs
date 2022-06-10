@@ -49,13 +49,9 @@ impl From<PLL_LOCK_FLAG_EN_A> for bool {
     }
 }
 #[doc = "Field `PLL_LOCK_FLAG_EN` reader - Debug Enable"]
-pub struct PLL_LOCK_FLAG_EN_R(crate::FieldReader<bool, PLL_LOCK_FLAG_EN_A>);
+pub type PLL_LOCK_FLAG_EN_R = crate::BitReader<PLL_LOCK_FLAG_EN_A>;
 impl PLL_LOCK_FLAG_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        PLL_LOCK_FLAG_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PLL_LOCK_FLAG_EN_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl PLL_LOCK_FLAG_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == PLL_LOCK_FLAG_EN_A::DISABLE
+        *self == PLL_LOCK_FLAG_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == PLL_LOCK_FLAG_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for PLL_LOCK_FLAG_EN_R {
-    type Target = crate::FieldReader<bool, PLL_LOCK_FLAG_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PLL_LOCK_FLAG_EN_A::ENABLE
     }
 }
 #[doc = "Field `PLL_LOCK_FLAG_EN` writer - Debug Enable"]
-pub struct PLL_LOCK_FLAG_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type PLL_LOCK_FLAG_EN_W<'a> =
+    crate::BitWriter<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, PLL_LOCK_FLAG_EN_A, 31>;
 impl<'a> PLL_LOCK_FLAG_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PLL_LOCK_FLAG_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> PLL_LOCK_FLAG_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(PLL_LOCK_FLAG_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 31)) | ((value as u32 & 0x01) << 31);
-        self.w
     }
 }
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
@@ -146,13 +113,9 @@ impl From<CLK_SRC_SEL_A> for u8 {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
-pub struct CLK_SRC_SEL_R(crate::FieldReader<u8, CLK_SRC_SEL_A>);
+pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        CLK_SRC_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CLK_SRC_SEL_A {
         match self.bits {
@@ -170,61 +133,48 @@ impl CLK_SRC_SEL_R {
     #[doc = "Checks if the value of the field is `PLL_CPUX`"]
     #[inline(always)]
     pub fn is_pll_cpux(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_CPUX
+        *self == CLK_SRC_SEL_A::PLL_CPUX
     }
     #[doc = "Checks if the value of the field is `PLL_DDR`"]
     #[inline(always)]
     pub fn is_pll_ddr(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_DDR
+        *self == CLK_SRC_SEL_A::PLL_DDR
     }
     #[doc = "Checks if the value of the field is `PLL_PERI_2X`"]
     #[inline(always)]
     pub fn is_pll_peri_2x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_PERI_2X
+        *self == CLK_SRC_SEL_A::PLL_PERI_2X
     }
     #[doc = "Checks if the value of the field is `PLL_VIDEO0_4X`"]
     #[inline(always)]
     pub fn is_pll_video0_4x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_VIDEO0_4X
+        *self == CLK_SRC_SEL_A::PLL_VIDEO0_4X
     }
     #[doc = "Checks if the value of the field is `PLL_VIDEO1_4X`"]
     #[inline(always)]
     pub fn is_pll_video1_4x(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_VIDEO1_4X
+        *self == CLK_SRC_SEL_A::PLL_VIDEO1_4X
     }
     #[doc = "Checks if the value of the field is `PLL_VE`"]
     #[inline(always)]
     pub fn is_pll_ve(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_VE
+        *self == CLK_SRC_SEL_A::PLL_VE
     }
     #[doc = "Checks if the value of the field is `PLL_AUDIO0`"]
     #[inline(always)]
     pub fn is_pll_audio0(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_AUDIO0
+        *self == CLK_SRC_SEL_A::PLL_AUDIO0
     }
     #[doc = "Checks if the value of the field is `PLL_AUDIO1`"]
     #[inline(always)]
     pub fn is_pll_audio1(&self) -> bool {
-        **self == CLK_SRC_SEL_A::PLL_AUDIO1
-    }
-}
-impl core::ops::Deref for CLK_SRC_SEL_R {
-    type Target = crate::FieldReader<u8, CLK_SRC_SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CLK_SRC_SEL_A::PLL_AUDIO1
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub struct CLK_SRC_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type CLK_SRC_SEL_W<'a> =
+    crate::FieldWriterSafe<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, u8, CLK_SRC_SEL_A, 3, 20>;
 impl<'a> CLK_SRC_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CLK_SRC_SEL_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn pll_cpux(self) -> &'a mut W {
@@ -265,35 +215,29 @@ impl<'a> CLK_SRC_SEL_W<'a> {
     pub fn pll_audio1(self) -> &'a mut W {
         self.variant(CLK_SRC_SEL_A::PLL_AUDIO1)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x07 << 20)) | ((value as u32 & 0x07) << 20);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 31 - Debug Enable"]
     #[inline(always)]
     pub fn pll_lock_flag_en(&self) -> PLL_LOCK_FLAG_EN_R {
-        PLL_LOCK_FLAG_EN_R::new(((self.bits >> 31) & 0x01) != 0)
+        PLL_LOCK_FLAG_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
     #[doc = "Bits 20:22 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 20) & 0x07) as u8)
+        CLK_SRC_SEL_R::new(((self.bits >> 20) & 7) as u8)
     }
 }
 impl W {
     #[doc = "Bit 31 - Debug Enable"]
     #[inline(always)]
     pub fn pll_lock_flag_en(&mut self) -> PLL_LOCK_FLAG_EN_W {
-        PLL_LOCK_FLAG_EN_W { w: self }
+        PLL_LOCK_FLAG_EN_W::new(self)
     }
     #[doc = "Bits 20:22 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
-        CLK_SRC_SEL_W { w: self }
+        CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

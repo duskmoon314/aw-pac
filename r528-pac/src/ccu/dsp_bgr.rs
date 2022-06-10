@@ -49,13 +49,9 @@ impl From<DBG_RST_A> for bool {
     }
 }
 #[doc = "Field `DBG_RST` reader - Reset"]
-pub struct DBG_RST_R(crate::FieldReader<bool, DBG_RST_A>);
+pub type DBG_RST_R = crate::BitReader<DBG_RST_A>;
 impl DBG_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DBG_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DBG_RST_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl DBG_RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == DBG_RST_A::ASSERT
+        *self == DBG_RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == DBG_RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for DBG_RST_R {
-    type Target = crate::FieldReader<bool, DBG_RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DBG_RST_A::DEASSERT
     }
 }
 #[doc = "Field `DBG_RST` writer - Reset"]
-pub struct DBG_RST_W<'a> {
-    w: &'a mut W,
-}
+pub type DBG_RST_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, DBG_RST_A, 18>;
 impl<'a> DBG_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DBG_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> DBG_RST_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(DBG_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 18)) | ((value as u32 & 0x01) << 18);
-        self.w
     }
 }
 #[doc = "Reset\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<CFG_RST_A> for bool {
     }
 }
 #[doc = "Field `CFG_RST` reader - Reset"]
-pub struct CFG_RST_R(crate::FieldReader<bool, CFG_RST_A>);
+pub type CFG_RST_R = crate::BitReader<CFG_RST_A>;
 impl CFG_RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CFG_RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFG_RST_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl CFG_RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == CFG_RST_A::ASSERT
+        *self == CFG_RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == CFG_RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for CFG_RST_R {
-    type Target = crate::FieldReader<bool, CFG_RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CFG_RST_A::DEASSERT
     }
 }
 #[doc = "Field `CFG_RST` writer - Reset"]
-pub struct CFG_RST_W<'a> {
-    w: &'a mut W,
-}
+pub type CFG_RST_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_RST_A, 17>;
 impl<'a> CFG_RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CFG_RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -184,22 +132,6 @@ impl<'a> CFG_RST_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(CFG_RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 17)) | ((value as u32 & 0x01) << 17);
-        self.w
     }
 }
 #[doc = "Reset\n\nValue on reset: 0"]
@@ -217,13 +149,9 @@ impl From<RST_A> for bool {
     }
 }
 #[doc = "Field `RST` reader - Reset"]
-pub struct RST_R(crate::FieldReader<bool, RST_A>);
+pub type RST_R = crate::BitReader<RST_A>;
 impl RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RST_A {
         match self.bits {
@@ -234,31 +162,17 @@ impl RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == RST_A::ASSERT
+        *self == RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for RST_R {
-    type Target = crate::FieldReader<bool, RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RST_A::DEASSERT
     }
 }
 #[doc = "Field `RST` writer - Reset"]
-pub struct RST_W<'a> {
-    w: &'a mut W,
-}
+pub type RST_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, RST_A, 16>;
 impl<'a> RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -268,22 +182,6 @@ impl<'a> RST_W<'a> {
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
         self.variant(RST_A::DEASSERT)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
     }
 }
 #[doc = "Gating Clock\n\nValue on reset: 0"]
@@ -301,13 +199,9 @@ impl From<CFG_GATING_A> for bool {
     }
 }
 #[doc = "Field `CFG_GATING` reader - Gating Clock"]
-pub struct CFG_GATING_R(crate::FieldReader<bool, CFG_GATING_A>);
+pub type CFG_GATING_R = crate::BitReader<CFG_GATING_A>;
 impl CFG_GATING_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CFG_GATING_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CFG_GATING_A {
         match self.bits {
@@ -318,31 +212,17 @@ impl CFG_GATING_R {
     #[doc = "Checks if the value of the field is `MASK`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
-        **self == CFG_GATING_A::MASK
+        *self == CFG_GATING_A::MASK
     }
     #[doc = "Checks if the value of the field is `PASS`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
-        **self == CFG_GATING_A::PASS
-    }
-}
-impl core::ops::Deref for CFG_GATING_R {
-    type Target = crate::FieldReader<bool, CFG_GATING_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CFG_GATING_A::PASS
     }
 }
 #[doc = "Field `CFG_GATING` writer - Gating Clock"]
-pub struct CFG_GATING_W<'a> {
-    w: &'a mut W,
-}
+pub type CFG_GATING_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_GATING_A, 1>;
 impl<'a> CFG_GATING_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CFG_GATING_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -353,65 +233,49 @@ impl<'a> CFG_GATING_W<'a> {
     pub fn pass(self) -> &'a mut W {
         self.variant(CFG_GATING_A::PASS)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
     pub fn dbg_rst(&self) -> DBG_RST_R {
-        DBG_RST_R::new(((self.bits >> 18) & 0x01) != 0)
+        DBG_RST_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
     pub fn cfg_rst(&self) -> CFG_RST_R {
-        CFG_RST_R::new(((self.bits >> 17) & 0x01) != 0)
+        CFG_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn rst(&self) -> RST_R {
-        RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
     pub fn cfg_gating(&self) -> CFG_GATING_R {
-        CFG_GATING_R::new(((self.bits >> 1) & 0x01) != 0)
+        CFG_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
     pub fn dbg_rst(&mut self) -> DBG_RST_W {
-        DBG_RST_W { w: self }
+        DBG_RST_W::new(self)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
     pub fn cfg_rst(&mut self) -> CFG_RST_W {
-        CFG_RST_W { w: self }
+        CFG_RST_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn rst(&mut self) -> RST_W {
-        RST_W { w: self }
+        RST_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
     pub fn cfg_gating(&mut self) -> CFG_GATING_W {
-        CFG_GATING_W { w: self }
+        CFG_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

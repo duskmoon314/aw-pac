@@ -34,7 +34,23 @@ impl From<crate::W<CE_TDA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TASK` reader - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
+pub type TASK_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `TASK` writer - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
+pub type TASK_W<'a> = crate::FieldWriter<'a, u32, CE_TDA_SPEC, u32, u32, 32, 0>;
+impl R {
+    #[doc = "Bits 0:31 - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
+    #[inline(always)]
+    pub fn task(&self) -> TASK_R {
+        TASK_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
+    #[inline(always)]
+    pub fn task(&mut self) -> TASK_W {
+        TASK_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -49,13 +49,9 @@ impl From<DDR_RES240_TRIMMING_SEL_A> for bool {
     }
 }
 #[doc = "Field `DDR_RES240_Trimming_SEL` reader - 240ohms Resistor Trimming Source Select"]
-pub struct DDR_RES240_TRIMMING_SEL_R(crate::FieldReader<bool, DDR_RES240_TRIMMING_SEL_A>);
+pub type DDR_RES240_TRIMMING_SEL_R = crate::BitReader<DDR_RES240_TRIMMING_SEL_A>;
 impl DDR_RES240_TRIMMING_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DDR_RES240_TRIMMING_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DDR_RES240_TRIMMING_SEL_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl DDR_RES240_TRIMMING_SEL_R {
     #[doc = "Checks if the value of the field is `RESCAL`"]
     #[inline(always)]
     pub fn is_rescal(&self) -> bool {
-        **self == DDR_RES240_TRIMMING_SEL_A::RESCAL
+        *self == DDR_RES240_TRIMMING_SEL_A::RESCAL
     }
     #[doc = "Checks if the value of the field is `RES240_TRIM`"]
     #[inline(always)]
     pub fn is_res240_trim(&self) -> bool {
-        **self == DDR_RES240_TRIMMING_SEL_A::RES240_TRIM
-    }
-}
-impl core::ops::Deref for DDR_RES240_TRIMMING_SEL_R {
-    type Target = crate::FieldReader<bool, DDR_RES240_TRIMMING_SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DDR_RES240_TRIMMING_SEL_A::RES240_TRIM
     }
 }
 #[doc = "Field `DDR_RES240_Trimming_SEL` writer - 240ohms Resistor Trimming Source Select"]
-pub struct DDR_RES240_TRIMMING_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type DDR_RES240_TRIMMING_SEL_W<'a> =
+    crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, DDR_RES240_TRIMMING_SEL_A, 8>;
 impl<'a> DDR_RES240_TRIMMING_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DDR_RES240_TRIMMING_SEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn rescal(self) -> &'a mut W {
@@ -100,22 +83,6 @@ impl<'a> DDR_RES240_TRIMMING_SEL_W<'a> {
     #[inline(always)]
     pub fn res240_trim(self) -> &'a mut W {
         self.variant(DDR_RES240_TRIMMING_SEL_A::RES240_TRIM)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 8)) | ((value as u32 & 0x01) << 8);
-        self.w
     }
 }
 #[doc = "RESCAL Calibration Mode Select\n\nValue on reset: 0"]
@@ -131,13 +98,9 @@ impl From<RESCAL_MODE_A> for bool {
     }
 }
 #[doc = "Field `RESCAL_MODE` reader - RESCAL Calibration Mode Select"]
-pub struct RESCAL_MODE_R(crate::FieldReader<bool, RESCAL_MODE_A>);
+pub type RESCAL_MODE_R = crate::BitReader<RESCAL_MODE_A>;
 impl RESCAL_MODE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RESCAL_MODE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<RESCAL_MODE_A> {
         match self.bits {
@@ -148,46 +111,16 @@ impl RESCAL_MODE_R {
     #[doc = "Checks if the value of the field is `AUTO_CALIBRATION`"]
     #[inline(always)]
     pub fn is_auto_calibration(&self) -> bool {
-        **self == RESCAL_MODE_A::AUTO_CALIBRATION
-    }
-}
-impl core::ops::Deref for RESCAL_MODE_R {
-    type Target = crate::FieldReader<bool, RESCAL_MODE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RESCAL_MODE_A::AUTO_CALIBRATION
     }
 }
 #[doc = "Field `RESCAL_MODE` writer - RESCAL Calibration Mode Select"]
-pub struct RESCAL_MODE_W<'a> {
-    w: &'a mut W,
-}
+pub type RESCAL_MODE_W<'a> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, RESCAL_MODE_A, 2>;
 impl<'a> RESCAL_MODE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RESCAL_MODE_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn auto_calibration(self) -> &'a mut W {
         self.variant(RESCAL_MODE_A::AUTO_CALIBRATION)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 2)) | ((value as u32 & 0x01) << 2);
-        self.w
     }
 }
 #[doc = "Calibration Circuits Analog Enable\n\nValue on reset: 0"]
@@ -205,13 +138,9 @@ impl From<CAL_ANA_EN_A> for bool {
     }
 }
 #[doc = "Field `CAL_ANA_EN` reader - Calibration Circuits Analog Enable"]
-pub struct CAL_ANA_EN_R(crate::FieldReader<bool, CAL_ANA_EN_A>);
+pub type CAL_ANA_EN_R = crate::BitReader<CAL_ANA_EN_A>;
 impl CAL_ANA_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAL_ANA_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAL_ANA_EN_A {
         match self.bits {
@@ -222,31 +151,17 @@ impl CAL_ANA_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == CAL_ANA_EN_A::DISABLE
+        *self == CAL_ANA_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == CAL_ANA_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for CAL_ANA_EN_R {
-    type Target = crate::FieldReader<bool, CAL_ANA_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAL_ANA_EN_A::ENABLE
     }
 }
 #[doc = "Field `CAL_ANA_EN` writer - Calibration Circuits Analog Enable"]
-pub struct CAL_ANA_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CAL_ANA_EN_W<'a> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_ANA_EN_A, 1>;
 impl<'a> CAL_ANA_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAL_ANA_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -256,22 +171,6 @@ impl<'a> CAL_ANA_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(CAL_ANA_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 1)) | ((value as u32 & 0x01) << 1);
-        self.w
     }
 }
 #[doc = "Auto Calibration Enable\n\nValue on reset: 0"]
@@ -289,13 +188,9 @@ impl From<CAL_EN_A> for bool {
     }
 }
 #[doc = "Field `CAL_EN` reader - Auto Calibration Enable"]
-pub struct CAL_EN_R(crate::FieldReader<bool, CAL_EN_A>);
+pub type CAL_EN_R = crate::BitReader<CAL_EN_A>;
 impl CAL_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        CAL_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> CAL_EN_A {
         match self.bits {
@@ -306,31 +201,17 @@ impl CAL_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == CAL_EN_A::DISABLE
+        *self == CAL_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == CAL_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for CAL_EN_R {
-    type Target = crate::FieldReader<bool, CAL_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == CAL_EN_A::ENABLE
     }
 }
 #[doc = "Field `CAL_EN` writer - Auto Calibration Enable"]
-pub struct CAL_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type CAL_EN_W<'a> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_EN_A, 0>;
 impl<'a> CAL_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: CAL_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -341,65 +222,49 @@ impl<'a> CAL_EN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(CAL_EN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 8 - 240ohms Resistor Trimming Source Select"]
     #[inline(always)]
     pub fn ddr_res240_trimming_sel(&self) -> DDR_RES240_TRIMMING_SEL_R {
-        DDR_RES240_TRIMMING_SEL_R::new(((self.bits >> 8) & 0x01) != 0)
+        DDR_RES240_TRIMMING_SEL_R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 2 - RESCAL Calibration Mode Select"]
     #[inline(always)]
     pub fn rescal_mode(&self) -> RESCAL_MODE_R {
-        RESCAL_MODE_R::new(((self.bits >> 2) & 0x01) != 0)
+        RESCAL_MODE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 1 - Calibration Circuits Analog Enable"]
     #[inline(always)]
     pub fn cal_ana_en(&self) -> CAL_ANA_EN_R {
-        CAL_ANA_EN_R::new(((self.bits >> 1) & 0x01) != 0)
+        CAL_ANA_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 0 - Auto Calibration Enable"]
     #[inline(always)]
     pub fn cal_en(&self) -> CAL_EN_R {
-        CAL_EN_R::new((self.bits & 0x01) != 0)
+        CAL_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 8 - 240ohms Resistor Trimming Source Select"]
     #[inline(always)]
     pub fn ddr_res240_trimming_sel(&mut self) -> DDR_RES240_TRIMMING_SEL_W {
-        DDR_RES240_TRIMMING_SEL_W { w: self }
+        DDR_RES240_TRIMMING_SEL_W::new(self)
     }
     #[doc = "Bit 2 - RESCAL Calibration Mode Select"]
     #[inline(always)]
     pub fn rescal_mode(&mut self) -> RESCAL_MODE_W {
-        RESCAL_MODE_W { w: self }
+        RESCAL_MODE_W::new(self)
     }
     #[doc = "Bit 1 - Calibration Circuits Analog Enable"]
     #[inline(always)]
     pub fn cal_ana_en(&mut self) -> CAL_ANA_EN_W {
-        CAL_ANA_EN_W { w: self }
+        CAL_ANA_EN_W::new(self)
     }
     #[doc = "Bit 0 - Auto Calibration Enable"]
     #[inline(always)]
     pub fn cal_en(&mut self) -> CAL_EN_W {
-        CAL_EN_W { w: self }
+        CAL_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

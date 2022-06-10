@@ -35,32 +35,9 @@ impl From<crate::W<PB_DAT_SPEC>> for W {
     }
 }
 #[doc = "Field `pb_dat` reader - "]
-pub struct PB_DAT_R(crate::FieldReader<u16, u16>);
-impl PB_DAT_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u16) -> Self {
-        PB_DAT_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for PB_DAT_R {
-    type Target = crate::FieldReader<u16, u16>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type PB_DAT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `pb_dat` writer - "]
-pub struct PB_DAT_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> PB_DAT_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1fff) | (value as u32 & 0x1fff);
-        self.w
-    }
-}
+pub type PB_DAT_W<'a> = crate::FieldWriter<'a, u32, PB_DAT_SPEC, u16, u16, 13, 0>;
 impl R {
     #[doc = "Bits 0:12"]
     #[inline(always)]
@@ -72,7 +49,7 @@ impl W {
     #[doc = "Bits 0:12"]
     #[inline(always)]
     pub fn pb_dat(&mut self) -> PB_DAT_W {
-        PB_DAT_W { w: self }
+        PB_DAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,15 @@ impl From<crate::W<CIR_RXFIFO_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RBF` reader - Receiver Byte FIFO"]
+pub type RBF_R = crate::FieldReader<u8, u8>;
+impl R {
+    #[doc = "Bits 0:7 - Receiver Byte FIFO"]
+    #[inline(always)]
+    pub fn rbf(&self) -> RBF_R {
+        RBF_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

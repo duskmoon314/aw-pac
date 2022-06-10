@@ -34,7 +34,90 @@ impl From<crate::W<GP_DATA_INTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Channel Data Available Interrupt Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH_DATA_PENGDING_A {
+    #[doc = "0: No Pending IRQ"]
+    NO_PENDING = 0,
+    #[doc = "1: Channel Data Available Pending IRQ"]
+    CHANNEL = 1,
+}
+impl From<CH_DATA_PENGDING_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH_DATA_PENGDING_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `CH(0-1)_DATA_PENGDING` reader - Channel Data Available Interrupt Status"]
+pub type CH_DATA_PENGDING_R = crate::BitReader<CH_DATA_PENGDING_A>;
+impl CH_DATA_PENGDING_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH_DATA_PENGDING_A {
+        match self.bits {
+            false => CH_DATA_PENGDING_A::NO_PENDING,
+            true => CH_DATA_PENGDING_A::CHANNEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
+    #[inline(always)]
+    pub fn is_no_pending(&self) -> bool {
+        *self == CH_DATA_PENGDING_A::NO_PENDING
+    }
+    #[doc = "Checks if the value of the field is `CHANNEL`"]
+    #[inline(always)]
+    pub fn is_channel(&self) -> bool {
+        *self == CH_DATA_PENGDING_A::CHANNEL
+    }
+}
+#[doc = "Fields `CH(0-1)_DATA_PENGDING` writer - Channel Data Available Interrupt Status"]
+pub type CH_DATA_PENGDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, GP_DATA_INTS_SPEC, CH_DATA_PENGDING_A, O>;
+impl<'a, const O: u8> CH_DATA_PENGDING_W<'a, O> {
+    #[doc = "No Pending IRQ"]
+    #[inline(always)]
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(CH_DATA_PENGDING_A::NO_PENDING)
+    }
+    #[doc = "Channel Data Available Pending IRQ"]
+    #[inline(always)]
+    pub fn channel(self) -> &'a mut W {
+        self.variant(CH_DATA_PENGDING_A::CHANNEL)
+    }
+}
+impl R {
+    #[doc = "Channel Data Available Interrupt Status"]
+    #[inline(always)]
+    pub unsafe fn ch_data_pengding(&self, n: u8) -> CH_DATA_PENGDING_R {
+        CH_DATA_PENGDING_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Channel Data Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch0_data_pengding(&self) -> CH_DATA_PENGDING_R {
+        CH_DATA_PENGDING_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - Channel Data Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch1_data_pengding(&self) -> CH_DATA_PENGDING_R {
+        CH_DATA_PENGDING_R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Channel Data Available Interrupt Status"]
+    #[inline(always)]
+    pub unsafe fn ch_data_pengding<const O: u8>(&mut self) -> CH_DATA_PENGDING_W<O> {
+        CH_DATA_PENGDING_W::new(self)
+    }
+    #[doc = "Bit 0 - Channel Data Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch0_data_pengding(&mut self) -> CH_DATA_PENGDING_W<0> {
+        CH_DATA_PENGDING_W::new(self)
+    }
+    #[doc = "Bit 1 - Channel Data Available Interrupt Status"]
+    #[inline(always)]
+    pub fn ch1_data_pengding(&mut self) -> CH_DATA_PENGDING_W<1> {
+        CH_DATA_PENGDING_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

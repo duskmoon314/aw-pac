@@ -34,7 +34,23 @@ impl From<crate::W<CIR_IDC_H_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `IDC_H` reader - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+pub type IDC_H_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `IDC_H` writer - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+pub type IDC_H_W<'a> = crate::FieldWriter<'a, u32, CIR_IDC_H_SPEC, u8, u8, 4, 0>;
+impl R {
+    #[doc = "Bits 0:3 - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+    #[inline(always)]
+    pub fn idc_h(&self) -> IDC_H_R {
+        IDC_H_R::new((self.bits & 0x0f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:3 - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+    #[inline(always)]
+    pub fn idc_h(&mut self) -> IDC_H_W {
+        IDC_H_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

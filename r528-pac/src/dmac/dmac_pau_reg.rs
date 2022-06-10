@@ -34,7 +34,69 @@ impl From<crate::W<DMAC_PAU_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Pause the DMA Channel Transfer Data\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_PAUSE_A {
+    #[doc = "0: `0`"]
+    RESUME = 0,
+    #[doc = "1: `1`"]
+    PAUSE = 1,
+}
+impl From<DMA_PAUSE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_PAUSE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `DMA_PAUSE` reader - Pause the DMA Channel Transfer Data"]
+pub type DMA_PAUSE_R = crate::BitReader<DMA_PAUSE_A>;
+impl DMA_PAUSE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_PAUSE_A {
+        match self.bits {
+            false => DMA_PAUSE_A::RESUME,
+            true => DMA_PAUSE_A::PAUSE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `RESUME`"]
+    #[inline(always)]
+    pub fn is_resume(&self) -> bool {
+        *self == DMA_PAUSE_A::RESUME
+    }
+    #[doc = "Checks if the value of the field is `PAUSE`"]
+    #[inline(always)]
+    pub fn is_pause(&self) -> bool {
+        *self == DMA_PAUSE_A::PAUSE
+    }
+}
+#[doc = "Field `DMA_PAUSE` writer - Pause the DMA Channel Transfer Data"]
+pub type DMA_PAUSE_W<'a> = crate::BitWriter<'a, u32, DMAC_PAU_REG_SPEC, DMA_PAUSE_A, 0>;
+impl<'a> DMA_PAUSE_W<'a> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn resume(self) -> &'a mut W {
+        self.variant(DMA_PAUSE_A::RESUME)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pause(self) -> &'a mut W {
+        self.variant(DMA_PAUSE_A::PAUSE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Pause the DMA Channel Transfer Data"]
+    #[inline(always)]
+    pub fn dma_pause(&self) -> DMA_PAUSE_R {
+        DMA_PAUSE_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Pause the DMA Channel Transfer Data"]
+    #[inline(always)]
+    pub fn dma_pause(&mut self) -> DMA_PAUSE_W {
+        DMA_PAUSE_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -49,13 +49,9 @@ impl From<QUAD_EN_A> for bool {
     }
 }
 #[doc = "Field `quad_en` reader - Quad Mode Enable"]
-pub struct QUAD_EN_R(crate::FieldReader<bool, QUAD_EN_A>);
+pub type QUAD_EN_R = crate::BitReader<QUAD_EN_A>;
 impl QUAD_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        QUAD_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> QUAD_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl QUAD_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == QUAD_EN_A::DISABLE
+        *self == QUAD_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == QUAD_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for QUAD_EN_R {
-    type Target = crate::FieldReader<bool, QUAD_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == QUAD_EN_A::ENABLE
     }
 }
 #[doc = "Field `quad_en` writer - Quad Mode Enable"]
-pub struct QUAD_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type QUAD_EN_W<'a> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, QUAD_EN_A, 29>;
 impl<'a> QUAD_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: QUAD_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -100,22 +82,6 @@ impl<'a> QUAD_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(QUAD_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 29)) | ((value as u32 & 0x01) << 29);
-        self.w
     }
 }
 #[doc = "Master Dual Mode RX Enable\n\nValue on reset: 0"]
@@ -133,13 +99,9 @@ impl From<DRM_A> for bool {
     }
 }
 #[doc = "Field `drm` reader - Master Dual Mode RX Enable"]
-pub struct DRM_R(crate::FieldReader<bool, DRM_A>);
+pub type DRM_R = crate::BitReader<DRM_A>;
 impl DRM_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        DRM_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> DRM_A {
         match self.bits {
@@ -150,31 +112,17 @@ impl DRM_R {
     #[doc = "Checks if the value of the field is `SINGLE`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
-        **self == DRM_A::SINGLE
+        *self == DRM_A::SINGLE
     }
     #[doc = "Checks if the value of the field is `DUAL`"]
     #[inline(always)]
     pub fn is_dual(&self) -> bool {
-        **self == DRM_A::DUAL
-    }
-}
-impl core::ops::Deref for DRM_R {
-    type Target = crate::FieldReader<bool, DRM_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == DRM_A::DUAL
     }
 }
 #[doc = "Field `drm` writer - Master Dual Mode RX Enable"]
-pub struct DRM_W<'a> {
-    w: &'a mut W,
-}
+pub type DRM_W<'a> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, DRM_A, 28>;
 impl<'a> DRM_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: DRM_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
@@ -185,87 +133,25 @@ impl<'a> DRM_W<'a> {
     pub fn dual(self) -> &'a mut W {
         self.variant(DRM_A::DUAL)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 28)) | ((value as u32 & 0x01) << 28);
-        self.w
-    }
 }
 #[doc = "Field `dbc` reader - Master Dummy Burst Counter"]
-pub struct DBC_R(crate::FieldReader<u8, u8>);
-impl DBC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBC_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dbc` writer - Master Dummy Burst Counter"]
-pub struct DBC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> DBC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 24)) | ((value as u32 & 0x0f) << 24);
-        self.w
-    }
-}
+pub type DBC_W<'a> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u8, u8, 4, 24>;
 #[doc = "Field `stc` reader - Master Single Mode Transmit Counter"]
-pub struct STC_R(crate::FieldReader<u32, u32>);
-impl STC_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u32) -> Self {
-        STC_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for STC_R {
-    type Target = crate::FieldReader<u32, u32>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type STC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `stc` writer - Master Single Mode Transmit Counter"]
-pub struct STC_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> STC_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u32) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x00ff_ffff) | (value as u32 & 0x00ff_ffff);
-        self.w
-    }
-}
+pub type STC_W<'a> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u32, u32, 24, 0>;
 impl R {
     #[doc = "Bit 29 - Quad Mode Enable"]
     #[inline(always)]
     pub fn quad_en(&self) -> QUAD_EN_R {
-        QUAD_EN_R::new(((self.bits >> 29) & 0x01) != 0)
+        QUAD_EN_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 28 - Master Dual Mode RX Enable"]
     #[inline(always)]
     pub fn drm(&self) -> DRM_R {
-        DRM_R::new(((self.bits >> 28) & 0x01) != 0)
+        DRM_R::new(((self.bits >> 28) & 1) != 0)
     }
     #[doc = "Bits 24:27 - Master Dummy Burst Counter"]
     #[inline(always)]
@@ -282,22 +168,22 @@ impl W {
     #[doc = "Bit 29 - Quad Mode Enable"]
     #[inline(always)]
     pub fn quad_en(&mut self) -> QUAD_EN_W {
-        QUAD_EN_W { w: self }
+        QUAD_EN_W::new(self)
     }
     #[doc = "Bit 28 - Master Dual Mode RX Enable"]
     #[inline(always)]
     pub fn drm(&mut self) -> DRM_W {
-        DRM_W { w: self }
+        DRM_W::new(self)
     }
     #[doc = "Bits 24:27 - Master Dummy Burst Counter"]
     #[inline(always)]
     pub fn dbc(&mut self) -> DBC_W {
-        DBC_W { w: self }
+        DBC_W::new(self)
     }
     #[doc = "Bits 0:23 - Master Single Mode Transmit Counter"]
     #[inline(always)]
     pub fn stc(&mut self) -> STC_W {
-        STC_W { w: self }
+        STC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,15 @@ impl From<crate::W<GP_CH0_DATA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `GP_CH0_DATA` reader - Channel 0 Data"]
+pub type GP_CH0_DATA_R = crate::FieldReader<u16, u16>;
+impl R {
+    #[doc = "Bits 0:11 - Channel 0 Data"]
+    #[inline(always)]
+    pub fn gp_ch0_data(&self) -> GP_CH0_DATA_R {
+        GP_CH0_DATA_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

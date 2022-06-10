@@ -34,7 +34,69 @@ impl From<crate::W<DMAC_EN_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "DMA Channel Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_EN_A {
+    #[doc = "0: `0`"]
+    DISABLED = 0,
+    #[doc = "1: `1`"]
+    ENABLED = 1,
+}
+impl From<DMA_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `DMA_EN` reader - DMA Channel Enable"]
+pub type DMA_EN_R = crate::BitReader<DMA_EN_A>;
+impl DMA_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_EN_A {
+        match self.bits {
+            false => DMA_EN_A::DISABLED,
+            true => DMA_EN_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == DMA_EN_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == DMA_EN_A::ENABLED
+    }
+}
+#[doc = "Field `DMA_EN` writer - DMA Channel Enable"]
+pub type DMA_EN_W<'a> = crate::BitWriter<'a, u32, DMAC_EN_REG_SPEC, DMA_EN_A, 0>;
+impl<'a> DMA_EN_W<'a> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(DMA_EN_A::DISABLED)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DMA_EN_A::ENABLED)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - DMA Channel Enable"]
+    #[inline(always)]
+    pub fn dma_en(&self) -> DMA_EN_R {
+        DMA_EN_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - DMA Channel Enable"]
+    #[inline(always)]
+    pub fn dma_en(&mut self) -> DMA_EN_W {
+        DMA_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

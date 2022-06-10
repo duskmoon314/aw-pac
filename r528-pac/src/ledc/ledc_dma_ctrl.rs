@@ -49,13 +49,9 @@ impl From<LEDC_DMA_EN_A> for bool {
     }
 }
 #[doc = "Field `LEDC_DMA_EN` reader - "]
-pub struct LEDC_DMA_EN_R(crate::FieldReader<bool, LEDC_DMA_EN_A>);
+pub type LEDC_DMA_EN_R = crate::BitReader<LEDC_DMA_EN_A>;
 impl LEDC_DMA_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        LEDC_DMA_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> LEDC_DMA_EN_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl LEDC_DMA_EN_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == LEDC_DMA_EN_A::DISABLE
+        *self == LEDC_DMA_EN_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == LEDC_DMA_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for LEDC_DMA_EN_R {
-    type Target = crate::FieldReader<bool, LEDC_DMA_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == LEDC_DMA_EN_A::ENABLE
     }
 }
 #[doc = "Field `LEDC_DMA_EN` writer - "]
-pub struct LEDC_DMA_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type LEDC_DMA_EN_W<'a> = crate::BitWriter<'a, u32, LEDC_DMA_CTRL_SPEC, LEDC_DMA_EN_A, 5>;
 impl<'a> LEDC_DMA_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: LEDC_DMA_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -101,55 +83,16 @@ impl<'a> LEDC_DMA_EN_W<'a> {
     pub fn enable(self) -> &'a mut W {
         self.variant(LEDC_DMA_EN_A::ENABLE)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 5)) | ((value as u32 & 0x01) << 5);
-        self.w
-    }
 }
 #[doc = "Field `LEDC_FIFO_TRIG_LEVEL` reader - "]
-pub struct LEDC_FIFO_TRIG_LEVEL_R(crate::FieldReader<u8, u8>);
-impl LEDC_FIFO_TRIG_LEVEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        LEDC_FIFO_TRIG_LEVEL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for LEDC_FIFO_TRIG_LEVEL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type LEDC_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LEDC_FIFO_TRIG_LEVEL` writer - "]
-pub struct LEDC_FIFO_TRIG_LEVEL_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> LEDC_FIFO_TRIG_LEVEL_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
-}
+pub type LEDC_FIFO_TRIG_LEVEL_W<'a> = crate::FieldWriter<'a, u32, LEDC_DMA_CTRL_SPEC, u8, u8, 5, 0>;
 impl R {
     #[doc = "Bit 5"]
     #[inline(always)]
     pub fn ledc_dma_en(&self) -> LEDC_DMA_EN_R {
-        LEDC_DMA_EN_R::new(((self.bits >> 5) & 0x01) != 0)
+        LEDC_DMA_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bits 0:4"]
     #[inline(always)]
@@ -161,12 +104,12 @@ impl W {
     #[doc = "Bit 5"]
     #[inline(always)]
     pub fn ledc_dma_en(&mut self) -> LEDC_DMA_EN_W {
-        LEDC_DMA_EN_W { w: self }
+        LEDC_DMA_EN_W::new(self)
     }
     #[doc = "Bits 0:4"]
     #[inline(always)]
     pub fn ledc_fifo_trig_level(&mut self) -> LEDC_FIFO_TRIG_LEVEL_W {
-        LEDC_FIFO_TRIG_LEVEL_W { w: self }
+        LEDC_FIFO_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

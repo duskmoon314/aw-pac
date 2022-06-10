@@ -49,13 +49,9 @@ impl From<VCC_PF_PWR_VOL_SEL_A> for bool {
     }
 }
 #[doc = "Field `VCC_PF_PWR_VOL_SEL` reader - VCC_PF Power Voltage Select Control"]
-pub struct VCC_PF_PWR_VOL_SEL_R(crate::FieldReader<bool, VCC_PF_PWR_VOL_SEL_A>);
+pub type VCC_PF_PWR_VOL_SEL_R = crate::BitReader<VCC_PF_PWR_VOL_SEL_A>;
 impl VCC_PF_PWR_VOL_SEL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        VCC_PF_PWR_VOL_SEL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> VCC_PF_PWR_VOL_SEL_A {
         match self.bits {
@@ -66,31 +62,18 @@ impl VCC_PF_PWR_VOL_SEL_R {
     #[doc = "Checks if the value of the field is `V18`"]
     #[inline(always)]
     pub fn is_v18(&self) -> bool {
-        **self == VCC_PF_PWR_VOL_SEL_A::V18
+        *self == VCC_PF_PWR_VOL_SEL_A::V18
     }
     #[doc = "Checks if the value of the field is `V33`"]
     #[inline(always)]
     pub fn is_v33(&self) -> bool {
-        **self == VCC_PF_PWR_VOL_SEL_A::V33
-    }
-}
-impl core::ops::Deref for VCC_PF_PWR_VOL_SEL_R {
-    type Target = crate::FieldReader<bool, VCC_PF_PWR_VOL_SEL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == VCC_PF_PWR_VOL_SEL_A::V33
     }
 }
 #[doc = "Field `VCC_PF_PWR_VOL_SEL` writer - VCC_PF Power Voltage Select Control"]
-pub struct VCC_PF_PWR_VOL_SEL_W<'a> {
-    w: &'a mut W,
-}
+pub type VCC_PF_PWR_VOL_SEL_W<'a> =
+    crate::BitWriter<'a, u32, PIO_POW_VOL_SEL_CTL_SPEC, VCC_PF_PWR_VOL_SEL_A, 0>;
 impl<'a> VCC_PF_PWR_VOL_SEL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: VCC_PF_PWR_VOL_SEL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "1.8V"]
     #[inline(always)]
     pub fn v18(self) -> &'a mut W {
@@ -101,35 +84,19 @@ impl<'a> VCC_PF_PWR_VOL_SEL_W<'a> {
     pub fn v33(self) -> &'a mut W {
         self.variant(VCC_PF_PWR_VOL_SEL_A::V33)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 0 - VCC_PF Power Voltage Select Control"]
     #[inline(always)]
     pub fn vcc_pf_pwr_vol_sel(&self) -> VCC_PF_PWR_VOL_SEL_R {
-        VCC_PF_PWR_VOL_SEL_R::new((self.bits & 0x01) != 0)
+        VCC_PF_PWR_VOL_SEL_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - VCC_PF Power Voltage Select Control"]
     #[inline(always)]
     pub fn vcc_pf_pwr_vol_sel(&mut self) -> VCC_PF_PWR_VOL_SEL_W {
-        VCC_PF_PWR_VOL_SEL_W { w: self }
+        VCC_PF_PWR_VOL_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

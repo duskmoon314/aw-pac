@@ -14,95 +14,17 @@ impl From<crate::R<DBI_DEBUG_0_SPEC>> for R {
     }
 }
 #[doc = "Field `dbi_fifo_avail` reader - "]
-pub struct DBI_FIFO_AVAIL_R(crate::FieldReader<u8, u8>);
-impl DBI_FIFO_AVAIL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBI_FIFO_AVAIL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_FIFO_AVAIL_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_FIFO_AVAIL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `te_val` reader - "]
-pub struct TE_VAL_R(crate::FieldReader<bool, bool>);
-impl TE_VAL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        TE_VAL_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for TE_VAL_R {
-    type Target = crate::FieldReader<bool, bool>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type TE_VAL_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_rxcs` reader - "]
-pub struct DBI_RXCS_R(crate::FieldReader<u8, u8>);
-impl DBI_RXCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBI_RXCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_RXCS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_RXCS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `sh_cs` reader - "]
-pub struct SH_CS_R(crate::FieldReader<u8, u8>);
-impl SH_CS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        SH_CS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for SH_CS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type SH_CS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dbi_txcs` reader - "]
-pub struct DBI_TXCS_R(crate::FieldReader<u8, u8>);
-impl DBI_TXCS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        DBI_TXCS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for DBI_TXCS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type DBI_TXCS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `mem_cs` reader - "]
-pub struct MEM_CS_R(crate::FieldReader<u8, u8>);
-impl MEM_CS_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        MEM_CS_R(crate::FieldReader::new(bits))
-    }
-}
-impl core::ops::Deref for MEM_CS_R {
-    type Target = crate::FieldReader<u8, u8>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
+pub type MEM_CS_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 16:22"]
     #[inline(always)]
@@ -112,7 +34,7 @@ impl R {
     #[doc = "Bit 12"]
     #[inline(always)]
     pub fn te_val(&self) -> TE_VAL_R {
-        TE_VAL_R::new(((self.bits >> 12) & 0x01) != 0)
+        TE_VAL_R::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
@@ -127,12 +49,12 @@ impl R {
     #[doc = "Bits 2:3"]
     #[inline(always)]
     pub fn dbi_txcs(&self) -> DBI_TXCS_R {
-        DBI_TXCS_R::new(((self.bits >> 2) & 0x03) as u8)
+        DBI_TXCS_R::new(((self.bits >> 2) & 3) as u8)
     }
     #[doc = "Bits 0:1"]
     #[inline(always)]
     pub fn mem_cs(&self) -> MEM_CS_R {
-        MEM_CS_R::new((self.bits & 0x03) as u8)
+        MEM_CS_R::new((self.bits & 3) as u8)
     }
 }
 #[doc = "DBI BEBUG 0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dbi_debug_0](index.html) module"]

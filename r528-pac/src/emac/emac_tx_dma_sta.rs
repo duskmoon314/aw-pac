@@ -37,13 +37,9 @@ impl From<TX_DMA_STA_A> for u8 {
     }
 }
 #[doc = "Field `TX_DMA_STA` reader - The State of Transmit DMA FSM"]
-pub struct TX_DMA_STA_R(crate::FieldReader<u8, TX_DMA_STA_A>);
+pub type TX_DMA_STA_R = crate::FieldReader<u8, TX_DMA_STA_A>;
 impl TX_DMA_STA_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        TX_DMA_STA_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<TX_DMA_STA_A> {
         match self.bits {
@@ -59,46 +55,39 @@ impl TX_DMA_STA_R {
     #[doc = "Checks if the value of the field is `STOP`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
-        **self == TX_DMA_STA_A::STOP
+        *self == TX_DMA_STA_A::STOP
     }
     #[doc = "Checks if the value of the field is `RUN_FETCH_DESC`"]
     #[inline(always)]
     pub fn is_run_fetch_desc(&self) -> bool {
-        **self == TX_DMA_STA_A::RUN_FETCH_DESC
+        *self == TX_DMA_STA_A::RUN_FETCH_DESC
     }
     #[doc = "Checks if the value of the field is `RUN_WAIT_STA`"]
     #[inline(always)]
     pub fn is_run_wait_sta(&self) -> bool {
-        **self == TX_DMA_STA_A::RUN_WAIT_STA
+        *self == TX_DMA_STA_A::RUN_WAIT_STA
     }
     #[doc = "Checks if the value of the field is `RUN_TRANS_DATA`"]
     #[inline(always)]
     pub fn is_run_trans_data(&self) -> bool {
-        **self == TX_DMA_STA_A::RUN_TRANS_DATA
+        *self == TX_DMA_STA_A::RUN_TRANS_DATA
     }
     #[doc = "Checks if the value of the field is `SUSPEND`"]
     #[inline(always)]
     pub fn is_suspend(&self) -> bool {
-        **self == TX_DMA_STA_A::SUSPEND
+        *self == TX_DMA_STA_A::SUSPEND
     }
     #[doc = "Checks if the value of the field is `RUN_CLOSE_DESC`"]
     #[inline(always)]
     pub fn is_run_close_desc(&self) -> bool {
-        **self == TX_DMA_STA_A::RUN_CLOSE_DESC
-    }
-}
-impl core::ops::Deref for TX_DMA_STA_R {
-    type Target = crate::FieldReader<u8, TX_DMA_STA_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == TX_DMA_STA_A::RUN_CLOSE_DESC
     }
 }
 impl R {
     #[doc = "Bits 0:2 - The State of Transmit DMA FSM"]
     #[inline(always)]
     pub fn tx_dma_sta(&self) -> TX_DMA_STA_R {
-        TX_DMA_STA_R::new((self.bits & 0x07) as u8)
+        TX_DMA_STA_R::new((self.bits & 7) as u8)
     }
 }
 #[doc = "EMAC Transmit DMA Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emac_tx_dma_sta](index.html) module"]

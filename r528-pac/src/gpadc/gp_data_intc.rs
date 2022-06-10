@@ -34,7 +34,90 @@ impl From<crate::W<GP_DATA_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Channel Data Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CH_DATA_IRQ_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<CH_DATA_IRQ_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CH_DATA_IRQ_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `CH(0-1)_DATA_IRQ_EN` reader - Channel Data Interrupt Enable"]
+pub type CH_DATA_IRQ_EN_R = crate::BitReader<CH_DATA_IRQ_EN_A>;
+impl CH_DATA_IRQ_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CH_DATA_IRQ_EN_A {
+        match self.bits {
+            false => CH_DATA_IRQ_EN_A::DISABLE,
+            true => CH_DATA_IRQ_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == CH_DATA_IRQ_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == CH_DATA_IRQ_EN_A::ENABLE
+    }
+}
+#[doc = "Fields `CH(0-1)_DATA_IRQ_EN` writer - Channel Data Interrupt Enable"]
+pub type CH_DATA_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, GP_DATA_INTC_SPEC, CH_DATA_IRQ_EN_A, O>;
+impl<'a, const O: u8> CH_DATA_IRQ_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CH_DATA_IRQ_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CH_DATA_IRQ_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Channel Data Interrupt Enable"]
+    #[inline(always)]
+    pub unsafe fn ch_data_irq_en(&self, n: u8) -> CH_DATA_IRQ_EN_R {
+        CH_DATA_IRQ_EN_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - Channel Data Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch0_data_irq_en(&self) -> CH_DATA_IRQ_EN_R {
+        CH_DATA_IRQ_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - Channel Data Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch1_data_irq_en(&self) -> CH_DATA_IRQ_EN_R {
+        CH_DATA_IRQ_EN_R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Channel Data Interrupt Enable"]
+    #[inline(always)]
+    pub unsafe fn ch_data_irq_en<const O: u8>(&mut self) -> CH_DATA_IRQ_EN_W<O> {
+        CH_DATA_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bit 0 - Channel Data Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch0_data_irq_en(&mut self) -> CH_DATA_IRQ_EN_W<0> {
+        CH_DATA_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bit 1 - Channel Data Interrupt Enable"]
+    #[inline(always)]
+    pub fn ch1_data_irq_en(&mut self) -> CH_DATA_IRQ_EN_W<1> {
+        CH_DATA_IRQ_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

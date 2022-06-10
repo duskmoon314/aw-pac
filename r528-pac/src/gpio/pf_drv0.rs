@@ -54,13 +54,9 @@ impl From<PF_DRV_A> for u8 {
     }
 }
 #[doc = "Fields `PF(0-6)_DRV` reader - PF Multi_Driving Select"]
-pub struct PF_DRV_R(crate::FieldReader<u8, PF_DRV_A>);
+pub type PF_DRV_R = crate::FieldReader<u8, PF_DRV_A>;
 impl PF_DRV_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PF_DRV_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PF_DRV_A {
         match self.bits {
@@ -74,42 +70,28 @@ impl PF_DRV_R {
     #[doc = "Checks if the value of the field is `L0`"]
     #[inline(always)]
     pub fn is_l0(&self) -> bool {
-        **self == PF_DRV_A::L0
+        *self == PF_DRV_A::L0
     }
     #[doc = "Checks if the value of the field is `L1`"]
     #[inline(always)]
     pub fn is_l1(&self) -> bool {
-        **self == PF_DRV_A::L1
+        *self == PF_DRV_A::L1
     }
     #[doc = "Checks if the value of the field is `L2`"]
     #[inline(always)]
     pub fn is_l2(&self) -> bool {
-        **self == PF_DRV_A::L2
+        *self == PF_DRV_A::L2
     }
     #[doc = "Checks if the value of the field is `L3`"]
     #[inline(always)]
     pub fn is_l3(&self) -> bool {
-        **self == PF_DRV_A::L3
-    }
-}
-impl core::ops::Deref for PF_DRV_R {
-    type Target = crate::FieldReader<u8, PF_DRV_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PF_DRV_A::L3
     }
 }
 #[doc = "Fields `PF(0-6)_DRV` writer - PF Multi_Driving Select"]
-pub struct PF_DRV_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> PF_DRV_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PF_DRV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
+pub type PF_DRV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PF_DRV0_SPEC, u8, PF_DRV_A, 2, O>;
+impl<'a, const O: u8> PF_DRV_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn l0(self) -> &'a mut W {
@@ -129,137 +111,90 @@ impl<'a> PF_DRV_W<'a> {
     #[inline(always)]
     pub fn l3(self) -> &'a mut W {
         self.variant(PF_DRV_A::L3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x03 << self.offset)) | ((value as u32 & 0x03) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `PF(0-6)_DRV` const generic writer - PF Multi_Driving Select"]
-pub struct PF_DRV_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> PF_DRV_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PF_DRV_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn l0(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L0)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn l1(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L1)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn l2(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L2)
-    }
-    #[doc = "`11`"]
-    #[inline(always)]
-    pub fn l3(self) -> &'a mut W {
-        self.variant(PF_DRV_A::L3)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x03 << O)) | ((value as u32 & 0x03) << O);
-        self.w
     }
 }
 impl R {
     #[doc = "PF Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pf_drv(&self, n: usize) -> PF_DRV_R {
-        PF_DRV_R::new(((self.bits >> (n * 4)) & 0x03) as u8)
+    pub unsafe fn pf_drv(&self, n: u8) -> PF_DRV_R {
+        PF_DRV_R::new(((self.bits >> (n * 4)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PF Multi_Driving Select"]
     #[inline(always)]
     pub fn pf0_drv(&self) -> PF_DRV_R {
-        PF_DRV_R::new((self.bits & 0x03) as u8)
+        PF_DRV_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:5 - PF Multi_Driving Select"]
     #[inline(always)]
     pub fn pf1_drv(&self) -> PF_DRV_R {
-        PF_DRV_R::new(((self.bits >> 4) & 0x03) as u8)
+        PF_DRV_R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 8:9 - PF Multi_Driving Select"]
     #[inline(always)]
     pub fn pf2_drv(&self) -> PF_DRV_R {
-        PF_DRV_R::new(((self.bits >> 8) & 0x03) as u8)
+        PF_DRV_R::new(((self.bits >> 8) & 3) as u8)
     }
     #[doc = "Bits 12:13 - PF Multi_Driving Select"]
     #[inline(always)]
     pub fn pf3_drv(&self) -> PF_DRV_R {
-        PF_DRV_R::new(((self.bits >> 12) & 0x03) as u8)
+        PF_DRV_R::new(((self.bits >> 12) & 3) as u8)
     }
     #[doc = "Bits 16:17 - PF Multi_Driving Select"]
     #[inline(always)]
     pub fn pf4_drv(&self) -> PF_DRV_R {
-        PF_DRV_R::new(((self.bits >> 16) & 0x03) as u8)
+        PF_DRV_R::new(((self.bits >> 16) & 3) as u8)
     }
     #[doc = "Bits 20:21 - PF Multi_Driving Select"]
     #[inline(always)]
     pub fn pf5_drv(&self) -> PF_DRV_R {
-        PF_DRV_R::new(((self.bits >> 20) & 0x03) as u8)
+        PF_DRV_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bits 24:25 - PF Multi_Driving Select"]
     #[inline(always)]
     pub fn pf6_drv(&self) -> PF_DRV_R {
-        PF_DRV_R::new(((self.bits >> 24) & 0x03) as u8)
+        PF_DRV_R::new(((self.bits >> 24) & 3) as u8)
     }
 }
 impl W {
     #[doc = "PF Multi_Driving Select"]
     #[inline(always)]
-    pub unsafe fn pf_drv(&mut self, n: usize) -> PF_DRV_W {
-        PF_DRV_W {
-            w: self,
-            offset: n * 4,
-        }
+    pub unsafe fn pf_drv<const O: u8>(&mut self) -> PF_DRV_W<O> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Bits 0:1 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf0_drv(&mut self) -> PF_DRV_CGW<0> {
-        PF_DRV_CGW { w: self }
+    pub fn pf0_drv(&mut self) -> PF_DRV_W<0> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Bits 4:5 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf1_drv(&mut self) -> PF_DRV_CGW<4> {
-        PF_DRV_CGW { w: self }
+    pub fn pf1_drv(&mut self) -> PF_DRV_W<4> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Bits 8:9 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf2_drv(&mut self) -> PF_DRV_CGW<8> {
-        PF_DRV_CGW { w: self }
+    pub fn pf2_drv(&mut self) -> PF_DRV_W<8> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Bits 12:13 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf3_drv(&mut self) -> PF_DRV_CGW<12> {
-        PF_DRV_CGW { w: self }
+    pub fn pf3_drv(&mut self) -> PF_DRV_W<12> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Bits 16:17 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf4_drv(&mut self) -> PF_DRV_CGW<16> {
-        PF_DRV_CGW { w: self }
+    pub fn pf4_drv(&mut self) -> PF_DRV_W<16> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Bits 20:21 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf5_drv(&mut self) -> PF_DRV_CGW<20> {
-        PF_DRV_CGW { w: self }
+    pub fn pf5_drv(&mut self) -> PF_DRV_W<20> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Bits 24:25 - PF Multi_Driving Select"]
     #[inline(always)]
-    pub fn pf6_drv(&mut self) -> PF_DRV_CGW<24> {
-        PF_DRV_CGW { w: self }
+    pub fn pf6_drv(&mut self) -> PF_DRV_W<24> {
+        PF_DRV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

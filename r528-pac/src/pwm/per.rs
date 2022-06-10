@@ -34,7 +34,149 @@ impl From<crate::W<PER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PWM_EN_A {
+    #[doc = "0: PWM disable"]
+    DISABLE = 0,
+    #[doc = "1: PWM enable"]
+    ENABLE = 1,
+}
+impl From<PWM_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: PWM_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `PWM(0-7)_EN` reader - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+pub type PWM_EN_R = crate::BitReader<PWM_EN_A>;
+impl PWM_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PWM_EN_A {
+        match self.bits {
+            false => PWM_EN_A::DISABLE,
+            true => PWM_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == PWM_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == PWM_EN_A::ENABLE
+    }
+}
+#[doc = "Fields `PWM(0-7)_EN` writer - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+pub type PWM_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PER_SPEC, PWM_EN_A, O>;
+impl<'a, const O: u8> PWM_EN_W<'a, O> {
+    #[doc = "PWM disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PWM_EN_A::DISABLE)
+    }
+    #[doc = "PWM enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PWM_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub unsafe fn pwm_en(&self, n: u8) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> n) & 1) != 0)
+    }
+    #[doc = "Bit 0 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm0_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm1_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 2 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm2_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm3_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> 3) & 1) != 0)
+    }
+    #[doc = "Bit 4 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm4_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 5 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm5_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 6 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm6_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm7_en(&self) -> PWM_EN_R {
+        PWM_EN_R::new(((self.bits >> 7) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub unsafe fn pwm_en<const O: u8>(&mut self) -> PWM_EN_W<O> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 0 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm0_en(&mut self) -> PWM_EN_W<0> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 1 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm1_en(&mut self) -> PWM_EN_W<1> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 2 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm2_en(&mut self) -> PWM_EN_W<2> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 3 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm3_en(&mut self) -> PWM_EN_W<3> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 4 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm4_en(&mut self) -> PWM_EN_W<4> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 5 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm5_en(&mut self) -> PWM_EN_W<5> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 6 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm6_en(&mut self) -> PWM_EN_W<6> {
+        PWM_EN_W::new(self)
+    }
+    #[doc = "Bit 7 - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+    #[inline(always)]
+    pub fn pwm7_en(&mut self) -> PWM_EN_W<7> {
+        PWM_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -1,4 +1,4 @@
-#[doc = "Register `pcntr%s` reader"]
+#[doc = "Register `PCNTR%s` reader"]
 pub struct R(crate::R<PCNTR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PCNTR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PCNTR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `pcntr%s` writer"]
+#[doc = "Register `PCNTR%s` writer"]
 pub struct W(crate::W<PCNTR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PCNTR_SPEC>;
@@ -34,7 +34,30 @@ impl From<crate::W<PCNTR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PWM_COUNTER_START` reader - PWM counter value is set for phase control."]
+pub type PWM_COUNTER_START_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `PWM_COUNTER_START` writer - PWM counter value is set for phase control."]
+pub type PWM_COUNTER_START_W<'a> = crate::FieldWriter<'a, u32, PCNTR_SPEC, u16, u16, 16, 16>;
+#[doc = "Field `PWM_COUNTER_STATUS` reader - On PWM output or capture input, reading this register could get the current value of the PWM 16-bit up-counter."]
+pub type PWM_COUNTER_STATUS_R = crate::FieldReader<u16, u16>;
+impl R {
+    #[doc = "Bits 16:31 - PWM counter value is set for phase control."]
+    #[inline(always)]
+    pub fn pwm_counter_start(&self) -> PWM_COUNTER_START_R {
+        PWM_COUNTER_START_R::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+    #[doc = "Bits 0:15 - On PWM output or capture input, reading this register could get the current value of the PWM 16-bit up-counter."]
+    #[inline(always)]
+    pub fn pwm_counter_status(&self) -> PWM_COUNTER_STATUS_R {
+        PWM_COUNTER_STATUS_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:31 - PWM counter value is set for phase control."]
+    #[inline(always)]
+    pub fn pwm_counter_start(&mut self) -> PWM_COUNTER_START_W {
+        PWM_COUNTER_START_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,7 +78,7 @@ impl crate::Readable for PCNTR_SPEC {
 impl crate::Writable for PCNTR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets pcntr%s to value 0"]
+#[doc = "`reset()` method sets PCNTR%s to value 0"]
 impl crate::Resettable for PCNTR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

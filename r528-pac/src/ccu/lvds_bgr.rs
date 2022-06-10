@@ -49,13 +49,9 @@ impl From<RST_A> for bool {
     }
 }
 #[doc = "Field `RST` reader - Reset"]
-pub struct RST_R(crate::FieldReader<bool, RST_A>);
+pub type RST_R = crate::BitReader<RST_A>;
 impl RST_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        RST_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> RST_A {
         match self.bits {
@@ -66,31 +62,17 @@ impl RST_R {
     #[doc = "Checks if the value of the field is `ASSERT`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
-        **self == RST_A::ASSERT
+        *self == RST_A::ASSERT
     }
     #[doc = "Checks if the value of the field is `DEASSERT`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
-        **self == RST_A::DEASSERT
-    }
-}
-impl core::ops::Deref for RST_R {
-    type Target = crate::FieldReader<bool, RST_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == RST_A::DEASSERT
     }
 }
 #[doc = "Field `RST` writer - Reset"]
-pub struct RST_W<'a> {
-    w: &'a mut W,
-}
+pub type RST_W<'a> = crate::BitWriter<'a, u32, LVDS_BGR_SPEC, RST_A, 16>;
 impl<'a> RST_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: RST_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -101,35 +83,19 @@ impl<'a> RST_W<'a> {
     pub fn deassert(self) -> &'a mut W {
         self.variant(RST_A::DEASSERT)
     }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << 16)) | ((value as u32 & 0x01) << 16);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn rst(&self) -> RST_R {
-        RST_R::new(((self.bits >> 16) & 0x01) != 0)
+        RST_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     pub fn rst(&mut self) -> RST_W {
-        RST_W { w: self }
+        RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

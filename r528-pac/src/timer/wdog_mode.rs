@@ -35,17 +35,7 @@ impl From<crate::W<WDOG_MODE_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY_FIELD` writer - Key Field"]
-pub struct KEY_FIELD_W<'a> {
-    w: &'a mut W,
-}
-impl<'a> KEY_FIELD_W<'a> {
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0xffff << 16)) | ((value as u32 & 0xffff) << 16);
-        self.w
-    }
-}
+pub type KEY_FIELD_W<'a> = crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u16, u16, 16, 16>;
 #[doc = "Watchdog Interval Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -82,13 +72,9 @@ impl From<WDOG_INTV_VALUE_A> for u8 {
     }
 }
 #[doc = "Field `WDOG_INTV_VALUE` reader - Watchdog Interval Value"]
-pub struct WDOG_INTV_VALUE_R(crate::FieldReader<u8, WDOG_INTV_VALUE_A>);
+pub type WDOG_INTV_VALUE_R = crate::FieldReader<u8, WDOG_INTV_VALUE_A>;
 impl WDOG_INTV_VALUE_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        WDOG_INTV_VALUE_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> Option<WDOG_INTV_VALUE_A> {
         match self.bits {
@@ -110,81 +96,68 @@ impl WDOG_INTV_VALUE_R {
     #[doc = "Checks if the value of the field is `C16000`"]
     #[inline(always)]
     pub fn is_c16000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C16000
+        *self == WDOG_INTV_VALUE_A::C16000
     }
     #[doc = "Checks if the value of the field is `C32000`"]
     #[inline(always)]
     pub fn is_c32000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C32000
+        *self == WDOG_INTV_VALUE_A::C32000
     }
     #[doc = "Checks if the value of the field is `C64000`"]
     #[inline(always)]
     pub fn is_c64000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C64000
+        *self == WDOG_INTV_VALUE_A::C64000
     }
     #[doc = "Checks if the value of the field is `C96000`"]
     #[inline(always)]
     pub fn is_c96000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C96000
+        *self == WDOG_INTV_VALUE_A::C96000
     }
     #[doc = "Checks if the value of the field is `C128000`"]
     #[inline(always)]
     pub fn is_c128000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C128000
+        *self == WDOG_INTV_VALUE_A::C128000
     }
     #[doc = "Checks if the value of the field is `C160000`"]
     #[inline(always)]
     pub fn is_c160000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C160000
+        *self == WDOG_INTV_VALUE_A::C160000
     }
     #[doc = "Checks if the value of the field is `C192000`"]
     #[inline(always)]
     pub fn is_c192000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C192000
+        *self == WDOG_INTV_VALUE_A::C192000
     }
     #[doc = "Checks if the value of the field is `C256000`"]
     #[inline(always)]
     pub fn is_c256000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C256000
+        *self == WDOG_INTV_VALUE_A::C256000
     }
     #[doc = "Checks if the value of the field is `C320000`"]
     #[inline(always)]
     pub fn is_c320000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C320000
+        *self == WDOG_INTV_VALUE_A::C320000
     }
     #[doc = "Checks if the value of the field is `C384000`"]
     #[inline(always)]
     pub fn is_c384000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C384000
+        *self == WDOG_INTV_VALUE_A::C384000
     }
     #[doc = "Checks if the value of the field is `C448000`"]
     #[inline(always)]
     pub fn is_c448000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C448000
+        *self == WDOG_INTV_VALUE_A::C448000
     }
     #[doc = "Checks if the value of the field is `C512000`"]
     #[inline(always)]
     pub fn is_c512000(&self) -> bool {
-        **self == WDOG_INTV_VALUE_A::C512000
-    }
-}
-impl core::ops::Deref for WDOG_INTV_VALUE_R {
-    type Target = crate::FieldReader<u8, WDOG_INTV_VALUE_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WDOG_INTV_VALUE_A::C512000
     }
 }
 #[doc = "Field `WDOG_INTV_VALUE` writer - Watchdog Interval Value"]
-pub struct WDOG_INTV_VALUE_W<'a> {
-    w: &'a mut W,
-}
+pub type WDOG_INTV_VALUE_W<'a> =
+    crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u8, WDOG_INTV_VALUE_A, 4, 4>;
 impl<'a> WDOG_INTV_VALUE_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDOG_INTV_VALUE_A) -> &'a mut W {
-        unsafe { self.bits(variant.into()) }
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn c16000(self) -> &'a mut W {
@@ -245,12 +218,6 @@ impl<'a> WDOG_INTV_VALUE_W<'a> {
     pub fn c512000(self) -> &'a mut W {
         self.variant(WDOG_INTV_VALUE_A::C512000)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x0f << 4)) | ((value as u32 & 0x0f) << 4);
-        self.w
-    }
 }
 #[doc = "Watchdog Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -267,13 +234,9 @@ impl From<WDOG_EN_A> for bool {
     }
 }
 #[doc = "Field `WDOG_EN` reader - Watchdog Enable"]
-pub struct WDOG_EN_R(crate::FieldReader<bool, WDOG_EN_A>);
+pub type WDOG_EN_R = crate::BitReader<WDOG_EN_A>;
 impl WDOG_EN_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        WDOG_EN_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> WDOG_EN_A {
         match self.bits {
@@ -284,31 +247,17 @@ impl WDOG_EN_R {
     #[doc = "Checks if the value of the field is `NO_EFFECT`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
-        **self == WDOG_EN_A::NO_EFFECT
+        *self == WDOG_EN_A::NO_EFFECT
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == WDOG_EN_A::ENABLE
-    }
-}
-impl core::ops::Deref for WDOG_EN_R {
-    type Target = crate::FieldReader<bool, WDOG_EN_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == WDOG_EN_A::ENABLE
     }
 }
 #[doc = "Field `WDOG_EN` writer - Watchdog Enable"]
-pub struct WDOG_EN_W<'a> {
-    w: &'a mut W,
-}
+pub type WDOG_EN_W<'a> = crate::BitWriter<'a, u32, WDOG_MODE_SPEC, WDOG_EN_A, 0>;
 impl<'a> WDOG_EN_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: WDOG_EN_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -318,22 +267,6 @@ impl<'a> WDOG_EN_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(WDOG_EN_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x01) | (value as u32 & 0x01);
-        self.w
     }
 }
 impl R {
@@ -345,24 +278,24 @@ impl R {
     #[doc = "Bit 0 - Watchdog Enable"]
     #[inline(always)]
     pub fn wdog_en(&self) -> WDOG_EN_R {
-        WDOG_EN_R::new((self.bits & 0x01) != 0)
+        WDOG_EN_R::new((self.bits & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
     pub fn key_field(&mut self) -> KEY_FIELD_W {
-        KEY_FIELD_W { w: self }
+        KEY_FIELD_W::new(self)
     }
     #[doc = "Bits 4:7 - Watchdog Interval Value"]
     #[inline(always)]
     pub fn wdog_intv_value(&mut self) -> WDOG_INTV_VALUE_W {
-        WDOG_INTV_VALUE_W { w: self }
+        WDOG_INTV_VALUE_W::new(self)
     }
     #[doc = "Bit 0 - Watchdog Enable"]
     #[inline(always)]
     pub fn wdog_en(&mut self) -> WDOG_EN_W {
-        WDOG_EN_W { w: self }
+        WDOG_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

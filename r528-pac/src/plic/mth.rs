@@ -110,13 +110,9 @@ impl From<PRIORITY_A> for u8 {
     }
 }
 #[doc = "Field `priority` reader - "]
-pub struct PRIORITY_R(crate::FieldReader<u8, PRIORITY_A>);
+pub type PRIORITY_R = crate::FieldReader<u8, PRIORITY_A>;
 impl PRIORITY_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: u8) -> Self {
-        PRIORITY_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PRIORITY_A {
         match self.bits {
@@ -158,181 +154,167 @@ impl PRIORITY_R {
     #[doc = "Checks if the value of the field is `P0`"]
     #[inline(always)]
     pub fn is_p0(&self) -> bool {
-        **self == PRIORITY_A::P0
+        *self == PRIORITY_A::P0
     }
     #[doc = "Checks if the value of the field is `P1`"]
     #[inline(always)]
     pub fn is_p1(&self) -> bool {
-        **self == PRIORITY_A::P1
+        *self == PRIORITY_A::P1
     }
     #[doc = "Checks if the value of the field is `P2`"]
     #[inline(always)]
     pub fn is_p2(&self) -> bool {
-        **self == PRIORITY_A::P2
+        *self == PRIORITY_A::P2
     }
     #[doc = "Checks if the value of the field is `P3`"]
     #[inline(always)]
     pub fn is_p3(&self) -> bool {
-        **self == PRIORITY_A::P3
+        *self == PRIORITY_A::P3
     }
     #[doc = "Checks if the value of the field is `P4`"]
     #[inline(always)]
     pub fn is_p4(&self) -> bool {
-        **self == PRIORITY_A::P4
+        *self == PRIORITY_A::P4
     }
     #[doc = "Checks if the value of the field is `P5`"]
     #[inline(always)]
     pub fn is_p5(&self) -> bool {
-        **self == PRIORITY_A::P5
+        *self == PRIORITY_A::P5
     }
     #[doc = "Checks if the value of the field is `P6`"]
     #[inline(always)]
     pub fn is_p6(&self) -> bool {
-        **self == PRIORITY_A::P6
+        *self == PRIORITY_A::P6
     }
     #[doc = "Checks if the value of the field is `P7`"]
     #[inline(always)]
     pub fn is_p7(&self) -> bool {
-        **self == PRIORITY_A::P7
+        *self == PRIORITY_A::P7
     }
     #[doc = "Checks if the value of the field is `P8`"]
     #[inline(always)]
     pub fn is_p8(&self) -> bool {
-        **self == PRIORITY_A::P8
+        *self == PRIORITY_A::P8
     }
     #[doc = "Checks if the value of the field is `P9`"]
     #[inline(always)]
     pub fn is_p9(&self) -> bool {
-        **self == PRIORITY_A::P9
+        *self == PRIORITY_A::P9
     }
     #[doc = "Checks if the value of the field is `P10`"]
     #[inline(always)]
     pub fn is_p10(&self) -> bool {
-        **self == PRIORITY_A::P10
+        *self == PRIORITY_A::P10
     }
     #[doc = "Checks if the value of the field is `P11`"]
     #[inline(always)]
     pub fn is_p11(&self) -> bool {
-        **self == PRIORITY_A::P11
+        *self == PRIORITY_A::P11
     }
     #[doc = "Checks if the value of the field is `P12`"]
     #[inline(always)]
     pub fn is_p12(&self) -> bool {
-        **self == PRIORITY_A::P12
+        *self == PRIORITY_A::P12
     }
     #[doc = "Checks if the value of the field is `P13`"]
     #[inline(always)]
     pub fn is_p13(&self) -> bool {
-        **self == PRIORITY_A::P13
+        *self == PRIORITY_A::P13
     }
     #[doc = "Checks if the value of the field is `P14`"]
     #[inline(always)]
     pub fn is_p14(&self) -> bool {
-        **self == PRIORITY_A::P14
+        *self == PRIORITY_A::P14
     }
     #[doc = "Checks if the value of the field is `P15`"]
     #[inline(always)]
     pub fn is_p15(&self) -> bool {
-        **self == PRIORITY_A::P15
+        *self == PRIORITY_A::P15
     }
     #[doc = "Checks if the value of the field is `P16`"]
     #[inline(always)]
     pub fn is_p16(&self) -> bool {
-        **self == PRIORITY_A::P16
+        *self == PRIORITY_A::P16
     }
     #[doc = "Checks if the value of the field is `P17`"]
     #[inline(always)]
     pub fn is_p17(&self) -> bool {
-        **self == PRIORITY_A::P17
+        *self == PRIORITY_A::P17
     }
     #[doc = "Checks if the value of the field is `P18`"]
     #[inline(always)]
     pub fn is_p18(&self) -> bool {
-        **self == PRIORITY_A::P18
+        *self == PRIORITY_A::P18
     }
     #[doc = "Checks if the value of the field is `P19`"]
     #[inline(always)]
     pub fn is_p19(&self) -> bool {
-        **self == PRIORITY_A::P19
+        *self == PRIORITY_A::P19
     }
     #[doc = "Checks if the value of the field is `P20`"]
     #[inline(always)]
     pub fn is_p20(&self) -> bool {
-        **self == PRIORITY_A::P20
+        *self == PRIORITY_A::P20
     }
     #[doc = "Checks if the value of the field is `P21`"]
     #[inline(always)]
     pub fn is_p21(&self) -> bool {
-        **self == PRIORITY_A::P21
+        *self == PRIORITY_A::P21
     }
     #[doc = "Checks if the value of the field is `P22`"]
     #[inline(always)]
     pub fn is_p22(&self) -> bool {
-        **self == PRIORITY_A::P22
+        *self == PRIORITY_A::P22
     }
     #[doc = "Checks if the value of the field is `P23`"]
     #[inline(always)]
     pub fn is_p23(&self) -> bool {
-        **self == PRIORITY_A::P23
+        *self == PRIORITY_A::P23
     }
     #[doc = "Checks if the value of the field is `P24`"]
     #[inline(always)]
     pub fn is_p24(&self) -> bool {
-        **self == PRIORITY_A::P24
+        *self == PRIORITY_A::P24
     }
     #[doc = "Checks if the value of the field is `P25`"]
     #[inline(always)]
     pub fn is_p25(&self) -> bool {
-        **self == PRIORITY_A::P25
+        *self == PRIORITY_A::P25
     }
     #[doc = "Checks if the value of the field is `P26`"]
     #[inline(always)]
     pub fn is_p26(&self) -> bool {
-        **self == PRIORITY_A::P26
+        *self == PRIORITY_A::P26
     }
     #[doc = "Checks if the value of the field is `P27`"]
     #[inline(always)]
     pub fn is_p27(&self) -> bool {
-        **self == PRIORITY_A::P27
+        *self == PRIORITY_A::P27
     }
     #[doc = "Checks if the value of the field is `P28`"]
     #[inline(always)]
     pub fn is_p28(&self) -> bool {
-        **self == PRIORITY_A::P28
+        *self == PRIORITY_A::P28
     }
     #[doc = "Checks if the value of the field is `P29`"]
     #[inline(always)]
     pub fn is_p29(&self) -> bool {
-        **self == PRIORITY_A::P29
+        *self == PRIORITY_A::P29
     }
     #[doc = "Checks if the value of the field is `P30`"]
     #[inline(always)]
     pub fn is_p30(&self) -> bool {
-        **self == PRIORITY_A::P30
+        *self == PRIORITY_A::P30
     }
     #[doc = "Checks if the value of the field is `P31`"]
     #[inline(always)]
     pub fn is_p31(&self) -> bool {
-        **self == PRIORITY_A::P31
-    }
-}
-impl core::ops::Deref for PRIORITY_R {
-    type Target = crate::FieldReader<u8, PRIORITY_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == PRIORITY_A::P31
     }
 }
 #[doc = "Field `priority` writer - "]
-pub struct PRIORITY_W<'a> {
-    w: &'a mut W,
-}
+pub type PRIORITY_W<'a> = crate::FieldWriterSafe<'a, u32, MTH_SPEC, u8, PRIORITY_A, 5, 0>;
 impl<'a> PRIORITY_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: PRIORITY_A) -> &'a mut W {
-        self.bits(variant.into())
-    }
     #[doc = "Priority 0 (never interrupt)"]
     #[inline(always)]
     pub fn p0(self) -> &'a mut W {
@@ -493,12 +475,6 @@ impl<'a> PRIORITY_W<'a> {
     pub fn p31(self) -> &'a mut W {
         self.variant(PRIORITY_A::P31)
     }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        self.w.bits = (self.w.bits & !0x1f) | (value as u32 & 0x1f);
-        self.w
-    }
 }
 impl R {
     #[doc = "Bits 0:4"]
@@ -511,7 +487,7 @@ impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     pub fn priority(&mut self) -> PRIORITY_W {
-        PRIORITY_W { w: self }
+        PRIORITY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -49,13 +49,9 @@ impl From<EINT_CTL_A> for bool {
     }
 }
 #[doc = "Fields `EINT(0-7)_CTL` reader - External INT Enable"]
-pub struct EINT_CTL_R(crate::FieldReader<bool, EINT_CTL_A>);
+pub type EINT_CTL_R = crate::BitReader<EINT_CTL_A>;
 impl EINT_CTL_R {
-    #[inline(always)]
-    pub(crate) fn new(bits: bool) -> Self {
-        EINT_CTL_R(crate::FieldReader::new(bits))
-    }
-    #[doc = r"Get enumerated values variant"]
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> EINT_CTL_A {
         match self.bits {
@@ -66,32 +62,17 @@ impl EINT_CTL_R {
     #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        **self == EINT_CTL_A::DISABLE
+        *self == EINT_CTL_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        **self == EINT_CTL_A::ENABLE
-    }
-}
-impl core::ops::Deref for EINT_CTL_R {
-    type Target = crate::FieldReader<bool, EINT_CTL_A>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+        *self == EINT_CTL_A::ENABLE
     }
 }
 #[doc = "Fields `EINT(0-7)_CTL` writer - External INT Enable"]
-pub struct EINT_CTL_W<'a> {
-    w: &'a mut W,
-    offset: usize,
-}
-impl<'a> EINT_CTL_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EINT_CTL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
+pub type EINT_CTL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PC_EINT_CTL_SPEC, EINT_CTL_A, O>;
+impl<'a, const O: u8> EINT_CTL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -101,154 +82,100 @@ impl<'a> EINT_CTL_W<'a> {
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(EINT_CTL_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits =
-            (self.w.bits & !(0x01 << self.offset)) | ((value as u32 & 0x01) << self.offset);
-        self.w
-    }
-}
-#[doc = "Fields `EINT(0-7)_CTL` const generic writer - External INT Enable"]
-pub struct EINT_CTL_CGW<'a, const O: usize> {
-    w: &'a mut W,
-}
-impl<'a, const O: usize> EINT_CTL_CGW<'a, O> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EINT_CTL_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(EINT_CTL_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(EINT_CTL_A::ENABLE)
-    }
-    #[doc = r"Sets the field bit"]
-    #[inline(always)]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r"Clears the field bit"]
-    #[inline(always)]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r"Writes raw bits to the field"]
-    #[inline(always)]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        self.w.bits = (self.w.bits & !(0x01 << O)) | ((value as u32 & 0x01) << O);
-        self.w
     }
 }
 impl R {
     #[doc = "External INT Enable"]
     #[inline(always)]
-    pub unsafe fn eint_ctl(&self, n: usize) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> n) & 0x01) != 0)
+    pub unsafe fn eint_ctl(&self, n: u8) -> EINT_CTL_R {
+        EINT_CTL_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - External INT Enable"]
     #[inline(always)]
     pub fn eint0_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new((self.bits & 0x01) != 0)
+        EINT_CTL_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - External INT Enable"]
     #[inline(always)]
     pub fn eint1_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> 1) & 0x01) != 0)
+        EINT_CTL_R::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - External INT Enable"]
     #[inline(always)]
     pub fn eint2_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> 2) & 0x01) != 0)
+        EINT_CTL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - External INT Enable"]
     #[inline(always)]
     pub fn eint3_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> 3) & 0x01) != 0)
+        EINT_CTL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - External INT Enable"]
     #[inline(always)]
     pub fn eint4_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> 4) & 0x01) != 0)
+        EINT_CTL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - External INT Enable"]
     #[inline(always)]
     pub fn eint5_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> 5) & 0x01) != 0)
+        EINT_CTL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - External INT Enable"]
     #[inline(always)]
     pub fn eint6_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> 6) & 0x01) != 0)
+        EINT_CTL_R::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - External INT Enable"]
     #[inline(always)]
     pub fn eint7_ctl(&self) -> EINT_CTL_R {
-        EINT_CTL_R::new(((self.bits >> 7) & 0x01) != 0)
+        EINT_CTL_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
     #[doc = "External INT Enable"]
     #[inline(always)]
-    pub unsafe fn eint_ctl(&mut self, n: usize) -> EINT_CTL_W {
-        EINT_CTL_W { w: self, offset: n }
+    pub unsafe fn eint_ctl<const O: u8>(&mut self) -> EINT_CTL_W<O> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 0 - External INT Enable"]
     #[inline(always)]
-    pub fn eint0_ctl(&mut self) -> EINT_CTL_CGW<0> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint0_ctl(&mut self) -> EINT_CTL_W<0> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 1 - External INT Enable"]
     #[inline(always)]
-    pub fn eint1_ctl(&mut self) -> EINT_CTL_CGW<1> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint1_ctl(&mut self) -> EINT_CTL_W<1> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 2 - External INT Enable"]
     #[inline(always)]
-    pub fn eint2_ctl(&mut self) -> EINT_CTL_CGW<2> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint2_ctl(&mut self) -> EINT_CTL_W<2> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 3 - External INT Enable"]
     #[inline(always)]
-    pub fn eint3_ctl(&mut self) -> EINT_CTL_CGW<3> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint3_ctl(&mut self) -> EINT_CTL_W<3> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 4 - External INT Enable"]
     #[inline(always)]
-    pub fn eint4_ctl(&mut self) -> EINT_CTL_CGW<4> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint4_ctl(&mut self) -> EINT_CTL_W<4> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 5 - External INT Enable"]
     #[inline(always)]
-    pub fn eint5_ctl(&mut self) -> EINT_CTL_CGW<5> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint5_ctl(&mut self) -> EINT_CTL_W<5> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 6 - External INT Enable"]
     #[inline(always)]
-    pub fn eint6_ctl(&mut self) -> EINT_CTL_CGW<6> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint6_ctl(&mut self) -> EINT_CTL_W<6> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Bit 7 - External INT Enable"]
     #[inline(always)]
-    pub fn eint7_ctl(&mut self) -> EINT_CTL_CGW<7> {
-        EINT_CTL_CGW { w: self }
+    pub fn eint7_ctl(&mut self) -> EINT_CTL_W<7> {
+        EINT_CTL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
