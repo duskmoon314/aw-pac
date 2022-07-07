@@ -37,11 +37,11 @@ impl From<crate::W<SMHC_DRV_DL_SPEC>> for W {
 #[doc = "Field `DAT_DRV_PH_SEL` reader - Data Drive Phase Select"]
 pub type DAT_DRV_PH_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `DAT_DRV_PH_SEL` writer - Data Drive Phase Select"]
-pub type DAT_DRV_PH_SEL_W<'a> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, 17>;
+pub type DAT_DRV_PH_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, O>;
 #[doc = "Field `CMD_DRV_PH_SEL` reader - Command Drive Phase Select"]
 pub type CMD_DRV_PH_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `CMD_DRV_PH_SEL` writer - Command Drive Phase Select"]
-pub type CMD_DRV_PH_SEL_W<'a> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, 16>;
+pub type CMD_DRV_PH_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 17 - Data Drive Phase Select"]
     #[inline(always)]
@@ -57,12 +57,12 @@ impl R {
 impl W {
     #[doc = "Bit 17 - Data Drive Phase Select"]
     #[inline(always)]
-    pub fn dat_drv_ph_sel(&mut self) -> DAT_DRV_PH_SEL_W {
+    pub fn dat_drv_ph_sel(&mut self) -> DAT_DRV_PH_SEL_W<17> {
         DAT_DRV_PH_SEL_W::new(self)
     }
     #[doc = "Bit 16 - Command Drive Phase Select"]
     #[inline(always)]
-    pub fn cmd_drv_ph_sel(&mut self) -> CMD_DRV_PH_SEL_W {
+    pub fn cmd_drv_ph_sel(&mut self) -> CMD_DRV_PH_SEL_W<16> {
         CMD_DRV_PH_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

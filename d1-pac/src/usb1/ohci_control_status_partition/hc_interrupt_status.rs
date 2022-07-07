@@ -39,32 +39,38 @@ has changed."]
 pub type ROOT_HUB_STATUS_CHANGE_R = crate::BitReader<bool>;
 #[doc = "Field `ROOT_HUB_STATUS_CHANGE` writer - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\]
 has changed."]
-pub type ROOT_HUB_STATUS_CHANGE_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, 6>;
+pub type ROOT_HUB_STATUS_CHANGE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 #[doc = "Field `FRAME_NUMBER_OVERFLOW` reader - FrameNumberOverflow\n\nThis bit is set when the MSb of (bit 15) changes value, from 0 to 1 or from 1 to 0, and after has been updated."]
 pub type FRAME_NUMBER_OVERFLOW_R = crate::BitReader<bool>;
 #[doc = "Field `FRAME_NUMBER_OVERFLOW` writer - FrameNumberOverflow\n\nThis bit is set when the MSb of (bit 15) changes value, from 0 to 1 or from 1 to 0, and after has been updated."]
-pub type FRAME_NUMBER_OVERFLOW_W<'a> = crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, 5>;
+pub type FRAME_NUMBER_OVERFLOW_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 #[doc = "Field `UNRECOVERABLE_ERROR` reader - UnrecoverableError\n\nThis bit is set when HC detects a system error not related to USB. HC should not proceed with any processing nor signaling before the system error has been corrected. HCD clears this bit after HC has been reset."]
 pub type UNRECOVERABLE_ERROR_R = crate::BitReader<bool>;
 #[doc = "Field `UNRECOVERABLE_ERROR` writer - UnrecoverableError\n\nThis bit is set when HC detects a system error not related to USB. HC should not proceed with any processing nor signaling before the system error has been corrected. HCD clears this bit after HC has been reset."]
-pub type UNRECOVERABLE_ERROR_W<'a> = crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, 4>;
+pub type UNRECOVERABLE_ERROR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 #[doc = "Field `RESUME_DETECTED` reader - ResumeDetected\n\nThis bit is set when HC detects that a device on the USB is asserting resume signaling. It is the transition from no resume signaling to resume signaling causing this bit to be set. This bit is not set when HCD sets the USBRseume state."]
 pub type RESUME_DETECTED_R = crate::BitReader<bool>;
 #[doc = "Field `RESUME_DETECTED` writer - ResumeDetected\n\nThis bit is set when HC detects that a device on the USB is asserting resume signaling. It is the transition from no resume signaling to resume signaling causing this bit to be set. This bit is not set when HCD sets the USBRseume state."]
-pub type RESUME_DETECTED_W<'a> = crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, 3>;
+pub type RESUME_DETECTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 #[doc = "Field `START_OF_FRAME` reader - StartofFrame\n\nThis bit is set by HC at each start of frame and after the update of HccaFrameNumber. HC also generates a SOF token at the same time."]
 pub type START_OF_FRAME_R = crate::BitReader<bool>;
 #[doc = "Field `START_OF_FRAME` writer - StartofFrame\n\nThis bit is set by HC at each start of frame and after the update of HccaFrameNumber. HC also generates a SOF token at the same time."]
-pub type START_OF_FRAME_W<'a> = crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, 2>;
+pub type START_OF_FRAME_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 #[doc = "Field `WRITEBACK_DONE_HEAD` reader - WritebackDoneHead\n\nThis bit is set immediately after HC has written to. Further updates of the will not occur until this bit has been cleared. HCD should only clear this bit after it has saved the content of HccaDoneHead."]
 pub type WRITEBACK_DONE_HEAD_R = crate::BitReader<bool>;
 #[doc = "Field `WRITEBACK_DONE_HEAD` writer - WritebackDoneHead\n\nThis bit is set immediately after HC has written to. Further updates of the will not occur until this bit has been cleared. HCD should only clear this bit after it has saved the content of HccaDoneHead."]
-pub type WRITEBACK_DONE_HEAD_W<'a> = crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, 1>;
+pub type WRITEBACK_DONE_HEAD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 #[doc = "Field `SCHEDULING_OVERRUN` reader - SchedulingOverrun\n\nThis bit is set when the USB schedule for the current Frame overruns and after the update of. A scheduling overrun will also cause the SchedulingOverrunCount of to be incremented."]
 pub type SCHEDULING_OVERRUN_R = crate::BitReader<bool>;
 #[doc = "Field `SCHEDULING_OVERRUN` writer - SchedulingOverrun\n\nThis bit is set when the USB schedule for the current Frame overruns and after the update of. A scheduling overrun will also cause the SchedulingOverrunCount of to be incremented."]
-pub type SCHEDULING_OVERRUN_W<'a> = crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, 0>;
+pub type SCHEDULING_OVERRUN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 6 - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\]
 has changed."]
@@ -107,37 +113,37 @@ impl W {
     #[doc = "Bit 6 - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\]
 has changed."]
     #[inline(always)]
-    pub fn root_hub_status_change(&mut self) -> ROOT_HUB_STATUS_CHANGE_W {
+    pub fn root_hub_status_change(&mut self) -> ROOT_HUB_STATUS_CHANGE_W<6> {
         ROOT_HUB_STATUS_CHANGE_W::new(self)
     }
     #[doc = "Bit 5 - FrameNumberOverflow\n\nThis bit is set when the MSb of (bit 15) changes value, from 0 to 1 or from 1 to 0, and after has been updated."]
     #[inline(always)]
-    pub fn frame_number_overflow(&mut self) -> FRAME_NUMBER_OVERFLOW_W {
+    pub fn frame_number_overflow(&mut self) -> FRAME_NUMBER_OVERFLOW_W<5> {
         FRAME_NUMBER_OVERFLOW_W::new(self)
     }
     #[doc = "Bit 4 - UnrecoverableError\n\nThis bit is set when HC detects a system error not related to USB. HC should not proceed with any processing nor signaling before the system error has been corrected. HCD clears this bit after HC has been reset."]
     #[inline(always)]
-    pub fn unrecoverable_error(&mut self) -> UNRECOVERABLE_ERROR_W {
+    pub fn unrecoverable_error(&mut self) -> UNRECOVERABLE_ERROR_W<4> {
         UNRECOVERABLE_ERROR_W::new(self)
     }
     #[doc = "Bit 3 - ResumeDetected\n\nThis bit is set when HC detects that a device on the USB is asserting resume signaling. It is the transition from no resume signaling to resume signaling causing this bit to be set. This bit is not set when HCD sets the USBRseume state."]
     #[inline(always)]
-    pub fn resume_detected(&mut self) -> RESUME_DETECTED_W {
+    pub fn resume_detected(&mut self) -> RESUME_DETECTED_W<3> {
         RESUME_DETECTED_W::new(self)
     }
     #[doc = "Bit 2 - StartofFrame\n\nThis bit is set by HC at each start of frame and after the update of HccaFrameNumber. HC also generates a SOF token at the same time."]
     #[inline(always)]
-    pub fn start_of_frame(&mut self) -> START_OF_FRAME_W {
+    pub fn start_of_frame(&mut self) -> START_OF_FRAME_W<2> {
         START_OF_FRAME_W::new(self)
     }
     #[doc = "Bit 1 - WritebackDoneHead\n\nThis bit is set immediately after HC has written to. Further updates of the will not occur until this bit has been cleared. HCD should only clear this bit after it has saved the content of HccaDoneHead."]
     #[inline(always)]
-    pub fn writeback_done_head(&mut self) -> WRITEBACK_DONE_HEAD_W {
+    pub fn writeback_done_head(&mut self) -> WRITEBACK_DONE_HEAD_W<1> {
         WRITEBACK_DONE_HEAD_W::new(self)
     }
     #[doc = "Bit 0 - SchedulingOverrun\n\nThis bit is set when the USB schedule for the current Frame overruns and after the update of. A scheduling overrun will also cause the SchedulingOverrunCount of to be incremented."]
     #[inline(always)]
-    pub fn scheduling_overrun(&mut self) -> SCHEDULING_OVERRUN_W {
+    pub fn scheduling_overrun(&mut self) -> SCHEDULING_OVERRUN_W<0> {
         SCHEDULING_OVERRUN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

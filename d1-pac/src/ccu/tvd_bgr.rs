@@ -71,8 +71,8 @@ impl RST_R {
     }
 }
 #[doc = "Field `RST` writer - Reset"]
-pub type RST_W<'a> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, RST_A, 17>;
-impl<'a> RST_W<'a> {
+pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, RST_A, O>;
+impl<'a, const O: u8> RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl TOP_RST_R {
     }
 }
 #[doc = "Field `TOP_RST` writer - Reset"]
-pub type TOP_RST_W<'a> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_RST_A, 16>;
-impl<'a> TOP_RST_W<'a> {
+pub type TOP_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_RST_A, O>;
+impl<'a, const O: u8> TOP_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -171,8 +171,8 @@ impl GATING_R {
     }
 }
 #[doc = "Field `GATING` writer - Gating Clock"]
-pub type GATING_W<'a> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, GATING_A, 1>;
-impl<'a> GATING_W<'a> {
+pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, GATING_A, O>;
+impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -221,8 +221,8 @@ impl TOP_GATING_R {
     }
 }
 #[doc = "Field `TOP_GATING` writer - Gating Clock"]
-pub type TOP_GATING_W<'a> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_GATING_A, 0>;
-impl<'a> TOP_GATING_W<'a> {
+pub type TOP_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_GATING_A, O>;
+impl<'a, const O: u8> TOP_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -259,22 +259,22 @@ impl R {
 impl W {
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
-    pub fn rst(&mut self) -> RST_W {
+    pub fn rst(&mut self) -> RST_W<17> {
         RST_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn top_rst(&mut self) -> TOP_RST_W {
+    pub fn top_rst(&mut self) -> TOP_RST_W<16> {
         TOP_RST_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
-    pub fn gating(&mut self) -> GATING_W {
+    pub fn gating(&mut self) -> GATING_W<1> {
         GATING_W::new(self)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
-    pub fn top_gating(&mut self) -> TOP_GATING_W {
+    pub fn top_gating(&mut self) -> TOP_GATING_W<0> {
         TOP_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,9 +71,9 @@ impl TS_TEST_MODE_EN_R {
     }
 }
 #[doc = "Field `TS_TEST_MODE_EN` writer - Timestamp Test Mode Enable"]
-pub type TS_TEST_MODE_EN_W<'a> =
-    crate::BitWriter<'a, u32, TS_TMODE_SEL_REG_SPEC, TS_TEST_MODE_EN_A, 0>;
-impl<'a> TS_TEST_MODE_EN_W<'a> {
+pub type TS_TEST_MODE_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TS_TMODE_SEL_REG_SPEC, TS_TEST_MODE_EN_A, O>;
+impl<'a, const O: u8> TS_TEST_MODE_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -95,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Timestamp Test Mode Enable"]
     #[inline(always)]
-    pub fn ts_test_mode_en(&mut self) -> TS_TEST_MODE_EN_W {
+    pub fn ts_test_mode_en(&mut self) -> TS_TEST_MODE_EN_W<0> {
         TS_TEST_MODE_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

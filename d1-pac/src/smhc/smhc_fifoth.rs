@@ -89,9 +89,9 @@ impl BSIZE_OF_TRANS_R {
     }
 }
 #[doc = "Field `BSIZE_OF_TRANS` writer - sBurst Size of Multiple Transaction"]
-pub type BSIZE_OF_TRANS_W<'a> =
-    crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, BSIZE_OF_TRANS_A, 3, 28>;
-impl<'a> BSIZE_OF_TRANS_W<'a> {
+pub type BSIZE_OF_TRANS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, BSIZE_OF_TRANS_A, 3, O>;
+impl<'a, const O: u8> BSIZE_OF_TRANS_W<'a, O> {
     #[doc = "1 transfer"]
     #[inline(always)]
     pub fn t1(self) -> &'a mut W {
@@ -116,11 +116,11 @@ impl<'a> BSIZE_OF_TRANS_W<'a> {
 #[doc = "Field `RX_TL` reader - RX Trigger Level"]
 pub type RX_TL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RX_TL` writer - RX Trigger Level"]
-pub type RX_TL_W<'a> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, 16>;
+pub type RX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
 #[doc = "Field `TX_TL` reader - TX Trigger Level"]
 pub type TX_TL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TX_TL` writer - TX Trigger Level"]
-pub type TX_TL_W<'a> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, 0>;
+pub type TX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
     #[inline(always)]
@@ -141,17 +141,17 @@ impl R {
 impl W {
     #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
     #[inline(always)]
-    pub fn bsize_of_trans(&mut self) -> BSIZE_OF_TRANS_W {
+    pub fn bsize_of_trans(&mut self) -> BSIZE_OF_TRANS_W<28> {
         BSIZE_OF_TRANS_W::new(self)
     }
     #[doc = "Bits 16:23 - RX Trigger Level"]
     #[inline(always)]
-    pub fn rx_tl(&mut self) -> RX_TL_W {
+    pub fn rx_tl(&mut self) -> RX_TL_W<16> {
         RX_TL_W::new(self)
     }
     #[doc = "Bits 0:7 - TX Trigger Level"]
     #[inline(always)]
-    pub fn tx_tl(&mut self) -> TX_TL_W {
+    pub fn tx_tl(&mut self) -> TX_TL_W<0> {
         TX_TL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

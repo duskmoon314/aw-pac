@@ -554,10 +554,10 @@ macro_rules! impl_proxy {
         }
     };
 }
-impl_proxy!(u64);
-impl_proxy!(u32);
 impl_proxy!(u16);
+impl_proxy!(u32);
 impl_proxy!(u8);
+impl_proxy!(u64);
 #[doc = " Access an array of `COUNT` items of type `T` with the items `STRIDE` bytes"]
 #[doc = " apart.  This is a zero-sized-type.  No objects of this type are ever"]
 #[doc = " actually created, it is only a convenience for wrapping pointer arithmetic."]

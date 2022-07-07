@@ -37,8 +37,8 @@ impl From<crate::W<HC_RH_DESCRIPTOR_A_SPEC>> for W {
 #[doc = "Field `POWER_ON_TO_POWER_GOOD_TIME` reader - PowerOnToPowerGoodTime\\[POTPGT\\]\n\nThis byte specifies the duration HCD has to wait before accessing a powered-on port of the Root Hub. It is implementation-specific. The unit of time is 2 ms. The duration is calculated as POTPGT * 2ms."]
 pub type POWER_ON_TO_POWER_GOOD_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `POWER_ON_TO_POWER_GOOD_TIME` writer - PowerOnToPowerGoodTime\\[POTPGT\\]\n\nThis byte specifies the duration HCD has to wait before accessing a powered-on port of the Root Hub. It is implementation-specific. The unit of time is 2 ms. The duration is calculated as POTPGT * 2ms."]
-pub type POWER_ON_TO_POWER_GOOD_TIME_W<'a> =
-    crate::FieldWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, u8, u8, 8, 24>;
+pub type POWER_ON_TO_POWER_GOOD_TIME_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, u8, u8, 8, O>;
 #[doc = "NoOverCurrentProtection\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. When this bit is cleared, the OverCurrentProtectionMode field specifies global or per-port reporting.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum NO_OVER_CURRENT_PROTECTION_A {
@@ -76,9 +76,9 @@ impl NO_OVER_CURRENT_PROTECTION_R {
     }
 }
 #[doc = "Field `NO_OVER_CURRENT_PROTECTION` writer - NoOverCurrentProtection\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. When this bit is cleared, the OverCurrentProtectionMode field specifies global or per-port reporting."]
-pub type NO_OVER_CURRENT_PROTECTION_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, NO_OVER_CURRENT_PROTECTION_A, 12>;
-impl<'a> NO_OVER_CURRENT_PROTECTION_W<'a> {
+pub type NO_OVER_CURRENT_PROTECTION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, NO_OVER_CURRENT_PROTECTION_A, O>;
+impl<'a, const O: u8> NO_OVER_CURRENT_PROTECTION_W<'a, O> {
     #[doc = "Over-current status is reported collectively for all downstream ports"]
     #[inline(always)]
     pub fn report(self) -> &'a mut W {
@@ -127,9 +127,9 @@ impl OVER_CURRENT_PROTECTION_MODE_R {
     }
 }
 #[doc = "Field `OVER_CURRENT_PROTECTION_MODE` writer - OverCurrentProtectionMode\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. At reset, these fields should reflect the same mode as PowerSwitchingMode. This field is valid only if the NoOverCurrentProtection field is cleared. 0 Over-current status is reported collectively for all downstream ports. 1 Over-current status is reported on per-port basis."]
-pub type OVER_CURRENT_PROTECTION_MODE_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, OVER_CURRENT_PROTECTION_MODE_A, 11>;
-impl<'a> OVER_CURRENT_PROTECTION_MODE_W<'a> {
+pub type OVER_CURRENT_PROTECTION_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, OVER_CURRENT_PROTECTION_MODE_A, O>;
+impl<'a, const O: u8> OVER_CURRENT_PROTECTION_MODE_W<'a, O> {
     #[doc = "Over-current status is reported collectively for all downstream ports"]
     #[inline(always)]
     pub fn report(self) -> &'a mut W {
@@ -180,9 +180,9 @@ impl POWER_SWITCHING_MODE_R {
     }
 }
 #[doc = "Field `POWER_SWITCHING_MODE` writer - PowerSwitchingMode\n\nThis bit is used to specify how the power switching of the Root Hub ports is controlled. It is implementation-specific. This field is only valid if the NoPowerSwitching field is cleared."]
-pub type POWER_SWITCHING_MODE_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, POWER_SWITCHING_MODE_A, 9>;
-impl<'a> POWER_SWITCHING_MODE_W<'a> {
+pub type POWER_SWITCHING_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, POWER_SWITCHING_MODE_A, O>;
+impl<'a, const O: u8> POWER_SWITCHING_MODE_W<'a, O> {
     #[doc = "All ports are powered at the same time"]
     #[inline(always)]
     pub fn same_time(self) -> &'a mut W {
@@ -231,9 +231,9 @@ impl NO_POWER_SWITHCING_R {
     }
 }
 #[doc = "Field `NO_POWER_SWITHCING` writer - NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode specifies global or per-port switching."]
-pub type NO_POWER_SWITHCING_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, NO_POWER_SWITHCING_A, 8>;
-impl<'a> NO_POWER_SWITHCING_W<'a> {
+pub type NO_POWER_SWITHCING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_DESCRIPTOR_A_SPEC, NO_POWER_SWITHCING_A, O>;
+impl<'a, const O: u8> NO_POWER_SWITHCING_W<'a, O> {
     #[doc = "Ports are power switched"]
     #[inline(always)]
     pub fn switched(self) -> &'a mut W {
@@ -287,27 +287,27 @@ impl R {
 impl W {
     #[doc = "Bits 24:31 - PowerOnToPowerGoodTime\\[POTPGT\\]\n\nThis byte specifies the duration HCD has to wait before accessing a powered-on port of the Root Hub. It is implementation-specific. The unit of time is 2 ms. The duration is calculated as POTPGT * 2ms."]
     #[inline(always)]
-    pub fn power_on_to_power_good_time(&mut self) -> POWER_ON_TO_POWER_GOOD_TIME_W {
+    pub fn power_on_to_power_good_time(&mut self) -> POWER_ON_TO_POWER_GOOD_TIME_W<24> {
         POWER_ON_TO_POWER_GOOD_TIME_W::new(self)
     }
     #[doc = "Bit 12 - NoOverCurrentProtection\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. When this bit is cleared, the OverCurrentProtectionMode field specifies global or per-port reporting."]
     #[inline(always)]
-    pub fn no_over_current_protection(&mut self) -> NO_OVER_CURRENT_PROTECTION_W {
+    pub fn no_over_current_protection(&mut self) -> NO_OVER_CURRENT_PROTECTION_W<12> {
         NO_OVER_CURRENT_PROTECTION_W::new(self)
     }
     #[doc = "Bit 11 - OverCurrentProtectionMode\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. At reset, these fields should reflect the same mode as PowerSwitchingMode. This field is valid only if the NoOverCurrentProtection field is cleared. 0 Over-current status is reported collectively for all downstream ports. 1 Over-current status is reported on per-port basis."]
     #[inline(always)]
-    pub fn over_current_protection_mode(&mut self) -> OVER_CURRENT_PROTECTION_MODE_W {
+    pub fn over_current_protection_mode(&mut self) -> OVER_CURRENT_PROTECTION_MODE_W<11> {
         OVER_CURRENT_PROTECTION_MODE_W::new(self)
     }
     #[doc = "Bit 9 - PowerSwitchingMode\n\nThis bit is used to specify how the power switching of the Root Hub ports is controlled. It is implementation-specific. This field is only valid if the NoPowerSwitching field is cleared."]
     #[inline(always)]
-    pub fn power_switching_mode(&mut self) -> POWER_SWITCHING_MODE_W {
+    pub fn power_switching_mode(&mut self) -> POWER_SWITCHING_MODE_W<9> {
         POWER_SWITCHING_MODE_W::new(self)
     }
     #[doc = "Bit 8 - NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode specifies global or per-port switching."]
     #[inline(always)]
-    pub fn no_power_swithcing(&mut self) -> NO_POWER_SWITHCING_W {
+    pub fn no_power_swithcing(&mut self) -> NO_POWER_SWITHCING_W<8> {
         NO_POWER_SWITHCING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

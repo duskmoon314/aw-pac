@@ -71,8 +71,9 @@ impl MODE_SELECT_R {
     }
 }
 #[doc = "Field `MODE_SELECT` writer - "]
-pub type MODE_SELECT_W<'a> = crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, MODE_SELECT_A, 31>;
-impl<'a> MODE_SELECT_W<'a> {
+pub type MODE_SELECT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, MODE_SELECT_A, O>;
+impl<'a, const O: u8> MODE_SELECT_W<'a, O> {
     #[doc = "Old mode of Sample/Output Timing"]
     #[inline(always)]
     pub fn old_mode(self) -> &'a mut W {
@@ -121,9 +122,9 @@ impl CMD_DAT_RX_PHASE_CLR_R {
     }
 }
 #[doc = "Field `CMD_DAT_RX_PHASE_CLR` writer - Clear the input phase of command lines and data lines during the update clock operation"]
-pub type CMD_DAT_RX_PHASE_CLR_W<'a> =
-    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_DAT_RX_PHASE_CLR_A, 24>;
-impl<'a> CMD_DAT_RX_PHASE_CLR_W<'a> {
+pub type CMD_DAT_RX_PHASE_CLR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_DAT_RX_PHASE_CLR_A, O>;
+impl<'a, const O: u8> CMD_DAT_RX_PHASE_CLR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -172,9 +173,9 @@ impl DAT_CRC_STATUS_RX_PHASE_CLR_R {
     }
 }
 #[doc = "Field `DAT_CRC_STATUS_RX_PHASE_CLR` writer - Clear the input phase of data lines before receiving the CRC status"]
-pub type DAT_CRC_STATUS_RX_PHASE_CLR_W<'a> =
-    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_CRC_STATUS_RX_PHASE_CLR_A, 22>;
-impl<'a> DAT_CRC_STATUS_RX_PHASE_CLR_W<'a> {
+pub type DAT_CRC_STATUS_RX_PHASE_CLR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_CRC_STATUS_RX_PHASE_CLR_A, O>;
+impl<'a, const O: u8> DAT_CRC_STATUS_RX_PHASE_CLR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -223,9 +224,9 @@ impl DAT_TRANS_RX_PHASE_CLR_R {
     }
 }
 #[doc = "Field `DAT_TRANS_RX_PHASE_CLR` writer - Clear the input phase of data lines before transferring the data"]
-pub type DAT_TRANS_RX_PHASE_CLR_W<'a> =
-    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_TRANS_RX_PHASE_CLR_A, 21>;
-impl<'a> DAT_TRANS_RX_PHASE_CLR_W<'a> {
+pub type DAT_TRANS_RX_PHASE_CLR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_TRANS_RX_PHASE_CLR_A, O>;
+impl<'a, const O: u8> DAT_TRANS_RX_PHASE_CLR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -274,9 +275,9 @@ impl DAT_RECV_RX_PHASE_CLR_R {
     }
 }
 #[doc = "Field `DAT_RECV_RX_PHASE_CLR` writer - Clear the input phase of data lines before receiving the data"]
-pub type DAT_RECV_RX_PHASE_CLR_W<'a> =
-    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_RECV_RX_PHASE_CLR_A, 20>;
-impl<'a> DAT_RECV_RX_PHASE_CLR_W<'a> {
+pub type DAT_RECV_RX_PHASE_CLR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_RECV_RX_PHASE_CLR_A, O>;
+impl<'a, const O: u8> DAT_RECV_RX_PHASE_CLR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -325,9 +326,9 @@ impl CMD_SEND_RX_PHASE_CLR_R {
     }
 }
 #[doc = "Field `CMD_SEND_RX_PHASE_CLR` writer - Clear command rx phase before sending the command"]
-pub type CMD_SEND_RX_PHASE_CLR_W<'a> =
-    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_SEND_RX_PHASE_CLR_A, 16>;
-impl<'a> CMD_SEND_RX_PHASE_CLR_W<'a> {
+pub type CMD_SEND_RX_PHASE_CLR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_SEND_RX_PHASE_CLR_A, O>;
+impl<'a, const O: u8> CMD_SEND_RX_PHASE_CLR_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -394,9 +395,9 @@ impl DAT_SAMPLE_TIMING_PHASE_R {
     }
 }
 #[doc = "Field `DAT_SAMPLE_TIMING_PHASE` writer - "]
-pub type DAT_SAMPLE_TIMING_PHASE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, DAT_SAMPLE_TIMING_PHASE_A, 2, 8>;
-impl<'a> DAT_SAMPLE_TIMING_PHASE_W<'a> {
+pub type DAT_SAMPLE_TIMING_PHASE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, DAT_SAMPLE_TIMING_PHASE_A, 2, O>;
+impl<'a, const O: u8> DAT_SAMPLE_TIMING_PHASE_W<'a, O> {
     #[doc = "Sample timing phase offset 90"]
     #[inline(always)]
     pub fn o90(self) -> &'a mut W {
@@ -473,9 +474,9 @@ impl CMD_SAMPLE_TIMING_PHASE_R {
     }
 }
 #[doc = "Field `CMD_SAMPLE_TIMING_PHASE` writer - "]
-pub type CMD_SAMPLE_TIMING_PHASE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, CMD_SAMPLE_TIMING_PHASE_A, 2, 4>;
-impl<'a> CMD_SAMPLE_TIMING_PHASE_W<'a> {
+pub type CMD_SAMPLE_TIMING_PHASE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, CMD_SAMPLE_TIMING_PHASE_A, 2, O>;
+impl<'a, const O: u8> CMD_SAMPLE_TIMING_PHASE_W<'a, O> {
     #[doc = "Sample timing phase offset 90"]
     #[inline(always)]
     pub fn o90(self) -> &'a mut W {
@@ -534,9 +535,9 @@ impl HS400_NEW_SAMPLE_EN_R {
     }
 }
 #[doc = "Field `HS400_NEW_SAMPLE_EN` writer - "]
-pub type HS400_NEW_SAMPLE_EN_W<'a> =
-    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, HS400_NEW_SAMPLE_EN_A, 0>;
-impl<'a> HS400_NEW_SAMPLE_EN_W<'a> {
+pub type HS400_NEW_SAMPLE_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, HS400_NEW_SAMPLE_EN_A, O>;
+impl<'a, const O: u8> HS400_NEW_SAMPLE_EN_W<'a, O> {
     #[doc = "Disable hs400 new sample method"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -598,47 +599,47 @@ impl R {
 impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn mode_select(&mut self) -> MODE_SELECT_W {
+    pub fn mode_select(&mut self) -> MODE_SELECT_W<31> {
         MODE_SELECT_W::new(self)
     }
     #[doc = "Bit 24 - Clear the input phase of command lines and data lines during the update clock operation"]
     #[inline(always)]
-    pub fn cmd_dat_rx_phase_clr(&mut self) -> CMD_DAT_RX_PHASE_CLR_W {
+    pub fn cmd_dat_rx_phase_clr(&mut self) -> CMD_DAT_RX_PHASE_CLR_W<24> {
         CMD_DAT_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 22 - Clear the input phase of data lines before receiving the CRC status"]
     #[inline(always)]
-    pub fn dat_crc_status_rx_phase_clr(&mut self) -> DAT_CRC_STATUS_RX_PHASE_CLR_W {
+    pub fn dat_crc_status_rx_phase_clr(&mut self) -> DAT_CRC_STATUS_RX_PHASE_CLR_W<22> {
         DAT_CRC_STATUS_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 21 - Clear the input phase of data lines before transferring the data"]
     #[inline(always)]
-    pub fn dat_trans_rx_phase_clr(&mut self) -> DAT_TRANS_RX_PHASE_CLR_W {
+    pub fn dat_trans_rx_phase_clr(&mut self) -> DAT_TRANS_RX_PHASE_CLR_W<21> {
         DAT_TRANS_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 20 - Clear the input phase of data lines before receiving the data"]
     #[inline(always)]
-    pub fn dat_recv_rx_phase_clr(&mut self) -> DAT_RECV_RX_PHASE_CLR_W {
+    pub fn dat_recv_rx_phase_clr(&mut self) -> DAT_RECV_RX_PHASE_CLR_W<20> {
         DAT_RECV_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bit 16 - Clear command rx phase before sending the command"]
     #[inline(always)]
-    pub fn cmd_send_rx_phase_clr(&mut self) -> CMD_SEND_RX_PHASE_CLR_W {
+    pub fn cmd_send_rx_phase_clr(&mut self) -> CMD_SEND_RX_PHASE_CLR_W<16> {
         CMD_SEND_RX_PHASE_CLR_W::new(self)
     }
     #[doc = "Bits 8:9"]
     #[inline(always)]
-    pub fn dat_sample_timing_phase(&mut self) -> DAT_SAMPLE_TIMING_PHASE_W {
+    pub fn dat_sample_timing_phase(&mut self) -> DAT_SAMPLE_TIMING_PHASE_W<8> {
         DAT_SAMPLE_TIMING_PHASE_W::new(self)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
-    pub fn cmd_sample_timing_phase(&mut self) -> CMD_SAMPLE_TIMING_PHASE_W {
+    pub fn cmd_sample_timing_phase(&mut self) -> CMD_SAMPLE_TIMING_PHASE_W<4> {
         CMD_SAMPLE_TIMING_PHASE_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn hs400_new_sample_en(&mut self) -> HS400_NEW_SAMPLE_EN_W {
+    pub fn hs400_new_sample_en(&mut self) -> HS400_NEW_SAMPLE_EN_W<0> {
         HS400_NEW_SAMPLE_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

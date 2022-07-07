@@ -37,8 +37,8 @@ impl From<crate::W<WDOG_OUTPUT_CFG_SPEC>> for W {
 #[doc = "Field `WDOG_OUTPUT_CONFIG` reader - Configure the valid time for the watchdog reset signal."]
 pub type WDOG_OUTPUT_CONFIG_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WDOG_OUTPUT_CONFIG` writer - Configure the valid time for the watchdog reset signal."]
-pub type WDOG_OUTPUT_CONFIG_W<'a> =
-    crate::FieldWriter<'a, u32, WDOG_OUTPUT_CFG_SPEC, u16, u16, 12, 0>;
+pub type WDOG_OUTPUT_CONFIG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WDOG_OUTPUT_CFG_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Configure the valid time for the watchdog reset signal."]
     #[inline(always)]
@@ -49,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Configure the valid time for the watchdog reset signal."]
     #[inline(always)]
-    pub fn wdog_output_config(&mut self) -> WDOG_OUTPUT_CONFIG_W {
+    pub fn wdog_output_config(&mut self) -> WDOG_OUTPUT_CONFIG_W<0> {
         WDOG_OUTPUT_CONFIG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

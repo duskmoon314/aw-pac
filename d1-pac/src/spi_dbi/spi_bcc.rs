@@ -71,8 +71,8 @@ impl QUAD_EN_R {
     }
 }
 #[doc = "Field `quad_en` writer - Quad Mode Enable"]
-pub type QUAD_EN_W<'a> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, QUAD_EN_A, 29>;
-impl<'a> QUAD_EN_W<'a> {
+pub type QUAD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, QUAD_EN_A, O>;
+impl<'a, const O: u8> QUAD_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl DRM_R {
     }
 }
 #[doc = "Field `drm` writer - Master Dual Mode RX Enable"]
-pub type DRM_W<'a> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, DRM_A, 28>;
-impl<'a> DRM_W<'a> {
+pub type DRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, DRM_A, O>;
+impl<'a, const O: u8> DRM_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
@@ -137,11 +137,11 @@ impl<'a> DRM_W<'a> {
 #[doc = "Field `dbc` reader - Master Dummy Burst Counter"]
 pub type DBC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dbc` writer - Master Dummy Burst Counter"]
-pub type DBC_W<'a> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u8, u8, 4, 24>;
+pub type DBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u8, u8, 4, O>;
 #[doc = "Field `stc` reader - Master Single Mode Transmit Counter"]
 pub type STC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `stc` writer - Master Single Mode Transmit Counter"]
-pub type STC_W<'a> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u32, u32, 24, 0>;
+pub type STC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bit 29 - Quad Mode Enable"]
     #[inline(always)]
@@ -167,22 +167,22 @@ impl R {
 impl W {
     #[doc = "Bit 29 - Quad Mode Enable"]
     #[inline(always)]
-    pub fn quad_en(&mut self) -> QUAD_EN_W {
+    pub fn quad_en(&mut self) -> QUAD_EN_W<29> {
         QUAD_EN_W::new(self)
     }
     #[doc = "Bit 28 - Master Dual Mode RX Enable"]
     #[inline(always)]
-    pub fn drm(&mut self) -> DRM_W {
+    pub fn drm(&mut self) -> DRM_W<28> {
         DRM_W::new(self)
     }
     #[doc = "Bits 24:27 - Master Dummy Burst Counter"]
     #[inline(always)]
-    pub fn dbc(&mut self) -> DBC_W {
+    pub fn dbc(&mut self) -> DBC_W<24> {
         DBC_W::new(self)
     }
     #[doc = "Bits 0:23 - Master Single Mode Transmit Counter"]
     #[inline(always)]
-    pub fn stc(&mut self) -> STC_W {
+    pub fn stc(&mut self) -> STC_W<0> {
         STC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,9 @@ impl CLK_GATING_R {
     }
 }
 #[doc = "Field `CLK_GATING` writer - Gating Special Clock"]
-pub type CLK_GATING_W<'a> = crate::BitWriter<'a, u32, EMAC_25M_CLK_SPEC, CLK_GATING_A, 31>;
-impl<'a> CLK_GATING_W<'a> {
+pub type CLK_GATING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_25M_CLK_SPEC, CLK_GATING_A, O>;
+impl<'a, const O: u8> CLK_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl CLK_SRC_GATING_R {
     }
 }
 #[doc = "Field `CLK_SRC_GATING` writer - Gating the Source Clock of Special Clock"]
-pub type CLK_SRC_GATING_W<'a> = crate::BitWriter<'a, u32, EMAC_25M_CLK_SPEC, CLK_SRC_GATING_A, 31>;
-impl<'a> CLK_SRC_GATING_W<'a> {
+pub type CLK_SRC_GATING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_25M_CLK_SPEC, CLK_SRC_GATING_A, O>;
+impl<'a, const O: u8> CLK_SRC_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -149,12 +151,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
-    pub fn clk_gating(&mut self) -> CLK_GATING_W {
+    pub fn clk_gating(&mut self) -> CLK_GATING_W<31> {
         CLK_GATING_W::new(self)
     }
     #[doc = "Bit 31 - Gating the Source Clock of Special Clock"]
     #[inline(always)]
-    pub fn clk_src_gating(&mut self) -> CLK_SRC_GATING_W {
+    pub fn clk_src_gating(&mut self) -> CLK_SRC_GATING_W<31> {
         CLK_SRC_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

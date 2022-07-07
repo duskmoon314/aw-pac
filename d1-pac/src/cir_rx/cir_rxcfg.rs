@@ -37,7 +37,7 @@ impl From<crate::W<CIR_RXCFG_SPEC>> for W {
 #[doc = "Field `SCS2` reader - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
 pub type SCS2_R = crate::BitReader<bool>;
 #[doc = "Field `SCS2` writer - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
-pub type SCS2_W<'a> = crate::BitWriter<'a, u32, CIR_RXCFG_SPEC, bool, 24>;
+pub type SCS2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXCFG_SPEC, bool, O>;
 #[doc = "Active Threshold Control for CIR\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ATHC_A {
@@ -75,8 +75,8 @@ impl ATHC_R {
     }
 }
 #[doc = "Field `ATHC` writer - Active Threshold Control for CIR"]
-pub type ATHC_W<'a> = crate::BitWriter<'a, u32, CIR_RXCFG_SPEC, ATHC_A, 23>;
-impl<'a> ATHC_W<'a> {
+pub type ATHC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXCFG_SPEC, ATHC_A, O>;
+impl<'a, const O: u8> ATHC_W<'a, O> {
     #[doc = "ATHR in a unit of (Sample Clock)"]
     #[inline(always)]
     pub fn sample(self) -> &'a mut W {
@@ -91,11 +91,11 @@ impl<'a> ATHC_W<'a> {
 #[doc = "Field `ATHR` reader - Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock))."]
 pub type ATHR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ATHR` writer - Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock))."]
-pub type ATHR_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 7, 16>;
+pub type ATHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 7, O>;
 #[doc = "Field `ITHR` reader - Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished."]
 pub type ITHR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ITHR` writer - Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished."]
-pub type ITHR_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 8, 8>;
+pub type ITHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 8, O>;
 #[doc = "Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware.\n\nValue on reset: 10"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -615,8 +615,8 @@ impl NTHR_R {
     }
 }
 #[doc = "Field `NTHR` writer - Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware."]
-pub type NTHR_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, NTHR_A, 6, 2>;
-impl<'a> NTHR_W<'a> {
+pub type NTHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, NTHR_A, 6, O>;
+impl<'a, const O: u8> NTHR_W<'a, O> {
     #[doc = "All samples are recorded into RX FIFO"]
     #[inline(always)]
     pub fn t0(self) -> &'a mut W {
@@ -931,7 +931,7 @@ impl<'a> NTHR_W<'a> {
 #[doc = "Field `SCS` reader - Sample Clock Select for CIR"]
 pub type SCS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SCS` writer - Sample Clock Select for CIR"]
-pub type SCS_W<'a> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 2, 0>;
+pub type SCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 24 - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
     #[inline(always)]
@@ -967,32 +967,32 @@ impl R {
 impl W {
     #[doc = "Bit 24 - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
     #[inline(always)]
-    pub fn scs2(&mut self) -> SCS2_W {
+    pub fn scs2(&mut self) -> SCS2_W<24> {
         SCS2_W::new(self)
     }
     #[doc = "Bit 23 - Active Threshold Control for CIR"]
     #[inline(always)]
-    pub fn athc(&mut self) -> ATHC_W {
+    pub fn athc(&mut self) -> ATHC_W<23> {
         ATHC_W::new(self)
     }
     #[doc = "Bits 16:22 - Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock))."]
     #[inline(always)]
-    pub fn athr(&mut self) -> ATHR_W {
+    pub fn athr(&mut self) -> ATHR_W<16> {
         ATHR_W::new(self)
     }
     #[doc = "Bits 8:15 - Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished."]
     #[inline(always)]
-    pub fn ithr(&mut self) -> ITHR_W {
+    pub fn ithr(&mut self) -> ITHR_W<8> {
         ITHR_W::new(self)
     }
     #[doc = "Bits 2:7 - Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware."]
     #[inline(always)]
-    pub fn nthr(&mut self) -> NTHR_W {
+    pub fn nthr(&mut self) -> NTHR_W<2> {
         NTHR_W::new(self)
     }
     #[doc = "Bits 0:1 - Sample Clock Select for CIR"]
     #[inline(always)]
-    pub fn scs(&mut self) -> SCS_W {
+    pub fn scs(&mut self) -> SCS_W<0> {
         SCS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

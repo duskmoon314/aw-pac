@@ -34,7 +34,70 @@ impl From<crate::W<EFUSE_HV_PWRSWT_CTRL_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "1: Open power switch 0: Close power switch\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EFUSE_1_8V_POWER_SWITCH_CONTROL_A {
+    #[doc = "1: Open power switch"]
+    OPEN = 1,
+    #[doc = "0: Close power switch"]
+    CLOSE = 0,
+}
+impl From<EFUSE_1_8V_POWER_SWITCH_CONTROL_A> for bool {
+    #[inline(always)]
+    fn from(variant: EFUSE_1_8V_POWER_SWITCH_CONTROL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `EFUSE_1_8V_POWER_SWITCH_CONTROL` reader - 1: Open power switch 0: Close power switch"]
+pub type EFUSE_1_8V_POWER_SWITCH_CONTROL_R = crate::BitReader<EFUSE_1_8V_POWER_SWITCH_CONTROL_A>;
+impl EFUSE_1_8V_POWER_SWITCH_CONTROL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EFUSE_1_8V_POWER_SWITCH_CONTROL_A {
+        match self.bits {
+            true => EFUSE_1_8V_POWER_SWITCH_CONTROL_A::OPEN,
+            false => EFUSE_1_8V_POWER_SWITCH_CONTROL_A::CLOSE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `OPEN`"]
+    #[inline(always)]
+    pub fn is_open(&self) -> bool {
+        *self == EFUSE_1_8V_POWER_SWITCH_CONTROL_A::OPEN
+    }
+    #[doc = "Checks if the value of the field is `CLOSE`"]
+    #[inline(always)]
+    pub fn is_close(&self) -> bool {
+        *self == EFUSE_1_8V_POWER_SWITCH_CONTROL_A::CLOSE
+    }
+}
+#[doc = "Field `EFUSE_1_8V_POWER_SWITCH_CONTROL` writer - 1: Open power switch 0: Close power switch"]
+pub type EFUSE_1_8V_POWER_SWITCH_CONTROL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EFUSE_HV_PWRSWT_CTRL_REG_SPEC, EFUSE_1_8V_POWER_SWITCH_CONTROL_A, O>;
+impl<'a, const O: u8> EFUSE_1_8V_POWER_SWITCH_CONTROL_W<'a, O> {
+    #[doc = "Open power switch"]
+    #[inline(always)]
+    pub fn open(self) -> &'a mut W {
+        self.variant(EFUSE_1_8V_POWER_SWITCH_CONTROL_A::OPEN)
+    }
+    #[doc = "Close power switch"]
+    #[inline(always)]
+    pub fn close(self) -> &'a mut W {
+        self.variant(EFUSE_1_8V_POWER_SWITCH_CONTROL_A::CLOSE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - 1: Open power switch 0: Close power switch"]
+    #[inline(always)]
+    pub fn efuse_1_8v_power_switch_control(&self) -> EFUSE_1_8V_POWER_SWITCH_CONTROL_R {
+        EFUSE_1_8V_POWER_SWITCH_CONTROL_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - 1: Open power switch 0: Close power switch"]
+    #[inline(always)]
+    pub fn efuse_1_8v_power_switch_control(&mut self) -> EFUSE_1_8V_POWER_SWITCH_CONTROL_W<0> {
+        EFUSE_1_8V_POWER_SWITCH_CONTROL_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

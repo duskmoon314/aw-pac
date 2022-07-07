@@ -73,8 +73,9 @@ impl CRC_DET_PARA_R {
     }
 }
 #[doc = "Field `CRC_DET_PARA` writer - "]
-pub type CRC_DET_PARA_W<'a> = crate::FieldWriter<'a, u32, SMHC_CSDC_SPEC, u8, CRC_DET_PARA_A, 4, 0>;
-impl<'a> CRC_DET_PARA_W<'a> {
+pub type CRC_DET_PARA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SMHC_CSDC_SPEC, u8, CRC_DET_PARA_A, 4, O>;
+impl<'a, const O: u8> CRC_DET_PARA_W<'a, O> {
     #[doc = "`110`"]
     #[inline(always)]
     pub fn hs400(self) -> &'a mut W {
@@ -96,7 +97,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]
-    pub fn crc_det_para(&mut self) -> CRC_DET_PARA_W {
+    pub fn crc_det_para(&mut self) -> CRC_DET_PARA_W<0> {
         CRC_DET_PARA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

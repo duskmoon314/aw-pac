@@ -71,8 +71,8 @@ impl TCE_R {
     }
 }
 #[doc = "Field `tce` writer - Transfer Control Enable"]
-pub type TCE_W<'a> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TCE_A, 31>;
-impl<'a> TCE_W<'a> {
+pub type TCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TCE_A, O>;
+impl<'a, const O: u8> TCE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn idle(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl MSMS_R {
     }
 }
 #[doc = "Field `msms` writer - Master Sample Standard"]
-pub type MSMS_W<'a> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, MSMS_A, 30>;
-impl<'a> MSMS_W<'a> {
+pub type MSMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, MSMS_A, O>;
+impl<'a, const O: u8> MSMS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn delay(self) -> &'a mut W {
@@ -171,8 +171,8 @@ impl TBC_R {
     }
 }
 #[doc = "Field `tbc` writer - Transfer Bits Completed"]
-pub type TBC_W<'a> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TBC_A, 25>;
-impl<'a> TBC_W<'a> {
+pub type TBC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TBC_A, O>;
+impl<'a, const O: u8> TBC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn busy(self) -> &'a mut W {
@@ -221,8 +221,8 @@ impl TBC_INT_EN_R {
     }
 }
 #[doc = "Field `tbc_int_en` writer - Transfer Bits Completed Interrupt Enable"]
-pub type TBC_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TBC_INT_EN_A, 24>;
-impl<'a> TBC_INT_EN_W<'a> {
+pub type TBC_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TBC_INT_EN_A, O>;
+impl<'a, const O: u8> TBC_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -237,11 +237,11 @@ impl<'a> TBC_INT_EN_W<'a> {
 #[doc = "Field `rx_frm_len` reader - Configure the length of serial data frame of RX"]
 pub type RX_FRM_LEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rx_frm_len` writer - Configure the length of serial data frame of RX"]
-pub type RX_FRM_LEN_W<'a> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, u8, 6, 16>;
+pub type RX_FRM_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, u8, 6, O>;
 #[doc = "Field `tx_frm_len` reader - Configure the length of serial data frame of TX"]
 pub type TX_FRM_LEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `tx_frm_len` writer - Configure the length of serial data frame of TX"]
-pub type TX_FRM_LEN_W<'a> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, u8, 6, 8>;
+pub type TX_FRM_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, u8, 6, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SS_LEVEL_A {
@@ -279,8 +279,8 @@ impl SS_LEVEL_R {
     }
 }
 #[doc = "Field `ss_level` writer - "]
-pub type SS_LEVEL_W<'a> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SS_LEVEL_A, 7>;
-impl<'a> SS_LEVEL_W<'a> {
+pub type SS_LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SS_LEVEL_A, O>;
+impl<'a, const O: u8> SS_LEVEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -329,8 +329,8 @@ impl SS_OWNER_R {
     }
 }
 #[doc = "Field `ss_owner` writer - SS Output Owner Select"]
-pub type SS_OWNER_W<'a> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SS_OWNER_A, 6>;
-impl<'a> SS_OWNER_W<'a> {
+pub type SS_OWNER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SS_OWNER_A, O>;
+impl<'a, const O: u8> SS_OWNER_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn spi_controller(self) -> &'a mut W {
@@ -379,8 +379,8 @@ impl SPOL_R {
     }
 }
 #[doc = "Field `spol` writer - SPI Chip Select Signal Polarity Control"]
-pub type SPOL_W<'a> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SPOL_A, 5>;
-impl<'a> SPOL_W<'a> {
+pub type SPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SPOL_A, O>;
+impl<'a, const O: u8> SPOL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
@@ -447,8 +447,9 @@ impl SS_SEL_R {
     }
 }
 #[doc = "Field `ss_sel` writer - SPI Chip Select"]
-pub type SS_SEL_W<'a> = crate::FieldWriterSafe<'a, u32, SPI_BATC_SPEC, u8, SS_SEL_A, 2, 2>;
-impl<'a> SS_SEL_W<'a> {
+pub type SS_SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, SPI_BATC_SPEC, u8, SS_SEL_A, 2, O>;
+impl<'a, const O: u8> SS_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ss0(self) -> &'a mut W {
@@ -517,8 +518,8 @@ impl WMS_R {
     }
 }
 #[doc = "Field `wms` writer - Work Mode Select"]
-pub type WMS_W<'a> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, WMS_A, 2, 0>;
-impl<'a> WMS_W<'a> {
+pub type WMS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, WMS_A, 2, O>;
+impl<'a, const O: u8> WMS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn byte_aligned(self) -> &'a mut W {
@@ -595,57 +596,57 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Transfer Control Enable"]
     #[inline(always)]
-    pub fn tce(&mut self) -> TCE_W {
+    pub fn tce(&mut self) -> TCE_W<31> {
         TCE_W::new(self)
     }
     #[doc = "Bit 30 - Master Sample Standard"]
     #[inline(always)]
-    pub fn msms(&mut self) -> MSMS_W {
+    pub fn msms(&mut self) -> MSMS_W<30> {
         MSMS_W::new(self)
     }
     #[doc = "Bit 25 - Transfer Bits Completed"]
     #[inline(always)]
-    pub fn tbc(&mut self) -> TBC_W {
+    pub fn tbc(&mut self) -> TBC_W<25> {
         TBC_W::new(self)
     }
     #[doc = "Bit 24 - Transfer Bits Completed Interrupt Enable"]
     #[inline(always)]
-    pub fn tbc_int_en(&mut self) -> TBC_INT_EN_W {
+    pub fn tbc_int_en(&mut self) -> TBC_INT_EN_W<24> {
         TBC_INT_EN_W::new(self)
     }
     #[doc = "Bits 16:21 - Configure the length of serial data frame of RX"]
     #[inline(always)]
-    pub fn rx_frm_len(&mut self) -> RX_FRM_LEN_W {
+    pub fn rx_frm_len(&mut self) -> RX_FRM_LEN_W<16> {
         RX_FRM_LEN_W::new(self)
     }
     #[doc = "Bits 8:13 - Configure the length of serial data frame of TX"]
     #[inline(always)]
-    pub fn tx_frm_len(&mut self) -> TX_FRM_LEN_W {
+    pub fn tx_frm_len(&mut self) -> TX_FRM_LEN_W<8> {
         TX_FRM_LEN_W::new(self)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    pub fn ss_level(&mut self) -> SS_LEVEL_W {
+    pub fn ss_level(&mut self) -> SS_LEVEL_W<7> {
         SS_LEVEL_W::new(self)
     }
     #[doc = "Bit 6 - SS Output Owner Select"]
     #[inline(always)]
-    pub fn ss_owner(&mut self) -> SS_OWNER_W {
+    pub fn ss_owner(&mut self) -> SS_OWNER_W<6> {
         SS_OWNER_W::new(self)
     }
     #[doc = "Bit 5 - SPI Chip Select Signal Polarity Control"]
     #[inline(always)]
-    pub fn spol(&mut self) -> SPOL_W {
+    pub fn spol(&mut self) -> SPOL_W<5> {
         SPOL_W::new(self)
     }
     #[doc = "Bits 2:3 - SPI Chip Select"]
     #[inline(always)]
-    pub fn ss_sel(&mut self) -> SS_SEL_W {
+    pub fn ss_sel(&mut self) -> SS_SEL_W<2> {
         SS_SEL_W::new(self)
     }
     #[doc = "Bits 0:1 - Work Mode Select"]
     #[inline(always)]
-    pub fn wms(&mut self) -> WMS_W {
+    pub fn wms(&mut self) -> WMS_W<0> {
         WMS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,9 @@ impl DMA_PAUSE_R {
     }
 }
 #[doc = "Field `DMA_PAUSE` writer - Pause the DMA Channel Transfer Data"]
-pub type DMA_PAUSE_W<'a> = crate::BitWriter<'a, u32, DMAC_PAU_REG_SPEC, DMA_PAUSE_A, 0>;
-impl<'a> DMA_PAUSE_W<'a> {
+pub type DMA_PAUSE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_PAU_REG_SPEC, DMA_PAUSE_A, O>;
+impl<'a, const O: u8> DMA_PAUSE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn resume(self) -> &'a mut W {
@@ -94,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Pause the DMA Channel Transfer Data"]
     #[inline(always)]
-    pub fn dma_pause(&mut self) -> DMA_PAUSE_W {
+    pub fn dma_pause(&mut self) -> DMA_PAUSE_W<0> {
         DMA_PAUSE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,9 +71,9 @@ impl BUFFER_READ_ADDRESS_UPDATING_R {
     }
 }
 #[doc = "Field `buffer_read_address_updating` writer - "]
-pub type BUFFER_READ_ADDRESS_UPDATING_W<'a> =
-    crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUFFER_READ_ADDRESS_UPDATING_A, 1>;
-impl<'a> BUFFER_READ_ADDRESS_UPDATING_W<'a> {
+pub type BUFFER_READ_ADDRESS_UPDATING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUFFER_READ_ADDRESS_UPDATING_A, O>;
+impl<'a, const O: u8> BUFFER_READ_ADDRESS_UPDATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ready(self) -> &'a mut W {
@@ -122,8 +122,8 @@ impl BUSY_R {
     }
 }
 #[doc = "Field `busy` writer - "]
-pub type BUSY_W<'a> = crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUSY_A, 0>;
-impl<'a> BUSY_W<'a> {
+pub type BUSY_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUSY_A, O>;
+impl<'a, const O: u8> BUSY_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn idle(self) -> &'a mut W {
@@ -150,12 +150,12 @@ impl R {
 impl W {
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn buffer_read_address_updating(&mut self) -> BUFFER_READ_ADDRESS_UPDATING_W {
+    pub fn buffer_read_address_updating(&mut self) -> BUFFER_READ_ADDRESS_UPDATING_W<1> {
         BUFFER_READ_ADDRESS_UPDATING_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn busy(&mut self) -> BUSY_W {
+    pub fn busy(&mut self) -> BUSY_W<0> {
         BUSY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

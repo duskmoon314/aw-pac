@@ -37,16 +37,18 @@ impl From<crate::W<EMAC_TX_FLOW_CTL_SPEC>> for W {
 #[doc = "Field `TX_FLOW_CTL_STA` reader - "]
 pub type TX_FLOW_CTL_STA_R = crate::BitReader<bool>;
 #[doc = "Field `TX_FLOW_CTL_STA` writer - "]
-pub type TX_FLOW_CTL_STA_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, bool, 31>;
+pub type TX_FLOW_CTL_STA_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, bool, O>;
 #[doc = "Field `TX_PAUSE_FRM_SLOT` reader - "]
 pub type TX_PAUSE_FRM_SLOT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TX_PAUSE_FRM_SLOT` writer - "]
-pub type TX_PAUSE_FRM_SLOT_W<'a> =
-    crate::FieldWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, u8, u8, 2, 20>;
+pub type TX_PAUSE_FRM_SLOT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, u8, u8, 2, O>;
 #[doc = "Field `PAUSE_TIME` reader - "]
 pub type PAUSE_TIME_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PAUSE_TIME` writer - "]
-pub type PAUSE_TIME_W<'a> = crate::FieldWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, u16, u16, 16, 4>;
+pub type PAUSE_TIME_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, u16, u16, 16, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ZQP_FRM_EN_A {
@@ -84,8 +86,9 @@ impl ZQP_FRM_EN_R {
     }
 }
 #[doc = "Field `ZQP_FRM_EN` writer - "]
-pub type ZQP_FRM_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, ZQP_FRM_EN_A, 1>;
-impl<'a> ZQP_FRM_EN_W<'a> {
+pub type ZQP_FRM_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, ZQP_FRM_EN_A, O>;
+impl<'a, const O: u8> ZQP_FRM_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -134,9 +137,9 @@ impl TX_FLOW_CTL_EN_R {
     }
 }
 #[doc = "Field `TX_FLOW_CTL_EN` writer - TX Flow Control Enable"]
-pub type TX_FLOW_CTL_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, TX_FLOW_CTL_EN_A, 0>;
-impl<'a> TX_FLOW_CTL_EN_W<'a> {
+pub type TX_FLOW_CTL_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, TX_FLOW_CTL_EN_A, O>;
+impl<'a, const O: u8> TX_FLOW_CTL_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -178,27 +181,27 @@ impl R {
 impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn tx_flow_ctl_sta(&mut self) -> TX_FLOW_CTL_STA_W {
+    pub fn tx_flow_ctl_sta(&mut self) -> TX_FLOW_CTL_STA_W<31> {
         TX_FLOW_CTL_STA_W::new(self)
     }
     #[doc = "Bits 20:21"]
     #[inline(always)]
-    pub fn tx_pause_frm_slot(&mut self) -> TX_PAUSE_FRM_SLOT_W {
+    pub fn tx_pause_frm_slot(&mut self) -> TX_PAUSE_FRM_SLOT_W<20> {
         TX_PAUSE_FRM_SLOT_W::new(self)
     }
     #[doc = "Bits 4:19"]
     #[inline(always)]
-    pub fn pause_time(&mut self) -> PAUSE_TIME_W {
+    pub fn pause_time(&mut self) -> PAUSE_TIME_W<4> {
         PAUSE_TIME_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn zqp_frm_en(&mut self) -> ZQP_FRM_EN_W {
+    pub fn zqp_frm_en(&mut self) -> ZQP_FRM_EN_W<1> {
         ZQP_FRM_EN_W::new(self)
     }
     #[doc = "Bit 0 - TX Flow Control Enable"]
     #[inline(always)]
-    pub fn tx_flow_ctl_en(&mut self) -> TX_FLOW_CTL_EN_W {
+    pub fn tx_flow_ctl_en(&mut self) -> TX_FLOW_CTL_EN_W<0> {
         TX_FLOW_CTL_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

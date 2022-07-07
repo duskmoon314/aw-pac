@@ -37,7 +37,7 @@ impl From<crate::W<SYS_LDO_CTRL_SPEC>> for W {
 #[doc = "Field `SPARE` reader - "]
 pub type SPARE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPARE` writer - "]
-pub type SPARE_W<'a> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, u8, 8, 24>;
+pub type SPARE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, u8, 8, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -573,8 +573,9 @@ impl LDOB_TRIM_R {
     }
 }
 #[doc = "Field `LDOB_TRIM` writer - "]
-pub type LDOB_TRIM_W<'a> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOB_TRIM_A, 8, 8>;
-impl<'a> LDOB_TRIM_W<'a> {
+pub type LDOB_TRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOB_TRIM_A, 8, O>;
+impl<'a, const O: u8> LDOB_TRIM_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn o1_167(self) -> &'a mut W {
@@ -1175,8 +1176,9 @@ impl LDOA_TRIM_R {
     }
 }
 #[doc = "Field `LDOA_TRIM` writer - "]
-pub type LDOA_TRIM_W<'a> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOA_TRIM_A, 8, 0>;
-impl<'a> LDOA_TRIM_W<'a> {
+pub type LDOA_TRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOA_TRIM_A, 8, O>;
+impl<'a, const O: u8> LDOA_TRIM_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn o1_593(self) -> &'a mut W {
@@ -1358,17 +1360,17 @@ impl R {
 impl W {
     #[doc = "Bits 24:31"]
     #[inline(always)]
-    pub fn spare(&mut self) -> SPARE_W {
+    pub fn spare(&mut self) -> SPARE_W<24> {
         SPARE_W::new(self)
     }
     #[doc = "Bits 8:15"]
     #[inline(always)]
-    pub fn ldob_trim(&mut self) -> LDOB_TRIM_W {
+    pub fn ldob_trim(&mut self) -> LDOB_TRIM_W<8> {
         LDOB_TRIM_W::new(self)
     }
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    pub fn ldoa_trim(&mut self) -> LDOA_TRIM_W {
+    pub fn ldoa_trim(&mut self) -> LDOA_TRIM_W<0> {
         LDOA_TRIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

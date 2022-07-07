@@ -37,8 +37,8 @@ impl From<crate::W<LEDC_DATA_FINISH_CNT_SPEC>> for W {
 #[doc = "Field `LED_WAIT_DATA_TIME` reader - "]
 pub type LED_WAIT_DATA_TIME_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LED_WAIT_DATA_TIME` writer - "]
-pub type LED_WAIT_DATA_TIME_W<'a> =
-    crate::FieldWriter<'a, u32, LEDC_DATA_FINISH_CNT_SPEC, u16, u16, 14, 16>;
+pub type LED_WAIT_DATA_TIME_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LEDC_DATA_FINISH_CNT_SPEC, u16, u16, 14, O>;
 #[doc = "Field `LED_DATA_FINISH_CNT` reader - "]
 pub type LED_DATA_FINISH_CNT_R = crate::FieldReader<u16, u16>;
 impl R {
@@ -56,7 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:29"]
     #[inline(always)]
-    pub fn led_wait_data_time(&mut self) -> LED_WAIT_DATA_TIME_W {
+    pub fn led_wait_data_time(&mut self) -> LED_WAIT_DATA_TIME_W<16> {
         LED_WAIT_DATA_TIME_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

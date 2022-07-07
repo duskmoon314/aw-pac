@@ -37,7 +37,7 @@ impl From<crate::W<TWI_DATA_SPEC>> for W {
 #[doc = "Field `data` reader - Data byte transmitted or received"]
 pub type DATA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `data` writer - Data byte transmitted or received"]
-pub type DATA_W<'a> = crate::FieldWriter<'a, u32, TWI_DATA_SPEC, u8, u8, 8, 0>;
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DATA_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Data byte transmitted or received"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Data byte transmitted or received"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
+    pub fn data(&mut self) -> DATA_W<0> {
         DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

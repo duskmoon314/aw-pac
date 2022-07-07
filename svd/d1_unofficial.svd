@@ -11020,61 +11020,455 @@
           <name>LOSC_CTRL_REG</name>
           <description>Low Oscillator Control Register</description>
           <addressOffset>0x0000</addressOffset>
+          <resetValue>0x4010</resetValue>
+          <resetMask>0xFFFFC19F</resetMask>
+          <fields>
+            <field>
+              <name>KEY_FIELD</name>
+              <description>Key Field\n\nThis field should be filled with 0x16AA, and then the bit0 and bit1 can be written with the new value.</description>
+              <bitRange>[31:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>LOSC_AUTO_SWT_FUNCTION</name>
+              <description>LOSC auto switch function disable</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOSC_AUTO_SWT_32K_SEL_EN</name>
+              <description>LOSC auto switch 32K clk source select enable</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable. When the losc losts, the 32k clk source will not change to RC</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable. When the losc losts, the 32k clk source will change to RC (LOSC_SRC_SEL will be changed from 1 to 0)</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTC_HHMMSS_ACCE</name>
+              <description>RTC Hour Minute Second access\n\nAfter writing the RTC HH-MM-SS Register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC HH-MM-SS Register, the RTC HH-MM-SS Register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration.</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RTC_DAY_ACCE</name>
+              <description>RTC DAY access\n\nAfter writing the RTC DAY register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC DAY register, the DAY register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration.</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>EXT_LOSC_EN</name>
+              <description>External 32.768 kHz Crystal Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>EXT_LOSC_GSM</name>
+              <description>External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock.</description>
+              <bitRange>[3:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Low</name>
+                  <description>Low</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>High</name>
+                  <description>High</description>
+                  <value>0b11</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTC_SRC_SEL</name>
+              <description>RTC_TIMER Clock Source Select</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOSC_SRC</name>
+                  <description>LOSC_SRC</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>_24MDIV32K</name>
+                  <description>24MDIV32K\n\nBefore switching the bit, make sure that the 24MDIV32K function is enabled, that is, the bit16 of the 32K Fanout Control Register is 1.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOSC_SRC_SEL</name>
+              <description>LOSC Clock Source Select</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Low</name>
+                  <description>Low frequency clock from 16M RC</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>External</name>
+                  <description>External 32.768 kHz OSC</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>LOSC_AUTO_SWT_STA_REG</name>
           <description>LOSC Auto Switch Status Register</description>
           <addressOffset>0x0004</addressOffset>
+          <fields>
+            <field>
+              <name>EXT_LOSC_STA</name>
+              <description>Work only when the auto switch function is enabled.</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>normally</name>
+                  <description>External 32.768 kHz OSC work normally</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>abnormally</name>
+                  <description>External 32.768 kHz OSC work abnormally</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOSC_AUTO_SWT_PEND</name>
+              <description>LOSC auto switch pending</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>No_effect</name>
+                  <description>No effect</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Auto</name>
+                  <description>Auto switch pending, it means LOSC_SRC_SEL is changed from 1 to 0.\n\nSetting 1 to this bit will clear it.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOSC_SRC_SEL_STA</name>
+              <description>Checking LOSC clock source status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Low</name>
+                  <description>Low frequency clock from 16M RC</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>External</name>
+                  <description>External 32.768 kHz OSC</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>INTOSC_CLK_PRESCAL_REG</name>
           <description>Internal OSC Clock Pre-scalar Register</description>
           <addressOffset>0x0008</addressOffset>
+          <resetValue>0xF</resetValue>
+          <resetMask>0x1F</resetMask>
+          <fields>
+            <field>
+              <name>INTOSC_32K_CLK_PRESCAL</name>
+              <description>Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N.</description>
+              <bitRange>[4:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RTC_DAY_REG</name>
           <description>RTC Year-Month-Day Register</description>
           <addressOffset>0x0010</addressOffset>
+          <fields>
+            <field>
+              <name>DAY</name>
+              <description>Set Day Range from 0 to 65535.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RTC_HH_MM_SS_REG</name>
           <description>RTC Hour-Minute-Second Register</description>
           <addressOffset>0x0014</addressOffset>
+          <fields>
+            <field>
+              <name>HOUR</name>
+              <description>Set hour Range from 0 to 23.</description>
+              <bitRange>[20:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MINUTE</name>
+              <description>Set minute Range from 0 to 59.</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SECOND</name>
+              <description>Set second Range from 0 to 59.</description>
+              <bitRange>[5:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM0_DAY_SET_REG</name>
           <description>Alarm 0 Day Setting Register</description>
           <addressOffset>0x0020</addressOffset>
+          <fields>
+            <field>
+              <name>ALARM0_COUNTER</name>
+              <description>Alarm 0 Counter is based on Day.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM0_CUR_VLU_REG</name>
           <description>Alarm 0 Counter Current Value Register</description>
           <addressOffset>0x0024</addressOffset>
+          <fields>
+            <field>
+              <name>HOUR</name>
+              <description>Current hour Range from 0 to 23.</description>
+              <bitRange>[20:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>MINUTE</name>
+              <description>Current minute Range from 0 to 59.</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>SECOND</name>
+              <description>Current second Range from 0 to 59.</description>
+              <bitRange>[5:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM0_ENABLE_REG</name>
           <description>Alarm 0 Enable Register</description>
           <addressOffset>0x0028</addressOffset>
+          <fields>
+            <field>
+              <name>ALM_0_EN</name>
+              <description>Alarm 0 Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM0_IRQ_EN</name>
           <description>Alarm 0 IRQ Enable Register</description>
           <addressOffset>0x002C</addressOffset>
+          <fields>
+            <field>
+              <name>ALARM0_IRQ_EN</name>
+              <description>Alarm 0 IRQ Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM0_IRQ_STA_REG</name>
           <description>Alarm 0 IRQ Status Register</description>
           <addressOffset>0x0030</addressOffset>
+          <fields>
+            <field>
+              <name>ALARM0_IRQ_PEND</name>
+              <description>Alarm 0 IRQ Pending bit</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>No_effect</name>
+                  <description>No effect</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Pending</name>
+                  <description>Pending, alarm 0 counter value is reached\n\nIf alarm 0 irq enable is set to 1, the pending bit will be sent to the interrupt controller.</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM_CONFIG_REG</name>
           <description>Alarm Configuration Register</description>
           <addressOffset>0x0050</addressOffset>
+          <fields>
+            <field>
+              <name>ALARM_WAKEUP</name>
+              <description>Configuration of alarm wake up output.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable alarm wake up output</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable alarm wake up output</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>_32K_FOUT_CTRL_GATING_REG</name>
           <description>32K Fanout Control Gating Register</description>
           <addressOffset>0x0060</addressOffset>
+          <fields>
+            <field>
+              <name>HOSC_TO_32K_DIVIDER_ENABLE</name>
+              <description>HOSC to 32k divider enable</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable the hosc 24M to 32K divider circuit</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable the hosc 24M to 32K divider circuit</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>LOSC_OUT_SRC_SEL</name>
+              <description>LOSC output source select</description>
+              <bitRange>[2:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RTC_32K</name>
+                  <description>RTC_32K (select by RC_CLK_SRC_SEL LOSC_SRC_SEL)</description>
+                  <value>0b00</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOSC</name>
+                  <description>LOSC</description>
+                  <value>0b01</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HOSC</name>
+                  <description>HOSC divided 32K</description>
+                  <value>0b10</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>_32K_FANOUT_GATING</name>
+              <description>LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default.</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MASK</name>
+                  <description>Mask LOSC output gating</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable LOSC output gating</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>8</dim>
@@ -11082,46 +11476,340 @@
           <name>GP_DATA_REG%s</name>
           <description>General Purpose Register</description>
           <addressOffset>0x0100</addressOffset>
+          <fields>
+            <field>
+              <name>GP_DATA</name>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>FBOOT_INFO_REG0</name>
-          <description>Fast Boot Information Register0</description>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>FBOOT_INFO_REG%s</name>
+          <description>Fast Boot Information Register [01]</description>
           <addressOffset>0x0120</addressOffset>
-        </register>
-        <register>
-          <name>FBOOT_INFO_REG1</name>
-          <description>Fast Boot Information Register1</description>
-          <addressOffset>0x0124</addressOffset>
+          <fields>
+            <field>
+              <name>FBOOT_INFO</name>
+              <description>Fast Boot Information [i], refer to BROM spec.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DCXO_CTRL_REG</name>
           <description>DCXO Control Register</description>
           <addressOffset>0x0160</addressOffset>
+          <resetValue>0x883F10F7</resetValue>
+          <resetMask>0x8F7F1FF7</resetMask>
+          <fields>
+            <field>
+              <name>CLK_REQ_ENB</name>
+              <description>Clock REQ enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable DCXO wake up function</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable DCXO wake up function</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DCXO_ICTRL</name>
+              <description>DCXO current control value</description>
+              <bitRange>[27:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DCXO_TRIM</name>
+              <description>DCXO cap array value\n\nThe capacity cell is 55 fF. </description>
+              <bitRange>[22:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DCXO_BG</name>
+              <description>DCXO bandgap output voltage</description>
+              <bitRange>[12:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DCXO_LDO_INRUSHB</name>
+              <description>DCXO LDO driving capacity signal, active high</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>XTAL_MODE</name>
+              <description>Xtal mode enable signal, active high</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>For_external</name>
+                  <description>For external clk input mode</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>For_normal_mode</name>
+                  <description>For normal mode</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>DCXO_RFCLK_ENHANCE</name>
+              <description>DCXO rfclk enhance\n\nEnhance driving capacity of output OUT_RF_REFCLK, 0x0 for 5 pF, 0x1 for 10 pF, 0x2 for 15 pF, 0x3 for 20 pF.</description>
+              <bitRange>[5:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RSTO_DLY_SEL</name>
+              <description>For Debug Use Only.\n\nIt cannot configure to 0 in normal state.</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DCXO_EN</name>
+              <description>DCXO enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>CLK16M_RC_EN</name>
+              <description>The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M. </description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Enable</name>
+                  <description>Enable</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Disable</name>
+                  <description>Disable</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RTC_VIO_REG</name>
           <description>RTC_VIO Regulation Register</description>
           <addressOffset>0x0190</addressOffset>
+          <resetValue>0x4</resetValue>
+          <resetMask>0x17</resetMask>
+          <fields>
+            <field>
+              <name>V_SEL</name>
+              <description>VDD Select</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Resistance</name>
+                  <description>Resistance divider</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Band</name>
+                  <description>Band gap</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTC_VIO_REGU</name>
+              <description>RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V.</description>
+              <bitRange>[2:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>V_1_0</name>
+                  <description>1.0 V</description>
+                  <value>0b000</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V_0_65</name>
+                  <description>0.65 V (the configuration can cause RTC reset)</description>
+                  <value>0b001</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V_0_7</name>
+                  <description>0.7 V</description>
+                  <value>0b010</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V_0_8</name>
+                  <description>0.8 V</description>
+                  <value>0b011</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V_0_9</name>
+                  <description>0.9 V</description>
+                  <value>0b100</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V_1_1</name>
+                  <description>1.1 V</description>
+                  <value>0b101</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V_1_2</name>
+                  <description>1.2 V</description>
+                  <value>0b110</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V_1_3</name>
+                  <description>1.3 V</description>
+                  <value>0b111</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>IC_CHARA_REG</name>
           <description>IC Characteristic Register</description>
           <addressOffset>0x01F0</addressOffset>
+          <fields>
+            <field>
+              <name>KEY_FIELD</name>
+              <description>Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation.</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ID_DATA</name>
+              <description>Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>VDD_OFF_GATING_CTRL_REG</name>
           <description>VDD Off Gating Control Register</description>
           <addressOffset>0x01F4</addressOffset>
+          <resetValue>0x21</resetValue>
+          <resetMask>0xFFFF8FF1</resetMask>
+          <fields>
+            <field>
+              <name>KEY_FIELD</name>
+              <description>Key Field\n\nThis field should be filled with 0x16AA, and then the bit 15 can be configured.</description>
+              <bitRange>[31:16]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>PWROFF_GAT_RTC_CFG</name>
+              <description>Power off gating control signal\n\n(For Debug Use Only)\n\nWhen use vdd_sys to RTC isolation software control, write this bit to 1. It will only be cleared by resetb release.</description>
+              <bitRange>[15:15]</bitRange>
+              <access>write-only</access>
+            </field>
+            <field>
+              <name>VCCIO_DET_SPARE</name>
+              <description>- Bit[7:5]: Reserved, default=0\n- Bit[4]: Bypass debounce circuit, defaule=0\n- Bit[3]: Enable control, defaule=0 \n  - 0: Disable VCC-IO detection\n  - 1: Force the detection output\n- Bit[2:0]: Gear adjustment\n  - 000: Detection threshold is 2.5 V\n  - 001: Detection threshold is 2.6 V\n  - 010: Detection threshold is 2.7 V (default)\n  - 011: Detection threshold is 2.8 V\n  - 100: Detection threshold is 2.9 V\n  - 101: Detection threshold is 3 V\n  - 110: N/A\n  - 111: N/A</description>
+              <bitRange>[11:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>VCCIO_DET_BYPASS_EN</name>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>not_bypass</name>
+                  <description>not bypass</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>bypass</name>
+                  <description>bypass</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>EFUSE_HV_PWRSWT_CTRL_REG</name>
           <description>Efuse High Voltage Power Switch Control Register</description>
           <addressOffset>0x0204</addressOffset>
+          <fields>
+            <field>
+              <name>EFUSE_1_8V_POWER_SWITCH_CONTROL</name>
+              <description>1: Open power switch 
+0: Close power switch</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Open</name>
+                  <description>Open power switch</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Close</name>
+                  <description>Close power switch</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>RTC_SPI_CLK_CTRL_REG</name>
           <description>RTC SPI Clock Control Register</description>
           <addressOffset>0x0310</addressOffset>
+          <resetValue>0x9</resetValue>
+          <resetMask>0x8000001F</resetMask>
+          <fields>
+            <field>
+              <name>RTC_SPI_CLK_GATING</name>
+              <description>RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Gating</name>
+                  <description>Gating</description>
+                  <value>0b0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>Not_Gating</name>
+                  <description>Not Gating</description>
+                  <value>0b1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>RTC_SPI_CLK_DIV</name>
+              <description>RTC Reg CFG SPI Clock Divider: M\n\nActual SPI Clock = AHBS1/(M+1), (0 to 15) The default frequency of AHBS1 is 200 MHz, and the default frequency of SPI Clock is 20 MHz.\n\nNote: The SPI clock can not exceed 50 MHz, or else the RTC register may be abnormal.</description>
+              <bitRange>[4:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

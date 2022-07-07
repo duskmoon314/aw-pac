@@ -71,9 +71,9 @@ impl LINESTATE_CHANGE_DETECT_R {
     }
 }
 #[doc = "Field `LINESTATE_CHANGE_DETECT` writer - Linestate Change Detect"]
-pub type LINESTATE_CHANGE_DETECT_W<'a> =
-    crate::BitWriter1C<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_DETECT_A, 16>;
-impl<'a> LINESTATE_CHANGE_DETECT_W<'a> {
+pub type LINESTATE_CHANGE_DETECT_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_DETECT_A, O>;
+impl<'a, const O: u8> LINESTATE_CHANGE_DETECT_W<'a, O> {
     #[doc = "Linestate change not dected"]
     #[inline(always)]
     pub fn not_dected(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl REMOTE_WAKEUP_ENABLE_R {
     }
 }
 #[doc = "Field `REMOTE_WAKEUP_ENABLE` writer - Remote Wakeup Enable"]
-pub type REMOTE_WAKEUP_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, REMOTE_WAKEUP_ENABLE_A, 3>;
-impl<'a> REMOTE_WAKEUP_ENABLE_W<'a> {
+pub type REMOTE_WAKEUP_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, REMOTE_WAKEUP_ENABLE_A, O>;
+impl<'a, const O: u8> REMOTE_WAKEUP_ENABLE_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -174,9 +174,9 @@ impl LINESTATE_CHANGE_INTERRUPT_ENABLE_R {
     }
 }
 #[doc = "Field `LINESTATE_CHANGE_INTERRUPT_ENABLE` writer - Linestate Change Interrupt Enable"]
-pub type LINESTATE_CHANGE_INTERRUPT_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_INTERRUPT_ENABLE_A, 1>;
-impl<'a> LINESTATE_CHANGE_INTERRUPT_ENABLE_W<'a> {
+pub type LINESTATE_CHANGE_INTERRUPT_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_INTERRUPT_ENABLE_A, O>;
+impl<'a, const O: u8> LINESTATE_CHANGE_INTERRUPT_ENABLE_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -225,9 +225,9 @@ impl LINESTATE_CHANGE_DETECT_ENABLE_R {
     }
 }
 #[doc = "Field `LINESTATE_CHANGE_DETECT_ENABLE` writer - Linestate Change Detect Enable"]
-pub type LINESTATE_CHANGE_DETECT_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_DETECT_ENABLE_A, 0>;
-impl<'a> LINESTATE_CHANGE_DETECT_ENABLE_W<'a> {
+pub type LINESTATE_CHANGE_DETECT_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_DETECT_ENABLE_A, O>;
+impl<'a, const O: u8> LINESTATE_CHANGE_DETECT_ENABLE_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -264,22 +264,22 @@ impl R {
 impl W {
     #[doc = "Bit 16 - Linestate Change Detect"]
     #[inline(always)]
-    pub fn linestate_change_detect(&mut self) -> LINESTATE_CHANGE_DETECT_W {
+    pub fn linestate_change_detect(&mut self) -> LINESTATE_CHANGE_DETECT_W<16> {
         LINESTATE_CHANGE_DETECT_W::new(self)
     }
     #[doc = "Bit 3 - Remote Wakeup Enable"]
     #[inline(always)]
-    pub fn remote_wakeup_enable(&mut self) -> REMOTE_WAKEUP_ENABLE_W {
+    pub fn remote_wakeup_enable(&mut self) -> REMOTE_WAKEUP_ENABLE_W<3> {
         REMOTE_WAKEUP_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - Linestate Change Interrupt Enable"]
     #[inline(always)]
-    pub fn linestate_change_interrupt_enable(&mut self) -> LINESTATE_CHANGE_INTERRUPT_ENABLE_W {
+    pub fn linestate_change_interrupt_enable(&mut self) -> LINESTATE_CHANGE_INTERRUPT_ENABLE_W<1> {
         LINESTATE_CHANGE_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Bit 0 - Linestate Change Detect Enable"]
     #[inline(always)]
-    pub fn linestate_change_detect_enable(&mut self) -> LINESTATE_CHANGE_DETECT_ENABLE_W {
+    pub fn linestate_change_detect_enable(&mut self) -> LINESTATE_CHANGE_DETECT_ENABLE_W<0> {
         LINESTATE_CHANGE_DETECT_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,9 +71,9 @@ impl DDR_RES240_TRIMMING_SEL_R {
     }
 }
 #[doc = "Field `DDR_RES240_Trimming_SEL` writer - 240ohms Resistor Trimming Source Select"]
-pub type DDR_RES240_TRIMMING_SEL_W<'a> =
-    crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, DDR_RES240_TRIMMING_SEL_A, 8>;
-impl<'a> DDR_RES240_TRIMMING_SEL_W<'a> {
+pub type DDR_RES240_TRIMMING_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, DDR_RES240_TRIMMING_SEL_A, O>;
+impl<'a, const O: u8> DDR_RES240_TRIMMING_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn rescal(self) -> &'a mut W {
@@ -115,8 +115,9 @@ impl RESCAL_MODE_R {
     }
 }
 #[doc = "Field `RESCAL_MODE` writer - RESCAL Calibration Mode Select"]
-pub type RESCAL_MODE_W<'a> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, RESCAL_MODE_A, 2>;
-impl<'a> RESCAL_MODE_W<'a> {
+pub type RESCAL_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, RESCAL_MODE_A, O>;
+impl<'a, const O: u8> RESCAL_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn auto_calibration(self) -> &'a mut W {
@@ -160,8 +161,9 @@ impl CAL_ANA_EN_R {
     }
 }
 #[doc = "Field `CAL_ANA_EN` writer - Calibration Circuits Analog Enable"]
-pub type CAL_ANA_EN_W<'a> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_ANA_EN_A, 1>;
-impl<'a> CAL_ANA_EN_W<'a> {
+pub type CAL_ANA_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_ANA_EN_A, O>;
+impl<'a, const O: u8> CAL_ANA_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -210,8 +212,8 @@ impl CAL_EN_R {
     }
 }
 #[doc = "Field `CAL_EN` writer - Auto Calibration Enable"]
-pub type CAL_EN_W<'a> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_EN_A, 0>;
-impl<'a> CAL_EN_W<'a> {
+pub type CAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_EN_A, O>;
+impl<'a, const O: u8> CAL_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -248,22 +250,22 @@ impl R {
 impl W {
     #[doc = "Bit 8 - 240ohms Resistor Trimming Source Select"]
     #[inline(always)]
-    pub fn ddr_res240_trimming_sel(&mut self) -> DDR_RES240_TRIMMING_SEL_W {
+    pub fn ddr_res240_trimming_sel(&mut self) -> DDR_RES240_TRIMMING_SEL_W<8> {
         DDR_RES240_TRIMMING_SEL_W::new(self)
     }
     #[doc = "Bit 2 - RESCAL Calibration Mode Select"]
     #[inline(always)]
-    pub fn rescal_mode(&mut self) -> RESCAL_MODE_W {
+    pub fn rescal_mode(&mut self) -> RESCAL_MODE_W<2> {
         RESCAL_MODE_W::new(self)
     }
     #[doc = "Bit 1 - Calibration Circuits Analog Enable"]
     #[inline(always)]
-    pub fn cal_ana_en(&mut self) -> CAL_ANA_EN_W {
+    pub fn cal_ana_en(&mut self) -> CAL_ANA_EN_W<1> {
         CAL_ANA_EN_W::new(self)
     }
     #[doc = "Bit 0 - Auto Calibration Enable"]
     #[inline(always)]
-    pub fn cal_en(&mut self) -> CAL_EN_W {
+    pub fn cal_en(&mut self) -> CAL_EN_W<0> {
         CAL_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

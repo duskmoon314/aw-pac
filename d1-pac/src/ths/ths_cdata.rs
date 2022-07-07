@@ -37,7 +37,8 @@ impl From<crate::W<THS_CDATA_SPEC>> for W {
 #[doc = "Field `THS_CDATA` reader - Thermal sensor calibration data"]
 pub type THS_CDATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `THS_CDATA` writer - Thermal sensor calibration data"]
-pub type THS_CDATA_W<'a> = crate::FieldWriter<'a, u32, THS_CDATA_SPEC, u16, u16, 12, 0>;
+pub type THS_CDATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, THS_CDATA_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Thermal sensor calibration data"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Thermal sensor calibration data"]
     #[inline(always)]
-    pub fn ths_cdata(&mut self) -> THS_CDATA_W {
+    pub fn ths_cdata(&mut self) -> THS_CDATA_W<0> {
         THS_CDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

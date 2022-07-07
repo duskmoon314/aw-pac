@@ -71,9 +71,9 @@ impl RGMII_LINK_STA_P_R {
     }
 }
 #[doc = "Field `RGMII_LINK_STA_P` writer - RMII Link Status Changed Interrupt Pending"]
-pub type RGMII_LINK_STA_P_W<'a> =
-    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RGMII_LINK_STA_P_A, 16>;
-impl<'a> RGMII_LINK_STA_P_W<'a> {
+pub type RGMII_LINK_STA_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RGMII_LINK_STA_P_A, O>;
+impl<'a, const O: u8> RGMII_LINK_STA_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -122,8 +122,9 @@ impl RX_EARLY_P_R {
     }
 }
 #[doc = "Field `RX_EARLY_P` writer - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
-pub type RX_EARLY_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_EARLY_P_A, 13>;
-impl<'a> RX_EARLY_P_W<'a> {
+pub type RX_EARLY_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_EARLY_P_A, O>;
+impl<'a, const O: u8> RX_EARLY_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -172,8 +173,9 @@ impl RX_OVERFLOW_P_R {
     }
 }
 #[doc = "Field `RX_OVERFLOW_P` writer - RX FIFO Overflow Error Interrupt Pending"]
-pub type RX_OVERFLOW_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_OVERFLOW_P_A, 12>;
-impl<'a> RX_OVERFLOW_P_W<'a> {
+pub type RX_OVERFLOW_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_OVERFLOW_P_A, O>;
+impl<'a, const O: u8> RX_OVERFLOW_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -222,8 +224,9 @@ impl RX_TIMEOUT_P_R {
     }
 }
 #[doc = "Field `RX_TIMEOUT_P` writer - RX Timeout Interrupt Pending"]
-pub type RX_TIMEOUT_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_TIMEOUT_P_A, 11>;
-impl<'a> RX_TIMEOUT_P_W<'a> {
+pub type RX_TIMEOUT_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_TIMEOUT_P_A, O>;
+impl<'a, const O: u8> RX_TIMEOUT_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -238,7 +241,8 @@ impl<'a> RX_TIMEOUT_P_W<'a> {
 #[doc = "Field `RX_DMA_STOPPED_P` reader - When this bit asserted, the RX DMA FSM is stopped."]
 pub type RX_DMA_STOPPED_P_R = crate::BitReader<bool>;
 #[doc = "Field `RX_DMA_STOPPED_P` writer - When this bit asserted, the RX DMA FSM is stopped."]
-pub type RX_DMA_STOPPED_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, bool, 10>;
+pub type RX_DMA_STOPPED_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, bool, O>;
 #[doc = "RX Buffer UA Interrupt Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_BUF_UA_P_A {
@@ -276,8 +280,9 @@ impl RX_BUF_UA_P_R {
     }
 }
 #[doc = "Field `RX_BUF_UA_P` writer - RX Buffer UA Interrupt Pending"]
-pub type RX_BUF_UA_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_BUF_UA_P_A, 9>;
-impl<'a> RX_BUF_UA_P_W<'a> {
+pub type RX_BUF_UA_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_BUF_UA_P_A, O>;
+impl<'a, const O: u8> RX_BUF_UA_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -326,8 +331,8 @@ impl RX_P_R {
     }
 }
 #[doc = "Field `RX_P` writer - Frame RX Completed Interrupt Pending"]
-pub type RX_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_P_A, 8>;
-impl<'a> RX_P_W<'a> {
+pub type RX_P_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_P_A, O>;
+impl<'a, const O: u8> RX_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -376,8 +381,9 @@ impl TX_EARLY_P_R {
     }
 }
 #[doc = "Field `TX_EARLY_P` writer - Total interrupt pending which the frame is transmitted to FIFO"]
-pub type TX_EARLY_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_EARLY_P_A, 5>;
-impl<'a> TX_EARLY_P_W<'a> {
+pub type TX_EARLY_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_EARLY_P_A, O>;
+impl<'a, const O: u8> TX_EARLY_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -426,8 +432,9 @@ impl TX_UNDERFLOW_P_R {
     }
 }
 #[doc = "Field `TX_UNDERFLOW_P` writer - TX FIFO Underflow Interrupt Pending"]
-pub type TX_UNDERFLOW_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_UNDERFLOW_P_A, 4>;
-impl<'a> TX_UNDERFLOW_P_W<'a> {
+pub type TX_UNDERFLOW_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_UNDERFLOW_P_A, O>;
+impl<'a, const O: u8> TX_UNDERFLOW_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -476,8 +483,9 @@ impl TX_TIMEOUT_P_R {
     }
 }
 #[doc = "Field `TX_TIMEOUT_P` writer - Transmitter Timeout Interrupt Pending"]
-pub type TX_TIMEOUT_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_TIMEOUT_P_A, 3>;
-impl<'a> TX_TIMEOUT_P_W<'a> {
+pub type TX_TIMEOUT_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_TIMEOUT_P_A, O>;
+impl<'a, const O: u8> TX_TIMEOUT_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -526,8 +534,9 @@ impl TX_BUF_UA_P_R {
     }
 }
 #[doc = "Field `TX_BUF_UA_P` writer - TX Buffer UA Interrupt Pending"]
-pub type TX_BUF_UA_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_BUF_UA_P_A, 2>;
-impl<'a> TX_BUF_UA_P_W<'a> {
+pub type TX_BUF_UA_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_BUF_UA_P_A, O>;
+impl<'a, const O: u8> TX_BUF_UA_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -576,9 +585,9 @@ impl TX_DMA_STOPPED_P_R {
     }
 }
 #[doc = "Field `TX_DMA_STOPPED_P` writer - Transmission DMA Stopped Interrupt Pending"]
-pub type TX_DMA_STOPPED_P_W<'a> =
-    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_DMA_STOPPED_P_A, 1>;
-impl<'a> TX_DMA_STOPPED_P_W<'a> {
+pub type TX_DMA_STOPPED_P_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_DMA_STOPPED_P_A, O>;
+impl<'a, const O: u8> TX_DMA_STOPPED_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -627,8 +636,8 @@ impl TX_P_R {
     }
 }
 #[doc = "Field `TX_P` writer - Frame Transmission Interrupt Pending"]
-pub type TX_P_W<'a> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_P_A, 0>;
-impl<'a> TX_P_W<'a> {
+pub type TX_P_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_P_A, O>;
+impl<'a, const O: u8> TX_P_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -710,67 +719,67 @@ impl R {
 impl W {
     #[doc = "Bit 16 - RMII Link Status Changed Interrupt Pending"]
     #[inline(always)]
-    pub fn rgmii_link_sta_p(&mut self) -> RGMII_LINK_STA_P_W {
+    pub fn rgmii_link_sta_p(&mut self) -> RGMII_LINK_STA_P_W<16> {
         RGMII_LINK_STA_P_W::new(self)
     }
     #[doc = "Bit 13 - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
     #[inline(always)]
-    pub fn rx_early_p(&mut self) -> RX_EARLY_P_W {
+    pub fn rx_early_p(&mut self) -> RX_EARLY_P_W<13> {
         RX_EARLY_P_W::new(self)
     }
     #[doc = "Bit 12 - RX FIFO Overflow Error Interrupt Pending"]
     #[inline(always)]
-    pub fn rx_overflow_p(&mut self) -> RX_OVERFLOW_P_W {
+    pub fn rx_overflow_p(&mut self) -> RX_OVERFLOW_P_W<12> {
         RX_OVERFLOW_P_W::new(self)
     }
     #[doc = "Bit 11 - RX Timeout Interrupt Pending"]
     #[inline(always)]
-    pub fn rx_timeout_p(&mut self) -> RX_TIMEOUT_P_W {
+    pub fn rx_timeout_p(&mut self) -> RX_TIMEOUT_P_W<11> {
         RX_TIMEOUT_P_W::new(self)
     }
     #[doc = "Bit 10 - When this bit asserted, the RX DMA FSM is stopped."]
     #[inline(always)]
-    pub fn rx_dma_stopped_p(&mut self) -> RX_DMA_STOPPED_P_W {
+    pub fn rx_dma_stopped_p(&mut self) -> RX_DMA_STOPPED_P_W<10> {
         RX_DMA_STOPPED_P_W::new(self)
     }
     #[doc = "Bit 9 - RX Buffer UA Interrupt Pending"]
     #[inline(always)]
-    pub fn rx_buf_ua_p(&mut self) -> RX_BUF_UA_P_W {
+    pub fn rx_buf_ua_p(&mut self) -> RX_BUF_UA_P_W<9> {
         RX_BUF_UA_P_W::new(self)
     }
     #[doc = "Bit 8 - Frame RX Completed Interrupt Pending"]
     #[inline(always)]
-    pub fn rx_p(&mut self) -> RX_P_W {
+    pub fn rx_p(&mut self) -> RX_P_W<8> {
         RX_P_W::new(self)
     }
     #[doc = "Bit 5 - Total interrupt pending which the frame is transmitted to FIFO"]
     #[inline(always)]
-    pub fn tx_early_p(&mut self) -> TX_EARLY_P_W {
+    pub fn tx_early_p(&mut self) -> TX_EARLY_P_W<5> {
         TX_EARLY_P_W::new(self)
     }
     #[doc = "Bit 4 - TX FIFO Underflow Interrupt Pending"]
     #[inline(always)]
-    pub fn tx_underflow_p(&mut self) -> TX_UNDERFLOW_P_W {
+    pub fn tx_underflow_p(&mut self) -> TX_UNDERFLOW_P_W<4> {
         TX_UNDERFLOW_P_W::new(self)
     }
     #[doc = "Bit 3 - Transmitter Timeout Interrupt Pending"]
     #[inline(always)]
-    pub fn tx_timeout_p(&mut self) -> TX_TIMEOUT_P_W {
+    pub fn tx_timeout_p(&mut self) -> TX_TIMEOUT_P_W<3> {
         TX_TIMEOUT_P_W::new(self)
     }
     #[doc = "Bit 2 - TX Buffer UA Interrupt Pending"]
     #[inline(always)]
-    pub fn tx_buf_ua_p(&mut self) -> TX_BUF_UA_P_W {
+    pub fn tx_buf_ua_p(&mut self) -> TX_BUF_UA_P_W<2> {
         TX_BUF_UA_P_W::new(self)
     }
     #[doc = "Bit 1 - Transmission DMA Stopped Interrupt Pending"]
     #[inline(always)]
-    pub fn tx_dma_stopped_p(&mut self) -> TX_DMA_STOPPED_P_W {
+    pub fn tx_dma_stopped_p(&mut self) -> TX_DMA_STOPPED_P_W<1> {
         TX_DMA_STOPPED_P_W::new(self)
     }
     #[doc = "Bit 0 - Frame Transmission Interrupt Pending"]
     #[inline(always)]
-    pub fn tx_p(&mut self) -> TX_P_W {
+    pub fn tx_p(&mut self) -> TX_P_W<0> {
         TX_P_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

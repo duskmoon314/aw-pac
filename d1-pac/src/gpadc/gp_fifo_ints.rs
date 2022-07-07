@@ -71,9 +71,9 @@ impl FIFO_OVERRUN_PENDING_R {
     }
 }
 #[doc = "Field `FIFO_OVERRUN_PENDING` writer - ADC FIFO Overrun IRQ Pending"]
-pub type FIFO_OVERRUN_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_OVERRUN_PENDING_A, 17>;
-impl<'a> FIFO_OVERRUN_PENDING_W<'a> {
+pub type FIFO_OVERRUN_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_OVERRUN_PENDING_A, O>;
+impl<'a, const O: u8> FIFO_OVERRUN_PENDING_W<'a, O> {
     #[doc = "No Pending IRQ"]
     #[inline(always)]
     pub fn np_pending(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl FIFO_DATA_PENDING_R {
     }
 }
 #[doc = "Field `FIFO_DATA_PENDING` writer - ADC FIFO Data Available Pending Bit"]
-pub type FIFO_DATA_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_DATA_PENDING_A, 16>;
-impl<'a> FIFO_DATA_PENDING_W<'a> {
+pub type FIFO_DATA_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_DATA_PENDING_A, O>;
+impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
     #[doc = "NO Pending IRQ"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -158,12 +158,12 @@ impl R {
 impl W {
     #[doc = "Bit 17 - ADC FIFO Overrun IRQ Pending"]
     #[inline(always)]
-    pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W {
+    pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W<17> {
         FIFO_OVERRUN_PENDING_W::new(self)
     }
     #[doc = "Bit 16 - ADC FIFO Data Available Pending Bit"]
     #[inline(always)]
-    pub fn fifo_data_pending(&mut self) -> FIFO_DATA_PENDING_W {
+    pub fn fifo_data_pending(&mut self) -> FIFO_DATA_PENDING_W<16> {
         FIFO_DATA_PENDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

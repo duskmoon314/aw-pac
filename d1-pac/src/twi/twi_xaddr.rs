@@ -37,7 +37,7 @@ impl From<crate::W<TWI_XADDR_SPEC>> for W {
 #[doc = "Field `SLAX` reader - Extend Slave Address\n\nSLAX\\[7:0\\]"]
 pub type SLAX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SLAX` writer - Extend Slave Address\n\nSLAX\\[7:0\\]"]
-pub type SLAX_W<'a> = crate::FieldWriter<'a, u32, TWI_XADDR_SPEC, u8, u8, 8, 0>;
+pub type SLAX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_XADDR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Extend Slave Address\n\nSLAX\\[7:0\\]"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Extend Slave Address\n\nSLAX\\[7:0\\]"]
     #[inline(always)]
-    pub fn slax(&mut self) -> SLAX_W {
+    pub fn slax(&mut self) -> SLAX_W<0> {
         SLAX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_DS_DL_SPEC>> for W {
 #[doc = "Field `DS_DL_CAL_START` reader - Data Strobe Delay Calibration Start"]
 pub type DS_DL_CAL_START_R = crate::BitReader<bool>;
 #[doc = "Field `DS_DL_CAL_START` writer - Data Strobe Delay Calibration Start"]
-pub type DS_DL_CAL_START_W<'a> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, 15>;
+pub type DS_DL_CAL_START_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, O>;
 #[doc = "Field `DS_DL_CAL_DONE` reader - Data Strobe Delay Calibration Done"]
 pub type DS_DL_CAL_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `DS_DL` reader - Data Strobe Delay"]
@@ -45,11 +45,11 @@ pub type DS_DL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DS_DL_SW_EN` reader - Sample Delay Software Enable"]
 pub type DS_DL_SW_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DS_DL_SW_EN` writer - Sample Delay Software Enable"]
-pub type DS_DL_SW_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, 7>;
+pub type DS_DL_SW_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, O>;
 #[doc = "Field `DS_DL_SW` reader - Data Storbe Delay Software"]
 pub type DS_DL_SW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DS_DL_SW` writer - Data Storbe Delay Software"]
-pub type DS_DL_SW_W<'a> = crate::FieldWriter<'a, u32, SMHC_DS_DL_SPEC, u8, u8, 6, 0>;
+pub type DS_DL_SW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_DS_DL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 15 - Data Strobe Delay Calibration Start"]
     #[inline(always)]
@@ -80,17 +80,17 @@ impl R {
 impl W {
     #[doc = "Bit 15 - Data Strobe Delay Calibration Start"]
     #[inline(always)]
-    pub fn ds_dl_cal_start(&mut self) -> DS_DL_CAL_START_W {
+    pub fn ds_dl_cal_start(&mut self) -> DS_DL_CAL_START_W<15> {
         DS_DL_CAL_START_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
-    pub fn ds_dl_sw_en(&mut self) -> DS_DL_SW_EN_W {
+    pub fn ds_dl_sw_en(&mut self) -> DS_DL_SW_EN_W<7> {
         DS_DL_SW_EN_W::new(self)
     }
     #[doc = "Bits 0:5 - Data Storbe Delay Software"]
     #[inline(always)]
-    pub fn ds_dl_sw(&mut self) -> DS_DL_SW_W {
+    pub fn ds_dl_sw(&mut self) -> DS_DL_SW_W<0> {
         DS_DL_SW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

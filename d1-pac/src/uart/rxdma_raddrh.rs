@@ -37,7 +37,7 @@ impl From<crate::W<RXDMA_RADDRH_SPEC>> for W {
 #[doc = "Field `raddr` reader - RXDMA Current Read Address \\[33:32\\]"]
 pub type RADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `raddr` writer - RXDMA Current Read Address \\[33:32\\]"]
-pub type RADDR_W<'a> = crate::FieldWriter<'a, u32, RXDMA_RADDRH_SPEC, u8, u8, 2, 0>;
+pub type RADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RXDMA_RADDRH_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:1 - RXDMA Current Read Address \\[33:32\\]"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - RXDMA Current Read Address \\[33:32\\]"]
     #[inline(always)]
-    pub fn raddr(&mut self) -> RADDR_W {
+    pub fn raddr(&mut self) -> RADDR_W<0> {
         RADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

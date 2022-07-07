@@ -37,7 +37,8 @@ impl From<crate::W<SMHC_HS400_DL_SPEC>> for W {
 #[doc = "Field `HS400_DL_CAL_START` reader - HS400 Delay Calibration Start"]
 pub type HS400_DL_CAL_START_R = crate::BitReader<bool>;
 #[doc = "Field `HS400_DL_CAL_START` writer - HS400 Delay Calibration Start"]
-pub type HS400_DL_CAL_START_W<'a> = crate::BitWriter<'a, u32, SMHC_HS400_DL_SPEC, bool, 15>;
+pub type HS400_DL_CAL_START_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_HS400_DL_SPEC, bool, O>;
 #[doc = "Field `HS400_DL_CAL_DONE` reader - HS400 Delay Calibration Done"]
 pub type HS400_DL_CAL_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `HS400_DL` reader - HS400 Delay"]
@@ -45,11 +46,12 @@ pub type HS400_DL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HS400_DL_SW_EN` reader - Sample Delay Software Enable"]
 pub type HS400_DL_SW_EN_R = crate::BitReader<bool>;
 #[doc = "Field `HS400_DL_SW_EN` writer - Sample Delay Software Enable"]
-pub type HS400_DL_SW_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_HS400_DL_SPEC, bool, 7>;
+pub type HS400_DL_SW_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_HS400_DL_SPEC, bool, O>;
 #[doc = "Field `HS400_DL_SW` reader - HS400 Delay Software"]
 pub type HS400_DL_SW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HS400_DL_SW` writer - HS400 Delay Software"]
-pub type HS400_DL_SW_W<'a> = crate::FieldWriter<'a, u32, SMHC_HS400_DL_SPEC, u8, u8, 4, 0>;
+pub type HS400_DL_SW_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SMHC_HS400_DL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bit 15 - HS400 Delay Calibration Start"]
     #[inline(always)]
@@ -80,17 +82,17 @@ impl R {
 impl W {
     #[doc = "Bit 15 - HS400 Delay Calibration Start"]
     #[inline(always)]
-    pub fn hs400_dl_cal_start(&mut self) -> HS400_DL_CAL_START_W {
+    pub fn hs400_dl_cal_start(&mut self) -> HS400_DL_CAL_START_W<15> {
         HS400_DL_CAL_START_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
-    pub fn hs400_dl_sw_en(&mut self) -> HS400_DL_SW_EN_W {
+    pub fn hs400_dl_sw_en(&mut self) -> HS400_DL_SW_EN_W<7> {
         HS400_DL_SW_EN_W::new(self)
     }
     #[doc = "Bits 0:3 - HS400 Delay Software"]
     #[inline(always)]
-    pub fn hs400_dl_sw(&mut self) -> HS400_DL_SW_W {
+    pub fn hs400_dl_sw(&mut self) -> HS400_DL_SW_W<0> {
         HS400_DL_SW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

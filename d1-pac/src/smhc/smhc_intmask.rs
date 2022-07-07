@@ -37,75 +37,77 @@ impl From<crate::W<SMHC_INTMASK_SPEC>> for W {
 #[doc = "Field `CARD_REMOVAL_INT_EN` reader - Card Removed Interrupt Enable"]
 pub type CARD_REMOVAL_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CARD_REMOVAL_INT_EN` writer - Card Removed Interrupt Enable"]
-pub type CARD_REMOVAL_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 31>;
+pub type CARD_REMOVAL_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `CARD_INSERT_INT_EN` reader - Card Inserted Interrupt Enable"]
 pub type CARD_INSERT_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CARD_INSERT_INT_EN` writer - Card Inserted Interrupt Enable"]
-pub type CARD_INSERT_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 30>;
+pub type CARD_INSERT_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `SDIO_INT_EN` reader - SDIO Interrupt Enable"]
 pub type SDIO_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `SDIO_INT_EN` writer - SDIO Interrupt Enable"]
-pub type SDIO_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 16>;
+pub type SDIO_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DEE_INT_EN` reader - Data End-bit Error Interrupt Enable"]
 pub type DEE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DEE_INT_EN` writer - Data End-bit Error Interrupt Enable"]
-pub type DEE_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 15>;
+pub type DEE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `ACD_INT_EN` reader - Auto Command Done Interrupt Enable"]
 pub type ACD_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `ACD_INT_EN` writer - Auto Command Done Interrupt Enable"]
-pub type ACD_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 14>;
+pub type ACD_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DSE_BC_INT_EN` reader - Data Start Error Interrupt Enable"]
 pub type DSE_BC_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DSE_BC_INT_EN` writer - Data Start Error Interrupt Enable"]
-pub type DSE_BC_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 13>;
+pub type DSE_BC_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `CB_IW_INT_EN` reader - Command Busy and Illegal Write Interrupt Enable"]
 pub type CB_IW_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CB_IW_INT_EN` writer - Command Busy and Illegal Write Interrupt Enable"]
-pub type CB_IW_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 12>;
+pub type CB_IW_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `FU_FO_INT_EN` reader - FIFO Underrun/Overflow Interrupt Enable"]
 pub type FU_FO_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `FU_FO_INT_EN` writer - FIFO Underrun/Overflow Interrupt Enable"]
-pub type FU_FO_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 11>;
+pub type FU_FO_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DSTO_VSD_INT_EN` reader - Data Starvation Timeout/V1.8 Switch Done Interrupt Enable"]
 pub type DSTO_VSD_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DSTO_VSD_INT_EN` writer - Data Starvation Timeout/V1.8 Switch Done Interrupt Enable"]
-pub type DSTO_VSD_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 10>;
+pub type DSTO_VSD_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DTO_BDS_INT_EN` reader - Data Timeout/Boot Data Start Interrupt Enable"]
 pub type DTO_BDS_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTO_BDS_INT_EN` writer - Data Timeout/Boot Data Start Interrupt Enable"]
-pub type DTO_BDS_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 9>;
+pub type DTO_BDS_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `RTO_BACK_INT_EN` reader - Response Timeout/Boot ACK Received Interrupt Enable"]
 pub type RTO_BACK_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `RTO_BACK_INT_EN` writer - Response Timeout/Boot ACK Received Interrupt Enable"]
-pub type RTO_BACK_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 8>;
+pub type RTO_BACK_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DCE_INT_EN` reader - Data CRC Error Interrupt Enable"]
 pub type DCE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DCE_INT_EN` writer - Data CRC Error Interrupt Enable"]
-pub type DCE_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 7>;
+pub type DCE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `RCE_INT_EN` reader - Response CRC Error Interrupt Enable"]
 pub type RCE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `RCE_INT_EN` writer - Response CRC Error Interrupt Enable"]
-pub type RCE_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 6>;
+pub type RCE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DRR_INT_EN` reader - Data Receive Request Interrupt Enable"]
 pub type DRR_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DRR_INT_EN` writer - Data Receive Request Interrupt Enable"]
-pub type DRR_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 5>;
+pub type DRR_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DTR_INT_EN` reader - Data Transmit Request Interrupt Enable"]
 pub type DTR_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTR_INT_EN` writer - Data Transmit Request Interrupt Enable"]
-pub type DTR_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 4>;
+pub type DTR_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `DTC_INT_EN` reader - Data Transfer Complete Interrupt Enable"]
 pub type DTC_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `DTC_INT_EN` writer - Data Transfer Complete Interrupt Enable"]
-pub type DTC_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 3>;
+pub type DTC_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `CC_INT_EN` reader - Command Complete Interrupt Enable"]
 pub type CC_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `CC_INT_EN` writer - Command Complete Interrupt Enable"]
-pub type CC_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 2>;
+pub type CC_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 #[doc = "Field `RE_INT_EN` reader - Response Error Interrupt Enable"]
 pub type RE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `RE_INT_EN` writer - Response Error Interrupt Enable"]
-pub type RE_INT_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, 1>;
+pub type RE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_INTMASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 31 - Card Removed Interrupt Enable"]
     #[inline(always)]
@@ -201,92 +203,92 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Card Removed Interrupt Enable"]
     #[inline(always)]
-    pub fn card_removal_int_en(&mut self) -> CARD_REMOVAL_INT_EN_W {
+    pub fn card_removal_int_en(&mut self) -> CARD_REMOVAL_INT_EN_W<31> {
         CARD_REMOVAL_INT_EN_W::new(self)
     }
     #[doc = "Bit 30 - Card Inserted Interrupt Enable"]
     #[inline(always)]
-    pub fn card_insert_int_en(&mut self) -> CARD_INSERT_INT_EN_W {
+    pub fn card_insert_int_en(&mut self) -> CARD_INSERT_INT_EN_W<30> {
         CARD_INSERT_INT_EN_W::new(self)
     }
     #[doc = "Bit 16 - SDIO Interrupt Enable"]
     #[inline(always)]
-    pub fn sdio_int_en(&mut self) -> SDIO_INT_EN_W {
+    pub fn sdio_int_en(&mut self) -> SDIO_INT_EN_W<16> {
         SDIO_INT_EN_W::new(self)
     }
     #[doc = "Bit 15 - Data End-bit Error Interrupt Enable"]
     #[inline(always)]
-    pub fn dee_int_en(&mut self) -> DEE_INT_EN_W {
+    pub fn dee_int_en(&mut self) -> DEE_INT_EN_W<15> {
         DEE_INT_EN_W::new(self)
     }
     #[doc = "Bit 14 - Auto Command Done Interrupt Enable"]
     #[inline(always)]
-    pub fn acd_int_en(&mut self) -> ACD_INT_EN_W {
+    pub fn acd_int_en(&mut self) -> ACD_INT_EN_W<14> {
         ACD_INT_EN_W::new(self)
     }
     #[doc = "Bit 13 - Data Start Error Interrupt Enable"]
     #[inline(always)]
-    pub fn dse_bc_int_en(&mut self) -> DSE_BC_INT_EN_W {
+    pub fn dse_bc_int_en(&mut self) -> DSE_BC_INT_EN_W<13> {
         DSE_BC_INT_EN_W::new(self)
     }
     #[doc = "Bit 12 - Command Busy and Illegal Write Interrupt Enable"]
     #[inline(always)]
-    pub fn cb_iw_int_en(&mut self) -> CB_IW_INT_EN_W {
+    pub fn cb_iw_int_en(&mut self) -> CB_IW_INT_EN_W<12> {
         CB_IW_INT_EN_W::new(self)
     }
     #[doc = "Bit 11 - FIFO Underrun/Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn fu_fo_int_en(&mut self) -> FU_FO_INT_EN_W {
+    pub fn fu_fo_int_en(&mut self) -> FU_FO_INT_EN_W<11> {
         FU_FO_INT_EN_W::new(self)
     }
     #[doc = "Bit 10 - Data Starvation Timeout/V1.8 Switch Done Interrupt Enable"]
     #[inline(always)]
-    pub fn dsto_vsd_int_en(&mut self) -> DSTO_VSD_INT_EN_W {
+    pub fn dsto_vsd_int_en(&mut self) -> DSTO_VSD_INT_EN_W<10> {
         DSTO_VSD_INT_EN_W::new(self)
     }
     #[doc = "Bit 9 - Data Timeout/Boot Data Start Interrupt Enable"]
     #[inline(always)]
-    pub fn dto_bds_int_en(&mut self) -> DTO_BDS_INT_EN_W {
+    pub fn dto_bds_int_en(&mut self) -> DTO_BDS_INT_EN_W<9> {
         DTO_BDS_INT_EN_W::new(self)
     }
     #[doc = "Bit 8 - Response Timeout/Boot ACK Received Interrupt Enable"]
     #[inline(always)]
-    pub fn rto_back_int_en(&mut self) -> RTO_BACK_INT_EN_W {
+    pub fn rto_back_int_en(&mut self) -> RTO_BACK_INT_EN_W<8> {
         RTO_BACK_INT_EN_W::new(self)
     }
     #[doc = "Bit 7 - Data CRC Error Interrupt Enable"]
     #[inline(always)]
-    pub fn dce_int_en(&mut self) -> DCE_INT_EN_W {
+    pub fn dce_int_en(&mut self) -> DCE_INT_EN_W<7> {
         DCE_INT_EN_W::new(self)
     }
     #[doc = "Bit 6 - Response CRC Error Interrupt Enable"]
     #[inline(always)]
-    pub fn rce_int_en(&mut self) -> RCE_INT_EN_W {
+    pub fn rce_int_en(&mut self) -> RCE_INT_EN_W<6> {
         RCE_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - Data Receive Request Interrupt Enable"]
     #[inline(always)]
-    pub fn drr_int_en(&mut self) -> DRR_INT_EN_W {
+    pub fn drr_int_en(&mut self) -> DRR_INT_EN_W<5> {
         DRR_INT_EN_W::new(self)
     }
     #[doc = "Bit 4 - Data Transmit Request Interrupt Enable"]
     #[inline(always)]
-    pub fn dtr_int_en(&mut self) -> DTR_INT_EN_W {
+    pub fn dtr_int_en(&mut self) -> DTR_INT_EN_W<4> {
         DTR_INT_EN_W::new(self)
     }
     #[doc = "Bit 3 - Data Transfer Complete Interrupt Enable"]
     #[inline(always)]
-    pub fn dtc_int_en(&mut self) -> DTC_INT_EN_W {
+    pub fn dtc_int_en(&mut self) -> DTC_INT_EN_W<3> {
         DTC_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Command Complete Interrupt Enable"]
     #[inline(always)]
-    pub fn cc_int_en(&mut self) -> CC_INT_EN_W {
+    pub fn cc_int_en(&mut self) -> CC_INT_EN_W<2> {
         CC_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - Response Error Interrupt Enable"]
     #[inline(always)]
-    pub fn re_int_en(&mut self) -> RE_INT_EN_W {
+    pub fn re_int_en(&mut self) -> RE_INT_EN_W<1> {
         RE_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

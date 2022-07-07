@@ -129,8 +129,9 @@ impl PC7_SELECT_R {
     }
 }
 #[doc = "Field `PC7_SELECT` writer - PC7 Select"]
-pub type PC7_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC7_SELECT_A, 4, 28>;
-impl<'a> PC7_SELECT_W<'a> {
+pub type PC7_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC7_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC7_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -272,8 +273,9 @@ impl PC6_SELECT_R {
     }
 }
 #[doc = "Field `PC6_SELECT` writer - PC6 Select"]
-pub type PC6_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC6_SELECT_A, 4, 24>;
-impl<'a> PC6_SELECT_W<'a> {
+pub type PC6_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC6_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC6_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -399,8 +401,9 @@ impl PC5_SELECT_R {
     }
 }
 #[doc = "Field `PC5_SELECT` writer - PC5 Select"]
-pub type PC5_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC5_SELECT_A, 4, 20>;
-impl<'a> PC5_SELECT_W<'a> {
+pub type PC5_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC5_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC5_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -516,8 +519,9 @@ impl PC4_SELECT_R {
     }
 }
 #[doc = "Field `PC4_SELECT` writer - PC4 Select"]
-pub type PC4_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC4_SELECT_A, 4, 16>;
-impl<'a> PC4_SELECT_W<'a> {
+pub type PC4_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC4_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC4_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -625,8 +629,9 @@ impl PC3_SELECT_R {
     }
 }
 #[doc = "Field `PC3_SELECT` writer - PC3 Select"]
-pub type PC3_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC3_SELECT_A, 4, 12>;
-impl<'a> PC3_SELECT_W<'a> {
+pub type PC3_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC3_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC3_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -729,8 +734,9 @@ impl PC2_SELECT_R {
     }
 }
 #[doc = "Field `PC2_SELECT` writer - PC2 Select"]
-pub type PC2_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC2_SELECT_A, 4, 8>;
-impl<'a> PC2_SELECT_W<'a> {
+pub type PC2_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC2_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC2_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -833,8 +839,9 @@ impl PC1_SELECT_R {
     }
 }
 #[doc = "Field `PC1_SELECT` writer - PC1 Select."]
-pub type PC1_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC1_SELECT_A, 4, 4>;
-impl<'a> PC1_SELECT_W<'a> {
+pub type PC1_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC1_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC1_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -945,8 +952,9 @@ impl PC0_SELECT_R {
     }
 }
 #[doc = "Field `PC0_SELECT` writer - PC0 Select"]
-pub type PC0_SELECT_W<'a> = crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC0_SELECT_A, 4, 0>;
-impl<'a> PC0_SELECT_W<'a> {
+pub type PC0_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PC_CFG0_SPEC, u8, PC0_SELECT_A, 4, O>;
+impl<'a, const O: u8> PC0_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -1028,42 +1036,42 @@ impl R {
 impl W {
     #[doc = "Bits 28:31 - PC7 Select"]
     #[inline(always)]
-    pub fn pc7_select(&mut self) -> PC7_SELECT_W {
+    pub fn pc7_select(&mut self) -> PC7_SELECT_W<28> {
         PC7_SELECT_W::new(self)
     }
     #[doc = "Bits 24:27 - PC6 Select"]
     #[inline(always)]
-    pub fn pc6_select(&mut self) -> PC6_SELECT_W {
+    pub fn pc6_select(&mut self) -> PC6_SELECT_W<24> {
         PC6_SELECT_W::new(self)
     }
     #[doc = "Bits 20:23 - PC5 Select"]
     #[inline(always)]
-    pub fn pc5_select(&mut self) -> PC5_SELECT_W {
+    pub fn pc5_select(&mut self) -> PC5_SELECT_W<20> {
         PC5_SELECT_W::new(self)
     }
     #[doc = "Bits 16:19 - PC4 Select"]
     #[inline(always)]
-    pub fn pc4_select(&mut self) -> PC4_SELECT_W {
+    pub fn pc4_select(&mut self) -> PC4_SELECT_W<16> {
         PC4_SELECT_W::new(self)
     }
     #[doc = "Bits 12:15 - PC3 Select"]
     #[inline(always)]
-    pub fn pc3_select(&mut self) -> PC3_SELECT_W {
+    pub fn pc3_select(&mut self) -> PC3_SELECT_W<12> {
         PC3_SELECT_W::new(self)
     }
     #[doc = "Bits 8:11 - PC2 Select"]
     #[inline(always)]
-    pub fn pc2_select(&mut self) -> PC2_SELECT_W {
+    pub fn pc2_select(&mut self) -> PC2_SELECT_W<8> {
         PC2_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7 - PC1 Select."]
     #[inline(always)]
-    pub fn pc1_select(&mut self) -> PC1_SELECT_W {
+    pub fn pc1_select(&mut self) -> PC1_SELECT_W<4> {
         PC1_SELECT_W::new(self)
     }
     #[doc = "Bits 0:3 - PC0 Select"]
     #[inline(always)]
-    pub fn pc0_select(&mut self) -> PC0_SELECT_W {
+    pub fn pc0_select(&mut self) -> PC0_SELECT_W<0> {
         PC0_SELECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,8 @@ impl ABT_RDATA_R {
     }
 }
 #[doc = "Field `ABT_RDATA` writer - Abort Read Data"]
-pub type ABT_RDATA_W<'a> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, ABT_RDATA_A, 2>;
-impl<'a> ABT_RDATA_W<'a> {
+pub type ABT_RDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, ABT_RDATA_A, O>;
+impl<'a, const O: u8> ABT_RDATA_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignored(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl READ_WAIT_R {
     }
 }
 #[doc = "Field `READ_WAIT` writer - Read Wait"]
-pub type READ_WAIT_W<'a> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, READ_WAIT_A, 1>;
-impl<'a> READ_WAIT_W<'a> {
+pub type READ_WAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, READ_WAIT_A, O>;
+impl<'a, const O: u8> READ_WAIT_W<'a, O> {
     #[doc = "Clear SDIO read wait"]
     #[inline(always)]
     pub fn clear(self) -> &'a mut W {
@@ -171,9 +171,9 @@ impl HOST_SEND_MIMC_IRQRESQ_R {
     }
 }
 #[doc = "Field `HOST_SEND_MIMC_IRQRESQ` writer - Host Send MMC IRQ Response"]
-pub type HOST_SEND_MIMC_IRQRESQ_W<'a> =
-    crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, HOST_SEND_MIMC_IRQRESQ_A, 0>;
-impl<'a> HOST_SEND_MIMC_IRQRESQ_W<'a> {
+pub type HOST_SEND_MIMC_IRQRESQ_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, HOST_SEND_MIMC_IRQRESQ_A, O>;
+impl<'a, const O: u8> HOST_SEND_MIMC_IRQRESQ_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignored(self) -> &'a mut W {
@@ -205,17 +205,17 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Abort Read Data"]
     #[inline(always)]
-    pub fn abt_rdata(&mut self) -> ABT_RDATA_W {
+    pub fn abt_rdata(&mut self) -> ABT_RDATA_W<2> {
         ABT_RDATA_W::new(self)
     }
     #[doc = "Bit 1 - Read Wait"]
     #[inline(always)]
-    pub fn read_wait(&mut self) -> READ_WAIT_W {
+    pub fn read_wait(&mut self) -> READ_WAIT_W<1> {
         READ_WAIT_W::new(self)
     }
     #[doc = "Bit 0 - Host Send MMC IRQ Response"]
     #[inline(always)]
-    pub fn host_send_mimc_irqresq(&mut self) -> HOST_SEND_MIMC_IRQRESQ_W {
+    pub fn host_send_mimc_irqresq(&mut self) -> HOST_SEND_MIMC_IRQRESQ_W<0> {
         HOST_SEND_MIMC_IRQRESQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

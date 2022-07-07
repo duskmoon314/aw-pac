@@ -35,7 +35,8 @@ impl From<crate::W<WDOG_CTRL_SPEC>> for W {
     }
 }
 #[doc = "Field `WDOG_KEY_FIELD` writer - Watchdog Key Field"]
-pub type WDOG_KEY_FIELD_W<'a> = crate::FieldWriter<'a, u32, WDOG_CTRL_SPEC, u16, u16, 12, 1>;
+pub type WDOG_KEY_FIELD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WDOG_CTRL_SPEC, u16, u16, 12, O>;
 #[doc = "Watchdog Restart\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDOG_RESTART_A {
@@ -73,8 +74,9 @@ impl WDOG_RESTART_R {
     }
 }
 #[doc = "Field `WDOG_RESTART` writer - Watchdog Restart"]
-pub type WDOG_RESTART_W<'a> = crate::BitWriter1S<'a, u32, WDOG_CTRL_SPEC, WDOG_RESTART_A, 0>;
-impl<'a> WDOG_RESTART_W<'a> {
+pub type WDOG_RESTART_W<'a, const O: u8> =
+    crate::BitWriter1S<'a, u32, WDOG_CTRL_SPEC, WDOG_RESTART_A, O>;
+impl<'a, const O: u8> WDOG_RESTART_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -96,12 +98,12 @@ impl R {
 impl W {
     #[doc = "Bits 1:12 - Watchdog Key Field"]
     #[inline(always)]
-    pub fn wdog_key_field(&mut self) -> WDOG_KEY_FIELD_W {
+    pub fn wdog_key_field(&mut self) -> WDOG_KEY_FIELD_W<1> {
         WDOG_KEY_FIELD_W::new(self)
     }
     #[doc = "Bit 0 - Watchdog Restart"]
     #[inline(always)]
-    pub fn wdog_restart(&mut self) -> WDOG_RESTART_W {
+    pub fn wdog_restart(&mut self) -> WDOG_RESTART_W<0> {
         WDOG_RESTART_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

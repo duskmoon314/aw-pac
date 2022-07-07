@@ -71,8 +71,9 @@ impl ALARM_INT_STS_R {
     }
 }
 #[doc = "Field `ALARM_INT_STS` writer - Alarm interrupt pending for sensor\n\nWrite 1 to clear the pending status."]
-pub type ALARM_INT_STS_W<'a> = crate::BitWriter1C<'a, u32, THS_ALARM_INTS_SPEC, ALARM_INT_STS_A, 0>;
-impl<'a> ALARM_INT_STS_W<'a> {
+pub type ALARM_INT_STS_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, THS_ALARM_INTS_SPEC, ALARM_INT_STS_A, O>;
+impl<'a, const O: u8> ALARM_INT_STS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -94,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Alarm interrupt pending for sensor\n\nWrite 1 to clear the pending status."]
     #[inline(always)]
-    pub fn alarm_int_sts(&mut self) -> ALARM_INT_STS_W {
+    pub fn alarm_int_sts(&mut self) -> ALARM_INT_STS_W<0> {
         ALARM_INT_STS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

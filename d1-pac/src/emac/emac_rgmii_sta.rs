@@ -71,8 +71,9 @@ impl RGMII_LINK_R {
     }
 }
 #[doc = "Field `RGMII_LINK` writer - The link status of the RGMII interface"]
-pub type RGMII_LINK_W<'a> = crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_A, 3>;
-impl<'a> RGMII_LINK_W<'a> {
+pub type RGMII_LINK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_A, O>;
+impl<'a, const O: u8> RGMII_LINK_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn down(self) -> &'a mut W {
@@ -131,9 +132,9 @@ impl RGMII_LINK_SPD_R {
     }
 }
 #[doc = "Field `RGMII_LINK_SPD` writer - The link speed of the RGMII interface"]
-pub type RGMII_LINK_SPD_W<'a> =
-    crate::FieldWriter<'a, u32, EMAC_RGMII_STA_SPEC, u8, RGMII_LINK_SPD_A, 2, 1>;
-impl<'a> RGMII_LINK_SPD_W<'a> {
+pub type RGMII_LINK_SPD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_RGMII_STA_SPEC, u8, RGMII_LINK_SPD_A, 2, O>;
+impl<'a, const O: u8> RGMII_LINK_SPD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn s2_5(self) -> &'a mut W {
@@ -187,8 +188,9 @@ impl RGMII_LINK_MD_R {
     }
 }
 #[doc = "Field `RGMII_LINK_MD` writer - The link mode of the RGMII interface"]
-pub type RGMII_LINK_MD_W<'a> = crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_MD_A, 0>;
-impl<'a> RGMII_LINK_MD_W<'a> {
+pub type RGMII_LINK_MD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_MD_A, O>;
+impl<'a, const O: u8> RGMII_LINK_MD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn half_duplex(self) -> &'a mut W {
@@ -220,17 +222,17 @@ impl R {
 impl W {
     #[doc = "Bit 3 - The link status of the RGMII interface"]
     #[inline(always)]
-    pub fn rgmii_link(&mut self) -> RGMII_LINK_W {
+    pub fn rgmii_link(&mut self) -> RGMII_LINK_W<3> {
         RGMII_LINK_W::new(self)
     }
     #[doc = "Bits 1:2 - The link speed of the RGMII interface"]
     #[inline(always)]
-    pub fn rgmii_link_spd(&mut self) -> RGMII_LINK_SPD_W {
+    pub fn rgmii_link_spd(&mut self) -> RGMII_LINK_SPD_W<1> {
         RGMII_LINK_SPD_W::new(self)
     }
     #[doc = "Bit 0 - The link mode of the RGMII interface"]
     #[inline(always)]
-    pub fn rgmii_link_md(&mut self) -> RGMII_LINK_MD_W {
+    pub fn rgmii_link_md(&mut self) -> RGMII_LINK_MD_W<0> {
         RGMII_LINK_MD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

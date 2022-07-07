@@ -71,8 +71,9 @@ impl TX_DMA_START_R {
     }
 }
 #[doc = "Field `TX_DMA_START` writer - Transmit DMA FSM Start"]
-pub type TX_DMA_START_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_START_A, 31>;
-impl<'a> TX_DMA_START_W<'a> {
+pub type TX_DMA_START_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_START_A, O>;
+impl<'a, const O: u8> TX_DMA_START_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_valid(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl TX_DMA_EN_R {
     }
 }
 #[doc = "Field `TX_DMA_EN` writer - Transmit DMA Enable"]
-pub type TX_DMA_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_EN_A, 30>;
-impl<'a> TX_DMA_EN_W<'a> {
+pub type TX_DMA_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_EN_A, O>;
+impl<'a, const O: u8> TX_DMA_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn stop(self) -> &'a mut W {
@@ -189,8 +191,9 @@ impl TX_TH_R {
     }
 }
 #[doc = "Field `TX_TH` writer - Threshold value of TX DMA FIFO"]
-pub type TX_TH_W<'a> = crate::FieldWriter<'a, u32, EMAC_TX_CTL1_SPEC, u8, TX_TH_A, 3, 8>;
-impl<'a> TX_TH_W<'a> {
+pub type TX_TH_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_TX_CTL1_SPEC, u8, TX_TH_A, 3, O>;
+impl<'a, const O: u8> TX_TH_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn t64(self) -> &'a mut W {
@@ -249,8 +252,8 @@ impl TX_MD_R {
     }
 }
 #[doc = "Field `TX_MD` writer - Transmission Mode"]
-pub type TX_MD_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_MD_A, 1>;
-impl<'a> TX_MD_W<'a> {
+pub type TX_MD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_MD_A, O>;
+impl<'a, const O: u8> TX_MD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn greater_than_th(self) -> &'a mut W {
@@ -299,8 +302,9 @@ impl FLUSH_TX_FIFO_R {
     }
 }
 #[doc = "Field `FLUSH_TX_FIFO` writer - Flush the data in the TX FIFO"]
-pub type FLUSH_TX_FIFO_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, FLUSH_TX_FIFO_A, 0>;
-impl<'a> FLUSH_TX_FIFO_W<'a> {
+pub type FLUSH_TX_FIFO_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, FLUSH_TX_FIFO_A, O>;
+impl<'a, const O: u8> FLUSH_TX_FIFO_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -342,27 +346,27 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Transmit DMA FSM Start"]
     #[inline(always)]
-    pub fn tx_dma_start(&mut self) -> TX_DMA_START_W {
+    pub fn tx_dma_start(&mut self) -> TX_DMA_START_W<31> {
         TX_DMA_START_W::new(self)
     }
     #[doc = "Bit 30 - Transmit DMA Enable"]
     #[inline(always)]
-    pub fn tx_dma_en(&mut self) -> TX_DMA_EN_W {
+    pub fn tx_dma_en(&mut self) -> TX_DMA_EN_W<30> {
         TX_DMA_EN_W::new(self)
     }
     #[doc = "Bits 8:10 - Threshold value of TX DMA FIFO"]
     #[inline(always)]
-    pub fn tx_th(&mut self) -> TX_TH_W {
+    pub fn tx_th(&mut self) -> TX_TH_W<8> {
         TX_TH_W::new(self)
     }
     #[doc = "Bit 1 - Transmission Mode"]
     #[inline(always)]
-    pub fn tx_md(&mut self) -> TX_MD_W {
+    pub fn tx_md(&mut self) -> TX_MD_W<1> {
         TX_MD_W::new(self)
     }
     #[doc = "Bit 0 - Flush the data in the TX FIFO"]
     #[inline(always)]
-    pub fn flush_tx_fifo(&mut self) -> FLUSH_TX_FIFO_W {
+    pub fn flush_tx_fifo(&mut self) -> FLUSH_TX_FIFO_W<0> {
         FLUSH_TX_FIFO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

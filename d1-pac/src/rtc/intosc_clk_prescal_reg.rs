@@ -34,7 +34,24 @@ impl From<crate::W<INTOSC_CLK_PRESCAL_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `INTOSC_32K_CLK_PRESCAL` reader - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
+pub type INTOSC_32K_CLK_PRESCAL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `INTOSC_32K_CLK_PRESCAL` writer - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
+pub type INTOSC_32K_CLK_PRESCAL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, INTOSC_CLK_PRESCAL_REG_SPEC, u8, u8, 5, O>;
+impl R {
+    #[doc = "Bits 0:4 - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
+    #[inline(always)]
+    pub fn intosc_32k_clk_prescal(&self) -> INTOSC_32K_CLK_PRESCAL_R {
+        INTOSC_32K_CLK_PRESCAL_R::new((self.bits & 0x1f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:4 - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
+    #[inline(always)]
+    pub fn intosc_32k_clk_prescal(&mut self) -> INTOSC_32K_CLK_PRESCAL_W<0> {
+        INTOSC_32K_CLK_PRESCAL_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for INTOSC_CLK_PRESCAL_REG_SPEC {
 impl crate::Writable for INTOSC_CLK_PRESCAL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets INTOSC_CLK_PRESCAL_REG to value 0"]
+#[doc = "`reset()` method sets INTOSC_CLK_PRESCAL_REG to value 0x0f"]
 impl crate::Resettable for INTOSC_CLK_PRESCAL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0f
     }
 }

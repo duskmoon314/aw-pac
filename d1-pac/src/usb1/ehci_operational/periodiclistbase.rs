@@ -37,7 +37,8 @@ impl From<crate::W<PERIODICLISTBASE_SPEC>> for W {
 #[doc = "Field `BASE_ADDRESS` reader - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
 pub type BASE_ADDRESS_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BASE_ADDRESS` writer - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
-pub type BASE_ADDRESS_W<'a> = crate::FieldWriter<'a, u32, PERIODICLISTBASE_SPEC, u32, u32, 20, 12>;
+pub type BASE_ADDRESS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PERIODICLISTBASE_SPEC, u32, u32, 20, O>;
 impl R {
     #[doc = "Bits 12:31 - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 12:31 - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
     #[inline(always)]
-    pub fn base_address(&mut self) -> BASE_ADDRESS_W {
+    pub fn base_address(&mut self) -> BASE_ADDRESS_W<12> {
         BASE_ADDRESS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

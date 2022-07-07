@@ -71,8 +71,8 @@ impl USBOTG0_RST_R {
     }
 }
 #[doc = "Field `USBOTG0_RST` writer - USBOTG0 Reset"]
-pub type USBOTG0_RST_W<'a> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_RST_A, 24>;
-impl<'a> USBOTG0_RST_W<'a> {
+pub type USBOTG0_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_RST_A, O>;
+impl<'a, const O: u8> USBOTG0_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -221,8 +221,9 @@ impl USBOTG0_GATING_R {
     }
 }
 #[doc = "Field `USBOTG0_GATING` writer - USBOTG0 Gating Clock"]
-pub type USBOTG0_GATING_W<'a> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_GATING_A, 8>;
-impl<'a> USBOTG0_GATING_W<'a> {
+pub type USBOTG0_GATING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_GATING_A, O>;
+impl<'a, const O: u8> USBOTG0_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -411,7 +412,7 @@ impl R {
 impl W {
     #[doc = "Bit 24 - USBOTG0 Reset"]
     #[inline(always)]
-    pub fn usbotg0_rst(&mut self) -> USBOTG0_RST_W {
+    pub fn usbotg0_rst(&mut self) -> USBOTG0_RST_W<24> {
         USBOTG0_RST_W::new(self)
     }
     #[doc = "USBEHCI Reset"]
@@ -446,7 +447,7 @@ impl W {
     }
     #[doc = "Bit 8 - USBOTG0 Gating Clock"]
     #[inline(always)]
-    pub fn usbotg0_gating(&mut self) -> USBOTG0_GATING_W {
+    pub fn usbotg0_gating(&mut self) -> USBOTG0_GATING_W<8> {
         USBOTG0_GATING_W::new(self)
     }
     #[doc = "USBEHCI Gating Clock"]

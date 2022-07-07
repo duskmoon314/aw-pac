@@ -71,8 +71,9 @@ impl RX_EARLY_INT_EN_R {
     }
 }
 #[doc = "Field `RX_EARLY_INT_EN` writer - Early Receive Interrupt"]
-pub type RX_EARLY_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_EARLY_INT_EN_A, 13>;
-impl<'a> RX_EARLY_INT_EN_W<'a> {
+pub type RX_EARLY_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_EARLY_INT_EN_A, O>;
+impl<'a, const O: u8> RX_EARLY_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,9 +122,9 @@ impl RX_OVERFLOW_INT_EN_R {
     }
 }
 #[doc = "Field `RX_OVERFLOW_INT_EN` writer - Receive Overflow Interrupt"]
-pub type RX_OVERFLOW_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_OVERFLOW_INT_EN_A, 12>;
-impl<'a> RX_OVERFLOW_INT_EN_W<'a> {
+pub type RX_OVERFLOW_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_OVERFLOW_INT_EN_A, O>;
+impl<'a, const O: u8> RX_OVERFLOW_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -172,9 +173,9 @@ impl RX_TIMEOUT_INT_EN_R {
     }
 }
 #[doc = "Field `RX_TIMEOUT_INT_EN` writer - Receive Timeout Interrupt"]
-pub type RX_TIMEOUT_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_TIMEOUT_INT_EN_A, 11>;
-impl<'a> RX_TIMEOUT_INT_EN_W<'a> {
+pub type RX_TIMEOUT_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_TIMEOUT_INT_EN_A, O>;
+impl<'a, const O: u8> RX_TIMEOUT_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -223,9 +224,9 @@ impl RX_DMA_STOPPED_INT_EN_R {
     }
 }
 #[doc = "Field `RX_DMA_STOPPED_INT_EN` writer - Receive DMA FSM Stopped Interrupt"]
-pub type RX_DMA_STOPPED_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_DMA_STOPPED_INT_EN_A, 10>;
-impl<'a> RX_DMA_STOPPED_INT_EN_W<'a> {
+pub type RX_DMA_STOPPED_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_DMA_STOPPED_INT_EN_A, O>;
+impl<'a, const O: u8> RX_DMA_STOPPED_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -274,9 +275,9 @@ impl RX_BUF_UA_INT_EN_R {
     }
 }
 #[doc = "Field `RX_BUF_UA_INT_EN` writer - Receive Buffer Unavailable Interrupt"]
-pub type RX_BUF_UA_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_BUF_UA_INT_EN_A, 9>;
-impl<'a> RX_BUF_UA_INT_EN_W<'a> {
+pub type RX_BUF_UA_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_BUF_UA_INT_EN_A, O>;
+impl<'a, const O: u8> RX_BUF_UA_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -325,8 +326,8 @@ impl RX_INT_EN_R {
     }
 }
 #[doc = "Field `RX_INT_EN` writer - Receive Interrupt"]
-pub type RX_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_INT_EN_A, 8>;
-impl<'a> RX_INT_EN_W<'a> {
+pub type RX_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_INT_EN_A, O>;
+impl<'a, const O: u8> RX_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -375,8 +376,9 @@ impl TX_EARLY_INT_EN_R {
     }
 }
 #[doc = "Field `TX_EARLY_INT_EN` writer - Early Transmit Interrupt"]
-pub type TX_EARLY_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_EARLY_INT_EN_A, 5>;
-impl<'a> TX_EARLY_INT_EN_W<'a> {
+pub type TX_EARLY_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_EARLY_INT_EN_A, O>;
+impl<'a, const O: u8> TX_EARLY_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -425,9 +427,9 @@ impl TX_UNDERFLOW_INT_EN_R {
     }
 }
 #[doc = "Field `TX_UNDERFLOW_INT_EN` writer - Transmit Underflow Interrupt"]
-pub type TX_UNDERFLOW_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_UNDERFLOW_INT_EN_A, 4>;
-impl<'a> TX_UNDERFLOW_INT_EN_W<'a> {
+pub type TX_UNDERFLOW_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_UNDERFLOW_INT_EN_A, O>;
+impl<'a, const O: u8> TX_UNDERFLOW_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -476,9 +478,9 @@ impl TX_TIMEOUT_INT_EN_R {
     }
 }
 #[doc = "Field `TX_TIMEOUT_INT_EN` writer - Transmit Timeout Interrupt"]
-pub type TX_TIMEOUT_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_TIMEOUT_INT_EN_A, 3>;
-impl<'a> TX_TIMEOUT_INT_EN_W<'a> {
+pub type TX_TIMEOUT_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_TIMEOUT_INT_EN_A, O>;
+impl<'a, const O: u8> TX_TIMEOUT_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -527,9 +529,9 @@ impl TX_BUF_UA_INT_EN_R {
     }
 }
 #[doc = "Field `TX_BUF_UA_INT_EN` writer - Transmit Buffer Available Interrupt"]
-pub type TX_BUF_UA_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_BUF_UA_INT_EN_A, 2>;
-impl<'a> TX_BUF_UA_INT_EN_W<'a> {
+pub type TX_BUF_UA_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_BUF_UA_INT_EN_A, O>;
+impl<'a, const O: u8> TX_BUF_UA_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -578,9 +580,9 @@ impl TX_DMA_STOPPED_INT_EN_R {
     }
 }
 #[doc = "Field `TX_DMA_STOPPED_INT_EN` writer - Transmit DMA FSM Stopped Interrupt"]
-pub type TX_DMA_STOPPED_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_DMA_STOPPED_INT_EN_A, 1>;
-impl<'a> TX_DMA_STOPPED_INT_EN_W<'a> {
+pub type TX_DMA_STOPPED_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_DMA_STOPPED_INT_EN_A, O>;
+impl<'a, const O: u8> TX_DMA_STOPPED_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -629,8 +631,8 @@ impl TX_INT_EN_R {
     }
 }
 #[doc = "Field `TX_INT_EN` writer - Transmit Interrupt"]
-pub type TX_INT_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_INT_EN_A, 0>;
-impl<'a> TX_INT_EN_W<'a> {
+pub type TX_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_INT_EN_A, O>;
+impl<'a, const O: u8> TX_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -707,62 +709,62 @@ impl R {
 impl W {
     #[doc = "Bit 13 - Early Receive Interrupt"]
     #[inline(always)]
-    pub fn rx_early_int_en(&mut self) -> RX_EARLY_INT_EN_W {
+    pub fn rx_early_int_en(&mut self) -> RX_EARLY_INT_EN_W<13> {
         RX_EARLY_INT_EN_W::new(self)
     }
     #[doc = "Bit 12 - Receive Overflow Interrupt"]
     #[inline(always)]
-    pub fn rx_overflow_int_en(&mut self) -> RX_OVERFLOW_INT_EN_W {
+    pub fn rx_overflow_int_en(&mut self) -> RX_OVERFLOW_INT_EN_W<12> {
         RX_OVERFLOW_INT_EN_W::new(self)
     }
     #[doc = "Bit 11 - Receive Timeout Interrupt"]
     #[inline(always)]
-    pub fn rx_timeout_int_en(&mut self) -> RX_TIMEOUT_INT_EN_W {
+    pub fn rx_timeout_int_en(&mut self) -> RX_TIMEOUT_INT_EN_W<11> {
         RX_TIMEOUT_INT_EN_W::new(self)
     }
     #[doc = "Bit 10 - Receive DMA FSM Stopped Interrupt"]
     #[inline(always)]
-    pub fn rx_dma_stopped_int_en(&mut self) -> RX_DMA_STOPPED_INT_EN_W {
+    pub fn rx_dma_stopped_int_en(&mut self) -> RX_DMA_STOPPED_INT_EN_W<10> {
         RX_DMA_STOPPED_INT_EN_W::new(self)
     }
     #[doc = "Bit 9 - Receive Buffer Unavailable Interrupt"]
     #[inline(always)]
-    pub fn rx_buf_ua_int_en(&mut self) -> RX_BUF_UA_INT_EN_W {
+    pub fn rx_buf_ua_int_en(&mut self) -> RX_BUF_UA_INT_EN_W<9> {
         RX_BUF_UA_INT_EN_W::new(self)
     }
     #[doc = "Bit 8 - Receive Interrupt"]
     #[inline(always)]
-    pub fn rx_int_en(&mut self) -> RX_INT_EN_W {
+    pub fn rx_int_en(&mut self) -> RX_INT_EN_W<8> {
         RX_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - Early Transmit Interrupt"]
     #[inline(always)]
-    pub fn tx_early_int_en(&mut self) -> TX_EARLY_INT_EN_W {
+    pub fn tx_early_int_en(&mut self) -> TX_EARLY_INT_EN_W<5> {
         TX_EARLY_INT_EN_W::new(self)
     }
     #[doc = "Bit 4 - Transmit Underflow Interrupt"]
     #[inline(always)]
-    pub fn tx_underflow_int_en(&mut self) -> TX_UNDERFLOW_INT_EN_W {
+    pub fn tx_underflow_int_en(&mut self) -> TX_UNDERFLOW_INT_EN_W<4> {
         TX_UNDERFLOW_INT_EN_W::new(self)
     }
     #[doc = "Bit 3 - Transmit Timeout Interrupt"]
     #[inline(always)]
-    pub fn tx_timeout_int_en(&mut self) -> TX_TIMEOUT_INT_EN_W {
+    pub fn tx_timeout_int_en(&mut self) -> TX_TIMEOUT_INT_EN_W<3> {
         TX_TIMEOUT_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Transmit Buffer Available Interrupt"]
     #[inline(always)]
-    pub fn tx_buf_ua_int_en(&mut self) -> TX_BUF_UA_INT_EN_W {
+    pub fn tx_buf_ua_int_en(&mut self) -> TX_BUF_UA_INT_EN_W<2> {
         TX_BUF_UA_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - Transmit DMA FSM Stopped Interrupt"]
     #[inline(always)]
-    pub fn tx_dma_stopped_int_en(&mut self) -> TX_DMA_STOPPED_INT_EN_W {
+    pub fn tx_dma_stopped_int_en(&mut self) -> TX_DMA_STOPPED_INT_EN_W<1> {
         TX_DMA_STOPPED_INT_EN_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
-    pub fn tx_int_en(&mut self) -> TX_INT_EN_W {
+    pub fn tx_int_en(&mut self) -> TX_INT_EN_W<0> {
         TX_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

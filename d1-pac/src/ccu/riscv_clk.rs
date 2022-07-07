@@ -113,8 +113,9 @@ impl CLK_SRC_SEL_R {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, 24>;
-impl<'a> CLK_SRC_SEL_W<'a> {
+pub type CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
+impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn hosc(self) -> &'a mut W {
@@ -154,11 +155,11 @@ impl<'a> CLK_SRC_SEL_W<'a> {
 #[doc = "Field `AXI_DIV_CFG` reader - Factor N"]
 pub type AXI_DIV_CFG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `AXI_DIV_CFG` writer - Factor N"]
-pub type AXI_DIV_CFG_W<'a> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 2, 8>;
+pub type AXI_DIV_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 2, O>;
 #[doc = "Field `DIV_CFG` reader - Factor M"]
 pub type DIV_CFG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV_CFG` writer - Factor M"]
-pub type DIV_CFG_W<'a> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 5, 0>;
+pub type DIV_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
@@ -179,17 +180,17 @@ impl R {
 impl W {
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
-    pub fn axi_div_cfg(&mut self) -> AXI_DIV_CFG_W {
+    pub fn axi_div_cfg(&mut self) -> AXI_DIV_CFG_W<8> {
         AXI_DIV_CFG_W::new(self)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
-    pub fn div_cfg(&mut self) -> DIV_CFG_W {
+    pub fn div_cfg(&mut self) -> DIV_CFG_W<0> {
         DIV_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

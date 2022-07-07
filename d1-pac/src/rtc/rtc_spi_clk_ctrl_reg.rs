@@ -34,7 +34,85 @@ impl From<crate::W<RTC_SPI_CLK_CTRL_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RTC_SPI_CLK_GATING_A {
+    #[doc = "0: Gating"]
+    GATING = 0,
+    #[doc = "1: Not Gating"]
+    NOT_GATING = 1,
+}
+impl From<RTC_SPI_CLK_GATING_A> for bool {
+    #[inline(always)]
+    fn from(variant: RTC_SPI_CLK_GATING_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `RTC_SPI_CLK_GATING` reader - RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time."]
+pub type RTC_SPI_CLK_GATING_R = crate::BitReader<RTC_SPI_CLK_GATING_A>;
+impl RTC_SPI_CLK_GATING_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_SPI_CLK_GATING_A {
+        match self.bits {
+            false => RTC_SPI_CLK_GATING_A::GATING,
+            true => RTC_SPI_CLK_GATING_A::NOT_GATING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `GATING`"]
+    #[inline(always)]
+    pub fn is_gating(&self) -> bool {
+        *self == RTC_SPI_CLK_GATING_A::GATING
+    }
+    #[doc = "Checks if the value of the field is `NOT_GATING`"]
+    #[inline(always)]
+    pub fn is_not_gating(&self) -> bool {
+        *self == RTC_SPI_CLK_GATING_A::NOT_GATING
+    }
+}
+#[doc = "Field `RTC_SPI_CLK_GATING` writer - RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time."]
+pub type RTC_SPI_CLK_GATING_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RTC_SPI_CLK_CTRL_REG_SPEC, RTC_SPI_CLK_GATING_A, O>;
+impl<'a, const O: u8> RTC_SPI_CLK_GATING_W<'a, O> {
+    #[doc = "Gating"]
+    #[inline(always)]
+    pub fn gating(self) -> &'a mut W {
+        self.variant(RTC_SPI_CLK_GATING_A::GATING)
+    }
+    #[doc = "Not Gating"]
+    #[inline(always)]
+    pub fn not_gating(self) -> &'a mut W {
+        self.variant(RTC_SPI_CLK_GATING_A::NOT_GATING)
+    }
+}
+#[doc = "Field `RTC_SPI_CLK_DIV` reader - RTC Reg CFG SPI Clock Divider: M\n\nActual SPI Clock = AHBS1/(M+1), (0 to 15) The default frequency of AHBS1 is 200 MHz, and the default frequency of SPI Clock is 20 MHz.\n\nNote: The SPI clock can not exceed 50 MHz, or else the RTC register may be abnormal."]
+pub type RTC_SPI_CLK_DIV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `RTC_SPI_CLK_DIV` writer - RTC Reg CFG SPI Clock Divider: M\n\nActual SPI Clock = AHBS1/(M+1), (0 to 15) The default frequency of AHBS1 is 200 MHz, and the default frequency of SPI Clock is 20 MHz.\n\nNote: The SPI clock can not exceed 50 MHz, or else the RTC register may be abnormal."]
+pub type RTC_SPI_CLK_DIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RTC_SPI_CLK_CTRL_REG_SPEC, u8, u8, 5, O>;
+impl R {
+    #[doc = "Bit 31 - RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time."]
+    #[inline(always)]
+    pub fn rtc_spi_clk_gating(&self) -> RTC_SPI_CLK_GATING_R {
+        RTC_SPI_CLK_GATING_R::new(((self.bits >> 31) & 1) != 0)
+    }
+    #[doc = "Bits 0:4 - RTC Reg CFG SPI Clock Divider: M\n\nActual SPI Clock = AHBS1/(M+1), (0 to 15) The default frequency of AHBS1 is 200 MHz, and the default frequency of SPI Clock is 20 MHz.\n\nNote: The SPI clock can not exceed 50 MHz, or else the RTC register may be abnormal."]
+    #[inline(always)]
+    pub fn rtc_spi_clk_div(&self) -> RTC_SPI_CLK_DIV_R {
+        RTC_SPI_CLK_DIV_R::new((self.bits & 0x1f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bit 31 - RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time."]
+    #[inline(always)]
+    pub fn rtc_spi_clk_gating(&mut self) -> RTC_SPI_CLK_GATING_W<31> {
+        RTC_SPI_CLK_GATING_W::new(self)
+    }
+    #[doc = "Bits 0:4 - RTC Reg CFG SPI Clock Divider: M\n\nActual SPI Clock = AHBS1/(M+1), (0 to 15) The default frequency of AHBS1 is 200 MHz, and the default frequency of SPI Clock is 20 MHz.\n\nNote: The SPI clock can not exceed 50 MHz, or else the RTC register may be abnormal."]
+    #[inline(always)]
+    pub fn rtc_spi_clk_div(&mut self) -> RTC_SPI_CLK_DIV_W<0> {
+        RTC_SPI_CLK_DIV_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +133,10 @@ impl crate::Readable for RTC_SPI_CLK_CTRL_REG_SPEC {
 impl crate::Writable for RTC_SPI_CLK_CTRL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RTC_SPI_CLK_CTRL_REG to value 0"]
+#[doc = "`reset()` method sets RTC_SPI_CLK_CTRL_REG to value 0x09"]
 impl crate::Resettable for RTC_SPI_CLK_CTRL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x09
     }
 }

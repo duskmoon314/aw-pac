@@ -71,8 +71,8 @@ impl PLL_EN_R {
     }
 }
 #[doc = "Field `PLL_EN` writer - PLL Enable"]
-pub type PLL_EN_W<'a> = crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_EN_A, 31>;
-impl<'a> PLL_EN_W<'a> {
+pub type PLL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_EN_A, O>;
+impl<'a, const O: u8> PLL_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +121,9 @@ impl PLL_LDO_EN_R {
     }
 }
 #[doc = "Field `PLL_LDO_EN` writer - LDO Enable"]
-pub type PLL_LDO_EN_W<'a> = crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_LDO_EN_A, 30>;
-impl<'a> PLL_LDO_EN_W<'a> {
+pub type PLL_LDO_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_LDO_EN_A, O>;
+impl<'a, const O: u8> PLL_LDO_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -171,8 +172,9 @@ impl LOCK_ENABLE_R {
     }
 }
 #[doc = "Field `LOCK_ENABLE` writer - Lock Enable"]
-pub type LOCK_ENABLE_W<'a> = crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, LOCK_ENABLE_A, 29>;
-impl<'a> LOCK_ENABLE_W<'a> {
+pub type LOCK_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, LOCK_ENABLE_A, O>;
+impl<'a, const O: u8> LOCK_ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -257,9 +259,9 @@ impl PLL_OUTPUT_GATE_R {
     }
 }
 #[doc = "Field `PLL_OUTPUT_GATE` writer - PLL Output Gating Enable"]
-pub type PLL_OUTPUT_GATE_W<'a> =
-    crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_OUTPUT_GATE_A, 27>;
-impl<'a> PLL_OUTPUT_GATE_W<'a> {
+pub type PLL_OUTPUT_GATE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_OUTPUT_GATE_A, O>;
+impl<'a, const O: u8> PLL_OUTPUT_GATE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -274,11 +276,12 @@ impl<'a> PLL_OUTPUT_GATE_W<'a> {
 #[doc = "Field `PLL_LOCK_TIME` reader - PLL Lock Time"]
 pub type PLL_LOCK_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_LOCK_TIME` writer - PLL Lock Time"]
-pub type PLL_LOCK_TIME_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, u8, 3, 24>;
+pub type PLL_LOCK_TIME_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `PLL_N` reader - PLL N"]
 pub type PLL_N_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_N` writer - PLL N"]
-pub type PLL_N_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, u8, 8, 8>;
+pub type PLL_N_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, u8, 8, O>;
 #[doc = "PLL Unlock Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -326,9 +329,9 @@ impl PLL_UNLOCK_MDSEL_R {
     }
 }
 #[doc = "Field `PLL_UNLOCK_MDSEL` writer - PLL Unlock Level"]
-pub type PLL_UNLOCK_MDSEL_W<'a> =
-    crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, PLL_UNLOCK_MDSEL_A, 2, 6>;
-impl<'a> PLL_UNLOCK_MDSEL_W<'a> {
+pub type PLL_UNLOCK_MDSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, PLL_UNLOCK_MDSEL_A, 2, O>;
+impl<'a, const O: u8> PLL_UNLOCK_MDSEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn cc_21_29(self) -> &'a mut W {
@@ -382,8 +385,9 @@ impl PLL_LOCK_MDSEL_R {
     }
 }
 #[doc = "Field `PLL_LOCK_MDSEL` writer - PLL Lock Level"]
-pub type PLL_LOCK_MDSEL_W<'a> = crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_LOCK_MDSEL_A, 5>;
-impl<'a> PLL_LOCK_MDSEL_W<'a> {
+pub type PLL_LOCK_MDSEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_CPU_CTRL_SPEC, PLL_LOCK_MDSEL_A, O>;
+impl<'a, const O: u8> PLL_LOCK_MDSEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn cc_24_26(self) -> &'a mut W {
@@ -398,7 +402,7 @@ impl<'a> PLL_LOCK_MDSEL_W<'a> {
 #[doc = "Field `PLL_M` reader - PLL M"]
 pub type PLL_M_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_M` writer - PLL M"]
-pub type PLL_M_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, u8, 2, 0>;
+pub type PLL_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_CPU_CTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 31 - PLL Enable"]
     #[inline(always)]
@@ -454,47 +458,47 @@ impl R {
 impl W {
     #[doc = "Bit 31 - PLL Enable"]
     #[inline(always)]
-    pub fn pll_en(&mut self) -> PLL_EN_W {
+    pub fn pll_en(&mut self) -> PLL_EN_W<31> {
         PLL_EN_W::new(self)
     }
     #[doc = "Bit 30 - LDO Enable"]
     #[inline(always)]
-    pub fn pll_ldo_en(&mut self) -> PLL_LDO_EN_W {
+    pub fn pll_ldo_en(&mut self) -> PLL_LDO_EN_W<30> {
         PLL_LDO_EN_W::new(self)
     }
     #[doc = "Bit 29 - Lock Enable"]
     #[inline(always)]
-    pub fn lock_enable(&mut self) -> LOCK_ENABLE_W {
+    pub fn lock_enable(&mut self) -> LOCK_ENABLE_W<29> {
         LOCK_ENABLE_W::new(self)
     }
     #[doc = "Bit 27 - PLL Output Gating Enable"]
     #[inline(always)]
-    pub fn pll_output_gate(&mut self) -> PLL_OUTPUT_GATE_W {
+    pub fn pll_output_gate(&mut self) -> PLL_OUTPUT_GATE_W<27> {
         PLL_OUTPUT_GATE_W::new(self)
     }
     #[doc = "Bits 24:26 - PLL Lock Time"]
     #[inline(always)]
-    pub fn pll_lock_time(&mut self) -> PLL_LOCK_TIME_W {
+    pub fn pll_lock_time(&mut self) -> PLL_LOCK_TIME_W<24> {
         PLL_LOCK_TIME_W::new(self)
     }
     #[doc = "Bits 8:15 - PLL N"]
     #[inline(always)]
-    pub fn pll_n(&mut self) -> PLL_N_W {
+    pub fn pll_n(&mut self) -> PLL_N_W<8> {
         PLL_N_W::new(self)
     }
     #[doc = "Bits 6:7 - PLL Unlock Level"]
     #[inline(always)]
-    pub fn pll_unlock_mdsel(&mut self) -> PLL_UNLOCK_MDSEL_W {
+    pub fn pll_unlock_mdsel(&mut self) -> PLL_UNLOCK_MDSEL_W<6> {
         PLL_UNLOCK_MDSEL_W::new(self)
     }
     #[doc = "Bit 5 - PLL Lock Level"]
     #[inline(always)]
-    pub fn pll_lock_mdsel(&mut self) -> PLL_LOCK_MDSEL_W {
+    pub fn pll_lock_mdsel(&mut self) -> PLL_LOCK_MDSEL_W<5> {
         PLL_LOCK_MDSEL_W::new(self)
     }
     #[doc = "Bits 0:1 - PLL M"]
     #[inline(always)]
-    pub fn pll_m(&mut self) -> PLL_M_W {
+    pub fn pll_m(&mut self) -> PLL_M_W<0> {
         PLL_M_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

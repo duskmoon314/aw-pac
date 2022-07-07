@@ -71,8 +71,8 @@ impl DMA_EN_R {
     }
 }
 #[doc = "Field `DMA_EN` writer - DMA Channel Enable"]
-pub type DMA_EN_W<'a> = crate::BitWriter<'a, u32, DMAC_EN_REG_SPEC, DMA_EN_A, 0>;
-impl<'a> DMA_EN_W<'a> {
+pub type DMA_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMAC_EN_REG_SPEC, DMA_EN_A, O>;
+impl<'a, const O: u8> DMA_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DMA Channel Enable"]
     #[inline(always)]
-    pub fn dma_en(&mut self) -> DMA_EN_W {
+    pub fn dma_en(&mut self) -> DMA_EN_W<0> {
         DMA_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,8 @@ impl From<crate::W<EMAC_MII_DATA_SPEC>> for W {
 #[doc = "Field `MII_DATA` reader - "]
 pub type MII_DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MII_DATA` writer - "]
-pub type MII_DATA_W<'a> = crate::FieldWriter<'a, u32, EMAC_MII_DATA_SPEC, u16, u16, 16, 0>;
+pub type MII_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_MII_DATA_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn mii_data(&mut self) -> MII_DATA_W {
+    pub fn mii_data(&mut self) -> MII_DATA_W<0> {
         MII_DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

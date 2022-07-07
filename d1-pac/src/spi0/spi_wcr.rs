@@ -37,11 +37,11 @@ impl From<crate::W<SPI_WCR_SPEC>> for W {
 #[doc = "Field `swc` reader - Dual mode direction switch wait clock counter"]
 pub type SWC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `swc` writer - Dual mode direction switch wait clock counter"]
-pub type SWC_W<'a> = crate::FieldWriter<'a, u32, SPI_WCR_SPEC, u8, u8, 4, 16>;
+pub type SWC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_WCR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `wwc` reader - Wait clock counter"]
 pub type WWC_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `wwc` writer - Wait clock counter"]
-pub type WWC_W<'a> = crate::FieldWriter<'a, u32, SPI_WCR_SPEC, u16, u16, 16, 0>;
+pub type WWC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_WCR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 16:19 - Dual mode direction switch wait clock counter"]
     #[inline(always)]
@@ -57,12 +57,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - Dual mode direction switch wait clock counter"]
     #[inline(always)]
-    pub fn swc(&mut self) -> SWC_W {
+    pub fn swc(&mut self) -> SWC_W<16> {
         SWC_W::new(self)
     }
     #[doc = "Bits 0:15 - Wait clock counter"]
     #[inline(always)]
-    pub fn wwc(&mut self) -> WWC_W {
+    pub fn wwc(&mut self) -> WWC_W<0> {
         WWC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

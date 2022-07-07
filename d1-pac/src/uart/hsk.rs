@@ -73,8 +73,8 @@ impl HSK_R {
     }
 }
 #[doc = "Field `hsk` writer - Handshake configuration"]
-pub type HSK_W<'a> = crate::FieldWriter<'a, u32, HSK_SPEC, u8, HSK_A, 8, 0>;
-impl<'a> HSK_W<'a> {
+pub type HSK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HSK_SPEC, u8, HSK_A, 8, O>;
+impl<'a, const O: u8> HSK_W<'a, O> {
     #[doc = "`10100101`"]
     #[inline(always)]
     pub fn wait_cycle(self) -> &'a mut W {
@@ -96,7 +96,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Handshake configuration"]
     #[inline(always)]
-    pub fn hsk(&mut self) -> HSK_W {
+    pub fn hsk(&mut self) -> HSK_W<0> {
         HSK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

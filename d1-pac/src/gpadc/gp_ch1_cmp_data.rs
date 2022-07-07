@@ -37,13 +37,13 @@ impl From<crate::W<GP_CH1_CMP_DATA_SPEC>> for W {
 #[doc = "Field `CH1_CMP_HIG_DATA` reader - Channel 1 Voltage High Value"]
 pub type CH1_CMP_HIG_DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CH1_CMP_HIG_DATA` writer - Channel 1 Voltage High Value"]
-pub type CH1_CMP_HIG_DATA_W<'a> =
-    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, 16>;
+pub type CH1_CMP_HIG_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, O>;
 #[doc = "Field `CH1_CMP_LOW_DATA` reader - Channel 1 Voltage Low Value"]
 pub type CH1_CMP_LOW_DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CH1_CMP_LOW_DATA` writer - Channel 1 Voltage Low Value"]
-pub type CH1_CMP_LOW_DATA_W<'a> =
-    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, 0>;
+pub type CH1_CMP_LOW_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
     #[inline(always)]
@@ -59,12 +59,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
     #[inline(always)]
-    pub fn ch1_cmp_hig_data(&mut self) -> CH1_CMP_HIG_DATA_W {
+    pub fn ch1_cmp_hig_data(&mut self) -> CH1_CMP_HIG_DATA_W<16> {
         CH1_CMP_HIG_DATA_W::new(self)
     }
     #[doc = "Bits 0:11 - Channel 1 Voltage Low Value"]
     #[inline(always)]
-    pub fn ch1_cmp_low_data(&mut self) -> CH1_CMP_LOW_DATA_W {
+    pub fn ch1_cmp_low_data(&mut self) -> CH1_CMP_LOW_DATA_W<0> {
         CH1_CMP_LOW_DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

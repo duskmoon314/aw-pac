@@ -71,8 +71,8 @@ impl IMS_R {
     }
 }
 #[doc = "Field `IMS` writer - Internal Modulation Select"]
-pub type IMS_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, IMS_A, 7>;
-impl<'a> IMS_W<'a> {
+pub type IMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, IMS_A, O>;
+impl<'a, const O: u8> IMS_W<'a, O> {
     #[doc = "The transmitting signal is not modulated"]
     #[inline(always)]
     pub fn not_modulated(self) -> &'a mut W {
@@ -131,8 +131,8 @@ impl DRMC_R {
     }
 }
 #[doc = "Field `DRMC` writer - Duty ratio of modulated carrier is high level/low level."]
-pub type DRMC_W<'a> = crate::FieldWriter<'a, u32, CIR_TGLR_SPEC, u8, DRMC_A, 2, 5>;
-impl<'a> DRMC_W<'a> {
+pub type DRMC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_TGLR_SPEC, u8, DRMC_A, 2, O>;
+impl<'a, const O: u8> DRMC_W<'a, O> {
     #[doc = "Low level is equal to high level"]
     #[inline(always)]
     pub fn equal(self) -> &'a mut W {
@@ -186,8 +186,8 @@ impl TPPI_R {
     }
 }
 #[doc = "Field `TPPI` writer - Transmit Pulse Polarity Invert"]
-pub type TPPI_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TPPI_A, 2>;
-impl<'a> TPPI_W<'a> {
+pub type TPPI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TPPI_A, O>;
+impl<'a, const O: u8> TPPI_W<'a, O> {
     #[doc = "Not invert transmit pulse"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -202,7 +202,7 @@ impl<'a> TPPI_W<'a> {
 #[doc = "Field `TR` reader - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
 pub type TR_R = crate::BitReader<bool>;
 #[doc = "Field `TR` writer - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
-pub type TR_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, bool, 1>;
+pub type TR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, bool, O>;
 #[doc = "Transmit Block Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TXEN_A {
@@ -240,8 +240,8 @@ impl TXEN_R {
     }
 }
 #[doc = "Field `TXEN` writer - Transmit Block Enable"]
-pub type TXEN_W<'a> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TXEN_A, 0>;
-impl<'a> TXEN_W<'a> {
+pub type TXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TXEN_A, O>;
+impl<'a, const O: u8> TXEN_W<'a, O> {
     #[doc = "Disable the CIR Transmitter"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -283,27 +283,27 @@ impl R {
 impl W {
     #[doc = "Bit 7 - Internal Modulation Select"]
     #[inline(always)]
-    pub fn ims(&mut self) -> IMS_W {
+    pub fn ims(&mut self) -> IMS_W<7> {
         IMS_W::new(self)
     }
     #[doc = "Bits 5:6 - Duty ratio of modulated carrier is high level/low level."]
     #[inline(always)]
-    pub fn drmc(&mut self) -> DRMC_W {
+    pub fn drmc(&mut self) -> DRMC_W<5> {
         DRMC_W::new(self)
     }
     #[doc = "Bit 2 - Transmit Pulse Polarity Invert"]
     #[inline(always)]
-    pub fn tppi(&mut self) -> TPPI_W {
+    pub fn tppi(&mut self) -> TPPI_W<2> {
         TPPI_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
     #[inline(always)]
-    pub fn tr(&mut self) -> TR_W {
+    pub fn tr(&mut self) -> TR_W<1> {
         TR_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Block Enable"]
     #[inline(always)]
-    pub fn txen(&mut self) -> TXEN_W {
+    pub fn txen(&mut self) -> TXEN_W<0> {
         TXEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

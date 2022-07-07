@@ -71,8 +71,8 @@ impl CSS_R {
     }
 }
 #[doc = "Field `CSS` writer - Cyclical Pulse Start/Stop Control"]
-pub type CSS_W<'a> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, CSS_A, 7>;
-impl<'a> CSS_W<'a> {
+pub type CSS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, CSS_A, O>;
+impl<'a, const O: u8> CSS_W<'a, O> {
     #[doc = "Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
     #[inline(always)]
     pub fn stop(self) -> &'a mut W {
@@ -171,8 +171,8 @@ impl RCS_R {
     }
 }
 #[doc = "Field `RCS` writer - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
-pub type RCS_W<'a> = crate::FieldWriterSafe<'a, u32, CIR_TCR_SPEC, u8, RCS_A, 3, 1>;
-impl<'a> RCS_W<'a> {
+pub type RCS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CIR_TCR_SPEC, u8, RCS_A, 3, O>;
+impl<'a, const O: u8> RCS_W<'a, O> {
     #[doc = "CIR Transmit reference clock is ir_clk"]
     #[inline(always)]
     pub fn ir_clk(self) -> &'a mut W {
@@ -251,8 +251,8 @@ impl TTS_R {
     }
 }
 #[doc = "Field `TTS` writer - Type of the transmission signal"]
-pub type TTS_W<'a> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, TTS_A, 0>;
-impl<'a> TTS_W<'a> {
+pub type TTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, TTS_A, O>;
+impl<'a, const O: u8> TTS_W<'a, O> {
     #[doc = "The transmitting wave is a single non-cyclical pulse."]
     #[inline(always)]
     pub fn non_cyclical(self) -> &'a mut W {
@@ -284,17 +284,17 @@ impl R {
 impl W {
     #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
     #[inline(always)]
-    pub fn css(&mut self) -> CSS_W {
+    pub fn css(&mut self) -> CSS_W<7> {
         CSS_W::new(self)
     }
     #[doc = "Bits 1:3 - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
     #[inline(always)]
-    pub fn rcs(&mut self) -> RCS_W {
+    pub fn rcs(&mut self) -> RCS_W<1> {
         RCS_W::new(self)
     }
     #[doc = "Bit 0 - Type of the transmission signal"]
     #[inline(always)]
-    pub fn tts(&mut self) -> TTS_W {
+    pub fn tts(&mut self) -> TTS_W<0> {
         TTS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

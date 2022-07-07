@@ -71,8 +71,9 @@ impl HS_TMR_TEST_R {
     }
 }
 #[doc = "Field `HS_TMR_TEST` writer - Select the operating mode for HSTimer"]
-pub type HS_TMR_TEST_W<'a> = crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_TEST_A, 31>;
-impl<'a> HS_TMR_TEST_W<'a> {
+pub type HS_TMR_TEST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_TEST_A, O>;
+impl<'a, const O: u8> HS_TMR_TEST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl HS_TMR_MODE_R {
     }
 }
 #[doc = "Field `HS_TMR_MODE` writer - Select the timing mode for HSTimer"]
-pub type HS_TMR_MODE_W<'a> = crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_MODE_A, 7>;
-impl<'a> HS_TMR_MODE_W<'a> {
+pub type HS_TMR_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_MODE_A, O>;
+impl<'a, const O: u8> HS_TMR_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn periodic(self) -> &'a mut W {
@@ -197,8 +199,9 @@ impl HS_TMR_CLK_R {
     }
 }
 #[doc = "Field `HS_TMR_CLK` writer - Select the pre-scale for the HSTimer clock sources"]
-pub type HS_TMR_CLK_W<'a> = crate::FieldWriter<'a, u32, HS_TMR_CTRL_SPEC, u8, HS_TMR_CLK_A, 3, 4>;
-impl<'a> HS_TMR_CLK_W<'a> {
+pub type HS_TMR_CLK_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HS_TMR_CTRL_SPEC, u8, HS_TMR_CLK_A, 3, O>;
+impl<'a, const O: u8> HS_TMR_CLK_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn p1(self) -> &'a mut W {
@@ -262,8 +265,9 @@ impl HS_TMR_RELOAD_R {
     }
 }
 #[doc = "Field `HS_TMR_RELOAD` writer - HSTimer Reload"]
-pub type HS_TMR_RELOAD_W<'a> = crate::BitWriter1S<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_RELOAD_A, 1>;
-impl<'a> HS_TMR_RELOAD_W<'a> {
+pub type HS_TMR_RELOAD_W<'a, const O: u8> =
+    crate::BitWriter1S<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_RELOAD_A, O>;
+impl<'a, const O: u8> HS_TMR_RELOAD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -312,8 +316,8 @@ impl HS_TMR_EN_R {
     }
 }
 #[doc = "Field `HS_TMR_EN` writer - HSTimer Enable"]
-pub type HS_TMR_EN_W<'a> = crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_EN_A, 0>;
-impl<'a> HS_TMR_EN_W<'a> {
+pub type HS_TMR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_EN_A, O>;
+impl<'a, const O: u8> HS_TMR_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn stop_pause(self) -> &'a mut W {
@@ -355,27 +359,27 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Select the operating mode for HSTimer"]
     #[inline(always)]
-    pub fn hs_tmr_test(&mut self) -> HS_TMR_TEST_W {
+    pub fn hs_tmr_test(&mut self) -> HS_TMR_TEST_W<31> {
         HS_TMR_TEST_W::new(self)
     }
     #[doc = "Bit 7 - Select the timing mode for HSTimer"]
     #[inline(always)]
-    pub fn hs_tmr_mode(&mut self) -> HS_TMR_MODE_W {
+    pub fn hs_tmr_mode(&mut self) -> HS_TMR_MODE_W<7> {
         HS_TMR_MODE_W::new(self)
     }
     #[doc = "Bits 4:6 - Select the pre-scale for the HSTimer clock sources"]
     #[inline(always)]
-    pub fn hs_tmr_clk(&mut self) -> HS_TMR_CLK_W {
+    pub fn hs_tmr_clk(&mut self) -> HS_TMR_CLK_W<4> {
         HS_TMR_CLK_W::new(self)
     }
     #[doc = "Bit 1 - HSTimer Reload"]
     #[inline(always)]
-    pub fn hs_tmr_reload(&mut self) -> HS_TMR_RELOAD_W {
+    pub fn hs_tmr_reload(&mut self) -> HS_TMR_RELOAD_W<1> {
         HS_TMR_RELOAD_W::new(self)
     }
     #[doc = "Bit 0 - HSTimer Enable"]
     #[inline(always)]
-    pub fn hs_tmr_en(&mut self) -> HS_TMR_EN_W {
+    pub fn hs_tmr_en(&mut self) -> HS_TMR_EN_W<0> {
         HS_TMR_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

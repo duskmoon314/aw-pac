@@ -71,8 +71,9 @@ impl TIMEOUT_ENABLE_R {
     }
 }
 #[doc = "Field `timeout_enable` writer - DMA Timeout Enable"]
-pub type TIMEOUT_ENABLE_W<'a> = crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TIMEOUT_ENABLE_A, 2>;
-impl<'a> TIMEOUT_ENABLE_W<'a> {
+pub type TIMEOUT_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TIMEOUT_ENABLE_A, O>;
+impl<'a, const O: u8> TIMEOUT_ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl TX_REQ_ENABLE_R {
     }
 }
 #[doc = "Field `tx_req_enable` writer - DMA TX REQ Enable"]
-pub type TX_REQ_ENABLE_W<'a> = crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TX_REQ_ENABLE_A, 1>;
-impl<'a> TX_REQ_ENABLE_W<'a> {
+pub type TX_REQ_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TX_REQ_ENABLE_A, O>;
+impl<'a, const O: u8> TX_REQ_ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -171,8 +173,9 @@ impl RX_REQ_ENABLE_R {
     }
 }
 #[doc = "Field `rx_req_enable` writer - DMA RX REQ Enable"]
-pub type RX_REQ_ENABLE_W<'a> = crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, RX_REQ_ENABLE_A, 0>;
-impl<'a> RX_REQ_ENABLE_W<'a> {
+pub type RX_REQ_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, RX_REQ_ENABLE_A, O>;
+impl<'a, const O: u8> RX_REQ_ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -204,17 +207,17 @@ impl R {
 impl W {
     #[doc = "Bit 2 - DMA Timeout Enable"]
     #[inline(always)]
-    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W {
+    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W<2> {
         TIMEOUT_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - DMA TX REQ Enable"]
     #[inline(always)]
-    pub fn tx_req_enable(&mut self) -> TX_REQ_ENABLE_W {
+    pub fn tx_req_enable(&mut self) -> TX_REQ_ENABLE_W<1> {
         TX_REQ_ENABLE_W::new(self)
     }
     #[doc = "Bit 0 - DMA RX REQ Enable"]
     #[inline(always)]
-    pub fn rx_req_enable(&mut self) -> RX_REQ_ENABLE_W {
+    pub fn rx_req_enable(&mut self) -> RX_REQ_ENABLE_W<0> {
         RX_REQ_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

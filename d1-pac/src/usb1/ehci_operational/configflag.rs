@@ -37,7 +37,7 @@ impl From<crate::W<CONFIGFLAG_SPEC>> for W {
 #[doc = "Field `CF` reader - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
 pub type CF_R = crate::BitReader<bool>;
 #[doc = "Field `CF` writer - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
-pub type CF_W<'a> = crate::BitWriter<'a, u32, CONFIGFLAG_SPEC, bool, 0>;
+pub type CF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIGFLAG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
     #[inline(always)]
-    pub fn cf(&mut self) -> CF_W {
+    pub fn cf(&mut self) -> CF_W<0> {
         CF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

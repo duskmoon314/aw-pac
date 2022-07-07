@@ -37,8 +37,8 @@ impl From<crate::W<HC_PERIODIC_START_SPEC>> for W {
 #[doc = "Field `PERIODIC_START` reader - PeriodicStart\n\nAfter a hardware reset, this field is cleared. This is then set by HCD during the HC initialization. The value is calculated roughly as 10% off from. A typical value will be 0x2A3F (or 0x3e67). When reaches the value specified, processing of the periodic lists will have priority over Control/Bulk processing. HC will therefore start processing the Interrupt list after completing the current Control or Bulk transaction that is in progress."]
 pub type PERIODIC_START_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PERIODIC_START` writer - PeriodicStart\n\nAfter a hardware reset, this field is cleared. This is then set by HCD during the HC initialization. The value is calculated roughly as 10% off from. A typical value will be 0x2A3F (or 0x3e67). When reaches the value specified, processing of the periodic lists will have priority over Control/Bulk processing. HC will therefore start processing the Interrupt list after completing the current Control or Bulk transaction that is in progress."]
-pub type PERIODIC_START_W<'a> =
-    crate::FieldWriter<'a, u32, HC_PERIODIC_START_SPEC, u16, u16, 14, 0>;
+pub type PERIODIC_START_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HC_PERIODIC_START_SPEC, u16, u16, 14, O>;
 impl R {
     #[doc = "Bits 0:13 - PeriodicStart\n\nAfter a hardware reset, this field is cleared. This is then set by HCD during the HC initialization. The value is calculated roughly as 10% off from. A typical value will be 0x2A3F (or 0x3e67). When reaches the value specified, processing of the periodic lists will have priority over Control/Bulk processing. HC will therefore start processing the Interrupt list after completing the current Control or Bulk transaction that is in progress."]
     #[inline(always)]
@@ -49,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - PeriodicStart\n\nAfter a hardware reset, this field is cleared. This is then set by HCD during the HC initialization. The value is calculated roughly as 10% off from. A typical value will be 0x2A3F (or 0x3e67). When reaches the value specified, processing of the periodic lists will have priority over Control/Bulk processing. HC will therefore start processing the Interrupt list after completing the current Control or Bulk transaction that is in progress."]
     #[inline(always)]
-    pub fn periodic_start(&mut self) -> PERIODIC_START_W {
+    pub fn periodic_start(&mut self) -> PERIODIC_START_W<0> {
         PERIODIC_START_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

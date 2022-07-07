@@ -71,8 +71,8 @@ impl FILTER_EN_R {
     }
 }
 #[doc = "Field `FILTER_EN` writer - Filter enable"]
-pub type FILTER_EN_W<'a> = crate::BitWriter<'a, u32, THS_FILTER_SPEC, FILTER_EN_A, 2>;
-impl<'a> FILTER_EN_W<'a> {
+pub type FILTER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, THS_FILTER_SPEC, FILTER_EN_A, O>;
+impl<'a, const O: u8> FILTER_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -139,9 +139,9 @@ impl FILTER_TYPE_R {
     }
 }
 #[doc = "Field `FILTER_TYPE` writer - Averaging filter type"]
-pub type FILTER_TYPE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, THS_FILTER_SPEC, u8, FILTER_TYPE_A, 2, 0>;
-impl<'a> FILTER_TYPE_W<'a> {
+pub type FILTER_TYPE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, THS_FILTER_SPEC, u8, FILTER_TYPE_A, 2, O>;
+impl<'a, const O: u8> FILTER_TYPE_W<'a, O> {
     #[doc = "2"]
     #[inline(always)]
     pub fn t2(self) -> &'a mut W {
@@ -178,12 +178,12 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Filter enable"]
     #[inline(always)]
-    pub fn filter_en(&mut self) -> FILTER_EN_W {
+    pub fn filter_en(&mut self) -> FILTER_EN_W<2> {
         FILTER_EN_W::new(self)
     }
     #[doc = "Bits 0:1 - Averaging filter type"]
     #[inline(always)]
-    pub fn filter_type(&mut self) -> FILTER_TYPE_W {
+    pub fn filter_type(&mut self) -> FILTER_TYPE_W<0> {
         FILTER_TYPE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

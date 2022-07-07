@@ -71,8 +71,8 @@ impl RPPI_R {
     }
 }
 #[doc = "Field `RPPI` writer - Receiver Pulse Polarity Invert"]
-pub type RPPI_W<'a> = crate::BitWriter<'a, u32, CIR_RXPCFG_SPEC, RPPI_A, 2>;
-impl<'a> RPPI_W<'a> {
+pub type RPPI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXPCFG_SPEC, RPPI_A, O>;
+impl<'a, const O: u8> RPPI_W<'a, O> {
     #[doc = "Do not invert receiver signal"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Receiver Pulse Polarity Invert"]
     #[inline(always)]
-    pub fn rppi(&mut self) -> RPPI_W {
+    pub fn rppi(&mut self) -> RPPI_W<2> {
         RPPI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,8 @@ impl From<crate::W<EMAC_BASIC_CTL1_SPEC>> for W {
 #[doc = "Field `BURST_LEN` reader - The burst length of RX and TX DMA transfer"]
 pub type BURST_LEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BURST_LEN` writer - The burst length of RX and TX DMA transfer"]
-pub type BURST_LEN_W<'a> = crate::FieldWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, u8, u8, 6, 24>;
+pub type BURST_LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, u8, u8, 6, O>;
 #[doc = "RX TX DMA Priority\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_TX_PRI_A {
@@ -75,8 +76,9 @@ impl RX_TX_PRI_R {
     }
 }
 #[doc = "Field `RX_TX_PRI` writer - RX TX DMA Priority"]
-pub type RX_TX_PRI_W<'a> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, RX_TX_PRI_A, 1>;
-impl<'a> RX_TX_PRI_W<'a> {
+pub type RX_TX_PRI_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, RX_TX_PRI_A, O>;
+impl<'a, const O: u8> RX_TX_PRI_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn same(self) -> &'a mut W {
@@ -125,8 +127,9 @@ impl SOFT_RST_R {
     }
 }
 #[doc = "Field `SOFT_RST` writer - Soft Reset all Registers and Logic"]
-pub type SOFT_RST_W<'a> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, SOFT_RST_A, 0>;
-impl<'a> SOFT_RST_W<'a> {
+pub type SOFT_RST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, SOFT_RST_A, O>;
+impl<'a, const O: u8> SOFT_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_valid(self) -> &'a mut W {
@@ -158,17 +161,17 @@ impl R {
 impl W {
     #[doc = "Bits 24:29 - The burst length of RX and TX DMA transfer"]
     #[inline(always)]
-    pub fn burst_len(&mut self) -> BURST_LEN_W {
+    pub fn burst_len(&mut self) -> BURST_LEN_W<24> {
         BURST_LEN_W::new(self)
     }
     #[doc = "Bit 1 - RX TX DMA Priority"]
     #[inline(always)]
-    pub fn rx_tx_pri(&mut self) -> RX_TX_PRI_W {
+    pub fn rx_tx_pri(&mut self) -> RX_TX_PRI_W<1> {
         RX_TX_PRI_W::new(self)
     }
     #[doc = "Bit 0 - Soft Reset all Registers and Logic"]
     #[inline(always)]
-    pub fn soft_rst(&mut self) -> SOFT_RST_W {
+    pub fn soft_rst(&mut self) -> SOFT_RST_W<0> {
         SOFT_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

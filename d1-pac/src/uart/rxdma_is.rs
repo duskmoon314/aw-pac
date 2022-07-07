@@ -37,19 +37,19 @@ impl From<crate::W<RXDMA_IS_SPEC>> for W {
 #[doc = "Field `buffer_overrun` reader - "]
 pub type BUFFER_OVERRUN_R = crate::BitReader<bool>;
 #[doc = "Field `buffer_overrun` writer - "]
-pub type BUFFER_OVERRUN_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 3>;
+pub type BUFFER_OVERRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
 #[doc = "Field `timeout_done` reader - "]
 pub type TIMEOUT_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `timeout_done` writer - "]
-pub type TIMEOUT_DONE_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 2>;
+pub type TIMEOUT_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
 #[doc = "Field `blk_done` reader - "]
 pub type BLK_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `blk_done` writer - "]
-pub type BLK_DONE_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 1>;
+pub type BLK_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
 #[doc = "Field `limit_done` reader - "]
 pub type LIMIT_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `limit_done` writer - "]
-pub type LIMIT_DONE_W<'a> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, 0>;
+pub type LIMIT_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 3"]
     #[inline(always)]
@@ -75,22 +75,22 @@ impl R {
 impl W {
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn buffer_overrun(&mut self) -> BUFFER_OVERRUN_W {
+    pub fn buffer_overrun(&mut self) -> BUFFER_OVERRUN_W<3> {
         BUFFER_OVERRUN_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn timeout_done(&mut self) -> TIMEOUT_DONE_W {
+    pub fn timeout_done(&mut self) -> TIMEOUT_DONE_W<2> {
         TIMEOUT_DONE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn blk_done(&mut self) -> BLK_DONE_W {
+    pub fn blk_done(&mut self) -> BLK_DONE_W<1> {
         BLK_DONE_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn limit_done(&mut self) -> LIMIT_DONE_W {
+    pub fn limit_done(&mut self) -> LIMIT_DONE_W<0> {
         LIMIT_DONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

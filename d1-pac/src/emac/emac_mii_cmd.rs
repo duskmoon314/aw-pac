@@ -89,9 +89,9 @@ impl MDC_DIV_RATIO_M_R {
     }
 }
 #[doc = "Field `MDC_DIV_RATIO_M` writer - MDC Clock DIvider Ratio"]
-pub type MDC_DIV_RATIO_M_W<'a> =
-    crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, MDC_DIV_RATIO_M_A, 3, 20>;
-impl<'a> MDC_DIV_RATIO_M_W<'a> {
+pub type MDC_DIV_RATIO_M_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, MDC_DIV_RATIO_M_A, 3, O>;
+impl<'a, const O: u8> MDC_DIV_RATIO_M_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn r16(self) -> &'a mut W {
@@ -116,11 +116,12 @@ impl<'a> MDC_DIV_RATIO_M_W<'a> {
 #[doc = "Field `PHY_ADDR` reader - PHY Address"]
 pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHY_ADDR` writer - PHY Address"]
-pub type PHY_ADDR_W<'a> = crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, 12>;
+pub type PHY_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, O>;
 #[doc = "Field `PHY_REG_ADDR` reader - PHY Register Address"]
 pub type PHY_REG_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHY_REG_ADDR` writer - PHY Register Address"]
-pub type PHY_REG_ADDR_W<'a> = crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, 4>;
+pub type PHY_REG_ADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, O>;
 #[doc = "MII Write and Read\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MII_WR_A {
@@ -158,8 +159,8 @@ impl MII_WR_R {
     }
 }
 #[doc = "Field `MII_WR` writer - MII Write and Read"]
-pub type MII_WR_W<'a> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, MII_WR_A, 1>;
-impl<'a> MII_WR_W<'a> {
+pub type MII_WR_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, MII_WR_A, O>;
+impl<'a, const O: u8> MII_WR_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn r(self) -> &'a mut W {
@@ -174,7 +175,7 @@ impl<'a> MII_WR_W<'a> {
 #[doc = "Field `MII_BUSY` reader - MII Status"]
 pub type MII_BUSY_R = crate::BitReader<bool>;
 #[doc = "Field `MII_BUSY` writer - MII Status"]
-pub type MII_BUSY_W<'a> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, bool, 0>;
+pub type MII_BUSY_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 20:22 - MDC Clock DIvider Ratio"]
     #[inline(always)]
@@ -205,27 +206,27 @@ impl R {
 impl W {
     #[doc = "Bits 20:22 - MDC Clock DIvider Ratio"]
     #[inline(always)]
-    pub fn mdc_div_ratio_m(&mut self) -> MDC_DIV_RATIO_M_W {
+    pub fn mdc_div_ratio_m(&mut self) -> MDC_DIV_RATIO_M_W<20> {
         MDC_DIV_RATIO_M_W::new(self)
     }
     #[doc = "Bits 12:16 - PHY Address"]
     #[inline(always)]
-    pub fn phy_addr(&mut self) -> PHY_ADDR_W {
+    pub fn phy_addr(&mut self) -> PHY_ADDR_W<12> {
         PHY_ADDR_W::new(self)
     }
     #[doc = "Bits 4:8 - PHY Register Address"]
     #[inline(always)]
-    pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W {
+    pub fn phy_reg_addr(&mut self) -> PHY_REG_ADDR_W<4> {
         PHY_REG_ADDR_W::new(self)
     }
     #[doc = "Bit 1 - MII Write and Read"]
     #[inline(always)]
-    pub fn mii_wr(&mut self) -> MII_WR_W {
+    pub fn mii_wr(&mut self) -> MII_WR_W<1> {
         MII_WR_W::new(self)
     }
     #[doc = "Bit 0 - MII Status"]
     #[inline(always)]
-    pub fn mii_busy(&mut self) -> MII_BUSY_W {
+    pub fn mii_busy(&mut self) -> MII_BUSY_W<0> {
         MII_BUSY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

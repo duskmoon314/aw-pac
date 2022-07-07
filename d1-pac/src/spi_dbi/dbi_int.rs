@@ -37,59 +37,60 @@ impl From<crate::W<DBI_INT_SPEC>> for W {
 #[doc = "Field `dbi_fifo_empty_int` reader - "]
 pub type DBI_FIFO_EMPTY_INT_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_empty_int` writer - "]
-pub type DBI_FIFO_EMPTY_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 14>;
+pub type DBI_FIFO_EMPTY_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `dbi_fifo_full_int` reader - "]
 pub type DBI_FIFO_FULL_INT_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_full_int` writer - "]
-pub type DBI_FIFO_FULL_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 13>;
+pub type DBI_FIFO_FULL_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `timer_int` reader - "]
 pub type TIMER_INT_R = crate::BitReader<bool>;
 #[doc = "Field `timer_int` writer - "]
-pub type TIMER_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 12>;
+pub type TIMER_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `rd_done_int` reader - "]
 pub type RD_DONE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `rd_done_int` writer - "]
-pub type RD_DONE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 11>;
+pub type RD_DONE_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `te_int` reader - "]
 pub type TE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `te_int` writer - "]
-pub type TE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 10>;
+pub type TE_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `fram_done_int` reader - "]
 pub type FRAM_DONE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `fram_done_int` writer - "]
-pub type FRAM_DONE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 9>;
+pub type FRAM_DONE_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `line_done_int` reader - "]
 pub type LINE_DONE_INT_R = crate::BitReader<bool>;
 #[doc = "Field `line_done_int` writer - "]
-pub type LINE_DONE_INT_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 8>;
+pub type LINE_DONE_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `dbi_fifo_empty_int_en` reader - "]
 pub type DBI_FIFO_EMPTY_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_empty_int_en` writer - "]
-pub type DBI_FIFO_EMPTY_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 6>;
+pub type DBI_FIFO_EMPTY_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `dbi_fifo_full_int_en` reader - "]
 pub type DBI_FIFO_FULL_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_full_int_en` writer - "]
-pub type DBI_FIFO_FULL_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 5>;
+pub type DBI_FIFO_FULL_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `timer_int_en` reader - "]
 pub type TIMER_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `timer_int_en` writer - "]
-pub type TIMER_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 4>;
+pub type TIMER_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `rd_done_int_en` reader - "]
 pub type RD_DONE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `rd_done_int_en` writer - "]
-pub type RD_DONE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 3>;
+pub type RD_DONE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `te_int_en` reader - "]
 pub type TE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `te_int_en` writer - "]
-pub type TE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 2>;
+pub type TE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `fram_done_int_en` reader - "]
 pub type FRAM_DONE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `fram_done_int_en` writer - "]
-pub type FRAM_DONE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 1>;
+pub type FRAM_DONE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 #[doc = "Field `line_done_int_en` reader - "]
 pub type LINE_DONE_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `line_done_int_en` writer - "]
-pub type LINE_DONE_INT_EN_W<'a> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, 0>;
+pub type LINE_DONE_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_INT_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 14"]
     #[inline(always)]
@@ -165,72 +166,72 @@ impl R {
 impl W {
     #[doc = "Bit 14"]
     #[inline(always)]
-    pub fn dbi_fifo_empty_int(&mut self) -> DBI_FIFO_EMPTY_INT_W {
+    pub fn dbi_fifo_empty_int(&mut self) -> DBI_FIFO_EMPTY_INT_W<14> {
         DBI_FIFO_EMPTY_INT_W::new(self)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
-    pub fn dbi_fifo_full_int(&mut self) -> DBI_FIFO_FULL_INT_W {
+    pub fn dbi_fifo_full_int(&mut self) -> DBI_FIFO_FULL_INT_W<13> {
         DBI_FIFO_FULL_INT_W::new(self)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
-    pub fn timer_int(&mut self) -> TIMER_INT_W {
+    pub fn timer_int(&mut self) -> TIMER_INT_W<12> {
         TIMER_INT_W::new(self)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
-    pub fn rd_done_int(&mut self) -> RD_DONE_INT_W {
+    pub fn rd_done_int(&mut self) -> RD_DONE_INT_W<11> {
         RD_DONE_INT_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    pub fn te_int(&mut self) -> TE_INT_W {
+    pub fn te_int(&mut self) -> TE_INT_W<10> {
         TE_INT_W::new(self)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
-    pub fn fram_done_int(&mut self) -> FRAM_DONE_INT_W {
+    pub fn fram_done_int(&mut self) -> FRAM_DONE_INT_W<9> {
         FRAM_DONE_INT_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn line_done_int(&mut self) -> LINE_DONE_INT_W {
+    pub fn line_done_int(&mut self) -> LINE_DONE_INT_W<8> {
         LINE_DONE_INT_W::new(self)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    pub fn dbi_fifo_empty_int_en(&mut self) -> DBI_FIFO_EMPTY_INT_EN_W {
+    pub fn dbi_fifo_empty_int_en(&mut self) -> DBI_FIFO_EMPTY_INT_EN_W<6> {
         DBI_FIFO_EMPTY_INT_EN_W::new(self)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    pub fn dbi_fifo_full_int_en(&mut self) -> DBI_FIFO_FULL_INT_EN_W {
+    pub fn dbi_fifo_full_int_en(&mut self) -> DBI_FIFO_FULL_INT_EN_W<5> {
         DBI_FIFO_FULL_INT_EN_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    pub fn timer_int_en(&mut self) -> TIMER_INT_EN_W {
+    pub fn timer_int_en(&mut self) -> TIMER_INT_EN_W<4> {
         TIMER_INT_EN_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn rd_done_int_en(&mut self) -> RD_DONE_INT_EN_W {
+    pub fn rd_done_int_en(&mut self) -> RD_DONE_INT_EN_W<3> {
         RD_DONE_INT_EN_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn te_int_en(&mut self) -> TE_INT_EN_W {
+    pub fn te_int_en(&mut self) -> TE_INT_EN_W<2> {
         TE_INT_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn fram_done_int_en(&mut self) -> FRAM_DONE_INT_EN_W {
+    pub fn fram_done_int_en(&mut self) -> FRAM_DONE_INT_EN_W<1> {
         FRAM_DONE_INT_EN_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn line_done_int_en(&mut self) -> LINE_DONE_INT_EN_W {
+    pub fn line_done_int_en(&mut self) -> LINE_DONE_INT_EN_W<0> {
         LINE_DONE_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

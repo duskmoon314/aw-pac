@@ -71,8 +71,9 @@ impl WDOG_IRQ_PEND_R {
     }
 }
 #[doc = "Field `wdog_irq_pend` writer - "]
-pub type WDOG_IRQ_PEND_W<'a> = crate::BitWriter<'a, u32, WDOG_IRQ_STA_SPEC, WDOG_IRQ_PEND_A, 0>;
-impl<'a> WDOG_IRQ_PEND_W<'a> {
+pub type WDOG_IRQ_PEND_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WDOG_IRQ_STA_SPEC, WDOG_IRQ_PEND_A, O>;
+impl<'a, const O: u8> WDOG_IRQ_PEND_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -94,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn wdog_irq_pend(&mut self) -> WDOG_IRQ_PEND_W {
+    pub fn wdog_irq_pend(&mut self) -> WDOG_IRQ_PEND_W<0> {
         WDOG_IRQ_PEND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,7 @@ impl From<crate::W<PE_DAT_SPEC>> for W {
 #[doc = "Field `PE_DAT` reader - PE Data"]
 pub type PE_DAT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `PE_DAT` writer - PE Data"]
-pub type PE_DAT_W<'a> = crate::FieldWriter<'a, u32, PE_DAT_SPEC, u32, u32, 18, 0>;
+pub type PE_DAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PE_DAT_SPEC, u32, u32, 18, O>;
 impl R {
     #[doc = "Bits 0:17 - PE Data"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:17 - PE Data"]
     #[inline(always)]
-    pub fn pe_dat(&mut self) -> PE_DAT_W {
+    pub fn pe_dat(&mut self) -> PE_DAT_W<0> {
         PE_DAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

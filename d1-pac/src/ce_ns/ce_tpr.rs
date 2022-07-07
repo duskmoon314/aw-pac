@@ -37,7 +37,7 @@ impl From<crate::W<CE_TPR_SPEC>> for W {
 #[doc = "Field `TP_NUM` reader - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
 pub type TP_NUM_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `TP_NUM` writer - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
-pub type TP_NUM_W<'a> = crate::FieldWriter<'a, u32, CE_TPR_SPEC, u32, u32, 32, 0>;
+pub type TP_NUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CE_TPR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
     #[inline(always)]
-    pub fn tp_num(&mut self) -> TP_NUM_W {
+    pub fn tp_num(&mut self) -> TP_NUM_W<0> {
         TP_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

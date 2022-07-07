@@ -37,7 +37,8 @@ impl From<crate::W<HC_CONTROL_CURRENT_ED_SPEC>> for W {
 #[doc = "Field `CCED_31_4` reader - The pointer is advanced to the next ED after serving the present one. HC will continue processing the list from where it left off in the last Frame. When it reaches the end of the Control list, HC checks the ControlListFilled of in HcCommandStatus. If set, it copies the content of HcControlHeadED to HcControlCurrentED and clears the bit. If not set, it does nothing.\n\nHCD is allowed to modify this register only when the ControlListEnable of HcControl is cleared. When set, HCD only reads the instantaneous value of this register. Initially, this is set to zero to indicate the end of the Control list."]
 pub type CCED_31_4_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `CCED_31_4` writer - The pointer is advanced to the next ED after serving the present one. HC will continue processing the list from where it left off in the last Frame. When it reaches the end of the Control list, HC checks the ControlListFilled of in HcCommandStatus. If set, it copies the content of HcControlHeadED to HcControlCurrentED and clears the bit. If not set, it does nothing.\n\nHCD is allowed to modify this register only when the ControlListEnable of HcControl is cleared. When set, HCD only reads the instantaneous value of this register. Initially, this is set to zero to indicate the end of the Control list."]
-pub type CCED_31_4_W<'a> = crate::FieldWriter<'a, u32, HC_CONTROL_CURRENT_ED_SPEC, u32, u32, 28, 4>;
+pub type CCED_31_4_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HC_CONTROL_CURRENT_ED_SPEC, u32, u32, 28, O>;
 #[doc = "Field `CCED_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
 pub type CCED_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
@@ -55,7 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:31 - The pointer is advanced to the next ED after serving the present one. HC will continue processing the list from where it left off in the last Frame. When it reaches the end of the Control list, HC checks the ControlListFilled of in HcCommandStatus. If set, it copies the content of HcControlHeadED to HcControlCurrentED and clears the bit. If not set, it does nothing.\n\nHCD is allowed to modify this register only when the ControlListEnable of HcControl is cleared. When set, HCD only reads the instantaneous value of this register. Initially, this is set to zero to indicate the end of the Control list."]
     #[inline(always)]
-    pub fn cced_31_4(&mut self) -> CCED_31_4_W {
+    pub fn cced_31_4(&mut self) -> CCED_31_4_W<4> {
         CCED_31_4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

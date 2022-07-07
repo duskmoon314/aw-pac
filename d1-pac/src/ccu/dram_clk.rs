@@ -71,8 +71,8 @@ impl CLK_GATING_R {
     }
 }
 #[doc = "Field `CLK_GATING` writer - Gating Clock"]
-pub type CLK_GATING_W<'a> = crate::BitWriter<'a, u32, DRAM_CLK_SPEC, CLK_GATING_A, 31>;
-impl<'a> CLK_GATING_W<'a> {
+pub type CLK_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, DRAM_CLK_SPEC, CLK_GATING_A, O>;
+impl<'a, const O: u8> CLK_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl SDRCLK_UPD_R {
     }
 }
 #[doc = "Field `SDRCLK_UPD` writer - SDRCLK Configuration 0 Update"]
-pub type SDRCLK_UPD_W<'a> = crate::BitWriter<'a, u32, DRAM_CLK_SPEC, SDRCLK_UPD_A, 27>;
-impl<'a> SDRCLK_UPD_W<'a> {
+pub type SDRCLK_UPD_W<'a, const O: u8> = crate::BitWriter<'a, u32, DRAM_CLK_SPEC, SDRCLK_UPD_A, O>;
+impl<'a, const O: u8> SDRCLK_UPD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn invalid(self) -> &'a mut W {
@@ -189,8 +189,9 @@ impl CLK_SRC_SEL_R {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a> = crate::FieldWriter<'a, u32, DRAM_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, 24>;
-impl<'a> CLK_SRC_SEL_W<'a> {
+pub type CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DRAM_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
+impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn pll_ddr(self) -> &'a mut W {
@@ -267,8 +268,9 @@ impl DRAM_DIV2_R {
     }
 }
 #[doc = "Field `DRAM_DIV2` writer - Factor N"]
-pub type DRAM_DIV2_W<'a> = crate::FieldWriterSafe<'a, u32, DRAM_CLK_SPEC, u8, DRAM_DIV2_A, 2, 8>;
-impl<'a> DRAM_DIV2_W<'a> {
+pub type DRAM_DIV2_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DRAM_CLK_SPEC, u8, DRAM_DIV2_A, 2, O>;
+impl<'a, const O: u8> DRAM_DIV2_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn n1(self) -> &'a mut W {
@@ -293,7 +295,7 @@ impl<'a> DRAM_DIV2_W<'a> {
 #[doc = "Field `DRAM_DIV1` reader - Factor M"]
 pub type DRAM_DIV1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DRAM_DIV1` writer - Factor M"]
-pub type DRAM_DIV1_W<'a> = crate::FieldWriter<'a, u32, DRAM_CLK_SPEC, u8, u8, 2, 0>;
+pub type DRAM_DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DRAM_CLK_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bit 31 - Gating Clock"]
     #[inline(always)]
@@ -324,27 +326,27 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating Clock"]
     #[inline(always)]
-    pub fn clk_gating(&mut self) -> CLK_GATING_W {
+    pub fn clk_gating(&mut self) -> CLK_GATING_W<31> {
         CLK_GATING_W::new(self)
     }
     #[doc = "Bit 27 - SDRCLK Configuration 0 Update"]
     #[inline(always)]
-    pub fn sdrclk_upd(&mut self) -> SDRCLK_UPD_W {
+    pub fn sdrclk_upd(&mut self) -> SDRCLK_UPD_W<27> {
         SDRCLK_UPD_W::new(self)
     }
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
-    pub fn dram_div2(&mut self) -> DRAM_DIV2_W {
+    pub fn dram_div2(&mut self) -> DRAM_DIV2_W<8> {
         DRAM_DIV2_W::new(self)
     }
     #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
-    pub fn dram_div1(&mut self) -> DRAM_DIV1_W {
+    pub fn dram_div1(&mut self) -> DRAM_DIV1_W<0> {
         DRAM_DIV1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

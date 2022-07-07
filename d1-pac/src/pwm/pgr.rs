@@ -37,17 +37,17 @@ impl From<crate::W<PGR_SPEC>> for W {
 #[doc = "Field `START` reader - The PWM channels selected in CS start to output PWM waveform at the same time."]
 pub type START_R = crate::BitReader<bool>;
 #[doc = "Field `START` writer - The PWM channels selected in CS start to output PWM waveform at the same time."]
-pub type START_W<'a> = crate::BitWriter<'a, u32, PGR_SPEC, bool, 17>;
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
 #[doc = "Field `EN` reader - PWM Group Enable."]
 pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - PWM Group Enable."]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, PGR_SPEC, bool, 16>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
 #[doc = "Field `CS` reader - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 pub type CS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CS` writer - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
-pub type CS_W<'a> = crate::FieldWriter<'a, u32, PGR_SPEC, u16, u16, 16, 0>;
+pub type CS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PGR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bit 17 - The PWM channels selected in CS start to output PWM waveform at the same time."]
     #[inline(always)]
@@ -69,18 +69,18 @@ is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 impl W {
     #[doc = "Bit 17 - The PWM channels selected in CS start to output PWM waveform at the same time."]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
+    pub fn start(&mut self) -> START_W<17> {
         START_W::new(self)
     }
     #[doc = "Bit 16 - PWM Group Enable."]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    pub fn en(&mut self) -> EN_W<16> {
         EN_W::new(self)
     }
     #[doc = "Bits 0:15 - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
     #[inline(always)]
-    pub fn cs(&mut self) -> CS_W {
+    pub fn cs(&mut self) -> CS_W<0> {
         CS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

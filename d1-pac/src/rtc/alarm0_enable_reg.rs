@@ -34,7 +34,70 @@ impl From<crate::W<ALARM0_ENABLE_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Alarm 0 Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALM_0_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<ALM_0_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALM_0_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `ALM_0_EN` reader - Alarm 0 Enable"]
+pub type ALM_0_EN_R = crate::BitReader<ALM_0_EN_A>;
+impl ALM_0_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALM_0_EN_A {
+        match self.bits {
+            false => ALM_0_EN_A::DISABLE,
+            true => ALM_0_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == ALM_0_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == ALM_0_EN_A::ENABLE
+    }
+}
+#[doc = "Field `ALM_0_EN` writer - Alarm 0 Enable"]
+pub type ALM_0_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ALARM0_ENABLE_REG_SPEC, ALM_0_EN_A, O>;
+impl<'a, const O: u8> ALM_0_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ALM_0_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ALM_0_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Alarm 0 Enable"]
+    #[inline(always)]
+    pub fn alm_0_en(&self) -> ALM_0_EN_R {
+        ALM_0_EN_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Alarm 0 Enable"]
+    #[inline(always)]
+    pub fn alm_0_en(&mut self) -> ALM_0_EN_W<0> {
+        ALM_0_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -89,16 +89,16 @@ impl MSG_WR_INT_THRESHOLD_CFG_R {
     }
 }
 #[doc = "Field `MSG_WR_INT_THRESHOLD_CFG` writer - Configure the FIFO empty level to trigger the write interrupt for user1"]
-pub type MSG_WR_INT_THRESHOLD_CFG_W<'a> = crate::FieldWriterSafe<
+pub type MSG_WR_INT_THRESHOLD_CFG_W<'a, const O: u8> = crate::FieldWriterSafe<
     'a,
     u32,
     MSGBOX_WR_INT_THRESHOLD_REG_SPEC,
     u8,
     MSG_WR_INT_THRESHOLD_CFG_A,
     2,
-    0,
+    O,
 >;
-impl<'a> MSG_WR_INT_THRESHOLD_CFG_W<'a> {
+impl<'a, const O: u8> MSG_WR_INT_THRESHOLD_CFG_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn t1(self) -> &'a mut W {
@@ -130,7 +130,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Configure the FIFO empty level to trigger the write interrupt for user1"]
     #[inline(always)]
-    pub fn msg_wr_int_threshold_cfg(&mut self) -> MSG_WR_INT_THRESHOLD_CFG_W {
+    pub fn msg_wr_int_threshold_cfg(&mut self) -> MSG_WR_INT_THRESHOLD_CFG_W<0> {
         MSG_WR_INT_THRESHOLD_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

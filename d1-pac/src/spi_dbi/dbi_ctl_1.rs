@@ -37,7 +37,7 @@ impl From<crate::W<DBI_CTL_1_SPEC>> for W {
 #[doc = "Field `dbi_soft_trg` reader - DBI Soft Trigger"]
 pub type DBI_SOFT_TRG_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_soft_trg` writer - DBI Soft Trigger"]
-pub type DBI_SOFT_TRG_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, 31>;
+pub type DBI_SOFT_TRG_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, O>;
 #[doc = "DBI Enable Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -93,9 +93,9 @@ impl DBI_EN_MODE_SEL_R {
     }
 }
 #[doc = "Field `dbi_en_mode_sel` writer - DBI Enable Mode Select"]
-pub type DBI_EN_MODE_SEL_W<'a> =
-    crate::FieldWriterSafe<'a, u32, DBI_CTL_1_SPEC, u8, DBI_EN_MODE_SEL_A, 2, 29>;
-impl<'a> DBI_EN_MODE_SEL_W<'a> {
+pub type DBI_EN_MODE_SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DBI_CTL_1_SPEC, u8, DBI_EN_MODE_SEL_A, 2, O>;
+impl<'a, const O: u8> DBI_EN_MODE_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn dbi(self) -> &'a mut W {
@@ -164,8 +164,9 @@ impl RGB666_FMT_R {
     }
 }
 #[doc = "Field `RGB666_FMT` writer - 2 Data Lane RGB666 Format"]
-pub type RGB666_FMT_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_1_SPEC, u8, RGB666_FMT_A, 2, 26>;
-impl<'a> RGB666_FMT_W<'a> {
+pub type RGB666_FMT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DBI_CTL_1_SPEC, u8, RGB666_FMT_A, 2, O>;
+impl<'a, const O: u8> RGB666_FMT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -219,8 +220,9 @@ impl DBI_RXCLK_INV_R {
     }
 }
 #[doc = "Field `dbi_rxclk_inv` writer - DBI RX Clock Inverse"]
-pub type DBI_RXCLK_INV_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, DBI_RXCLK_INV_A, 25>;
-impl<'a> DBI_RXCLK_INV_W<'a> {
+pub type DBI_RXCLK_INV_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, DBI_RXCLK_INV_A, O>;
+impl<'a, const O: u8> DBI_RXCLK_INV_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn positive(self) -> &'a mut W {
@@ -269,8 +271,9 @@ impl DBI_CLKO_MOD_R {
     }
 }
 #[doc = "Field `dbi_clko_mod` writer - DBI Output Clock Mode"]
-pub type DBI_CLKO_MOD_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, DBI_CLKO_MOD_A, 24>;
-impl<'a> DBI_CLKO_MOD_W<'a> {
+pub type DBI_CLKO_MOD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, DBI_CLKO_MOD_A, O>;
+impl<'a, const O: u8> DBI_CLKO_MOD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn always_on(self) -> &'a mut W {
@@ -285,27 +288,28 @@ impl<'a> DBI_CLKO_MOD_W<'a> {
 #[doc = "Field `dbi_clko_inv` reader - DBI Clock Output Inverse"]
 pub type DBI_CLKO_INV_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_clko_inv` writer - DBI Clock Output Inverse"]
-pub type DBI_CLKO_INV_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, 23>;
+pub type DBI_CLKO_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, O>;
 #[doc = "Field `dcx_data` reader - DCX Data Value"]
 pub type DCX_DATA_R = crate::BitReader<bool>;
 #[doc = "Field `dcx_data` writer - DCX Data Value"]
-pub type DCX_DATA_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, 22>;
+pub type DCX_DATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, O>;
 #[doc = "Field `RGB16_data_source_select` reader - RGB 16 Data Source Select"]
 pub type RGB16_DATA_SOURCE_SELECT_R = crate::BitReader<bool>;
 #[doc = "Field `RGB16_data_source_select` writer - RGB 16 Data Source Select"]
-pub type RGB16_DATA_SOURCE_SELECT_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, 21>;
+pub type RGB16_DATA_SOURCE_SELECT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, O>;
 #[doc = "Field `rdat_lsb` reader - Bit Order of Read Data"]
 pub type RDAT_LSB_R = crate::BitReader<bool>;
 #[doc = "Field `rdat_lsb` writer - Bit Order of Read Data"]
-pub type RDAT_LSB_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, 20>;
+pub type RDAT_LSB_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, O>;
 #[doc = "Field `rcdc` reader - Read Command Dummy Cycles"]
 pub type RCDC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rcdc` writer - Read Command Dummy Cycles"]
-pub type RCDC_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_1_SPEC, u8, u8, 8, 8>;
+pub type RCDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DBI_CTL_1_SPEC, u8, u8, 8, O>;
 #[doc = "Field `rdbn` reader - Read Data Number of Bytes"]
 pub type RDBN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rdbn` writer - Read Data Number of Bytes"]
-pub type RDBN_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_1_SPEC, u8, u8, 8, 0>;
+pub type RDBN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DBI_CTL_1_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 31 - DBI Soft Trigger"]
     #[inline(always)]
@@ -366,57 +370,57 @@ impl R {
 impl W {
     #[doc = "Bit 31 - DBI Soft Trigger"]
     #[inline(always)]
-    pub fn dbi_soft_trg(&mut self) -> DBI_SOFT_TRG_W {
+    pub fn dbi_soft_trg(&mut self) -> DBI_SOFT_TRG_W<31> {
         DBI_SOFT_TRG_W::new(self)
     }
     #[doc = "Bits 29:30 - DBI Enable Mode Select"]
     #[inline(always)]
-    pub fn dbi_en_mode_sel(&mut self) -> DBI_EN_MODE_SEL_W {
+    pub fn dbi_en_mode_sel(&mut self) -> DBI_EN_MODE_SEL_W<29> {
         DBI_EN_MODE_SEL_W::new(self)
     }
     #[doc = "Bits 26:27 - 2 Data Lane RGB666 Format"]
     #[inline(always)]
-    pub fn rgb666_fmt(&mut self) -> RGB666_FMT_W {
+    pub fn rgb666_fmt(&mut self) -> RGB666_FMT_W<26> {
         RGB666_FMT_W::new(self)
     }
     #[doc = "Bit 25 - DBI RX Clock Inverse"]
     #[inline(always)]
-    pub fn dbi_rxclk_inv(&mut self) -> DBI_RXCLK_INV_W {
+    pub fn dbi_rxclk_inv(&mut self) -> DBI_RXCLK_INV_W<25> {
         DBI_RXCLK_INV_W::new(self)
     }
     #[doc = "Bit 24 - DBI Output Clock Mode"]
     #[inline(always)]
-    pub fn dbi_clko_mod(&mut self) -> DBI_CLKO_MOD_W {
+    pub fn dbi_clko_mod(&mut self) -> DBI_CLKO_MOD_W<24> {
         DBI_CLKO_MOD_W::new(self)
     }
     #[doc = "Bit 23 - DBI Clock Output Inverse"]
     #[inline(always)]
-    pub fn dbi_clko_inv(&mut self) -> DBI_CLKO_INV_W {
+    pub fn dbi_clko_inv(&mut self) -> DBI_CLKO_INV_W<23> {
         DBI_CLKO_INV_W::new(self)
     }
     #[doc = "Bit 22 - DCX Data Value"]
     #[inline(always)]
-    pub fn dcx_data(&mut self) -> DCX_DATA_W {
+    pub fn dcx_data(&mut self) -> DCX_DATA_W<22> {
         DCX_DATA_W::new(self)
     }
     #[doc = "Bit 21 - RGB 16 Data Source Select"]
     #[inline(always)]
-    pub fn rgb16_data_source_select(&mut self) -> RGB16_DATA_SOURCE_SELECT_W {
+    pub fn rgb16_data_source_select(&mut self) -> RGB16_DATA_SOURCE_SELECT_W<21> {
         RGB16_DATA_SOURCE_SELECT_W::new(self)
     }
     #[doc = "Bit 20 - Bit Order of Read Data"]
     #[inline(always)]
-    pub fn rdat_lsb(&mut self) -> RDAT_LSB_W {
+    pub fn rdat_lsb(&mut self) -> RDAT_LSB_W<20> {
         RDAT_LSB_W::new(self)
     }
     #[doc = "Bits 8:15 - Read Command Dummy Cycles"]
     #[inline(always)]
-    pub fn rcdc(&mut self) -> RCDC_W {
+    pub fn rcdc(&mut self) -> RCDC_W<8> {
         RCDC_W::new(self)
     }
     #[doc = "Bits 0:7 - Read Data Number of Bytes"]
     #[inline(always)]
-    pub fn rdbn(&mut self) -> RDBN_W {
+    pub fn rdbn(&mut self) -> RDBN_W<0> {
         RDBN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

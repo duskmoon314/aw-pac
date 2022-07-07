@@ -37,31 +37,33 @@ impl From<crate::W<HC_RH_STATUS_SPEC>> for W {
 #[doc = "Field `CLEAR_REMOTE_EAKEUP_ENABLE` reader - (write)ClearRemoteWakeupEnable\n\nWrite a '1' clears DeviceRemoteWakeupEnable. Writing a '0' has no effect."]
 pub type CLEAR_REMOTE_EAKEUP_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `CLEAR_REMOTE_EAKEUP_ENABLE` writer - (write)ClearRemoteWakeupEnable\n\nWrite a '1' clears DeviceRemoteWakeupEnable. Writing a '0' has no effect."]
-pub type CLEAR_REMOTE_EAKEUP_ENABLE_W<'a> = crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, 31>;
+pub type CLEAR_REMOTE_EAKEUP_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, O>;
 #[doc = "Field `OVER_CURRENT_INDICATOR_CHANGE` reader - This bit is set by hardware when a change has occurred to the OverCurrentIndicator field of this register. The HCD clears this bit by writing a '1'. Writing a '0' has no effect."]
 pub type OVER_CURRENT_INDICATOR_CHANGE_R = crate::BitReader<bool>;
 #[doc = "Field `OVER_CURRENT_INDICATOR_CHANGE` writer - This bit is set by hardware when a change has occurred to the OverCurrentIndicator field of this register. The HCD clears this bit by writing a '1'. Writing a '0' has no effect."]
-pub type OVER_CURRENT_INDICATOR_CHANGE_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, 17>;
+pub type OVER_CURRENT_INDICATOR_CHANGE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, O>;
 #[doc = "Field `R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER` reader - (read)LocalPowerStatusChange\n\nThe Root Hub does not support the local power status features, thus, this bit is always read as '0'.\n\n(write)SetGlobalPower\n\nIn global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn on power to all ports (clear PortPowerStatus ). In per-port power mode, it sets PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect."]
 pub type R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER_R = crate::BitReader<bool>;
 #[doc = "Field `R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER` writer - (read)LocalPowerStatusChange\n\nThe Root Hub does not support the local power status features, thus, this bit is always read as '0'.\n\n(write)SetGlobalPower\n\nIn global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn on power to all ports (clear PortPowerStatus ). In per-port power mode, it sets PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect."]
-pub type R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, 16>;
+pub type R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, O>;
 #[doc = "Field `R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE` reader - (read)DeviceRemoteWakeupEnable\n\nThis bit enables a ConnectStatusChange bit as a resume event, causing a USBSUSPEND to USBRESUME state transition and setting the ResumeDetected interrupt.\n\n0 ConnectStatusChange is not a remote wakeup event.\n\n1 ConnectStatusChange is a remote wakeup event.\n\n(write)SetRemoteWakeupEnable\n\nWriting a '1' sets DeviceRemoveWakeupEnable. Writing a '0' has no effect."]
 pub type R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE` writer - (read)DeviceRemoteWakeupEnable\n\nThis bit enables a ConnectStatusChange bit as a resume event, causing a USBSUSPEND to USBRESUME state transition and setting the ResumeDetected interrupt.\n\n0 ConnectStatusChange is not a remote wakeup event.\n\n1 ConnectStatusChange is a remote wakeup event.\n\n(write)SetRemoteWakeupEnable\n\nWriting a '1' sets DeviceRemoveWakeupEnable. Writing a '0' has no effect."]
-pub type R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, 15>;
+pub type R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, O>;
 #[doc = "Field `OVER_CURRENT_INDICATOR` reader - This bit reports overcurrent conditions when the global reporting is implemented. When set, an overcurrent condition exists. When cleared, all power operations are normal. If per-port overcurrent protection is implemented this bit is always '0'"]
 pub type OVER_CURRENT_INDICATOR_R = crate::BitReader<bool>;
 #[doc = "Field `OVER_CURRENT_INDICATOR` writer - This bit reports overcurrent conditions when the global reporting is implemented. When set, an overcurrent condition exists. When cleared, all power operations are normal. If per-port overcurrent protection is implemented this bit is always '0'"]
-pub type OVER_CURRENT_INDICATOR_W<'a> = crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, 1>;
+pub type OVER_CURRENT_INDICATOR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, O>;
 #[doc = "Field `R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER` reader - (Read)LocalPowerStatus\n\nWhen read, this bit returns the LocalPowerStatus of the Root Hub. The Root Hub does not support the local power status feature; thus, this bit is always read as '0'.\n\n(Write)ClearGlobalPower\n\nWhen write, this bit is operated as the ClearGlobalPower. In global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn off power to all ports (clear PortPowerStatus ). In per-port power mode, it clears PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect."]
 pub type R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER_R = crate::BitReader<bool>;
 #[doc = "Field `R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER` writer - (Read)LocalPowerStatus\n\nWhen read, this bit returns the LocalPowerStatus of the Root Hub. The Root Hub does not support the local power status feature; thus, this bit is always read as '0'.\n\n(Write)ClearGlobalPower\n\nWhen write, this bit is operated as the ClearGlobalPower. In global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn off power to all ports (clear PortPowerStatus ). In per-port power mode, it clears PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect."]
-pub type R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER_W<'a> =
-    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, 0>;
+pub type R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_RH_STATUS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 31 - (write)ClearRemoteWakeupEnable\n\nWrite a '1' clears DeviceRemoteWakeupEnable. Writing a '0' has no effect."]
     #[inline(always)]
@@ -105,38 +107,38 @@ impl R {
 impl W {
     #[doc = "Bit 31 - (write)ClearRemoteWakeupEnable\n\nWrite a '1' clears DeviceRemoteWakeupEnable. Writing a '0' has no effect."]
     #[inline(always)]
-    pub fn clear_remote_eakeup_enable(&mut self) -> CLEAR_REMOTE_EAKEUP_ENABLE_W {
+    pub fn clear_remote_eakeup_enable(&mut self) -> CLEAR_REMOTE_EAKEUP_ENABLE_W<31> {
         CLEAR_REMOTE_EAKEUP_ENABLE_W::new(self)
     }
     #[doc = "Bit 17 - This bit is set by hardware when a change has occurred to the OverCurrentIndicator field of this register. The HCD clears this bit by writing a '1'. Writing a '0' has no effect."]
     #[inline(always)]
-    pub fn over_current_indicator_change(&mut self) -> OVER_CURRENT_INDICATOR_CHANGE_W {
+    pub fn over_current_indicator_change(&mut self) -> OVER_CURRENT_INDICATOR_CHANGE_W<17> {
         OVER_CURRENT_INDICATOR_CHANGE_W::new(self)
     }
     #[doc = "Bit 16 - (read)LocalPowerStatusChange\n\nThe Root Hub does not support the local power status features, thus, this bit is always read as '0'.\n\n(write)SetGlobalPower\n\nIn global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn on power to all ports (clear PortPowerStatus ). In per-port power mode, it sets PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect."]
     #[inline(always)]
     pub fn r_local_power_status_w_set_global_power(
         &mut self,
-    ) -> R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER_W {
+    ) -> R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER_W<16> {
         R_LOCAL_POWER_STATUS_W_SET_GLOBAL_POWER_W::new(self)
     }
     #[doc = "Bit 15 - (read)DeviceRemoteWakeupEnable\n\nThis bit enables a ConnectStatusChange bit as a resume event, causing a USBSUSPEND to USBRESUME state transition and setting the ResumeDetected interrupt.\n\n0 ConnectStatusChange is not a remote wakeup event.\n\n1 ConnectStatusChange is a remote wakeup event.\n\n(write)SetRemoteWakeupEnable\n\nWriting a '1' sets DeviceRemoveWakeupEnable. Writing a '0' has no effect."]
     #[inline(always)]
     pub fn r_device_remote_wakeup_enable_w_set_remote_wakeup_enable(
         &mut self,
-    ) -> R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE_W {
+    ) -> R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE_W<15> {
         R_DEVICE_REMOTE_WAKEUP_ENABLE_W_SET_REMOTE_WAKEUP_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - This bit reports overcurrent conditions when the global reporting is implemented. When set, an overcurrent condition exists. When cleared, all power operations are normal. If per-port overcurrent protection is implemented this bit is always '0'"]
     #[inline(always)]
-    pub fn over_current_indicator(&mut self) -> OVER_CURRENT_INDICATOR_W {
+    pub fn over_current_indicator(&mut self) -> OVER_CURRENT_INDICATOR_W<1> {
         OVER_CURRENT_INDICATOR_W::new(self)
     }
     #[doc = "Bit 0 - (Read)LocalPowerStatus\n\nWhen read, this bit returns the LocalPowerStatus of the Root Hub. The Root Hub does not support the local power status feature; thus, this bit is always read as '0'.\n\n(Write)ClearGlobalPower\n\nWhen write, this bit is operated as the ClearGlobalPower. In global power mode ( PowerSwitchingMode =0), This bit is written to '1' to turn off power to all ports (clear PortPowerStatus ). In per-port power mode, it clears PortPowerStatus only on ports whose PortPowerControlMask bit is not set. Writing a '0' has no effect."]
     #[inline(always)]
     pub fn r_local_power_status_w_clear_global_power(
         &mut self,
-    ) -> R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER_W {
+    ) -> R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER_W<0> {
         R_LOCAL_POWER_STATUS_W_CLEAR_GLOBAL_POWER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

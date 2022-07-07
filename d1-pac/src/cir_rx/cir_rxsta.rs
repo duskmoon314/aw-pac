@@ -649,8 +649,8 @@ impl RA_R {
     }
 }
 #[doc = "Field `RA` writer - RX FIFO Available"]
-pub type RA_W<'a> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RA_A, 4>;
-impl<'a> RA_W<'a> {
+pub type RA_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RA_A, O>;
+impl<'a, const O: u8> RA_W<'a, O> {
     #[doc = "RX FIFO not available according to its level"]
     #[inline(always)]
     pub fn no_available(self) -> &'a mut W {
@@ -699,8 +699,8 @@ impl RPE_R {
     }
 }
 #[doc = "Field `RPE` writer - Receiver Packet End Flag"]
-pub type RPE_W<'a> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RPE_A, 1>;
-impl<'a> RPE_W<'a> {
+pub type RPE_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RPE_A, O>;
+impl<'a, const O: u8> RPE_W<'a, O> {
     #[doc = "STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
     #[inline(always)]
     pub fn not_detected(self) -> &'a mut W {
@@ -749,8 +749,8 @@ impl ROI_R {
     }
 }
 #[doc = "Field `ROI` writer - Receiver FIFO Overrun"]
-pub type ROI_W<'a> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, ROI_A, 0>;
-impl<'a> ROI_W<'a> {
+pub type ROI_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, ROI_A, O>;
+impl<'a, const O: u8> ROI_W<'a, O> {
     #[doc = "Receiver FIFO not overrun"]
     #[inline(always)]
     pub fn not_overrun(self) -> &'a mut W {
@@ -792,17 +792,17 @@ impl R {
 impl W {
     #[doc = "Bit 4 - RX FIFO Available"]
     #[inline(always)]
-    pub fn ra(&mut self) -> RA_W {
+    pub fn ra(&mut self) -> RA_W<4> {
         RA_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Packet End Flag"]
     #[inline(always)]
-    pub fn rpe(&mut self) -> RPE_W {
+    pub fn rpe(&mut self) -> RPE_W<1> {
         RPE_W::new(self)
     }
     #[doc = "Bit 0 - Receiver FIFO Overrun"]
     #[inline(always)]
-    pub fn roi(&mut self) -> ROI_W {
+    pub fn roi(&mut self) -> ROI_W<0> {
         ROI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

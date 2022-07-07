@@ -71,8 +71,8 @@ impl GATING_R {
     }
 }
 #[doc = "Field `GATING` writer - Gating Clock"]
-pub type GATING_W<'a> = crate::BitWriter<'a, u32, IOMMU_BGR_SPEC, GATING_A, 0>;
-impl<'a> GATING_W<'a> {
+pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_BGR_SPEC, GATING_A, O>;
+impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
-    pub fn gating(&mut self) -> GATING_W {
+    pub fn gating(&mut self) -> GATING_W<0> {
         GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

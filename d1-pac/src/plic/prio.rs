@@ -313,8 +313,9 @@ impl PRIORITY_R {
     }
 }
 #[doc = "Field `priority` writer - "]
-pub type PRIORITY_W<'a> = crate::FieldWriterSafe<'a, u32, PRIO_SPEC, u8, PRIORITY_A, 5, 0>;
-impl<'a> PRIORITY_W<'a> {
+pub type PRIORITY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PRIO_SPEC, u8, PRIORITY_A, 5, O>;
+impl<'a, const O: u8> PRIORITY_W<'a, O> {
     #[doc = "Priority 0 (never interrupt)"]
     #[inline(always)]
     pub fn p0(self) -> &'a mut W {
@@ -486,7 +487,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
-    pub fn priority(&mut self) -> PRIORITY_W {
+    pub fn priority(&mut self) -> PRIORITY_W<0> {
         PRIORITY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

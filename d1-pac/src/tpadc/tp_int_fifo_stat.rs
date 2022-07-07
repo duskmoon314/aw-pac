@@ -71,9 +71,9 @@ impl FIFO_OVERRUN_PENDING_R {
     }
 }
 #[doc = "Field `FIFO_OVERRUN_PENDING` writer - TP FIFO Overrun Pending"]
-pub type FIFO_OVERRUN_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_OVERRUN_PENDING_A, 17>;
-impl<'a> FIFO_OVERRUN_PENDING_W<'a> {
+pub type FIFO_OVERRUN_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_OVERRUN_PENDING_A, O>;
+impl<'a, const O: u8> FIFO_OVERRUN_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl FIFO_DATA_PENDING_R {
     }
 }
 #[doc = "Field `FIFO_DATA_PENDING` writer - TP FIFO Data Available Pending"]
-pub type FIFO_DATA_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_DATA_PENDING_A, 16>;
-impl<'a> FIFO_DATA_PENDING_W<'a> {
+pub type FIFO_DATA_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_DATA_PENDING_A, O>;
+impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -211,9 +211,9 @@ impl TP_UP_PENDING_R {
     }
 }
 #[doc = "Field `TP_UP_PENDING` writer - TP Last Touch (Stylus UP) Pending"]
-pub type TP_UP_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_UP_PENDING_A, 1>;
-impl<'a> TP_UP_PENDING_W<'a> {
+pub type TP_UP_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_UP_PENDING_A, O>;
+impl<'a, const O: u8> TP_UP_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -262,9 +262,9 @@ impl TP_DOWN_PENDING_R {
     }
 }
 #[doc = "Field `TP_DOWN_PENDING` writer - TP First Touch (Stylus DOWN) Pending"]
-pub type TP_DOWN_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_DOWN_PENDING_A, 0>;
-impl<'a> TP_DOWN_PENDING_W<'a> {
+pub type TP_DOWN_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_DOWN_PENDING_A, O>;
+impl<'a, const O: u8> TP_DOWN_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -311,22 +311,22 @@ impl R {
 impl W {
     #[doc = "Bit 17 - TP FIFO Overrun Pending"]
     #[inline(always)]
-    pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W {
+    pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W<17> {
         FIFO_OVERRUN_PENDING_W::new(self)
     }
     #[doc = "Bit 16 - TP FIFO Data Available Pending"]
     #[inline(always)]
-    pub fn fifo_data_pending(&mut self) -> FIFO_DATA_PENDING_W {
+    pub fn fifo_data_pending(&mut self) -> FIFO_DATA_PENDING_W<16> {
         FIFO_DATA_PENDING_W::new(self)
     }
     #[doc = "Bit 1 - TP Last Touch (Stylus UP) Pending"]
     #[inline(always)]
-    pub fn tp_up_pending(&mut self) -> TP_UP_PENDING_W {
+    pub fn tp_up_pending(&mut self) -> TP_UP_PENDING_W<1> {
         TP_UP_PENDING_W::new(self)
     }
     #[doc = "Bit 0 - TP First Touch (Stylus DOWN) Pending"]
     #[inline(always)]
-    pub fn tp_down_pending(&mut self) -> TP_DOWN_PENDING_W {
+    pub fn tp_down_pending(&mut self) -> TP_DOWN_PENDING_W<0> {
         TP_DOWN_PENDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

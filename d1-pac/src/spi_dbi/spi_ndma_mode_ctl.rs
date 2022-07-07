@@ -89,9 +89,9 @@ impl SPI_ACT_M_R {
     }
 }
 #[doc = "Field `spi_act_m` writer - SPI NDMA Active Mode"]
-pub type SPI_ACT_M_W<'a> =
-    crate::FieldWriterSafe<'a, u32, SPI_NDMA_MODE_CTL_SPEC, u8, SPI_ACT_M_A, 2, 6>;
-impl<'a> SPI_ACT_M_W<'a> {
+pub type SPI_ACT_M_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, SPI_NDMA_MODE_CTL_SPEC, u8, SPI_ACT_M_A, 2, O>;
+impl<'a, const O: u8> SPI_ACT_M_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -150,8 +150,9 @@ impl SPI_ACK_M_R {
     }
 }
 #[doc = "Field `spi_ack_m` writer - SPI NDMA Acknowledge Mode"]
-pub type SPI_ACK_M_W<'a> = crate::BitWriter<'a, u32, SPI_NDMA_MODE_CTL_SPEC, SPI_ACK_M_A, 5>;
-impl<'a> SPI_ACK_M_W<'a> {
+pub type SPI_ACK_M_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_NDMA_MODE_CTL_SPEC, SPI_ACK_M_A, O>;
+impl<'a, const O: u8> SPI_ACK_M_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -166,7 +167,8 @@ impl<'a> SPI_ACK_M_W<'a> {
 #[doc = "Field `spi_dma_wait` reader - "]
 pub type SPI_DMA_WAIT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `spi_dma_wait` writer - "]
-pub type SPI_DMA_WAIT_W<'a> = crate::FieldWriter<'a, u32, SPI_NDMA_MODE_CTL_SPEC, u8, u8, 5, 0>;
+pub type SPI_DMA_WAIT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SPI_NDMA_MODE_CTL_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 6:7 - SPI NDMA Active Mode"]
     #[inline(always)]
@@ -187,17 +189,17 @@ impl R {
 impl W {
     #[doc = "Bits 6:7 - SPI NDMA Active Mode"]
     #[inline(always)]
-    pub fn spi_act_m(&mut self) -> SPI_ACT_M_W {
+    pub fn spi_act_m(&mut self) -> SPI_ACT_M_W<6> {
         SPI_ACT_M_W::new(self)
     }
     #[doc = "Bit 5 - SPI NDMA Acknowledge Mode"]
     #[inline(always)]
-    pub fn spi_ack_m(&mut self) -> SPI_ACK_M_W {
+    pub fn spi_ack_m(&mut self) -> SPI_ACK_M_W<5> {
         SPI_ACK_M_W::new(self)
     }
     #[doc = "Bits 0:4"]
     #[inline(always)]
-    pub fn spi_dma_wait(&mut self) -> SPI_DMA_WAIT_W {
+    pub fn spi_dma_wait(&mut self) -> SPI_DMA_WAIT_W<0> {
         SPI_DMA_WAIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

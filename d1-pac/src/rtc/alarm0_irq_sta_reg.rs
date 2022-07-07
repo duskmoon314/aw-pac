@@ -34,7 +34,70 @@ impl From<crate::W<ALARM0_IRQ_STA_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Alarm 0 IRQ Pending bit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALARM0_IRQ_PEND_A {
+    #[doc = "0: No effect"]
+    NO_EFFECT = 0,
+    #[doc = "1: Pending, alarm 0 counter value is reached\n\nIf alarm 0 irq enable is set to 1, the pending bit will be sent to the interrupt controller."]
+    PENDING = 1,
+}
+impl From<ALARM0_IRQ_PEND_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALARM0_IRQ_PEND_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `ALARM0_IRQ_PEND` reader - Alarm 0 IRQ Pending bit"]
+pub type ALARM0_IRQ_PEND_R = crate::BitReader<ALARM0_IRQ_PEND_A>;
+impl ALARM0_IRQ_PEND_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALARM0_IRQ_PEND_A {
+        match self.bits {
+            false => ALARM0_IRQ_PEND_A::NO_EFFECT,
+            true => ALARM0_IRQ_PEND_A::PENDING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[inline(always)]
+    pub fn is_no_effect(&self) -> bool {
+        *self == ALARM0_IRQ_PEND_A::NO_EFFECT
+    }
+    #[doc = "Checks if the value of the field is `PENDING`"]
+    #[inline(always)]
+    pub fn is_pending(&self) -> bool {
+        *self == ALARM0_IRQ_PEND_A::PENDING
+    }
+}
+#[doc = "Field `ALARM0_IRQ_PEND` writer - Alarm 0 IRQ Pending bit"]
+pub type ALARM0_IRQ_PEND_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, ALARM0_IRQ_STA_REG_SPEC, ALARM0_IRQ_PEND_A, O>;
+impl<'a, const O: u8> ALARM0_IRQ_PEND_W<'a, O> {
+    #[doc = "No effect"]
+    #[inline(always)]
+    pub fn no_effect(self) -> &'a mut W {
+        self.variant(ALARM0_IRQ_PEND_A::NO_EFFECT)
+    }
+    #[doc = "Pending, alarm 0 counter value is reached\n\nIf alarm 0 irq enable is set to 1, the pending bit will be sent to the interrupt controller."]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut W {
+        self.variant(ALARM0_IRQ_PEND_A::PENDING)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Alarm 0 IRQ Pending bit"]
+    #[inline(always)]
+    pub fn alarm0_irq_pend(&self) -> ALARM0_IRQ_PEND_R {
+        ALARM0_IRQ_PEND_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Alarm 0 IRQ Pending bit"]
+    #[inline(always)]
+    pub fn alarm0_irq_pend(&mut self) -> ALARM0_IRQ_PEND_W<0> {
+        ALARM0_IRQ_PEND_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

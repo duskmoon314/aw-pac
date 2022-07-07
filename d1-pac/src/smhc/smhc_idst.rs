@@ -75,31 +75,31 @@ impl IDMAC_ERR_STA_R {
 #[doc = "Field `ABN_INT_SUM` reader - Abnormal Interrupt Summary"]
 pub type ABN_INT_SUM_R = crate::BitReader<bool>;
 #[doc = "Field `ABN_INT_SUM` writer - Abnormal Interrupt Summary"]
-pub type ABN_INT_SUM_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 9>;
+pub type ABN_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 #[doc = "Field `NOR_INT_SUM` reader - Normal Interrupt Summary"]
 pub type NOR_INT_SUM_R = crate::BitReader<bool>;
 #[doc = "Field `NOR_INT_SUM` writer - Normal Interrupt Summary"]
-pub type NOR_INT_SUM_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 8>;
+pub type NOR_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 #[doc = "Field `ERR_FLAG_SUM` reader - Card Error Summary"]
 pub type ERR_FLAG_SUM_R = crate::BitReader<bool>;
 #[doc = "Field `ERR_FLAG_SUM` writer - Card Error Summary"]
-pub type ERR_FLAG_SUM_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 5>;
+pub type ERR_FLAG_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 #[doc = "Field `DES_UNAVL_INT` reader - Descriptor Unavailable Interrupt"]
 pub type DES_UNAVL_INT_R = crate::BitReader<bool>;
 #[doc = "Field `DES_UNAVL_INT` writer - Descriptor Unavailable Interrupt"]
-pub type DES_UNAVL_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 4>;
+pub type DES_UNAVL_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 #[doc = "Field `FATAL_BERR_INT` reader - Fatal Bus Error Interrupt"]
 pub type FATAL_BERR_INT_R = crate::BitReader<bool>;
 #[doc = "Field `FATAL_BERR_INT` writer - Fatal Bus Error Interrupt"]
-pub type FATAL_BERR_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 2>;
+pub type FATAL_BERR_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 #[doc = "Field `RX_INT` reader - Receive Interrupt"]
 pub type RX_INT_R = crate::BitReader<bool>;
 #[doc = "Field `RX_INT` writer - Receive Interrupt"]
-pub type RX_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 1>;
+pub type RX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 #[doc = "Field `TX_INT` reader - Transmit Interrupt"]
 pub type TX_INT_R = crate::BitReader<bool>;
 #[doc = "Field `TX_INT` writer - Transmit Interrupt"]
-pub type TX_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, 0>;
+pub type TX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 10:12 - Error Bits"]
     #[inline(always)]
@@ -145,37 +145,37 @@ impl R {
 impl W {
     #[doc = "Bit 9 - Abnormal Interrupt Summary"]
     #[inline(always)]
-    pub fn abn_int_sum(&mut self) -> ABN_INT_SUM_W {
+    pub fn abn_int_sum(&mut self) -> ABN_INT_SUM_W<9> {
         ABN_INT_SUM_W::new(self)
     }
     #[doc = "Bit 8 - Normal Interrupt Summary"]
     #[inline(always)]
-    pub fn nor_int_sum(&mut self) -> NOR_INT_SUM_W {
+    pub fn nor_int_sum(&mut self) -> NOR_INT_SUM_W<8> {
         NOR_INT_SUM_W::new(self)
     }
     #[doc = "Bit 5 - Card Error Summary"]
     #[inline(always)]
-    pub fn err_flag_sum(&mut self) -> ERR_FLAG_SUM_W {
+    pub fn err_flag_sum(&mut self) -> ERR_FLAG_SUM_W<5> {
         ERR_FLAG_SUM_W::new(self)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
-    pub fn des_unavl_int(&mut self) -> DES_UNAVL_INT_W {
+    pub fn des_unavl_int(&mut self) -> DES_UNAVL_INT_W<4> {
         DES_UNAVL_INT_W::new(self)
     }
     #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
     #[inline(always)]
-    pub fn fatal_berr_int(&mut self) -> FATAL_BERR_INT_W {
+    pub fn fatal_berr_int(&mut self) -> FATAL_BERR_INT_W<2> {
         FATAL_BERR_INT_W::new(self)
     }
     #[doc = "Bit 1 - Receive Interrupt"]
     #[inline(always)]
-    pub fn rx_int(&mut self) -> RX_INT_W {
+    pub fn rx_int(&mut self) -> RX_INT_W<1> {
         RX_INT_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
-    pub fn tx_int(&mut self) -> TX_INT_W {
+    pub fn tx_int(&mut self) -> TX_INT_W<0> {
         TX_INT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

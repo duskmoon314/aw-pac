@@ -73,8 +73,9 @@ impl PWM01_CLK_SRC_R {
     }
 }
 #[doc = "Field `PWM01_CLK_SRC` writer - Select PWM01 Clock Source"]
-pub type PWM01_CLK_SRC_W<'a> = crate::FieldWriter<'a, u32, PCCR01_SPEC, u8, PWM01_CLK_SRC_A, 2, 7>;
-impl<'a> PWM01_CLK_SRC_W<'a> {
+pub type PWM01_CLK_SRC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PCCR01_SPEC, u8, PWM01_CLK_SRC_A, 2, O>;
+impl<'a, const O: u8> PWM01_CLK_SRC_W<'a, O> {
     #[doc = "HOSC"]
     #[inline(always)]
     pub fn hosc(self) -> &'a mut W {
@@ -181,9 +182,9 @@ impl PWM01_CLK_DIV_M_R {
     }
 }
 #[doc = "Field `PWM01_CLK_DIV_M` writer - PWM01 Clock Divide M"]
-pub type PWM01_CLK_DIV_M_W<'a> =
-    crate::FieldWriter<'a, u32, PCCR01_SPEC, u8, PWM01_CLK_DIV_M_A, 4, 0>;
-impl<'a> PWM01_CLK_DIV_M_W<'a> {
+pub type PWM01_CLK_DIV_M_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PCCR01_SPEC, u8, PWM01_CLK_DIV_M_A, 4, O>;
+impl<'a, const O: u8> PWM01_CLK_DIV_M_W<'a, O> {
     #[doc = "/1"]
     #[inline(always)]
     pub fn m1(self) -> &'a mut W {
@@ -245,12 +246,12 @@ impl R {
 impl W {
     #[doc = "Bits 7:8 - Select PWM01 Clock Source"]
     #[inline(always)]
-    pub fn pwm01_clk_src(&mut self) -> PWM01_CLK_SRC_W {
+    pub fn pwm01_clk_src(&mut self) -> PWM01_CLK_SRC_W<7> {
         PWM01_CLK_SRC_W::new(self)
     }
     #[doc = "Bits 0:3 - PWM01 Clock Divide M"]
     #[inline(always)]
-    pub fn pwm01_clk_div_m(&mut self) -> PWM01_CLK_DIV_M_W {
+    pub fn pwm01_clk_div_m(&mut self) -> PWM01_CLK_DIV_M_W<0> {
         PWM01_CLK_DIV_M_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

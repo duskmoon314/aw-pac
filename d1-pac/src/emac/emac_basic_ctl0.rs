@@ -81,8 +81,9 @@ impl SPEED_R {
     }
 }
 #[doc = "Field `SPEED` writer - EMAC Working Speed"]
-pub type SPEED_W<'a> = crate::FieldWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, u8, SPEED_A, 2, 2>;
-impl<'a> SPEED_W<'a> {
+pub type SPEED_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, u8, SPEED_A, 2, O>;
+impl<'a, const O: u8> SPEED_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn s1000(self) -> &'a mut W {
@@ -136,8 +137,9 @@ impl LOOPBACK_R {
     }
 }
 #[doc = "Field `LOOPBACK` writer - EMAC Loopback Mode For Test"]
-pub type LOOPBACK_W<'a> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, LOOPBACK_A, 1>;
-impl<'a> LOOPBACK_W<'a> {
+pub type LOOPBACK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, LOOPBACK_A, O>;
+impl<'a, const O: u8> LOOPBACK_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -186,8 +188,8 @@ impl DUPLEX_R {
     }
 }
 #[doc = "Field `DUPLEX` writer - EMAC Transfer Mode"]
-pub type DUPLEX_W<'a> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, DUPLEX_A, 0>;
-impl<'a> DUPLEX_W<'a> {
+pub type DUPLEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, DUPLEX_A, O>;
+impl<'a, const O: u8> DUPLEX_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn half_duplex(self) -> &'a mut W {
@@ -219,17 +221,17 @@ impl R {
 impl W {
     #[doc = "Bits 2:3 - EMAC Working Speed"]
     #[inline(always)]
-    pub fn speed(&mut self) -> SPEED_W {
+    pub fn speed(&mut self) -> SPEED_W<2> {
         SPEED_W::new(self)
     }
     #[doc = "Bit 1 - EMAC Loopback Mode For Test"]
     #[inline(always)]
-    pub fn loopback(&mut self) -> LOOPBACK_W {
+    pub fn loopback(&mut self) -> LOOPBACK_W<1> {
         LOOPBACK_W::new(self)
     }
     #[doc = "Bit 0 - EMAC Transfer Mode"]
     #[inline(always)]
-    pub fn duplex(&mut self) -> DUPLEX_W {
+    pub fn duplex(&mut self) -> DUPLEX_W<0> {
         DUPLEX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

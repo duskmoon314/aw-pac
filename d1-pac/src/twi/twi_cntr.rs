@@ -71,8 +71,8 @@ impl INT_EN_R {
     }
 }
 #[doc = "Field `int_en` writer - Interrupt Enable"]
-pub type INT_EN_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, INT_EN_A, 7>;
-impl<'a> INT_EN_W<'a> {
+pub type INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, INT_EN_A, O>;
+impl<'a, const O: u8> INT_EN_W<'a, O> {
     #[doc = "The interrupt line always low"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl BUS_EN_R {
     }
 }
 #[doc = "Field `bus_en` writer - TWI Bus Enable"]
-pub type BUS_EN_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, BUS_EN_A, 6>;
-impl<'a> BUS_EN_W<'a> {
+pub type BUS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, BUS_EN_A, O>;
+impl<'a, const O: u8> BUS_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ignored(self) -> &'a mut W {
@@ -137,19 +137,19 @@ impl<'a> BUS_EN_W<'a> {
 #[doc = "Field `m_sta` reader - Master Mode Start"]
 pub type M_STA_R = crate::BitReader<bool>;
 #[doc = "Field `m_sta` writer - Master Mode Start"]
-pub type M_STA_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 5>;
+pub type M_STA_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, O>;
 #[doc = "Field `m_stp` reader - Master Mode Stop"]
 pub type M_STP_R = crate::BitReader<bool>;
 #[doc = "Field `m_stp` writer - Master Mode Stop"]
-pub type M_STP_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 4>;
+pub type M_STP_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, O>;
 #[doc = "Field `int_flag` reader - Interrupt Flag"]
 pub type INT_FLAG_R = crate::BitReader<bool>;
 #[doc = "Field `int_flag` writer - Interrupt Flag"]
-pub type INT_FLAG_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 3>;
+pub type INT_FLAG_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, O>;
 #[doc = "Field `a_ack` reader - Assert Acknowledge"]
 pub type A_ACK_R = crate::BitReader<bool>;
 #[doc = "Field `a_ack` writer - Assert Acknowledge"]
-pub type A_ACK_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, 2>;
+pub type A_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_COUNT_MODE_A {
@@ -187,8 +187,9 @@ impl CLK_COUNT_MODE_R {
     }
 }
 #[doc = "Field `clk_count_mode` writer - "]
-pub type CLK_COUNT_MODE_W<'a> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, CLK_COUNT_MODE_A, 0>;
-impl<'a> CLK_COUNT_MODE_W<'a> {
+pub type CLK_COUNT_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_CNTR_SPEC, CLK_COUNT_MODE_A, O>;
+impl<'a, const O: u8> CLK_COUNT_MODE_W<'a, O> {
     #[doc = "scl clock high period count on oscl"]
     #[inline(always)]
     pub fn oscl(self) -> &'a mut W {
@@ -240,37 +241,37 @@ impl R {
 impl W {
     #[doc = "Bit 7 - Interrupt Enable"]
     #[inline(always)]
-    pub fn int_en(&mut self) -> INT_EN_W {
+    pub fn int_en(&mut self) -> INT_EN_W<7> {
         INT_EN_W::new(self)
     }
     #[doc = "Bit 6 - TWI Bus Enable"]
     #[inline(always)]
-    pub fn bus_en(&mut self) -> BUS_EN_W {
+    pub fn bus_en(&mut self) -> BUS_EN_W<6> {
         BUS_EN_W::new(self)
     }
     #[doc = "Bit 5 - Master Mode Start"]
     #[inline(always)]
-    pub fn m_sta(&mut self) -> M_STA_W {
+    pub fn m_sta(&mut self) -> M_STA_W<5> {
         M_STA_W::new(self)
     }
     #[doc = "Bit 4 - Master Mode Stop"]
     #[inline(always)]
-    pub fn m_stp(&mut self) -> M_STP_W {
+    pub fn m_stp(&mut self) -> M_STP_W<4> {
         M_STP_W::new(self)
     }
     #[doc = "Bit 3 - Interrupt Flag"]
     #[inline(always)]
-    pub fn int_flag(&mut self) -> INT_FLAG_W {
+    pub fn int_flag(&mut self) -> INT_FLAG_W<3> {
         INT_FLAG_W::new(self)
     }
     #[doc = "Bit 2 - Assert Acknowledge"]
     #[inline(always)]
-    pub fn a_ack(&mut self) -> A_ACK_W {
+    pub fn a_ack(&mut self) -> A_ACK_W<2> {
         A_ACK_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W {
+    pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W<0> {
         CLK_COUNT_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

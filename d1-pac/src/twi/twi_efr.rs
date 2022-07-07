@@ -89,8 +89,8 @@ impl DBN_R {
     }
 }
 #[doc = "Field `dbn` writer - Data Byte Number Follow Read Command Control"]
-pub type DBN_W<'a> = crate::FieldWriterSafe<'a, u32, TWI_EFR_SPEC, u8, DBN_A, 2, 0>;
-impl<'a> DBN_W<'a> {
+pub type DBN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TWI_EFR_SPEC, u8, DBN_A, 2, O>;
+impl<'a, const O: u8> DBN_W<'a, O> {
     #[doc = "No data byte can be written after the read command"]
     #[inline(always)]
     pub fn b0(self) -> &'a mut W {
@@ -122,7 +122,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Data Byte Number Follow Read Command Control"]
     #[inline(always)]
-    pub fn dbn(&mut self) -> DBN_W {
+    pub fn dbn(&mut self) -> DBN_W<0> {
         DBN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

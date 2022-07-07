@@ -71,8 +71,9 @@ impl HS400_MD_EN_R {
     }
 }
 #[doc = "Field `HS400_MD_EN` writer - HS400 Mode Enable"]
-pub type HS400_MD_EN_W<'a> = crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HS400_MD_EN_A, 31>;
-impl<'a> HS400_MD_EN_W<'a> {
+pub type HS400_MD_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HS400_MD_EN_A, O>;
+impl<'a, const O: u8> HS400_MD_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -121,9 +122,9 @@ impl HALF_START_BIT_R {
     }
 }
 #[doc = "Field `HALF_START_BIT` writer - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
-pub type HALF_START_BIT_W<'a> =
-    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HALF_START_BIT_A, 0>;
-impl<'a> HALF_START_BIT_W<'a> {
+pub type HALF_START_BIT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HALF_START_BIT_A, O>;
+impl<'a, const O: u8> HALF_START_BIT_W<'a, O> {
     #[doc = "Full cycle"]
     #[inline(always)]
     pub fn full(self) -> &'a mut W {
@@ -150,12 +151,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - HS400 Mode Enable"]
     #[inline(always)]
-    pub fn hs400_md_en(&mut self) -> HS400_MD_EN_W {
+    pub fn hs400_md_en(&mut self) -> HS400_MD_EN_W<31> {
         HS400_MD_EN_W::new(self)
     }
     #[doc = "Bit 0 - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
     #[inline(always)]
-    pub fn half_start_bit(&mut self) -> HALF_START_BIT_W {
+    pub fn half_start_bit(&mut self) -> HALF_START_BIT_W<0> {
         HALF_START_BIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

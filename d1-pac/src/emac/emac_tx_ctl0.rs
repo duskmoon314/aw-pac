@@ -71,8 +71,8 @@ impl TX_EN_R {
     }
 }
 #[doc = "Field `TX_EN` writer - Enable Transmitter"]
-pub type TX_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_EN_A, 31>;
-impl<'a> TX_EN_W<'a> {
+pub type TX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_EN_A, O>;
+impl<'a, const O: u8> TX_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +121,9 @@ impl TX_FRM_LEN_CTL_R {
     }
 }
 #[doc = "Field `TX_FRM_LEN_CTL` writer - Frame Transmit Length Control"]
-pub type TX_FRM_LEN_CTL_W<'a> = crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_FRM_LEN_CTL_A, 30>;
-impl<'a> TX_FRM_LEN_CTL_W<'a> {
+pub type TX_FRM_LEN_CTL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_FRM_LEN_CTL_A, O>;
+impl<'a, const O: u8> TX_FRM_LEN_CTL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn b2048(self) -> &'a mut W {
@@ -149,12 +150,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Enable Transmitter"]
     #[inline(always)]
-    pub fn tx_en(&mut self) -> TX_EN_W {
+    pub fn tx_en(&mut self) -> TX_EN_W<31> {
         TX_EN_W::new(self)
     }
     #[doc = "Bit 30 - Frame Transmit Length Control"]
     #[inline(always)]
-    pub fn tx_frm_len_ctl(&mut self) -> TX_FRM_LEN_CTL_W {
+    pub fn tx_frm_len_ctl(&mut self) -> TX_FRM_LEN_CTL_W<30> {
         TX_FRM_LEN_CTL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_CMD_SPEC>> for W {
 #[doc = "Field `CMD_LOAD` reader - Start Command"]
 pub type CMD_LOAD_R = crate::BitReader<bool>;
 #[doc = "Field `CMD_LOAD` writer - Start Command"]
-pub type CMD_LOAD_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, 31>;
+pub type CMD_LOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
 #[doc = "Voltage Switch\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VOL_SW_A {
@@ -75,8 +75,8 @@ impl VOL_SW_R {
     }
 }
 #[doc = "Field `VOL_SW` writer - Voltage Switch"]
-pub type VOL_SW_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, VOL_SW_A, 28>;
-impl<'a> VOL_SW_W<'a> {
+pub type VOL_SW_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, VOL_SW_A, O>;
+impl<'a, const O: u8> VOL_SW_W<'a, O> {
     #[doc = "Normal command"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -91,11 +91,11 @@ impl<'a> VOL_SW_W<'a> {
 #[doc = "Field `BOOT_ABT` reader - Boot Abort"]
 pub type BOOT_ABT_R = crate::BitReader<bool>;
 #[doc = "Field `BOOT_ABT` writer - Boot Abort"]
-pub type BOOT_ABT_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, 27>;
+pub type BOOT_ABT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
 #[doc = "Field `EXP_BOOT_ACK` reader - Expect Boot Acknowledge"]
 pub type EXP_BOOT_ACK_R = crate::BitReader<bool>;
 #[doc = "Field `EXP_BOOT_ACK` writer - Expect Boot Acknowledge"]
-pub type EXP_BOOT_ACK_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, 26>;
+pub type EXP_BOOT_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
 #[doc = "Boot Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -143,8 +143,9 @@ impl BOOT_MOD_R {
     }
 }
 #[doc = "Field `BOOT_MOD` writer - Boot Mode"]
-pub type BOOT_MOD_W<'a> = crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, BOOT_MOD_A, 2, 24>;
-impl<'a> BOOT_MOD_W<'a> {
+pub type BOOT_MOD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, BOOT_MOD_A, 2, O>;
+impl<'a, const O: u8> BOOT_MOD_W<'a, O> {
     #[doc = "Normal command"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -198,8 +199,8 @@ impl PRG_CLK_R {
     }
 }
 #[doc = "Field `PRG_CLK` writer - Change Clock"]
-pub type PRG_CLK_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, PRG_CLK_A, 21>;
-impl<'a> PRG_CLK_W<'a> {
+pub type PRG_CLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, PRG_CLK_A, O>;
+impl<'a, const O: u8> PRG_CLK_W<'a, O> {
     #[doc = "Normal command"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -248,8 +249,9 @@ impl SEND_INIT_SEQ_R {
     }
 }
 #[doc = "Field `SEND_INIT_SEQ` writer - Send Initialization"]
-pub type SEND_INIT_SEQ_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, SEND_INIT_SEQ_A, 15>;
-impl<'a> SEND_INIT_SEQ_W<'a> {
+pub type SEND_INIT_SEQ_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, SEND_INIT_SEQ_A, O>;
+impl<'a, const O: u8> SEND_INIT_SEQ_W<'a, O> {
     #[doc = "Normal command sending"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -298,8 +300,9 @@ impl STOP_ABT_CMD_R {
     }
 }
 #[doc = "Field `STOP_ABT_CMD` writer - Stop Abort Command"]
-pub type STOP_ABT_CMD_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_ABT_CMD_A, 14>;
-impl<'a> STOP_ABT_CMD_W<'a> {
+pub type STOP_ABT_CMD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_ABT_CMD_A, O>;
+impl<'a, const O: u8> STOP_ABT_CMD_W<'a, O> {
     #[doc = "Normal command sending"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -348,8 +351,9 @@ impl WAIT_PRE_OVER_R {
     }
 }
 #[doc = "Field `WAIT_PRE_OVER` writer - Wait for Data Transfer Over"]
-pub type WAIT_PRE_OVER_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, WAIT_PRE_OVER_A, 13>;
-impl<'a> WAIT_PRE_OVER_W<'a> {
+pub type WAIT_PRE_OVER_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, WAIT_PRE_OVER_A, O>;
+impl<'a, const O: u8> WAIT_PRE_OVER_W<'a, O> {
     #[doc = "Send command at once, does not care about data transferring"]
     #[inline(always)]
     pub fn at_once(self) -> &'a mut W {
@@ -398,8 +402,9 @@ impl STOP_CMD_FLAG_R {
     }
 }
 #[doc = "Field `STOP_CMD_FLAG` writer - Send Stop CMD Automatically (CMD12)"]
-pub type STOP_CMD_FLAG_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_CMD_FLAG_A, 12>;
-impl<'a> STOP_CMD_FLAG_W<'a> {
+pub type STOP_CMD_FLAG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_CMD_FLAG_A, O>;
+impl<'a, const O: u8> STOP_CMD_FLAG_W<'a, O> {
     #[doc = "Do not send stop command at the end of the data transfer"]
     #[inline(always)]
     pub fn no_stop(self) -> &'a mut W {
@@ -448,8 +453,8 @@ impl TRANS_MODE_R {
     }
 }
 #[doc = "Field `TRANS_MODE` writer - Transfer Mode"]
-pub type TRANS_MODE_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_MODE_A, 11>;
-impl<'a> TRANS_MODE_W<'a> {
+pub type TRANS_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_MODE_A, O>;
+impl<'a, const O: u8> TRANS_MODE_W<'a, O> {
     #[doc = "Block data transfer command"]
     #[inline(always)]
     pub fn block(self) -> &'a mut W {
@@ -498,8 +503,8 @@ impl TRANS_DIR_R {
     }
 }
 #[doc = "Field `TRANS_DIR` writer - Transfer Direction"]
-pub type TRANS_DIR_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_DIR_A, 10>;
-impl<'a> TRANS_DIR_W<'a> {
+pub type TRANS_DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_DIR_A, O>;
+impl<'a, const O: u8> TRANS_DIR_W<'a, O> {
     #[doc = "Read operation"]
     #[inline(always)]
     pub fn read(self) -> &'a mut W {
@@ -548,8 +553,8 @@ impl DATA_TRANS_R {
     }
 }
 #[doc = "Field `DATA_TRANS` writer - Data Transfer"]
-pub type DATA_TRANS_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, DATA_TRANS_A, 9>;
-impl<'a> DATA_TRANS_W<'a> {
+pub type DATA_TRANS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, DATA_TRANS_A, O>;
+impl<'a, const O: u8> DATA_TRANS_W<'a, O> {
     #[doc = "Without data transfer"]
     #[inline(always)]
     pub fn without(self) -> &'a mut W {
@@ -598,8 +603,9 @@ impl CHK_RESP_CRC_R {
     }
 }
 #[doc = "Field `CHK_RESP_CRC` writer - Check Response CRC"]
-pub type CHK_RESP_CRC_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, CHK_RESP_CRC_A, 8>;
-impl<'a> CHK_RESP_CRC_W<'a> {
+pub type CHK_RESP_CRC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, CHK_RESP_CRC_A, O>;
+impl<'a, const O: u8> CHK_RESP_CRC_W<'a, O> {
     #[doc = "Do not check response CRC"]
     #[inline(always)]
     pub fn not_check(self) -> &'a mut W {
@@ -648,8 +654,8 @@ impl LONG_RESP_R {
     }
 }
 #[doc = "Field `LONG_RESP` writer - Response Type"]
-pub type LONG_RESP_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, LONG_RESP_A, 7>;
-impl<'a> LONG_RESP_W<'a> {
+pub type LONG_RESP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, LONG_RESP_A, O>;
+impl<'a, const O: u8> LONG_RESP_W<'a, O> {
     #[doc = "Short Response (48 bits)"]
     #[inline(always)]
     pub fn short(self) -> &'a mut W {
@@ -698,8 +704,8 @@ impl RESP_RCV_R {
     }
 }
 #[doc = "Field `RESP_RCV` writer - Response Receive"]
-pub type RESP_RCV_W<'a> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, RESP_RCV_A, 6>;
-impl<'a> RESP_RCV_W<'a> {
+pub type RESP_RCV_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, RESP_RCV_A, O>;
+impl<'a, const O: u8> RESP_RCV_W<'a, O> {
     #[doc = "Command without response"]
     #[inline(always)]
     pub fn without(self) -> &'a mut W {
@@ -714,7 +720,7 @@ impl<'a> RESP_RCV_W<'a> {
 #[doc = "Field `CMD_IDX` reader - CMD Index"]
 pub type CMD_IDX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMD_IDX` writer - CMD Index"]
-pub type CMD_IDX_W<'a> = crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, u8, 6, 0>;
+pub type CMD_IDX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 31 - Start Command"]
     #[inline(always)]
@@ -805,87 +811,87 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Start Command"]
     #[inline(always)]
-    pub fn cmd_load(&mut self) -> CMD_LOAD_W {
+    pub fn cmd_load(&mut self) -> CMD_LOAD_W<31> {
         CMD_LOAD_W::new(self)
     }
     #[doc = "Bit 28 - Voltage Switch"]
     #[inline(always)]
-    pub fn vol_sw(&mut self) -> VOL_SW_W {
+    pub fn vol_sw(&mut self) -> VOL_SW_W<28> {
         VOL_SW_W::new(self)
     }
     #[doc = "Bit 27 - Boot Abort"]
     #[inline(always)]
-    pub fn boot_abt(&mut self) -> BOOT_ABT_W {
+    pub fn boot_abt(&mut self) -> BOOT_ABT_W<27> {
         BOOT_ABT_W::new(self)
     }
     #[doc = "Bit 26 - Expect Boot Acknowledge"]
     #[inline(always)]
-    pub fn exp_boot_ack(&mut self) -> EXP_BOOT_ACK_W {
+    pub fn exp_boot_ack(&mut self) -> EXP_BOOT_ACK_W<26> {
         EXP_BOOT_ACK_W::new(self)
     }
     #[doc = "Bits 24:25 - Boot Mode"]
     #[inline(always)]
-    pub fn boot_mod(&mut self) -> BOOT_MOD_W {
+    pub fn boot_mod(&mut self) -> BOOT_MOD_W<24> {
         BOOT_MOD_W::new(self)
     }
     #[doc = "Bit 21 - Change Clock"]
     #[inline(always)]
-    pub fn prg_clk(&mut self) -> PRG_CLK_W {
+    pub fn prg_clk(&mut self) -> PRG_CLK_W<21> {
         PRG_CLK_W::new(self)
     }
     #[doc = "Bit 15 - Send Initialization"]
     #[inline(always)]
-    pub fn send_init_seq(&mut self) -> SEND_INIT_SEQ_W {
+    pub fn send_init_seq(&mut self) -> SEND_INIT_SEQ_W<15> {
         SEND_INIT_SEQ_W::new(self)
     }
     #[doc = "Bit 14 - Stop Abort Command"]
     #[inline(always)]
-    pub fn stop_abt_cmd(&mut self) -> STOP_ABT_CMD_W {
+    pub fn stop_abt_cmd(&mut self) -> STOP_ABT_CMD_W<14> {
         STOP_ABT_CMD_W::new(self)
     }
     #[doc = "Bit 13 - Wait for Data Transfer Over"]
     #[inline(always)]
-    pub fn wait_pre_over(&mut self) -> WAIT_PRE_OVER_W {
+    pub fn wait_pre_over(&mut self) -> WAIT_PRE_OVER_W<13> {
         WAIT_PRE_OVER_W::new(self)
     }
     #[doc = "Bit 12 - Send Stop CMD Automatically (CMD12)"]
     #[inline(always)]
-    pub fn stop_cmd_flag(&mut self) -> STOP_CMD_FLAG_W {
+    pub fn stop_cmd_flag(&mut self) -> STOP_CMD_FLAG_W<12> {
         STOP_CMD_FLAG_W::new(self)
     }
     #[doc = "Bit 11 - Transfer Mode"]
     #[inline(always)]
-    pub fn trans_mode(&mut self) -> TRANS_MODE_W {
+    pub fn trans_mode(&mut self) -> TRANS_MODE_W<11> {
         TRANS_MODE_W::new(self)
     }
     #[doc = "Bit 10 - Transfer Direction"]
     #[inline(always)]
-    pub fn trans_dir(&mut self) -> TRANS_DIR_W {
+    pub fn trans_dir(&mut self) -> TRANS_DIR_W<10> {
         TRANS_DIR_W::new(self)
     }
     #[doc = "Bit 9 - Data Transfer"]
     #[inline(always)]
-    pub fn data_trans(&mut self) -> DATA_TRANS_W {
+    pub fn data_trans(&mut self) -> DATA_TRANS_W<9> {
         DATA_TRANS_W::new(self)
     }
     #[doc = "Bit 8 - Check Response CRC"]
     #[inline(always)]
-    pub fn chk_resp_crc(&mut self) -> CHK_RESP_CRC_W {
+    pub fn chk_resp_crc(&mut self) -> CHK_RESP_CRC_W<8> {
         CHK_RESP_CRC_W::new(self)
     }
     #[doc = "Bit 7 - Response Type"]
     #[inline(always)]
-    pub fn long_resp(&mut self) -> LONG_RESP_W {
+    pub fn long_resp(&mut self) -> LONG_RESP_W<7> {
         LONG_RESP_W::new(self)
     }
     #[doc = "Bit 6 - Response Receive"]
     #[inline(always)]
-    pub fn resp_rcv(&mut self) -> RESP_RCV_W {
+    pub fn resp_rcv(&mut self) -> RESP_RCV_W<6> {
         RESP_RCV_W::new(self)
     }
     #[doc = "Bits 0:5 - CMD Index"]
     #[inline(always)]
-    pub fn cmd_idx(&mut self) -> CMD_IDX_W {
+    pub fn cmd_idx(&mut self) -> CMD_IDX_W<0> {
         CMD_IDX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

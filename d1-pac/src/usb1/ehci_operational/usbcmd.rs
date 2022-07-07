@@ -113,9 +113,9 @@ impl INTERRUPT_THRESHOLD_CONTROL_R {
     }
 }
 #[doc = "Field `INTERRUPT_THRESHOLD_CONTROL` writer - Interrupt Threshold Control\n\nThe value in this field is used by system software to select the maximum rate at which the host controller will issue interrupts."]
-pub type INTERRUPT_THRESHOLD_CONTROL_W<'a> =
-    crate::FieldWriter<'a, u32, USBCMD_SPEC, u8, INTERRUPT_THRESHOLD_CONTROL_A, 8, 16>;
-impl<'a> INTERRUPT_THRESHOLD_CONTROL_W<'a> {
+pub type INTERRUPT_THRESHOLD_CONTROL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, USBCMD_SPEC, u8, INTERRUPT_THRESHOLD_CONTROL_A, 8, O>;
+impl<'a, const O: u8> INTERRUPT_THRESHOLD_CONTROL_W<'a, O> {
     #[doc = "1 micro-frame"]
     #[inline(always)]
     pub fn mf1(self) -> &'a mut W {
@@ -159,12 +159,13 @@ pub type ASYNCHRONOUS_SCHEDULE_PARK_MODE_COUNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LIGHT_HOST_CONTROLLER_RESET` reader - Light Host Controller Reset (OPTIONAL)\n\nThis control bit is not required. If implemented, it allows the driver to reset the EHCI controller without affecting the state of the ports or relationship to the companion host controllers. For example, the PORSTC registers should not be reset to their default values and the CF bit setting should not go to zero (retaining port ownership relationships). A host software read of this bit as zero indicates the Light Host Controller Reset has completed and it si safe for software to re- initialize the host controller. A host software read of this bit as a one indicates the Light Host"]
 pub type LIGHT_HOST_CONTROLLER_RESET_R = crate::BitReader<bool>;
 #[doc = "Field `LIGHT_HOST_CONTROLLER_RESET` writer - Light Host Controller Reset (OPTIONAL)\n\nThis control bit is not required. If implemented, it allows the driver to reset the EHCI controller without affecting the state of the ports or relationship to the companion host controllers. For example, the PORSTC registers should not be reset to their default values and the CF bit setting should not go to zero (retaining port ownership relationships). A host software read of this bit as zero indicates the Light Host Controller Reset has completed and it si safe for software to re- initialize the host controller. A host software read of this bit as a one indicates the Light Host"]
-pub type LIGHT_HOST_CONTROLLER_RESET_W<'a> = crate::BitWriter<'a, u32, USBCMD_SPEC, bool, 7>;
+pub type LIGHT_HOST_CONTROLLER_RESET_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBCMD_SPEC, bool, O>;
 #[doc = "Field `INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL` reader - Interrupt on Async Advance Doorbell\n\nThis bit is used as a doorbell by software to tell the host controller to issue an interrupt the next time it advances asynchronous schedule. Software must write a 1 to this bit to ring the doorbell. When the host controller has evicted all appropriate cached schedule state, it sets the Interrupt on Async Advance status bit in the USBSTS. if the Interrupt on Async Advance Enable bit in the USBINTR register is a one then the host controller will assert an interrupt at the next interrupt threshold.\n\nThe host controller sets this bit to a zero after it has set the Interrupt on Async Advance status bit in the USBSTS register to a one.\n\nSoftware should not write a one to this bit when the asynchronous schedule is disabled. Doing so will yield undefined results."]
 pub type INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL_R = crate::BitReader<bool>;
 #[doc = "Field `INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL` writer - Interrupt on Async Advance Doorbell\n\nThis bit is used as a doorbell by software to tell the host controller to issue an interrupt the next time it advances asynchronous schedule. Software must write a 1 to this bit to ring the doorbell. When the host controller has evicted all appropriate cached schedule state, it sets the Interrupt on Async Advance status bit in the USBSTS. if the Interrupt on Async Advance Enable bit in the USBINTR register is a one then the host controller will assert an interrupt at the next interrupt threshold.\n\nThe host controller sets this bit to a zero after it has set the Interrupt on Async Advance status bit in the USBSTS register to a one.\n\nSoftware should not write a one to this bit when the asynchronous schedule is disabled. Doing so will yield undefined results."]
-pub type INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL_W<'a> =
-    crate::BitWriter<'a, u32, USBCMD_SPEC, bool, 6>;
+pub type INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBCMD_SPEC, bool, O>;
 #[doc = "Asynchronous Schedule Enable\n\nThis bit controls whether the host controller skips processing the Asynchronous Schedule.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ASYNCHRONOUS_SCHEDULE_ENABLE_A {
@@ -202,9 +203,9 @@ impl ASYNCHRONOUS_SCHEDULE_ENABLE_R {
     }
 }
 #[doc = "Field `ASYNCHRONOUS_SCHEDULE_ENABLE` writer - Asynchronous Schedule Enable\n\nThis bit controls whether the host controller skips processing the Asynchronous Schedule."]
-pub type ASYNCHRONOUS_SCHEDULE_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, USBCMD_SPEC, ASYNCHRONOUS_SCHEDULE_ENABLE_A, 5>;
-impl<'a> ASYNCHRONOUS_SCHEDULE_ENABLE_W<'a> {
+pub type ASYNCHRONOUS_SCHEDULE_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBCMD_SPEC, ASYNCHRONOUS_SCHEDULE_ENABLE_A, O>;
+impl<'a, const O: u8> ASYNCHRONOUS_SCHEDULE_ENABLE_W<'a, O> {
     #[doc = "Do not process the Asynchronous Schedule"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -253,9 +254,9 @@ impl PERIODIC_SCHEDULE_ENABLE_R {
     }
 }
 #[doc = "Field `PERIODIC_SCHEDULE_ENABLE` writer - Periodic Schedule Enable\n\nThis bit controls whether the host controller skips processing the Periodic Schedule."]
-pub type PERIODIC_SCHEDULE_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, USBCMD_SPEC, PERIODIC_SCHEDULE_ENABLE_A, 4>;
-impl<'a> PERIODIC_SCHEDULE_ENABLE_W<'a> {
+pub type PERIODIC_SCHEDULE_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBCMD_SPEC, PERIODIC_SCHEDULE_ENABLE_A, O>;
+impl<'a, const O: u8> PERIODIC_SCHEDULE_ENABLE_W<'a, O> {
     #[doc = "Do not process the Periodic Schedule"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -314,9 +315,9 @@ impl FRAME_LIST_SIZE_R {
     }
 }
 #[doc = "Field `FRAME_LIST_SIZE` writer - This field is R/W only if Programmable Frame List Flag in the HCCPARAMS register is set to one. This field specifies the size of the Frame list."]
-pub type FRAME_LIST_SIZE_W<'a> =
-    crate::FieldWriter<'a, u32, USBCMD_SPEC, u8, FRAME_LIST_SIZE_A, 2, 2>;
-impl<'a> FRAME_LIST_SIZE_W<'a> {
+pub type FRAME_LIST_SIZE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, USBCMD_SPEC, u8, FRAME_LIST_SIZE_A, 2, O>;
+impl<'a, const O: u8> FRAME_LIST_SIZE_W<'a, O> {
     #[doc = "1024 frames"]
     #[inline(always)]
     pub fn f1024(self) -> &'a mut W {
@@ -336,11 +337,11 @@ impl<'a> FRAME_LIST_SIZE_W<'a> {
 #[doc = "Field `HOST_CONTROLLER_RESET` reader - Host Controller Reset\n\nThis control bit is used by software to reset the host controller. The effects of this on Root Hub registers are similar to a Chip Hardware Reset.\n\nWhen software writes a one to this bit, the Host Controller resets its internal pipelines, timers, counters, state machines, etc. to their initial value. Any transaction currently in progress on USB is immediately terminated. A USB reset is not driven on downstream ports.\n\nAll operational registers, including port registers and port state machines are set to their initial values. Port ownership reverts to the companion host controller(s). Software must reinitialize the host controller as described in Section 4.1 of the CHEI Specification in order to return the host controller to an operational state. This bit is set to zero by the Host Controller when the reset process is complete. Software cannot terminate the reset process early by writing a zero to this register.\n\nSoftware should not set this bit to a one when the HC Halted bit in the USBSTS register is a zero. Attempting to reset an actively running host controller will result in undefined behavior."]
 pub type HOST_CONTROLLER_RESET_R = crate::BitReader<bool>;
 #[doc = "Field `HOST_CONTROLLER_RESET` writer - Host Controller Reset\n\nThis control bit is used by software to reset the host controller. The effects of this on Root Hub registers are similar to a Chip Hardware Reset.\n\nWhen software writes a one to this bit, the Host Controller resets its internal pipelines, timers, counters, state machines, etc. to their initial value. Any transaction currently in progress on USB is immediately terminated. A USB reset is not driven on downstream ports.\n\nAll operational registers, including port registers and port state machines are set to their initial values. Port ownership reverts to the companion host controller(s). Software must reinitialize the host controller as described in Section 4.1 of the CHEI Specification in order to return the host controller to an operational state. This bit is set to zero by the Host Controller when the reset process is complete. Software cannot terminate the reset process early by writing a zero to this register.\n\nSoftware should not set this bit to a one when the HC Halted bit in the USBSTS register is a zero. Attempting to reset an actively running host controller will result in undefined behavior."]
-pub type HOST_CONTROLLER_RESET_W<'a> = crate::BitWriter<'a, u32, USBCMD_SPEC, bool, 1>;
+pub type HOST_CONTROLLER_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBCMD_SPEC, bool, O>;
 #[doc = "Field `RUN_STOP` reader - Run/Stop\n\nWhen set to a 1, the Host Controller proceeds with execution of the schedule. When set to 0, the Host Controller completes the current and any actively pipelined transactions on the USB and then halts. The Host Controller must halt within 16 micro-frames after software clears this bit. The HC Halted bit indicates when the Host Controller has finished its pending pipelined transactions and has entered the stopped state.\n\nSoftware must not write a one to this field unless the Host Controller is in the Halt State. The default value is 0x0."]
 pub type RUN_STOP_R = crate::BitReader<bool>;
 #[doc = "Field `RUN_STOP` writer - Run/Stop\n\nWhen set to a 1, the Host Controller proceeds with execution of the schedule. When set to 0, the Host Controller completes the current and any actively pipelined transactions on the USB and then halts. The Host Controller must halt within 16 micro-frames after software clears this bit. The HC Halted bit indicates when the Host Controller has finished its pending pipelined transactions and has entered the stopped state.\n\nSoftware must not write a one to this field unless the Host Controller is in the Halt State. The default value is 0x0."]
-pub type RUN_STOP_W<'a> = crate::BitWriter<'a, u32, USBCMD_SPEC, bool, 0>;
+pub type RUN_STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBCMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 16:23 - Interrupt Threshold Control\n\nThe value in this field is used by system software to select the maximum rate at which the host controller will issue interrupts."]
     #[inline(always)]
@@ -398,42 +399,44 @@ impl R {
 impl W {
     #[doc = "Bits 16:23 - Interrupt Threshold Control\n\nThe value in this field is used by system software to select the maximum rate at which the host controller will issue interrupts."]
     #[inline(always)]
-    pub fn interrupt_threshold_control(&mut self) -> INTERRUPT_THRESHOLD_CONTROL_W {
+    pub fn interrupt_threshold_control(&mut self) -> INTERRUPT_THRESHOLD_CONTROL_W<16> {
         INTERRUPT_THRESHOLD_CONTROL_W::new(self)
     }
     #[doc = "Bit 7 - Light Host Controller Reset (OPTIONAL)\n\nThis control bit is not required. If implemented, it allows the driver to reset the EHCI controller without affecting the state of the ports or relationship to the companion host controllers. For example, the PORSTC registers should not be reset to their default values and the CF bit setting should not go to zero (retaining port ownership relationships). A host software read of this bit as zero indicates the Light Host Controller Reset has completed and it si safe for software to re- initialize the host controller. A host software read of this bit as a one indicates the Light Host"]
     #[inline(always)]
-    pub fn light_host_controller_reset(&mut self) -> LIGHT_HOST_CONTROLLER_RESET_W {
+    pub fn light_host_controller_reset(&mut self) -> LIGHT_HOST_CONTROLLER_RESET_W<7> {
         LIGHT_HOST_CONTROLLER_RESET_W::new(self)
     }
     #[doc = "Bit 6 - Interrupt on Async Advance Doorbell\n\nThis bit is used as a doorbell by software to tell the host controller to issue an interrupt the next time it advances asynchronous schedule. Software must write a 1 to this bit to ring the doorbell. When the host controller has evicted all appropriate cached schedule state, it sets the Interrupt on Async Advance status bit in the USBSTS. if the Interrupt on Async Advance Enable bit in the USBINTR register is a one then the host controller will assert an interrupt at the next interrupt threshold.\n\nThe host controller sets this bit to a zero after it has set the Interrupt on Async Advance status bit in the USBSTS register to a one.\n\nSoftware should not write a one to this bit when the asynchronous schedule is disabled. Doing so will yield undefined results."]
     #[inline(always)]
-    pub fn interrupt_on_async_advance_doorbell(&mut self) -> INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL_W {
+    pub fn interrupt_on_async_advance_doorbell(
+        &mut self,
+    ) -> INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL_W<6> {
         INTERRUPT_ON_ASYNC_ADVANCE_DOORBELL_W::new(self)
     }
     #[doc = "Bit 5 - Asynchronous Schedule Enable\n\nThis bit controls whether the host controller skips processing the Asynchronous Schedule."]
     #[inline(always)]
-    pub fn asynchronous_schedule_enable(&mut self) -> ASYNCHRONOUS_SCHEDULE_ENABLE_W {
+    pub fn asynchronous_schedule_enable(&mut self) -> ASYNCHRONOUS_SCHEDULE_ENABLE_W<5> {
         ASYNCHRONOUS_SCHEDULE_ENABLE_W::new(self)
     }
     #[doc = "Bit 4 - Periodic Schedule Enable\n\nThis bit controls whether the host controller skips processing the Periodic Schedule."]
     #[inline(always)]
-    pub fn periodic_schedule_enable(&mut self) -> PERIODIC_SCHEDULE_ENABLE_W {
+    pub fn periodic_schedule_enable(&mut self) -> PERIODIC_SCHEDULE_ENABLE_W<4> {
         PERIODIC_SCHEDULE_ENABLE_W::new(self)
     }
     #[doc = "Bits 2:3 - This field is R/W only if Programmable Frame List Flag in the HCCPARAMS register is set to one. This field specifies the size of the Frame list."]
     #[inline(always)]
-    pub fn frame_list_size(&mut self) -> FRAME_LIST_SIZE_W {
+    pub fn frame_list_size(&mut self) -> FRAME_LIST_SIZE_W<2> {
         FRAME_LIST_SIZE_W::new(self)
     }
     #[doc = "Bit 1 - Host Controller Reset\n\nThis control bit is used by software to reset the host controller. The effects of this on Root Hub registers are similar to a Chip Hardware Reset.\n\nWhen software writes a one to this bit, the Host Controller resets its internal pipelines, timers, counters, state machines, etc. to their initial value. Any transaction currently in progress on USB is immediately terminated. A USB reset is not driven on downstream ports.\n\nAll operational registers, including port registers and port state machines are set to their initial values. Port ownership reverts to the companion host controller(s). Software must reinitialize the host controller as described in Section 4.1 of the CHEI Specification in order to return the host controller to an operational state. This bit is set to zero by the Host Controller when the reset process is complete. Software cannot terminate the reset process early by writing a zero to this register.\n\nSoftware should not set this bit to a one when the HC Halted bit in the USBSTS register is a zero. Attempting to reset an actively running host controller will result in undefined behavior."]
     #[inline(always)]
-    pub fn host_controller_reset(&mut self) -> HOST_CONTROLLER_RESET_W {
+    pub fn host_controller_reset(&mut self) -> HOST_CONTROLLER_RESET_W<1> {
         HOST_CONTROLLER_RESET_W::new(self)
     }
     #[doc = "Bit 0 - Run/Stop\n\nWhen set to a 1, the Host Controller proceeds with execution of the schedule. When set to 0, the Host Controller completes the current and any actively pipelined transactions on the USB and then halts. The Host Controller must halt within 16 micro-frames after software clears this bit. The HC Halted bit indicates when the Host Controller has finished its pending pipelined transactions and has entered the stopped state.\n\nSoftware must not write a one to this field unless the Host Controller is in the Halt State. The default value is 0x0."]
     #[inline(always)]
-    pub fn run_stop(&mut self) -> RUN_STOP_W {
+    pub fn run_stop(&mut self) -> RUN_STOP_W<0> {
         RUN_STOP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

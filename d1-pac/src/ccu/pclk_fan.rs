@@ -71,8 +71,8 @@ impl GATING_R {
     }
 }
 #[doc = "Field `GATING` writer - Gating for PCLK"]
-pub type GATING_W<'a> = crate::BitWriter<'a, u32, PCLK_FAN_SPEC, GATING_A, 31>;
-impl<'a> GATING_W<'a> {
+pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCLK_FAN_SPEC, GATING_A, O>;
+impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -87,7 +87,7 @@ impl<'a> GATING_W<'a> {
 #[doc = "Field `DIV` reader - Factor M"]
 pub type DIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV` writer - Factor M"]
-pub type DIV_W<'a> = crate::FieldWriter<'a, u32, PCLK_FAN_SPEC, u8, u8, 5, 0>;
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCLK_FAN_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 31 - Gating for PCLK"]
     #[inline(always)]
@@ -103,12 +103,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating for PCLK"]
     #[inline(always)]
-    pub fn gating(&mut self) -> GATING_W {
+    pub fn gating(&mut self) -> GATING_W<31> {
         GATING_W::new(self)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W {
+    pub fn div(&mut self) -> DIV_W<0> {
         DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

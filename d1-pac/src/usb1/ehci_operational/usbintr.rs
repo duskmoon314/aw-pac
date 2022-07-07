@@ -37,27 +37,32 @@ impl From<crate::W<USBINTR_SPEC>> for W {
 #[doc = "Field `INTERRUPT_ON_ASYNC_ADVANCE_ENABLE` reader - Interrupt on Async Advance Enable\n\nWhen this bit is 1, and the Interrupt on Async Advance bit in the USBSTS register is 1, the host controller will issue an interrupt at the next interrupt threshold. The interrupt is acknowledged by software clearing the Interrupt on Async Advance bit."]
 pub type INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `INTERRUPT_ON_ASYNC_ADVANCE_ENABLE` writer - Interrupt on Async Advance Enable\n\nWhen this bit is 1, and the Interrupt on Async Advance bit in the USBSTS register is 1, the host controller will issue an interrupt at the next interrupt threshold. The interrupt is acknowledged by software clearing the Interrupt on Async Advance bit."]
-pub type INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_W<'a> = crate::BitWriter<'a, u32, USBINTR_SPEC, bool, 5>;
+pub type INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBINTR_SPEC, bool, O>;
 #[doc = "Field `HOST_SYSTEM_ERROR_ENABLE` reader - Host System Error Enable\n\n When this bit is 1, and the Host System Error Status bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Host System Error bit."]
 pub type HOST_SYSTEM_ERROR_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `HOST_SYSTEM_ERROR_ENABLE` writer - Host System Error Enable\n\n When this bit is 1, and the Host System Error Status bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Host System Error bit."]
-pub type HOST_SYSTEM_ERROR_ENABLE_W<'a> = crate::BitWriter<'a, u32, USBINTR_SPEC, bool, 4>;
+pub type HOST_SYSTEM_ERROR_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBINTR_SPEC, bool, O>;
 #[doc = "Field `FRAME_LIST_ROLLOVER_ENABLE` reader - Frame List Rollover Enable\n\nWhen this bit is 1, and the Frame List Rollover bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Frame List Rollover bit."]
 pub type FRAME_LIST_ROLLOVER_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `FRAME_LIST_ROLLOVER_ENABLE` writer - Frame List Rollover Enable\n\nWhen this bit is 1, and the Frame List Rollover bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Frame List Rollover bit."]
-pub type FRAME_LIST_ROLLOVER_ENABLE_W<'a> = crate::BitWriter<'a, u32, USBINTR_SPEC, bool, 3>;
+pub type FRAME_LIST_ROLLOVER_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBINTR_SPEC, bool, O>;
 #[doc = "Field `PORT_CHANGE_INTERRUPT_ENABLE` reader - Port Change Interrupt Enable\n\nWhen this bit is 1, and the Port Chang Detect bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Port Chang Detect bit."]
 pub type PORT_CHANGE_INTERRUPT_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `PORT_CHANGE_INTERRUPT_ENABLE` writer - Port Change Interrupt Enable\n\nWhen this bit is 1, and the Port Chang Detect bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Port Chang Detect bit."]
-pub type PORT_CHANGE_INTERRUPT_ENABLE_W<'a> = crate::BitWriter<'a, u32, USBINTR_SPEC, bool, 2>;
+pub type PORT_CHANGE_INTERRUPT_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBINTR_SPEC, bool, O>;
 #[doc = "Field `USB_ERROR_INTERRUPT_ENABLE` reader - USB Error Interrupt Enable\n\nWhen this bit is 1, and the USBERRINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBERRINT bit."]
 pub type USB_ERROR_INTERRUPT_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `USB_ERROR_INTERRUPT_ENABLE` writer - USB Error Interrupt Enable\n\nWhen this bit is 1, and the USBERRINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBERRINT bit."]
-pub type USB_ERROR_INTERRUPT_ENABLE_W<'a> = crate::BitWriter<'a, u32, USBINTR_SPEC, bool, 1>;
+pub type USB_ERROR_INTERRUPT_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, USBINTR_SPEC, bool, O>;
 #[doc = "Field `USB_INTERRUPT_ENABLE` reader - USB Interrupt Enable\n\nWhen this bit is 1, and the USBINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBINT bit"]
 pub type USB_INTERRUPT_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `USB_INTERRUPT_ENABLE` writer - USB Interrupt Enable\n\nWhen this bit is 1, and the USBINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBINT bit"]
-pub type USB_INTERRUPT_ENABLE_W<'a> = crate::BitWriter<'a, u32, USBINTR_SPEC, bool, 0>;
+pub type USB_INTERRUPT_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, USBINTR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 5 - Interrupt on Async Advance Enable\n\nWhen this bit is 1, and the Interrupt on Async Advance bit in the USBSTS register is 1, the host controller will issue an interrupt at the next interrupt threshold. The interrupt is acknowledged by software clearing the Interrupt on Async Advance bit."]
     #[inline(always)]
@@ -93,32 +98,32 @@ impl R {
 impl W {
     #[doc = "Bit 5 - Interrupt on Async Advance Enable\n\nWhen this bit is 1, and the Interrupt on Async Advance bit in the USBSTS register is 1, the host controller will issue an interrupt at the next interrupt threshold. The interrupt is acknowledged by software clearing the Interrupt on Async Advance bit."]
     #[inline(always)]
-    pub fn interrupt_on_async_advance_enable(&mut self) -> INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_W {
+    pub fn interrupt_on_async_advance_enable(&mut self) -> INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_W<5> {
         INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_W::new(self)
     }
     #[doc = "Bit 4 - Host System Error Enable\n\n When this bit is 1, and the Host System Error Status bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Host System Error bit."]
     #[inline(always)]
-    pub fn host_system_error_enable(&mut self) -> HOST_SYSTEM_ERROR_ENABLE_W {
+    pub fn host_system_error_enable(&mut self) -> HOST_SYSTEM_ERROR_ENABLE_W<4> {
         HOST_SYSTEM_ERROR_ENABLE_W::new(self)
     }
     #[doc = "Bit 3 - Frame List Rollover Enable\n\nWhen this bit is 1, and the Frame List Rollover bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Frame List Rollover bit."]
     #[inline(always)]
-    pub fn frame_list_rollover_enable(&mut self) -> FRAME_LIST_ROLLOVER_ENABLE_W {
+    pub fn frame_list_rollover_enable(&mut self) -> FRAME_LIST_ROLLOVER_ENABLE_W<3> {
         FRAME_LIST_ROLLOVER_ENABLE_W::new(self)
     }
     #[doc = "Bit 2 - Port Change Interrupt Enable\n\nWhen this bit is 1, and the Port Chang Detect bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Port Chang Detect bit."]
     #[inline(always)]
-    pub fn port_change_interrupt_enable(&mut self) -> PORT_CHANGE_INTERRUPT_ENABLE_W {
+    pub fn port_change_interrupt_enable(&mut self) -> PORT_CHANGE_INTERRUPT_ENABLE_W<2> {
         PORT_CHANGE_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - USB Error Interrupt Enable\n\nWhen this bit is 1, and the USBERRINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBERRINT bit."]
     #[inline(always)]
-    pub fn usb_error_interrupt_enable(&mut self) -> USB_ERROR_INTERRUPT_ENABLE_W {
+    pub fn usb_error_interrupt_enable(&mut self) -> USB_ERROR_INTERRUPT_ENABLE_W<1> {
         USB_ERROR_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Bit 0 - USB Interrupt Enable\n\nWhen this bit is 1, and the USBINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBINT bit"]
     #[inline(always)]
-    pub fn usb_interrupt_enable(&mut self) -> USB_INTERRUPT_ENABLE_W {
+    pub fn usb_interrupt_enable(&mut self) -> USB_INTERRUPT_ENABLE_W<0> {
         USB_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,9 +71,9 @@ impl WAIT_TIM0_EN_R {
     }
 }
 #[doc = "Field `WAIT_TIM0_EN` writer - "]
-pub type WAIT_TIM0_EN_W<'a> =
-    crate::BitWriter<'a, u32, LEDC_WAIT_TIME0_CTRL_SPEC, WAIT_TIM0_EN_A, 8>;
-impl<'a> WAIT_TIM0_EN_W<'a> {
+pub type WAIT_TIM0_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LEDC_WAIT_TIME0_CTRL_SPEC, WAIT_TIM0_EN_A, O>;
+impl<'a, const O: u8> WAIT_TIM0_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -88,8 +88,8 @@ impl<'a> WAIT_TIM0_EN_W<'a> {
 #[doc = "Field `TOTAL_WAIT_TIME0` reader - "]
 pub type TOTAL_WAIT_TIME0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TOTAL_WAIT_TIME0` writer - "]
-pub type TOTAL_WAIT_TIME0_W<'a> =
-    crate::FieldWriter<'a, u32, LEDC_WAIT_TIME0_CTRL_SPEC, u8, u8, 8, 0>;
+pub type TOTAL_WAIT_TIME0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LEDC_WAIT_TIME0_CTRL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 8"]
     #[inline(always)]
@@ -105,12 +105,12 @@ impl R {
 impl W {
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn wait_tim0_en(&mut self) -> WAIT_TIM0_EN_W {
+    pub fn wait_tim0_en(&mut self) -> WAIT_TIM0_EN_W<8> {
         WAIT_TIM0_EN_W::new(self)
     }
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    pub fn total_wait_time0(&mut self) -> TOTAL_WAIT_TIME0_W {
+    pub fn total_wait_time0(&mut self) -> TOTAL_WAIT_TIME0_W<0> {
         TOTAL_WAIT_TIME0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

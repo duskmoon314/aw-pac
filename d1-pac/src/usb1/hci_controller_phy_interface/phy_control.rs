@@ -37,15 +37,15 @@ impl From<crate::W<PHY_CONTROL_SPEC>> for W {
 #[doc = "Field `BIST_EN_A` reader - "]
 pub type BIST_EN_A_R = crate::BitReader<bool>;
 #[doc = "Field `BIST_EN_A` writer - "]
-pub type BIST_EN_A_W<'a> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, 16>;
+pub type BIST_EN_A_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, O>;
 #[doc = "Field `VC_ADDR` reader - vc_addr"]
 pub type VC_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VC_ADDR` writer - vc_addr"]
-pub type VC_ADDR_W<'a> = crate::FieldWriter<'a, u32, PHY_CONTROL_SPEC, u8, u8, 8, 8>;
+pub type VC_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PHY_CONTROL_SPEC, u8, u8, 8, O>;
 #[doc = "Field `VC_DI` reader - vc_di"]
 pub type VC_DI_R = crate::BitReader<bool>;
 #[doc = "Field `VC_DI` writer - vc_di"]
-pub type VC_DI_W<'a> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, 7>;
+pub type VC_DI_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIDDQ_A {
@@ -83,8 +83,8 @@ impl SIDDQ_R {
     }
 }
 #[doc = "Field `SIDDQ` writer - "]
-pub type SIDDQ_W<'a> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, SIDDQ_A, 3>;
-impl<'a> SIDDQ_W<'a> {
+pub type SIDDQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, SIDDQ_A, O>;
+impl<'a, const O: u8> SIDDQ_W<'a, O> {
     #[doc = "Write 1 to disable phy"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -99,7 +99,7 @@ impl<'a> SIDDQ_W<'a> {
 #[doc = "Field `VC_CLK` reader - vc_clk"]
 pub type VC_CLK_R = crate::BitReader<bool>;
 #[doc = "Field `VC_CLK` writer - vc_clk"]
-pub type VC_CLK_W<'a> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, 0>;
+pub type VC_CLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 16"]
     #[inline(always)]
@@ -130,27 +130,27 @@ impl R {
 impl W {
     #[doc = "Bit 16"]
     #[inline(always)]
-    pub fn bist_en_a(&mut self) -> BIST_EN_A_W {
+    pub fn bist_en_a(&mut self) -> BIST_EN_A_W<16> {
         BIST_EN_A_W::new(self)
     }
     #[doc = "Bits 8:15 - vc_addr"]
     #[inline(always)]
-    pub fn vc_addr(&mut self) -> VC_ADDR_W {
+    pub fn vc_addr(&mut self) -> VC_ADDR_W<8> {
         VC_ADDR_W::new(self)
     }
     #[doc = "Bit 7 - vc_di"]
     #[inline(always)]
-    pub fn vc_di(&mut self) -> VC_DI_W {
+    pub fn vc_di(&mut self) -> VC_DI_W<7> {
         VC_DI_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn siddq(&mut self) -> SIDDQ_W {
+    pub fn siddq(&mut self) -> SIDDQ_W<3> {
         SIDDQ_W::new(self)
     }
     #[doc = "Bit 0 - vc_clk"]
     #[inline(always)]
-    pub fn vc_clk(&mut self) -> VC_CLK_W {
+    pub fn vc_clk(&mut self) -> VC_CLK_W<0> {
         VC_CLK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

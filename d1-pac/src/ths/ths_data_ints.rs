@@ -71,9 +71,9 @@ impl THS_DATA_IRQ_STS_R {
     }
 }
 #[doc = "Field `THS_DATA_IRQ_STS` writer - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
-pub type THS_DATA_IRQ_STS_W<'a> =
-    crate::BitWriter1C<'a, u32, THS_DATA_INTS_SPEC, THS_DATA_IRQ_STS_A, 0>;
-impl<'a> THS_DATA_IRQ_STS_W<'a> {
+pub type THS_DATA_IRQ_STS_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, THS_DATA_INTS_SPEC, THS_DATA_IRQ_STS_A, O>;
+impl<'a, const O: u8> THS_DATA_IRQ_STS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -95,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
     #[inline(always)]
-    pub fn ths_data_irq_sts(&mut self) -> THS_DATA_IRQ_STS_W {
+    pub fn ths_data_irq_sts(&mut self) -> THS_DATA_IRQ_STS_W<0> {
         THS_DATA_IRQ_STS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

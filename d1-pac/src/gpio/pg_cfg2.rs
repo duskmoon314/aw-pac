@@ -137,8 +137,9 @@ impl PG18_SELECT_R {
     }
 }
 #[doc = "Field `PG18_SELECT` writer - PG18 Select"]
-pub type PG18_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG18_SELECT_A, 4, 8>;
-impl<'a> PG18_SELECT_W<'a> {
+pub type PG18_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG18_SELECT_A, 4, O>;
+impl<'a, const O: u8> PG18_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -293,8 +294,9 @@ impl PG17_SELECT_R {
     }
 }
 #[doc = "Field `PG17_SELECT` writer - PG17 Select"]
-pub type PG17_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG17_SELECT_A, 4, 4>;
-impl<'a> PG17_SELECT_W<'a> {
+pub type PG17_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG17_SELECT_A, 4, O>;
+impl<'a, const O: u8> PG17_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -449,8 +451,9 @@ impl PG16_SELECT_R {
     }
 }
 #[doc = "Field `PG16_SELECT` writer - PG16 Select"]
-pub type PG16_SELECT_W<'a> = crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG16_SELECT_A, 4, 0>;
-impl<'a> PG16_SELECT_W<'a> {
+pub type PG16_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG16_SELECT_A, 4, O>;
+impl<'a, const O: u8> PG16_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -522,17 +525,17 @@ impl R {
 impl W {
     #[doc = "Bits 8:11 - PG18 Select"]
     #[inline(always)]
-    pub fn pg18_select(&mut self) -> PG18_SELECT_W {
+    pub fn pg18_select(&mut self) -> PG18_SELECT_W<8> {
         PG18_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7 - PG17 Select"]
     #[inline(always)]
-    pub fn pg17_select(&mut self) -> PG17_SELECT_W {
+    pub fn pg17_select(&mut self) -> PG17_SELECT_W<4> {
         PG17_SELECT_W::new(self)
     }
     #[doc = "Bits 0:3 - PG16 Select"]
     #[inline(always)]
-    pub fn pg16_select(&mut self) -> PG16_SELECT_W {
+    pub fn pg16_select(&mut self) -> PG16_SELECT_W<0> {
         PG16_SELECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

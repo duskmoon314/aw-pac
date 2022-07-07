@@ -71,8 +71,9 @@ impl GLOBAL_INT_EN_R {
     }
 }
 #[doc = "Field `GLOBAL_INT_EN` writer - "]
-pub type GLOBAL_INT_EN_W<'a> = crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, GLOBAL_INT_EN_A, 5>;
-impl<'a> GLOBAL_INT_EN_W<'a> {
+pub type GLOBAL_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, GLOBAL_INT_EN_A, O>;
+impl<'a, const O: u8> GLOBAL_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,9 +122,9 @@ impl FIFO_OVERFLOW_INT_EN_R {
     }
 }
 #[doc = "Field `FIFO_OVERFLOW_INT_EN` writer - "]
-pub type FIFO_OVERFLOW_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, FIFO_OVERFLOW_INT_EN_A, 4>;
-impl<'a> FIFO_OVERFLOW_INT_EN_W<'a> {
+pub type FIFO_OVERFLOW_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, FIFO_OVERFLOW_INT_EN_A, O>;
+impl<'a, const O: u8> FIFO_OVERFLOW_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -172,9 +173,9 @@ impl WAITDATA_TIMEOUT_INT_EN_R {
     }
 }
 #[doc = "Field `WAITDATA_TIMEOUT_INT_EN` writer - "]
-pub type WAITDATA_TIMEOUT_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, WAITDATA_TIMEOUT_INT_EN_A, 3>;
-impl<'a> WAITDATA_TIMEOUT_INT_EN_W<'a> {
+pub type WAITDATA_TIMEOUT_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, WAITDATA_TIMEOUT_INT_EN_A, O>;
+impl<'a, const O: u8> WAITDATA_TIMEOUT_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -223,9 +224,9 @@ impl FIFO_CPUREQ_INT_EN_R {
     }
 }
 #[doc = "Field `FIFO_CPUREQ_INT_EN` writer - "]
-pub type FIFO_CPUREQ_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, FIFO_CPUREQ_INT_EN_A, 1>;
-impl<'a> FIFO_CPUREQ_INT_EN_W<'a> {
+pub type FIFO_CPUREQ_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, FIFO_CPUREQ_INT_EN_A, O>;
+impl<'a, const O: u8> FIFO_CPUREQ_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -274,9 +275,9 @@ impl LED_TRANS_FINISH_INT_EN_R {
     }
 }
 #[doc = "Field `LED_TRANS_FINISH_INT_EN` writer - "]
-pub type LED_TRANS_FINISH_INT_EN_W<'a> =
-    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, LED_TRANS_FINISH_INT_EN_A, 0>;
-impl<'a> LED_TRANS_FINISH_INT_EN_W<'a> {
+pub type LED_TRANS_FINISH_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, LED_TRANS_FINISH_INT_EN_A, O>;
+impl<'a, const O: u8> LED_TRANS_FINISH_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -318,27 +319,27 @@ impl R {
 impl W {
     #[doc = "Bit 5"]
     #[inline(always)]
-    pub fn global_int_en(&mut self) -> GLOBAL_INT_EN_W {
+    pub fn global_int_en(&mut self) -> GLOBAL_INT_EN_W<5> {
         GLOBAL_INT_EN_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    pub fn fifo_overflow_int_en(&mut self) -> FIFO_OVERFLOW_INT_EN_W {
+    pub fn fifo_overflow_int_en(&mut self) -> FIFO_OVERFLOW_INT_EN_W<4> {
         FIFO_OVERFLOW_INT_EN_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn waitdata_timeout_int_en(&mut self) -> WAITDATA_TIMEOUT_INT_EN_W {
+    pub fn waitdata_timeout_int_en(&mut self) -> WAITDATA_TIMEOUT_INT_EN_W<3> {
         WAITDATA_TIMEOUT_INT_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn fifo_cpureq_int_en(&mut self) -> FIFO_CPUREQ_INT_EN_W {
+    pub fn fifo_cpureq_int_en(&mut self) -> FIFO_CPUREQ_INT_EN_W<1> {
         FIFO_CPUREQ_INT_EN_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn led_trans_finish_int_en(&mut self) -> LED_TRANS_FINISH_INT_EN_W {
+    pub fn led_trans_finish_int_en(&mut self) -> LED_TRANS_FINISH_INT_EN_W<0> {
         LED_TRANS_FINISH_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

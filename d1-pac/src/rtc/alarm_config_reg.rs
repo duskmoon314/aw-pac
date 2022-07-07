@@ -34,7 +34,70 @@ impl From<crate::W<ALARM_CONFIG_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Configuration of alarm wake up output.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ALARM_WAKEUP_A {
+    #[doc = "0: Disable alarm wake up output"]
+    DISABLE = 0,
+    #[doc = "1: Enable alarm wake up output"]
+    ENABLE = 1,
+}
+impl From<ALARM_WAKEUP_A> for bool {
+    #[inline(always)]
+    fn from(variant: ALARM_WAKEUP_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `ALARM_WAKEUP` reader - Configuration of alarm wake up output."]
+pub type ALARM_WAKEUP_R = crate::BitReader<ALARM_WAKEUP_A>;
+impl ALARM_WAKEUP_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ALARM_WAKEUP_A {
+        match self.bits {
+            false => ALARM_WAKEUP_A::DISABLE,
+            true => ALARM_WAKEUP_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == ALARM_WAKEUP_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == ALARM_WAKEUP_A::ENABLE
+    }
+}
+#[doc = "Field `ALARM_WAKEUP` writer - Configuration of alarm wake up output."]
+pub type ALARM_WAKEUP_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ALARM_CONFIG_REG_SPEC, ALARM_WAKEUP_A, O>;
+impl<'a, const O: u8> ALARM_WAKEUP_W<'a, O> {
+    #[doc = "Disable alarm wake up output"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ALARM_WAKEUP_A::DISABLE)
+    }
+    #[doc = "Enable alarm wake up output"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ALARM_WAKEUP_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Configuration of alarm wake up output."]
+    #[inline(always)]
+    pub fn alarm_wakeup(&self) -> ALARM_WAKEUP_R {
+        ALARM_WAKEUP_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Configuration of alarm wake up output."]
+    #[inline(always)]
+    pub fn alarm_wakeup(&mut self) -> ALARM_WAKEUP_W<0> {
+        ALARM_WAKEUP_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

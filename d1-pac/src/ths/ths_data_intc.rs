@@ -71,9 +71,9 @@ impl THS_DATA_IRQ_EN_R {
     }
 }
 #[doc = "Field `THS_DATA_IRQ_EN` writer - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
-pub type THS_DATA_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, THS_DATA_INTC_SPEC, THS_DATA_IRQ_EN_A, 0>;
-impl<'a> THS_DATA_IRQ_EN_W<'a> {
+pub type THS_DATA_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, THS_DATA_INTC_SPEC, THS_DATA_IRQ_EN_A, O>;
+impl<'a, const O: u8> THS_DATA_IRQ_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -95,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
     #[inline(always)]
-    pub fn ths_data_irq_en(&mut self) -> THS_DATA_IRQ_EN_W {
+    pub fn ths_data_irq_en(&mut self) -> THS_DATA_IRQ_EN_W<0> {
         THS_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

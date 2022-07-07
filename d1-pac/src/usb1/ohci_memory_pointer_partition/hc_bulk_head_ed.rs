@@ -37,7 +37,8 @@ impl From<crate::W<HC_BULK_HEAD_ED_SPEC>> for W {
 #[doc = "Field `BHED_31_4` reader - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
 pub type BHED_31_4_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BHED_31_4` writer - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
-pub type BHED_31_4_W<'a> = crate::FieldWriter<'a, u32, HC_BULK_HEAD_ED_SPEC, u32, u32, 28, 4>;
+pub type BHED_31_4_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HC_BULK_HEAD_ED_SPEC, u32, u32, 28, O>;
 #[doc = "Field `BHED_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
 pub type BHED_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
@@ -55,7 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:31 - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
     #[inline(always)]
-    pub fn bhed_31_4(&mut self) -> BHED_31_4_W {
+    pub fn bhed_31_4(&mut self) -> BHED_31_4_W<4> {
         BHED_31_4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

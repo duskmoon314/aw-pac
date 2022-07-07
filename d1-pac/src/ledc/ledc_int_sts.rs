@@ -77,9 +77,9 @@ impl FIFO_OVERFLOW_INT_R {
     }
 }
 #[doc = "Field `FIFO_OVERFLOW_INT` writer - "]
-pub type FIFO_OVERFLOW_INT_W<'a> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_OVERFLOW_INT_A, 4>;
-impl<'a> FIFO_OVERFLOW_INT_W<'a> {
+pub type FIFO_OVERFLOW_INT_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_OVERFLOW_INT_A, O>;
+impl<'a, const O: u8> FIFO_OVERFLOW_INT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_overflow(self) -> &'a mut W {
@@ -128,9 +128,9 @@ impl WAITDATA_TIMEOUT_INT_R {
     }
 }
 #[doc = "Field `WAITDATA_TIMEOUT_INT` writer - "]
-pub type WAITDATA_TIMEOUT_INT_W<'a> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, WAITDATA_TIMEOUT_INT_A, 3>;
-impl<'a> WAITDATA_TIMEOUT_INT_W<'a> {
+pub type WAITDATA_TIMEOUT_INT_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, WAITDATA_TIMEOUT_INT_A, O>;
+impl<'a, const O: u8> WAITDATA_TIMEOUT_INT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_timeout(self) -> &'a mut W {
@@ -179,9 +179,9 @@ impl FIFO_CPUREQ_INT_R {
     }
 }
 #[doc = "Field `FIFO_CPUREQ_INT` writer - "]
-pub type FIFO_CPUREQ_INT_W<'a> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_CPUREQ_INT_A, 1>;
-impl<'a> FIFO_CPUREQ_INT_W<'a> {
+pub type FIFO_CPUREQ_INT_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_CPUREQ_INT_A, O>;
+impl<'a, const O: u8> FIFO_CPUREQ_INT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_request(self) -> &'a mut W {
@@ -230,9 +230,9 @@ impl LEC_TRANS_FINISH_INT_R {
     }
 }
 #[doc = "Field `LEC_TRANS_FINISH_INT` writer - "]
-pub type LEC_TRANS_FINISH_INT_W<'a> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, LEC_TRANS_FINISH_INT_A, 0>;
-impl<'a> LEC_TRANS_FINISH_INT_W<'a> {
+pub type LEC_TRANS_FINISH_INT_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, LEC_TRANS_FINISH_INT_A, O>;
+impl<'a, const O: u8> LEC_TRANS_FINISH_INT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_trans_complete(self) -> &'a mut W {
@@ -284,22 +284,22 @@ impl R {
 impl W {
     #[doc = "Bit 4"]
     #[inline(always)]
-    pub fn fifo_overflow_int(&mut self) -> FIFO_OVERFLOW_INT_W {
+    pub fn fifo_overflow_int(&mut self) -> FIFO_OVERFLOW_INT_W<4> {
         FIFO_OVERFLOW_INT_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn waitdata_timeout_int(&mut self) -> WAITDATA_TIMEOUT_INT_W {
+    pub fn waitdata_timeout_int(&mut self) -> WAITDATA_TIMEOUT_INT_W<3> {
         WAITDATA_TIMEOUT_INT_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn fifo_cpureq_int(&mut self) -> FIFO_CPUREQ_INT_W {
+    pub fn fifo_cpureq_int(&mut self) -> FIFO_CPUREQ_INT_W<1> {
         FIFO_CPUREQ_INT_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn lec_trans_finish_int(&mut self) -> LEC_TRANS_FINISH_INT_W {
+    pub fn lec_trans_finish_int(&mut self) -> LEC_TRANS_FINISH_INT_W<0> {
         LEC_TRANS_FINISH_INT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

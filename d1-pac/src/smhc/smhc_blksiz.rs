@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_BLKSIZ_SPEC>> for W {
 #[doc = "Field `BLK_SZ` reader - Block SIze"]
 pub type BLK_SZ_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BLK_SZ` writer - Block SIze"]
-pub type BLK_SZ_W<'a> = crate::FieldWriter<'a, u32, SMHC_BLKSIZ_SPEC, u16, u16, 16, 0>;
+pub type BLK_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_BLKSIZ_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Block SIze"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Block SIze"]
     #[inline(always)]
-    pub fn blk_sz(&mut self) -> BLK_SZ_W {
+    pub fn blk_sz(&mut self) -> BLK_SZ_W<0> {
         BLK_SZ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

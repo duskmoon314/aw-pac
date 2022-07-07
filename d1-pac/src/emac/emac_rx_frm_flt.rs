@@ -71,9 +71,9 @@ impl DIS_ADDR_FILTER_R {
     }
 }
 #[doc = "Field `DIS_ADDR_FILTER` writer - Disable Address Filter"]
-pub type DIS_ADDR_FILTER_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DIS_ADDR_FILTER_A, 31>;
-impl<'a> DIS_ADDR_FILTER_W<'a> {
+pub type DIS_ADDR_FILTER_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DIS_ADDR_FILTER_A, O>;
+impl<'a, const O: u8> DIS_ADDR_FILTER_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -122,8 +122,9 @@ impl DIS_BROADCAST_R {
     }
 }
 #[doc = "Field `DIS_BROADCAST` writer - Disable Receive Broadcast Frames"]
-pub type DIS_BROADCAST_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DIS_BROADCAST_A, 17>;
-impl<'a> DIS_BROADCAST_W<'a> {
+pub type DIS_BROADCAST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DIS_BROADCAST_A, O>;
+impl<'a, const O: u8> DIS_BROADCAST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn receive(self) -> &'a mut W {
@@ -172,9 +173,9 @@ impl RX_ALL_MULTICAST_R {
     }
 }
 #[doc = "Field `RX_ALL_MULTICAST` writer - Receive All Multicast Frames Filter"]
-pub type RX_ALL_MULTICAST_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, RX_ALL_MULTICAST_A, 16>;
-impl<'a> RX_ALL_MULTICAST_W<'a> {
+pub type RX_ALL_MULTICAST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, RX_ALL_MULTICAST_A, O>;
+impl<'a, const O: u8> RX_ALL_MULTICAST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn filter(self) -> &'a mut W {
@@ -233,9 +234,9 @@ impl CTL_FRM_FILTER_R {
     }
 }
 #[doc = "Field `CTL_FRM_FILTER` writer - Receive Control Frames Filter"]
-pub type CTL_FRM_FILTER_W<'a> =
-    crate::FieldWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, u8, CTL_FRM_FILTER_A, 2, 12>;
-impl<'a> CTL_FRM_FILTER_W<'a> {
+pub type CTL_FRM_FILTER_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, u8, CTL_FRM_FILTER_A, 2, O>;
+impl<'a, const O: u8> CTL_FRM_FILTER_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn drop_all(self) -> &'a mut W {
@@ -289,9 +290,9 @@ impl HASH_MULTICAST_R {
     }
 }
 #[doc = "Field `HASH_MULTICAST` writer - Filter Multicast Frames Set"]
-pub type HASH_MULTICAST_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, HASH_MULTICAST_A, 9>;
-impl<'a> HASH_MULTICAST_W<'a> {
+pub type HASH_MULTICAST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, HASH_MULTICAST_A, O>;
+impl<'a, const O: u8> HASH_MULTICAST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn da_field(self) -> &'a mut W {
@@ -340,8 +341,9 @@ impl HASH_UNICAST_R {
     }
 }
 #[doc = "Field `HASH_UNICAST` writer - Filter Unicast Frames Set"]
-pub type HASH_UNICAST_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, HASH_UNICAST_A, 8>;
-impl<'a> HASH_UNICAST_W<'a> {
+pub type HASH_UNICAST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, HASH_UNICAST_A, O>;
+impl<'a, const O: u8> HASH_UNICAST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn da_field(self) -> &'a mut W {
@@ -390,8 +392,9 @@ impl SA_FILTER_EN_R {
     }
 }
 #[doc = "Field `SA_FILTER_EN` writer - Receive SA Filter Enable"]
-pub type SA_FILTER_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, SA_FILTER_EN_A, 6>;
-impl<'a> SA_FILTER_EN_W<'a> {
+pub type SA_FILTER_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, SA_FILTER_EN_A, O>;
+impl<'a, const O: u8> SA_FILTER_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn receive_update(self) -> &'a mut W {
@@ -440,8 +443,9 @@ impl SA_INV_FILTER_R {
     }
 }
 #[doc = "Field `SA_INV_FILTER` writer - Receive SA Invert Filter Set"]
-pub type SA_INV_FILTER_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, SA_INV_FILTER_A, 5>;
-impl<'a> SA_INV_FILTER_W<'a> {
+pub type SA_INV_FILTER_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, SA_INV_FILTER_A, O>;
+impl<'a, const O: u8> SA_INV_FILTER_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn matched(self) -> &'a mut W {
@@ -490,8 +494,9 @@ impl DA_INV_FILTER_R {
     }
 }
 #[doc = "Field `DA_INV_FILTER` writer - "]
-pub type DA_INV_FILTER_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DA_INV_FILTER_A, 4>;
-impl<'a> DA_INV_FILTER_W<'a> {
+pub type DA_INV_FILTER_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DA_INV_FILTER_A, O>;
+impl<'a, const O: u8> DA_INV_FILTER_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -540,8 +545,8 @@ impl FLT_MD_R {
     }
 }
 #[doc = "Field `FLT_MD` writer - "]
-pub type FLT_MD_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, FLT_MD_A, 1>;
-impl<'a> FLT_MD_W<'a> {
+pub type FLT_MD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, FLT_MD_A, O>;
+impl<'a, const O: u8> FLT_MD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn passed_when_matched(self) -> &'a mut W {
@@ -590,8 +595,8 @@ impl RX_ALL_R {
     }
 }
 #[doc = "Field `RX_ALL` writer - Receive All Frame"]
-pub type RX_ALL_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, RX_ALL_A, 0>;
-impl<'a> RX_ALL_W<'a> {
+pub type RX_ALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, RX_ALL_A, O>;
+impl<'a, const O: u8> RX_ALL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn receive_when_passed(self) -> &'a mut W {
@@ -663,57 +668,57 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Disable Address Filter"]
     #[inline(always)]
-    pub fn dis_addr_filter(&mut self) -> DIS_ADDR_FILTER_W {
+    pub fn dis_addr_filter(&mut self) -> DIS_ADDR_FILTER_W<31> {
         DIS_ADDR_FILTER_W::new(self)
     }
     #[doc = "Bit 17 - Disable Receive Broadcast Frames"]
     #[inline(always)]
-    pub fn dis_broadcast(&mut self) -> DIS_BROADCAST_W {
+    pub fn dis_broadcast(&mut self) -> DIS_BROADCAST_W<17> {
         DIS_BROADCAST_W::new(self)
     }
     #[doc = "Bit 16 - Receive All Multicast Frames Filter"]
     #[inline(always)]
-    pub fn rx_all_multicast(&mut self) -> RX_ALL_MULTICAST_W {
+    pub fn rx_all_multicast(&mut self) -> RX_ALL_MULTICAST_W<16> {
         RX_ALL_MULTICAST_W::new(self)
     }
     #[doc = "Bits 12:13 - Receive Control Frames Filter"]
     #[inline(always)]
-    pub fn ctl_frm_filter(&mut self) -> CTL_FRM_FILTER_W {
+    pub fn ctl_frm_filter(&mut self) -> CTL_FRM_FILTER_W<12> {
         CTL_FRM_FILTER_W::new(self)
     }
     #[doc = "Bit 9 - Filter Multicast Frames Set"]
     #[inline(always)]
-    pub fn hash_multicast(&mut self) -> HASH_MULTICAST_W {
+    pub fn hash_multicast(&mut self) -> HASH_MULTICAST_W<9> {
         HASH_MULTICAST_W::new(self)
     }
     #[doc = "Bit 8 - Filter Unicast Frames Set"]
     #[inline(always)]
-    pub fn hash_unicast(&mut self) -> HASH_UNICAST_W {
+    pub fn hash_unicast(&mut self) -> HASH_UNICAST_W<8> {
         HASH_UNICAST_W::new(self)
     }
     #[doc = "Bit 6 - Receive SA Filter Enable"]
     #[inline(always)]
-    pub fn sa_filter_en(&mut self) -> SA_FILTER_EN_W {
+    pub fn sa_filter_en(&mut self) -> SA_FILTER_EN_W<6> {
         SA_FILTER_EN_W::new(self)
     }
     #[doc = "Bit 5 - Receive SA Invert Filter Set"]
     #[inline(always)]
-    pub fn sa_inv_filter(&mut self) -> SA_INV_FILTER_W {
+    pub fn sa_inv_filter(&mut self) -> SA_INV_FILTER_W<5> {
         SA_INV_FILTER_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    pub fn da_inv_filter(&mut self) -> DA_INV_FILTER_W {
+    pub fn da_inv_filter(&mut self) -> DA_INV_FILTER_W<4> {
         DA_INV_FILTER_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn flt_md(&mut self) -> FLT_MD_W {
+    pub fn flt_md(&mut self) -> FLT_MD_W<1> {
         FLT_MD_W::new(self)
     }
     #[doc = "Bit 0 - Receive All Frame"]
     #[inline(always)]
-    pub fn rx_all(&mut self) -> RX_ALL_W {
+    pub fn rx_all(&mut self) -> RX_ALL_W<0> {
         RX_ALL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

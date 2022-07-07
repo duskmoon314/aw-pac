@@ -37,7 +37,7 @@ impl From<crate::W<CE_TLR_SPEC>> for W {
 #[doc = "Field `TASK_LOAD` reader - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
 pub type TASK_LOAD_R = crate::BitReader<bool>;
 #[doc = "Field `TASK_LOAD` writer - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
-pub type TASK_LOAD_W<'a> = crate::BitWriter<'a, u32, CE_TLR_SPEC, bool, 0>;
+pub type TASK_LOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CE_TLR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
     #[inline(always)]
-    pub fn task_load(&mut self) -> TASK_LOAD_W {
+    pub fn task_load(&mut self) -> TASK_LOAD_W<0> {
         TASK_LOAD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

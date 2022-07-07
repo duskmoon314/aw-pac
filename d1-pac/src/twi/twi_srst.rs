@@ -37,7 +37,7 @@ impl From<crate::W<TWI_SRST_SPEC>> for W {
 #[doc = "Field `soft_rst` reader - Soft Reset"]
 pub type SOFT_RST_R = crate::BitReader<bool>;
 #[doc = "Field `soft_rst` writer - Soft Reset"]
-pub type SOFT_RST_W<'a> = crate::BitWriter<'a, u32, TWI_SRST_SPEC, bool, 0>;
+pub type SOFT_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_SRST_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Soft Reset"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Soft Reset"]
     #[inline(always)]
-    pub fn soft_rst(&mut self) -> SOFT_RST_W {
+    pub fn soft_rst(&mut self) -> SOFT_RST_W<0> {
         SOFT_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

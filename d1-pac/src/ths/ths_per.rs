@@ -37,7 +37,8 @@ impl From<crate::W<THS_PER_SPEC>> for W {
 #[doc = "Field `THERMAL_PER` reader - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
 pub type THERMAL_PER_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `THERMAL_PER` writer - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
-pub type THERMAL_PER_W<'a> = crate::FieldWriter<'a, u32, THS_PER_SPEC, u32, u32, 20, 12>;
+pub type THERMAL_PER_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, THS_PER_SPEC, u32, u32, 20, O>;
 impl R {
     #[doc = "Bits 12:31 - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 12:31 - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
     #[inline(always)]
-    pub fn thermal_per(&mut self) -> THERMAL_PER_W {
+    pub fn thermal_per(&mut self) -> THERMAL_PER_W<12> {
         THERMAL_PER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

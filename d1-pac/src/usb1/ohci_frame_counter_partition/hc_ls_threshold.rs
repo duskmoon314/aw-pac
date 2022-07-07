@@ -37,7 +37,8 @@ impl From<crate::W<HC_LS_THRESHOLD_SPEC>> for W {
 #[doc = "Field `LS_THRESHOLD` reader - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
 pub type LS_THRESHOLD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LS_THRESHOLD` writer - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
-pub type LS_THRESHOLD_W<'a> = crate::FieldWriter<'a, u32, HC_LS_THRESHOLD_SPEC, u16, u16, 12, 0>;
+pub type LS_THRESHOLD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HC_LS_THRESHOLD_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
     #[inline(always)]
-    pub fn ls_threshold(&mut self) -> LS_THRESHOLD_W {
+    pub fn ls_threshold(&mut self) -> LS_THRESHOLD_W<0> {
         LS_THRESHOLD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

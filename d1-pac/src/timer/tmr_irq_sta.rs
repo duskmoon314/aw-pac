@@ -71,8 +71,9 @@ impl TMR1_IRQ_PEND_R {
     }
 }
 #[doc = "Field `tmr1_irq_pend` writer - "]
-pub type TMR1_IRQ_PEND_W<'a> = crate::BitWriter<'a, u32, TMR_IRQ_STA_SPEC, TMR1_IRQ_PEND_A, 1>;
-impl<'a> TMR1_IRQ_PEND_W<'a> {
+pub type TMR1_IRQ_PEND_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TMR_IRQ_STA_SPEC, TMR1_IRQ_PEND_A, O>;
+impl<'a, const O: u8> TMR1_IRQ_PEND_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl TMR0_IRQ_PEND_R {
     }
 }
 #[doc = "Field `tmr0_irq_pend` writer - "]
-pub type TMR0_IRQ_PEND_W<'a> = crate::BitWriter<'a, u32, TMR_IRQ_STA_SPEC, TMR0_IRQ_PEND_A, 0>;
-impl<'a> TMR0_IRQ_PEND_W<'a> {
+pub type TMR0_IRQ_PEND_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TMR_IRQ_STA_SPEC, TMR0_IRQ_PEND_A, O>;
+impl<'a, const O: u8> TMR0_IRQ_PEND_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -149,12 +151,12 @@ impl R {
 impl W {
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn tmr1_irq_pend(&mut self) -> TMR1_IRQ_PEND_W {
+    pub fn tmr1_irq_pend(&mut self) -> TMR1_IRQ_PEND_W<1> {
         TMR1_IRQ_PEND_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn tmr0_irq_pend(&mut self) -> TMR0_IRQ_PEND_W {
+    pub fn tmr0_irq_pend(&mut self) -> TMR0_IRQ_PEND_W<0> {
         TMR0_IRQ_PEND_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

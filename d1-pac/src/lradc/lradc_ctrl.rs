@@ -37,11 +37,13 @@ impl From<crate::W<LRADC_CTRL_SPEC>> for W {
 #[doc = "Field `FIRST_CONVERT_DLY` reader - ADC First Convert Delay Setting"]
 pub type FIRST_CONVERT_DLY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIRST_CONVERT_DLY` writer - ADC First Convert Delay Setting"]
-pub type FIRST_CONVERT_DLY_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 8, 24>;
+pub type FIRST_CONVERT_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 8, O>;
 #[doc = "Field `CONTINUE_TIME_SELECT` reader - Continuous Mode Time Select"]
 pub type CONTINUE_TIME_SELECT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CONTINUE_TIME_SELECT` writer - Continuous Mode Time Select"]
-pub type CONTINUE_TIME_SELECT_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, 16>;
+pub type CONTINUE_TIME_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Key Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -89,9 +91,9 @@ impl KEY_MODE_SELECT_R {
     }
 }
 #[doc = "Field `KEY_MODE_SELECT` writer - Key Mode Select"]
-pub type KEY_MODE_SELECT_W<'a> =
-    crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, KEY_MODE_SELECT_A, 2, 12>;
-impl<'a> KEY_MODE_SELECT_W<'a> {
+pub type KEY_MODE_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, KEY_MODE_SELECT_A, 2, O>;
+impl<'a, const O: u8> KEY_MODE_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -111,7 +113,8 @@ impl<'a> KEY_MODE_SELECT_W<'a> {
 #[doc = "Field `LEVELA_B_CNT` reader - Level A to B time threshold select"]
 pub type LEVELA_B_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LEVELA_B_CNT` writer - Level A to B time threshold select"]
-pub type LEVELA_B_CNT_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, 8>;
+pub type LEVELA_B_CNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, O>;
 #[doc = "LRADC Hold Key Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LRADC_HOLD_KEY_EN_A {
@@ -149,9 +152,9 @@ impl LRADC_HOLD_KEY_EN_R {
     }
 }
 #[doc = "Field `LRADC_HOLD_KEY_EN` writer - LRADC Hold Key Enable"]
-pub type LRADC_HOLD_KEY_EN_W<'a> =
-    crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_HOLD_KEY_EN_A, 7>;
-impl<'a> LRADC_HOLD_KEY_EN_W<'a> {
+pub type LRADC_HOLD_KEY_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_HOLD_KEY_EN_A, O>;
+impl<'a, const O: u8> LRADC_HOLD_KEY_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -200,8 +203,9 @@ impl LRADC_CHANNEL_EN_R {
     }
 }
 #[doc = "Field `LRADC_CHANNEL_EN` writer - LRADC Channel Enable"]
-pub type LRADC_CHANNEL_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_CHANNEL_EN_A, 6>;
-impl<'a> LRADC_CHANNEL_EN_W<'a> {
+pub type LRADC_CHANNEL_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_CHANNEL_EN_A, O>;
+impl<'a, const O: u8> LRADC_CHANNEL_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -260,8 +264,9 @@ impl LEVELB_VOL_R {
     }
 }
 #[doc = "Field `LEVELB_VOL` writer - Level B Corresponding Data Value Setting (the real voltage value)"]
-pub type LEVELB_VOL_W<'a> = crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, LEVELB_VOL_A, 2, 4>;
-impl<'a> LEVELB_VOL_W<'a> {
+pub type LEVELB_VOL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, LEVELB_VOL_A, 2, O>;
+impl<'a, const O: u8> LEVELB_VOL_W<'a, O> {
     #[doc = "1.221 V"]
     #[inline(always)]
     pub fn v39(self) -> &'a mut W {
@@ -333,9 +338,9 @@ impl LRADC_SAMPLE_RATE_R {
     }
 }
 #[doc = "Field `LRADC_SAMPLE_RATE` writer - LRADC Sample Rate"]
-pub type LRADC_SAMPLE_RATE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, LRADC_CTRL_SPEC, u8, LRADC_SAMPLE_RATE_A, 2, 2>;
-impl<'a> LRADC_SAMPLE_RATE_W<'a> {
+pub type LRADC_SAMPLE_RATE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, LRADC_CTRL_SPEC, u8, LRADC_SAMPLE_RATE_A, 2, O>;
+impl<'a, const O: u8> LRADC_SAMPLE_RATE_W<'a, O> {
     #[doc = "2kHz"]
     #[inline(always)]
     pub fn r2k(self) -> &'a mut W {
@@ -394,8 +399,8 @@ impl LRADC_EN_R {
     }
 }
 #[doc = "Field `LRADC_EN` writer - LRADC Enable"]
-pub type LRADC_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_EN_A, 0>;
-impl<'a> LRADC_EN_W<'a> {
+pub type LRADC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_EN_A, O>;
+impl<'a, const O: u8> LRADC_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -457,47 +462,47 @@ impl R {
 impl W {
     #[doc = "Bits 24:31 - ADC First Convert Delay Setting"]
     #[inline(always)]
-    pub fn first_convert_dly(&mut self) -> FIRST_CONVERT_DLY_W {
+    pub fn first_convert_dly(&mut self) -> FIRST_CONVERT_DLY_W<24> {
         FIRST_CONVERT_DLY_W::new(self)
     }
     #[doc = "Bits 16:19 - Continuous Mode Time Select"]
     #[inline(always)]
-    pub fn continue_time_select(&mut self) -> CONTINUE_TIME_SELECT_W {
+    pub fn continue_time_select(&mut self) -> CONTINUE_TIME_SELECT_W<16> {
         CONTINUE_TIME_SELECT_W::new(self)
     }
     #[doc = "Bits 12:13 - Key Mode Select"]
     #[inline(always)]
-    pub fn key_mode_select(&mut self) -> KEY_MODE_SELECT_W {
+    pub fn key_mode_select(&mut self) -> KEY_MODE_SELECT_W<12> {
         KEY_MODE_SELECT_W::new(self)
     }
     #[doc = "Bits 8:11 - Level A to B time threshold select"]
     #[inline(always)]
-    pub fn levela_b_cnt(&mut self) -> LEVELA_B_CNT_W {
+    pub fn levela_b_cnt(&mut self) -> LEVELA_B_CNT_W<8> {
         LEVELA_B_CNT_W::new(self)
     }
     #[doc = "Bit 7 - LRADC Hold Key Enable"]
     #[inline(always)]
-    pub fn lradc_hold_key_en(&mut self) -> LRADC_HOLD_KEY_EN_W {
+    pub fn lradc_hold_key_en(&mut self) -> LRADC_HOLD_KEY_EN_W<7> {
         LRADC_HOLD_KEY_EN_W::new(self)
     }
     #[doc = "Bit 6 - LRADC Channel Enable"]
     #[inline(always)]
-    pub fn lradc_channel_en(&mut self) -> LRADC_CHANNEL_EN_W {
+    pub fn lradc_channel_en(&mut self) -> LRADC_CHANNEL_EN_W<6> {
         LRADC_CHANNEL_EN_W::new(self)
     }
     #[doc = "Bits 4:5 - Level B Corresponding Data Value Setting (the real voltage value)"]
     #[inline(always)]
-    pub fn levelb_vol(&mut self) -> LEVELB_VOL_W {
+    pub fn levelb_vol(&mut self) -> LEVELB_VOL_W<4> {
         LEVELB_VOL_W::new(self)
     }
     #[doc = "Bits 2:3 - LRADC Sample Rate"]
     #[inline(always)]
-    pub fn lradc_sample_rate(&mut self) -> LRADC_SAMPLE_RATE_W {
+    pub fn lradc_sample_rate(&mut self) -> LRADC_SAMPLE_RATE_W<2> {
         LRADC_SAMPLE_RATE_W::new(self)
     }
     #[doc = "Bit 0 - LRADC Enable"]
     #[inline(always)]
-    pub fn lradc_en(&mut self) -> LRADC_EN_W {
+    pub fn lradc_en(&mut self) -> LRADC_EN_W<0> {
         LRADC_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

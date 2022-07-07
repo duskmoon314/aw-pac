@@ -37,7 +37,7 @@ impl From<crate::W<PCR_SPEC>> for W {
 #[doc = "Field `PWM_PUL_NUM` reader - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
 pub type PWM_PUL_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PWM_PUL_NUM` writer - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
-pub type PWM_PUL_NUM_W<'a> = crate::FieldWriter<'a, u32, PCR_SPEC, u16, u16, 16, 16>;
+pub type PWM_PUL_NUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SPEC, u16, u16, 16, O>;
 #[doc = "PWM Period Register Ready\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWM_PERIOD_RDY_A {
@@ -111,8 +111,9 @@ impl PWM_PUL_START_R {
     }
 }
 #[doc = "Field `PWM_PUL_START` writer - PWM Pulse Output Start"]
-pub type PWM_PUL_START_W<'a> = crate::BitWriter0C<'a, u32, PCR_SPEC, PWM_PUL_START_A, 10>;
-impl<'a> PWM_PUL_START_W<'a> {
+pub type PWM_PUL_START_W<'a, const O: u8> =
+    crate::BitWriter0C<'a, u32, PCR_SPEC, PWM_PUL_START_A, O>;
+impl<'a, const O: u8> PWM_PUL_START_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -161,8 +162,8 @@ impl PWM_MODE_R {
     }
 }
 #[doc = "Field `PWM_MODE` writer - PWM Output Mode Select"]
-pub type PWM_MODE_W<'a> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_MODE_A, 9>;
-impl<'a> PWM_MODE_W<'a> {
+pub type PWM_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_MODE_A, O>;
+impl<'a, const O: u8> PWM_MODE_W<'a, O> {
     #[doc = "Cycle mode"]
     #[inline(always)]
     pub fn cycle(self) -> &'a mut W {
@@ -211,8 +212,8 @@ impl PWM_ACT_STA_R {
     }
 }
 #[doc = "Field `PWM_ACT_STA` writer - PWM Active State"]
-pub type PWM_ACT_STA_W<'a> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_ACT_STA_A, 8>;
-impl<'a> PWM_ACT_STA_W<'a> {
+pub type PWM_ACT_STA_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_ACT_STA_A, O>;
+impl<'a, const O: u8> PWM_ACT_STA_W<'a, O> {
     #[doc = "low level"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -227,7 +228,7 @@ impl<'a> PWM_ACT_STA_W<'a> {
 #[doc = "Field `PWM_PRESCAL_K` reader - PWM pre-scale K, actual pre-scale is (K + 1)"]
 pub type PWM_PRESCAL_K_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PWM_PRESCAL_K` writer - PWM pre-scale K, actual pre-scale is (K + 1)"]
-pub type PWM_PRESCAL_K_W<'a> = crate::FieldWriter<'a, u32, PCR_SPEC, u8, u8, 8, 0>;
+pub type PWM_PRESCAL_K_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 16:31 - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
     #[inline(always)]
@@ -263,27 +264,27 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
     #[inline(always)]
-    pub fn pwm_pul_num(&mut self) -> PWM_PUL_NUM_W {
+    pub fn pwm_pul_num(&mut self) -> PWM_PUL_NUM_W<16> {
         PWM_PUL_NUM_W::new(self)
     }
     #[doc = "Bit 10 - PWM Pulse Output Start"]
     #[inline(always)]
-    pub fn pwm_pul_start(&mut self) -> PWM_PUL_START_W {
+    pub fn pwm_pul_start(&mut self) -> PWM_PUL_START_W<10> {
         PWM_PUL_START_W::new(self)
     }
     #[doc = "Bit 9 - PWM Output Mode Select"]
     #[inline(always)]
-    pub fn pwm_mode(&mut self) -> PWM_MODE_W {
+    pub fn pwm_mode(&mut self) -> PWM_MODE_W<9> {
         PWM_MODE_W::new(self)
     }
     #[doc = "Bit 8 - PWM Active State"]
     #[inline(always)]
-    pub fn pwm_act_sta(&mut self) -> PWM_ACT_STA_W {
+    pub fn pwm_act_sta(&mut self) -> PWM_ACT_STA_W<8> {
         PWM_ACT_STA_W::new(self)
     }
     #[doc = "Bits 0:7 - PWM pre-scale K, actual pre-scale is (K + 1)"]
     #[inline(always)]
-    pub fn pwm_prescal_k(&mut self) -> PWM_PRESCAL_K_W {
+    pub fn pwm_prescal_k(&mut self) -> PWM_PRESCAL_K_W<0> {
         PWM_PRESCAL_K_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

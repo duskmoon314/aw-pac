@@ -71,8 +71,8 @@ impl DBG_RST_R {
     }
 }
 #[doc = "Field `DBG_RST` writer - Reset"]
-pub type DBG_RST_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, DBG_RST_A, 18>;
-impl<'a> DBG_RST_W<'a> {
+pub type DBG_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, DBG_RST_A, O>;
+impl<'a, const O: u8> DBG_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl CFG_RST_R {
     }
 }
 #[doc = "Field `CFG_RST` writer - Reset"]
-pub type CFG_RST_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_RST_A, 17>;
-impl<'a> CFG_RST_W<'a> {
+pub type CFG_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_RST_A, O>;
+impl<'a, const O: u8> CFG_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -171,8 +171,8 @@ impl RST_R {
     }
 }
 #[doc = "Field `RST` writer - Reset"]
-pub type RST_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, RST_A, 16>;
-impl<'a> RST_W<'a> {
+pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, RST_A, O>;
+impl<'a, const O: u8> RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -221,8 +221,8 @@ impl CFG_GATING_R {
     }
 }
 #[doc = "Field `CFG_GATING` writer - Gating Clock"]
-pub type CFG_GATING_W<'a> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_GATING_A, 1>;
-impl<'a> CFG_GATING_W<'a> {
+pub type CFG_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_GATING_A, O>;
+impl<'a, const O: u8> CFG_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -259,22 +259,22 @@ impl R {
 impl W {
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
-    pub fn dbg_rst(&mut self) -> DBG_RST_W {
+    pub fn dbg_rst(&mut self) -> DBG_RST_W<18> {
         DBG_RST_W::new(self)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
-    pub fn cfg_rst(&mut self) -> CFG_RST_W {
+    pub fn cfg_rst(&mut self) -> CFG_RST_W<17> {
         CFG_RST_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn rst(&mut self) -> RST_W {
+    pub fn rst(&mut self) -> RST_W<16> {
         RST_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
-    pub fn cfg_gating(&mut self) -> CFG_GATING_W {
+    pub fn cfg_gating(&mut self) -> CFG_GATING_W<1> {
         CFG_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

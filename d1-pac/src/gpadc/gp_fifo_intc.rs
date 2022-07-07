@@ -71,9 +71,9 @@ impl FIFO_DATA_DRQ_EN_R {
     }
 }
 #[doc = "Field `FIFO_DATA_DRQ_EN` writer - ADC FIFO Date DRQ Enable"]
-pub type FIFO_DATA_DRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_DRQ_EN_A, 18>;
-impl<'a> FIFO_DATA_DRQ_EN_W<'a> {
+pub type FIFO_DATA_DRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_DRQ_EN_A, O>;
+impl<'a, const O: u8> FIFO_DATA_DRQ_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl FIFO_OVERRUN_IRQ_EN_R {
     }
 }
 #[doc = "Field `FIFO_OVERRUN_IRQ_EN` writer - ADC FIFO Overrun IRQ Enable"]
-pub type FIFO_OVERRUN_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_OVERRUN_IRQ_EN_A, 17>;
-impl<'a> FIFO_OVERRUN_IRQ_EN_W<'a> {
+pub type FIFO_OVERRUN_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_OVERRUN_IRQ_EN_A, O>;
+impl<'a, const O: u8> FIFO_OVERRUN_IRQ_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -173,9 +173,9 @@ impl FIFO_DATA_IRQ_EN_R {
     }
 }
 #[doc = "Field `FIFO_DATA_IRQ_EN` writer - ADC FIFO Data Available IRQ Enable"]
-pub type FIFO_DATA_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_IRQ_EN_A, 16>;
-impl<'a> FIFO_DATA_IRQ_EN_W<'a> {
+pub type FIFO_DATA_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_IRQ_EN_A, O>;
+impl<'a, const O: u8> FIFO_DATA_IRQ_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -190,11 +190,12 @@ impl<'a> FIFO_DATA_IRQ_EN_W<'a> {
 #[doc = "Field `FIFO_TRIG_LEVEL` reader - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
 pub type FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FIFO_TRIG_LEVEL` writer - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
-pub type FIFO_TRIG_LEVEL_W<'a> = crate::FieldWriter<'a, u32, GP_FIFO_INTC_SPEC, u8, u8, 6, 8>;
+pub type FIFO_TRIG_LEVEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GP_FIFO_INTC_SPEC, u8, u8, 6, O>;
 #[doc = "Field `FIFO_FLUSH` reader - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
 pub type FIFO_FLUSH_R = crate::BitReader<bool>;
 #[doc = "Field `FIFO_FLUSH` writer - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
-pub type FIFO_FLUSH_W<'a> = crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, bool, 4>;
+pub type FIFO_FLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 18 - ADC FIFO Date DRQ Enable"]
     #[inline(always)]
@@ -225,27 +226,27 @@ impl R {
 impl W {
     #[doc = "Bit 18 - ADC FIFO Date DRQ Enable"]
     #[inline(always)]
-    pub fn fifo_data_drq_en(&mut self) -> FIFO_DATA_DRQ_EN_W {
+    pub fn fifo_data_drq_en(&mut self) -> FIFO_DATA_DRQ_EN_W<18> {
         FIFO_DATA_DRQ_EN_W::new(self)
     }
     #[doc = "Bit 17 - ADC FIFO Overrun IRQ Enable"]
     #[inline(always)]
-    pub fn fifo_overrun_irq_en(&mut self) -> FIFO_OVERRUN_IRQ_EN_W {
+    pub fn fifo_overrun_irq_en(&mut self) -> FIFO_OVERRUN_IRQ_EN_W<17> {
         FIFO_OVERRUN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 16 - ADC FIFO Data Available IRQ Enable"]
     #[inline(always)]
-    pub fn fifo_data_irq_en(&mut self) -> FIFO_DATA_IRQ_EN_W {
+    pub fn fifo_data_irq_en(&mut self) -> FIFO_DATA_IRQ_EN_W<16> {
         FIFO_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 8:13 - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
     #[inline(always)]
-    pub fn fifo_trig_level(&mut self) -> FIFO_TRIG_LEVEL_W {
+    pub fn fifo_trig_level(&mut self) -> FIFO_TRIG_LEVEL_W<8> {
         FIFO_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 4 - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
     #[inline(always)]
-    pub fn fifo_flush(&mut self) -> FIFO_FLUSH_W {
+    pub fn fifo_flush(&mut self) -> FIFO_FLUSH_W<4> {
         FIFO_FLUSH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

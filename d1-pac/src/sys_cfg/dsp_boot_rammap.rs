@@ -71,9 +71,9 @@ impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
     }
 }
 #[doc = "Field `DSP_BOOT_SRAM_REMAP_ENABLE` writer - "]
-pub type DSP_BOOT_SRAM_REMAP_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, DSP_BOOT_RAMMAP_SPEC, DSP_BOOT_SRAM_REMAP_ENABLE_A, 0>;
-impl<'a> DSP_BOOT_SRAM_REMAP_ENABLE_W<'a> {
+pub type DSP_BOOT_SRAM_REMAP_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DSP_BOOT_RAMMAP_SPEC, DSP_BOOT_SRAM_REMAP_ENABLE_A, O>;
+impl<'a, const O: u8> DSP_BOOT_SRAM_REMAP_ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn dsp_sys(self) -> &'a mut W {
@@ -95,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn dsp_boot_sram_remap_enable(&mut self) -> DSP_BOOT_SRAM_REMAP_ENABLE_W {
+    pub fn dsp_boot_sram_remap_enable(&mut self) -> DSP_BOOT_SRAM_REMAP_ENABLE_W<0> {
         DSP_BOOT_SRAM_REMAP_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

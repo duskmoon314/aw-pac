@@ -71,8 +71,8 @@ impl THS_EN_R {
     }
 }
 #[doc = "Field `THS_EN` writer - Enable temperature measurement sensor"]
-pub type THS_EN_W<'a> = crate::BitWriter<'a, u32, THS_EN_SPEC, THS_EN_A, 0>;
-impl<'a> THS_EN_W<'a> {
+pub type THS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, THS_EN_SPEC, THS_EN_A, O>;
+impl<'a, const O: u8> THS_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable temperature measurement sensor"]
     #[inline(always)]
-    pub fn ths_en(&mut self) -> THS_EN_W {
+    pub fn ths_en(&mut self) -> THS_EN_W<0> {
         THS_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

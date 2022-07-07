@@ -37,7 +37,7 @@ impl From<crate::W<THS_CTRL_SPEC>> for W {
 #[doc = "Field `TACQ` reader - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
 pub type TACQ_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TACQ` writer - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
-pub type TACQ_W<'a> = crate::FieldWriter<'a, u32, THS_CTRL_SPEC, u16, u16, 16, 16>;
+pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, THS_CTRL_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 16:31 - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
     #[inline(always)]
-    pub fn tacq(&mut self) -> TACQ_W {
+    pub fn tacq(&mut self) -> TACQ_W<16> {
         TACQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

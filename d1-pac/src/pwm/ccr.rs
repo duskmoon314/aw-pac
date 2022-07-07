@@ -37,19 +37,19 @@ impl From<crate::W<CCR_SPEC>> for W {
 #[doc = "Field `CRLF` reader - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
 pub type CRLF_R = crate::BitReader<bool>;
 #[doc = "Field `CRLF` writer - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-pub type CRLF_W<'a> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, 4>;
+pub type CRLF_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, O>;
 #[doc = "Field `CFLF` reader - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
 pub type CFLF_R = crate::BitReader<bool>;
 #[doc = "Field `CFLF` writer - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-pub type CFLF_W<'a> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, 3>;
+pub type CFLF_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, O>;
 #[doc = "Field `CRTE` reader - Rising edge capture trigger enable"]
 pub type CRTE_R = crate::BitReader<bool>;
 #[doc = "Field `CRTE` writer - Rising edge capture trigger enable"]
-pub type CRTE_W<'a> = crate::BitWriter<'a, u32, CCR_SPEC, bool, 2>;
+pub type CRTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, bool, O>;
 #[doc = "Field `CFTE` reader - Falling edge capture trigger enable"]
 pub type CFTE_R = crate::BitReader<bool>;
 #[doc = "Field `CFTE` writer - Falling edge capture trigger enable"]
-pub type CFTE_W<'a> = crate::BitWriter<'a, u32, CCR_SPEC, bool, 1>;
+pub type CFTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, bool, O>;
 #[doc = "Inverse the signal input from capture channel before 16-bit counter of capture channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAPINV_A {
@@ -87,8 +87,8 @@ impl CAPINV_R {
     }
 }
 #[doc = "Field `CAPINV` writer - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
-pub type CAPINV_W<'a> = crate::BitWriter<'a, u32, CCR_SPEC, CAPINV_A, 0>;
-impl<'a> CAPINV_W<'a> {
+pub type CAPINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, CAPINV_A, O>;
+impl<'a, const O: u8> CAPINV_W<'a, O> {
     #[doc = "not inverse"]
     #[inline(always)]
     pub fn not_inverse(self) -> &'a mut W {
@@ -130,27 +130,27 @@ impl R {
 impl W {
     #[doc = "Bit 4 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
     #[inline(always)]
-    pub fn crlf(&mut self) -> CRLF_W {
+    pub fn crlf(&mut self) -> CRLF_W<4> {
         CRLF_W::new(self)
     }
     #[doc = "Bit 3 - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
     #[inline(always)]
-    pub fn cflf(&mut self) -> CFLF_W {
+    pub fn cflf(&mut self) -> CFLF_W<3> {
         CFLF_W::new(self)
     }
     #[doc = "Bit 2 - Rising edge capture trigger enable"]
     #[inline(always)]
-    pub fn crte(&mut self) -> CRTE_W {
+    pub fn crte(&mut self) -> CRTE_W<2> {
         CRTE_W::new(self)
     }
     #[doc = "Bit 1 - Falling edge capture trigger enable"]
     #[inline(always)]
-    pub fn cfte(&mut self) -> CFTE_W {
+    pub fn cfte(&mut self) -> CFTE_W<1> {
         CFTE_W::new(self)
     }
     #[doc = "Bit 0 - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
     #[inline(always)]
-    pub fn capinv(&mut self) -> CAPINV_W {
+    pub fn capinv(&mut self) -> CAPINV_W<0> {
         CAPINV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

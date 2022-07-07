@@ -71,8 +71,8 @@ impl CLK_GATING_R {
     }
 }
 #[doc = "Field `CLK_GATING` writer - Gating Clock"]
-pub type CLK_GATING_W<'a> = crate::BitWriter<'a, u32, AVS_CLK_SPEC, CLK_GATING_A, 31>;
-impl<'a> CLK_GATING_W<'a> {
+pub type CLK_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, AVS_CLK_SPEC, CLK_GATING_A, O>;
+impl<'a, const O: u8> CLK_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating Clock"]
     #[inline(always)]
-    pub fn clk_gating(&mut self) -> CLK_GATING_W {
+    pub fn clk_gating(&mut self) -> CLK_GATING_W<31> {
         CLK_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

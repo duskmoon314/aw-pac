@@ -35,11 +35,13 @@ impl From<crate::W<SRAM_ADDR_TWIST_REG_SPEC>> for W {
     }
 }
 #[doc = "Field `SRAM_TS_KF` writer - SRAM Twist Keyfield"]
-pub type SRAM_TS_KF_W<'a> = crate::FieldWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, u16, u16, 16, 16>;
+pub type SRAM_TS_KF_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, u16, u16, 16, O>;
 #[doc = "Field `SRAM_ADDR_TS_FG` reader - SRAM Address Twist Flag"]
 pub type SRAM_ADDR_TS_FG_R = crate::BitReader<bool>;
 #[doc = "Field `SRAM_ADDR_TS_FG` writer - SRAM Address Twist Flag"]
-pub type SRAM_ADDR_TS_FG_W<'a> = crate::BitWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, bool, 0>;
+pub type SRAM_ADDR_TS_FG_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - SRAM Address Twist Flag"]
     #[inline(always)]
@@ -50,12 +52,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - SRAM Twist Keyfield"]
     #[inline(always)]
-    pub fn sram_ts_kf(&mut self) -> SRAM_TS_KF_W {
+    pub fn sram_ts_kf(&mut self) -> SRAM_TS_KF_W<16> {
         SRAM_TS_KF_W::new(self)
     }
     #[doc = "Bit 0 - SRAM Address Twist Flag"]
     #[inline(always)]
-    pub fn sram_addr_ts_fg(&mut self) -> SRAM_ADDR_TS_FG_W {
+    pub fn sram_addr_ts_fg(&mut self) -> SRAM_ADDR_TS_FG_W<0> {
         SRAM_ADDR_TS_FG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

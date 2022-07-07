@@ -37,7 +37,8 @@ impl From<crate::W<TP_CTRL1_SPEC>> for W {
 #[doc = "Field `STYLUS_UP_DEBOUNCE` reader - Stylus Up Debounce Time Setting"]
 pub type STYLUS_UP_DEBOUNCE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STYLUS_UP_DEBOUNCE` writer - Stylus Up Debounce Time Setting"]
-pub type STYLUS_UP_DEBOUNCE_W<'a> = crate::FieldWriter<'a, u32, TP_CTRL1_SPEC, u8, u8, 8, 12>;
+pub type STYLUS_UP_DEBOUNCE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TP_CTRL1_SPEC, u8, u8, 8, O>;
 #[doc = "Stylus Up Debounce Function Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum STYLUS_UP_DEBOUNCE_EN_A {
@@ -75,9 +76,9 @@ impl STYLUS_UP_DEBOUNCE_EN_R {
     }
 }
 #[doc = "Field `STYLUS_UP_DEBOUNCE_EN` writer - Stylus Up Debounce Function Select"]
-pub type STYLUS_UP_DEBOUNCE_EN_W<'a> =
-    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, STYLUS_UP_DEBOUNCE_EN_A, 9>;
-impl<'a> STYLUS_UP_DEBOUNCE_EN_W<'a> {
+pub type STYLUS_UP_DEBOUNCE_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, STYLUS_UP_DEBOUNCE_EN_A, O>;
+impl<'a, const O: u8> STYLUS_UP_DEBOUNCE_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -126,8 +127,8 @@ impl CHOPPER_EN_R {
     }
 }
 #[doc = "Field `CHOPPER_EN` writer - T-sensor Chopping Enable"]
-pub type CHOPPER_EN_W<'a> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, CHOPPER_EN_A, 8>;
-impl<'a> CHOPPER_EN_W<'a> {
+pub type CHOPPER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, CHOPPER_EN_A, O>;
+impl<'a, const O: u8> CHOPPER_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -169,8 +170,9 @@ impl TOUCH_PAN_CALI_EN_R {
     }
 }
 #[doc = "Field `TOUCH_PAN_CALI_EN` writer - Touch Panel Calibration"]
-pub type TOUCH_PAN_CALI_EN_W<'a> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TOUCH_PAN_CALI_EN_A, 7>;
-impl<'a> TOUCH_PAN_CALI_EN_W<'a> {
+pub type TOUCH_PAN_CALI_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TOUCH_PAN_CALI_EN_A, O>;
+impl<'a, const O: u8> TOUCH_PAN_CALI_EN_W<'a, O> {
     #[doc = "`1`"]
     #[inline(always)]
     pub fn start(self) -> &'a mut W {
@@ -214,8 +216,8 @@ impl TP_DUAL_EN_R {
     }
 }
 #[doc = "Field `TP_DUAL_EN` writer - Touch Panel Double Point Enable"]
-pub type TP_DUAL_EN_W<'a> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_DUAL_EN_A, 6>;
-impl<'a> TP_DUAL_EN_W<'a> {
+pub type TP_DUAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_DUAL_EN_A, O>;
+impl<'a, const O: u8> TP_DUAL_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -264,8 +266,8 @@ impl TP_EN_R {
     }
 }
 #[doc = "Field `TP_EN` writer - TP Function Enable"]
-pub type TP_EN_W<'a> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_EN_A, 5>;
-impl<'a> TP_EN_W<'a> {
+pub type TP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_EN_A, O>;
+impl<'a, const O: u8> TP_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -314,8 +316,9 @@ impl TP_MODE_SELECT_R {
     }
 }
 #[doc = "Field `TP_MODE_SELECT` writer - Touch Panel Mode and Auxiliary ADC Mode Select"]
-pub type TP_MODE_SELECT_W<'a> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_MODE_SELECT_A, 4>;
-impl<'a> TP_MODE_SELECT_W<'a> {
+pub type TP_MODE_SELECT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_MODE_SELECT_A, O>;
+impl<'a, const O: u8> TP_MODE_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn tp(self) -> &'a mut W {
@@ -443,37 +446,37 @@ impl R {
 impl W {
     #[doc = "Bits 12:19 - Stylus Up Debounce Time Setting"]
     #[inline(always)]
-    pub fn stylus_up_debounce(&mut self) -> STYLUS_UP_DEBOUNCE_W {
+    pub fn stylus_up_debounce(&mut self) -> STYLUS_UP_DEBOUNCE_W<12> {
         STYLUS_UP_DEBOUNCE_W::new(self)
     }
     #[doc = "Bit 9 - Stylus Up Debounce Function Select"]
     #[inline(always)]
-    pub fn stylus_up_debounce_en(&mut self) -> STYLUS_UP_DEBOUNCE_EN_W {
+    pub fn stylus_up_debounce_en(&mut self) -> STYLUS_UP_DEBOUNCE_EN_W<9> {
         STYLUS_UP_DEBOUNCE_EN_W::new(self)
     }
     #[doc = "Bit 8 - T-sensor Chopping Enable"]
     #[inline(always)]
-    pub fn chopper_en(&mut self) -> CHOPPER_EN_W {
+    pub fn chopper_en(&mut self) -> CHOPPER_EN_W<8> {
         CHOPPER_EN_W::new(self)
     }
     #[doc = "Bit 7 - Touch Panel Calibration"]
     #[inline(always)]
-    pub fn touch_pan_cali_en(&mut self) -> TOUCH_PAN_CALI_EN_W {
+    pub fn touch_pan_cali_en(&mut self) -> TOUCH_PAN_CALI_EN_W<7> {
         TOUCH_PAN_CALI_EN_W::new(self)
     }
     #[doc = "Bit 6 - Touch Panel Double Point Enable"]
     #[inline(always)]
-    pub fn tp_dual_en(&mut self) -> TP_DUAL_EN_W {
+    pub fn tp_dual_en(&mut self) -> TP_DUAL_EN_W<6> {
         TP_DUAL_EN_W::new(self)
     }
     #[doc = "Bit 5 - TP Function Enable"]
     #[inline(always)]
-    pub fn tp_en(&mut self) -> TP_EN_W {
+    pub fn tp_en(&mut self) -> TP_EN_W<5> {
         TP_EN_W::new(self)
     }
     #[doc = "Bit 4 - Touch Panel Mode and Auxiliary ADC Mode Select"]
     #[inline(always)]
-    pub fn tp_mode_select(&mut self) -> TP_MODE_SELECT_W {
+    pub fn tp_mode_select(&mut self) -> TP_MODE_SELECT_W<4> {
         TP_MODE_SELECT_W::new(self)
     }
     #[doc = "Analog Input Channel Select"]

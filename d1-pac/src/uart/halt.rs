@@ -37,11 +37,11 @@ impl From<crate::W<HALT_SPEC>> for W {
 #[doc = "Field `pte` reader - The sending of TX_REQ"]
 pub type PTE_R = crate::BitReader<bool>;
 #[doc = "Field `pte` writer - The sending of TX_REQ"]
-pub type PTE_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, bool, 7>;
+pub type PTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HALT_SPEC, bool, O>;
 #[doc = "Field `dma_pte_rx` reader - The Transmission of RX_DRQ"]
 pub type DMA_PTE_RX_R = crate::BitReader<bool>;
 #[doc = "Field `dma_pte_rx` writer - The Transmission of RX_DRQ"]
-pub type DMA_PTE_RX_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, bool, 6>;
+pub type DMA_PTE_RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, HALT_SPEC, bool, O>;
 #[doc = "SIR RX Pulse Polarity Invert\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SIR_RX_INVERT_A {
@@ -79,8 +79,9 @@ impl SIR_RX_INVERT_R {
     }
 }
 #[doc = "Field `sir_rx_invert` writer - SIR RX Pulse Polarity Invert"]
-pub type SIR_RX_INVERT_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, SIR_RX_INVERT_A, 5>;
-impl<'a> SIR_RX_INVERT_W<'a> {
+pub type SIR_RX_INVERT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HALT_SPEC, SIR_RX_INVERT_A, O>;
+impl<'a, const O: u8> SIR_RX_INVERT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -129,8 +130,9 @@ impl SIR_TX_INVERT_R {
     }
 }
 #[doc = "Field `sir_tx_invert` writer - SIR TX Pulse Polarity Invert"]
-pub type SIR_TX_INVERT_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, SIR_TX_INVERT_A, 4>;
-impl<'a> SIR_TX_INVERT_W<'a> {
+pub type SIR_TX_INVERT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HALT_SPEC, SIR_TX_INVERT_A, O>;
+impl<'a, const O: u8> SIR_TX_INVERT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_invert(self) -> &'a mut W {
@@ -179,8 +181,9 @@ impl CHANGE_UPDATE_R {
     }
 }
 #[doc = "Field `change_update` writer - "]
-pub type CHANGE_UPDATE_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, CHANGE_UPDATE_A, 2>;
-impl<'a> CHANGE_UPDATE_W<'a> {
+pub type CHANGE_UPDATE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HALT_SPEC, CHANGE_UPDATE_A, O>;
+impl<'a, const O: u8> CHANGE_UPDATE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn finished(self) -> &'a mut W {
@@ -229,8 +232,9 @@ impl CHCFG_AT_BUSY_R {
     }
 }
 #[doc = "Field `chcfg_at_busy` writer - "]
-pub type CHCFG_AT_BUSY_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, CHCFG_AT_BUSY_A, 1>;
-impl<'a> CHCFG_AT_BUSY_W<'a> {
+pub type CHCFG_AT_BUSY_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HALT_SPEC, CHCFG_AT_BUSY_A, O>;
+impl<'a, const O: u8> CHCFG_AT_BUSY_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -279,8 +283,8 @@ impl HALT_TX_R {
     }
 }
 #[doc = "Field `halt_tx` writer - "]
-pub type HALT_TX_W<'a> = crate::BitWriter<'a, u32, HALT_SPEC, HALT_TX_A, 0>;
-impl<'a> HALT_TX_W<'a> {
+pub type HALT_TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, HALT_SPEC, HALT_TX_A, O>;
+impl<'a, const O: u8> HALT_TX_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -332,37 +336,37 @@ impl R {
 impl W {
     #[doc = "Bit 7 - The sending of TX_REQ"]
     #[inline(always)]
-    pub fn pte(&mut self) -> PTE_W {
+    pub fn pte(&mut self) -> PTE_W<7> {
         PTE_W::new(self)
     }
     #[doc = "Bit 6 - The Transmission of RX_DRQ"]
     #[inline(always)]
-    pub fn dma_pte_rx(&mut self) -> DMA_PTE_RX_W {
+    pub fn dma_pte_rx(&mut self) -> DMA_PTE_RX_W<6> {
         DMA_PTE_RX_W::new(self)
     }
     #[doc = "Bit 5 - SIR RX Pulse Polarity Invert"]
     #[inline(always)]
-    pub fn sir_rx_invert(&mut self) -> SIR_RX_INVERT_W {
+    pub fn sir_rx_invert(&mut self) -> SIR_RX_INVERT_W<5> {
         SIR_RX_INVERT_W::new(self)
     }
     #[doc = "Bit 4 - SIR TX Pulse Polarity Invert"]
     #[inline(always)]
-    pub fn sir_tx_invert(&mut self) -> SIR_TX_INVERT_W {
+    pub fn sir_tx_invert(&mut self) -> SIR_TX_INVERT_W<4> {
         SIR_TX_INVERT_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn change_update(&mut self) -> CHANGE_UPDATE_W {
+    pub fn change_update(&mut self) -> CHANGE_UPDATE_W<2> {
         CHANGE_UPDATE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn chcfg_at_busy(&mut self) -> CHCFG_AT_BUSY_W {
+    pub fn chcfg_at_busy(&mut self) -> CHCFG_AT_BUSY_W<1> {
         CHCFG_AT_BUSY_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn halt_tx(&mut self) -> HALT_TX_W {
+    pub fn halt_tx(&mut self) -> HALT_TX_W<0> {
         HALT_TX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

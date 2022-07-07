@@ -37,7 +37,8 @@ impl From<crate::W<RISCV_STA_ADD1_REG_SPEC>> for W {
 #[doc = "Field `STA_ADD_H` reader - Start Address High 8-bit"]
 pub type STA_ADD_H_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STA_ADD_H` writer - Start Address High 8-bit"]
-pub type STA_ADD_H_W<'a> = crate::FieldWriter<'a, u32, RISCV_STA_ADD1_REG_SPEC, u8, u8, 8, 0>;
+pub type STA_ADD_H_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RISCV_STA_ADD1_REG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Start Address High 8-bit"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Start Address High 8-bit"]
     #[inline(always)]
-    pub fn sta_add_h(&mut self) -> STA_ADD_H_W {
+    pub fn sta_add_h(&mut self) -> STA_ADD_H_W<0> {
         STA_ADD_H_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

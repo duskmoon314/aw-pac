@@ -37,7 +37,7 @@ impl From<crate::W<WAKEUP_EN_REG_SPEC>> for W {
 #[doc = "Field `WP_EN` reader - Wakeup Enable"]
 pub type WP_EN_R = crate::BitReader<bool>;
 #[doc = "Field `WP_EN` writer - Wakeup Enable"]
-pub type WP_EN_W<'a> = crate::BitWriter<'a, u32, WAKEUP_EN_REG_SPEC, bool, 0>;
+pub type WP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WAKEUP_EN_REG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Wakeup Enable"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Wakeup Enable"]
     #[inline(always)]
-    pub fn wp_en(&mut self) -> WP_EN_W {
+    pub fn wp_en(&mut self) -> WP_EN_W<0> {
         WP_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

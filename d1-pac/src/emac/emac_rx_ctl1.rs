@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_RX_CTL1_SPEC>> for W {
 #[doc = "Field `RX_DMA_START` reader - "]
 pub type RX_DMA_START_R = crate::BitReader<bool>;
 #[doc = "Field `RX_DMA_START` writer - "]
-pub type RX_DMA_START_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, 31>;
+pub type RX_DMA_START_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, O>;
 #[doc = "Receive DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_EMA_EN_A {
@@ -75,8 +75,9 @@ impl RX_EMA_EN_R {
     }
 }
 #[doc = "Field `RX_EMA_EN` writer - Receive DMA Enable"]
-pub type RX_EMA_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_EMA_EN_A, 30>;
-impl<'a> RX_EMA_EN_W<'a> {
+pub type RX_EMA_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_EMA_EN_A, O>;
+impl<'a, const O: u8> RX_EMA_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn stop(self) -> &'a mut W {
@@ -125,9 +126,9 @@ impl RX_FIFO_FLOW_CTL_R {
     }
 }
 #[doc = "Field `RX_FIFO_FLOW_CTL` writer - Receive FIFO Flow Control Enable"]
-pub type RX_FIFO_FLOW_CTL_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_FIFO_FLOW_CTL_A, 24>;
-impl<'a> RX_FIFO_FLOW_CTL_W<'a> {
+pub type RX_FIFO_FLOW_CTL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_FIFO_FLOW_CTL_A, O>;
+impl<'a, const O: u8> RX_FIFO_FLOW_CTL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -194,9 +195,9 @@ impl RX_FLOW_CTL_TH_DEACT_R {
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_DEACT` writer - Threshold for Deactivating Flow Control"]
-pub type RX_FLOW_CTL_TH_DEACT_W<'a> =
-    crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_DEACT_A, 2, 22>;
-impl<'a> RX_FLOW_CTL_TH_DEACT_W<'a> {
+pub type RX_FLOW_CTL_TH_DEACT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_DEACT_A, 2, O>;
+impl<'a, const O: u8> RX_FLOW_CTL_TH_DEACT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn fm1k(self) -> &'a mut W {
@@ -273,9 +274,9 @@ impl RX_FLOW_CTL_TH_ACT_R {
     }
 }
 #[doc = "Field `RX_FLOW_CTL_TH_ACT` writer - Threshold for Activating Flow Control"]
-pub type RX_FLOW_CTL_TH_ACT_W<'a> =
-    crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_ACT_A, 2, 20>;
-impl<'a> RX_FLOW_CTL_TH_ACT_W<'a> {
+pub type RX_FLOW_CTL_TH_ACT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_ACT_A, 2, O>;
+impl<'a, const O: u8> RX_FLOW_CTL_TH_ACT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn fm1k(self) -> &'a mut W {
@@ -352,8 +353,9 @@ impl RX_TH_R {
     }
 }
 #[doc = "Field `RX_TH` writer - Threshold for RX DMA FIFO Start"]
-pub type RX_TH_W<'a> = crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_TH_A, 2, 4>;
-impl<'a> RX_TH_W<'a> {
+pub type RX_TH_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_TH_A, 2, O>;
+impl<'a, const O: u8> RX_TH_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn t64(self) -> &'a mut W {
@@ -412,8 +414,9 @@ impl RX_ERR_FRM_R {
     }
 }
 #[doc = "Field `RX_ERR_FRM` writer - "]
-pub type RX_ERR_FRM_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_ERR_FRM_A, 3>;
-impl<'a> RX_ERR_FRM_W<'a> {
+pub type RX_ERR_FRM_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_ERR_FRM_A, O>;
+impl<'a, const O: u8> RX_ERR_FRM_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn drop(self) -> &'a mut W {
@@ -428,7 +431,7 @@ impl<'a> RX_ERR_FRM_W<'a> {
 #[doc = "Field `RX_RUNT_FRM` reader - "]
 pub type RX_RUNT_FRM_R = crate::BitReader<bool>;
 #[doc = "Field `RX_RUNT_FRM` writer - "]
-pub type RX_RUNT_FRM_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, 2>;
+pub type RX_RUNT_FRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, O>;
 #[doc = "Receive Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_MD_A {
@@ -466,8 +469,8 @@ impl RX_MD_R {
     }
 }
 #[doc = "Field `RX_MD` writer - Receive Mode"]
-pub type RX_MD_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_MD_A, 1>;
-impl<'a> RX_MD_W<'a> {
+pub type RX_MD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_MD_A, O>;
+impl<'a, const O: u8> RX_MD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn greater_than_th(self) -> &'a mut W {
@@ -516,8 +519,9 @@ impl FLUSH_RX_FRM_R {
     }
 }
 #[doc = "Field `FLUSH_RX_FRM` writer - Flush Receive Frames"]
-pub type FLUSH_RX_FRM_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, FLUSH_RX_FRM_A, 0>;
-impl<'a> FLUSH_RX_FRM_W<'a> {
+pub type FLUSH_RX_FRM_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, FLUSH_RX_FRM_A, O>;
+impl<'a, const O: u8> FLUSH_RX_FRM_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -584,52 +588,52 @@ impl R {
 impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn rx_dma_start(&mut self) -> RX_DMA_START_W {
+    pub fn rx_dma_start(&mut self) -> RX_DMA_START_W<31> {
         RX_DMA_START_W::new(self)
     }
     #[doc = "Bit 30 - Receive DMA Enable"]
     #[inline(always)]
-    pub fn rx_ema_en(&mut self) -> RX_EMA_EN_W {
+    pub fn rx_ema_en(&mut self) -> RX_EMA_EN_W<30> {
         RX_EMA_EN_W::new(self)
     }
     #[doc = "Bit 24 - Receive FIFO Flow Control Enable"]
     #[inline(always)]
-    pub fn rx_fifo_flow_ctl(&mut self) -> RX_FIFO_FLOW_CTL_W {
+    pub fn rx_fifo_flow_ctl(&mut self) -> RX_FIFO_FLOW_CTL_W<24> {
         RX_FIFO_FLOW_CTL_W::new(self)
     }
     #[doc = "Bits 22:23 - Threshold for Deactivating Flow Control"]
     #[inline(always)]
-    pub fn rx_flow_ctl_th_deact(&mut self) -> RX_FLOW_CTL_TH_DEACT_W {
+    pub fn rx_flow_ctl_th_deact(&mut self) -> RX_FLOW_CTL_TH_DEACT_W<22> {
         RX_FLOW_CTL_TH_DEACT_W::new(self)
     }
     #[doc = "Bits 20:21 - Threshold for Activating Flow Control"]
     #[inline(always)]
-    pub fn rx_flow_ctl_th_act(&mut self) -> RX_FLOW_CTL_TH_ACT_W {
+    pub fn rx_flow_ctl_th_act(&mut self) -> RX_FLOW_CTL_TH_ACT_W<20> {
         RX_FLOW_CTL_TH_ACT_W::new(self)
     }
     #[doc = "Bits 4:5 - Threshold for RX DMA FIFO Start"]
     #[inline(always)]
-    pub fn rx_th(&mut self) -> RX_TH_W {
+    pub fn rx_th(&mut self) -> RX_TH_W<4> {
         RX_TH_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn rx_err_frm(&mut self) -> RX_ERR_FRM_W {
+    pub fn rx_err_frm(&mut self) -> RX_ERR_FRM_W<3> {
         RX_ERR_FRM_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn rx_runt_frm(&mut self) -> RX_RUNT_FRM_W {
+    pub fn rx_runt_frm(&mut self) -> RX_RUNT_FRM_W<2> {
         RX_RUNT_FRM_W::new(self)
     }
     #[doc = "Bit 1 - Receive Mode"]
     #[inline(always)]
-    pub fn rx_md(&mut self) -> RX_MD_W {
+    pub fn rx_md(&mut self) -> RX_MD_W<1> {
         RX_MD_W::new(self)
     }
     #[doc = "Bit 0 - Flush Receive Frames"]
     #[inline(always)]
-    pub fn flush_rx_frm(&mut self) -> FLUSH_RX_FRM_W {
+    pub fn flush_rx_frm(&mut self) -> FLUSH_RX_FRM_W<0> {
         FLUSH_RX_FRM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

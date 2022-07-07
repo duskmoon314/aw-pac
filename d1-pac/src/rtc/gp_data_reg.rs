@@ -34,7 +34,24 @@ impl From<crate::W<GP_DATA_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `GP_DATA` reader - "]
+pub type GP_DATA_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `GP_DATA` writer - "]
+pub type GP_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GP_DATA_REG_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31"]
+    #[inline(always)]
+    pub fn gp_data(&self) -> GP_DATA_R {
+        GP_DATA_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31"]
+    #[inline(always)]
+    pub fn gp_data(&mut self) -> GP_DATA_W<0> {
+        GP_DATA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

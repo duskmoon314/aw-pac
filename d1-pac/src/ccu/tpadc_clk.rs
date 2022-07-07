@@ -71,8 +71,8 @@ impl CLK_GATING_R {
     }
 }
 #[doc = "Field `CLK_GATING` writer - Gating Clock"]
-pub type CLK_GATING_W<'a> = crate::BitWriter<'a, u32, TPADC_CLK_SPEC, CLK_GATING_A, 31>;
-impl<'a> CLK_GATING_W<'a> {
+pub type CLK_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TPADC_CLK_SPEC, CLK_GATING_A, O>;
+impl<'a, const O: u8> CLK_GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -123,8 +123,9 @@ impl CLK_SRC_SEL_R {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a> = crate::FieldWriter<'a, u32, TPADC_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, 24>;
-impl<'a> CLK_SRC_SEL_W<'a> {
+pub type CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TPADC_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
+impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn hosc(self) -> &'a mut W {
@@ -151,12 +152,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating Clock"]
     #[inline(always)]
-    pub fn clk_gating(&mut self) -> CLK_GATING_W {
+    pub fn clk_gating(&mut self) -> CLK_GATING_W<31> {
         CLK_GATING_W::new(self)
     }
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

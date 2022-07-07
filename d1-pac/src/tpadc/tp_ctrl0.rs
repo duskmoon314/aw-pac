@@ -37,7 +37,8 @@ impl From<crate::W<TP_CTRL0_SPEC>> for W {
 #[doc = "Field `ADC_FIRST_DLY` reader - ADC First Convert Delay Time (T_FCDT) Setting"]
 pub type ADC_FIRST_DLY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ADC_FIRST_DLY` writer - ADC First Convert Delay Time (T_FCDT) Setting"]
-pub type ADC_FIRST_DLY_W<'a> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u8, u8, 8, 24>;
+pub type ADC_FIRST_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u8, u8, 8, O>;
 #[doc = "ADC First Convert Delay Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ADC_FIRST_DLY_MODE_A {
@@ -75,9 +76,9 @@ impl ADC_FIRST_DLY_MODE_R {
     }
 }
 #[doc = "Field `ADC_FIRST_DLY_MODE` writer - ADC First Convert Delay Mode Select"]
-pub type ADC_FIRST_DLY_MODE_W<'a> =
-    crate::BitWriter<'a, u32, TP_CTRL0_SPEC, ADC_FIRST_DLY_MODE_A, 23>;
-impl<'a> ADC_FIRST_DLY_MODE_W<'a> {
+pub type ADC_FIRST_DLY_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_CTRL0_SPEC, ADC_FIRST_DLY_MODE_A, O>;
+impl<'a, const O: u8> ADC_FIRST_DLY_MODE_W<'a, O> {
     #[doc = "CLK_IN / 16"]
     #[inline(always)]
     pub fn c16(self) -> &'a mut W {
@@ -144,9 +145,9 @@ impl ADC_CLK_DIVIDER_R {
     }
 }
 #[doc = "Field `ADC_CLK_DIVIDER` writer - ADC Clock Divider (CLK_IN)"]
-pub type ADC_CLK_DIVIDER_W<'a> =
-    crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, ADC_CLK_DIVIDER_A, 2, 20>;
-impl<'a> ADC_CLK_DIVIDER_W<'a> {
+pub type ADC_CLK_DIVIDER_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, ADC_CLK_DIVIDER_A, 2, O>;
+impl<'a, const O: u8> ADC_CLK_DIVIDER_W<'a, O> {
     #[doc = "CLK / 2"]
     #[inline(always)]
     pub fn c2(self) -> &'a mut W {
@@ -319,8 +320,9 @@ impl FS_DIV_R {
     }
 }
 #[doc = "Field `FS_DIV` writer - ADC Sample Frequency Divider"]
-pub type FS_DIV_W<'a> = crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, FS_DIV_A, 4, 16>;
-impl<'a> FS_DIV_W<'a> {
+pub type FS_DIV_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, FS_DIV_A, 4, O>;
+impl<'a, const O: u8> FS_DIV_W<'a, O> {
     #[doc = "CLK_IN / 2 ^ (20 - 0)"]
     #[inline(always)]
     pub fn c2p0(self) -> &'a mut W {
@@ -405,7 +407,7 @@ impl<'a> FS_DIV_W<'a> {
 #[doc = "Field `TACQ` reader - Touch panel ADC acquire time"]
 pub type TACQ_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TACQ` writer - Touch panel ADC acquire time"]
-pub type TACQ_W<'a> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u16, u16, 16, 0>;
+pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
     #[inline(always)]
@@ -436,27 +438,27 @@ impl R {
 impl W {
     #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
     #[inline(always)]
-    pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W {
+    pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W<24> {
         ADC_FIRST_DLY_W::new(self)
     }
     #[doc = "Bit 23 - ADC First Convert Delay Mode Select"]
     #[inline(always)]
-    pub fn adc_first_dly_mode(&mut self) -> ADC_FIRST_DLY_MODE_W {
+    pub fn adc_first_dly_mode(&mut self) -> ADC_FIRST_DLY_MODE_W<23> {
         ADC_FIRST_DLY_MODE_W::new(self)
     }
     #[doc = "Bits 20:21 - ADC Clock Divider (CLK_IN)"]
     #[inline(always)]
-    pub fn adc_clk_divider(&mut self) -> ADC_CLK_DIVIDER_W {
+    pub fn adc_clk_divider(&mut self) -> ADC_CLK_DIVIDER_W<20> {
         ADC_CLK_DIVIDER_W::new(self)
     }
     #[doc = "Bits 16:19 - ADC Sample Frequency Divider"]
     #[inline(always)]
-    pub fn fs_div(&mut self) -> FS_DIV_W {
+    pub fn fs_div(&mut self) -> FS_DIV_W<16> {
         FS_DIV_W::new(self)
     }
     #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
     #[inline(always)]
-    pub fn tacq(&mut self) -> TACQ_W {
+    pub fn tacq(&mut self) -> TACQ_W<0> {
         TACQ_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

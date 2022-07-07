@@ -35,19 +35,19 @@ impl From<crate::W<SMHC_IDMAC_SPEC>> for W {
     }
 }
 #[doc = "Field `DES_LOAD_CTRL` writer - "]
-pub type DES_LOAD_CTRL_W<'a> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, 31>;
+pub type DES_LOAD_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
 #[doc = "Field `IDMAC_ENB` reader - IDMAC Enable"]
 pub type IDMAC_ENB_R = crate::BitReader<bool>;
 #[doc = "Field `IDMAC_ENB` writer - IDMAC Enable"]
-pub type IDMAC_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, 7>;
+pub type IDMAC_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
 #[doc = "Field `FIX_BUST_CTRL` reader - Fixed Burst"]
 pub type FIX_BUST_CTRL_R = crate::BitReader<bool>;
 #[doc = "Field `FIX_BUST_CTRL` writer - Fixed Burst"]
-pub type FIX_BUST_CTRL_W<'a> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, 1>;
+pub type FIX_BUST_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
 #[doc = "Field `IDMAC_RST` reader - DMA Reset"]
 pub type IDMAC_RST_R = crate::BitReader<bool>;
 #[doc = "Field `IDMAC_RST` writer - DMA Reset"]
-pub type IDMAC_RST_W<'a> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, 0>;
+pub type IDMAC_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 7 - IDMAC Enable"]
     #[inline(always)]
@@ -68,22 +68,22 @@ impl R {
 impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn des_load_ctrl(&mut self) -> DES_LOAD_CTRL_W {
+    pub fn des_load_ctrl(&mut self) -> DES_LOAD_CTRL_W<31> {
         DES_LOAD_CTRL_W::new(self)
     }
     #[doc = "Bit 7 - IDMAC Enable"]
     #[inline(always)]
-    pub fn idmac_enb(&mut self) -> IDMAC_ENB_W {
+    pub fn idmac_enb(&mut self) -> IDMAC_ENB_W<7> {
         IDMAC_ENB_W::new(self)
     }
     #[doc = "Bit 1 - Fixed Burst"]
     #[inline(always)]
-    pub fn fix_bust_ctrl(&mut self) -> FIX_BUST_CTRL_W {
+    pub fn fix_bust_ctrl(&mut self) -> FIX_BUST_CTRL_W<1> {
         FIX_BUST_CTRL_W::new(self)
     }
     #[doc = "Bit 0 - DMA Reset"]
     #[inline(always)]
-    pub fn idmac_rst(&mut self) -> IDMAC_RST_W {
+    pub fn idmac_rst(&mut self) -> IDMAC_RST_W<0> {
         IDMAC_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,8 @@ impl DLAB_R {
     }
 }
 #[doc = "Field `dlab` writer - Divisor Latch Access Bit"]
-pub type DLAB_W<'a> = crate::BitWriter<'a, u32, LCR_SPEC, DLAB_A, 7>;
-impl<'a> DLAB_W<'a> {
+pub type DLAB_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, DLAB_A, O>;
+impl<'a, const O: u8> DLAB_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn rx_buffer(self) -> &'a mut W {
@@ -87,7 +87,7 @@ impl<'a> DLAB_W<'a> {
 #[doc = "Field `bc` reader - Break Control Bit"]
 pub type BC_R = crate::BitReader<bool>;
 #[doc = "Field `bc` writer - Break Control Bit"]
-pub type BC_W<'a> = crate::BitWriter<'a, u32, LCR_SPEC, bool, 6>;
+pub type BC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, bool, O>;
 #[doc = "Even Parity Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -143,8 +143,8 @@ impl EPS_R {
     }
 }
 #[doc = "Field `eps` writer - Even Parity Select"]
-pub type EPS_W<'a> = crate::FieldWriterSafe<'a, u32, LCR_SPEC, u8, EPS_A, 2, 4>;
-impl<'a> EPS_W<'a> {
+pub type EPS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, LCR_SPEC, u8, EPS_A, 2, O>;
+impl<'a, const O: u8> EPS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn odd(self) -> &'a mut W {
@@ -203,8 +203,8 @@ impl PEN_R {
     }
 }
 #[doc = "Field `pen` writer - Parity Enable"]
-pub type PEN_W<'a> = crate::BitWriter<'a, u32, LCR_SPEC, PEN_A, 3>;
-impl<'a> PEN_W<'a> {
+pub type PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, PEN_A, O>;
+impl<'a, const O: u8> PEN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -253,8 +253,8 @@ impl STOP_R {
     }
 }
 #[doc = "Field `stop` writer - Number of stop bits"]
-pub type STOP_W<'a> = crate::BitWriter<'a, u32, LCR_SPEC, STOP_A, 2>;
-impl<'a> STOP_W<'a> {
+pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, STOP_A, O>;
+impl<'a, const O: u8> STOP_W<'a, O> {
     #[doc = "1 stop bit"]
     #[inline(always)]
     pub fn one(self) -> &'a mut W {
@@ -321,8 +321,8 @@ impl DLS_R {
     }
 }
 #[doc = "Field `dls` writer - Data Length Select"]
-pub type DLS_W<'a> = crate::FieldWriterSafe<'a, u32, LCR_SPEC, u8, DLS_A, 2, 0>;
-impl<'a> DLS_W<'a> {
+pub type DLS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, LCR_SPEC, u8, DLS_A, 2, O>;
+impl<'a, const O: u8> DLS_W<'a, O> {
     #[doc = "5 bits"]
     #[inline(always)]
     pub fn five(self) -> &'a mut W {
@@ -379,32 +379,32 @@ impl R {
 impl W {
     #[doc = "Bit 7 - Divisor Latch Access Bit"]
     #[inline(always)]
-    pub fn dlab(&mut self) -> DLAB_W {
+    pub fn dlab(&mut self) -> DLAB_W<7> {
         DLAB_W::new(self)
     }
     #[doc = "Bit 6 - Break Control Bit"]
     #[inline(always)]
-    pub fn bc(&mut self) -> BC_W {
+    pub fn bc(&mut self) -> BC_W<6> {
         BC_W::new(self)
     }
     #[doc = "Bits 4:5 - Even Parity Select"]
     #[inline(always)]
-    pub fn eps(&mut self) -> EPS_W {
+    pub fn eps(&mut self) -> EPS_W<4> {
         EPS_W::new(self)
     }
     #[doc = "Bit 3 - Parity Enable"]
     #[inline(always)]
-    pub fn pen(&mut self) -> PEN_W {
+    pub fn pen(&mut self) -> PEN_W<3> {
         PEN_W::new(self)
     }
     #[doc = "Bit 2 - Number of stop bits"]
     #[inline(always)]
-    pub fn stop(&mut self) -> STOP_W {
+    pub fn stop(&mut self) -> STOP_W<2> {
         STOP_W::new(self)
     }
     #[doc = "Bits 0:1 - Data Length Select"]
     #[inline(always)]
-    pub fn dls(&mut self) -> DLS_W {
+    pub fn dls(&mut self) -> DLS_W<0> {
         DLS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

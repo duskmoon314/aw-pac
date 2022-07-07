@@ -71,9 +71,9 @@ impl VCCIO_WS_VOL_MOD_SEL_R {
     }
 }
 #[doc = "Field `VCCIO_WS_VOL_MOD_SEL` writer - VCC_IO Withstand Voltage Mode Select Control"]
-pub type VCCIO_WS_VOL_MOD_SEL_W<'a> =
-    crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCCIO_WS_VOL_MOD_SEL_A, 12>;
-impl<'a> VCCIO_WS_VOL_MOD_SEL_W<'a> {
+pub type VCCIO_WS_VOL_MOD_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCCIO_WS_VOL_MOD_SEL_A, O>;
+impl<'a, const O: u8> VCCIO_WS_VOL_MOD_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -176,7 +176,7 @@ impl R {
 impl W {
     #[doc = "Bit 12 - VCC_IO Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vccio_ws_vol_mod_sel(&mut self) -> VCCIO_WS_VOL_MOD_SEL_W {
+    pub fn vccio_ws_vol_mod_sel(&mut self) -> VCCIO_WS_VOL_MOD_SEL_W<12> {
         VCCIO_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "VCC_PX Withstand Voltage Mode Select Control"]

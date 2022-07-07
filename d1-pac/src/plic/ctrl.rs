@@ -71,8 +71,8 @@ impl CTRL_R {
     }
 }
 #[doc = "Field `ctrl` writer - PLIC Control"]
-pub type CTRL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, CTRL_A, 0>;
-impl<'a> CTRL_W<'a> {
+pub type CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, CTRL_A, O>;
+impl<'a, const O: u8> CTRL_W<'a, O> {
     #[doc = "Only the machine mode can access to all registers in PLIC. Supervisor mode can only access the interrupt threshold register and the interrupt response/completion register."]
     #[inline(always)]
     pub fn m(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - PLIC Control"]
     #[inline(always)]
-    pub fn ctrl(&mut self) -> CTRL_W {
+    pub fn ctrl(&mut self) -> CTRL_W<0> {
         CTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

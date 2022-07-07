@@ -39,7 +39,8 @@ are used for the Frame List current index. It means that each location of the fr
 pub type FRAME_INDEX_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FRAME_INDEX` writer - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\]
 are used for the Frame List current index. It means that each location of the frame list is accessed 8 times (frames or Micro-frames) before moving to the next index. The following illustrates values of N based on the value of the Frame List Size field in the USBCMD register."]
-pub type FRAME_INDEX_W<'a> = crate::FieldWriter<'a, u32, FRINDEX_SPEC, u16, u16, 14, 0>;
+pub type FRAME_INDEX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, FRINDEX_SPEC, u16, u16, 14, O>;
 impl R {
     #[doc = "Bits 0:13 - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\]
 are used for the Frame List current index. It means that each location of the frame list is accessed 8 times (frames or Micro-frames) before moving to the next index. The following illustrates values of N based on the value of the Frame List Size field in the USBCMD register."]
@@ -52,7 +53,7 @@ impl W {
     #[doc = "Bits 0:13 - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\]
 are used for the Frame List current index. It means that each location of the frame list is accessed 8 times (frames or Micro-frames) before moving to the next index. The following illustrates values of N based on the value of the Frame List Size field in the USBCMD register."]
     #[inline(always)]
-    pub fn frame_index(&mut self) -> FRAME_INDEX_W {
+    pub fn frame_index(&mut self) -> FRAME_INDEX_W<0> {
         FRAME_INDEX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,8 @@ impl DBI_TM_EN_R {
     }
 }
 #[doc = "Field `dbi_tm_en` writer - DBI Timer Enable"]
-pub type DBI_TM_EN_W<'a> = crate::BitWriter<'a, u32, DBI_TIMER_SPEC, DBI_TM_EN_A, 31>;
-impl<'a> DBI_TM_EN_W<'a> {
+pub type DBI_TM_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_TIMER_SPEC, DBI_TM_EN_A, O>;
+impl<'a, const O: u8> DBI_TM_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -87,7 +87,8 @@ impl<'a> DBI_TM_EN_W<'a> {
 #[doc = "Field `dbi_timer_value` reader - "]
 pub type DBI_TIMER_VALUE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `dbi_timer_value` writer - "]
-pub type DBI_TIMER_VALUE_W<'a> = crate::FieldWriter<'a, u32, DBI_TIMER_SPEC, u32, u32, 31, 0>;
+pub type DBI_TIMER_VALUE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DBI_TIMER_SPEC, u32, u32, 31, O>;
 impl R {
     #[doc = "Bit 31 - DBI Timer Enable"]
     #[inline(always)]
@@ -103,12 +104,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - DBI Timer Enable"]
     #[inline(always)]
-    pub fn dbi_tm_en(&mut self) -> DBI_TM_EN_W {
+    pub fn dbi_tm_en(&mut self) -> DBI_TM_EN_W<31> {
         DBI_TM_EN_W::new(self)
     }
     #[doc = "Bits 0:30"]
     #[inline(always)]
-    pub fn dbi_timer_value(&mut self) -> DBI_TIMER_VALUE_W {
+    pub fn dbi_timer_value(&mut self) -> DBI_TIMER_VALUE_W<0> {
         DBI_TIMER_VALUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

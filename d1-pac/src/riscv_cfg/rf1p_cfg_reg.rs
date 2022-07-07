@@ -37,7 +37,7 @@ impl From<crate::W<RF1P_CFG_REG_SPEC>> for W {
 #[doc = "Field `RF1P_CFG` reader - RF1P Configuration"]
 pub type RF1P_CFG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RF1P_CFG` writer - RF1P Configuration"]
-pub type RF1P_CFG_W<'a> = crate::FieldWriter<'a, u32, RF1P_CFG_REG_SPEC, u8, u8, 8, 0>;
+pub type RF1P_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RF1P_CFG_REG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - RF1P Configuration"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - RF1P Configuration"]
     #[inline(always)]
-    pub fn rf1p_cfg(&mut self) -> RF1P_CFG_W {
+    pub fn rf1p_cfg(&mut self) -> RF1P_CFG_W<0> {
         RF1P_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

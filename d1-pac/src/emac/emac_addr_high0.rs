@@ -37,7 +37,8 @@ impl From<crate::W<EMAC_ADDR_HIGH0_SPEC>> for W {
 #[doc = "Field `MAC_ADDR_HIGH0` reader - "]
 pub type MAC_ADDR_HIGH0_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `MAC_ADDR_HIGH0` writer - "]
-pub type MAC_ADDR_HIGH0_W<'a> = crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH0_SPEC, u16, u16, 16, 0>;
+pub type MAC_ADDR_HIGH0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH0_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn mac_addr_high0(&mut self) -> MAC_ADDR_HIGH0_W {
+    pub fn mac_addr_high0(&mut self) -> MAC_ADDR_HIGH0_W<0> {
         MAC_ADDR_HIGH0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

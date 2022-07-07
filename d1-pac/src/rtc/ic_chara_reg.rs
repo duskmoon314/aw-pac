@@ -34,7 +34,39 @@ impl From<crate::W<IC_CHARA_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `KEY_FIELD` reader - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
+pub type KEY_FIELD_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `KEY_FIELD` writer - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
+pub type KEY_FIELD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, IC_CHARA_REG_SPEC, u16, u16, 16, O>;
+#[doc = "Field `ID_DATA` reader - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
+pub type ID_DATA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ID_DATA` writer - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
+pub type ID_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, IC_CHARA_REG_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 16:31 - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
+    #[inline(always)]
+    pub fn key_field(&self) -> KEY_FIELD_R {
+        KEY_FIELD_R::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+    #[doc = "Bits 0:15 - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
+    #[inline(always)]
+    pub fn id_data(&self) -> ID_DATA_R {
+        ID_DATA_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:31 - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
+    #[inline(always)]
+    pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
+        KEY_FIELD_W::new(self)
+    }
+    #[doc = "Bits 0:15 - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
+    #[inline(always)]
+    pub fn id_data(&mut self) -> ID_DATA_W<0> {
+        ID_DATA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

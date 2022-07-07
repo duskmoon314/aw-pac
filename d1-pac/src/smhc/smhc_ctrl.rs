@@ -71,8 +71,9 @@ impl FIFO_AC_MOD_R {
     }
 }
 #[doc = "Field `FIFO_AC_MOD` writer - FIFO Accesss Mode"]
-pub type FIFO_AC_MOD_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, FIFO_AC_MOD_A, 31>;
-impl<'a> FIFO_AC_MOD_W<'a> {
+pub type FIFO_AC_MOD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, FIFO_AC_MOD_A, O>;
+impl<'a, const O: u8> FIFO_AC_MOD_W<'a, O> {
     #[doc = "DMA bus"]
     #[inline(always)]
     pub fn dma(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl TIME_UNIT_CMD_R {
     }
 }
 #[doc = "Field `TIME_UNIT_CMD` writer - Time unit for command line"]
-pub type TIME_UNIT_CMD_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, TIME_UNIT_CMD_A, 12>;
-impl<'a> TIME_UNIT_CMD_W<'a> {
+pub type TIME_UNIT_CMD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, TIME_UNIT_CMD_A, O>;
+impl<'a, const O: u8> TIME_UNIT_CMD_W<'a, O> {
     #[doc = "1 card clock period"]
     #[inline(always)]
     pub fn c1(self) -> &'a mut W {
@@ -171,8 +173,9 @@ impl TIME_UNIT_DAT_R {
     }
 }
 #[doc = "Field `TIME_UNIT_DAT` writer - Time unit for data line"]
-pub type TIME_UNIT_DAT_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, TIME_UNIT_DAT_A, 11>;
-impl<'a> TIME_UNIT_DAT_W<'a> {
+pub type TIME_UNIT_DAT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, TIME_UNIT_DAT_A, O>;
+impl<'a, const O: u8> TIME_UNIT_DAT_W<'a, O> {
     #[doc = "1 card clock period"]
     #[inline(always)]
     pub fn c1(self) -> &'a mut W {
@@ -221,8 +224,9 @@ impl DDR_MOD_SEL_R {
     }
 }
 #[doc = "Field `DDR_MOD_SEL` writer - DDR Mode Select"]
-pub type DDR_MOD_SEL_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, DDR_MOD_SEL_A, 10>;
-impl<'a> DDR_MOD_SEL_W<'a> {
+pub type DDR_MOD_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, DDR_MOD_SEL_A, O>;
+impl<'a, const O: u8> DDR_MOD_SEL_W<'a, O> {
     #[doc = "SDR mode"]
     #[inline(always)]
     pub fn sdr(self) -> &'a mut W {
@@ -274,8 +278,8 @@ impl CD_DBC_ENB_R {
 }
 #[doc = "Field `CD_DBC_ENB` writer - Card Detect (Data\\[3\\]
 status) De-bounce Enable"]
-pub type CD_DBC_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, CD_DBC_ENB_A, 8>;
-impl<'a> CD_DBC_ENB_W<'a> {
+pub type CD_DBC_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, CD_DBC_ENB_A, O>;
+impl<'a, const O: u8> CD_DBC_ENB_W<'a, O> {
     #[doc = "Disable de-bounce"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -324,8 +328,8 @@ impl DMA_ENB_R {
     }
 }
 #[doc = "Field `DMA_ENB` writer - DMA Global Enable"]
-pub type DMA_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, DMA_ENB_A, 5>;
-impl<'a> DMA_ENB_W<'a> {
+pub type DMA_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, DMA_ENB_A, O>;
+impl<'a, const O: u8> DMA_ENB_W<'a, O> {
     #[doc = "Disable DMA to transfer data via AHB bus"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -374,8 +378,8 @@ impl INE_ENB_R {
     }
 }
 #[doc = "Field `INE_ENB` writer - GLobal Interrupt Enable"]
-pub type INE_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, INE_ENB_A, 4>;
-impl<'a> INE_ENB_W<'a> {
+pub type INE_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, INE_ENB_A, O>;
+impl<'a, const O: u8> INE_ENB_W<'a, O> {
     #[doc = "Disable interrupts"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -390,7 +394,7 @@ impl<'a> INE_ENB_W<'a> {
 #[doc = "Field `DMA_RST` reader - DMA Reset"]
 pub type DMA_RST_R = crate::BitReader<bool>;
 #[doc = "Field `DMA_RST` writer - DMA Reset"]
-pub type DMA_RST_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, bool, 2>;
+pub type DMA_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, bool, O>;
 #[doc = "FIFO Reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFO_RST_A {
@@ -428,8 +432,8 @@ impl FIFO_RST_R {
     }
 }
 #[doc = "Field `FIFO_RST` writer - FIFO Reset"]
-pub type FIFO_RST_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, FIFO_RST_A, 1>;
-impl<'a> FIFO_RST_W<'a> {
+pub type FIFO_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, FIFO_RST_A, O>;
+impl<'a, const O: u8> FIFO_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -478,8 +482,8 @@ impl SOFT_RST_R {
     }
 }
 #[doc = "Field `SOFT_RST` writer - Software Reset"]
-pub type SOFT_RST_W<'a> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, SOFT_RST_A, 0>;
-impl<'a> SOFT_RST_W<'a> {
+pub type SOFT_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, SOFT_RST_A, O>;
+impl<'a, const O: u8> SOFT_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -547,53 +551,53 @@ status) De-bounce Enable"]
 impl W {
     #[doc = "Bit 31 - FIFO Accesss Mode"]
     #[inline(always)]
-    pub fn fifo_ac_mod(&mut self) -> FIFO_AC_MOD_W {
+    pub fn fifo_ac_mod(&mut self) -> FIFO_AC_MOD_W<31> {
         FIFO_AC_MOD_W::new(self)
     }
     #[doc = "Bit 12 - Time unit for command line"]
     #[inline(always)]
-    pub fn time_unit_cmd(&mut self) -> TIME_UNIT_CMD_W {
+    pub fn time_unit_cmd(&mut self) -> TIME_UNIT_CMD_W<12> {
         TIME_UNIT_CMD_W::new(self)
     }
     #[doc = "Bit 11 - Time unit for data line"]
     #[inline(always)]
-    pub fn time_unit_dat(&mut self) -> TIME_UNIT_DAT_W {
+    pub fn time_unit_dat(&mut self) -> TIME_UNIT_DAT_W<11> {
         TIME_UNIT_DAT_W::new(self)
     }
     #[doc = "Bit 10 - DDR Mode Select"]
     #[inline(always)]
-    pub fn ddr_mod_sel(&mut self) -> DDR_MOD_SEL_W {
+    pub fn ddr_mod_sel(&mut self) -> DDR_MOD_SEL_W<10> {
         DDR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 8 - Card Detect (Data\\[3\\]
 status) De-bounce Enable"]
     #[inline(always)]
-    pub fn cd_dbc_enb(&mut self) -> CD_DBC_ENB_W {
+    pub fn cd_dbc_enb(&mut self) -> CD_DBC_ENB_W<8> {
         CD_DBC_ENB_W::new(self)
     }
     #[doc = "Bit 5 - DMA Global Enable"]
     #[inline(always)]
-    pub fn dma_enb(&mut self) -> DMA_ENB_W {
+    pub fn dma_enb(&mut self) -> DMA_ENB_W<5> {
         DMA_ENB_W::new(self)
     }
     #[doc = "Bit 4 - GLobal Interrupt Enable"]
     #[inline(always)]
-    pub fn ine_enb(&mut self) -> INE_ENB_W {
+    pub fn ine_enb(&mut self) -> INE_ENB_W<4> {
         INE_ENB_W::new(self)
     }
     #[doc = "Bit 2 - DMA Reset"]
     #[inline(always)]
-    pub fn dma_rst(&mut self) -> DMA_RST_W {
+    pub fn dma_rst(&mut self) -> DMA_RST_W<2> {
         DMA_RST_W::new(self)
     }
     #[doc = "Bit 1 - FIFO Reset"]
     #[inline(always)]
-    pub fn fifo_rst(&mut self) -> FIFO_RST_W {
+    pub fn fifo_rst(&mut self) -> FIFO_RST_W<1> {
         FIFO_RST_W::new(self)
     }
     #[doc = "Bit 0 - Software Reset"]
     #[inline(always)]
-    pub fn soft_rst(&mut self) -> SOFT_RST_W {
+    pub fn soft_rst(&mut self) -> SOFT_RST_W<0> {
         SOFT_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

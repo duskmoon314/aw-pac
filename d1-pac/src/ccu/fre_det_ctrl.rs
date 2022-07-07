@@ -71,8 +71,9 @@ impl ERROR_FLAG_R {
     }
 }
 #[doc = "Field `ERROR_FLAG` writer - Error Flag"]
-pub type ERROR_FLAG_W<'a> = crate::BitWriter0C<'a, u32, FRE_DET_CTRL_SPEC, ERROR_FLAG_A, 31>;
-impl<'a> ERROR_FLAG_W<'a> {
+pub type ERROR_FLAG_W<'a, const O: u8> =
+    crate::BitWriter0C<'a, u32, FRE_DET_CTRL_SPEC, ERROR_FLAG_A, O>;
+impl<'a, const O: u8> ERROR_FLAG_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn w0c(self) -> &'a mut W {
@@ -87,7 +88,7 @@ impl<'a> ERROR_FLAG_W<'a> {
 #[doc = "Field `DET_TIME` reader - Detect Time"]
 pub type DET_TIME_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DET_TIME` writer - Detect Time"]
-pub type DET_TIME_W<'a> = crate::FieldWriter<'a, u32, FRE_DET_CTRL_SPEC, u8, u8, 5, 4>;
+pub type DET_TIME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRE_DET_CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "Frequence Detect IRQ Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FRE_DET_IRQ_EN_A {
@@ -125,8 +126,9 @@ impl FRE_DET_IRQ_EN_R {
     }
 }
 #[doc = "Field `FRE_DET_IRQ_EN` writer - Frequence Detect IRQ Enable"]
-pub type FRE_DET_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, FRE_DET_CTRL_SPEC, FRE_DET_IRQ_EN_A, 1>;
-impl<'a> FRE_DET_IRQ_EN_W<'a> {
+pub type FRE_DET_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FRE_DET_CTRL_SPEC, FRE_DET_IRQ_EN_A, O>;
+impl<'a, const O: u8> FRE_DET_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -175,8 +177,9 @@ impl FRE_DET_FUN_EN_R {
     }
 }
 #[doc = "Field `FRE_DET_FUN_EN` writer - Frequence Detect Function Enable"]
-pub type FRE_DET_FUN_EN_W<'a> = crate::BitWriter<'a, u32, FRE_DET_CTRL_SPEC, FRE_DET_FUN_EN_A, 0>;
-impl<'a> FRE_DET_FUN_EN_W<'a> {
+pub type FRE_DET_FUN_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FRE_DET_CTRL_SPEC, FRE_DET_FUN_EN_A, O>;
+impl<'a, const O: u8> FRE_DET_FUN_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -213,22 +216,22 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Error Flag"]
     #[inline(always)]
-    pub fn error_flag(&mut self) -> ERROR_FLAG_W {
+    pub fn error_flag(&mut self) -> ERROR_FLAG_W<31> {
         ERROR_FLAG_W::new(self)
     }
     #[doc = "Bits 4:8 - Detect Time"]
     #[inline(always)]
-    pub fn det_time(&mut self) -> DET_TIME_W {
+    pub fn det_time(&mut self) -> DET_TIME_W<4> {
         DET_TIME_W::new(self)
     }
     #[doc = "Bit 1 - Frequence Detect IRQ Enable"]
     #[inline(always)]
-    pub fn fre_det_irq_en(&mut self) -> FRE_DET_IRQ_EN_W {
+    pub fn fre_det_irq_en(&mut self) -> FRE_DET_IRQ_EN_W<1> {
         FRE_DET_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - Frequence Detect Function Enable"]
     #[inline(always)]
-    pub fn fre_det_fun_en(&mut self) -> FRE_DET_FUN_EN_W {
+    pub fn fre_det_fun_en(&mut self) -> FRE_DET_FUN_EN_W<0> {
         FRE_DET_FUN_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

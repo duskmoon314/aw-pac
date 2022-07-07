@@ -71,8 +71,8 @@ impl CLK_DUTY_R {
     }
 }
 #[doc = "Field `clk_duty` writer - Setting duty cycle of clock as master"]
-pub type CLK_DUTY_W<'a> = crate::BitWriter<'a, u32, TWI_CCR_SPEC, CLK_DUTY_A, 7>;
-impl<'a> CLK_DUTY_W<'a> {
+pub type CLK_DUTY_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CCR_SPEC, CLK_DUTY_A, O>;
+impl<'a, const O: u8> CLK_DUTY_W<'a, O> {
     #[doc = "50%"]
     #[inline(always)]
     pub fn p50(self) -> &'a mut W {
@@ -87,11 +87,11 @@ impl<'a> CLK_DUTY_W<'a> {
 #[doc = "Field `clk_m` reader - "]
 pub type CLK_M_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `clk_m` writer - "]
-pub type CLK_M_W<'a> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 4, 3>;
+pub type CLK_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 4, O>;
 #[doc = "Field `clk_n` reader - "]
 pub type CLK_N_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `clk_n` writer - "]
-pub type CLK_N_W<'a> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 3, 0>;
+pub type CLK_N_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bit 7 - Setting duty cycle of clock as master"]
     #[inline(always)]
@@ -112,17 +112,17 @@ impl R {
 impl W {
     #[doc = "Bit 7 - Setting duty cycle of clock as master"]
     #[inline(always)]
-    pub fn clk_duty(&mut self) -> CLK_DUTY_W {
+    pub fn clk_duty(&mut self) -> CLK_DUTY_W<7> {
         CLK_DUTY_W::new(self)
     }
     #[doc = "Bits 3:6"]
     #[inline(always)]
-    pub fn clk_m(&mut self) -> CLK_M_W {
+    pub fn clk_m(&mut self) -> CLK_M_W<3> {
         CLK_M_W::new(self)
     }
     #[doc = "Bits 0:2"]
     #[inline(always)]
-    pub fn clk_n(&mut self) -> CLK_N_W {
+    pub fn clk_n(&mut self) -> CLK_N_W<0> {
         CLK_N_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

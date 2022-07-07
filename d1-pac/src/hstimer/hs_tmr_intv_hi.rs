@@ -37,8 +37,8 @@ impl From<crate::W<HS_TMR_INTV_HI_SPEC>> for W {
 #[doc = "Field `HS_TMR_INTV_VALUE_HI` reader - "]
 pub type HS_TMR_INTV_VALUE_HI_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `HS_TMR_INTV_VALUE_HI` writer - "]
-pub type HS_TMR_INTV_VALUE_HI_W<'a> =
-    crate::FieldWriter<'a, u32, HS_TMR_INTV_HI_SPEC, u32, u32, 24, 0>;
+pub type HS_TMR_INTV_VALUE_HI_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HS_TMR_INTV_HI_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23"]
     #[inline(always)]
@@ -49,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:23"]
     #[inline(always)]
-    pub fn hs_tmr_intv_value_hi(&mut self) -> HS_TMR_INTV_VALUE_HI_W {
+    pub fn hs_tmr_intv_value_hi(&mut self) -> HS_TMR_INTV_VALUE_HI_W<0> {
         HS_TMR_INTV_VALUE_HI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -35,7 +35,8 @@ impl From<crate::W<WDOG_SOFT_RST_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY_FIELD` writer - Key Field"]
-pub type KEY_FIELD_W<'a> = crate::FieldWriter<'a, u32, WDOG_SOFT_RST_SPEC, u16, u16, 16, 16>;
+pub type KEY_FIELD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WDOG_SOFT_RST_SPEC, u16, u16, 16, O>;
 #[doc = "Soft Reset Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOFT_RST_EN_A {
@@ -73,8 +74,9 @@ impl SOFT_RST_EN_R {
     }
 }
 #[doc = "Field `SOFT_RST_EN` writer - Soft Reset Enable"]
-pub type SOFT_RST_EN_W<'a> = crate::BitWriter<'a, u32, WDOG_SOFT_RST_SPEC, SOFT_RST_EN_A, 0>;
-impl<'a> SOFT_RST_EN_W<'a> {
+pub type SOFT_RST_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WDOG_SOFT_RST_SPEC, SOFT_RST_EN_A, O>;
+impl<'a, const O: u8> SOFT_RST_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn deassert(self) -> &'a mut W {
@@ -96,12 +98,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
-    pub fn key_field(&mut self) -> KEY_FIELD_W {
+    pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
     #[doc = "Bit 0 - Soft Reset Enable"]
     #[inline(always)]
-    pub fn soft_rst_en(&mut self) -> SOFT_RST_EN_W {
+    pub fn soft_rst_en(&mut self) -> SOFT_RST_EN_W<0> {
         SOFT_RST_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

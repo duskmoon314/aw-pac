@@ -37,7 +37,8 @@ impl From<crate::W<TP_CTRL2_SPEC>> for W {
 #[doc = "Field `TP_SENSITIVE_ADJUST` reader - Internal Pull-up Resistor Control"]
 pub type TP_SENSITIVE_ADJUST_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TP_SENSITIVE_ADJUST` writer - Internal Pull-up Resistor Control"]
-pub type TP_SENSITIVE_ADJUST_W<'a> = crate::FieldWriter<'a, u32, TP_CTRL2_SPEC, u8, u8, 4, 28>;
+pub type TP_SENSITIVE_ADJUST_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TP_CTRL2_SPEC, u8, u8, 4, O>;
 #[doc = "TP Access Data Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -93,9 +94,9 @@ impl TP_FIFO_MODE_SELECT_R {
     }
 }
 #[doc = "Field `TP_FIFO_MODE_SELECT` writer - TP Access Data Mode Select"]
-pub type TP_FIFO_MODE_SELECT_W<'a> =
-    crate::FieldWriterSafe<'a, u32, TP_CTRL2_SPEC, u8, TP_FIFO_MODE_SELECT_A, 2, 26>;
-impl<'a> TP_FIFO_MODE_SELECT_W<'a> {
+pub type TP_FIFO_MODE_SELECT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TP_CTRL2_SPEC, u8, TP_FIFO_MODE_SELECT_A, 2, O>;
+impl<'a, const O: u8> TP_FIFO_MODE_SELECT_W<'a, O> {
     #[doc = "FIFO store X1 Y1 data for single touch no pressure mode"]
     #[inline(always)]
     pub fn x1y1(self) -> &'a mut W {
@@ -154,8 +155,8 @@ impl PRE_MEA_EN_R {
     }
 }
 #[doc = "Field `PRE_MEA_EN` writer - TP Pressure Measurement Enable Control"]
-pub type PRE_MEA_EN_W<'a> = crate::BitWriter<'a, u32, TP_CTRL2_SPEC, PRE_MEA_EN_A, 24>;
-impl<'a> PRE_MEA_EN_W<'a> {
+pub type PRE_MEA_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL2_SPEC, PRE_MEA_EN_A, O>;
+impl<'a, const O: u8> PRE_MEA_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -170,7 +171,8 @@ impl<'a> PRE_MEA_EN_W<'a> {
 #[doc = "Field `PRE_MEA_THRE_CNT` reader - TP Pressure Measurement Threshold Control"]
 pub type PRE_MEA_THRE_CNT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `PRE_MEA_THRE_CNT` writer - TP Pressure Measurement Threshold Control"]
-pub type PRE_MEA_THRE_CNT_W<'a> = crate::FieldWriter<'a, u32, TP_CTRL2_SPEC, u32, u32, 24, 0>;
+pub type PRE_MEA_THRE_CNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TP_CTRL2_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 28:31 - Internal Pull-up Resistor Control"]
     #[inline(always)]
@@ -196,22 +198,22 @@ impl R {
 impl W {
     #[doc = "Bits 28:31 - Internal Pull-up Resistor Control"]
     #[inline(always)]
-    pub fn tp_sensitive_adjust(&mut self) -> TP_SENSITIVE_ADJUST_W {
+    pub fn tp_sensitive_adjust(&mut self) -> TP_SENSITIVE_ADJUST_W<28> {
         TP_SENSITIVE_ADJUST_W::new(self)
     }
     #[doc = "Bits 26:27 - TP Access Data Mode Select"]
     #[inline(always)]
-    pub fn tp_fifo_mode_select(&mut self) -> TP_FIFO_MODE_SELECT_W {
+    pub fn tp_fifo_mode_select(&mut self) -> TP_FIFO_MODE_SELECT_W<26> {
         TP_FIFO_MODE_SELECT_W::new(self)
     }
     #[doc = "Bit 24 - TP Pressure Measurement Enable Control"]
     #[inline(always)]
-    pub fn pre_mea_en(&mut self) -> PRE_MEA_EN_W {
+    pub fn pre_mea_en(&mut self) -> PRE_MEA_EN_W<24> {
         PRE_MEA_EN_W::new(self)
     }
     #[doc = "Bits 0:23 - TP Pressure Measurement Threshold Control"]
     #[inline(always)]
-    pub fn pre_mea_thre_cnt(&mut self) -> PRE_MEA_THRE_CNT_W {
+    pub fn pre_mea_thre_cnt(&mut self) -> PRE_MEA_THRE_CNT_W<0> {
         PRE_MEA_THRE_CNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

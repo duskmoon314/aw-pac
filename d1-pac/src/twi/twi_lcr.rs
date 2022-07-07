@@ -143,8 +143,8 @@ impl SCL_CTL_R {
     }
 }
 #[doc = "Field `scl_ctl` writer - TWI_SCL Line State Control Bit"]
-pub type SCL_CTL_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SCL_CTL_A, 3>;
-impl<'a> SCL_CTL_W<'a> {
+pub type SCL_CTL_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SCL_CTL_A, O>;
+impl<'a, const O: u8> SCL_CTL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -193,8 +193,8 @@ impl SCL_CTL_EN_R {
     }
 }
 #[doc = "Field `scl_ctl_en` writer - TWI_SCL Line State Control Enable"]
-pub type SCL_CTL_EN_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SCL_CTL_EN_A, 2>;
-impl<'a> SCL_CTL_EN_W<'a> {
+pub type SCL_CTL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SCL_CTL_EN_A, O>;
+impl<'a, const O: u8> SCL_CTL_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -243,8 +243,8 @@ impl SDA_CTL_R {
     }
 }
 #[doc = "Field `sda_ctl` writer - TWI_SDA Line State Control Bit"]
-pub type SDA_CTL_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SDA_CTL_A, 1>;
-impl<'a> SDA_CTL_W<'a> {
+pub type SDA_CTL_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SDA_CTL_A, O>;
+impl<'a, const O: u8> SDA_CTL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn low(self) -> &'a mut W {
@@ -293,8 +293,8 @@ impl SDA_CTL_EN_R {
     }
 }
 #[doc = "Field `sda_ctl_en` writer - TWI_SDA Line State Control Enable"]
-pub type SDA_CTL_EN_W<'a> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SDA_CTL_EN_A, 0>;
-impl<'a> SDA_CTL_EN_W<'a> {
+pub type SDA_CTL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_LCR_SPEC, SDA_CTL_EN_A, O>;
+impl<'a, const O: u8> SDA_CTL_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -341,22 +341,22 @@ impl R {
 impl W {
     #[doc = "Bit 3 - TWI_SCL Line State Control Bit"]
     #[inline(always)]
-    pub fn scl_ctl(&mut self) -> SCL_CTL_W {
+    pub fn scl_ctl(&mut self) -> SCL_CTL_W<3> {
         SCL_CTL_W::new(self)
     }
     #[doc = "Bit 2 - TWI_SCL Line State Control Enable"]
     #[inline(always)]
-    pub fn scl_ctl_en(&mut self) -> SCL_CTL_EN_W {
+    pub fn scl_ctl_en(&mut self) -> SCL_CTL_EN_W<2> {
         SCL_CTL_EN_W::new(self)
     }
     #[doc = "Bit 1 - TWI_SDA Line State Control Bit"]
     #[inline(always)]
-    pub fn sda_ctl(&mut self) -> SDA_CTL_W {
+    pub fn sda_ctl(&mut self) -> SDA_CTL_W<1> {
         SDA_CTL_W::new(self)
     }
     #[doc = "Bit 0 - TWI_SDA Line State Control Enable"]
     #[inline(always)]
-    pub fn sda_ctl_en(&mut self) -> SDA_CTL_EN_W {
+    pub fn sda_ctl_en(&mut self) -> SDA_CTL_EN_W<0> {
         SDA_CTL_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

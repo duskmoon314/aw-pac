@@ -37,7 +37,8 @@ impl From<crate::W<PLL_VIDEO1_BIAS_SPEC>> for W {
 #[doc = "Field `PLL_CP` reader - PLL current bias control"]
 pub type PLL_CP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_CP` writer - PLL current bias control"]
-pub type PLL_CP_W<'a> = crate::FieldWriter<'a, u32, PLL_VIDEO1_BIAS_SPEC, u8, u8, 5, 16>;
+pub type PLL_CP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PLL_VIDEO1_BIAS_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]
-    pub fn pll_cp(&mut self) -> PLL_CP_W {
+    pub fn pll_cp(&mut self) -> PLL_CP_W<16> {
         PLL_CP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

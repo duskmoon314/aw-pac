@@ -37,7 +37,7 @@ impl From<crate::W<PB_DAT_SPEC>> for W {
 #[doc = "Field `pb_dat` reader - "]
 pub type PB_DAT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `pb_dat` writer - "]
-pub type PB_DAT_W<'a> = crate::FieldWriter<'a, u32, PB_DAT_SPEC, u16, u16, 13, 0>;
+pub type PB_DAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PB_DAT_SPEC, u16, u16, 13, O>;
 impl R {
     #[doc = "Bits 0:12"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:12"]
     #[inline(always)]
-    pub fn pb_dat(&mut self) -> PB_DAT_W {
+    pub fn pb_dat(&mut self) -> PB_DAT_W<0> {
         PB_DAT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

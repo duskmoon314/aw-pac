@@ -71,8 +71,9 @@ impl SHUT_INT_EN_R {
     }
 }
 #[doc = "Field `SHUT_INT_EN` writer - Enable the shutdown interrupt for the sensor"]
-pub type SHUT_INT_EN_W<'a> = crate::BitWriter<'a, u32, THS_SHUT_INTC_SPEC, SHUT_INT_EN_A, 0>;
-impl<'a> SHUT_INT_EN_W<'a> {
+pub type SHUT_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, THS_SHUT_INTC_SPEC, SHUT_INT_EN_A, O>;
+impl<'a, const O: u8> SHUT_INT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -94,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable the shutdown interrupt for the sensor"]
     #[inline(always)]
-    pub fn shut_int_en(&mut self) -> SHUT_INT_EN_W {
+    pub fn shut_int_en(&mut self) -> SHUT_INT_EN_W<0> {
         SHUT_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

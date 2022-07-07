@@ -37,7 +37,8 @@ impl From<crate::W<RES240_CTRL_SPEC>> for W {
 #[doc = "Field `DDR_RES240_TRIM` reader - 240ohms Resistor trimming bit"]
 pub type DDR_RES240_TRIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DDR_RES240_TRIM` writer - 240ohms Resistor trimming bit"]
-pub type DDR_RES240_TRIM_W<'a> = crate::FieldWriter<'a, u32, RES240_CTRL_SPEC, u8, u8, 6, 0>;
+pub type DDR_RES240_TRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RES240_CTRL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - 240ohms Resistor trimming bit"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - 240ohms Resistor trimming bit"]
     #[inline(always)]
-    pub fn ddr_res240_trim(&mut self) -> DDR_RES240_TRIM_W {
+    pub fn ddr_res240_trim(&mut self) -> DDR_RES240_TRIM_W<0> {
         DDR_RES240_TRIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

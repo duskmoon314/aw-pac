@@ -37,7 +37,8 @@ impl From<crate::W<THS_SHUTDOWN_CTRL_SPEC>> for W {
 #[doc = "Field `SHUT_T_HOT` reader - Thermal sensor shutdown threshold for hot temperature"]
 pub type SHUT_T_HOT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SHUT_T_HOT` writer - Thermal sensor shutdown threshold for hot temperature"]
-pub type SHUT_T_HOT_W<'a> = crate::FieldWriter<'a, u32, THS_SHUTDOWN_CTRL_SPEC, u16, u16, 12, 0>;
+pub type SHUT_T_HOT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, THS_SHUTDOWN_CTRL_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - Thermal sensor shutdown threshold for hot temperature"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Thermal sensor shutdown threshold for hot temperature"]
     #[inline(always)]
-    pub fn shut_t_hot(&mut self) -> SHUT_T_HOT_W {
+    pub fn shut_t_hot(&mut self) -> SHUT_T_HOT_W<0> {
         SHUT_T_HOT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

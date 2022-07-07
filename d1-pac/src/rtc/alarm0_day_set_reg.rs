@@ -34,7 +34,24 @@ impl From<crate::W<ALARM0_DAY_SET_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ALARM0_COUNTER` reader - Alarm 0 Counter is based on Day."]
+pub type ALARM0_COUNTER_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ALARM0_COUNTER` writer - Alarm 0 Counter is based on Day."]
+pub type ALARM0_COUNTER_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ALARM0_DAY_SET_REG_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - Alarm 0 Counter is based on Day."]
+    #[inline(always)]
+    pub fn alarm0_counter(&self) -> ALARM0_COUNTER_R {
+        ALARM0_COUNTER_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - Alarm 0 Counter is based on Day."]
+    #[inline(always)]
+    pub fn alarm0_counter(&mut self) -> ALARM0_COUNTER_W<0> {
+        ALARM0_COUNTER_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

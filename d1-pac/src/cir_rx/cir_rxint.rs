@@ -37,7 +37,7 @@ impl From<crate::W<CIR_RXINT_SPEC>> for W {
 #[doc = "Field `RAL` reader - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
 pub type RAL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RAL` writer - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
-pub type RAL_W<'a> = crate::FieldWriter<'a, u32, CIR_RXINT_SPEC, u8, u8, 6, 8>;
+pub type RAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXINT_SPEC, u8, u8, 6, O>;
 #[doc = "RX FIFO DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRQ_EN_A {
@@ -75,8 +75,8 @@ impl DRQ_EN_R {
     }
 }
 #[doc = "Field `DRQ_EN` writer - RX FIFO DMA Enable"]
-pub type DRQ_EN_W<'a> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, DRQ_EN_A, 5>;
-impl<'a> DRQ_EN_W<'a> {
+pub type DRQ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, DRQ_EN_A, O>;
+impl<'a, const O: u8> DRQ_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -125,8 +125,8 @@ impl RAI_EN_R {
     }
 }
 #[doc = "Field `RAI_EN` writer - RX FIFO Available Interrupt Enable"]
-pub type RAI_EN_W<'a> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, RAI_EN_A, 4>;
-impl<'a> RAI_EN_W<'a> {
+pub type RAI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, RAI_EN_A, O>;
+impl<'a, const O: u8> RAI_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -175,8 +175,8 @@ impl RPEI_EN_R {
     }
 }
 #[doc = "Field `RPEI_EN` writer - Receiver Packet End Interrupt Enable"]
-pub type RPEI_EN_W<'a> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, RPEI_EN_A, 1>;
-impl<'a> RPEI_EN_W<'a> {
+pub type RPEI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, RPEI_EN_A, O>;
+impl<'a, const O: u8> RPEI_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -225,8 +225,8 @@ impl ROI_EN_R {
     }
 }
 #[doc = "Field `ROI_EN` writer - Receiver FIFO Overrun Interrupt Enable"]
-pub type ROI_EN_W<'a> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, ROI_EN_A, 0>;
-impl<'a> ROI_EN_W<'a> {
+pub type ROI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, ROI_EN_A, O>;
+impl<'a, const O: u8> ROI_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,27 +268,27 @@ impl R {
 impl W {
     #[doc = "Bits 8:13 - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
     #[inline(always)]
-    pub fn ral(&mut self) -> RAL_W {
+    pub fn ral(&mut self) -> RAL_W<8> {
         RAL_W::new(self)
     }
     #[doc = "Bit 5 - RX FIFO DMA Enable"]
     #[inline(always)]
-    pub fn drq_en(&mut self) -> DRQ_EN_W {
+    pub fn drq_en(&mut self) -> DRQ_EN_W<5> {
         DRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - RX FIFO Available Interrupt Enable"]
     #[inline(always)]
-    pub fn rai_en(&mut self) -> RAI_EN_W {
+    pub fn rai_en(&mut self) -> RAI_EN_W<4> {
         RAI_EN_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Packet End Interrupt Enable"]
     #[inline(always)]
-    pub fn rpei_en(&mut self) -> RPEI_EN_W {
+    pub fn rpei_en(&mut self) -> RPEI_EN_W<1> {
         RPEI_EN_W::new(self)
     }
     #[doc = "Bit 0 - Receiver FIFO Overrun Interrupt Enable"]
     #[inline(always)]
-    pub fn roi_en(&mut self) -> ROI_EN_W {
+    pub fn roi_en(&mut self) -> ROI_EN_W<0> {
         ROI_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

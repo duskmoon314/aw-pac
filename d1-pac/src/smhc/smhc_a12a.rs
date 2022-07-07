@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_A12A_SPEC>> for W {
 #[doc = "Field `SD_A12A` reader - "]
 pub type SD_A12A_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SD_A12A` writer - "]
-pub type SD_A12A_W<'a> = crate::FieldWriter<'a, u32, SMHC_A12A_SPEC, u16, u16, 16, 0>;
+pub type SD_A12A_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_A12A_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn sd_a12a(&mut self) -> SD_A12A_W {
+    pub fn sd_a12a(&mut self) -> SD_A12A_W<0> {
         SD_A12A_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

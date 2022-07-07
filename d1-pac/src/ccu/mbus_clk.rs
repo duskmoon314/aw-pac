@@ -71,8 +71,8 @@ impl MBUS_RST_R {
     }
 }
 #[doc = "Field `MBUS_RST` writer - MBUS Reset"]
-pub type MBUS_RST_W<'a> = crate::BitWriter<'a, u32, MBUS_CLK_SPEC, MBUS_RST_A, 30>;
-impl<'a> MBUS_RST_W<'a> {
+pub type MBUS_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, MBUS_CLK_SPEC, MBUS_RST_A, O>;
+impl<'a, const O: u8> MBUS_RST_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 30 - MBUS Reset"]
     #[inline(always)]
-    pub fn mbus_rst(&mut self) -> MBUS_RST_W {
+    pub fn mbus_rst(&mut self) -> MBUS_RST_W<30> {
         MBUS_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

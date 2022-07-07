@@ -37,7 +37,7 @@ impl From<crate::W<SPI_GCR_SPEC>> for W {
 #[doc = "Field `srst` reader - Soft reset"]
 pub type SRST_R = crate::BitReader<bool>;
 #[doc = "Field `srst` writer - Soft reset"]
-pub type SRST_W<'a> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, bool, 31>;
+pub type SRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, bool, O>;
 #[doc = "Transmit Pause Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP_EN_A {
@@ -75,8 +75,8 @@ impl TP_EN_R {
     }
 }
 #[doc = "Field `tp_en` writer - Transmit Pause Enable"]
-pub type TP_EN_W<'a> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, TP_EN_A, 7>;
-impl<'a> TP_EN_W<'a> {
+pub type TP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, TP_EN_A, O>;
+impl<'a, const O: u8> TP_EN_W<'a, O> {
     #[doc = "normal operation, ignore RXFIFO status"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -125,8 +125,8 @@ impl MODE_SELEC_R {
     }
 }
 #[doc = "Field `mode_selec` writer - Sample timing Mode Select"]
-pub type MODE_SELEC_W<'a> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_SELEC_A, 2>;
-impl<'a> MODE_SELEC_W<'a> {
+pub type MODE_SELEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_SELEC_A, O>;
+impl<'a, const O: u8> MODE_SELEC_W<'a, O> {
     #[doc = "Old mode of Sample Timing"]
     #[inline(always)]
     pub fn old_mode(self) -> &'a mut W {
@@ -175,8 +175,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `mode` writer - SPI Function Mode Select"]
-pub type MODE_W<'a> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_A, 1>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn slave(self) -> &'a mut W {
@@ -225,8 +225,8 @@ impl EN_R {
     }
 }
 #[doc = "Field `en` writer - SPI Module Enable Control"]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, EN_A, 0>;
-impl<'a> EN_W<'a> {
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, EN_A, O>;
+impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -268,27 +268,27 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Soft reset"]
     #[inline(always)]
-    pub fn srst(&mut self) -> SRST_W {
+    pub fn srst(&mut self) -> SRST_W<31> {
         SRST_W::new(self)
     }
     #[doc = "Bit 7 - Transmit Pause Enable"]
     #[inline(always)]
-    pub fn tp_en(&mut self) -> TP_EN_W {
+    pub fn tp_en(&mut self) -> TP_EN_W<7> {
         TP_EN_W::new(self)
     }
     #[doc = "Bit 2 - Sample timing Mode Select"]
     #[inline(always)]
-    pub fn mode_selec(&mut self) -> MODE_SELEC_W {
+    pub fn mode_selec(&mut self) -> MODE_SELEC_W<2> {
         MODE_SELEC_W::new(self)
     }
     #[doc = "Bit 1 - SPI Function Mode Select"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    pub fn mode(&mut self) -> MODE_W<1> {
         MODE_W::new(self)
     }
     #[doc = "Bit 0 - SPI Module Enable Control"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

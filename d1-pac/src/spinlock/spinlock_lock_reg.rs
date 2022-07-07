@@ -71,8 +71,8 @@ impl TAKEN_R {
     }
 }
 #[doc = "Field `TAKEN` writer - Lock State"]
-pub type TAKEN_W<'a> = crate::BitWriter<'a, u32, SPINLOCK_LOCK_REG_SPEC, TAKEN_A, 0>;
-impl<'a> TAKEN_W<'a> {
+pub type TAKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPINLOCK_LOCK_REG_SPEC, TAKEN_A, O>;
+impl<'a, const O: u8> TAKEN_W<'a, O> {
     #[doc = "Read 0x0: The lock was previously Not Taken (free). The requester is granted the lock.\n\nWrite 0x0: Set the lock to Not Taken (free)."]
     #[inline(always)]
     pub fn free(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Lock State"]
     #[inline(always)]
-    pub fn taken(&mut self) -> TAKEN_W {
+    pub fn taken(&mut self) -> TAKEN_W<0> {
         TAKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

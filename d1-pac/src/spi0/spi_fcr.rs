@@ -37,7 +37,7 @@ impl From<crate::W<SPI_FCR_SPEC>> for W {
 #[doc = "Field `tf_rst` reader - TXFIFO Reset"]
 pub type TF_RST_R = crate::BitReader<bool>;
 #[doc = "Field `tf_rst` writer - TXFIFO Reset"]
-pub type TF_RST_W<'a> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, bool, 31>;
+pub type TF_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, bool, O>;
 #[doc = "TXFIFO Test Mode Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TF_TEST_EN_A {
@@ -75,8 +75,8 @@ impl TF_TEST_EN_R {
     }
 }
 #[doc = "Field `tf_test_en` writer - TXFIFO Test Mode Enable"]
-pub type TF_TEST_EN_W<'a> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, TF_TEST_EN_A, 30>;
-impl<'a> TF_TEST_EN_W<'a> {
+pub type TF_TEST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, TF_TEST_EN_A, O>;
+impl<'a, const O: u8> TF_TEST_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -125,8 +125,8 @@ impl TF_DRQ_EN_R {
     }
 }
 #[doc = "Field `tf_drq_en` writer - TXFIFO DMA Request Enable"]
-pub type TF_DRQ_EN_W<'a> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, TF_DRQ_EN_A, 24>;
-impl<'a> TF_DRQ_EN_W<'a> {
+pub type TF_DRQ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, TF_DRQ_EN_A, O>;
+impl<'a, const O: u8> TF_DRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -141,11 +141,11 @@ impl<'a> TF_DRQ_EN_W<'a> {
 #[doc = "Field `tf_trig_level` reader - TXFIFO Empty Request Trigger Level"]
 pub type TF_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `tf_trig_level` writer - TXFIFO Empty Request Trigger Level"]
-pub type TF_TRIG_LEVEL_W<'a> = crate::FieldWriter<'a, u32, SPI_FCR_SPEC, u8, u8, 8, 16>;
+pub type TF_TRIG_LEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_FCR_SPEC, u8, u8, 8, O>;
 #[doc = "Field `rf_rst` reader - RXFIFO Reset"]
 pub type RF_RST_R = crate::BitReader<bool>;
 #[doc = "Field `rf_rst` writer - RXFIFO Reset"]
-pub type RF_RST_W<'a> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, bool, 15>;
+pub type RF_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, bool, O>;
 #[doc = "RXFIFO Test Mode Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_TEST_EN_A {
@@ -183,8 +183,8 @@ impl RF_TEST_EN_R {
     }
 }
 #[doc = "Field `rf_test_en` writer - RXFIFO Test Mode Enable"]
-pub type RF_TEST_EN_W<'a> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, RF_TEST_EN_A, 14>;
-impl<'a> RF_TEST_EN_W<'a> {
+pub type RF_TEST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, RF_TEST_EN_A, O>;
+impl<'a, const O: u8> RF_TEST_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -233,8 +233,8 @@ impl RF_DRQ_EN_R {
     }
 }
 #[doc = "Field `rf_drq_en` writer - RXFIFO DMA Request Enable"]
-pub type RF_DRQ_EN_W<'a> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, RF_DRQ_EN_A, 8>;
-impl<'a> RF_DRQ_EN_W<'a> {
+pub type RF_DRQ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_FCR_SPEC, RF_DRQ_EN_A, O>;
+impl<'a, const O: u8> RF_DRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -249,7 +249,7 @@ impl<'a> RF_DRQ_EN_W<'a> {
 #[doc = "Field `rf_trig_level` reader - RXFIFO Ready Request Trigger Level"]
 pub type RF_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rf_trig_level` writer - RXFIFO Ready Request Trigger Level"]
-pub type RF_TRIG_LEVEL_W<'a> = crate::FieldWriter<'a, u32, SPI_FCR_SPEC, u8, u8, 8, 0>;
+pub type RF_TRIG_LEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_FCR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 31 - TXFIFO Reset"]
     #[inline(always)]
@@ -295,42 +295,42 @@ impl R {
 impl W {
     #[doc = "Bit 31 - TXFIFO Reset"]
     #[inline(always)]
-    pub fn tf_rst(&mut self) -> TF_RST_W {
+    pub fn tf_rst(&mut self) -> TF_RST_W<31> {
         TF_RST_W::new(self)
     }
     #[doc = "Bit 30 - TXFIFO Test Mode Enable"]
     #[inline(always)]
-    pub fn tf_test_en(&mut self) -> TF_TEST_EN_W {
+    pub fn tf_test_en(&mut self) -> TF_TEST_EN_W<30> {
         TF_TEST_EN_W::new(self)
     }
     #[doc = "Bit 24 - TXFIFO DMA Request Enable"]
     #[inline(always)]
-    pub fn tf_drq_en(&mut self) -> TF_DRQ_EN_W {
+    pub fn tf_drq_en(&mut self) -> TF_DRQ_EN_W<24> {
         TF_DRQ_EN_W::new(self)
     }
     #[doc = "Bits 16:23 - TXFIFO Empty Request Trigger Level"]
     #[inline(always)]
-    pub fn tf_trig_level(&mut self) -> TF_TRIG_LEVEL_W {
+    pub fn tf_trig_level(&mut self) -> TF_TRIG_LEVEL_W<16> {
         TF_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 15 - RXFIFO Reset"]
     #[inline(always)]
-    pub fn rf_rst(&mut self) -> RF_RST_W {
+    pub fn rf_rst(&mut self) -> RF_RST_W<15> {
         RF_RST_W::new(self)
     }
     #[doc = "Bit 14 - RXFIFO Test Mode Enable"]
     #[inline(always)]
-    pub fn rf_test_en(&mut self) -> RF_TEST_EN_W {
+    pub fn rf_test_en(&mut self) -> RF_TEST_EN_W<14> {
         RF_TEST_EN_W::new(self)
     }
     #[doc = "Bit 8 - RXFIFO DMA Request Enable"]
     #[inline(always)]
-    pub fn rf_drq_en(&mut self) -> RF_DRQ_EN_W {
+    pub fn rf_drq_en(&mut self) -> RF_DRQ_EN_W<8> {
         RF_DRQ_EN_W::new(self)
     }
     #[doc = "Bits 0:7 - RXFIFO Ready Request Trigger Level"]
     #[inline(always)]
-    pub fn rf_trig_level(&mut self) -> RF_TRIG_LEVEL_W {
+    pub fn rf_trig_level(&mut self) -> RF_TRIG_LEVEL_W<0> {
         RF_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

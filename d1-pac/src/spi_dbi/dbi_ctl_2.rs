@@ -37,19 +37,20 @@ impl From<crate::W<DBI_CTL_2_SPEC>> for W {
 #[doc = "Field `dbi_fifo_drq_en` reader - DBI FIFO DMA Request Enable"]
 pub type DBI_FIFO_DRQ_EN_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_fifo_drq_en` writer - DBI FIFO DMA Request Enable"]
-pub type DBI_FIFO_DRQ_EN_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, 15>;
+pub type DBI_FIFO_DRQ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, O>;
 #[doc = "Field `dbi_trig_level` reader - DBI FIFO Empty Request Trigger Level"]
 pub type DBI_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dbi_trig_level` writer - DBI FIFO Empty Request Trigger Level"]
-pub type DBI_TRIG_LEVEL_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_2_SPEC, u8, u8, 7, 8>;
+pub type DBI_TRIG_LEVEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DBI_CTL_2_SPEC, u8, u8, 7, O>;
 #[doc = "Field `dbi_sdq_out_sel` reader - DBI SDI PIN Output Select"]
 pub type DBI_SDQ_OUT_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_sdq_out_sel` writer - DBI SDI PIN Output Select"]
-pub type DBI_SDQ_OUT_SEL_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, 6>;
+pub type DBI_SDQ_OUT_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, O>;
 #[doc = "Field `dbi_dcx_sel` reader - DBI DCX PIN Function Select"]
 pub type DBI_DCX_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `dbi_dcx_sel` writer - DBI DCX PIN Function Select"]
-pub type DBI_DCX_SEL_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, 5>;
+pub type DBI_DCX_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, O>;
 #[doc = "DBI SDI PIN FUnction Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -97,8 +98,9 @@ impl DBI_SDI_SEL_R {
     }
 }
 #[doc = "Field `dbi_sdi_sel` writer - DBI SDI PIN FUnction Select"]
-pub type DBI_SDI_SEL_W<'a> = crate::FieldWriter<'a, u32, DBI_CTL_2_SPEC, u8, DBI_SDI_SEL_A, 2, 3>;
-impl<'a> DBI_SDI_SEL_W<'a> {
+pub type DBI_SDI_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DBI_CTL_2_SPEC, u8, DBI_SDI_SEL_A, 2, O>;
+impl<'a, const O: u8> DBI_SDI_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn dbi_sdi(self) -> &'a mut W {
@@ -118,15 +120,15 @@ impl<'a> DBI_SDI_SEL_W<'a> {
 #[doc = "Field `te_dbc_sel` reader - TE debounce function select"]
 pub type TE_DBC_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `te_dbc_sel` writer - TE debounce function select"]
-pub type TE_DBC_SEL_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, 2>;
+pub type TE_DBC_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, O>;
 #[doc = "Field `te_trig_sel` reader - TE edge trigger select"]
 pub type TE_TRIG_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `te_trig_sel` writer - TE edge trigger select"]
-pub type TE_TRIG_SEL_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, 1>;
+pub type TE_TRIG_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, O>;
 #[doc = "Field `te_en` reader - TE Enable"]
 pub type TE_EN_R = crate::BitReader<bool>;
 #[doc = "Field `te_en` writer - TE Enable"]
-pub type TE_EN_W<'a> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, 0>;
+pub type TE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_2_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 15 - DBI FIFO DMA Request Enable"]
     #[inline(always)]
@@ -172,42 +174,42 @@ impl R {
 impl W {
     #[doc = "Bit 15 - DBI FIFO DMA Request Enable"]
     #[inline(always)]
-    pub fn dbi_fifo_drq_en(&mut self) -> DBI_FIFO_DRQ_EN_W {
+    pub fn dbi_fifo_drq_en(&mut self) -> DBI_FIFO_DRQ_EN_W<15> {
         DBI_FIFO_DRQ_EN_W::new(self)
     }
     #[doc = "Bits 8:14 - DBI FIFO Empty Request Trigger Level"]
     #[inline(always)]
-    pub fn dbi_trig_level(&mut self) -> DBI_TRIG_LEVEL_W {
+    pub fn dbi_trig_level(&mut self) -> DBI_TRIG_LEVEL_W<8> {
         DBI_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 6 - DBI SDI PIN Output Select"]
     #[inline(always)]
-    pub fn dbi_sdq_out_sel(&mut self) -> DBI_SDQ_OUT_SEL_W {
+    pub fn dbi_sdq_out_sel(&mut self) -> DBI_SDQ_OUT_SEL_W<6> {
         DBI_SDQ_OUT_SEL_W::new(self)
     }
     #[doc = "Bit 5 - DBI DCX PIN Function Select"]
     #[inline(always)]
-    pub fn dbi_dcx_sel(&mut self) -> DBI_DCX_SEL_W {
+    pub fn dbi_dcx_sel(&mut self) -> DBI_DCX_SEL_W<5> {
         DBI_DCX_SEL_W::new(self)
     }
     #[doc = "Bits 3:4 - DBI SDI PIN FUnction Select"]
     #[inline(always)]
-    pub fn dbi_sdi_sel(&mut self) -> DBI_SDI_SEL_W {
+    pub fn dbi_sdi_sel(&mut self) -> DBI_SDI_SEL_W<3> {
         DBI_SDI_SEL_W::new(self)
     }
     #[doc = "Bit 2 - TE debounce function select"]
     #[inline(always)]
-    pub fn te_dbc_sel(&mut self) -> TE_DBC_SEL_W {
+    pub fn te_dbc_sel(&mut self) -> TE_DBC_SEL_W<2> {
         TE_DBC_SEL_W::new(self)
     }
     #[doc = "Bit 1 - TE edge trigger select"]
     #[inline(always)]
-    pub fn te_trig_sel(&mut self) -> TE_TRIG_SEL_W {
+    pub fn te_trig_sel(&mut self) -> TE_TRIG_SEL_W<1> {
         TE_TRIG_SEL_W::new(self)
     }
     #[doc = "Bit 0 - TE Enable"]
     #[inline(always)]
-    pub fn te_en(&mut self) -> TE_EN_W {
+    pub fn te_en(&mut self) -> TE_EN_W<0> {
         TE_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

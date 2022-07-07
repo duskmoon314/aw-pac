@@ -37,7 +37,7 @@ impl From<crate::W<TWI_DRV_SLV_SPEC>> for W {
 #[doc = "Field `slv_id` reader - Slave device ID"]
 pub type SLV_ID_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `slv_id` writer - Slave device ID"]
-pub type SLV_ID_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 7, 9>;
+pub type SLV_ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 7, O>;
 #[doc = "R/W operation to slave device\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_A {
@@ -75,8 +75,8 @@ impl CMD_R {
     }
 }
 #[doc = "Field `cmd` writer - R/W operation to slave device"]
-pub type CMD_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_SLV_SPEC, CMD_A, 8>;
-impl<'a> CMD_W<'a> {
+pub type CMD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_SLV_SPEC, CMD_A, O>;
+impl<'a, const O: u8> CMD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn write(self) -> &'a mut W {
@@ -91,7 +91,7 @@ impl<'a> CMD_W<'a> {
 #[doc = "Field `slv_id_x` reader - SLAX\\[7:0\\]"]
 pub type SLV_ID_X_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `slv_id_x` writer - SLAX\\[7:0\\]"]
-pub type SLV_ID_X_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 8, 0>;
+pub type SLV_ID_X_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 9:15 - Slave device ID"]
     #[inline(always)]
@@ -112,17 +112,17 @@ impl R {
 impl W {
     #[doc = "Bits 9:15 - Slave device ID"]
     #[inline(always)]
-    pub fn slv_id(&mut self) -> SLV_ID_W {
+    pub fn slv_id(&mut self) -> SLV_ID_W<9> {
         SLV_ID_W::new(self)
     }
     #[doc = "Bit 8 - R/W operation to slave device"]
     #[inline(always)]
-    pub fn cmd(&mut self) -> CMD_W {
+    pub fn cmd(&mut self) -> CMD_W<8> {
         CMD_W::new(self)
     }
     #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
     #[inline(always)]
-    pub fn slv_id_x(&mut self) -> SLV_ID_X_W {
+    pub fn slv_id_x(&mut self) -> SLV_ID_X_W<0> {
         SLV_ID_X_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

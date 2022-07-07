@@ -71,8 +71,9 @@ impl MASK_DATA0_R {
     }
 }
 #[doc = "Field `MASK_DATA0` writer - "]
-pub type MASK_DATA0_W<'a> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, MASK_DATA0_A, 31>;
-impl<'a> MASK_DATA0_W<'a> {
+pub type MASK_DATA0_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, MASK_DATA0_A, O>;
+impl<'a, const O: u8> MASK_DATA0_W<'a, O> {
     #[doc = "Do not mask data0 when update clock"]
     #[inline(always)]
     pub fn not_mask(self) -> &'a mut W {
@@ -121,8 +122,8 @@ impl CCLK_CTRL_R {
     }
 }
 #[doc = "Field `CCLK_CTRL` writer - Card Clock Output Control"]
-pub type CCLK_CTRL_W<'a> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_CTRL_A, 17>;
-impl<'a> CCLK_CTRL_W<'a> {
+pub type CCLK_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_CTRL_A, O>;
+impl<'a, const O: u8> CCLK_CTRL_W<'a, O> {
     #[doc = "Card clock is always on"]
     #[inline(always)]
     pub fn on(self) -> &'a mut W {
@@ -171,8 +172,8 @@ impl CCLK_ENB_R {
     }
 }
 #[doc = "Field `CCLK_ENB` writer - Card Clock Enable"]
-pub type CCLK_ENB_W<'a> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_ENB_A, 16>;
-impl<'a> CCLK_ENB_W<'a> {
+pub type CCLK_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_ENB_A, O>;
+impl<'a, const O: u8> CCLK_ENB_W<'a, O> {
     #[doc = "Card Clock is off"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -187,7 +188,7 @@ impl<'a> CCLK_ENB_W<'a> {
 #[doc = "Field `CCLK_DIV` reader - Card Clock Divider"]
 pub type CCLK_DIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CCLK_DIV` writer - Card Clock Divider"]
-pub type CCLK_DIV_W<'a> = crate::FieldWriter<'a, u32, SMHC_CLKDIV_SPEC, u8, u8, 8, 0>;
+pub type CCLK_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_CLKDIV_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 31"]
     #[inline(always)]
@@ -213,22 +214,22 @@ impl R {
 impl W {
     #[doc = "Bit 31"]
     #[inline(always)]
-    pub fn mask_data0(&mut self) -> MASK_DATA0_W {
+    pub fn mask_data0(&mut self) -> MASK_DATA0_W<31> {
         MASK_DATA0_W::new(self)
     }
     #[doc = "Bit 17 - Card Clock Output Control"]
     #[inline(always)]
-    pub fn cclk_ctrl(&mut self) -> CCLK_CTRL_W {
+    pub fn cclk_ctrl(&mut self) -> CCLK_CTRL_W<17> {
         CCLK_CTRL_W::new(self)
     }
     #[doc = "Bit 16 - Card Clock Enable"]
     #[inline(always)]
-    pub fn cclk_enb(&mut self) -> CCLK_ENB_W {
+    pub fn cclk_enb(&mut self) -> CCLK_ENB_W<16> {
         CCLK_ENB_W::new(self)
     }
     #[doc = "Bits 0:7 - Card Clock Divider"]
     #[inline(always)]
-    pub fn cclk_div(&mut self) -> CCLK_DIV_W {
+    pub fn cclk_div(&mut self) -> CCLK_DIV_W<0> {
         CCLK_DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,8 @@ impl From<crate::W<EMAC_EPHY_CLK0_SPEC>> for W {
 #[doc = "Field `BPS_EFUSE` reader - "]
 pub type BPS_EFUSE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BPS_EFUSE` writer - "]
-pub type BPS_EFUSE_W<'a> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 4, 28>;
+pub type BPS_EFUSE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 4, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum XMII_SEL_A {
@@ -75,8 +76,9 @@ impl XMII_SEL_R {
     }
 }
 #[doc = "Field `XMII_SEL` writer - "]
-pub type XMII_SEL_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, XMII_SEL_A, 27>;
-impl<'a> XMII_SEL_W<'a> {
+pub type XMII_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, XMII_SEL_A, O>;
+impl<'a, const O: u8> XMII_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn internal(self) -> &'a mut W {
@@ -135,8 +137,9 @@ impl EPHY_MODE_R {
     }
 }
 #[doc = "Field `EPHY_MODE` writer - "]
-pub type EPHY_MODE_W<'a> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, EPHY_MODE_A, 2, 25>;
-impl<'a> EPHY_MODE_W<'a> {
+pub type EPHY_MODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, EPHY_MODE_A, 2, O>;
+impl<'a, const O: u8> EPHY_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -156,7 +159,8 @@ impl<'a> EPHY_MODE_W<'a> {
 #[doc = "Field `PHY_ADDR` reader - "]
 pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PHY_ADDR` writer - "]
-pub type PHY_ADDR_W<'a> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, 20>;
+pub type PHY_ADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_SEL_A {
@@ -194,8 +198,8 @@ impl CLK_SEL_R {
     }
 }
 #[doc = "Field `CLK_SEL` writer - "]
-pub type CLK_SEL_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, CLK_SEL_A, 18>;
-impl<'a> CLK_SEL_W<'a> {
+pub type CLK_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, CLK_SEL_A, O>;
+impl<'a, const O: u8> CLK_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn f25m(self) -> &'a mut W {
@@ -244,8 +248,8 @@ impl LED_POL_R {
     }
 }
 #[doc = "Field `LED_POL` writer - "]
-pub type LED_POL_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, LED_POL_A, 17>;
-impl<'a> LED_POL_W<'a> {
+pub type LED_POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, LED_POL_A, O>;
+impl<'a, const O: u8> LED_POL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn high(self) -> &'a mut W {
@@ -294,8 +298,9 @@ impl SHUTDOWN_R {
     }
 }
 #[doc = "Field `SHUTDOWN` writer - "]
-pub type SHUTDOWN_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, SHUTDOWN_A, 16>;
-impl<'a> SHUTDOWN_W<'a> {
+pub type SHUTDOWN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, SHUTDOWN_A, O>;
+impl<'a, const O: u8> SHUTDOWN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn power_up(self) -> &'a mut W {
@@ -344,8 +349,9 @@ impl PHY_SELECT_R {
     }
 }
 #[doc = "Field `PHY_SELECT` writer - "]
-pub type PHY_SELECT_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, PHY_SELECT_A, 15>;
-impl<'a> PHY_SELECT_W<'a> {
+pub type PHY_SELECT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, PHY_SELECT_A, O>;
+impl<'a, const O: u8> PHY_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn external(self) -> &'a mut W {
@@ -394,8 +400,8 @@ impl RMII_EN_R {
     }
 }
 #[doc = "Field `RMII_EN` writer - "]
-pub type RMII_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, RMII_EN_A, 13>;
-impl<'a> RMII_EN_W<'a> {
+pub type RMII_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, RMII_EN_A, O>;
+impl<'a, const O: u8> RMII_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -410,11 +416,11 @@ impl<'a> RMII_EN_W<'a> {
 #[doc = "Field `ETXDC` reader - "]
 pub type ETXDC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ETXDC` writer - "]
-pub type ETXDC_W<'a> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 3, 10>;
+pub type ETXDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 3, O>;
 #[doc = "Field `ERXDC` reader - "]
 pub type ERXDC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ERXDC` writer - "]
-pub type ERXDC_W<'a> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, 5>;
+pub type ERXDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ERXIE_A {
@@ -452,8 +458,8 @@ impl ERXIE_R {
     }
 }
 #[doc = "Field `ERXIE` writer - "]
-pub type ERXIE_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ERXIE_A, 4>;
-impl<'a> ERXIE_W<'a> {
+pub type ERXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ERXIE_A, O>;
+impl<'a, const O: u8> ERXIE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -502,8 +508,8 @@ impl ETXIE_R {
     }
 }
 #[doc = "Field `ETXIE` writer - "]
-pub type ETXIE_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ETXIE_A, 3>;
-impl<'a> ETXIE_W<'a> {
+pub type ETXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ETXIE_A, O>;
+impl<'a, const O: u8> ETXIE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -552,8 +558,8 @@ impl EPIT_R {
     }
 }
 #[doc = "Field `EPIT` writer - "]
-pub type EPIT_W<'a> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, EPIT_A, 2>;
-impl<'a> EPIT_W<'a> {
+pub type EPIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, EPIT_A, O>;
+impl<'a, const O: u8> EPIT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mii(self) -> &'a mut W {
@@ -612,8 +618,9 @@ impl ETCS_R {
     }
 }
 #[doc = "Field `ETCS` writer - "]
-pub type ETCS_W<'a> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, ETCS_A, 2, 0>;
-impl<'a> ETCS_W<'a> {
+pub type ETCS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, ETCS_A, 2, O>;
+impl<'a, const O: u8> ETCS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mii(self) -> &'a mut W {
@@ -710,77 +717,77 @@ impl R {
 impl W {
     #[doc = "Bits 28:31"]
     #[inline(always)]
-    pub fn bps_efuse(&mut self) -> BPS_EFUSE_W {
+    pub fn bps_efuse(&mut self) -> BPS_EFUSE_W<28> {
         BPS_EFUSE_W::new(self)
     }
     #[doc = "Bit 27"]
     #[inline(always)]
-    pub fn xmii_sel(&mut self) -> XMII_SEL_W {
+    pub fn xmii_sel(&mut self) -> XMII_SEL_W<27> {
         XMII_SEL_W::new(self)
     }
     #[doc = "Bits 25:26"]
     #[inline(always)]
-    pub fn ephy_mode(&mut self) -> EPHY_MODE_W {
+    pub fn ephy_mode(&mut self) -> EPHY_MODE_W<25> {
         EPHY_MODE_W::new(self)
     }
     #[doc = "Bits 20:24"]
     #[inline(always)]
-    pub fn phy_addr(&mut self) -> PHY_ADDR_W {
+    pub fn phy_addr(&mut self) -> PHY_ADDR_W<20> {
         PHY_ADDR_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
-    pub fn clk_sel(&mut self) -> CLK_SEL_W {
+    pub fn clk_sel(&mut self) -> CLK_SEL_W<18> {
         CLK_SEL_W::new(self)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
-    pub fn led_pol(&mut self) -> LED_POL_W {
+    pub fn led_pol(&mut self) -> LED_POL_W<17> {
         LED_POL_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
-    pub fn shutdown(&mut self) -> SHUTDOWN_W {
+    pub fn shutdown(&mut self) -> SHUTDOWN_W<16> {
         SHUTDOWN_W::new(self)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
-    pub fn phy_select(&mut self) -> PHY_SELECT_W {
+    pub fn phy_select(&mut self) -> PHY_SELECT_W<15> {
         PHY_SELECT_W::new(self)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
-    pub fn rmii_en(&mut self) -> RMII_EN_W {
+    pub fn rmii_en(&mut self) -> RMII_EN_W<13> {
         RMII_EN_W::new(self)
     }
     #[doc = "Bits 10:12"]
     #[inline(always)]
-    pub fn etxdc(&mut self) -> ETXDC_W {
+    pub fn etxdc(&mut self) -> ETXDC_W<10> {
         ETXDC_W::new(self)
     }
     #[doc = "Bits 5:9"]
     #[inline(always)]
-    pub fn erxdc(&mut self) -> ERXDC_W {
+    pub fn erxdc(&mut self) -> ERXDC_W<5> {
         ERXDC_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    pub fn erxie(&mut self) -> ERXIE_W {
+    pub fn erxie(&mut self) -> ERXIE_W<4> {
         ERXIE_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn etxie(&mut self) -> ETXIE_W {
+    pub fn etxie(&mut self) -> ETXIE_W<3> {
         ETXIE_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn epit(&mut self) -> EPIT_W {
+    pub fn epit(&mut self) -> EPIT_W<2> {
         EPIT_W::new(self)
     }
     #[doc = "Bits 0:1"]
     #[inline(always)]
-    pub fn etcs(&mut self) -> ETCS_W {
+    pub fn etcs(&mut self) -> ETCS_W<0> {
         ETCS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

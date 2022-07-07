@@ -71,9 +71,9 @@ impl ADC0_KEYUP_PENDING_R {
     }
 }
 #[doc = "Field `ADC0_KEYUP_PENDING` writer - ADC0 Key Up Pending"]
-pub type ADC0_KEYUP_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYUP_PENDING_A, 4>;
-impl<'a> ADC0_KEYUP_PENDING_W<'a> {
+pub type ADC0_KEYUP_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYUP_PENDING_A, O>;
+impl<'a, const O: u8> ADC0_KEYUP_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl ADC0_ALRDY_HOLD_PENDING_R {
     }
 }
 #[doc = "Field `ADC0_ALRDY_HOLD_PENDING` writer - ADC0 Already Hold Key Pending"]
-pub type ADC0_ALRDY_HOLD_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_ALRDY_HOLD_PENDING_A, 3>;
-impl<'a> ADC0_ALRDY_HOLD_PENDING_W<'a> {
+pub type ADC0_ALRDY_HOLD_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_ALRDY_HOLD_PENDING_A, O>;
+impl<'a, const O: u8> ADC0_ALRDY_HOLD_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -173,9 +173,9 @@ impl ADC0_HOLD_PENDING_R {
     }
 }
 #[doc = "Field `ADC0_HOLD_PENDING` writer - ADC0 Hold Key Pending"]
-pub type ADC0_HOLD_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_HOLD_PENDING_A, 2>;
-impl<'a> ADC0_HOLD_PENDING_W<'a> {
+pub type ADC0_HOLD_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_HOLD_PENDING_A, O>;
+impl<'a, const O: u8> ADC0_HOLD_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -224,9 +224,9 @@ impl ADC0_KEYDOWN_PENDING_R {
     }
 }
 #[doc = "Field `ADC0_KEYDOWN_PENDING` writer - ADC0 Key Down Pending"]
-pub type ADC0_KEYDOWN_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYDOWN_PENDING_A, 1>;
-impl<'a> ADC0_KEYDOWN_PENDING_W<'a> {
+pub type ADC0_KEYDOWN_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYDOWN_PENDING_A, O>;
+impl<'a, const O: u8> ADC0_KEYDOWN_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -275,9 +275,9 @@ impl ADC0_DATA_PENDING_R {
     }
 }
 #[doc = "Field `ADC0_DATA_PENDING` writer - ADC0 Data Pending"]
-pub type ADC0_DATA_PENDING_W<'a> =
-    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_DATA_PENDING_A, 0>;
-impl<'a> ADC0_DATA_PENDING_W<'a> {
+pub type ADC0_DATA_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_DATA_PENDING_A, O>;
+impl<'a, const O: u8> ADC0_DATA_PENDING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_pending(self) -> &'a mut W {
@@ -319,27 +319,27 @@ impl R {
 impl W {
     #[doc = "Bit 4 - ADC0 Key Up Pending"]
     #[inline(always)]
-    pub fn adc0_keyup_pending(&mut self) -> ADC0_KEYUP_PENDING_W {
+    pub fn adc0_keyup_pending(&mut self) -> ADC0_KEYUP_PENDING_W<4> {
         ADC0_KEYUP_PENDING_W::new(self)
     }
     #[doc = "Bit 3 - ADC0 Already Hold Key Pending"]
     #[inline(always)]
-    pub fn adc0_alrdy_hold_pending(&mut self) -> ADC0_ALRDY_HOLD_PENDING_W {
+    pub fn adc0_alrdy_hold_pending(&mut self) -> ADC0_ALRDY_HOLD_PENDING_W<3> {
         ADC0_ALRDY_HOLD_PENDING_W::new(self)
     }
     #[doc = "Bit 2 - ADC0 Hold Key Pending"]
     #[inline(always)]
-    pub fn adc0_hold_pending(&mut self) -> ADC0_HOLD_PENDING_W {
+    pub fn adc0_hold_pending(&mut self) -> ADC0_HOLD_PENDING_W<2> {
         ADC0_HOLD_PENDING_W::new(self)
     }
     #[doc = "Bit 1 - ADC0 Key Down Pending"]
     #[inline(always)]
-    pub fn adc0_keydown_pending(&mut self) -> ADC0_KEYDOWN_PENDING_W {
+    pub fn adc0_keydown_pending(&mut self) -> ADC0_KEYDOWN_PENDING_W<1> {
         ADC0_KEYDOWN_PENDING_W::new(self)
     }
     #[doc = "Bit 0 - ADC0 Data Pending"]
     #[inline(always)]
-    pub fn adc0_data_pending(&mut self) -> ADC0_DATA_PENDING_W {
+    pub fn adc0_data_pending(&mut self) -> ADC0_DATA_PENDING_W<0> {
         ADC0_DATA_PENDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,11 +37,11 @@ impl From<crate::W<PLL_CPU_BIAS_SPEC>> for W {
 #[doc = "Field `PLL_VCO_RST_IN` reader - VCO reset in"]
 pub type PLL_VCO_RST_IN_R = crate::BitReader<bool>;
 #[doc = "Field `PLL_VCO_RST_IN` writer - VCO reset in"]
-pub type PLL_VCO_RST_IN_W<'a> = crate::BitWriter<'a, u32, PLL_CPU_BIAS_SPEC, bool, 31>;
+pub type PLL_VCO_RST_IN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_CPU_BIAS_SPEC, bool, O>;
 #[doc = "Field `PLL_CP` reader - PLL current bias control"]
 pub type PLL_CP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PLL_CP` writer - PLL current bias control"]
-pub type PLL_CP_W<'a> = crate::FieldWriter<'a, u32, PLL_CPU_BIAS_SPEC, u8, u8, 5, 16>;
+pub type PLL_CP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_CPU_BIAS_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 31 - VCO reset in"]
     #[inline(always)]
@@ -57,12 +57,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - VCO reset in"]
     #[inline(always)]
-    pub fn pll_vco_rst_in(&mut self) -> PLL_VCO_RST_IN_W {
+    pub fn pll_vco_rst_in(&mut self) -> PLL_VCO_RST_IN_W<31> {
         PLL_VCO_RST_IN_W::new(self)
     }
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]
-    pub fn pll_cp(&mut self) -> PLL_CP_W {
+    pub fn pll_cp(&mut self) -> PLL_CP_W<16> {
         PLL_CP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -73,8 +73,8 @@ impl DMA_R {
     }
 }
 #[doc = "Field `DMA` writer - Handshake Configuration"]
-pub type DMA_W<'a> = crate::FieldWriter<'a, u32, CIR_DMA_CTL_SPEC, u8, DMA_A, 8, 0>;
-impl<'a> DMA_W<'a> {
+pub type DMA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_DMA_CTL_SPEC, u8, DMA_A, 8, O>;
+impl<'a, const O: u8> DMA_W<'a, O> {
     #[doc = "DMA waiting cycle mode"]
     #[inline(always)]
     pub fn waiting_cycle(self) -> &'a mut W {
@@ -96,7 +96,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Handshake Configuration"]
     #[inline(always)]
-    pub fn dma(&mut self) -> DMA_W {
+    pub fn dma(&mut self) -> DMA_W<0> {
         DMA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,9 @@ impl PMU_CLR_R {
     }
 }
 #[doc = "Field `PMU_CLR` writer - PMU Clear"]
-pub type PMU_CLR_W<'a> = crate::BitWriter0C<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_CLR_A, 1>;
-impl<'a> PMU_CLR_W<'a> {
+pub type PMU_CLR_W<'a, const O: u8> =
+    crate::BitWriter0C<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_CLR_A, O>;
+impl<'a, const O: u8> PMU_CLR_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_operation(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl PMU_EN_R {
     }
 }
 #[doc = "Field `PMU_EN` writer - PMU Enable"]
-pub type PMU_EN_W<'a> = crate::BitWriter<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_EN_A, 0>;
-impl<'a> PMU_EN_W<'a> {
+pub type PMU_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_EN_A, O>;
+impl<'a, const O: u8> PMU_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -149,12 +151,12 @@ impl R {
 impl W {
     #[doc = "Bit 1 - PMU Clear"]
     #[inline(always)]
-    pub fn pmu_clr(&mut self) -> PMU_CLR_W {
+    pub fn pmu_clr(&mut self) -> PMU_CLR_W<1> {
         PMU_CLR_W::new(self)
     }
     #[doc = "Bit 0 - PMU Enable"]
     #[inline(always)]
-    pub fn pmu_en(&mut self) -> PMU_EN_W {
+    pub fn pmu_en(&mut self) -> PMU_EN_W<0> {
         PMU_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

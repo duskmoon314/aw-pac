@@ -73,8 +73,9 @@ impl RX_FIFO_CLOCK_MODE_R {
     }
 }
 #[doc = "Field `rx_fifo_clock_mode` writer - "]
-pub type RX_FIFO_CLOCK_MODE_W<'a> = crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_MODE_A, 2>;
-impl<'a> RX_FIFO_CLOCK_MODE_W<'a> {
+pub type RX_FIFO_CLOCK_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_MODE_A, O>;
+impl<'a, const O: u8> RX_FIFO_CLOCK_MODE_W<'a, O> {
     #[doc = "Sync mode, writing/reading clocks use apb clock"]
     #[inline(always)]
     pub fn wr_apb(self) -> &'a mut W {
@@ -123,9 +124,9 @@ impl TX_FIFO_CLOCK_ENABLE_R {
     }
 }
 #[doc = "Field `tx_fifo_clock_enable` writer - "]
-pub type TX_FIFO_CLOCK_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, FCC_SPEC, TX_FIFO_CLOCK_ENABLE_A, 1>;
-impl<'a> TX_FIFO_CLOCK_ENABLE_W<'a> {
+pub type TX_FIFO_CLOCK_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FCC_SPEC, TX_FIFO_CLOCK_ENABLE_A, O>;
+impl<'a, const O: u8> TX_FIFO_CLOCK_ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -174,9 +175,9 @@ impl RX_FIFO_CLOCK_ENABLE_R {
     }
 }
 #[doc = "Field `rx_fifo_clock_enable` writer - "]
-pub type RX_FIFO_CLOCK_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_ENABLE_A, 0>;
-impl<'a> RX_FIFO_CLOCK_ENABLE_W<'a> {
+pub type RX_FIFO_CLOCK_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_ENABLE_A, O>;
+impl<'a, const O: u8> RX_FIFO_CLOCK_ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -213,17 +214,17 @@ impl R {
 impl W {
     #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn rx_fifo_clock_mode(&mut self) -> RX_FIFO_CLOCK_MODE_W {
+    pub fn rx_fifo_clock_mode(&mut self) -> RX_FIFO_CLOCK_MODE_W<2> {
         RX_FIFO_CLOCK_MODE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn tx_fifo_clock_enable(&mut self) -> TX_FIFO_CLOCK_ENABLE_W {
+    pub fn tx_fifo_clock_enable(&mut self) -> TX_FIFO_CLOCK_ENABLE_W<1> {
         TX_FIFO_CLOCK_ENABLE_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn rx_fifo_clock_enable(&mut self) -> RX_FIFO_CLOCK_ENABLE_W {
+    pub fn rx_fifo_clock_enable(&mut self) -> RX_FIFO_CLOCK_ENABLE_W<0> {
         RX_FIFO_CLOCK_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

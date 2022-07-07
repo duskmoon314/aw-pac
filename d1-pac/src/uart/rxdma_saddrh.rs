@@ -37,7 +37,7 @@ impl From<crate::W<RXDMA_SADDRH_SPEC>> for W {
 #[doc = "Field `saddr` reader - RXDMA Buffer Start Address \\[33:32\\]"]
 pub type SADDR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `saddr` writer - RXDMA Buffer Start Address \\[33:32\\]"]
-pub type SADDR_W<'a> = crate::FieldWriter<'a, u32, RXDMA_SADDRH_SPEC, u8, u8, 2, 0>;
+pub type SADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RXDMA_SADDRH_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:1 - RXDMA Buffer Start Address \\[33:32\\]"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - RXDMA Buffer Start Address \\[33:32\\]"]
     #[inline(always)]
-    pub fn saddr(&mut self) -> SADDR_W {
+    pub fn saddr(&mut self) -> SADDR_W<0> {
         SADDR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

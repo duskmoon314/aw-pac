@@ -37,7 +37,7 @@ impl From<crate::W<SPI_MTC_SPEC>> for W {
 #[doc = "Field `mwtc` reader - Master Write Transmit Counter"]
 pub type MWTC_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `mwtc` writer - Master Write Transmit Counter"]
-pub type MWTC_W<'a> = crate::FieldWriter<'a, u32, SPI_MTC_SPEC, u32, u32, 24, 0>;
+pub type MWTC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_MTC_SPEC, u32, u32, 24, O>;
 impl R {
     #[doc = "Bits 0:23 - Master Write Transmit Counter"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Master Write Transmit Counter"]
     #[inline(always)]
-    pub fn mwtc(&mut self) -> MWTC_W {
+    pub fn mwtc(&mut self) -> MWTC_W<0> {
         MWTC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

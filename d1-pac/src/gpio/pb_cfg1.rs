@@ -137,8 +137,9 @@ impl PB12_SELECT_R {
     }
 }
 #[doc = "Field `pb12_select` writer - "]
-pub type PB12_SELECT_W<'a> = crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB12_SELECT_A, 4, 16>;
-impl<'a> PB12_SELECT_W<'a> {
+pub type PB12_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB12_SELECT_A, 4, O>;
+impl<'a, const O: u8> PB12_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -293,8 +294,9 @@ impl PB11_SELECT_R {
     }
 }
 #[doc = "Field `pb11_select` writer - "]
-pub type PB11_SELECT_W<'a> = crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB11_SELECT_A, 4, 12>;
-impl<'a> PB11_SELECT_W<'a> {
+pub type PB11_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB11_SELECT_A, 4, O>;
+impl<'a, const O: u8> PB11_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -449,8 +451,9 @@ impl PB10_SELECT_R {
     }
 }
 #[doc = "Field `pb10_select` writer - "]
-pub type PB10_SELECT_W<'a> = crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB10_SELECT_A, 4, 8>;
-impl<'a> PB10_SELECT_W<'a> {
+pub type PB10_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB10_SELECT_A, 4, O>;
+impl<'a, const O: u8> PB10_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -605,8 +608,9 @@ impl PB9_SELECT_R {
     }
 }
 #[doc = "Field `pb9_select` writer - "]
-pub type PB9_SELECT_W<'a> = crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB9_SELECT_A, 4, 4>;
-impl<'a> PB9_SELECT_W<'a> {
+pub type PB9_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB9_SELECT_A, 4, O>;
+impl<'a, const O: u8> PB9_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -761,8 +765,9 @@ impl PB8_SELECT_R {
     }
 }
 #[doc = "Field `pb8_select` writer - "]
-pub type PB8_SELECT_W<'a> = crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB8_SELECT_A, 4, 0>;
-impl<'a> PB8_SELECT_W<'a> {
+pub type PB8_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB8_SELECT_A, 4, O>;
+impl<'a, const O: u8> PB8_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -844,27 +849,27 @@ impl R {
 impl W {
     #[doc = "Bits 16:19"]
     #[inline(always)]
-    pub fn pb12_select(&mut self) -> PB12_SELECT_W {
+    pub fn pb12_select(&mut self) -> PB12_SELECT_W<16> {
         PB12_SELECT_W::new(self)
     }
     #[doc = "Bits 12:15"]
     #[inline(always)]
-    pub fn pb11_select(&mut self) -> PB11_SELECT_W {
+    pub fn pb11_select(&mut self) -> PB11_SELECT_W<12> {
         PB11_SELECT_W::new(self)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
-    pub fn pb10_select(&mut self) -> PB10_SELECT_W {
+    pub fn pb10_select(&mut self) -> PB10_SELECT_W<8> {
         PB10_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7"]
     #[inline(always)]
-    pub fn pb9_select(&mut self) -> PB9_SELECT_W {
+    pub fn pb9_select(&mut self) -> PB9_SELECT_W<4> {
         PB9_SELECT_W::new(self)
     }
     #[doc = "Bits 0:3"]
     #[inline(always)]
-    pub fn pb8_select(&mut self) -> PB8_SELECT_W {
+    pub fn pb8_select(&mut self) -> PB8_SELECT_W<0> {
         PB8_SELECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

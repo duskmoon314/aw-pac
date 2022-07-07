@@ -73,9 +73,9 @@ impl PWM23_CLK_SRC_SEL_R {
     }
 }
 #[doc = "Field `PWM23_CLK_SRC_SEL` writer - Select PWM23 Clock Source"]
-pub type PWM23_CLK_SRC_SEL_W<'a> =
-    crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_SRC_SEL_A, 2, 7>;
-impl<'a> PWM23_CLK_SRC_SEL_W<'a> {
+pub type PWM23_CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_SRC_SEL_A, 2, O>;
+impl<'a, const O: u8> PWM23_CLK_SRC_SEL_W<'a, O> {
     #[doc = "HOSC"]
     #[inline(always)]
     pub fn hosc(self) -> &'a mut W {
@@ -182,9 +182,9 @@ impl PWM23_CLK_DIV_M_R {
     }
 }
 #[doc = "Field `PWM23_CLK_DIV_M` writer - PWM23 Clock Divide M"]
-pub type PWM23_CLK_DIV_M_W<'a> =
-    crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_DIV_M_A, 4, 0>;
-impl<'a> PWM23_CLK_DIV_M_W<'a> {
+pub type PWM23_CLK_DIV_M_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_DIV_M_A, 4, O>;
+impl<'a, const O: u8> PWM23_CLK_DIV_M_W<'a, O> {
     #[doc = "/1"]
     #[inline(always)]
     pub fn m1(self) -> &'a mut W {
@@ -246,12 +246,12 @@ impl R {
 impl W {
     #[doc = "Bits 7:8 - Select PWM23 Clock Source"]
     #[inline(always)]
-    pub fn pwm23_clk_src_sel(&mut self) -> PWM23_CLK_SRC_SEL_W {
+    pub fn pwm23_clk_src_sel(&mut self) -> PWM23_CLK_SRC_SEL_W<7> {
         PWM23_CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 0:3 - PWM23 Clock Divide M"]
     #[inline(always)]
-    pub fn pwm23_clk_div_m(&mut self) -> PWM23_CLK_DIV_M_W {
+    pub fn pwm23_clk_div_m(&mut self) -> PWM23_CLK_DIV_M_W<0> {
         PWM23_CLK_DIV_M_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

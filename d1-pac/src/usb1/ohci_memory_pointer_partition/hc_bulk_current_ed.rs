@@ -37,7 +37,8 @@ impl From<crate::W<HC_BULK_CURRENT_ED_SPEC>> for W {
 #[doc = "Field `BCED_31_4` reader - This is advanced to the next ED after the HC has served the present one. HC continues processing the list from where it left off in the last Frame. When it reaches the end of the Bulk list, HC checks the ControlListFilled of HcControl. If set, it copies the content of HcBulkHeadED to HcBulkCurrentED and clears the bit. If it is not set, it does nothing. HCD is only allowed to modify this register when the BulkListEnable of HcControl is cleared. When set, the HCD only reads the instantaneous value of this register. This is initially set to zero to indicate the end of the Bulk list."]
 pub type BCED_31_4_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `BCED_31_4` writer - This is advanced to the next ED after the HC has served the present one. HC continues processing the list from where it left off in the last Frame. When it reaches the end of the Bulk list, HC checks the ControlListFilled of HcControl. If set, it copies the content of HcBulkHeadED to HcBulkCurrentED and clears the bit. If it is not set, it does nothing. HCD is only allowed to modify this register when the BulkListEnable of HcControl is cleared. When set, the HCD only reads the instantaneous value of this register. This is initially set to zero to indicate the end of the Bulk list."]
-pub type BCED_31_4_W<'a> = crate::FieldWriter<'a, u32, HC_BULK_CURRENT_ED_SPEC, u32, u32, 28, 4>;
+pub type BCED_31_4_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HC_BULK_CURRENT_ED_SPEC, u32, u32, 28, O>;
 #[doc = "Field `BCED_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
 pub type BCED_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
@@ -55,7 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:31 - This is advanced to the next ED after the HC has served the present one. HC continues processing the list from where it left off in the last Frame. When it reaches the end of the Bulk list, HC checks the ControlListFilled of HcControl. If set, it copies the content of HcBulkHeadED to HcBulkCurrentED and clears the bit. If it is not set, it does nothing. HCD is only allowed to modify this register when the BulkListEnable of HcControl is cleared. When set, the HCD only reads the instantaneous value of this register. This is initially set to zero to indicate the end of the Bulk list."]
     #[inline(always)]
-    pub fn bced_31_4(&mut self) -> BCED_31_4_W {
+    pub fn bced_31_4(&mut self) -> BCED_31_4_W<4> {
         BCED_31_4_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

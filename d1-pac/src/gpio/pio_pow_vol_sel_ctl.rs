@@ -71,9 +71,9 @@ impl VCC_PF_PWR_VOL_SEL_R {
     }
 }
 #[doc = "Field `VCC_PF_PWR_VOL_SEL` writer - VCC_PF Power Voltage Select Control"]
-pub type VCC_PF_PWR_VOL_SEL_W<'a> =
-    crate::BitWriter<'a, u32, PIO_POW_VOL_SEL_CTL_SPEC, VCC_PF_PWR_VOL_SEL_A, 0>;
-impl<'a> VCC_PF_PWR_VOL_SEL_W<'a> {
+pub type VCC_PF_PWR_VOL_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PIO_POW_VOL_SEL_CTL_SPEC, VCC_PF_PWR_VOL_SEL_A, O>;
+impl<'a, const O: u8> VCC_PF_PWR_VOL_SEL_W<'a, O> {
     #[doc = "1.8V"]
     #[inline(always)]
     pub fn v18(self) -> &'a mut W {
@@ -95,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VCC_PF Power Voltage Select Control"]
     #[inline(always)]
-    pub fn vcc_pf_pwr_vol_sel(&mut self) -> VCC_PF_PWR_VOL_SEL_W {
+    pub fn vcc_pf_pwr_vol_sel(&mut self) -> VCC_PF_PWR_VOL_SEL_W<0> {
         VCC_PF_PWR_VOL_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,9 @@ impl CLK32K_EN_R {
     }
 }
 #[doc = "Field `CLK32K_EN` writer - Gating for CLK32K"]
-pub type CLK32K_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK32K_EN_A, 4>;
-impl<'a> CLK32K_EN_W<'a> {
+pub type CLK32K_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK32K_EN_A, O>;
+impl<'a, const O: u8> CLK32K_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl CLK25M_EN_R {
     }
 }
 #[doc = "Field `CLK25M_EN` writer - Gating for CLK25M"]
-pub type CLK25M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK25M_EN_A, 3>;
-impl<'a> CLK25M_EN_W<'a> {
+pub type CLK25M_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK25M_EN_A, O>;
+impl<'a, const O: u8> CLK25M_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -171,8 +173,9 @@ impl CLK16M_EN_R {
     }
 }
 #[doc = "Field `CLK16M_EN` writer - Gating for CLK16M"]
-pub type CLK16M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK16M_EN_A, 2>;
-impl<'a> CLK16M_EN_W<'a> {
+pub type CLK16M_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK16M_EN_A, O>;
+impl<'a, const O: u8> CLK16M_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -221,8 +224,9 @@ impl CLK12M_EN_R {
     }
 }
 #[doc = "Field `CLK12M_EN` writer - Gating for CLK12M"]
-pub type CLK12M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK12M_EN_A, 1>;
-impl<'a> CLK12M_EN_W<'a> {
+pub type CLK12M_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK12M_EN_A, O>;
+impl<'a, const O: u8> CLK12M_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -271,8 +275,9 @@ impl CLK24M_EN_R {
     }
 }
 #[doc = "Field `CLK24M_EN` writer - Gating for CLK24M"]
-pub type CLK24M_EN_W<'a> = crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK24M_EN_A, 0>;
-impl<'a> CLK24M_EN_W<'a> {
+pub type CLK24M_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CCU_FAN_GATE_SPEC, CLK24M_EN_A, O>;
+impl<'a, const O: u8> CLK24M_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -314,27 +319,27 @@ impl R {
 impl W {
     #[doc = "Bit 4 - Gating for CLK32K"]
     #[inline(always)]
-    pub fn clk32k_en(&mut self) -> CLK32K_EN_W {
+    pub fn clk32k_en(&mut self) -> CLK32K_EN_W<4> {
         CLK32K_EN_W::new(self)
     }
     #[doc = "Bit 3 - Gating for CLK25M"]
     #[inline(always)]
-    pub fn clk25m_en(&mut self) -> CLK25M_EN_W {
+    pub fn clk25m_en(&mut self) -> CLK25M_EN_W<3> {
         CLK25M_EN_W::new(self)
     }
     #[doc = "Bit 2 - Gating for CLK16M"]
     #[inline(always)]
-    pub fn clk16m_en(&mut self) -> CLK16M_EN_W {
+    pub fn clk16m_en(&mut self) -> CLK16M_EN_W<2> {
         CLK16M_EN_W::new(self)
     }
     #[doc = "Bit 1 - Gating for CLK12M"]
     #[inline(always)]
-    pub fn clk12m_en(&mut self) -> CLK12M_EN_W {
+    pub fn clk12m_en(&mut self) -> CLK12M_EN_W<1> {
         CLK12M_EN_W::new(self)
     }
     #[doc = "Bit 0 - Gating for CLK24M"]
     #[inline(always)]
-    pub fn clk24m_en(&mut self) -> CLK24M_EN_W {
+    pub fn clk24m_en(&mut self) -> CLK24M_EN_W<0> {
         CLK24M_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

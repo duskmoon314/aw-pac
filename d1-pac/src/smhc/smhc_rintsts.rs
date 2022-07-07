@@ -37,75 +37,75 @@ impl From<crate::W<SMHC_RINTSTS_SPEC>> for W {
 #[doc = "Field `CARD_REMOVAL` reader - Card Removed"]
 pub type CARD_REMOVAL_R = crate::BitReader<bool>;
 #[doc = "Field `CARD_REMOVAL` writer - Card Removed"]
-pub type CARD_REMOVAL_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 31>;
+pub type CARD_REMOVAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `CARD_INSERT` reader - Card Inserted"]
 pub type CARD_INSERT_R = crate::BitReader<bool>;
 #[doc = "Field `CARD_INSERT` writer - Card Inserted"]
-pub type CARD_INSERT_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 30>;
+pub type CARD_INSERT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `SDIOI_INT` reader - SDIO Interrupt"]
 pub type SDIOI_INT_R = crate::BitReader<bool>;
 #[doc = "Field `SDIOI_INT` writer - SDIO Interrupt"]
-pub type SDIOI_INT_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 16>;
+pub type SDIOI_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DEE` reader - Data End-bit Error"]
 pub type DEE_R = crate::BitReader<bool>;
 #[doc = "Field `DEE` writer - Data End-bit Error"]
-pub type DEE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 15>;
+pub type DEE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `ACD` reader - Auto Command Done"]
 pub type ACD_R = crate::BitReader<bool>;
 #[doc = "Field `ACD` writer - Auto Command Done"]
-pub type ACD_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 14>;
+pub type ACD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DSE_BC` reader - Data Start Error/Busy Clear"]
 pub type DSE_BC_R = crate::BitReader<bool>;
 #[doc = "Field `DSE_BC` writer - Data Start Error/Busy Clear"]
-pub type DSE_BC_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 13>;
+pub type DSE_BC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `CB_IW` reader - Command Busy and Illegal Write"]
 pub type CB_IW_R = crate::BitReader<bool>;
 #[doc = "Field `CB_IW` writer - Command Busy and Illegal Write"]
-pub type CB_IW_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 12>;
+pub type CB_IW_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `FU_FO` reader - FIFO Underrun/Overflow"]
 pub type FU_FO_R = crate::BitReader<bool>;
 #[doc = "Field `FU_FO` writer - FIFO Underrun/Overflow"]
-pub type FU_FO_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 11>;
+pub type FU_FO_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DSTO_VSD` reader - Data Starvation Timeout/V1.8 Switch Done"]
 pub type DSTO_VSD_R = crate::BitReader<bool>;
 #[doc = "Field `DSTO_VSD` writer - Data Starvation Timeout/V1.8 Switch Done"]
-pub type DSTO_VSD_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 10>;
+pub type DSTO_VSD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DTO_BDS` reader - Data Timeout/Boot Data Start"]
 pub type DTO_BDS_R = crate::BitReader<bool>;
 #[doc = "Field `DTO_BDS` writer - Data Timeout/Boot Data Start"]
-pub type DTO_BDS_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 9>;
+pub type DTO_BDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `RTO_BACK` reader - Response Timeout/Boot ACK Received"]
 pub type RTO_BACK_R = crate::BitReader<bool>;
 #[doc = "Field `RTO_BACK` writer - Response Timeout/Boot ACK Received"]
-pub type RTO_BACK_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 8>;
+pub type RTO_BACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DCE` reader - Data CRC Error"]
 pub type DCE_R = crate::BitReader<bool>;
 #[doc = "Field `DCE` writer - Data CRC Error"]
-pub type DCE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 7>;
+pub type DCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `RCE` reader - Response CRC Error"]
 pub type RCE_R = crate::BitReader<bool>;
 #[doc = "Field `RCE` writer - Response CRC Error"]
-pub type RCE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 6>;
+pub type RCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DRR` reader - Data Receive Request"]
 pub type DRR_R = crate::BitReader<bool>;
 #[doc = "Field `DRR` writer - Data Receive Request"]
-pub type DRR_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 5>;
+pub type DRR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DTR` reader - Data Transmit Request"]
 pub type DTR_R = crate::BitReader<bool>;
 #[doc = "Field `DTR` writer - Data Transmit Request"]
-pub type DTR_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 4>;
+pub type DTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `DTC` reader - Data Transfer Complete"]
 pub type DTC_R = crate::BitReader<bool>;
 #[doc = "Field `DTC` writer - Data Transfer Complete"]
-pub type DTC_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 3>;
+pub type DTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `CC` reader - Command Complete"]
 pub type CC_R = crate::BitReader<bool>;
 #[doc = "Field `CC` writer - Command Complete"]
-pub type CC_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 2>;
+pub type CC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 #[doc = "Field `RE` reader - Response Error"]
 pub type RE_R = crate::BitReader<bool>;
 #[doc = "Field `RE` writer - Response Error"]
-pub type RE_W<'a> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, 1>;
+pub type RE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_RINTSTS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]
@@ -201,92 +201,92 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]
-    pub fn card_removal(&mut self) -> CARD_REMOVAL_W {
+    pub fn card_removal(&mut self) -> CARD_REMOVAL_W<31> {
         CARD_REMOVAL_W::new(self)
     }
     #[doc = "Bit 30 - Card Inserted"]
     #[inline(always)]
-    pub fn card_insert(&mut self) -> CARD_INSERT_W {
+    pub fn card_insert(&mut self) -> CARD_INSERT_W<30> {
         CARD_INSERT_W::new(self)
     }
     #[doc = "Bit 16 - SDIO Interrupt"]
     #[inline(always)]
-    pub fn sdioi_int(&mut self) -> SDIOI_INT_W {
+    pub fn sdioi_int(&mut self) -> SDIOI_INT_W<16> {
         SDIOI_INT_W::new(self)
     }
     #[doc = "Bit 15 - Data End-bit Error"]
     #[inline(always)]
-    pub fn dee(&mut self) -> DEE_W {
+    pub fn dee(&mut self) -> DEE_W<15> {
         DEE_W::new(self)
     }
     #[doc = "Bit 14 - Auto Command Done"]
     #[inline(always)]
-    pub fn acd(&mut self) -> ACD_W {
+    pub fn acd(&mut self) -> ACD_W<14> {
         ACD_W::new(self)
     }
     #[doc = "Bit 13 - Data Start Error/Busy Clear"]
     #[inline(always)]
-    pub fn dse_bc(&mut self) -> DSE_BC_W {
+    pub fn dse_bc(&mut self) -> DSE_BC_W<13> {
         DSE_BC_W::new(self)
     }
     #[doc = "Bit 12 - Command Busy and Illegal Write"]
     #[inline(always)]
-    pub fn cb_iw(&mut self) -> CB_IW_W {
+    pub fn cb_iw(&mut self) -> CB_IW_W<12> {
         CB_IW_W::new(self)
     }
     #[doc = "Bit 11 - FIFO Underrun/Overflow"]
     #[inline(always)]
-    pub fn fu_fo(&mut self) -> FU_FO_W {
+    pub fn fu_fo(&mut self) -> FU_FO_W<11> {
         FU_FO_W::new(self)
     }
     #[doc = "Bit 10 - Data Starvation Timeout/V1.8 Switch Done"]
     #[inline(always)]
-    pub fn dsto_vsd(&mut self) -> DSTO_VSD_W {
+    pub fn dsto_vsd(&mut self) -> DSTO_VSD_W<10> {
         DSTO_VSD_W::new(self)
     }
     #[doc = "Bit 9 - Data Timeout/Boot Data Start"]
     #[inline(always)]
-    pub fn dto_bds(&mut self) -> DTO_BDS_W {
+    pub fn dto_bds(&mut self) -> DTO_BDS_W<9> {
         DTO_BDS_W::new(self)
     }
     #[doc = "Bit 8 - Response Timeout/Boot ACK Received"]
     #[inline(always)]
-    pub fn rto_back(&mut self) -> RTO_BACK_W {
+    pub fn rto_back(&mut self) -> RTO_BACK_W<8> {
         RTO_BACK_W::new(self)
     }
     #[doc = "Bit 7 - Data CRC Error"]
     #[inline(always)]
-    pub fn dce(&mut self) -> DCE_W {
+    pub fn dce(&mut self) -> DCE_W<7> {
         DCE_W::new(self)
     }
     #[doc = "Bit 6 - Response CRC Error"]
     #[inline(always)]
-    pub fn rce(&mut self) -> RCE_W {
+    pub fn rce(&mut self) -> RCE_W<6> {
         RCE_W::new(self)
     }
     #[doc = "Bit 5 - Data Receive Request"]
     #[inline(always)]
-    pub fn drr(&mut self) -> DRR_W {
+    pub fn drr(&mut self) -> DRR_W<5> {
         DRR_W::new(self)
     }
     #[doc = "Bit 4 - Data Transmit Request"]
     #[inline(always)]
-    pub fn dtr(&mut self) -> DTR_W {
+    pub fn dtr(&mut self) -> DTR_W<4> {
         DTR_W::new(self)
     }
     #[doc = "Bit 3 - Data Transfer Complete"]
     #[inline(always)]
-    pub fn dtc(&mut self) -> DTC_W {
+    pub fn dtc(&mut self) -> DTC_W<3> {
         DTC_W::new(self)
     }
     #[doc = "Bit 2 - Command Complete"]
     #[inline(always)]
-    pub fn cc(&mut self) -> CC_W {
+    pub fn cc(&mut self) -> CC_W<2> {
         CC_W::new(self)
     }
     #[doc = "Bit 1 - Response Error"]
     #[inline(always)]
-    pub fn re(&mut self) -> RE_W {
+    pub fn re(&mut self) -> RE_W<1> {
         RE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

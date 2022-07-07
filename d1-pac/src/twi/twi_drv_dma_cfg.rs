@@ -37,19 +37,22 @@ impl From<crate::W<TWI_DRV_DMA_CFG_SPEC>> for W {
 #[doc = "Field `dma_rx_en` reader - "]
 pub type DMA_RX_EN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dma_rx_en` writer - "]
-pub type DMA_RX_EN_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 2, 23>;
+pub type DMA_RX_EN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 2, O>;
 #[doc = "Field `rx_trig` reader - "]
 pub type RX_TRIG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `rx_trig` writer - "]
-pub type RX_TRIG_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 6, 16>;
+pub type RX_TRIG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 6, O>;
 #[doc = "Field `dma_tx_en` reader - "]
 pub type DMA_TX_EN_R = crate::BitReader<bool>;
 #[doc = "Field `dma_tx_en` writer - "]
-pub type DMA_TX_EN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, bool, 8>;
+pub type DMA_TX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, bool, O>;
 #[doc = "Field `tx_trig` reader - "]
 pub type TX_TRIG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `tx_trig` writer - "]
-pub type TX_TRIG_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 6, 0>;
+pub type TX_TRIG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_DMA_CFG_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 23:24"]
     #[inline(always)]
@@ -75,22 +78,22 @@ impl R {
 impl W {
     #[doc = "Bits 23:24"]
     #[inline(always)]
-    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W {
+    pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<23> {
         DMA_RX_EN_W::new(self)
     }
     #[doc = "Bits 16:21"]
     #[inline(always)]
-    pub fn rx_trig(&mut self) -> RX_TRIG_W {
+    pub fn rx_trig(&mut self) -> RX_TRIG_W<16> {
         RX_TRIG_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W {
+    pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<8> {
         DMA_TX_EN_W::new(self)
     }
     #[doc = "Bits 0:5"]
     #[inline(always)]
-    pub fn tx_trig(&mut self) -> TX_TRIG_W {
+    pub fn tx_trig(&mut self) -> TX_TRIG_W<0> {
         TX_TRIG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -81,8 +81,8 @@ impl FUNCTION_R {
     }
 }
 #[doc = "Field `function` writer - UART Function: Select IrDA or RS485"]
-pub type FUNCTION_W<'a> = crate::FieldWriter<'a, u32, MCR_SPEC, u8, FUNCTION_A, 2, 6>;
-impl<'a> FUNCTION_W<'a> {
+pub type FUNCTION_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCR_SPEC, u8, FUNCTION_A, 2, O>;
+impl<'a, const O: u8> FUNCTION_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn uart(self) -> &'a mut W {
@@ -136,8 +136,8 @@ impl AFCE_R {
     }
 }
 #[doc = "Field `afce` writer - Auto Flow Control Enable"]
-pub type AFCE_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, AFCE_A, 5>;
-impl<'a> AFCE_W<'a> {
+pub type AFCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCR_SPEC, AFCE_A, O>;
+impl<'a, const O: u8> AFCE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -186,8 +186,8 @@ impl LOOP_R {
     }
 }
 #[doc = "Field `loop` writer - Loop Back Mode"]
-pub type LOOP_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, LOOP_A, 4>;
-impl<'a> LOOP_W<'a> {
+pub type LOOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCR_SPEC, LOOP_A, O>;
+impl<'a, const O: u8> LOOP_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -236,8 +236,8 @@ impl RTS_R {
     }
 }
 #[doc = "Field `rts` writer - Request to Send"]
-pub type RTS_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, RTS_A, 1>;
-impl<'a> RTS_W<'a> {
+pub type RTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCR_SPEC, RTS_A, O>;
+impl<'a, const O: u8> RTS_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn deasserted(self) -> &'a mut W {
@@ -286,8 +286,8 @@ impl DTR_R {
     }
 }
 #[doc = "Field `dtr` writer - Data Terminal Ready"]
-pub type DTR_W<'a> = crate::BitWriter<'a, u32, MCR_SPEC, DTR_A, 0>;
-impl<'a> DTR_W<'a> {
+pub type DTR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MCR_SPEC, DTR_A, O>;
+impl<'a, const O: u8> DTR_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn deasserted(self) -> &'a mut W {
@@ -329,27 +329,27 @@ impl R {
 impl W {
     #[doc = "Bits 6:7 - UART Function: Select IrDA or RS485"]
     #[inline(always)]
-    pub fn function(&mut self) -> FUNCTION_W {
+    pub fn function(&mut self) -> FUNCTION_W<6> {
         FUNCTION_W::new(self)
     }
     #[doc = "Bit 5 - Auto Flow Control Enable"]
     #[inline(always)]
-    pub fn afce(&mut self) -> AFCE_W {
+    pub fn afce(&mut self) -> AFCE_W<5> {
         AFCE_W::new(self)
     }
     #[doc = "Bit 4 - Loop Back Mode"]
     #[inline(always)]
-    pub fn loop_(&mut self) -> LOOP_W {
+    pub fn loop_(&mut self) -> LOOP_W<4> {
         LOOP_W::new(self)
     }
     #[doc = "Bit 1 - Request to Send"]
     #[inline(always)]
-    pub fn rts(&mut self) -> RTS_W {
+    pub fn rts(&mut self) -> RTS_W<1> {
         RTS_W::new(self)
     }
     #[doc = "Bit 0 - Data Terminal Ready"]
     #[inline(always)]
-    pub fn dtr(&mut self) -> DTR_W {
+    pub fn dtr(&mut self) -> DTR_W<0> {
         DTR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

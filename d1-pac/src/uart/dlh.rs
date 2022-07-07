@@ -37,7 +37,7 @@ impl From<crate::W<DLH_SPEC>> for W {
 #[doc = "Field `dlh` reader - "]
 pub type DLH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dlh` writer - "]
-pub type DLH_W<'a> = crate::FieldWriter<'a, u32, DLH_SPEC, u8, u8, 8, 0>;
+pub type DLH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DLH_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    pub fn dlh(&mut self) -> DLH_W {
+    pub fn dlh(&mut self) -> DLH_W<0> {
         DLH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

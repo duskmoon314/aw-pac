@@ -71,8 +71,8 @@ impl SS_INT_EN_R {
     }
 }
 #[doc = "Field `ss_int_en` writer - SSI Interrupt Enable"]
-pub type SS_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, SS_INT_EN_A, 13>;
-impl<'a> SS_INT_EN_W<'a> {
+pub type SS_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_IER_SPEC, SS_INT_EN_A, O>;
+impl<'a, const O: u8> SS_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl TC_INT_EN_R {
     }
 }
 #[doc = "Field `tc_int_en` writer - Transfer Completed Interrupt Enable"]
-pub type TC_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TC_INT_EN_A, 12>;
-impl<'a> TC_INT_EN_W<'a> {
+pub type TC_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TC_INT_EN_A, O>;
+impl<'a, const O: u8> TC_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -171,8 +171,9 @@ impl TF_UDR_INT_EN_R {
     }
 }
 #[doc = "Field `tf_udr_int_en` writer - TXFIFO Underrun Interrupt Enable"]
-pub type TF_UDR_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_UDR_INT_EN_A, 11>;
-impl<'a> TF_UDR_INT_EN_W<'a> {
+pub type TF_UDR_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_UDR_INT_EN_A, O>;
+impl<'a, const O: u8> TF_UDR_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -221,8 +222,9 @@ impl TF_OVF_INT_EN_R {
     }
 }
 #[doc = "Field `tf_ovf_int_en` writer - TXFIFO Overflow Interrupt Enable"]
-pub type TF_OVF_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_OVF_INT_EN_A, 10>;
-impl<'a> TF_OVF_INT_EN_W<'a> {
+pub type TF_OVF_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_OVF_INT_EN_A, O>;
+impl<'a, const O: u8> TF_OVF_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -271,8 +273,9 @@ impl RF_UDR_INT_EN_R {
     }
 }
 #[doc = "Field `rf_udr_int_en` writer - RXFIFO Underrun Interrupt Enable"]
-pub type RF_UDR_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_UDR_INT_EN_A, 9>;
-impl<'a> RF_UDR_INT_EN_W<'a> {
+pub type RF_UDR_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_UDR_INT_EN_A, O>;
+impl<'a, const O: u8> RF_UDR_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -321,8 +324,9 @@ impl RF_OVF_INT_EN_R {
     }
 }
 #[doc = "Field `rf_ovf_int_en` writer - RXFIFO Overflow Interrupt Enable"]
-pub type RF_OVF_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_OVF_INT_EN_A, 8>;
-impl<'a> RF_OVF_INT_EN_W<'a> {
+pub type RF_OVF_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_OVF_INT_EN_A, O>;
+impl<'a, const O: u8> RF_OVF_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -371,8 +375,9 @@ impl TF_FULL_INT_EN_R {
     }
 }
 #[doc = "Field `tf_full_int_en` writer - TXFIFO Full Interrupt Enable"]
-pub type TF_FULL_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_FULL_INT_EN_A, 6>;
-impl<'a> TF_FULL_INT_EN_W<'a> {
+pub type TF_FULL_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_FULL_INT_EN_A, O>;
+impl<'a, const O: u8> TF_FULL_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -421,8 +426,9 @@ impl TF_EMP_INT_EN_R {
     }
 }
 #[doc = "Field `tf_emp_int_en` writer - TXFIFO Empty Interrupt Enable"]
-pub type TF_EMP_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_EMP_INT_EN_A, 5>;
-impl<'a> TF_EMP_INT_EN_W<'a> {
+pub type TF_EMP_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_EMP_INT_EN_A, O>;
+impl<'a, const O: u8> TF_EMP_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -471,8 +477,9 @@ impl TF_ERQ_INT_EN_R {
     }
 }
 #[doc = "Field `tf_erq_int_en` writer - TXFIFO Empty Request Interrupt Enable"]
-pub type TF_ERQ_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_ERQ_INT_EN_A, 4>;
-impl<'a> TF_ERQ_INT_EN_W<'a> {
+pub type TF_ERQ_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, TF_ERQ_INT_EN_A, O>;
+impl<'a, const O: u8> TF_ERQ_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -521,8 +528,9 @@ impl RF_FULL_INT_EN_R {
     }
 }
 #[doc = "Field `rf_full_int_en` writer - RXFIFO Full Interrupt Enable"]
-pub type RF_FULL_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_FULL_INT_EN_A, 2>;
-impl<'a> RF_FULL_INT_EN_W<'a> {
+pub type RF_FULL_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_FULL_INT_EN_A, O>;
+impl<'a, const O: u8> RF_FULL_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -571,8 +579,9 @@ impl RF_EMP_INT_EN_R {
     }
 }
 #[doc = "Field `rf_emp_int_en` writer - RXFIFO Empty Interrupt Enable"]
-pub type RF_EMP_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_EMP_INT_EN_A, 1>;
-impl<'a> RF_EMP_INT_EN_W<'a> {
+pub type RF_EMP_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_EMP_INT_EN_A, O>;
+impl<'a, const O: u8> RF_EMP_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -621,8 +630,9 @@ impl RF_RDY_INT_EN_R {
     }
 }
 #[doc = "Field `rf_rdy_int_en` writer - RXFIFO Ready Request Interrupt Enable"]
-pub type RF_RDY_INT_EN_W<'a> = crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_RDY_INT_EN_A, 0>;
-impl<'a> RF_RDY_INT_EN_W<'a> {
+pub type RF_RDY_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_IER_SPEC, RF_RDY_INT_EN_A, O>;
+impl<'a, const O: u8> RF_RDY_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -699,62 +709,62 @@ impl R {
 impl W {
     #[doc = "Bit 13 - SSI Interrupt Enable"]
     #[inline(always)]
-    pub fn ss_int_en(&mut self) -> SS_INT_EN_W {
+    pub fn ss_int_en(&mut self) -> SS_INT_EN_W<13> {
         SS_INT_EN_W::new(self)
     }
     #[doc = "Bit 12 - Transfer Completed Interrupt Enable"]
     #[inline(always)]
-    pub fn tc_int_en(&mut self) -> TC_INT_EN_W {
+    pub fn tc_int_en(&mut self) -> TC_INT_EN_W<12> {
         TC_INT_EN_W::new(self)
     }
     #[doc = "Bit 11 - TXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
-    pub fn tf_udr_int_en(&mut self) -> TF_UDR_INT_EN_W {
+    pub fn tf_udr_int_en(&mut self) -> TF_UDR_INT_EN_W<11> {
         TF_UDR_INT_EN_W::new(self)
     }
     #[doc = "Bit 10 - TXFIFO Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn tf_ovf_int_en(&mut self) -> TF_OVF_INT_EN_W {
+    pub fn tf_ovf_int_en(&mut self) -> TF_OVF_INT_EN_W<10> {
         TF_OVF_INT_EN_W::new(self)
     }
     #[doc = "Bit 9 - RXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
-    pub fn rf_udr_int_en(&mut self) -> RF_UDR_INT_EN_W {
+    pub fn rf_udr_int_en(&mut self) -> RF_UDR_INT_EN_W<9> {
         RF_UDR_INT_EN_W::new(self)
     }
     #[doc = "Bit 8 - RXFIFO Overflow Interrupt Enable"]
     #[inline(always)]
-    pub fn rf_ovf_int_en(&mut self) -> RF_OVF_INT_EN_W {
+    pub fn rf_ovf_int_en(&mut self) -> RF_OVF_INT_EN_W<8> {
         RF_OVF_INT_EN_W::new(self)
     }
     #[doc = "Bit 6 - TXFIFO Full Interrupt Enable"]
     #[inline(always)]
-    pub fn tf_full_int_en(&mut self) -> TF_FULL_INT_EN_W {
+    pub fn tf_full_int_en(&mut self) -> TF_FULL_INT_EN_W<6> {
         TF_FULL_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - TXFIFO Empty Interrupt Enable"]
     #[inline(always)]
-    pub fn tf_emp_int_en(&mut self) -> TF_EMP_INT_EN_W {
+    pub fn tf_emp_int_en(&mut self) -> TF_EMP_INT_EN_W<5> {
         TF_EMP_INT_EN_W::new(self)
     }
     #[doc = "Bit 4 - TXFIFO Empty Request Interrupt Enable"]
     #[inline(always)]
-    pub fn tf_erq_int_en(&mut self) -> TF_ERQ_INT_EN_W {
+    pub fn tf_erq_int_en(&mut self) -> TF_ERQ_INT_EN_W<4> {
         TF_ERQ_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - RXFIFO Full Interrupt Enable"]
     #[inline(always)]
-    pub fn rf_full_int_en(&mut self) -> RF_FULL_INT_EN_W {
+    pub fn rf_full_int_en(&mut self) -> RF_FULL_INT_EN_W<2> {
         RF_FULL_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - RXFIFO Empty Interrupt Enable"]
     #[inline(always)]
-    pub fn rf_emp_int_en(&mut self) -> RF_EMP_INT_EN_W {
+    pub fn rf_emp_int_en(&mut self) -> RF_EMP_INT_EN_W<1> {
         RF_EMP_INT_EN_W::new(self)
     }
     #[doc = "Bit 0 - RXFIFO Ready Request Interrupt Enable"]
     #[inline(always)]
-    pub fn rf_rdy_int_en(&mut self) -> RF_RDY_INT_EN_W {
+    pub fn rf_rdy_int_en(&mut self) -> RF_RDY_INT_EN_W<0> {
         RF_RDY_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

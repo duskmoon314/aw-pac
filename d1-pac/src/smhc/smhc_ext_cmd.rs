@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_EXT_CMD_SPEC>> for W {
 #[doc = "Field `AUTO_CMD23_EN` reader - Send CMD23 Automatically"]
 pub type AUTO_CMD23_EN_R = crate::BitReader<bool>;
 #[doc = "Field `AUTO_CMD23_EN` writer - Send CMD23 Automatically"]
-pub type AUTO_CMD23_EN_W<'a> = crate::BitWriter<'a, u32, SMHC_EXT_CMD_SPEC, bool, 0>;
+pub type AUTO_CMD23_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_EXT_CMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Send CMD23 Automatically"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Send CMD23 Automatically"]
     #[inline(always)]
-    pub fn auto_cmd23_en(&mut self) -> AUTO_CMD23_EN_W {
+    pub fn auto_cmd23_en(&mut self) -> AUTO_CMD23_EN_W<0> {
         AUTO_CMD23_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

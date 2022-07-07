@@ -34,7 +34,210 @@ impl From<crate::W<RTC_VIO_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "VDD Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum V_SEL_A {
+    #[doc = "0: Resistance divider"]
+    RESISTANCE = 0,
+    #[doc = "1: Band gap"]
+    BAND = 1,
+}
+impl From<V_SEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: V_SEL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `V_SEL` reader - VDD Select"]
+pub type V_SEL_R = crate::BitReader<V_SEL_A>;
+impl V_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> V_SEL_A {
+        match self.bits {
+            false => V_SEL_A::RESISTANCE,
+            true => V_SEL_A::BAND,
+        }
+    }
+    #[doc = "Checks if the value of the field is `RESISTANCE`"]
+    #[inline(always)]
+    pub fn is_resistance(&self) -> bool {
+        *self == V_SEL_A::RESISTANCE
+    }
+    #[doc = "Checks if the value of the field is `BAND`"]
+    #[inline(always)]
+    pub fn is_band(&self) -> bool {
+        *self == V_SEL_A::BAND
+    }
+}
+#[doc = "Field `V_SEL` writer - VDD Select"]
+pub type V_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, RTC_VIO_REG_SPEC, V_SEL_A, O>;
+impl<'a, const O: u8> V_SEL_W<'a, O> {
+    #[doc = "Resistance divider"]
+    #[inline(always)]
+    pub fn resistance(self) -> &'a mut W {
+        self.variant(V_SEL_A::RESISTANCE)
+    }
+    #[doc = "Band gap"]
+    #[inline(always)]
+    pub fn band(self) -> &'a mut W {
+        self.variant(V_SEL_A::BAND)
+    }
+}
+#[doc = "RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V.\n\nValue on reset: 4"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum RTC_VIO_REGU_A {
+    #[doc = "0: 1.0 V"]
+    V_1_0 = 0,
+    #[doc = "1: 0.65 V (the configuration can cause RTC reset)"]
+    V_0_65 = 1,
+    #[doc = "2: 0.7 V"]
+    V_0_7 = 2,
+    #[doc = "3: 0.8 V"]
+    V_0_8 = 3,
+    #[doc = "4: 0.9 V"]
+    V_0_9 = 4,
+    #[doc = "5: 1.1 V"]
+    V_1_1 = 5,
+    #[doc = "6: 1.2 V"]
+    V_1_2 = 6,
+    #[doc = "7: 1.3 V"]
+    V_1_3 = 7,
+}
+impl From<RTC_VIO_REGU_A> for u8 {
+    #[inline(always)]
+    fn from(variant: RTC_VIO_REGU_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `RTC_VIO_REGU` reader - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
+pub type RTC_VIO_REGU_R = crate::FieldReader<u8, RTC_VIO_REGU_A>;
+impl RTC_VIO_REGU_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RTC_VIO_REGU_A {
+        match self.bits {
+            0 => RTC_VIO_REGU_A::V_1_0,
+            1 => RTC_VIO_REGU_A::V_0_65,
+            2 => RTC_VIO_REGU_A::V_0_7,
+            3 => RTC_VIO_REGU_A::V_0_8,
+            4 => RTC_VIO_REGU_A::V_0_9,
+            5 => RTC_VIO_REGU_A::V_1_1,
+            6 => RTC_VIO_REGU_A::V_1_2,
+            7 => RTC_VIO_REGU_A::V_1_3,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `V_1_0`"]
+    #[inline(always)]
+    pub fn is_v_1_0(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_1_0
+    }
+    #[doc = "Checks if the value of the field is `V_0_65`"]
+    #[inline(always)]
+    pub fn is_v_0_65(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_0_65
+    }
+    #[doc = "Checks if the value of the field is `V_0_7`"]
+    #[inline(always)]
+    pub fn is_v_0_7(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_0_7
+    }
+    #[doc = "Checks if the value of the field is `V_0_8`"]
+    #[inline(always)]
+    pub fn is_v_0_8(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_0_8
+    }
+    #[doc = "Checks if the value of the field is `V_0_9`"]
+    #[inline(always)]
+    pub fn is_v_0_9(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_0_9
+    }
+    #[doc = "Checks if the value of the field is `V_1_1`"]
+    #[inline(always)]
+    pub fn is_v_1_1(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_1_1
+    }
+    #[doc = "Checks if the value of the field is `V_1_2`"]
+    #[inline(always)]
+    pub fn is_v_1_2(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_1_2
+    }
+    #[doc = "Checks if the value of the field is `V_1_3`"]
+    #[inline(always)]
+    pub fn is_v_1_3(&self) -> bool {
+        *self == RTC_VIO_REGU_A::V_1_3
+    }
+}
+#[doc = "Field `RTC_VIO_REGU` writer - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
+pub type RTC_VIO_REGU_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, RTC_VIO_REG_SPEC, u8, RTC_VIO_REGU_A, 3, O>;
+impl<'a, const O: u8> RTC_VIO_REGU_W<'a, O> {
+    #[doc = "1.0 V"]
+    #[inline(always)]
+    pub fn v_1_0(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_1_0)
+    }
+    #[doc = "0.65 V (the configuration can cause RTC reset)"]
+    #[inline(always)]
+    pub fn v_0_65(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_0_65)
+    }
+    #[doc = "0.7 V"]
+    #[inline(always)]
+    pub fn v_0_7(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_0_7)
+    }
+    #[doc = "0.8 V"]
+    #[inline(always)]
+    pub fn v_0_8(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_0_8)
+    }
+    #[doc = "0.9 V"]
+    #[inline(always)]
+    pub fn v_0_9(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_0_9)
+    }
+    #[doc = "1.1 V"]
+    #[inline(always)]
+    pub fn v_1_1(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_1_1)
+    }
+    #[doc = "1.2 V"]
+    #[inline(always)]
+    pub fn v_1_2(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_1_2)
+    }
+    #[doc = "1.3 V"]
+    #[inline(always)]
+    pub fn v_1_3(self) -> &'a mut W {
+        self.variant(RTC_VIO_REGU_A::V_1_3)
+    }
+}
+impl R {
+    #[doc = "Bit 4 - VDD Select"]
+    #[inline(always)]
+    pub fn v_sel(&self) -> V_SEL_R {
+        V_SEL_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bits 0:2 - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
+    #[inline(always)]
+    pub fn rtc_vio_regu(&self) -> RTC_VIO_REGU_R {
+        RTC_VIO_REGU_R::new((self.bits & 7) as u8)
+    }
+}
 impl W {
+    #[doc = "Bit 4 - VDD Select"]
+    #[inline(always)]
+    pub fn v_sel(&mut self) -> V_SEL_W<4> {
+        V_SEL_W::new(self)
+    }
+    #[doc = "Bits 0:2 - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
+    #[inline(always)]
+    pub fn rtc_vio_regu(&mut self) -> RTC_VIO_REGU_W<0> {
+        RTC_VIO_REGU_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +258,10 @@ impl crate::Readable for RTC_VIO_REG_SPEC {
 impl crate::Writable for RTC_VIO_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RTC_VIO_REG to value 0"]
+#[doc = "`reset()` method sets RTC_VIO_REG to value 0x04"]
 impl crate::Resettable for RTC_VIO_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x04
     }
 }

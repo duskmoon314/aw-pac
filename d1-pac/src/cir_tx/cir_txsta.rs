@@ -109,8 +109,8 @@ impl TAI_R {
     }
 }
 #[doc = "Field `TAI` writer - TX FIFO Available Interrupt Flag"]
-pub type TAI_W<'a> = crate::BitWriter<'a, u32, CIR_TXSTA_SPEC, TAI_A, 1>;
-impl<'a> TAI_W<'a> {
+pub type TAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXSTA_SPEC, TAI_A, O>;
+impl<'a, const O: u8> TAI_W<'a, O> {
     #[doc = "TX FIFO not available by its level"]
     #[inline(always)]
     pub fn not_available(self) -> &'a mut W {
@@ -159,8 +159,8 @@ impl TPE_TUR_R {
     }
 }
 #[doc = "Field `TPE_TUR` writer - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
-pub type TPE_TUR_W<'a> = crate::BitWriter1C<'a, u32, CIR_TXSTA_SPEC, TPE_TUR_A, 0>;
-impl<'a> TPE_TUR_W<'a> {
+pub type TPE_TUR_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_TXSTA_SPEC, TPE_TUR_A, O>;
+impl<'a, const O: u8> TPE_TUR_W<'a, O> {
     #[doc = "Transmissions of address, control and data fields not completed / No transmitter FIFO underrun"]
     #[inline(always)]
     pub fn not_complete_or_transmit(self) -> &'a mut W {
@@ -197,12 +197,12 @@ impl R {
 impl W {
     #[doc = "Bit 1 - TX FIFO Available Interrupt Flag"]
     #[inline(always)]
-    pub fn tai(&mut self) -> TAI_W {
+    pub fn tai(&mut self) -> TAI_W<1> {
         TAI_W::new(self)
     }
     #[doc = "Bit 0 - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
     #[inline(always)]
-    pub fn tpe_tur(&mut self) -> TPE_TUR_W {
+    pub fn tpe_tur(&mut self) -> TPE_TUR_W<0> {
         TPE_TUR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -107,9 +107,9 @@ impl OHCI_COUNT_SELECT_R {
     }
 }
 #[doc = "Field `OHCI_COUNT_SELECT` writer - OHCI count select"]
-pub type OHCI_COUNT_SELECT_W<'a> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, OHCI_COUNT_SELECT_A, 25>;
-impl<'a> OHCI_COUNT_SELECT_W<'a> {
+pub type OHCI_COUNT_SELECT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, OHCI_COUNT_SELECT_A, O>;
+impl<'a, const O: u8> OHCI_COUNT_SELECT_W<'a, O> {
     #[doc = "Simulation mode. The counters will be much shorter then real time"]
     #[inline(always)]
     pub fn simulation(self) -> &'a mut W {
@@ -158,9 +158,9 @@ impl RESUME_K_TO_SE0_TRANSITION_R {
     }
 }
 #[doc = "Field `RESUME_K_TO_SE0_TRANSITION` writer - "]
-pub type RESUME_K_TO_SE0_TRANSITION_W<'a> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, RESUME_K_TO_SE0_TRANSITION_A, 18>;
-impl<'a> RESUME_K_TO_SE0_TRANSITION_W<'a> {
+pub type RESUME_K_TO_SE0_TRANSITION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, RESUME_K_TO_SE0_TRANSITION_A, O>;
+impl<'a, const O: u8> RESUME_K_TO_SE0_TRANSITION_W<'a, O> {
     #[doc = "Within 2 us of the resume-K to SE0 transition"]
     #[inline(always)]
     pub fn within_2us(self) -> &'a mut W {
@@ -209,8 +209,8 @@ impl PP2VBUS_R {
     }
 }
 #[doc = "Field `PP2VBUS` writer - "]
-pub type PP2VBUS_W<'a> = crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, PP2VBUS_A, 12>;
-impl<'a> PP2VBUS_W<'a> {
+pub type PP2VBUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, PP2VBUS_A, O>;
+impl<'a, const O: u8> PP2VBUS_W<'a, O> {
     #[doc = "ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub"]
     #[inline(always)]
     pub fn auto(self) -> &'a mut W {
@@ -260,9 +260,9 @@ impl AHB_MASTER_INTERFACE_INCR16_ENABLE_R {
     }
 }
 #[doc = "Field `AHB_MASTER_INTERFACE_INCR16_ENABLE` writer - Master interface INCR16 enable"]
-pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR16_ENABLE_A, 11>;
-impl<'a> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a> {
+pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR16_ENABLE_A, O>;
+impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, O> {
     #[doc = "Use INCR16 when appropriate"]
     #[inline(always)]
     pub fn use_incr16(self) -> &'a mut W {
@@ -312,9 +312,9 @@ impl AHB_MASTER_INTERFACE_INCR8_ENABLE_R {
     }
 }
 #[doc = "Field `AHB_MASTER_INTERFACE_INCR8_ENABLE` writer - Master interface INCR8 enable"]
-pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR8_ENABLE_A, 10>;
-impl<'a> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a> {
+pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR8_ENABLE_A, O>;
+impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, O> {
     #[doc = "Use INCR8 when appropriate"]
     #[inline(always)]
     pub fn use_incr8(self) -> &'a mut W {
@@ -364,14 +364,14 @@ impl AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R {
     }
 }
 #[doc = "Field `AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE` writer - Master interface burst type INCR4 enable"]
-pub type AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<'a> = crate::BitWriter<
+pub type AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<'a, const O: u8> = crate::BitWriter<
     'a,
     u32,
     HCI_INTERFACE_SPEC,
     AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A,
-    9,
+    O,
 >;
-impl<'a> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<'a> {
+impl<'a, const O: u8> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<'a, O> {
     #[doc = "Use INCR4 when appropriate"]
     #[inline(always)]
     pub fn use_incr4(self) -> &'a mut W {
@@ -422,9 +422,9 @@ impl AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R {
     }
 }
 #[doc = "Field `AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE` writer - Master interface INCRX align enable"]
-pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A, 8>;
-impl<'a> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a> {
+pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A, O>;
+impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, O> {
     #[doc = "Start INCRx burst only on burst x-align address"]
     #[inline(always)]
     pub fn burst_x_align_address(self) -> &'a mut W {
@@ -474,9 +474,9 @@ impl ULPI_BYPASS_ENABLE_R {
     }
 }
 #[doc = "Field `ULPI_BYPASS_ENABLE` writer - ULPI bypass enable"]
-pub type ULPI_BYPASS_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, ULPI_BYPASS_ENABLE_A, 0>;
-impl<'a> ULPI_BYPASS_ENABLE_W<'a> {
+pub type ULPI_BYPASS_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, ULPI_BYPASS_ENABLE_A, O>;
+impl<'a, const O: u8> ULPI_BYPASS_ENABLE_W<'a, O> {
     #[doc = "Enable UTMI interface, disable ULPI interface"]
     #[inline(always)]
     pub fn utmi(self) -> &'a mut W {
@@ -542,46 +542,48 @@ impl R {
 impl W {
     #[doc = "Bit 25 - OHCI count select"]
     #[inline(always)]
-    pub fn ohci_count_select(&mut self) -> OHCI_COUNT_SELECT_W {
+    pub fn ohci_count_select(&mut self) -> OHCI_COUNT_SELECT_W<25> {
         OHCI_COUNT_SELECT_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
-    pub fn resume_k_to_se0_transition(&mut self) -> RESUME_K_TO_SE0_TRANSITION_W {
+    pub fn resume_k_to_se0_transition(&mut self) -> RESUME_K_TO_SE0_TRANSITION_W<18> {
         RESUME_K_TO_SE0_TRANSITION_W::new(self)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
-    pub fn pp2vbus(&mut self) -> PP2VBUS_W {
+    pub fn pp2vbus(&mut self) -> PP2VBUS_W<12> {
         PP2VBUS_W::new(self)
     }
     #[doc = "Bit 11 - Master interface INCR16 enable"]
     #[inline(always)]
-    pub fn ahb_master_interface_incr16_enable(&mut self) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_W {
+    pub fn ahb_master_interface_incr16_enable(
+        &mut self,
+    ) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<11> {
         AHB_MASTER_INTERFACE_INCR16_ENABLE_W::new(self)
     }
     #[doc = "Bit 10 - Master interface INCR8 enable"]
     #[inline(always)]
-    pub fn ahb_master_interface_incr8_enable(&mut self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_W {
+    pub fn ahb_master_interface_incr8_enable(&mut self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<10> {
         AHB_MASTER_INTERFACE_INCR8_ENABLE_W::new(self)
     }
     #[doc = "Bit 9 - Master interface burst type INCR4 enable"]
     #[inline(always)]
     pub fn ahb_master_interface_burst_type_incr4_enable(
         &mut self,
-    ) -> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W {
+    ) -> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<9> {
         AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W::new(self)
     }
     #[doc = "Bit 8 - Master interface INCRX align enable"]
     #[inline(always)]
     pub fn ahb_master_interface_incrx_align_enable(
         &mut self,
-    ) -> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W {
+    ) -> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<8> {
         AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W::new(self)
     }
     #[doc = "Bit 0 - ULPI bypass enable"]
     #[inline(always)]
-    pub fn ulpi_bypass_enable(&mut self) -> ULPI_BYPASS_ENABLE_W {
+    pub fn ulpi_bypass_enable(&mut self) -> ULPI_BYPASS_ENABLE_W<0> {
         ULPI_BYPASS_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

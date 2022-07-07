@@ -37,7 +37,7 @@ impl From<crate::W<MCLAIM_SPEC>> for W {
 #[doc = "Field `mclaim` reader - "]
 pub type MCLAIM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `mclaim` writer - "]
-pub type MCLAIM_W<'a> = crate::FieldWriter<'a, u32, MCLAIM_SPEC, u16, u16, 10, 0>;
+pub type MCLAIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCLAIM_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 0:9"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:9"]
     #[inline(always)]
-    pub fn mclaim(&mut self) -> MCLAIM_W {
+    pub fn mclaim(&mut self) -> MCLAIM_W<0> {
         MCLAIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

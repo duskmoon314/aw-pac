@@ -37,11 +37,11 @@ impl From<crate::W<SMHC_TMOUT_SPEC>> for W {
 #[doc = "Field `DTO_LMT` reader - Data Iimeout Limit"]
 pub type DTO_LMT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DTO_LMT` writer - Data Iimeout Limit"]
-pub type DTO_LMT_W<'a> = crate::FieldWriter<'a, u32, SMHC_TMOUT_SPEC, u32, u32, 24, 8>;
+pub type DTO_LMT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_TMOUT_SPEC, u32, u32, 24, O>;
 #[doc = "Field `RTO_LMT` reader - Response Timeout Limit"]
 pub type RTO_LMT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RTO_LMT` writer - Response Timeout Limit"]
-pub type RTO_LMT_W<'a> = crate::FieldWriter<'a, u32, SMHC_TMOUT_SPEC, u8, u8, 8, 0>;
+pub type RTO_LMT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_TMOUT_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 8:31 - Data Iimeout Limit"]
     #[inline(always)]
@@ -57,12 +57,12 @@ impl R {
 impl W {
     #[doc = "Bits 8:31 - Data Iimeout Limit"]
     #[inline(always)]
-    pub fn dto_lmt(&mut self) -> DTO_LMT_W {
+    pub fn dto_lmt(&mut self) -> DTO_LMT_W<8> {
         DTO_LMT_W::new(self)
     }
     #[doc = "Bits 0:7 - Response Timeout Limit"]
     #[inline(always)]
-    pub fn rto_lmt(&mut self) -> RTO_LMT_W {
+    pub fn rto_lmt(&mut self) -> RTO_LMT_W<0> {
         RTO_LMT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

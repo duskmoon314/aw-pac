@@ -71,8 +71,9 @@ impl SHUT_INT_STS_R {
     }
 }
 #[doc = "Field `SHUT_INT_STS` writer - Indicates the pending status of the sensor's shutdown interrupt.\n\nWrite 1 to clear the pending status."]
-pub type SHUT_INT_STS_W<'a> = crate::BitWriter1C<'a, u32, THS_SHUT_INTS_SPEC, SHUT_INT_STS_A, 0>;
-impl<'a> SHUT_INT_STS_W<'a> {
+pub type SHUT_INT_STS_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, THS_SHUT_INTS_SPEC, SHUT_INT_STS_A, O>;
+impl<'a, const O: u8> SHUT_INT_STS_W<'a, O> {
     #[doc = "No effect"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -94,7 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Indicates the pending status of the sensor's shutdown interrupt.\n\nWrite 1 to clear the pending status."]
     #[inline(always)]
-    pub fn shut_int_sts(&mut self) -> SHUT_INT_STS_W {
+    pub fn shut_int_sts(&mut self) -> SHUT_INT_STS_W<0> {
         SHUT_INT_STS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -20,11 +20,11 @@ impl From<crate::W<THR_SPEC>> for W {
     }
 }
 #[doc = "Field `thr` writer - "]
-pub type THR_W<'a> = crate::FieldWriter<'a, u32, THR_SPEC, u8, u8, 8, 0>;
+pub type THR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, THR_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    pub fn thr(&mut self) -> THR_W {
+    pub fn thr(&mut self) -> THR_W<0> {
         THR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

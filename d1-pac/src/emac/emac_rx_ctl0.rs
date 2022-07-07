@@ -71,8 +71,8 @@ impl RX_EN_R {
     }
 }
 #[doc = "Field `RX_EN` writer - Enable Receiver"]
-pub type RX_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_EN_A, 31>;
-impl<'a> RX_EN_W<'a> {
+pub type RX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_EN_A, O>;
+impl<'a, const O: u8> RX_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +121,9 @@ impl RX_FRM_LEN_CTL_R {
     }
 }
 #[doc = "Field `RX_FRM_LEN_CTL` writer - Frame Receive Length Control"]
-pub type RX_FRM_LEN_CTL_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_FRM_LEN_CTL_A, 30>;
-impl<'a> RX_FRM_LEN_CTL_W<'a> {
+pub type RX_FRM_LEN_CTL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_FRM_LEN_CTL_A, O>;
+impl<'a, const O: u8> RX_FRM_LEN_CTL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn b2048(self) -> &'a mut W {
@@ -171,8 +172,9 @@ impl JUMBO_FRM_EN_R {
     }
 }
 #[doc = "Field `JUMBO_FRM_EN` writer - Jumbo Frame Enable"]
-pub type JUMBO_FRM_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, JUMBO_FRM_EN_A, 29>;
-impl<'a> JUMBO_FRM_EN_W<'a> {
+pub type JUMBO_FRM_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, JUMBO_FRM_EN_A, O>;
+impl<'a, const O: u8> JUMBO_FRM_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -187,7 +189,7 @@ impl<'a> JUMBO_FRM_EN_W<'a> {
 #[doc = "Field `STRIP_FCS` reader - "]
 pub type STRIP_FCS_R = crate::BitReader<bool>;
 #[doc = "Field `STRIP_FCS` writer - "]
-pub type STRIP_FCS_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, 28>;
+pub type STRIP_FCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, O>;
 #[doc = "Check CRC Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CHECK_CRC_A {
@@ -225,8 +227,9 @@ impl CHECK_CRC_R {
     }
 }
 #[doc = "Field `CHECK_CRC` writer - Check CRC Enable"]
-pub type CHECK_CRC_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, CHECK_CRC_A, 27>;
-impl<'a> CHECK_CRC_W<'a> {
+pub type CHECK_CRC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, CHECK_CRC_A, O>;
+impl<'a, const O: u8> CHECK_CRC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -275,9 +278,9 @@ impl RX_PAUSE_FRM_MD_R {
     }
 }
 #[doc = "Field `RX_PAUSE_FRM_MD` writer - "]
-pub type RX_PAUSE_FRM_MD_W<'a> =
-    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_PAUSE_FRM_MD_A, 17>;
-impl<'a> RX_PAUSE_FRM_MD_W<'a> {
+pub type RX_PAUSE_FRM_MD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_PAUSE_FRM_MD_A, O>;
+impl<'a, const O: u8> RX_PAUSE_FRM_MD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn only_multicast(self) -> &'a mut W {
@@ -292,7 +295,7 @@ impl<'a> RX_PAUSE_FRM_MD_W<'a> {
 #[doc = "Field `RX_FLOW_CTL_EN` reader - "]
 pub type RX_FLOW_CTL_EN_R = crate::BitReader<bool>;
 #[doc = "Field `RX_FLOW_CTL_EN` writer - "]
-pub type RX_FLOW_CTL_EN_W<'a> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, 16>;
+pub type RX_FLOW_CTL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 31 - Enable Receiver"]
     #[inline(always)]
@@ -333,37 +336,37 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Enable Receiver"]
     #[inline(always)]
-    pub fn rx_en(&mut self) -> RX_EN_W {
+    pub fn rx_en(&mut self) -> RX_EN_W<31> {
         RX_EN_W::new(self)
     }
     #[doc = "Bit 30 - Frame Receive Length Control"]
     #[inline(always)]
-    pub fn rx_frm_len_ctl(&mut self) -> RX_FRM_LEN_CTL_W {
+    pub fn rx_frm_len_ctl(&mut self) -> RX_FRM_LEN_CTL_W<30> {
         RX_FRM_LEN_CTL_W::new(self)
     }
     #[doc = "Bit 29 - Jumbo Frame Enable"]
     #[inline(always)]
-    pub fn jumbo_frm_en(&mut self) -> JUMBO_FRM_EN_W {
+    pub fn jumbo_frm_en(&mut self) -> JUMBO_FRM_EN_W<29> {
         JUMBO_FRM_EN_W::new(self)
     }
     #[doc = "Bit 28"]
     #[inline(always)]
-    pub fn strip_fcs(&mut self) -> STRIP_FCS_W {
+    pub fn strip_fcs(&mut self) -> STRIP_FCS_W<28> {
         STRIP_FCS_W::new(self)
     }
     #[doc = "Bit 27 - Check CRC Enable"]
     #[inline(always)]
-    pub fn check_crc(&mut self) -> CHECK_CRC_W {
+    pub fn check_crc(&mut self) -> CHECK_CRC_W<27> {
         CHECK_CRC_W::new(self)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
-    pub fn rx_pause_frm_md(&mut self) -> RX_PAUSE_FRM_MD_W {
+    pub fn rx_pause_frm_md(&mut self) -> RX_PAUSE_FRM_MD_W<17> {
         RX_PAUSE_FRM_MD_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
-    pub fn rx_flow_ctl_en(&mut self) -> RX_FLOW_CTL_EN_W {
+    pub fn rx_flow_ctl_en(&mut self) -> RX_FLOW_CTL_EN_W<16> {
         RX_FLOW_CTL_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

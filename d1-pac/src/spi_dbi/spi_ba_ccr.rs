@@ -37,7 +37,7 @@ impl From<crate::W<SPI_BA_CCR_SPEC>> for W {
 #[doc = "Field `cdr_n` reader - Clock Divide Rate"]
 pub type CDR_N_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `cdr_n` writer - Clock Divide Rate"]
-pub type CDR_N_W<'a> = crate::FieldWriter<'a, u32, SPI_BA_CCR_SPEC, u8, u8, 8, 0>;
+pub type CDR_N_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BA_CCR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Clock Divide Rate"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Clock Divide Rate"]
     #[inline(always)]
-    pub fn cdr_n(&mut self) -> CDR_N_W {
+    pub fn cdr_n(&mut self) -> CDR_N_W<0> {
         CDR_N_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

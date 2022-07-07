@@ -37,11 +37,12 @@ impl From<crate::W<RXDMA_CTRL_SPEC>> for W {
 #[doc = "Field `timeout_threshold` reader - RXDMA Timeout Threshold\n\nUnit is 1 UART bit time"]
 pub type TIMEOUT_THRESHOLD_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `timeout_threshold` writer - RXDMA Timeout Threshold\n\nUnit is 1 UART bit time"]
-pub type TIMEOUT_THRESHOLD_W<'a> = crate::FieldWriter<'a, u32, RXDMA_CTRL_SPEC, u16, u16, 16, 8>;
+pub type TIMEOUT_THRESHOLD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RXDMA_CTRL_SPEC, u16, u16, 16, O>;
 #[doc = "Field `timeout_enable` reader - RXDMA Timeout Enable"]
 pub type TIMEOUT_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `timeout_enable` writer - RXDMA Timeout Enable"]
-pub type TIMEOUT_ENABLE_W<'a> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, bool, 6>;
+pub type TIMEOUT_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, bool, O>;
 #[doc = "Set for AHB port burst supported\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -97,9 +98,9 @@ impl AHB_BURST_MODE_R {
     }
 }
 #[doc = "Field `ahb_burst_mode` writer - Set for AHB port burst supported"]
-pub type AHB_BURST_MODE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, RXDMA_CTRL_SPEC, u8, AHB_BURST_MODE_A, 2, 4>;
-impl<'a> AHB_BURST_MODE_W<'a> {
+pub type AHB_BURST_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, RXDMA_CTRL_SPEC, u8, AHB_BURST_MODE_A, 2, O>;
+impl<'a, const O: u8> AHB_BURST_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn single(self) -> &'a mut W {
@@ -176,8 +177,9 @@ impl BLK_SIZE_R {
     }
 }
 #[doc = "Field `blk_size` writer - "]
-pub type BLK_SIZE_W<'a> = crate::FieldWriterSafe<'a, u32, RXDMA_CTRL_SPEC, u8, BLK_SIZE_A, 2, 2>;
-impl<'a> BLK_SIZE_W<'a> {
+pub type BLK_SIZE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, RXDMA_CTRL_SPEC, u8, BLK_SIZE_A, 2, O>;
+impl<'a, const O: u8> BLK_SIZE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn b8(self) -> &'a mut W {
@@ -236,8 +238,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `mode` writer - "]
-pub type MODE_W<'a> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, MODE_A, 1>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn continous(self) -> &'a mut W {
@@ -286,8 +288,8 @@ impl ENABLE_R {
     }
 }
 #[doc = "Field `enable` writer - "]
-pub type ENABLE_W<'a> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, ENABLE_A, 0>;
-impl<'a> ENABLE_W<'a> {
+pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, ENABLE_A, O>;
+impl<'a, const O: u8> ENABLE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -334,32 +336,32 @@ impl R {
 impl W {
     #[doc = "Bits 8:23 - RXDMA Timeout Threshold\n\nUnit is 1 UART bit time"]
     #[inline(always)]
-    pub fn timeout_threshold(&mut self) -> TIMEOUT_THRESHOLD_W {
+    pub fn timeout_threshold(&mut self) -> TIMEOUT_THRESHOLD_W<8> {
         TIMEOUT_THRESHOLD_W::new(self)
     }
     #[doc = "Bit 6 - RXDMA Timeout Enable"]
     #[inline(always)]
-    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W {
+    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W<6> {
         TIMEOUT_ENABLE_W::new(self)
     }
     #[doc = "Bits 4:5 - Set for AHB port burst supported"]
     #[inline(always)]
-    pub fn ahb_burst_mode(&mut self) -> AHB_BURST_MODE_W {
+    pub fn ahb_burst_mode(&mut self) -> AHB_BURST_MODE_W<4> {
         AHB_BURST_MODE_W::new(self)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
-    pub fn blk_size(&mut self) -> BLK_SIZE_W {
+    pub fn blk_size(&mut self) -> BLK_SIZE_W<2> {
         BLK_SIZE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    pub fn mode(&mut self) -> MODE_W<1> {
         MODE_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn enable(&mut self) -> ENABLE_W {
+    pub fn enable(&mut self) -> ENABLE_W<0> {
         ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

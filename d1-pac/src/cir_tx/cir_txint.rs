@@ -71,8 +71,8 @@ impl DRQ_EN_R {
     }
 }
 #[doc = "Field `DRQ_EN` writer - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
-pub type DRQ_EN_W<'a> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, DRQ_EN_A, 2>;
-impl<'a> DRQ_EN_W<'a> {
+pub type DRQ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, DRQ_EN_A, O>;
+impl<'a, const O: u8> DRQ_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl TAI_EN_R {
     }
 }
 #[doc = "Field `TAI_EN` writer - TX FIFO Available Interrupt Enable"]
-pub type TAI_EN_W<'a> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TAI_EN_A, 1>;
-impl<'a> TAI_EN_W<'a> {
+pub type TAI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TAI_EN_A, O>;
+impl<'a, const O: u8> TAI_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -171,8 +171,9 @@ impl TPEI_TUI_EN_R {
     }
 }
 #[doc = "Field `TPEI_TUI_EN` writer - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
-pub type TPEI_TUI_EN_W<'a> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TPEI_TUI_EN_A, 0>;
-impl<'a> TPEI_TUI_EN_W<'a> {
+pub type TPEI_TUI_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TPEI_TUI_EN_A, O>;
+impl<'a, const O: u8> TPEI_TUI_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -204,17 +205,17 @@ impl R {
 impl W {
     #[doc = "Bit 2 - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
     #[inline(always)]
-    pub fn drq_en(&mut self) -> DRQ_EN_W {
+    pub fn drq_en(&mut self) -> DRQ_EN_W<2> {
         DRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - TX FIFO Available Interrupt Enable"]
     #[inline(always)]
-    pub fn tai_en(&mut self) -> TAI_EN_W {
+    pub fn tai_en(&mut self) -> TAI_EN_W<1> {
         TAI_EN_W::new(self)
     }
     #[doc = "Bit 0 - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
     #[inline(always)]
-    pub fn tpei_tui_en(&mut self) -> TPEI_TUI_EN_W {
+    pub fn tpei_tui_en(&mut self) -> TPEI_TUI_EN_W<0> {
         TPEI_TUI_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

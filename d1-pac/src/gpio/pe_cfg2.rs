@@ -129,8 +129,9 @@ impl PE17_SELECT_R {
     }
 }
 #[doc = "Field `PE17_SELECT` writer - PE17 Select"]
-pub type PE17_SELECT_W<'a> = crate::FieldWriter<'a, u32, PE_CFG2_SPEC, u8, PE17_SELECT_A, 4, 4>;
-impl<'a> PE17_SELECT_W<'a> {
+pub type PE17_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PE_CFG2_SPEC, u8, PE17_SELECT_A, 4, O>;
+impl<'a, const O: u8> PE17_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -272,8 +273,9 @@ impl PE16_SELECT_R {
     }
 }
 #[doc = "Field `PE16_SELECT` writer - PE16 Select"]
-pub type PE16_SELECT_W<'a> = crate::FieldWriter<'a, u32, PE_CFG2_SPEC, u8, PE16_SELECT_A, 4, 0>;
-impl<'a> PE16_SELECT_W<'a> {
+pub type PE16_SELECT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PE_CFG2_SPEC, u8, PE16_SELECT_A, 4, O>;
+impl<'a, const O: u8> PE16_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn input(self) -> &'a mut W {
@@ -335,12 +337,12 @@ impl R {
 impl W {
     #[doc = "Bits 4:7 - PE17 Select"]
     #[inline(always)]
-    pub fn pe17_select(&mut self) -> PE17_SELECT_W {
+    pub fn pe17_select(&mut self) -> PE17_SELECT_W<4> {
         PE17_SELECT_W::new(self)
     }
     #[doc = "Bits 0:3 - PE16 Select"]
     #[inline(always)]
-    pub fn pe16_select(&mut self) -> PE16_SELECT_W {
+    pub fn pe16_select(&mut self) -> PE16_SELECT_W<0> {
         PE16_SELECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

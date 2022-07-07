@@ -71,9 +71,9 @@ impl ADC0_KEYUP_IRQ_EN_R {
     }
 }
 #[doc = "Field `ADC0_KEYUP_IRQ_EN` writer - ADC0 Key Up Interrupt Enable"]
-pub type ADC0_KEYUP_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYUP_IRQ_EN_A, 4>;
-impl<'a> ADC0_KEYUP_IRQ_EN_W<'a> {
+pub type ADC0_KEYUP_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYUP_IRQ_EN_A, O>;
+impl<'a, const O: u8> ADC0_KEYUP_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl ADC0_ALRDY_HOLD_IRQ_EN_R {
     }
 }
 #[doc = "Field `ADC0_ALRDY_HOLD_IRQ_EN` writer - ADC0 Already Hold Key Interrupt Enable"]
-pub type ADC0_ALRDY_HOLD_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_ALRDY_HOLD_IRQ_EN_A, 3>;
-impl<'a> ADC0_ALRDY_HOLD_IRQ_EN_W<'a> {
+pub type ADC0_ALRDY_HOLD_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_ALRDY_HOLD_IRQ_EN_A, O>;
+impl<'a, const O: u8> ADC0_ALRDY_HOLD_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -173,8 +173,9 @@ impl ADC0_HOLD_IRQ_EN_R {
     }
 }
 #[doc = "Field `ADC0_HOLD_IRQ_EN` writer - ADC0 Hold Key Interrupt Enable"]
-pub type ADC0_HOLD_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_HOLD_IRQ_EN_A, 2>;
-impl<'a> ADC0_HOLD_IRQ_EN_W<'a> {
+pub type ADC0_HOLD_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_HOLD_IRQ_EN_A, O>;
+impl<'a, const O: u8> ADC0_HOLD_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -223,9 +224,9 @@ impl ADC0_KEYDOWN_IRQ_EN_R {
     }
 }
 #[doc = "Field `ADC0_KEYDOWN_IRQ_EN` writer - ADC0 Key Down Interrupt Enable"]
-pub type ADC0_KEYDOWN_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYDOWN_IRQ_EN_A, 1>;
-impl<'a> ADC0_KEYDOWN_IRQ_EN_W<'a> {
+pub type ADC0_KEYDOWN_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYDOWN_IRQ_EN_A, O>;
+impl<'a, const O: u8> ADC0_KEYDOWN_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -274,8 +275,9 @@ impl ADC0_DATA_IRQ_EN_R {
     }
 }
 #[doc = "Field `ADC0_DATA_IRQ_EN` writer - ADC0 Data Interrupt Enable"]
-pub type ADC0_DATA_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_DATA_IRQ_EN_A, 0>;
-impl<'a> ADC0_DATA_IRQ_EN_W<'a> {
+pub type ADC0_DATA_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_DATA_IRQ_EN_A, O>;
+impl<'a, const O: u8> ADC0_DATA_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -317,27 +319,27 @@ impl R {
 impl W {
     #[doc = "Bit 4 - ADC0 Key Up Interrupt Enable"]
     #[inline(always)]
-    pub fn adc0_keyup_irq_en(&mut self) -> ADC0_KEYUP_IRQ_EN_W {
+    pub fn adc0_keyup_irq_en(&mut self) -> ADC0_KEYUP_IRQ_EN_W<4> {
         ADC0_KEYUP_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 3 - ADC0 Already Hold Key Interrupt Enable"]
     #[inline(always)]
-    pub fn adc0_alrdy_hold_irq_en(&mut self) -> ADC0_ALRDY_HOLD_IRQ_EN_W {
+    pub fn adc0_alrdy_hold_irq_en(&mut self) -> ADC0_ALRDY_HOLD_IRQ_EN_W<3> {
         ADC0_ALRDY_HOLD_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - ADC0 Hold Key Interrupt Enable"]
     #[inline(always)]
-    pub fn adc0_hold_irq_en(&mut self) -> ADC0_HOLD_IRQ_EN_W {
+    pub fn adc0_hold_irq_en(&mut self) -> ADC0_HOLD_IRQ_EN_W<2> {
         ADC0_HOLD_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - ADC0 Key Down Interrupt Enable"]
     #[inline(always)]
-    pub fn adc0_keydown_irq_en(&mut self) -> ADC0_KEYDOWN_IRQ_EN_W {
+    pub fn adc0_keydown_irq_en(&mut self) -> ADC0_KEYDOWN_IRQ_EN_W<1> {
         ADC0_KEYDOWN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - ADC0 Data Interrupt Enable"]
     #[inline(always)]
-    pub fn adc0_data_irq_en(&mut self) -> ADC0_DATA_IRQ_EN_W {
+    pub fn adc0_data_irq_en(&mut self) -> ADC0_DATA_IRQ_EN_W<0> {
         ADC0_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

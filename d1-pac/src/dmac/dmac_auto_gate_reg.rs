@@ -71,9 +71,9 @@ impl DMA_MCLK_CIRCUIT_R {
     }
 }
 #[doc = "Field `DMA_MCLK_CIRCUIT` writer - Auto gating bit of DMA MCLK interfact circuit"]
-pub type DMA_MCLK_CIRCUIT_W<'a> =
-    crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_MCLK_CIRCUIT_A, 2>;
-impl<'a> DMA_MCLK_CIRCUIT_W<'a> {
+pub type DMA_MCLK_CIRCUIT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_MCLK_CIRCUIT_A, O>;
+impl<'a, const O: u8> DMA_MCLK_CIRCUIT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl DMA_COMMON_CIRCUIT_R {
     }
 }
 #[doc = "Field `DMA_COMMON_CIRCUIT` writer - Auto gating bit of DMA common circuit"]
-pub type DMA_COMMON_CIRCUIT_W<'a> =
-    crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_COMMON_CIRCUIT_A, 1>;
-impl<'a> DMA_COMMON_CIRCUIT_W<'a> {
+pub type DMA_COMMON_CIRCUIT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_COMMON_CIRCUIT_A, O>;
+impl<'a, const O: u8> DMA_COMMON_CIRCUIT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
@@ -173,9 +173,9 @@ impl DMA_CHAN_CIRCUIT_R {
     }
 }
 #[doc = "Field `DMA_CHAN_CIRCUIT` writer - Auto gating bit of DMA channel circuit"]
-pub type DMA_CHAN_CIRCUIT_W<'a> =
-    crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_CHAN_CIRCUIT_A, 0>;
-impl<'a> DMA_CHAN_CIRCUIT_W<'a> {
+pub type DMA_CHAN_CIRCUIT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_CHAN_CIRCUIT_A, O>;
+impl<'a, const O: u8> DMA_CHAN_CIRCUIT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn enabled(self) -> &'a mut W {
@@ -207,17 +207,17 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Auto gating bit of DMA MCLK interfact circuit"]
     #[inline(always)]
-    pub fn dma_mclk_circuit(&mut self) -> DMA_MCLK_CIRCUIT_W {
+    pub fn dma_mclk_circuit(&mut self) -> DMA_MCLK_CIRCUIT_W<2> {
         DMA_MCLK_CIRCUIT_W::new(self)
     }
     #[doc = "Bit 1 - Auto gating bit of DMA common circuit"]
     #[inline(always)]
-    pub fn dma_common_circuit(&mut self) -> DMA_COMMON_CIRCUIT_W {
+    pub fn dma_common_circuit(&mut self) -> DMA_COMMON_CIRCUIT_W<1> {
         DMA_COMMON_CIRCUIT_W::new(self)
     }
     #[doc = "Bit 0 - Auto gating bit of DMA channel circuit"]
     #[inline(always)]
-    pub fn dma_chan_circuit(&mut self) -> DMA_CHAN_CIRCUIT_W {
+    pub fn dma_chan_circuit(&mut self) -> DMA_CHAN_CIRCUIT_W<0> {
         DMA_CHAN_CIRCUIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

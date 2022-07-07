@@ -71,9 +71,9 @@ impl VCC_IO_PWR_MOD_SEL_R {
     }
 }
 #[doc = "Field `VCC_IO_PWR_MOD_SEL` writer - VCC_IO POWER MODE Select"]
-pub type VCC_IO_PWR_MOD_SEL_W<'a> =
-    crate::BitWriter<'a, u32, PIO_POW_MOD_SEL_SPEC, VCC_IO_PWR_MOD_SEL_A, 12>;
-impl<'a> VCC_IO_PWR_MOD_SEL_W<'a> {
+pub type VCC_IO_PWR_MOD_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PIO_POW_MOD_SEL_SPEC, VCC_IO_PWR_MOD_SEL_A, O>;
+impl<'a, const O: u8> VCC_IO_PWR_MOD_SEL_W<'a, O> {
     #[doc = "3.3 V"]
     #[inline(always)]
     pub fn v33(self) -> &'a mut W {
@@ -176,7 +176,7 @@ impl R {
 impl W {
     #[doc = "Bit 12 - VCC_IO POWER MODE Select"]
     #[inline(always)]
-    pub fn vcc_io_pwr_mod_sel(&mut self) -> VCC_IO_PWR_MOD_SEL_W {
+    pub fn vcc_io_pwr_mod_sel(&mut self) -> VCC_IO_PWR_MOD_SEL_W<12> {
         VCC_IO_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "PX_POWER POWER MODE Select"]

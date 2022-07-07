@@ -37,7 +37,8 @@ impl From<crate::W<RXDMA_DCNT_SPEC>> for W {
 #[doc = "Field `data_count` reader - "]
 pub type DATA_COUNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `data_count` writer - "]
-pub type DATA_COUNT_W<'a> = crate::FieldWriter<'a, u32, RXDMA_DCNT_SPEC, u16, u16, 16, 0>;
+pub type DATA_COUNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RXDMA_DCNT_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn data_count(&mut self) -> DATA_COUNT_W {
+    pub fn data_count(&mut self) -> DATA_COUNT_W<0> {
         DATA_COUNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,7 @@ impl From<crate::W<TWI_ADDR_SPEC>> for W {
 #[doc = "Field `SLA` reader - Slave Address"]
 pub type SLA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SLA` writer - Slave Address"]
-pub type SLA_W<'a> = crate::FieldWriter<'a, u32, TWI_ADDR_SPEC, u8, u8, 7, 1>;
+pub type SLA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_ADDR_SPEC, u8, u8, 7, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GCE_A {
@@ -75,8 +75,8 @@ impl GCE_R {
     }
 }
 #[doc = "Field `GCE` writer - "]
-pub type GCE_W<'a> = crate::BitWriter<'a, u32, TWI_ADDR_SPEC, GCE_A, 0>;
-impl<'a> GCE_W<'a> {
+pub type GCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_ADDR_SPEC, GCE_A, O>;
+impl<'a, const O: u8> GCE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -103,12 +103,12 @@ impl R {
 impl W {
     #[doc = "Bits 1:7 - Slave Address"]
     #[inline(always)]
-    pub fn sla(&mut self) -> SLA_W {
+    pub fn sla(&mut self) -> SLA_W<1> {
         SLA_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn gce(&mut self) -> GCE_W {
+    pub fn gce(&mut self) -> GCE_W<0> {
         GCE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

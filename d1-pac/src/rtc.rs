@@ -33,26 +33,24 @@ pub struct RegisterBlock {
     _reserved12: [u8; 0x9c],
     #[doc = "0x100..0x120 - General Purpose Register"]
     pub gp_data_reg: [crate::Reg<gp_data_reg::GP_DATA_REG_SPEC>; 8],
-    #[doc = "0x120 - Fast Boot Information Register0"]
-    pub fboot_info_reg0: crate::Reg<fboot_info_reg0::FBOOT_INFO_REG0_SPEC>,
-    #[doc = "0x124 - Fast Boot Information Register1"]
-    pub fboot_info_reg1: crate::Reg<fboot_info_reg1::FBOOT_INFO_REG1_SPEC>,
-    _reserved15: [u8; 0x38],
+    #[doc = "0x120..0x128 - Fast Boot Information Register \\[01\\]"]
+    pub fboot_info_reg: [crate::Reg<fboot_info_reg::FBOOT_INFO_REG_SPEC>; 2],
+    _reserved14: [u8; 0x38],
     #[doc = "0x160 - DCXO Control Register"]
     pub dcxo_ctrl_reg: crate::Reg<dcxo_ctrl_reg::DCXO_CTRL_REG_SPEC>,
-    _reserved16: [u8; 0x2c],
+    _reserved15: [u8; 0x2c],
     #[doc = "0x190 - RTC_VIO Regulation Register"]
     pub rtc_vio_reg: crate::Reg<rtc_vio_reg::RTC_VIO_REG_SPEC>,
-    _reserved17: [u8; 0x5c],
+    _reserved16: [u8; 0x5c],
     #[doc = "0x1f0 - IC Characteristic Register"]
     pub ic_chara_reg: crate::Reg<ic_chara_reg::IC_CHARA_REG_SPEC>,
     #[doc = "0x1f4 - VDD Off Gating Control Register"]
     pub vdd_off_gating_ctrl_reg: crate::Reg<vdd_off_gating_ctrl_reg::VDD_OFF_GATING_CTRL_REG_SPEC>,
-    _reserved19: [u8; 0x0c],
+    _reserved18: [u8; 0x0c],
     #[doc = "0x204 - Efuse High Voltage Power Switch Control Register"]
     pub efuse_hv_pwrswt_ctrl_reg:
         crate::Reg<efuse_hv_pwrswt_ctrl_reg::EFUSE_HV_PWRSWT_CTRL_REG_SPEC>,
-    _reserved20: [u8; 0x0108],
+    _reserved19: [u8; 0x0108],
     #[doc = "0x310 - RTC SPI Clock Control Register"]
     pub rtc_spi_clk_ctrl_reg: crate::Reg<rtc_spi_clk_ctrl_reg::RTC_SPI_CLK_CTRL_REG_SPEC>,
 }
@@ -109,14 +107,10 @@ pub mod _32k_fout_ctrl_gating_reg;
 pub type GP_DATA_REG = crate::Reg<gp_data_reg::GP_DATA_REG_SPEC>;
 #[doc = "General Purpose Register"]
 pub mod gp_data_reg;
-#[doc = "FBOOT_INFO_REG0 register accessor: an alias for `Reg<FBOOT_INFO_REG0_SPEC>`"]
-pub type FBOOT_INFO_REG0 = crate::Reg<fboot_info_reg0::FBOOT_INFO_REG0_SPEC>;
-#[doc = "Fast Boot Information Register0"]
-pub mod fboot_info_reg0;
-#[doc = "FBOOT_INFO_REG1 register accessor: an alias for `Reg<FBOOT_INFO_REG1_SPEC>`"]
-pub type FBOOT_INFO_REG1 = crate::Reg<fboot_info_reg1::FBOOT_INFO_REG1_SPEC>;
-#[doc = "Fast Boot Information Register1"]
-pub mod fboot_info_reg1;
+#[doc = "FBOOT_INFO_REG register accessor: an alias for `Reg<FBOOT_INFO_REG_SPEC>`"]
+pub type FBOOT_INFO_REG = crate::Reg<fboot_info_reg::FBOOT_INFO_REG_SPEC>;
+#[doc = "Fast Boot Information Register \\[01\\]"]
+pub mod fboot_info_reg;
 #[doc = "DCXO_CTRL_REG register accessor: an alias for `Reg<DCXO_CTRL_REG_SPEC>`"]
 pub type DCXO_CTRL_REG = crate::Reg<dcxo_ctrl_reg::DCXO_CTRL_REG_SPEC>;
 #[doc = "DCXO Control Register"]

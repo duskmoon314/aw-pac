@@ -71,9 +71,9 @@ impl PLL_LOCK_FLAG_EN_R {
     }
 }
 #[doc = "Field `PLL_LOCK_FLAG_EN` writer - Debug Enable"]
-pub type PLL_LOCK_FLAG_EN_W<'a> =
-    crate::BitWriter<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, PLL_LOCK_FLAG_EN_A, 31>;
-impl<'a> PLL_LOCK_FLAG_EN_W<'a> {
+pub type PLL_LOCK_FLAG_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, PLL_LOCK_FLAG_EN_A, O>;
+impl<'a, const O: u8> PLL_LOCK_FLAG_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -172,9 +172,9 @@ impl CLK_SRC_SEL_R {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a> =
-    crate::FieldWriterSafe<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, u8, CLK_SRC_SEL_A, 3, 20>;
-impl<'a> CLK_SRC_SEL_W<'a> {
+pub type CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
+impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn pll_cpux(self) -> &'a mut W {
@@ -231,12 +231,12 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Debug Enable"]
     #[inline(always)]
-    pub fn pll_lock_flag_en(&mut self) -> PLL_LOCK_FLAG_EN_W {
+    pub fn pll_lock_flag_en(&mut self) -> PLL_LOCK_FLAG_EN_W<31> {
         PLL_LOCK_FLAG_EN_W::new(self)
     }
     #[doc = "Bits 20:22 - Clock Source Select"]
     #[inline(always)]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<20> {
         CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

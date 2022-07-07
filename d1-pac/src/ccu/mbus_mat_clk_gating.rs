@@ -71,9 +71,9 @@ impl RISCV_MCLK_EN_R {
     }
 }
 #[doc = "Field `RISCV_MCLK_EN` writer - Gating MBUS Clock"]
-pub type RISCV_MCLK_EN_W<'a> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, RISCV_MCLK_EN_A, 11>;
-impl<'a> RISCV_MCLK_EN_W<'a> {
+pub type RISCV_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, RISCV_MCLK_EN_A, O>;
+impl<'a, const O: u8> RISCV_MCLK_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -122,8 +122,9 @@ impl G2D_MCLK_EN_R {
     }
 }
 #[doc = "Field `G2D_MCLK_EN` writer - Gating MBUS Clock"]
-pub type G2D_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, G2D_MCLK_EN_A, 10>;
-impl<'a> G2D_MCLK_EN_W<'a> {
+pub type G2D_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, G2D_MCLK_EN_A, O>;
+impl<'a, const O: u8> G2D_MCLK_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -172,8 +173,9 @@ impl CSI_MCLK_EN_R {
     }
 }
 #[doc = "Field `CSI_MCLK_EN` writer - Gating MBUS Clock"]
-pub type CSI_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CSI_MCLK_EN_A, 8>;
-impl<'a> CSI_MCLK_EN_W<'a> {
+pub type CSI_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CSI_MCLK_EN_A, O>;
+impl<'a, const O: u8> CSI_MCLK_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -222,9 +224,9 @@ impl TVIN_MCLK_EN_R {
     }
 }
 #[doc = "Field `TVIN_MCLK_EN` writer - Gating MBUS Clock"]
-pub type TVIN_MCLK_EN_W<'a> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, TVIN_MCLK_EN_A, 7>;
-impl<'a> TVIN_MCLK_EN_W<'a> {
+pub type TVIN_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, TVIN_MCLK_EN_A, O>;
+impl<'a, const O: u8> TVIN_MCLK_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -273,8 +275,9 @@ impl CE_MCLK_EN_R {
     }
 }
 #[doc = "Field `CE_MCLK_EN` writer - Gating MBUS Clock"]
-pub type CE_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CE_MCLK_EN_A, 2>;
-impl<'a> CE_MCLK_EN_W<'a> {
+pub type CE_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CE_MCLK_EN_A, O>;
+impl<'a, const O: u8> CE_MCLK_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -323,8 +326,9 @@ impl VE_MCLK_EN_R {
     }
 }
 #[doc = "Field `VE_MCLK_EN` writer - Gating MBUS Clock"]
-pub type VE_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, VE_MCLK_EN_A, 1>;
-impl<'a> VE_MCLK_EN_W<'a> {
+pub type VE_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, VE_MCLK_EN_A, O>;
+impl<'a, const O: u8> VE_MCLK_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -373,8 +377,9 @@ impl DMA_MCLK_EN_R {
     }
 }
 #[doc = "Field `DMA_MCLK_EN` writer - Gating MBUS Clock"]
-pub type DMA_MCLK_EN_W<'a> = crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, DMA_MCLK_EN_A, 0>;
-impl<'a> DMA_MCLK_EN_W<'a> {
+pub type DMA_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, DMA_MCLK_EN_A, O>;
+impl<'a, const O: u8> DMA_MCLK_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn mask(self) -> &'a mut W {
@@ -426,37 +431,37 @@ impl R {
 impl W {
     #[doc = "Bit 11 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn riscv_mclk_en(&mut self) -> RISCV_MCLK_EN_W {
+    pub fn riscv_mclk_en(&mut self) -> RISCV_MCLK_EN_W<11> {
         RISCV_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 10 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn g2d_mclk_en(&mut self) -> G2D_MCLK_EN_W {
+    pub fn g2d_mclk_en(&mut self) -> G2D_MCLK_EN_W<10> {
         G2D_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 8 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn csi_mclk_en(&mut self) -> CSI_MCLK_EN_W {
+    pub fn csi_mclk_en(&mut self) -> CSI_MCLK_EN_W<8> {
         CSI_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 7 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn tvin_mclk_en(&mut self) -> TVIN_MCLK_EN_W {
+    pub fn tvin_mclk_en(&mut self) -> TVIN_MCLK_EN_W<7> {
         TVIN_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 2 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn ce_mclk_en(&mut self) -> CE_MCLK_EN_W {
+    pub fn ce_mclk_en(&mut self) -> CE_MCLK_EN_W<2> {
         CE_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 1 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn ve_mclk_en(&mut self) -> VE_MCLK_EN_W {
+    pub fn ve_mclk_en(&mut self) -> VE_MCLK_EN_W<1> {
         VE_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 0 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn dma_mclk_en(&mut self) -> DMA_MCLK_EN_W {
+    pub fn dma_mclk_en(&mut self) -> DMA_MCLK_EN_W<0> {
         DMA_MCLK_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,9 @@ impl TMR1_IRQ_EN_R {
     }
 }
 #[doc = "Field `tmr1_irq_en` writer - "]
-pub type TMR1_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, TMR_IRQ_EN_SPEC, TMR1_IRQ_EN_A, 1>;
-impl<'a> TMR1_IRQ_EN_W<'a> {
+pub type TMR1_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TMR_IRQ_EN_SPEC, TMR1_IRQ_EN_A, O>;
+impl<'a, const O: u8> TMR1_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl TMR0_IRQ_EN_R {
     }
 }
 #[doc = "Field `tmr0_irq_en` writer - "]
-pub type TMR0_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, TMR_IRQ_EN_SPEC, TMR0_IRQ_EN_A, 0>;
-impl<'a> TMR0_IRQ_EN_W<'a> {
+pub type TMR0_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TMR_IRQ_EN_SPEC, TMR0_IRQ_EN_A, O>;
+impl<'a, const O: u8> TMR0_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -149,12 +151,12 @@ impl R {
 impl W {
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn tmr1_irq_en(&mut self) -> TMR1_IRQ_EN_W {
+    pub fn tmr1_irq_en(&mut self) -> TMR1_IRQ_EN_W<1> {
         TMR1_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn tmr0_irq_en(&mut self) -> TMR0_IRQ_EN_W {
+    pub fn tmr0_irq_en(&mut self) -> TMR0_IRQ_EN_W<0> {
         TMR0_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

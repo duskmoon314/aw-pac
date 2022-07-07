@@ -34,7 +34,23 @@ impl From<crate::W<RTC_DAY_REG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DAY` reader - Set Day Range from 0 to 65535."]
+pub type DAY_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `DAY` writer - Set Day Range from 0 to 65535."]
+pub type DAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RTC_DAY_REG_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - Set Day Range from 0 to 65535."]
+    #[inline(always)]
+    pub fn day(&self) -> DAY_R {
+        DAY_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - Set Day Range from 0 to 65535."]
+    #[inline(always)]
+    pub fn day(&mut self) -> DAY_W<0> {
+        DAY_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -37,7 +37,7 @@ impl From<crate::W<RXDMA_STR_SPEC>> for W {
 #[doc = "Field `start` reader - "]
 pub type START_R = crate::BitReader<bool>;
 #[doc = "Field `start` writer - "]
-pub type START_W<'a> = crate::BitWriter<'a, u32, RXDMA_STR_SPEC, bool, 0>;
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_STR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W {
+    pub fn start(&mut self) -> START_W<0> {
         START_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

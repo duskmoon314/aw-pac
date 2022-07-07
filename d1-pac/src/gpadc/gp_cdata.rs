@@ -37,7 +37,7 @@ impl From<crate::W<GP_CDATA_SPEC>> for W {
 #[doc = "Field `GP_CDATA` reader - GPADC Calibration Data"]
 pub type GP_CDATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `GP_CDATA` writer - GPADC Calibration Data"]
-pub type GP_CDATA_W<'a> = crate::FieldWriter<'a, u32, GP_CDATA_SPEC, u16, u16, 12, 0>;
+pub type GP_CDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_CDATA_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - GPADC Calibration Data"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - GPADC Calibration Data"]
     #[inline(always)]
-    pub fn gp_cdata(&mut self) -> GP_CDATA_W {
+    pub fn gp_cdata(&mut self) -> GP_CDATA_W<0> {
         GP_CDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

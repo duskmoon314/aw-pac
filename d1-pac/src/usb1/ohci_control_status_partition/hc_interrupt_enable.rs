@@ -37,8 +37,8 @@ impl From<crate::W<HC_INTERRUPT_ENABLE_SPEC>> for W {
 #[doc = "Field `MASTER_INTERRUPT_ENABLE` reader - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable."]
 pub type MASTER_INTERRUPT_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `MASTER_INTERRUPT_ENABLE` writer - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable."]
-pub type MASTER_INTERRUPT_ENABLE_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, bool, 31>;
+pub type MASTER_INTERRUPT_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, bool, O>;
 #[doc = "RootHubStatusChange Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ROOT_HUB_STATUS_CHANGE_A {
@@ -76,9 +76,9 @@ impl ROOT_HUB_STATUS_CHANGE_R {
     }
 }
 #[doc = "Field `ROOT_HUB_STATUS_CHANGE` writer - RootHubStatusChange Interrupt Enable"]
-pub type ROOT_HUB_STATUS_CHANGE_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, ROOT_HUB_STATUS_CHANGE_A, 6>;
-impl<'a> ROOT_HUB_STATUS_CHANGE_W<'a> {
+pub type ROOT_HUB_STATUS_CHANGE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, ROOT_HUB_STATUS_CHANGE_A, O>;
+impl<'a, const O: u8> ROOT_HUB_STATUS_CHANGE_W<'a, O> {
     #[doc = "Ignore"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -127,9 +127,9 @@ impl FRAME_NUMBER_OVERFLOW_R {
     }
 }
 #[doc = "Field `FRAME_NUMBER_OVERFLOW` writer - FrameNumberOverflow Interrupt Enable"]
-pub type FRAME_NUMBER_OVERFLOW_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, FRAME_NUMBER_OVERFLOW_A, 5>;
-impl<'a> FRAME_NUMBER_OVERFLOW_W<'a> {
+pub type FRAME_NUMBER_OVERFLOW_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, FRAME_NUMBER_OVERFLOW_A, O>;
+impl<'a, const O: u8> FRAME_NUMBER_OVERFLOW_W<'a, O> {
     #[doc = "Ignore"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -178,9 +178,9 @@ impl UNRECOVERABLE_ERROR_R {
     }
 }
 #[doc = "Field `UNRECOVERABLE_ERROR` writer - UnrecoverableError Interrupt Enable"]
-pub type UNRECOVERABLE_ERROR_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, UNRECOVERABLE_ERROR_A, 4>;
-impl<'a> UNRECOVERABLE_ERROR_W<'a> {
+pub type UNRECOVERABLE_ERROR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, UNRECOVERABLE_ERROR_A, O>;
+impl<'a, const O: u8> UNRECOVERABLE_ERROR_W<'a, O> {
     #[doc = "Ignore"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -229,9 +229,9 @@ impl RESUME_DETECTED_R {
     }
 }
 #[doc = "Field `RESUME_DETECTED` writer - ResumeDetected Interrupt Enable"]
-pub type RESUME_DETECTED_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, RESUME_DETECTED_A, 3>;
-impl<'a> RESUME_DETECTED_W<'a> {
+pub type RESUME_DETECTED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, RESUME_DETECTED_A, O>;
+impl<'a, const O: u8> RESUME_DETECTED_W<'a, O> {
     #[doc = "Ignore"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -280,9 +280,9 @@ impl START_OF_FRAME_R {
     }
 }
 #[doc = "Field `START_OF_FRAME` writer - StartofFrame Interrupt Enable"]
-pub type START_OF_FRAME_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, START_OF_FRAME_A, 2>;
-impl<'a> START_OF_FRAME_W<'a> {
+pub type START_OF_FRAME_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, START_OF_FRAME_A, O>;
+impl<'a, const O: u8> START_OF_FRAME_W<'a, O> {
     #[doc = "Ignore"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -331,9 +331,9 @@ impl WRITEBACK_DONE_HEAD_R {
     }
 }
 #[doc = "Field `WRITEBACK_DONE_HEAD` writer - WritebackDoneHead Interrupt Enable"]
-pub type WRITEBACK_DONE_HEAD_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, WRITEBACK_DONE_HEAD_A, 1>;
-impl<'a> WRITEBACK_DONE_HEAD_W<'a> {
+pub type WRITEBACK_DONE_HEAD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, WRITEBACK_DONE_HEAD_A, O>;
+impl<'a, const O: u8> WRITEBACK_DONE_HEAD_W<'a, O> {
     #[doc = "Ignore"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -382,9 +382,9 @@ impl SCHEDULING_OVERRUN_R {
     }
 }
 #[doc = "Field `SCHEDULING_OVERRUN` writer - SchedulingOverrun Interrupt Enable"]
-pub type SCHEDULING_OVERRUN_W<'a> =
-    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, SCHEDULING_OVERRUN_A, 0>;
-impl<'a> SCHEDULING_OVERRUN_W<'a> {
+pub type SCHEDULING_OVERRUN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, SCHEDULING_OVERRUN_A, O>;
+impl<'a, const O: u8> SCHEDULING_OVERRUN_W<'a, O> {
     #[doc = "Ignore"]
     #[inline(always)]
     pub fn ignore(self) -> &'a mut W {
@@ -441,42 +441,42 @@ impl R {
 impl W {
     #[doc = "Bit 31 - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable."]
     #[inline(always)]
-    pub fn master_interrupt_enable(&mut self) -> MASTER_INTERRUPT_ENABLE_W {
+    pub fn master_interrupt_enable(&mut self) -> MASTER_INTERRUPT_ENABLE_W<31> {
         MASTER_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Bit 6 - RootHubStatusChange Interrupt Enable"]
     #[inline(always)]
-    pub fn root_hub_status_change(&mut self) -> ROOT_HUB_STATUS_CHANGE_W {
+    pub fn root_hub_status_change(&mut self) -> ROOT_HUB_STATUS_CHANGE_W<6> {
         ROOT_HUB_STATUS_CHANGE_W::new(self)
     }
     #[doc = "Bit 5 - FrameNumberOverflow Interrupt Enable"]
     #[inline(always)]
-    pub fn frame_number_overflow(&mut self) -> FRAME_NUMBER_OVERFLOW_W {
+    pub fn frame_number_overflow(&mut self) -> FRAME_NUMBER_OVERFLOW_W<5> {
         FRAME_NUMBER_OVERFLOW_W::new(self)
     }
     #[doc = "Bit 4 - UnrecoverableError Interrupt Enable"]
     #[inline(always)]
-    pub fn unrecoverable_error(&mut self) -> UNRECOVERABLE_ERROR_W {
+    pub fn unrecoverable_error(&mut self) -> UNRECOVERABLE_ERROR_W<4> {
         UNRECOVERABLE_ERROR_W::new(self)
     }
     #[doc = "Bit 3 - ResumeDetected Interrupt Enable"]
     #[inline(always)]
-    pub fn resume_detected(&mut self) -> RESUME_DETECTED_W {
+    pub fn resume_detected(&mut self) -> RESUME_DETECTED_W<3> {
         RESUME_DETECTED_W::new(self)
     }
     #[doc = "Bit 2 - StartofFrame Interrupt Enable"]
     #[inline(always)]
-    pub fn start_of_frame(&mut self) -> START_OF_FRAME_W {
+    pub fn start_of_frame(&mut self) -> START_OF_FRAME_W<2> {
         START_OF_FRAME_W::new(self)
     }
     #[doc = "Bit 1 - WritebackDoneHead Interrupt Enable"]
     #[inline(always)]
-    pub fn writeback_done_head(&mut self) -> WRITEBACK_DONE_HEAD_W {
+    pub fn writeback_done_head(&mut self) -> WRITEBACK_DONE_HEAD_W<1> {
         WRITEBACK_DONE_HEAD_W::new(self)
     }
     #[doc = "Bit 0 - SchedulingOverrun Interrupt Enable"]
     #[inline(always)]
-    pub fn scheduling_overrun(&mut self) -> SCHEDULING_OVERRUN_W {
+    pub fn scheduling_overrun(&mut self) -> SCHEDULING_OVERRUN_W<0> {
         SCHEDULING_OVERRUN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,9 @@ impl START_TRAN_R {
     }
 }
 #[doc = "Field `start_tran` writer - Start transmission"]
-pub type START_TRAN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, START_TRAN_A, 31>;
-impl<'a> START_TRAN_W<'a> {
+pub type START_TRAN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, START_TRAN_A, O>;
+impl<'a, const O: u8> START_TRAN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn idle(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl RESTART_MODE_R {
     }
 }
 #[doc = "Field `restart_mode` writer - Restart mode"]
-pub type RESTART_MODE_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, RESTART_MODE_A, 29>;
-impl<'a> RESTART_MODE_W<'a> {
+pub type RESTART_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, RESTART_MODE_A, O>;
+impl<'a, const O: u8> RESTART_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn restart(self) -> &'a mut W {
@@ -171,8 +173,9 @@ impl READ_TRAN_MODE_R {
     }
 }
 #[doc = "Field `read_tran_mode` writer - Read transition mode"]
-pub type READ_TRAN_MODE_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, READ_TRAN_MODE_A, 28>;
-impl<'a> READ_TRAN_MODE_W<'a> {
+pub type READ_TRAN_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, READ_TRAN_MODE_A, O>;
+impl<'a, const O: u8> READ_TRAN_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn send(self) -> &'a mut W {
@@ -223,9 +226,9 @@ impl TRAN_RESULT_R {
     }
 }
 #[doc = "Field `tran_result` writer - Transition result"]
-pub type TRAN_RESULT_W<'a> =
-    crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, TRAN_RESULT_A, 4, 24>;
-impl<'a> TRAN_RESULT_W<'a> {
+pub type TRAN_RESULT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, TRAN_RESULT_A, 4, O>;
+impl<'a, const O: u8> TRAN_RESULT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn ok(self) -> &'a mut W {
@@ -366,7 +369,8 @@ impl TWI_STA_R {
 #[doc = "Field `timeout_n` reader - Timeout number"]
 pub type TIMEOUT_N_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `timeout_n` writer - Timeout number"]
-pub type TIMEOUT_N_W<'a> = crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, u8, 8, 8>;
+pub type TIMEOUT_N_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, u8, 8, O>;
 #[doc = "Software reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SOFT_RESET_A {
@@ -404,8 +408,9 @@ impl SOFT_RESET_R {
     }
 }
 #[doc = "Field `soft_reset` writer - Software reset"]
-pub type SOFT_RESET_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, SOFT_RESET_A, 1>;
-impl<'a> SOFT_RESET_W<'a> {
+pub type SOFT_RESET_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, SOFT_RESET_A, O>;
+impl<'a, const O: u8> SOFT_RESET_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -454,8 +459,9 @@ impl TWI_DRV_EN_R {
     }
 }
 #[doc = "Field `twi_drv_en` writer - "]
-pub type TWI_DRV_EN_W<'a> = crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, TWI_DRV_EN_A, 0>;
-impl<'a> TWI_DRV_EN_W<'a> {
+pub type TWI_DRV_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, TWI_DRV_EN_A, O>;
+impl<'a, const O: u8> TWI_DRV_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -512,37 +518,37 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Start transmission"]
     #[inline(always)]
-    pub fn start_tran(&mut self) -> START_TRAN_W {
+    pub fn start_tran(&mut self) -> START_TRAN_W<31> {
         START_TRAN_W::new(self)
     }
     #[doc = "Bit 29 - Restart mode"]
     #[inline(always)]
-    pub fn restart_mode(&mut self) -> RESTART_MODE_W {
+    pub fn restart_mode(&mut self) -> RESTART_MODE_W<29> {
         RESTART_MODE_W::new(self)
     }
     #[doc = "Bit 28 - Read transition mode"]
     #[inline(always)]
-    pub fn read_tran_mode(&mut self) -> READ_TRAN_MODE_W {
+    pub fn read_tran_mode(&mut self) -> READ_TRAN_MODE_W<28> {
         READ_TRAN_MODE_W::new(self)
     }
     #[doc = "Bits 24:27 - Transition result"]
     #[inline(always)]
-    pub fn tran_result(&mut self) -> TRAN_RESULT_W {
+    pub fn tran_result(&mut self) -> TRAN_RESULT_W<24> {
         TRAN_RESULT_W::new(self)
     }
     #[doc = "Bits 8:15 - Timeout number"]
     #[inline(always)]
-    pub fn timeout_n(&mut self) -> TIMEOUT_N_W {
+    pub fn timeout_n(&mut self) -> TIMEOUT_N_W<8> {
         TIMEOUT_N_W::new(self)
     }
     #[doc = "Bit 1 - Software reset"]
     #[inline(always)]
-    pub fn soft_reset(&mut self) -> SOFT_RESET_W {
+    pub fn soft_reset(&mut self) -> SOFT_RESET_W<1> {
         SOFT_RESET_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn twi_drv_en(&mut self) -> TWI_DRV_EN_W {
+    pub fn twi_drv_en(&mut self) -> TWI_DRV_EN_W<0> {
         TWI_DRV_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

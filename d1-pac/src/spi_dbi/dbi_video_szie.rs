@@ -37,11 +37,13 @@ impl From<crate::W<DBI_VIDEO_SZIE_SPEC>> for W {
 #[doc = "Field `v_size` reader - "]
 pub type V_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `v_size` writer - "]
-pub type V_SIZE_W<'a> = crate::FieldWriter<'a, u32, DBI_VIDEO_SZIE_SPEC, u16, u16, 11, 16>;
+pub type V_SIZE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DBI_VIDEO_SZIE_SPEC, u16, u16, 11, O>;
 #[doc = "Field `h_size` reader - "]
 pub type H_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `h_size` writer - "]
-pub type H_SIZE_W<'a> = crate::FieldWriter<'a, u32, DBI_VIDEO_SZIE_SPEC, u16, u16, 11, 0>;
+pub type H_SIZE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DBI_VIDEO_SZIE_SPEC, u16, u16, 11, O>;
 impl R {
     #[doc = "Bits 16:26"]
     #[inline(always)]
@@ -57,12 +59,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:26"]
     #[inline(always)]
-    pub fn v_size(&mut self) -> V_SIZE_W {
+    pub fn v_size(&mut self) -> V_SIZE_W<16> {
         V_SIZE_W::new(self)
     }
     #[doc = "Bits 0:10"]
     #[inline(always)]
-    pub fn h_size(&mut self) -> H_SIZE_W {
+    pub fn h_size(&mut self) -> H_SIZE_W<0> {
         H_SIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

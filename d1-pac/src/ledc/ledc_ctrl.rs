@@ -37,11 +37,12 @@ impl From<crate::W<LEDC_CTRL_SPEC>> for W {
 #[doc = "Field `TOTAL_DATA_LENGTH` reader - "]
 pub type TOTAL_DATA_LENGTH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TOTAL_DATA_LENGTH` writer - "]
-pub type TOTAL_DATA_LENGTH_W<'a> = crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u16, u16, 13, 16>;
+pub type TOTAL_DATA_LENGTH_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u16, u16, 13, O>;
 #[doc = "Field `RESET_LED_EN` reader - "]
 pub type RESET_LED_EN_R = crate::BitReader<bool>;
 #[doc = "Field `RESET_LED_EN` writer - "]
-pub type RESET_LED_EN_W<'a> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, 10>;
+pub type RESET_LED_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -113,8 +114,9 @@ impl LED_RGB_MODE_R {
     }
 }
 #[doc = "Field `LED_RGB_MODE` writer - "]
-pub type LED_RGB_MODE_W<'a> = crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u8, LED_RGB_MODE_A, 3, 6>;
-impl<'a> LED_RGB_MODE_W<'a> {
+pub type LED_RGB_MODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u8, LED_RGB_MODE_A, 3, O>;
+impl<'a, const O: u8> LED_RGB_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn grb(self) -> &'a mut W {
@@ -199,7 +201,7 @@ impl<'a, const O: u8> LED_MSB__W<'a, O> {
 #[doc = "Field `LEDC_SOFT_RESET` reader - "]
 pub type LEDC_SOFT_RESET_R = crate::BitReader<bool>;
 #[doc = "Field `LEDC_SOFT_RESET` writer - "]
-pub type LEDC_SOFT_RESET_W<'a> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, 1>;
+pub type LEDC_SOFT_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEDC_EN_A {
@@ -237,8 +239,8 @@ impl LEDC_EN_R {
     }
 }
 #[doc = "Field `LEDC_EN` writer - "]
-pub type LEDC_EN_W<'a> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, LEDC_EN_A, 0>;
-impl<'a> LEDC_EN_W<'a> {
+pub type LEDC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, LEDC_EN_A, O>;
+impl<'a, const O: u8> LEDC_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -305,17 +307,17 @@ impl R {
 impl W {
     #[doc = "Bits 16:28"]
     #[inline(always)]
-    pub fn total_data_length(&mut self) -> TOTAL_DATA_LENGTH_W {
+    pub fn total_data_length(&mut self) -> TOTAL_DATA_LENGTH_W<16> {
         TOTAL_DATA_LENGTH_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    pub fn reset_led_en(&mut self) -> RESET_LED_EN_W {
+    pub fn reset_led_en(&mut self) -> RESET_LED_EN_W<10> {
         RESET_LED_EN_W::new(self)
     }
     #[doc = "Bits 6:8"]
     #[inline(always)]
-    pub fn led_rgb_mode(&mut self) -> LED_RGB_MODE_W {
+    pub fn led_rgb_mode(&mut self) -> LED_RGB_MODE_W<6> {
         LED_RGB_MODE_W::new(self)
     }
     #[doc = ""]
@@ -345,12 +347,12 @@ impl W {
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn ledc_soft_reset(&mut self) -> LEDC_SOFT_RESET_W {
+    pub fn ledc_soft_reset(&mut self) -> LEDC_SOFT_RESET_W<1> {
         LEDC_SOFT_RESET_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn ledc_en(&mut self) -> LEDC_EN_W {
+    pub fn ledc_en(&mut self) -> LEDC_EN_W<0> {
         LEDC_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

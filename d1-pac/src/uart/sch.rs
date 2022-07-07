@@ -37,7 +37,7 @@ impl From<crate::W<SCH_SPEC>> for W {
 #[doc = "Field `scratch` reader - "]
 pub type SCRATCH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `scratch` writer - "]
-pub type SCRATCH_W<'a> = crate::FieldWriter<'a, u32, SCH_SPEC, u8, u8, 8, 0>;
+pub type SCRATCH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCH_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    pub fn scratch(&mut self) -> SCRATCH_W {
+    pub fn scratch(&mut self) -> SCRATCH_W<0> {
         SCRATCH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -71,8 +71,8 @@ impl GATING_R {
     }
 }
 #[doc = "Field `GATING` writer - Gating for CLK27M"]
-pub type GATING_W<'a> = crate::BitWriter<'a, u32, CLK27M_FAN_SPEC, GATING_A, 31>;
-impl<'a> GATING_W<'a> {
+pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK27M_FAN_SPEC, GATING_A, O>;
+impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -123,8 +123,9 @@ impl CLK_SRC_SEL_R {
     }
 }
 #[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, CLK_SRC_SEL_A, 2, 24>;
-impl<'a> CLK_SRC_SEL_W<'a> {
+pub type CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, CLK_SRC_SEL_A, 2, O>;
+impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn pll_video0_1x(self) -> &'a mut W {
@@ -139,11 +140,11 @@ impl<'a> CLK_SRC_SEL_W<'a> {
 #[doc = "Field `DIV1` reader - Factor N"]
 pub type DIV1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV1` writer - Factor N"]
-pub type DIV1_W<'a> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 2, 8>;
+pub type DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 2, O>;
 #[doc = "Field `DIV0` reader - Factor M"]
 pub type DIV0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIV0` writer - Factor M"]
-pub type DIV0_W<'a> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 5, 0>;
+pub type DIV0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 31 - Gating for CLK27M"]
     #[inline(always)]
@@ -169,22 +170,22 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating for CLK27M"]
     #[inline(always)]
-    pub fn gating(&mut self) -> GATING_W {
+    pub fn gating(&mut self) -> GATING_W<31> {
         GATING_W::new(self)
     }
     #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W {
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
-    pub fn div1(&mut self) -> DIV1_W {
+    pub fn div1(&mut self) -> DIV1_W<8> {
         DIV1_W::new(self)
     }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
-    pub fn div0(&mut self) -> DIV0_W {
+    pub fn div0(&mut self) -> DIV0_W<0> {
         DIV0_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

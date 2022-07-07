@@ -71,8 +71,9 @@ impl DMA_DST_MODE_R {
     }
 }
 #[doc = "Field `DMA_DST_MODE` writer - Destination Communication Mode Select"]
-pub type DMA_DST_MODE_W<'a> = crate::BitWriter<'a, u32, DMAC_MODE_REG_SPEC, DMA_DST_MODE_A, 3>;
-impl<'a> DMA_DST_MODE_W<'a> {
+pub type DMA_DST_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_MODE_REG_SPEC, DMA_DST_MODE_A, O>;
+impl<'a, const O: u8> DMA_DST_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn waiting(self) -> &'a mut W {
@@ -121,8 +122,9 @@ impl DMA_SRC_MODE_R {
     }
 }
 #[doc = "Field `DMA_SRC_MODE` writer - Source Communication Mode Select"]
-pub type DMA_SRC_MODE_W<'a> = crate::BitWriter<'a, u32, DMAC_MODE_REG_SPEC, DMA_SRC_MODE_A, 2>;
-impl<'a> DMA_SRC_MODE_W<'a> {
+pub type DMA_SRC_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMAC_MODE_REG_SPEC, DMA_SRC_MODE_A, O>;
+impl<'a, const O: u8> DMA_SRC_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn waiting(self) -> &'a mut W {
@@ -149,12 +151,12 @@ impl R {
 impl W {
     #[doc = "Bit 3 - Destination Communication Mode Select"]
     #[inline(always)]
-    pub fn dma_dst_mode(&mut self) -> DMA_DST_MODE_W {
+    pub fn dma_dst_mode(&mut self) -> DMA_DST_MODE_W<3> {
         DMA_DST_MODE_W::new(self)
     }
     #[doc = "Bit 2 - Source Communication Mode Select"]
     #[inline(always)]
-    pub fn dma_src_mode(&mut self) -> DMA_SRC_MODE_W {
+    pub fn dma_src_mode(&mut self) -> DMA_SRC_MODE_W<2> {
         DMA_SRC_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

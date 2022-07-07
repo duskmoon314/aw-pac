@@ -37,7 +37,8 @@ impl From<crate::W<PLL_VIDEO0_PAT0_CTRL_SPEC>> for W {
 #[doc = "Field `SIG_DELT_PAT_EN` reader - Sigma-Delta Pattern Enable"]
 pub type SIG_DELT_PAT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `SIG_DELT_PAT_EN` writer - Sigma-Delta Pattern Enable"]
-pub type SIG_DELT_PAT_EN_W<'a> = crate::BitWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, bool, 31>;
+pub type SIG_DELT_PAT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, bool, O>;
 #[doc = "Spread Frequency Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -93,9 +94,9 @@ impl SPR_FREQ_MODE_R {
     }
 }
 #[doc = "Field `SPR_FREQ_MODE` writer - Spread Frequency Mode"]
-pub type SPR_FREQ_MODE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u8, SPR_FREQ_MODE_A, 2, 29>;
-impl<'a> SPR_FREQ_MODE_W<'a> {
+pub type SPR_FREQ_MODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u8, SPR_FREQ_MODE_A, 2, O>;
+impl<'a, const O: u8> SPR_FREQ_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn dc0(self) -> &'a mut W {
@@ -120,7 +121,8 @@ impl<'a> SPR_FREQ_MODE_W<'a> {
 #[doc = "Field `WAVE_STEP` reader - Wave Step"]
 pub type WAVE_STEP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WAVE_STEP` writer - Wave Step"]
-pub type WAVE_STEP_W<'a> = crate::FieldWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u16, u16, 9, 20>;
+pub type WAVE_STEP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u16, u16, 9, O>;
 #[doc = "SDM Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SDM_CLK_SEL_A {
@@ -158,9 +160,9 @@ impl SDM_CLK_SEL_R {
     }
 }
 #[doc = "Field `SDM_CLK_SEL` writer - SDM Clock Select"]
-pub type SDM_CLK_SEL_W<'a> =
-    crate::BitWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, SDM_CLK_SEL_A, 19>;
-impl<'a> SDM_CLK_SEL_W<'a> {
+pub type SDM_CLK_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, SDM_CLK_SEL_A, O>;
+impl<'a, const O: u8> SDM_CLK_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn f_24_m(self) -> &'a mut W {
@@ -227,8 +229,9 @@ impl FREQ_R {
     }
 }
 #[doc = "Field `FREQ` writer - Frequency"]
-pub type FREQ_W<'a> = crate::FieldWriterSafe<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u8, FREQ_A, 2, 17>;
-impl<'a> FREQ_W<'a> {
+pub type FREQ_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u8, FREQ_A, 2, O>;
+impl<'a, const O: u8> FREQ_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn f_31_5_k(self) -> &'a mut W {
@@ -253,7 +256,8 @@ impl<'a> FREQ_W<'a> {
 #[doc = "Field `WAVE_BOT` reader - Wave Bottom"]
 pub type WAVE_BOT_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `WAVE_BOT` writer - Wave Bottom"]
-pub type WAVE_BOT_W<'a> = crate::FieldWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u32, u32, 17, 0>;
+pub type WAVE_BOT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PLL_VIDEO0_PAT0_CTRL_SPEC, u32, u32, 17, O>;
 impl R {
     #[doc = "Bit 31 - Sigma-Delta Pattern Enable"]
     #[inline(always)]
@@ -289,32 +293,32 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Sigma-Delta Pattern Enable"]
     #[inline(always)]
-    pub fn sig_delt_pat_en(&mut self) -> SIG_DELT_PAT_EN_W {
+    pub fn sig_delt_pat_en(&mut self) -> SIG_DELT_PAT_EN_W<31> {
         SIG_DELT_PAT_EN_W::new(self)
     }
     #[doc = "Bits 29:30 - Spread Frequency Mode"]
     #[inline(always)]
-    pub fn spr_freq_mode(&mut self) -> SPR_FREQ_MODE_W {
+    pub fn spr_freq_mode(&mut self) -> SPR_FREQ_MODE_W<29> {
         SPR_FREQ_MODE_W::new(self)
     }
     #[doc = "Bits 20:28 - Wave Step"]
     #[inline(always)]
-    pub fn wave_step(&mut self) -> WAVE_STEP_W {
+    pub fn wave_step(&mut self) -> WAVE_STEP_W<20> {
         WAVE_STEP_W::new(self)
     }
     #[doc = "Bit 19 - SDM Clock Select"]
     #[inline(always)]
-    pub fn sdm_clk_sel(&mut self) -> SDM_CLK_SEL_W {
+    pub fn sdm_clk_sel(&mut self) -> SDM_CLK_SEL_W<19> {
         SDM_CLK_SEL_W::new(self)
     }
     #[doc = "Bits 17:18 - Frequency"]
     #[inline(always)]
-    pub fn freq(&mut self) -> FREQ_W {
+    pub fn freq(&mut self) -> FREQ_W<17> {
         FREQ_W::new(self)
     }
     #[doc = "Bits 0:16 - Wave Bottom"]
     #[inline(always)]
-    pub fn wave_bot(&mut self) -> WAVE_BOT_W {
+    pub fn wave_bot(&mut self) -> WAVE_BOT_W<0> {
         WAVE_BOT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

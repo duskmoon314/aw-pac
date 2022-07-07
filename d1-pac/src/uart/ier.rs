@@ -71,8 +71,8 @@ impl PTIME_R {
     }
 }
 #[doc = "Field `ptime` writer - Programmable THRE Interrupt Mode Enable"]
-pub type PTIME_W<'a> = crate::BitWriter<'a, u32, IER_SPEC, PTIME_A, 7>;
-impl<'a> PTIME_W<'a> {
+pub type PTIME_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, PTIME_A, O>;
+impl<'a, const O: u8> PTIME_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl RS485_INT_EN_R {
     }
 }
 #[doc = "Field `rs485_int_en` writer - RS485 Interrupt Enable"]
-pub type RS485_INT_EN_W<'a> = crate::BitWriter<'a, u32, IER_SPEC, RS485_INT_EN_A, 4>;
-impl<'a> RS485_INT_EN_W<'a> {
+pub type RS485_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, RS485_INT_EN_A, O>;
+impl<'a, const O: u8> RS485_INT_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -171,8 +171,8 @@ impl EDSSI_R {
     }
 }
 #[doc = "Field `edssi` writer - Enable Modem Status Interrupt"]
-pub type EDSSI_W<'a> = crate::BitWriter<'a, u32, IER_SPEC, EDSSI_A, 3>;
-impl<'a> EDSSI_W<'a> {
+pub type EDSSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, EDSSI_A, O>;
+impl<'a, const O: u8> EDSSI_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -221,8 +221,8 @@ impl ELSI_R {
     }
 }
 #[doc = "Field `elsi` writer - Enable Receiver Line Status Interrupt"]
-pub type ELSI_W<'a> = crate::BitWriter<'a, u32, IER_SPEC, ELSI_A, 2>;
-impl<'a> ELSI_W<'a> {
+pub type ELSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, ELSI_A, O>;
+impl<'a, const O: u8> ELSI_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -271,8 +271,8 @@ impl ETBEI_R {
     }
 }
 #[doc = "Field `etbei` writer - Enable Transmit Holding Register Empty Interrupt"]
-pub type ETBEI_W<'a> = crate::BitWriter<'a, u32, IER_SPEC, ETBEI_A, 1>;
-impl<'a> ETBEI_W<'a> {
+pub type ETBEI_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, ETBEI_A, O>;
+impl<'a, const O: u8> ETBEI_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -321,8 +321,8 @@ impl ERBFI_R {
     }
 }
 #[doc = "Field `erbfi` writer - Enable Received Data Available Interrupt"]
-pub type ERBFI_W<'a> = crate::BitWriter<'a, u32, IER_SPEC, ERBFI_A, 0>;
-impl<'a> ERBFI_W<'a> {
+pub type ERBFI_W<'a, const O: u8> = crate::BitWriter<'a, u32, IER_SPEC, ERBFI_A, O>;
+impl<'a, const O: u8> ERBFI_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -369,32 +369,32 @@ impl R {
 impl W {
     #[doc = "Bit 7 - Programmable THRE Interrupt Mode Enable"]
     #[inline(always)]
-    pub fn ptime(&mut self) -> PTIME_W {
+    pub fn ptime(&mut self) -> PTIME_W<7> {
         PTIME_W::new(self)
     }
     #[doc = "Bit 4 - RS485 Interrupt Enable"]
     #[inline(always)]
-    pub fn rs485_int_en(&mut self) -> RS485_INT_EN_W {
+    pub fn rs485_int_en(&mut self) -> RS485_INT_EN_W<4> {
         RS485_INT_EN_W::new(self)
     }
     #[doc = "Bit 3 - Enable Modem Status Interrupt"]
     #[inline(always)]
-    pub fn edssi(&mut self) -> EDSSI_W {
+    pub fn edssi(&mut self) -> EDSSI_W<3> {
         EDSSI_W::new(self)
     }
     #[doc = "Bit 2 - Enable Receiver Line Status Interrupt"]
     #[inline(always)]
-    pub fn elsi(&mut self) -> ELSI_W {
+    pub fn elsi(&mut self) -> ELSI_W<2> {
         ELSI_W::new(self)
     }
     #[doc = "Bit 1 - Enable Transmit Holding Register Empty Interrupt"]
     #[inline(always)]
-    pub fn etbei(&mut self) -> ETBEI_W {
+    pub fn etbei(&mut self) -> ETBEI_W<1> {
         ETBEI_W::new(self)
     }
     #[doc = "Bit 0 - Enable Received Data Available Interrupt"]
     #[inline(always)]
-    pub fn erbfi(&mut self) -> ERBFI_W {
+    pub fn erbfi(&mut self) -> ERBFI_W<0> {
         ERBFI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

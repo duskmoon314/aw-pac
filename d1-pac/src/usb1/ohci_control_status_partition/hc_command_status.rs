@@ -39,19 +39,23 @@ pub type SCHEDULING_OVERRUN_COUNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OWERSHIP_CHANGE_REQUEST` reader - OwershipChangeRequest\n\nThis bit is set by an OS HCD to request a change of control of the HC. When set HC will set the OwnershipChange field in. After the changeover, this bit is cleared and remains so until the next request from OS HCD."]
 pub type OWERSHIP_CHANGE_REQUEST_R = crate::BitReader<bool>;
 #[doc = "Field `OWERSHIP_CHANGE_REQUEST` writer - OwershipChangeRequest\n\nThis bit is set by an OS HCD to request a change of control of the HC. When set HC will set the OwnershipChange field in. After the changeover, this bit is cleared and remains so until the next request from OS HCD."]
-pub type OWERSHIP_CHANGE_REQUEST_W<'a> = crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, 3>;
+pub type OWERSHIP_CHANGE_REQUEST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, O>;
 #[doc = "Field `BULKL_LIST_FILLED` reader - BulklListFilled\n\nThis bit is used to indicate whether there are any TDs on the Bulk list. It is set by HCD whenever it adds a TD to an ED in the Bulk list. When HC begins to process the head of the Bulk list, it checks BLF. As long as BulkListFilled is 0, HC will not start processing the Bulk list. If BulkListFilled is 1, HC will start processing the Bulk list and will set BF to 0. If HC finds a TD on the list, then HC will set BulkListFilled to 1 causing the Bulk list processing to continue. If no TD is found on the Bulk list, and if HCD does not set BulkListFilled , then BulkListFilled will still be 0 when HC completes processing the Bulk list and Bulk list processing will stop."]
 pub type BULKL_LIST_FILLED_R = crate::BitReader<bool>;
 #[doc = "Field `BULKL_LIST_FILLED` writer - BulklListFilled\n\nThis bit is used to indicate whether there are any TDs on the Bulk list. It is set by HCD whenever it adds a TD to an ED in the Bulk list. When HC begins to process the head of the Bulk list, it checks BLF. As long as BulkListFilled is 0, HC will not start processing the Bulk list. If BulkListFilled is 1, HC will start processing the Bulk list and will set BF to 0. If HC finds a TD on the list, then HC will set BulkListFilled to 1 causing the Bulk list processing to continue. If no TD is found on the Bulk list, and if HCD does not set BulkListFilled , then BulkListFilled will still be 0 when HC completes processing the Bulk list and Bulk list processing will stop."]
-pub type BULKL_LIST_FILLED_W<'a> = crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, 2>;
+pub type BULKL_LIST_FILLED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, O>;
 #[doc = "Field `CONTROL_LIST_FILLED` reader - ControlListFilled This bit is used to indicate whether there are any TDs on the Control list. It is set by HCD whenever it adds a TD to an ED in the Control list.\n\nWhen HC begins to process the head of the Control list, it checks CLF. As long as ControlListFilled is 0, HC will not start processing the Control list. If CF is 1, HC will start processing the Control list and will set ControlListFilled to 0. If HC finds a TD on the list, then HC will set ControlListFilled to 1 causing the Control list processing to continue. If no TD is found on the Control list, and if the HCD does not set ControlListFilled , then ControlListFilled will still be 0 when HC completes processing the Control list and Control list processing will stop."]
 pub type CONTROL_LIST_FILLED_R = crate::BitReader<bool>;
 #[doc = "Field `CONTROL_LIST_FILLED` writer - ControlListFilled This bit is used to indicate whether there are any TDs on the Control list. It is set by HCD whenever it adds a TD to an ED in the Control list.\n\nWhen HC begins to process the head of the Control list, it checks CLF. As long as ControlListFilled is 0, HC will not start processing the Control list. If CF is 1, HC will start processing the Control list and will set ControlListFilled to 0. If HC finds a TD on the list, then HC will set ControlListFilled to 1 causing the Control list processing to continue. If no TD is found on the Control list, and if the HCD does not set ControlListFilled , then ControlListFilled will still be 0 when HC completes processing the Control list and Control list processing will stop."]
-pub type CONTROL_LIST_FILLED_W<'a> = crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, 1>;
+pub type CONTROL_LIST_FILLED_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, O>;
 #[doc = "Field `HOST_CONTROLLER_RESET` reader - HostControllerReset\n\nThis bit is by HCD to initiate a software reset of HC. Regardless of the functional state of HC, it moves to the USBSuspend state in which most of the operational registers are reset except those stated otherwise; e.g, the InteruptRouting field of HcControl, and no Host bus accesses are allowed. This bit is cleared by HC upon the completion of the reset operation. The reset operation must be completed within 10 ms. This bit, when set, should not cause a reset to the Root Hub and no subsequent reset signaling should be asserted to its downstream ports."]
 pub type HOST_CONTROLLER_RESET_R = crate::BitReader<bool>;
 #[doc = "Field `HOST_CONTROLLER_RESET` writer - HostControllerReset\n\nThis bit is by HCD to initiate a software reset of HC. Regardless of the functional state of HC, it moves to the USBSuspend state in which most of the operational registers are reset except those stated otherwise; e.g, the InteruptRouting field of HcControl, and no Host bus accesses are allowed. This bit is cleared by HC upon the completion of the reset operation. The reset operation must be completed within 10 ms. This bit, when set, should not cause a reset to the Root Hub and no subsequent reset signaling should be asserted to its downstream ports."]
-pub type HOST_CONTROLLER_RESET_W<'a> = crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, 0>;
+pub type HOST_CONTROLLER_RESET_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_COMMAND_STATUS_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 16:17 - SchedulingOverrunCoun\n\nThese bits are incremented on each scheduling overrun error. It is initialized to 00b and wraps around at 11b. This will be incremented when a scheduling overrun is detected even if SchedulingOverrun in has already been set. This is used by HCD to monitor any persistent scheduling problem."]
     #[inline(always)]
@@ -82,22 +86,22 @@ impl R {
 impl W {
     #[doc = "Bit 3 - OwershipChangeRequest\n\nThis bit is set by an OS HCD to request a change of control of the HC. When set HC will set the OwnershipChange field in. After the changeover, this bit is cleared and remains so until the next request from OS HCD."]
     #[inline(always)]
-    pub fn owership_change_request(&mut self) -> OWERSHIP_CHANGE_REQUEST_W {
+    pub fn owership_change_request(&mut self) -> OWERSHIP_CHANGE_REQUEST_W<3> {
         OWERSHIP_CHANGE_REQUEST_W::new(self)
     }
     #[doc = "Bit 2 - BulklListFilled\n\nThis bit is used to indicate whether there are any TDs on the Bulk list. It is set by HCD whenever it adds a TD to an ED in the Bulk list. When HC begins to process the head of the Bulk list, it checks BLF. As long as BulkListFilled is 0, HC will not start processing the Bulk list. If BulkListFilled is 1, HC will start processing the Bulk list and will set BF to 0. If HC finds a TD on the list, then HC will set BulkListFilled to 1 causing the Bulk list processing to continue. If no TD is found on the Bulk list, and if HCD does not set BulkListFilled , then BulkListFilled will still be 0 when HC completes processing the Bulk list and Bulk list processing will stop."]
     #[inline(always)]
-    pub fn bulkl_list_filled(&mut self) -> BULKL_LIST_FILLED_W {
+    pub fn bulkl_list_filled(&mut self) -> BULKL_LIST_FILLED_W<2> {
         BULKL_LIST_FILLED_W::new(self)
     }
     #[doc = "Bit 1 - ControlListFilled This bit is used to indicate whether there are any TDs on the Control list. It is set by HCD whenever it adds a TD to an ED in the Control list.\n\nWhen HC begins to process the head of the Control list, it checks CLF. As long as ControlListFilled is 0, HC will not start processing the Control list. If CF is 1, HC will start processing the Control list and will set ControlListFilled to 0. If HC finds a TD on the list, then HC will set ControlListFilled to 1 causing the Control list processing to continue. If no TD is found on the Control list, and if the HCD does not set ControlListFilled , then ControlListFilled will still be 0 when HC completes processing the Control list and Control list processing will stop."]
     #[inline(always)]
-    pub fn control_list_filled(&mut self) -> CONTROL_LIST_FILLED_W {
+    pub fn control_list_filled(&mut self) -> CONTROL_LIST_FILLED_W<1> {
         CONTROL_LIST_FILLED_W::new(self)
     }
     #[doc = "Bit 0 - HostControllerReset\n\nThis bit is by HCD to initiate a software reset of HC. Regardless of the functional state of HC, it moves to the USBSuspend state in which most of the operational registers are reset except those stated otherwise; e.g, the InteruptRouting field of HcControl, and no Host bus accesses are allowed. This bit is cleared by HC upon the completion of the reset operation. The reset operation must be completed within 10 ms. This bit, when set, should not cause a reset to the Root Hub and no subsequent reset signaling should be asserted to its downstream ports."]
     #[inline(always)]
-    pub fn host_controller_reset(&mut self) -> HOST_CONTROLLER_RESET_W {
+    pub fn host_controller_reset(&mut self) -> HOST_CONTROLLER_RESET_W<0> {
         HOST_CONTROLLER_RESET_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

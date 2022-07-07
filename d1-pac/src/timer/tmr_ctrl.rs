@@ -71,8 +71,8 @@ impl TMR_MODE_R {
     }
 }
 #[doc = "Field `tmr_mode` writer - "]
-pub type TMR_MODE_W<'a> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_MODE_A, 7>;
-impl<'a> TMR_MODE_W<'a> {
+pub type TMR_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_MODE_A, O>;
+impl<'a, const O: u8> TMR_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn periodic(self) -> &'a mut W {
@@ -171,9 +171,9 @@ impl TMR_CLK_PRES_R {
     }
 }
 #[doc = "Field `tmr_clk_pres` writer - "]
-pub type TMR_CLK_PRES_W<'a> =
-    crate::FieldWriterSafe<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_PRES_A, 3, 4>;
-impl<'a> TMR_CLK_PRES_W<'a> {
+pub type TMR_CLK_PRES_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_PRES_A, 3, O>;
+impl<'a, const O: u8> TMR_CLK_PRES_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn p1(self) -> &'a mut W {
@@ -254,8 +254,9 @@ impl TMR_CLK_SRC_R {
     }
 }
 #[doc = "Field `tmr_clk_src` writer - "]
-pub type TMR_CLK_SRC_W<'a> = crate::FieldWriter<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_SRC_A, 2, 2>;
-impl<'a> TMR_CLK_SRC_W<'a> {
+pub type TMR_CLK_SRC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_SRC_A, 2, O>;
+impl<'a, const O: u8> TMR_CLK_SRC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn losc(self) -> &'a mut W {
@@ -304,8 +305,8 @@ impl TMR_RELOAD_R {
     }
 }
 #[doc = "Field `tmr_reload` writer - "]
-pub type TMR_RELOAD_W<'a> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_RELOAD_A, 1>;
-impl<'a> TMR_RELOAD_W<'a> {
+pub type TMR_RELOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_RELOAD_A, O>;
+impl<'a, const O: u8> TMR_RELOAD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -354,8 +355,8 @@ impl TMR_EN_R {
     }
 }
 #[doc = "Field `tmr_en` writer - "]
-pub type TMR_EN_W<'a> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_EN_A, 0>;
-impl<'a> TMR_EN_W<'a> {
+pub type TMR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_EN_A, O>;
+impl<'a, const O: u8> TMR_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn stop_pause(self) -> &'a mut W {
@@ -397,27 +398,27 @@ impl R {
 impl W {
     #[doc = "Bit 7"]
     #[inline(always)]
-    pub fn tmr_mode(&mut self) -> TMR_MODE_W {
+    pub fn tmr_mode(&mut self) -> TMR_MODE_W<7> {
         TMR_MODE_W::new(self)
     }
     #[doc = "Bits 4:6"]
     #[inline(always)]
-    pub fn tmr_clk_pres(&mut self) -> TMR_CLK_PRES_W {
+    pub fn tmr_clk_pres(&mut self) -> TMR_CLK_PRES_W<4> {
         TMR_CLK_PRES_W::new(self)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
-    pub fn tmr_clk_src(&mut self) -> TMR_CLK_SRC_W {
+    pub fn tmr_clk_src(&mut self) -> TMR_CLK_SRC_W<2> {
         TMR_CLK_SRC_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn tmr_reload(&mut self) -> TMR_RELOAD_W {
+    pub fn tmr_reload(&mut self) -> TMR_RELOAD_W<1> {
         TMR_RELOAD_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn tmr_en(&mut self) -> TMR_EN_W {
+    pub fn tmr_en(&mut self) -> TMR_EN_W<0> {
         TMR_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

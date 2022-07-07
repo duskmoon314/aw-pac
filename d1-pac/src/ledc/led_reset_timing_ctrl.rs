@@ -37,11 +37,13 @@ impl From<crate::W<LED_RESET_TIMING_CTRL_SPEC>> for W {
 #[doc = "Field `TR_TIME` reader - "]
 pub type TR_TIME_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `TR_TIME` writer - "]
-pub type TR_TIME_W<'a> = crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 13, 16>;
+pub type TR_TIME_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 13, O>;
 #[doc = "Field `LED_NUM` reader - "]
 pub type LED_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LED_NUM` writer - "]
-pub type LED_NUM_W<'a> = crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 10, 0>;
+pub type LED_NUM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 10, O>;
 impl R {
     #[doc = "Bits 16:28"]
     #[inline(always)]
@@ -57,12 +59,12 @@ impl R {
 impl W {
     #[doc = "Bits 16:28"]
     #[inline(always)]
-    pub fn tr_time(&mut self) -> TR_TIME_W {
+    pub fn tr_time(&mut self) -> TR_TIME_W<16> {
         TR_TIME_W::new(self)
     }
     #[doc = "Bits 0:9"]
     #[inline(always)]
-    pub fn led_num(&mut self) -> LED_NUM_W {
+    pub fn led_num(&mut self) -> LED_NUM_W<0> {
         LED_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

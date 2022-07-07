@@ -35,7 +35,7 @@ impl From<crate::W<WDOG_CFG_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY_FIELD` writer - Key Field"]
-pub type KEY_FIELD_W<'a> = crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u16, u16, 16, 16>;
+pub type KEY_FIELD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u16, u16, 16, O>;
 #[doc = "Select the clock source for the watchdog.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDOG_CLK_SRC_A {
@@ -73,8 +73,9 @@ impl WDOG_CLK_SRC_R {
     }
 }
 #[doc = "Field `WDOG_CLK_SRC` writer - Select the clock source for the watchdog."]
-pub type WDOG_CLK_SRC_W<'a> = crate::BitWriter<'a, u32, WDOG_CFG_SPEC, WDOG_CLK_SRC_A, 8>;
-impl<'a> WDOG_CLK_SRC_W<'a> {
+pub type WDOG_CLK_SRC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WDOG_CFG_SPEC, WDOG_CLK_SRC_A, O>;
+impl<'a, const O: u8> WDOG_CLK_SRC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn hosc_32k(self) -> &'a mut W {
@@ -125,8 +126,9 @@ impl WDOG_MODE_R {
     }
 }
 #[doc = "Field `WDOG_MODE` writer - Configure the operating mode for the watchdog"]
-pub type WDOG_MODE_W<'a> = crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u8, WDOG_MODE_A, 2, 0>;
-impl<'a> WDOG_MODE_W<'a> {
+pub type WDOG_MODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u8, WDOG_MODE_A, 2, O>;
+impl<'a, const O: u8> WDOG_MODE_W<'a, O> {
     #[doc = "`1`"]
     #[inline(always)]
     pub fn whold_system(self) -> &'a mut W {
@@ -153,17 +155,17 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
-    pub fn key_field(&mut self) -> KEY_FIELD_W {
+    pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
     #[doc = "Bit 8 - Select the clock source for the watchdog."]
     #[inline(always)]
-    pub fn wdog_clk_src(&mut self) -> WDOG_CLK_SRC_W {
+    pub fn wdog_clk_src(&mut self) -> WDOG_CLK_SRC_W<8> {
         WDOG_CLK_SRC_W::new(self)
     }
     #[doc = "Bits 0:1 - Configure the operating mode for the watchdog"]
     #[inline(always)]
-    pub fn wdog_mode(&mut self) -> WDOG_MODE_W {
+    pub fn wdog_mode(&mut self) -> WDOG_MODE_W<0> {
         WDOG_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

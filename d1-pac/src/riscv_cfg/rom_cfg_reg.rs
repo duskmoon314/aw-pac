@@ -37,7 +37,7 @@ impl From<crate::W<ROM_CFG_REG_SPEC>> for W {
 #[doc = "Field `ROM_CFG` reader - ROM Configuration"]
 pub type ROM_CFG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ROM_CFG` writer - ROM Configuration"]
-pub type ROM_CFG_W<'a> = crate::FieldWriter<'a, u32, ROM_CFG_REG_SPEC, u8, u8, 8, 0>;
+pub type ROM_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ROM_CFG_REG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - ROM Configuration"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - ROM Configuration"]
     #[inline(always)]
-    pub fn rom_cfg(&mut self) -> ROM_CFG_W {
+    pub fn rom_cfg(&mut self) -> ROM_CFG_W<0> {
         ROM_CFG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

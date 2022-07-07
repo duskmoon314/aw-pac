@@ -71,8 +71,8 @@ impl HW_RST_R {
     }
 }
 #[doc = "Field `HW_RST` writer - "]
-pub type HW_RST_W<'a> = crate::BitWriter<'a, u32, SMHC_HWRST_SPEC, HW_RST_A, 0>;
-impl<'a> HW_RST_W<'a> {
+pub type HW_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_HWRST_SPEC, HW_RST_A, O>;
+impl<'a, const O: u8> HW_RST_W<'a, O> {
     #[doc = "Active mode"]
     #[inline(always)]
     pub fn active(self) -> &'a mut W {
@@ -94,7 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn hw_rst(&mut self) -> HW_RST_W {
+    pub fn hw_rst(&mut self) -> HW_RST_W<0> {
         HW_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

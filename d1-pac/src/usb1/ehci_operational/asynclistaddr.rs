@@ -37,7 +37,7 @@ impl From<crate::W<ASYNCLISTADDR_SPEC>> for W {
 #[doc = "Field `LP` reader - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
 pub type LP_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `LP` writer - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
-pub type LP_W<'a> = crate::FieldWriter<'a, u32, ASYNCLISTADDR_SPEC, u32, u32, 27, 5>;
+pub type LP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ASYNCLISTADDR_SPEC, u32, u32, 27, O>;
 impl R {
     #[doc = "Bits 5:31 - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
     #[inline(always)]
@@ -48,7 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 5:31 - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
     #[inline(always)]
-    pub fn lp(&mut self) -> LP_W {
+    pub fn lp(&mut self) -> LP_W<5> {
         LP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

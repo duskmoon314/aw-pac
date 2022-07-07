@@ -37,7 +37,8 @@ impl From<crate::W<RXDMA_LMT_SPEC>> for W {
 #[doc = "Field `limit_size` reader - "]
 pub type LIMIT_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `limit_size` writer - "]
-pub type LIMIT_SIZE_W<'a> = crate::FieldWriter<'a, u32, RXDMA_LMT_SPEC, u16, u16, 16, 0>;
+pub type LIMIT_SIZE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RXDMA_LMT_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn limit_size(&mut self) -> LIMIT_SIZE_W {
+    pub fn limit_size(&mut self) -> LIMIT_SIZE_W<0> {
         LIMIT_SIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

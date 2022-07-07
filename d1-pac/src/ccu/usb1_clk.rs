@@ -71,8 +71,8 @@ impl CLKEN_R {
     }
 }
 #[doc = "Field `CLKEN` writer - Gating Special Clock"]
-pub type CLKEN_W<'a> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, CLKEN_A, 31>;
-impl<'a> CLKEN_W<'a> {
+pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, CLKEN_A, O>;
+impl<'a, const O: u8> CLKEN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn off(self) -> &'a mut W {
@@ -121,8 +121,8 @@ impl RSTN_R {
     }
 }
 #[doc = "Field `RSTN` writer - PHY Reset"]
-pub type RSTN_W<'a> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, RSTN_A, 30>;
-impl<'a> RSTN_W<'a> {
+pub type RSTN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, RSTN_A, O>;
+impl<'a, const O: u8> RSTN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn assert(self) -> &'a mut W {
@@ -181,8 +181,9 @@ impl CLK12M_SEL_R {
     }
 }
 #[doc = "Field `CLK12M_SEL` writer - OHCI 12M Source Select"]
-pub type CLK12M_SEL_W<'a> = crate::FieldWriter<'a, u32, USB1_CLK_SPEC, u8, CLK12M_SEL_A, 2, 24>;
-impl<'a> CLK12M_SEL_W<'a> {
+pub type CLK12M_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, USB1_CLK_SPEC, u8, CLK12M_SEL_A, 2, O>;
+impl<'a, const O: u8> CLK12M_SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn div_48m(self) -> &'a mut W {
@@ -219,17 +220,17 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
-    pub fn clken(&mut self) -> CLKEN_W {
+    pub fn clken(&mut self) -> CLKEN_W<31> {
         CLKEN_W::new(self)
     }
     #[doc = "Bit 30 - PHY Reset"]
     #[inline(always)]
-    pub fn rstn(&mut self) -> RSTN_W {
+    pub fn rstn(&mut self) -> RSTN_W<30> {
         RSTN_W::new(self)
     }
     #[doc = "Bits 24:25 - OHCI 12M Source Select"]
     #[inline(always)]
-    pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W {
+    pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W<24> {
         CLK12M_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

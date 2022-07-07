@@ -71,9 +71,9 @@ impl TP_OVERRUN_IRQ_EN_R {
     }
 }
 #[doc = "Field `TP_OVERRUN_IRQ_EN` writer - TP FIFO Overrun Interrupt Enable"]
-pub type TP_OVERRUN_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_OVERRUN_IRQ_EN_A, 17>;
-impl<'a> TP_OVERRUN_IRQ_EN_W<'a> {
+pub type TP_OVERRUN_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_OVERRUN_IRQ_EN_A, O>;
+impl<'a, const O: u8> TP_OVERRUN_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -122,9 +122,9 @@ impl TP_DATA_IRQ_EN_R {
     }
 }
 #[doc = "Field `TP_DATA_IRQ_EN` writer - TP FIFO Data Interrupt Enable"]
-pub type TP_DATA_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_IRQ_EN_A, 16>;
-impl<'a> TP_DATA_IRQ_EN_W<'a> {
+pub type TP_DATA_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_IRQ_EN_A, O>;
+impl<'a, const O: u8> TP_DATA_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -173,9 +173,9 @@ impl TP_DATA_XY_CHANGE_R {
     }
 }
 #[doc = "Field `TP_DATA_XY_CHANGE` writer - TP FIFO XY Data Interchange Function Select"]
-pub type TP_DATA_XY_CHANGE_W<'a> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_XY_CHANGE_A, 13>;
-impl<'a> TP_DATA_XY_CHANGE_W<'a> {
+pub type TP_DATA_XY_CHANGE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_XY_CHANGE_A, O>;
+impl<'a, const O: u8> TP_DATA_XY_CHANGE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -190,8 +190,8 @@ impl<'a> TP_DATA_XY_CHANGE_W<'a> {
 #[doc = "Field `TP_FIFO_TRIG_LEVEL` reader - TP FIFO Data Available Trigger Level"]
 pub type TP_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TP_FIFO_TRIG_LEVEL` writer - TP FIFO Data Available Trigger Level"]
-pub type TP_FIFO_TRIG_LEVEL_W<'a> =
-    crate::FieldWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, u8, u8, 5, 8>;
+pub type TP_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "TP FIFO Data Available DRQ Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP_DATA_ERQ_EN_A {
@@ -229,9 +229,9 @@ impl TP_DATA_ERQ_EN_R {
     }
 }
 #[doc = "Field `TP_DATA_ERQ_EN` writer - TP FIFO Data Available DRQ Enable"]
-pub type TP_DATA_ERQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_ERQ_EN_A, 7>;
-impl<'a> TP_DATA_ERQ_EN_W<'a> {
+pub type TP_DATA_ERQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_ERQ_EN_A, O>;
+impl<'a, const O: u8> TP_DATA_ERQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -273,8 +273,9 @@ impl TP_FIFO_FLUSH_R {
     }
 }
 #[doc = "Field `TP_FIFO_FLUSH` writer - TP FIFO Flush"]
-pub type TP_FIFO_FLUSH_W<'a> = crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_FIFO_FLUSH_A, 4>;
-impl<'a> TP_FIFO_FLUSH_W<'a> {
+pub type TP_FIFO_FLUSH_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_FIFO_FLUSH_A, O>;
+impl<'a, const O: u8> TP_FIFO_FLUSH_W<'a, O> {
     #[doc = "`1`"]
     #[inline(always)]
     pub fn flush(self) -> &'a mut W {
@@ -318,8 +319,9 @@ impl TP_UP_IRQ_EN_R {
     }
 }
 #[doc = "Field `TP_UP_IRQ_EN` writer - TP Last Touch (Stylus UP) IRQ Enable"]
-pub type TP_UP_IRQ_EN_W<'a> = crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_UP_IRQ_EN_A, 1>;
-impl<'a> TP_UP_IRQ_EN_W<'a> {
+pub type TP_UP_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_UP_IRQ_EN_A, O>;
+impl<'a, const O: u8> TP_UP_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -368,9 +370,9 @@ impl TP_DOWN_IRQ_EN_R {
     }
 }
 #[doc = "Field `TP_DOWN_IRQ_EN` writer - TP First Touch (Stylus DOWN) IRQ Enable"]
-pub type TP_DOWN_IRQ_EN_W<'a> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DOWN_IRQ_EN_A, 0>;
-impl<'a> TP_DOWN_IRQ_EN_W<'a> {
+pub type TP_DOWN_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DOWN_IRQ_EN_A, O>;
+impl<'a, const O: u8> TP_DOWN_IRQ_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -427,42 +429,42 @@ impl R {
 impl W {
     #[doc = "Bit 17 - TP FIFO Overrun Interrupt Enable"]
     #[inline(always)]
-    pub fn tp_overrun_irq_en(&mut self) -> TP_OVERRUN_IRQ_EN_W {
+    pub fn tp_overrun_irq_en(&mut self) -> TP_OVERRUN_IRQ_EN_W<17> {
         TP_OVERRUN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 16 - TP FIFO Data Interrupt Enable"]
     #[inline(always)]
-    pub fn tp_data_irq_en(&mut self) -> TP_DATA_IRQ_EN_W {
+    pub fn tp_data_irq_en(&mut self) -> TP_DATA_IRQ_EN_W<16> {
         TP_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 13 - TP FIFO XY Data Interchange Function Select"]
     #[inline(always)]
-    pub fn tp_data_xy_change(&mut self) -> TP_DATA_XY_CHANGE_W {
+    pub fn tp_data_xy_change(&mut self) -> TP_DATA_XY_CHANGE_W<13> {
         TP_DATA_XY_CHANGE_W::new(self)
     }
     #[doc = "Bits 8:12 - TP FIFO Data Available Trigger Level"]
     #[inline(always)]
-    pub fn tp_fifo_trig_level(&mut self) -> TP_FIFO_TRIG_LEVEL_W {
+    pub fn tp_fifo_trig_level(&mut self) -> TP_FIFO_TRIG_LEVEL_W<8> {
         TP_FIFO_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 7 - TP FIFO Data Available DRQ Enable"]
     #[inline(always)]
-    pub fn tp_data_erq_en(&mut self) -> TP_DATA_ERQ_EN_W {
+    pub fn tp_data_erq_en(&mut self) -> TP_DATA_ERQ_EN_W<7> {
         TP_DATA_ERQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - TP FIFO Flush"]
     #[inline(always)]
-    pub fn tp_fifo_flush(&mut self) -> TP_FIFO_FLUSH_W {
+    pub fn tp_fifo_flush(&mut self) -> TP_FIFO_FLUSH_W<4> {
         TP_FIFO_FLUSH_W::new(self)
     }
     #[doc = "Bit 1 - TP Last Touch (Stylus UP) IRQ Enable"]
     #[inline(always)]
-    pub fn tp_up_irq_en(&mut self) -> TP_UP_IRQ_EN_W {
+    pub fn tp_up_irq_en(&mut self) -> TP_UP_IRQ_EN_W<1> {
         TP_UP_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - TP First Touch (Stylus DOWN) IRQ Enable"]
     #[inline(always)]
-    pub fn tp_down_irq_en(&mut self) -> TP_DOWN_IRQ_EN_W {
+    pub fn tp_down_irq_en(&mut self) -> TP_DOWN_IRQ_EN_W<0> {
         TP_DOWN_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

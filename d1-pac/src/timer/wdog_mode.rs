@@ -35,7 +35,8 @@ impl From<crate::W<WDOG_MODE_SPEC>> for W {
     }
 }
 #[doc = "Field `KEY_FIELD` writer - Key Field"]
-pub type KEY_FIELD_W<'a> = crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u16, u16, 16, 16>;
+pub type KEY_FIELD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u16, u16, 16, O>;
 #[doc = "Watchdog Interval Value\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -155,9 +156,9 @@ impl WDOG_INTV_VALUE_R {
     }
 }
 #[doc = "Field `WDOG_INTV_VALUE` writer - Watchdog Interval Value"]
-pub type WDOG_INTV_VALUE_W<'a> =
-    crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u8, WDOG_INTV_VALUE_A, 4, 4>;
-impl<'a> WDOG_INTV_VALUE_W<'a> {
+pub type WDOG_INTV_VALUE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u8, WDOG_INTV_VALUE_A, 4, O>;
+impl<'a, const O: u8> WDOG_INTV_VALUE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn c16000(self) -> &'a mut W {
@@ -256,8 +257,8 @@ impl WDOG_EN_R {
     }
 }
 #[doc = "Field `WDOG_EN` writer - Watchdog Enable"]
-pub type WDOG_EN_W<'a> = crate::BitWriter<'a, u32, WDOG_MODE_SPEC, WDOG_EN_A, 0>;
-impl<'a> WDOG_EN_W<'a> {
+pub type WDOG_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WDOG_MODE_SPEC, WDOG_EN_A, O>;
+impl<'a, const O: u8> WDOG_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn no_effect(self) -> &'a mut W {
@@ -284,17 +285,17 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
-    pub fn key_field(&mut self) -> KEY_FIELD_W {
+    pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
     #[doc = "Bits 4:7 - Watchdog Interval Value"]
     #[inline(always)]
-    pub fn wdog_intv_value(&mut self) -> WDOG_INTV_VALUE_W {
+    pub fn wdog_intv_value(&mut self) -> WDOG_INTV_VALUE_W<4> {
         WDOG_INTV_VALUE_W::new(self)
     }
     #[doc = "Bit 0 - Watchdog Enable"]
     #[inline(always)]
-    pub fn wdog_en(&mut self) -> WDOG_EN_W {
+    pub fn wdog_en(&mut self) -> WDOG_EN_W<0> {
         WDOG_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -81,8 +81,8 @@ impl APAM_R {
     }
 }
 #[doc = "Field `APAM` writer - Active Pulse Accept Mode"]
-pub type APAM_W<'a> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, APAM_A, 2, 6>;
-impl<'a> APAM_W<'a> {
+pub type APAM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, APAM_A, 2, O>;
+impl<'a, const O: u8> APAM_W<'a, O> {
     #[doc = "Both positive and negative pulses are valid as a leading code"]
     #[inline(always)]
     pub fn both_valid(self) -> &'a mut W {
@@ -130,8 +130,8 @@ impl CIREN_R {
     }
 }
 #[doc = "Field `CIREN` writer - CIR Enable"]
-pub type CIREN_W<'a> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, CIREN_A, 2, 4>;
-impl<'a> CIREN_W<'a> {
+pub type CIREN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, CIREN_A, 2, O>;
+impl<'a, const O: u8> CIREN_W<'a, O> {
     #[doc = "CIR mode enable"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
@@ -175,8 +175,8 @@ impl RXEN_R {
     }
 }
 #[doc = "Field `RXEN` writer - Receiver Block Enable"]
-pub type RXEN_W<'a> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, RXEN_A, 1>;
-impl<'a> RXEN_W<'a> {
+pub type RXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, RXEN_A, O>;
+impl<'a, const O: u8> RXEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -225,8 +225,8 @@ impl GEN_R {
     }
 }
 #[doc = "Field `GEN` writer - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
-pub type GEN_W<'a> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, GEN_A, 0>;
-impl<'a> GEN_W<'a> {
+pub type GEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, GEN_A, O>;
+impl<'a, const O: u8> GEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -263,22 +263,22 @@ impl R {
 impl W {
     #[doc = "Bits 6:7 - Active Pulse Accept Mode"]
     #[inline(always)]
-    pub fn apam(&mut self) -> APAM_W {
+    pub fn apam(&mut self) -> APAM_W<6> {
         APAM_W::new(self)
     }
     #[doc = "Bits 4:5 - CIR Enable"]
     #[inline(always)]
-    pub fn ciren(&mut self) -> CIREN_W {
+    pub fn ciren(&mut self) -> CIREN_W<4> {
         CIREN_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Block Enable"]
     #[inline(always)]
-    pub fn rxen(&mut self) -> RXEN_W {
+    pub fn rxen(&mut self) -> RXEN_W<1> {
         RXEN_W::new(self)
     }
     #[doc = "Bit 0 - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
     #[inline(always)]
-    pub fn gen(&mut self) -> GEN_W {
+    pub fn gen(&mut self) -> GEN_W<0> {
         GEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

@@ -37,7 +37,8 @@ impl From<crate::W<HC_FM_NUMBER_SPEC>> for W {
 #[doc = "Field `FRAME_NUMBER` reader - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
 pub type FRAME_NUMBER_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FRAME_NUMBER` writer - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
-pub type FRAME_NUMBER_W<'a> = crate::FieldWriter<'a, u32, HC_FM_NUMBER_SPEC, u16, u16, 16, 0>;
+pub type FRAME_NUMBER_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HC_FM_NUMBER_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
     #[inline(always)]
-    pub fn frame_number(&mut self) -> FRAME_NUMBER_W {
+    pub fn frame_number(&mut self) -> FRAME_NUMBER_W<0> {
         FRAME_NUMBER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

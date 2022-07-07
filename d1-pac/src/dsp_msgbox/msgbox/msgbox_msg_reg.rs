@@ -37,7 +37,8 @@ impl From<crate::W<MSGBOX_MSG_REG_SPEC>> for W {
 #[doc = "Field `MSG_QUE` reader - The message register stores the next to be read message of the message FIFO queue."]
 pub type MSG_QUE_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `MSG_QUE` writer - The message register stores the next to be read message of the message FIFO queue."]
-pub type MSG_QUE_W<'a> = crate::FieldWriter<'a, u32, MSGBOX_MSG_REG_SPEC, u32, u32, 32, 0>;
+pub type MSG_QUE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, MSGBOX_MSG_REG_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - The message register stores the next to be read message of the message FIFO queue."]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - The message register stores the next to be read message of the message FIFO queue."]
     #[inline(always)]
-    pub fn msg_que(&mut self) -> MSG_QUE_W {
+    pub fn msg_que(&mut self) -> MSG_QUE_W<0> {
         MSG_QUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

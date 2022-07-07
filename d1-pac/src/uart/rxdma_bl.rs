@@ -37,7 +37,8 @@ impl From<crate::W<RXDMA_BL_SPEC>> for W {
 #[doc = "Field `buffer_length` reader - "]
 pub type BUFFER_LENGTH_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `buffer_length` writer - "]
-pub type BUFFER_LENGTH_W<'a> = crate::FieldWriter<'a, u32, RXDMA_BL_SPEC, u16, u16, 16, 0>;
+pub type BUFFER_LENGTH_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, RXDMA_BL_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -48,7 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn buffer_length(&mut self) -> BUFFER_LENGTH_W {
+    pub fn buffer_length(&mut self) -> BUFFER_LENGTH_W<0> {
         BUFFER_LENGTH_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

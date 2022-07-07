@@ -81,8 +81,9 @@ impl CARD_WID_R {
     }
 }
 #[doc = "Field `CARD_WID` writer - Card Width"]
-pub type CARD_WID_W<'a> = crate::FieldWriter<'a, u32, SMHC_CTYPE_SPEC, u8, CARD_WID_A, 2, 0>;
-impl<'a> CARD_WID_W<'a> {
+pub type CARD_WID_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SMHC_CTYPE_SPEC, u8, CARD_WID_A, 2, O>;
+impl<'a, const O: u8> CARD_WID_W<'a, O> {
     #[doc = "1-bit width"]
     #[inline(always)]
     pub fn b1(self) -> &'a mut W {
@@ -109,7 +110,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Card Width"]
     #[inline(always)]
-    pub fn card_wid(&mut self) -> CARD_WID_W {
+    pub fn card_wid(&mut self) -> CARD_WID_W<0> {
         CARD_WID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

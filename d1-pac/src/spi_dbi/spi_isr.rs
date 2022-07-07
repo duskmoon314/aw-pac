@@ -37,7 +37,7 @@ impl From<crate::W<SPI_ISR_SPEC>> for W {
 #[doc = "Field `ssi` reader - SS Invalid Enable"]
 pub type SSI_R = crate::BitReader<bool>;
 #[doc = "Field `ssi` writer - SS Invalid Enable"]
-pub type SSI_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, bool, 13>;
+pub type SSI_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, bool, O>;
 #[doc = "Transfer Completed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TC_A {
@@ -75,8 +75,8 @@ impl TC_R {
     }
 }
 #[doc = "Field `tc` writer - Transfer Completed"]
-pub type TC_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TC_A, 12>;
-impl<'a> TC_W<'a> {
+pub type TC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TC_A, O>;
+impl<'a, const O: u8> TC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn busy(self) -> &'a mut W {
@@ -125,8 +125,8 @@ impl TF_UDR_R {
     }
 }
 #[doc = "Field `tf_udr` writer - TXFIFO Underrun"]
-pub type TF_UDR_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_UDR_A, 11>;
-impl<'a> TF_UDR_W<'a> {
+pub type TF_UDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_UDR_A, O>;
+impl<'a, const O: u8> TF_UDR_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_underrun(self) -> &'a mut W {
@@ -175,8 +175,8 @@ impl TF_OVF_R {
     }
 }
 #[doc = "Field `tf_ovf` writer - TXFIFO Overflow"]
-pub type TF_OVF_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_OVF_A, 10>;
-impl<'a> TF_OVF_W<'a> {
+pub type TF_OVF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_OVF_A, O>;
+impl<'a, const O: u8> TF_OVF_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_overflow(self) -> &'a mut W {
@@ -225,8 +225,8 @@ impl RF_UDR_R {
     }
 }
 #[doc = "Field `rf_udr` writer - RXFIFO Underrun"]
-pub type RF_UDR_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_UDR_A, 9>;
-impl<'a> RF_UDR_W<'a> {
+pub type RF_UDR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_UDR_A, O>;
+impl<'a, const O: u8> RF_UDR_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_underrun(self) -> &'a mut W {
@@ -275,8 +275,8 @@ impl RF_OVF_R {
     }
 }
 #[doc = "Field `rf_ovf` writer - RXFIFO Overflow"]
-pub type RF_OVF_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_OVF_A, 8>;
-impl<'a> RF_OVF_W<'a> {
+pub type RF_OVF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_OVF_A, O>;
+impl<'a, const O: u8> RF_OVF_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_overflow(self) -> &'a mut W {
@@ -325,8 +325,8 @@ impl TF_FULL_R {
     }
 }
 #[doc = "Field `tf_full` writer - TXFIFO Full"]
-pub type TF_FULL_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_FULL_A, 6>;
-impl<'a> TF_FULL_W<'a> {
+pub type TF_FULL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_FULL_A, O>;
+impl<'a, const O: u8> TF_FULL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_full(self) -> &'a mut W {
@@ -375,8 +375,8 @@ impl TF_EMP_R {
     }
 }
 #[doc = "Field `tf_emp` writer - TXFIFO Empty"]
-pub type TF_EMP_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_EMP_A, 5>;
-impl<'a> TF_EMP_W<'a> {
+pub type TF_EMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, TF_EMP_A, O>;
+impl<'a, const O: u8> TF_EMP_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_empty(self) -> &'a mut W {
@@ -391,7 +391,7 @@ impl<'a> TF_EMP_W<'a> {
 #[doc = "Field `tf_ready` reader - TXFIFO Ready"]
 pub type TF_READY_R = crate::BitReader<bool>;
 #[doc = "Field `tf_ready` writer - TXFIFO Ready"]
-pub type TF_READY_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, bool, 4>;
+pub type TF_READY_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, bool, O>;
 #[doc = "RXFIFO Full\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RF_FULL_A {
@@ -429,8 +429,8 @@ impl RF_FULL_R {
     }
 }
 #[doc = "Field `rf_full` writer - RXFIFO Full"]
-pub type RF_FULL_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_FULL_A, 2>;
-impl<'a> RF_FULL_W<'a> {
+pub type RF_FULL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_FULL_A, O>;
+impl<'a, const O: u8> RF_FULL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_full(self) -> &'a mut W {
@@ -479,8 +479,8 @@ impl RF_EMP_R {
     }
 }
 #[doc = "Field `rf_emp` writer - RXFIFO Empty"]
-pub type RF_EMP_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_EMP_A, 1>;
-impl<'a> RF_EMP_W<'a> {
+pub type RF_EMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, RF_EMP_A, O>;
+impl<'a, const O: u8> RF_EMP_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn not_empty(self) -> &'a mut W {
@@ -495,7 +495,7 @@ impl<'a> RF_EMP_W<'a> {
 #[doc = "Field `rf_rdy` reader - RXFIFO Ready"]
 pub type RF_RDY_R = crate::BitReader<bool>;
 #[doc = "Field `rf_rdy` writer - RXFIFO Ready"]
-pub type RF_RDY_W<'a> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, bool, 0>;
+pub type RF_RDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 13 - SS Invalid Enable"]
     #[inline(always)]
@@ -561,62 +561,62 @@ impl R {
 impl W {
     #[doc = "Bit 13 - SS Invalid Enable"]
     #[inline(always)]
-    pub fn ssi(&mut self) -> SSI_W {
+    pub fn ssi(&mut self) -> SSI_W<13> {
         SSI_W::new(self)
     }
     #[doc = "Bit 12 - Transfer Completed"]
     #[inline(always)]
-    pub fn tc(&mut self) -> TC_W {
+    pub fn tc(&mut self) -> TC_W<12> {
         TC_W::new(self)
     }
     #[doc = "Bit 11 - TXFIFO Underrun"]
     #[inline(always)]
-    pub fn tf_udr(&mut self) -> TF_UDR_W {
+    pub fn tf_udr(&mut self) -> TF_UDR_W<11> {
         TF_UDR_W::new(self)
     }
     #[doc = "Bit 10 - TXFIFO Overflow"]
     #[inline(always)]
-    pub fn tf_ovf(&mut self) -> TF_OVF_W {
+    pub fn tf_ovf(&mut self) -> TF_OVF_W<10> {
         TF_OVF_W::new(self)
     }
     #[doc = "Bit 9 - RXFIFO Underrun"]
     #[inline(always)]
-    pub fn rf_udr(&mut self) -> RF_UDR_W {
+    pub fn rf_udr(&mut self) -> RF_UDR_W<9> {
         RF_UDR_W::new(self)
     }
     #[doc = "Bit 8 - RXFIFO Overflow"]
     #[inline(always)]
-    pub fn rf_ovf(&mut self) -> RF_OVF_W {
+    pub fn rf_ovf(&mut self) -> RF_OVF_W<8> {
         RF_OVF_W::new(self)
     }
     #[doc = "Bit 6 - TXFIFO Full"]
     #[inline(always)]
-    pub fn tf_full(&mut self) -> TF_FULL_W {
+    pub fn tf_full(&mut self) -> TF_FULL_W<6> {
         TF_FULL_W::new(self)
     }
     #[doc = "Bit 5 - TXFIFO Empty"]
     #[inline(always)]
-    pub fn tf_emp(&mut self) -> TF_EMP_W {
+    pub fn tf_emp(&mut self) -> TF_EMP_W<5> {
         TF_EMP_W::new(self)
     }
     #[doc = "Bit 4 - TXFIFO Ready"]
     #[inline(always)]
-    pub fn tf_ready(&mut self) -> TF_READY_W {
+    pub fn tf_ready(&mut self) -> TF_READY_W<4> {
         TF_READY_W::new(self)
     }
     #[doc = "Bit 2 - RXFIFO Full"]
     #[inline(always)]
-    pub fn rf_full(&mut self) -> RF_FULL_W {
+    pub fn rf_full(&mut self) -> RF_FULL_W<2> {
         RF_FULL_W::new(self)
     }
     #[doc = "Bit 1 - RXFIFO Empty"]
     #[inline(always)]
-    pub fn rf_emp(&mut self) -> RF_EMP_W {
+    pub fn rf_emp(&mut self) -> RF_EMP_W<1> {
         RF_EMP_W::new(self)
     }
     #[doc = "Bit 0 - RXFIFO Ready"]
     #[inline(always)]
-    pub fn rf_rdy(&mut self) -> RF_RDY_W {
+    pub fn rf_rdy(&mut self) -> RF_RDY_W<0> {
         RF_RDY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
