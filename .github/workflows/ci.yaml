@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         rust: [nightly, stable]
-        crate: [d1-pac, r528-pac, xr806-pac]
+        crate: [d1-pac, r528-pac, xr806-pac, v853-pac]
 
         include:
           # Nightly is only for reference and allowed to fail
@@ -24,6 +24,8 @@ jobs:
             target: armv7a-none-eabi
           - crate: xr806-pac
             target: thumbv8m.main-none-eabi
+          - crate: v853-pac
+            target: armv7a-none-eabi
 
     steps:
       - uses: actions/checkout@v3
@@ -44,7 +46,7 @@ jobs:
         os:
           - macOS-latest
           - windows-latest
-        crate: [d1-pac, r528-pac, xr806-pac]
+        crate: [d1-pac, r528-pac, xr806-pac, v853-pac]
 
         include:
           - crate: d1-pac
@@ -53,6 +55,8 @@ jobs:
             target: armv7a-none-eabi
           - crate: xr806-pac
             target: thumbv8m.main-none-eabi
+          - crate: v853-pac
+            target: armv7a-none-eabi
 
     runs-on: ${{ matrix.os }}
 
