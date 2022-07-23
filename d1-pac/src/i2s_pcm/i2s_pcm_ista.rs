@@ -1,4 +1,4 @@
-#[doc = "Register `I2S_PCM_ISTA` reader"]
+#[doc = "Register `i2s_pcm_ista` reader"]
 pub struct R(crate::R<I2S_PCM_ISTA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<I2S_PCM_ISTA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<I2S_PCM_ISTA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `I2S_PCM_ISTA` writer"]
+#[doc = "Register `i2s_pcm_ista` writer"]
 pub struct W(crate::W<I2S_PCM_ISTA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<I2S_PCM_ISTA_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for I2S_PCM_ISTA_SPEC {
 impl crate::Writable for I2S_PCM_ISTA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets I2S_PCM_ISTA to value 0"]
+#[doc = "`reset()` method sets i2s_pcm_ista to value 0"]
 impl crate::Resettable for I2S_PCM_ISTA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_HWRST` reader"]
+#[doc = "Register `smhc_hwrst` reader"]
 pub struct R(crate::R<SMHC_HWRST_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_HWRST_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_HWRST_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_HWRST` writer"]
+#[doc = "Register `smhc_hwrst` writer"]
 pub struct W(crate::W<SMHC_HWRST_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_HWRST_SPEC>;
@@ -48,7 +48,7 @@ impl From<HW_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HW_RST` reader - "]
+#[doc = "Field `hw_rst` reader - "]
 pub type HW_RST_R = crate::BitReader<HW_RST_A>;
 impl HW_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl HW_RST_R {
         *self == HW_RST_A::RESET
     }
 }
-#[doc = "Field `HW_RST` writer - "]
+#[doc = "Field `hw_rst` writer - "]
 pub type HW_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_HWRST_SPEC, HW_RST_A, O>;
 impl<'a, const O: u8> HW_RST_W<'a, O> {
     #[doc = "Active mode"]
@@ -117,7 +117,7 @@ impl crate::Readable for SMHC_HWRST_SPEC {
 impl crate::Writable for SMHC_HWRST_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_HWRST to value 0"]
+#[doc = "`reset()` method sets smhc_hwrst to value 0"]
 impl crate::Resettable for SMHC_HWRST_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

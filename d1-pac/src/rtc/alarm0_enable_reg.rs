@@ -1,4 +1,4 @@
-#[doc = "Register `ALARM0_ENABLE_REG` reader"]
+#[doc = "Register `alarm0_enable_reg` reader"]
 pub struct R(crate::R<ALARM0_ENABLE_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ALARM0_ENABLE_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ALARM0_ENABLE_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ALARM0_ENABLE_REG` writer"]
+#[doc = "Register `alarm0_enable_reg` writer"]
 pub struct W(crate::W<ALARM0_ENABLE_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ALARM0_ENABLE_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<ALM_0_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALM_0_EN` reader - Alarm 0 Enable"]
+#[doc = "Field `alm_0_en` reader - Alarm 0 Enable"]
 pub type ALM_0_EN_R = crate::BitReader<ALM_0_EN_A>;
 impl ALM_0_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ALM_0_EN_R {
         *self == ALM_0_EN_A::ENABLE
     }
 }
-#[doc = "Field `ALM_0_EN` writer - Alarm 0 Enable"]
+#[doc = "Field `alm_0_en` writer - Alarm 0 Enable"]
 pub type ALM_0_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, ALARM0_ENABLE_REG_SPEC, ALM_0_EN_A, O>;
 impl<'a, const O: u8> ALM_0_EN_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for ALARM0_ENABLE_REG_SPEC {
 impl crate::Writable for ALARM0_ENABLE_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ALARM0_ENABLE_REG to value 0"]
+#[doc = "`reset()` method sets alarm0_enable_reg to value 0"]
 impl crate::Resettable for ALARM0_ENABLE_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

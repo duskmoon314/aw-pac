@@ -1,4 +1,4 @@
-#[doc = "Register `RISCV_AXI_PMU_PRD` reader"]
+#[doc = "Register `riscv_axi_pmu_prd` reader"]
 pub struct R(crate::R<RISCV_AXI_PMU_PRD_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RISCV_AXI_PMU_PRD_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RISCV_AXI_PMU_PRD_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RISCV_AXI_PMU_PRD` writer"]
+#[doc = "Register `riscv_axi_pmu_prd` writer"]
 pub struct W(crate::W<RISCV_AXI_PMU_PRD_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RISCV_AXI_PMU_PRD_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for RISCV_AXI_PMU_PRD_SPEC {
 impl crate::Writable for RISCV_AXI_PMU_PRD_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RISCV_AXI_PMU_PRD to value 0"]
+#[doc = "`reset()` method sets riscv_axi_pmu_prd to value 0"]
 impl crate::Resettable for RISCV_AXI_PMU_PRD_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

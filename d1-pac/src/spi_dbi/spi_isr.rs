@@ -1,4 +1,4 @@
-#[doc = "Register `SPI_ISR` reader"]
+#[doc = "Register `spi_isr` reader"]
 pub struct R(crate::R<SPI_ISR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPI_ISR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SPI_ISR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SPI_ISR` writer"]
+#[doc = "Register `spi_isr` writer"]
 pub struct W(crate::W<SPI_ISR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SPI_ISR_SPEC>;
@@ -639,7 +639,7 @@ impl crate::Readable for SPI_ISR_SPEC {
 impl crate::Writable for SPI_ISR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SPI_ISR to value 0"]
+#[doc = "`reset()` method sets spi_isr to value 0"]
 impl crate::Resettable for SPI_ISR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

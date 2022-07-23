@@ -1,4 +1,4 @@
-#[doc = "Register `CPU_AXI_CFG` reader"]
+#[doc = "Register `cpu_axi_cfg` reader"]
 pub struct R(crate::R<CPU_AXI_CFG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CPU_AXI_CFG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CPU_AXI_CFG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CPU_AXI_CFG` writer"]
+#[doc = "Register `cpu_axi_cfg` writer"]
 pub struct W(crate::W<CPU_AXI_CFG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CPU_AXI_CFG_SPEC>;
@@ -59,7 +59,7 @@ impl From<CPU_CLK_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CPU_CLK_SEL` reader - Clock Source Select"]
+#[doc = "Field `cpu_clk_sel` reader - Clock Source Select"]
 pub type CPU_CLK_SEL_R = crate::FieldReader<u8, CPU_CLK_SEL_A>;
 impl CPU_CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -112,7 +112,7 @@ impl CPU_CLK_SEL_R {
         *self == CPU_CLK_SEL_A::PLL_PERI_800M
     }
 }
-#[doc = "Field `CPU_CLK_SEL` writer - Clock Source Select"]
+#[doc = "Field `cpu_clk_sel` writer - Clock Source Select"]
 pub type CPU_CLK_SEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, CPU_CLK_SEL_A, 3, O>;
 impl<'a, const O: u8> CPU_CLK_SEL_W<'a, O> {
@@ -169,7 +169,7 @@ impl From<PLL_CPU_OUT_EXT_DIVP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PLL_CPU_OUT_EXT_DIVP` reader - PLL Output External Divider P"]
+#[doc = "Field `pll_cpu_out_ext_divp` reader - PLL Output External Divider P"]
 pub type PLL_CPU_OUT_EXT_DIVP_R = crate::FieldReader<u8, PLL_CPU_OUT_EXT_DIVP_A>;
 impl PLL_CPU_OUT_EXT_DIVP_R {
     #[doc = "Get enumerated values variant"]
@@ -198,7 +198,7 @@ impl PLL_CPU_OUT_EXT_DIVP_R {
         *self == PLL_CPU_OUT_EXT_DIVP_A::P4
     }
 }
-#[doc = "Field `PLL_CPU_OUT_EXT_DIVP` writer - PLL Output External Divider P"]
+#[doc = "Field `pll_cpu_out_ext_divp` writer - PLL Output External Divider P"]
 pub type PLL_CPU_OUT_EXT_DIVP_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, PLL_CPU_OUT_EXT_DIVP_A, 2, O>;
 impl<'a, const O: u8> PLL_CPU_OUT_EXT_DIVP_W<'a, O> {
@@ -218,13 +218,13 @@ impl<'a, const O: u8> PLL_CPU_OUT_EXT_DIVP_W<'a, O> {
         self.variant(PLL_CPU_OUT_EXT_DIVP_A::P4)
     }
 }
-#[doc = "Field `CPU_DIV2` reader - Factor N"]
+#[doc = "Field `cpu_div2` reader - Factor N"]
 pub type CPU_DIV2_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `CPU_DIV2` writer - Factor N"]
+#[doc = "Field `cpu_div2` writer - Factor N"]
 pub type CPU_DIV2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, O>;
-#[doc = "Field `CPU_DIV1` reader - Factor M"]
+#[doc = "Field `cpu_div1` reader - Factor M"]
 pub type CPU_DIV1_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `CPU_DIV1` writer - Factor M"]
+#[doc = "Field `cpu_div1` writer - Factor M"]
 pub type CPU_DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 24:26 - Clock Source Select"]
@@ -289,7 +289,7 @@ impl crate::Readable for CPU_AXI_CFG_SPEC {
 impl crate::Writable for CPU_AXI_CFG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CPU_AXI_CFG to value 0"]
+#[doc = "`reset()` method sets cpu_axi_cfg to value 0"]
 impl crate::Resettable for CPU_AXI_CFG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

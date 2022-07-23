@@ -1,4 +1,4 @@
-#[doc = "Register `TVD_BGR` reader"]
+#[doc = "Register `tvd_bgr` reader"]
 pub struct R(crate::R<TVD_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TVD_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TVD_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TVD_BGR` writer"]
+#[doc = "Register `tvd_bgr` writer"]
 pub struct W(crate::W<TVD_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TVD_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RST` reader - Reset"]
+#[doc = "Field `rst` reader - Reset"]
 pub type RST_R = crate::BitReader<RST_A>;
 impl RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RST_R {
         *self == RST_A::DEASSERT
     }
 }
-#[doc = "Field `RST` writer - Reset"]
+#[doc = "Field `rst` writer - Reset"]
 pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, RST_A, O>;
 impl<'a, const O: u8> RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<TOP_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TOP_RST` reader - Reset"]
+#[doc = "Field `top_rst` reader - Reset"]
 pub type TOP_RST_R = crate::BitReader<TOP_RST_A>;
 impl TOP_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl TOP_RST_R {
         *self == TOP_RST_A::DEASSERT
     }
 }
-#[doc = "Field `TOP_RST` writer - Reset"]
+#[doc = "Field `top_rst` writer - Reset"]
 pub type TOP_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_RST_A, O>;
 impl<'a, const O: u8> TOP_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -148,7 +148,7 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GATING` reader - Gating Clock"]
+#[doc = "Field `gating` reader - Gating Clock"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -170,7 +170,7 @@ impl GATING_R {
         *self == GATING_A::PASS
     }
 }
-#[doc = "Field `GATING` writer - Gating Clock"]
+#[doc = "Field `gating` writer - Gating Clock"]
 pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, GATING_A, O>;
 impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -198,7 +198,7 @@ impl From<TOP_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TOP_GATING` reader - Gating Clock"]
+#[doc = "Field `top_gating` reader - Gating Clock"]
 pub type TOP_GATING_R = crate::BitReader<TOP_GATING_A>;
 impl TOP_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -220,7 +220,7 @@ impl TOP_GATING_R {
         *self == TOP_GATING_A::PASS
     }
 }
-#[doc = "Field `TOP_GATING` writer - Gating Clock"]
+#[doc = "Field `top_gating` writer - Gating Clock"]
 pub type TOP_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_GATING_A, O>;
 impl<'a, const O: u8> TOP_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -297,7 +297,7 @@ impl crate::Readable for TVD_BGR_SPEC {
 impl crate::Writable for TVD_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TVD_BGR to value 0"]
+#[doc = "`reset()` method sets tvd_bgr to value 0"]
 impl crate::Resettable for TVD_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `MSGBOX_WR_IRQ_STATUS_REG` reader"]
+#[doc = "Register `msgbox_wr_irq_status_reg` reader"]
 pub struct R(crate::R<MSGBOX_WR_IRQ_STATUS_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MSGBOX_WR_IRQ_STATUS_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MSGBOX_WR_IRQ_STATUS_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MSGBOX_WR_IRQ_STATUS_REG` writer"]
+#[doc = "Register `msgbox_wr_irq_status_reg` writer"]
 pub struct W(crate::W<MSGBOX_WR_IRQ_STATUS_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MSGBOX_WR_IRQ_STATUS_REG_SPEC>;
@@ -49,7 +49,7 @@ impl From<TRANSMIT_MQ_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `TRANSMIT_MQ(0-3)_IRQ_PEND` reader - Transmit Channel\\[i\\]
+#[doc = "Fields `transmit_mq(0-3)_irq_pend` reader - Transmit Channel\\[i\\]
 Interrupt Pending"]
 pub type TRANSMIT_MQ_IRQ_PEND_R = crate::BitReader<TRANSMIT_MQ_IRQ_PEND_A>;
 impl TRANSMIT_MQ_IRQ_PEND_R {
@@ -72,7 +72,7 @@ impl TRANSMIT_MQ_IRQ_PEND_R {
         *self == TRANSMIT_MQ_IRQ_PEND_A::PENDING
     }
 }
-#[doc = "Fields `TRANSMIT_MQ(0-3)_IRQ_PEND` writer - Transmit Channel\\[i\\]
+#[doc = "Fields `transmit_mq(0-3)_irq_pend` writer - Transmit Channel\\[i\\]
 Interrupt Pending"]
 pub type TRANSMIT_MQ_IRQ_PEND_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, MSGBOX_WR_IRQ_STATUS_REG_SPEC, TRANSMIT_MQ_IRQ_PEND_A, O>;
@@ -171,7 +171,7 @@ impl crate::Readable for MSGBOX_WR_IRQ_STATUS_REG_SPEC {
 impl crate::Writable for MSGBOX_WR_IRQ_STATUS_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MSGBOX_WR_IRQ_STATUS_REG to value 0"]
+#[doc = "`reset()` method sets msgbox_wr_irq_status_reg to value 0"]
 impl crate::Resettable for MSGBOX_WR_IRQ_STATUS_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

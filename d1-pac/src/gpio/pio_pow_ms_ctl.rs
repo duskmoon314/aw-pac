@@ -48,7 +48,7 @@ impl From<VCCIO_WS_VOL_MOD_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VCCIO_WS_VOL_MOD_SEL` reader - VCC_IO Withstand Voltage Mode Select Control"]
+#[doc = "Field `vccio_ws_vol_mod_sel` reader - VCC_IO Withstand Voltage Mode Select Control"]
 pub type VCCIO_WS_VOL_MOD_SEL_R = crate::BitReader<VCCIO_WS_VOL_MOD_SEL_A>;
 impl VCCIO_WS_VOL_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl VCCIO_WS_VOL_MOD_SEL_R {
         *self == VCCIO_WS_VOL_MOD_SEL_A::DISABLE
     }
 }
-#[doc = "Field `VCCIO_WS_VOL_MOD_SEL` writer - VCC_IO Withstand Voltage Mode Select Control"]
+#[doc = "Field `vccio_ws_vol_mod_sel` writer - VCC_IO Withstand Voltage Mode Select Control"]
 pub type VCCIO_WS_VOL_MOD_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCCIO_WS_VOL_MOD_SEL_A, O>;
 impl<'a, const O: u8> VCCIO_WS_VOL_MOD_SEL_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<VCC_P_WS_VOL_MOD_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `VCC_P(0-4)_WS_VOL_MOD_SEL` reader - VCC_PX Withstand Voltage Mode Select Control"]
+#[doc = "Fields `vcc_p(0-4)_ws_vol_mod_sel` reader - VCC_PX Withstand Voltage Mode Select Control"]
 pub type VCC_P_WS_VOL_MOD_SEL_R = crate::BitReader<VCC_P_WS_VOL_MOD_SEL_A>;
 impl VCC_P_WS_VOL_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl VCC_P_WS_VOL_MOD_SEL_R {
         *self == VCC_P_WS_VOL_MOD_SEL_A::DISABLE
     }
 }
-#[doc = "Fields `VCC_P(0-4)_WS_VOL_MOD_SEL` writer - VCC_PX Withstand Voltage Mode Select Control"]
+#[doc = "Fields `vcc_p(0-4)_ws_vol_mod_sel` writer - VCC_PX Withstand Voltage Mode Select Control"]
 pub type VCC_P_WS_VOL_MOD_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCC_P_WS_VOL_MOD_SEL_A, O>;
 impl<'a, const O: u8> VCC_P_WS_VOL_MOD_SEL_W<'a, O> {
@@ -149,27 +149,27 @@ impl R {
     }
     #[doc = "Bit 2 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pc_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
+    pub fn vcc_p_c_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
         VCC_P_WS_VOL_MOD_SEL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pd_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
+    pub fn vcc_p_d_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
         VCC_P_WS_VOL_MOD_SEL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pe_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
+    pub fn vcc_p_e_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
         VCC_P_WS_VOL_MOD_SEL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pf_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
+    pub fn vcc_p_f_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
         VCC_P_WS_VOL_MOD_SEL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pg_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
+    pub fn vcc_p_g_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
         VCC_P_WS_VOL_MOD_SEL_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
@@ -186,27 +186,27 @@ impl W {
     }
     #[doc = "Bit 2 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pc_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<2> {
+    pub fn vcc_p_c_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<2> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 3 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pd_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<3> {
+    pub fn vcc_p_d_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<3> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 4 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pe_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<4> {
+    pub fn vcc_p_e_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<4> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 5 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pf_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<5> {
+    pub fn vcc_p_f_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<5> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 6 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
-    pub fn vcc_pg_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<6> {
+    pub fn vcc_p_g_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<6> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

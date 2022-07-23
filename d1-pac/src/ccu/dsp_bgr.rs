@@ -1,4 +1,4 @@
-#[doc = "Register `DSP_BGR` reader"]
+#[doc = "Register `dsp_bgr` reader"]
 pub struct R(crate::R<DSP_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DSP_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DSP_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DSP_BGR` writer"]
+#[doc = "Register `dsp_bgr` writer"]
 pub struct W(crate::W<DSP_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DSP_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<DBG_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DBG_RST` reader - Reset"]
+#[doc = "Field `dbg_rst` reader - Reset"]
 pub type DBG_RST_R = crate::BitReader<DBG_RST_A>;
 impl DBG_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DBG_RST_R {
         *self == DBG_RST_A::DEASSERT
     }
 }
-#[doc = "Field `DBG_RST` writer - Reset"]
+#[doc = "Field `dbg_rst` writer - Reset"]
 pub type DBG_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, DBG_RST_A, O>;
 impl<'a, const O: u8> DBG_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<CFG_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CFG_RST` reader - Reset"]
+#[doc = "Field `cfg_rst` reader - Reset"]
 pub type CFG_RST_R = crate::BitReader<CFG_RST_A>;
 impl CFG_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl CFG_RST_R {
         *self == CFG_RST_A::DEASSERT
     }
 }
-#[doc = "Field `CFG_RST` writer - Reset"]
+#[doc = "Field `cfg_rst` writer - Reset"]
 pub type CFG_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_RST_A, O>;
 impl<'a, const O: u8> CFG_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -148,7 +148,7 @@ impl From<RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RST` reader - Reset"]
+#[doc = "Field `rst` reader - Reset"]
 pub type RST_R = crate::BitReader<RST_A>;
 impl RST_R {
     #[doc = "Get enumerated values variant"]
@@ -170,7 +170,7 @@ impl RST_R {
         *self == RST_A::DEASSERT
     }
 }
-#[doc = "Field `RST` writer - Reset"]
+#[doc = "Field `rst` writer - Reset"]
 pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, RST_A, O>;
 impl<'a, const O: u8> RST_W<'a, O> {
     #[doc = "`0`"]
@@ -198,7 +198,7 @@ impl From<CFG_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CFG_GATING` reader - Gating Clock"]
+#[doc = "Field `cfg_gating` reader - Gating Clock"]
 pub type CFG_GATING_R = crate::BitReader<CFG_GATING_A>;
 impl CFG_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -220,7 +220,7 @@ impl CFG_GATING_R {
         *self == CFG_GATING_A::PASS
     }
 }
-#[doc = "Field `CFG_GATING` writer - Gating Clock"]
+#[doc = "Field `cfg_gating` writer - Gating Clock"]
 pub type CFG_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, DSP_BGR_SPEC, CFG_GATING_A, O>;
 impl<'a, const O: u8> CFG_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -297,7 +297,7 @@ impl crate::Readable for DSP_BGR_SPEC {
 impl crate::Writable for DSP_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DSP_BGR to value 0"]
+#[doc = "`reset()` method sets dsp_bgr to value 0"]
 impl crate::Resettable for DSP_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

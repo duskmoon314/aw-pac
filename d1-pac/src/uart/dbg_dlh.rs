@@ -1,4 +1,4 @@
-#[doc = "Register `DBG_DLH` reader"]
+#[doc = "Register `dbg_dlh` reader"]
 pub struct R(crate::R<DBG_DLH_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DBG_DLH_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DBG_DLH_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `DBG_DLH` reader - "]
+#[doc = "Field `dbg_dlh` reader - "]
 pub type DBG_DLH_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7"]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for DBG_DLH_SPEC {
 impl crate::Readable for DBG_DLH_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets DBG_DLH to value 0"]
+#[doc = "`reset()` method sets dbg_dlh to value 0"]
 impl crate::Resettable for DBG_DLH_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

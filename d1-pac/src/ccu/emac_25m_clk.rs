@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_25M_CLK` reader"]
+#[doc = "Register `emac_25m_clk` reader"]
 pub struct R(crate::R<EMAC_25M_CLK_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_25M_CLK_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_25M_CLK_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_25M_CLK` writer"]
+#[doc = "Register `emac_25m_clk` writer"]
 pub struct W(crate::W<EMAC_25M_CLK_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_25M_CLK_SPEC>;
@@ -48,7 +48,7 @@ impl From<CLK_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLK_GATING` reader - Gating Special Clock"]
+#[doc = "Field `clk_gating` reader - Gating Special Clock"]
 pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 impl CLK_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CLK_GATING_R {
         *self == CLK_GATING_A::ON
     }
 }
-#[doc = "Field `CLK_GATING` writer - Gating Special Clock"]
+#[doc = "Field `clk_gating` writer - Gating Special Clock"]
 pub type CLK_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_25M_CLK_SPEC, CLK_GATING_A, O>;
 impl<'a, const O: u8> CLK_GATING_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<CLK_SRC_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLK_SRC_GATING` reader - Gating the Source Clock of Special Clock"]
+#[doc = "Field `clk_src_gating` reader - Gating the Source Clock of Special Clock"]
 pub type CLK_SRC_GATING_R = crate::BitReader<CLK_SRC_GATING_A>;
 impl CLK_SRC_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl CLK_SRC_GATING_R {
         *self == CLK_SRC_GATING_A::ON
     }
 }
-#[doc = "Field `CLK_SRC_GATING` writer - Gating the Source Clock of Special Clock"]
+#[doc = "Field `clk_src_gating` writer - Gating the Source Clock of Special Clock"]
 pub type CLK_SRC_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_25M_CLK_SPEC, CLK_SRC_GATING_A, O>;
 impl<'a, const O: u8> CLK_SRC_GATING_W<'a, O> {
@@ -179,7 +179,7 @@ impl crate::Readable for EMAC_25M_CLK_SPEC {
 impl crate::Writable for EMAC_25M_CLK_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_25M_CLK to value 0"]
+#[doc = "`reset()` method sets emac_25m_clk to value 0"]
 impl crate::Resettable for EMAC_25M_CLK_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `DLH` reader"]
+#[doc = "Register `dlh` reader"]
 pub struct R(crate::R<DLH_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DLH_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DLH_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DLH` writer"]
+#[doc = "Register `dlh` writer"]
 pub struct W(crate::W<DLH_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DLH_SPEC>;
@@ -71,7 +71,7 @@ impl crate::Readable for DLH_SPEC {
 impl crate::Writable for DLH_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DLH to value 0"]
+#[doc = "`reset()` method sets dlh to value 0"]
 impl crate::Resettable for DLH_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

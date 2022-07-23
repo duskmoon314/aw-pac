@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_ADDR` reader"]
+#[doc = "Register `twi_addr` reader"]
 pub struct R(crate::R<TWI_ADDR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TWI_ADDR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TWI_ADDR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TWI_ADDR` writer"]
+#[doc = "Register `twi_addr` writer"]
 pub struct W(crate::W<TWI_ADDR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TWI_ADDR_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<TWI_ADDR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SLA` reader - Slave Address"]
+#[doc = "Field `sla` reader - Slave Address"]
 pub type SLA_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `SLA` writer - Slave Address"]
+#[doc = "Field `sla` writer - Slave Address"]
 pub type SLA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_ADDR_SPEC, u8, u8, 7, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -52,7 +52,7 @@ impl From<GCE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GCE` reader - "]
+#[doc = "Field `gce` reader - "]
 pub type GCE_R = crate::BitReader<GCE_A>;
 impl GCE_R {
     #[doc = "Get enumerated values variant"]
@@ -74,7 +74,7 @@ impl GCE_R {
         *self == GCE_A::ENABLE
     }
 }
-#[doc = "Field `GCE` writer - "]
+#[doc = "Field `gce` writer - "]
 pub type GCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_ADDR_SPEC, GCE_A, O>;
 impl<'a, const O: u8> GCE_W<'a, O> {
     #[doc = "`0`"]
@@ -131,7 +131,7 @@ impl crate::Readable for TWI_ADDR_SPEC {
 impl crate::Writable for TWI_ADDR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TWI_ADDR to value 0"]
+#[doc = "`reset()` method sets twi_addr to value 0"]
 impl crate::Resettable for TWI_ADDR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

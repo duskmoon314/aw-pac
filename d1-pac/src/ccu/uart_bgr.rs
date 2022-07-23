@@ -1,4 +1,4 @@
-#[doc = "Register `UART_BGR` reader"]
+#[doc = "Register `uart_bgr` reader"]
 pub struct R(crate::R<UART_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<UART_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<UART_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `UART_BGR` writer"]
+#[doc = "Register `uart_bgr` writer"]
 pub struct W(crate::W<UART_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<UART_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<UART_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `UART(0-5)_RST` reader - Reset"]
+#[doc = "Fields `uart(0-5)_rst` reader - Reset"]
 pub type UART_RST_R = crate::BitReader<UART_RST_A>;
 impl UART_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl UART_RST_R {
         *self == UART_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `UART(0-5)_RST` writer - Reset"]
+#[doc = "Fields `uart(0-5)_rst` writer - Reset"]
 pub type UART_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_BGR_SPEC, UART_RST_A, O>;
 impl<'a, const O: u8> UART_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<UART_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `UART(0-5)_GATING` reader - Gating Clock"]
+#[doc = "Fields `uart(0-5)_gating` reader - Gating Clock"]
 pub type UART_GATING_R = crate::BitReader<UART_GATING_A>;
 impl UART_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl UART_GATING_R {
         *self == UART_GATING_A::PASS
     }
 }
-#[doc = "Fields `UART(0-5)_GATING` writer - Gating Clock"]
+#[doc = "Fields `uart(0-5)_gating` writer - Gating Clock"]
 pub type UART_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, UART_BGR_SPEC, UART_GATING_A, O>;
 impl<'a, const O: u8> UART_GATING_W<'a, O> {
@@ -298,7 +298,7 @@ impl crate::Readable for UART_BGR_SPEC {
 impl crate::Writable for UART_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets UART_BGR to value 0"]
+#[doc = "`reset()` method sets uart_bgr to value 0"]
 impl crate::Resettable for UART_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

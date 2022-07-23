@@ -1,4 +1,4 @@
-#[doc = "Register `TVD_3D_CTL4` reader"]
+#[doc = "Register `tvd_3d_ctl4` reader"]
 pub struct R(crate::R<TVD_3D_CTL4_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TVD_3D_CTL4_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TVD_3D_CTL4_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TVD_3D_CTL4` writer"]
+#[doc = "Register `tvd_3d_ctl4` writer"]
 pub struct W(crate::W<TVD_3D_CTL4_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TVD_3D_CTL4_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for TVD_3D_CTL4_SPEC {
 impl crate::Writable for TVD_3D_CTL4_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TVD_3D_CTL4 to value 0"]
+#[doc = "`reset()` method sets tvd_3d_ctl4 to value 0"]
 impl crate::Resettable for TVD_3D_CTL4_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

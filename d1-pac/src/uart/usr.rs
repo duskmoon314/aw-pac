@@ -1,4 +1,4 @@
-#[doc = "Register `USR` reader"]
+#[doc = "Register `usr` reader"]
 pub struct R(crate::R<USR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<USR_SPEC>;
@@ -229,7 +229,7 @@ impl crate::RegisterSpec for USR_SPEC {
 impl crate::Readable for USR_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets USR to value 0"]
+#[doc = "`reset()` method sets usr to value 0"]
 impl crate::Resettable for USR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

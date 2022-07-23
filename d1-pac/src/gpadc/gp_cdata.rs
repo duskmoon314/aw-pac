@@ -1,4 +1,4 @@
-#[doc = "Register `GP_CDATA` reader"]
+#[doc = "Register `gp_cdata` reader"]
 pub struct R(crate::R<GP_CDATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_CDATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_CDATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_CDATA` writer"]
+#[doc = "Register `gp_cdata` writer"]
 pub struct W(crate::W<GP_CDATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_CDATA_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<GP_CDATA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `GP_CDATA` reader - GPADC Calibration Data"]
+#[doc = "Field `gp_cdata` reader - GPADC Calibration Data"]
 pub type GP_CDATA_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `GP_CDATA` writer - GPADC Calibration Data"]
+#[doc = "Field `gp_cdata` writer - GPADC Calibration Data"]
 pub type GP_CDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_CDATA_SPEC, u16, u16, 12, O>;
 impl R {
     #[doc = "Bits 0:11 - GPADC Calibration Data"]
@@ -71,7 +71,7 @@ impl crate::Readable for GP_CDATA_SPEC {
 impl crate::Writable for GP_CDATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_CDATA to value 0"]
+#[doc = "`reset()` method sets gp_cdata to value 0"]
 impl crate::Resettable for GP_CDATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

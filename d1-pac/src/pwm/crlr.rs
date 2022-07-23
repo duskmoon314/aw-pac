@@ -1,4 +1,4 @@
-#[doc = "Register `CRLR%s` reader"]
+#[doc = "Register `crlr%s` reader"]
 pub struct R(crate::R<CRLR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CRLR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CRLR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `CRLR` reader - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to the register."]
+#[doc = "Field `crlr` reader - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to the register."]
 pub type CRLR_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to the register."]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for CRLR_SPEC {
 impl crate::Readable for CRLR_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets CRLR%s to value 0"]
+#[doc = "`reset()` method sets crlr%s to value 0"]
 impl crate::Resettable for CRLR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

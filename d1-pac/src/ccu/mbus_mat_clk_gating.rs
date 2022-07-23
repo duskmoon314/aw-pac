@@ -1,4 +1,4 @@
-#[doc = "Register `MBUS_MAT_CLK_GATING` reader"]
+#[doc = "Register `mbus_mat_clk_gating` reader"]
 pub struct R(crate::R<MBUS_MAT_CLK_GATING_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MBUS_MAT_CLK_GATING_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MBUS_MAT_CLK_GATING_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MBUS_MAT_CLK_GATING` writer"]
+#[doc = "Register `mbus_mat_clk_gating` writer"]
 pub struct W(crate::W<MBUS_MAT_CLK_GATING_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MBUS_MAT_CLK_GATING_SPEC>;
@@ -48,7 +48,7 @@ impl From<RISCV_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RISCV_MCLK_EN` reader - Gating MBUS Clock"]
+#[doc = "Field `riscv_mclk_en` reader - Gating MBUS Clock"]
 pub type RISCV_MCLK_EN_R = crate::BitReader<RISCV_MCLK_EN_A>;
 impl RISCV_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RISCV_MCLK_EN_R {
         *self == RISCV_MCLK_EN_A::PASS
     }
 }
-#[doc = "Field `RISCV_MCLK_EN` writer - Gating MBUS Clock"]
+#[doc = "Field `riscv_mclk_en` writer - Gating MBUS Clock"]
 pub type RISCV_MCLK_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, RISCV_MCLK_EN_A, O>;
 impl<'a, const O: u8> RISCV_MCLK_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<G2D_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `G2D_MCLK_EN` reader - Gating MBUS Clock"]
+#[doc = "Field `g2d_mclk_en` reader - Gating MBUS Clock"]
 pub type G2D_MCLK_EN_R = crate::BitReader<G2D_MCLK_EN_A>;
 impl G2D_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl G2D_MCLK_EN_R {
         *self == G2D_MCLK_EN_A::PASS
     }
 }
-#[doc = "Field `G2D_MCLK_EN` writer - Gating MBUS Clock"]
+#[doc = "Field `g2d_mclk_en` writer - Gating MBUS Clock"]
 pub type G2D_MCLK_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, G2D_MCLK_EN_A, O>;
 impl<'a, const O: u8> G2D_MCLK_EN_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<CSI_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CSI_MCLK_EN` reader - Gating MBUS Clock"]
+#[doc = "Field `csi_mclk_en` reader - Gating MBUS Clock"]
 pub type CSI_MCLK_EN_R = crate::BitReader<CSI_MCLK_EN_A>;
 impl CSI_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl CSI_MCLK_EN_R {
         *self == CSI_MCLK_EN_A::PASS
     }
 }
-#[doc = "Field `CSI_MCLK_EN` writer - Gating MBUS Clock"]
+#[doc = "Field `csi_mclk_en` writer - Gating MBUS Clock"]
 pub type CSI_MCLK_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CSI_MCLK_EN_A, O>;
 impl<'a, const O: u8> CSI_MCLK_EN_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<TVIN_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TVIN_MCLK_EN` reader - Gating MBUS Clock"]
+#[doc = "Field `tvin_mclk_en` reader - Gating MBUS Clock"]
 pub type TVIN_MCLK_EN_R = crate::BitReader<TVIN_MCLK_EN_A>;
 impl TVIN_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl TVIN_MCLK_EN_R {
         *self == TVIN_MCLK_EN_A::PASS
     }
 }
-#[doc = "Field `TVIN_MCLK_EN` writer - Gating MBUS Clock"]
+#[doc = "Field `tvin_mclk_en` writer - Gating MBUS Clock"]
 pub type TVIN_MCLK_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, TVIN_MCLK_EN_A, O>;
 impl<'a, const O: u8> TVIN_MCLK_EN_W<'a, O> {
@@ -252,7 +252,7 @@ impl From<CE_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CE_MCLK_EN` reader - Gating MBUS Clock"]
+#[doc = "Field `ce_mclk_en` reader - Gating MBUS Clock"]
 pub type CE_MCLK_EN_R = crate::BitReader<CE_MCLK_EN_A>;
 impl CE_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -274,7 +274,7 @@ impl CE_MCLK_EN_R {
         *self == CE_MCLK_EN_A::PASS
     }
 }
-#[doc = "Field `CE_MCLK_EN` writer - Gating MBUS Clock"]
+#[doc = "Field `ce_mclk_en` writer - Gating MBUS Clock"]
 pub type CE_MCLK_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CE_MCLK_EN_A, O>;
 impl<'a, const O: u8> CE_MCLK_EN_W<'a, O> {
@@ -303,7 +303,7 @@ impl From<VE_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VE_MCLK_EN` reader - Gating MBUS Clock"]
+#[doc = "Field `ve_mclk_en` reader - Gating MBUS Clock"]
 pub type VE_MCLK_EN_R = crate::BitReader<VE_MCLK_EN_A>;
 impl VE_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -325,7 +325,7 @@ impl VE_MCLK_EN_R {
         *self == VE_MCLK_EN_A::PASS
     }
 }
-#[doc = "Field `VE_MCLK_EN` writer - Gating MBUS Clock"]
+#[doc = "Field `ve_mclk_en` writer - Gating MBUS Clock"]
 pub type VE_MCLK_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, VE_MCLK_EN_A, O>;
 impl<'a, const O: u8> VE_MCLK_EN_W<'a, O> {
@@ -354,7 +354,7 @@ impl From<DMA_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_MCLK_EN` reader - Gating MBUS Clock"]
+#[doc = "Field `dma_mclk_en` reader - Gating MBUS Clock"]
 pub type DMA_MCLK_EN_R = crate::BitReader<DMA_MCLK_EN_A>;
 impl DMA_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -376,7 +376,7 @@ impl DMA_MCLK_EN_R {
         *self == DMA_MCLK_EN_A::PASS
     }
 }
-#[doc = "Field `DMA_MCLK_EN` writer - Gating MBUS Clock"]
+#[doc = "Field `dma_mclk_en` writer - Gating MBUS Clock"]
 pub type DMA_MCLK_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, DMA_MCLK_EN_A, O>;
 impl<'a, const O: u8> DMA_MCLK_EN_W<'a, O> {
@@ -484,7 +484,7 @@ impl crate::Readable for MBUS_MAT_CLK_GATING_SPEC {
 impl crate::Writable for MBUS_MAT_CLK_GATING_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MBUS_MAT_CLK_GATING to value 0"]
+#[doc = "`reset()` method sets mbus_mat_clk_gating to value 0"]
 impl crate::Resettable for MBUS_MAT_CLK_GATING_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

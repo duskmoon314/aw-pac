@@ -1,4 +1,4 @@
-#[doc = "Register `THS_CTRL` reader"]
+#[doc = "Register `ths_ctrl` reader"]
 pub struct R(crate::R<THS_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_CTRL` writer"]
+#[doc = "Register `ths_ctrl` writer"]
 pub struct W(crate::W<THS_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_CTRL_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<THS_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TACQ` reader - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
+#[doc = "Field `tacq` reader - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
 pub type TACQ_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `TACQ` writer - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
+#[doc = "Field `tacq` writer - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
 pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, THS_CTRL_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 16:31 - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
@@ -71,7 +71,7 @@ impl crate::Readable for THS_CTRL_SPEC {
 impl crate::Writable for THS_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_CTRL to value 0x01df_002f"]
+#[doc = "`reset()` method sets ths_ctrl to value 0x01df_002f"]
 impl crate::Resettable for THS_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

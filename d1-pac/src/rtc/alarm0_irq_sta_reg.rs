@@ -1,4 +1,4 @@
-#[doc = "Register `ALARM0_IRQ_STA_REG` reader"]
+#[doc = "Register `alarm0_irq_sta_reg` reader"]
 pub struct R(crate::R<ALARM0_IRQ_STA_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ALARM0_IRQ_STA_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ALARM0_IRQ_STA_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ALARM0_IRQ_STA_REG` writer"]
+#[doc = "Register `alarm0_irq_sta_reg` writer"]
 pub struct W(crate::W<ALARM0_IRQ_STA_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ALARM0_IRQ_STA_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<ALARM0_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALARM0_IRQ_PEND` reader - Alarm 0 IRQ Pending bit"]
+#[doc = "Field `alarm0_irq_pend` reader - Alarm 0 IRQ Pending bit"]
 pub type ALARM0_IRQ_PEND_R = crate::BitReader<ALARM0_IRQ_PEND_A>;
 impl ALARM0_IRQ_PEND_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ALARM0_IRQ_PEND_R {
         *self == ALARM0_IRQ_PEND_A::PENDING
     }
 }
-#[doc = "Field `ALARM0_IRQ_PEND` writer - Alarm 0 IRQ Pending bit"]
+#[doc = "Field `alarm0_irq_pend` writer - Alarm 0 IRQ Pending bit"]
 pub type ALARM0_IRQ_PEND_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, ALARM0_IRQ_STA_REG_SPEC, ALARM0_IRQ_PEND_A, O>;
 impl<'a, const O: u8> ALARM0_IRQ_PEND_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for ALARM0_IRQ_STA_REG_SPEC {
 impl crate::Writable for ALARM0_IRQ_STA_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ALARM0_IRQ_STA_REG to value 0"]
+#[doc = "`reset()` method sets alarm0_irq_sta_reg to value 0"]
 impl crate::Resettable for ALARM0_IRQ_STA_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_DRV_SEND_FIFO_ACC` writer"]
+#[doc = "Register `twi_drv_send_fifo_acc` writer"]
 pub struct W(crate::W<TWI_DRV_SEND_FIFO_ACC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TWI_DRV_SEND_FIFO_ACC_SPEC>;
@@ -44,7 +44,7 @@ impl crate::RegisterSpec for TWI_DRV_SEND_FIFO_ACC_SPEC {
 impl crate::Writable for TWI_DRV_SEND_FIFO_ACC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TWI_DRV_SEND_FIFO_ACC to value 0"]
+#[doc = "`reset()` method sets twi_drv_send_fifo_acc to value 0"]
 impl crate::Resettable for TWI_DRV_SEND_FIFO_ACC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

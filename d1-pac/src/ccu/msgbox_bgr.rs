@@ -1,4 +1,4 @@
-#[doc = "Register `MSGBOX_BGR` reader"]
+#[doc = "Register `msgbox_bgr` reader"]
 pub struct R(crate::R<MSGBOX_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MSGBOX_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MSGBOX_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MSGBOX_BGR` writer"]
+#[doc = "Register `msgbox_bgr` writer"]
 pub struct W(crate::W<MSGBOX_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MSGBOX_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<MSGBOX_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `MSGBOX(0-2)_RST` reader - CPU, DSP, RISC-V MSGBOX Reset"]
+#[doc = "Fields `msgbox(0-2)_rst` reader - CPU, DSP, RISC-V MSGBOX Reset"]
 pub type MSGBOX_RST_R = crate::BitReader<MSGBOX_RST_A>;
 impl MSGBOX_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl MSGBOX_RST_R {
         *self == MSGBOX_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `MSGBOX(0-2)_RST` writer - CPU, DSP, RISC-V MSGBOX Reset"]
+#[doc = "Fields `msgbox(0-2)_rst` writer - CPU, DSP, RISC-V MSGBOX Reset"]
 pub type MSGBOX_RST_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MSGBOX_BGR_SPEC, MSGBOX_RST_A, O>;
 impl<'a, const O: u8> MSGBOX_RST_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<MSGBOX_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `MSGBOX(0-2)_GATING` reader - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
+#[doc = "Fields `msgbox(0-2)_gating` reader - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
 pub type MSGBOX_GATING_R = crate::BitReader<MSGBOX_GATING_A>;
 impl MSGBOX_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl MSGBOX_GATING_R {
         *self == MSGBOX_GATING_A::PASS
     }
 }
-#[doc = "Fields `MSGBOX(0-2)_GATING` writer - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
+#[doc = "Fields `msgbox(0-2)_gating` writer - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
 pub type MSGBOX_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MSGBOX_BGR_SPEC, MSGBOX_GATING_A, O>;
 impl<'a, const O: u8> MSGBOX_GATING_W<'a, O> {
@@ -239,7 +239,7 @@ impl crate::Readable for MSGBOX_BGR_SPEC {
 impl crate::Writable for MSGBOX_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MSGBOX_BGR to value 0"]
+#[doc = "`reset()` method sets msgbox_bgr to value 0"]
 impl crate::Resettable for MSGBOX_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `RF1P_CFG_REG` reader"]
+#[doc = "Register `rf1p_cfg_reg` reader"]
 pub struct R(crate::R<RF1P_CFG_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RF1P_CFG_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RF1P_CFG_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RF1P_CFG_REG` writer"]
+#[doc = "Register `rf1p_cfg_reg` writer"]
 pub struct W(crate::W<RF1P_CFG_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RF1P_CFG_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<RF1P_CFG_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RF1P_CFG` reader - RF1P Configuration"]
+#[doc = "Field `rf1p_cfg` reader - RF1P Configuration"]
 pub type RF1P_CFG_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `RF1P_CFG` writer - RF1P Configuration"]
+#[doc = "Field `rf1p_cfg` writer - RF1P Configuration"]
 pub type RF1P_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RF1P_CFG_REG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - RF1P Configuration"]
@@ -71,7 +71,7 @@ impl crate::Readable for RF1P_CFG_REG_SPEC {
 impl crate::Writable for RF1P_CFG_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RF1P_CFG_REG to value 0"]
+#[doc = "`reset()` method sets rf1p_cfg_reg to value 0"]
 impl crate::Resettable for RF1P_CFG_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

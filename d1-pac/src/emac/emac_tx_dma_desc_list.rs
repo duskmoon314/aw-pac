@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_TX_DMA_DESC_LIST` reader"]
+#[doc = "Register `emac_tx_dma_desc_list` reader"]
 pub struct R(crate::R<EMAC_TX_DMA_DESC_LIST_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_TX_DMA_DESC_LIST_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_TX_DMA_DESC_LIST_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_TX_DMA_DESC_LIST` writer"]
+#[doc = "Register `emac_tx_dma_desc_list` writer"]
 pub struct W(crate::W<EMAC_TX_DMA_DESC_LIST_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_TX_DMA_DESC_LIST_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for EMAC_TX_DMA_DESC_LIST_SPEC {
 impl crate::Writable for EMAC_TX_DMA_DESC_LIST_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_TX_DMA_DESC_LIST to value 0"]
+#[doc = "`reset()` method sets emac_tx_dma_desc_list to value 0"]
 impl crate::Resettable for EMAC_TX_DMA_DESC_LIST_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `THS_ALARMO_INTS` reader"]
+#[doc = "Register `ths_alarmo_ints` reader"]
 pub struct R(crate::R<THS_ALARMO_INTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_ALARMO_INTS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_ALARMO_INTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_ALARMO_INTS` writer"]
+#[doc = "Register `ths_alarmo_ints` writer"]
 pub struct W(crate::W<THS_ALARMO_INTS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_ALARMO_INTS_SPEC>;
@@ -48,7 +48,7 @@ impl From<ALARM_OFF_STS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALARM_OFF_STS` reader - Alarm interrupt off pending for sensor\n\nWrite 1 to clear the pending status."]
+#[doc = "Field `alarm_off_sts` reader - Alarm interrupt off pending for sensor\n\nWrite 1 to clear the pending status."]
 pub type ALARM_OFF_STS_R = crate::BitReader<ALARM_OFF_STS_A>;
 impl ALARM_OFF_STS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ALARM_OFF_STS_R {
         *self == ALARM_OFF_STS_A::PENDING
     }
 }
-#[doc = "Field `ALARM_OFF_STS` writer - Alarm interrupt off pending for sensor\n\nWrite 1 to clear the pending status."]
+#[doc = "Field `alarm_off_sts` writer - Alarm interrupt off pending for sensor\n\nWrite 1 to clear the pending status."]
 pub type ALARM_OFF_STS_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, THS_ALARMO_INTS_SPEC, ALARM_OFF_STS_A, O>;
 impl<'a, const O: u8> ALARM_OFF_STS_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for THS_ALARMO_INTS_SPEC {
 impl crate::Writable for THS_ALARMO_INTS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_ALARMO_INTS to value 0"]
+#[doc = "`reset()` method sets ths_alarmo_ints to value 0"]
 impl crate::Resettable for THS_ALARMO_INTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

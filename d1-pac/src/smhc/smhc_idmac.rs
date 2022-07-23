@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_IDMAC` reader"]
+#[doc = "Register `smhc_idmac` reader"]
 pub struct R(crate::R<SMHC_IDMAC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_IDMAC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_IDMAC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_IDMAC` writer"]
+#[doc = "Register `smhc_idmac` writer"]
 pub struct W(crate::W<SMHC_IDMAC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_IDMAC_SPEC>;
@@ -34,19 +34,19 @@ impl From<crate::W<SMHC_IDMAC_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DES_LOAD_CTRL` writer - "]
+#[doc = "Field `des_load_ctrl` writer - "]
 pub type DES_LOAD_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
-#[doc = "Field `IDMAC_ENB` reader - IDMAC Enable"]
+#[doc = "Field `idmac_enb` reader - IDMAC Enable"]
 pub type IDMAC_ENB_R = crate::BitReader<bool>;
-#[doc = "Field `IDMAC_ENB` writer - IDMAC Enable"]
+#[doc = "Field `idmac_enb` writer - IDMAC Enable"]
 pub type IDMAC_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
-#[doc = "Field `FIX_BUST_CTRL` reader - Fixed Burst"]
+#[doc = "Field `fix_bust_ctrl` reader - Fixed Burst"]
 pub type FIX_BUST_CTRL_R = crate::BitReader<bool>;
-#[doc = "Field `FIX_BUST_CTRL` writer - Fixed Burst"]
+#[doc = "Field `fix_bust_ctrl` writer - Fixed Burst"]
 pub type FIX_BUST_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
-#[doc = "Field `IDMAC_RST` reader - DMA Reset"]
+#[doc = "Field `idmac_rst` reader - DMA Reset"]
 pub type IDMAC_RST_R = crate::BitReader<bool>;
-#[doc = "Field `IDMAC_RST` writer - DMA Reset"]
+#[doc = "Field `idmac_rst` writer - DMA Reset"]
 pub type IDMAC_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDMAC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 7 - IDMAC Enable"]
@@ -106,7 +106,7 @@ impl crate::Readable for SMHC_IDMAC_SPEC {
 impl crate::Writable for SMHC_IDMAC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_IDMAC to value 0"]
+#[doc = "`reset()` method sets smhc_idmac to value 0"]
 impl crate::Resettable for SMHC_IDMAC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

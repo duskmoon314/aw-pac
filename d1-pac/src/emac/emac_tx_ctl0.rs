@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_TX_CTL0` reader"]
+#[doc = "Register `emac_tx_ctl0` reader"]
 pub struct R(crate::R<EMAC_TX_CTL0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_TX_CTL0_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_TX_CTL0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_TX_CTL0` writer"]
+#[doc = "Register `emac_tx_ctl0` writer"]
 pub struct W(crate::W<EMAC_TX_CTL0_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_TX_CTL0_SPEC>;
@@ -48,7 +48,7 @@ impl From<TX_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_EN` reader - Enable Transmitter"]
+#[doc = "Field `tx_en` reader - Enable Transmitter"]
 pub type TX_EN_R = crate::BitReader<TX_EN_A>;
 impl TX_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl TX_EN_R {
         *self == TX_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_EN` writer - Enable Transmitter"]
+#[doc = "Field `tx_en` writer - Enable Transmitter"]
 pub type TX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_EN_A, O>;
 impl<'a, const O: u8> TX_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<TX_FRM_LEN_CTL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_FRM_LEN_CTL` reader - Frame Transmit Length Control"]
+#[doc = "Field `tx_frm_len_ctl` reader - Frame Transmit Length Control"]
 pub type TX_FRM_LEN_CTL_R = crate::BitReader<TX_FRM_LEN_CTL_A>;
 impl TX_FRM_LEN_CTL_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl TX_FRM_LEN_CTL_R {
         *self == TX_FRM_LEN_CTL_A::B16384
     }
 }
-#[doc = "Field `TX_FRM_LEN_CTL` writer - Frame Transmit Length Control"]
+#[doc = "Field `tx_frm_len_ctl` writer - Frame Transmit Length Control"]
 pub type TX_FRM_LEN_CTL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_FRM_LEN_CTL_A, O>;
 impl<'a, const O: u8> TX_FRM_LEN_CTL_W<'a, O> {
@@ -178,7 +178,7 @@ impl crate::Readable for EMAC_TX_CTL0_SPEC {
 impl crate::Writable for EMAC_TX_CTL0_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_TX_CTL0 to value 0"]
+#[doc = "`reset()` method sets emac_tx_ctl0 to value 0"]
 impl crate::Resettable for EMAC_TX_CTL0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

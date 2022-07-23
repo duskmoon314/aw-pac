@@ -1,4 +1,4 @@
-#[doc = "Register `RETITE_PC1_REG` reader"]
+#[doc = "Register `retite_pc1_reg` reader"]
 pub struct R(crate::R<RETITE_PC1_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RETITE_PC1_REG_SPEC>;
@@ -27,7 +27,7 @@ impl From<RT_SIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RT_SIG` reader - Retire Signal"]
+#[doc = "Field `rt_sig` reader - Retire Signal"]
 pub type RT_SIG_R = crate::BitReader<RT_SIG_A>;
 impl RT_SIG_R {
     #[doc = "Get enumerated values variant"]
@@ -49,7 +49,7 @@ impl RT_SIG_R {
         *self == RT_SIG_A::HAVE
     }
 }
-#[doc = "Field `RT_PC_H` reader - Retire PC\\[39:32\\]"]
+#[doc = "Field `rt_pc_h` reader - Retire PC\\[39:32\\]"]
 pub type RT_PC_H_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 31 - Retire Signal"]
@@ -72,7 +72,7 @@ impl crate::RegisterSpec for RETITE_PC1_REG_SPEC {
 impl crate::Readable for RETITE_PC1_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets RETITE_PC1_REG to value 0"]
+#[doc = "`reset()` method sets retite_pc1_reg to value 0"]
 impl crate::Resettable for RETITE_PC1_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

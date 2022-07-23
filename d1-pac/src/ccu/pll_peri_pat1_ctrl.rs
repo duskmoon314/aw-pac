@@ -1,4 +1,4 @@
-#[doc = "Register `PLL_PERI_PAT1_CTRL` reader"]
+#[doc = "Register `pll_peri_pat1_ctrl` reader"]
 pub struct R(crate::R<PLL_PERI_PAT1_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PLL_PERI_PAT1_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PLL_PERI_PAT1_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PLL_PERI_PAT1_CTRL` writer"]
+#[doc = "Register `pll_peri_pat1_ctrl` writer"]
 pub struct W(crate::W<PLL_PERI_PAT1_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PLL_PERI_PAT1_CTRL_SPEC>;
@@ -34,17 +34,17 @@ impl From<crate::W<PLL_PERI_PAT1_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DITHER_EN` reader - Dither Enable"]
+#[doc = "Field `dither_en` reader - Dither Enable"]
 pub type DITHER_EN_R = crate::BitReader<bool>;
-#[doc = "Field `DITHER_EN` writer - Dither Enable"]
+#[doc = "Field `dither_en` writer - Dither Enable"]
 pub type DITHER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_PERI_PAT1_CTRL_SPEC, bool, O>;
-#[doc = "Field `FRAC_EN` reader - Fraction Enable"]
+#[doc = "Field `frac_en` reader - Fraction Enable"]
 pub type FRAC_EN_R = crate::BitReader<bool>;
-#[doc = "Field `FRAC_EN` writer - Fraction Enable"]
+#[doc = "Field `frac_en` writer - Fraction Enable"]
 pub type FRAC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_PERI_PAT1_CTRL_SPEC, bool, O>;
-#[doc = "Field `FRAC_IN` reader - Fraction In"]
+#[doc = "Field `frac_in` reader - Fraction In"]
 pub type FRAC_IN_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `FRAC_IN` writer - Fraction In"]
+#[doc = "Field `frac_in` writer - Fraction In"]
 pub type FRAC_IN_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PLL_PERI_PAT1_CTRL_SPEC, u32, u32, 17, O>;
 impl R {
@@ -100,7 +100,7 @@ impl crate::Readable for PLL_PERI_PAT1_CTRL_SPEC {
 impl crate::Writable for PLL_PERI_PAT1_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PLL_PERI_PAT1_CTRL to value 0"]
+#[doc = "`reset()` method sets pll_peri_pat1_ctrl to value 0"]
 impl crate::Resettable for PLL_PERI_PAT1_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

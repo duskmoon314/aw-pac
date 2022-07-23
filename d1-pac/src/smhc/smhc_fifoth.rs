@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_FIFOTH` reader"]
+#[doc = "Register `smhc_fifoth` reader"]
 pub struct R(crate::R<SMHC_FIFOTH_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_FIFOTH_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_FIFOTH_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_FIFOTH` writer"]
+#[doc = "Register `smhc_fifoth` writer"]
 pub struct W(crate::W<SMHC_FIFOTH_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_FIFOTH_SPEC>;
@@ -53,7 +53,7 @@ impl From<BSIZE_OF_TRANS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BSIZE_OF_TRANS` reader - sBurst Size of Multiple Transaction"]
+#[doc = "Field `bsize_of_trans` reader - sBurst Size of Multiple Transaction"]
 pub type BSIZE_OF_TRANS_R = crate::FieldReader<u8, BSIZE_OF_TRANS_A>;
 impl BSIZE_OF_TRANS_R {
     #[doc = "Get enumerated values variant"]
@@ -88,7 +88,7 @@ impl BSIZE_OF_TRANS_R {
         *self == BSIZE_OF_TRANS_A::T16
     }
 }
-#[doc = "Field `BSIZE_OF_TRANS` writer - sBurst Size of Multiple Transaction"]
+#[doc = "Field `bsize_of_trans` writer - sBurst Size of Multiple Transaction"]
 pub type BSIZE_OF_TRANS_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, BSIZE_OF_TRANS_A, 3, O>;
 impl<'a, const O: u8> BSIZE_OF_TRANS_W<'a, O> {
@@ -113,13 +113,13 @@ impl<'a, const O: u8> BSIZE_OF_TRANS_W<'a, O> {
         self.variant(BSIZE_OF_TRANS_A::T16)
     }
 }
-#[doc = "Field `RX_TL` reader - RX Trigger Level"]
+#[doc = "Field `rx_tl` reader - RX Trigger Level"]
 pub type RX_TL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `RX_TL` writer - RX Trigger Level"]
+#[doc = "Field `rx_tl` writer - RX Trigger Level"]
 pub type RX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
-#[doc = "Field `TX_TL` reader - TX Trigger Level"]
+#[doc = "Field `tx_tl` reader - TX Trigger Level"]
 pub type TX_TL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `TX_TL` writer - TX Trigger Level"]
+#[doc = "Field `tx_tl` writer - TX Trigger Level"]
 pub type TX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
@@ -174,7 +174,7 @@ impl crate::Readable for SMHC_FIFOTH_SPEC {
 impl crate::Writable for SMHC_FIFOTH_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_FIFOTH to value 0"]
+#[doc = "`reset()` method sets smhc_fifoth to value 0"]
 impl crate::Resettable for SMHC_FIFOTH_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

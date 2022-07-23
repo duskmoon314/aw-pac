@@ -1,4 +1,4 @@
-#[doc = "Register `I2S_BGR` reader"]
+#[doc = "Register `i2s_bgr` reader"]
 pub struct R(crate::R<I2S_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<I2S_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<I2S_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `I2S_BGR` writer"]
+#[doc = "Register `i2s_bgr` writer"]
 pub struct W(crate::W<I2S_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<I2S_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<I2S_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `I2S(0-2)_RST` reader - Reset"]
+#[doc = "Fields `i2s(0-2)_rst` reader - Reset"]
 pub type I2S_RST_R = crate::BitReader<I2S_RST_A>;
 impl I2S_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl I2S_RST_R {
         *self == I2S_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `I2S(0-2)_RST` writer - Reset"]
+#[doc = "Fields `i2s(0-2)_rst` writer - Reset"]
 pub type I2S_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_BGR_SPEC, I2S_RST_A, O>;
 impl<'a, const O: u8> I2S_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<I2S_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `I2S(0-2)_GATING` reader - Gating Clock"]
+#[doc = "Fields `i2s(0-2)_gating` reader - Gating Clock"]
 pub type I2S_GATING_R = crate::BitReader<I2S_GATING_A>;
 impl I2S_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl I2S_GATING_R {
         *self == I2S_GATING_A::PASS
     }
 }
-#[doc = "Fields `I2S(0-2)_GATING` writer - Gating Clock"]
+#[doc = "Fields `i2s(0-2)_gating` writer - Gating Clock"]
 pub type I2S_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_BGR_SPEC, I2S_GATING_A, O>;
 impl<'a, const O: u8> I2S_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -237,7 +237,7 @@ impl crate::Readable for I2S_BGR_SPEC {
 impl crate::Writable for I2S_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets I2S_BGR to value 0"]
+#[doc = "`reset()` method sets i2s_bgr to value 0"]
 impl crate::Resettable for I2S_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

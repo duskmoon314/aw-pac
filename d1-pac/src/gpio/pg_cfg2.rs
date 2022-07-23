@@ -65,7 +65,7 @@ impl From<PG18_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PG18_SELECT` reader - PG18 Select"]
+#[doc = "Field `pg18_select` reader - PG18 Select"]
 pub type PG18_SELECT_R = crate::FieldReader<u8, PG18_SELECT_A>;
 impl PG18_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -136,7 +136,7 @@ impl PG18_SELECT_R {
         *self == PG18_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PG18_SELECT` writer - PG18 Select"]
+#[doc = "Field `pg18_select` writer - PG18 Select"]
 pub type PG18_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG18_SELECT_A, 4, O>;
 impl<'a, const O: u8> PG18_SELECT_W<'a, O> {
@@ -222,7 +222,7 @@ impl From<PG17_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PG17_SELECT` reader - PG17 Select"]
+#[doc = "Field `pg17_select` reader - PG17 Select"]
 pub type PG17_SELECT_R = crate::FieldReader<u8, PG17_SELECT_A>;
 impl PG17_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -293,7 +293,7 @@ impl PG17_SELECT_R {
         *self == PG17_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PG17_SELECT` writer - PG17 Select"]
+#[doc = "Field `pg17_select` writer - PG17 Select"]
 pub type PG17_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG17_SELECT_A, 4, O>;
 impl<'a, const O: u8> PG17_SELECT_W<'a, O> {
@@ -379,7 +379,7 @@ impl From<PG16_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PG16_SELECT` reader - PG16 Select"]
+#[doc = "Field `pg16_select` reader - PG16 Select"]
 pub type PG16_SELECT_R = crate::FieldReader<u8, PG16_SELECT_A>;
 impl PG16_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -450,7 +450,7 @@ impl PG16_SELECT_R {
         *self == PG16_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PG16_SELECT` writer - PG16 Select"]
+#[doc = "Field `pg16_select` writer - PG16 Select"]
 pub type PG16_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PG_CFG2_SPEC, u8, PG16_SELECT_A, 4, O>;
 impl<'a, const O: u8> PG16_SELECT_W<'a, O> {

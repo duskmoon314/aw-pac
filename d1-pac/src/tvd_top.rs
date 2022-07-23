@@ -43,39 +43,39 @@ pub struct RegisterBlock {
     #[doc = "0x8c - TVD ADC CONFIGURATION Register"]
     pub tvd_adc_cfg3: crate::Reg<tvd_adc_cfg::TVD_ADC_CFG_SPEC>,
 }
-#[doc = "TVD_TOP_MAP register accessor: an alias for `Reg<TVD_TOP_MAP_SPEC>`"]
+#[doc = "tvd_top_map register accessor: an alias for `Reg<TVD_TOP_MAP_SPEC>`"]
 pub type TVD_TOP_MAP = crate::Reg<tvd_top_map::TVD_TOP_MAP_SPEC>;
 #[doc = "TVD TOP MAP Register"]
 pub mod tvd_top_map;
-#[doc = "TVD_3D_CTL1 register accessor: an alias for `Reg<TVD_3D_CTL1_SPEC>`"]
+#[doc = "tvd_3d_ctl1 register accessor: an alias for `Reg<TVD_3D_CTL1_SPEC>`"]
 pub type TVD_3D_CTL1 = crate::Reg<tvd_3d_ctl1::TVD_3D_CTL1_SPEC>;
 #[doc = "TVD 3D DMA CONTROL Register1"]
 pub mod tvd_3d_ctl1;
-#[doc = "TVD_3D_CTL2 register accessor: an alias for `Reg<TVD_3D_CTL2_SPEC>`"]
+#[doc = "tvd_3d_ctl2 register accessor: an alias for `Reg<TVD_3D_CTL2_SPEC>`"]
 pub type TVD_3D_CTL2 = crate::Reg<tvd_3d_ctl2::TVD_3D_CTL2_SPEC>;
 #[doc = "TVD 3D DMA CONTROL Register2"]
 pub mod tvd_3d_ctl2;
-#[doc = "TVD_3D_CTL3 register accessor: an alias for `Reg<TVD_3D_CTL3_SPEC>`"]
+#[doc = "tvd_3d_ctl3 register accessor: an alias for `Reg<TVD_3D_CTL3_SPEC>`"]
 pub type TVD_3D_CTL3 = crate::Reg<tvd_3d_ctl3::TVD_3D_CTL3_SPEC>;
 #[doc = "TVD 3D DMA CONTROL Register3"]
 pub mod tvd_3d_ctl3;
-#[doc = "TVD_3D_CTL4 register accessor: an alias for `Reg<TVD_3D_CTL4_SPEC>`"]
+#[doc = "tvd_3d_ctl4 register accessor: an alias for `Reg<TVD_3D_CTL4_SPEC>`"]
 pub type TVD_3D_CTL4 = crate::Reg<tvd_3d_ctl4::TVD_3D_CTL4_SPEC>;
 #[doc = "TVD 3D DMA CONTROL Register4"]
 pub mod tvd_3d_ctl4;
-#[doc = "TVD_3D_CTL5 register accessor: an alias for `Reg<TVD_3D_CTL5_SPEC>`"]
+#[doc = "tvd_3d_ctl5 register accessor: an alias for `Reg<TVD_3D_CTL5_SPEC>`"]
 pub type TVD_3D_CTL5 = crate::Reg<tvd_3d_ctl5::TVD_3D_CTL5_SPEC>;
 #[doc = "TVD 3D DMA CONTROL Register5"]
 pub mod tvd_3d_ctl5;
-#[doc = "TVD_TOP_CTL register accessor: an alias for `Reg<TVD_TOP_CTL_SPEC>`"]
+#[doc = "tvd_top_ctl register accessor: an alias for `Reg<TVD_TOP_CTL_SPEC>`"]
 pub type TVD_TOP_CTL = crate::Reg<tvd_top_ctl::TVD_TOP_CTL_SPEC>;
 #[doc = "TVD TOP CONTROL Register"]
 pub mod tvd_top_ctl;
-#[doc = "TVD_ADC_CTL register accessor: an alias for `Reg<TVD_ADC_CTL_SPEC>`"]
+#[doc = "tvd_adc_ctl register accessor: an alias for `Reg<TVD_ADC_CTL_SPEC>`"]
 pub type TVD_ADC_CTL = crate::Reg<tvd_adc_ctl::TVD_ADC_CTL_SPEC>;
 #[doc = "TVD ADC CONTROL Register"]
 pub mod tvd_adc_ctl;
-#[doc = "TVD_ADC_CFG register accessor: an alias for `Reg<TVD_ADC_CFG_SPEC>`"]
+#[doc = "tvd_adc_cfg register accessor: an alias for `Reg<TVD_ADC_CFG_SPEC>`"]
 pub type TVD_ADC_CFG = crate::Reg<tvd_adc_cfg::TVD_ADC_CFG_SPEC>;
 #[doc = "TVD ADC CONFIGURATION Register"]
 pub mod tvd_adc_cfg;

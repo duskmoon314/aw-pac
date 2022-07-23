@@ -1,4 +1,4 @@
-#[doc = "Register `DSP_BOOT_RAMMAP` reader"]
+#[doc = "Register `dsp_boot_rammap` reader"]
 pub struct R(crate::R<DSP_BOOT_RAMMAP_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DSP_BOOT_RAMMAP_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DSP_BOOT_RAMMAP_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DSP_BOOT_RAMMAP` writer"]
+#[doc = "Register `dsp_boot_rammap` writer"]
 pub struct W(crate::W<DSP_BOOT_RAMMAP_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DSP_BOOT_RAMMAP_SPEC>;
@@ -48,7 +48,7 @@ impl From<DSP_BOOT_SRAM_REMAP_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DSP_BOOT_SRAM_REMAP_ENABLE` reader - "]
+#[doc = "Field `dsp_boot_sram_remap_enable` reader - "]
 pub type DSP_BOOT_SRAM_REMAP_ENABLE_R = crate::BitReader<DSP_BOOT_SRAM_REMAP_ENABLE_A>;
 impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
         *self == DSP_BOOT_SRAM_REMAP_ENABLE_A::SYS_BOOT
     }
 }
-#[doc = "Field `DSP_BOOT_SRAM_REMAP_ENABLE` writer - "]
+#[doc = "Field `dsp_boot_sram_remap_enable` writer - "]
 pub type DSP_BOOT_SRAM_REMAP_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DSP_BOOT_RAMMAP_SPEC, DSP_BOOT_SRAM_REMAP_ENABLE_A, O>;
 impl<'a, const O: u8> DSP_BOOT_SRAM_REMAP_ENABLE_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for DSP_BOOT_RAMMAP_SPEC {
 impl crate::Writable for DSP_BOOT_RAMMAP_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DSP_BOOT_RAMMAP to value 0"]
+#[doc = "`reset()` method sets dsp_boot_rammap to value 0"]
 impl crate::Resettable for DSP_BOOT_RAMMAP_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

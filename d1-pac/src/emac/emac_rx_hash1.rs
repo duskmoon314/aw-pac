@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_RX_HASH1` reader"]
+#[doc = "Register `emac_rx_hash1` reader"]
 pub struct R(crate::R<EMAC_RX_HASH1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_RX_HASH1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_RX_HASH1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_RX_HASH1` writer"]
+#[doc = "Register `emac_rx_hash1` writer"]
 pub struct W(crate::W<EMAC_RX_HASH1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_RX_HASH1_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for EMAC_RX_HASH1_SPEC {
 impl crate::Writable for EMAC_RX_HASH1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_RX_HASH1 to value 0"]
+#[doc = "`reset()` method sets emac_rx_hash1 to value 0"]
 impl crate::Resettable for EMAC_RX_HASH1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

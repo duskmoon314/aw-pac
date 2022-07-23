@@ -22,39 +22,39 @@ pub struct RegisterBlock {
     #[doc = "0x2c - Throughput Register"]
     pub ce_tpr: crate::Reg<ce_tpr::CE_TPR_SPEC>,
 }
-#[doc = "CE_TDA register accessor: an alias for `Reg<CE_TDA_SPEC>`"]
+#[doc = "ce_tda register accessor: an alias for `Reg<CE_TDA_SPEC>`"]
 pub type CE_TDA = crate::Reg<ce_tda::CE_TDA_SPEC>;
 #[doc = "Task Descriptor Address"]
 pub mod ce_tda;
-#[doc = "CE_ICR register accessor: an alias for `Reg<CE_ICR_SPEC>`"]
+#[doc = "ce_icr register accessor: an alias for `Reg<CE_ICR_SPEC>`"]
 pub type CE_ICR = crate::Reg<ce_icr::CE_ICR_SPEC>;
 #[doc = "Interrupt Control Register"]
 pub mod ce_icr;
-#[doc = "CE_ISR register accessor: an alias for `Reg<CE_ISR_SPEC>`"]
+#[doc = "ce_isr register accessor: an alias for `Reg<CE_ISR_SPEC>`"]
 pub type CE_ISR = crate::Reg<ce_isr::CE_ISR_SPEC>;
 #[doc = "Interrupt Status Register"]
 pub mod ce_isr;
-#[doc = "CE_TLR register accessor: an alias for `Reg<CE_TLR_SPEC>`"]
+#[doc = "ce_tlr register accessor: an alias for `Reg<CE_TLR_SPEC>`"]
 pub type CE_TLR = crate::Reg<ce_tlr::CE_TLR_SPEC>;
 #[doc = "Task Load Register"]
 pub mod ce_tlr;
-#[doc = "CE_TSR register accessor: an alias for `Reg<CE_TSR_SPEC>`"]
+#[doc = "ce_tsr register accessor: an alias for `Reg<CE_TSR_SPEC>`"]
 pub type CE_TSR = crate::Reg<ce_tsr::CE_TSR_SPEC>;
 #[doc = "Task Status Register"]
 pub mod ce_tsr;
-#[doc = "CE_ESR register accessor: an alias for `Reg<CE_ESR_SPEC>`"]
+#[doc = "ce_esr register accessor: an alias for `Reg<CE_ESR_SPEC>`"]
 pub type CE_ESR = crate::Reg<ce_esr::CE_ESR_SPEC>;
 #[doc = "Error Status Register"]
 pub mod ce_esr;
-#[doc = "CE_CSA register accessor: an alias for `Reg<CE_CSA_SPEC>`"]
+#[doc = "ce_csa register accessor: an alias for `Reg<CE_CSA_SPEC>`"]
 pub type CE_CSA = crate::Reg<ce_csa::CE_CSA_SPEC>;
 #[doc = "Current Source Address Register"]
 pub mod ce_csa;
-#[doc = "CE_CDA register accessor: an alias for `Reg<CE_CDA_SPEC>`"]
+#[doc = "ce_cda register accessor: an alias for `Reg<CE_CDA_SPEC>`"]
 pub type CE_CDA = crate::Reg<ce_cda::CE_CDA_SPEC>;
 #[doc = "Current Destination Address Register"]
 pub mod ce_cda;
-#[doc = "CE_TPR register accessor: an alias for `Reg<CE_TPR_SPEC>`"]
+#[doc = "ce_tpr register accessor: an alias for `Reg<CE_TPR_SPEC>`"]
 pub type CE_TPR = crate::Reg<ce_tpr::CE_TPR_SPEC>;
 #[doc = "Throughput Register"]
 pub mod ce_tpr;

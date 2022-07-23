@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_WAIT_TIME1_CTRL` reader"]
+#[doc = "Register `ledc_wait_time1_ctrl` reader"]
 pub struct R(crate::R<LEDC_WAIT_TIME1_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LEDC_WAIT_TIME1_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LEDC_WAIT_TIME1_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LEDC_WAIT_TIME1_CTRL` writer"]
+#[doc = "Register `ledc_wait_time1_ctrl` writer"]
 pub struct W(crate::W<LEDC_WAIT_TIME1_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LEDC_WAIT_TIME1_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<WAIT_TIM1_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WAIT_TIM1_EN` reader - "]
+#[doc = "Field `wait_tim1_en` reader - "]
 pub type WAIT_TIM1_EN_R = crate::BitReader<WAIT_TIM1_EN_A>;
 impl WAIT_TIM1_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl WAIT_TIM1_EN_R {
         *self == WAIT_TIM1_EN_A::ENABLE
     }
 }
-#[doc = "Field `WAIT_TIM1_EN` writer - "]
+#[doc = "Field `wait_tim1_en` writer - "]
 pub type WAIT_TIM1_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LEDC_WAIT_TIME1_CTRL_SPEC, WAIT_TIM1_EN_A, O>;
 impl<'a, const O: u8> WAIT_TIM1_EN_W<'a, O> {
@@ -85,9 +85,9 @@ impl<'a, const O: u8> WAIT_TIM1_EN_W<'a, O> {
         self.variant(WAIT_TIM1_EN_A::ENABLE)
     }
 }
-#[doc = "Field `TOTAL_WAIT_TIME1` reader - "]
+#[doc = "Field `total_wait_time1` reader - "]
 pub type TOTAL_WAIT_TIME1_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `TOTAL_WAIT_TIME1` writer - "]
+#[doc = "Field `total_wait_time1` writer - "]
 pub type TOTAL_WAIT_TIME1_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LEDC_WAIT_TIME1_CTRL_SPEC, u32, u32, 31, O>;
 impl R {
@@ -133,7 +133,7 @@ impl crate::Readable for LEDC_WAIT_TIME1_CTRL_SPEC {
 impl crate::Writable for LEDC_WAIT_TIME1_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LEDC_WAIT_TIME1_CTRL to value 0"]
+#[doc = "`reset()` method sets ledc_wait_time1_ctrl to value 0"]
 impl crate::Resettable for LEDC_WAIT_TIME1_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

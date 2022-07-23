@@ -1,4 +1,4 @@
-#[doc = "Register `USB0_CLK` reader"]
+#[doc = "Register `usb0_clk` reader"]
 pub struct R(crate::R<USB0_CLK_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<USB0_CLK_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<USB0_CLK_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `USB0_CLK` writer"]
+#[doc = "Register `usb0_clk` writer"]
 pub struct W(crate::W<USB0_CLK_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<USB0_CLK_SPEC>;
@@ -48,7 +48,7 @@ impl From<CLKEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLKEN` reader - Gating Special Clock"]
+#[doc = "Field `clken` reader - Gating Special Clock"]
 pub type CLKEN_R = crate::BitReader<CLKEN_A>;
 impl CLKEN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CLKEN_R {
         *self == CLKEN_A::ON
     }
 }
-#[doc = "Field `CLKEN` writer - Gating Special Clock"]
+#[doc = "Field `clken` writer - Gating Special Clock"]
 pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB0_CLK_SPEC, CLKEN_A, O>;
 impl<'a, const O: u8> CLKEN_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<RSTN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RSTN` reader - PHY Reset"]
+#[doc = "Field `rstn` reader - PHY Reset"]
 pub type RSTN_R = crate::BitReader<RSTN_A>;
 impl RSTN_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl RSTN_R {
         *self == RSTN_A::DEASSERT
     }
 }
-#[doc = "Field `RSTN` writer - PHY Reset"]
+#[doc = "Field `rstn` writer - PHY Reset"]
 pub type RSTN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB0_CLK_SPEC, RSTN_A, O>;
 impl<'a, const O: u8> RSTN_W<'a, O> {
     #[doc = "`0`"]
@@ -151,7 +151,7 @@ impl From<CLK12M_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLK12M_SEL` reader - OHCI 12M Source Select"]
+#[doc = "Field `clk12m_sel` reader - OHCI 12M Source Select"]
 pub type CLK12M_SEL_R = crate::FieldReader<u8, CLK12M_SEL_A>;
 impl CLK12M_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -180,7 +180,7 @@ impl CLK12M_SEL_R {
         *self == CLK12M_SEL_A::RTC_32K
     }
 }
-#[doc = "Field `CLK12M_SEL` writer - OHCI 12M Source Select"]
+#[doc = "Field `clk12m_sel` writer - OHCI 12M Source Select"]
 pub type CLK12M_SEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, USB0_CLK_SPEC, u8, CLK12M_SEL_A, 2, O>;
 impl<'a, const O: u8> CLK12M_SEL_W<'a, O> {
@@ -253,7 +253,7 @@ impl crate::Readable for USB0_CLK_SPEC {
 impl crate::Writable for USB0_CLK_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets USB0_CLK to value 0"]
+#[doc = "`reset()` method sets usb0_clk to value 0"]
 impl crate::Resettable for USB0_CLK_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

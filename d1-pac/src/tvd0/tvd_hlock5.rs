@@ -1,4 +1,4 @@
-#[doc = "Register `TVD_HLOCK5` reader"]
+#[doc = "Register `tvd_hlock5` reader"]
 pub struct R(crate::R<TVD_HLOCK5_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TVD_HLOCK5_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TVD_HLOCK5_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TVD_HLOCK5` writer"]
+#[doc = "Register `tvd_hlock5` writer"]
 pub struct W(crate::W<TVD_HLOCK5_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TVD_HLOCK5_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for TVD_HLOCK5_SPEC {
 impl crate::Writable for TVD_HLOCK5_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TVD_HLOCK5 to value 0"]
+#[doc = "`reset()` method sets tvd_hlock5 to value 0"]
 impl crate::Resettable for TVD_HLOCK5_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

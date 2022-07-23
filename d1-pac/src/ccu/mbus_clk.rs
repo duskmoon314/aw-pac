@@ -1,4 +1,4 @@
-#[doc = "Register `MBUS_CLK` reader"]
+#[doc = "Register `mbus_clk` reader"]
 pub struct R(crate::R<MBUS_CLK_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MBUS_CLK_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MBUS_CLK_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MBUS_CLK` writer"]
+#[doc = "Register `mbus_clk` writer"]
 pub struct W(crate::W<MBUS_CLK_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MBUS_CLK_SPEC>;
@@ -48,7 +48,7 @@ impl From<MBUS_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MBUS_RST` reader - MBUS Reset"]
+#[doc = "Field `mbus_rst` reader - MBUS Reset"]
 pub type MBUS_RST_R = crate::BitReader<MBUS_RST_A>;
 impl MBUS_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl MBUS_RST_R {
         *self == MBUS_RST_A::DEASSERT
     }
 }
-#[doc = "Field `MBUS_RST` writer - MBUS Reset"]
+#[doc = "Field `mbus_rst` writer - MBUS Reset"]
 pub type MBUS_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, MBUS_CLK_SPEC, MBUS_RST_A, O>;
 impl<'a, const O: u8> MBUS_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -117,7 +117,7 @@ impl crate::Readable for MBUS_CLK_SPEC {
 impl crate::Writable for MBUS_CLK_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MBUS_CLK to value 0"]
+#[doc = "`reset()` method sets mbus_clk to value 0"]
 impl crate::Resettable for MBUS_CLK_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `SRAM_ADDR_TWIST_REG` reader"]
+#[doc = "Register `sram_addr_twist_reg` reader"]
 pub struct R(crate::R<SRAM_ADDR_TWIST_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SRAM_ADDR_TWIST_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SRAM_ADDR_TWIST_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SRAM_ADDR_TWIST_REG` writer"]
+#[doc = "Register `sram_addr_twist_reg` writer"]
 pub struct W(crate::W<SRAM_ADDR_TWIST_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SRAM_ADDR_TWIST_REG_SPEC>;
@@ -34,12 +34,12 @@ impl From<crate::W<SRAM_ADDR_TWIST_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SRAM_TS_KF` writer - SRAM Twist Keyfield"]
+#[doc = "Field `sram_ts_kf` writer - SRAM Twist Keyfield"]
 pub type SRAM_TS_KF_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, u16, u16, 16, O>;
-#[doc = "Field `SRAM_ADDR_TS_FG` reader - SRAM Address Twist Flag"]
+#[doc = "Field `sram_addr_ts_fg` reader - SRAM Address Twist Flag"]
 pub type SRAM_ADDR_TS_FG_R = crate::BitReader<bool>;
-#[doc = "Field `SRAM_ADDR_TS_FG` writer - SRAM Address Twist Flag"]
+#[doc = "Field `sram_addr_ts_fg` writer - SRAM Address Twist Flag"]
 pub type SRAM_ADDR_TS_FG_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SRAM_ADDR_TWIST_REG_SPEC, bool, O>;
 impl R {
@@ -80,7 +80,7 @@ impl crate::Readable for SRAM_ADDR_TWIST_REG_SPEC {
 impl crate::Writable for SRAM_ADDR_TWIST_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SRAM_ADDR_TWIST_REG to value 0"]
+#[doc = "`reset()` method sets sram_addr_twist_reg to value 0"]
 impl crate::Resettable for SRAM_ADDR_TWIST_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

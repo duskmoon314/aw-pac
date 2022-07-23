@@ -1,4 +1,4 @@
-#[doc = "Register `PRS_NCSIC_IF_CFG_REG` reader"]
+#[doc = "Register `prs_ncsic_if_cfg_reg` reader"]
 pub struct R(crate::R<PRS_NCSIC_IF_CFG_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PRS_NCSIC_IF_CFG_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PRS_NCSIC_IF_CFG_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PRS_NCSIC_IF_CFG_REG` writer"]
+#[doc = "Register `prs_ncsic_if_cfg_reg` writer"]
 pub struct W(crate::W<PRS_NCSIC_IF_CFG_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PRS_NCSIC_IF_CFG_REG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for PRS_NCSIC_IF_CFG_REG_SPEC {
 impl crate::Writable for PRS_NCSIC_IF_CFG_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PRS_NCSIC_IF_CFG_REG to value 0"]
+#[doc = "`reset()` method sets prs_ncsic_if_cfg_reg to value 0"]
 impl crate::Resettable for PRS_NCSIC_IF_CFG_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

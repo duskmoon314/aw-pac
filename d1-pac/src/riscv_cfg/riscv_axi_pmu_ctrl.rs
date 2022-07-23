@@ -1,4 +1,4 @@
-#[doc = "Register `RISCV_AXI_PMU_CTRL` reader"]
+#[doc = "Register `riscv_axi_pmu_ctrl` reader"]
 pub struct R(crate::R<RISCV_AXI_PMU_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RISCV_AXI_PMU_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RISCV_AXI_PMU_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RISCV_AXI_PMU_CTRL` writer"]
+#[doc = "Register `riscv_axi_pmu_ctrl` writer"]
 pub struct W(crate::W<RISCV_AXI_PMU_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RISCV_AXI_PMU_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<PMU_CLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PMU_CLR` reader - PMU Clear"]
+#[doc = "Field `pmu_clr` reader - PMU Clear"]
 pub type PMU_CLR_R = crate::BitReader<PMU_CLR_A>;
 impl PMU_CLR_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl PMU_CLR_R {
         *self == PMU_CLR_A::CLEARED
     }
 }
-#[doc = "Field `PMU_CLR` writer - PMU Clear"]
+#[doc = "Field `pmu_clr` writer - PMU Clear"]
 pub type PMU_CLR_W<'a, const O: u8> =
     crate::BitWriter0C<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_CLR_A, O>;
 impl<'a, const O: u8> PMU_CLR_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<PMU_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PMU_EN` reader - PMU Enable"]
+#[doc = "Field `pmu_en` reader - PMU Enable"]
 pub type PMU_EN_R = crate::BitReader<PMU_EN_A>;
 impl PMU_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl PMU_EN_R {
         *self == PMU_EN_A::ENABLED
     }
 }
-#[doc = "Field `PMU_EN` writer - PMU Enable"]
+#[doc = "Field `pmu_en` writer - PMU Enable"]
 pub type PMU_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_EN_A, O>;
 impl<'a, const O: u8> PMU_EN_W<'a, O> {
@@ -179,7 +179,7 @@ impl crate::Readable for RISCV_AXI_PMU_CTRL_SPEC {
 impl crate::Writable for RISCV_AXI_PMU_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RISCV_AXI_PMU_CTRL to value 0"]
+#[doc = "`reset()` method sets riscv_axi_pmu_ctrl to value 0"]
 impl crate::Resettable for RISCV_AXI_PMU_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

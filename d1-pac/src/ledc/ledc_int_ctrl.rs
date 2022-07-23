@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_INT_CTRL` reader"]
+#[doc = "Register `ledc_int_ctrl` reader"]
 pub struct R(crate::R<LEDC_INT_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LEDC_INT_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LEDC_INT_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LEDC_INT_CTRL` writer"]
+#[doc = "Register `ledc_int_ctrl` writer"]
 pub struct W(crate::W<LEDC_INT_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LEDC_INT_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<GLOBAL_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GLOBAL_INT_EN` reader - "]
+#[doc = "Field `global_int_en` reader - "]
 pub type GLOBAL_INT_EN_R = crate::BitReader<GLOBAL_INT_EN_A>;
 impl GLOBAL_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl GLOBAL_INT_EN_R {
         *self == GLOBAL_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `GLOBAL_INT_EN` writer - "]
+#[doc = "Field `global_int_en` writer - "]
 pub type GLOBAL_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, GLOBAL_INT_EN_A, O>;
 impl<'a, const O: u8> GLOBAL_INT_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<FIFO_OVERFLOW_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_OVERFLOW_INT_EN` reader - "]
+#[doc = "Field `fifo_overflow_int_en` reader - "]
 pub type FIFO_OVERFLOW_INT_EN_R = crate::BitReader<FIFO_OVERFLOW_INT_EN_A>;
 impl FIFO_OVERFLOW_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl FIFO_OVERFLOW_INT_EN_R {
         *self == FIFO_OVERFLOW_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `FIFO_OVERFLOW_INT_EN` writer - "]
+#[doc = "Field `fifo_overflow_int_en` writer - "]
 pub type FIFO_OVERFLOW_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, FIFO_OVERFLOW_INT_EN_A, O>;
 impl<'a, const O: u8> FIFO_OVERFLOW_INT_EN_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<WAITDATA_TIMEOUT_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WAITDATA_TIMEOUT_INT_EN` reader - "]
+#[doc = "Field `waitdata_timeout_int_en` reader - "]
 pub type WAITDATA_TIMEOUT_INT_EN_R = crate::BitReader<WAITDATA_TIMEOUT_INT_EN_A>;
 impl WAITDATA_TIMEOUT_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl WAITDATA_TIMEOUT_INT_EN_R {
         *self == WAITDATA_TIMEOUT_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `WAITDATA_TIMEOUT_INT_EN` writer - "]
+#[doc = "Field `waitdata_timeout_int_en` writer - "]
 pub type WAITDATA_TIMEOUT_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, WAITDATA_TIMEOUT_INT_EN_A, O>;
 impl<'a, const O: u8> WAITDATA_TIMEOUT_INT_EN_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<FIFO_CPUREQ_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_CPUREQ_INT_EN` reader - "]
+#[doc = "Field `fifo_cpureq_int_en` reader - "]
 pub type FIFO_CPUREQ_INT_EN_R = crate::BitReader<FIFO_CPUREQ_INT_EN_A>;
 impl FIFO_CPUREQ_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl FIFO_CPUREQ_INT_EN_R {
         *self == FIFO_CPUREQ_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `FIFO_CPUREQ_INT_EN` writer - "]
+#[doc = "Field `fifo_cpureq_int_en` writer - "]
 pub type FIFO_CPUREQ_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, FIFO_CPUREQ_INT_EN_A, O>;
 impl<'a, const O: u8> FIFO_CPUREQ_INT_EN_W<'a, O> {
@@ -252,7 +252,7 @@ impl From<LED_TRANS_FINISH_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LED_TRANS_FINISH_INT_EN` reader - "]
+#[doc = "Field `led_trans_finish_int_en` reader - "]
 pub type LED_TRANS_FINISH_INT_EN_R = crate::BitReader<LED_TRANS_FINISH_INT_EN_A>;
 impl LED_TRANS_FINISH_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -274,7 +274,7 @@ impl LED_TRANS_FINISH_INT_EN_R {
         *self == LED_TRANS_FINISH_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `LED_TRANS_FINISH_INT_EN` writer - "]
+#[doc = "Field `led_trans_finish_int_en` writer - "]
 pub type LED_TRANS_FINISH_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LEDC_INT_CTRL_SPEC, LED_TRANS_FINISH_INT_EN_A, O>;
 impl<'a, const O: u8> LED_TRANS_FINISH_INT_EN_W<'a, O> {
@@ -362,7 +362,7 @@ impl crate::Readable for LEDC_INT_CTRL_SPEC {
 impl crate::Writable for LEDC_INT_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LEDC_INT_CTRL to value 0"]
+#[doc = "`reset()` method sets ledc_int_ctrl to value 0"]
 impl crate::Resettable for LEDC_INT_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

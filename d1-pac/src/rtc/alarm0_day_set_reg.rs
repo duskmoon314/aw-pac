@@ -1,4 +1,4 @@
-#[doc = "Register `ALARM0_DAY_SET_REG` reader"]
+#[doc = "Register `alarm0_day_set_reg` reader"]
 pub struct R(crate::R<ALARM0_DAY_SET_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ALARM0_DAY_SET_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ALARM0_DAY_SET_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ALARM0_DAY_SET_REG` writer"]
+#[doc = "Register `alarm0_day_set_reg` writer"]
 pub struct W(crate::W<ALARM0_DAY_SET_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ALARM0_DAY_SET_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<ALARM0_DAY_SET_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ALARM0_COUNTER` reader - Alarm 0 Counter is based on Day."]
+#[doc = "Field `alarm0_counter` reader - Alarm 0 Counter is based on Day."]
 pub type ALARM0_COUNTER_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `ALARM0_COUNTER` writer - Alarm 0 Counter is based on Day."]
+#[doc = "Field `alarm0_counter` writer - Alarm 0 Counter is based on Day."]
 pub type ALARM0_COUNTER_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, ALARM0_DAY_SET_REG_SPEC, u16, u16, 16, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for ALARM0_DAY_SET_REG_SPEC {
 impl crate::Writable for ALARM0_DAY_SET_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ALARM0_DAY_SET_REG to value 0"]
+#[doc = "`reset()` method sets alarm0_day_set_reg to value 0"]
 impl crate::Resettable for ALARM0_DAY_SET_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

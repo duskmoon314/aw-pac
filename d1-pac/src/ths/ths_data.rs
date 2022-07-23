@@ -1,4 +1,4 @@
-#[doc = "Register `THS_DATA` reader"]
+#[doc = "Register `ths_data` reader"]
 pub struct R(crate::R<THS_DATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_DATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_DATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `THS_DATA` reader - Temperature measurement data of sensor"]
+#[doc = "Field `ths_data` reader - Temperature measurement data of sensor"]
 pub type THS_DATA_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:11 - Temperature measurement data of sensor"]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for THS_DATA_SPEC {
 impl crate::Readable for THS_DATA_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets THS_DATA to value 0"]
+#[doc = "`reset()` method sets ths_data to value 0"]
 impl crate::Resettable for THS_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

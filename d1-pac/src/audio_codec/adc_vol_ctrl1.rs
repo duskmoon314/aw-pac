@@ -1,4 +1,4 @@
-#[doc = "Register `ADC_VOL_CTRL1` reader"]
+#[doc = "Register `adc_vol_ctrl1` reader"]
 pub struct R(crate::R<ADC_VOL_CTRL1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ADC_VOL_CTRL1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ADC_VOL_CTRL1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ADC_VOL_CTRL1` writer"]
+#[doc = "Register `adc_vol_ctrl1` writer"]
 pub struct W(crate::W<ADC_VOL_CTRL1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ADC_VOL_CTRL1_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for ADC_VOL_CTRL1_SPEC {
 impl crate::Writable for ADC_VOL_CTRL1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ADC_VOL_CTRL1 to value 0"]
+#[doc = "`reset()` method sets adc_vol_ctrl1 to value 0"]
 impl crate::Resettable for ADC_VOL_CTRL1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

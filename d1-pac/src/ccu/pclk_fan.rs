@@ -1,4 +1,4 @@
-#[doc = "Register `PCLK_FAN` reader"]
+#[doc = "Register `pclk_fan` reader"]
 pub struct R(crate::R<PCLK_FAN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PCLK_FAN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PCLK_FAN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PCLK_FAN` writer"]
+#[doc = "Register `pclk_fan` writer"]
 pub struct W(crate::W<PCLK_FAN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PCLK_FAN_SPEC>;
@@ -48,7 +48,7 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GATING` reader - Gating for PCLK"]
+#[doc = "Field `gating` reader - Gating for PCLK"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl GATING_R {
         *self == GATING_A::ON
     }
 }
-#[doc = "Field `GATING` writer - Gating for PCLK"]
+#[doc = "Field `gating` writer - Gating for PCLK"]
 pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCLK_FAN_SPEC, GATING_A, O>;
 impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -84,9 +84,9 @@ impl<'a, const O: u8> GATING_W<'a, O> {
         self.variant(GATING_A::ON)
     }
 }
-#[doc = "Field `DIV` reader - Factor M"]
+#[doc = "Field `div` reader - Factor M"]
 pub type DIV_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DIV` writer - Factor M"]
+#[doc = "Field `div` writer - Factor M"]
 pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCLK_FAN_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 31 - Gating for PCLK"]
@@ -131,7 +131,7 @@ impl crate::Readable for PCLK_FAN_SPEC {
 impl crate::Writable for PCLK_FAN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PCLK_FAN to value 0"]
+#[doc = "`reset()` method sets pclk_fan to value 0"]
 impl crate::Resettable for PCLK_FAN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

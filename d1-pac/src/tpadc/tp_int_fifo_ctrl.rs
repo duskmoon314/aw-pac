@@ -1,4 +1,4 @@
-#[doc = "Register `TP_INT_FIFO_CTRL` reader"]
+#[doc = "Register `tp_int_fifo_ctrl` reader"]
 pub struct R(crate::R<TP_INT_FIFO_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TP_INT_FIFO_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TP_INT_FIFO_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TP_INT_FIFO_CTRL` writer"]
+#[doc = "Register `tp_int_fifo_ctrl` writer"]
 pub struct W(crate::W<TP_INT_FIFO_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TP_INT_FIFO_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<TP_OVERRUN_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_OVERRUN_IRQ_EN` reader - TP FIFO Overrun Interrupt Enable"]
+#[doc = "Field `tp_overrun_irq_en` reader - TP FIFO Overrun Interrupt Enable"]
 pub type TP_OVERRUN_IRQ_EN_R = crate::BitReader<TP_OVERRUN_IRQ_EN_A>;
 impl TP_OVERRUN_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl TP_OVERRUN_IRQ_EN_R {
         *self == TP_OVERRUN_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `TP_OVERRUN_IRQ_EN` writer - TP FIFO Overrun Interrupt Enable"]
+#[doc = "Field `tp_overrun_irq_en` writer - TP FIFO Overrun Interrupt Enable"]
 pub type TP_OVERRUN_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_OVERRUN_IRQ_EN_A, O>;
 impl<'a, const O: u8> TP_OVERRUN_IRQ_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<TP_DATA_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_DATA_IRQ_EN` reader - TP FIFO Data Interrupt Enable"]
+#[doc = "Field `tp_data_irq_en` reader - TP FIFO Data Interrupt Enable"]
 pub type TP_DATA_IRQ_EN_R = crate::BitReader<TP_DATA_IRQ_EN_A>;
 impl TP_DATA_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl TP_DATA_IRQ_EN_R {
         *self == TP_DATA_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `TP_DATA_IRQ_EN` writer - TP FIFO Data Interrupt Enable"]
+#[doc = "Field `tp_data_irq_en` writer - TP FIFO Data Interrupt Enable"]
 pub type TP_DATA_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_IRQ_EN_A, O>;
 impl<'a, const O: u8> TP_DATA_IRQ_EN_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<TP_DATA_XY_CHANGE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_DATA_XY_CHANGE` reader - TP FIFO XY Data Interchange Function Select"]
+#[doc = "Field `tp_data_xy_change` reader - TP FIFO XY Data Interchange Function Select"]
 pub type TP_DATA_XY_CHANGE_R = crate::BitReader<TP_DATA_XY_CHANGE_A>;
 impl TP_DATA_XY_CHANGE_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl TP_DATA_XY_CHANGE_R {
         *self == TP_DATA_XY_CHANGE_A::ENABLE
     }
 }
-#[doc = "Field `TP_DATA_XY_CHANGE` writer - TP FIFO XY Data Interchange Function Select"]
+#[doc = "Field `tp_data_xy_change` writer - TP FIFO XY Data Interchange Function Select"]
 pub type TP_DATA_XY_CHANGE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_XY_CHANGE_A, O>;
 impl<'a, const O: u8> TP_DATA_XY_CHANGE_W<'a, O> {
@@ -187,9 +187,9 @@ impl<'a, const O: u8> TP_DATA_XY_CHANGE_W<'a, O> {
         self.variant(TP_DATA_XY_CHANGE_A::ENABLE)
     }
 }
-#[doc = "Field `TP_FIFO_TRIG_LEVEL` reader - TP FIFO Data Available Trigger Level"]
+#[doc = "Field `tp_fifo_trig_level` reader - TP FIFO Data Available Trigger Level"]
 pub type TP_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `TP_FIFO_TRIG_LEVEL` writer - TP FIFO Data Available Trigger Level"]
+#[doc = "Field `tp_fifo_trig_level` writer - TP FIFO Data Available Trigger Level"]
 pub type TP_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "TP FIFO Data Available DRQ Enable\n\nValue on reset: 0"]
@@ -206,7 +206,7 @@ impl From<TP_DATA_ERQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_DATA_ERQ_EN` reader - TP FIFO Data Available DRQ Enable"]
+#[doc = "Field `tp_data_erq_en` reader - TP FIFO Data Available DRQ Enable"]
 pub type TP_DATA_ERQ_EN_R = crate::BitReader<TP_DATA_ERQ_EN_A>;
 impl TP_DATA_ERQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -228,7 +228,7 @@ impl TP_DATA_ERQ_EN_R {
         *self == TP_DATA_ERQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `TP_DATA_ERQ_EN` writer - TP FIFO Data Available DRQ Enable"]
+#[doc = "Field `tp_data_erq_en` writer - TP FIFO Data Available DRQ Enable"]
 pub type TP_DATA_ERQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_ERQ_EN_A, O>;
 impl<'a, const O: u8> TP_DATA_ERQ_EN_W<'a, O> {
@@ -255,7 +255,7 @@ impl From<TP_FIFO_FLUSH_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_FIFO_FLUSH` reader - TP FIFO Flush"]
+#[doc = "Field `tp_fifo_flush` reader - TP FIFO Flush"]
 pub type TP_FIFO_FLUSH_R = crate::BitReader<TP_FIFO_FLUSH_A>;
 impl TP_FIFO_FLUSH_R {
     #[doc = "Get enumerated values variant"]
@@ -272,7 +272,7 @@ impl TP_FIFO_FLUSH_R {
         *self == TP_FIFO_FLUSH_A::FLUSH
     }
 }
-#[doc = "Field `TP_FIFO_FLUSH` writer - TP FIFO Flush"]
+#[doc = "Field `tp_fifo_flush` writer - TP FIFO Flush"]
 pub type TP_FIFO_FLUSH_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_FIFO_FLUSH_A, O>;
 impl<'a, const O: u8> TP_FIFO_FLUSH_W<'a, O> {
@@ -296,7 +296,7 @@ impl From<TP_UP_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_UP_IRQ_EN` reader - TP Last Touch (Stylus UP) IRQ Enable"]
+#[doc = "Field `tp_up_irq_en` reader - TP Last Touch (Stylus UP) IRQ Enable"]
 pub type TP_UP_IRQ_EN_R = crate::BitReader<TP_UP_IRQ_EN_A>;
 impl TP_UP_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -318,7 +318,7 @@ impl TP_UP_IRQ_EN_R {
         *self == TP_UP_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `TP_UP_IRQ_EN` writer - TP Last Touch (Stylus UP) IRQ Enable"]
+#[doc = "Field `tp_up_irq_en` writer - TP Last Touch (Stylus UP) IRQ Enable"]
 pub type TP_UP_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_UP_IRQ_EN_A, O>;
 impl<'a, const O: u8> TP_UP_IRQ_EN_W<'a, O> {
@@ -347,7 +347,7 @@ impl From<TP_DOWN_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_DOWN_IRQ_EN` reader - TP First Touch (Stylus DOWN) IRQ Enable"]
+#[doc = "Field `tp_down_irq_en` reader - TP First Touch (Stylus DOWN) IRQ Enable"]
 pub type TP_DOWN_IRQ_EN_R = crate::BitReader<TP_DOWN_IRQ_EN_A>;
 impl TP_DOWN_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -369,7 +369,7 @@ impl TP_DOWN_IRQ_EN_R {
         *self == TP_DOWN_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `TP_DOWN_IRQ_EN` writer - TP First Touch (Stylus DOWN) IRQ Enable"]
+#[doc = "Field `tp_down_irq_en` writer - TP First Touch (Stylus DOWN) IRQ Enable"]
 pub type TP_DOWN_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DOWN_IRQ_EN_A, O>;
 impl<'a, const O: u8> TP_DOWN_IRQ_EN_W<'a, O> {
@@ -487,7 +487,7 @@ impl crate::Readable for TP_INT_FIFO_CTRL_SPEC {
 impl crate::Writable for TP_INT_FIFO_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TP_INT_FIFO_CTRL to value 0"]
+#[doc = "`reset()` method sets tp_int_fifo_ctrl to value 0"]
 impl crate::Resettable for TP_INT_FIFO_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

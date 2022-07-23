@@ -1,4 +1,4 @@
-#[doc = "Register `PLL_DDR_PAT0_CTRL` reader"]
+#[doc = "Register `pll_ddr_pat0_ctrl` reader"]
 pub struct R(crate::R<PLL_DDR_PAT0_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PLL_DDR_PAT0_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PLL_DDR_PAT0_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PLL_DDR_PAT0_CTRL` writer"]
+#[doc = "Register `pll_ddr_pat0_ctrl` writer"]
 pub struct W(crate::W<PLL_DDR_PAT0_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PLL_DDR_PAT0_CTRL_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<PLL_DDR_PAT0_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SIG_DELT_PAT_EN` reader - Sigma-Delta Pattern Enable"]
+#[doc = "Field `sig_delt_pat_en` reader - Sigma-Delta Pattern Enable"]
 pub type SIG_DELT_PAT_EN_R = crate::BitReader<bool>;
-#[doc = "Field `SIG_DELT_PAT_EN` writer - Sigma-Delta Pattern Enable"]
+#[doc = "Field `sig_delt_pat_en` writer - Sigma-Delta Pattern Enable"]
 pub type SIG_DELT_PAT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_DDR_PAT0_CTRL_SPEC, bool, O>;
 #[doc = "Spread Frequency Mode\n\nValue on reset: 0"]
@@ -58,7 +58,7 @@ impl From<SPR_FREQ_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SPR_FREQ_MODE` reader - Spread Frequency Mode"]
+#[doc = "Field `spr_freq_mode` reader - Spread Frequency Mode"]
 pub type SPR_FREQ_MODE_R = crate::FieldReader<u8, SPR_FREQ_MODE_A>;
 impl SPR_FREQ_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -93,7 +93,7 @@ impl SPR_FREQ_MODE_R {
         *self == SPR_FREQ_MODE_A::TRIANGULAR_N
     }
 }
-#[doc = "Field `SPR_FREQ_MODE` writer - Spread Frequency Mode"]
+#[doc = "Field `spr_freq_mode` writer - Spread Frequency Mode"]
 pub type SPR_FREQ_MODE_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, PLL_DDR_PAT0_CTRL_SPEC, u8, SPR_FREQ_MODE_A, 2, O>;
 impl<'a, const O: u8> SPR_FREQ_MODE_W<'a, O> {
@@ -118,9 +118,9 @@ impl<'a, const O: u8> SPR_FREQ_MODE_W<'a, O> {
         self.variant(SPR_FREQ_MODE_A::TRIANGULAR_N)
     }
 }
-#[doc = "Field `WAVE_STEP` reader - Wave Step"]
+#[doc = "Field `wave_step` reader - Wave Step"]
 pub type WAVE_STEP_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `WAVE_STEP` writer - Wave Step"]
+#[doc = "Field `wave_step` writer - Wave Step"]
 pub type WAVE_STEP_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PLL_DDR_PAT0_CTRL_SPEC, u16, u16, 9, O>;
 #[doc = "SDM Clock Select\n\nValue on reset: 0"]
@@ -137,7 +137,7 @@ impl From<SDM_CLK_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SDM_CLK_SEL` reader - SDM Clock Select"]
+#[doc = "Field `sdm_clk_sel` reader - SDM Clock Select"]
 pub type SDM_CLK_SEL_R = crate::BitReader<SDM_CLK_SEL_A>;
 impl SDM_CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -159,7 +159,7 @@ impl SDM_CLK_SEL_R {
         *self == SDM_CLK_SEL_A::F_12_M
     }
 }
-#[doc = "Field `SDM_CLK_SEL` writer - SDM Clock Select"]
+#[doc = "Field `sdm_clk_sel` writer - SDM Clock Select"]
 pub type SDM_CLK_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_DDR_PAT0_CTRL_SPEC, SDM_CLK_SEL_A, O>;
 impl<'a, const O: u8> SDM_CLK_SEL_W<'a, O> {
@@ -193,7 +193,7 @@ impl From<FREQ_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FREQ` reader - Frequency"]
+#[doc = "Field `freq` reader - Frequency"]
 pub type FREQ_R = crate::FieldReader<u8, FREQ_A>;
 impl FREQ_R {
     #[doc = "Get enumerated values variant"]
@@ -228,7 +228,7 @@ impl FREQ_R {
         *self == FREQ_A::F_33_K
     }
 }
-#[doc = "Field `FREQ` writer - Frequency"]
+#[doc = "Field `freq` writer - Frequency"]
 pub type FREQ_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, PLL_DDR_PAT0_CTRL_SPEC, u8, FREQ_A, 2, O>;
 impl<'a, const O: u8> FREQ_W<'a, O> {
@@ -253,9 +253,9 @@ impl<'a, const O: u8> FREQ_W<'a, O> {
         self.variant(FREQ_A::F_33_K)
     }
 }
-#[doc = "Field `WAVE_BOT` reader - Wave Bottom"]
+#[doc = "Field `wave_bot` reader - Wave Bottom"]
 pub type WAVE_BOT_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `WAVE_BOT` writer - Wave Bottom"]
+#[doc = "Field `wave_bot` writer - Wave Bottom"]
 pub type WAVE_BOT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PLL_DDR_PAT0_CTRL_SPEC, u32, u32, 17, O>;
 impl R {
@@ -341,7 +341,7 @@ impl crate::Readable for PLL_DDR_PAT0_CTRL_SPEC {
 impl crate::Writable for PLL_DDR_PAT0_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PLL_DDR_PAT0_CTRL to value 0"]
+#[doc = "`reset()` method sets pll_ddr_pat0_ctrl to value 0"]
 impl crate::Resettable for PLL_DDR_PAT0_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

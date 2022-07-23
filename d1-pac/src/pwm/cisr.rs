@@ -1,4 +1,4 @@
-#[doc = "Register `CISR` reader"]
+#[doc = "Register `cisr` reader"]
 pub struct R(crate::R<CISR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CISR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CISR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CISR` writer"]
+#[doc = "Register `cisr` writer"]
 pub struct W(crate::W<CISR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CISR_SPEC>;
@@ -48,7 +48,7 @@ impl From<CFIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `CFIS(0-7)` reader - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
+#[doc = "Fields `cfis(0-7)` reader - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
 pub type CFIS_R = crate::BitReader<CFIS_A>;
 impl CFIS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CFIS_R {
         *self == CFIS_A::PENDING
     }
 }
-#[doc = "Fields `CFIS(0-7)` writer - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
+#[doc = "Fields `cfis(0-7)` writer - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
 pub type CFIS_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CISR_SPEC, CFIS_A, O>;
 impl<'a, const O: u8> CFIS_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<CRIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `CRIS(0-7)` reader - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
+#[doc = "Fields `cris(0-7)` reader - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
 pub type CRIS_R = crate::BitReader<CRIS_A>;
 impl CRIS_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl CRIS_R {
         *self == CRIS_A::PENDING
     }
 }
-#[doc = "Fields `CRIS(0-7)` writer - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
+#[doc = "Fields `cris(0-7)` writer - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
 pub type CRIS_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CISR_SPEC, CRIS_A, O>;
 impl<'a, const O: u8> CRIS_W<'a, O> {
     #[doc = "`0`"]
@@ -337,7 +337,7 @@ impl crate::Readable for CISR_SPEC {
 impl crate::Writable for CISR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CISR to value 0"]
+#[doc = "`reset()` method sets cisr to value 0"]
 impl crate::Resettable for CISR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

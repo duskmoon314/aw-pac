@@ -1,4 +1,4 @@
-#[doc = "Register `MICBIAS_REG` reader"]
+#[doc = "Register `micbias_reg` reader"]
 pub struct R(crate::R<MICBIAS_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MICBIAS_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MICBIAS_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MICBIAS_REG` writer"]
+#[doc = "Register `micbias_reg` writer"]
 pub struct W(crate::W<MICBIAS_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MICBIAS_REG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for MICBIAS_REG_SPEC {
 impl crate::Writable for MICBIAS_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MICBIAS_REG to value 0"]
+#[doc = "`reset()` method sets micbias_reg to value 0"]
 impl crate::Resettable for MICBIAS_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `RTC_VIO_REG` reader"]
+#[doc = "Register `rtc_vio_reg` reader"]
 pub struct R(crate::R<RTC_VIO_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RTC_VIO_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RTC_VIO_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RTC_VIO_REG` writer"]
+#[doc = "Register `rtc_vio_reg` writer"]
 pub struct W(crate::W<RTC_VIO_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RTC_VIO_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<V_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `V_SEL` reader - VDD Select"]
+#[doc = "Field `v_sel` reader - VDD Select"]
 pub type V_SEL_R = crate::BitReader<V_SEL_A>;
 impl V_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl V_SEL_R {
         *self == V_SEL_A::BAND
     }
 }
-#[doc = "Field `V_SEL` writer - VDD Select"]
+#[doc = "Field `v_sel` writer - VDD Select"]
 pub type V_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, RTC_VIO_REG_SPEC, V_SEL_A, O>;
 impl<'a, const O: u8> V_SEL_W<'a, O> {
     #[doc = "Resistance divider"]
@@ -111,7 +111,7 @@ impl From<RTC_VIO_REGU_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RTC_VIO_REGU` reader - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
+#[doc = "Field `rtc_vio_regu` reader - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
 pub type RTC_VIO_REGU_R = crate::FieldReader<u8, RTC_VIO_REGU_A>;
 impl RTC_VIO_REGU_R {
     #[doc = "Get enumerated values variant"]
@@ -170,7 +170,7 @@ impl RTC_VIO_REGU_R {
         *self == RTC_VIO_REGU_A::V_1_3
     }
 }
-#[doc = "Field `RTC_VIO_REGU` writer - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
+#[doc = "Field `rtc_vio_regu` writer - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
 pub type RTC_VIO_REGU_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, RTC_VIO_REG_SPEC, u8, RTC_VIO_REGU_A, 3, O>;
 impl<'a, const O: u8> RTC_VIO_REGU_W<'a, O> {
@@ -258,7 +258,7 @@ impl crate::Readable for RTC_VIO_REG_SPEC {
 impl crate::Writable for RTC_VIO_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RTC_VIO_REG to value 0x04"]
+#[doc = "`reset()` method sets rtc_vio_reg to value 0x04"]
 impl crate::Resettable for RTC_VIO_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_CTL` reader"]
+#[doc = "Register `cir_ctl` reader"]
 pub struct R(crate::R<CIR_CTL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_CTL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_CTL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_CTL` writer"]
+#[doc = "Register `cir_ctl` writer"]
 pub struct W(crate::W<CIR_CTL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_CTL_SPEC>;
@@ -51,7 +51,7 @@ impl From<APAM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `APAM` reader - Active Pulse Accept Mode"]
+#[doc = "Field `apam` reader - Active Pulse Accept Mode"]
 pub type APAM_R = crate::FieldReader<u8, APAM_A>;
 impl APAM_R {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +80,7 @@ impl APAM_R {
         *self == APAM_A::ONLY_POSITIVE
     }
 }
-#[doc = "Field `APAM` writer - Active Pulse Accept Mode"]
+#[doc = "Field `apam` writer - Active Pulse Accept Mode"]
 pub type APAM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, APAM_A, 2, O>;
 impl<'a, const O: u8> APAM_W<'a, O> {
     #[doc = "Both positive and negative pulses are valid as a leading code"]
@@ -112,7 +112,7 @@ impl From<CIREN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CIREN` reader - CIR Enable"]
+#[doc = "Field `ciren` reader - CIR Enable"]
 pub type CIREN_R = crate::FieldReader<u8, CIREN_A>;
 impl CIREN_R {
     #[doc = "Get enumerated values variant"]
@@ -129,7 +129,7 @@ impl CIREN_R {
         *self == CIREN_A::ENABLE
     }
 }
-#[doc = "Field `CIREN` writer - CIR Enable"]
+#[doc = "Field `ciren` writer - CIR Enable"]
 pub type CIREN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, CIREN_A, 2, O>;
 impl<'a, const O: u8> CIREN_W<'a, O> {
     #[doc = "CIR mode enable"]
@@ -152,7 +152,7 @@ impl From<RXEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RXEN` reader - Receiver Block Enable"]
+#[doc = "Field `rxen` reader - Receiver Block Enable"]
 pub type RXEN_R = crate::BitReader<RXEN_A>;
 impl RXEN_R {
     #[doc = "Get enumerated values variant"]
@@ -174,7 +174,7 @@ impl RXEN_R {
         *self == RXEN_A::ENABLE
     }
 }
-#[doc = "Field `RXEN` writer - Receiver Block Enable"]
+#[doc = "Field `rxen` writer - Receiver Block Enable"]
 pub type RXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, RXEN_A, O>;
 impl<'a, const O: u8> RXEN_W<'a, O> {
     #[doc = "Disable"]
@@ -202,7 +202,7 @@ impl From<GEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GEN` reader - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
+#[doc = "Field `gen` reader - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
 pub type GEN_R = crate::BitReader<GEN_A>;
 impl GEN_R {
     #[doc = "Get enumerated values variant"]
@@ -224,7 +224,7 @@ impl GEN_R {
         *self == GEN_A::ENABLE
     }
 }
-#[doc = "Field `GEN` writer - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
+#[doc = "Field `gen` writer - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
 pub type GEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, GEN_A, O>;
 impl<'a, const O: u8> GEN_W<'a, O> {
     #[doc = "Disable"]
@@ -301,7 +301,7 @@ impl crate::Readable for CIR_CTL_SPEC {
 impl crate::Writable for CIR_CTL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_CTL to value 0"]
+#[doc = "`reset()` method sets cir_ctl to value 0"]
 impl crate::Resettable for CIR_CTL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

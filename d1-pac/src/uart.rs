@@ -118,143 +118,143 @@ impl RegisterBlock {
         }
     }
 }
-#[doc = "RBR register accessor: an alias for `Reg<RBR_SPEC>`"]
+#[doc = "rbr register accessor: an alias for `Reg<RBR_SPEC>`"]
 pub type RBR = crate::Reg<rbr::RBR_SPEC>;
 #[doc = "UART Receive Buffer Register"]
 pub mod rbr;
-#[doc = "THR register accessor: an alias for `Reg<THR_SPEC>`"]
+#[doc = "thr register accessor: an alias for `Reg<THR_SPEC>`"]
 pub type THR = crate::Reg<thr::THR_SPEC>;
 #[doc = "UART Transmit Holding Register"]
 pub mod thr;
-#[doc = "DLL register accessor: an alias for `Reg<DLL_SPEC>`"]
+#[doc = "dll register accessor: an alias for `Reg<DLL_SPEC>`"]
 pub type DLL = crate::Reg<dll::DLL_SPEC>;
 #[doc = "UART Divisor Latch Low Register"]
 pub mod dll;
-#[doc = "DLH register accessor: an alias for `Reg<DLH_SPEC>`"]
+#[doc = "dlh register accessor: an alias for `Reg<DLH_SPEC>`"]
 pub type DLH = crate::Reg<dlh::DLH_SPEC>;
 #[doc = "UART Divisor Latch High Register"]
 pub mod dlh;
-#[doc = "IER register accessor: an alias for `Reg<IER_SPEC>`"]
+#[doc = "ier register accessor: an alias for `Reg<IER_SPEC>`"]
 pub type IER = crate::Reg<ier::IER_SPEC>;
 #[doc = "UART Interrupt Enable Register"]
 pub mod ier;
-#[doc = "IIR register accessor: an alias for `Reg<IIR_SPEC>`"]
+#[doc = "iir register accessor: an alias for `Reg<IIR_SPEC>`"]
 pub type IIR = crate::Reg<iir::IIR_SPEC>;
 #[doc = "UART Interrupt Identity Register"]
 pub mod iir;
-#[doc = "FCR register accessor: an alias for `Reg<FCR_SPEC>`"]
+#[doc = "fcr register accessor: an alias for `Reg<FCR_SPEC>`"]
 pub type FCR = crate::Reg<fcr::FCR_SPEC>;
 #[doc = "UART FIFO Control Register"]
 pub mod fcr;
-#[doc = "LCR register accessor: an alias for `Reg<LCR_SPEC>`"]
+#[doc = "lcr register accessor: an alias for `Reg<LCR_SPEC>`"]
 pub type LCR = crate::Reg<lcr::LCR_SPEC>;
 #[doc = "UART Line Control Register"]
 pub mod lcr;
-#[doc = "MCR register accessor: an alias for `Reg<MCR_SPEC>`"]
+#[doc = "mcr register accessor: an alias for `Reg<MCR_SPEC>`"]
 pub type MCR = crate::Reg<mcr::MCR_SPEC>;
 #[doc = "UART Modem Control Register"]
 pub mod mcr;
-#[doc = "LSR register accessor: an alias for `Reg<LSR_SPEC>`"]
+#[doc = "lsr register accessor: an alias for `Reg<LSR_SPEC>`"]
 pub type LSR = crate::Reg<lsr::LSR_SPEC>;
 #[doc = "UART Line Status Register"]
 pub mod lsr;
-#[doc = "MSR register accessor: an alias for `Reg<MSR_SPEC>`"]
+#[doc = "msr register accessor: an alias for `Reg<MSR_SPEC>`"]
 pub type MSR = crate::Reg<msr::MSR_SPEC>;
 #[doc = "UART Modem Status Register"]
 pub mod msr;
-#[doc = "SCH register accessor: an alias for `Reg<SCH_SPEC>`"]
+#[doc = "sch register accessor: an alias for `Reg<SCH_SPEC>`"]
 pub type SCH = crate::Reg<sch::SCH_SPEC>;
 #[doc = "UART Scratch Register"]
 pub mod sch;
-#[doc = "USR register accessor: an alias for `Reg<USR_SPEC>`"]
+#[doc = "usr register accessor: an alias for `Reg<USR_SPEC>`"]
 pub type USR = crate::Reg<usr::USR_SPEC>;
 #[doc = "UART Status Register"]
 pub mod usr;
-#[doc = "TFL register accessor: an alias for `Reg<TFL_SPEC>`"]
+#[doc = "tfl register accessor: an alias for `Reg<TFL_SPEC>`"]
 pub type TFL = crate::Reg<tfl::TFL_SPEC>;
 #[doc = "UART Transmit FIFO Level Register"]
 pub mod tfl;
-#[doc = "RFL register accessor: an alias for `Reg<RFL_SPEC>`"]
+#[doc = "rfl register accessor: an alias for `Reg<RFL_SPEC>`"]
 pub type RFL = crate::Reg<rfl::RFL_SPEC>;
 #[doc = "UART Receive FIFO Level Register"]
 pub mod rfl;
-#[doc = "HSK register accessor: an alias for `Reg<HSK_SPEC>`"]
+#[doc = "hsk register accessor: an alias for `Reg<HSK_SPEC>`"]
 pub type HSK = crate::Reg<hsk::HSK_SPEC>;
 #[doc = "UART DMA Handshake Configuration Register"]
 pub mod hsk;
-#[doc = "DMA_REQ_EN register accessor: an alias for `Reg<DMA_REQ_EN_SPEC>`"]
+#[doc = "dma_req_en register accessor: an alias for `Reg<DMA_REQ_EN_SPEC>`"]
 pub type DMA_REQ_EN = crate::Reg<dma_req_en::DMA_REQ_EN_SPEC>;
 #[doc = "UART DMA Request Enable Register"]
 pub mod dma_req_en;
-#[doc = "HALT register accessor: an alias for `Reg<HALT_SPEC>`"]
+#[doc = "halt register accessor: an alias for `Reg<HALT_SPEC>`"]
 pub type HALT = crate::Reg<halt::HALT_SPEC>;
 #[doc = "UART Halt TX Register"]
 pub mod halt;
-#[doc = "DBG_DLL register accessor: an alias for `Reg<DBG_DLL_SPEC>`"]
+#[doc = "dbg_dll register accessor: an alias for `Reg<DBG_DLL_SPEC>`"]
 pub type DBG_DLL = crate::Reg<dbg_dll::DBG_DLL_SPEC>;
 #[doc = "UART Debug DLL Register"]
 pub mod dbg_dll;
-#[doc = "DBG_DLH register accessor: an alias for `Reg<DBG_DLH_SPEC>`"]
+#[doc = "dbg_dlh register accessor: an alias for `Reg<DBG_DLH_SPEC>`"]
 pub type DBG_DLH = crate::Reg<dbg_dlh::DBG_DLH_SPEC>;
 #[doc = "UART Debug DLH Register"]
 pub mod dbg_dlh;
-#[doc = "FCC register accessor: an alias for `Reg<FCC_SPEC>`"]
+#[doc = "fcc register accessor: an alias for `Reg<FCC_SPEC>`"]
 pub type FCC = crate::Reg<fcc::FCC_SPEC>;
 #[doc = "UART FIFO Clock Control Register"]
 pub mod fcc;
-#[doc = "RXDMA_CTRL register accessor: an alias for `Reg<RXDMA_CTRL_SPEC>`"]
+#[doc = "rxdma_ctrl register accessor: an alias for `Reg<RXDMA_CTRL_SPEC>`"]
 pub type RXDMA_CTRL = crate::Reg<rxdma_ctrl::RXDMA_CTRL_SPEC>;
 #[doc = "UART RXDMA Control Register"]
 pub mod rxdma_ctrl;
-#[doc = "RXDMA_STR register accessor: an alias for `Reg<RXDMA_STR_SPEC>`"]
+#[doc = "rxdma_str register accessor: an alias for `Reg<RXDMA_STR_SPEC>`"]
 pub type RXDMA_STR = crate::Reg<rxdma_str::RXDMA_STR_SPEC>;
 #[doc = "UART RXDMA Start Register"]
 pub mod rxdma_str;
-#[doc = "RXDMA_STA register accessor: an alias for `Reg<RXDMA_STA_SPEC>`"]
+#[doc = "rxdma_sta register accessor: an alias for `Reg<RXDMA_STA_SPEC>`"]
 pub type RXDMA_STA = crate::Reg<rxdma_sta::RXDMA_STA_SPEC>;
 #[doc = "UART RXDMA Status Register"]
 pub mod rxdma_sta;
-#[doc = "RXDMA_LMT register accessor: an alias for `Reg<RXDMA_LMT_SPEC>`"]
+#[doc = "rxdma_lmt register accessor: an alias for `Reg<RXDMA_LMT_SPEC>`"]
 pub type RXDMA_LMT = crate::Reg<rxdma_lmt::RXDMA_LMT_SPEC>;
 #[doc = "UART RXDMA Limit Register"]
 pub mod rxdma_lmt;
-#[doc = "RXDMA_SADDRL register accessor: an alias for `Reg<RXDMA_SADDRL_SPEC>`"]
+#[doc = "rxdma_saddrl register accessor: an alias for `Reg<RXDMA_SADDRL_SPEC>`"]
 pub type RXDMA_SADDRL = crate::Reg<rxdma_saddrl::RXDMA_SADDRL_SPEC>;
 #[doc = "UART RXDMA Buffer Start Address Low Register"]
 pub mod rxdma_saddrl;
-#[doc = "RXDMA_SADDRH register accessor: an alias for `Reg<RXDMA_SADDRH_SPEC>`"]
+#[doc = "rxdma_saddrh register accessor: an alias for `Reg<RXDMA_SADDRH_SPEC>`"]
 pub type RXDMA_SADDRH = crate::Reg<rxdma_saddrh::RXDMA_SADDRH_SPEC>;
 #[doc = "UART RXDMA Buffer Start Address High Register"]
 pub mod rxdma_saddrh;
-#[doc = "RXDMA_BL register accessor: an alias for `Reg<RXDMA_BL_SPEC>`"]
+#[doc = "rxdma_bl register accessor: an alias for `Reg<RXDMA_BL_SPEC>`"]
 pub type RXDMA_BL = crate::Reg<rxdma_bl::RXDMA_BL_SPEC>;
 #[doc = "UART RXDMA Buffer Length Register"]
 pub mod rxdma_bl;
-#[doc = "RXDMA_IE register accessor: an alias for `Reg<RXDMA_IE_SPEC>`"]
+#[doc = "rxdma_ie register accessor: an alias for `Reg<RXDMA_IE_SPEC>`"]
 pub type RXDMA_IE = crate::Reg<rxdma_ie::RXDMA_IE_SPEC>;
 #[doc = "UART RXDMA Interrupt Enable Register"]
 pub mod rxdma_ie;
-#[doc = "RXDMA_IS register accessor: an alias for `Reg<RXDMA_IS_SPEC>`"]
+#[doc = "rxdma_is register accessor: an alias for `Reg<RXDMA_IS_SPEC>`"]
 pub type RXDMA_IS = crate::Reg<rxdma_is::RXDMA_IS_SPEC>;
 #[doc = "UART RXDMA Interrupt Status Register"]
 pub mod rxdma_is;
-#[doc = "RXDMA_WADDRL register accessor: an alias for `Reg<RXDMA_WADDRL_SPEC>`"]
+#[doc = "rxdma_waddrl register accessor: an alias for `Reg<RXDMA_WADDRL_SPEC>`"]
 pub type RXDMA_WADDRL = crate::Reg<rxdma_waddrl::RXDMA_WADDRL_SPEC>;
 #[doc = "UART RXDMA Write Address Low Register"]
 pub mod rxdma_waddrl;
-#[doc = "RXDMA_WADDRH register accessor: an alias for `Reg<RXDMA_WADDRH_SPEC>`"]
+#[doc = "rxdma_waddrh register accessor: an alias for `Reg<RXDMA_WADDRH_SPEC>`"]
 pub type RXDMA_WADDRH = crate::Reg<rxdma_waddrh::RXDMA_WADDRH_SPEC>;
 #[doc = "UART RXDMA Write Address High Register"]
 pub mod rxdma_waddrh;
-#[doc = "RXDMA_RADDRL register accessor: an alias for `Reg<RXDMA_RADDRL_SPEC>`"]
+#[doc = "rxdma_raddrl register accessor: an alias for `Reg<RXDMA_RADDRL_SPEC>`"]
 pub type RXDMA_RADDRL = crate::Reg<rxdma_raddrl::RXDMA_RADDRL_SPEC>;
 #[doc = "UART RXDMA Read Address Low Register"]
 pub mod rxdma_raddrl;
-#[doc = "RXDMA_RADDRH register accessor: an alias for `Reg<RXDMA_RADDRH_SPEC>`"]
+#[doc = "rxdma_raddrh register accessor: an alias for `Reg<RXDMA_RADDRH_SPEC>`"]
 pub type RXDMA_RADDRH = crate::Reg<rxdma_raddrh::RXDMA_RADDRH_SPEC>;
 #[doc = "UART RXDMA Read Address High Register"]
 pub mod rxdma_raddrh;
-#[doc = "RXDMA_DCNT register accessor: an alias for `Reg<RXDMA_DCNT_SPEC>`"]
+#[doc = "rxdma_dcnt register accessor: an alias for `Reg<RXDMA_DCNT_SPEC>`"]
 pub type RXDMA_DCNT = crate::Reg<rxdma_dcnt::RXDMA_DCNT_SPEC>;
 #[doc = "UART RXDMA Data Count Register"]
 pub mod rxdma_dcnt;

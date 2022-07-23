@@ -1,4 +1,4 @@
-#[doc = "Register `PERIODICLISTBASE` reader"]
+#[doc = "Register `periodiclistbase` reader"]
 pub struct R(crate::R<PERIODICLISTBASE_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PERIODICLISTBASE_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PERIODICLISTBASE_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PERIODICLISTBASE` writer"]
+#[doc = "Register `periodiclistbase` writer"]
 pub struct W(crate::W<PERIODICLISTBASE_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PERIODICLISTBASE_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<PERIODICLISTBASE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BASE_ADDRESS` reader - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
+#[doc = "Field `base_address` reader - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
 pub type BASE_ADDRESS_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `BASE_ADDRESS` writer - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
+#[doc = "Field `base_address` writer - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
 pub type BASE_ADDRESS_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PERIODICLISTBASE_SPEC, u32, u32, 20, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for PERIODICLISTBASE_SPEC {
 impl crate::Writable for PERIODICLISTBASE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PERIODICLISTBASE to value 0"]
+#[doc = "`reset()` method sets periodiclistbase to value 0"]
 impl crate::Resettable for PERIODICLISTBASE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

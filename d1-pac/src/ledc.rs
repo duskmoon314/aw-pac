@@ -26,47 +26,47 @@ pub struct RegisterBlock {
     #[doc = "0x30..0xb0 - LEDC FIFO Data Register"]
     pub ledc_fifo_data: [crate::Reg<ledc_fifo_data::LEDC_FIFO_DATA_SPEC>; 32],
 }
-#[doc = "LEDC_CTRL register accessor: an alias for `Reg<LEDC_CTRL_SPEC>`"]
+#[doc = "ledc_ctrl register accessor: an alias for `Reg<LEDC_CTRL_SPEC>`"]
 pub type LEDC_CTRL = crate::Reg<ledc_ctrl::LEDC_CTRL_SPEC>;
 #[doc = "LEDC Control Register"]
 pub mod ledc_ctrl;
-#[doc = "LED_T01_TIMING_CTRL register accessor: an alias for `Reg<LED_T01_TIMING_CTRL_SPEC>`"]
+#[doc = "led_t01_timing_ctrl register accessor: an alias for `Reg<LED_T01_TIMING_CTRL_SPEC>`"]
 pub type LED_T01_TIMING_CTRL = crate::Reg<led_t01_timing_ctrl::LED_T01_TIMING_CTRL_SPEC>;
 #[doc = "LEDC T0 T1 Timing Control Register"]
 pub mod led_t01_timing_ctrl;
-#[doc = "LEDC_DATA_FINISH_CNT register accessor: an alias for `Reg<LEDC_DATA_FINISH_CNT_SPEC>`"]
+#[doc = "ledc_data_finish_cnt register accessor: an alias for `Reg<LEDC_DATA_FINISH_CNT_SPEC>`"]
 pub type LEDC_DATA_FINISH_CNT = crate::Reg<ledc_data_finish_cnt::LEDC_DATA_FINISH_CNT_SPEC>;
 #[doc = "LEDC Data Finish Counter Register"]
 pub mod ledc_data_finish_cnt;
-#[doc = "LED_RESET_TIMING_CTRL register accessor: an alias for `Reg<LED_RESET_TIMING_CTRL_SPEC>`"]
+#[doc = "led_reset_timing_ctrl register accessor: an alias for `Reg<LED_RESET_TIMING_CTRL_SPEC>`"]
 pub type LED_RESET_TIMING_CTRL = crate::Reg<led_reset_timing_ctrl::LED_RESET_TIMING_CTRL_SPEC>;
 #[doc = "LEDC Reset Timing Control Register"]
 pub mod led_reset_timing_ctrl;
-#[doc = "LEDC_WAIT_TIME0_CTRL register accessor: an alias for `Reg<LEDC_WAIT_TIME0_CTRL_SPEC>`"]
+#[doc = "ledc_wait_time0_ctrl register accessor: an alias for `Reg<LEDC_WAIT_TIME0_CTRL_SPEC>`"]
 pub type LEDC_WAIT_TIME0_CTRL = crate::Reg<ledc_wait_time0_ctrl::LEDC_WAIT_TIME0_CTRL_SPEC>;
 #[doc = "LEDC Wait Time0 Control Register"]
 pub mod ledc_wait_time0_ctrl;
-#[doc = "LEDC_DATA register accessor: an alias for `Reg<LEDC_DATA_SPEC>`"]
+#[doc = "ledc_data register accessor: an alias for `Reg<LEDC_DATA_SPEC>`"]
 pub type LEDC_DATA = crate::Reg<ledc_data::LEDC_DATA_SPEC>;
 #[doc = "LEDC Data Register"]
 pub mod ledc_data;
-#[doc = "LEDC_DMA_CTRL register accessor: an alias for `Reg<LEDC_DMA_CTRL_SPEC>`"]
+#[doc = "ledc_dma_ctrl register accessor: an alias for `Reg<LEDC_DMA_CTRL_SPEC>`"]
 pub type LEDC_DMA_CTRL = crate::Reg<ledc_dma_ctrl::LEDC_DMA_CTRL_SPEC>;
 #[doc = "LEDC DMA Control Register"]
 pub mod ledc_dma_ctrl;
-#[doc = "LEDC_INT_CTRL register accessor: an alias for `Reg<LEDC_INT_CTRL_SPEC>`"]
+#[doc = "ledc_int_ctrl register accessor: an alias for `Reg<LEDC_INT_CTRL_SPEC>`"]
 pub type LEDC_INT_CTRL = crate::Reg<ledc_int_ctrl::LEDC_INT_CTRL_SPEC>;
 #[doc = "LEDC Interrupt Control Register"]
 pub mod ledc_int_ctrl;
-#[doc = "LEDC_INT_STS register accessor: an alias for `Reg<LEDC_INT_STS_SPEC>`"]
+#[doc = "ledc_int_sts register accessor: an alias for `Reg<LEDC_INT_STS_SPEC>`"]
 pub type LEDC_INT_STS = crate::Reg<ledc_int_sts::LEDC_INT_STS_SPEC>;
 #[doc = "LEDC Interrupt Status Register"]
 pub mod ledc_int_sts;
-#[doc = "LEDC_WAIT_TIME1_CTRL register accessor: an alias for `Reg<LEDC_WAIT_TIME1_CTRL_SPEC>`"]
+#[doc = "ledc_wait_time1_ctrl register accessor: an alias for `Reg<LEDC_WAIT_TIME1_CTRL_SPEC>`"]
 pub type LEDC_WAIT_TIME1_CTRL = crate::Reg<ledc_wait_time1_ctrl::LEDC_WAIT_TIME1_CTRL_SPEC>;
 #[doc = "LEDC Wait Time1 Control Register"]
 pub mod ledc_wait_time1_ctrl;
-#[doc = "LEDC_FIFO_DATA register accessor: an alias for `Reg<LEDC_FIFO_DATA_SPEC>`"]
+#[doc = "ledc_fifo_data register accessor: an alias for `Reg<LEDC_FIFO_DATA_SPEC>`"]
 pub type LEDC_FIFO_DATA = crate::Reg<ledc_fifo_data::LEDC_FIFO_DATA_SPEC>;
 #[doc = "LEDC FIFO Data Register"]
 pub mod ledc_fifo_data;

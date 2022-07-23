@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_CTYPE` reader"]
+#[doc = "Register `smhc_ctype` reader"]
 pub struct R(crate::R<SMHC_CTYPE_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_CTYPE_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_CTYPE_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_CTYPE` writer"]
+#[doc = "Register `smhc_ctype` writer"]
 pub struct W(crate::W<SMHC_CTYPE_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_CTYPE_SPEC>;
@@ -51,7 +51,7 @@ impl From<CARD_WID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CARD_WID` reader - Card Width"]
+#[doc = "Field `card_wid` reader - Card Width"]
 pub type CARD_WID_R = crate::FieldReader<u8, CARD_WID_A>;
 impl CARD_WID_R {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +80,7 @@ impl CARD_WID_R {
         *self == CARD_WID_A::B8
     }
 }
-#[doc = "Field `CARD_WID` writer - Card Width"]
+#[doc = "Field `card_wid` writer - Card Width"]
 pub type CARD_WID_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SMHC_CTYPE_SPEC, u8, CARD_WID_A, 2, O>;
 impl<'a, const O: u8> CARD_WID_W<'a, O> {
@@ -133,7 +133,7 @@ impl crate::Readable for SMHC_CTYPE_SPEC {
 impl crate::Writable for SMHC_CTYPE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_CTYPE to value 0"]
+#[doc = "`reset()` method sets smhc_ctype to value 0"]
 impl crate::Resettable for SMHC_CTYPE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `DMIC_EN` reader"]
+#[doc = "Register `dmic_en` reader"]
 pub struct R(crate::R<DMIC_EN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMIC_EN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMIC_EN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMIC_EN` writer"]
+#[doc = "Register `dmic_en` writer"]
 pub struct W(crate::W<DMIC_EN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMIC_EN_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for DMIC_EN_SPEC {
 impl crate::Writable for DMIC_EN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMIC_EN to value 0"]
+#[doc = "`reset()` method sets dmic_en to value 0"]
 impl crate::Resettable for DMIC_EN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

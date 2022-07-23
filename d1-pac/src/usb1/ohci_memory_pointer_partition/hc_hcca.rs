@@ -1,4 +1,4 @@
-#[doc = "Register `HC_HCCA` reader"]
+#[doc = "Register `hc_hcca` reader"]
 pub struct R(crate::R<HC_HCCA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_HCCA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_HCCA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_HCCA` writer"]
+#[doc = "Register `hc_hcca` writer"]
 pub struct W(crate::W<HC_HCCA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_HCCA_SPEC>;
@@ -34,11 +34,11 @@ impl From<crate::W<HC_HCCA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `HCCA_31_8` reader - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
+#[doc = "Field `hcca_31_8` reader - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
 pub type HCCA_31_8_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `HCCA_31_8` writer - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
+#[doc = "Field `hcca_31_8` writer - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
 pub type HCCA_31_8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HC_HCCA_SPEC, u32, u32, 24, O>;
-#[doc = "Field `HCCA_7_0` reader - The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read."]
+#[doc = "Field `hcca_7_0` reader - The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read."]
 pub type HCCA_7_0_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 8:31 - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
@@ -78,7 +78,7 @@ impl crate::Readable for HC_HCCA_SPEC {
 impl crate::Writable for HC_HCCA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_HCCA to value 0"]
+#[doc = "`reset()` method sets hc_hcca to value 0"]
 impl crate::Resettable for HC_HCCA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

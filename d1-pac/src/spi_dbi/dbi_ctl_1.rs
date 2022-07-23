@@ -1,4 +1,4 @@
-#[doc = "Register `DBI_CTL_1` reader"]
+#[doc = "Register `dbi_ctl_1` reader"]
 pub struct R(crate::R<DBI_CTL_1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DBI_CTL_1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DBI_CTL_1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DBI_CTL_1` writer"]
+#[doc = "Register `dbi_ctl_1` writer"]
 pub struct W(crate::W<DBI_CTL_1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DBI_CTL_1_SPEC>;
@@ -134,7 +134,7 @@ impl From<RGB666_FMT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RGB666_FMT` reader - 2 Data Lane RGB666 Format"]
+#[doc = "Field `rgb666_fmt` reader - 2 Data Lane RGB666 Format"]
 pub type RGB666_FMT_R = crate::FieldReader<u8, RGB666_FMT_A>;
 impl RGB666_FMT_R {
     #[doc = "Get enumerated values variant"]
@@ -163,7 +163,7 @@ impl RGB666_FMT_R {
         *self == RGB666_FMT_A::SPECIAL_NEW_VISION
     }
 }
-#[doc = "Field `RGB666_FMT` writer - 2 Data Lane RGB666 Format"]
+#[doc = "Field `rgb666_fmt` writer - 2 Data Lane RGB666 Format"]
 pub type RGB666_FMT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, DBI_CTL_1_SPEC, u8, RGB666_FMT_A, 2, O>;
 impl<'a, const O: u8> RGB666_FMT_W<'a, O> {
@@ -293,9 +293,9 @@ pub type DBI_CLKO_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_1_S
 pub type DCX_DATA_R = crate::BitReader<bool>;
 #[doc = "Field `dcx_data` writer - DCX Data Value"]
 pub type DCX_DATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, O>;
-#[doc = "Field `RGB16_data_source_select` reader - RGB 16 Data Source Select"]
+#[doc = "Field `rgb16_data_source_select` reader - RGB 16 Data Source Select"]
 pub type RGB16_DATA_SOURCE_SELECT_R = crate::BitReader<bool>;
-#[doc = "Field `RGB16_data_source_select` writer - RGB 16 Data Source Select"]
+#[doc = "Field `rgb16_data_source_select` writer - RGB 16 Data Source Select"]
 pub type RGB16_DATA_SOURCE_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DBI_CTL_1_SPEC, bool, O>;
 #[doc = "Field `rdat_lsb` reader - Bit Order of Read Data"]
@@ -443,7 +443,7 @@ impl crate::Readable for DBI_CTL_1_SPEC {
 impl crate::Writable for DBI_CTL_1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DBI_CTL_1 to value 0"]
+#[doc = "`reset()` method sets dbi_ctl_1 to value 0"]
 impl crate::Resettable for DBI_CTL_1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `PCGR` reader"]
+#[doc = "Register `pcgr` reader"]
 pub struct R(crate::R<PCGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PCGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PCGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PCGR` writer"]
+#[doc = "Register `pcgr` writer"]
 pub struct W(crate::W<PCGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PCGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<PWM_CLK_BYPASS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `PWM(0-7)_CLK_BYPASS` reader - Bypass clock source (after pre-scale) to PWM output"]
+#[doc = "Fields `pwm(0-7)_clk_bypass` reader - Bypass clock source (after pre-scale) to PWM output"]
 pub type PWM_CLK_BYPASS_R = crate::BitReader<PWM_CLK_BYPASS_A>;
 impl PWM_CLK_BYPASS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl PWM_CLK_BYPASS_R {
         *self == PWM_CLK_BYPASS_A::BYPASS
     }
 }
-#[doc = "Fields `PWM(0-7)_CLK_BYPASS` writer - Bypass clock source (after pre-scale) to PWM output"]
+#[doc = "Fields `pwm(0-7)_clk_bypass` writer - Bypass clock source (after pre-scale) to PWM output"]
 pub type PWM_CLK_BYPASS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PCGR_SPEC, PWM_CLK_BYPASS_A, O>;
 impl<'a, const O: u8> PWM_CLK_BYPASS_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<PWM_CLK_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `PWM(0-7)_CLK_GATING` reader - Gating clock for PWM"]
+#[doc = "Fields `pwm(0-7)_clk_gating` reader - Gating clock for PWM"]
 pub type PWM_CLK_GATING_R = crate::BitReader<PWM_CLK_GATING_A>;
 impl PWM_CLK_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl PWM_CLK_GATING_R {
         *self == PWM_CLK_GATING_A::PASS
     }
 }
-#[doc = "Fields `PWM(0-7)_CLK_GATING` writer - Gating clock for PWM"]
+#[doc = "Fields `pwm(0-7)_clk_gating` writer - Gating clock for PWM"]
 pub type PWM_CLK_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PCGR_SPEC, PWM_CLK_GATING_A, O>;
 impl<'a, const O: u8> PWM_CLK_GATING_W<'a, O> {
@@ -339,7 +339,7 @@ impl crate::Readable for PCGR_SPEC {
 impl crate::Writable for PCGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PCGR to value 0"]
+#[doc = "`reset()` method sets pcgr to value 0"]
 impl crate::Resettable for PCGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

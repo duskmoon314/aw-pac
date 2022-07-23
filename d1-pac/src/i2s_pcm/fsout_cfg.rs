@@ -1,22 +1,22 @@
-#[doc = "Register `FsoutCFG` reader"]
-pub struct R(crate::R<FSOUTCFG_SPEC>);
+#[doc = "Register `fsout_cfg` reader"]
+pub struct R(crate::R<FSOUT_CFG_SPEC>);
 impl core::ops::Deref for R {
-    type Target = crate::R<FSOUTCFG_SPEC>;
+    type Target = crate::R<FSOUT_CFG_SPEC>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
     }
 }
-impl From<crate::R<FSOUTCFG_SPEC>> for R {
+impl From<crate::R<FSOUT_CFG_SPEC>> for R {
     #[inline(always)]
-    fn from(reader: crate::R<FSOUTCFG_SPEC>) -> Self {
+    fn from(reader: crate::R<FSOUT_CFG_SPEC>) -> Self {
         R(reader)
     }
 }
-#[doc = "Register `FsoutCFG` writer"]
-pub struct W(crate::W<FSOUTCFG_SPEC>);
+#[doc = "Register `fsout_cfg` writer"]
+pub struct W(crate::W<FSOUT_CFG_SPEC>);
 impl core::ops::Deref for W {
-    type Target = crate::W<FSOUTCFG_SPEC>;
+    type Target = crate::W<FSOUT_CFG_SPEC>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -28,9 +28,9 @@ impl core::ops::DerefMut for W {
         &mut self.0
     }
 }
-impl From<crate::W<FSOUTCFG_SPEC>> for W {
+impl From<crate::W<FSOUT_CFG_SPEC>> for W {
     #[inline(always)]
-    fn from(writer: crate::W<FSOUTCFG_SPEC>) -> Self {
+    fn from(writer: crate::W<FSOUT_CFG_SPEC>) -> Self {
         W(writer)
     }
 }
@@ -43,20 +43,20 @@ impl W {
     }
 }
 #[doc = "ASRC Out Sample Rate Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsout_cfg](index.html) module"]
-pub struct FSOUTCFG_SPEC;
-impl crate::RegisterSpec for FSOUTCFG_SPEC {
+pub struct FSOUT_CFG_SPEC;
+impl crate::RegisterSpec for FSOUT_CFG_SPEC {
     type Ux = u32;
 }
 #[doc = "`read()` method returns [fsout_cfg::R](R) reader structure"]
-impl crate::Readable for FSOUTCFG_SPEC {
+impl crate::Readable for FSOUT_CFG_SPEC {
     type Reader = R;
 }
 #[doc = "`write(|w| ..)` method takes [fsout_cfg::W](W) writer structure"]
-impl crate::Writable for FSOUTCFG_SPEC {
+impl crate::Writable for FSOUT_CFG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets FsoutCFG to value 0"]
-impl crate::Resettable for FSOUTCFG_SPEC {
+#[doc = "`reset()` method sets fsout_cfg to value 0"]
+impl crate::Resettable for FSOUT_CFG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
         0

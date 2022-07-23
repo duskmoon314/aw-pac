@@ -1,4 +1,4 @@
-#[doc = "Register `IIR` reader"]
+#[doc = "Register `iir` reader"]
 pub struct R(crate::R<IIR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<IIR_SPEC>;
@@ -158,7 +158,7 @@ impl crate::RegisterSpec for IIR_SPEC {
 impl crate::Readable for IIR_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets IIR to value 0"]
+#[doc = "`reset()` method sets iir to value 0"]
 impl crate::Resettable for IIR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

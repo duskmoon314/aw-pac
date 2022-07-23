@@ -1,4 +1,4 @@
-#[doc = "Register `CONFIGFLAG` reader"]
+#[doc = "Register `configflag` reader"]
 pub struct R(crate::R<CONFIGFLAG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CONFIGFLAG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CONFIGFLAG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CONFIGFLAG` writer"]
+#[doc = "Register `configflag` writer"]
 pub struct W(crate::W<CONFIGFLAG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CONFIGFLAG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CONFIGFLAG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CF` reader - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
+#[doc = "Field `cf` reader - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
 pub type CF_R = crate::BitReader<bool>;
-#[doc = "Field `CF` writer - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
+#[doc = "Field `cf` writer - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
 pub type CF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CONFIGFLAG_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
@@ -71,7 +71,7 @@ impl crate::Readable for CONFIGFLAG_SPEC {
 impl crate::Writable for CONFIGFLAG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CONFIGFLAG to value 0"]
+#[doc = "`reset()` method sets configflag to value 0"]
 impl crate::Resettable for CONFIGFLAG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

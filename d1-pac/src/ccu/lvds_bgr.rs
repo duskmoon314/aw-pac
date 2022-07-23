@@ -1,4 +1,4 @@
-#[doc = "Register `LVDS_BGR` reader"]
+#[doc = "Register `lvds_bgr` reader"]
 pub struct R(crate::R<LVDS_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LVDS_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LVDS_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LVDS_BGR` writer"]
+#[doc = "Register `lvds_bgr` writer"]
 pub struct W(crate::W<LVDS_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LVDS_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RST` reader - Reset"]
+#[doc = "Field `rst` reader - Reset"]
 pub type RST_R = crate::BitReader<RST_A>;
 impl RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RST_R {
         *self == RST_A::DEASSERT
     }
 }
-#[doc = "Field `RST` writer - Reset"]
+#[doc = "Field `rst` writer - Reset"]
 pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, LVDS_BGR_SPEC, RST_A, O>;
 impl<'a, const O: u8> RST_W<'a, O> {
     #[doc = "`0`"]
@@ -117,7 +117,7 @@ impl crate::Readable for LVDS_BGR_SPEC {
 impl crate::Writable for LVDS_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LVDS_BGR to value 0"]
+#[doc = "`reset()` method sets lvds_bgr to value 0"]
 impl crate::Resettable for LVDS_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

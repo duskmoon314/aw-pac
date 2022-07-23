@@ -1,4 +1,4 @@
-#[doc = "Register `OWA_GEN_CTL` reader"]
+#[doc = "Register `owa_gen_ctl` reader"]
 pub struct R(crate::R<OWA_GEN_CTL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<OWA_GEN_CTL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<OWA_GEN_CTL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `OWA_GEN_CTL` writer"]
+#[doc = "Register `owa_gen_ctl` writer"]
 pub struct W(crate::W<OWA_GEN_CTL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<OWA_GEN_CTL_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for OWA_GEN_CTL_SPEC {
 impl crate::Writable for OWA_GEN_CTL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets OWA_GEN_CTL to value 0"]
+#[doc = "`reset()` method sets owa_gen_ctl to value 0"]
 impl crate::Resettable for OWA_GEN_CTL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

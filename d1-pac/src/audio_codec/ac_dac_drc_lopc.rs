@@ -1,4 +1,4 @@
-#[doc = "Register `AC_DAC_DRC_LOPC` reader"]
+#[doc = "Register `ac_dac_drc_lopc` reader"]
 pub struct R(crate::R<AC_DAC_DRC_LOPC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<AC_DAC_DRC_LOPC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<AC_DAC_DRC_LOPC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `AC_DAC_DRC_LOPC` writer"]
+#[doc = "Register `ac_dac_drc_lopc` writer"]
 pub struct W(crate::W<AC_DAC_DRC_LOPC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<AC_DAC_DRC_LOPC_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for AC_DAC_DRC_LOPC_SPEC {
 impl crate::Writable for AC_DAC_DRC_LOPC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets AC_DAC_DRC_LOPC to value 0"]
+#[doc = "`reset()` method sets ac_dac_drc_lopc to value 0"]
 impl crate::Resettable for AC_DAC_DRC_LOPC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

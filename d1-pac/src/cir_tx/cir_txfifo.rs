@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TXFIFO` reader"]
+#[doc = "Register `cir_txfifo` reader"]
 pub struct R(crate::R<CIR_TXFIFO_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TXFIFO_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TXFIFO_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TXFIFO` writer"]
+#[doc = "Register `cir_txfifo` writer"]
 pub struct W(crate::W<CIR_TXFIFO_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TXFIFO_SPEC>;
@@ -34,7 +34,7 @@ impl From<crate::W<CIR_TXFIFO_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TBF` writer - Transmit Byte FIFO\n\nWhen the transmission is triggered, the data in the FIFO will be transmitted until the data number is transmitted completely."]
+#[doc = "Field `tbf` writer - Transmit Byte FIFO\n\nWhen the transmission is triggered, the data in the FIFO will be transmitted until the data number is transmitted completely."]
 pub type TBF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_TXFIFO_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - Transmit Byte FIFO\n\nWhen the transmission is triggered, the data in the FIFO will be transmitted until the data number is transmitted completely."]
@@ -62,7 +62,7 @@ impl crate::Readable for CIR_TXFIFO_SPEC {
 impl crate::Writable for CIR_TXFIFO_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TXFIFO to value 0"]
+#[doc = "`reset()` method sets cir_txfifo to value 0"]
 impl crate::Resettable for CIR_TXFIFO_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

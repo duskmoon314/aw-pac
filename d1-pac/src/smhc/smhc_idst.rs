@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_IDST` reader"]
+#[doc = "Register `smhc_idst` reader"]
 pub struct R(crate::R<SMHC_IDST_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_IDST_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_IDST_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_IDST` writer"]
+#[doc = "Register `smhc_idst` writer"]
 pub struct W(crate::W<SMHC_IDST_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_IDST_SPEC>;
@@ -49,7 +49,7 @@ impl From<IDMAC_ERR_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `IDMAC_ERR_STA` reader - Error Bits"]
+#[doc = "Field `idmac_err_sta` reader - Error Bits"]
 pub type IDMAC_ERR_STA_R = crate::FieldReader<u8, IDMAC_ERR_STA_A>;
 impl IDMAC_ERR_STA_R {
     #[doc = "Get enumerated values variant"]
@@ -72,33 +72,33 @@ impl IDMAC_ERR_STA_R {
         *self == IDMAC_ERR_STA_A::RECEPTION
     }
 }
-#[doc = "Field `ABN_INT_SUM` reader - Abnormal Interrupt Summary"]
+#[doc = "Field `abn_int_sum` reader - Abnormal Interrupt Summary"]
 pub type ABN_INT_SUM_R = crate::BitReader<bool>;
-#[doc = "Field `ABN_INT_SUM` writer - Abnormal Interrupt Summary"]
+#[doc = "Field `abn_int_sum` writer - Abnormal Interrupt Summary"]
 pub type ABN_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `NOR_INT_SUM` reader - Normal Interrupt Summary"]
+#[doc = "Field `nor_int_sum` reader - Normal Interrupt Summary"]
 pub type NOR_INT_SUM_R = crate::BitReader<bool>;
-#[doc = "Field `NOR_INT_SUM` writer - Normal Interrupt Summary"]
+#[doc = "Field `nor_int_sum` writer - Normal Interrupt Summary"]
 pub type NOR_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `ERR_FLAG_SUM` reader - Card Error Summary"]
+#[doc = "Field `err_flag_sum` reader - Card Error Summary"]
 pub type ERR_FLAG_SUM_R = crate::BitReader<bool>;
-#[doc = "Field `ERR_FLAG_SUM` writer - Card Error Summary"]
+#[doc = "Field `err_flag_sum` writer - Card Error Summary"]
 pub type ERR_FLAG_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `DES_UNAVL_INT` reader - Descriptor Unavailable Interrupt"]
+#[doc = "Field `des_unavl_int` reader - Descriptor Unavailable Interrupt"]
 pub type DES_UNAVL_INT_R = crate::BitReader<bool>;
-#[doc = "Field `DES_UNAVL_INT` writer - Descriptor Unavailable Interrupt"]
+#[doc = "Field `des_unavl_int` writer - Descriptor Unavailable Interrupt"]
 pub type DES_UNAVL_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `FATAL_BERR_INT` reader - Fatal Bus Error Interrupt"]
+#[doc = "Field `fatal_berr_int` reader - Fatal Bus Error Interrupt"]
 pub type FATAL_BERR_INT_R = crate::BitReader<bool>;
-#[doc = "Field `FATAL_BERR_INT` writer - Fatal Bus Error Interrupt"]
+#[doc = "Field `fatal_berr_int` writer - Fatal Bus Error Interrupt"]
 pub type FATAL_BERR_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `RX_INT` reader - Receive Interrupt"]
+#[doc = "Field `rx_int` reader - Receive Interrupt"]
 pub type RX_INT_R = crate::BitReader<bool>;
-#[doc = "Field `RX_INT` writer - Receive Interrupt"]
+#[doc = "Field `rx_int` writer - Receive Interrupt"]
 pub type RX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `TX_INT` reader - Transmit Interrupt"]
+#[doc = "Field `tx_int` reader - Transmit Interrupt"]
 pub type TX_INT_R = crate::BitReader<bool>;
-#[doc = "Field `TX_INT` writer - Transmit Interrupt"]
+#[doc = "Field `tx_int` writer - Transmit Interrupt"]
 pub type TX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 10:12 - Error Bits"]
@@ -198,7 +198,7 @@ impl crate::Readable for SMHC_IDST_SPEC {
 impl crate::Writable for SMHC_IDST_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_IDST to value 0"]
+#[doc = "`reset()` method sets smhc_idst to value 0"]
 impl crate::Resettable for SMHC_IDST_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

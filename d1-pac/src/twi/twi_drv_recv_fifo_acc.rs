@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_DRV_RECV_FIFO_ACC` reader"]
+#[doc = "Register `twi_drv_recv_fifo_acc` reader"]
 pub struct R(crate::R<TWI_DRV_RECV_FIFO_ACC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TWI_DRV_RECV_FIFO_ACC_SPEC>;
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for TWI_DRV_RECV_FIFO_ACC_SPEC {
 impl crate::Readable for TWI_DRV_RECV_FIFO_ACC_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets TWI_DRV_RECV_FIFO_ACC to value 0"]
+#[doc = "`reset()` method sets twi_drv_recv_fifo_acc to value 0"]
 impl crate::Resettable for TWI_DRV_RECV_FIFO_ACC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

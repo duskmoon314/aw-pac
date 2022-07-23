@@ -1,4 +1,4 @@
-#[doc = "Register `PER` reader"]
+#[doc = "Register `per` reader"]
 pub struct R(crate::R<PER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PER` writer"]
+#[doc = "Register `per` writer"]
 pub struct W(crate::W<PER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PER_SPEC>;
@@ -48,7 +48,7 @@ impl From<PWM_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `PWM(0-7)_EN` reader - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+#[doc = "Fields `pwm(0-7)_en` reader - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
 pub type PWM_EN_R = crate::BitReader<PWM_EN_A>;
 impl PWM_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl PWM_EN_R {
         *self == PWM_EN_A::ENABLE
     }
 }
-#[doc = "Fields `PWM(0-7)_EN` writer - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+#[doc = "Fields `pwm(0-7)_en` writer - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
 pub type PWM_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PER_SPEC, PWM_EN_A, O>;
 impl<'a, const O: u8> PWM_EN_W<'a, O> {
     #[doc = "PWM disable"]
@@ -197,7 +197,7 @@ impl crate::Readable for PER_SPEC {
 impl crate::Writable for PER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PER to value 0"]
+#[doc = "`reset()` method sets per to value 0"]
 impl crate::Resettable for PER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

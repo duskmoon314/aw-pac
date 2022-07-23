@@ -1,4 +1,4 @@
-#[doc = "Register `AVS_CLK` reader"]
+#[doc = "Register `avs_clk` reader"]
 pub struct R(crate::R<AVS_CLK_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<AVS_CLK_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<AVS_CLK_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `AVS_CLK` writer"]
+#[doc = "Register `avs_clk` writer"]
 pub struct W(crate::W<AVS_CLK_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<AVS_CLK_SPEC>;
@@ -48,7 +48,7 @@ impl From<CLK_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLK_GATING` reader - Gating Clock"]
+#[doc = "Field `clk_gating` reader - Gating Clock"]
 pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 impl CLK_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CLK_GATING_R {
         *self == CLK_GATING_A::ON
     }
 }
-#[doc = "Field `CLK_GATING` writer - Gating Clock"]
+#[doc = "Field `clk_gating` writer - Gating Clock"]
 pub type CLK_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, AVS_CLK_SPEC, CLK_GATING_A, O>;
 impl<'a, const O: u8> CLK_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -117,7 +117,7 @@ impl crate::Readable for AVS_CLK_SPEC {
 impl crate::Writable for AVS_CLK_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets AVS_CLK to value 0"]
+#[doc = "`reset()` method sets avs_clk to value 0"]
 impl crate::Resettable for AVS_CLK_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

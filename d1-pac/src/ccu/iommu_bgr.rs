@@ -1,4 +1,4 @@
-#[doc = "Register `IOMMU_BGR` reader"]
+#[doc = "Register `iommu_bgr` reader"]
 pub struct R(crate::R<IOMMU_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<IOMMU_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<IOMMU_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `IOMMU_BGR` writer"]
+#[doc = "Register `iommu_bgr` writer"]
 pub struct W(crate::W<IOMMU_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<IOMMU_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GATING` reader - Gating Clock"]
+#[doc = "Field `gating` reader - Gating Clock"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl GATING_R {
         *self == GATING_A::PASS
     }
 }
-#[doc = "Field `GATING` writer - Gating Clock"]
+#[doc = "Field `gating` writer - Gating Clock"]
 pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_BGR_SPEC, GATING_A, O>;
 impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -117,7 +117,7 @@ impl crate::Readable for IOMMU_BGR_SPEC {
 impl crate::Writable for IOMMU_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets IOMMU_BGR to value 0"]
+#[doc = "`reset()` method sets iommu_bgr to value 0"]
 impl crate::Resettable for IOMMU_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

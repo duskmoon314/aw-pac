@@ -1,4 +1,4 @@
-#[doc = "Register `SPINLOCK_IRQ_STA_REG` reader"]
+#[doc = "Register `spinlock_irq_sta_reg` reader"]
 pub struct R(crate::R<SPINLOCK_IRQ_STA_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPINLOCK_IRQ_STA_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SPINLOCK_IRQ_STA_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SPINLOCK_IRQ_STA_REG` writer"]
+#[doc = "Register `spinlock_irq_sta_reg` writer"]
 pub struct W(crate::W<SPINLOCK_IRQ_STA_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SPINLOCK_IRQ_STA_REG_SPEC>;
@@ -49,7 +49,7 @@ impl From<LOCK_IRQ_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `LOCK(0-31)_IRQ_STATUS` reader - Lock\\[i\\]
+#[doc = "Fields `lock(0-31)_irq_status` reader - Lock\\[i\\]
 Interrupt Status"]
 pub type LOCK_IRQ_STATUS_R = crate::BitReader<LOCK_IRQ_STATUS_A>;
 impl LOCK_IRQ_STATUS_R {
@@ -72,7 +72,7 @@ impl LOCK_IRQ_STATUS_R {
         *self == LOCK_IRQ_STATUS_A::PENDING
     }
 }
-#[doc = "Fields `LOCK(0-31)_IRQ_STATUS` writer - Lock\\[i\\]
+#[doc = "Fields `lock(0-31)_irq_status` writer - Lock\\[i\\]
 Interrupt Status"]
 pub type LOCK_IRQ_STATUS_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, SPINLOCK_IRQ_STA_REG_SPEC, LOCK_IRQ_STATUS_A, O>;
@@ -507,7 +507,7 @@ impl crate::Readable for SPINLOCK_IRQ_STA_REG_SPEC {
 impl crate::Writable for SPINLOCK_IRQ_STA_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SPINLOCK_IRQ_STA_REG to value 0"]
+#[doc = "`reset()` method sets spinlock_irq_sta_reg to value 0"]
 impl crate::Resettable for SPINLOCK_IRQ_STA_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

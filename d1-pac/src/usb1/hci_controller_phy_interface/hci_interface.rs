@@ -1,4 +1,4 @@
-#[doc = "Register `HCI_INTERFACE` reader"]
+#[doc = "Register `hci_interface` reader"]
 pub struct R(crate::R<HCI_INTERFACE_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HCI_INTERFACE_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HCI_INTERFACE_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HCI_INTERFACE` writer"]
+#[doc = "Register `hci_interface` writer"]
 pub struct W(crate::W<HCI_INTERFACE_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HCI_INTERFACE_SPEC>;
@@ -48,7 +48,7 @@ impl From<DMA_TRANSFER_STATUS_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_TRANSFER_STATUS_ENABLE` reader - DMA Transfer Status Enable"]
+#[doc = "Field `dma_transfer_status_enable` reader - DMA Transfer Status Enable"]
 pub type DMA_TRANSFER_STATUS_ENABLE_R = crate::BitReader<DMA_TRANSFER_STATUS_ENABLE_A>;
 impl DMA_TRANSFER_STATUS_ENABLE_R {
     #[doc = "Get enumerated values variant"]
@@ -84,7 +84,7 @@ impl From<OHCI_COUNT_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `OHCI_COUNT_SELECT` reader - OHCI count select"]
+#[doc = "Field `ohci_count_select` reader - OHCI count select"]
 pub type OHCI_COUNT_SELECT_R = crate::BitReader<OHCI_COUNT_SELECT_A>;
 impl OHCI_COUNT_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -106,7 +106,7 @@ impl OHCI_COUNT_SELECT_R {
         *self == OHCI_COUNT_SELECT_A::NORMAL
     }
 }
-#[doc = "Field `OHCI_COUNT_SELECT` writer - OHCI count select"]
+#[doc = "Field `ohci_count_select` writer - OHCI count select"]
 pub type OHCI_COUNT_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, OHCI_COUNT_SELECT_A, O>;
 impl<'a, const O: u8> OHCI_COUNT_SELECT_W<'a, O> {
@@ -135,7 +135,7 @@ impl From<RESUME_K_TO_SE0_TRANSITION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESUME_K_TO_SE0_TRANSITION` reader - "]
+#[doc = "Field `resume_k_to_se0_transition` reader - "]
 pub type RESUME_K_TO_SE0_TRANSITION_R = crate::BitReader<RESUME_K_TO_SE0_TRANSITION_A>;
 impl RESUME_K_TO_SE0_TRANSITION_R {
     #[doc = "Get enumerated values variant"]
@@ -157,7 +157,7 @@ impl RESUME_K_TO_SE0_TRANSITION_R {
         *self == RESUME_K_TO_SE0_TRANSITION_A::RANDOM
     }
 }
-#[doc = "Field `RESUME_K_TO_SE0_TRANSITION` writer - "]
+#[doc = "Field `resume_k_to_se0_transition` writer - "]
 pub type RESUME_K_TO_SE0_TRANSITION_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, RESUME_K_TO_SE0_TRANSITION_A, O>;
 impl<'a, const O: u8> RESUME_K_TO_SE0_TRANSITION_W<'a, O> {
@@ -186,7 +186,7 @@ impl From<PP2VBUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PP2VBUS` reader - "]
+#[doc = "Field `pp2vbus` reader - "]
 pub type PP2VBUS_R = crate::BitReader<PP2VBUS_A>;
 impl PP2VBUS_R {
     #[doc = "Get enumerated values variant"]
@@ -208,7 +208,7 @@ impl PP2VBUS_R {
         *self == PP2VBUS_A::IGNORE
     }
 }
-#[doc = "Field `PP2VBUS` writer - "]
+#[doc = "Field `pp2vbus` writer - "]
 pub type PP2VBUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, PP2VBUS_A, O>;
 impl<'a, const O: u8> PP2VBUS_W<'a, O> {
     #[doc = "ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub"]
@@ -236,7 +236,7 @@ impl From<AHB_MASTER_INTERFACE_INCR16_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_INCR16_ENABLE` reader - Master interface INCR16 enable"]
+#[doc = "Field `ahb_master_interface_incr16_enable` reader - Master interface INCR16 enable"]
 pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_INCR16_ENABLE_A>;
 impl AHB_MASTER_INTERFACE_INCR16_ENABLE_R {
@@ -259,7 +259,7 @@ impl AHB_MASTER_INTERFACE_INCR16_ENABLE_R {
         *self == AHB_MASTER_INTERFACE_INCR16_ENABLE_A::NOT_USE_INCR16
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_INCR16_ENABLE` writer - Master interface INCR16 enable"]
+#[doc = "Field `ahb_master_interface_incr16_enable` writer - Master interface INCR16 enable"]
 pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR16_ENABLE_A, O>;
 impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, O> {
@@ -288,7 +288,7 @@ impl From<AHB_MASTER_INTERFACE_INCR8_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_INCR8_ENABLE` reader - Master interface INCR8 enable"]
+#[doc = "Field `ahb_master_interface_incr8_enable` reader - Master interface INCR8 enable"]
 pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_INCR8_ENABLE_A>;
 impl AHB_MASTER_INTERFACE_INCR8_ENABLE_R {
@@ -311,7 +311,7 @@ impl AHB_MASTER_INTERFACE_INCR8_ENABLE_R {
         *self == AHB_MASTER_INTERFACE_INCR8_ENABLE_A::NOT_USE_INCR8
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_INCR8_ENABLE` writer - Master interface INCR8 enable"]
+#[doc = "Field `ahb_master_interface_incr8_enable` writer - Master interface INCR8 enable"]
 pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR8_ENABLE_A, O>;
 impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, O> {
@@ -340,7 +340,7 @@ impl From<AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE` reader - Master interface burst type INCR4 enable"]
+#[doc = "Field `ahb_master_interface_burst_type_incr4_enable` reader - Master interface burst type INCR4 enable"]
 pub type AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A>;
 impl AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R {
@@ -363,7 +363,7 @@ impl AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R {
         *self == AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A::NOT_USE_INCR4
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE` writer - Master interface burst type INCR4 enable"]
+#[doc = "Field `ahb_master_interface_burst_type_incr4_enable` writer - Master interface burst type INCR4 enable"]
 pub type AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<'a, const O: u8> = crate::BitWriter<
     'a,
     u32,
@@ -398,7 +398,7 @@ impl From<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE` reader - Master interface INCRX align enable"]
+#[doc = "Field `ahb_master_interface_incrx_align_enable` reader - Master interface INCRX align enable"]
 pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A>;
 impl AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R {
@@ -421,7 +421,7 @@ impl AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R {
         *self == AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY
     }
 }
-#[doc = "Field `AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE` writer - Master interface INCRX align enable"]
+#[doc = "Field `ahb_master_interface_incrx_align_enable` writer - Master interface INCRX align enable"]
 pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A, O>;
 impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, O> {
@@ -451,7 +451,7 @@ impl From<ULPI_BYPASS_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ULPI_BYPASS_ENABLE` reader - ULPI bypass enable"]
+#[doc = "Field `ulpi_bypass_enable` reader - ULPI bypass enable"]
 pub type ULPI_BYPASS_ENABLE_R = crate::BitReader<ULPI_BYPASS_ENABLE_A>;
 impl ULPI_BYPASS_ENABLE_R {
     #[doc = "Get enumerated values variant"]
@@ -473,7 +473,7 @@ impl ULPI_BYPASS_ENABLE_R {
         *self == ULPI_BYPASS_ENABLE_A::ULPI
     }
 }
-#[doc = "Field `ULPI_BYPASS_ENABLE` writer - ULPI bypass enable"]
+#[doc = "Field `ulpi_bypass_enable` writer - ULPI bypass enable"]
 pub type ULPI_BYPASS_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, ULPI_BYPASS_ENABLE_A, O>;
 impl<'a, const O: u8> ULPI_BYPASS_ENABLE_W<'a, O> {
@@ -606,7 +606,7 @@ impl crate::Readable for HCI_INTERFACE_SPEC {
 impl crate::Writable for HCI_INTERFACE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HCI_INTERFACE to value 0x1000_0000"]
+#[doc = "`reset()` method sets hci_interface to value 0x1000_0000"]
 impl crate::Resettable for HCI_INTERFACE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

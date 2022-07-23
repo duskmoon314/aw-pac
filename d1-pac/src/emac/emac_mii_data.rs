@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_MII_DATA` reader"]
+#[doc = "Register `emac_mii_data` reader"]
 pub struct R(crate::R<EMAC_MII_DATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_MII_DATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_MII_DATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_MII_DATA` writer"]
+#[doc = "Register `emac_mii_data` writer"]
 pub struct W(crate::W<EMAC_MII_DATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_MII_DATA_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<EMAC_MII_DATA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `MII_DATA` reader - "]
+#[doc = "Field `mii_data` reader - "]
 pub type MII_DATA_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `MII_DATA` writer - "]
+#[doc = "Field `mii_data` writer - "]
 pub type MII_DATA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_MII_DATA_SPEC, u16, u16, 16, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for EMAC_MII_DATA_SPEC {
 impl crate::Writable for EMAC_MII_DATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_MII_DATA to value 0"]
+#[doc = "`reset()` method sets emac_mii_data to value 0"]
 impl crate::Resettable for EMAC_MII_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `ROM_CFG_REG` reader"]
+#[doc = "Register `rom_cfg_reg` reader"]
 pub struct R(crate::R<ROM_CFG_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ROM_CFG_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ROM_CFG_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ROM_CFG_REG` writer"]
+#[doc = "Register `rom_cfg_reg` writer"]
 pub struct W(crate::W<ROM_CFG_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ROM_CFG_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<ROM_CFG_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ROM_CFG` reader - ROM Configuration"]
+#[doc = "Field `rom_cfg` reader - ROM Configuration"]
 pub type ROM_CFG_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ROM_CFG` writer - ROM Configuration"]
+#[doc = "Field `rom_cfg` writer - ROM Configuration"]
 pub type ROM_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ROM_CFG_REG_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - ROM Configuration"]
@@ -71,7 +71,7 @@ impl crate::Readable for ROM_CFG_REG_SPEC {
 impl crate::Writable for ROM_CFG_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ROM_CFG_REG to value 0"]
+#[doc = "`reset()` method sets rom_cfg_reg to value 0"]
 impl crate::Resettable for ROM_CFG_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

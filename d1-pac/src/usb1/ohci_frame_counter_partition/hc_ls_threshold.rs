@@ -1,4 +1,4 @@
-#[doc = "Register `HC_LS_THRESHOLD` reader"]
+#[doc = "Register `hc_ls_threshold` reader"]
 pub struct R(crate::R<HC_LS_THRESHOLD_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_LS_THRESHOLD_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_LS_THRESHOLD_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_LS_THRESHOLD` writer"]
+#[doc = "Register `hc_ls_threshold` writer"]
 pub struct W(crate::W<HC_LS_THRESHOLD_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_LS_THRESHOLD_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<HC_LS_THRESHOLD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `LS_THRESHOLD` reader - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
+#[doc = "Field `ls_threshold` reader - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
 pub type LS_THRESHOLD_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `LS_THRESHOLD` writer - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
+#[doc = "Field `ls_threshold` writer - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
 pub type LS_THRESHOLD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_LS_THRESHOLD_SPEC, u16, u16, 12, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for HC_LS_THRESHOLD_SPEC {
 impl crate::Writable for HC_LS_THRESHOLD_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_LS_THRESHOLD to value 0x0628"]
+#[doc = "`reset()` method sets hc_ls_threshold to value 0x0628"]
 impl crate::Resettable for HC_LS_THRESHOLD_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

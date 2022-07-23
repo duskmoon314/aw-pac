@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TMCR` reader"]
+#[doc = "Register `cir_tmcr` reader"]
 pub struct R(crate::R<CIR_TMCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TMCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TMCR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TMCR` writer"]
+#[doc = "Register `cir_tmcr` writer"]
 pub struct W(crate::W<CIR_TMCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TMCR_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CIR_TMCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RFMC` reader - Reference Frequency of modulated carrier.\n\nReference Frequency of modulated carrier based on a division of a fixed functional clock (FCLK). The range of the modulated carrier is usually 30 kHz to 60 kHz. Most consumer electronics is 38 kHz.\n\nThe default modulated carrier is 38 kHz when FCLK is 12 MHz.\n\nRFMC= FCLK/((N+1)*(DRMC+2))."]
+#[doc = "Field `rfmc` reader - Reference Frequency of modulated carrier.\n\nReference Frequency of modulated carrier based on a division of a fixed functional clock (FCLK). The range of the modulated carrier is usually 30 kHz to 60 kHz. Most consumer electronics is 38 kHz.\n\nThe default modulated carrier is 38 kHz when FCLK is 12 MHz.\n\nRFMC= FCLK/((N+1)*(DRMC+2))."]
 pub type RFMC_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `RFMC` writer - Reference Frequency of modulated carrier.\n\nReference Frequency of modulated carrier based on a division of a fixed functional clock (FCLK). The range of the modulated carrier is usually 30 kHz to 60 kHz. Most consumer electronics is 38 kHz.\n\nThe default modulated carrier is 38 kHz when FCLK is 12 MHz.\n\nRFMC= FCLK/((N+1)*(DRMC+2))."]
+#[doc = "Field `rfmc` writer - Reference Frequency of modulated carrier.\n\nReference Frequency of modulated carrier based on a division of a fixed functional clock (FCLK). The range of the modulated carrier is usually 30 kHz to 60 kHz. Most consumer electronics is 38 kHz.\n\nThe default modulated carrier is 38 kHz when FCLK is 12 MHz.\n\nRFMC= FCLK/((N+1)*(DRMC+2))."]
 pub type RFMC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_TMCR_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Reference Frequency of modulated carrier.\n\nReference Frequency of modulated carrier based on a division of a fixed functional clock (FCLK). The range of the modulated carrier is usually 30 kHz to 60 kHz. Most consumer electronics is 38 kHz.\n\nThe default modulated carrier is 38 kHz when FCLK is 12 MHz.\n\nRFMC= FCLK/((N+1)*(DRMC+2))."]
@@ -71,7 +71,7 @@ impl crate::Readable for CIR_TMCR_SPEC {
 impl crate::Writable for CIR_TMCR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TMCR to value 0x9e"]
+#[doc = "`reset()` method sets cir_tmcr to value 0x9e"]
 impl crate::Resettable for CIR_TMCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `HALT` reader"]
+#[doc = "Register `halt` reader"]
 pub struct R(crate::R<HALT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HALT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HALT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HALT` writer"]
+#[doc = "Register `halt` writer"]
 pub struct W(crate::W<HALT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HALT_SPEC>;
@@ -389,7 +389,7 @@ impl crate::Readable for HALT_SPEC {
 impl crate::Writable for HALT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HALT to value 0"]
+#[doc = "`reset()` method sets halt to value 0"]
 impl crate::Resettable for HALT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

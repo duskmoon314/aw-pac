@@ -1,4 +1,4 @@
-#[doc = "Register `SPINLOCK_SYSTATUS_REG` reader"]
+#[doc = "Register `spinlock_systatus_reg` reader"]
 pub struct R(crate::R<SPINLOCK_SYSTATUS_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPINLOCK_SYSTATUS_REG_SPEC>;
@@ -32,7 +32,7 @@ impl From<LOCKS_NUM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LOCKS_NUM` reader - Number of lock registers implemented"]
+#[doc = "Field `locks_num` reader - Number of lock registers implemented"]
 pub type LOCKS_NUM_R = crate::FieldReader<u8, LOCKS_NUM_A>;
 impl LOCKS_NUM_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +81,7 @@ impl From<IU0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IU0` reader - In-Use flag0"]
+#[doc = "Field `iu0` reader - In-Use flag0"]
 pub type IU0_R = crate::BitReader<IU0_A>;
 impl IU0_R {
     #[doc = "Get enumerated values variant"]
@@ -124,7 +124,7 @@ impl crate::RegisterSpec for SPINLOCK_SYSTATUS_REG_SPEC {
 impl crate::Readable for SPINLOCK_SYSTATUS_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets SPINLOCK_SYSTATUS_REG to value 0"]
+#[doc = "`reset()` method sets spinlock_systatus_reg to value 0"]
 impl crate::Resettable for SPINLOCK_SYSTATUS_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

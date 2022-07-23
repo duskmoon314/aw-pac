@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_NTSR` reader"]
+#[doc = "Register `smhc_ntsr` reader"]
 pub struct R(crate::R<SMHC_NTSR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_NTSR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_NTSR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_NTSR` writer"]
+#[doc = "Register `smhc_ntsr` writer"]
 pub struct W(crate::W<SMHC_NTSR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_NTSR_SPEC>;
@@ -48,7 +48,7 @@ impl From<MODE_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MODE_SELECT` reader - "]
+#[doc = "Field `mode_select` reader - "]
 pub type MODE_SELECT_R = crate::BitReader<MODE_SELECT_A>;
 impl MODE_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl MODE_SELECT_R {
         *self == MODE_SELECT_A::NEW_MODE
     }
 }
-#[doc = "Field `MODE_SELECT` writer - "]
+#[doc = "Field `mode_select` writer - "]
 pub type MODE_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, MODE_SELECT_A, O>;
 impl<'a, const O: u8> MODE_SELECT_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<CMD_DAT_RX_PHASE_CLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CMD_DAT_RX_PHASE_CLR` reader - Clear the input phase of command lines and data lines during the update clock operation"]
+#[doc = "Field `cmd_dat_rx_phase_clr` reader - Clear the input phase of command lines and data lines during the update clock operation"]
 pub type CMD_DAT_RX_PHASE_CLR_R = crate::BitReader<CMD_DAT_RX_PHASE_CLR_A>;
 impl CMD_DAT_RX_PHASE_CLR_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl CMD_DAT_RX_PHASE_CLR_R {
         *self == CMD_DAT_RX_PHASE_CLR_A::ENABLED
     }
 }
-#[doc = "Field `CMD_DAT_RX_PHASE_CLR` writer - Clear the input phase of command lines and data lines during the update clock operation"]
+#[doc = "Field `cmd_dat_rx_phase_clr` writer - Clear the input phase of command lines and data lines during the update clock operation"]
 pub type CMD_DAT_RX_PHASE_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_DAT_RX_PHASE_CLR_A, O>;
 impl<'a, const O: u8> CMD_DAT_RX_PHASE_CLR_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<DAT_CRC_STATUS_RX_PHASE_CLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DAT_CRC_STATUS_RX_PHASE_CLR` reader - Clear the input phase of data lines before receiving the CRC status"]
+#[doc = "Field `dat_crc_status_rx_phase_clr` reader - Clear the input phase of data lines before receiving the CRC status"]
 pub type DAT_CRC_STATUS_RX_PHASE_CLR_R = crate::BitReader<DAT_CRC_STATUS_RX_PHASE_CLR_A>;
 impl DAT_CRC_STATUS_RX_PHASE_CLR_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl DAT_CRC_STATUS_RX_PHASE_CLR_R {
         *self == DAT_CRC_STATUS_RX_PHASE_CLR_A::ENABLED
     }
 }
-#[doc = "Field `DAT_CRC_STATUS_RX_PHASE_CLR` writer - Clear the input phase of data lines before receiving the CRC status"]
+#[doc = "Field `dat_crc_status_rx_phase_clr` writer - Clear the input phase of data lines before receiving the CRC status"]
 pub type DAT_CRC_STATUS_RX_PHASE_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_CRC_STATUS_RX_PHASE_CLR_A, O>;
 impl<'a, const O: u8> DAT_CRC_STATUS_RX_PHASE_CLR_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<DAT_TRANS_RX_PHASE_CLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DAT_TRANS_RX_PHASE_CLR` reader - Clear the input phase of data lines before transferring the data"]
+#[doc = "Field `dat_trans_rx_phase_clr` reader - Clear the input phase of data lines before transferring the data"]
 pub type DAT_TRANS_RX_PHASE_CLR_R = crate::BitReader<DAT_TRANS_RX_PHASE_CLR_A>;
 impl DAT_TRANS_RX_PHASE_CLR_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl DAT_TRANS_RX_PHASE_CLR_R {
         *self == DAT_TRANS_RX_PHASE_CLR_A::ENABLED
     }
 }
-#[doc = "Field `DAT_TRANS_RX_PHASE_CLR` writer - Clear the input phase of data lines before transferring the data"]
+#[doc = "Field `dat_trans_rx_phase_clr` writer - Clear the input phase of data lines before transferring the data"]
 pub type DAT_TRANS_RX_PHASE_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_TRANS_RX_PHASE_CLR_A, O>;
 impl<'a, const O: u8> DAT_TRANS_RX_PHASE_CLR_W<'a, O> {
@@ -252,7 +252,7 @@ impl From<DAT_RECV_RX_PHASE_CLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DAT_RECV_RX_PHASE_CLR` reader - Clear the input phase of data lines before receiving the data"]
+#[doc = "Field `dat_recv_rx_phase_clr` reader - Clear the input phase of data lines before receiving the data"]
 pub type DAT_RECV_RX_PHASE_CLR_R = crate::BitReader<DAT_RECV_RX_PHASE_CLR_A>;
 impl DAT_RECV_RX_PHASE_CLR_R {
     #[doc = "Get enumerated values variant"]
@@ -274,7 +274,7 @@ impl DAT_RECV_RX_PHASE_CLR_R {
         *self == DAT_RECV_RX_PHASE_CLR_A::ENABLED
     }
 }
-#[doc = "Field `DAT_RECV_RX_PHASE_CLR` writer - Clear the input phase of data lines before receiving the data"]
+#[doc = "Field `dat_recv_rx_phase_clr` writer - Clear the input phase of data lines before receiving the data"]
 pub type DAT_RECV_RX_PHASE_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, DAT_RECV_RX_PHASE_CLR_A, O>;
 impl<'a, const O: u8> DAT_RECV_RX_PHASE_CLR_W<'a, O> {
@@ -303,7 +303,7 @@ impl From<CMD_SEND_RX_PHASE_CLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CMD_SEND_RX_PHASE_CLR` reader - Clear command rx phase before sending the command"]
+#[doc = "Field `cmd_send_rx_phase_clr` reader - Clear command rx phase before sending the command"]
 pub type CMD_SEND_RX_PHASE_CLR_R = crate::BitReader<CMD_SEND_RX_PHASE_CLR_A>;
 impl CMD_SEND_RX_PHASE_CLR_R {
     #[doc = "Get enumerated values variant"]
@@ -325,7 +325,7 @@ impl CMD_SEND_RX_PHASE_CLR_R {
         *self == CMD_SEND_RX_PHASE_CLR_A::ENABLED
     }
 }
-#[doc = "Field `CMD_SEND_RX_PHASE_CLR` writer - Clear command rx phase before sending the command"]
+#[doc = "Field `cmd_send_rx_phase_clr` writer - Clear command rx phase before sending the command"]
 pub type CMD_SEND_RX_PHASE_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, CMD_SEND_RX_PHASE_CLR_A, O>;
 impl<'a, const O: u8> CMD_SEND_RX_PHASE_CLR_W<'a, O> {
@@ -359,7 +359,7 @@ impl From<DAT_SAMPLE_TIMING_PHASE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DAT_SAMPLE_TIMING_PHASE` reader - "]
+#[doc = "Field `dat_sample_timing_phase` reader - "]
 pub type DAT_SAMPLE_TIMING_PHASE_R = crate::FieldReader<u8, DAT_SAMPLE_TIMING_PHASE_A>;
 impl DAT_SAMPLE_TIMING_PHASE_R {
     #[doc = "Get enumerated values variant"]
@@ -394,7 +394,7 @@ impl DAT_SAMPLE_TIMING_PHASE_R {
         *self == DAT_SAMPLE_TIMING_PHASE_A::O0
     }
 }
-#[doc = "Field `DAT_SAMPLE_TIMING_PHASE` writer - "]
+#[doc = "Field `dat_sample_timing_phase` writer - "]
 pub type DAT_SAMPLE_TIMING_PHASE_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, DAT_SAMPLE_TIMING_PHASE_A, 2, O>;
 impl<'a, const O: u8> DAT_SAMPLE_TIMING_PHASE_W<'a, O> {
@@ -438,7 +438,7 @@ impl From<CMD_SAMPLE_TIMING_PHASE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CMD_SAMPLE_TIMING_PHASE` reader - "]
+#[doc = "Field `cmd_sample_timing_phase` reader - "]
 pub type CMD_SAMPLE_TIMING_PHASE_R = crate::FieldReader<u8, CMD_SAMPLE_TIMING_PHASE_A>;
 impl CMD_SAMPLE_TIMING_PHASE_R {
     #[doc = "Get enumerated values variant"]
@@ -473,7 +473,7 @@ impl CMD_SAMPLE_TIMING_PHASE_R {
         *self == CMD_SAMPLE_TIMING_PHASE_A::O0
     }
 }
-#[doc = "Field `CMD_SAMPLE_TIMING_PHASE` writer - "]
+#[doc = "Field `cmd_sample_timing_phase` writer - "]
 pub type CMD_SAMPLE_TIMING_PHASE_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, SMHC_NTSR_SPEC, u8, CMD_SAMPLE_TIMING_PHASE_A, 2, O>;
 impl<'a, const O: u8> CMD_SAMPLE_TIMING_PHASE_W<'a, O> {
@@ -512,7 +512,7 @@ impl From<HS400_NEW_SAMPLE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HS400_NEW_SAMPLE_EN` reader - "]
+#[doc = "Field `hs400_new_sample_en` reader - "]
 pub type HS400_NEW_SAMPLE_EN_R = crate::BitReader<HS400_NEW_SAMPLE_EN_A>;
 impl HS400_NEW_SAMPLE_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -534,7 +534,7 @@ impl HS400_NEW_SAMPLE_EN_R {
         *self == HS400_NEW_SAMPLE_EN_A::ENABLE
     }
 }
-#[doc = "Field `HS400_NEW_SAMPLE_EN` writer - "]
+#[doc = "Field `hs400_new_sample_en` writer - "]
 pub type HS400_NEW_SAMPLE_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_NTSR_SPEC, HS400_NEW_SAMPLE_EN_A, O>;
 impl<'a, const O: u8> HS400_NEW_SAMPLE_EN_W<'a, O> {
@@ -662,7 +662,7 @@ impl crate::Readable for SMHC_NTSR_SPEC {
 impl crate::Writable for SMHC_NTSR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_NTSR to value 0"]
+#[doc = "`reset()` method sets smhc_ntsr to value 0"]
 impl crate::Resettable for SMHC_NTSR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

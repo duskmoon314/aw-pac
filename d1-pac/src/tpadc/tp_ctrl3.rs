@@ -1,4 +1,4 @@
-#[doc = "Register `TP_CTRL3` reader"]
+#[doc = "Register `tp_ctrl3` reader"]
 pub struct R(crate::R<TP_CTRL3_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TP_CTRL3_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TP_CTRL3_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TP_CTRL3` writer"]
+#[doc = "Register `tp_ctrl3` writer"]
 pub struct W(crate::W<TP_CTRL3_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TP_CTRL3_SPEC>;
@@ -48,7 +48,7 @@ impl From<FILTER_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FILTER_EN` reader - Filter Enable"]
+#[doc = "Field `filter_en` reader - Filter Enable"]
 pub type FILTER_EN_R = crate::BitReader<FILTER_EN_A>;
 impl FILTER_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl FILTER_EN_R {
         *self == FILTER_EN_A::ENABLE
     }
 }
-#[doc = "Field `FILTER_EN` writer - Filter Enable"]
+#[doc = "Field `filter_en` writer - Filter Enable"]
 pub type FILTER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL3_SPEC, FILTER_EN_A, O>;
 impl<'a, const O: u8> FILTER_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -103,7 +103,7 @@ impl From<FILTER_TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FILTER_TYPE` reader - Filter Type"]
+#[doc = "Field `filter_type` reader - Filter Type"]
 pub type FILTER_TYPE_R = crate::FieldReader<u8, FILTER_TYPE_A>;
 impl FILTER_TYPE_R {
     #[doc = "Get enumerated values variant"]
@@ -138,7 +138,7 @@ impl FILTER_TYPE_R {
         *self == FILTER_TYPE_A::T168
     }
 }
-#[doc = "Field `FILTER_TYPE` writer - Filter Type"]
+#[doc = "Field `filter_type` writer - Filter Type"]
 pub type FILTER_TYPE_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, TP_CTRL3_SPEC, u8, FILTER_TYPE_A, 2, O>;
 impl<'a, const O: u8> FILTER_TYPE_W<'a, O> {
@@ -206,7 +206,7 @@ impl crate::Readable for TP_CTRL3_SPEC {
 impl crate::Writable for TP_CTRL3_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TP_CTRL3 to value 0"]
+#[doc = "`reset()` method sets tp_ctrl3 to value 0"]
 impl crate::Resettable for TP_CTRL3_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

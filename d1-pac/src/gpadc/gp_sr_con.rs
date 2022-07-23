@@ -1,4 +1,4 @@
-#[doc = "Register `GP_SR_CON` reader"]
+#[doc = "Register `gp_sr_con` reader"]
 pub struct R(crate::R<GP_SR_CON_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_SR_CON_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_SR_CON_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_SR_CON` writer"]
+#[doc = "Register `gp_sr_con` writer"]
 pub struct W(crate::W<GP_SR_CON_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_SR_CON_SPEC>;
@@ -34,13 +34,13 @@ impl From<crate::W<GP_SR_CON_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FS_DIV` reader - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
+#[doc = "Field `fs_div` reader - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
 pub type FS_DIV_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `FS_DIV` writer - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
+#[doc = "Field `fs_div` writer - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
 pub type FS_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_SR_CON_SPEC, u16, u16, 16, O>;
-#[doc = "Field `TACQ` reader - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
+#[doc = "Field `tacq` reader - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
 pub type TACQ_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `TACQ` writer - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
+#[doc = "Field `tacq` writer - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
 pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_SR_CON_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 16:31 - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
@@ -85,7 +85,7 @@ impl crate::Readable for GP_SR_CON_SPEC {
 impl crate::Writable for GP_SR_CON_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_SR_CON to value 0x01df_002f"]
+#[doc = "`reset()` method sets gp_sr_con to value 0x01df_002f"]
 impl crate::Resettable for GP_SR_CON_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

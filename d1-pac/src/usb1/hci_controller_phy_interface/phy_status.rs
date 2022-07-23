@@ -1,4 +1,4 @@
-#[doc = "Register `PHY_STATUS` reader"]
+#[doc = "Register `phy_status` reader"]
 pub struct R(crate::R<PHY_STATUS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PHY_STATUS_SPEC>;
@@ -13,11 +13,11 @@ impl From<crate::R<PHY_STATUS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `BIST_ERROR` reader - Bist_error"]
+#[doc = "Field `bist_error` reader - Bist_error"]
 pub type BIST_ERROR_R = crate::BitReader<bool>;
-#[doc = "Field `BIST_DONE` reader - bist_done"]
+#[doc = "Field `bist_done` reader - bist_done"]
 pub type BIST_DONE_R = crate::BitReader<bool>;
-#[doc = "Field `VC_DO` reader - vc_do"]
+#[doc = "Field `vc_do` reader - vc_do"]
 pub type VC_DO_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 17 - Bist_error"]
@@ -45,7 +45,7 @@ impl crate::RegisterSpec for PHY_STATUS_SPEC {
 impl crate::Readable for PHY_STATUS_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets PHY_STATUS to value 0"]
+#[doc = "`reset()` method sets phy_status to value 0"]
 impl crate::Resettable for PHY_STATUS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

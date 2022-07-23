@@ -1,4 +1,4 @@
-#[doc = "Register `PLL_PERI_CTRL` reader"]
+#[doc = "Register `pll_peri_ctrl` reader"]
 pub struct R(crate::R<PLL_PERI_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PLL_PERI_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PLL_PERI_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PLL_PERI_CTRL` writer"]
+#[doc = "Register `pll_peri_ctrl` writer"]
 pub struct W(crate::W<PLL_PERI_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PLL_PERI_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<PLL_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLL_EN` reader - PLL Enable"]
+#[doc = "Field `pll_en` reader - PLL Enable"]
 pub type PLL_EN_R = crate::BitReader<PLL_EN_A>;
 impl PLL_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl PLL_EN_R {
         *self == PLL_EN_A::ENABLE
     }
 }
-#[doc = "Field `PLL_EN` writer - PLL Enable"]
+#[doc = "Field `pll_en` writer - PLL Enable"]
 pub type PLL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_PERI_CTRL_SPEC, PLL_EN_A, O>;
 impl<'a, const O: u8> PLL_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<PLL_LDO_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLL_LDO_EN` reader - LDO Enable"]
+#[doc = "Field `pll_ldo_en` reader - LDO Enable"]
 pub type PLL_LDO_EN_R = crate::BitReader<PLL_LDO_EN_A>;
 impl PLL_LDO_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl PLL_LDO_EN_R {
         *self == PLL_LDO_EN_A::ENABLE
     }
 }
-#[doc = "Field `PLL_LDO_EN` writer - LDO Enable"]
+#[doc = "Field `pll_ldo_en` writer - LDO Enable"]
 pub type PLL_LDO_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_PERI_CTRL_SPEC, PLL_LDO_EN_A, O>;
 impl<'a, const O: u8> PLL_LDO_EN_W<'a, O> {
@@ -149,7 +149,7 @@ impl From<LOCK_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK_ENABLE` reader - Lock Enable"]
+#[doc = "Field `lock_enable` reader - Lock Enable"]
 pub type LOCK_ENABLE_R = crate::BitReader<LOCK_ENABLE_A>;
 impl LOCK_ENABLE_R {
     #[doc = "Get enumerated values variant"]
@@ -171,7 +171,7 @@ impl LOCK_ENABLE_R {
         *self == LOCK_ENABLE_A::ENABLE
     }
 }
-#[doc = "Field `LOCK_ENABLE` writer - Lock Enable"]
+#[doc = "Field `lock_enable` writer - Lock Enable"]
 pub type LOCK_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_PERI_CTRL_SPEC, LOCK_ENABLE_A, O>;
 impl<'a, const O: u8> LOCK_ENABLE_W<'a, O> {
@@ -200,7 +200,7 @@ impl From<LOCK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOCK` reader - PLL Lock Status"]
+#[doc = "Field `lock` reader - PLL Lock Status"]
 pub type LOCK_R = crate::BitReader<LOCK_A>;
 impl LOCK_R {
     #[doc = "Get enumerated values variant"]
@@ -236,7 +236,7 @@ impl From<PLL_OUTPUT_GATE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLL_OUTPUT_GATE` reader - PLL Output Gating Enable"]
+#[doc = "Field `pll_output_gate` reader - PLL Output Gating Enable"]
 pub type PLL_OUTPUT_GATE_R = crate::BitReader<PLL_OUTPUT_GATE_A>;
 impl PLL_OUTPUT_GATE_R {
     #[doc = "Get enumerated values variant"]
@@ -258,7 +258,7 @@ impl PLL_OUTPUT_GATE_R {
         *self == PLL_OUTPUT_GATE_A::ENABLE
     }
 }
-#[doc = "Field `PLL_OUTPUT_GATE` writer - PLL Output Gating Enable"]
+#[doc = "Field `pll_output_gate` writer - PLL Output Gating Enable"]
 pub type PLL_OUTPUT_GATE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_PERI_CTRL_SPEC, PLL_OUTPUT_GATE_A, O>;
 impl<'a, const O: u8> PLL_OUTPUT_GATE_W<'a, O> {
@@ -287,7 +287,7 @@ impl From<PLL_SDM_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLL_SDM_EN` reader - PLL SDM Enable"]
+#[doc = "Field `pll_sdm_en` reader - PLL SDM Enable"]
 pub type PLL_SDM_EN_R = crate::BitReader<PLL_SDM_EN_A>;
 impl PLL_SDM_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -309,7 +309,7 @@ impl PLL_SDM_EN_R {
         *self == PLL_SDM_EN_A::ENABLE
     }
 }
-#[doc = "Field `PLL_SDM_EN` writer - PLL SDM Enable"]
+#[doc = "Field `pll_sdm_en` writer - PLL SDM Enable"]
 pub type PLL_SDM_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_PERI_CTRL_SPEC, PLL_SDM_EN_A, O>;
 impl<'a, const O: u8> PLL_SDM_EN_W<'a, O> {
@@ -324,17 +324,17 @@ impl<'a, const O: u8> PLL_SDM_EN_W<'a, O> {
         self.variant(PLL_SDM_EN_A::ENABLE)
     }
 }
-#[doc = "Field `PLL_P1` reader - PLL Output Div P1"]
+#[doc = "Field `pll_p1` reader - PLL Output Div P1"]
 pub type PLL_P1_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PLL_P1` writer - PLL Output Div P1"]
+#[doc = "Field `pll_p1` writer - PLL Output Div P1"]
 pub type PLL_P1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_PERI_CTRL_SPEC, u8, u8, 3, O>;
-#[doc = "Field `PLL_P0` reader - PLL Output Div P0"]
+#[doc = "Field `pll_p0` reader - PLL Output Div P0"]
 pub type PLL_P0_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PLL_P0` writer - PLL Output Div P0"]
+#[doc = "Field `pll_p0` writer - PLL Output Div P0"]
 pub type PLL_P0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_PERI_CTRL_SPEC, u8, u8, 3, O>;
-#[doc = "Field `PLL_N` reader - PLL N"]
+#[doc = "Field `pll_n` reader - PLL N"]
 pub type PLL_N_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PLL_N` writer - PLL N"]
+#[doc = "Field `pll_n` writer - PLL N"]
 pub type PLL_N_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_PERI_CTRL_SPEC, u8, u8, 8, O>;
 #[doc = "PLL Unlock Level\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -353,7 +353,7 @@ impl From<PLL_UNLOCK_MDSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PLL_UNLOCK_MDSEL` reader - PLL Unlock Level"]
+#[doc = "Field `pll_unlock_mdsel` reader - PLL Unlock Level"]
 pub type PLL_UNLOCK_MDSEL_R = crate::FieldReader<u8, PLL_UNLOCK_MDSEL_A>;
 impl PLL_UNLOCK_MDSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -382,7 +382,7 @@ impl PLL_UNLOCK_MDSEL_R {
         *self == PLL_UNLOCK_MDSEL_A::CC_20_30
     }
 }
-#[doc = "Field `PLL_UNLOCK_MDSEL` writer - PLL Unlock Level"]
+#[doc = "Field `pll_unlock_mdsel` writer - PLL Unlock Level"]
 pub type PLL_UNLOCK_MDSEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PLL_PERI_CTRL_SPEC, u8, PLL_UNLOCK_MDSEL_A, 2, O>;
 impl<'a, const O: u8> PLL_UNLOCK_MDSEL_W<'a, O> {
@@ -416,7 +416,7 @@ impl From<PLL_LOCK_MDSEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLL_LOCK_MDSEL` reader - PLL Lock Level"]
+#[doc = "Field `pll_lock_mdsel` reader - PLL Lock Level"]
 pub type PLL_LOCK_MDSEL_R = crate::BitReader<PLL_LOCK_MDSEL_A>;
 impl PLL_LOCK_MDSEL_R {
     #[doc = "Get enumerated values variant"]
@@ -438,7 +438,7 @@ impl PLL_LOCK_MDSEL_R {
         *self == PLL_LOCK_MDSEL_A::CC_23_27
     }
 }
-#[doc = "Field `PLL_LOCK_MDSEL` writer - PLL Lock Level"]
+#[doc = "Field `pll_lock_mdsel` writer - PLL Lock Level"]
 pub type PLL_LOCK_MDSEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_PERI_CTRL_SPEC, PLL_LOCK_MDSEL_A, O>;
 impl<'a, const O: u8> PLL_LOCK_MDSEL_W<'a, O> {
@@ -453,9 +453,9 @@ impl<'a, const O: u8> PLL_LOCK_MDSEL_W<'a, O> {
         self.variant(PLL_LOCK_MDSEL_A::CC_23_27)
     }
 }
-#[doc = "Field `PLL_INPUT_DIV2` reader - PLL Input Div M"]
+#[doc = "Field `pll_input_div2` reader - PLL Input Div M"]
 pub type PLL_INPUT_DIV2_R = crate::BitReader<bool>;
-#[doc = "Field `PLL_INPUT_DIV2` writer - PLL Input Div M"]
+#[doc = "Field `pll_input_div2` writer - PLL Input Div M"]
 pub type PLL_INPUT_DIV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_PERI_CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 31 - PLL Enable"]
@@ -595,7 +595,7 @@ impl crate::Readable for PLL_PERI_CTRL_SPEC {
 impl crate::Writable for PLL_PERI_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PLL_PERI_CTRL to value 0"]
+#[doc = "`reset()` method sets pll_peri_ctrl to value 0"]
 impl crate::Resettable for PLL_PERI_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

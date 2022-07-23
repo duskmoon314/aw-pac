@@ -1,4 +1,4 @@
-#[doc = "Register `ASRCMBISTCFG` reader"]
+#[doc = "Register `asrcmbistcfg` reader"]
 pub struct R(crate::R<ASRCMBISTCFG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ASRCMBISTCFG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ASRCMBISTCFG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ASRCMBISTCFG` writer"]
+#[doc = "Register `asrcmbistcfg` writer"]
 pub struct W(crate::W<ASRCMBISTCFG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ASRCMBISTCFG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for ASRCMBISTCFG_SPEC {
 impl crate::Writable for ASRCMBISTCFG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ASRCMBISTCFG to value 0"]
+#[doc = "`reset()` method sets asrcmbistcfg to value 0"]
 impl crate::Resettable for ASRCMBISTCFG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

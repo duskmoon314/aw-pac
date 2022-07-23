@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_INT_STA` reader"]
+#[doc = "Register `emac_int_sta` reader"]
 pub struct R(crate::R<EMAC_INT_STA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_INT_STA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_INT_STA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_INT_STA` writer"]
+#[doc = "Register `emac_int_sta` writer"]
 pub struct W(crate::W<EMAC_INT_STA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_INT_STA_SPEC>;
@@ -48,7 +48,7 @@ impl From<RGMII_LINK_STA_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RGMII_LINK_STA_P` reader - RMII Link Status Changed Interrupt Pending"]
+#[doc = "Field `rgmii_link_sta_p` reader - RMII Link Status Changed Interrupt Pending"]
 pub type RGMII_LINK_STA_P_R = crate::BitReader<RGMII_LINK_STA_P_A>;
 impl RGMII_LINK_STA_P_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RGMII_LINK_STA_P_R {
         *self == RGMII_LINK_STA_P_A::PENDING
     }
 }
-#[doc = "Field `RGMII_LINK_STA_P` writer - RMII Link Status Changed Interrupt Pending"]
+#[doc = "Field `rgmii_link_sta_p` writer - RMII Link Status Changed Interrupt Pending"]
 pub type RGMII_LINK_STA_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RGMII_LINK_STA_P_A, O>;
 impl<'a, const O: u8> RGMII_LINK_STA_P_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<RX_EARLY_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_EARLY_P` reader - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
+#[doc = "Field `rx_early_p` reader - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
 pub type RX_EARLY_P_R = crate::BitReader<RX_EARLY_P_A>;
 impl RX_EARLY_P_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl RX_EARLY_P_R {
         *self == RX_EARLY_P_A::PENDING
     }
 }
-#[doc = "Field `RX_EARLY_P` writer - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
+#[doc = "Field `rx_early_p` writer - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
 pub type RX_EARLY_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_EARLY_P_A, O>;
 impl<'a, const O: u8> RX_EARLY_P_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<RX_OVERFLOW_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_OVERFLOW_P` reader - RX FIFO Overflow Error Interrupt Pending"]
+#[doc = "Field `rx_overflow_p` reader - RX FIFO Overflow Error Interrupt Pending"]
 pub type RX_OVERFLOW_P_R = crate::BitReader<RX_OVERFLOW_P_A>;
 impl RX_OVERFLOW_P_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl RX_OVERFLOW_P_R {
         *self == RX_OVERFLOW_P_A::PENDING
     }
 }
-#[doc = "Field `RX_OVERFLOW_P` writer - RX FIFO Overflow Error Interrupt Pending"]
+#[doc = "Field `rx_overflow_p` writer - RX FIFO Overflow Error Interrupt Pending"]
 pub type RX_OVERFLOW_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_OVERFLOW_P_A, O>;
 impl<'a, const O: u8> RX_OVERFLOW_P_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<RX_TIMEOUT_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_TIMEOUT_P` reader - RX Timeout Interrupt Pending"]
+#[doc = "Field `rx_timeout_p` reader - RX Timeout Interrupt Pending"]
 pub type RX_TIMEOUT_P_R = crate::BitReader<RX_TIMEOUT_P_A>;
 impl RX_TIMEOUT_P_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl RX_TIMEOUT_P_R {
         *self == RX_TIMEOUT_P_A::PENDING
     }
 }
-#[doc = "Field `RX_TIMEOUT_P` writer - RX Timeout Interrupt Pending"]
+#[doc = "Field `rx_timeout_p` writer - RX Timeout Interrupt Pending"]
 pub type RX_TIMEOUT_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_TIMEOUT_P_A, O>;
 impl<'a, const O: u8> RX_TIMEOUT_P_W<'a, O> {
@@ -238,9 +238,9 @@ impl<'a, const O: u8> RX_TIMEOUT_P_W<'a, O> {
         self.variant(RX_TIMEOUT_P_A::PENDING)
     }
 }
-#[doc = "Field `RX_DMA_STOPPED_P` reader - When this bit asserted, the RX DMA FSM is stopped."]
+#[doc = "Field `rx_dma_stopped_p` reader - When this bit asserted, the RX DMA FSM is stopped."]
 pub type RX_DMA_STOPPED_P_R = crate::BitReader<bool>;
-#[doc = "Field `RX_DMA_STOPPED_P` writer - When this bit asserted, the RX DMA FSM is stopped."]
+#[doc = "Field `rx_dma_stopped_p` writer - When this bit asserted, the RX DMA FSM is stopped."]
 pub type RX_DMA_STOPPED_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, bool, O>;
 #[doc = "RX Buffer UA Interrupt Pending\n\nValue on reset: 0"]
@@ -257,7 +257,7 @@ impl From<RX_BUF_UA_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_BUF_UA_P` reader - RX Buffer UA Interrupt Pending"]
+#[doc = "Field `rx_buf_ua_p` reader - RX Buffer UA Interrupt Pending"]
 pub type RX_BUF_UA_P_R = crate::BitReader<RX_BUF_UA_P_A>;
 impl RX_BUF_UA_P_R {
     #[doc = "Get enumerated values variant"]
@@ -279,7 +279,7 @@ impl RX_BUF_UA_P_R {
         *self == RX_BUF_UA_P_A::PENDING
     }
 }
-#[doc = "Field `RX_BUF_UA_P` writer - RX Buffer UA Interrupt Pending"]
+#[doc = "Field `rx_buf_ua_p` writer - RX Buffer UA Interrupt Pending"]
 pub type RX_BUF_UA_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_BUF_UA_P_A, O>;
 impl<'a, const O: u8> RX_BUF_UA_P_W<'a, O> {
@@ -308,7 +308,7 @@ impl From<RX_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_P` reader - Frame RX Completed Interrupt Pending"]
+#[doc = "Field `rx_p` reader - Frame RX Completed Interrupt Pending"]
 pub type RX_P_R = crate::BitReader<RX_P_A>;
 impl RX_P_R {
     #[doc = "Get enumerated values variant"]
@@ -330,7 +330,7 @@ impl RX_P_R {
         *self == RX_P_A::PENDING
     }
 }
-#[doc = "Field `RX_P` writer - Frame RX Completed Interrupt Pending"]
+#[doc = "Field `rx_p` writer - Frame RX Completed Interrupt Pending"]
 pub type RX_P_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, RX_P_A, O>;
 impl<'a, const O: u8> RX_P_W<'a, O> {
     #[doc = "`0`"]
@@ -358,7 +358,7 @@ impl From<TX_EARLY_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_EARLY_P` reader - Total interrupt pending which the frame is transmitted to FIFO"]
+#[doc = "Field `tx_early_p` reader - Total interrupt pending which the frame is transmitted to FIFO"]
 pub type TX_EARLY_P_R = crate::BitReader<TX_EARLY_P_A>;
 impl TX_EARLY_P_R {
     #[doc = "Get enumerated values variant"]
@@ -380,7 +380,7 @@ impl TX_EARLY_P_R {
         *self == TX_EARLY_P_A::PENDING
     }
 }
-#[doc = "Field `TX_EARLY_P` writer - Total interrupt pending which the frame is transmitted to FIFO"]
+#[doc = "Field `tx_early_p` writer - Total interrupt pending which the frame is transmitted to FIFO"]
 pub type TX_EARLY_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_EARLY_P_A, O>;
 impl<'a, const O: u8> TX_EARLY_P_W<'a, O> {
@@ -409,7 +409,7 @@ impl From<TX_UNDERFLOW_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_UNDERFLOW_P` reader - TX FIFO Underflow Interrupt Pending"]
+#[doc = "Field `tx_underflow_p` reader - TX FIFO Underflow Interrupt Pending"]
 pub type TX_UNDERFLOW_P_R = crate::BitReader<TX_UNDERFLOW_P_A>;
 impl TX_UNDERFLOW_P_R {
     #[doc = "Get enumerated values variant"]
@@ -431,7 +431,7 @@ impl TX_UNDERFLOW_P_R {
         *self == TX_UNDERFLOW_P_A::PENDING
     }
 }
-#[doc = "Field `TX_UNDERFLOW_P` writer - TX FIFO Underflow Interrupt Pending"]
+#[doc = "Field `tx_underflow_p` writer - TX FIFO Underflow Interrupt Pending"]
 pub type TX_UNDERFLOW_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_UNDERFLOW_P_A, O>;
 impl<'a, const O: u8> TX_UNDERFLOW_P_W<'a, O> {
@@ -460,7 +460,7 @@ impl From<TX_TIMEOUT_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_TIMEOUT_P` reader - Transmitter Timeout Interrupt Pending"]
+#[doc = "Field `tx_timeout_p` reader - Transmitter Timeout Interrupt Pending"]
 pub type TX_TIMEOUT_P_R = crate::BitReader<TX_TIMEOUT_P_A>;
 impl TX_TIMEOUT_P_R {
     #[doc = "Get enumerated values variant"]
@@ -482,7 +482,7 @@ impl TX_TIMEOUT_P_R {
         *self == TX_TIMEOUT_P_A::PENDING
     }
 }
-#[doc = "Field `TX_TIMEOUT_P` writer - Transmitter Timeout Interrupt Pending"]
+#[doc = "Field `tx_timeout_p` writer - Transmitter Timeout Interrupt Pending"]
 pub type TX_TIMEOUT_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_TIMEOUT_P_A, O>;
 impl<'a, const O: u8> TX_TIMEOUT_P_W<'a, O> {
@@ -511,7 +511,7 @@ impl From<TX_BUF_UA_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_BUF_UA_P` reader - TX Buffer UA Interrupt Pending"]
+#[doc = "Field `tx_buf_ua_p` reader - TX Buffer UA Interrupt Pending"]
 pub type TX_BUF_UA_P_R = crate::BitReader<TX_BUF_UA_P_A>;
 impl TX_BUF_UA_P_R {
     #[doc = "Get enumerated values variant"]
@@ -533,7 +533,7 @@ impl TX_BUF_UA_P_R {
         *self == TX_BUF_UA_P_A::PENDING
     }
 }
-#[doc = "Field `TX_BUF_UA_P` writer - TX Buffer UA Interrupt Pending"]
+#[doc = "Field `tx_buf_ua_p` writer - TX Buffer UA Interrupt Pending"]
 pub type TX_BUF_UA_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_BUF_UA_P_A, O>;
 impl<'a, const O: u8> TX_BUF_UA_P_W<'a, O> {
@@ -562,7 +562,7 @@ impl From<TX_DMA_STOPPED_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_DMA_STOPPED_P` reader - Transmission DMA Stopped Interrupt Pending"]
+#[doc = "Field `tx_dma_stopped_p` reader - Transmission DMA Stopped Interrupt Pending"]
 pub type TX_DMA_STOPPED_P_R = crate::BitReader<TX_DMA_STOPPED_P_A>;
 impl TX_DMA_STOPPED_P_R {
     #[doc = "Get enumerated values variant"]
@@ -584,7 +584,7 @@ impl TX_DMA_STOPPED_P_R {
         *self == TX_DMA_STOPPED_P_A::PENDING
     }
 }
-#[doc = "Field `TX_DMA_STOPPED_P` writer - Transmission DMA Stopped Interrupt Pending"]
+#[doc = "Field `tx_dma_stopped_p` writer - Transmission DMA Stopped Interrupt Pending"]
 pub type TX_DMA_STOPPED_P_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_DMA_STOPPED_P_A, O>;
 impl<'a, const O: u8> TX_DMA_STOPPED_P_W<'a, O> {
@@ -613,7 +613,7 @@ impl From<TX_P_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_P` reader - Frame Transmission Interrupt Pending"]
+#[doc = "Field `tx_p` reader - Frame Transmission Interrupt Pending"]
 pub type TX_P_R = crate::BitReader<TX_P_A>;
 impl TX_P_R {
     #[doc = "Get enumerated values variant"]
@@ -635,7 +635,7 @@ impl TX_P_R {
         *self == TX_P_A::PENDING
     }
 }
-#[doc = "Field `TX_P` writer - Frame Transmission Interrupt Pending"]
+#[doc = "Field `tx_p` writer - Frame Transmission Interrupt Pending"]
 pub type TX_P_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, EMAC_INT_STA_SPEC, TX_P_A, O>;
 impl<'a, const O: u8> TX_P_W<'a, O> {
     #[doc = "`0`"]
@@ -802,7 +802,7 @@ impl crate::Readable for EMAC_INT_STA_SPEC {
 impl crate::Writable for EMAC_INT_STA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_INT_STA to value 0"]
+#[doc = "`reset()` method sets emac_int_sta to value 0"]
 impl crate::Resettable for EMAC_INT_STA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

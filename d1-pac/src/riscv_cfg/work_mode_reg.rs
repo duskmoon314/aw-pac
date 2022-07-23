@@ -1,4 +1,4 @@
-#[doc = "Register `WORK_MODE_REG` reader"]
+#[doc = "Register `work_mode_reg` reader"]
 pub struct R(crate::R<WORK_MODE_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<WORK_MODE_REG_SPEC>;
@@ -30,7 +30,7 @@ impl From<WM_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WM_STA` reader - Work Mode Status"]
+#[doc = "Field `wm_sta` reader - Work Mode Status"]
 pub type WM_STA_R = crate::FieldReader<u8, WM_STA_A>;
 impl WM_STA_R {
     #[doc = "Get enumerated values variant"]
@@ -75,7 +75,7 @@ impl crate::RegisterSpec for WORK_MODE_REG_SPEC {
 impl crate::Readable for WORK_MODE_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets WORK_MODE_REG to value 0"]
+#[doc = "`reset()` method sets work_mode_reg to value 0"]
 impl crate::Resettable for WORK_MODE_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

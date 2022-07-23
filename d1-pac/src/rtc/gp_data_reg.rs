@@ -1,4 +1,4 @@
-#[doc = "Register `GP_DATA_REG%s` reader"]
+#[doc = "Register `gp_data_reg%s` reader"]
 pub struct R(crate::R<GP_DATA_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_DATA_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_DATA_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_DATA_REG%s` writer"]
+#[doc = "Register `gp_data_reg%s` writer"]
 pub struct W(crate::W<GP_DATA_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_DATA_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<GP_DATA_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `GP_DATA` reader - "]
+#[doc = "Field `gp_data` reader - "]
 pub type GP_DATA_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `GP_DATA` writer - "]
+#[doc = "Field `gp_data` writer - "]
 pub type GP_DATA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, GP_DATA_REG_SPEC, u32, u32, 32, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for GP_DATA_REG_SPEC {
 impl crate::Writable for GP_DATA_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_DATA_REG%s to value 0"]
+#[doc = "`reset()` method sets gp_data_reg%s to value 0"]
 impl crate::Resettable for GP_DATA_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

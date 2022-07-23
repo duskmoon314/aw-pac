@@ -1,4 +1,4 @@
-#[doc = "Register `SPINLOCK_LOCK_REG%s` reader"]
+#[doc = "Register `spinlock_lock_reg%s` reader"]
 pub struct R(crate::R<SPINLOCK_LOCK_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPINLOCK_LOCK_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SPINLOCK_LOCK_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SPINLOCK_LOCK_REG%s` writer"]
+#[doc = "Register `spinlock_lock_reg%s` writer"]
 pub struct W(crate::W<SPINLOCK_LOCK_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SPINLOCK_LOCK_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<TAKEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAKEN` reader - Lock State"]
+#[doc = "Field `taken` reader - Lock State"]
 pub type TAKEN_R = crate::BitReader<TAKEN_A>;
 impl TAKEN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl TAKEN_R {
         *self == TAKEN_A::TAKEN
     }
 }
-#[doc = "Field `TAKEN` writer - Lock State"]
+#[doc = "Field `taken` writer - Lock State"]
 pub type TAKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPINLOCK_LOCK_REG_SPEC, TAKEN_A, O>;
 impl<'a, const O: u8> TAKEN_W<'a, O> {
     #[doc = "Read 0x0: The lock was previously Not Taken (free). The requester is granted the lock.\n\nWrite 0x0: Set the lock to Not Taken (free)."]
@@ -117,7 +117,7 @@ impl crate::Readable for SPINLOCK_LOCK_REG_SPEC {
 impl crate::Writable for SPINLOCK_LOCK_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SPINLOCK_LOCK_REG%s to value 0"]
+#[doc = "`reset()` method sets spinlock_lock_reg%s to value 0"]
 impl crate::Resettable for SPINLOCK_LOCK_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

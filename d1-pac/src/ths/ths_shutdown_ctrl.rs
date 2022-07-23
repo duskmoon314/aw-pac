@@ -1,4 +1,4 @@
-#[doc = "Register `THS_SHUTDOWN_CTRL` reader"]
+#[doc = "Register `ths_shutdown_ctrl` reader"]
 pub struct R(crate::R<THS_SHUTDOWN_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_SHUTDOWN_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_SHUTDOWN_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_SHUTDOWN_CTRL` writer"]
+#[doc = "Register `ths_shutdown_ctrl` writer"]
 pub struct W(crate::W<THS_SHUTDOWN_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_SHUTDOWN_CTRL_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<THS_SHUTDOWN_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SHUT_T_HOT` reader - Thermal sensor shutdown threshold for hot temperature"]
+#[doc = "Field `shut_t_hot` reader - Thermal sensor shutdown threshold for hot temperature"]
 pub type SHUT_T_HOT_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `SHUT_T_HOT` writer - Thermal sensor shutdown threshold for hot temperature"]
+#[doc = "Field `shut_t_hot` writer - Thermal sensor shutdown threshold for hot temperature"]
 pub type SHUT_T_HOT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, THS_SHUTDOWN_CTRL_SPEC, u16, u16, 12, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for THS_SHUTDOWN_CTRL_SPEC {
 impl crate::Writable for THS_SHUTDOWN_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_SHUTDOWN_CTRL to value 0x04e9"]
+#[doc = "`reset()` method sets ths_shutdown_ctrl to value 0x04e9"]
 impl crate::Resettable for THS_SHUTDOWN_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

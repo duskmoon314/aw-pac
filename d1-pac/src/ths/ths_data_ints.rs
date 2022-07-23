@@ -1,4 +1,4 @@
-#[doc = "Register `THS_DATA_INTS` reader"]
+#[doc = "Register `ths_data_ints` reader"]
 pub struct R(crate::R<THS_DATA_INTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_DATA_INTS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_DATA_INTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_DATA_INTS` writer"]
+#[doc = "Register `ths_data_ints` writer"]
 pub struct W(crate::W<THS_DATA_INTS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_DATA_INTS_SPEC>;
@@ -48,7 +48,7 @@ impl From<THS_DATA_IRQ_STS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `THS_DATA_IRQ_STS` reader - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
+#[doc = "Field `ths_data_irq_sts` reader - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
 pub type THS_DATA_IRQ_STS_R = crate::BitReader<THS_DATA_IRQ_STS_A>;
 impl THS_DATA_IRQ_STS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl THS_DATA_IRQ_STS_R {
         *self == THS_DATA_IRQ_STS_A::PENDING
     }
 }
-#[doc = "Field `THS_DATA_IRQ_STS` writer - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
+#[doc = "Field `ths_data_irq_sts` writer - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
 pub type THS_DATA_IRQ_STS_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, THS_DATA_INTS_SPEC, THS_DATA_IRQ_STS_A, O>;
 impl<'a, const O: u8> THS_DATA_IRQ_STS_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for THS_DATA_INTS_SPEC {
 impl crate::Writable for THS_DATA_INTS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_DATA_INTS to value 0"]
+#[doc = "`reset()` method sets ths_data_ints to value 0"]
 impl crate::Resettable for THS_DATA_INTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

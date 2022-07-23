@@ -1,4 +1,4 @@
-#[doc = "Register `PDZCR01` reader"]
+#[doc = "Register `pdzcr01` reader"]
 pub struct R(crate::R<PDZCR01_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PDZCR01_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PDZCR01_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PDZCR01` writer"]
+#[doc = "Register `pdzcr01` writer"]
 pub struct W(crate::W<PDZCR01_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PDZCR01_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<PDZCR01_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PWM01_DZ_INTV` reader - PWM01 Dead Zone Interval Value"]
+#[doc = "Field `pwm01_dz_intv` reader - PWM01 Dead Zone Interval Value"]
 pub type PWM01_DZ_INTV_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PWM01_DZ_INTV` writer - PWM01 Dead Zone Interval Value"]
+#[doc = "Field `pwm01_dz_intv` writer - PWM01 Dead Zone Interval Value"]
 pub type PWM01_DZ_INTV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDZCR01_SPEC, u8, u8, 8, O>;
 #[doc = "PWM01 Dead Zone Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -52,7 +52,7 @@ impl From<PWM01_DZ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PWM01_DZ_EN` reader - PWM01 Dead Zone Enable"]
+#[doc = "Field `pwm01_dz_en` reader - PWM01 Dead Zone Enable"]
 pub type PWM01_DZ_EN_R = crate::BitReader<PWM01_DZ_EN_A>;
 impl PWM01_DZ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -74,7 +74,7 @@ impl PWM01_DZ_EN_R {
         *self == PWM01_DZ_EN_A::ENABLE
     }
 }
-#[doc = "Field `PWM01_DZ_EN` writer - PWM01 Dead Zone Enable"]
+#[doc = "Field `pwm01_dz_en` writer - PWM01 Dead Zone Enable"]
 pub type PWM01_DZ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDZCR01_SPEC, PWM01_DZ_EN_A, O>;
 impl<'a, const O: u8> PWM01_DZ_EN_W<'a, O> {
     #[doc = "Dead Zone disable"]
@@ -131,7 +131,7 @@ impl crate::Readable for PDZCR01_SPEC {
 impl crate::Writable for PDZCR01_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PDZCR01 to value 0"]
+#[doc = "`reset()` method sets pdzcr01 to value 0"]
 impl crate::Resettable for PDZCR01_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

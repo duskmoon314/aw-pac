@@ -86,107 +86,107 @@ pub struct RegisterBlock {
     #[doc = "0xd0 - EMAC RGMII Status Register"]
     pub emac_rgmii_sta: crate::Reg<emac_rgmii_sta::EMAC_RGMII_STA_SPEC>,
 }
-#[doc = "EMAC_BASIC_CTL0 register accessor: an alias for `Reg<EMAC_BASIC_CTL0_SPEC>`"]
+#[doc = "emac_basic_ctl0 register accessor: an alias for `Reg<EMAC_BASIC_CTL0_SPEC>`"]
 pub type EMAC_BASIC_CTL0 = crate::Reg<emac_basic_ctl0::EMAC_BASIC_CTL0_SPEC>;
 #[doc = "EMAC Basic Control Register0"]
 pub mod emac_basic_ctl0;
-#[doc = "EMAC_BASIC_CTL1 register accessor: an alias for `Reg<EMAC_BASIC_CTL1_SPEC>`"]
+#[doc = "emac_basic_ctl1 register accessor: an alias for `Reg<EMAC_BASIC_CTL1_SPEC>`"]
 pub type EMAC_BASIC_CTL1 = crate::Reg<emac_basic_ctl1::EMAC_BASIC_CTL1_SPEC>;
 #[doc = "EMAC Basic Control Register1"]
 pub mod emac_basic_ctl1;
-#[doc = "EMAC_INT_STA register accessor: an alias for `Reg<EMAC_INT_STA_SPEC>`"]
+#[doc = "emac_int_sta register accessor: an alias for `Reg<EMAC_INT_STA_SPEC>`"]
 pub type EMAC_INT_STA = crate::Reg<emac_int_sta::EMAC_INT_STA_SPEC>;
 #[doc = "EMAC Interrupt Status Register"]
 pub mod emac_int_sta;
-#[doc = "EMAC_INT_EN register accessor: an alias for `Reg<EMAC_INT_EN_SPEC>`"]
+#[doc = "emac_int_en register accessor: an alias for `Reg<EMAC_INT_EN_SPEC>`"]
 pub type EMAC_INT_EN = crate::Reg<emac_int_en::EMAC_INT_EN_SPEC>;
 #[doc = "EMAC Interrupt Enable Register"]
 pub mod emac_int_en;
-#[doc = "EMAC_TX_CTL0 register accessor: an alias for `Reg<EMAC_TX_CTL0_SPEC>`"]
+#[doc = "emac_tx_ctl0 register accessor: an alias for `Reg<EMAC_TX_CTL0_SPEC>`"]
 pub type EMAC_TX_CTL0 = crate::Reg<emac_tx_ctl0::EMAC_TX_CTL0_SPEC>;
 #[doc = "EMAC Transmit Control Register0"]
 pub mod emac_tx_ctl0;
-#[doc = "EMAC_TX_CTL1 register accessor: an alias for `Reg<EMAC_TX_CTL1_SPEC>`"]
+#[doc = "emac_tx_ctl1 register accessor: an alias for `Reg<EMAC_TX_CTL1_SPEC>`"]
 pub type EMAC_TX_CTL1 = crate::Reg<emac_tx_ctl1::EMAC_TX_CTL1_SPEC>;
 #[doc = "EMAC Transmit Control Register1"]
 pub mod emac_tx_ctl1;
-#[doc = "EMAC_TX_FLOW_CTL register accessor: an alias for `Reg<EMAC_TX_FLOW_CTL_SPEC>`"]
+#[doc = "emac_tx_flow_ctl register accessor: an alias for `Reg<EMAC_TX_FLOW_CTL_SPEC>`"]
 pub type EMAC_TX_FLOW_CTL = crate::Reg<emac_tx_flow_ctl::EMAC_TX_FLOW_CTL_SPEC>;
 #[doc = "EMAC Transmit Flow Control Register"]
 pub mod emac_tx_flow_ctl;
-#[doc = "EMAC_TX_DMA_DESC_LIST register accessor: an alias for `Reg<EMAC_TX_DMA_DESC_LIST_SPEC>`"]
+#[doc = "emac_tx_dma_desc_list register accessor: an alias for `Reg<EMAC_TX_DMA_DESC_LIST_SPEC>`"]
 pub type EMAC_TX_DMA_DESC_LIST = crate::Reg<emac_tx_dma_desc_list::EMAC_TX_DMA_DESC_LIST_SPEC>;
 #[doc = "EMAC Transmit Descriptor List Address Register"]
 pub mod emac_tx_dma_desc_list;
-#[doc = "EMAC_RX_CTL0 register accessor: an alias for `Reg<EMAC_RX_CTL0_SPEC>`"]
+#[doc = "emac_rx_ctl0 register accessor: an alias for `Reg<EMAC_RX_CTL0_SPEC>`"]
 pub type EMAC_RX_CTL0 = crate::Reg<emac_rx_ctl0::EMAC_RX_CTL0_SPEC>;
 #[doc = "EMAC Receive Control Register0"]
 pub mod emac_rx_ctl0;
-#[doc = "EMAC_RX_CTL1 register accessor: an alias for `Reg<EMAC_RX_CTL1_SPEC>`"]
+#[doc = "emac_rx_ctl1 register accessor: an alias for `Reg<EMAC_RX_CTL1_SPEC>`"]
 pub type EMAC_RX_CTL1 = crate::Reg<emac_rx_ctl1::EMAC_RX_CTL1_SPEC>;
 #[doc = "EMAC Receive Control Register1"]
 pub mod emac_rx_ctl1;
-#[doc = "EMAC_RX_DMA_DESC_LIST register accessor: an alias for `Reg<EMAC_RX_DMA_DESC_LIST_SPEC>`"]
+#[doc = "emac_rx_dma_desc_list register accessor: an alias for `Reg<EMAC_RX_DMA_DESC_LIST_SPEC>`"]
 pub type EMAC_RX_DMA_DESC_LIST = crate::Reg<emac_rx_dma_desc_list::EMAC_RX_DMA_DESC_LIST_SPEC>;
 #[doc = "EMAC Receive Descriptor List Address Register"]
 pub mod emac_rx_dma_desc_list;
-#[doc = "EMAC_RX_FRM_FLT register accessor: an alias for `Reg<EMAC_RX_FRM_FLT_SPEC>`"]
+#[doc = "emac_rx_frm_flt register accessor: an alias for `Reg<EMAC_RX_FRM_FLT_SPEC>`"]
 pub type EMAC_RX_FRM_FLT = crate::Reg<emac_rx_frm_flt::EMAC_RX_FRM_FLT_SPEC>;
 #[doc = "EMAC Receive Frame Filter Register"]
 pub mod emac_rx_frm_flt;
-#[doc = "EMAC_RX_HASH0 register accessor: an alias for `Reg<EMAC_RX_HASH0_SPEC>`"]
+#[doc = "emac_rx_hash0 register accessor: an alias for `Reg<EMAC_RX_HASH0_SPEC>`"]
 pub type EMAC_RX_HASH0 = crate::Reg<emac_rx_hash0::EMAC_RX_HASH0_SPEC>;
 #[doc = "EMAC Hash Table Register0"]
 pub mod emac_rx_hash0;
-#[doc = "EMAC_RX_HASH1 register accessor: an alias for `Reg<EMAC_RX_HASH1_SPEC>`"]
+#[doc = "emac_rx_hash1 register accessor: an alias for `Reg<EMAC_RX_HASH1_SPEC>`"]
 pub type EMAC_RX_HASH1 = crate::Reg<emac_rx_hash1::EMAC_RX_HASH1_SPEC>;
 #[doc = "EMAC Hash Table Register1"]
 pub mod emac_rx_hash1;
-#[doc = "EMAC_MII_CMD register accessor: an alias for `Reg<EMAC_MII_CMD_SPEC>`"]
+#[doc = "emac_mii_cmd register accessor: an alias for `Reg<EMAC_MII_CMD_SPEC>`"]
 pub type EMAC_MII_CMD = crate::Reg<emac_mii_cmd::EMAC_MII_CMD_SPEC>;
 #[doc = "EMAC Management Interface Command Register"]
 pub mod emac_mii_cmd;
-#[doc = "EMAC_MII_DATA register accessor: an alias for `Reg<EMAC_MII_DATA_SPEC>`"]
+#[doc = "emac_mii_data register accessor: an alias for `Reg<EMAC_MII_DATA_SPEC>`"]
 pub type EMAC_MII_DATA = crate::Reg<emac_mii_data::EMAC_MII_DATA_SPEC>;
 #[doc = "EMAC Management Interface Data Register"]
 pub mod emac_mii_data;
-#[doc = "EMAC_ADDR_HIGH0 register accessor: an alias for `Reg<EMAC_ADDR_HIGH0_SPEC>`"]
+#[doc = "emac_addr_high0 register accessor: an alias for `Reg<EMAC_ADDR_HIGH0_SPEC>`"]
 pub type EMAC_ADDR_HIGH0 = crate::Reg<emac_addr_high0::EMAC_ADDR_HIGH0_SPEC>;
 #[doc = "EMAC MAC Address High Register"]
 pub mod emac_addr_high0;
-#[doc = "EMAC_ADDR_HIGH register accessor: an alias for `Reg<EMAC_ADDR_HIGH_SPEC>`"]
+#[doc = "emac_addr_high register accessor: an alias for `Reg<EMAC_ADDR_HIGH_SPEC>`"]
 pub type EMAC_ADDR_HIGH = crate::Reg<emac_addr_high::EMAC_ADDR_HIGH_SPEC>;
 #[doc = "EMAC MAC Address High Register"]
 pub mod emac_addr_high;
-#[doc = "EMAC_ADDR_LOW register accessor: an alias for `Reg<EMAC_ADDR_LOW_SPEC>`"]
+#[doc = "emac_addr_low register accessor: an alias for `Reg<EMAC_ADDR_LOW_SPEC>`"]
 pub type EMAC_ADDR_LOW = crate::Reg<emac_addr_low::EMAC_ADDR_LOW_SPEC>;
 #[doc = "EMAC MAC Address Low Register"]
 pub mod emac_addr_low;
-#[doc = "EMAC_TX_DMA_STA register accessor: an alias for `Reg<EMAC_TX_DMA_STA_SPEC>`"]
+#[doc = "emac_tx_dma_sta register accessor: an alias for `Reg<EMAC_TX_DMA_STA_SPEC>`"]
 pub type EMAC_TX_DMA_STA = crate::Reg<emac_tx_dma_sta::EMAC_TX_DMA_STA_SPEC>;
 #[doc = "EMAC Transmit DMA Status Register"]
 pub mod emac_tx_dma_sta;
-#[doc = "EMAC_TX_CUR_DESC register accessor: an alias for `Reg<EMAC_TX_CUR_DESC_SPEC>`"]
+#[doc = "emac_tx_cur_desc register accessor: an alias for `Reg<EMAC_TX_CUR_DESC_SPEC>`"]
 pub type EMAC_TX_CUR_DESC = crate::Reg<emac_tx_cur_desc::EMAC_TX_CUR_DESC_SPEC>;
 #[doc = "EMAC Current Transmit Descriptor Register"]
 pub mod emac_tx_cur_desc;
-#[doc = "EMAC_TX_CUR_BUF register accessor: an alias for `Reg<EMAC_TX_CUR_BUF_SPEC>`"]
+#[doc = "emac_tx_cur_buf register accessor: an alias for `Reg<EMAC_TX_CUR_BUF_SPEC>`"]
 pub type EMAC_TX_CUR_BUF = crate::Reg<emac_tx_cur_buf::EMAC_TX_CUR_BUF_SPEC>;
 #[doc = "EMAC Current Transmit Buffer Address Register"]
 pub mod emac_tx_cur_buf;
-#[doc = "EMAC_RX_DMA_STA register accessor: an alias for `Reg<EMAC_RX_DMA_STA_SPEC>`"]
+#[doc = "emac_rx_dma_sta register accessor: an alias for `Reg<EMAC_RX_DMA_STA_SPEC>`"]
 pub type EMAC_RX_DMA_STA = crate::Reg<emac_rx_dma_sta::EMAC_RX_DMA_STA_SPEC>;
 #[doc = "EMAC Receive DMA Status Register"]
 pub mod emac_rx_dma_sta;
-#[doc = "EMAC_RX_CUR_DESC register accessor: an alias for `Reg<EMAC_RX_CUR_DESC_SPEC>`"]
+#[doc = "emac_rx_cur_desc register accessor: an alias for `Reg<EMAC_RX_CUR_DESC_SPEC>`"]
 pub type EMAC_RX_CUR_DESC = crate::Reg<emac_rx_cur_desc::EMAC_RX_CUR_DESC_SPEC>;
 #[doc = "EMAC Current Receive Descriptor Register"]
 pub mod emac_rx_cur_desc;
-#[doc = "EMAC_RX_CUR_BUF register accessor: an alias for `Reg<EMAC_RX_CUR_BUF_SPEC>`"]
+#[doc = "emac_rx_cur_buf register accessor: an alias for `Reg<EMAC_RX_CUR_BUF_SPEC>`"]
 pub type EMAC_RX_CUR_BUF = crate::Reg<emac_rx_cur_buf::EMAC_RX_CUR_BUF_SPEC>;
 #[doc = "EMAC Current Receive Buffer Address Register"]
 pub mod emac_rx_cur_buf;
-#[doc = "EMAC_RGMII_STA register accessor: an alias for `Reg<EMAC_RGMII_STA_SPEC>`"]
+#[doc = "emac_rgmii_sta register accessor: an alias for `Reg<EMAC_RGMII_STA_SPEC>`"]
 pub type EMAC_RGMII_STA = crate::Reg<emac_rgmii_sta::EMAC_RGMII_STA_SPEC>;
 #[doc = "EMAC RGMII Status Register"]
 pub mod emac_rgmii_sta;

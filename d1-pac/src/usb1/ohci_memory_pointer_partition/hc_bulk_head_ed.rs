@@ -1,4 +1,4 @@
-#[doc = "Register `HC_BULK_HEAD_ED` reader"]
+#[doc = "Register `hc_bulk_head_ed` reader"]
 pub struct R(crate::R<HC_BULK_HEAD_ED_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_BULK_HEAD_ED_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_BULK_HEAD_ED_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_BULK_HEAD_ED` writer"]
+#[doc = "Register `hc_bulk_head_ed` writer"]
 pub struct W(crate::W<HC_BULK_HEAD_ED_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_BULK_HEAD_ED_SPEC>;
@@ -34,12 +34,12 @@ impl From<crate::W<HC_BULK_HEAD_ED_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BHED_31_4` reader - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
+#[doc = "Field `bhed_31_4` reader - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
 pub type BHED_31_4_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `BHED_31_4` writer - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
+#[doc = "Field `bhed_31_4` writer - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
 pub type BHED_31_4_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_BULK_HEAD_ED_SPEC, u32, u32, 28, O>;
-#[doc = "Field `BHED_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
+#[doc = "Field `bhed_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
 pub type BHED_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 4:31 - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
@@ -79,7 +79,7 @@ impl crate::Readable for HC_BULK_HEAD_ED_SPEC {
 impl crate::Writable for HC_BULK_HEAD_ED_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_BULK_HEAD_ED to value 0"]
+#[doc = "`reset()` method sets hc_bulk_head_ed to value 0"]
 impl crate::Resettable for HC_BULK_HEAD_ED_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

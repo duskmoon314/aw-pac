@@ -1,4 +1,4 @@
-#[doc = "Register `LRADC_DATA` reader"]
+#[doc = "Register `lradc_data` reader"]
 pub struct R(crate::R<LRADC_DATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LRADC_DATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LRADC_DATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `LRADC_DATA` reader - LRADC Data"]
+#[doc = "Field `lradc_data` reader - LRADC Data"]
 pub type LRADC_DATA_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:5 - LRADC Data"]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for LRADC_DATA_SPEC {
 impl crate::Readable for LRADC_DATA_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets LRADC_DATA to value 0"]
+#[doc = "`reset()` method sets lradc_data to value 0"]
 impl crate::Resettable for LRADC_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

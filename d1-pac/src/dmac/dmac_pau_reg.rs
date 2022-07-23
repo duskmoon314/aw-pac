@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_PAU_REG%s` reader"]
+#[doc = "Register `dmac_pau_reg%s` reader"]
 pub struct R(crate::R<DMAC_PAU_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_PAU_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMAC_PAU_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMAC_PAU_REG%s` writer"]
+#[doc = "Register `dmac_pau_reg%s` writer"]
 pub struct W(crate::W<DMAC_PAU_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMAC_PAU_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<DMA_PAUSE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_PAUSE` reader - Pause the DMA Channel Transfer Data"]
+#[doc = "Field `dma_pause` reader - Pause the DMA Channel Transfer Data"]
 pub type DMA_PAUSE_R = crate::BitReader<DMA_PAUSE_A>;
 impl DMA_PAUSE_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DMA_PAUSE_R {
         *self == DMA_PAUSE_A::PAUSE
     }
 }
-#[doc = "Field `DMA_PAUSE` writer - Pause the DMA Channel Transfer Data"]
+#[doc = "Field `dma_pause` writer - Pause the DMA Channel Transfer Data"]
 pub type DMA_PAUSE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_PAU_REG_SPEC, DMA_PAUSE_A, O>;
 impl<'a, const O: u8> DMA_PAUSE_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for DMAC_PAU_REG_SPEC {
 impl crate::Writable for DMAC_PAU_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMAC_PAU_REG%s to value 0"]
+#[doc = "`reset()` method sets dmac_pau_reg%s to value 0"]
 impl crate::Resettable for DMAC_PAU_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `THS_SHUT_INTS` reader"]
+#[doc = "Register `ths_shut_ints` reader"]
 pub struct R(crate::R<THS_SHUT_INTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_SHUT_INTS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_SHUT_INTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_SHUT_INTS` writer"]
+#[doc = "Register `ths_shut_ints` writer"]
 pub struct W(crate::W<THS_SHUT_INTS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_SHUT_INTS_SPEC>;
@@ -48,7 +48,7 @@ impl From<SHUT_INT_STS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SHUT_INT_STS` reader - Indicates the pending status of the sensor's shutdown interrupt.\n\nWrite 1 to clear the pending status."]
+#[doc = "Field `shut_int_sts` reader - Indicates the pending status of the sensor's shutdown interrupt.\n\nWrite 1 to clear the pending status."]
 pub type SHUT_INT_STS_R = crate::BitReader<SHUT_INT_STS_A>;
 impl SHUT_INT_STS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl SHUT_INT_STS_R {
         *self == SHUT_INT_STS_A::PENDING
     }
 }
-#[doc = "Field `SHUT_INT_STS` writer - Indicates the pending status of the sensor's shutdown interrupt.\n\nWrite 1 to clear the pending status."]
+#[doc = "Field `shut_int_sts` writer - Indicates the pending status of the sensor's shutdown interrupt.\n\nWrite 1 to clear the pending status."]
 pub type SHUT_INT_STS_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, THS_SHUT_INTS_SPEC, SHUT_INT_STS_A, O>;
 impl<'a, const O: u8> SHUT_INT_STS_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for THS_SHUT_INTS_SPEC {
 impl crate::Writable for THS_SHUT_INTS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_SHUT_INTS to value 0"]
+#[doc = "`reset()` method sets ths_shut_ints to value 0"]
 impl crate::Resettable for THS_SHUT_INTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

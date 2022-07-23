@@ -1,4 +1,4 @@
-#[doc = "Register `CE_ICR` reader"]
+#[doc = "Register `ce_icr` reader"]
 pub struct R(crate::R<CE_ICR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_ICR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_ICR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_ICR` writer"]
+#[doc = "Register `ce_icr` writer"]
 pub struct W(crate::W<CE_ICR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_ICR_SPEC>;
@@ -49,7 +49,7 @@ impl From<TASK_IRQ_EN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `TASK(0-3)_IRQ_EN` reader - Task Channel 3-0 Interrupt Enable"]
+#[doc = "Fields `task(0-3)_irq_en` reader - Task Channel 3-0 Interrupt Enable"]
 pub type TASK_IRQ_EN_R = crate::FieldReader<u8, TASK_IRQ_EN_A>;
 impl TASK_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl TASK_IRQ_EN_R {
         *self == TASK_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Fields `TASK(0-3)_IRQ_EN` writer - Task Channel 3-0 Interrupt Enable"]
+#[doc = "Fields `task(0-3)_irq_en` writer - Task Channel 3-0 Interrupt Enable"]
 pub type TASK_IRQ_EN_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CE_ICR_SPEC, u8, TASK_IRQ_EN_A, 4, O>;
 impl<'a, const O: u8> TASK_IRQ_EN_W<'a, O> {
@@ -160,7 +160,7 @@ impl crate::Readable for CE_ICR_SPEC {
 impl crate::Writable for CE_ICR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_ICR to value 0"]
+#[doc = "`reset()` method sets ce_icr to value 0"]
 impl crate::Resettable for CE_ICR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `MSGBOX_RD_IRQ_EN_REG` reader"]
+#[doc = "Register `msgbox_rd_irq_en_reg` reader"]
 pub struct R(crate::R<MSGBOX_RD_IRQ_EN_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MSGBOX_RD_IRQ_EN_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MSGBOX_RD_IRQ_EN_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MSGBOX_RD_IRQ_EN_REG` writer"]
+#[doc = "Register `msgbox_rd_irq_en_reg` writer"]
 pub struct W(crate::W<MSGBOX_RD_IRQ_EN_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MSGBOX_RD_IRQ_EN_REG_SPEC>;
@@ -49,7 +49,7 @@ impl From<RECEPTION_MQ_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `RECEPTION_MQ(0-3)_IRQ_EN` reader - Reception Channel\\[i\\]
+#[doc = "Fields `reception_mq(0-3)_irq_en` reader - Reception Channel\\[i\\]
 Interrupt Enable"]
 pub type RECEPTION_MQ_IRQ_EN_R = crate::BitReader<RECEPTION_MQ_IRQ_EN_A>;
 impl RECEPTION_MQ_IRQ_EN_R {
@@ -72,7 +72,7 @@ impl RECEPTION_MQ_IRQ_EN_R {
         *self == RECEPTION_MQ_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Fields `RECEPTION_MQ(0-3)_IRQ_EN` writer - Reception Channel\\[i\\]
+#[doc = "Fields `reception_mq(0-3)_irq_en` writer - Reception Channel\\[i\\]
 Interrupt Enable"]
 pub type RECEPTION_MQ_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MSGBOX_RD_IRQ_EN_REG_SPEC, RECEPTION_MQ_IRQ_EN_A, O>;
@@ -171,7 +171,7 @@ impl crate::Readable for MSGBOX_RD_IRQ_EN_REG_SPEC {
 impl crate::Writable for MSGBOX_RD_IRQ_EN_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MSGBOX_RD_IRQ_EN_REG to value 0"]
+#[doc = "`reset()` method sets msgbox_rd_irq_en_reg to value 0"]
 impl crate::Resettable for MSGBOX_RD_IRQ_EN_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

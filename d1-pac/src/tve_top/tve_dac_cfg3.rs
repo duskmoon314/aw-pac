@@ -1,4 +1,4 @@
-#[doc = "Register `TVE_DAC_CFG3` reader"]
+#[doc = "Register `tve_dac_cfg3` reader"]
 pub struct R(crate::R<TVE_DAC_CFG3_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TVE_DAC_CFG3_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TVE_DAC_CFG3_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TVE_DAC_CFG3` writer"]
+#[doc = "Register `tve_dac_cfg3` writer"]
 pub struct W(crate::W<TVE_DAC_CFG3_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TVE_DAC_CFG3_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for TVE_DAC_CFG3_SPEC {
 impl crate::Writable for TVE_DAC_CFG3_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TVE_DAC_CFG3 to value 0"]
+#[doc = "`reset()` method sets tve_dac_cfg3 to value 0"]
 impl crate::Resettable for TVE_DAC_CFG3_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

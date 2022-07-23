@@ -1,4 +1,4 @@
-#[doc = "Register `HCI_SIE_PORT_DISABLE_CONTROL` reader"]
+#[doc = "Register `hci_sie_port_disable_control` reader"]
 pub struct R(crate::R<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HCI_SIE_PORT_DISABLE_CONTROL` writer"]
+#[doc = "Register `hci_sie_port_disable_control` writer"]
 pub struct W(crate::W<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>;
@@ -34,16 +34,16 @@ impl From<crate::W<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SE0_STATUS` reader - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
+#[doc = "Field `se0_status` reader - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
 is 10b or 11b"]
 pub type SE0_STATUS_R = crate::BitReader<bool>;
-#[doc = "Field `SE0_STATUS` writer - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
+#[doc = "Field `se0_status` writer - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
 is 10b or 11b"]
 pub type SE0_STATUS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
-#[doc = "Field `RESUME_SEL` reader - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
+#[doc = "Field `resume_sel` reader - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
 pub type RESUME_SEL_R = crate::BitReader<bool>;
-#[doc = "Field `RESUME_SEL` writer - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
+#[doc = "Field `resume_sel` writer - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
 pub type RESUME_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
 #[doc = "Port Disable Control\n\nValue on reset: 0"]
@@ -63,7 +63,7 @@ impl From<PORT_DISABLE_CONTROL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PORT_DISABLE_CONTROL` reader - Port Disable Control"]
+#[doc = "Field `port_disable_control` reader - Port Disable Control"]
 pub type PORT_DISABLE_CONTROL_R = crate::FieldReader<u8, PORT_DISABLE_CONTROL_A>;
 impl PORT_DISABLE_CONTROL_R {
     #[doc = "Get enumerated values variant"]
@@ -92,7 +92,7 @@ impl PORT_DISABLE_CONTROL_R {
         *self == PORT_DISABLE_CONTROL_A::DISABLE_3_TIME_DETECT
     }
 }
-#[doc = "Field `PORT_DISABLE_CONTROL` writer - Port Disable Control"]
+#[doc = "Field `port_disable_control` writer - Port Disable Control"]
 pub type PORT_DISABLE_CONTROL_W<'a, const O: u8> = crate::FieldWriter<
     'a,
     u32,
@@ -174,7 +174,7 @@ impl crate::Readable for HCI_SIE_PORT_DISABLE_CONTROL_SPEC {
 impl crate::Writable for HCI_SIE_PORT_DISABLE_CONTROL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HCI_SIE_PORT_DISABLE_CONTROL to value 0"]
+#[doc = "`reset()` method sets hci_sie_port_disable_control to value 0"]
 impl crate::Resettable for HCI_SIE_PORT_DISABLE_CONTROL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

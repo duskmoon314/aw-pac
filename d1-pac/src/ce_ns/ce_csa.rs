@@ -1,4 +1,4 @@
-#[doc = "Register `CE_CSA` reader"]
+#[doc = "Register `ce_csa` reader"]
 pub struct R(crate::R<CE_CSA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_CSA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_CSA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_CSA` writer"]
+#[doc = "Register `ce_csa` writer"]
 pub struct W(crate::W<CE_CSA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_CSA_SPEC>;
@@ -34,7 +34,7 @@ impl From<crate::W<CE_CSA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CUR_SRC_ADDR` reader - Current source address"]
+#[doc = "Field `cur_src_addr` reader - Current source address"]
 pub type CUR_SRC_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current source address"]
@@ -64,7 +64,7 @@ impl crate::Readable for CE_CSA_SPEC {
 impl crate::Writable for CE_CSA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_CSA to value 0"]
+#[doc = "`reset()` method sets ce_csa to value 0"]
 impl crate::Resettable for CE_CSA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

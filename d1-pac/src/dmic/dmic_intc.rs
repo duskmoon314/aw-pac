@@ -1,4 +1,4 @@
-#[doc = "Register `DMIC_INTC` reader"]
+#[doc = "Register `dmic_intc` reader"]
 pub struct R(crate::R<DMIC_INTC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMIC_INTC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMIC_INTC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMIC_INTC` writer"]
+#[doc = "Register `dmic_intc` writer"]
 pub struct W(crate::W<DMIC_INTC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMIC_INTC_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for DMIC_INTC_SPEC {
 impl crate::Writable for DMIC_INTC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMIC_INTC to value 0"]
+#[doc = "`reset()` method sets dmic_intc to value 0"]
 impl crate::Resettable for DMIC_INTC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

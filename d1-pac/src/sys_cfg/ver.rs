@@ -1,4 +1,4 @@
-#[doc = "Register `VER` reader"]
+#[doc = "Register `ver` reader"]
 pub struct R(crate::R<VER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<VER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<VER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `BOOT_SEL_PAD_STA` reader - "]
+#[doc = "Field `boot_sel_pad_sta` reader - "]
 pub type BOOT_SEL_PAD_STA_R = crate::FieldReader<u8, u8>;
 #[doc = "Fel Select Pin Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -29,7 +29,7 @@ impl From<FEL_SEL_PAD_STA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FEL_SEL_PAD_STA` reader - Fel Select Pin Status"]
+#[doc = "Field `fel_sel_pad_sta` reader - Fel Select Pin Status"]
 pub type FEL_SEL_PAD_STA_R = crate::BitReader<FEL_SEL_PAD_STA_A>;
 impl FEL_SEL_PAD_STA_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl crate::RegisterSpec for VER_SPEC {
 impl crate::Readable for VER_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets VER to value 0"]
+#[doc = "`reset()` method sets ver to value 0"]
 impl crate::Resettable for VER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

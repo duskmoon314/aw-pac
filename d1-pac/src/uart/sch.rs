@@ -1,4 +1,4 @@
-#[doc = "Register `SCH` reader"]
+#[doc = "Register `sch` reader"]
 pub struct R(crate::R<SCH_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SCH_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SCH_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SCH` writer"]
+#[doc = "Register `sch` writer"]
 pub struct W(crate::W<SCH_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SCH_SPEC>;
@@ -71,7 +71,7 @@ impl crate::Readable for SCH_SPEC {
 impl crate::Writable for SCH_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SCH to value 0"]
+#[doc = "`reset()` method sets sch to value 0"]
 impl crate::Resettable for SCH_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

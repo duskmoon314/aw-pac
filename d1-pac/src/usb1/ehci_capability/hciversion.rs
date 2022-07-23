@@ -1,4 +1,4 @@
-#[doc = "Register `HCIVERSION` reader"]
+#[doc = "Register `hciversion` reader"]
 pub struct R(crate::R<HCIVERSION_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HCIVERSION_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HCIVERSION_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `HCIVERSION` reader - This is a 16 bit register containing a BCD encoding of the EHCI revision number suported by this host controller"]
+#[doc = "Field `hciversion` reader - This is a 16 bit register containing a BCD encoding of the EHCI revision number suported by this host controller"]
 pub type HCIVERSION_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:15 - This is a 16 bit register containing a BCD encoding of the EHCI revision number suported by this host controller"]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for HCIVERSION_SPEC {
 impl crate::Readable for HCIVERSION_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets HCIVERSION to value 0"]
+#[doc = "`reset()` method sets hciversion to value 0"]
 impl crate::Resettable for HCIVERSION_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

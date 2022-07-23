@@ -34,7 +34,7 @@ impl From<crate::W<WDOG_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `KEY_FIELD` writer - Key Field"]
+#[doc = "Field `key_field` writer - Key Field"]
 pub type KEY_FIELD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u16, u16, 16, O>;
 #[doc = "Select the clock source for the watchdog.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -50,7 +50,7 @@ impl From<WDOG_CLK_SRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WDOG_CLK_SRC` reader - Select the clock source for the watchdog."]
+#[doc = "Field `wdog_clk_src` reader - Select the clock source for the watchdog."]
 pub type WDOG_CLK_SRC_R = crate::BitReader<WDOG_CLK_SRC_A>;
 impl WDOG_CLK_SRC_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl WDOG_CLK_SRC_R {
         *self == WDOG_CLK_SRC_A::LOSC_32K
     }
 }
-#[doc = "Field `WDOG_CLK_SRC` writer - Select the clock source for the watchdog."]
+#[doc = "Field `wdog_clk_src` writer - Select the clock source for the watchdog."]
 pub type WDOG_CLK_SRC_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, WDOG_CFG_SPEC, WDOG_CLK_SRC_A, O>;
 impl<'a, const O: u8> WDOG_CLK_SRC_W<'a, O> {
@@ -102,7 +102,7 @@ impl From<WDOG_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WDOG_MODE` reader - Configure the operating mode for the watchdog"]
+#[doc = "Field `wdog_mode` reader - Configure the operating mode for the watchdog"]
 pub type WDOG_MODE_R = crate::FieldReader<u8, WDOG_MODE_A>;
 impl WDOG_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -125,7 +125,7 @@ impl WDOG_MODE_R {
         *self == WDOG_MODE_A::ONLY_INTERRUPT
     }
 }
-#[doc = "Field `WDOG_MODE` writer - Configure the operating mode for the watchdog"]
+#[doc = "Field `wdog_mode` writer - Configure the operating mode for the watchdog"]
 pub type WDOG_MODE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u8, WDOG_MODE_A, 2, O>;
 impl<'a, const O: u8> WDOG_MODE_W<'a, O> {

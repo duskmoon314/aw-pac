@@ -1,4 +1,4 @@
-#[doc = "Register `PHY_CONTROL` reader"]
+#[doc = "Register `phy_control` reader"]
 pub struct R(crate::R<PHY_CONTROL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PHY_CONTROL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PHY_CONTROL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PHY_CONTROL` writer"]
+#[doc = "Register `phy_control` writer"]
 pub struct W(crate::W<PHY_CONTROL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PHY_CONTROL_SPEC>;
@@ -34,17 +34,17 @@ impl From<crate::W<PHY_CONTROL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BIST_EN_A` reader - "]
+#[doc = "Field `bist_en_a` reader - "]
 pub type BIST_EN_A_R = crate::BitReader<bool>;
-#[doc = "Field `BIST_EN_A` writer - "]
+#[doc = "Field `bist_en_a` writer - "]
 pub type BIST_EN_A_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, O>;
-#[doc = "Field `VC_ADDR` reader - vc_addr"]
+#[doc = "Field `vc_addr` reader - vc_addr"]
 pub type VC_ADDR_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `VC_ADDR` writer - vc_addr"]
+#[doc = "Field `vc_addr` writer - vc_addr"]
 pub type VC_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PHY_CONTROL_SPEC, u8, u8, 8, O>;
-#[doc = "Field `VC_DI` reader - vc_di"]
+#[doc = "Field `vc_di` reader - vc_di"]
 pub type VC_DI_R = crate::BitReader<bool>;
-#[doc = "Field `VC_DI` writer - vc_di"]
+#[doc = "Field `vc_di` writer - vc_di"]
 pub type VC_DI_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -60,7 +60,7 @@ impl From<SIDDQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SIDDQ` reader - "]
+#[doc = "Field `siddq` reader - "]
 pub type SIDDQ_R = crate::BitReader<SIDDQ_A>;
 impl SIDDQ_R {
     #[doc = "Get enumerated values variant"]
@@ -82,7 +82,7 @@ impl SIDDQ_R {
         *self == SIDDQ_A::ENABLE
     }
 }
-#[doc = "Field `SIDDQ` writer - "]
+#[doc = "Field `siddq` writer - "]
 pub type SIDDQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, SIDDQ_A, O>;
 impl<'a, const O: u8> SIDDQ_W<'a, O> {
     #[doc = "Write 1 to disable phy"]
@@ -96,9 +96,9 @@ impl<'a, const O: u8> SIDDQ_W<'a, O> {
         self.variant(SIDDQ_A::ENABLE)
     }
 }
-#[doc = "Field `VC_CLK` reader - vc_clk"]
+#[doc = "Field `vc_clk` reader - vc_clk"]
 pub type VC_CLK_R = crate::BitReader<bool>;
-#[doc = "Field `VC_CLK` writer - vc_clk"]
+#[doc = "Field `vc_clk` writer - vc_clk"]
 pub type VC_CLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 16"]
@@ -173,7 +173,7 @@ impl crate::Readable for PHY_CONTROL_SPEC {
 impl crate::Writable for PHY_CONTROL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PHY_CONTROL to value 0"]
+#[doc = "`reset()` method sets phy_control to value 0"]
 impl crate::Resettable for PHY_CONTROL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

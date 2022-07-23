@@ -1,4 +1,4 @@
-#[doc = "Register `THS_CDATA` reader"]
+#[doc = "Register `ths_cdata` reader"]
 pub struct R(crate::R<THS_CDATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_CDATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_CDATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_CDATA` writer"]
+#[doc = "Register `ths_cdata` writer"]
 pub struct W(crate::W<THS_CDATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_CDATA_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<THS_CDATA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `THS_CDATA` reader - Thermal sensor calibration data"]
+#[doc = "Field `ths_cdata` reader - Thermal sensor calibration data"]
 pub type THS_CDATA_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `THS_CDATA` writer - Thermal sensor calibration data"]
+#[doc = "Field `ths_cdata` writer - Thermal sensor calibration data"]
 pub type THS_CDATA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, THS_CDATA_SPEC, u16, u16, 12, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for THS_CDATA_SPEC {
 impl crate::Writable for THS_CDATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_CDATA to value 0x0800"]
+#[doc = "`reset()` method sets ths_cdata to value 0x0800"]
 impl crate::Resettable for THS_CDATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

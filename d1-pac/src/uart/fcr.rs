@@ -1,4 +1,4 @@
-#[doc = "Register `FCR` writer"]
+#[doc = "Register `fcr` writer"]
 pub struct W(crate::W<FCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<FCR_SPEC>;
@@ -186,7 +186,7 @@ impl crate::RegisterSpec for FCR_SPEC {
 impl crate::Writable for FCR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets FCR to value 0"]
+#[doc = "`reset()` method sets fcr to value 0"]
 impl crate::Resettable for FCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

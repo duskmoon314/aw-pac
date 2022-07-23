@@ -48,7 +48,7 @@ impl From<EINT_CTL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `EINT(0-6)_CTL` reader - External INT Enable"]
+#[doc = "Fields `eint(0-6)_ctl` reader - External INT Enable"]
 pub type EINT_CTL_R = crate::BitReader<EINT_CTL_A>;
 impl EINT_CTL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl EINT_CTL_R {
         *self == EINT_CTL_A::ENABLE
     }
 }
-#[doc = "Fields `EINT(0-6)_CTL` writer - External INT Enable"]
+#[doc = "Fields `eint(0-6)_ctl` writer - External INT Enable"]
 pub type EINT_CTL_W<'a, const O: u8> = crate::BitWriter<'a, u32, PF_EINT_CTL_SPEC, EINT_CTL_A, O>;
 impl<'a, const O: u8> EINT_CTL_W<'a, O> {
     #[doc = "`0`"]

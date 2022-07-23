@@ -1,4 +1,4 @@
-#[doc = "Register `RESCAL_STATUS` reader"]
+#[doc = "Register `rescal_status` reader"]
 pub struct R(crate::R<RESCAL_STATUS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RESCAL_STATUS_SPEC>;
@@ -13,9 +13,9 @@ impl From<crate::R<RESCAL_STATUS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `COUT` reader - Calibration Circuits Analog COmpare Output"]
+#[doc = "Field `cout` reader - Calibration Circuits Analog COmpare Output"]
 pub type COUT_R = crate::BitReader<bool>;
-#[doc = "Field `RES_CAL_DO` reader - RESCAL Calibration Results Output"]
+#[doc = "Field `res_cal_do` reader - RESCAL Calibration Results Output"]
 pub type RES_CAL_DO_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 8 - Calibration Circuits Analog COmpare Output"]
@@ -38,7 +38,7 @@ impl crate::RegisterSpec for RESCAL_STATUS_SPEC {
 impl crate::Readable for RESCAL_STATUS_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets RESCAL_STATUS to value 0"]
+#[doc = "`reset()` method sets rescal_status to value 0"]
 impl crate::Resettable for RESCAL_STATUS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `EMMC_DDR_SBIT_DET` reader"]
+#[doc = "Register `emmc_ddr_sbit_det` reader"]
 pub struct R(crate::R<EMMC_DDR_SBIT_DET_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMMC_DDR_SBIT_DET_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMMC_DDR_SBIT_DET_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMMC_DDR_SBIT_DET` writer"]
+#[doc = "Register `emmc_ddr_sbit_det` writer"]
 pub struct W(crate::W<EMMC_DDR_SBIT_DET_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMMC_DDR_SBIT_DET_SPEC>;
@@ -48,7 +48,7 @@ impl From<HS400_MD_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HS400_MD_EN` reader - HS400 Mode Enable"]
+#[doc = "Field `hs400_md_en` reader - HS400 Mode Enable"]
 pub type HS400_MD_EN_R = crate::BitReader<HS400_MD_EN_A>;
 impl HS400_MD_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl HS400_MD_EN_R {
         *self == HS400_MD_EN_A::ENABLED
     }
 }
-#[doc = "Field `HS400_MD_EN` writer - HS400 Mode Enable"]
+#[doc = "Field `hs400_md_en` writer - HS400 Mode Enable"]
 pub type HS400_MD_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HS400_MD_EN_A, O>;
 impl<'a, const O: u8> HS400_MD_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<HALF_START_BIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HALF_START_BIT` reader - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
+#[doc = "Field `half_start_bit` reader - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
 pub type HALF_START_BIT_R = crate::BitReader<HALF_START_BIT_A>;
 impl HALF_START_BIT_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl HALF_START_BIT_R {
         *self == HALF_START_BIT_A::LESS
     }
 }
-#[doc = "Field `HALF_START_BIT` writer - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
+#[doc = "Field `half_start_bit` writer - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
 pub type HALF_START_BIT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HALF_START_BIT_A, O>;
 impl<'a, const O: u8> HALF_START_BIT_W<'a, O> {
@@ -179,7 +179,7 @@ impl crate::Readable for EMMC_DDR_SBIT_DET_SPEC {
 impl crate::Writable for EMMC_DDR_SBIT_DET_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMMC_DDR_SBIT_DET to value 0"]
+#[doc = "`reset()` method sets emmc_ddr_sbit_det to value 0"]
 impl crate::Resettable for EMMC_DDR_SBIT_DET_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

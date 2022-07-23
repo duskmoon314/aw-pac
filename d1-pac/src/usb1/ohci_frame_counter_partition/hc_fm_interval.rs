@@ -1,4 +1,4 @@
-#[doc = "Register `HC_FM_INTERVAL` reader"]
+#[doc = "Register `hc_fm_interval` reader"]
 pub struct R(crate::R<HC_FM_INTERVAL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_FM_INTERVAL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_FM_INTERVAL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_FM_INTERVAL` writer"]
+#[doc = "Register `hc_fm_interval` writer"]
 pub struct W(crate::W<HC_FM_INTERVAL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_FM_INTERVAL_SPEC>;
@@ -34,19 +34,19 @@ impl From<crate::W<HC_FM_INTERVAL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FRAME_INTERVAL_TOGGLER` reader - FrameIntervalToggler HCD toggles this bit whenever it loads a new value to FrameInterval."]
+#[doc = "Field `frame_interval_toggler` reader - FrameIntervalToggler HCD toggles this bit whenever it loads a new value to FrameInterval."]
 pub type FRAME_INTERVAL_TOGGLER_R = crate::BitReader<bool>;
-#[doc = "Field `FRAME_INTERVAL_TOGGLER` writer - FrameIntervalToggler HCD toggles this bit whenever it loads a new value to FrameInterval."]
+#[doc = "Field `frame_interval_toggler` writer - FrameIntervalToggler HCD toggles this bit whenever it loads a new value to FrameInterval."]
 pub type FRAME_INTERVAL_TOGGLER_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_FM_INTERVAL_SPEC, bool, O>;
-#[doc = "Field `FS_LARGEST_DATA_PACKET` reader - FSLargestDataPacket\n\nThis field specifies a value which is loaded into the Largest Data Packet Counter at the beginning of each frame. The counter value represents the largest amount of data in bits which can be sent or received by the HC in a single transaction at any given time without causing scheduling overrun. The field value is calculated by the HCD."]
+#[doc = "Field `fs_largest_data_packet` reader - FSLargestDataPacket\n\nThis field specifies a value which is loaded into the Largest Data Packet Counter at the beginning of each frame. The counter value represents the largest amount of data in bits which can be sent or received by the HC in a single transaction at any given time without causing scheduling overrun. The field value is calculated by the HCD."]
 pub type FS_LARGEST_DATA_PACKET_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `FS_LARGEST_DATA_PACKET` writer - FSLargestDataPacket\n\nThis field specifies a value which is loaded into the Largest Data Packet Counter at the beginning of each frame. The counter value represents the largest amount of data in bits which can be sent or received by the HC in a single transaction at any given time without causing scheduling overrun. The field value is calculated by the HCD."]
+#[doc = "Field `fs_largest_data_packet` writer - FSLargestDataPacket\n\nThis field specifies a value which is loaded into the Largest Data Packet Counter at the beginning of each frame. The counter value represents the largest amount of data in bits which can be sent or received by the HC in a single transaction at any given time without causing scheduling overrun. The field value is calculated by the HCD."]
 pub type FS_LARGEST_DATA_PACKET_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_FM_INTERVAL_SPEC, u16, u16, 15, O>;
-#[doc = "Field `FRAME_INTERVAL` reader - FrameInterval\n\nThis specifies the interval between two consecutive SOFs in bit times. The nominal value is set to be 11,999. HCD should store the current value of this field before resetting HC. By setting the HostControllerReset field of as this will cause the HC to reset this field to its nominal value. HCD may choose to restore the stored value upon the completion of the Reset sequence."]
+#[doc = "Field `frame_interval` reader - FrameInterval\n\nThis specifies the interval between two consecutive SOFs in bit times. The nominal value is set to be 11,999. HCD should store the current value of this field before resetting HC. By setting the HostControllerReset field of as this will cause the HC to reset this field to its nominal value. HCD may choose to restore the stored value upon the completion of the Reset sequence."]
 pub type FRAME_INTERVAL_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `FRAME_INTERVAL` writer - FrameInterval\n\nThis specifies the interval between two consecutive SOFs in bit times. The nominal value is set to be 11,999. HCD should store the current value of this field before resetting HC. By setting the HostControllerReset field of as this will cause the HC to reset this field to its nominal value. HCD may choose to restore the stored value upon the completion of the Reset sequence."]
+#[doc = "Field `frame_interval` writer - FrameInterval\n\nThis specifies the interval between two consecutive SOFs in bit times. The nominal value is set to be 11,999. HCD should store the current value of this field before resetting HC. By setting the HostControllerReset field of as this will cause the HC to reset this field to its nominal value. HCD may choose to restore the stored value upon the completion of the Reset sequence."]
 pub type FRAME_INTERVAL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_FM_INTERVAL_SPEC, u16, u16, 14, O>;
 impl R {
@@ -102,7 +102,7 @@ impl crate::Readable for HC_FM_INTERVAL_SPEC {
 impl crate::Writable for HC_FM_INTERVAL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_FM_INTERVAL to value 0x2edf"]
+#[doc = "`reset()` method sets hc_fm_interval to value 0x2edf"]
 impl crate::Resettable for HC_FM_INTERVAL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `CE_CDA` reader"]
+#[doc = "Register `ce_cda` reader"]
 pub struct R(crate::R<CE_CDA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_CDA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_CDA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_CDA` writer"]
+#[doc = "Register `ce_cda` writer"]
 pub struct W(crate::W<CE_CDA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_CDA_SPEC>;
@@ -34,7 +34,7 @@ impl From<crate::W<CE_CDA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CUR_DST_ADDR` reader - Current destination address"]
+#[doc = "Field `cur_dst_addr` reader - Current destination address"]
 pub type CUR_DST_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
     #[doc = "Bits 0:31 - Current destination address"]
@@ -64,7 +64,7 @@ impl crate::Readable for CE_CDA_SPEC {
 impl crate::Writable for CE_CDA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_CDA to value 0"]
+#[doc = "`reset()` method sets ce_cda to value 0"]
 impl crate::Resettable for CE_CDA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

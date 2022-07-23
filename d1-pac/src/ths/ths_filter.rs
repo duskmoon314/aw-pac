@@ -1,4 +1,4 @@
-#[doc = "Register `THS_FILTER` reader"]
+#[doc = "Register `ths_filter` reader"]
 pub struct R(crate::R<THS_FILTER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_FILTER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_FILTER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_FILTER` writer"]
+#[doc = "Register `ths_filter` writer"]
 pub struct W(crate::W<THS_FILTER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_FILTER_SPEC>;
@@ -48,7 +48,7 @@ impl From<FILTER_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FILTER_EN` reader - Filter enable"]
+#[doc = "Field `filter_en` reader - Filter enable"]
 pub type FILTER_EN_R = crate::BitReader<FILTER_EN_A>;
 impl FILTER_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl FILTER_EN_R {
         *self == FILTER_EN_A::ENABLE
     }
 }
-#[doc = "Field `FILTER_EN` writer - Filter enable"]
+#[doc = "Field `filter_en` writer - Filter enable"]
 pub type FILTER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, THS_FILTER_SPEC, FILTER_EN_A, O>;
 impl<'a, const O: u8> FILTER_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -103,7 +103,7 @@ impl From<FILTER_TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FILTER_TYPE` reader - Averaging filter type"]
+#[doc = "Field `filter_type` reader - Averaging filter type"]
 pub type FILTER_TYPE_R = crate::FieldReader<u8, FILTER_TYPE_A>;
 impl FILTER_TYPE_R {
     #[doc = "Get enumerated values variant"]
@@ -138,7 +138,7 @@ impl FILTER_TYPE_R {
         *self == FILTER_TYPE_A::T16
     }
 }
-#[doc = "Field `FILTER_TYPE` writer - Averaging filter type"]
+#[doc = "Field `filter_type` writer - Averaging filter type"]
 pub type FILTER_TYPE_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, THS_FILTER_SPEC, u8, FILTER_TYPE_A, 2, O>;
 impl<'a, const O: u8> FILTER_TYPE_W<'a, O> {
@@ -206,7 +206,7 @@ impl crate::Readable for THS_FILTER_SPEC {
 impl crate::Writable for THS_FILTER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_FILTER to value 0x01"]
+#[doc = "`reset()` method sets ths_filter to value 0x01"]
 impl crate::Resettable for THS_FILTER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

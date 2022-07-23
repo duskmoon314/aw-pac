@@ -425,33 +425,33 @@ impl core::fmt::Debug for TIMER {
 #[doc = "Timer Module, includes timer0, timer1, watchdog and audio video synchronization"]
 pub mod timer;
 #[doc = "High Speed Timer"]
-pub struct HSTIMER {
+pub struct HS_TIMER {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for HSTIMER {}
-impl HSTIMER {
+unsafe impl Send for HS_TIMER {}
+impl HS_TIMER {
     #[doc = r"Pointer to the register block"]
-    pub const PTR: *const hstimer::RegisterBlock = 0x0300_8000 as *const _;
+    pub const PTR: *const hs_timer::RegisterBlock = 0x0300_8000 as *const _;
     #[doc = r"Return the pointer to the register block"]
     #[inline(always)]
-    pub const fn ptr() -> *const hstimer::RegisterBlock {
+    pub const fn ptr() -> *const hs_timer::RegisterBlock {
         Self::PTR
     }
 }
-impl Deref for HSTIMER {
-    type Target = hstimer::RegisterBlock;
+impl Deref for HS_TIMER {
+    type Target = hs_timer::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for HSTIMER {
+impl core::fmt::Debug for HS_TIMER {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("HSTIMER").finish()
+        f.debug_struct("HS_TIMER").finish()
     }
 }
 #[doc = "High Speed Timer"]
-pub mod hstimer;
+pub mod hs_timer;
 #[doc = "Platform Level Interrupt Control"]
 pub struct PLIC {
     _marker: PhantomData<*const ()>,
@@ -1089,11 +1089,11 @@ impl core::fmt::Debug for OWA {
 #[doc = "One Wire Audio"]
 pub mod owa;
 #[doc = "Audio Codec"]
-pub struct AUDIOCODEC {
+pub struct AUDIO_CODEC {
     _marker: PhantomData<*const ()>,
 }
-unsafe impl Send for AUDIOCODEC {}
-impl AUDIOCODEC {
+unsafe impl Send for AUDIO_CODEC {}
+impl AUDIO_CODEC {
     #[doc = r"Pointer to the register block"]
     pub const PTR: *const audio_codec::RegisterBlock = 0x0203_0000 as *const _;
     #[doc = r"Return the pointer to the register block"]
@@ -1102,16 +1102,16 @@ impl AUDIOCODEC {
         Self::PTR
     }
 }
-impl Deref for AUDIOCODEC {
+impl Deref for AUDIO_CODEC {
     type Target = audio_codec::RegisterBlock;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         unsafe { &*Self::PTR }
     }
 }
-impl core::fmt::Debug for AUDIOCODEC {
+impl core::fmt::Debug for AUDIO_CODEC {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        f.debug_struct("AUDIOCODEC").finish()
+        f.debug_struct("AUDIO_CODEC").finish()
     }
 }
 #[doc = "Audio Codec"]
@@ -1759,8 +1759,8 @@ pub struct Peripherals {
     pub CLINT: CLINT,
     #[doc = "TIMER"]
     pub TIMER: TIMER,
-    #[doc = "HSTIMER"]
-    pub HSTIMER: HSTIMER,
+    #[doc = "HS_TIMER"]
+    pub HS_TIMER: HS_TIMER,
     #[doc = "PLIC"]
     pub PLIC: PLIC,
     #[doc = "DMAC"]
@@ -1807,8 +1807,8 @@ pub struct Peripherals {
     pub DMIC: DMIC,
     #[doc = "OWA"]
     pub OWA: OWA,
-    #[doc = "AUDIOCODEC"]
-    pub AUDIOCODEC: AUDIOCODEC,
+    #[doc = "AUDIO_CODEC"]
+    pub AUDIO_CODEC: AUDIO_CODEC,
     #[doc = "TWI0"]
     pub TWI0: TWI0,
     #[doc = "TWI1"]
@@ -1888,7 +1888,7 @@ impl Peripherals {
             TIMER: TIMER {
                 _marker: PhantomData,
             },
-            HSTIMER: HSTIMER {
+            HS_TIMER: HS_TIMER {
                 _marker: PhantomData,
             },
             PLIC: PLIC {
@@ -1960,7 +1960,7 @@ impl Peripherals {
             OWA: OWA {
                 _marker: PhantomData,
             },
-            AUDIOCODEC: AUDIOCODEC {
+            AUDIO_CODEC: AUDIO_CODEC {
                 _marker: PhantomData,
             },
             TWI0: TWI0 {

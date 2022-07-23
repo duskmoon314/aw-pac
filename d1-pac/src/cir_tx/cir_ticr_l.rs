@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TICR_L` reader"]
+#[doc = "Register `cir_ticr_l` reader"]
 pub struct R(crate::R<CIR_TICR_L_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TICR_L_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TICR_L_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TICR_L` writer"]
+#[doc = "Register `cir_ticr_l` writer"]
 pub struct W(crate::W<CIR_TICR_L_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TICR_L_SPEC>;
@@ -34,7 +34,7 @@ impl From<crate::W<CIR_TICR_L_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TIC_L` reader - Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero."]
+#[doc = "Field `tic_l` reader - Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero."]
 pub type TIC_L_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero."]
@@ -64,7 +64,7 @@ impl crate::Readable for CIR_TICR_L_SPEC {
 impl crate::Writable for CIR_TICR_L_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TICR_L to value 0"]
+#[doc = "`reset()` method sets cir_ticr_l to value 0"]
 impl crate::Resettable for CIR_TICR_L_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

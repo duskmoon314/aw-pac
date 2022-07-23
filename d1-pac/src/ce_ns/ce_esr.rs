@@ -1,4 +1,4 @@
-#[doc = "Register `CE_ESR` reader"]
+#[doc = "Register `ce_esr` reader"]
 pub struct R(crate::R<CE_ESR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_ESR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_ESR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_ESR` writer"]
+#[doc = "Register `ce_esr` writer"]
 pub struct W(crate::W<CE_ESR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_ESR_SPEC>;
@@ -51,7 +51,7 @@ impl From<TASK_CHANNEL_ERROR_TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `TASK_CHANNEL(0-3)_ERROR_TYPE` reader - Task Channel Error Type"]
+#[doc = "Fields `task_channel(0-3)_error_type` reader - Task Channel Error Type"]
 pub type TASK_CHANNEL_ERROR_TYPE_R = crate::FieldReader<u8, TASK_CHANNEL_ERROR_TYPE_A>;
 impl TASK_CHANNEL_ERROR_TYPE_R {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +80,7 @@ impl TASK_CHANNEL_ERROR_TYPE_R {
         *self == TASK_CHANNEL_ERROR_TYPE_A::KEYSRAM_ACCESS_ERROR
     }
 }
-#[doc = "Fields `TASK_CHANNEL(0-3)_ERROR_TYPE` writer - Task Channel Error Type"]
+#[doc = "Fields `task_channel(0-3)_error_type` writer - Task Channel Error Type"]
 pub type TASK_CHANNEL_ERROR_TYPE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CE_ESR_SPEC, u8, TASK_CHANNEL_ERROR_TYPE_A, 4, O>;
 impl<'a, const O: u8> TASK_CHANNEL_ERROR_TYPE_W<'a, O> {
@@ -173,7 +173,7 @@ impl crate::Readable for CE_ESR_SPEC {
 impl crate::Writable for CE_ESR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_ESR to value 0"]
+#[doc = "`reset()` method sets ce_esr to value 0"]
 impl crate::Resettable for CE_ESR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

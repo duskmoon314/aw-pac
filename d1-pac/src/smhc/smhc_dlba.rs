@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_DLBA` reader"]
+#[doc = "Register `smhc_dlba` reader"]
 pub struct R(crate::R<SMHC_DLBA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_DLBA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_DLBA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_DLBA` writer"]
+#[doc = "Register `smhc_dlba` writer"]
 pub struct W(crate::W<SMHC_DLBA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_DLBA_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for SMHC_DLBA_SPEC {
 impl crate::Writable for SMHC_DLBA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_DLBA to value 0"]
+#[doc = "`reset()` method sets smhc_dlba to value 0"]
 impl crate::Resettable for SMHC_DLBA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

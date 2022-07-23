@@ -1,4 +1,4 @@
-#[doc = "Register `MSGBOX_FIFO_STATUS_REG%s` reader"]
+#[doc = "Register `msgbox_fifo_status_reg%s` reader"]
 pub struct R(crate::R<MSGBOX_FIFO_STATUS_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MSGBOX_FIFO_STATUS_REG_SPEC>;
@@ -27,7 +27,7 @@ impl From<FIFO_NOT_AVA_FLAG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_NOT_AVA_FLAG` reader - FIFO Not Available Flag"]
+#[doc = "Field `fifo_not_ava_flag` reader - FIFO Not Available Flag"]
 pub type FIFO_NOT_AVA_FLAG_R = crate::BitReader<FIFO_NOT_AVA_FLAG_A>;
 impl FIFO_NOT_AVA_FLAG_R {
     #[doc = "Get enumerated values variant"]
@@ -65,7 +65,7 @@ impl crate::RegisterSpec for MSGBOX_FIFO_STATUS_REG_SPEC {
 impl crate::Readable for MSGBOX_FIFO_STATUS_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets MSGBOX_FIFO_STATUS_REG%s to value 0"]
+#[doc = "`reset()` method sets msgbox_fifo_status_reg%s to value 0"]
 impl crate::Resettable for MSGBOX_FIFO_STATUS_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

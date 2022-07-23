@@ -1,4 +1,4 @@
-#[doc = "Register `SPINLOCK_LOCKID%s_REG` reader"]
+#[doc = "Register `spinlock_lockid%s_reg` reader"]
 pub struct R(crate::R<SPINLOCK_LOCKID_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPINLOCK_LOCKID_REG_SPEC>;
@@ -22,7 +22,7 @@ impl crate::RegisterSpec for SPINLOCK_LOCKID_REG_SPEC {
 impl crate::Readable for SPINLOCK_LOCKID_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets SPINLOCK_LOCKID%s_REG to value 0"]
+#[doc = "`reset()` method sets spinlock_lockid%s_reg to value 0"]
 impl crate::Resettable for SPINLOCK_LOCKID_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

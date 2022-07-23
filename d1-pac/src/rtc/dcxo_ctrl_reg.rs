@@ -1,4 +1,4 @@
-#[doc = "Register `DCXO_CTRL_REG` reader"]
+#[doc = "Register `dcxo_ctrl_reg` reader"]
 pub struct R(crate::R<DCXO_CTRL_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DCXO_CTRL_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DCXO_CTRL_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DCXO_CTRL_REG` writer"]
+#[doc = "Register `dcxo_ctrl_reg` writer"]
 pub struct W(crate::W<DCXO_CTRL_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DCXO_CTRL_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<CLK_REQ_ENB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLK_REQ_ENB` reader - Clock REQ enable"]
+#[doc = "Field `clk_req_enb` reader - Clock REQ enable"]
 pub type CLK_REQ_ENB_R = crate::BitReader<CLK_REQ_ENB_A>;
 impl CLK_REQ_ENB_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CLK_REQ_ENB_R {
         *self == CLK_REQ_ENB_A::DISABLE
     }
 }
-#[doc = "Field `CLK_REQ_ENB` writer - Clock REQ enable"]
+#[doc = "Field `clk_req_enb` writer - Clock REQ enable"]
 pub type CLK_REQ_ENB_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DCXO_CTRL_REG_SPEC, CLK_REQ_ENB_A, O>;
 impl<'a, const O: u8> CLK_REQ_ENB_W<'a, O> {
@@ -85,23 +85,23 @@ impl<'a, const O: u8> CLK_REQ_ENB_W<'a, O> {
         self.variant(CLK_REQ_ENB_A::DISABLE)
     }
 }
-#[doc = "Field `DCXO_ICTRL` reader - DCXO current control value"]
+#[doc = "Field `dcxo_ictrl` reader - DCXO current control value"]
 pub type DCXO_ICTRL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DCXO_ICTRL` writer - DCXO current control value"]
+#[doc = "Field `dcxo_ictrl` writer - DCXO current control value"]
 pub type DCXO_ICTRL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, DCXO_CTRL_REG_SPEC, u8, u8, 4, O>;
-#[doc = "Field `DCXO_TRIM` reader - DCXO cap array value\n\nThe capacity cell is 55 fF."]
+#[doc = "Field `dcxo_trim` reader - DCXO cap array value\n\nThe capacity cell is 55 fF."]
 pub type DCXO_TRIM_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DCXO_TRIM` writer - DCXO cap array value\n\nThe capacity cell is 55 fF."]
+#[doc = "Field `dcxo_trim` writer - DCXO cap array value\n\nThe capacity cell is 55 fF."]
 pub type DCXO_TRIM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, DCXO_CTRL_REG_SPEC, u8, u8, 7, O>;
-#[doc = "Field `DCXO_BG` reader - DCXO bandgap output voltage"]
+#[doc = "Field `dcxo_bg` reader - DCXO bandgap output voltage"]
 pub type DCXO_BG_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DCXO_BG` writer - DCXO bandgap output voltage"]
+#[doc = "Field `dcxo_bg` writer - DCXO bandgap output voltage"]
 pub type DCXO_BG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCXO_CTRL_REG_SPEC, u8, u8, 5, O>;
-#[doc = "Field `DCXO_LDO_INRUSHB` reader - DCXO LDO driving capacity signal, active high"]
+#[doc = "Field `dcxo_ldo_inrushb` reader - DCXO LDO driving capacity signal, active high"]
 pub type DCXO_LDO_INRUSHB_R = crate::BitReader<bool>;
-#[doc = "Field `DCXO_LDO_INRUSHB` writer - DCXO LDO driving capacity signal, active high"]
+#[doc = "Field `dcxo_ldo_inrushb` writer - DCXO LDO driving capacity signal, active high"]
 pub type DCXO_LDO_INRUSHB_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DCXO_CTRL_REG_SPEC, bool, O>;
 #[doc = "Xtal mode enable signal, active high\n\nValue on reset: 1"]
@@ -118,7 +118,7 @@ impl From<XTAL_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `XTAL_MODE` reader - Xtal mode enable signal, active high"]
+#[doc = "Field `xtal_mode` reader - Xtal mode enable signal, active high"]
 pub type XTAL_MODE_R = crate::BitReader<XTAL_MODE_A>;
 impl XTAL_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -140,7 +140,7 @@ impl XTAL_MODE_R {
         *self == XTAL_MODE_A::FOR_NORMAL_MODE
     }
 }
-#[doc = "Field `XTAL_MODE` writer - Xtal mode enable signal, active high"]
+#[doc = "Field `xtal_mode` writer - Xtal mode enable signal, active high"]
 pub type XTAL_MODE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DCXO_CTRL_REG_SPEC, XTAL_MODE_A, O>;
 impl<'a, const O: u8> XTAL_MODE_W<'a, O> {
@@ -155,14 +155,14 @@ impl<'a, const O: u8> XTAL_MODE_W<'a, O> {
         self.variant(XTAL_MODE_A::FOR_NORMAL_MODE)
     }
 }
-#[doc = "Field `DCXO_RFCLK_ENHANCE` reader - DCXO rfclk enhance\n\nEnhance driving capacity of output OUT_RF_REFCLK, 0x0 for 5 pF, 0x1 for 10 pF, 0x2 for 15 pF, 0x3 for 20 pF."]
+#[doc = "Field `dcxo_rfclk_enhance` reader - DCXO rfclk enhance\n\nEnhance driving capacity of output OUT_RF_REFCLK, 0x0 for 5 pF, 0x1 for 10 pF, 0x2 for 15 pF, 0x3 for 20 pF."]
 pub type DCXO_RFCLK_ENHANCE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DCXO_RFCLK_ENHANCE` writer - DCXO rfclk enhance\n\nEnhance driving capacity of output OUT_RF_REFCLK, 0x0 for 5 pF, 0x1 for 10 pF, 0x2 for 15 pF, 0x3 for 20 pF."]
+#[doc = "Field `dcxo_rfclk_enhance` writer - DCXO rfclk enhance\n\nEnhance driving capacity of output OUT_RF_REFCLK, 0x0 for 5 pF, 0x1 for 10 pF, 0x2 for 15 pF, 0x3 for 20 pF."]
 pub type DCXO_RFCLK_ENHANCE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, DCXO_CTRL_REG_SPEC, u8, u8, 2, O>;
-#[doc = "Field `RSTO_DLY_SEL` reader - For Debug Use Only.\n\nIt cannot configure to 0 in normal state."]
+#[doc = "Field `rsto_dly_sel` reader - For Debug Use Only.\n\nIt cannot configure to 0 in normal state."]
 pub type RSTO_DLY_SEL_R = crate::BitReader<bool>;
-#[doc = "Field `RSTO_DLY_SEL` writer - For Debug Use Only.\n\nIt cannot configure to 0 in normal state."]
+#[doc = "Field `rsto_dly_sel` writer - For Debug Use Only.\n\nIt cannot configure to 0 in normal state."]
 pub type RSTO_DLY_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCXO_CTRL_REG_SPEC, bool, O>;
 #[doc = "DCXO enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -178,7 +178,7 @@ impl From<DCXO_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DCXO_EN` reader - DCXO enable"]
+#[doc = "Field `dcxo_en` reader - DCXO enable"]
 pub type DCXO_EN_R = crate::BitReader<DCXO_EN_A>;
 impl DCXO_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -200,7 +200,7 @@ impl DCXO_EN_R {
         *self == DCXO_EN_A::DISABLE
     }
 }
-#[doc = "Field `DCXO_EN` writer - DCXO enable"]
+#[doc = "Field `dcxo_en` writer - DCXO enable"]
 pub type DCXO_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCXO_CTRL_REG_SPEC, DCXO_EN_A, O>;
 impl<'a, const O: u8> DCXO_EN_W<'a, O> {
     #[doc = "Enable"]
@@ -228,7 +228,7 @@ impl From<CLK16M_RC_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLK16M_RC_EN` reader - The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M."]
+#[doc = "Field `clk16m_rc_en` reader - The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M."]
 pub type CLK16M_RC_EN_R = crate::BitReader<CLK16M_RC_EN_A>;
 impl CLK16M_RC_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -250,7 +250,7 @@ impl CLK16M_RC_EN_R {
         *self == CLK16M_RC_EN_A::DISABLE
     }
 }
-#[doc = "Field `CLK16M_RC_EN` writer - The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M."]
+#[doc = "Field `clk16m_rc_en` writer - The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M."]
 pub type CLK16M_RC_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DCXO_CTRL_REG_SPEC, CLK16M_RC_EN_A, O>;
 impl<'a, const O: u8> CLK16M_RC_EN_W<'a, O> {
@@ -388,7 +388,7 @@ impl crate::Readable for DCXO_CTRL_REG_SPEC {
 impl crate::Writable for DCXO_CTRL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DCXO_CTRL_REG to value 0x883f_10f7"]
+#[doc = "`reset()` method sets dcxo_ctrl_reg to value 0x883f_10f7"]
 impl crate::Resettable for DCXO_CTRL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TAC` reader"]
+#[doc = "Register `cir_tac` reader"]
 pub struct R(crate::R<CIR_TAC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TAC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TAC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TAC` writer"]
+#[doc = "Register `cir_tac` writer"]
 pub struct W(crate::W<CIR_TAC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TAC_SPEC>;
@@ -303,7 +303,7 @@ impl From<TAC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TAC` reader - TX FIFO Available Space Counter"]
+#[doc = "Field `tac` reader - TX FIFO Available Space Counter"]
 pub type TAC_R = crate::FieldReader<u8, TAC_A>;
 impl TAC_R {
     #[doc = "Get enumerated values variant"]
@@ -1116,7 +1116,7 @@ impl crate::Readable for CIR_TAC_SPEC {
 impl crate::Writable for CIR_TAC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TAC to value 0x80"]
+#[doc = "`reset()` method sets cir_tac to value 0x80"]
 impl crate::Resettable for CIR_TAC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_EPHY_CLK0` reader"]
+#[doc = "Register `emac_ephy_clk0` reader"]
 pub struct R(crate::R<EMAC_EPHY_CLK0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_EPHY_CLK0_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_EPHY_CLK0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_EPHY_CLK0` writer"]
+#[doc = "Register `emac_ephy_clk0` writer"]
 pub struct W(crate::W<EMAC_EPHY_CLK0_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_EPHY_CLK0_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<EMAC_EPHY_CLK0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BPS_EFUSE` reader - "]
+#[doc = "Field `bps_efuse` reader - "]
 pub type BPS_EFUSE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `BPS_EFUSE` writer - "]
+#[doc = "Field `bps_efuse` writer - "]
 pub type BPS_EFUSE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 4, O>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,7 +53,7 @@ impl From<XMII_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `XMII_SEL` reader - "]
+#[doc = "Field `xmii_sel` reader - "]
 pub type XMII_SEL_R = crate::BitReader<XMII_SEL_A>;
 impl XMII_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -75,7 +75,7 @@ impl XMII_SEL_R {
         *self == XMII_SEL_A::EXTERNAL
     }
 }
-#[doc = "Field `XMII_SEL` writer - "]
+#[doc = "Field `xmii_sel` writer - "]
 pub type XMII_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, XMII_SEL_A, O>;
 impl<'a, const O: u8> XMII_SEL_W<'a, O> {
@@ -107,7 +107,7 @@ impl From<EPHY_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EPHY_MODE` reader - "]
+#[doc = "Field `ephy_mode` reader - "]
 pub type EPHY_MODE_R = crate::FieldReader<u8, EPHY_MODE_A>;
 impl EPHY_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -136,7 +136,7 @@ impl EPHY_MODE_R {
         *self == EPHY_MODE_A::AFE_TEST
     }
 }
-#[doc = "Field `EPHY_MODE` writer - "]
+#[doc = "Field `ephy_mode` writer - "]
 pub type EPHY_MODE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, EPHY_MODE_A, 2, O>;
 impl<'a, const O: u8> EPHY_MODE_W<'a, O> {
@@ -156,9 +156,9 @@ impl<'a, const O: u8> EPHY_MODE_W<'a, O> {
         self.variant(EPHY_MODE_A::AFE_TEST)
     }
 }
-#[doc = "Field `PHY_ADDR` reader - "]
+#[doc = "Field `phy_addr` reader - "]
 pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PHY_ADDR` writer - "]
+#[doc = "Field `phy_addr` writer - "]
 pub type PHY_ADDR_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, O>;
 #[doc = "\n\nValue on reset: 0"]
@@ -175,7 +175,7 @@ impl From<CLK_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLK_SEL` reader - "]
+#[doc = "Field `clk_sel` reader - "]
 pub type CLK_SEL_R = crate::BitReader<CLK_SEL_A>;
 impl CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -197,7 +197,7 @@ impl CLK_SEL_R {
         *self == CLK_SEL_A::F24M
     }
 }
-#[doc = "Field `CLK_SEL` writer - "]
+#[doc = "Field `clk_sel` writer - "]
 pub type CLK_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, CLK_SEL_A, O>;
 impl<'a, const O: u8> CLK_SEL_W<'a, O> {
     #[doc = "`0`"]
@@ -225,7 +225,7 @@ impl From<LED_POL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LED_POL` reader - "]
+#[doc = "Field `led_pol` reader - "]
 pub type LED_POL_R = crate::BitReader<LED_POL_A>;
 impl LED_POL_R {
     #[doc = "Get enumerated values variant"]
@@ -247,7 +247,7 @@ impl LED_POL_R {
         *self == LED_POL_A::LOW
     }
 }
-#[doc = "Field `LED_POL` writer - "]
+#[doc = "Field `led_pol` writer - "]
 pub type LED_POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, LED_POL_A, O>;
 impl<'a, const O: u8> LED_POL_W<'a, O> {
     #[doc = "`0`"]
@@ -275,7 +275,7 @@ impl From<SHUTDOWN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SHUTDOWN` reader - "]
+#[doc = "Field `shutdown` reader - "]
 pub type SHUTDOWN_R = crate::BitReader<SHUTDOWN_A>;
 impl SHUTDOWN_R {
     #[doc = "Get enumerated values variant"]
@@ -297,7 +297,7 @@ impl SHUTDOWN_R {
         *self == SHUTDOWN_A::SHUT_DOWN
     }
 }
-#[doc = "Field `SHUTDOWN` writer - "]
+#[doc = "Field `shutdown` writer - "]
 pub type SHUTDOWN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, SHUTDOWN_A, O>;
 impl<'a, const O: u8> SHUTDOWN_W<'a, O> {
@@ -326,7 +326,7 @@ impl From<PHY_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PHY_SELECT` reader - "]
+#[doc = "Field `phy_select` reader - "]
 pub type PHY_SELECT_R = crate::BitReader<PHY_SELECT_A>;
 impl PHY_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -348,7 +348,7 @@ impl PHY_SELECT_R {
         *self == PHY_SELECT_A::INTERNAL
     }
 }
-#[doc = "Field `PHY_SELECT` writer - "]
+#[doc = "Field `phy_select` writer - "]
 pub type PHY_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, PHY_SELECT_A, O>;
 impl<'a, const O: u8> PHY_SELECT_W<'a, O> {
@@ -377,7 +377,7 @@ impl From<RMII_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RMII_EN` reader - "]
+#[doc = "Field `rmii_en` reader - "]
 pub type RMII_EN_R = crate::BitReader<RMII_EN_A>;
 impl RMII_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -399,7 +399,7 @@ impl RMII_EN_R {
         *self == RMII_EN_A::ENABLE
     }
 }
-#[doc = "Field `RMII_EN` writer - "]
+#[doc = "Field `rmii_en` writer - "]
 pub type RMII_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, RMII_EN_A, O>;
 impl<'a, const O: u8> RMII_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -413,13 +413,13 @@ impl<'a, const O: u8> RMII_EN_W<'a, O> {
         self.variant(RMII_EN_A::ENABLE)
     }
 }
-#[doc = "Field `ETXDC` reader - "]
+#[doc = "Field `etxdc` reader - "]
 pub type ETXDC_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ETXDC` writer - "]
+#[doc = "Field `etxdc` writer - "]
 pub type ETXDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 3, O>;
-#[doc = "Field `ERXDC` reader - "]
+#[doc = "Field `erxdc` reader - "]
 pub type ERXDC_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ERXDC` writer - "]
+#[doc = "Field `erxdc` writer - "]
 pub type ERXDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -435,7 +435,7 @@ impl From<ERXIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERXIE` reader - "]
+#[doc = "Field `erxie` reader - "]
 pub type ERXIE_R = crate::BitReader<ERXIE_A>;
 impl ERXIE_R {
     #[doc = "Get enumerated values variant"]
@@ -457,7 +457,7 @@ impl ERXIE_R {
         *self == ERXIE_A::ENABLE
     }
 }
-#[doc = "Field `ERXIE` writer - "]
+#[doc = "Field `erxie` writer - "]
 pub type ERXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ERXIE_A, O>;
 impl<'a, const O: u8> ERXIE_W<'a, O> {
     #[doc = "`0`"]
@@ -485,7 +485,7 @@ impl From<ETXIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ETXIE` reader - "]
+#[doc = "Field `etxie` reader - "]
 pub type ETXIE_R = crate::BitReader<ETXIE_A>;
 impl ETXIE_R {
     #[doc = "Get enumerated values variant"]
@@ -507,7 +507,7 @@ impl ETXIE_R {
         *self == ETXIE_A::ENABLE
     }
 }
-#[doc = "Field `ETXIE` writer - "]
+#[doc = "Field `etxie` writer - "]
 pub type ETXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ETXIE_A, O>;
 impl<'a, const O: u8> ETXIE_W<'a, O> {
     #[doc = "`0`"]
@@ -535,7 +535,7 @@ impl From<EPIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EPIT` reader - "]
+#[doc = "Field `epit` reader - "]
 pub type EPIT_R = crate::BitReader<EPIT_A>;
 impl EPIT_R {
     #[doc = "Get enumerated values variant"]
@@ -557,7 +557,7 @@ impl EPIT_R {
         *self == EPIT_A::RGMII
     }
 }
-#[doc = "Field `EPIT` writer - "]
+#[doc = "Field `epit` writer - "]
 pub type EPIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, EPIT_A, O>;
 impl<'a, const O: u8> EPIT_W<'a, O> {
     #[doc = "`0`"]
@@ -588,7 +588,7 @@ impl From<ETCS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ETCS` reader - "]
+#[doc = "Field `etcs` reader - "]
 pub type ETCS_R = crate::FieldReader<u8, ETCS_A>;
 impl ETCS_R {
     #[doc = "Get enumerated values variant"]
@@ -617,7 +617,7 @@ impl ETCS_R {
         *self == ETCS_A::INTERNAL_GMII_RGMII
     }
 }
-#[doc = "Field `ETCS` writer - "]
+#[doc = "Field `etcs` writer - "]
 pub type ETCS_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, ETCS_A, 2, O>;
 impl<'a, const O: u8> ETCS_W<'a, O> {
@@ -810,7 +810,7 @@ impl crate::Readable for EMAC_EPHY_CLK0_SPEC {
 impl crate::Writable for EMAC_EPHY_CLK0_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_EPHY_CLK0 to value 0"]
+#[doc = "`reset()` method sets emac_ephy_clk0 to value 0"]
 impl crate::Resettable for EMAC_EPHY_CLK0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

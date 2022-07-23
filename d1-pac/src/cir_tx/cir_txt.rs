@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TXT` reader"]
+#[doc = "Register `cir_txt` reader"]
 pub struct R(crate::R<CIR_TXT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TXT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TXT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TXT` writer"]
+#[doc = "Register `cir_txt` writer"]
 pub struct W(crate::W<CIR_TXT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TXT_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CIR_TXT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `NCTT` reader - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
+#[doc = "Field `nctt` reader - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
 pub type NCTT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `NCTT` writer - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
+#[doc = "Field `nctt` writer - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
 pub type NCTT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_TXT_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
@@ -71,7 +71,7 @@ impl crate::Readable for CIR_TXT_SPEC {
 impl crate::Writable for CIR_TXT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TXT to value 0"]
+#[doc = "`reset()` method sets cir_txt to value 0"]
 impl crate::Resettable for CIR_TXT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

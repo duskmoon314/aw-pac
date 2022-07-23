@@ -1,4 +1,4 @@
-#[doc = "Register `TP_CTRL1` reader"]
+#[doc = "Register `tp_ctrl1` reader"]
 pub struct R(crate::R<TP_CTRL1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TP_CTRL1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TP_CTRL1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TP_CTRL1` writer"]
+#[doc = "Register `tp_ctrl1` writer"]
 pub struct W(crate::W<TP_CTRL1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TP_CTRL1_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<TP_CTRL1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `STYLUS_UP_DEBOUNCE` reader - Stylus Up Debounce Time Setting"]
+#[doc = "Field `stylus_up_debounce` reader - Stylus Up Debounce Time Setting"]
 pub type STYLUS_UP_DEBOUNCE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `STYLUS_UP_DEBOUNCE` writer - Stylus Up Debounce Time Setting"]
+#[doc = "Field `stylus_up_debounce` writer - Stylus Up Debounce Time Setting"]
 pub type STYLUS_UP_DEBOUNCE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TP_CTRL1_SPEC, u8, u8, 8, O>;
 #[doc = "Stylus Up Debounce Function Select\n\nValue on reset: 0"]
@@ -53,7 +53,7 @@ impl From<STYLUS_UP_DEBOUNCE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STYLUS_UP_DEBOUNCE_EN` reader - Stylus Up Debounce Function Select"]
+#[doc = "Field `stylus_up_debounce_en` reader - Stylus Up Debounce Function Select"]
 pub type STYLUS_UP_DEBOUNCE_EN_R = crate::BitReader<STYLUS_UP_DEBOUNCE_EN_A>;
 impl STYLUS_UP_DEBOUNCE_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -75,7 +75,7 @@ impl STYLUS_UP_DEBOUNCE_EN_R {
         *self == STYLUS_UP_DEBOUNCE_EN_A::ENABLE
     }
 }
-#[doc = "Field `STYLUS_UP_DEBOUNCE_EN` writer - Stylus Up Debounce Function Select"]
+#[doc = "Field `stylus_up_debounce_en` writer - Stylus Up Debounce Function Select"]
 pub type STYLUS_UP_DEBOUNCE_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_CTRL1_SPEC, STYLUS_UP_DEBOUNCE_EN_A, O>;
 impl<'a, const O: u8> STYLUS_UP_DEBOUNCE_EN_W<'a, O> {
@@ -104,7 +104,7 @@ impl From<CHOPPER_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHOPPER_EN` reader - T-sensor Chopping Enable"]
+#[doc = "Field `chopper_en` reader - T-sensor Chopping Enable"]
 pub type CHOPPER_EN_R = crate::BitReader<CHOPPER_EN_A>;
 impl CHOPPER_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -126,7 +126,7 @@ impl CHOPPER_EN_R {
         *self == CHOPPER_EN_A::ENABLE
     }
 }
-#[doc = "Field `CHOPPER_EN` writer - T-sensor Chopping Enable"]
+#[doc = "Field `chopper_en` writer - T-sensor Chopping Enable"]
 pub type CHOPPER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, CHOPPER_EN_A, O>;
 impl<'a, const O: u8> CHOPPER_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -152,7 +152,7 @@ impl From<TOUCH_PAN_CALI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TOUCH_PAN_CALI_EN` reader - Touch Panel Calibration"]
+#[doc = "Field `touch_pan_cali_en` reader - Touch Panel Calibration"]
 pub type TOUCH_PAN_CALI_EN_R = crate::BitReader<TOUCH_PAN_CALI_EN_A>;
 impl TOUCH_PAN_CALI_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -169,7 +169,7 @@ impl TOUCH_PAN_CALI_EN_R {
         *self == TOUCH_PAN_CALI_EN_A::START
     }
 }
-#[doc = "Field `TOUCH_PAN_CALI_EN` writer - Touch Panel Calibration"]
+#[doc = "Field `touch_pan_cali_en` writer - Touch Panel Calibration"]
 pub type TOUCH_PAN_CALI_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TOUCH_PAN_CALI_EN_A, O>;
 impl<'a, const O: u8> TOUCH_PAN_CALI_EN_W<'a, O> {
@@ -193,7 +193,7 @@ impl From<TP_DUAL_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_DUAL_EN` reader - Touch Panel Double Point Enable"]
+#[doc = "Field `tp_dual_en` reader - Touch Panel Double Point Enable"]
 pub type TP_DUAL_EN_R = crate::BitReader<TP_DUAL_EN_A>;
 impl TP_DUAL_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -215,7 +215,7 @@ impl TP_DUAL_EN_R {
         *self == TP_DUAL_EN_A::ENABLE
     }
 }
-#[doc = "Field `TP_DUAL_EN` writer - Touch Panel Double Point Enable"]
+#[doc = "Field `tp_dual_en` writer - Touch Panel Double Point Enable"]
 pub type TP_DUAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_DUAL_EN_A, O>;
 impl<'a, const O: u8> TP_DUAL_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -243,7 +243,7 @@ impl From<TP_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_EN` reader - TP Function Enable"]
+#[doc = "Field `tp_en` reader - TP Function Enable"]
 pub type TP_EN_R = crate::BitReader<TP_EN_A>;
 impl TP_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -265,7 +265,7 @@ impl TP_EN_R {
         *self == TP_EN_A::ENABLE
     }
 }
-#[doc = "Field `TP_EN` writer - TP Function Enable"]
+#[doc = "Field `tp_en` writer - TP Function Enable"]
 pub type TP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_EN_A, O>;
 impl<'a, const O: u8> TP_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -285,7 +285,7 @@ pub enum TP_MODE_SELECT_A {
     #[doc = "0: `0`"]
     TP = 0,
     #[doc = "1: `1`"]
-    AUXILIARYADC = 1,
+    AUXILIARY_ADC = 1,
 }
 impl From<TP_MODE_SELECT_A> for bool {
     #[inline(always)]
@@ -293,7 +293,7 @@ impl From<TP_MODE_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_MODE_SELECT` reader - Touch Panel Mode and Auxiliary ADC Mode Select"]
+#[doc = "Field `tp_mode_select` reader - Touch Panel Mode and Auxiliary ADC Mode Select"]
 pub type TP_MODE_SELECT_R = crate::BitReader<TP_MODE_SELECT_A>;
 impl TP_MODE_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -301,7 +301,7 @@ impl TP_MODE_SELECT_R {
     pub fn variant(&self) -> TP_MODE_SELECT_A {
         match self.bits {
             false => TP_MODE_SELECT_A::TP,
-            true => TP_MODE_SELECT_A::AUXILIARYADC,
+            true => TP_MODE_SELECT_A::AUXILIARY_ADC,
         }
     }
     #[doc = "Checks if the value of the field is `TP`"]
@@ -309,13 +309,13 @@ impl TP_MODE_SELECT_R {
     pub fn is_tp(&self) -> bool {
         *self == TP_MODE_SELECT_A::TP
     }
-    #[doc = "Checks if the value of the field is `AUXILIARYADC`"]
+    #[doc = "Checks if the value of the field is `AUXILIARY_ADC`"]
     #[inline(always)]
     pub fn is_auxiliary_adc(&self) -> bool {
-        *self == TP_MODE_SELECT_A::AUXILIARYADC
+        *self == TP_MODE_SELECT_A::AUXILIARY_ADC
     }
 }
-#[doc = "Field `TP_MODE_SELECT` writer - Touch Panel Mode and Auxiliary ADC Mode Select"]
+#[doc = "Field `tp_mode_select` writer - Touch Panel Mode and Auxiliary ADC Mode Select"]
 pub type TP_MODE_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_MODE_SELECT_A, O>;
 impl<'a, const O: u8> TP_MODE_SELECT_W<'a, O> {
@@ -327,7 +327,7 @@ impl<'a, const O: u8> TP_MODE_SELECT_W<'a, O> {
     #[doc = "`1`"]
     #[inline(always)]
     pub fn auxiliary_adc(self) -> &'a mut W {
-        self.variant(TP_MODE_SELECT_A::AUXILIARYADC)
+        self.variant(TP_MODE_SELECT_A::AUXILIARY_ADC)
     }
 }
 #[doc = "Analog Input Channel Select\n\nValue on reset: 0"]
@@ -344,7 +344,7 @@ impl From<ADC_CHAN_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ADC_CHAN(0-3)_SELECT` reader - Analog Input Channel Select"]
+#[doc = "Fields `adc_chan(0-3)_select` reader - Analog Input Channel Select"]
 pub type ADC_CHAN_SELECT_R = crate::BitReader<ADC_CHAN_SELECT_A>;
 impl ADC_CHAN_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -366,7 +366,7 @@ impl ADC_CHAN_SELECT_R {
         *self == ADC_CHAN_SELECT_A::ENABLE
     }
 }
-#[doc = "Fields `ADC_CHAN(0-3)_SELECT` writer - Analog Input Channel Select"]
+#[doc = "Fields `adc_chan(0-3)_select` writer - Analog Input Channel Select"]
 pub type ADC_CHAN_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_CTRL1_SPEC, ADC_CHAN_SELECT_A, O>;
 impl<'a, const O: u8> ADC_CHAN_SELECT_W<'a, O> {
@@ -524,7 +524,7 @@ impl crate::Readable for TP_CTRL1_SPEC {
 impl crate::Writable for TP_CTRL1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TP_CTRL1 to value 0"]
+#[doc = "`reset()` method sets tp_ctrl1 to value 0"]
 impl crate::Resettable for TP_CTRL1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

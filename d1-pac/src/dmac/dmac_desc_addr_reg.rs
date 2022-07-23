@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_DESC_ADDR_REG%s` reader"]
+#[doc = "Register `dmac_desc_addr_reg%s` reader"]
 pub struct R(crate::R<DMAC_DESC_ADDR_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_DESC_ADDR_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMAC_DESC_ADDR_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMAC_DESC_ADDR_REG%s` writer"]
+#[doc = "Register `dmac_desc_addr_reg%s` writer"]
 pub struct W(crate::W<DMAC_DESC_ADDR_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMAC_DESC_ADDR_REG_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<DMAC_DESC_ADDR_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DMA_DESC_ADDR` reader - Lower 30 bits of DMA channel descriptor address"]
+#[doc = "Field `dma_desc_addr` reader - Lower 30 bits of DMA channel descriptor address"]
 pub type DMA_DESC_ADDR_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `DMA_DESC_ADDR` writer - Lower 30 bits of DMA channel descriptor address"]
+#[doc = "Field `dma_desc_addr` writer - Lower 30 bits of DMA channel descriptor address"]
 pub type DMA_DESC_ADDR_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, DMAC_DESC_ADDR_REG_SPEC, u32, u32, 30, O>;
-#[doc = "Field `DMA_DESC_HIGH_ADDR` reader - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
+#[doc = "Field `dma_desc_high_addr` reader - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
 pub type DMA_DESC_HIGH_ADDR_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DMA_DESC_HIGH_ADDR` writer - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
+#[doc = "Field `dma_desc_high_addr` writer - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
 pub type DMA_DESC_HIGH_ADDR_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, DMAC_DESC_ADDR_REG_SPEC, u8, u8, 2, O>;
 impl R {
@@ -87,7 +87,7 @@ impl crate::Readable for DMAC_DESC_ADDR_REG_SPEC {
 impl crate::Writable for DMAC_DESC_ADDR_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMAC_DESC_ADDR_REG%s to value 0"]
+#[doc = "`reset()` method sets dmac_desc_addr_reg%s to value 0"]
 impl crate::Resettable for DMAC_DESC_ADDR_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

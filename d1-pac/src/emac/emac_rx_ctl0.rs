@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_RX_CTL0` reader"]
+#[doc = "Register `emac_rx_ctl0` reader"]
 pub struct R(crate::R<EMAC_RX_CTL0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_RX_CTL0_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_RX_CTL0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_RX_CTL0` writer"]
+#[doc = "Register `emac_rx_ctl0` writer"]
 pub struct W(crate::W<EMAC_RX_CTL0_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_RX_CTL0_SPEC>;
@@ -48,7 +48,7 @@ impl From<RX_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_EN` reader - Enable Receiver"]
+#[doc = "Field `rx_en` reader - Enable Receiver"]
 pub type RX_EN_R = crate::BitReader<RX_EN_A>;
 impl RX_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RX_EN_R {
         *self == RX_EN_A::ENABLE
     }
 }
-#[doc = "Field `RX_EN` writer - Enable Receiver"]
+#[doc = "Field `rx_en` writer - Enable Receiver"]
 pub type RX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_EN_A, O>;
 impl<'a, const O: u8> RX_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<RX_FRM_LEN_CTL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_FRM_LEN_CTL` reader - Frame Receive Length Control"]
+#[doc = "Field `rx_frm_len_ctl` reader - Frame Receive Length Control"]
 pub type RX_FRM_LEN_CTL_R = crate::BitReader<RX_FRM_LEN_CTL_A>;
 impl RX_FRM_LEN_CTL_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl RX_FRM_LEN_CTL_R {
         *self == RX_FRM_LEN_CTL_A::B16384
     }
 }
-#[doc = "Field `RX_FRM_LEN_CTL` writer - Frame Receive Length Control"]
+#[doc = "Field `rx_frm_len_ctl` writer - Frame Receive Length Control"]
 pub type RX_FRM_LEN_CTL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_FRM_LEN_CTL_A, O>;
 impl<'a, const O: u8> RX_FRM_LEN_CTL_W<'a, O> {
@@ -149,7 +149,7 @@ impl From<JUMBO_FRM_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `JUMBO_FRM_EN` reader - Jumbo Frame Enable"]
+#[doc = "Field `jumbo_frm_en` reader - Jumbo Frame Enable"]
 pub type JUMBO_FRM_EN_R = crate::BitReader<JUMBO_FRM_EN_A>;
 impl JUMBO_FRM_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -171,7 +171,7 @@ impl JUMBO_FRM_EN_R {
         *self == JUMBO_FRM_EN_A::ENABLE
     }
 }
-#[doc = "Field `JUMBO_FRM_EN` writer - Jumbo Frame Enable"]
+#[doc = "Field `jumbo_frm_en` writer - Jumbo Frame Enable"]
 pub type JUMBO_FRM_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, JUMBO_FRM_EN_A, O>;
 impl<'a, const O: u8> JUMBO_FRM_EN_W<'a, O> {
@@ -186,9 +186,9 @@ impl<'a, const O: u8> JUMBO_FRM_EN_W<'a, O> {
         self.variant(JUMBO_FRM_EN_A::ENABLE)
     }
 }
-#[doc = "Field `STRIP_FCS` reader - "]
+#[doc = "Field `strip_fcs` reader - "]
 pub type STRIP_FCS_R = crate::BitReader<bool>;
-#[doc = "Field `STRIP_FCS` writer - "]
+#[doc = "Field `strip_fcs` writer - "]
 pub type STRIP_FCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, O>;
 #[doc = "Check CRC Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -204,7 +204,7 @@ impl From<CHECK_CRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHECK_CRC` reader - Check CRC Enable"]
+#[doc = "Field `check_crc` reader - Check CRC Enable"]
 pub type CHECK_CRC_R = crate::BitReader<CHECK_CRC_A>;
 impl CHECK_CRC_R {
     #[doc = "Get enumerated values variant"]
@@ -226,7 +226,7 @@ impl CHECK_CRC_R {
         *self == CHECK_CRC_A::CHECK
     }
 }
-#[doc = "Field `CHECK_CRC` writer - Check CRC Enable"]
+#[doc = "Field `check_crc` writer - Check CRC Enable"]
 pub type CHECK_CRC_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, CHECK_CRC_A, O>;
 impl<'a, const O: u8> CHECK_CRC_W<'a, O> {
@@ -255,7 +255,7 @@ impl From<RX_PAUSE_FRM_MD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_PAUSE_FRM_MD` reader - "]
+#[doc = "Field `rx_pause_frm_md` reader - "]
 pub type RX_PAUSE_FRM_MD_R = crate::BitReader<RX_PAUSE_FRM_MD_A>;
 impl RX_PAUSE_FRM_MD_R {
     #[doc = "Get enumerated values variant"]
@@ -277,7 +277,7 @@ impl RX_PAUSE_FRM_MD_R {
         *self == RX_PAUSE_FRM_MD_A::ALSO_UNICAST_MAC0
     }
 }
-#[doc = "Field `RX_PAUSE_FRM_MD` writer - "]
+#[doc = "Field `rx_pause_frm_md` writer - "]
 pub type RX_PAUSE_FRM_MD_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_PAUSE_FRM_MD_A, O>;
 impl<'a, const O: u8> RX_PAUSE_FRM_MD_W<'a, O> {
@@ -292,9 +292,9 @@ impl<'a, const O: u8> RX_PAUSE_FRM_MD_W<'a, O> {
         self.variant(RX_PAUSE_FRM_MD_A::ALSO_UNICAST_MAC0)
     }
 }
-#[doc = "Field `RX_FLOW_CTL_EN` reader - "]
+#[doc = "Field `rx_flow_ctl_en` reader - "]
 pub type RX_FLOW_CTL_EN_R = crate::BitReader<bool>;
-#[doc = "Field `RX_FLOW_CTL_EN` writer - "]
+#[doc = "Field `rx_flow_ctl_en` writer - "]
 pub type RX_FLOW_CTL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 31 - Enable Receiver"]
@@ -389,7 +389,7 @@ impl crate::Readable for EMAC_RX_CTL0_SPEC {
 impl crate::Writable for EMAC_RX_CTL0_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_RX_CTL0 to value 0"]
+#[doc = "`reset()` method sets emac_rx_ctl0 to value 0"]
 impl crate::Resettable for EMAC_RX_CTL0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

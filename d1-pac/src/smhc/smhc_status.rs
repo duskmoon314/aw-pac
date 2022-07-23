@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_STATUS` reader"]
+#[doc = "Register `smhc_status` reader"]
 pub struct R(crate::R<SMHC_STATUS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_STATUS_SPEC>;
@@ -13,13 +13,13 @@ impl From<crate::R<SMHC_STATUS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `DMA_REQ` reader - DMA Request"]
+#[doc = "Field `dma_req` reader - DMA Request"]
 pub type DMA_REQ_R = crate::BitReader<bool>;
-#[doc = "Field `FIFO_LEVEL` reader - FIFO Level"]
+#[doc = "Field `fifo_level` reader - FIFO Level"]
 pub type FIFO_LEVEL_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `RESP_IDX` reader - Response Index"]
+#[doc = "Field `resp_idx` reader - Response Index"]
 pub type RESP_IDX_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `FSM_BUSY` reader - Data FSM Busy"]
+#[doc = "Field `fsm_busy` reader - Data FSM Busy"]
 pub type FSM_BUSY_R = crate::BitReader<bool>;
 #[doc = "Card Data Busy\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -35,7 +35,7 @@ impl From<CARD_BUSY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CARD_BUSY` reader - Card Data Busy"]
+#[doc = "Field `card_busy` reader - Card Data Busy"]
 pub type CARD_BUSY_R = crate::BitReader<CARD_BUSY_A>;
 impl CARD_BUSY_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl From<CARD_PRESENT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CARD_PRESENT` reader - Data\\[3\\]
+#[doc = "Field `card_present` reader - Data\\[3\\]
 Statuss"]
 pub type CARD_PRESENT_R = crate::BitReader<CARD_PRESENT_A>;
 impl CARD_PRESENT_R {
@@ -138,7 +138,7 @@ impl From<FSM_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FSM_STA` reader - Command FSM States"]
+#[doc = "Field `fsm_sta` reader - Command FSM States"]
 pub type FSM_STA_R = crate::FieldReader<u8, FSM_STA_A>;
 impl FSM_STA_R {
     #[doc = "Get enumerated values variant"]
@@ -259,7 +259,7 @@ impl From<FIFO_FULL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_FULL` reader - sFIFO Full"]
+#[doc = "Field `fifo_full` reader - sFIFO Full"]
 pub type FIFO_FULL_R = crate::BitReader<FIFO_FULL_A>;
 impl FIFO_FULL_R {
     #[doc = "Get enumerated values variant"]
@@ -295,7 +295,7 @@ impl From<FIFO_EMPTY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_EMPTY` reader - FIFO Empty"]
+#[doc = "Field `fifo_empty` reader - FIFO Empty"]
 pub type FIFO_EMPTY_R = crate::BitReader<FIFO_EMPTY_A>;
 impl FIFO_EMPTY_R {
     #[doc = "Get enumerated values variant"]
@@ -331,7 +331,7 @@ impl From<FIFO_TX_LEVEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_TX_LEVEL` reader - FIFO TX Water Level Flag"]
+#[doc = "Field `fifo_tx_level` reader - FIFO TX Water Level Flag"]
 pub type FIFO_TX_LEVEL_R = crate::BitReader<FIFO_TX_LEVEL_A>;
 impl FIFO_TX_LEVEL_R {
     #[doc = "Get enumerated values variant"]
@@ -367,7 +367,7 @@ impl From<FIFO_RX_LEVEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_RX_LEVEL` reader - FIFO RX Water Level Flag"]
+#[doc = "Field `fifo_rx_level` reader - FIFO RX Water Level Flag"]
 pub type FIFO_RX_LEVEL_R = crate::BitReader<FIFO_RX_LEVEL_A>;
 impl FIFO_RX_LEVEL_R {
     #[doc = "Get enumerated values variant"]
@@ -456,7 +456,7 @@ impl crate::RegisterSpec for SMHC_STATUS_SPEC {
 impl crate::Readable for SMHC_STATUS_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets SMHC_STATUS to value 0"]
+#[doc = "`reset()` method sets smhc_status to value 0"]
 impl crate::Resettable for SMHC_STATUS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

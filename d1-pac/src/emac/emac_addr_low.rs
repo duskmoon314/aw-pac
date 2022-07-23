@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_ADDR_LOW%s` reader"]
+#[doc = "Register `emac_addr_low%s` reader"]
 pub struct R(crate::R<EMAC_ADDR_LOW_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_ADDR_LOW_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_ADDR_LOW_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_ADDR_LOW%s` writer"]
+#[doc = "Register `emac_addr_low%s` writer"]
 pub struct W(crate::W<EMAC_ADDR_LOW_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_ADDR_LOW_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for EMAC_ADDR_LOW_SPEC {
 impl crate::Writable for EMAC_ADDR_LOW_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_ADDR_LOW%s to value 0"]
+#[doc = "`reset()` method sets emac_addr_low%s to value 0"]
 impl crate::Resettable for EMAC_ADDR_LOW_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_DRV_INT_CTRL` reader"]
+#[doc = "Register `twi_drv_int_ctrl` reader"]
 pub struct R(crate::R<TWI_DRV_INT_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TWI_DRV_INT_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TWI_DRV_INT_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TWI_DRV_INT_CTRL` writer"]
+#[doc = "Register `twi_drv_int_ctrl` writer"]
 pub struct W(crate::W<TWI_DRV_INT_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TWI_DRV_INT_CTRL_SPEC>;
@@ -173,7 +173,7 @@ impl crate::Readable for TWI_DRV_INT_CTRL_SPEC {
 impl crate::Writable for TWI_DRV_INT_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TWI_DRV_INT_CTRL to value 0"]
+#[doc = "`reset()` method sets twi_drv_int_ctrl to value 0"]
 impl crate::Resettable for TWI_DRV_INT_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

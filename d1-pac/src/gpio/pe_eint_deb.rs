@@ -34,18 +34,18 @@ impl From<crate::W<PE_EINT_DEB_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DEB_CLK_PRE_SCALE` reader - Debounce Clock Pre_scale n"]
+#[doc = "Field `deb_clk_pre_scale` reader - Debounce Clock Pre_scale n"]
 pub type DEB_CLK_PRE_SCALE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DEB_CLK_PRE_SCALE` writer - Debounce Clock Pre_scale n"]
+#[doc = "Field `deb_clk_pre_scale` writer - Debounce Clock Pre_scale n"]
 pub type DEB_CLK_PRE_SCALE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_EINT_DEB_SPEC, u8, u8, 3, O>;
 #[doc = "PIO Interrupt Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO_INT_CLK_SELECT_A {
     #[doc = "0: `0`"]
-    LOSC_32KHZ = 0,
+    LOSC_32K_HZ = 0,
     #[doc = "1: `1`"]
-    HOSC_24MHZ = 1,
+    HOSC_24M_HZ = 1,
 }
 impl From<PIO_INT_CLK_SELECT_A> for bool {
     #[inline(always)]
@@ -53,41 +53,41 @@ impl From<PIO_INT_CLK_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PIO_INT_CLK_SELECT` reader - PIO Interrupt Clock Select"]
+#[doc = "Field `pio_int_clk_select` reader - PIO Interrupt Clock Select"]
 pub type PIO_INT_CLK_SELECT_R = crate::BitReader<PIO_INT_CLK_SELECT_A>;
 impl PIO_INT_CLK_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
     pub fn variant(&self) -> PIO_INT_CLK_SELECT_A {
         match self.bits {
-            false => PIO_INT_CLK_SELECT_A::LOSC_32KHZ,
-            true => PIO_INT_CLK_SELECT_A::HOSC_24MHZ,
+            false => PIO_INT_CLK_SELECT_A::LOSC_32K_HZ,
+            true => PIO_INT_CLK_SELECT_A::HOSC_24M_HZ,
         }
     }
-    #[doc = "Checks if the value of the field is `LOSC_32KHZ`"]
+    #[doc = "Checks if the value of the field is `LOSC_32K_HZ`"]
     #[inline(always)]
-    pub fn is_losc_32khz(&self) -> bool {
-        *self == PIO_INT_CLK_SELECT_A::LOSC_32KHZ
+    pub fn is_losc_32k_hz(&self) -> bool {
+        *self == PIO_INT_CLK_SELECT_A::LOSC_32K_HZ
     }
-    #[doc = "Checks if the value of the field is `HOSC_24MHZ`"]
+    #[doc = "Checks if the value of the field is `HOSC_24M_HZ`"]
     #[inline(always)]
-    pub fn is_hosc_24mhz(&self) -> bool {
-        *self == PIO_INT_CLK_SELECT_A::HOSC_24MHZ
+    pub fn is_hosc_24m_hz(&self) -> bool {
+        *self == PIO_INT_CLK_SELECT_A::HOSC_24M_HZ
     }
 }
-#[doc = "Field `PIO_INT_CLK_SELECT` writer - PIO Interrupt Clock Select"]
+#[doc = "Field `pio_int_clk_select` writer - PIO Interrupt Clock Select"]
 pub type PIO_INT_CLK_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PE_EINT_DEB_SPEC, PIO_INT_CLK_SELECT_A, O>;
 impl<'a, const O: u8> PIO_INT_CLK_SELECT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn losc_32khz(self) -> &'a mut W {
-        self.variant(PIO_INT_CLK_SELECT_A::LOSC_32KHZ)
+    pub fn losc_32k_hz(self) -> &'a mut W {
+        self.variant(PIO_INT_CLK_SELECT_A::LOSC_32K_HZ)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn hosc_24mhz(self) -> &'a mut W {
-        self.variant(PIO_INT_CLK_SELECT_A::HOSC_24MHZ)
+    pub fn hosc_24m_hz(self) -> &'a mut W {
+        self.variant(PIO_INT_CLK_SELECT_A::HOSC_24M_HZ)
     }
 }
 impl R {

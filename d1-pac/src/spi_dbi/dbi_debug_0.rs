@@ -1,4 +1,4 @@
-#[doc = "Register `DBI_DEBUG_0` reader"]
+#[doc = "Register `dbi_debug_0` reader"]
 pub struct R(crate::R<DBI_DEBUG_0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DBI_DEBUG_0_SPEC>;
@@ -66,7 +66,7 @@ impl crate::RegisterSpec for DBI_DEBUG_0_SPEC {
 impl crate::Readable for DBI_DEBUG_0_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets DBI_DEBUG_0 to value 0"]
+#[doc = "`reset()` method sets dbi_debug_0 to value 0"]
 impl crate::Resettable for DBI_DEBUG_0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

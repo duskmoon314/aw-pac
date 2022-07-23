@@ -1,4 +1,4 @@
-#[doc = "Register `TVD_CLAMP_AGC2` reader"]
+#[doc = "Register `tvd_clamp_agc2` reader"]
 pub struct R(crate::R<TVD_CLAMP_AGC2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TVD_CLAMP_AGC2_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TVD_CLAMP_AGC2_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TVD_CLAMP_AGC2` writer"]
+#[doc = "Register `tvd_clamp_agc2` writer"]
 pub struct W(crate::W<TVD_CLAMP_AGC2_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TVD_CLAMP_AGC2_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for TVD_CLAMP_AGC2_SPEC {
 impl crate::Writable for TVD_CLAMP_AGC2_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TVD_CLAMP_AGC2 to value 0"]
+#[doc = "`reset()` method sets tvd_clamp_agc2 to value 0"]
 impl crate::Resettable for TVD_CLAMP_AGC2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

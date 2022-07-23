@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_IDIE` reader"]
+#[doc = "Register `smhc_idie` reader"]
 pub struct R(crate::R<SMHC_IDIE_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_IDIE_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_IDIE_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_IDIE` writer"]
+#[doc = "Register `smhc_idie` writer"]
 pub struct W(crate::W<SMHC_IDIE_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_IDIE_SPEC>;
@@ -34,25 +34,25 @@ impl From<crate::W<SMHC_IDIE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ERR_SUM_INT_ENB` reader - Card Error Summary Interrupt Enable"]
+#[doc = "Field `err_sum_int_enb` reader - Card Error Summary Interrupt Enable"]
 pub type ERR_SUM_INT_ENB_R = crate::BitReader<bool>;
-#[doc = "Field `ERR_SUM_INT_ENB` writer - Card Error Summary Interrupt Enable"]
+#[doc = "Field `err_sum_int_enb` writer - Card Error Summary Interrupt Enable"]
 pub type ERR_SUM_INT_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, O>;
-#[doc = "Field `DES_UNAVL_INT_ENB` reader - Descriptor Unavailable Interrupt"]
+#[doc = "Field `des_unavl_int_enb` reader - Descriptor Unavailable Interrupt"]
 pub type DES_UNAVL_INT_ENB_R = crate::BitReader<bool>;
-#[doc = "Field `DES_UNAVL_INT_ENB` writer - Descriptor Unavailable Interrupt"]
+#[doc = "Field `des_unavl_int_enb` writer - Descriptor Unavailable Interrupt"]
 pub type DES_UNAVL_INT_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, O>;
-#[doc = "Field `FERR_INT_ENB` reader - Fatal Bus Error Enable"]
+#[doc = "Field `ferr_int_enb` reader - Fatal Bus Error Enable"]
 pub type FERR_INT_ENB_R = crate::BitReader<bool>;
-#[doc = "Field `FERR_INT_ENB` writer - Fatal Bus Error Enable"]
+#[doc = "Field `ferr_int_enb` writer - Fatal Bus Error Enable"]
 pub type FERR_INT_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, O>;
-#[doc = "Field `RX_INT_ENB` reader - Receive Interrupt Enables"]
+#[doc = "Field `rx_int_enb` reader - Receive Interrupt Enables"]
 pub type RX_INT_ENB_R = crate::BitReader<bool>;
-#[doc = "Field `RX_INT_ENB` writer - Receive Interrupt Enables"]
+#[doc = "Field `rx_int_enb` writer - Receive Interrupt Enables"]
 pub type RX_INT_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, O>;
-#[doc = "Field `TX_INT_ENB` reader - Transmit Interrupt Enable"]
+#[doc = "Field `tx_int_enb` reader - Transmit Interrupt Enable"]
 pub type TX_INT_ENB_R = crate::BitReader<bool>;
-#[doc = "Field `TX_INT_ENB` writer - Transmit Interrupt Enable"]
+#[doc = "Field `tx_int_enb` writer - Transmit Interrupt Enable"]
 pub type TX_INT_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDIE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 5 - Card Error Summary Interrupt Enable"]
@@ -127,7 +127,7 @@ impl crate::Readable for SMHC_IDIE_SPEC {
 impl crate::Writable for SMHC_IDIE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_IDIE to value 0"]
+#[doc = "`reset()` method sets smhc_idie to value 0"]
 impl crate::Resettable for SMHC_IDIE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

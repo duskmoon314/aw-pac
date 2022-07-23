@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_FDESC_ADDR_REG%s` reader"]
+#[doc = "Register `dmac_fdesc_addr_reg%s` reader"]
 pub struct R(crate::R<DMAC_FDESC_ADDR_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_FDESC_ADDR_REG_SPEC>;
@@ -22,7 +22,7 @@ impl crate::RegisterSpec for DMAC_FDESC_ADDR_REG_SPEC {
 impl crate::Readable for DMAC_FDESC_ADDR_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets DMAC_FDESC_ADDR_REG%s to value 0"]
+#[doc = "`reset()` method sets dmac_fdesc_addr_reg%s to value 0"]
 impl crate::Resettable for DMAC_FDESC_ADDR_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

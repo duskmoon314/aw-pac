@@ -1,4 +1,4 @@
-#[doc = "Register `THS_DATA_INTC` reader"]
+#[doc = "Register `ths_data_intc` reader"]
 pub struct R(crate::R<THS_DATA_INTC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_DATA_INTC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_DATA_INTC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_DATA_INTC` writer"]
+#[doc = "Register `ths_data_intc` writer"]
 pub struct W(crate::W<THS_DATA_INTC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_DATA_INTC_SPEC>;
@@ -48,7 +48,7 @@ impl From<THS_DATA_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `THS_DATA_IRQ_EN` reader - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
+#[doc = "Field `ths_data_irq_en` reader - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
 pub type THS_DATA_IRQ_EN_R = crate::BitReader<THS_DATA_IRQ_EN_A>;
 impl THS_DATA_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl THS_DATA_IRQ_EN_R {
         *self == THS_DATA_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `THS_DATA_IRQ_EN` writer - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
+#[doc = "Field `ths_data_irq_en` writer - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
 pub type THS_DATA_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, THS_DATA_INTC_SPEC, THS_DATA_IRQ_EN_A, O>;
 impl<'a, const O: u8> THS_DATA_IRQ_EN_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for THS_DATA_INTC_SPEC {
 impl crate::Writable for THS_DATA_INTC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_DATA_INTC to value 0"]
+#[doc = "`reset()` method sets ths_data_intc to value 0"]
 impl crate::Resettable for THS_DATA_INTC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

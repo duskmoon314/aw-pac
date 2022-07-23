@@ -1,4 +1,4 @@
-#[doc = "Register `TP_CTRL0` reader"]
+#[doc = "Register `tp_ctrl0` reader"]
 pub struct R(crate::R<TP_CTRL0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TP_CTRL0_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TP_CTRL0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TP_CTRL0` writer"]
+#[doc = "Register `tp_ctrl0` writer"]
 pub struct W(crate::W<TP_CTRL0_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TP_CTRL0_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<TP_CTRL0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ADC_FIRST_DLY` reader - ADC First Convert Delay Time (T_FCDT) Setting"]
+#[doc = "Field `adc_first_dly` reader - ADC First Convert Delay Time (T_FCDT) Setting"]
 pub type ADC_FIRST_DLY_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ADC_FIRST_DLY` writer - ADC First Convert Delay Time (T_FCDT) Setting"]
+#[doc = "Field `adc_first_dly` writer - ADC First Convert Delay Time (T_FCDT) Setting"]
 pub type ADC_FIRST_DLY_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u8, u8, 8, O>;
 #[doc = "ADC First Convert Delay Mode Select\n\nValue on reset: 0"]
@@ -53,7 +53,7 @@ impl From<ADC_FIRST_DLY_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC_FIRST_DLY_MODE` reader - ADC First Convert Delay Mode Select"]
+#[doc = "Field `adc_first_dly_mode` reader - ADC First Convert Delay Mode Select"]
 pub type ADC_FIRST_DLY_MODE_R = crate::BitReader<ADC_FIRST_DLY_MODE_A>;
 impl ADC_FIRST_DLY_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -75,7 +75,7 @@ impl ADC_FIRST_DLY_MODE_R {
         *self == ADC_FIRST_DLY_MODE_A::C16_256
     }
 }
-#[doc = "Field `ADC_FIRST_DLY_MODE` writer - ADC First Convert Delay Mode Select"]
+#[doc = "Field `adc_first_dly_mode` writer - ADC First Convert Delay Mode Select"]
 pub type ADC_FIRST_DLY_MODE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TP_CTRL0_SPEC, ADC_FIRST_DLY_MODE_A, O>;
 impl<'a, const O: u8> ADC_FIRST_DLY_MODE_W<'a, O> {
@@ -109,7 +109,7 @@ impl From<ADC_CLK_DIVIDER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADC_CLK_DIVIDER` reader - ADC Clock Divider (CLK_IN)"]
+#[doc = "Field `adc_clk_divider` reader - ADC Clock Divider (CLK_IN)"]
 pub type ADC_CLK_DIVIDER_R = crate::FieldReader<u8, ADC_CLK_DIVIDER_A>;
 impl ADC_CLK_DIVIDER_R {
     #[doc = "Get enumerated values variant"]
@@ -144,7 +144,7 @@ impl ADC_CLK_DIVIDER_R {
         *self == ADC_CLK_DIVIDER_A::C1
     }
 }
-#[doc = "Field `ADC_CLK_DIVIDER` writer - ADC Clock Divider (CLK_IN)"]
+#[doc = "Field `adc_clk_divider` writer - ADC Clock Divider (CLK_IN)"]
 pub type ADC_CLK_DIVIDER_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, ADC_CLK_DIVIDER_A, 2, O>;
 impl<'a, const O: u8> ADC_CLK_DIVIDER_W<'a, O> {
@@ -212,7 +212,7 @@ impl From<FS_DIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FS_DIV` reader - ADC Sample Frequency Divider"]
+#[doc = "Field `fs_div` reader - ADC Sample Frequency Divider"]
 pub type FS_DIV_R = crate::FieldReader<u8, FS_DIV_A>;
 impl FS_DIV_R {
     #[doc = "Get enumerated values variant"]
@@ -319,7 +319,7 @@ impl FS_DIV_R {
         *self == FS_DIV_A::C2P15
     }
 }
-#[doc = "Field `FS_DIV` writer - ADC Sample Frequency Divider"]
+#[doc = "Field `fs_div` writer - ADC Sample Frequency Divider"]
 pub type FS_DIV_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, FS_DIV_A, 4, O>;
 impl<'a, const O: u8> FS_DIV_W<'a, O> {
@@ -404,9 +404,9 @@ impl<'a, const O: u8> FS_DIV_W<'a, O> {
         self.variant(FS_DIV_A::C2P15)
     }
 }
-#[doc = "Field `TACQ` reader - Touch panel ADC acquire time"]
+#[doc = "Field `tacq` reader - Touch panel ADC acquire time"]
 pub type TACQ_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `TACQ` writer - Touch panel ADC acquire time"]
+#[doc = "Field `tacq` writer - Touch panel ADC acquire time"]
 pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
@@ -481,7 +481,7 @@ impl crate::Readable for TP_CTRL0_SPEC {
 impl crate::Writable for TP_CTRL0_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TP_CTRL0 to value 0"]
+#[doc = "`reset()` method sets tp_ctrl0 to value 0"]
 impl crate::Resettable for TP_CTRL0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

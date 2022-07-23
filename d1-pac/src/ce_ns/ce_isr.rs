@@ -1,4 +1,4 @@
-#[doc = "Register `CE_ISR` reader"]
+#[doc = "Register `ce_isr` reader"]
 pub struct R(crate::R<CE_ISR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_ISR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_ISR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_ISR` writer"]
+#[doc = "Register `ce_isr` writer"]
 pub struct W(crate::W<CE_ISR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_ISR_SPEC>;
@@ -49,7 +49,7 @@ impl From<TASK_PENDING_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `TASK(0-3)_PENDING` reader - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
+#[doc = "Fields `task(0-3)_pending` reader - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
 pub type TASK_PENDING_R = crate::FieldReader<u8, TASK_PENDING_A>;
 impl TASK_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl TASK_PENDING_R {
         *self == TASK_PENDING_A::FINISHED
     }
 }
-#[doc = "Fields `TASK(0-3)_PENDING` writer - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
+#[doc = "Fields `task(0-3)_pending` writer - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
 pub type TASK_PENDING_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CE_ISR_SPEC, u8, TASK_PENDING_A, 4, O>;
 impl<'a, const O: u8> TASK_PENDING_W<'a, O> {
@@ -160,7 +160,7 @@ impl crate::Readable for CE_ISR_SPEC {
 impl crate::Writable for CE_ISR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_ISR to value 0"]
+#[doc = "`reset()` method sets ce_isr to value 0"]
 impl crate::Resettable for CE_ISR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

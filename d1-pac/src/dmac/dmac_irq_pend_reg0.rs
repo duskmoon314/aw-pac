@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_IRQ_PEND_REG0` reader"]
+#[doc = "Register `dmac_irq_pend_reg0` reader"]
 pub struct R(crate::R<DMAC_IRQ_PEND_REG0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_IRQ_PEND_REG0_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMAC_IRQ_PEND_REG0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMAC_IRQ_PEND_REG0` writer"]
+#[doc = "Register `dmac_irq_pend_reg0` writer"]
 pub struct W(crate::W<DMAC_IRQ_PEND_REG0_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMAC_IRQ_PEND_REG0_SPEC>;
@@ -48,7 +48,7 @@ impl From<DMA_HLAF_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `DMA(0-7)_HLAF_IRQ_PEND` reader - The IRQ pending bit for the half package interrupt of DMA"]
+#[doc = "Fields `dma(0-7)_hlaf_irq_pend` reader - The IRQ pending bit for the half package interrupt of DMA"]
 pub type DMA_HLAF_IRQ_PEND_R = crate::BitReader<DMA_HLAF_IRQ_PEND_A>;
 impl DMA_HLAF_IRQ_PEND_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DMA_HLAF_IRQ_PEND_R {
         *self == DMA_HLAF_IRQ_PEND_A::PENDING
     }
 }
-#[doc = "Fields `DMA(0-7)_HLAF_IRQ_PEND` writer - The IRQ pending bit for the half package interrupt of DMA"]
+#[doc = "Fields `dma(0-7)_hlaf_irq_pend` writer - The IRQ pending bit for the half package interrupt of DMA"]
 pub type DMA_HLAF_IRQ_PEND_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_IRQ_PEND_REG0_SPEC, DMA_HLAF_IRQ_PEND_A, O>;
 impl<'a, const O: u8> DMA_HLAF_IRQ_PEND_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<DMA_PKG_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `DMA(0-7)_PKG_IRQ_PEND` reader - The IRQ pending bit for the package end interrupt of DMA"]
+#[doc = "Fields `dma(0-7)_pkg_irq_pend` reader - The IRQ pending bit for the package end interrupt of DMA"]
 pub type DMA_PKG_IRQ_PEND_R = crate::BitReader<DMA_PKG_IRQ_PEND_A>;
 impl DMA_PKG_IRQ_PEND_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl DMA_PKG_IRQ_PEND_R {
         *self == DMA_PKG_IRQ_PEND_A::PENDING
     }
 }
-#[doc = "Fields `DMA(0-7)_PKG_IRQ_PEND` writer - The IRQ pending bit for the package end interrupt of DMA"]
+#[doc = "Fields `dma(0-7)_pkg_irq_pend` writer - The IRQ pending bit for the package end interrupt of DMA"]
 pub type DMA_PKG_IRQ_PEND_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_IRQ_PEND_REG0_SPEC, DMA_PKG_IRQ_PEND_A, O>;
 impl<'a, const O: u8> DMA_PKG_IRQ_PEND_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<DMA_QUEUE_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `DMA(0-7)_QUEUE_IRQ_PEND` reader - The IRQ pending bit for the queue end interrupt of DMA"]
+#[doc = "Fields `dma(0-7)_queue_irq_pend` reader - The IRQ pending bit for the queue end interrupt of DMA"]
 pub type DMA_QUEUE_IRQ_PEND_R = crate::BitReader<DMA_QUEUE_IRQ_PEND_A>;
 impl DMA_QUEUE_IRQ_PEND_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl DMA_QUEUE_IRQ_PEND_R {
         *self == DMA_QUEUE_IRQ_PEND_A::PENDING
     }
 }
-#[doc = "Fields `DMA(0-7)_QUEUE_IRQ_PEND` writer - The IRQ pending bit for the queue end interrupt of DMA"]
+#[doc = "Fields `dma(0-7)_queue_irq_pend` writer - The IRQ pending bit for the queue end interrupt of DMA"]
 pub type DMA_QUEUE_IRQ_PEND_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_IRQ_PEND_REG0_SPEC, DMA_QUEUE_IRQ_PEND_A, O>;
 impl<'a, const O: u8> DMA_QUEUE_IRQ_PEND_W<'a, O> {
@@ -480,7 +480,7 @@ impl crate::Readable for DMAC_IRQ_PEND_REG0_SPEC {
 impl crate::Writable for DMAC_IRQ_PEND_REG0_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMAC_IRQ_PEND_REG0 to value 0"]
+#[doc = "`reset()` method sets dmac_irq_pend_reg0 to value 0"]
 impl crate::Resettable for DMAC_IRQ_PEND_REG0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

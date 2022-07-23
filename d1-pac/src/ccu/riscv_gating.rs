@@ -1,4 +1,4 @@
-#[doc = "Register `RISCV_GATING` reader"]
+#[doc = "Register `riscv_gating` reader"]
 pub struct R(crate::R<RISCV_GATING_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RISCV_GATING_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RISCV_GATING_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RISCV_GATING` writer"]
+#[doc = "Register `riscv_gating` writer"]
 pub struct W(crate::W<RISCV_GATING_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RISCV_GATING_SPEC>;
@@ -48,7 +48,7 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GATING` reader - Gating Clock"]
+#[doc = "Field `gating` reader - Gating Clock"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl GATING_R {
         *self == GATING_A::PASS
     }
 }
-#[doc = "Field `GATING` writer - Gating Clock"]
+#[doc = "Field `gating` writer - Gating Clock"]
 pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, RISCV_GATING_SPEC, GATING_A, O>;
 impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -84,9 +84,9 @@ impl<'a, const O: u8> GATING_W<'a, O> {
         self.variant(GATING_A::PASS)
     }
 }
-#[doc = "Field `GATING_FIELD` reader - "]
+#[doc = "Field `gating_field` reader - "]
 pub type GATING_FIELD_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `GATING_FIELD` writer - "]
+#[doc = "Field `gating_field` writer - "]
 pub type GATING_FIELD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, RISCV_GATING_SPEC, u16, u16, 16, O>;
 impl R {
@@ -132,7 +132,7 @@ impl crate::Readable for RISCV_GATING_SPEC {
 impl crate::Writable for RISCV_GATING_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RISCV_GATING to value 0"]
+#[doc = "`reset()` method sets riscv_gating to value 0"]
 impl crate::Resettable for RISCV_GATING_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

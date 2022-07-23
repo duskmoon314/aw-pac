@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_TX_FLOW_CTL` reader"]
+#[doc = "Register `emac_tx_flow_ctl` reader"]
 pub struct R(crate::R<EMAC_TX_FLOW_CTL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_TX_FLOW_CTL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_TX_FLOW_CTL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_TX_FLOW_CTL` writer"]
+#[doc = "Register `emac_tx_flow_ctl` writer"]
 pub struct W(crate::W<EMAC_TX_FLOW_CTL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_TX_FLOW_CTL_SPEC>;
@@ -34,19 +34,19 @@ impl From<crate::W<EMAC_TX_FLOW_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TX_FLOW_CTL_STA` reader - "]
+#[doc = "Field `tx_flow_ctl_sta` reader - "]
 pub type TX_FLOW_CTL_STA_R = crate::BitReader<bool>;
-#[doc = "Field `TX_FLOW_CTL_STA` writer - "]
+#[doc = "Field `tx_flow_ctl_sta` writer - "]
 pub type TX_FLOW_CTL_STA_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, bool, O>;
-#[doc = "Field `TX_PAUSE_FRM_SLOT` reader - "]
+#[doc = "Field `tx_pause_frm_slot` reader - "]
 pub type TX_PAUSE_FRM_SLOT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `TX_PAUSE_FRM_SLOT` writer - "]
+#[doc = "Field `tx_pause_frm_slot` writer - "]
 pub type TX_PAUSE_FRM_SLOT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, u8, u8, 2, O>;
-#[doc = "Field `PAUSE_TIME` reader - "]
+#[doc = "Field `pause_time` reader - "]
 pub type PAUSE_TIME_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `PAUSE_TIME` writer - "]
+#[doc = "Field `pause_time` writer - "]
 pub type PAUSE_TIME_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, u16, u16, 16, O>;
 #[doc = "\n\nValue on reset: 0"]
@@ -63,7 +63,7 @@ impl From<ZQP_FRM_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ZQP_FRM_EN` reader - "]
+#[doc = "Field `zqp_frm_en` reader - "]
 pub type ZQP_FRM_EN_R = crate::BitReader<ZQP_FRM_EN_A>;
 impl ZQP_FRM_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -85,7 +85,7 @@ impl ZQP_FRM_EN_R {
         *self == ZQP_FRM_EN_A::ENABLE
     }
 }
-#[doc = "Field `ZQP_FRM_EN` writer - "]
+#[doc = "Field `zqp_frm_en` writer - "]
 pub type ZQP_FRM_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, ZQP_FRM_EN_A, O>;
 impl<'a, const O: u8> ZQP_FRM_EN_W<'a, O> {
@@ -114,7 +114,7 @@ impl From<TX_FLOW_CTL_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_FLOW_CTL_EN` reader - TX Flow Control Enable"]
+#[doc = "Field `tx_flow_ctl_en` reader - TX Flow Control Enable"]
 pub type TX_FLOW_CTL_EN_R = crate::BitReader<TX_FLOW_CTL_EN_A>;
 impl TX_FLOW_CTL_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -136,7 +136,7 @@ impl TX_FLOW_CTL_EN_R {
         *self == TX_FLOW_CTL_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_FLOW_CTL_EN` writer - TX Flow Control Enable"]
+#[doc = "Field `tx_flow_ctl_en` writer - TX Flow Control Enable"]
 pub type TX_FLOW_CTL_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_TX_FLOW_CTL_SPEC, TX_FLOW_CTL_EN_A, O>;
 impl<'a, const O: u8> TX_FLOW_CTL_EN_W<'a, O> {
@@ -224,7 +224,7 @@ impl crate::Readable for EMAC_TX_FLOW_CTL_SPEC {
 impl crate::Writable for EMAC_TX_FLOW_CTL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_TX_FLOW_CTL to value 0"]
+#[doc = "`reset()` method sets emac_tx_flow_ctl to value 0"]
 impl crate::Resettable for EMAC_TX_FLOW_CTL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

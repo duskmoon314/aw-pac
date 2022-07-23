@@ -1,4 +1,4 @@
-#[doc = "Register `LED_RESET_TIMING_CTRL` reader"]
+#[doc = "Register `led_reset_timing_ctrl` reader"]
 pub struct R(crate::R<LED_RESET_TIMING_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LED_RESET_TIMING_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LED_RESET_TIMING_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LED_RESET_TIMING_CTRL` writer"]
+#[doc = "Register `led_reset_timing_ctrl` writer"]
 pub struct W(crate::W<LED_RESET_TIMING_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LED_RESET_TIMING_CTRL_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<LED_RESET_TIMING_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TR_TIME` reader - "]
+#[doc = "Field `tr_time` reader - "]
 pub type TR_TIME_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `TR_TIME` writer - "]
+#[doc = "Field `tr_time` writer - "]
 pub type TR_TIME_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 13, O>;
-#[doc = "Field `LED_NUM` reader - "]
+#[doc = "Field `led_num` reader - "]
 pub type LED_NUM_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `LED_NUM` writer - "]
+#[doc = "Field `led_num` writer - "]
 pub type LED_NUM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LED_RESET_TIMING_CTRL_SPEC, u16, u16, 10, O>;
 impl R {
@@ -87,7 +87,7 @@ impl crate::Readable for LED_RESET_TIMING_CTRL_SPEC {
 impl crate::Writable for LED_RESET_TIMING_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LED_RESET_TIMING_CTRL to value 0"]
+#[doc = "`reset()` method sets led_reset_timing_ctrl to value 0"]
 impl crate::Resettable for LED_RESET_TIMING_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

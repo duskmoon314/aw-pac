@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_FUNS` reader"]
+#[doc = "Register `smhc_funs` reader"]
 pub struct R(crate::R<SMHC_FUNS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_FUNS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_FUNS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_FUNS` writer"]
+#[doc = "Register `smhc_funs` writer"]
 pub struct W(crate::W<SMHC_FUNS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_FUNS_SPEC>;
@@ -48,7 +48,7 @@ impl From<ABT_RDATA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ABT_RDATA` reader - Abort Read Data"]
+#[doc = "Field `abt_rdata` reader - Abort Read Data"]
 pub type ABT_RDATA_R = crate::BitReader<ABT_RDATA_A>;
 impl ABT_RDATA_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ABT_RDATA_R {
         *self == ABT_RDATA_A::ABORT
     }
 }
-#[doc = "Field `ABT_RDATA` writer - Abort Read Data"]
+#[doc = "Field `abt_rdata` writer - Abort Read Data"]
 pub type ABT_RDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, ABT_RDATA_A, O>;
 impl<'a, const O: u8> ABT_RDATA_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<READ_WAIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `READ_WAIT` reader - Read Wait"]
+#[doc = "Field `read_wait` reader - Read Wait"]
 pub type READ_WAIT_R = crate::BitReader<READ_WAIT_A>;
 impl READ_WAIT_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl READ_WAIT_R {
         *self == READ_WAIT_A::ASSERT
     }
 }
-#[doc = "Field `READ_WAIT` writer - Read Wait"]
+#[doc = "Field `read_wait` writer - Read Wait"]
 pub type READ_WAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, READ_WAIT_A, O>;
 impl<'a, const O: u8> READ_WAIT_W<'a, O> {
     #[doc = "Clear SDIO read wait"]
@@ -148,7 +148,7 @@ impl From<HOST_SEND_MIMC_IRQRESQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HOST_SEND_MIMC_IRQRESQ` reader - Host Send MMC IRQ Response"]
+#[doc = "Field `host_send_mimc_irqresq` reader - Host Send MMC IRQ Response"]
 pub type HOST_SEND_MIMC_IRQRESQ_R = crate::BitReader<HOST_SEND_MIMC_IRQRESQ_A>;
 impl HOST_SEND_MIMC_IRQRESQ_R {
     #[doc = "Get enumerated values variant"]
@@ -170,7 +170,7 @@ impl HOST_SEND_MIMC_IRQRESQ_R {
         *self == HOST_SEND_MIMC_IRQRESQ_A::SEND
     }
 }
-#[doc = "Field `HOST_SEND_MIMC_IRQRESQ` writer - Host Send MMC IRQ Response"]
+#[doc = "Field `host_send_mimc_irqresq` writer - Host Send MMC IRQ Response"]
 pub type HOST_SEND_MIMC_IRQRESQ_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, HOST_SEND_MIMC_IRQRESQ_A, O>;
 impl<'a, const O: u8> HOST_SEND_MIMC_IRQRESQ_W<'a, O> {
@@ -238,7 +238,7 @@ impl crate::Readable for SMHC_FUNS_SPEC {
 impl crate::Writable for SMHC_FUNS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_FUNS to value 0"]
+#[doc = "`reset()` method sets smhc_funs to value 0"]
 impl crate::Resettable for SMHC_FUNS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

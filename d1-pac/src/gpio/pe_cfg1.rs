@@ -65,7 +65,7 @@ impl From<PE15_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE15_SELECT` reader - PE15 Select"]
+#[doc = "Field `pe15_select` reader - PE15 Select"]
 pub type PE15_SELECT_R = crate::FieldReader<u8, PE15_SELECT_A>;
 impl PE15_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -136,7 +136,7 @@ impl PE15_SELECT_R {
         *self == PE15_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE15_SELECT` writer - PE15 Select"]
+#[doc = "Field `pe15_select` writer - PE15 Select"]
 pub type PE15_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE15_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE15_SELECT_W<'a, O> {
@@ -222,7 +222,7 @@ impl From<PE14_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE14_SELECT` reader - PE14 Select"]
+#[doc = "Field `pe14_select` reader - PE14 Select"]
 pub type PE14_SELECT_R = crate::FieldReader<u8, PE14_SELECT_A>;
 impl PE14_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -293,7 +293,7 @@ impl PE14_SELECT_R {
         *self == PE14_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE14_SELECT` writer - PE14 Select"]
+#[doc = "Field `pe14_select` writer - PE14 Select"]
 pub type PE14_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE14_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE14_SELECT_W<'a, O> {
@@ -379,7 +379,7 @@ impl From<PE13_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE13_SELECT` reader - PE13 Select"]
+#[doc = "Field `pe13_select` reader - PE13 Select"]
 pub type PE13_SELECT_R = crate::FieldReader<u8, PE13_SELECT_A>;
 impl PE13_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -450,7 +450,7 @@ impl PE13_SELECT_R {
         *self == PE13_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE13_SELECT` writer - PE13 Select"]
+#[doc = "Field `pe13_select` writer - PE13 Select"]
 pub type PE13_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE13_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE13_SELECT_W<'a, O> {
@@ -534,7 +534,7 @@ impl From<PE12_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE12_SELECT` reader - PE12 Select"]
+#[doc = "Field `pe12_select` reader - PE12 Select"]
 pub type PE12_SELECT_R = crate::FieldReader<u8, PE12_SELECT_A>;
 impl PE12_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -599,7 +599,7 @@ impl PE12_SELECT_R {
         *self == PE12_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE12_SELECT` writer - PE12 Select"]
+#[doc = "Field `pe12_select` writer - PE12 Select"]
 pub type PE12_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE12_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE12_SELECT_W<'a, O> {
@@ -680,7 +680,7 @@ impl From<PE11_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE11_SELECT` reader - PE11 Select"]
+#[doc = "Field `pe11_select` reader - PE11 Select"]
 pub type PE11_SELECT_R = crate::FieldReader<u8, PE11_SELECT_A>;
 impl PE11_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -751,7 +751,7 @@ impl PE11_SELECT_R {
         *self == PE11_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE11_SELECT` writer - PE11 Select"]
+#[doc = "Field `pe11_select` writer - PE11 Select"]
 pub type PE11_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE11_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE11_SELECT_W<'a, O> {
@@ -837,7 +837,7 @@ impl From<PE10_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE10_SELECT` reader - PE10 Select"]
+#[doc = "Field `pe10_select` reader - PE10 Select"]
 pub type PE10_SELECT_R = crate::FieldReader<u8, PE10_SELECT_A>;
 impl PE10_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -908,7 +908,7 @@ impl PE10_SELECT_R {
         *self == PE10_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE10_SELECT` writer - PE10 Select"]
+#[doc = "Field `pe10_select` writer - PE10 Select"]
 pub type PE10_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE10_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE10_SELECT_W<'a, O> {
@@ -994,7 +994,7 @@ impl From<PE9_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE9_SELECT` reader - PE9 Select"]
+#[doc = "Field `pe9_select` reader - PE9 Select"]
 pub type PE9_SELECT_R = crate::FieldReader<u8, PE9_SELECT_A>;
 impl PE9_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -1065,7 +1065,7 @@ impl PE9_SELECT_R {
         *self == PE9_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE9_SELECT` writer - PE9 Select"]
+#[doc = "Field `pe9_select` writer - PE9 Select"]
 pub type PE9_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE9_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE9_SELECT_W<'a, O> {
@@ -1151,7 +1151,7 @@ impl From<PE8_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PE8_SELECT` reader - PE8 Select"]
+#[doc = "Field `pe8_select` reader - PE8 Select"]
 pub type PE8_SELECT_R = crate::FieldReader<u8, PE8_SELECT_A>;
 impl PE8_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -1222,7 +1222,7 @@ impl PE8_SELECT_R {
         *self == PE8_SELECT_A::IO_DISABLE
     }
 }
-#[doc = "Field `PE8_SELECT` writer - PE8 Select"]
+#[doc = "Field `pe8_select` writer - PE8 Select"]
 pub type PE8_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PE_CFG1_SPEC, u8, PE8_SELECT_A, 4, O>;
 impl<'a, const O: u8> PE8_SELECT_W<'a, O> {

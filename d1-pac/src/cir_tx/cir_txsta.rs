@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TXSTA` reader"]
+#[doc = "Register `cir_txsta` reader"]
 pub struct R(crate::R<CIR_TXSTA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TXSTA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TXSTA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TXSTA` writer"]
+#[doc = "Register `cir_txsta` writer"]
 pub struct W(crate::W<CIR_TXSTA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TXSTA_SPEC>;
@@ -48,7 +48,7 @@ impl From<STCT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STCT` reader - Status of CIR Transmitter"]
+#[doc = "Field `stct` reader - Status of CIR Transmitter"]
 pub type STCT_R = crate::BitReader<STCT_A>;
 impl STCT_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl STCT_R {
         *self == STCT_A::ACTIVE
     }
 }
-#[doc = "Field `DRQ` reader - DMA Request Flag"]
+#[doc = "Field `drq` reader - DMA Request Flag"]
 pub type DRQ_R = crate::BitReader<bool>;
 #[doc = "TX FIFO Available Interrupt Flag\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -86,7 +86,7 @@ impl From<TAI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAI` reader - TX FIFO Available Interrupt Flag"]
+#[doc = "Field `tai` reader - TX FIFO Available Interrupt Flag"]
 pub type TAI_R = crate::BitReader<TAI_A>;
 impl TAI_R {
     #[doc = "Get enumerated values variant"]
@@ -108,7 +108,7 @@ impl TAI_R {
         *self == TAI_A::AVAILABLE
     }
 }
-#[doc = "Field `TAI` writer - TX FIFO Available Interrupt Flag"]
+#[doc = "Field `tai` writer - TX FIFO Available Interrupt Flag"]
 pub type TAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXSTA_SPEC, TAI_A, O>;
 impl<'a, const O: u8> TAI_W<'a, O> {
     #[doc = "TX FIFO not available by its level"]
@@ -136,7 +136,7 @@ impl From<TPE_TUR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TPE_TUR` reader - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+#[doc = "Field `tpe_tur` reader - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
 pub type TPE_TUR_R = crate::BitReader<TPE_TUR_A>;
 impl TPE_TUR_R {
     #[doc = "Get enumerated values variant"]
@@ -158,7 +158,7 @@ impl TPE_TUR_R {
         *self == TPE_TUR_A::COMPLETE_OR_TRANSMIT
     }
 }
-#[doc = "Field `TPE_TUR` writer - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+#[doc = "Field `tpe_tur` writer - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
 pub type TPE_TUR_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_TXSTA_SPEC, TPE_TUR_A, O>;
 impl<'a, const O: u8> TPE_TUR_W<'a, O> {
     #[doc = "Transmissions of address, control and data fields not completed / No transmitter FIFO underrun"]
@@ -225,7 +225,7 @@ impl crate::Readable for CIR_TXSTA_SPEC {
 impl crate::Writable for CIR_TXSTA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TXSTA to value 0x02"]
+#[doc = "`reset()` method sets cir_txsta to value 0x02"]
 impl crate::Resettable for CIR_TXSTA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

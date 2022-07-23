@@ -1,4 +1,4 @@
-#[doc = "Register `CLK27M_FAN` reader"]
+#[doc = "Register `clk27m_fan` reader"]
 pub struct R(crate::R<CLK27M_FAN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CLK27M_FAN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CLK27M_FAN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CLK27M_FAN` writer"]
+#[doc = "Register `clk27m_fan` writer"]
 pub struct W(crate::W<CLK27M_FAN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CLK27M_FAN_SPEC>;
@@ -48,7 +48,7 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `GATING` reader - Gating for CLK27M"]
+#[doc = "Field `gating` reader - Gating for CLK27M"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl GATING_R {
         *self == GATING_A::ON
     }
 }
-#[doc = "Field `GATING` writer - Gating for CLK27M"]
+#[doc = "Field `gating` writer - Gating for CLK27M"]
 pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK27M_FAN_SPEC, GATING_A, O>;
 impl<'a, const O: u8> GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -99,7 +99,7 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
+#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -122,7 +122,7 @@ impl CLK_SRC_SEL_R {
         *self == CLK_SRC_SEL_A::PLL_VIDEO1_1X
     }
 }
-#[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
+#[doc = "Field `clk_src_sel` writer - Clock Source Select"]
 pub type CLK_SRC_SEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, CLK_SRC_SEL_A, 2, O>;
 impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
@@ -137,13 +137,13 @@ impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
         self.variant(CLK_SRC_SEL_A::PLL_VIDEO1_1X)
     }
 }
-#[doc = "Field `DIV1` reader - Factor N"]
+#[doc = "Field `div1` reader - Factor N"]
 pub type DIV1_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DIV1` writer - Factor N"]
+#[doc = "Field `div1` writer - Factor N"]
 pub type DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 2, O>;
-#[doc = "Field `DIV0` reader - Factor M"]
+#[doc = "Field `div0` reader - Factor M"]
 pub type DIV0_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DIV0` writer - Factor M"]
+#[doc = "Field `div0` writer - Factor M"]
 pub type DIV0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 31 - Gating for CLK27M"]
@@ -208,7 +208,7 @@ impl crate::Readable for CLK27M_FAN_SPEC {
 impl crate::Writable for CLK27M_FAN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CLK27M_FAN to value 0"]
+#[doc = "`reset()` method sets clk27m_fan to value 0"]
 impl crate::Resettable for CLK27M_FAN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

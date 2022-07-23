@@ -1,4 +1,4 @@
-#[doc = "Register `LRADC_CTRL` reader"]
+#[doc = "Register `lradc_ctrl` reader"]
 pub struct R(crate::R<LRADC_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LRADC_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LRADC_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LRADC_CTRL` writer"]
+#[doc = "Register `lradc_ctrl` writer"]
 pub struct W(crate::W<LRADC_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LRADC_CTRL_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<LRADC_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FIRST_CONVERT_DLY` reader - ADC First Convert Delay Setting"]
+#[doc = "Field `first_convert_dly` reader - ADC First Convert Delay Setting"]
 pub type FIRST_CONVERT_DLY_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `FIRST_CONVERT_DLY` writer - ADC First Convert Delay Setting"]
+#[doc = "Field `first_convert_dly` writer - ADC First Convert Delay Setting"]
 pub type FIRST_CONVERT_DLY_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 8, O>;
-#[doc = "Field `CONTINUE_TIME_SELECT` reader - Continuous Mode Time Select"]
+#[doc = "Field `continue_time_select` reader - Continuous Mode Time Select"]
 pub type CONTINUE_TIME_SELECT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `CONTINUE_TIME_SELECT` writer - Continuous Mode Time Select"]
+#[doc = "Field `continue_time_select` writer - Continuous Mode Time Select"]
 pub type CONTINUE_TIME_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Key Mode Select\n\nValue on reset: 0"]
@@ -61,7 +61,7 @@ impl From<KEY_MODE_SELECT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `KEY_MODE_SELECT` reader - Key Mode Select"]
+#[doc = "Field `key_mode_select` reader - Key Mode Select"]
 pub type KEY_MODE_SELECT_R = crate::FieldReader<u8, KEY_MODE_SELECT_A>;
 impl KEY_MODE_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -90,7 +90,7 @@ impl KEY_MODE_SELECT_R {
         *self == KEY_MODE_SELECT_A::CONTINUOUS
     }
 }
-#[doc = "Field `KEY_MODE_SELECT` writer - Key Mode Select"]
+#[doc = "Field `key_mode_select` writer - Key Mode Select"]
 pub type KEY_MODE_SELECT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, KEY_MODE_SELECT_A, 2, O>;
 impl<'a, const O: u8> KEY_MODE_SELECT_W<'a, O> {
@@ -110,9 +110,9 @@ impl<'a, const O: u8> KEY_MODE_SELECT_W<'a, O> {
         self.variant(KEY_MODE_SELECT_A::CONTINUOUS)
     }
 }
-#[doc = "Field `LEVELA_B_CNT` reader - Level A to B time threshold select"]
+#[doc = "Field `levela_b_cnt` reader - Level A to B time threshold select"]
 pub type LEVELA_B_CNT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `LEVELA_B_CNT` writer - Level A to B time threshold select"]
+#[doc = "Field `levela_b_cnt` writer - Level A to B time threshold select"]
 pub type LEVELA_B_CNT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, u8, 4, O>;
 #[doc = "LRADC Hold Key Enable\n\nValue on reset: 0"]
@@ -129,7 +129,7 @@ impl From<LRADC_HOLD_KEY_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LRADC_HOLD_KEY_EN` reader - LRADC Hold Key Enable"]
+#[doc = "Field `lradc_hold_key_en` reader - LRADC Hold Key Enable"]
 pub type LRADC_HOLD_KEY_EN_R = crate::BitReader<LRADC_HOLD_KEY_EN_A>;
 impl LRADC_HOLD_KEY_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -151,7 +151,7 @@ impl LRADC_HOLD_KEY_EN_R {
         *self == LRADC_HOLD_KEY_EN_A::ENABLE
     }
 }
-#[doc = "Field `LRADC_HOLD_KEY_EN` writer - LRADC Hold Key Enable"]
+#[doc = "Field `lradc_hold_key_en` writer - LRADC Hold Key Enable"]
 pub type LRADC_HOLD_KEY_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_HOLD_KEY_EN_A, O>;
 impl<'a, const O: u8> LRADC_HOLD_KEY_EN_W<'a, O> {
@@ -180,7 +180,7 @@ impl From<LRADC_CHANNEL_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LRADC_CHANNEL_EN` reader - LRADC Channel Enable"]
+#[doc = "Field `lradc_channel_en` reader - LRADC Channel Enable"]
 pub type LRADC_CHANNEL_EN_R = crate::BitReader<LRADC_CHANNEL_EN_A>;
 impl LRADC_CHANNEL_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -202,7 +202,7 @@ impl LRADC_CHANNEL_EN_R {
         *self == LRADC_CHANNEL_EN_A::ENABLE
     }
 }
-#[doc = "Field `LRADC_CHANNEL_EN` writer - LRADC Channel Enable"]
+#[doc = "Field `lradc_channel_en` writer - LRADC Channel Enable"]
 pub type LRADC_CHANNEL_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_CHANNEL_EN_A, O>;
 impl<'a, const O: u8> LRADC_CHANNEL_EN_W<'a, O> {
@@ -234,7 +234,7 @@ impl From<LEVELB_VOL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEVELB_VOL` reader - Level B Corresponding Data Value Setting (the real voltage value)"]
+#[doc = "Field `levelb_vol` reader - Level B Corresponding Data Value Setting (the real voltage value)"]
 pub type LEVELB_VOL_R = crate::FieldReader<u8, LEVELB_VOL_A>;
 impl LEVELB_VOL_R {
     #[doc = "Get enumerated values variant"]
@@ -263,7 +263,7 @@ impl LEVELB_VOL_R {
         *self == LEVELB_VOL_A::V33
     }
 }
-#[doc = "Field `LEVELB_VOL` writer - Level B Corresponding Data Value Setting (the real voltage value)"]
+#[doc = "Field `levelb_vol` writer - Level B Corresponding Data Value Setting (the real voltage value)"]
 pub type LEVELB_VOL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LRADC_CTRL_SPEC, u8, LEVELB_VOL_A, 2, O>;
 impl<'a, const O: u8> LEVELB_VOL_W<'a, O> {
@@ -302,7 +302,7 @@ impl From<LRADC_SAMPLE_RATE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LRADC_SAMPLE_RATE` reader - LRADC Sample Rate"]
+#[doc = "Field `lradc_sample_rate` reader - LRADC Sample Rate"]
 pub type LRADC_SAMPLE_RATE_R = crate::FieldReader<u8, LRADC_SAMPLE_RATE_A>;
 impl LRADC_SAMPLE_RATE_R {
     #[doc = "Get enumerated values variant"]
@@ -337,7 +337,7 @@ impl LRADC_SAMPLE_RATE_R {
         *self == LRADC_SAMPLE_RATE_A::R250
     }
 }
-#[doc = "Field `LRADC_SAMPLE_RATE` writer - LRADC Sample Rate"]
+#[doc = "Field `lradc_sample_rate` writer - LRADC Sample Rate"]
 pub type LRADC_SAMPLE_RATE_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, LRADC_CTRL_SPEC, u8, LRADC_SAMPLE_RATE_A, 2, O>;
 impl<'a, const O: u8> LRADC_SAMPLE_RATE_W<'a, O> {
@@ -376,7 +376,7 @@ impl From<LRADC_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LRADC_EN` reader - LRADC Enable"]
+#[doc = "Field `lradc_en` reader - LRADC Enable"]
 pub type LRADC_EN_R = crate::BitReader<LRADC_EN_A>;
 impl LRADC_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -398,7 +398,7 @@ impl LRADC_EN_R {
         *self == LRADC_EN_A::ENABLE
     }
 }
-#[doc = "Field `LRADC_EN` writer - LRADC Enable"]
+#[doc = "Field `lradc_en` writer - LRADC Enable"]
 pub type LRADC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LRADC_CTRL_SPEC, LRADC_EN_A, O>;
 impl<'a, const O: u8> LRADC_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -525,7 +525,7 @@ impl crate::Readable for LRADC_CTRL_SPEC {
 impl crate::Writable for LRADC_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LRADC_CTRL to value 0"]
+#[doc = "`reset()` method sets lradc_ctrl to value 0"]
 impl crate::Resettable for LRADC_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

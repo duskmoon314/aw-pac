@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_INT_EN` reader"]
+#[doc = "Register `emac_int_en` reader"]
 pub struct R(crate::R<EMAC_INT_EN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_INT_EN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_INT_EN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_INT_EN` writer"]
+#[doc = "Register `emac_int_en` writer"]
 pub struct W(crate::W<EMAC_INT_EN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_INT_EN_SPEC>;
@@ -48,7 +48,7 @@ impl From<RX_EARLY_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_EARLY_INT_EN` reader - Early Receive Interrupt"]
+#[doc = "Field `rx_early_int_en` reader - Early Receive Interrupt"]
 pub type RX_EARLY_INT_EN_R = crate::BitReader<RX_EARLY_INT_EN_A>;
 impl RX_EARLY_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RX_EARLY_INT_EN_R {
         *self == RX_EARLY_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `RX_EARLY_INT_EN` writer - Early Receive Interrupt"]
+#[doc = "Field `rx_early_int_en` writer - Early Receive Interrupt"]
 pub type RX_EARLY_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_EARLY_INT_EN_A, O>;
 impl<'a, const O: u8> RX_EARLY_INT_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<RX_OVERFLOW_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_OVERFLOW_INT_EN` reader - Receive Overflow Interrupt"]
+#[doc = "Field `rx_overflow_int_en` reader - Receive Overflow Interrupt"]
 pub type RX_OVERFLOW_INT_EN_R = crate::BitReader<RX_OVERFLOW_INT_EN_A>;
 impl RX_OVERFLOW_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl RX_OVERFLOW_INT_EN_R {
         *self == RX_OVERFLOW_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `RX_OVERFLOW_INT_EN` writer - Receive Overflow Interrupt"]
+#[doc = "Field `rx_overflow_int_en` writer - Receive Overflow Interrupt"]
 pub type RX_OVERFLOW_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_OVERFLOW_INT_EN_A, O>;
 impl<'a, const O: u8> RX_OVERFLOW_INT_EN_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<RX_TIMEOUT_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_TIMEOUT_INT_EN` reader - Receive Timeout Interrupt"]
+#[doc = "Field `rx_timeout_int_en` reader - Receive Timeout Interrupt"]
 pub type RX_TIMEOUT_INT_EN_R = crate::BitReader<RX_TIMEOUT_INT_EN_A>;
 impl RX_TIMEOUT_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl RX_TIMEOUT_INT_EN_R {
         *self == RX_TIMEOUT_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `RX_TIMEOUT_INT_EN` writer - Receive Timeout Interrupt"]
+#[doc = "Field `rx_timeout_int_en` writer - Receive Timeout Interrupt"]
 pub type RX_TIMEOUT_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_TIMEOUT_INT_EN_A, O>;
 impl<'a, const O: u8> RX_TIMEOUT_INT_EN_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<RX_DMA_STOPPED_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_DMA_STOPPED_INT_EN` reader - Receive DMA FSM Stopped Interrupt"]
+#[doc = "Field `rx_dma_stopped_int_en` reader - Receive DMA FSM Stopped Interrupt"]
 pub type RX_DMA_STOPPED_INT_EN_R = crate::BitReader<RX_DMA_STOPPED_INT_EN_A>;
 impl RX_DMA_STOPPED_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl RX_DMA_STOPPED_INT_EN_R {
         *self == RX_DMA_STOPPED_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `RX_DMA_STOPPED_INT_EN` writer - Receive DMA FSM Stopped Interrupt"]
+#[doc = "Field `rx_dma_stopped_int_en` writer - Receive DMA FSM Stopped Interrupt"]
 pub type RX_DMA_STOPPED_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_DMA_STOPPED_INT_EN_A, O>;
 impl<'a, const O: u8> RX_DMA_STOPPED_INT_EN_W<'a, O> {
@@ -252,7 +252,7 @@ impl From<RX_BUF_UA_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_BUF_UA_INT_EN` reader - Receive Buffer Unavailable Interrupt"]
+#[doc = "Field `rx_buf_ua_int_en` reader - Receive Buffer Unavailable Interrupt"]
 pub type RX_BUF_UA_INT_EN_R = crate::BitReader<RX_BUF_UA_INT_EN_A>;
 impl RX_BUF_UA_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -274,7 +274,7 @@ impl RX_BUF_UA_INT_EN_R {
         *self == RX_BUF_UA_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `RX_BUF_UA_INT_EN` writer - Receive Buffer Unavailable Interrupt"]
+#[doc = "Field `rx_buf_ua_int_en` writer - Receive Buffer Unavailable Interrupt"]
 pub type RX_BUF_UA_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_BUF_UA_INT_EN_A, O>;
 impl<'a, const O: u8> RX_BUF_UA_INT_EN_W<'a, O> {
@@ -303,7 +303,7 @@ impl From<RX_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_INT_EN` reader - Receive Interrupt"]
+#[doc = "Field `rx_int_en` reader - Receive Interrupt"]
 pub type RX_INT_EN_R = crate::BitReader<RX_INT_EN_A>;
 impl RX_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -325,7 +325,7 @@ impl RX_INT_EN_R {
         *self == RX_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `RX_INT_EN` writer - Receive Interrupt"]
+#[doc = "Field `rx_int_en` writer - Receive Interrupt"]
 pub type RX_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, RX_INT_EN_A, O>;
 impl<'a, const O: u8> RX_INT_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -353,7 +353,7 @@ impl From<TX_EARLY_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_EARLY_INT_EN` reader - Early Transmit Interrupt"]
+#[doc = "Field `tx_early_int_en` reader - Early Transmit Interrupt"]
 pub type TX_EARLY_INT_EN_R = crate::BitReader<TX_EARLY_INT_EN_A>;
 impl TX_EARLY_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -375,7 +375,7 @@ impl TX_EARLY_INT_EN_R {
         *self == TX_EARLY_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_EARLY_INT_EN` writer - Early Transmit Interrupt"]
+#[doc = "Field `tx_early_int_en` writer - Early Transmit Interrupt"]
 pub type TX_EARLY_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_EARLY_INT_EN_A, O>;
 impl<'a, const O: u8> TX_EARLY_INT_EN_W<'a, O> {
@@ -404,7 +404,7 @@ impl From<TX_UNDERFLOW_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_UNDERFLOW_INT_EN` reader - Transmit Underflow Interrupt"]
+#[doc = "Field `tx_underflow_int_en` reader - Transmit Underflow Interrupt"]
 pub type TX_UNDERFLOW_INT_EN_R = crate::BitReader<TX_UNDERFLOW_INT_EN_A>;
 impl TX_UNDERFLOW_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -426,7 +426,7 @@ impl TX_UNDERFLOW_INT_EN_R {
         *self == TX_UNDERFLOW_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_UNDERFLOW_INT_EN` writer - Transmit Underflow Interrupt"]
+#[doc = "Field `tx_underflow_int_en` writer - Transmit Underflow Interrupt"]
 pub type TX_UNDERFLOW_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_UNDERFLOW_INT_EN_A, O>;
 impl<'a, const O: u8> TX_UNDERFLOW_INT_EN_W<'a, O> {
@@ -455,7 +455,7 @@ impl From<TX_TIMEOUT_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_TIMEOUT_INT_EN` reader - Transmit Timeout Interrupt"]
+#[doc = "Field `tx_timeout_int_en` reader - Transmit Timeout Interrupt"]
 pub type TX_TIMEOUT_INT_EN_R = crate::BitReader<TX_TIMEOUT_INT_EN_A>;
 impl TX_TIMEOUT_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -477,7 +477,7 @@ impl TX_TIMEOUT_INT_EN_R {
         *self == TX_TIMEOUT_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_TIMEOUT_INT_EN` writer - Transmit Timeout Interrupt"]
+#[doc = "Field `tx_timeout_int_en` writer - Transmit Timeout Interrupt"]
 pub type TX_TIMEOUT_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_TIMEOUT_INT_EN_A, O>;
 impl<'a, const O: u8> TX_TIMEOUT_INT_EN_W<'a, O> {
@@ -506,7 +506,7 @@ impl From<TX_BUF_UA_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_BUF_UA_INT_EN` reader - Transmit Buffer Available Interrupt"]
+#[doc = "Field `tx_buf_ua_int_en` reader - Transmit Buffer Available Interrupt"]
 pub type TX_BUF_UA_INT_EN_R = crate::BitReader<TX_BUF_UA_INT_EN_A>;
 impl TX_BUF_UA_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -528,7 +528,7 @@ impl TX_BUF_UA_INT_EN_R {
         *self == TX_BUF_UA_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_BUF_UA_INT_EN` writer - Transmit Buffer Available Interrupt"]
+#[doc = "Field `tx_buf_ua_int_en` writer - Transmit Buffer Available Interrupt"]
 pub type TX_BUF_UA_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_BUF_UA_INT_EN_A, O>;
 impl<'a, const O: u8> TX_BUF_UA_INT_EN_W<'a, O> {
@@ -557,7 +557,7 @@ impl From<TX_DMA_STOPPED_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_DMA_STOPPED_INT_EN` reader - Transmit DMA FSM Stopped Interrupt"]
+#[doc = "Field `tx_dma_stopped_int_en` reader - Transmit DMA FSM Stopped Interrupt"]
 pub type TX_DMA_STOPPED_INT_EN_R = crate::BitReader<TX_DMA_STOPPED_INT_EN_A>;
 impl TX_DMA_STOPPED_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -579,7 +579,7 @@ impl TX_DMA_STOPPED_INT_EN_R {
         *self == TX_DMA_STOPPED_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_DMA_STOPPED_INT_EN` writer - Transmit DMA FSM Stopped Interrupt"]
+#[doc = "Field `tx_dma_stopped_int_en` writer - Transmit DMA FSM Stopped Interrupt"]
 pub type TX_DMA_STOPPED_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_DMA_STOPPED_INT_EN_A, O>;
 impl<'a, const O: u8> TX_DMA_STOPPED_INT_EN_W<'a, O> {
@@ -608,7 +608,7 @@ impl From<TX_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_INT_EN` reader - Transmit Interrupt"]
+#[doc = "Field `tx_int_en` reader - Transmit Interrupt"]
 pub type TX_INT_EN_R = crate::BitReader<TX_INT_EN_A>;
 impl TX_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -630,7 +630,7 @@ impl TX_INT_EN_R {
         *self == TX_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `TX_INT_EN` writer - Transmit Interrupt"]
+#[doc = "Field `tx_int_en` writer - Transmit Interrupt"]
 pub type TX_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_INT_EN_SPEC, TX_INT_EN_A, O>;
 impl<'a, const O: u8> TX_INT_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -787,7 +787,7 @@ impl crate::Readable for EMAC_INT_EN_SPEC {
 impl crate::Writable for EMAC_INT_EN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_INT_EN to value 0"]
+#[doc = "`reset()` method sets emac_int_en to value 0"]
 impl crate::Resettable for EMAC_INT_EN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

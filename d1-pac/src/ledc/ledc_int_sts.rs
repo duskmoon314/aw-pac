@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_INT_STS` reader"]
+#[doc = "Register `ledc_int_sts` reader"]
 pub struct R(crate::R<LEDC_INT_STS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LEDC_INT_STS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LEDC_INT_STS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LEDC_INT_STS` writer"]
+#[doc = "Register `ledc_int_sts` writer"]
 pub struct W(crate::W<LEDC_INT_STS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LEDC_INT_STS_SPEC>;
@@ -34,11 +34,11 @@ impl From<crate::W<LEDC_INT_STS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FIFO_EMPTY` reader - "]
+#[doc = "Field `fifo_empty` reader - "]
 pub type FIFO_EMPTY_R = crate::BitReader<bool>;
-#[doc = "Field `FIFO_FULL` reader - "]
+#[doc = "Field `fifo_full` reader - "]
 pub type FIFO_FULL_R = crate::BitReader<bool>;
-#[doc = "Field `FIFO_WLW` reader - "]
+#[doc = "Field `fifo_wlw` reader - "]
 pub type FIFO_WLW_R = crate::FieldReader<u8, u8>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -54,7 +54,7 @@ impl From<FIFO_OVERFLOW_INT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_OVERFLOW_INT` reader - "]
+#[doc = "Field `fifo_overflow_int` reader - "]
 pub type FIFO_OVERFLOW_INT_R = crate::BitReader<FIFO_OVERFLOW_INT_A>;
 impl FIFO_OVERFLOW_INT_R {
     #[doc = "Get enumerated values variant"]
@@ -76,7 +76,7 @@ impl FIFO_OVERFLOW_INT_R {
         *self == FIFO_OVERFLOW_INT_A::OVERFLOW
     }
 }
-#[doc = "Field `FIFO_OVERFLOW_INT` writer - "]
+#[doc = "Field `fifo_overflow_int` writer - "]
 pub type FIFO_OVERFLOW_INT_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_OVERFLOW_INT_A, O>;
 impl<'a, const O: u8> FIFO_OVERFLOW_INT_W<'a, O> {
@@ -105,7 +105,7 @@ impl From<WAITDATA_TIMEOUT_INT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WAITDATA_TIMEOUT_INT` reader - "]
+#[doc = "Field `waitdata_timeout_int` reader - "]
 pub type WAITDATA_TIMEOUT_INT_R = crate::BitReader<WAITDATA_TIMEOUT_INT_A>;
 impl WAITDATA_TIMEOUT_INT_R {
     #[doc = "Get enumerated values variant"]
@@ -127,7 +127,7 @@ impl WAITDATA_TIMEOUT_INT_R {
         *self == WAITDATA_TIMEOUT_INT_A::TIMEOUT
     }
 }
-#[doc = "Field `WAITDATA_TIMEOUT_INT` writer - "]
+#[doc = "Field `waitdata_timeout_int` writer - "]
 pub type WAITDATA_TIMEOUT_INT_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, WAITDATA_TIMEOUT_INT_A, O>;
 impl<'a, const O: u8> WAITDATA_TIMEOUT_INT_W<'a, O> {
@@ -156,7 +156,7 @@ impl From<FIFO_CPUREQ_INT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_CPUREQ_INT` reader - "]
+#[doc = "Field `fifo_cpureq_int` reader - "]
 pub type FIFO_CPUREQ_INT_R = crate::BitReader<FIFO_CPUREQ_INT_A>;
 impl FIFO_CPUREQ_INT_R {
     #[doc = "Get enumerated values variant"]
@@ -178,7 +178,7 @@ impl FIFO_CPUREQ_INT_R {
         *self == FIFO_CPUREQ_INT_A::REQUEST
     }
 }
-#[doc = "Field `FIFO_CPUREQ_INT` writer - "]
+#[doc = "Field `fifo_cpureq_int` writer - "]
 pub type FIFO_CPUREQ_INT_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_CPUREQ_INT_A, O>;
 impl<'a, const O: u8> FIFO_CPUREQ_INT_W<'a, O> {
@@ -207,7 +207,7 @@ impl From<LEC_TRANS_FINISH_INT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LEC_TRANS_FINISH_INT` reader - "]
+#[doc = "Field `lec_trans_finish_int` reader - "]
 pub type LEC_TRANS_FINISH_INT_R = crate::BitReader<LEC_TRANS_FINISH_INT_A>;
 impl LEC_TRANS_FINISH_INT_R {
     #[doc = "Get enumerated values variant"]
@@ -229,7 +229,7 @@ impl LEC_TRANS_FINISH_INT_R {
         *self == LEC_TRANS_FINISH_INT_A::TRANS_COMPLETE
     }
 }
-#[doc = "Field `LEC_TRANS_FINISH_INT` writer - "]
+#[doc = "Field `lec_trans_finish_int` writer - "]
 pub type LEC_TRANS_FINISH_INT_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, LEC_TRANS_FINISH_INT_A, O>;
 impl<'a, const O: u8> LEC_TRANS_FINISH_INT_W<'a, O> {
@@ -322,7 +322,7 @@ impl crate::Readable for LEDC_INT_STS_SPEC {
 impl crate::Writable for LEDC_INT_STS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LEDC_INT_STS to value 0"]
+#[doc = "`reset()` method sets ledc_int_sts to value 0"]
 impl crate::Resettable for LEDC_INT_STS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

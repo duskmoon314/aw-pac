@@ -1,4 +1,4 @@
-#[doc = "Register `DMA_REQ_EN` reader"]
+#[doc = "Register `dma_req_en` reader"]
 pub struct R(crate::R<DMA_REQ_EN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMA_REQ_EN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMA_REQ_EN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMA_REQ_EN` writer"]
+#[doc = "Register `dma_req_en` writer"]
 pub struct W(crate::W<DMA_REQ_EN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMA_REQ_EN_SPEC>;
@@ -240,7 +240,7 @@ impl crate::Readable for DMA_REQ_EN_SPEC {
 impl crate::Writable for DMA_REQ_EN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMA_REQ_EN to value 0"]
+#[doc = "`reset()` method sets dma_req_en to value 0"]
 impl crate::Resettable for DMA_REQ_EN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

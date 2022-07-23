@@ -1,4 +1,4 @@
-#[doc = "Register `ALARM0_CUR_VLU_REG` reader"]
+#[doc = "Register `alarm0_cur_vlu_reg` reader"]
 pub struct R(crate::R<ALARM0_CUR_VLU_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ALARM0_CUR_VLU_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ALARM0_CUR_VLU_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ALARM0_CUR_VLU_REG` writer"]
+#[doc = "Register `alarm0_cur_vlu_reg` writer"]
 pub struct W(crate::W<ALARM0_CUR_VLU_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ALARM0_CUR_VLU_REG_SPEC>;
@@ -34,19 +34,19 @@ impl From<crate::W<ALARM0_CUR_VLU_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `HOUR` reader - Current hour Range from 0 to 23."]
+#[doc = "Field `hour` reader - Current hour Range from 0 to 23."]
 pub type HOUR_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `HOUR` writer - Current hour Range from 0 to 23."]
+#[doc = "Field `hour` writer - Current hour Range from 0 to 23."]
 pub type HOUR_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, ALARM0_CUR_VLU_REG_SPEC, u8, u8, 5, O>;
-#[doc = "Field `MINUTE` reader - Current minute Range from 0 to 59."]
+#[doc = "Field `minute` reader - Current minute Range from 0 to 59."]
 pub type MINUTE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `MINUTE` writer - Current minute Range from 0 to 59."]
+#[doc = "Field `minute` writer - Current minute Range from 0 to 59."]
 pub type MINUTE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, ALARM0_CUR_VLU_REG_SPEC, u8, u8, 6, O>;
-#[doc = "Field `SECOND` reader - Current second Range from 0 to 59."]
+#[doc = "Field `second` reader - Current second Range from 0 to 59."]
 pub type SECOND_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `SECOND` writer - Current second Range from 0 to 59."]
+#[doc = "Field `second` writer - Current second Range from 0 to 59."]
 pub type SECOND_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, ALARM0_CUR_VLU_REG_SPEC, u8, u8, 6, O>;
 impl R {
@@ -102,7 +102,7 @@ impl crate::Readable for ALARM0_CUR_VLU_REG_SPEC {
 impl crate::Writable for ALARM0_CUR_VLU_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ALARM0_CUR_VLU_REG to value 0"]
+#[doc = "`reset()` method sets alarm0_cur_vlu_reg to value 0"]
 impl crate::Resettable for ALARM0_CUR_VLU_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

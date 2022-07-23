@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_TX_DMA_STA` reader"]
+#[doc = "Register `emac_tx_dma_sta` reader"]
 pub struct R(crate::R<EMAC_TX_DMA_STA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_TX_DMA_STA_SPEC>;
@@ -36,7 +36,7 @@ impl From<TX_DMA_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TX_DMA_STA` reader - The State of Transmit DMA FSM"]
+#[doc = "Field `tx_dma_sta` reader - The State of Transmit DMA FSM"]
 pub type TX_DMA_STA_R = crate::FieldReader<u8, TX_DMA_STA_A>;
 impl TX_DMA_STA_R {
     #[doc = "Get enumerated values variant"]
@@ -99,7 +99,7 @@ impl crate::RegisterSpec for EMAC_TX_DMA_STA_SPEC {
 impl crate::Readable for EMAC_TX_DMA_STA_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets EMAC_TX_DMA_STA to value 0"]
+#[doc = "`reset()` method sets emac_tx_dma_sta to value 0"]
 impl crate::Resettable for EMAC_TX_DMA_STA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

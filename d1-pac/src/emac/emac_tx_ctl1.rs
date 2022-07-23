@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_TX_CTL1` reader"]
+#[doc = "Register `emac_tx_ctl1` reader"]
 pub struct R(crate::R<EMAC_TX_CTL1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_TX_CTL1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_TX_CTL1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_TX_CTL1` writer"]
+#[doc = "Register `emac_tx_ctl1` writer"]
 pub struct W(crate::W<EMAC_TX_CTL1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_TX_CTL1_SPEC>;
@@ -48,7 +48,7 @@ impl From<TX_DMA_START_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_DMA_START` reader - Transmit DMA FSM Start"]
+#[doc = "Field `tx_dma_start` reader - Transmit DMA FSM Start"]
 pub type TX_DMA_START_R = crate::BitReader<TX_DMA_START_A>;
 impl TX_DMA_START_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl TX_DMA_START_R {
         *self == TX_DMA_START_A::START
     }
 }
-#[doc = "Field `TX_DMA_START` writer - Transmit DMA FSM Start"]
+#[doc = "Field `tx_dma_start` writer - Transmit DMA FSM Start"]
 pub type TX_DMA_START_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_START_A, O>;
 impl<'a, const O: u8> TX_DMA_START_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<TX_DMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_DMA_EN` reader - Transmit DMA Enable"]
+#[doc = "Field `tx_dma_en` reader - Transmit DMA Enable"]
 pub type TX_DMA_EN_R = crate::BitReader<TX_DMA_EN_A>;
 impl TX_DMA_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl TX_DMA_EN_R {
         *self == TX_DMA_EN_A::START
     }
 }
-#[doc = "Field `TX_DMA_EN` writer - Transmit DMA Enable"]
+#[doc = "Field `tx_dma_en` writer - Transmit DMA Enable"]
 pub type TX_DMA_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_EN_A, O>;
 impl<'a, const O: u8> TX_DMA_EN_W<'a, O> {
@@ -155,7 +155,7 @@ impl From<TX_TH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TX_TH` reader - Threshold value of TX DMA FIFO"]
+#[doc = "Field `tx_th` reader - Threshold value of TX DMA FIFO"]
 pub type TX_TH_R = crate::FieldReader<u8, TX_TH_A>;
 impl TX_TH_R {
     #[doc = "Get enumerated values variant"]
@@ -190,7 +190,7 @@ impl TX_TH_R {
         *self == TX_TH_A::T256
     }
 }
-#[doc = "Field `TX_TH` writer - Threshold value of TX DMA FIFO"]
+#[doc = "Field `tx_th` writer - Threshold value of TX DMA FIFO"]
 pub type TX_TH_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_TX_CTL1_SPEC, u8, TX_TH_A, 3, O>;
 impl<'a, const O: u8> TX_TH_W<'a, O> {
@@ -229,7 +229,7 @@ impl From<TX_MD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TX_MD` reader - Transmission Mode"]
+#[doc = "Field `tx_md` reader - Transmission Mode"]
 pub type TX_MD_R = crate::BitReader<TX_MD_A>;
 impl TX_MD_R {
     #[doc = "Get enumerated values variant"]
@@ -251,7 +251,7 @@ impl TX_MD_R {
         *self == TX_MD_A::LOCATE_FULL_FRAME
     }
 }
-#[doc = "Field `TX_MD` writer - Transmission Mode"]
+#[doc = "Field `tx_md` writer - Transmission Mode"]
 pub type TX_MD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_MD_A, O>;
 impl<'a, const O: u8> TX_MD_W<'a, O> {
     #[doc = "`0`"]
@@ -279,7 +279,7 @@ impl From<FLUSH_TX_FIFO_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FLUSH_TX_FIFO` reader - Flush the data in the TX FIFO"]
+#[doc = "Field `flush_tx_fifo` reader - Flush the data in the TX FIFO"]
 pub type FLUSH_TX_FIFO_R = crate::BitReader<FLUSH_TX_FIFO_A>;
 impl FLUSH_TX_FIFO_R {
     #[doc = "Get enumerated values variant"]
@@ -301,7 +301,7 @@ impl FLUSH_TX_FIFO_R {
         *self == FLUSH_TX_FIFO_A::DISABLE
     }
 }
-#[doc = "Field `FLUSH_TX_FIFO` writer - Flush the data in the TX FIFO"]
+#[doc = "Field `flush_tx_fifo` writer - Flush the data in the TX FIFO"]
 pub type FLUSH_TX_FIFO_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, FLUSH_TX_FIFO_A, O>;
 impl<'a, const O: u8> FLUSH_TX_FIFO_W<'a, O> {
@@ -389,7 +389,7 @@ impl crate::Readable for EMAC_TX_CTL1_SPEC {
 impl crate::Writable for EMAC_TX_CTL1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_TX_CTL1 to value 0"]
+#[doc = "`reset()` method sets emac_tx_ctl1 to value 0"]
 impl crate::Resettable for EMAC_TX_CTL1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

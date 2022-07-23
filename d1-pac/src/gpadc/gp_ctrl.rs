@@ -1,4 +1,4 @@
-#[doc = "Register `GP_CTRL` reader"]
+#[doc = "Register `gp_ctrl` reader"]
 pub struct R(crate::R<GP_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_CTRL` writer"]
+#[doc = "Register `gp_ctrl` writer"]
 pub struct W(crate::W<GP_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_CTRL_SPEC>;
@@ -34,17 +34,17 @@ impl From<crate::W<GP_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ADC_FIRST_DLY` reader - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
+#[doc = "Field `adc_first_dly` reader - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
 pub type ADC_FIRST_DLY_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ADC_FIRST_DLY` writer - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
+#[doc = "Field `adc_first_dly` writer - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
 pub type ADC_FIRST_DLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_CTRL_SPEC, u8, u8, 8, O>;
-#[doc = "Field `ADC_AUTOCALI_EN` reader - ADC Auto Calibration"]
+#[doc = "Field `adc_autocali_en` reader - ADC Auto Calibration"]
 pub type ADC_AUTOCALI_EN_R = crate::BitReader<bool>;
-#[doc = "Field `ADC_AUTOCALI_EN` writer - ADC Auto Calibration"]
+#[doc = "Field `adc_autocali_en` writer - ADC Auto Calibration"]
 pub type ADC_AUTOCALI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GP_CTRL_SPEC, bool, O>;
-#[doc = "Field `ADC_OP_BIAS` reader - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
+#[doc = "Field `adc_op_bias` reader - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
 pub type ADC_OP_BIAS_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ADC_OP_BIAS` writer - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
+#[doc = "Field `adc_op_bias` writer - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
 pub type ADC_OP_BIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_CTRL_SPEC, u8, u8, 2, O>;
 #[doc = "GPADC Work Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -63,7 +63,7 @@ impl From<GPADC_WORK_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `GPADC_WORK_MODE` reader - GPADC Work Mode"]
+#[doc = "Field `gpadc_work_mode` reader - GPADC Work Mode"]
 pub type GPADC_WORK_MODE_R = crate::FieldReader<u8, GPADC_WORK_MODE_A>;
 impl GPADC_WORK_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -92,7 +92,7 @@ impl GPADC_WORK_MODE_R {
         *self == GPADC_WORK_MODE_A::BURST
     }
 }
-#[doc = "Field `GPADC_WORK_MODE` writer - GPADC Work Mode"]
+#[doc = "Field `gpadc_work_mode` writer - GPADC Work Mode"]
 pub type GPADC_WORK_MODE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, GP_CTRL_SPEC, u8, GPADC_WORK_MODE_A, 2, O>;
 impl<'a, const O: u8> GPADC_WORK_MODE_W<'a, O> {
@@ -124,7 +124,7 @@ impl From<ADC_CALI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC_CALI_EN` reader - ADC Calibration"]
+#[doc = "Field `adc_cali_en` reader - ADC Calibration"]
 pub type ADC_CALI_EN_R = crate::BitReader<ADC_CALI_EN_A>;
 impl ADC_CALI_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -141,7 +141,7 @@ impl ADC_CALI_EN_R {
         *self == ADC_CALI_EN_A::START
     }
 }
-#[doc = "Field `ADC_CALI_EN` writer - ADC Calibration"]
+#[doc = "Field `adc_cali_en` writer - ADC Calibration"]
 pub type ADC_CALI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GP_CTRL_SPEC, ADC_CALI_EN_A, O>;
 impl<'a, const O: u8> ADC_CALI_EN_W<'a, O> {
     #[doc = "Start Calibration, it is cleared to 0 after calibration"]
@@ -164,7 +164,7 @@ impl From<ADC_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC_EN` reader - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
+#[doc = "Field `adc_en` reader - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
 pub type ADC_EN_R = crate::BitReader<ADC_EN_A>;
 impl ADC_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -186,7 +186,7 @@ impl ADC_EN_R {
         *self == ADC_EN_A::ENABLE
     }
 }
-#[doc = "Field `ADC_EN` writer - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
+#[doc = "Field `adc_en` writer - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
 pub type ADC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, GP_CTRL_SPEC, ADC_EN_A, O>;
 impl<'a, const O: u8> ADC_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -283,7 +283,7 @@ impl crate::Readable for GP_CTRL_SPEC {
 impl crate::Writable for GP_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_CTRL to value 0x0080_0000"]
+#[doc = "`reset()` method sets gp_ctrl to value 0x0080_0000"]
 impl crate::Resettable for GP_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

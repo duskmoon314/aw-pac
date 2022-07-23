@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TXINT` reader"]
+#[doc = "Register `cir_txint` reader"]
 pub struct R(crate::R<CIR_TXINT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TXINT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TXINT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TXINT` writer"]
+#[doc = "Register `cir_txint` writer"]
 pub struct W(crate::W<CIR_TXINT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TXINT_SPEC>;
@@ -48,7 +48,7 @@ impl From<DRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DRQ_EN` reader - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
+#[doc = "Field `drq_en` reader - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
 pub type DRQ_EN_R = crate::BitReader<DRQ_EN_A>;
 impl DRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DRQ_EN_R {
         *self == DRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `DRQ_EN` writer - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
+#[doc = "Field `drq_en` writer - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
 pub type DRQ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, DRQ_EN_A, O>;
 impl<'a, const O: u8> DRQ_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -98,7 +98,7 @@ impl From<TAI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TAI_EN` reader - TX FIFO Available Interrupt Enable"]
+#[doc = "Field `tai_en` reader - TX FIFO Available Interrupt Enable"]
 pub type TAI_EN_R = crate::BitReader<TAI_EN_A>;
 impl TAI_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl TAI_EN_R {
         *self == TAI_EN_A::ENABLE
     }
 }
-#[doc = "Field `TAI_EN` writer - TX FIFO Available Interrupt Enable"]
+#[doc = "Field `tai_en` writer - TX FIFO Available Interrupt Enable"]
 pub type TAI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TAI_EN_A, O>;
 impl<'a, const O: u8> TAI_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -148,7 +148,7 @@ impl From<TPEI_TUI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TPEI_TUI_EN` reader - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
+#[doc = "Field `tpei_tui_en` reader - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
 pub type TPEI_TUI_EN_R = crate::BitReader<TPEI_TUI_EN_A>;
 impl TPEI_TUI_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -170,7 +170,7 @@ impl TPEI_TUI_EN_R {
         *self == TPEI_TUI_EN_A::ENABLE
     }
 }
-#[doc = "Field `TPEI_TUI_EN` writer - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
+#[doc = "Field `tpei_tui_en` writer - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
 pub type TPEI_TUI_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CIR_TXINT_SPEC, TPEI_TUI_EN_A, O>;
 impl<'a, const O: u8> TPEI_TUI_EN_W<'a, O> {
@@ -238,7 +238,7 @@ impl crate::Readable for CIR_TXINT_SPEC {
 impl crate::Writable for CIR_TXINT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TXINT to value 0"]
+#[doc = "`reset()` method sets cir_txint to value 0"]
 impl crate::Resettable for CIR_TXINT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

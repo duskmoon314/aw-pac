@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_ADDR_HIGH0` reader"]
+#[doc = "Register `emac_addr_high0` reader"]
 pub struct R(crate::R<EMAC_ADDR_HIGH0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_ADDR_HIGH0_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_ADDR_HIGH0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_ADDR_HIGH0` writer"]
+#[doc = "Register `emac_addr_high0` writer"]
 pub struct W(crate::W<EMAC_ADDR_HIGH0_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_ADDR_HIGH0_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<EMAC_ADDR_HIGH0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `MAC_ADDR_HIGH0` reader - "]
+#[doc = "Field `mac_addr_high0` reader - "]
 pub type MAC_ADDR_HIGH0_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `MAC_ADDR_HIGH0` writer - "]
+#[doc = "Field `mac_addr_high0` writer - "]
 pub type MAC_ADDR_HIGH0_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH0_SPEC, u16, u16, 16, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for EMAC_ADDR_HIGH0_SPEC {
 impl crate::Writable for EMAC_ADDR_HIGH0_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_ADDR_HIGH0 to value 0"]
+#[doc = "`reset()` method sets emac_addr_high0 to value 0"]
 impl crate::Resettable for EMAC_ADDR_HIGH0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

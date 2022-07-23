@@ -1,4 +1,4 @@
-#[doc = "Register `TP_CALI_DATA` reader"]
+#[doc = "Register `tp_cali_data` reader"]
 pub struct R(crate::R<TP_CALI_DATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TP_CALI_DATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TP_CALI_DATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TP_CALI_DATA` writer"]
+#[doc = "Register `tp_cali_data` writer"]
 pub struct W(crate::W<TP_CALI_DATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TP_CALI_DATA_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<TP_CALI_DATA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TP_CDAT` reader - TP Common Data"]
+#[doc = "Field `tp_cdat` reader - TP Common Data"]
 pub type TP_CDAT_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `TP_CDAT` writer - TP Common Data"]
+#[doc = "Field `tp_cdat` writer - TP Common Data"]
 pub type TP_CDAT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TP_CALI_DATA_SPEC, u16, u16, 12, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for TP_CALI_DATA_SPEC {
 impl crate::Writable for TP_CALI_DATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TP_CALI_DATA to value 0"]
+#[doc = "`reset()` method sets tp_cali_data to value 0"]
 impl crate::Resettable for TP_CALI_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

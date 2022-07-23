@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_SMAP_DL` reader"]
+#[doc = "Register `smhc_smap_dl` reader"]
 pub struct R(crate::R<SMHC_SMAP_DL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_SMAP_DL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_SMAP_DL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_SMAP_DL` writer"]
+#[doc = "Register `smhc_smap_dl` writer"]
 pub struct W(crate::W<SMHC_SMAP_DL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_SMAP_DL_SPEC>;
@@ -34,22 +34,22 @@ impl From<crate::W<SMHC_SMAP_DL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SAMP_DL_CAL_START` reader - Sample Delay Calibration Start"]
+#[doc = "Field `samp_dl_cal_start` reader - Sample Delay Calibration Start"]
 pub type SAMP_DL_CAL_START_R = crate::BitReader<bool>;
-#[doc = "Field `SAMP_DL_CAL_START` writer - Sample Delay Calibration Start"]
+#[doc = "Field `samp_dl_cal_start` writer - Sample Delay Calibration Start"]
 pub type SAMP_DL_CAL_START_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_SMAP_DL_SPEC, bool, O>;
-#[doc = "Field `SAMP_DL_CAL_DONE` reader - Sample Delay Calibration Done"]
+#[doc = "Field `samp_dl_cal_done` reader - Sample Delay Calibration Done"]
 pub type SAMP_DL_CAL_DONE_R = crate::BitReader<bool>;
-#[doc = "Field `SAMP_DL` reader - Sample Delay"]
+#[doc = "Field `samp_dl` reader - Sample Delay"]
 pub type SAMP_DL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `SAMP_DL_SW_EN` reader - Sample Delay Software Enable"]
+#[doc = "Field `samp_dl_sw_en` reader - Sample Delay Software Enable"]
 pub type SAMP_DL_SW_EN_R = crate::BitReader<bool>;
-#[doc = "Field `SAMP_DL_SW_EN` writer - Sample Delay Software Enable"]
+#[doc = "Field `samp_dl_sw_en` writer - Sample Delay Software Enable"]
 pub type SAMP_DL_SW_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_SMAP_DL_SPEC, bool, O>;
-#[doc = "Field `SAMP_DL_SW` reader - Sample Delay Software"]
+#[doc = "Field `samp_dl_sw` reader - Sample Delay Software"]
 pub type SAMP_DL_SW_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `SAMP_DL_SW` writer - Sample Delay Software"]
+#[doc = "Field `samp_dl_sw` writer - Sample Delay Software"]
 pub type SAMP_DL_SW_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SMHC_SMAP_DL_SPEC, u8, u8, 6, O>;
 impl R {
@@ -115,7 +115,7 @@ impl crate::Readable for SMHC_SMAP_DL_SPEC {
 impl crate::Writable for SMHC_SMAP_DL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_SMAP_DL to value 0"]
+#[doc = "`reset()` method sets smhc_smap_dl to value 0"]
 impl crate::Resettable for SMHC_SMAP_DL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

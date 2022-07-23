@@ -34,9 +34,9 @@ impl From<crate::W<WDOG_OUTPUT_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `WDOG_OUTPUT_CONFIG` reader - Configure the valid time for the watchdog reset signal."]
+#[doc = "Field `wdog_output_config` reader - Configure the valid time for the watchdog reset signal."]
 pub type WDOG_OUTPUT_CONFIG_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `WDOG_OUTPUT_CONFIG` writer - Configure the valid time for the watchdog reset signal."]
+#[doc = "Field `wdog_output_config` writer - Configure the valid time for the watchdog reset signal."]
 pub type WDOG_OUTPUT_CONFIG_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, WDOG_OUTPUT_CFG_SPEC, u16, u16, 12, O>;
 impl R {

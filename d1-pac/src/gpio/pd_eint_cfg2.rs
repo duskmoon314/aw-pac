@@ -55,7 +55,7 @@ impl From<EINT_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `EINT(16-22)_CFG` reader - External INT Mode"]
+#[doc = "Fields `eint(16-22)_cfg` reader - External INT Mode"]
 pub type EINT_CFG_R = crate::FieldReader<u8, EINT_CFG_A>;
 impl EINT_CFG_R {
     #[doc = "Get enumerated values variant"]
@@ -96,7 +96,7 @@ impl EINT_CFG_R {
         *self == EINT_CFG_A::DOUBLE_EDGE
     }
 }
-#[doc = "Fields `EINT(16-22)_CFG` writer - External INT Mode"]
+#[doc = "Fields `eint(16-22)_cfg` writer - External INT Mode"]
 pub type EINT_CFG_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PD_EINT_CFG2_SPEC, u8, EINT_CFG_A, 4, O>;
 impl<'a, const O: u8> EINT_CFG_W<'a, O> {

@@ -1,4 +1,4 @@
-#[doc = "Register `ALARM_CONFIG_REG` reader"]
+#[doc = "Register `alarm_config_reg` reader"]
 pub struct R(crate::R<ALARM_CONFIG_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ALARM_CONFIG_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ALARM_CONFIG_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ALARM_CONFIG_REG` writer"]
+#[doc = "Register `alarm_config_reg` writer"]
 pub struct W(crate::W<ALARM_CONFIG_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ALARM_CONFIG_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<ALARM_WAKEUP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ALARM_WAKEUP` reader - Configuration of alarm wake up output."]
+#[doc = "Field `alarm_wakeup` reader - Configuration of alarm wake up output."]
 pub type ALARM_WAKEUP_R = crate::BitReader<ALARM_WAKEUP_A>;
 impl ALARM_WAKEUP_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ALARM_WAKEUP_R {
         *self == ALARM_WAKEUP_A::ENABLE
     }
 }
-#[doc = "Field `ALARM_WAKEUP` writer - Configuration of alarm wake up output."]
+#[doc = "Field `alarm_wakeup` writer - Configuration of alarm wake up output."]
 pub type ALARM_WAKEUP_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, ALARM_CONFIG_REG_SPEC, ALARM_WAKEUP_A, O>;
 impl<'a, const O: u8> ALARM_WAKEUP_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for ALARM_CONFIG_REG_SPEC {
 impl crate::Writable for ALARM_CONFIG_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ALARM_CONFIG_REG to value 0"]
+#[doc = "`reset()` method sets alarm_config_reg to value 0"]
 impl crate::Resettable for ALARM_CONFIG_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

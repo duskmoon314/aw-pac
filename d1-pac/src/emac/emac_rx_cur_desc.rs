@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_RX_CUR_DESC` reader"]
+#[doc = "Register `emac_rx_cur_desc` reader"]
 pub struct R(crate::R<EMAC_RX_CUR_DESC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_RX_CUR_DESC_SPEC>;
@@ -22,7 +22,7 @@ impl crate::RegisterSpec for EMAC_RX_CUR_DESC_SPEC {
 impl crate::Readable for EMAC_RX_CUR_DESC_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets EMAC_RX_CUR_DESC to value 0"]
+#[doc = "`reset()` method sets emac_rx_cur_desc to value 0"]
 impl crate::Resettable for EMAC_RX_CUR_DESC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

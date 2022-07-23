@@ -1,4 +1,4 @@
-#[doc = "Register `CIER` reader"]
+#[doc = "Register `cier` reader"]
 pub struct R(crate::R<CIER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIER` writer"]
+#[doc = "Register `cier` writer"]
 pub struct W(crate::W<CIER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIER_SPEC>;
@@ -48,7 +48,7 @@ impl From<CFIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `CFIE(0-7)` reader - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
+#[doc = "Fields `cfie(0-7)` reader - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
 pub type CFIE_R = crate::BitReader<CFIE_A>;
 impl CFIE_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CFIE_R {
         *self == CFIE_A::ENABLE
     }
 }
-#[doc = "Fields `CFIE(0-7)` writer - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
+#[doc = "Fields `cfie(0-7)` writer - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
 pub type CFIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIER_SPEC, CFIE_A, O>;
 impl<'a, const O: u8> CFIE_W<'a, O> {
     #[doc = "Capture channel fall lock interrupt disable"]
@@ -98,7 +98,7 @@ impl From<CRIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `CRIE(0-7)` reader - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
+#[doc = "Fields `crie(0-7)` reader - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
 pub type CRIE_R = crate::BitReader<CRIE_A>;
 impl CRIE_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl CRIE_R {
         *self == CRIE_A::ENABLE
     }
 }
-#[doc = "Fields `CRIE(0-7)` writer - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
+#[doc = "Fields `crie(0-7)` writer - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
 pub type CRIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIER_SPEC, CRIE_A, O>;
 impl<'a, const O: u8> CRIE_W<'a, O> {
     #[doc = "Capture channel rise lock interrupt disable"]
@@ -337,7 +337,7 @@ impl crate::Readable for CIER_SPEC {
 impl crate::Writable for CIER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIER to value 0"]
+#[doc = "`reset()` method sets cier to value 0"]
 impl crate::Resettable for CIER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

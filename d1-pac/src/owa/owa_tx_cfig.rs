@@ -1,4 +1,4 @@
-#[doc = "Register `OWA_TX_CFIG` reader"]
+#[doc = "Register `owa_tx_cfig` reader"]
 pub struct R(crate::R<OWA_TX_CFIG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<OWA_TX_CFIG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<OWA_TX_CFIG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `OWA_TX_CFIG` writer"]
+#[doc = "Register `owa_tx_cfig` writer"]
 pub struct W(crate::W<OWA_TX_CFIG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<OWA_TX_CFIG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for OWA_TX_CFIG_SPEC {
 impl crate::Writable for OWA_TX_CFIG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets OWA_TX_CFIG to value 0"]
+#[doc = "`reset()` method sets owa_tx_cfig to value 0"]
 impl crate::Resettable for OWA_TX_CFIG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

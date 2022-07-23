@@ -1,4 +1,4 @@
-#[doc = "Register `INTOSC_CLK_PRESCAL_REG` reader"]
+#[doc = "Register `intosc_clk_prescal_reg` reader"]
 pub struct R(crate::R<INTOSC_CLK_PRESCAL_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<INTOSC_CLK_PRESCAL_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<INTOSC_CLK_PRESCAL_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `INTOSC_CLK_PRESCAL_REG` writer"]
+#[doc = "Register `intosc_clk_prescal_reg` writer"]
 pub struct W(crate::W<INTOSC_CLK_PRESCAL_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<INTOSC_CLK_PRESCAL_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<INTOSC_CLK_PRESCAL_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `INTOSC_32K_CLK_PRESCAL` reader - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
+#[doc = "Field `intosc_32k_clk_prescal` reader - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
 pub type INTOSC_32K_CLK_PRESCAL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `INTOSC_32K_CLK_PRESCAL` writer - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
+#[doc = "Field `intosc_32k_clk_prescal` writer - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
 pub type INTOSC_32K_CLK_PRESCAL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, INTOSC_CLK_PRESCAL_REG_SPEC, u8, u8, 5, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for INTOSC_CLK_PRESCAL_REG_SPEC {
 impl crate::Writable for INTOSC_CLK_PRESCAL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets INTOSC_CLK_PRESCAL_REG to value 0x0f"]
+#[doc = "`reset()` method sets intosc_clk_prescal_reg to value 0x0f"]
 impl crate::Resettable for INTOSC_CLK_PRESCAL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

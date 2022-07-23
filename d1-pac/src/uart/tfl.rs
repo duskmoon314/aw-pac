@@ -1,4 +1,4 @@
-#[doc = "Register `TFL` reader"]
+#[doc = "Register `tfl` reader"]
 pub struct R(crate::R<TFL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TFL_SPEC>;
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for TFL_SPEC {
 impl crate::Readable for TFL_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets TFL to value 0"]
+#[doc = "`reset()` method sets tfl to value 0"]
 impl crate::Resettable for TFL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

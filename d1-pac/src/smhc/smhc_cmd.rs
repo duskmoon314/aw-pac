@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_CMD` reader"]
+#[doc = "Register `smhc_cmd` reader"]
 pub struct R(crate::R<SMHC_CMD_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_CMD_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_CMD_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_CMD` writer"]
+#[doc = "Register `smhc_cmd` writer"]
 pub struct W(crate::W<SMHC_CMD_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_CMD_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<SMHC_CMD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CMD_LOAD` reader - Start Command"]
+#[doc = "Field `cmd_load` reader - Start Command"]
 pub type CMD_LOAD_R = crate::BitReader<bool>;
-#[doc = "Field `CMD_LOAD` writer - Start Command"]
+#[doc = "Field `cmd_load` writer - Start Command"]
 pub type CMD_LOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
 #[doc = "Voltage Switch\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -52,7 +52,7 @@ impl From<VOL_SW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VOL_SW` reader - Voltage Switch"]
+#[doc = "Field `vol_sw` reader - Voltage Switch"]
 pub type VOL_SW_R = crate::BitReader<VOL_SW_A>;
 impl VOL_SW_R {
     #[doc = "Get enumerated values variant"]
@@ -74,7 +74,7 @@ impl VOL_SW_R {
         *self == VOL_SW_A::VOLTAGE_SWITCH
     }
 }
-#[doc = "Field `VOL_SW` writer - Voltage Switch"]
+#[doc = "Field `vol_sw` writer - Voltage Switch"]
 pub type VOL_SW_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, VOL_SW_A, O>;
 impl<'a, const O: u8> VOL_SW_W<'a, O> {
     #[doc = "Normal command"]
@@ -88,13 +88,13 @@ impl<'a, const O: u8> VOL_SW_W<'a, O> {
         self.variant(VOL_SW_A::VOLTAGE_SWITCH)
     }
 }
-#[doc = "Field `BOOT_ABT` reader - Boot Abort"]
+#[doc = "Field `boot_abt` reader - Boot Abort"]
 pub type BOOT_ABT_R = crate::BitReader<bool>;
-#[doc = "Field `BOOT_ABT` writer - Boot Abort"]
+#[doc = "Field `boot_abt` writer - Boot Abort"]
 pub type BOOT_ABT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
-#[doc = "Field `EXP_BOOT_ACK` reader - Expect Boot Acknowledge"]
+#[doc = "Field `exp_boot_ack` reader - Expect Boot Acknowledge"]
 pub type EXP_BOOT_ACK_R = crate::BitReader<bool>;
-#[doc = "Field `EXP_BOOT_ACK` writer - Expect Boot Acknowledge"]
+#[doc = "Field `exp_boot_ack` writer - Expect Boot Acknowledge"]
 pub type EXP_BOOT_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
 #[doc = "Boot Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -113,7 +113,7 @@ impl From<BOOT_MOD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BOOT_MOD` reader - Boot Mode"]
+#[doc = "Field `boot_mod` reader - Boot Mode"]
 pub type BOOT_MOD_R = crate::FieldReader<u8, BOOT_MOD_A>;
 impl BOOT_MOD_R {
     #[doc = "Get enumerated values variant"]
@@ -142,7 +142,7 @@ impl BOOT_MOD_R {
         *self == BOOT_MOD_A::ALTERNATE_BOOT
     }
 }
-#[doc = "Field `BOOT_MOD` writer - Boot Mode"]
+#[doc = "Field `boot_mod` writer - Boot Mode"]
 pub type BOOT_MOD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, BOOT_MOD_A, 2, O>;
 impl<'a, const O: u8> BOOT_MOD_W<'a, O> {
@@ -176,7 +176,7 @@ impl From<PRG_CLK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PRG_CLK` reader - Change Clock"]
+#[doc = "Field `prg_clk` reader - Change Clock"]
 pub type PRG_CLK_R = crate::BitReader<PRG_CLK_A>;
 impl PRG_CLK_R {
     #[doc = "Get enumerated values variant"]
@@ -198,7 +198,7 @@ impl PRG_CLK_R {
         *self == PRG_CLK_A::CHANGE
     }
 }
-#[doc = "Field `PRG_CLK` writer - Change Clock"]
+#[doc = "Field `prg_clk` writer - Change Clock"]
 pub type PRG_CLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, PRG_CLK_A, O>;
 impl<'a, const O: u8> PRG_CLK_W<'a, O> {
     #[doc = "Normal command"]
@@ -226,7 +226,7 @@ impl From<SEND_INIT_SEQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SEND_INIT_SEQ` reader - Send Initialization"]
+#[doc = "Field `send_init_seq` reader - Send Initialization"]
 pub type SEND_INIT_SEQ_R = crate::BitReader<SEND_INIT_SEQ_A>;
 impl SEND_INIT_SEQ_R {
     #[doc = "Get enumerated values variant"]
@@ -248,7 +248,7 @@ impl SEND_INIT_SEQ_R {
         *self == SEND_INIT_SEQ_A::INIT_CMD
     }
 }
-#[doc = "Field `SEND_INIT_SEQ` writer - Send Initialization"]
+#[doc = "Field `send_init_seq` writer - Send Initialization"]
 pub type SEND_INIT_SEQ_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CMD_SPEC, SEND_INIT_SEQ_A, O>;
 impl<'a, const O: u8> SEND_INIT_SEQ_W<'a, O> {
@@ -277,7 +277,7 @@ impl From<STOP_ABT_CMD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STOP_ABT_CMD` reader - Stop Abort Command"]
+#[doc = "Field `stop_abt_cmd` reader - Stop Abort Command"]
 pub type STOP_ABT_CMD_R = crate::BitReader<STOP_ABT_CMD_A>;
 impl STOP_ABT_CMD_R {
     #[doc = "Get enumerated values variant"]
@@ -299,7 +299,7 @@ impl STOP_ABT_CMD_R {
         *self == STOP_ABT_CMD_A::STOP
     }
 }
-#[doc = "Field `STOP_ABT_CMD` writer - Stop Abort Command"]
+#[doc = "Field `stop_abt_cmd` writer - Stop Abort Command"]
 pub type STOP_ABT_CMD_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_ABT_CMD_A, O>;
 impl<'a, const O: u8> STOP_ABT_CMD_W<'a, O> {
@@ -328,7 +328,7 @@ impl From<WAIT_PRE_OVER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WAIT_PRE_OVER` reader - Wait for Data Transfer Over"]
+#[doc = "Field `wait_pre_over` reader - Wait for Data Transfer Over"]
 pub type WAIT_PRE_OVER_R = crate::BitReader<WAIT_PRE_OVER_A>;
 impl WAIT_PRE_OVER_R {
     #[doc = "Get enumerated values variant"]
@@ -350,7 +350,7 @@ impl WAIT_PRE_OVER_R {
         *self == WAIT_PRE_OVER_A::WAIT
     }
 }
-#[doc = "Field `WAIT_PRE_OVER` writer - Wait for Data Transfer Over"]
+#[doc = "Field `wait_pre_over` writer - Wait for Data Transfer Over"]
 pub type WAIT_PRE_OVER_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CMD_SPEC, WAIT_PRE_OVER_A, O>;
 impl<'a, const O: u8> WAIT_PRE_OVER_W<'a, O> {
@@ -379,7 +379,7 @@ impl From<STOP_CMD_FLAG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STOP_CMD_FLAG` reader - Send Stop CMD Automatically (CMD12)"]
+#[doc = "Field `stop_cmd_flag` reader - Send Stop CMD Automatically (CMD12)"]
 pub type STOP_CMD_FLAG_R = crate::BitReader<STOP_CMD_FLAG_A>;
 impl STOP_CMD_FLAG_R {
     #[doc = "Get enumerated values variant"]
@@ -401,7 +401,7 @@ impl STOP_CMD_FLAG_R {
         *self == STOP_CMD_FLAG_A::AUTO_STOP
     }
 }
-#[doc = "Field `STOP_CMD_FLAG` writer - Send Stop CMD Automatically (CMD12)"]
+#[doc = "Field `stop_cmd_flag` writer - Send Stop CMD Automatically (CMD12)"]
 pub type STOP_CMD_FLAG_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_CMD_FLAG_A, O>;
 impl<'a, const O: u8> STOP_CMD_FLAG_W<'a, O> {
@@ -430,7 +430,7 @@ impl From<TRANS_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRANS_MODE` reader - Transfer Mode"]
+#[doc = "Field `trans_mode` reader - Transfer Mode"]
 pub type TRANS_MODE_R = crate::BitReader<TRANS_MODE_A>;
 impl TRANS_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -452,7 +452,7 @@ impl TRANS_MODE_R {
         *self == TRANS_MODE_A::STREAM
     }
 }
-#[doc = "Field `TRANS_MODE` writer - Transfer Mode"]
+#[doc = "Field `trans_mode` writer - Transfer Mode"]
 pub type TRANS_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_MODE_A, O>;
 impl<'a, const O: u8> TRANS_MODE_W<'a, O> {
     #[doc = "Block data transfer command"]
@@ -480,7 +480,7 @@ impl From<TRANS_DIR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TRANS_DIR` reader - Transfer Direction"]
+#[doc = "Field `trans_dir` reader - Transfer Direction"]
 pub type TRANS_DIR_R = crate::BitReader<TRANS_DIR_A>;
 impl TRANS_DIR_R {
     #[doc = "Get enumerated values variant"]
@@ -502,7 +502,7 @@ impl TRANS_DIR_R {
         *self == TRANS_DIR_A::WRITE
     }
 }
-#[doc = "Field `TRANS_DIR` writer - Transfer Direction"]
+#[doc = "Field `trans_dir` writer - Transfer Direction"]
 pub type TRANS_DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_DIR_A, O>;
 impl<'a, const O: u8> TRANS_DIR_W<'a, O> {
     #[doc = "Read operation"]
@@ -530,7 +530,7 @@ impl From<DATA_TRANS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DATA_TRANS` reader - Data Transfer"]
+#[doc = "Field `data_trans` reader - Data Transfer"]
 pub type DATA_TRANS_R = crate::BitReader<DATA_TRANS_A>;
 impl DATA_TRANS_R {
     #[doc = "Get enumerated values variant"]
@@ -552,7 +552,7 @@ impl DATA_TRANS_R {
         *self == DATA_TRANS_A::WITH
     }
 }
-#[doc = "Field `DATA_TRANS` writer - Data Transfer"]
+#[doc = "Field `data_trans` writer - Data Transfer"]
 pub type DATA_TRANS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, DATA_TRANS_A, O>;
 impl<'a, const O: u8> DATA_TRANS_W<'a, O> {
     #[doc = "Without data transfer"]
@@ -580,7 +580,7 @@ impl From<CHK_RESP_CRC_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CHK_RESP_CRC` reader - Check Response CRC"]
+#[doc = "Field `chk_resp_crc` reader - Check Response CRC"]
 pub type CHK_RESP_CRC_R = crate::BitReader<CHK_RESP_CRC_A>;
 impl CHK_RESP_CRC_R {
     #[doc = "Get enumerated values variant"]
@@ -602,7 +602,7 @@ impl CHK_RESP_CRC_R {
         *self == CHK_RESP_CRC_A::CHECK
     }
 }
-#[doc = "Field `CHK_RESP_CRC` writer - Check Response CRC"]
+#[doc = "Field `chk_resp_crc` writer - Check Response CRC"]
 pub type CHK_RESP_CRC_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CMD_SPEC, CHK_RESP_CRC_A, O>;
 impl<'a, const O: u8> CHK_RESP_CRC_W<'a, O> {
@@ -631,7 +631,7 @@ impl From<LONG_RESP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LONG_RESP` reader - Response Type"]
+#[doc = "Field `long_resp` reader - Response Type"]
 pub type LONG_RESP_R = crate::BitReader<LONG_RESP_A>;
 impl LONG_RESP_R {
     #[doc = "Get enumerated values variant"]
@@ -653,7 +653,7 @@ impl LONG_RESP_R {
         *self == LONG_RESP_A::LONG
     }
 }
-#[doc = "Field `LONG_RESP` writer - Response Type"]
+#[doc = "Field `long_resp` writer - Response Type"]
 pub type LONG_RESP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, LONG_RESP_A, O>;
 impl<'a, const O: u8> LONG_RESP_W<'a, O> {
     #[doc = "Short Response (48 bits)"]
@@ -681,7 +681,7 @@ impl From<RESP_RCV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESP_RCV` reader - Response Receive"]
+#[doc = "Field `resp_rcv` reader - Response Receive"]
 pub type RESP_RCV_R = crate::BitReader<RESP_RCV_A>;
 impl RESP_RCV_R {
     #[doc = "Get enumerated values variant"]
@@ -703,7 +703,7 @@ impl RESP_RCV_R {
         *self == RESP_RCV_A::WITH
     }
 }
-#[doc = "Field `RESP_RCV` writer - Response Receive"]
+#[doc = "Field `resp_rcv` writer - Response Receive"]
 pub type RESP_RCV_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, RESP_RCV_A, O>;
 impl<'a, const O: u8> RESP_RCV_W<'a, O> {
     #[doc = "Command without response"]
@@ -717,9 +717,9 @@ impl<'a, const O: u8> RESP_RCV_W<'a, O> {
         self.variant(RESP_RCV_A::WITH)
     }
 }
-#[doc = "Field `CMD_IDX` reader - CMD Index"]
+#[doc = "Field `cmd_idx` reader - CMD Index"]
 pub type CMD_IDX_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `CMD_IDX` writer - CMD Index"]
+#[doc = "Field `cmd_idx` writer - CMD Index"]
 pub type CMD_IDX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 31 - Start Command"]
@@ -914,7 +914,7 @@ impl crate::Readable for SMHC_CMD_SPEC {
 impl crate::Writable for SMHC_CMD_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_CMD to value 0"]
+#[doc = "`reset()` method sets smhc_cmd to value 0"]
 impl crate::Resettable for SMHC_CMD_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `TP_INT_FIFO_STAT` reader"]
+#[doc = "Register `tp_int_fifo_stat` reader"]
 pub struct R(crate::R<TP_INT_FIFO_STAT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TP_INT_FIFO_STAT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TP_INT_FIFO_STAT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TP_INT_FIFO_STAT` writer"]
+#[doc = "Register `tp_int_fifo_stat` writer"]
 pub struct W(crate::W<TP_INT_FIFO_STAT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TP_INT_FIFO_STAT_SPEC>;
@@ -48,7 +48,7 @@ impl From<FIFO_OVERRUN_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_OVERRUN_PENDING` reader - TP FIFO Overrun Pending"]
+#[doc = "Field `fifo_overrun_pending` reader - TP FIFO Overrun Pending"]
 pub type FIFO_OVERRUN_PENDING_R = crate::BitReader<FIFO_OVERRUN_PENDING_A>;
 impl FIFO_OVERRUN_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl FIFO_OVERRUN_PENDING_R {
         *self == FIFO_OVERRUN_PENDING_A::PENDING
     }
 }
-#[doc = "Field `FIFO_OVERRUN_PENDING` writer - TP FIFO Overrun Pending"]
+#[doc = "Field `fifo_overrun_pending` writer - TP FIFO Overrun Pending"]
 pub type FIFO_OVERRUN_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_OVERRUN_PENDING_A, O>;
 impl<'a, const O: u8> FIFO_OVERRUN_PENDING_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<FIFO_DATA_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_DATA_PENDING` reader - TP FIFO Data Available Pending"]
+#[doc = "Field `fifo_data_pending` reader - TP FIFO Data Available Pending"]
 pub type FIFO_DATA_PENDING_R = crate::BitReader<FIFO_DATA_PENDING_A>;
 impl FIFO_DATA_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl FIFO_DATA_PENDING_R {
         *self == FIFO_DATA_PENDING_A::PENDING
     }
 }
-#[doc = "Field `FIFO_DATA_PENDING` writer - TP FIFO Data Available Pending"]
+#[doc = "Field `fifo_data_pending` writer - TP FIFO Data Available Pending"]
 pub type FIFO_DATA_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, FIFO_DATA_PENDING_A, O>;
 impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
@@ -136,7 +136,7 @@ impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
         self.variant(FIFO_DATA_PENDING_A::PENDING)
     }
 }
-#[doc = "Field `RXA_CNT` reader - TP FIFO Available Sample Word Count"]
+#[doc = "Field `rxa_cnt` reader - TP FIFO Available Sample Word Count"]
 pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "TP Idle Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -152,7 +152,7 @@ impl From<TP_IDLE_FLG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_IDLE_FLG` reader - TP Idle Flag"]
+#[doc = "Field `tp_idle_flg` reader - TP Idle Flag"]
 pub type TP_IDLE_FLG_R = crate::BitReader<TP_IDLE_FLG_A>;
 impl TP_IDLE_FLG_R {
     #[doc = "Get enumerated values variant"]
@@ -188,7 +188,7 @@ impl From<TP_UP_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_UP_PENDING` reader - TP Last Touch (Stylus UP) Pending"]
+#[doc = "Field `tp_up_pending` reader - TP Last Touch (Stylus UP) Pending"]
 pub type TP_UP_PENDING_R = crate::BitReader<TP_UP_PENDING_A>;
 impl TP_UP_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -210,7 +210,7 @@ impl TP_UP_PENDING_R {
         *self == TP_UP_PENDING_A::PENDING
     }
 }
-#[doc = "Field `TP_UP_PENDING` writer - TP Last Touch (Stylus UP) Pending"]
+#[doc = "Field `tp_up_pending` writer - TP Last Touch (Stylus UP) Pending"]
 pub type TP_UP_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_UP_PENDING_A, O>;
 impl<'a, const O: u8> TP_UP_PENDING_W<'a, O> {
@@ -239,7 +239,7 @@ impl From<TP_DOWN_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TP_DOWN_PENDING` reader - TP First Touch (Stylus DOWN) Pending"]
+#[doc = "Field `tp_down_pending` reader - TP First Touch (Stylus DOWN) Pending"]
 pub type TP_DOWN_PENDING_R = crate::BitReader<TP_DOWN_PENDING_A>;
 impl TP_DOWN_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -261,7 +261,7 @@ impl TP_DOWN_PENDING_R {
         *self == TP_DOWN_PENDING_A::PENDING
     }
 }
-#[doc = "Field `TP_DOWN_PENDING` writer - TP First Touch (Stylus DOWN) Pending"]
+#[doc = "Field `tp_down_pending` writer - TP First Touch (Stylus DOWN) Pending"]
 pub type TP_DOWN_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, TP_INT_FIFO_STAT_SPEC, TP_DOWN_PENDING_A, O>;
 impl<'a, const O: u8> TP_DOWN_PENDING_W<'a, O> {
@@ -349,7 +349,7 @@ impl crate::Readable for TP_INT_FIFO_STAT_SPEC {
 impl crate::Writable for TP_INT_FIFO_STAT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TP_INT_FIFO_STAT to value 0"]
+#[doc = "`reset()` method sets tp_int_fifo_stat to value 0"]
 impl crate::Resettable for TP_INT_FIFO_STAT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

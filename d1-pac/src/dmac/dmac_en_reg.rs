@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_EN_REG%s` reader"]
+#[doc = "Register `dmac_en_reg%s` reader"]
 pub struct R(crate::R<DMAC_EN_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_EN_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMAC_EN_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMAC_EN_REG%s` writer"]
+#[doc = "Register `dmac_en_reg%s` writer"]
 pub struct W(crate::W<DMAC_EN_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMAC_EN_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<DMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_EN` reader - DMA Channel Enable"]
+#[doc = "Field `dma_en` reader - DMA Channel Enable"]
 pub type DMA_EN_R = crate::BitReader<DMA_EN_A>;
 impl DMA_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DMA_EN_R {
         *self == DMA_EN_A::ENABLED
     }
 }
-#[doc = "Field `DMA_EN` writer - DMA Channel Enable"]
+#[doc = "Field `dma_en` writer - DMA Channel Enable"]
 pub type DMA_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMAC_EN_REG_SPEC, DMA_EN_A, O>;
 impl<'a, const O: u8> DMA_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -117,7 +117,7 @@ impl crate::Readable for DMAC_EN_REG_SPEC {
 impl crate::Writable for DMAC_EN_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMAC_EN_REG%s to value 0"]
+#[doc = "`reset()` method sets dmac_en_reg%s to value 0"]
 impl crate::Resettable for DMAC_EN_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

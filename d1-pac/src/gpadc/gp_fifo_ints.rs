@@ -1,4 +1,4 @@
-#[doc = "Register `GP_FIFO_INTS` reader"]
+#[doc = "Register `gp_fifo_ints` reader"]
 pub struct R(crate::R<GP_FIFO_INTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_FIFO_INTS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_FIFO_INTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_FIFO_INTS` writer"]
+#[doc = "Register `gp_fifo_ints` writer"]
 pub struct W(crate::W<GP_FIFO_INTS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_FIFO_INTS_SPEC>;
@@ -48,7 +48,7 @@ impl From<FIFO_OVERRUN_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_OVERRUN_PENDING` reader - ADC FIFO Overrun IRQ Pending"]
+#[doc = "Field `fifo_overrun_pending` reader - ADC FIFO Overrun IRQ Pending"]
 pub type FIFO_OVERRUN_PENDING_R = crate::BitReader<FIFO_OVERRUN_PENDING_A>;
 impl FIFO_OVERRUN_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl FIFO_OVERRUN_PENDING_R {
         *self == FIFO_OVERRUN_PENDING_A::PENDING
     }
 }
-#[doc = "Field `FIFO_OVERRUN_PENDING` writer - ADC FIFO Overrun IRQ Pending"]
+#[doc = "Field `fifo_overrun_pending` writer - ADC FIFO Overrun IRQ Pending"]
 pub type FIFO_OVERRUN_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_OVERRUN_PENDING_A, O>;
 impl<'a, const O: u8> FIFO_OVERRUN_PENDING_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<FIFO_DATA_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_DATA_PENDING` reader - ADC FIFO Data Available Pending Bit"]
+#[doc = "Field `fifo_data_pending` reader - ADC FIFO Data Available Pending Bit"]
 pub type FIFO_DATA_PENDING_R = crate::BitReader<FIFO_DATA_PENDING_A>;
 impl FIFO_DATA_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl FIFO_DATA_PENDING_R {
         *self == FIFO_DATA_PENDING_A::PENDING
     }
 }
-#[doc = "Field `FIFO_DATA_PENDING` writer - ADC FIFO Data Available Pending Bit"]
+#[doc = "Field `fifo_data_pending` writer - ADC FIFO Data Available Pending Bit"]
 pub type FIFO_DATA_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_DATA_PENDING_A, O>;
 impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
@@ -136,7 +136,7 @@ impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
         self.variant(FIFO_DATA_PENDING_A::PENDING)
     }
 }
-#[doc = "Field `RXA_CNT` reader - ADC FIFO available sample word counter"]
+#[doc = "Field `rxa_cnt` reader - ADC FIFO available sample word counter"]
 pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 17 - ADC FIFO Overrun IRQ Pending"]
@@ -186,7 +186,7 @@ impl crate::Readable for GP_FIFO_INTS_SPEC {
 impl crate::Writable for GP_FIFO_INTS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_FIFO_INTS to value 0"]
+#[doc = "`reset()` method sets gp_fifo_ints to value 0"]
 impl crate::Resettable for GP_FIFO_INTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

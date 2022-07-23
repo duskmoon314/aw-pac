@@ -1,4 +1,4 @@
-#[doc = "Register `SPI_BGR` reader"]
+#[doc = "Register `spi_bgr` reader"]
 pub struct R(crate::R<SPI_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPI_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SPI_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SPI_BGR` writer"]
+#[doc = "Register `spi_bgr` writer"]
 pub struct W(crate::W<SPI_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SPI_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<SPI_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `SPI(0-1)_RST` reader - Reset"]
+#[doc = "Fields `spi(0-1)_rst` reader - Reset"]
 pub type SPI_RST_R = crate::BitReader<SPI_RST_A>;
 impl SPI_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl SPI_RST_R {
         *self == SPI_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `SPI(0-1)_RST` writer - Reset"]
+#[doc = "Fields `spi(0-1)_rst` writer - Reset"]
 pub type SPI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BGR_SPEC, SPI_RST_A, O>;
 impl<'a, const O: u8> SPI_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<SPI_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `SPI(0-1)_GATING` reader - Gating Clock"]
+#[doc = "Fields `spi(0-1)_gating` reader - Gating Clock"]
 pub type SPI_GATING_R = crate::BitReader<SPI_GATING_A>;
 impl SPI_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl SPI_GATING_R {
         *self == SPI_GATING_A::PASS
     }
 }
-#[doc = "Fields `SPI(0-1)_GATING` writer - Gating Clock"]
+#[doc = "Fields `spi(0-1)_gating` writer - Gating Clock"]
 pub type SPI_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BGR_SPEC, SPI_GATING_A, O>;
 impl<'a, const O: u8> SPI_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -217,7 +217,7 @@ impl crate::Readable for SPI_BGR_SPEC {
 impl crate::Writable for SPI_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SPI_BGR to value 0"]
+#[doc = "`reset()` method sets spi_bgr to value 0"]
 impl crate::Resettable for SPI_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

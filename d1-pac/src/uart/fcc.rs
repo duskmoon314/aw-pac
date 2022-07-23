@@ -1,4 +1,4 @@
-#[doc = "Register `FCC` reader"]
+#[doc = "Register `fcc` reader"]
 pub struct R(crate::R<FCC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<FCC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<FCC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `FCC` writer"]
+#[doc = "Register `fcc` writer"]
 pub struct W(crate::W<FCC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<FCC_SPEC>;
@@ -247,7 +247,7 @@ impl crate::Readable for FCC_SPEC {
 impl crate::Writable for FCC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets FCC to value 0"]
+#[doc = "`reset()` method sets fcc to value 0"]
 impl crate::Resettable for FCC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

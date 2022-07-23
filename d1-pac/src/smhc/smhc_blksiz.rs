@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_BLKSIZ` reader"]
+#[doc = "Register `smhc_blksiz` reader"]
 pub struct R(crate::R<SMHC_BLKSIZ_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_BLKSIZ_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_BLKSIZ_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_BLKSIZ` writer"]
+#[doc = "Register `smhc_blksiz` writer"]
 pub struct W(crate::W<SMHC_BLKSIZ_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_BLKSIZ_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<SMHC_BLKSIZ_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BLK_SZ` reader - Block SIze"]
+#[doc = "Field `blk_sz` reader - Block SIze"]
 pub type BLK_SZ_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `BLK_SZ` writer - Block SIze"]
+#[doc = "Field `blk_sz` writer - Block SIze"]
 pub type BLK_SZ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_BLKSIZ_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Block SIze"]
@@ -71,7 +71,7 @@ impl crate::Readable for SMHC_BLKSIZ_SPEC {
 impl crate::Writable for SMHC_BLKSIZ_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_BLKSIZ to value 0"]
+#[doc = "`reset()` method sets smhc_blksiz to value 0"]
 impl crate::Resettable for SMHC_BLKSIZ_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

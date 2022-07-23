@@ -1,4 +1,4 @@
-#[doc = "Register `RETITE_PC0_REG` reader"]
+#[doc = "Register `retite_pc0_reg` reader"]
 pub struct R(crate::R<RETITE_PC0_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RETITE_PC0_REG_SPEC>;
@@ -22,7 +22,7 @@ impl crate::RegisterSpec for RETITE_PC0_REG_SPEC {
 impl crate::Readable for RETITE_PC0_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets RETITE_PC0_REG to value 0"]
+#[doc = "`reset()` method sets retite_pc0_reg to value 0"]
 impl crate::Resettable for RETITE_PC0_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

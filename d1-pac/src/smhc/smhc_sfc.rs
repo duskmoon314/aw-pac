@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_SFC` reader"]
+#[doc = "Register `smhc_sfc` reader"]
 pub struct R(crate::R<SMHC_SFC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_SFC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_SFC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_SFC` writer"]
+#[doc = "Register `smhc_sfc` writer"]
 pub struct W(crate::W<SMHC_SFC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_SFC_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<SMHC_SFC_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `STOP_CLK_CTRL` reader - Stop Clock Control"]
+#[doc = "Field `stop_clk_ctrl` reader - Stop Clock Control"]
 pub type STOP_CLK_CTRL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `STOP_CLK_CTRL` writer - Stop Clock Control"]
+#[doc = "Field `stop_clk_ctrl` writer - Stop Clock Control"]
 pub type STOP_CLK_CTRL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SMHC_SFC_SPEC, u8, u8, 4, O>;
-#[doc = "Field `BYPASS_EN` reader - Bypass enable"]
+#[doc = "Field `bypass_en` reader - Bypass enable"]
 pub type BYPASS_EN_R = crate::BitReader<bool>;
-#[doc = "Field `BYPASS_EN` writer - Bypass enable"]
+#[doc = "Field `bypass_en` writer - Bypass enable"]
 pub type BYPASS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_SFC_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 1:4 - Stop Clock Control"]
@@ -86,7 +86,7 @@ impl crate::Readable for SMHC_SFC_SPEC {
 impl crate::Writable for SMHC_SFC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_SFC to value 0"]
+#[doc = "`reset()` method sets smhc_sfc to value 0"]
 impl crate::Resettable for SMHC_SFC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

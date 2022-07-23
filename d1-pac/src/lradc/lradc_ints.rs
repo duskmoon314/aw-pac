@@ -1,4 +1,4 @@
-#[doc = "Register `LRADC_INTS` reader"]
+#[doc = "Register `lradc_ints` reader"]
 pub struct R(crate::R<LRADC_INTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LRADC_INTS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LRADC_INTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LRADC_INTS` writer"]
+#[doc = "Register `lradc_ints` writer"]
 pub struct W(crate::W<LRADC_INTS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LRADC_INTS_SPEC>;
@@ -48,7 +48,7 @@ impl From<ADC0_KEYUP_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_KEYUP_PENDING` reader - ADC0 Key Up Pending"]
+#[doc = "Field `adc0_keyup_pending` reader - ADC0 Key Up Pending"]
 pub type ADC0_KEYUP_PENDING_R = crate::BitReader<ADC0_KEYUP_PENDING_A>;
 impl ADC0_KEYUP_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ADC0_KEYUP_PENDING_R {
         *self == ADC0_KEYUP_PENDING_A::PENDING
     }
 }
-#[doc = "Field `ADC0_KEYUP_PENDING` writer - ADC0 Key Up Pending"]
+#[doc = "Field `adc0_keyup_pending` writer - ADC0 Key Up Pending"]
 pub type ADC0_KEYUP_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYUP_PENDING_A, O>;
 impl<'a, const O: u8> ADC0_KEYUP_PENDING_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<ADC0_ALRDY_HOLD_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_ALRDY_HOLD_PENDING` reader - ADC0 Already Hold Key Pending"]
+#[doc = "Field `adc0_alrdy_hold_pending` reader - ADC0 Already Hold Key Pending"]
 pub type ADC0_ALRDY_HOLD_PENDING_R = crate::BitReader<ADC0_ALRDY_HOLD_PENDING_A>;
 impl ADC0_ALRDY_HOLD_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl ADC0_ALRDY_HOLD_PENDING_R {
         *self == ADC0_ALRDY_HOLD_PENDING_A::PENDING
     }
 }
-#[doc = "Field `ADC0_ALRDY_HOLD_PENDING` writer - ADC0 Already Hold Key Pending"]
+#[doc = "Field `adc0_alrdy_hold_pending` writer - ADC0 Already Hold Key Pending"]
 pub type ADC0_ALRDY_HOLD_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_ALRDY_HOLD_PENDING_A, O>;
 impl<'a, const O: u8> ADC0_ALRDY_HOLD_PENDING_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<ADC0_HOLD_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_HOLD_PENDING` reader - ADC0 Hold Key Pending"]
+#[doc = "Field `adc0_hold_pending` reader - ADC0 Hold Key Pending"]
 pub type ADC0_HOLD_PENDING_R = crate::BitReader<ADC0_HOLD_PENDING_A>;
 impl ADC0_HOLD_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl ADC0_HOLD_PENDING_R {
         *self == ADC0_HOLD_PENDING_A::PENDING
     }
 }
-#[doc = "Field `ADC0_HOLD_PENDING` writer - ADC0 Hold Key Pending"]
+#[doc = "Field `adc0_hold_pending` writer - ADC0 Hold Key Pending"]
 pub type ADC0_HOLD_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_HOLD_PENDING_A, O>;
 impl<'a, const O: u8> ADC0_HOLD_PENDING_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<ADC0_KEYDOWN_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_KEYDOWN_PENDING` reader - ADC0 Key Down Pending"]
+#[doc = "Field `adc0_keydown_pending` reader - ADC0 Key Down Pending"]
 pub type ADC0_KEYDOWN_PENDING_R = crate::BitReader<ADC0_KEYDOWN_PENDING_A>;
 impl ADC0_KEYDOWN_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl ADC0_KEYDOWN_PENDING_R {
         *self == ADC0_KEYDOWN_PENDING_A::PENDING
     }
 }
-#[doc = "Field `ADC0_KEYDOWN_PENDING` writer - ADC0 Key Down Pending"]
+#[doc = "Field `adc0_keydown_pending` writer - ADC0 Key Down Pending"]
 pub type ADC0_KEYDOWN_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_KEYDOWN_PENDING_A, O>;
 impl<'a, const O: u8> ADC0_KEYDOWN_PENDING_W<'a, O> {
@@ -252,7 +252,7 @@ impl From<ADC0_DATA_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_DATA_PENDING` reader - ADC0 Data Pending"]
+#[doc = "Field `adc0_data_pending` reader - ADC0 Data Pending"]
 pub type ADC0_DATA_PENDING_R = crate::BitReader<ADC0_DATA_PENDING_A>;
 impl ADC0_DATA_PENDING_R {
     #[doc = "Get enumerated values variant"]
@@ -274,7 +274,7 @@ impl ADC0_DATA_PENDING_R {
         *self == ADC0_DATA_PENDING_A::PENDING
     }
 }
-#[doc = "Field `ADC0_DATA_PENDING` writer - ADC0 Data Pending"]
+#[doc = "Field `adc0_data_pending` writer - ADC0 Data Pending"]
 pub type ADC0_DATA_PENDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LRADC_INTS_SPEC, ADC0_DATA_PENDING_A, O>;
 impl<'a, const O: u8> ADC0_DATA_PENDING_W<'a, O> {
@@ -362,7 +362,7 @@ impl crate::Readable for LRADC_INTS_SPEC {
 impl crate::Writable for LRADC_INTS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LRADC_INTS to value 0"]
+#[doc = "`reset()` method sets lradc_ints to value 0"]
 impl crate::Resettable for LRADC_INTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

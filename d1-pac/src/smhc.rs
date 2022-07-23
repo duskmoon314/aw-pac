@@ -87,163 +87,163 @@ pub struct RegisterBlock {
     #[doc = "0x200 - Read/Write FIFO"]
     pub smhc_fifo: crate::Reg<smhc_fifo::SMHC_FIFO_SPEC>,
 }
-#[doc = "SMHC_CTRL register accessor: an alias for `Reg<SMHC_CTRL_SPEC>`"]
+#[doc = "smhc_ctrl register accessor: an alias for `Reg<SMHC_CTRL_SPEC>`"]
 pub type SMHC_CTRL = crate::Reg<smhc_ctrl::SMHC_CTRL_SPEC>;
 #[doc = "Control Register"]
 pub mod smhc_ctrl;
-#[doc = "SMHC_CLKDIV register accessor: an alias for `Reg<SMHC_CLKDIV_SPEC>`"]
+#[doc = "smhc_clkdiv register accessor: an alias for `Reg<SMHC_CLKDIV_SPEC>`"]
 pub type SMHC_CLKDIV = crate::Reg<smhc_clkdiv::SMHC_CLKDIV_SPEC>;
 #[doc = "Clock Control Register"]
 pub mod smhc_clkdiv;
-#[doc = "SMHC_TMOUT register accessor: an alias for `Reg<SMHC_TMOUT_SPEC>`"]
+#[doc = "smhc_tmout register accessor: an alias for `Reg<SMHC_TMOUT_SPEC>`"]
 pub type SMHC_TMOUT = crate::Reg<smhc_tmout::SMHC_TMOUT_SPEC>;
 #[doc = "Time Out Register"]
 pub mod smhc_tmout;
-#[doc = "SMHC_CTYPE register accessor: an alias for `Reg<SMHC_CTYPE_SPEC>`"]
+#[doc = "smhc_ctype register accessor: an alias for `Reg<SMHC_CTYPE_SPEC>`"]
 pub type SMHC_CTYPE = crate::Reg<smhc_ctype::SMHC_CTYPE_SPEC>;
 #[doc = "Bus Width Register"]
 pub mod smhc_ctype;
-#[doc = "SMHC_BLKSIZ register accessor: an alias for `Reg<SMHC_BLKSIZ_SPEC>`"]
+#[doc = "smhc_blksiz register accessor: an alias for `Reg<SMHC_BLKSIZ_SPEC>`"]
 pub type SMHC_BLKSIZ = crate::Reg<smhc_blksiz::SMHC_BLKSIZ_SPEC>;
 #[doc = "Block Size Register"]
 pub mod smhc_blksiz;
-#[doc = "SMHC_BYTCNT register accessor: an alias for `Reg<SMHC_BYTCNT_SPEC>`"]
+#[doc = "smhc_bytcnt register accessor: an alias for `Reg<SMHC_BYTCNT_SPEC>`"]
 pub type SMHC_BYTCNT = crate::Reg<smhc_bytcnt::SMHC_BYTCNT_SPEC>;
 #[doc = "Byte Count Register"]
 pub mod smhc_bytcnt;
-#[doc = "SMHC_CMD register accessor: an alias for `Reg<SMHC_CMD_SPEC>`"]
+#[doc = "smhc_cmd register accessor: an alias for `Reg<SMHC_CMD_SPEC>`"]
 pub type SMHC_CMD = crate::Reg<smhc_cmd::SMHC_CMD_SPEC>;
 #[doc = "Command Register"]
 pub mod smhc_cmd;
-#[doc = "SMHC_CMDARG register accessor: an alias for `Reg<SMHC_CMDARG_SPEC>`"]
+#[doc = "smhc_cmdarg register accessor: an alias for `Reg<SMHC_CMDARG_SPEC>`"]
 pub type SMHC_CMDARG = crate::Reg<smhc_cmdarg::SMHC_CMDARG_SPEC>;
 #[doc = "Command Argument Register"]
 pub mod smhc_cmdarg;
-#[doc = "SMHC_RESP0 register accessor: an alias for `Reg<SMHC_RESP0_SPEC>`"]
+#[doc = "smhc_resp0 register accessor: an alias for `Reg<SMHC_RESP0_SPEC>`"]
 pub type SMHC_RESP0 = crate::Reg<smhc_resp0::SMHC_RESP0_SPEC>;
 #[doc = "Response 0 Register"]
 pub mod smhc_resp0;
-#[doc = "SMHC_RESP1 register accessor: an alias for `Reg<SMHC_RESP1_SPEC>`"]
+#[doc = "smhc_resp1 register accessor: an alias for `Reg<SMHC_RESP1_SPEC>`"]
 pub type SMHC_RESP1 = crate::Reg<smhc_resp1::SMHC_RESP1_SPEC>;
 #[doc = "Response 1 Register"]
 pub mod smhc_resp1;
-#[doc = "SMHC_RESP2 register accessor: an alias for `Reg<SMHC_RESP2_SPEC>`"]
+#[doc = "smhc_resp2 register accessor: an alias for `Reg<SMHC_RESP2_SPEC>`"]
 pub type SMHC_RESP2 = crate::Reg<smhc_resp2::SMHC_RESP2_SPEC>;
 #[doc = "Response 2 Register"]
 pub mod smhc_resp2;
-#[doc = "SMHC_RESP3 register accessor: an alias for `Reg<SMHC_RESP3_SPEC>`"]
+#[doc = "smhc_resp3 register accessor: an alias for `Reg<SMHC_RESP3_SPEC>`"]
 pub type SMHC_RESP3 = crate::Reg<smhc_resp3::SMHC_RESP3_SPEC>;
 #[doc = "Response 3 Register"]
 pub mod smhc_resp3;
-#[doc = "SMHC_INTMASK register accessor: an alias for `Reg<SMHC_INTMASK_SPEC>`"]
+#[doc = "smhc_intmask register accessor: an alias for `Reg<SMHC_INTMASK_SPEC>`"]
 pub type SMHC_INTMASK = crate::Reg<smhc_intmask::SMHC_INTMASK_SPEC>;
 #[doc = "Interrupt Mask Register"]
 pub mod smhc_intmask;
-#[doc = "SMHC_MINTSTS register accessor: an alias for `Reg<SMHC_MINTSTS_SPEC>`"]
+#[doc = "smhc_mintsts register accessor: an alias for `Reg<SMHC_MINTSTS_SPEC>`"]
 pub type SMHC_MINTSTS = crate::Reg<smhc_mintsts::SMHC_MINTSTS_SPEC>;
 #[doc = "Masked Interrupt Status Register"]
 pub mod smhc_mintsts;
-#[doc = "SMHC_RINTSTS register accessor: an alias for `Reg<SMHC_RINTSTS_SPEC>`"]
+#[doc = "smhc_rintsts register accessor: an alias for `Reg<SMHC_RINTSTS_SPEC>`"]
 pub type SMHC_RINTSTS = crate::Reg<smhc_rintsts::SMHC_RINTSTS_SPEC>;
 #[doc = "Raw Interrupt Status Register"]
 pub mod smhc_rintsts;
-#[doc = "SMHC_STATUS register accessor: an alias for `Reg<SMHC_STATUS_SPEC>`"]
+#[doc = "smhc_status register accessor: an alias for `Reg<SMHC_STATUS_SPEC>`"]
 pub type SMHC_STATUS = crate::Reg<smhc_status::SMHC_STATUS_SPEC>;
 #[doc = "Status Register"]
 pub mod smhc_status;
-#[doc = "SMHC_FIFOTH register accessor: an alias for `Reg<SMHC_FIFOTH_SPEC>`"]
+#[doc = "smhc_fifoth register accessor: an alias for `Reg<SMHC_FIFOTH_SPEC>`"]
 pub type SMHC_FIFOTH = crate::Reg<smhc_fifoth::SMHC_FIFOTH_SPEC>;
 #[doc = "FIFO Water Level Register"]
 pub mod smhc_fifoth;
-#[doc = "SMHC_FUNS register accessor: an alias for `Reg<SMHC_FUNS_SPEC>`"]
+#[doc = "smhc_funs register accessor: an alias for `Reg<SMHC_FUNS_SPEC>`"]
 pub type SMHC_FUNS = crate::Reg<smhc_funs::SMHC_FUNS_SPEC>;
 #[doc = "FIFO Function Select Register"]
 pub mod smhc_funs;
-#[doc = "SMHC_TBC0 register accessor: an alias for `Reg<SMHC_TBC0_SPEC>`"]
+#[doc = "smhc_tbc0 register accessor: an alias for `Reg<SMHC_TBC0_SPEC>`"]
 pub type SMHC_TBC0 = crate::Reg<smhc_tbc0::SMHC_TBC0_SPEC>;
 #[doc = "Transferred Byte Count between Controller and Card"]
 pub mod smhc_tbc0;
-#[doc = "SMHC_TBC1 register accessor: an alias for `Reg<SMHC_TBC1_SPEC>`"]
+#[doc = "smhc_tbc1 register accessor: an alias for `Reg<SMHC_TBC1_SPEC>`"]
 pub type SMHC_TBC1 = crate::Reg<smhc_tbc1::SMHC_TBC1_SPEC>;
 #[doc = "Transferred Byte Count between Host Memory and Internal FIFO"]
 pub mod smhc_tbc1;
-#[doc = "SMHC_DBGC register accessor: an alias for `Reg<SMHC_DBGC_SPEC>`"]
+#[doc = "smhc_dbgc register accessor: an alias for `Reg<SMHC_DBGC_SPEC>`"]
 pub type SMHC_DBGC = crate::Reg<smhc_dbgc::SMHC_DBGC_SPEC>;
 #[doc = "Current Debug Control Register"]
 pub mod smhc_dbgc;
-#[doc = "SMHC_CSDC register accessor: an alias for `Reg<SMHC_CSDC_SPEC>`"]
+#[doc = "smhc_csdc register accessor: an alias for `Reg<SMHC_CSDC_SPEC>`"]
 pub type SMHC_CSDC = crate::Reg<smhc_csdc::SMHC_CSDC_SPEC>;
 #[doc = "CRC Status Detect Control Registers"]
 pub mod smhc_csdc;
-#[doc = "SMHC_A12A register accessor: an alias for `Reg<SMHC_A12A_SPEC>`"]
+#[doc = "smhc_a12a register accessor: an alias for `Reg<SMHC_A12A_SPEC>`"]
 pub type SMHC_A12A = crate::Reg<smhc_a12a::SMHC_A12A_SPEC>;
 #[doc = "Auto Command 12 Argument Register"]
 pub mod smhc_a12a;
-#[doc = "SMHC_NTSR register accessor: an alias for `Reg<SMHC_NTSR_SPEC>`"]
+#[doc = "smhc_ntsr register accessor: an alias for `Reg<SMHC_NTSR_SPEC>`"]
 pub type SMHC_NTSR = crate::Reg<smhc_ntsr::SMHC_NTSR_SPEC>;
 #[doc = "SD New Timing Set Register"]
 pub mod smhc_ntsr;
-#[doc = "SMHC_HWRST register accessor: an alias for `Reg<SMHC_HWRST_SPEC>`"]
+#[doc = "smhc_hwrst register accessor: an alias for `Reg<SMHC_HWRST_SPEC>`"]
 pub type SMHC_HWRST = crate::Reg<smhc_hwrst::SMHC_HWRST_SPEC>;
 #[doc = "Hardware Reset Register"]
 pub mod smhc_hwrst;
-#[doc = "SMHC_IDMAC register accessor: an alias for `Reg<SMHC_IDMAC_SPEC>`"]
+#[doc = "smhc_idmac register accessor: an alias for `Reg<SMHC_IDMAC_SPEC>`"]
 pub type SMHC_IDMAC = crate::Reg<smhc_idmac::SMHC_IDMAC_SPEC>;
 #[doc = "IDMAC Control Register"]
 pub mod smhc_idmac;
-#[doc = "SMHC_DLBA register accessor: an alias for `Reg<SMHC_DLBA_SPEC>`"]
+#[doc = "smhc_dlba register accessor: an alias for `Reg<SMHC_DLBA_SPEC>`"]
 pub type SMHC_DLBA = crate::Reg<smhc_dlba::SMHC_DLBA_SPEC>;
 #[doc = "Descriptor List Base Address Register"]
 pub mod smhc_dlba;
-#[doc = "SMHC_IDST register accessor: an alias for `Reg<SMHC_IDST_SPEC>`"]
+#[doc = "smhc_idst register accessor: an alias for `Reg<SMHC_IDST_SPEC>`"]
 pub type SMHC_IDST = crate::Reg<smhc_idst::SMHC_IDST_SPEC>;
 #[doc = "IDMAC Status Register"]
 pub mod smhc_idst;
-#[doc = "SMHC_IDIE register accessor: an alias for `Reg<SMHC_IDIE_SPEC>`"]
+#[doc = "smhc_idie register accessor: an alias for `Reg<SMHC_IDIE_SPEC>`"]
 pub type SMHC_IDIE = crate::Reg<smhc_idie::SMHC_IDIE_SPEC>;
 #[doc = "IDMAC Interrupt Enable Register"]
 pub mod smhc_idie;
-#[doc = "SMHC_THLD register accessor: an alias for `Reg<SMHC_THLD_SPEC>`"]
+#[doc = "smhc_thld register accessor: an alias for `Reg<SMHC_THLD_SPEC>`"]
 pub type SMHC_THLD = crate::Reg<smhc_thld::SMHC_THLD_SPEC>;
 #[doc = "Card Threshold Control Register"]
 pub mod smhc_thld;
-#[doc = "SMHC_SFC register accessor: an alias for `Reg<SMHC_SFC_SPEC>`"]
+#[doc = "smhc_sfc register accessor: an alias for `Reg<SMHC_SFC_SPEC>`"]
 pub type SMHC_SFC = crate::Reg<smhc_sfc::SMHC_SFC_SPEC>;
 #[doc = "Sample FIFO Control Register"]
 pub mod smhc_sfc;
-#[doc = "SMHC_A23A register accessor: an alias for `Reg<SMHC_A23A_SPEC>`"]
+#[doc = "smhc_a23a register accessor: an alias for `Reg<SMHC_A23A_SPEC>`"]
 pub type SMHC_A23A = crate::Reg<smhc_a23a::SMHC_A23A_SPEC>;
 #[doc = "Auto Command 23 Argument Register"]
 pub mod smhc_a23a;
-#[doc = "EMMC_DDR_SBIT_DET register accessor: an alias for `Reg<EMMC_DDR_SBIT_DET_SPEC>`"]
+#[doc = "emmc_ddr_sbit_det register accessor: an alias for `Reg<EMMC_DDR_SBIT_DET_SPEC>`"]
 pub type EMMC_DDR_SBIT_DET = crate::Reg<emmc_ddr_sbit_det::EMMC_DDR_SBIT_DET_SPEC>;
 #[doc = "eMMC4.5 DDR Start Bit Detection Control Register"]
 pub mod emmc_ddr_sbit_det;
-#[doc = "SMHC_EXT_CMD register accessor: an alias for `Reg<SMHC_EXT_CMD_SPEC>`"]
+#[doc = "smhc_ext_cmd register accessor: an alias for `Reg<SMHC_EXT_CMD_SPEC>`"]
 pub type SMHC_EXT_CMD = crate::Reg<smhc_ext_cmd::SMHC_EXT_CMD_SPEC>;
 #[doc = "Extended Command Register"]
 pub mod smhc_ext_cmd;
-#[doc = "SMHC_EXT_RESP register accessor: an alias for `Reg<SMHC_EXT_RESP_SPEC>`"]
+#[doc = "smhc_ext_resp register accessor: an alias for `Reg<SMHC_EXT_RESP_SPEC>`"]
 pub type SMHC_EXT_RESP = crate::Reg<smhc_ext_resp::SMHC_EXT_RESP_SPEC>;
 #[doc = "Extended Response Register"]
 pub mod smhc_ext_resp;
-#[doc = "SMHC_DRV_DL register accessor: an alias for `Reg<SMHC_DRV_DL_SPEC>`"]
+#[doc = "smhc_drv_dl register accessor: an alias for `Reg<SMHC_DRV_DL_SPEC>`"]
 pub type SMHC_DRV_DL = crate::Reg<smhc_drv_dl::SMHC_DRV_DL_SPEC>;
 #[doc = "Drive Delay Control Register"]
 pub mod smhc_drv_dl;
-#[doc = "SMHC_SMAP_DL register accessor: an alias for `Reg<SMHC_SMAP_DL_SPEC>`"]
+#[doc = "smhc_smap_dl register accessor: an alias for `Reg<SMHC_SMAP_DL_SPEC>`"]
 pub type SMHC_SMAP_DL = crate::Reg<smhc_smap_dl::SMHC_SMAP_DL_SPEC>;
 #[doc = "Sample Delay Control Register"]
 pub mod smhc_smap_dl;
-#[doc = "SMHC_DS_DL register accessor: an alias for `Reg<SMHC_DS_DL_SPEC>`"]
+#[doc = "smhc_ds_dl register accessor: an alias for `Reg<SMHC_DS_DL_SPEC>`"]
 pub type SMHC_DS_DL = crate::Reg<smhc_ds_dl::SMHC_DS_DL_SPEC>;
 #[doc = "Data Strobe Delay Control Register"]
 pub mod smhc_ds_dl;
-#[doc = "SMHC_HS400_DL register accessor: an alias for `Reg<SMHC_HS400_DL_SPEC>`"]
+#[doc = "smhc_hs400_dl register accessor: an alias for `Reg<SMHC_HS400_DL_SPEC>`"]
 pub type SMHC_HS400_DL = crate::Reg<smhc_hs400_dl::SMHC_HS400_DL_SPEC>;
 #[doc = "HS400 Delay Control Register"]
 pub mod smhc_hs400_dl;
-#[doc = "SMHC_FIFO register accessor: an alias for `Reg<SMHC_FIFO_SPEC>`"]
+#[doc = "smhc_fifo register accessor: an alias for `Reg<SMHC_FIFO_SPEC>`"]
 pub type SMHC_FIFO = crate::Reg<smhc_fifo::SMHC_FIFO_SPEC>;
 #[doc = "Read/Write FIFO"]
 pub mod smhc_fifo;

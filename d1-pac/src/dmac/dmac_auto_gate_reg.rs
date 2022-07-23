@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_AUTO_GATE_REG` reader"]
+#[doc = "Register `dmac_auto_gate_reg` reader"]
 pub struct R(crate::R<DMAC_AUTO_GATE_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_AUTO_GATE_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMAC_AUTO_GATE_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMAC_AUTO_GATE_REG` writer"]
+#[doc = "Register `dmac_auto_gate_reg` writer"]
 pub struct W(crate::W<DMAC_AUTO_GATE_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMAC_AUTO_GATE_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<DMA_MCLK_CIRCUIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_MCLK_CIRCUIT` reader - Auto gating bit of DMA MCLK interfact circuit"]
+#[doc = "Field `dma_mclk_circuit` reader - Auto gating bit of DMA MCLK interfact circuit"]
 pub type DMA_MCLK_CIRCUIT_R = crate::BitReader<DMA_MCLK_CIRCUIT_A>;
 impl DMA_MCLK_CIRCUIT_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DMA_MCLK_CIRCUIT_R {
         *self == DMA_MCLK_CIRCUIT_A::DISABLED
     }
 }
-#[doc = "Field `DMA_MCLK_CIRCUIT` writer - Auto gating bit of DMA MCLK interfact circuit"]
+#[doc = "Field `dma_mclk_circuit` writer - Auto gating bit of DMA MCLK interfact circuit"]
 pub type DMA_MCLK_CIRCUIT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_MCLK_CIRCUIT_A, O>;
 impl<'a, const O: u8> DMA_MCLK_CIRCUIT_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<DMA_COMMON_CIRCUIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_COMMON_CIRCUIT` reader - Auto gating bit of DMA common circuit"]
+#[doc = "Field `dma_common_circuit` reader - Auto gating bit of DMA common circuit"]
 pub type DMA_COMMON_CIRCUIT_R = crate::BitReader<DMA_COMMON_CIRCUIT_A>;
 impl DMA_COMMON_CIRCUIT_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl DMA_COMMON_CIRCUIT_R {
         *self == DMA_COMMON_CIRCUIT_A::DISABLED
     }
 }
-#[doc = "Field `DMA_COMMON_CIRCUIT` writer - Auto gating bit of DMA common circuit"]
+#[doc = "Field `dma_common_circuit` writer - Auto gating bit of DMA common circuit"]
 pub type DMA_COMMON_CIRCUIT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_COMMON_CIRCUIT_A, O>;
 impl<'a, const O: u8> DMA_COMMON_CIRCUIT_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<DMA_CHAN_CIRCUIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_CHAN_CIRCUIT` reader - Auto gating bit of DMA channel circuit"]
+#[doc = "Field `dma_chan_circuit` reader - Auto gating bit of DMA channel circuit"]
 pub type DMA_CHAN_CIRCUIT_R = crate::BitReader<DMA_CHAN_CIRCUIT_A>;
 impl DMA_CHAN_CIRCUIT_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl DMA_CHAN_CIRCUIT_R {
         *self == DMA_CHAN_CIRCUIT_A::DISABLED
     }
 }
-#[doc = "Field `DMA_CHAN_CIRCUIT` writer - Auto gating bit of DMA channel circuit"]
+#[doc = "Field `dma_chan_circuit` writer - Auto gating bit of DMA channel circuit"]
 pub type DMA_CHAN_CIRCUIT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_AUTO_GATE_REG_SPEC, DMA_CHAN_CIRCUIT_A, O>;
 impl<'a, const O: u8> DMA_CHAN_CIRCUIT_W<'a, O> {
@@ -240,7 +240,7 @@ impl crate::Readable for DMAC_AUTO_GATE_REG_SPEC {
 impl crate::Writable for DMAC_AUTO_GATE_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMAC_AUTO_GATE_REG to value 0"]
+#[doc = "`reset()` method sets dmac_auto_gate_reg to value 0"]
 impl crate::Resettable for DMAC_AUTO_GATE_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

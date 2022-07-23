@@ -1,4 +1,4 @@
-#[doc = "Register `CER` reader"]
+#[doc = "Register `cer` reader"]
 pub struct R(crate::R<CER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CER` writer"]
+#[doc = "Register `cer` writer"]
 pub struct W(crate::W<CER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CER_SPEC>;
@@ -48,7 +48,7 @@ impl From<CAP_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `CAP(0-7)_EN` reader - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+#[doc = "Fields `cap(0-7)_en` reader - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
 pub type CAP_EN_R = crate::BitReader<CAP_EN_A>;
 impl CAP_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CAP_EN_R {
         *self == CAP_EN_A::ENABLE
     }
 }
-#[doc = "Fields `CAP(0-7)_EN` writer - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
+#[doc = "Fields `cap(0-7)_en` writer - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
 pub type CAP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CER_SPEC, CAP_EN_A, O>;
 impl<'a, const O: u8> CAP_EN_W<'a, O> {
     #[doc = "Capture disable"]
@@ -197,7 +197,7 @@ impl crate::Readable for CER_SPEC {
 impl crate::Writable for CER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CER to value 0"]
+#[doc = "`reset()` method sets cer to value 0"]
 impl crate::Resettable for CER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

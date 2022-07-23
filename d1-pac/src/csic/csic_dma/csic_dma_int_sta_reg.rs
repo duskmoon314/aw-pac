@@ -1,4 +1,4 @@
-#[doc = "Register `CSIC_DMA_INT_STA_REG` reader"]
+#[doc = "Register `csic_dma_int_sta_reg` reader"]
 pub struct R(crate::R<CSIC_DMA_INT_STA_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CSIC_DMA_INT_STA_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CSIC_DMA_INT_STA_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CSIC_DMA_INT_STA_REG` writer"]
+#[doc = "Register `csic_dma_int_sta_reg` writer"]
 pub struct W(crate::W<CSIC_DMA_INT_STA_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CSIC_DMA_INT_STA_REG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for CSIC_DMA_INT_STA_REG_SPEC {
 impl crate::Writable for CSIC_DMA_INT_STA_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CSIC_DMA_INT_STA_REG to value 0"]
+#[doc = "`reset()` method sets csic_dma_int_sta_reg to value 0"]
 impl crate::Resettable for CSIC_DMA_INT_STA_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

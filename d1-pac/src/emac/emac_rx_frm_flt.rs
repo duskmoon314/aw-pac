@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_RX_FRM_FLT` reader"]
+#[doc = "Register `emac_rx_frm_flt` reader"]
 pub struct R(crate::R<EMAC_RX_FRM_FLT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_RX_FRM_FLT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_RX_FRM_FLT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_RX_FRM_FLT` writer"]
+#[doc = "Register `emac_rx_frm_flt` writer"]
 pub struct W(crate::W<EMAC_RX_FRM_FLT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_RX_FRM_FLT_SPEC>;
@@ -48,7 +48,7 @@ impl From<DIS_ADDR_FILTER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIS_ADDR_FILTER` reader - Disable Address Filter"]
+#[doc = "Field `dis_addr_filter` reader - Disable Address Filter"]
 pub type DIS_ADDR_FILTER_R = crate::BitReader<DIS_ADDR_FILTER_A>;
 impl DIS_ADDR_FILTER_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DIS_ADDR_FILTER_R {
         *self == DIS_ADDR_FILTER_A::DISABLE
     }
 }
-#[doc = "Field `DIS_ADDR_FILTER` writer - Disable Address Filter"]
+#[doc = "Field `dis_addr_filter` writer - Disable Address Filter"]
 pub type DIS_ADDR_FILTER_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DIS_ADDR_FILTER_A, O>;
 impl<'a, const O: u8> DIS_ADDR_FILTER_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<DIS_BROADCAST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DIS_BROADCAST` reader - Disable Receive Broadcast Frames"]
+#[doc = "Field `dis_broadcast` reader - Disable Receive Broadcast Frames"]
 pub type DIS_BROADCAST_R = crate::BitReader<DIS_BROADCAST_A>;
 impl DIS_BROADCAST_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl DIS_BROADCAST_R {
         *self == DIS_BROADCAST_A::DROP
     }
 }
-#[doc = "Field `DIS_BROADCAST` writer - Disable Receive Broadcast Frames"]
+#[doc = "Field `dis_broadcast` writer - Disable Receive Broadcast Frames"]
 pub type DIS_BROADCAST_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DIS_BROADCAST_A, O>;
 impl<'a, const O: u8> DIS_BROADCAST_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<RX_ALL_MULTICAST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_ALL_MULTICAST` reader - Receive All Multicast Frames Filter"]
+#[doc = "Field `rx_all_multicast` reader - Receive All Multicast Frames Filter"]
 pub type RX_ALL_MULTICAST_R = crate::BitReader<RX_ALL_MULTICAST_A>;
 impl RX_ALL_MULTICAST_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl RX_ALL_MULTICAST_R {
         *self == RX_ALL_MULTICAST_A::RECEIVE_ALL
     }
 }
-#[doc = "Field `RX_ALL_MULTICAST` writer - Receive All Multicast Frames Filter"]
+#[doc = "Field `rx_all_multicast` writer - Receive All Multicast Frames Filter"]
 pub type RX_ALL_MULTICAST_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, RX_ALL_MULTICAST_A, O>;
 impl<'a, const O: u8> RX_ALL_MULTICAST_W<'a, O> {
@@ -204,7 +204,7 @@ impl From<CTL_FRM_FILTER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CTL_FRM_FILTER` reader - Receive Control Frames Filter"]
+#[doc = "Field `ctl_frm_filter` reader - Receive Control Frames Filter"]
 pub type CTL_FRM_FILTER_R = crate::FieldReader<u8, CTL_FRM_FILTER_A>;
 impl CTL_FRM_FILTER_R {
     #[doc = "Get enumerated values variant"]
@@ -233,7 +233,7 @@ impl CTL_FRM_FILTER_R {
         *self == CTL_FRM_FILTER_A::RECEIVE_ALL_WHEN_FILTER
     }
 }
-#[doc = "Field `CTL_FRM_FILTER` writer - Receive Control Frames Filter"]
+#[doc = "Field `ctl_frm_filter` writer - Receive Control Frames Filter"]
 pub type CTL_FRM_FILTER_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, u8, CTL_FRM_FILTER_A, 2, O>;
 impl<'a, const O: u8> CTL_FRM_FILTER_W<'a, O> {
@@ -267,7 +267,7 @@ impl From<HASH_MULTICAST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HASH_MULTICAST` reader - Filter Multicast Frames Set"]
+#[doc = "Field `hash_multicast` reader - Filter Multicast Frames Set"]
 pub type HASH_MULTICAST_R = crate::BitReader<HASH_MULTICAST_A>;
 impl HASH_MULTICAST_R {
     #[doc = "Get enumerated values variant"]
@@ -289,7 +289,7 @@ impl HASH_MULTICAST_R {
         *self == HASH_MULTICAST_A::HASH_TABLE
     }
 }
-#[doc = "Field `HASH_MULTICAST` writer - Filter Multicast Frames Set"]
+#[doc = "Field `hash_multicast` writer - Filter Multicast Frames Set"]
 pub type HASH_MULTICAST_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, HASH_MULTICAST_A, O>;
 impl<'a, const O: u8> HASH_MULTICAST_W<'a, O> {
@@ -318,7 +318,7 @@ impl From<HASH_UNICAST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `HASH_UNICAST` reader - Filter Unicast Frames Set"]
+#[doc = "Field `hash_unicast` reader - Filter Unicast Frames Set"]
 pub type HASH_UNICAST_R = crate::BitReader<HASH_UNICAST_A>;
 impl HASH_UNICAST_R {
     #[doc = "Get enumerated values variant"]
@@ -340,7 +340,7 @@ impl HASH_UNICAST_R {
         *self == HASH_UNICAST_A::HASH_TABLE
     }
 }
-#[doc = "Field `HASH_UNICAST` writer - Filter Unicast Frames Set"]
+#[doc = "Field `hash_unicast` writer - Filter Unicast Frames Set"]
 pub type HASH_UNICAST_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, HASH_UNICAST_A, O>;
 impl<'a, const O: u8> HASH_UNICAST_W<'a, O> {
@@ -369,7 +369,7 @@ impl From<SA_FILTER_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SA_FILTER_EN` reader - Receive SA Filter Enable"]
+#[doc = "Field `sa_filter_en` reader - Receive SA Filter Enable"]
 pub type SA_FILTER_EN_R = crate::BitReader<SA_FILTER_EN_A>;
 impl SA_FILTER_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -391,7 +391,7 @@ impl SA_FILTER_EN_R {
         *self == SA_FILTER_EN_A::UPDATE_DROP_UNMATCHED
     }
 }
-#[doc = "Field `SA_FILTER_EN` writer - Receive SA Filter Enable"]
+#[doc = "Field `sa_filter_en` writer - Receive SA Filter Enable"]
 pub type SA_FILTER_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, SA_FILTER_EN_A, O>;
 impl<'a, const O: u8> SA_FILTER_EN_W<'a, O> {
@@ -420,7 +420,7 @@ impl From<SA_INV_FILTER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SA_INV_FILTER` reader - Receive SA Invert Filter Set"]
+#[doc = "Field `sa_inv_filter` reader - Receive SA Invert Filter Set"]
 pub type SA_INV_FILTER_R = crate::BitReader<SA_INV_FILTER_A>;
 impl SA_INV_FILTER_R {
     #[doc = "Get enumerated values variant"]
@@ -442,7 +442,7 @@ impl SA_INV_FILTER_R {
         *self == SA_INV_FILTER_A::UNMATCHED
     }
 }
-#[doc = "Field `SA_INV_FILTER` writer - Receive SA Invert Filter Set"]
+#[doc = "Field `sa_inv_filter` writer - Receive SA Invert Filter Set"]
 pub type SA_INV_FILTER_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, SA_INV_FILTER_A, O>;
 impl<'a, const O: u8> SA_INV_FILTER_W<'a, O> {
@@ -471,7 +471,7 @@ impl From<DA_INV_FILTER_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DA_INV_FILTER` reader - "]
+#[doc = "Field `da_inv_filter` reader - "]
 pub type DA_INV_FILTER_R = crate::BitReader<DA_INV_FILTER_A>;
 impl DA_INV_FILTER_R {
     #[doc = "Get enumerated values variant"]
@@ -493,7 +493,7 @@ impl DA_INV_FILTER_R {
         *self == DA_INV_FILTER_A::INVERSE_CMP_DA
     }
 }
-#[doc = "Field `DA_INV_FILTER` writer - "]
+#[doc = "Field `da_inv_filter` writer - "]
 pub type DA_INV_FILTER_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, DA_INV_FILTER_A, O>;
 impl<'a, const O: u8> DA_INV_FILTER_W<'a, O> {
@@ -522,7 +522,7 @@ impl From<FLT_MD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FLT_MD` reader - "]
+#[doc = "Field `flt_md` reader - "]
 pub type FLT_MD_R = crate::BitReader<FLT_MD_A>;
 impl FLT_MD_R {
     #[doc = "Get enumerated values variant"]
@@ -544,7 +544,7 @@ impl FLT_MD_R {
         *self == FLT_MD_A::RECEIVE_WHEN_PASSED
     }
 }
-#[doc = "Field `FLT_MD` writer - "]
+#[doc = "Field `flt_md` writer - "]
 pub type FLT_MD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, FLT_MD_A, O>;
 impl<'a, const O: u8> FLT_MD_W<'a, O> {
     #[doc = "`0`"]
@@ -572,7 +572,7 @@ impl From<RX_ALL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_ALL` reader - Receive All Frame"]
+#[doc = "Field `rx_all` reader - Receive All Frame"]
 pub type RX_ALL_R = crate::BitReader<RX_ALL_A>;
 impl RX_ALL_R {
     #[doc = "Get enumerated values variant"]
@@ -594,7 +594,7 @@ impl RX_ALL_R {
         *self == RX_ALL_A::RECEIVE_ALL_UPDATE
     }
 }
-#[doc = "Field `RX_ALL` writer - Receive All Frame"]
+#[doc = "Field `rx_all` writer - Receive All Frame"]
 pub type RX_ALL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_FRM_FLT_SPEC, RX_ALL_A, O>;
 impl<'a, const O: u8> RX_ALL_W<'a, O> {
     #[doc = "`0`"]
@@ -741,7 +741,7 @@ impl crate::Readable for EMAC_RX_FRM_FLT_SPEC {
 impl crate::Writable for EMAC_RX_FRM_FLT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_RX_FRM_FLT to value 0"]
+#[doc = "`reset()` method sets emac_rx_frm_flt to value 0"]
 impl crate::Resettable for EMAC_RX_FRM_FLT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

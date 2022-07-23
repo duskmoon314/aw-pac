@@ -162,96 +162,96 @@ Register"]
     #[doc = "0x1f8 - Capture Fall Lock Register"]
     pub cflr7: crate::Reg<cflr::CFLR_SPEC>,
 }
-#[doc = "PIER register accessor: an alias for `Reg<PIER_SPEC>`"]
+#[doc = "pier register accessor: an alias for `Reg<PIER_SPEC>`"]
 pub type PIER = crate::Reg<pier::PIER_SPEC>;
 #[doc = "PWM IRQ Enable Register"]
 pub mod pier;
-#[doc = "PISR register accessor: an alias for `Reg<PISR_SPEC>`"]
+#[doc = "pisr register accessor: an alias for `Reg<PISR_SPEC>`"]
 pub type PISR = crate::Reg<pisr::PISR_SPEC>;
 #[doc = "PWM IRQ Status Register"]
 pub mod pisr;
-#[doc = "CIER register accessor: an alias for `Reg<CIER_SPEC>`"]
+#[doc = "cier register accessor: an alias for `Reg<CIER_SPEC>`"]
 pub type CIER = crate::Reg<cier::CIER_SPEC>;
 #[doc = "Capture IRQ Enable Register"]
 pub mod cier;
-#[doc = "CISR register accessor: an alias for `Reg<CISR_SPEC>`"]
+#[doc = "cisr register accessor: an alias for `Reg<CISR_SPEC>`"]
 pub type CISR = crate::Reg<cisr::CISR_SPEC>;
 #[doc = "Capture IRQ Status Register"]
 pub mod cisr;
-#[doc = "PCCR01 register accessor: an alias for `Reg<PCCR01_SPEC>`"]
+#[doc = "pccr01 register accessor: an alias for `Reg<PCCR01_SPEC>`"]
 pub type PCCR01 = crate::Reg<pccr01::PCCR01_SPEC>;
 #[doc = "PWM01 Clock Configuration Register"]
 pub mod pccr01;
-#[doc = "PCCR23 register accessor: an alias for `Reg<PCCR23_SPEC>`"]
+#[doc = "pccr23 register accessor: an alias for `Reg<PCCR23_SPEC>`"]
 pub type PCCR23 = crate::Reg<pccr23::PCCR23_SPEC>;
 #[doc = "PWM23 Clock Configuration Register"]
 pub mod pccr23;
-#[doc = "PCCR45 register accessor: an alias for `Reg<PCCR45_SPEC>`"]
+#[doc = "pccr45 register accessor: an alias for `Reg<PCCR45_SPEC>`"]
 pub type PCCR45 = crate::Reg<pccr45::PCCR45_SPEC>;
 #[doc = "PWM45 Clock Configuration Register"]
 pub mod pccr45;
-#[doc = "PCCR67 register accessor: an alias for `Reg<PCCR67_SPEC>`"]
+#[doc = "pccr67 register accessor: an alias for `Reg<PCCR67_SPEC>`"]
 pub type PCCR67 = crate::Reg<pccr67::PCCR67_SPEC>;
 #[doc = "PWM67 Clock Configuration Register"]
 pub mod pccr67;
-#[doc = "PCGR register accessor: an alias for `Reg<PCGR_SPEC>`"]
+#[doc = "pcgr register accessor: an alias for `Reg<PCGR_SPEC>`"]
 pub type PCGR = crate::Reg<pcgr::PCGR_SPEC>;
 #[doc = "PWM Clock Gating Register"]
 pub mod pcgr;
-#[doc = "PDZCR01 register accessor: an alias for `Reg<PDZCR01_SPEC>`"]
+#[doc = "pdzcr01 register accessor: an alias for `Reg<PDZCR01_SPEC>`"]
 pub type PDZCR01 = crate::Reg<pdzcr01::PDZCR01_SPEC>;
 #[doc = "PWM01 Dead Zone Control Register"]
 pub mod pdzcr01;
-#[doc = "PDZCR23 register accessor: an alias for `Reg<PDZCR23_SPEC>`"]
+#[doc = "pdzcr23 register accessor: an alias for `Reg<PDZCR23_SPEC>`"]
 pub type PDZCR23 = crate::Reg<pdzcr23::PDZCR23_SPEC>;
 #[doc = "PWM23 Dead Zone Control Register"]
 pub mod pdzcr23;
-#[doc = "PDZCR45 register accessor: an alias for `Reg<PDZCR45_SPEC>`"]
+#[doc = "pdzcr45 register accessor: an alias for `Reg<PDZCR45_SPEC>`"]
 pub type PDZCR45 = crate::Reg<pdzcr45::PDZCR45_SPEC>;
 #[doc = "PWM45 Dead Zone Control Register"]
 pub mod pdzcr45;
-#[doc = "PDZCR67 register accessor: an alias for `Reg<PDZCR67_SPEC>`"]
+#[doc = "pdzcr67 register accessor: an alias for `Reg<PDZCR67_SPEC>`"]
 pub type PDZCR67 = crate::Reg<pdzcr67::PDZCR67_SPEC>;
 #[doc = "PWM67 Dead Zone Control Register"]
 pub mod pdzcr67;
-#[doc = "PER register accessor: an alias for `Reg<PER_SPEC>`"]
+#[doc = "per register accessor: an alias for `Reg<PER_SPEC>`"]
 pub type PER = crate::Reg<per::PER_SPEC>;
 #[doc = "PWM Enable Register"]
 pub mod per;
-#[doc = "PGR register accessor: an alias for `Reg<PGR_SPEC>`"]
+#[doc = "pgr register accessor: an alias for `Reg<PGR_SPEC>`"]
 pub type PGR = crate::Reg<pgr::PGR_SPEC>;
 #[doc = "PWM Group\\[g\\]
 Register"]
 pub mod pgr;
-#[doc = "CER register accessor: an alias for `Reg<CER_SPEC>`"]
+#[doc = "cer register accessor: an alias for `Reg<CER_SPEC>`"]
 pub type CER = crate::Reg<cer::CER_SPEC>;
 #[doc = "Capture Enable Register"]
 pub mod cer;
-#[doc = "PCR register accessor: an alias for `Reg<PCR_SPEC>`"]
+#[doc = "pcr register accessor: an alias for `Reg<PCR_SPEC>`"]
 pub type PCR = crate::Reg<pcr::PCR_SPEC>;
 #[doc = "PWM Control Register"]
 pub mod pcr;
-#[doc = "PPR register accessor: an alias for `Reg<PPR_SPEC>`"]
+#[doc = "ppr register accessor: an alias for `Reg<PPR_SPEC>`"]
 pub type PPR = crate::Reg<ppr::PPR_SPEC>;
 #[doc = "PWM Period Register"]
 pub mod ppr;
-#[doc = "PCNTR register accessor: an alias for `Reg<PCNTR_SPEC>`"]
+#[doc = "pcntr register accessor: an alias for `Reg<PCNTR_SPEC>`"]
 pub type PCNTR = crate::Reg<pcntr::PCNTR_SPEC>;
 #[doc = "PWM Count Register"]
 pub mod pcntr;
-#[doc = "PPCNTR register accessor: an alias for `Reg<PPCNTR_SPEC>`"]
+#[doc = "ppcntr register accessor: an alias for `Reg<PPCNTR_SPEC>`"]
 pub type PPCNTR = crate::Reg<ppcntr::PPCNTR_SPEC>;
 #[doc = "PWM Pulse Counter Register"]
 pub mod ppcntr;
-#[doc = "CCR register accessor: an alias for `Reg<CCR_SPEC>`"]
+#[doc = "ccr register accessor: an alias for `Reg<CCR_SPEC>`"]
 pub type CCR = crate::Reg<ccr::CCR_SPEC>;
 #[doc = "Capture Control Register"]
 pub mod ccr;
-#[doc = "CRLR register accessor: an alias for `Reg<CRLR_SPEC>`"]
+#[doc = "crlr register accessor: an alias for `Reg<CRLR_SPEC>`"]
 pub type CRLR = crate::Reg<crlr::CRLR_SPEC>;
 #[doc = "Capture Rise Lock Register"]
 pub mod crlr;
-#[doc = "CFLR register accessor: an alias for `Reg<CFLR_SPEC>`"]
+#[doc = "cflr register accessor: an alias for `Reg<CFLR_SPEC>`"]
 pub type CFLR = crate::Reg<cflr::CFLR_SPEC>;
 #[doc = "Capture Fall Lock Register"]
 pub mod cflr;

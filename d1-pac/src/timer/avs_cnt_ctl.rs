@@ -48,7 +48,7 @@ impl From<AVS_CNT_PS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `AVS_CNT(0-1)_PS` reader - Audio Video Sync Counter Pause Control"]
+#[doc = "Fields `avs_cnt(0-1)_ps` reader - Audio Video Sync Counter Pause Control"]
 pub type AVS_CNT_PS_R = crate::BitReader<AVS_CNT_PS_A>;
 impl AVS_CNT_PS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl AVS_CNT_PS_R {
         *self == AVS_CNT_PS_A::PAUSE
     }
 }
-#[doc = "Fields `AVS_CNT(0-1)_PS` writer - Audio Video Sync Counter Pause Control"]
+#[doc = "Fields `avs_cnt(0-1)_ps` writer - Audio Video Sync Counter Pause Control"]
 pub type AVS_CNT_PS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, AVS_CNT_CTL_SPEC, AVS_CNT_PS_A, O>;
 impl<'a, const O: u8> AVS_CNT_PS_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<AVS_CNT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `AVS_CNT(0-1)_EN` reader - Audio Video Sync Counter Enable"]
+#[doc = "Fields `avs_cnt(0-1)_en` reader - Audio Video Sync Counter Enable"]
 pub type AVS_CNT_EN_R = crate::BitReader<AVS_CNT_EN_A>;
 impl AVS_CNT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl AVS_CNT_EN_R {
         *self == AVS_CNT_EN_A::ENABLED
     }
 }
-#[doc = "Fields `AVS_CNT(0-1)_EN` writer - Audio Video Sync Counter Enable"]
+#[doc = "Fields `avs_cnt(0-1)_en` writer - Audio Video Sync Counter Enable"]
 pub type AVS_CNT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, AVS_CNT_CTL_SPEC, AVS_CNT_EN_A, O>;
 impl<'a, const O: u8> AVS_CNT_EN_W<'a, O> {

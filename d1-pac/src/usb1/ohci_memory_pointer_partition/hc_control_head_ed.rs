@@ -1,4 +1,4 @@
-#[doc = "Register `HC_CONTROL_HEAD_ED` reader"]
+#[doc = "Register `hc_control_head_ed` reader"]
 pub struct R(crate::R<HC_CONTROL_HEAD_ED_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_CONTROL_HEAD_ED_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_CONTROL_HEAD_ED_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_CONTROL_HEAD_ED` writer"]
+#[doc = "Register `hc_control_head_ed` writer"]
 pub struct W(crate::W<HC_CONTROL_HEAD_ED_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_CONTROL_HEAD_ED_SPEC>;
@@ -34,12 +34,12 @@ impl From<crate::W<HC_CONTROL_HEAD_ED_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `EHCD_31_4` reader - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
+#[doc = "Field `ehcd_31_4` reader - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
 pub type EHCD_31_4_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `EHCD_31_4` writer - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
+#[doc = "Field `ehcd_31_4` writer - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
 pub type EHCD_31_4_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_CONTROL_HEAD_ED_SPEC, u32, u32, 28, O>;
-#[doc = "Field `EHCD_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
+#[doc = "Field `ehcd_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
 pub type EHCD_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 4:31 - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
@@ -79,7 +79,7 @@ impl crate::Readable for HC_CONTROL_HEAD_ED_SPEC {
 impl crate::Writable for HC_CONTROL_HEAD_ED_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_CONTROL_HEAD_ED to value 0"]
+#[doc = "`reset()` method sets hc_control_head_ed to value 0"]
 impl crate::Resettable for HC_CONTROL_HEAD_ED_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

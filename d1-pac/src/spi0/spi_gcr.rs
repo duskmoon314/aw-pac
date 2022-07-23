@@ -1,4 +1,4 @@
-#[doc = "Register `SPI_GCR` reader"]
+#[doc = "Register `spi_gcr` reader"]
 pub struct R(crate::R<SPI_GCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPI_GCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SPI_GCR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SPI_GCR` writer"]
+#[doc = "Register `spi_gcr` writer"]
 pub struct W(crate::W<SPI_GCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SPI_GCR_SPEC>;
@@ -311,7 +311,7 @@ impl crate::Readable for SPI_GCR_SPEC {
 impl crate::Writable for SPI_GCR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SPI_GCR to value 0"]
+#[doc = "`reset()` method sets spi_gcr to value 0"]
 impl crate::Resettable for SPI_GCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

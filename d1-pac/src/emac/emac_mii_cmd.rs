@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_MII_CMD` reader"]
+#[doc = "Register `emac_mii_cmd` reader"]
 pub struct R(crate::R<EMAC_MII_CMD_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_MII_CMD_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_MII_CMD_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_MII_CMD` writer"]
+#[doc = "Register `emac_mii_cmd` writer"]
 pub struct W(crate::W<EMAC_MII_CMD_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_MII_CMD_SPEC>;
@@ -53,7 +53,7 @@ impl From<MDC_DIV_RATIO_M_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MDC_DIV_RATIO_M` reader - MDC Clock DIvider Ratio"]
+#[doc = "Field `mdc_div_ratio_m` reader - MDC Clock DIvider Ratio"]
 pub type MDC_DIV_RATIO_M_R = crate::FieldReader<u8, MDC_DIV_RATIO_M_A>;
 impl MDC_DIV_RATIO_M_R {
     #[doc = "Get enumerated values variant"]
@@ -88,7 +88,7 @@ impl MDC_DIV_RATIO_M_R {
         *self == MDC_DIV_RATIO_M_A::R128
     }
 }
-#[doc = "Field `MDC_DIV_RATIO_M` writer - MDC Clock DIvider Ratio"]
+#[doc = "Field `mdc_div_ratio_m` writer - MDC Clock DIvider Ratio"]
 pub type MDC_DIV_RATIO_M_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, MDC_DIV_RATIO_M_A, 3, O>;
 impl<'a, const O: u8> MDC_DIV_RATIO_M_W<'a, O> {
@@ -113,13 +113,13 @@ impl<'a, const O: u8> MDC_DIV_RATIO_M_W<'a, O> {
         self.variant(MDC_DIV_RATIO_M_A::R128)
     }
 }
-#[doc = "Field `PHY_ADDR` reader - PHY Address"]
+#[doc = "Field `phy_addr` reader - PHY Address"]
 pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PHY_ADDR` writer - PHY Address"]
+#[doc = "Field `phy_addr` writer - PHY Address"]
 pub type PHY_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, O>;
-#[doc = "Field `PHY_REG_ADDR` reader - PHY Register Address"]
+#[doc = "Field `phy_reg_addr` reader - PHY Register Address"]
 pub type PHY_REG_ADDR_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PHY_REG_ADDR` writer - PHY Register Address"]
+#[doc = "Field `phy_reg_addr` writer - PHY Register Address"]
 pub type PHY_REG_ADDR_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_MII_CMD_SPEC, u8, u8, 5, O>;
 #[doc = "MII Write and Read\n\nValue on reset: 0"]
@@ -136,7 +136,7 @@ impl From<MII_WR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MII_WR` reader - MII Write and Read"]
+#[doc = "Field `mii_wr` reader - MII Write and Read"]
 pub type MII_WR_R = crate::BitReader<MII_WR_A>;
 impl MII_WR_R {
     #[doc = "Get enumerated values variant"]
@@ -158,7 +158,7 @@ impl MII_WR_R {
         *self == MII_WR_A::W
     }
 }
-#[doc = "Field `MII_WR` writer - MII Write and Read"]
+#[doc = "Field `mii_wr` writer - MII Write and Read"]
 pub type MII_WR_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, MII_WR_A, O>;
 impl<'a, const O: u8> MII_WR_W<'a, O> {
     #[doc = "`0`"]
@@ -172,9 +172,9 @@ impl<'a, const O: u8> MII_WR_W<'a, O> {
         self.variant(MII_WR_A::W)
     }
 }
-#[doc = "Field `MII_BUSY` reader - MII Status"]
+#[doc = "Field `mii_busy` reader - MII Status"]
 pub type MII_BUSY_R = crate::BitReader<bool>;
-#[doc = "Field `MII_BUSY` writer - MII Status"]
+#[doc = "Field `mii_busy` writer - MII Status"]
 pub type MII_BUSY_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 20:22 - MDC Clock DIvider Ratio"]
@@ -249,7 +249,7 @@ impl crate::Readable for EMAC_MII_CMD_SPEC {
 impl crate::Writable for EMAC_MII_CMD_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_MII_CMD to value 0"]
+#[doc = "`reset()` method sets emac_mii_cmd to value 0"]
 impl crate::Resettable for EMAC_MII_CMD_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

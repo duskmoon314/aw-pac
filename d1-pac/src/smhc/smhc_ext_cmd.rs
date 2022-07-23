@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_EXT_CMD` reader"]
+#[doc = "Register `smhc_ext_cmd` reader"]
 pub struct R(crate::R<SMHC_EXT_CMD_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_EXT_CMD_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_EXT_CMD_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_EXT_CMD` writer"]
+#[doc = "Register `smhc_ext_cmd` writer"]
 pub struct W(crate::W<SMHC_EXT_CMD_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_EXT_CMD_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<SMHC_EXT_CMD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `AUTO_CMD23_EN` reader - Send CMD23 Automatically"]
+#[doc = "Field `auto_cmd23_en` reader - Send CMD23 Automatically"]
 pub type AUTO_CMD23_EN_R = crate::BitReader<bool>;
-#[doc = "Field `AUTO_CMD23_EN` writer - Send CMD23 Automatically"]
+#[doc = "Field `auto_cmd23_en` writer - Send CMD23 Automatically"]
 pub type AUTO_CMD23_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_EXT_CMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Send CMD23 Automatically"]
@@ -71,7 +71,7 @@ impl crate::Readable for SMHC_EXT_CMD_SPEC {
 impl crate::Writable for SMHC_EXT_CMD_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_EXT_CMD to value 0"]
+#[doc = "`reset()` method sets smhc_ext_cmd to value 0"]
 impl crate::Resettable for SMHC_EXT_CMD_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

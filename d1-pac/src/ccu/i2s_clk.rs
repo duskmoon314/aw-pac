@@ -1,4 +1,4 @@
-#[doc = "Register `I2S%s_CLK` reader"]
+#[doc = "Register `i2s%s_clk` reader"]
 pub struct R(crate::R<I2S_CLK_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<I2S_CLK_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<I2S_CLK_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `I2S%s_CLK` writer"]
+#[doc = "Register `i2s%s_clk` writer"]
 pub struct W(crate::W<I2S_CLK_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<I2S_CLK_SPEC>;
@@ -48,7 +48,7 @@ impl From<CLK_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CLK_GATING` reader - Gating Clock"]
+#[doc = "Field `clk_gating` reader - Gating Clock"]
 pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 impl CLK_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CLK_GATING_R {
         *self == CLK_GATING_A::ON
     }
 }
-#[doc = "Field `CLK_GATING` writer - Gating Clock"]
+#[doc = "Field `clk_gating` writer - Gating Clock"]
 pub type CLK_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_CLK_SPEC, CLK_GATING_A, O>;
 impl<'a, const O: u8> CLK_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -103,7 +103,7 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
+#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -138,7 +138,7 @@ impl CLK_SRC_SEL_R {
         *self == CLK_SRC_SEL_A::PLL_AUDIO1_DIV5
     }
 }
-#[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
+#[doc = "Field `clk_src_sel` writer - Clock Source Select"]
 pub type CLK_SRC_SEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, I2S_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
 impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
@@ -182,7 +182,7 @@ impl From<FACTOR_N_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `FACTOR_N` reader - Factor N"]
+#[doc = "Field `factor_n` reader - Factor N"]
 pub type FACTOR_N_R = crate::FieldReader<u8, FACTOR_N_A>;
 impl FACTOR_N_R {
     #[doc = "Get enumerated values variant"]
@@ -217,7 +217,7 @@ impl FACTOR_N_R {
         *self == FACTOR_N_A::N8
     }
 }
-#[doc = "Field `FACTOR_N` writer - Factor N"]
+#[doc = "Field `factor_n` writer - Factor N"]
 pub type FACTOR_N_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, I2S_CLK_SPEC, u8, FACTOR_N_A, 2, O>;
 impl<'a, const O: u8> FACTOR_N_W<'a, O> {
@@ -242,9 +242,9 @@ impl<'a, const O: u8> FACTOR_N_W<'a, O> {
         self.variant(FACTOR_N_A::N8)
     }
 }
-#[doc = "Field `FACTOR_M` reader - Factor M"]
+#[doc = "Field `factor_m` reader - Factor M"]
 pub type FACTOR_M_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `FACTOR_M` writer - Factor M"]
+#[doc = "Field `factor_m` writer - Factor M"]
 pub type FACTOR_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, I2S_CLK_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bit 31 - Gating Clock"]
@@ -309,7 +309,7 @@ impl crate::Readable for I2S_CLK_SPEC {
 impl crate::Writable for I2S_CLK_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets I2S%s_CLK to value 0"]
+#[doc = "`reset()` method sets i2s%s_clk to value 0"]
 impl crate::Resettable for I2S_CLK_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

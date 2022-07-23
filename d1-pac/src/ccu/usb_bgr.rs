@@ -1,4 +1,4 @@
-#[doc = "Register `USB_BGR` reader"]
+#[doc = "Register `usb_bgr` reader"]
 pub struct R(crate::R<USB_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<USB_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<USB_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `USB_BGR` writer"]
+#[doc = "Register `usb_bgr` writer"]
 pub struct W(crate::W<USB_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<USB_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<USBOTG0_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USBOTG0_RST` reader - USBOTG0 Reset"]
+#[doc = "Field `usbotg0_rst` reader - USBOTG0 Reset"]
 pub type USBOTG0_RST_R = crate::BitReader<USBOTG0_RST_A>;
 impl USBOTG0_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl USBOTG0_RST_R {
         *self == USBOTG0_RST_A::DEASSERT
     }
 }
-#[doc = "Field `USBOTG0_RST` writer - USBOTG0 Reset"]
+#[doc = "Field `usbotg0_rst` writer - USBOTG0 Reset"]
 pub type USBOTG0_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_RST_A, O>;
 impl<'a, const O: u8> USBOTG0_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<USBEHCI_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `USBEHCI(0-1)_RST` reader - USBEHCI Reset"]
+#[doc = "Fields `usbehci(0-1)_rst` reader - USBEHCI Reset"]
 pub type USBEHCI_RST_R = crate::BitReader<USBEHCI_RST_A>;
 impl USBEHCI_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl USBEHCI_RST_R {
         *self == USBEHCI_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `USBEHCI(0-1)_RST` writer - USBEHCI Reset"]
+#[doc = "Fields `usbehci(0-1)_rst` writer - USBEHCI Reset"]
 pub type USBEHCI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBEHCI_RST_A, O>;
 impl<'a, const O: u8> USBEHCI_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -148,7 +148,7 @@ impl From<USBOHCI_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `USBOHCI(0-1)_RST` reader - USBOHCI Reset"]
+#[doc = "Fields `usbohci(0-1)_rst` reader - USBOHCI Reset"]
 pub type USBOHCI_RST_R = crate::BitReader<USBOHCI_RST_A>;
 impl USBOHCI_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -170,7 +170,7 @@ impl USBOHCI_RST_R {
         *self == USBOHCI_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `USBOHCI(0-1)_RST` writer - USBOHCI Reset"]
+#[doc = "Fields `usbohci(0-1)_rst` writer - USBOHCI Reset"]
 pub type USBOHCI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOHCI_RST_A, O>;
 impl<'a, const O: u8> USBOHCI_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -198,7 +198,7 @@ impl From<USBOTG0_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `USBOTG0_GATING` reader - USBOTG0 Gating Clock"]
+#[doc = "Field `usbotg0_gating` reader - USBOTG0 Gating Clock"]
 pub type USBOTG0_GATING_R = crate::BitReader<USBOTG0_GATING_A>;
 impl USBOTG0_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -220,7 +220,7 @@ impl USBOTG0_GATING_R {
         *self == USBOTG0_GATING_A::PASS
     }
 }
-#[doc = "Field `USBOTG0_GATING` writer - USBOTG0 Gating Clock"]
+#[doc = "Field `usbotg0_gating` writer - USBOTG0 Gating Clock"]
 pub type USBOTG0_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOTG0_GATING_A, O>;
 impl<'a, const O: u8> USBOTG0_GATING_W<'a, O> {
@@ -249,7 +249,7 @@ impl From<USBEHCI_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `USBEHCI(0-1)_GATING` reader - USBEHCI Gating Clock"]
+#[doc = "Fields `usbehci(0-1)_gating` reader - USBEHCI Gating Clock"]
 pub type USBEHCI_GATING_R = crate::BitReader<USBEHCI_GATING_A>;
 impl USBEHCI_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -271,7 +271,7 @@ impl USBEHCI_GATING_R {
         *self == USBEHCI_GATING_A::PASS
     }
 }
-#[doc = "Fields `USBEHCI(0-1)_GATING` writer - USBEHCI Gating Clock"]
+#[doc = "Fields `usbehci(0-1)_gating` writer - USBEHCI Gating Clock"]
 pub type USBEHCI_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, USB_BGR_SPEC, USBEHCI_GATING_A, O>;
 impl<'a, const O: u8> USBEHCI_GATING_W<'a, O> {
@@ -300,7 +300,7 @@ impl From<USBOHCI_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `USBOHCI(0-1)_GATING` reader - USBOHCI Gating Clock"]
+#[doc = "Fields `usbohci(0-1)_gating` reader - USBOHCI Gating Clock"]
 pub type USBOHCI_GATING_R = crate::BitReader<USBOHCI_GATING_A>;
 impl USBOHCI_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -322,7 +322,7 @@ impl USBOHCI_GATING_R {
         *self == USBOHCI_GATING_A::PASS
     }
 }
-#[doc = "Fields `USBOHCI(0-1)_GATING` writer - USBOHCI Gating Clock"]
+#[doc = "Fields `usbohci(0-1)_gating` writer - USBOHCI Gating Clock"]
 pub type USBOHCI_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, USB_BGR_SPEC, USBOHCI_GATING_A, O>;
 impl<'a, const O: u8> USBOHCI_GATING_W<'a, O> {
@@ -500,7 +500,7 @@ impl crate::Readable for USB_BGR_SPEC {
 impl crate::Writable for USB_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets USB_BGR to value 0"]
+#[doc = "`reset()` method sets usb_bgr to value 0"]
 impl crate::Resettable for USB_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

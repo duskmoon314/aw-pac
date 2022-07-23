@@ -1,4 +1,4 @@
-#[doc = "Register `GP_FIFO_INTC` reader"]
+#[doc = "Register `gp_fifo_intc` reader"]
 pub struct R(crate::R<GP_FIFO_INTC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_FIFO_INTC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_FIFO_INTC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_FIFO_INTC` writer"]
+#[doc = "Register `gp_fifo_intc` writer"]
 pub struct W(crate::W<GP_FIFO_INTC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_FIFO_INTC_SPEC>;
@@ -48,7 +48,7 @@ impl From<FIFO_DATA_DRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_DATA_DRQ_EN` reader - ADC FIFO Date DRQ Enable"]
+#[doc = "Field `fifo_data_drq_en` reader - ADC FIFO Date DRQ Enable"]
 pub type FIFO_DATA_DRQ_EN_R = crate::BitReader<FIFO_DATA_DRQ_EN_A>;
 impl FIFO_DATA_DRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl FIFO_DATA_DRQ_EN_R {
         *self == FIFO_DATA_DRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `FIFO_DATA_DRQ_EN` writer - ADC FIFO Date DRQ Enable"]
+#[doc = "Field `fifo_data_drq_en` writer - ADC FIFO Date DRQ Enable"]
 pub type FIFO_DATA_DRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_DRQ_EN_A, O>;
 impl<'a, const O: u8> FIFO_DATA_DRQ_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<FIFO_OVERRUN_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_OVERRUN_IRQ_EN` reader - ADC FIFO Overrun IRQ Enable"]
+#[doc = "Field `fifo_overrun_irq_en` reader - ADC FIFO Overrun IRQ Enable"]
 pub type FIFO_OVERRUN_IRQ_EN_R = crate::BitReader<FIFO_OVERRUN_IRQ_EN_A>;
 impl FIFO_OVERRUN_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl FIFO_OVERRUN_IRQ_EN_R {
         *self == FIFO_OVERRUN_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `FIFO_OVERRUN_IRQ_EN` writer - ADC FIFO Overrun IRQ Enable"]
+#[doc = "Field `fifo_overrun_irq_en` writer - ADC FIFO Overrun IRQ Enable"]
 pub type FIFO_OVERRUN_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_OVERRUN_IRQ_EN_A, O>;
 impl<'a, const O: u8> FIFO_OVERRUN_IRQ_EN_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<FIFO_DATA_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_DATA_IRQ_EN` reader - ADC FIFO Data Available IRQ Enable"]
+#[doc = "Field `fifo_data_irq_en` reader - ADC FIFO Data Available IRQ Enable"]
 pub type FIFO_DATA_IRQ_EN_R = crate::BitReader<FIFO_DATA_IRQ_EN_A>;
 impl FIFO_DATA_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl FIFO_DATA_IRQ_EN_R {
         *self == FIFO_DATA_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `FIFO_DATA_IRQ_EN` writer - ADC FIFO Data Available IRQ Enable"]
+#[doc = "Field `fifo_data_irq_en` writer - ADC FIFO Data Available IRQ Enable"]
 pub type FIFO_DATA_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, FIFO_DATA_IRQ_EN_A, O>;
 impl<'a, const O: u8> FIFO_DATA_IRQ_EN_W<'a, O> {
@@ -187,14 +187,14 @@ impl<'a, const O: u8> FIFO_DATA_IRQ_EN_W<'a, O> {
         self.variant(FIFO_DATA_IRQ_EN_A::ENABLE)
     }
 }
-#[doc = "Field `FIFO_TRIG_LEVEL` reader - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
+#[doc = "Field `fifo_trig_level` reader - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
 pub type FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `FIFO_TRIG_LEVEL` writer - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
+#[doc = "Field `fifo_trig_level` writer - Interrupt trigger level for ADC\n\nTrigger Level = TXTL + 1"]
 pub type FIFO_TRIG_LEVEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, GP_FIFO_INTC_SPEC, u8, u8, 6, O>;
-#[doc = "Field `FIFO_FLUSH` reader - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
+#[doc = "Field `fifo_flush` reader - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
 pub type FIFO_FLUSH_R = crate::BitReader<bool>;
-#[doc = "Field `FIFO_FLUSH` writer - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
+#[doc = "Field `fifo_flush` writer - ADC FIFO Flush\n\nWrite 1 to flush TX FIFO, clear automatically to 0."]
 pub type FIFO_FLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, GP_FIFO_INTC_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 18 - ADC FIFO Date DRQ Enable"]
@@ -269,7 +269,7 @@ impl crate::Readable for GP_FIFO_INTC_SPEC {
 impl crate::Writable for GP_FIFO_INTC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_FIFO_INTC to value 0x1f00"]
+#[doc = "`reset()` method sets gp_fifo_intc to value 0x1f00"]
 impl crate::Resettable for GP_FIFO_INTC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

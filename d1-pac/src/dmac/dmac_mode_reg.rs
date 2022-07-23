@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_MODE_REG%s` reader"]
+#[doc = "Register `dmac_mode_reg%s` reader"]
 pub struct R(crate::R<DMAC_MODE_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_MODE_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DMAC_MODE_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DMAC_MODE_REG%s` writer"]
+#[doc = "Register `dmac_mode_reg%s` writer"]
 pub struct W(crate::W<DMAC_MODE_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DMAC_MODE_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<DMA_DST_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_DST_MODE` reader - Destination Communication Mode Select"]
+#[doc = "Field `dma_dst_mode` reader - Destination Communication Mode Select"]
 pub type DMA_DST_MODE_R = crate::BitReader<DMA_DST_MODE_A>;
 impl DMA_DST_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DMA_DST_MODE_R {
         *self == DMA_DST_MODE_A::HANDSHAKE
     }
 }
-#[doc = "Field `DMA_DST_MODE` writer - Destination Communication Mode Select"]
+#[doc = "Field `dma_dst_mode` writer - Destination Communication Mode Select"]
 pub type DMA_DST_MODE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_MODE_REG_SPEC, DMA_DST_MODE_A, O>;
 impl<'a, const O: u8> DMA_DST_MODE_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<DMA_SRC_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_SRC_MODE` reader - Source Communication Mode Select"]
+#[doc = "Field `dma_src_mode` reader - Source Communication Mode Select"]
 pub type DMA_SRC_MODE_R = crate::BitReader<DMA_SRC_MODE_A>;
 impl DMA_SRC_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl DMA_SRC_MODE_R {
         *self == DMA_SRC_MODE_A::HANDSHAKE
     }
 }
-#[doc = "Field `DMA_SRC_MODE` writer - Source Communication Mode Select"]
+#[doc = "Field `dma_src_mode` writer - Source Communication Mode Select"]
 pub type DMA_SRC_MODE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_MODE_REG_SPEC, DMA_SRC_MODE_A, O>;
 impl<'a, const O: u8> DMA_SRC_MODE_W<'a, O> {
@@ -179,7 +179,7 @@ impl crate::Readable for DMAC_MODE_REG_SPEC {
 impl crate::Writable for DMAC_MODE_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DMAC_MODE_REG%s to value 0"]
+#[doc = "`reset()` method sets dmac_mode_reg%s to value 0"]
 impl crate::Resettable for DMAC_MODE_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

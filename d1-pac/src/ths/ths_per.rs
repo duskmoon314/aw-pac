@@ -1,4 +1,4 @@
-#[doc = "Register `THS_PER` reader"]
+#[doc = "Register `ths_per` reader"]
 pub struct R(crate::R<THS_PER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_PER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_PER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_PER` writer"]
+#[doc = "Register `ths_per` writer"]
 pub struct W(crate::W<THS_PER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_PER_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<THS_PER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `THERMAL_PER` reader - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
+#[doc = "Field `thermal_per` reader - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
 pub type THERMAL_PER_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `THERMAL_PER` writer - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
+#[doc = "Field `thermal_per` writer - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
 pub type THERMAL_PER_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, THS_PER_SPEC, u32, u32, 20, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for THS_PER_SPEC {
 impl crate::Writable for THS_PER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_PER to value 0x0003_a000"]
+#[doc = "`reset()` method sets ths_per to value 0x0003_a000"]
 impl crate::Resettable for THS_PER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

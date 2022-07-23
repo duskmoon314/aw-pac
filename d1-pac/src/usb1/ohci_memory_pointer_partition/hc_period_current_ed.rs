@@ -1,4 +1,4 @@
-#[doc = "Register `HC_PERIOD_CURRENT_ED` reader"]
+#[doc = "Register `hc_period_current_ed` reader"]
 pub struct R(crate::R<HC_PERIOD_CURRENT_ED_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_PERIOD_CURRENT_ED_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_PERIOD_CURRENT_ED_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_PERIOD_CURRENT_ED` writer"]
+#[doc = "Register `hc_period_current_ed` writer"]
 pub struct W(crate::W<HC_PERIOD_CURRENT_ED_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_PERIOD_CURRENT_ED_SPEC>;
@@ -34,12 +34,12 @@ impl From<crate::W<HC_PERIOD_CURRENT_ED_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PCED_31_4` reader - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
+#[doc = "Field `pced_31_4` reader - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
 pub type PCED_31_4_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `PCED_31_4` writer - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
+#[doc = "Field `pced_31_4` writer - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
 pub type PCED_31_4_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_PERIOD_CURRENT_ED_SPEC, u32, u32, 28, O>;
-#[doc = "Field `PCED_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
+#[doc = "Field `pced_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
 pub type PCED_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 4:31 - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
@@ -79,7 +79,7 @@ impl crate::Readable for HC_PERIOD_CURRENT_ED_SPEC {
 impl crate::Writable for HC_PERIOD_CURRENT_ED_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_PERIOD_CURRENT_ED to value 0"]
+#[doc = "`reset()` method sets hc_period_current_ed to value 0"]
 impl crate::Resettable for HC_PERIOD_CURRENT_ED_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

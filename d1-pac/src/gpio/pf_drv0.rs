@@ -53,7 +53,7 @@ impl From<PF_DRV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `PF(0-6)_DRV` reader - PF Multi_Driving Select"]
+#[doc = "Fields `pf(0-6)_drv` reader - PF Multi_Driving Select"]
 pub type PF_DRV_R = crate::FieldReader<u8, PF_DRV_A>;
 impl PF_DRV_R {
     #[doc = "Get enumerated values variant"]
@@ -88,7 +88,7 @@ impl PF_DRV_R {
         *self == PF_DRV_A::L3
     }
 }
-#[doc = "Fields `PF(0-6)_DRV` writer - PF Multi_Driving Select"]
+#[doc = "Fields `pf(0-6)_drv` writer - PF Multi_Driving Select"]
 pub type PF_DRV_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, PF_DRV0_SPEC, u8, PF_DRV_A, 2, O>;
 impl<'a, const O: u8> PF_DRV_W<'a, O> {

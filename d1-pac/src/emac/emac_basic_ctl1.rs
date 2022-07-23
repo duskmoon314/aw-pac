@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_BASIC_CTL1` reader"]
+#[doc = "Register `emac_basic_ctl1` reader"]
 pub struct R(crate::R<EMAC_BASIC_CTL1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_BASIC_CTL1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_BASIC_CTL1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_BASIC_CTL1` writer"]
+#[doc = "Register `emac_basic_ctl1` writer"]
 pub struct W(crate::W<EMAC_BASIC_CTL1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_BASIC_CTL1_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<EMAC_BASIC_CTL1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `BURST_LEN` reader - The burst length of RX and TX DMA transfer"]
+#[doc = "Field `burst_len` reader - The burst length of RX and TX DMA transfer"]
 pub type BURST_LEN_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `BURST_LEN` writer - The burst length of RX and TX DMA transfer"]
+#[doc = "Field `burst_len` writer - The burst length of RX and TX DMA transfer"]
 pub type BURST_LEN_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, u8, u8, 6, O>;
 #[doc = "RX TX DMA Priority\n\nValue on reset: 0"]
@@ -45,7 +45,7 @@ pub enum RX_TX_PRI_A {
     #[doc = "0: `0`"]
     SAME = 0,
     #[doc = "1: `1`"]
-    ROT = 1,
+    RO_T = 1,
 }
 impl From<RX_TX_PRI_A> for bool {
     #[inline(always)]
@@ -53,7 +53,7 @@ impl From<RX_TX_PRI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_TX_PRI` reader - RX TX DMA Priority"]
+#[doc = "Field `rx_tx_pri` reader - RX TX DMA Priority"]
 pub type RX_TX_PRI_R = crate::BitReader<RX_TX_PRI_A>;
 impl RX_TX_PRI_R {
     #[doc = "Get enumerated values variant"]
@@ -61,7 +61,7 @@ impl RX_TX_PRI_R {
     pub fn variant(&self) -> RX_TX_PRI_A {
         match self.bits {
             false => RX_TX_PRI_A::SAME,
-            true => RX_TX_PRI_A::ROT,
+            true => RX_TX_PRI_A::RO_T,
         }
     }
     #[doc = "Checks if the value of the field is `SAME`"]
@@ -69,13 +69,13 @@ impl RX_TX_PRI_R {
     pub fn is_same(&self) -> bool {
         *self == RX_TX_PRI_A::SAME
     }
-    #[doc = "Checks if the value of the field is `ROT`"]
+    #[doc = "Checks if the value of the field is `RO_T`"]
     #[inline(always)]
     pub fn is_ro_t(&self) -> bool {
-        *self == RX_TX_PRI_A::ROT
+        *self == RX_TX_PRI_A::RO_T
     }
 }
-#[doc = "Field `RX_TX_PRI` writer - RX TX DMA Priority"]
+#[doc = "Field `rx_tx_pri` writer - RX TX DMA Priority"]
 pub type RX_TX_PRI_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, RX_TX_PRI_A, O>;
 impl<'a, const O: u8> RX_TX_PRI_W<'a, O> {
@@ -87,7 +87,7 @@ impl<'a, const O: u8> RX_TX_PRI_W<'a, O> {
     #[doc = "`1`"]
     #[inline(always)]
     pub fn ro_t(self) -> &'a mut W {
-        self.variant(RX_TX_PRI_A::ROT)
+        self.variant(RX_TX_PRI_A::RO_T)
     }
 }
 #[doc = "Soft Reset all Registers and Logic\n\nValue on reset: 0"]
@@ -104,7 +104,7 @@ impl From<SOFT_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SOFT_RST` reader - Soft Reset all Registers and Logic"]
+#[doc = "Field `soft_rst` reader - Soft Reset all Registers and Logic"]
 pub type SOFT_RST_R = crate::BitReader<SOFT_RST_A>;
 impl SOFT_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -126,7 +126,7 @@ impl SOFT_RST_R {
         *self == SOFT_RST_A::RESET
     }
 }
-#[doc = "Field `SOFT_RST` writer - Soft Reset all Registers and Logic"]
+#[doc = "Field `soft_rst` writer - Soft Reset all Registers and Logic"]
 pub type SOFT_RST_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_BASIC_CTL1_SPEC, SOFT_RST_A, O>;
 impl<'a, const O: u8> SOFT_RST_W<'a, O> {
@@ -194,7 +194,7 @@ impl crate::Readable for EMAC_BASIC_CTL1_SPEC {
 impl crate::Writable for EMAC_BASIC_CTL1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_BASIC_CTL1 to value 0"]
+#[doc = "`reset()` method sets emac_basic_ctl1 to value 0"]
 impl crate::Resettable for EMAC_BASIC_CTL1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

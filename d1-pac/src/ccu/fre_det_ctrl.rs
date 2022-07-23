@@ -1,4 +1,4 @@
-#[doc = "Register `FRE_DET_CTRL` reader"]
+#[doc = "Register `fre_det_ctrl` reader"]
 pub struct R(crate::R<FRE_DET_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<FRE_DET_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<FRE_DET_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `FRE_DET_CTRL` writer"]
+#[doc = "Register `fre_det_ctrl` writer"]
 pub struct W(crate::W<FRE_DET_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<FRE_DET_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<ERROR_FLAG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ERROR_FLAG` reader - Error Flag"]
+#[doc = "Field `error_flag` reader - Error Flag"]
 pub type ERROR_FLAG_R = crate::BitReader<ERROR_FLAG_A>;
 impl ERROR_FLAG_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ERROR_FLAG_R {
         *self == ERROR_FLAG_A::ERROR
     }
 }
-#[doc = "Field `ERROR_FLAG` writer - Error Flag"]
+#[doc = "Field `error_flag` writer - Error Flag"]
 pub type ERROR_FLAG_W<'a, const O: u8> =
     crate::BitWriter0C<'a, u32, FRE_DET_CTRL_SPEC, ERROR_FLAG_A, O>;
 impl<'a, const O: u8> ERROR_FLAG_W<'a, O> {
@@ -85,9 +85,9 @@ impl<'a, const O: u8> ERROR_FLAG_W<'a, O> {
         self.variant(ERROR_FLAG_A::ERROR)
     }
 }
-#[doc = "Field `DET_TIME` reader - Detect Time"]
+#[doc = "Field `det_time` reader - Detect Time"]
 pub type DET_TIME_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DET_TIME` writer - Detect Time"]
+#[doc = "Field `det_time` writer - Detect Time"]
 pub type DET_TIME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRE_DET_CTRL_SPEC, u8, u8, 5, O>;
 #[doc = "Frequence Detect IRQ Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -103,7 +103,7 @@ impl From<FRE_DET_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRE_DET_IRQ_EN` reader - Frequence Detect IRQ Enable"]
+#[doc = "Field `fre_det_irq_en` reader - Frequence Detect IRQ Enable"]
 pub type FRE_DET_IRQ_EN_R = crate::BitReader<FRE_DET_IRQ_EN_A>;
 impl FRE_DET_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -125,7 +125,7 @@ impl FRE_DET_IRQ_EN_R {
         *self == FRE_DET_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `FRE_DET_IRQ_EN` writer - Frequence Detect IRQ Enable"]
+#[doc = "Field `fre_det_irq_en` writer - Frequence Detect IRQ Enable"]
 pub type FRE_DET_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, FRE_DET_CTRL_SPEC, FRE_DET_IRQ_EN_A, O>;
 impl<'a, const O: u8> FRE_DET_IRQ_EN_W<'a, O> {
@@ -154,7 +154,7 @@ impl From<FRE_DET_FUN_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRE_DET_FUN_EN` reader - Frequence Detect Function Enable"]
+#[doc = "Field `fre_det_fun_en` reader - Frequence Detect Function Enable"]
 pub type FRE_DET_FUN_EN_R = crate::BitReader<FRE_DET_FUN_EN_A>;
 impl FRE_DET_FUN_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -176,7 +176,7 @@ impl FRE_DET_FUN_EN_R {
         *self == FRE_DET_FUN_EN_A::ENABLE
     }
 }
-#[doc = "Field `FRE_DET_FUN_EN` writer - Frequence Detect Function Enable"]
+#[doc = "Field `fre_det_fun_en` writer - Frequence Detect Function Enable"]
 pub type FRE_DET_FUN_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, FRE_DET_CTRL_SPEC, FRE_DET_FUN_EN_A, O>;
 impl<'a, const O: u8> FRE_DET_FUN_EN_W<'a, O> {
@@ -254,7 +254,7 @@ impl crate::Readable for FRE_DET_CTRL_SPEC {
 impl crate::Writable for FRE_DET_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets FRE_DET_CTRL to value 0"]
+#[doc = "`reset()` method sets fre_det_ctrl to value 0"]
 impl crate::Resettable for FRE_DET_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

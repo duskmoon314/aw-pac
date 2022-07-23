@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_A12A` reader"]
+#[doc = "Register `smhc_a12a` reader"]
 pub struct R(crate::R<SMHC_A12A_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_A12A_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_A12A_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_A12A` writer"]
+#[doc = "Register `smhc_a12a` writer"]
 pub struct W(crate::W<SMHC_A12A_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_A12A_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<SMHC_A12A_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SD_A12A` reader - "]
+#[doc = "Field `sd_a12a` reader - "]
 pub type SD_A12A_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `SD_A12A` writer - "]
+#[doc = "Field `sd_a12a` writer - "]
 pub type SD_A12A_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_A12A_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15"]
@@ -71,7 +71,7 @@ impl crate::Readable for SMHC_A12A_SPEC {
 impl crate::Writable for SMHC_A12A_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_A12A to value 0"]
+#[doc = "`reset()` method sets smhc_a12a to value 0"]
 impl crate::Resettable for SMHC_A12A_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

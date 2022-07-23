@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_RXFIFO` reader"]
+#[doc = "Register `cir_rxfifo` reader"]
 pub struct R(crate::R<CIR_RXFIFO_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_RXFIFO_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_RXFIFO_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_RXFIFO` writer"]
+#[doc = "Register `cir_rxfifo` writer"]
 pub struct W(crate::W<CIR_RXFIFO_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_RXFIFO_SPEC>;
@@ -34,7 +34,7 @@ impl From<crate::W<CIR_RXFIFO_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RBF` reader - Receiver Byte FIFO"]
+#[doc = "Field `rbf` reader - Receiver Byte FIFO"]
 pub type RBF_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - Receiver Byte FIFO"]
@@ -64,7 +64,7 @@ impl crate::Readable for CIR_RXFIFO_SPEC {
 impl crate::Writable for CIR_RXFIFO_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_RXFIFO to value 0"]
+#[doc = "`reset()` method sets cir_rxfifo to value 0"]
 impl crate::Resettable for CIR_RXFIFO_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

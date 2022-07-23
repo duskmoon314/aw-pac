@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_DMA_CTL` reader"]
+#[doc = "Register `cir_dma_ctl` reader"]
 pub struct R(crate::R<CIR_DMA_CTL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_DMA_CTL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_DMA_CTL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_DMA_CTL` writer"]
+#[doc = "Register `cir_dma_ctl` writer"]
 pub struct W(crate::W<CIR_DMA_CTL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_DMA_CTL_SPEC>;
@@ -49,7 +49,7 @@ impl From<DMA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMA` reader - Handshake Configuration"]
+#[doc = "Field `dma` reader - Handshake Configuration"]
 pub type DMA_R = crate::FieldReader<u8, DMA_A>;
 impl DMA_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl DMA_R {
         *self == DMA_A::HANDSHAKE
     }
 }
-#[doc = "Field `DMA` writer - Handshake Configuration"]
+#[doc = "Field `dma` writer - Handshake Configuration"]
 pub type DMA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_DMA_CTL_SPEC, u8, DMA_A, 8, O>;
 impl<'a, const O: u8> DMA_W<'a, O> {
     #[doc = "DMA waiting cycle mode"]
@@ -119,7 +119,7 @@ impl crate::Readable for CIR_DMA_CTL_SPEC {
 impl crate::Writable for CIR_DMA_CTL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_DMA_CTL to value 0xa5"]
+#[doc = "`reset()` method sets cir_dma_ctl to value 0xa5"]
 impl crate::Resettable for CIR_DMA_CTL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

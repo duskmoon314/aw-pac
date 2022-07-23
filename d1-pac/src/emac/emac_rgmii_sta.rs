@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_RGMII_STA` reader"]
+#[doc = "Register `emac_rgmii_sta` reader"]
 pub struct R(crate::R<EMAC_RGMII_STA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_RGMII_STA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_RGMII_STA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_RGMII_STA` writer"]
+#[doc = "Register `emac_rgmii_sta` writer"]
 pub struct W(crate::W<EMAC_RGMII_STA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_RGMII_STA_SPEC>;
@@ -48,7 +48,7 @@ impl From<RGMII_LINK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RGMII_LINK` reader - The link status of the RGMII interface"]
+#[doc = "Field `rgmii_link` reader - The link status of the RGMII interface"]
 pub type RGMII_LINK_R = crate::BitReader<RGMII_LINK_A>;
 impl RGMII_LINK_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RGMII_LINK_R {
         *self == RGMII_LINK_A::UP
     }
 }
-#[doc = "Field `RGMII_LINK` writer - The link status of the RGMII interface"]
+#[doc = "Field `rgmii_link` writer - The link status of the RGMII interface"]
 pub type RGMII_LINK_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_A, O>;
 impl<'a, const O: u8> RGMII_LINK_W<'a, O> {
@@ -102,7 +102,7 @@ impl From<RGMII_LINK_SPD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RGMII_LINK_SPD` reader - The link speed of the RGMII interface"]
+#[doc = "Field `rgmii_link_spd` reader - The link speed of the RGMII interface"]
 pub type RGMII_LINK_SPD_R = crate::FieldReader<u8, RGMII_LINK_SPD_A>;
 impl RGMII_LINK_SPD_R {
     #[doc = "Get enumerated values variant"]
@@ -131,7 +131,7 @@ impl RGMII_LINK_SPD_R {
         *self == RGMII_LINK_SPD_A::S125
     }
 }
-#[doc = "Field `RGMII_LINK_SPD` writer - The link speed of the RGMII interface"]
+#[doc = "Field `rgmii_link_spd` writer - The link speed of the RGMII interface"]
 pub type RGMII_LINK_SPD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_RGMII_STA_SPEC, u8, RGMII_LINK_SPD_A, 2, O>;
 impl<'a, const O: u8> RGMII_LINK_SPD_W<'a, O> {
@@ -165,7 +165,7 @@ impl From<RGMII_LINK_MD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RGMII_LINK_MD` reader - The link mode of the RGMII interface"]
+#[doc = "Field `rgmii_link_md` reader - The link mode of the RGMII interface"]
 pub type RGMII_LINK_MD_R = crate::BitReader<RGMII_LINK_MD_A>;
 impl RGMII_LINK_MD_R {
     #[doc = "Get enumerated values variant"]
@@ -187,7 +187,7 @@ impl RGMII_LINK_MD_R {
         *self == RGMII_LINK_MD_A::FULL_DUPLEX
     }
 }
-#[doc = "Field `RGMII_LINK_MD` writer - The link mode of the RGMII interface"]
+#[doc = "Field `rgmii_link_md` writer - The link mode of the RGMII interface"]
 pub type RGMII_LINK_MD_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_MD_A, O>;
 impl<'a, const O: u8> RGMII_LINK_MD_W<'a, O> {
@@ -255,7 +255,7 @@ impl crate::Readable for EMAC_RGMII_STA_SPEC {
 impl crate::Writable for EMAC_RGMII_STA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_RGMII_STA to value 0"]
+#[doc = "`reset()` method sets emac_rgmii_sta to value 0"]
 impl crate::Resettable for EMAC_RGMII_STA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

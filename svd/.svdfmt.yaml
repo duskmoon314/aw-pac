@@ -1,0 +1,20 @@
+# An experimental config file for svdtools fmt feature.
+peripheral_name: Constant
+peripheral_base_address: UpperHex16
+address_block_offset: UpperHex
+address_block_size: UpperHex
+interrupt_name: Constant
+cluster_name: Snake
+cluster_address_offset: UpperHex
+register_name: Snake
+register_address_offset: UpperHex
+register_size: Dec
+register_reset_value: UpperHex16
+register_reset_mask: UpperHex16
+field_name: Snake
+field_bit_range: BitRange
+enumerated_values_name: Pascal
+enumerated_value_name: Constant
+enumerated_value_value: UpperHex
+dim_dim: Dec
+dim_increment: UpperHex

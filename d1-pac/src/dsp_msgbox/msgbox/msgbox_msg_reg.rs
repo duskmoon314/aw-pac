@@ -1,4 +1,4 @@
-#[doc = "Register `MSGBOX_MSG_REG%s` reader"]
+#[doc = "Register `msgbox_msg_reg%s` reader"]
 pub struct R(crate::R<MSGBOX_MSG_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MSGBOX_MSG_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MSGBOX_MSG_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MSGBOX_MSG_REG%s` writer"]
+#[doc = "Register `msgbox_msg_reg%s` writer"]
 pub struct W(crate::W<MSGBOX_MSG_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MSGBOX_MSG_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<MSGBOX_MSG_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `MSG_QUE` reader - The message register stores the next to be read message of the message FIFO queue."]
+#[doc = "Field `msg_que` reader - The message register stores the next to be read message of the message FIFO queue."]
 pub type MSG_QUE_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `MSG_QUE` writer - The message register stores the next to be read message of the message FIFO queue."]
+#[doc = "Field `msg_que` writer - The message register stores the next to be read message of the message FIFO queue."]
 pub type MSG_QUE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, MSGBOX_MSG_REG_SPEC, u32, u32, 32, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for MSGBOX_MSG_REG_SPEC {
 impl crate::Writable for MSGBOX_MSG_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MSGBOX_MSG_REG%s to value 0"]
+#[doc = "`reset()` method sets msgbox_msg_reg%s to value 0"]
 impl crate::Resettable for MSGBOX_MSG_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

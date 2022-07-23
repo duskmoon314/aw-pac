@@ -1,4 +1,4 @@
-#[doc = "Register `LOSC_CTRL_REG` reader"]
+#[doc = "Register `losc_ctrl_reg` reader"]
 pub struct R(crate::R<LOSC_CTRL_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LOSC_CTRL_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LOSC_CTRL_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LOSC_CTRL_REG` writer"]
+#[doc = "Register `losc_ctrl_reg` writer"]
 pub struct W(crate::W<LOSC_CTRL_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LOSC_CTRL_REG_SPEC>;
@@ -34,7 +34,7 @@ impl From<crate::W<LOSC_CTRL_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `KEY_FIELD` writer - Key Field\n\nThis field should be filled with 0x16AA, and then the bit0 and bit1 can be written with the new value."]
+#[doc = "Field `key_field` writer - Key Field\n\nThis field should be filled with 0x16AA, and then the bit0 and bit1 can be written with the new value."]
 pub type KEY_FIELD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LOSC_CTRL_REG_SPEC, u16, u16, 16, O>;
 #[doc = "LOSC auto switch function disable\n\nValue on reset: 0"]
@@ -51,7 +51,7 @@ impl From<LOSC_AUTO_SWT_FUNCTION_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOSC_AUTO_SWT_FUNCTION` reader - LOSC auto switch function disable"]
+#[doc = "Field `losc_auto_swt_function` reader - LOSC auto switch function disable"]
 pub type LOSC_AUTO_SWT_FUNCTION_R = crate::BitReader<LOSC_AUTO_SWT_FUNCTION_A>;
 impl LOSC_AUTO_SWT_FUNCTION_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +73,7 @@ impl LOSC_AUTO_SWT_FUNCTION_R {
         *self == LOSC_AUTO_SWT_FUNCTION_A::DISABLE
     }
 }
-#[doc = "Field `LOSC_AUTO_SWT_FUNCTION` writer - LOSC auto switch function disable"]
+#[doc = "Field `losc_auto_swt_function` writer - LOSC auto switch function disable"]
 pub type LOSC_AUTO_SWT_FUNCTION_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LOSC_CTRL_REG_SPEC, LOSC_AUTO_SWT_FUNCTION_A, O>;
 impl<'a, const O: u8> LOSC_AUTO_SWT_FUNCTION_W<'a, O> {
@@ -102,7 +102,7 @@ impl From<LOSC_AUTO_SWT_32K_SEL_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOSC_AUTO_SWT_32K_SEL_EN` reader - LOSC auto switch 32K clk source select enable"]
+#[doc = "Field `losc_auto_swt_32k_sel_en` reader - LOSC auto switch 32K clk source select enable"]
 pub type LOSC_AUTO_SWT_32K_SEL_EN_R = crate::BitReader<LOSC_AUTO_SWT_32K_SEL_EN_A>;
 impl LOSC_AUTO_SWT_32K_SEL_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -124,7 +124,7 @@ impl LOSC_AUTO_SWT_32K_SEL_EN_R {
         *self == LOSC_AUTO_SWT_32K_SEL_EN_A::ENABLE
     }
 }
-#[doc = "Field `LOSC_AUTO_SWT_32K_SEL_EN` writer - LOSC auto switch 32K clk source select enable"]
+#[doc = "Field `losc_auto_swt_32k_sel_en` writer - LOSC auto switch 32K clk source select enable"]
 pub type LOSC_AUTO_SWT_32K_SEL_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LOSC_CTRL_REG_SPEC, LOSC_AUTO_SWT_32K_SEL_EN_A, O>;
 impl<'a, const O: u8> LOSC_AUTO_SWT_32K_SEL_EN_W<'a, O> {
@@ -139,14 +139,14 @@ impl<'a, const O: u8> LOSC_AUTO_SWT_32K_SEL_EN_W<'a, O> {
         self.variant(LOSC_AUTO_SWT_32K_SEL_EN_A::ENABLE)
     }
 }
-#[doc = "Field `RTC_HHMMSS_ACCE` reader - RTC Hour Minute Second access\n\nAfter writing the RTC HH-MM-SS Register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC HH-MM-SS Register, the RTC HH-MM-SS Register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
+#[doc = "Field `rtc_hhmmss_acce` reader - RTC Hour Minute Second access\n\nAfter writing the RTC HH-MM-SS Register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC HH-MM-SS Register, the RTC HH-MM-SS Register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
 pub type RTC_HHMMSS_ACCE_R = crate::BitReader<bool>;
-#[doc = "Field `RTC_HHMMSS_ACCE` writer - RTC Hour Minute Second access\n\nAfter writing the RTC HH-MM-SS Register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC HH-MM-SS Register, the RTC HH-MM-SS Register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
+#[doc = "Field `rtc_hhmmss_acce` writer - RTC Hour Minute Second access\n\nAfter writing the RTC HH-MM-SS Register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC HH-MM-SS Register, the RTC HH-MM-SS Register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
 pub type RTC_HHMMSS_ACCE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LOSC_CTRL_REG_SPEC, bool, O>;
-#[doc = "Field `RTC_DAY_ACCE` reader - RTC DAY access\n\nAfter writing the RTC DAY register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC DAY register, the DAY register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
+#[doc = "Field `rtc_day_acce` reader - RTC DAY access\n\nAfter writing the RTC DAY register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC DAY register, the DAY register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
 pub type RTC_DAY_ACCE_R = crate::BitReader<bool>;
-#[doc = "Field `RTC_DAY_ACCE` writer - RTC DAY access\n\nAfter writing the RTC DAY register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC DAY register, the DAY register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
+#[doc = "Field `rtc_day_acce` writer - RTC DAY access\n\nAfter writing the RTC DAY register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC DAY register, the DAY register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
 pub type RTC_DAY_ACCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, LOSC_CTRL_REG_SPEC, bool, O>;
 #[doc = "External 32.768 kHz Crystal Enable\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -162,7 +162,7 @@ impl From<EXT_LOSC_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXT_LOSC_EN` reader - External 32.768 kHz Crystal Enable"]
+#[doc = "Field `ext_losc_en` reader - External 32.768 kHz Crystal Enable"]
 pub type EXT_LOSC_EN_R = crate::BitReader<EXT_LOSC_EN_A>;
 impl EXT_LOSC_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -184,7 +184,7 @@ impl EXT_LOSC_EN_R {
         *self == EXT_LOSC_EN_A::ENABLE
     }
 }
-#[doc = "Field `EXT_LOSC_EN` writer - External 32.768 kHz Crystal Enable"]
+#[doc = "Field `ext_losc_en` writer - External 32.768 kHz Crystal Enable"]
 pub type EXT_LOSC_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LOSC_CTRL_REG_SPEC, EXT_LOSC_EN_A, O>;
 impl<'a, const O: u8> EXT_LOSC_EN_W<'a, O> {
@@ -214,7 +214,7 @@ impl From<EXT_LOSC_GSM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EXT_LOSC_GSM` reader - External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock."]
+#[doc = "Field `ext_losc_gsm` reader - External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock."]
 pub type EXT_LOSC_GSM_R = crate::FieldReader<u8, EXT_LOSC_GSM_A>;
 impl EXT_LOSC_GSM_R {
     #[doc = "Get enumerated values variant"]
@@ -237,7 +237,7 @@ impl EXT_LOSC_GSM_R {
         *self == EXT_LOSC_GSM_A::HIGH
     }
 }
-#[doc = "Field `EXT_LOSC_GSM` writer - External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock."]
+#[doc = "Field `ext_losc_gsm` writer - External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock."]
 pub type EXT_LOSC_GSM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LOSC_CTRL_REG_SPEC, u8, EXT_LOSC_GSM_A, 2, O>;
 impl<'a, const O: u8> EXT_LOSC_GSM_W<'a, O> {
@@ -266,7 +266,7 @@ impl From<RTC_SRC_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RTC_SRC_SEL` reader - RTC_TIMER Clock Source Select"]
+#[doc = "Field `rtc_src_sel` reader - RTC_TIMER Clock Source Select"]
 pub type RTC_SRC_SEL_R = crate::BitReader<RTC_SRC_SEL_A>;
 impl RTC_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -288,7 +288,7 @@ impl RTC_SRC_SEL_R {
         *self == RTC_SRC_SEL_A::_24MDIV32K
     }
 }
-#[doc = "Field `RTC_SRC_SEL` writer - RTC_TIMER Clock Source Select"]
+#[doc = "Field `rtc_src_sel` writer - RTC_TIMER Clock Source Select"]
 pub type RTC_SRC_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LOSC_CTRL_REG_SPEC, RTC_SRC_SEL_A, O>;
 impl<'a, const O: u8> RTC_SRC_SEL_W<'a, O> {
@@ -317,7 +317,7 @@ impl From<LOSC_SRC_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOSC_SRC_SEL` reader - LOSC Clock Source Select"]
+#[doc = "Field `losc_src_sel` reader - LOSC Clock Source Select"]
 pub type LOSC_SRC_SEL_R = crate::BitReader<LOSC_SRC_SEL_A>;
 impl LOSC_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -339,7 +339,7 @@ impl LOSC_SRC_SEL_R {
         *self == LOSC_SRC_SEL_A::EXTERNAL
     }
 }
-#[doc = "Field `LOSC_SRC_SEL` writer - LOSC Clock Source Select"]
+#[doc = "Field `losc_src_sel` writer - LOSC Clock Source Select"]
 pub type LOSC_SRC_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LOSC_CTRL_REG_SPEC, LOSC_SRC_SEL_A, O>;
 impl<'a, const O: u8> LOSC_SRC_SEL_W<'a, O> {
@@ -462,7 +462,7 @@ impl crate::Readable for LOSC_CTRL_REG_SPEC {
 impl crate::Writable for LOSC_CTRL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LOSC_CTRL_REG to value 0x4010"]
+#[doc = "`reset()` method sets losc_ctrl_reg to value 0x4010"]
 impl crate::Resettable for LOSC_CTRL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

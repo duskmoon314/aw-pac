@@ -48,7 +48,7 @@ impl From<EINT_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `EINT(0-6)_STATUS` reader - External INT Pending Bit"]
+#[doc = "Fields `eint(0-6)_status` reader - External INT Pending Bit"]
 pub type EINT_STATUS_R = crate::BitReader<EINT_STATUS_A>;
 impl EINT_STATUS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl EINT_STATUS_R {
         *self == EINT_STATUS_A::PENDING
     }
 }
-#[doc = "Fields `EINT(0-6)_STATUS` writer - External INT Pending Bit"]
+#[doc = "Fields `eint(0-6)_status` writer - External INT Pending Bit"]
 pub type EINT_STATUS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PF_EINT_STATUS_SPEC, EINT_STATUS_A, O>;
 impl<'a, const O: u8> EINT_STATUS_W<'a, O> {

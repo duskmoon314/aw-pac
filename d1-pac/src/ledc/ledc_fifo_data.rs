@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_FIFO_DATA%s` reader"]
+#[doc = "Register `ledc_fifo_data%s` reader"]
 pub struct R(crate::R<LEDC_FIFO_DATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LEDC_FIFO_DATA_SPEC>;
@@ -22,7 +22,7 @@ impl crate::RegisterSpec for LEDC_FIFO_DATA_SPEC {
 impl crate::Readable for LEDC_FIFO_DATA_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets LEDC_FIFO_DATA%s to value 0"]
+#[doc = "`reset()` method sets ledc_fifo_data%s to value 0"]
 impl crate::Resettable for LEDC_FIFO_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `CE_TPR` reader"]
+#[doc = "Register `ce_tpr` reader"]
 pub struct R(crate::R<CE_TPR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_TPR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_TPR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_TPR` writer"]
+#[doc = "Register `ce_tpr` writer"]
 pub struct W(crate::W<CE_TPR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_TPR_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CE_TPR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TP_NUM` reader - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
+#[doc = "Field `tp_num` reader - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
 pub type TP_NUM_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `TP_NUM` writer - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
+#[doc = "Field `tp_num` writer - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
 pub type TP_NUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CE_TPR_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
@@ -71,7 +71,7 @@ impl crate::Readable for CE_TPR_SPEC {
 impl crate::Writable for CE_TPR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_TPR to value 0"]
+#[doc = "`reset()` method sets ce_tpr to value 0"]
 impl crate::Resettable for CE_TPR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

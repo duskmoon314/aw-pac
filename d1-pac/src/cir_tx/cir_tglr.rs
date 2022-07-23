@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TGLR` reader"]
+#[doc = "Register `cir_tglr` reader"]
 pub struct R(crate::R<CIR_TGLR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TGLR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TGLR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TGLR` writer"]
+#[doc = "Register `cir_tglr` writer"]
 pub struct W(crate::W<CIR_TGLR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TGLR_SPEC>;
@@ -48,7 +48,7 @@ impl From<IMS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `IMS` reader - Internal Modulation Select"]
+#[doc = "Field `ims` reader - Internal Modulation Select"]
 pub type IMS_R = crate::BitReader<IMS_A>;
 impl IMS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl IMS_R {
         *self == IMS_A::MODULATED
     }
 }
-#[doc = "Field `IMS` writer - Internal Modulation Select"]
+#[doc = "Field `ims` writer - Internal Modulation Select"]
 pub type IMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, IMS_A, O>;
 impl<'a, const O: u8> IMS_W<'a, O> {
     #[doc = "The transmitting signal is not modulated"]
@@ -101,7 +101,7 @@ impl From<DRMC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DRMC` reader - Duty ratio of modulated carrier is high level/low level."]
+#[doc = "Field `drmc` reader - Duty ratio of modulated carrier is high level/low level."]
 pub type DRMC_R = crate::FieldReader<u8, DRMC_A>;
 impl DRMC_R {
     #[doc = "Get enumerated values variant"]
@@ -130,7 +130,7 @@ impl DRMC_R {
         *self == DRMC_A::TRIPLE
     }
 }
-#[doc = "Field `DRMC` writer - Duty ratio of modulated carrier is high level/low level."]
+#[doc = "Field `drmc` writer - Duty ratio of modulated carrier is high level/low level."]
 pub type DRMC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_TGLR_SPEC, u8, DRMC_A, 2, O>;
 impl<'a, const O: u8> DRMC_W<'a, O> {
     #[doc = "Low level is equal to high level"]
@@ -163,7 +163,7 @@ impl From<TPPI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TPPI` reader - Transmit Pulse Polarity Invert"]
+#[doc = "Field `tppi` reader - Transmit Pulse Polarity Invert"]
 pub type TPPI_R = crate::BitReader<TPPI_A>;
 impl TPPI_R {
     #[doc = "Get enumerated values variant"]
@@ -185,7 +185,7 @@ impl TPPI_R {
         *self == TPPI_A::INVERT
     }
 }
-#[doc = "Field `TPPI` writer - Transmit Pulse Polarity Invert"]
+#[doc = "Field `tppi` writer - Transmit Pulse Polarity Invert"]
 pub type TPPI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TPPI_A, O>;
 impl<'a, const O: u8> TPPI_W<'a, O> {
     #[doc = "Not invert transmit pulse"]
@@ -199,9 +199,9 @@ impl<'a, const O: u8> TPPI_W<'a, O> {
         self.variant(TPPI_A::INVERT)
     }
 }
-#[doc = "Field `TR` reader - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
+#[doc = "Field `tr` reader - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
 pub type TR_R = crate::BitReader<bool>;
-#[doc = "Field `TR` writer - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
+#[doc = "Field `tr` writer - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
 pub type TR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, bool, O>;
 #[doc = "Transmit Block Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -217,7 +217,7 @@ impl From<TXEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TXEN` reader - Transmit Block Enable"]
+#[doc = "Field `txen` reader - Transmit Block Enable"]
 pub type TXEN_R = crate::BitReader<TXEN_A>;
 impl TXEN_R {
     #[doc = "Get enumerated values variant"]
@@ -239,7 +239,7 @@ impl TXEN_R {
         *self == TXEN_A::ENABLE
     }
 }
-#[doc = "Field `TXEN` writer - Transmit Block Enable"]
+#[doc = "Field `txen` writer - Transmit Block Enable"]
 pub type TXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, TXEN_A, O>;
 impl<'a, const O: u8> TXEN_W<'a, O> {
     #[doc = "Disable the CIR Transmitter"]
@@ -326,7 +326,7 @@ impl crate::Readable for CIR_TGLR_SPEC {
 impl crate::Writable for CIR_TGLR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TGLR to value 0"]
+#[doc = "`reset()` method sets cir_tglr to value 0"]
 impl crate::Resettable for CIR_TGLR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

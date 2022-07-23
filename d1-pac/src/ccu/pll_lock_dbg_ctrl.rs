@@ -1,4 +1,4 @@
-#[doc = "Register `PLL_LOCK_DBG_CTRL` reader"]
+#[doc = "Register `pll_lock_dbg_ctrl` reader"]
 pub struct R(crate::R<PLL_LOCK_DBG_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PLL_LOCK_DBG_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PLL_LOCK_DBG_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PLL_LOCK_DBG_CTRL` writer"]
+#[doc = "Register `pll_lock_dbg_ctrl` writer"]
 pub struct W(crate::W<PLL_LOCK_DBG_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PLL_LOCK_DBG_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<PLL_LOCK_FLAG_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `PLL_LOCK_FLAG_EN` reader - Debug Enable"]
+#[doc = "Field `pll_lock_flag_en` reader - Debug Enable"]
 pub type PLL_LOCK_FLAG_EN_R = crate::BitReader<PLL_LOCK_FLAG_EN_A>;
 impl PLL_LOCK_FLAG_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl PLL_LOCK_FLAG_EN_R {
         *self == PLL_LOCK_FLAG_EN_A::ENABLE
     }
 }
-#[doc = "Field `PLL_LOCK_FLAG_EN` writer - Debug Enable"]
+#[doc = "Field `pll_lock_flag_en` writer - Debug Enable"]
 pub type PLL_LOCK_FLAG_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, PLL_LOCK_FLAG_EN_A, O>;
 impl<'a, const O: u8> PLL_LOCK_FLAG_EN_W<'a, O> {
@@ -112,7 +112,7 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
+#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -171,7 +171,7 @@ impl CLK_SRC_SEL_R {
         *self == CLK_SRC_SEL_A::PLL_AUDIO1
     }
 }
-#[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
+#[doc = "Field `clk_src_sel` writer - Clock Source Select"]
 pub type CLK_SRC_SEL_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
 impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
@@ -259,7 +259,7 @@ impl crate::Readable for PLL_LOCK_DBG_CTRL_SPEC {
 impl crate::Writable for PLL_LOCK_DBG_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PLL_LOCK_DBG_CTRL to value 0"]
+#[doc = "`reset()` method sets pll_lock_dbg_ctrl to value 0"]
 impl crate::Resettable for PLL_LOCK_DBG_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

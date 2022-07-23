@@ -1,4 +1,4 @@
-#[doc = "Register `PCCR23` reader"]
+#[doc = "Register `pccr23` reader"]
 pub struct R(crate::R<PCCR23_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PCCR23_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PCCR23_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PCCR23` writer"]
+#[doc = "Register `pccr23` writer"]
 pub struct W(crate::W<PCCR23_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PCCR23_SPEC>;
@@ -49,7 +49,7 @@ impl From<PWM23_CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PWM23_CLK_SRC_SEL` reader - Select PWM23 Clock Source"]
+#[doc = "Field `pwm23_clk_src_sel` reader - Select PWM23 Clock Source"]
 pub type PWM23_CLK_SRC_SEL_R = crate::FieldReader<u8, PWM23_CLK_SRC_SEL_A>;
 impl PWM23_CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl PWM23_CLK_SRC_SEL_R {
         *self == PWM23_CLK_SRC_SEL_A::APB0
     }
 }
-#[doc = "Field `PWM23_CLK_SRC_SEL` writer - Select PWM23 Clock Source"]
+#[doc = "Field `pwm23_clk_src_sel` writer - Select PWM23 Clock Source"]
 pub type PWM23_CLK_SRC_SEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_SRC_SEL_A, 2, O>;
 impl<'a, const O: u8> PWM23_CLK_SRC_SEL_W<'a, O> {
@@ -116,7 +116,7 @@ impl From<PWM23_CLK_DIV_M_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PWM23_CLK_DIV_M` reader - PWM23 Clock Divide M"]
+#[doc = "Field `pwm23_clk_div_m` reader - PWM23 Clock Divide M"]
 pub type PWM23_CLK_DIV_M_R = crate::FieldReader<u8, PWM23_CLK_DIV_M_A>;
 impl PWM23_CLK_DIV_M_R {
     #[doc = "Get enumerated values variant"]
@@ -181,7 +181,7 @@ impl PWM23_CLK_DIV_M_R {
         *self == PWM23_CLK_DIV_M_A::M256
     }
 }
-#[doc = "Field `PWM23_CLK_DIV_M` writer - PWM23 Clock Divide M"]
+#[doc = "Field `pwm23_clk_div_m` writer - PWM23 Clock Divide M"]
 pub type PWM23_CLK_DIV_M_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_DIV_M_A, 4, O>;
 impl<'a, const O: u8> PWM23_CLK_DIV_M_W<'a, O> {
@@ -274,7 +274,7 @@ impl crate::Readable for PCCR23_SPEC {
 impl crate::Writable for PCCR23_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PCCR23 to value 0"]
+#[doc = "`reset()` method sets pccr23 to value 0"]
 impl crate::Resettable for PCCR23_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

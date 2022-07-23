@@ -1,4 +1,4 @@
-#[doc = "Register `AC_DAC_TXDATA` reader"]
+#[doc = "Register `ac_dac_txdata` reader"]
 pub struct R(crate::R<AC_DAC_TXDATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<AC_DAC_TXDATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<AC_DAC_TXDATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `AC_DAC_TXDATA` writer"]
+#[doc = "Register `ac_dac_txdata` writer"]
 pub struct W(crate::W<AC_DAC_TXDATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<AC_DAC_TXDATA_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for AC_DAC_TXDATA_SPEC {
 impl crate::Writable for AC_DAC_TXDATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets AC_DAC_TXDATA to value 0"]
+#[doc = "`reset()` method sets ac_dac_txdata to value 0"]
 impl crate::Resettable for AC_DAC_TXDATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

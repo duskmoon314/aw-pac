@@ -1,4 +1,4 @@
-#[doc = "Register `RES240_CTRL` reader"]
+#[doc = "Register `res240_ctrl` reader"]
 pub struct R(crate::R<RES240_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RES240_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RES240_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RES240_CTRL` writer"]
+#[doc = "Register `res240_ctrl` writer"]
 pub struct W(crate::W<RES240_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RES240_CTRL_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<RES240_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DDR_RES240_TRIM` reader - 240ohms Resistor trimming bit"]
+#[doc = "Field `ddr_res240_trim` reader - 240ohms Resistor trimming bit"]
 pub type DDR_RES240_TRIM_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DDR_RES240_TRIM` writer - 240ohms Resistor trimming bit"]
+#[doc = "Field `ddr_res240_trim` writer - 240ohms Resistor trimming bit"]
 pub type DDR_RES240_TRIM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, RES240_CTRL_SPEC, u8, u8, 6, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for RES240_CTRL_SPEC {
 impl crate::Writable for RES240_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RES240_CTRL to value 0"]
+#[doc = "`reset()` method sets res240_ctrl to value 0"]
 impl crate::Resettable for RES240_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

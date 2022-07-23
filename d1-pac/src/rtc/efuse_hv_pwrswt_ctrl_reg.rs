@@ -1,4 +1,4 @@
-#[doc = "Register `EFUSE_HV_PWRSWT_CTRL_REG` reader"]
+#[doc = "Register `efuse_hv_pwrswt_ctrl_reg` reader"]
 pub struct R(crate::R<EFUSE_HV_PWRSWT_CTRL_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EFUSE_HV_PWRSWT_CTRL_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EFUSE_HV_PWRSWT_CTRL_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EFUSE_HV_PWRSWT_CTRL_REG` writer"]
+#[doc = "Register `efuse_hv_pwrswt_ctrl_reg` writer"]
 pub struct W(crate::W<EFUSE_HV_PWRSWT_CTRL_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EFUSE_HV_PWRSWT_CTRL_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<EFUSE_1_8V_POWER_SWITCH_CONTROL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EFUSE_1_8V_POWER_SWITCH_CONTROL` reader - 1: Open power switch 0: Close power switch"]
+#[doc = "Field `efuse_1_8v_power_switch_control` reader - 1: Open power switch 0: Close power switch"]
 pub type EFUSE_1_8V_POWER_SWITCH_CONTROL_R = crate::BitReader<EFUSE_1_8V_POWER_SWITCH_CONTROL_A>;
 impl EFUSE_1_8V_POWER_SWITCH_CONTROL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl EFUSE_1_8V_POWER_SWITCH_CONTROL_R {
         *self == EFUSE_1_8V_POWER_SWITCH_CONTROL_A::CLOSE
     }
 }
-#[doc = "Field `EFUSE_1_8V_POWER_SWITCH_CONTROL` writer - 1: Open power switch 0: Close power switch"]
+#[doc = "Field `efuse_1_8v_power_switch_control` writer - 1: Open power switch 0: Close power switch"]
 pub type EFUSE_1_8V_POWER_SWITCH_CONTROL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EFUSE_HV_PWRSWT_CTRL_REG_SPEC, EFUSE_1_8V_POWER_SWITCH_CONTROL_A, O>;
 impl<'a, const O: u8> EFUSE_1_8V_POWER_SWITCH_CONTROL_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for EFUSE_HV_PWRSWT_CTRL_REG_SPEC {
 impl crate::Writable for EFUSE_HV_PWRSWT_CTRL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EFUSE_HV_PWRSWT_CTRL_REG to value 0"]
+#[doc = "`reset()` method sets efuse_hv_pwrswt_ctrl_reg to value 0"]
 impl crate::Resettable for EFUSE_HV_PWRSWT_CTRL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_RXSTA` reader"]
+#[doc = "Register `cir_rxsta` reader"]
 pub struct R(crate::R<CIR_RXSTA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_RXSTA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_RXSTA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_RXSTA` writer"]
+#[doc = "Register `cir_rxsta` writer"]
 pub struct W(crate::W<CIR_RXSTA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_RXSTA_SPEC>;
@@ -175,7 +175,7 @@ impl From<RAC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RAC` reader - RX FIFO Available Counter"]
+#[doc = "Field `rac` reader - RX FIFO Available Counter"]
 pub type RAC_R = crate::FieldReader<u8, RAC_A>;
 impl RAC_R {
     #[doc = "Get enumerated values variant"]
@@ -590,7 +590,7 @@ impl From<STAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `STAT` reader - Status of CIR"]
+#[doc = "Field `stat` reader - Status of CIR"]
 pub type STAT_R = crate::BitReader<STAT_A>;
 impl STAT_R {
     #[doc = "Get enumerated values variant"]
@@ -626,7 +626,7 @@ impl From<RA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RA` reader - RX FIFO Available"]
+#[doc = "Field `ra` reader - RX FIFO Available"]
 pub type RA_R = crate::BitReader<RA_A>;
 impl RA_R {
     #[doc = "Get enumerated values variant"]
@@ -648,7 +648,7 @@ impl RA_R {
         *self == RA_A::AVAILABLE
     }
 }
-#[doc = "Field `RA` writer - RX FIFO Available"]
+#[doc = "Field `ra` writer - RX FIFO Available"]
 pub type RA_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RA_A, O>;
 impl<'a, const O: u8> RA_W<'a, O> {
     #[doc = "RX FIFO not available according to its level"]
@@ -676,7 +676,7 @@ impl From<RPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RPE` reader - Receiver Packet End Flag"]
+#[doc = "Field `rpe` reader - Receiver Packet End Flag"]
 pub type RPE_R = crate::BitReader<RPE_A>;
 impl RPE_R {
     #[doc = "Get enumerated values variant"]
@@ -698,7 +698,7 @@ impl RPE_R {
         *self == RPE_A::STO_FIELD
     }
 }
-#[doc = "Field `RPE` writer - Receiver Packet End Flag"]
+#[doc = "Field `rpe` writer - Receiver Packet End Flag"]
 pub type RPE_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RPE_A, O>;
 impl<'a, const O: u8> RPE_W<'a, O> {
     #[doc = "STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
@@ -726,7 +726,7 @@ impl From<ROI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ROI` reader - Receiver FIFO Overrun"]
+#[doc = "Field `roi` reader - Receiver FIFO Overrun"]
 pub type ROI_R = crate::BitReader<ROI_A>;
 impl ROI_R {
     #[doc = "Get enumerated values variant"]
@@ -748,7 +748,7 @@ impl ROI_R {
         *self == ROI_A::OVERRUN
     }
 }
-#[doc = "Field `ROI` writer - Receiver FIFO Overrun"]
+#[doc = "Field `roi` writer - Receiver FIFO Overrun"]
 pub type ROI_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, ROI_A, O>;
 impl<'a, const O: u8> ROI_W<'a, O> {
     #[doc = "Receiver FIFO not overrun"]
@@ -825,7 +825,7 @@ impl crate::Readable for CIR_RXSTA_SPEC {
 impl crate::Writable for CIR_RXSTA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_RXSTA to value 0"]
+#[doc = "`reset()` method sets cir_rxsta to value 0"]
 impl crate::Resettable for CIR_RXSTA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

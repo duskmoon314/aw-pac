@@ -1,4 +1,4 @@
-#[doc = "Register `I2S_PCM_TX1CHMAP1` reader"]
+#[doc = "Register `i2s_pcm_tx1chmap1` reader"]
 pub struct R(crate::R<I2S_PCM_TX1CHMAP1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<I2S_PCM_TX1CHMAP1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<I2S_PCM_TX1CHMAP1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `I2S_PCM_TX1CHMAP1` writer"]
+#[doc = "Register `i2s_pcm_tx1chmap1` writer"]
 pub struct W(crate::W<I2S_PCM_TX1CHMAP1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<I2S_PCM_TX1CHMAP1_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for I2S_PCM_TX1CHMAP1_SPEC {
 impl crate::Writable for I2S_PCM_TX1CHMAP1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets I2S_PCM_TX1CHMAP1 to value 0"]
+#[doc = "`reset()` method sets i2s_pcm_tx1chmap1 to value 0"]
 impl crate::Resettable for I2S_PCM_TX1CHMAP1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

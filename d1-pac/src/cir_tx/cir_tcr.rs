@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TCR` reader"]
+#[doc = "Register `cir_tcr` reader"]
 pub struct R(crate::R<CIR_TCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TCR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TCR` writer"]
+#[doc = "Register `cir_tcr` writer"]
 pub struct W(crate::W<CIR_TCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TCR_SPEC>;
@@ -48,7 +48,7 @@ impl From<CSS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CSS` reader - Cyclical Pulse Start/Stop Control"]
+#[doc = "Field `css` reader - Cyclical Pulse Start/Stop Control"]
 pub type CSS_R = crate::BitReader<CSS_A>;
 impl CSS_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CSS_R {
         *self == CSS_A::START
     }
 }
-#[doc = "Field `CSS` writer - Cyclical Pulse Start/Stop Control"]
+#[doc = "Field `css` writer - Cyclical Pulse Start/Stop Control"]
 pub type CSS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, CSS_A, O>;
 impl<'a, const O: u8> CSS_W<'a, O> {
     #[doc = "Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
@@ -111,7 +111,7 @@ impl From<RCS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RCS` reader - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
+#[doc = "Field `rcs` reader - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
 pub type RCS_R = crate::FieldReader<u8, RCS_A>;
 impl RCS_R {
     #[doc = "Get enumerated values variant"]
@@ -170,7 +170,7 @@ impl RCS_R {
         *self == RCS_A::IR_CLK_512
     }
 }
-#[doc = "Field `RCS` writer - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
+#[doc = "Field `rcs` writer - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
 pub type RCS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CIR_TCR_SPEC, u8, RCS_A, 3, O>;
 impl<'a, const O: u8> RCS_W<'a, O> {
     #[doc = "CIR Transmit reference clock is ir_clk"]
@@ -228,7 +228,7 @@ impl From<TTS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TTS` reader - Type of the transmission signal"]
+#[doc = "Field `tts` reader - Type of the transmission signal"]
 pub type TTS_R = crate::BitReader<TTS_A>;
 impl TTS_R {
     #[doc = "Get enumerated values variant"]
@@ -250,7 +250,7 @@ impl TTS_R {
         *self == TTS_A::CYCLICAL
     }
 }
-#[doc = "Field `TTS` writer - Type of the transmission signal"]
+#[doc = "Field `tts` writer - Type of the transmission signal"]
 pub type TTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, TTS_A, O>;
 impl<'a, const O: u8> TTS_W<'a, O> {
     #[doc = "The transmitting wave is a single non-cyclical pulse."]
@@ -317,7 +317,7 @@ impl crate::Readable for CIR_TCR_SPEC {
 impl crate::Writable for CIR_TCR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TCR to value 0"]
+#[doc = "`reset()` method sets cir_tcr to value 0"]
 impl crate::Resettable for CIR_TCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

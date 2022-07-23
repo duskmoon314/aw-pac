@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_CNTR` reader"]
+#[doc = "Register `twi_cntr` reader"]
 pub struct R(crate::R<TWI_CNTR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TWI_CNTR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TWI_CNTR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TWI_CNTR` writer"]
+#[doc = "Register `twi_cntr` writer"]
 pub struct W(crate::W<TWI_CNTR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TWI_CNTR_SPEC>;
@@ -294,7 +294,7 @@ impl crate::Readable for TWI_CNTR_SPEC {
 impl crate::Writable for TWI_CNTR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TWI_CNTR to value 0"]
+#[doc = "`reset()` method sets twi_cntr to value 0"]
 impl crate::Resettable for TWI_CNTR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

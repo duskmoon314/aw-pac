@@ -1,4 +1,4 @@
-#[doc = "Register `VDD_OFF_GATING_CTRL_REG` reader"]
+#[doc = "Register `vdd_off_gating_ctrl_reg` reader"]
 pub struct R(crate::R<VDD_OFF_GATING_CTRL_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<VDD_OFF_GATING_CTRL_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<VDD_OFF_GATING_CTRL_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `VDD_OFF_GATING_CTRL_REG` writer"]
+#[doc = "Register `vdd_off_gating_ctrl_reg` writer"]
 pub struct W(crate::W<VDD_OFF_GATING_CTRL_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<VDD_OFF_GATING_CTRL_REG_SPEC>;
@@ -34,15 +34,15 @@ impl From<crate::W<VDD_OFF_GATING_CTRL_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `KEY_FIELD` writer - Key Field\n\nThis field should be filled with 0x16AA, and then the bit 15 can be configured."]
+#[doc = "Field `key_field` writer - Key Field\n\nThis field should be filled with 0x16AA, and then the bit 15 can be configured."]
 pub type KEY_FIELD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, VDD_OFF_GATING_CTRL_REG_SPEC, u16, u16, 16, O>;
-#[doc = "Field `PWROFF_GAT_RTC_CFG` writer - Power off gating control signal\n\n(For Debug Use Only)\n\nWhen use vdd_sys to RTC isolation software control, write this bit to 1. It will only be cleared by resetb release."]
+#[doc = "Field `pwroff_gat_rtc_cfg` writer - Power off gating control signal\n\n(For Debug Use Only)\n\nWhen use vdd_sys to RTC isolation software control, write this bit to 1. It will only be cleared by resetb release."]
 pub type PWROFF_GAT_RTC_CFG_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, VDD_OFF_GATING_CTRL_REG_SPEC, bool, O>;
-#[doc = "Field `VCCIO_DET_SPARE` reader - - Bit\\[7:5\\]: Reserved, default=0\n- Bit\\[4\\]: Bypass debounce circuit, defaule=0\n- Bit\\[3\\]: Enable control, defaule=0 \n - 0: Disable VCC-IO detection\n - 1: Force the detection output\n- Bit\\[2:0\\]: Gear adjustment\n - 000: Detection threshold is 2.5 V\n - 001: Detection threshold is 2.6 V\n - 010: Detection threshold is 2.7 V (default)\n - 011: Detection threshold is 2.8 V\n - 100: Detection threshold is 2.9 V\n - 101: Detection threshold is 3 V\n - 110: N/A\n - 111: N/A"]
+#[doc = "Field `vccio_det_spare` reader - - Bit\\[7:5\\]: Reserved, default=0\n- Bit\\[4\\]: Bypass debounce circuit, defaule=0\n- Bit\\[3\\]: Enable control, defaule=0 \n - 0: Disable VCC-IO detection\n - 1: Force the detection output\n- Bit\\[2:0\\]: Gear adjustment\n - 000: Detection threshold is 2.5 V\n - 001: Detection threshold is 2.6 V\n - 010: Detection threshold is 2.7 V (default)\n - 011: Detection threshold is 2.8 V\n - 100: Detection threshold is 2.9 V\n - 101: Detection threshold is 3 V\n - 110: N/A\n - 111: N/A"]
 pub type VCCIO_DET_SPARE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `VCCIO_DET_SPARE` writer - - Bit\\[7:5\\]: Reserved, default=0\n- Bit\\[4\\]: Bypass debounce circuit, defaule=0\n- Bit\\[3\\]: Enable control, defaule=0 \n - 0: Disable VCC-IO detection\n - 1: Force the detection output\n- Bit\\[2:0\\]: Gear adjustment\n - 000: Detection threshold is 2.5 V\n - 001: Detection threshold is 2.6 V\n - 010: Detection threshold is 2.7 V (default)\n - 011: Detection threshold is 2.8 V\n - 100: Detection threshold is 2.9 V\n - 101: Detection threshold is 3 V\n - 110: N/A\n - 111: N/A"]
+#[doc = "Field `vccio_det_spare` writer - - Bit\\[7:5\\]: Reserved, default=0\n- Bit\\[4\\]: Bypass debounce circuit, defaule=0\n- Bit\\[3\\]: Enable control, defaule=0 \n - 0: Disable VCC-IO detection\n - 1: Force the detection output\n- Bit\\[2:0\\]: Gear adjustment\n - 000: Detection threshold is 2.5 V\n - 001: Detection threshold is 2.6 V\n - 010: Detection threshold is 2.7 V (default)\n - 011: Detection threshold is 2.8 V\n - 100: Detection threshold is 2.9 V\n - 101: Detection threshold is 3 V\n - 110: N/A\n - 111: N/A"]
 pub type VCCIO_DET_SPARE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, VDD_OFF_GATING_CTRL_REG_SPEC, u8, u8, 8, O>;
 #[doc = "\n\nValue on reset: 1"]
@@ -59,7 +59,7 @@ impl From<VCCIO_DET_BYPASS_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VCCIO_DET_BYPASS_EN` reader - "]
+#[doc = "Field `vccio_det_bypass_en` reader - "]
 pub type VCCIO_DET_BYPASS_EN_R = crate::BitReader<VCCIO_DET_BYPASS_EN_A>;
 impl VCCIO_DET_BYPASS_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -81,7 +81,7 @@ impl VCCIO_DET_BYPASS_EN_R {
         *self == VCCIO_DET_BYPASS_EN_A::BYPASS
     }
 }
-#[doc = "Field `VCCIO_DET_BYPASS_EN` writer - "]
+#[doc = "Field `vccio_det_bypass_en` writer - "]
 pub type VCCIO_DET_BYPASS_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, VDD_OFF_GATING_CTRL_REG_SPEC, VCCIO_DET_BYPASS_EN_A, O>;
 impl<'a, const O: u8> VCCIO_DET_BYPASS_EN_W<'a, O> {
@@ -149,7 +149,7 @@ impl crate::Readable for VDD_OFF_GATING_CTRL_REG_SPEC {
 impl crate::Writable for VDD_OFF_GATING_CTRL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets VDD_OFF_GATING_CTRL_REG to value 0x21"]
+#[doc = "`reset()` method sets vdd_off_gating_ctrl_reg to value 0x21"]
 impl crate::Resettable for VDD_OFF_GATING_CTRL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

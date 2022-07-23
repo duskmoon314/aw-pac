@@ -1,4 +1,4 @@
-#[doc = "Register `GP_CH1_CMP_DATA` reader"]
+#[doc = "Register `gp_ch1_cmp_data` reader"]
 pub struct R(crate::R<GP_CH1_CMP_DATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_CH1_CMP_DATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_CH1_CMP_DATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_CH1_CMP_DATA` writer"]
+#[doc = "Register `gp_ch1_cmp_data` writer"]
 pub struct W(crate::W<GP_CH1_CMP_DATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_CH1_CMP_DATA_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<GP_CH1_CMP_DATA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `CH1_CMP_HIG_DATA` reader - Channel 1 Voltage High Value"]
+#[doc = "Field `ch1_cmp_hig_data` reader - Channel 1 Voltage High Value"]
 pub type CH1_CMP_HIG_DATA_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `CH1_CMP_HIG_DATA` writer - Channel 1 Voltage High Value"]
+#[doc = "Field `ch1_cmp_hig_data` writer - Channel 1 Voltage High Value"]
 pub type CH1_CMP_HIG_DATA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, O>;
-#[doc = "Field `CH1_CMP_LOW_DATA` reader - Channel 1 Voltage Low Value"]
+#[doc = "Field `ch1_cmp_low_data` reader - Channel 1 Voltage Low Value"]
 pub type CH1_CMP_LOW_DATA_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `CH1_CMP_LOW_DATA` writer - Channel 1 Voltage Low Value"]
+#[doc = "Field `ch1_cmp_low_data` writer - Channel 1 Voltage Low Value"]
 pub type CH1_CMP_LOW_DATA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, O>;
 impl R {
@@ -87,7 +87,7 @@ impl crate::Readable for GP_CH1_CMP_DATA_SPEC {
 impl crate::Writable for GP_CH1_CMP_DATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_CH1_CMP_DATA to value 0x0bff_0400"]
+#[doc = "`reset()` method sets gp_ch1_cmp_data to value 0x0bff_0400"]
 impl crate::Resettable for GP_CH1_CMP_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

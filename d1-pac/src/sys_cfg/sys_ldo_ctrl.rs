@@ -1,4 +1,4 @@
-#[doc = "Register `SYS_LDO_CTRL` reader"]
+#[doc = "Register `sys_ldo_ctrl` reader"]
 pub struct R(crate::R<SYS_LDO_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SYS_LDO_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SYS_LDO_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SYS_LDO_CTRL` writer"]
+#[doc = "Register `sys_ldo_ctrl` writer"]
 pub struct W(crate::W<SYS_LDO_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SYS_LDO_CTRL_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<SYS_LDO_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `SPARE` reader - "]
+#[doc = "Field `spare` reader - "]
 pub type SPARE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `SPARE` writer - "]
+#[doc = "Field `spare` writer - "]
 pub type SPARE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, u8, 8, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -177,7 +177,7 @@ impl From<LDOB_TRIM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LDOB_TRIM` reader - "]
+#[doc = "Field `ldob_trim` reader - "]
 pub type LDOB_TRIM_R = crate::FieldReader<u8, LDOB_TRIM_A>;
 impl LDOB_TRIM_R {
     #[doc = "Get enumerated values variant"]
@@ -572,7 +572,7 @@ impl LDOB_TRIM_R {
         *self == LDOB_TRIM_A::O2_013
     }
 }
-#[doc = "Field `LDOB_TRIM` writer - "]
+#[doc = "Field `ldob_trim` writer - "]
 pub type LDOB_TRIM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOB_TRIM_A, 8, O>;
 impl<'a, const O: u8> LDOB_TRIM_W<'a, O> {
@@ -972,7 +972,7 @@ impl From<LDOA_TRIM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LDOA_TRIM` reader - "]
+#[doc = "Field `ldoa_trim` reader - "]
 pub type LDOA_TRIM_R = crate::FieldReader<u8, LDOA_TRIM_A>;
 impl LDOA_TRIM_R {
     #[doc = "Get enumerated values variant"]
@@ -1175,7 +1175,7 @@ impl LDOA_TRIM_R {
         *self == LDOA_TRIM_A::O2_013
     }
 }
-#[doc = "Field `LDOA_TRIM` writer - "]
+#[doc = "Field `ldoa_trim` writer - "]
 pub type LDOA_TRIM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOA_TRIM_A, 8, O>;
 impl<'a, const O: u8> LDOA_TRIM_W<'a, O> {
@@ -1393,7 +1393,7 @@ impl crate::Readable for SYS_LDO_CTRL_SPEC {
 impl crate::Writable for SYS_LDO_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SYS_LDO_CTRL to value 0"]
+#[doc = "`reset()` method sets sys_ldo_ctrl to value 0"]
 impl crate::Resettable for SYS_LDO_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

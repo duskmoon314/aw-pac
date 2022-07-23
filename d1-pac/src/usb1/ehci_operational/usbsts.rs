@@ -1,4 +1,4 @@
-#[doc = "Register `USBSTS` reader"]
+#[doc = "Register `usbsts` reader"]
 pub struct R(crate::R<USBSTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<USBSTS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<USBSTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `USBSTS` writer"]
+#[doc = "Register `usbsts` writer"]
 pub struct W(crate::W<USBSTS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<USBSTS_SPEC>;
@@ -34,42 +34,42 @@ impl From<crate::W<USBSTS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ASYNCHRONOUS_SCHEDULE_STATUS` reader - Asynchronous Schedule Status\n\nThe bit reports the current real status of Asynchronous Schedule. If this bit is a zero then the status of the Asynchronous Schedule is disabled. If this bit is a one then the status of the Asynchronous Schedule is enabled. The Host Controller is not required to immediately disable or enable the Asynchronous Schedule when software transitions the Asynchronous Schedule Enable bit in the USBCMD register. When this bit and the Asynchronous Schedule Enable bit are the same value, the Asynchronous Schedule is either enabled (1) or disabled (0)."]
+#[doc = "Field `asynchronous_schedule_status` reader - Asynchronous Schedule Status\n\nThe bit reports the current real status of Asynchronous Schedule. If this bit is a zero then the status of the Asynchronous Schedule is disabled. If this bit is a one then the status of the Asynchronous Schedule is enabled. The Host Controller is not required to immediately disable or enable the Asynchronous Schedule when software transitions the Asynchronous Schedule Enable bit in the USBCMD register. When this bit and the Asynchronous Schedule Enable bit are the same value, the Asynchronous Schedule is either enabled (1) or disabled (0)."]
 pub type ASYNCHRONOUS_SCHEDULE_STATUS_R = crate::BitReader<bool>;
-#[doc = "Field `PERIODIC_SCHEDULE_STATUS` reader - Periodic Schedule Status\n\nThe bit reports the current real status of the Periodic Schedule. If this bit is a zero then the status of the Periodic Schedule is disabled. If this bit is a one then the status of the Periodic Schedule is enabled. The Host Controller is not required to disable or enable the Periodic Schedule when software transitions the bit in the USBCMD register. When this bit and the bit are the same value, the Periodic Schedule is either enabled (1) or disabled (0)."]
+#[doc = "Field `periodic_schedule_status` reader - Periodic Schedule Status\n\nThe bit reports the current real status of the Periodic Schedule. If this bit is a zero then the status of the Periodic Schedule is disabled. If this bit is a one then the status of the Periodic Schedule is enabled. The Host Controller is not required to disable or enable the Periodic Schedule when software transitions the bit in the USBCMD register. When this bit and the bit are the same value, the Periodic Schedule is either enabled (1) or disabled (0)."]
 pub type PERIODIC_SCHEDULE_STATUS_R = crate::BitReader<bool>;
-#[doc = "Field `RECLAMATION` reader - Reclamation\n\nThis is a read-only status bit, which is used to detect an empty asynchronous schedule."]
+#[doc = "Field `reclamation` reader - Reclamation\n\nThis is a read-only status bit, which is used to detect an empty asynchronous schedule."]
 pub type RECLAMATION_R = crate::BitReader<bool>;
-#[doc = "Field `HC_HALTED` reader - HC Halted\n\nThis bit is a zero whenever the Run/Stop bit is a one. The Host Controller Sets this bit to one after it has stopped executing as a result of the Run/Stop bit being set to 0, either by software or by the Host Controller Hardware (e.g. internal error).\n\nThe default value is '1'"]
+#[doc = "Field `hc_halted` reader - HC Halted\n\nThis bit is a zero whenever the Run/Stop bit is a one. The Host Controller Sets this bit to one after it has stopped executing as a result of the Run/Stop bit being set to 0, either by software or by the Host Controller Hardware (e.g. internal error).\n\nThe default value is '1'"]
 pub type HC_HALTED_R = crate::BitReader<bool>;
-#[doc = "Field `INTERRUPT_ON_ASYNC_ADVANCE` reader - Interrupt on Async Advance\n\nSystem software can force the host controller to issue an interrupt the next time the host controller advances the asynchronous schedule by writing a one to the Interrupt on Async Advance Doorbell bit in the USBCMD register. This status bit indicates the assertion of that interrupt source."]
+#[doc = "Field `interrupt_on_async_advance` reader - Interrupt on Async Advance\n\nSystem software can force the host controller to issue an interrupt the next time the host controller advances the asynchronous schedule by writing a one to the Interrupt on Async Advance Doorbell bit in the USBCMD register. This status bit indicates the assertion of that interrupt source."]
 pub type INTERRUPT_ON_ASYNC_ADVANCE_R = crate::BitReader<bool>;
-#[doc = "Field `INTERRUPT_ON_ASYNC_ADVANCE` writer - Interrupt on Async Advance\n\nSystem software can force the host controller to issue an interrupt the next time the host controller advances the asynchronous schedule by writing a one to the Interrupt on Async Advance Doorbell bit in the USBCMD register. This status bit indicates the assertion of that interrupt source."]
+#[doc = "Field `interrupt_on_async_advance` writer - Interrupt on Async Advance\n\nSystem software can force the host controller to issue an interrupt the next time the host controller advances the asynchronous schedule by writing a one to the Interrupt on Async Advance Doorbell bit in the USBCMD register. This status bit indicates the assertion of that interrupt source."]
 pub type INTERRUPT_ON_ASYNC_ADVANCE_W<'a, const O: u8> =
     crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
-#[doc = "Field `HOST_SYSTEM_ERROR` reader - Host System Error\n\nThe Host Controller set this bit to 1 when a serious error occurs during a host system access involving the Host Controller module. When this error occurs, the Host Controller clears the Run/Stop bit in the Command register to prevent further execution of the scheduled TDs."]
+#[doc = "Field `host_system_error` reader - Host System Error\n\nThe Host Controller set this bit to 1 when a serious error occurs during a host system access involving the Host Controller module. When this error occurs, the Host Controller clears the Run/Stop bit in the Command register to prevent further execution of the scheduled TDs."]
 pub type HOST_SYSTEM_ERROR_R = crate::BitReader<bool>;
-#[doc = "Field `HOST_SYSTEM_ERROR` writer - Host System Error\n\nThe Host Controller set this bit to 1 when a serious error occurs during a host system access involving the Host Controller module. When this error occurs, the Host Controller clears the Run/Stop bit in the Command register to prevent further execution of the scheduled TDs."]
+#[doc = "Field `host_system_error` writer - Host System Error\n\nThe Host Controller set this bit to 1 when a serious error occurs during a host system access involving the Host Controller module. When this error occurs, the Host Controller clears the Run/Stop bit in the Command register to prevent further execution of the scheduled TDs."]
 pub type HOST_SYSTEM_ERROR_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
-#[doc = "Field `FRAME_LIST_ROLLOVER` reader - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
+#[doc = "Field `frame_list_rollover` reader - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
 toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\]
 toggles."]
 pub type FRAME_LIST_ROLLOVER_R = crate::BitReader<bool>;
-#[doc = "Field `FRAME_LIST_ROLLOVER` writer - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
+#[doc = "Field `frame_list_rollover` writer - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
 toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\]
 toggles."]
 pub type FRAME_LIST_ROLLOVER_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
-#[doc = "Field `PORT_CHANGE_DETECT` reader - Port Change Detect\n\nThe Host Controller sets this bit to a one when any port for which the Port Owner bit is set to zero has a change bit transition from a zero to a one or a Force Port Resume bit transition from a zero to a one as a result of a J-K transition detected on a suspended port. This bit will also be set as a result of the Connect Status Chang being set to a one after system software has relinquished ownership of a connected port by writing a one to a port's Port Owner bit."]
+#[doc = "Field `port_change_detect` reader - Port Change Detect\n\nThe Host Controller sets this bit to a one when any port for which the Port Owner bit is set to zero has a change bit transition from a zero to a one or a Force Port Resume bit transition from a zero to a one as a result of a J-K transition detected on a suspended port. This bit will also be set as a result of the Connect Status Chang being set to a one after system software has relinquished ownership of a connected port by writing a one to a port's Port Owner bit."]
 pub type PORT_CHANGE_DETECT_R = crate::BitReader<bool>;
-#[doc = "Field `PORT_CHANGE_DETECT` writer - Port Change Detect\n\nThe Host Controller sets this bit to a one when any port for which the Port Owner bit is set to zero has a change bit transition from a zero to a one or a Force Port Resume bit transition from a zero to a one as a result of a J-K transition detected on a suspended port. This bit will also be set as a result of the Connect Status Chang being set to a one after system software has relinquished ownership of a connected port by writing a one to a port's Port Owner bit."]
+#[doc = "Field `port_change_detect` writer - Port Change Detect\n\nThe Host Controller sets this bit to a one when any port for which the Port Owner bit is set to zero has a change bit transition from a zero to a one or a Force Port Resume bit transition from a zero to a one as a result of a J-K transition detected on a suspended port. This bit will also be set as a result of the Connect Status Chang being set to a one after system software has relinquished ownership of a connected port by writing a one to a port's Port Owner bit."]
 pub type PORT_CHANGE_DETECT_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
-#[doc = "Field `USBERRINT` reader - USB Error Interrupt(USBERRINT)\n\nThe Host Controller sets this bit to 1 when completion of USB transaction results in an error condition(e.g. error counter underflow).If the TD on which the error interrupt occurred also had its IOC bit set, both. This bit and USBINT bit are set."]
+#[doc = "Field `usberrint` reader - USB Error Interrupt(USBERRINT)\n\nThe Host Controller sets this bit to 1 when completion of USB transaction results in an error condition(e.g. error counter underflow).If the TD on which the error interrupt occurred also had its IOC bit set, both. This bit and USBINT bit are set."]
 pub type USBERRINT_R = crate::BitReader<bool>;
-#[doc = "Field `USBERRINT` writer - USB Error Interrupt(USBERRINT)\n\nThe Host Controller sets this bit to 1 when completion of USB transaction results in an error condition(e.g. error counter underflow).If the TD on which the error interrupt occurred also had its IOC bit set, both. This bit and USBINT bit are set."]
+#[doc = "Field `usberrint` writer - USB Error Interrupt(USBERRINT)\n\nThe Host Controller sets this bit to 1 when completion of USB transaction results in an error condition(e.g. error counter underflow).If the TD on which the error interrupt occurred also had its IOC bit set, both. This bit and USBINT bit are set."]
 pub type USBERRINT_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
-#[doc = "Field `USBINT` reader - USB Interrupt(USBINT) The Host Controller sets this bit to a one on the completion of a USB transaction, which results in the retirement of a Transfer Descriptor that had its IOC bit set. The Host Controller also sets this bit to 1 when a short packet is detected (actual number of bytes received was less than the expected number of bytes)"]
+#[doc = "Field `usbint` reader - USB Interrupt(USBINT) The Host Controller sets this bit to a one on the completion of a USB transaction, which results in the retirement of a Transfer Descriptor that had its IOC bit set. The Host Controller also sets this bit to 1 when a short packet is detected (actual number of bytes received was less than the expected number of bytes)"]
 pub type USBINT_R = crate::BitReader<bool>;
-#[doc = "Field `USBINT` writer - USB Interrupt(USBINT) The Host Controller sets this bit to a one on the completion of a USB transaction, which results in the retirement of a Transfer Descriptor that had its IOC bit set. The Host Controller also sets this bit to 1 when a short packet is detected (actual number of bytes received was less than the expected number of bytes)"]
+#[doc = "Field `usbint` writer - USB Interrupt(USBINT) The Host Controller sets this bit to a one on the completion of a USB transaction, which results in the retirement of a Transfer Descriptor that had its IOC bit set. The Host Controller also sets this bit to 1 when a short packet is detected (actual number of bytes received was less than the expected number of bytes)"]
 pub type USBINT_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 15 - Asynchronous Schedule Status\n\nThe bit reports the current real status of Asynchronous Schedule. If this bit is a zero then the status of the Asynchronous Schedule is disabled. If this bit is a one then the status of the Asynchronous Schedule is enabled. The Host Controller is not required to immediately disable or enable the Asynchronous Schedule when software transitions the Asynchronous Schedule Enable bit in the USBCMD register. When this bit and the Asynchronous Schedule Enable bit are the same value, the Asynchronous Schedule is either enabled (1) or disabled (0)."]
@@ -178,7 +178,7 @@ impl crate::Readable for USBSTS_SPEC {
 impl crate::Writable for USBSTS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets USBSTS to value 0x1000"]
+#[doc = "`reset()` method sets usbsts to value 0x1000"]
 impl crate::Resettable for USBSTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

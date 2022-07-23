@@ -1,4 +1,4 @@
-#[doc = "Register `THS_SHUT_INTC` reader"]
+#[doc = "Register `ths_shut_intc` reader"]
 pub struct R(crate::R<THS_SHUT_INTC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_SHUT_INTC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_SHUT_INTC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_SHUT_INTC` writer"]
+#[doc = "Register `ths_shut_intc` writer"]
 pub struct W(crate::W<THS_SHUT_INTC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_SHUT_INTC_SPEC>;
@@ -48,7 +48,7 @@ impl From<SHUT_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SHUT_INT_EN` reader - Enable the shutdown interrupt for the sensor"]
+#[doc = "Field `shut_int_en` reader - Enable the shutdown interrupt for the sensor"]
 pub type SHUT_INT_EN_R = crate::BitReader<SHUT_INT_EN_A>;
 impl SHUT_INT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl SHUT_INT_EN_R {
         *self == SHUT_INT_EN_A::ENABLE
     }
 }
-#[doc = "Field `SHUT_INT_EN` writer - Enable the shutdown interrupt for the sensor"]
+#[doc = "Field `shut_int_en` writer - Enable the shutdown interrupt for the sensor"]
 pub type SHUT_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, THS_SHUT_INTC_SPEC, SHUT_INT_EN_A, O>;
 impl<'a, const O: u8> SHUT_INT_EN_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for THS_SHUT_INTC_SPEC {
 impl crate::Writable for THS_SHUT_INTC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_SHUT_INTC to value 0"]
+#[doc = "`reset()` method sets ths_shut_intc to value 0"]
 impl crate::Resettable for THS_SHUT_INTC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `OWA_FSTA` reader"]
+#[doc = "Register `owa_fsta` reader"]
 pub struct R(crate::R<OWA_FSTA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<OWA_FSTA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<OWA_FSTA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `OWA_FSTA` writer"]
+#[doc = "Register `owa_fsta` writer"]
 pub struct W(crate::W<OWA_FSTA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<OWA_FSTA_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for OWA_FSTA_SPEC {
 impl crate::Writable for OWA_FSTA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets OWA_FSTA to value 0"]
+#[doc = "`reset()` method sets owa_fsta to value 0"]
 impl crate::Resettable for OWA_FSTA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

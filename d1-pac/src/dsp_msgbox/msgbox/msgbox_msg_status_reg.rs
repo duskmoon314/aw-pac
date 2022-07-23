@@ -1,4 +1,4 @@
-#[doc = "Register `MSGBOX_MSG_STATUS_REG%s` reader"]
+#[doc = "Register `msgbox_msg_status_reg%s` reader"]
 pub struct R(crate::R<MSGBOX_MSG_STATUS_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MSGBOX_MSG_STATUS_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MSGBOX_MSG_STATUS_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `MSG_NUM` reader - Message Number\n\nNumber of unread messages in the message queue. Here, limit to eight messages per message queue."]
+#[doc = "Field `msg_num` reader - Message Number\n\nNumber of unread messages in the message queue. Here, limit to eight messages per message queue."]
 pub type MSG_NUM_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:3 - Message Number\n\nNumber of unread messages in the message queue. Here, limit to eight messages per message queue."]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for MSGBOX_MSG_STATUS_REG_SPEC {
 impl crate::Readable for MSGBOX_MSG_STATUS_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets MSGBOX_MSG_STATUS_REG%s to value 0"]
+#[doc = "`reset()` method sets msgbox_msg_status_reg%s to value 0"]
 impl crate::Resettable for MSGBOX_MSG_STATUS_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

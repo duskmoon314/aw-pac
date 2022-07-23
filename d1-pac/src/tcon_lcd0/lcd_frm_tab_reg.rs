@@ -1,4 +1,4 @@
-#[doc = "Register `LCD_FRM_TAB_REG%s` reader"]
+#[doc = "Register `lcd_frm_tab_reg%s` reader"]
 pub struct R(crate::R<LCD_FRM_TAB_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LCD_FRM_TAB_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LCD_FRM_TAB_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LCD_FRM_TAB_REG%s` writer"]
+#[doc = "Register `lcd_frm_tab_reg%s` writer"]
 pub struct W(crate::W<LCD_FRM_TAB_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LCD_FRM_TAB_REG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for LCD_FRM_TAB_REG_SPEC {
 impl crate::Writable for LCD_FRM_TAB_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LCD_FRM_TAB_REG%s to value 0"]
+#[doc = "`reset()` method sets lcd_frm_tab_reg%s to value 0"]
 impl crate::Resettable for LCD_FRM_TAB_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

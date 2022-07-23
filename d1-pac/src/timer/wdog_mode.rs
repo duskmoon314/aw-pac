@@ -34,7 +34,7 @@ impl From<crate::W<WDOG_MODE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `KEY_FIELD` writer - Key Field"]
+#[doc = "Field `key_field` writer - Key Field"]
 pub type KEY_FIELD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u16, u16, 16, O>;
 #[doc = "Watchdog Interval Value\n\nValue on reset: 0"]
@@ -72,7 +72,7 @@ impl From<WDOG_INTV_VALUE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WDOG_INTV_VALUE` reader - Watchdog Interval Value"]
+#[doc = "Field `wdog_intv_value` reader - Watchdog Interval Value"]
 pub type WDOG_INTV_VALUE_R = crate::FieldReader<u8, WDOG_INTV_VALUE_A>;
 impl WDOG_INTV_VALUE_R {
     #[doc = "Get enumerated values variant"]
@@ -155,7 +155,7 @@ impl WDOG_INTV_VALUE_R {
         *self == WDOG_INTV_VALUE_A::C512000
     }
 }
-#[doc = "Field `WDOG_INTV_VALUE` writer - Watchdog Interval Value"]
+#[doc = "Field `wdog_intv_value` writer - Watchdog Interval Value"]
 pub type WDOG_INTV_VALUE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, WDOG_MODE_SPEC, u8, WDOG_INTV_VALUE_A, 4, O>;
 impl<'a, const O: u8> WDOG_INTV_VALUE_W<'a, O> {
@@ -234,7 +234,7 @@ impl From<WDOG_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WDOG_EN` reader - Watchdog Enable"]
+#[doc = "Field `wdog_en` reader - Watchdog Enable"]
 pub type WDOG_EN_R = crate::BitReader<WDOG_EN_A>;
 impl WDOG_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -256,7 +256,7 @@ impl WDOG_EN_R {
         *self == WDOG_EN_A::ENABLE
     }
 }
-#[doc = "Field `WDOG_EN` writer - Watchdog Enable"]
+#[doc = "Field `wdog_en` writer - Watchdog Enable"]
 pub type WDOG_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, WDOG_MODE_SPEC, WDOG_EN_A, O>;
 impl<'a, const O: u8> WDOG_EN_W<'a, O> {
     #[doc = "`0`"]

@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_IDC_H` reader"]
+#[doc = "Register `cir_idc_h` reader"]
 pub struct R(crate::R<CIR_IDC_H_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_IDC_H_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_IDC_H_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_IDC_H` writer"]
+#[doc = "Register `cir_idc_h` writer"]
 pub struct W(crate::W<CIR_IDC_H_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_IDC_H_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CIR_IDC_H_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `IDC_H` reader - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+#[doc = "Field `idc_h` reader - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
 pub type IDC_H_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `IDC_H` writer - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
+#[doc = "Field `idc_h` writer - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
 pub type IDC_H_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_IDC_H_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
@@ -71,7 +71,7 @@ impl crate::Readable for CIR_IDC_H_SPEC {
 impl crate::Writable for CIR_IDC_H_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_IDC_H to value 0"]
+#[doc = "`reset()` method sets cir_idc_h to value 0"]
 impl crate::Resettable for CIR_IDC_H_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

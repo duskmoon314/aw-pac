@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_MINTSTS` reader"]
+#[doc = "Register `smhc_mintsts` reader"]
 pub struct R(crate::R<SMHC_MINTSTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_MINTSTS_SPEC>;
@@ -13,41 +13,41 @@ impl From<crate::R<SMHC_MINTSTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `M_CARD_REMOVAL_INT` reader - Card Removed"]
+#[doc = "Field `m_card_removal_int` reader - Card Removed"]
 pub type M_CARD_REMOVAL_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_CARD_INSERT` reader - Card Inserted"]
+#[doc = "Field `m_card_insert` reader - Card Inserted"]
 pub type M_CARD_INSERT_R = crate::BitReader<bool>;
-#[doc = "Field `M_SDIO_INT` reader - SDIO Interrupt"]
+#[doc = "Field `m_sdio_int` reader - SDIO Interrupt"]
 pub type M_SDIO_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DEE_INT` reader - Data End-bit Error"]
+#[doc = "Field `m_dee_int` reader - Data End-bit Error"]
 pub type M_DEE_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_ACD_INT` reader - Auto Command Done"]
+#[doc = "Field `m_acd_int` reader - Auto Command Done"]
 pub type M_ACD_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DSE_BC_INT` reader - Data Start Error/Busy Clear"]
+#[doc = "Field `m_dse_bc_int` reader - Data Start Error/Busy Clear"]
 pub type M_DSE_BC_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_CB_IW_INT` reader - Command Busy and Illegal Write"]
+#[doc = "Field `m_cb_iw_int` reader - Command Busy and Illegal Write"]
 pub type M_CB_IW_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_FU_FO_INT` reader - FIFO Underrun/Overflow"]
+#[doc = "Field `m_fu_fo_int` reader - FIFO Underrun/Overflow"]
 pub type M_FU_FO_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DSTO_VSD_INT` reader - Data Starvation Timeout/V1.8 Switch Done"]
+#[doc = "Field `m_dsto_vsd_int` reader - Data Starvation Timeout/V1.8 Switch Done"]
 pub type M_DSTO_VSD_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DTO_BDS_INT` reader - Data Timeout/Boot Data Start"]
+#[doc = "Field `m_dto_bds_int` reader - Data Timeout/Boot Data Start"]
 pub type M_DTO_BDS_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_RTO_BACK_INT` reader - Response Timeout/Boot ACK Received"]
+#[doc = "Field `m_rto_back_int` reader - Response Timeout/Boot ACK Received"]
 pub type M_RTO_BACK_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DCE_INT` reader - Data CRC Error"]
+#[doc = "Field `m_dce_int` reader - Data CRC Error"]
 pub type M_DCE_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_RCE_INT` reader - Response CRC Error"]
+#[doc = "Field `m_rce_int` reader - Response CRC Error"]
 pub type M_RCE_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DRR_INT` reader - Data Receive Request"]
+#[doc = "Field `m_drr_int` reader - Data Receive Request"]
 pub type M_DRR_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DTR_INT` reader - Data Transmit Request"]
+#[doc = "Field `m_dtr_int` reader - Data Transmit Request"]
 pub type M_DTR_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_DTC_INT` reader - Data Transfer Complete"]
+#[doc = "Field `m_dtc_int` reader - Data Transfer Complete"]
 pub type M_DTC_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_CC_INT` reader - Command Complete"]
+#[doc = "Field `m_cc_int` reader - Command Complete"]
 pub type M_CC_INT_R = crate::BitReader<bool>;
-#[doc = "Field `M_RE_INT` reader - Response Errors"]
+#[doc = "Field `m_re_int` reader - Response Errors"]
 pub type M_RE_INT_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 31 - Card Removed"]
@@ -150,7 +150,7 @@ impl crate::RegisterSpec for SMHC_MINTSTS_SPEC {
 impl crate::Readable for SMHC_MINTSTS_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets SMHC_MINTSTS to value 0"]
+#[doc = "`reset()` method sets smhc_mintsts to value 0"]
 impl crate::Resettable for SMHC_MINTSTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

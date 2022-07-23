@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_ADDR_HIGH%s` reader"]
+#[doc = "Register `emac_addr_high%s` reader"]
 pub struct R(crate::R<EMAC_ADDR_HIGH_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_ADDR_HIGH_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_ADDR_HIGH_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_ADDR_HIGH%s` writer"]
+#[doc = "Register `emac_addr_high%s` writer"]
 pub struct W(crate::W<EMAC_ADDR_HIGH_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_ADDR_HIGH_SPEC>;
@@ -48,7 +48,7 @@ impl From<MAC_ADDR_CTL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MAC_ADDR_CTL` reader - MAC Address Valid"]
+#[doc = "Field `mac_addr_ctl` reader - MAC Address Valid"]
 pub type MAC_ADDR_CTL_R = crate::BitReader<MAC_ADDR_CTL_A>;
 impl MAC_ADDR_CTL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl MAC_ADDR_CTL_R {
         *self == MAC_ADDR_CTL_A::VALID
     }
 }
-#[doc = "Field `MAC_ADDR_CTL` writer - MAC Address Valid"]
+#[doc = "Field `mac_addr_ctl` writer - MAC Address Valid"]
 pub type MAC_ADDR_CTL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, MAC_ADDR_CTL_A, O>;
 impl<'a, const O: u8> MAC_ADDR_CTL_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<MAC_ADDR_TYPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MAC_ADDR_TYPE` reader - MAC Address Type"]
+#[doc = "Field `mac_addr_type` reader - MAC Address Type"]
 pub type MAC_ADDR_TYPE_R = crate::BitReader<MAC_ADDR_TYPE_A>;
 impl MAC_ADDR_TYPE_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl MAC_ADDR_TYPE_R {
         *self == MAC_ADDR_TYPE_A::SRC
     }
 }
-#[doc = "Field `MAC_ADDR_TYPE` writer - MAC Address Type"]
+#[doc = "Field `mac_addr_type` writer - MAC Address Type"]
 pub type MAC_ADDR_TYPE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, MAC_ADDR_TYPE_A, O>;
 impl<'a, const O: u8> MAC_ADDR_TYPE_W<'a, O> {
@@ -136,14 +136,14 @@ impl<'a, const O: u8> MAC_ADDR_TYPE_W<'a, O> {
         self.variant(MAC_ADDR_TYPE_A::SRC)
     }
 }
-#[doc = "Field `MAC_ADDR_BYTE_CTL` reader - MAC Address Byte Control Mask"]
+#[doc = "Field `mac_addr_byte_ctl` reader - MAC Address Byte Control Mask"]
 pub type MAC_ADDR_BYTE_CTL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `MAC_ADDR_BYTE_CTL` writer - MAC Address Byte Control Mask"]
+#[doc = "Field `mac_addr_byte_ctl` writer - MAC Address Byte Control Mask"]
 pub type MAC_ADDR_BYTE_CTL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u8, u8, 6, O>;
-#[doc = "Field `MAC_ADDR_HIGH` reader - "]
+#[doc = "Field `mac_addr_high` reader - "]
 pub type MAC_ADDR_HIGH_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `MAC_ADDR_HIGH` writer - "]
+#[doc = "Field `mac_addr_high` writer - "]
 pub type MAC_ADDR_HIGH_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u16, u16, 16, O>;
 impl R {
@@ -209,7 +209,7 @@ impl crate::Readable for EMAC_ADDR_HIGH_SPEC {
 impl crate::Writable for EMAC_ADDR_HIGH_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_ADDR_HIGH%s to value 0"]
+#[doc = "`reset()` method sets emac_addr_high%s to value 0"]
 impl crate::Resettable for EMAC_ADDR_HIGH_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

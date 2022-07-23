@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_STAT` reader"]
+#[doc = "Register `twi_stat` reader"]
 pub struct R(crate::R<TWI_STAT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TWI_STAT_SPEC>;
@@ -283,7 +283,7 @@ impl crate::RegisterSpec for TWI_STAT_SPEC {
 impl crate::Readable for TWI_STAT_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets TWI_STAT to value 0"]
+#[doc = "`reset()` method sets twi_stat to value 0"]
 impl crate::Resettable for TWI_STAT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

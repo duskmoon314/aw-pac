@@ -1,4 +1,4 @@
-#[doc = "Register `IC_CHARA_REG` reader"]
+#[doc = "Register `ic_chara_reg` reader"]
 pub struct R(crate::R<IC_CHARA_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<IC_CHARA_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<IC_CHARA_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `IC_CHARA_REG` writer"]
+#[doc = "Register `ic_chara_reg` writer"]
 pub struct W(crate::W<IC_CHARA_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<IC_CHARA_REG_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<IC_CHARA_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `KEY_FIELD` reader - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
+#[doc = "Field `key_field` reader - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
 pub type KEY_FIELD_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `KEY_FIELD` writer - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
+#[doc = "Field `key_field` writer - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
 pub type KEY_FIELD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, IC_CHARA_REG_SPEC, u16, u16, 16, O>;
-#[doc = "Field `ID_DATA` reader - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
+#[doc = "Field `id_data` reader - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
 pub type ID_DATA_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `ID_DATA` writer - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
+#[doc = "Field `id_data` writer - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
 pub type ID_DATA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, IC_CHARA_REG_SPEC, u16, u16, 16, O>;
 impl R {
@@ -87,7 +87,7 @@ impl crate::Readable for IC_CHARA_REG_SPEC {
 impl crate::Writable for IC_CHARA_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets IC_CHARA_REG to value 0"]
+#[doc = "`reset()` method sets ic_chara_reg to value 0"]
 impl crate::Resettable for IC_CHARA_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `LOSC_AUTO_SWT_STA_REG` reader"]
+#[doc = "Register `losc_auto_swt_sta_reg` reader"]
 pub struct R(crate::R<LOSC_AUTO_SWT_STA_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LOSC_AUTO_SWT_STA_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LOSC_AUTO_SWT_STA_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LOSC_AUTO_SWT_STA_REG` writer"]
+#[doc = "Register `losc_auto_swt_sta_reg` writer"]
 pub struct W(crate::W<LOSC_AUTO_SWT_STA_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LOSC_AUTO_SWT_STA_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<EXT_LOSC_STA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `EXT_LOSC_STA` reader - Work only when the auto switch function is enabled."]
+#[doc = "Field `ext_losc_sta` reader - Work only when the auto switch function is enabled."]
 pub type EXT_LOSC_STA_R = crate::BitReader<EXT_LOSC_STA_A>;
 impl EXT_LOSC_STA_R {
     #[doc = "Get enumerated values variant"]
@@ -84,7 +84,7 @@ impl From<LOSC_AUTO_SWT_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOSC_AUTO_SWT_PEND` reader - LOSC auto switch pending"]
+#[doc = "Field `losc_auto_swt_pend` reader - LOSC auto switch pending"]
 pub type LOSC_AUTO_SWT_PEND_R = crate::BitReader<LOSC_AUTO_SWT_PEND_A>;
 impl LOSC_AUTO_SWT_PEND_R {
     #[doc = "Get enumerated values variant"]
@@ -106,7 +106,7 @@ impl LOSC_AUTO_SWT_PEND_R {
         *self == LOSC_AUTO_SWT_PEND_A::AUTO
     }
 }
-#[doc = "Field `LOSC_AUTO_SWT_PEND` writer - LOSC auto switch pending"]
+#[doc = "Field `losc_auto_swt_pend` writer - LOSC auto switch pending"]
 pub type LOSC_AUTO_SWT_PEND_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, LOSC_AUTO_SWT_STA_REG_SPEC, LOSC_AUTO_SWT_PEND_A, O>;
 impl<'a, const O: u8> LOSC_AUTO_SWT_PEND_W<'a, O> {
@@ -135,7 +135,7 @@ impl From<LOSC_SRC_SEL_STA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOSC_SRC_SEL_STA` reader - Checking LOSC clock source status"]
+#[doc = "Field `losc_src_sel_sta` reader - Checking LOSC clock source status"]
 pub type LOSC_SRC_SEL_STA_R = crate::BitReader<LOSC_SRC_SEL_STA_A>;
 impl LOSC_SRC_SEL_STA_R {
     #[doc = "Get enumerated values variant"]
@@ -200,7 +200,7 @@ impl crate::Readable for LOSC_AUTO_SWT_STA_REG_SPEC {
 impl crate::Writable for LOSC_AUTO_SWT_STA_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LOSC_AUTO_SWT_STA_REG to value 0"]
+#[doc = "`reset()` method sets losc_auto_swt_sta_reg to value 0"]
 impl crate::Resettable for LOSC_AUTO_SWT_STA_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

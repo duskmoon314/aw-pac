@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_DRV_FIFO_CON` reader"]
+#[doc = "Register `twi_drv_fifo_con` reader"]
 pub struct R(crate::R<TWI_DRV_FIFO_CON_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TWI_DRV_FIFO_CON_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TWI_DRV_FIFO_CON_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TWI_DRV_FIFO_CON` writer"]
+#[doc = "Register `twi_drv_fifo_con` writer"]
 pub struct W(crate::W<TWI_DRV_FIFO_CON_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TWI_DRV_FIFO_CON_SPEC>;
@@ -117,7 +117,7 @@ impl crate::Readable for TWI_DRV_FIFO_CON_SPEC {
 impl crate::Writable for TWI_DRV_FIFO_CON_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TWI_DRV_FIFO_CON to value 0"]
+#[doc = "`reset()` method sets twi_drv_fifo_con to value 0"]
 impl crate::Resettable for TWI_DRV_FIFO_CON_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

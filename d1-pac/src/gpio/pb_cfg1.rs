@@ -49,7 +49,7 @@ pub enum PB12_SELECT_A {
     #[doc = "4: `100`"]
     OWA_IN = 4,
     #[doc = "5: `101`"]
-    SPI1_CS__DBI_CSX = 5,
+    SPI1_CS_DBI_CSX = 5,
     #[doc = "6: `110`"]
     CLK_FANOUT2 = 6,
     #[doc = "7: `111`"]
@@ -77,7 +77,7 @@ impl PB12_SELECT_R {
             2 => Some(PB12_SELECT_A::DMIC_CLK),
             3 => Some(PB12_SELECT_A::PWM0),
             4 => Some(PB12_SELECT_A::OWA_IN),
-            5 => Some(PB12_SELECT_A::SPI1_CS__DBI_CSX),
+            5 => Some(PB12_SELECT_A::SPI1_CS_DBI_CSX),
             6 => Some(PB12_SELECT_A::CLK_FANOUT2),
             7 => Some(PB12_SELECT_A::IR_RX),
             14 => Some(PB12_SELECT_A::PB_EINT12),
@@ -110,10 +110,10 @@ impl PB12_SELECT_R {
     pub fn is_owa_in(&self) -> bool {
         *self == PB12_SELECT_A::OWA_IN
     }
-    #[doc = "Checks if the value of the field is `SPI1_CS__DBI_CSX`"]
+    #[doc = "Checks if the value of the field is `SPI1_CS_DBI_CSX`"]
     #[inline(always)]
-    pub fn is_spi1_cs__dbi_csx(&self) -> bool {
-        *self == PB12_SELECT_A::SPI1_CS__DBI_CSX
+    pub fn is_spi1_cs_dbi_csx(&self) -> bool {
+        *self == PB12_SELECT_A::SPI1_CS_DBI_CSX
     }
     #[doc = "Checks if the value of the field is `CLK_FANOUT2`"]
     #[inline(always)]
@@ -167,8 +167,8 @@ impl<'a, const O: u8> PB12_SELECT_W<'a, O> {
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_cs__dbi_csx(self) -> &'a mut W {
-        self.variant(PB12_SELECT_A::SPI1_CS__DBI_CSX)
+    pub fn spi1_cs_dbi_csx(self) -> &'a mut W {
+        self.variant(PB12_SELECT_A::SPI1_CS_DBI_CSX)
     }
     #[doc = "`110`"]
     #[inline(always)]
@@ -206,7 +206,7 @@ pub enum PB11_SELECT_A {
     #[doc = "4: `100`"]
     TWI0_SDA = 4,
     #[doc = "5: `101`"]
-    SPI1_CLK__DBI_SCLK = 5,
+    SPI1_CLK_DBI_SCLK = 5,
     #[doc = "6: `110`"]
     CLK_FANOUT1 = 6,
     #[doc = "7: `111`"]
@@ -234,7 +234,7 @@ impl PB11_SELECT_R {
             2 => Some(PB11_SELECT_A::DMIC_DATA0),
             3 => Some(PB11_SELECT_A::PWM2),
             4 => Some(PB11_SELECT_A::TWI0_SDA),
-            5 => Some(PB11_SELECT_A::SPI1_CLK__DBI_SCLK),
+            5 => Some(PB11_SELECT_A::SPI1_CLK_DBI_SCLK),
             6 => Some(PB11_SELECT_A::CLK_FANOUT1),
             7 => Some(PB11_SELECT_A::UART1_CTS),
             14 => Some(PB11_SELECT_A::PB_EINT11),
@@ -267,10 +267,10 @@ impl PB11_SELECT_R {
     pub fn is_twi0_sda(&self) -> bool {
         *self == PB11_SELECT_A::TWI0_SDA
     }
-    #[doc = "Checks if the value of the field is `SPI1_CLK__DBI_SCLK`"]
+    #[doc = "Checks if the value of the field is `SPI1_CLK_DBI_SCLK`"]
     #[inline(always)]
-    pub fn is_spi1_clk__dbi_sclk(&self) -> bool {
-        *self == PB11_SELECT_A::SPI1_CLK__DBI_SCLK
+    pub fn is_spi1_clk_dbi_sclk(&self) -> bool {
+        *self == PB11_SELECT_A::SPI1_CLK_DBI_SCLK
     }
     #[doc = "Checks if the value of the field is `CLK_FANOUT1`"]
     #[inline(always)]
@@ -324,8 +324,8 @@ impl<'a, const O: u8> PB11_SELECT_W<'a, O> {
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_clk__dbi_sclk(self) -> &'a mut W {
-        self.variant(PB11_SELECT_A::SPI1_CLK__DBI_SCLK)
+    pub fn spi1_clk_dbi_sclk(self) -> &'a mut W {
+        self.variant(PB11_SELECT_A::SPI1_CLK_DBI_SCLK)
     }
     #[doc = "`110`"]
     #[inline(always)]
@@ -363,7 +363,7 @@ pub enum PB10_SELECT_A {
     #[doc = "4: `100`"]
     TWI0_SCK = 4,
     #[doc = "5: `101`"]
-    SPI1_MOSI__DBI_SDO = 5,
+    SPI1_MOSI_DBI_SDO = 5,
     #[doc = "6: `110`"]
     CLK_FANOUT0 = 6,
     #[doc = "7: `111`"]
@@ -391,7 +391,7 @@ impl PB10_SELECT_R {
             2 => Some(PB10_SELECT_A::DMIC_DATA1),
             3 => Some(PB10_SELECT_A::PWM7),
             4 => Some(PB10_SELECT_A::TWI0_SCK),
-            5 => Some(PB10_SELECT_A::SPI1_MOSI__DBI_SDO),
+            5 => Some(PB10_SELECT_A::SPI1_MOSI_DBI_SDO),
             6 => Some(PB10_SELECT_A::CLK_FANOUT0),
             7 => Some(PB10_SELECT_A::UART1_RTS),
             14 => Some(PB10_SELECT_A::PB_EINT10),
@@ -424,10 +424,10 @@ impl PB10_SELECT_R {
     pub fn is_twi0_sck(&self) -> bool {
         *self == PB10_SELECT_A::TWI0_SCK
     }
-    #[doc = "Checks if the value of the field is `SPI1_MOSI__DBI_SDO`"]
+    #[doc = "Checks if the value of the field is `SPI1_MOSI_DBI_SDO`"]
     #[inline(always)]
-    pub fn is_spi1_mosi__dbi_sdo(&self) -> bool {
-        *self == PB10_SELECT_A::SPI1_MOSI__DBI_SDO
+    pub fn is_spi1_mosi_dbi_sdo(&self) -> bool {
+        *self == PB10_SELECT_A::SPI1_MOSI_DBI_SDO
     }
     #[doc = "Checks if the value of the field is `CLK_FANOUT0`"]
     #[inline(always)]
@@ -481,8 +481,8 @@ impl<'a, const O: u8> PB10_SELECT_W<'a, O> {
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_mosi__dbi_sdo(self) -> &'a mut W {
-        self.variant(PB10_SELECT_A::SPI1_MOSI__DBI_SDO)
+    pub fn spi1_mosi_dbi_sdo(self) -> &'a mut W {
+        self.variant(PB10_SELECT_A::SPI1_MOSI_DBI_SDO)
     }
     #[doc = "`110`"]
     #[inline(always)]
@@ -520,7 +520,7 @@ pub enum PB9_SELECT_A {
     #[doc = "4: `100`"]
     TWI2_SDA = 4,
     #[doc = "5: `101`"]
-    SPI1_MISO__DBI_SDI__DBI_TE__DBI_DCX = 5,
+    SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX = 5,
     #[doc = "6: `110`"]
     UART0_RX = 6,
     #[doc = "7: `111`"]
@@ -548,7 +548,7 @@ impl PB9_SELECT_R {
             2 => Some(PB9_SELECT_A::DMIC_DATA2),
             3 => Some(PB9_SELECT_A::PWM6),
             4 => Some(PB9_SELECT_A::TWI2_SDA),
-            5 => Some(PB9_SELECT_A::SPI1_MISO__DBI_SDI__DBI_TE__DBI_DCX),
+            5 => Some(PB9_SELECT_A::SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX),
             6 => Some(PB9_SELECT_A::UART0_RX),
             7 => Some(PB9_SELECT_A::UART1_RX),
             14 => Some(PB9_SELECT_A::PB_EINT9),
@@ -581,10 +581,10 @@ impl PB9_SELECT_R {
     pub fn is_twi2_sda(&self) -> bool {
         *self == PB9_SELECT_A::TWI2_SDA
     }
-    #[doc = "Checks if the value of the field is `SPI1_MISO__DBI_SDI__DBI_TE__DBI_DCX`"]
+    #[doc = "Checks if the value of the field is `SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX`"]
     #[inline(always)]
-    pub fn is_spi1_miso__dbi_sdi__dbi_te__dbi_dcx(&self) -> bool {
-        *self == PB9_SELECT_A::SPI1_MISO__DBI_SDI__DBI_TE__DBI_DCX
+    pub fn is_spi1_miso_dbi_sdi_dbi_te_dbi_dcx(&self) -> bool {
+        *self == PB9_SELECT_A::SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX
     }
     #[doc = "Checks if the value of the field is `UART0_RX`"]
     #[inline(always)]
@@ -638,8 +638,8 @@ impl<'a, const O: u8> PB9_SELECT_W<'a, O> {
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_miso__dbi_sdi__dbi_te__dbi_dcx(self) -> &'a mut W {
-        self.variant(PB9_SELECT_A::SPI1_MISO__DBI_SDI__DBI_TE__DBI_DCX)
+    pub fn spi1_miso_dbi_sdi_dbi_te_dbi_dcx(self) -> &'a mut W {
+        self.variant(PB9_SELECT_A::SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX)
     }
     #[doc = "`110`"]
     #[inline(always)]

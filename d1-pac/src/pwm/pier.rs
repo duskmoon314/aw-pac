@@ -1,4 +1,4 @@
-#[doc = "Register `PIER` reader"]
+#[doc = "Register `pier` reader"]
 pub struct R(crate::R<PIER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PIER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PIER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PIER` writer"]
+#[doc = "Register `pier` writer"]
 pub struct W(crate::W<PIER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PIER_SPEC>;
@@ -48,7 +48,7 @@ impl From<PGIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `PGIE(0-3)` reader - PWM Group Interrupt Enable"]
+#[doc = "Fields `pgie(0-3)` reader - PWM Group Interrupt Enable"]
 pub type PGIE_R = crate::BitReader<PGIE_A>;
 impl PGIE_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl PGIE_R {
         *self == PGIE_A::ENABLE
     }
 }
-#[doc = "Fields `PGIE(0-3)` writer - PWM Group Interrupt Enable"]
+#[doc = "Fields `pgie(0-3)` writer - PWM Group Interrupt Enable"]
 pub type PGIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PIER_SPEC, PGIE_A, O>;
 impl<'a, const O: u8> PGIE_W<'a, O> {
     #[doc = "Disable"]
@@ -98,7 +98,7 @@ impl From<PCIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `PCIE(0-7)` reader - PWM Channel Interrupt Enable"]
+#[doc = "Fields `pcie(0-7)` reader - PWM Channel Interrupt Enable"]
 pub type PCIE_R = crate::BitReader<PCIE_A>;
 impl PCIE_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl PCIE_R {
         *self == PCIE_A::ENABLE
     }
 }
-#[doc = "Fields `PCIE(0-7)` writer - PWM Channel Interrupt Enable"]
+#[doc = "Fields `pcie(0-7)` writer - PWM Channel Interrupt Enable"]
 pub type PCIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PIER_SPEC, PCIE_A, O>;
 impl<'a, const O: u8> PCIE_W<'a, O> {
     #[doc = "PWM Channel Interrupt Disable"]
@@ -297,7 +297,7 @@ impl crate::Readable for PIER_SPEC {
 impl crate::Writable for PIER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PIER to value 0"]
+#[doc = "`reset()` method sets pier to value 0"]
 impl crate::Resettable for PIER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

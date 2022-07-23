@@ -34,9 +34,9 @@ impl From<crate::W<PC_DAT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PC_DAT` reader - "]
+#[doc = "Field `pc_dat` reader - "]
 pub type PC_DAT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `PC_DAT` writer - "]
+#[doc = "Field `pc_dat` writer - "]
 pub type PC_DAT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PC_DAT_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7"]

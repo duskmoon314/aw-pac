@@ -1,4 +1,4 @@
-#[doc = "Register `FRINDEX` reader"]
+#[doc = "Register `frindex` reader"]
 pub struct R(crate::R<FRINDEX_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<FRINDEX_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<FRINDEX_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `FRINDEX` writer"]
+#[doc = "Register `frindex` writer"]
 pub struct W(crate::W<FRINDEX_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<FRINDEX_SPEC>;
@@ -34,10 +34,10 @@ impl From<crate::W<FRINDEX_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FRAME_INDEX` reader - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\]
+#[doc = "Field `frame_index` reader - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\]
 are used for the Frame List current index. It means that each location of the frame list is accessed 8 times (frames or Micro-frames) before moving to the next index. The following illustrates values of N based on the value of the Frame List Size field in the USBCMD register."]
 pub type FRAME_INDEX_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `FRAME_INDEX` writer - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\]
+#[doc = "Field `frame_index` writer - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\]
 are used for the Frame List current index. It means that each location of the frame list is accessed 8 times (frames or Micro-frames) before moving to the next index. The following illustrates values of N based on the value of the Frame List Size field in the USBCMD register."]
 pub type FRAME_INDEX_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, FRINDEX_SPEC, u16, u16, 14, O>;
@@ -76,7 +76,7 @@ impl crate::Readable for FRINDEX_SPEC {
 impl crate::Writable for FRINDEX_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets FRINDEX to value 0"]
+#[doc = "`reset()` method sets frindex to value 0"]
 impl crate::Resettable for FRINDEX_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_RX_CTL1` reader"]
+#[doc = "Register `emac_rx_ctl1` reader"]
 pub struct R(crate::R<EMAC_RX_CTL1_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_RX_CTL1_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_RX_CTL1_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_RX_CTL1` writer"]
+#[doc = "Register `emac_rx_ctl1` writer"]
 pub struct W(crate::W<EMAC_RX_CTL1_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_RX_CTL1_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<EMAC_RX_CTL1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RX_DMA_START` reader - "]
+#[doc = "Field `rx_dma_start` reader - "]
 pub type RX_DMA_START_R = crate::BitReader<bool>;
-#[doc = "Field `RX_DMA_START` writer - "]
+#[doc = "Field `rx_dma_start` writer - "]
 pub type RX_DMA_START_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, O>;
 #[doc = "Receive DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -52,7 +52,7 @@ impl From<RX_EMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_EMA_EN` reader - Receive DMA Enable"]
+#[doc = "Field `rx_ema_en` reader - Receive DMA Enable"]
 pub type RX_EMA_EN_R = crate::BitReader<RX_EMA_EN_A>;
 impl RX_EMA_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -74,7 +74,7 @@ impl RX_EMA_EN_R {
         *self == RX_EMA_EN_A::START
     }
 }
-#[doc = "Field `RX_EMA_EN` writer - Receive DMA Enable"]
+#[doc = "Field `rx_ema_en` writer - Receive DMA Enable"]
 pub type RX_EMA_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_EMA_EN_A, O>;
 impl<'a, const O: u8> RX_EMA_EN_W<'a, O> {
@@ -103,7 +103,7 @@ impl From<RX_FIFO_FLOW_CTL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_FIFO_FLOW_CTL` reader - Receive FIFO Flow Control Enable"]
+#[doc = "Field `rx_fifo_flow_ctl` reader - Receive FIFO Flow Control Enable"]
 pub type RX_FIFO_FLOW_CTL_R = crate::BitReader<RX_FIFO_FLOW_CTL_A>;
 impl RX_FIFO_FLOW_CTL_R {
     #[doc = "Get enumerated values variant"]
@@ -125,7 +125,7 @@ impl RX_FIFO_FLOW_CTL_R {
         *self == RX_FIFO_FLOW_CTL_A::ENABLE
     }
 }
-#[doc = "Field `RX_FIFO_FLOW_CTL` writer - Receive FIFO Flow Control Enable"]
+#[doc = "Field `rx_fifo_flow_ctl` writer - Receive FIFO Flow Control Enable"]
 pub type RX_FIFO_FLOW_CTL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_FIFO_FLOW_CTL_A, O>;
 impl<'a, const O: u8> RX_FIFO_FLOW_CTL_W<'a, O> {
@@ -159,7 +159,7 @@ impl From<RX_FLOW_CTL_TH_DEACT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_FLOW_CTL_TH_DEACT` reader - Threshold for Deactivating Flow Control"]
+#[doc = "Field `rx_flow_ctl_th_deact` reader - Threshold for Deactivating Flow Control"]
 pub type RX_FLOW_CTL_TH_DEACT_R = crate::FieldReader<u8, RX_FLOW_CTL_TH_DEACT_A>;
 impl RX_FLOW_CTL_TH_DEACT_R {
     #[doc = "Get enumerated values variant"]
@@ -194,7 +194,7 @@ impl RX_FLOW_CTL_TH_DEACT_R {
         *self == RX_FLOW_CTL_TH_DEACT_A::FM4K
     }
 }
-#[doc = "Field `RX_FLOW_CTL_TH_DEACT` writer - Threshold for Deactivating Flow Control"]
+#[doc = "Field `rx_flow_ctl_th_deact` writer - Threshold for Deactivating Flow Control"]
 pub type RX_FLOW_CTL_TH_DEACT_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_DEACT_A, 2, O>;
 impl<'a, const O: u8> RX_FLOW_CTL_TH_DEACT_W<'a, O> {
@@ -238,7 +238,7 @@ impl From<RX_FLOW_CTL_TH_ACT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_FLOW_CTL_TH_ACT` reader - Threshold for Activating Flow Control"]
+#[doc = "Field `rx_flow_ctl_th_act` reader - Threshold for Activating Flow Control"]
 pub type RX_FLOW_CTL_TH_ACT_R = crate::FieldReader<u8, RX_FLOW_CTL_TH_ACT_A>;
 impl RX_FLOW_CTL_TH_ACT_R {
     #[doc = "Get enumerated values variant"]
@@ -273,7 +273,7 @@ impl RX_FLOW_CTL_TH_ACT_R {
         *self == RX_FLOW_CTL_TH_ACT_A::FM4K
     }
 }
-#[doc = "Field `RX_FLOW_CTL_TH_ACT` writer - Threshold for Activating Flow Control"]
+#[doc = "Field `rx_flow_ctl_th_act` writer - Threshold for Activating Flow Control"]
 pub type RX_FLOW_CTL_TH_ACT_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_FLOW_CTL_TH_ACT_A, 2, O>;
 impl<'a, const O: u8> RX_FLOW_CTL_TH_ACT_W<'a, O> {
@@ -317,7 +317,7 @@ impl From<RX_TH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RX_TH` reader - Threshold for RX DMA FIFO Start"]
+#[doc = "Field `rx_th` reader - Threshold for RX DMA FIFO Start"]
 pub type RX_TH_R = crate::FieldReader<u8, RX_TH_A>;
 impl RX_TH_R {
     #[doc = "Get enumerated values variant"]
@@ -352,7 +352,7 @@ impl RX_TH_R {
         *self == RX_TH_A::T128
     }
 }
-#[doc = "Field `RX_TH` writer - Threshold for RX DMA FIFO Start"]
+#[doc = "Field `rx_th` writer - Threshold for RX DMA FIFO Start"]
 pub type RX_TH_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, EMAC_RX_CTL1_SPEC, u8, RX_TH_A, 2, O>;
 impl<'a, const O: u8> RX_TH_W<'a, O> {
@@ -391,7 +391,7 @@ impl From<RX_ERR_FRM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_ERR_FRM` reader - "]
+#[doc = "Field `rx_err_frm` reader - "]
 pub type RX_ERR_FRM_R = crate::BitReader<RX_ERR_FRM_A>;
 impl RX_ERR_FRM_R {
     #[doc = "Get enumerated values variant"]
@@ -413,7 +413,7 @@ impl RX_ERR_FRM_R {
         *self == RX_ERR_FRM_A::FORWARD
     }
 }
-#[doc = "Field `RX_ERR_FRM` writer - "]
+#[doc = "Field `rx_err_frm` writer - "]
 pub type RX_ERR_FRM_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_ERR_FRM_A, O>;
 impl<'a, const O: u8> RX_ERR_FRM_W<'a, O> {
@@ -428,9 +428,9 @@ impl<'a, const O: u8> RX_ERR_FRM_W<'a, O> {
         self.variant(RX_ERR_FRM_A::FORWARD)
     }
 }
-#[doc = "Field `RX_RUNT_FRM` reader - "]
+#[doc = "Field `rx_runt_frm` reader - "]
 pub type RX_RUNT_FRM_R = crate::BitReader<bool>;
-#[doc = "Field `RX_RUNT_FRM` writer - "]
+#[doc = "Field `rx_runt_frm` writer - "]
 pub type RX_RUNT_FRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, bool, O>;
 #[doc = "Receive Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -446,7 +446,7 @@ impl From<RX_MD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RX_MD` reader - Receive Mode"]
+#[doc = "Field `rx_md` reader - Receive Mode"]
 pub type RX_MD_R = crate::BitReader<RX_MD_A>;
 impl RX_MD_R {
     #[doc = "Get enumerated values variant"]
@@ -468,7 +468,7 @@ impl RX_MD_R {
         *self == RX_MD_A::LOCATE_FULL_FRAME
     }
 }
-#[doc = "Field `RX_MD` writer - Receive Mode"]
+#[doc = "Field `rx_md` writer - Receive Mode"]
 pub type RX_MD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, RX_MD_A, O>;
 impl<'a, const O: u8> RX_MD_W<'a, O> {
     #[doc = "`0`"]
@@ -496,7 +496,7 @@ impl From<FLUSH_RX_FRM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FLUSH_RX_FRM` reader - Flush Receive Frames"]
+#[doc = "Field `flush_rx_frm` reader - Flush Receive Frames"]
 pub type FLUSH_RX_FRM_R = crate::BitReader<FLUSH_RX_FRM_A>;
 impl FLUSH_RX_FRM_R {
     #[doc = "Get enumerated values variant"]
@@ -518,7 +518,7 @@ impl FLUSH_RX_FRM_R {
         *self == FLUSH_RX_FRM_A::DISABLE
     }
 }
-#[doc = "Field `FLUSH_RX_FRM` writer - Flush Receive Frames"]
+#[doc = "Field `flush_rx_frm` writer - Flush Receive Frames"]
 pub type FLUSH_RX_FRM_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_RX_CTL1_SPEC, FLUSH_RX_FRM_A, O>;
 impl<'a, const O: u8> FLUSH_RX_FRM_W<'a, O> {
@@ -656,7 +656,7 @@ impl crate::Readable for EMAC_RX_CTL1_SPEC {
 impl crate::Writable for EMAC_RX_CTL1_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_RX_CTL1 to value 0"]
+#[doc = "`reset()` method sets emac_rx_ctl1 to value 0"]
 impl crate::Resettable for EMAC_RX_CTL1_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

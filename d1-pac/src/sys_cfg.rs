@@ -22,31 +22,31 @@ pub struct RegisterBlock {
     #[doc = "0x16c - Resistor Calibration Status Register"]
     pub rescal_status: crate::Reg<rescal_status::RESCAL_STATUS_SPEC>,
 }
-#[doc = "DSP_BOOT_RAMMAP register accessor: an alias for `Reg<DSP_BOOT_RAMMAP_SPEC>`"]
+#[doc = "dsp_boot_rammap register accessor: an alias for `Reg<DSP_BOOT_RAMMAP_SPEC>`"]
 pub type DSP_BOOT_RAMMAP = crate::Reg<dsp_boot_rammap::DSP_BOOT_RAMMAP_SPEC>;
 #[doc = "DSP Boot SRAM Remap Control Register"]
 pub mod dsp_boot_rammap;
-#[doc = "VER register accessor: an alias for `Reg<VER_SPEC>`"]
+#[doc = "ver register accessor: an alias for `Reg<VER_SPEC>`"]
 pub type VER = crate::Reg<ver::VER_SPEC>;
 #[doc = "Version Register"]
 pub mod ver;
-#[doc = "EMAC_EPHY_CLK0 register accessor: an alias for `Reg<EMAC_EPHY_CLK0_SPEC>`"]
+#[doc = "emac_ephy_clk0 register accessor: an alias for `Reg<EMAC_EPHY_CLK0_SPEC>`"]
 pub type EMAC_EPHY_CLK0 = crate::Reg<emac_ephy_clk0::EMAC_EPHY_CLK0_SPEC>;
 #[doc = "EMAC-EPHY Clock Register 0"]
 pub mod emac_ephy_clk0;
-#[doc = "SYS_LDO_CTRL register accessor: an alias for `Reg<SYS_LDO_CTRL_SPEC>`"]
+#[doc = "sys_ldo_ctrl register accessor: an alias for `Reg<SYS_LDO_CTRL_SPEC>`"]
 pub type SYS_LDO_CTRL = crate::Reg<sys_ldo_ctrl::SYS_LDO_CTRL_SPEC>;
 #[doc = "System LDO Control Register"]
 pub mod sys_ldo_ctrl;
-#[doc = "RESCAL_CTRL register accessor: an alias for `Reg<RESCAL_CTRL_SPEC>`"]
+#[doc = "rescal_ctrl register accessor: an alias for `Reg<RESCAL_CTRL_SPEC>`"]
 pub type RESCAL_CTRL = crate::Reg<rescal_ctrl::RESCAL_CTRL_SPEC>;
 #[doc = "Resistor Calibration Control Register"]
 pub mod rescal_ctrl;
-#[doc = "RES240_CTRL register accessor: an alias for `Reg<RES240_CTRL_SPEC>`"]
+#[doc = "res240_ctrl register accessor: an alias for `Reg<RES240_CTRL_SPEC>`"]
 pub type RES240_CTRL = crate::Reg<res240_ctrl::RES240_CTRL_SPEC>;
 #[doc = "240ohms Resistor Manual Control Register"]
 pub mod res240_ctrl;
-#[doc = "RESCAL_STATUS register accessor: an alias for `Reg<RESCAL_STATUS_SPEC>`"]
+#[doc = "rescal_status register accessor: an alias for `Reg<RESCAL_STATUS_SPEC>`"]
 pub type RESCAL_STATUS = crate::Reg<rescal_status::RESCAL_STATUS_SPEC>;
 #[doc = "Resistor Calibration Status Register"]
 pub mod rescal_status;

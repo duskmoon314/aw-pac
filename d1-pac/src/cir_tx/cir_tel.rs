@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_TEL` reader"]
+#[doc = "Register `cir_tel` reader"]
 pub struct R(crate::R<CIR_TEL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_TEL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_TEL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_TEL` writer"]
+#[doc = "Register `cir_tel` writer"]
 pub struct W(crate::W<CIR_TEL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_TEL_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CIR_TEL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TEL` reader - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
+#[doc = "Field `tel` reader - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
 pub type TEL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `TEL` writer - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
+#[doc = "Field `tel` writer - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
 pub type TEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_TEL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1"]
@@ -71,7 +71,7 @@ impl crate::Readable for CIR_TEL_SPEC {
 impl crate::Writable for CIR_TEL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_TEL to value 0"]
+#[doc = "`reset()` method sets cir_tel to value 0"]
 impl crate::Resettable for CIR_TEL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

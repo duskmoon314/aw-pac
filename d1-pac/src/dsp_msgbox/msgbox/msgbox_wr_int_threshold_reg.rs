@@ -1,4 +1,4 @@
-#[doc = "Register `MSGBOX_WR_INT_THRESHOLD_REG%s` reader"]
+#[doc = "Register `msgbox_wr_int_threshold_reg%s` reader"]
 pub struct R(crate::R<MSGBOX_WR_INT_THRESHOLD_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MSGBOX_WR_INT_THRESHOLD_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MSGBOX_WR_INT_THRESHOLD_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MSGBOX_WR_INT_THRESHOLD_REG%s` writer"]
+#[doc = "Register `msgbox_wr_int_threshold_reg%s` writer"]
 pub struct W(crate::W<MSGBOX_WR_INT_THRESHOLD_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MSGBOX_WR_INT_THRESHOLD_REG_SPEC>;
@@ -53,7 +53,7 @@ impl From<MSG_WR_INT_THRESHOLD_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MSG_WR_INT_THRESHOLD_CFG` reader - Configure the FIFO empty level to trigger the write interrupt for user1"]
+#[doc = "Field `msg_wr_int_threshold_cfg` reader - Configure the FIFO empty level to trigger the write interrupt for user1"]
 pub type MSG_WR_INT_THRESHOLD_CFG_R = crate::FieldReader<u8, MSG_WR_INT_THRESHOLD_CFG_A>;
 impl MSG_WR_INT_THRESHOLD_CFG_R {
     #[doc = "Get enumerated values variant"]
@@ -88,7 +88,7 @@ impl MSG_WR_INT_THRESHOLD_CFG_R {
         *self == MSG_WR_INT_THRESHOLD_CFG_A::T8
     }
 }
-#[doc = "Field `MSG_WR_INT_THRESHOLD_CFG` writer - Configure the FIFO empty level to trigger the write interrupt for user1"]
+#[doc = "Field `msg_wr_int_threshold_cfg` writer - Configure the FIFO empty level to trigger the write interrupt for user1"]
 pub type MSG_WR_INT_THRESHOLD_CFG_W<'a, const O: u8> = crate::FieldWriterSafe<
     'a,
     u32,
@@ -153,7 +153,7 @@ impl crate::Readable for MSGBOX_WR_INT_THRESHOLD_REG_SPEC {
 impl crate::Writable for MSGBOX_WR_INT_THRESHOLD_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MSGBOX_WR_INT_THRESHOLD_REG%s to value 0"]
+#[doc = "`reset()` method sets msgbox_wr_int_threshold_reg%s to value 0"]
 impl crate::Resettable for MSGBOX_WR_INT_THRESHOLD_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

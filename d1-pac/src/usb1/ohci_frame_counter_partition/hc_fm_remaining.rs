@@ -1,4 +1,4 @@
-#[doc = "Register `HC_FM_REMAINING` reader"]
+#[doc = "Register `hc_fm_remaining` reader"]
 pub struct R(crate::R<HC_FM_REMAINING_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_FM_REMAINING_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_FM_REMAINING_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_FM_REMAINING` writer"]
+#[doc = "Register `hc_fm_remaining` writer"]
 pub struct W(crate::W<HC_FM_REMAINING_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_FM_REMAINING_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<HC_FM_REMAINING_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FRAME_REMAINING_TOGGLE` reader - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
+#[doc = "Field `frame_remaining_toggle` reader - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
 pub type FRAME_REMAINING_TOGGLE_R = crate::BitReader<bool>;
-#[doc = "Field `FRAME_REMAINING_TOGGLE` writer - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
+#[doc = "Field `frame_remaining_toggle` writer - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
 pub type FRAME_REMAINING_TOGGLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_FM_REMAINING_SPEC, bool, O>;
-#[doc = "Field `FRAME_REMAINING` reader - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
+#[doc = "Field `frame_remaining` reader - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
 pub type FRAME_REMAINING_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `FRAME_REMAINING` writer - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
+#[doc = "Field `frame_remaining` writer - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
 pub type FRAME_REMAINING_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_FM_REMAINING_SPEC, u16, u16, 14, O>;
 impl R {
@@ -87,7 +87,7 @@ impl crate::Readable for HC_FM_REMAINING_SPEC {
 impl crate::Writable for HC_FM_REMAINING_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_FM_REMAINING to value 0"]
+#[doc = "`reset()` method sets hc_fm_remaining to value 0"]
 impl crate::Resettable for HC_FM_REMAINING_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

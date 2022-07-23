@@ -1,4 +1,4 @@
-#[doc = "Register `THS_EN` reader"]
+#[doc = "Register `ths_en` reader"]
 pub struct R(crate::R<THS_EN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<THS_EN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<THS_EN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `THS_EN` writer"]
+#[doc = "Register `ths_en` writer"]
 pub struct W(crate::W<THS_EN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THS_EN_SPEC>;
@@ -48,7 +48,7 @@ impl From<THS_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `THS_EN` reader - Enable temperature measurement sensor"]
+#[doc = "Field `ths_en` reader - Enable temperature measurement sensor"]
 pub type THS_EN_R = crate::BitReader<THS_EN_A>;
 impl THS_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl THS_EN_R {
         *self == THS_EN_A::ENABLE
     }
 }
-#[doc = "Field `THS_EN` writer - Enable temperature measurement sensor"]
+#[doc = "Field `ths_en` writer - Enable temperature measurement sensor"]
 pub type THS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, THS_EN_SPEC, THS_EN_A, O>;
 impl<'a, const O: u8> THS_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -117,7 +117,7 @@ impl crate::Readable for THS_EN_SPEC {
 impl crate::Writable for THS_EN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THS_EN to value 0"]
+#[doc = "`reset()` method sets ths_en to value 0"]
 impl crate::Resettable for THS_EN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

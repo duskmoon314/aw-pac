@@ -1,4 +1,4 @@
-#[doc = "Register `RISCV_STA_ADD1_REG` reader"]
+#[doc = "Register `riscv_sta_add1_reg` reader"]
 pub struct R(crate::R<RISCV_STA_ADD1_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RISCV_STA_ADD1_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RISCV_STA_ADD1_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RISCV_STA_ADD1_REG` writer"]
+#[doc = "Register `riscv_sta_add1_reg` writer"]
 pub struct W(crate::W<RISCV_STA_ADD1_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RISCV_STA_ADD1_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<RISCV_STA_ADD1_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `STA_ADD_H` reader - Start Address High 8-bit"]
+#[doc = "Field `sta_add_h` reader - Start Address High 8-bit"]
 pub type STA_ADD_H_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `STA_ADD_H` writer - Start Address High 8-bit"]
+#[doc = "Field `sta_add_h` writer - Start Address High 8-bit"]
 pub type STA_ADD_H_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, RISCV_STA_ADD1_REG_SPEC, u8, u8, 8, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for RISCV_STA_ADD1_REG_SPEC {
 impl crate::Writable for RISCV_STA_ADD1_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RISCV_STA_ADD1_REG to value 0"]
+#[doc = "`reset()` method sets riscv_sta_add1_reg to value 0"]
 impl crate::Resettable for RISCV_STA_ADD1_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

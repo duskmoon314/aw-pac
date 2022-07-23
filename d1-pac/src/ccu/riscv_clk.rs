@@ -1,4 +1,4 @@
-#[doc = "Register `RISCV_CLK` reader"]
+#[doc = "Register `riscv_clk` reader"]
 pub struct R(crate::R<RISCV_CLK_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RISCV_CLK_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RISCV_CLK_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RISCV_CLK` writer"]
+#[doc = "Register `riscv_clk` writer"]
 pub struct W(crate::W<RISCV_CLK_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RISCV_CLK_SPEC>;
@@ -59,7 +59,7 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLK_SRC_SEL` reader - Clock Source Select"]
+#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -112,7 +112,7 @@ impl CLK_SRC_SEL_R {
         *self == CLK_SRC_SEL_A::PLL_AUDIO1_DIV2
     }
 }
-#[doc = "Field `CLK_SRC_SEL` writer - Clock Source Select"]
+#[doc = "Field `clk_src_sel` writer - Clock Source Select"]
 pub type CLK_SRC_SEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
 impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
@@ -152,13 +152,13 @@ impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
         self.variant(CLK_SRC_SEL_A::PLL_AUDIO1_DIV2)
     }
 }
-#[doc = "Field `AXI_DIV_CFG` reader - Factor N"]
+#[doc = "Field `axi_div_cfg` reader - Factor N"]
 pub type AXI_DIV_CFG_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `AXI_DIV_CFG` writer - Factor N"]
+#[doc = "Field `axi_div_cfg` writer - Factor N"]
 pub type AXI_DIV_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 2, O>;
-#[doc = "Field `DIV_CFG` reader - Factor M"]
+#[doc = "Field `div_cfg` reader - Factor M"]
 pub type DIV_CFG_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DIV_CFG` writer - Factor M"]
+#[doc = "Field `div_cfg` writer - Factor M"]
 pub type DIV_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 24:26 - Clock Source Select"]
@@ -213,7 +213,7 @@ impl crate::Readable for RISCV_CLK_SPEC {
 impl crate::Writable for RISCV_CLK_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RISCV_CLK to value 0"]
+#[doc = "`reset()` method sets riscv_clk to value 0"]
 impl crate::Resettable for RISCV_CLK_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

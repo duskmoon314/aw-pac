@@ -1,4 +1,4 @@
-#[doc = "Register `HPF_EN_CTR` reader"]
+#[doc = "Register `hpf_en_ctr` reader"]
 pub struct R(crate::R<HPF_EN_CTR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HPF_EN_CTR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HPF_EN_CTR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HPF_EN_CTR` writer"]
+#[doc = "Register `hpf_en_ctr` writer"]
 pub struct W(crate::W<HPF_EN_CTR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HPF_EN_CTR_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for HPF_EN_CTR_SPEC {
 impl crate::Writable for HPF_EN_CTR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HPF_EN_CTR to value 0"]
+#[doc = "`reset()` method sets hpf_en_ctr to value 0"]
 impl crate::Resettable for HPF_EN_CTR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

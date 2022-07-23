@@ -1,4 +1,4 @@
-#[doc = "Register `DBG_DLL` reader"]
+#[doc = "Register `dbg_dll` reader"]
 pub struct R(crate::R<DBG_DLL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DBG_DLL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DBG_DLL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `DBG_DLL` reader - "]
+#[doc = "Field `dbg_dll` reader - "]
 pub type DBG_DLL_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7"]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for DBG_DLL_SPEC {
 impl crate::Readable for DBG_DLL_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets DBG_DLL to value 0"]
+#[doc = "`reset()` method sets dbg_dll to value 0"]
 impl crate::Resettable for DBG_DLL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

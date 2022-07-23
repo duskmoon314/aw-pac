@@ -38,63 +38,63 @@ pub struct RegisterBlock {
     #[doc = "0xc0 - THS Data Register"]
     pub ths_data: crate::Reg<ths_data::THS_DATA_SPEC>,
 }
-#[doc = "THS_CTRL register accessor: an alias for `Reg<THS_CTRL_SPEC>`"]
+#[doc = "ths_ctrl register accessor: an alias for `Reg<THS_CTRL_SPEC>`"]
 pub type THS_CTRL = crate::Reg<ths_ctrl::THS_CTRL_SPEC>;
 #[doc = "THS Control Register"]
 pub mod ths_ctrl;
-#[doc = "THS_EN register accessor: an alias for `Reg<THS_EN_SPEC>`"]
+#[doc = "ths_en register accessor: an alias for `Reg<THS_EN_SPEC>`"]
 pub type THS_EN = crate::Reg<ths_en::THS_EN_SPEC>;
 #[doc = "THS Enable Register"]
 pub mod ths_en;
-#[doc = "THS_PER register accessor: an alias for `Reg<THS_PER_SPEC>`"]
+#[doc = "ths_per register accessor: an alias for `Reg<THS_PER_SPEC>`"]
 pub type THS_PER = crate::Reg<ths_per::THS_PER_SPEC>;
 #[doc = "THS Period Control Register"]
 pub mod ths_per;
-#[doc = "THS_DATA_INTC register accessor: an alias for `Reg<THS_DATA_INTC_SPEC>`"]
+#[doc = "ths_data_intc register accessor: an alias for `Reg<THS_DATA_INTC_SPEC>`"]
 pub type THS_DATA_INTC = crate::Reg<ths_data_intc::THS_DATA_INTC_SPEC>;
 #[doc = "THS Data Interrupt Control Register"]
 pub mod ths_data_intc;
-#[doc = "THS_SHUT_INTC register accessor: an alias for `Reg<THS_SHUT_INTC_SPEC>`"]
+#[doc = "ths_shut_intc register accessor: an alias for `Reg<THS_SHUT_INTC_SPEC>`"]
 pub type THS_SHUT_INTC = crate::Reg<ths_shut_intc::THS_SHUT_INTC_SPEC>;
 #[doc = "THS Shut Interrupt Control Register"]
 pub mod ths_shut_intc;
-#[doc = "THS_ALARM_INTC register accessor: an alias for `Reg<THS_ALARM_INTC_SPEC>`"]
+#[doc = "ths_alarm_intc register accessor: an alias for `Reg<THS_ALARM_INTC_SPEC>`"]
 pub type THS_ALARM_INTC = crate::Reg<ths_alarm_intc::THS_ALARM_INTC_SPEC>;
 #[doc = "THS Alarm Interrupt Control Register"]
 pub mod ths_alarm_intc;
-#[doc = "THS_DATA_INTS register accessor: an alias for `Reg<THS_DATA_INTS_SPEC>`"]
+#[doc = "ths_data_ints register accessor: an alias for `Reg<THS_DATA_INTS_SPEC>`"]
 pub type THS_DATA_INTS = crate::Reg<ths_data_ints::THS_DATA_INTS_SPEC>;
 #[doc = "THS Data Interrupt Status Register"]
 pub mod ths_data_ints;
-#[doc = "THS_SHUT_INTS register accessor: an alias for `Reg<THS_SHUT_INTS_SPEC>`"]
+#[doc = "ths_shut_ints register accessor: an alias for `Reg<THS_SHUT_INTS_SPEC>`"]
 pub type THS_SHUT_INTS = crate::Reg<ths_shut_ints::THS_SHUT_INTS_SPEC>;
 #[doc = "THS Shut Interrupt Status Register"]
 pub mod ths_shut_ints;
-#[doc = "THS_ALARMO_INTS register accessor: an alias for `Reg<THS_ALARMO_INTS_SPEC>`"]
+#[doc = "ths_alarmo_ints register accessor: an alias for `Reg<THS_ALARMO_INTS_SPEC>`"]
 pub type THS_ALARMO_INTS = crate::Reg<ths_alarmo_ints::THS_ALARMO_INTS_SPEC>;
 #[doc = "THS_ALARM0_INTS"]
 pub mod ths_alarmo_ints;
-#[doc = "THS_ALARM_INTS register accessor: an alias for `Reg<THS_ALARM_INTS_SPEC>`"]
+#[doc = "ths_alarm_ints register accessor: an alias for `Reg<THS_ALARM_INTS_SPEC>`"]
 pub type THS_ALARM_INTS = crate::Reg<ths_alarm_ints::THS_ALARM_INTS_SPEC>;
 #[doc = "THS Alarm Interrupt Status Register"]
 pub mod ths_alarm_ints;
-#[doc = "THS_FILTER register accessor: an alias for `Reg<THS_FILTER_SPEC>`"]
+#[doc = "ths_filter register accessor: an alias for `Reg<THS_FILTER_SPEC>`"]
 pub type THS_FILTER = crate::Reg<ths_filter::THS_FILTER_SPEC>;
 #[doc = "THS Median Filter Control Register"]
 pub mod ths_filter;
-#[doc = "THS_ALARM_CTRL register accessor: an alias for `Reg<THS_ALARM_CTRL_SPEC>`"]
+#[doc = "ths_alarm_ctrl register accessor: an alias for `Reg<THS_ALARM_CTRL_SPEC>`"]
 pub type THS_ALARM_CTRL = crate::Reg<ths_alarm_ctrl::THS_ALARM_CTRL_SPEC>;
 #[doc = "THS Alarm Threshold Control Register"]
 pub mod ths_alarm_ctrl;
-#[doc = "THS_SHUTDOWN_CTRL register accessor: an alias for `Reg<THS_SHUTDOWN_CTRL_SPEC>`"]
+#[doc = "ths_shutdown_ctrl register accessor: an alias for `Reg<THS_SHUTDOWN_CTRL_SPEC>`"]
 pub type THS_SHUTDOWN_CTRL = crate::Reg<ths_shutdown_ctrl::THS_SHUTDOWN_CTRL_SPEC>;
 #[doc = "THS Shutdown Threshold Control Register"]
 pub mod ths_shutdown_ctrl;
-#[doc = "THS_CDATA register accessor: an alias for `Reg<THS_CDATA_SPEC>`"]
+#[doc = "ths_cdata register accessor: an alias for `Reg<THS_CDATA_SPEC>`"]
 pub type THS_CDATA = crate::Reg<ths_cdata::THS_CDATA_SPEC>;
 #[doc = "THS Calibration Data"]
 pub mod ths_cdata;
-#[doc = "THS_DATA register accessor: an alias for `Reg<THS_DATA_SPEC>`"]
+#[doc = "ths_data register accessor: an alias for `Reg<THS_DATA_SPEC>`"]
 pub type THS_DATA = crate::Reg<ths_data::THS_DATA_SPEC>;
 #[doc = "THS Data Register"]
 pub mod ths_data;

@@ -1,4 +1,4 @@
-#[doc = "Register `FBOOT_INFO_REG%s` reader"]
+#[doc = "Register `fboot_info_reg%s` reader"]
 pub struct R(crate::R<FBOOT_INFO_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<FBOOT_INFO_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<FBOOT_INFO_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `FBOOT_INFO_REG%s` writer"]
+#[doc = "Register `fboot_info_reg%s` writer"]
 pub struct W(crate::W<FBOOT_INFO_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<FBOOT_INFO_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<FBOOT_INFO_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FBOOT_INFO` reader - Fast Boot Information \\[i\\], refer to BROM spec."]
+#[doc = "Field `fboot_info` reader - Fast Boot Information \\[i\\], refer to BROM spec."]
 pub type FBOOT_INFO_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `FBOOT_INFO` writer - Fast Boot Information \\[i\\], refer to BROM spec."]
+#[doc = "Field `fboot_info` writer - Fast Boot Information \\[i\\], refer to BROM spec."]
 pub type FBOOT_INFO_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, FBOOT_INFO_REG_SPEC, u32, u32, 32, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for FBOOT_INFO_REG_SPEC {
 impl crate::Writable for FBOOT_INFO_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets FBOOT_INFO_REG%s to value 0"]
+#[doc = "`reset()` method sets fboot_info_reg%s to value 0"]
 impl crate::Resettable for FBOOT_INFO_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

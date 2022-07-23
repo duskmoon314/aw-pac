@@ -1,4 +1,4 @@
-#[doc = "Register `RXDMA_WADDRL` reader"]
+#[doc = "Register `rxdma_waddrl` reader"]
 pub struct R(crate::R<RXDMA_WADDRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RXDMA_WADDRL_SPEC>;
@@ -22,7 +22,7 @@ impl crate::RegisterSpec for RXDMA_WADDRL_SPEC {
 impl crate::Readable for RXDMA_WADDRL_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets RXDMA_WADDRL to value 0"]
+#[doc = "`reset()` method sets rxdma_waddrl to value 0"]
 impl crate::Resettable for RXDMA_WADDRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

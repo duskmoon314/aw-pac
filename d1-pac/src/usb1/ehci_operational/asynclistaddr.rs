@@ -1,4 +1,4 @@
-#[doc = "Register `ASYNCLISTADDR` reader"]
+#[doc = "Register `asynclistaddr` reader"]
 pub struct R(crate::R<ASYNCLISTADDR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<ASYNCLISTADDR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<ASYNCLISTADDR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `ASYNCLISTADDR` writer"]
+#[doc = "Register `asynclistaddr` writer"]
 pub struct W(crate::W<ASYNCLISTADDR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<ASYNCLISTADDR_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<ASYNCLISTADDR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `LP` reader - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
+#[doc = "Field `lp` reader - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
 pub type LP_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `LP` writer - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
+#[doc = "Field `lp` writer - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
 pub type LP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ASYNCLISTADDR_SPEC, u32, u32, 27, O>;
 impl R {
     #[doc = "Bits 5:31 - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
@@ -71,7 +71,7 @@ impl crate::Readable for ASYNCLISTADDR_SPEC {
 impl crate::Writable for ASYNCLISTADDR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ASYNCLISTADDR to value 0"]
+#[doc = "`reset()` method sets asynclistaddr to value 0"]
 impl crate::Resettable for ASYNCLISTADDR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

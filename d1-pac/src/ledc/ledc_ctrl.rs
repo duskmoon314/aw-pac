@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_CTRL` reader"]
+#[doc = "Register `ledc_ctrl` reader"]
 pub struct R(crate::R<LEDC_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LEDC_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LEDC_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LEDC_CTRL` writer"]
+#[doc = "Register `ledc_ctrl` writer"]
 pub struct W(crate::W<LEDC_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LEDC_CTRL_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<LEDC_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TOTAL_DATA_LENGTH` reader - "]
+#[doc = "Field `total_data_length` reader - "]
 pub type TOTAL_DATA_LENGTH_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `TOTAL_DATA_LENGTH` writer - "]
+#[doc = "Field `total_data_length` writer - "]
 pub type TOTAL_DATA_LENGTH_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u16, u16, 13, O>;
-#[doc = "Field `RESET_LED_EN` reader - "]
+#[doc = "Field `reset_led_en` reader - "]
 pub type RESET_LED_EN_R = crate::BitReader<bool>;
-#[doc = "Field `RESET_LED_EN` writer - "]
+#[doc = "Field `reset_led_en` writer - "]
 pub type RESET_LED_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -66,7 +66,7 @@ impl From<LED_RGB_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LED_RGB_MODE` reader - "]
+#[doc = "Field `led_rgb_mode` reader - "]
 pub type LED_RGB_MODE_R = crate::FieldReader<u8, LED_RGB_MODE_A>;
 impl LED_RGB_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -113,7 +113,7 @@ impl LED_RGB_MODE_R {
         *self == LED_RGB_MODE_A::BRG
     }
 }
-#[doc = "Field `LED_RGB_MODE` writer - "]
+#[doc = "Field `led_rgb_mode` writer - "]
 pub type LED_RGB_MODE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u8, LED_RGB_MODE_A, 3, O>;
 impl<'a, const O: u8> LED_RGB_MODE_W<'a, O> {
@@ -162,7 +162,7 @@ impl From<LED_MSB__A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `LED_MSB_(0-3)` reader - "]
+#[doc = "Fields `led_msb_(0-3)` reader - "]
 pub type LED_MSB__R = crate::BitReader<LED_MSB__A>;
 impl LED_MSB__R {
     #[doc = "Get enumerated values variant"]
@@ -184,7 +184,7 @@ impl LED_MSB__R {
         *self == LED_MSB__A::MSB
     }
 }
-#[doc = "Fields `LED_MSB_(0-3)` writer - "]
+#[doc = "Fields `led_msb_(0-3)` writer - "]
 pub type LED_MSB__W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, LED_MSB__A, O>;
 impl<'a, const O: u8> LED_MSB__W<'a, O> {
     #[doc = "`0`"]
@@ -198,9 +198,9 @@ impl<'a, const O: u8> LED_MSB__W<'a, O> {
         self.variant(LED_MSB__A::MSB)
     }
 }
-#[doc = "Field `LEDC_SOFT_RESET` reader - "]
+#[doc = "Field `ledc_soft_reset` reader - "]
 pub type LEDC_SOFT_RESET_R = crate::BitReader<bool>;
-#[doc = "Field `LEDC_SOFT_RESET` writer - "]
+#[doc = "Field `ledc_soft_reset` writer - "]
 pub type LEDC_SOFT_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -216,7 +216,7 @@ impl From<LEDC_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LEDC_EN` reader - "]
+#[doc = "Field `ledc_en` reader - "]
 pub type LEDC_EN_R = crate::BitReader<LEDC_EN_A>;
 impl LEDC_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -238,7 +238,7 @@ impl LEDC_EN_R {
         *self == LEDC_EN_A::ENABLE
     }
 }
-#[doc = "Field `LEDC_EN` writer - "]
+#[doc = "Field `ledc_en` writer - "]
 pub type LEDC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, LEDC_EN_A, O>;
 impl<'a, const O: u8> LEDC_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -375,7 +375,7 @@ impl crate::Readable for LEDC_CTRL_SPEC {
 impl crate::Writable for LEDC_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LEDC_CTRL to value 0"]
+#[doc = "`reset()` method sets ledc_ctrl to value 0"]
 impl crate::Resettable for LEDC_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

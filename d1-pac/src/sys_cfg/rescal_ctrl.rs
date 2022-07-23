@@ -1,4 +1,4 @@
-#[doc = "Register `RESCAL_CTRL` reader"]
+#[doc = "Register `rescal_ctrl` reader"]
 pub struct R(crate::R<RESCAL_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RESCAL_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RESCAL_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RESCAL_CTRL` writer"]
+#[doc = "Register `rescal_ctrl` writer"]
 pub struct W(crate::W<RESCAL_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RESCAL_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<DDR_RES240_TRIMMING_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DDR_RES240_Trimming_SEL` reader - 240ohms Resistor Trimming Source Select"]
+#[doc = "Field `ddr_res240_trimming_sel` reader - 240ohms Resistor Trimming Source Select"]
 pub type DDR_RES240_TRIMMING_SEL_R = crate::BitReader<DDR_RES240_TRIMMING_SEL_A>;
 impl DDR_RES240_TRIMMING_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl DDR_RES240_TRIMMING_SEL_R {
         *self == DDR_RES240_TRIMMING_SEL_A::RES240_TRIM
     }
 }
-#[doc = "Field `DDR_RES240_Trimming_SEL` writer - 240ohms Resistor Trimming Source Select"]
+#[doc = "Field `ddr_res240_trimming_sel` writer - 240ohms Resistor Trimming Source Select"]
 pub type DDR_RES240_TRIMMING_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, DDR_RES240_TRIMMING_SEL_A, O>;
 impl<'a, const O: u8> DDR_RES240_TRIMMING_SEL_W<'a, O> {
@@ -97,7 +97,7 @@ impl From<RESCAL_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESCAL_MODE` reader - RESCAL Calibration Mode Select"]
+#[doc = "Field `rescal_mode` reader - RESCAL Calibration Mode Select"]
 pub type RESCAL_MODE_R = crate::BitReader<RESCAL_MODE_A>;
 impl RESCAL_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -114,7 +114,7 @@ impl RESCAL_MODE_R {
         *self == RESCAL_MODE_A::AUTO_CALIBRATION
     }
 }
-#[doc = "Field `RESCAL_MODE` writer - RESCAL Calibration Mode Select"]
+#[doc = "Field `rescal_mode` writer - RESCAL Calibration Mode Select"]
 pub type RESCAL_MODE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, RESCAL_MODE_A, O>;
 impl<'a, const O: u8> RESCAL_MODE_W<'a, O> {
@@ -138,7 +138,7 @@ impl From<CAL_ANA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CAL_ANA_EN` reader - Calibration Circuits Analog Enable"]
+#[doc = "Field `cal_ana_en` reader - Calibration Circuits Analog Enable"]
 pub type CAL_ANA_EN_R = crate::BitReader<CAL_ANA_EN_A>;
 impl CAL_ANA_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -160,7 +160,7 @@ impl CAL_ANA_EN_R {
         *self == CAL_ANA_EN_A::ENABLE
     }
 }
-#[doc = "Field `CAL_ANA_EN` writer - Calibration Circuits Analog Enable"]
+#[doc = "Field `cal_ana_en` writer - Calibration Circuits Analog Enable"]
 pub type CAL_ANA_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_ANA_EN_A, O>;
 impl<'a, const O: u8> CAL_ANA_EN_W<'a, O> {
@@ -189,7 +189,7 @@ impl From<CAL_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CAL_EN` reader - Auto Calibration Enable"]
+#[doc = "Field `cal_en` reader - Auto Calibration Enable"]
 pub type CAL_EN_R = crate::BitReader<CAL_EN_A>;
 impl CAL_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -211,7 +211,7 @@ impl CAL_EN_R {
         *self == CAL_EN_A::ENABLE
     }
 }
-#[doc = "Field `CAL_EN` writer - Auto Calibration Enable"]
+#[doc = "Field `cal_en` writer - Auto Calibration Enable"]
 pub type CAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RESCAL_CTRL_SPEC, CAL_EN_A, O>;
 impl<'a, const O: u8> CAL_EN_W<'a, O> {
     #[doc = "`0`"]
@@ -288,7 +288,7 @@ impl crate::Readable for RESCAL_CTRL_SPEC {
 impl crate::Writable for RESCAL_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RESCAL_CTRL to value 0"]
+#[doc = "`reset()` method sets rescal_ctrl to value 0"]
 impl crate::Resettable for RESCAL_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_STA_REG` reader"]
+#[doc = "Register `dmac_sta_reg` reader"]
 pub struct R(crate::R<DMAC_STA_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_STA_REG_SPEC>;
@@ -27,7 +27,7 @@ impl From<MBUS_FIFO_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MBUS_FIFO_STATUS` reader - MBUS FIFO Status"]
+#[doc = "Field `mbus_fifo_status` reader - MBUS FIFO Status"]
 pub type MBUS_FIFO_STATUS_R = crate::BitReader<MBUS_FIFO_STATUS_A>;
 impl MBUS_FIFO_STATUS_R {
     #[doc = "Get enumerated values variant"]
@@ -64,7 +64,7 @@ impl From<DMA_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `DMA_STATUS(0-15)` reader - DMA Channel\\[15:0\\]
+#[doc = "Fields `dma_status(0-15)` reader - DMA Channel\\[15:0\\]
 Status"]
 pub type DMA_STATUS_R = crate::BitReader<DMA_STATUS_A>;
 impl DMA_STATUS_R {
@@ -205,7 +205,7 @@ impl crate::RegisterSpec for DMAC_STA_REG_SPEC {
 impl crate::Readable for DMAC_STA_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets DMAC_STA_REG to value 0"]
+#[doc = "`reset()` method sets dmac_sta_reg to value 0"]
 impl crate::Resettable for DMAC_STA_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

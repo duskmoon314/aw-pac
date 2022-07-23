@@ -1,4 +1,4 @@
-#[doc = "Register `HCI_CTRL3` reader"]
+#[doc = "Register `hci_ctrl3` reader"]
 pub struct R(crate::R<HCI_CTRL3_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HCI_CTRL3_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HCI_CTRL3_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HCI_CTRL3` writer"]
+#[doc = "Register `hci_ctrl3` writer"]
 pub struct W(crate::W<HCI_CTRL3_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HCI_CTRL3_SPEC>;
@@ -48,7 +48,7 @@ impl From<LINESTATE_CHANGE_DETECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINESTATE_CHANGE_DETECT` reader - Linestate Change Detect"]
+#[doc = "Field `linestate_change_detect` reader - Linestate Change Detect"]
 pub type LINESTATE_CHANGE_DETECT_R = crate::BitReader<LINESTATE_CHANGE_DETECT_A>;
 impl LINESTATE_CHANGE_DETECT_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl LINESTATE_CHANGE_DETECT_R {
         *self == LINESTATE_CHANGE_DETECT_A::DECTED
     }
 }
-#[doc = "Field `LINESTATE_CHANGE_DETECT` writer - Linestate Change Detect"]
+#[doc = "Field `linestate_change_detect` writer - Linestate Change Detect"]
 pub type LINESTATE_CHANGE_DETECT_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_DETECT_A, O>;
 impl<'a, const O: u8> LINESTATE_CHANGE_DETECT_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<REMOTE_WAKEUP_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `REMOTE_WAKEUP_ENABLE` reader - Remote Wakeup Enable"]
+#[doc = "Field `remote_wakeup_enable` reader - Remote Wakeup Enable"]
 pub type REMOTE_WAKEUP_ENABLE_R = crate::BitReader<REMOTE_WAKEUP_ENABLE_A>;
 impl REMOTE_WAKEUP_ENABLE_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl REMOTE_WAKEUP_ENABLE_R {
         *self == REMOTE_WAKEUP_ENABLE_A::DISABLE
     }
 }
-#[doc = "Field `REMOTE_WAKEUP_ENABLE` writer - Remote Wakeup Enable"]
+#[doc = "Field `remote_wakeup_enable` writer - Remote Wakeup Enable"]
 pub type REMOTE_WAKEUP_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, REMOTE_WAKEUP_ENABLE_A, O>;
 impl<'a, const O: u8> REMOTE_WAKEUP_ENABLE_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<LINESTATE_CHANGE_INTERRUPT_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINESTATE_CHANGE_INTERRUPT_ENABLE` reader - Linestate Change Interrupt Enable"]
+#[doc = "Field `linestate_change_interrupt_enable` reader - Linestate Change Interrupt Enable"]
 pub type LINESTATE_CHANGE_INTERRUPT_ENABLE_R =
     crate::BitReader<LINESTATE_CHANGE_INTERRUPT_ENABLE_A>;
 impl LINESTATE_CHANGE_INTERRUPT_ENABLE_R {
@@ -173,7 +173,7 @@ impl LINESTATE_CHANGE_INTERRUPT_ENABLE_R {
         *self == LINESTATE_CHANGE_INTERRUPT_ENABLE_A::DISABLE
     }
 }
-#[doc = "Field `LINESTATE_CHANGE_INTERRUPT_ENABLE` writer - Linestate Change Interrupt Enable"]
+#[doc = "Field `linestate_change_interrupt_enable` writer - Linestate Change Interrupt Enable"]
 pub type LINESTATE_CHANGE_INTERRUPT_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_INTERRUPT_ENABLE_A, O>;
 impl<'a, const O: u8> LINESTATE_CHANGE_INTERRUPT_ENABLE_W<'a, O> {
@@ -202,7 +202,7 @@ impl From<LINESTATE_CHANGE_DETECT_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LINESTATE_CHANGE_DETECT_ENABLE` reader - Linestate Change Detect Enable"]
+#[doc = "Field `linestate_change_detect_enable` reader - Linestate Change Detect Enable"]
 pub type LINESTATE_CHANGE_DETECT_ENABLE_R = crate::BitReader<LINESTATE_CHANGE_DETECT_ENABLE_A>;
 impl LINESTATE_CHANGE_DETECT_ENABLE_R {
     #[doc = "Get enumerated values variant"]
@@ -224,7 +224,7 @@ impl LINESTATE_CHANGE_DETECT_ENABLE_R {
         *self == LINESTATE_CHANGE_DETECT_ENABLE_A::DISABLE
     }
 }
-#[doc = "Field `LINESTATE_CHANGE_DETECT_ENABLE` writer - Linestate Change Detect Enable"]
+#[doc = "Field `linestate_change_detect_enable` writer - Linestate Change Detect Enable"]
 pub type LINESTATE_CHANGE_DETECT_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_CTRL3_SPEC, LINESTATE_CHANGE_DETECT_ENABLE_A, O>;
 impl<'a, const O: u8> LINESTATE_CHANGE_DETECT_ENABLE_W<'a, O> {
@@ -302,7 +302,7 @@ impl crate::Readable for HCI_CTRL3_SPEC {
 impl crate::Writable for HCI_CTRL3_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HCI_CTRL3 to value 0x0001_0000"]
+#[doc = "`reset()` method sets hci_ctrl3 to value 0x0001_0000"]
 impl crate::Resettable for HCI_CTRL3_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

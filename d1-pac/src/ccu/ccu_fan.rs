@@ -1,4 +1,4 @@
-#[doc = "Register `CCU_FAN` reader"]
+#[doc = "Register `ccu_fan` reader"]
 pub struct R(crate::R<CCU_FAN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CCU_FAN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CCU_FAN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CCU_FAN` writer"]
+#[doc = "Register `ccu_fan` writer"]
 pub struct W(crate::W<CCU_FAN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CCU_FAN_SPEC>;
@@ -48,7 +48,7 @@ impl From<CLK_FANOUT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `CLK_FANOUT(0-2)_EN` reader - Gating for CLK_FANOUT"]
+#[doc = "Fields `clk_fanout(0-2)_en` reader - Gating for CLK_FANOUT"]
 pub type CLK_FANOUT_EN_R = crate::BitReader<CLK_FANOUT_EN_A>;
 impl CLK_FANOUT_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CLK_FANOUT_EN_R {
         *self == CLK_FANOUT_EN_A::ON
     }
 }
-#[doc = "Fields `CLK_FANOUT(0-2)_EN` writer - Gating for CLK_FANOUT"]
+#[doc = "Fields `clk_fanout(0-2)_en` writer - Gating for CLK_FANOUT"]
 pub type CLK_FANOUT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CCU_FAN_SPEC, CLK_FANOUT_EN_A, O>;
 impl<'a, const O: u8> CLK_FANOUT_EN_W<'a, O> {
@@ -110,7 +110,7 @@ impl From<CLK_FANOUT_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `CLK_FANOUT(0-2)_SEL` reader - "]
+#[doc = "Fields `clk_fanout(0-2)_sel` reader - "]
 pub type CLK_FANOUT_SEL_R = crate::FieldReader<u8, CLK_FANOUT_SEL_A>;
 impl CLK_FANOUT_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -163,7 +163,7 @@ impl CLK_FANOUT_SEL_R {
         *self == CLK_FANOUT_SEL_A::PCLK
     }
 }
-#[doc = "Fields `CLK_FANOUT(0-2)_SEL` writer - "]
+#[doc = "Fields `clk_fanout(0-2)_sel` writer - "]
 pub type CLK_FANOUT_SEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CCU_FAN_SPEC, u8, CLK_FANOUT_SEL_A, 3, O>;
 impl<'a, const O: u8> CLK_FANOUT_SEL_W<'a, O> {
@@ -306,7 +306,7 @@ impl crate::Readable for CCU_FAN_SPEC {
 impl crate::Writable for CCU_FAN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CCU_FAN to value 0"]
+#[doc = "`reset()` method sets ccu_fan to value 0"]
 impl crate::Resettable for CCU_FAN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

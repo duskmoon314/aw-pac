@@ -1,4 +1,4 @@
-#[doc = "Register `DMAC_CFG_REG%s` reader"]
+#[doc = "Register `dmac_cfg_reg%s` reader"]
 pub struct R(crate::R<DMAC_CFG_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DMAC_CFG_REG_SPEC>;
@@ -27,7 +27,7 @@ impl From<BMODE_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `BMODE_SEL` reader - "]
+#[doc = "Field `bmode_sel` reader - "]
 pub type BMODE_SEL_R = crate::BitReader<BMODE_SEL_A>;
 impl BMODE_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -68,7 +68,7 @@ impl From<DMA_DEST_DATA_WIDTH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMA_DEST_DATA_WIDTH` reader - DMA Destination Data Width"]
+#[doc = "Field `dma_dest_data_width` reader - DMA Destination Data Width"]
 pub type DMA_DEST_DATA_WIDTH_R = crate::FieldReader<u8, DMA_DEST_DATA_WIDTH_A>;
 impl DMA_DEST_DATA_WIDTH_R {
     #[doc = "Get enumerated values variant"]
@@ -117,7 +117,7 @@ impl From<DMA_ADDR_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_ADDR_MODE` reader - DMA Destination Address Mode"]
+#[doc = "Field `dma_addr_mode` reader - DMA Destination Address Mode"]
 pub type DMA_ADDR_MODE_R = crate::BitReader<DMA_ADDR_MODE_A>;
 impl DMA_ADDR_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -158,7 +158,7 @@ impl From<DMA_DEST_BLOCK_SIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMA_DEST_BLOCK_SIZE` reader - DMA Destination Block Size"]
+#[doc = "Field `dma_dest_block_size` reader - DMA Destination Block Size"]
 pub type DMA_DEST_BLOCK_SIZE_R = crate::FieldReader<u8, DMA_DEST_BLOCK_SIZE_A>;
 impl DMA_DEST_BLOCK_SIZE_R {
     #[doc = "Get enumerated values variant"]
@@ -193,7 +193,7 @@ impl DMA_DEST_BLOCK_SIZE_R {
         *self == DMA_DEST_BLOCK_SIZE_A::S16
     }
 }
-#[doc = "Field `DMA_DEST_DRQ_TYPE` reader - DMA Destination DRQ Type"]
+#[doc = "Field `dma_dest_drq_type` reader - DMA Destination DRQ Type"]
 pub type DMA_DEST_DRQ_TYPE_R = crate::FieldReader<u8, u8>;
 #[doc = "DMA Source Data Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -214,7 +214,7 @@ impl From<DMA_SRC_DATA_WIDTH_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMA_SRC_DATA_WIDTH` reader - DMA Source Data Width"]
+#[doc = "Field `dma_src_data_width` reader - DMA Source Data Width"]
 pub type DMA_SRC_DATA_WIDTH_R = crate::FieldReader<u8, DMA_SRC_DATA_WIDTH_A>;
 impl DMA_SRC_DATA_WIDTH_R {
     #[doc = "Get enumerated values variant"]
@@ -263,7 +263,7 @@ impl From<DMA_SRC_ADDR_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_SRC_ADDR_MODE` reader - DMA Source Address Mode"]
+#[doc = "Field `dma_src_addr_mode` reader - DMA Source Address Mode"]
 pub type DMA_SRC_ADDR_MODE_R = crate::BitReader<DMA_SRC_ADDR_MODE_A>;
 impl DMA_SRC_ADDR_MODE_R {
     #[doc = "Get enumerated values variant"]
@@ -304,7 +304,7 @@ impl From<DMA_SRC_BLOCK_SIZE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DMA_SRC_BLOCK_SIZE` reader - DMA Source Block Size"]
+#[doc = "Field `dma_src_block_size` reader - DMA Source Block Size"]
 pub type DMA_SRC_BLOCK_SIZE_R = crate::FieldReader<u8, DMA_SRC_BLOCK_SIZE_A>;
 impl DMA_SRC_BLOCK_SIZE_R {
     #[doc = "Get enumerated values variant"]
@@ -339,7 +339,7 @@ impl DMA_SRC_BLOCK_SIZE_R {
         *self == DMA_SRC_BLOCK_SIZE_A::S16
     }
 }
-#[doc = "Field `DMA_SRC_DRQ_TYPE` reader - DMA Source DRQ Type"]
+#[doc = "Field `dma_src_drq_type` reader - DMA Source DRQ Type"]
 pub type DMA_SRC_DRQ_TYPE_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bit 30"]
@@ -397,7 +397,7 @@ impl crate::RegisterSpec for DMAC_CFG_REG_SPEC {
 impl crate::Readable for DMAC_CFG_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets DMAC_CFG_REG%s to value 0"]
+#[doc = "`reset()` method sets dmac_cfg_reg%s to value 0"]
 impl crate::Resettable for DMAC_CFG_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

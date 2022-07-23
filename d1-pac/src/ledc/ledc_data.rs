@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_DATA` writer"]
+#[doc = "Register `ledc_data` writer"]
 pub struct W(crate::W<LEDC_DATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LEDC_DATA_SPEC>;
@@ -36,7 +36,7 @@ impl crate::RegisterSpec for LEDC_DATA_SPEC {
 impl crate::Writable for LEDC_DATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LEDC_DATA to value 0"]
+#[doc = "`reset()` method sets ledc_data to value 0"]
 impl crate::Resettable for LEDC_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

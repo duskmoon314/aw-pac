@@ -1,4 +1,4 @@
-#[doc = "Register `DBI_VIDEO_SZIE` reader"]
+#[doc = "Register `dbi_video_szie` reader"]
 pub struct R(crate::R<DBI_VIDEO_SZIE_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DBI_VIDEO_SZIE_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DBI_VIDEO_SZIE_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DBI_VIDEO_SZIE` writer"]
+#[doc = "Register `dbi_video_szie` writer"]
 pub struct W(crate::W<DBI_VIDEO_SZIE_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DBI_VIDEO_SZIE_SPEC>;
@@ -87,7 +87,7 @@ impl crate::Readable for DBI_VIDEO_SZIE_SPEC {
 impl crate::Writable for DBI_VIDEO_SZIE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DBI_VIDEO_SZIE to value 0"]
+#[doc = "`reset()` method sets dbi_video_szie to value 0"]
 impl crate::Resettable for DBI_VIDEO_SZIE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

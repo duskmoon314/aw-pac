@@ -1,4 +1,4 @@
-#[doc = "Register `EMAC_BASIC_CTL0` reader"]
+#[doc = "Register `emac_basic_ctl0` reader"]
 pub struct R(crate::R<EMAC_BASIC_CTL0_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<EMAC_BASIC_CTL0_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<EMAC_BASIC_CTL0_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `EMAC_BASIC_CTL0` writer"]
+#[doc = "Register `emac_basic_ctl0` writer"]
 pub struct W(crate::W<EMAC_BASIC_CTL0_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<EMAC_BASIC_CTL0_SPEC>;
@@ -51,7 +51,7 @@ impl From<SPEED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SPEED` reader - EMAC Working Speed"]
+#[doc = "Field `speed` reader - EMAC Working Speed"]
 pub type SPEED_R = crate::FieldReader<u8, SPEED_A>;
 impl SPEED_R {
     #[doc = "Get enumerated values variant"]
@@ -80,7 +80,7 @@ impl SPEED_R {
         *self == SPEED_A::S100
     }
 }
-#[doc = "Field `SPEED` writer - EMAC Working Speed"]
+#[doc = "Field `speed` writer - EMAC Working Speed"]
 pub type SPEED_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, u8, SPEED_A, 2, O>;
 impl<'a, const O: u8> SPEED_W<'a, O> {
@@ -114,7 +114,7 @@ impl From<LOOPBACK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LOOPBACK` reader - EMAC Loopback Mode For Test"]
+#[doc = "Field `loopback` reader - EMAC Loopback Mode For Test"]
 pub type LOOPBACK_R = crate::BitReader<LOOPBACK_A>;
 impl LOOPBACK_R {
     #[doc = "Get enumerated values variant"]
@@ -136,7 +136,7 @@ impl LOOPBACK_R {
         *self == LOOPBACK_A::ENABLE
     }
 }
-#[doc = "Field `LOOPBACK` writer - EMAC Loopback Mode For Test"]
+#[doc = "Field `loopback` writer - EMAC Loopback Mode For Test"]
 pub type LOOPBACK_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, LOOPBACK_A, O>;
 impl<'a, const O: u8> LOOPBACK_W<'a, O> {
@@ -165,7 +165,7 @@ impl From<DUPLEX_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DUPLEX` reader - EMAC Transfer Mode"]
+#[doc = "Field `duplex` reader - EMAC Transfer Mode"]
 pub type DUPLEX_R = crate::BitReader<DUPLEX_A>;
 impl DUPLEX_R {
     #[doc = "Get enumerated values variant"]
@@ -187,7 +187,7 @@ impl DUPLEX_R {
         *self == DUPLEX_A::FULL_DUPLEX
     }
 }
-#[doc = "Field `DUPLEX` writer - EMAC Transfer Mode"]
+#[doc = "Field `duplex` writer - EMAC Transfer Mode"]
 pub type DUPLEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, DUPLEX_A, O>;
 impl<'a, const O: u8> DUPLEX_W<'a, O> {
     #[doc = "`0`"]
@@ -254,7 +254,7 @@ impl crate::Readable for EMAC_BASIC_CTL0_SPEC {
 impl crate::Writable for EMAC_BASIC_CTL0_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets EMAC_BASIC_CTL0 to value 0"]
+#[doc = "`reset()` method sets emac_basic_ctl0 to value 0"]
 impl crate::Resettable for EMAC_BASIC_CTL0_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

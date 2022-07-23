@@ -1,4 +1,4 @@
-#[doc = "Register `MCR` reader"]
+#[doc = "Register `mcr` reader"]
 pub struct R(crate::R<MCR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<MCR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<MCR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `MCR` writer"]
+#[doc = "Register `mcr` writer"]
 pub struct W(crate::W<MCR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<MCR_SPEC>;
@@ -41,7 +41,7 @@ pub enum FUNCTION_A {
     #[doc = "0: `0`"]
     UART = 0,
     #[doc = "1: `1`"]
-    IRDA_SIR = 1,
+    IR_DA_SIR = 1,
     #[doc = "2: `10`"]
     RS485 = 2,
 }
@@ -59,7 +59,7 @@ impl FUNCTION_R {
     pub fn variant(&self) -> FUNCTION_A {
         match self.bits {
             0 => FUNCTION_A::UART,
-            1 => FUNCTION_A::IRDA_SIR,
+            1 => FUNCTION_A::IR_DA_SIR,
             2 => FUNCTION_A::RS485,
             _ => unreachable!(),
         }
@@ -69,10 +69,10 @@ impl FUNCTION_R {
     pub fn is_uart(&self) -> bool {
         *self == FUNCTION_A::UART
     }
-    #[doc = "Checks if the value of the field is `IRDA_SIR`"]
+    #[doc = "Checks if the value of the field is `IR_DA_SIR`"]
     #[inline(always)]
     pub fn is_ir_da_sir(&self) -> bool {
-        *self == FUNCTION_A::IRDA_SIR
+        *self == FUNCTION_A::IR_DA_SIR
     }
     #[doc = "Checks if the value of the field is `RS485`"]
     #[inline(always)]
@@ -91,7 +91,7 @@ impl<'a, const O: u8> FUNCTION_W<'a, O> {
     #[doc = "`1`"]
     #[inline(always)]
     pub fn ir_da_sir(self) -> &'a mut W {
-        self.variant(FUNCTION_A::IRDA_SIR)
+        self.variant(FUNCTION_A::IR_DA_SIR)
     }
     #[doc = "`10`"]
     #[inline(always)]
@@ -372,7 +372,7 @@ impl crate::Readable for MCR_SPEC {
 impl crate::Writable for MCR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets MCR to value 0"]
+#[doc = "`reset()` method sets mcr to value 0"]
 impl crate::Resettable for MCR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `HC_INTERRUPT_ENABLE` reader"]
+#[doc = "Register `hc_interrupt_enable` reader"]
 pub struct R(crate::R<HC_INTERRUPT_ENABLE_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_INTERRUPT_ENABLE_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_INTERRUPT_ENABLE_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_INTERRUPT_ENABLE` writer"]
+#[doc = "Register `hc_interrupt_enable` writer"]
 pub struct W(crate::W<HC_INTERRUPT_ENABLE_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_INTERRUPT_ENABLE_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<HC_INTERRUPT_ENABLE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `MASTER_INTERRUPT_ENABLE` reader - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable."]
+#[doc = "Field `master_interrupt_enable` reader - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable."]
 pub type MASTER_INTERRUPT_ENABLE_R = crate::BitReader<bool>;
-#[doc = "Field `MASTER_INTERRUPT_ENABLE` writer - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable."]
+#[doc = "Field `master_interrupt_enable` writer - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field enables interrupt generation due to events specified in the other bits of this register. This is used by HCD as Master Interrupt Enable."]
 pub type MASTER_INTERRUPT_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, bool, O>;
 #[doc = "RootHubStatusChange Interrupt Enable\n\nValue on reset: 0"]
@@ -53,7 +53,7 @@ impl From<ROOT_HUB_STATUS_CHANGE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ROOT_HUB_STATUS_CHANGE` reader - RootHubStatusChange Interrupt Enable"]
+#[doc = "Field `root_hub_status_change` reader - RootHubStatusChange Interrupt Enable"]
 pub type ROOT_HUB_STATUS_CHANGE_R = crate::BitReader<ROOT_HUB_STATUS_CHANGE_A>;
 impl ROOT_HUB_STATUS_CHANGE_R {
     #[doc = "Get enumerated values variant"]
@@ -75,7 +75,7 @@ impl ROOT_HUB_STATUS_CHANGE_R {
         *self == ROOT_HUB_STATUS_CHANGE_A::ENABLE
     }
 }
-#[doc = "Field `ROOT_HUB_STATUS_CHANGE` writer - RootHubStatusChange Interrupt Enable"]
+#[doc = "Field `root_hub_status_change` writer - RootHubStatusChange Interrupt Enable"]
 pub type ROOT_HUB_STATUS_CHANGE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, ROOT_HUB_STATUS_CHANGE_A, O>;
 impl<'a, const O: u8> ROOT_HUB_STATUS_CHANGE_W<'a, O> {
@@ -104,7 +104,7 @@ impl From<FRAME_NUMBER_OVERFLOW_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FRAME_NUMBER_OVERFLOW` reader - FrameNumberOverflow Interrupt Enable"]
+#[doc = "Field `frame_number_overflow` reader - FrameNumberOverflow Interrupt Enable"]
 pub type FRAME_NUMBER_OVERFLOW_R = crate::BitReader<FRAME_NUMBER_OVERFLOW_A>;
 impl FRAME_NUMBER_OVERFLOW_R {
     #[doc = "Get enumerated values variant"]
@@ -126,7 +126,7 @@ impl FRAME_NUMBER_OVERFLOW_R {
         *self == FRAME_NUMBER_OVERFLOW_A::ENABLE
     }
 }
-#[doc = "Field `FRAME_NUMBER_OVERFLOW` writer - FrameNumberOverflow Interrupt Enable"]
+#[doc = "Field `frame_number_overflow` writer - FrameNumberOverflow Interrupt Enable"]
 pub type FRAME_NUMBER_OVERFLOW_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, FRAME_NUMBER_OVERFLOW_A, O>;
 impl<'a, const O: u8> FRAME_NUMBER_OVERFLOW_W<'a, O> {
@@ -155,7 +155,7 @@ impl From<UNRECOVERABLE_ERROR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `UNRECOVERABLE_ERROR` reader - UnrecoverableError Interrupt Enable"]
+#[doc = "Field `unrecoverable_error` reader - UnrecoverableError Interrupt Enable"]
 pub type UNRECOVERABLE_ERROR_R = crate::BitReader<UNRECOVERABLE_ERROR_A>;
 impl UNRECOVERABLE_ERROR_R {
     #[doc = "Get enumerated values variant"]
@@ -177,7 +177,7 @@ impl UNRECOVERABLE_ERROR_R {
         *self == UNRECOVERABLE_ERROR_A::ENABLE
     }
 }
-#[doc = "Field `UNRECOVERABLE_ERROR` writer - UnrecoverableError Interrupt Enable"]
+#[doc = "Field `unrecoverable_error` writer - UnrecoverableError Interrupt Enable"]
 pub type UNRECOVERABLE_ERROR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, UNRECOVERABLE_ERROR_A, O>;
 impl<'a, const O: u8> UNRECOVERABLE_ERROR_W<'a, O> {
@@ -206,7 +206,7 @@ impl From<RESUME_DETECTED_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RESUME_DETECTED` reader - ResumeDetected Interrupt Enable"]
+#[doc = "Field `resume_detected` reader - ResumeDetected Interrupt Enable"]
 pub type RESUME_DETECTED_R = crate::BitReader<RESUME_DETECTED_A>;
 impl RESUME_DETECTED_R {
     #[doc = "Get enumerated values variant"]
@@ -228,7 +228,7 @@ impl RESUME_DETECTED_R {
         *self == RESUME_DETECTED_A::ENABLE
     }
 }
-#[doc = "Field `RESUME_DETECTED` writer - ResumeDetected Interrupt Enable"]
+#[doc = "Field `resume_detected` writer - ResumeDetected Interrupt Enable"]
 pub type RESUME_DETECTED_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, RESUME_DETECTED_A, O>;
 impl<'a, const O: u8> RESUME_DETECTED_W<'a, O> {
@@ -257,7 +257,7 @@ impl From<START_OF_FRAME_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `START_OF_FRAME` reader - StartofFrame Interrupt Enable"]
+#[doc = "Field `start_of_frame` reader - StartofFrame Interrupt Enable"]
 pub type START_OF_FRAME_R = crate::BitReader<START_OF_FRAME_A>;
 impl START_OF_FRAME_R {
     #[doc = "Get enumerated values variant"]
@@ -279,7 +279,7 @@ impl START_OF_FRAME_R {
         *self == START_OF_FRAME_A::ENABLE
     }
 }
-#[doc = "Field `START_OF_FRAME` writer - StartofFrame Interrupt Enable"]
+#[doc = "Field `start_of_frame` writer - StartofFrame Interrupt Enable"]
 pub type START_OF_FRAME_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, START_OF_FRAME_A, O>;
 impl<'a, const O: u8> START_OF_FRAME_W<'a, O> {
@@ -308,7 +308,7 @@ impl From<WRITEBACK_DONE_HEAD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `WRITEBACK_DONE_HEAD` reader - WritebackDoneHead Interrupt Enable"]
+#[doc = "Field `writeback_done_head` reader - WritebackDoneHead Interrupt Enable"]
 pub type WRITEBACK_DONE_HEAD_R = crate::BitReader<WRITEBACK_DONE_HEAD_A>;
 impl WRITEBACK_DONE_HEAD_R {
     #[doc = "Get enumerated values variant"]
@@ -330,7 +330,7 @@ impl WRITEBACK_DONE_HEAD_R {
         *self == WRITEBACK_DONE_HEAD_A::ENABLE
     }
 }
-#[doc = "Field `WRITEBACK_DONE_HEAD` writer - WritebackDoneHead Interrupt Enable"]
+#[doc = "Field `writeback_done_head` writer - WritebackDoneHead Interrupt Enable"]
 pub type WRITEBACK_DONE_HEAD_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, WRITEBACK_DONE_HEAD_A, O>;
 impl<'a, const O: u8> WRITEBACK_DONE_HEAD_W<'a, O> {
@@ -359,7 +359,7 @@ impl From<SCHEDULING_OVERRUN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SCHEDULING_OVERRUN` reader - SchedulingOverrun Interrupt Enable"]
+#[doc = "Field `scheduling_overrun` reader - SchedulingOverrun Interrupt Enable"]
 pub type SCHEDULING_OVERRUN_R = crate::BitReader<SCHEDULING_OVERRUN_A>;
 impl SCHEDULING_OVERRUN_R {
     #[doc = "Get enumerated values variant"]
@@ -381,7 +381,7 @@ impl SCHEDULING_OVERRUN_R {
         *self == SCHEDULING_OVERRUN_A::ENABLE
     }
 }
-#[doc = "Field `SCHEDULING_OVERRUN` writer - SchedulingOverrun Interrupt Enable"]
+#[doc = "Field `scheduling_overrun` writer - SchedulingOverrun Interrupt Enable"]
 pub type SCHEDULING_OVERRUN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_ENABLE_SPEC, SCHEDULING_OVERRUN_A, O>;
 impl<'a, const O: u8> SCHEDULING_OVERRUN_W<'a, O> {
@@ -499,7 +499,7 @@ impl crate::Readable for HC_INTERRUPT_ENABLE_SPEC {
 impl crate::Writable for HC_INTERRUPT_ENABLE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_INTERRUPT_ENABLE to value 0"]
+#[doc = "`reset()` method sets hc_interrupt_enable to value 0"]
 impl crate::Resettable for HC_INTERRUPT_ENABLE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

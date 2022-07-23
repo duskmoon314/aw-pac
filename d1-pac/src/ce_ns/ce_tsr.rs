@@ -1,4 +1,4 @@
-#[doc = "Register `CE_TSR` reader"]
+#[doc = "Register `ce_tsr` reader"]
 pub struct R(crate::R<CE_TSR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_TSR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_TSR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_TSR` writer"]
+#[doc = "Register `ce_tsr` writer"]
 pub struct W(crate::W<CE_TSR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_TSR_SPEC>;
@@ -53,7 +53,7 @@ impl From<RUNNING_CHANNEL_NUMBER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RUNNING_CHANNEL_NUMBER` reader - Running Channel Number"]
+#[doc = "Field `running_channel_number` reader - Running Channel Number"]
 pub type RUNNING_CHANNEL_NUMBER_R = crate::FieldReader<u8, RUNNING_CHANNEL_NUMBER_A>;
 impl RUNNING_CHANNEL_NUMBER_R {
     #[doc = "Get enumerated values variant"]
@@ -116,7 +116,7 @@ impl crate::Readable for CE_TSR_SPEC {
 impl crate::Writable for CE_TSR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_TSR to value 0"]
+#[doc = "`reset()` method sets ce_tsr to value 0"]
 impl crate::Resettable for CE_TSR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `TWI_BGR` reader"]
+#[doc = "Register `twi_bgr` reader"]
 pub struct R(crate::R<TWI_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TWI_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TWI_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TWI_BGR` writer"]
+#[doc = "Register `twi_bgr` writer"]
 pub struct W(crate::W<TWI_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TWI_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<TWI_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `TWI(0-3)_RST` reader - Reset"]
+#[doc = "Fields `twi(0-3)_rst` reader - Reset"]
 pub type TWI_RST_R = crate::BitReader<TWI_RST_A>;
 impl TWI_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl TWI_RST_R {
         *self == TWI_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `TWI(0-3)_RST` writer - Reset"]
+#[doc = "Fields `twi(0-3)_rst` writer - Reset"]
 pub type TWI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_BGR_SPEC, TWI_RST_A, O>;
 impl<'a, const O: u8> TWI_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<TWI_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `TWI(0-3)_GATING` reader - Gating Clock"]
+#[doc = "Fields `twi(0-3)_gating` reader - Gating Clock"]
 pub type TWI_GATING_R = crate::BitReader<TWI_GATING_A>;
 impl TWI_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl TWI_GATING_R {
         *self == TWI_GATING_A::PASS
     }
 }
-#[doc = "Fields `TWI(0-3)_GATING` writer - Gating Clock"]
+#[doc = "Fields `twi(0-3)_gating` writer - Gating Clock"]
 pub type TWI_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_BGR_SPEC, TWI_GATING_A, O>;
 impl<'a, const O: u8> TWI_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -257,7 +257,7 @@ impl crate::Readable for TWI_BGR_SPEC {
 impl crate::Writable for TWI_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TWI_BGR to value 0"]
+#[doc = "`reset()` method sets twi_bgr to value 0"]
 impl crate::Resettable for TWI_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_RESP2` reader"]
+#[doc = "Register `smhc_resp2` reader"]
 pub struct R(crate::R<SMHC_RESP2_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_RESP2_SPEC>;
@@ -22,7 +22,7 @@ impl crate::RegisterSpec for SMHC_RESP2_SPEC {
 impl crate::Readable for SMHC_RESP2_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets SMHC_RESP2 to value 0"]
+#[doc = "`reset()` method sets smhc_resp2 to value 0"]
 impl crate::Resettable for SMHC_RESP2_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

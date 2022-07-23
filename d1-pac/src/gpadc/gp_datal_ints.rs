@@ -1,4 +1,4 @@
-#[doc = "Register `GP_DATAL_INTS` reader"]
+#[doc = "Register `gp_datal_ints` reader"]
 pub struct R(crate::R<GP_DATAL_INTS_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_DATAL_INTS_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_DATAL_INTS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_DATAL_INTS` writer"]
+#[doc = "Register `gp_datal_ints` writer"]
 pub struct W(crate::W<GP_DATAL_INTS_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_DATAL_INTS_SPEC>;
@@ -48,7 +48,7 @@ impl From<CH_LOW_PENGDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `CH(0-1)_LOW_PENGDING` reader - Channel Voltage Low Available Interrupt Status"]
+#[doc = "Fields `ch(0-1)_low_pengding` reader - Channel Voltage Low Available Interrupt Status"]
 pub type CH_LOW_PENGDING_R = crate::BitReader<CH_LOW_PENGDING_A>;
 impl CH_LOW_PENGDING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CH_LOW_PENGDING_R {
         *self == CH_LOW_PENGDING_A::PENDING
     }
 }
-#[doc = "Fields `CH(0-1)_LOW_PENGDING` writer - Channel Voltage Low Available Interrupt Status"]
+#[doc = "Fields `ch(0-1)_low_pengding` writer - Channel Voltage Low Available Interrupt Status"]
 pub type CH_LOW_PENGDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, GP_DATAL_INTS_SPEC, CH_LOW_PENGDING_A, O>;
 impl<'a, const O: u8> CH_LOW_PENGDING_W<'a, O> {
@@ -138,7 +138,7 @@ impl crate::Readable for GP_DATAL_INTS_SPEC {
 impl crate::Writable for GP_DATAL_INTS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_DATAL_INTS to value 0"]
+#[doc = "`reset()` method sets gp_datal_ints to value 0"]
 impl crate::Resettable for GP_DATAL_INTS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

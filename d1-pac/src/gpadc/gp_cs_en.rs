@@ -1,4 +1,4 @@
-#[doc = "Register `GP_CS_EN` reader"]
+#[doc = "Register `gp_cs_en` reader"]
 pub struct R(crate::R<GP_CS_EN_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_CS_EN_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_CS_EN_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_CS_EN` writer"]
+#[doc = "Register `gp_cs_en` writer"]
 pub struct W(crate::W<GP_CS_EN_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_CS_EN_SPEC>;
@@ -48,7 +48,7 @@ impl From<ADC_CH_CMP_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ADC_CH(0-1)_CMP_EN` reader - Channel Compare Enable"]
+#[doc = "Fields `adc_ch(0-1)_cmp_en` reader - Channel Compare Enable"]
 pub type ADC_CH_CMP_EN_R = crate::BitReader<ADC_CH_CMP_EN_A>;
 impl ADC_CH_CMP_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ADC_CH_CMP_EN_R {
         *self == ADC_CH_CMP_EN_A::ENABLE
     }
 }
-#[doc = "Fields `ADC_CH(0-1)_CMP_EN` writer - Channel Compare Enable"]
+#[doc = "Fields `adc_ch(0-1)_cmp_en` writer - Channel Compare Enable"]
 pub type ADC_CH_CMP_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_CS_EN_SPEC, ADC_CH_CMP_EN_A, O>;
 impl<'a, const O: u8> ADC_CH_CMP_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<ADC_CH_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ADC_CH(0-1)_SELECT` reader - Analog Input Channel Select"]
+#[doc = "Fields `adc_ch(0-1)_select` reader - Analog Input Channel Select"]
 pub type ADC_CH_SELECT_R = crate::BitReader<ADC_CH_SELECT_A>;
 impl ADC_CH_SELECT_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl ADC_CH_SELECT_R {
         *self == ADC_CH_SELECT_A::ENABLE
     }
 }
-#[doc = "Fields `ADC_CH(0-1)_SELECT` writer - Analog Input Channel Select"]
+#[doc = "Fields `adc_ch(0-1)_select` writer - Analog Input Channel Select"]
 pub type ADC_CH_SELECT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_CS_EN_SPEC, ADC_CH_SELECT_A, O>;
 impl<'a, const O: u8> ADC_CH_SELECT_W<'a, O> {
@@ -219,7 +219,7 @@ impl crate::Readable for GP_CS_EN_SPEC {
 impl crate::Writable for GP_CS_EN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_CS_EN to value 0"]
+#[doc = "`reset()` method sets gp_cs_en to value 0"]
 impl crate::Resettable for GP_CS_EN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

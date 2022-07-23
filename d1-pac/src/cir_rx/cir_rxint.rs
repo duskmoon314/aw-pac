@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_RXINT` reader"]
+#[doc = "Register `cir_rxint` reader"]
 pub struct R(crate::R<CIR_RXINT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_RXINT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_RXINT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_RXINT` writer"]
+#[doc = "Register `cir_rxint` writer"]
 pub struct W(crate::W<CIR_RXINT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_RXINT_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CIR_RXINT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `RAL` reader - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
+#[doc = "Field `ral` reader - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
 pub type RAL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `RAL` writer - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
+#[doc = "Field `ral` writer - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
 pub type RAL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXINT_SPEC, u8, u8, 6, O>;
 #[doc = "RX FIFO DMA Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -52,7 +52,7 @@ impl From<DRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DRQ_EN` reader - RX FIFO DMA Enable"]
+#[doc = "Field `drq_en` reader - RX FIFO DMA Enable"]
 pub type DRQ_EN_R = crate::BitReader<DRQ_EN_A>;
 impl DRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -74,7 +74,7 @@ impl DRQ_EN_R {
         *self == DRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `DRQ_EN` writer - RX FIFO DMA Enable"]
+#[doc = "Field `drq_en` writer - RX FIFO DMA Enable"]
 pub type DRQ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, DRQ_EN_A, O>;
 impl<'a, const O: u8> DRQ_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -102,7 +102,7 @@ impl From<RAI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RAI_EN` reader - RX FIFO Available Interrupt Enable"]
+#[doc = "Field `rai_en` reader - RX FIFO Available Interrupt Enable"]
 pub type RAI_EN_R = crate::BitReader<RAI_EN_A>;
 impl RAI_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -124,7 +124,7 @@ impl RAI_EN_R {
         *self == RAI_EN_A::ENABLE
     }
 }
-#[doc = "Field `RAI_EN` writer - RX FIFO Available Interrupt Enable"]
+#[doc = "Field `rai_en` writer - RX FIFO Available Interrupt Enable"]
 pub type RAI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, RAI_EN_A, O>;
 impl<'a, const O: u8> RAI_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -152,7 +152,7 @@ impl From<RPEI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RPEI_EN` reader - Receiver Packet End Interrupt Enable"]
+#[doc = "Field `rpei_en` reader - Receiver Packet End Interrupt Enable"]
 pub type RPEI_EN_R = crate::BitReader<RPEI_EN_A>;
 impl RPEI_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -174,7 +174,7 @@ impl RPEI_EN_R {
         *self == RPEI_EN_A::ENABLE
     }
 }
-#[doc = "Field `RPEI_EN` writer - Receiver Packet End Interrupt Enable"]
+#[doc = "Field `rpei_en` writer - Receiver Packet End Interrupt Enable"]
 pub type RPEI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, RPEI_EN_A, O>;
 impl<'a, const O: u8> RPEI_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -202,7 +202,7 @@ impl From<ROI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ROI_EN` reader - Receiver FIFO Overrun Interrupt Enable"]
+#[doc = "Field `roi_en` reader - Receiver FIFO Overrun Interrupt Enable"]
 pub type ROI_EN_R = crate::BitReader<ROI_EN_A>;
 impl ROI_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -224,7 +224,7 @@ impl ROI_EN_R {
         *self == ROI_EN_A::ENABLE
     }
 }
-#[doc = "Field `ROI_EN` writer - Receiver FIFO Overrun Interrupt Enable"]
+#[doc = "Field `roi_en` writer - Receiver FIFO Overrun Interrupt Enable"]
 pub type ROI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXINT_SPEC, ROI_EN_A, O>;
 impl<'a, const O: u8> ROI_EN_W<'a, O> {
     #[doc = "Disable"]
@@ -311,7 +311,7 @@ impl crate::Readable for CIR_RXINT_SPEC {
 impl crate::Writable for CIR_RXINT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_RXINT to value 0"]
+#[doc = "`reset()` method sets cir_rxint to value 0"]
 impl crate::Resettable for CIR_RXINT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

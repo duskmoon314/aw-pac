@@ -1,4 +1,4 @@
-#[doc = "Register `SPI_FSR` reader"]
+#[doc = "Register `spi_fsr` reader"]
 pub struct R(crate::R<SPI_FSR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPI_FSR_SPEC>;
@@ -66,7 +66,7 @@ impl crate::RegisterSpec for SPI_FSR_SPEC {
 impl crate::Readable for SPI_FSR_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets SPI_FSR to value 0"]
+#[doc = "`reset()` method sets spi_fsr to value 0"]
 impl crate::Resettable for SPI_FSR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

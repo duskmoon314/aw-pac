@@ -1,4 +1,4 @@
-#[doc = "Register `HC_DONE_HEAD` reader"]
+#[doc = "Register `hc_done_head` reader"]
 pub struct R(crate::R<HC_DONE_HEAD_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_DONE_HEAD_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_DONE_HEAD_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_DONE_HEAD` writer"]
+#[doc = "Register `hc_done_head` writer"]
 pub struct W(crate::W<HC_DONE_HEAD_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_DONE_HEAD_SPEC>;
@@ -34,12 +34,12 @@ impl From<crate::W<HC_DONE_HEAD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DH_31_4` reader - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
+#[doc = "Field `dh_31_4` reader - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
 pub type DH_31_4_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `DH_31_4` writer - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
+#[doc = "Field `dh_31_4` writer - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
 pub type DH_31_4_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_DONE_HEAD_SPEC, u32, u32, 28, O>;
-#[doc = "Field `DH_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
+#[doc = "Field `dh_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
 pub type DH_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 4:31 - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
@@ -79,7 +79,7 @@ impl crate::Readable for HC_DONE_HEAD_SPEC {
 impl crate::Writable for HC_DONE_HEAD_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_DONE_HEAD to value 0"]
+#[doc = "`reset()` method sets hc_done_head to value 0"]
 impl crate::Resettable for HC_DONE_HEAD_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

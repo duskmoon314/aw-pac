@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_CLKDIV` reader"]
+#[doc = "Register `smhc_clkdiv` reader"]
 pub struct R(crate::R<SMHC_CLKDIV_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_CLKDIV_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_CLKDIV_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_CLKDIV` writer"]
+#[doc = "Register `smhc_clkdiv` writer"]
 pub struct W(crate::W<SMHC_CLKDIV_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_CLKDIV_SPEC>;
@@ -48,7 +48,7 @@ impl From<MASK_DATA0_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `MASK_DATA0` reader - "]
+#[doc = "Field `mask_data0` reader - "]
 pub type MASK_DATA0_R = crate::BitReader<MASK_DATA0_A>;
 impl MASK_DATA0_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl MASK_DATA0_R {
         *self == MASK_DATA0_A::MASK
     }
 }
-#[doc = "Field `MASK_DATA0` writer - "]
+#[doc = "Field `mask_data0` writer - "]
 pub type MASK_DATA0_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, MASK_DATA0_A, O>;
 impl<'a, const O: u8> MASK_DATA0_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<CCLK_CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCLK_CTRL` reader - Card Clock Output Control"]
+#[doc = "Field `cclk_ctrl` reader - Card Clock Output Control"]
 pub type CCLK_CTRL_R = crate::BitReader<CCLK_CTRL_A>;
 impl CCLK_CTRL_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl CCLK_CTRL_R {
         *self == CCLK_CTRL_A::OFF_IDLE
     }
 }
-#[doc = "Field `CCLK_CTRL` writer - Card Clock Output Control"]
+#[doc = "Field `cclk_ctrl` writer - Card Clock Output Control"]
 pub type CCLK_CTRL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_CTRL_A, O>;
 impl<'a, const O: u8> CCLK_CTRL_W<'a, O> {
     #[doc = "Card clock is always on"]
@@ -149,7 +149,7 @@ impl From<CCLK_ENB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CCLK_ENB` reader - Card Clock Enable"]
+#[doc = "Field `cclk_enb` reader - Card Clock Enable"]
 pub type CCLK_ENB_R = crate::BitReader<CCLK_ENB_A>;
 impl CCLK_ENB_R {
     #[doc = "Get enumerated values variant"]
@@ -171,7 +171,7 @@ impl CCLK_ENB_R {
         *self == CCLK_ENB_A::ON
     }
 }
-#[doc = "Field `CCLK_ENB` writer - Card Clock Enable"]
+#[doc = "Field `cclk_enb` writer - Card Clock Enable"]
 pub type CCLK_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CLKDIV_SPEC, CCLK_ENB_A, O>;
 impl<'a, const O: u8> CCLK_ENB_W<'a, O> {
     #[doc = "Card Clock is off"]
@@ -185,9 +185,9 @@ impl<'a, const O: u8> CCLK_ENB_W<'a, O> {
         self.variant(CCLK_ENB_A::ON)
     }
 }
-#[doc = "Field `CCLK_DIV` reader - Card Clock Divider"]
+#[doc = "Field `cclk_div` reader - Card Clock Divider"]
 pub type CCLK_DIV_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `CCLK_DIV` writer - Card Clock Divider"]
+#[doc = "Field `cclk_div` writer - Card Clock Divider"]
 pub type CCLK_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_CLKDIV_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 31"]
@@ -252,7 +252,7 @@ impl crate::Readable for SMHC_CLKDIV_SPEC {
 impl crate::Writable for SMHC_CLKDIV_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_CLKDIV to value 0"]
+#[doc = "`reset()` method sets smhc_clkdiv to value 0"]
 impl crate::Resettable for SMHC_CLKDIV_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_DATA_FINISH_CNT` reader"]
+#[doc = "Register `ledc_data_finish_cnt` reader"]
 pub struct R(crate::R<LEDC_DATA_FINISH_CNT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LEDC_DATA_FINISH_CNT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LEDC_DATA_FINISH_CNT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LEDC_DATA_FINISH_CNT` writer"]
+#[doc = "Register `ledc_data_finish_cnt` writer"]
 pub struct W(crate::W<LEDC_DATA_FINISH_CNT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LEDC_DATA_FINISH_CNT_SPEC>;
@@ -34,12 +34,12 @@ impl From<crate::W<LEDC_DATA_FINISH_CNT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `LED_WAIT_DATA_TIME` reader - "]
+#[doc = "Field `led_wait_data_time` reader - "]
 pub type LED_WAIT_DATA_TIME_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `LED_WAIT_DATA_TIME` writer - "]
+#[doc = "Field `led_wait_data_time` writer - "]
 pub type LED_WAIT_DATA_TIME_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LEDC_DATA_FINISH_CNT_SPEC, u16, u16, 14, O>;
-#[doc = "Field `LED_DATA_FINISH_CNT` reader - "]
+#[doc = "Field `led_data_finish_cnt` reader - "]
 pub type LED_DATA_FINISH_CNT_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 16:29"]
@@ -79,7 +79,7 @@ impl crate::Readable for LEDC_DATA_FINISH_CNT_SPEC {
 impl crate::Writable for LEDC_DATA_FINISH_CNT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LEDC_DATA_FINISH_CNT to value 0"]
+#[doc = "`reset()` method sets ledc_data_finish_cnt to value 0"]
 impl crate::Resettable for LEDC_DATA_FINISH_CNT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

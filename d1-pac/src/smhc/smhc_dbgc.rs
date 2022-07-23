@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_DBGC` reader"]
+#[doc = "Register `smhc_dbgc` reader"]
 pub struct R(crate::R<SMHC_DBGC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_DBGC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_DBGC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_DBGC` writer"]
+#[doc = "Register `smhc_dbgc` writer"]
 pub struct W(crate::W<SMHC_DBGC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_DBGC_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for SMHC_DBGC_SPEC {
 impl crate::Writable for SMHC_DBGC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_DBGC to value 0"]
+#[doc = "`reset()` method sets smhc_dbgc to value 0"]
 impl crate::Resettable for SMHC_DBGC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

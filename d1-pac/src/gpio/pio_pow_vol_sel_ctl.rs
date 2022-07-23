@@ -48,7 +48,7 @@ impl From<VCC_PF_PWR_VOL_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VCC_PF_PWR_VOL_SEL` reader - VCC_PF Power Voltage Select Control"]
+#[doc = "Field `vcc_pf_pwr_vol_sel` reader - VCC_PF Power Voltage Select Control"]
 pub type VCC_PF_PWR_VOL_SEL_R = crate::BitReader<VCC_PF_PWR_VOL_SEL_A>;
 impl VCC_PF_PWR_VOL_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl VCC_PF_PWR_VOL_SEL_R {
         *self == VCC_PF_PWR_VOL_SEL_A::V33
     }
 }
-#[doc = "Field `VCC_PF_PWR_VOL_SEL` writer - VCC_PF Power Voltage Select Control"]
+#[doc = "Field `vcc_pf_pwr_vol_sel` writer - VCC_PF Power Voltage Select Control"]
 pub type VCC_PF_PWR_VOL_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PIO_POW_VOL_SEL_CTL_SPEC, VCC_PF_PWR_VOL_SEL_A, O>;
 impl<'a, const O: u8> VCC_PF_PWR_VOL_SEL_W<'a, O> {

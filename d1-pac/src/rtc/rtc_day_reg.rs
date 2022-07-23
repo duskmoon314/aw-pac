@@ -1,4 +1,4 @@
-#[doc = "Register `RTC_DAY_REG` reader"]
+#[doc = "Register `rtc_day_reg` reader"]
 pub struct R(crate::R<RTC_DAY_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<RTC_DAY_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<RTC_DAY_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `RTC_DAY_REG` writer"]
+#[doc = "Register `rtc_day_reg` writer"]
 pub struct W(crate::W<RTC_DAY_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<RTC_DAY_REG_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<RTC_DAY_REG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DAY` reader - Set Day Range from 0 to 65535."]
+#[doc = "Field `day` reader - Set Day Range from 0 to 65535."]
 pub type DAY_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `DAY` writer - Set Day Range from 0 to 65535."]
+#[doc = "Field `day` writer - Set Day Range from 0 to 65535."]
 pub type DAY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RTC_DAY_REG_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Set Day Range from 0 to 65535."]
@@ -71,7 +71,7 @@ impl crate::Readable for RTC_DAY_REG_SPEC {
 impl crate::Writable for RTC_DAY_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets RTC_DAY_REG to value 0"]
+#[doc = "`reset()` method sets rtc_day_reg to value 0"]
 impl crate::Resettable for RTC_DAY_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

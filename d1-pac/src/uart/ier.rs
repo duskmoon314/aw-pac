@@ -1,4 +1,4 @@
-#[doc = "Register `IER` reader"]
+#[doc = "Register `ier` reader"]
 pub struct R(crate::R<IER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<IER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<IER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `IER` writer"]
+#[doc = "Register `ier` writer"]
 pub struct W(crate::W<IER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<IER_SPEC>;
@@ -417,7 +417,7 @@ impl crate::Readable for IER_SPEC {
 impl crate::Writable for IER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets IER to value 0"]
+#[doc = "`reset()` method sets ier to value 0"]
 impl crate::Resettable for IER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

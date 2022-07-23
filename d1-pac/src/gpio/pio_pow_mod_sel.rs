@@ -48,7 +48,7 @@ impl From<VCC_IO_PWR_MOD_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `VCC_IO_PWR_MOD_SEL` reader - VCC_IO POWER MODE Select"]
+#[doc = "Field `vcc_io_pwr_mod_sel` reader - VCC_IO POWER MODE Select"]
 pub type VCC_IO_PWR_MOD_SEL_R = crate::BitReader<VCC_IO_PWR_MOD_SEL_A>;
 impl VCC_IO_PWR_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl VCC_IO_PWR_MOD_SEL_R {
         *self == VCC_IO_PWR_MOD_SEL_A::V18
     }
 }
-#[doc = "Field `VCC_IO_PWR_MOD_SEL` writer - VCC_IO POWER MODE Select"]
+#[doc = "Field `vcc_io_pwr_mod_sel` writer - VCC_IO POWER MODE Select"]
 pub type VCC_IO_PWR_MOD_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PIO_POW_MOD_SEL_SPEC, VCC_IO_PWR_MOD_SEL_A, O>;
 impl<'a, const O: u8> VCC_IO_PWR_MOD_SEL_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<P_PWR_MOD_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `P(0-4)_PWR_MOD_SEL` reader - PX_POWER POWER MODE Select"]
+#[doc = "Fields `p(0-4)_pwr_mod_sel` reader - PX_POWER POWER MODE Select"]
 pub type P_PWR_MOD_SEL_R = crate::BitReader<P_PWR_MOD_SEL_A>;
 impl P_PWR_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl P_PWR_MOD_SEL_R {
         *self == P_PWR_MOD_SEL_A::V18
     }
 }
-#[doc = "Fields `P(0-4)_PWR_MOD_SEL` writer - PX_POWER POWER MODE Select"]
+#[doc = "Fields `p(0-4)_pwr_mod_sel` writer - PX_POWER POWER MODE Select"]
 pub type P_PWR_MOD_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PIO_POW_MOD_SEL_SPEC, P_PWR_MOD_SEL_A, O>;
 impl<'a, const O: u8> P_PWR_MOD_SEL_W<'a, O> {
@@ -149,27 +149,27 @@ impl R {
     }
     #[doc = "Bit 2 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pc_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn p_c_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pd_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn p_d_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pe_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn p_e_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pf_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn p_f_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pg_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
+    pub fn p_g_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
@@ -186,27 +186,27 @@ impl W {
     }
     #[doc = "Bit 2 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pc_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<2> {
+    pub fn p_c_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<2> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 3 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pd_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<3> {
+    pub fn p_d_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<3> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 4 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pe_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<4> {
+    pub fn p_e_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<4> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 5 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pf_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<5> {
+    pub fn p_f_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<5> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 6 - PX_POWER POWER MODE Select"]
     #[inline(always)]
-    pub fn pg_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<6> {
+    pub fn p_g_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<6> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

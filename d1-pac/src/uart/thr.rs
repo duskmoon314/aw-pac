@@ -1,4 +1,4 @@
-#[doc = "Register `THR` writer"]
+#[doc = "Register `thr` writer"]
 pub struct W(crate::W<THR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<THR_SPEC>;
@@ -43,7 +43,7 @@ impl crate::RegisterSpec for THR_SPEC {
 impl crate::Writable for THR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets THR to value 0"]
+#[doc = "`reset()` method sets thr to value 0"]
 impl crate::Resettable for THR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

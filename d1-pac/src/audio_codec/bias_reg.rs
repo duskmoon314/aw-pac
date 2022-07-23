@@ -1,4 +1,4 @@
-#[doc = "Register `BIAS_REG` reader"]
+#[doc = "Register `bias_reg` reader"]
 pub struct R(crate::R<BIAS_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<BIAS_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<BIAS_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `BIAS_REG` writer"]
+#[doc = "Register `bias_reg` writer"]
 pub struct W(crate::W<BIAS_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<BIAS_REG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for BIAS_REG_SPEC {
 impl crate::Writable for BIAS_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets BIAS_REG to value 0"]
+#[doc = "`reset()` method sets bias_reg to value 0"]
 impl crate::Resettable for BIAS_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

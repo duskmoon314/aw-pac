@@ -1,4 +1,4 @@
-#[doc = "Register `SPINLOCK_STATUS_REG` reader"]
+#[doc = "Register `spinlock_status_reg` reader"]
 pub struct R(crate::R<SPINLOCK_STATUS_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SPINLOCK_STATUS_REG_SPEC>;
@@ -28,7 +28,7 @@ impl From<LOCK_REG_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `LOCK_REG(0-31)_STATUS` reader - Lock\\[i\\]
+#[doc = "Fields `lock_reg(0-31)_status` reader - Lock\\[i\\]
 status"]
 pub type LOCK_REG_STATUS_R = crate::BitReader<LOCK_REG_STATUS_A>;
 impl LOCK_REG_STATUS_R {
@@ -260,7 +260,7 @@ impl crate::RegisterSpec for SPINLOCK_STATUS_REG_SPEC {
 impl crate::Readable for SPINLOCK_STATUS_REG_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets SPINLOCK_STATUS_REG to value 0"]
+#[doc = "`reset()` method sets spinlock_status_reg to value 0"]
 impl crate::Resettable for SPINLOCK_STATUS_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

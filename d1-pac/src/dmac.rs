@@ -401,71 +401,71 @@ pub struct RegisterBlock {
     #[doc = "0x4f0 - DMAC Package Number Register"]
     pub dmac_pkg_num_reg15: crate::Reg<dmac_pkg_num_reg::DMAC_PKG_NUM_REG_SPEC>,
 }
-#[doc = "DMAC_IRQ_EN_REG0 register accessor: an alias for `Reg<DMAC_IRQ_EN_REG0_SPEC>`"]
+#[doc = "dmac_irq_en_reg0 register accessor: an alias for `Reg<DMAC_IRQ_EN_REG0_SPEC>`"]
 pub type DMAC_IRQ_EN_REG0 = crate::Reg<dmac_irq_en_reg0::DMAC_IRQ_EN_REG0_SPEC>;
 #[doc = "DMAC IRQ Enable Register 0"]
 pub mod dmac_irq_en_reg0;
-#[doc = "DMAC_IRQ_EN_REG1 register accessor: an alias for `Reg<DMAC_IRQ_EN_REG1_SPEC>`"]
+#[doc = "dmac_irq_en_reg1 register accessor: an alias for `Reg<DMAC_IRQ_EN_REG1_SPEC>`"]
 pub type DMAC_IRQ_EN_REG1 = crate::Reg<dmac_irq_en_reg1::DMAC_IRQ_EN_REG1_SPEC>;
 #[doc = "DMAC IRQ Enable Register 1"]
 pub mod dmac_irq_en_reg1;
-#[doc = "DMAC_IRQ_PEND_REG0 register accessor: an alias for `Reg<DMAC_IRQ_PEND_REG0_SPEC>`"]
+#[doc = "dmac_irq_pend_reg0 register accessor: an alias for `Reg<DMAC_IRQ_PEND_REG0_SPEC>`"]
 pub type DMAC_IRQ_PEND_REG0 = crate::Reg<dmac_irq_pend_reg0::DMAC_IRQ_PEND_REG0_SPEC>;
 #[doc = "DMAC IRQ Pending Register 0"]
 pub mod dmac_irq_pend_reg0;
-#[doc = "DMAC_IRQ_PEND_REG1 register accessor: an alias for `Reg<DMAC_IRQ_PEND_REG1_SPEC>`"]
+#[doc = "dmac_irq_pend_reg1 register accessor: an alias for `Reg<DMAC_IRQ_PEND_REG1_SPEC>`"]
 pub type DMAC_IRQ_PEND_REG1 = crate::Reg<dmac_irq_pend_reg1::DMAC_IRQ_PEND_REG1_SPEC>;
 #[doc = "DMAC IRQ Pending Register 1"]
 pub mod dmac_irq_pend_reg1;
-#[doc = "DMAC_AUTO_GATE_REG register accessor: an alias for `Reg<DMAC_AUTO_GATE_REG_SPEC>`"]
+#[doc = "dmac_auto_gate_reg register accessor: an alias for `Reg<DMAC_AUTO_GATE_REG_SPEC>`"]
 pub type DMAC_AUTO_GATE_REG = crate::Reg<dmac_auto_gate_reg::DMAC_AUTO_GATE_REG_SPEC>;
 #[doc = "DMAC Auto Gating Register"]
 pub mod dmac_auto_gate_reg;
-#[doc = "DMAC_STA_REG register accessor: an alias for `Reg<DMAC_STA_REG_SPEC>`"]
+#[doc = "dmac_sta_reg register accessor: an alias for `Reg<DMAC_STA_REG_SPEC>`"]
 pub type DMAC_STA_REG = crate::Reg<dmac_sta_reg::DMAC_STA_REG_SPEC>;
 #[doc = "DMAC Status Register"]
 pub mod dmac_sta_reg;
-#[doc = "DMAC_EN_REG register accessor: an alias for `Reg<DMAC_EN_REG_SPEC>`"]
+#[doc = "dmac_en_reg register accessor: an alias for `Reg<DMAC_EN_REG_SPEC>`"]
 pub type DMAC_EN_REG = crate::Reg<dmac_en_reg::DMAC_EN_REG_SPEC>;
 #[doc = "DMAC Channel Enable Register"]
 pub mod dmac_en_reg;
-#[doc = "DMAC_PAU_REG register accessor: an alias for `Reg<DMAC_PAU_REG_SPEC>`"]
+#[doc = "dmac_pau_reg register accessor: an alias for `Reg<DMAC_PAU_REG_SPEC>`"]
 pub type DMAC_PAU_REG = crate::Reg<dmac_pau_reg::DMAC_PAU_REG_SPEC>;
 #[doc = "DMAC Channel Pause Register"]
 pub mod dmac_pau_reg;
-#[doc = "DMAC_DESC_ADDR_REG register accessor: an alias for `Reg<DMAC_DESC_ADDR_REG_SPEC>`"]
+#[doc = "dmac_desc_addr_reg register accessor: an alias for `Reg<DMAC_DESC_ADDR_REG_SPEC>`"]
 pub type DMAC_DESC_ADDR_REG = crate::Reg<dmac_desc_addr_reg::DMAC_DESC_ADDR_REG_SPEC>;
 #[doc = "DMAC Channel Start Address Register"]
 pub mod dmac_desc_addr_reg;
-#[doc = "DMAC_CFG_REG register accessor: an alias for `Reg<DMAC_CFG_REG_SPEC>`"]
+#[doc = "dmac_cfg_reg register accessor: an alias for `Reg<DMAC_CFG_REG_SPEC>`"]
 pub type DMAC_CFG_REG = crate::Reg<dmac_cfg_reg::DMAC_CFG_REG_SPEC>;
 #[doc = "DMAC Channel Configuration Register"]
 pub mod dmac_cfg_reg;
-#[doc = "DMAC_CUR_SRC_REG register accessor: an alias for `Reg<DMAC_CUR_SRC_REG_SPEC>`"]
+#[doc = "dmac_cur_src_reg register accessor: an alias for `Reg<DMAC_CUR_SRC_REG_SPEC>`"]
 pub type DMAC_CUR_SRC_REG = crate::Reg<dmac_cur_src_reg::DMAC_CUR_SRC_REG_SPEC>;
 #[doc = "DMAC Channel Current Source Register"]
 pub mod dmac_cur_src_reg;
-#[doc = "DMAC_CUR_DEST_REG register accessor: an alias for `Reg<DMAC_CUR_DEST_REG_SPEC>`"]
+#[doc = "dmac_cur_dest_reg register accessor: an alias for `Reg<DMAC_CUR_DEST_REG_SPEC>`"]
 pub type DMAC_CUR_DEST_REG = crate::Reg<dmac_cur_dest_reg::DMAC_CUR_DEST_REG_SPEC>;
 #[doc = "DMAC Channel Current Destination Register"]
 pub mod dmac_cur_dest_reg;
-#[doc = "DMAC_BCNT_LEFT_REG register accessor: an alias for `Reg<DMAC_BCNT_LEFT_REG_SPEC>`"]
+#[doc = "dmac_bcnt_left_reg register accessor: an alias for `Reg<DMAC_BCNT_LEFT_REG_SPEC>`"]
 pub type DMAC_BCNT_LEFT_REG = crate::Reg<dmac_bcnt_left_reg::DMAC_BCNT_LEFT_REG_SPEC>;
 #[doc = "DMAC Channel Byte Counter Left Register"]
 pub mod dmac_bcnt_left_reg;
-#[doc = "DMAC_PARA_REG register accessor: an alias for `Reg<DMAC_PARA_REG_SPEC>`"]
+#[doc = "dmac_para_reg register accessor: an alias for `Reg<DMAC_PARA_REG_SPEC>`"]
 pub type DMAC_PARA_REG = crate::Reg<dmac_para_reg::DMAC_PARA_REG_SPEC>;
 #[doc = "DMAC Channel Parameter Register"]
 pub mod dmac_para_reg;
-#[doc = "DMAC_MODE_REG register accessor: an alias for `Reg<DMAC_MODE_REG_SPEC>`"]
+#[doc = "dmac_mode_reg register accessor: an alias for `Reg<DMAC_MODE_REG_SPEC>`"]
 pub type DMAC_MODE_REG = crate::Reg<dmac_mode_reg::DMAC_MODE_REG_SPEC>;
 #[doc = "DMAC Mode Register"]
 pub mod dmac_mode_reg;
-#[doc = "DMAC_FDESC_ADDR_REG register accessor: an alias for `Reg<DMAC_FDESC_ADDR_REG_SPEC>`"]
+#[doc = "dmac_fdesc_addr_reg register accessor: an alias for `Reg<DMAC_FDESC_ADDR_REG_SPEC>`"]
 pub type DMAC_FDESC_ADDR_REG = crate::Reg<dmac_fdesc_addr_reg::DMAC_FDESC_ADDR_REG_SPEC>;
 #[doc = "DMAC Former Descriptor Address Register"]
 pub mod dmac_fdesc_addr_reg;
-#[doc = "DMAC_PKG_NUM_REG register accessor: an alias for `Reg<DMAC_PKG_NUM_REG_SPEC>`"]
+#[doc = "dmac_pkg_num_reg register accessor: an alias for `Reg<DMAC_PKG_NUM_REG_SPEC>`"]
 pub type DMAC_PKG_NUM_REG = crate::Reg<dmac_pkg_num_reg::DMAC_PKG_NUM_REG_SPEC>;
 #[doc = "DMAC Package Number Register"]
 pub mod dmac_pkg_num_reg;

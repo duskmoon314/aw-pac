@@ -34,7 +34,7 @@ impl From<crate::W<WDOG_SOFT_RST_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `KEY_FIELD` writer - Key Field"]
+#[doc = "Field `key_field` writer - Key Field"]
 pub type KEY_FIELD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, WDOG_SOFT_RST_SPEC, u16, u16, 16, O>;
 #[doc = "Soft Reset Enable\n\nValue on reset: 0"]
@@ -51,7 +51,7 @@ impl From<SOFT_RST_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SOFT_RST_EN` reader - Soft Reset Enable"]
+#[doc = "Field `soft_rst_en` reader - Soft Reset Enable"]
 pub type SOFT_RST_EN_R = crate::BitReader<SOFT_RST_EN_A>;
 impl SOFT_RST_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -73,7 +73,7 @@ impl SOFT_RST_EN_R {
         *self == SOFT_RST_EN_A::RESET
     }
 }
-#[doc = "Field `SOFT_RST_EN` writer - Soft Reset Enable"]
+#[doc = "Field `soft_rst_en` writer - Soft Reset Enable"]
 pub type SOFT_RST_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, WDOG_SOFT_RST_SPEC, SOFT_RST_EN_A, O>;
 impl<'a, const O: u8> SOFT_RST_EN_W<'a, O> {

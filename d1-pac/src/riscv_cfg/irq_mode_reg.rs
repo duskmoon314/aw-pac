@@ -1,4 +1,4 @@
-#[doc = "Register `IRQ_MODE%s_REG` reader"]
+#[doc = "Register `irq_mode%s_reg` reader"]
 pub struct R(crate::R<IRQ_MODE_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<IRQ_MODE_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<IRQ_MODE_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `IRQ_MODE%s_REG` writer"]
+#[doc = "Register `irq_mode%s_reg` writer"]
 pub struct W(crate::W<IRQ_MODE_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<IRQ_MODE_REG_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for IRQ_MODE_REG_SPEC {
 impl crate::Writable for IRQ_MODE_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets IRQ_MODE%s_REG to value 0"]
+#[doc = "`reset()` method sets irq_mode%s_reg to value 0"]
 impl crate::Resettable for IRQ_MODE_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

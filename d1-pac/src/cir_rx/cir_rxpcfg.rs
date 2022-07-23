@@ -1,4 +1,4 @@
-#[doc = "Register `CIR_RXPCFG` reader"]
+#[doc = "Register `cir_rxpcfg` reader"]
 pub struct R(crate::R<CIR_RXPCFG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CIR_RXPCFG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CIR_RXPCFG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CIR_RXPCFG` writer"]
+#[doc = "Register `cir_rxpcfg` writer"]
 pub struct W(crate::W<CIR_RXPCFG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CIR_RXPCFG_SPEC>;
@@ -48,7 +48,7 @@ impl From<RPPI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RPPI` reader - Receiver Pulse Polarity Invert"]
+#[doc = "Field `rppi` reader - Receiver Pulse Polarity Invert"]
 pub type RPPI_R = crate::BitReader<RPPI_A>;
 impl RPPI_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl RPPI_R {
         *self == RPPI_A::INVERT
     }
 }
-#[doc = "Field `RPPI` writer - Receiver Pulse Polarity Invert"]
+#[doc = "Field `rppi` writer - Receiver Pulse Polarity Invert"]
 pub type RPPI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_RXPCFG_SPEC, RPPI_A, O>;
 impl<'a, const O: u8> RPPI_W<'a, O> {
     #[doc = "Do not invert receiver signal"]
@@ -117,7 +117,7 @@ impl crate::Readable for CIR_RXPCFG_SPEC {
 impl crate::Writable for CIR_RXPCFG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CIR_RXPCFG to value 0x04"]
+#[doc = "`reset()` method sets cir_rxpcfg to value 0x04"]
 impl crate::Resettable for CIR_RXPCFG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

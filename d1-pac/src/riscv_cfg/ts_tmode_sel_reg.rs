@@ -1,4 +1,4 @@
-#[doc = "Register `TS_TMODE_SEL_REG` reader"]
+#[doc = "Register `ts_tmode_sel_reg` reader"]
 pub struct R(crate::R<TS_TMODE_SEL_REG_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<TS_TMODE_SEL_REG_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<TS_TMODE_SEL_REG_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `TS_TMODE_SEL_REG` writer"]
+#[doc = "Register `ts_tmode_sel_reg` writer"]
 pub struct W(crate::W<TS_TMODE_SEL_REG_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<TS_TMODE_SEL_REG_SPEC>;
@@ -48,7 +48,7 @@ impl From<TS_TEST_MODE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TS_TEST_MODE_EN` reader - Timestamp Test Mode Enable"]
+#[doc = "Field `ts_test_mode_en` reader - Timestamp Test Mode Enable"]
 pub type TS_TEST_MODE_EN_R = crate::BitReader<TS_TEST_MODE_EN_A>;
 impl TS_TEST_MODE_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl TS_TEST_MODE_EN_R {
         *self == TS_TEST_MODE_EN_A::TEST
     }
 }
-#[doc = "Field `TS_TEST_MODE_EN` writer - Timestamp Test Mode Enable"]
+#[doc = "Field `ts_test_mode_en` writer - Timestamp Test Mode Enable"]
 pub type TS_TEST_MODE_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TS_TMODE_SEL_REG_SPEC, TS_TEST_MODE_EN_A, O>;
 impl<'a, const O: u8> TS_TEST_MODE_EN_W<'a, O> {
@@ -118,7 +118,7 @@ impl crate::Readable for TS_TMODE_SEL_REG_SPEC {
 impl crate::Writable for TS_TMODE_SEL_REG_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets TS_TMODE_SEL_REG to value 0"]
+#[doc = "`reset()` method sets ts_tmode_sel_reg to value 0"]
 impl crate::Resettable for TS_TMODE_SEL_REG_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

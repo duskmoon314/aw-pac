@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_DRV_DL` reader"]
+#[doc = "Register `smhc_drv_dl` reader"]
 pub struct R(crate::R<SMHC_DRV_DL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_DRV_DL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_DRV_DL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_DRV_DL` writer"]
+#[doc = "Register `smhc_drv_dl` writer"]
 pub struct W(crate::W<SMHC_DRV_DL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_DRV_DL_SPEC>;
@@ -34,13 +34,13 @@ impl From<crate::W<SMHC_DRV_DL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DAT_DRV_PH_SEL` reader - Data Drive Phase Select"]
+#[doc = "Field `dat_drv_ph_sel` reader - Data Drive Phase Select"]
 pub type DAT_DRV_PH_SEL_R = crate::BitReader<bool>;
-#[doc = "Field `DAT_DRV_PH_SEL` writer - Data Drive Phase Select"]
+#[doc = "Field `dat_drv_ph_sel` writer - Data Drive Phase Select"]
 pub type DAT_DRV_PH_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, O>;
-#[doc = "Field `CMD_DRV_PH_SEL` reader - Command Drive Phase Select"]
+#[doc = "Field `cmd_drv_ph_sel` reader - Command Drive Phase Select"]
 pub type CMD_DRV_PH_SEL_R = crate::BitReader<bool>;
-#[doc = "Field `CMD_DRV_PH_SEL` writer - Command Drive Phase Select"]
+#[doc = "Field `cmd_drv_ph_sel` writer - Command Drive Phase Select"]
 pub type CMD_DRV_PH_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 17 - Data Drive Phase Select"]
@@ -85,7 +85,7 @@ impl crate::Readable for SMHC_DRV_DL_SPEC {
 impl crate::Writable for SMHC_DRV_DL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_DRV_DL to value 0"]
+#[doc = "`reset()` method sets smhc_drv_dl to value 0"]
 impl crate::Resettable for SMHC_DRV_DL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

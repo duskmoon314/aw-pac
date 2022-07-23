@@ -1,4 +1,4 @@
-#[doc = "Register `DBI_INT` reader"]
+#[doc = "Register `dbi_int` reader"]
 pub struct R(crate::R<DBI_INT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<DBI_INT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<DBI_INT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `DBI_INT` writer"]
+#[doc = "Register `dbi_int` writer"]
 pub struct W(crate::W<DBI_INT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<DBI_INT_SPEC>;
@@ -254,7 +254,7 @@ impl crate::Readable for DBI_INT_SPEC {
 impl crate::Writable for DBI_INT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets DBI_INT to value 0"]
+#[doc = "`reset()` method sets dbi_int to value 0"]
 impl crate::Resettable for DBI_INT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_DS_DL` reader"]
+#[doc = "Register `smhc_ds_dl` reader"]
 pub struct R(crate::R<SMHC_DS_DL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_DS_DL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_DS_DL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_DS_DL` writer"]
+#[doc = "Register `smhc_ds_dl` writer"]
 pub struct W(crate::W<SMHC_DS_DL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_DS_DL_SPEC>;
@@ -34,21 +34,21 @@ impl From<crate::W<SMHC_DS_DL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DS_DL_CAL_START` reader - Data Strobe Delay Calibration Start"]
+#[doc = "Field `ds_dl_cal_start` reader - Data Strobe Delay Calibration Start"]
 pub type DS_DL_CAL_START_R = crate::BitReader<bool>;
-#[doc = "Field `DS_DL_CAL_START` writer - Data Strobe Delay Calibration Start"]
+#[doc = "Field `ds_dl_cal_start` writer - Data Strobe Delay Calibration Start"]
 pub type DS_DL_CAL_START_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, O>;
-#[doc = "Field `DS_DL_CAL_DONE` reader - Data Strobe Delay Calibration Done"]
+#[doc = "Field `ds_dl_cal_done` reader - Data Strobe Delay Calibration Done"]
 pub type DS_DL_CAL_DONE_R = crate::BitReader<bool>;
-#[doc = "Field `DS_DL` reader - Data Strobe Delay"]
+#[doc = "Field `ds_dl` reader - Data Strobe Delay"]
 pub type DS_DL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DS_DL_SW_EN` reader - Sample Delay Software Enable"]
+#[doc = "Field `ds_dl_sw_en` reader - Sample Delay Software Enable"]
 pub type DS_DL_SW_EN_R = crate::BitReader<bool>;
-#[doc = "Field `DS_DL_SW_EN` writer - Sample Delay Software Enable"]
+#[doc = "Field `ds_dl_sw_en` writer - Sample Delay Software Enable"]
 pub type DS_DL_SW_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DS_DL_SPEC, bool, O>;
-#[doc = "Field `DS_DL_SW` reader - Data Storbe Delay Software"]
+#[doc = "Field `ds_dl_sw` reader - Data Storbe Delay Software"]
 pub type DS_DL_SW_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `DS_DL_SW` writer - Data Storbe Delay Software"]
+#[doc = "Field `ds_dl_sw` writer - Data Storbe Delay Software"]
 pub type DS_DL_SW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_DS_DL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bit 15 - Data Strobe Delay Calibration Start"]
@@ -113,7 +113,7 @@ impl crate::Readable for SMHC_DS_DL_SPEC {
 impl crate::Writable for SMHC_DS_DL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_DS_DL to value 0"]
+#[doc = "`reset()` method sets smhc_ds_dl to value 0"]
 impl crate::Resettable for SMHC_DS_DL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

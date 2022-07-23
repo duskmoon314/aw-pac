@@ -1,4 +1,4 @@
-#[doc = "Register `CE_TLR` reader"]
+#[doc = "Register `ce_tlr` reader"]
 pub struct R(crate::R<CE_TLR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_TLR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_TLR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_TLR` writer"]
+#[doc = "Register `ce_tlr` writer"]
 pub struct W(crate::W<CE_TLR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_TLR_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CE_TLR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TASK_LOAD` reader - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
+#[doc = "Field `task_load` reader - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
 pub type TASK_LOAD_R = crate::BitReader<bool>;
-#[doc = "Field `TASK_LOAD` writer - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
+#[doc = "Field `task_load` writer - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
 pub type TASK_LOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CE_TLR_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full."]
@@ -71,7 +71,7 @@ impl crate::Readable for CE_TLR_SPEC {
 impl crate::Writable for CE_TLR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_TLR to value 0"]
+#[doc = "`reset()` method sets ce_tlr to value 0"]
 impl crate::Resettable for CE_TLR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `PGR%s` reader"]
+#[doc = "Register `pgr%s` reader"]
 pub struct R(crate::R<PGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PGR%s` writer"]
+#[doc = "Register `pgr%s` writer"]
 pub struct W(crate::W<PGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PGR_SPEC>;
@@ -34,18 +34,18 @@ impl From<crate::W<PGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `START` reader - The PWM channels selected in CS start to output PWM waveform at the same time."]
+#[doc = "Field `start` reader - The PWM channels selected in CS start to output PWM waveform at the same time."]
 pub type START_R = crate::BitReader<bool>;
-#[doc = "Field `START` writer - The PWM channels selected in CS start to output PWM waveform at the same time."]
+#[doc = "Field `start` writer - The PWM channels selected in CS start to output PWM waveform at the same time."]
 pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
-#[doc = "Field `EN` reader - PWM Group Enable."]
+#[doc = "Field `en` reader - PWM Group Enable."]
 pub type EN_R = crate::BitReader<bool>;
-#[doc = "Field `EN` writer - PWM Group Enable."]
+#[doc = "Field `en` writer - PWM Group Enable."]
 pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
-#[doc = "Field `CS` reader - If bit\\[i\\]
+#[doc = "Field `cs` reader - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 pub type CS_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `CS` writer - If bit\\[i\\]
+#[doc = "Field `cs` writer - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 pub type CS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PGR_SPEC, u16, u16, 16, O>;
 impl R {
@@ -104,7 +104,7 @@ impl crate::Readable for PGR_SPEC {
 impl crate::Writable for PGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PGR%s to value 0"]
+#[doc = "`reset()` method sets pgr%s to value 0"]
 impl crate::Resettable for PGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -13,9 +13,9 @@ impl From<crate::R<PIO_POW_VAL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `VCCIO_PWS_VAL` reader - VCC_IO Power Value"]
+#[doc = "Field `vccio_pws_val` reader - VCC_IO Power Value"]
 pub type VCCIO_PWS_VAL_R = crate::BitReader<bool>;
-#[doc = "Fields `P(0-4)_PWR_VAL` reader - PX_Port Power Value"]
+#[doc = "Fields `p(0-4)_pwr_val` reader - PX_Port Power Value"]
 pub type P_PWR_VAL_R = crate::BitReader<bool>;
 impl R {
     #[doc = "Bit 12 - VCC_IO Power Value"]
@@ -30,27 +30,27 @@ impl R {
     }
     #[doc = "Bit 2 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pc_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn p_c_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pd_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn p_d_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pe_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn p_e_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pf_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn p_f_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - PX_Port Power Value"]
     #[inline(always)]
-    pub fn pg_pwr_val(&self) -> P_PWR_VAL_R {
+    pub fn p_g_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 6) & 1) != 0)
     }
 }

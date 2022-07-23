@@ -1,4 +1,4 @@
-#[doc = "Register `GP_CH0_DATA` reader"]
+#[doc = "Register `gp_ch0_data` reader"]
 pub struct R(crate::R<GP_CH0_DATA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<GP_CH0_DATA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<GP_CH0_DATA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `GP_CH0_DATA` writer"]
+#[doc = "Register `gp_ch0_data` writer"]
 pub struct W(crate::W<GP_CH0_DATA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<GP_CH0_DATA_SPEC>;
@@ -34,7 +34,7 @@ impl From<crate::W<GP_CH0_DATA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `GP_CH0_DATA` reader - Channel 0 Data"]
+#[doc = "Field `gp_ch0_data` reader - Channel 0 Data"]
 pub type GP_CH0_DATA_R = crate::FieldReader<u16, u16>;
 impl R {
     #[doc = "Bits 0:11 - Channel 0 Data"]
@@ -64,7 +64,7 @@ impl crate::Readable for GP_CH0_DATA_SPEC {
 impl crate::Writable for GP_CH0_DATA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets GP_CH0_DATA to value 0"]
+#[doc = "`reset()` method sets gp_ch0_data to value 0"]
 impl crate::Resettable for GP_CH0_DATA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

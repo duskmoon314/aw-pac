@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_TMOUT` reader"]
+#[doc = "Register `smhc_tmout` reader"]
 pub struct R(crate::R<SMHC_TMOUT_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_TMOUT_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_TMOUT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_TMOUT` writer"]
+#[doc = "Register `smhc_tmout` writer"]
 pub struct W(crate::W<SMHC_TMOUT_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_TMOUT_SPEC>;
@@ -34,13 +34,13 @@ impl From<crate::W<SMHC_TMOUT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `DTO_LMT` reader - Data Iimeout Limit"]
+#[doc = "Field `dto_lmt` reader - Data Iimeout Limit"]
 pub type DTO_LMT_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `DTO_LMT` writer - Data Iimeout Limit"]
+#[doc = "Field `dto_lmt` writer - Data Iimeout Limit"]
 pub type DTO_LMT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_TMOUT_SPEC, u32, u32, 24, O>;
-#[doc = "Field `RTO_LMT` reader - Response Timeout Limit"]
+#[doc = "Field `rto_lmt` reader - Response Timeout Limit"]
 pub type RTO_LMT_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `RTO_LMT` writer - Response Timeout Limit"]
+#[doc = "Field `rto_lmt` writer - Response Timeout Limit"]
 pub type RTO_LMT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_TMOUT_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 8:31 - Data Iimeout Limit"]
@@ -85,7 +85,7 @@ impl crate::Readable for SMHC_TMOUT_SPEC {
 impl crate::Writable for SMHC_TMOUT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_TMOUT to value 0"]
+#[doc = "`reset()` method sets smhc_tmout to value 0"]
 impl crate::Resettable for SMHC_TMOUT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

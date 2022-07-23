@@ -1,4 +1,4 @@
-#[doc = "Register `CE_TDA` reader"]
+#[doc = "Register `ce_tda` reader"]
 pub struct R(crate::R<CE_TDA_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CE_TDA_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CE_TDA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CE_TDA` writer"]
+#[doc = "Register `ce_tda` writer"]
 pub struct W(crate::W<CE_TDA_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CE_TDA_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<CE_TDA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `TASK` reader - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
+#[doc = "Field `task` reader - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
 pub type TASK_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `TASK` writer - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
+#[doc = "Field `task` writer - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
 pub type TASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CE_TDA_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
@@ -71,7 +71,7 @@ impl crate::Readable for CE_TDA_SPEC {
 impl crate::Writable for CE_TDA_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CE_TDA to value 0"]
+#[doc = "`reset()` method sets ce_tda to value 0"]
 impl crate::Resettable for CE_TDA_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

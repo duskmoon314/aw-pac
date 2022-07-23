@@ -1,4 +1,4 @@
-#[doc = "Register `LEDC_DMA_CTRL` reader"]
+#[doc = "Register `ledc_dma_ctrl` reader"]
 pub struct R(crate::R<LEDC_DMA_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LEDC_DMA_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LEDC_DMA_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LEDC_DMA_CTRL` writer"]
+#[doc = "Register `ledc_dma_ctrl` writer"]
 pub struct W(crate::W<LEDC_DMA_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LEDC_DMA_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<LEDC_DMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `LEDC_DMA_EN` reader - "]
+#[doc = "Field `ledc_dma_en` reader - "]
 pub type LEDC_DMA_EN_R = crate::BitReader<LEDC_DMA_EN_A>;
 impl LEDC_DMA_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl LEDC_DMA_EN_R {
         *self == LEDC_DMA_EN_A::ENABLE
     }
 }
-#[doc = "Field `LEDC_DMA_EN` writer - "]
+#[doc = "Field `ledc_dma_en` writer - "]
 pub type LEDC_DMA_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LEDC_DMA_CTRL_SPEC, LEDC_DMA_EN_A, O>;
 impl<'a, const O: u8> LEDC_DMA_EN_W<'a, O> {
@@ -85,9 +85,9 @@ impl<'a, const O: u8> LEDC_DMA_EN_W<'a, O> {
         self.variant(LEDC_DMA_EN_A::ENABLE)
     }
 }
-#[doc = "Field `LEDC_FIFO_TRIG_LEVEL` reader - "]
+#[doc = "Field `ledc_fifo_trig_level` reader - "]
 pub type LEDC_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `LEDC_FIFO_TRIG_LEVEL` writer - "]
+#[doc = "Field `ledc_fifo_trig_level` writer - "]
 pub type LEDC_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LEDC_DMA_CTRL_SPEC, u8, u8, 5, O>;
 impl R {
@@ -133,7 +133,7 @@ impl crate::Readable for LEDC_DMA_CTRL_SPEC {
 impl crate::Writable for LEDC_DMA_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LEDC_DMA_CTRL to value 0"]
+#[doc = "`reset()` method sets ledc_dma_ctrl to value 0"]
 impl crate::Resettable for LEDC_DMA_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

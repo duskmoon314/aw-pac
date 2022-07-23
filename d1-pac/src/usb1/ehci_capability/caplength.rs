@@ -1,4 +1,4 @@
-#[doc = "Register `CAPLENGTH` reader"]
+#[doc = "Register `caplength` reader"]
 pub struct R(crate::R<CAPLENGTH_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CAPLENGTH_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CAPLENGTH_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `CAPLENGTH` reader - The value in these bits indicates an offset to add to register base to find the beginning of the Operational Register Space."]
+#[doc = "Field `caplength` reader - The value in these bits indicates an offset to add to register base to find the beginning of the Operational Register Space."]
 pub type CAPLENGTH_R = crate::FieldReader<u8, u8>;
 impl R {
     #[doc = "Bits 0:7 - The value in these bits indicates an offset to add to register base to find the beginning of the Operational Register Space."]
@@ -31,7 +31,7 @@ impl crate::RegisterSpec for CAPLENGTH_SPEC {
 impl crate::Readable for CAPLENGTH_SPEC {
     type Reader = R;
 }
-#[doc = "`reset()` method sets CAPLENGTH to value 0"]
+#[doc = "`reset()` method sets caplength to value 0"]
 impl crate::Resettable for CAPLENGTH_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

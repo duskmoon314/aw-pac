@@ -1,4 +1,4 @@
-#[doc = "Register `FRE_DOWN_LIM` reader"]
+#[doc = "Register `fre_down_lim` reader"]
 pub struct R(crate::R<FRE_DOWN_LIM_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<FRE_DOWN_LIM_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<FRE_DOWN_LIM_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `FRE_DOWN_LIM` writer"]
+#[doc = "Register `fre_down_lim` writer"]
 pub struct W(crate::W<FRE_DOWN_LIM_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<FRE_DOWN_LIM_SPEC>;
@@ -55,7 +55,7 @@ impl crate::Readable for FRE_DOWN_LIM_SPEC {
 impl crate::Writable for FRE_DOWN_LIM_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets FRE_DOWN_LIM to value 0"]
+#[doc = "`reset()` method sets fre_down_lim to value 0"]
 impl crate::Resettable for FRE_DOWN_LIM_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

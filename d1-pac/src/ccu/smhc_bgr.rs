@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_BGR` reader"]
+#[doc = "Register `smhc_bgr` reader"]
 pub struct R(crate::R<SMHC_BGR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_BGR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_BGR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_BGR` writer"]
+#[doc = "Register `smhc_bgr` writer"]
 pub struct W(crate::W<SMHC_BGR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_BGR_SPEC>;
@@ -48,7 +48,7 @@ impl From<SMHC_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `SMHC(0-2)_RST` reader - Reset"]
+#[doc = "Fields `smhc(0-2)_rst` reader - Reset"]
 pub type SMHC_RST_R = crate::BitReader<SMHC_RST_A>;
 impl SMHC_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl SMHC_RST_R {
         *self == SMHC_RST_A::DEASSERT
     }
 }
-#[doc = "Fields `SMHC(0-2)_RST` writer - Reset"]
+#[doc = "Fields `smhc(0-2)_rst` writer - Reset"]
 pub type SMHC_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_BGR_SPEC, SMHC_RST_A, O>;
 impl<'a, const O: u8> SMHC_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -98,7 +98,7 @@ impl From<SMHC_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `SMHC(0-2)_GATING` reader - Gating Clock"]
+#[doc = "Fields `smhc(0-2)_gating` reader - Gating Clock"]
 pub type SMHC_GATING_R = crate::BitReader<SMHC_GATING_A>;
 impl SMHC_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -120,7 +120,7 @@ impl SMHC_GATING_R {
         *self == SMHC_GATING_A::PASS
     }
 }
-#[doc = "Fields `SMHC(0-2)_GATING` writer - Gating Clock"]
+#[doc = "Fields `smhc(0-2)_gating` writer - Gating Clock"]
 pub type SMHC_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_BGR_SPEC, SMHC_GATING_A, O>;
 impl<'a, const O: u8> SMHC_GATING_W<'a, O> {
@@ -238,7 +238,7 @@ impl crate::Readable for SMHC_BGR_SPEC {
 impl crate::Writable for SMHC_BGR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_BGR to value 0"]
+#[doc = "`reset()` method sets smhc_bgr to value 0"]
 impl crate::Resettable for SMHC_BGR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `PISR` reader"]
+#[doc = "Register `pisr` reader"]
 pub struct R(crate::R<PISR_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PISR_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<PISR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `PISR` writer"]
+#[doc = "Register `pisr` writer"]
 pub struct W(crate::W<PISR_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<PISR_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<PISR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Fields `PGIS(0-3)` reader - PWM Group Interrupt Status"]
+#[doc = "Fields `pgis(0-3)` reader - PWM Group Interrupt Status"]
 pub type PGIS_R = crate::BitReader<bool>;
-#[doc = "Fields `PGIS(0-3)` writer - PWM Group Interrupt Status"]
+#[doc = "Fields `pgis(0-3)` writer - PWM Group Interrupt Status"]
 pub type PGIS_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, PISR_SPEC, bool, O>;
 #[doc = "PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -52,7 +52,7 @@ impl From<PIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `PIS(0-7)` reader - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
+#[doc = "Fields `pis(0-7)` reader - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
 pub type PIS_R = crate::BitReader<PIS_A>;
 impl PIS_R {
     #[doc = "Get enumerated values variant"]
@@ -74,7 +74,7 @@ impl PIS_R {
         *self == PIS_A::PENDING
     }
 }
-#[doc = "Fields `PIS(0-7)` writer - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
+#[doc = "Fields `pis(0-7)` writer - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
 pub type PIS_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, PISR_SPEC, PIS_A, O>;
 impl<'a, const O: u8> PIS_W<'a, O> {
     #[doc = "`0`"]
@@ -251,7 +251,7 @@ impl crate::Readable for PISR_SPEC {
 impl crate::Writable for PISR_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets PISR to value 0"]
+#[doc = "`reset()` method sets pisr to value 0"]
 impl crate::Resettable for PISR_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -1,4 +1,4 @@
-#[doc = "Register `LRADC_INTC` reader"]
+#[doc = "Register `lradc_intc` reader"]
 pub struct R(crate::R<LRADC_INTC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<LRADC_INTC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<LRADC_INTC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `LRADC_INTC` writer"]
+#[doc = "Register `lradc_intc` writer"]
 pub struct W(crate::W<LRADC_INTC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<LRADC_INTC_SPEC>;
@@ -48,7 +48,7 @@ impl From<ADC0_KEYUP_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_KEYUP_IRQ_EN` reader - ADC0 Key Up Interrupt Enable"]
+#[doc = "Field `adc0_keyup_irq_en` reader - ADC0 Key Up Interrupt Enable"]
 pub type ADC0_KEYUP_IRQ_EN_R = crate::BitReader<ADC0_KEYUP_IRQ_EN_A>;
 impl ADC0_KEYUP_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl ADC0_KEYUP_IRQ_EN_R {
         *self == ADC0_KEYUP_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `ADC0_KEYUP_IRQ_EN` writer - ADC0 Key Up Interrupt Enable"]
+#[doc = "Field `adc0_keyup_irq_en` writer - ADC0 Key Up Interrupt Enable"]
 pub type ADC0_KEYUP_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYUP_IRQ_EN_A, O>;
 impl<'a, const O: u8> ADC0_KEYUP_IRQ_EN_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<ADC0_ALRDY_HOLD_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_ALRDY_HOLD_IRQ_EN` reader - ADC0 Already Hold Key Interrupt Enable"]
+#[doc = "Field `adc0_alrdy_hold_irq_en` reader - ADC0 Already Hold Key Interrupt Enable"]
 pub type ADC0_ALRDY_HOLD_IRQ_EN_R = crate::BitReader<ADC0_ALRDY_HOLD_IRQ_EN_A>;
 impl ADC0_ALRDY_HOLD_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl ADC0_ALRDY_HOLD_IRQ_EN_R {
         *self == ADC0_ALRDY_HOLD_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `ADC0_ALRDY_HOLD_IRQ_EN` writer - ADC0 Already Hold Key Interrupt Enable"]
+#[doc = "Field `adc0_alrdy_hold_irq_en` writer - ADC0 Already Hold Key Interrupt Enable"]
 pub type ADC0_ALRDY_HOLD_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_ALRDY_HOLD_IRQ_EN_A, O>;
 impl<'a, const O: u8> ADC0_ALRDY_HOLD_IRQ_EN_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<ADC0_HOLD_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_HOLD_IRQ_EN` reader - ADC0 Hold Key Interrupt Enable"]
+#[doc = "Field `adc0_hold_irq_en` reader - ADC0 Hold Key Interrupt Enable"]
 pub type ADC0_HOLD_IRQ_EN_R = crate::BitReader<ADC0_HOLD_IRQ_EN_A>;
 impl ADC0_HOLD_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl ADC0_HOLD_IRQ_EN_R {
         *self == ADC0_HOLD_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `ADC0_HOLD_IRQ_EN` writer - ADC0 Hold Key Interrupt Enable"]
+#[doc = "Field `adc0_hold_irq_en` writer - ADC0 Hold Key Interrupt Enable"]
 pub type ADC0_HOLD_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_HOLD_IRQ_EN_A, O>;
 impl<'a, const O: u8> ADC0_HOLD_IRQ_EN_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<ADC0_KEYDOWN_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_KEYDOWN_IRQ_EN` reader - ADC0 Key Down Interrupt Enable"]
+#[doc = "Field `adc0_keydown_irq_en` reader - ADC0 Key Down Interrupt Enable"]
 pub type ADC0_KEYDOWN_IRQ_EN_R = crate::BitReader<ADC0_KEYDOWN_IRQ_EN_A>;
 impl ADC0_KEYDOWN_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl ADC0_KEYDOWN_IRQ_EN_R {
         *self == ADC0_KEYDOWN_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `ADC0_KEYDOWN_IRQ_EN` writer - ADC0 Key Down Interrupt Enable"]
+#[doc = "Field `adc0_keydown_irq_en` writer - ADC0 Key Down Interrupt Enable"]
 pub type ADC0_KEYDOWN_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_KEYDOWN_IRQ_EN_A, O>;
 impl<'a, const O: u8> ADC0_KEYDOWN_IRQ_EN_W<'a, O> {
@@ -252,7 +252,7 @@ impl From<ADC0_DATA_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ADC0_DATA_IRQ_EN` reader - ADC0 Data Interrupt Enable"]
+#[doc = "Field `adc0_data_irq_en` reader - ADC0 Data Interrupt Enable"]
 pub type ADC0_DATA_IRQ_EN_R = crate::BitReader<ADC0_DATA_IRQ_EN_A>;
 impl ADC0_DATA_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
@@ -274,7 +274,7 @@ impl ADC0_DATA_IRQ_EN_R {
         *self == ADC0_DATA_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Field `ADC0_DATA_IRQ_EN` writer - ADC0 Data Interrupt Enable"]
+#[doc = "Field `adc0_data_irq_en` writer - ADC0 Data Interrupt Enable"]
 pub type ADC0_DATA_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, LRADC_INTC_SPEC, ADC0_DATA_IRQ_EN_A, O>;
 impl<'a, const O: u8> ADC0_DATA_IRQ_EN_W<'a, O> {
@@ -362,7 +362,7 @@ impl crate::Readable for LRADC_INTC_SPEC {
 impl crate::Writable for LRADC_INTC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets LRADC_INTC to value 0"]
+#[doc = "`reset()` method sets lradc_intc to value 0"]
 impl crate::Resettable for LRADC_INTC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

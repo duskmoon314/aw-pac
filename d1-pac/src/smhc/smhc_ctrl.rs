@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_CTRL` reader"]
+#[doc = "Register `smhc_ctrl` reader"]
 pub struct R(crate::R<SMHC_CTRL_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_CTRL_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_CTRL_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_CTRL` writer"]
+#[doc = "Register `smhc_ctrl` writer"]
 pub struct W(crate::W<SMHC_CTRL_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_CTRL_SPEC>;
@@ -48,7 +48,7 @@ impl From<FIFO_AC_MOD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_AC_MOD` reader - FIFO Accesss Mode"]
+#[doc = "Field `fifo_ac_mod` reader - FIFO Accesss Mode"]
 pub type FIFO_AC_MOD_R = crate::BitReader<FIFO_AC_MOD_A>;
 impl FIFO_AC_MOD_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl FIFO_AC_MOD_R {
         *self == FIFO_AC_MOD_A::AHB
     }
 }
-#[doc = "Field `FIFO_AC_MOD` writer - FIFO Accesss Mode"]
+#[doc = "Field `fifo_ac_mod` writer - FIFO Accesss Mode"]
 pub type FIFO_AC_MOD_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, FIFO_AC_MOD_A, O>;
 impl<'a, const O: u8> FIFO_AC_MOD_W<'a, O> {
@@ -99,7 +99,7 @@ impl From<TIME_UNIT_CMD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIME_UNIT_CMD` reader - Time unit for command line"]
+#[doc = "Field `time_unit_cmd` reader - Time unit for command line"]
 pub type TIME_UNIT_CMD_R = crate::BitReader<TIME_UNIT_CMD_A>;
 impl TIME_UNIT_CMD_R {
     #[doc = "Get enumerated values variant"]
@@ -121,7 +121,7 @@ impl TIME_UNIT_CMD_R {
         *self == TIME_UNIT_CMD_A::C256
     }
 }
-#[doc = "Field `TIME_UNIT_CMD` writer - Time unit for command line"]
+#[doc = "Field `time_unit_cmd` writer - Time unit for command line"]
 pub type TIME_UNIT_CMD_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, TIME_UNIT_CMD_A, O>;
 impl<'a, const O: u8> TIME_UNIT_CMD_W<'a, O> {
@@ -150,7 +150,7 @@ impl From<TIME_UNIT_DAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `TIME_UNIT_DAT` reader - Time unit for data line"]
+#[doc = "Field `time_unit_dat` reader - Time unit for data line"]
 pub type TIME_UNIT_DAT_R = crate::BitReader<TIME_UNIT_DAT_A>;
 impl TIME_UNIT_DAT_R {
     #[doc = "Get enumerated values variant"]
@@ -172,7 +172,7 @@ impl TIME_UNIT_DAT_R {
         *self == TIME_UNIT_DAT_A::C256
     }
 }
-#[doc = "Field `TIME_UNIT_DAT` writer - Time unit for data line"]
+#[doc = "Field `time_unit_dat` writer - Time unit for data line"]
 pub type TIME_UNIT_DAT_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, TIME_UNIT_DAT_A, O>;
 impl<'a, const O: u8> TIME_UNIT_DAT_W<'a, O> {
@@ -201,7 +201,7 @@ impl From<DDR_MOD_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DDR_MOD_SEL` reader - DDR Mode Select"]
+#[doc = "Field `ddr_mod_sel` reader - DDR Mode Select"]
 pub type DDR_MOD_SEL_R = crate::BitReader<DDR_MOD_SEL_A>;
 impl DDR_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
@@ -223,7 +223,7 @@ impl DDR_MOD_SEL_R {
         *self == DDR_MOD_SEL_A::DDR
     }
 }
-#[doc = "Field `DDR_MOD_SEL` writer - DDR Mode Select"]
+#[doc = "Field `ddr_mod_sel` writer - DDR Mode Select"]
 pub type DDR_MOD_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, DDR_MOD_SEL_A, O>;
 impl<'a, const O: u8> DDR_MOD_SEL_W<'a, O> {
@@ -253,7 +253,7 @@ impl From<CD_DBC_ENB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CD_DBC_ENB` reader - Card Detect (Data\\[3\\]
+#[doc = "Field `cd_dbc_enb` reader - Card Detect (Data\\[3\\]
 status) De-bounce Enable"]
 pub type CD_DBC_ENB_R = crate::BitReader<CD_DBC_ENB_A>;
 impl CD_DBC_ENB_R {
@@ -276,7 +276,7 @@ impl CD_DBC_ENB_R {
         *self == CD_DBC_ENB_A::ENABLE
     }
 }
-#[doc = "Field `CD_DBC_ENB` writer - Card Detect (Data\\[3\\]
+#[doc = "Field `cd_dbc_enb` writer - Card Detect (Data\\[3\\]
 status) De-bounce Enable"]
 pub type CD_DBC_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, CD_DBC_ENB_A, O>;
 impl<'a, const O: u8> CD_DBC_ENB_W<'a, O> {
@@ -305,7 +305,7 @@ impl From<DMA_ENB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DMA_ENB` reader - DMA Global Enable"]
+#[doc = "Field `dma_enb` reader - DMA Global Enable"]
 pub type DMA_ENB_R = crate::BitReader<DMA_ENB_A>;
 impl DMA_ENB_R {
     #[doc = "Get enumerated values variant"]
@@ -327,7 +327,7 @@ impl DMA_ENB_R {
         *self == DMA_ENB_A::ENABLE
     }
 }
-#[doc = "Field `DMA_ENB` writer - DMA Global Enable"]
+#[doc = "Field `dma_enb` writer - DMA Global Enable"]
 pub type DMA_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, DMA_ENB_A, O>;
 impl<'a, const O: u8> DMA_ENB_W<'a, O> {
     #[doc = "Disable DMA to transfer data via AHB bus"]
@@ -355,7 +355,7 @@ impl From<INE_ENB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INE_ENB` reader - GLobal Interrupt Enable"]
+#[doc = "Field `ine_enb` reader - GLobal Interrupt Enable"]
 pub type INE_ENB_R = crate::BitReader<INE_ENB_A>;
 impl INE_ENB_R {
     #[doc = "Get enumerated values variant"]
@@ -377,7 +377,7 @@ impl INE_ENB_R {
         *self == INE_ENB_A::ENABLE
     }
 }
-#[doc = "Field `INE_ENB` writer - GLobal Interrupt Enable"]
+#[doc = "Field `ine_enb` writer - GLobal Interrupt Enable"]
 pub type INE_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, INE_ENB_A, O>;
 impl<'a, const O: u8> INE_ENB_W<'a, O> {
     #[doc = "Disable interrupts"]
@@ -391,9 +391,9 @@ impl<'a, const O: u8> INE_ENB_W<'a, O> {
         self.variant(INE_ENB_A::ENABLE)
     }
 }
-#[doc = "Field `DMA_RST` reader - DMA Reset"]
+#[doc = "Field `dma_rst` reader - DMA Reset"]
 pub type DMA_RST_R = crate::BitReader<bool>;
-#[doc = "Field `DMA_RST` writer - DMA Reset"]
+#[doc = "Field `dma_rst` writer - DMA Reset"]
 pub type DMA_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, bool, O>;
 #[doc = "FIFO Reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -409,7 +409,7 @@ impl From<FIFO_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `FIFO_RST` reader - FIFO Reset"]
+#[doc = "Field `fifo_rst` reader - FIFO Reset"]
 pub type FIFO_RST_R = crate::BitReader<FIFO_RST_A>;
 impl FIFO_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -431,7 +431,7 @@ impl FIFO_RST_R {
         *self == FIFO_RST_A::RESET
     }
 }
-#[doc = "Field `FIFO_RST` writer - FIFO Reset"]
+#[doc = "Field `fifo_rst` writer - FIFO Reset"]
 pub type FIFO_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, FIFO_RST_A, O>;
 impl<'a, const O: u8> FIFO_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -459,7 +459,7 @@ impl From<SOFT_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `SOFT_RST` reader - Software Reset"]
+#[doc = "Field `soft_rst` reader - Software Reset"]
 pub type SOFT_RST_R = crate::BitReader<SOFT_RST_A>;
 impl SOFT_RST_R {
     #[doc = "Get enumerated values variant"]
@@ -481,7 +481,7 @@ impl SOFT_RST_R {
         *self == SOFT_RST_A::RESET
     }
 }
-#[doc = "Field `SOFT_RST` writer - Software Reset"]
+#[doc = "Field `soft_rst` writer - Software Reset"]
 pub type SOFT_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, SOFT_RST_A, O>;
 impl<'a, const O: u8> SOFT_RST_W<'a, O> {
     #[doc = "`0`"]
@@ -620,7 +620,7 @@ impl crate::Readable for SMHC_CTRL_SPEC {
 impl crate::Writable for SMHC_CTRL_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_CTRL to value 0"]
+#[doc = "`reset()` method sets smhc_ctrl to value 0"]
 impl crate::Resettable for SMHC_CTRL_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

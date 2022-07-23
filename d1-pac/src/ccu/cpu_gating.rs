@@ -1,4 +1,4 @@
-#[doc = "Register `CPU_GATING` reader"]
+#[doc = "Register `cpu_gating` reader"]
 pub struct R(crate::R<CPU_GATING_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<CPU_GATING_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<CPU_GATING_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `CPU_GATING` writer"]
+#[doc = "Register `cpu_gating` writer"]
 pub struct W(crate::W<CPU_GATING_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<CPU_GATING_SPEC>;
@@ -48,7 +48,7 @@ impl From<CPU_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `CPU_GATING` reader - Gating Special Clock"]
+#[doc = "Field `cpu_gating` reader - Gating Special Clock"]
 pub type CPU_GATING_R = crate::BitReader<CPU_GATING_A>;
 impl CPU_GATING_R {
     #[doc = "Get enumerated values variant"]
@@ -70,7 +70,7 @@ impl CPU_GATING_R {
         *self == CPU_GATING_A::ON
     }
 }
-#[doc = "Field `CPU_GATING` writer - Gating Special Clock"]
+#[doc = "Field `cpu_gating` writer - Gating Special Clock"]
 pub type CPU_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CPU_GATING_SPEC, CPU_GATING_A, O>;
 impl<'a, const O: u8> CPU_GATING_W<'a, O> {
@@ -85,9 +85,9 @@ impl<'a, const O: u8> CPU_GATING_W<'a, O> {
         self.variant(CPU_GATING_A::ON)
     }
 }
-#[doc = "Field `CPU_GATING_FIELD` reader - CPU Gating Field"]
+#[doc = "Field `cpu_gating_field` reader - CPU Gating Field"]
 pub type CPU_GATING_FIELD_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `CPU_GATING_FIELD` writer - CPU Gating Field"]
+#[doc = "Field `cpu_gating_field` writer - CPU Gating Field"]
 pub type CPU_GATING_FIELD_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CPU_GATING_SPEC, u16, u16, 16, O>;
 impl R {
@@ -133,7 +133,7 @@ impl crate::Readable for CPU_GATING_SPEC {
 impl crate::Writable for CPU_GATING_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets CPU_GATING to value 0"]
+#[doc = "`reset()` method sets cpu_gating to value 0"]
 impl crate::Resettable for CPU_GATING_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

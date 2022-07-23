@@ -1,4 +1,4 @@
-#[doc = "Register `SMHC_CSDC` reader"]
+#[doc = "Register `smhc_csdc` reader"]
 pub struct R(crate::R<SMHC_CSDC_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<SMHC_CSDC_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<SMHC_CSDC_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `SMHC_CSDC` writer"]
+#[doc = "Register `smhc_csdc` writer"]
 pub struct W(crate::W<SMHC_CSDC_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<SMHC_CSDC_SPEC>;
@@ -49,7 +49,7 @@ impl From<CRC_DET_PARA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CRC_DET_PARA` reader - "]
+#[doc = "Field `crc_det_para` reader - "]
 pub type CRC_DET_PARA_R = crate::FieldReader<u8, CRC_DET_PARA_A>;
 impl CRC_DET_PARA_R {
     #[doc = "Get enumerated values variant"]
@@ -72,7 +72,7 @@ impl CRC_DET_PARA_R {
         *self == CRC_DET_PARA_A::OTHER
     }
 }
-#[doc = "Field `CRC_DET_PARA` writer - "]
+#[doc = "Field `crc_det_para` writer - "]
 pub type CRC_DET_PARA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SMHC_CSDC_SPEC, u8, CRC_DET_PARA_A, 4, O>;
 impl<'a, const O: u8> CRC_DET_PARA_W<'a, O> {
@@ -120,7 +120,7 @@ impl crate::Readable for SMHC_CSDC_SPEC {
 impl crate::Writable for SMHC_CSDC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets SMHC_CSDC to value 0"]
+#[doc = "`reset()` method sets smhc_csdc to value 0"]
 impl crate::Resettable for SMHC_CSDC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

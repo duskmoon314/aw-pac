@@ -1,4 +1,4 @@
-#[doc = "Register `HC_RH_DESCRIPTOR_B` reader"]
+#[doc = "Register `hc_rh_descriptor_b` reader"]
 pub struct R(crate::R<HC_RH_DESCRIPTOR_B_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_RH_DESCRIPTOR_B_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_RH_DESCRIPTOR_B_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_RH_DESCRIPTOR_B` writer"]
+#[doc = "Register `hc_rh_descriptor_b` writer"]
 pub struct W(crate::W<HC_RH_DESCRIPTOR_B_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_RH_DESCRIPTOR_B_SPEC>;
@@ -34,14 +34,14 @@ impl From<crate::W<HC_RH_DESCRIPTOR_B_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `PORT_POWER_CONTROL_MASK` reader - PortPowerControlMask\n\nEach bit indicates if a port is affected by a global power control command when PowerSwitchingMode is set. When set, the port's power state is only affected by per-port power control ( Set/ClearPortPower ). When cleared, the port is controlled by the global power switch ( Set/ClearGlobalPower ). If the device is configured to global switching mode ( PowerSwitchingMode = 0 ), this field is not valid."]
+#[doc = "Field `port_power_control_mask` reader - PortPowerControlMask\n\nEach bit indicates if a port is affected by a global power control command when PowerSwitchingMode is set. When set, the port's power state is only affected by per-port power control ( Set/ClearPortPower ). When cleared, the port is controlled by the global power switch ( Set/ClearGlobalPower ). If the device is configured to global switching mode ( PowerSwitchingMode = 0 ), this field is not valid."]
 pub type PORT_POWER_CONTROL_MASK_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `PORT_POWER_CONTROL_MASK` writer - PortPowerControlMask\n\nEach bit indicates if a port is affected by a global power control command when PowerSwitchingMode is set. When set, the port's power state is only affected by per-port power control ( Set/ClearPortPower ). When cleared, the port is controlled by the global power switch ( Set/ClearGlobalPower ). If the device is configured to global switching mode ( PowerSwitchingMode = 0 ), this field is not valid."]
+#[doc = "Field `port_power_control_mask` writer - PortPowerControlMask\n\nEach bit indicates if a port is affected by a global power control command when PowerSwitchingMode is set. When set, the port's power state is only affected by per-port power control ( Set/ClearPortPower ). When cleared, the port is controlled by the global power switch ( Set/ClearGlobalPower ). If the device is configured to global switching mode ( PowerSwitchingMode = 0 ), this field is not valid."]
 pub type PORT_POWER_CONTROL_MASK_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_RH_DESCRIPTOR_B_SPEC, u16, u16, 16, O>;
-#[doc = "Field `DEVICE_REMOVABLE` reader - DeviceRemovable\n\nEach bit is dedicated to a port of the Root Hub. When cleared, the attached device is removable. When set, the attached device is not removable."]
+#[doc = "Field `device_removable` reader - DeviceRemovable\n\nEach bit is dedicated to a port of the Root Hub. When cleared, the attached device is removable. When set, the attached device is not removable."]
 pub type DEVICE_REMOVABLE_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `DEVICE_REMOVABLE` writer - DeviceRemovable\n\nEach bit is dedicated to a port of the Root Hub. When cleared, the attached device is removable. When set, the attached device is not removable."]
+#[doc = "Field `device_removable` writer - DeviceRemovable\n\nEach bit is dedicated to a port of the Root Hub. When cleared, the attached device is removable. When set, the attached device is not removable."]
 pub type DEVICE_REMOVABLE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_RH_DESCRIPTOR_B_SPEC, u16, u16, 16, O>;
 impl R {
@@ -87,7 +87,7 @@ impl crate::Readable for HC_RH_DESCRIPTOR_B_SPEC {
 impl crate::Writable for HC_RH_DESCRIPTOR_B_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_RH_DESCRIPTOR_B to value 0"]
+#[doc = "`reset()` method sets hc_rh_descriptor_b to value 0"]
 impl crate::Resettable for HC_RH_DESCRIPTOR_B_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

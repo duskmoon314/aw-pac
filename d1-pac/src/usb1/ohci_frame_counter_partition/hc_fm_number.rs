@@ -1,4 +1,4 @@
-#[doc = "Register `HC_FM_NUMBER` reader"]
+#[doc = "Register `hc_fm_number` reader"]
 pub struct R(crate::R<HC_FM_NUMBER_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<HC_FM_NUMBER_SPEC>;
@@ -13,7 +13,7 @@ impl From<crate::R<HC_FM_NUMBER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `HC_FM_NUMBER` writer"]
+#[doc = "Register `hc_fm_number` writer"]
 pub struct W(crate::W<HC_FM_NUMBER_SPEC>);
 impl core::ops::Deref for W {
     type Target = crate::W<HC_FM_NUMBER_SPEC>;
@@ -34,9 +34,9 @@ impl From<crate::W<HC_FM_NUMBER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `FRAME_NUMBER` reader - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
+#[doc = "Field `frame_number` reader - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
 pub type FRAME_NUMBER_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `FRAME_NUMBER` writer - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
+#[doc = "Field `frame_number` writer - FrameNumber\n\nThis is incremented when is re-loaded. It will be rolled over to 0x0 after 0x0ffff. When entering the USBOPERATIONAL state, this will be incremented automatically. The content will be written to HCCA after HC has incremented the FrameNumber at each frame boundary and sent a SOF but before HC reads the first ED in that Frame. After writing to HCCA, HC will set the StartofFrame in HcInterruptStatus"]
 pub type FRAME_NUMBER_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_FM_NUMBER_SPEC, u16, u16, 16, O>;
 impl R {
@@ -72,7 +72,7 @@ impl crate::Readable for HC_FM_NUMBER_SPEC {
 impl crate::Writable for HC_FM_NUMBER_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets HC_FM_NUMBER to value 0"]
+#[doc = "`reset()` method sets hc_fm_number to value 0"]
 impl crate::Resettable for HC_FM_NUMBER_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
