@@ -9993,7 +9993,7 @@
           <fields>
             <field>
               <name>iommu_reset</name>
-              <description>IOMMU Software Reset Switch、n\nBefore IOMMU software reset operation, ensure IOMMU never  be opened; or all bus operations are completed; or DRAM and  the  peripherals  have  opened  the  corresponding  switch,  for  shielding the effects of IOMMU reset. </description>
+              <description>IOMMU Software Reset Switch、n\nBefore IOMMU software reset operation, ensure IOMMU never be opened; or all bus operations are completed; or DRAM and the peripherals have opened the corresponding switch, for shielding the effects of IOMMU reset.</description>
               <bitRange>[31:31]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10011,7 +10011,7 @@
             </field>
             <field>
               <name>pc_rst</name>
-              <description>PTW Cache Reset\n\nPTW Cache address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW  Cache individually. </description>
+              <description>PTW Cache Reset\n\nPTW Cache address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually.</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10029,7 +10029,7 @@
             </field>
             <field>
               <name>mtlb_rst</name>
-              <description>Macrotlb Reset\n\nMacro TLB address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW  Cache individually. </description>
+              <description>Macrotlb Reset\n\nMacro TLB address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually.</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10049,7 +10049,7 @@
               <dim>7</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>m%s_rst</name>
-              <description>Master[i] Reset\n\nMaster[i] address convert lane software reset switch.\n\nWhen  Master[i]  occurs  abnormal,  the  bit  is  used  to  reset  PTW  Cache individually.   </description>
+              <description>Master[i] Reset\n\nMaster[i] address convert lane software reset switch.\n\nWhen Master[i] occurs abnormal, the bit is used to reset PTW Cache individually.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10060,7 +10060,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>R_ELEASE</name>
-                  <description>Release reset signal  </description>
+                  <description>Release reset signal</description>
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -10074,7 +10074,7 @@
           <fields>
             <field>
               <name>enable</name>
-              <description>IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the  Translation  Table  Base  register;  or  ensure  all  masters  are  in  bypass status or no the status of sending bus demand(such as  reset)   </description>
+              <description>IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the Translation Table Base register; or ensure all masters are in bypass status or no the status of sending bus demand(such as reset)</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10103,7 +10103,7 @@
               <dim>7</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>m%s_bp</name>
-              <description>Master[i] bypass switch\n\nAfter  bypass  function  is  opened,  IOMMU  can  not  map  the  address  of  Master6  sending,  and  directly  output  the  virtual  address to MBUS as physical address. </description>
+              <description>Master[i] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10130,7 +10130,7 @@
           <fields>
             <field>
               <name>iommu_auto_gating</name>
-              <description>IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module. </description>
+              <description>IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10166,7 +10166,7 @@
               <dim>7</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>m%s_ooo_ctrl</name>
-              <description>Master[i] out-of-order control bit </description>
+              <description>Master[i] out-of-order control bit</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10195,7 +10195,7 @@
               <dim>7</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>m%s_4kb_bdy_prt_ctrl</name>
-              <description>Master[i] 4 KB boundary protect control bit </description>
+              <description>Master[i] 4 KB boundary protect control bit</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10220,7 +10220,7 @@
           <fields>
             <field>
               <name>ttb</name>
-              <description>Translation Table Base\n\nLevel1 page table starting address, aligned to 16 KB.\n\nWhen operating the register, IOMMU address mapping function  must  be  closed,  namely  IOMMU_ENABLE  is  0;  Or  Bypass  function  of  all  main  equipment  is  set  to  1,  or  no  the  state  of  transfer bus commands (such as setting). </description>
+              <description>Translation Table Base\n\nLevel1 page table starting address, aligned to 16 KB.\n\nWhen operating the register, IOMMU address mapping function must be closed, namely IOMMU_ENABLE is 0; Or Bypass function of all main equipment is set to 1, or no the state of transfer bus commands (such as setting).</description>
               <bitRange>[31:14]</bitRange>
               <access>read-write</access>
             </field>
@@ -10235,7 +10235,7 @@
           <fields>
             <field>
               <name>ptw_cache_enable</name>
-              <description>PTW Cache enable bit </description>
+              <description>PTW Cache enable bit</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10253,7 +10253,7 @@
             </field>
             <field>
               <name>macro_tlb_enable</name>
-              <description>Macro TLB enable bit </description>
+              <description>Macro TLB enable bit</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10273,9 +10273,7 @@
               <dim>7</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>micro_tlb%s_enable</name>
-              <description>Micro TLB[i] enable bit 
-0: Disable 
-1: Enable </description>
+              <description>Micro TLB[i] enable bit</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10302,7 +10300,7 @@
           <fields>
             <field>
               <name>pf_vl_pt_to_pc</name>
-              <description>Prefetch Value Pagetable to PTW Cache\n\nIf the function is enabled, the prefetch function will not update  the invalid Level1 page table to PTW cache. </description>
+              <description>Prefetch Value Pagetable to PTW Cache\n\nIf the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache.</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10313,14 +10311,14 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>E_NABLE</name>
-                  <description>Enable  If the function is enabled, the prefetch function will not update  the invalid Level1 page table to PTW cache.</description>
+                  <description>Enable If the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache.</description>
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
             </field>
             <field>
               <name>pf_vl_pt_to_mt</name>
-              <description>Prefetch Value Pagetable to Macro TLB\n\nIf the function is enabled, the prefetch function will not update  the invalid Level2 page table to Macro TLB. </description>
+              <description>Prefetch Value Pagetable to Macro TLB\n\nIf the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB.</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10331,7 +10329,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>E_NABLE</name>
-                  <description>Enable  If the function is enabled, the prefetch function will not update  the invalid Level2 page table to Macro TLB.</description>
+                  <description>Enable If the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB.</description>
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -10365,7 +10363,7 @@
           <fields>
             <field>
               <name>pc_fs</name>
-              <description>PTW Cache Flush  Clear PTW Cache\n\nAfter  the  Flush  operation  is  completed,  the  bit  can  clear    automatically. </description>
+              <description>PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear  automatically.</description>
               <bitRange>[17:17]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10383,7 +10381,7 @@
             </field>
             <field>
               <name>ma_tlb_fs</name>
-              <description>Macro TLB Flush\n\nClear Macro TLB\n\nAfter  the  Flush  operation  is  completed,  the  bit  can  clear  automatically. </description>
+              <description>Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically.</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10394,7 +10392,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>E_NABLE</name>
-                  <description>Enable clear operation  </description>
+                  <description>Enable clear operation</description>
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -10403,7 +10401,7 @@
               <dim>7</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>mi_tlb%s_fs</name>
-              <description>Micro TLB[i] Flush  Clear Micro TLB6\n\nAfter  the  Flush  operation  is  completed,  the  bit  can  clear  automatically. </description>
+              <description>Micro TLB[i] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10414,7 +10412,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>E_NABLE</name>
-                  <description>Enable clear operation  </description>
+                  <description>Enable clear operation</description>
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -10452,7 +10450,7 @@
           <fields>
             <field>
               <name>tlb_ivld_sta_addr</name>
-              <description>TLB invalid start address, 4 KB aligned. </description>
+              <description>TLB invalid start address, 4 KB aligned.</description>
               <bitRange>[31:12]</bitRange>
               <access>read-write</access>
             </field>
@@ -10465,7 +10463,7 @@
           <fields>
             <field>
               <name>tlb_ivld_end_addr</name>
-              <description>TLB invalid end address, 4 KB aligned. </description>
+              <description>TLB invalid end address, 4 KB aligned.</description>
               <bitRange>[31:12]</bitRange>
               <access>read-write</access>
             </field>
@@ -10478,7 +10476,7 @@
           <fields>
             <field>
               <name>tlb_ivld_addr</name>
-              <description>TLB invalid address, 4 KB aligned </description>
+              <description>TLB invalid address, 4 KB aligned</description>
               <bitRange>[31:12]</bitRange>
               <access>read-write</access>
             </field>
@@ -10491,7 +10489,7 @@
           <fields>
             <field>
               <name>tlb_ivld_addr_mask</name>
-              <description>TLB invalid address mask register, 4 KB aligned </description>
+              <description>TLB invalid address mask register, 4 KB aligned</description>
               <bitRange>[31:12]</bitRange>
               <access>read-write</access>
             </field>
@@ -10504,7 +10502,7 @@
           <fields>
             <field>
               <name>tlb_ivld_enable</name>
-              <description>Enable TLB invalidation operation\n\nAfter  invalidation  operation  is  completed,  the  bit  can  clear    automatically.\n\nWhen  operating  invalidation  operation,  TLB/Cache  operation  has not affected.\n\nAfter or before invalidation operation starts, there is no absolute  relationship  between  the  same  address  switch  operation  and  invalidation operation.   </description>
+              <description>Enable TLB invalidation operation\n\nAfter invalidation operation is completed, the bit can clear  automatically.\n\nWhen operating invalidation operation, TLB/Cache operation has not affected.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10554,7 +10552,7 @@
           <fields>
             <field>
               <name>pc_ivld_addr</name>
-              <description>PTW Cache invalid address, 1 MB aligned. </description>
+              <description>PTW Cache invalid address, 1 MB aligned.</description>
               <bitRange>[31:20]</bitRange>
               <access>read-write</access>
             </field>
@@ -10567,7 +10565,7 @@
           <fields>
             <field>
               <name>pc_ivld_sa</name>
-              <description>PTW Cache invalid start address, 1 MB aligned. </description>
+              <description>PTW Cache invalid start address, 1 MB aligned.</description>
               <bitRange>[31:20]</bitRange>
               <access>read-write</access>
             </field>
@@ -10580,7 +10578,7 @@
           <fields>
             <field>
               <name>pc_ivld_enable</name>
-              <description>Enable PTW Cache invalidation operation\n\nAfter  invalidation  operation  is  completed,  the  bit  can  clear    automatically.\n\nAfter or before invalidation operation starts, there is no absolute  relationship  between  the  same  address  switch  operation  and  invalidation operation.   </description>
+              <description>Enable PTW Cache invalidation operation\n\nAfter invalidation operation is completed, the bit can clear  automatically.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10605,7 +10603,7 @@
           <fields>
             <field>
               <name>pc_ivld_ea</name>
-              <description>PTW Cache invalid end address, 1 MB aligned. </description>
+              <description>PTW Cache invalid end address, 1 MB aligned.</description>
               <bitRange>[31:20]</bitRange>
               <access>read-write</access>
             </field>
@@ -10703,7 +10701,7 @@
           <fields>
             <field>
               <name>dm_aut_ovwt_enable</name>
-              <description>Domain write/read permission overwrite enable </description>
+              <description>Domain write/read permission overwrite enable</description>
               <bitRange>[31:31]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10768,7 +10766,7 @@
           <fields>
             <field>
               <name>dbg_pf_l2_iv_pt_en</name>
-              <description>Debug or Prefetch Invalid Page Table Enable   </description>
+              <description>Debug or Prefetch Invalid Page Table Enable</description>
               <bitRange>[20:20]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10786,7 +10784,7 @@
             </field>
             <field>
               <name>dbg_pf_pc_iv_l1_pt_en</name>
-              <description>Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable </description>
+              <description>Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable</description>
               <bitRange>[19:19]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10804,7 +10802,7 @@
             </field>
             <field>
               <name>dbg_pf_dram_iv_l1_pt_en</name>
-              <description>Debug or Prefetch DRAM Invalid Level1 Page Table Enable </description>
+              <description>Debug or Prefetch DRAM Invalid Level1 Page Table Enable</description>
               <bitRange>[18:18]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10824,7 +10822,7 @@
               <dim>2</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>l%s_page_table_invalid_en</name>
-              <description>Level[i] page table invalid interrupt enable </description>
+              <description>Level[i] page table invalid interrupt enable</description>
               <bitRange>[16:16]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10844,7 +10842,7 @@
               <dim>7</dim>
               <dimIncrement>0x2</dimIncrement>
               <name>micro_tlb%s_invalid_en</name>
-              <description>Micro TLB[i] permission invalid interrupt enable </description>
+              <description>Micro TLB[i] permission invalid interrupt enable</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -10871,7 +10869,7 @@
               <dim>2</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>l%s_page_table_invalid_clr</name>
-              <description>Level[i] page table invalid interrupt clear bit </description>
+              <description>Level[i] page table invalid interrupt clear bit</description>
               <bitRange>[16:16]</bitRange>
               <access>write-only</access>
               <enumeratedValues>
@@ -10891,7 +10889,7 @@
               <dim>7</dim>
               <dimIncrement>0x2</dimIncrement>
               <name>micro_tlb%s_invalid_clr</name>
-              <description>Micro TLB[i] permission invalid interrupt clear bit </description>
+              <description>Micro TLB[i] permission invalid interrupt clear bit</description>
               <bitRange>[0:0]</bitRange>
               <access>write-only</access>
               <enumeratedValues>
@@ -10902,7 +10900,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>C_LEAR</name>
-                  <description>Clear interrupt  Note: The bit is not used.</description>
+                  <description>Clear interrupt Note: The bit is not used.</description>
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -10918,7 +10916,7 @@
               <dim>2</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>l%s_page_table_invalid_sta</name>
-              <description>Level[i] page table invalid interrupt status bit </description>
+              <description>Level[i] page table invalid interrupt status bit</description>
               <bitRange>[16:16]</bitRange>
               <access>read-only</access>
               <enumeratedValues>
@@ -10966,7 +10964,7 @@
           <fields>
             <field>
               <name>int_err_addr</name>
-              <description>Virtual address that caused Micro TLB[i] to interrupt   </description>
+              <description>Virtual address that caused Micro TLB[i] to interrupt</description>
               <bitRange>[31:0]</bitRange>
             </field>
           </fields>
@@ -10981,7 +10979,7 @@
           <fields>
             <field>
               <name>int_err_addr</name>
-              <description>Virtual address that caused L[i] page table to interrupt   </description>
+              <description>Virtual address that caused L[i] page table to interrupt</description>
               <bitRange>[31:0]</bitRange>
             </field>
           </fields>
@@ -10996,7 +10994,7 @@
           <fields>
             <field>
               <name>int_err_data</name>
-              <description>Corresponding page table of virtual address that caused Micro  TLB[i] to interrupt   </description>
+              <description>Corresponding page table of virtual address that caused Micro TLB[i] to interrupt</description>
               <bitRange>[31:0]</bitRange>
             </field>
           </fields>
@@ -11011,7 +11009,7 @@
           <fields>
             <field>
               <name>int_err_data</name>
-              <description>Corresponding page table of virtual address that caused L[i] page table to interrupt   </description>
+              <description>Corresponding page table of virtual address that caused L[i] page table to interrupt</description>
               <bitRange>[31:0]</bitRange>
             </field>
           </fields>
@@ -11045,7 +11043,7 @@
           <fields>
             <field>
               <name>va</name>
-              <description>Virtual address of read/write </description>
+              <description>Virtual address of read/write</description>
               <bitRange>[31:0]</bitRange>
               <access>read-write</access>
             </field>
@@ -11058,7 +11056,7 @@
           <fields>
             <field>
               <name>va_data</name>
-              <description>Data corresponding to read/write virtual address </description>
+              <description>Data corresponding to read/write virtual address</description>
               <bitRange>[31:0]</bitRange>
               <access>read-write</access>
             </field>
@@ -11088,7 +11086,7 @@
             </field>
             <field>
               <name>va_config</name>
-              <description>Virtual Address Configuration </description>
+              <description>Virtual Address Configuration</description>
               <bitRange>[8:8]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -12166,7 +12164,7 @@
             </field>
             <field>
               <name>dcxo_trim</name>
-              <description>DCXO cap array value\n\nThe capacity cell is 55 fF. </description>
+              <description>DCXO cap array value\n\nThe capacity cell is 55 fF.</description>
               <bitRange>[22:16]</bitRange>
               <access>read-write</access>
             </field>
@@ -12232,7 +12230,7 @@
             </field>
             <field>
               <name>clk16m_rc_en</name>
-              <description>The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M. </description>
+              <description>The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -12365,7 +12363,7 @@
             </field>
             <field>
               <name>vccio_det_spare</name>
-              <description>- Bit[7:5]: Reserved, default=0\n- Bit[4]: Bypass debounce circuit, defaule=0\n- Bit[3]: Enable control, defaule=0 \n  - 0: Disable VCC-IO detection\n  - 1: Force the detection output\n- Bit[2:0]: Gear adjustment\n  - 000: Detection threshold is 2.5 V\n  - 001: Detection threshold is 2.6 V\n  - 010: Detection threshold is 2.7 V (default)\n  - 011: Detection threshold is 2.8 V\n  - 100: Detection threshold is 2.9 V\n  - 101: Detection threshold is 3 V\n  - 110: N/A\n  - 111: N/A</description>
+              <description>- Bit[7:5]: Reserved, default=0\n- Bit[4]: Bypass debounce circuit, defaule=0\n- Bit[3]: Enable control, defaule=0 \n - 0: Disable VCC-IO detection\n - 1: Force the detection output\n- Bit[2:0]: Gear adjustment\n - 000: Detection threshold is 2.5 V\n - 001: Detection threshold is 2.6 V\n - 010: Detection threshold is 2.7 V (default)\n - 011: Detection threshold is 2.8 V\n - 100: Detection threshold is 2.9 V\n - 101: Detection threshold is 3 V\n - 110: N/A\n - 111: N/A</description>
               <bitRange>[11:4]</bitRange>
               <access>read-write</access>
             </field>
@@ -23387,7 +23385,7 @@
               </field>
               <field>
                 <name>no_power_swithcing</name>
-                <description>NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode  specifies global or per-port switching.</description>
+                <description>NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode specifies global or per-port switching.</description>
                 <bitRange>[8:8]</bitRange>
                 <enumeratedValues>
                   <enumeratedValue>
@@ -23454,7 +23452,7 @@
               </field>
               <field>
                 <name>over_current_indicator</name>
-                <description>This bit reports overcurrent conditions when the global reporting is implemented. When set, an overcurrent condition exists. When cleared, all power operations are normal.  If per-port overcurrent protection is implemented this bit is always '0'</description>
+                <description>This bit reports overcurrent conditions when the global reporting is implemented. When set, an overcurrent condition exists. When cleared, all power operations are normal. If per-port overcurrent protection is implemented this bit is always '0'</description>
                 <bitRange>[1:1]</bitRange>
               </field>
               <field>
@@ -35739,7 +35737,7 @@
                 </enumeratedValue>
                 <enumeratedValue>
                   <name>AVAILABLE</name>
-                  <description>RX FIFO available according to its level  Writing 1 clears this bit.</description>
+                  <description>RX FIFO available according to its level Writing 1 clears this bit.</description>
                   <value>0x1</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -35817,7 +35815,7 @@
             </field>
             <field>
               <name>athr</name>
-              <description>Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock)). </description>
+              <description>Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock)).</description>
               <bitRange>[22:16]</bitRange>
               <access>read-write</access>
             </field>
@@ -35829,7 +35827,7 @@
             </field>
             <field>
               <name>nthr</name>
-              <description>Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less  than NTHR, the pulse is taken as noise and should be discarded  by hardware.</description>
+              <description>Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware.</description>
               <bitRange>[7:2]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
@@ -36379,7 +36377,7 @@
           <fields>
             <field>
               <name>idc_h</name>
-              <description>Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time.  </description>
+              <description>Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time.</description>
               <bitRange>[3:0]</bitRange>
               <access>read-write</access>
             </field>
@@ -36409,7 +36407,7 @@
           <fields>
             <field>
               <name>tic_h</name>
-              <description>Transmit Idle Counter_H (High 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero.  </description>
+              <description>Transmit Idle Counter_H (High 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero.</description>
               <bitRange>[7:0]</bitRange>
               <access>read-only</access>
             </field>
@@ -36424,7 +36422,7 @@
           <fields>
             <field>
               <name>tic_l</name>
-              <description>Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero.  </description>
+              <description>Transmit Idle Counter_L (Low 8 bits)\n\nIt is used to count the idle duration of CIR transmitter by software.\n\nCount in 128*Ts (Sample Duration, 1/Fs) when the transmitter is idle, and it should be reset when the transmitter is active.\n\nWhen this counter reaches the maximum value (0xFFFF), it will stop automatically, and should not be cleared to zero.</description>
               <bitRange>[7:0]</bitRange>
               <access>read-only</access>
             </field>
@@ -36439,7 +36437,7 @@
           <fields>
             <field>
               <name>tel</name>
-              <description>TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1  </description>
+              <description>TX FIFO empty Level for DRQ and IRQ.\n\nTRIGGER_LEVEL = TEL + 1</description>
               <bitRange>[7:0]</bitRange>
               <access>read-write</access>
             </field>
@@ -37369,7 +37367,7 @@
               <dim>4</dim>
               <dimIncrement>0x1</dimIncrement>
               <name>task%s_pending</name>
-              <description>Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the  end flag.</description>
+              <description>Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag.</description>
               <bitRange>[3:0]</bitRange>
               <access>read-write</access>
               <modifiedWriteValues>oneToClear</modifiedWriteValues>
@@ -37397,7 +37395,7 @@
           <fields>
             <field>
               <name>task_load</name>
-              <description>Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO  is not full.</description>
+              <description>Task Load\n\nWhen set, the CE can load the descriptor of task if the task FIFO is not full.</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
             </field>
