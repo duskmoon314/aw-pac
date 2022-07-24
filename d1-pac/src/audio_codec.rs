@@ -236,24 +236,24 @@ pub struct RegisterBlock {
     pub ac_adc_drc_hpflgain: crate::Reg<ac_adc_drc_hpflgain::AC_ADC_DRC_HPFLGAIN_SPEC>,
     _reserved111: [u8; 0x40],
     #[doc = "0x300 - ADC1 Analog Control Register"]
-    pub adc1_reg: crate::Reg<adc1_reg::ADC1_REG_SPEC>,
+    pub adc1: crate::Reg<adc1::ADC1_SPEC>,
     #[doc = "0x304 - ADC2 Analog Control Register"]
-    pub adc2_reg: crate::Reg<adc2_reg::ADC2_REG_SPEC>,
+    pub adc2: crate::Reg<adc2::ADC2_SPEC>,
     #[doc = "0x308 - ADC3 Analog Control Register"]
-    pub adc3_reg: crate::Reg<adc3_reg::ADC3_REG_SPEC>,
+    pub adc3: crate::Reg<adc3::ADC3_SPEC>,
     _reserved114: [u8; 0x04],
     #[doc = "0x310 - DAC Analog Control Register"]
-    pub dac_reg: crate::Reg<dac_reg::DAC_REG_SPEC>,
+    pub dac: crate::Reg<dac::DAC_SPEC>,
     _reserved115: [u8; 0x04],
     #[doc = "0x318 - MICBIAS Analog Control Register"]
-    pub micbias_reg: crate::Reg<micbias_reg::MICBIAS_REG_SPEC>,
+    pub micbias: crate::Reg<micbias::MICBIAS_SPEC>,
     #[doc = "0x31c - BIAS Analog Control Register"]
-    pub ramp_reg: crate::Reg<ramp_reg::RAMP_REG_SPEC>,
+    pub ramp: crate::Reg<ramp::RAMP_SPEC>,
     #[doc = "0x320 - BIAS Analog Control Register"]
-    pub bias_reg: crate::Reg<bias_reg::BIAS_REG_SPEC>,
+    pub bias: crate::Reg<bias::BIAS_SPEC>,
     _reserved118: [u8; 0x0c],
     #[doc = "0x330 - ADC5 Analog Control Register"]
-    pub adc5_reg: crate::Reg<adc5_reg::ADC5_REG_SPEC>,
+    pub adc5: crate::Reg<adc5::ADC5_SPEC>,
 }
 #[doc = "ac_dac_dpc register accessor: an alias for `Reg<AC_DAC_DPC_SPEC>`"]
 pub type AC_DAC_DPC = crate::Reg<ac_dac_dpc::AC_DAC_DPC_SPEC>;
@@ -699,35 +699,35 @@ pub mod ac_adc_drc_hpfhgain;
 pub type AC_ADC_DRC_HPFLGAIN = crate::Reg<ac_adc_drc_hpflgain::AC_ADC_DRC_HPFLGAIN_SPEC>;
 #[doc = "ADC DRC HPF Gain Low Coef Register"]
 pub mod ac_adc_drc_hpflgain;
-#[doc = "adc1_reg register accessor: an alias for `Reg<ADC1_REG_SPEC>`"]
-pub type ADC1_REG = crate::Reg<adc1_reg::ADC1_REG_SPEC>;
+#[doc = "adc1 register accessor: an alias for `Reg<ADC1_SPEC>`"]
+pub type ADC1 = crate::Reg<adc1::ADC1_SPEC>;
 #[doc = "ADC1 Analog Control Register"]
-pub mod adc1_reg;
-#[doc = "adc2_reg register accessor: an alias for `Reg<ADC2_REG_SPEC>`"]
-pub type ADC2_REG = crate::Reg<adc2_reg::ADC2_REG_SPEC>;
+pub mod adc1;
+#[doc = "adc2 register accessor: an alias for `Reg<ADC2_SPEC>`"]
+pub type ADC2 = crate::Reg<adc2::ADC2_SPEC>;
 #[doc = "ADC2 Analog Control Register"]
-pub mod adc2_reg;
-#[doc = "adc3_reg register accessor: an alias for `Reg<ADC3_REG_SPEC>`"]
-pub type ADC3_REG = crate::Reg<adc3_reg::ADC3_REG_SPEC>;
+pub mod adc2;
+#[doc = "adc3 register accessor: an alias for `Reg<ADC3_SPEC>`"]
+pub type ADC3 = crate::Reg<adc3::ADC3_SPEC>;
 #[doc = "ADC3 Analog Control Register"]
-pub mod adc3_reg;
-#[doc = "dac_reg register accessor: an alias for `Reg<DAC_REG_SPEC>`"]
-pub type DAC_REG = crate::Reg<dac_reg::DAC_REG_SPEC>;
+pub mod adc3;
+#[doc = "dac register accessor: an alias for `Reg<DAC_SPEC>`"]
+pub type DAC = crate::Reg<dac::DAC_SPEC>;
 #[doc = "DAC Analog Control Register"]
-pub mod dac_reg;
-#[doc = "micbias_reg register accessor: an alias for `Reg<MICBIAS_REG_SPEC>`"]
-pub type MICBIAS_REG = crate::Reg<micbias_reg::MICBIAS_REG_SPEC>;
+pub mod dac;
+#[doc = "micbias register accessor: an alias for `Reg<MICBIAS_SPEC>`"]
+pub type MICBIAS = crate::Reg<micbias::MICBIAS_SPEC>;
 #[doc = "MICBIAS Analog Control Register"]
-pub mod micbias_reg;
-#[doc = "ramp_reg register accessor: an alias for `Reg<RAMP_REG_SPEC>`"]
-pub type RAMP_REG = crate::Reg<ramp_reg::RAMP_REG_SPEC>;
+pub mod micbias;
+#[doc = "ramp register accessor: an alias for `Reg<RAMP_SPEC>`"]
+pub type RAMP = crate::Reg<ramp::RAMP_SPEC>;
 #[doc = "BIAS Analog Control Register"]
-pub mod ramp_reg;
-#[doc = "bias_reg register accessor: an alias for `Reg<BIAS_REG_SPEC>`"]
-pub type BIAS_REG = crate::Reg<bias_reg::BIAS_REG_SPEC>;
+pub mod ramp;
+#[doc = "bias register accessor: an alias for `Reg<BIAS_SPEC>`"]
+pub type BIAS = crate::Reg<bias::BIAS_SPEC>;
 #[doc = "BIAS Analog Control Register"]
-pub mod bias_reg;
-#[doc = "adc5_reg register accessor: an alias for `Reg<ADC5_REG_SPEC>`"]
-pub type ADC5_REG = crate::Reg<adc5_reg::ADC5_REG_SPEC>;
+pub mod bias;
+#[doc = "adc5 register accessor: an alias for `Reg<ADC5_SPEC>`"]
+pub type ADC5 = crate::Reg<adc5::ADC5_SPEC>;
 #[doc = "ADC5 Analog Control Register"]
-pub mod adc5_reg;
+pub mod adc5;

@@ -31,9 +31,9 @@ pub struct RegisterBlock {
     #[doc = "0x38 - High Pass Filter Enable Control Register"]
     pub hpf_en_ctr: crate::Reg<hpf_en_ctr::HPF_EN_CTR_SPEC>,
     #[doc = "0x3c - High Pass Filter Coefficient Register"]
-    pub hpf_coef_reg: crate::Reg<hpf_coef_reg::HPF_COEF_REG_SPEC>,
+    pub hpf_coef: crate::Reg<hpf_coef::HPF_COEF_SPEC>,
     #[doc = "0x40 - High Pass Filter Gain Register"]
-    pub hpf_gain_reg: crate::Reg<hpf_gain_reg::HPF_GAIN_REG_SPEC>,
+    pub hpf_gain: crate::Reg<hpf_gain::HPF_GAIN_SPEC>,
 }
 #[doc = "dmic_en register accessor: an alias for `Reg<DMIC_EN_SPEC>`"]
 pub type DMIC_EN = crate::Reg<dmic_en::DMIC_EN_SPEC>;
@@ -91,11 +91,11 @@ pub mod data2_data3_vol_ctr;
 pub type HPF_EN_CTR = crate::Reg<hpf_en_ctr::HPF_EN_CTR_SPEC>;
 #[doc = "High Pass Filter Enable Control Register"]
 pub mod hpf_en_ctr;
-#[doc = "hpf_coef_reg register accessor: an alias for `Reg<HPF_COEF_REG_SPEC>`"]
-pub type HPF_COEF_REG = crate::Reg<hpf_coef_reg::HPF_COEF_REG_SPEC>;
+#[doc = "hpf_coef register accessor: an alias for `Reg<HPF_COEF_SPEC>`"]
+pub type HPF_COEF = crate::Reg<hpf_coef::HPF_COEF_SPEC>;
 #[doc = "High Pass Filter Coefficient Register"]
-pub mod hpf_coef_reg;
-#[doc = "hpf_gain_reg register accessor: an alias for `Reg<HPF_GAIN_REG_SPEC>`"]
-pub type HPF_GAIN_REG = crate::Reg<hpf_gain_reg::HPF_GAIN_REG_SPEC>;
+pub mod hpf_coef;
+#[doc = "hpf_gain register accessor: an alias for `Reg<HPF_GAIN_SPEC>`"]
+pub type HPF_GAIN = crate::Reg<hpf_gain::HPF_GAIN_SPEC>;
 #[doc = "High Pass Filter Gain Register"]
-pub mod hpf_gain_reg;
+pub mod hpf_gain;

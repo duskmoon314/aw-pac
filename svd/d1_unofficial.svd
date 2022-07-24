@@ -7271,12 +7271,12 @@
       </addressBlock>
       <registers>
         <register>
-          <name>riscv_sta_add0_reg</name>
+          <name>riscv_sta_add0</name>
           <description>RISCV Start Address0 Register</description>
           <addressOffset>0x4</addressOffset>
         </register>
         <register>
-          <name>riscv_sta_add1_reg</name>
+          <name>riscv_sta_add1</name>
           <description>RISCV Start Address1 Register</description>
           <addressOffset>0x8</addressOffset>
           <fields>
@@ -7288,7 +7288,7 @@
           </fields>
         </register>
         <register>
-          <name>rf1p_cfg_reg</name>
+          <name>rf1p_cfg</name>
           <description>RF1P Configuration Register</description>
           <addressOffset>0x10</addressOffset>
           <fields>
@@ -7300,7 +7300,7 @@
           </fields>
         </register>
         <register>
-          <name>rom_cfg_reg</name>
+          <name>rom_cfg</name>
           <description>ROM Configuration Register</description>
           <addressOffset>0x1C</addressOffset>
           <fields>
@@ -7312,7 +7312,7 @@
           </fields>
         </register>
         <register>
-          <name>wakeup_en_reg</name>
+          <name>wakeup_en</name>
           <description>Wakeup Enable Register</description>
           <addressOffset>0x20</addressOffset>
           <fields>
@@ -7326,12 +7326,12 @@
         <register>
           <dim>5</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>wakeup_mask%s_reg</name>
+          <name>wakeup_mask%s</name>
           <description>Wakeup Mask Register</description>
           <addressOffset>0x24</addressOffset>
         </register>
         <register>
-          <name>ts_tmode_sel_reg</name>
+          <name>ts_tmode_sel</name>
           <description>Timestamp Test Mode Select Register</description>
           <addressOffset>0x40</addressOffset>
           <fields>
@@ -7353,7 +7353,7 @@
           </fields>
         </register>
         <register>
-          <name>sram_addr_twist_reg</name>
+          <name>sram_addr_twist</name>
           <description>SRAM Address Twist Register</description>
           <addressOffset>0x44</addressOffset>
           <fields>
@@ -7371,7 +7371,7 @@
           </fields>
         </register>
         <register>
-          <name>work_mode_reg</name>
+          <name>work_mode</name>
           <description>Work Mode Register</description>
           <addressOffset>0x48</addressOffset>
           <access>read-only</access>
@@ -7398,13 +7398,13 @@
           </fields>
         </register>
         <register>
-          <name>retite_pc0_reg</name>
+          <name>retite_pc0</name>
           <description>Retire PC0 Register</description>
           <addressOffset>0x50</addressOffset>
           <access>read-only</access>
         </register>
         <register>
-          <name>retite_pc1_reg</name>
+          <name>retite_pc1</name>
           <description>Retire PC1 Register</description>
           <addressOffset>0x54</addressOffset>
           <access>read-only</access>
@@ -7434,7 +7434,7 @@
         <register>
           <dim>5</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>irq_mode%s_reg</name>
+          <name>irq_mode%s</name>
           <description>IRQ Mode Register</description>
           <addressOffset>0x60</addressOffset>
         </register>
@@ -8917,7 +8917,7 @@
       </interrupt>
       <registers>
         <register>
-          <name>dmac_irq_en_reg0</name>
+          <name>dmac_irq_en0</name>
           <description>DMAC IRQ Enable Register 0</description>
           <addressOffset>0x0</addressOffset>
           <fields>
@@ -8975,7 +8975,7 @@
           </fields>
         </register>
         <register>
-          <name>dmac_irq_en_reg1</name>
+          <name>dmac_irq_en1</name>
           <description>DMAC IRQ Enable Register 1</description>
           <addressOffset>0x4</addressOffset>
           <fields>
@@ -9036,7 +9036,7 @@
           </fields>
         </register>
         <register>
-          <name>dmac_irq_pend_reg0</name>
+          <name>dmac_irq_pend0</name>
           <description>DMAC IRQ Pending Register 0</description>
           <addressOffset>0x10</addressOffset>
           <fields>
@@ -9094,7 +9094,7 @@
           </fields>
         </register>
         <register>
-          <name>dmac_irq_pend_reg1</name>
+          <name>dmac_irq_pend1</name>
           <description>DMAC IRQ Pending Register 1</description>
           <addressOffset>0x14</addressOffset>
           <fields>
@@ -9155,7 +9155,7 @@
           </fields>
         </register>
         <register>
-          <name>dmac_auto_gate_reg</name>
+          <name>dmac_auto_gate</name>
           <description>DMAC Auto Gating Register</description>
           <addressOffset>0x28</addressOffset>
           <fields>
@@ -9207,7 +9207,7 @@
           </fields>
         </register>
         <register>
-          <name>dmac_sta_reg</name>
+          <name>dmac_sta</name>
           <description>DMAC Status Register</description>
           <addressOffset>0x30</addressOffset>
           <access>read-only</access>
@@ -9249,7 +9249,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_en_reg%s</name>
+          <name>dmac_en%s</name>
           <description>DMAC Channel Enable Register</description>
           <addressOffset>0x100</addressOffset>
           <fields>
@@ -9273,7 +9273,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_pau_reg%s</name>
+          <name>dmac_pau%s</name>
           <description>DMAC Channel Pause Register</description>
           <addressOffset>0x104</addressOffset>
           <fields>
@@ -9297,7 +9297,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_desc_addr_reg%s</name>
+          <name>dmac_desc_addr%s</name>
           <description>DMAC Channel Start Address Register</description>
           <addressOffset>0x108</addressOffset>
           <fields>
@@ -9316,7 +9316,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_cfg_reg%s</name>
+          <name>dmac_cfg%s</name>
           <description>DMAC Channel Configuration Register</description>
           <addressOffset>0x10C</addressOffset>
           <access>read-only</access>
@@ -9480,7 +9480,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_cur_src_reg%s</name>
+          <name>dmac_cur_src%s</name>
           <description>DMAC Channel Current Source Register</description>
           <addressOffset>0x110</addressOffset>
           <access>read-only</access>
@@ -9488,7 +9488,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_cur_dest_reg%s</name>
+          <name>dmac_cur_dest%s</name>
           <description>DMAC Channel Current Destination Register</description>
           <addressOffset>0x114</addressOffset>
           <access>read-only</access>
@@ -9496,7 +9496,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_bcnt_left_reg%s</name>
+          <name>dmac_bcnt_left%s</name>
           <description>DMAC Channel Byte Counter Left Register</description>
           <addressOffset>0x118</addressOffset>
           <access>read-only</access>
@@ -9511,7 +9511,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_para_reg%s</name>
+          <name>dmac_para%s</name>
           <description>DMAC Channel Parameter Register</description>
           <addressOffset>0x11C</addressOffset>
           <access>read-only</access>
@@ -9526,7 +9526,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_mode_reg%s</name>
+          <name>dmac_mode%s</name>
           <description>DMAC Mode Register</description>
           <addressOffset>0x128</addressOffset>
           <fields>
@@ -9565,7 +9565,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_fdesc_addr_reg%s</name>
+          <name>dmac_fdesc_addr%s</name>
           <description>DMAC Former Descriptor Address Register</description>
           <addressOffset>0x12C</addressOffset>
           <access>read-only</access>
@@ -9573,7 +9573,7 @@
         <register>
           <dim>16</dim>
           <dimIncrement>0x40</dimIncrement>
-          <name>dmac_pkg_num_reg%s</name>
+          <name>dmac_pkg_num%s</name>
           <description>DMAC Package Number Register</description>
           <addressOffset>0x130</addressOffset>
           <access>read-only</access>
@@ -10336,7 +10336,7 @@
             </field>
             <field>
               <dim>7</dim>
-              <dimIncrement>1</dimIncrement>
+              <dimIncrement>0x1</dimIncrement>
               <name>mi_tlb%s_pf</name>
               <description>Micro TLB6 prefetch enable</description>
               <bitRange>[0:0]</bitRange>
@@ -11242,7 +11242,7 @@
           <description>Communicate with CPU[N]</description>
           <addressOffset>0x0</addressOffset>
           <register>
-            <name>msgbox_rd_irq_en_reg</name>
+            <name>msgbox_rd_irq_en</name>
             <description>Message Box Read Interrupt Enable Register</description>
             <addressOffset>0x20</addressOffset>
             <fields>
@@ -11268,7 +11268,7 @@
             </fields>
           </register>
           <register>
-            <name>msgbox_rd_irq_status_reg</name>
+            <name>msgbox_rd_irq_status</name>
             <description>Message Box Read Interrupt Status Register</description>
             <addressOffset>0x24</addressOffset>
             <fields>
@@ -11295,7 +11295,7 @@
             </fields>
           </register>
           <register>
-            <name>msgbox_wr_irq_en_reg</name>
+            <name>msgbox_wr_irq_en</name>
             <description>Message Box Write Interrupt Enable Register</description>
             <addressOffset>0x30</addressOffset>
             <fields>
@@ -11321,7 +11321,7 @@
             </fields>
           </register>
           <register>
-            <name>msgbox_wr_irq_status_reg</name>
+            <name>msgbox_wr_irq_status</name>
             <description>Message Box Write Interrupt Status Register</description>
             <addressOffset>0x34</addressOffset>
             <fields>
@@ -11348,14 +11348,14 @@
             </fields>
           </register>
           <register>
-            <name>msgbox_debug_reg</name>
+            <name>msgbox_debug</name>
             <description>Message Box Debug Register</description>
             <addressOffset>0x40</addressOffset>
           </register>
           <register>
             <dim>4</dim>
             <dimIncrement>0x4</dimIncrement>
-            <name>msgbox_fifo_status_reg%s</name>
+            <name>msgbox_fifo_status%s</name>
             <description>Message Box FIFO Status Register</description>
             <addressOffset>0x50</addressOffset>
             <access>read-only</access>
@@ -11382,7 +11382,7 @@
           <register>
             <dim>4</dim>
             <dimIncrement>0x4</dimIncrement>
-            <name>msgbox_msg_status_reg%s</name>
+            <name>msgbox_msg_status%s</name>
             <description>Message Box Message Status Register</description>
             <addressOffset>0x60</addressOffset>
             <access>read-only</access>
@@ -11397,7 +11397,7 @@
           <register>
             <dim>4</dim>
             <dimIncrement>0x4</dimIncrement>
-            <name>msgbox_msg_reg%s</name>
+            <name>msgbox_msg%s</name>
             <description>Message Box Message Queue Register</description>
             <addressOffset>0x70</addressOffset>
             <fields>
@@ -11411,7 +11411,7 @@
           <register>
             <dim>4</dim>
             <dimIncrement>0x4</dimIncrement>
-            <name>msgbox_wr_int_threshold_reg%s</name>
+            <name>msgbox_wr_int_threshold%s</name>
             <description>Message Box Write Interrupt Threshold Register</description>
             <addressOffset>0x80</addressOffset>
             <fields>
@@ -11478,7 +11478,7 @@
       </interrupt>
       <registers>
         <register>
-          <name>spinlock_systatus_reg</name>
+          <name>spinlock_systatus</name>
           <description>Spinlock System Status Register</description>
           <addressOffset>0x0</addressOffset>
           <access>read-only</access>
@@ -11530,7 +11530,7 @@
           </fields>
         </register>
         <register>
-          <name>spinlock_status_reg</name>
+          <name>spinlock_status</name>
           <description>Spinlock Status Register</description>
           <addressOffset>0x10</addressOffset>
           <access>read-only</access>
@@ -11538,7 +11538,7 @@
             <field>
               <dim>32</dim>
               <dimIncrement>0x1</dimIncrement>
-              <name>lock_reg%s_status</name>
+              <name>lock%s_status</name>
               <description>Lock[i] status</description>
               <bitRange>[0:0]</bitRange>
               <enumeratedValues>
@@ -11555,7 +11555,7 @@
           </fields>
         </register>
         <register>
-          <name>spinlock_irq_en_reg</name>
+          <name>spinlock_irq_en</name>
           <description>Spinlock Interrupt Enable Register</description>
           <addressOffset>0x20</addressOffset>
           <fields>
@@ -11579,7 +11579,7 @@
           </fields>
         </register>
         <register>
-          <name>spinlock_irq_sta_reg</name>
+          <name>spinlock_irq_sta</name>
           <description>Spinlock Interrupt Status Register</description>
           <addressOffset>0x40</addressOffset>
           <fields>
@@ -11606,7 +11606,7 @@
         <register>
           <dim>5</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>spinlock_lockid%s_reg</name>
+          <name>spinlock_lockid%s</name>
           <description>Spinlock Lockid Register</description>
           <addressOffset>0x80</addressOffset>
           <access>read-only</access>
@@ -11614,7 +11614,7 @@
         <register>
           <dim>32</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>spinlock_lock_reg%s</name>
+          <name>spinlock_lock%s</name>
           <description>Spinlock Register</description>
           <addressOffset>0x100</addressOffset>
           <fields>
@@ -11651,7 +11651,7 @@
       </addressBlock>
       <registers>
         <register>
-          <name>losc_ctrl_reg</name>
+          <name>losc_ctrl</name>
           <description>Low Oscillator Control Register</description>
           <addressOffset>0x0</addressOffset>
           <resetValue>0x00004010</resetValue>
@@ -11786,7 +11786,7 @@
           </fields>
         </register>
         <register>
-          <name>losc_auto_swt_sta_reg</name>
+          <name>losc_auto_swt_sta</name>
           <description>LOSC Auto Switch Status Register</description>
           <addressOffset>0x4</addressOffset>
           <fields>
@@ -11848,7 +11848,7 @@
           </fields>
         </register>
         <register>
-          <name>intosc_clk_prescal_reg</name>
+          <name>intosc_clk_prescal</name>
           <description>Internal OSC Clock Pre-scalar Register</description>
           <addressOffset>0x8</addressOffset>
           <resetValue>0x0000000F</resetValue>
@@ -11863,7 +11863,7 @@
           </fields>
         </register>
         <register>
-          <name>rtc_day_reg</name>
+          <name>rtc_day</name>
           <description>RTC Year-Month-Day Register</description>
           <addressOffset>0x10</addressOffset>
           <fields>
@@ -11876,7 +11876,7 @@
           </fields>
         </register>
         <register>
-          <name>rtc_hh_mm_ss_reg</name>
+          <name>rtc_hh_mm_ss</name>
           <description>RTC Hour-Minute-Second Register</description>
           <addressOffset>0x14</addressOffset>
           <fields>
@@ -11901,7 +11901,7 @@
           </fields>
         </register>
         <register>
-          <name>alarm0_day_set_reg</name>
+          <name>alarm0_day_set</name>
           <description>Alarm 0 Day Setting Register</description>
           <addressOffset>0x20</addressOffset>
           <fields>
@@ -11914,7 +11914,7 @@
           </fields>
         </register>
         <register>
-          <name>alarm0_cur_vlu_reg</name>
+          <name>alarm0_cur_vlu</name>
           <description>Alarm 0 Counter Current Value Register</description>
           <addressOffset>0x24</addressOffset>
           <fields>
@@ -11939,7 +11939,7 @@
           </fields>
         </register>
         <register>
-          <name>alarm0_enable_reg</name>
+          <name>alarm0_enable</name>
           <description>Alarm 0 Enable Register</description>
           <addressOffset>0x28</addressOffset>
           <fields>
@@ -11989,7 +11989,7 @@
           </fields>
         </register>
         <register>
-          <name>alarm0_irq_sta_reg</name>
+          <name>alarm0_irq_sta</name>
           <description>Alarm 0 IRQ Status Register</description>
           <addressOffset>0x30</addressOffset>
           <fields>
@@ -12015,7 +12015,7 @@
           </fields>
         </register>
         <register>
-          <name>alarm_config_reg</name>
+          <name>alarm_config</name>
           <description>Alarm Configuration Register</description>
           <addressOffset>0x50</addressOffset>
           <fields>
@@ -12040,7 +12040,7 @@
           </fields>
         </register>
         <register>
-          <name>fout_32k_ctrl_gating_reg</name>
+          <name>fout_32k_ctrl_gating</name>
           <description>32K Fanout Control Gating Register</description>
           <addressOffset>0x60</addressOffset>
           <fields>
@@ -12107,7 +12107,7 @@
         <register>
           <dim>8</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>gp_data_reg%s</name>
+          <name>gp_data%s</name>
           <description>General Purpose Register</description>
           <addressOffset>0x100</addressOffset>
           <fields>
@@ -12120,7 +12120,7 @@
         <register>
           <dim>2</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>fboot_info_reg%s</name>
+          <name>fboot_info%s</name>
           <description>Fast Boot Information Register [01]</description>
           <addressOffset>0x120</addressOffset>
           <fields>
@@ -12132,7 +12132,7 @@
           </fields>
         </register>
         <register>
-          <name>dcxo_ctrl_reg</name>
+          <name>dcxo_ctrl</name>
           <description>DCXO Control Register</description>
           <addressOffset>0x160</addressOffset>
           <resetValue>0x883F10F7</resetValue>
@@ -12249,7 +12249,7 @@
           </fields>
         </register>
         <register>
-          <name>rtc_vio_reg</name>
+          <name>rtc_vio</name>
           <description>RTC_VIO Regulation Register</description>
           <addressOffset>0x190</addressOffset>
           <resetValue>0x00000004</resetValue>
@@ -12274,7 +12274,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>rtc_vio_regu</name>
+              <name>rtc_viou</name>
               <description>RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V.</description>
               <bitRange>[2:0]</bitRange>
               <access>read-write</access>
@@ -12324,7 +12324,7 @@
           </fields>
         </register>
         <register>
-          <name>ic_chara_reg</name>
+          <name>ic_chara</name>
           <description>IC Characteristic Register</description>
           <addressOffset>0x1F0</addressOffset>
           <fields>
@@ -12343,7 +12343,7 @@
           </fields>
         </register>
         <register>
-          <name>vdd_off_gating_ctrl_reg</name>
+          <name>vdd_off_gating_ctrl</name>
           <description>VDD Off Gating Control Register</description>
           <addressOffset>0x1F4</addressOffset>
           <resetValue>0x00000021</resetValue>
@@ -12387,7 +12387,7 @@
           </fields>
         </register>
         <register>
-          <name>efuse_hv_pwrswt_ctrl_reg</name>
+          <name>efuse_hv_pwrswt_ctrl</name>
           <description>Efuse High Voltage Power Switch Control Register</description>
           <addressOffset>0x204</addressOffset>
           <fields>
@@ -12413,7 +12413,7 @@
           </fields>
         </register>
         <register>
-          <name>rtc_spi_clk_ctrl_reg</name>
+          <name>rtc_spi_clk_ctrl</name>
           <description>RTC SPI Clock Control Register</description>
           <addressOffset>0x310</addressOffset>
           <resetValue>0x00000009</resetValue>
@@ -12459,241 +12459,2341 @@
       </addressBlock>
       <registers>
         <register>
-          <name>lcd_gctl_reg</name>
+          <name>lcd_gctl</name>
           <description>LCD Global Control Register</description>
           <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_en</name>
+              <description>When it is disabled, the module will be reset to idle state.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_gamma_en</name>
+              <description>Enable the Gamma correction function.</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_gint0_reg</name>
+          <name>lcd_gint0</name>
           <description>LCD Global Interrupt Register0</description>
           <addressOffset>0x4</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_vb_int_en</name>
+              <description>Enable the Vb interrupt</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_line_int_en</name>
+              <description>Enable the line interrupt</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_tri_finish_int_en</name>
+              <description>Enable the trigger finish interrupt</description>
+              <bitRange>[27:27]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_tri_counter_int_en</name>
+              <description>Enable the trigger counter interrupt</description>
+              <bitRange>[26:26]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_vb_int_flag</name>
+              <description>Asserted during vertical no-display period every frame\n\nWrite 0 to clear it.</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>lcd_line_int_flag</name>
+              <description>Trigger when SY0 match the current LCD scan line\n\nWrite 0 to clear it.</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>lcd_tri_finish_int_flag</name>
+              <description>Trigger when cpu trigger mode finished\n\nWrite 0 to clear it.</description>
+              <bitRange>[11:11]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>lcd_tri_counter_int_flag</name>
+              <description>Trigger when tri counter reaches this value\n\nWrite 0 to clear it.</description>
+              <bitRange>[10:10]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>lcd_tri_underflow_flag</name>
+              <description>Only used in dsi video mode, tri when sync by dsi but not finish\n\nWrite 0 to clear it.</description>
+              <bitRange>[9:9]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>fsync_int_inv</name>
+              <description>Enable the fsync interrupt to set signal inverse polarity.\n\nWhen FSYNC is positive, this bit must be 1.\n\nAnd vice versa.</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>de_int_flag</name>
+              <description>Asserted at the first valid line in every frame\n\nWrite 0 to clear it.</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+            <field>
+              <name>fsync_int_flag</name>
+              <description>Asserted at the fsync signal in every frame\n\nWrite 0 to clear it.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>zeroToClear</modifiedWriteValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_gint1_reg</name>
+          <name>lcd_gint1</name>
           <description>LCD Global Interrupt Register1</description>
           <addressOffset>0x8</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_line_int_num</name>
+              <description>Scan line for LCD line trigger (including inactive lines).\n\nSetting it for the specified line for trigger0.\n\nNote: SY0 is writable only when LINE_TRG0 is disabled.</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_frm_ctl_reg</name>
+          <name>lcd_frm_ctl</name>
           <description>LCD FRM Control Register</description>
           <addressOffset>0x10</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_frm_en</name>
+              <description>Enable the dither function</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_frm_mode_r</name>
+              <description>The R component output bits in dither function</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_IT6</name>
+                  <description>6-bit frm output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT5</name>
+                  <description>5-bit frm output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_frm_mode_g</name>
+              <description>The G component output bits in dither function</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_IT6</name>
+                  <description>6-bit frm output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT5</name>
+                  <description>5-bit frm output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_frm_mode_b</name>
+              <description>The B component output bits in dither function</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_IT6</name>
+                  <description>6-bit frm output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT5</name>
+                  <description>5-bit frm output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_frm_test</name>
+              <description>Set the test mode of dither function</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FRM</name>
+                  <description>FRM</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HALF_BIT_56_FRM</name>
+                  <description>Half 5/6-bit, half FRM</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HALF_BIT_8_FRM</name>
+                  <description>Half 8-bit, half FRM</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HALF_BIT_8_56</name>
+                  <description>Half 8-bit, half 5/6-bit</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>6</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>lcd_frm_seed_reg%s</name>
+          <dimArrayIndex>
+            <enumeratedValue>
+              <name>P_IXEL_S_EED_R</name>
+              <description>Pixel_Seed_R</description>
+              <value>0x0</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>P_IXEL_S_EED_G</name>
+              <description>Pixel_Seed_G</description>
+              <value>0x1</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>P_IXEL_S_EED_B</name>
+              <description>Pixel_Seed_B</description>
+              <value>0x2</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>L_INE_S_EED_R</name>
+              <description>Line_Seed_R</description>
+              <value>0x3</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>L_INE_S_EED_G</name>
+              <description>Line_Seed_G</description>
+              <value>0x4</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>L_INE_S_EED_B</name>
+              <description>Line_Seed_B</description>
+              <value>0x5</value>
+            </enumeratedValue>
+          </dimArrayIndex>
+          <name>lcd_frm_seed%s</name>
           <description>LCD FRM Seed Register</description>
           <addressOffset>0x14</addressOffset>
+          <fields>
+            <field>
+              <name>seed_value</name>
+              <description>Set the seed used in dither function\n\nNote: Avoid setting it to 0.</description>
+              <bitRange>[24:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>4</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>lcd_frm_tab_reg%s</name>
+          <name>lcd_frm_tab%s</name>
           <description>LCD FRM Table Register</description>
           <addressOffset>0x2C</addressOffset>
+          <fields>
+            <field>
+              <name>frm_table_value</name>
+              <description>Set the data used in dither function</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_3d_fifo_reg</name>
+          <name>lcd_3d_fifo</name>
           <description>LCD 3D FIFO Register</description>
           <addressOffset>0x3C</addressOffset>
+          <fields>
+            <field>
+              <name>bist_en</name>
+              <description>Enable the 3D fifo bist test function</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>half_line_size</name>
+              <description>The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2.</description>
+              <bitRange>[13:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>setting</name>
+              <description>Set the work mode of 3D FIFO</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_YPASS</name>
+                  <description>Bypass</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Used as normal FIFO</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I_NTERLACE_3D</name>
+                  <description>Used as 3D interlace FIFO</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_ctl_reg</name>
+          <name>lcd_ctl</name>
           <description>LCD Control Register</description>
           <addressOffset>0x40</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_en</name>
+              <description>It executes at the beginning of the first blank line of LCD timing.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_if</name>
+              <description>Set the interface type of LCD controller</description>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HV</name>
+                  <description>HV (Sync + DE)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>IF_8080</name>
+                  <description>8080 I/F</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_rb_swap</name>
+              <description>Enable the function to swap red data and blue data in fifo1.</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_EFAULT</name>
+                  <description>Default</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S_WAP</name>
+                  <description>Swap RED and BLUE data at FIFO1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_fifo1_rst</name>
+              <description>Writing 1 and then 0 to this bit will reset FIFO 1\n\nNote: 1 holding time must more than 1 DCLK</description>
+              <bitRange>[21:21]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lcd_interlace_en</name>
+              <description>This flag is valid only when LCD_EN == 1</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_start_dly</name>
+              <description>The unit of delay is T_line.\n\nNote: Valid only when LCD_EN == 1</description>
+              <bitRange>[8:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lcd_src_sel</name>
+              <description>LCD Source Select</description>
+              <bitRange>[2:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DE</name>
+                  <description>DE</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_OLOR_C_HECK</name>
+                  <description>Color Check</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G_RAYSCALE_C_HECK</name>
+                  <description>Grayscale Check</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_LACK_BY_W_HITE_C_HECK</name>
+                  <description>Black by White Check</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T_EST_D_ATA_ALL_0</name>
+                  <description>Test Data all 0</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>T_EST_D_ATA_ALL_1</name>
+                  <description>Test Data all 1</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R_EVERSED</name>
+                  <description>Reversed</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G_RIDDING_C_HECK</name>
+                  <description>Gridding Check</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_dclk_reg</name>
+          <name>lcd_dclk</name>
           <description>LCD Data Clock Register</description>
           <addressOffset>0x44</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_dclk_en</name>
+              <description>LCD clock enable\n\n</description>
+              <bitRange>[31:28]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lcd_dclk_div</name>
+              <description>Tdclk = Tsclk/DCLKDIV\n\nNote:\n\n1.If dclk1 and dclk2 are used, DCLKDIV >=6\n\n2.If only dclk is used, DCLKDIV >=1</description>
+              <bitRange>[6:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_basic0_reg</name>
+          <name>lcd_basic0</name>
           <description>LCD Basic Timing Register0</description>
           <addressOffset>0x48</addressOffset>
+          <fields>
+            <field>
+              <name>width_x</name>
+              <description>Panel width is X+1</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>height_y</name>
+              <description>Panel height is Y+1</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_basic1_reg</name>
+          <name>lcd_basic1</name>
           <description>LCD Basic Timing Register1</description>
           <addressOffset>0x4C</addressOffset>
+          <fields>
+            <field>
+              <name>ht</name>
+              <description>Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2</description>
+              <bitRange>[28:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>hbp</name>
+              <description>Horizontal back porch (in dclk)\n\nThbp = (HBP +1) * Tdclk</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_basic2_reg</name>
+          <name>lcd_basic2</name>
           <description>LCD Basic Timing Register2</description>
           <addressOffset>0x50</addressOffset>
+          <fields>
+            <field>
+              <name>vt</name>
+              <description>TVT = (VT)/2 * Thsync\n\nVT/2 >= (VBP+1 ) + (Y+1) +2</description>
+              <bitRange>[28:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>vbp</name>
+              <description>Tvbp = (VBP +1) * Thsync</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_basic3_reg</name>
+          <name>lcd_basic3</name>
           <description>LCD Basic Timing Register3</description>
           <addressOffset>0x54</addressOffset>
+          <fields>
+            <field>
+              <name>hspw</name>
+              <description>Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)</description>
+              <bitRange>[25:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>vspw</name>
+              <description>Tvspw = (VSPW+1) * Thsync\n\nVT/2 > (VSPW+1)</description>
+              <bitRange>[9:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_hv_if_reg</name>
+          <name>lcd_hv_if</name>
           <description>LCD HV Panel Interface Register</description>
           <addressOffset>0x58</addressOffset>
+          <fields>
+            <field>
+              <name>hv_mode</name>
+              <description>Set the HV mode of LCD controller</description>
+              <bitRange>[31:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PARALLEL</name>
+                  <description>24-bit/1-cycle parallel mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RGB888</name>
+                  <description>8-bit/3-cycle RGB serial mode (RGB888)</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DRGB</name>
+                  <description>8-bit/4-cycle Dummy RGB (DRGB)</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RGBD</name>
+                  <description>8-bit/4-cycle RGB Dummy (RGBD)</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CCIR656</name>
+                  <description>8-bit/2-cycle YUV serial mode (CCIR656)</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rgb888_odd_order</name>
+              <description>Serial RGB888 mode Output sequence at odd lines of the panel (line 1, 3, 5, 7...).</description>
+              <bitRange>[27:26]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RGB</name>
+                  <description>R -> G -> B</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BRG</name>
+                  <description>B -> R -> G</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GBR</name>
+                  <description>G -> B -> R</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rgb888_even_order</name>
+              <description>Serial RGB888 mode Output sequence at even lines of the panel (line 2, 4, 6, 8...).</description>
+              <bitRange>[25:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RGB</name>
+                  <description>R -> G -> B</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BRG</name>
+                  <description>B -> R -> G</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GBR</name>
+                  <description>G -> B -> R</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>yuv_sm</name>
+              <description>Serial YUV mode Output sequence 2-pixel-pair of every scan line.</description>
+              <bitRange>[23:22]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>YUYV</name>
+                  <description>YUYV</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>YVYU</name>
+                  <description>YVYU</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UYVY</name>
+                  <description>UYVY</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VYUY</name>
+                  <description>VYUY</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>yuv_eav_sav_f_line_dly</name>
+              <description>Set the delay line mode.</description>
+              <bitRange>[21:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F_TOGGLE</name>
+                  <description>F toggle right after active video line</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CCIR_PAL</name>
+                  <description>delay 2 line (CCIR PAL)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>CCIR_NTSC</name>
+                  <description>delay 3 line (CCIR NTSC)</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ccir_csc_dis</name>
+              <description>LCD convert source from RGB to YUV.\n\nOnly valid when HV mode is “1100”.</description>
+              <bitRange>[19:19]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_if_reg</name>
+          <name>lcd_cpu_if</name>
           <description>LCD CPU Panel Interface Register</description>
           <addressOffset>0x60</addressOffset>
+          <fields>
+            <field>
+              <name>cpu_mode</name>
+              <description>Set the cpu interface work mode</description>
+              <bitRange>[31:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_IT18_256K_MODE</name>
+                  <description>18-bit/256K mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT16_MODE0</name>
+                  <description>16-bit mode0</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT16_MODE1</name>
+                  <description>16-bit mode1</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT16_MODE2</name>
+                  <description>16-bit mode2</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT16_MODE3</name>
+                  <description>16-bit mode3</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT9_MODE</name>
+                  <description>9-bit mode</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT8_256K_MODE</name>
+                  <description>8-bit 256K mode</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT8_65K_MODE</name>
+                  <description>8-bit 65K mode</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT24_FOR_DSI</name>
+                  <description>24-bit for DSI</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>da</name>
+              <description>Pin A1 value in 8080 mode auto/flash states</description>
+              <bitRange>[26:26]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ca</name>
+              <description>Pin A1 value in 8080 mode WR/RD execute</description>
+              <bitRange>[25:25]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>wr_flag</name>
+              <description>The status of write operation.</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FINISHING</name>
+                  <description>Write operation is finishing</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Write operation is pending</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rd_flag</name>
+              <description>The status of read operation.</description>
+              <bitRange>[22:22]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FINISHING</name>
+                  <description>Read operation is finishing</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Read operation is pending</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>auto</name>
+              <description>Auto transfer mode\n\nIf it is 1, all the valid data during this frame are written to panel.\n\nNote: This bit is sampled by Vsync.</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>flush</name>
+              <description>Direct transfer mode\n\nIf it is enabled, FIFO1 is regardless of the HV timing, the pixels data keep being transferred unless the input FIFO was empty.\n\nData output rate is controlled by DCLK.</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>tri_fifo_bist_en</name>
+              <description>Entry address is 0xFF8</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tri_fifo_en</name>
+              <description>Enable the trigger FIFO</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tri_start</name>
+              <description>Software must make sure that write '1' only when this flag is '0'.\n\nWriting '1' starts a frame flush and writing '0' has no effect.\n\nThis flag indicates the frame flush is running.</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToSet</modifiedWriteValues>
+            </field>
+            <field>
+              <name>tri_en</name>
+              <description>Enable trigger mode</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Trigger mode disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Trigger mode enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_wr_reg</name>
+          <name>lcd_cpu_wr</name>
           <description>LCD CPU Panel Write Data Register</description>
           <addressOffset>0x64</addressOffset>
+          <fields>
+            <field>
+              <name>data_wr</name>
+              <description>Data write on 8080 bus, launch a write operation on 8080 bus.</description>
+              <bitRange>[23:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_rd0_reg</name>
-          <description>LCD CPU Panel Read Data Register0</description>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>lcd_cpu_rd%s</name>
+          <description>LCD CPU Panel Read Data Register[i]</description>
           <addressOffset>0x68</addressOffset>
+          <fields>
+            <field>
+              <name>data_rd0</name>
+              <description>Data read on 8080 bus, launch a new read operation on 8080 bus.</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_rd1_reg</name>
-          <description>LCD CPU Panel Read Data Register1</description>
-          <addressOffset>0x6C</addressOffset>
-        </register>
-        <register>
-          <name>lcd_lvds_if_reg</name>
+          <name>lcd_lvds_if</name>
           <description>LCD LVDS Configure Register</description>
           <addressOffset>0x84</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_lvds_en</name>
+              <description>Enable LVDS interface</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_link</name>
+              <description>Select work in single link mode or dual link mode</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S_INGLE</name>
+                  <description>Single link</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D_UAL</name>
+                  <description>Dual link</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_even_odd_dir</name>
+              <description>Set the order of even field and odd field</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>normal</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REVERSE</name>
+                  <description>reverse</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_dir</name>
+              <description>Set the LVDS direction</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R_EVERSE</name>
+                  <description>Reverse</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_mode</name>
+              <description>Set the LVDS data mode</description>
+              <bitRange>[27:27]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NS_MODE</name>
+                  <description>NS mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>JEIDA_MODE</name>
+                  <description>JEIDA mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_bitwidth</name>
+              <description>Set the bit width of data</description>
+              <bitRange>[26:26]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>24_BIT</name>
+                  <description>24-bit</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>18_BIT</name>
+                  <description>18-bit</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_debug_en</name>
+              <description>Enable LVDS debug function</description>
+              <bitRange>[25:25]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_debug_mode</name>
+              <description>Set the output signal in debug mode</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M_ODE0</name>
+                  <description>Mode0--Random data</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M_ODE1_O_UTPUT</name>
+                  <description>Mode1--Output CLK period=7/2 LVDS CLK period</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_correct_mode</name>
+              <description>Set the LVDS correct mode</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M_ODE0</name>
+                  <description>Mode0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M_ODE1</name>
+                  <description>Mode1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_clk_sel</name>
+              <description>Select the clock source of LVDS</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LCD</name>
+                  <description>LCD CLK</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_clk_pol</name>
+              <description>Set the clock polarity of LVDS</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R_EVERSE</name>
+                  <description>Reverse</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_lvds_data_pol</name>
+              <description>Set the data polarity of LVDS</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R_EVERSE</name>
+                  <description>Reverse</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_io_pol_reg</name>
+          <name>lcd_io_pol</name>
           <description>LCD IO Polarity Register</description>
           <addressOffset>0x88</addressOffset>
+          <fields>
+            <field>
+              <name>io_output_sel</name>
+              <description>When it is set as '1', the d[23:0], io0, io1, io3 are sync to dclk.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R_EGISTER</name>
+                  <description>Register output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dclk_sel</name>
+              <description>Set the phase offset of clock and data in hv mode.</description>
+              <bitRange>[30:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DCLK0</name>
+                  <description>Used DCLK0 (normal phase offset)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCLK1</name>
+                  <description>Used DCLK1 (1/3 phase offset)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCLK2</name>
+                  <description>Used DCLK2 (2/3 phase offset)</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCLK02_0</name>
+                  <description>DCLK0/2 phase 0</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DCLK02_90</name>
+                  <description>DCLK0/2 phase 90</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>io%s_inv</name>
+              <description>Enable invert function of IO[i]</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_OT_INVERT</name>
+                  <description>Not invert</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I_NVERT</name>
+                  <description>Invert</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>data_inv</name>
+              <description>LCD output port D[23:0] polarity control, with independent bit control.</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_io_tri_reg</name>
+          <name>lcd_io_tri</name>
           <description>LCD IO Control Register</description>
           <addressOffset>0x8C</addressOffset>
+          <resetValue>0x0FFFFFFF</resetValue>
+          <resetMask>0x1FFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>rgb_endian</name>
+              <description>Set the endian of data bits</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_ITS_INVERT</name>
+                  <description>Bits_invert</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>io%s_output_tri_en</name>
+              <description>Enable the output of IO[i]</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>data_output_tri_en</name>
+              <description>LCD output port D[23:0] output enable, with independent bit control.</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_debug_reg</name>
+          <name>lcd_debug</name>
           <description>LCD Debug Register</description>
           <addressOffset>0xFC</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_fifo_underflow</name>
+              <description>The flag shows whether the fifos in underflow status</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_OT_UNDERFLOW</name>
+                  <description>Not underflow</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>U_NDERFLOW</name>
+                  <description>Underflow</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_field_pol</name>
+              <description>The flag indicates the current field polarity</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S_ECOND</name>
+                  <description>Second field</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_IRST</name>
+                  <description>First field</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_current_line</name>
+              <description>The current scan line</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_ceu_ctl_reg</name>
+          <name>lcd_ceu_ctl</name>
           <description>LCD CEU Control Register</description>
           <addressOffset>0x100</addressOffset>
+          <fields>
+            <field>
+              <name>ceu_en</name>
+              <description>Enable CEU function</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_YPASS</name>
+                  <description>Bypass</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bt656_f_mask</name>
+              <description>BT656 F Mask</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bt656_f_mask_value</name>
+              <description>BT656 F Mask Value</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>3</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>lcd_ceu_coef_mul_reg%s</name>
+          <dimArrayIndex>
+            <enumeratedValue>
+              <name>R_R</name>
+              <value>0x0</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>R_G</name>
+              <value>0x1</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>R_B</name>
+              <value>0x2</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>G_R</name>
+              <value>0x4</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>G_G</name>
+              <value>0x5</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>G_B</name>
+              <value>0x6</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>B_R</name>
+              <value>0x8</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>B_G</name>
+              <value>0x9</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>B_B</name>
+              <value>0xA</value>
+            </enumeratedValue>
+          </dimArrayIndex>
+          <name>lcd_ceu_coef_mul%s</name>
           <description>LCD CEU Coefficient Register0</description>
           <addressOffset>0x110</addressOffset>
+          <fields>
+            <field>
+              <name>ceu_coef_mul_value</name>
+              <description>Signed 13-bit value, range of (-16,16).</description>
+              <bitRange>[12:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>3</dim>
           <dimIncrement>0x10</dimIncrement>
-          <name>lcd_ceu_coef_add_reg%s</name>
+          <dimArrayIndex>
+            <enumeratedValue>
+              <name>R_C</name>
+              <value>0x0</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>G_C</name>
+              <value>0x1</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>B_C</name>
+              <value>0x2</value>
+            </enumeratedValue>
+          </dimArrayIndex>
+          <name>lcd_ceu_coef_add%s</name>
           <description>LCD CEU Coefficient Register1</description>
           <addressOffset>0x11C</addressOffset>
+          <fields>
+            <field>
+              <name>ceu_coef_add_value</name>
+              <description>Signed 19-bit value, range of (-16384, 16384).</description>
+              <bitRange>[18:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>3</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>lcd_ceu_coef_rang_reg%s</name>
+          <name>lcd_ceu_coef_rang%s</name>
           <description>LCD CEU Coefficient Register2</description>
           <addressOffset>0x140</addressOffset>
+          <fields>
+            <field>
+              <name>ceu_coef_range_min</name>
+              <description>Unsigned 8-bit value, range of [0, 255].</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ceu_coef_range_max</name>
+              <description>Unsigned 8-bit value, range of [0, 255].</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_tri0_reg</name>
+          <name>lcd_cpu_tri0</name>
           <description>LCD CPU Panel Trigger Register0</description>
           <addressOffset>0x160</addressOffset>
+          <fields>
+            <field>
+              <name>block_space</name>
+              <description>The spaces between data blocks. It should be set >20*pixel.</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>block_size</name>
+              <description>The size of data block. It is usually set as X.</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_tri1_reg</name>
+          <name>lcd_cpu_tri1</name>
           <description>LCD CPU Panel Trigger Register1</description>
           <addressOffset>0x164</addressOffset>
+          <fields>
+            <field>
+              <name>block_current_num</name>
+              <description>Shows the current data block transmitting to panel.</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>block_num</name>
+              <description>The number of data blocks. It is usually set as Y.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_tri2_reg</name>
+          <name>lcd_cpu_tri2</name>
           <description>LCD CPU Panel Trigger Register2</description>
           <addressOffset>0x168</addressOffset>
+          <fields>
+            <field>
+              <name>start_dly</name>
+              <description>T_dly = (Start_Delay +1) * be_clk*8.</description>
+              <bitRange>[31:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>trans_start_mode</name>
+              <description>Select the FIFOs used in CPU mode.</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ECC_FIFO_TRI_FIFO</name>
+                  <description>ECC_FIFO+TRI_FIFO</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TRI_FIFO</name>
+                  <description>TRI_FIFO</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sync_mode</name>
+              <description>Set the sync mode in CPU interface.</description>
+              <bitRange>[14:13]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>trans_start_set</name>
+              <description>Usual set as the length of a line.</description>
+              <bitRange>[12:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_tri3_reg</name>
+          <name>lcd_cpu_tri3</name>
           <description>LCD CPU Panel Trigger Register3</description>
           <addressOffset>0x16C</addressOffset>
+          <fields>
+            <field>
+              <name>tri_int_mode</name>
+              <description>When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input.</description>
+              <bitRange>[29:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_OUNTER</name>
+                  <description>Counter mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TE_RISING</name>
+                  <description>TE rising mode</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TE_FALLING</name>
+                  <description>TE falling mode</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>counter_n</name>
+              <description>The value of counter factor</description>
+              <bitRange>[23:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>counter_m</name>
+              <description>The value of counter factor</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_tri4_reg</name>
+          <name>lcd_cpu_tri4</name>
           <description>LCD CPU Panel Trigger Register4</description>
           <addressOffset>0x170</addressOffset>
+          <fields>
+            <field>
+              <name>plug_mode_en</name>
+              <description>Enable the plug mode used in dsi command mode.</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>a1_first_valid</name>
+              <description>Valid in first Block.</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>d23_to_d0_first_valid</name>
+              <description>Valid in first Block.</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cpu_tri5_reg</name>
+          <name>lcd_cpu_tri5</name>
           <description>LCD CPU Panel Trigger Register5</description>
           <addressOffset>0x174</addressOffset>
+          <fields>
+            <field>
+              <name>a1_non_first_valid</name>
+              <description>Valid in Block except first.</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>d23_to_d0_non_first_valid</name>
+              <description>Valid in Block except first.</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cmap_ctl_reg</name>
+          <name>lcd_cmap_ctl</name>
           <description>LCD Color Map Control Register</description>
           <addressOffset>0x180</addressOffset>
+          <fields>
+            <field>
+              <name>color_map_en</name>
+              <description>Enable the color map function. This module only works when X is divided by 4.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_YPASS</name>
+                  <description>Bypass</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>out_format</name>
+              <description>Set the pixel output format in color map function.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>P4</name>
+                  <description>4 pixel output mode: Out0 -> Out1 -> Out2 -> Out3</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P2</name>
+                  <description>2 pixel output mode: Out0 -> Out1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cmap_odd0_reg</name>
-          <description>LCD Color Map Odd Line Register0</description>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>lcd_cmap_odd%s</name>
+          <description>LCD Color Map Odd Line Register[i]</description>
           <addressOffset>0x190</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>0x10</dimIncrement>
+              <name>out_odd%s</name>
+              <description>OUT_ODD[2i + j]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Odd[23:16]\n\nbit07-04: Out_Odd0[15:8]\n\nbit03-00: Out_Odd0[7:0]</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cmap_odd1_reg</name>
-          <description>LCD Color Map Odd Line Register1</description>
-          <addressOffset>0x194</addressOffset>
-        </register>
-        <register>
-          <name>lcd_cmap_even0_reg</name>
-          <description>LCD Color Map Even Line Register0</description>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>lcd_cmap_even%s</name>
+          <description>LCD Color Map Even Line Register[i]</description>
           <addressOffset>0x198</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>0x10</dimIncrement>
+              <name>out_even%s</name>
+              <description>OUT_EVEN[2i + j]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even[23:16]\n\nbit07-04: Out_Even0[15:8]\n\nbit03-00: Out_Even0[7:0]</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_cmap_even1_reg</name>
-          <description>LCD Color Map Even Line Register1</description>
-          <addressOffset>0x19C</addressOffset>
-        </register>
-        <register>
-          <name>lcd_safe_period_reg</name>
+          <name>lcd_safe_period</name>
           <description>LCD Safe Period Register</description>
           <addressOffset>0x1F0</addressOffset>
+          <fields>
+            <field>
+              <name>safe_period_fifo_num</name>
+              <description>When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency.</description>
+              <bitRange>[28:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>safe_period_line</name>
+              <description>Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area.</description>
+              <bitRange>[15:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>safe_period_mode</name>
+              <description>Select the save mode</description>
+              <bitRange>[2:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNSAFE</name>
+                  <description>unsafe</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE</name>
+                  <description>safe</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE_FIFO_CURR_NUM_GT_SAFE_PERIOD_FIFO_NUM</name>
+                  <description>safe at FIFO_CURR_NUM > SAFE_PERIOD_FIFO_NUM</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE_2_SYNC_ACTIVE</name>
+                  <description>safe at 2 and safe at sync active</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE_LINE</name>
+                  <description>safe at line</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_lvds0_ana_reg</name>
-          <description>LCD LVDS Analog Register 0</description>
+          <dim>2</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>lcd_lvds_ana%s</name>
+          <description>LCD LVDS Analog Register [i]</description>
           <addressOffset>0x220</addressOffset>
+          <fields>
+            <field>
+              <name>lvds_en_mb</name>
+              <description>Enable the bias circuit of the LVDS_Ana module.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>en_lvds</name>
+              <description>Enable LVDS</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>en_24m</name>
+              <description>Enable the 24M clock</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lvds_hpren_drvc</name>
+              <description>Enable clock channel drive</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lvds_hpren_drv</name>
+              <description>Enable data channel[3:0] drive</description>
+              <bitRange>[23:20]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lvds_c</name>
+              <description>Adjust current flowing through Rload of Rx to change the differential signals amplitude.</description>
+              <bitRange>[19:17]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>216_M_V</name>
+                  <description>216 mV</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>252_M_V</name>
+                  <description>252 mV</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>276_M_V</name>
+                  <description>276 mV</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>312_M_V</name>
+                  <description>312 mV</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>336_M_V</name>
+                  <description>336 mV</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>372_M_V</name>
+                  <description>372 mV</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>395_M_V</name>
+                  <description>395 mV</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>432_M_V</name>
+                  <description>432 mV</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lvds_denc</name>
+              <description>Choose data output or PLL test clock output in LVDS_tx.</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lvds_den</name>
+              <description>Choose data output or PLL test clock output in LVDS_tx.</description>
+              <bitRange>[15:12]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lvds_r</name>
+              <description>Adjust current flowing through R of R to change the common signals amplitude.</description>
+              <bitRange>[10:8]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0_925_V</name>
+                  <description>0.925 V</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_950_V</name>
+                  <description>0.950 V</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_975_V</name>
+                  <description>0.975 V</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_000_V</name>
+                  <description>1.000 V</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_025_V</name>
+                  <description>1.025 V</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_050_V</name>
+                  <description>1.050 V</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_075_V</name>
+                  <description>1.075 V</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_100_V</name>
+                  <description>1.100 V</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lvds_plrc</name>
+              <description>LVDS clock channel direction.</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R_EVERSE</name>
+                  <description>Reverse</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lvds_plr</name>
+              <description>LVDS data channel [3:0] direction.</description>
+              <bitRange>[3:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_lvds1_ana_reg</name>
-          <description>LCD LVDS Analog Register 1</description>
-          <addressOffset>0x224</addressOffset>
+          <name>fsync_gen_ctrl</name>
+          <description>FSYNC_GEN_CTRL</description>
+          <addressOffset>0x228</addressOffset>
+          <fields>
+            <field>
+              <name>sensor_dis_time</name>
+              <description>Delay 0-2047 Hsync Period\n\nWhen hsync_pol_sel is 0, the actual delay is sensor_dis_time-1.\n\nWhen hsync_pol_sel is 1, the actual delay is sensor_dis_time.</description>
+              <bitRange>[18:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>sensor_act1_value</name>
+              <description>Sensor Active1 Value</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OUTPUT_0</name>
+                  <description>Fsync active_1 period output 0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTPUT_1</name>
+                  <description>Fsync active_1 period output 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sensor_act0_value</name>
+              <description>Sensor Active0 Value</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OUTPUT_0</name>
+                  <description>Fsync active_0 period output 0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTPUT_1</name>
+                  <description>Fsync active_0 period output 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sensor_dis_value</name>
+              <description>Sensor Disable Value</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OUTPUT_0</name>
+                  <description>Fsync disable period output 0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTPUT_1</name>
+                  <description>Fsync disable period output 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hsync_pol_sel</name>
+              <description>Hsync Polarity Select</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>O_PPOSITE</name>
+                  <description>Opposite hsync to hysnc counter</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sel_vsync_en</name>
+              <description>Select Vsync Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FALLING</name>
+                  <description>Select vsync falling edge to start state machine</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RISING</name>
+                  <description>Select vsync rising edge to start state machine</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fsync_gen_en</name>
+              <description>Fsync Generate Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_sync_ctl_reg</name>
+          <name>fsync_gen_dly</name>
+          <description>FSYNC_GEN_DLY</description>
+          <addressOffset>0x22C</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0FFF0FFF</resetMask>
+          <fields>
+            <field>
+              <name>sensor_act0_time</name>
+              <description>Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act0_time+1.</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>sensor_act1_time</name>
+              <description>Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act1_time+1.</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>lcd_sync_ctl</name>
           <description>LCD Sync Control Register</description>
           <addressOffset>0x230</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_ctrl_work_mode</name>
+              <description>LCD Controller Work mode</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S_INGLE</name>
+                  <description>Single DSI mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D_UAL</name>
+                  <description>Dual DSI mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_cyrl_sync_master_slave</name>
+              <description>LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode.</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M_ASTER</name>
+                  <description>Master</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S_LAVE</name>
+                  <description>Slave</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lcd_ctrl_sync_mode</name>
+              <description>LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S_YNC_FIRST</name>
+                  <description>Sync in the first time</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S_YNC_EVERY</name>
+                  <description>Sync every frame</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_sync_pos_reg</name>
+          <name>lcd_sync_pos</name>
           <description>LCD Sync Position Register</description>
           <addressOffset>0x234</addressOffset>
+          <fields>
+            <field>
+              <name>lcd_sync_pixel_num</name>
+              <description>Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode.</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>lcd_sync_line_num</name>
+              <description>Set the line number of master LCD controller which is used to trigger the slave LCD controller to start working.\n\nNote:It is only set in master LCD controller.It is not necessarily to set in slave LCD controller.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode.</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>lcd_slave_stop_pos_reg</name>
+          <name>lcd_slave_stop_pos</name>
           <description>LCD Slave Stop Position Register</description>
           <addressOffset>0x238</addressOffset>
-        </register>
-        <register>
-          <name>lcd_lvds1_if_reg</name>
-          <description>LCD LVDS1 IF Register</description>
-          <addressOffset>0x244</addressOffset>
+          <fields>
+            <field>
+              <name>stop_val</name>
+              <description>Set the stop position of the slave LCD. This value is the number of pixels between the stop position and the end of the HFP. Stop_pos = HFP - Stop_val. 0&lt;Stop_pos&lt;HFP-2\n\nNote: Only use in Single DSI mode.</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>256</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>lcd_gamma_table_reg%s</name>
+          <name>lcd_gamma_table%s</name>
           <description>LCD Gamma Table Register</description>
           <addressOffset>0x400</addressOffset>
+          <fields>
+            <field>
+              <name>red_comp</name>
+              <description>Red Component</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>green_comp</name>
+              <description>Green Component</description>
+              <bitRange>[15:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>blue_comp</name>
+              <description>Blue Component</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
@@ -12709,147 +14809,147 @@
       </addressBlock>
       <registers>
         <register>
-          <name>tv_gctl_reg</name>
+          <name>tv_gctl</name>
           <description>TV Global Control Register</description>
           <addressOffset>0x0</addressOffset>
         </register>
         <register>
-          <name>tv_gint0_reg</name>
+          <name>tv_gint0</name>
           <description>TV Global Interrupt Register0</description>
           <addressOffset>0x4</addressOffset>
         </register>
         <register>
-          <name>tv_gint1_reg</name>
+          <name>tv_gint1</name>
           <description>TV Global Interrupt Register1</description>
           <addressOffset>0x8</addressOffset>
         </register>
         <register>
-          <name>tv_src_ctl_reg</name>
+          <name>tv_src_ctl</name>
           <description>TV Source Control Register</description>
           <addressOffset>0x40</addressOffset>
         </register>
         <register>
-          <name>tv_ctl_reg</name>
+          <name>tv_ctl</name>
           <description>TV Control Register</description>
           <addressOffset>0x90</addressOffset>
         </register>
         <register>
-          <name>tv_basic0_reg</name>
+          <name>tv_basic0</name>
           <description>TV Basic Timing Register0</description>
           <addressOffset>0x94</addressOffset>
         </register>
         <register>
-          <name>tv_basic1_reg</name>
+          <name>tv_basic1</name>
           <description>TV Basic Timing Register1</description>
           <addressOffset>0x98</addressOffset>
         </register>
         <register>
-          <name>tv_basic2_reg</name>
+          <name>tv_basic2</name>
           <description>TV Basic Timing Register2</description>
           <addressOffset>0x9C</addressOffset>
         </register>
         <register>
-          <name>tv_basic3_reg</name>
+          <name>tv_basic3</name>
           <description>TV Basic Timing Register3</description>
           <addressOffset>0xA0</addressOffset>
         </register>
         <register>
-          <name>tv_basic4_reg</name>
+          <name>tv_basic4</name>
           <description>TV Basic Timing Register4</description>
           <addressOffset>0xA4</addressOffset>
         </register>
         <register>
-          <name>tv_basic5_reg</name>
+          <name>tv_basic5</name>
           <description>TV Basic Timing Register5</description>
           <addressOffset>0xA8</addressOffset>
         </register>
         <register>
-          <name>tv_io_pol_reg</name>
+          <name>tv_io_pol</name>
           <description>TV SYNC Signal Polarity Register</description>
           <addressOffset>0x88</addressOffset>
         </register>
         <register>
-          <name>tv_io_tri_reg</name>
+          <name>tv_io_tri</name>
           <description>TV SYNC Signal IO Control Register</description>
           <addressOffset>0x8C</addressOffset>
         </register>
         <register>
-          <name>tv_debug_reg</name>
+          <name>tv_debug</name>
           <description>TV Debug Register</description>
           <addressOffset>0xFC</addressOffset>
         </register>
         <register>
-          <name>tv_ceu_ctl_reg</name>
+          <name>tv_ceu_ctl</name>
           <description>TV CEU Control Register</description>
           <addressOffset>0x100</addressOffset>
         </register>
         <register>
           <dim>11</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>tv_ceu_coef_mul_reg%s</name>
+          <name>tv_ceu_coef_mul%s</name>
           <description>TV CEU Coefficient Register0</description>
           <addressOffset>0x110</addressOffset>
         </register>
         <register>
           <dim>3</dim>
           <dimIncrement>0x4</dimIncrement>
-          <name>tv_ceu_coef_rang_reg%s</name>
+          <name>tv_ceu_coef_rang%s</name>
           <description>TV CEU Coefficient Register2</description>
           <addressOffset>0x140</addressOffset>
         </register>
         <register>
-          <name>tv_safe_period_reg</name>
+          <name>tv_safe_period</name>
           <description>TV Safe Period Register</description>
           <addressOffset>0x1F0</addressOffset>
         </register>
         <register>
-          <name>tv_fill_ctl_reg</name>
+          <name>tv_fill_ctl</name>
           <description>TV Fill Data Control Register</description>
           <addressOffset>0x300</addressOffset>
         </register>
         <register>
           <dim>3</dim>
           <dimIncrement>0xC</dimIncrement>
-          <name>tv_fill_begin_reg%s</name>
+          <name>tv_fill_begin%s</name>
           <description>TV Fill Data Begin Register</description>
           <addressOffset>0x304</addressOffset>
         </register>
         <register>
           <dim>3</dim>
           <dimIncrement>0xC</dimIncrement>
-          <name>tv_fill_end_reg%s</name>
+          <name>tv_fill_end%s</name>
           <description>TV Fill Data End Register</description>
           <addressOffset>0x308</addressOffset>
         </register>
         <register>
           <dim>3</dim>
           <dimIncrement>0xC</dimIncrement>
-          <name>tv_fill_data_reg%s</name>
+          <name>tv_fill_data%s</name>
           <description>TV Fill Data Value Register</description>
           <addressOffset>0x30C</addressOffset>
         </register>
         <register>
-          <name>tv_data_io_pol0_reg</name>
+          <name>tv_data_io_pol0</name>
           <description>TCON Data IO Polarity Control0</description>
           <addressOffset>0x330</addressOffset>
         </register>
         <register>
-          <name>tv_data_io_pol1_reg</name>
+          <name>tv_data_io_pol1</name>
           <description>TCON Data IO Polarity Control1</description>
           <addressOffset>0x334</addressOffset>
         </register>
         <register>
-          <name>tv_data_io_tri0_reg</name>
+          <name>tv_data_io_tri0</name>
           <description>TCON Data IO Enable Control0</description>
           <addressOffset>0x338</addressOffset>
         </register>
         <register>
-          <name>tv_data_io_tri1_reg</name>
+          <name>tv_data_io_tri1</name>
           <description>TCON Data IO Enable Control1</description>
           <addressOffset>0x33C</addressOffset>
         </register>
         <register>
-          <name>tv_pixeldepth_mode_reg</name>
+          <name>tv_pixeldepth_mode</name>
           <description>TV Pixeldepth Mode Control Register</description>
           <addressOffset>0x340</addressOffset>
         </register>
@@ -12915,172 +15015,172 @@
       </addressBlock>
       <registers>
         <register>
-          <name>tve_000_reg</name>
+          <name>tve_000</name>
           <description>TV Encoder Clock Gating Register</description>
           <addressOffset>0x0</addressOffset>
         </register>
         <register>
-          <name>tve_004_reg</name>
+          <name>tve_004</name>
           <description>TV Encoder Configuration Register</description>
           <addressOffset>0x4</addressOffset>
         </register>
         <register>
-          <name>tve_008_reg</name>
+          <name>tve_008</name>
           <description>TV Encoder DAC Register1</description>
           <addressOffset>0x8</addressOffset>
         </register>
         <register>
-          <name>tve_00c_reg</name>
+          <name>tve_00c</name>
           <description>TV Encoder Notch and DAC Delay Register</description>
           <addressOffset>0xC</addressOffset>
         </register>
         <register>
-          <name>tve_010_reg</name>
+          <name>tve_010</name>
           <description>TV Encoder Chroma Frequency Register</description>
           <addressOffset>0x10</addressOffset>
         </register>
         <register>
-          <name>tve_014_reg</name>
+          <name>tve_014</name>
           <description>TV Encoder Front/Back Porch Register</description>
           <addressOffset>0x14</addressOffset>
         </register>
         <register>
-          <name>tve_018_reg</name>
+          <name>tve_018</name>
           <description>TV Encoder HD Mode VSYNC Register</description>
           <addressOffset>0x18</addressOffset>
         </register>
         <register>
-          <name>tve_01c_reg</name>
+          <name>tve_01c</name>
           <description>TV Encoder Line Number Register</description>
           <addressOffset>0x1C</addressOffset>
         </register>
         <register>
-          <name>tve_020_reg</name>
+          <name>tve_020</name>
           <description>TV Encoder Level Register</description>
           <addressOffset>0x20</addressOffset>
         </register>
         <register>
-          <name>tve_024_reg</name>
+          <name>tve_024</name>
           <description>TV Encoder DAC Register2</description>
           <addressOffset>0x24</addressOffset>
         </register>
         <register>
-          <name>tve_030_reg</name>
+          <name>tve_030</name>
           <description>TV Encoder Auto Detection Enable Register</description>
           <addressOffset>0x30</addressOffset>
         </register>
         <register>
-          <name>tve_034_reg</name>
+          <name>tve_034</name>
           <description>TV Encoder Auto Detection Interrupt Status Register</description>
           <addressOffset>0x34</addressOffset>
         </register>
         <register>
-          <name>tve_038_reg</name>
+          <name>tve_038</name>
           <description>TV Encoder Auto Detection Status Register</description>
           <addressOffset>0x38</addressOffset>
         </register>
         <register>
-          <name>tve_03c_reg</name>
+          <name>tve_03c</name>
           <description>TV Encoder Auto Detection De-bounce Setting Register</description>
           <addressOffset>0x3C</addressOffset>
         </register>
         <register>
-          <name>tve_0f8_reg</name>
+          <name>tve_0f8</name>
           <description>TV Encoder Auto Detect Configuration Register0</description>
           <addressOffset>0xF8</addressOffset>
         </register>
         <register>
-          <name>tve_0fc_reg</name>
+          <name>tve_0fc</name>
           <description>TV Encoder Auto Detect Configuration Register1</description>
           <addressOffset>0xFC</addressOffset>
         </register>
         <register>
-          <name>tve_100_reg</name>
+          <name>tve_100</name>
           <description>TV Encoder Color Burst Phase Reset Configuration Register</description>
           <addressOffset>0x100</addressOffset>
         </register>
         <register>
-          <name>tve_104_reg</name>
+          <name>tve_104</name>
           <description>TV Encoder VSYNC Number Register</description>
           <addressOffset>0x104</addressOffset>
         </register>
         <register>
-          <name>tve_108_reg</name>
+          <name>tve_108</name>
           <description>TV Encoder Notch Filter Frequency Register</description>
           <addressOffset>0x108</addressOffset>
         </register>
         <register>
-          <name>tve_10c_reg</name>
+          <name>tve_10c</name>
           <description>TV Encoder Cb/Cr Level/Gain Register</description>
           <addressOffset>0x10C</addressOffset>
         </register>
         <register>
-          <name>tve_110_reg</name>
+          <name>tve_110</name>
           <description>TV Encoder Tint and Color Burst Phase Register</description>
           <addressOffset>0x110</addressOffset>
         </register>
         <register>
-          <name>tve_114_reg</name>
+          <name>tve_114</name>
           <description>TV Encoder Burst Width Register</description>
           <addressOffset>0x114</addressOffset>
         </register>
         <register>
-          <name>tve_118_reg</name>
+          <name>tve_118</name>
           <description>TV Encoder Cb/Cr Gain Register</description>
           <addressOffset>0x118</addressOffset>
         </register>
         <register>
-          <name>tve_11c_reg</name>
+          <name>tve_11c</name>
           <description>TV Encoder Sync and VBI Level Register</description>
           <addressOffset>0x11C</addressOffset>
         </register>
         <register>
-          <name>tve_120_reg</name>
+          <name>tve_120</name>
           <description>TV Encoder White Level Register</description>
           <addressOffset>0x120</addressOffset>
         </register>
         <register>
-          <name>tve_124_reg</name>
+          <name>tve_124</name>
           <description>TV Encoder Video Active Line Register</description>
           <addressOffset>0x124</addressOffset>
         </register>
         <register>
-          <name>tve_128_reg</name>
+          <name>tve_128</name>
           <description>TV Encoder Video Chroma BW and CompGain Register</description>
           <addressOffset>0x128</addressOffset>
         </register>
         <register>
-          <name>tve_12c_reg</name>
+          <name>tve_12c</name>
           <description>TV Encoder Register</description>
           <addressOffset>0x12C</addressOffset>
         </register>
         <register>
-          <name>tve_130_reg</name>
+          <name>tve_130</name>
           <description>TV Encoder Re-sync Parameters Register</description>
           <addressOffset>0x130</addressOffset>
         </register>
         <register>
-          <name>tve_134_reg</name>
+          <name>tve_134</name>
           <description>TV Encoder Slave Parameter Register</description>
           <addressOffset>0x134</addressOffset>
         </register>
         <register>
-          <name>tve_138_reg</name>
+          <name>tve_138</name>
           <description>TV Encoder Configuration Register0</description>
           <addressOffset>0x138</addressOffset>
         </register>
         <register>
-          <name>tve_13c_reg</name>
+          <name>tve_13c</name>
           <description>TV Encoder Configuration Register1</description>
           <addressOffset>0x13C</addressOffset>
         </register>
         <register>
-          <name>tve_380_reg</name>
+          <name>tve_380</name>
           <description>TV Encoder Low Pass Control Register</description>
           <addressOffset>0x380</addressOffset>
         </register>
         <register>
-          <name>tve_384_reg</name>
+          <name>tve_384</name>
           <description>TV Encoder Low Pass Filter Control Register</description>
           <addressOffset>0x384</addressOffset>
         </register>
@@ -13114,17 +15214,17 @@
           <description>CSIC_CCU</description>
           <addressOffset>0x0</addressOffset>
           <register>
-            <name>ccu_clk_mode_reg</name>
+            <name>ccu_clk_mode</name>
             <description>CCU Clock Mode Register</description>
             <addressOffset>0x0</addressOffset>
           </register>
           <register>
-            <name>ccu_parser_clk_en_reg</name>
+            <name>ccu_parser_clk_en</name>
             <description>CCU Parser Clock Enable Register</description>
             <addressOffset>0x4</addressOffset>
           </register>
           <register>
-            <name>ccu_post0_clk_en_reg</name>
+            <name>ccu_post0_clk_en</name>
             <description>CCU Post0 Clock Enable Register</description>
             <addressOffset>0xC</addressOffset>
           </register>
@@ -13134,82 +15234,82 @@
           <description>CSIC_TOP</description>
           <addressOffset>0x800</addressOffset>
           <register>
-            <name>csic_top_en_reg</name>
+            <name>csic_top_en</name>
             <description>CSIC TOP Enable Register</description>
             <addressOffset>0x0</addressOffset>
           </register>
           <register>
-            <name>csic_ptn_gen_en_reg</name>
+            <name>csic_ptn_gen_en</name>
             <description>CSIC Pattern Generation Enable Register</description>
             <addressOffset>0x4</addressOffset>
           </register>
           <register>
-            <name>csic_ptn_ctrl_reg</name>
+            <name>csic_ptn_ctrl</name>
             <description>CSIC Pattern Control Register</description>
             <addressOffset>0x8</addressOffset>
           </register>
           <register>
-            <name>csic_ptn_len_reg</name>
+            <name>csic_ptn_len</name>
             <description>CSIC Pattern Generation Length Register</description>
             <addressOffset>0x20</addressOffset>
           </register>
           <register>
-            <name>csic_ptn_addr_reg</name>
+            <name>csic_ptn_addr</name>
             <description>CSIC Pattern Generation Address Register</description>
             <addressOffset>0x24</addressOffset>
           </register>
           <register>
-            <name>csic_ptn_isp_size_reg</name>
+            <name>csic_ptn_isp_size</name>
             <description>CSIC Pattern ISP Size Register</description>
             <addressOffset>0x28</addressOffset>
           </register>
           <register>
-            <name>csic_dma0_input_sel_reg</name>
+            <name>csic_dma0_input_sel</name>
             <description>CSIC DMA0 Input Select Register</description>
             <addressOffset>0xA0</addressOffset>
           </register>
           <register>
-            <name>csic_dma1_input_sel_reg</name>
+            <name>csic_dma1_input_sel</name>
             <description>CSIC DMA1 Input Select Register</description>
             <addressOffset>0xA4</addressOffset>
           </register>
           <register>
-            <name>csic_bist_cs_reg</name>
+            <name>csic_bist_cs</name>
             <description>CSIC BIST CS Register</description>
             <addressOffset>0xDC</addressOffset>
           </register>
           <register>
-            <name>csic_bist_control_reg</name>
+            <name>csic_bist_control</name>
             <description>CSIC BIST Control Register</description>
             <addressOffset>0xE0</addressOffset>
           </register>
           <register>
-            <name>csic_bist_start_reg</name>
+            <name>csic_bist_start</name>
             <description>CSIC BIST Start Register</description>
             <addressOffset>0xE4</addressOffset>
           </register>
           <register>
-            <name>csic_bist_end_reg</name>
+            <name>csic_bist_end</name>
             <description>CSIC BIST End Register</description>
             <addressOffset>0xE8</addressOffset>
           </register>
           <register>
-            <name>csic_bist_data_mask_reg</name>
+            <name>csic_bist_data_mask</name>
             <description>CSIC BIST Data Mask Register</description>
             <addressOffset>0xEC</addressOffset>
           </register>
           <register>
-            <name>csic_mbus_req_max_reg</name>
+            <name>csic_mbus_req_max</name>
             <description>CSIC MBUS REQ MAX Register</description>
             <addressOffset>0xF0</addressOffset>
           </register>
           <register>
-            <name>csic_mulf_mod_reg</name>
+            <name>csic_mulf_mod</name>
             <description>CSIC Multi-Frame Mode Register</description>
             <addressOffset>0x100</addressOffset>
           </register>
           <register>
-            <name>csic_mulf_int_reg</name>
+            <name>csic_mulf_int</name>
             <description>CSIC Multi-Frame Interrupt Register</description>
             <addressOffset>0x104</addressOffset>
           </register>
@@ -13219,242 +15319,242 @@
           <description>CSIC_PARSER0</description>
           <addressOffset>0x1000</addressOffset>
           <register>
-            <name>prs_en_reg</name>
+            <name>prs_en</name>
             <description>Parser Enable Register</description>
             <addressOffset>0x0</addressOffset>
           </register>
           <register>
-            <name>prs_ncsic_if_cfg_reg</name>
+            <name>prs_ncsic_if_cfg</name>
             <description>Parser NCSIC Interface Configuration Register</description>
             <addressOffset>0x4</addressOffset>
           </register>
           <register>
-            <name>prs_cap_reg</name>
+            <name>prs_cap</name>
             <description>Parser Capture Register</description>
             <addressOffset>0xC</addressOffset>
           </register>
           <register>
-            <name>csic_prs_signal_sta_reg</name>
+            <name>csic_prs_signal_sta</name>
             <description>CSIC Parser Signal Status Register</description>
             <addressOffset>0x10</addressOffset>
           </register>
           <register>
-            <name>csic_prs_ncsic_bt656_head_cfg_reg</name>
+            <name>csic_prs_ncsic_bt656_head_cfg</name>
             <description>CSIC Parser NCSIC BT656 Header Configuration Register</description>
             <addressOffset>0x14</addressOffset>
           </register>
           <register>
-            <name>prs_c0_infmt_reg</name>
+            <name>prs_c0_infmt</name>
             <description>Parser Channel_0 Input Format Register</description>
             <addressOffset>0x24</addressOffset>
           </register>
           <register>
-            <name>prs_c0_output_hsize_reg</name>
+            <name>prs_c0_output_hsize</name>
             <description>Parser Channel_0 Output Horizontal Size Register</description>
             <addressOffset>0x28</addressOffset>
           </register>
           <register>
-            <name>prs_c0_output_vsize_reg</name>
+            <name>prs_c0_output_vsize</name>
             <description>Parser Channel_0 Output Vertical Size Register</description>
             <addressOffset>0x2C</addressOffset>
           </register>
           <register>
-            <name>prs_c0_input_para0_reg</name>
+            <name>prs_c0_input_para0</name>
             <description>Parser Channel_0 Input Parameter0 Register</description>
             <addressOffset>0x30</addressOffset>
           </register>
           <register>
-            <name>prs_c0_input_para1_reg</name>
+            <name>prs_c0_input_para1</name>
             <description>Parser Channel_0 Input Parameter1 Register</description>
             <addressOffset>0x34</addressOffset>
           </register>
           <register>
-            <name>prs_c0_input_para2_reg</name>
+            <name>prs_c0_input_para2</name>
             <description>Parser Channel_0 Input Parameter2 Register</description>
             <addressOffset>0x38</addressOffset>
           </register>
           <register>
-            <name>prs_c0_input_para3_reg</name>
+            <name>prs_c0_input_para3</name>
             <description>Parser Channel_0 Input Parameter3 Register</description>
             <addressOffset>0x3C</addressOffset>
           </register>
           <register>
-            <name>prs_c0_int_en_reg</name>
+            <name>prs_c0_int_en</name>
             <description>Parser Channel_0 Interrupt Enable Register</description>
             <addressOffset>0x40</addressOffset>
           </register>
           <register>
-            <name>prs_c0_int_sta_reg</name>
+            <name>prs_c0_int_sta</name>
             <description>Parser Channel_0 Interrupt Status Register</description>
             <addressOffset>0x44</addressOffset>
           </register>
           <register>
-            <name>prs_ch0_line_time_reg</name>
+            <name>prs_ch0_line_time</name>
             <description>Parser Channel_0 Line Time Register</description>
             <addressOffset>0x48</addressOffset>
           </register>
           <register>
-            <name>prs_c1_infmt_reg</name>
+            <name>prs_c1_infmt</name>
             <description>Parser Channel_1 Input Format Register</description>
             <addressOffset>0x124</addressOffset>
           </register>
           <register>
-            <name>prs_c1_output_hsize_reg</name>
+            <name>prs_c1_output_hsize</name>
             <description>Parser Channel_1 Output Horizontal Size</description>
             <addressOffset>0x128</addressOffset>
           </register>
           <register>
-            <name>prs_c1_output_vsize_reg</name>
+            <name>prs_c1_output_vsize</name>
             <description>Parser Channel_1 Output Vertical Size Register</description>
             <addressOffset>0x12C</addressOffset>
           </register>
           <register>
-            <name>prs_c1_input_para0_reg</name>
+            <name>prs_c1_input_para0</name>
             <description>Parser Channel_1 Input Parameter0 Register</description>
             <addressOffset>0x130</addressOffset>
           </register>
           <register>
-            <name>prs_c1_input_para1_reg</name>
+            <name>prs_c1_input_para1</name>
             <description>Parser Channel_1 Input Parameter1 Register</description>
             <addressOffset>0x134</addressOffset>
           </register>
           <register>
-            <name>prs_c1_input_para2_reg</name>
+            <name>prs_c1_input_para2</name>
             <description>Parser Channel_1 Input Parameter2 Register</description>
             <addressOffset>0x138</addressOffset>
           </register>
           <register>
-            <name>prs_c1_input_para3_reg</name>
+            <name>prs_c1_input_para3</name>
             <description>Parser Channel_1 Input Parameter3 Register</description>
             <addressOffset>0x13C</addressOffset>
           </register>
           <register>
-            <name>prs_c1_int_en_reg</name>
+            <name>prs_c1_int_en</name>
             <description>Parser Channel_1 Interrupt Enable Register</description>
             <addressOffset>0x140</addressOffset>
           </register>
           <register>
-            <name>prs_c1_int_sta_reg</name>
+            <name>prs_c1_int_sta</name>
             <description>Parser Channel_1 Interrupt Status Register</description>
             <addressOffset>0x144</addressOffset>
           </register>
           <register>
-            <name>prs_ch1_line_time_reg</name>
+            <name>prs_ch1_line_time</name>
             <description>Parser Channel_1 Line Time Register</description>
             <addressOffset>0x148</addressOffset>
           </register>
           <register>
-            <name>prs_c2_infmt_reg</name>
+            <name>prs_c2_infmt</name>
             <description>Parser Channel_2 Input Format Register</description>
             <addressOffset>0x224</addressOffset>
           </register>
           <register>
-            <name>prs_c2_output_hsize_reg</name>
+            <name>prs_c2_output_hsize</name>
             <description>Parser Channel_2 Output Horizontal Size Register</description>
             <addressOffset>0x228</addressOffset>
           </register>
           <register>
-            <name>prs_c2_output_vsize_reg</name>
+            <name>prs_c2_output_vsize</name>
             <description>Parser Channel_2 Output Vertical Size Register</description>
             <addressOffset>0x22C</addressOffset>
           </register>
           <register>
-            <name>prs_c2_input_para0_reg</name>
+            <name>prs_c2_input_para0</name>
             <description>Parser Channel_2 Input Parameter0 Register</description>
             <addressOffset>0x230</addressOffset>
           </register>
           <register>
-            <name>prs_c2_input_para1_reg</name>
+            <name>prs_c2_input_para1</name>
             <description>Parser Channel_2 Input Parameter1 Register</description>
             <addressOffset>0x234</addressOffset>
           </register>
           <register>
-            <name>prs_c2_input_para2_reg</name>
+            <name>prs_c2_input_para2</name>
             <description>Parser Channel_2 Input Parameter2 Register</description>
             <addressOffset>0x238</addressOffset>
           </register>
           <register>
-            <name>prs_c2_input_para3_reg</name>
+            <name>prs_c2_input_para3</name>
             <description>Parser Channel_2 Input Parameter3 Register</description>
             <addressOffset>0x23C</addressOffset>
           </register>
           <register>
-            <name>prs_c2_int_en_reg</name>
+            <name>prs_c2_int_en</name>
             <description>Parser Channel_2 Interrupt Enable Register</description>
             <addressOffset>0x240</addressOffset>
           </register>
           <register>
-            <name>prs_c2_int_sta_reg</name>
+            <name>prs_c2_int_sta</name>
             <description>Parser Channel_2 Interrupt Status Register</description>
             <addressOffset>0x244</addressOffset>
           </register>
           <register>
-            <name>prs_ch2_line_time_reg</name>
+            <name>prs_ch2_line_time</name>
             <description>Parser Channel_2 Line Time Register</description>
             <addressOffset>0x248</addressOffset>
           </register>
           <register>
-            <name>prs_c3_infmt_reg</name>
+            <name>prs_c3_infmt</name>
             <description>Parser Channel_3 Input Format Register</description>
             <addressOffset>0x324</addressOffset>
           </register>
           <register>
-            <name>prs_c3_output_hsize_reg</name>
+            <name>prs_c3_output_hsize</name>
             <description>Parser Channel_3 Output Horizontal Size Register</description>
             <addressOffset>0x328</addressOffset>
           </register>
           <register>
-            <name>prs_c3_output_vsize_reg</name>
+            <name>prs_c3_output_vsize</name>
             <description>Parser Channel_3 Output Vertical Size Register</description>
             <addressOffset>0x32C</addressOffset>
           </register>
           <register>
-            <name>prs_c3_input_para0_reg</name>
+            <name>prs_c3_input_para0</name>
             <description>Parser Channel_3 Input Parameter0 Register</description>
             <addressOffset>0x330</addressOffset>
           </register>
           <register>
-            <name>prs_c3_input_para1_reg</name>
+            <name>prs_c3_input_para1</name>
             <description>Parser Channel_3 Input Parameter1 Register</description>
             <addressOffset>0x334</addressOffset>
           </register>
           <register>
-            <name>prs_c3_input_para2_reg</name>
+            <name>prs_c3_input_para2</name>
             <description>Parser Channel_3 Input Parameter2 Register</description>
             <addressOffset>0x338</addressOffset>
           </register>
           <register>
-            <name>prs_c3_input_para3_reg</name>
+            <name>prs_c3_input_para3</name>
             <description>Parser Channel_3 Input Parameter3 Register</description>
             <addressOffset>0x33C</addressOffset>
           </register>
           <register>
-            <name>prs_c3_int_en_reg</name>
+            <name>prs_c3_int_en</name>
             <description>Parser Channel_3 Interrupt Enable Register</description>
             <addressOffset>0x340</addressOffset>
           </register>
           <register>
-            <name>prs_c3_int_sta_reg</name>
+            <name>prs_c3_int_sta</name>
             <description>Parser Channel_3 Interrupt Status Register</description>
             <addressOffset>0x344</addressOffset>
           </register>
           <register>
-            <name>prs_ch3_line_time_reg</name>
+            <name>prs_ch3_line_time</name>
             <description>Parser Channel_3 Line Time Register</description>
             <addressOffset>0x348</addressOffset>
           </register>
           <register>
-            <name>csic_prs_ncsic_rx_signal0_dly_adj_reg</name>
+            <name>csic_prs_ncsic_rx_signal0_dly_adj</name>
             <description>CSIC Parser NCSIC RX Signal0 Delay Adjust Register</description>
             <addressOffset>0x500</addressOffset>
           </register>
           <register>
-            <name>csic_prs_ncsic_rx_signal5_dly_adj_reg</name>
+            <name>csic_prs_ncsic_rx_signal5_dly_adj</name>
             <description>CSIC Parser NCSIC RX Signal5 Delay Adjust Register</description>
             <addressOffset>0x514</addressOffset>
           </register>
           <register>
-            <name>csic_prs_ncsic_rx_signal6_dly_adj_reg</name>
+            <name>csic_prs_ncsic_rx_signal6_dly_adj</name>
             <description>CSIC Parser NCSIC RX Signal6 Delay Adjust Register</description>
             <addressOffset>0x518</addressOffset>
           </register>
@@ -13466,162 +15566,162 @@
           <description>CSIC_DMA</description>
           <addressOffset>0x9000</addressOffset>
           <register>
-            <name>csic_dma_en_reg</name>
+            <name>csic_dma_en</name>
             <description>CSIC DMA Enable Register</description>
             <addressOffset>0x0</addressOffset>
           </register>
           <register>
-            <name>csic_dma_cfg_reg</name>
+            <name>csic_dma_cfg</name>
             <description>CSIC DMA Configuration Register</description>
             <addressOffset>0x4</addressOffset>
           </register>
           <register>
-            <name>csic_dma_hsize_reg</name>
+            <name>csic_dma_hsize</name>
             <description>CSIC DMA Horizontal Size Register</description>
             <addressOffset>0x10</addressOffset>
           </register>
           <register>
-            <name>csic_dma_vsize_reg</name>
+            <name>csic_dma_vsize</name>
             <description>CSIC DMA Vertical Size Register</description>
             <addressOffset>0x14</addressOffset>
           </register>
           <register>
-            <name>csic_dma_f0_bufa_reg</name>
+            <name>csic_dma_f0_bufa</name>
             <description>CSIC DMA FIFO 0 Output Buffer-A Address Register</description>
             <addressOffset>0x20</addressOffset>
           </register>
           <register>
-            <name>csic_dma_f0_bufa_result_reg</name>
+            <name>csic_dma_f0_bufa_result</name>
             <description>CSIC DMA FIFO 0 Output Buffer-A Address Result Register</description>
             <addressOffset>0x24</addressOffset>
           </register>
           <register>
-            <name>csic_dma_f1_bufa_reg</name>
+            <name>csic_dma_f1_bufa</name>
             <description>CSIC DMA FIFO 1 Output Buffer-A Address Register</description>
             <addressOffset>0x28</addressOffset>
           </register>
           <register>
-            <name>csic_dma_f1_bufa_result_reg</name>
+            <name>csic_dma_f1_bufa_result</name>
             <description>CSIC DMA FIFO 1 Output Buffer-A Address Result Register</description>
             <addressOffset>0x2C</addressOffset>
           </register>
           <register>
-            <name>csic_dma_f2_bufa_reg</name>
+            <name>csic_dma_f2_bufa</name>
             <description>CSIC DMA FIFO 2 Output Buffer-A Address Register</description>
             <addressOffset>0x30</addressOffset>
           </register>
           <register>
-            <name>csic_dma_f2_bufa_result_reg</name>
+            <name>csic_dma_f2_bufa_result</name>
             <description>CSIC DMA FIFO 2 Output Buffer-A Address Result Register</description>
             <addressOffset>0x34</addressOffset>
           </register>
           <register>
-            <name>csic_dma_buf_len_reg</name>
+            <name>csic_dma_buf_len</name>
             <description>CSIC DMA Buffer Length Register</description>
             <addressOffset>0x38</addressOffset>
           </register>
           <register>
-            <name>csic_dma_flip_size_reg</name>
+            <name>csic_dma_flip_size</name>
             <description>CSIC DMA Flip Size Register</description>
             <addressOffset>0x3C</addressOffset>
           </register>
           <register>
-            <name>csic_dma_vi_to_th0_reg</name>
+            <name>csic_dma_vi_to_th0</name>
             <description>CSIC DMA Video Input Timeout Threshold0 Register</description>
             <addressOffset>0x40</addressOffset>
           </register>
           <register>
-            <name>csic_dma_vi_to_th1_reg</name>
+            <name>csic_dma_vi_to_th1</name>
             <description>CSIC DMA Video Input Timeout Threshold1 Register</description>
             <addressOffset>0x44</addressOffset>
           </register>
           <register>
-            <name>csic_dma_vi_to_cnt_val_reg</name>
+            <name>csic_dma_vi_to_cnt_val</name>
             <description>CSIC DMA Video Input Timeout Counter Value Register</description>
             <addressOffset>0x48</addressOffset>
           </register>
           <register>
-            <name>csic_dma_cap_sta_reg</name>
+            <name>csic_dma_cap_sta</name>
             <description>CSIC DMA Capture Status Register</description>
             <addressOffset>0x4C</addressOffset>
           </register>
           <register>
-            <name>csic_dma_int_en_reg</name>
+            <name>csic_dma_int_en</name>
             <description>CSIC DMA Interrupt Enable Register</description>
             <addressOffset>0x50</addressOffset>
           </register>
           <register>
-            <name>csic_dma_int_sta_reg</name>
+            <name>csic_dma_int_sta</name>
             <description>CSIC DMA Interrupt Status Register</description>
             <addressOffset>0x54</addressOffset>
           </register>
           <register>
-            <name>csic_dma_line_cnt_reg</name>
+            <name>csic_dma_line_cnt</name>
             <description>CSIC DMA LINE Counter Register</description>
             <addressOffset>0x58</addressOffset>
           </register>
           <register>
-            <name>csic_dma_frm_cnt_reg</name>
+            <name>csic_dma_frm_cnt</name>
             <description>CSIC DMA Frame Counter Register</description>
             <addressOffset>0x5C</addressOffset>
           </register>
           <register>
-            <name>csic_dma_frm_clk_cnt_reg</name>
+            <name>csic_dma_frm_clk_cnt</name>
             <description>CSIC DMA Frame Clock Counter Register</description>
             <addressOffset>0x60</addressOffset>
           </register>
           <register>
-            <name>csic_dma_acc_itnl_clk_cnt_reg</name>
+            <name>csic_dma_acc_itnl_clk_cnt</name>
             <description>CSIC DMA Accumulated And Internal Clock Counter Register</description>
             <addressOffset>0x64</addressOffset>
           </register>
           <register>
-            <name>csic_dma_fifo_stat_reg</name>
+            <name>csic_dma_fifo_stat</name>
             <description>CSIC DMA FIFO Statistic Register</description>
             <addressOffset>0x68</addressOffset>
           </register>
           <register>
-            <name>csic_dma_fifo_thrs_reg</name>
+            <name>csic_dma_fifo_thrs</name>
             <description>CSIC DMA FIFO Threshold Register</description>
             <addressOffset>0x6C</addressOffset>
           </register>
           <register>
-            <name>csic_dma_pclk_stat_reg</name>
+            <name>csic_dma_pclk_stat</name>
             <description>CSIC DMA PCLK Statistic Register</description>
             <addressOffset>0x70</addressOffset>
           </register>
           <register>
-            <name>csic_dma_buf_addr_fifo0_entry_reg</name>
+            <name>csic_dma_buf_addr_fifo0_entry</name>
             <description>CSIC DMA BUF Address FIFO0 Entry Register</description>
             <addressOffset>0x80</addressOffset>
           </register>
           <register>
-            <name>csic_dma_buf_addr_fifo1_entry_reg</name>
+            <name>csic_dma_buf_addr_fifo1_entry</name>
             <description>CSIC DMA BUF Address FIFO1 Entry Register</description>
             <addressOffset>0x84</addressOffset>
           </register>
           <register>
-            <name>csic_dma_buf_addr_fifo2_entry_reg</name>
+            <name>csic_dma_buf_addr_fifo2_entry</name>
             <description>CSIC DMA BUF Address FIFO2 Entry Register</description>
             <addressOffset>0x88</addressOffset>
           </register>
           <register>
-            <name>csic_dma_buf_th_reg</name>
+            <name>csic_dma_buf_th</name>
             <description>CSIC DMA BUF Threshold Register</description>
             <addressOffset>0x8C</addressOffset>
           </register>
           <register>
-            <name>csic_dma_buf_addr_fifo_con_reg</name>
+            <name>csic_dma_buf_addr_fifo_con</name>
             <description>CSIC DMA BUF Address FIFO Content Register</description>
             <addressOffset>0x90</addressOffset>
           </register>
           <register>
-            <name>csic_dma_stored_frm_cnt_reg</name>
+            <name>csic_dma_stored_frm_cnt</name>
             <description>CSIC DMA Stored Frame Counter Register</description>
             <addressOffset>0x94</addressOffset>
           </register>
           <register>
-            <name>csic_feature_reg</name>
+            <name>csic_feature</name>
             <description>CSIC DMA Feature List Register</description>
             <addressOffset>0x1F4</addressOffset>
           </register>
@@ -16015,12 +18115,12 @@
           <addressOffset>0x38</addressOffset>
         </register>
         <register>
-          <name>hpf_coef_reg</name>
+          <name>hpf_coef</name>
           <description>High Pass Filter Coefficient Register</description>
           <addressOffset>0x3C</addressOffset>
         </register>
         <register>
-          <name>hpf_gain_reg</name>
+          <name>hpf_gain</name>
           <description>High Pass Filter Gain Register</description>
           <addressOffset>0x40</addressOffset>
         </register>
@@ -16719,42 +18819,42 @@
           <addressOffset>0x2BC</addressOffset>
         </register>
         <register>
-          <name>adc1_reg</name>
+          <name>adc1</name>
           <description>ADC1 Analog Control Register</description>
           <addressOffset>0x300</addressOffset>
         </register>
         <register>
-          <name>adc2_reg</name>
+          <name>adc2</name>
           <description>ADC2 Analog Control Register</description>
           <addressOffset>0x304</addressOffset>
         </register>
         <register>
-          <name>adc3_reg</name>
+          <name>adc3</name>
           <description>ADC3 Analog Control Register</description>
           <addressOffset>0x308</addressOffset>
         </register>
         <register>
-          <name>dac_reg</name>
+          <name>dac</name>
           <description>DAC Analog Control Register</description>
           <addressOffset>0x310</addressOffset>
         </register>
         <register>
-          <name>micbias_reg</name>
+          <name>micbias</name>
           <description>MICBIAS Analog Control Register</description>
           <addressOffset>0x318</addressOffset>
         </register>
         <register>
-          <name>ramp_reg</name>
+          <name>ramp</name>
           <description>BIAS Analog Control Register</description>
           <addressOffset>0x31C</addressOffset>
         </register>
         <register>
-          <name>bias_reg</name>
+          <name>bias</name>
           <description>BIAS Analog Control Register</description>
           <addressOffset>0x320</addressOffset>
         </register>
         <register>
-          <name>adc5_reg</name>
+          <name>adc5</name>
           <description>ADC5 Analog Control Register</description>
           <addressOffset>0x330</addressOffset>
         </register>
