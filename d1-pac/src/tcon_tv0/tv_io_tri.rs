@@ -34,7 +34,123 @@ impl From<crate::W<TV_IO_TRI_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "IO\\[i\\]
+Output Trigger Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IO_OUTPUT_TRI_EN_A {
+    #[doc = "1: Disable"]
+    D_ISABLE = 1,
+    #[doc = "0: Enable"]
+    E_NABLE = 0,
+}
+impl From<IO_OUTPUT_TRI_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: IO_OUTPUT_TRI_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Fields `io(0-3)_output_tri_en` reader - IO\\[i\\]
+Output Trigger Enable"]
+pub type IO_OUTPUT_TRI_EN_R = crate::BitReader<IO_OUTPUT_TRI_EN_A>;
+impl IO_OUTPUT_TRI_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IO_OUTPUT_TRI_EN_A {
+        match self.bits {
+            true => IO_OUTPUT_TRI_EN_A::D_ISABLE,
+            false => IO_OUTPUT_TRI_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[inline(always)]
+    pub fn is_d_isable(&self) -> bool {
+        *self == IO_OUTPUT_TRI_EN_A::D_ISABLE
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == IO_OUTPUT_TRI_EN_A::E_NABLE
+    }
+}
+#[doc = "Fields `io(0-3)_output_tri_en` writer - IO\\[i\\]
+Output Trigger Enable"]
+pub type IO_OUTPUT_TRI_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TV_IO_TRI_SPEC, IO_OUTPUT_TRI_EN_A, O>;
+impl<'a, const O: u8> IO_OUTPUT_TRI_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn d_isable(self) -> &'a mut W {
+        self.variant(IO_OUTPUT_TRI_EN_A::D_ISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(IO_OUTPUT_TRI_EN_A::E_NABLE)
+    }
+}
+impl R {
+    #[doc = "IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub unsafe fn io_output_tri_en(&self, n: u8) -> IO_OUTPUT_TRI_EN_R {
+        IO_OUTPUT_TRI_EN_R::new(((self.bits >> (n + 24)) & 1) != 0)
+    }
+    #[doc = "Bit 24 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io0_output_tri_en(&self) -> IO_OUTPUT_TRI_EN_R {
+        IO_OUTPUT_TRI_EN_R::new(((self.bits >> 24) & 1) != 0)
+    }
+    #[doc = "Bit 25 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io1_output_tri_en(&self) -> IO_OUTPUT_TRI_EN_R {
+        IO_OUTPUT_TRI_EN_R::new(((self.bits >> 25) & 1) != 0)
+    }
+    #[doc = "Bit 26 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io2_output_tri_en(&self) -> IO_OUTPUT_TRI_EN_R {
+        IO_OUTPUT_TRI_EN_R::new(((self.bits >> 26) & 1) != 0)
+    }
+    #[doc = "Bit 27 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io3_output_tri_en(&self) -> IO_OUTPUT_TRI_EN_R {
+        IO_OUTPUT_TRI_EN_R::new(((self.bits >> 27) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub unsafe fn io_output_tri_en<const O: u8>(&mut self) -> IO_OUTPUT_TRI_EN_W<O> {
+        IO_OUTPUT_TRI_EN_W::new(self)
+    }
+    #[doc = "Bit 24 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io0_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<24> {
+        IO_OUTPUT_TRI_EN_W::new(self)
+    }
+    #[doc = "Bit 25 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io1_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<25> {
+        IO_OUTPUT_TRI_EN_W::new(self)
+    }
+    #[doc = "Bit 26 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io2_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<26> {
+        IO_OUTPUT_TRI_EN_W::new(self)
+    }
+    #[doc = "Bit 27 - IO\\[i\\]
+Output Trigger Enable"]
+    #[inline(always)]
+    pub fn io3_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<27> {
+        IO_OUTPUT_TRI_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

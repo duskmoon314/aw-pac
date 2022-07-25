@@ -34,7 +34,111 @@ impl From<crate::W<TV_SRC_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "TV Source Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum TV_SRC_SEL_A {
+    #[doc = "0: DE"]
+    DE = 0,
+    #[doc = "1: Color Check"]
+    C_OLOR = 1,
+    #[doc = "2: Grayscale Check"]
+    G_RAYSCALE = 2,
+    #[doc = "3: Black by White Check"]
+    B_LACK_B_Y_W_HITE = 3,
+    #[doc = "7: Gridding Check"]
+    G_RIDDING = 7,
+}
+impl From<TV_SRC_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TV_SRC_SEL_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `tv_src_sel` reader - TV Source Select"]
+pub type TV_SRC_SEL_R = crate::FieldReader<u8, TV_SRC_SEL_A>;
+impl TV_SRC_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<TV_SRC_SEL_A> {
+        match self.bits {
+            0 => Some(TV_SRC_SEL_A::DE),
+            1 => Some(TV_SRC_SEL_A::C_OLOR),
+            2 => Some(TV_SRC_SEL_A::G_RAYSCALE),
+            3 => Some(TV_SRC_SEL_A::B_LACK_B_Y_W_HITE),
+            7 => Some(TV_SRC_SEL_A::G_RIDDING),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DE`"]
+    #[inline(always)]
+    pub fn is_de(&self) -> bool {
+        *self == TV_SRC_SEL_A::DE
+    }
+    #[doc = "Checks if the value of the field is `C_OLOR`"]
+    #[inline(always)]
+    pub fn is_c_olor(&self) -> bool {
+        *self == TV_SRC_SEL_A::C_OLOR
+    }
+    #[doc = "Checks if the value of the field is `G_RAYSCALE`"]
+    #[inline(always)]
+    pub fn is_g_rayscale(&self) -> bool {
+        *self == TV_SRC_SEL_A::G_RAYSCALE
+    }
+    #[doc = "Checks if the value of the field is `B_LACK_B_Y_W_HITE`"]
+    #[inline(always)]
+    pub fn is_b_lack_b_y_w_hite(&self) -> bool {
+        *self == TV_SRC_SEL_A::B_LACK_B_Y_W_HITE
+    }
+    #[doc = "Checks if the value of the field is `G_RIDDING`"]
+    #[inline(always)]
+    pub fn is_g_ridding(&self) -> bool {
+        *self == TV_SRC_SEL_A::G_RIDDING
+    }
+}
+#[doc = "Field `tv_src_sel` writer - TV Source Select"]
+pub type TV_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_SRC_CTL_SPEC, u8, TV_SRC_SEL_A, 3, O>;
+impl<'a, const O: u8> TV_SRC_SEL_W<'a, O> {
+    #[doc = "DE"]
+    #[inline(always)]
+    pub fn de(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::DE)
+    }
+    #[doc = "Color Check"]
+    #[inline(always)]
+    pub fn c_olor(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::C_OLOR)
+    }
+    #[doc = "Grayscale Check"]
+    #[inline(always)]
+    pub fn g_rayscale(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::G_RAYSCALE)
+    }
+    #[doc = "Black by White Check"]
+    #[inline(always)]
+    pub fn b_lack_b_y_w_hite(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::B_LACK_B_Y_W_HITE)
+    }
+    #[doc = "Gridding Check"]
+    #[inline(always)]
+    pub fn g_ridding(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::G_RIDDING)
+    }
+}
+impl R {
+    #[doc = "Bits 0:2 - TV Source Select"]
+    #[inline(always)]
+    pub fn tv_src_sel(&self) -> TV_SRC_SEL_R {
+        TV_SRC_SEL_R::new((self.bits & 7) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:2 - TV Source Select"]
+    #[inline(always)]
+    pub fn tv_src_sel(&mut self) -> TV_SRC_SEL_W<0> {
+        TV_SRC_SEL_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -34,7 +34,37 @@ impl From<crate::W<TV_BASIC5_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `h_spw` reader - Horizontal Sync Pulse Width (in dclk)\n\nThspw = (HSPW+1) * Tdclk\n\nNote: HT > (HSPW+1)"]
+pub type H_SPW_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `h_spw` writer - Horizontal Sync Pulse Width (in dclk)\n\nThspw = (HSPW+1) * Tdclk\n\nNote: HT > (HSPW+1)"]
+pub type H_SPW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC5_SPEC, u16, u16, 10, O>;
+#[doc = "Field `v_spw` reader - Vertical Sync Pulse Width (in lines)\n\nTvspw = (VSPW+1) * Th\n\nNote: VT/2 > (VSPW+1)"]
+pub type V_SPW_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `v_spw` writer - Vertical Sync Pulse Width (in lines)\n\nTvspw = (VSPW+1) * Th\n\nNote: VT/2 > (VSPW+1)"]
+pub type V_SPW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC5_SPEC, u16, u16, 10, O>;
+impl R {
+    #[doc = "Bits 16:25 - Horizontal Sync Pulse Width (in dclk)\n\nThspw = (HSPW+1) * Tdclk\n\nNote: HT > (HSPW+1)"]
+    #[inline(always)]
+    pub fn h_spw(&self) -> H_SPW_R {
+        H_SPW_R::new(((self.bits >> 16) & 0x03ff) as u16)
+    }
+    #[doc = "Bits 0:9 - Vertical Sync Pulse Width (in lines)\n\nTvspw = (VSPW+1) * Th\n\nNote: VT/2 > (VSPW+1)"]
+    #[inline(always)]
+    pub fn v_spw(&self) -> V_SPW_R {
+        V_SPW_R::new((self.bits & 0x03ff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:25 - Horizontal Sync Pulse Width (in dclk)\n\nThspw = (HSPW+1) * Tdclk\n\nNote: HT > (HSPW+1)"]
+    #[inline(always)]
+    pub fn h_spw(&mut self) -> H_SPW_W<16> {
+        H_SPW_W::new(self)
+    }
+    #[doc = "Bits 0:9 - Vertical Sync Pulse Width (in lines)\n\nTvspw = (VSPW+1) * Th\n\nNote: VT/2 > (VSPW+1)"]
+    #[inline(always)]
+    pub fn v_spw(&mut self) -> V_SPW_W<0> {
+        V_SPW_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

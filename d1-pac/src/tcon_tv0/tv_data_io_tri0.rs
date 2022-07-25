@@ -34,7 +34,135 @@ impl From<crate::W<TV_DATA_IO_TRI0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "R CB Channel Data Output Trigger Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
+pub enum R_CB_CH_DATA_OUT_TRI_EN_A {
+    #[doc = "0: disable"]
+    DISABLE = 0,
+    #[doc = "1: enable"]
+    ENABLE = 1,
+}
+impl From<R_CB_CH_DATA_OUT_TRI_EN_A> for u16 {
+    #[inline(always)]
+    fn from(variant: R_CB_CH_DATA_OUT_TRI_EN_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `r_cb_ch_data_out_tri_en` reader - R CB Channel Data Output Trigger Enable"]
+pub type R_CB_CH_DATA_OUT_TRI_EN_R = crate::FieldReader<u16, R_CB_CH_DATA_OUT_TRI_EN_A>;
+impl R_CB_CH_DATA_OUT_TRI_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<R_CB_CH_DATA_OUT_TRI_EN_A> {
+        match self.bits {
+            0 => Some(R_CB_CH_DATA_OUT_TRI_EN_A::DISABLE),
+            1 => Some(R_CB_CH_DATA_OUT_TRI_EN_A::ENABLE),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == R_CB_CH_DATA_OUT_TRI_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == R_CB_CH_DATA_OUT_TRI_EN_A::ENABLE
+    }
+}
+#[doc = "Field `r_cb_ch_data_out_tri_en` writer - R CB Channel Data Output Trigger Enable"]
+pub type R_CB_CH_DATA_OUT_TRI_EN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_DATA_IO_TRI0_SPEC, u16, R_CB_CH_DATA_OUT_TRI_EN_A, 10, O>;
+impl<'a, const O: u8> R_CB_CH_DATA_OUT_TRI_EN_W<'a, O> {
+    #[doc = "disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(R_CB_CH_DATA_OUT_TRI_EN_A::DISABLE)
+    }
+    #[doc = "enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(R_CB_CH_DATA_OUT_TRI_EN_A::ENABLE)
+    }
+}
+#[doc = "G Y Channel Data Output Trigger Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
+pub enum G_Y_CH_DATA_OUT_TRI_EN_A {
+    #[doc = "0: disable"]
+    DISABLE = 0,
+    #[doc = "1: enable"]
+    ENABLE = 1,
+}
+impl From<G_Y_CH_DATA_OUT_TRI_EN_A> for u16 {
+    #[inline(always)]
+    fn from(variant: G_Y_CH_DATA_OUT_TRI_EN_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `g_y_ch_data_out_tri_en` reader - G Y Channel Data Output Trigger Enable"]
+pub type G_Y_CH_DATA_OUT_TRI_EN_R = crate::FieldReader<u16, G_Y_CH_DATA_OUT_TRI_EN_A>;
+impl G_Y_CH_DATA_OUT_TRI_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<G_Y_CH_DATA_OUT_TRI_EN_A> {
+        match self.bits {
+            0 => Some(G_Y_CH_DATA_OUT_TRI_EN_A::DISABLE),
+            1 => Some(G_Y_CH_DATA_OUT_TRI_EN_A::ENABLE),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == G_Y_CH_DATA_OUT_TRI_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == G_Y_CH_DATA_OUT_TRI_EN_A::ENABLE
+    }
+}
+#[doc = "Field `g_y_ch_data_out_tri_en` writer - G Y Channel Data Output Trigger Enable"]
+pub type G_Y_CH_DATA_OUT_TRI_EN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_DATA_IO_TRI0_SPEC, u16, G_Y_CH_DATA_OUT_TRI_EN_A, 10, O>;
+impl<'a, const O: u8> G_Y_CH_DATA_OUT_TRI_EN_W<'a, O> {
+    #[doc = "disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(G_Y_CH_DATA_OUT_TRI_EN_A::DISABLE)
+    }
+    #[doc = "enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(G_Y_CH_DATA_OUT_TRI_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bits 16:25 - R CB Channel Data Output Trigger Enable"]
+    #[inline(always)]
+    pub fn r_cb_ch_data_out_tri_en(&self) -> R_CB_CH_DATA_OUT_TRI_EN_R {
+        R_CB_CH_DATA_OUT_TRI_EN_R::new(((self.bits >> 16) & 0x03ff) as u16)
+    }
+    #[doc = "Bits 0:9 - G Y Channel Data Output Trigger Enable"]
+    #[inline(always)]
+    pub fn g_y_ch_data_out_tri_en(&self) -> G_Y_CH_DATA_OUT_TRI_EN_R {
+        G_Y_CH_DATA_OUT_TRI_EN_R::new((self.bits & 0x03ff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:25 - R CB Channel Data Output Trigger Enable"]
+    #[inline(always)]
+    pub fn r_cb_ch_data_out_tri_en(&mut self) -> R_CB_CH_DATA_OUT_TRI_EN_W<16> {
+        R_CB_CH_DATA_OUT_TRI_EN_W::new(self)
+    }
+    #[doc = "Bits 0:9 - G Y Channel Data Output Trigger Enable"]
+    #[inline(always)]
+    pub fn g_y_ch_data_out_tri_en(&mut self) -> G_Y_CH_DATA_OUT_TRI_EN_W<0> {
+        G_Y_CH_DATA_OUT_TRI_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

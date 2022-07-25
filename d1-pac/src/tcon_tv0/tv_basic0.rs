@@ -34,7 +34,38 @@ impl From<crate::W<TV_BASIC0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `width_xi` reader - Source Width Is X+1"]
+pub type WIDTH_XI_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `width_xi` writer - Source Width Is X+1"]
+pub type WIDTH_XI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC0_SPEC, u16, u16, 12, O>;
+#[doc = "Field `height_yi` reader - Source Height Is Y+1"]
+pub type HEIGHT_YI_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `height_yi` writer - Source Height Is Y+1"]
+pub type HEIGHT_YI_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_BASIC0_SPEC, u16, u16, 12, O>;
+impl R {
+    #[doc = "Bits 16:27 - Source Width Is X+1"]
+    #[inline(always)]
+    pub fn width_xi(&self) -> WIDTH_XI_R {
+        WIDTH_XI_R::new(((self.bits >> 16) & 0x0fff) as u16)
+    }
+    #[doc = "Bits 0:11 - Source Height Is Y+1"]
+    #[inline(always)]
+    pub fn height_yi(&self) -> HEIGHT_YI_R {
+        HEIGHT_YI_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:27 - Source Width Is X+1"]
+    #[inline(always)]
+    pub fn width_xi(&mut self) -> WIDTH_XI_W<16> {
+        WIDTH_XI_W::new(self)
+    }
+    #[doc = "Bits 0:11 - Source Height Is Y+1"]
+    #[inline(always)]
+    pub fn height_yi(&mut self) -> HEIGHT_YI_W<0> {
+        HEIGHT_YI_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

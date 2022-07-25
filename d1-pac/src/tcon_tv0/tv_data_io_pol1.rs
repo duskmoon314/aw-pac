@@ -34,7 +34,72 @@ impl From<crate::W<TV_DATA_IO_POL1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "B CR CHANNE DATA INV\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u16)]
+pub enum B_CR_CH_DATA_INV_A {
+    #[doc = "0: normal polarity"]
+    NORMAL = 0,
+    #[doc = "1: invert the specify output"]
+    INVERT = 1,
+}
+impl From<B_CR_CH_DATA_INV_A> for u16 {
+    #[inline(always)]
+    fn from(variant: B_CR_CH_DATA_INV_A) -> Self {
+        variant as _
+    }
+}
+#[doc = "Field `b_cr_ch_data_inv` reader - B CR CHANNE DATA INV"]
+pub type B_CR_CH_DATA_INV_R = crate::FieldReader<u16, B_CR_CH_DATA_INV_A>;
+impl B_CR_CH_DATA_INV_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<B_CR_CH_DATA_INV_A> {
+        match self.bits {
+            0 => Some(B_CR_CH_DATA_INV_A::NORMAL),
+            1 => Some(B_CR_CH_DATA_INV_A::INVERT),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[inline(always)]
+    pub fn is_normal(&self) -> bool {
+        *self == B_CR_CH_DATA_INV_A::NORMAL
+    }
+    #[doc = "Checks if the value of the field is `INVERT`"]
+    #[inline(always)]
+    pub fn is_invert(&self) -> bool {
+        *self == B_CR_CH_DATA_INV_A::INVERT
+    }
+}
+#[doc = "Field `b_cr_ch_data_inv` writer - B CR CHANNE DATA INV"]
+pub type B_CR_CH_DATA_INV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_DATA_IO_POL1_SPEC, u16, B_CR_CH_DATA_INV_A, 10, O>;
+impl<'a, const O: u8> B_CR_CH_DATA_INV_W<'a, O> {
+    #[doc = "normal polarity"]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut W {
+        self.variant(B_CR_CH_DATA_INV_A::NORMAL)
+    }
+    #[doc = "invert the specify output"]
+    #[inline(always)]
+    pub fn invert(self) -> &'a mut W {
+        self.variant(B_CR_CH_DATA_INV_A::INVERT)
+    }
+}
+impl R {
+    #[doc = "Bits 16:25 - B CR CHANNE DATA INV"]
+    #[inline(always)]
+    pub fn b_cr_ch_data_inv(&self) -> B_CR_CH_DATA_INV_R {
+        B_CR_CH_DATA_INV_R::new(((self.bits >> 16) & 0x03ff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 16:25 - B CR CHANNE DATA INV"]
+    #[inline(always)]
+    pub fn b_cr_ch_data_inv(&mut self) -> B_CR_CH_DATA_INV_W<16> {
+        B_CR_CH_DATA_INV_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -34,7 +34,24 @@ impl From<crate::W<TV_CEU_COEF_MUL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ceu_coef_mul_value` reader - Note: CEU_Coef_Mul_Value only can be 0 or 1."]
+pub type CEU_COEF_MUL_VALUE_R = crate::BitReader<bool>;
+#[doc = "Field `ceu_coef_mul_value` writer - Note: CEU_Coef_Mul_Value only can be 0 or 1."]
+pub type CEU_COEF_MUL_VALUE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TV_CEU_COEF_MUL_SPEC, bool, O>;
+impl R {
+    #[doc = "Bit 8 - Note: CEU_Coef_Mul_Value only can be 0 or 1."]
+    #[inline(always)]
+    pub fn ceu_coef_mul_value(&self) -> CEU_COEF_MUL_VALUE_R {
+        CEU_COEF_MUL_VALUE_R::new(((self.bits >> 8) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 8 - Note: CEU_Coef_Mul_Value only can be 0 or 1."]
+    #[inline(always)]
+    pub fn ceu_coef_mul_value(&mut self) -> CEU_COEF_MUL_VALUE_W<8> {
+        CEU_COEF_MUL_VALUE_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

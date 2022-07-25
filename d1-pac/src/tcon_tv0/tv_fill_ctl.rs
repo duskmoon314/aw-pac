@@ -34,7 +34,70 @@ impl From<crate::W<TV_FILL_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "TV Fill Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TV_FILL_EN_A {
+    #[doc = "0: Bypass"]
+    B_YPASS = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<TV_FILL_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TV_FILL_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `tv_fill_en` reader - TV Fill Enable"]
+pub type TV_FILL_EN_R = crate::BitReader<TV_FILL_EN_A>;
+impl TV_FILL_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TV_FILL_EN_A {
+        match self.bits {
+            false => TV_FILL_EN_A::B_YPASS,
+            true => TV_FILL_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[inline(always)]
+    pub fn is_b_ypass(&self) -> bool {
+        *self == TV_FILL_EN_A::B_YPASS
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == TV_FILL_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `tv_fill_en` writer - TV Fill Enable"]
+pub type TV_FILL_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TV_FILL_CTL_SPEC, TV_FILL_EN_A, O>;
+impl<'a, const O: u8> TV_FILL_EN_W<'a, O> {
+    #[doc = "Bypass"]
+    #[inline(always)]
+    pub fn b_ypass(self) -> &'a mut W {
+        self.variant(TV_FILL_EN_A::B_YPASS)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(TV_FILL_EN_A::E_NABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 31 - TV Fill Enable"]
+    #[inline(always)]
+    pub fn tv_fill_en(&self) -> TV_FILL_EN_R {
+        TV_FILL_EN_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 31 - TV Fill Enable"]
+    #[inline(always)]
+    pub fn tv_fill_en(&mut self) -> TV_FILL_EN_W<31> {
+        TV_FILL_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

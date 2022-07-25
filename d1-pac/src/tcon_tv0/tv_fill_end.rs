@@ -34,7 +34,24 @@ impl From<crate::W<TV_FILL_END_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `fill_end` reader - Fill End"]
+pub type FILL_END_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `fill_end` writer - Fill End"]
+pub type FILL_END_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_FILL_END_SPEC, u32, u32, 24, O>;
+impl R {
+    #[doc = "Bits 0:23 - Fill End"]
+    #[inline(always)]
+    pub fn fill_end(&self) -> FILL_END_R {
+        FILL_END_R::new((self.bits & 0x00ff_ffff) as u32)
+    }
+}
 impl W {
+    #[doc = "Bits 0:23 - Fill End"]
+    #[inline(always)]
+    pub fn fill_end(&mut self) -> FILL_END_W<0> {
+        FILL_END_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

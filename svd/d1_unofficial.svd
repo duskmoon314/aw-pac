@@ -14812,83 +14812,497 @@
           <name>tv_gctl</name>
           <description>TV Global Control Register</description>
           <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>tv_en</name>
+              <description>When it is disabled, the module will be reset to idle state.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cec_ddc_pad_sel</name>
+              <description>CEC DDC PAD Select</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INTERNAL_PAD</name>
+                  <description>TCON_TV internal pad for cec scl sal</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GPIO_PAD</name>
+                  <description>GPIO pad for cec scl sal</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_gint0</name>
           <description>TV Global Interrupt Register0</description>
           <addressOffset>0x4</addressOffset>
+          <fields>
+            <field>
+              <name>tv_vb_int_en</name>
+              <description>TV Vb Interrupt Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tv_line_int_en</name>
+              <description>TV Line Interrupt Enable</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tv_vb_int_flag</name>
+              <description>TV Vb Interrupt Flag\n\nAsserted during vertical no-display period every frame.\n\nWrite 0 to clear it.</description>
+              <bitRange>[14:14]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>tv_line_int_flag</name>
+              <description>TV Line Interrupt Flag\n\nTrigger when SY1 match the current TV scan line\n\nWrite 0 to clear it.</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_gint1</name>
           <description>TV Global Interrupt Register1</description>
           <addressOffset>0x8</addressOffset>
+          <fields>
+            <field>
+              <name>tv_line_int_num</name>
+              <description>Scan line for TV line trigger(including inactive lines)\n\nSetting it for the specified line for trigger 1.\n\nNote: SY1 is writable only when LINE_TRG1 is disabled.</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_src_ctl</name>
           <description>TV Source Control Register</description>
           <addressOffset>0x40</addressOffset>
+          <fields>
+            <field>
+              <name>tv_src_sel</name>
+              <description>TV Source Select</description>
+              <bitRange>[2:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DE</name>
+                  <description>DE</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_OLOR</name>
+                  <description>Color Check</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G_RAYSCALE</name>
+                  <description>Grayscale Check</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_LACK_B_Y_W_HITE</name>
+                  <description>Black by White Check</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>G_RIDDING</name>
+                  <description>Gridding Check</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_ctl</name>
           <description>TV Control Register</description>
           <addressOffset>0x90</addressOffset>
+          <fields>
+            <field>
+              <name>tv_en</name>
+              <description>When enable TCON_TV, this bit and the 0x0000[bit31] need to be enabled.</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>start_delay</name>
+              <description>This is for DE0 and DE1.</description>
+              <bitRange>[8:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>tv_src_sel</name>
+              <description>TV Source Select\n\nNote: The priority of this bit is higher than TV_SRC_SEL(bit[2:0]) in TV_SRC_CTL_REG.</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>BLUE_DATA</name>
+                  <description>BLUE data</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_basic0</name>
           <description>TV Basic Timing Register0</description>
           <addressOffset>0x94</addressOffset>
+          <fields>
+            <field>
+              <name>width_xi</name>
+              <description>Source Width Is X+1</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>height_yi</name>
+              <description>Source Height Is Y+1</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_basic1</name>
           <description>TV Basic Timing Register1</description>
           <addressOffset>0x98</addressOffset>
+          <fields>
+            <field>
+              <name>ls_xo</name>
+              <description>Width Is LS_XO+1</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ls_yo</name>
+              <description>Width Is LS_YO+1\n\nNote: This version LS_YO = TV_YI</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_basic2</name>
           <description>TV Basic Timing Register2</description>
           <addressOffset>0x9C</addressOffset>
+          <fields>
+            <field>
+              <name>tv_xo</name>
+              <description>Width is TV_XO+1</description>
+              <bitRange>[27:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>tv_yo</name>
+              <description>Height is TV_YO+1</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_basic3</name>
           <description>TV Basic Timing Register3</description>
           <addressOffset>0xA0</addressOffset>
+          <fields>
+            <field>
+              <name>h_t</name>
+              <description>Horizontal total time\n\nThcycle = (HT+1) * Thdclk</description>
+              <bitRange>[28:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>h_bp</name>
+              <description>Horizontal back porch\n\nThbp = (HBP +1) * Thdclk</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_basic4</name>
           <description>TV Basic Timing Register4</description>
           <addressOffset>0xA4</addressOffset>
+          <fields>
+            <field>
+              <name>v_t</name>
+              <description>horizontal total time (in HD line)\n\nTvt = VT/2 * Th</description>
+              <bitRange>[28:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>v_bp</name>
+              <description>horizontal back porch (in HD line)\n\nTvbp = (VBP +1) * Th</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_basic5</name>
           <description>TV Basic Timing Register5</description>
           <addressOffset>0xA8</addressOffset>
+          <fields>
+            <field>
+              <name>h_spw</name>
+              <description>Horizontal Sync Pulse Width (in dclk)\n\nThspw = (HSPW+1) * Tdclk\n\nNote: HT > (HSPW+1)</description>
+              <bitRange>[25:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>v_spw</name>
+              <description>Vertical Sync Pulse Width (in lines)\n\nTvspw = (VSPW+1) * Th\n\nNote: VT/2 > (VSPW+1)</description>
+              <bitRange>[9:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_io_pol</name>
           <description>TV SYNC Signal Polarity Register</description>
           <addressOffset>0x88</addressOffset>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>io%s_inv</name>
+              <description>IO[i] Invert</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_OT_INVERT</name>
+                  <description>Not invert</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I_NVERT</name>
+                  <description>Invert</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_io_tri</name>
           <description>TV SYNC Signal IO Control Register</description>
           <addressOffset>0x8C</addressOffset>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <name>io%s_output_tri_en</name>
+              <description>IO[i] Output Trigger Enable</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_debug</name>
           <description>TV Debug Register</description>
           <addressOffset>0xFC</addressOffset>
+          <fields>
+            <field>
+              <name>tv_fifo_u</name>
+              <description>TV FIFO Underflow</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>tv_field_pol</name>
+              <description>TV Field Polarity</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S_ECOND</name>
+                  <description>Second field</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F_IRST</name>
+                  <description>First field</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>line_buf_bypass</name>
+              <description>Line Buf fer Bypass</description>
+              <bitRange>[13:13]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>U_SED</name>
+                  <description>Used</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_YPASS</name>
+                  <description>Bypass</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tv_current_line</name>
+              <description>TV Current Line</description>
+              <bitRange>[11:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_ceu_ctl</name>
           <description>TV CEU Control Register</description>
           <addressOffset>0x100</addressOffset>
+          <fields>
+            <field>
+              <name>ceu_en</name>
+              <description>CEU Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_YPASS</name>
+                  <description>Bypass</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>11</dim>
           <dimIncrement>0x4</dimIncrement>
+          <dimArrayIndex>
+            <enumeratedValue>
+              <name>R_R</name>
+              <value>0x0</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>R_G</name>
+              <value>0x1</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>R_B</name>
+              <value>0x2</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>G_R</name>
+              <value>0x4</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>G_G</name>
+              <value>0x5</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>G_B</name>
+              <value>0x6</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>B_R</name>
+              <value>0x8</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>B_G</name>
+              <value>0x9</value>
+            </enumeratedValue>
+            <enumeratedValue>
+              <name>B_B</name>
+              <value>0xA</value>
+            </enumeratedValue>
+          </dimArrayIndex>
           <name>tv_ceu_coef_mul%s</name>
           <description>TV CEU Coefficient Register0</description>
           <addressOffset>0x110</addressOffset>
+          <fields>
+            <field>
+              <name>ceu_coef_mul_value</name>
+              <description>Note: CEU_Coef_Mul_Value only can be 0 or 1.</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>3</dim>
@@ -14896,16 +15310,97 @@
           <name>tv_ceu_coef_rang%s</name>
           <description>TV CEU Coefficient Register2</description>
           <addressOffset>0x140</addressOffset>
+          <fields>
+            <field>
+              <name>ceu_coef_range_min</name>
+              <description>Unsigned 10-bit Value, range of [0, 1023]</description>
+              <bitRange>[25:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ceu_coef_range_max</name>
+              <description>Unsigned 10-bit Value, range of [0, 1023]</description>
+              <bitRange>[9:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_safe_period</name>
           <description>TV Safe Period Register</description>
           <addressOffset>0x1F0</addressOffset>
+          <fields>
+            <field>
+              <name>safe_period_fifo_num</name>
+              <description>Safe Period FIFO Number</description>
+              <bitRange>[28:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>safe_period_line</name>
+              <description>Safe Period Line</description>
+              <bitRange>[15:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>safe_period_mode</name>
+              <description>Safe Period Mode</description>
+              <bitRange>[2:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNSAFE</name>
+                  <description>unsafe</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE</name>
+                  <description>safe</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE_LINE_BUF_CURR_NUM_GT_SAFE_PERIOD_FIFO_NUM</name>
+                  <description>safe at LINE_BUF_CURR_NUM > SAFE_PERIOD_FIFO_NUM</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE_2_SYNC_ACTIVE</name>
+                  <description>safe at 2 and safe at sync active</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAFE_LINE</name>
+                  <description>safe at line</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_fill_ctl</name>
           <description>TV Fill Data Control Register</description>
           <addressOffset>0x300</addressOffset>
+          <fields>
+            <field>
+              <name>tv_fill_en</name>
+              <description>TV Fill Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_YPASS</name>
+                  <description>Bypass</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>3</dim>
@@ -14913,6 +15408,14 @@
           <name>tv_fill_begin%s</name>
           <description>TV Fill Data Begin Register</description>
           <addressOffset>0x304</addressOffset>
+          <fields>
+            <field>
+              <name>fill_begin</name>
+              <description>Fill Begin</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>3</dim>
@@ -14920,6 +15423,14 @@
           <name>tv_fill_end%s</name>
           <description>TV Fill Data End Register</description>
           <addressOffset>0x308</addressOffset>
+          <fields>
+            <field>
+              <name>fill_end</name>
+              <description>Fill End</description>
+              <bitRange>[23:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <dim>3</dim>
@@ -14927,31 +15438,175 @@
           <name>tv_fill_data%s</name>
           <description>TV Fill Data Value Register</description>
           <addressOffset>0x30C</addressOffset>
+          <fields>
+            <field>
+              <name>fill_value</name>
+              <description>Fill Value</description>
+              <bitRange>[29:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_data_io_pol0</name>
           <description>TCON Data IO Polarity Control0</description>
           <addressOffset>0x330</addressOffset>
+          <fields>
+            <field>
+              <name>r_cb_ch_data_inv</name>
+              <description>R CB Channel Data Inv</description>
+              <bitRange>[25:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>normal polarity</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INVERT</name>
+                  <description>invert the specify output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>g_y_ch_data_inv</name>
+              <description>G Y Channel Data Inv</description>
+              <bitRange>[9:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>normal polarity</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INVERT</name>
+                  <description>invert the specify output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_data_io_pol1</name>
           <description>TCON Data IO Polarity Control1</description>
           <addressOffset>0x334</addressOffset>
+          <fields>
+            <field>
+              <name>b_cr_ch_data_inv</name>
+              <description>B CR CHANNE DATA INV</description>
+              <bitRange>[25:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>normal polarity</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INVERT</name>
+                  <description>invert the specify output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_data_io_tri0</name>
           <description>TCON Data IO Enable Control0</description>
           <addressOffset>0x338</addressOffset>
+          <fields>
+            <field>
+              <name>r_cb_ch_data_out_tri_en</name>
+              <description>R CB Channel Data Output Trigger Enable</description>
+              <bitRange>[25:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>g_y_ch_data_out_tri_en</name>
+              <description>G Y Channel Data Output Trigger Enable</description>
+              <bitRange>[9:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_data_io_tri1</name>
           <description>TCON Data IO Enable Control1</description>
           <addressOffset>0x33C</addressOffset>
+          <fields>
+            <field>
+              <name>b_cr_ch_data_out_tri_en</name>
+              <description>B CR Channel Data Output Trigger Enable</description>
+              <bitRange>[25:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tv_pixeldepth_mode</name>
           <description>TV Pixeldepth Mode Control Register</description>
           <addressOffset>0x340</addressOffset>
+          <fields>
+            <field>
+              <name>colorbar_pd_mode</name>
+              <description>Colorbar Pixeldepth mode</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_IT8</name>
+                  <description>8 bit mode\n\nWhen data source is the embedded colorbar, the 8-bit colorbar pattern is transmitted.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IT10</name>
+                  <description>10 bit mode\n\nWhen data source is the embedded colorbar, the 10-bit colorbar pattern is transmitted.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

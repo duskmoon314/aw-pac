@@ -34,7 +34,159 @@ impl From<crate::W<TV_GINT0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "TV Vb Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TV_VB_INT_EN_A {
+    #[doc = "0: Disable"]
+    D_ISABLE = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<TV_VB_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TV_VB_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `tv_vb_int_en` reader - TV Vb Interrupt Enable"]
+pub type TV_VB_INT_EN_R = crate::BitReader<TV_VB_INT_EN_A>;
+impl TV_VB_INT_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TV_VB_INT_EN_A {
+        match self.bits {
+            false => TV_VB_INT_EN_A::D_ISABLE,
+            true => TV_VB_INT_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[inline(always)]
+    pub fn is_d_isable(&self) -> bool {
+        *self == TV_VB_INT_EN_A::D_ISABLE
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == TV_VB_INT_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `tv_vb_int_en` writer - TV Vb Interrupt Enable"]
+pub type TV_VB_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TV_GINT0_SPEC, TV_VB_INT_EN_A, O>;
+impl<'a, const O: u8> TV_VB_INT_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn d_isable(self) -> &'a mut W {
+        self.variant(TV_VB_INT_EN_A::D_ISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(TV_VB_INT_EN_A::E_NABLE)
+    }
+}
+#[doc = "TV Line Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TV_LINE_INT_EN_A {
+    #[doc = "0: Disable"]
+    D_ISABLE = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<TV_LINE_INT_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TV_LINE_INT_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `tv_line_int_en` reader - TV Line Interrupt Enable"]
+pub type TV_LINE_INT_EN_R = crate::BitReader<TV_LINE_INT_EN_A>;
+impl TV_LINE_INT_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TV_LINE_INT_EN_A {
+        match self.bits {
+            false => TV_LINE_INT_EN_A::D_ISABLE,
+            true => TV_LINE_INT_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[inline(always)]
+    pub fn is_d_isable(&self) -> bool {
+        *self == TV_LINE_INT_EN_A::D_ISABLE
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == TV_LINE_INT_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `tv_line_int_en` writer - TV Line Interrupt Enable"]
+pub type TV_LINE_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TV_GINT0_SPEC, TV_LINE_INT_EN_A, O>;
+impl<'a, const O: u8> TV_LINE_INT_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn d_isable(self) -> &'a mut W {
+        self.variant(TV_LINE_INT_EN_A::D_ISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(TV_LINE_INT_EN_A::E_NABLE)
+    }
+}
+#[doc = "Field `tv_vb_int_flag` reader - TV Vb Interrupt Flag\n\nAsserted during vertical no-display period every frame.\n\nWrite 0 to clear it."]
+pub type TV_VB_INT_FLAG_R = crate::BitReader<bool>;
+#[doc = "Field `tv_vb_int_flag` writer - TV Vb Interrupt Flag\n\nAsserted during vertical no-display period every frame.\n\nWrite 0 to clear it."]
+pub type TV_VB_INT_FLAG_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_GINT0_SPEC, bool, O>;
+#[doc = "Field `tv_line_int_flag` reader - TV Line Interrupt Flag\n\nTrigger when SY1 match the current TV scan line\n\nWrite 0 to clear it."]
+pub type TV_LINE_INT_FLAG_R = crate::BitReader<bool>;
+#[doc = "Field `tv_line_int_flag` writer - TV Line Interrupt Flag\n\nTrigger when SY1 match the current TV scan line\n\nWrite 0 to clear it."]
+pub type TV_LINE_INT_FLAG_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_GINT0_SPEC, bool, O>;
+impl R {
+    #[doc = "Bit 30 - TV Vb Interrupt Enable"]
+    #[inline(always)]
+    pub fn tv_vb_int_en(&self) -> TV_VB_INT_EN_R {
+        TV_VB_INT_EN_R::new(((self.bits >> 30) & 1) != 0)
+    }
+    #[doc = "Bit 28 - TV Line Interrupt Enable"]
+    #[inline(always)]
+    pub fn tv_line_int_en(&self) -> TV_LINE_INT_EN_R {
+        TV_LINE_INT_EN_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    #[doc = "Bit 14 - TV Vb Interrupt Flag\n\nAsserted during vertical no-display period every frame.\n\nWrite 0 to clear it."]
+    #[inline(always)]
+    pub fn tv_vb_int_flag(&self) -> TV_VB_INT_FLAG_R {
+        TV_VB_INT_FLAG_R::new(((self.bits >> 14) & 1) != 0)
+    }
+    #[doc = "Bit 12 - TV Line Interrupt Flag\n\nTrigger when SY1 match the current TV scan line\n\nWrite 0 to clear it."]
+    #[inline(always)]
+    pub fn tv_line_int_flag(&self) -> TV_LINE_INT_FLAG_R {
+        TV_LINE_INT_FLAG_R::new(((self.bits >> 12) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 30 - TV Vb Interrupt Enable"]
+    #[inline(always)]
+    pub fn tv_vb_int_en(&mut self) -> TV_VB_INT_EN_W<30> {
+        TV_VB_INT_EN_W::new(self)
+    }
+    #[doc = "Bit 28 - TV Line Interrupt Enable"]
+    #[inline(always)]
+    pub fn tv_line_int_en(&mut self) -> TV_LINE_INT_EN_W<28> {
+        TV_LINE_INT_EN_W::new(self)
+    }
+    #[doc = "Bit 14 - TV Vb Interrupt Flag\n\nAsserted during vertical no-display period every frame.\n\nWrite 0 to clear it."]
+    #[inline(always)]
+    pub fn tv_vb_int_flag(&mut self) -> TV_VB_INT_FLAG_W<14> {
+        TV_VB_INT_FLAG_W::new(self)
+    }
+    #[doc = "Bit 12 - TV Line Interrupt Flag\n\nTrigger when SY1 match the current TV scan line\n\nWrite 0 to clear it."]
+    #[inline(always)]
+    pub fn tv_line_int_flag(&mut self) -> TV_LINE_INT_FLAG_W<12> {
+        TV_LINE_INT_FLAG_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -34,7 +34,24 @@ impl From<crate::W<TV_GINT1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tv_line_int_num` reader - Scan line for TV line trigger(including inactive lines)\n\nSetting it for the specified line for trigger 1.\n\nNote: SY1 is writable only when LINE_TRG1 is disabled."]
+pub type TV_LINE_INT_NUM_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `tv_line_int_num` writer - Scan line for TV line trigger(including inactive lines)\n\nSetting it for the specified line for trigger 1.\n\nNote: SY1 is writable only when LINE_TRG1 is disabled."]
+pub type TV_LINE_INT_NUM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_GINT1_SPEC, u16, u16, 12, O>;
+impl R {
+    #[doc = "Bits 0:11 - Scan line for TV line trigger(including inactive lines)\n\nSetting it for the specified line for trigger 1.\n\nNote: SY1 is writable only when LINE_TRG1 is disabled."]
+    #[inline(always)]
+    pub fn tv_line_int_num(&self) -> TV_LINE_INT_NUM_R {
+        TV_LINE_INT_NUM_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:11 - Scan line for TV line trigger(including inactive lines)\n\nSetting it for the specified line for trigger 1.\n\nNote: SY1 is writable only when LINE_TRG1 is disabled."]
+    #[inline(always)]
+    pub fn tv_line_int_num(&mut self) -> TV_LINE_INT_NUM_W<0> {
+        TV_LINE_INT_NUM_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

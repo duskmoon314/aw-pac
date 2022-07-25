@@ -34,7 +34,69 @@ impl From<crate::W<TV_CEU_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "CEU Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEU_EN_A {
+    #[doc = "0: Bypass"]
+    B_YPASS = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<CEU_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CEU_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `ceu_en` reader - CEU Enable"]
+pub type CEU_EN_R = crate::BitReader<CEU_EN_A>;
+impl CEU_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEU_EN_A {
+        match self.bits {
+            false => CEU_EN_A::B_YPASS,
+            true => CEU_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[inline(always)]
+    pub fn is_b_ypass(&self) -> bool {
+        *self == CEU_EN_A::B_YPASS
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == CEU_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `ceu_en` writer - CEU Enable"]
+pub type CEU_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_CEU_CTL_SPEC, CEU_EN_A, O>;
+impl<'a, const O: u8> CEU_EN_W<'a, O> {
+    #[doc = "Bypass"]
+    #[inline(always)]
+    pub fn b_ypass(self) -> &'a mut W {
+        self.variant(CEU_EN_A::B_YPASS)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(CEU_EN_A::E_NABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 31 - CEU Enable"]
+    #[inline(always)]
+    pub fn ceu_en(&self) -> CEU_EN_R {
+        CEU_EN_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 31 - CEU Enable"]
+    #[inline(always)]
+    pub fn ceu_en(&mut self) -> CEU_EN_W<31> {
+        CEU_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
