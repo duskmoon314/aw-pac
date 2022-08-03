@@ -34,6 +34,8 @@ impl From<crate::W<SMHC_CSDC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `crc_det_para` reader - "]
+pub type CRC_DET_PARA_R = crate::FieldReader<u8, CRC_DET_PARA_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,8 +51,6 @@ impl From<CRC_DET_PARA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `crc_det_para` reader - "]
-pub type CRC_DET_PARA_R = crate::FieldReader<u8, CRC_DET_PARA_A>;
 impl CRC_DET_PARA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,44 +34,9 @@ impl From<crate::W<IOMMU_INT_STA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Level\\[i\\]
-page table invalid interrupt status bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum L_PAGE_TABLE_INVALID_STA_A {
-    #[doc = "0: Interrupt does not happen or interrupt is cleared"]
-    NOT_HAPPEN_OR_CLEARED = 0,
-    #[doc = "1: Interrupt happens"]
-    HAPPENS = 1,
-}
-impl From<L_PAGE_TABLE_INVALID_STA_A> for bool {
-    #[inline(always)]
-    fn from(variant: L_PAGE_TABLE_INVALID_STA_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `l(0-1)_page_table_invalid_sta` reader - Level\\[i\\]
-page table invalid interrupt status bit"]
-pub type L_PAGE_TABLE_INVALID_STA_R = crate::BitReader<L_PAGE_TABLE_INVALID_STA_A>;
-impl L_PAGE_TABLE_INVALID_STA_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> L_PAGE_TABLE_INVALID_STA_A {
-        match self.bits {
-            false => L_PAGE_TABLE_INVALID_STA_A::NOT_HAPPEN_OR_CLEARED,
-            true => L_PAGE_TABLE_INVALID_STA_A::HAPPENS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOT_HAPPEN_OR_CLEARED`"]
-    #[inline(always)]
-    pub fn is_not_happen_or_cleared(&self) -> bool {
-        *self == L_PAGE_TABLE_INVALID_STA_A::NOT_HAPPEN_OR_CLEARED
-    }
-    #[doc = "Checks if the value of the field is `HAPPENS`"]
-    #[inline(always)]
-    pub fn is_happens(&self) -> bool {
-        *self == L_PAGE_TABLE_INVALID_STA_A::HAPPENS
-    }
-}
+#[doc = "Field `micro_tlb_invalid_sta[0-6]` reader - Micro TLB\\[i\\]
+permission invalid interrupt status bit"]
+pub type MICRO_TLB_INVALID_STA_R = crate::BitReader<MICRO_TLB_INVALID_STA_A>;
 #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt status bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -87,9 +52,6 @@ impl From<MICRO_TLB_INVALID_STA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `micro_tlb(0-6)_invalid_sta` reader - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
-pub type MICRO_TLB_INVALID_STA_R = crate::BitReader<MICRO_TLB_INVALID_STA_A>;
 impl MICRO_TLB_INVALID_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -110,25 +72,45 @@ impl MICRO_TLB_INVALID_STA_R {
         *self == MICRO_TLB_INVALID_STA_A::HAPPENS
     }
 }
+#[doc = "Field `l_page_table_invalid_sta[0-1]` reader - Level\\[i\\]
+page table invalid interrupt status bit"]
+pub type L_PAGE_TABLE_INVALID_STA_R = crate::BitReader<L_PAGE_TABLE_INVALID_STA_A>;
+#[doc = "Level\\[i\\]
+page table invalid interrupt status bit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum L_PAGE_TABLE_INVALID_STA_A {
+    #[doc = "0: Interrupt does not happen or interrupt is cleared"]
+    NOT_HAPPEN_OR_CLEARED = 0,
+    #[doc = "1: Interrupt happens"]
+    HAPPENS = 1,
+}
+impl From<L_PAGE_TABLE_INVALID_STA_A> for bool {
+    #[inline(always)]
+    fn from(variant: L_PAGE_TABLE_INVALID_STA_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl L_PAGE_TABLE_INVALID_STA_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> L_PAGE_TABLE_INVALID_STA_A {
+        match self.bits {
+            false => L_PAGE_TABLE_INVALID_STA_A::NOT_HAPPEN_OR_CLEARED,
+            true => L_PAGE_TABLE_INVALID_STA_A::HAPPENS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_HAPPEN_OR_CLEARED`"]
+    #[inline(always)]
+    pub fn is_not_happen_or_cleared(&self) -> bool {
+        *self == L_PAGE_TABLE_INVALID_STA_A::NOT_HAPPEN_OR_CLEARED
+    }
+    #[doc = "Checks if the value of the field is `HAPPENS`"]
+    #[inline(always)]
+    pub fn is_happens(&self) -> bool {
+        *self == L_PAGE_TABLE_INVALID_STA_A::HAPPENS
+    }
+}
 impl R {
-    #[doc = "Level\\[i\\]
-page table invalid interrupt status bit"]
-    #[inline(always)]
-    pub unsafe fn l_page_table_invalid_sta(&self, n: u8) -> L_PAGE_TABLE_INVALID_STA_R {
-        L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Level\\[i\\]
-page table invalid interrupt status bit"]
-    #[inline(always)]
-    pub fn l0_page_table_invalid_sta(&self) -> L_PAGE_TABLE_INVALID_STA_R {
-        L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - Level\\[i\\]
-page table invalid interrupt status bit"]
-    #[inline(always)]
-    pub fn l1_page_table_invalid_sta(&self) -> L_PAGE_TABLE_INVALID_STA_R {
-        L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> 17) & 1) != 0)
-    }
     #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt status bit"]
     #[inline(always)]
@@ -176,6 +158,24 @@ permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb6_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> 12) & 1) != 0)
+    }
+    #[doc = "Level\\[i\\]
+page table invalid interrupt status bit"]
+    #[inline(always)]
+    pub unsafe fn l_page_table_invalid_sta(&self, n: u8) -> L_PAGE_TABLE_INVALID_STA_R {
+        L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> (n + 16)) & 1) != 0)
+    }
+    #[doc = "Bit 16 - Level\\[i\\]
+page table invalid interrupt status bit"]
+    #[inline(always)]
+    pub fn l0_page_table_invalid_sta(&self) -> L_PAGE_TABLE_INVALID_STA_R {
+        L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 17 - Level\\[i\\]
+page table invalid interrupt status bit"]
+    #[inline(always)]
+    pub fn l1_page_table_invalid_sta(&self) -> L_PAGE_TABLE_INVALID_STA_R {
+        L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
 impl W {

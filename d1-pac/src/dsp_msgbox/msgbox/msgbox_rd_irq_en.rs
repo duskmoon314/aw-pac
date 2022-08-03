@@ -34,6 +34,9 @@ impl From<crate::W<MSGBOX_RD_IRQ_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `reception_mq_irq_en[0-3]` reader - Reception Channel\\[i\\]
+Interrupt Enable"]
+pub type RECEPTION_MQ_IRQ_EN_R = crate::BitReader<RECEPTION_MQ_IRQ_EN_A>;
 #[doc = "Reception Channel\\[i\\]
 Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<RECEPTION_MQ_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `reception_mq(0-3)_irq_en` reader - Reception Channel\\[i\\]
-Interrupt Enable"]
-pub type RECEPTION_MQ_IRQ_EN_R = crate::BitReader<RECEPTION_MQ_IRQ_EN_A>;
 impl RECEPTION_MQ_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl RECEPTION_MQ_IRQ_EN_R {
         *self == RECEPTION_MQ_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Fields `reception_mq(0-3)_irq_en` writer - Reception Channel\\[i\\]
+#[doc = "Field `reception_mq_irq_en[0-3]` writer - Reception Channel\\[i\\]
 Interrupt Enable"]
 pub type RECEPTION_MQ_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MSGBOX_RD_IRQ_EN_SPEC, RECEPTION_MQ_IRQ_EN_A, O>;

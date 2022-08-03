@@ -34,6 +34,9 @@ impl From<crate::W<IOMMU_DM_AUT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dm1_m_wt_aut_ctrl[0-6]` reader - Domain \\[i + 1\\]
+write permission control for master \\[j\\]"]
+pub type DM1_M_WT_AUT_CTRL_R = crate::BitReader<DM1_M_WT_AUT_CTRL_A>;
 #[doc = "Domain \\[i + 1\\]
 write permission control for master \\[j\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<DM1_M_WT_AUT_CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dm1_m(0-6)_wt_aut_ctrl` reader - Domain \\[i + 1\\]
-write permission control for master \\[j\\]"]
-pub type DM1_M_WT_AUT_CTRL_R = crate::BitReader<DM1_M_WT_AUT_CTRL_A>;
 impl DM1_M_WT_AUT_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl DM1_M_WT_AUT_CTRL_R {
         *self == DM1_M_WT_AUT_CTRL_A::PROHIBITED
     }
 }
-#[doc = "Fields `dm1_m(0-6)_wt_aut_ctrl` writer - Domain \\[i + 1\\]
+#[doc = "Field `dm1_m_wt_aut_ctrl[0-6]` writer - Domain \\[i + 1\\]
 write permission control for master \\[j\\]"]
 pub type DM1_M_WT_AUT_CTRL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_DM_AUT_CTRL_SPEC, DM1_M_WT_AUT_CTRL_A, O>;
@@ -88,6 +88,9 @@ impl<'a, const O: u8> DM1_M_WT_AUT_CTRL_W<'a, O> {
         self.variant(DM1_M_WT_AUT_CTRL_A::PROHIBITED)
     }
 }
+#[doc = "Field `dm1_m_rd_aut_ctrl[0-6]` reader - Domain \\[i + 1\\]
+read permission control for master \\[j\\]"]
+pub type DM1_M_RD_AUT_CTRL_R = crate::BitReader<DM1_M_RD_AUT_CTRL_A>;
 #[doc = "Domain \\[i + 1\\]
 read permission control for master \\[j\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -103,9 +106,6 @@ impl From<DM1_M_RD_AUT_CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dm1_m(0-6)_rd_aut_ctrl` reader - Domain \\[i + 1\\]
-read permission control for master \\[j\\]"]
-pub type DM1_M_RD_AUT_CTRL_R = crate::BitReader<DM1_M_RD_AUT_CTRL_A>;
 impl DM1_M_RD_AUT_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -126,7 +126,7 @@ impl DM1_M_RD_AUT_CTRL_R {
         *self == DM1_M_RD_AUT_CTRL_A::PROHIBITED
     }
 }
-#[doc = "Fields `dm1_m(0-6)_rd_aut_ctrl` writer - Domain \\[i + 1\\]
+#[doc = "Field `dm1_m_rd_aut_ctrl[0-6]` writer - Domain \\[i + 1\\]
 read permission control for master \\[j\\]"]
 pub type DM1_M_RD_AUT_CTRL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_DM_AUT_CTRL_SPEC, DM1_M_RD_AUT_CTRL_A, O>;
@@ -142,6 +142,9 @@ impl<'a, const O: u8> DM1_M_RD_AUT_CTRL_W<'a, O> {
         self.variant(DM1_M_RD_AUT_CTRL_A::PROHIBITED)
     }
 }
+#[doc = "Field `dm0_m_wt_aut_ctrl[0-6]` reader - Domain \\[i\\]
+write permission control for master \\[j\\]"]
+pub type DM0_M_WT_AUT_CTRL_R = crate::BitReader<DM0_M_WT_AUT_CTRL_A>;
 #[doc = "Domain \\[i\\]
 write permission control for master \\[j\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -157,9 +160,6 @@ impl From<DM0_M_WT_AUT_CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dm0_m(0-6)_wt_aut_ctrl` reader - Domain \\[i\\]
-write permission control for master \\[j\\]"]
-pub type DM0_M_WT_AUT_CTRL_R = crate::BitReader<DM0_M_WT_AUT_CTRL_A>;
 impl DM0_M_WT_AUT_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -180,7 +180,7 @@ impl DM0_M_WT_AUT_CTRL_R {
         *self == DM0_M_WT_AUT_CTRL_A::PROHIBITED
     }
 }
-#[doc = "Fields `dm0_m(0-6)_wt_aut_ctrl` writer - Domain \\[i\\]
+#[doc = "Field `dm0_m_wt_aut_ctrl[0-6]` writer - Domain \\[i\\]
 write permission control for master \\[j\\]"]
 pub type DM0_M_WT_AUT_CTRL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_DM_AUT_CTRL_SPEC, DM0_M_WT_AUT_CTRL_A, O>;
@@ -196,6 +196,9 @@ impl<'a, const O: u8> DM0_M_WT_AUT_CTRL_W<'a, O> {
         self.variant(DM0_M_WT_AUT_CTRL_A::PROHIBITED)
     }
 }
+#[doc = "Field `dm0_m_rd_aut_ctrl[0-6]` reader - Domain \\[i\\]
+read permission control for master \\[j\\]"]
+pub type DM0_M_RD_AUT_CTRL_R = crate::BitReader<DM0_M_RD_AUT_CTRL_A>;
 #[doc = "Domain \\[i\\]
 read permission control for master \\[j\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -211,9 +214,6 @@ impl From<DM0_M_RD_AUT_CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dm0_m(0-6)_rd_aut_ctrl` reader - Domain \\[i\\]
-read permission control for master \\[j\\]"]
-pub type DM0_M_RD_AUT_CTRL_R = crate::BitReader<DM0_M_RD_AUT_CTRL_A>;
 impl DM0_M_RD_AUT_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -234,7 +234,7 @@ impl DM0_M_RD_AUT_CTRL_R {
         *self == DM0_M_RD_AUT_CTRL_A::PROHIBITED
     }
 }
-#[doc = "Fields `dm0_m(0-6)_rd_aut_ctrl` writer - Domain \\[i\\]
+#[doc = "Field `dm0_m_rd_aut_ctrl[0-6]` writer - Domain \\[i\\]
 read permission control for master \\[j\\]"]
 pub type DM0_M_RD_AUT_CTRL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_DM_AUT_CTRL_SPEC, DM0_M_RD_AUT_CTRL_A, O>;

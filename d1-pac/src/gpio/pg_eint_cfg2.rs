@@ -34,6 +34,8 @@ impl From<crate::W<PG_EINT_CFG2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `eint_cfg[16-18]` reader - External INT Mode"]
+pub type EINT_CFG_R = crate::FieldReader<u8, EINT_CFG_A>;
 #[doc = "External INT Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -55,8 +57,6 @@ impl From<EINT_CFG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `eint(16-18)_cfg` reader - External INT Mode"]
-pub type EINT_CFG_R = crate::FieldReader<u8, EINT_CFG_A>;
 impl EINT_CFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -96,7 +96,7 @@ impl EINT_CFG_R {
         *self == EINT_CFG_A::DOUBLE_EDGE
     }
 }
-#[doc = "Fields `eint(16-18)_cfg` writer - External INT Mode"]
+#[doc = "Field `eint_cfg[16-18]` writer - External INT Mode"]
 pub type EINT_CFG_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PG_EINT_CFG2_SPEC, u8, EINT_CFG_A, 4, O>;
 impl<'a, const O: u8> EINT_CFG_W<'a, O> {

@@ -34,23 +34,23 @@ impl From<crate::W<PCNTR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pwm_counter_status` reader - On PWM output or capture input, reading this register could get the current value of the PWM 16-bit up-counter."]
+pub type PWM_COUNTER_STATUS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `pwm_counter_start` reader - PWM counter value is set for phase control."]
 pub type PWM_COUNTER_START_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `pwm_counter_start` writer - PWM counter value is set for phase control."]
 pub type PWM_COUNTER_START_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PCNTR_SPEC, u16, u16, 16, O>;
-#[doc = "Field `pwm_counter_status` reader - On PWM output or capture input, reading this register could get the current value of the PWM 16-bit up-counter."]
-pub type PWM_COUNTER_STATUS_R = crate::FieldReader<u16, u16>;
 impl R {
-    #[doc = "Bits 16:31 - PWM counter value is set for phase control."]
-    #[inline(always)]
-    pub fn pwm_counter_start(&self) -> PWM_COUNTER_START_R {
-        PWM_COUNTER_START_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
     #[doc = "Bits 0:15 - On PWM output or capture input, reading this register could get the current value of the PWM 16-bit up-counter."]
     #[inline(always)]
     pub fn pwm_counter_status(&self) -> PWM_COUNTER_STATUS_R {
         PWM_COUNTER_STATUS_R::new((self.bits & 0xffff) as u16)
+    }
+    #[doc = "Bits 16:31 - PWM counter value is set for phase control."]
+    #[inline(always)]
+    pub fn pwm_counter_start(&self) -> PWM_COUNTER_START_R {
+        PWM_COUNTER_START_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {

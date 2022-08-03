@@ -34,6 +34,109 @@ impl From<crate::W<EMAC_BASIC_CTL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `duplex` reader - EMAC Transfer Mode"]
+pub type DUPLEX_R = crate::BitReader<DUPLEX_A>;
+#[doc = "EMAC Transfer Mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DUPLEX_A {
+    #[doc = "0: `0`"]
+    HALF_DUPLEX = 0,
+    #[doc = "1: `1`"]
+    FULL_DUPLEX = 1,
+}
+impl From<DUPLEX_A> for bool {
+    #[inline(always)]
+    fn from(variant: DUPLEX_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl DUPLEX_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DUPLEX_A {
+        match self.bits {
+            false => DUPLEX_A::HALF_DUPLEX,
+            true => DUPLEX_A::FULL_DUPLEX,
+        }
+    }
+    #[doc = "Checks if the value of the field is `HALF_DUPLEX`"]
+    #[inline(always)]
+    pub fn is_half_duplex(&self) -> bool {
+        *self == DUPLEX_A::HALF_DUPLEX
+    }
+    #[doc = "Checks if the value of the field is `FULL_DUPLEX`"]
+    #[inline(always)]
+    pub fn is_full_duplex(&self) -> bool {
+        *self == DUPLEX_A::FULL_DUPLEX
+    }
+}
+#[doc = "Field `duplex` writer - EMAC Transfer Mode"]
+pub type DUPLEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, DUPLEX_A, O>;
+impl<'a, const O: u8> DUPLEX_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn half_duplex(self) -> &'a mut W {
+        self.variant(DUPLEX_A::HALF_DUPLEX)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn full_duplex(self) -> &'a mut W {
+        self.variant(DUPLEX_A::FULL_DUPLEX)
+    }
+}
+#[doc = "Field `loopback` reader - EMAC Loopback Mode For Test"]
+pub type LOOPBACK_R = crate::BitReader<LOOPBACK_A>;
+#[doc = "EMAC Loopback Mode For Test\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LOOPBACK_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<LOOPBACK_A> for bool {
+    #[inline(always)]
+    fn from(variant: LOOPBACK_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LOOPBACK_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LOOPBACK_A {
+        match self.bits {
+            false => LOOPBACK_A::DISABLE,
+            true => LOOPBACK_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == LOOPBACK_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == LOOPBACK_A::ENABLE
+    }
+}
+#[doc = "Field `loopback` writer - EMAC Loopback Mode For Test"]
+pub type LOOPBACK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, LOOPBACK_A, O>;
+impl<'a, const O: u8> LOOPBACK_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LOOPBACK_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LOOPBACK_A::ENABLE)
+    }
+}
+#[doc = "Field `speed` reader - EMAC Working Speed"]
+pub type SPEED_R = crate::FieldReader<u8, SPEED_A>;
 #[doc = "EMAC Working Speed\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +154,6 @@ impl From<SPEED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `speed` reader - EMAC Working Speed"]
-pub type SPEED_R = crate::FieldReader<u8, SPEED_A>;
 impl SPEED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -100,139 +201,38 @@ impl<'a, const O: u8> SPEED_W<'a, O> {
         self.variant(SPEED_A::S100)
     }
 }
-#[doc = "EMAC Loopback Mode For Test\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LOOPBACK_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<LOOPBACK_A> for bool {
-    #[inline(always)]
-    fn from(variant: LOOPBACK_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `loopback` reader - EMAC Loopback Mode For Test"]
-pub type LOOPBACK_R = crate::BitReader<LOOPBACK_A>;
-impl LOOPBACK_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> LOOPBACK_A {
-        match self.bits {
-            false => LOOPBACK_A::DISABLE,
-            true => LOOPBACK_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == LOOPBACK_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == LOOPBACK_A::ENABLE
-    }
-}
-#[doc = "Field `loopback` writer - EMAC Loopback Mode For Test"]
-pub type LOOPBACK_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, LOOPBACK_A, O>;
-impl<'a, const O: u8> LOOPBACK_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(LOOPBACK_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(LOOPBACK_A::ENABLE)
-    }
-}
-#[doc = "EMAC Transfer Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DUPLEX_A {
-    #[doc = "0: `0`"]
-    HALF_DUPLEX = 0,
-    #[doc = "1: `1`"]
-    FULL_DUPLEX = 1,
-}
-impl From<DUPLEX_A> for bool {
-    #[inline(always)]
-    fn from(variant: DUPLEX_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `duplex` reader - EMAC Transfer Mode"]
-pub type DUPLEX_R = crate::BitReader<DUPLEX_A>;
-impl DUPLEX_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> DUPLEX_A {
-        match self.bits {
-            false => DUPLEX_A::HALF_DUPLEX,
-            true => DUPLEX_A::FULL_DUPLEX,
-        }
-    }
-    #[doc = "Checks if the value of the field is `HALF_DUPLEX`"]
-    #[inline(always)]
-    pub fn is_half_duplex(&self) -> bool {
-        *self == DUPLEX_A::HALF_DUPLEX
-    }
-    #[doc = "Checks if the value of the field is `FULL_DUPLEX`"]
-    #[inline(always)]
-    pub fn is_full_duplex(&self) -> bool {
-        *self == DUPLEX_A::FULL_DUPLEX
-    }
-}
-#[doc = "Field `duplex` writer - EMAC Transfer Mode"]
-pub type DUPLEX_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_BASIC_CTL0_SPEC, DUPLEX_A, O>;
-impl<'a, const O: u8> DUPLEX_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn half_duplex(self) -> &'a mut W {
-        self.variant(DUPLEX_A::HALF_DUPLEX)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn full_duplex(self) -> &'a mut W {
-        self.variant(DUPLEX_A::FULL_DUPLEX)
-    }
-}
 impl R {
-    #[doc = "Bits 2:3 - EMAC Working Speed"]
+    #[doc = "Bit 0 - EMAC Transfer Mode"]
     #[inline(always)]
-    pub fn speed(&self) -> SPEED_R {
-        SPEED_R::new(((self.bits >> 2) & 3) as u8)
+    pub fn duplex(&self) -> DUPLEX_R {
+        DUPLEX_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - EMAC Loopback Mode For Test"]
     #[inline(always)]
     pub fn loopback(&self) -> LOOPBACK_R {
         LOOPBACK_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - EMAC Transfer Mode"]
+    #[doc = "Bits 2:3 - EMAC Working Speed"]
     #[inline(always)]
-    pub fn duplex(&self) -> DUPLEX_R {
-        DUPLEX_R::new((self.bits & 1) != 0)
+    pub fn speed(&self) -> SPEED_R {
+        SPEED_R::new(((self.bits >> 2) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 2:3 - EMAC Working Speed"]
+    #[doc = "Bit 0 - EMAC Transfer Mode"]
     #[inline(always)]
-    pub fn speed(&mut self) -> SPEED_W<2> {
-        SPEED_W::new(self)
+    pub fn duplex(&mut self) -> DUPLEX_W<0> {
+        DUPLEX_W::new(self)
     }
     #[doc = "Bit 1 - EMAC Loopback Mode For Test"]
     #[inline(always)]
     pub fn loopback(&mut self) -> LOOPBACK_W<1> {
         LOOPBACK_W::new(self)
     }
-    #[doc = "Bit 0 - EMAC Transfer Mode"]
+    #[doc = "Bits 2:3 - EMAC Working Speed"]
     #[inline(always)]
-    pub fn duplex(&mut self) -> DUPLEX_W<0> {
-        DUPLEX_W::new(self)
+    pub fn speed(&mut self) -> SPEED_W<2> {
+        SPEED_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

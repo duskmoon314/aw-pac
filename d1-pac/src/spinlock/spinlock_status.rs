@@ -13,6 +13,9 @@ impl From<crate::R<SPINLOCK_STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `lock_status[0-31]` reader - Lock\\[i\\]
+status"]
+pub type LOCK_STATUS_R = crate::BitReader<LOCK_STATUS_A>;
 #[doc = "Lock\\[i\\]
 status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -28,9 +31,6 @@ impl From<LOCK_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `lock(0-31)_status` reader - Lock\\[i\\]
-status"]
-pub type LOCK_STATUS_R = crate::BitReader<LOCK_STATUS_A>;
 impl LOCK_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

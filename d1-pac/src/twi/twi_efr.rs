@@ -34,6 +34,8 @@ impl From<crate::W<TWI_EFR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dbn` reader - Data Byte Number Follow Read Command Control"]
+pub type DBN_R = crate::FieldReader<u8, DBN_A>;
 #[doc = "Data Byte Number Follow Read Command Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<DBN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `dbn` reader - Data Byte Number Follow Read Command Control"]
-pub type DBN_R = crate::FieldReader<u8, DBN_A>;
 impl DBN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

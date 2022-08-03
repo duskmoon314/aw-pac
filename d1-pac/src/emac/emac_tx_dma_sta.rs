@@ -13,6 +13,8 @@ impl From<crate::R<EMAC_TX_DMA_STA_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `tx_dma_sta` reader - The State of Transmit DMA FSM"]
+pub type TX_DMA_STA_R = crate::FieldReader<u8, TX_DMA_STA_A>;
 #[doc = "The State of Transmit DMA FSM\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -36,8 +38,6 @@ impl From<TX_DMA_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `tx_dma_sta` reader - The State of Transmit DMA FSM"]
-pub type TX_DMA_STA_R = crate::FieldReader<u8, TX_DMA_STA_A>;
 impl TX_DMA_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

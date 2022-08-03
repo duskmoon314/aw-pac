@@ -34,6 +34,8 @@ impl From<crate::W<WDOG_IRQ_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `wdog_irq_en` reader - "]
+pub type WDOG_IRQ_EN_R = crate::BitReader<WDOG_IRQ_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WDOG_IRQ_EN_A {
@@ -48,8 +50,6 @@ impl From<WDOG_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `wdog_irq_en` reader - "]
-pub type WDOG_IRQ_EN_R = crate::BitReader<WDOG_IRQ_EN_A>;
 impl WDOG_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

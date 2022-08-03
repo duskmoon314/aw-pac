@@ -34,6 +34,59 @@ impl From<crate::W<PIO_POW_MOD_SEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `p_pwr_mod_sel[C,D,E,F,G]` reader - PX_POWER POWER MODE Select"]
+pub type P_PWR_MOD_SEL_R = crate::BitReader<P_PWR_MOD_SEL_A>;
+#[doc = "PX_POWER POWER MODE Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum P_PWR_MOD_SEL_A {
+    #[doc = "0: 3.3 V"]
+    V33 = 0,
+    #[doc = "1: 1.8 V"]
+    V18 = 1,
+}
+impl From<P_PWR_MOD_SEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: P_PWR_MOD_SEL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl P_PWR_MOD_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> P_PWR_MOD_SEL_A {
+        match self.bits {
+            false => P_PWR_MOD_SEL_A::V33,
+            true => P_PWR_MOD_SEL_A::V18,
+        }
+    }
+    #[doc = "Checks if the value of the field is `V33`"]
+    #[inline(always)]
+    pub fn is_v33(&self) -> bool {
+        *self == P_PWR_MOD_SEL_A::V33
+    }
+    #[doc = "Checks if the value of the field is `V18`"]
+    #[inline(always)]
+    pub fn is_v18(&self) -> bool {
+        *self == P_PWR_MOD_SEL_A::V18
+    }
+}
+#[doc = "Field `p_pwr_mod_sel[C,D,E,F,G]` writer - PX_POWER POWER MODE Select"]
+pub type P_PWR_MOD_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PIO_POW_MOD_SEL_SPEC, P_PWR_MOD_SEL_A, O>;
+impl<'a, const O: u8> P_PWR_MOD_SEL_W<'a, O> {
+    #[doc = "3.3 V"]
+    #[inline(always)]
+    pub fn v33(self) -> &'a mut W {
+        self.variant(P_PWR_MOD_SEL_A::V33)
+    }
+    #[doc = "1.8 V"]
+    #[inline(always)]
+    pub fn v18(self) -> &'a mut W {
+        self.variant(P_PWR_MOD_SEL_A::V18)
+    }
+}
+#[doc = "Field `vcc_io_pwr_mod_sel` reader - VCC_IO POWER MODE Select"]
+pub type VCC_IO_PWR_MOD_SEL_R = crate::BitReader<VCC_IO_PWR_MOD_SEL_A>;
 #[doc = "VCC_IO POWER MODE Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCC_IO_PWR_MOD_SEL_A {
@@ -48,8 +101,6 @@ impl From<VCC_IO_PWR_MOD_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `vcc_io_pwr_mod_sel` reader - VCC_IO POWER MODE Select"]
-pub type VCC_IO_PWR_MOD_SEL_R = crate::BitReader<VCC_IO_PWR_MOD_SEL_A>;
 impl VCC_IO_PWR_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,68 +136,7 @@ impl<'a, const O: u8> VCC_IO_PWR_MOD_SEL_W<'a, O> {
         self.variant(VCC_IO_PWR_MOD_SEL_A::V18)
     }
 }
-#[doc = "PX_POWER POWER MODE Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum P_PWR_MOD_SEL_A {
-    #[doc = "0: 3.3 V"]
-    V33 = 0,
-    #[doc = "1: 1.8 V"]
-    V18 = 1,
-}
-impl From<P_PWR_MOD_SEL_A> for bool {
-    #[inline(always)]
-    fn from(variant: P_PWR_MOD_SEL_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `p(0-4)_pwr_mod_sel` reader - PX_POWER POWER MODE Select"]
-pub type P_PWR_MOD_SEL_R = crate::BitReader<P_PWR_MOD_SEL_A>;
-impl P_PWR_MOD_SEL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> P_PWR_MOD_SEL_A {
-        match self.bits {
-            false => P_PWR_MOD_SEL_A::V33,
-            true => P_PWR_MOD_SEL_A::V18,
-        }
-    }
-    #[doc = "Checks if the value of the field is `V33`"]
-    #[inline(always)]
-    pub fn is_v33(&self) -> bool {
-        *self == P_PWR_MOD_SEL_A::V33
-    }
-    #[doc = "Checks if the value of the field is `V18`"]
-    #[inline(always)]
-    pub fn is_v18(&self) -> bool {
-        *self == P_PWR_MOD_SEL_A::V18
-    }
-}
-#[doc = "Fields `p(0-4)_pwr_mod_sel` writer - PX_POWER POWER MODE Select"]
-pub type P_PWR_MOD_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PIO_POW_MOD_SEL_SPEC, P_PWR_MOD_SEL_A, O>;
-impl<'a, const O: u8> P_PWR_MOD_SEL_W<'a, O> {
-    #[doc = "3.3 V"]
-    #[inline(always)]
-    pub fn v33(self) -> &'a mut W {
-        self.variant(P_PWR_MOD_SEL_A::V33)
-    }
-    #[doc = "1.8 V"]
-    #[inline(always)]
-    pub fn v18(self) -> &'a mut W {
-        self.variant(P_PWR_MOD_SEL_A::V18)
-    }
-}
 impl R {
-    #[doc = "Bit 12 - VCC_IO POWER MODE Select"]
-    #[inline(always)]
-    pub fn vcc_io_pwr_mod_sel(&self) -> VCC_IO_PWR_MOD_SEL_R {
-        VCC_IO_PWR_MOD_SEL_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "PX_POWER POWER MODE Select"]
-    #[inline(always)]
-    pub unsafe fn p_pwr_mod_sel(&self, n: u8) -> P_PWR_MOD_SEL_R {
-        P_PWR_MOD_SEL_R::new(((self.bits >> (n + 2)) & 1) != 0)
-    }
     #[doc = "Bit 2 - PX_POWER POWER MODE Select"]
     #[inline(always)]
     pub fn p_c_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
@@ -172,13 +162,13 @@ impl R {
     pub fn p_g_pwr_mod_sel(&self) -> P_PWR_MOD_SEL_R {
         P_PWR_MOD_SEL_R::new(((self.bits >> 6) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 12 - VCC_IO POWER MODE Select"]
     #[inline(always)]
-    pub fn vcc_io_pwr_mod_sel(&mut self) -> VCC_IO_PWR_MOD_SEL_W<12> {
-        VCC_IO_PWR_MOD_SEL_W::new(self)
+    pub fn vcc_io_pwr_mod_sel(&self) -> VCC_IO_PWR_MOD_SEL_R {
+        VCC_IO_PWR_MOD_SEL_R::new(((self.bits >> 12) & 1) != 0)
     }
+}
+impl W {
     #[doc = "PX_POWER POWER MODE Select"]
     #[inline(always)]
     pub unsafe fn p_pwr_mod_sel<const O: u8>(&mut self) -> P_PWR_MOD_SEL_W<O> {
@@ -208,6 +198,11 @@ impl W {
     #[inline(always)]
     pub fn p_g_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<6> {
         P_PWR_MOD_SEL_W::new(self)
+    }
+    #[doc = "Bit 12 - VCC_IO POWER MODE Select"]
+    #[inline(always)]
+    pub fn vcc_io_pwr_mod_sel(&mut self) -> VCC_IO_PWR_MOD_SEL_W<12> {
+        VCC_IO_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

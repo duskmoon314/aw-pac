@@ -34,38 +34,38 @@ impl From<crate::W<LCD_SYNC_POS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `lcd_sync_pixel_num` reader - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
-pub type LCD_SYNC_PIXEL_NUM_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `lcd_sync_pixel_num` writer - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
-pub type LCD_SYNC_PIXEL_NUM_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_SYNC_POS_SPEC, u16, u16, 12, O>;
 #[doc = "Field `lcd_sync_line_num` reader - Set the line number of master LCD controller which is used to trigger the slave LCD controller to start working.\n\nNote:It is only set in master LCD controller.It is not necessarily to set in slave LCD controller.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
 pub type LCD_SYNC_LINE_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `lcd_sync_line_num` writer - Set the line number of master LCD controller which is used to trigger the slave LCD controller to start working.\n\nNote:It is only set in master LCD controller.It is not necessarily to set in slave LCD controller.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
 pub type LCD_SYNC_LINE_NUM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_SYNC_POS_SPEC, u16, u16, 12, O>;
+#[doc = "Field `lcd_sync_pixel_num` reader - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
+pub type LCD_SYNC_PIXEL_NUM_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `lcd_sync_pixel_num` writer - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
+pub type LCD_SYNC_PIXEL_NUM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_SYNC_POS_SPEC, u16, u16, 12, O>;
 impl R {
-    #[doc = "Bits 16:27 - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
-    #[inline(always)]
-    pub fn lcd_sync_pixel_num(&self) -> LCD_SYNC_PIXEL_NUM_R {
-        LCD_SYNC_PIXEL_NUM_R::new(((self.bits >> 16) & 0x0fff) as u16)
-    }
     #[doc = "Bits 0:11 - Set the line number of master LCD controller which is used to trigger the slave LCD controller to start working.\n\nNote:It is only set in master LCD controller.It is not necessarily to set in slave LCD controller.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
     pub fn lcd_sync_line_num(&self) -> LCD_SYNC_LINE_NUM_R {
         LCD_SYNC_LINE_NUM_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:27 - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
-    pub fn lcd_sync_pixel_num(&mut self) -> LCD_SYNC_PIXEL_NUM_W<16> {
-        LCD_SYNC_PIXEL_NUM_W::new(self)
+    pub fn lcd_sync_pixel_num(&self) -> LCD_SYNC_PIXEL_NUM_R {
+        LCD_SYNC_PIXEL_NUM_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Set the line number of master LCD controller which is used to trigger the slave LCD controller to start working.\n\nNote:It is only set in master LCD controller.It is not necessarily to set in slave LCD controller.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
     pub fn lcd_sync_line_num(&mut self) -> LCD_SYNC_LINE_NUM_W<0> {
         LCD_SYNC_LINE_NUM_W::new(self)
+    }
+    #[doc = "Bits 16:27 - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
+    #[inline(always)]
+    pub fn lcd_sync_pixel_num(&mut self) -> LCD_SYNC_PIXEL_NUM_W<16> {
+        LCD_SYNC_PIXEL_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,57 +34,8 @@ impl From<crate::W<PCGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Bypass clock source (after pre-scale) to PWM output\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PWM_CLK_BYPASS_A {
-    #[doc = "0: not bypass"]
-    NOT_BYPASS = 0,
-    #[doc = "1: bypass"]
-    BYPASS = 1,
-}
-impl From<PWM_CLK_BYPASS_A> for bool {
-    #[inline(always)]
-    fn from(variant: PWM_CLK_BYPASS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `pwm(0-7)_clk_bypass` reader - Bypass clock source (after pre-scale) to PWM output"]
-pub type PWM_CLK_BYPASS_R = crate::BitReader<PWM_CLK_BYPASS_A>;
-impl PWM_CLK_BYPASS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PWM_CLK_BYPASS_A {
-        match self.bits {
-            false => PWM_CLK_BYPASS_A::NOT_BYPASS,
-            true => PWM_CLK_BYPASS_A::BYPASS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOT_BYPASS`"]
-    #[inline(always)]
-    pub fn is_not_bypass(&self) -> bool {
-        *self == PWM_CLK_BYPASS_A::NOT_BYPASS
-    }
-    #[doc = "Checks if the value of the field is `BYPASS`"]
-    #[inline(always)]
-    pub fn is_bypass(&self) -> bool {
-        *self == PWM_CLK_BYPASS_A::BYPASS
-    }
-}
-#[doc = "Fields `pwm(0-7)_clk_bypass` writer - Bypass clock source (after pre-scale) to PWM output"]
-pub type PWM_CLK_BYPASS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PCGR_SPEC, PWM_CLK_BYPASS_A, O>;
-impl<'a, const O: u8> PWM_CLK_BYPASS_W<'a, O> {
-    #[doc = "not bypass"]
-    #[inline(always)]
-    pub fn not_bypass(self) -> &'a mut W {
-        self.variant(PWM_CLK_BYPASS_A::NOT_BYPASS)
-    }
-    #[doc = "bypass"]
-    #[inline(always)]
-    pub fn bypass(self) -> &'a mut W {
-        self.variant(PWM_CLK_BYPASS_A::BYPASS)
-    }
-}
+#[doc = "Field `pwm_clk_gating[0-7]` reader - Gating clock for PWM"]
+pub type PWM_CLK_GATING_R = crate::BitReader<PWM_CLK_GATING_A>;
 #[doc = "Gating clock for PWM\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWM_CLK_GATING_A {
@@ -99,8 +50,6 @@ impl From<PWM_CLK_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `pwm(0-7)_clk_gating` reader - Gating clock for PWM"]
-pub type PWM_CLK_GATING_R = crate::BitReader<PWM_CLK_GATING_A>;
 impl PWM_CLK_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,7 +70,7 @@ impl PWM_CLK_GATING_R {
         *self == PWM_CLK_GATING_A::PASS
     }
 }
-#[doc = "Fields `pwm(0-7)_clk_gating` writer - Gating clock for PWM"]
+#[doc = "Field `pwm_clk_gating[0-7]` writer - Gating clock for PWM"]
 pub type PWM_CLK_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PCGR_SPEC, PWM_CLK_GATING_A, O>;
 impl<'a, const O: u8> PWM_CLK_GATING_W<'a, O> {
@@ -136,52 +85,58 @@ impl<'a, const O: u8> PWM_CLK_GATING_W<'a, O> {
         self.variant(PWM_CLK_GATING_A::PASS)
     }
 }
+#[doc = "Field `pwm_clk_bypass[0-7]` reader - Bypass clock source (after pre-scale) to PWM output"]
+pub type PWM_CLK_BYPASS_R = crate::BitReader<PWM_CLK_BYPASS_A>;
+#[doc = "Bypass clock source (after pre-scale) to PWM output\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PWM_CLK_BYPASS_A {
+    #[doc = "0: not bypass"]
+    NOT_BYPASS = 0,
+    #[doc = "1: bypass"]
+    BYPASS = 1,
+}
+impl From<PWM_CLK_BYPASS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PWM_CLK_BYPASS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PWM_CLK_BYPASS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PWM_CLK_BYPASS_A {
+        match self.bits {
+            false => PWM_CLK_BYPASS_A::NOT_BYPASS,
+            true => PWM_CLK_BYPASS_A::BYPASS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_BYPASS`"]
+    #[inline(always)]
+    pub fn is_not_bypass(&self) -> bool {
+        *self == PWM_CLK_BYPASS_A::NOT_BYPASS
+    }
+    #[doc = "Checks if the value of the field is `BYPASS`"]
+    #[inline(always)]
+    pub fn is_bypass(&self) -> bool {
+        *self == PWM_CLK_BYPASS_A::BYPASS
+    }
+}
+#[doc = "Field `pwm_clk_bypass[0-7]` writer - Bypass clock source (after pre-scale) to PWM output"]
+pub type PWM_CLK_BYPASS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PCGR_SPEC, PWM_CLK_BYPASS_A, O>;
+impl<'a, const O: u8> PWM_CLK_BYPASS_W<'a, O> {
+    #[doc = "not bypass"]
+    #[inline(always)]
+    pub fn not_bypass(self) -> &'a mut W {
+        self.variant(PWM_CLK_BYPASS_A::NOT_BYPASS)
+    }
+    #[doc = "bypass"]
+    #[inline(always)]
+    pub fn bypass(self) -> &'a mut W {
+        self.variant(PWM_CLK_BYPASS_A::BYPASS)
+    }
+}
 impl R {
-    #[doc = "Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub unsafe fn pwm_clk_bypass(&self, n: u8) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm0_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm1_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 18 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm2_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 19 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm3_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 19) & 1) != 0)
-    }
-    #[doc = "Bit 20 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm4_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 20) & 1) != 0)
-    }
-    #[doc = "Bit 21 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm5_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 21) & 1) != 0)
-    }
-    #[doc = "Bit 22 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm6_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 22) & 1) != 0)
-    }
-    #[doc = "Bit 23 - Bypass clock source (after pre-scale) to PWM output"]
-    #[inline(always)]
-    pub fn pwm7_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
-        PWM_CLK_BYPASS_R::new(((self.bits >> 23) & 1) != 0)
-    }
     #[doc = "Gating clock for PWM"]
     #[inline(always)]
     pub unsafe fn pwm_clk_gating(&self, n: u8) -> PWM_CLK_GATING_R {
@@ -227,53 +182,53 @@ impl R {
     pub fn pwm7_clk_gating(&self) -> PWM_CLK_GATING_R {
         PWM_CLK_GATING_R::new(((self.bits >> 7) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub unsafe fn pwm_clk_bypass<const O: u8>(&mut self) -> PWM_CLK_BYPASS_W<O> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub unsafe fn pwm_clk_bypass(&self, n: u8) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm0_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<16> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm0_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm1_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<17> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm1_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm2_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<18> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm2_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm3_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<19> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm3_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm4_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<20> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm4_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm5_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<21> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm5_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 21) & 1) != 0)
     }
     #[doc = "Bit 22 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm6_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<22> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm6_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 22) & 1) != 0)
     }
     #[doc = "Bit 23 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
-    pub fn pwm7_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<23> {
-        PWM_CLK_BYPASS_W::new(self)
+    pub fn pwm7_clk_bypass(&self) -> PWM_CLK_BYPASS_R {
+        PWM_CLK_BYPASS_R::new(((self.bits >> 23) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Gating clock for PWM"]
     #[inline(always)]
     pub unsafe fn pwm_clk_gating<const O: u8>(&mut self) -> PWM_CLK_GATING_W<O> {
@@ -318,6 +273,51 @@ impl W {
     #[inline(always)]
     pub fn pwm7_clk_gating(&mut self) -> PWM_CLK_GATING_W<7> {
         PWM_CLK_GATING_W::new(self)
+    }
+    #[doc = "Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub unsafe fn pwm_clk_bypass<const O: u8>(&mut self) -> PWM_CLK_BYPASS_W<O> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 16 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm0_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<16> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 17 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm1_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<17> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 18 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm2_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<18> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 19 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm3_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<19> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 20 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm4_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<20> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 21 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm5_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<21> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 22 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm6_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<22> {
+        PWM_CLK_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 23 - Bypass clock source (after pre-scale) to PWM output"]
+    #[inline(always)]
+    pub fn pwm7_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<23> {
+        PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

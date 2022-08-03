@@ -34,37 +34,37 @@ impl From<crate::W<PPR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pwm_act_cycle` reader - Number of the active cycles in the PWM clock.\n\nN: N cycles"]
+pub type PWM_ACT_CYCLE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `pwm_act_cycle` writer - Number of the active cycles in the PWM clock.\n\nN: N cycles"]
+pub type PWM_ACT_CYCLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PPR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `pwm_entire_cycle` reader - Number of the entire cycles in the PWM clock.\n\nN: N + 1 cycles"]
 pub type PWM_ENTIRE_CYCLE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `pwm_entire_cycle` writer - Number of the entire cycles in the PWM clock.\n\nN: N + 1 cycles"]
 pub type PWM_ENTIRE_CYCLE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PPR_SPEC, u16, u16, 16, O>;
-#[doc = "Field `pwm_act_cycle` reader - Number of the active cycles in the PWM clock.\n\nN: N cycles"]
-pub type PWM_ACT_CYCLE_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `pwm_act_cycle` writer - Number of the active cycles in the PWM clock.\n\nN: N cycles"]
-pub type PWM_ACT_CYCLE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PPR_SPEC, u16, u16, 16, O>;
 impl R {
-    #[doc = "Bits 16:31 - Number of the entire cycles in the PWM clock.\n\nN: N + 1 cycles"]
-    #[inline(always)]
-    pub fn pwm_entire_cycle(&self) -> PWM_ENTIRE_CYCLE_R {
-        PWM_ENTIRE_CYCLE_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
     #[doc = "Bits 0:15 - Number of the active cycles in the PWM clock.\n\nN: N cycles"]
     #[inline(always)]
     pub fn pwm_act_cycle(&self) -> PWM_ACT_CYCLE_R {
         PWM_ACT_CYCLE_R::new((self.bits & 0xffff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:31 - Number of the entire cycles in the PWM clock.\n\nN: N + 1 cycles"]
     #[inline(always)]
-    pub fn pwm_entire_cycle(&mut self) -> PWM_ENTIRE_CYCLE_W<16> {
-        PWM_ENTIRE_CYCLE_W::new(self)
+    pub fn pwm_entire_cycle(&self) -> PWM_ENTIRE_CYCLE_R {
+        PWM_ENTIRE_CYCLE_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:15 - Number of the active cycles in the PWM clock.\n\nN: N cycles"]
     #[inline(always)]
     pub fn pwm_act_cycle(&mut self) -> PWM_ACT_CYCLE_W<0> {
         PWM_ACT_CYCLE_W::new(self)
+    }
+    #[doc = "Bits 16:31 - Number of the entire cycles in the PWM clock.\n\nN: N + 1 cycles"]
+    #[inline(always)]
+    pub fn pwm_entire_cycle(&mut self) -> PWM_ENTIRE_CYCLE_W<16> {
+        PWM_ENTIRE_CYCLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

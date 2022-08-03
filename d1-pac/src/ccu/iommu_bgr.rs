@@ -34,6 +34,8 @@ impl From<crate::W<IOMMU_BGR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `gating` reader - Gating Clock"]
+pub type GATING_R = crate::BitReader<GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GATING_A {
@@ -48,8 +50,6 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `gating` reader - Gating Clock"]
-pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

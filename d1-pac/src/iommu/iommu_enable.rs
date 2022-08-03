@@ -34,6 +34,8 @@ impl From<crate::W<IOMMU_ENABLE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `enable` reader - IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the Translation Table Base register; or ensure all masters are in bypass status or no the status of sending bus demand(such as reset)"]
+pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 #[doc = "IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the Translation Table Base register; or ensure all masters are in bypass status or no the status of sending bus demand(such as reset)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ENABLE_A {
@@ -48,8 +50,6 @@ impl From<ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `enable` reader - IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the Translation Table Base register; or ensure all masters are in bypass status or no the status of sending bus demand(such as reset)"]
-pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 impl ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

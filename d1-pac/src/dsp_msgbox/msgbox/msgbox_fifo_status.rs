@@ -13,6 +13,8 @@ impl From<crate::R<MSGBOX_FIFO_STATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `fifo_not_ava_flag` reader - FIFO Not Available Flag"]
+pub type FIFO_NOT_AVA_FLAG_R = crate::BitReader<FIFO_NOT_AVA_FLAG_A>;
 #[doc = "FIFO Not Available Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFO_NOT_AVA_FLAG_A {
@@ -27,8 +29,6 @@ impl From<FIFO_NOT_AVA_FLAG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `fifo_not_ava_flag` reader - FIFO Not Available Flag"]
-pub type FIFO_NOT_AVA_FLAG_R = crate::BitReader<FIFO_NOT_AVA_FLAG_A>;
 impl FIFO_NOT_AVA_FLAG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

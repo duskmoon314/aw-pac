@@ -34,6 +34,9 @@ impl From<crate::W<TV_IO_POL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `io_inv[0-3]` reader - IO\\[i\\]
+Invert"]
+pub type IO_INV_R = crate::BitReader<IO_INV_A>;
 #[doc = "IO\\[i\\]
 Invert\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<IO_INV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `io(0-3)_inv` reader - IO\\[i\\]
-Invert"]
-pub type IO_INV_R = crate::BitReader<IO_INV_A>;
 impl IO_INV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl IO_INV_R {
         *self == IO_INV_A::I_NVERT
     }
 }
-#[doc = "Fields `io(0-3)_inv` writer - IO\\[i\\]
+#[doc = "Field `io_inv[0-3]` writer - IO\\[i\\]
 Invert"]
 pub type IO_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_IO_POL_SPEC, IO_INV_A, O>;
 impl<'a, const O: u8> IO_INV_W<'a, O> {

@@ -34,6 +34,8 @@ impl From<crate::W<TS_TMODE_SEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ts_test_mode_en` reader - Timestamp Test Mode Enable"]
+pub type TS_TEST_MODE_EN_R = crate::BitReader<TS_TEST_MODE_EN_A>;
 #[doc = "Timestamp Test Mode Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TS_TEST_MODE_EN_A {
@@ -48,8 +50,6 @@ impl From<TS_TEST_MODE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ts_test_mode_en` reader - Timestamp Test Mode Enable"]
-pub type TS_TEST_MODE_EN_R = crate::BitReader<TS_TEST_MODE_EN_A>;
 impl TS_TEST_MODE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

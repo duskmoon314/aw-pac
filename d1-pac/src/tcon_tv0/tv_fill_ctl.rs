@@ -34,6 +34,8 @@ impl From<crate::W<TV_FILL_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tv_fill_en` reader - TV Fill Enable"]
+pub type TV_FILL_EN_R = crate::BitReader<TV_FILL_EN_A>;
 #[doc = "TV Fill Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TV_FILL_EN_A {
@@ -48,8 +50,6 @@ impl From<TV_FILL_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tv_fill_en` reader - TV Fill Enable"]
-pub type TV_FILL_EN_R = crate::BitReader<TV_FILL_EN_A>;
 impl TV_FILL_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

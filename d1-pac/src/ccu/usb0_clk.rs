@@ -34,106 +34,8 @@ impl From<crate::W<USB0_CLK_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Gating Special Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLKEN_A {
-    #[doc = "0: `0`"]
-    OFF = 0,
-    #[doc = "1: `1`"]
-    ON = 1,
-}
-impl From<CLKEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: CLKEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `clken` reader - Gating Special Clock"]
-pub type CLKEN_R = crate::BitReader<CLKEN_A>;
-impl CLKEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CLKEN_A {
-        match self.bits {
-            false => CLKEN_A::OFF,
-            true => CLKEN_A::ON,
-        }
-    }
-    #[doc = "Checks if the value of the field is `OFF`"]
-    #[inline(always)]
-    pub fn is_off(&self) -> bool {
-        *self == CLKEN_A::OFF
-    }
-    #[doc = "Checks if the value of the field is `ON`"]
-    #[inline(always)]
-    pub fn is_on(&self) -> bool {
-        *self == CLKEN_A::ON
-    }
-}
-#[doc = "Field `clken` writer - Gating Special Clock"]
-pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB0_CLK_SPEC, CLKEN_A, O>;
-impl<'a, const O: u8> CLKEN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn off(self) -> &'a mut W {
-        self.variant(CLKEN_A::OFF)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn on(self) -> &'a mut W {
-        self.variant(CLKEN_A::ON)
-    }
-}
-#[doc = "PHY Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RSTN_A {
-    #[doc = "0: `0`"]
-    ASSERT = 0,
-    #[doc = "1: `1`"]
-    DEASSERT = 1,
-}
-impl From<RSTN_A> for bool {
-    #[inline(always)]
-    fn from(variant: RSTN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `rstn` reader - PHY Reset"]
-pub type RSTN_R = crate::BitReader<RSTN_A>;
-impl RSTN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RSTN_A {
-        match self.bits {
-            false => RSTN_A::ASSERT,
-            true => RSTN_A::DEASSERT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == RSTN_A::ASSERT
-    }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
-    #[inline(always)]
-    pub fn is_deassert(&self) -> bool {
-        *self == RSTN_A::DEASSERT
-    }
-}
-#[doc = "Field `rstn` writer - PHY Reset"]
-pub type RSTN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB0_CLK_SPEC, RSTN_A, O>;
-impl<'a, const O: u8> RSTN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(RSTN_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(RSTN_A::DEASSERT)
-    }
-}
+#[doc = "Field `clk12m_sel` reader - OHCI 12M Source Select"]
+pub type CLK12M_SEL_R = crate::FieldReader<u8, CLK12M_SEL_A>;
 #[doc = "OHCI 12M Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -151,8 +53,6 @@ impl From<CLK12M_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `clk12m_sel` reader - OHCI 12M Source Select"]
-pub type CLK12M_SEL_R = crate::FieldReader<u8, CLK12M_SEL_A>;
 impl CLK12M_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -200,38 +100,138 @@ impl<'a, const O: u8> CLK12M_SEL_W<'a, O> {
         self.variant(CLK12M_SEL_A::RTC_32K)
     }
 }
-impl R {
-    #[doc = "Bit 31 - Gating Special Clock"]
+#[doc = "Field `rstn` reader - PHY Reset"]
+pub type RSTN_R = crate::BitReader<RSTN_A>;
+#[doc = "PHY Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RSTN_A {
+    #[doc = "0: `0`"]
+    ASSERT = 0,
+    #[doc = "1: `1`"]
+    DEASSERT = 1,
+}
+impl From<RSTN_A> for bool {
     #[inline(always)]
-    pub fn clken(&self) -> CLKEN_R {
-        CLKEN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: RSTN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RSTN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RSTN_A {
+        match self.bits {
+            false => RSTN_A::ASSERT,
+            true => RSTN_A::DEASSERT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[inline(always)]
+    pub fn is_assert(&self) -> bool {
+        *self == RSTN_A::ASSERT
+    }
+    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[inline(always)]
+    pub fn is_deassert(&self) -> bool {
+        *self == RSTN_A::DEASSERT
+    }
+}
+#[doc = "Field `rstn` writer - PHY Reset"]
+pub type RSTN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB0_CLK_SPEC, RSTN_A, O>;
+impl<'a, const O: u8> RSTN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn assert(self) -> &'a mut W {
+        self.variant(RSTN_A::ASSERT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn deassert(self) -> &'a mut W {
+        self.variant(RSTN_A::DEASSERT)
+    }
+}
+#[doc = "Field `clken` reader - Gating Special Clock"]
+pub type CLKEN_R = crate::BitReader<CLKEN_A>;
+#[doc = "Gating Special Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CLKEN_A {
+    #[doc = "0: `0`"]
+    OFF = 0,
+    #[doc = "1: `1`"]
+    ON = 1,
+}
+impl From<CLKEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CLKEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CLKEN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLKEN_A {
+        match self.bits {
+            false => CLKEN_A::OFF,
+            true => CLKEN_A::ON,
+        }
+    }
+    #[doc = "Checks if the value of the field is `OFF`"]
+    #[inline(always)]
+    pub fn is_off(&self) -> bool {
+        *self == CLKEN_A::OFF
+    }
+    #[doc = "Checks if the value of the field is `ON`"]
+    #[inline(always)]
+    pub fn is_on(&self) -> bool {
+        *self == CLKEN_A::ON
+    }
+}
+#[doc = "Field `clken` writer - Gating Special Clock"]
+pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB0_CLK_SPEC, CLKEN_A, O>;
+impl<'a, const O: u8> CLKEN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn off(self) -> &'a mut W {
+        self.variant(CLKEN_A::OFF)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn on(self) -> &'a mut W {
+        self.variant(CLKEN_A::ON)
+    }
+}
+impl R {
+    #[doc = "Bits 24:25 - OHCI 12M Source Select"]
+    #[inline(always)]
+    pub fn clk12m_sel(&self) -> CLK12M_SEL_R {
+        CLK12M_SEL_R::new(((self.bits >> 24) & 3) as u8)
     }
     #[doc = "Bit 30 - PHY Reset"]
     #[inline(always)]
     pub fn rstn(&self) -> RSTN_R {
         RSTN_R::new(((self.bits >> 30) & 1) != 0)
     }
-    #[doc = "Bits 24:25 - OHCI 12M Source Select"]
+    #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
-    pub fn clk12m_sel(&self) -> CLK12M_SEL_R {
-        CLK12M_SEL_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn clken(&self) -> CLKEN_R {
+        CLKEN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31 - Gating Special Clock"]
+    #[doc = "Bits 24:25 - OHCI 12M Source Select"]
     #[inline(always)]
-    pub fn clken(&mut self) -> CLKEN_W<31> {
-        CLKEN_W::new(self)
+    pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W<24> {
+        CLK12M_SEL_W::new(self)
     }
     #[doc = "Bit 30 - PHY Reset"]
     #[inline(always)]
     pub fn rstn(&mut self) -> RSTN_W<30> {
         RSTN_W::new(self)
     }
-    #[doc = "Bits 24:25 - OHCI 12M Source Select"]
+    #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
-    pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W<24> {
-        CLK12M_SEL_W::new(self)
+    pub fn clken(&mut self) -> CLKEN_W<31> {
+        CLKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

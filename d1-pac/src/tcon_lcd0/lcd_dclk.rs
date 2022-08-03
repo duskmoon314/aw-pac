@@ -34,36 +34,36 @@ impl From<crate::W<LCD_DCLK_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `lcd_dclk_en` reader - LCD clock enable\n\n"]
-pub type LCD_DCLK_EN_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `lcd_dclk_en` writer - LCD clock enable\n\n"]
-pub type LCD_DCLK_EN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_DCLK_SPEC, u8, u8, 4, O>;
 #[doc = "Field `lcd_dclk_div` reader - Tdclk = Tsclk/DCLKDIV\n\nNote:\n\n1.If dclk1 and dclk2 are used, DCLKDIV >=6\n\n2.If only dclk is used, DCLKDIV >=1"]
 pub type LCD_DCLK_DIV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `lcd_dclk_div` writer - Tdclk = Tsclk/DCLKDIV\n\nNote:\n\n1.If dclk1 and dclk2 are used, DCLKDIV >=6\n\n2.If only dclk is used, DCLKDIV >=1"]
 pub type LCD_DCLK_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_DCLK_SPEC, u8, u8, 7, O>;
+#[doc = "Field `lcd_dclk_en` reader - LCD clock enable\n\n"]
+pub type LCD_DCLK_EN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `lcd_dclk_en` writer - LCD clock enable\n\n"]
+pub type LCD_DCLK_EN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_DCLK_SPEC, u8, u8, 4, O>;
 impl R {
-    #[doc = "Bits 28:31 - LCD clock enable\n\n"]
-    #[inline(always)]
-    pub fn lcd_dclk_en(&self) -> LCD_DCLK_EN_R {
-        LCD_DCLK_EN_R::new(((self.bits >> 28) & 0x0f) as u8)
-    }
     #[doc = "Bits 0:6 - Tdclk = Tsclk/DCLKDIV\n\nNote:\n\n1.If dclk1 and dclk2 are used, DCLKDIV >=6\n\n2.If only dclk is used, DCLKDIV >=1"]
     #[inline(always)]
     pub fn lcd_dclk_div(&self) -> LCD_DCLK_DIV_R {
         LCD_DCLK_DIV_R::new((self.bits & 0x7f) as u8)
     }
-}
-impl W {
     #[doc = "Bits 28:31 - LCD clock enable\n\n"]
     #[inline(always)]
-    pub fn lcd_dclk_en(&mut self) -> LCD_DCLK_EN_W<28> {
-        LCD_DCLK_EN_W::new(self)
+    pub fn lcd_dclk_en(&self) -> LCD_DCLK_EN_R {
+        LCD_DCLK_EN_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:6 - Tdclk = Tsclk/DCLKDIV\n\nNote:\n\n1.If dclk1 and dclk2 are used, DCLKDIV >=6\n\n2.If only dclk is used, DCLKDIV >=1"]
     #[inline(always)]
     pub fn lcd_dclk_div(&mut self) -> LCD_DCLK_DIV_W<0> {
         LCD_DCLK_DIV_W::new(self)
+    }
+    #[doc = "Bits 28:31 - LCD clock enable\n\n"]
+    #[inline(always)]
+    pub fn lcd_dclk_en(&mut self) -> LCD_DCLK_EN_W<28> {
+        LCD_DCLK_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

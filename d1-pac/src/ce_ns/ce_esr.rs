@@ -34,6 +34,8 @@ impl From<crate::W<CE_ESR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `task_channel_error_type[0-3]` reader - Task Channel Error Type"]
+pub type TASK_CHANNEL_ERROR_TYPE_R = crate::FieldReader<u8, TASK_CHANNEL_ERROR_TYPE_A>;
 #[doc = "Task Channel Error Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<TASK_CHANNEL_ERROR_TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `task_channel(0-3)_error_type` reader - Task Channel Error Type"]
-pub type TASK_CHANNEL_ERROR_TYPE_R = crate::FieldReader<u8, TASK_CHANNEL_ERROR_TYPE_A>;
 impl TASK_CHANNEL_ERROR_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -80,7 +80,7 @@ impl TASK_CHANNEL_ERROR_TYPE_R {
         *self == TASK_CHANNEL_ERROR_TYPE_A::KEYSRAM_ACCESS_ERROR
     }
 }
-#[doc = "Fields `task_channel(0-3)_error_type` writer - Task Channel Error Type"]
+#[doc = "Field `task_channel_error_type[0-3]` writer - Task Channel Error Type"]
 pub type TASK_CHANNEL_ERROR_TYPE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CE_ESR_SPEC, u8, TASK_CHANNEL_ERROR_TYPE_A, 4, O>;
 impl<'a, const O: u8> TASK_CHANNEL_ERROR_TYPE_W<'a, O> {

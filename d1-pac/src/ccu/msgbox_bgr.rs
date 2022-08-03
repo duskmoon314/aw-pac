@@ -34,57 +34,8 @@ impl From<crate::W<MSGBOX_BGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "CPU, DSP, RISC-V MSGBOX Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSGBOX_RST_A {
-    #[doc = "0: `0`"]
-    ASSERT = 0,
-    #[doc = "1: `1`"]
-    DEASSERT = 1,
-}
-impl From<MSGBOX_RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: MSGBOX_RST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `msgbox(0-2)_rst` reader - CPU, DSP, RISC-V MSGBOX Reset"]
-pub type MSGBOX_RST_R = crate::BitReader<MSGBOX_RST_A>;
-impl MSGBOX_RST_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> MSGBOX_RST_A {
-        match self.bits {
-            false => MSGBOX_RST_A::ASSERT,
-            true => MSGBOX_RST_A::DEASSERT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == MSGBOX_RST_A::ASSERT
-    }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
-    #[inline(always)]
-    pub fn is_deassert(&self) -> bool {
-        *self == MSGBOX_RST_A::DEASSERT
-    }
-}
-#[doc = "Fields `msgbox(0-2)_rst` writer - CPU, DSP, RISC-V MSGBOX Reset"]
-pub type MSGBOX_RST_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MSGBOX_BGR_SPEC, MSGBOX_RST_A, O>;
-impl<'a, const O: u8> MSGBOX_RST_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(MSGBOX_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(MSGBOX_RST_A::DEASSERT)
-    }
-}
+#[doc = "Field `msgbox_gating[0-2]` reader - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
+pub type MSGBOX_GATING_R = crate::BitReader<MSGBOX_GATING_A>;
 #[doc = "Gating Clock for CPU, DSP, RISC-V MSGBOX\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MSGBOX_GATING_A {
@@ -99,8 +50,6 @@ impl From<MSGBOX_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `msgbox(0-2)_gating` reader - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
-pub type MSGBOX_GATING_R = crate::BitReader<MSGBOX_GATING_A>;
 impl MSGBOX_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,7 +70,7 @@ impl MSGBOX_GATING_R {
         *self == MSGBOX_GATING_A::PASS
     }
 }
-#[doc = "Fields `msgbox(0-2)_gating` writer - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
+#[doc = "Field `msgbox_gating[0-2]` writer - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
 pub type MSGBOX_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, MSGBOX_BGR_SPEC, MSGBOX_GATING_A, O>;
 impl<'a, const O: u8> MSGBOX_GATING_W<'a, O> {
@@ -136,27 +85,58 @@ impl<'a, const O: u8> MSGBOX_GATING_W<'a, O> {
         self.variant(MSGBOX_GATING_A::PASS)
     }
 }
+#[doc = "Field `msgbox_rst[0-2]` reader - CPU, DSP, RISC-V MSGBOX Reset"]
+pub type MSGBOX_RST_R = crate::BitReader<MSGBOX_RST_A>;
+#[doc = "CPU, DSP, RISC-V MSGBOX Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MSGBOX_RST_A {
+    #[doc = "0: `0`"]
+    ASSERT = 0,
+    #[doc = "1: `1`"]
+    DEASSERT = 1,
+}
+impl From<MSGBOX_RST_A> for bool {
+    #[inline(always)]
+    fn from(variant: MSGBOX_RST_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl MSGBOX_RST_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MSGBOX_RST_A {
+        match self.bits {
+            false => MSGBOX_RST_A::ASSERT,
+            true => MSGBOX_RST_A::DEASSERT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[inline(always)]
+    pub fn is_assert(&self) -> bool {
+        *self == MSGBOX_RST_A::ASSERT
+    }
+    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[inline(always)]
+    pub fn is_deassert(&self) -> bool {
+        *self == MSGBOX_RST_A::DEASSERT
+    }
+}
+#[doc = "Field `msgbox_rst[0-2]` writer - CPU, DSP, RISC-V MSGBOX Reset"]
+pub type MSGBOX_RST_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MSGBOX_BGR_SPEC, MSGBOX_RST_A, O>;
+impl<'a, const O: u8> MSGBOX_RST_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn assert(self) -> &'a mut W {
+        self.variant(MSGBOX_RST_A::ASSERT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn deassert(self) -> &'a mut W {
+        self.variant(MSGBOX_RST_A::DEASSERT)
+    }
+}
 impl R {
-    #[doc = "CPU, DSP, RISC-V MSGBOX Reset"]
-    #[inline(always)]
-    pub unsafe fn msgbox_rst(&self, n: u8) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - CPU, DSP, RISC-V MSGBOX Reset"]
-    #[inline(always)]
-    pub fn msgbox0_rst(&self) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - CPU, DSP, RISC-V MSGBOX Reset"]
-    #[inline(always)]
-    pub fn msgbox1_rst(&self) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 18 - CPU, DSP, RISC-V MSGBOX Reset"]
-    #[inline(always)]
-    pub fn msgbox2_rst(&self) -> MSGBOX_RST_R {
-        MSGBOX_RST_R::new(((self.bits >> 18) & 1) != 0)
-    }
     #[doc = "Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
     pub unsafe fn msgbox_gating(&self, n: u8) -> MSGBOX_GATING_R {
@@ -177,28 +157,28 @@ impl R {
     pub fn msgbox2_gating(&self) -> MSGBOX_GATING_R {
         MSGBOX_GATING_R::new(((self.bits >> 2) & 1) != 0)
     }
-}
-impl W {
     #[doc = "CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub unsafe fn msgbox_rst<const O: u8>(&mut self) -> MSGBOX_RST_W<O> {
-        MSGBOX_RST_W::new(self)
+    pub unsafe fn msgbox_rst(&self, n: u8) -> MSGBOX_RST_R {
+        MSGBOX_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub fn msgbox0_rst(&mut self) -> MSGBOX_RST_W<16> {
-        MSGBOX_RST_W::new(self)
+    pub fn msgbox0_rst(&self) -> MSGBOX_RST_R {
+        MSGBOX_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub fn msgbox1_rst(&mut self) -> MSGBOX_RST_W<17> {
-        MSGBOX_RST_W::new(self)
+    pub fn msgbox1_rst(&self) -> MSGBOX_RST_R {
+        MSGBOX_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
-    pub fn msgbox2_rst(&mut self) -> MSGBOX_RST_W<18> {
-        MSGBOX_RST_W::new(self)
+    pub fn msgbox2_rst(&self) -> MSGBOX_RST_R {
+        MSGBOX_RST_R::new(((self.bits >> 18) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
     pub unsafe fn msgbox_gating<const O: u8>(&mut self) -> MSGBOX_GATING_W<O> {
@@ -218,6 +198,26 @@ impl W {
     #[inline(always)]
     pub fn msgbox2_gating(&mut self) -> MSGBOX_GATING_W<2> {
         MSGBOX_GATING_W::new(self)
+    }
+    #[doc = "CPU, DSP, RISC-V MSGBOX Reset"]
+    #[inline(always)]
+    pub unsafe fn msgbox_rst<const O: u8>(&mut self) -> MSGBOX_RST_W<O> {
+        MSGBOX_RST_W::new(self)
+    }
+    #[doc = "Bit 16 - CPU, DSP, RISC-V MSGBOX Reset"]
+    #[inline(always)]
+    pub fn msgbox0_rst(&mut self) -> MSGBOX_RST_W<16> {
+        MSGBOX_RST_W::new(self)
+    }
+    #[doc = "Bit 17 - CPU, DSP, RISC-V MSGBOX Reset"]
+    #[inline(always)]
+    pub fn msgbox1_rst(&mut self) -> MSGBOX_RST_W<17> {
+        MSGBOX_RST_W::new(self)
+    }
+    #[doc = "Bit 18 - CPU, DSP, RISC-V MSGBOX Reset"]
+    #[inline(always)]
+    pub fn msgbox2_rst(&mut self) -> MSGBOX_RST_W<18> {
+        MSGBOX_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

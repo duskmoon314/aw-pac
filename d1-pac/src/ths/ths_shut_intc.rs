@@ -34,6 +34,8 @@ impl From<crate::W<THS_SHUT_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `shut_int_en` reader - Enable the shutdown interrupt for the sensor"]
+pub type SHUT_INT_EN_R = crate::BitReader<SHUT_INT_EN_A>;
 #[doc = "Enable the shutdown interrupt for the sensor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SHUT_INT_EN_A {
@@ -48,8 +50,6 @@ impl From<SHUT_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `shut_int_en` reader - Enable the shutdown interrupt for the sensor"]
-pub type SHUT_INT_EN_R = crate::BitReader<SHUT_INT_EN_A>;
 impl SHUT_INT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<TV_SRC_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tv_src_sel` reader - TV Source Select"]
+pub type TV_SRC_SEL_R = crate::FieldReader<u8, TV_SRC_SEL_A>;
 #[doc = "TV Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -55,8 +57,6 @@ impl From<TV_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `tv_src_sel` reader - TV Source Select"]
-pub type TV_SRC_SEL_R = crate::FieldReader<u8, TV_SRC_SEL_A>;
 impl TV_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

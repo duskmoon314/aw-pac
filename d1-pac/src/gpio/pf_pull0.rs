@@ -34,6 +34,8 @@ impl From<crate::W<PF_PULL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pf_pull[0-6]` reader - PF Pull_up/down Select"]
+pub type PF_PULL_R = crate::FieldReader<u8, PF_PULL_A>;
 #[doc = "PF Pull_up/down Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<PF_PULL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `pf(0-6)_pull` reader - PF Pull_up/down Select"]
-pub type PF_PULL_R = crate::FieldReader<u8, PF_PULL_A>;
 impl PF_PULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -80,7 +80,7 @@ impl PF_PULL_R {
         *self == PF_PULL_A::PULL_DOWN
     }
 }
-#[doc = "Fields `pf(0-6)_pull` writer - PF Pull_up/down Select"]
+#[doc = "Field `pf_pull[0-6]` writer - PF Pull_up/down Select"]
 pub type PF_PULL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PF_PULL0_SPEC, u8, PF_PULL_A, 2, O>;
 impl<'a, const O: u8> PF_PULL_W<'a, O> {

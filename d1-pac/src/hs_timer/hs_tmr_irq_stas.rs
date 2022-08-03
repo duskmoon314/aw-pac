@@ -34,6 +34,8 @@ impl From<crate::W<HS_TMR_IRQ_STAS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `hs_tmr_irq_pend[0-1]` reader - HSTimer IRQ Pending"]
+pub type HS_TMR_IRQ_PEND_R = crate::BitReader<HS_TMR_IRQ_PEND_A>;
 #[doc = "HSTimer IRQ Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HS_TMR_IRQ_PEND_A {
@@ -48,8 +50,6 @@ impl From<HS_TMR_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `hs_tmr(0-1)_irq_pend` reader - HSTimer IRQ Pending"]
-pub type HS_TMR_IRQ_PEND_R = crate::BitReader<HS_TMR_IRQ_PEND_A>;
 impl HS_TMR_IRQ_PEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl HS_TMR_IRQ_PEND_R {
         *self == HS_TMR_IRQ_PEND_A::PENDING
     }
 }
-#[doc = "Fields `hs_tmr(0-1)_irq_pend` writer - HSTimer IRQ Pending"]
+#[doc = "Field `hs_tmr_irq_pend[0-1]` writer - HSTimer IRQ Pending"]
 pub type HS_TMR_IRQ_PEND_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, HS_TMR_IRQ_STAS_SPEC, HS_TMR_IRQ_PEND_A, O>;
 impl<'a, const O: u8> HS_TMR_IRQ_PEND_W<'a, O> {

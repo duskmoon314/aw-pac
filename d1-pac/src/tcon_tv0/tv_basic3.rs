@@ -34,36 +34,36 @@ impl From<crate::W<TV_BASIC3_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `h_t` reader - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
-pub type H_T_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `h_t` writer - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
-pub type H_T_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC3_SPEC, u16, u16, 13, O>;
 #[doc = "Field `h_bp` reader - Horizontal back porch\n\nThbp = (HBP +1) * Thdclk"]
 pub type H_BP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `h_bp` writer - Horizontal back porch\n\nThbp = (HBP +1) * Thdclk"]
 pub type H_BP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC3_SPEC, u16, u16, 12, O>;
+#[doc = "Field `h_t` reader - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
+pub type H_T_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `h_t` writer - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
+pub type H_T_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC3_SPEC, u16, u16, 13, O>;
 impl R {
-    #[doc = "Bits 16:28 - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
-    #[inline(always)]
-    pub fn h_t(&self) -> H_T_R {
-        H_T_R::new(((self.bits >> 16) & 0x1fff) as u16)
-    }
     #[doc = "Bits 0:11 - Horizontal back porch\n\nThbp = (HBP +1) * Thdclk"]
     #[inline(always)]
     pub fn h_bp(&self) -> H_BP_R {
         H_BP_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:28 - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
     #[inline(always)]
-    pub fn h_t(&mut self) -> H_T_W<16> {
-        H_T_W::new(self)
+    pub fn h_t(&self) -> H_T_R {
+        H_T_R::new(((self.bits >> 16) & 0x1fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Horizontal back porch\n\nThbp = (HBP +1) * Thdclk"]
     #[inline(always)]
     pub fn h_bp(&mut self) -> H_BP_W<0> {
         H_BP_W::new(self)
+    }
+    #[doc = "Bits 16:28 - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
+    #[inline(always)]
+    pub fn h_t(&mut self) -> H_T_W<16> {
+        H_T_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,147 @@ impl From<crate::W<CIR_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `gen` reader - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
+pub type GEN_R = crate::BitReader<GEN_A>;
+#[doc = "Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GEN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<GEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: GEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl GEN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> GEN_A {
+        match self.bits {
+            false => GEN_A::DISABLE,
+            true => GEN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == GEN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == GEN_A::ENABLE
+    }
+}
+#[doc = "Field `gen` writer - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
+pub type GEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, GEN_A, O>;
+impl<'a, const O: u8> GEN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(GEN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(GEN_A::ENABLE)
+    }
+}
+#[doc = "Field `rxen` reader - Receiver Block Enable"]
+pub type RXEN_R = crate::BitReader<RXEN_A>;
+#[doc = "Receiver Block Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RXEN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<RXEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: RXEN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RXEN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RXEN_A {
+        match self.bits {
+            false => RXEN_A::DISABLE,
+            true => RXEN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == RXEN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == RXEN_A::ENABLE
+    }
+}
+#[doc = "Field `rxen` writer - Receiver Block Enable"]
+pub type RXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, RXEN_A, O>;
+impl<'a, const O: u8> RXEN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RXEN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RXEN_A::ENABLE)
+    }
+}
+#[doc = "Field `ciren` reader - CIR Enable"]
+pub type CIREN_R = crate::FieldReader<u8, CIREN_A>;
+#[doc = "CIR Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum CIREN_A {
+    #[doc = "3: CIR mode enable"]
+    ENABLE = 3,
+}
+impl From<CIREN_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CIREN_A) -> Self {
+        variant as _
+    }
+}
+impl CIREN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<CIREN_A> {
+        match self.bits {
+            3 => Some(CIREN_A::ENABLE),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == CIREN_A::ENABLE
+    }
+}
+#[doc = "Field `ciren` writer - CIR Enable"]
+pub type CIREN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, CIREN_A, 2, O>;
+impl<'a, const O: u8> CIREN_W<'a, O> {
+    #[doc = "CIR mode enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CIREN_A::ENABLE)
+    }
+}
+#[doc = "Field `apam` reader - Active Pulse Accept Mode"]
+pub type APAM_R = crate::FieldReader<u8, APAM_A>;
 #[doc = "Active Pulse Accept Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +192,6 @@ impl From<APAM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `apam` reader - Active Pulse Accept Mode"]
-pub type APAM_R = crate::FieldReader<u8, APAM_A>;
 impl APAM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -99,187 +238,48 @@ impl<'a, const O: u8> APAM_W<'a, O> {
         self.variant(APAM_A::ONLY_POSITIVE)
     }
 }
-#[doc = "CIR Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum CIREN_A {
-    #[doc = "3: CIR mode enable"]
-    ENABLE = 3,
-}
-impl From<CIREN_A> for u8 {
-    #[inline(always)]
-    fn from(variant: CIREN_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `ciren` reader - CIR Enable"]
-pub type CIREN_R = crate::FieldReader<u8, CIREN_A>;
-impl CIREN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<CIREN_A> {
-        match self.bits {
-            3 => Some(CIREN_A::ENABLE),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == CIREN_A::ENABLE
-    }
-}
-#[doc = "Field `ciren` writer - CIR Enable"]
-pub type CIREN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_CTL_SPEC, u8, CIREN_A, 2, O>;
-impl<'a, const O: u8> CIREN_W<'a, O> {
-    #[doc = "CIR mode enable"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(CIREN_A::ENABLE)
-    }
-}
-#[doc = "Receiver Block Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXEN_A {
-    #[doc = "0: Disable"]
-    DISABLE = 0,
-    #[doc = "1: Enable"]
-    ENABLE = 1,
-}
-impl From<RXEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: RXEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `rxen` reader - Receiver Block Enable"]
-pub type RXEN_R = crate::BitReader<RXEN_A>;
-impl RXEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RXEN_A {
-        match self.bits {
-            false => RXEN_A::DISABLE,
-            true => RXEN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == RXEN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == RXEN_A::ENABLE
-    }
-}
-#[doc = "Field `rxen` writer - Receiver Block Enable"]
-pub type RXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, RXEN_A, O>;
-impl<'a, const O: u8> RXEN_W<'a, O> {
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(RXEN_A::DISABLE)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(RXEN_A::ENABLE)
-    }
-}
-#[doc = "Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GEN_A {
-    #[doc = "0: Disable"]
-    DISABLE = 0,
-    #[doc = "1: Enable"]
-    ENABLE = 1,
-}
-impl From<GEN_A> for bool {
-    #[inline(always)]
-    fn from(variant: GEN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `gen` reader - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
-pub type GEN_R = crate::BitReader<GEN_A>;
-impl GEN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> GEN_A {
-        match self.bits {
-            false => GEN_A::DISABLE,
-            true => GEN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == GEN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == GEN_A::ENABLE
-    }
-}
-#[doc = "Field `gen` writer - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
-pub type GEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_CTL_SPEC, GEN_A, O>;
-impl<'a, const O: u8> GEN_W<'a, O> {
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(GEN_A::DISABLE)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(GEN_A::ENABLE)
-    }
-}
 impl R {
-    #[doc = "Bits 6:7 - Active Pulse Accept Mode"]
+    #[doc = "Bit 0 - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
     #[inline(always)]
-    pub fn apam(&self) -> APAM_R {
-        APAM_R::new(((self.bits >> 6) & 3) as u8)
-    }
-    #[doc = "Bits 4:5 - CIR Enable"]
-    #[inline(always)]
-    pub fn ciren(&self) -> CIREN_R {
-        CIREN_R::new(((self.bits >> 4) & 3) as u8)
+    pub fn gen(&self) -> GEN_R {
+        GEN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Receiver Block Enable"]
     #[inline(always)]
     pub fn rxen(&self) -> RXEN_R {
         RXEN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
+    #[doc = "Bits 4:5 - CIR Enable"]
     #[inline(always)]
-    pub fn gen(&self) -> GEN_R {
-        GEN_R::new((self.bits & 1) != 0)
+    pub fn ciren(&self) -> CIREN_R {
+        CIREN_R::new(((self.bits >> 4) & 3) as u8)
+    }
+    #[doc = "Bits 6:7 - Active Pulse Accept Mode"]
+    #[inline(always)]
+    pub fn apam(&self) -> APAM_R {
+        APAM_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 6:7 - Active Pulse Accept Mode"]
+    #[doc = "Bit 0 - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
     #[inline(always)]
-    pub fn apam(&mut self) -> APAM_W<6> {
-        APAM_W::new(self)
-    }
-    #[doc = "Bits 4:5 - CIR Enable"]
-    #[inline(always)]
-    pub fn ciren(&mut self) -> CIREN_W<4> {
-        CIREN_W::new(self)
+    pub fn gen(&mut self) -> GEN_W<0> {
+        GEN_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Block Enable"]
     #[inline(always)]
     pub fn rxen(&mut self) -> RXEN_W<1> {
         RXEN_W::new(self)
     }
-    #[doc = "Bit 0 - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
+    #[doc = "Bits 4:5 - CIR Enable"]
     #[inline(always)]
-    pub fn gen(&mut self) -> GEN_W<0> {
-        GEN_W::new(self)
+    pub fn ciren(&mut self) -> CIREN_W<4> {
+        CIREN_W::new(self)
+    }
+    #[doc = "Bits 6:7 - Active Pulse Accept Mode"]
+    #[inline(always)]
+    pub fn apam(&mut self) -> APAM_W<6> {
+        APAM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

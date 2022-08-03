@@ -34,141 +34,12 @@ impl From<crate::W<TP_CTRL0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `adc_first_dly` reader - ADC First Convert Delay Time (T_FCDT) Setting"]
-pub type ADC_FIRST_DLY_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `adc_first_dly` writer - ADC First Convert Delay Time (T_FCDT) Setting"]
-pub type ADC_FIRST_DLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u8, u8, 8, O>;
-#[doc = "ADC First Convert Delay Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ADC_FIRST_DLY_MODE_A {
-    #[doc = "0: CLK_IN / 16"]
-    C16 = 0,
-    #[doc = "1: CLK_IN / 16 * 256"]
-    C16_256 = 1,
-}
-impl From<ADC_FIRST_DLY_MODE_A> for bool {
-    #[inline(always)]
-    fn from(variant: ADC_FIRST_DLY_MODE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `adc_first_dly_mode` reader - ADC First Convert Delay Mode Select"]
-pub type ADC_FIRST_DLY_MODE_R = crate::BitReader<ADC_FIRST_DLY_MODE_A>;
-impl ADC_FIRST_DLY_MODE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ADC_FIRST_DLY_MODE_A {
-        match self.bits {
-            false => ADC_FIRST_DLY_MODE_A::C16,
-            true => ADC_FIRST_DLY_MODE_A::C16_256,
-        }
-    }
-    #[doc = "Checks if the value of the field is `C16`"]
-    #[inline(always)]
-    pub fn is_c16(&self) -> bool {
-        *self == ADC_FIRST_DLY_MODE_A::C16
-    }
-    #[doc = "Checks if the value of the field is `C16_256`"]
-    #[inline(always)]
-    pub fn is_c16_256(&self) -> bool {
-        *self == ADC_FIRST_DLY_MODE_A::C16_256
-    }
-}
-#[doc = "Field `adc_first_dly_mode` writer - ADC First Convert Delay Mode Select"]
-pub type ADC_FIRST_DLY_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_CTRL0_SPEC, ADC_FIRST_DLY_MODE_A, O>;
-impl<'a, const O: u8> ADC_FIRST_DLY_MODE_W<'a, O> {
-    #[doc = "CLK_IN / 16"]
-    #[inline(always)]
-    pub fn c16(self) -> &'a mut W {
-        self.variant(ADC_FIRST_DLY_MODE_A::C16)
-    }
-    #[doc = "CLK_IN / 16 * 256"]
-    #[inline(always)]
-    pub fn c16_256(self) -> &'a mut W {
-        self.variant(ADC_FIRST_DLY_MODE_A::C16_256)
-    }
-}
-#[doc = "ADC Clock Divider (CLK_IN)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum ADC_CLK_DIVIDER_A {
-    #[doc = "0: CLK / 2"]
-    C2 = 0,
-    #[doc = "1: CLK / 3"]
-    C3 = 1,
-    #[doc = "2: CLK / 6"]
-    C6 = 2,
-    #[doc = "3: CLK / 1"]
-    C1 = 3,
-}
-impl From<ADC_CLK_DIVIDER_A> for u8 {
-    #[inline(always)]
-    fn from(variant: ADC_CLK_DIVIDER_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `adc_clk_divider` reader - ADC Clock Divider (CLK_IN)"]
-pub type ADC_CLK_DIVIDER_R = crate::FieldReader<u8, ADC_CLK_DIVIDER_A>;
-impl ADC_CLK_DIVIDER_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ADC_CLK_DIVIDER_A {
-        match self.bits {
-            0 => ADC_CLK_DIVIDER_A::C2,
-            1 => ADC_CLK_DIVIDER_A::C3,
-            2 => ADC_CLK_DIVIDER_A::C6,
-            3 => ADC_CLK_DIVIDER_A::C1,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `C2`"]
-    #[inline(always)]
-    pub fn is_c2(&self) -> bool {
-        *self == ADC_CLK_DIVIDER_A::C2
-    }
-    #[doc = "Checks if the value of the field is `C3`"]
-    #[inline(always)]
-    pub fn is_c3(&self) -> bool {
-        *self == ADC_CLK_DIVIDER_A::C3
-    }
-    #[doc = "Checks if the value of the field is `C6`"]
-    #[inline(always)]
-    pub fn is_c6(&self) -> bool {
-        *self == ADC_CLK_DIVIDER_A::C6
-    }
-    #[doc = "Checks if the value of the field is `C1`"]
-    #[inline(always)]
-    pub fn is_c1(&self) -> bool {
-        *self == ADC_CLK_DIVIDER_A::C1
-    }
-}
-#[doc = "Field `adc_clk_divider` writer - ADC Clock Divider (CLK_IN)"]
-pub type ADC_CLK_DIVIDER_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, ADC_CLK_DIVIDER_A, 2, O>;
-impl<'a, const O: u8> ADC_CLK_DIVIDER_W<'a, O> {
-    #[doc = "CLK / 2"]
-    #[inline(always)]
-    pub fn c2(self) -> &'a mut W {
-        self.variant(ADC_CLK_DIVIDER_A::C2)
-    }
-    #[doc = "CLK / 3"]
-    #[inline(always)]
-    pub fn c3(self) -> &'a mut W {
-        self.variant(ADC_CLK_DIVIDER_A::C3)
-    }
-    #[doc = "CLK / 6"]
-    #[inline(always)]
-    pub fn c6(self) -> &'a mut W {
-        self.variant(ADC_CLK_DIVIDER_A::C6)
-    }
-    #[doc = "CLK / 1"]
-    #[inline(always)]
-    pub fn c1(self) -> &'a mut W {
-        self.variant(ADC_CLK_DIVIDER_A::C1)
-    }
-}
+#[doc = "Field `tacq` reader - Touch panel ADC acquire time"]
+pub type TACQ_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `tacq` writer - Touch panel ADC acquire time"]
+pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u16, u16, 16, O>;
+#[doc = "Field `fs_div` reader - ADC Sample Frequency Divider"]
+pub type FS_DIV_R = crate::FieldReader<u8, FS_DIV_A>;
 #[doc = "ADC Sample Frequency Divider\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -212,8 +83,6 @@ impl From<FS_DIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `fs_div` reader - ADC Sample Frequency Divider"]
-pub type FS_DIV_R = crate::FieldReader<u8, FS_DIV_A>;
 impl FS_DIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -404,62 +273,193 @@ impl<'a, const O: u8> FS_DIV_W<'a, O> {
         self.variant(FS_DIV_A::C2P15)
     }
 }
-#[doc = "Field `tacq` reader - Touch panel ADC acquire time"]
-pub type TACQ_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `tacq` writer - Touch panel ADC acquire time"]
-pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u16, u16, 16, O>;
+#[doc = "Field `adc_clk_divider` reader - ADC Clock Divider (CLK_IN)"]
+pub type ADC_CLK_DIVIDER_R = crate::FieldReader<u8, ADC_CLK_DIVIDER_A>;
+#[doc = "ADC Clock Divider (CLK_IN)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum ADC_CLK_DIVIDER_A {
+    #[doc = "0: CLK / 2"]
+    C2 = 0,
+    #[doc = "1: CLK / 3"]
+    C3 = 1,
+    #[doc = "2: CLK / 6"]
+    C6 = 2,
+    #[doc = "3: CLK / 1"]
+    C1 = 3,
+}
+impl From<ADC_CLK_DIVIDER_A> for u8 {
+    #[inline(always)]
+    fn from(variant: ADC_CLK_DIVIDER_A) -> Self {
+        variant as _
+    }
+}
+impl ADC_CLK_DIVIDER_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC_CLK_DIVIDER_A {
+        match self.bits {
+            0 => ADC_CLK_DIVIDER_A::C2,
+            1 => ADC_CLK_DIVIDER_A::C3,
+            2 => ADC_CLK_DIVIDER_A::C6,
+            3 => ADC_CLK_DIVIDER_A::C1,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `C2`"]
+    #[inline(always)]
+    pub fn is_c2(&self) -> bool {
+        *self == ADC_CLK_DIVIDER_A::C2
+    }
+    #[doc = "Checks if the value of the field is `C3`"]
+    #[inline(always)]
+    pub fn is_c3(&self) -> bool {
+        *self == ADC_CLK_DIVIDER_A::C3
+    }
+    #[doc = "Checks if the value of the field is `C6`"]
+    #[inline(always)]
+    pub fn is_c6(&self) -> bool {
+        *self == ADC_CLK_DIVIDER_A::C6
+    }
+    #[doc = "Checks if the value of the field is `C1`"]
+    #[inline(always)]
+    pub fn is_c1(&self) -> bool {
+        *self == ADC_CLK_DIVIDER_A::C1
+    }
+}
+#[doc = "Field `adc_clk_divider` writer - ADC Clock Divider (CLK_IN)"]
+pub type ADC_CLK_DIVIDER_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, ADC_CLK_DIVIDER_A, 2, O>;
+impl<'a, const O: u8> ADC_CLK_DIVIDER_W<'a, O> {
+    #[doc = "CLK / 2"]
+    #[inline(always)]
+    pub fn c2(self) -> &'a mut W {
+        self.variant(ADC_CLK_DIVIDER_A::C2)
+    }
+    #[doc = "CLK / 3"]
+    #[inline(always)]
+    pub fn c3(self) -> &'a mut W {
+        self.variant(ADC_CLK_DIVIDER_A::C3)
+    }
+    #[doc = "CLK / 6"]
+    #[inline(always)]
+    pub fn c6(self) -> &'a mut W {
+        self.variant(ADC_CLK_DIVIDER_A::C6)
+    }
+    #[doc = "CLK / 1"]
+    #[inline(always)]
+    pub fn c1(self) -> &'a mut W {
+        self.variant(ADC_CLK_DIVIDER_A::C1)
+    }
+}
+#[doc = "Field `adc_first_dly_mode` reader - ADC First Convert Delay Mode Select"]
+pub type ADC_FIRST_DLY_MODE_R = crate::BitReader<ADC_FIRST_DLY_MODE_A>;
+#[doc = "ADC First Convert Delay Mode Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ADC_FIRST_DLY_MODE_A {
+    #[doc = "0: CLK_IN / 16"]
+    C16 = 0,
+    #[doc = "1: CLK_IN / 16 * 256"]
+    C16_256 = 1,
+}
+impl From<ADC_FIRST_DLY_MODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC_FIRST_DLY_MODE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ADC_FIRST_DLY_MODE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC_FIRST_DLY_MODE_A {
+        match self.bits {
+            false => ADC_FIRST_DLY_MODE_A::C16,
+            true => ADC_FIRST_DLY_MODE_A::C16_256,
+        }
+    }
+    #[doc = "Checks if the value of the field is `C16`"]
+    #[inline(always)]
+    pub fn is_c16(&self) -> bool {
+        *self == ADC_FIRST_DLY_MODE_A::C16
+    }
+    #[doc = "Checks if the value of the field is `C16_256`"]
+    #[inline(always)]
+    pub fn is_c16_256(&self) -> bool {
+        *self == ADC_FIRST_DLY_MODE_A::C16_256
+    }
+}
+#[doc = "Field `adc_first_dly_mode` writer - ADC First Convert Delay Mode Select"]
+pub type ADC_FIRST_DLY_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_CTRL0_SPEC, ADC_FIRST_DLY_MODE_A, O>;
+impl<'a, const O: u8> ADC_FIRST_DLY_MODE_W<'a, O> {
+    #[doc = "CLK_IN / 16"]
+    #[inline(always)]
+    pub fn c16(self) -> &'a mut W {
+        self.variant(ADC_FIRST_DLY_MODE_A::C16)
+    }
+    #[doc = "CLK_IN / 16 * 256"]
+    #[inline(always)]
+    pub fn c16_256(self) -> &'a mut W {
+        self.variant(ADC_FIRST_DLY_MODE_A::C16_256)
+    }
+}
+#[doc = "Field `adc_first_dly` reader - ADC First Convert Delay Time (T_FCDT) Setting"]
+pub type ADC_FIRST_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `adc_first_dly` writer - ADC First Convert Delay Time (T_FCDT) Setting"]
+pub type ADC_FIRST_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
+    #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
     #[inline(always)]
-    pub fn adc_first_dly(&self) -> ADC_FIRST_DLY_R {
-        ADC_FIRST_DLY_R::new(((self.bits >> 24) & 0xff) as u8)
-    }
-    #[doc = "Bit 23 - ADC First Convert Delay Mode Select"]
-    #[inline(always)]
-    pub fn adc_first_dly_mode(&self) -> ADC_FIRST_DLY_MODE_R {
-        ADC_FIRST_DLY_MODE_R::new(((self.bits >> 23) & 1) != 0)
-    }
-    #[doc = "Bits 20:21 - ADC Clock Divider (CLK_IN)"]
-    #[inline(always)]
-    pub fn adc_clk_divider(&self) -> ADC_CLK_DIVIDER_R {
-        ADC_CLK_DIVIDER_R::new(((self.bits >> 20) & 3) as u8)
+    pub fn tacq(&self) -> TACQ_R {
+        TACQ_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 16:19 - ADC Sample Frequency Divider"]
     #[inline(always)]
     pub fn fs_div(&self) -> FS_DIV_R {
         FS_DIV_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
-    #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
+    #[doc = "Bits 20:21 - ADC Clock Divider (CLK_IN)"]
     #[inline(always)]
-    pub fn tacq(&self) -> TACQ_R {
-        TACQ_R::new((self.bits & 0xffff) as u16)
-    }
-}
-impl W {
-    #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
-    #[inline(always)]
-    pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W<24> {
-        ADC_FIRST_DLY_W::new(self)
+    pub fn adc_clk_divider(&self) -> ADC_CLK_DIVIDER_R {
+        ADC_CLK_DIVIDER_R::new(((self.bits >> 20) & 3) as u8)
     }
     #[doc = "Bit 23 - ADC First Convert Delay Mode Select"]
     #[inline(always)]
-    pub fn adc_first_dly_mode(&mut self) -> ADC_FIRST_DLY_MODE_W<23> {
-        ADC_FIRST_DLY_MODE_W::new(self)
+    pub fn adc_first_dly_mode(&self) -> ADC_FIRST_DLY_MODE_R {
+        ADC_FIRST_DLY_MODE_R::new(((self.bits >> 23) & 1) != 0)
     }
-    #[doc = "Bits 20:21 - ADC Clock Divider (CLK_IN)"]
+    #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
     #[inline(always)]
-    pub fn adc_clk_divider(&mut self) -> ADC_CLK_DIVIDER_W<20> {
-        ADC_CLK_DIVIDER_W::new(self)
+    pub fn adc_first_dly(&self) -> ADC_FIRST_DLY_R {
+        ADC_FIRST_DLY_R::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+impl W {
+    #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
+    #[inline(always)]
+    pub fn tacq(&mut self) -> TACQ_W<0> {
+        TACQ_W::new(self)
     }
     #[doc = "Bits 16:19 - ADC Sample Frequency Divider"]
     #[inline(always)]
     pub fn fs_div(&mut self) -> FS_DIV_W<16> {
         FS_DIV_W::new(self)
     }
-    #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
+    #[doc = "Bits 20:21 - ADC Clock Divider (CLK_IN)"]
     #[inline(always)]
-    pub fn tacq(&mut self) -> TACQ_W<0> {
-        TACQ_W::new(self)
+    pub fn adc_clk_divider(&mut self) -> ADC_CLK_DIVIDER_W<20> {
+        ADC_CLK_DIVIDER_W::new(self)
+    }
+    #[doc = "Bit 23 - ADC First Convert Delay Mode Select"]
+    #[inline(always)]
+    pub fn adc_first_dly_mode(&mut self) -> ADC_FIRST_DLY_MODE_W<23> {
+        ADC_FIRST_DLY_MODE_W::new(self)
+    }
+    #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
+    #[inline(always)]
+    pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W<24> {
+        ADC_FIRST_DLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

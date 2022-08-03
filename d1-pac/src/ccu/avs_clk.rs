@@ -34,6 +34,8 @@ impl From<crate::W<AVS_CLK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `clk_gating` reader - Gating Clock"]
+pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_GATING_A {
@@ -48,8 +50,6 @@ impl From<CLK_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `clk_gating` reader - Gating Clock"]
-pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 impl CLK_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,57 +34,8 @@ impl From<crate::W<PLL_LOCK_DBG_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Debug Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PLL_LOCK_FLAG_EN_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<PLL_LOCK_FLAG_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: PLL_LOCK_FLAG_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `pll_lock_flag_en` reader - Debug Enable"]
-pub type PLL_LOCK_FLAG_EN_R = crate::BitReader<PLL_LOCK_FLAG_EN_A>;
-impl PLL_LOCK_FLAG_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PLL_LOCK_FLAG_EN_A {
-        match self.bits {
-            false => PLL_LOCK_FLAG_EN_A::DISABLE,
-            true => PLL_LOCK_FLAG_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == PLL_LOCK_FLAG_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == PLL_LOCK_FLAG_EN_A::ENABLE
-    }
-}
-#[doc = "Field `pll_lock_flag_en` writer - Debug Enable"]
-pub type PLL_LOCK_FLAG_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, PLL_LOCK_FLAG_EN_A, O>;
-impl<'a, const O: u8> PLL_LOCK_FLAG_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(PLL_LOCK_FLAG_EN_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(PLL_LOCK_FLAG_EN_A::ENABLE)
-    }
-}
+#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
+pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -112,8 +63,6 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
-pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -216,28 +165,79 @@ impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
         self.variant(CLK_SRC_SEL_A::PLL_AUDIO1)
     }
 }
-impl R {
-    #[doc = "Bit 31 - Debug Enable"]
+#[doc = "Field `pll_lock_flag_en` reader - Debug Enable"]
+pub type PLL_LOCK_FLAG_EN_R = crate::BitReader<PLL_LOCK_FLAG_EN_A>;
+#[doc = "Debug Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PLL_LOCK_FLAG_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<PLL_LOCK_FLAG_EN_A> for bool {
     #[inline(always)]
-    pub fn pll_lock_flag_en(&self) -> PLL_LOCK_FLAG_EN_R {
-        PLL_LOCK_FLAG_EN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: PLL_LOCK_FLAG_EN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl PLL_LOCK_FLAG_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PLL_LOCK_FLAG_EN_A {
+        match self.bits {
+            false => PLL_LOCK_FLAG_EN_A::DISABLE,
+            true => PLL_LOCK_FLAG_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == PLL_LOCK_FLAG_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == PLL_LOCK_FLAG_EN_A::ENABLE
+    }
+}
+#[doc = "Field `pll_lock_flag_en` writer - Debug Enable"]
+pub type PLL_LOCK_FLAG_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, PLL_LOCK_FLAG_EN_A, O>;
+impl<'a, const O: u8> PLL_LOCK_FLAG_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PLL_LOCK_FLAG_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PLL_LOCK_FLAG_EN_A::ENABLE)
+    }
+}
+impl R {
     #[doc = "Bits 20:22 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
         CLK_SRC_SEL_R::new(((self.bits >> 20) & 7) as u8)
     }
-}
-impl W {
     #[doc = "Bit 31 - Debug Enable"]
     #[inline(always)]
-    pub fn pll_lock_flag_en(&mut self) -> PLL_LOCK_FLAG_EN_W<31> {
-        PLL_LOCK_FLAG_EN_W::new(self)
+    pub fn pll_lock_flag_en(&self) -> PLL_LOCK_FLAG_EN_R {
+        PLL_LOCK_FLAG_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 20:22 - Clock Source Select"]
     #[inline(always)]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<20> {
         CLK_SRC_SEL_W::new(self)
+    }
+    #[doc = "Bit 31 - Debug Enable"]
+    #[inline(always)]
+    pub fn pll_lock_flag_en(&mut self) -> PLL_LOCK_FLAG_EN_W<31> {
+        PLL_LOCK_FLAG_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,36 +34,36 @@ impl From<crate::W<SMHC_DRV_DL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `dat_drv_ph_sel` reader - Data Drive Phase Select"]
-pub type DAT_DRV_PH_SEL_R = crate::BitReader<bool>;
-#[doc = "Field `dat_drv_ph_sel` writer - Data Drive Phase Select"]
-pub type DAT_DRV_PH_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, O>;
 #[doc = "Field `cmd_drv_ph_sel` reader - Command Drive Phase Select"]
 pub type CMD_DRV_PH_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `cmd_drv_ph_sel` writer - Command Drive Phase Select"]
 pub type CMD_DRV_PH_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, O>;
+#[doc = "Field `dat_drv_ph_sel` reader - Data Drive Phase Select"]
+pub type DAT_DRV_PH_SEL_R = crate::BitReader<bool>;
+#[doc = "Field `dat_drv_ph_sel` writer - Data Drive Phase Select"]
+pub type DAT_DRV_PH_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_DRV_DL_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 17 - Data Drive Phase Select"]
-    #[inline(always)]
-    pub fn dat_drv_ph_sel(&self) -> DAT_DRV_PH_SEL_R {
-        DAT_DRV_PH_SEL_R::new(((self.bits >> 17) & 1) != 0)
-    }
     #[doc = "Bit 16 - Command Drive Phase Select"]
     #[inline(always)]
     pub fn cmd_drv_ph_sel(&self) -> CMD_DRV_PH_SEL_R {
         CMD_DRV_PH_SEL_R::new(((self.bits >> 16) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 17 - Data Drive Phase Select"]
     #[inline(always)]
-    pub fn dat_drv_ph_sel(&mut self) -> DAT_DRV_PH_SEL_W<17> {
-        DAT_DRV_PH_SEL_W::new(self)
+    pub fn dat_drv_ph_sel(&self) -> DAT_DRV_PH_SEL_R {
+        DAT_DRV_PH_SEL_R::new(((self.bits >> 17) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 16 - Command Drive Phase Select"]
     #[inline(always)]
     pub fn cmd_drv_ph_sel(&mut self) -> CMD_DRV_PH_SEL_W<16> {
         CMD_DRV_PH_SEL_W::new(self)
+    }
+    #[doc = "Bit 17 - Data Drive Phase Select"]
+    #[inline(always)]
+    pub fn dat_drv_ph_sel(&mut self) -> DAT_DRV_PH_SEL_W<17> {
+        DAT_DRV_PH_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<IOMMU_PMU_CLR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pmu_clr` reader - "]
+pub type PMU_CLR_R = crate::BitReader<PMU_CLR_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PMU_CLR_A {
@@ -48,8 +50,6 @@ impl From<PMU_CLR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `pmu_clr` reader - "]
-pub type PMU_CLR_R = crate::BitReader<PMU_CLR_A>;
 impl PMU_CLR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

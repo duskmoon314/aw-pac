@@ -34,6 +34,8 @@ impl From<crate::W<TV_CEU_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ceu_en` reader - CEU Enable"]
+pub type CEU_EN_R = crate::BitReader<CEU_EN_A>;
 #[doc = "CEU Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CEU_EN_A {
@@ -48,8 +50,6 @@ impl From<CEU_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ceu_en` reader - CEU Enable"]
-pub type CEU_EN_R = crate::BitReader<CEU_EN_A>;
 impl CEU_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,54 +34,54 @@ impl From<crate::W<PGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `start` reader - The PWM channels selected in CS start to output PWM waveform at the same time."]
-pub type START_R = crate::BitReader<bool>;
-#[doc = "Field `start` writer - The PWM channels selected in CS start to output PWM waveform at the same time."]
-pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
-#[doc = "Field `en` reader - PWM Group Enable."]
-pub type EN_R = crate::BitReader<bool>;
-#[doc = "Field `en` writer - PWM Group Enable."]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
 #[doc = "Field `cs` reader - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 pub type CS_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `cs` writer - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 pub type CS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PGR_SPEC, u16, u16, 16, O>;
+#[doc = "Field `en` reader - PWM Group Enable."]
+pub type EN_R = crate::BitReader<bool>;
+#[doc = "Field `en` writer - PWM Group Enable."]
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
+#[doc = "Field `start` reader - The PWM channels selected in CS start to output PWM waveform at the same time."]
+pub type START_R = crate::BitReader<bool>;
+#[doc = "Field `start` writer - The PWM channels selected in CS start to output PWM waveform at the same time."]
+pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 17 - The PWM channels selected in CS start to output PWM waveform at the same time."]
-    #[inline(always)]
-    pub fn start(&self) -> START_R {
-        START_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 16 - PWM Group Enable."]
-    #[inline(always)]
-    pub fn en(&self) -> EN_R {
-        EN_R::new(((self.bits >> 16) & 1) != 0)
-    }
     #[doc = "Bits 0:15 - If bit\\[i\\]
 is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
     #[inline(always)]
     pub fn cs(&self) -> CS_R {
         CS_R::new((self.bits & 0xffff) as u16)
     }
-}
-impl W {
+    #[doc = "Bit 16 - PWM Group Enable."]
+    #[inline(always)]
+    pub fn en(&self) -> EN_R {
+        EN_R::new(((self.bits >> 16) & 1) != 0)
+    }
     #[doc = "Bit 17 - The PWM channels selected in CS start to output PWM waveform at the same time."]
     #[inline(always)]
-    pub fn start(&mut self) -> START_W<17> {
-        START_W::new(self)
+    pub fn start(&self) -> START_R {
+        START_R::new(((self.bits >> 17) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bits 0:15 - If bit\\[i\\]
+is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
+    #[inline(always)]
+    pub fn cs(&mut self) -> CS_W<0> {
+        CS_W::new(self)
     }
     #[doc = "Bit 16 - PWM Group Enable."]
     #[inline(always)]
     pub fn en(&mut self) -> EN_W<16> {
         EN_W::new(self)
     }
-    #[doc = "Bits 0:15 - If bit\\[i\\]
-is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
+    #[doc = "Bit 17 - The PWM channels selected in CS start to output PWM waveform at the same time."]
     #[inline(always)]
-    pub fn cs(&mut self) -> CS_W<0> {
-        CS_W::new(self)
+    pub fn start(&mut self) -> START_W<17> {
+        START_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

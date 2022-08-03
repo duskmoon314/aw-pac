@@ -34,66 +34,66 @@ impl From<crate::W<SPI_SAMP_DL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `samp_dl_cal_start` reader - Sample Delay Calibration Start"]
-pub type SAMP_DL_CAL_START_R = crate::BitReader<bool>;
-#[doc = "Field `samp_dl_cal_start` writer - Sample Delay Calibration Start"]
-pub type SAMP_DL_CAL_START_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SPI_SAMP_DL_SPEC, bool, O>;
-#[doc = "Field `samp_dl_cal_done` reader - Sample Delay Calibration Dont"]
-pub type SAMP_DL_CAL_DONE_R = crate::BitReader<bool>;
-#[doc = "Field `samp_dl` reader - Sample Delay"]
-pub type SAMP_DL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `samp_dl_sw_en` reader - Sample Delay Software Enable"]
-pub type SAMP_DL_SW_EN_R = crate::BitReader<bool>;
-#[doc = "Field `samp_dl_sw_en` writer - Sample Delay Software Enable"]
-pub type SAMP_DL_SW_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_SAMP_DL_SPEC, bool, O>;
 #[doc = "Field `samp_dl_sw` reader - Sample Delay Software"]
 pub type SAMP_DL_SW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `samp_dl_sw` writer - Sample Delay Software"]
 pub type SAMP_DL_SW_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SPI_SAMP_DL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `samp_dl_sw_en` reader - Sample Delay Software Enable"]
+pub type SAMP_DL_SW_EN_R = crate::BitReader<bool>;
+#[doc = "Field `samp_dl_sw_en` writer - Sample Delay Software Enable"]
+pub type SAMP_DL_SW_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_SAMP_DL_SPEC, bool, O>;
+#[doc = "Field `samp_dl` reader - Sample Delay"]
+pub type SAMP_DL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `samp_dl_cal_done` reader - Sample Delay Calibration Dont"]
+pub type SAMP_DL_CAL_DONE_R = crate::BitReader<bool>;
+#[doc = "Field `samp_dl_cal_start` reader - Sample Delay Calibration Start"]
+pub type SAMP_DL_CAL_START_R = crate::BitReader<bool>;
+#[doc = "Field `samp_dl_cal_start` writer - Sample Delay Calibration Start"]
+pub type SAMP_DL_CAL_START_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SPI_SAMP_DL_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 15 - Sample Delay Calibration Start"]
+    #[doc = "Bits 0:5 - Sample Delay Software"]
     #[inline(always)]
-    pub fn samp_dl_cal_start(&self) -> SAMP_DL_CAL_START_R {
-        SAMP_DL_CAL_START_R::new(((self.bits >> 15) & 1) != 0)
-    }
-    #[doc = "Bit 14 - Sample Delay Calibration Dont"]
-    #[inline(always)]
-    pub fn samp_dl_cal_done(&self) -> SAMP_DL_CAL_DONE_R {
-        SAMP_DL_CAL_DONE_R::new(((self.bits >> 14) & 1) != 0)
-    }
-    #[doc = "Bits 8:13 - Sample Delay"]
-    #[inline(always)]
-    pub fn samp_dl(&self) -> SAMP_DL_R {
-        SAMP_DL_R::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn samp_dl_sw(&self) -> SAMP_DL_SW_R {
+        SAMP_DL_SW_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
     pub fn samp_dl_sw_en(&self) -> SAMP_DL_SW_EN_R {
         SAMP_DL_SW_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 0:5 - Sample Delay Software"]
+    #[doc = "Bits 8:13 - Sample Delay"]
     #[inline(always)]
-    pub fn samp_dl_sw(&self) -> SAMP_DL_SW_R {
-        SAMP_DL_SW_R::new((self.bits & 0x3f) as u8)
+    pub fn samp_dl(&self) -> SAMP_DL_R {
+        SAMP_DL_R::new(((self.bits >> 8) & 0x3f) as u8)
+    }
+    #[doc = "Bit 14 - Sample Delay Calibration Dont"]
+    #[inline(always)]
+    pub fn samp_dl_cal_done(&self) -> SAMP_DL_CAL_DONE_R {
+        SAMP_DL_CAL_DONE_R::new(((self.bits >> 14) & 1) != 0)
+    }
+    #[doc = "Bit 15 - Sample Delay Calibration Start"]
+    #[inline(always)]
+    pub fn samp_dl_cal_start(&self) -> SAMP_DL_CAL_START_R {
+        SAMP_DL_CAL_START_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 15 - Sample Delay Calibration Start"]
+    #[doc = "Bits 0:5 - Sample Delay Software"]
     #[inline(always)]
-    pub fn samp_dl_cal_start(&mut self) -> SAMP_DL_CAL_START_W<15> {
-        SAMP_DL_CAL_START_W::new(self)
+    pub fn samp_dl_sw(&mut self) -> SAMP_DL_SW_W<0> {
+        SAMP_DL_SW_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
     pub fn samp_dl_sw_en(&mut self) -> SAMP_DL_SW_EN_W<7> {
         SAMP_DL_SW_EN_W::new(self)
     }
-    #[doc = "Bits 0:5 - Sample Delay Software"]
+    #[doc = "Bit 15 - Sample Delay Calibration Start"]
     #[inline(always)]
-    pub fn samp_dl_sw(&mut self) -> SAMP_DL_SW_W<0> {
-        SAMP_DL_SW_W::new(self)
+    pub fn samp_dl_cal_start(&mut self) -> SAMP_DL_CAL_START_W<15> {
+        SAMP_DL_CAL_START_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

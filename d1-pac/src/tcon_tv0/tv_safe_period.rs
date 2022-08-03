@@ -34,16 +34,8 @@ impl From<crate::W<TV_SAFE_PERIOD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `safe_period_fifo_num` reader - Safe Period FIFO Number"]
-pub type SAFE_PERIOD_FIFO_NUM_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `safe_period_fifo_num` writer - Safe Period FIFO Number"]
-pub type SAFE_PERIOD_FIFO_NUM_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_SAFE_PERIOD_SPEC, u16, u16, 13, O>;
-#[doc = "Field `safe_period_line` reader - Safe Period Line"]
-pub type SAFE_PERIOD_LINE_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `safe_period_line` writer - Safe Period Line"]
-pub type SAFE_PERIOD_LINE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_SAFE_PERIOD_SPEC, u16, u16, 12, O>;
+#[doc = "Field `safe_period_mode` reader - Safe Period Mode"]
+pub type SAFE_PERIOD_MODE_R = crate::FieldReader<u8, SAFE_PERIOD_MODE_A>;
 #[doc = "Safe Period Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -65,8 +57,6 @@ impl From<SAFE_PERIOD_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `safe_period_mode` reader - Safe Period Mode"]
-pub type SAFE_PERIOD_MODE_R = crate::FieldReader<u8, SAFE_PERIOD_MODE_A>;
 impl SAFE_PERIOD_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,38 +126,48 @@ impl<'a, const O: u8> SAFE_PERIOD_MODE_W<'a, O> {
         self.variant(SAFE_PERIOD_MODE_A::SAFE_LINE)
     }
 }
+#[doc = "Field `safe_period_line` reader - Safe Period Line"]
+pub type SAFE_PERIOD_LINE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `safe_period_line` writer - Safe Period Line"]
+pub type SAFE_PERIOD_LINE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_SAFE_PERIOD_SPEC, u16, u16, 12, O>;
+#[doc = "Field `safe_period_fifo_num` reader - Safe Period FIFO Number"]
+pub type SAFE_PERIOD_FIFO_NUM_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `safe_period_fifo_num` writer - Safe Period FIFO Number"]
+pub type SAFE_PERIOD_FIFO_NUM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_SAFE_PERIOD_SPEC, u16, u16, 13, O>;
 impl R {
-    #[doc = "Bits 16:28 - Safe Period FIFO Number"]
+    #[doc = "Bits 0:2 - Safe Period Mode"]
     #[inline(always)]
-    pub fn safe_period_fifo_num(&self) -> SAFE_PERIOD_FIFO_NUM_R {
-        SAFE_PERIOD_FIFO_NUM_R::new(((self.bits >> 16) & 0x1fff) as u16)
+    pub fn safe_period_mode(&self) -> SAFE_PERIOD_MODE_R {
+        SAFE_PERIOD_MODE_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:15 - Safe Period Line"]
     #[inline(always)]
     pub fn safe_period_line(&self) -> SAFE_PERIOD_LINE_R {
         SAFE_PERIOD_LINE_R::new(((self.bits >> 4) & 0x0fff) as u16)
     }
-    #[doc = "Bits 0:2 - Safe Period Mode"]
+    #[doc = "Bits 16:28 - Safe Period FIFO Number"]
     #[inline(always)]
-    pub fn safe_period_mode(&self) -> SAFE_PERIOD_MODE_R {
-        SAFE_PERIOD_MODE_R::new((self.bits & 7) as u8)
+    pub fn safe_period_fifo_num(&self) -> SAFE_PERIOD_FIFO_NUM_R {
+        SAFE_PERIOD_FIFO_NUM_R::new(((self.bits >> 16) & 0x1fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 16:28 - Safe Period FIFO Number"]
+    #[doc = "Bits 0:2 - Safe Period Mode"]
     #[inline(always)]
-    pub fn safe_period_fifo_num(&mut self) -> SAFE_PERIOD_FIFO_NUM_W<16> {
-        SAFE_PERIOD_FIFO_NUM_W::new(self)
+    pub fn safe_period_mode(&mut self) -> SAFE_PERIOD_MODE_W<0> {
+        SAFE_PERIOD_MODE_W::new(self)
     }
     #[doc = "Bits 4:15 - Safe Period Line"]
     #[inline(always)]
     pub fn safe_period_line(&mut self) -> SAFE_PERIOD_LINE_W<4> {
         SAFE_PERIOD_LINE_W::new(self)
     }
-    #[doc = "Bits 0:2 - Safe Period Mode"]
+    #[doc = "Bits 16:28 - Safe Period FIFO Number"]
     #[inline(always)]
-    pub fn safe_period_mode(&mut self) -> SAFE_PERIOD_MODE_W<0> {
-        SAFE_PERIOD_MODE_W::new(self)
+    pub fn safe_period_fifo_num(&mut self) -> SAFE_PERIOD_FIFO_NUM_W<16> {
+        SAFE_PERIOD_FIFO_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

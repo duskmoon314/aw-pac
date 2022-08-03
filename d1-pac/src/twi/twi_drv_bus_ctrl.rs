@@ -34,35 +34,38 @@ impl From<crate::W<TWI_DRV_BUS_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLK_COUNT_MODE_AW {
-    #[doc = "0: scl clock high period count on oscl"]
-    OSCL = 0,
-    #[doc = "1: scl clock high period count on iscl"]
-    ISCL = 1,
-}
-impl From<CLK_COUNT_MODE_AW> for bool {
-    #[inline(always)]
-    fn from(variant: CLK_COUNT_MODE_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `clk_count_mode` writer - "]
-pub type CLK_COUNT_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, CLK_COUNT_MODE_AW, O>;
-impl<'a, const O: u8> CLK_COUNT_MODE_W<'a, O> {
-    #[doc = "scl clock high period count on oscl"]
-    #[inline(always)]
-    pub fn oscl(self) -> &'a mut W {
-        self.variant(CLK_COUNT_MODE_AW::OSCL)
-    }
-    #[doc = "scl clock high period count on iscl"]
-    #[inline(always)]
-    pub fn iscl(self) -> &'a mut W {
-        self.variant(CLK_COUNT_MODE_AW::ISCL)
-    }
-}
+#[doc = "Field `sda_moe` reader - SDA manual output enable"]
+pub type SDA_MOE_R = crate::BitReader<bool>;
+#[doc = "Field `sda_moe` writer - SDA manual output enable"]
+pub type SDA_MOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+#[doc = "Field `scl_moe` reader - SCL manual output enable"]
+pub type SCL_MOE_R = crate::BitReader<bool>;
+#[doc = "Field `scl_moe` writer - SCL manual output enable"]
+pub type SCL_MOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+#[doc = "Field `sda_mov` reader - SDA manual output value"]
+pub type SDA_MOV_R = crate::BitReader<bool>;
+#[doc = "Field `sda_mov` writer - SDA manual output value"]
+pub type SDA_MOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+#[doc = "Field `scl_mov` reader - SCL manual output value"]
+pub type SCL_MOV_R = crate::BitReader<bool>;
+#[doc = "Field `scl_mov` writer - SCL manual output value"]
+pub type SCL_MOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+#[doc = "Field `sda_sta` reader - SDA current status"]
+pub type SDA_STA_R = crate::BitReader<bool>;
+#[doc = "Field `scl_sta` reader - SCL current status"]
+pub type SCL_STA_R = crate::BitReader<bool>;
+#[doc = "Field `clk_m` reader - "]
+pub type CLK_M_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `clk_m` writer - "]
+pub type CLK_M_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 4, O>;
+#[doc = "Field `clk_n` reader - "]
+pub type CLK_N_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `clk_n` writer - "]
+pub type CLK_N_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `clk_duty` reader - Setting duty cycle of clock as master"]
+pub type CLK_DUTY_R = crate::BitReader<CLK_DUTY_A>;
 #[doc = "Setting duty cycle of clock as master\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_DUTY_A {
@@ -77,8 +80,6 @@ impl From<CLK_DUTY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `clk_duty` reader - Setting duty cycle of clock as master"]
-pub type CLK_DUTY_R = crate::BitReader<CLK_DUTY_A>;
 impl CLK_DUTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -114,123 +115,122 @@ impl<'a, const O: u8> CLK_DUTY_W<'a, O> {
         self.variant(CLK_DUTY_A::P40)
     }
 }
-#[doc = "Field `clk_n` reader - "]
-pub type CLK_N_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `clk_n` writer - "]
-pub type CLK_N_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 3, O>;
-#[doc = "Field `clk_m` reader - "]
-pub type CLK_M_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `clk_m` writer - "]
-pub type CLK_M_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 4, O>;
-#[doc = "Field `scl_sta` reader - SCL current status"]
-pub type SCL_STA_R = crate::BitReader<bool>;
-#[doc = "Field `sda_sta` reader - SDA current status"]
-pub type SDA_STA_R = crate::BitReader<bool>;
-#[doc = "Field `scl_mov` reader - SCL manual output value"]
-pub type SCL_MOV_R = crate::BitReader<bool>;
-#[doc = "Field `scl_mov` writer - SCL manual output value"]
-pub type SCL_MOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
-#[doc = "Field `sda_mov` reader - SDA manual output value"]
-pub type SDA_MOV_R = crate::BitReader<bool>;
-#[doc = "Field `sda_mov` writer - SDA manual output value"]
-pub type SDA_MOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
-#[doc = "Field `scl_moe` reader - SCL manual output enable"]
-pub type SCL_MOE_R = crate::BitReader<bool>;
-#[doc = "Field `scl_moe` writer - SCL manual output enable"]
-pub type SCL_MOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
-#[doc = "Field `sda_moe` reader - SDA manual output enable"]
-pub type SDA_MOE_R = crate::BitReader<bool>;
-#[doc = "Field `sda_moe` writer - SDA manual output enable"]
-pub type SDA_MOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CLK_COUNT_MODE_AW {
+    #[doc = "0: scl clock high period count on oscl"]
+    OSCL = 0,
+    #[doc = "1: scl clock high period count on iscl"]
+    ISCL = 1,
+}
+impl From<CLK_COUNT_MODE_AW> for bool {
+    #[inline(always)]
+    fn from(variant: CLK_COUNT_MODE_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `clk_count_mode` writer - "]
+pub type CLK_COUNT_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, CLK_COUNT_MODE_AW, O>;
+impl<'a, const O: u8> CLK_COUNT_MODE_W<'a, O> {
+    #[doc = "scl clock high period count on oscl"]
+    #[inline(always)]
+    pub fn oscl(self) -> &'a mut W {
+        self.variant(CLK_COUNT_MODE_AW::OSCL)
+    }
+    #[doc = "scl clock high period count on iscl"]
+    #[inline(always)]
+    pub fn iscl(self) -> &'a mut W {
+        self.variant(CLK_COUNT_MODE_AW::ISCL)
+    }
+}
 impl R {
-    #[doc = "Bit 15 - Setting duty cycle of clock as master"]
+    #[doc = "Bit 0 - SDA manual output enable"]
     #[inline(always)]
-    pub fn clk_duty(&self) -> CLK_DUTY_R {
-        CLK_DUTY_R::new(((self.bits >> 15) & 1) != 0)
-    }
-    #[doc = "Bits 12:14"]
-    #[inline(always)]
-    pub fn clk_n(&self) -> CLK_N_R {
-        CLK_N_R::new(((self.bits >> 12) & 7) as u8)
-    }
-    #[doc = "Bits 8:11"]
-    #[inline(always)]
-    pub fn clk_m(&self) -> CLK_M_R {
-        CLK_M_R::new(((self.bits >> 8) & 0x0f) as u8)
-    }
-    #[doc = "Bit 7 - SCL current status"]
-    #[inline(always)]
-    pub fn scl_sta(&self) -> SCL_STA_R {
-        SCL_STA_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 6 - SDA current status"]
-    #[inline(always)]
-    pub fn sda_sta(&self) -> SDA_STA_R {
-        SDA_STA_R::new(((self.bits >> 6) & 1) != 0)
-    }
-    #[doc = "Bit 3 - SCL manual output value"]
-    #[inline(always)]
-    pub fn scl_mov(&self) -> SCL_MOV_R {
-        SCL_MOV_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2 - SDA manual output value"]
-    #[inline(always)]
-    pub fn sda_mov(&self) -> SDA_MOV_R {
-        SDA_MOV_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn sda_moe(&self) -> SDA_MOE_R {
+        SDA_MOE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - SCL manual output enable"]
     #[inline(always)]
     pub fn scl_moe(&self) -> SCL_MOE_R {
         SCL_MOE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - SDA manual output enable"]
+    #[doc = "Bit 2 - SDA manual output value"]
     #[inline(always)]
-    pub fn sda_moe(&self) -> SDA_MOE_R {
-        SDA_MOE_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 16"]
-    #[inline(always)]
-    pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W<16> {
-        CLK_COUNT_MODE_W::new(self)
-    }
-    #[doc = "Bit 15 - Setting duty cycle of clock as master"]
-    #[inline(always)]
-    pub fn clk_duty(&mut self) -> CLK_DUTY_W<15> {
-        CLK_DUTY_W::new(self)
-    }
-    #[doc = "Bits 12:14"]
-    #[inline(always)]
-    pub fn clk_n(&mut self) -> CLK_N_W<12> {
-        CLK_N_W::new(self)
-    }
-    #[doc = "Bits 8:11"]
-    #[inline(always)]
-    pub fn clk_m(&mut self) -> CLK_M_W<8> {
-        CLK_M_W::new(self)
+    pub fn sda_mov(&self) -> SDA_MOV_R {
+        SDA_MOV_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - SCL manual output value"]
     #[inline(always)]
-    pub fn scl_mov(&mut self) -> SCL_MOV_W<3> {
-        SCL_MOV_W::new(self)
+    pub fn scl_mov(&self) -> SCL_MOV_R {
+        SCL_MOV_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 2 - SDA manual output value"]
+    #[doc = "Bit 6 - SDA current status"]
     #[inline(always)]
-    pub fn sda_mov(&mut self) -> SDA_MOV_W<2> {
-        SDA_MOV_W::new(self)
+    pub fn sda_sta(&self) -> SDA_STA_R {
+        SDA_STA_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 7 - SCL current status"]
+    #[inline(always)]
+    pub fn scl_sta(&self) -> SCL_STA_R {
+        SCL_STA_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bits 8:11"]
+    #[inline(always)]
+    pub fn clk_m(&self) -> CLK_M_R {
+        CLK_M_R::new(((self.bits >> 8) & 0x0f) as u8)
+    }
+    #[doc = "Bits 12:14"]
+    #[inline(always)]
+    pub fn clk_n(&self) -> CLK_N_R {
+        CLK_N_R::new(((self.bits >> 12) & 7) as u8)
+    }
+    #[doc = "Bit 15 - Setting duty cycle of clock as master"]
+    #[inline(always)]
+    pub fn clk_duty(&self) -> CLK_DUTY_R {
+        CLK_DUTY_R::new(((self.bits >> 15) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - SDA manual output enable"]
+    #[inline(always)]
+    pub fn sda_moe(&mut self) -> SDA_MOE_W<0> {
+        SDA_MOE_W::new(self)
     }
     #[doc = "Bit 1 - SCL manual output enable"]
     #[inline(always)]
     pub fn scl_moe(&mut self) -> SCL_MOE_W<1> {
         SCL_MOE_W::new(self)
     }
-    #[doc = "Bit 0 - SDA manual output enable"]
+    #[doc = "Bit 2 - SDA manual output value"]
     #[inline(always)]
-    pub fn sda_moe(&mut self) -> SDA_MOE_W<0> {
-        SDA_MOE_W::new(self)
+    pub fn sda_mov(&mut self) -> SDA_MOV_W<2> {
+        SDA_MOV_W::new(self)
+    }
+    #[doc = "Bit 3 - SCL manual output value"]
+    #[inline(always)]
+    pub fn scl_mov(&mut self) -> SCL_MOV_W<3> {
+        SCL_MOV_W::new(self)
+    }
+    #[doc = "Bits 8:11"]
+    #[inline(always)]
+    pub fn clk_m(&mut self) -> CLK_M_W<8> {
+        CLK_M_W::new(self)
+    }
+    #[doc = "Bits 12:14"]
+    #[inline(always)]
+    pub fn clk_n(&mut self) -> CLK_N_W<12> {
+        CLK_N_W::new(self)
+    }
+    #[doc = "Bit 15 - Setting duty cycle of clock as master"]
+    #[inline(always)]
+    pub fn clk_duty(&mut self) -> CLK_DUTY_W<15> {
+        CLK_DUTY_W::new(self)
+    }
+    #[doc = "Bit 16"]
+    #[inline(always)]
+    pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W<16> {
+        CLK_COUNT_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

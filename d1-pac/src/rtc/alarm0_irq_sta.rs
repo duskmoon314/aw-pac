@@ -34,6 +34,8 @@ impl From<crate::W<ALARM0_IRQ_STA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `alarm0_irq_pend` reader - Alarm 0 IRQ Pending bit"]
+pub type ALARM0_IRQ_PEND_R = crate::BitReader<ALARM0_IRQ_PEND_A>;
 #[doc = "Alarm 0 IRQ Pending bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALARM0_IRQ_PEND_A {
@@ -48,8 +50,6 @@ impl From<ALARM0_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `alarm0_irq_pend` reader - Alarm 0 IRQ Pending bit"]
-pub type ALARM0_IRQ_PEND_R = crate::BitReader<ALARM0_IRQ_PEND_A>;
 impl ALARM0_IRQ_PEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,7 +34,109 @@ impl From<crate::W<TVE_DAC_MAP_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_sel` reader - "]
+pub type DAC_SEL_R = crate::FieldReader<u8, DAC_SEL_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum DAC_SEL_A {
+    #[doc = "1: TVE0"]
+    TVE0 = 1,
+}
+impl From<DAC_SEL_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DAC_SEL_A) -> Self {
+        variant as _
+    }
+}
+impl DAC_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<DAC_SEL_A> {
+        match self.bits {
+            1 => Some(DAC_SEL_A::TVE0),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `TVE0`"]
+    #[inline(always)]
+    pub fn is_tve0(&self) -> bool {
+        *self == DAC_SEL_A::TVE0
+    }
+}
+#[doc = "Field `dac_sel` writer - "]
+pub type DAC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TVE_DAC_MAP_SPEC, u8, DAC_SEL_A, 2, O>;
+impl<'a, const O: u8> DAC_SEL_W<'a, O> {
+    #[doc = "TVE0"]
+    #[inline(always)]
+    pub fn tve0(self) -> &'a mut W {
+        self.variant(DAC_SEL_A::TVE0)
+    }
+}
+#[doc = "Field `dac_map` reader - "]
+pub type DAC_MAP_R = crate::FieldReader<u8, DAC_MAP_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum DAC_MAP_A {
+    #[doc = "0: OUT0"]
+    OUT0 = 0,
+}
+impl From<DAC_MAP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: DAC_MAP_A) -> Self {
+        variant as _
+    }
+}
+impl DAC_MAP_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<DAC_MAP_A> {
+        match self.bits {
+            0 => Some(DAC_MAP_A::OUT0),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `OUT0`"]
+    #[inline(always)]
+    pub fn is_out0(&self) -> bool {
+        *self == DAC_MAP_A::OUT0
+    }
+}
+#[doc = "Field `dac_map` writer - "]
+pub type DAC_MAP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TVE_DAC_MAP_SPEC, u8, DAC_MAP_A, 3, O>;
+impl<'a, const O: u8> DAC_MAP_W<'a, O> {
+    #[doc = "OUT0"]
+    #[inline(always)]
+    pub fn out0(self) -> &'a mut W {
+        self.variant(DAC_MAP_A::OUT0)
+    }
+}
+impl R {
+    #[doc = "Bits 0:1"]
+    #[inline(always)]
+    pub fn dac_sel(&self) -> DAC_SEL_R {
+        DAC_SEL_R::new((self.bits & 3) as u8)
+    }
+    #[doc = "Bits 4:6"]
+    #[inline(always)]
+    pub fn dac_map(&self) -> DAC_MAP_R {
+        DAC_MAP_R::new(((self.bits >> 4) & 7) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:1"]
+    #[inline(always)]
+    pub fn dac_sel(&mut self) -> DAC_SEL_W<0> {
+        DAC_SEL_W::new(self)
+    }
+    #[doc = "Bits 4:6"]
+    #[inline(always)]
+    pub fn dac_map(&mut self) -> DAC_MAP_W<4> {
+        DAC_MAP_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

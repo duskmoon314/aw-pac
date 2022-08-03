@@ -34,6 +34,8 @@ impl From<crate::W<TV_PIXELDEPTH_MODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `colorbar_pd_mode` reader - Colorbar Pixeldepth mode"]
+pub type COLORBAR_PD_MODE_R = crate::BitReader<COLORBAR_PD_MODE_A>;
 #[doc = "Colorbar Pixeldepth mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum COLORBAR_PD_MODE_A {
@@ -48,8 +50,6 @@ impl From<COLORBAR_PD_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `colorbar_pd_mode` reader - Colorbar Pixeldepth mode"]
-pub type COLORBAR_PD_MODE_R = crate::BitReader<COLORBAR_PD_MODE_A>;
 impl COLORBAR_PD_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,37 +34,37 @@ impl From<crate::W<LCD_BASIC0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `width_x` reader - Panel width is X+1"]
-pub type WIDTH_X_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `width_x` writer - Panel width is X+1"]
-pub type WIDTH_X_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC0_SPEC, u16, u16, 12, O>;
 #[doc = "Field `height_y` reader - Panel height is Y+1"]
 pub type HEIGHT_Y_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `height_y` writer - Panel height is Y+1"]
 pub type HEIGHT_Y_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_BASIC0_SPEC, u16, u16, 12, O>;
+#[doc = "Field `width_x` reader - Panel width is X+1"]
+pub type WIDTH_X_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `width_x` writer - Panel width is X+1"]
+pub type WIDTH_X_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC0_SPEC, u16, u16, 12, O>;
 impl R {
-    #[doc = "Bits 16:27 - Panel width is X+1"]
-    #[inline(always)]
-    pub fn width_x(&self) -> WIDTH_X_R {
-        WIDTH_X_R::new(((self.bits >> 16) & 0x0fff) as u16)
-    }
     #[doc = "Bits 0:11 - Panel height is Y+1"]
     #[inline(always)]
     pub fn height_y(&self) -> HEIGHT_Y_R {
         HEIGHT_Y_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:27 - Panel width is X+1"]
     #[inline(always)]
-    pub fn width_x(&mut self) -> WIDTH_X_W<16> {
-        WIDTH_X_W::new(self)
+    pub fn width_x(&self) -> WIDTH_X_R {
+        WIDTH_X_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Panel height is Y+1"]
     #[inline(always)]
     pub fn height_y(&mut self) -> HEIGHT_Y_W<0> {
         HEIGHT_Y_W::new(self)
+    }
+    #[doc = "Bits 16:27 - Panel width is X+1"]
+    #[inline(always)]
+    pub fn width_x(&mut self) -> WIDTH_X_W<16> {
+        WIDTH_X_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

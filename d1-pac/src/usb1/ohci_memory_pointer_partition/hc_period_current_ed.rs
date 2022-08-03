@@ -34,23 +34,23 @@ impl From<crate::W<HC_PERIOD_CURRENT_ED_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pced_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
+pub type PCED_3_0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `pced_31_4` reader - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
 pub type PCED_31_4_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `pced_31_4` writer - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
 pub type PCED_31_4_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_PERIOD_CURRENT_ED_SPEC, u32, u32, 28, O>;
-#[doc = "Field `pced_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
-pub type PCED_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
-    #[doc = "Bits 4:31 - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
-    #[inline(always)]
-    pub fn pced_31_4(&self) -> PCED_31_4_R {
-        PCED_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
-    }
     #[doc = "Bits 0:3 - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
     #[inline(always)]
     pub fn pced_3_0(&self) -> PCED_3_0_R {
         PCED_3_0_R::new((self.bits & 0x0f) as u8)
+    }
+    #[doc = "Bits 4:31 - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
+    #[inline(always)]
+    pub fn pced_31_4(&self) -> PCED_31_4_R {
+        PCED_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
     }
 }
 impl W {

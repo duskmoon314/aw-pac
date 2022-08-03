@@ -34,212 +34,115 @@ impl From<crate::W<TWI_DRV_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Start transmission\n\nValue on reset: 0"]
+#[doc = "Field `twi_drv_en` reader - "]
+pub type TWI_DRV_EN_R = crate::BitReader<TWI_DRV_EN_A>;
+#[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum START_TRAN_A {
+pub enum TWI_DRV_EN_A {
     #[doc = "0: `0`"]
-    IDLE = 0,
+    DISABLE = 0,
     #[doc = "1: `1`"]
-    START = 1,
+    ENABLE = 1,
 }
-impl From<START_TRAN_A> for bool {
+impl From<TWI_DRV_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: START_TRAN_A) -> Self {
+    fn from(variant: TWI_DRV_EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `start_tran` reader - Start transmission"]
-pub type START_TRAN_R = crate::BitReader<START_TRAN_A>;
-impl START_TRAN_R {
+impl TWI_DRV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> START_TRAN_A {
+    pub fn variant(&self) -> TWI_DRV_EN_A {
         match self.bits {
-            false => START_TRAN_A::IDLE,
-            true => START_TRAN_A::START,
+            false => TWI_DRV_EN_A::DISABLE,
+            true => TWI_DRV_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == START_TRAN_A::IDLE
+    pub fn is_disable(&self) -> bool {
+        *self == TWI_DRV_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == START_TRAN_A::START
+    pub fn is_enable(&self) -> bool {
+        *self == TWI_DRV_EN_A::ENABLE
     }
 }
-#[doc = "Field `start_tran` writer - Start transmission"]
-pub type START_TRAN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, START_TRAN_A, O>;
-impl<'a, const O: u8> START_TRAN_W<'a, O> {
+#[doc = "Field `twi_drv_en` writer - "]
+pub type TWI_DRV_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, TWI_DRV_EN_A, O>;
+impl<'a, const O: u8> TWI_DRV_EN_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn idle(self) -> &'a mut W {
-        self.variant(START_TRAN_A::IDLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TWI_DRV_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
-        self.variant(START_TRAN_A::START)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TWI_DRV_EN_A::ENABLE)
     }
 }
-#[doc = "Restart mode\n\nValue on reset: 0"]
+#[doc = "Field `soft_reset` reader - Software reset"]
+pub type SOFT_RESET_R = crate::BitReader<SOFT_RESET_A>;
+#[doc = "Software reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESTART_MODE_A {
+pub enum SOFT_RESET_A {
     #[doc = "0: `0`"]
-    RESTART = 0,
+    NORMAL = 0,
     #[doc = "1: `1`"]
-    STOP_RESTART = 1,
+    RESET = 1,
 }
-impl From<RESTART_MODE_A> for bool {
+impl From<SOFT_RESET_A> for bool {
     #[inline(always)]
-    fn from(variant: RESTART_MODE_A) -> Self {
+    fn from(variant: SOFT_RESET_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `restart_mode` reader - Restart mode"]
-pub type RESTART_MODE_R = crate::BitReader<RESTART_MODE_A>;
-impl RESTART_MODE_R {
+impl SOFT_RESET_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESTART_MODE_A {
+    pub fn variant(&self) -> SOFT_RESET_A {
         match self.bits {
-            false => RESTART_MODE_A::RESTART,
-            true => RESTART_MODE_A::STOP_RESTART,
+            false => SOFT_RESET_A::NORMAL,
+            true => SOFT_RESET_A::RESET,
         }
     }
-    #[doc = "Checks if the value of the field is `RESTART`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_restart(&self) -> bool {
-        *self == RESTART_MODE_A::RESTART
+    pub fn is_normal(&self) -> bool {
+        *self == SOFT_RESET_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `STOP_RESTART`"]
+    #[doc = "Checks if the value of the field is `RESET`"]
     #[inline(always)]
-    pub fn is_stop_restart(&self) -> bool {
-        *self == RESTART_MODE_A::STOP_RESTART
+    pub fn is_reset(&self) -> bool {
+        *self == SOFT_RESET_A::RESET
     }
 }
-#[doc = "Field `restart_mode` writer - Restart mode"]
-pub type RESTART_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, RESTART_MODE_A, O>;
-impl<'a, const O: u8> RESTART_MODE_W<'a, O> {
+#[doc = "Field `soft_reset` writer - Software reset"]
+pub type SOFT_RESET_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, SOFT_RESET_A, O>;
+impl<'a, const O: u8> SOFT_RESET_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn restart(self) -> &'a mut W {
-        self.variant(RESTART_MODE_A::RESTART)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(SOFT_RESET_A::NORMAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn stop_restart(self) -> &'a mut W {
-        self.variant(RESTART_MODE_A::STOP_RESTART)
+    pub fn reset(self) -> &'a mut W {
+        self.variant(SOFT_RESET_A::RESET)
     }
 }
-#[doc = "Read transition mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READ_TRAN_MODE_A {
-    #[doc = "0: `0`"]
-    SEND = 0,
-    #[doc = "1: `1`"]
-    NOT_SEND = 1,
-}
-impl From<READ_TRAN_MODE_A> for bool {
-    #[inline(always)]
-    fn from(variant: READ_TRAN_MODE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `read_tran_mode` reader - Read transition mode"]
-pub type READ_TRAN_MODE_R = crate::BitReader<READ_TRAN_MODE_A>;
-impl READ_TRAN_MODE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> READ_TRAN_MODE_A {
-        match self.bits {
-            false => READ_TRAN_MODE_A::SEND,
-            true => READ_TRAN_MODE_A::NOT_SEND,
-        }
-    }
-    #[doc = "Checks if the value of the field is `SEND`"]
-    #[inline(always)]
-    pub fn is_send(&self) -> bool {
-        *self == READ_TRAN_MODE_A::SEND
-    }
-    #[doc = "Checks if the value of the field is `NOT_SEND`"]
-    #[inline(always)]
-    pub fn is_not_send(&self) -> bool {
-        *self == READ_TRAN_MODE_A::NOT_SEND
-    }
-}
-#[doc = "Field `read_tran_mode` writer - Read transition mode"]
-pub type READ_TRAN_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, READ_TRAN_MODE_A, O>;
-impl<'a, const O: u8> READ_TRAN_MODE_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn send(self) -> &'a mut W {
-        self.variant(READ_TRAN_MODE_A::SEND)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn not_send(self) -> &'a mut W {
-        self.variant(READ_TRAN_MODE_A::NOT_SEND)
-    }
-}
-#[doc = "Transition result\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum TRAN_RESULT_A {
-    #[doc = "0: `0`"]
-    OK = 0,
-    #[doc = "1: `1`"]
-    FAIL = 1,
-}
-impl From<TRAN_RESULT_A> for u8 {
-    #[inline(always)]
-    fn from(variant: TRAN_RESULT_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `tran_result` reader - Transition result"]
-pub type TRAN_RESULT_R = crate::FieldReader<u8, TRAN_RESULT_A>;
-impl TRAN_RESULT_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<TRAN_RESULT_A> {
-        match self.bits {
-            0 => Some(TRAN_RESULT_A::OK),
-            1 => Some(TRAN_RESULT_A::FAIL),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `OK`"]
-    #[inline(always)]
-    pub fn is_ok(&self) -> bool {
-        *self == TRAN_RESULT_A::OK
-    }
-    #[doc = "Checks if the value of the field is `FAIL`"]
-    #[inline(always)]
-    pub fn is_fail(&self) -> bool {
-        *self == TRAN_RESULT_A::FAIL
-    }
-}
-#[doc = "Field `tran_result` writer - Transition result"]
-pub type TRAN_RESULT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, TRAN_RESULT_A, 4, O>;
-impl<'a, const O: u8> TRAN_RESULT_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn ok(self) -> &'a mut W {
-        self.variant(TRAN_RESULT_A::OK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn fail(self) -> &'a mut W {
-        self.variant(TRAN_RESULT_A::FAIL)
-    }
-}
+#[doc = "Field `timeout_n` reader - Timeout number"]
+pub type TIMEOUT_N_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `timeout_n` writer - Timeout number"]
+pub type TIMEOUT_N_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `twi_sta` reader - TWI status"]
+pub type TWI_STA_R = crate::FieldReader<u8, TWI_STA_A>;
 #[doc = "TWI status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -277,8 +180,6 @@ impl From<TWI_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `twi_sta` reader - TWI status"]
-pub type TWI_STA_R = crate::FieldReader<u8, TWI_STA_A>;
 impl TWI_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -366,190 +267,289 @@ impl TWI_STA_R {
         *self == TWI_STA_A::T_S9SC
     }
 }
-#[doc = "Field `timeout_n` reader - Timeout number"]
-pub type TIMEOUT_N_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `timeout_n` writer - Timeout number"]
-pub type TIMEOUT_N_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, u8, 8, O>;
-#[doc = "Software reset\n\nValue on reset: 0"]
+#[doc = "Field `tran_result` reader - Transition result"]
+pub type TRAN_RESULT_R = crate::FieldReader<u8, TRAN_RESULT_A>;
+#[doc = "Transition result\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SOFT_RESET_A {
+#[repr(u8)]
+pub enum TRAN_RESULT_A {
     #[doc = "0: `0`"]
-    NORMAL = 0,
+    OK = 0,
     #[doc = "1: `1`"]
-    RESET = 1,
+    FAIL = 1,
 }
-impl From<SOFT_RESET_A> for bool {
+impl From<TRAN_RESULT_A> for u8 {
     #[inline(always)]
-    fn from(variant: SOFT_RESET_A) -> Self {
-        variant as u8 != 0
+    fn from(variant: TRAN_RESULT_A) -> Self {
+        variant as _
     }
 }
-#[doc = "Field `soft_reset` reader - Software reset"]
-pub type SOFT_RESET_R = crate::BitReader<SOFT_RESET_A>;
-impl SOFT_RESET_R {
+impl TRAN_RESULT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SOFT_RESET_A {
+    pub fn variant(&self) -> Option<TRAN_RESULT_A> {
         match self.bits {
-            false => SOFT_RESET_A::NORMAL,
-            true => SOFT_RESET_A::RESET,
+            0 => Some(TRAN_RESULT_A::OK),
+            1 => Some(TRAN_RESULT_A::FAIL),
+            _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Checks if the value of the field is `OK`"]
     #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == SOFT_RESET_A::NORMAL
+    pub fn is_ok(&self) -> bool {
+        *self == TRAN_RESULT_A::OK
     }
-    #[doc = "Checks if the value of the field is `RESET`"]
+    #[doc = "Checks if the value of the field is `FAIL`"]
     #[inline(always)]
-    pub fn is_reset(&self) -> bool {
-        *self == SOFT_RESET_A::RESET
+    pub fn is_fail(&self) -> bool {
+        *self == TRAN_RESULT_A::FAIL
     }
 }
-#[doc = "Field `soft_reset` writer - Software reset"]
-pub type SOFT_RESET_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, SOFT_RESET_A, O>;
-impl<'a, const O: u8> SOFT_RESET_W<'a, O> {
+#[doc = "Field `tran_result` writer - Transition result"]
+pub type TRAN_RESULT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_CTRL_SPEC, u8, TRAN_RESULT_A, 4, O>;
+impl<'a, const O: u8> TRAN_RESULT_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(SOFT_RESET_A::NORMAL)
+    pub fn ok(self) -> &'a mut W {
+        self.variant(TRAN_RESULT_A::OK)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn reset(self) -> &'a mut W {
-        self.variant(SOFT_RESET_A::RESET)
+    pub fn fail(self) -> &'a mut W {
+        self.variant(TRAN_RESULT_A::FAIL)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
+#[doc = "Field `read_tran_mode` reader - Read transition mode"]
+pub type READ_TRAN_MODE_R = crate::BitReader<READ_TRAN_MODE_A>;
+#[doc = "Read transition mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TWI_DRV_EN_A {
+pub enum READ_TRAN_MODE_A {
     #[doc = "0: `0`"]
-    DISABLE = 0,
+    SEND = 0,
     #[doc = "1: `1`"]
-    ENABLE = 1,
+    NOT_SEND = 1,
 }
-impl From<TWI_DRV_EN_A> for bool {
+impl From<READ_TRAN_MODE_A> for bool {
     #[inline(always)]
-    fn from(variant: TWI_DRV_EN_A) -> Self {
+    fn from(variant: READ_TRAN_MODE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `twi_drv_en` reader - "]
-pub type TWI_DRV_EN_R = crate::BitReader<TWI_DRV_EN_A>;
-impl TWI_DRV_EN_R {
+impl READ_TRAN_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TWI_DRV_EN_A {
+    pub fn variant(&self) -> READ_TRAN_MODE_A {
         match self.bits {
-            false => TWI_DRV_EN_A::DISABLE,
-            true => TWI_DRV_EN_A::ENABLE,
+            false => READ_TRAN_MODE_A::SEND,
+            true => READ_TRAN_MODE_A::NOT_SEND,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Checks if the value of the field is `SEND`"]
     #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TWI_DRV_EN_A::DISABLE
+    pub fn is_send(&self) -> bool {
+        *self == READ_TRAN_MODE_A::SEND
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Checks if the value of the field is `NOT_SEND`"]
     #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TWI_DRV_EN_A::ENABLE
+    pub fn is_not_send(&self) -> bool {
+        *self == READ_TRAN_MODE_A::NOT_SEND
     }
 }
-#[doc = "Field `twi_drv_en` writer - "]
-pub type TWI_DRV_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, TWI_DRV_EN_A, O>;
-impl<'a, const O: u8> TWI_DRV_EN_W<'a, O> {
+#[doc = "Field `read_tran_mode` writer - Read transition mode"]
+pub type READ_TRAN_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, READ_TRAN_MODE_A, O>;
+impl<'a, const O: u8> READ_TRAN_MODE_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TWI_DRV_EN_A::DISABLE)
+    pub fn send(self) -> &'a mut W {
+        self.variant(READ_TRAN_MODE_A::SEND)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TWI_DRV_EN_A::ENABLE)
+    pub fn not_send(self) -> &'a mut W {
+        self.variant(READ_TRAN_MODE_A::NOT_SEND)
+    }
+}
+#[doc = "Field `restart_mode` reader - Restart mode"]
+pub type RESTART_MODE_R = crate::BitReader<RESTART_MODE_A>;
+#[doc = "Restart mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RESTART_MODE_A {
+    #[doc = "0: `0`"]
+    RESTART = 0,
+    #[doc = "1: `1`"]
+    STOP_RESTART = 1,
+}
+impl From<RESTART_MODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: RESTART_MODE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RESTART_MODE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RESTART_MODE_A {
+        match self.bits {
+            false => RESTART_MODE_A::RESTART,
+            true => RESTART_MODE_A::STOP_RESTART,
+        }
+    }
+    #[doc = "Checks if the value of the field is `RESTART`"]
+    #[inline(always)]
+    pub fn is_restart(&self) -> bool {
+        *self == RESTART_MODE_A::RESTART
+    }
+    #[doc = "Checks if the value of the field is `STOP_RESTART`"]
+    #[inline(always)]
+    pub fn is_stop_restart(&self) -> bool {
+        *self == RESTART_MODE_A::STOP_RESTART
+    }
+}
+#[doc = "Field `restart_mode` writer - Restart mode"]
+pub type RESTART_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, RESTART_MODE_A, O>;
+impl<'a, const O: u8> RESTART_MODE_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn restart(self) -> &'a mut W {
+        self.variant(RESTART_MODE_A::RESTART)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn stop_restart(self) -> &'a mut W {
+        self.variant(RESTART_MODE_A::STOP_RESTART)
+    }
+}
+#[doc = "Field `start_tran` reader - Start transmission"]
+pub type START_TRAN_R = crate::BitReader<START_TRAN_A>;
+#[doc = "Start transmission\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum START_TRAN_A {
+    #[doc = "0: `0`"]
+    IDLE = 0,
+    #[doc = "1: `1`"]
+    START = 1,
+}
+impl From<START_TRAN_A> for bool {
+    #[inline(always)]
+    fn from(variant: START_TRAN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl START_TRAN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> START_TRAN_A {
+        match self.bits {
+            false => START_TRAN_A::IDLE,
+            true => START_TRAN_A::START,
+        }
+    }
+    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == START_TRAN_A::IDLE
+    }
+    #[doc = "Checks if the value of the field is `START`"]
+    #[inline(always)]
+    pub fn is_start(&self) -> bool {
+        *self == START_TRAN_A::START
+    }
+}
+#[doc = "Field `start_tran` writer - Start transmission"]
+pub type START_TRAN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_CTRL_SPEC, START_TRAN_A, O>;
+impl<'a, const O: u8> START_TRAN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn idle(self) -> &'a mut W {
+        self.variant(START_TRAN_A::IDLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn start(self) -> &'a mut W {
+        self.variant(START_TRAN_A::START)
     }
 }
 impl R {
-    #[doc = "Bit 31 - Start transmission"]
+    #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn start_tran(&self) -> START_TRAN_R {
-        START_TRAN_R::new(((self.bits >> 31) & 1) != 0)
-    }
-    #[doc = "Bit 29 - Restart mode"]
-    #[inline(always)]
-    pub fn restart_mode(&self) -> RESTART_MODE_R {
-        RESTART_MODE_R::new(((self.bits >> 29) & 1) != 0)
-    }
-    #[doc = "Bit 28 - Read transition mode"]
-    #[inline(always)]
-    pub fn read_tran_mode(&self) -> READ_TRAN_MODE_R {
-        READ_TRAN_MODE_R::new(((self.bits >> 28) & 1) != 0)
-    }
-    #[doc = "Bits 24:27 - Transition result"]
-    #[inline(always)]
-    pub fn tran_result(&self) -> TRAN_RESULT_R {
-        TRAN_RESULT_R::new(((self.bits >> 24) & 0x0f) as u8)
-    }
-    #[doc = "Bits 16:23 - TWI status"]
-    #[inline(always)]
-    pub fn twi_sta(&self) -> TWI_STA_R {
-        TWI_STA_R::new(((self.bits >> 16) & 0xff) as u8)
-    }
-    #[doc = "Bits 8:15 - Timeout number"]
-    #[inline(always)]
-    pub fn timeout_n(&self) -> TIMEOUT_N_R {
-        TIMEOUT_N_R::new(((self.bits >> 8) & 0xff) as u8)
+    pub fn twi_drv_en(&self) -> TWI_DRV_EN_R {
+        TWI_DRV_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Software reset"]
     #[inline(always)]
     pub fn soft_reset(&self) -> SOFT_RESET_R {
         SOFT_RESET_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0"]
+    #[doc = "Bits 8:15 - Timeout number"]
     #[inline(always)]
-    pub fn twi_drv_en(&self) -> TWI_DRV_EN_R {
-        TWI_DRV_EN_R::new((self.bits & 1) != 0)
+    pub fn timeout_n(&self) -> TIMEOUT_N_R {
+        TIMEOUT_N_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-}
-impl W {
-    #[doc = "Bit 31 - Start transmission"]
+    #[doc = "Bits 16:23 - TWI status"]
     #[inline(always)]
-    pub fn start_tran(&mut self) -> START_TRAN_W<31> {
-        START_TRAN_W::new(self)
-    }
-    #[doc = "Bit 29 - Restart mode"]
-    #[inline(always)]
-    pub fn restart_mode(&mut self) -> RESTART_MODE_W<29> {
-        RESTART_MODE_W::new(self)
-    }
-    #[doc = "Bit 28 - Read transition mode"]
-    #[inline(always)]
-    pub fn read_tran_mode(&mut self) -> READ_TRAN_MODE_W<28> {
-        READ_TRAN_MODE_W::new(self)
+    pub fn twi_sta(&self) -> TWI_STA_R {
+        TWI_STA_R::new(((self.bits >> 16) & 0xff) as u8)
     }
     #[doc = "Bits 24:27 - Transition result"]
     #[inline(always)]
-    pub fn tran_result(&mut self) -> TRAN_RESULT_W<24> {
-        TRAN_RESULT_W::new(self)
+    pub fn tran_result(&self) -> TRAN_RESULT_R {
+        TRAN_RESULT_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
-    #[doc = "Bits 8:15 - Timeout number"]
+    #[doc = "Bit 28 - Read transition mode"]
     #[inline(always)]
-    pub fn timeout_n(&mut self) -> TIMEOUT_N_W<8> {
-        TIMEOUT_N_W::new(self)
+    pub fn read_tran_mode(&self) -> READ_TRAN_MODE_R {
+        READ_TRAN_MODE_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    #[doc = "Bit 29 - Restart mode"]
+    #[inline(always)]
+    pub fn restart_mode(&self) -> RESTART_MODE_R {
+        RESTART_MODE_R::new(((self.bits >> 29) & 1) != 0)
+    }
+    #[doc = "Bit 31 - Start transmission"]
+    #[inline(always)]
+    pub fn start_tran(&self) -> START_TRAN_R {
+        START_TRAN_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn twi_drv_en(&mut self) -> TWI_DRV_EN_W<0> {
+        TWI_DRV_EN_W::new(self)
     }
     #[doc = "Bit 1 - Software reset"]
     #[inline(always)]
     pub fn soft_reset(&mut self) -> SOFT_RESET_W<1> {
         SOFT_RESET_W::new(self)
     }
-    #[doc = "Bit 0"]
+    #[doc = "Bits 8:15 - Timeout number"]
     #[inline(always)]
-    pub fn twi_drv_en(&mut self) -> TWI_DRV_EN_W<0> {
-        TWI_DRV_EN_W::new(self)
+    pub fn timeout_n(&mut self) -> TIMEOUT_N_W<8> {
+        TIMEOUT_N_W::new(self)
+    }
+    #[doc = "Bits 24:27 - Transition result"]
+    #[inline(always)]
+    pub fn tran_result(&mut self) -> TRAN_RESULT_W<24> {
+        TRAN_RESULT_W::new(self)
+    }
+    #[doc = "Bit 28 - Read transition mode"]
+    #[inline(always)]
+    pub fn read_tran_mode(&mut self) -> READ_TRAN_MODE_W<28> {
+        READ_TRAN_MODE_W::new(self)
+    }
+    #[doc = "Bit 29 - Restart mode"]
+    #[inline(always)]
+    pub fn restart_mode(&mut self) -> RESTART_MODE_W<29> {
+        RESTART_MODE_W::new(self)
+    }
+    #[doc = "Bit 31 - Start transmission"]
+    #[inline(always)]
+    pub fn start_tran(&mut self) -> START_TRAN_W<31> {
+        START_TRAN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

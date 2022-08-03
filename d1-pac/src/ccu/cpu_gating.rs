@@ -34,6 +34,13 @@ impl From<crate::W<CPU_GATING_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `cpu_gating_field` reader - CPU Gating Field"]
+pub type CPU_GATING_FIELD_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `cpu_gating_field` writer - CPU Gating Field"]
+pub type CPU_GATING_FIELD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CPU_GATING_SPEC, u16, u16, 16, O>;
+#[doc = "Field `cpu_gating` reader - Gating Special Clock"]
+pub type CPU_GATING_R = crate::BitReader<CPU_GATING_A>;
 #[doc = "Gating Special Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CPU_GATING_A {
@@ -48,8 +55,6 @@ impl From<CPU_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `cpu_gating` reader - Gating Special Clock"]
-pub type CPU_GATING_R = crate::BitReader<CPU_GATING_A>;
 impl CPU_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,33 +90,28 @@ impl<'a, const O: u8> CPU_GATING_W<'a, O> {
         self.variant(CPU_GATING_A::ON)
     }
 }
-#[doc = "Field `cpu_gating_field` reader - CPU Gating Field"]
-pub type CPU_GATING_FIELD_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `cpu_gating_field` writer - CPU Gating Field"]
-pub type CPU_GATING_FIELD_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CPU_GATING_SPEC, u16, u16, 16, O>;
 impl R {
-    #[doc = "Bit 31 - Gating Special Clock"]
-    #[inline(always)]
-    pub fn cpu_gating(&self) -> CPU_GATING_R {
-        CPU_GATING_R::new(((self.bits >> 31) & 1) != 0)
-    }
     #[doc = "Bits 0:15 - CPU Gating Field"]
     #[inline(always)]
     pub fn cpu_gating_field(&self) -> CPU_GATING_FIELD_R {
         CPU_GATING_FIELD_R::new((self.bits & 0xffff) as u16)
     }
-}
-impl W {
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
-    pub fn cpu_gating(&mut self) -> CPU_GATING_W<31> {
-        CPU_GATING_W::new(self)
+    pub fn cpu_gating(&self) -> CPU_GATING_R {
+        CPU_GATING_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:15 - CPU Gating Field"]
     #[inline(always)]
     pub fn cpu_gating_field(&mut self) -> CPU_GATING_FIELD_W<0> {
         CPU_GATING_FIELD_W::new(self)
+    }
+    #[doc = "Bit 31 - Gating Special Clock"]
+    #[inline(always)]
+    pub fn cpu_gating(&mut self) -> CPU_GATING_W<31> {
+        CPU_GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

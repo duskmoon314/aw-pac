@@ -34,85 +34,12 @@ impl From<crate::W<APB_CLK_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum CLK_SRC_SEL_A {
-    #[doc = "0: `0`"]
-    HOSC = 0,
-    #[doc = "1: `1`"]
-    CLK32K = 1,
-    #[doc = "2: `10`"]
-    PSI_CLK = 2,
-    #[doc = "3: `11`"]
-    PLL_PERI_1X = 3,
-}
-impl From<CLK_SRC_SEL_A> for u8 {
-    #[inline(always)]
-    fn from(variant: CLK_SRC_SEL_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
-pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
-impl CLK_SRC_SEL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CLK_SRC_SEL_A {
-        match self.bits {
-            0 => CLK_SRC_SEL_A::HOSC,
-            1 => CLK_SRC_SEL_A::CLK32K,
-            2 => CLK_SRC_SEL_A::PSI_CLK,
-            3 => CLK_SRC_SEL_A::PLL_PERI_1X,
-            _ => unreachable!(),
-        }
-    }
-    #[doc = "Checks if the value of the field is `HOSC`"]
-    #[inline(always)]
-    pub fn is_hosc(&self) -> bool {
-        *self == CLK_SRC_SEL_A::HOSC
-    }
-    #[doc = "Checks if the value of the field is `CLK32K`"]
-    #[inline(always)]
-    pub fn is_clk32k(&self) -> bool {
-        *self == CLK_SRC_SEL_A::CLK32K
-    }
-    #[doc = "Checks if the value of the field is `PSI_CLK`"]
-    #[inline(always)]
-    pub fn is_psi_clk(&self) -> bool {
-        *self == CLK_SRC_SEL_A::PSI_CLK
-    }
-    #[doc = "Checks if the value of the field is `PLL_PERI_1X`"]
-    #[inline(always)]
-    pub fn is_pll_peri_1x(&self) -> bool {
-        *self == CLK_SRC_SEL_A::PLL_PERI_1X
-    }
-}
-#[doc = "Field `clk_src_sel` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, APB_CLK_SPEC, u8, CLK_SRC_SEL_A, 2, O>;
-impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn hosc(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::HOSC)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn clk32k(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::CLK32K)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn psi_clk(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::PSI_CLK)
-    }
-    #[doc = "`11`"]
-    #[inline(always)]
-    pub fn pll_peri_1x(self) -> &'a mut W {
-        self.variant(CLK_SRC_SEL_A::PLL_PERI_1X)
-    }
-}
+#[doc = "Field `factor_m` reader - Factor M"]
+pub type FACTOR_M_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `factor_m` writer - Factor M"]
+pub type FACTOR_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, APB_CLK_SPEC, u8, u8, 5, O>;
+#[doc = "Field `factor_n` reader - Factor N"]
+pub type FACTOR_N_R = crate::FieldReader<u8, FACTOR_N_A>;
 #[doc = "Factor N\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -132,8 +59,6 @@ impl From<FACTOR_N_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `factor_n` reader - Factor N"]
-pub type FACTOR_N_R = crate::FieldReader<u8, FACTOR_N_A>;
 impl FACTOR_N_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -192,42 +117,117 @@ impl<'a, const O: u8> FACTOR_N_W<'a, O> {
         self.variant(FACTOR_N_A::N8)
     }
 }
-#[doc = "Field `factor_m` reader - Factor M"]
-pub type FACTOR_M_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `factor_m` writer - Factor M"]
-pub type FACTOR_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, APB_CLK_SPEC, u8, u8, 5, O>;
-impl R {
-    #[doc = "Bits 24:25 - Clock Source Select"]
+#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
+pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
+#[doc = "Clock Source Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum CLK_SRC_SEL_A {
+    #[doc = "0: `0`"]
+    HOSC = 0,
+    #[doc = "1: `1`"]
+    CLK32K = 1,
+    #[doc = "2: `10`"]
+    PSI_CLK = 2,
+    #[doc = "3: `11`"]
+    PLL_PERI_1X = 3,
+}
+impl From<CLK_SRC_SEL_A> for u8 {
     #[inline(always)]
-    pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 24) & 3) as u8)
+    fn from(variant: CLK_SRC_SEL_A) -> Self {
+        variant as _
+    }
+}
+impl CLK_SRC_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLK_SRC_SEL_A {
+        match self.bits {
+            0 => CLK_SRC_SEL_A::HOSC,
+            1 => CLK_SRC_SEL_A::CLK32K,
+            2 => CLK_SRC_SEL_A::PSI_CLK,
+            3 => CLK_SRC_SEL_A::PLL_PERI_1X,
+            _ => unreachable!(),
+        }
+    }
+    #[doc = "Checks if the value of the field is `HOSC`"]
+    #[inline(always)]
+    pub fn is_hosc(&self) -> bool {
+        *self == CLK_SRC_SEL_A::HOSC
+    }
+    #[doc = "Checks if the value of the field is `CLK32K`"]
+    #[inline(always)]
+    pub fn is_clk32k(&self) -> bool {
+        *self == CLK_SRC_SEL_A::CLK32K
+    }
+    #[doc = "Checks if the value of the field is `PSI_CLK`"]
+    #[inline(always)]
+    pub fn is_psi_clk(&self) -> bool {
+        *self == CLK_SRC_SEL_A::PSI_CLK
+    }
+    #[doc = "Checks if the value of the field is `PLL_PERI_1X`"]
+    #[inline(always)]
+    pub fn is_pll_peri_1x(&self) -> bool {
+        *self == CLK_SRC_SEL_A::PLL_PERI_1X
+    }
+}
+#[doc = "Field `clk_src_sel` writer - Clock Source Select"]
+pub type CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, APB_CLK_SPEC, u8, CLK_SRC_SEL_A, 2, O>;
+impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn hosc(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::HOSC)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn clk32k(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::CLK32K)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn psi_clk(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::PSI_CLK)
+    }
+    #[doc = "`11`"]
+    #[inline(always)]
+    pub fn pll_peri_1x(self) -> &'a mut W {
+        self.variant(CLK_SRC_SEL_A::PLL_PERI_1X)
+    }
+}
+impl R {
+    #[doc = "Bits 0:4 - Factor M"]
+    #[inline(always)]
+    pub fn factor_m(&self) -> FACTOR_M_R {
+        FACTOR_M_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn factor_n(&self) -> FACTOR_N_R {
         FACTOR_N_R::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 0:4 - Factor M"]
+    #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
-    pub fn factor_m(&self) -> FACTOR_M_R {
-        FACTOR_M_R::new((self.bits & 0x1f) as u8)
+    pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
+        CLK_SRC_SEL_R::new(((self.bits >> 24) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 24:25 - Clock Source Select"]
+    #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
-        CLK_SRC_SEL_W::new(self)
+    pub fn factor_m(&mut self) -> FACTOR_M_W<0> {
+        FACTOR_M_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn factor_n(&mut self) -> FACTOR_N_W<8> {
         FACTOR_N_W::new(self)
     }
-    #[doc = "Bits 0:4 - Factor M"]
+    #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
-    pub fn factor_m(&mut self) -> FACTOR_M_W<0> {
-        FACTOR_M_W::new(self)
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
+        CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

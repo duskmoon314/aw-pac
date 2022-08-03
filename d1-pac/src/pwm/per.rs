@@ -34,6 +34,8 @@ impl From<crate::W<PER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pwm_en[0-7]` reader - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+pub type PWM_EN_R = crate::BitReader<PWM_EN_A>;
 #[doc = "When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWM_EN_A {
@@ -48,8 +50,6 @@ impl From<PWM_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `pwm(0-7)_en` reader - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
-pub type PWM_EN_R = crate::BitReader<PWM_EN_A>;
 impl PWM_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl PWM_EN_R {
         *self == PWM_EN_A::ENABLE
     }
 }
-#[doc = "Fields `pwm(0-7)_en` writer - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
+#[doc = "Field `pwm_en[0-7]` writer - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
 pub type PWM_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PER_SPEC, PWM_EN_A, O>;
 impl<'a, const O: u8> PWM_EN_W<'a, O> {
     #[doc = "PWM disable"]

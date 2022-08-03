@@ -13,6 +13,8 @@ impl From<crate::R<TWI_STAT_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `sta` reader - "]
+pub type STA_R = crate::FieldReader<u8, STA_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -82,8 +84,6 @@ impl From<STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `sta` reader - "]
-pub type STA_R = crate::FieldReader<u8, STA_A>;
 impl STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

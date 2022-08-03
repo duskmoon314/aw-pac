@@ -34,38 +34,38 @@ impl From<crate::W<TWI_DRV_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `pkt_interval` reader - "]
-pub type PKT_INTERVAL_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `pkt_interval` writer - "]
-pub type PKT_INTERVAL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TWI_DRV_CFG_SPEC, u16, u16, 16, O>;
 #[doc = "Field `packet_cnt` reader - "]
 pub type PACKET_CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `packet_cnt` writer - "]
 pub type PACKET_CNT_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TWI_DRV_CFG_SPEC, u16, u16, 16, O>;
+#[doc = "Field `pkt_interval` reader - "]
+pub type PKT_INTERVAL_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `pkt_interval` writer - "]
+pub type PKT_INTERVAL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TWI_DRV_CFG_SPEC, u16, u16, 16, O>;
 impl R {
-    #[doc = "Bits 16:31"]
-    #[inline(always)]
-    pub fn pkt_interval(&self) -> PKT_INTERVAL_R {
-        PKT_INTERVAL_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn packet_cnt(&self) -> PACKET_CNT_R {
         PACKET_CNT_R::new((self.bits & 0xffff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:31"]
     #[inline(always)]
-    pub fn pkt_interval(&mut self) -> PKT_INTERVAL_W<16> {
-        PKT_INTERVAL_W::new(self)
+    pub fn pkt_interval(&self) -> PKT_INTERVAL_R {
+        PKT_INTERVAL_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn packet_cnt(&mut self) -> PACKET_CNT_W<0> {
         PACKET_CNT_W::new(self)
+    }
+    #[doc = "Bits 16:31"]
+    #[inline(always)]
+    pub fn pkt_interval(&mut self) -> PKT_INTERVAL_W<16> {
+        PKT_INTERVAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

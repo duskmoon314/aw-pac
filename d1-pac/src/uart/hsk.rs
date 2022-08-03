@@ -34,6 +34,8 @@ impl From<crate::W<HSK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `hsk` reader - Handshake configuration"]
+pub type HSK_R = crate::FieldReader<u8, HSK_A>;
 #[doc = "Handshake configuration\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,8 +51,6 @@ impl From<HSK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `hsk` reader - Handshake configuration"]
-pub type HSK_R = crate::FieldReader<u8, HSK_A>;
 impl HSK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

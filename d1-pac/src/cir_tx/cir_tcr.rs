@@ -34,56 +34,58 @@ impl From<crate::W<CIR_TCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Cyclical Pulse Start/Stop Control\n\nValue on reset: 0"]
+#[doc = "Field `tts` reader - Type of the transmission signal"]
+pub type TTS_R = crate::BitReader<TTS_A>;
+#[doc = "Type of the transmission signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CSS_A {
-    #[doc = "0: Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
-    STOP = 0,
-    #[doc = "1: Start. Start to transmit when it is set to '1'."]
-    START = 1,
+pub enum TTS_A {
+    #[doc = "0: The transmitting wave is a single non-cyclical pulse."]
+    NON_CYCLICAL = 0,
+    #[doc = "1: The transmitting wave is a cyclical short-pulse."]
+    CYCLICAL = 1,
 }
-impl From<CSS_A> for bool {
+impl From<TTS_A> for bool {
     #[inline(always)]
-    fn from(variant: CSS_A) -> Self {
+    fn from(variant: TTS_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `css` reader - Cyclical Pulse Start/Stop Control"]
-pub type CSS_R = crate::BitReader<CSS_A>;
-impl CSS_R {
+impl TTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSS_A {
+    pub fn variant(&self) -> TTS_A {
         match self.bits {
-            false => CSS_A::STOP,
-            true => CSS_A::START,
+            false => TTS_A::NON_CYCLICAL,
+            true => TTS_A::CYCLICAL,
         }
     }
-    #[doc = "Checks if the value of the field is `STOP`"]
+    #[doc = "Checks if the value of the field is `NON_CYCLICAL`"]
     #[inline(always)]
-    pub fn is_stop(&self) -> bool {
-        *self == CSS_A::STOP
+    pub fn is_non_cyclical(&self) -> bool {
+        *self == TTS_A::NON_CYCLICAL
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "Checks if the value of the field is `CYCLICAL`"]
     #[inline(always)]
-    pub fn is_start(&self) -> bool {
-        *self == CSS_A::START
-    }
-}
-#[doc = "Field `css` writer - Cyclical Pulse Start/Stop Control"]
-pub type CSS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, CSS_A, O>;
-impl<'a, const O: u8> CSS_W<'a, O> {
-    #[doc = "Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
-    #[inline(always)]
-    pub fn stop(self) -> &'a mut W {
-        self.variant(CSS_A::STOP)
-    }
-    #[doc = "Start. Start to transmit when it is set to '1'."]
-    #[inline(always)]
-    pub fn start(self) -> &'a mut W {
-        self.variant(CSS_A::START)
+    pub fn is_cyclical(&self) -> bool {
+        *self == TTS_A::CYCLICAL
     }
 }
+#[doc = "Field `tts` writer - Type of the transmission signal"]
+pub type TTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, TTS_A, O>;
+impl<'a, const O: u8> TTS_W<'a, O> {
+    #[doc = "The transmitting wave is a single non-cyclical pulse."]
+    #[inline(always)]
+    pub fn non_cyclical(self) -> &'a mut W {
+        self.variant(TTS_A::NON_CYCLICAL)
+    }
+    #[doc = "The transmitting wave is a cyclical short-pulse."]
+    #[inline(always)]
+    pub fn cyclical(self) -> &'a mut W {
+        self.variant(TTS_A::CYCLICAL)
+    }
+}
+#[doc = "Field `rcs` reader - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
+pub type RCS_R = crate::FieldReader<u8, RCS_A>;
 #[doc = "Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -111,8 +113,6 @@ impl From<RCS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `rcs` reader - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
-pub type RCS_R = crate::FieldReader<u8, RCS_A>;
 impl RCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -214,88 +214,88 @@ impl<'a, const O: u8> RCS_W<'a, O> {
         self.variant(RCS_A::IR_CLK_512)
     }
 }
-#[doc = "Type of the transmission signal\n\nValue on reset: 0"]
+#[doc = "Field `css` reader - Cyclical Pulse Start/Stop Control"]
+pub type CSS_R = crate::BitReader<CSS_A>;
+#[doc = "Cyclical Pulse Start/Stop Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TTS_A {
-    #[doc = "0: The transmitting wave is a single non-cyclical pulse."]
-    NON_CYCLICAL = 0,
-    #[doc = "1: The transmitting wave is a cyclical short-pulse."]
-    CYCLICAL = 1,
+pub enum CSS_A {
+    #[doc = "0: Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
+    STOP = 0,
+    #[doc = "1: Start. Start to transmit when it is set to '1'."]
+    START = 1,
 }
-impl From<TTS_A> for bool {
+impl From<CSS_A> for bool {
     #[inline(always)]
-    fn from(variant: TTS_A) -> Self {
+    fn from(variant: CSS_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tts` reader - Type of the transmission signal"]
-pub type TTS_R = crate::BitReader<TTS_A>;
-impl TTS_R {
+impl CSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TTS_A {
+    pub fn variant(&self) -> CSS_A {
         match self.bits {
-            false => TTS_A::NON_CYCLICAL,
-            true => TTS_A::CYCLICAL,
+            false => CSS_A::STOP,
+            true => CSS_A::START,
         }
     }
-    #[doc = "Checks if the value of the field is `NON_CYCLICAL`"]
+    #[doc = "Checks if the value of the field is `STOP`"]
     #[inline(always)]
-    pub fn is_non_cyclical(&self) -> bool {
-        *self == TTS_A::NON_CYCLICAL
+    pub fn is_stop(&self) -> bool {
+        *self == CSS_A::STOP
     }
-    #[doc = "Checks if the value of the field is `CYCLICAL`"]
+    #[doc = "Checks if the value of the field is `START`"]
     #[inline(always)]
-    pub fn is_cyclical(&self) -> bool {
-        *self == TTS_A::CYCLICAL
+    pub fn is_start(&self) -> bool {
+        *self == CSS_A::START
     }
 }
-#[doc = "Field `tts` writer - Type of the transmission signal"]
-pub type TTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, TTS_A, O>;
-impl<'a, const O: u8> TTS_W<'a, O> {
-    #[doc = "The transmitting wave is a single non-cyclical pulse."]
+#[doc = "Field `css` writer - Cyclical Pulse Start/Stop Control"]
+pub type CSS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, CSS_A, O>;
+impl<'a, const O: u8> CSS_W<'a, O> {
+    #[doc = "Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
     #[inline(always)]
-    pub fn non_cyclical(self) -> &'a mut W {
-        self.variant(TTS_A::NON_CYCLICAL)
+    pub fn stop(self) -> &'a mut W {
+        self.variant(CSS_A::STOP)
     }
-    #[doc = "The transmitting wave is a cyclical short-pulse."]
+    #[doc = "Start. Start to transmit when it is set to '1'."]
     #[inline(always)]
-    pub fn cyclical(self) -> &'a mut W {
-        self.variant(TTS_A::CYCLICAL)
+    pub fn start(self) -> &'a mut W {
+        self.variant(CSS_A::START)
     }
 }
 impl R {
-    #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
+    #[doc = "Bit 0 - Type of the transmission signal"]
     #[inline(always)]
-    pub fn css(&self) -> CSS_R {
-        CSS_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn tts(&self) -> TTS_R {
+        TTS_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:3 - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
     #[inline(always)]
     pub fn rcs(&self) -> RCS_R {
         RCS_R::new(((self.bits >> 1) & 7) as u8)
     }
-    #[doc = "Bit 0 - Type of the transmission signal"]
+    #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
     #[inline(always)]
-    pub fn tts(&self) -> TTS_R {
-        TTS_R::new((self.bits & 1) != 0)
+    pub fn css(&self) -> CSS_R {
+        CSS_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
+    #[doc = "Bit 0 - Type of the transmission signal"]
     #[inline(always)]
-    pub fn css(&mut self) -> CSS_W<7> {
-        CSS_W::new(self)
+    pub fn tts(&mut self) -> TTS_W<0> {
+        TTS_W::new(self)
     }
     #[doc = "Bits 1:3 - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
     #[inline(always)]
     pub fn rcs(&mut self) -> RCS_W<1> {
         RCS_W::new(self)
     }
-    #[doc = "Bit 0 - Type of the transmission signal"]
+    #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
     #[inline(always)]
-    pub fn tts(&mut self) -> TTS_W<0> {
-        TTS_W::new(self)
+    pub fn css(&mut self) -> CSS_W<7> {
+        CSS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

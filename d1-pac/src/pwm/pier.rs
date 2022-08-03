@@ -34,56 +34,8 @@ impl From<crate::W<PIER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "PWM Group Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PGIE_A {
-    #[doc = "0: Disable"]
-    DISABLE = 0,
-    #[doc = "1: Enable"]
-    ENABLE = 1,
-}
-impl From<PGIE_A> for bool {
-    #[inline(always)]
-    fn from(variant: PGIE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `pgie(0-3)` reader - PWM Group Interrupt Enable"]
-pub type PGIE_R = crate::BitReader<PGIE_A>;
-impl PGIE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PGIE_A {
-        match self.bits {
-            false => PGIE_A::DISABLE,
-            true => PGIE_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == PGIE_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == PGIE_A::ENABLE
-    }
-}
-#[doc = "Fields `pgie(0-3)` writer - PWM Group Interrupt Enable"]
-pub type PGIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PIER_SPEC, PGIE_A, O>;
-impl<'a, const O: u8> PGIE_W<'a, O> {
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(PGIE_A::DISABLE)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(PGIE_A::ENABLE)
-    }
-}
+#[doc = "Field `pcie[0-7]` reader - PWM Channel Interrupt Enable"]
+pub type PCIE_R = crate::BitReader<PCIE_A>;
 #[doc = "PWM Channel Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PCIE_A {
@@ -98,8 +50,6 @@ impl From<PCIE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `pcie(0-7)` reader - PWM Channel Interrupt Enable"]
-pub type PCIE_R = crate::BitReader<PCIE_A>;
 impl PCIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -120,7 +70,7 @@ impl PCIE_R {
         *self == PCIE_A::ENABLE
     }
 }
-#[doc = "Fields `pcie(0-7)` writer - PWM Channel Interrupt Enable"]
+#[doc = "Field `pcie[0-7]` writer - PWM Channel Interrupt Enable"]
 pub type PCIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PIER_SPEC, PCIE_A, O>;
 impl<'a, const O: u8> PCIE_W<'a, O> {
     #[doc = "PWM Channel Interrupt Disable"]
@@ -134,32 +84,57 @@ impl<'a, const O: u8> PCIE_W<'a, O> {
         self.variant(PCIE_A::ENABLE)
     }
 }
+#[doc = "Field `pgie[0-3]` reader - PWM Group Interrupt Enable"]
+pub type PGIE_R = crate::BitReader<PGIE_A>;
+#[doc = "PWM Group Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PGIE_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<PGIE_A> for bool {
+    #[inline(always)]
+    fn from(variant: PGIE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PGIE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PGIE_A {
+        match self.bits {
+            false => PGIE_A::DISABLE,
+            true => PGIE_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == PGIE_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == PGIE_A::ENABLE
+    }
+}
+#[doc = "Field `pgie[0-3]` writer - PWM Group Interrupt Enable"]
+pub type PGIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PIER_SPEC, PGIE_A, O>;
+impl<'a, const O: u8> PGIE_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PGIE_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PGIE_A::ENABLE)
+    }
+}
 impl R {
-    #[doc = "PWM Group Interrupt Enable"]
-    #[inline(always)]
-    pub unsafe fn pgie(&self, n: u8) -> PGIE_R {
-        PGIE_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - PWM Group Interrupt Enable"]
-    #[inline(always)]
-    pub fn pgie0(&self) -> PGIE_R {
-        PGIE_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - PWM Group Interrupt Enable"]
-    #[inline(always)]
-    pub fn pgie1(&self) -> PGIE_R {
-        PGIE_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 18 - PWM Group Interrupt Enable"]
-    #[inline(always)]
-    pub fn pgie2(&self) -> PGIE_R {
-        PGIE_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 19 - PWM Group Interrupt Enable"]
-    #[inline(always)]
-    pub fn pgie3(&self) -> PGIE_R {
-        PGIE_R::new(((self.bits >> 19) & 1) != 0)
-    }
     #[doc = "PWM Channel Interrupt Enable"]
     #[inline(always)]
     pub unsafe fn pcie(&self, n: u8) -> PCIE_R {
@@ -205,33 +180,33 @@ impl R {
     pub fn pcie7(&self) -> PCIE_R {
         PCIE_R::new(((self.bits >> 7) & 1) != 0)
     }
-}
-impl W {
     #[doc = "PWM Group Interrupt Enable"]
     #[inline(always)]
-    pub unsafe fn pgie<const O: u8>(&mut self) -> PGIE_W<O> {
-        PGIE_W::new(self)
+    pub unsafe fn pgie(&self, n: u8) -> PGIE_R {
+        PGIE_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - PWM Group Interrupt Enable"]
     #[inline(always)]
-    pub fn pgie0(&mut self) -> PGIE_W<16> {
-        PGIE_W::new(self)
+    pub fn pgie0(&self) -> PGIE_R {
+        PGIE_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - PWM Group Interrupt Enable"]
     #[inline(always)]
-    pub fn pgie1(&mut self) -> PGIE_W<17> {
-        PGIE_W::new(self)
+    pub fn pgie1(&self) -> PGIE_R {
+        PGIE_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - PWM Group Interrupt Enable"]
     #[inline(always)]
-    pub fn pgie2(&mut self) -> PGIE_W<18> {
-        PGIE_W::new(self)
+    pub fn pgie2(&self) -> PGIE_R {
+        PGIE_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - PWM Group Interrupt Enable"]
     #[inline(always)]
-    pub fn pgie3(&mut self) -> PGIE_W<19> {
-        PGIE_W::new(self)
+    pub fn pgie3(&self) -> PGIE_R {
+        PGIE_R::new(((self.bits >> 19) & 1) != 0)
     }
+}
+impl W {
     #[doc = "PWM Channel Interrupt Enable"]
     #[inline(always)]
     pub unsafe fn pcie<const O: u8>(&mut self) -> PCIE_W<O> {
@@ -276,6 +251,31 @@ impl W {
     #[inline(always)]
     pub fn pcie7(&mut self) -> PCIE_W<7> {
         PCIE_W::new(self)
+    }
+    #[doc = "PWM Group Interrupt Enable"]
+    #[inline(always)]
+    pub unsafe fn pgie<const O: u8>(&mut self) -> PGIE_W<O> {
+        PGIE_W::new(self)
+    }
+    #[doc = "Bit 16 - PWM Group Interrupt Enable"]
+    #[inline(always)]
+    pub fn pgie0(&mut self) -> PGIE_W<16> {
+        PGIE_W::new(self)
+    }
+    #[doc = "Bit 17 - PWM Group Interrupt Enable"]
+    #[inline(always)]
+    pub fn pgie1(&mut self) -> PGIE_W<17> {
+        PGIE_W::new(self)
+    }
+    #[doc = "Bit 18 - PWM Group Interrupt Enable"]
+    #[inline(always)]
+    pub fn pgie2(&mut self) -> PGIE_W<18> {
+        PGIE_W::new(self)
+    }
+    #[doc = "Bit 19 - PWM Group Interrupt Enable"]
+    #[inline(always)]
+    pub fn pgie3(&mut self) -> PGIE_W<19> {
+        PGIE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

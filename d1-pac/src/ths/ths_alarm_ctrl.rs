@@ -34,38 +34,38 @@ impl From<crate::W<THS_ALARM_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `alarm_t_hot` reader - Thermal sensor alarm threshold for hot temperature"]
-pub type ALARM_T_HOT_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `alarm_t_hot` writer - Thermal sensor alarm threshold for hot temperature"]
-pub type ALARM_T_HOT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, THS_ALARM_CTRL_SPEC, u16, u16, 12, O>;
 #[doc = "Field `alarm_t_hyst` reader - Thermal sensor alarm threshold for hysteresis temperature"]
 pub type ALARM_T_HYST_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `alarm_t_hyst` writer - Thermal sensor alarm threshold for hysteresis temperature"]
 pub type ALARM_T_HYST_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, THS_ALARM_CTRL_SPEC, u16, u16, 12, O>;
+#[doc = "Field `alarm_t_hot` reader - Thermal sensor alarm threshold for hot temperature"]
+pub type ALARM_T_HOT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `alarm_t_hot` writer - Thermal sensor alarm threshold for hot temperature"]
+pub type ALARM_T_HOT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, THS_ALARM_CTRL_SPEC, u16, u16, 12, O>;
 impl R {
-    #[doc = "Bits 16:27 - Thermal sensor alarm threshold for hot temperature"]
-    #[inline(always)]
-    pub fn alarm_t_hot(&self) -> ALARM_T_HOT_R {
-        ALARM_T_HOT_R::new(((self.bits >> 16) & 0x0fff) as u16)
-    }
     #[doc = "Bits 0:11 - Thermal sensor alarm threshold for hysteresis temperature"]
     #[inline(always)]
     pub fn alarm_t_hyst(&self) -> ALARM_T_HYST_R {
         ALARM_T_HYST_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:27 - Thermal sensor alarm threshold for hot temperature"]
     #[inline(always)]
-    pub fn alarm_t_hot(&mut self) -> ALARM_T_HOT_W<16> {
-        ALARM_T_HOT_W::new(self)
+    pub fn alarm_t_hot(&self) -> ALARM_T_HOT_R {
+        ALARM_T_HOT_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Thermal sensor alarm threshold for hysteresis temperature"]
     #[inline(always)]
     pub fn alarm_t_hyst(&mut self) -> ALARM_T_HYST_W<0> {
         ALARM_T_HYST_W::new(self)
+    }
+    #[doc = "Bits 16:27 - Thermal sensor alarm threshold for hot temperature"]
+    #[inline(always)]
+    pub fn alarm_t_hot(&mut self) -> ALARM_T_HOT_W<16> {
+        ALARM_T_HOT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

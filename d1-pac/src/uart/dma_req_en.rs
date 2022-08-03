@@ -34,108 +34,8 @@ impl From<crate::W<DMA_REQ_EN_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "DMA Timeout Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TIMEOUT_ENABLE_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TIMEOUT_ENABLE_A> for bool {
-    #[inline(always)]
-    fn from(variant: TIMEOUT_ENABLE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `timeout_enable` reader - DMA Timeout Enable"]
-pub type TIMEOUT_ENABLE_R = crate::BitReader<TIMEOUT_ENABLE_A>;
-impl TIMEOUT_ENABLE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TIMEOUT_ENABLE_A {
-        match self.bits {
-            false => TIMEOUT_ENABLE_A::DISABLE,
-            true => TIMEOUT_ENABLE_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TIMEOUT_ENABLE_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TIMEOUT_ENABLE_A::ENABLE
-    }
-}
-#[doc = "Field `timeout_enable` writer - DMA Timeout Enable"]
-pub type TIMEOUT_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TIMEOUT_ENABLE_A, O>;
-impl<'a, const O: u8> TIMEOUT_ENABLE_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TIMEOUT_ENABLE_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TIMEOUT_ENABLE_A::ENABLE)
-    }
-}
-#[doc = "DMA TX REQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TX_REQ_ENABLE_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TX_REQ_ENABLE_A> for bool {
-    #[inline(always)]
-    fn from(variant: TX_REQ_ENABLE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tx_req_enable` reader - DMA TX REQ Enable"]
-pub type TX_REQ_ENABLE_R = crate::BitReader<TX_REQ_ENABLE_A>;
-impl TX_REQ_ENABLE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TX_REQ_ENABLE_A {
-        match self.bits {
-            false => TX_REQ_ENABLE_A::DISABLE,
-            true => TX_REQ_ENABLE_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TX_REQ_ENABLE_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TX_REQ_ENABLE_A::ENABLE
-    }
-}
-#[doc = "Field `tx_req_enable` writer - DMA TX REQ Enable"]
-pub type TX_REQ_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TX_REQ_ENABLE_A, O>;
-impl<'a, const O: u8> TX_REQ_ENABLE_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TX_REQ_ENABLE_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TX_REQ_ENABLE_A::ENABLE)
-    }
-}
+#[doc = "Field `rx_req_enable` reader - DMA RX REQ Enable"]
+pub type RX_REQ_ENABLE_R = crate::BitReader<RX_REQ_ENABLE_A>;
 #[doc = "DMA RX REQ Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RX_REQ_ENABLE_A {
@@ -150,8 +50,6 @@ impl From<RX_REQ_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `rx_req_enable` reader - DMA RX REQ Enable"]
-pub type RX_REQ_ENABLE_R = crate::BitReader<RX_REQ_ENABLE_A>;
 impl RX_REQ_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -187,38 +85,140 @@ impl<'a, const O: u8> RX_REQ_ENABLE_W<'a, O> {
         self.variant(RX_REQ_ENABLE_A::ENABLE)
     }
 }
-impl R {
-    #[doc = "Bit 2 - DMA Timeout Enable"]
+#[doc = "Field `tx_req_enable` reader - DMA TX REQ Enable"]
+pub type TX_REQ_ENABLE_R = crate::BitReader<TX_REQ_ENABLE_A>;
+#[doc = "DMA TX REQ Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TX_REQ_ENABLE_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TX_REQ_ENABLE_A> for bool {
     #[inline(always)]
-    pub fn timeout_enable(&self) -> TIMEOUT_ENABLE_R {
-        TIMEOUT_ENABLE_R::new(((self.bits >> 2) & 1) != 0)
+    fn from(variant: TX_REQ_ENABLE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TX_REQ_ENABLE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TX_REQ_ENABLE_A {
+        match self.bits {
+            false => TX_REQ_ENABLE_A::DISABLE,
+            true => TX_REQ_ENABLE_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TX_REQ_ENABLE_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TX_REQ_ENABLE_A::ENABLE
+    }
+}
+#[doc = "Field `tx_req_enable` writer - DMA TX REQ Enable"]
+pub type TX_REQ_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TX_REQ_ENABLE_A, O>;
+impl<'a, const O: u8> TX_REQ_ENABLE_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TX_REQ_ENABLE_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TX_REQ_ENABLE_A::ENABLE)
+    }
+}
+#[doc = "Field `timeout_enable` reader - DMA Timeout Enable"]
+pub type TIMEOUT_ENABLE_R = crate::BitReader<TIMEOUT_ENABLE_A>;
+#[doc = "DMA Timeout Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TIMEOUT_ENABLE_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TIMEOUT_ENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TIMEOUT_ENABLE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TIMEOUT_ENABLE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TIMEOUT_ENABLE_A {
+        match self.bits {
+            false => TIMEOUT_ENABLE_A::DISABLE,
+            true => TIMEOUT_ENABLE_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TIMEOUT_ENABLE_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TIMEOUT_ENABLE_A::ENABLE
+    }
+}
+#[doc = "Field `timeout_enable` writer - DMA Timeout Enable"]
+pub type TIMEOUT_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DMA_REQ_EN_SPEC, TIMEOUT_ENABLE_A, O>;
+impl<'a, const O: u8> TIMEOUT_ENABLE_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TIMEOUT_ENABLE_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TIMEOUT_ENABLE_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - DMA RX REQ Enable"]
+    #[inline(always)]
+    pub fn rx_req_enable(&self) -> RX_REQ_ENABLE_R {
+        RX_REQ_ENABLE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - DMA TX REQ Enable"]
     #[inline(always)]
     pub fn tx_req_enable(&self) -> TX_REQ_ENABLE_R {
         TX_REQ_ENABLE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - DMA RX REQ Enable"]
+    #[doc = "Bit 2 - DMA Timeout Enable"]
     #[inline(always)]
-    pub fn rx_req_enable(&self) -> RX_REQ_ENABLE_R {
-        RX_REQ_ENABLE_R::new((self.bits & 1) != 0)
+    pub fn timeout_enable(&self) -> TIMEOUT_ENABLE_R {
+        TIMEOUT_ENABLE_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 2 - DMA Timeout Enable"]
+    #[doc = "Bit 0 - DMA RX REQ Enable"]
     #[inline(always)]
-    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W<2> {
-        TIMEOUT_ENABLE_W::new(self)
+    pub fn rx_req_enable(&mut self) -> RX_REQ_ENABLE_W<0> {
+        RX_REQ_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - DMA TX REQ Enable"]
     #[inline(always)]
     pub fn tx_req_enable(&mut self) -> TX_REQ_ENABLE_W<1> {
         TX_REQ_ENABLE_W::new(self)
     }
-    #[doc = "Bit 0 - DMA RX REQ Enable"]
+    #[doc = "Bit 2 - DMA Timeout Enable"]
     #[inline(always)]
-    pub fn rx_req_enable(&mut self) -> RX_REQ_ENABLE_W<0> {
-        RX_REQ_ENABLE_W::new(self)
+    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W<2> {
+        TIMEOUT_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

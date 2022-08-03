@@ -34,6 +34,8 @@ impl From<crate::W<DMAC_PAU_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dma_pause` reader - Pause the DMA Channel Transfer Data"]
+pub type DMA_PAUSE_R = crate::BitReader<DMA_PAUSE_A>;
 #[doc = "Pause the DMA Channel Transfer Data\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_PAUSE_A {
@@ -48,8 +50,6 @@ impl From<DMA_PAUSE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dma_pause` reader - Pause the DMA Channel Transfer Data"]
-pub type DMA_PAUSE_R = crate::BitReader<DMA_PAUSE_A>;
 impl DMA_PAUSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<MBUS_CLK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `mbus_rst` reader - MBUS Reset"]
+pub type MBUS_RST_R = crate::BitReader<MBUS_RST_A>;
 #[doc = "MBUS Reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MBUS_RST_A {
@@ -48,8 +50,6 @@ impl From<MBUS_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `mbus_rst` reader - MBUS Reset"]
-pub type MBUS_RST_R = crate::BitReader<MBUS_RST_A>;
 impl MBUS_RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

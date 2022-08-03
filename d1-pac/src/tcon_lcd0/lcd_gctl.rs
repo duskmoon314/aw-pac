@@ -34,56 +34,8 @@ impl From<crate::W<LCD_GCTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "When it is disabled, the module will be reset to idle state.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LCD_EN_A {
-    #[doc = "0: Disable"]
-    D_ISABLE = 0,
-    #[doc = "1: Enable"]
-    E_NABLE = 1,
-}
-impl From<LCD_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: LCD_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `lcd_en` reader - When it is disabled, the module will be reset to idle state."]
-pub type LCD_EN_R = crate::BitReader<LCD_EN_A>;
-impl LCD_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> LCD_EN_A {
-        match self.bits {
-            false => LCD_EN_A::D_ISABLE,
-            true => LCD_EN_A::E_NABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
-    #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LCD_EN_A::D_ISABLE
-    }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
-    #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LCD_EN_A::E_NABLE
-    }
-}
-#[doc = "Field `lcd_en` writer - When it is disabled, the module will be reset to idle state."]
-pub type LCD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_GCTL_SPEC, LCD_EN_A, O>;
-impl<'a, const O: u8> LCD_EN_W<'a, O> {
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LCD_EN_A::D_ISABLE)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LCD_EN_A::E_NABLE)
-    }
-}
+#[doc = "Field `lcd_gamma_en` reader - Enable the Gamma correction function."]
+pub type LCD_GAMMA_EN_R = crate::BitReader<LCD_GAMMA_EN_A>;
 #[doc = "Enable the Gamma correction function.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCD_GAMMA_EN_A {
@@ -98,8 +50,6 @@ impl From<LCD_GAMMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `lcd_gamma_en` reader - Enable the Gamma correction function."]
-pub type LCD_GAMMA_EN_R = crate::BitReader<LCD_GAMMA_EN_A>;
 impl LCD_GAMMA_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -135,28 +85,78 @@ impl<'a, const O: u8> LCD_GAMMA_EN_W<'a, O> {
         self.variant(LCD_GAMMA_EN_A::E_NABLE)
     }
 }
-impl R {
-    #[doc = "Bit 31 - When it is disabled, the module will be reset to idle state."]
+#[doc = "Field `lcd_en` reader - When it is disabled, the module will be reset to idle state."]
+pub type LCD_EN_R = crate::BitReader<LCD_EN_A>;
+#[doc = "When it is disabled, the module will be reset to idle state.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCD_EN_A {
+    #[doc = "0: Disable"]
+    D_ISABLE = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<LCD_EN_A> for bool {
     #[inline(always)]
-    pub fn lcd_en(&self) -> LCD_EN_R {
-        LCD_EN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: LCD_EN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl LCD_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCD_EN_A {
+        match self.bits {
+            false => LCD_EN_A::D_ISABLE,
+            true => LCD_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[inline(always)]
+    pub fn is_d_isable(&self) -> bool {
+        *self == LCD_EN_A::D_ISABLE
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == LCD_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `lcd_en` writer - When it is disabled, the module will be reset to idle state."]
+pub type LCD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_GCTL_SPEC, LCD_EN_A, O>;
+impl<'a, const O: u8> LCD_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn d_isable(self) -> &'a mut W {
+        self.variant(LCD_EN_A::D_ISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(LCD_EN_A::E_NABLE)
+    }
+}
+impl R {
     #[doc = "Bit 30 - Enable the Gamma correction function."]
     #[inline(always)]
     pub fn lcd_gamma_en(&self) -> LCD_GAMMA_EN_R {
         LCD_GAMMA_EN_R::new(((self.bits >> 30) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 31 - When it is disabled, the module will be reset to idle state."]
     #[inline(always)]
-    pub fn lcd_en(&mut self) -> LCD_EN_W<31> {
-        LCD_EN_W::new(self)
+    pub fn lcd_en(&self) -> LCD_EN_R {
+        LCD_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 30 - Enable the Gamma correction function."]
     #[inline(always)]
     pub fn lcd_gamma_en(&mut self) -> LCD_GAMMA_EN_W<30> {
         LCD_GAMMA_EN_W::new(self)
+    }
+    #[doc = "Bit 31 - When it is disabled, the module will be reset to idle state."]
+    #[inline(always)]
+    pub fn lcd_en(&mut self) -> LCD_EN_W<31> {
+        LCD_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

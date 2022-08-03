@@ -34,9 +34,9 @@ impl From<crate::W<LCD_CMAP_EVEN_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Fields `out_even(0-1)` reader - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
+#[doc = "Field `out_even[0-1]` reader - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
 pub type OUT_EVEN_R = crate::FieldReader<u16, u16>;
-#[doc = "Fields `out_even(0-1)` writer - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
+#[doc = "Field `out_even[0-1]` writer - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
 pub type OUT_EVEN_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_CMAP_EVEN_SPEC, u16, u16, 16, O>;
 impl R {

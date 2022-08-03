@@ -34,6 +34,9 @@ impl From<crate::W<IOMMU_4KB_BDY_PRT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `m_4kb_bdy_prt_ctrl[0-6]` reader - Master\\[i\\]
+4 KB boundary protect control bit"]
+pub type M_4KB_BDY_PRT_CTRL_R = crate::BitReader<M_4KB_BDY_PRT_CTRL_A>;
 #[doc = "Master\\[i\\]
 4 KB boundary protect control bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<M_4KB_BDY_PRT_CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `m(0-6)_4kb_bdy_prt_ctrl` reader - Master\\[i\\]
-4 KB boundary protect control bit"]
-pub type M_4KB_BDY_PRT_CTRL_R = crate::BitReader<M_4KB_BDY_PRT_CTRL_A>;
 impl M_4KB_BDY_PRT_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl M_4KB_BDY_PRT_CTRL_R {
         *self == M_4KB_BDY_PRT_CTRL_A::E_NABLE
     }
 }
-#[doc = "Fields `m(0-6)_4kb_bdy_prt_ctrl` writer - Master\\[i\\]
+#[doc = "Field `m_4kb_bdy_prt_ctrl[0-6]` writer - Master\\[i\\]
 4 KB boundary protect control bit"]
 pub type M_4KB_BDY_PRT_CTRL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_4KB_BDY_PRT_CTRL_SPEC, M_4KB_BDY_PRT_CTRL_A, O>;

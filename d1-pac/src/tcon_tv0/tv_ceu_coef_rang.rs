@@ -34,38 +34,38 @@ impl From<crate::W<TV_CEU_COEF_RANG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ceu_coef_range_min` reader - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
-pub type CEU_COEF_RANGE_MIN_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `ceu_coef_range_min` writer - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
-pub type CEU_COEF_RANGE_MIN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_CEU_COEF_RANG_SPEC, u16, u16, 10, O>;
 #[doc = "Field `ceu_coef_range_max` reader - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
 pub type CEU_COEF_RANGE_MAX_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ceu_coef_range_max` writer - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
 pub type CEU_COEF_RANGE_MAX_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TV_CEU_COEF_RANG_SPEC, u16, u16, 10, O>;
+#[doc = "Field `ceu_coef_range_min` reader - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
+pub type CEU_COEF_RANGE_MIN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ceu_coef_range_min` writer - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
+pub type CEU_COEF_RANGE_MIN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TV_CEU_COEF_RANG_SPEC, u16, u16, 10, O>;
 impl R {
-    #[doc = "Bits 16:25 - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
-    #[inline(always)]
-    pub fn ceu_coef_range_min(&self) -> CEU_COEF_RANGE_MIN_R {
-        CEU_COEF_RANGE_MIN_R::new(((self.bits >> 16) & 0x03ff) as u16)
-    }
     #[doc = "Bits 0:9 - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
     #[inline(always)]
     pub fn ceu_coef_range_max(&self) -> CEU_COEF_RANGE_MAX_R {
         CEU_COEF_RANGE_MAX_R::new((self.bits & 0x03ff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:25 - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
     #[inline(always)]
-    pub fn ceu_coef_range_min(&mut self) -> CEU_COEF_RANGE_MIN_W<16> {
-        CEU_COEF_RANGE_MIN_W::new(self)
+    pub fn ceu_coef_range_min(&self) -> CEU_COEF_RANGE_MIN_R {
+        CEU_COEF_RANGE_MIN_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:9 - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
     #[inline(always)]
     pub fn ceu_coef_range_max(&mut self) -> CEU_COEF_RANGE_MAX_W<0> {
         CEU_COEF_RANGE_MAX_W::new(self)
+    }
+    #[doc = "Bits 16:25 - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
+    #[inline(always)]
+    pub fn ceu_coef_range_min(&mut self) -> CEU_COEF_RANGE_MIN_W<16> {
+        CEU_COEF_RANGE_MIN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

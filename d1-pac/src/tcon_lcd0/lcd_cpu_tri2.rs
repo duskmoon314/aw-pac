@@ -34,11 +34,18 @@ impl From<crate::W<LCD_CPU_TRI2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `start_dly` reader - T_dly = (Start_Delay +1) * be_clk*8."]
-pub type START_DLY_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `start_dly` writer - T_dly = (Start_Delay +1) * be_clk*8."]
-pub type START_DLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CPU_TRI2_SPEC, u16, u16, 16, O>;
+#[doc = "Field `trans_start_set` reader - Usual set as the length of a line."]
+pub type TRANS_START_SET_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `trans_start_set` writer - Usual set as the length of a line."]
+pub type TRANS_START_SET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CPU_TRI2_SPEC, u16, u16, 13, O>;
+#[doc = "Field `sync_mode` reader - Set the sync mode in CPU interface."]
+pub type SYNC_MODE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `sync_mode` writer - Set the sync mode in CPU interface."]
+pub type SYNC_MODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CPU_TRI2_SPEC, u8, u8, 2, O>;
+#[doc = "Field `trans_start_mode` reader - Select the FIFOs used in CPU mode."]
+pub type TRANS_START_MODE_R = crate::BitReader<TRANS_START_MODE_A>;
 #[doc = "Select the FIFOs used in CPU mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TRANS_START_MODE_A {
@@ -53,8 +60,6 @@ impl From<TRANS_START_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `trans_start_mode` reader - Select the FIFOs used in CPU mode."]
-pub type TRANS_START_MODE_R = crate::BitReader<TRANS_START_MODE_A>;
 impl TRANS_START_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -90,58 +95,53 @@ impl<'a, const O: u8> TRANS_START_MODE_W<'a, O> {
         self.variant(TRANS_START_MODE_A::TRI_FIFO)
     }
 }
-#[doc = "Field `sync_mode` reader - Set the sync mode in CPU interface."]
-pub type SYNC_MODE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `sync_mode` writer - Set the sync mode in CPU interface."]
-pub type SYNC_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CPU_TRI2_SPEC, u8, u8, 2, O>;
-#[doc = "Field `trans_start_set` reader - Usual set as the length of a line."]
-pub type TRANS_START_SET_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `trans_start_set` writer - Usual set as the length of a line."]
-pub type TRANS_START_SET_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CPU_TRI2_SPEC, u16, u16, 13, O>;
+#[doc = "Field `start_dly` reader - T_dly = (Start_Delay +1) * be_clk*8."]
+pub type START_DLY_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `start_dly` writer - T_dly = (Start_Delay +1) * be_clk*8."]
+pub type START_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CPU_TRI2_SPEC, u16, u16, 16, O>;
 impl R {
-    #[doc = "Bits 16:31 - T_dly = (Start_Delay +1) * be_clk*8."]
+    #[doc = "Bits 0:12 - Usual set as the length of a line."]
     #[inline(always)]
-    pub fn start_dly(&self) -> START_DLY_R {
-        START_DLY_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
-    #[doc = "Bit 15 - Select the FIFOs used in CPU mode."]
-    #[inline(always)]
-    pub fn trans_start_mode(&self) -> TRANS_START_MODE_R {
-        TRANS_START_MODE_R::new(((self.bits >> 15) & 1) != 0)
+    pub fn trans_start_set(&self) -> TRANS_START_SET_R {
+        TRANS_START_SET_R::new((self.bits & 0x1fff) as u16)
     }
     #[doc = "Bits 13:14 - Set the sync mode in CPU interface."]
     #[inline(always)]
     pub fn sync_mode(&self) -> SYNC_MODE_R {
         SYNC_MODE_R::new(((self.bits >> 13) & 3) as u8)
     }
-    #[doc = "Bits 0:12 - Usual set as the length of a line."]
+    #[doc = "Bit 15 - Select the FIFOs used in CPU mode."]
     #[inline(always)]
-    pub fn trans_start_set(&self) -> TRANS_START_SET_R {
-        TRANS_START_SET_R::new((self.bits & 0x1fff) as u16)
+    pub fn trans_start_mode(&self) -> TRANS_START_MODE_R {
+        TRANS_START_MODE_R::new(((self.bits >> 15) & 1) != 0)
+    }
+    #[doc = "Bits 16:31 - T_dly = (Start_Delay +1) * be_clk*8."]
+    #[inline(always)]
+    pub fn start_dly(&self) -> START_DLY_R {
+        START_DLY_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 16:31 - T_dly = (Start_Delay +1) * be_clk*8."]
+    #[doc = "Bits 0:12 - Usual set as the length of a line."]
     #[inline(always)]
-    pub fn start_dly(&mut self) -> START_DLY_W<16> {
-        START_DLY_W::new(self)
-    }
-    #[doc = "Bit 15 - Select the FIFOs used in CPU mode."]
-    #[inline(always)]
-    pub fn trans_start_mode(&mut self) -> TRANS_START_MODE_W<15> {
-        TRANS_START_MODE_W::new(self)
+    pub fn trans_start_set(&mut self) -> TRANS_START_SET_W<0> {
+        TRANS_START_SET_W::new(self)
     }
     #[doc = "Bits 13:14 - Set the sync mode in CPU interface."]
     #[inline(always)]
     pub fn sync_mode(&mut self) -> SYNC_MODE_W<13> {
         SYNC_MODE_W::new(self)
     }
-    #[doc = "Bits 0:12 - Usual set as the length of a line."]
+    #[doc = "Bit 15 - Select the FIFOs used in CPU mode."]
     #[inline(always)]
-    pub fn trans_start_set(&mut self) -> TRANS_START_SET_W<0> {
-        TRANS_START_SET_W::new(self)
+    pub fn trans_start_mode(&mut self) -> TRANS_START_MODE_W<15> {
+        TRANS_START_MODE_W::new(self)
+    }
+    #[doc = "Bits 16:31 - T_dly = (Start_Delay +1) * be_clk*8."]
+    #[inline(always)]
+    pub fn start_dly(&mut self) -> START_DLY_W<16> {
+        START_DLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

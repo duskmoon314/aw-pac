@@ -34,38 +34,38 @@ impl From<crate::W<LCD_CPU_TRI5_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `a1_non_first_valid` reader - Valid in Block except first."]
-pub type A1_NON_FIRST_VALID_R = crate::BitReader<bool>;
-#[doc = "Field `a1_non_first_valid` writer - Valid in Block except first."]
-pub type A1_NON_FIRST_VALID_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, LCD_CPU_TRI5_SPEC, bool, O>;
 #[doc = "Field `d23_to_d0_non_first_valid` reader - Valid in Block except first."]
 pub type D23_TO_D0_NON_FIRST_VALID_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `d23_to_d0_non_first_valid` writer - Valid in Block except first."]
 pub type D23_TO_D0_NON_FIRST_VALID_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_CPU_TRI5_SPEC, u32, u32, 24, O>;
+#[doc = "Field `a1_non_first_valid` reader - Valid in Block except first."]
+pub type A1_NON_FIRST_VALID_R = crate::BitReader<bool>;
+#[doc = "Field `a1_non_first_valid` writer - Valid in Block except first."]
+pub type A1_NON_FIRST_VALID_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LCD_CPU_TRI5_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 24 - Valid in Block except first."]
-    #[inline(always)]
-    pub fn a1_non_first_valid(&self) -> A1_NON_FIRST_VALID_R {
-        A1_NON_FIRST_VALID_R::new(((self.bits >> 24) & 1) != 0)
-    }
     #[doc = "Bits 0:23 - Valid in Block except first."]
     #[inline(always)]
     pub fn d23_to_d0_non_first_valid(&self) -> D23_TO_D0_NON_FIRST_VALID_R {
         D23_TO_D0_NON_FIRST_VALID_R::new((self.bits & 0x00ff_ffff) as u32)
     }
-}
-impl W {
     #[doc = "Bit 24 - Valid in Block except first."]
     #[inline(always)]
-    pub fn a1_non_first_valid(&mut self) -> A1_NON_FIRST_VALID_W<24> {
-        A1_NON_FIRST_VALID_W::new(self)
+    pub fn a1_non_first_valid(&self) -> A1_NON_FIRST_VALID_R {
+        A1_NON_FIRST_VALID_R::new(((self.bits >> 24) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:23 - Valid in Block except first."]
     #[inline(always)]
     pub fn d23_to_d0_non_first_valid(&mut self) -> D23_TO_D0_NON_FIRST_VALID_W<0> {
         D23_TO_D0_NON_FIRST_VALID_W::new(self)
+    }
+    #[doc = "Bit 24 - Valid in Block except first."]
+    #[inline(always)]
+    pub fn a1_non_first_valid(&mut self) -> A1_NON_FIRST_VALID_W<24> {
+        A1_NON_FIRST_VALID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

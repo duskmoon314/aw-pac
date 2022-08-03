@@ -34,6 +34,8 @@ impl From<crate::W<HS_TMR_IRQ_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `hs_tmr_int_en[0-1]` reader - HSTimer Interrupt Enable"]
+pub type HS_TMR_INT_EN_R = crate::BitReader<HS_TMR_INT_EN_A>;
 #[doc = "HSTimer Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HS_TMR_INT_EN_A {
@@ -48,8 +50,6 @@ impl From<HS_TMR_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `hs_tmr(0-1)_int_en` reader - HSTimer Interrupt Enable"]
-pub type HS_TMR_INT_EN_R = crate::BitReader<HS_TMR_INT_EN_A>;
 impl HS_TMR_INT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl HS_TMR_INT_EN_R {
         *self == HS_TMR_INT_EN_A::ENABLED
     }
 }
-#[doc = "Fields `hs_tmr(0-1)_int_en` writer - HSTimer Interrupt Enable"]
+#[doc = "Field `hs_tmr_int_en[0-1]` writer - HSTimer Interrupt Enable"]
 pub type HS_TMR_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HS_TMR_IRQ_EN_SPEC, HS_TMR_INT_EN_A, O>;
 impl<'a, const O: u8> HS_TMR_INT_EN_W<'a, O> {

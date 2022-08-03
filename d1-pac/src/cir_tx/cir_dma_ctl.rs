@@ -34,6 +34,8 @@ impl From<crate::W<CIR_DMA_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dma` reader - Handshake Configuration"]
+pub type DMA_R = crate::FieldReader<u8, DMA_A>;
 #[doc = "Handshake Configuration\n\nValue on reset: 165"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,8 +51,6 @@ impl From<DMA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `dma` reader - Handshake Configuration"]
-pub type DMA_R = crate::FieldReader<u8, DMA_A>;
 impl DMA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

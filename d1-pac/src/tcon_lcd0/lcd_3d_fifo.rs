@@ -34,61 +34,8 @@ impl From<crate::W<LCD_3D_FIFO_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Enable the 3D fifo bist test function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BIST_EN_A {
-    #[doc = "0: Disable"]
-    D_ISABLE = 0,
-    #[doc = "1: Enable"]
-    E_NABLE = 1,
-}
-impl From<BIST_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: BIST_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `bist_en` reader - Enable the 3D fifo bist test function"]
-pub type BIST_EN_R = crate::BitReader<BIST_EN_A>;
-impl BIST_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BIST_EN_A {
-        match self.bits {
-            false => BIST_EN_A::D_ISABLE,
-            true => BIST_EN_A::E_NABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
-    #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BIST_EN_A::D_ISABLE
-    }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
-    #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BIST_EN_A::E_NABLE
-    }
-}
-#[doc = "Field `bist_en` writer - Enable the 3D fifo bist test function"]
-pub type BIST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_3D_FIFO_SPEC, BIST_EN_A, O>;
-impl<'a, const O: u8> BIST_EN_W<'a, O> {
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BIST_EN_A::D_ISABLE)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BIST_EN_A::E_NABLE)
-    }
-}
-#[doc = "Field `half_line_size` reader - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
-pub type HALF_LINE_SIZE_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `half_line_size` writer - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
-pub type HALF_LINE_SIZE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_3D_FIFO_SPEC, u16, u16, 10, O>;
+#[doc = "Field `setting` reader - Set the work mode of 3D FIFO"]
+pub type SETTING_R = crate::FieldReader<u8, SETTING_A>;
 #[doc = "Set the work mode of 3D FIFO\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -106,8 +53,6 @@ impl From<SETTING_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `setting` reader - Set the work mode of 3D FIFO"]
-pub type SETTING_R = crate::FieldReader<u8, SETTING_A>;
 impl SETTING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -155,38 +100,93 @@ impl<'a, const O: u8> SETTING_W<'a, O> {
         self.variant(SETTING_A::I_NTERLACE_3D)
     }
 }
-impl R {
-    #[doc = "Bit 31 - Enable the 3D fifo bist test function"]
+#[doc = "Field `half_line_size` reader - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
+pub type HALF_LINE_SIZE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `half_line_size` writer - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
+pub type HALF_LINE_SIZE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_3D_FIFO_SPEC, u16, u16, 10, O>;
+#[doc = "Field `bist_en` reader - Enable the 3D fifo bist test function"]
+pub type BIST_EN_R = crate::BitReader<BIST_EN_A>;
+#[doc = "Enable the 3D fifo bist test function\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BIST_EN_A {
+    #[doc = "0: Disable"]
+    D_ISABLE = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<BIST_EN_A> for bool {
     #[inline(always)]
-    pub fn bist_en(&self) -> BIST_EN_R {
-        BIST_EN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: BIST_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BIST_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BIST_EN_A {
+        match self.bits {
+            false => BIST_EN_A::D_ISABLE,
+            true => BIST_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[inline(always)]
+    pub fn is_d_isable(&self) -> bool {
+        *self == BIST_EN_A::D_ISABLE
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == BIST_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `bist_en` writer - Enable the 3D fifo bist test function"]
+pub type BIST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_3D_FIFO_SPEC, BIST_EN_A, O>;
+impl<'a, const O: u8> BIST_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn d_isable(self) -> &'a mut W {
+        self.variant(BIST_EN_A::D_ISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(BIST_EN_A::E_NABLE)
+    }
+}
+impl R {
+    #[doc = "Bits 0:1 - Set the work mode of 3D FIFO"]
+    #[inline(always)]
+    pub fn setting(&self) -> SETTING_R {
+        SETTING_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 4:13 - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
     #[inline(always)]
     pub fn half_line_size(&self) -> HALF_LINE_SIZE_R {
         HALF_LINE_SIZE_R::new(((self.bits >> 4) & 0x03ff) as u16)
     }
-    #[doc = "Bits 0:1 - Set the work mode of 3D FIFO"]
+    #[doc = "Bit 31 - Enable the 3D fifo bist test function"]
     #[inline(always)]
-    pub fn setting(&self) -> SETTING_R {
-        SETTING_R::new((self.bits & 3) as u8)
+    pub fn bist_en(&self) -> BIST_EN_R {
+        BIST_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31 - Enable the 3D fifo bist test function"]
+    #[doc = "Bits 0:1 - Set the work mode of 3D FIFO"]
     #[inline(always)]
-    pub fn bist_en(&mut self) -> BIST_EN_W<31> {
-        BIST_EN_W::new(self)
+    pub fn setting(&mut self) -> SETTING_W<0> {
+        SETTING_W::new(self)
     }
     #[doc = "Bits 4:13 - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
     #[inline(always)]
     pub fn half_line_size(&mut self) -> HALF_LINE_SIZE_W<4> {
         HALF_LINE_SIZE_W::new(self)
     }
-    #[doc = "Bits 0:1 - Set the work mode of 3D FIFO"]
+    #[doc = "Bit 31 - Enable the 3D fifo bist test function"]
     #[inline(always)]
-    pub fn setting(&mut self) -> SETTING_W<0> {
-        SETTING_W::new(self)
+    pub fn bist_en(&mut self) -> BIST_EN_W<31> {
+        BIST_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

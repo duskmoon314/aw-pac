@@ -34,59 +34,8 @@ impl From<crate::W<WDOG_CFG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `key_field` writer - Key Field"]
-pub type KEY_FIELD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u16, u16, 16, O>;
-#[doc = "Select the clock source for the watchdog.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WDOG_CLK_SRC_A {
-    #[doc = "0: `0`"]
-    HOSC_32K = 0,
-    #[doc = "1: `1`"]
-    LOSC_32K = 1,
-}
-impl From<WDOG_CLK_SRC_A> for bool {
-    #[inline(always)]
-    fn from(variant: WDOG_CLK_SRC_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `wdog_clk_src` reader - Select the clock source for the watchdog."]
-pub type WDOG_CLK_SRC_R = crate::BitReader<WDOG_CLK_SRC_A>;
-impl WDOG_CLK_SRC_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> WDOG_CLK_SRC_A {
-        match self.bits {
-            false => WDOG_CLK_SRC_A::HOSC_32K,
-            true => WDOG_CLK_SRC_A::LOSC_32K,
-        }
-    }
-    #[doc = "Checks if the value of the field is `HOSC_32K`"]
-    #[inline(always)]
-    pub fn is_hosc_32k(&self) -> bool {
-        *self == WDOG_CLK_SRC_A::HOSC_32K
-    }
-    #[doc = "Checks if the value of the field is `LOSC_32K`"]
-    #[inline(always)]
-    pub fn is_losc_32k(&self) -> bool {
-        *self == WDOG_CLK_SRC_A::LOSC_32K
-    }
-}
-#[doc = "Field `wdog_clk_src` writer - Select the clock source for the watchdog."]
-pub type WDOG_CLK_SRC_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, WDOG_CFG_SPEC, WDOG_CLK_SRC_A, O>;
-impl<'a, const O: u8> WDOG_CLK_SRC_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn hosc_32k(self) -> &'a mut W {
-        self.variant(WDOG_CLK_SRC_A::HOSC_32K)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn losc_32k(self) -> &'a mut W {
-        self.variant(WDOG_CLK_SRC_A::LOSC_32K)
-    }
-}
+#[doc = "Field `wdog_mode` reader - Configure the operating mode for the watchdog"]
+pub type WDOG_MODE_R = crate::FieldReader<u8, WDOG_MODE_A>;
 #[doc = "Configure the operating mode for the watchdog\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -102,8 +51,6 @@ impl From<WDOG_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `wdog_mode` reader - Configure the operating mode for the watchdog"]
-pub type WDOG_MODE_R = crate::FieldReader<u8, WDOG_MODE_A>;
 impl WDOG_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -140,33 +87,86 @@ impl<'a, const O: u8> WDOG_MODE_W<'a, O> {
         self.variant(WDOG_MODE_A::ONLY_INTERRUPT)
     }
 }
-impl R {
-    #[doc = "Bit 8 - Select the clock source for the watchdog."]
+#[doc = "Field `wdog_clk_src` reader - Select the clock source for the watchdog."]
+pub type WDOG_CLK_SRC_R = crate::BitReader<WDOG_CLK_SRC_A>;
+#[doc = "Select the clock source for the watchdog.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WDOG_CLK_SRC_A {
+    #[doc = "0: `0`"]
+    HOSC_32K = 0,
+    #[doc = "1: `1`"]
+    LOSC_32K = 1,
+}
+impl From<WDOG_CLK_SRC_A> for bool {
     #[inline(always)]
-    pub fn wdog_clk_src(&self) -> WDOG_CLK_SRC_R {
-        WDOG_CLK_SRC_R::new(((self.bits >> 8) & 1) != 0)
+    fn from(variant: WDOG_CLK_SRC_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl WDOG_CLK_SRC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WDOG_CLK_SRC_A {
+        match self.bits {
+            false => WDOG_CLK_SRC_A::HOSC_32K,
+            true => WDOG_CLK_SRC_A::LOSC_32K,
+        }
+    }
+    #[doc = "Checks if the value of the field is `HOSC_32K`"]
+    #[inline(always)]
+    pub fn is_hosc_32k(&self) -> bool {
+        *self == WDOG_CLK_SRC_A::HOSC_32K
+    }
+    #[doc = "Checks if the value of the field is `LOSC_32K`"]
+    #[inline(always)]
+    pub fn is_losc_32k(&self) -> bool {
+        *self == WDOG_CLK_SRC_A::LOSC_32K
+    }
+}
+#[doc = "Field `wdog_clk_src` writer - Select the clock source for the watchdog."]
+pub type WDOG_CLK_SRC_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, WDOG_CFG_SPEC, WDOG_CLK_SRC_A, O>;
+impl<'a, const O: u8> WDOG_CLK_SRC_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn hosc_32k(self) -> &'a mut W {
+        self.variant(WDOG_CLK_SRC_A::HOSC_32K)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn losc_32k(self) -> &'a mut W {
+        self.variant(WDOG_CLK_SRC_A::LOSC_32K)
+    }
+}
+#[doc = "Field `key_field` writer - Key Field"]
+pub type KEY_FIELD_W<'a, const O: u8> = crate::FieldWriter<'a, u32, WDOG_CFG_SPEC, u16, u16, 16, O>;
+impl R {
     #[doc = "Bits 0:1 - Configure the operating mode for the watchdog"]
     #[inline(always)]
     pub fn wdog_mode(&self) -> WDOG_MODE_R {
         WDOG_MODE_R::new((self.bits & 3) as u8)
     }
+    #[doc = "Bit 8 - Select the clock source for the watchdog."]
+    #[inline(always)]
+    pub fn wdog_clk_src(&self) -> WDOG_CLK_SRC_R {
+        WDOG_CLK_SRC_R::new(((self.bits >> 8) & 1) != 0)
+    }
 }
 impl W {
-    #[doc = "Bits 16:31 - Key Field"]
+    #[doc = "Bits 0:1 - Configure the operating mode for the watchdog"]
     #[inline(always)]
-    pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
-        KEY_FIELD_W::new(self)
+    pub fn wdog_mode(&mut self) -> WDOG_MODE_W<0> {
+        WDOG_MODE_W::new(self)
     }
     #[doc = "Bit 8 - Select the clock source for the watchdog."]
     #[inline(always)]
     pub fn wdog_clk_src(&mut self) -> WDOG_CLK_SRC_W<8> {
         WDOG_CLK_SRC_W::new(self)
     }
-    #[doc = "Bits 0:1 - Configure the operating mode for the watchdog"]
+    #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
-    pub fn wdog_mode(&mut self) -> WDOG_MODE_W<0> {
-        WDOG_MODE_W::new(self)
+    pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
+        KEY_FIELD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

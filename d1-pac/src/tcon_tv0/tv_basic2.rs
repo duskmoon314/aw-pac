@@ -34,36 +34,36 @@ impl From<crate::W<TV_BASIC2_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `tv_xo` reader - Width is TV_XO+1"]
-pub type TV_XO_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `tv_xo` writer - Width is TV_XO+1"]
-pub type TV_XO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC2_SPEC, u16, u16, 12, O>;
 #[doc = "Field `tv_yo` reader - Height is TV_YO+1"]
 pub type TV_YO_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `tv_yo` writer - Height is TV_YO+1"]
 pub type TV_YO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC2_SPEC, u16, u16, 12, O>;
+#[doc = "Field `tv_xo` reader - Width is TV_XO+1"]
+pub type TV_XO_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `tv_xo` writer - Width is TV_XO+1"]
+pub type TV_XO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC2_SPEC, u16, u16, 12, O>;
 impl R {
-    #[doc = "Bits 16:27 - Width is TV_XO+1"]
-    #[inline(always)]
-    pub fn tv_xo(&self) -> TV_XO_R {
-        TV_XO_R::new(((self.bits >> 16) & 0x0fff) as u16)
-    }
     #[doc = "Bits 0:11 - Height is TV_YO+1"]
     #[inline(always)]
     pub fn tv_yo(&self) -> TV_YO_R {
         TV_YO_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:27 - Width is TV_XO+1"]
     #[inline(always)]
-    pub fn tv_xo(&mut self) -> TV_XO_W<16> {
-        TV_XO_W::new(self)
+    pub fn tv_xo(&self) -> TV_XO_R {
+        TV_XO_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Height is TV_YO+1"]
     #[inline(always)]
     pub fn tv_yo(&mut self) -> TV_YO_W<0> {
         TV_YO_W::new(self)
+    }
+    #[doc = "Bits 16:27 - Width is TV_XO+1"]
+    #[inline(always)]
+    pub fn tv_xo(&mut self) -> TV_XO_W<16> {
+        TV_XO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

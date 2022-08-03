@@ -34,57 +34,8 @@ impl From<crate::W<TMR_IRQ_EN_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TMR1_IRQ_EN_A {
-    #[doc = "0: `0`"]
-    DISABLED = 0,
-    #[doc = "1: `1`"]
-    ENABLED = 1,
-}
-impl From<TMR1_IRQ_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TMR1_IRQ_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tmr1_irq_en` reader - "]
-pub type TMR1_IRQ_EN_R = crate::BitReader<TMR1_IRQ_EN_A>;
-impl TMR1_IRQ_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TMR1_IRQ_EN_A {
-        match self.bits {
-            false => TMR1_IRQ_EN_A::DISABLED,
-            true => TMR1_IRQ_EN_A::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == TMR1_IRQ_EN_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == TMR1_IRQ_EN_A::ENABLED
-    }
-}
-#[doc = "Field `tmr1_irq_en` writer - "]
-pub type TMR1_IRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TMR_IRQ_EN_SPEC, TMR1_IRQ_EN_A, O>;
-impl<'a, const O: u8> TMR1_IRQ_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(TMR1_IRQ_EN_A::DISABLED)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(TMR1_IRQ_EN_A::ENABLED)
-    }
-}
+#[doc = "Field `tmr0_irq_en` reader - "]
+pub type TMR0_IRQ_EN_R = crate::BitReader<TMR0_IRQ_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TMR0_IRQ_EN_A {
@@ -99,8 +50,6 @@ impl From<TMR0_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tmr0_irq_en` reader - "]
-pub type TMR0_IRQ_EN_R = crate::BitReader<TMR0_IRQ_EN_A>;
 impl TMR0_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,28 +85,79 @@ impl<'a, const O: u8> TMR0_IRQ_EN_W<'a, O> {
         self.variant(TMR0_IRQ_EN_A::ENABLED)
     }
 }
-impl R {
-    #[doc = "Bit 1"]
+#[doc = "Field `tmr1_irq_en` reader - "]
+pub type TMR1_IRQ_EN_R = crate::BitReader<TMR1_IRQ_EN_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TMR1_IRQ_EN_A {
+    #[doc = "0: `0`"]
+    DISABLED = 0,
+    #[doc = "1: `1`"]
+    ENABLED = 1,
+}
+impl From<TMR1_IRQ_EN_A> for bool {
     #[inline(always)]
-    pub fn tmr1_irq_en(&self) -> TMR1_IRQ_EN_R {
-        TMR1_IRQ_EN_R::new(((self.bits >> 1) & 1) != 0)
+    fn from(variant: TMR1_IRQ_EN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl TMR1_IRQ_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TMR1_IRQ_EN_A {
+        match self.bits {
+            false => TMR1_IRQ_EN_A::DISABLED,
+            true => TMR1_IRQ_EN_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == TMR1_IRQ_EN_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == TMR1_IRQ_EN_A::ENABLED
+    }
+}
+#[doc = "Field `tmr1_irq_en` writer - "]
+pub type TMR1_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TMR_IRQ_EN_SPEC, TMR1_IRQ_EN_A, O>;
+impl<'a, const O: u8> TMR1_IRQ_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(TMR1_IRQ_EN_A::DISABLED)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(TMR1_IRQ_EN_A::ENABLED)
+    }
+}
+impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn tmr0_irq_en(&self) -> TMR0_IRQ_EN_R {
         TMR0_IRQ_EN_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn tmr1_irq_en(&mut self) -> TMR1_IRQ_EN_W<1> {
-        TMR1_IRQ_EN_W::new(self)
+    pub fn tmr1_irq_en(&self) -> TMR1_IRQ_EN_R {
+        TMR1_IRQ_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn tmr0_irq_en(&mut self) -> TMR0_IRQ_EN_W<0> {
         TMR0_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    pub fn tmr1_irq_en(&mut self) -> TMR1_IRQ_EN_W<1> {
+        TMR1_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

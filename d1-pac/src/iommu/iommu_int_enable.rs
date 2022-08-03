@@ -34,108 +34,116 @@ impl From<crate::W<IOMMU_INT_ENABLE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Debug or Prefetch Invalid Page Table Enable\n\nValue on reset: 0"]
+#[doc = "Field `micro_tlb_invalid_en[0-6]` reader - Micro TLB\\[i\\]
+permission invalid interrupt enable"]
+pub type MICRO_TLB_INVALID_EN_R = crate::BitReader<MICRO_TLB_INVALID_EN_A>;
+#[doc = "Micro TLB\\[i\\]
+permission invalid interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DBG_PF_L2_IV_PT_EN_A {
+pub enum MICRO_TLB_INVALID_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
     E_NABLE = 1,
 }
-impl From<DBG_PF_L2_IV_PT_EN_A> for bool {
+impl From<MICRO_TLB_INVALID_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: DBG_PF_L2_IV_PT_EN_A) -> Self {
+    fn from(variant: MICRO_TLB_INVALID_EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dbg_pf_l2_iv_pt_en` reader - Debug or Prefetch Invalid Page Table Enable"]
-pub type DBG_PF_L2_IV_PT_EN_R = crate::BitReader<DBG_PF_L2_IV_PT_EN_A>;
-impl DBG_PF_L2_IV_PT_EN_R {
+impl MICRO_TLB_INVALID_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DBG_PF_L2_IV_PT_EN_A {
+    pub fn variant(&self) -> MICRO_TLB_INVALID_EN_A {
         match self.bits {
-            false => DBG_PF_L2_IV_PT_EN_A::M_ASK,
-            true => DBG_PF_L2_IV_PT_EN_A::E_NABLE,
+            false => MICRO_TLB_INVALID_EN_A::M_ASK,
+            true => MICRO_TLB_INVALID_EN_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
     #[inline(always)]
     pub fn is_m_ask(&self) -> bool {
-        *self == DBG_PF_L2_IV_PT_EN_A::M_ASK
+        *self == MICRO_TLB_INVALID_EN_A::M_ASK
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == DBG_PF_L2_IV_PT_EN_A::E_NABLE
+        *self == MICRO_TLB_INVALID_EN_A::E_NABLE
     }
 }
-#[doc = "Field `dbg_pf_l2_iv_pt_en` writer - Debug or Prefetch Invalid Page Table Enable"]
-pub type DBG_PF_L2_IV_PT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, DBG_PF_L2_IV_PT_EN_A, O>;
-impl<'a, const O: u8> DBG_PF_L2_IV_PT_EN_W<'a, O> {
+#[doc = "Field `micro_tlb_invalid_en[0-6]` writer - Micro TLB\\[i\\]
+permission invalid interrupt enable"]
+pub type MICRO_TLB_INVALID_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, MICRO_TLB_INVALID_EN_A, O>;
+impl<'a, const O: u8> MICRO_TLB_INVALID_EN_W<'a, O> {
     #[doc = "Mask interrupt"]
     #[inline(always)]
     pub fn m_ask(self) -> &'a mut W {
-        self.variant(DBG_PF_L2_IV_PT_EN_A::M_ASK)
+        self.variant(MICRO_TLB_INVALID_EN_A::M_ASK)
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(DBG_PF_L2_IV_PT_EN_A::E_NABLE)
+        self.variant(MICRO_TLB_INVALID_EN_A::E_NABLE)
     }
 }
-#[doc = "Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable\n\nValue on reset: 0"]
+#[doc = "Field `l_page_table_invalid_en[0-1]` reader - Level\\[i\\]
+page table invalid interrupt enable"]
+pub type L_PAGE_TABLE_INVALID_EN_R = crate::BitReader<L_PAGE_TABLE_INVALID_EN_A>;
+#[doc = "Level\\[i\\]
+page table invalid interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DBG_PF_PC_IV_L1_PT_EN_A {
+pub enum L_PAGE_TABLE_INVALID_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
     E_NABLE = 1,
 }
-impl From<DBG_PF_PC_IV_L1_PT_EN_A> for bool {
+impl From<L_PAGE_TABLE_INVALID_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: DBG_PF_PC_IV_L1_PT_EN_A) -> Self {
+    fn from(variant: L_PAGE_TABLE_INVALID_EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dbg_pf_pc_iv_l1_pt_en` reader - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
-pub type DBG_PF_PC_IV_L1_PT_EN_R = crate::BitReader<DBG_PF_PC_IV_L1_PT_EN_A>;
-impl DBG_PF_PC_IV_L1_PT_EN_R {
+impl L_PAGE_TABLE_INVALID_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DBG_PF_PC_IV_L1_PT_EN_A {
+    pub fn variant(&self) -> L_PAGE_TABLE_INVALID_EN_A {
         match self.bits {
-            false => DBG_PF_PC_IV_L1_PT_EN_A::M_ASK,
-            true => DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE,
+            false => L_PAGE_TABLE_INVALID_EN_A::M_ASK,
+            true => L_PAGE_TABLE_INVALID_EN_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
     #[inline(always)]
     pub fn is_m_ask(&self) -> bool {
-        *self == DBG_PF_PC_IV_L1_PT_EN_A::M_ASK
+        *self == L_PAGE_TABLE_INVALID_EN_A::M_ASK
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE
+        *self == L_PAGE_TABLE_INVALID_EN_A::E_NABLE
     }
 }
-#[doc = "Field `dbg_pf_pc_iv_l1_pt_en` writer - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
-pub type DBG_PF_PC_IV_L1_PT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, DBG_PF_PC_IV_L1_PT_EN_A, O>;
-impl<'a, const O: u8> DBG_PF_PC_IV_L1_PT_EN_W<'a, O> {
+#[doc = "Field `l_page_table_invalid_en[0-1]` writer - Level\\[i\\]
+page table invalid interrupt enable"]
+pub type L_PAGE_TABLE_INVALID_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, L_PAGE_TABLE_INVALID_EN_A, O>;
+impl<'a, const O: u8> L_PAGE_TABLE_INVALID_EN_W<'a, O> {
     #[doc = "Mask interrupt"]
     #[inline(always)]
     pub fn m_ask(self) -> &'a mut W {
-        self.variant(DBG_PF_PC_IV_L1_PT_EN_A::M_ASK)
+        self.variant(L_PAGE_TABLE_INVALID_EN_A::M_ASK)
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE)
+        self.variant(L_PAGE_TABLE_INVALID_EN_A::E_NABLE)
     }
 }
+#[doc = "Field `dbg_pf_dram_iv_l1_pt_en` reader - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
+pub type DBG_PF_DRAM_IV_L1_PT_EN_R = crate::BitReader<DBG_PF_DRAM_IV_L1_PT_EN_A>;
 #[doc = "Debug or Prefetch DRAM Invalid Level1 Page Table Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBG_PF_DRAM_IV_L1_PT_EN_A {
@@ -150,8 +158,6 @@ impl From<DBG_PF_DRAM_IV_L1_PT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dbg_pf_dram_iv_l1_pt_en` reader - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
-pub type DBG_PF_DRAM_IV_L1_PT_EN_R = crate::BitReader<DBG_PF_DRAM_IV_L1_PT_EN_A>;
 impl DBG_PF_DRAM_IV_L1_PT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -187,148 +193,109 @@ impl<'a, const O: u8> DBG_PF_DRAM_IV_L1_PT_EN_W<'a, O> {
         self.variant(DBG_PF_DRAM_IV_L1_PT_EN_A::E_NABLE)
     }
 }
-#[doc = "Level\\[i\\]
-page table invalid interrupt enable\n\nValue on reset: 0"]
+#[doc = "Field `dbg_pf_pc_iv_l1_pt_en` reader - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
+pub type DBG_PF_PC_IV_L1_PT_EN_R = crate::BitReader<DBG_PF_PC_IV_L1_PT_EN_A>;
+#[doc = "Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum L_PAGE_TABLE_INVALID_EN_A {
+pub enum DBG_PF_PC_IV_L1_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
     E_NABLE = 1,
 }
-impl From<L_PAGE_TABLE_INVALID_EN_A> for bool {
+impl From<DBG_PF_PC_IV_L1_PT_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: L_PAGE_TABLE_INVALID_EN_A) -> Self {
+    fn from(variant: DBG_PF_PC_IV_L1_PT_EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `l(0-1)_page_table_invalid_en` reader - Level\\[i\\]
-page table invalid interrupt enable"]
-pub type L_PAGE_TABLE_INVALID_EN_R = crate::BitReader<L_PAGE_TABLE_INVALID_EN_A>;
-impl L_PAGE_TABLE_INVALID_EN_R {
+impl DBG_PF_PC_IV_L1_PT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> L_PAGE_TABLE_INVALID_EN_A {
+    pub fn variant(&self) -> DBG_PF_PC_IV_L1_PT_EN_A {
         match self.bits {
-            false => L_PAGE_TABLE_INVALID_EN_A::M_ASK,
-            true => L_PAGE_TABLE_INVALID_EN_A::E_NABLE,
+            false => DBG_PF_PC_IV_L1_PT_EN_A::M_ASK,
+            true => DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
     #[inline(always)]
     pub fn is_m_ask(&self) -> bool {
-        *self == L_PAGE_TABLE_INVALID_EN_A::M_ASK
+        *self == DBG_PF_PC_IV_L1_PT_EN_A::M_ASK
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == L_PAGE_TABLE_INVALID_EN_A::E_NABLE
+        *self == DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE
     }
 }
-#[doc = "Fields `l(0-1)_page_table_invalid_en` writer - Level\\[i\\]
-page table invalid interrupt enable"]
-pub type L_PAGE_TABLE_INVALID_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, L_PAGE_TABLE_INVALID_EN_A, O>;
-impl<'a, const O: u8> L_PAGE_TABLE_INVALID_EN_W<'a, O> {
+#[doc = "Field `dbg_pf_pc_iv_l1_pt_en` writer - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
+pub type DBG_PF_PC_IV_L1_PT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, DBG_PF_PC_IV_L1_PT_EN_A, O>;
+impl<'a, const O: u8> DBG_PF_PC_IV_L1_PT_EN_W<'a, O> {
     #[doc = "Mask interrupt"]
     #[inline(always)]
     pub fn m_ask(self) -> &'a mut W {
-        self.variant(L_PAGE_TABLE_INVALID_EN_A::M_ASK)
+        self.variant(DBG_PF_PC_IV_L1_PT_EN_A::M_ASK)
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(L_PAGE_TABLE_INVALID_EN_A::E_NABLE)
+        self.variant(DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE)
     }
 }
-#[doc = "Micro TLB\\[i\\]
-permission invalid interrupt enable\n\nValue on reset: 0"]
+#[doc = "Field `dbg_pf_l2_iv_pt_en` reader - Debug or Prefetch Invalid Page Table Enable"]
+pub type DBG_PF_L2_IV_PT_EN_R = crate::BitReader<DBG_PF_L2_IV_PT_EN_A>;
+#[doc = "Debug or Prefetch Invalid Page Table Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MICRO_TLB_INVALID_EN_A {
+pub enum DBG_PF_L2_IV_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
     E_NABLE = 1,
 }
-impl From<MICRO_TLB_INVALID_EN_A> for bool {
+impl From<DBG_PF_L2_IV_PT_EN_A> for bool {
     #[inline(always)]
-    fn from(variant: MICRO_TLB_INVALID_EN_A) -> Self {
+    fn from(variant: DBG_PF_L2_IV_PT_EN_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `micro_tlb(0-6)_invalid_en` reader - Micro TLB\\[i\\]
-permission invalid interrupt enable"]
-pub type MICRO_TLB_INVALID_EN_R = crate::BitReader<MICRO_TLB_INVALID_EN_A>;
-impl MICRO_TLB_INVALID_EN_R {
+impl DBG_PF_L2_IV_PT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MICRO_TLB_INVALID_EN_A {
+    pub fn variant(&self) -> DBG_PF_L2_IV_PT_EN_A {
         match self.bits {
-            false => MICRO_TLB_INVALID_EN_A::M_ASK,
-            true => MICRO_TLB_INVALID_EN_A::E_NABLE,
+            false => DBG_PF_L2_IV_PT_EN_A::M_ASK,
+            true => DBG_PF_L2_IV_PT_EN_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
     #[inline(always)]
     pub fn is_m_ask(&self) -> bool {
-        *self == MICRO_TLB_INVALID_EN_A::M_ASK
+        *self == DBG_PF_L2_IV_PT_EN_A::M_ASK
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == MICRO_TLB_INVALID_EN_A::E_NABLE
+        *self == DBG_PF_L2_IV_PT_EN_A::E_NABLE
     }
 }
-#[doc = "Fields `micro_tlb(0-6)_invalid_en` writer - Micro TLB\\[i\\]
-permission invalid interrupt enable"]
-pub type MICRO_TLB_INVALID_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, MICRO_TLB_INVALID_EN_A, O>;
-impl<'a, const O: u8> MICRO_TLB_INVALID_EN_W<'a, O> {
+#[doc = "Field `dbg_pf_l2_iv_pt_en` writer - Debug or Prefetch Invalid Page Table Enable"]
+pub type DBG_PF_L2_IV_PT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_INT_ENABLE_SPEC, DBG_PF_L2_IV_PT_EN_A, O>;
+impl<'a, const O: u8> DBG_PF_L2_IV_PT_EN_W<'a, O> {
     #[doc = "Mask interrupt"]
     #[inline(always)]
     pub fn m_ask(self) -> &'a mut W {
-        self.variant(MICRO_TLB_INVALID_EN_A::M_ASK)
+        self.variant(DBG_PF_L2_IV_PT_EN_A::M_ASK)
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(MICRO_TLB_INVALID_EN_A::E_NABLE)
+        self.variant(DBG_PF_L2_IV_PT_EN_A::E_NABLE)
     }
 }
 impl R {
-    #[doc = "Bit 20 - Debug or Prefetch Invalid Page Table Enable"]
-    #[inline(always)]
-    pub fn dbg_pf_l2_iv_pt_en(&self) -> DBG_PF_L2_IV_PT_EN_R {
-        DBG_PF_L2_IV_PT_EN_R::new(((self.bits >> 20) & 1) != 0)
-    }
-    #[doc = "Bit 19 - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
-    #[inline(always)]
-    pub fn dbg_pf_pc_iv_l1_pt_en(&self) -> DBG_PF_PC_IV_L1_PT_EN_R {
-        DBG_PF_PC_IV_L1_PT_EN_R::new(((self.bits >> 19) & 1) != 0)
-    }
-    #[doc = "Bit 18 - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
-    #[inline(always)]
-    pub fn dbg_pf_dram_iv_l1_pt_en(&self) -> DBG_PF_DRAM_IV_L1_PT_EN_R {
-        DBG_PF_DRAM_IV_L1_PT_EN_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Level\\[i\\]
-page table invalid interrupt enable"]
-    #[inline(always)]
-    pub unsafe fn l_page_table_invalid_en(&self, n: u8) -> L_PAGE_TABLE_INVALID_EN_R {
-        L_PAGE_TABLE_INVALID_EN_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Level\\[i\\]
-page table invalid interrupt enable"]
-    #[inline(always)]
-    pub fn l0_page_table_invalid_en(&self) -> L_PAGE_TABLE_INVALID_EN_R {
-        L_PAGE_TABLE_INVALID_EN_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - Level\\[i\\]
-page table invalid interrupt enable"]
-    #[inline(always)]
-    pub fn l1_page_table_invalid_en(&self) -> L_PAGE_TABLE_INVALID_EN_R {
-        L_PAGE_TABLE_INVALID_EN_R::new(((self.bits >> 17) & 1) != 0)
-    }
     #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt enable"]
     #[inline(always)]
@@ -377,41 +344,41 @@ permission invalid interrupt enable"]
     pub fn micro_tlb6_invalid_en(&self) -> MICRO_TLB_INVALID_EN_R {
         MICRO_TLB_INVALID_EN_R::new(((self.bits >> 12) & 1) != 0)
     }
-}
-impl W {
-    #[doc = "Bit 20 - Debug or Prefetch Invalid Page Table Enable"]
-    #[inline(always)]
-    pub fn dbg_pf_l2_iv_pt_en(&mut self) -> DBG_PF_L2_IV_PT_EN_W<20> {
-        DBG_PF_L2_IV_PT_EN_W::new(self)
-    }
-    #[doc = "Bit 19 - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
-    #[inline(always)]
-    pub fn dbg_pf_pc_iv_l1_pt_en(&mut self) -> DBG_PF_PC_IV_L1_PT_EN_W<19> {
-        DBG_PF_PC_IV_L1_PT_EN_W::new(self)
-    }
-    #[doc = "Bit 18 - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
-    #[inline(always)]
-    pub fn dbg_pf_dram_iv_l1_pt_en(&mut self) -> DBG_PF_DRAM_IV_L1_PT_EN_W<18> {
-        DBG_PF_DRAM_IV_L1_PT_EN_W::new(self)
-    }
     #[doc = "Level\\[i\\]
 page table invalid interrupt enable"]
     #[inline(always)]
-    pub unsafe fn l_page_table_invalid_en<const O: u8>(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<O> {
-        L_PAGE_TABLE_INVALID_EN_W::new(self)
+    pub unsafe fn l_page_table_invalid_en(&self, n: u8) -> L_PAGE_TABLE_INVALID_EN_R {
+        L_PAGE_TABLE_INVALID_EN_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Level\\[i\\]
 page table invalid interrupt enable"]
     #[inline(always)]
-    pub fn l0_page_table_invalid_en(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<16> {
-        L_PAGE_TABLE_INVALID_EN_W::new(self)
+    pub fn l0_page_table_invalid_en(&self) -> L_PAGE_TABLE_INVALID_EN_R {
+        L_PAGE_TABLE_INVALID_EN_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Level\\[i\\]
 page table invalid interrupt enable"]
     #[inline(always)]
-    pub fn l1_page_table_invalid_en(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<17> {
-        L_PAGE_TABLE_INVALID_EN_W::new(self)
+    pub fn l1_page_table_invalid_en(&self) -> L_PAGE_TABLE_INVALID_EN_R {
+        L_PAGE_TABLE_INVALID_EN_R::new(((self.bits >> 17) & 1) != 0)
     }
+    #[doc = "Bit 18 - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
+    #[inline(always)]
+    pub fn dbg_pf_dram_iv_l1_pt_en(&self) -> DBG_PF_DRAM_IV_L1_PT_EN_R {
+        DBG_PF_DRAM_IV_L1_PT_EN_R::new(((self.bits >> 18) & 1) != 0)
+    }
+    #[doc = "Bit 19 - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
+    #[inline(always)]
+    pub fn dbg_pf_pc_iv_l1_pt_en(&self) -> DBG_PF_PC_IV_L1_PT_EN_R {
+        DBG_PF_PC_IV_L1_PT_EN_R::new(((self.bits >> 19) & 1) != 0)
+    }
+    #[doc = "Bit 20 - Debug or Prefetch Invalid Page Table Enable"]
+    #[inline(always)]
+    pub fn dbg_pf_l2_iv_pt_en(&self) -> DBG_PF_L2_IV_PT_EN_R {
+        DBG_PF_L2_IV_PT_EN_R::new(((self.bits >> 20) & 1) != 0)
+    }
+}
+impl W {
     #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt enable"]
     #[inline(always)]
@@ -459,6 +426,39 @@ permission invalid interrupt enable"]
     #[inline(always)]
     pub fn micro_tlb6_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<12> {
         MICRO_TLB_INVALID_EN_W::new(self)
+    }
+    #[doc = "Level\\[i\\]
+page table invalid interrupt enable"]
+    #[inline(always)]
+    pub unsafe fn l_page_table_invalid_en<const O: u8>(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<O> {
+        L_PAGE_TABLE_INVALID_EN_W::new(self)
+    }
+    #[doc = "Bit 16 - Level\\[i\\]
+page table invalid interrupt enable"]
+    #[inline(always)]
+    pub fn l0_page_table_invalid_en(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<16> {
+        L_PAGE_TABLE_INVALID_EN_W::new(self)
+    }
+    #[doc = "Bit 17 - Level\\[i\\]
+page table invalid interrupt enable"]
+    #[inline(always)]
+    pub fn l1_page_table_invalid_en(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<17> {
+        L_PAGE_TABLE_INVALID_EN_W::new(self)
+    }
+    #[doc = "Bit 18 - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
+    #[inline(always)]
+    pub fn dbg_pf_dram_iv_l1_pt_en(&mut self) -> DBG_PF_DRAM_IV_L1_PT_EN_W<18> {
+        DBG_PF_DRAM_IV_L1_PT_EN_W::new(self)
+    }
+    #[doc = "Bit 19 - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
+    #[inline(always)]
+    pub fn dbg_pf_pc_iv_l1_pt_en(&mut self) -> DBG_PF_PC_IV_L1_PT_EN_W<19> {
+        DBG_PF_PC_IV_L1_PT_EN_W::new(self)
+    }
+    #[doc = "Bit 20 - Debug or Prefetch Invalid Page Table Enable"]
+    #[inline(always)]
+    pub fn dbg_pf_l2_iv_pt_en(&mut self) -> DBG_PF_L2_IV_PT_EN_W<20> {
+        DBG_PF_L2_IV_PT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

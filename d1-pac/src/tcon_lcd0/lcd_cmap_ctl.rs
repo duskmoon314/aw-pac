@@ -34,57 +34,8 @@ impl From<crate::W<LCD_CMAP_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Enable the color map function. This module only works when X is divided by 4.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum COLOR_MAP_EN_A {
-    #[doc = "0: Bypass"]
-    B_YPASS = 0,
-    #[doc = "1: Enable"]
-    E_NABLE = 1,
-}
-impl From<COLOR_MAP_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: COLOR_MAP_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `color_map_en` reader - Enable the color map function. This module only works when X is divided by 4."]
-pub type COLOR_MAP_EN_R = crate::BitReader<COLOR_MAP_EN_A>;
-impl COLOR_MAP_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> COLOR_MAP_EN_A {
-        match self.bits {
-            false => COLOR_MAP_EN_A::B_YPASS,
-            true => COLOR_MAP_EN_A::E_NABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `B_YPASS`"]
-    #[inline(always)]
-    pub fn is_b_ypass(&self) -> bool {
-        *self == COLOR_MAP_EN_A::B_YPASS
-    }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
-    #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == COLOR_MAP_EN_A::E_NABLE
-    }
-}
-#[doc = "Field `color_map_en` writer - Enable the color map function. This module only works when X is divided by 4."]
-pub type COLOR_MAP_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, LCD_CMAP_CTL_SPEC, COLOR_MAP_EN_A, O>;
-impl<'a, const O: u8> COLOR_MAP_EN_W<'a, O> {
-    #[doc = "Bypass"]
-    #[inline(always)]
-    pub fn b_ypass(self) -> &'a mut W {
-        self.variant(COLOR_MAP_EN_A::B_YPASS)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(COLOR_MAP_EN_A::E_NABLE)
-    }
-}
+#[doc = "Field `out_format` reader - Set the pixel output format in color map function."]
+pub type OUT_FORMAT_R = crate::BitReader<OUT_FORMAT_A>;
 #[doc = "Set the pixel output format in color map function.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum OUT_FORMAT_A {
@@ -99,8 +50,6 @@ impl From<OUT_FORMAT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `out_format` reader - Set the pixel output format in color map function."]
-pub type OUT_FORMAT_R = crate::BitReader<OUT_FORMAT_A>;
 impl OUT_FORMAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,28 +85,79 @@ impl<'a, const O: u8> OUT_FORMAT_W<'a, O> {
         self.variant(OUT_FORMAT_A::P2)
     }
 }
-impl R {
-    #[doc = "Bit 31 - Enable the color map function. This module only works when X is divided by 4."]
+#[doc = "Field `color_map_en` reader - Enable the color map function. This module only works when X is divided by 4."]
+pub type COLOR_MAP_EN_R = crate::BitReader<COLOR_MAP_EN_A>;
+#[doc = "Enable the color map function. This module only works when X is divided by 4.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum COLOR_MAP_EN_A {
+    #[doc = "0: Bypass"]
+    B_YPASS = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<COLOR_MAP_EN_A> for bool {
     #[inline(always)]
-    pub fn color_map_en(&self) -> COLOR_MAP_EN_R {
-        COLOR_MAP_EN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: COLOR_MAP_EN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl COLOR_MAP_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> COLOR_MAP_EN_A {
+        match self.bits {
+            false => COLOR_MAP_EN_A::B_YPASS,
+            true => COLOR_MAP_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[inline(always)]
+    pub fn is_b_ypass(&self) -> bool {
+        *self == COLOR_MAP_EN_A::B_YPASS
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == COLOR_MAP_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `color_map_en` writer - Enable the color map function. This module only works when X is divided by 4."]
+pub type COLOR_MAP_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LCD_CMAP_CTL_SPEC, COLOR_MAP_EN_A, O>;
+impl<'a, const O: u8> COLOR_MAP_EN_W<'a, O> {
+    #[doc = "Bypass"]
+    #[inline(always)]
+    pub fn b_ypass(self) -> &'a mut W {
+        self.variant(COLOR_MAP_EN_A::B_YPASS)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(COLOR_MAP_EN_A::E_NABLE)
+    }
+}
+impl R {
     #[doc = "Bit 0 - Set the pixel output format in color map function."]
     #[inline(always)]
     pub fn out_format(&self) -> OUT_FORMAT_R {
         OUT_FORMAT_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 31 - Enable the color map function. This module only works when X is divided by 4."]
     #[inline(always)]
-    pub fn color_map_en(&mut self) -> COLOR_MAP_EN_W<31> {
-        COLOR_MAP_EN_W::new(self)
+    pub fn color_map_en(&self) -> COLOR_MAP_EN_R {
+        COLOR_MAP_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Set the pixel output format in color map function."]
     #[inline(always)]
     pub fn out_format(&mut self) -> OUT_FORMAT_W<0> {
         OUT_FORMAT_W::new(self)
+    }
+    #[doc = "Bit 31 - Enable the color map function. This module only works when X is divided by 4."]
+    #[inline(always)]
+    pub fn color_map_en(&mut self) -> COLOR_MAP_EN_W<31> {
+        COLOR_MAP_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

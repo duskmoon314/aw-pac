@@ -34,6 +34,8 @@ impl From<crate::W<EMAC_25M_CLK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `clk_gating` reader - Gating Special Clock"]
+pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 #[doc = "Gating Special Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_GATING_A {
@@ -48,8 +50,6 @@ impl From<CLK_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `clk_gating` reader - Gating Special Clock"]
-pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 impl CLK_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,6 +85,8 @@ impl<'a, const O: u8> CLK_GATING_W<'a, O> {
         self.variant(CLK_GATING_A::ON)
     }
 }
+#[doc = "Field `clk_src_gating` reader - Gating the Source Clock of Special Clock"]
+pub type CLK_SRC_GATING_R = crate::BitReader<CLK_SRC_GATING_A>;
 #[doc = "Gating the Source Clock of Special Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_SRC_GATING_A {
@@ -99,8 +101,6 @@ impl From<CLK_SRC_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `clk_src_gating` reader - Gating the Source Clock of Special Clock"]
-pub type CLK_SRC_GATING_R = crate::BitReader<CLK_SRC_GATING_A>;
 impl CLK_SRC_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

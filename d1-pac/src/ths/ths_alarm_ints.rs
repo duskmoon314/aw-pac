@@ -34,6 +34,8 @@ impl From<crate::W<THS_ALARM_INTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `alarm_int_sts` reader - Alarm interrupt pending for sensor\n\nWrite 1 to clear the pending status."]
+pub type ALARM_INT_STS_R = crate::BitReader<ALARM_INT_STS_A>;
 #[doc = "Alarm interrupt pending for sensor\n\nWrite 1 to clear the pending status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALARM_INT_STS_A {
@@ -48,8 +50,6 @@ impl From<ALARM_INT_STS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `alarm_int_sts` reader - Alarm interrupt pending for sensor\n\nWrite 1 to clear the pending status."]
-pub type ALARM_INT_STS_R = crate::BitReader<ALARM_INT_STS_A>;
 impl ALARM_INT_STS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<PC_DRV0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pc_drv[0-7]` reader - PC Multi_Driving Select"]
+pub type PC_DRV_R = crate::FieldReader<u8, PC_DRV_A>;
 #[doc = "PC Multi_Driving Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<PC_DRV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `pc(0-7)_drv` reader - PC Multi_Driving Select"]
-pub type PC_DRV_R = crate::FieldReader<u8, PC_DRV_A>;
 impl PC_DRV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -88,7 +88,7 @@ impl PC_DRV_R {
         *self == PC_DRV_A::L3
     }
 }
-#[doc = "Fields `pc(0-7)_drv` writer - PC Multi_Driving Select"]
+#[doc = "Field `pc_drv[0-7]` writer - PC Multi_Driving Select"]
 pub type PC_DRV_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, PC_DRV0_SPEC, u8, PC_DRV_A, 2, O>;
 impl<'a, const O: u8> PC_DRV_W<'a, O> {

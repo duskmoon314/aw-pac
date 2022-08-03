@@ -34,6 +34,9 @@ impl From<crate::W<IOMMU_OOO_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `m_ooo_ctrl[0-6]` reader - Master\\[i\\]
+out-of-order control bit"]
+pub type M_OOO_CTRL_R = crate::BitReader<M_OOO_CTRL_A>;
 #[doc = "Master\\[i\\]
 out-of-order control bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<M_OOO_CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `m(0-6)_ooo_ctrl` reader - Master\\[i\\]
-out-of-order control bit"]
-pub type M_OOO_CTRL_R = crate::BitReader<M_OOO_CTRL_A>;
 impl M_OOO_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl M_OOO_CTRL_R {
         *self == M_OOO_CTRL_A::E_NABLE
     }
 }
-#[doc = "Fields `m(0-6)_ooo_ctrl` writer - Master\\[i\\]
+#[doc = "Field `m_ooo_ctrl[0-6]` writer - Master\\[i\\]
 out-of-order control bit"]
 pub type M_OOO_CTRL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_OOO_CTRL_SPEC, M_OOO_CTRL_A, O>;

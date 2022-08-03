@@ -34,6 +34,9 @@ impl From<crate::W<TV_IO_TRI_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `io_output_tri_en[0-3]` reader - IO\\[i\\]
+Output Trigger Enable"]
+pub type IO_OUTPUT_TRI_EN_R = crate::BitReader<IO_OUTPUT_TRI_EN_A>;
 #[doc = "IO\\[i\\]
 Output Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<IO_OUTPUT_TRI_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `io(0-3)_output_tri_en` reader - IO\\[i\\]
-Output Trigger Enable"]
-pub type IO_OUTPUT_TRI_EN_R = crate::BitReader<IO_OUTPUT_TRI_EN_A>;
 impl IO_OUTPUT_TRI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl IO_OUTPUT_TRI_EN_R {
         *self == IO_OUTPUT_TRI_EN_A::E_NABLE
     }
 }
-#[doc = "Fields `io(0-3)_output_tri_en` writer - IO\\[i\\]
+#[doc = "Field `io_output_tri_en[0-3]` writer - IO\\[i\\]
 Output Trigger Enable"]
 pub type IO_OUTPUT_TRI_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TV_IO_TRI_SPEC, IO_OUTPUT_TRI_EN_A, O>;

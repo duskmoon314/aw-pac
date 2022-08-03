@@ -13,27 +13,27 @@ impl From<crate::R<PHY_STATUS_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `bist_error` reader - Bist_error"]
-pub type BIST_ERROR_R = crate::BitReader<bool>;
-#[doc = "Field `bist_done` reader - bist_done"]
-pub type BIST_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `vc_do` reader - vc_do"]
 pub type VC_DO_R = crate::BitReader<bool>;
+#[doc = "Field `bist_done` reader - bist_done"]
+pub type BIST_DONE_R = crate::BitReader<bool>;
+#[doc = "Field `bist_error` reader - Bist_error"]
+pub type BIST_ERROR_R = crate::BitReader<bool>;
 impl R {
-    #[doc = "Bit 17 - Bist_error"]
+    #[doc = "Bit 0 - vc_do"]
     #[inline(always)]
-    pub fn bist_error(&self) -> BIST_ERROR_R {
-        BIST_ERROR_R::new(((self.bits >> 17) & 1) != 0)
+    pub fn vc_do(&self) -> VC_DO_R {
+        VC_DO_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 16 - bist_done"]
     #[inline(always)]
     pub fn bist_done(&self) -> BIST_DONE_R {
         BIST_DONE_R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 0 - vc_do"]
+    #[doc = "Bit 17 - Bist_error"]
     #[inline(always)]
-    pub fn vc_do(&self) -> VC_DO_R {
-        VC_DO_R::new((self.bits & 1) != 0)
+    pub fn bist_error(&self) -> BIST_ERROR_R {
+        BIST_ERROR_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
 #[doc = "PHY Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [phy_status](index.html) module"]

@@ -34,56 +34,8 @@ impl From<crate::W<THS_FILTER_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Filter enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FILTER_EN_A {
-    #[doc = "0: Disable"]
-    DISABLE = 0,
-    #[doc = "1: Enable"]
-    ENABLE = 1,
-}
-impl From<FILTER_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: FILTER_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `filter_en` reader - Filter enable"]
-pub type FILTER_EN_R = crate::BitReader<FILTER_EN_A>;
-impl FILTER_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FILTER_EN_A {
-        match self.bits {
-            false => FILTER_EN_A::DISABLE,
-            true => FILTER_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == FILTER_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == FILTER_EN_A::ENABLE
-    }
-}
-#[doc = "Field `filter_en` writer - Filter enable"]
-pub type FILTER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, THS_FILTER_SPEC, FILTER_EN_A, O>;
-impl<'a, const O: u8> FILTER_EN_W<'a, O> {
-    #[doc = "Disable"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(FILTER_EN_A::DISABLE)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(FILTER_EN_A::ENABLE)
-    }
-}
+#[doc = "Field `filter_type` reader - Averaging filter type"]
+pub type FILTER_TYPE_R = crate::FieldReader<u8, FILTER_TYPE_A>;
 #[doc = "Averaging filter type\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -103,8 +55,6 @@ impl From<FILTER_TYPE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `filter_type` reader - Averaging filter type"]
-pub type FILTER_TYPE_R = crate::FieldReader<u8, FILTER_TYPE_A>;
 impl FILTER_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -163,28 +113,78 @@ impl<'a, const O: u8> FILTER_TYPE_W<'a, O> {
         self.variant(FILTER_TYPE_A::T16)
     }
 }
-impl R {
-    #[doc = "Bit 2 - Filter enable"]
+#[doc = "Field `filter_en` reader - Filter enable"]
+pub type FILTER_EN_R = crate::BitReader<FILTER_EN_A>;
+#[doc = "Filter enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FILTER_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<FILTER_EN_A> for bool {
     #[inline(always)]
-    pub fn filter_en(&self) -> FILTER_EN_R {
-        FILTER_EN_R::new(((self.bits >> 2) & 1) != 0)
+    fn from(variant: FILTER_EN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl FILTER_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FILTER_EN_A {
+        match self.bits {
+            false => FILTER_EN_A::DISABLE,
+            true => FILTER_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == FILTER_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == FILTER_EN_A::ENABLE
+    }
+}
+#[doc = "Field `filter_en` writer - Filter enable"]
+pub type FILTER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, THS_FILTER_SPEC, FILTER_EN_A, O>;
+impl<'a, const O: u8> FILTER_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(FILTER_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(FILTER_EN_A::ENABLE)
+    }
+}
+impl R {
     #[doc = "Bits 0:1 - Averaging filter type"]
     #[inline(always)]
     pub fn filter_type(&self) -> FILTER_TYPE_R {
         FILTER_TYPE_R::new((self.bits & 3) as u8)
     }
-}
-impl W {
     #[doc = "Bit 2 - Filter enable"]
     #[inline(always)]
-    pub fn filter_en(&mut self) -> FILTER_EN_W<2> {
-        FILTER_EN_W::new(self)
+    pub fn filter_en(&self) -> FILTER_EN_R {
+        FILTER_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:1 - Averaging filter type"]
     #[inline(always)]
     pub fn filter_type(&mut self) -> FILTER_TYPE_W<0> {
         FILTER_TYPE_W::new(self)
+    }
+    #[doc = "Bit 2 - Filter enable"]
+    #[inline(always)]
+    pub fn filter_en(&mut self) -> FILTER_EN_W<2> {
+        FILTER_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

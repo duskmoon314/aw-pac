@@ -34,6 +34,18 @@ impl From<crate::W<LCD_CPU_TRI3_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `counter_m` reader - The value of counter factor"]
+pub type COUNTER_M_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `counter_m` writer - The value of counter factor"]
+pub type COUNTER_M_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CPU_TRI3_SPEC, u8, u8, 8, O>;
+#[doc = "Field `counter_n` reader - The value of counter factor"]
+pub type COUNTER_N_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `counter_n` writer - The value of counter factor"]
+pub type COUNTER_N_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CPU_TRI3_SPEC, u16, u16, 16, O>;
+#[doc = "Field `tri_int_mode` reader - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
+pub type TRI_INT_MODE_R = crate::FieldReader<u8, TRI_INT_MODE_A>;
 #[doc = "When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +65,6 @@ impl From<TRI_INT_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `tri_int_mode` reader - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
-pub type TRI_INT_MODE_R = crate::FieldReader<u8, TRI_INT_MODE_A>;
 impl TRI_INT_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,48 +123,38 @@ impl<'a, const O: u8> TRI_INT_MODE_W<'a, O> {
         self.variant(TRI_INT_MODE_A::TE_FALLING)
     }
 }
-#[doc = "Field `counter_n` reader - The value of counter factor"]
-pub type COUNTER_N_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `counter_n` writer - The value of counter factor"]
-pub type COUNTER_N_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CPU_TRI3_SPEC, u16, u16, 16, O>;
-#[doc = "Field `counter_m` reader - The value of counter factor"]
-pub type COUNTER_M_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `counter_m` writer - The value of counter factor"]
-pub type COUNTER_M_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CPU_TRI3_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 28:29 - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
+    #[doc = "Bits 0:7 - The value of counter factor"]
     #[inline(always)]
-    pub fn tri_int_mode(&self) -> TRI_INT_MODE_R {
-        TRI_INT_MODE_R::new(((self.bits >> 28) & 3) as u8)
+    pub fn counter_m(&self) -> COUNTER_M_R {
+        COUNTER_M_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:23 - The value of counter factor"]
     #[inline(always)]
     pub fn counter_n(&self) -> COUNTER_N_R {
         COUNTER_N_R::new(((self.bits >> 8) & 0xffff) as u16)
     }
-    #[doc = "Bits 0:7 - The value of counter factor"]
+    #[doc = "Bits 28:29 - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
     #[inline(always)]
-    pub fn counter_m(&self) -> COUNTER_M_R {
-        COUNTER_M_R::new((self.bits & 0xff) as u8)
+    pub fn tri_int_mode(&self) -> TRI_INT_MODE_R {
+        TRI_INT_MODE_R::new(((self.bits >> 28) & 3) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 28:29 - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
+    #[doc = "Bits 0:7 - The value of counter factor"]
     #[inline(always)]
-    pub fn tri_int_mode(&mut self) -> TRI_INT_MODE_W<28> {
-        TRI_INT_MODE_W::new(self)
+    pub fn counter_m(&mut self) -> COUNTER_M_W<0> {
+        COUNTER_M_W::new(self)
     }
     #[doc = "Bits 8:23 - The value of counter factor"]
     #[inline(always)]
     pub fn counter_n(&mut self) -> COUNTER_N_W<8> {
         COUNTER_N_W::new(self)
     }
-    #[doc = "Bits 0:7 - The value of counter factor"]
+    #[doc = "Bits 28:29 - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
     #[inline(always)]
-    pub fn counter_m(&mut self) -> COUNTER_M_W<0> {
-        COUNTER_M_W::new(self)
+    pub fn tri_int_mode(&mut self) -> TRI_INT_MODE_W<28> {
+        TRI_INT_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,124 +34,124 @@ impl From<crate::W<TWI_DRV_INT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `rx_req_int_en` reader - "]
-pub type RX_REQ_INT_EN_R = crate::BitReader<bool>;
-#[doc = "Field `rx_req_int_en` writer - "]
-pub type RX_REQ_INT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
-#[doc = "Field `tx_req_int_en` reader - "]
-pub type TX_REQ_INT_EN_R = crate::BitReader<bool>;
-#[doc = "Field `tx_req_int_en` writer - "]
-pub type TX_REQ_INT_EN_W<'a, const O: u8> =
+#[doc = "Field `tran_com_pd` reader - "]
+pub type TRAN_COM_PD_R = crate::BitReader<bool>;
+#[doc = "Field `tran_com_pd` writer - "]
+pub type TRAN_COM_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
+#[doc = "Field `tran_err_pd` reader - "]
+pub type TRAN_ERR_PD_R = crate::BitReader<bool>;
+#[doc = "Field `tran_err_pd` writer - "]
+pub type TRAN_ERR_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
+#[doc = "Field `tx_req_pd` reader - "]
+pub type TX_REQ_PD_R = crate::BitReader<bool>;
+#[doc = "Field `tx_req_pd` writer - "]
+pub type TX_REQ_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
+#[doc = "Field `rx_req_pd` reader - "]
+pub type RX_REQ_PD_R = crate::BitReader<bool>;
+#[doc = "Field `rx_req_pd` writer - "]
+pub type RX_REQ_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
+#[doc = "Field `tran_com_int_en` reader - "]
+pub type TRAN_COM_INT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `tran_com_int_en` writer - "]
+pub type TRAN_COM_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
 #[doc = "Field `tran_err_int_en` reader - "]
 pub type TRAN_ERR_INT_EN_R = crate::BitReader<bool>;
 #[doc = "Field `tran_err_int_en` writer - "]
 pub type TRAN_ERR_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
-#[doc = "Field `tran_com_int_en` reader - "]
-pub type TRAN_COM_INT_EN_R = crate::BitReader<bool>;
-#[doc = "Field `tran_com_int_en` writer - "]
-pub type TRAN_COM_INT_EN_W<'a, const O: u8> =
+#[doc = "Field `tx_req_int_en` reader - "]
+pub type TX_REQ_INT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `tx_req_int_en` writer - "]
+pub type TX_REQ_INT_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
-#[doc = "Field `rx_req_pd` reader - "]
-pub type RX_REQ_PD_R = crate::BitReader<bool>;
-#[doc = "Field `rx_req_pd` writer - "]
-pub type RX_REQ_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
-#[doc = "Field `tx_req_pd` reader - "]
-pub type TX_REQ_PD_R = crate::BitReader<bool>;
-#[doc = "Field `tx_req_pd` writer - "]
-pub type TX_REQ_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
-#[doc = "Field `tran_err_pd` reader - "]
-pub type TRAN_ERR_PD_R = crate::BitReader<bool>;
-#[doc = "Field `tran_err_pd` writer - "]
-pub type TRAN_ERR_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
-#[doc = "Field `tran_com_pd` reader - "]
-pub type TRAN_COM_PD_R = crate::BitReader<bool>;
-#[doc = "Field `tran_com_pd` writer - "]
-pub type TRAN_COM_PD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
+#[doc = "Field `rx_req_int_en` reader - "]
+pub type RX_REQ_INT_EN_R = crate::BitReader<bool>;
+#[doc = "Field `rx_req_int_en` writer - "]
+pub type RX_REQ_INT_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TWI_DRV_INT_CTRL_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 19"]
+    #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn rx_req_int_en(&self) -> RX_REQ_INT_EN_R {
-        RX_REQ_INT_EN_R::new(((self.bits >> 19) & 1) != 0)
-    }
-    #[doc = "Bit 18"]
-    #[inline(always)]
-    pub fn tx_req_int_en(&self) -> TX_REQ_INT_EN_R {
-        TX_REQ_INT_EN_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 17"]
-    #[inline(always)]
-    pub fn tran_err_int_en(&self) -> TRAN_ERR_INT_EN_R {
-        TRAN_ERR_INT_EN_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 16"]
-    #[inline(always)]
-    pub fn tran_com_int_en(&self) -> TRAN_COM_INT_EN_R {
-        TRAN_COM_INT_EN_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 3"]
-    #[inline(always)]
-    pub fn rx_req_pd(&self) -> RX_REQ_PD_R {
-        RX_REQ_PD_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2"]
-    #[inline(always)]
-    pub fn tx_req_pd(&self) -> TX_REQ_PD_R {
-        TX_REQ_PD_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn tran_com_pd(&self) -> TRAN_COM_PD_R {
+        TRAN_COM_PD_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn tran_err_pd(&self) -> TRAN_ERR_PD_R {
         TRAN_ERR_PD_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0"]
+    #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn tran_com_pd(&self) -> TRAN_COM_PD_R {
-        TRAN_COM_PD_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 19"]
-    #[inline(always)]
-    pub fn rx_req_int_en(&mut self) -> RX_REQ_INT_EN_W<19> {
-        RX_REQ_INT_EN_W::new(self)
-    }
-    #[doc = "Bit 18"]
-    #[inline(always)]
-    pub fn tx_req_int_en(&mut self) -> TX_REQ_INT_EN_W<18> {
-        TX_REQ_INT_EN_W::new(self)
-    }
-    #[doc = "Bit 17"]
-    #[inline(always)]
-    pub fn tran_err_int_en(&mut self) -> TRAN_ERR_INT_EN_W<17> {
-        TRAN_ERR_INT_EN_W::new(self)
-    }
-    #[doc = "Bit 16"]
-    #[inline(always)]
-    pub fn tran_com_int_en(&mut self) -> TRAN_COM_INT_EN_W<16> {
-        TRAN_COM_INT_EN_W::new(self)
+    pub fn tx_req_pd(&self) -> TX_REQ_PD_R {
+        TX_REQ_PD_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    pub fn rx_req_pd(&mut self) -> RX_REQ_PD_W<3> {
-        RX_REQ_PD_W::new(self)
+    pub fn rx_req_pd(&self) -> RX_REQ_PD_R {
+        RX_REQ_PD_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 16"]
     #[inline(always)]
-    pub fn tx_req_pd(&mut self) -> TX_REQ_PD_W<2> {
-        TX_REQ_PD_W::new(self)
+    pub fn tran_com_int_en(&self) -> TRAN_COM_INT_EN_R {
+        TRAN_COM_INT_EN_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 17"]
+    #[inline(always)]
+    pub fn tran_err_int_en(&self) -> TRAN_ERR_INT_EN_R {
+        TRAN_ERR_INT_EN_R::new(((self.bits >> 17) & 1) != 0)
+    }
+    #[doc = "Bit 18"]
+    #[inline(always)]
+    pub fn tx_req_int_en(&self) -> TX_REQ_INT_EN_R {
+        TX_REQ_INT_EN_R::new(((self.bits >> 18) & 1) != 0)
+    }
+    #[doc = "Bit 19"]
+    #[inline(always)]
+    pub fn rx_req_int_en(&self) -> RX_REQ_INT_EN_R {
+        RX_REQ_INT_EN_R::new(((self.bits >> 19) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn tran_com_pd(&mut self) -> TRAN_COM_PD_W<0> {
+        TRAN_COM_PD_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn tran_err_pd(&mut self) -> TRAN_ERR_PD_W<1> {
         TRAN_ERR_PD_W::new(self)
     }
-    #[doc = "Bit 0"]
+    #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn tran_com_pd(&mut self) -> TRAN_COM_PD_W<0> {
-        TRAN_COM_PD_W::new(self)
+    pub fn tx_req_pd(&mut self) -> TX_REQ_PD_W<2> {
+        TX_REQ_PD_W::new(self)
+    }
+    #[doc = "Bit 3"]
+    #[inline(always)]
+    pub fn rx_req_pd(&mut self) -> RX_REQ_PD_W<3> {
+        RX_REQ_PD_W::new(self)
+    }
+    #[doc = "Bit 16"]
+    #[inline(always)]
+    pub fn tran_com_int_en(&mut self) -> TRAN_COM_INT_EN_W<16> {
+        TRAN_COM_INT_EN_W::new(self)
+    }
+    #[doc = "Bit 17"]
+    #[inline(always)]
+    pub fn tran_err_int_en(&mut self) -> TRAN_ERR_INT_EN_W<17> {
+        TRAN_ERR_INT_EN_W::new(self)
+    }
+    #[doc = "Bit 18"]
+    #[inline(always)]
+    pub fn tx_req_int_en(&mut self) -> TX_REQ_INT_EN_W<18> {
+        TX_REQ_INT_EN_W::new(self)
+    }
+    #[doc = "Bit 19"]
+    #[inline(always)]
+    pub fn rx_req_int_en(&mut self) -> RX_REQ_INT_EN_W<19> {
+        RX_REQ_INT_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

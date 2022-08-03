@@ -34,6 +34,8 @@ impl From<crate::W<SMHC_HWRST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `hw_rst` reader - "]
+pub type HW_RST_R = crate::BitReader<HW_RST_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HW_RST_A {
@@ -48,8 +50,6 @@ impl From<HW_RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `hw_rst` reader - "]
-pub type HW_RST_R = crate::BitReader<HW_RST_A>;
 impl HW_RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

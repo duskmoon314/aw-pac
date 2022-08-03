@@ -34,6 +34,12 @@ impl From<crate::W<PCLK_FAN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `div` reader - Factor M"]
+pub type DIV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `div` writer - Factor M"]
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCLK_FAN_SPEC, u8, u8, 5, O>;
+#[doc = "Field `gating` reader - Gating for PCLK"]
+pub type GATING_R = crate::BitReader<GATING_A>;
 #[doc = "Gating for PCLK\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GATING_A {
@@ -48,8 +54,6 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `gating` reader - Gating for PCLK"]
-pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,32 +88,28 @@ impl<'a, const O: u8> GATING_W<'a, O> {
         self.variant(GATING_A::ON)
     }
 }
-#[doc = "Field `div` reader - Factor M"]
-pub type DIV_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `div` writer - Factor M"]
-pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCLK_FAN_SPEC, u8, u8, 5, O>;
 impl R {
-    #[doc = "Bit 31 - Gating for PCLK"]
-    #[inline(always)]
-    pub fn gating(&self) -> GATING_R {
-        GATING_R::new(((self.bits >> 31) & 1) != 0)
-    }
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     pub fn div(&self) -> DIV_R {
         DIV_R::new((self.bits & 0x1f) as u8)
     }
-}
-impl W {
     #[doc = "Bit 31 - Gating for PCLK"]
     #[inline(always)]
-    pub fn gating(&mut self) -> GATING_W<31> {
-        GATING_W::new(self)
+    pub fn gating(&self) -> GATING_R {
+        GATING_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     pub fn div(&mut self) -> DIV_W<0> {
         DIV_W::new(self)
+    }
+    #[doc = "Bit 31 - Gating for PCLK"]
+    #[inline(always)]
+    pub fn gating(&mut self) -> GATING_W<31> {
+        GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

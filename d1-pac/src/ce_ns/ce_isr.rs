@@ -34,6 +34,8 @@ impl From<crate::W<CE_ISR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `task_pending[0-3]` reader - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
+pub type TASK_PENDING_R = crate::FieldReader<u8, TASK_PENDING_A>;
 #[doc = "Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,8 +51,6 @@ impl From<TASK_PENDING_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `task(0-3)_pending` reader - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
-pub type TASK_PENDING_R = crate::FieldReader<u8, TASK_PENDING_A>;
 impl TASK_PENDING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl TASK_PENDING_R {
         *self == TASK_PENDING_A::FINISHED
     }
 }
-#[doc = "Fields `task(0-3)_pending` writer - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
+#[doc = "Field `task_pending[0-3]` writer - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
 pub type TASK_PENDING_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, CE_ISR_SPEC, u8, TASK_PENDING_A, 4, O>;
 impl<'a, const O: u8> TASK_PENDING_W<'a, O> {

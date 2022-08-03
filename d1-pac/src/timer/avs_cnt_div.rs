@@ -34,9 +34,9 @@ impl From<crate::W<AVS_CNT_DIV_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Fields `avs_cnt(0-1)_d` reader - The divisor factor of AVS"]
+#[doc = "Field `avs_cnt_d[0-1]` reader - The divisor factor of AVS"]
 pub type AVS_CNT_D_R = crate::FieldReader<u16, u16>;
-#[doc = "Fields `avs_cnt(0-1)_d` writer - The divisor factor of AVS"]
+#[doc = "Field `avs_cnt_d[0-1]` writer - The divisor factor of AVS"]
 pub type AVS_CNT_D_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, AVS_CNT_DIV_SPEC, u16, u16, 12, O>;
 impl R {

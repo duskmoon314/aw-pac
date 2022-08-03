@@ -34,6 +34,8 @@ impl From<crate::W<THS_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ths_en` reader - Enable temperature measurement sensor"]
+pub type THS_EN_R = crate::BitReader<THS_EN_A>;
 #[doc = "Enable temperature measurement sensor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum THS_EN_A {
@@ -48,8 +50,6 @@ impl From<THS_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ths_en` reader - Enable temperature measurement sensor"]
-pub type THS_EN_R = crate::BitReader<THS_EN_A>;
 impl THS_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

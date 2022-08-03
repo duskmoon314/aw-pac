@@ -13,6 +13,8 @@ impl From<crate::R<WORK_MODE_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `wm_sta` reader - Work Mode Status"]
+pub type WM_STA_R = crate::FieldReader<u8, WM_STA_A>;
 #[doc = "Work Mode Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -30,8 +32,6 @@ impl From<WM_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `wm_sta` reader - Work Mode Status"]
-pub type WM_STA_R = crate::FieldReader<u8, WM_STA_A>;
 impl WM_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

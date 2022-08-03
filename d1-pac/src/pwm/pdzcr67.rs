@@ -34,10 +34,8 @@ impl From<crate::W<PDZCR67_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `pwm67_dz_intv` reader - PWM67 Dead Zone Interval Value"]
-pub type PWM67_DZ_INTV_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `pwm67_dz_intv` writer - PWM67 Dead Zone Interval Value"]
-pub type PWM67_DZ_INTV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDZCR67_SPEC, u8, u8, 8, O>;
+#[doc = "Field `pwm67_dz_en` reader - PWM67 Dead Zone Enable"]
+pub type PWM67_DZ_EN_R = crate::BitReader<PWM67_DZ_EN_A>;
 #[doc = "PWM67 Dead Zone Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PWM67_DZ_EN_A {
@@ -52,8 +50,6 @@ impl From<PWM67_DZ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `pwm67_dz_en` reader - PWM67 Dead Zone Enable"]
-pub type PWM67_DZ_EN_R = crate::BitReader<PWM67_DZ_EN_A>;
 impl PWM67_DZ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -88,28 +84,32 @@ impl<'a, const O: u8> PWM67_DZ_EN_W<'a, O> {
         self.variant(PWM67_DZ_EN_A::ENABLE)
     }
 }
+#[doc = "Field `pwm67_dz_intv` reader - PWM67 Dead Zone Interval Value"]
+pub type PWM67_DZ_INTV_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `pwm67_dz_intv` writer - PWM67 Dead Zone Interval Value"]
+pub type PWM67_DZ_INTV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDZCR67_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 8:15 - PWM67 Dead Zone Interval Value"]
-    #[inline(always)]
-    pub fn pwm67_dz_intv(&self) -> PWM67_DZ_INTV_R {
-        PWM67_DZ_INTV_R::new(((self.bits >> 8) & 0xff) as u8)
-    }
     #[doc = "Bit 0 - PWM67 Dead Zone Enable"]
     #[inline(always)]
     pub fn pwm67_dz_en(&self) -> PWM67_DZ_EN_R {
         PWM67_DZ_EN_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bits 8:15 - PWM67 Dead Zone Interval Value"]
     #[inline(always)]
-    pub fn pwm67_dz_intv(&mut self) -> PWM67_DZ_INTV_W<8> {
-        PWM67_DZ_INTV_W::new(self)
+    pub fn pwm67_dz_intv(&self) -> PWM67_DZ_INTV_R {
+        PWM67_DZ_INTV_R::new(((self.bits >> 8) & 0xff) as u8)
     }
+}
+impl W {
     #[doc = "Bit 0 - PWM67 Dead Zone Enable"]
     #[inline(always)]
     pub fn pwm67_dz_en(&mut self) -> PWM67_DZ_EN_W<0> {
         PWM67_DZ_EN_W::new(self)
+    }
+    #[doc = "Bits 8:15 - PWM67 Dead Zone Interval Value"]
+    #[inline(always)]
+    pub fn pwm67_dz_intv(&mut self) -> PWM67_DZ_INTV_W<8> {
+        PWM67_DZ_INTV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

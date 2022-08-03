@@ -34,112 +34,8 @@ impl From<crate::W<SMHC_THLD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `card_wr_thld` reader - Card Read/Write Threshold Size"]
-pub type CARD_WR_THLD_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `card_wr_thld` writer - Card Read/Write Threshold Size"]
-pub type CARD_WR_THLD_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, SMHC_THLD_SPEC, u16, u16, 12, O>;
-#[doc = "Card Read/Write Threshold Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CARD_WR_THLD_ENB_A {
-    #[doc = "0: Card write threshold disabled"]
-    DISABLED = 0,
-    #[doc = "1: Card write threshold enabled"]
-    ENABLED = 1,
-}
-impl From<CARD_WR_THLD_ENB_A> for bool {
-    #[inline(always)]
-    fn from(variant: CARD_WR_THLD_ENB_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `card_wr_thld_enb` reader - Card Read/Write Threshold Enable"]
-pub type CARD_WR_THLD_ENB_R = crate::BitReader<CARD_WR_THLD_ENB_A>;
-impl CARD_WR_THLD_ENB_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CARD_WR_THLD_ENB_A {
-        match self.bits {
-            false => CARD_WR_THLD_ENB_A::DISABLED,
-            true => CARD_WR_THLD_ENB_A::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == CARD_WR_THLD_ENB_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == CARD_WR_THLD_ENB_A::ENABLED
-    }
-}
-#[doc = "Field `card_wr_thld_enb` writer - Card Read/Write Threshold Enable"]
-pub type CARD_WR_THLD_ENB_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SMHC_THLD_SPEC, CARD_WR_THLD_ENB_A, O>;
-impl<'a, const O: u8> CARD_WR_THLD_ENB_W<'a, O> {
-    #[doc = "Card write threshold disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(CARD_WR_THLD_ENB_A::DISABLED)
-    }
-    #[doc = "Card write threshold enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(CARD_WR_THLD_ENB_A::ENABLED)
-    }
-}
-#[doc = "Busy Clear Interrupt Generation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BCIG_A {
-    #[doc = "0: Busy clear interrupt disabled"]
-    DISABLED = 0,
-    #[doc = "1: Busy clear interrupt enabled"]
-    ENABLED = 1,
-}
-impl From<BCIG_A> for bool {
-    #[inline(always)]
-    fn from(variant: BCIG_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `bcig` reader - Busy Clear Interrupt Generation"]
-pub type BCIG_R = crate::BitReader<BCIG_A>;
-impl BCIG_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BCIG_A {
-        match self.bits {
-            false => BCIG_A::DISABLED,
-            true => BCIG_A::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == BCIG_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == BCIG_A::ENABLED
-    }
-}
-#[doc = "Field `bcig` writer - Busy Clear Interrupt Generation"]
-pub type BCIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_THLD_SPEC, BCIG_A, O>;
-impl<'a, const O: u8> BCIG_W<'a, O> {
-    #[doc = "Busy clear interrupt disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(BCIG_A::DISABLED)
-    }
-    #[doc = "Busy clear interrupt enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(BCIG_A::ENABLED)
-    }
-}
+#[doc = "Field `card_rd_thld_enb` reader - Card Read Threshold Enable"]
+pub type CARD_RD_THLD_ENB_R = crate::BitReader<CARD_RD_THLD_ENB_A>;
 #[doc = "Card Read Threshold Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CARD_RD_THLD_ENB_A {
@@ -154,8 +50,6 @@ impl From<CARD_RD_THLD_ENB_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `card_rd_thld_enb` reader - Card Read Threshold Enable"]
-pub type CARD_RD_THLD_ENB_R = crate::BitReader<CARD_RD_THLD_ENB_A>;
 impl CARD_RD_THLD_ENB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -191,48 +85,154 @@ impl<'a, const O: u8> CARD_RD_THLD_ENB_W<'a, O> {
         self.variant(CARD_RD_THLD_ENB_A::ENABLED)
     }
 }
-impl R {
-    #[doc = "Bits 16:27 - Card Read/Write Threshold Size"]
+#[doc = "Field `bcig` reader - Busy Clear Interrupt Generation"]
+pub type BCIG_R = crate::BitReader<BCIG_A>;
+#[doc = "Busy Clear Interrupt Generation\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BCIG_A {
+    #[doc = "0: Busy clear interrupt disabled"]
+    DISABLED = 0,
+    #[doc = "1: Busy clear interrupt enabled"]
+    ENABLED = 1,
+}
+impl From<BCIG_A> for bool {
     #[inline(always)]
-    pub fn card_wr_thld(&self) -> CARD_WR_THLD_R {
-        CARD_WR_THLD_R::new(((self.bits >> 16) & 0x0fff) as u16)
+    fn from(variant: BCIG_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = "Bit 2 - Card Read/Write Threshold Enable"]
+}
+impl BCIG_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn card_wr_thld_enb(&self) -> CARD_WR_THLD_ENB_R {
-        CARD_WR_THLD_ENB_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn variant(&self) -> BCIG_A {
+        match self.bits {
+            false => BCIG_A::DISABLED,
+            true => BCIG_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == BCIG_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == BCIG_A::ENABLED
+    }
+}
+#[doc = "Field `bcig` writer - Busy Clear Interrupt Generation"]
+pub type BCIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_THLD_SPEC, BCIG_A, O>;
+impl<'a, const O: u8> BCIG_W<'a, O> {
+    #[doc = "Busy clear interrupt disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(BCIG_A::DISABLED)
+    }
+    #[doc = "Busy clear interrupt enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(BCIG_A::ENABLED)
+    }
+}
+#[doc = "Field `card_wr_thld_enb` reader - Card Read/Write Threshold Enable"]
+pub type CARD_WR_THLD_ENB_R = crate::BitReader<CARD_WR_THLD_ENB_A>;
+#[doc = "Card Read/Write Threshold Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CARD_WR_THLD_ENB_A {
+    #[doc = "0: Card write threshold disabled"]
+    DISABLED = 0,
+    #[doc = "1: Card write threshold enabled"]
+    ENABLED = 1,
+}
+impl From<CARD_WR_THLD_ENB_A> for bool {
+    #[inline(always)]
+    fn from(variant: CARD_WR_THLD_ENB_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CARD_WR_THLD_ENB_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CARD_WR_THLD_ENB_A {
+        match self.bits {
+            false => CARD_WR_THLD_ENB_A::DISABLED,
+            true => CARD_WR_THLD_ENB_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == CARD_WR_THLD_ENB_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == CARD_WR_THLD_ENB_A::ENABLED
+    }
+}
+#[doc = "Field `card_wr_thld_enb` writer - Card Read/Write Threshold Enable"]
+pub type CARD_WR_THLD_ENB_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, SMHC_THLD_SPEC, CARD_WR_THLD_ENB_A, O>;
+impl<'a, const O: u8> CARD_WR_THLD_ENB_W<'a, O> {
+    #[doc = "Card write threshold disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(CARD_WR_THLD_ENB_A::DISABLED)
+    }
+    #[doc = "Card write threshold enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(CARD_WR_THLD_ENB_A::ENABLED)
+    }
+}
+#[doc = "Field `card_wr_thld` reader - Card Read/Write Threshold Size"]
+pub type CARD_WR_THLD_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `card_wr_thld` writer - Card Read/Write Threshold Size"]
+pub type CARD_WR_THLD_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SMHC_THLD_SPEC, u16, u16, 12, O>;
+impl R {
+    #[doc = "Bit 0 - Card Read Threshold Enable"]
+    #[inline(always)]
+    pub fn card_rd_thld_enb(&self) -> CARD_RD_THLD_ENB_R {
+        CARD_RD_THLD_ENB_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Busy Clear Interrupt Generation"]
     #[inline(always)]
     pub fn bcig(&self) -> BCIG_R {
         BCIG_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Card Read Threshold Enable"]
+    #[doc = "Bit 2 - Card Read/Write Threshold Enable"]
     #[inline(always)]
-    pub fn card_rd_thld_enb(&self) -> CARD_RD_THLD_ENB_R {
-        CARD_RD_THLD_ENB_R::new((self.bits & 1) != 0)
+    pub fn card_wr_thld_enb(&self) -> CARD_WR_THLD_ENB_R {
+        CARD_WR_THLD_ENB_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bits 16:27 - Card Read/Write Threshold Size"]
+    #[inline(always)]
+    pub fn card_wr_thld(&self) -> CARD_WR_THLD_R {
+        CARD_WR_THLD_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 16:27 - Card Read/Write Threshold Size"]
+    #[doc = "Bit 0 - Card Read Threshold Enable"]
     #[inline(always)]
-    pub fn card_wr_thld(&mut self) -> CARD_WR_THLD_W<16> {
-        CARD_WR_THLD_W::new(self)
-    }
-    #[doc = "Bit 2 - Card Read/Write Threshold Enable"]
-    #[inline(always)]
-    pub fn card_wr_thld_enb(&mut self) -> CARD_WR_THLD_ENB_W<2> {
-        CARD_WR_THLD_ENB_W::new(self)
+    pub fn card_rd_thld_enb(&mut self) -> CARD_RD_THLD_ENB_W<0> {
+        CARD_RD_THLD_ENB_W::new(self)
     }
     #[doc = "Bit 1 - Busy Clear Interrupt Generation"]
     #[inline(always)]
     pub fn bcig(&mut self) -> BCIG_W<1> {
         BCIG_W::new(self)
     }
-    #[doc = "Bit 0 - Card Read Threshold Enable"]
+    #[doc = "Bit 2 - Card Read/Write Threshold Enable"]
     #[inline(always)]
-    pub fn card_rd_thld_enb(&mut self) -> CARD_RD_THLD_ENB_W<0> {
-        CARD_RD_THLD_ENB_W::new(self)
+    pub fn card_wr_thld_enb(&mut self) -> CARD_WR_THLD_ENB_W<2> {
+        CARD_WR_THLD_ENB_W::new(self)
+    }
+    #[doc = "Bits 16:27 - Card Read/Write Threshold Size"]
+    #[inline(always)]
+    pub fn card_wr_thld(&mut self) -> CARD_WR_THLD_W<16> {
+        CARD_WR_THLD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

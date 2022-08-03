@@ -34,6 +34,8 @@ impl From<crate::W<IOMMU_PC_IVLD_MODE_SEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pc_ivld_mode_sel` reader - PTW Cache Invalid Mode Select"]
+pub type PC_IVLD_MODE_SEL_R = crate::BitReader<PC_IVLD_MODE_SEL_A>;
 #[doc = "PTW Cache Invalid Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PC_IVLD_MODE_SEL_A {
@@ -48,8 +50,6 @@ impl From<PC_IVLD_MODE_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `pc_ivld_mode_sel` reader - PTW Cache Invalid Mode Select"]
-pub type PC_IVLD_MODE_SEL_R = crate::BitReader<PC_IVLD_MODE_SEL_A>;
 impl PC_IVLD_MODE_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

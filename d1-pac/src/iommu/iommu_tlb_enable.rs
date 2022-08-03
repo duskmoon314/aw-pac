@@ -34,57 +34,62 @@ impl From<crate::W<IOMMU_TLB_ENABLE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "PTW Cache enable bit\n\nValue on reset: 1"]
+#[doc = "Field `micro_tlb_enable[0-6]` reader - Micro TLB\\[i\\]
+enable bit"]
+pub type MICRO_TLB_ENABLE_R = crate::BitReader<MICRO_TLB_ENABLE_A>;
+#[doc = "Micro TLB\\[i\\]
+enable bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PTW_CACHE_ENABLE_A {
+pub enum MICRO_TLB_ENABLE_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
     #[doc = "1: Enable"]
     E_NABLE = 1,
 }
-impl From<PTW_CACHE_ENABLE_A> for bool {
+impl From<MICRO_TLB_ENABLE_A> for bool {
     #[inline(always)]
-    fn from(variant: PTW_CACHE_ENABLE_A) -> Self {
+    fn from(variant: MICRO_TLB_ENABLE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ptw_cache_enable` reader - PTW Cache enable bit"]
-pub type PTW_CACHE_ENABLE_R = crate::BitReader<PTW_CACHE_ENABLE_A>;
-impl PTW_CACHE_ENABLE_R {
+impl MICRO_TLB_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PTW_CACHE_ENABLE_A {
+    pub fn variant(&self) -> MICRO_TLB_ENABLE_A {
         match self.bits {
-            false => PTW_CACHE_ENABLE_A::D_ISABLE,
-            true => PTW_CACHE_ENABLE_A::E_NABLE,
+            false => MICRO_TLB_ENABLE_A::D_ISABLE,
+            true => MICRO_TLB_ENABLE_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `D_ISABLE`"]
     #[inline(always)]
     pub fn is_d_isable(&self) -> bool {
-        *self == PTW_CACHE_ENABLE_A::D_ISABLE
+        *self == MICRO_TLB_ENABLE_A::D_ISABLE
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == PTW_CACHE_ENABLE_A::E_NABLE
+        *self == MICRO_TLB_ENABLE_A::E_NABLE
     }
 }
-#[doc = "Field `ptw_cache_enable` writer - PTW Cache enable bit"]
-pub type PTW_CACHE_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_TLB_ENABLE_SPEC, PTW_CACHE_ENABLE_A, O>;
-impl<'a, const O: u8> PTW_CACHE_ENABLE_W<'a, O> {
+#[doc = "Field `micro_tlb_enable[0-6]` writer - Micro TLB\\[i\\]
+enable bit"]
+pub type MICRO_TLB_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_TLB_ENABLE_SPEC, MICRO_TLB_ENABLE_A, O>;
+impl<'a, const O: u8> MICRO_TLB_ENABLE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn d_isable(self) -> &'a mut W {
-        self.variant(PTW_CACHE_ENABLE_A::D_ISABLE)
+        self.variant(MICRO_TLB_ENABLE_A::D_ISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(PTW_CACHE_ENABLE_A::E_NABLE)
+        self.variant(MICRO_TLB_ENABLE_A::E_NABLE)
     }
 }
+#[doc = "Field `macro_tlb_enable` reader - Macro TLB enable bit"]
+pub type MACRO_TLB_ENABLE_R = crate::BitReader<MACRO_TLB_ENABLE_A>;
 #[doc = "Macro TLB enable bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MACRO_TLB_ENABLE_A {
@@ -99,8 +104,6 @@ impl From<MACRO_TLB_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `macro_tlb_enable` reader - Macro TLB enable bit"]
-pub type MACRO_TLB_ENABLE_R = crate::BitReader<MACRO_TLB_ENABLE_A>;
 impl MACRO_TLB_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,71 +139,58 @@ impl<'a, const O: u8> MACRO_TLB_ENABLE_W<'a, O> {
         self.variant(MACRO_TLB_ENABLE_A::E_NABLE)
     }
 }
-#[doc = "Micro TLB\\[i\\]
-enable bit\n\nValue on reset: 1"]
+#[doc = "Field `ptw_cache_enable` reader - PTW Cache enable bit"]
+pub type PTW_CACHE_ENABLE_R = crate::BitReader<PTW_CACHE_ENABLE_A>;
+#[doc = "PTW Cache enable bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MICRO_TLB_ENABLE_A {
+pub enum PTW_CACHE_ENABLE_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
     #[doc = "1: Enable"]
     E_NABLE = 1,
 }
-impl From<MICRO_TLB_ENABLE_A> for bool {
+impl From<PTW_CACHE_ENABLE_A> for bool {
     #[inline(always)]
-    fn from(variant: MICRO_TLB_ENABLE_A) -> Self {
+    fn from(variant: PTW_CACHE_ENABLE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `micro_tlb(0-6)_enable` reader - Micro TLB\\[i\\]
-enable bit"]
-pub type MICRO_TLB_ENABLE_R = crate::BitReader<MICRO_TLB_ENABLE_A>;
-impl MICRO_TLB_ENABLE_R {
+impl PTW_CACHE_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MICRO_TLB_ENABLE_A {
+    pub fn variant(&self) -> PTW_CACHE_ENABLE_A {
         match self.bits {
-            false => MICRO_TLB_ENABLE_A::D_ISABLE,
-            true => MICRO_TLB_ENABLE_A::E_NABLE,
+            false => PTW_CACHE_ENABLE_A::D_ISABLE,
+            true => PTW_CACHE_ENABLE_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `D_ISABLE`"]
     #[inline(always)]
     pub fn is_d_isable(&self) -> bool {
-        *self == MICRO_TLB_ENABLE_A::D_ISABLE
+        *self == PTW_CACHE_ENABLE_A::D_ISABLE
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == MICRO_TLB_ENABLE_A::E_NABLE
+        *self == PTW_CACHE_ENABLE_A::E_NABLE
     }
 }
-#[doc = "Fields `micro_tlb(0-6)_enable` writer - Micro TLB\\[i\\]
-enable bit"]
-pub type MICRO_TLB_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_TLB_ENABLE_SPEC, MICRO_TLB_ENABLE_A, O>;
-impl<'a, const O: u8> MICRO_TLB_ENABLE_W<'a, O> {
+#[doc = "Field `ptw_cache_enable` writer - PTW Cache enable bit"]
+pub type PTW_CACHE_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_TLB_ENABLE_SPEC, PTW_CACHE_ENABLE_A, O>;
+impl<'a, const O: u8> PTW_CACHE_ENABLE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
     pub fn d_isable(self) -> &'a mut W {
-        self.variant(MICRO_TLB_ENABLE_A::D_ISABLE)
+        self.variant(PTW_CACHE_ENABLE_A::D_ISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(MICRO_TLB_ENABLE_A::E_NABLE)
+        self.variant(PTW_CACHE_ENABLE_A::E_NABLE)
     }
 }
 impl R {
-    #[doc = "Bit 17 - PTW Cache enable bit"]
-    #[inline(always)]
-    pub fn ptw_cache_enable(&self) -> PTW_CACHE_ENABLE_R {
-        PTW_CACHE_ENABLE_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Macro TLB enable bit"]
-    #[inline(always)]
-    pub fn macro_tlb_enable(&self) -> MACRO_TLB_ENABLE_R {
-        MACRO_TLB_ENABLE_R::new(((self.bits >> 16) & 1) != 0)
-    }
     #[doc = "Micro TLB\\[i\\]
 enable bit"]
     #[inline(always)]
@@ -249,18 +239,18 @@ enable bit"]
     pub fn micro_tlb6_enable(&self) -> MICRO_TLB_ENABLE_R {
         MICRO_TLB_ENABLE_R::new(((self.bits >> 6) & 1) != 0)
     }
-}
-impl W {
-    #[doc = "Bit 17 - PTW Cache enable bit"]
-    #[inline(always)]
-    pub fn ptw_cache_enable(&mut self) -> PTW_CACHE_ENABLE_W<17> {
-        PTW_CACHE_ENABLE_W::new(self)
-    }
     #[doc = "Bit 16 - Macro TLB enable bit"]
     #[inline(always)]
-    pub fn macro_tlb_enable(&mut self) -> MACRO_TLB_ENABLE_W<16> {
-        MACRO_TLB_ENABLE_W::new(self)
+    pub fn macro_tlb_enable(&self) -> MACRO_TLB_ENABLE_R {
+        MACRO_TLB_ENABLE_R::new(((self.bits >> 16) & 1) != 0)
     }
+    #[doc = "Bit 17 - PTW Cache enable bit"]
+    #[inline(always)]
+    pub fn ptw_cache_enable(&self) -> PTW_CACHE_ENABLE_R {
+        PTW_CACHE_ENABLE_R::new(((self.bits >> 17) & 1) != 0)
+    }
+}
+impl W {
     #[doc = "Micro TLB\\[i\\]
 enable bit"]
     #[inline(always)]
@@ -308,6 +298,16 @@ enable bit"]
     #[inline(always)]
     pub fn micro_tlb6_enable(&mut self) -> MICRO_TLB_ENABLE_W<6> {
         MICRO_TLB_ENABLE_W::new(self)
+    }
+    #[doc = "Bit 16 - Macro TLB enable bit"]
+    #[inline(always)]
+    pub fn macro_tlb_enable(&mut self) -> MACRO_TLB_ENABLE_W<16> {
+        MACRO_TLB_ENABLE_W::new(self)
+    }
+    #[doc = "Bit 17 - PTW Cache enable bit"]
+    #[inline(always)]
+    pub fn ptw_cache_enable(&mut self) -> PTW_CACHE_ENABLE_W<17> {
+        PTW_CACHE_ENABLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

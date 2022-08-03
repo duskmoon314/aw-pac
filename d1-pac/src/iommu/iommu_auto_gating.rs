@@ -34,6 +34,8 @@ impl From<crate::W<IOMMU_AUTO_GATING_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `iommu_auto_gating` reader - IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module."]
+pub type IOMMU_AUTO_GATING_R = crate::BitReader<IOMMU_AUTO_GATING_A>;
 #[doc = "IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum IOMMU_AUTO_GATING_A {
@@ -48,8 +50,6 @@ impl From<IOMMU_AUTO_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `iommu_auto_gating` reader - IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module."]
-pub type IOMMU_AUTO_GATING_R = crate::BitReader<IOMMU_AUTO_GATING_A>;
 impl IOMMU_AUTO_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

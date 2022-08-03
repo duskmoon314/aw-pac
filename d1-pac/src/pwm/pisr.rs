@@ -34,10 +34,8 @@ impl From<crate::W<PISR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Fields `pgis(0-3)` reader - PWM Group Interrupt Status"]
-pub type PGIS_R = crate::BitReader<bool>;
-#[doc = "Fields `pgis(0-3)` writer - PWM Group Interrupt Status"]
-pub type PGIS_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, PISR_SPEC, bool, O>;
+#[doc = "Field `pis[0-7]` reader - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
+pub type PIS_R = crate::BitReader<PIS_A>;
 #[doc = "PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIS_A {
@@ -52,8 +50,6 @@ impl From<PIS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `pis(0-7)` reader - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
-pub type PIS_R = crate::BitReader<PIS_A>;
 impl PIS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -74,7 +70,7 @@ impl PIS_R {
         *self == PIS_A::PENDING
     }
 }
-#[doc = "Fields `pis(0-7)` writer - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
+#[doc = "Field `pis[0-7]` writer - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
 pub type PIS_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, PISR_SPEC, PIS_A, O>;
 impl<'a, const O: u8> PIS_W<'a, O> {
     #[doc = "`0`"]
@@ -88,32 +84,11 @@ impl<'a, const O: u8> PIS_W<'a, O> {
         self.variant(PIS_A::PENDING)
     }
 }
+#[doc = "Field `pgis[0-3]` reader - PWM Group Interrupt Status"]
+pub type PGIS_R = crate::BitReader<bool>;
+#[doc = "Field `pgis[0-3]` writer - PWM Group Interrupt Status"]
+pub type PGIS_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, PISR_SPEC, bool, O>;
 impl R {
-    #[doc = "PWM Group Interrupt Status"]
-    #[inline(always)]
-    pub unsafe fn pgis(&self, n: u8) -> PGIS_R {
-        PGIS_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - PWM Group Interrupt Status"]
-    #[inline(always)]
-    pub fn pgis0(&self) -> PGIS_R {
-        PGIS_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - PWM Group Interrupt Status"]
-    #[inline(always)]
-    pub fn pgis1(&self) -> PGIS_R {
-        PGIS_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 18 - PWM Group Interrupt Status"]
-    #[inline(always)]
-    pub fn pgis2(&self) -> PGIS_R {
-        PGIS_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 19 - PWM Group Interrupt Status"]
-    #[inline(always)]
-    pub fn pgis3(&self) -> PGIS_R {
-        PGIS_R::new(((self.bits >> 19) & 1) != 0)
-    }
     #[doc = "PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
     pub unsafe fn pis(&self, n: u8) -> PIS_R {
@@ -159,33 +134,33 @@ impl R {
     pub fn pis7(&self) -> PIS_R {
         PIS_R::new(((self.bits >> 7) & 1) != 0)
     }
-}
-impl W {
     #[doc = "PWM Group Interrupt Status"]
     #[inline(always)]
-    pub unsafe fn pgis<const O: u8>(&mut self) -> PGIS_W<O> {
-        PGIS_W::new(self)
+    pub unsafe fn pgis(&self, n: u8) -> PGIS_R {
+        PGIS_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - PWM Group Interrupt Status"]
     #[inline(always)]
-    pub fn pgis0(&mut self) -> PGIS_W<16> {
-        PGIS_W::new(self)
+    pub fn pgis0(&self) -> PGIS_R {
+        PGIS_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - PWM Group Interrupt Status"]
     #[inline(always)]
-    pub fn pgis1(&mut self) -> PGIS_W<17> {
-        PGIS_W::new(self)
+    pub fn pgis1(&self) -> PGIS_R {
+        PGIS_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - PWM Group Interrupt Status"]
     #[inline(always)]
-    pub fn pgis2(&mut self) -> PGIS_W<18> {
-        PGIS_W::new(self)
+    pub fn pgis2(&self) -> PGIS_R {
+        PGIS_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - PWM Group Interrupt Status"]
     #[inline(always)]
-    pub fn pgis3(&mut self) -> PGIS_W<19> {
-        PGIS_W::new(self)
+    pub fn pgis3(&self) -> PGIS_R {
+        PGIS_R::new(((self.bits >> 19) & 1) != 0)
     }
+}
+impl W {
     #[doc = "PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
     pub unsafe fn pis<const O: u8>(&mut self) -> PIS_W<O> {
@@ -230,6 +205,31 @@ impl W {
     #[inline(always)]
     pub fn pis7(&mut self) -> PIS_W<7> {
         PIS_W::new(self)
+    }
+    #[doc = "PWM Group Interrupt Status"]
+    #[inline(always)]
+    pub unsafe fn pgis<const O: u8>(&mut self) -> PGIS_W<O> {
+        PGIS_W::new(self)
+    }
+    #[doc = "Bit 16 - PWM Group Interrupt Status"]
+    #[inline(always)]
+    pub fn pgis0(&mut self) -> PGIS_W<16> {
+        PGIS_W::new(self)
+    }
+    #[doc = "Bit 17 - PWM Group Interrupt Status"]
+    #[inline(always)]
+    pub fn pgis1(&mut self) -> PGIS_W<17> {
+        PGIS_W::new(self)
+    }
+    #[doc = "Bit 18 - PWM Group Interrupt Status"]
+    #[inline(always)]
+    pub fn pgis2(&mut self) -> PGIS_W<18> {
+        PGIS_W::new(self)
+    }
+    #[doc = "Bit 19 - PWM Group Interrupt Status"]
+    #[inline(always)]
+    pub fn pgis3(&mut self) -> PGIS_W<19> {
+        PGIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

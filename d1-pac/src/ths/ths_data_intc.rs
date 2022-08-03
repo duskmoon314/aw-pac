@@ -34,6 +34,8 @@ impl From<crate::W<THS_DATA_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ths_data_irq_en` reader - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
+pub type THS_DATA_IRQ_EN_R = crate::BitReader<THS_DATA_IRQ_EN_A>;
 #[doc = "Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum THS_DATA_IRQ_EN_A {
@@ -48,8 +50,6 @@ impl From<THS_DATA_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ths_data_irq_en` reader - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
-pub type THS_DATA_IRQ_EN_R = crate::BitReader<THS_DATA_IRQ_EN_A>;
 impl THS_DATA_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

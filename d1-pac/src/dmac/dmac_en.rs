@@ -34,6 +34,8 @@ impl From<crate::W<DMAC_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dma_en` reader - DMA Channel Enable"]
+pub type DMA_EN_R = crate::BitReader<DMA_EN_A>;
 #[doc = "DMA Channel Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_EN_A {
@@ -48,8 +50,6 @@ impl From<DMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dma_en` reader - DMA Channel Enable"]
-pub type DMA_EN_R = crate::BitReader<DMA_EN_A>;
 impl DMA_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

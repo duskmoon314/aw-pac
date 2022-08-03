@@ -34,6 +34,9 @@ impl From<crate::W<SPINLOCK_IRQ_STA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `lock_irq_status[0-31]` reader - Lock\\[i\\]
+Interrupt Status"]
+pub type LOCK_IRQ_STATUS_R = crate::BitReader<LOCK_IRQ_STATUS_A>;
 #[doc = "Lock\\[i\\]
 Interrupt Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<LOCK_IRQ_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `lock(0-31)_irq_status` reader - Lock\\[i\\]
-Interrupt Status"]
-pub type LOCK_IRQ_STATUS_R = crate::BitReader<LOCK_IRQ_STATUS_A>;
 impl LOCK_IRQ_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl LOCK_IRQ_STATUS_R {
         *self == LOCK_IRQ_STATUS_A::PENDING
     }
 }
-#[doc = "Fields `lock(0-31)_irq_status` writer - Lock\\[i\\]
+#[doc = "Field `lock_irq_status[0-31]` writer - Lock\\[i\\]
 Interrupt Status"]
 pub type LOCK_IRQ_STATUS_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, SPINLOCK_IRQ_STA_SPEC, LOCK_IRQ_STATUS_A, O>;

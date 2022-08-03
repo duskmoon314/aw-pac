@@ -34,6 +34,8 @@ impl From<crate::W<DSP_BOOT_RAMMAP_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dsp_boot_sram_remap_enable` reader - "]
+pub type DSP_BOOT_SRAM_REMAP_ENABLE_R = crate::BitReader<DSP_BOOT_SRAM_REMAP_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DSP_BOOT_SRAM_REMAP_ENABLE_A {
@@ -48,8 +50,6 @@ impl From<DSP_BOOT_SRAM_REMAP_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dsp_boot_sram_remap_enable` reader - "]
-pub type DSP_BOOT_SRAM_REMAP_ENABLE_R = crate::BitReader<DSP_BOOT_SRAM_REMAP_ENABLE_A>;
 impl DSP_BOOT_SRAM_REMAP_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

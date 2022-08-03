@@ -13,44 +13,8 @@ impl From<crate::R<IIR_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "FIFOs Enable Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum FEFLAG_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "3: `11`"]
-    ENABLE = 3,
-}
-impl From<FEFLAG_A> for u8 {
-    #[inline(always)]
-    fn from(variant: FEFLAG_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `feflag` reader - FIFOs Enable Flag"]
-pub type FEFLAG_R = crate::FieldReader<u8, FEFLAG_A>;
-impl FEFLAG_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<FEFLAG_A> {
-        match self.bits {
-            0 => Some(FEFLAG_A::DISABLE),
-            3 => Some(FEFLAG_A::ENABLE),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == FEFLAG_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == FEFLAG_A::ENABLE
-    }
-}
+#[doc = "Field `iid` reader - Interrupt ID"]
+pub type IID_R = crate::FieldReader<u8, IID_A>;
 #[doc = "Interrupt ID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -78,8 +42,6 @@ impl From<IID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `iid` reader - Interrupt ID"]
-pub type IID_R = crate::FieldReader<u8, IID_A>;
 impl IID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -137,16 +99,54 @@ impl IID_R {
         *self == IID_A::CHARACTER_TIMEOUT
     }
 }
-impl R {
-    #[doc = "Bits 6:7 - FIFOs Enable Flag"]
+#[doc = "Field `feflag` reader - FIFOs Enable Flag"]
+pub type FEFLAG_R = crate::FieldReader<u8, FEFLAG_A>;
+#[doc = "FIFOs Enable Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum FEFLAG_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "3: `11`"]
+    ENABLE = 3,
+}
+impl From<FEFLAG_A> for u8 {
     #[inline(always)]
-    pub fn feflag(&self) -> FEFLAG_R {
-        FEFLAG_R::new(((self.bits >> 6) & 3) as u8)
+    fn from(variant: FEFLAG_A) -> Self {
+        variant as _
     }
+}
+impl FEFLAG_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<FEFLAG_A> {
+        match self.bits {
+            0 => Some(FEFLAG_A::DISABLE),
+            3 => Some(FEFLAG_A::ENABLE),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == FEFLAG_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == FEFLAG_A::ENABLE
+    }
+}
+impl R {
     #[doc = "Bits 0:3 - Interrupt ID"]
     #[inline(always)]
     pub fn iid(&self) -> IID_R {
         IID_R::new((self.bits & 0x0f) as u8)
+    }
+    #[doc = "Bits 6:7 - FIFOs Enable Flag"]
+    #[inline(always)]
+    pub fn feflag(&self) -> FEFLAG_R {
+        FEFLAG_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
 #[doc = "UART Interrupt Identity Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iir](index.html) module"]

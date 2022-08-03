@@ -34,6 +34,8 @@ impl From<crate::W<CIR_RXPCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `rppi` reader - Receiver Pulse Polarity Invert"]
+pub type RPPI_R = crate::BitReader<RPPI_A>;
 #[doc = "Receiver Pulse Polarity Invert\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RPPI_A {
@@ -48,8 +50,6 @@ impl From<RPPI_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `rppi` reader - Receiver Pulse Polarity Invert"]
-pub type RPPI_R = crate::BitReader<RPPI_A>;
 impl RPPI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

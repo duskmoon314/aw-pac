@@ -34,298 +34,114 @@ impl From<crate::W<HCI_INTERFACE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "DMA Transfer Status Enable\n\nValue on reset: 1"]
+#[doc = "Field `ulpi_bypass_enable` reader - ULPI bypass enable"]
+pub type ULPI_BYPASS_ENABLE_R = crate::BitReader<ULPI_BYPASS_ENABLE_A>;
+#[doc = "ULPI bypass enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DMA_TRANSFER_STATUS_ENABLE_A {
-    #[doc = "0: Disable"]
-    DISABLE = 0,
-    #[doc = "1: Enable"]
-    ENABLE = 1,
+pub enum ULPI_BYPASS_ENABLE_A {
+    #[doc = "1: Enable UTMI interface, disable ULPI interface"]
+    UTMI = 1,
+    #[doc = "0: Enable ULPI interface, disable UTMI interface"]
+    ULPI = 0,
 }
-impl From<DMA_TRANSFER_STATUS_ENABLE_A> for bool {
+impl From<ULPI_BYPASS_ENABLE_A> for bool {
     #[inline(always)]
-    fn from(variant: DMA_TRANSFER_STATUS_ENABLE_A) -> Self {
+    fn from(variant: ULPI_BYPASS_ENABLE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dma_transfer_status_enable` reader - DMA Transfer Status Enable"]
-pub type DMA_TRANSFER_STATUS_ENABLE_R = crate::BitReader<DMA_TRANSFER_STATUS_ENABLE_A>;
-impl DMA_TRANSFER_STATUS_ENABLE_R {
+impl ULPI_BYPASS_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA_TRANSFER_STATUS_ENABLE_A {
+    pub fn variant(&self) -> ULPI_BYPASS_ENABLE_A {
         match self.bits {
-            false => DMA_TRANSFER_STATUS_ENABLE_A::DISABLE,
-            true => DMA_TRANSFER_STATUS_ENABLE_A::ENABLE,
+            true => ULPI_BYPASS_ENABLE_A::UTMI,
+            false => ULPI_BYPASS_ENABLE_A::ULPI,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Checks if the value of the field is `UTMI`"]
     #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == DMA_TRANSFER_STATUS_ENABLE_A::DISABLE
+    pub fn is_utmi(&self) -> bool {
+        *self == ULPI_BYPASS_ENABLE_A::UTMI
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Checks if the value of the field is `ULPI`"]
     #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == DMA_TRANSFER_STATUS_ENABLE_A::ENABLE
+    pub fn is_ulpi(&self) -> bool {
+        *self == ULPI_BYPASS_ENABLE_A::ULPI
     }
 }
-#[doc = "OHCI count select\n\nValue on reset: 0"]
+#[doc = "Field `ulpi_bypass_enable` writer - ULPI bypass enable"]
+pub type ULPI_BYPASS_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, ULPI_BYPASS_ENABLE_A, O>;
+impl<'a, const O: u8> ULPI_BYPASS_ENABLE_W<'a, O> {
+    #[doc = "Enable UTMI interface, disable ULPI interface"]
+    #[inline(always)]
+    pub fn utmi(self) -> &'a mut W {
+        self.variant(ULPI_BYPASS_ENABLE_A::UTMI)
+    }
+    #[doc = "Enable ULPI interface, disable UTMI interface"]
+    #[inline(always)]
+    pub fn ulpi(self) -> &'a mut W {
+        self.variant(ULPI_BYPASS_ENABLE_A::ULPI)
+    }
+}
+#[doc = "Field `ahb_master_interface_incrx_align_enable` reader - Master interface INCRX align enable"]
+pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R =
+    crate::BitReader<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A>;
+#[doc = "Master interface INCRX align enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OHCI_COUNT_SELECT_A {
-    #[doc = "1: Simulation mode. The counters will be much shorter then real time"]
-    SIMULATION = 1,
-    #[doc = "0: Normal mode. The counters will count full time"]
-    NORMAL = 0,
+pub enum AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A {
+    #[doc = "1: Start INCRx burst only on burst x-align address"]
+    BURST_X_ALIGN_ADDRESS = 1,
+    #[doc = "0: Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\]
+is enabled"]
+    ANY_DOUBLE_WORD_BOUNDARY = 0,
 }
-impl From<OHCI_COUNT_SELECT_A> for bool {
+impl From<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A> for bool {
     #[inline(always)]
-    fn from(variant: OHCI_COUNT_SELECT_A) -> Self {
+    fn from(variant: AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ohci_count_select` reader - OHCI count select"]
-pub type OHCI_COUNT_SELECT_R = crate::BitReader<OHCI_COUNT_SELECT_A>;
-impl OHCI_COUNT_SELECT_R {
+impl AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OHCI_COUNT_SELECT_A {
+    pub fn variant(&self) -> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A {
         match self.bits {
-            true => OHCI_COUNT_SELECT_A::SIMULATION,
-            false => OHCI_COUNT_SELECT_A::NORMAL,
+            true => AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::BURST_X_ALIGN_ADDRESS,
+            false => AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY,
         }
     }
-    #[doc = "Checks if the value of the field is `SIMULATION`"]
+    #[doc = "Checks if the value of the field is `BURST_X_ALIGN_ADDRESS`"]
     #[inline(always)]
-    pub fn is_simulation(&self) -> bool {
-        *self == OHCI_COUNT_SELECT_A::SIMULATION
+    pub fn is_burst_x_align_address(&self) -> bool {
+        *self == AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::BURST_X_ALIGN_ADDRESS
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Checks if the value of the field is `ANY_DOUBLE_WORD_BOUNDARY`"]
     #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == OHCI_COUNT_SELECT_A::NORMAL
-    }
-}
-#[doc = "Field `ohci_count_select` writer - OHCI count select"]
-pub type OHCI_COUNT_SELECT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, OHCI_COUNT_SELECT_A, O>;
-impl<'a, const O: u8> OHCI_COUNT_SELECT_W<'a, O> {
-    #[doc = "Simulation mode. The counters will be much shorter then real time"]
-    #[inline(always)]
-    pub fn simulation(self) -> &'a mut W {
-        self.variant(OHCI_COUNT_SELECT_A::SIMULATION)
-    }
-    #[doc = "Normal mode. The counters will count full time"]
-    #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(OHCI_COUNT_SELECT_A::NORMAL)
+    pub fn is_any_double_word_boundary(&self) -> bool {
+        *self == AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY
     }
 }
-#[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RESUME_K_TO_SE0_TRANSITION_A {
-    #[doc = "1: Within 2 us of the resume-K to SE0 transition"]
-    WITHIN_2US = 1,
-    #[doc = "0: Random time value of the resume-K to SE0 transition"]
-    RANDOM = 0,
-}
-impl From<RESUME_K_TO_SE0_TRANSITION_A> for bool {
+#[doc = "Field `ahb_master_interface_incrx_align_enable` writer - Master interface INCRX align enable"]
+pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A, O>;
+impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, O> {
+    #[doc = "Start INCRx burst only on burst x-align address"]
     #[inline(always)]
-    fn from(variant: RESUME_K_TO_SE0_TRANSITION_A) -> Self {
-        variant as u8 != 0
+    pub fn burst_x_align_address(self) -> &'a mut W {
+        self.variant(AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::BURST_X_ALIGN_ADDRESS)
+    }
+    #[doc = "Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\]
+is enabled"]
+    #[inline(always)]
+    pub fn any_double_word_boundary(self) -> &'a mut W {
+        self.variant(AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY)
     }
 }
-#[doc = "Field `resume_k_to_se0_transition` reader - "]
-pub type RESUME_K_TO_SE0_TRANSITION_R = crate::BitReader<RESUME_K_TO_SE0_TRANSITION_A>;
-impl RESUME_K_TO_SE0_TRANSITION_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RESUME_K_TO_SE0_TRANSITION_A {
-        match self.bits {
-            true => RESUME_K_TO_SE0_TRANSITION_A::WITHIN_2US,
-            false => RESUME_K_TO_SE0_TRANSITION_A::RANDOM,
-        }
-    }
-    #[doc = "Checks if the value of the field is `WITHIN_2US`"]
-    #[inline(always)]
-    pub fn is_within_2us(&self) -> bool {
-        *self == RESUME_K_TO_SE0_TRANSITION_A::WITHIN_2US
-    }
-    #[doc = "Checks if the value of the field is `RANDOM`"]
-    #[inline(always)]
-    pub fn is_random(&self) -> bool {
-        *self == RESUME_K_TO_SE0_TRANSITION_A::RANDOM
-    }
-}
-#[doc = "Field `resume_k_to_se0_transition` writer - "]
-pub type RESUME_K_TO_SE0_TRANSITION_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, RESUME_K_TO_SE0_TRANSITION_A, O>;
-impl<'a, const O: u8> RESUME_K_TO_SE0_TRANSITION_W<'a, O> {
-    #[doc = "Within 2 us of the resume-K to SE0 transition"]
-    #[inline(always)]
-    pub fn within_2us(self) -> &'a mut W {
-        self.variant(RESUME_K_TO_SE0_TRANSITION_A::WITHIN_2US)
-    }
-    #[doc = "Random time value of the resume-K to SE0 transition"]
-    #[inline(always)]
-    pub fn random(self) -> &'a mut W {
-        self.variant(RESUME_K_TO_SE0_TRANSITION_A::RANDOM)
-    }
-}
-#[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PP2VBUS_A {
-    #[doc = "1: ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub"]
-    AUTO = 1,
-    #[doc = "0: ULPI wrapper will ignore the difference between power status of root hub and ULPI PHY"]
-    IGNORE = 0,
-}
-impl From<PP2VBUS_A> for bool {
-    #[inline(always)]
-    fn from(variant: PP2VBUS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `pp2vbus` reader - "]
-pub type PP2VBUS_R = crate::BitReader<PP2VBUS_A>;
-impl PP2VBUS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> PP2VBUS_A {
-        match self.bits {
-            true => PP2VBUS_A::AUTO,
-            false => PP2VBUS_A::IGNORE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `AUTO`"]
-    #[inline(always)]
-    pub fn is_auto(&self) -> bool {
-        *self == PP2VBUS_A::AUTO
-    }
-    #[doc = "Checks if the value of the field is `IGNORE`"]
-    #[inline(always)]
-    pub fn is_ignore(&self) -> bool {
-        *self == PP2VBUS_A::IGNORE
-    }
-}
-#[doc = "Field `pp2vbus` writer - "]
-pub type PP2VBUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, PP2VBUS_A, O>;
-impl<'a, const O: u8> PP2VBUS_W<'a, O> {
-    #[doc = "ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub"]
-    #[inline(always)]
-    pub fn auto(self) -> &'a mut W {
-        self.variant(PP2VBUS_A::AUTO)
-    }
-    #[doc = "ULPI wrapper will ignore the difference between power status of root hub and ULPI PHY"]
-    #[inline(always)]
-    pub fn ignore(self) -> &'a mut W {
-        self.variant(PP2VBUS_A::IGNORE)
-    }
-}
-#[doc = "Master interface INCR16 enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AHB_MASTER_INTERFACE_INCR16_ENABLE_A {
-    #[doc = "1: Use INCR16 when appropriate"]
-    USE_INCR16 = 1,
-    #[doc = "0: Do not use INCR16, use other enabled INCRX or unspecified length burst INCR"]
-    NOT_USE_INCR16 = 0,
-}
-impl From<AHB_MASTER_INTERFACE_INCR16_ENABLE_A> for bool {
-    #[inline(always)]
-    fn from(variant: AHB_MASTER_INTERFACE_INCR16_ENABLE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `ahb_master_interface_incr16_enable` reader - Master interface INCR16 enable"]
-pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_R =
-    crate::BitReader<AHB_MASTER_INTERFACE_INCR16_ENABLE_A>;
-impl AHB_MASTER_INTERFACE_INCR16_ENABLE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_A {
-        match self.bits {
-            true => AHB_MASTER_INTERFACE_INCR16_ENABLE_A::USE_INCR16,
-            false => AHB_MASTER_INTERFACE_INCR16_ENABLE_A::NOT_USE_INCR16,
-        }
-    }
-    #[doc = "Checks if the value of the field is `USE_INCR16`"]
-    #[inline(always)]
-    pub fn is_use_incr16(&self) -> bool {
-        *self == AHB_MASTER_INTERFACE_INCR16_ENABLE_A::USE_INCR16
-    }
-    #[doc = "Checks if the value of the field is `NOT_USE_INCR16`"]
-    #[inline(always)]
-    pub fn is_not_use_incr16(&self) -> bool {
-        *self == AHB_MASTER_INTERFACE_INCR16_ENABLE_A::NOT_USE_INCR16
-    }
-}
-#[doc = "Field `ahb_master_interface_incr16_enable` writer - Master interface INCR16 enable"]
-pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR16_ENABLE_A, O>;
-impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, O> {
-    #[doc = "Use INCR16 when appropriate"]
-    #[inline(always)]
-    pub fn use_incr16(self) -> &'a mut W {
-        self.variant(AHB_MASTER_INTERFACE_INCR16_ENABLE_A::USE_INCR16)
-    }
-    #[doc = "Do not use INCR16, use other enabled INCRX or unspecified length burst INCR"]
-    #[inline(always)]
-    pub fn not_use_incr16(self) -> &'a mut W {
-        self.variant(AHB_MASTER_INTERFACE_INCR16_ENABLE_A::NOT_USE_INCR16)
-    }
-}
-#[doc = "Master interface INCR8 enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AHB_MASTER_INTERFACE_INCR8_ENABLE_A {
-    #[doc = "1: Use INCR8 when appropriate"]
-    USE_INCR8 = 1,
-    #[doc = "0: Do not use INCR8, use other enabled INCRX or unspecified length burst INCR"]
-    NOT_USE_INCR8 = 0,
-}
-impl From<AHB_MASTER_INTERFACE_INCR8_ENABLE_A> for bool {
-    #[inline(always)]
-    fn from(variant: AHB_MASTER_INTERFACE_INCR8_ENABLE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `ahb_master_interface_incr8_enable` reader - Master interface INCR8 enable"]
-pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_R =
-    crate::BitReader<AHB_MASTER_INTERFACE_INCR8_ENABLE_A>;
-impl AHB_MASTER_INTERFACE_INCR8_ENABLE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_A {
-        match self.bits {
-            true => AHB_MASTER_INTERFACE_INCR8_ENABLE_A::USE_INCR8,
-            false => AHB_MASTER_INTERFACE_INCR8_ENABLE_A::NOT_USE_INCR8,
-        }
-    }
-    #[doc = "Checks if the value of the field is `USE_INCR8`"]
-    #[inline(always)]
-    pub fn is_use_incr8(&self) -> bool {
-        *self == AHB_MASTER_INTERFACE_INCR8_ENABLE_A::USE_INCR8
-    }
-    #[doc = "Checks if the value of the field is `NOT_USE_INCR8`"]
-    #[inline(always)]
-    pub fn is_not_use_incr8(&self) -> bool {
-        *self == AHB_MASTER_INTERFACE_INCR8_ENABLE_A::NOT_USE_INCR8
-    }
-}
-#[doc = "Field `ahb_master_interface_incr8_enable` writer - Master interface INCR8 enable"]
-pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR8_ENABLE_A, O>;
-impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, O> {
-    #[doc = "Use INCR8 when appropriate"]
-    #[inline(always)]
-    pub fn use_incr8(self) -> &'a mut W {
-        self.variant(AHB_MASTER_INTERFACE_INCR8_ENABLE_A::USE_INCR8)
-    }
-    #[doc = "Do not use INCR8, use other enabled INCRX or unspecified length burst INCR"]
-    #[inline(always)]
-    pub fn not_use_incr8(self) -> &'a mut W {
-        self.variant(AHB_MASTER_INTERFACE_INCR8_ENABLE_A::NOT_USE_INCR8)
-    }
-}
+#[doc = "Field `ahb_master_interface_burst_type_incr4_enable` reader - Master interface burst type INCR4 enable"]
+pub type AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R =
+    crate::BitReader<AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A>;
 #[doc = "Master interface burst type INCR4 enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A {
@@ -340,9 +156,6 @@ impl From<AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ahb_master_interface_burst_type_incr4_enable` reader - Master interface burst type INCR4 enable"]
-pub type AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R =
-    crate::BitReader<AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A>;
 impl AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -383,148 +196,303 @@ impl<'a, const O: u8> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<'a, O> {
         self.variant(AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A::NOT_USE_INCR4)
     }
 }
-#[doc = "Master interface INCRX align enable\n\nValue on reset: 0"]
+#[doc = "Field `ahb_master_interface_incr8_enable` reader - Master interface INCR8 enable"]
+pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_R =
+    crate::BitReader<AHB_MASTER_INTERFACE_INCR8_ENABLE_A>;
+#[doc = "Master interface INCR8 enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A {
-    #[doc = "1: Start INCRx burst only on burst x-align address"]
-    BURST_X_ALIGN_ADDRESS = 1,
-    #[doc = "0: Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\]
-is enabled"]
-    ANY_DOUBLE_WORD_BOUNDARY = 0,
+pub enum AHB_MASTER_INTERFACE_INCR8_ENABLE_A {
+    #[doc = "1: Use INCR8 when appropriate"]
+    USE_INCR8 = 1,
+    #[doc = "0: Do not use INCR8, use other enabled INCRX or unspecified length burst INCR"]
+    NOT_USE_INCR8 = 0,
 }
-impl From<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A> for bool {
+impl From<AHB_MASTER_INTERFACE_INCR8_ENABLE_A> for bool {
     #[inline(always)]
-    fn from(variant: AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A) -> Self {
+    fn from(variant: AHB_MASTER_INTERFACE_INCR8_ENABLE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ahb_master_interface_incrx_align_enable` reader - Master interface INCRX align enable"]
-pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R =
-    crate::BitReader<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A>;
-impl AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R {
+impl AHB_MASTER_INTERFACE_INCR8_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A {
+    pub fn variant(&self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_A {
         match self.bits {
-            true => AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::BURST_X_ALIGN_ADDRESS,
-            false => AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY,
+            true => AHB_MASTER_INTERFACE_INCR8_ENABLE_A::USE_INCR8,
+            false => AHB_MASTER_INTERFACE_INCR8_ENABLE_A::NOT_USE_INCR8,
         }
     }
-    #[doc = "Checks if the value of the field is `BURST_X_ALIGN_ADDRESS`"]
+    #[doc = "Checks if the value of the field is `USE_INCR8`"]
     #[inline(always)]
-    pub fn is_burst_x_align_address(&self) -> bool {
-        *self == AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::BURST_X_ALIGN_ADDRESS
+    pub fn is_use_incr8(&self) -> bool {
+        *self == AHB_MASTER_INTERFACE_INCR8_ENABLE_A::USE_INCR8
     }
-    #[doc = "Checks if the value of the field is `ANY_DOUBLE_WORD_BOUNDARY`"]
+    #[doc = "Checks if the value of the field is `NOT_USE_INCR8`"]
     #[inline(always)]
-    pub fn is_any_double_word_boundary(&self) -> bool {
-        *self == AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY
-    }
-}
-#[doc = "Field `ahb_master_interface_incrx_align_enable` writer - Master interface INCRX align enable"]
-pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A, O>;
-impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, O> {
-    #[doc = "Start INCRx burst only on burst x-align address"]
-    #[inline(always)]
-    pub fn burst_x_align_address(self) -> &'a mut W {
-        self.variant(AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::BURST_X_ALIGN_ADDRESS)
-    }
-    #[doc = "Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\]
-is enabled"]
-    #[inline(always)]
-    pub fn any_double_word_boundary(self) -> &'a mut W {
-        self.variant(AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY)
+    pub fn is_not_use_incr8(&self) -> bool {
+        *self == AHB_MASTER_INTERFACE_INCR8_ENABLE_A::NOT_USE_INCR8
     }
 }
-#[doc = "ULPI bypass enable\n\nValue on reset: 0"]
+#[doc = "Field `ahb_master_interface_incr8_enable` writer - Master interface INCR8 enable"]
+pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR8_ENABLE_A, O>;
+impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, O> {
+    #[doc = "Use INCR8 when appropriate"]
+    #[inline(always)]
+    pub fn use_incr8(self) -> &'a mut W {
+        self.variant(AHB_MASTER_INTERFACE_INCR8_ENABLE_A::USE_INCR8)
+    }
+    #[doc = "Do not use INCR8, use other enabled INCRX or unspecified length burst INCR"]
+    #[inline(always)]
+    pub fn not_use_incr8(self) -> &'a mut W {
+        self.variant(AHB_MASTER_INTERFACE_INCR8_ENABLE_A::NOT_USE_INCR8)
+    }
+}
+#[doc = "Field `ahb_master_interface_incr16_enable` reader - Master interface INCR16 enable"]
+pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_R =
+    crate::BitReader<AHB_MASTER_INTERFACE_INCR16_ENABLE_A>;
+#[doc = "Master interface INCR16 enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ULPI_BYPASS_ENABLE_A {
-    #[doc = "1: Enable UTMI interface, disable ULPI interface"]
-    UTMI = 1,
-    #[doc = "0: Enable ULPI interface, disable UTMI interface"]
-    ULPI = 0,
+pub enum AHB_MASTER_INTERFACE_INCR16_ENABLE_A {
+    #[doc = "1: Use INCR16 when appropriate"]
+    USE_INCR16 = 1,
+    #[doc = "0: Do not use INCR16, use other enabled INCRX or unspecified length burst INCR"]
+    NOT_USE_INCR16 = 0,
 }
-impl From<ULPI_BYPASS_ENABLE_A> for bool {
+impl From<AHB_MASTER_INTERFACE_INCR16_ENABLE_A> for bool {
     #[inline(always)]
-    fn from(variant: ULPI_BYPASS_ENABLE_A) -> Self {
+    fn from(variant: AHB_MASTER_INTERFACE_INCR16_ENABLE_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ulpi_bypass_enable` reader - ULPI bypass enable"]
-pub type ULPI_BYPASS_ENABLE_R = crate::BitReader<ULPI_BYPASS_ENABLE_A>;
-impl ULPI_BYPASS_ENABLE_R {
+impl AHB_MASTER_INTERFACE_INCR16_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ULPI_BYPASS_ENABLE_A {
+    pub fn variant(&self) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_A {
         match self.bits {
-            true => ULPI_BYPASS_ENABLE_A::UTMI,
-            false => ULPI_BYPASS_ENABLE_A::ULPI,
+            true => AHB_MASTER_INTERFACE_INCR16_ENABLE_A::USE_INCR16,
+            false => AHB_MASTER_INTERFACE_INCR16_ENABLE_A::NOT_USE_INCR16,
         }
     }
-    #[doc = "Checks if the value of the field is `UTMI`"]
+    #[doc = "Checks if the value of the field is `USE_INCR16`"]
     #[inline(always)]
-    pub fn is_utmi(&self) -> bool {
-        *self == ULPI_BYPASS_ENABLE_A::UTMI
+    pub fn is_use_incr16(&self) -> bool {
+        *self == AHB_MASTER_INTERFACE_INCR16_ENABLE_A::USE_INCR16
     }
-    #[doc = "Checks if the value of the field is `ULPI`"]
+    #[doc = "Checks if the value of the field is `NOT_USE_INCR16`"]
     #[inline(always)]
-    pub fn is_ulpi(&self) -> bool {
-        *self == ULPI_BYPASS_ENABLE_A::ULPI
+    pub fn is_not_use_incr16(&self) -> bool {
+        *self == AHB_MASTER_INTERFACE_INCR16_ENABLE_A::NOT_USE_INCR16
     }
 }
-#[doc = "Field `ulpi_bypass_enable` writer - ULPI bypass enable"]
-pub type ULPI_BYPASS_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, ULPI_BYPASS_ENABLE_A, O>;
-impl<'a, const O: u8> ULPI_BYPASS_ENABLE_W<'a, O> {
-    #[doc = "Enable UTMI interface, disable ULPI interface"]
+#[doc = "Field `ahb_master_interface_incr16_enable` writer - Master interface INCR16 enable"]
+pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, AHB_MASTER_INTERFACE_INCR16_ENABLE_A, O>;
+impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, O> {
+    #[doc = "Use INCR16 when appropriate"]
     #[inline(always)]
-    pub fn utmi(self) -> &'a mut W {
-        self.variant(ULPI_BYPASS_ENABLE_A::UTMI)
+    pub fn use_incr16(self) -> &'a mut W {
+        self.variant(AHB_MASTER_INTERFACE_INCR16_ENABLE_A::USE_INCR16)
     }
-    #[doc = "Enable ULPI interface, disable UTMI interface"]
+    #[doc = "Do not use INCR16, use other enabled INCRX or unspecified length burst INCR"]
     #[inline(always)]
-    pub fn ulpi(self) -> &'a mut W {
-        self.variant(ULPI_BYPASS_ENABLE_A::ULPI)
+    pub fn not_use_incr16(self) -> &'a mut W {
+        self.variant(AHB_MASTER_INTERFACE_INCR16_ENABLE_A::NOT_USE_INCR16)
+    }
+}
+#[doc = "Field `pp2vbus` reader - "]
+pub type PP2VBUS_R = crate::BitReader<PP2VBUS_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PP2VBUS_A {
+    #[doc = "1: ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub"]
+    AUTO = 1,
+    #[doc = "0: ULPI wrapper will ignore the difference between power status of root hub and ULPI PHY"]
+    IGNORE = 0,
+}
+impl From<PP2VBUS_A> for bool {
+    #[inline(always)]
+    fn from(variant: PP2VBUS_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PP2VBUS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PP2VBUS_A {
+        match self.bits {
+            true => PP2VBUS_A::AUTO,
+            false => PP2VBUS_A::IGNORE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `AUTO`"]
+    #[inline(always)]
+    pub fn is_auto(&self) -> bool {
+        *self == PP2VBUS_A::AUTO
+    }
+    #[doc = "Checks if the value of the field is `IGNORE`"]
+    #[inline(always)]
+    pub fn is_ignore(&self) -> bool {
+        *self == PP2VBUS_A::IGNORE
+    }
+}
+#[doc = "Field `pp2vbus` writer - "]
+pub type PP2VBUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, PP2VBUS_A, O>;
+impl<'a, const O: u8> PP2VBUS_W<'a, O> {
+    #[doc = "ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub"]
+    #[inline(always)]
+    pub fn auto(self) -> &'a mut W {
+        self.variant(PP2VBUS_A::AUTO)
+    }
+    #[doc = "ULPI wrapper will ignore the difference between power status of root hub and ULPI PHY"]
+    #[inline(always)]
+    pub fn ignore(self) -> &'a mut W {
+        self.variant(PP2VBUS_A::IGNORE)
+    }
+}
+#[doc = "Field `resume_k_to_se0_transition` reader - "]
+pub type RESUME_K_TO_SE0_TRANSITION_R = crate::BitReader<RESUME_K_TO_SE0_TRANSITION_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RESUME_K_TO_SE0_TRANSITION_A {
+    #[doc = "1: Within 2 us of the resume-K to SE0 transition"]
+    WITHIN_2US = 1,
+    #[doc = "0: Random time value of the resume-K to SE0 transition"]
+    RANDOM = 0,
+}
+impl From<RESUME_K_TO_SE0_TRANSITION_A> for bool {
+    #[inline(always)]
+    fn from(variant: RESUME_K_TO_SE0_TRANSITION_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RESUME_K_TO_SE0_TRANSITION_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RESUME_K_TO_SE0_TRANSITION_A {
+        match self.bits {
+            true => RESUME_K_TO_SE0_TRANSITION_A::WITHIN_2US,
+            false => RESUME_K_TO_SE0_TRANSITION_A::RANDOM,
+        }
+    }
+    #[doc = "Checks if the value of the field is `WITHIN_2US`"]
+    #[inline(always)]
+    pub fn is_within_2us(&self) -> bool {
+        *self == RESUME_K_TO_SE0_TRANSITION_A::WITHIN_2US
+    }
+    #[doc = "Checks if the value of the field is `RANDOM`"]
+    #[inline(always)]
+    pub fn is_random(&self) -> bool {
+        *self == RESUME_K_TO_SE0_TRANSITION_A::RANDOM
+    }
+}
+#[doc = "Field `resume_k_to_se0_transition` writer - "]
+pub type RESUME_K_TO_SE0_TRANSITION_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, RESUME_K_TO_SE0_TRANSITION_A, O>;
+impl<'a, const O: u8> RESUME_K_TO_SE0_TRANSITION_W<'a, O> {
+    #[doc = "Within 2 us of the resume-K to SE0 transition"]
+    #[inline(always)]
+    pub fn within_2us(self) -> &'a mut W {
+        self.variant(RESUME_K_TO_SE0_TRANSITION_A::WITHIN_2US)
+    }
+    #[doc = "Random time value of the resume-K to SE0 transition"]
+    #[inline(always)]
+    pub fn random(self) -> &'a mut W {
+        self.variant(RESUME_K_TO_SE0_TRANSITION_A::RANDOM)
+    }
+}
+#[doc = "Field `ohci_count_select` reader - OHCI count select"]
+pub type OHCI_COUNT_SELECT_R = crate::BitReader<OHCI_COUNT_SELECT_A>;
+#[doc = "OHCI count select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OHCI_COUNT_SELECT_A {
+    #[doc = "1: Simulation mode. The counters will be much shorter then real time"]
+    SIMULATION = 1,
+    #[doc = "0: Normal mode. The counters will count full time"]
+    NORMAL = 0,
+}
+impl From<OHCI_COUNT_SELECT_A> for bool {
+    #[inline(always)]
+    fn from(variant: OHCI_COUNT_SELECT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl OHCI_COUNT_SELECT_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OHCI_COUNT_SELECT_A {
+        match self.bits {
+            true => OHCI_COUNT_SELECT_A::SIMULATION,
+            false => OHCI_COUNT_SELECT_A::NORMAL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `SIMULATION`"]
+    #[inline(always)]
+    pub fn is_simulation(&self) -> bool {
+        *self == OHCI_COUNT_SELECT_A::SIMULATION
+    }
+    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[inline(always)]
+    pub fn is_normal(&self) -> bool {
+        *self == OHCI_COUNT_SELECT_A::NORMAL
+    }
+}
+#[doc = "Field `ohci_count_select` writer - OHCI count select"]
+pub type OHCI_COUNT_SELECT_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_INTERFACE_SPEC, OHCI_COUNT_SELECT_A, O>;
+impl<'a, const O: u8> OHCI_COUNT_SELECT_W<'a, O> {
+    #[doc = "Simulation mode. The counters will be much shorter then real time"]
+    #[inline(always)]
+    pub fn simulation(self) -> &'a mut W {
+        self.variant(OHCI_COUNT_SELECT_A::SIMULATION)
+    }
+    #[doc = "Normal mode. The counters will count full time"]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut W {
+        self.variant(OHCI_COUNT_SELECT_A::NORMAL)
+    }
+}
+#[doc = "Field `dma_transfer_status_enable` reader - DMA Transfer Status Enable"]
+pub type DMA_TRANSFER_STATUS_ENABLE_R = crate::BitReader<DMA_TRANSFER_STATUS_ENABLE_A>;
+#[doc = "DMA Transfer Status Enable\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA_TRANSFER_STATUS_ENABLE_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<DMA_TRANSFER_STATUS_ENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA_TRANSFER_STATUS_ENABLE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl DMA_TRANSFER_STATUS_ENABLE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA_TRANSFER_STATUS_ENABLE_A {
+        match self.bits {
+            false => DMA_TRANSFER_STATUS_ENABLE_A::DISABLE,
+            true => DMA_TRANSFER_STATUS_ENABLE_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == DMA_TRANSFER_STATUS_ENABLE_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == DMA_TRANSFER_STATUS_ENABLE_A::ENABLE
     }
 }
 impl R {
-    #[doc = "Bit 28 - DMA Transfer Status Enable"]
+    #[doc = "Bit 0 - ULPI bypass enable"]
     #[inline(always)]
-    pub fn dma_transfer_status_enable(&self) -> DMA_TRANSFER_STATUS_ENABLE_R {
-        DMA_TRANSFER_STATUS_ENABLE_R::new(((self.bits >> 28) & 1) != 0)
-    }
-    #[doc = "Bit 25 - OHCI count select"]
-    #[inline(always)]
-    pub fn ohci_count_select(&self) -> OHCI_COUNT_SELECT_R {
-        OHCI_COUNT_SELECT_R::new(((self.bits >> 25) & 1) != 0)
-    }
-    #[doc = "Bit 18"]
-    #[inline(always)]
-    pub fn resume_k_to_se0_transition(&self) -> RESUME_K_TO_SE0_TRANSITION_R {
-        RESUME_K_TO_SE0_TRANSITION_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 12"]
-    #[inline(always)]
-    pub fn pp2vbus(&self) -> PP2VBUS_R {
-        PP2VBUS_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "Bit 11 - Master interface INCR16 enable"]
-    #[inline(always)]
-    pub fn ahb_master_interface_incr16_enable(&self) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_R {
-        AHB_MASTER_INTERFACE_INCR16_ENABLE_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 10 - Master interface INCR8 enable"]
-    #[inline(always)]
-    pub fn ahb_master_interface_incr8_enable(&self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_R {
-        AHB_MASTER_INTERFACE_INCR8_ENABLE_R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bit 9 - Master interface burst type INCR4 enable"]
-    #[inline(always)]
-    pub fn ahb_master_interface_burst_type_incr4_enable(
-        &self,
-    ) -> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R {
-        AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R::new(((self.bits >> 9) & 1) != 0)
+    pub fn ulpi_bypass_enable(&self) -> ULPI_BYPASS_ENABLE_R {
+        ULPI_BYPASS_ENABLE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 8 - Master interface INCRX align enable"]
     #[inline(always)]
@@ -533,46 +501,49 @@ impl R {
     ) -> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R {
         AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 0 - ULPI bypass enable"]
-    #[inline(always)]
-    pub fn ulpi_bypass_enable(&self) -> ULPI_BYPASS_ENABLE_R {
-        ULPI_BYPASS_ENABLE_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 25 - OHCI count select"]
-    #[inline(always)]
-    pub fn ohci_count_select(&mut self) -> OHCI_COUNT_SELECT_W<25> {
-        OHCI_COUNT_SELECT_W::new(self)
-    }
-    #[doc = "Bit 18"]
-    #[inline(always)]
-    pub fn resume_k_to_se0_transition(&mut self) -> RESUME_K_TO_SE0_TRANSITION_W<18> {
-        RESUME_K_TO_SE0_TRANSITION_W::new(self)
-    }
-    #[doc = "Bit 12"]
-    #[inline(always)]
-    pub fn pp2vbus(&mut self) -> PP2VBUS_W<12> {
-        PP2VBUS_W::new(self)
-    }
-    #[doc = "Bit 11 - Master interface INCR16 enable"]
-    #[inline(always)]
-    pub fn ahb_master_interface_incr16_enable(
-        &mut self,
-    ) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<11> {
-        AHB_MASTER_INTERFACE_INCR16_ENABLE_W::new(self)
-    }
-    #[doc = "Bit 10 - Master interface INCR8 enable"]
-    #[inline(always)]
-    pub fn ahb_master_interface_incr8_enable(&mut self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<10> {
-        AHB_MASTER_INTERFACE_INCR8_ENABLE_W::new(self)
-    }
     #[doc = "Bit 9 - Master interface burst type INCR4 enable"]
     #[inline(always)]
     pub fn ahb_master_interface_burst_type_incr4_enable(
-        &mut self,
-    ) -> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<9> {
-        AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W::new(self)
+        &self,
+    ) -> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R {
+        AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R::new(((self.bits >> 9) & 1) != 0)
+    }
+    #[doc = "Bit 10 - Master interface INCR8 enable"]
+    #[inline(always)]
+    pub fn ahb_master_interface_incr8_enable(&self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_R {
+        AHB_MASTER_INTERFACE_INCR8_ENABLE_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - Master interface INCR16 enable"]
+    #[inline(always)]
+    pub fn ahb_master_interface_incr16_enable(&self) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_R {
+        AHB_MASTER_INTERFACE_INCR16_ENABLE_R::new(((self.bits >> 11) & 1) != 0)
+    }
+    #[doc = "Bit 12"]
+    #[inline(always)]
+    pub fn pp2vbus(&self) -> PP2VBUS_R {
+        PP2VBUS_R::new(((self.bits >> 12) & 1) != 0)
+    }
+    #[doc = "Bit 18"]
+    #[inline(always)]
+    pub fn resume_k_to_se0_transition(&self) -> RESUME_K_TO_SE0_TRANSITION_R {
+        RESUME_K_TO_SE0_TRANSITION_R::new(((self.bits >> 18) & 1) != 0)
+    }
+    #[doc = "Bit 25 - OHCI count select"]
+    #[inline(always)]
+    pub fn ohci_count_select(&self) -> OHCI_COUNT_SELECT_R {
+        OHCI_COUNT_SELECT_R::new(((self.bits >> 25) & 1) != 0)
+    }
+    #[doc = "Bit 28 - DMA Transfer Status Enable"]
+    #[inline(always)]
+    pub fn dma_transfer_status_enable(&self) -> DMA_TRANSFER_STATUS_ENABLE_R {
+        DMA_TRANSFER_STATUS_ENABLE_R::new(((self.bits >> 28) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - ULPI bypass enable"]
+    #[inline(always)]
+    pub fn ulpi_bypass_enable(&mut self) -> ULPI_BYPASS_ENABLE_W<0> {
+        ULPI_BYPASS_ENABLE_W::new(self)
     }
     #[doc = "Bit 8 - Master interface INCRX align enable"]
     #[inline(always)]
@@ -581,10 +552,39 @@ impl W {
     ) -> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<8> {
         AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W::new(self)
     }
-    #[doc = "Bit 0 - ULPI bypass enable"]
+    #[doc = "Bit 9 - Master interface burst type INCR4 enable"]
     #[inline(always)]
-    pub fn ulpi_bypass_enable(&mut self) -> ULPI_BYPASS_ENABLE_W<0> {
-        ULPI_BYPASS_ENABLE_W::new(self)
+    pub fn ahb_master_interface_burst_type_incr4_enable(
+        &mut self,
+    ) -> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<9> {
+        AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W::new(self)
+    }
+    #[doc = "Bit 10 - Master interface INCR8 enable"]
+    #[inline(always)]
+    pub fn ahb_master_interface_incr8_enable(&mut self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<10> {
+        AHB_MASTER_INTERFACE_INCR8_ENABLE_W::new(self)
+    }
+    #[doc = "Bit 11 - Master interface INCR16 enable"]
+    #[inline(always)]
+    pub fn ahb_master_interface_incr16_enable(
+        &mut self,
+    ) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<11> {
+        AHB_MASTER_INTERFACE_INCR16_ENABLE_W::new(self)
+    }
+    #[doc = "Bit 12"]
+    #[inline(always)]
+    pub fn pp2vbus(&mut self) -> PP2VBUS_W<12> {
+        PP2VBUS_W::new(self)
+    }
+    #[doc = "Bit 18"]
+    #[inline(always)]
+    pub fn resume_k_to_se0_transition(&mut self) -> RESUME_K_TO_SE0_TRANSITION_W<18> {
+        RESUME_K_TO_SE0_TRANSITION_W::new(self)
+    }
+    #[doc = "Bit 25 - OHCI count select"]
+    #[inline(always)]
+    pub fn ohci_count_select(&mut self) -> OHCI_COUNT_SELECT_W<25> {
+        OHCI_COUNT_SELECT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

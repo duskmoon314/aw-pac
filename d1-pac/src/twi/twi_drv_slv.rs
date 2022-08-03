@@ -34,10 +34,12 @@ impl From<crate::W<TWI_DRV_SLV_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `slv_id` reader - Slave device ID"]
-pub type SLV_ID_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `slv_id` writer - Slave device ID"]
-pub type SLV_ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 7, O>;
+#[doc = "Field `slv_id_x` reader - SLAX\\[7:0\\]"]
+pub type SLV_ID_X_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `slv_id_x` writer - SLAX\\[7:0\\]"]
+pub type SLV_ID_X_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 8, O>;
+#[doc = "Field `cmd` reader - R/W operation to slave device"]
+pub type CMD_R = crate::BitReader<CMD_A>;
 #[doc = "R/W operation to slave device\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CMD_A {
@@ -52,8 +54,6 @@ impl From<CMD_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `cmd` reader - R/W operation to slave device"]
-pub type CMD_R = crate::BitReader<CMD_A>;
 impl CMD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -88,42 +88,42 @@ impl<'a, const O: u8> CMD_W<'a, O> {
         self.variant(CMD_A::READ)
     }
 }
-#[doc = "Field `slv_id_x` reader - SLAX\\[7:0\\]"]
-pub type SLV_ID_X_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `slv_id_x` writer - SLAX\\[7:0\\]"]
-pub type SLV_ID_X_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 8, O>;
+#[doc = "Field `slv_id` reader - Slave device ID"]
+pub type SLV_ID_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `slv_id` writer - Slave device ID"]
+pub type SLV_ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_SPEC, u8, u8, 7, O>;
 impl R {
-    #[doc = "Bits 9:15 - Slave device ID"]
+    #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
     #[inline(always)]
-    pub fn slv_id(&self) -> SLV_ID_R {
-        SLV_ID_R::new(((self.bits >> 9) & 0x7f) as u8)
+    pub fn slv_id_x(&self) -> SLV_ID_X_R {
+        SLV_ID_X_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bit 8 - R/W operation to slave device"]
     #[inline(always)]
     pub fn cmd(&self) -> CMD_R {
         CMD_R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
+    #[doc = "Bits 9:15 - Slave device ID"]
     #[inline(always)]
-    pub fn slv_id_x(&self) -> SLV_ID_X_R {
-        SLV_ID_X_R::new((self.bits & 0xff) as u8)
+    pub fn slv_id(&self) -> SLV_ID_R {
+        SLV_ID_R::new(((self.bits >> 9) & 0x7f) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 9:15 - Slave device ID"]
+    #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
     #[inline(always)]
-    pub fn slv_id(&mut self) -> SLV_ID_W<9> {
-        SLV_ID_W::new(self)
+    pub fn slv_id_x(&mut self) -> SLV_ID_X_W<0> {
+        SLV_ID_X_W::new(self)
     }
     #[doc = "Bit 8 - R/W operation to slave device"]
     #[inline(always)]
     pub fn cmd(&mut self) -> CMD_W<8> {
         CMD_W::new(self)
     }
-    #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
+    #[doc = "Bits 9:15 - Slave device ID"]
     #[inline(always)]
-    pub fn slv_id_x(&mut self) -> SLV_ID_X_W<0> {
-        SLV_ID_X_W::new(self)
+    pub fn slv_id(&mut self) -> SLV_ID_W<9> {
+        SLV_ID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

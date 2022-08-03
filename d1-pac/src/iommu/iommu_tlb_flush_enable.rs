@@ -34,57 +34,62 @@ impl From<crate::W<IOMMU_TLB_FLUSH_ENABLE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
+#[doc = "Field `mi_tlb_fs[0-6]` reader - Micro TLB\\[i\\]
+Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+pub type MI_TLB_FS_R = crate::BitReader<MI_TLB_FS_A>;
+#[doc = "Micro TLB\\[i\\]
+Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PC_FS_A {
+pub enum MI_TLB_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
     N_O_CLEAR_OR_COMPLETED = 0,
     #[doc = "1: Enable clear operation"]
     E_NABLE = 1,
 }
-impl From<PC_FS_A> for bool {
+impl From<MI_TLB_FS_A> for bool {
     #[inline(always)]
-    fn from(variant: PC_FS_A) -> Self {
+    fn from(variant: MI_TLB_FS_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `pc_fs` reader - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-pub type PC_FS_R = crate::BitReader<PC_FS_A>;
-impl PC_FS_R {
+impl MI_TLB_FS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PC_FS_A {
+    pub fn variant(&self) -> MI_TLB_FS_A {
         match self.bits {
-            false => PC_FS_A::N_O_CLEAR_OR_COMPLETED,
-            true => PC_FS_A::E_NABLE,
+            false => MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED,
+            true => MI_TLB_FS_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `N_O_CLEAR_OR_COMPLETED`"]
     #[inline(always)]
     pub fn is_n_o_clear_or_completed(&self) -> bool {
-        *self == PC_FS_A::N_O_CLEAR_OR_COMPLETED
+        *self == MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == PC_FS_A::E_NABLE
+        *self == MI_TLB_FS_A::E_NABLE
     }
 }
-#[doc = "Field `pc_fs` writer - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-pub type PC_FS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_TLB_FLUSH_ENABLE_SPEC, PC_FS_A, O>;
-impl<'a, const O: u8> PC_FS_W<'a, O> {
+#[doc = "Field `mi_tlb_fs[0-6]` writer - Micro TLB\\[i\\]
+Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+pub type MI_TLB_FS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_TLB_FLUSH_ENABLE_SPEC, MI_TLB_FS_A, O>;
+impl<'a, const O: u8> MI_TLB_FS_W<'a, O> {
     #[doc = "No clear operation or clear operation is completed"]
     #[inline(always)]
     pub fn n_o_clear_or_completed(self) -> &'a mut W {
-        self.variant(PC_FS_A::N_O_CLEAR_OR_COMPLETED)
+        self.variant(MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED)
     }
     #[doc = "Enable clear operation"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(PC_FS_A::E_NABLE)
+        self.variant(MI_TLB_FS_A::E_NABLE)
     }
 }
+#[doc = "Field `ma_tlb_fs` reader - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+pub type MA_TLB_FS_R = crate::BitReader<MA_TLB_FS_A>;
 #[doc = "Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MA_TLB_FS_A {
@@ -99,8 +104,6 @@ impl From<MA_TLB_FS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ma_tlb_fs` reader - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-pub type MA_TLB_FS_R = crate::BitReader<MA_TLB_FS_A>;
 impl MA_TLB_FS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,71 +139,58 @@ impl<'a, const O: u8> MA_TLB_FS_W<'a, O> {
         self.variant(MA_TLB_FS_A::E_NABLE)
     }
 }
-#[doc = "Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
+#[doc = "Field `pc_fs` reader - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+pub type PC_FS_R = crate::BitReader<PC_FS_A>;
+#[doc = "PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MI_TLB_FS_A {
+pub enum PC_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
     N_O_CLEAR_OR_COMPLETED = 0,
     #[doc = "1: Enable clear operation"]
     E_NABLE = 1,
 }
-impl From<MI_TLB_FS_A> for bool {
+impl From<PC_FS_A> for bool {
     #[inline(always)]
-    fn from(variant: MI_TLB_FS_A) -> Self {
+    fn from(variant: PC_FS_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `mi_tlb(0-6)_fs` reader - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-pub type MI_TLB_FS_R = crate::BitReader<MI_TLB_FS_A>;
-impl MI_TLB_FS_R {
+impl PC_FS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MI_TLB_FS_A {
+    pub fn variant(&self) -> PC_FS_A {
         match self.bits {
-            false => MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED,
-            true => MI_TLB_FS_A::E_NABLE,
+            false => PC_FS_A::N_O_CLEAR_OR_COMPLETED,
+            true => PC_FS_A::E_NABLE,
         }
     }
     #[doc = "Checks if the value of the field is `N_O_CLEAR_OR_COMPLETED`"]
     #[inline(always)]
     pub fn is_n_o_clear_or_completed(&self) -> bool {
-        *self == MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED
+        *self == PC_FS_A::N_O_CLEAR_OR_COMPLETED
     }
     #[doc = "Checks if the value of the field is `E_NABLE`"]
     #[inline(always)]
     pub fn is_e_nable(&self) -> bool {
-        *self == MI_TLB_FS_A::E_NABLE
+        *self == PC_FS_A::E_NABLE
     }
 }
-#[doc = "Fields `mi_tlb(0-6)_fs` writer - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-pub type MI_TLB_FS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_TLB_FLUSH_ENABLE_SPEC, MI_TLB_FS_A, O>;
-impl<'a, const O: u8> MI_TLB_FS_W<'a, O> {
+#[doc = "Field `pc_fs` writer - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+pub type PC_FS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_TLB_FLUSH_ENABLE_SPEC, PC_FS_A, O>;
+impl<'a, const O: u8> PC_FS_W<'a, O> {
     #[doc = "No clear operation or clear operation is completed"]
     #[inline(always)]
     pub fn n_o_clear_or_completed(self) -> &'a mut W {
-        self.variant(MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED)
+        self.variant(PC_FS_A::N_O_CLEAR_OR_COMPLETED)
     }
     #[doc = "Enable clear operation"]
     #[inline(always)]
     pub fn e_nable(self) -> &'a mut W {
-        self.variant(MI_TLB_FS_A::E_NABLE)
+        self.variant(PC_FS_A::E_NABLE)
     }
 }
 impl R {
-    #[doc = "Bit 17 - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-    #[inline(always)]
-    pub fn pc_fs(&self) -> PC_FS_R {
-        PC_FS_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-    #[inline(always)]
-    pub fn ma_tlb_fs(&self) -> MA_TLB_FS_R {
-        MA_TLB_FS_R::new(((self.bits >> 16) & 1) != 0)
-    }
     #[doc = "Micro TLB\\[i\\]
 Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
@@ -249,18 +239,18 @@ Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can cl
     pub fn mi_tlb6_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> 6) & 1) != 0)
     }
-}
-impl W {
-    #[doc = "Bit 17 - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
-    #[inline(always)]
-    pub fn pc_fs(&mut self) -> PC_FS_W<17> {
-        PC_FS_W::new(self)
-    }
     #[doc = "Bit 16 - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
-    pub fn ma_tlb_fs(&mut self) -> MA_TLB_FS_W<16> {
-        MA_TLB_FS_W::new(self)
+    pub fn ma_tlb_fs(&self) -> MA_TLB_FS_R {
+        MA_TLB_FS_R::new(((self.bits >> 16) & 1) != 0)
     }
+    #[doc = "Bit 17 - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[inline(always)]
+    pub fn pc_fs(&self) -> PC_FS_R {
+        PC_FS_R::new(((self.bits >> 17) & 1) != 0)
+    }
+}
+impl W {
     #[doc = "Micro TLB\\[i\\]
 Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
@@ -308,6 +298,16 @@ Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can cl
     #[inline(always)]
     pub fn mi_tlb6_fs(&mut self) -> MI_TLB_FS_W<6> {
         MI_TLB_FS_W::new(self)
+    }
+    #[doc = "Bit 16 - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[inline(always)]
+    pub fn ma_tlb_fs(&mut self) -> MA_TLB_FS_W<16> {
+        MA_TLB_FS_W::new(self)
+    }
+    #[doc = "Bit 17 - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[inline(always)]
+    pub fn pc_fs(&mut self) -> PC_FS_W<17> {
+        PC_FS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

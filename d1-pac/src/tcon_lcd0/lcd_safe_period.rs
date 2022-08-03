@@ -34,16 +34,8 @@ impl From<crate::W<LCD_SAFE_PERIOD_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `safe_period_fifo_num` reader - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
-pub type SAFE_PERIOD_FIFO_NUM_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `safe_period_fifo_num` writer - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
-pub type SAFE_PERIOD_FIFO_NUM_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_SAFE_PERIOD_SPEC, u16, u16, 13, O>;
-#[doc = "Field `safe_period_line` reader - Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area."]
-pub type SAFE_PERIOD_LINE_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `safe_period_line` writer - Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area."]
-pub type SAFE_PERIOD_LINE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_SAFE_PERIOD_SPEC, u16, u16, 12, O>;
+#[doc = "Field `safe_period_mode` reader - Select the save mode"]
+pub type SAFE_PERIOD_MODE_R = crate::FieldReader<u8, SAFE_PERIOD_MODE_A>;
 #[doc = "Select the save mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -65,8 +57,6 @@ impl From<SAFE_PERIOD_MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `safe_period_mode` reader - Select the save mode"]
-pub type SAFE_PERIOD_MODE_R = crate::FieldReader<u8, SAFE_PERIOD_MODE_A>;
 impl SAFE_PERIOD_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,38 +126,48 @@ impl<'a, const O: u8> SAFE_PERIOD_MODE_W<'a, O> {
         self.variant(SAFE_PERIOD_MODE_A::SAFE_LINE)
     }
 }
+#[doc = "Field `safe_period_line` reader - Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area."]
+pub type SAFE_PERIOD_LINE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `safe_period_line` writer - Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area."]
+pub type SAFE_PERIOD_LINE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_SAFE_PERIOD_SPEC, u16, u16, 12, O>;
+#[doc = "Field `safe_period_fifo_num` reader - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
+pub type SAFE_PERIOD_FIFO_NUM_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `safe_period_fifo_num` writer - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
+pub type SAFE_PERIOD_FIFO_NUM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_SAFE_PERIOD_SPEC, u16, u16, 13, O>;
 impl R {
-    #[doc = "Bits 16:28 - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
+    #[doc = "Bits 0:2 - Select the save mode"]
     #[inline(always)]
-    pub fn safe_period_fifo_num(&self) -> SAFE_PERIOD_FIFO_NUM_R {
-        SAFE_PERIOD_FIFO_NUM_R::new(((self.bits >> 16) & 0x1fff) as u16)
+    pub fn safe_period_mode(&self) -> SAFE_PERIOD_MODE_R {
+        SAFE_PERIOD_MODE_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 4:15 - Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area."]
     #[inline(always)]
     pub fn safe_period_line(&self) -> SAFE_PERIOD_LINE_R {
         SAFE_PERIOD_LINE_R::new(((self.bits >> 4) & 0x0fff) as u16)
     }
-    #[doc = "Bits 0:2 - Select the save mode"]
+    #[doc = "Bits 16:28 - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
     #[inline(always)]
-    pub fn safe_period_mode(&self) -> SAFE_PERIOD_MODE_R {
-        SAFE_PERIOD_MODE_R::new((self.bits & 7) as u8)
+    pub fn safe_period_fifo_num(&self) -> SAFE_PERIOD_FIFO_NUM_R {
+        SAFE_PERIOD_FIFO_NUM_R::new(((self.bits >> 16) & 0x1fff) as u16)
     }
 }
 impl W {
-    #[doc = "Bits 16:28 - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
+    #[doc = "Bits 0:2 - Select the save mode"]
     #[inline(always)]
-    pub fn safe_period_fifo_num(&mut self) -> SAFE_PERIOD_FIFO_NUM_W<16> {
-        SAFE_PERIOD_FIFO_NUM_W::new(self)
+    pub fn safe_period_mode(&mut self) -> SAFE_PERIOD_MODE_W<0> {
+        SAFE_PERIOD_MODE_W::new(self)
     }
     #[doc = "Bits 4:15 - Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area."]
     #[inline(always)]
     pub fn safe_period_line(&mut self) -> SAFE_PERIOD_LINE_W<4> {
         SAFE_PERIOD_LINE_W::new(self)
     }
-    #[doc = "Bits 0:2 - Select the save mode"]
+    #[doc = "Bits 16:28 - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
     #[inline(always)]
-    pub fn safe_period_mode(&mut self) -> SAFE_PERIOD_MODE_W<0> {
-        SAFE_PERIOD_MODE_W::new(self)
+    pub fn safe_period_fifo_num(&mut self) -> SAFE_PERIOD_FIFO_NUM_W<16> {
+        SAFE_PERIOD_FIFO_NUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

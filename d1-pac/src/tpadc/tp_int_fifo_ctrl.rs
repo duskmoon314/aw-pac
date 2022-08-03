@@ -34,305 +34,8 @@ impl From<crate::W<TP_INT_FIFO_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "TP FIFO Overrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP_OVERRUN_IRQ_EN_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TP_OVERRUN_IRQ_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TP_OVERRUN_IRQ_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tp_overrun_irq_en` reader - TP FIFO Overrun Interrupt Enable"]
-pub type TP_OVERRUN_IRQ_EN_R = crate::BitReader<TP_OVERRUN_IRQ_EN_A>;
-impl TP_OVERRUN_IRQ_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TP_OVERRUN_IRQ_EN_A {
-        match self.bits {
-            false => TP_OVERRUN_IRQ_EN_A::DISABLE,
-            true => TP_OVERRUN_IRQ_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TP_OVERRUN_IRQ_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TP_OVERRUN_IRQ_EN_A::ENABLE
-    }
-}
-#[doc = "Field `tp_overrun_irq_en` writer - TP FIFO Overrun Interrupt Enable"]
-pub type TP_OVERRUN_IRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_OVERRUN_IRQ_EN_A, O>;
-impl<'a, const O: u8> TP_OVERRUN_IRQ_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TP_OVERRUN_IRQ_EN_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TP_OVERRUN_IRQ_EN_A::ENABLE)
-    }
-}
-#[doc = "TP FIFO Data Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP_DATA_IRQ_EN_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TP_DATA_IRQ_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TP_DATA_IRQ_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tp_data_irq_en` reader - TP FIFO Data Interrupt Enable"]
-pub type TP_DATA_IRQ_EN_R = crate::BitReader<TP_DATA_IRQ_EN_A>;
-impl TP_DATA_IRQ_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TP_DATA_IRQ_EN_A {
-        match self.bits {
-            false => TP_DATA_IRQ_EN_A::DISABLE,
-            true => TP_DATA_IRQ_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TP_DATA_IRQ_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TP_DATA_IRQ_EN_A::ENABLE
-    }
-}
-#[doc = "Field `tp_data_irq_en` writer - TP FIFO Data Interrupt Enable"]
-pub type TP_DATA_IRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_IRQ_EN_A, O>;
-impl<'a, const O: u8> TP_DATA_IRQ_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TP_DATA_IRQ_EN_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TP_DATA_IRQ_EN_A::ENABLE)
-    }
-}
-#[doc = "TP FIFO XY Data Interchange Function Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP_DATA_XY_CHANGE_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TP_DATA_XY_CHANGE_A> for bool {
-    #[inline(always)]
-    fn from(variant: TP_DATA_XY_CHANGE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tp_data_xy_change` reader - TP FIFO XY Data Interchange Function Select"]
-pub type TP_DATA_XY_CHANGE_R = crate::BitReader<TP_DATA_XY_CHANGE_A>;
-impl TP_DATA_XY_CHANGE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TP_DATA_XY_CHANGE_A {
-        match self.bits {
-            false => TP_DATA_XY_CHANGE_A::DISABLE,
-            true => TP_DATA_XY_CHANGE_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TP_DATA_XY_CHANGE_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TP_DATA_XY_CHANGE_A::ENABLE
-    }
-}
-#[doc = "Field `tp_data_xy_change` writer - TP FIFO XY Data Interchange Function Select"]
-pub type TP_DATA_XY_CHANGE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_XY_CHANGE_A, O>;
-impl<'a, const O: u8> TP_DATA_XY_CHANGE_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TP_DATA_XY_CHANGE_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TP_DATA_XY_CHANGE_A::ENABLE)
-    }
-}
-#[doc = "Field `tp_fifo_trig_level` reader - TP FIFO Data Available Trigger Level"]
-pub type TP_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `tp_fifo_trig_level` writer - TP FIFO Data Available Trigger Level"]
-pub type TP_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, u8, u8, 5, O>;
-#[doc = "TP FIFO Data Available DRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP_DATA_ERQ_EN_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TP_DATA_ERQ_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TP_DATA_ERQ_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tp_data_erq_en` reader - TP FIFO Data Available DRQ Enable"]
-pub type TP_DATA_ERQ_EN_R = crate::BitReader<TP_DATA_ERQ_EN_A>;
-impl TP_DATA_ERQ_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TP_DATA_ERQ_EN_A {
-        match self.bits {
-            false => TP_DATA_ERQ_EN_A::DISABLE,
-            true => TP_DATA_ERQ_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TP_DATA_ERQ_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TP_DATA_ERQ_EN_A::ENABLE
-    }
-}
-#[doc = "Field `tp_data_erq_en` writer - TP FIFO Data Available DRQ Enable"]
-pub type TP_DATA_ERQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_ERQ_EN_A, O>;
-impl<'a, const O: u8> TP_DATA_ERQ_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TP_DATA_ERQ_EN_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TP_DATA_ERQ_EN_A::ENABLE)
-    }
-}
-#[doc = "TP FIFO Flush\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP_FIFO_FLUSH_A {
-    #[doc = "1: `1`"]
-    FLUSH = 1,
-}
-impl From<TP_FIFO_FLUSH_A> for bool {
-    #[inline(always)]
-    fn from(variant: TP_FIFO_FLUSH_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tp_fifo_flush` reader - TP FIFO Flush"]
-pub type TP_FIFO_FLUSH_R = crate::BitReader<TP_FIFO_FLUSH_A>;
-impl TP_FIFO_FLUSH_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<TP_FIFO_FLUSH_A> {
-        match self.bits {
-            true => Some(TP_FIFO_FLUSH_A::FLUSH),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FLUSH`"]
-    #[inline(always)]
-    pub fn is_flush(&self) -> bool {
-        *self == TP_FIFO_FLUSH_A::FLUSH
-    }
-}
-#[doc = "Field `tp_fifo_flush` writer - TP FIFO Flush"]
-pub type TP_FIFO_FLUSH_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_FIFO_FLUSH_A, O>;
-impl<'a, const O: u8> TP_FIFO_FLUSH_W<'a, O> {
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn flush(self) -> &'a mut W {
-        self.variant(TP_FIFO_FLUSH_A::FLUSH)
-    }
-}
-#[doc = "TP Last Touch (Stylus UP) IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP_UP_IRQ_EN_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TP_UP_IRQ_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TP_UP_IRQ_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tp_up_irq_en` reader - TP Last Touch (Stylus UP) IRQ Enable"]
-pub type TP_UP_IRQ_EN_R = crate::BitReader<TP_UP_IRQ_EN_A>;
-impl TP_UP_IRQ_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TP_UP_IRQ_EN_A {
-        match self.bits {
-            false => TP_UP_IRQ_EN_A::DISABLE,
-            true => TP_UP_IRQ_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TP_UP_IRQ_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TP_UP_IRQ_EN_A::ENABLE
-    }
-}
-#[doc = "Field `tp_up_irq_en` writer - TP Last Touch (Stylus UP) IRQ Enable"]
-pub type TP_UP_IRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_UP_IRQ_EN_A, O>;
-impl<'a, const O: u8> TP_UP_IRQ_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TP_UP_IRQ_EN_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TP_UP_IRQ_EN_A::ENABLE)
-    }
-}
+#[doc = "Field `tp_down_irq_en` reader - TP First Touch (Stylus DOWN) IRQ Enable"]
+pub type TP_DOWN_IRQ_EN_R = crate::BitReader<TP_DOWN_IRQ_EN_A>;
 #[doc = "TP First Touch (Stylus DOWN) IRQ Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TP_DOWN_IRQ_EN_A {
@@ -347,8 +50,6 @@ impl From<TP_DOWN_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tp_down_irq_en` reader - TP First Touch (Stylus DOWN) IRQ Enable"]
-pub type TP_DOWN_IRQ_EN_R = crate::BitReader<TP_DOWN_IRQ_EN_A>;
 impl TP_DOWN_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -384,88 +85,387 @@ impl<'a, const O: u8> TP_DOWN_IRQ_EN_W<'a, O> {
         self.variant(TP_DOWN_IRQ_EN_A::ENABLE)
     }
 }
+#[doc = "Field `tp_up_irq_en` reader - TP Last Touch (Stylus UP) IRQ Enable"]
+pub type TP_UP_IRQ_EN_R = crate::BitReader<TP_UP_IRQ_EN_A>;
+#[doc = "TP Last Touch (Stylus UP) IRQ Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP_UP_IRQ_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TP_UP_IRQ_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP_UP_IRQ_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TP_UP_IRQ_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP_UP_IRQ_EN_A {
+        match self.bits {
+            false => TP_UP_IRQ_EN_A::DISABLE,
+            true => TP_UP_IRQ_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TP_UP_IRQ_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TP_UP_IRQ_EN_A::ENABLE
+    }
+}
+#[doc = "Field `tp_up_irq_en` writer - TP Last Touch (Stylus UP) IRQ Enable"]
+pub type TP_UP_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_UP_IRQ_EN_A, O>;
+impl<'a, const O: u8> TP_UP_IRQ_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TP_UP_IRQ_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TP_UP_IRQ_EN_A::ENABLE)
+    }
+}
+#[doc = "Field `tp_fifo_flush` reader - TP FIFO Flush"]
+pub type TP_FIFO_FLUSH_R = crate::BitReader<TP_FIFO_FLUSH_A>;
+#[doc = "TP FIFO Flush\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP_FIFO_FLUSH_A {
+    #[doc = "1: `1`"]
+    FLUSH = 1,
+}
+impl From<TP_FIFO_FLUSH_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP_FIFO_FLUSH_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TP_FIFO_FLUSH_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<TP_FIFO_FLUSH_A> {
+        match self.bits {
+            true => Some(TP_FIFO_FLUSH_A::FLUSH),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FLUSH`"]
+    #[inline(always)]
+    pub fn is_flush(&self) -> bool {
+        *self == TP_FIFO_FLUSH_A::FLUSH
+    }
+}
+#[doc = "Field `tp_fifo_flush` writer - TP FIFO Flush"]
+pub type TP_FIFO_FLUSH_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_FIFO_FLUSH_A, O>;
+impl<'a, const O: u8> TP_FIFO_FLUSH_W<'a, O> {
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn flush(self) -> &'a mut W {
+        self.variant(TP_FIFO_FLUSH_A::FLUSH)
+    }
+}
+#[doc = "Field `tp_data_erq_en` reader - TP FIFO Data Available DRQ Enable"]
+pub type TP_DATA_ERQ_EN_R = crate::BitReader<TP_DATA_ERQ_EN_A>;
+#[doc = "TP FIFO Data Available DRQ Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP_DATA_ERQ_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TP_DATA_ERQ_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP_DATA_ERQ_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TP_DATA_ERQ_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP_DATA_ERQ_EN_A {
+        match self.bits {
+            false => TP_DATA_ERQ_EN_A::DISABLE,
+            true => TP_DATA_ERQ_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TP_DATA_ERQ_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TP_DATA_ERQ_EN_A::ENABLE
+    }
+}
+#[doc = "Field `tp_data_erq_en` writer - TP FIFO Data Available DRQ Enable"]
+pub type TP_DATA_ERQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_ERQ_EN_A, O>;
+impl<'a, const O: u8> TP_DATA_ERQ_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TP_DATA_ERQ_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TP_DATA_ERQ_EN_A::ENABLE)
+    }
+}
+#[doc = "Field `tp_fifo_trig_level` reader - TP FIFO Data Available Trigger Level"]
+pub type TP_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `tp_fifo_trig_level` writer - TP FIFO Data Available Trigger Level"]
+pub type TP_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, u8, u8, 5, O>;
+#[doc = "Field `tp_data_xy_change` reader - TP FIFO XY Data Interchange Function Select"]
+pub type TP_DATA_XY_CHANGE_R = crate::BitReader<TP_DATA_XY_CHANGE_A>;
+#[doc = "TP FIFO XY Data Interchange Function Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP_DATA_XY_CHANGE_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TP_DATA_XY_CHANGE_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP_DATA_XY_CHANGE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TP_DATA_XY_CHANGE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP_DATA_XY_CHANGE_A {
+        match self.bits {
+            false => TP_DATA_XY_CHANGE_A::DISABLE,
+            true => TP_DATA_XY_CHANGE_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TP_DATA_XY_CHANGE_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TP_DATA_XY_CHANGE_A::ENABLE
+    }
+}
+#[doc = "Field `tp_data_xy_change` writer - TP FIFO XY Data Interchange Function Select"]
+pub type TP_DATA_XY_CHANGE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_XY_CHANGE_A, O>;
+impl<'a, const O: u8> TP_DATA_XY_CHANGE_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TP_DATA_XY_CHANGE_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TP_DATA_XY_CHANGE_A::ENABLE)
+    }
+}
+#[doc = "Field `tp_data_irq_en` reader - TP FIFO Data Interrupt Enable"]
+pub type TP_DATA_IRQ_EN_R = crate::BitReader<TP_DATA_IRQ_EN_A>;
+#[doc = "TP FIFO Data Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP_DATA_IRQ_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TP_DATA_IRQ_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP_DATA_IRQ_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TP_DATA_IRQ_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP_DATA_IRQ_EN_A {
+        match self.bits {
+            false => TP_DATA_IRQ_EN_A::DISABLE,
+            true => TP_DATA_IRQ_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TP_DATA_IRQ_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TP_DATA_IRQ_EN_A::ENABLE
+    }
+}
+#[doc = "Field `tp_data_irq_en` writer - TP FIFO Data Interrupt Enable"]
+pub type TP_DATA_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_DATA_IRQ_EN_A, O>;
+impl<'a, const O: u8> TP_DATA_IRQ_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TP_DATA_IRQ_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TP_DATA_IRQ_EN_A::ENABLE)
+    }
+}
+#[doc = "Field `tp_overrun_irq_en` reader - TP FIFO Overrun Interrupt Enable"]
+pub type TP_OVERRUN_IRQ_EN_R = crate::BitReader<TP_OVERRUN_IRQ_EN_A>;
+#[doc = "TP FIFO Overrun Interrupt Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP_OVERRUN_IRQ_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TP_OVERRUN_IRQ_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP_OVERRUN_IRQ_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TP_OVERRUN_IRQ_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP_OVERRUN_IRQ_EN_A {
+        match self.bits {
+            false => TP_OVERRUN_IRQ_EN_A::DISABLE,
+            true => TP_OVERRUN_IRQ_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TP_OVERRUN_IRQ_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TP_OVERRUN_IRQ_EN_A::ENABLE
+    }
+}
+#[doc = "Field `tp_overrun_irq_en` writer - TP FIFO Overrun Interrupt Enable"]
+pub type TP_OVERRUN_IRQ_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TP_INT_FIFO_CTRL_SPEC, TP_OVERRUN_IRQ_EN_A, O>;
+impl<'a, const O: u8> TP_OVERRUN_IRQ_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TP_OVERRUN_IRQ_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TP_OVERRUN_IRQ_EN_A::ENABLE)
+    }
+}
 impl R {
-    #[doc = "Bit 17 - TP FIFO Overrun Interrupt Enable"]
+    #[doc = "Bit 0 - TP First Touch (Stylus DOWN) IRQ Enable"]
     #[inline(always)]
-    pub fn tp_overrun_irq_en(&self) -> TP_OVERRUN_IRQ_EN_R {
-        TP_OVERRUN_IRQ_EN_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 16 - TP FIFO Data Interrupt Enable"]
-    #[inline(always)]
-    pub fn tp_data_irq_en(&self) -> TP_DATA_IRQ_EN_R {
-        TP_DATA_IRQ_EN_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 13 - TP FIFO XY Data Interchange Function Select"]
-    #[inline(always)]
-    pub fn tp_data_xy_change(&self) -> TP_DATA_XY_CHANGE_R {
-        TP_DATA_XY_CHANGE_R::new(((self.bits >> 13) & 1) != 0)
-    }
-    #[doc = "Bits 8:12 - TP FIFO Data Available Trigger Level"]
-    #[inline(always)]
-    pub fn tp_fifo_trig_level(&self) -> TP_FIFO_TRIG_LEVEL_R {
-        TP_FIFO_TRIG_LEVEL_R::new(((self.bits >> 8) & 0x1f) as u8)
-    }
-    #[doc = "Bit 7 - TP FIFO Data Available DRQ Enable"]
-    #[inline(always)]
-    pub fn tp_data_erq_en(&self) -> TP_DATA_ERQ_EN_R {
-        TP_DATA_ERQ_EN_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 4 - TP FIFO Flush"]
-    #[inline(always)]
-    pub fn tp_fifo_flush(&self) -> TP_FIFO_FLUSH_R {
-        TP_FIFO_FLUSH_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn tp_down_irq_en(&self) -> TP_DOWN_IRQ_EN_R {
+        TP_DOWN_IRQ_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - TP Last Touch (Stylus UP) IRQ Enable"]
     #[inline(always)]
     pub fn tp_up_irq_en(&self) -> TP_UP_IRQ_EN_R {
         TP_UP_IRQ_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - TP First Touch (Stylus DOWN) IRQ Enable"]
+    #[doc = "Bit 4 - TP FIFO Flush"]
     #[inline(always)]
-    pub fn tp_down_irq_en(&self) -> TP_DOWN_IRQ_EN_R {
-        TP_DOWN_IRQ_EN_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 17 - TP FIFO Overrun Interrupt Enable"]
-    #[inline(always)]
-    pub fn tp_overrun_irq_en(&mut self) -> TP_OVERRUN_IRQ_EN_W<17> {
-        TP_OVERRUN_IRQ_EN_W::new(self)
-    }
-    #[doc = "Bit 16 - TP FIFO Data Interrupt Enable"]
-    #[inline(always)]
-    pub fn tp_data_irq_en(&mut self) -> TP_DATA_IRQ_EN_W<16> {
-        TP_DATA_IRQ_EN_W::new(self)
-    }
-    #[doc = "Bit 13 - TP FIFO XY Data Interchange Function Select"]
-    #[inline(always)]
-    pub fn tp_data_xy_change(&mut self) -> TP_DATA_XY_CHANGE_W<13> {
-        TP_DATA_XY_CHANGE_W::new(self)
-    }
-    #[doc = "Bits 8:12 - TP FIFO Data Available Trigger Level"]
-    #[inline(always)]
-    pub fn tp_fifo_trig_level(&mut self) -> TP_FIFO_TRIG_LEVEL_W<8> {
-        TP_FIFO_TRIG_LEVEL_W::new(self)
+    pub fn tp_fifo_flush(&self) -> TP_FIFO_FLUSH_R {
+        TP_FIFO_FLUSH_R::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 7 - TP FIFO Data Available DRQ Enable"]
     #[inline(always)]
-    pub fn tp_data_erq_en(&mut self) -> TP_DATA_ERQ_EN_W<7> {
-        TP_DATA_ERQ_EN_W::new(self)
+    pub fn tp_data_erq_en(&self) -> TP_DATA_ERQ_EN_R {
+        TP_DATA_ERQ_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 4 - TP FIFO Flush"]
+    #[doc = "Bits 8:12 - TP FIFO Data Available Trigger Level"]
     #[inline(always)]
-    pub fn tp_fifo_flush(&mut self) -> TP_FIFO_FLUSH_W<4> {
-        TP_FIFO_FLUSH_W::new(self)
+    pub fn tp_fifo_trig_level(&self) -> TP_FIFO_TRIG_LEVEL_R {
+        TP_FIFO_TRIG_LEVEL_R::new(((self.bits >> 8) & 0x1f) as u8)
+    }
+    #[doc = "Bit 13 - TP FIFO XY Data Interchange Function Select"]
+    #[inline(always)]
+    pub fn tp_data_xy_change(&self) -> TP_DATA_XY_CHANGE_R {
+        TP_DATA_XY_CHANGE_R::new(((self.bits >> 13) & 1) != 0)
+    }
+    #[doc = "Bit 16 - TP FIFO Data Interrupt Enable"]
+    #[inline(always)]
+    pub fn tp_data_irq_en(&self) -> TP_DATA_IRQ_EN_R {
+        TP_DATA_IRQ_EN_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 17 - TP FIFO Overrun Interrupt Enable"]
+    #[inline(always)]
+    pub fn tp_overrun_irq_en(&self) -> TP_OVERRUN_IRQ_EN_R {
+        TP_OVERRUN_IRQ_EN_R::new(((self.bits >> 17) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - TP First Touch (Stylus DOWN) IRQ Enable"]
+    #[inline(always)]
+    pub fn tp_down_irq_en(&mut self) -> TP_DOWN_IRQ_EN_W<0> {
+        TP_DOWN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - TP Last Touch (Stylus UP) IRQ Enable"]
     #[inline(always)]
     pub fn tp_up_irq_en(&mut self) -> TP_UP_IRQ_EN_W<1> {
         TP_UP_IRQ_EN_W::new(self)
     }
-    #[doc = "Bit 0 - TP First Touch (Stylus DOWN) IRQ Enable"]
+    #[doc = "Bit 4 - TP FIFO Flush"]
     #[inline(always)]
-    pub fn tp_down_irq_en(&mut self) -> TP_DOWN_IRQ_EN_W<0> {
-        TP_DOWN_IRQ_EN_W::new(self)
+    pub fn tp_fifo_flush(&mut self) -> TP_FIFO_FLUSH_W<4> {
+        TP_FIFO_FLUSH_W::new(self)
+    }
+    #[doc = "Bit 7 - TP FIFO Data Available DRQ Enable"]
+    #[inline(always)]
+    pub fn tp_data_erq_en(&mut self) -> TP_DATA_ERQ_EN_W<7> {
+        TP_DATA_ERQ_EN_W::new(self)
+    }
+    #[doc = "Bits 8:12 - TP FIFO Data Available Trigger Level"]
+    #[inline(always)]
+    pub fn tp_fifo_trig_level(&mut self) -> TP_FIFO_TRIG_LEVEL_W<8> {
+        TP_FIFO_TRIG_LEVEL_W::new(self)
+    }
+    #[doc = "Bit 13 - TP FIFO XY Data Interchange Function Select"]
+    #[inline(always)]
+    pub fn tp_data_xy_change(&mut self) -> TP_DATA_XY_CHANGE_W<13> {
+        TP_DATA_XY_CHANGE_W::new(self)
+    }
+    #[doc = "Bit 16 - TP FIFO Data Interrupt Enable"]
+    #[inline(always)]
+    pub fn tp_data_irq_en(&mut self) -> TP_DATA_IRQ_EN_W<16> {
+        TP_DATA_IRQ_EN_W::new(self)
+    }
+    #[doc = "Bit 17 - TP FIFO Overrun Interrupt Enable"]
+    #[inline(always)]
+    pub fn tp_overrun_irq_en(&mut self) -> TP_OVERRUN_IRQ_EN_W<17> {
+        TP_OVERRUN_IRQ_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

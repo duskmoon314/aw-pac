@@ -34,53 +34,53 @@ impl From<crate::W<LCD_GAMMA_TABLE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `red_comp` reader - Red Component"]
-pub type RED_COMP_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `red_comp` writer - Red Component"]
-pub type RED_COMP_W<'a, const O: u8> =
+#[doc = "Field `blue_comp` reader - Blue Component"]
+pub type BLUE_COMP_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `blue_comp` writer - Blue Component"]
+pub type BLUE_COMP_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_GAMMA_TABLE_SPEC, u8, u8, 8, O>;
 #[doc = "Field `green_comp` reader - Green Component"]
 pub type GREEN_COMP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `green_comp` writer - Green Component"]
 pub type GREEN_COMP_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_GAMMA_TABLE_SPEC, u8, u8, 8, O>;
-#[doc = "Field `blue_comp` reader - Blue Component"]
-pub type BLUE_COMP_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `blue_comp` writer - Blue Component"]
-pub type BLUE_COMP_W<'a, const O: u8> =
+#[doc = "Field `red_comp` reader - Red Component"]
+pub type RED_COMP_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `red_comp` writer - Red Component"]
+pub type RED_COMP_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_GAMMA_TABLE_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 16:23 - Red Component"]
+    #[doc = "Bits 0:7 - Blue Component"]
     #[inline(always)]
-    pub fn red_comp(&self) -> RED_COMP_R {
-        RED_COMP_R::new(((self.bits >> 16) & 0xff) as u8)
+    pub fn blue_comp(&self) -> BLUE_COMP_R {
+        BLUE_COMP_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Green Component"]
     #[inline(always)]
     pub fn green_comp(&self) -> GREEN_COMP_R {
         GREEN_COMP_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 0:7 - Blue Component"]
+    #[doc = "Bits 16:23 - Red Component"]
     #[inline(always)]
-    pub fn blue_comp(&self) -> BLUE_COMP_R {
-        BLUE_COMP_R::new((self.bits & 0xff) as u8)
+    pub fn red_comp(&self) -> RED_COMP_R {
+        RED_COMP_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 16:23 - Red Component"]
+    #[doc = "Bits 0:7 - Blue Component"]
     #[inline(always)]
-    pub fn red_comp(&mut self) -> RED_COMP_W<16> {
-        RED_COMP_W::new(self)
+    pub fn blue_comp(&mut self) -> BLUE_COMP_W<0> {
+        BLUE_COMP_W::new(self)
     }
     #[doc = "Bits 8:15 - Green Component"]
     #[inline(always)]
     pub fn green_comp(&mut self) -> GREEN_COMP_W<8> {
         GREEN_COMP_W::new(self)
     }
-    #[doc = "Bits 0:7 - Blue Component"]
+    #[doc = "Bits 16:23 - Red Component"]
     #[inline(always)]
-    pub fn blue_comp(&mut self) -> BLUE_COMP_W<0> {
-        BLUE_COMP_W::new(self)
+    pub fn red_comp(&mut self) -> RED_COMP_W<16> {
+        RED_COMP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,36 +34,36 @@ impl From<crate::W<GP_SR_CON_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `fs_div` reader - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
-pub type FS_DIV_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `fs_div` writer - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
-pub type FS_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_SR_CON_SPEC, u16, u16, 16, O>;
 #[doc = "Field `tacq` reader - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
 pub type TACQ_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `tacq` writer - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
 pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_SR_CON_SPEC, u16, u16, 16, O>;
+#[doc = "Field `fs_div` reader - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
+pub type FS_DIV_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `fs_div` writer - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
+pub type FS_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_SR_CON_SPEC, u16, u16, 16, O>;
 impl R {
-    #[doc = "Bits 16:31 - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
-    #[inline(always)]
-    pub fn fs_div(&self) -> FS_DIV_R {
-        FS_DIV_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
     #[doc = "Bits 0:15 - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
     #[inline(always)]
     pub fn tacq(&self) -> TACQ_R {
         TACQ_R::new((self.bits & 0xffff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:31 - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
     #[inline(always)]
-    pub fn fs_div(&mut self) -> FS_DIV_W<16> {
-        FS_DIV_W::new(self)
+    pub fn fs_div(&self) -> FS_DIV_R {
+        FS_DIV_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:15 - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
     #[inline(always)]
     pub fn tacq(&mut self) -> TACQ_W<0> {
         TACQ_W::new(self)
+    }
+    #[doc = "Bits 16:31 - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
+    #[inline(always)]
+    pub fn fs_div(&mut self) -> FS_DIV_W<16> {
+        FS_DIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,56 +34,16 @@ impl From<crate::W<SPI_BCC_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Quad Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum QUAD_EN_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<QUAD_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: QUAD_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `quad_en` reader - Quad Mode Enable"]
-pub type QUAD_EN_R = crate::BitReader<QUAD_EN_A>;
-impl QUAD_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> QUAD_EN_A {
-        match self.bits {
-            false => QUAD_EN_A::DISABLE,
-            true => QUAD_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == QUAD_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == QUAD_EN_A::ENABLE
-    }
-}
-#[doc = "Field `quad_en` writer - Quad Mode Enable"]
-pub type QUAD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, QUAD_EN_A, O>;
-impl<'a, const O: u8> QUAD_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(QUAD_EN_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(QUAD_EN_A::ENABLE)
-    }
-}
+#[doc = "Field `stc` reader - Master Single Mode Transmit Counter"]
+pub type STC_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `stc` writer - Master Single Mode Transmit Counter"]
+pub type STC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u32, u32, 24, O>;
+#[doc = "Field `dbc` reader - Master Dummy Burst Counter"]
+pub type DBC_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `dbc` writer - Master Dummy Burst Counter"]
+pub type DBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u8, u8, 4, O>;
+#[doc = "Field `drm` reader - Master Dual Mode RX Enable"]
+pub type DRM_R = crate::BitReader<DRM_A>;
 #[doc = "Master Dual Mode RX Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DRM_A {
@@ -98,8 +58,6 @@ impl From<DRM_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `drm` reader - Master Dual Mode RX Enable"]
-pub type DRM_R = crate::BitReader<DRM_A>;
 impl DRM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,56 +92,98 @@ impl<'a, const O: u8> DRM_W<'a, O> {
         self.variant(DRM_A::DUAL)
     }
 }
-#[doc = "Field `dbc` reader - Master Dummy Burst Counter"]
-pub type DBC_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `dbc` writer - Master Dummy Burst Counter"]
-pub type DBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u8, u8, 4, O>;
-#[doc = "Field `stc` reader - Master Single Mode Transmit Counter"]
-pub type STC_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `stc` writer - Master Single Mode Transmit Counter"]
-pub type STC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u32, u32, 24, O>;
-impl R {
-    #[doc = "Bit 29 - Quad Mode Enable"]
+#[doc = "Field `quad_en` reader - Quad Mode Enable"]
+pub type QUAD_EN_R = crate::BitReader<QUAD_EN_A>;
+#[doc = "Quad Mode Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum QUAD_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<QUAD_EN_A> for bool {
     #[inline(always)]
-    pub fn quad_en(&self) -> QUAD_EN_R {
-        QUAD_EN_R::new(((self.bits >> 29) & 1) != 0)
+    fn from(variant: QUAD_EN_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = "Bit 28 - Master Dual Mode RX Enable"]
+}
+impl QUAD_EN_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn drm(&self) -> DRM_R {
-        DRM_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn variant(&self) -> QUAD_EN_A {
+        match self.bits {
+            false => QUAD_EN_A::DISABLE,
+            true => QUAD_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == QUAD_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == QUAD_EN_A::ENABLE
+    }
+}
+#[doc = "Field `quad_en` writer - Quad Mode Enable"]
+pub type QUAD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, QUAD_EN_A, O>;
+impl<'a, const O: u8> QUAD_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(QUAD_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(QUAD_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bits 0:23 - Master Single Mode Transmit Counter"]
+    #[inline(always)]
+    pub fn stc(&self) -> STC_R {
+        STC_R::new((self.bits & 0x00ff_ffff) as u32)
     }
     #[doc = "Bits 24:27 - Master Dummy Burst Counter"]
     #[inline(always)]
     pub fn dbc(&self) -> DBC_R {
         DBC_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
-    #[doc = "Bits 0:23 - Master Single Mode Transmit Counter"]
+    #[doc = "Bit 28 - Master Dual Mode RX Enable"]
     #[inline(always)]
-    pub fn stc(&self) -> STC_R {
-        STC_R::new((self.bits & 0x00ff_ffff) as u32)
+    pub fn drm(&self) -> DRM_R {
+        DRM_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    #[doc = "Bit 29 - Quad Mode Enable"]
+    #[inline(always)]
+    pub fn quad_en(&self) -> QUAD_EN_R {
+        QUAD_EN_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 29 - Quad Mode Enable"]
+    #[doc = "Bits 0:23 - Master Single Mode Transmit Counter"]
     #[inline(always)]
-    pub fn quad_en(&mut self) -> QUAD_EN_W<29> {
-        QUAD_EN_W::new(self)
-    }
-    #[doc = "Bit 28 - Master Dual Mode RX Enable"]
-    #[inline(always)]
-    pub fn drm(&mut self) -> DRM_W<28> {
-        DRM_W::new(self)
+    pub fn stc(&mut self) -> STC_W<0> {
+        STC_W::new(self)
     }
     #[doc = "Bits 24:27 - Master Dummy Burst Counter"]
     #[inline(always)]
     pub fn dbc(&mut self) -> DBC_W<24> {
         DBC_W::new(self)
     }
-    #[doc = "Bits 0:23 - Master Single Mode Transmit Counter"]
+    #[doc = "Bit 28 - Master Dual Mode RX Enable"]
     #[inline(always)]
-    pub fn stc(&mut self) -> STC_W<0> {
-        STC_W::new(self)
+    pub fn drm(&mut self) -> DRM_W<28> {
+        DRM_W::new(self)
+    }
+    #[doc = "Bit 29 - Quad Mode Enable"]
+    #[inline(always)]
+    pub fn quad_en(&mut self) -> QUAD_EN_W<29> {
+        QUAD_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,18 +34,8 @@ impl From<crate::W<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `se0_status` reader - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
-is 10b or 11b"]
-pub type SE0_STATUS_R = crate::BitReader<bool>;
-#[doc = "Field `se0_status` writer - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
-is 10b or 11b"]
-pub type SE0_STATUS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
-#[doc = "Field `resume_sel` reader - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
-pub type RESUME_SEL_R = crate::BitReader<bool>;
-#[doc = "Field `resume_sel` writer - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
-pub type RESUME_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
+#[doc = "Field `port_disable_control` reader - Port Disable Control"]
+pub type PORT_DISABLE_CONTROL_R = crate::FieldReader<u8, PORT_DISABLE_CONTROL_A>;
 #[doc = "Port Disable Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -63,8 +53,6 @@ impl From<PORT_DISABLE_CONTROL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `port_disable_control` reader - Port Disable Control"]
-pub type PORT_DISABLE_CONTROL_R = crate::FieldReader<u8, PORT_DISABLE_CONTROL_A>;
 impl PORT_DISABLE_CONTROL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -119,40 +107,52 @@ impl<'a, const O: u8> PORT_DISABLE_CONTROL_W<'a, O> {
         self.variant(PORT_DISABLE_CONTROL_A::DISABLE_3_TIME_DETECT)
     }
 }
-impl R {
-    #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
+#[doc = "Field `resume_sel` reader - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
+pub type RESUME_SEL_R = crate::BitReader<bool>;
+#[doc = "Field `resume_sel` writer - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
+pub type RESUME_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
+#[doc = "Field `se0_status` reader - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
 is 10b or 11b"]
+pub type SE0_STATUS_R = crate::BitReader<bool>;
+#[doc = "Field `se0_status` writer - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
+is 10b or 11b"]
+pub type SE0_STATUS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
+impl R {
+    #[doc = "Bits 0:1 - Port Disable Control"]
     #[inline(always)]
-    pub fn se0_status(&self) -> SE0_STATUS_R {
-        SE0_STATUS_R::new(((self.bits >> 16) & 1) != 0)
+    pub fn port_disable_control(&self) -> PORT_DISABLE_CONTROL_R {
+        PORT_DISABLE_CONTROL_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bit 4 - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
     #[inline(always)]
     pub fn resume_sel(&self) -> RESUME_SEL_R {
         RESUME_SEL_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bits 0:1 - Port Disable Control"]
-    #[inline(always)]
-    pub fn port_disable_control(&self) -> PORT_DISABLE_CONTROL_R {
-        PORT_DISABLE_CONTROL_R::new((self.bits & 3) as u8)
-    }
-}
-impl W {
     #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
 is 10b or 11b"]
     #[inline(always)]
-    pub fn se0_status(&mut self) -> SE0_STATUS_W<16> {
-        SE0_STATUS_W::new(self)
+    pub fn se0_status(&self) -> SE0_STATUS_R {
+        SE0_STATUS_R::new(((self.bits >> 16) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bits 0:1 - Port Disable Control"]
+    #[inline(always)]
+    pub fn port_disable_control(&mut self) -> PORT_DISABLE_CONTROL_W<0> {
+        PORT_DISABLE_CONTROL_W::new(self)
     }
     #[doc = "Bit 4 - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
     #[inline(always)]
     pub fn resume_sel(&mut self) -> RESUME_SEL_W<4> {
         RESUME_SEL_W::new(self)
     }
-    #[doc = "Bits 0:1 - Port Disable Control"]
+    #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
+is 10b or 11b"]
     #[inline(always)]
-    pub fn port_disable_control(&mut self) -> PORT_DISABLE_CONTROL_W<0> {
-        PORT_DISABLE_CONTROL_W::new(self)
+    pub fn se0_status(&mut self) -> SE0_STATUS_W<16> {
+        SE0_STATUS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

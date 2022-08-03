@@ -34,64 +34,64 @@ impl From<crate::W<RXDMA_IS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `buffer_overrun` reader - "]
-pub type BUFFER_OVERRUN_R = crate::BitReader<bool>;
-#[doc = "Field `buffer_overrun` writer - "]
-pub type BUFFER_OVERRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
-#[doc = "Field `timeout_done` reader - "]
-pub type TIMEOUT_DONE_R = crate::BitReader<bool>;
-#[doc = "Field `timeout_done` writer - "]
-pub type TIMEOUT_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
-#[doc = "Field `blk_done` reader - "]
-pub type BLK_DONE_R = crate::BitReader<bool>;
-#[doc = "Field `blk_done` writer - "]
-pub type BLK_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
 #[doc = "Field `limit_done` reader - "]
 pub type LIMIT_DONE_R = crate::BitReader<bool>;
 #[doc = "Field `limit_done` writer - "]
 pub type LIMIT_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
+#[doc = "Field `blk_done` reader - "]
+pub type BLK_DONE_R = crate::BitReader<bool>;
+#[doc = "Field `blk_done` writer - "]
+pub type BLK_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
+#[doc = "Field `timeout_done` reader - "]
+pub type TIMEOUT_DONE_R = crate::BitReader<bool>;
+#[doc = "Field `timeout_done` writer - "]
+pub type TIMEOUT_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
+#[doc = "Field `buffer_overrun` reader - "]
+pub type BUFFER_OVERRUN_R = crate::BitReader<bool>;
+#[doc = "Field `buffer_overrun` writer - "]
+pub type BUFFER_OVERRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 3"]
+    #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn buffer_overrun(&self) -> BUFFER_OVERRUN_R {
-        BUFFER_OVERRUN_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2"]
-    #[inline(always)]
-    pub fn timeout_done(&self) -> TIMEOUT_DONE_R {
-        TIMEOUT_DONE_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn limit_done(&self) -> LIMIT_DONE_R {
+        LIMIT_DONE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn blk_done(&self) -> BLK_DONE_R {
         BLK_DONE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0"]
+    #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn limit_done(&self) -> LIMIT_DONE_R {
-        LIMIT_DONE_R::new((self.bits & 1) != 0)
+    pub fn timeout_done(&self) -> TIMEOUT_DONE_R {
+        TIMEOUT_DONE_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3"]
+    #[inline(always)]
+    pub fn buffer_overrun(&self) -> BUFFER_OVERRUN_R {
+        BUFFER_OVERRUN_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 3"]
+    #[doc = "Bit 0"]
     #[inline(always)]
-    pub fn buffer_overrun(&mut self) -> BUFFER_OVERRUN_W<3> {
-        BUFFER_OVERRUN_W::new(self)
-    }
-    #[doc = "Bit 2"]
-    #[inline(always)]
-    pub fn timeout_done(&mut self) -> TIMEOUT_DONE_W<2> {
-        TIMEOUT_DONE_W::new(self)
+    pub fn limit_done(&mut self) -> LIMIT_DONE_W<0> {
+        LIMIT_DONE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     pub fn blk_done(&mut self) -> BLK_DONE_W<1> {
         BLK_DONE_W::new(self)
     }
-    #[doc = "Bit 0"]
+    #[doc = "Bit 2"]
     #[inline(always)]
-    pub fn limit_done(&mut self) -> LIMIT_DONE_W<0> {
-        LIMIT_DONE_W::new(self)
+    pub fn timeout_done(&mut self) -> TIMEOUT_DONE_W<2> {
+        TIMEOUT_DONE_W::new(self)
+    }
+    #[doc = "Bit 3"]
+    #[inline(always)]
+    pub fn buffer_overrun(&mut self) -> BUFFER_OVERRUN_W<3> {
+        BUFFER_OVERRUN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,194 @@ impl From<crate::W<CIR_RXSTA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `roi` reader - Receiver FIFO Overrun"]
+pub type ROI_R = crate::BitReader<ROI_A>;
+#[doc = "Receiver FIFO Overrun\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ROI_A {
+    #[doc = "0: Receiver FIFO not overrun"]
+    NOT_OVERRUN = 0,
+    #[doc = "1: Receiver FIFO overrun"]
+    OVERRUN = 1,
+}
+impl From<ROI_A> for bool {
+    #[inline(always)]
+    fn from(variant: ROI_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ROI_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ROI_A {
+        match self.bits {
+            false => ROI_A::NOT_OVERRUN,
+            true => ROI_A::OVERRUN,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_OVERRUN`"]
+    #[inline(always)]
+    pub fn is_not_overrun(&self) -> bool {
+        *self == ROI_A::NOT_OVERRUN
+    }
+    #[doc = "Checks if the value of the field is `OVERRUN`"]
+    #[inline(always)]
+    pub fn is_overrun(&self) -> bool {
+        *self == ROI_A::OVERRUN
+    }
+}
+#[doc = "Field `roi` writer - Receiver FIFO Overrun"]
+pub type ROI_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, ROI_A, O>;
+impl<'a, const O: u8> ROI_W<'a, O> {
+    #[doc = "Receiver FIFO not overrun"]
+    #[inline(always)]
+    pub fn not_overrun(self) -> &'a mut W {
+        self.variant(ROI_A::NOT_OVERRUN)
+    }
+    #[doc = "Receiver FIFO overrun"]
+    #[inline(always)]
+    pub fn overrun(self) -> &'a mut W {
+        self.variant(ROI_A::OVERRUN)
+    }
+}
+#[doc = "Field `rpe` reader - Receiver Packet End Flag"]
+pub type RPE_R = crate::BitReader<RPE_A>;
+#[doc = "Receiver Packet End Flag\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RPE_A {
+    #[doc = "0: STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
+    NOT_DETECTED = 0,
+    #[doc = "1: STO field or packet abort symbol (7'b0000,000 and 8'b0000,0000 for MIR and FIR) is detected. In CIR mode, one CIR symbol is received."]
+    STO_FIELD = 1,
+}
+impl From<RPE_A> for bool {
+    #[inline(always)]
+    fn from(variant: RPE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RPE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RPE_A {
+        match self.bits {
+            false => RPE_A::NOT_DETECTED,
+            true => RPE_A::STO_FIELD,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[inline(always)]
+    pub fn is_not_detected(&self) -> bool {
+        *self == RPE_A::NOT_DETECTED
+    }
+    #[doc = "Checks if the value of the field is `STO_FIELD`"]
+    #[inline(always)]
+    pub fn is_sto_field(&self) -> bool {
+        *self == RPE_A::STO_FIELD
+    }
+}
+#[doc = "Field `rpe` writer - Receiver Packet End Flag"]
+pub type RPE_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RPE_A, O>;
+impl<'a, const O: u8> RPE_W<'a, O> {
+    #[doc = "STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
+    #[inline(always)]
+    pub fn not_detected(self) -> &'a mut W {
+        self.variant(RPE_A::NOT_DETECTED)
+    }
+    #[doc = "STO field or packet abort symbol (7'b0000,000 and 8'b0000,0000 for MIR and FIR) is detected. In CIR mode, one CIR symbol is received."]
+    #[inline(always)]
+    pub fn sto_field(self) -> &'a mut W {
+        self.variant(RPE_A::STO_FIELD)
+    }
+}
+#[doc = "Field `ra` reader - RX FIFO Available"]
+pub type RA_R = crate::BitReader<RA_A>;
+#[doc = "RX FIFO Available\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RA_A {
+    #[doc = "0: RX FIFO not available according to its level"]
+    NO_AVAILABLE = 0,
+    #[doc = "1: RX FIFO available according to its level Writing 1 clears this bit."]
+    AVAILABLE = 1,
+}
+impl From<RA_A> for bool {
+    #[inline(always)]
+    fn from(variant: RA_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RA_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RA_A {
+        match self.bits {
+            false => RA_A::NO_AVAILABLE,
+            true => RA_A::AVAILABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NO_AVAILABLE`"]
+    #[inline(always)]
+    pub fn is_no_available(&self) -> bool {
+        *self == RA_A::NO_AVAILABLE
+    }
+    #[doc = "Checks if the value of the field is `AVAILABLE`"]
+    #[inline(always)]
+    pub fn is_available(&self) -> bool {
+        *self == RA_A::AVAILABLE
+    }
+}
+#[doc = "Field `ra` writer - RX FIFO Available"]
+pub type RA_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RA_A, O>;
+impl<'a, const O: u8> RA_W<'a, O> {
+    #[doc = "RX FIFO not available according to its level"]
+    #[inline(always)]
+    pub fn no_available(self) -> &'a mut W {
+        self.variant(RA_A::NO_AVAILABLE)
+    }
+    #[doc = "RX FIFO available according to its level Writing 1 clears this bit."]
+    #[inline(always)]
+    pub fn available(self) -> &'a mut W {
+        self.variant(RA_A::AVAILABLE)
+    }
+}
+#[doc = "Field `stat` reader - Status of CIR"]
+pub type STAT_R = crate::BitReader<STAT_A>;
+#[doc = "Status of CIR\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STAT_A {
+    #[doc = "0: Idle"]
+    IDLE = 0,
+    #[doc = "1: Busy"]
+    BUSY = 1,
+}
+impl From<STAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: STAT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl STAT_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STAT_A {
+        match self.bits {
+            false => STAT_A::IDLE,
+            true => STAT_A::BUSY,
+        }
+    }
+    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == STAT_A::IDLE
+    }
+    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[inline(always)]
+    pub fn is_busy(&self) -> bool {
+        *self == STAT_A::BUSY
+    }
+}
+#[doc = "Field `rac` reader - RX FIFO Available Counter"]
+pub type RAC_R = crate::FieldReader<u8, RAC_A>;
 #[doc = "RX FIFO Available Counter\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -175,8 +363,6 @@ impl From<RAC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `rac` reader - RX FIFO Available Counter"]
-pub type RAC_R = crate::FieldReader<u8, RAC_A>;
 impl RAC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -576,234 +762,48 @@ impl RAC_R {
         *self == RAC_A::B64
     }
 }
-#[doc = "Status of CIR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STAT_A {
-    #[doc = "0: Idle"]
-    IDLE = 0,
-    #[doc = "1: Busy"]
-    BUSY = 1,
-}
-impl From<STAT_A> for bool {
-    #[inline(always)]
-    fn from(variant: STAT_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `stat` reader - Status of CIR"]
-pub type STAT_R = crate::BitReader<STAT_A>;
-impl STAT_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> STAT_A {
-        match self.bits {
-            false => STAT_A::IDLE,
-            true => STAT_A::BUSY,
-        }
-    }
-    #[doc = "Checks if the value of the field is `IDLE`"]
-    #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == STAT_A::IDLE
-    }
-    #[doc = "Checks if the value of the field is `BUSY`"]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == STAT_A::BUSY
-    }
-}
-#[doc = "RX FIFO Available\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RA_A {
-    #[doc = "0: RX FIFO not available according to its level"]
-    NO_AVAILABLE = 0,
-    #[doc = "1: RX FIFO available according to its level Writing 1 clears this bit."]
-    AVAILABLE = 1,
-}
-impl From<RA_A> for bool {
-    #[inline(always)]
-    fn from(variant: RA_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `ra` reader - RX FIFO Available"]
-pub type RA_R = crate::BitReader<RA_A>;
-impl RA_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RA_A {
-        match self.bits {
-            false => RA_A::NO_AVAILABLE,
-            true => RA_A::AVAILABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NO_AVAILABLE`"]
-    #[inline(always)]
-    pub fn is_no_available(&self) -> bool {
-        *self == RA_A::NO_AVAILABLE
-    }
-    #[doc = "Checks if the value of the field is `AVAILABLE`"]
-    #[inline(always)]
-    pub fn is_available(&self) -> bool {
-        *self == RA_A::AVAILABLE
-    }
-}
-#[doc = "Field `ra` writer - RX FIFO Available"]
-pub type RA_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RA_A, O>;
-impl<'a, const O: u8> RA_W<'a, O> {
-    #[doc = "RX FIFO not available according to its level"]
-    #[inline(always)]
-    pub fn no_available(self) -> &'a mut W {
-        self.variant(RA_A::NO_AVAILABLE)
-    }
-    #[doc = "RX FIFO available according to its level Writing 1 clears this bit."]
-    #[inline(always)]
-    pub fn available(self) -> &'a mut W {
-        self.variant(RA_A::AVAILABLE)
-    }
-}
-#[doc = "Receiver Packet End Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RPE_A {
-    #[doc = "0: STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
-    NOT_DETECTED = 0,
-    #[doc = "1: STO field or packet abort symbol (7'b0000,000 and 8'b0000,0000 for MIR and FIR) is detected. In CIR mode, one CIR symbol is received."]
-    STO_FIELD = 1,
-}
-impl From<RPE_A> for bool {
-    #[inline(always)]
-    fn from(variant: RPE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `rpe` reader - Receiver Packet End Flag"]
-pub type RPE_R = crate::BitReader<RPE_A>;
-impl RPE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RPE_A {
-        match self.bits {
-            false => RPE_A::NOT_DETECTED,
-            true => RPE_A::STO_FIELD,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
-    #[inline(always)]
-    pub fn is_not_detected(&self) -> bool {
-        *self == RPE_A::NOT_DETECTED
-    }
-    #[doc = "Checks if the value of the field is `STO_FIELD`"]
-    #[inline(always)]
-    pub fn is_sto_field(&self) -> bool {
-        *self == RPE_A::STO_FIELD
-    }
-}
-#[doc = "Field `rpe` writer - Receiver Packet End Flag"]
-pub type RPE_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RPE_A, O>;
-impl<'a, const O: u8> RPE_W<'a, O> {
-    #[doc = "STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
-    #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
-        self.variant(RPE_A::NOT_DETECTED)
-    }
-    #[doc = "STO field or packet abort symbol (7'b0000,000 and 8'b0000,0000 for MIR and FIR) is detected. In CIR mode, one CIR symbol is received."]
-    #[inline(always)]
-    pub fn sto_field(self) -> &'a mut W {
-        self.variant(RPE_A::STO_FIELD)
-    }
-}
-#[doc = "Receiver FIFO Overrun\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ROI_A {
-    #[doc = "0: Receiver FIFO not overrun"]
-    NOT_OVERRUN = 0,
-    #[doc = "1: Receiver FIFO overrun"]
-    OVERRUN = 1,
-}
-impl From<ROI_A> for bool {
-    #[inline(always)]
-    fn from(variant: ROI_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `roi` reader - Receiver FIFO Overrun"]
-pub type ROI_R = crate::BitReader<ROI_A>;
-impl ROI_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ROI_A {
-        match self.bits {
-            false => ROI_A::NOT_OVERRUN,
-            true => ROI_A::OVERRUN,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOT_OVERRUN`"]
-    #[inline(always)]
-    pub fn is_not_overrun(&self) -> bool {
-        *self == ROI_A::NOT_OVERRUN
-    }
-    #[doc = "Checks if the value of the field is `OVERRUN`"]
-    #[inline(always)]
-    pub fn is_overrun(&self) -> bool {
-        *self == ROI_A::OVERRUN
-    }
-}
-#[doc = "Field `roi` writer - Receiver FIFO Overrun"]
-pub type ROI_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, ROI_A, O>;
-impl<'a, const O: u8> ROI_W<'a, O> {
-    #[doc = "Receiver FIFO not overrun"]
-    #[inline(always)]
-    pub fn not_overrun(self) -> &'a mut W {
-        self.variant(ROI_A::NOT_OVERRUN)
-    }
-    #[doc = "Receiver FIFO overrun"]
-    #[inline(always)]
-    pub fn overrun(self) -> &'a mut W {
-        self.variant(ROI_A::OVERRUN)
-    }
-}
 impl R {
-    #[doc = "Bits 8:14 - RX FIFO Available Counter"]
+    #[doc = "Bit 0 - Receiver FIFO Overrun"]
     #[inline(always)]
-    pub fn rac(&self) -> RAC_R {
-        RAC_R::new(((self.bits >> 8) & 0x7f) as u8)
-    }
-    #[doc = "Bit 7 - Status of CIR"]
-    #[inline(always)]
-    pub fn stat(&self) -> STAT_R {
-        STAT_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 4 - RX FIFO Available"]
-    #[inline(always)]
-    pub fn ra(&self) -> RA_R {
-        RA_R::new(((self.bits >> 4) & 1) != 0)
+    pub fn roi(&self) -> ROI_R {
+        ROI_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Receiver Packet End Flag"]
     #[inline(always)]
     pub fn rpe(&self) -> RPE_R {
         RPE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Receiver FIFO Overrun"]
+    #[doc = "Bit 4 - RX FIFO Available"]
     #[inline(always)]
-    pub fn roi(&self) -> ROI_R {
-        ROI_R::new((self.bits & 1) != 0)
+    pub fn ra(&self) -> RA_R {
+        RA_R::new(((self.bits >> 4) & 1) != 0)
+    }
+    #[doc = "Bit 7 - Status of CIR"]
+    #[inline(always)]
+    pub fn stat(&self) -> STAT_R {
+        STAT_R::new(((self.bits >> 7) & 1) != 0)
+    }
+    #[doc = "Bits 8:14 - RX FIFO Available Counter"]
+    #[inline(always)]
+    pub fn rac(&self) -> RAC_R {
+        RAC_R::new(((self.bits >> 8) & 0x7f) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 4 - RX FIFO Available"]
+    #[doc = "Bit 0 - Receiver FIFO Overrun"]
     #[inline(always)]
-    pub fn ra(&mut self) -> RA_W<4> {
-        RA_W::new(self)
+    pub fn roi(&mut self) -> ROI_W<0> {
+        ROI_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Packet End Flag"]
     #[inline(always)]
     pub fn rpe(&mut self) -> RPE_W<1> {
         RPE_W::new(self)
     }
-    #[doc = "Bit 0 - Receiver FIFO Overrun"]
+    #[doc = "Bit 4 - RX FIFO Available"]
     #[inline(always)]
-    pub fn roi(&mut self) -> ROI_W<0> {
-        ROI_W::new(self)
+    pub fn ra(&mut self) -> RA_W<4> {
+        RA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

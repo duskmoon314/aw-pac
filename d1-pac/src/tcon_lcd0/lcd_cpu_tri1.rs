@@ -34,23 +34,23 @@ impl From<crate::W<LCD_CPU_TRI1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `block_current_num` reader - Shows the current data block transmitting to panel."]
-pub type BLOCK_CURRENT_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `block_num` reader - The number of data blocks. It is usually set as Y."]
 pub type BLOCK_NUM_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `block_num` writer - The number of data blocks. It is usually set as Y."]
 pub type BLOCK_NUM_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_CPU_TRI1_SPEC, u16, u16, 16, O>;
+#[doc = "Field `block_current_num` reader - Shows the current data block transmitting to panel."]
+pub type BLOCK_CURRENT_NUM_R = crate::FieldReader<u16, u16>;
 impl R {
-    #[doc = "Bits 16:31 - Shows the current data block transmitting to panel."]
-    #[inline(always)]
-    pub fn block_current_num(&self) -> BLOCK_CURRENT_NUM_R {
-        BLOCK_CURRENT_NUM_R::new(((self.bits >> 16) & 0xffff) as u16)
-    }
     #[doc = "Bits 0:15 - The number of data blocks. It is usually set as Y."]
     #[inline(always)]
     pub fn block_num(&self) -> BLOCK_NUM_R {
         BLOCK_NUM_R::new((self.bits & 0xffff) as u16)
+    }
+    #[doc = "Bits 16:31 - Shows the current data block transmitting to panel."]
+    #[inline(always)]
+    pub fn block_current_num(&self) -> BLOCK_CURRENT_NUM_R {
+        BLOCK_CURRENT_NUM_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
 impl W {

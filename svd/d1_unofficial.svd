@@ -15625,36 +15625,399 @@
           <name>tve_dac_map</name>
           <description>TV Encoder DAC MAP Register</description>
           <addressOffset>0x20</addressOffset>
+          <fields>
+            <field>
+              <name>dac_map</name>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>OUT0</name>
+                  <description>OUT0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_sel</name>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>TVE0</name>
+                  <description>TVE0</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tve_dac_status</name>
           <description>TV Encoder DAC STAUTS Register</description>
           <addressOffset>0x24</addressOffset>
+          <fields>
+            <field>
+              <name>dac_status</name>
+              <bitRange>[1:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>U_NCONNECTED</name>
+                  <description>Unconnected</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_ONNECTED</name>
+                  <description>Connected</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S_HORT</name>
+                  <description>Short to ground</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tve_dac_cfg0</name>
           <description>TV Encoder DAC CFG0 Register</description>
           <addressOffset>0x28</addressOffset>
+          <resetValue>0x80004200</resetValue>
+          <resetMask>0x83FFF311</resetMask>
+          <fields>
+            <field>
+              <name>dac_clock_invert</name>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_OT_INVERT</name>
+                  <description>Not invert</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I_NVERT</name>
+                  <description>Invert</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cali_in</name>
+              <bitRange>[25:16]</bitRange>
+            </field>
+            <field>
+              <name>low_bias</name>
+              <description>500 uA to 4 mA</description>
+              <bitRange>[15:12]</bitRange>
+            </field>
+            <field>
+              <name>bias_ext_sel</name>
+              <description>(A_SEL_BIAS_ADDA)</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bias_int_sel</name>
+              <description>(A_SEL_BIAS_RES)</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bias_ref_int_en</name>
+              <description>(A_EN_RESREF)</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_en</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tve_dac_cfg1</name>
           <description>TV Encoder DAC CFG1 Register</description>
           <addressOffset>0x2C</addressOffset>
+          <resetValue>0x0000023A</resetValue>
+          <resetMask>0x0000033F</resetMask>
+          <fields>
+            <field>
+              <name>ref_ext_sel</name>
+              <description>(A_SEL_DETREF_LDO)</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ref_int_sel</name>
+              <description>(A_SEL_DETREF_RES)</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ref2_sel</name>
+              <description>(a_refslct2[1:0])</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0_25_V</name>
+                  <description>0.25 V</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_30_V</name>
+                  <description>0.30 V</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_35_V</name>
+                  <description>0.35 V</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_40_V</name>
+                  <description>0.40 V</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ref1_sel</name>
+              <description>(a_refslct1[3:0])\n\nThe reference voltage is used for hot plug detect function.</description>
+              <bitRange>[3:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0_50_V</name>
+                  <description>0.50 V</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_55_V</name>
+                  <description>0.55 V</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_60_V</name>
+                  <description>0.60 V</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_65_V</name>
+                  <description>0.65 V</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_70_V</name>
+                  <description>0.70 V</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_75_V</name>
+                  <description>0.75 V</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_80_V</name>
+                  <description>0.80 V</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_85_V</name>
+                  <description>0.85 V</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_90_V</name>
+                  <description>0.90 V</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_95_V</name>
+                  <description>0.95 V</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_00_V</name>
+                  <description>1.00 V</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_05_V</name>
+                  <description>1.05 V</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_10_V</name>
+                  <description>1.10 V</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_15_V</name>
+                  <description>1.15 V</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_20_V</name>
+                  <description>1.20 V</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_25_V</name>
+                  <description>1.25 V</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tve_dac_cfg2</name>
           <description>TV Encoder DAC CFG2 Register</description>
           <addressOffset>0x30</addressOffset>
+          <fields>
+            <field>
+              <name>ab</name>
+              <description>(I config output current for different peak voltage)</description>
+              <bitRange>[12:8]</bitRange>
+            </field>
+            <field>
+              <name>s2s1</name>
+              <bitRange>[7:6]</bitRange>
+            </field>
+            <field>
+              <name>r_set</name>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tve_dac_cfg3</name>
           <description>TV Encoder DAC CFG2 Register</description>
           <addressOffset>0x34</addressOffset>
+          <fields>
+            <field>
+              <name>force_data_set</name>
+              <description>Force DAC input data</description>
+              <bitRange>[25:16]</bitRange>
+            </field>
+            <field>
+              <name>force_data_en</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>TVE</name>
+                  <description>DAC input data from TVE</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FORCE_DATA_SET</name>
+                  <description>DAC input data from FORCE_DATA_SET</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>tve_dac_test</name>
           <description>TV Encoder DAC TEST Register</description>
           <addressOffset>0xF0</addressOffset>
+          <fields>
+            <field>
+              <name>dac_test_length</name>
+              <description>DAC TEST DATA LENGTH</description>
+              <bitRange>[25:16]</bitRange>
+            </field>
+            <field>
+              <name>dac_test_sel</name>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DAC0</name>
+                  <description>DAC0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_test_enable</name>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R_EPEAT</name>
+                  <description>Repeat DAC data from DAC sram</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>
@@ -15670,174 +16033,1408 @@
       </addressBlock>
       <registers>
         <register>
-          <name>tve_000</name>
+          <name>tve_clock_gating</name>
           <description>TV Encoder Clock Gating Register</description>
           <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>clock_gate_dis</name>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bist_en</name>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ORMAL</name>
+                  <description>Normal mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>B_IST</name>
+                  <description>Bist mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>upsample_for_ypbpr</name>
+              <bitRange>[22:22]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>X1</name>
+                  <description>1x</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>X2</name>
+                  <description>2x</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>upsample_for_cvbs</name>
+              <bitRange>[21:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>F27M</name>
+                  <description>27 MHz</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F54M</name>
+                  <description>54 MHz</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F108M</name>
+                  <description>108 MHz</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>F216M</name>
+                  <description>216 MHz</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tve_en</name>
+              <description>Video Encoder enable, default disable, write 1 to take it out of the reset state</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_004</name>
+          <name>tve_configuration</name>
           <description>TV Encoder Configuration Register</description>
           <addressOffset>0x4</addressOffset>
+          <resetValue>0x00010000</resetValue>
+          <resetMask>0x3F1F031F</resetMask>
+          <fields>
+            <field>
+              <name>bypass_tv</name>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_src_sel</name>
+              <bitRange>[28:27]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>TVE</name>
+                  <description>TV Encoder</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LCD_CONTROLLER</name>
+                  <description>LCD controller, override all other TV encoder setting, the DAC clock can from LCD controller.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DAC_TEST</name>
+                  <description>DAC test mode, DAC using DAC clock</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DAC_TEST_AHB</name>
+                  <description>DAC test mode, DAC using AHB clock</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_control_logic_clock_sel</name>
+              <bitRange>[26:26]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>27M_74_25M</name>
+                  <description>Using 27 MHz clock or 74.25 MHz clock depend on CCU setting</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>54M_148_5M</name>
+                  <description>Using 54 MHz clock or 148.5 MHz clock depend on CCU setting</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>core_datapath_logic_clock_sel</name>
+              <bitRange>[25:25]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>27M_74_25M</name>
+                  <description>Using 27 MHz clock or 74.25 MHz clock depend on CCU setting</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>54M_148_5M</name>
+                  <description>Using 54 MHz clock or 148.5 MHz clock depend on CCU setting</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>core_control_logic_clock_sel</name>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>27M_74_25M</name>
+                  <description>Using 27 MHz clock or 74.25 MHz clock depend on CCU setting</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>54M_148_5M</name>
+                  <description>Using 54 MHz clock or 148.5 MHz clock depend on CCU setting</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cb_cr_seq_for_422_mode</name>
+              <description>Cb_Cr_Seq_For_422_Mode</description>
+              <bitRange>[20:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C_B</name>
+                  <description>Cb first</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_R</name>
+                  <description>Cr first</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>input_chroma_data_sampling_rate_sel</name>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>4_4_4</name>
+                  <description>4:4:4</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4_2_2</name>
+                  <description>4:2:2</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>yuv_rgb_output_en</name>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CVBS</name>
+                  <description>CVBS</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>yc_en</name>
+              <description>S-port Video enable Selection.\n\nThis bit selects whether the S-port(Y/C) video output is enabled or disabled.</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>Y_C</name>
+                  <description>Y/C is disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cvbs_en</name>
+              <description>Composite video enables selection\n\nThis bit selects whether the composite video output (CVBS) is enabled or disabled.</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLED</name>
+                  <description>Composite video is disabled, Only Y/C is enabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLED</name>
+                  <description>Composite video is enabled., CVBS and Y/C are enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>color_bar_type</name>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>75</name>
+                  <description>75/7.5/75/7.5 (NTSC), 100/0/75/0(PAL)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>100</name>
+                  <description>100/7.5/100/7.5(NTSC), 100/0/100/0(PAL)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>color_bar_mode</name>
+              <description>Standard Color bar input selection\n\nThis bit selects whether the Video Encoder video data input is replaced by an internal standard color bar generator or not.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISPLAY_E_NGINEER</name>
+                  <description>The Video Encoder input is coming from the Display Engineer</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I_NTERNAL_GENERATOR</name>
+                  <description>The Video Encoder input is coming from an internal standard color bar generator.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mode_1080i_1250line_sel</name>
+              <description>Mode_1080i_1250Line_Sel</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1125</name>
+                  <description>1125 Line mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1250</name>
+                  <description>1250 Line mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tvmode_select</name>
+              <description>TVMode_Select\n\nNote: Changing this register value will cause some relative register setting to relative value.</description>
+              <bitRange>[3:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NTSC</name>
+                  <description>NTSC</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PAL</name>
+                  <description>PAL</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_008</name>
+          <name>tve_dac1</name>
           <description>TV Encoder DAC Register1</description>
           <addressOffset>0x8</addressOffset>
+          <fields>
+            <field>
+              <name>dac0_src_sel</name>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C_OMPOSITE</name>
+                  <description>Composite</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_00c</name>
+          <name>tve_notch_dac_delay</name>
           <description>TV Encoder Notch and DAC Delay Register</description>
           <addressOffset>0xC</addressOffset>
+          <resetValue>0x02014924</resetValue>
+          <resetMask>0xCFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>chroma_filter_active_valid</name>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>luma_filter_lti_enable</name>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable Luma filter lti</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable Luma filter lti</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>y_delay_before_dither</name>
+              <bitRange>[27:25]</bitRange>
+            </field>
+            <field>
+              <name>hd_mode_cb_filter_bypass</name>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Bypass Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Bypass Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hd_mode_cr_filter_bypass</name>
+              <bitRange>[23:23]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Bypass Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Bypass Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>chroma_filter_1_444_en</name>
+              <bitRange>[22:22]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Chroma Filter 1 444 Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Chroma Filter 1 444 Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>chroma_hd_mode_filter_en</name>
+              <bitRange>[21:21]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Chroma HD Filter Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Chroma HD Filter Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <dimIndex>3,2,1</dimIndex>
+              <name>chroma_filter_stage_%s_bypass</name>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Chroma Filter Stage [i] Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BYPASS</name>
+                  <description>Chroma Filter Stage [i] bypass</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>luma_filter_bypass</name>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Luma Filter Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BYPASS</name>
+                  <description>Luma Filter bypass</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>notch_en</name>
+              <description>Luma notch filter on/off selection\n\nNote: This bit selects if the luma notch filter is operating or bypassed.</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>BYPASSED</name>
+                  <description>The luma notch filter is bypassed</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OPERATING</name>
+                  <description>The luma notch filter is operating</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>c_delay_before_dither</name>
+              <bitRange>[15:12]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_010</name>
+          <name>tve_chroma_frequency</name>
           <description>TV Encoder Chroma Frequency Register</description>
           <addressOffset>0x10</addressOffset>
+          <resetValue>0x21F07C1F</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <name>chroma_freq</name>
+              <description>Specify the ratio between the color burst frequency. 32 bits unsigned fraction. The default value is h21f07c1f, which is compatible with NTSC spec.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_014</name>
+          <name>tve_front_back_porch</name>
           <description>TV Encoder Front/Back Porch Register</description>
           <addressOffset>0x14</addressOffset>
+          <resetValue>0x00760020</resetValue>
+          <resetMask>0x01FF0FFF</resetMask>
+          <fields>
+            <field>
+              <name>back_porch</name>
+              <description>Specify the width of the back porch in encoder clock cycles. Min value is (burst_width+breeze_way+17). 8 bits unsigned integer.\n\nThe default value is 118.\n\nFor 720p mode, the value is 260.\n\nFor 1080i/p mode, the value is 192.</description>
+              <bitRange>[24:16]</bitRange>
+            </field>
+            <field>
+              <name>front_porch</name>
+              <description>Must be even\n\nSpecify the width of the front porch in encoder clock cycles. 6 bits unsigned even integer. Allowed range is form 10 to 62.\n\nThe default value is 32.\n\nFor 1080i mode, the value is 44.</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_018</name>
+          <name>tve_hd_vsync</name>
           <description>TV Encoder HD Mode VSYNC Register</description>
           <addressOffset>0x18</addressOffset>
+          <resetValue>0x00000016</resetValue>
+          <resetMask>0x0FFF0FFF</resetMask>
+          <fields>
+            <field>
+              <name>broad_plus_cycle_number_in_hd_mode_vsync</name>
+              <bitRange>[27:16]</bitRange>
+            </field>
+            <field>
+              <name>front_porch_like_in_hd_mode_vsync</name>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_01c</name>
+          <name>tve_line_number</name>
           <description>TV Encoder Line Number Register</description>
           <addressOffset>0x1C</addressOffset>
+          <resetValue>0x0016020D</resetValue>
+          <resetMask>0x00FF07FF</resetMask>
+          <fields>
+            <field>
+              <name>first_video_line</name>
+              <description>Specify the index of the first line in a field/frame to have active video. 8 bits unsigned integer.\n\nFor interlaced video: When VSync5=B'0', FirstVideoLine is restricted to be greater than 7. When VSync5=B'1', FirstVideoLine is restricted to be greater than 9.</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>num_lines</name>
+              <description>Specify the total number of lines in a video frame. 11 bits unsigned integer. Allowed range is 0 to 2048. For interlaced video: When NTSC, and FirstVideoLine is greater than 20, then NumLines is restricted to be greater than 2*(FirstVideoLine+18).\n\nWhen NTSC, and FirstVideoLine is not greater than 20, then NumLines is restricted to be greater than 77. When PAL, and FirstVideoLine is greater than 22, then NumLines is restricted to be greater than 2*(FirstVideoLine+18). When PAL, and FirstVideoLine is not greater than 22, then NumLines is restricted to be greater than 81.\n\nIf NumLines is even, then it is restricted to be divisible by 4. If NumLines is odd, then it is restricted to be divisible by 4 with a remainder of 1.</description>
+              <bitRange>[10:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_020</name>
+          <name>tve_level</name>
           <description>TV Encoder Level Register</description>
           <addressOffset>0x20</addressOffset>
+          <resetValue>0x00F0011A</resetValue>
+          <resetMask>0x03FF03FF</resetMask>
+          <fields>
+            <field>
+              <name>blank_level</name>
+              <description>Specify the blank level setting for active lines. This is 10 bits unsigned integer. Allowed range is from 0 to 1023.</description>
+              <bitRange>[25:16]</bitRange>
+            </field>
+            <field>
+              <name>black_level</name>
+              <description>Specify the black level setting. This is 10 bits unsigned integer. Allowed range is from 240 to 1023.</description>
+              <bitRange>[9:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_024</name>
+          <name>tve_dac2</name>
           <description>TV Encoder DAC Register2</description>
           <addressOffset>0x24</addressOffset>
         </register>
         <register>
-          <name>tve_030</name>
+          <name>tve_auto_detection_enable</name>
           <description>TV Encoder Auto Detection Enable Register</description>
           <addressOffset>0x30</addressOffset>
+          <fields>
+            <field>
+              <name>dac_auto_detect_mode_sel</name>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>O_LD</name>
+                  <description>Old Mode</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N_EW</name>
+                  <description>New Mode</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac0_auto_detect_interrupt_en</name>
+              <bitRange>[16:16]</bitRange>
+            </field>
+            <field>
+              <name>dac0_auto_detect_enable</name>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_034</name>
+          <name>tve_auto_detection_interrupt_status</name>
           <description>TV Encoder Auto Detection Interrupt Status Register</description>
           <addressOffset>0x34</addressOffset>
+          <fields>
+            <field>
+              <name>dac0_auto_detect_interrupt_active_flag</name>
+              <description>Write 1 to inactive DAC0 auto detection interrupt</description>
+              <bitRange>[0:0]</bitRange>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_038</name>
+          <name>tve_auto_detection_status</name>
           <description>TV Encoder Auto Detection Status Register</description>
           <addressOffset>0x38</addressOffset>
+          <fields>
+            <field>
+              <name>dac0_status</name>
+              <bitRange>[1:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>U_NCONNECTED</name>
+                  <description>Unconnected</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_ONNECTED</name>
+                  <description>Connected</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S_HORT_TO_GROUND</name>
+                  <description>Short to ground</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_03c</name>
+          <name>tve_auto_detection_debounce_setting</name>
           <description>TV Encoder Auto Detection De-bounce Setting Register</description>
           <addressOffset>0x3C</addressOffset>
+          <fields>
+            <field>
+              <name>dac_test_register</name>
+              <description>DAC test register.</description>
+              <bitRange>[25:16]</bitRange>
+            </field>
+            <field>
+              <name>dac0_de_bounce_times</name>
+              <description>The de_bounce time for hot plug detect function.</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_0f8</name>
+          <name>tve_auto_detect_cfg0</name>
           <description>TV Encoder Auto Detect Configuration Register0</description>
           <addressOffset>0xF8</addressOffset>
+          <fields>
+            <field>
+              <name>detect_pulse_value</name>
+              <description>Use for DAC data input at auto detect pluse. Set the pulse amplitude.</description>
+              <bitRange>[9:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_0fc</name>
+          <name>tve_auto_detect_cfg1</name>
           <description>TV Encoder Auto Detect Configuration Register1</description>
           <addressOffset>0xFC</addressOffset>
+          <fields>
+            <field>
+              <name>detect_pulse_periods</name>
+              <description>Use 32K clock</description>
+              <bitRange>[30:16]</bitRange>
+            </field>
+            <field>
+              <name>detect_pulse_start</name>
+              <description>Detect signal start time</description>
+              <bitRange>[14:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_100</name>
+          <name>tve_color_burst_phase_reset_cfg</name>
           <description>TV Encoder Color Burst Phase Reset Configuration Register</description>
           <addressOffset>0x100</addressOffset>
+          <fields>
+            <field>
+              <name>color_phase_reset</name>
+              <description>Color burst phase period selection\n\nThese bits select the number of fields or lines after which the color burst phase is reset to its initial value as specified by the ChromaPhase parameter, This parameter is application only for interlaced video.</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LINE8</name>
+                  <description>8 field</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LINE4</name>
+                  <description>4 field</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LINE2</name>
+                  <description>2 lines</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ONLY_ONCE</name>
+                  <description>only once</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_104</name>
+          <name>tve_vsync_number</name>
           <description>TV Encoder VSYNC Number Register</description>
           <addressOffset>0x104</addressOffset>
+          <fields>
+            <field>
+              <name>vsync5</name>
+              <description>VSync5 Number of equalization pulse selection\n\nThis bit selects whether the number of equalization pulses is 5 or 6. This parameter is applicable only for interlaced video.</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>5</name>
+                  <description>5 equalization pulse(default)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6</name>
+                  <description>6 equalization pulses</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_108</name>
+          <name>tve_notch_filter_frequency</name>
           <description>TV Encoder Notch Filter Frequency Register</description>
           <addressOffset>0x108</addressOffset>
+          <resetValue>0x00000002</resetValue>
+          <resetMask>0x00000007</resetMask>
+          <fields>
+            <field>
+              <name>notch_freq</name>
+              <description>Luma notch filter center frequency selection\n\nThese bits select the luma notch filter (which is a band-reject filter) center frequency. In two of the selections, the filter width affects also the selection of the center frequency.</description>
+              <bitRange>[2:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1_1875</name>
+                  <description>1.1875</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_1406</name>
+                  <description>1.1406</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_0938</name>
+                  <description>1.0938. When notch_wide value is B'1' (this selection is proper for CCIR-NTSC), or 1.0000 when notch_wide value is B'0'.</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_9922</name>
+                  <description>0.9922. This selection is proper for NTSC with square pixels.</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_9531</name>
+                  <description>0.9531. This selection is proper for PAL with square pixel.</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_8359</name>
+                  <description>0.8359 when notch_wide value is B'1' (this selection is proper for CCIR-PAL), or 0.7734 when notch_wide value is B'0'.</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_7813</name>
+                  <description>0.7813</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_7188</name>
+                  <description>0.7188</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_10c</name>
+          <name>tve_cbcr_level_gain</name>
           <description>TV Encoder Cb/Cr Level/Gain Register</description>
           <addressOffset>0x10C</addressOffset>
+          <resetValue>0x0000004F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>cr_burst_level</name>
+              <description>Specify the amplitude of the Cr burst. 8 bit 2's complement integer. Allowed range is from (-127) to 127.</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>cb_burst_level</name>
+              <description>Specify the amplitude of the Cb burst. 8 bit 2's complement integer. Allowed range is from (-127) to 127.</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_110</name>
+          <name>tve_tint_color_burst_phase</name>
           <description>TV Encoder Tint and Color Burst Phase Register</description>
           <addressOffset>0x110</addressOffset>
+          <fields>
+            <field>
+              <name>tint</name>
+              <description>Specify the tint adjustment of the chroma signal for CVBS and Y/C outputs. The adjustment is effected by setting the sub- carrier phase to the value of this parameter. 8.8 bit unsigned fraction. Units are cycles of the color burst frequency.</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>chroma_phase</name>
+              <description>Specify the color burst initial phase (ChromaPhase). 8.8 bit unsigned fraction. Units are cycles of the color burst frequency.\n\nThe color burst is set to this phase at the first HSYNC and then reset to the same value at further HSYNCs as specified by the CPhaseRset bits of the EncConfig5 parameter (see above)</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_114</name>
+          <name>tve_burst_width</name>
           <description>TV Encoder Burst Width Register</description>
           <addressOffset>0x114</addressOffset>
+          <resetValue>0x0016447E</resetValue>
+          <resetMask>0xFF7F7FFF</resetMask>
+          <fields>
+            <field>
+              <name>back_porch</name>
+              <description>Breezeway like in HD mode VSync\n\nFor 720p mode, the value is 220\n\nFor 2080i/p mode, the value is 88 (default)</description>
+              <bitRange>[31:24]</bitRange>
+            </field>
+            <field>
+              <name>breezeway</name>
+              <description>Must be even\n\nSpecify the width of the breezeway in encoder clock cycles. 5 bit unsigned integer. Allowed range is 0 to 31.\n\nFor 1080i mode, the value is 44.\n\nFor 1080p mode, the value is 44.\n\nFor 720p mode, the value is 40.</description>
+              <bitRange>[22:16]</bitRange>
+            </field>
+            <field>
+              <name>burst_width</name>
+              <description>Specify the width of the color frequency burst in encoder clock cycles. 7 bit unsigned integer. Allowed range is 0 to 127. In hd mode, it is ignored.</description>
+              <bitRange>[14:8]</bitRange>
+            </field>
+            <field>
+              <name>hsync_width</name>
+              <description>Specify the width of the horizontal sync pulse in encoder clock cycles. Min value is 16. Max value is (FrontPorch + ActiveLine - BackPorch). Default value is 126. The sum of HSyncSize and BackPorch is restricted to be divisible by 4.\n\nFor 720p mode, the value is 40.\n\nFor 1080i/p mode, the value is 44.</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_118</name>
+          <name>tve_cbcr_gain</name>
           <description>TV Encoder Cb/Cr Gain Register</description>
           <addressOffset>0x118</addressOffset>
+          <resetValue>0x0000A0A0</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>cr_gain</name>
+              <description>Specify the Cr color gain. 8-bit unsigned fraction.</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>cb_gain</name>
+              <description>Specify the Cb color gain. 8-bit unsigned fraction.</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_11c</name>
+          <name>tve_sync_vbi_level</name>
           <description>TV Encoder Sync and VBI Level Register</description>
           <addressOffset>0x11C</addressOffset>
+          <resetValue>0x001000F0</resetValue>
+          <resetMask>0x03FF03FF</resetMask>
+          <fields>
+            <field>
+              <name>sync_level</name>
+              <description>Specify the sync pulse level setting. 8-bit unsigned integer. Allowed range is from 0 to ABlankLevel-1 or VBlankLevel-1 (whichever is smaller).</description>
+              <bitRange>[25:16]</bitRange>
+            </field>
+            <field>
+              <name>vblank_level</name>
+              <description>Specify the blank level setting for non active lines. 10-bit unsigned integer. Allow range is from 0 to 1023.</description>
+              <bitRange>[9:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_120</name>
+          <name>tve_white_level</name>
           <description>TV Encoder White Level Register</description>
           <addressOffset>0x120</addressOffset>
+          <resetValue>0x01E80320</resetValue>
+          <resetMask>0x03FF03FF</resetMask>
+          <fields>
+            <field>
+              <name>hd_sync_breezeway_level</name>
+              <description>Specify the breezeway level setting. 10-bit unsigned integer. Allowed range is from 0 to 1023.</description>
+              <bitRange>[25:16]</bitRange>
+            </field>
+            <field>
+              <name>white_level</name>
+              <description>Specify the white level setting. 10-bit unsigned integer. Allowed range is from black_level+1 or vbi_blank_level +1 (whichever is greater) to 1023.</description>
+              <bitRange>[9:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_124</name>
+          <name>tve_video_active_line</name>
           <description>TV Encoder Video Active Line Register</description>
           <addressOffset>0x124</addressOffset>
+          <resetValue>0x000005A0</resetValue>
+          <resetMask>0x00000FFF</resetMask>
+          <fields>
+            <field>
+              <name>active_line</name>
+              <description>Specify the width of the video line in encoder clock cycles. 12- bit unsigned multiple of 4 integer. Allowed range is from 0 to 4092.</description>
+              <bitRange>[11:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_128</name>
+          <name>tve_video_chroma_bw_comp_gain</name>
           <description>TV Encoder Video Chroma BW and CompGain Register</description>
           <addressOffset>0x128</addressOffset>
+          <fields>
+            <field>
+              <name>chroma_bw</name>
+              <description>Chroma filter bandwidth selection\n\nThis bit specifies whether the bandwidth of the chroma filter is:</description>
+              <bitRange>[17:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ARROW</name>
+                  <description>Narrow width 0.6 MHz</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>W_IDE</name>
+                  <description>Wide width 1.2 MHz</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_XTRA</name>
+                  <description>Extra width 1.8 MHz</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>U_LTRA</name>
+                  <description>Ultra width 2.5 MHz</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>comp_ch_gain</name>
+              <description>Chroma gain selection for the composite video signal.\n\nThese bits specify the gain of the chroma signal for composing with the luma signal to generate the composite video signal:</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>100</name>
+                  <description>100%</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>25</name>
+                  <description>25%</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>50</name>
+                  <description>50%</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>75</name>
+                  <description>75%</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_12c</name>
+          <name>tve_notch_width_comp_yuv_en</name>
           <description>TV Encoder Register</description>
           <addressOffset>0x12C</addressOffset>
+          <resetValue>0x00000101</resetValue>
+          <resetMask>0x00000101</resetMask>
+          <fields>
+            <field>
+              <name>notch_width</name>
+              <description>Luma notch filter width selection\n\nThis bit selects the luma notch filter (which is a band-reject filter) width.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ARROW</name>
+                  <description>Narrow</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>W_IDE</name>
+                  <description>Wide</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>comp_yuv_en</name>
+              <description>This bit selects if the components video output are the RGB components or the YUV components.</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RGB</name>
+                  <description>The three component outputs are the RGB components.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>YUV</name>
+                  <description>The three component outputs are the YUV components, (i.e. the color conversion unit is bypassed)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_130</name>
+          <name>tve_resync_parameters</name>
           <description>TV Encoder Re-sync Parameters Register</description>
           <addressOffset>0x130</addressOffset>
+          <resetValue>0x00100001</resetValue>
+          <resetMask>0xC7FF07FF</resetMask>
+          <fields>
+            <field>
+              <name>re_sync_field</name>
+              <description>Re-sync field</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>re_sync_dis</name>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Re-Sync Enable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Re-Sync Disable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>re_sync_line_num</name>
+              <description>Re-sync line number from TCON</description>
+              <bitRange>[26:16]</bitRange>
+            </field>
+            <field>
+              <name>re_sync_pixel_num</name>
+              <description>Re-sync line pixel from TCON</description>
+              <bitRange>[10:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_134</name>
+          <name>tve_slave_parameter</name>
           <description>TV Encoder Slave Parameter Register</description>
           <addressOffset>0x134</addressOffset>
+          <fields>
+            <field>
+              <name>slave_thresh</name>
+              <description>Horizontal line adjustment threshold selection\n\nThis bit selects whether the number of lines after which the Video Encoder starts the horizontal line length adjustment is slave mode is 0 or 30.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0</name>
+                  <description>Number of lines is 0</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>30</name>
+                  <description>Number of lines is 30</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>slave_mode</name>
+              <description>Slave mode selection\n\nThis bit selects whether the Video Encoder is sync slave, partial slave or sync master. It should be set to B'0'.</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_FULL_SYNC_SLAVE</name>
+                  <description>The Video Encoder is not a full sync slave (i.e. it is a partial sync slave or a sync master)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_138</name>
+          <name>tve_configuration0</name>
           <description>TV Encoder Configuration Register0</description>
           <addressOffset>0x138</addressOffset>
+          <fields>
+            <field>
+              <name>invert_top</name>
+              <description>Field parity input signal (top_field) polarity selection.\n\nThis bit selects whether the top field is indicated by a high level of the field parity signal or by the low level. The bit is applicable both when the Video Encoder is the sync master and when the Video Encoder is the sync slave.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Top field is indicated by low level</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Top field is indicated by high level</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>uv_order</name>
+              <description>This bit selects if the sample order at the chroma input to the Video Encoder is Cb first (i.e. Cb 0 Cr 0 Cb 1 Cr 1) or Cr first (i.e. Cr 0 Cb 0 Cr 1 Cb 1).</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C_B</name>
+                  <description>The chroma sample input order is Cb first</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_R</name>
+                  <description>The chroma sample input order is Cr first</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_13c</name>
+          <name>tve_configuration1</name>
           <description>TV Encoder Configuration Register1</description>
           <addressOffset>0x13C</addressOffset>
+          <resetValue>0x00000001</resetValue>
+          <resetMask>0x07010001</resetMask>
+          <fields>
+            <field>
+              <name>rgb_sync</name>
+              <description>R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit[26] specify if the R signal has embedded syncs, the bit[25] specify if the G signal has embedded syncs and the bit[24] specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'.</description>
+              <bitRange>[26:24]</bitRange>
+            </field>
+            <field>
+              <name>rgb_setup</name>
+              <description>"Set-up" enable for RGB outputs. This bit specifies if the "set-up" implied value (black_level - blank_level) specified for the CVBS signal is used also for the RGB signals.</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_USED</name>
+                  <description>The "set-up" is not used, or i.e. comp_yuv is equal to b'1'.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>USED</name>
+                  <description>The implied "set-up" is used for the RGB signals</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bypass_yclamp</name>
+              <description>Y input clamping selection\n\nThis bit selects whether the Video Encoder Y input is clamped to 64 to 940 or not. When not clamped the expected range is 0 to 1023. The U and V inputs are always clamped to the range 64 to 960.</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>CLAMPED</name>
+                  <description>The Video Encoder Y input is clamped</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOT_CLAMPED</name>
+                  <description>The Video Encoder Y input is not clamped</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_380</name>
+          <name>tve_low_pass_control</name>
           <description>TV Encoder Low Pass Control Register</description>
           <addressOffset>0x380</addressOffset>
+          <fields>
+            <field>
+              <name>user_deflicker_coef</name>
+              <description>User_deflicker_coef\n\nup: coef/32\n\nCenter: 1-coef/16\n\nDown: coef/32</description>
+              <bitRange>[13:10]</bitRange>
+            </field>
+            <field>
+              <name>fix_coef_deflicker</name>
+              <description>Fix_coef_deflicker</description>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>A_UTO</name>
+                  <description>Auto deflicker</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>U_SER</name>
+                  <description>User deflicker</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>enable_deflicker</name>
+              <description>Enable_deflicker</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable deflicker</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable deflicker</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>en</name>
+              <description>LP function enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>tve_384</name>
+          <name>tve_low_pass_filter_control</name>
           <description>TV Encoder Low Pass Filter Control Register</description>
           <addressOffset>0x384</addressOffset>
+          <fields>
+            <field>
+              <name>hp_ratio</name>
+              <description>Default high-pass filter ratio\n\nIn two complement, the range is from -31 to 31.</description>
+              <bitRange>[21:16]</bitRange>
+            </field>
+            <field>
+              <name>bp0_ratio</name>
+              <description>Default band-pass filter0 ratio\n\nIn two complement, the range is from -31 to 31.</description>
+              <bitRange>[13:8]</bitRange>
+            </field>
+            <field>
+              <name>bp1_ratio</name>
+              <description>Default band-pass filter1 ratio\n\nIn two complement, the range is from -31 to 31.</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tve_low_pass_gain</name>
+          <description>TV Encoder Low Pass Gain Register</description>
+          <addressOffset>0x388</addressOffset>
+          <fields>
+            <field>
+              <name>gain</name>
+              <description>Peaking gain setting.</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tve_low_pass_gain_control</name>
+          <description>TV Encoder Low Pass Gain Control Register</description>
+          <addressOffset>0x38C</addressOffset>
+          <fields>
+            <field>
+              <name>dif_up</name>
+              <description>Gain control: limitation threshold.</description>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>beta</name>
+              <description>Gain control: large gain limitation.</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tve_low_pass_shoot_control</name>
+          <description>TV Encoder Low Pass Shoot Control Register</description>
+          <addressOffset>0x390</addressOffset>
+          <fields>
+            <field>
+              <name>neg_gain</name>
+              <description>Undershoot gain control.</description>
+              <bitRange>[5:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tve_low_pass_coring</name>
+          <description>TV Encoder Low Pass Coring Register</description>
+          <addressOffset>0x394</addressOffset>
+          <fields>
+            <field>
+              <name>corthr</name>
+              <description>Coring threshold.</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>tve_noise_reduction</name>
+          <description>TV Encoder Noise Reduction Register</description>
+          <addressOffset>0x3A0</addressOffset>
+          <fields>
+            <field>
+              <name>t_value</name>
+              <bitRange>[23:16]</bitRange>
+            </field>
+            <field>
+              <name>en</name>
+              <bitRange>[0:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

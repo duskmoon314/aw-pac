@@ -34,42 +34,10 @@ impl From<crate::W<LCD_DEBUG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "The flag shows whether the fifos in underflow status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LCD_FIFO_UNDERFLOW_A {
-    #[doc = "0: Not underflow"]
-    N_OT_UNDERFLOW = 0,
-    #[doc = "1: Underflow"]
-    U_NDERFLOW = 1,
-}
-impl From<LCD_FIFO_UNDERFLOW_A> for bool {
-    #[inline(always)]
-    fn from(variant: LCD_FIFO_UNDERFLOW_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `lcd_fifo_underflow` reader - The flag shows whether the fifos in underflow status"]
-pub type LCD_FIFO_UNDERFLOW_R = crate::BitReader<LCD_FIFO_UNDERFLOW_A>;
-impl LCD_FIFO_UNDERFLOW_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> LCD_FIFO_UNDERFLOW_A {
-        match self.bits {
-            false => LCD_FIFO_UNDERFLOW_A::N_OT_UNDERFLOW,
-            true => LCD_FIFO_UNDERFLOW_A::U_NDERFLOW,
-        }
-    }
-    #[doc = "Checks if the value of the field is `N_OT_UNDERFLOW`"]
-    #[inline(always)]
-    pub fn is_n_ot_underflow(&self) -> bool {
-        *self == LCD_FIFO_UNDERFLOW_A::N_OT_UNDERFLOW
-    }
-    #[doc = "Checks if the value of the field is `U_NDERFLOW`"]
-    #[inline(always)]
-    pub fn is_u_nderflow(&self) -> bool {
-        *self == LCD_FIFO_UNDERFLOW_A::U_NDERFLOW
-    }
-}
+#[doc = "Field `lcd_current_line` reader - The current scan line"]
+pub type LCD_CURRENT_LINE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `lcd_field_pol` reader - The flag indicates the current field polarity"]
+pub type LCD_FIELD_POL_R = crate::BitReader<LCD_FIELD_POL_A>;
 #[doc = "The flag indicates the current field polarity\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCD_FIELD_POL_A {
@@ -84,8 +52,6 @@ impl From<LCD_FIELD_POL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `lcd_field_pol` reader - The flag indicates the current field polarity"]
-pub type LCD_FIELD_POL_R = crate::BitReader<LCD_FIELD_POL_A>;
 impl LCD_FIELD_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -106,23 +72,57 @@ impl LCD_FIELD_POL_R {
         *self == LCD_FIELD_POL_A::F_IRST
     }
 }
-#[doc = "Field `lcd_current_line` reader - The current scan line"]
-pub type LCD_CURRENT_LINE_R = crate::FieldReader<u16, u16>;
-impl R {
-    #[doc = "Bit 31 - The flag shows whether the fifos in underflow status"]
+#[doc = "Field `lcd_fifo_underflow` reader - The flag shows whether the fifos in underflow status"]
+pub type LCD_FIFO_UNDERFLOW_R = crate::BitReader<LCD_FIFO_UNDERFLOW_A>;
+#[doc = "The flag shows whether the fifos in underflow status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCD_FIFO_UNDERFLOW_A {
+    #[doc = "0: Not underflow"]
+    N_OT_UNDERFLOW = 0,
+    #[doc = "1: Underflow"]
+    U_NDERFLOW = 1,
+}
+impl From<LCD_FIFO_UNDERFLOW_A> for bool {
     #[inline(always)]
-    pub fn lcd_fifo_underflow(&self) -> LCD_FIFO_UNDERFLOW_R {
-        LCD_FIFO_UNDERFLOW_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: LCD_FIFO_UNDERFLOW_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LCD_FIFO_UNDERFLOW_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCD_FIFO_UNDERFLOW_A {
+        match self.bits {
+            false => LCD_FIFO_UNDERFLOW_A::N_OT_UNDERFLOW,
+            true => LCD_FIFO_UNDERFLOW_A::U_NDERFLOW,
+        }
+    }
+    #[doc = "Checks if the value of the field is `N_OT_UNDERFLOW`"]
+    #[inline(always)]
+    pub fn is_n_ot_underflow(&self) -> bool {
+        *self == LCD_FIFO_UNDERFLOW_A::N_OT_UNDERFLOW
+    }
+    #[doc = "Checks if the value of the field is `U_NDERFLOW`"]
+    #[inline(always)]
+    pub fn is_u_nderflow(&self) -> bool {
+        *self == LCD_FIFO_UNDERFLOW_A::U_NDERFLOW
+    }
+}
+impl R {
+    #[doc = "Bits 16:27 - The current scan line"]
+    #[inline(always)]
+    pub fn lcd_current_line(&self) -> LCD_CURRENT_LINE_R {
+        LCD_CURRENT_LINE_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
     #[doc = "Bit 29 - The flag indicates the current field polarity"]
     #[inline(always)]
     pub fn lcd_field_pol(&self) -> LCD_FIELD_POL_R {
         LCD_FIELD_POL_R::new(((self.bits >> 29) & 1) != 0)
     }
-    #[doc = "Bits 16:27 - The current scan line"]
+    #[doc = "Bit 31 - The flag shows whether the fifos in underflow status"]
     #[inline(always)]
-    pub fn lcd_current_line(&self) -> LCD_CURRENT_LINE_R {
-        LCD_CURRENT_LINE_R::new(((self.bits >> 16) & 0x0fff) as u16)
+    pub fn lcd_fifo_underflow(&self) -> LCD_FIFO_UNDERFLOW_R {
+        LCD_FIFO_UNDERFLOW_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {

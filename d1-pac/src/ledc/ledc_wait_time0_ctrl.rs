@@ -34,6 +34,13 @@ impl From<crate::W<LEDC_WAIT_TIME0_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `total_wait_time0` reader - "]
+pub type TOTAL_WAIT_TIME0_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `total_wait_time0` writer - "]
+pub type TOTAL_WAIT_TIME0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LEDC_WAIT_TIME0_CTRL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `wait_tim0_en` reader - "]
+pub type WAIT_TIM0_EN_R = crate::BitReader<WAIT_TIM0_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum WAIT_TIM0_EN_A {
@@ -48,8 +55,6 @@ impl From<WAIT_TIM0_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `wait_tim0_en` reader - "]
-pub type WAIT_TIM0_EN_R = crate::BitReader<WAIT_TIM0_EN_A>;
 impl WAIT_TIM0_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,33 +90,28 @@ impl<'a, const O: u8> WAIT_TIM0_EN_W<'a, O> {
         self.variant(WAIT_TIM0_EN_A::ENABLE)
     }
 }
-#[doc = "Field `total_wait_time0` reader - "]
-pub type TOTAL_WAIT_TIME0_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `total_wait_time0` writer - "]
-pub type TOTAL_WAIT_TIME0_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LEDC_WAIT_TIME0_CTRL_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bit 8"]
-    #[inline(always)]
-    pub fn wait_tim0_en(&self) -> WAIT_TIM0_EN_R {
-        WAIT_TIM0_EN_R::new(((self.bits >> 8) & 1) != 0)
-    }
     #[doc = "Bits 0:7"]
     #[inline(always)]
     pub fn total_wait_time0(&self) -> TOTAL_WAIT_TIME0_R {
         TOTAL_WAIT_TIME0_R::new((self.bits & 0xff) as u8)
     }
-}
-impl W {
     #[doc = "Bit 8"]
     #[inline(always)]
-    pub fn wait_tim0_en(&mut self) -> WAIT_TIM0_EN_W<8> {
-        WAIT_TIM0_EN_W::new(self)
+    pub fn wait_tim0_en(&self) -> WAIT_TIM0_EN_R {
+        WAIT_TIM0_EN_R::new(((self.bits >> 8) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
     pub fn total_wait_time0(&mut self) -> TOTAL_WAIT_TIME0_W<0> {
         TOTAL_WAIT_TIME0_W::new(self)
+    }
+    #[doc = "Bit 8"]
+    #[inline(always)]
+    pub fn wait_tim0_en(&mut self) -> WAIT_TIM0_EN_W<8> {
+        WAIT_TIM0_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

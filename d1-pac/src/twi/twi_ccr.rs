@@ -34,6 +34,16 @@ impl From<crate::W<TWI_CCR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `clk_n` reader - "]
+pub type CLK_N_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `clk_n` writer - "]
+pub type CLK_N_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 3, O>;
+#[doc = "Field `clk_m` reader - "]
+pub type CLK_M_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `clk_m` writer - "]
+pub type CLK_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 4, O>;
+#[doc = "Field `clk_duty` reader - Setting duty cycle of clock as master"]
+pub type CLK_DUTY_R = crate::BitReader<CLK_DUTY_A>;
 #[doc = "Setting duty cycle of clock as master\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLK_DUTY_A {
@@ -48,8 +58,6 @@ impl From<CLK_DUTY_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `clk_duty` reader - Setting duty cycle of clock as master"]
-pub type CLK_DUTY_R = crate::BitReader<CLK_DUTY_A>;
 impl CLK_DUTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,46 +92,38 @@ impl<'a, const O: u8> CLK_DUTY_W<'a, O> {
         self.variant(CLK_DUTY_A::P40)
     }
 }
-#[doc = "Field `clk_m` reader - "]
-pub type CLK_M_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `clk_m` writer - "]
-pub type CLK_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 4, O>;
-#[doc = "Field `clk_n` reader - "]
-pub type CLK_N_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `clk_n` writer - "]
-pub type CLK_N_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_CCR_SPEC, u8, u8, 3, O>;
 impl R {
-    #[doc = "Bit 7 - Setting duty cycle of clock as master"]
+    #[doc = "Bits 0:2"]
     #[inline(always)]
-    pub fn clk_duty(&self) -> CLK_DUTY_R {
-        CLK_DUTY_R::new(((self.bits >> 7) & 1) != 0)
+    pub fn clk_n(&self) -> CLK_N_R {
+        CLK_N_R::new((self.bits & 7) as u8)
     }
     #[doc = "Bits 3:6"]
     #[inline(always)]
     pub fn clk_m(&self) -> CLK_M_R {
         CLK_M_R::new(((self.bits >> 3) & 0x0f) as u8)
     }
-    #[doc = "Bits 0:2"]
+    #[doc = "Bit 7 - Setting duty cycle of clock as master"]
     #[inline(always)]
-    pub fn clk_n(&self) -> CLK_N_R {
-        CLK_N_R::new((self.bits & 7) as u8)
+    pub fn clk_duty(&self) -> CLK_DUTY_R {
+        CLK_DUTY_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 7 - Setting duty cycle of clock as master"]
+    #[doc = "Bits 0:2"]
     #[inline(always)]
-    pub fn clk_duty(&mut self) -> CLK_DUTY_W<7> {
-        CLK_DUTY_W::new(self)
+    pub fn clk_n(&mut self) -> CLK_N_W<0> {
+        CLK_N_W::new(self)
     }
     #[doc = "Bits 3:6"]
     #[inline(always)]
     pub fn clk_m(&mut self) -> CLK_M_W<3> {
         CLK_M_W::new(self)
     }
-    #[doc = "Bits 0:2"]
+    #[doc = "Bit 7 - Setting duty cycle of clock as master"]
     #[inline(always)]
-    pub fn clk_n(&mut self) -> CLK_N_W<0> {
-        CLK_N_W::new(self)
+    pub fn clk_duty(&mut self) -> CLK_DUTY_W<7> {
+        CLK_DUTY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

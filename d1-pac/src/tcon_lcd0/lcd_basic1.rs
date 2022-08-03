@@ -34,36 +34,36 @@ impl From<crate::W<LCD_BASIC1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ht` reader - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
-pub type HT_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `ht` writer - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
-pub type HT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC1_SPEC, u16, u16, 13, O>;
 #[doc = "Field `hbp` reader - Horizontal back porch (in dclk)\n\nThbp = (HBP +1) * Tdclk"]
 pub type HBP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `hbp` writer - Horizontal back porch (in dclk)\n\nThbp = (HBP +1) * Tdclk"]
 pub type HBP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC1_SPEC, u16, u16, 12, O>;
+#[doc = "Field `ht` reader - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
+pub type HT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ht` writer - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
+pub type HT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC1_SPEC, u16, u16, 13, O>;
 impl R {
-    #[doc = "Bits 16:28 - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
-    #[inline(always)]
-    pub fn ht(&self) -> HT_R {
-        HT_R::new(((self.bits >> 16) & 0x1fff) as u16)
-    }
     #[doc = "Bits 0:11 - Horizontal back porch (in dclk)\n\nThbp = (HBP +1) * Tdclk"]
     #[inline(always)]
     pub fn hbp(&self) -> HBP_R {
         HBP_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:28 - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
     #[inline(always)]
-    pub fn ht(&mut self) -> HT_W<16> {
-        HT_W::new(self)
+    pub fn ht(&self) -> HT_R {
+        HT_R::new(((self.bits >> 16) & 0x1fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Horizontal back porch (in dclk)\n\nThbp = (HBP +1) * Tdclk"]
     #[inline(always)]
     pub fn hbp(&mut self) -> HBP_W<0> {
         HBP_W::new(self)
+    }
+    #[doc = "Bits 16:28 - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
+    #[inline(always)]
+    pub fn ht(&mut self) -> HT_W<16> {
+        HT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

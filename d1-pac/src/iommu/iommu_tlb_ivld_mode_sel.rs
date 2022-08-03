@@ -34,6 +34,8 @@ impl From<crate::W<IOMMU_TLB_IVLD_MODE_SEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tlb_ivld_mode_sel` reader - "]
+pub type TLB_IVLD_MODE_SEL_R = crate::BitReader<TLB_IVLD_MODE_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TLB_IVLD_MODE_SEL_A {
@@ -48,8 +50,6 @@ impl From<TLB_IVLD_MODE_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tlb_ivld_mode_sel` reader - "]
-pub type TLB_IVLD_MODE_SEL_R = crate::BitReader<TLB_IVLD_MODE_SEL_A>;
 impl TLB_IVLD_MODE_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

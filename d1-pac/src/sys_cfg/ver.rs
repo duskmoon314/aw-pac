@@ -13,8 +13,8 @@ impl From<crate::R<VER_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `boot_sel_pad_sta` reader - "]
-pub type BOOT_SEL_PAD_STA_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `fel_sel_pad_sta` reader - Fel Select Pin Status"]
+pub type FEL_SEL_PAD_STA_R = crate::BitReader<FEL_SEL_PAD_STA_A>;
 #[doc = "Fel Select Pin Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FEL_SEL_PAD_STA_A {
@@ -29,8 +29,6 @@ impl From<FEL_SEL_PAD_STA_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `fel_sel_pad_sta` reader - Fel Select Pin Status"]
-pub type FEL_SEL_PAD_STA_R = crate::BitReader<FEL_SEL_PAD_STA_A>;
 impl FEL_SEL_PAD_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -51,16 +49,18 @@ impl FEL_SEL_PAD_STA_R {
         *self == FEL_SEL_PAD_STA_A::TRY_MEDIA_BOOT
     }
 }
+#[doc = "Field `boot_sel_pad_sta` reader - "]
+pub type BOOT_SEL_PAD_STA_R = crate::FieldReader<u8, u8>;
 impl R {
-    #[doc = "Bits 11:12"]
-    #[inline(always)]
-    pub fn boot_sel_pad_sta(&self) -> BOOT_SEL_PAD_STA_R {
-        BOOT_SEL_PAD_STA_R::new(((self.bits >> 11) & 3) as u8)
-    }
     #[doc = "Bit 8 - Fel Select Pin Status"]
     #[inline(always)]
     pub fn fel_sel_pad_sta(&self) -> FEL_SEL_PAD_STA_R {
         FEL_SEL_PAD_STA_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    #[doc = "Bits 11:12"]
+    #[inline(always)]
+    pub fn boot_sel_pad_sta(&self) -> BOOT_SEL_PAD_STA_R {
+        BOOT_SEL_PAD_STA_R::new(((self.bits >> 11) & 3) as u8)
     }
 }
 #[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ver](index.html) module"]

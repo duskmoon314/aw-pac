@@ -34,37 +34,37 @@ impl From<crate::W<SMHC_SFC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `bypass_en` reader - Bypass enable"]
+pub type BYPASS_EN_R = crate::BitReader<bool>;
+#[doc = "Field `bypass_en` writer - Bypass enable"]
+pub type BYPASS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_SFC_SPEC, bool, O>;
 #[doc = "Field `stop_clk_ctrl` reader - Stop Clock Control"]
 pub type STOP_CLK_CTRL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `stop_clk_ctrl` writer - Stop Clock Control"]
 pub type STOP_CLK_CTRL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, SMHC_SFC_SPEC, u8, u8, 4, O>;
-#[doc = "Field `bypass_en` reader - Bypass enable"]
-pub type BYPASS_EN_R = crate::BitReader<bool>;
-#[doc = "Field `bypass_en` writer - Bypass enable"]
-pub type BYPASS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_SFC_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 1:4 - Stop Clock Control"]
-    #[inline(always)]
-    pub fn stop_clk_ctrl(&self) -> STOP_CLK_CTRL_R {
-        STOP_CLK_CTRL_R::new(((self.bits >> 1) & 0x0f) as u8)
-    }
     #[doc = "Bit 0 - Bypass enable"]
     #[inline(always)]
     pub fn bypass_en(&self) -> BYPASS_EN_R {
         BYPASS_EN_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bits 1:4 - Stop Clock Control"]
     #[inline(always)]
-    pub fn stop_clk_ctrl(&mut self) -> STOP_CLK_CTRL_W<1> {
-        STOP_CLK_CTRL_W::new(self)
+    pub fn stop_clk_ctrl(&self) -> STOP_CLK_CTRL_R {
+        STOP_CLK_CTRL_R::new(((self.bits >> 1) & 0x0f) as u8)
     }
+}
+impl W {
     #[doc = "Bit 0 - Bypass enable"]
     #[inline(always)]
     pub fn bypass_en(&mut self) -> BYPASS_EN_W<0> {
         BYPASS_EN_W::new(self)
+    }
+    #[doc = "Bits 1:4 - Stop Clock Control"]
+    #[inline(always)]
+    pub fn stop_clk_ctrl(&mut self) -> STOP_CLK_CTRL_W<1> {
+        STOP_CLK_CTRL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

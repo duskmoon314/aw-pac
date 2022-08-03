@@ -34,6 +34,8 @@ impl From<crate::W<PIO_POW_VOL_SEL_CTL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `vcc_pf_pwr_vol_sel` reader - VCC_PF Power Voltage Select Control"]
+pub type VCC_PF_PWR_VOL_SEL_R = crate::BitReader<VCC_PF_PWR_VOL_SEL_A>;
 #[doc = "VCC_PF Power Voltage Select Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum VCC_PF_PWR_VOL_SEL_A {
@@ -48,8 +50,6 @@ impl From<VCC_PF_PWR_VOL_SEL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `vcc_pf_pwr_vol_sel` reader - VCC_PF Power Voltage Select Control"]
-pub type VCC_PF_PWR_VOL_SEL_R = crate::BitReader<VCC_PF_PWR_VOL_SEL_A>;
 impl VCC_PF_PWR_VOL_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

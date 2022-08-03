@@ -34,57 +34,10 @@ impl From<crate::W<GP_FIFO_INTS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "ADC FIFO Overrun IRQ Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FIFO_OVERRUN_PENDING_A {
-    #[doc = "0: No Pending IRQ"]
-    NP_PENDING = 0,
-    #[doc = "1: FIFO Overrun Pending IRQ"]
-    PENDING = 1,
-}
-impl From<FIFO_OVERRUN_PENDING_A> for bool {
-    #[inline(always)]
-    fn from(variant: FIFO_OVERRUN_PENDING_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `fifo_overrun_pending` reader - ADC FIFO Overrun IRQ Pending"]
-pub type FIFO_OVERRUN_PENDING_R = crate::BitReader<FIFO_OVERRUN_PENDING_A>;
-impl FIFO_OVERRUN_PENDING_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> FIFO_OVERRUN_PENDING_A {
-        match self.bits {
-            false => FIFO_OVERRUN_PENDING_A::NP_PENDING,
-            true => FIFO_OVERRUN_PENDING_A::PENDING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NP_PENDING`"]
-    #[inline(always)]
-    pub fn is_np_pending(&self) -> bool {
-        *self == FIFO_OVERRUN_PENDING_A::NP_PENDING
-    }
-    #[doc = "Checks if the value of the field is `PENDING`"]
-    #[inline(always)]
-    pub fn is_pending(&self) -> bool {
-        *self == FIFO_OVERRUN_PENDING_A::PENDING
-    }
-}
-#[doc = "Field `fifo_overrun_pending` writer - ADC FIFO Overrun IRQ Pending"]
-pub type FIFO_OVERRUN_PENDING_W<'a, const O: u8> =
-    crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_OVERRUN_PENDING_A, O>;
-impl<'a, const O: u8> FIFO_OVERRUN_PENDING_W<'a, O> {
-    #[doc = "No Pending IRQ"]
-    #[inline(always)]
-    pub fn np_pending(self) -> &'a mut W {
-        self.variant(FIFO_OVERRUN_PENDING_A::NP_PENDING)
-    }
-    #[doc = "FIFO Overrun Pending IRQ"]
-    #[inline(always)]
-    pub fn pending(self) -> &'a mut W {
-        self.variant(FIFO_OVERRUN_PENDING_A::PENDING)
-    }
-}
+#[doc = "Field `rxa_cnt` reader - ADC FIFO available sample word counter"]
+pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `fifo_data_pending` reader - ADC FIFO Data Available Pending Bit"]
+pub type FIFO_DATA_PENDING_R = crate::BitReader<FIFO_DATA_PENDING_A>;
 #[doc = "ADC FIFO Data Available Pending Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum FIFO_DATA_PENDING_A {
@@ -99,8 +52,6 @@ impl From<FIFO_DATA_PENDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `fifo_data_pending` reader - ADC FIFO Data Available Pending Bit"]
-pub type FIFO_DATA_PENDING_R = crate::BitReader<FIFO_DATA_PENDING_A>;
 impl FIFO_DATA_PENDING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,35 +87,84 @@ impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
         self.variant(FIFO_DATA_PENDING_A::PENDING)
     }
 }
-#[doc = "Field `rxa_cnt` reader - ADC FIFO available sample word counter"]
-pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
-impl R {
-    #[doc = "Bit 17 - ADC FIFO Overrun IRQ Pending"]
+#[doc = "Field `fifo_overrun_pending` reader - ADC FIFO Overrun IRQ Pending"]
+pub type FIFO_OVERRUN_PENDING_R = crate::BitReader<FIFO_OVERRUN_PENDING_A>;
+#[doc = "ADC FIFO Overrun IRQ Pending\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FIFO_OVERRUN_PENDING_A {
+    #[doc = "0: No Pending IRQ"]
+    NP_PENDING = 0,
+    #[doc = "1: FIFO Overrun Pending IRQ"]
+    PENDING = 1,
+}
+impl From<FIFO_OVERRUN_PENDING_A> for bool {
     #[inline(always)]
-    pub fn fifo_overrun_pending(&self) -> FIFO_OVERRUN_PENDING_R {
-        FIFO_OVERRUN_PENDING_R::new(((self.bits >> 17) & 1) != 0)
+    fn from(variant: FIFO_OVERRUN_PENDING_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl FIFO_OVERRUN_PENDING_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FIFO_OVERRUN_PENDING_A {
+        match self.bits {
+            false => FIFO_OVERRUN_PENDING_A::NP_PENDING,
+            true => FIFO_OVERRUN_PENDING_A::PENDING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NP_PENDING`"]
+    #[inline(always)]
+    pub fn is_np_pending(&self) -> bool {
+        *self == FIFO_OVERRUN_PENDING_A::NP_PENDING
+    }
+    #[doc = "Checks if the value of the field is `PENDING`"]
+    #[inline(always)]
+    pub fn is_pending(&self) -> bool {
+        *self == FIFO_OVERRUN_PENDING_A::PENDING
+    }
+}
+#[doc = "Field `fifo_overrun_pending` writer - ADC FIFO Overrun IRQ Pending"]
+pub type FIFO_OVERRUN_PENDING_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, GP_FIFO_INTS_SPEC, FIFO_OVERRUN_PENDING_A, O>;
+impl<'a, const O: u8> FIFO_OVERRUN_PENDING_W<'a, O> {
+    #[doc = "No Pending IRQ"]
+    #[inline(always)]
+    pub fn np_pending(self) -> &'a mut W {
+        self.variant(FIFO_OVERRUN_PENDING_A::NP_PENDING)
+    }
+    #[doc = "FIFO Overrun Pending IRQ"]
+    #[inline(always)]
+    pub fn pending(self) -> &'a mut W {
+        self.variant(FIFO_OVERRUN_PENDING_A::PENDING)
+    }
+}
+impl R {
+    #[doc = "Bits 8:13 - ADC FIFO available sample word counter"]
+    #[inline(always)]
+    pub fn rxa_cnt(&self) -> RXA_CNT_R {
+        RXA_CNT_R::new(((self.bits >> 8) & 0x3f) as u8)
     }
     #[doc = "Bit 16 - ADC FIFO Data Available Pending Bit"]
     #[inline(always)]
     pub fn fifo_data_pending(&self) -> FIFO_DATA_PENDING_R {
         FIFO_DATA_PENDING_R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 8:13 - ADC FIFO available sample word counter"]
+    #[doc = "Bit 17 - ADC FIFO Overrun IRQ Pending"]
     #[inline(always)]
-    pub fn rxa_cnt(&self) -> RXA_CNT_R {
-        RXA_CNT_R::new(((self.bits >> 8) & 0x3f) as u8)
+    pub fn fifo_overrun_pending(&self) -> FIFO_OVERRUN_PENDING_R {
+        FIFO_OVERRUN_PENDING_R::new(((self.bits >> 17) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 17 - ADC FIFO Overrun IRQ Pending"]
-    #[inline(always)]
-    pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W<17> {
-        FIFO_OVERRUN_PENDING_W::new(self)
-    }
     #[doc = "Bit 16 - ADC FIFO Data Available Pending Bit"]
     #[inline(always)]
     pub fn fifo_data_pending(&mut self) -> FIFO_DATA_PENDING_W<16> {
         FIFO_DATA_PENDING_W::new(self)
+    }
+    #[doc = "Bit 17 - ADC FIFO Overrun IRQ Pending"]
+    #[inline(always)]
+    pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W<17> {
+        FIFO_OVERRUN_PENDING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

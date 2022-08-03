@@ -34,56 +34,13 @@ impl From<crate::W<LCD_CEU_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Enable CEU function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CEU_EN_A {
-    #[doc = "0: Bypass"]
-    B_YPASS = 0,
-    #[doc = "1: Enable"]
-    E_NABLE = 1,
-}
-impl From<CEU_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: CEU_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `ceu_en` reader - Enable CEU function"]
-pub type CEU_EN_R = crate::BitReader<CEU_EN_A>;
-impl CEU_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CEU_EN_A {
-        match self.bits {
-            false => CEU_EN_A::B_YPASS,
-            true => CEU_EN_A::E_NABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `B_YPASS`"]
-    #[inline(always)]
-    pub fn is_b_ypass(&self) -> bool {
-        *self == CEU_EN_A::B_YPASS
-    }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
-    #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == CEU_EN_A::E_NABLE
-    }
-}
-#[doc = "Field `ceu_en` writer - Enable CEU function"]
-pub type CEU_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CEU_CTL_SPEC, CEU_EN_A, O>;
-impl<'a, const O: u8> CEU_EN_W<'a, O> {
-    #[doc = "Bypass"]
-    #[inline(always)]
-    pub fn b_ypass(self) -> &'a mut W {
-        self.variant(CEU_EN_A::B_YPASS)
-    }
-    #[doc = "Enable"]
-    #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(CEU_EN_A::E_NABLE)
-    }
-}
+#[doc = "Field `bt656_f_mask_value` reader - BT656 F Mask Value"]
+pub type BT656_F_MASK_VALUE_R = crate::BitReader<bool>;
+#[doc = "Field `bt656_f_mask_value` writer - BT656 F Mask Value"]
+pub type BT656_F_MASK_VALUE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LCD_CEU_CTL_SPEC, bool, O>;
+#[doc = "Field `bt656_f_mask` reader - BT656 F Mask"]
+pub type BT656_F_MASK_R = crate::BitReader<BT656_F_MASK_A>;
 #[doc = "BT656 F Mask\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BT656_F_MASK_A {
@@ -98,8 +55,6 @@ impl From<BT656_F_MASK_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `bt656_f_mask` reader - BT656 F Mask"]
-pub type BT656_F_MASK_R = crate::BitReader<BT656_F_MASK_A>;
 impl BT656_F_MASK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -135,43 +90,88 @@ impl<'a, const O: u8> BT656_F_MASK_W<'a, O> {
         self.variant(BT656_F_MASK_A::E_NABLE)
     }
 }
-#[doc = "Field `bt656_f_mask_value` reader - BT656 F Mask Value"]
-pub type BT656_F_MASK_VALUE_R = crate::BitReader<bool>;
-#[doc = "Field `bt656_f_mask_value` writer - BT656 F Mask Value"]
-pub type BT656_F_MASK_VALUE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, LCD_CEU_CTL_SPEC, bool, O>;
-impl R {
-    #[doc = "Bit 31 - Enable CEU function"]
+#[doc = "Field `ceu_en` reader - Enable CEU function"]
+pub type CEU_EN_R = crate::BitReader<CEU_EN_A>;
+#[doc = "Enable CEU function\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CEU_EN_A {
+    #[doc = "0: Bypass"]
+    B_YPASS = 0,
+    #[doc = "1: Enable"]
+    E_NABLE = 1,
+}
+impl From<CEU_EN_A> for bool {
     #[inline(always)]
-    pub fn ceu_en(&self) -> CEU_EN_R {
-        CEU_EN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: CEU_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CEU_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CEU_EN_A {
+        match self.bits {
+            false => CEU_EN_A::B_YPASS,
+            true => CEU_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[inline(always)]
+    pub fn is_b_ypass(&self) -> bool {
+        *self == CEU_EN_A::B_YPASS
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == CEU_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `ceu_en` writer - Enable CEU function"]
+pub type CEU_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CEU_CTL_SPEC, CEU_EN_A, O>;
+impl<'a, const O: u8> CEU_EN_W<'a, O> {
+    #[doc = "Bypass"]
+    #[inline(always)]
+    pub fn b_ypass(self) -> &'a mut W {
+        self.variant(CEU_EN_A::B_YPASS)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(CEU_EN_A::E_NABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 29 - BT656 F Mask Value"]
+    #[inline(always)]
+    pub fn bt656_f_mask_value(&self) -> BT656_F_MASK_VALUE_R {
+        BT656_F_MASK_VALUE_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - BT656 F Mask"]
     #[inline(always)]
     pub fn bt656_f_mask(&self) -> BT656_F_MASK_R {
         BT656_F_MASK_R::new(((self.bits >> 30) & 1) != 0)
     }
-    #[doc = "Bit 29 - BT656 F Mask Value"]
+    #[doc = "Bit 31 - Enable CEU function"]
     #[inline(always)]
-    pub fn bt656_f_mask_value(&self) -> BT656_F_MASK_VALUE_R {
-        BT656_F_MASK_VALUE_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn ceu_en(&self) -> CEU_EN_R {
+        CEU_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31 - Enable CEU function"]
+    #[doc = "Bit 29 - BT656 F Mask Value"]
     #[inline(always)]
-    pub fn ceu_en(&mut self) -> CEU_EN_W<31> {
-        CEU_EN_W::new(self)
+    pub fn bt656_f_mask_value(&mut self) -> BT656_F_MASK_VALUE_W<29> {
+        BT656_F_MASK_VALUE_W::new(self)
     }
     #[doc = "Bit 30 - BT656 F Mask"]
     #[inline(always)]
     pub fn bt656_f_mask(&mut self) -> BT656_F_MASK_W<30> {
         BT656_F_MASK_W::new(self)
     }
-    #[doc = "Bit 29 - BT656 F Mask Value"]
+    #[doc = "Bit 31 - Enable CEU function"]
     #[inline(always)]
-    pub fn bt656_f_mask_value(&mut self) -> BT656_F_MASK_VALUE_W<29> {
-        BT656_F_MASK_VALUE_W::new(self)
+    pub fn ceu_en(&mut self) -> CEU_EN_W<31> {
+        CEU_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

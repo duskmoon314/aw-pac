@@ -34,38 +34,38 @@ impl From<crate::W<HC_FM_REMAINING_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `frame_remaining_toggle` reader - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
-pub type FRAME_REMAINING_TOGGLE_R = crate::BitReader<bool>;
-#[doc = "Field `frame_remaining_toggle` writer - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
-pub type FRAME_REMAINING_TOGGLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HC_FM_REMAINING_SPEC, bool, O>;
 #[doc = "Field `frame_remaining` reader - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
 pub type FRAME_REMAINING_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `frame_remaining` writer - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
 pub type FRAME_REMAINING_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_FM_REMAINING_SPEC, u16, u16, 14, O>;
+#[doc = "Field `frame_remaining_toggle` reader - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
+pub type FRAME_REMAINING_TOGGLE_R = crate::BitReader<bool>;
+#[doc = "Field `frame_remaining_toggle` writer - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
+pub type FRAME_REMAINING_TOGGLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HC_FM_REMAINING_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 31 - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
-    #[inline(always)]
-    pub fn frame_remaining_toggle(&self) -> FRAME_REMAINING_TOGGLE_R {
-        FRAME_REMAINING_TOGGLE_R::new(((self.bits >> 31) & 1) != 0)
-    }
     #[doc = "Bits 0:13 - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
     #[inline(always)]
     pub fn frame_remaining(&self) -> FRAME_REMAINING_R {
         FRAME_REMAINING_R::new((self.bits & 0x3fff) as u16)
     }
-}
-impl W {
     #[doc = "Bit 31 - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
     #[inline(always)]
-    pub fn frame_remaining_toggle(&mut self) -> FRAME_REMAINING_TOGGLE_W<31> {
-        FRAME_REMAINING_TOGGLE_W::new(self)
+    pub fn frame_remaining_toggle(&self) -> FRAME_REMAINING_TOGGLE_R {
+        FRAME_REMAINING_TOGGLE_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:13 - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
     #[inline(always)]
     pub fn frame_remaining(&mut self) -> FRAME_REMAINING_W<0> {
         FRAME_REMAINING_W::new(self)
+    }
+    #[doc = "Bit 31 - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
+    #[inline(always)]
+    pub fn frame_remaining_toggle(&mut self) -> FRAME_REMAINING_TOGGLE_W<31> {
+        FRAME_REMAINING_TOGGLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

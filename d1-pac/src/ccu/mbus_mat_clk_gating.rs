@@ -34,312 +34,8 @@ impl From<crate::W<MBUS_MAT_CLK_GATING_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RISCV_MCLK_EN_A {
-    #[doc = "0: `0`"]
-    MASK = 0,
-    #[doc = "1: `1`"]
-    PASS = 1,
-}
-impl From<RISCV_MCLK_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: RISCV_MCLK_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `riscv_mclk_en` reader - Gating MBUS Clock"]
-pub type RISCV_MCLK_EN_R = crate::BitReader<RISCV_MCLK_EN_A>;
-impl RISCV_MCLK_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RISCV_MCLK_EN_A {
-        match self.bits {
-            false => RISCV_MCLK_EN_A::MASK,
-            true => RISCV_MCLK_EN_A::PASS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `MASK`"]
-    #[inline(always)]
-    pub fn is_mask(&self) -> bool {
-        *self == RISCV_MCLK_EN_A::MASK
-    }
-    #[doc = "Checks if the value of the field is `PASS`"]
-    #[inline(always)]
-    pub fn is_pass(&self) -> bool {
-        *self == RISCV_MCLK_EN_A::PASS
-    }
-}
-#[doc = "Field `riscv_mclk_en` writer - Gating MBUS Clock"]
-pub type RISCV_MCLK_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, RISCV_MCLK_EN_A, O>;
-impl<'a, const O: u8> RISCV_MCLK_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(RISCV_MCLK_EN_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(RISCV_MCLK_EN_A::PASS)
-    }
-}
-#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum G2D_MCLK_EN_A {
-    #[doc = "0: `0`"]
-    MASK = 0,
-    #[doc = "1: `1`"]
-    PASS = 1,
-}
-impl From<G2D_MCLK_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: G2D_MCLK_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `g2d_mclk_en` reader - Gating MBUS Clock"]
-pub type G2D_MCLK_EN_R = crate::BitReader<G2D_MCLK_EN_A>;
-impl G2D_MCLK_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> G2D_MCLK_EN_A {
-        match self.bits {
-            false => G2D_MCLK_EN_A::MASK,
-            true => G2D_MCLK_EN_A::PASS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `MASK`"]
-    #[inline(always)]
-    pub fn is_mask(&self) -> bool {
-        *self == G2D_MCLK_EN_A::MASK
-    }
-    #[doc = "Checks if the value of the field is `PASS`"]
-    #[inline(always)]
-    pub fn is_pass(&self) -> bool {
-        *self == G2D_MCLK_EN_A::PASS
-    }
-}
-#[doc = "Field `g2d_mclk_en` writer - Gating MBUS Clock"]
-pub type G2D_MCLK_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, G2D_MCLK_EN_A, O>;
-impl<'a, const O: u8> G2D_MCLK_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(G2D_MCLK_EN_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(G2D_MCLK_EN_A::PASS)
-    }
-}
-#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CSI_MCLK_EN_A {
-    #[doc = "0: `0`"]
-    MASK = 0,
-    #[doc = "1: `1`"]
-    PASS = 1,
-}
-impl From<CSI_MCLK_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: CSI_MCLK_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `csi_mclk_en` reader - Gating MBUS Clock"]
-pub type CSI_MCLK_EN_R = crate::BitReader<CSI_MCLK_EN_A>;
-impl CSI_MCLK_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CSI_MCLK_EN_A {
-        match self.bits {
-            false => CSI_MCLK_EN_A::MASK,
-            true => CSI_MCLK_EN_A::PASS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `MASK`"]
-    #[inline(always)]
-    pub fn is_mask(&self) -> bool {
-        *self == CSI_MCLK_EN_A::MASK
-    }
-    #[doc = "Checks if the value of the field is `PASS`"]
-    #[inline(always)]
-    pub fn is_pass(&self) -> bool {
-        *self == CSI_MCLK_EN_A::PASS
-    }
-}
-#[doc = "Field `csi_mclk_en` writer - Gating MBUS Clock"]
-pub type CSI_MCLK_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CSI_MCLK_EN_A, O>;
-impl<'a, const O: u8> CSI_MCLK_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(CSI_MCLK_EN_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(CSI_MCLK_EN_A::PASS)
-    }
-}
-#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TVIN_MCLK_EN_A {
-    #[doc = "0: `0`"]
-    MASK = 0,
-    #[doc = "1: `1`"]
-    PASS = 1,
-}
-impl From<TVIN_MCLK_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TVIN_MCLK_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tvin_mclk_en` reader - Gating MBUS Clock"]
-pub type TVIN_MCLK_EN_R = crate::BitReader<TVIN_MCLK_EN_A>;
-impl TVIN_MCLK_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TVIN_MCLK_EN_A {
-        match self.bits {
-            false => TVIN_MCLK_EN_A::MASK,
-            true => TVIN_MCLK_EN_A::PASS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `MASK`"]
-    #[inline(always)]
-    pub fn is_mask(&self) -> bool {
-        *self == TVIN_MCLK_EN_A::MASK
-    }
-    #[doc = "Checks if the value of the field is `PASS`"]
-    #[inline(always)]
-    pub fn is_pass(&self) -> bool {
-        *self == TVIN_MCLK_EN_A::PASS
-    }
-}
-#[doc = "Field `tvin_mclk_en` writer - Gating MBUS Clock"]
-pub type TVIN_MCLK_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, TVIN_MCLK_EN_A, O>;
-impl<'a, const O: u8> TVIN_MCLK_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(TVIN_MCLK_EN_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(TVIN_MCLK_EN_A::PASS)
-    }
-}
-#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CE_MCLK_EN_A {
-    #[doc = "0: `0`"]
-    MASK = 0,
-    #[doc = "1: `1`"]
-    PASS = 1,
-}
-impl From<CE_MCLK_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: CE_MCLK_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `ce_mclk_en` reader - Gating MBUS Clock"]
-pub type CE_MCLK_EN_R = crate::BitReader<CE_MCLK_EN_A>;
-impl CE_MCLK_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> CE_MCLK_EN_A {
-        match self.bits {
-            false => CE_MCLK_EN_A::MASK,
-            true => CE_MCLK_EN_A::PASS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `MASK`"]
-    #[inline(always)]
-    pub fn is_mask(&self) -> bool {
-        *self == CE_MCLK_EN_A::MASK
-    }
-    #[doc = "Checks if the value of the field is `PASS`"]
-    #[inline(always)]
-    pub fn is_pass(&self) -> bool {
-        *self == CE_MCLK_EN_A::PASS
-    }
-}
-#[doc = "Field `ce_mclk_en` writer - Gating MBUS Clock"]
-pub type CE_MCLK_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CE_MCLK_EN_A, O>;
-impl<'a, const O: u8> CE_MCLK_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(CE_MCLK_EN_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(CE_MCLK_EN_A::PASS)
-    }
-}
-#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VE_MCLK_EN_A {
-    #[doc = "0: `0`"]
-    MASK = 0,
-    #[doc = "1: `1`"]
-    PASS = 1,
-}
-impl From<VE_MCLK_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: VE_MCLK_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `ve_mclk_en` reader - Gating MBUS Clock"]
-pub type VE_MCLK_EN_R = crate::BitReader<VE_MCLK_EN_A>;
-impl VE_MCLK_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> VE_MCLK_EN_A {
-        match self.bits {
-            false => VE_MCLK_EN_A::MASK,
-            true => VE_MCLK_EN_A::PASS,
-        }
-    }
-    #[doc = "Checks if the value of the field is `MASK`"]
-    #[inline(always)]
-    pub fn is_mask(&self) -> bool {
-        *self == VE_MCLK_EN_A::MASK
-    }
-    #[doc = "Checks if the value of the field is `PASS`"]
-    #[inline(always)]
-    pub fn is_pass(&self) -> bool {
-        *self == VE_MCLK_EN_A::PASS
-    }
-}
-#[doc = "Field `ve_mclk_en` writer - Gating MBUS Clock"]
-pub type VE_MCLK_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, VE_MCLK_EN_A, O>;
-impl<'a, const O: u8> VE_MCLK_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
-        self.variant(VE_MCLK_EN_A::MASK)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
-        self.variant(VE_MCLK_EN_A::PASS)
-    }
-}
+#[doc = "Field `dma_mclk_en` reader - Gating MBUS Clock"]
+pub type DMA_MCLK_EN_R = crate::BitReader<DMA_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_MCLK_EN_A {
@@ -354,8 +50,6 @@ impl From<DMA_MCLK_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dma_mclk_en` reader - Gating MBUS Clock"]
-pub type DMA_MCLK_EN_R = crate::BitReader<DMA_MCLK_EN_A>;
 impl DMA_MCLK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -391,78 +85,384 @@ impl<'a, const O: u8> DMA_MCLK_EN_W<'a, O> {
         self.variant(DMA_MCLK_EN_A::PASS)
     }
 }
+#[doc = "Field `ve_mclk_en` reader - Gating MBUS Clock"]
+pub type VE_MCLK_EN_R = crate::BitReader<VE_MCLK_EN_A>;
+#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum VE_MCLK_EN_A {
+    #[doc = "0: `0`"]
+    MASK = 0,
+    #[doc = "1: `1`"]
+    PASS = 1,
+}
+impl From<VE_MCLK_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: VE_MCLK_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl VE_MCLK_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> VE_MCLK_EN_A {
+        match self.bits {
+            false => VE_MCLK_EN_A::MASK,
+            true => VE_MCLK_EN_A::PASS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `MASK`"]
+    #[inline(always)]
+    pub fn is_mask(&self) -> bool {
+        *self == VE_MCLK_EN_A::MASK
+    }
+    #[doc = "Checks if the value of the field is `PASS`"]
+    #[inline(always)]
+    pub fn is_pass(&self) -> bool {
+        *self == VE_MCLK_EN_A::PASS
+    }
+}
+#[doc = "Field `ve_mclk_en` writer - Gating MBUS Clock"]
+pub type VE_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, VE_MCLK_EN_A, O>;
+impl<'a, const O: u8> VE_MCLK_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn mask(self) -> &'a mut W {
+        self.variant(VE_MCLK_EN_A::MASK)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pass(self) -> &'a mut W {
+        self.variant(VE_MCLK_EN_A::PASS)
+    }
+}
+#[doc = "Field `ce_mclk_en` reader - Gating MBUS Clock"]
+pub type CE_MCLK_EN_R = crate::BitReader<CE_MCLK_EN_A>;
+#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CE_MCLK_EN_A {
+    #[doc = "0: `0`"]
+    MASK = 0,
+    #[doc = "1: `1`"]
+    PASS = 1,
+}
+impl From<CE_MCLK_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CE_MCLK_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CE_MCLK_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CE_MCLK_EN_A {
+        match self.bits {
+            false => CE_MCLK_EN_A::MASK,
+            true => CE_MCLK_EN_A::PASS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `MASK`"]
+    #[inline(always)]
+    pub fn is_mask(&self) -> bool {
+        *self == CE_MCLK_EN_A::MASK
+    }
+    #[doc = "Checks if the value of the field is `PASS`"]
+    #[inline(always)]
+    pub fn is_pass(&self) -> bool {
+        *self == CE_MCLK_EN_A::PASS
+    }
+}
+#[doc = "Field `ce_mclk_en` writer - Gating MBUS Clock"]
+pub type CE_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CE_MCLK_EN_A, O>;
+impl<'a, const O: u8> CE_MCLK_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn mask(self) -> &'a mut W {
+        self.variant(CE_MCLK_EN_A::MASK)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pass(self) -> &'a mut W {
+        self.variant(CE_MCLK_EN_A::PASS)
+    }
+}
+#[doc = "Field `tvin_mclk_en` reader - Gating MBUS Clock"]
+pub type TVIN_MCLK_EN_R = crate::BitReader<TVIN_MCLK_EN_A>;
+#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TVIN_MCLK_EN_A {
+    #[doc = "0: `0`"]
+    MASK = 0,
+    #[doc = "1: `1`"]
+    PASS = 1,
+}
+impl From<TVIN_MCLK_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TVIN_MCLK_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TVIN_MCLK_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TVIN_MCLK_EN_A {
+        match self.bits {
+            false => TVIN_MCLK_EN_A::MASK,
+            true => TVIN_MCLK_EN_A::PASS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `MASK`"]
+    #[inline(always)]
+    pub fn is_mask(&self) -> bool {
+        *self == TVIN_MCLK_EN_A::MASK
+    }
+    #[doc = "Checks if the value of the field is `PASS`"]
+    #[inline(always)]
+    pub fn is_pass(&self) -> bool {
+        *self == TVIN_MCLK_EN_A::PASS
+    }
+}
+#[doc = "Field `tvin_mclk_en` writer - Gating MBUS Clock"]
+pub type TVIN_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, TVIN_MCLK_EN_A, O>;
+impl<'a, const O: u8> TVIN_MCLK_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn mask(self) -> &'a mut W {
+        self.variant(TVIN_MCLK_EN_A::MASK)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pass(self) -> &'a mut W {
+        self.variant(TVIN_MCLK_EN_A::PASS)
+    }
+}
+#[doc = "Field `csi_mclk_en` reader - Gating MBUS Clock"]
+pub type CSI_MCLK_EN_R = crate::BitReader<CSI_MCLK_EN_A>;
+#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CSI_MCLK_EN_A {
+    #[doc = "0: `0`"]
+    MASK = 0,
+    #[doc = "1: `1`"]
+    PASS = 1,
+}
+impl From<CSI_MCLK_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CSI_MCLK_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CSI_MCLK_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CSI_MCLK_EN_A {
+        match self.bits {
+            false => CSI_MCLK_EN_A::MASK,
+            true => CSI_MCLK_EN_A::PASS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `MASK`"]
+    #[inline(always)]
+    pub fn is_mask(&self) -> bool {
+        *self == CSI_MCLK_EN_A::MASK
+    }
+    #[doc = "Checks if the value of the field is `PASS`"]
+    #[inline(always)]
+    pub fn is_pass(&self) -> bool {
+        *self == CSI_MCLK_EN_A::PASS
+    }
+}
+#[doc = "Field `csi_mclk_en` writer - Gating MBUS Clock"]
+pub type CSI_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, CSI_MCLK_EN_A, O>;
+impl<'a, const O: u8> CSI_MCLK_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn mask(self) -> &'a mut W {
+        self.variant(CSI_MCLK_EN_A::MASK)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pass(self) -> &'a mut W {
+        self.variant(CSI_MCLK_EN_A::PASS)
+    }
+}
+#[doc = "Field `g2d_mclk_en` reader - Gating MBUS Clock"]
+pub type G2D_MCLK_EN_R = crate::BitReader<G2D_MCLK_EN_A>;
+#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum G2D_MCLK_EN_A {
+    #[doc = "0: `0`"]
+    MASK = 0,
+    #[doc = "1: `1`"]
+    PASS = 1,
+}
+impl From<G2D_MCLK_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: G2D_MCLK_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl G2D_MCLK_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> G2D_MCLK_EN_A {
+        match self.bits {
+            false => G2D_MCLK_EN_A::MASK,
+            true => G2D_MCLK_EN_A::PASS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `MASK`"]
+    #[inline(always)]
+    pub fn is_mask(&self) -> bool {
+        *self == G2D_MCLK_EN_A::MASK
+    }
+    #[doc = "Checks if the value of the field is `PASS`"]
+    #[inline(always)]
+    pub fn is_pass(&self) -> bool {
+        *self == G2D_MCLK_EN_A::PASS
+    }
+}
+#[doc = "Field `g2d_mclk_en` writer - Gating MBUS Clock"]
+pub type G2D_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, G2D_MCLK_EN_A, O>;
+impl<'a, const O: u8> G2D_MCLK_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn mask(self) -> &'a mut W {
+        self.variant(G2D_MCLK_EN_A::MASK)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pass(self) -> &'a mut W {
+        self.variant(G2D_MCLK_EN_A::PASS)
+    }
+}
+#[doc = "Field `riscv_mclk_en` reader - Gating MBUS Clock"]
+pub type RISCV_MCLK_EN_R = crate::BitReader<RISCV_MCLK_EN_A>;
+#[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RISCV_MCLK_EN_A {
+    #[doc = "0: `0`"]
+    MASK = 0,
+    #[doc = "1: `1`"]
+    PASS = 1,
+}
+impl From<RISCV_MCLK_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: RISCV_MCLK_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl RISCV_MCLK_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RISCV_MCLK_EN_A {
+        match self.bits {
+            false => RISCV_MCLK_EN_A::MASK,
+            true => RISCV_MCLK_EN_A::PASS,
+        }
+    }
+    #[doc = "Checks if the value of the field is `MASK`"]
+    #[inline(always)]
+    pub fn is_mask(&self) -> bool {
+        *self == RISCV_MCLK_EN_A::MASK
+    }
+    #[doc = "Checks if the value of the field is `PASS`"]
+    #[inline(always)]
+    pub fn is_pass(&self) -> bool {
+        *self == RISCV_MCLK_EN_A::PASS
+    }
+}
+#[doc = "Field `riscv_mclk_en` writer - Gating MBUS Clock"]
+pub type RISCV_MCLK_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, MBUS_MAT_CLK_GATING_SPEC, RISCV_MCLK_EN_A, O>;
+impl<'a, const O: u8> RISCV_MCLK_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn mask(self) -> &'a mut W {
+        self.variant(RISCV_MCLK_EN_A::MASK)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn pass(self) -> &'a mut W {
+        self.variant(RISCV_MCLK_EN_A::PASS)
+    }
+}
 impl R {
-    #[doc = "Bit 11 - Gating MBUS Clock"]
+    #[doc = "Bit 0 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn riscv_mclk_en(&self) -> RISCV_MCLK_EN_R {
-        RISCV_MCLK_EN_R::new(((self.bits >> 11) & 1) != 0)
-    }
-    #[doc = "Bit 10 - Gating MBUS Clock"]
-    #[inline(always)]
-    pub fn g2d_mclk_en(&self) -> G2D_MCLK_EN_R {
-        G2D_MCLK_EN_R::new(((self.bits >> 10) & 1) != 0)
-    }
-    #[doc = "Bit 8 - Gating MBUS Clock"]
-    #[inline(always)]
-    pub fn csi_mclk_en(&self) -> CSI_MCLK_EN_R {
-        CSI_MCLK_EN_R::new(((self.bits >> 8) & 1) != 0)
-    }
-    #[doc = "Bit 7 - Gating MBUS Clock"]
-    #[inline(always)]
-    pub fn tvin_mclk_en(&self) -> TVIN_MCLK_EN_R {
-        TVIN_MCLK_EN_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 2 - Gating MBUS Clock"]
-    #[inline(always)]
-    pub fn ce_mclk_en(&self) -> CE_MCLK_EN_R {
-        CE_MCLK_EN_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn dma_mclk_en(&self) -> DMA_MCLK_EN_R {
+        DMA_MCLK_EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn ve_mclk_en(&self) -> VE_MCLK_EN_R {
         VE_MCLK_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Gating MBUS Clock"]
+    #[doc = "Bit 2 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn dma_mclk_en(&self) -> DMA_MCLK_EN_R {
-        DMA_MCLK_EN_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 11 - Gating MBUS Clock"]
-    #[inline(always)]
-    pub fn riscv_mclk_en(&mut self) -> RISCV_MCLK_EN_W<11> {
-        RISCV_MCLK_EN_W::new(self)
-    }
-    #[doc = "Bit 10 - Gating MBUS Clock"]
-    #[inline(always)]
-    pub fn g2d_mclk_en(&mut self) -> G2D_MCLK_EN_W<10> {
-        G2D_MCLK_EN_W::new(self)
-    }
-    #[doc = "Bit 8 - Gating MBUS Clock"]
-    #[inline(always)]
-    pub fn csi_mclk_en(&mut self) -> CSI_MCLK_EN_W<8> {
-        CSI_MCLK_EN_W::new(self)
+    pub fn ce_mclk_en(&self) -> CE_MCLK_EN_R {
+        CE_MCLK_EN_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 7 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn tvin_mclk_en(&mut self) -> TVIN_MCLK_EN_W<7> {
-        TVIN_MCLK_EN_W::new(self)
+    pub fn tvin_mclk_en(&self) -> TVIN_MCLK_EN_R {
+        TVIN_MCLK_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 2 - Gating MBUS Clock"]
+    #[doc = "Bit 8 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn ce_mclk_en(&mut self) -> CE_MCLK_EN_W<2> {
-        CE_MCLK_EN_W::new(self)
+    pub fn csi_mclk_en(&self) -> CSI_MCLK_EN_R {
+        CSI_MCLK_EN_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    #[doc = "Bit 10 - Gating MBUS Clock"]
+    #[inline(always)]
+    pub fn g2d_mclk_en(&self) -> G2D_MCLK_EN_R {
+        G2D_MCLK_EN_R::new(((self.bits >> 10) & 1) != 0)
+    }
+    #[doc = "Bit 11 - Gating MBUS Clock"]
+    #[inline(always)]
+    pub fn riscv_mclk_en(&self) -> RISCV_MCLK_EN_R {
+        RISCV_MCLK_EN_R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - Gating MBUS Clock"]
+    #[inline(always)]
+    pub fn dma_mclk_en(&mut self) -> DMA_MCLK_EN_W<0> {
+        DMA_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 1 - Gating MBUS Clock"]
     #[inline(always)]
     pub fn ve_mclk_en(&mut self) -> VE_MCLK_EN_W<1> {
         VE_MCLK_EN_W::new(self)
     }
-    #[doc = "Bit 0 - Gating MBUS Clock"]
+    #[doc = "Bit 2 - Gating MBUS Clock"]
     #[inline(always)]
-    pub fn dma_mclk_en(&mut self) -> DMA_MCLK_EN_W<0> {
-        DMA_MCLK_EN_W::new(self)
+    pub fn ce_mclk_en(&mut self) -> CE_MCLK_EN_W<2> {
+        CE_MCLK_EN_W::new(self)
+    }
+    #[doc = "Bit 7 - Gating MBUS Clock"]
+    #[inline(always)]
+    pub fn tvin_mclk_en(&mut self) -> TVIN_MCLK_EN_W<7> {
+        TVIN_MCLK_EN_W::new(self)
+    }
+    #[doc = "Bit 8 - Gating MBUS Clock"]
+    #[inline(always)]
+    pub fn csi_mclk_en(&mut self) -> CSI_MCLK_EN_W<8> {
+        CSI_MCLK_EN_W::new(self)
+    }
+    #[doc = "Bit 10 - Gating MBUS Clock"]
+    #[inline(always)]
+    pub fn g2d_mclk_en(&mut self) -> G2D_MCLK_EN_W<10> {
+        G2D_MCLK_EN_W::new(self)
+    }
+    #[doc = "Bit 11 - Gating MBUS Clock"]
+    #[inline(always)]
+    pub fn riscv_mclk_en(&mut self) -> RISCV_MCLK_EN_W<11> {
+        RISCV_MCLK_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,9 @@ impl From<crate::W<IOMMU_BYPASS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `m_bp[0-6]` reader - Master\\[i\\]
+bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
+pub type M_BP_R = crate::BitReader<M_BP_A>;
 #[doc = "Master\\[i\\]
 bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<M_BP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `m(0-6)_bp` reader - Master\\[i\\]
-bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
-pub type M_BP_R = crate::BitReader<M_BP_A>;
 impl M_BP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl M_BP_R {
         *self == M_BP_A::E_NABLE
     }
 }
-#[doc = "Fields `m(0-6)_bp` writer - Master\\[i\\]
+#[doc = "Field `m_bp[0-6]` writer - Master\\[i\\]
 bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
 pub type M_BP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_BYPASS_SPEC, M_BP_A, O>;
 impl<'a, const O: u8> M_BP_W<'a, O> {

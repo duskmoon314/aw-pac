@@ -34,37 +34,37 @@ impl From<crate::W<TWI_DRV_FMT_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `addr_byte` reader - "]
-pub type ADDR_BYTE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `addr_byte` writer - "]
-pub type ADDR_BYTE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_FMT_SPEC, u8, u8, 8, O>;
 #[doc = "Field `data_byte` reader - "]
 pub type DATA_BYTE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `data_byte` writer - "]
 pub type DATA_BYTE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TWI_DRV_FMT_SPEC, u16, u16, 16, O>;
+#[doc = "Field `addr_byte` reader - "]
+pub type ADDR_BYTE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `addr_byte` writer - "]
+pub type ADDR_BYTE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_FMT_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 16:23"]
-    #[inline(always)]
-    pub fn addr_byte(&self) -> ADDR_BYTE_R {
-        ADDR_BYTE_R::new(((self.bits >> 16) & 0xff) as u8)
-    }
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn data_byte(&self) -> DATA_BYTE_R {
         DATA_BYTE_R::new((self.bits & 0xffff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:23"]
     #[inline(always)]
-    pub fn addr_byte(&mut self) -> ADDR_BYTE_W<16> {
-        ADDR_BYTE_W::new(self)
+    pub fn addr_byte(&self) -> ADDR_BYTE_R {
+        ADDR_BYTE_R::new(((self.bits >> 16) & 0xff) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     pub fn data_byte(&mut self) -> DATA_BYTE_W<0> {
         DATA_BYTE_W::new(self)
+    }
+    #[doc = "Bits 16:23"]
+    #[inline(always)]
+    pub fn addr_byte(&mut self) -> ADDR_BYTE_W<16> {
+        ADDR_BYTE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

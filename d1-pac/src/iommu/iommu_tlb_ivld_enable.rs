@@ -34,6 +34,8 @@ impl From<crate::W<IOMMU_TLB_IVLD_ENABLE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tlb_ivld_enable` reader - Enable TLB invalidation operation\n\nAfter invalidation operation is completed, the bit can clear automatically.\n\nWhen operating invalidation operation, TLB/Cache operation has not affected.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation."]
+pub type TLB_IVLD_ENABLE_R = crate::BitReader<TLB_IVLD_ENABLE_A>;
 #[doc = "Enable TLB invalidation operation\n\nAfter invalidation operation is completed, the bit can clear automatically.\n\nWhen operating invalidation operation, TLB/Cache operation has not affected.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TLB_IVLD_ENABLE_A {
@@ -48,8 +50,6 @@ impl From<TLB_IVLD_ENABLE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tlb_ivld_enable` reader - Enable TLB invalidation operation\n\nAfter invalidation operation is completed, the bit can clear automatically.\n\nWhen operating invalidation operation, TLB/Cache operation has not affected.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation."]
-pub type TLB_IVLD_ENABLE_R = crate::BitReader<TLB_IVLD_ENABLE_A>;
 impl TLB_IVLD_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

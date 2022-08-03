@@ -34,6 +34,8 @@ impl From<crate::W<DMAC_IRQ_EN1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dma_hlaf_irq_en[8-15]` reader - Enable the half package interrupt of DMA"]
+pub type DMA_HLAF_IRQ_EN_R = crate::BitReader<DMA_HLAF_IRQ_EN_A>;
 #[doc = "Enable the half package interrupt of DMA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_HLAF_IRQ_EN_A {
@@ -48,8 +50,6 @@ impl From<DMA_HLAF_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dma(8-15)_hlaf_irq_en` reader - Enable the half package interrupt of DMA"]
-pub type DMA_HLAF_IRQ_EN_R = crate::BitReader<DMA_HLAF_IRQ_EN_A>;
 impl DMA_HLAF_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl DMA_HLAF_IRQ_EN_R {
         *self == DMA_HLAF_IRQ_EN_A::ENABLED
     }
 }
-#[doc = "Fields `dma(8-15)_hlaf_irq_en` writer - Enable the half package interrupt of DMA"]
+#[doc = "Field `dma_hlaf_irq_en[8-15]` writer - Enable the half package interrupt of DMA"]
 pub type DMA_HLAF_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_IRQ_EN1_SPEC, DMA_HLAF_IRQ_EN_A, O>;
 impl<'a, const O: u8> DMA_HLAF_IRQ_EN_W<'a, O> {
@@ -85,6 +85,8 @@ impl<'a, const O: u8> DMA_HLAF_IRQ_EN_W<'a, O> {
         self.variant(DMA_HLAF_IRQ_EN_A::ENABLED)
     }
 }
+#[doc = "Field `dma_pkg_irq_en[8-15]` reader - Enable the package end interrupt of DMA"]
+pub type DMA_PKG_IRQ_EN_R = crate::BitReader<DMA_PKG_IRQ_EN_A>;
 #[doc = "Enable the package end interrupt of DMA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_PKG_IRQ_EN_A {
@@ -99,8 +101,6 @@ impl From<DMA_PKG_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dma(8-15)_pkg_irq_en` reader - Enable the package end interrupt of DMA"]
-pub type DMA_PKG_IRQ_EN_R = crate::BitReader<DMA_PKG_IRQ_EN_A>;
 impl DMA_PKG_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,7 +121,7 @@ impl DMA_PKG_IRQ_EN_R {
         *self == DMA_PKG_IRQ_EN_A::ENABLED
     }
 }
-#[doc = "Fields `dma(8-15)_pkg_irq_en` writer - Enable the package end interrupt of DMA"]
+#[doc = "Field `dma_pkg_irq_en[8-15]` writer - Enable the package end interrupt of DMA"]
 pub type DMA_PKG_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_IRQ_EN1_SPEC, DMA_PKG_IRQ_EN_A, O>;
 impl<'a, const O: u8> DMA_PKG_IRQ_EN_W<'a, O> {
@@ -136,6 +136,8 @@ impl<'a, const O: u8> DMA_PKG_IRQ_EN_W<'a, O> {
         self.variant(DMA_PKG_IRQ_EN_A::ENABLED)
     }
 }
+#[doc = "Field `dma_queue_irq_en[8-15]` reader - Enable the queue end interrupt of DMA"]
+pub type DMA_QUEUE_IRQ_EN_R = crate::BitReader<DMA_QUEUE_IRQ_EN_A>;
 #[doc = "Enable the queue end interrupt of DMA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DMA_QUEUE_IRQ_EN_A {
@@ -150,8 +152,6 @@ impl From<DMA_QUEUE_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dma(8-15)_queue_irq_en` reader - Enable the queue end interrupt of DMA"]
-pub type DMA_QUEUE_IRQ_EN_R = crate::BitReader<DMA_QUEUE_IRQ_EN_A>;
 impl DMA_QUEUE_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -172,7 +172,7 @@ impl DMA_QUEUE_IRQ_EN_R {
         *self == DMA_QUEUE_IRQ_EN_A::ENABLED
     }
 }
-#[doc = "Fields `dma(8-15)_queue_irq_en` writer - Enable the queue end interrupt of DMA"]
+#[doc = "Field `dma_queue_irq_en[8-15]` writer - Enable the queue end interrupt of DMA"]
 pub type DMA_QUEUE_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, DMAC_IRQ_EN1_SPEC, DMA_QUEUE_IRQ_EN_A, O>;
 impl<'a, const O: u8> DMA_QUEUE_IRQ_EN_W<'a, O> {

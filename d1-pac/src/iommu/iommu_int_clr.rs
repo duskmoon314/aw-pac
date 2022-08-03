@@ -34,37 +34,6 @@ impl From<crate::W<IOMMU_INT_CLR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Level\\[i\\]
-page table invalid interrupt clear bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum L_PAGE_TABLE_INVALID_CLR_AW {
-    #[doc = "0: Invalid operation"]
-    I_NVALID = 0,
-    #[doc = "1: Clear interrupt"]
-    C_LEAR = 1,
-}
-impl From<L_PAGE_TABLE_INVALID_CLR_AW> for bool {
-    #[inline(always)]
-    fn from(variant: L_PAGE_TABLE_INVALID_CLR_AW) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `l(0-1)_page_table_invalid_clr` writer - Level\\[i\\]
-page table invalid interrupt clear bit"]
-pub type L_PAGE_TABLE_INVALID_CLR_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_INT_CLR_SPEC, L_PAGE_TABLE_INVALID_CLR_AW, O>;
-impl<'a, const O: u8> L_PAGE_TABLE_INVALID_CLR_W<'a, O> {
-    #[doc = "Invalid operation"]
-    #[inline(always)]
-    pub fn i_nvalid(self) -> &'a mut W {
-        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::I_NVALID)
-    }
-    #[doc = "Clear interrupt"]
-    #[inline(always)]
-    pub fn c_lear(self) -> &'a mut W {
-        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::C_LEAR)
-    }
-}
 #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt clear bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -80,7 +49,7 @@ impl From<MICRO_TLB_INVALID_CLR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `micro_tlb(0-6)_invalid_clr` writer - Micro TLB\\[i\\]
+#[doc = "Field `micro_tlb_invalid_clr[0-6]` writer - Micro TLB\\[i\\]
 permission invalid interrupt clear bit"]
 pub type MICRO_TLB_INVALID_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_INT_CLR_SPEC, MICRO_TLB_INVALID_CLR_AW, O>;
@@ -96,27 +65,38 @@ impl<'a, const O: u8> MICRO_TLB_INVALID_CLR_W<'a, O> {
         self.variant(MICRO_TLB_INVALID_CLR_AW::C_LEAR)
     }
 }
+#[doc = "Level\\[i\\]
+page table invalid interrupt clear bit\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum L_PAGE_TABLE_INVALID_CLR_AW {
+    #[doc = "0: Invalid operation"]
+    I_NVALID = 0,
+    #[doc = "1: Clear interrupt"]
+    C_LEAR = 1,
+}
+impl From<L_PAGE_TABLE_INVALID_CLR_AW> for bool {
+    #[inline(always)]
+    fn from(variant: L_PAGE_TABLE_INVALID_CLR_AW) -> Self {
+        variant as u8 != 0
+    }
+}
+#[doc = "Field `l_page_table_invalid_clr[0-1]` writer - Level\\[i\\]
+page table invalid interrupt clear bit"]
+pub type L_PAGE_TABLE_INVALID_CLR_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, IOMMU_INT_CLR_SPEC, L_PAGE_TABLE_INVALID_CLR_AW, O>;
+impl<'a, const O: u8> L_PAGE_TABLE_INVALID_CLR_W<'a, O> {
+    #[doc = "Invalid operation"]
+    #[inline(always)]
+    pub fn i_nvalid(self) -> &'a mut W {
+        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::I_NVALID)
+    }
+    #[doc = "Clear interrupt"]
+    #[inline(always)]
+    pub fn c_lear(self) -> &'a mut W {
+        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::C_LEAR)
+    }
+}
 impl W {
-    #[doc = "Level\\[i\\]
-page table invalid interrupt clear bit"]
-    #[inline(always)]
-    pub unsafe fn l_page_table_invalid_clr<const O: u8>(
-        &mut self,
-    ) -> L_PAGE_TABLE_INVALID_CLR_W<O> {
-        L_PAGE_TABLE_INVALID_CLR_W::new(self)
-    }
-    #[doc = "Bit 16 - Level\\[i\\]
-page table invalid interrupt clear bit"]
-    #[inline(always)]
-    pub fn l0_page_table_invalid_clr(&mut self) -> L_PAGE_TABLE_INVALID_CLR_W<16> {
-        L_PAGE_TABLE_INVALID_CLR_W::new(self)
-    }
-    #[doc = "Bit 17 - Level\\[i\\]
-page table invalid interrupt clear bit"]
-    #[inline(always)]
-    pub fn l1_page_table_invalid_clr(&mut self) -> L_PAGE_TABLE_INVALID_CLR_W<17> {
-        L_PAGE_TABLE_INVALID_CLR_W::new(self)
-    }
     #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt clear bit"]
     #[inline(always)]
@@ -164,6 +144,26 @@ permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb6_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<12> {
         MICRO_TLB_INVALID_CLR_W::new(self)
+    }
+    #[doc = "Level\\[i\\]
+page table invalid interrupt clear bit"]
+    #[inline(always)]
+    pub unsafe fn l_page_table_invalid_clr<const O: u8>(
+        &mut self,
+    ) -> L_PAGE_TABLE_INVALID_CLR_W<O> {
+        L_PAGE_TABLE_INVALID_CLR_W::new(self)
+    }
+    #[doc = "Bit 16 - Level\\[i\\]
+page table invalid interrupt clear bit"]
+    #[inline(always)]
+    pub fn l0_page_table_invalid_clr(&mut self) -> L_PAGE_TABLE_INVALID_CLR_W<16> {
+        L_PAGE_TABLE_INVALID_CLR_W::new(self)
+    }
+    #[doc = "Bit 17 - Level\\[i\\]
+page table invalid interrupt clear bit"]
+    #[inline(always)]
+    pub fn l1_page_table_invalid_clr(&mut self) -> L_PAGE_TABLE_INVALID_CLR_W<17> {
+        L_PAGE_TABLE_INVALID_CLR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

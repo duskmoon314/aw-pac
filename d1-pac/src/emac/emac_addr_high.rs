@@ -34,57 +34,18 @@ impl From<crate::W<EMAC_ADDR_HIGH_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "MAC Address Valid\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MAC_ADDR_CTL_A {
-    #[doc = "0: `0`"]
-    INVALID = 0,
-    #[doc = "1: `1`"]
-    VALID = 1,
-}
-impl From<MAC_ADDR_CTL_A> for bool {
-    #[inline(always)]
-    fn from(variant: MAC_ADDR_CTL_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `mac_addr_ctl` reader - MAC Address Valid"]
-pub type MAC_ADDR_CTL_R = crate::BitReader<MAC_ADDR_CTL_A>;
-impl MAC_ADDR_CTL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> MAC_ADDR_CTL_A {
-        match self.bits {
-            false => MAC_ADDR_CTL_A::INVALID,
-            true => MAC_ADDR_CTL_A::VALID,
-        }
-    }
-    #[doc = "Checks if the value of the field is `INVALID`"]
-    #[inline(always)]
-    pub fn is_invalid(&self) -> bool {
-        *self == MAC_ADDR_CTL_A::INVALID
-    }
-    #[doc = "Checks if the value of the field is `VALID`"]
-    #[inline(always)]
-    pub fn is_valid(&self) -> bool {
-        *self == MAC_ADDR_CTL_A::VALID
-    }
-}
-#[doc = "Field `mac_addr_ctl` writer - MAC Address Valid"]
-pub type MAC_ADDR_CTL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, MAC_ADDR_CTL_A, O>;
-impl<'a, const O: u8> MAC_ADDR_CTL_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn invalid(self) -> &'a mut W {
-        self.variant(MAC_ADDR_CTL_A::INVALID)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn valid(self) -> &'a mut W {
-        self.variant(MAC_ADDR_CTL_A::VALID)
-    }
-}
+#[doc = "Field `mac_addr_high` reader - "]
+pub type MAC_ADDR_HIGH_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `mac_addr_high` writer - "]
+pub type MAC_ADDR_HIGH_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u16, u16, 16, O>;
+#[doc = "Field `mac_addr_byte_ctl` reader - MAC Address Byte Control Mask"]
+pub type MAC_ADDR_BYTE_CTL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `mac_addr_byte_ctl` writer - MAC Address Byte Control Mask"]
+pub type MAC_ADDR_BYTE_CTL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u8, u8, 6, O>;
+#[doc = "Field `mac_addr_type` reader - MAC Address Type"]
+pub type MAC_ADDR_TYPE_R = crate::BitReader<MAC_ADDR_TYPE_A>;
 #[doc = "MAC Address Type\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum MAC_ADDR_TYPE_A {
@@ -99,8 +60,6 @@ impl From<MAC_ADDR_TYPE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `mac_addr_type` reader - MAC Address Type"]
-pub type MAC_ADDR_TYPE_R = crate::BitReader<MAC_ADDR_TYPE_A>;
 impl MAC_ADDR_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,58 +95,99 @@ impl<'a, const O: u8> MAC_ADDR_TYPE_W<'a, O> {
         self.variant(MAC_ADDR_TYPE_A::SRC)
     }
 }
-#[doc = "Field `mac_addr_byte_ctl` reader - MAC Address Byte Control Mask"]
-pub type MAC_ADDR_BYTE_CTL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `mac_addr_byte_ctl` writer - MAC Address Byte Control Mask"]
-pub type MAC_ADDR_BYTE_CTL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u8, u8, 6, O>;
-#[doc = "Field `mac_addr_high` reader - "]
-pub type MAC_ADDR_HIGH_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `mac_addr_high` writer - "]
-pub type MAC_ADDR_HIGH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, u16, u16, 16, O>;
-impl R {
-    #[doc = "Bit 31 - MAC Address Valid"]
+#[doc = "Field `mac_addr_ctl` reader - MAC Address Valid"]
+pub type MAC_ADDR_CTL_R = crate::BitReader<MAC_ADDR_CTL_A>;
+#[doc = "MAC Address Valid\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MAC_ADDR_CTL_A {
+    #[doc = "0: `0`"]
+    INVALID = 0,
+    #[doc = "1: `1`"]
+    VALID = 1,
+}
+impl From<MAC_ADDR_CTL_A> for bool {
     #[inline(always)]
-    pub fn mac_addr_ctl(&self) -> MAC_ADDR_CTL_R {
-        MAC_ADDR_CTL_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: MAC_ADDR_CTL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = "Bit 30 - MAC Address Type"]
+}
+impl MAC_ADDR_CTL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn mac_addr_type(&self) -> MAC_ADDR_TYPE_R {
-        MAC_ADDR_TYPE_R::new(((self.bits >> 30) & 1) != 0)
+    pub fn variant(&self) -> MAC_ADDR_CTL_A {
+        match self.bits {
+            false => MAC_ADDR_CTL_A::INVALID,
+            true => MAC_ADDR_CTL_A::VALID,
+        }
+    }
+    #[doc = "Checks if the value of the field is `INVALID`"]
+    #[inline(always)]
+    pub fn is_invalid(&self) -> bool {
+        *self == MAC_ADDR_CTL_A::INVALID
+    }
+    #[doc = "Checks if the value of the field is `VALID`"]
+    #[inline(always)]
+    pub fn is_valid(&self) -> bool {
+        *self == MAC_ADDR_CTL_A::VALID
+    }
+}
+#[doc = "Field `mac_addr_ctl` writer - MAC Address Valid"]
+pub type MAC_ADDR_CTL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_ADDR_HIGH_SPEC, MAC_ADDR_CTL_A, O>;
+impl<'a, const O: u8> MAC_ADDR_CTL_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn invalid(self) -> &'a mut W {
+        self.variant(MAC_ADDR_CTL_A::INVALID)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn valid(self) -> &'a mut W {
+        self.variant(MAC_ADDR_CTL_A::VALID)
+    }
+}
+impl R {
+    #[doc = "Bits 0:15"]
+    #[inline(always)]
+    pub fn mac_addr_high(&self) -> MAC_ADDR_HIGH_R {
+        MAC_ADDR_HIGH_R::new((self.bits & 0xffff) as u16)
     }
     #[doc = "Bits 24:29 - MAC Address Byte Control Mask"]
     #[inline(always)]
     pub fn mac_addr_byte_ctl(&self) -> MAC_ADDR_BYTE_CTL_R {
         MAC_ADDR_BYTE_CTL_R::new(((self.bits >> 24) & 0x3f) as u8)
     }
-    #[doc = "Bits 0:15"]
+    #[doc = "Bit 30 - MAC Address Type"]
     #[inline(always)]
-    pub fn mac_addr_high(&self) -> MAC_ADDR_HIGH_R {
-        MAC_ADDR_HIGH_R::new((self.bits & 0xffff) as u16)
+    pub fn mac_addr_type(&self) -> MAC_ADDR_TYPE_R {
+        MAC_ADDR_TYPE_R::new(((self.bits >> 30) & 1) != 0)
+    }
+    #[doc = "Bit 31 - MAC Address Valid"]
+    #[inline(always)]
+    pub fn mac_addr_ctl(&self) -> MAC_ADDR_CTL_R {
+        MAC_ADDR_CTL_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31 - MAC Address Valid"]
+    #[doc = "Bits 0:15"]
     #[inline(always)]
-    pub fn mac_addr_ctl(&mut self) -> MAC_ADDR_CTL_W<31> {
-        MAC_ADDR_CTL_W::new(self)
-    }
-    #[doc = "Bit 30 - MAC Address Type"]
-    #[inline(always)]
-    pub fn mac_addr_type(&mut self) -> MAC_ADDR_TYPE_W<30> {
-        MAC_ADDR_TYPE_W::new(self)
+    pub fn mac_addr_high(&mut self) -> MAC_ADDR_HIGH_W<0> {
+        MAC_ADDR_HIGH_W::new(self)
     }
     #[doc = "Bits 24:29 - MAC Address Byte Control Mask"]
     #[inline(always)]
     pub fn mac_addr_byte_ctl(&mut self) -> MAC_ADDR_BYTE_CTL_W<24> {
         MAC_ADDR_BYTE_CTL_W::new(self)
     }
-    #[doc = "Bits 0:15"]
+    #[doc = "Bit 30 - MAC Address Type"]
     #[inline(always)]
-    pub fn mac_addr_high(&mut self) -> MAC_ADDR_HIGH_W<0> {
-        MAC_ADDR_HIGH_W::new(self)
+    pub fn mac_addr_type(&mut self) -> MAC_ADDR_TYPE_W<30> {
+        MAC_ADDR_TYPE_W::new(self)
+    }
+    #[doc = "Bit 31 - MAC Address Valid"]
+    #[inline(always)]
+    pub fn mac_addr_ctl(&mut self) -> MAC_ADDR_CTL_W<31> {
+        MAC_ADDR_CTL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

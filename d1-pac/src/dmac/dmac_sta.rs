@@ -13,42 +13,9 @@ impl From<crate::R<DMAC_STA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "MBUS FIFO Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MBUS_FIFO_STATUS_A {
-    #[doc = "0: `0`"]
-    EMPTY = 0,
-    #[doc = "1: `1`"]
-    NOT_EMPTY = 1,
-}
-impl From<MBUS_FIFO_STATUS_A> for bool {
-    #[inline(always)]
-    fn from(variant: MBUS_FIFO_STATUS_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `mbus_fifo_status` reader - MBUS FIFO Status"]
-pub type MBUS_FIFO_STATUS_R = crate::BitReader<MBUS_FIFO_STATUS_A>;
-impl MBUS_FIFO_STATUS_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> MBUS_FIFO_STATUS_A {
-        match self.bits {
-            false => MBUS_FIFO_STATUS_A::EMPTY,
-            true => MBUS_FIFO_STATUS_A::NOT_EMPTY,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
-    #[inline(always)]
-    pub fn is_empty(&self) -> bool {
-        *self == MBUS_FIFO_STATUS_A::EMPTY
-    }
-    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
-    #[inline(always)]
-    pub fn is_not_empty(&self) -> bool {
-        *self == MBUS_FIFO_STATUS_A::NOT_EMPTY
-    }
-}
+#[doc = "Field `dma_status[0-15]` reader - DMA Channel\\[15:0\\]
+Status"]
+pub type DMA_STATUS_R = crate::BitReader<DMA_STATUS_A>;
 #[doc = "DMA Channel\\[15:0\\]
 Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -64,9 +31,6 @@ impl From<DMA_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `dma_status(0-15)` reader - DMA Channel\\[15:0\\]
-Status"]
-pub type DMA_STATUS_R = crate::BitReader<DMA_STATUS_A>;
 impl DMA_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -87,12 +51,43 @@ impl DMA_STATUS_R {
         *self == DMA_STATUS_A::BUSY
     }
 }
-impl R {
-    #[doc = "Bit 31 - MBUS FIFO Status"]
+#[doc = "Field `mbus_fifo_status` reader - MBUS FIFO Status"]
+pub type MBUS_FIFO_STATUS_R = crate::BitReader<MBUS_FIFO_STATUS_A>;
+#[doc = "MBUS FIFO Status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MBUS_FIFO_STATUS_A {
+    #[doc = "0: `0`"]
+    EMPTY = 0,
+    #[doc = "1: `1`"]
+    NOT_EMPTY = 1,
+}
+impl From<MBUS_FIFO_STATUS_A> for bool {
     #[inline(always)]
-    pub fn mbus_fifo_status(&self) -> MBUS_FIFO_STATUS_R {
-        MBUS_FIFO_STATUS_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: MBUS_FIFO_STATUS_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl MBUS_FIFO_STATUS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MBUS_FIFO_STATUS_A {
+        match self.bits {
+            false => MBUS_FIFO_STATUS_A::EMPTY,
+            true => MBUS_FIFO_STATUS_A::NOT_EMPTY,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[inline(always)]
+    pub fn is_empty(&self) -> bool {
+        *self == MBUS_FIFO_STATUS_A::EMPTY
+    }
+    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
+    #[inline(always)]
+    pub fn is_not_empty(&self) -> bool {
+        *self == MBUS_FIFO_STATUS_A::NOT_EMPTY
+    }
+}
+impl R {
     #[doc = "DMA Channel\\[15:0\\]
 Status"]
     #[inline(always)]
@@ -194,6 +189,11 @@ Status"]
     #[inline(always)]
     pub fn dma_status15(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 15) & 1) != 0)
+    }
+    #[doc = "Bit 31 - MBUS FIFO Status"]
+    #[inline(always)]
+    pub fn mbus_fifo_status(&self) -> MBUS_FIFO_STATUS_R {
+        MBUS_FIFO_STATUS_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "DMAC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmac_sta](index.html) module"]

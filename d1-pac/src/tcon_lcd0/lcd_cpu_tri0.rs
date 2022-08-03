@@ -34,38 +34,38 @@ impl From<crate::W<LCD_CPU_TRI0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `block_space` reader - The spaces between data blocks. It should be set >20*pixel."]
-pub type BLOCK_SPACE_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `block_space` writer - The spaces between data blocks. It should be set >20*pixel."]
-pub type BLOCK_SPACE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CPU_TRI0_SPEC, u16, u16, 12, O>;
 #[doc = "Field `block_size` reader - The size of data block. It is usually set as X."]
 pub type BLOCK_SIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `block_size` writer - The size of data block. It is usually set as X."]
 pub type BLOCK_SIZE_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_CPU_TRI0_SPEC, u16, u16, 12, O>;
+#[doc = "Field `block_space` reader - The spaces between data blocks. It should be set >20*pixel."]
+pub type BLOCK_SPACE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `block_space` writer - The spaces between data blocks. It should be set >20*pixel."]
+pub type BLOCK_SPACE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CPU_TRI0_SPEC, u16, u16, 12, O>;
 impl R {
-    #[doc = "Bits 16:27 - The spaces between data blocks. It should be set >20*pixel."]
-    #[inline(always)]
-    pub fn block_space(&self) -> BLOCK_SPACE_R {
-        BLOCK_SPACE_R::new(((self.bits >> 16) & 0x0fff) as u16)
-    }
     #[doc = "Bits 0:11 - The size of data block. It is usually set as X."]
     #[inline(always)]
     pub fn block_size(&self) -> BLOCK_SIZE_R {
         BLOCK_SIZE_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:27 - The spaces between data blocks. It should be set >20*pixel."]
     #[inline(always)]
-    pub fn block_space(&mut self) -> BLOCK_SPACE_W<16> {
-        BLOCK_SPACE_W::new(self)
+    pub fn block_space(&self) -> BLOCK_SPACE_R {
+        BLOCK_SPACE_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - The size of data block. It is usually set as X."]
     #[inline(always)]
     pub fn block_size(&mut self) -> BLOCK_SIZE_W<0> {
         BLOCK_SIZE_W::new(self)
+    }
+    #[doc = "Bits 16:27 - The spaces between data blocks. It should be set >20*pixel."]
+    #[inline(always)]
+    pub fn block_space(&mut self) -> BLOCK_SPACE_W<16> {
+        BLOCK_SPACE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<LVDS_BGR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `rst` reader - Reset"]
+pub type RST_R = crate::BitReader<RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RST_A {
@@ -48,8 +50,6 @@ impl From<RST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `rst` reader - Reset"]
-pub type RST_R = crate::BitReader<RST_A>;
 impl RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

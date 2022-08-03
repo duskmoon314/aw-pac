@@ -34,7 +34,85 @@ impl From<crate::W<TVE_DAC_CFG3_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `force_data_en` reader - "]
+pub type FORCE_DATA_EN_R = crate::BitReader<FORCE_DATA_EN_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum FORCE_DATA_EN_A {
+    #[doc = "0: DAC input data from TVE"]
+    TVE = 0,
+    #[doc = "1: DAC input data from FORCE_DATA_SET"]
+    FORCE_DATA_SET = 1,
+}
+impl From<FORCE_DATA_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: FORCE_DATA_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl FORCE_DATA_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> FORCE_DATA_EN_A {
+        match self.bits {
+            false => FORCE_DATA_EN_A::TVE,
+            true => FORCE_DATA_EN_A::FORCE_DATA_SET,
+        }
+    }
+    #[doc = "Checks if the value of the field is `TVE`"]
+    #[inline(always)]
+    pub fn is_tve(&self) -> bool {
+        *self == FORCE_DATA_EN_A::TVE
+    }
+    #[doc = "Checks if the value of the field is `FORCE_DATA_SET`"]
+    #[inline(always)]
+    pub fn is_force_data_set(&self) -> bool {
+        *self == FORCE_DATA_EN_A::FORCE_DATA_SET
+    }
+}
+#[doc = "Field `force_data_en` writer - "]
+pub type FORCE_DATA_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, TVE_DAC_CFG3_SPEC, FORCE_DATA_EN_A, O>;
+impl<'a, const O: u8> FORCE_DATA_EN_W<'a, O> {
+    #[doc = "DAC input data from TVE"]
+    #[inline(always)]
+    pub fn tve(self) -> &'a mut W {
+        self.variant(FORCE_DATA_EN_A::TVE)
+    }
+    #[doc = "DAC input data from FORCE_DATA_SET"]
+    #[inline(always)]
+    pub fn force_data_set(self) -> &'a mut W {
+        self.variant(FORCE_DATA_EN_A::FORCE_DATA_SET)
+    }
+}
+#[doc = "Field `force_data_set` reader - Force DAC input data"]
+pub type FORCE_DATA_SET_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `force_data_set` writer - Force DAC input data"]
+pub type FORCE_DATA_SET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, TVE_DAC_CFG3_SPEC, u16, u16, 10, O>;
+impl R {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn force_data_en(&self) -> FORCE_DATA_EN_R {
+        FORCE_DATA_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bits 16:25 - Force DAC input data"]
+    #[inline(always)]
+    pub fn force_data_set(&self) -> FORCE_DATA_SET_R {
+        FORCE_DATA_SET_R::new(((self.bits >> 16) & 0x03ff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn force_data_en(&mut self) -> FORCE_DATA_EN_W<0> {
+        FORCE_DATA_EN_W::new(self)
+    }
+    #[doc = "Bits 16:25 - Force DAC input data"]
+    #[inline(always)]
+    pub fn force_data_set(&mut self) -> FORCE_DATA_SET_W<16> {
+        FORCE_DATA_SET_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

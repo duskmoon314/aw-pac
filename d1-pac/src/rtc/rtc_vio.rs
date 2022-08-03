@@ -34,56 +34,8 @@ impl From<crate::W<RTC_VIO_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "VDD Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum V_SEL_A {
-    #[doc = "0: Resistance divider"]
-    RESISTANCE = 0,
-    #[doc = "1: Band gap"]
-    BAND = 1,
-}
-impl From<V_SEL_A> for bool {
-    #[inline(always)]
-    fn from(variant: V_SEL_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `v_sel` reader - VDD Select"]
-pub type V_SEL_R = crate::BitReader<V_SEL_A>;
-impl V_SEL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> V_SEL_A {
-        match self.bits {
-            false => V_SEL_A::RESISTANCE,
-            true => V_SEL_A::BAND,
-        }
-    }
-    #[doc = "Checks if the value of the field is `RESISTANCE`"]
-    #[inline(always)]
-    pub fn is_resistance(&self) -> bool {
-        *self == V_SEL_A::RESISTANCE
-    }
-    #[doc = "Checks if the value of the field is `BAND`"]
-    #[inline(always)]
-    pub fn is_band(&self) -> bool {
-        *self == V_SEL_A::BAND
-    }
-}
-#[doc = "Field `v_sel` writer - VDD Select"]
-pub type V_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, RTC_VIO_SPEC, V_SEL_A, O>;
-impl<'a, const O: u8> V_SEL_W<'a, O> {
-    #[doc = "Resistance divider"]
-    #[inline(always)]
-    pub fn resistance(self) -> &'a mut W {
-        self.variant(V_SEL_A::RESISTANCE)
-    }
-    #[doc = "Band gap"]
-    #[inline(always)]
-    pub fn band(self) -> &'a mut W {
-        self.variant(V_SEL_A::BAND)
-    }
-}
+#[doc = "Field `rtc_viou` reader - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
+pub type RTC_VIOU_R = crate::FieldReader<u8, RTC_VIOU_A>;
 #[doc = "RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V.\n\nValue on reset: 4"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -111,8 +63,6 @@ impl From<RTC_VIOU_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `rtc_viou` reader - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
-pub type RTC_VIOU_R = crate::FieldReader<u8, RTC_VIOU_A>;
 impl RTC_VIOU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -215,28 +165,78 @@ impl<'a, const O: u8> RTC_VIOU_W<'a, O> {
         self.variant(RTC_VIOU_A::V_1_3)
     }
 }
-impl R {
-    #[doc = "Bit 4 - VDD Select"]
+#[doc = "Field `v_sel` reader - VDD Select"]
+pub type V_SEL_R = crate::BitReader<V_SEL_A>;
+#[doc = "VDD Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum V_SEL_A {
+    #[doc = "0: Resistance divider"]
+    RESISTANCE = 0,
+    #[doc = "1: Band gap"]
+    BAND = 1,
+}
+impl From<V_SEL_A> for bool {
     #[inline(always)]
-    pub fn v_sel(&self) -> V_SEL_R {
-        V_SEL_R::new(((self.bits >> 4) & 1) != 0)
+    fn from(variant: V_SEL_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl V_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> V_SEL_A {
+        match self.bits {
+            false => V_SEL_A::RESISTANCE,
+            true => V_SEL_A::BAND,
+        }
+    }
+    #[doc = "Checks if the value of the field is `RESISTANCE`"]
+    #[inline(always)]
+    pub fn is_resistance(&self) -> bool {
+        *self == V_SEL_A::RESISTANCE
+    }
+    #[doc = "Checks if the value of the field is `BAND`"]
+    #[inline(always)]
+    pub fn is_band(&self) -> bool {
+        *self == V_SEL_A::BAND
+    }
+}
+#[doc = "Field `v_sel` writer - VDD Select"]
+pub type V_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, RTC_VIO_SPEC, V_SEL_A, O>;
+impl<'a, const O: u8> V_SEL_W<'a, O> {
+    #[doc = "Resistance divider"]
+    #[inline(always)]
+    pub fn resistance(self) -> &'a mut W {
+        self.variant(V_SEL_A::RESISTANCE)
+    }
+    #[doc = "Band gap"]
+    #[inline(always)]
+    pub fn band(self) -> &'a mut W {
+        self.variant(V_SEL_A::BAND)
+    }
+}
+impl R {
     #[doc = "Bits 0:2 - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
     #[inline(always)]
     pub fn rtc_viou(&self) -> RTC_VIOU_R {
         RTC_VIOU_R::new((self.bits & 7) as u8)
     }
-}
-impl W {
     #[doc = "Bit 4 - VDD Select"]
     #[inline(always)]
-    pub fn v_sel(&mut self) -> V_SEL_W<4> {
-        V_SEL_W::new(self)
+    pub fn v_sel(&self) -> V_SEL_R {
+        V_SEL_R::new(((self.bits >> 4) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:2 - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
     #[inline(always)]
     pub fn rtc_viou(&mut self) -> RTC_VIOU_W<0> {
         RTC_VIOU_W::new(self)
+    }
+    #[doc = "Bit 4 - VDD Select"]
+    #[inline(always)]
+    pub fn v_sel(&mut self) -> V_SEL_W<4> {
+        V_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,11 +34,8 @@ impl From<crate::W<PB_EINT_DEB_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `deb_clk_pre_scale` reader - Debounce Clock Pre_scale n"]
-pub type DEB_CLK_PRE_SCALE_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `deb_clk_pre_scale` writer - Debounce Clock Pre_scale n"]
-pub type DEB_CLK_PRE_SCALE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PB_EINT_DEB_SPEC, u8, u8, 3, O>;
+#[doc = "Field `pio_int_clk_select` reader - PIO Interrupt Clock Select"]
+pub type PIO_INT_CLK_SELECT_R = crate::BitReader<PIO_INT_CLK_SELECT_A>;
 #[doc = "PIO Interrupt Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PIO_INT_CLK_SELECT_A {
@@ -53,8 +50,6 @@ impl From<PIO_INT_CLK_SELECT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `pio_int_clk_select` reader - PIO Interrupt Clock Select"]
-pub type PIO_INT_CLK_SELECT_R = crate::BitReader<PIO_INT_CLK_SELECT_A>;
 impl PIO_INT_CLK_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -90,28 +85,33 @@ impl<'a, const O: u8> PIO_INT_CLK_SELECT_W<'a, O> {
         self.variant(PIO_INT_CLK_SELECT_A::HOSC_24M_HZ)
     }
 }
+#[doc = "Field `deb_clk_pre_scale` reader - Debounce Clock Pre_scale n"]
+pub type DEB_CLK_PRE_SCALE_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `deb_clk_pre_scale` writer - Debounce Clock Pre_scale n"]
+pub type DEB_CLK_PRE_SCALE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PB_EINT_DEB_SPEC, u8, u8, 3, O>;
 impl R {
-    #[doc = "Bits 4:6 - Debounce Clock Pre_scale n"]
-    #[inline(always)]
-    pub fn deb_clk_pre_scale(&self) -> DEB_CLK_PRE_SCALE_R {
-        DEB_CLK_PRE_SCALE_R::new(((self.bits >> 4) & 7) as u8)
-    }
     #[doc = "Bit 0 - PIO Interrupt Clock Select"]
     #[inline(always)]
     pub fn pio_int_clk_select(&self) -> PIO_INT_CLK_SELECT_R {
         PIO_INT_CLK_SELECT_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bits 4:6 - Debounce Clock Pre_scale n"]
     #[inline(always)]
-    pub fn deb_clk_pre_scale(&mut self) -> DEB_CLK_PRE_SCALE_W<4> {
-        DEB_CLK_PRE_SCALE_W::new(self)
+    pub fn deb_clk_pre_scale(&self) -> DEB_CLK_PRE_SCALE_R {
+        DEB_CLK_PRE_SCALE_R::new(((self.bits >> 4) & 7) as u8)
     }
+}
+impl W {
     #[doc = "Bit 0 - PIO Interrupt Clock Select"]
     #[inline(always)]
     pub fn pio_int_clk_select(&mut self) -> PIO_INT_CLK_SELECT_W<0> {
         PIO_INT_CLK_SELECT_W::new(self)
+    }
+    #[doc = "Bits 4:6 - Debounce Clock Pre_scale n"]
+    #[inline(always)]
+    pub fn deb_clk_pre_scale(&mut self) -> DEB_CLK_PRE_SCALE_W<4> {
+        DEB_CLK_PRE_SCALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

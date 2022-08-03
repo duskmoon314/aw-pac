@@ -34,7 +34,51 @@ impl From<crate::W<TVE_DAC_CFG2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `r_set` reader - "]
+pub type R_SET_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `r_set` writer - "]
+pub type R_SET_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TVE_DAC_CFG2_SPEC, u8, u8, 6, O>;
+#[doc = "Field `s2s1` reader - "]
+pub type S2S1_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `s2s1` writer - "]
+pub type S2S1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TVE_DAC_CFG2_SPEC, u8, u8, 2, O>;
+#[doc = "Field `ab` reader - (I config output current for different peak voltage)"]
+pub type AB_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ab` writer - (I config output current for different peak voltage)"]
+pub type AB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TVE_DAC_CFG2_SPEC, u8, u8, 5, O>;
+impl R {
+    #[doc = "Bits 0:5"]
+    #[inline(always)]
+    pub fn r_set(&self) -> R_SET_R {
+        R_SET_R::new((self.bits & 0x3f) as u8)
+    }
+    #[doc = "Bits 6:7"]
+    #[inline(always)]
+    pub fn s2s1(&self) -> S2S1_R {
+        S2S1_R::new(((self.bits >> 6) & 3) as u8)
+    }
+    #[doc = "Bits 8:12 - (I config output current for different peak voltage)"]
+    #[inline(always)]
+    pub fn ab(&self) -> AB_R {
+        AB_R::new(((self.bits >> 8) & 0x1f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:5"]
+    #[inline(always)]
+    pub fn r_set(&mut self) -> R_SET_W<0> {
+        R_SET_W::new(self)
+    }
+    #[doc = "Bits 6:7"]
+    #[inline(always)]
+    pub fn s2s1(&mut self) -> S2S1_W<6> {
+        S2S1_W::new(self)
+    }
+    #[doc = "Bits 8:12 - (I config output current for different peak voltage)"]
+    #[inline(always)]
+    pub fn ab(&mut self) -> AB_W<8> {
+        AB_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

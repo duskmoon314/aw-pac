@@ -34,6 +34,8 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ctrl` reader - PLIC Control"]
+pub type CTRL_R = crate::BitReader<CTRL_A>;
 #[doc = "PLIC Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CTRL_A {
@@ -48,8 +50,6 @@ impl From<CTRL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ctrl` reader - PLIC Control"]
-pub type CTRL_R = crate::BitReader<CTRL_A>;
 impl CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

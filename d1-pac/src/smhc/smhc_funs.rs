@@ -34,106 +34,8 @@ impl From<crate::W<SMHC_FUNS_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Abort Read Data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ABT_RDATA_A {
-    #[doc = "0: `0`"]
-    IGNORED = 0,
-    #[doc = "1: `1`"]
-    ABORT = 1,
-}
-impl From<ABT_RDATA_A> for bool {
-    #[inline(always)]
-    fn from(variant: ABT_RDATA_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `abt_rdata` reader - Abort Read Data"]
-pub type ABT_RDATA_R = crate::BitReader<ABT_RDATA_A>;
-impl ABT_RDATA_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> ABT_RDATA_A {
-        match self.bits {
-            false => ABT_RDATA_A::IGNORED,
-            true => ABT_RDATA_A::ABORT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `IGNORED`"]
-    #[inline(always)]
-    pub fn is_ignored(&self) -> bool {
-        *self == ABT_RDATA_A::IGNORED
-    }
-    #[doc = "Checks if the value of the field is `ABORT`"]
-    #[inline(always)]
-    pub fn is_abort(&self) -> bool {
-        *self == ABT_RDATA_A::ABORT
-    }
-}
-#[doc = "Field `abt_rdata` writer - Abort Read Data"]
-pub type ABT_RDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, ABT_RDATA_A, O>;
-impl<'a, const O: u8> ABT_RDATA_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn ignored(self) -> &'a mut W {
-        self.variant(ABT_RDATA_A::IGNORED)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn abort(self) -> &'a mut W {
-        self.variant(ABT_RDATA_A::ABORT)
-    }
-}
-#[doc = "Read Wait\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum READ_WAIT_A {
-    #[doc = "0: Clear SDIO read wait"]
-    CLEAR = 0,
-    #[doc = "1: Assert SDIO read wait"]
-    ASSERT = 1,
-}
-impl From<READ_WAIT_A> for bool {
-    #[inline(always)]
-    fn from(variant: READ_WAIT_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `read_wait` reader - Read Wait"]
-pub type READ_WAIT_R = crate::BitReader<READ_WAIT_A>;
-impl READ_WAIT_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> READ_WAIT_A {
-        match self.bits {
-            false => READ_WAIT_A::CLEAR,
-            true => READ_WAIT_A::ASSERT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `CLEAR`"]
-    #[inline(always)]
-    pub fn is_clear(&self) -> bool {
-        *self == READ_WAIT_A::CLEAR
-    }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == READ_WAIT_A::ASSERT
-    }
-}
-#[doc = "Field `read_wait` writer - Read Wait"]
-pub type READ_WAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, READ_WAIT_A, O>;
-impl<'a, const O: u8> READ_WAIT_W<'a, O> {
-    #[doc = "Clear SDIO read wait"]
-    #[inline(always)]
-    pub fn clear(self) -> &'a mut W {
-        self.variant(READ_WAIT_A::CLEAR)
-    }
-    #[doc = "Assert SDIO read wait"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(READ_WAIT_A::ASSERT)
-    }
-}
+#[doc = "Field `host_send_mimc_irqresq` reader - Host Send MMC IRQ Response"]
+pub type HOST_SEND_MIMC_IRQRESQ_R = crate::BitReader<HOST_SEND_MIMC_IRQRESQ_A>;
 #[doc = "Host Send MMC IRQ Response\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HOST_SEND_MIMC_IRQRESQ_A {
@@ -148,8 +50,6 @@ impl From<HOST_SEND_MIMC_IRQRESQ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `host_send_mimc_irqresq` reader - Host Send MMC IRQ Response"]
-pub type HOST_SEND_MIMC_IRQRESQ_R = crate::BitReader<HOST_SEND_MIMC_IRQRESQ_A>;
 impl HOST_SEND_MIMC_IRQRESQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -185,38 +85,138 @@ impl<'a, const O: u8> HOST_SEND_MIMC_IRQRESQ_W<'a, O> {
         self.variant(HOST_SEND_MIMC_IRQRESQ_A::SEND)
     }
 }
-impl R {
-    #[doc = "Bit 2 - Abort Read Data"]
+#[doc = "Field `read_wait` reader - Read Wait"]
+pub type READ_WAIT_R = crate::BitReader<READ_WAIT_A>;
+#[doc = "Read Wait\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum READ_WAIT_A {
+    #[doc = "0: Clear SDIO read wait"]
+    CLEAR = 0,
+    #[doc = "1: Assert SDIO read wait"]
+    ASSERT = 1,
+}
+impl From<READ_WAIT_A> for bool {
     #[inline(always)]
-    pub fn abt_rdata(&self) -> ABT_RDATA_R {
-        ABT_RDATA_R::new(((self.bits >> 2) & 1) != 0)
+    fn from(variant: READ_WAIT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl READ_WAIT_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> READ_WAIT_A {
+        match self.bits {
+            false => READ_WAIT_A::CLEAR,
+            true => READ_WAIT_A::ASSERT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `CLEAR`"]
+    #[inline(always)]
+    pub fn is_clear(&self) -> bool {
+        *self == READ_WAIT_A::CLEAR
+    }
+    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[inline(always)]
+    pub fn is_assert(&self) -> bool {
+        *self == READ_WAIT_A::ASSERT
+    }
+}
+#[doc = "Field `read_wait` writer - Read Wait"]
+pub type READ_WAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, READ_WAIT_A, O>;
+impl<'a, const O: u8> READ_WAIT_W<'a, O> {
+    #[doc = "Clear SDIO read wait"]
+    #[inline(always)]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(READ_WAIT_A::CLEAR)
+    }
+    #[doc = "Assert SDIO read wait"]
+    #[inline(always)]
+    pub fn assert(self) -> &'a mut W {
+        self.variant(READ_WAIT_A::ASSERT)
+    }
+}
+#[doc = "Field `abt_rdata` reader - Abort Read Data"]
+pub type ABT_RDATA_R = crate::BitReader<ABT_RDATA_A>;
+#[doc = "Abort Read Data\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ABT_RDATA_A {
+    #[doc = "0: `0`"]
+    IGNORED = 0,
+    #[doc = "1: `1`"]
+    ABORT = 1,
+}
+impl From<ABT_RDATA_A> for bool {
+    #[inline(always)]
+    fn from(variant: ABT_RDATA_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ABT_RDATA_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ABT_RDATA_A {
+        match self.bits {
+            false => ABT_RDATA_A::IGNORED,
+            true => ABT_RDATA_A::ABORT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `IGNORED`"]
+    #[inline(always)]
+    pub fn is_ignored(&self) -> bool {
+        *self == ABT_RDATA_A::IGNORED
+    }
+    #[doc = "Checks if the value of the field is `ABORT`"]
+    #[inline(always)]
+    pub fn is_abort(&self) -> bool {
+        *self == ABT_RDATA_A::ABORT
+    }
+}
+#[doc = "Field `abt_rdata` writer - Abort Read Data"]
+pub type ABT_RDATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_FUNS_SPEC, ABT_RDATA_A, O>;
+impl<'a, const O: u8> ABT_RDATA_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn ignored(self) -> &'a mut W {
+        self.variant(ABT_RDATA_A::IGNORED)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn abort(self) -> &'a mut W {
+        self.variant(ABT_RDATA_A::ABORT)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Host Send MMC IRQ Response"]
+    #[inline(always)]
+    pub fn host_send_mimc_irqresq(&self) -> HOST_SEND_MIMC_IRQRESQ_R {
+        HOST_SEND_MIMC_IRQRESQ_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Read Wait"]
     #[inline(always)]
     pub fn read_wait(&self) -> READ_WAIT_R {
         READ_WAIT_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Host Send MMC IRQ Response"]
+    #[doc = "Bit 2 - Abort Read Data"]
     #[inline(always)]
-    pub fn host_send_mimc_irqresq(&self) -> HOST_SEND_MIMC_IRQRESQ_R {
-        HOST_SEND_MIMC_IRQRESQ_R::new((self.bits & 1) != 0)
+    pub fn abt_rdata(&self) -> ABT_RDATA_R {
+        ABT_RDATA_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 2 - Abort Read Data"]
+    #[doc = "Bit 0 - Host Send MMC IRQ Response"]
     #[inline(always)]
-    pub fn abt_rdata(&mut self) -> ABT_RDATA_W<2> {
-        ABT_RDATA_W::new(self)
+    pub fn host_send_mimc_irqresq(&mut self) -> HOST_SEND_MIMC_IRQRESQ_W<0> {
+        HOST_SEND_MIMC_IRQRESQ_W::new(self)
     }
     #[doc = "Bit 1 - Read Wait"]
     #[inline(always)]
     pub fn read_wait(&mut self) -> READ_WAIT_W<1> {
         READ_WAIT_W::new(self)
     }
-    #[doc = "Bit 0 - Host Send MMC IRQ Response"]
+    #[doc = "Bit 2 - Abort Read Data"]
     #[inline(always)]
-    pub fn host_send_mimc_irqresq(&mut self) -> HOST_SEND_MIMC_IRQRESQ_W<0> {
-        HOST_SEND_MIMC_IRQRESQ_W::new(self)
+    pub fn abt_rdata(&mut self) -> ABT_RDATA_W<2> {
+        ABT_RDATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

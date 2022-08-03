@@ -34,56 +34,8 @@ impl From<crate::W<SPI_BGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SPI_RST_A {
-    #[doc = "0: `0`"]
-    ASSERT = 0,
-    #[doc = "1: `1`"]
-    DEASSERT = 1,
-}
-impl From<SPI_RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: SPI_RST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `spi(0-1)_rst` reader - Reset"]
-pub type SPI_RST_R = crate::BitReader<SPI_RST_A>;
-impl SPI_RST_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> SPI_RST_A {
-        match self.bits {
-            false => SPI_RST_A::ASSERT,
-            true => SPI_RST_A::DEASSERT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == SPI_RST_A::ASSERT
-    }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
-    #[inline(always)]
-    pub fn is_deassert(&self) -> bool {
-        *self == SPI_RST_A::DEASSERT
-    }
-}
-#[doc = "Fields `spi(0-1)_rst` writer - Reset"]
-pub type SPI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BGR_SPEC, SPI_RST_A, O>;
-impl<'a, const O: u8> SPI_RST_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(SPI_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(SPI_RST_A::DEASSERT)
-    }
-}
+#[doc = "Field `spi_gating[0-1]` reader - Gating Clock"]
+pub type SPI_GATING_R = crate::BitReader<SPI_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum SPI_GATING_A {
@@ -98,8 +50,6 @@ impl From<SPI_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `spi(0-1)_gating` reader - Gating Clock"]
-pub type SPI_GATING_R = crate::BitReader<SPI_GATING_A>;
 impl SPI_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -120,7 +70,7 @@ impl SPI_GATING_R {
         *self == SPI_GATING_A::PASS
     }
 }
-#[doc = "Fields `spi(0-1)_gating` writer - Gating Clock"]
+#[doc = "Field `spi_gating[0-1]` writer - Gating Clock"]
 pub type SPI_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BGR_SPEC, SPI_GATING_A, O>;
 impl<'a, const O: u8> SPI_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -134,22 +84,57 @@ impl<'a, const O: u8> SPI_GATING_W<'a, O> {
         self.variant(SPI_GATING_A::PASS)
     }
 }
+#[doc = "Field `spi_rst[0-1]` reader - Reset"]
+pub type SPI_RST_R = crate::BitReader<SPI_RST_A>;
+#[doc = "Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SPI_RST_A {
+    #[doc = "0: `0`"]
+    ASSERT = 0,
+    #[doc = "1: `1`"]
+    DEASSERT = 1,
+}
+impl From<SPI_RST_A> for bool {
+    #[inline(always)]
+    fn from(variant: SPI_RST_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl SPI_RST_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SPI_RST_A {
+        match self.bits {
+            false => SPI_RST_A::ASSERT,
+            true => SPI_RST_A::DEASSERT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[inline(always)]
+    pub fn is_assert(&self) -> bool {
+        *self == SPI_RST_A::ASSERT
+    }
+    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[inline(always)]
+    pub fn is_deassert(&self) -> bool {
+        *self == SPI_RST_A::DEASSERT
+    }
+}
+#[doc = "Field `spi_rst[0-1]` writer - Reset"]
+pub type SPI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BGR_SPEC, SPI_RST_A, O>;
+impl<'a, const O: u8> SPI_RST_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn assert(self) -> &'a mut W {
+        self.variant(SPI_RST_A::ASSERT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn deassert(self) -> &'a mut W {
+        self.variant(SPI_RST_A::DEASSERT)
+    }
+}
 impl R {
-    #[doc = "Reset"]
-    #[inline(always)]
-    pub unsafe fn spi_rst(&self, n: u8) -> SPI_RST_R {
-        SPI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Reset"]
-    #[inline(always)]
-    pub fn spi0_rst(&self) -> SPI_RST_R {
-        SPI_RST_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - Reset"]
-    #[inline(always)]
-    pub fn spi1_rst(&self) -> SPI_RST_R {
-        SPI_RST_R::new(((self.bits >> 17) & 1) != 0)
-    }
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn spi_gating(&self, n: u8) -> SPI_GATING_R {
@@ -165,23 +150,23 @@ impl R {
     pub fn spi1_gating(&self) -> SPI_GATING_R {
         SPI_GATING_R::new(((self.bits >> 1) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Reset"]
     #[inline(always)]
-    pub unsafe fn spi_rst<const O: u8>(&mut self) -> SPI_RST_W<O> {
-        SPI_RST_W::new(self)
+    pub unsafe fn spi_rst(&self, n: u8) -> SPI_RST_R {
+        SPI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn spi0_rst(&mut self) -> SPI_RST_W<16> {
-        SPI_RST_W::new(self)
+    pub fn spi0_rst(&self) -> SPI_RST_R {
+        SPI_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
-    pub fn spi1_rst(&mut self) -> SPI_RST_W<17> {
-        SPI_RST_W::new(self)
+    pub fn spi1_rst(&self) -> SPI_RST_R {
+        SPI_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn spi_gating<const O: u8>(&mut self) -> SPI_GATING_W<O> {
@@ -196,6 +181,21 @@ impl W {
     #[inline(always)]
     pub fn spi1_gating(&mut self) -> SPI_GATING_W<1> {
         SPI_GATING_W::new(self)
+    }
+    #[doc = "Reset"]
+    #[inline(always)]
+    pub unsafe fn spi_rst<const O: u8>(&mut self) -> SPI_RST_W<O> {
+        SPI_RST_W::new(self)
+    }
+    #[doc = "Bit 16 - Reset"]
+    #[inline(always)]
+    pub fn spi0_rst(&mut self) -> SPI_RST_W<16> {
+        SPI_RST_W::new(self)
+    }
+    #[doc = "Bit 17 - Reset"]
+    #[inline(always)]
+    pub fn spi1_rst(&mut self) -> SPI_RST_W<17> {
+        SPI_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

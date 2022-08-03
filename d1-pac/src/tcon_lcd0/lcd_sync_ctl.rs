@@ -34,108 +34,8 @@ impl From<crate::W<LCD_SYNC_CTL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "LCD Controller Work mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LCD_CTRL_WORK_MODE_A {
-    #[doc = "0: Single DSI mode"]
-    S_INGLE = 0,
-    #[doc = "1: Dual DSI mode"]
-    D_UAL = 1,
-}
-impl From<LCD_CTRL_WORK_MODE_A> for bool {
-    #[inline(always)]
-    fn from(variant: LCD_CTRL_WORK_MODE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `lcd_ctrl_work_mode` reader - LCD Controller Work mode"]
-pub type LCD_CTRL_WORK_MODE_R = crate::BitReader<LCD_CTRL_WORK_MODE_A>;
-impl LCD_CTRL_WORK_MODE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> LCD_CTRL_WORK_MODE_A {
-        match self.bits {
-            false => LCD_CTRL_WORK_MODE_A::S_INGLE,
-            true => LCD_CTRL_WORK_MODE_A::D_UAL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `S_INGLE`"]
-    #[inline(always)]
-    pub fn is_s_ingle(&self) -> bool {
-        *self == LCD_CTRL_WORK_MODE_A::S_INGLE
-    }
-    #[doc = "Checks if the value of the field is `D_UAL`"]
-    #[inline(always)]
-    pub fn is_d_ual(&self) -> bool {
-        *self == LCD_CTRL_WORK_MODE_A::D_UAL
-    }
-}
-#[doc = "Field `lcd_ctrl_work_mode` writer - LCD Controller Work mode"]
-pub type LCD_CTRL_WORK_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, LCD_SYNC_CTL_SPEC, LCD_CTRL_WORK_MODE_A, O>;
-impl<'a, const O: u8> LCD_CTRL_WORK_MODE_W<'a, O> {
-    #[doc = "Single DSI mode"]
-    #[inline(always)]
-    pub fn s_ingle(self) -> &'a mut W {
-        self.variant(LCD_CTRL_WORK_MODE_A::S_INGLE)
-    }
-    #[doc = "Dual DSI mode"]
-    #[inline(always)]
-    pub fn d_ual(self) -> &'a mut W {
-        self.variant(LCD_CTRL_WORK_MODE_A::D_UAL)
-    }
-}
-#[doc = "LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LCD_CYRL_SYNC_MASTER_SLAVE_A {
-    #[doc = "0: Master"]
-    M_ASTER = 0,
-    #[doc = "1: Slave"]
-    S_LAVE = 1,
-}
-impl From<LCD_CYRL_SYNC_MASTER_SLAVE_A> for bool {
-    #[inline(always)]
-    fn from(variant: LCD_CYRL_SYNC_MASTER_SLAVE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `lcd_cyrl_sync_master_slave` reader - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
-pub type LCD_CYRL_SYNC_MASTER_SLAVE_R = crate::BitReader<LCD_CYRL_SYNC_MASTER_SLAVE_A>;
-impl LCD_CYRL_SYNC_MASTER_SLAVE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> LCD_CYRL_SYNC_MASTER_SLAVE_A {
-        match self.bits {
-            false => LCD_CYRL_SYNC_MASTER_SLAVE_A::M_ASTER,
-            true => LCD_CYRL_SYNC_MASTER_SLAVE_A::S_LAVE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `M_ASTER`"]
-    #[inline(always)]
-    pub fn is_m_aster(&self) -> bool {
-        *self == LCD_CYRL_SYNC_MASTER_SLAVE_A::M_ASTER
-    }
-    #[doc = "Checks if the value of the field is `S_LAVE`"]
-    #[inline(always)]
-    pub fn is_s_lave(&self) -> bool {
-        *self == LCD_CYRL_SYNC_MASTER_SLAVE_A::S_LAVE
-    }
-}
-#[doc = "Field `lcd_cyrl_sync_master_slave` writer - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
-pub type LCD_CYRL_SYNC_MASTER_SLAVE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, LCD_SYNC_CTL_SPEC, LCD_CYRL_SYNC_MASTER_SLAVE_A, O>;
-impl<'a, const O: u8> LCD_CYRL_SYNC_MASTER_SLAVE_W<'a, O> {
-    #[doc = "Master"]
-    #[inline(always)]
-    pub fn m_aster(self) -> &'a mut W {
-        self.variant(LCD_CYRL_SYNC_MASTER_SLAVE_A::M_ASTER)
-    }
-    #[doc = "Slave"]
-    #[inline(always)]
-    pub fn s_lave(self) -> &'a mut W {
-        self.variant(LCD_CYRL_SYNC_MASTER_SLAVE_A::S_LAVE)
-    }
-}
+#[doc = "Field `lcd_ctrl_sync_mode` reader - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
+pub type LCD_CTRL_SYNC_MODE_R = crate::BitReader<LCD_CTRL_SYNC_MODE_A>;
 #[doc = "LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LCD_CTRL_SYNC_MODE_A {
@@ -150,8 +50,6 @@ impl From<LCD_CTRL_SYNC_MODE_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `lcd_ctrl_sync_mode` reader - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
-pub type LCD_CTRL_SYNC_MODE_R = crate::BitReader<LCD_CTRL_SYNC_MODE_A>;
 impl LCD_CTRL_SYNC_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -187,38 +85,140 @@ impl<'a, const O: u8> LCD_CTRL_SYNC_MODE_W<'a, O> {
         self.variant(LCD_CTRL_SYNC_MODE_A::S_YNC_EVERY)
     }
 }
-impl R {
-    #[doc = "Bit 8 - LCD Controller Work mode"]
+#[doc = "Field `lcd_cyrl_sync_master_slave` reader - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
+pub type LCD_CYRL_SYNC_MASTER_SLAVE_R = crate::BitReader<LCD_CYRL_SYNC_MASTER_SLAVE_A>;
+#[doc = "LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCD_CYRL_SYNC_MASTER_SLAVE_A {
+    #[doc = "0: Master"]
+    M_ASTER = 0,
+    #[doc = "1: Slave"]
+    S_LAVE = 1,
+}
+impl From<LCD_CYRL_SYNC_MASTER_SLAVE_A> for bool {
     #[inline(always)]
-    pub fn lcd_ctrl_work_mode(&self) -> LCD_CTRL_WORK_MODE_R {
-        LCD_CTRL_WORK_MODE_R::new(((self.bits >> 8) & 1) != 0)
+    fn from(variant: LCD_CYRL_SYNC_MASTER_SLAVE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LCD_CYRL_SYNC_MASTER_SLAVE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCD_CYRL_SYNC_MASTER_SLAVE_A {
+        match self.bits {
+            false => LCD_CYRL_SYNC_MASTER_SLAVE_A::M_ASTER,
+            true => LCD_CYRL_SYNC_MASTER_SLAVE_A::S_LAVE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `M_ASTER`"]
+    #[inline(always)]
+    pub fn is_m_aster(&self) -> bool {
+        *self == LCD_CYRL_SYNC_MASTER_SLAVE_A::M_ASTER
+    }
+    #[doc = "Checks if the value of the field is `S_LAVE`"]
+    #[inline(always)]
+    pub fn is_s_lave(&self) -> bool {
+        *self == LCD_CYRL_SYNC_MASTER_SLAVE_A::S_LAVE
+    }
+}
+#[doc = "Field `lcd_cyrl_sync_master_slave` writer - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
+pub type LCD_CYRL_SYNC_MASTER_SLAVE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LCD_SYNC_CTL_SPEC, LCD_CYRL_SYNC_MASTER_SLAVE_A, O>;
+impl<'a, const O: u8> LCD_CYRL_SYNC_MASTER_SLAVE_W<'a, O> {
+    #[doc = "Master"]
+    #[inline(always)]
+    pub fn m_aster(self) -> &'a mut W {
+        self.variant(LCD_CYRL_SYNC_MASTER_SLAVE_A::M_ASTER)
+    }
+    #[doc = "Slave"]
+    #[inline(always)]
+    pub fn s_lave(self) -> &'a mut W {
+        self.variant(LCD_CYRL_SYNC_MASTER_SLAVE_A::S_LAVE)
+    }
+}
+#[doc = "Field `lcd_ctrl_work_mode` reader - LCD Controller Work mode"]
+pub type LCD_CTRL_WORK_MODE_R = crate::BitReader<LCD_CTRL_WORK_MODE_A>;
+#[doc = "LCD Controller Work mode\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LCD_CTRL_WORK_MODE_A {
+    #[doc = "0: Single DSI mode"]
+    S_INGLE = 0,
+    #[doc = "1: Dual DSI mode"]
+    D_UAL = 1,
+}
+impl From<LCD_CTRL_WORK_MODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: LCD_CTRL_WORK_MODE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl LCD_CTRL_WORK_MODE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LCD_CTRL_WORK_MODE_A {
+        match self.bits {
+            false => LCD_CTRL_WORK_MODE_A::S_INGLE,
+            true => LCD_CTRL_WORK_MODE_A::D_UAL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `S_INGLE`"]
+    #[inline(always)]
+    pub fn is_s_ingle(&self) -> bool {
+        *self == LCD_CTRL_WORK_MODE_A::S_INGLE
+    }
+    #[doc = "Checks if the value of the field is `D_UAL`"]
+    #[inline(always)]
+    pub fn is_d_ual(&self) -> bool {
+        *self == LCD_CTRL_WORK_MODE_A::D_UAL
+    }
+}
+#[doc = "Field `lcd_ctrl_work_mode` writer - LCD Controller Work mode"]
+pub type LCD_CTRL_WORK_MODE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, LCD_SYNC_CTL_SPEC, LCD_CTRL_WORK_MODE_A, O>;
+impl<'a, const O: u8> LCD_CTRL_WORK_MODE_W<'a, O> {
+    #[doc = "Single DSI mode"]
+    #[inline(always)]
+    pub fn s_ingle(self) -> &'a mut W {
+        self.variant(LCD_CTRL_WORK_MODE_A::S_INGLE)
+    }
+    #[doc = "Dual DSI mode"]
+    #[inline(always)]
+    pub fn d_ual(self) -> &'a mut W {
+        self.variant(LCD_CTRL_WORK_MODE_A::D_UAL)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
+    #[inline(always)]
+    pub fn lcd_ctrl_sync_mode(&self) -> LCD_CTRL_SYNC_MODE_R {
+        LCD_CTRL_SYNC_MODE_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 4 - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
     pub fn lcd_cyrl_sync_master_slave(&self) -> LCD_CYRL_SYNC_MASTER_SLAVE_R {
         LCD_CYRL_SYNC_MASTER_SLAVE_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 0 - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
+    #[doc = "Bit 8 - LCD Controller Work mode"]
     #[inline(always)]
-    pub fn lcd_ctrl_sync_mode(&self) -> LCD_CTRL_SYNC_MODE_R {
-        LCD_CTRL_SYNC_MODE_R::new((self.bits & 1) != 0)
+    pub fn lcd_ctrl_work_mode(&self) -> LCD_CTRL_WORK_MODE_R {
+        LCD_CTRL_WORK_MODE_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 8 - LCD Controller Work mode"]
+    #[doc = "Bit 0 - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
-    pub fn lcd_ctrl_work_mode(&mut self) -> LCD_CTRL_WORK_MODE_W<8> {
-        LCD_CTRL_WORK_MODE_W::new(self)
+    pub fn lcd_ctrl_sync_mode(&mut self) -> LCD_CTRL_SYNC_MODE_W<0> {
+        LCD_CTRL_SYNC_MODE_W::new(self)
     }
     #[doc = "Bit 4 - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
     pub fn lcd_cyrl_sync_master_slave(&mut self) -> LCD_CYRL_SYNC_MASTER_SLAVE_W<4> {
         LCD_CYRL_SYNC_MASTER_SLAVE_W::new(self)
     }
-    #[doc = "Bit 0 - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
+    #[doc = "Bit 8 - LCD Controller Work mode"]
     #[inline(always)]
-    pub fn lcd_ctrl_sync_mode(&mut self) -> LCD_CTRL_SYNC_MODE_W<0> {
-        LCD_CTRL_SYNC_MODE_W::new(self)
+    pub fn lcd_ctrl_work_mode(&mut self) -> LCD_CTRL_WORK_MODE_W<8> {
+        LCD_CTRL_WORK_MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,59 +34,8 @@ impl From<crate::W<PCCR45_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Select PWM45 Clock Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum PWM45_CLK_SRC_SEL_A {
-    #[doc = "0: HOSC"]
-    HOSC = 0,
-    #[doc = "1: APB0"]
-    APB0 = 1,
-}
-impl From<PWM45_CLK_SRC_SEL_A> for u8 {
-    #[inline(always)]
-    fn from(variant: PWM45_CLK_SRC_SEL_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `pwm45_clk_src_sel` reader - Select PWM45 Clock Source"]
-pub type PWM45_CLK_SRC_SEL_R = crate::FieldReader<u8, PWM45_CLK_SRC_SEL_A>;
-impl PWM45_CLK_SRC_SEL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<PWM45_CLK_SRC_SEL_A> {
-        match self.bits {
-            0 => Some(PWM45_CLK_SRC_SEL_A::HOSC),
-            1 => Some(PWM45_CLK_SRC_SEL_A::APB0),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `HOSC`"]
-    #[inline(always)]
-    pub fn is_hosc(&self) -> bool {
-        *self == PWM45_CLK_SRC_SEL_A::HOSC
-    }
-    #[doc = "Checks if the value of the field is `APB0`"]
-    #[inline(always)]
-    pub fn is_apb0(&self) -> bool {
-        *self == PWM45_CLK_SRC_SEL_A::APB0
-    }
-}
-#[doc = "Field `pwm45_clk_src_sel` writer - Select PWM45 Clock Source"]
-pub type PWM45_CLK_SRC_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PCCR45_SPEC, u8, PWM45_CLK_SRC_SEL_A, 2, O>;
-impl<'a, const O: u8> PWM45_CLK_SRC_SEL_W<'a, O> {
-    #[doc = "HOSC"]
-    #[inline(always)]
-    pub fn hosc(self) -> &'a mut W {
-        self.variant(PWM45_CLK_SRC_SEL_A::HOSC)
-    }
-    #[doc = "APB0"]
-    #[inline(always)]
-    pub fn apb0(self) -> &'a mut W {
-        self.variant(PWM45_CLK_SRC_SEL_A::APB0)
-    }
-}
+#[doc = "Field `pwm45_clk_div_m` reader - PWM45 Clock Divide M"]
+pub type PWM45_CLK_DIV_M_R = crate::FieldReader<u8, PWM45_CLK_DIV_M_A>;
 #[doc = "PWM45 Clock Divide M\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -116,8 +65,6 @@ impl From<PWM45_CLK_DIV_M_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `pwm45_clk_div_m` reader - PWM45 Clock Divide M"]
-pub type PWM45_CLK_DIV_M_R = crate::FieldReader<u8, PWM45_CLK_DIV_M_A>;
 impl PWM45_CLK_DIV_M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -231,28 +178,81 @@ impl<'a, const O: u8> PWM45_CLK_DIV_M_W<'a, O> {
         self.variant(PWM45_CLK_DIV_M_A::M256)
     }
 }
-impl R {
-    #[doc = "Bits 7:8 - Select PWM45 Clock Source"]
+#[doc = "Field `pwm45_clk_src_sel` reader - Select PWM45 Clock Source"]
+pub type PWM45_CLK_SRC_SEL_R = crate::FieldReader<u8, PWM45_CLK_SRC_SEL_A>;
+#[doc = "Select PWM45 Clock Source\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum PWM45_CLK_SRC_SEL_A {
+    #[doc = "0: HOSC"]
+    HOSC = 0,
+    #[doc = "1: APB0"]
+    APB0 = 1,
+}
+impl From<PWM45_CLK_SRC_SEL_A> for u8 {
     #[inline(always)]
-    pub fn pwm45_clk_src_sel(&self) -> PWM45_CLK_SRC_SEL_R {
-        PWM45_CLK_SRC_SEL_R::new(((self.bits >> 7) & 3) as u8)
+    fn from(variant: PWM45_CLK_SRC_SEL_A) -> Self {
+        variant as _
     }
+}
+impl PWM45_CLK_SRC_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<PWM45_CLK_SRC_SEL_A> {
+        match self.bits {
+            0 => Some(PWM45_CLK_SRC_SEL_A::HOSC),
+            1 => Some(PWM45_CLK_SRC_SEL_A::APB0),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `HOSC`"]
+    #[inline(always)]
+    pub fn is_hosc(&self) -> bool {
+        *self == PWM45_CLK_SRC_SEL_A::HOSC
+    }
+    #[doc = "Checks if the value of the field is `APB0`"]
+    #[inline(always)]
+    pub fn is_apb0(&self) -> bool {
+        *self == PWM45_CLK_SRC_SEL_A::APB0
+    }
+}
+#[doc = "Field `pwm45_clk_src_sel` writer - Select PWM45 Clock Source"]
+pub type PWM45_CLK_SRC_SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PCCR45_SPEC, u8, PWM45_CLK_SRC_SEL_A, 2, O>;
+impl<'a, const O: u8> PWM45_CLK_SRC_SEL_W<'a, O> {
+    #[doc = "HOSC"]
+    #[inline(always)]
+    pub fn hosc(self) -> &'a mut W {
+        self.variant(PWM45_CLK_SRC_SEL_A::HOSC)
+    }
+    #[doc = "APB0"]
+    #[inline(always)]
+    pub fn apb0(self) -> &'a mut W {
+        self.variant(PWM45_CLK_SRC_SEL_A::APB0)
+    }
+}
+impl R {
     #[doc = "Bits 0:3 - PWM45 Clock Divide M"]
     #[inline(always)]
     pub fn pwm45_clk_div_m(&self) -> PWM45_CLK_DIV_M_R {
         PWM45_CLK_DIV_M_R::new((self.bits & 0x0f) as u8)
     }
-}
-impl W {
     #[doc = "Bits 7:8 - Select PWM45 Clock Source"]
     #[inline(always)]
-    pub fn pwm45_clk_src_sel(&mut self) -> PWM45_CLK_SRC_SEL_W<7> {
-        PWM45_CLK_SRC_SEL_W::new(self)
+    pub fn pwm45_clk_src_sel(&self) -> PWM45_CLK_SRC_SEL_R {
+        PWM45_CLK_SRC_SEL_R::new(((self.bits >> 7) & 3) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:3 - PWM45 Clock Divide M"]
     #[inline(always)]
     pub fn pwm45_clk_div_m(&mut self) -> PWM45_CLK_DIV_M_W<0> {
         PWM45_CLK_DIV_M_W::new(self)
+    }
+    #[doc = "Bits 7:8 - Select PWM45 Clock Source"]
+    #[inline(always)]
+    pub fn pwm45_clk_src_sel(&mut self) -> PWM45_CLK_SRC_SEL_W<7> {
+        PWM45_CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

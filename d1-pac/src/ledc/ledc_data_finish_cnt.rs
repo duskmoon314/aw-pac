@@ -34,23 +34,23 @@ impl From<crate::W<LEDC_DATA_FINISH_CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `led_data_finish_cnt` reader - "]
+pub type LED_DATA_FINISH_CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `led_wait_data_time` reader - "]
 pub type LED_WAIT_DATA_TIME_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `led_wait_data_time` writer - "]
 pub type LED_WAIT_DATA_TIME_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LEDC_DATA_FINISH_CNT_SPEC, u16, u16, 14, O>;
-#[doc = "Field `led_data_finish_cnt` reader - "]
-pub type LED_DATA_FINISH_CNT_R = crate::FieldReader<u16, u16>;
 impl R {
-    #[doc = "Bits 16:29"]
-    #[inline(always)]
-    pub fn led_wait_data_time(&self) -> LED_WAIT_DATA_TIME_R {
-        LED_WAIT_DATA_TIME_R::new(((self.bits >> 16) & 0x3fff) as u16)
-    }
     #[doc = "Bits 0:12"]
     #[inline(always)]
     pub fn led_data_finish_cnt(&self) -> LED_DATA_FINISH_CNT_R {
         LED_DATA_FINISH_CNT_R::new((self.bits & 0x1fff) as u16)
+    }
+    #[doc = "Bits 16:29"]
+    #[inline(always)]
+    pub fn led_wait_data_time(&self) -> LED_WAIT_DATA_TIME_R {
+        LED_WAIT_DATA_TIME_R::new(((self.bits >> 16) & 0x3fff) as u16)
     }
 }
 impl W {

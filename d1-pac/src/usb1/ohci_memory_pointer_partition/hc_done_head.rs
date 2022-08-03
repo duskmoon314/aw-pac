@@ -34,23 +34,23 @@ impl From<crate::W<HC_DONE_HEAD_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dh_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
+pub type DH_3_0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dh_31_4` reader - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
 pub type DH_31_4_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `dh_31_4` writer - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
 pub type DH_31_4_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_DONE_HEAD_SPEC, u32, u32, 28, O>;
-#[doc = "Field `dh_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
-pub type DH_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
-    #[doc = "Bits 4:31 - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
-    #[inline(always)]
-    pub fn dh_31_4(&self) -> DH_31_4_R {
-        DH_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
-    }
     #[doc = "Bits 0:3 - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
     #[inline(always)]
     pub fn dh_3_0(&self) -> DH_3_0_R {
         DH_3_0_R::new((self.bits & 0x0f) as u8)
+    }
+    #[doc = "Bits 4:31 - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
+    #[inline(always)]
+    pub fn dh_31_4(&self) -> DH_31_4_R {
+        DH_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
     }
 }
 impl W {

@@ -34,6 +34,8 @@ impl From<crate::W<GP_DATA_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ch_data_irq_en[0-1]` reader - Channel Data Interrupt Enable"]
+pub type CH_DATA_IRQ_EN_R = crate::BitReader<CH_DATA_IRQ_EN_A>;
 #[doc = "Channel Data Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH_DATA_IRQ_EN_A {
@@ -48,8 +50,6 @@ impl From<CH_DATA_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ch(0-1)_data_irq_en` reader - Channel Data Interrupt Enable"]
-pub type CH_DATA_IRQ_EN_R = crate::BitReader<CH_DATA_IRQ_EN_A>;
 impl CH_DATA_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl CH_DATA_IRQ_EN_R {
         *self == CH_DATA_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Fields `ch(0-1)_data_irq_en` writer - Channel Data Interrupt Enable"]
+#[doc = "Field `ch_data_irq_en[0-1]` writer - Channel Data Interrupt Enable"]
 pub type CH_DATA_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_DATA_INTC_SPEC, CH_DATA_IRQ_EN_A, O>;
 impl<'a, const O: u8> CH_DATA_IRQ_EN_W<'a, O> {

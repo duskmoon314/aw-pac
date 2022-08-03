@@ -34,6 +34,8 @@ impl From<crate::W<SPINLOCK_LOCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `taken` reader - Lock State"]
+pub type TAKEN_R = crate::BitReader<TAKEN_A>;
 #[doc = "Lock State\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TAKEN_A {
@@ -48,8 +50,6 @@ impl From<TAKEN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `taken` reader - Lock State"]
-pub type TAKEN_R = crate::BitReader<TAKEN_A>;
 impl TAKEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<PB_EINT_STATUS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `eint_status[0-11]` reader - External INT Pending Bit"]
+pub type EINT_STATUS_R = crate::BitReader<EINT_STATUS_A>;
 #[doc = "External INT Pending Bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EINT_STATUS_A {
@@ -48,8 +50,6 @@ impl From<EINT_STATUS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `eint(0-11)_status` reader - External INT Pending Bit"]
-pub type EINT_STATUS_R = crate::BitReader<EINT_STATUS_A>;
 impl EINT_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl EINT_STATUS_R {
         *self == EINT_STATUS_A::PENDING
     }
 }
-#[doc = "Fields `eint(0-11)_status` writer - External INT Pending Bit"]
+#[doc = "Field `eint_status[0-11]` writer - External INT Pending Bit"]
 pub type EINT_STATUS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, PB_EINT_STATUS_SPEC, EINT_STATUS_A, O>;
 impl<'a, const O: u8> EINT_STATUS_W<'a, O> {

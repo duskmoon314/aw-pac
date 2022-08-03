@@ -13,6 +13,44 @@ impl From<crate::R<SPINLOCK_SYSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `iu0` reader - In-Use flag0"]
+pub type IU0_R = crate::BitReader<IU0_A>;
+#[doc = "In-Use flag0\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IU0_A {
+    #[doc = "0: All lock registers 0-31 are not taken"]
+    ALL_NOT_TAKEN = 0,
+    #[doc = "1: At least one of the lock registers 0-31 is taken"]
+    AT_LEAST_ONE_TAKEN = 1,
+}
+impl From<IU0_A> for bool {
+    #[inline(always)]
+    fn from(variant: IU0_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl IU0_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IU0_A {
+        match self.bits {
+            false => IU0_A::ALL_NOT_TAKEN,
+            true => IU0_A::AT_LEAST_ONE_TAKEN,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ALL_NOT_TAKEN`"]
+    #[inline(always)]
+    pub fn is_all_not_taken(&self) -> bool {
+        *self == IU0_A::ALL_NOT_TAKEN
+    }
+    #[doc = "Checks if the value of the field is `AT_LEAST_ONE_TAKEN`"]
+    #[inline(always)]
+    pub fn is_at_least_one_taken(&self) -> bool {
+        *self == IU0_A::AT_LEAST_ONE_TAKEN
+    }
+}
+#[doc = "Field `locks_num` reader - Number of lock registers implemented"]
+pub type LOCKS_NUM_R = crate::FieldReader<u8, LOCKS_NUM_A>;
 #[doc = "Number of lock registers implemented\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -32,8 +70,6 @@ impl From<LOCKS_NUM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `locks_num` reader - Number of lock registers implemented"]
-pub type LOCKS_NUM_R = crate::FieldReader<u8, LOCKS_NUM_A>;
 impl LOCKS_NUM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -67,52 +103,16 @@ impl LOCKS_NUM_R {
         *self == LOCKS_NUM_A::N128
     }
 }
-#[doc = "In-Use flag0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IU0_A {
-    #[doc = "0: All lock registers 0-31 are not taken"]
-    ALL_NOT_TAKEN = 0,
-    #[doc = "1: At least one of the lock registers 0-31 is taken"]
-    AT_LEAST_ONE_TAKEN = 1,
-}
-impl From<IU0_A> for bool {
-    #[inline(always)]
-    fn from(variant: IU0_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `iu0` reader - In-Use flag0"]
-pub type IU0_R = crate::BitReader<IU0_A>;
-impl IU0_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> IU0_A {
-        match self.bits {
-            false => IU0_A::ALL_NOT_TAKEN,
-            true => IU0_A::AT_LEAST_ONE_TAKEN,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ALL_NOT_TAKEN`"]
-    #[inline(always)]
-    pub fn is_all_not_taken(&self) -> bool {
-        *self == IU0_A::ALL_NOT_TAKEN
-    }
-    #[doc = "Checks if the value of the field is `AT_LEAST_ONE_TAKEN`"]
-    #[inline(always)]
-    pub fn is_at_least_one_taken(&self) -> bool {
-        *self == IU0_A::AT_LEAST_ONE_TAKEN
-    }
-}
 impl R {
-    #[doc = "Bits 28:29 - Number of lock registers implemented"]
-    #[inline(always)]
-    pub fn locks_num(&self) -> LOCKS_NUM_R {
-        LOCKS_NUM_R::new(((self.bits >> 28) & 3) as u8)
-    }
     #[doc = "Bit 8 - In-Use flag0"]
     #[inline(always)]
     pub fn iu0(&self) -> IU0_R {
         IU0_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    #[doc = "Bits 28:29 - Number of lock registers implemented"]
+    #[inline(always)]
+    pub fn locks_num(&self) -> LOCKS_NUM_R {
+        LOCKS_NUM_R::new(((self.bits >> 28) & 3) as u8)
     }
 }
 #[doc = "Spinlock System Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spinlock_systatus](index.html) module"]

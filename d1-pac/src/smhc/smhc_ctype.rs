@@ -34,6 +34,8 @@ impl From<crate::W<SMHC_CTYPE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `card_wid` reader - Card Width"]
+pub type CARD_WID_R = crate::FieldReader<u8, CARD_WID_A>;
 #[doc = "Card Width\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -51,8 +53,6 @@ impl From<CARD_WID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `card_wid` reader - Card Width"]
-pub type CARD_WID_R = crate::FieldReader<u8, CARD_WID_A>;
 impl CARD_WID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

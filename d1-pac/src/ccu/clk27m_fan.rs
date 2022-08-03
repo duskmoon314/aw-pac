@@ -34,56 +34,16 @@ impl From<crate::W<CLK27M_FAN_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Gating for CLK27M\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum GATING_A {
-    #[doc = "0: `0`"]
-    OFF = 0,
-    #[doc = "1: `1`"]
-    ON = 1,
-}
-impl From<GATING_A> for bool {
-    #[inline(always)]
-    fn from(variant: GATING_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `gating` reader - Gating for CLK27M"]
-pub type GATING_R = crate::BitReader<GATING_A>;
-impl GATING_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> GATING_A {
-        match self.bits {
-            false => GATING_A::OFF,
-            true => GATING_A::ON,
-        }
-    }
-    #[doc = "Checks if the value of the field is `OFF`"]
-    #[inline(always)]
-    pub fn is_off(&self) -> bool {
-        *self == GATING_A::OFF
-    }
-    #[doc = "Checks if the value of the field is `ON`"]
-    #[inline(always)]
-    pub fn is_on(&self) -> bool {
-        *self == GATING_A::ON
-    }
-}
-#[doc = "Field `gating` writer - Gating for CLK27M"]
-pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK27M_FAN_SPEC, GATING_A, O>;
-impl<'a, const O: u8> GATING_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn off(self) -> &'a mut W {
-        self.variant(GATING_A::OFF)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn on(self) -> &'a mut W {
-        self.variant(GATING_A::ON)
-    }
-}
+#[doc = "Field `div0` reader - Factor M"]
+pub type DIV0_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `div0` writer - Factor M"]
+pub type DIV0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 5, O>;
+#[doc = "Field `div1` reader - Factor N"]
+pub type DIV1_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `div1` writer - Factor N"]
+pub type DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 2, O>;
+#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
+pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -99,8 +59,6 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `clk_src_sel` reader - Clock Source Select"]
-pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -137,56 +95,98 @@ impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
         self.variant(CLK_SRC_SEL_A::PLL_VIDEO1_1X)
     }
 }
-#[doc = "Field `div1` reader - Factor N"]
-pub type DIV1_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `div1` writer - Factor N"]
-pub type DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 2, O>;
-#[doc = "Field `div0` reader - Factor M"]
-pub type DIV0_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `div0` writer - Factor M"]
-pub type DIV0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, u8, u8, 5, O>;
-impl R {
-    #[doc = "Bit 31 - Gating for CLK27M"]
+#[doc = "Field `gating` reader - Gating for CLK27M"]
+pub type GATING_R = crate::BitReader<GATING_A>;
+#[doc = "Gating for CLK27M\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum GATING_A {
+    #[doc = "0: `0`"]
+    OFF = 0,
+    #[doc = "1: `1`"]
+    ON = 1,
+}
+impl From<GATING_A> for bool {
     #[inline(always)]
-    pub fn gating(&self) -> GATING_R {
-        GATING_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: GATING_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = "Bits 24:25 - Clock Source Select"]
+}
+impl GATING_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
-        CLK_SRC_SEL_R::new(((self.bits >> 24) & 3) as u8)
+    pub fn variant(&self) -> GATING_A {
+        match self.bits {
+            false => GATING_A::OFF,
+            true => GATING_A::ON,
+        }
+    }
+    #[doc = "Checks if the value of the field is `OFF`"]
+    #[inline(always)]
+    pub fn is_off(&self) -> bool {
+        *self == GATING_A::OFF
+    }
+    #[doc = "Checks if the value of the field is `ON`"]
+    #[inline(always)]
+    pub fn is_on(&self) -> bool {
+        *self == GATING_A::ON
+    }
+}
+#[doc = "Field `gating` writer - Gating for CLK27M"]
+pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLK27M_FAN_SPEC, GATING_A, O>;
+impl<'a, const O: u8> GATING_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn off(self) -> &'a mut W {
+        self.variant(GATING_A::OFF)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn on(self) -> &'a mut W {
+        self.variant(GATING_A::ON)
+    }
+}
+impl R {
+    #[doc = "Bits 0:4 - Factor M"]
+    #[inline(always)]
+    pub fn div0(&self) -> DIV0_R {
+        DIV0_R::new((self.bits & 0x1f) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn div1(&self) -> DIV1_R {
         DIV1_R::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 0:4 - Factor M"]
+    #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
-    pub fn div0(&self) -> DIV0_R {
-        DIV0_R::new((self.bits & 0x1f) as u8)
+    pub fn clk_src_sel(&self) -> CLK_SRC_SEL_R {
+        CLK_SRC_SEL_R::new(((self.bits >> 24) & 3) as u8)
+    }
+    #[doc = "Bit 31 - Gating for CLK27M"]
+    #[inline(always)]
+    pub fn gating(&self) -> GATING_R {
+        GATING_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 31 - Gating for CLK27M"]
+    #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
-    pub fn gating(&mut self) -> GATING_W<31> {
-        GATING_W::new(self)
-    }
-    #[doc = "Bits 24:25 - Clock Source Select"]
-    #[inline(always)]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
-        CLK_SRC_SEL_W::new(self)
+    pub fn div0(&mut self) -> DIV0_W<0> {
+        DIV0_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn div1(&mut self) -> DIV1_W<8> {
         DIV1_W::new(self)
     }
-    #[doc = "Bits 0:4 - Factor M"]
+    #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
-    pub fn div0(&mut self) -> DIV0_W<0> {
-        DIV0_W::new(self)
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
+        CLK_SRC_SEL_W::new(self)
+    }
+    #[doc = "Bit 31 - Gating for CLK27M"]
+    #[inline(always)]
+    pub fn gating(&mut self) -> GATING_W<31> {
+        GATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

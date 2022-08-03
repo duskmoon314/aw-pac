@@ -34,6 +34,8 @@ impl From<crate::W<CIR_TAC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tac` reader - TX FIFO Available Space Counter"]
+pub type TAC_R = crate::FieldReader<u8, TAC_A>;
 #[doc = "TX FIFO Available Space Counter\n\nValue on reset: 128"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -303,8 +305,6 @@ impl From<TAC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `tac` reader - TX FIFO Available Space Counter"]
-pub type TAC_R = crate::FieldReader<u8, TAC_A>;
 impl TAC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

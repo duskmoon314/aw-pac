@@ -34,36 +34,36 @@ impl From<crate::W<TV_BASIC1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ls_xo` reader - Width Is LS_XO+1"]
-pub type LS_XO_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `ls_xo` writer - Width Is LS_XO+1"]
-pub type LS_XO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC1_SPEC, u16, u16, 12, O>;
 #[doc = "Field `ls_yo` reader - Width Is LS_YO+1\n\nNote: This version LS_YO = TV_YI"]
 pub type LS_YO_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ls_yo` writer - Width Is LS_YO+1\n\nNote: This version LS_YO = TV_YI"]
 pub type LS_YO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC1_SPEC, u16, u16, 12, O>;
+#[doc = "Field `ls_xo` reader - Width Is LS_XO+1"]
+pub type LS_XO_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ls_xo` writer - Width Is LS_XO+1"]
+pub type LS_XO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC1_SPEC, u16, u16, 12, O>;
 impl R {
-    #[doc = "Bits 16:27 - Width Is LS_XO+1"]
-    #[inline(always)]
-    pub fn ls_xo(&self) -> LS_XO_R {
-        LS_XO_R::new(((self.bits >> 16) & 0x0fff) as u16)
-    }
     #[doc = "Bits 0:11 - Width Is LS_YO+1\n\nNote: This version LS_YO = TV_YI"]
     #[inline(always)]
     pub fn ls_yo(&self) -> LS_YO_R {
         LS_YO_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:27 - Width Is LS_XO+1"]
     #[inline(always)]
-    pub fn ls_xo(&mut self) -> LS_XO_W<16> {
-        LS_XO_W::new(self)
+    pub fn ls_xo(&self) -> LS_XO_R {
+        LS_XO_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Width Is LS_YO+1\n\nNote: This version LS_YO = TV_YI"]
     #[inline(always)]
     pub fn ls_yo(&mut self) -> LS_YO_W<0> {
         LS_YO_W::new(self)
+    }
+    #[doc = "Bits 16:27 - Width Is LS_XO+1"]
+    #[inline(always)]
+    pub fn ls_xo(&mut self) -> LS_XO_W<16> {
+        LS_XO_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

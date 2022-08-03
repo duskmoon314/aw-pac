@@ -34,56 +34,8 @@ impl From<crate::W<EMAC_TX_CTL0_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Enable Transmitter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TX_EN_A {
-    #[doc = "0: `0`"]
-    DISABLE = 0,
-    #[doc = "1: `1`"]
-    ENABLE = 1,
-}
-impl From<TX_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TX_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tx_en` reader - Enable Transmitter"]
-pub type TX_EN_R = crate::BitReader<TX_EN_A>;
-impl TX_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TX_EN_A {
-        match self.bits {
-            false => TX_EN_A::DISABLE,
-            true => TX_EN_A::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline(always)]
-    pub fn is_disable(&self) -> bool {
-        *self == TX_EN_A::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline(always)]
-    pub fn is_enable(&self) -> bool {
-        *self == TX_EN_A::ENABLE
-    }
-}
-#[doc = "Field `tx_en` writer - Enable Transmitter"]
-pub type TX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_EN_A, O>;
-impl<'a, const O: u8> TX_EN_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(TX_EN_A::DISABLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(TX_EN_A::ENABLE)
-    }
-}
+#[doc = "Field `tx_frm_len_ctl` reader - Frame Transmit Length Control"]
+pub type TX_FRM_LEN_CTL_R = crate::BitReader<TX_FRM_LEN_CTL_A>;
 #[doc = "Frame Transmit Length Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TX_FRM_LEN_CTL_A {
@@ -98,8 +50,6 @@ impl From<TX_FRM_LEN_CTL_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tx_frm_len_ctl` reader - Frame Transmit Length Control"]
-pub type TX_FRM_LEN_CTL_R = crate::BitReader<TX_FRM_LEN_CTL_A>;
 impl TX_FRM_LEN_CTL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -135,28 +85,78 @@ impl<'a, const O: u8> TX_FRM_LEN_CTL_W<'a, O> {
         self.variant(TX_FRM_LEN_CTL_A::B16384)
     }
 }
-impl R {
-    #[doc = "Bit 31 - Enable Transmitter"]
+#[doc = "Field `tx_en` reader - Enable Transmitter"]
+pub type TX_EN_R = crate::BitReader<TX_EN_A>;
+#[doc = "Enable Transmitter\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TX_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<TX_EN_A> for bool {
     #[inline(always)]
-    pub fn tx_en(&self) -> TX_EN_R {
-        TX_EN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: TX_EN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl TX_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TX_EN_A {
+        match self.bits {
+            false => TX_EN_A::DISABLE,
+            true => TX_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == TX_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == TX_EN_A::ENABLE
+    }
+}
+#[doc = "Field `tx_en` writer - Enable Transmitter"]
+pub type TX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_TX_CTL0_SPEC, TX_EN_A, O>;
+impl<'a, const O: u8> TX_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TX_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TX_EN_A::ENABLE)
+    }
+}
+impl R {
     #[doc = "Bit 30 - Frame Transmit Length Control"]
     #[inline(always)]
     pub fn tx_frm_len_ctl(&self) -> TX_FRM_LEN_CTL_R {
         TX_FRM_LEN_CTL_R::new(((self.bits >> 30) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 31 - Enable Transmitter"]
     #[inline(always)]
-    pub fn tx_en(&mut self) -> TX_EN_W<31> {
-        TX_EN_W::new(self)
+    pub fn tx_en(&self) -> TX_EN_R {
+        TX_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 30 - Frame Transmit Length Control"]
     #[inline(always)]
     pub fn tx_frm_len_ctl(&mut self) -> TX_FRM_LEN_CTL_W<30> {
         TX_FRM_LEN_CTL_W::new(self)
+    }
+    #[doc = "Bit 31 - Enable Transmitter"]
+    #[inline(always)]
+    pub fn tx_en(&mut self) -> TX_EN_W<31> {
+        TX_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

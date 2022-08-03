@@ -34,6 +34,8 @@ impl From<crate::W<PRIO_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `priority` reader - "]
+pub type PRIORITY_R = crate::FieldReader<u8, PRIORITY_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -109,8 +111,6 @@ impl From<PRIORITY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `priority` reader - "]
-pub type PRIORITY_R = crate::FieldReader<u8, PRIORITY_A>;
 impl PRIORITY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

@@ -34,6 +34,82 @@ impl From<crate::W<CPU_AXI_CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `cpu_div1` reader - Factor M"]
+pub type CPU_DIV1_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `cpu_div1` writer - Factor M"]
+pub type CPU_DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, O>;
+#[doc = "Field `cpu_div2` reader - Factor N"]
+pub type CPU_DIV2_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `cpu_div2` writer - Factor N"]
+pub type CPU_DIV2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, O>;
+#[doc = "Field `pll_cpu_out_ext_divp` reader - PLL Output External Divider P"]
+pub type PLL_CPU_OUT_EXT_DIVP_R = crate::FieldReader<u8, PLL_CPU_OUT_EXT_DIVP_A>;
+#[doc = "PLL Output External Divider P\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum PLL_CPU_OUT_EXT_DIVP_A {
+    #[doc = "0: `0`"]
+    P1 = 0,
+    #[doc = "1: `1`"]
+    P2 = 1,
+    #[doc = "2: `10`"]
+    P4 = 2,
+}
+impl From<PLL_CPU_OUT_EXT_DIVP_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PLL_CPU_OUT_EXT_DIVP_A) -> Self {
+        variant as _
+    }
+}
+impl PLL_CPU_OUT_EXT_DIVP_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<PLL_CPU_OUT_EXT_DIVP_A> {
+        match self.bits {
+            0 => Some(PLL_CPU_OUT_EXT_DIVP_A::P1),
+            1 => Some(PLL_CPU_OUT_EXT_DIVP_A::P2),
+            2 => Some(PLL_CPU_OUT_EXT_DIVP_A::P4),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `P1`"]
+    #[inline(always)]
+    pub fn is_p1(&self) -> bool {
+        *self == PLL_CPU_OUT_EXT_DIVP_A::P1
+    }
+    #[doc = "Checks if the value of the field is `P2`"]
+    #[inline(always)]
+    pub fn is_p2(&self) -> bool {
+        *self == PLL_CPU_OUT_EXT_DIVP_A::P2
+    }
+    #[doc = "Checks if the value of the field is `P4`"]
+    #[inline(always)]
+    pub fn is_p4(&self) -> bool {
+        *self == PLL_CPU_OUT_EXT_DIVP_A::P4
+    }
+}
+#[doc = "Field `pll_cpu_out_ext_divp` writer - PLL Output External Divider P"]
+pub type PLL_CPU_OUT_EXT_DIVP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, PLL_CPU_OUT_EXT_DIVP_A, 2, O>;
+impl<'a, const O: u8> PLL_CPU_OUT_EXT_DIVP_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn p1(self) -> &'a mut W {
+        self.variant(PLL_CPU_OUT_EXT_DIVP_A::P1)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn p2(self) -> &'a mut W {
+        self.variant(PLL_CPU_OUT_EXT_DIVP_A::P2)
+    }
+    #[doc = "`10`"]
+    #[inline(always)]
+    pub fn p4(self) -> &'a mut W {
+        self.variant(PLL_CPU_OUT_EXT_DIVP_A::P4)
+    }
+}
+#[doc = "Field `cpu_clk_sel` reader - Clock Source Select"]
+pub type CPU_CLK_SEL_R = crate::FieldReader<u8, CPU_CLK_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -59,8 +135,6 @@ impl From<CPU_CLK_SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `cpu_clk_sel` reader - Clock Source Select"]
-pub type CPU_CLK_SEL_R = crate::FieldReader<u8, CPU_CLK_SEL_A>;
 impl CPU_CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -152,122 +226,48 @@ impl<'a, const O: u8> CPU_CLK_SEL_W<'a, O> {
         self.variant(CPU_CLK_SEL_A::PLL_PERI_800M)
     }
 }
-#[doc = "PLL Output External Divider P\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum PLL_CPU_OUT_EXT_DIVP_A {
-    #[doc = "0: `0`"]
-    P1 = 0,
-    #[doc = "1: `1`"]
-    P2 = 1,
-    #[doc = "2: `10`"]
-    P4 = 2,
-}
-impl From<PLL_CPU_OUT_EXT_DIVP_A> for u8 {
-    #[inline(always)]
-    fn from(variant: PLL_CPU_OUT_EXT_DIVP_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `pll_cpu_out_ext_divp` reader - PLL Output External Divider P"]
-pub type PLL_CPU_OUT_EXT_DIVP_R = crate::FieldReader<u8, PLL_CPU_OUT_EXT_DIVP_A>;
-impl PLL_CPU_OUT_EXT_DIVP_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<PLL_CPU_OUT_EXT_DIVP_A> {
-        match self.bits {
-            0 => Some(PLL_CPU_OUT_EXT_DIVP_A::P1),
-            1 => Some(PLL_CPU_OUT_EXT_DIVP_A::P2),
-            2 => Some(PLL_CPU_OUT_EXT_DIVP_A::P4),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `P1`"]
-    #[inline(always)]
-    pub fn is_p1(&self) -> bool {
-        *self == PLL_CPU_OUT_EXT_DIVP_A::P1
-    }
-    #[doc = "Checks if the value of the field is `P2`"]
-    #[inline(always)]
-    pub fn is_p2(&self) -> bool {
-        *self == PLL_CPU_OUT_EXT_DIVP_A::P2
-    }
-    #[doc = "Checks if the value of the field is `P4`"]
-    #[inline(always)]
-    pub fn is_p4(&self) -> bool {
-        *self == PLL_CPU_OUT_EXT_DIVP_A::P4
-    }
-}
-#[doc = "Field `pll_cpu_out_ext_divp` writer - PLL Output External Divider P"]
-pub type PLL_CPU_OUT_EXT_DIVP_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, PLL_CPU_OUT_EXT_DIVP_A, 2, O>;
-impl<'a, const O: u8> PLL_CPU_OUT_EXT_DIVP_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn p1(self) -> &'a mut W {
-        self.variant(PLL_CPU_OUT_EXT_DIVP_A::P1)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn p2(self) -> &'a mut W {
-        self.variant(PLL_CPU_OUT_EXT_DIVP_A::P2)
-    }
-    #[doc = "`10`"]
-    #[inline(always)]
-    pub fn p4(self) -> &'a mut W {
-        self.variant(PLL_CPU_OUT_EXT_DIVP_A::P4)
-    }
-}
-#[doc = "Field `cpu_div2` reader - Factor N"]
-pub type CPU_DIV2_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `cpu_div2` writer - Factor N"]
-pub type CPU_DIV2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, O>;
-#[doc = "Field `cpu_div1` reader - Factor M"]
-pub type CPU_DIV1_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `cpu_div1` writer - Factor M"]
-pub type CPU_DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_SPEC, u8, u8, 2, O>;
 impl R {
-    #[doc = "Bits 24:26 - Clock Source Select"]
+    #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
-    pub fn cpu_clk_sel(&self) -> CPU_CLK_SEL_R {
-        CPU_CLK_SEL_R::new(((self.bits >> 24) & 7) as u8)
-    }
-    #[doc = "Bits 16:17 - PLL Output External Divider P"]
-    #[inline(always)]
-    pub fn pll_cpu_out_ext_divp(&self) -> PLL_CPU_OUT_EXT_DIVP_R {
-        PLL_CPU_OUT_EXT_DIVP_R::new(((self.bits >> 16) & 3) as u8)
+    pub fn cpu_div1(&self) -> CPU_DIV1_R {
+        CPU_DIV1_R::new((self.bits & 3) as u8)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn cpu_div2(&self) -> CPU_DIV2_R {
         CPU_DIV2_R::new(((self.bits >> 8) & 3) as u8)
     }
-    #[doc = "Bits 0:1 - Factor M"]
+    #[doc = "Bits 16:17 - PLL Output External Divider P"]
     #[inline(always)]
-    pub fn cpu_div1(&self) -> CPU_DIV1_R {
-        CPU_DIV1_R::new((self.bits & 3) as u8)
+    pub fn pll_cpu_out_ext_divp(&self) -> PLL_CPU_OUT_EXT_DIVP_R {
+        PLL_CPU_OUT_EXT_DIVP_R::new(((self.bits >> 16) & 3) as u8)
+    }
+    #[doc = "Bits 24:26 - Clock Source Select"]
+    #[inline(always)]
+    pub fn cpu_clk_sel(&self) -> CPU_CLK_SEL_R {
+        CPU_CLK_SEL_R::new(((self.bits >> 24) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 24:26 - Clock Source Select"]
+    #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
-    pub fn cpu_clk_sel(&mut self) -> CPU_CLK_SEL_W<24> {
-        CPU_CLK_SEL_W::new(self)
-    }
-    #[doc = "Bits 16:17 - PLL Output External Divider P"]
-    #[inline(always)]
-    pub fn pll_cpu_out_ext_divp(&mut self) -> PLL_CPU_OUT_EXT_DIVP_W<16> {
-        PLL_CPU_OUT_EXT_DIVP_W::new(self)
+    pub fn cpu_div1(&mut self) -> CPU_DIV1_W<0> {
+        CPU_DIV1_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     pub fn cpu_div2(&mut self) -> CPU_DIV2_W<8> {
         CPU_DIV2_W::new(self)
     }
-    #[doc = "Bits 0:1 - Factor M"]
+    #[doc = "Bits 16:17 - PLL Output External Divider P"]
     #[inline(always)]
-    pub fn cpu_div1(&mut self) -> CPU_DIV1_W<0> {
-        CPU_DIV1_W::new(self)
+    pub fn pll_cpu_out_ext_divp(&mut self) -> PLL_CPU_OUT_EXT_DIVP_W<16> {
+        PLL_CPU_OUT_EXT_DIVP_W::new(self)
+    }
+    #[doc = "Bits 24:26 - Clock Source Select"]
+    #[inline(always)]
+    pub fn cpu_clk_sel(&mut self) -> CPU_CLK_SEL_W<24> {
+        CPU_CLK_SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

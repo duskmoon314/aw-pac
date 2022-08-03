@@ -34,57 +34,59 @@ impl From<crate::W<EMAC_RGMII_STA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "The link status of the RGMII interface\n\nValue on reset: 0"]
+#[doc = "Field `rgmii_link_md` reader - The link mode of the RGMII interface"]
+pub type RGMII_LINK_MD_R = crate::BitReader<RGMII_LINK_MD_A>;
+#[doc = "The link mode of the RGMII interface\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGMII_LINK_A {
+pub enum RGMII_LINK_MD_A {
     #[doc = "0: `0`"]
-    DOWN = 0,
+    HALF_DUPLEX = 0,
     #[doc = "1: `1`"]
-    UP = 1,
+    FULL_DUPLEX = 1,
 }
-impl From<RGMII_LINK_A> for bool {
+impl From<RGMII_LINK_MD_A> for bool {
     #[inline(always)]
-    fn from(variant: RGMII_LINK_A) -> Self {
+    fn from(variant: RGMII_LINK_MD_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `rgmii_link` reader - The link status of the RGMII interface"]
-pub type RGMII_LINK_R = crate::BitReader<RGMII_LINK_A>;
-impl RGMII_LINK_R {
+impl RGMII_LINK_MD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RGMII_LINK_A {
+    pub fn variant(&self) -> RGMII_LINK_MD_A {
         match self.bits {
-            false => RGMII_LINK_A::DOWN,
-            true => RGMII_LINK_A::UP,
+            false => RGMII_LINK_MD_A::HALF_DUPLEX,
+            true => RGMII_LINK_MD_A::FULL_DUPLEX,
         }
     }
-    #[doc = "Checks if the value of the field is `DOWN`"]
+    #[doc = "Checks if the value of the field is `HALF_DUPLEX`"]
     #[inline(always)]
-    pub fn is_down(&self) -> bool {
-        *self == RGMII_LINK_A::DOWN
+    pub fn is_half_duplex(&self) -> bool {
+        *self == RGMII_LINK_MD_A::HALF_DUPLEX
     }
-    #[doc = "Checks if the value of the field is `UP`"]
+    #[doc = "Checks if the value of the field is `FULL_DUPLEX`"]
     #[inline(always)]
-    pub fn is_up(&self) -> bool {
-        *self == RGMII_LINK_A::UP
+    pub fn is_full_duplex(&self) -> bool {
+        *self == RGMII_LINK_MD_A::FULL_DUPLEX
     }
 }
-#[doc = "Field `rgmii_link` writer - The link status of the RGMII interface"]
-pub type RGMII_LINK_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_A, O>;
-impl<'a, const O: u8> RGMII_LINK_W<'a, O> {
+#[doc = "Field `rgmii_link_md` writer - The link mode of the RGMII interface"]
+pub type RGMII_LINK_MD_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_MD_A, O>;
+impl<'a, const O: u8> RGMII_LINK_MD_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn down(self) -> &'a mut W {
-        self.variant(RGMII_LINK_A::DOWN)
+    pub fn half_duplex(self) -> &'a mut W {
+        self.variant(RGMII_LINK_MD_A::HALF_DUPLEX)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn up(self) -> &'a mut W {
-        self.variant(RGMII_LINK_A::UP)
+    pub fn full_duplex(self) -> &'a mut W {
+        self.variant(RGMII_LINK_MD_A::FULL_DUPLEX)
     }
 }
+#[doc = "Field `rgmii_link_spd` reader - The link speed of the RGMII interface"]
+pub type RGMII_LINK_SPD_R = crate::FieldReader<u8, RGMII_LINK_SPD_A>;
 #[doc = "The link speed of the RGMII interface\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -102,8 +104,6 @@ impl From<RGMII_LINK_SPD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `rgmii_link_spd` reader - The link speed of the RGMII interface"]
-pub type RGMII_LINK_SPD_R = crate::FieldReader<u8, RGMII_LINK_SPD_A>;
 impl RGMII_LINK_SPD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -151,89 +151,89 @@ impl<'a, const O: u8> RGMII_LINK_SPD_W<'a, O> {
         self.variant(RGMII_LINK_SPD_A::S125)
     }
 }
-#[doc = "The link mode of the RGMII interface\n\nValue on reset: 0"]
+#[doc = "Field `rgmii_link` reader - The link status of the RGMII interface"]
+pub type RGMII_LINK_R = crate::BitReader<RGMII_LINK_A>;
+#[doc = "The link status of the RGMII interface\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RGMII_LINK_MD_A {
+pub enum RGMII_LINK_A {
     #[doc = "0: `0`"]
-    HALF_DUPLEX = 0,
+    DOWN = 0,
     #[doc = "1: `1`"]
-    FULL_DUPLEX = 1,
+    UP = 1,
 }
-impl From<RGMII_LINK_MD_A> for bool {
+impl From<RGMII_LINK_A> for bool {
     #[inline(always)]
-    fn from(variant: RGMII_LINK_MD_A) -> Self {
+    fn from(variant: RGMII_LINK_A) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `rgmii_link_md` reader - The link mode of the RGMII interface"]
-pub type RGMII_LINK_MD_R = crate::BitReader<RGMII_LINK_MD_A>;
-impl RGMII_LINK_MD_R {
+impl RGMII_LINK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RGMII_LINK_MD_A {
+    pub fn variant(&self) -> RGMII_LINK_A {
         match self.bits {
-            false => RGMII_LINK_MD_A::HALF_DUPLEX,
-            true => RGMII_LINK_MD_A::FULL_DUPLEX,
+            false => RGMII_LINK_A::DOWN,
+            true => RGMII_LINK_A::UP,
         }
     }
-    #[doc = "Checks if the value of the field is `HALF_DUPLEX`"]
+    #[doc = "Checks if the value of the field is `DOWN`"]
     #[inline(always)]
-    pub fn is_half_duplex(&self) -> bool {
-        *self == RGMII_LINK_MD_A::HALF_DUPLEX
+    pub fn is_down(&self) -> bool {
+        *self == RGMII_LINK_A::DOWN
     }
-    #[doc = "Checks if the value of the field is `FULL_DUPLEX`"]
+    #[doc = "Checks if the value of the field is `UP`"]
     #[inline(always)]
-    pub fn is_full_duplex(&self) -> bool {
-        *self == RGMII_LINK_MD_A::FULL_DUPLEX
+    pub fn is_up(&self) -> bool {
+        *self == RGMII_LINK_A::UP
     }
 }
-#[doc = "Field `rgmii_link_md` writer - The link mode of the RGMII interface"]
-pub type RGMII_LINK_MD_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_MD_A, O>;
-impl<'a, const O: u8> RGMII_LINK_MD_W<'a, O> {
+#[doc = "Field `rgmii_link` writer - The link status of the RGMII interface"]
+pub type RGMII_LINK_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMAC_RGMII_STA_SPEC, RGMII_LINK_A, O>;
+impl<'a, const O: u8> RGMII_LINK_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn half_duplex(self) -> &'a mut W {
-        self.variant(RGMII_LINK_MD_A::HALF_DUPLEX)
+    pub fn down(self) -> &'a mut W {
+        self.variant(RGMII_LINK_A::DOWN)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn full_duplex(self) -> &'a mut W {
-        self.variant(RGMII_LINK_MD_A::FULL_DUPLEX)
+    pub fn up(self) -> &'a mut W {
+        self.variant(RGMII_LINK_A::UP)
     }
 }
 impl R {
-    #[doc = "Bit 3 - The link status of the RGMII interface"]
+    #[doc = "Bit 0 - The link mode of the RGMII interface"]
     #[inline(always)]
-    pub fn rgmii_link(&self) -> RGMII_LINK_R {
-        RGMII_LINK_R::new(((self.bits >> 3) & 1) != 0)
+    pub fn rgmii_link_md(&self) -> RGMII_LINK_MD_R {
+        RGMII_LINK_MD_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bits 1:2 - The link speed of the RGMII interface"]
     #[inline(always)]
     pub fn rgmii_link_spd(&self) -> RGMII_LINK_SPD_R {
         RGMII_LINK_SPD_R::new(((self.bits >> 1) & 3) as u8)
     }
-    #[doc = "Bit 0 - The link mode of the RGMII interface"]
+    #[doc = "Bit 3 - The link status of the RGMII interface"]
     #[inline(always)]
-    pub fn rgmii_link_md(&self) -> RGMII_LINK_MD_R {
-        RGMII_LINK_MD_R::new((self.bits & 1) != 0)
+    pub fn rgmii_link(&self) -> RGMII_LINK_R {
+        RGMII_LINK_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 3 - The link status of the RGMII interface"]
+    #[doc = "Bit 0 - The link mode of the RGMII interface"]
     #[inline(always)]
-    pub fn rgmii_link(&mut self) -> RGMII_LINK_W<3> {
-        RGMII_LINK_W::new(self)
+    pub fn rgmii_link_md(&mut self) -> RGMII_LINK_MD_W<0> {
+        RGMII_LINK_MD_W::new(self)
     }
     #[doc = "Bits 1:2 - The link speed of the RGMII interface"]
     #[inline(always)]
     pub fn rgmii_link_spd(&mut self) -> RGMII_LINK_SPD_W<1> {
         RGMII_LINK_SPD_W::new(self)
     }
-    #[doc = "Bit 0 - The link mode of the RGMII interface"]
+    #[doc = "Bit 3 - The link status of the RGMII interface"]
     #[inline(always)]
-    pub fn rgmii_link_md(&mut self) -> RGMII_LINK_MD_W<0> {
-        RGMII_LINK_MD_W::new(self)
+    pub fn rgmii_link(&mut self) -> RGMII_LINK_W<3> {
+        RGMII_LINK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

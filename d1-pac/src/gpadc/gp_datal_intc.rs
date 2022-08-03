@@ -34,6 +34,8 @@ impl From<crate::W<GP_DATAL_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ch_low_irq_en[0-1]` reader - Channel Voltage Low Available Interrupt Enable"]
+pub type CH_LOW_IRQ_EN_R = crate::BitReader<CH_LOW_IRQ_EN_A>;
 #[doc = "Channel Voltage Low Available Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH_LOW_IRQ_EN_A {
@@ -48,8 +50,6 @@ impl From<CH_LOW_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ch(0-1)_low_irq_en` reader - Channel Voltage Low Available Interrupt Enable"]
-pub type CH_LOW_IRQ_EN_R = crate::BitReader<CH_LOW_IRQ_EN_A>;
 impl CH_LOW_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl CH_LOW_IRQ_EN_R {
         *self == CH_LOW_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Fields `ch(0-1)_low_irq_en` writer - Channel Voltage Low Available Interrupt Enable"]
+#[doc = "Field `ch_low_irq_en[0-1]` writer - Channel Voltage Low Available Interrupt Enable"]
 pub type CH_LOW_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_DATAL_INTC_SPEC, CH_LOW_IRQ_EN_A, O>;
 impl<'a, const O: u8> CH_LOW_IRQ_EN_W<'a, O> {

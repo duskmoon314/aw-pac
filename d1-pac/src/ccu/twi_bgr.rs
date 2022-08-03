@@ -34,56 +34,8 @@ impl From<crate::W<TWI_BGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TWI_RST_A {
-    #[doc = "0: `0`"]
-    ASSERT = 0,
-    #[doc = "1: `1`"]
-    DEASSERT = 1,
-}
-impl From<TWI_RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: TWI_RST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `twi(0-3)_rst` reader - Reset"]
-pub type TWI_RST_R = crate::BitReader<TWI_RST_A>;
-impl TWI_RST_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TWI_RST_A {
-        match self.bits {
-            false => TWI_RST_A::ASSERT,
-            true => TWI_RST_A::DEASSERT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == TWI_RST_A::ASSERT
-    }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
-    #[inline(always)]
-    pub fn is_deassert(&self) -> bool {
-        *self == TWI_RST_A::DEASSERT
-    }
-}
-#[doc = "Fields `twi(0-3)_rst` writer - Reset"]
-pub type TWI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_BGR_SPEC, TWI_RST_A, O>;
-impl<'a, const O: u8> TWI_RST_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(TWI_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(TWI_RST_A::DEASSERT)
-    }
-}
+#[doc = "Field `twi_gating[0-3]` reader - Gating Clock"]
+pub type TWI_GATING_R = crate::BitReader<TWI_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TWI_GATING_A {
@@ -98,8 +50,6 @@ impl From<TWI_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `twi(0-3)_gating` reader - Gating Clock"]
-pub type TWI_GATING_R = crate::BitReader<TWI_GATING_A>;
 impl TWI_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -120,7 +70,7 @@ impl TWI_GATING_R {
         *self == TWI_GATING_A::PASS
     }
 }
-#[doc = "Fields `twi(0-3)_gating` writer - Gating Clock"]
+#[doc = "Field `twi_gating[0-3]` writer - Gating Clock"]
 pub type TWI_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_BGR_SPEC, TWI_GATING_A, O>;
 impl<'a, const O: u8> TWI_GATING_W<'a, O> {
     #[doc = "`0`"]
@@ -134,32 +84,57 @@ impl<'a, const O: u8> TWI_GATING_W<'a, O> {
         self.variant(TWI_GATING_A::PASS)
     }
 }
+#[doc = "Field `twi_rst[0-3]` reader - Reset"]
+pub type TWI_RST_R = crate::BitReader<TWI_RST_A>;
+#[doc = "Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TWI_RST_A {
+    #[doc = "0: `0`"]
+    ASSERT = 0,
+    #[doc = "1: `1`"]
+    DEASSERT = 1,
+}
+impl From<TWI_RST_A> for bool {
+    #[inline(always)]
+    fn from(variant: TWI_RST_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TWI_RST_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TWI_RST_A {
+        match self.bits {
+            false => TWI_RST_A::ASSERT,
+            true => TWI_RST_A::DEASSERT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[inline(always)]
+    pub fn is_assert(&self) -> bool {
+        *self == TWI_RST_A::ASSERT
+    }
+    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[inline(always)]
+    pub fn is_deassert(&self) -> bool {
+        *self == TWI_RST_A::DEASSERT
+    }
+}
+#[doc = "Field `twi_rst[0-3]` writer - Reset"]
+pub type TWI_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_BGR_SPEC, TWI_RST_A, O>;
+impl<'a, const O: u8> TWI_RST_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn assert(self) -> &'a mut W {
+        self.variant(TWI_RST_A::ASSERT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn deassert(self) -> &'a mut W {
+        self.variant(TWI_RST_A::DEASSERT)
+    }
+}
 impl R {
-    #[doc = "Reset"]
-    #[inline(always)]
-    pub unsafe fn twi_rst(&self, n: u8) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Reset"]
-    #[inline(always)]
-    pub fn twi0_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - Reset"]
-    #[inline(always)]
-    pub fn twi1_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 18 - Reset"]
-    #[inline(always)]
-    pub fn twi2_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 19 - Reset"]
-    #[inline(always)]
-    pub fn twi3_rst(&self) -> TWI_RST_R {
-        TWI_RST_R::new(((self.bits >> 19) & 1) != 0)
-    }
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn twi_gating(&self, n: u8) -> TWI_GATING_R {
@@ -185,33 +160,33 @@ impl R {
     pub fn twi3_gating(&self) -> TWI_GATING_R {
         TWI_GATING_R::new(((self.bits >> 3) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Reset"]
     #[inline(always)]
-    pub unsafe fn twi_rst<const O: u8>(&mut self) -> TWI_RST_W<O> {
-        TWI_RST_W::new(self)
+    pub unsafe fn twi_rst(&self, n: u8) -> TWI_RST_R {
+        TWI_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn twi0_rst(&mut self) -> TWI_RST_W<16> {
-        TWI_RST_W::new(self)
+    pub fn twi0_rst(&self) -> TWI_RST_R {
+        TWI_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
-    pub fn twi1_rst(&mut self) -> TWI_RST_W<17> {
-        TWI_RST_W::new(self)
+    pub fn twi1_rst(&self) -> TWI_RST_R {
+        TWI_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
-    pub fn twi2_rst(&mut self) -> TWI_RST_W<18> {
-        TWI_RST_W::new(self)
+    pub fn twi2_rst(&self) -> TWI_RST_R {
+        TWI_RST_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Reset"]
     #[inline(always)]
-    pub fn twi3_rst(&mut self) -> TWI_RST_W<19> {
-        TWI_RST_W::new(self)
+    pub fn twi3_rst(&self) -> TWI_RST_R {
+        TWI_RST_R::new(((self.bits >> 19) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn twi_gating<const O: u8>(&mut self) -> TWI_GATING_W<O> {
@@ -236,6 +211,31 @@ impl W {
     #[inline(always)]
     pub fn twi3_gating(&mut self) -> TWI_GATING_W<3> {
         TWI_GATING_W::new(self)
+    }
+    #[doc = "Reset"]
+    #[inline(always)]
+    pub unsafe fn twi_rst<const O: u8>(&mut self) -> TWI_RST_W<O> {
+        TWI_RST_W::new(self)
+    }
+    #[doc = "Bit 16 - Reset"]
+    #[inline(always)]
+    pub fn twi0_rst(&mut self) -> TWI_RST_W<16> {
+        TWI_RST_W::new(self)
+    }
+    #[doc = "Bit 17 - Reset"]
+    #[inline(always)]
+    pub fn twi1_rst(&mut self) -> TWI_RST_W<17> {
+        TWI_RST_W::new(self)
+    }
+    #[doc = "Bit 18 - Reset"]
+    #[inline(always)]
+    pub fn twi2_rst(&mut self) -> TWI_RST_W<18> {
+        TWI_RST_W::new(self)
+    }
+    #[doc = "Bit 19 - Reset"]
+    #[inline(always)]
+    pub fn twi3_rst(&mut self) -> TWI_RST_W<19> {
+        TWI_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<CE_TSR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `running_channel_number` reader - Running Channel Number"]
+pub type RUNNING_CHANNEL_NUMBER_R = crate::FieldReader<u8, RUNNING_CHANNEL_NUMBER_A>;
 #[doc = "Running Channel Number\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<RUNNING_CHANNEL_NUMBER_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `running_channel_number` reader - Running Channel Number"]
-pub type RUNNING_CHANNEL_NUMBER_R = crate::FieldReader<u8, RUNNING_CHANNEL_NUMBER_A>;
 impl RUNNING_CHANNEL_NUMBER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

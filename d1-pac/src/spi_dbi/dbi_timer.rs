@@ -34,6 +34,13 @@ impl From<crate::W<DBI_TIMER_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dbi_timer_value` reader - "]
+pub type DBI_TIMER_VALUE_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `dbi_timer_value` writer - "]
+pub type DBI_TIMER_VALUE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DBI_TIMER_SPEC, u32, u32, 31, O>;
+#[doc = "Field `dbi_tm_en` reader - DBI Timer Enable"]
+pub type DBI_TM_EN_R = crate::BitReader<DBI_TM_EN_A>;
 #[doc = "DBI Timer Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum DBI_TM_EN_A {
@@ -48,8 +55,6 @@ impl From<DBI_TM_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `dbi_tm_en` reader - DBI Timer Enable"]
-pub type DBI_TM_EN_R = crate::BitReader<DBI_TM_EN_A>;
 impl DBI_TM_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -84,33 +89,28 @@ impl<'a, const O: u8> DBI_TM_EN_W<'a, O> {
         self.variant(DBI_TM_EN_A::DISABLE)
     }
 }
-#[doc = "Field `dbi_timer_value` reader - "]
-pub type DBI_TIMER_VALUE_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `dbi_timer_value` writer - "]
-pub type DBI_TIMER_VALUE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DBI_TIMER_SPEC, u32, u32, 31, O>;
 impl R {
-    #[doc = "Bit 31 - DBI Timer Enable"]
-    #[inline(always)]
-    pub fn dbi_tm_en(&self) -> DBI_TM_EN_R {
-        DBI_TM_EN_R::new(((self.bits >> 31) & 1) != 0)
-    }
     #[doc = "Bits 0:30"]
     #[inline(always)]
     pub fn dbi_timer_value(&self) -> DBI_TIMER_VALUE_R {
         DBI_TIMER_VALUE_R::new((self.bits & 0x7fff_ffff) as u32)
     }
-}
-impl W {
     #[doc = "Bit 31 - DBI Timer Enable"]
     #[inline(always)]
-    pub fn dbi_tm_en(&mut self) -> DBI_TM_EN_W<31> {
-        DBI_TM_EN_W::new(self)
+    pub fn dbi_tm_en(&self) -> DBI_TM_EN_R {
+        DBI_TM_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:30"]
     #[inline(always)]
     pub fn dbi_timer_value(&mut self) -> DBI_TIMER_VALUE_W<0> {
         DBI_TIMER_VALUE_W::new(self)
+    }
+    #[doc = "Bit 31 - DBI Timer Enable"]
+    #[inline(always)]
+    pub fn dbi_tm_en(&mut self) -> DBI_TM_EN_W<31> {
+        DBI_TM_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

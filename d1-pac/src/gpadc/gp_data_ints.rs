@@ -34,6 +34,8 @@ impl From<crate::W<GP_DATA_INTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ch_data_pengding[0-1]` reader - Channel Data Available Interrupt Status"]
+pub type CH_DATA_PENGDING_R = crate::BitReader<CH_DATA_PENGDING_A>;
 #[doc = "Channel Data Available Interrupt Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH_DATA_PENGDING_A {
@@ -48,8 +50,6 @@ impl From<CH_DATA_PENGDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ch(0-1)_data_pengding` reader - Channel Data Available Interrupt Status"]
-pub type CH_DATA_PENGDING_R = crate::BitReader<CH_DATA_PENGDING_A>;
 impl CH_DATA_PENGDING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl CH_DATA_PENGDING_R {
         *self == CH_DATA_PENGDING_A::CHANNEL
     }
 }
-#[doc = "Fields `ch(0-1)_data_pengding` writer - Channel Data Available Interrupt Status"]
+#[doc = "Field `ch_data_pengding[0-1]` writer - Channel Data Available Interrupt Status"]
 pub type CH_DATA_PENGDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, GP_DATA_INTS_SPEC, CH_DATA_PENGDING_A, O>;
 impl<'a, const O: u8> CH_DATA_PENGDING_W<'a, O> {

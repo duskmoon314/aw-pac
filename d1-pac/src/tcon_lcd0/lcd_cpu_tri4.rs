@@ -34,6 +34,17 @@ impl From<crate::W<LCD_CPU_TRI4_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `d23_to_d0_first_valid` reader - Valid in first Block."]
+pub type D23_TO_D0_FIRST_VALID_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `d23_to_d0_first_valid` writer - Valid in first Block."]
+pub type D23_TO_D0_FIRST_VALID_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CPU_TRI4_SPEC, u32, u32, 24, O>;
+#[doc = "Field `a1_first_valid` reader - Valid in first Block."]
+pub type A1_FIRST_VALID_R = crate::BitReader<bool>;
+#[doc = "Field `a1_first_valid` writer - Valid in first Block."]
+pub type A1_FIRST_VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CPU_TRI4_SPEC, bool, O>;
+#[doc = "Field `plug_mode_en` reader - Enable the plug mode used in dsi command mode."]
+pub type PLUG_MODE_EN_R = crate::BitReader<PLUG_MODE_EN_A>;
 #[doc = "Enable the plug mode used in dsi command mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum PLUG_MODE_EN_A {
@@ -48,8 +59,6 @@ impl From<PLUG_MODE_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `plug_mode_en` reader - Enable the plug mode used in dsi command mode."]
-pub type PLUG_MODE_EN_R = crate::BitReader<PLUG_MODE_EN_A>;
 impl PLUG_MODE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,47 +94,38 @@ impl<'a, const O: u8> PLUG_MODE_EN_W<'a, O> {
         self.variant(PLUG_MODE_EN_A::E_NABLE)
     }
 }
-#[doc = "Field `a1_first_valid` reader - Valid in first Block."]
-pub type A1_FIRST_VALID_R = crate::BitReader<bool>;
-#[doc = "Field `a1_first_valid` writer - Valid in first Block."]
-pub type A1_FIRST_VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CPU_TRI4_SPEC, bool, O>;
-#[doc = "Field `d23_to_d0_first_valid` reader - Valid in first Block."]
-pub type D23_TO_D0_FIRST_VALID_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `d23_to_d0_first_valid` writer - Valid in first Block."]
-pub type D23_TO_D0_FIRST_VALID_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CPU_TRI4_SPEC, u32, u32, 24, O>;
 impl R {
-    #[doc = "Bit 28 - Enable the plug mode used in dsi command mode."]
+    #[doc = "Bits 0:23 - Valid in first Block."]
     #[inline(always)]
-    pub fn plug_mode_en(&self) -> PLUG_MODE_EN_R {
-        PLUG_MODE_EN_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn d23_to_d0_first_valid(&self) -> D23_TO_D0_FIRST_VALID_R {
+        D23_TO_D0_FIRST_VALID_R::new((self.bits & 0x00ff_ffff) as u32)
     }
     #[doc = "Bit 24 - Valid in first Block."]
     #[inline(always)]
     pub fn a1_first_valid(&self) -> A1_FIRST_VALID_R {
         A1_FIRST_VALID_R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bits 0:23 - Valid in first Block."]
+    #[doc = "Bit 28 - Enable the plug mode used in dsi command mode."]
     #[inline(always)]
-    pub fn d23_to_d0_first_valid(&self) -> D23_TO_D0_FIRST_VALID_R {
-        D23_TO_D0_FIRST_VALID_R::new((self.bits & 0x00ff_ffff) as u32)
+    pub fn plug_mode_en(&self) -> PLUG_MODE_EN_R {
+        PLUG_MODE_EN_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 28 - Enable the plug mode used in dsi command mode."]
+    #[doc = "Bits 0:23 - Valid in first Block."]
     #[inline(always)]
-    pub fn plug_mode_en(&mut self) -> PLUG_MODE_EN_W<28> {
-        PLUG_MODE_EN_W::new(self)
+    pub fn d23_to_d0_first_valid(&mut self) -> D23_TO_D0_FIRST_VALID_W<0> {
+        D23_TO_D0_FIRST_VALID_W::new(self)
     }
     #[doc = "Bit 24 - Valid in first Block."]
     #[inline(always)]
     pub fn a1_first_valid(&mut self) -> A1_FIRST_VALID_W<24> {
         A1_FIRST_VALID_W::new(self)
     }
-    #[doc = "Bits 0:23 - Valid in first Block."]
+    #[doc = "Bit 28 - Enable the plug mode used in dsi command mode."]
     #[inline(always)]
-    pub fn d23_to_d0_first_valid(&mut self) -> D23_TO_D0_FIRST_VALID_W<0> {
-        D23_TO_D0_FIRST_VALID_W::new(self)
+    pub fn plug_mode_en(&mut self) -> PLUG_MODE_EN_W<28> {
+        PLUG_MODE_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

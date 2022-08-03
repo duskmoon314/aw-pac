@@ -34,52 +34,52 @@ impl From<crate::W<PLL_AUDIO0_PAT1_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `dither_en` reader - Dither Enable"]
-pub type DITHER_EN_R = crate::BitReader<bool>;
-#[doc = "Field `dither_en` writer - Dither Enable"]
-pub type DITHER_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PLL_AUDIO0_PAT1_CTRL_SPEC, bool, O>;
-#[doc = "Field `frac_en` reader - Fraction Enable"]
-pub type FRAC_EN_R = crate::BitReader<bool>;
-#[doc = "Field `frac_en` writer - Fraction Enable"]
-pub type FRAC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_AUDIO0_PAT1_CTRL_SPEC, bool, O>;
 #[doc = "Field `frac_in` reader - Fraction In"]
 pub type FRAC_IN_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `frac_in` writer - Fraction In"]
 pub type FRAC_IN_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, PLL_AUDIO0_PAT1_CTRL_SPEC, u32, u32, 17, O>;
+#[doc = "Field `frac_en` reader - Fraction Enable"]
+pub type FRAC_EN_R = crate::BitReader<bool>;
+#[doc = "Field `frac_en` writer - Fraction Enable"]
+pub type FRAC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_AUDIO0_PAT1_CTRL_SPEC, bool, O>;
+#[doc = "Field `dither_en` reader - Dither Enable"]
+pub type DITHER_EN_R = crate::BitReader<bool>;
+#[doc = "Field `dither_en` writer - Dither Enable"]
+pub type DITHER_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, PLL_AUDIO0_PAT1_CTRL_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 24 - Dither Enable"]
+    #[doc = "Bits 0:16 - Fraction In"]
     #[inline(always)]
-    pub fn dither_en(&self) -> DITHER_EN_R {
-        DITHER_EN_R::new(((self.bits >> 24) & 1) != 0)
+    pub fn frac_in(&self) -> FRAC_IN_R {
+        FRAC_IN_R::new((self.bits & 0x0001_ffff) as u32)
     }
     #[doc = "Bit 20 - Fraction Enable"]
     #[inline(always)]
     pub fn frac_en(&self) -> FRAC_EN_R {
         FRAC_EN_R::new(((self.bits >> 20) & 1) != 0)
     }
-    #[doc = "Bits 0:16 - Fraction In"]
+    #[doc = "Bit 24 - Dither Enable"]
     #[inline(always)]
-    pub fn frac_in(&self) -> FRAC_IN_R {
-        FRAC_IN_R::new((self.bits & 0x0001_ffff) as u32)
+    pub fn dither_en(&self) -> DITHER_EN_R {
+        DITHER_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 24 - Dither Enable"]
+    #[doc = "Bits 0:16 - Fraction In"]
     #[inline(always)]
-    pub fn dither_en(&mut self) -> DITHER_EN_W<24> {
-        DITHER_EN_W::new(self)
+    pub fn frac_in(&mut self) -> FRAC_IN_W<0> {
+        FRAC_IN_W::new(self)
     }
     #[doc = "Bit 20 - Fraction Enable"]
     #[inline(always)]
     pub fn frac_en(&mut self) -> FRAC_EN_W<20> {
         FRAC_EN_W::new(self)
     }
-    #[doc = "Bits 0:16 - Fraction In"]
+    #[doc = "Bit 24 - Dither Enable"]
     #[inline(always)]
-    pub fn frac_in(&mut self) -> FRAC_IN_W<0> {
-        FRAC_IN_W::new(self)
+    pub fn dither_en(&mut self) -> DITHER_EN_W<24> {
+        DITHER_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

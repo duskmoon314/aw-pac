@@ -34,23 +34,23 @@ impl From<crate::W<HC_CONTROL_HEAD_ED_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ehcd_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
+pub type EHCD_3_0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ehcd_31_4` reader - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
 pub type EHCD_31_4_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ehcd_31_4` writer - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
 pub type EHCD_31_4_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, HC_CONTROL_HEAD_ED_SPEC, u32, u32, 28, O>;
-#[doc = "Field `ehcd_3_0` reader - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
-pub type EHCD_3_0_R = crate::FieldReader<u8, u8>;
 impl R {
-    #[doc = "Bits 4:31 - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
-    #[inline(always)]
-    pub fn ehcd_31_4(&self) -> EHCD_31_4_R {
-        EHCD_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
-    }
     #[doc = "Bits 0:3 - Because the general TD length is 16 bytes, the memory structure for the TD must be aligned to a 16-byte boundary. So the lower bits in the PCED, through bit 0 to bit 3 must be zero in this field."]
     #[inline(always)]
     pub fn ehcd_3_0(&self) -> EHCD_3_0_R {
         EHCD_3_0_R::new((self.bits & 0x0f) as u8)
+    }
+    #[doc = "Bits 4:31 - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
+    #[inline(always)]
+    pub fn ehcd_31_4(&self) -> EHCD_31_4_R {
+        EHCD_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
     }
 }
 impl W {

@@ -13,21 +13,11 @@ impl From<crate::R<PIO_POW_VAL_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `p_pwr_val[C,D,E,F,G]` reader - PX_Port Power Value"]
+pub type P_PWR_VAL_R = crate::BitReader<bool>;
 #[doc = "Field `vccio_pws_val` reader - VCC_IO Power Value"]
 pub type VCCIO_PWS_VAL_R = crate::BitReader<bool>;
-#[doc = "Fields `p(0-4)_pwr_val` reader - PX_Port Power Value"]
-pub type P_PWR_VAL_R = crate::BitReader<bool>;
 impl R {
-    #[doc = "Bit 12 - VCC_IO Power Value"]
-    #[inline(always)]
-    pub fn vccio_pws_val(&self) -> VCCIO_PWS_VAL_R {
-        VCCIO_PWS_VAL_R::new(((self.bits >> 12) & 1) != 0)
-    }
-    #[doc = "PX_Port Power Value"]
-    #[inline(always)]
-    pub unsafe fn p_pwr_val(&self, n: u8) -> P_PWR_VAL_R {
-        P_PWR_VAL_R::new(((self.bits >> (n + 2)) & 1) != 0)
-    }
     #[doc = "Bit 2 - PX_Port Power Value"]
     #[inline(always)]
     pub fn p_c_pwr_val(&self) -> P_PWR_VAL_R {
@@ -52,6 +42,11 @@ impl R {
     #[inline(always)]
     pub fn p_g_pwr_val(&self) -> P_PWR_VAL_R {
         P_PWR_VAL_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 12 - VCC_IO Power Value"]
+    #[inline(always)]
+    pub fn vccio_pws_val(&self) -> VCCIO_PWS_VAL_R {
+        VCCIO_PWS_VAL_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
 #[doc = "PIO Group Power Value Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio_pow_val](index.html) module"]

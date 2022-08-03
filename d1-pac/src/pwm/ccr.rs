@@ -34,22 +34,8 @@ impl From<crate::W<CCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `crlf` reader - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-pub type CRLF_R = crate::BitReader<bool>;
-#[doc = "Field `crlf` writer - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-pub type CRLF_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, O>;
-#[doc = "Field `cflf` reader - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-pub type CFLF_R = crate::BitReader<bool>;
-#[doc = "Field `cflf` writer - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-pub type CFLF_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, O>;
-#[doc = "Field `crte` reader - Rising edge capture trigger enable"]
-pub type CRTE_R = crate::BitReader<bool>;
-#[doc = "Field `crte` writer - Rising edge capture trigger enable"]
-pub type CRTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, bool, O>;
-#[doc = "Field `cfte` reader - Falling edge capture trigger enable"]
-pub type CFTE_R = crate::BitReader<bool>;
-#[doc = "Field `cfte` writer - Falling edge capture trigger enable"]
-pub type CFTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, bool, O>;
+#[doc = "Field `capinv` reader - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
+pub type CAPINV_R = crate::BitReader<CAPINV_A>;
 #[doc = "Inverse the signal input from capture channel before 16-bit counter of capture channel.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CAPINV_A {
@@ -64,8 +50,6 @@ impl From<CAPINV_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `capinv` reader - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
-pub type CAPINV_R = crate::BitReader<CAPINV_A>;
 impl CAPINV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -100,58 +84,74 @@ impl<'a, const O: u8> CAPINV_W<'a, O> {
         self.variant(CAPINV_A::INVERSE)
     }
 }
+#[doc = "Field `cfte` reader - Falling edge capture trigger enable"]
+pub type CFTE_R = crate::BitReader<bool>;
+#[doc = "Field `cfte` writer - Falling edge capture trigger enable"]
+pub type CFTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, bool, O>;
+#[doc = "Field `crte` reader - Rising edge capture trigger enable"]
+pub type CRTE_R = crate::BitReader<bool>;
+#[doc = "Field `crte` writer - Rising edge capture trigger enable"]
+pub type CRTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CCR_SPEC, bool, O>;
+#[doc = "Field `cflf` reader - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
+pub type CFLF_R = crate::BitReader<bool>;
+#[doc = "Field `cflf` writer - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
+pub type CFLF_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, O>;
+#[doc = "Field `crlf` reader - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
+pub type CRLF_R = crate::BitReader<bool>;
+#[doc = "Field `crlf` writer - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
+pub type CRLF_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CCR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 4 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
+    #[doc = "Bit 0 - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
     #[inline(always)]
-    pub fn crlf(&self) -> CRLF_R {
-        CRLF_R::new(((self.bits >> 4) & 1) != 0)
-    }
-    #[doc = "Bit 3 - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-    #[inline(always)]
-    pub fn cflf(&self) -> CFLF_R {
-        CFLF_R::new(((self.bits >> 3) & 1) != 0)
-    }
-    #[doc = "Bit 2 - Rising edge capture trigger enable"]
-    #[inline(always)]
-    pub fn crte(&self) -> CRTE_R {
-        CRTE_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn capinv(&self) -> CAPINV_R {
+        CAPINV_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Falling edge capture trigger enable"]
     #[inline(always)]
     pub fn cfte(&self) -> CFTE_R {
         CFTE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
+    #[doc = "Bit 2 - Rising edge capture trigger enable"]
     #[inline(always)]
-    pub fn capinv(&self) -> CAPINV_R {
-        CAPINV_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 4 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
-    #[inline(always)]
-    pub fn crlf(&mut self) -> CRLF_W<4> {
-        CRLF_W::new(self)
+    pub fn crte(&self) -> CRTE_R {
+        CRTE_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
     #[inline(always)]
-    pub fn cflf(&mut self) -> CFLF_W<3> {
-        CFLF_W::new(self)
+    pub fn cflf(&self) -> CFLF_R {
+        CFLF_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 2 - Rising edge capture trigger enable"]
+    #[doc = "Bit 4 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
     #[inline(always)]
-    pub fn crte(&mut self) -> CRTE_W<2> {
-        CRTE_W::new(self)
+    pub fn crlf(&self) -> CRLF_R {
+        CRLF_R::new(((self.bits >> 4) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
+    #[inline(always)]
+    pub fn capinv(&mut self) -> CAPINV_W<0> {
+        CAPINV_W::new(self)
     }
     #[doc = "Bit 1 - Falling edge capture trigger enable"]
     #[inline(always)]
     pub fn cfte(&mut self) -> CFTE_W<1> {
         CFTE_W::new(self)
     }
-    #[doc = "Bit 0 - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
+    #[doc = "Bit 2 - Rising edge capture trigger enable"]
     #[inline(always)]
-    pub fn capinv(&mut self) -> CAPINV_W<0> {
-        CAPINV_W::new(self)
+    pub fn crte(&mut self) -> CRTE_W<2> {
+        CRTE_W::new(self)
+    }
+    #[doc = "Bit 3 - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
+    #[inline(always)]
+    pub fn cflf(&mut self) -> CFLF_W<3> {
+        CFLF_W::new(self)
+    }
+    #[doc = "Bit 4 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
+    #[inline(always)]
+    pub fn crlf(&mut self) -> CRLF_W<4> {
+        CRLF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

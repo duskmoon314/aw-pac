@@ -34,59 +34,8 @@ impl From<crate::W<PCCR01_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Select PWM01 Clock Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-#[repr(u8)]
-pub enum PWM01_CLK_SRC_A {
-    #[doc = "0: HOSC"]
-    HOSC = 0,
-    #[doc = "1: APB0"]
-    APB0 = 1,
-}
-impl From<PWM01_CLK_SRC_A> for u8 {
-    #[inline(always)]
-    fn from(variant: PWM01_CLK_SRC_A) -> Self {
-        variant as _
-    }
-}
-#[doc = "Field `pwm01_clk_src` reader - Select PWM01 Clock Source"]
-pub type PWM01_CLK_SRC_R = crate::FieldReader<u8, PWM01_CLK_SRC_A>;
-impl PWM01_CLK_SRC_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> Option<PWM01_CLK_SRC_A> {
-        match self.bits {
-            0 => Some(PWM01_CLK_SRC_A::HOSC),
-            1 => Some(PWM01_CLK_SRC_A::APB0),
-            _ => None,
-        }
-    }
-    #[doc = "Checks if the value of the field is `HOSC`"]
-    #[inline(always)]
-    pub fn is_hosc(&self) -> bool {
-        *self == PWM01_CLK_SRC_A::HOSC
-    }
-    #[doc = "Checks if the value of the field is `APB0`"]
-    #[inline(always)]
-    pub fn is_apb0(&self) -> bool {
-        *self == PWM01_CLK_SRC_A::APB0
-    }
-}
-#[doc = "Field `pwm01_clk_src` writer - Select PWM01 Clock Source"]
-pub type PWM01_CLK_SRC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PCCR01_SPEC, u8, PWM01_CLK_SRC_A, 2, O>;
-impl<'a, const O: u8> PWM01_CLK_SRC_W<'a, O> {
-    #[doc = "HOSC"]
-    #[inline(always)]
-    pub fn hosc(self) -> &'a mut W {
-        self.variant(PWM01_CLK_SRC_A::HOSC)
-    }
-    #[doc = "APB0"]
-    #[inline(always)]
-    pub fn apb0(self) -> &'a mut W {
-        self.variant(PWM01_CLK_SRC_A::APB0)
-    }
-}
+#[doc = "Field `pwm01_clk_div_m` reader - PWM01 Clock Divide M"]
+pub type PWM01_CLK_DIV_M_R = crate::FieldReader<u8, PWM01_CLK_DIV_M_A>;
 #[doc = "PWM01 Clock Divide M\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -116,8 +65,6 @@ impl From<PWM01_CLK_DIV_M_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `pwm01_clk_div_m` reader - PWM01 Clock Divide M"]
-pub type PWM01_CLK_DIV_M_R = crate::FieldReader<u8, PWM01_CLK_DIV_M_A>;
 impl PWM01_CLK_DIV_M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -231,28 +178,81 @@ impl<'a, const O: u8> PWM01_CLK_DIV_M_W<'a, O> {
         self.variant(PWM01_CLK_DIV_M_A::M256)
     }
 }
-impl R {
-    #[doc = "Bits 7:8 - Select PWM01 Clock Source"]
+#[doc = "Field `pwm01_clk_src` reader - Select PWM01 Clock Source"]
+pub type PWM01_CLK_SRC_R = crate::FieldReader<u8, PWM01_CLK_SRC_A>;
+#[doc = "Select PWM01 Clock Source\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum PWM01_CLK_SRC_A {
+    #[doc = "0: HOSC"]
+    HOSC = 0,
+    #[doc = "1: APB0"]
+    APB0 = 1,
+}
+impl From<PWM01_CLK_SRC_A> for u8 {
     #[inline(always)]
-    pub fn pwm01_clk_src(&self) -> PWM01_CLK_SRC_R {
-        PWM01_CLK_SRC_R::new(((self.bits >> 7) & 3) as u8)
+    fn from(variant: PWM01_CLK_SRC_A) -> Self {
+        variant as _
     }
+}
+impl PWM01_CLK_SRC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<PWM01_CLK_SRC_A> {
+        match self.bits {
+            0 => Some(PWM01_CLK_SRC_A::HOSC),
+            1 => Some(PWM01_CLK_SRC_A::APB0),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `HOSC`"]
+    #[inline(always)]
+    pub fn is_hosc(&self) -> bool {
+        *self == PWM01_CLK_SRC_A::HOSC
+    }
+    #[doc = "Checks if the value of the field is `APB0`"]
+    #[inline(always)]
+    pub fn is_apb0(&self) -> bool {
+        *self == PWM01_CLK_SRC_A::APB0
+    }
+}
+#[doc = "Field `pwm01_clk_src` writer - Select PWM01 Clock Source"]
+pub type PWM01_CLK_SRC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PCCR01_SPEC, u8, PWM01_CLK_SRC_A, 2, O>;
+impl<'a, const O: u8> PWM01_CLK_SRC_W<'a, O> {
+    #[doc = "HOSC"]
+    #[inline(always)]
+    pub fn hosc(self) -> &'a mut W {
+        self.variant(PWM01_CLK_SRC_A::HOSC)
+    }
+    #[doc = "APB0"]
+    #[inline(always)]
+    pub fn apb0(self) -> &'a mut W {
+        self.variant(PWM01_CLK_SRC_A::APB0)
+    }
+}
+impl R {
     #[doc = "Bits 0:3 - PWM01 Clock Divide M"]
     #[inline(always)]
     pub fn pwm01_clk_div_m(&self) -> PWM01_CLK_DIV_M_R {
         PWM01_CLK_DIV_M_R::new((self.bits & 0x0f) as u8)
     }
-}
-impl W {
     #[doc = "Bits 7:8 - Select PWM01 Clock Source"]
     #[inline(always)]
-    pub fn pwm01_clk_src(&mut self) -> PWM01_CLK_SRC_W<7> {
-        PWM01_CLK_SRC_W::new(self)
+    pub fn pwm01_clk_src(&self) -> PWM01_CLK_SRC_R {
+        PWM01_CLK_SRC_R::new(((self.bits >> 7) & 3) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:3 - PWM01 Clock Divide M"]
     #[inline(always)]
     pub fn pwm01_clk_div_m(&mut self) -> PWM01_CLK_DIV_M_W<0> {
         PWM01_CLK_DIV_M_W::new(self)
+    }
+    #[doc = "Bits 7:8 - Select PWM01 Clock Source"]
+    #[inline(always)]
+    pub fn pwm01_clk_src(&mut self) -> PWM01_CLK_SRC_W<7> {
+        PWM01_CLK_SRC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

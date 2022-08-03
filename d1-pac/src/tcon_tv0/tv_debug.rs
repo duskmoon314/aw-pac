@@ -34,46 +34,10 @@ impl From<crate::W<TV_DEBUG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `tv_fifo_u` reader - TV FIFO Underflow"]
-pub type TV_FIFO_U_R = crate::BitReader<bool>;
-#[doc = "Field `tv_fifo_u` writer - TV FIFO Underflow"]
-pub type TV_FIFO_U_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_DEBUG_SPEC, bool, O>;
-#[doc = "TV Field Polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TV_FIELD_POL_A {
-    #[doc = "0: Second field"]
-    S_ECOND = 0,
-    #[doc = "1: First field"]
-    F_IRST = 1,
-}
-impl From<TV_FIELD_POL_A> for bool {
-    #[inline(always)]
-    fn from(variant: TV_FIELD_POL_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tv_field_pol` reader - TV Field Polarity"]
-pub type TV_FIELD_POL_R = crate::BitReader<TV_FIELD_POL_A>;
-impl TV_FIELD_POL_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TV_FIELD_POL_A {
-        match self.bits {
-            false => TV_FIELD_POL_A::S_ECOND,
-            true => TV_FIELD_POL_A::F_IRST,
-        }
-    }
-    #[doc = "Checks if the value of the field is `S_ECOND`"]
-    #[inline(always)]
-    pub fn is_s_econd(&self) -> bool {
-        *self == TV_FIELD_POL_A::S_ECOND
-    }
-    #[doc = "Checks if the value of the field is `F_IRST`"]
-    #[inline(always)]
-    pub fn is_f_irst(&self) -> bool {
-        *self == TV_FIELD_POL_A::F_IRST
-    }
-}
+#[doc = "Field `tv_current_line` reader - TV Current Line"]
+pub type TV_CURRENT_LINE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `line_buf_bypass` reader - Line Buf fer Bypass"]
+pub type LINE_BUF_BYPASS_R = crate::BitReader<LINE_BUF_BYPASS_A>;
 #[doc = "Line Buf fer Bypass\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LINE_BUF_BYPASS_A {
@@ -88,8 +52,6 @@ impl From<LINE_BUF_BYPASS_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `line_buf_bypass` reader - Line Buf fer Bypass"]
-pub type LINE_BUF_BYPASS_R = crate::BitReader<LINE_BUF_BYPASS_A>;
 impl LINE_BUF_BYPASS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,40 +87,78 @@ impl<'a, const O: u8> LINE_BUF_BYPASS_W<'a, O> {
         self.variant(LINE_BUF_BYPASS_A::B_YPASS)
     }
 }
-#[doc = "Field `tv_current_line` reader - TV Current Line"]
-pub type TV_CURRENT_LINE_R = crate::FieldReader<u16, u16>;
-impl R {
-    #[doc = "Bit 30 - TV FIFO Underflow"]
+#[doc = "Field `tv_field_pol` reader - TV Field Polarity"]
+pub type TV_FIELD_POL_R = crate::BitReader<TV_FIELD_POL_A>;
+#[doc = "TV Field Polarity\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TV_FIELD_POL_A {
+    #[doc = "0: Second field"]
+    S_ECOND = 0,
+    #[doc = "1: First field"]
+    F_IRST = 1,
+}
+impl From<TV_FIELD_POL_A> for bool {
     #[inline(always)]
-    pub fn tv_fifo_u(&self) -> TV_FIFO_U_R {
-        TV_FIFO_U_R::new(((self.bits >> 30) & 1) != 0)
+    fn from(variant: TV_FIELD_POL_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = "Bit 28 - TV Field Polarity"]
+}
+impl TV_FIELD_POL_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn tv_field_pol(&self) -> TV_FIELD_POL_R {
-        TV_FIELD_POL_R::new(((self.bits >> 28) & 1) != 0)
+    pub fn variant(&self) -> TV_FIELD_POL_A {
+        match self.bits {
+            false => TV_FIELD_POL_A::S_ECOND,
+            true => TV_FIELD_POL_A::F_IRST,
+        }
+    }
+    #[doc = "Checks if the value of the field is `S_ECOND`"]
+    #[inline(always)]
+    pub fn is_s_econd(&self) -> bool {
+        *self == TV_FIELD_POL_A::S_ECOND
+    }
+    #[doc = "Checks if the value of the field is `F_IRST`"]
+    #[inline(always)]
+    pub fn is_f_irst(&self) -> bool {
+        *self == TV_FIELD_POL_A::F_IRST
+    }
+}
+#[doc = "Field `tv_fifo_u` reader - TV FIFO Underflow"]
+pub type TV_FIFO_U_R = crate::BitReader<bool>;
+#[doc = "Field `tv_fifo_u` writer - TV FIFO Underflow"]
+pub type TV_FIFO_U_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_DEBUG_SPEC, bool, O>;
+impl R {
+    #[doc = "Bits 0:11 - TV Current Line"]
+    #[inline(always)]
+    pub fn tv_current_line(&self) -> TV_CURRENT_LINE_R {
+        TV_CURRENT_LINE_R::new((self.bits & 0x0fff) as u16)
     }
     #[doc = "Bit 13 - Line Buf fer Bypass"]
     #[inline(always)]
     pub fn line_buf_bypass(&self) -> LINE_BUF_BYPASS_R {
         LINE_BUF_BYPASS_R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bits 0:11 - TV Current Line"]
+    #[doc = "Bit 28 - TV Field Polarity"]
     #[inline(always)]
-    pub fn tv_current_line(&self) -> TV_CURRENT_LINE_R {
-        TV_CURRENT_LINE_R::new((self.bits & 0x0fff) as u16)
+    pub fn tv_field_pol(&self) -> TV_FIELD_POL_R {
+        TV_FIELD_POL_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    #[doc = "Bit 30 - TV FIFO Underflow"]
+    #[inline(always)]
+    pub fn tv_fifo_u(&self) -> TV_FIFO_U_R {
+        TV_FIFO_U_R::new(((self.bits >> 30) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 30 - TV FIFO Underflow"]
-    #[inline(always)]
-    pub fn tv_fifo_u(&mut self) -> TV_FIFO_U_W<30> {
-        TV_FIFO_U_W::new(self)
-    }
     #[doc = "Bit 13 - Line Buf fer Bypass"]
     #[inline(always)]
     pub fn line_buf_bypass(&mut self) -> LINE_BUF_BYPASS_W<13> {
         LINE_BUF_BYPASS_W::new(self)
+    }
+    #[doc = "Bit 30 - TV FIFO Underflow"]
+    #[inline(always)]
+    pub fn tv_fifo_u(&mut self) -> TV_FIFO_U_W<30> {
+        TV_FIFO_U_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

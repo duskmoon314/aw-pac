@@ -34,56 +34,8 @@ impl From<crate::W<PWM_BGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RST_A {
-    #[doc = "0: `0`"]
-    ASSERT = 0,
-    #[doc = "1: `1`"]
-    DEASSERT = 1,
-}
-impl From<RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: RST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `rst` reader - Reset"]
-pub type RST_R = crate::BitReader<RST_A>;
-impl RST_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> RST_A {
-        match self.bits {
-            false => RST_A::ASSERT,
-            true => RST_A::DEASSERT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == RST_A::ASSERT
-    }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
-    #[inline(always)]
-    pub fn is_deassert(&self) -> bool {
-        *self == RST_A::DEASSERT
-    }
-}
-#[doc = "Field `rst` writer - Reset"]
-pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWM_BGR_SPEC, RST_A, O>;
-impl<'a, const O: u8> RST_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(RST_A::DEASSERT)
-    }
-}
+#[doc = "Field `gating` reader - Gating Clock"]
+pub type GATING_R = crate::BitReader<GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum GATING_A {
@@ -98,8 +50,6 @@ impl From<GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `gating` reader - Gating Clock"]
-pub type GATING_R = crate::BitReader<GATING_A>;
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -134,28 +84,78 @@ impl<'a, const O: u8> GATING_W<'a, O> {
         self.variant(GATING_A::PASS)
     }
 }
-impl R {
-    #[doc = "Bit 16 - Reset"]
+#[doc = "Field `rst` reader - Reset"]
+pub type RST_R = crate::BitReader<RST_A>;
+#[doc = "Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RST_A {
+    #[doc = "0: `0`"]
+    ASSERT = 0,
+    #[doc = "1: `1`"]
+    DEASSERT = 1,
+}
+impl From<RST_A> for bool {
     #[inline(always)]
-    pub fn rst(&self) -> RST_R {
-        RST_R::new(((self.bits >> 16) & 1) != 0)
+    fn from(variant: RST_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl RST_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RST_A {
+        match self.bits {
+            false => RST_A::ASSERT,
+            true => RST_A::DEASSERT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[inline(always)]
+    pub fn is_assert(&self) -> bool {
+        *self == RST_A::ASSERT
+    }
+    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[inline(always)]
+    pub fn is_deassert(&self) -> bool {
+        *self == RST_A::DEASSERT
+    }
+}
+#[doc = "Field `rst` writer - Reset"]
+pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, PWM_BGR_SPEC, RST_A, O>;
+impl<'a, const O: u8> RST_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn assert(self) -> &'a mut W {
+        self.variant(RST_A::ASSERT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn deassert(self) -> &'a mut W {
+        self.variant(RST_A::DEASSERT)
+    }
+}
+impl R {
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
     pub fn gating(&self) -> GATING_R {
         GATING_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn rst(&mut self) -> RST_W<16> {
-        RST_W::new(self)
+    pub fn rst(&self) -> RST_R {
+        RST_R::new(((self.bits >> 16) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
     pub fn gating(&mut self) -> GATING_W<0> {
         GATING_W::new(self)
+    }
+    #[doc = "Bit 16 - Reset"]
+    #[inline(always)]
+    pub fn rst(&mut self) -> RST_W<16> {
+        RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

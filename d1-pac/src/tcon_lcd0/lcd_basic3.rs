@@ -34,36 +34,36 @@ impl From<crate::W<LCD_BASIC3_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `hspw` reader - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
-pub type HSPW_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `hspw` writer - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
-pub type HSPW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC3_SPEC, u16, u16, 10, O>;
 #[doc = "Field `vspw` reader - Tvspw = (VSPW+1) * Thsync\n\nVT/2 > (VSPW+1)"]
 pub type VSPW_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `vspw` writer - Tvspw = (VSPW+1) * Thsync\n\nVT/2 > (VSPW+1)"]
 pub type VSPW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC3_SPEC, u16, u16, 10, O>;
+#[doc = "Field `hspw` reader - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
+pub type HSPW_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `hspw` writer - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
+pub type HSPW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_BASIC3_SPEC, u16, u16, 10, O>;
 impl R {
-    #[doc = "Bits 16:25 - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
-    #[inline(always)]
-    pub fn hspw(&self) -> HSPW_R {
-        HSPW_R::new(((self.bits >> 16) & 0x03ff) as u16)
-    }
     #[doc = "Bits 0:9 - Tvspw = (VSPW+1) * Thsync\n\nVT/2 > (VSPW+1)"]
     #[inline(always)]
     pub fn vspw(&self) -> VSPW_R {
         VSPW_R::new((self.bits & 0x03ff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:25 - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
     #[inline(always)]
-    pub fn hspw(&mut self) -> HSPW_W<16> {
-        HSPW_W::new(self)
+    pub fn hspw(&self) -> HSPW_R {
+        HSPW_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:9 - Tvspw = (VSPW+1) * Thsync\n\nVT/2 > (VSPW+1)"]
     #[inline(always)]
     pub fn vspw(&mut self) -> VSPW_W<0> {
         VSPW_W::new(self)
+    }
+    #[doc = "Bits 16:25 - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
+    #[inline(always)]
+    pub fn hspw(&mut self) -> HSPW_W<16> {
+        HSPW_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

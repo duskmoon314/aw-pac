@@ -34,6 +34,36 @@ impl From<crate::W<SMHC_IDST_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tx_int` reader - Transmit Interrupt"]
+pub type TX_INT_R = crate::BitReader<bool>;
+#[doc = "Field `tx_int` writer - Transmit Interrupt"]
+pub type TX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
+#[doc = "Field `rx_int` reader - Receive Interrupt"]
+pub type RX_INT_R = crate::BitReader<bool>;
+#[doc = "Field `rx_int` writer - Receive Interrupt"]
+pub type RX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
+#[doc = "Field `fatal_berr_int` reader - Fatal Bus Error Interrupt"]
+pub type FATAL_BERR_INT_R = crate::BitReader<bool>;
+#[doc = "Field `fatal_berr_int` writer - Fatal Bus Error Interrupt"]
+pub type FATAL_BERR_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
+#[doc = "Field `des_unavl_int` reader - Descriptor Unavailable Interrupt"]
+pub type DES_UNAVL_INT_R = crate::BitReader<bool>;
+#[doc = "Field `des_unavl_int` writer - Descriptor Unavailable Interrupt"]
+pub type DES_UNAVL_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
+#[doc = "Field `err_flag_sum` reader - Card Error Summary"]
+pub type ERR_FLAG_SUM_R = crate::BitReader<bool>;
+#[doc = "Field `err_flag_sum` writer - Card Error Summary"]
+pub type ERR_FLAG_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
+#[doc = "Field `nor_int_sum` reader - Normal Interrupt Summary"]
+pub type NOR_INT_SUM_R = crate::BitReader<bool>;
+#[doc = "Field `nor_int_sum` writer - Normal Interrupt Summary"]
+pub type NOR_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
+#[doc = "Field `abn_int_sum` reader - Abnormal Interrupt Summary"]
+pub type ABN_INT_SUM_R = crate::BitReader<bool>;
+#[doc = "Field `abn_int_sum` writer - Abnormal Interrupt Summary"]
+pub type ABN_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
+#[doc = "Field `idmac_err_sta` reader - Error Bits"]
+pub type IDMAC_ERR_STA_R = crate::FieldReader<u8, IDMAC_ERR_STA_A>;
 #[doc = "Error Bits\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -49,8 +79,6 @@ impl From<IDMAC_ERR_STA_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `idmac_err_sta` reader - Error Bits"]
-pub type IDMAC_ERR_STA_R = crate::FieldReader<u8, IDMAC_ERR_STA_A>;
 impl IDMAC_ERR_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,111 +100,83 @@ impl IDMAC_ERR_STA_R {
         *self == IDMAC_ERR_STA_A::RECEPTION
     }
 }
-#[doc = "Field `abn_int_sum` reader - Abnormal Interrupt Summary"]
-pub type ABN_INT_SUM_R = crate::BitReader<bool>;
-#[doc = "Field `abn_int_sum` writer - Abnormal Interrupt Summary"]
-pub type ABN_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `nor_int_sum` reader - Normal Interrupt Summary"]
-pub type NOR_INT_SUM_R = crate::BitReader<bool>;
-#[doc = "Field `nor_int_sum` writer - Normal Interrupt Summary"]
-pub type NOR_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `err_flag_sum` reader - Card Error Summary"]
-pub type ERR_FLAG_SUM_R = crate::BitReader<bool>;
-#[doc = "Field `err_flag_sum` writer - Card Error Summary"]
-pub type ERR_FLAG_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `des_unavl_int` reader - Descriptor Unavailable Interrupt"]
-pub type DES_UNAVL_INT_R = crate::BitReader<bool>;
-#[doc = "Field `des_unavl_int` writer - Descriptor Unavailable Interrupt"]
-pub type DES_UNAVL_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `fatal_berr_int` reader - Fatal Bus Error Interrupt"]
-pub type FATAL_BERR_INT_R = crate::BitReader<bool>;
-#[doc = "Field `fatal_berr_int` writer - Fatal Bus Error Interrupt"]
-pub type FATAL_BERR_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `rx_int` reader - Receive Interrupt"]
-pub type RX_INT_R = crate::BitReader<bool>;
-#[doc = "Field `rx_int` writer - Receive Interrupt"]
-pub type RX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
-#[doc = "Field `tx_int` reader - Transmit Interrupt"]
-pub type TX_INT_R = crate::BitReader<bool>;
-#[doc = "Field `tx_int` writer - Transmit Interrupt"]
-pub type TX_INT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 10:12 - Error Bits"]
+    #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
-    pub fn idmac_err_sta(&self) -> IDMAC_ERR_STA_R {
-        IDMAC_ERR_STA_R::new(((self.bits >> 10) & 7) as u8)
-    }
-    #[doc = "Bit 9 - Abnormal Interrupt Summary"]
-    #[inline(always)]
-    pub fn abn_int_sum(&self) -> ABN_INT_SUM_R {
-        ABN_INT_SUM_R::new(((self.bits >> 9) & 1) != 0)
-    }
-    #[doc = "Bit 8 - Normal Interrupt Summary"]
-    #[inline(always)]
-    pub fn nor_int_sum(&self) -> NOR_INT_SUM_R {
-        NOR_INT_SUM_R::new(((self.bits >> 8) & 1) != 0)
-    }
-    #[doc = "Bit 5 - Card Error Summary"]
-    #[inline(always)]
-    pub fn err_flag_sum(&self) -> ERR_FLAG_SUM_R {
-        ERR_FLAG_SUM_R::new(((self.bits >> 5) & 1) != 0)
-    }
-    #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
-    #[inline(always)]
-    pub fn des_unavl_int(&self) -> DES_UNAVL_INT_R {
-        DES_UNAVL_INT_R::new(((self.bits >> 4) & 1) != 0)
-    }
-    #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
-    #[inline(always)]
-    pub fn fatal_berr_int(&self) -> FATAL_BERR_INT_R {
-        FATAL_BERR_INT_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn tx_int(&self) -> TX_INT_R {
+        TX_INT_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Receive Interrupt"]
     #[inline(always)]
     pub fn rx_int(&self) -> RX_INT_R {
         RX_INT_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Transmit Interrupt"]
+    #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
     #[inline(always)]
-    pub fn tx_int(&self) -> TX_INT_R {
-        TX_INT_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 9 - Abnormal Interrupt Summary"]
-    #[inline(always)]
-    pub fn abn_int_sum(&mut self) -> ABN_INT_SUM_W<9> {
-        ABN_INT_SUM_W::new(self)
-    }
-    #[doc = "Bit 8 - Normal Interrupt Summary"]
-    #[inline(always)]
-    pub fn nor_int_sum(&mut self) -> NOR_INT_SUM_W<8> {
-        NOR_INT_SUM_W::new(self)
-    }
-    #[doc = "Bit 5 - Card Error Summary"]
-    #[inline(always)]
-    pub fn err_flag_sum(&mut self) -> ERR_FLAG_SUM_W<5> {
-        ERR_FLAG_SUM_W::new(self)
+    pub fn fatal_berr_int(&self) -> FATAL_BERR_INT_R {
+        FATAL_BERR_INT_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
-    pub fn des_unavl_int(&mut self) -> DES_UNAVL_INT_W<4> {
-        DES_UNAVL_INT_W::new(self)
+    pub fn des_unavl_int(&self) -> DES_UNAVL_INT_R {
+        DES_UNAVL_INT_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
+    #[doc = "Bit 5 - Card Error Summary"]
     #[inline(always)]
-    pub fn fatal_berr_int(&mut self) -> FATAL_BERR_INT_W<2> {
-        FATAL_BERR_INT_W::new(self)
+    pub fn err_flag_sum(&self) -> ERR_FLAG_SUM_R {
+        ERR_FLAG_SUM_R::new(((self.bits >> 5) & 1) != 0)
+    }
+    #[doc = "Bit 8 - Normal Interrupt Summary"]
+    #[inline(always)]
+    pub fn nor_int_sum(&self) -> NOR_INT_SUM_R {
+        NOR_INT_SUM_R::new(((self.bits >> 8) & 1) != 0)
+    }
+    #[doc = "Bit 9 - Abnormal Interrupt Summary"]
+    #[inline(always)]
+    pub fn abn_int_sum(&self) -> ABN_INT_SUM_R {
+        ABN_INT_SUM_R::new(((self.bits >> 9) & 1) != 0)
+    }
+    #[doc = "Bits 10:12 - Error Bits"]
+    #[inline(always)]
+    pub fn idmac_err_sta(&self) -> IDMAC_ERR_STA_R {
+        IDMAC_ERR_STA_R::new(((self.bits >> 10) & 7) as u8)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - Transmit Interrupt"]
+    #[inline(always)]
+    pub fn tx_int(&mut self) -> TX_INT_W<0> {
+        TX_INT_W::new(self)
     }
     #[doc = "Bit 1 - Receive Interrupt"]
     #[inline(always)]
     pub fn rx_int(&mut self) -> RX_INT_W<1> {
         RX_INT_W::new(self)
     }
-    #[doc = "Bit 0 - Transmit Interrupt"]
+    #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
     #[inline(always)]
-    pub fn tx_int(&mut self) -> TX_INT_W<0> {
-        TX_INT_W::new(self)
+    pub fn fatal_berr_int(&mut self) -> FATAL_BERR_INT_W<2> {
+        FATAL_BERR_INT_W::new(self)
+    }
+    #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
+    #[inline(always)]
+    pub fn des_unavl_int(&mut self) -> DES_UNAVL_INT_W<4> {
+        DES_UNAVL_INT_W::new(self)
+    }
+    #[doc = "Bit 5 - Card Error Summary"]
+    #[inline(always)]
+    pub fn err_flag_sum(&mut self) -> ERR_FLAG_SUM_W<5> {
+        ERR_FLAG_SUM_W::new(self)
+    }
+    #[doc = "Bit 8 - Normal Interrupt Summary"]
+    #[inline(always)]
+    pub fn nor_int_sum(&mut self) -> NOR_INT_SUM_W<8> {
+        NOR_INT_SUM_W::new(self)
+    }
+    #[doc = "Bit 9 - Abnormal Interrupt Summary"]
+    #[inline(always)]
+    pub fn abn_int_sum(&mut self) -> ABN_INT_SUM_W<9> {
+        ABN_INT_SUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

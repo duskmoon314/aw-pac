@@ -34,57 +34,8 @@ impl From<crate::W<EMMC_DDR_SBIT_DET_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "HS400 Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HS400_MD_EN_A {
-    #[doc = "0: Disabled"]
-    DISABLED = 0,
-    #[doc = "1: Enabled"]
-    ENABLED = 1,
-}
-impl From<HS400_MD_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: HS400_MD_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `hs400_md_en` reader - HS400 Mode Enable"]
-pub type HS400_MD_EN_R = crate::BitReader<HS400_MD_EN_A>;
-impl HS400_MD_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> HS400_MD_EN_A {
-        match self.bits {
-            false => HS400_MD_EN_A::DISABLED,
-            true => HS400_MD_EN_A::ENABLED,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline(always)]
-    pub fn is_disabled(&self) -> bool {
-        *self == HS400_MD_EN_A::DISABLED
-    }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline(always)]
-    pub fn is_enabled(&self) -> bool {
-        *self == HS400_MD_EN_A::ENABLED
-    }
-}
-#[doc = "Field `hs400_md_en` writer - HS400 Mode Enable"]
-pub type HS400_MD_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HS400_MD_EN_A, O>;
-impl<'a, const O: u8> HS400_MD_EN_W<'a, O> {
-    #[doc = "Disabled"]
-    #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(HS400_MD_EN_A::DISABLED)
-    }
-    #[doc = "Enabled"]
-    #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(HS400_MD_EN_A::ENABLED)
-    }
-}
+#[doc = "Field `half_start_bit` reader - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
+pub type HALF_START_BIT_R = crate::BitReader<HALF_START_BIT_A>;
 #[doc = "Control for start bit detection mechanism inside mstorage based on duration of start bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum HALF_START_BIT_A {
@@ -99,8 +50,6 @@ impl From<HALF_START_BIT_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `half_start_bit` reader - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
-pub type HALF_START_BIT_R = crate::BitReader<HALF_START_BIT_A>;
 impl HALF_START_BIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -136,28 +85,79 @@ impl<'a, const O: u8> HALF_START_BIT_W<'a, O> {
         self.variant(HALF_START_BIT_A::LESS)
     }
 }
-impl R {
-    #[doc = "Bit 31 - HS400 Mode Enable"]
+#[doc = "Field `hs400_md_en` reader - HS400 Mode Enable"]
+pub type HS400_MD_EN_R = crate::BitReader<HS400_MD_EN_A>;
+#[doc = "HS400 Mode Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HS400_MD_EN_A {
+    #[doc = "0: Disabled"]
+    DISABLED = 0,
+    #[doc = "1: Enabled"]
+    ENABLED = 1,
+}
+impl From<HS400_MD_EN_A> for bool {
     #[inline(always)]
-    pub fn hs400_md_en(&self) -> HS400_MD_EN_R {
-        HS400_MD_EN_R::new(((self.bits >> 31) & 1) != 0)
+    fn from(variant: HS400_MD_EN_A) -> Self {
+        variant as u8 != 0
     }
+}
+impl HS400_MD_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HS400_MD_EN_A {
+        match self.bits {
+            false => HS400_MD_EN_A::DISABLED,
+            true => HS400_MD_EN_A::ENABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[inline(always)]
+    pub fn is_disabled(&self) -> bool {
+        *self == HS400_MD_EN_A::DISABLED
+    }
+    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[inline(always)]
+    pub fn is_enabled(&self) -> bool {
+        *self == HS400_MD_EN_A::ENABLED
+    }
+}
+#[doc = "Field `hs400_md_en` writer - HS400 Mode Enable"]
+pub type HS400_MD_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HS400_MD_EN_A, O>;
+impl<'a, const O: u8> HS400_MD_EN_W<'a, O> {
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(HS400_MD_EN_A::DISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(HS400_MD_EN_A::ENABLED)
+    }
+}
+impl R {
     #[doc = "Bit 0 - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
     #[inline(always)]
     pub fn half_start_bit(&self) -> HALF_START_BIT_R {
         HALF_START_BIT_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 31 - HS400 Mode Enable"]
     #[inline(always)]
-    pub fn hs400_md_en(&mut self) -> HS400_MD_EN_W<31> {
-        HS400_MD_EN_W::new(self)
+    pub fn hs400_md_en(&self) -> HS400_MD_EN_R {
+        HS400_MD_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0 - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
     #[inline(always)]
     pub fn half_start_bit(&mut self) -> HALF_START_BIT_W<0> {
         HALF_START_BIT_W::new(self)
+    }
+    #[doc = "Bit 31 - HS400 Mode Enable"]
+    #[inline(always)]
+    pub fn hs400_md_en(&mut self) -> HS400_MD_EN_W<31> {
+        HS400_MD_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

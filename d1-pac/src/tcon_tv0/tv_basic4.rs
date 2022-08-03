@@ -34,36 +34,36 @@ impl From<crate::W<TV_BASIC4_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `v_t` reader - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
-pub type V_T_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `v_t` writer - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
-pub type V_T_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC4_SPEC, u16, u16, 13, O>;
 #[doc = "Field `v_bp` reader - horizontal back porch (in HD line)\n\nTvbp = (VBP +1) * Th"]
 pub type V_BP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `v_bp` writer - horizontal back porch (in HD line)\n\nTvbp = (VBP +1) * Th"]
 pub type V_BP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC4_SPEC, u16, u16, 12, O>;
+#[doc = "Field `v_t` reader - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
+pub type V_T_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `v_t` writer - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
+pub type V_T_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC4_SPEC, u16, u16, 13, O>;
 impl R {
-    #[doc = "Bits 16:28 - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
-    #[inline(always)]
-    pub fn v_t(&self) -> V_T_R {
-        V_T_R::new(((self.bits >> 16) & 0x1fff) as u16)
-    }
     #[doc = "Bits 0:11 - horizontal back porch (in HD line)\n\nTvbp = (VBP +1) * Th"]
     #[inline(always)]
     pub fn v_bp(&self) -> V_BP_R {
         V_BP_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:28 - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
     #[inline(always)]
-    pub fn v_t(&mut self) -> V_T_W<16> {
-        V_T_W::new(self)
+    pub fn v_t(&self) -> V_T_R {
+        V_T_R::new(((self.bits >> 16) & 0x1fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - horizontal back porch (in HD line)\n\nTvbp = (VBP +1) * Th"]
     #[inline(always)]
     pub fn v_bp(&mut self) -> V_BP_W<0> {
         V_BP_W::new(self)
+    }
+    #[doc = "Bits 16:28 - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
+    #[inline(always)]
+    pub fn v_t(&mut self) -> V_T_W<16> {
+        V_T_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

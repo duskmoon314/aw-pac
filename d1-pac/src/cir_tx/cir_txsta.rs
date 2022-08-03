@@ -34,94 +34,8 @@ impl From<crate::W<CIR_TXSTA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Status of CIR Transmitter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum STCT_A {
-    #[doc = "0: Idle"]
-    IDLE = 0,
-    #[doc = "1: Active"]
-    ACTIVE = 1,
-}
-impl From<STCT_A> for bool {
-    #[inline(always)]
-    fn from(variant: STCT_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `stct` reader - Status of CIR Transmitter"]
-pub type STCT_R = crate::BitReader<STCT_A>;
-impl STCT_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> STCT_A {
-        match self.bits {
-            false => STCT_A::IDLE,
-            true => STCT_A::ACTIVE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `IDLE`"]
-    #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == STCT_A::IDLE
-    }
-    #[doc = "Checks if the value of the field is `ACTIVE`"]
-    #[inline(always)]
-    pub fn is_active(&self) -> bool {
-        *self == STCT_A::ACTIVE
-    }
-}
-#[doc = "Field `drq` reader - DMA Request Flag"]
-pub type DRQ_R = crate::BitReader<bool>;
-#[doc = "TX FIFO Available Interrupt Flag\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TAI_A {
-    #[doc = "0: TX FIFO not available by its level"]
-    NOT_AVAILABLE = 0,
-    #[doc = "1: TX FIFO available by its level Writing 1 clears this bit."]
-    AVAILABLE = 1,
-}
-impl From<TAI_A> for bool {
-    #[inline(always)]
-    fn from(variant: TAI_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tai` reader - TX FIFO Available Interrupt Flag"]
-pub type TAI_R = crate::BitReader<TAI_A>;
-impl TAI_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TAI_A {
-        match self.bits {
-            false => TAI_A::NOT_AVAILABLE,
-            true => TAI_A::AVAILABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOT_AVAILABLE`"]
-    #[inline(always)]
-    pub fn is_not_available(&self) -> bool {
-        *self == TAI_A::NOT_AVAILABLE
-    }
-    #[doc = "Checks if the value of the field is `AVAILABLE`"]
-    #[inline(always)]
-    pub fn is_available(&self) -> bool {
-        *self == TAI_A::AVAILABLE
-    }
-}
-#[doc = "Field `tai` writer - TX FIFO Available Interrupt Flag"]
-pub type TAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXSTA_SPEC, TAI_A, O>;
-impl<'a, const O: u8> TAI_W<'a, O> {
-    #[doc = "TX FIFO not available by its level"]
-    #[inline(always)]
-    pub fn not_available(self) -> &'a mut W {
-        self.variant(TAI_A::NOT_AVAILABLE)
-    }
-    #[doc = "TX FIFO available by its level Writing 1 clears this bit."]
-    #[inline(always)]
-    pub fn available(self) -> &'a mut W {
-        self.variant(TAI_A::AVAILABLE)
-    }
-}
+#[doc = "Field `tpe_tur` reader - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+pub type TPE_TUR_R = crate::BitReader<TPE_TUR_A>;
 #[doc = "Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum TPE_TUR_A {
@@ -136,8 +50,6 @@ impl From<TPE_TUR_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `tpe_tur` reader - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
-pub type TPE_TUR_R = crate::BitReader<TPE_TUR_A>;
 impl TPE_TUR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -172,38 +84,126 @@ impl<'a, const O: u8> TPE_TUR_W<'a, O> {
         self.variant(TPE_TUR_A::COMPLETE_OR_TRANSMIT)
     }
 }
-impl R {
-    #[doc = "Bit 3 - Status of CIR Transmitter"]
+#[doc = "Field `tai` reader - TX FIFO Available Interrupt Flag"]
+pub type TAI_R = crate::BitReader<TAI_A>;
+#[doc = "TX FIFO Available Interrupt Flag\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TAI_A {
+    #[doc = "0: TX FIFO not available by its level"]
+    NOT_AVAILABLE = 0,
+    #[doc = "1: TX FIFO available by its level Writing 1 clears this bit."]
+    AVAILABLE = 1,
+}
+impl From<TAI_A> for bool {
     #[inline(always)]
-    pub fn stct(&self) -> STCT_R {
-        STCT_R::new(((self.bits >> 3) & 1) != 0)
+    fn from(variant: TAI_A) -> Self {
+        variant as u8 != 0
     }
-    #[doc = "Bit 2 - DMA Request Flag"]
+}
+impl TAI_R {
+    #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn drq(&self) -> DRQ_R {
-        DRQ_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn variant(&self) -> TAI_A {
+        match self.bits {
+            false => TAI_A::NOT_AVAILABLE,
+            true => TAI_A::AVAILABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOT_AVAILABLE`"]
+    #[inline(always)]
+    pub fn is_not_available(&self) -> bool {
+        *self == TAI_A::NOT_AVAILABLE
+    }
+    #[doc = "Checks if the value of the field is `AVAILABLE`"]
+    #[inline(always)]
+    pub fn is_available(&self) -> bool {
+        *self == TAI_A::AVAILABLE
+    }
+}
+#[doc = "Field `tai` writer - TX FIFO Available Interrupt Flag"]
+pub type TAI_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TXSTA_SPEC, TAI_A, O>;
+impl<'a, const O: u8> TAI_W<'a, O> {
+    #[doc = "TX FIFO not available by its level"]
+    #[inline(always)]
+    pub fn not_available(self) -> &'a mut W {
+        self.variant(TAI_A::NOT_AVAILABLE)
+    }
+    #[doc = "TX FIFO available by its level Writing 1 clears this bit."]
+    #[inline(always)]
+    pub fn available(self) -> &'a mut W {
+        self.variant(TAI_A::AVAILABLE)
+    }
+}
+#[doc = "Field `drq` reader - DMA Request Flag"]
+pub type DRQ_R = crate::BitReader<bool>;
+#[doc = "Field `stct` reader - Status of CIR Transmitter"]
+pub type STCT_R = crate::BitReader<STCT_A>;
+#[doc = "Status of CIR Transmitter\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STCT_A {
+    #[doc = "0: Idle"]
+    IDLE = 0,
+    #[doc = "1: Active"]
+    ACTIVE = 1,
+}
+impl From<STCT_A> for bool {
+    #[inline(always)]
+    fn from(variant: STCT_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl STCT_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> STCT_A {
+        match self.bits {
+            false => STCT_A::IDLE,
+            true => STCT_A::ACTIVE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == STCT_A::IDLE
+    }
+    #[doc = "Checks if the value of the field is `ACTIVE`"]
+    #[inline(always)]
+    pub fn is_active(&self) -> bool {
+        *self == STCT_A::ACTIVE
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+    #[inline(always)]
+    pub fn tpe_tur(&self) -> TPE_TUR_R {
+        TPE_TUR_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - TX FIFO Available Interrupt Flag"]
     #[inline(always)]
     pub fn tai(&self) -> TAI_R {
         TAI_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
+    #[doc = "Bit 2 - DMA Request Flag"]
     #[inline(always)]
-    pub fn tpe_tur(&self) -> TPE_TUR_R {
-        TPE_TUR_R::new((self.bits & 1) != 0)
+    pub fn drq(&self) -> DRQ_R {
+        DRQ_R::new(((self.bits >> 2) & 1) != 0)
+    }
+    #[doc = "Bit 3 - Status of CIR Transmitter"]
+    #[inline(always)]
+    pub fn stct(&self) -> STCT_R {
+        STCT_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Bit 1 - TX FIFO Available Interrupt Flag"]
-    #[inline(always)]
-    pub fn tai(&mut self) -> TAI_W<1> {
-        TAI_W::new(self)
-    }
     #[doc = "Bit 0 - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
     #[inline(always)]
     pub fn tpe_tur(&mut self) -> TPE_TUR_W<0> {
         TPE_TUR_W::new(self)
+    }
+    #[doc = "Bit 1 - TX FIFO Available Interrupt Flag"]
+    #[inline(always)]
+    pub fn tai(&mut self) -> TAI_W<1> {
+        TAI_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

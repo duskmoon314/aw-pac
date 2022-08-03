@@ -34,6 +34,8 @@ impl From<crate::W<ALARM_CONFIG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `alarm_wakeup` reader - Configuration of alarm wake up output."]
+pub type ALARM_WAKEUP_R = crate::BitReader<ALARM_WAKEUP_A>;
 #[doc = "Configuration of alarm wake up output.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALARM_WAKEUP_A {
@@ -48,8 +50,6 @@ impl From<ALARM_WAKEUP_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `alarm_wakeup` reader - Configuration of alarm wake up output."]
-pub type ALARM_WAKEUP_R = crate::BitReader<ALARM_WAKEUP_A>;
 impl ALARM_WAKEUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

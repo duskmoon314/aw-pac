@@ -34,160 +34,8 @@ impl From<crate::W<SPI_GCR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `srst` reader - Soft reset"]
-pub type SRST_R = crate::BitReader<bool>;
-#[doc = "Field `srst` writer - Soft reset"]
-pub type SRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, bool, O>;
-#[doc = "Transmit Pause Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TP_EN_A {
-    #[doc = "0: normal operation, ignore RXFIFO status"]
-    NORMAL = 0,
-    #[doc = "1: Stop transmit data when RXFIFO full"]
-    STOP_WHEN_FULL = 1,
-}
-impl From<TP_EN_A> for bool {
-    #[inline(always)]
-    fn from(variant: TP_EN_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `tp_en` reader - Transmit Pause Enable"]
-pub type TP_EN_R = crate::BitReader<TP_EN_A>;
-impl TP_EN_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> TP_EN_A {
-        match self.bits {
-            false => TP_EN_A::NORMAL,
-            true => TP_EN_A::STOP_WHEN_FULL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
-    #[inline(always)]
-    pub fn is_normal(&self) -> bool {
-        *self == TP_EN_A::NORMAL
-    }
-    #[doc = "Checks if the value of the field is `STOP_WHEN_FULL`"]
-    #[inline(always)]
-    pub fn is_stop_when_full(&self) -> bool {
-        *self == TP_EN_A::STOP_WHEN_FULL
-    }
-}
-#[doc = "Field `tp_en` writer - Transmit Pause Enable"]
-pub type TP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, TP_EN_A, O>;
-impl<'a, const O: u8> TP_EN_W<'a, O> {
-    #[doc = "normal operation, ignore RXFIFO status"]
-    #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
-        self.variant(TP_EN_A::NORMAL)
-    }
-    #[doc = "Stop transmit data when RXFIFO full"]
-    #[inline(always)]
-    pub fn stop_when_full(self) -> &'a mut W {
-        self.variant(TP_EN_A::STOP_WHEN_FULL)
-    }
-}
-#[doc = "Sample timing Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE_SELEC_A {
-    #[doc = "0: Old mode of Sample Timing"]
-    OLD_MODE = 0,
-    #[doc = "1: New mode of Sample Timing"]
-    NEW_MODE = 1,
-}
-impl From<MODE_SELEC_A> for bool {
-    #[inline(always)]
-    fn from(variant: MODE_SELEC_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `mode_selec` reader - Sample timing Mode Select"]
-pub type MODE_SELEC_R = crate::BitReader<MODE_SELEC_A>;
-impl MODE_SELEC_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> MODE_SELEC_A {
-        match self.bits {
-            false => MODE_SELEC_A::OLD_MODE,
-            true => MODE_SELEC_A::NEW_MODE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `OLD_MODE`"]
-    #[inline(always)]
-    pub fn is_old_mode(&self) -> bool {
-        *self == MODE_SELEC_A::OLD_MODE
-    }
-    #[doc = "Checks if the value of the field is `NEW_MODE`"]
-    #[inline(always)]
-    pub fn is_new_mode(&self) -> bool {
-        *self == MODE_SELEC_A::NEW_MODE
-    }
-}
-#[doc = "Field `mode_selec` writer - Sample timing Mode Select"]
-pub type MODE_SELEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_SELEC_A, O>;
-impl<'a, const O: u8> MODE_SELEC_W<'a, O> {
-    #[doc = "Old mode of Sample Timing"]
-    #[inline(always)]
-    pub fn old_mode(self) -> &'a mut W {
-        self.variant(MODE_SELEC_A::OLD_MODE)
-    }
-    #[doc = "New mode of Sample Timing"]
-    #[inline(always)]
-    pub fn new_mode(self) -> &'a mut W {
-        self.variant(MODE_SELEC_A::NEW_MODE)
-    }
-}
-#[doc = "SPI Function Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODE_A {
-    #[doc = "0: `0`"]
-    SLAVE = 0,
-    #[doc = "1: `1`"]
-    MASTER = 1,
-}
-impl From<MODE_A> for bool {
-    #[inline(always)]
-    fn from(variant: MODE_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `mode` reader - SPI Function Mode Select"]
-pub type MODE_R = crate::BitReader<MODE_A>;
-impl MODE_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
-        match self.bits {
-            false => MODE_A::SLAVE,
-            true => MODE_A::MASTER,
-        }
-    }
-    #[doc = "Checks if the value of the field is `SLAVE`"]
-    #[inline(always)]
-    pub fn is_slave(&self) -> bool {
-        *self == MODE_A::SLAVE
-    }
-    #[doc = "Checks if the value of the field is `MASTER`"]
-    #[inline(always)]
-    pub fn is_master(&self) -> bool {
-        *self == MODE_A::MASTER
-    }
-}
-#[doc = "Field `mode` writer - SPI Function Mode Select"]
-pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_A, O>;
-impl<'a, const O: u8> MODE_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn slave(self) -> &'a mut W {
-        self.variant(MODE_A::SLAVE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn master(self) -> &'a mut W {
-        self.variant(MODE_A::MASTER)
-    }
-}
+#[doc = "Field `en` reader - SPI Module Enable Control"]
+pub type EN_R = crate::BitReader<EN_A>;
 #[doc = "SPI Module Enable Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum EN_A {
@@ -202,8 +50,6 @@ impl From<EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `en` reader - SPI Module Enable Control"]
-pub type EN_R = crate::BitReader<EN_A>;
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -238,58 +84,212 @@ impl<'a, const O: u8> EN_W<'a, O> {
         self.variant(EN_A::ENABLE)
     }
 }
+#[doc = "Field `mode` reader - SPI Function Mode Select"]
+pub type MODE_R = crate::BitReader<MODE_A>;
+#[doc = "SPI Function Mode Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MODE_A {
+    #[doc = "0: `0`"]
+    SLAVE = 0,
+    #[doc = "1: `1`"]
+    MASTER = 1,
+}
+impl From<MODE_A> for bool {
+    #[inline(always)]
+    fn from(variant: MODE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl MODE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE_A {
+        match self.bits {
+            false => MODE_A::SLAVE,
+            true => MODE_A::MASTER,
+        }
+    }
+    #[doc = "Checks if the value of the field is `SLAVE`"]
+    #[inline(always)]
+    pub fn is_slave(&self) -> bool {
+        *self == MODE_A::SLAVE
+    }
+    #[doc = "Checks if the value of the field is `MASTER`"]
+    #[inline(always)]
+    pub fn is_master(&self) -> bool {
+        *self == MODE_A::MASTER
+    }
+}
+#[doc = "Field `mode` writer - SPI Function Mode Select"]
+pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_A, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn slave(self) -> &'a mut W {
+        self.variant(MODE_A::SLAVE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn master(self) -> &'a mut W {
+        self.variant(MODE_A::MASTER)
+    }
+}
+#[doc = "Field `mode_selec` reader - Sample timing Mode Select"]
+pub type MODE_SELEC_R = crate::BitReader<MODE_SELEC_A>;
+#[doc = "Sample timing Mode Select\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MODE_SELEC_A {
+    #[doc = "0: Old mode of Sample Timing"]
+    OLD_MODE = 0,
+    #[doc = "1: New mode of Sample Timing"]
+    NEW_MODE = 1,
+}
+impl From<MODE_SELEC_A> for bool {
+    #[inline(always)]
+    fn from(variant: MODE_SELEC_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl MODE_SELEC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE_SELEC_A {
+        match self.bits {
+            false => MODE_SELEC_A::OLD_MODE,
+            true => MODE_SELEC_A::NEW_MODE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `OLD_MODE`"]
+    #[inline(always)]
+    pub fn is_old_mode(&self) -> bool {
+        *self == MODE_SELEC_A::OLD_MODE
+    }
+    #[doc = "Checks if the value of the field is `NEW_MODE`"]
+    #[inline(always)]
+    pub fn is_new_mode(&self) -> bool {
+        *self == MODE_SELEC_A::NEW_MODE
+    }
+}
+#[doc = "Field `mode_selec` writer - Sample timing Mode Select"]
+pub type MODE_SELEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_SELEC_A, O>;
+impl<'a, const O: u8> MODE_SELEC_W<'a, O> {
+    #[doc = "Old mode of Sample Timing"]
+    #[inline(always)]
+    pub fn old_mode(self) -> &'a mut W {
+        self.variant(MODE_SELEC_A::OLD_MODE)
+    }
+    #[doc = "New mode of Sample Timing"]
+    #[inline(always)]
+    pub fn new_mode(self) -> &'a mut W {
+        self.variant(MODE_SELEC_A::NEW_MODE)
+    }
+}
+#[doc = "Field `tp_en` reader - Transmit Pause Enable"]
+pub type TP_EN_R = crate::BitReader<TP_EN_A>;
+#[doc = "Transmit Pause Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TP_EN_A {
+    #[doc = "0: normal operation, ignore RXFIFO status"]
+    NORMAL = 0,
+    #[doc = "1: Stop transmit data when RXFIFO full"]
+    STOP_WHEN_FULL = 1,
+}
+impl From<TP_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: TP_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl TP_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TP_EN_A {
+        match self.bits {
+            false => TP_EN_A::NORMAL,
+            true => TP_EN_A::STOP_WHEN_FULL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[inline(always)]
+    pub fn is_normal(&self) -> bool {
+        *self == TP_EN_A::NORMAL
+    }
+    #[doc = "Checks if the value of the field is `STOP_WHEN_FULL`"]
+    #[inline(always)]
+    pub fn is_stop_when_full(&self) -> bool {
+        *self == TP_EN_A::STOP_WHEN_FULL
+    }
+}
+#[doc = "Field `tp_en` writer - Transmit Pause Enable"]
+pub type TP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, TP_EN_A, O>;
+impl<'a, const O: u8> TP_EN_W<'a, O> {
+    #[doc = "normal operation, ignore RXFIFO status"]
+    #[inline(always)]
+    pub fn normal(self) -> &'a mut W {
+        self.variant(TP_EN_A::NORMAL)
+    }
+    #[doc = "Stop transmit data when RXFIFO full"]
+    #[inline(always)]
+    pub fn stop_when_full(self) -> &'a mut W {
+        self.variant(TP_EN_A::STOP_WHEN_FULL)
+    }
+}
+#[doc = "Field `srst` reader - Soft reset"]
+pub type SRST_R = crate::BitReader<bool>;
+#[doc = "Field `srst` writer - Soft reset"]
+pub type SRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bit 31 - Soft reset"]
+    #[doc = "Bit 0 - SPI Module Enable Control"]
     #[inline(always)]
-    pub fn srst(&self) -> SRST_R {
-        SRST_R::new(((self.bits >> 31) & 1) != 0)
-    }
-    #[doc = "Bit 7 - Transmit Pause Enable"]
-    #[inline(always)]
-    pub fn tp_en(&self) -> TP_EN_R {
-        TP_EN_R::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bit 2 - Sample timing Mode Select"]
-    #[inline(always)]
-    pub fn mode_selec(&self) -> MODE_SELEC_R {
-        MODE_SELEC_R::new(((self.bits >> 2) & 1) != 0)
+    pub fn en(&self) -> EN_R {
+        EN_R::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - SPI Function Mode Select"]
     #[inline(always)]
     pub fn mode(&self) -> MODE_R {
         MODE_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 0 - SPI Module Enable Control"]
+    #[doc = "Bit 2 - Sample timing Mode Select"]
     #[inline(always)]
-    pub fn en(&self) -> EN_R {
-        EN_R::new((self.bits & 1) != 0)
-    }
-}
-impl W {
-    #[doc = "Bit 31 - Soft reset"]
-    #[inline(always)]
-    pub fn srst(&mut self) -> SRST_W<31> {
-        SRST_W::new(self)
+    pub fn mode_selec(&self) -> MODE_SELEC_R {
+        MODE_SELEC_R::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 7 - Transmit Pause Enable"]
     #[inline(always)]
-    pub fn tp_en(&mut self) -> TP_EN_W<7> {
-        TP_EN_W::new(self)
+    pub fn tp_en(&self) -> TP_EN_R {
+        TP_EN_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 2 - Sample timing Mode Select"]
+    #[doc = "Bit 31 - Soft reset"]
     #[inline(always)]
-    pub fn mode_selec(&mut self) -> MODE_SELEC_W<2> {
-        MODE_SELEC_W::new(self)
+    pub fn srst(&self) -> SRST_R {
+        SRST_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl W {
+    #[doc = "Bit 0 - SPI Module Enable Control"]
+    #[inline(always)]
+    pub fn en(&mut self) -> EN_W<0> {
+        EN_W::new(self)
     }
     #[doc = "Bit 1 - SPI Function Mode Select"]
     #[inline(always)]
     pub fn mode(&mut self) -> MODE_W<1> {
         MODE_W::new(self)
     }
-    #[doc = "Bit 0 - SPI Module Enable Control"]
+    #[doc = "Bit 2 - Sample timing Mode Select"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W<0> {
-        EN_W::new(self)
+    pub fn mode_selec(&mut self) -> MODE_SELEC_W<2> {
+        MODE_SELEC_W::new(self)
+    }
+    #[doc = "Bit 7 - Transmit Pause Enable"]
+    #[inline(always)]
+    pub fn tp_en(&mut self) -> TP_EN_W<7> {
+        TP_EN_W::new(self)
+    }
+    #[doc = "Bit 31 - Soft reset"]
+    #[inline(always)]
+    pub fn srst(&mut self) -> SRST_W<31> {
+        SRST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,8 @@ impl From<crate::W<GP_DATAH_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ch_hig_irq_en[0-1]` reader - Channel Voltage High Available Interrupt Enable"]
+pub type CH_HIG_IRQ_EN_R = crate::BitReader<CH_HIG_IRQ_EN_A>;
 #[doc = "Channel Voltage High Available Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH_HIG_IRQ_EN_A {
@@ -48,8 +50,6 @@ impl From<CH_HIG_IRQ_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ch(0-1)_hig_irq_en` reader - Channel Voltage High Available Interrupt Enable"]
-pub type CH_HIG_IRQ_EN_R = crate::BitReader<CH_HIG_IRQ_EN_A>;
 impl CH_HIG_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl CH_HIG_IRQ_EN_R {
         *self == CH_HIG_IRQ_EN_A::ENABLE
     }
 }
-#[doc = "Fields `ch(0-1)_hig_irq_en` writer - Channel Voltage High Available Interrupt Enable"]
+#[doc = "Field `ch_hig_irq_en[0-1]` writer - Channel Voltage High Available Interrupt Enable"]
 pub type CH_HIG_IRQ_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, GP_DATAH_INTC_SPEC, CH_HIG_IRQ_EN_A, O>;
 impl<'a, const O: u8> CH_HIG_IRQ_EN_W<'a, O> {

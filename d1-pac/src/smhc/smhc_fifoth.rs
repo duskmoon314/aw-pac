@@ -34,6 +34,16 @@ impl From<crate::W<SMHC_FIFOTH_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tx_tl` reader - TX Trigger Level"]
+pub type TX_TL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `tx_tl` writer - TX Trigger Level"]
+pub type TX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
+#[doc = "Field `rx_tl` reader - RX Trigger Level"]
+pub type RX_TL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `rx_tl` writer - RX Trigger Level"]
+pub type RX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
+#[doc = "Field `bsize_of_trans` reader - sBurst Size of Multiple Transaction"]
+pub type BSIZE_OF_TRANS_R = crate::FieldReader<u8, BSIZE_OF_TRANS_A>;
 #[doc = "sBurst Size of Multiple Transaction\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +63,6 @@ impl From<BSIZE_OF_TRANS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `bsize_of_trans` reader - sBurst Size of Multiple Transaction"]
-pub type BSIZE_OF_TRANS_R = crate::FieldReader<u8, BSIZE_OF_TRANS_A>;
 impl BSIZE_OF_TRANS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,46 +121,38 @@ impl<'a, const O: u8> BSIZE_OF_TRANS_W<'a, O> {
         self.variant(BSIZE_OF_TRANS_A::T16)
     }
 }
-#[doc = "Field `rx_tl` reader - RX Trigger Level"]
-pub type RX_TL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `rx_tl` writer - RX Trigger Level"]
-pub type RX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
-#[doc = "Field `tx_tl` reader - TX Trigger Level"]
-pub type TX_TL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `tx_tl` writer - TX Trigger Level"]
-pub type TX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
+    #[doc = "Bits 0:7 - TX Trigger Level"]
     #[inline(always)]
-    pub fn bsize_of_trans(&self) -> BSIZE_OF_TRANS_R {
-        BSIZE_OF_TRANS_R::new(((self.bits >> 28) & 7) as u8)
+    pub fn tx_tl(&self) -> TX_TL_R {
+        TX_TL_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 16:23 - RX Trigger Level"]
     #[inline(always)]
     pub fn rx_tl(&self) -> RX_TL_R {
         RX_TL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
-    #[doc = "Bits 0:7 - TX Trigger Level"]
+    #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
     #[inline(always)]
-    pub fn tx_tl(&self) -> TX_TL_R {
-        TX_TL_R::new((self.bits & 0xff) as u8)
+    pub fn bsize_of_trans(&self) -> BSIZE_OF_TRANS_R {
+        BSIZE_OF_TRANS_R::new(((self.bits >> 28) & 7) as u8)
     }
 }
 impl W {
-    #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
+    #[doc = "Bits 0:7 - TX Trigger Level"]
     #[inline(always)]
-    pub fn bsize_of_trans(&mut self) -> BSIZE_OF_TRANS_W<28> {
-        BSIZE_OF_TRANS_W::new(self)
+    pub fn tx_tl(&mut self) -> TX_TL_W<0> {
+        TX_TL_W::new(self)
     }
     #[doc = "Bits 16:23 - RX Trigger Level"]
     #[inline(always)]
     pub fn rx_tl(&mut self) -> RX_TL_W<16> {
         RX_TL_W::new(self)
     }
-    #[doc = "Bits 0:7 - TX Trigger Level"]
+    #[doc = "Bits 28:30 - sBurst Size of Multiple Transaction"]
     #[inline(always)]
-    pub fn tx_tl(&mut self) -> TX_TL_W<0> {
-        TX_TL_W::new(self)
+    pub fn bsize_of_trans(&mut self) -> BSIZE_OF_TRANS_W<28> {
+        BSIZE_OF_TRANS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

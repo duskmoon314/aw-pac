@@ -34,38 +34,38 @@ impl From<crate::W<LCD_CEU_COEF_RANG_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ceu_coef_range_min` reader - Unsigned 8-bit value, range of \\[0, 255\\]."]
-pub type CEU_COEF_RANGE_MIN_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ceu_coef_range_min` writer - Unsigned 8-bit value, range of \\[0, 255\\]."]
-pub type CEU_COEF_RANGE_MIN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CEU_COEF_RANG_SPEC, u8, u8, 8, O>;
 #[doc = "Field `ceu_coef_range_max` reader - Unsigned 8-bit value, range of \\[0, 255\\]."]
 pub type CEU_COEF_RANGE_MAX_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ceu_coef_range_max` writer - Unsigned 8-bit value, range of \\[0, 255\\]."]
 pub type CEU_COEF_RANGE_MAX_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_CEU_COEF_RANG_SPEC, u8, u8, 8, O>;
+#[doc = "Field `ceu_coef_range_min` reader - Unsigned 8-bit value, range of \\[0, 255\\]."]
+pub type CEU_COEF_RANGE_MIN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ceu_coef_range_min` writer - Unsigned 8-bit value, range of \\[0, 255\\]."]
+pub type CEU_COEF_RANGE_MIN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LCD_CEU_COEF_RANG_SPEC, u8, u8, 8, O>;
 impl R {
-    #[doc = "Bits 16:23 - Unsigned 8-bit value, range of \\[0, 255\\]."]
-    #[inline(always)]
-    pub fn ceu_coef_range_min(&self) -> CEU_COEF_RANGE_MIN_R {
-        CEU_COEF_RANGE_MIN_R::new(((self.bits >> 16) & 0xff) as u8)
-    }
     #[doc = "Bits 0:7 - Unsigned 8-bit value, range of \\[0, 255\\]."]
     #[inline(always)]
     pub fn ceu_coef_range_max(&self) -> CEU_COEF_RANGE_MAX_R {
         CEU_COEF_RANGE_MAX_R::new((self.bits & 0xff) as u8)
     }
-}
-impl W {
     #[doc = "Bits 16:23 - Unsigned 8-bit value, range of \\[0, 255\\]."]
     #[inline(always)]
-    pub fn ceu_coef_range_min(&mut self) -> CEU_COEF_RANGE_MIN_W<16> {
-        CEU_COEF_RANGE_MIN_W::new(self)
+    pub fn ceu_coef_range_min(&self) -> CEU_COEF_RANGE_MIN_R {
+        CEU_COEF_RANGE_MIN_R::new(((self.bits >> 16) & 0xff) as u8)
     }
+}
+impl W {
     #[doc = "Bits 0:7 - Unsigned 8-bit value, range of \\[0, 255\\]."]
     #[inline(always)]
     pub fn ceu_coef_range_max(&mut self) -> CEU_COEF_RANGE_MAX_W<0> {
         CEU_COEF_RANGE_MAX_W::new(self)
+    }
+    #[doc = "Bits 16:23 - Unsigned 8-bit value, range of \\[0, 255\\]."]
+    #[inline(always)]
+    pub fn ceu_coef_range_min(&mut self) -> CEU_COEF_RANGE_MIN_W<16> {
+        CEU_COEF_RANGE_MIN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

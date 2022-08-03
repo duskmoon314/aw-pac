@@ -13,20 +13,14 @@ impl From<crate::R<IOMMU_LPG_INT_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `dbg_mode_int` reader - Debug mode address switch causes L\\[i\\]
-page table to occur interrupt"]
-pub type DBG_MODE_INT_R = crate::BitReader<bool>;
-#[doc = "Fields `master(0-6)_int` reader - Master\\[j\\]
+#[doc = "Field `master_int[0-6]` reader - Master\\[j\\]
 address switch causes L\\[i\\]
 page table to occur interrupt"]
 pub type MASTER_INT_R = crate::BitReader<bool>;
-impl R {
-    #[doc = "Bit 31 - Debug mode address switch causes L\\[i\\]
+#[doc = "Field `dbg_mode_int` reader - Debug mode address switch causes L\\[i\\]
 page table to occur interrupt"]
-    #[inline(always)]
-    pub fn dbg_mode_int(&self) -> DBG_MODE_INT_R {
-        DBG_MODE_INT_R::new(((self.bits >> 31) & 1) != 0)
-    }
+pub type DBG_MODE_INT_R = crate::BitReader<bool>;
+impl R {
     #[doc = "Master\\[j\\]
 address switch causes L\\[i\\]
 page table to occur interrupt"]
@@ -82,6 +76,12 @@ page table to occur interrupt"]
     #[inline(always)]
     pub fn master6_int(&self) -> MASTER_INT_R {
         MASTER_INT_R::new(((self.bits >> 6) & 1) != 0)
+    }
+    #[doc = "Bit 31 - Debug mode address switch causes L\\[i\\]
+page table to occur interrupt"]
+    #[inline(always)]
+    pub fn dbg_mode_int(&self) -> DBG_MODE_INT_R {
+        DBG_MODE_INT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "IOMMU L\\[i\\]

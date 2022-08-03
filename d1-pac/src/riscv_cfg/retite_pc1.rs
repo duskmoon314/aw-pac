@@ -13,6 +13,10 @@ impl From<crate::R<RETITE_PC1_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `rt_pc_h` reader - Retire PC\\[39:32\\]"]
+pub type RT_PC_H_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `rt_sig` reader - Retire Signal"]
+pub type RT_SIG_R = crate::BitReader<RT_SIG_A>;
 #[doc = "Retire Signal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum RT_SIG_A {
@@ -27,8 +31,6 @@ impl From<RT_SIG_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `rt_sig` reader - Retire Signal"]
-pub type RT_SIG_R = crate::BitReader<RT_SIG_A>;
 impl RT_SIG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -49,18 +51,16 @@ impl RT_SIG_R {
         *self == RT_SIG_A::HAVE
     }
 }
-#[doc = "Field `rt_pc_h` reader - Retire PC\\[39:32\\]"]
-pub type RT_PC_H_R = crate::FieldReader<u8, u8>;
 impl R {
-    #[doc = "Bit 31 - Retire Signal"]
-    #[inline(always)]
-    pub fn rt_sig(&self) -> RT_SIG_R {
-        RT_SIG_R::new(((self.bits >> 31) & 1) != 0)
-    }
     #[doc = "Bits 0:7 - Retire PC\\[39:32\\]"]
     #[inline(always)]
     pub fn rt_pc_h(&self) -> RT_PC_H_R {
         RT_PC_H_R::new((self.bits & 0xff) as u8)
+    }
+    #[doc = "Bit 31 - Retire Signal"]
+    #[inline(always)]
+    pub fn rt_sig(&self) -> RT_SIG_R {
+        RT_SIG_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 #[doc = "Retire PC1 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [retite_pc1](index.html) module"]

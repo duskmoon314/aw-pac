@@ -34,22 +34,22 @@ impl From<crate::W<HC_HCCA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `hcca_7_0` reader - The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read."]
+pub type HCCA_7_0_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `hcca_31_8` reader - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
 pub type HCCA_31_8_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `hcca_31_8` writer - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
 pub type HCCA_31_8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HC_HCCA_SPEC, u32, u32, 24, O>;
-#[doc = "Field `hcca_7_0` reader - The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read."]
-pub type HCCA_7_0_R = crate::FieldReader<u8, u8>;
 impl R {
-    #[doc = "Bits 8:31 - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
-    #[inline(always)]
-    pub fn hcca_31_8(&self) -> HCCA_31_8_R {
-        HCCA_31_8_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
-    }
     #[doc = "Bits 0:7 - The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read."]
     #[inline(always)]
     pub fn hcca_7_0(&self) -> HCCA_7_0_R {
         HCCA_7_0_R::new((self.bits & 0xff) as u8)
+    }
+    #[doc = "Bits 8:31 - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
+    #[inline(always)]
+    pub fn hcca_31_8(&self) -> HCCA_31_8_R {
+        HCCA_31_8_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
     }
 }
 impl W {

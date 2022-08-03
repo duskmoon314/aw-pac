@@ -34,6 +34,9 @@ impl From<crate::W<MSGBOX_RD_IRQ_STATUS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `reception_mq_irq_pend[0-3]` reader - Reception Channel\\[i\\]
+Interrupt Pending"]
+pub type RECEPTION_MQ_IRQ_PEND_R = crate::BitReader<RECEPTION_MQ_IRQ_PEND_A>;
 #[doc = "Reception Channel\\[i\\]
 Interrupt Pending\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -49,9 +52,6 @@ impl From<RECEPTION_MQ_IRQ_PEND_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `reception_mq(0-3)_irq_pend` reader - Reception Channel\\[i\\]
-Interrupt Pending"]
-pub type RECEPTION_MQ_IRQ_PEND_R = crate::BitReader<RECEPTION_MQ_IRQ_PEND_A>;
 impl RECEPTION_MQ_IRQ_PEND_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -72,7 +72,7 @@ impl RECEPTION_MQ_IRQ_PEND_R {
         *self == RECEPTION_MQ_IRQ_PEND_A::PENDING
     }
 }
-#[doc = "Fields `reception_mq(0-3)_irq_pend` writer - Reception Channel\\[i\\]
+#[doc = "Field `reception_mq_irq_pend[0-3]` writer - Reception Channel\\[i\\]
 Interrupt Pending"]
 pub type RECEPTION_MQ_IRQ_PEND_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, MSGBOX_RD_IRQ_STATUS_SPEC, RECEPTION_MQ_IRQ_PEND_A, O>;

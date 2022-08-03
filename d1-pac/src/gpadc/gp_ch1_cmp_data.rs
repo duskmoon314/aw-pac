@@ -34,38 +34,38 @@ impl From<crate::W<GP_CH1_CMP_DATA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `ch1_cmp_hig_data` reader - Channel 1 Voltage High Value"]
-pub type CH1_CMP_HIG_DATA_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `ch1_cmp_hig_data` writer - Channel 1 Voltage High Value"]
-pub type CH1_CMP_HIG_DATA_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, O>;
 #[doc = "Field `ch1_cmp_low_data` reader - Channel 1 Voltage Low Value"]
 pub type CH1_CMP_LOW_DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ch1_cmp_low_data` writer - Channel 1 Voltage Low Value"]
 pub type CH1_CMP_LOW_DATA_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, O>;
+#[doc = "Field `ch1_cmp_hig_data` reader - Channel 1 Voltage High Value"]
+pub type CH1_CMP_HIG_DATA_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ch1_cmp_hig_data` writer - Channel 1 Voltage High Value"]
+pub type CH1_CMP_HIG_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, GP_CH1_CMP_DATA_SPEC, u16, u16, 12, O>;
 impl R {
-    #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
-    #[inline(always)]
-    pub fn ch1_cmp_hig_data(&self) -> CH1_CMP_HIG_DATA_R {
-        CH1_CMP_HIG_DATA_R::new(((self.bits >> 16) & 0x0fff) as u16)
-    }
     #[doc = "Bits 0:11 - Channel 1 Voltage Low Value"]
     #[inline(always)]
     pub fn ch1_cmp_low_data(&self) -> CH1_CMP_LOW_DATA_R {
         CH1_CMP_LOW_DATA_R::new((self.bits & 0x0fff) as u16)
     }
-}
-impl W {
     #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
     #[inline(always)]
-    pub fn ch1_cmp_hig_data(&mut self) -> CH1_CMP_HIG_DATA_W<16> {
-        CH1_CMP_HIG_DATA_W::new(self)
+    pub fn ch1_cmp_hig_data(&self) -> CH1_CMP_HIG_DATA_R {
+        CH1_CMP_HIG_DATA_R::new(((self.bits >> 16) & 0x0fff) as u16)
     }
+}
+impl W {
     #[doc = "Bits 0:11 - Channel 1 Voltage Low Value"]
     #[inline(always)]
     pub fn ch1_cmp_low_data(&mut self) -> CH1_CMP_LOW_DATA_W<0> {
         CH1_CMP_LOW_DATA_W::new(self)
+    }
+    #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
+    #[inline(always)]
+    pub fn ch1_cmp_hig_data(&mut self) -> CH1_CMP_HIG_DATA_W<16> {
+        CH1_CMP_HIG_DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,6 +34,13 @@ impl From<crate::W<LEDC_DMA_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ledc_fifo_trig_level` reader - "]
+pub type LEDC_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `ledc_fifo_trig_level` writer - "]
+pub type LEDC_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LEDC_DMA_CTRL_SPEC, u8, u8, 5, O>;
+#[doc = "Field `ledc_dma_en` reader - "]
+pub type LEDC_DMA_EN_R = crate::BitReader<LEDC_DMA_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum LEDC_DMA_EN_A {
@@ -48,8 +55,6 @@ impl From<LEDC_DMA_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ledc_dma_en` reader - "]
-pub type LEDC_DMA_EN_R = crate::BitReader<LEDC_DMA_EN_A>;
 impl LEDC_DMA_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,33 +90,28 @@ impl<'a, const O: u8> LEDC_DMA_EN_W<'a, O> {
         self.variant(LEDC_DMA_EN_A::ENABLE)
     }
 }
-#[doc = "Field `ledc_fifo_trig_level` reader - "]
-pub type LEDC_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `ledc_fifo_trig_level` writer - "]
-pub type LEDC_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LEDC_DMA_CTRL_SPEC, u8, u8, 5, O>;
 impl R {
-    #[doc = "Bit 5"]
-    #[inline(always)]
-    pub fn ledc_dma_en(&self) -> LEDC_DMA_EN_R {
-        LEDC_DMA_EN_R::new(((self.bits >> 5) & 1) != 0)
-    }
     #[doc = "Bits 0:4"]
     #[inline(always)]
     pub fn ledc_fifo_trig_level(&self) -> LEDC_FIFO_TRIG_LEVEL_R {
         LEDC_FIFO_TRIG_LEVEL_R::new((self.bits & 0x1f) as u8)
     }
-}
-impl W {
     #[doc = "Bit 5"]
     #[inline(always)]
-    pub fn ledc_dma_en(&mut self) -> LEDC_DMA_EN_W<5> {
-        LEDC_DMA_EN_W::new(self)
+    pub fn ledc_dma_en(&self) -> LEDC_DMA_EN_R {
+        LEDC_DMA_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     pub fn ledc_fifo_trig_level(&mut self) -> LEDC_FIFO_TRIG_LEVEL_W<0> {
         LEDC_FIFO_TRIG_LEVEL_W::new(self)
+    }
+    #[doc = "Bit 5"]
+    #[inline(always)]
+    pub fn ledc_dma_en(&mut self) -> LEDC_DMA_EN_W<5> {
+        LEDC_DMA_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

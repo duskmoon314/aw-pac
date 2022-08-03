@@ -34,6 +34,8 @@ impl From<crate::W<THS_ALARM_INTC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `alarm_int_en` reader - Enable the alarm interrupt for the sensor"]
+pub type ALARM_INT_EN_R = crate::BitReader<ALARM_INT_EN_A>;
 #[doc = "Enable the alarm interrupt for the sensor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum ALARM_INT_EN_A {
@@ -48,8 +50,6 @@ impl From<ALARM_INT_EN_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `alarm_int_en` reader - Enable the alarm interrupt for the sensor"]
-pub type ALARM_INT_EN_R = crate::BitReader<ALARM_INT_EN_A>;
 impl ALARM_INT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]

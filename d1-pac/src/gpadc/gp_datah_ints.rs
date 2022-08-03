@@ -34,6 +34,8 @@ impl From<crate::W<GP_DATAH_INTS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ch_hig_pengding[0-1]` reader - Channel Voltage High Available Interrupt Status"]
+pub type CH_HIG_PENGDING_R = crate::BitReader<CH_HIG_PENGDING_A>;
 #[doc = "Channel Voltage High Available Interrupt Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CH_HIG_PENGDING_A {
@@ -48,8 +50,6 @@ impl From<CH_HIG_PENGDING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `ch(0-1)_hig_pengding` reader - Channel Voltage High Available Interrupt Status"]
-pub type CH_HIG_PENGDING_R = crate::BitReader<CH_HIG_PENGDING_A>;
 impl CH_HIG_PENGDING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -70,7 +70,7 @@ impl CH_HIG_PENGDING_R {
         *self == CH_HIG_PENGDING_A::CHANNEL
     }
 }
-#[doc = "Fields `ch(0-1)_hig_pengding` writer - Channel Voltage High Available Interrupt Status"]
+#[doc = "Field `ch_hig_pengding[0-1]` writer - Channel Voltage High Available Interrupt Status"]
 pub type CH_HIG_PENGDING_W<'a, const O: u8> =
     crate::BitWriter1C<'a, u32, GP_DATAH_INTS_SPEC, CH_HIG_PENGDING_A, O>;
 impl<'a, const O: u8> CH_HIG_PENGDING_W<'a, O> {

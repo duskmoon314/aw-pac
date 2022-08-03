@@ -34,6 +34,8 @@ impl From<crate::W<PB_DRV0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pb_drv[0-7]` reader - PB Multi_Driving Select"]
+pub type PB_DRV_R = crate::FieldReader<u8, PB_DRV_A>;
 #[doc = "PB Multi_Driving Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 #[repr(u8)]
@@ -53,8 +55,6 @@ impl From<PB_DRV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Fields `pb(0-7)_drv` reader - PB Multi_Driving Select"]
-pub type PB_DRV_R = crate::FieldReader<u8, PB_DRV_A>;
 impl PB_DRV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -88,7 +88,7 @@ impl PB_DRV_R {
         *self == PB_DRV_A::L3
     }
 }
-#[doc = "Fields `pb(0-7)_drv` writer - PB Multi_Driving Select"]
+#[doc = "Field `pb_drv[0-7]` writer - PB Multi_Driving Select"]
 pub type PB_DRV_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, PB_DRV0_SPEC, u8, PB_DRV_A, 2, O>;
 impl<'a, const O: u8> PB_DRV_W<'a, O> {

@@ -34,56 +34,8 @@ impl From<crate::W<UART_BGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum UART_RST_A {
-    #[doc = "0: `0`"]
-    ASSERT = 0,
-    #[doc = "1: `1`"]
-    DEASSERT = 1,
-}
-impl From<UART_RST_A> for bool {
-    #[inline(always)]
-    fn from(variant: UART_RST_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Fields `uart(0-5)_rst` reader - Reset"]
-pub type UART_RST_R = crate::BitReader<UART_RST_A>;
-impl UART_RST_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> UART_RST_A {
-        match self.bits {
-            false => UART_RST_A::ASSERT,
-            true => UART_RST_A::DEASSERT,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
-    #[inline(always)]
-    pub fn is_assert(&self) -> bool {
-        *self == UART_RST_A::ASSERT
-    }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
-    #[inline(always)]
-    pub fn is_deassert(&self) -> bool {
-        *self == UART_RST_A::DEASSERT
-    }
-}
-#[doc = "Fields `uart(0-5)_rst` writer - Reset"]
-pub type UART_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_BGR_SPEC, UART_RST_A, O>;
-impl<'a, const O: u8> UART_RST_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
-        self.variant(UART_RST_A::ASSERT)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
-        self.variant(UART_RST_A::DEASSERT)
-    }
-}
+#[doc = "Field `uart_gating[0-5]` reader - Gating Clock"]
+pub type UART_GATING_R = crate::BitReader<UART_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum UART_GATING_A {
@@ -98,8 +50,6 @@ impl From<UART_GATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Fields `uart(0-5)_gating` reader - Gating Clock"]
-pub type UART_GATING_R = crate::BitReader<UART_GATING_A>;
 impl UART_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -120,7 +70,7 @@ impl UART_GATING_R {
         *self == UART_GATING_A::PASS
     }
 }
-#[doc = "Fields `uart(0-5)_gating` writer - Gating Clock"]
+#[doc = "Field `uart_gating[0-5]` writer - Gating Clock"]
 pub type UART_GATING_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, UART_BGR_SPEC, UART_GATING_A, O>;
 impl<'a, const O: u8> UART_GATING_W<'a, O> {
@@ -135,42 +85,57 @@ impl<'a, const O: u8> UART_GATING_W<'a, O> {
         self.variant(UART_GATING_A::PASS)
     }
 }
+#[doc = "Field `uart_rst[0-5]` reader - Reset"]
+pub type UART_RST_R = crate::BitReader<UART_RST_A>;
+#[doc = "Reset\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum UART_RST_A {
+    #[doc = "0: `0`"]
+    ASSERT = 0,
+    #[doc = "1: `1`"]
+    DEASSERT = 1,
+}
+impl From<UART_RST_A> for bool {
+    #[inline(always)]
+    fn from(variant: UART_RST_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl UART_RST_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> UART_RST_A {
+        match self.bits {
+            false => UART_RST_A::ASSERT,
+            true => UART_RST_A::DEASSERT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[inline(always)]
+    pub fn is_assert(&self) -> bool {
+        *self == UART_RST_A::ASSERT
+    }
+    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[inline(always)]
+    pub fn is_deassert(&self) -> bool {
+        *self == UART_RST_A::DEASSERT
+    }
+}
+#[doc = "Field `uart_rst[0-5]` writer - Reset"]
+pub type UART_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, UART_BGR_SPEC, UART_RST_A, O>;
+impl<'a, const O: u8> UART_RST_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn assert(self) -> &'a mut W {
+        self.variant(UART_RST_A::ASSERT)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn deassert(self) -> &'a mut W {
+        self.variant(UART_RST_A::DEASSERT)
+    }
+}
 impl R {
-    #[doc = "Reset"]
-    #[inline(always)]
-    pub unsafe fn uart_rst(&self, n: u8) -> UART_RST_R {
-        UART_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
-    }
-    #[doc = "Bit 16 - Reset"]
-    #[inline(always)]
-    pub fn uart0_rst(&self) -> UART_RST_R {
-        UART_RST_R::new(((self.bits >> 16) & 1) != 0)
-    }
-    #[doc = "Bit 17 - Reset"]
-    #[inline(always)]
-    pub fn uart1_rst(&self) -> UART_RST_R {
-        UART_RST_R::new(((self.bits >> 17) & 1) != 0)
-    }
-    #[doc = "Bit 18 - Reset"]
-    #[inline(always)]
-    pub fn uart2_rst(&self) -> UART_RST_R {
-        UART_RST_R::new(((self.bits >> 18) & 1) != 0)
-    }
-    #[doc = "Bit 19 - Reset"]
-    #[inline(always)]
-    pub fn uart3_rst(&self) -> UART_RST_R {
-        UART_RST_R::new(((self.bits >> 19) & 1) != 0)
-    }
-    #[doc = "Bit 20 - Reset"]
-    #[inline(always)]
-    pub fn uart4_rst(&self) -> UART_RST_R {
-        UART_RST_R::new(((self.bits >> 20) & 1) != 0)
-    }
-    #[doc = "Bit 21 - Reset"]
-    #[inline(always)]
-    pub fn uart5_rst(&self) -> UART_RST_R {
-        UART_RST_R::new(((self.bits >> 21) & 1) != 0)
-    }
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn uart_gating(&self, n: u8) -> UART_GATING_R {
@@ -206,43 +171,43 @@ impl R {
     pub fn uart5_gating(&self) -> UART_GATING_R {
         UART_GATING_R::new(((self.bits >> 5) & 1) != 0)
     }
-}
-impl W {
     #[doc = "Reset"]
     #[inline(always)]
-    pub unsafe fn uart_rst<const O: u8>(&mut self) -> UART_RST_W<O> {
-        UART_RST_W::new(self)
+    pub unsafe fn uart_rst(&self, n: u8) -> UART_RST_R {
+        UART_RST_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
-    pub fn uart0_rst(&mut self) -> UART_RST_W<16> {
-        UART_RST_W::new(self)
+    pub fn uart0_rst(&self) -> UART_RST_R {
+        UART_RST_R::new(((self.bits >> 16) & 1) != 0)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
-    pub fn uart1_rst(&mut self) -> UART_RST_W<17> {
-        UART_RST_W::new(self)
+    pub fn uart1_rst(&self) -> UART_RST_R {
+        UART_RST_R::new(((self.bits >> 17) & 1) != 0)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
-    pub fn uart2_rst(&mut self) -> UART_RST_W<18> {
-        UART_RST_W::new(self)
+    pub fn uart2_rst(&self) -> UART_RST_R {
+        UART_RST_R::new(((self.bits >> 18) & 1) != 0)
     }
     #[doc = "Bit 19 - Reset"]
     #[inline(always)]
-    pub fn uart3_rst(&mut self) -> UART_RST_W<19> {
-        UART_RST_W::new(self)
+    pub fn uart3_rst(&self) -> UART_RST_R {
+        UART_RST_R::new(((self.bits >> 19) & 1) != 0)
     }
     #[doc = "Bit 20 - Reset"]
     #[inline(always)]
-    pub fn uart4_rst(&mut self) -> UART_RST_W<20> {
-        UART_RST_W::new(self)
+    pub fn uart4_rst(&self) -> UART_RST_R {
+        UART_RST_R::new(((self.bits >> 20) & 1) != 0)
     }
     #[doc = "Bit 21 - Reset"]
     #[inline(always)]
-    pub fn uart5_rst(&mut self) -> UART_RST_W<21> {
-        UART_RST_W::new(self)
+    pub fn uart5_rst(&self) -> UART_RST_R {
+        UART_RST_R::new(((self.bits >> 21) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Gating Clock"]
     #[inline(always)]
     pub unsafe fn uart_gating<const O: u8>(&mut self) -> UART_GATING_W<O> {
@@ -277,6 +242,41 @@ impl W {
     #[inline(always)]
     pub fn uart5_gating(&mut self) -> UART_GATING_W<5> {
         UART_GATING_W::new(self)
+    }
+    #[doc = "Reset"]
+    #[inline(always)]
+    pub unsafe fn uart_rst<const O: u8>(&mut self) -> UART_RST_W<O> {
+        UART_RST_W::new(self)
+    }
+    #[doc = "Bit 16 - Reset"]
+    #[inline(always)]
+    pub fn uart0_rst(&mut self) -> UART_RST_W<16> {
+        UART_RST_W::new(self)
+    }
+    #[doc = "Bit 17 - Reset"]
+    #[inline(always)]
+    pub fn uart1_rst(&mut self) -> UART_RST_W<17> {
+        UART_RST_W::new(self)
+    }
+    #[doc = "Bit 18 - Reset"]
+    #[inline(always)]
+    pub fn uart2_rst(&mut self) -> UART_RST_W<18> {
+        UART_RST_W::new(self)
+    }
+    #[doc = "Bit 19 - Reset"]
+    #[inline(always)]
+    pub fn uart3_rst(&mut self) -> UART_RST_W<19> {
+        UART_RST_W::new(self)
+    }
+    #[doc = "Bit 20 - Reset"]
+    #[inline(always)]
+    pub fn uart4_rst(&mut self) -> UART_RST_W<20> {
+        UART_RST_W::new(self)
+    }
+    #[doc = "Bit 21 - Reset"]
+    #[inline(always)]
+    pub fn uart5_rst(&mut self) -> UART_RST_W<21> {
+        UART_RST_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

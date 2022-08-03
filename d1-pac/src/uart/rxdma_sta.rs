@@ -34,6 +34,58 @@ impl From<crate::W<RXDMA_STA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `busy` reader - "]
+pub type BUSY_R = crate::BitReader<BUSY_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BUSY_A {
+    #[doc = "0: `0`"]
+    IDLE = 0,
+    #[doc = "1: `1`"]
+    BUSY = 1,
+}
+impl From<BUSY_A> for bool {
+    #[inline(always)]
+    fn from(variant: BUSY_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BUSY_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BUSY_A {
+        match self.bits {
+            false => BUSY_A::IDLE,
+            true => BUSY_A::BUSY,
+        }
+    }
+    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[inline(always)]
+    pub fn is_idle(&self) -> bool {
+        *self == BUSY_A::IDLE
+    }
+    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[inline(always)]
+    pub fn is_busy(&self) -> bool {
+        *self == BUSY_A::BUSY
+    }
+}
+#[doc = "Field `busy` writer - "]
+pub type BUSY_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUSY_A, O>;
+impl<'a, const O: u8> BUSY_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn idle(self) -> &'a mut W {
+        self.variant(BUSY_A::IDLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn busy(self) -> &'a mut W {
+        self.variant(BUSY_A::BUSY)
+    }
+}
+#[doc = "Field `buffer_read_address_updating` reader - "]
+pub type BUFFER_READ_ADDRESS_UPDATING_R = crate::BitReader<BUFFER_READ_ADDRESS_UPDATING_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum BUFFER_READ_ADDRESS_UPDATING_A {
@@ -48,8 +100,6 @@ impl From<BUFFER_READ_ADDRESS_UPDATING_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `buffer_read_address_updating` reader - "]
-pub type BUFFER_READ_ADDRESS_UPDATING_R = crate::BitReader<BUFFER_READ_ADDRESS_UPDATING_A>;
 impl BUFFER_READ_ADDRESS_UPDATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,78 +135,28 @@ impl<'a, const O: u8> BUFFER_READ_ADDRESS_UPDATING_W<'a, O> {
         self.variant(BUFFER_READ_ADDRESS_UPDATING_A::BUSY)
     }
 }
-#[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BUSY_A {
-    #[doc = "0: `0`"]
-    IDLE = 0,
-    #[doc = "1: `1`"]
-    BUSY = 1,
-}
-impl From<BUSY_A> for bool {
-    #[inline(always)]
-    fn from(variant: BUSY_A) -> Self {
-        variant as u8 != 0
-    }
-}
-#[doc = "Field `busy` reader - "]
-pub type BUSY_R = crate::BitReader<BUSY_A>;
-impl BUSY_R {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
-        match self.bits {
-            false => BUSY_A::IDLE,
-            true => BUSY_A::BUSY,
-        }
-    }
-    #[doc = "Checks if the value of the field is `IDLE`"]
-    #[inline(always)]
-    pub fn is_idle(&self) -> bool {
-        *self == BUSY_A::IDLE
-    }
-    #[doc = "Checks if the value of the field is `BUSY`"]
-    #[inline(always)]
-    pub fn is_busy(&self) -> bool {
-        *self == BUSY_A::BUSY
-    }
-}
-#[doc = "Field `busy` writer - "]
-pub type BUSY_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_STA_SPEC, BUSY_A, O>;
-impl<'a, const O: u8> BUSY_W<'a, O> {
-    #[doc = "`0`"]
-    #[inline(always)]
-    pub fn idle(self) -> &'a mut W {
-        self.variant(BUSY_A::IDLE)
-    }
-    #[doc = "`1`"]
-    #[inline(always)]
-    pub fn busy(self) -> &'a mut W {
-        self.variant(BUSY_A::BUSY)
-    }
-}
 impl R {
-    #[doc = "Bit 1"]
-    #[inline(always)]
-    pub fn buffer_read_address_updating(&self) -> BUFFER_READ_ADDRESS_UPDATING_R {
-        BUFFER_READ_ADDRESS_UPDATING_R::new(((self.bits >> 1) & 1) != 0)
-    }
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn busy(&self) -> BUSY_R {
         BUSY_R::new((self.bits & 1) != 0)
     }
-}
-impl W {
     #[doc = "Bit 1"]
     #[inline(always)]
-    pub fn buffer_read_address_updating(&mut self) -> BUFFER_READ_ADDRESS_UPDATING_W<1> {
-        BUFFER_READ_ADDRESS_UPDATING_W::new(self)
+    pub fn buffer_read_address_updating(&self) -> BUFFER_READ_ADDRESS_UPDATING_R {
+        BUFFER_READ_ADDRESS_UPDATING_R::new(((self.bits >> 1) & 1) != 0)
     }
+}
+impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     pub fn busy(&mut self) -> BUSY_W<0> {
         BUSY_W::new(self)
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    pub fn buffer_read_address_updating(&mut self) -> BUFFER_READ_ADDRESS_UPDATING_W<1> {
+        BUFFER_READ_ADDRESS_UPDATING_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
