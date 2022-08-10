@@ -34,6 +34,15 @@ impl From<crate::W<CSIC_DMA_F2_BUFA_RESULT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `f2_bufa_result` reader - Indicate the final F2_BUFA address used for DMA or FBC after software configuration or hardware calculation from Buffer-A address register or buffer address fifo. Only used for debug."]
+pub type F2_BUFA_RESULT_R = crate::FieldReader<u32, u32>;
+impl R {
+    #[doc = "Bits 0:31 - Indicate the final F2_BUFA address used for DMA or FBC after software configuration or hardware calculation from Buffer-A address register or buffer address fifo. Only used for debug."]
+    #[inline(always)]
+    pub fn f2_bufa_result(&self) -> F2_BUFA_RESULT_R {
+        F2_BUFA_RESULT_R::new(self.bits)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

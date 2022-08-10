@@ -34,7 +34,72 @@ impl From<crate::W<CSIC_BIST_DATA_MASK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `bist_data_mask` reader - BIST data mask"]
+pub type BIST_DATA_MASK_R = crate::FieldReader<u32, BIST_DATA_MASK_A>;
+#[doc = "BIST data mask\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u32)]
+pub enum BIST_DATA_MASK_A {
+    #[doc = "0: `0`"]
+    UNMASK = 0,
+    #[doc = "1: `1`"]
+    MASK = 1,
+}
+impl From<BIST_DATA_MASK_A> for u32 {
+    #[inline(always)]
+    fn from(variant: BIST_DATA_MASK_A) -> Self {
+        variant as _
+    }
+}
+impl BIST_DATA_MASK_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<BIST_DATA_MASK_A> {
+        match self.bits {
+            0 => Some(BIST_DATA_MASK_A::UNMASK),
+            1 => Some(BIST_DATA_MASK_A::MASK),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `UNMASK`"]
+    #[inline(always)]
+    pub fn is_unmask(&self) -> bool {
+        *self == BIST_DATA_MASK_A::UNMASK
+    }
+    #[doc = "Checks if the value of the field is `MASK`"]
+    #[inline(always)]
+    pub fn is_mask(&self) -> bool {
+        *self == BIST_DATA_MASK_A::MASK
+    }
+}
+#[doc = "Field `bist_data_mask` writer - BIST data mask"]
+pub type BIST_DATA_MASK_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_BIST_DATA_MASK_SPEC, u32, BIST_DATA_MASK_A, 32, O>;
+impl<'a, const O: u8> BIST_DATA_MASK_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn unmask(self) -> &'a mut W {
+        self.variant(BIST_DATA_MASK_A::UNMASK)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn mask(self) -> &'a mut W {
+        self.variant(BIST_DATA_MASK_A::MASK)
+    }
+}
+impl R {
+    #[doc = "Bits 0:31 - BIST data mask"]
+    #[inline(always)]
+    pub fn bist_data_mask(&self) -> BIST_DATA_MASK_R {
+        BIST_DATA_MASK_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - BIST data mask"]
+    #[inline(always)]
+    pub fn bist_data_mask(&mut self) -> BIST_DATA_MASK_W<0> {
+        BIST_DATA_MASK_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

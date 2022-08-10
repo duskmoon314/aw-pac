@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_DMA_F2_BUFA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `f2_bufa` reader - FIFO 2 output buffer-A address."]
+pub type F2_BUFA_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `f2_bufa` writer - FIFO 2 output buffer-A address."]
+pub type F2_BUFA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_F2_BUFA_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - FIFO 2 output buffer-A address."]
+    #[inline(always)]
+    pub fn f2_bufa(&self) -> F2_BUFA_R {
+        F2_BUFA_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - FIFO 2 output buffer-A address."]
+    #[inline(always)]
+    pub fn f2_bufa(&mut self) -> F2_BUFA_W<0> {
+        F2_BUFA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

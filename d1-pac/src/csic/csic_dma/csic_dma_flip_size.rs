@@ -34,7 +34,39 @@ impl From<crate::W<CSIC_DMA_FLIP_SIZE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `valid_len` reader - Valid components of a line when in HFLIP mode. Unit is pixel component.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+pub type VALID_LEN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `valid_len` writer - Valid components of a line when in HFLIP mode. Unit is pixel component.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+pub type VALID_LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_FLIP_SIZE_SPEC, u16, u16, 14, O>;
+#[doc = "Field `ver_len` reader - Vertical line number when in VFLIP mode. Unit is line.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+pub type VER_LEN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ver_len` writer - Vertical line number when in VFLIP mode. Unit is line.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+pub type VER_LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_FLIP_SIZE_SPEC, u16, u16, 13, O>;
+impl R {
+    #[doc = "Bits 0:13 - Valid components of a line when in HFLIP mode. Unit is pixel component.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+    #[inline(always)]
+    pub fn valid_len(&self) -> VALID_LEN_R {
+        VALID_LEN_R::new((self.bits & 0x3fff) as u16)
+    }
+    #[doc = "Bits 16:28 - Vertical line number when in VFLIP mode. Unit is line.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+    #[inline(always)]
+    pub fn ver_len(&self) -> VER_LEN_R {
+        VER_LEN_R::new(((self.bits >> 16) & 0x1fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:13 - Valid components of a line when in HFLIP mode. Unit is pixel component.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+    #[inline(always)]
+    pub fn valid_len(&mut self) -> VALID_LEN_W<0> {
+        VALID_LEN_W::new(self)
+    }
+    #[doc = "Bits 16:28 - Vertical line number when in VFLIP mode. Unit is line.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
+    #[inline(always)]
+    pub fn ver_len(&mut self) -> VER_LEN_W<16> {
+        VER_LEN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +87,10 @@ impl crate::Readable for CSIC_DMA_FLIP_SIZE_SPEC {
 impl crate::Writable for CSIC_DMA_FLIP_SIZE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets csic_dma_flip_size to value 0"]
+#[doc = "`reset()` method sets csic_dma_flip_size to value 0x02d0_0500"]
 impl crate::Resettable for CSIC_DMA_FLIP_SIZE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x02d0_0500
     }
 }

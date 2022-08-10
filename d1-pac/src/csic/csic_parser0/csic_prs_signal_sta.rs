@@ -34,6 +34,56 @@ impl From<crate::W<CSIC_PRS_SIGNAL_STA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `data_sta` reader - Indicates the Dn status (n=0-23), MSB for D23, LSB for D0"]
+pub type DATA_STA_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `pclk_sta` reader - Indicates the pclk status"]
+pub type PCLK_STA_R = crate::BitReader<PCLK_STA_A>;
+#[doc = "Indicates the pclk status\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PCLK_STA_A {
+    #[doc = "0: low"]
+    LOW = 0,
+    #[doc = "1: high"]
+    HIGH = 1,
+}
+impl From<PCLK_STA_A> for bool {
+    #[inline(always)]
+    fn from(variant: PCLK_STA_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl PCLK_STA_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PCLK_STA_A {
+        match self.bits {
+            false => PCLK_STA_A::LOW,
+            true => PCLK_STA_A::HIGH,
+        }
+    }
+    #[doc = "Checks if the value of the field is `LOW`"]
+    #[inline(always)]
+    pub fn is_low(&self) -> bool {
+        *self == PCLK_STA_A::LOW
+    }
+    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[inline(always)]
+    pub fn is_high(&self) -> bool {
+        *self == PCLK_STA_A::HIGH
+    }
+}
+impl R {
+    #[doc = "Bits 0:23 - Indicates the Dn status (n=0-23), MSB for D23, LSB for D0"]
+    #[inline(always)]
+    pub fn data_sta(&self) -> DATA_STA_R {
+        DATA_STA_R::new((self.bits & 0x00ff_ffff) as u32)
+    }
+    #[doc = "Bit 24 - Indicates the pclk status"]
+    #[inline(always)]
+    pub fn pclk_sta(&self) -> PCLK_STA_R {
+        PCLK_STA_R::new(((self.bits >> 24) & 1) != 0)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

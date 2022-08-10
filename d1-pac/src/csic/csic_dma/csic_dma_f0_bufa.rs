@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_DMA_F0_BUFA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `f0_bufa` reader - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate output address of overhead data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is disabled, these bits indicate FIFO 0 output buffer-A address in DMA mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is enabled, these bits indicate the output buffer address in LBC mode."]
+pub type F0_BUFA_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `f0_bufa` writer - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate output address of overhead data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is disabled, these bits indicate FIFO 0 output buffer-A address in DMA mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is enabled, these bits indicate the output buffer address in LBC mode."]
+pub type F0_BUFA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_F0_BUFA_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate output address of overhead data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is disabled, these bits indicate FIFO 0 output buffer-A address in DMA mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is enabled, these bits indicate the output buffer address in LBC mode."]
+    #[inline(always)]
+    pub fn f0_bufa(&self) -> F0_BUFA_R {
+        F0_BUFA_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate output address of overhead data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is disabled, these bits indicate FIFO 0 output buffer-A address in DMA mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is enabled, these bits indicate the output buffer address in LBC mode."]
+    #[inline(always)]
+    pub fn f0_bufa(&mut self) -> F0_BUFA_W<0> {
+        F0_BUFA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

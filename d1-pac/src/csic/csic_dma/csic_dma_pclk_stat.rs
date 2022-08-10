@@ -34,6 +34,22 @@ impl From<crate::W<CSIC_DMA_PCLK_STAT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pclk_cnt_line_min` reader - Indicates minimum pixel clock counter value for each line. Update at every vsync or framedone."]
+pub type PCLK_CNT_LINE_MIN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `pclk_cnt_line_max` reader - Indicates maximum pixel clock counter value for each line. Update at every vsync or framedone."]
+pub type PCLK_CNT_LINE_MAX_R = crate::FieldReader<u16, u16>;
+impl R {
+    #[doc = "Bits 0:14 - Indicates minimum pixel clock counter value for each line. Update at every vsync or framedone."]
+    #[inline(always)]
+    pub fn pclk_cnt_line_min(&self) -> PCLK_CNT_LINE_MIN_R {
+        PCLK_CNT_LINE_MIN_R::new((self.bits & 0x7fff) as u16)
+    }
+    #[doc = "Bits 16:30 - Indicates maximum pixel clock counter value for each line. Update at every vsync or framedone."]
+    #[inline(always)]
+    pub fn pclk_cnt_line_max(&self) -> PCLK_CNT_LINE_MAX_R {
+        PCLK_CNT_LINE_MAX_R::new(((self.bits >> 16) & 0x7fff) as u16)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
@@ -55,10 +71,10 @@ impl crate::Readable for CSIC_DMA_PCLK_STAT_SPEC {
 impl crate::Writable for CSIC_DMA_PCLK_STAT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets csic_dma_pclk_stat to value 0"]
+#[doc = "`reset()` method sets csic_dma_pclk_stat to value 0x7fff"]
 impl crate::Resettable for CSIC_DMA_PCLK_STAT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x7fff
     }
 }

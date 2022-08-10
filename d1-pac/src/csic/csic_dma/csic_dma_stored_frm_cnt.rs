@@ -34,6 +34,15 @@ impl From<crate::W<CSIC_DMA_STORED_FRM_CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `csic_dma_stored_frm_cnt` reader - Indicates value of stored frames counter. When the counter value reaches CSIC_DMA_STORED_FRM_THRESHOLD, the counter is cleared to 0. Only used in Buffer Addr FIFO Mode."]
+pub type CSIC_DMA_STORED_FRM_CNT_R = crate::FieldReader<u8, u8>;
+impl R {
+    #[doc = "Bits 0:7 - Indicates value of stored frames counter. When the counter value reaches CSIC_DMA_STORED_FRM_THRESHOLD, the counter is cleared to 0. Only used in Buffer Addr FIFO Mode."]
+    #[inline(always)]
+    pub fn csic_dma_stored_frm_cnt(&self) -> CSIC_DMA_STORED_FRM_CNT_R {
+        CSIC_DMA_STORED_FRM_CNT_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

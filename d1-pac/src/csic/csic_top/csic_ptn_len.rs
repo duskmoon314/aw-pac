@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_PTN_LEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ptn_len` reader - The pattern length in byte when generating pattern."]
+pub type PTN_LEN_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `ptn_len` writer - The pattern length in byte when generating pattern."]
+pub type PTN_LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PTN_LEN_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - The pattern length in byte when generating pattern."]
+    #[inline(always)]
+    pub fn ptn_len(&self) -> PTN_LEN_R {
+        PTN_LEN_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - The pattern length in byte when generating pattern."]
+    #[inline(always)]
+    pub fn ptn_len(&mut self) -> PTN_LEN_W<0> {
+        PTN_LEN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_DMA_F1_BUFA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `f1_bufa` reader - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate the output address of compressed data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, these bits indicate the FIFO 1 output buffer-A address in DMA mode."]
+pub type F1_BUFA_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `f1_bufa` writer - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate the output address of compressed data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, these bits indicate the FIFO 1 output buffer-A address in DMA mode."]
+pub type F1_BUFA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_F1_BUFA_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate the output address of compressed data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, these bits indicate the FIFO 1 output buffer-A address in DMA mode."]
+    #[inline(always)]
+    pub fn f1_bufa(&self) -> F1_BUFA_R {
+        F1_BUFA_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate the output address of compressed data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, these bits indicate the FIFO 1 output buffer-A address in DMA mode."]
+    #[inline(always)]
+    pub fn f1_bufa(&mut self) -> F1_BUFA_W<0> {
+        F1_BUFA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

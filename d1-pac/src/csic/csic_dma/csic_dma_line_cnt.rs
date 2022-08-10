@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_DMA_LINE_CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `line_cnt_num` reader - The LINE_CNT_NUM value is set by user,when internal line counter reach the set value, the LC_PD will be set."]
+pub type LINE_CNT_NUM_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `line_cnt_num` writer - The LINE_CNT_NUM value is set by user,when internal line counter reach the set value, the LC_PD will be set."]
+pub type LINE_CNT_NUM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_LINE_CNT_SPEC, u16, u16, 13, O>;
+impl R {
+    #[doc = "Bits 0:12 - The LINE_CNT_NUM value is set by user,when internal line counter reach the set value, the LC_PD will be set."]
+    #[inline(always)]
+    pub fn line_cnt_num(&self) -> LINE_CNT_NUM_R {
+        LINE_CNT_NUM_R::new((self.bits & 0x1fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:12 - The LINE_CNT_NUM value is set by user,when internal line counter reach the set value, the LC_PD will be set."]
+    #[inline(always)]
+    pub fn line_cnt_num(&mut self) -> LINE_CNT_NUM_W<0> {
+        LINE_CNT_NUM_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

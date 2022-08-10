@@ -34,7 +34,39 @@ impl From<crate::W<CSIC_DMA_VSIZE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ver_start` reader - Vertical line start\n\nData is valid from this line."]
+pub type VER_START_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ver_start` writer - Vertical line start\n\nData is valid from this line."]
+pub type VER_START_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_VSIZE_SPEC, u16, u16, 13, O>;
+#[doc = "Field `ver_len` reader - When BK_TOP_EN is enabled, DMA_EN is enabled, these bits indicate Valid line number of a frame in DMA mode."]
+pub type VER_LEN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `ver_len` writer - When BK_TOP_EN is enabled, DMA_EN is enabled, these bits indicate Valid line number of a frame in DMA mode."]
+pub type VER_LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_VSIZE_SPEC, u16, u16, 13, O>;
+impl R {
+    #[doc = "Bits 0:12 - Vertical line start\n\nData is valid from this line."]
+    #[inline(always)]
+    pub fn ver_start(&self) -> VER_START_R {
+        VER_START_R::new((self.bits & 0x1fff) as u16)
+    }
+    #[doc = "Bits 16:28 - When BK_TOP_EN is enabled, DMA_EN is enabled, these bits indicate Valid line number of a frame in DMA mode."]
+    #[inline(always)]
+    pub fn ver_len(&self) -> VER_LEN_R {
+        VER_LEN_R::new(((self.bits >> 16) & 0x1fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:12 - Vertical line start\n\nData is valid from this line."]
+    #[inline(always)]
+    pub fn ver_start(&mut self) -> VER_START_W<0> {
+        VER_START_W::new(self)
+    }
+    #[doc = "Bits 16:28 - When BK_TOP_EN is enabled, DMA_EN is enabled, these bits indicate Valid line number of a frame in DMA mode."]
+    #[inline(always)]
+    pub fn ver_len(&mut self) -> VER_LEN_W<16> {
+        VER_LEN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +87,10 @@ impl crate::Readable for CSIC_DMA_VSIZE_SPEC {
 impl crate::Writable for CSIC_DMA_VSIZE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets csic_dma_vsize to value 0"]
+#[doc = "`reset()` method sets csic_dma_vsize to value 0x02d0_0000"]
 impl crate::Resettable for CSIC_DMA_VSIZE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x02d0_0000
     }
 }

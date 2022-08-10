@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_PTN_ADDR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ptn_addr` reader - The pattern DRAM address when generating pattern."]
+pub type PTN_ADDR_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `ptn_addr` writer - The pattern DRAM address when generating pattern."]
+pub type PTN_ADDR_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PTN_ADDR_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - The pattern DRAM address when generating pattern."]
+    #[inline(always)]
+    pub fn ptn_addr(&self) -> PTN_ADDR_R {
+        PTN_ADDR_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - The pattern DRAM address when generating pattern."]
+    #[inline(always)]
+    pub fn ptn_addr(&mut self) -> PTN_ADDR_W<0> {
+        PTN_ADDR_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

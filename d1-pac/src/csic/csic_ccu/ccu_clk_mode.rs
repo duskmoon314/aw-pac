@@ -34,7 +34,70 @@ impl From<crate::W<CCU_CLK_MODE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ccu_clk_gating_disable` reader - "]
+pub type CCU_CLK_GATING_DISABLE_R = crate::BitReader<CCU_CLK_GATING_DISABLE_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CCU_CLK_GATING_DISABLE_A {
+    #[doc = "0: CCU Clock Gating Registers(0x0004~0x0010) effect"]
+    EFFECT = 0,
+    #[doc = "1: CCU Clock Gating Registers(0x0004~0x0010) not effect"]
+    NOT_EFFECT = 1,
+}
+impl From<CCU_CLK_GATING_DISABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: CCU_CLK_GATING_DISABLE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CCU_CLK_GATING_DISABLE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CCU_CLK_GATING_DISABLE_A {
+        match self.bits {
+            false => CCU_CLK_GATING_DISABLE_A::EFFECT,
+            true => CCU_CLK_GATING_DISABLE_A::NOT_EFFECT,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EFFECT`"]
+    #[inline(always)]
+    pub fn is_effect(&self) -> bool {
+        *self == CCU_CLK_GATING_DISABLE_A::EFFECT
+    }
+    #[doc = "Checks if the value of the field is `NOT_EFFECT`"]
+    #[inline(always)]
+    pub fn is_not_effect(&self) -> bool {
+        *self == CCU_CLK_GATING_DISABLE_A::NOT_EFFECT
+    }
+}
+#[doc = "Field `ccu_clk_gating_disable` writer - "]
+pub type CCU_CLK_GATING_DISABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CCU_CLK_MODE_SPEC, CCU_CLK_GATING_DISABLE_A, O>;
+impl<'a, const O: u8> CCU_CLK_GATING_DISABLE_W<'a, O> {
+    #[doc = "CCU Clock Gating Registers(0x0004~0x0010) effect"]
+    #[inline(always)]
+    pub fn effect(self) -> &'a mut W {
+        self.variant(CCU_CLK_GATING_DISABLE_A::EFFECT)
+    }
+    #[doc = "CCU Clock Gating Registers(0x0004~0x0010) not effect"]
+    #[inline(always)]
+    pub fn not_effect(self) -> &'a mut W {
+        self.variant(CCU_CLK_GATING_DISABLE_A::NOT_EFFECT)
+    }
+}
+impl R {
+    #[doc = "Bit 31"]
+    #[inline(always)]
+    pub fn ccu_clk_gating_disable(&self) -> CCU_CLK_GATING_DISABLE_R {
+        CCU_CLK_GATING_DISABLE_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 31"]
+    #[inline(always)]
+    pub fn ccu_clk_gating_disable(&mut self) -> CCU_CLK_GATING_DISABLE_W<31> {
+        CCU_CLK_GATING_DISABLE_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

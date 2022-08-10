@@ -34,6 +34,22 @@ impl From<crate::W<CSIC_DMA_FIFO_STAT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `fifo_frm_max` reader - Indicates the maximum depth of FIFO being occupied for whole frame. Update at every vsync or framedone."]
+pub type FIFO_FRM_MAX_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `line` reader - Line Index Indicates the line index in current vsync."]
+pub type LINE_R = crate::FieldReader<u16, u16>;
+impl R {
+    #[doc = "Bits 0:12 - Indicates the maximum depth of FIFO being occupied for whole frame. Update at every vsync or framedone."]
+    #[inline(always)]
+    pub fn fifo_frm_max(&self) -> FIFO_FRM_MAX_R {
+        FIFO_FRM_MAX_R::new((self.bits & 0x1fff) as u16)
+    }
+    #[doc = "Bits 16:29 - Line Index Indicates the line index in current vsync."]
+    #[inline(always)]
+    pub fn line(&self) -> LINE_R {
+        LINE_R::new(((self.bits >> 16) & 0x3fff) as u16)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

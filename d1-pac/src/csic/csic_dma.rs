@@ -54,19 +54,16 @@ pub struct CSIC_DMA {
     #[doc = "0x70 - CSIC DMA PCLK Statistic Register"]
     pub csic_dma_pclk_stat: CSIC_DMA_PCLK_STAT,
     _reserved25: [u8; 0x0c],
-    #[doc = "0x80 - CSIC DMA BUF Address FIFO0 Entry Register"]
-    pub csic_dma_buf_addr_fifo0_entry: CSIC_DMA_BUF_ADDR_FIFO0_ENTRY,
-    #[doc = "0x84 - CSIC DMA BUF Address FIFO1 Entry Register"]
-    pub csic_dma_buf_addr_fifo1_entry: CSIC_DMA_BUF_ADDR_FIFO1_ENTRY,
-    #[doc = "0x88 - CSIC DMA BUF Address FIFO2 Entry Register"]
-    pub csic_dma_buf_addr_fifo2_entry: CSIC_DMA_BUF_ADDR_FIFO2_ENTRY,
+    #[doc = "0x80..0x8c - CSIC DMA BUF Address FIFO\\[i\\]
+Entry Register"]
+    pub csic_dma_buf_addr_fifo_entry: [CSIC_DMA_BUF_ADDR_FIFO_ENTRY; 3],
     #[doc = "0x8c - CSIC DMA BUF Threshold Register"]
     pub csic_dma_buf_th: CSIC_DMA_BUF_TH,
     #[doc = "0x90 - CSIC DMA BUF Address FIFO Content Register"]
     pub csic_dma_buf_addr_fifo_con: CSIC_DMA_BUF_ADDR_FIFO_CON,
     #[doc = "0x94 - CSIC DMA Stored Frame Counter Register"]
     pub csic_dma_stored_frm_cnt: CSIC_DMA_STORED_FRM_CNT,
-    _reserved31: [u8; 0x015c],
+    _reserved29: [u8; 0x015c],
     #[doc = "0x1f4 - CSIC DMA Feature List Register"]
     pub csic_feature: CSIC_FEATURE,
 }
@@ -174,21 +171,12 @@ pub mod csic_dma_fifo_thrs;
 pub type CSIC_DMA_PCLK_STAT = crate::Reg<csic_dma_pclk_stat::CSIC_DMA_PCLK_STAT_SPEC>;
 #[doc = "CSIC DMA PCLK Statistic Register"]
 pub mod csic_dma_pclk_stat;
-#[doc = "csic_dma_buf_addr_fifo0_entry (rw) register accessor: an alias for `Reg<CSIC_DMA_BUF_ADDR_FIFO0_ENTRY_SPEC>`"]
-pub type CSIC_DMA_BUF_ADDR_FIFO0_ENTRY =
-    crate::Reg<csic_dma_buf_addr_fifo0_entry::CSIC_DMA_BUF_ADDR_FIFO0_ENTRY_SPEC>;
-#[doc = "CSIC DMA BUF Address FIFO0 Entry Register"]
-pub mod csic_dma_buf_addr_fifo0_entry;
-#[doc = "csic_dma_buf_addr_fifo1_entry (rw) register accessor: an alias for `Reg<CSIC_DMA_BUF_ADDR_FIFO1_ENTRY_SPEC>`"]
-pub type CSIC_DMA_BUF_ADDR_FIFO1_ENTRY =
-    crate::Reg<csic_dma_buf_addr_fifo1_entry::CSIC_DMA_BUF_ADDR_FIFO1_ENTRY_SPEC>;
-#[doc = "CSIC DMA BUF Address FIFO1 Entry Register"]
-pub mod csic_dma_buf_addr_fifo1_entry;
-#[doc = "csic_dma_buf_addr_fifo2_entry (rw) register accessor: an alias for `Reg<CSIC_DMA_BUF_ADDR_FIFO2_ENTRY_SPEC>`"]
-pub type CSIC_DMA_BUF_ADDR_FIFO2_ENTRY =
-    crate::Reg<csic_dma_buf_addr_fifo2_entry::CSIC_DMA_BUF_ADDR_FIFO2_ENTRY_SPEC>;
-#[doc = "CSIC DMA BUF Address FIFO2 Entry Register"]
-pub mod csic_dma_buf_addr_fifo2_entry;
+#[doc = "csic_dma_buf_addr_fifo_entry (rw) register accessor: an alias for `Reg<CSIC_DMA_BUF_ADDR_FIFO_ENTRY_SPEC>`"]
+pub type CSIC_DMA_BUF_ADDR_FIFO_ENTRY =
+    crate::Reg<csic_dma_buf_addr_fifo_entry::CSIC_DMA_BUF_ADDR_FIFO_ENTRY_SPEC>;
+#[doc = "CSIC DMA BUF Address FIFO\\[i\\]
+Entry Register"]
+pub mod csic_dma_buf_addr_fifo_entry;
 #[doc = "csic_dma_buf_th (rw) register accessor: an alias for `Reg<CSIC_DMA_BUF_TH_SPEC>`"]
 pub type CSIC_DMA_BUF_TH = crate::Reg<csic_dma_buf_th::CSIC_DMA_BUF_TH_SPEC>;
 #[doc = "CSIC DMA BUF Threshold Register"]

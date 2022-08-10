@@ -34,7 +34,31 @@ impl From<crate::W<CSIC_DMA_ACC_ITNL_CLK_CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `itnl_clk_cnt` reader - The instant value of internal frame clock counter.\n\nWhen frame done interrupt comes, the software can query this counter for judging whether it is the time for updating the double buffer address registers."]
+pub type ITNL_CLK_CNT_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `acc_clk_cnt` reader - The accumulated value of FRM_CLK_CNT for software frame rate statics. Every interrupt of frame is done, the software checks this accumulated value and clears it to 0. If the ACC_CLK_CNT is larger than 1, the software has lost frame.\n\nWhen frame done or vsync comes, ACC_CLK_CNT = ACC_CLK_CNT + 1, and cleared to 0 when writing this register."]
+pub type ACC_CLK_CNT_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `acc_clk_cnt` writer - The accumulated value of FRM_CLK_CNT for software frame rate statics. Every interrupt of frame is done, the software checks this accumulated value and clears it to 0. If the ACC_CLK_CNT is larger than 1, the software has lost frame.\n\nWhen frame done or vsync comes, ACC_CLK_CNT = ACC_CLK_CNT + 1, and cleared to 0 when writing this register."]
+pub type ACC_CLK_CNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_ACC_ITNL_CLK_CNT_SPEC, u8, u8, 8, O>;
+impl R {
+    #[doc = "Bits 0:23 - The instant value of internal frame clock counter.\n\nWhen frame done interrupt comes, the software can query this counter for judging whether it is the time for updating the double buffer address registers."]
+    #[inline(always)]
+    pub fn itnl_clk_cnt(&self) -> ITNL_CLK_CNT_R {
+        ITNL_CLK_CNT_R::new((self.bits & 0x00ff_ffff) as u32)
+    }
+    #[doc = "Bits 24:31 - The accumulated value of FRM_CLK_CNT for software frame rate statics. Every interrupt of frame is done, the software checks this accumulated value and clears it to 0. If the ACC_CLK_CNT is larger than 1, the software has lost frame.\n\nWhen frame done or vsync comes, ACC_CLK_CNT = ACC_CLK_CNT + 1, and cleared to 0 when writing this register."]
+    #[inline(always)]
+    pub fn acc_clk_cnt(&self) -> ACC_CLK_CNT_R {
+        ACC_CLK_CNT_R::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 24:31 - The accumulated value of FRM_CLK_CNT for software frame rate statics. Every interrupt of frame is done, the software checks this accumulated value and clears it to 0. If the ACC_CLK_CNT is larger than 1, the software has lost frame.\n\nWhen frame done or vsync comes, ACC_CLK_CNT = ACC_CLK_CNT + 1, and cleared to 0 when writing this register."]
+    #[inline(always)]
+    pub fn acc_clk_cnt(&mut self) -> ACC_CLK_CNT_W<24> {
+        ACC_CLK_CNT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

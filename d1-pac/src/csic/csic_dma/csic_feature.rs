@@ -34,6 +34,90 @@ impl From<crate::W<CSIC_FEATURE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dma0_embedded_fbc` reader - "]
+pub type DMA0_EMBEDDED_FBC_R = crate::BitReader<DMA0_EMBEDDED_FBC_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA0_EMBEDDED_FBC_A {
+    #[doc = "0: No Embedded DMA"]
+    N_O_E_MBEDDED = 0,
+    #[doc = "1: Embedded FBC"]
+    E_MBEDDED = 1,
+}
+impl From<DMA0_EMBEDDED_FBC_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA0_EMBEDDED_FBC_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl DMA0_EMBEDDED_FBC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA0_EMBEDDED_FBC_A {
+        match self.bits {
+            false => DMA0_EMBEDDED_FBC_A::N_O_E_MBEDDED,
+            true => DMA0_EMBEDDED_FBC_A::E_MBEDDED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `N_O_E_MBEDDED`"]
+    #[inline(always)]
+    pub fn is_n_o_e_mbedded(&self) -> bool {
+        *self == DMA0_EMBEDDED_FBC_A::N_O_E_MBEDDED
+    }
+    #[doc = "Checks if the value of the field is `E_MBEDDED`"]
+    #[inline(always)]
+    pub fn is_e_mbedded(&self) -> bool {
+        *self == DMA0_EMBEDDED_FBC_A::E_MBEDDED
+    }
+}
+#[doc = "Field `dma0_embedded_lbc` reader - "]
+pub type DMA0_EMBEDDED_LBC_R = crate::BitReader<DMA0_EMBEDDED_LBC_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DMA0_EMBEDDED_LBC_A {
+    #[doc = "0: No Embedded LBC"]
+    N_O_E_MBEDDED = 0,
+    #[doc = "1: Embedded LBC"]
+    E_MBEDDED = 1,
+}
+impl From<DMA0_EMBEDDED_LBC_A> for bool {
+    #[inline(always)]
+    fn from(variant: DMA0_EMBEDDED_LBC_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl DMA0_EMBEDDED_LBC_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DMA0_EMBEDDED_LBC_A {
+        match self.bits {
+            false => DMA0_EMBEDDED_LBC_A::N_O_E_MBEDDED,
+            true => DMA0_EMBEDDED_LBC_A::E_MBEDDED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `N_O_E_MBEDDED`"]
+    #[inline(always)]
+    pub fn is_n_o_e_mbedded(&self) -> bool {
+        *self == DMA0_EMBEDDED_LBC_A::N_O_E_MBEDDED
+    }
+    #[doc = "Checks if the value of the field is `E_MBEDDED`"]
+    #[inline(always)]
+    pub fn is_e_mbedded(&self) -> bool {
+        *self == DMA0_EMBEDDED_LBC_A::E_MBEDDED
+    }
+}
+impl R {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn dma0_embedded_fbc(&self) -> DMA0_EMBEDDED_FBC_R {
+        DMA0_EMBEDDED_FBC_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    pub fn dma0_embedded_lbc(&self) -> DMA0_EMBEDDED_LBC_R {
+        DMA0_EMBEDDED_LBC_R::new(((self.bits >> 1) & 1) != 0)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

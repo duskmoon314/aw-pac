@@ -34,7 +34,46 @@ impl From<crate::W<CSIC_DMA_FRM_CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `frm_cnt` reader - Counter value of frame. When frame done comes, the internal counter value add 1, and when the reg full, it is cleared to 0 . When parser sent a sync signal, it is cleared to 0."]
+pub type FRM_CNT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `pclk_dma_clr_distance` reader - Frame cnt clear cycle\n\nN*T_{SYNC}"]
+pub type PCLK_DMA_CLR_DISTANCE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `pclk_dma_clr_distance` writer - Frame cnt clear cycle\n\nN*T_{SYNC}"]
+pub type PCLK_DMA_CLR_DISTANCE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_FRM_CNT_SPEC, u16, u16, 15, O>;
+#[doc = "Field `frm_cnt_clr` reader - When the bit set to 1, Frame cnt is cleared to 0."]
+pub type FRM_CNT_CLR_R = crate::BitReader<bool>;
+#[doc = "Field `frm_cnt_clr` writer - When the bit set to 1, Frame cnt is cleared to 0."]
+pub type FRM_CNT_CLR_W<'a, const O: u8> =
+    crate::BitWriter1C<'a, u32, CSIC_DMA_FRM_CNT_SPEC, bool, O>;
+impl R {
+    #[doc = "Bits 0:15 - Counter value of frame. When frame done comes, the internal counter value add 1, and when the reg full, it is cleared to 0 . When parser sent a sync signal, it is cleared to 0."]
+    #[inline(always)]
+    pub fn frm_cnt(&self) -> FRM_CNT_R {
+        FRM_CNT_R::new((self.bits & 0xffff) as u16)
+    }
+    #[doc = "Bits 16:30 - Frame cnt clear cycle\n\nN*T_{SYNC}"]
+    #[inline(always)]
+    pub fn pclk_dma_clr_distance(&self) -> PCLK_DMA_CLR_DISTANCE_R {
+        PCLK_DMA_CLR_DISTANCE_R::new(((self.bits >> 16) & 0x7fff) as u16)
+    }
+    #[doc = "Bit 31 - When the bit set to 1, Frame cnt is cleared to 0."]
+    #[inline(always)]
+    pub fn frm_cnt_clr(&self) -> FRM_CNT_CLR_R {
+        FRM_CNT_CLR_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bits 16:30 - Frame cnt clear cycle\n\nN*T_{SYNC}"]
+    #[inline(always)]
+    pub fn pclk_dma_clr_distance(&mut self) -> PCLK_DMA_CLR_DISTANCE_W<16> {
+        PCLK_DMA_CLR_DISTANCE_W::new(self)
+    }
+    #[doc = "Bit 31 - When the bit set to 1, Frame cnt is cleared to 0."]
+    #[inline(always)]
+    pub fn frm_cnt_clr(&mut self) -> FRM_CNT_CLR_W<31> {
+        FRM_CNT_CLR_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +94,10 @@ impl crate::Readable for CSIC_DMA_FRM_CNT_SPEC {
 impl crate::Writable for CSIC_DMA_FRM_CNT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets csic_dma_frm_cnt to value 0"]
+#[doc = "`reset()` method sets csic_dma_frm_cnt to value 0x0001_0000"]
 impl crate::Resettable for CSIC_DMA_FRM_CNT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0001_0000
     }
 }

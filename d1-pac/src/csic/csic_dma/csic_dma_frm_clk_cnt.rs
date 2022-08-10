@@ -34,6 +34,15 @@ impl From<crate::W<CSIC_DMA_FRM_CLK_CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `frm_clk_cnt` reader - Counter value between every frame. For instant hardware frame rate statics.\n\nThe internal counter is added by one every 12 MHz clock cycle. When frame done or vsync comes, the internal counter value is sampled to FRM_CLK_CNT, and cleared to 0."]
+pub type FRM_CLK_CNT_R = crate::FieldReader<u32, u32>;
+impl R {
+    #[doc = "Bits 0:23 - Counter value between every frame. For instant hardware frame rate statics.\n\nThe internal counter is added by one every 12 MHz clock cycle. When frame done or vsync comes, the internal counter value is sampled to FRM_CLK_CNT, and cleared to 0."]
+    #[inline(always)]
+    pub fn frm_clk_cnt(&self) -> FRM_CLK_CNT_R {
+        FRM_CLK_CNT_R::new((self.bits & 0x00ff_ffff) as u32)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

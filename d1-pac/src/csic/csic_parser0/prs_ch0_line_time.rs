@@ -1,4 +1,4 @@
-#[doc = "Register `prs_ch0_line_time` reader"]
+#[doc = "Register `prs_ch%s0_line_time` reader"]
 pub struct R(crate::R<PRS_CH0_LINE_TIME_SPEC>);
 impl core::ops::Deref for R {
     type Target = crate::R<PRS_CH0_LINE_TIME_SPEC>;
@@ -13,36 +13,24 @@ impl From<crate::R<PRS_CH0_LINE_TIME_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Register `prs_ch0_line_time` writer"]
-pub struct W(crate::W<PRS_CH0_LINE_TIME_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PRS_CH0_LINE_TIME_SPEC>;
+#[doc = "Field `hsyn_time` reader - Time of H SYNC when vsync is valid\n\nThe unit is csi_top_clk cycle"]
+pub type HSYN_TIME_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `hblk_time` reader - Time of H Blanking when vsync is valid\n\nThe unit is csi_top_clk cycle"]
+pub type HBLK_TIME_R = crate::FieldReader<u16, u16>;
+impl R {
+    #[doc = "Bits 0:15 - Time of H SYNC when vsync is valid\n\nThe unit is csi_top_clk cycle"]
     #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
+    pub fn hsyn_time(&self) -> HSYN_TIME_R {
+        HSYN_TIME_R::new((self.bits & 0xffff) as u16)
+    }
+    #[doc = "Bits 16:31 - Time of H Blanking when vsync is valid\n\nThe unit is csi_top_clk cycle"]
+    #[inline(always)]
+    pub fn hblk_time(&self) -> HBLK_TIME_R {
+        HBLK_TIME_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PRS_CH0_LINE_TIME_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PRS_CH0_LINE_TIME_SPEC>) -> Self {
-        W(writer)
-    }
-}
-impl W {
-    #[doc = "Writes raw bits to the register."]
-    #[inline(always)]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
-        self
-    }
-}
-#[doc = "Parser Channel_0 Line Time Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch0_line_time](index.html) module"]
+#[doc = "Parser Channel\\[i\\]
+Line Time Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch0_line_time](index.html) module"]
 pub struct PRS_CH0_LINE_TIME_SPEC;
 impl crate::RegisterSpec for PRS_CH0_LINE_TIME_SPEC {
     type Ux = u32;
@@ -51,11 +39,7 @@ impl crate::RegisterSpec for PRS_CH0_LINE_TIME_SPEC {
 impl crate::Readable for PRS_CH0_LINE_TIME_SPEC {
     type Reader = R;
 }
-#[doc = "`write(|w| ..)` method takes [prs_ch0_line_time::W](W) writer structure"]
-impl crate::Writable for PRS_CH0_LINE_TIME_SPEC {
-    type Writer = W;
-}
-#[doc = "`reset()` method sets prs_ch0_line_time to value 0"]
+#[doc = "`reset()` method sets prs_ch%s0_line_time to value 0"]
 impl crate::Resettable for PRS_CH0_LINE_TIME_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

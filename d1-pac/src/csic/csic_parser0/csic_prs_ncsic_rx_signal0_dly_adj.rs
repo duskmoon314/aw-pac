@@ -34,7 +34,69 @@ impl From<crate::W<CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `pclk_dly` reader - Pclk_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type PCLK_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `pclk_dly` writer - Pclk_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type PCLK_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC, u8, u8, 5, O>;
+#[doc = "Field `hsync_dly` reader - Hsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type HSYNC_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `hsync_dly` writer - Hsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type HSYNC_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC, u8, u8, 5, O>;
+#[doc = "Field `vsync_dly` reader - Vsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type VSYNC_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `vsync_dly` writer - Vsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type VSYNC_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC, u8, u8, 5, O>;
+#[doc = "Field `filed_dly` reader - Filed_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type FILED_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `filed_dly` writer - Filed_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type FILED_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC, u8, u8, 5, O>;
+impl R {
+    #[doc = "Bits 0:4 - Pclk_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn pclk_dly(&self) -> PCLK_DLY_R {
+        PCLK_DLY_R::new((self.bits & 0x1f) as u8)
+    }
+    #[doc = "Bits 8:12 - Hsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn hsync_dly(&self) -> HSYNC_DLY_R {
+        HSYNC_DLY_R::new(((self.bits >> 8) & 0x1f) as u8)
+    }
+    #[doc = "Bits 16:20 - Vsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn vsync_dly(&self) -> VSYNC_DLY_R {
+        VSYNC_DLY_R::new(((self.bits >> 16) & 0x1f) as u8)
+    }
+    #[doc = "Bits 24:28 - Filed_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn filed_dly(&self) -> FILED_DLY_R {
+        FILED_DLY_R::new(((self.bits >> 24) & 0x1f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:4 - Pclk_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn pclk_dly(&mut self) -> PCLK_DLY_W<0> {
+        PCLK_DLY_W::new(self)
+    }
+    #[doc = "Bits 8:12 - Hsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn hsync_dly(&mut self) -> HSYNC_DLY_W<8> {
+        HSYNC_DLY_W::new(self)
+    }
+    #[doc = "Bits 16:20 - Vsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn vsync_dly(&mut self) -> VSYNC_DLY_W<16> {
+        VSYNC_DLY_W::new(self)
+    }
+    #[doc = "Bits 24:28 - Filed_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn filed_dly(&mut self) -> FILED_DLY_W<24> {
+        FILED_DLY_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

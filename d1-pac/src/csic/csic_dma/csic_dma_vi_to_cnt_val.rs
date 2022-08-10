@@ -34,6 +34,15 @@ impl From<crate::W<CSIC_DMA_VI_TO_CNT_VAL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `vi_to_cnt_val` reader - Video Input Timeout Counter Value\n\nIndicate the current value of Video Input Timeout Counter"]
+pub type VI_TO_CNT_VAL_R = crate::FieldReader<u32, u32>;
+impl R {
+    #[doc = "Bits 0:31 - Video Input Timeout Counter Value\n\nIndicate the current value of Video Input Timeout Counter"]
+    #[inline(always)]
+    pub fn vi_to_cnt_val(&self) -> VI_TO_CNT_VAL_R {
+        VI_TO_CNT_VAL_R::new(self.bits)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_DMA_VI_TO_TH0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `vi_to_th0` reader - Video Input Timeout Threshold0\n\nSet VIDEO_INPUT_TO_INT_PD when VI Counter reaches TH0 after VI_TO_CNT_EN is set, the Time Unit is a 12M clock period."]
+pub type VI_TO_TH0_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `vi_to_th0` writer - Video Input Timeout Threshold0\n\nSet VIDEO_INPUT_TO_INT_PD when VI Counter reaches TH0 after VI_TO_CNT_EN is set, the Time Unit is a 12M clock period."]
+pub type VI_TO_TH0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_VI_TO_TH0_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - Video Input Timeout Threshold0\n\nSet VIDEO_INPUT_TO_INT_PD when VI Counter reaches TH0 after VI_TO_CNT_EN is set, the Time Unit is a 12M clock period."]
+    #[inline(always)]
+    pub fn vi_to_th0(&self) -> VI_TO_TH0_R {
+        VI_TO_TH0_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - Video Input Timeout Threshold0\n\nSet VIDEO_INPUT_TO_INT_PD when VI Counter reaches TH0 after VI_TO_CNT_EN is set, the Time Unit is a 12M clock period."]
+    #[inline(always)]
+    pub fn vi_to_th0(&mut self) -> VI_TO_TH0_W<0> {
+        VI_TO_TH0_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

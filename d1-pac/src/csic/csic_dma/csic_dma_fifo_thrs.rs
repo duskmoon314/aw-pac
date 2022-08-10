@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_DMA_FIFO_THRS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `fifo_thrs` reader - When FIFO occupied memory exceed the threshold, dram frequency can not change."]
+pub type FIFO_THRS_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `fifo_thrs` writer - When FIFO occupied memory exceed the threshold, dram frequency can not change."]
+pub type FIFO_THRS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_FIFO_THRS_SPEC, u16, u16, 12, O>;
+impl R {
+    #[doc = "Bits 0:11 - When FIFO occupied memory exceed the threshold, dram frequency can not change."]
+    #[inline(always)]
+    pub fn fifo_thrs(&self) -> FIFO_THRS_R {
+        FIFO_THRS_R::new((self.bits & 0x0fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:11 - When FIFO occupied memory exceed the threshold, dram frequency can not change."]
+    #[inline(always)]
+    pub fn fifo_thrs(&mut self) -> FIFO_THRS_W<0> {
+        FIFO_THRS_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for CSIC_DMA_FIFO_THRS_SPEC {
 impl crate::Writable for CSIC_DMA_FIFO_THRS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets csic_dma_fifo_thrs to value 0"]
+#[doc = "`reset()` method sets csic_dma_fifo_thrs to value 0x0400"]
 impl crate::Resettable for CSIC_DMA_FIFO_THRS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0400
     }
 }

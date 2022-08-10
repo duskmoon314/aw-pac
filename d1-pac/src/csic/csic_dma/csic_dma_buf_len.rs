@@ -34,7 +34,39 @@ impl From<crate::W<CSIC_DMA_BUF_LEN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `buf_len` reader - DMA_MODE:Buffer length of luminance Y in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y and chroma C in YC line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+pub type BUF_LEN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `buf_len` writer - DMA_MODE:Buffer length of luminance Y in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y and chroma C in YC line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+pub type BUF_LEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_BUF_LEN_SPEC, u16, u16, 14, O>;
+#[doc = "Field `buf_len_c` reader - DMA_MODE: Buffer length of chroma C in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y in ONLY Y line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+pub type BUF_LEN_C_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `buf_len_c` writer - DMA_MODE: Buffer length of chroma C in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y in ONLY Y line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+pub type BUF_LEN_C_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_DMA_BUF_LEN_SPEC, u16, u16, 14, O>;
+impl R {
+    #[doc = "Bits 0:13 - DMA_MODE:Buffer length of luminance Y in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y and chroma C in YC line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+    #[inline(always)]
+    pub fn buf_len(&self) -> BUF_LEN_R {
+        BUF_LEN_R::new((self.bits & 0x3fff) as u16)
+    }
+    #[doc = "Bits 16:29 - DMA_MODE: Buffer length of chroma C in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y in ONLY Y line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+    #[inline(always)]
+    pub fn buf_len_c(&self) -> BUF_LEN_C_R {
+        BUF_LEN_C_R::new(((self.bits >> 16) & 0x3fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:13 - DMA_MODE:Buffer length of luminance Y in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y and chroma C in YC line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+    #[inline(always)]
+    pub fn buf_len(&mut self) -> BUF_LEN_W<0> {
+        BUF_LEN_W::new(self)
+    }
+    #[doc = "Bits 16:29 - DMA_MODE: Buffer length of chroma C in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y in ONLY Y line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
+    #[inline(always)]
+    pub fn buf_len_c(&mut self) -> BUF_LEN_C_W<16> {
+        BUF_LEN_C_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +87,10 @@ impl crate::Readable for CSIC_DMA_BUF_LEN_SPEC {
 impl crate::Writable for CSIC_DMA_BUF_LEN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets csic_dma_buf_len to value 0"]
+#[doc = "`reset()` method sets csic_dma_buf_len to value 0x0280_0500"]
 impl crate::Resettable for CSIC_DMA_BUF_LEN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0280_0500
     }
 }

@@ -34,7 +34,24 @@ impl From<crate::W<CSIC_MBUS_REQ_MAX_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `mcsi_mem_req_max` reader - Maximum of request commands for the master granted in MCSI_MEM arbiter is N+1."]
+pub type MCSI_MEM_REQ_MAX_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `mcsi_mem_req_max` writer - Maximum of request commands for the master granted in MCSI_MEM arbiter is N+1."]
+pub type MCSI_MEM_REQ_MAX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_MBUS_REQ_MAX_SPEC, u8, u8, 5, O>;
+impl R {
+    #[doc = "Bits 0:4 - Maximum of request commands for the master granted in MCSI_MEM arbiter is N+1."]
+    #[inline(always)]
+    pub fn mcsi_mem_req_max(&self) -> MCSI_MEM_REQ_MAX_R {
+        MCSI_MEM_REQ_MAX_R::new((self.bits & 0x1f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:4 - Maximum of request commands for the master granted in MCSI_MEM arbiter is N+1."]
+    #[inline(always)]
+    pub fn mcsi_mem_req_max(&mut self) -> MCSI_MEM_REQ_MAX_W<0> {
+        MCSI_MEM_REQ_MAX_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for CSIC_MBUS_REQ_MAX_SPEC {
 impl crate::Writable for CSIC_MBUS_REQ_MAX_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets csic_mbus_req_max to value 0"]
+#[doc = "`reset()` method sets csic_mbus_req_max to value 0x0f"]
 impl crate::Resettable for CSIC_MBUS_REQ_MAX_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0f
     }
 }

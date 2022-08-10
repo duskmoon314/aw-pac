@@ -34,7 +34,70 @@ impl From<crate::W<CCU_PARSER_CLK_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `mcsi_parser0_clk_enable` reader - "]
+pub type MCSI_PARSER0_CLK_ENABLE_R = crate::BitReader<MCSI_PARSER0_CLK_ENABLE_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MCSI_PARSER0_CLK_ENABLE_A {
+    #[doc = "0: CSI Parser0 clock disable"]
+    DISABLE = 0,
+    #[doc = "1: CSI Parser0 clock enable"]
+    ENABLE = 1,
+}
+impl From<MCSI_PARSER0_CLK_ENABLE_A> for bool {
+    #[inline(always)]
+    fn from(variant: MCSI_PARSER0_CLK_ENABLE_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl MCSI_PARSER0_CLK_ENABLE_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MCSI_PARSER0_CLK_ENABLE_A {
+        match self.bits {
+            false => MCSI_PARSER0_CLK_ENABLE_A::DISABLE,
+            true => MCSI_PARSER0_CLK_ENABLE_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == MCSI_PARSER0_CLK_ENABLE_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == MCSI_PARSER0_CLK_ENABLE_A::ENABLE
+    }
+}
+#[doc = "Field `mcsi_parser0_clk_enable` writer - "]
+pub type MCSI_PARSER0_CLK_ENABLE_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CCU_PARSER_CLK_EN_SPEC, MCSI_PARSER0_CLK_ENABLE_A, O>;
+impl<'a, const O: u8> MCSI_PARSER0_CLK_ENABLE_W<'a, O> {
+    #[doc = "CSI Parser0 clock disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(MCSI_PARSER0_CLK_ENABLE_A::DISABLE)
+    }
+    #[doc = "CSI Parser0 clock enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MCSI_PARSER0_CLK_ENABLE_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn mcsi_parser0_clk_enable(&self) -> MCSI_PARSER0_CLK_ENABLE_R {
+        MCSI_PARSER0_CLK_ENABLE_R::new((self.bits & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn mcsi_parser0_clk_enable(&mut self) -> MCSI_PARSER0_CLK_ENABLE_W<0> {
+        MCSI_PARSER0_CLK_ENABLE_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

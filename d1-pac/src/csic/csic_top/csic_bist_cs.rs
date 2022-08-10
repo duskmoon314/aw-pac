@@ -34,7 +34,72 @@ impl From<crate::W<CSIC_BIST_CS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `bist_cs` reader - "]
+pub type BIST_CS_R = crate::FieldReader<u8, BIST_CS_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+#[repr(u8)]
+pub enum BIST_CS_A {
+    #[doc = "0: Set when BK0 memory bist"]
+    S_ET_BK0 = 0,
+    #[doc = "1: Set when BK1 memory bist"]
+    S_ET_BK1 = 1,
+}
+impl From<BIST_CS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: BIST_CS_A) -> Self {
+        variant as _
+    }
+}
+impl BIST_CS_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> Option<BIST_CS_A> {
+        match self.bits {
+            0 => Some(BIST_CS_A::S_ET_BK0),
+            1 => Some(BIST_CS_A::S_ET_BK1),
+            _ => None,
+        }
+    }
+    #[doc = "Checks if the value of the field is `S_ET_BK0`"]
+    #[inline(always)]
+    pub fn is_s_et_bk0(&self) -> bool {
+        *self == BIST_CS_A::S_ET_BK0
+    }
+    #[doc = "Checks if the value of the field is `S_ET_BK1`"]
+    #[inline(always)]
+    pub fn is_s_et_bk1(&self) -> bool {
+        *self == BIST_CS_A::S_ET_BK1
+    }
+}
+#[doc = "Field `bist_cs` writer - "]
+pub type BIST_CS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_BIST_CS_SPEC, u8, BIST_CS_A, 3, O>;
+impl<'a, const O: u8> BIST_CS_W<'a, O> {
+    #[doc = "Set when BK0 memory bist"]
+    #[inline(always)]
+    pub fn s_et_bk0(self) -> &'a mut W {
+        self.variant(BIST_CS_A::S_ET_BK0)
+    }
+    #[doc = "Set when BK1 memory bist"]
+    #[inline(always)]
+    pub fn s_et_bk1(self) -> &'a mut W {
+        self.variant(BIST_CS_A::S_ET_BK1)
+    }
+}
+impl R {
+    #[doc = "Bits 0:2"]
+    #[inline(always)]
+    pub fn bist_cs(&self) -> BIST_CS_R {
+        BIST_CS_R::new((self.bits & 7) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:2"]
+    #[inline(always)]
+    pub fn bist_cs(&mut self) -> BIST_CS_W<0> {
+        BIST_CS_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

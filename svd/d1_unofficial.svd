@@ -17469,16 +17469,92 @@
             <name>ccu_clk_mode</name>
             <description>CCU Clock Mode Register</description>
             <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <name>ccu_clk_gating_disable</name>
+                <bitRange>[31:31]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>EFFECT</name>
+                    <description>CCU Clock Gating Registers(0x0004~0x0010) effect</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NOT_EFFECT</name>
+                    <description>CCU Clock Gating Registers(0x0004~0x0010) not effect</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>ccu_parser_clk_en</name>
             <description>CCU Parser Clock Enable Register</description>
             <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>mcsi_parser0_clk_enable</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>CSI Parser0 clock disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>CSI Parser0 clock enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>ccu_post0_clk_en</name>
             <description>CCU Post0 Clock Enable Register</description>
             <addressOffset>0xC</addressOffset>
+            <fields>
+              <field>
+                <name>mcsi_post0_clk_enable</name>
+                <bitRange>[16:16]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>POST0 clock disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>POST0 clock enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <dim>2</dim>
+                <dimIncrement>0x1</dimIncrement>
+                <name>mcsi_bk%s_clk_enable</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <description>BK[i] clock disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <description>BK[i] clock enable,when MCSI_POST0_CLK_ENABLE is 1</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
         </cluster>
         <cluster>
@@ -17489,81 +17565,496 @@
             <name>csic_top_en</name>
             <description>CSIC TOP Enable Register</description>
             <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <name>bist_mode_en</name>
+                <bitRange>[2:2]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>C_LOSED</name>
+                    <description>Closed</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>EN</name>
+                    <description>EN BIST TEST</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>csic_top_en</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>R_ESET_DISABLE</name>
+                    <description>Reset and disable the CSIC module</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable the CSIC module</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_ptn_gen_en</name>
             <description>CSIC Pattern Generation Enable Register</description>
             <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>ptn_cycle</name>
+                <description>Pattern generating cycle counter.\n\nThe pattern in dram will be generated in cycles of PTN_CYCLE+1.</description>
+                <bitRange>[23:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>ptn_start</name>
+                <description>CSIC Pattern Generating Start\n\nSoftware write this bit to "1" to start pattern generating from DRAM. When finished, the hardware will clear this bit to "0" automatically. Generating cycles depends on PTN_CYCLE.</description>
+                <bitRange>[4:4]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>F_INISH</name>
+                    <description>Finish</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>S_TART</name>
+                    <description>Start</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>ptn_gen_en</name>
+                <description>Pattern Generation Enable</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_ptn_ctrl</name>
             <description>CSIC Pattern Control Register</description>
             <addressOffset>0x8</addressOffset>
+            <resetValue>0x0000000F</resetValue>
+            <resetMask>0x033F03FF</resetMask>
+            <fields>
+              <field>
+                <name>ptn_port_sel</name>
+                <description>Pattern Generator output port selection</description>
+                <bitRange>[25:24]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NSCIC0</name>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>ptn_gen_data_width</name>
+                <bitRange>[21:20]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>8BIT</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>10BIT</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>12BIT</name>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>ptn_mode</name>
+                <description>Pattern mode selection</description>
+                <bitRange>[19:16]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NCSIC_YUV_8BIT</name>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>NCSIC_YUV_16BIT</name>
+                    <value>0x5</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BT656_8BIT</name>
+                    <value>0x9</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BT656_16BIT</name>
+                    <value>0xA</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BAYER_12BIT</name>
+                    <value>0xD</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>UYVY422_12BIT</name>
+                    <value>0xE</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>UYVY420_12BIT</name>
+                    <value>0xF</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>ptn_gen_clk_div</name>
+                <description>Packet generator clock divider</description>
+                <bitRange>[9:8]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>ptn_gen_dly</name>
+                <description>Clocks delayed before pattern generating start.</description>
+                <bitRange>[7:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_ptn_len</name>
             <description>CSIC Pattern Generation Length Register</description>
             <addressOffset>0x20</addressOffset>
+            <fields>
+              <field>
+                <name>ptn_len</name>
+                <description>The pattern length in byte when generating pattern.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_ptn_addr</name>
             <description>CSIC Pattern Generation Address Register</description>
             <addressOffset>0x24</addressOffset>
+            <fields>
+              <field>
+                <name>ptn_addr</name>
+                <description>The pattern DRAM address when generating pattern.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_ptn_isp_size</name>
             <description>CSIC Pattern ISP Size Register</description>
             <addressOffset>0x28</addressOffset>
+            <fields>
+              <field>
+                <name>height</name>
+                <description>Height Vertical size, only valid for ISP mode pattern generation.</description>
+                <bitRange>[28:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>width</name>
+                <description>Width Horizontal size, only valid for ISP mode pattern generation.</description>
+                <bitRange>[12:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>csic_dma0_input_sel</name>
-            <description>CSIC DMA0 Input Select Register</description>
+            <dim>2</dim>
+            <dimIncrement>0x4</dimIncrement>
+            <name>csic_dma%s_input_sel</name>
+            <description>CSIC DMA[i] Input Select Register</description>
             <addressOffset>0xA0</addressOffset>
-          </register>
-          <register>
-            <name>csic_dma1_input_sel</name>
-            <description>CSIC DMA1 Input Select Register</description>
-            <addressOffset>0xA4</addressOffset>
+            <fields>
+              <field>
+                <name>input_sel</name>
+                <description>Input selection for DMA[i]</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>ISP0_CH0</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ISP0_CH1</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ISP0_CH2</name>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ISP0_CH3</name>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_bist_cs</name>
             <description>CSIC BIST CS Register</description>
             <addressOffset>0xDC</addressOffset>
+            <fields>
+              <field>
+                <name>bist_cs</name>
+                <bitRange>[2:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>S_ET_BK0</name>
+                    <description>Set when BK0 memory bist</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>S_ET_BK1</name>
+                    <description>Set when BK1 memory bist</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_bist_control</name>
             <description>CSIC BIST Control Register</description>
             <addressOffset>0xE0</addressOffset>
+            <resetValue>0x00000200</resetValue>
+            <resetMask>0x0000FFFF</resetMask>
+            <fields>
+              <field>
+                <name>bist_err_sta</name>
+                <description>BIST error status</description>
+                <bitRange>[15:15]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_EFFECT</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ERROR</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>bist_err_pat</name>
+                <description>BIST error pattern</description>
+                <bitRange>[14:12]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>bist_err_cyc</name>
+                <description>BIST error cycle</description>
+                <bitRange>[11:10]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>bist_stop</name>
+                <description>BIST stop</description>
+                <bitRange>[9:9]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>RUNNING</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>STOP</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>bist_busy</name>
+                <description>BIST busy</description>
+                <bitRange>[8:8]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>IDLE</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BUSY</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>bist_reg_sel</name>
+                <description>BIST register select</description>
+                <bitRange>[7:5]</bitRange>
+              </field>
+              <field>
+                <name>bist_addr_mode_sel</name>
+                <description>BIST address mode select</description>
+                <bitRange>[4:4]</bitRange>
+              </field>
+              <field>
+                <name>bist_wdata_pat</name>
+                <description>BIST write data pattern</description>
+                <bitRange>[3:1]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>0X00000000</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>0X55555555</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>0X33333333</name>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>0X0F0F0F0F</name>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>0X00FF00FF</name>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>0X0000FFFF</name>
+                    <value>0x5</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>bist_en</name>
+                <description>BIST enable\n\nA positive will trigger the BIST to start.</description>
+                <bitRange>[0:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>csic_bist_start</name>
-            <description>CSIC BIST Start Register</description>
+            <name>csic_bist_start_addr</name>
+            <description>CSIC BIST Start Address Register</description>
             <addressOffset>0xE4</addressOffset>
+            <fields>
+              <field>
+                <name>bist_start_addr</name>
+                <description>BIST start address, 32-bit aligned</description>
+                <bitRange>[31:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>csic_bist_end</name>
-            <description>CSIC BIST End Register</description>
+            <name>csic_bist_end_addr</name>
+            <description>CSIC BIST End Address Register</description>
             <addressOffset>0xE8</addressOffset>
+            <fields>
+              <field>
+                <name>bist_end_addr</name>
+                <description>BIST end address, 32-bit aligned</description>
+                <bitRange>[31:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_bist_data_mask</name>
             <description>CSIC BIST Data Mask Register</description>
             <addressOffset>0xEC</addressOffset>
+            <fields>
+              <field>
+                <name>bist_data_mask</name>
+                <description>BIST data mask</description>
+                <bitRange>[31:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>UNMASK</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>MASK</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_mbus_req_max</name>
             <description>CSIC MBUS REQ MAX Register</description>
             <addressOffset>0xF0</addressOffset>
+            <resetValue>0x0000000F</resetValue>
+            <resetMask>0x0000001F</resetMask>
+            <fields>
+              <field>
+                <name>mcsi_mem_req_max</name>
+                <description>Maximum of request commands for the master granted in MCSI_MEM arbiter is N+1.</description>
+                <bitRange>[4:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_mulf_mod</name>
             <description>CSIC Multi-Frame Mode Register</description>
             <addressOffset>0x100</addressOffset>
+            <fields>
+              <field>
+                <name>mulf_status</name>
+                <bitRange>[31:24]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>mulf_cs</name>
+                <bitRange>[15:8]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>mulf_en</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_mulf_int</name>
             <description>CSIC Multi-Frame Interrupt Register</description>
             <addressOffset>0x104</addressOffset>
+            <fields>
+              <field>
+                <name>mulf_err_pd</name>
+                <bitRange>[17:17]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>mulf_done_pd</name>
+                <bitRange>[16:16]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>mulf_err_en</name>
+                <bitRange>[1:1]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>mulf_done_en</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
         </cluster>
         <cluster>
@@ -17574,241 +18065,868 @@
             <name>prs_en</name>
             <description>Parser Enable Register</description>
             <addressOffset>0x0</addressOffset>
+            <fields>
+              <field>
+                <name>ncsic_en</name>
+                <bitRange>[16:16]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>R_ESET_DISABLE</name>
+                    <description>Reset and disable the NCSIC module</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable the NCSIC module</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>pclk_en</name>
+                <bitRange>[15:15]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>G_ATE</name>
+                    <description>Gate pclk input</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable pclk input</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>prs_ch_mode</name>
+                <bitRange>[2:2]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>CORRESPONDING</name>
+                    <description>Parser output channel 0-3 corresponding from input channel 0-3</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ALL_FROM_0</name>
+                    <description>Parser output channel 0-3 all from input channel 0 (MIPI SEHDR)</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>prs_mode</name>
+                <bitRange>[1:1]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>MCSI</name>
+                    <description>MCSI</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>prs_en</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>R_ESET_DISABLE</name>
+                    <description>Reset and disable the parser module</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable the parser module</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>prs_ncsic_if_cfg</name>
             <description>Parser NCSIC Interface Configuration Register</description>
             <addressOffset>0x4</addressOffset>
+            <resetValue>0x01050080</resetValue>
+            <fields>
+              <field>
+                <name>yuv420_line_order</name>
+                <bitRange>[31:31]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>Y_YC_Y_YC</name>
+                    <description>YUV420 input in Y_YC_Y_YC line order</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>YC_Y_YC_Y</name>
+                    <description>YUV420 input in YC_Y_YC_Y line order</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>field_dt_pclk_shift</name>
+                <description>Only for vsync detected field mode, the odd field permitted pclk\n\nshift = 4 * FIELD_DT_PCLK_SHIFT</description>
+                <bitRange>[27:24]</bitRange>
+              </field>
+              <field>
+                <name>source_type</name>
+                <description>Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3</description>
+                <bitRange>[23:20]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>P_ROGRESSED</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>I_NTERLACED</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>field</name>
+                <description>Field polarity (For YUV HV timing) / Field sequence (For BT656 timing)</description>
+                <bitRange>[19:19]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NEGATIVE_NORMAL_SEQ</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>POSITIVE_INVERSE_SEQ</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>vref_pol</name>
+                <description>Vref polarity\n\nThis register is not applied to CCIR656 interface</description>
+                <bitRange>[18:18]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NEGATIVE</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>POSITIVE</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>href_pol</name>
+                <description>Href polarity\n\nThis register is not applied to CCIR656 interface</description>
+                <bitRange>[17:17]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NEGATIVE</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>POSITIVE</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>clk_pol</name>
+                <description>Data clock type</description>
+                <bitRange>[16:16]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>RISING</name>
+                    <description>active in rising edge</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>FALLING</name>
+                    <description>active in falling edge</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>field_dt_mode</name>
+                <description>only valid when CSI_IF is YUB and source type is interlaced</description>
+                <bitRange>[15:14]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>BY_FIELD_VSYNC</name>
+                    <description>by both field and vsync</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BY_FIELD</name>
+                    <description>by field</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BY_VSYNC</name>
+                    <description>by vsync</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>ddr_sample_mode_en</name>
+                <bitRange>[13:13]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>seq_8plus2</name>
+                <description>When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D[11:4] will be rearranged to D[11:2]+2'b0 at the actual CSI data bus according to these sequences</description>
+                <bitRange>[12:11]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>PD98_D70</name>
+                    <description>6'bx + D[9:8], D[7:0]</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>D92_PD10</name>
+                    <description>D[9:2], 6'bx + D[1:0]</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>D70_D98P</name>
+                    <description>D[7:0], D[9:8] + 6'bx</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>D70_PD98</name>
+                    <description>D[7:0], 6'bx + D[9:8]</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>if_data_width</name>
+                <bitRange>[10:8]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>8BIT</name>
+                    <description>8 bit data bus</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>10BIT</name>
+                    <description>10 bit data bus</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>12BIT</name>
+                    <description>12 bit data bus</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>8P2BIT</name>
+                    <description>8 + 2 bit data bus</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>2X8BIT</name>
+                    <description>2 * 8 bit data bus</description>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>input_seq</name>
+                <description>Input data sequence, only valid for YUV422 and YUV420 input format</description>
+                <bitRange>[7:6]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>YUYV</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>YVYU</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>UYVY</name>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>VYUY</name>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>csi_if</name>
+                <bitRange>[4:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>RAW_YUV420_YUYV422</name>
+                    <description>RAW or YUV420/YUYV422 (each cycle one component input)</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BT656_1CH</name>
+                    <description>BT656 1 channel</description>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BT656_2CH</name>
+                    <description>BT656 2 channel (All data interleaved in one data bus)</description>
+                    <value>0xC</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>BT656_4CH</name>
+                    <description>BT656 4 channel (All data interleaved in one data bus)</description>
+                    <value>0xE</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>prs_cap</name>
             <description>Parser Capture Register</description>
             <addressOffset>0xC</addressOffset>
+            <fields>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x8</dimIncrement>
+                <name>ch%s_fps_ds</name>
+                <description>Fps down sample</description>
+                <bitRange>[5:2]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_DOWN_SAMPLE</name>
+                    <description>no down sample</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_3</name>
+                    <description>1/3 fps, only receives the first frame every 3 frames</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_4</name>
+                    <description>1/4 fps, only receives the first frame every 4 frames</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_5</name>
+                    <description>1/5 fps, only receives the first frame every 5 frames</description>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_6</name>
+                    <description>1/6 fps, only receives the first frame every 6 frames</description>
+                    <value>0x5</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_7</name>
+                    <description>1/7 fps, only receives the first frame every 7 frames</description>
+                    <value>0x6</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_8</name>
+                    <description>1/8 fps, only receives the first frame every 8 frames</description>
+                    <value>0x7</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_9</name>
+                    <description>1/9 fps, only receives the first frame every 9 frames</description>
+                    <value>0x8</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_10</name>
+                    <description>1/10 fps, only receives the first frame every 10 frames</description>
+                    <value>0x9</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_11</name>
+                    <description>1/11 fps, only receives the first frame every 11 frames</description>
+                    <value>0xA</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_12</name>
+                    <description>1/12 fps, only receives the first frame every 12 frames</description>
+                    <value>0xB</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_13</name>
+                    <description>1/13 fps, only receives the first frame every 13 frames</description>
+                    <value>0xC</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_14</name>
+                    <description>1/14 fps, only receives the first frame every 14 frames</description>
+                    <value>0xD</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_15</name>
+                    <description>1/15 fps, only receives the first frame every 15 frames</description>
+                    <value>0xE</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_16</name>
+                    <description>1/16 fps, only receives the first frame every 16 frames</description>
+                    <value>0xF</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x8</dimIncrement>
+                <name>ch%s_vcap_on</name>
+                <description>Video capture control: Capture the video image data stream on channel [i].</description>
+                <bitRange>[1:1]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable video capture\n\nIf video capture is in progress, the CSI stops capturing image data at the end of the current frame, and all of the current frame data is written to output FIFO.</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable video capture\n\nThe CSI starts capturing image data at the start of the next frame.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x8</dimIncrement>
+                <name>ch%s_scap_on</name>
+                <description>Still capture control: Capture a single still image frame on channel [i].</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-only</access>
+                <readAction>clear</readAction>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable still capture</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable still capture\n\nThe CSI module starts capturing image data at the start of the next frame. The CSI module captures only one frame of image data. This bit is self cleared and always reads as a 0.</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_prs_signal_sta</name>
             <description>CSIC Parser Signal Status Register</description>
             <addressOffset>0x10</addressOffset>
+            <fields>
+              <field>
+                <name>pclk_sta</name>
+                <description>Indicates the pclk status</description>
+                <bitRange>[24:24]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>LOW</name>
+                    <description>low</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>HIGH</name>
+                    <description>high</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>data_sta</name>
+                <description>Indicates the Dn status (n=0-23), MSB for D23, LSB for D0</description>
+                <bitRange>[23:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_prs_ncsic_bt656_head_cfg</name>
             <description>CSIC Parser NCSIC BT656 Header Configuration Register</description>
             <addressOffset>0x14</addressOffset>
+            <resetValue>0x03020100</resetValue>
+            <resetMask>0x0F0F0F0F</resetMask>
+            <fields>
+              <field>
+                <dim>4</dim>
+                <dimIncrement>0x8</dimIncrement>
+                <name>ch%s_id</name>
+                <description>The low 4-bit of BT656 header for channel [i]\n\nOnly valid in BT656 multi-channel mode</description>
+                <bitRange>[3:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_infmt</name>
-            <description>Parser Channel_0 Input Format Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_infmt</name>
+            <description>Parser Channel[i] Input Format Register</description>
             <addressOffset>0x24</addressOffset>
+            <resetValue>0x00000003</resetValue>
+            <resetMask>0x0000000F</resetMask>
+            <fields>
+              <field>
+                <name>input_fmt</name>
+                <description>input data format</description>
+                <bitRange>[3:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>RAW</name>
+                    <description>RAW stream</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>YUV422</name>
+                    <description>YUV422</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>YUV420</name>
+                    <description>YUV420</description>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_output_hsize</name>
-            <description>Parser Channel_0 Output Horizontal Size Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_output_hsize</name>
+            <description>Parser Channel[i] Output Horizontal Size Register</description>
             <addressOffset>0x28</addressOffset>
+            <resetValue>0x05000000</resetValue>
+            <resetMask>0x1FFF1FFF</resetMask>
+            <fields>
+              <field>
+                <name>hor_len</name>
+                <description>Horizontal pixel unit length. Valid pixel of a line.</description>
+                <bitRange>[28:16]</bitRange>
+              </field>
+              <field>
+                <name>hor_start</name>
+                <description>Horizontal pixel unit start. Pixel is valid from this pixel.</description>
+                <bitRange>[12:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_output_vsize</name>
-            <description>Parser Channel_0 Output Vertical Size Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_output_vsize</name>
+            <description>Parser Channel[i] Output Vertical Size Register</description>
             <addressOffset>0x2C</addressOffset>
+            <resetValue>0x02D00000</resetValue>
+            <resetMask>0x1FFF1FFF</resetMask>
+            <fields>
+              <field>
+                <name>ver_len</name>
+                <description>Valid line number of a frame.</description>
+                <bitRange>[28:16]</bitRange>
+              </field>
+              <field>
+                <name>ver_start</name>
+                <description>Vertical line start. Data is valid from this line.</description>
+                <bitRange>[12:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_input_para0</name>
-            <description>Parser Channel_0 Input Parameter0 Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_input_para0</name>
+            <description>Parser Channel[i] Input Parameter0 Register</description>
             <addressOffset>0x30</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>input_src_type</name>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>PROGRESS</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>INTERLACE</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_input_para1</name>
-            <description>Parser Channel_0 Input Parameter1 Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_input_para1</name>
+            <description>Parser Channel[i] Input Parameter1 Register</description>
             <addressOffset>0x34</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>input_vt</name>
+                <description>INPUT_VT = INPUT_VB + INPUT_Y</description>
+                <bitRange>[29:16]</bitRange>
+              </field>
+              <field>
+                <name>input_ht</name>
+                <description>INPUT_HT = INPUT_HB + INPUT_X</description>
+                <bitRange>[13:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_input_para2</name>
-            <description>Parser Channel_0 Input Parameter2 Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_input_para2</name>
+            <description>Parser Channel[i] Input Parameter2 Register</description>
             <addressOffset>0x38</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>input_vb</name>
+                <bitRange>[29:16]</bitRange>
+              </field>
+              <field>
+                <name>input_hb</name>
+                <bitRange>[13:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_input_para3</name>
-            <description>Parser Channel_0 Input Parameter3 Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_input_para3</name>
+            <description>Parser Channel[i] Input Parameter3 Register</description>
             <addressOffset>0x3C</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>input_y</name>
+                <bitRange>[29:16]</bitRange>
+              </field>
+              <field>
+                <name>input_x</name>
+                <bitRange>[13:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_int_en</name>
-            <description>Parser Channel_0 Interrupt Enable Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_int_en</name>
+            <description>Parser Channel[i] Interrupt Enable Register</description>
             <addressOffset>0x40</addressOffset>
+            <fields>
+              <field>
+                <name>mul_err_int_en</name>
+                <description>Multi-channel writing error\n\nIndicates error has been detected for writing data to a wrong channel</description>
+                <bitRange>[2:2]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <dim>2</dim>
+                <dimIncrement>0x1</dimIncrement>
+                <name>input_para%s_int_en</name>
+                <bitRange>[0:0]</bitRange>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>DISABLE</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>ENABLE</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_c0_int_sta</name>
-            <description>Parser Channel_0 Interrupt Status Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s_int_sta</name>
+            <description>Parser Channel[i] Interrupt Status Register</description>
             <addressOffset>0x44</addressOffset>
+            <fields>
+              <field>
+                <name>mul_err_pd</name>
+                <description>Multi-channel writing error pending</description>
+                <bitRange>[2:2]</bitRange>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_PENDING</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>PENDING</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <dim>2</dim>
+                <dimIncrement>0x1</dimIncrement>
+                <name>input_src_pd%s</name>
+                <bitRange>[0:0]</bitRange>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_PENDING</name>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>PENDING</name>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>prs_ch0_line_time</name>
-            <description>Parser Channel_0 Line Time Register</description>
+            <dim>4</dim>
+            <dimIncrement>0x100</dimIncrement>
+            <name>prs_ch%s0_line_time</name>
+            <description>Parser Channel[i] Line Time Register</description>
             <addressOffset>0x48</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_infmt</name>
-            <description>Parser Channel_1 Input Format Register</description>
-            <addressOffset>0x124</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_output_hsize</name>
-            <description>Parser Channel_1 Output Horizontal Size</description>
-            <addressOffset>0x128</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_output_vsize</name>
-            <description>Parser Channel_1 Output Vertical Size Register</description>
-            <addressOffset>0x12C</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_input_para0</name>
-            <description>Parser Channel_1 Input Parameter0 Register</description>
-            <addressOffset>0x130</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_input_para1</name>
-            <description>Parser Channel_1 Input Parameter1 Register</description>
-            <addressOffset>0x134</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_input_para2</name>
-            <description>Parser Channel_1 Input Parameter2 Register</description>
-            <addressOffset>0x138</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_input_para3</name>
-            <description>Parser Channel_1 Input Parameter3 Register</description>
-            <addressOffset>0x13C</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_int_en</name>
-            <description>Parser Channel_1 Interrupt Enable Register</description>
-            <addressOffset>0x140</addressOffset>
-          </register>
-          <register>
-            <name>prs_c1_int_sta</name>
-            <description>Parser Channel_1 Interrupt Status Register</description>
-            <addressOffset>0x144</addressOffset>
-          </register>
-          <register>
-            <name>prs_ch1_line_time</name>
-            <description>Parser Channel_1 Line Time Register</description>
-            <addressOffset>0x148</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_infmt</name>
-            <description>Parser Channel_2 Input Format Register</description>
-            <addressOffset>0x224</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_output_hsize</name>
-            <description>Parser Channel_2 Output Horizontal Size Register</description>
-            <addressOffset>0x228</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_output_vsize</name>
-            <description>Parser Channel_2 Output Vertical Size Register</description>
-            <addressOffset>0x22C</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_input_para0</name>
-            <description>Parser Channel_2 Input Parameter0 Register</description>
-            <addressOffset>0x230</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_input_para1</name>
-            <description>Parser Channel_2 Input Parameter1 Register</description>
-            <addressOffset>0x234</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_input_para2</name>
-            <description>Parser Channel_2 Input Parameter2 Register</description>
-            <addressOffset>0x238</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_input_para3</name>
-            <description>Parser Channel_2 Input Parameter3 Register</description>
-            <addressOffset>0x23C</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_int_en</name>
-            <description>Parser Channel_2 Interrupt Enable Register</description>
-            <addressOffset>0x240</addressOffset>
-          </register>
-          <register>
-            <name>prs_c2_int_sta</name>
-            <description>Parser Channel_2 Interrupt Status Register</description>
-            <addressOffset>0x244</addressOffset>
-          </register>
-          <register>
-            <name>prs_ch2_line_time</name>
-            <description>Parser Channel_2 Line Time Register</description>
-            <addressOffset>0x248</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_infmt</name>
-            <description>Parser Channel_3 Input Format Register</description>
-            <addressOffset>0x324</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_output_hsize</name>
-            <description>Parser Channel_3 Output Horizontal Size Register</description>
-            <addressOffset>0x328</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_output_vsize</name>
-            <description>Parser Channel_3 Output Vertical Size Register</description>
-            <addressOffset>0x32C</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_input_para0</name>
-            <description>Parser Channel_3 Input Parameter0 Register</description>
-            <addressOffset>0x330</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_input_para1</name>
-            <description>Parser Channel_3 Input Parameter1 Register</description>
-            <addressOffset>0x334</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_input_para2</name>
-            <description>Parser Channel_3 Input Parameter2 Register</description>
-            <addressOffset>0x338</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_input_para3</name>
-            <description>Parser Channel_3 Input Parameter3 Register</description>
-            <addressOffset>0x33C</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_int_en</name>
-            <description>Parser Channel_3 Interrupt Enable Register</description>
-            <addressOffset>0x340</addressOffset>
-          </register>
-          <register>
-            <name>prs_c3_int_sta</name>
-            <description>Parser Channel_3 Interrupt Status Register</description>
-            <addressOffset>0x344</addressOffset>
-          </register>
-          <register>
-            <name>prs_ch3_line_time</name>
-            <description>Parser Channel_3 Line Time Register</description>
-            <addressOffset>0x348</addressOffset>
+            <access>read-only</access>
+            <fields>
+              <field>
+                <name>hblk_time</name>
+                <description>Time of H Blanking when vsync is valid\n\nThe unit is csi_top_clk cycle</description>
+                <bitRange>[31:16]</bitRange>
+              </field>
+              <field>
+                <name>hsyn_time</name>
+                <description>Time of H SYNC when vsync is valid\n\nThe unit is csi_top_clk cycle</description>
+                <bitRange>[15:0]</bitRange>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_prs_ncsic_rx_signal0_dly_adj</name>
             <description>CSIC Parser NCSIC RX Signal0 Delay Adjust Register</description>
             <addressOffset>0x500</addressOffset>
+            <fields>
+              <field>
+                <name>filed_dly</name>
+                <description>Filed_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[28:24]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>vsync_dly</name>
+                <description>Vsync_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[20:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>hsync_dly</name>
+                <description>Hsync_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[12:8]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>pclk_dly</name>
+                <description>Pclk_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[4:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_prs_ncsic_rx_signal5_dly_adj</name>
             <description>CSIC Parser NCSIC RX Signal5 Delay Adjust Register</description>
             <addressOffset>0x514</addressOffset>
+            <fields>
+              <field>
+                <name>d7_dly</name>
+                <description>D7_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[28:24]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>d6_dly</name>
+                <description>D6_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[20:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>d5_dly</name>
+                <description>D5_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[12:8]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>d4_dly</name>
+                <description>D4_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[4:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_prs_ncsic_rx_signal6_dly_adj</name>
             <description>CSIC Parser NCSIC RX Signal6 Delay Adjust Register</description>
             <addressOffset>0x518</addressOffset>
+            <fields>
+              <field>
+                <name>d3_dly</name>
+                <description>D3_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[28:24]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>d2_dly</name>
+                <description>D2_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[20:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>d1_dly</name>
+                <description>D1_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[12:8]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>d0_dly</name>
+                <description>D0_dly 32 Step for adjust, 1 step = 0.2 ns</description>
+                <bitRange>[4:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
         </cluster>
         <cluster>
@@ -17821,161 +18939,1073 @@
             <name>csic_dma_en</name>
             <description>CSIC DMA Enable Register</description>
             <addressOffset>0x0</addressOffset>
+            <resetValue>0x70000000</resetValue>
+            <resetMask>0xF00000F7</resetMask>
+            <fields>
+              <field>
+                <name>ver_en</name>
+                <bitRange>[31:31]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>vflip_buf_addr_cfg_mode</name>
+                <description>Vflip buffer address set by software or calculated by hardware</description>
+                <bitRange>[30:30]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>H_ARDWARE</name>
+                    <description>Hardware</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>S_OFTWARE</name>
+                    <description>Software</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>buf_length_cfg_mode</name>
+                <description>Buffer length set by software or calculated by hardware</description>
+                <bitRange>[29:29]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>H_ARDWARE</name>
+                    <description>Hardware</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>S_OFTWARE</name>
+                    <description>Software</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>flip_size_cfg_mode</name>
+                <description>FLIP SIZE set by software or calculated by hardware</description>
+                <bitRange>[28:28]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>H_ARDWARE</name>
+                    <description>Hardware</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>S_OFTWARE</name>
+                    <description>Software</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>buf_addr_mode</name>
+                <bitRange>[7:7]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>R_EGISTER</name>
+                    <description>Buffer Address Register Mode</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>FIFO</name>
+                    <description>Buffer Address FIFO Mode</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>vi_to_cnt_en</name>
+                <description>Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input.</description>
+                <bitRange>[6:6]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>frame_cnt_en</name>
+                <description>When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add.</description>
+                <bitRange>[5:5]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>dma_en</name>
+                <description>When BK_TOP_EN is enabled, setting 1 to this bit indicates the module works in DMA mode.</description>
+                <bitRange>[4:4]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>clk_cnt_spl</name>
+                <description>Sampling time for clk counter per frame</description>
+                <bitRange>[2:2]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>FRAME_DONE</name>
+                    <description>Sampling clock counter every frame done</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>VSYNC</name>
+                    <description>Sampling clock counter every vsync</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>clk_cnt_en</name>
+                <description>clk count per frame enable</description>
+                <bitRange>[1:1]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>bk_top_en</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_cfg</name>
             <description>CSIC DMA Configuration Register</description>
             <addressOffset>0x4</addressOffset>
+            <fields>
+              <field>
+                <name>pad_val</name>
+                <description>Padding value when OUTPUT_FMT is prgb888\n\n0x00-0xff</description>
+                <bitRange>[31:24]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>yuv_10bit_cut_8bit</name>
+                <description>10-bit input cut to 8-bit</description>
+                <bitRange>[21:21]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>yuv_10bit_store_configuration</name>
+                <description>10-bit store configuration</description>
+                <bitRange>[20:20]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>LOW</name>
+                    <description>YUV 10-bit stored in low 10-bit of a 16-bit word</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>HIGH</name>
+                    <description>YUV 10-bit stored in high 10-bit of a 16-bit word</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>output_fmt</name>
+                <description>Output data format\n\nWhen the input format is set to RAW stream\n\n0000: field-raw-8\n\n0001: field-raw-10\n\n0010: field-raw-12\n\n0011: reserved\n\n0100: field-rgb565\n\n0101: field-rgb888\n\n0110: field-prgb888\n\n0111: reserved\n\n1000: frame-raw-8\n\n1001: frame-raw-10\n\n1010: frame-raw-12\n\n1011: reserved\n\n1100: frame-rgb565\n\n1101: frame-rgb888\n\n1110: frame-prgb888\n\n1111: reserved\n\nWhen the input format is set to YUV422\n\n0000: field planar YCbCr 422\n\n0001: field planar YCbCr 420\n\n0010: frame planar YCbCr 420\n\n0011: frame planar YCbCr 422\n\n0100: field planar YCbCr 422 UV combined (UV sequence)\n\n0101: field planar YCbCr 420 UV combined (UV sequence)\n\n0110: frame planar YCbCr 420 UV combined (UV sequence)\n\n0111: frame planar YCbCr 422 UV combined (UV sequence)\n\n1000: filed planar YCbCr 422 UV combined (VU sequence)\n\n1001: field planar YCbCr 420 UV combined (VU sequence)\n\n1010: frame planar YCbCr 420 UV combined (VU sequence)\n\n1011: frame planar YCbCr 422 UV combined (VU sequence)\n\n1100: reserved\n\n1101: field YCbCr 400\n\n1110: reserved\n\n1111: frame YCbCr 400\n\nWhen the input format is set to YUV420\n\n0000: reserved\n\n0001: field planar YCbCr 420\n\n0010: frame planar YCbCr 420\n\n0011: reserved\n\n0100: reserved\n\n0101: field planar YCbCr 420 UV combined (UV sequence)\n\n0110: frame planar YCbCr 420 UV combined (UV sequence) 0111~1000: reserved\n\n1001: field planar YCbCr 420 UV combined (VU sequence)\n\n1010: frame planar YCbCr 420 UV combined (VU sequence) 1011~1100: reserved\n\n1101: field YCbCr 400\n\n1110: reserved\n\n1111: frame YCbCr 400</description>
+                <bitRange>[19:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>vflip_en</name>
+                <description>Vertical flip enable\n\nWhen enabled, the received data will be arranged in vertical flip.</description>
+                <bitRange>[13:13]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>hflip_en</name>
+                <description>Horizontal flip enable\n\nWhen enabled, the received data will be arranged in horizontal flip.</description>
+                <bitRange>[12:12]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>D_ISABLE</name>
+                    <description>Disable</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_NABLE</name>
+                    <description>Enable</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>field_sel</name>
+                <description>Field selection</description>
+                <bitRange>[11:10]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>FIELD_0</name>
+                    <description>Capturing with field 0</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>FIELD_1</name>
+                    <description>Capturing with field 1</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>EITHER_FIELD</name>
+                    <description>Capturing with either field</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>fps_ds</name>
+                <description>Fps down sample</description>
+                <bitRange>[9:6]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>NO_DOWN_SAMPLE</name>
+                    <description>no down sample</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_3</name>
+                    <description>1/3 fps, only receives the first frame every 3 frames</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_4</name>
+                    <description>1/4 fps, only receives the first frame every 4 frames</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_5</name>
+                    <description>1/5 fps, only receives the first frame every 5 frames</description>
+                    <value>0x4</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_6</name>
+                    <description>1/6 fps, only receives the first frame every 6 frames</description>
+                    <value>0x5</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_7</name>
+                    <description>1/7 fps, only receives the first frame every 7 frames</description>
+                    <value>0x6</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_8</name>
+                    <description>1/8 fps, only receives the first frame every 8 frames</description>
+                    <value>0x7</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_9</name>
+                    <description>1/9 fps, only receives the first frame every 9 frames</description>
+                    <value>0x8</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_10</name>
+                    <description>1/10 fps, only receives the first frame every 10 frames</description>
+                    <value>0x9</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_11</name>
+                    <description>1/11 fps, only receives the first frame every 11 frames</description>
+                    <value>0xA</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_12</name>
+                    <description>1/12 fps, only receives the first frame every 12 frames</description>
+                    <value>0xB</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_13</name>
+                    <description>1/13 fps, only receives the first frame every 13 frames</description>
+                    <value>0xC</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_14</name>
+                    <description>1/14 fps, only receives the first frame every 14 frames</description>
+                    <value>0xD</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_15</name>
+                    <description>1/15 fps, only receives the first frame every 15 frames</description>
+                    <value>0xE</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1_16</name>
+                    <description>1/16 fps, only receives the first frame every 16 frames</description>
+                    <value>0xF</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>min_sdr_wr_size</name>
+                <description>Minimum size of SDRAM block write</description>
+                <bitRange>[1:0]</bitRange>
+                <access>read-write</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>256</name>
+                    <description>256 bytes (if hflip is enabled, always select 256 bytes)</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>512</name>
+                    <description>512 bytes</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>1K</name>
+                    <description>1K bytes</description>
+                    <value>0x2</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>2K</name>
+                    <description>2K bytes</description>
+                    <value>0x3</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_hsize</name>
             <description>CSIC DMA Horizontal Size Register</description>
             <addressOffset>0x10</addressOffset>
+            <resetValue>0x05000000</resetValue>
+            <resetMask>0x1FFF1FFF</resetMask>
+            <fields>
+              <field>
+                <name>hor_len</name>
+                <description>When BK_TOP_EN is enabled, DMA_EN is enabled, these bits indicate Horizontal pixel unit length. Valid pixel of a line in DMA mode.</description>
+                <bitRange>[28:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>hor_start</name>
+                <description>Horizontal pixel unit start.\n\nPixel is valid from this pixel.</description>
+                <bitRange>[12:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_vsize</name>
             <description>CSIC DMA Vertical Size Register</description>
             <addressOffset>0x14</addressOffset>
+            <resetValue>0x02D00000</resetValue>
+            <resetMask>0x1FFF1FFF</resetMask>
+            <fields>
+              <field>
+                <name>ver_len</name>
+                <description>When BK_TOP_EN is enabled, DMA_EN is enabled, these bits indicate Valid line number of a frame in DMA mode.</description>
+                <bitRange>[28:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>ver_start</name>
+                <description>Vertical line start\n\nData is valid from this line.</description>
+                <bitRange>[12:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_f0_bufa</name>
             <description>CSIC DMA FIFO 0 Output Buffer-A Address Register</description>
             <addressOffset>0x20</addressOffset>
+            <fields>
+              <field>
+                <name>f0_bufa</name>
+                <description>When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate output address of overhead data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is disabled, these bits indicate FIFO 0 output buffer-A address in DMA mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is enabled, these bits indicate the output buffer address in LBC mode.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_f0_bufa_result</name>
             <description>CSIC DMA FIFO 0 Output Buffer-A Address Result Register</description>
             <addressOffset>0x24</addressOffset>
+            <fields>
+              <field>
+                <name>f0_bufa_result</name>
+                <description>Indicate the final F0_BUFA address used for DMA or FBC after software configuration or hardware calculation from Buffer-A address register or buffer address fifo. Only used for debug.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_f1_bufa</name>
             <description>CSIC DMA FIFO 1 Output Buffer-A Address Register</description>
             <addressOffset>0x28</addressOffset>
+            <fields>
+              <field>
+                <name>f1_bufa</name>
+                <description>When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate the output address of compressed data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, these bits indicate the FIFO 1 output buffer-A address in DMA mode.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_f1_bufa_result</name>
             <description>CSIC DMA FIFO 1 Output Buffer-A Address Result Register</description>
             <addressOffset>0x2C</addressOffset>
+            <fields>
+              <field>
+                <name>f1_bufa_result</name>
+                <description>Indicate the final F1_BUFA address used for DMA or FBC after software configuration or hardware calculation from Buffer-A address register or buffer address fifo. Only used for debug.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_f2_bufa</name>
             <description>CSIC DMA FIFO 2 Output Buffer-A Address Register</description>
             <addressOffset>0x30</addressOffset>
+            <fields>
+              <field>
+                <name>f2_bufa</name>
+                <description>FIFO 2 output buffer-A address.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_f2_bufa_result</name>
             <description>CSIC DMA FIFO 2 Output Buffer-A Address Result Register</description>
             <addressOffset>0x34</addressOffset>
+            <fields>
+              <field>
+                <name>f2_bufa_result</name>
+                <description>Indicate the final F2_BUFA address used for DMA or FBC after software configuration or hardware calculation from Buffer-A address register or buffer address fifo. Only used for debug.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_buf_len</name>
             <description>CSIC DMA Buffer Length Register</description>
             <addressOffset>0x38</addressOffset>
+            <resetValue>0x02800500</resetValue>
+            <resetMask>0x3FFF3FFF</resetMask>
+            <fields>
+              <field>
+                <name>buf_len_c</name>
+                <description>DMA_MODE: Buffer length of chroma C in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y in ONLY Y line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0.</description>
+                <bitRange>[29:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>buf_len</name>
+                <description>DMA_MODE:Buffer length of luminance Y in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y and chroma C in YC line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0.</description>
+                <bitRange>[13:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_flip_size</name>
             <description>CSIC DMA Flip Size Register</description>
             <addressOffset>0x3C</addressOffset>
+            <resetValue>0x02D00500</resetValue>
+            <resetMask>0x1FFF3FFF</resetMask>
+            <fields>
+              <field>
+                <name>ver_len</name>
+                <description>Vertical line number when in VFLIP mode. Unit is line.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0.</description>
+                <bitRange>[28:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>valid_len</name>
+                <description>Valid components of a line when in HFLIP mode. Unit is pixel component.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0.</description>
+                <bitRange>[13:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_vi_to_th0</name>
             <description>CSIC DMA Video Input Timeout Threshold0 Register</description>
             <addressOffset>0x40</addressOffset>
+            <fields>
+              <field>
+                <name>vi_to_th0</name>
+                <description>Video Input Timeout Threshold0\n\nSet VIDEO_INPUT_TO_INT_PD when VI Counter reaches TH0 after VI_TO_CNT_EN is set, the Time Unit is a 12M clock period.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_vi_to_th1</name>
             <description>CSIC DMA Video Input Timeout Threshold1 Register</description>
             <addressOffset>0x44</addressOffset>
+            <fields>
+              <field>
+                <name>vi_to_th1</name>
+                <description>Video Input Timeout Threshold1\n\nSet VIDEO_INPUT_TO_INT_PD when VI Counter reaches TH1 after getting the first frame has been input, the Time Unit is a 12M clock period.</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_vi_to_cnt_val</name>
             <description>CSIC DMA Video Input Timeout Counter Value Register</description>
             <addressOffset>0x48</addressOffset>
+            <fields>
+              <field>
+                <name>vi_to_cnt_val</name>
+                <description>Video Input Timeout Counter Value\n\nIndicate the current value of Video Input Timeout Counter</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_cap_sta</name>
             <description>CSIC DMA Capture Status Register</description>
             <addressOffset>0x4C</addressOffset>
+            <fields>
+              <field>
+                <name>field_sta</name>
+                <description>The status of the received field</description>
+                <bitRange>[2:2]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>F_IELD_0</name>
+                    <description>Field 0</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>F_IELD_1</name>
+                    <description>Field 1</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>vcap_sta</name>
+                <description>Video capture in progress\n\nIndicates the CSI is capturing video image data (multiple frames). The bit is set at the start of the first frame after enabling video capture. When software disables video capture, it clears itself after the last pixel of the current frame is captured.</description>
+                <bitRange>[1:1]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>scap_sta</name>
+                <description>Still capture in progress\n\nIndicates the CSI is capturing still image data (single frame). The bit is set at the start of the first frame after enabling still frame capture. It clears itself after the last pixel of the first frame is captured.\n\nFor CCIR656 interface, if the output format is frame planar YCbCr 420 mode, the frame end means the field2 end, the other frame end means filed end.</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_int_en</name>
             <description>CSIC DMA Interrupt Enable Register</description>
             <addressOffset>0x50</addressOffset>
+            <fields>
+              <field>
+                <name>frm_lost_int_en</name>
+                <description>Set an INT when frame starts with empty Buffer Address FIFO, only use in BUF Address FIFO MODE.</description>
+                <bitRange>[15:15]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>stored_frm_cnt_int_en</name>
+                <description>Set an INT when the value of CSIC_DMA_STORED_FRM_CNT reaches CSIC_DMA_STORED_FRM_THRESHOLD, only use in BUF Address FIFO MODE.</description>
+                <bitRange>[14:14]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>buf_addr_fifo_int_en</name>
+                <description>Set an INT when content in BUF Address FIFO less than CSIC_DMA_BUFA_FIFO_THRESHOLD, only use in BUF Address FIFO MODE.</description>
+                <bitRange>[13:13]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>video_input_to_int_en</name>
+                <description>Set an INT when no video input exceeds the setting threshold time</description>
+                <bitRange>[12:12]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>clr_frame_cnt_int_en</name>
+                <description>Set a INT when clear Frame cnt.</description>
+                <bitRange>[11:11]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>vs_int_en</name>
+                <description>vsync flag\n\nThe bit is set when vsync come. And at this time load the buffer address for the coming frame. So after this irq come, changing the buffer address could only effect next frame</description>
+                <bitRange>[7:7]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>hb_of_int_en</name>
+                <description>Hblank FIFO overflow The bit is set when 3 FIFOs still overflow after the hblank.</description>
+                <bitRange>[6:6]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>lc_int_en</name>
+                <description>Line counter flag The bit is set when the specific line has been written to dram every frame. The line number is set in the line counter register.</description>
+                <bitRange>[5:5]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>fifo2_of_int_en</name>
+                <description>FIFO 2 overflow\n\nThe bit is set when the FIFO 2 became overflow.</description>
+                <bitRange>[4:4]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>fifo1_of_int_en</name>
+                <description>FIFO 1 overflow\n\nThe bit is set when the FIFO 1 became overflow.</description>
+                <bitRange>[3:3]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>fifo0_of_int_en</name>
+                <description>FIFO 0 overflow\n\nThe bit is set when the FIFO 0 became overflow.</description>
+                <bitRange>[2:2]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>fd_int_en</name>
+                <description>Frame done\n\nIndicates the CSI has finished capturing an image frame. Applies to video capture mode. The bit is set after each completed frame capturing data is written to buffer as long as video capture remains enabled.</description>
+                <bitRange>[1:1]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>cd_int_en</name>
+                <description>Capture done\n\nIndicates the CSI has completed capturing the image data. For still capture, the bit is set when one frame data has been written to buffer. For video capture, the bit is set when the last frame has been written to buffer after video capture has been disabled. For CCIR656 interface, if the output format is frame planar YCbCr 420 mode, the frame end means the field2 end, the other frame end means field end.</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_int_sta</name>
             <description>CSIC DMA Interrupt Status Register</description>
             <addressOffset>0x54</addressOffset>
+            <fields>
+              <field>
+                <name>frm_lost_int_pd</name>
+                <description>Set an INT when frame starts with empty Buffer Address FIFO, only use in BUF Address FIFO MODE.</description>
+                <bitRange>[15:15]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>stored_frm_cnt_int_pd</name>
+                <description>Set an INT when the value of CSIC_DMA_STORED_FRM_CNT reaches CSIC_DMA_STORED_FRM_THRESHOLD, only use in BUF Address FIFO MODE.</description>
+                <bitRange>[14:14]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>buf_addr_fifo_int_pd</name>
+                <description>Set an INT when content in BUF Address FIFO less than CSIC_DMA_BUFA_FIFO_THRESHOLD, only use in BUF Address FIFO MODE.</description>
+                <bitRange>[13:13]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>video_input_to_int_pd</name>
+                <description>Set an INT Pending when no video input exceeds the setting threshold time.</description>
+                <bitRange>[12:12]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>clr_frame_cnt_int</name>
+                <description>Set a INT when clear Frame cnt.</description>
+                <bitRange>[11:11]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>vs_pd</name>
+                <description>vsync flag</description>
+                <bitRange>[7:7]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>li_of_pd</name>
+                <description>Line information FIFO (16 lines) overflow</description>
+                <bitRange>[6:6]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>lc_pd</name>
+                <description>Line counter flag</description>
+                <bitRange>[5:5]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>fifo2_of_pd</name>
+                <description>FIFO 2 overflow</description>
+                <bitRange>[4:4]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>fifo1_of_pd</name>
+                <description>FIFO 1 overflow</description>
+                <bitRange>[3:3]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>fifo0_of_pd</name>
+                <description>FIFO 0 overflow</description>
+                <bitRange>[2:2]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>fd_pd</name>
+                <description>Frame done</description>
+                <bitRange>[1:1]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>cd_pd</name>
+                <description>Capture done</description>
+                <bitRange>[0:0]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_line_cnt</name>
             <description>CSIC DMA LINE Counter Register</description>
             <addressOffset>0x58</addressOffset>
+            <fields>
+              <field>
+                <name>line_cnt_num</name>
+                <description>The LINE_CNT_NUM value is set by user,when internal line counter reach the set value, the LC_PD will be set.</description>
+                <bitRange>[12:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_frm_cnt</name>
             <description>CSIC DMA Frame Counter Register</description>
             <addressOffset>0x5C</addressOffset>
+            <resetValue>0x00010000</resetValue>
+            <resetMask>0xFFFFFFFF</resetMask>
+            <fields>
+              <field>
+                <name>frm_cnt_clr</name>
+                <description>When the bit set to 1, Frame cnt is cleared to 0.</description>
+                <bitRange>[31:31]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>pclk_dma_clr_distance</name>
+                <description>Frame cnt clear cycle\n\nN*T_{SYNC}</description>
+                <bitRange>[30:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>frm_cnt</name>
+                <description>Counter value of frame. When frame done comes, the internal counter value add 1, and when the reg full, it is cleared to 0 . When parser sent a sync signal, it is cleared to 0.</description>
+                <bitRange>[15:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_frm_clk_cnt</name>
             <description>CSIC DMA Frame Clock Counter Register</description>
             <addressOffset>0x60</addressOffset>
+            <fields>
+              <field>
+                <name>frm_clk_cnt</name>
+                <description>Counter value between every frame. For instant hardware frame rate statics.\n\nThe internal counter is added by one every 12 MHz clock cycle. When frame done or vsync comes, the internal counter value is sampled to FRM_CLK_CNT, and cleared to 0.</description>
+                <bitRange>[23:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_acc_itnl_clk_cnt</name>
             <description>CSIC DMA Accumulated And Internal Clock Counter Register</description>
             <addressOffset>0x64</addressOffset>
+            <fields>
+              <field>
+                <name>acc_clk_cnt</name>
+                <description>The accumulated value of FRM_CLK_CNT for software frame rate statics. Every interrupt of frame is done, the software checks this accumulated value and clears it to 0. If the ACC_CLK_CNT is larger than 1, the software has lost frame.\n\nWhen frame done or vsync comes, ACC_CLK_CNT = ACC_CLK_CNT + 1, and cleared to 0 when writing this register.</description>
+                <bitRange>[31:24]</bitRange>
+                <access>read-write</access>
+                <modifiedWriteValues>clear</modifiedWriteValues>
+              </field>
+              <field>
+                <name>itnl_clk_cnt</name>
+                <description>The instant value of internal frame clock counter.\n\nWhen frame done interrupt comes, the software can query this counter for judging whether it is the time for updating the double buffer address registers.</description>
+                <bitRange>[23:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_fifo_stat</name>
             <description>CSIC DMA FIFO Statistic Register</description>
             <addressOffset>0x68</addressOffset>
+            <fields>
+              <field>
+                <name>line</name>
+                <description>Line Index Indicates the line index in current vsync.</description>
+                <bitRange>[29:16]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>fifo_frm_max</name>
+                <description>Indicates the maximum depth of FIFO being occupied for whole frame. Update at every vsync or framedone.</description>
+                <bitRange>[12:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_fifo_thrs</name>
             <description>CSIC DMA FIFO Threshold Register</description>
             <addressOffset>0x6C</addressOffset>
+            <resetValue>0x00000400</resetValue>
+            <resetMask>0x00000FFF</resetMask>
+            <fields>
+              <field>
+                <name>fifo_thrs</name>
+                <description>When FIFO occupied memory exceed the threshold, dram frequency can not change.</description>
+                <bitRange>[11:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_pclk_stat</name>
             <description>CSIC DMA PCLK Statistic Register</description>
             <addressOffset>0x70</addressOffset>
+            <resetValue>0x00007FFF</resetValue>
+            <resetMask>0x7FFF7FFF</resetMask>
+            <fields>
+              <field>
+                <name>pclk_cnt_line_max</name>
+                <description>Indicates maximum pixel clock counter value for each line. Update at every vsync or framedone.</description>
+                <bitRange>[30:16]</bitRange>
+                <access>read-only</access>
+              </field>
+              <field>
+                <name>pclk_cnt_line_min</name>
+                <description>Indicates minimum pixel clock counter value for each line. Update at every vsync or framedone.</description>
+                <bitRange>[14:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
-            <name>csic_dma_buf_addr_fifo0_entry</name>
-            <description>CSIC DMA BUF Address FIFO0 Entry Register</description>
+            <dim>3</dim>
+            <dimIncrement>0x4</dimIncrement>
+            <name>csic_dma_buf_addr_fifo%s_entry</name>
+            <description>CSIC DMA BUF Address FIFO[i] Entry Register</description>
             <addressOffset>0x80</addressOffset>
-          </register>
-          <register>
-            <name>csic_dma_buf_addr_fifo1_entry</name>
-            <description>CSIC DMA BUF Address FIFO1 Entry Register</description>
-            <addressOffset>0x84</addressOffset>
-          </register>
-          <register>
-            <name>csic_dma_buf_addr_fifo2_entry</name>
-            <description>CSIC DMA BUF Address FIFO2 Entry Register</description>
-            <addressOffset>0x88</addressOffset>
+            <fields>
+              <field>
+                <name>csic_dma_buf_addr_fifo_entry</name>
+                <description>FIFO Entry of Buffer Address FIFO[i] for input frames to be stored, only used in Buffer Addr FIFO Mode</description>
+                <bitRange>[31:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_buf_th</name>
             <description>CSIC DMA BUF Threshold Register</description>
             <addressOffset>0x8C</addressOffset>
+            <resetValue>0x00200000</resetValue>
+            <resetMask>0x003F003F</resetMask>
+            <fields>
+              <field>
+                <name>csic_dma_stored_frm_threshold</name>
+                <description>when stored frame counter value reaches the threshold , counter is cleared to 0 , only used in Buffer Addr FIFO Mode.</description>
+                <bitRange>[21:16]</bitRange>
+                <access>read-write</access>
+              </field>
+              <field>
+                <name>csic_dma_buf_addr_fifo_threshold</name>
+                <description>when content in Buffer Address FIFO less than the threshold, an interrupt is set, only used in Buffer Addr FIFO Mode.</description>
+                <bitRange>[5:0]</bitRange>
+                <access>read-write</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_buf_addr_fifo_con</name>
             <description>CSIC DMA BUF Address FIFO Content Register</description>
             <addressOffset>0x90</addressOffset>
+            <fields>
+              <field>
+                <dim>3</dim>
+                <dimIncrement>0x8</dimIncrement>
+                <name>csic_dma_buf_addr_fifo%s_content</name>
+                <description>FIFO Content of address buffered in Buffer Address FIFO[i], only used in Buffer Addr FIFO Mode.</description>
+                <bitRange>[5:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_dma_stored_frm_cnt</name>
             <description>CSIC DMA Stored Frame Counter Register</description>
             <addressOffset>0x94</addressOffset>
+            <fields>
+              <field>
+                <name>csic_dma_stored_frm_cnt</name>
+                <description>Indicates value of stored frames counter. When the counter value reaches CSIC_DMA_STORED_FRM_THRESHOLD, the counter is cleared to 0. Only used in Buffer Addr FIFO Mode.</description>
+                <bitRange>[7:0]</bitRange>
+                <access>read-only</access>
+              </field>
+            </fields>
           </register>
           <register>
             <name>csic_feature</name>
             <description>CSIC DMA Feature List Register</description>
             <addressOffset>0x1F4</addressOffset>
+            <fields>
+              <field>
+                <name>dma0_embedded_lbc</name>
+                <bitRange>[1:1]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>N_O_E_MBEDDED</name>
+                    <description>No Embedded LBC</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_MBEDDED</name>
+                    <description>Embedded LBC</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+              <field>
+                <name>dma0_embedded_fbc</name>
+                <bitRange>[0:0]</bitRange>
+                <access>read-only</access>
+                <enumeratedValues>
+                  <enumeratedValue>
+                    <name>N_O_E_MBEDDED</name>
+                    <description>No Embedded DMA</description>
+                    <value>0x0</value>
+                  </enumeratedValue>
+                  <enumeratedValue>
+                    <name>E_MBEDDED</name>
+                    <description>Embedded FBC</description>
+                    <value>0x1</value>
+                  </enumeratedValue>
+                </enumeratedValues>
+              </field>
+            </fields>
           </register>
         </cluster>
       </registers>

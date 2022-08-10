@@ -34,7 +34,44 @@ impl From<crate::W<CSIC_MULF_MOD_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `mulf_en` reader - "]
+pub type MULF_EN_R = crate::BitReader<bool>;
+#[doc = "Field `mulf_en` writer - "]
+pub type MULF_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_MULF_MOD_SPEC, bool, O>;
+#[doc = "Field `mulf_cs` reader - "]
+pub type MULF_CS_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `mulf_cs` writer - "]
+pub type MULF_CS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CSIC_MULF_MOD_SPEC, u8, u8, 8, O>;
+#[doc = "Field `mulf_status` reader - "]
+pub type MULF_STATUS_R = crate::FieldReader<u8, u8>;
+impl R {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn mulf_en(&self) -> MULF_EN_R {
+        MULF_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bits 8:15"]
+    #[inline(always)]
+    pub fn mulf_cs(&self) -> MULF_CS_R {
+        MULF_CS_R::new(((self.bits >> 8) & 0xff) as u8)
+    }
+    #[doc = "Bits 24:31"]
+    #[inline(always)]
+    pub fn mulf_status(&self) -> MULF_STATUS_R {
+        MULF_STATUS_R::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
 impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn mulf_en(&mut self) -> MULF_EN_W<0> {
+        MULF_EN_W::new(self)
+    }
+    #[doc = "Bits 8:15"]
+    #[inline(always)]
+    pub fn mulf_cs(&mut self) -> MULF_CS_W<8> {
+        MULF_CS_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

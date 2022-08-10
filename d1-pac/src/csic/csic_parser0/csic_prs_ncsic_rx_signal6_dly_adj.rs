@@ -34,7 +34,69 @@ impl From<crate::W<CSIC_PRS_NCSIC_RX_SIGNAL6_DLY_ADJ_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `d0_dly` reader - D0_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D0_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `d0_dly` writer - D0_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D0_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL6_DLY_ADJ_SPEC, u8, u8, 5, O>;
+#[doc = "Field `d1_dly` reader - D1_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D1_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `d1_dly` writer - D1_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D1_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL6_DLY_ADJ_SPEC, u8, u8, 5, O>;
+#[doc = "Field `d2_dly` reader - D2_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D2_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `d2_dly` writer - D2_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D2_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL6_DLY_ADJ_SPEC, u8, u8, 5, O>;
+#[doc = "Field `d3_dly` reader - D3_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D3_DLY_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `d3_dly` writer - D3_dly 32 Step for adjust, 1 step = 0.2 ns"]
+pub type D3_DLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL6_DLY_ADJ_SPEC, u8, u8, 5, O>;
+impl R {
+    #[doc = "Bits 0:4 - D0_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d0_dly(&self) -> D0_DLY_R {
+        D0_DLY_R::new((self.bits & 0x1f) as u8)
+    }
+    #[doc = "Bits 8:12 - D1_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d1_dly(&self) -> D1_DLY_R {
+        D1_DLY_R::new(((self.bits >> 8) & 0x1f) as u8)
+    }
+    #[doc = "Bits 16:20 - D2_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d2_dly(&self) -> D2_DLY_R {
+        D2_DLY_R::new(((self.bits >> 16) & 0x1f) as u8)
+    }
+    #[doc = "Bits 24:28 - D3_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d3_dly(&self) -> D3_DLY_R {
+        D3_DLY_R::new(((self.bits >> 24) & 0x1f) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:4 - D0_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d0_dly(&mut self) -> D0_DLY_W<0> {
+        D0_DLY_W::new(self)
+    }
+    #[doc = "Bits 8:12 - D1_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d1_dly(&mut self) -> D1_DLY_W<8> {
+        D1_DLY_W::new(self)
+    }
+    #[doc = "Bits 16:20 - D2_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d2_dly(&mut self) -> D2_DLY_W<16> {
+        D2_DLY_W::new(self)
+    }
+    #[doc = "Bits 24:28 - D3_dly 32 Step for adjust, 1 step = 0.2 ns"]
+    #[inline(always)]
+    pub fn d3_dly(&mut self) -> D3_DLY_W<24> {
+        D3_DLY_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

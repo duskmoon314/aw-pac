@@ -34,7 +34,65 @@ impl From<crate::W<CSIC_MULF_INT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `mulf_done_en` reader - "]
+pub type MULF_DONE_EN_R = crate::BitReader<bool>;
+#[doc = "Field `mulf_done_en` writer - "]
+pub type MULF_DONE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+#[doc = "Field `mulf_err_en` reader - "]
+pub type MULF_ERR_EN_R = crate::BitReader<bool>;
+#[doc = "Field `mulf_err_en` writer - "]
+pub type MULF_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+#[doc = "Field `mulf_done_pd` reader - "]
+pub type MULF_DONE_PD_R = crate::BitReader<bool>;
+#[doc = "Field `mulf_done_pd` writer - "]
+pub type MULF_DONE_PD_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+#[doc = "Field `mulf_err_pd` reader - "]
+pub type MULF_ERR_PD_R = crate::BitReader<bool>;
+#[doc = "Field `mulf_err_pd` writer - "]
+pub type MULF_ERR_PD_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+impl R {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn mulf_done_en(&self) -> MULF_DONE_EN_R {
+        MULF_DONE_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    pub fn mulf_err_en(&self) -> MULF_ERR_EN_R {
+        MULF_ERR_EN_R::new(((self.bits >> 1) & 1) != 0)
+    }
+    #[doc = "Bit 16"]
+    #[inline(always)]
+    pub fn mulf_done_pd(&self) -> MULF_DONE_PD_R {
+        MULF_DONE_PD_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 17"]
+    #[inline(always)]
+    pub fn mulf_err_pd(&self) -> MULF_ERR_PD_R {
+        MULF_ERR_PD_R::new(((self.bits >> 17) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn mulf_done_en(&mut self) -> MULF_DONE_EN_W<0> {
+        MULF_DONE_EN_W::new(self)
+    }
+    #[doc = "Bit 1"]
+    #[inline(always)]
+    pub fn mulf_err_en(&mut self) -> MULF_ERR_EN_W<1> {
+        MULF_ERR_EN_W::new(self)
+    }
+    #[doc = "Bit 16"]
+    #[inline(always)]
+    pub fn mulf_done_pd(&mut self) -> MULF_DONE_PD_W<16> {
+        MULF_DONE_PD_W::new(self)
+    }
+    #[doc = "Bit 17"]
+    #[inline(always)]
+    pub fn mulf_err_pd(&mut self) -> MULF_ERR_PD_W<17> {
+        MULF_ERR_PD_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

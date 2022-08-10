@@ -34,7 +34,39 @@ impl From<crate::W<CSIC_PTN_ISP_SIZE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `width` reader - Width Horizontal size, only valid for ISP mode pattern generation."]
+pub type WIDTH_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `width` writer - Width Horizontal size, only valid for ISP mode pattern generation."]
+pub type WIDTH_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PTN_ISP_SIZE_SPEC, u16, u16, 13, O>;
+#[doc = "Field `height` reader - Height Vertical size, only valid for ISP mode pattern generation."]
+pub type HEIGHT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `height` writer - Height Vertical size, only valid for ISP mode pattern generation."]
+pub type HEIGHT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CSIC_PTN_ISP_SIZE_SPEC, u16, u16, 13, O>;
+impl R {
+    #[doc = "Bits 0:12 - Width Horizontal size, only valid for ISP mode pattern generation."]
+    #[inline(always)]
+    pub fn width(&self) -> WIDTH_R {
+        WIDTH_R::new((self.bits & 0x1fff) as u16)
+    }
+    #[doc = "Bits 16:28 - Height Vertical size, only valid for ISP mode pattern generation."]
+    #[inline(always)]
+    pub fn height(&self) -> HEIGHT_R {
+        HEIGHT_R::new(((self.bits >> 16) & 0x1fff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:12 - Width Horizontal size, only valid for ISP mode pattern generation."]
+    #[inline(always)]
+    pub fn width(&mut self) -> WIDTH_W<0> {
+        WIDTH_W::new(self)
+    }
+    #[doc = "Bits 16:28 - Height Vertical size, only valid for ISP mode pattern generation."]
+    #[inline(always)]
+    pub fn height(&mut self) -> HEIGHT_W<16> {
+        HEIGHT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

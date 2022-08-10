@@ -34,7 +34,131 @@ impl From<crate::W<CSIC_TOP_EN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `csic_top_en` reader - "]
+pub type CSIC_TOP_EN_R = crate::BitReader<CSIC_TOP_EN_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CSIC_TOP_EN_A {
+    #[doc = "0: Reset and disable the CSIC module"]
+    R_ESET_DISABLE = 0,
+    #[doc = "1: Enable the CSIC module"]
+    E_NABLE = 1,
+}
+impl From<CSIC_TOP_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: CSIC_TOP_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl CSIC_TOP_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CSIC_TOP_EN_A {
+        match self.bits {
+            false => CSIC_TOP_EN_A::R_ESET_DISABLE,
+            true => CSIC_TOP_EN_A::E_NABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `R_ESET_DISABLE`"]
+    #[inline(always)]
+    pub fn is_r_eset_disable(&self) -> bool {
+        *self == CSIC_TOP_EN_A::R_ESET_DISABLE
+    }
+    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[inline(always)]
+    pub fn is_e_nable(&self) -> bool {
+        *self == CSIC_TOP_EN_A::E_NABLE
+    }
+}
+#[doc = "Field `csic_top_en` writer - "]
+pub type CSIC_TOP_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CSIC_TOP_EN_SPEC, CSIC_TOP_EN_A, O>;
+impl<'a, const O: u8> CSIC_TOP_EN_W<'a, O> {
+    #[doc = "Reset and disable the CSIC module"]
+    #[inline(always)]
+    pub fn r_eset_disable(self) -> &'a mut W {
+        self.variant(CSIC_TOP_EN_A::R_ESET_DISABLE)
+    }
+    #[doc = "Enable the CSIC module"]
+    #[inline(always)]
+    pub fn e_nable(self) -> &'a mut W {
+        self.variant(CSIC_TOP_EN_A::E_NABLE)
+    }
+}
+#[doc = "Field `bist_mode_en` reader - "]
+pub type BIST_MODE_EN_R = crate::BitReader<BIST_MODE_EN_A>;
+#[doc = "\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BIST_MODE_EN_A {
+    #[doc = "0: Closed"]
+    C_LOSED = 0,
+    #[doc = "1: EN BIST TEST"]
+    EN = 1,
+}
+impl From<BIST_MODE_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: BIST_MODE_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl BIST_MODE_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BIST_MODE_EN_A {
+        match self.bits {
+            false => BIST_MODE_EN_A::C_LOSED,
+            true => BIST_MODE_EN_A::EN,
+        }
+    }
+    #[doc = "Checks if the value of the field is `C_LOSED`"]
+    #[inline(always)]
+    pub fn is_c_losed(&self) -> bool {
+        *self == BIST_MODE_EN_A::C_LOSED
+    }
+    #[doc = "Checks if the value of the field is `EN`"]
+    #[inline(always)]
+    pub fn is_en(&self) -> bool {
+        *self == BIST_MODE_EN_A::EN
+    }
+}
+#[doc = "Field `bist_mode_en` writer - "]
+pub type BIST_MODE_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, CSIC_TOP_EN_SPEC, BIST_MODE_EN_A, O>;
+impl<'a, const O: u8> BIST_MODE_EN_W<'a, O> {
+    #[doc = "Closed"]
+    #[inline(always)]
+    pub fn c_losed(self) -> &'a mut W {
+        self.variant(BIST_MODE_EN_A::C_LOSED)
+    }
+    #[doc = "EN BIST TEST"]
+    #[inline(always)]
+    pub fn en(self) -> &'a mut W {
+        self.variant(BIST_MODE_EN_A::EN)
+    }
+}
+impl R {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn csic_top_en(&self) -> CSIC_TOP_EN_R {
+        CSIC_TOP_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 2"]
+    #[inline(always)]
+    pub fn bist_mode_en(&self) -> BIST_MODE_EN_R {
+        BIST_MODE_EN_R::new(((self.bits >> 2) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0"]
+    #[inline(always)]
+    pub fn csic_top_en(&mut self) -> CSIC_TOP_EN_W<0> {
+        CSIC_TOP_EN_W::new(self)
+    }
+    #[doc = "Bit 2"]
+    #[inline(always)]
+    pub fn bist_mode_en(&mut self) -> BIST_MODE_EN_W<2> {
+        BIST_MODE_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
