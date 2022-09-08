@@ -254,6 +254,12 @@ pub struct RegisterBlock {
     _reserved118: [u8; 0x0c],
     #[doc = "0x330 - ADC5 Analog Control Register"]
     pub adc5: ADC5,
+    _reserved119: [u8; 0x0c],
+    #[doc = "0x340 - Headphone2 Analog Control Register"]
+    pub hp2: HP2,
+    _reserved120: [u8; 0x04],
+    #[doc = "0x348 - POWER Analog Control Register\n\nThe register is not controlled by the clock and reset of Audio Codec, only controlled by the clock and reset of system bus."]
+    pub power: POWER,
 }
 #[doc = "ac_dac_dpc (rw) register accessor: an alias for `Reg<AC_DAC_DPC_SPEC>`"]
 pub type AC_DAC_DPC = crate::Reg<ac_dac_dpc::AC_DAC_DPC_SPEC>;
@@ -731,3 +737,11 @@ pub mod bias;
 pub type ADC5 = crate::Reg<adc5::ADC5_SPEC>;
 #[doc = "ADC5 Analog Control Register"]
 pub mod adc5;
+#[doc = "hp2 (rw) register accessor: an alias for `Reg<HP2_SPEC>`"]
+pub type HP2 = crate::Reg<hp2::HP2_SPEC>;
+#[doc = "Headphone2 Analog Control Register"]
+pub mod hp2;
+#[doc = "power (rw) register accessor: an alias for `Reg<POWER_SPEC>`"]
+pub type POWER = crate::Reg<power::POWER_SPEC>;
+#[doc = "POWER Analog Control Register\n\nThe register is not controlled by the clock and reset of Audio Codec, only controlled by the clock and reset of system bus."]
+pub mod power;

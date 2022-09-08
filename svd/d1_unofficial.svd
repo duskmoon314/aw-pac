@@ -12393,7 +12393,7 @@
           <fields>
             <field>
               <name>efuse_1_8v_power_switch_control</name>
-              <description>1: Open power switch 
+              <description>1: Open power switch
 0: Close power switch</description>
               <bitRange>[0:0]</bitRange>
               <access>read-write</access>
@@ -22549,21 +22549,407 @@
           <name>ac_dac_dpc</name>
           <description>DAC Digital Part Control Register</description>
           <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>en_da</name>
+              <description>DAC Digital Part Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>modqu</name>
+              <description>Internal DAC Quantization Levels.\n\nLevels = [7*(21 + MODQU[3:0])]/128\n\nDefault levels = 7*21/128 = 1.15</description>
+              <bitRange>[28:25]</bitRange>
+            </field>
+            <field>
+              <name>dwa</name>
+              <description>DWA Function Disable</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hpf_en</name>
+              <description>High Pass Filter Enable</description>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dvol</name>
+              <description>Digital Volume Control: DVC\n\nATT = DVC[5:0] * (-1.16 dB)\n\n64 steps, -1.16 dB/step</description>
+              <bitRange>[17:12]</bitRange>
+            </field>
+            <field>
+              <name>hub_en</name>
+              <description>Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable.</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>dac_vol_ctrl</name>
           <description>DAC Volume Control Register</description>
           <addressOffset>0x4</addressOffset>
+          <fields>
+            <field>
+              <name>dac_vol_sel</name>
+              <description>DAC Volume Control Selection Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_vol_l</name>
+              <description>DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe</description>
+              <bitRange>[15:8]</bitRange>
+            </field>
+            <field>
+              <name>dac_vol_r</name>
+              <description>DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_fifoc</name>
           <description>DAC FIFO Control Register</description>
           <addressOffset>0x10</addressOffset>
+          <fields>
+            <field>
+              <name>dac_fs</name>
+              <description>Sample Rate of DAC</description>
+              <bitRange>[31:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>FS48K</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FS32K</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FS24K</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FS16K</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FS12K</name>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FS8K</name>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FS192K</name>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FS96K</name>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fir_ver</name>
+              <description>FIR Version</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>TAP_64</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TAP_32</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>send_last</name>
+              <description>Audio sample select when TX FIFO underrun</description>
+              <bitRange>[26:26]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ZERO</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LAST</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fifo_mode</name>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>BIG_ENDIAN</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LITTLE_ENDIAN</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drq_clr_cnt</name>
+              <description>DAC DRQ clear count</description>
+              <bitRange>[14:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>WLEVEL</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N4</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N8</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N16</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tx_trig_level</name>
+              <description>TX FIFO Empty Trigger Level</description>
+              <bitRange>[14:8]</bitRange>
+            </field>
+            <field>
+              <name>dac_mono_en</name>
+              <description>DAC Mono Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>STEREO</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MONO</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tx_sample_bits</name>
+              <description>Transmitting Audio Sample Resolution</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>BITS_16</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_20</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drq_en</name>
+              <description>DAC FIFO Empty DRQ Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_irq_en</name>
+              <description>DAC FIFO Empty IRQ Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fifo_underrun_irq_en</name>
+              <description>DAC FIFO Underrun IRQ Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fifo_overrun_irq_en</name>
+              <description>DAC FIFO Overrun IRQ Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fifo_flush</name>
+              <description>DAC FIFO Flush</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SELF_CLEAR</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLUSH</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_fifos</name>
           <description>DAC FIFO Status Register</description>
           <addressOffset>0x14</addressOffset>
+          <fields>
+            <field>
+              <name>tx_empty</name>
+              <description>TX FIFO Empty</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_ROOM</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ROOM</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txe_cnt</name>
+              <description>TX FIFO Empty Space Word Counter</description>
+              <bitRange>[22:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>txe_int</name>
+              <description>TX FIFO Empty Pending Interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txu_int</name>
+              <description>TX FIFO Underrun Pending Interrupt</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txo_int</name>
+              <description>TX FIFO Overrun Pending Interrupt</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_txdata</name>
@@ -22579,6 +22965,103 @@
           <name>ac_dac_dg</name>
           <description>DAC Debug Register</description>
           <addressOffset>0x28</addressOffset>
+          <fields>
+            <field>
+              <name>dac_modu_select</name>
+              <description>DAC Modulator Debug Mode</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DEBUG</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_pattern_select</name>
+              <description>DAC Pattern Select</description>
+              <bitRange>[10:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>Normal (Audio sample from TX FIFO)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SIN6</name>
+                  <description>-6 dB Sin wave</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SIN60</name>
+                  <description>-60 dB Sin wave</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SILENT</name>
+                  <description>Silent wave</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>codec_clk_select</name>
+              <description>CODEC Clock Source Select</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PLL</name>
+                  <description>CODEC clock from PLL</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OSC</name>
+                  <description>CODEC clock from OSC (for Debug)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>da_swp</name>
+              <description>DAC Output Channel Swap Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adda_loop_mode</name>
+              <description>ADDA Loop Mode Select</description>
+              <bitRange>[2:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADC12</name>
+                  <description>ADDA LOOP MODE DACL/DACR is connected to ADC1/ADC2</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ADC3</name>
+                  <description>ADDA LOOP MODE DACL/DACR is connected to ADC3</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_fifoc</name>
@@ -23119,6 +23602,217 @@
           <name>dac</name>
           <description>DAC Analog Control Register</description>
           <addressOffset>0x310</addressOffset>
+          <fields>
+            <field>
+              <name>current_test_select</name>
+              <description>Internal Current Sink Test Enable (from MICIN3P pin)</description>
+              <bitRange>[23:23]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DEBUG</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>iopvrs</name>
+              <description>VRA2 Buffer OP and Headphone Feedback Buffer OP Bias Current Select</description>
+              <bitRange>[21:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C6U</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C7U</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C8U</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C9U</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ilineoutamps</name>
+              <description>LINEOUT L/R AMP Bias Current Select</description>
+              <bitRange>[19:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C6U</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C7U</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C8U</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C9U</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>iopdacs</name>
+              <description>OPDAC L/R Bias Current Select</description>
+              <bitRange>[17:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C6U</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C7U</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C8U</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C9U</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dacl_en</name>
+              <description>DACL Enable</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dacr_en</name>
+              <description>DACR Enable</description>
+              <bitRange>[14:14]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lineoutlen</name>
+              <description>Left Channel LINEOUT Enable</description>
+              <bitRange>[13:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lmute</name>
+              <description>DACL to Left Channel LINEOUT Mute Control</description>
+              <bitRange>[12:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MUTE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UNMUTE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lineoutren</name>
+              <description>Right Channel LINEOUT Enable</description>
+              <bitRange>[11:11]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rmute</name>
+              <description>DACR to Right Channel LINEOUT Mute Control</description>
+              <bitRange>[10:10]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MUTE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>UNMUTE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lineoutl_diffen</name>
+              <description>Left Channel LINEOUT Output Control</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SINGLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIFFERENTIAL</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lineoutr_diffen</name>
+              <description>Right Channel LINEOUT Output Control</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SINGLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIFFERENTIAL</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lineout_vol_ctrl</name>
+              <description>LINEOUT Volume Control.\n\nTotal 30 level from 0x1F to 0x02 with the volume 0 dB to -43.5 dB, -1.5 dB/step, mute when 00000 or 00001</description>
+              <bitRange>[4:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>micbias</name>
@@ -23129,6 +23823,264 @@
           <name>ramp</name>
           <description>BIAS Analog Control Register</description>
           <addressOffset>0x31C</addressOffset>
+          <fields>
+            <field>
+              <name>ramp_rise_int_en</name>
+              <description>RAMP Rise Interrupt Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_rise_int</name>
+              <description>RK Increase Upward Finish and Rampen Pull Down Instruction</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_fall_int_en</name>
+              <description>RAMP Fall Int Enable</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_fall_int</name>
+              <description>RK Downward Decrease Finish and Rampen Pull Down Instruction</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_srst</name>
+              <description>Ramp Soft Reset</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_clk_div_m</name>
+              <description>Analog Ramp Clk Div Freq Value : M (from 0 to 31, Default: 24).\n\nAna_Ramp_Clk= 24MHz/(M+1)\n\nDefault Ramp Clk Freq: 24MHz/(24+1)=960 kHz</description>
+              <bitRange>[20:16]</bitRange>
+            </field>
+            <field>
+              <name>hp_pull_out_en</name>
+              <description>Headphone Pullout Enable</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_hold_step</name>
+              <description>Ramp Hold Step\n\nRamp Hold Time = Ramp Hold Step/Ramp Clk Freq</description>
+              <bitRange>[14:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S9600</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S19200</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S38400</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S76800</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S96000</name>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S115200</name>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S153600</name>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S192000</name>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>gap_step</name>
+              <description>Gap Step</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RAMP_STEP_X1</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RAMP_STEP_X2</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RAMP_STEP_X3</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RAMP_STEP_X4</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_step</name>
+              <description>RK Frequency Gear, Control Ramp Rise/Fall Total Time\n\nRamp Rise/Fall Total Time = (Ramp Step/Ramp Clk Freq)*4096</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>S20</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S30</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S40</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S60</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S80</name>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S120</name>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S160</name>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>S240</name>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rmd_en</name>
+              <description>Ramp Manual Down Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rmu_en</name>
+              <description>Ramp Manual Up Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rmc_en</name>
+              <description>Ramp Manual Control Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rd_en</name>
+              <description>Ramp Digital Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>bias</name>
@@ -23139,6 +24091,420 @@
           <name>adc5</name>
           <description>ADC5 Analog Control Register</description>
           <addressOffset>0x330</addressOffset>
+        </register>
+        <register>
+          <name>hp2</name>
+          <description>Headphone2 Analog Control Register</description>
+          <addressOffset>0x340</addressOffset>
+          <fields>
+            <field>
+              <name>hpfb_buf_en</name>
+              <description>Headphone Feedback Buffer OP Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>headphone_gain</name>
+              <description>Headphone Gain</description>
+              <bitRange>[30:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DB0</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DB6</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DB12</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DB18</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DB24</name>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DB30</name>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DB36</name>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DB42</name>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hpfb_res</name>
+              <description>Headphone Feedback Big Resistor Control</description>
+              <bitRange>[27:26]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R880K</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R1000K</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R1080K</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R1200K</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>opdrv_cur</name>
+              <description>Headphone OP Output Stage Current Setting</description>
+              <bitRange>[25:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MIN</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MAX</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>iophp</name>
+              <description>Headphone L/R OP Bias Current Select</description>
+              <bitRange>[23:22]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>C6U</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C7U</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C8U</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C9U</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hp_drven</name>
+              <description>Headphone Driver Enable</description>
+              <bitRange>[21:21]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hp_drvouten</name>
+              <description>Headphone Driver Output Enable</description>
+              <bitRange>[20:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rswitch</name>
+              <description>RSwitch</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>HPOUT</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>VRA1</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rampen</name>
+              <description>Ramp DAC Enable</description>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hpfb_in_en</name>
+              <description>Headphone Feedback PAD IN Switch Enable</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_final_control</name>
+              <description>Headphone Ramp Final Step Control</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SELECT_RAMP</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SELECT_HPFB_BUFFER</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_out_en</name>
+              <description>Ramp Output Switch Enable</description>
+              <bitRange>[15:15]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ramp_final_state_res</name>
+              <description>Ramp Final State Resistor</description>
+              <bitRange>[14:13]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R2500</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R5K</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R10K</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R20K</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hpfb_buf_output_current</name>
+              <description>Headphone Feedback Buffer Output Current Select\n\nI = 7uA</description>
+              <bitRange>[9:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>I35</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I28</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I45</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>I38</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>power</name>
+          <description>POWER Analog Control Register\n\nThe register is not controlled by the clock and reset of Audio Codec, only controlled by the clock and reset of system bus.</description>
+          <addressOffset>0x348</addressOffset>
+          <fields>
+            <field>
+              <name>aldo_en</name>
+              <description>ALDO Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hpldo_en</name>
+              <description>HPLDO Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>var1speedup_down_further_ctrl</name>
+              <description>VRA1 Speedup Down Further Control In Adda Analog</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DIGITAL</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MANUAL</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>avccpor</name>
+              <description>AVCCPOR Monitor</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>aldo_output_voltage</name>
+              <description>ALDO Output Voltage Control</description>
+              <bitRange>[14:12]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>V165</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V170</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V175</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V180</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V185</name>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V190</name>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V195</name>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V200</name>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hpldo_output_voltage</name>
+              <description>HPLDO Output Voltage Control</description>
+              <bitRange>[10:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>V165</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V170</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V175</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V180</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V185</name>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V190</name>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V195</name>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>V200</name>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bg_trim</name>
+              <description>BG Output Voltage Trimming\n\nOnly low 6-bit is used. The BG output voltage range is from 0.7 V to 1.208 V</description>
+              <bitRange>[7:0]</bitRange>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

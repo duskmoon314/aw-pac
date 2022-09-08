@@ -34,7 +34,100 @@ impl From<crate::W<DAC_VOL_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_vol_r` reader - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+pub type DAC_VOL_R_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `dac_vol_r` writer - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+pub type DAC_VOL_R_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DAC_VOL_CTRL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `dac_vol_l` reader - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+pub type DAC_VOL_L_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `dac_vol_l` writer - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+pub type DAC_VOL_L_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DAC_VOL_CTRL_SPEC, u8, u8, 8, O>;
+#[doc = "Field `dac_vol_sel` reader - DAC Volume Control Selection Enable"]
+pub type DAC_VOL_SEL_R = crate::BitReader<DAC_VOL_SEL_A>;
+#[doc = "DAC Volume Control Selection Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DAC_VOL_SEL_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<DAC_VOL_SEL_A> for bool {
+    #[inline(always)]
+    fn from(variant: DAC_VOL_SEL_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl DAC_VOL_SEL_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DAC_VOL_SEL_A {
+        match self.bits {
+            false => DAC_VOL_SEL_A::DISABLE,
+            true => DAC_VOL_SEL_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == DAC_VOL_SEL_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == DAC_VOL_SEL_A::ENABLE
+    }
+}
+#[doc = "Field `dac_vol_sel` writer - DAC Volume Control Selection Enable"]
+pub type DAC_VOL_SEL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, DAC_VOL_CTRL_SPEC, DAC_VOL_SEL_A, O>;
+impl<'a, const O: u8> DAC_VOL_SEL_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(DAC_VOL_SEL_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DAC_VOL_SEL_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bits 0:7 - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+    #[inline(always)]
+    pub fn dac_vol_r(&self) -> DAC_VOL_R_R {
+        DAC_VOL_R_R::new((self.bits & 0xff) as u8)
+    }
+    #[doc = "Bits 8:15 - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+    #[inline(always)]
+    pub fn dac_vol_l(&self) -> DAC_VOL_L_R {
+        DAC_VOL_L_R::new(((self.bits >> 8) & 0xff) as u8)
+    }
+    #[doc = "Bit 16 - DAC Volume Control Selection Enable"]
+    #[inline(always)]
+    pub fn dac_vol_sel(&self) -> DAC_VOL_SEL_R {
+        DAC_VOL_SEL_R::new(((self.bits >> 16) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bits 0:7 - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+    #[inline(always)]
+    pub fn dac_vol_r(&mut self) -> DAC_VOL_R_W<0> {
+        DAC_VOL_R_W::new(self)
+    }
+    #[doc = "Bits 8:15 - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
+    #[inline(always)]
+    pub fn dac_vol_l(&mut self) -> DAC_VOL_L_W<8> {
+        DAC_VOL_L_W::new(self)
+    }
+    #[doc = "Bit 16 - DAC Volume Control Selection Enable"]
+    #[inline(always)]
+    pub fn dac_vol_sel(&mut self) -> DAC_VOL_SEL_W<16> {
+        DAC_VOL_SEL_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
