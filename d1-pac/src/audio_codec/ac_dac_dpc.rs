@@ -34,7 +34,281 @@ impl From<crate::W<AC_DAC_DPC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `hub_en` reader - Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable."]
+pub type HUB_EN_R = crate::BitReader<HUB_EN_A>;
+#[doc = "Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HUB_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<HUB_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: HUB_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl HUB_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HUB_EN_A {
+        match self.bits {
+            false => HUB_EN_A::DISABLE,
+            true => HUB_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == HUB_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == HUB_EN_A::ENABLE
+    }
+}
+#[doc = "Field `hub_en` writer - Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable."]
+pub type HUB_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_DAC_DPC_SPEC, HUB_EN_A, O>;
+impl<'a, const O: u8> HUB_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(HUB_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(HUB_EN_A::ENABLE)
+    }
+}
+#[doc = "Field `dvol` reader - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
+* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+pub type DVOL_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `dvol` writer - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
+* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+pub type DVOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AC_DAC_DPC_SPEC, u8, u8, 6, O>;
+#[doc = "Field `hpf_en` reader - High Pass Filter Enable"]
+pub type HPF_EN_R = crate::BitReader<HPF_EN_A>;
+#[doc = "High Pass Filter Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HPF_EN_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<HPF_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: HPF_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl HPF_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HPF_EN_A {
+        match self.bits {
+            false => HPF_EN_A::DISABLE,
+            true => HPF_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == HPF_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == HPF_EN_A::ENABLE
+    }
+}
+#[doc = "Field `hpf_en` writer - High Pass Filter Enable"]
+pub type HPF_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_DAC_DPC_SPEC, HPF_EN_A, O>;
+impl<'a, const O: u8> HPF_EN_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(HPF_EN_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(HPF_EN_A::ENABLE)
+    }
+}
+#[doc = "Field `dwa` reader - DWA Function Disable"]
+pub type DWA_R = crate::BitReader<DWA_A>;
+#[doc = "DWA Function Disable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DWA_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<DWA_A> for bool {
+    #[inline(always)]
+    fn from(variant: DWA_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl DWA_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DWA_A {
+        match self.bits {
+            false => DWA_A::DISABLE,
+            true => DWA_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == DWA_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == DWA_A::ENABLE
+    }
+}
+#[doc = "Field `dwa` writer - DWA Function Disable"]
+pub type DWA_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_DAC_DPC_SPEC, DWA_A, O>;
+impl<'a, const O: u8> DWA_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(DWA_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DWA_A::ENABLE)
+    }
+}
+#[doc = "Field `modqu` reader - Internal DAC Quantization Levels.\n\nLevels = \\[7*(21 + MODQU\\[3:0\\])\\]/128\n\nDefault levels = 7*21/128 = 1.15"]
+pub type MODQU_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `modqu` writer - Internal DAC Quantization Levels.\n\nLevels = \\[7*(21 + MODQU\\[3:0\\])\\]/128\n\nDefault levels = 7*21/128 = 1.15"]
+pub type MODQU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AC_DAC_DPC_SPEC, u8, u8, 4, O>;
+#[doc = "Field `en_da` reader - DAC Digital Part Enable"]
+pub type EN_DA_R = crate::BitReader<EN_DA_A>;
+#[doc = "DAC Digital Part Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum EN_DA_A {
+    #[doc = "0: `0`"]
+    DISABLE = 0,
+    #[doc = "1: `1`"]
+    ENABLE = 1,
+}
+impl From<EN_DA_A> for bool {
+    #[inline(always)]
+    fn from(variant: EN_DA_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl EN_DA_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> EN_DA_A {
+        match self.bits {
+            false => EN_DA_A::DISABLE,
+            true => EN_DA_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == EN_DA_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == EN_DA_A::ENABLE
+    }
+}
+#[doc = "Field `en_da` writer - DAC Digital Part Enable"]
+pub type EN_DA_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_DAC_DPC_SPEC, EN_DA_A, O>;
+impl<'a, const O: u8> EN_DA_W<'a, O> {
+    #[doc = "`0`"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(EN_DA_A::DISABLE)
+    }
+    #[doc = "`1`"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(EN_DA_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable."]
+    #[inline(always)]
+    pub fn hub_en(&self) -> HUB_EN_R {
+        HUB_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bits 12:17 - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
+* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+    #[inline(always)]
+    pub fn dvol(&self) -> DVOL_R {
+        DVOL_R::new(((self.bits >> 12) & 0x3f) as u8)
+    }
+    #[doc = "Bit 18 - High Pass Filter Enable"]
+    #[inline(always)]
+    pub fn hpf_en(&self) -> HPF_EN_R {
+        HPF_EN_R::new(((self.bits >> 18) & 1) != 0)
+    }
+    #[doc = "Bit 24 - DWA Function Disable"]
+    #[inline(always)]
+    pub fn dwa(&self) -> DWA_R {
+        DWA_R::new(((self.bits >> 24) & 1) != 0)
+    }
+    #[doc = "Bits 25:28 - Internal DAC Quantization Levels.\n\nLevels = \\[7*(21 + MODQU\\[3:0\\])\\]/128\n\nDefault levels = 7*21/128 = 1.15"]
+    #[inline(always)]
+    pub fn modqu(&self) -> MODQU_R {
+        MODQU_R::new(((self.bits >> 25) & 0x0f) as u8)
+    }
+    #[doc = "Bit 31 - DAC Digital Part Enable"]
+    #[inline(always)]
+    pub fn en_da(&self) -> EN_DA_R {
+        EN_DA_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable."]
+    #[inline(always)]
+    pub fn hub_en(&mut self) -> HUB_EN_W<0> {
+        HUB_EN_W::new(self)
+    }
+    #[doc = "Bits 12:17 - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
+* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+    #[inline(always)]
+    pub fn dvol(&mut self) -> DVOL_W<12> {
+        DVOL_W::new(self)
+    }
+    #[doc = "Bit 18 - High Pass Filter Enable"]
+    #[inline(always)]
+    pub fn hpf_en(&mut self) -> HPF_EN_W<18> {
+        HPF_EN_W::new(self)
+    }
+    #[doc = "Bit 24 - DWA Function Disable"]
+    #[inline(always)]
+    pub fn dwa(&mut self) -> DWA_W<24> {
+        DWA_W::new(self)
+    }
+    #[doc = "Bits 25:28 - Internal DAC Quantization Levels.\n\nLevels = \\[7*(21 + MODQU\\[3:0\\])\\]/128\n\nDefault levels = 7*21/128 = 1.15"]
+    #[inline(always)]
+    pub fn modqu(&mut self) -> MODQU_W<25> {
+        MODQU_W::new(self)
+    }
+    #[doc = "Bit 31 - DAC Digital Part Enable"]
+    #[inline(always)]
+    pub fn en_da(&mut self) -> EN_DA_W<31> {
+        EN_DA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
