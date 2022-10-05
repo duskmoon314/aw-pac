@@ -22118,196 +22118,1969 @@
           <name>i2s_pcm_ctl</name>
           <description>I2S/PCM Control Register</description>
           <addressOffset>0x0</addressOffset>
+          <fields>
+            <field>
+              <name>rx_sync_en_start</name>
+              <description>RX Synchronize Enable Start</description>
+              <bitRange>[21:21]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_sync_en</name>
+              <description>RX Synchronize Enable</description>
+              <bitRange>[20:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bclk_out</name>
+              <description>Bit Clock Direction Select</description>
+              <bitRange>[18:18]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INPUT</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTPUT</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lrck_out</name>
+              <description>LRCK Direction Select</description>
+              <bitRange>[17:17]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>INPUT</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OUTPUT</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x1</dimIncrement>
+              <dimIndex>0-3</dimIndex>
+              <name>dout%s_en</name>
+              <description>Data%s Output Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled, Hi-Z State</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>out_mute</name>
+              <description>Data Output Mute Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ZERO</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mode_sel</name>
+              <description>Mode Selection</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>PCM</name>
+                  <description>PCM Mode (offset 0: Long Frame, offset 1: Short Frame)</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LEFT</name>
+                  <description>Left-justified Mode (offset 0: LJ Mode, offset 1: I2S Mode)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RIGHT</name>
+                  <description>Right-justified Mode</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>loopback</name>
+              <description>Loopback Test</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TEST</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txen</name>
+              <description>Transmitter Block Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxen</name>
+              <description>Receiver Block Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>gen</name>
+              <description>Global Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_fmt0</name>
           <description>I2S/PCM Format Register 0</description>
           <addressOffset>0x4</addressOffset>
+          <fields>
+            <field>
+              <name>lrck_width</name>
+              <description>LRCK Width (only applies to the PCM mode)</description>
+              <bitRange>[30:30]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SHORT</name>
+                  <description>LRCK = 1 BCLK Width</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LONG</name>
+                  <description>LRCK = 2 BCLK Width</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lrck_polarity</name>
+              <description>LRCK Polarity</description>
+              <bitRange>[19:19]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>I2S/Left-justified/Right-justified: Left-channel when LRCK is low\n\nPCM: LRCK asserted at negative edge.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>I2S/LeftJustified/Right-justified: Left-channel when LRCK is high\n\nPCM: LRCK asserted at positive edge.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lrck_period</name>
+              <description>Number of BCLKs per channel of the sample frame. This value is interpreted as follows:\n\nPCM mode: Number of BCLKs within (Left + Right) channel width.\n\nI2S/Left-justified/Right-justified: Number of BCLKs within each channel width (Left or Right)\n\nPeriod = N + 1\n\ne.g. N = 7: 8 BCLKs width</description>
+              <bitRange>[17:8]</bitRange>
+            </field>
+            <field>
+              <name>blck_polarity</name>
+              <description>BCLK Polarity</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>DOUT drives data at negative edge</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>INVERT</name>
+                  <description>DOUT drives data at positive edge</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sr</name>
+              <description>Sample Resolution</description>
+              <bitRange>[6:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_8</name>
+                  <description>8-bit</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_12</name>
+                  <description>12-bit</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_16</name>
+                  <description>16-bit</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_20</name>
+                  <description>20-bit</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_24</name>
+                  <description>24-bit</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_28</name>
+                  <description>28-bit</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_32</name>
+                  <description>32-bit</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>edge_transfer</name>
+              <description>Edge Transfer</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ALTERNATE</name>
+                  <description>DOUT drives data and DIN sample data at alternate BCLK edge</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SAME</name>
+                  <description>DOUT drives data and DIN sample data at same BCLK edge</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sw</name>
+              <description>Slot Width Select</description>
+              <bitRange>[2:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_8</name>
+                  <description>8-bit</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_12</name>
+                  <description>12-bit</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_16</name>
+                  <description>16-bit</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_20</name>
+                  <description>20-bit</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_24</name>
+                  <description>24-bit</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_28</name>
+                  <description>28-bit</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BITS_32</name>
+                  <description>32-bit</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_fmt1</name>
           <description>I2S/PCM Format Register 1</description>
           <addressOffset>0x8</addressOffset>
+          <fields>
+            <field>
+              <name>rx_mls</name>
+              <description>Rx MSB/LSB First Select</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MSB</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LSB</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tx_mls</name>
+              <description>Tx MSB/LSB First Select</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MSB</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LSB</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>sext</name>
+              <description>Sign Extended in Slot (Sample Resolution &lt; Slot Width)</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ZERO</name>
+                  <description>Zeros or audio gain padding at LSB position</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SIGN</name>
+                  <description>Sign extension at MSB position</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>TRANSFER0</name>
+                  <description>Transfer 0 after each sample in each slot</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_pdm</name>
+              <description>Rx PCM Data Mode</description>
+              <bitRange>[3:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LINEAR</name>
+                  <description>Linear PCM</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>U_LAW</name>
+                  <description>8-bit u-law</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>A_LAW</name>
+                  <description>8-bit A-law</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tx_pdm</name>
+              <description>Tx PCM Data Mode</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LINEAR</name>
+                  <description>Linear PCM</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>U_LAW</name>
+                  <description>8-bit u-law</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>A_LAW</name>
+                  <description>8-bit A-law</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_ista</name>
           <description>I2S/PCM Interrupt Status Register</description>
           <addressOffset>0xC</addressOffset>
+          <fields>
+            <field>
+              <name>txu_int</name>
+              <description>TXFIFO Underrun Pending Interrupt</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txo_int</name>
+              <description>TXFIFO Overrun Pending Interrupt</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txe_int</name>
+              <description>TXFIFO Empty Pending Interrupt</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxu_int</name>
+              <description>RXFIFO Underrun Pending Interrupt</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxo_int</name>
+              <description>RXFIFO Overrun Pending Interrupt</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxa_int</name>
+              <description>RXFIFO Data Available Pending Interrupt</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_PENDING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_rxfifo</name>
           <description>I2S/PCM RXFIFO Register</description>
           <addressOffset>0x10</addressOffset>
+          <fields>
+            <field>
+              <name>rx_data</name>
+              <description>RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data is first and then the right channel sample.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_fctl</name>
           <description>I2S/PCM FIFO Control Register</description>
           <addressOffset>0x14</addressOffset>
+          <fields>
+            <field>
+              <name>hub_en</name>
+              <description>Audio Hub Enable</description>
+              <bitRange>[31:31]</bitRange>
+            </field>
+            <field>
+              <name>ftx</name>
+              <description>Flush TXFIFO</description>
+              <bitRange>[25:25]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SELF_CLEAR</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLUSH</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>frx</name>
+              <description>Flush RXFIFO</description>
+              <bitRange>[24:24]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SELF_CLEAR</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FLUSH</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txtl</name>
+              <description>TXFIFO Empty Trigger Level\n\nInterrupt and DMA request trigger level for TXFIFO normal condition.\n\nTrigger Level = TXTL</description>
+              <bitRange>[18:12]</bitRange>
+            </field>
+            <field>
+              <name>rxtl</name>
+              <description>RXFIFO Empty Trigger Level\n\nInterrupt and DMA request trigger level for RXFIFO normal condition.\n\nTrigger Level = RXTL + 1</description>
+              <bitRange>[9:4]</bitRange>
+            </field>
+            <field>
+              <name>txim</name>
+              <description>TXFIFO Input Mode\n\nExample for 20-bit transmitted audio sample:\n\nMode 0: TXFIFO[31:0] = {APB_WDATA[31:12], 12’h0}\n\nMode 1: TXFIFO[31:0] = {APB_WDATA[19:0], 12’h0}</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <description>Valid data at the MSB of TXFIFO register</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <description>Valid data at the LSB of TXFIFO register</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxom</name>
+              <description>RXFIFO Output Mode\n\nExample for 20-bit received audio sample:\n\nMode 0: APB_RDATA[31:0] = {RXFIFO[31:12], 12’h0}\n\nMode 1: APB_RDATA[31:0] = {12{RXFIFO[31]}, RXFIFO[31:12]}\n\nMode 2: APB_RDATA [31:0] = {RXFIFO[31:16], 16’h0}\n\nMode 3: APB_RDATA[31:0] = {16{RXFIFO[31], RXFIFO[31:16]}</description>
+              <bitRange>[1:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>MODE0</name>
+                  <description>Expanding ‘0’ at LSB of RXFIFO register</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE1</name>
+                  <description>Expanding received sample sign bit at MSB of RXFIFO register</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE2</name>
+                  <description>Truncating received samples at high half-word of RXFIFO register and low half-word of RXFIFO register is filled by ‘0’</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MODE3</name>
+                  <description>Truncating received samples at low half-word of RXFIFO register and high half-word of RXFIFO register is expanded by its sign bit</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_fsta</name>
           <description>I2S/PCM FIFO Status Register</description>
           <addressOffset>0x18</addressOffset>
+          <fields>
+            <field>
+              <name>txe</name>
+              <description>TXFIFO Empty</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_EMPTY</name>
+                  <description>No room for new sample in TXFIFO</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>EMPTY</name>
+                  <description>More than one sample in RXFIFO (>= 1 Word)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txe_cnt</name>
+              <description>TXFIFO Empty space word counter</description>
+              <bitRange>[23:16]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>rxa</name>
+              <description>RXFIFO Available</description>
+              <bitRange>[8:8]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_AVAILABLE</name>
+                  <description>No Available data in RXFIFO</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>AVAILABLE</name>
+                  <description>More than one sample in RXFIFO (&lt;= 1 Word)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxa_cnt</name>
+              <description>RXFIFO Available sample word counter</description>
+              <bitRange>[6:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_int</name>
           <description>I2S/PCM DMA and Interrupt Control Register</description>
           <addressOffset>0x1C</addressOffset>
+          <fields>
+            <field>
+              <name>tx_drq</name>
+              <description>TXFIFO Empty DRQ Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txui_en</name>
+              <description>TXFIFO Underrun Interrupt Enable</description>
+              <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txoi_en</name>
+              <description>TXFIFO Overrun Interrupt Enable</description>
+              <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>txei_en</name>
+              <description>TXFIFO Empty Interrupt Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_drq</name>
+              <description>RXFIFO Data Available DRQ Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxui_en</name>
+              <description>RXFIFO Underrun Interrupt Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxoi_en</name>
+              <description>RXFIFO Overrun Interrupt Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxai_en</name>
+              <description>RXFIFO Data Available Interrupt Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_txfifo</name>
           <description>I2S/PCM TXFIFO Register</description>
           <addressOffset>0x20</addressOffset>
+          <fields>
+            <field>
+              <name>txdata</name>
+              <description>TX Sample\n\nTransmitting left, right channel sample data should be written to this register one by one. The left channel sample data is first and then the right channel sample.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_clkd</name>
           <description>I2S/PCM Clock Divide Register</description>
           <addressOffset>0x24</addressOffset>
+          <fields>
+            <field>
+              <name>mclko_en</name>
+              <description>MCLK Output Enable\n\nNote: Whether in slave or master mode, when this bit is set to ‘1’, MCLK should be output.</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable MCLK Output</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable MCLK Output</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>bclkdiv</name>
+              <description>BCLK Divide ratio from PLL_AUDIO</description>
+              <bitRange>[7:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_1</name>
+                  <description>Divide by 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_2</name>
+                  <description>Divide by 2</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_4</name>
+                  <description>Divide by 4</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_6</name>
+                  <description>Divide by 6</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_8</name>
+                  <description>Divide by 8</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_12</name>
+                  <description>Divide by 12</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_16</name>
+                  <description>Divide by 16</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_24</name>
+                  <description>Divide by 24</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_32</name>
+                  <description>Divide by 32</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_48</name>
+                  <description>Divide by 48</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_64</name>
+                  <description>Divide by 64</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_96</name>
+                  <description>Divide by 96</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_128</name>
+                  <description>Divide by 128</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_176</name>
+                  <description>Divide by 176</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_192</name>
+                  <description>Divide by 192</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mclkdiv</name>
+              <description>MCLK Divide ratio from PLL_AUDIO</description>
+              <bitRange>[3:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_1</name>
+                  <description>Divide by 1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_2</name>
+                  <description>Divide by 2</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_4</name>
+                  <description>Divide by 4</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_6</name>
+                  <description>Divide by 6</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_8</name>
+                  <description>Divide by 8</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_12</name>
+                  <description>Divide by 12</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_16</name>
+                  <description>Divide by 16</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_24</name>
+                  <description>Divide by 24</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_32</name>
+                  <description>Divide by 32</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_48</name>
+                  <description>Divide by 48</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_64</name>
+                  <description>Divide by 64</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_96</name>
+                  <description>Divide by 96</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_128</name>
+                  <description>Divide by 128</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_176</name>
+                  <description>Divide by 176</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV_192</name>
+                  <description>Divide by 192</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_txcnt</name>
           <description>I2S/PCM TX Sample Counter Register</description>
           <addressOffset>0x28</addressOffset>
+          <fields>
+            <field>
+              <name>tx_cnt</name>
+              <description>TX Sample Counter</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_rxcnt</name>
           <description>I2S/PCM RX Sample Counter Register</description>
           <addressOffset>0x2C</addressOffset>
+          <fields>
+            <field>
+              <name>rx_cnt</name>
+              <description>RX Sample Counter</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_chcfg</name>
           <description>I2S/PCM Channel Configuration Register</description>
           <addressOffset>0x30</addressOffset>
+          <fields>
+            <field>
+              <name>tx_slot_hiz</name>
+              <bitRange>[9:9]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NORMAL</name>
+                  <description>Normal mode for the last half-cycle of BCLK in the slot</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIZ</name>
+                  <description>Turn to Hi-Z state for the last half-cycle of BCLK in the slot</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>tx_state</name>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>ZERO</name>
+                  <description>Transfer level 0 in non-transferring slot</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIZ</name>
+                  <description>Turn to Hi-Z State (TDM) in non-transferring slot</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_slot_num</name>
+              <description>RX Channel/Slot number between CPU/DMA and RXFIFO\n\nChannel or slot = N + 1</description>
+              <bitRange>[7:4]</bitRange>
+            </field>
+            <field>
+              <name>tx_slot_num</name>
+              <description>TX Channel/Slot number between CPU/DMA and RXFIFO\n\nChannel or slot = N + 1</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx0chsel</name>
           <description>I2S/PCM TX0 Channel Select Register</description>
           <addressOffset>0x34</addressOffset>
+          <fields>
+            <field>
+              <name>offset</name>
+              <description>TX Offset Tune (TX Data offset to LRCK)\n\n0: No offset\n\nN: Data is offset by N BCLKs to LRCK</description>
+              <bitRange>[21:20]</bitRange>
+            </field>
+            <field>
+              <name>chsel</name>
+              <description>TX Channel (Slot) number select for each output\n\nNum channels = N + 1</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <field>
+              <name>chen</name>
+              <description>TX Channel (Slot Enable)\n\nThe bit[15:0] refer to Slot [15:0]. When one or more slots are disabled, the affected slots are set to the disable state.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx1chsel</name>
           <description>I2S/PCM TX1 Channel Select Register</description>
           <addressOffset>0x38</addressOffset>
+          <fields>
+            <field>
+              <name>offset</name>
+              <description>TX Offset Tune (TX Data offset to LRCK)\n\n0: No offset\n\nN: Data is offset by N BCLKs to LRCK</description>
+              <bitRange>[21:20]</bitRange>
+            </field>
+            <field>
+              <name>chsel</name>
+              <description>TX Channel (Slot) number select for each output\n\nNum channels = N + 1</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <field>
+              <name>chen</name>
+              <description>TX Channel (Slot Enable)\n\nThe bit[15:0] refer to Slot [15:0]. When one or more slots are disabled, the affected slots are set to the disable state.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx2chsel</name>
           <description>I2S/PCM TX2 Channel Select Register</description>
           <addressOffset>0x3C</addressOffset>
+          <fields>
+            <field>
+              <name>offset</name>
+              <description>TX Offset Tune (TX Data offset to LRCK)\n\n0: No offset\n\nN: Data is offset by N BCLKs to LRCK</description>
+              <bitRange>[21:20]</bitRange>
+            </field>
+            <field>
+              <name>chsel</name>
+              <description>TX Channel (Slot) number select for each output\n\nNum channels = N + 1</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <field>
+              <name>chen</name>
+              <description>TX Channel (Slot Enable)\n\nThe bit[15:0] refer to Slot [15:0]. When one or more slots are disabled, the affected slots are set to the disable state.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx3chsel</name>
           <description>I2S/PCM TX3 Channel Select Register</description>
           <addressOffset>0x40</addressOffset>
+          <fields>
+            <field>
+              <name>offset</name>
+              <description>TX Offset Tune (TX Data offset to LRCK)\n\n0: No offset\n\nN: Data is offset by N BCLKs to LRCK</description>
+              <bitRange>[21:20]</bitRange>
+            </field>
+            <field>
+              <name>chsel</name>
+              <description>TX Channel (Slot) number select for each output\n\nNum channels = N + 1</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+            <field>
+              <name>chen</name>
+              <description>TX Channel (Slot Enable)\n\nThe bit[15:0] refer to Slot [15:0]. When one or more slots are disabled, the affected slots are set to the disable state.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx0chmap0</name>
           <description>I2S/PCM TX0 Channel Mapping Register0</description>
           <addressOffset>0x44</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx0chmap1</name>
           <description>I2S/PCM TX0 Channel Mapping Register1</description>
           <addressOffset>0x48</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>0-7</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx1chmap0</name>
           <description>I2S/PCM TX1 Channel Mapping Register0</description>
           <addressOffset>0x4C</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx1chmap1</name>
           <description>I2S/PCM TX1 Channel Mapping Register1</description>
           <addressOffset>0x50</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>0-7</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx2chmap0</name>
           <description>I2S/PCM TX2 Channel Mapping Register0</description>
           <addressOffset>0x54</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx2chmap1</name>
           <description>I2S/PCM TX2 Channel Mapping Register1</description>
           <addressOffset>0x58</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>0-7</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx3chmap0</name>
           <description>I2S/PCM TX3 Channel Mapping Register0</description>
           <addressOffset>0x5C</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>8-15</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_tx3chmap1</name>
           <description>I2S/PCM TX3 Channel Mapping Register1</description>
           <addressOffset>0x60</addressOffset>
+          <fields>
+            <field>
+              <dim>8</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>0-7</dimIndex>
+              <name>ch%s_map</name>
+              <description>Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_rxchsel</name>
           <description>I2S/PCM RX Channel Select Register</description>
           <addressOffset>0x64</addressOffset>
+          <fields>
+            <field>
+              <name>offset</name>
+              <description>RX Offset Tune (RX Data offset to LRCK)\n\n0: No offset\n\nN: Data is offset by N BCLKs to LRCK</description>
+              <bitRange>[21:20]</bitRange>
+            </field>
+            <field>
+              <name>chsel</name>
+              <description>RX Channel (Slot) number select for each output\n\nNum channels = N + 1</description>
+              <bitRange>[19:16]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_rxchmap0</name>
           <description>I2S/PCM RX Channel Mapping Register0</description>
           <addressOffset>0x68</addressOffset>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>12-15</dimIndex>
+              <name>ch%s_select</name>
+              <description>RX Channel %s Select</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SDI0</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI1</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI2</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI3</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>12-15</dimIndex>
+              <name>ch%s_map</name>
+              <description>RX Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_rxchmap1</name>
           <description>I2S/PCM RX Channel Mapping Register1</description>
           <addressOffset>0x6C</addressOffset>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>8-11</dimIndex>
+              <name>ch%s_select</name>
+              <description>RX Channel %s Select</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SDI0</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI1</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI2</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI3</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>8-11</dimIndex>
+              <name>ch%s_map</name>
+              <description>RX Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_rxchmap2</name>
           <description>I2S/PCM RX Channel Mapping Register2</description>
           <addressOffset>0x70</addressOffset>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>4-7</dimIndex>
+              <name>ch%s_select</name>
+              <description>RX Channel %s Select</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SDI0</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI1</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI2</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI3</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>4-7</dimIndex>
+              <name>ch%s_map</name>
+              <description>RX Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>i2s_pcm_rxchmap3</name>
           <description>I2S/PCM RX Channel Mapping Register3</description>
           <addressOffset>0x74</addressOffset>
+          <fields>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>0-3</dimIndex>
+              <name>ch%s_select</name>
+              <description>RX Channel %s Select</description>
+              <bitRange>[5:4]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>SDI0</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI1</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI2</name>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SDI3</name>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>4</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>0-3</dimIndex>
+              <name>ch%s_map</name>
+              <description>RX Channel %s mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample</description>
+              <bitRange>[3:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>mclkcfg</name>
           <description>ASRC MCLK Configuration Register</description>
           <addressOffset>0x80</addressOffset>
+          <fields>
+            <field>
+              <name>asrc_mclk_gate</name>
+              <description>ASRC Clock Gate Enable Control</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>asrc_mclk_freq_div_coe</name>
+              <description>Frequency Division Coefficient</description>
+              <bitRange>[3:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>R_ESERVED</name>
+                  <description>Reserved. No output.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV1</name>
+                  <description>1/1</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV2</name>
+                  <description>1/2</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV4</name>
+                  <description>1/4</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV6</name>
+                  <description>1/6</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV8</name>
+                  <description>1/8</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV12</name>
+                  <description>1/12</description>
+                  <value>0x6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV16</name>
+                  <description>1/16</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV24</name>
+                  <description>1/24</description>
+                  <value>0x8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV32</name>
+                  <description>1/32</description>
+                  <value>0x9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV48</name>
+                  <description>1/48</description>
+                  <value>0xA</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV64</name>
+                  <description>1/64</description>
+                  <value>0xB</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV96</name>
+                  <description>1/96</description>
+                  <value>0xC</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV128</name>
+                  <description>1/128</description>
+                  <value>0xD</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV176</name>
+                  <description>1/176</description>
+                  <value>0xE</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DIV192</name>
+                  <description>1/192</description>
+                  <value>0xF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>fsout_cfg</name>
           <description>ASRC Out Sample Rate Configuration Register</description>
           <addressOffset>0x84</addressOffset>
+          <fields>
+            <field>
+              <name>fsout_gate</name>
+              <description>fsout Clock Gate Enable Control</description>
+              <bitRange>[20:20]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>fsin_extcfg</name>
           <description>ASRC Input Sample Pulse Extend Configuration Register</description>
           <addressOffset>0x88</addressOffset>
+          <fields>
+            <field>
+              <name>extend</name>
+              <description>Extend the bit when using ASRC.</description>
+              <bitRange>[16:16]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>cyclenum</name>
+              <description>The Cycle Number of Pulse Extend.\n\nThe cycle is BCLK and is at least 1.</description>
+              <bitRange>[15:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>asrccfg</name>
+          <name>asrcen</name>
           <description>ASRC Enable Register</description>
           <addressOffset>0x8C</addressOffset>
+          <fields>
+            <field>
+              <name>asrc_fn</name>
+              <description>ASRC Function Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>asrcmancfg</name>
           <description>ASRC Manual Ratio Configuration Register</description>
           <addressOffset>0x90</addressOffset>
+          <fields>
+            <field>
+              <name>asrc_ratio_manual_en</name>
+              <description>Manual Configuration of ASRC Ratio Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>asrc_ratio_value_manual_cfg</name>
+              <description>ASRD Ration Value Manual Configure</description>
+              <bitRange>[25:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>asrcratiostat</name>
           <description>ASRC Status Register</description>
           <addressOffset>0x94</addressOffset>
+          <fields>
+            <field>
+              <name>asrc_buf_overflow_sta</name>
+              <description>ASRC Receive Data Buffer Overflow State\n\nIt can control thye mute with lock.</description>
+              <bitRange>[29:29]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_OVERFLOW</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OVERFLOW</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adapt_comput_lock</name>
+              <description>Adaptive Ratio Computational Lock</description>
+              <bitRange>[28:28]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>UNLOCKED</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LOCKED</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adapt_comput_value</name>
+              <description>Adaptive Ratio Computational Value</description>
+              <bitRange>[25:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>asrcfifostat</name>
           <description>ASRC FIFO Level Status Register</description>
           <addressOffset>0x98</addressOffset>
+          <fields>
+            <field>
+              <name>asrc_rx_fifo_full_leval</name>
+              <description>ASRC RXFIFO Full Level\n\nThe manually-configured FIFO fill level for the ratio value of the received data.</description>
+              <bitRange>[8:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>asrcmbistcfg</name>
           <description>ASRC MBIST Test Configuration Register</description>
           <addressOffset>0x9C</addressOffset>
+          <fields>
+            <field>
+              <name>asrc_ram_bist_en</name>
+              <description>ASTC RAM BIST Enable</description>
+              <bitRange>[8:8]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>asrc_rom_bist_en</name>
+              <description>ASRC ROM BIST Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>asrcmbiststat</name>
           <description>ASRC MBIST Test Status Register</description>
           <addressOffset>0xA0</addressOffset>
+          <fields>
+            <field>
+              <name>rom_bist_error_xor</name>
+              <description>ROM BIST error xor</description>
+              <bitRange>[18:18]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>rom_bist_error_sum</name>
+              <description>ROM BIST error sum</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>rom_busy_status</name>
+              <description>ROM busy status</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ram_bist_err_status</name>
+              <description>RAM BIST error status</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NO_EFFECT</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ERROR</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ram_bist_error_pattern</name>
+              <description>RAM BIST error pattern</description>
+              <bitRange>[6:4]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ram_bist_error_cycle</name>
+              <description>RAM BIST error cycle</description>
+              <bitRange>[3:2]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>ram_stop_status</name>
+              <description>RAM stop status</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RUNNING</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STOP</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ram_busy_status</name>
+              <description>RAM busy status</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>IDLE</name>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BUSY</name>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
       </registers>
     </peripheral>

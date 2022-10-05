@@ -69,7 +69,7 @@ pub struct RegisterBlock {
     #[doc = "0x88 - ASRC Input Sample Pulse Extend Configuration Register"]
     pub fsin_extcfg: FSIN_EXTCFG,
     #[doc = "0x8c - ASRC Enable Register"]
-    pub asrccfg: ASRCCFG,
+    pub asrcen: ASRCEN,
     #[doc = "0x90 - ASRC Manual Ratio Configuration Register"]
     pub asrcmancfg: ASRCMANCFG,
     #[doc = "0x94 - ASRC Status Register"]
@@ -213,10 +213,10 @@ pub mod fsout_cfg;
 pub type FSIN_EXTCFG = crate::Reg<fsin_extcfg::FSIN_EXTCFG_SPEC>;
 #[doc = "ASRC Input Sample Pulse Extend Configuration Register"]
 pub mod fsin_extcfg;
-#[doc = "asrccfg (rw) register accessor: an alias for `Reg<ASRCCFG_SPEC>`"]
-pub type ASRCCFG = crate::Reg<asrccfg::ASRCCFG_SPEC>;
+#[doc = "asrcen (rw) register accessor: an alias for `Reg<ASRCEN_SPEC>`"]
+pub type ASRCEN = crate::Reg<asrcen::ASRCEN_SPEC>;
 #[doc = "ASRC Enable Register"]
-pub mod asrccfg;
+pub mod asrcen;
 #[doc = "asrcmancfg (rw) register accessor: an alias for `Reg<ASRCMANCFG_SPEC>`"]
 pub type ASRCMANCFG = crate::Reg<asrcmancfg::ASRCMANCFG_SPEC>;
 #[doc = "ASRC Manual Ratio Configuration Register"]

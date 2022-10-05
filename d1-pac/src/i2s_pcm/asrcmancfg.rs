@@ -34,7 +34,85 @@ impl From<crate::W<ASRCMANCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `asrc_ratio_value_manual_cfg` reader - ASRD Ration Value Manual Configure"]
+pub type ASRC_RATIO_VALUE_MANUAL_CFG_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `asrc_ratio_value_manual_cfg` writer - ASRD Ration Value Manual Configure"]
+pub type ASRC_RATIO_VALUE_MANUAL_CFG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ASRCMANCFG_SPEC, u32, u32, 26, O>;
+#[doc = "Field `asrc_ratio_manual_en` reader - Manual Configuration of ASRC Ratio Enable"]
+pub type ASRC_RATIO_MANUAL_EN_R = crate::BitReader<ASRC_RATIO_MANUAL_EN_A>;
+#[doc = "Manual Configuration of ASRC Ratio Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ASRC_RATIO_MANUAL_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<ASRC_RATIO_MANUAL_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ASRC_RATIO_MANUAL_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ASRC_RATIO_MANUAL_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ASRC_RATIO_MANUAL_EN_A {
+        match self.bits {
+            false => ASRC_RATIO_MANUAL_EN_A::DISABLE,
+            true => ASRC_RATIO_MANUAL_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == ASRC_RATIO_MANUAL_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == ASRC_RATIO_MANUAL_EN_A::ENABLE
+    }
+}
+#[doc = "Field `asrc_ratio_manual_en` writer - Manual Configuration of ASRC Ratio Enable"]
+pub type ASRC_RATIO_MANUAL_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ASRCMANCFG_SPEC, ASRC_RATIO_MANUAL_EN_A, O>;
+impl<'a, const O: u8> ASRC_RATIO_MANUAL_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ASRC_RATIO_MANUAL_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ASRC_RATIO_MANUAL_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bits 0:25 - ASRD Ration Value Manual Configure"]
+    #[inline(always)]
+    pub fn asrc_ratio_value_manual_cfg(&self) -> ASRC_RATIO_VALUE_MANUAL_CFG_R {
+        ASRC_RATIO_VALUE_MANUAL_CFG_R::new((self.bits & 0x03ff_ffff) as u32)
+    }
+    #[doc = "Bit 31 - Manual Configuration of ASRC Ratio Enable"]
+    #[inline(always)]
+    pub fn asrc_ratio_manual_en(&self) -> ASRC_RATIO_MANUAL_EN_R {
+        ASRC_RATIO_MANUAL_EN_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bits 0:25 - ASRD Ration Value Manual Configure"]
+    #[inline(always)]
+    pub fn asrc_ratio_value_manual_cfg(&mut self) -> ASRC_RATIO_VALUE_MANUAL_CFG_W<0> {
+        ASRC_RATIO_VALUE_MANUAL_CFG_W::new(self)
+    }
+    #[doc = "Bit 31 - Manual Configuration of ASRC Ratio Enable"]
+    #[inline(always)]
+    pub fn asrc_ratio_manual_en(&mut self) -> ASRC_RATIO_MANUAL_EN_W<31> {
+        ASRC_RATIO_MANUAL_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

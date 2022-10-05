@@ -34,7 +34,24 @@ impl From<crate::W<I2S_PCM_TXCNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tx_cnt` reader - TX Sample Counter"]
+pub type TX_CNT_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `tx_cnt` writer - TX Sample Counter"]
+pub type TX_CNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, I2S_PCM_TXCNT_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - TX Sample Counter"]
+    #[inline(always)]
+    pub fn tx_cnt(&self) -> TX_CNT_R {
+        TX_CNT_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - TX Sample Counter"]
+    #[inline(always)]
+    pub fn tx_cnt(&mut self) -> TX_CNT_W<0> {
+        TX_CNT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
