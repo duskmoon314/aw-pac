@@ -34,7 +34,24 @@ impl From<crate::W<I2S_PCM_RXCNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `rx_cnt` reader - RX Sample Counter"]
+pub type RX_CNT_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `rx_cnt` writer - RX Sample Counter"]
+pub type RX_CNT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, I2S_PCM_RXCNT_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - RX Sample Counter"]
+    #[inline(always)]
+    pub fn rx_cnt(&self) -> RX_CNT_R {
+        RX_CNT_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - RX Sample Counter"]
+    #[inline(always)]
+    pub fn rx_cnt(&mut self) -> RX_CNT_W<0> {
+        RX_CNT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

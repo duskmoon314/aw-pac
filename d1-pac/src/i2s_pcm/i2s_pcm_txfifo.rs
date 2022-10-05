@@ -34,7 +34,24 @@ impl From<crate::W<I2S_PCM_TXFIFO_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `txdata` reader - TX Sample\n\nTransmitting left, right channel sample data should be written to this register one by one. The left channel sample data is first and then the right channel sample."]
+pub type TXDATA_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `txdata` writer - TX Sample\n\nTransmitting left, right channel sample data should be written to this register one by one. The left channel sample data is first and then the right channel sample."]
+pub type TXDATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, I2S_PCM_TXFIFO_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - TX Sample\n\nTransmitting left, right channel sample data should be written to this register one by one. The left channel sample data is first and then the right channel sample."]
+    #[inline(always)]
+    pub fn txdata(&self) -> TXDATA_R {
+        TXDATA_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - TX Sample\n\nTransmitting left, right channel sample data should be written to this register one by one. The left channel sample data is first and then the right channel sample."]
+    #[inline(always)]
+    pub fn txdata(&mut self) -> TXDATA_W<0> {
+        TXDATA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

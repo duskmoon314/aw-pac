@@ -34,7 +34,24 @@ impl From<crate::W<I2S_PCM_RXFIFO_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `rx_data` reader - RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data is first and then the right channel sample."]
+pub type RX_DATA_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `rx_data` writer - RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data is first and then the right channel sample."]
+pub type RX_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, I2S_PCM_RXFIFO_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data is first and then the right channel sample."]
+    #[inline(always)]
+    pub fn rx_data(&self) -> RX_DATA_R {
+        RX_DATA_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data is first and then the right channel sample."]
+    #[inline(always)]
+    pub fn rx_data(&mut self) -> RX_DATA_W<0> {
+        RX_DATA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

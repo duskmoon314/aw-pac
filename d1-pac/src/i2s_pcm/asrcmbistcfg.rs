@@ -34,7 +34,131 @@ impl From<crate::W<ASRCMBISTCFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `asrc_rom_bist_en` reader - ASRC ROM BIST Enable"]
+pub type ASRC_ROM_BIST_EN_R = crate::BitReader<ASRC_ROM_BIST_EN_A>;
+#[doc = "ASRC ROM BIST Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ASRC_ROM_BIST_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<ASRC_ROM_BIST_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ASRC_ROM_BIST_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ASRC_ROM_BIST_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ASRC_ROM_BIST_EN_A {
+        match self.bits {
+            false => ASRC_ROM_BIST_EN_A::DISABLE,
+            true => ASRC_ROM_BIST_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == ASRC_ROM_BIST_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == ASRC_ROM_BIST_EN_A::ENABLE
+    }
+}
+#[doc = "Field `asrc_rom_bist_en` writer - ASRC ROM BIST Enable"]
+pub type ASRC_ROM_BIST_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ASRCMBISTCFG_SPEC, ASRC_ROM_BIST_EN_A, O>;
+impl<'a, const O: u8> ASRC_ROM_BIST_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ASRC_ROM_BIST_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ASRC_ROM_BIST_EN_A::ENABLE)
+    }
+}
+#[doc = "Field `asrc_ram_bist_en` reader - ASTC RAM BIST Enable"]
+pub type ASRC_RAM_BIST_EN_R = crate::BitReader<ASRC_RAM_BIST_EN_A>;
+#[doc = "ASTC RAM BIST Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ASRC_RAM_BIST_EN_A {
+    #[doc = "0: Disable"]
+    DISABLE = 0,
+    #[doc = "1: Enable"]
+    ENABLE = 1,
+}
+impl From<ASRC_RAM_BIST_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ASRC_RAM_BIST_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ASRC_RAM_BIST_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ASRC_RAM_BIST_EN_A {
+        match self.bits {
+            false => ASRC_RAM_BIST_EN_A::DISABLE,
+            true => ASRC_RAM_BIST_EN_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == ASRC_RAM_BIST_EN_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == ASRC_RAM_BIST_EN_A::ENABLE
+    }
+}
+#[doc = "Field `asrc_ram_bist_en` writer - ASTC RAM BIST Enable"]
+pub type ASRC_RAM_BIST_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ASRCMBISTCFG_SPEC, ASRC_RAM_BIST_EN_A, O>;
+impl<'a, const O: u8> ASRC_RAM_BIST_EN_W<'a, O> {
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ASRC_RAM_BIST_EN_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ASRC_RAM_BIST_EN_A::ENABLE)
+    }
+}
+impl R {
+    #[doc = "Bit 0 - ASRC ROM BIST Enable"]
+    #[inline(always)]
+    pub fn asrc_rom_bist_en(&self) -> ASRC_ROM_BIST_EN_R {
+        ASRC_ROM_BIST_EN_R::new((self.bits & 1) != 0)
+    }
+    #[doc = "Bit 8 - ASTC RAM BIST Enable"]
+    #[inline(always)]
+    pub fn asrc_ram_bist_en(&self) -> ASRC_RAM_BIST_EN_R {
+        ASRC_RAM_BIST_EN_R::new(((self.bits >> 8) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 0 - ASRC ROM BIST Enable"]
+    #[inline(always)]
+    pub fn asrc_rom_bist_en(&mut self) -> ASRC_ROM_BIST_EN_W<0> {
+        ASRC_ROM_BIST_EN_W::new(self)
+    }
+    #[doc = "Bit 8 - ASTC RAM BIST Enable"]
+    #[inline(always)]
+    pub fn asrc_ram_bist_en(&mut self) -> ASRC_RAM_BIST_EN_W<8> {
+        ASRC_RAM_BIST_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
