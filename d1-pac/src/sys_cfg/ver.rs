@@ -16,7 +16,7 @@ impl From<crate::R<VER_SPEC>> for R {
 #[doc = "Field `fel_sel_pad_sta` reader - Fel Select Pin Status"]
 pub type FEL_SEL_PAD_STA_R = crate::BitReader<FEL_SEL_PAD_STA_A>;
 #[doc = "Fel Select Pin Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FEL_SEL_PAD_STA_A {
     #[doc = "0: `0`"]
     RUN_FEL = 0,

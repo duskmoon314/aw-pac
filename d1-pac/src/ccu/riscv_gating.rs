@@ -42,7 +42,7 @@ pub type GATING_FIELD_W<'a, const O: u8> =
 #[doc = "Field `gating` reader - Gating Clock"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,

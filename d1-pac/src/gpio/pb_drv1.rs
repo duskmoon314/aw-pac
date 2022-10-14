@@ -37,7 +37,7 @@ impl From<crate::W<PB_DRV1_SPEC>> for W {
 #[doc = "Field `pb_drv[8-12]` reader - PB Multi_Driving Select"]
 pub type PB_DRV_R = crate::FieldReader<u8, PB_DRV_A>;
 #[doc = "PB Multi_Driving Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PB_DRV_A {
     #[doc = "0: `0`"]

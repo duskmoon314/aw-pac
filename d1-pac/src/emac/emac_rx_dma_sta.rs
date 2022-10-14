@@ -16,7 +16,7 @@ impl From<crate::R<EMAC_RX_DMA_STA_SPEC>> for R {
 #[doc = "Field `rx_dma_sta` reader - The State of RX DMA FSM"]
 pub type RX_DMA_STA_R = crate::FieldReader<u8, RX_DMA_STA_A>;
 #[doc = "The State of RX DMA FSM\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_DMA_STA_A {
     #[doc = "0: `0`"]

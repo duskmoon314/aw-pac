@@ -37,7 +37,7 @@ impl From<crate::W<CER_SPEC>> for W {
 #[doc = "Field `cap_en[0-7]` reader - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
 pub type CAP_EN_R = crate::BitReader<CAP_EN_A>;
 #[doc = "When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CAP_EN_A {
     #[doc = "0: Capture disable"]
     DISABLE = 0,

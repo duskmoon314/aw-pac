@@ -37,7 +37,7 @@ impl From<crate::W<AC_DAC_DG_SPEC>> for W {
 #[doc = "Field `adda_loop_mode` reader - ADDA Loop Mode Select"]
 pub type ADDA_LOOP_MODE_R = crate::FieldReader<u8, ADDA_LOOP_MODE_A>;
 #[doc = "ADDA Loop Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADDA_LOOP_MODE_A {
     #[doc = "0: `0`"]
@@ -103,7 +103,7 @@ impl<'a, const O: u8> ADDA_LOOP_MODE_W<'a, O> {
 #[doc = "Field `da_swp` reader - DAC Output Channel Swap Enable"]
 pub type DA_SWP_R = crate::BitReader<DA_SWP_A>;
 #[doc = "DAC Output Channel Swap Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DA_SWP_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -153,7 +153,7 @@ impl<'a, const O: u8> DA_SWP_W<'a, O> {
 #[doc = "Field `codec_clk_select` reader - CODEC Clock Source Select"]
 pub type CODEC_CLK_SELECT_R = crate::BitReader<CODEC_CLK_SELECT_A>;
 #[doc = "CODEC Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CODEC_CLK_SELECT_A {
     #[doc = "0: CODEC clock from PLL"]
     PLL = 0,
@@ -204,7 +204,7 @@ impl<'a, const O: u8> CODEC_CLK_SELECT_W<'a, O> {
 #[doc = "Field `dac_pattern_select` reader - DAC Pattern Select"]
 pub type DAC_PATTERN_SELECT_R = crate::FieldReader<u8, DAC_PATTERN_SELECT_A>;
 #[doc = "DAC Pattern Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC_PATTERN_SELECT_A {
     #[doc = "0: Normal (Audio sample from TX FIFO)"]
@@ -283,7 +283,7 @@ impl<'a, const O: u8> DAC_PATTERN_SELECT_W<'a, O> {
 #[doc = "Field `dac_modu_select` reader - DAC Modulator Debug Mode"]
 pub type DAC_MODU_SELECT_R = crate::BitReader<DAC_MODU_SELECT_A>;
 #[doc = "DAC Modulator Debug Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_MODU_SELECT_A {
     #[doc = "0: `0`"]
     NORMAL = 0,

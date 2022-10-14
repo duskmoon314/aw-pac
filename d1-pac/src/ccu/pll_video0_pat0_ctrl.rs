@@ -42,7 +42,7 @@ pub type WAVE_BOT_W<'a, const O: u8> =
 #[doc = "Field `freq` reader - Frequency"]
 pub type FREQ_R = crate::FieldReader<u8, FREQ_A>;
 #[doc = "Frequency\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FREQ_A {
     #[doc = "0: `0`"]
@@ -121,7 +121,7 @@ impl<'a, const O: u8> FREQ_W<'a, O> {
 #[doc = "Field `sdm_clk_sel` reader - SDM Clock Select"]
 pub type SDM_CLK_SEL_R = crate::BitReader<SDM_CLK_SEL_A>;
 #[doc = "SDM Clock Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SDM_CLK_SEL_A {
     #[doc = "0: `0`"]
     F_24_M = 0,
@@ -177,7 +177,7 @@ pub type WAVE_STEP_W<'a, const O: u8> =
 #[doc = "Field `spr_freq_mode` reader - Spread Frequency Mode"]
 pub type SPR_FREQ_MODE_R = crate::FieldReader<u8, SPR_FREQ_MODE_A>;
 #[doc = "Spread Frequency Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SPR_FREQ_MODE_A {
     #[doc = "0: `0`"]

@@ -37,7 +37,7 @@ impl From<crate::W<LCD_FRM_CTL_SPEC>> for W {
 #[doc = "Field `lcd_frm_test` reader - Set the test mode of dither function"]
 pub type LCD_FRM_TEST_R = crate::FieldReader<u8, LCD_FRM_TEST_A>;
 #[doc = "Set the test mode of dither function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LCD_FRM_TEST_A {
     #[doc = "0: FRM"]
@@ -116,7 +116,7 @@ impl<'a, const O: u8> LCD_FRM_TEST_W<'a, O> {
 #[doc = "Field `lcd_frm_mode_b` reader - The B component output bits in dither function"]
 pub type LCD_FRM_MODE_B_R = crate::BitReader<LCD_FRM_MODE_B_A>;
 #[doc = "The B component output bits in dither function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_FRM_MODE_B_A {
     #[doc = "0: 6-bit frm output"]
     B_IT6 = 0,
@@ -167,7 +167,7 @@ impl<'a, const O: u8> LCD_FRM_MODE_B_W<'a, O> {
 #[doc = "Field `lcd_frm_mode_g` reader - The G component output bits in dither function"]
 pub type LCD_FRM_MODE_G_R = crate::BitReader<LCD_FRM_MODE_G_A>;
 #[doc = "The G component output bits in dither function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_FRM_MODE_G_A {
     #[doc = "0: 6-bit frm output"]
     B_IT6 = 0,
@@ -218,7 +218,7 @@ impl<'a, const O: u8> LCD_FRM_MODE_G_W<'a, O> {
 #[doc = "Field `lcd_frm_mode_r` reader - The R component output bits in dither function"]
 pub type LCD_FRM_MODE_R_R = crate::BitReader<LCD_FRM_MODE_R_A>;
 #[doc = "The R component output bits in dither function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_FRM_MODE_R_A {
     #[doc = "0: 6-bit frm output"]
     B_IT6 = 0,
@@ -269,7 +269,7 @@ impl<'a, const O: u8> LCD_FRM_MODE_R_W<'a, O> {
 #[doc = "Field `lcd_frm_en` reader - Enable the dither function"]
 pub type LCD_FRM_EN_R = crate::BitReader<LCD_FRM_EN_A>;
 #[doc = "Enable the dither function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_FRM_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

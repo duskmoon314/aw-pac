@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_LOPC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_lopc` reader - The output of the compressor, which is determined by the equation OPC/6.0206. The format is 8.24. (The default value is -40 dB)"]
+pub type ADC_DRC_LOPC_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_lopc` writer - The output of the compressor, which is determined by the equation OPC/6.0206. The format is 8.24. (The default value is -40 dB)"]
+pub type ADC_DRC_LOPC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_LOPC_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The output of the compressor, which is determined by the equation OPC/6.0206. The format is 8.24. (The default value is -40 dB)"]
+    #[inline(always)]
+    pub fn adc_drc_lopc(&self) -> ADC_DRC_LOPC_R {
+        ADC_DRC_LOPC_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The output of the compressor, which is determined by the equation OPC/6.0206. The format is 8.24. (The default value is -40 dB)"]
+    #[inline(always)]
+    pub fn adc_drc_lopc(&mut self) -> ADC_DRC_LOPC_W<0> {
+        ADC_DRC_LOPC_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_LOPC_SPEC {
 impl crate::Writable for AC_ADC_DRC_LOPC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_lopc to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_lopc to value 0x2c3f"]
 impl crate::Resettable for AC_ADC_DRC_LOPC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x2c3f
     }
 }

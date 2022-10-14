@@ -46,7 +46,7 @@ pub type A1_FIRST_VALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CPU_T
 #[doc = "Field `plug_mode_en` reader - Enable the plug mode used in dsi command mode."]
 pub type PLUG_MODE_EN_R = crate::BitReader<PLUG_MODE_EN_A>;
 #[doc = "Enable the plug mode used in dsi command mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PLUG_MODE_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

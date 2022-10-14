@@ -37,7 +37,7 @@ impl From<crate::W<GP_DATAL_INTS_SPEC>> for W {
 #[doc = "Field `ch_low_pengding[0-1]` reader - Channel Voltage Low Available Interrupt Status"]
 pub type CH_LOW_PENGDING_R = crate::BitReader<CH_LOW_PENGDING_A>;
 #[doc = "Channel Voltage Low Available Interrupt Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH_LOW_PENGDING_A {
     #[doc = "0: NO Pending IRQ"]
     NO_PENDING = 0,

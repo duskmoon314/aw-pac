@@ -37,7 +37,7 @@ impl From<crate::W<TWI_DRV_CTRL_SPEC>> for W {
 #[doc = "Field `twi_drv_en` reader - "]
 pub type TWI_DRV_EN_R = crate::BitReader<TWI_DRV_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TWI_DRV_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> TWI_DRV_EN_W<'a, O> {
 #[doc = "Field `soft_reset` reader - Software reset"]
 pub type SOFT_RESET_R = crate::BitReader<SOFT_RESET_A>;
 #[doc = "Software reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SOFT_RESET_A {
     #[doc = "0: `0`"]
     NORMAL = 0,
@@ -144,7 +144,7 @@ pub type TIMEOUT_N_W<'a, const O: u8> =
 #[doc = "Field `twi_sta` reader - TWI status"]
 pub type TWI_STA_R = crate::FieldReader<u8, TWI_STA_A>;
 #[doc = "TWI status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TWI_STA_A {
     #[doc = "0: bus error"]
@@ -270,7 +270,7 @@ impl TWI_STA_R {
 #[doc = "Field `tran_result` reader - Transition result"]
 pub type TRAN_RESULT_R = crate::FieldReader<u8, TRAN_RESULT_A>;
 #[doc = "Transition result\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TRAN_RESULT_A {
     #[doc = "0: `0`"]
@@ -323,7 +323,7 @@ impl<'a, const O: u8> TRAN_RESULT_W<'a, O> {
 #[doc = "Field `read_tran_mode` reader - Read transition mode"]
 pub type READ_TRAN_MODE_R = crate::BitReader<READ_TRAN_MODE_A>;
 #[doc = "Read transition mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum READ_TRAN_MODE_A {
     #[doc = "0: `0`"]
     SEND = 0,
@@ -374,7 +374,7 @@ impl<'a, const O: u8> READ_TRAN_MODE_W<'a, O> {
 #[doc = "Field `restart_mode` reader - Restart mode"]
 pub type RESTART_MODE_R = crate::BitReader<RESTART_MODE_A>;
 #[doc = "Restart mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESTART_MODE_A {
     #[doc = "0: `0`"]
     RESTART = 0,
@@ -425,7 +425,7 @@ impl<'a, const O: u8> RESTART_MODE_W<'a, O> {
 #[doc = "Field `start_tran` reader - Start transmission"]
 pub type START_TRAN_R = crate::BitReader<START_TRAN_A>;
 #[doc = "Start transmission\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum START_TRAN_A {
     #[doc = "0: `0`"]
     IDLE = 0,

@@ -47,7 +47,7 @@ pub type PTN_GEN_CLK_DIV_W<'a, const O: u8> =
 #[doc = "Field `ptn_mode` reader - Pattern mode selection"]
 pub type PTN_MODE_R = crate::FieldReader<u8, PTN_MODE_A>;
 #[doc = "Pattern mode selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PTN_MODE_A {
     #[doc = "4: `100`"]
@@ -165,7 +165,7 @@ impl<'a, const O: u8> PTN_MODE_W<'a, O> {
 #[doc = "Field `ptn_gen_data_width` reader - "]
 pub type PTN_GEN_DATA_WIDTH_R = crate::FieldReader<u8, PTN_GEN_DATA_WIDTH_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PTN_GEN_DATA_WIDTH_A {
     #[doc = "0: `0`"]
@@ -231,7 +231,7 @@ impl<'a, const O: u8> PTN_GEN_DATA_WIDTH_W<'a, O> {
 #[doc = "Field `ptn_port_sel` reader - Pattern Generator output port selection"]
 pub type PTN_PORT_SEL_R = crate::FieldReader<u8, PTN_PORT_SEL_A>;
 #[doc = "Pattern Generator output port selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PTN_PORT_SEL_A {
     #[doc = "2: `10`"]

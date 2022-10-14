@@ -37,7 +37,7 @@ impl From<crate::W<LOSC_AUTO_SWT_STA_SPEC>> for W {
 #[doc = "Field `losc_src_sel_sta` reader - Checking LOSC clock source status"]
 pub type LOSC_SRC_SEL_STA_R = crate::BitReader<LOSC_SRC_SEL_STA_A>;
 #[doc = "Checking LOSC clock source status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOSC_SRC_SEL_STA_A {
     #[doc = "0: Low frequency clock from 16M RC"]
     LOW = 0,
@@ -73,7 +73,7 @@ impl LOSC_SRC_SEL_STA_R {
 #[doc = "Field `losc_auto_swt_pend` reader - LOSC auto switch pending"]
 pub type LOSC_AUTO_SWT_PEND_R = crate::BitReader<LOSC_AUTO_SWT_PEND_A>;
 #[doc = "LOSC auto switch pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOSC_AUTO_SWT_PEND_A {
     #[doc = "0: No effect"]
     NO_EFFECT = 0,
@@ -124,7 +124,7 @@ impl<'a, const O: u8> LOSC_AUTO_SWT_PEND_W<'a, O> {
 #[doc = "Field `ext_losc_sta` reader - Work only when the auto switch function is enabled."]
 pub type EXT_LOSC_STA_R = crate::BitReader<EXT_LOSC_STA_A>;
 #[doc = "Work only when the auto switch function is enabled.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXT_LOSC_STA_A {
     #[doc = "0: External 32.768 kHz OSC work normally"]
     NORMALLY = 0,

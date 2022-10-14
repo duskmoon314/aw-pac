@@ -37,7 +37,7 @@ impl From<crate::W<FOUT_32K_CTRL_GATING_SPEC>> for W {
 #[doc = "Field `fanout_32k_gating` reader - LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default."]
 pub type FANOUT_32K_GATING_R = crate::BitReader<FANOUT_32K_GATING_A>;
 #[doc = "LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FANOUT_32K_GATING_A {
     #[doc = "0: Mask LOSC output gating"]
     MASK = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> FANOUT_32K_GATING_W<'a, O> {
 #[doc = "Field `losc_out_src_sel` reader - LOSC output source select"]
 pub type LOSC_OUT_SRC_SEL_R = crate::FieldReader<u8, LOSC_OUT_SRC_SEL_A>;
 #[doc = "LOSC output source select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LOSC_OUT_SRC_SEL_A {
     #[doc = "0: RTC_32K (select by RC_CLK_SRC_SEL LOSC_SRC_SEL)"]
@@ -154,7 +154,7 @@ impl<'a, const O: u8> LOSC_OUT_SRC_SEL_W<'a, O> {
 #[doc = "Field `hosc_to_32k_divider_enable` reader - HOSC to 32k divider enable"]
 pub type HOSC_TO_32K_DIVIDER_ENABLE_R = crate::BitReader<HOSC_TO_32K_DIVIDER_ENABLE_A>;
 #[doc = "HOSC to 32k divider enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HOSC_TO_32K_DIVIDER_ENABLE_A {
     #[doc = "0: Disable the hosc 24M to 32K divider circuit"]
     DISABLE = 0,

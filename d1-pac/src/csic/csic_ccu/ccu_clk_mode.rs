@@ -37,7 +37,7 @@ impl From<crate::W<CCU_CLK_MODE_SPEC>> for W {
 #[doc = "Field `ccu_clk_gating_disable` reader - "]
 pub type CCU_CLK_GATING_DISABLE_R = crate::BitReader<CCU_CLK_GATING_DISABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCU_CLK_GATING_DISABLE_A {
     #[doc = "0: CCU Clock Gating Registers(0x0004~0x0010) effect"]
     EFFECT = 0,

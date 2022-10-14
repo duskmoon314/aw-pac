@@ -37,7 +37,7 @@ impl From<crate::W<PRS_CH_INT_EN_SPEC>> for W {
 #[doc = "Field `input_para_int_en[0-1]` reader - "]
 pub type INPUT_PARA_INT_EN_R = crate::BitReader<INPUT_PARA_INT_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INPUT_PARA_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> INPUT_PARA_INT_EN_W<'a, O> {
 #[doc = "Field `mul_err_int_en` reader - Multi-channel writing error\n\nIndicates error has been detected for writing data to a wrong channel"]
 pub type MUL_ERR_INT_EN_R = crate::BitReader<MUL_ERR_INT_EN_A>;
 #[doc = "Multi-channel writing error\n\nIndicates error has been detected for writing data to a wrong channel\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MUL_ERR_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

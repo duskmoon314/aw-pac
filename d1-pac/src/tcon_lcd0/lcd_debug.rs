@@ -39,7 +39,7 @@ pub type LCD_CURRENT_LINE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `lcd_field_pol` reader - The flag indicates the current field polarity"]
 pub type LCD_FIELD_POL_R = crate::BitReader<LCD_FIELD_POL_A>;
 #[doc = "The flag indicates the current field polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_FIELD_POL_A {
     #[doc = "0: Second field"]
     S_ECOND = 0,
@@ -75,7 +75,7 @@ impl LCD_FIELD_POL_R {
 #[doc = "Field `lcd_fifo_underflow` reader - The flag shows whether the fifos in underflow status"]
 pub type LCD_FIFO_UNDERFLOW_R = crate::BitReader<LCD_FIFO_UNDERFLOW_A>;
 #[doc = "The flag shows whether the fifos in underflow status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_FIFO_UNDERFLOW_A {
     #[doc = "0: Not underflow"]
     N_OT_UNDERFLOW = 0,

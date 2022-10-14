@@ -37,7 +37,7 @@ impl From<crate::W<LCD_CPU_IF_SPEC>> for W {
 #[doc = "Field `tri_en` reader - Enable trigger mode"]
 pub type TRI_EN_R = crate::BitReader<TRI_EN_A>;
 #[doc = "Enable trigger mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRI_EN_A {
     #[doc = "0: Trigger mode disable"]
     DISABLE = 0,
@@ -91,7 +91,7 @@ pub type TRI_START_W<'a, const O: u8> = crate::BitWriter1S<'a, u32, LCD_CPU_IF_S
 #[doc = "Field `tri_fifo_en` reader - Enable the trigger FIFO"]
 pub type TRI_FIFO_EN_R = crate::BitReader<TRI_FIFO_EN_A>;
 #[doc = "Enable the trigger FIFO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRI_FIFO_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -142,7 +142,7 @@ impl<'a, const O: u8> TRI_FIFO_EN_W<'a, O> {
 #[doc = "Field `tri_fifo_bist_en` reader - Entry address is 0xFF8"]
 pub type TRI_FIFO_BIST_EN_R = crate::BitReader<TRI_FIFO_BIST_EN_A>;
 #[doc = "Entry address is 0xFF8\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRI_FIFO_BIST_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -201,7 +201,7 @@ pub type AUTO_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CPU_IF_SPEC, bo
 #[doc = "Field `rd_flag` reader - The status of read operation."]
 pub type RD_FLAG_R = crate::BitReader<RD_FLAG_A>;
 #[doc = "The status of read operation.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RD_FLAG_A {
     #[doc = "0: Read operation is finishing"]
     FINISHING = 0,
@@ -237,7 +237,7 @@ impl RD_FLAG_R {
 #[doc = "Field `wr_flag` reader - The status of write operation."]
 pub type WR_FLAG_R = crate::BitReader<WR_FLAG_A>;
 #[doc = "The status of write operation.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WR_FLAG_A {
     #[doc = "0: Write operation is finishing"]
     FINISHING = 0,
@@ -281,7 +281,7 @@ pub type DA_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CPU_IF_SPEC, bool
 #[doc = "Field `cpu_mode` reader - Set the cpu interface work mode"]
 pub type CPU_MODE_R = crate::FieldReader<u8, CPU_MODE_A>;
 #[doc = "Set the cpu interface work mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CPU_MODE_A {
     #[doc = "0: 18-bit/256K mode"]

@@ -37,7 +37,7 @@ impl From<crate::W<MBUS_MAT_CLK_GATING_SPEC>> for W {
 #[doc = "Field `dma_mclk_en` reader - Gating MBUS Clock"]
 pub type DMA_MCLK_EN_R = crate::BitReader<DMA_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_MCLK_EN_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> DMA_MCLK_EN_W<'a, O> {
 #[doc = "Field `ve_mclk_en` reader - Gating MBUS Clock"]
 pub type VE_MCLK_EN_R = crate::BitReader<VE_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VE_MCLK_EN_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> VE_MCLK_EN_W<'a, O> {
 #[doc = "Field `ce_mclk_en` reader - Gating MBUS Clock"]
 pub type CE_MCLK_EN_R = crate::BitReader<CE_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CE_MCLK_EN_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> CE_MCLK_EN_W<'a, O> {
 #[doc = "Field `tvin_mclk_en` reader - Gating MBUS Clock"]
 pub type TVIN_MCLK_EN_R = crate::BitReader<TVIN_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TVIN_MCLK_EN_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> TVIN_MCLK_EN_W<'a, O> {
 #[doc = "Field `csi_mclk_en` reader - Gating MBUS Clock"]
 pub type CSI_MCLK_EN_R = crate::BitReader<CSI_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSI_MCLK_EN_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -292,7 +292,7 @@ impl<'a, const O: u8> CSI_MCLK_EN_W<'a, O> {
 #[doc = "Field `g2d_mclk_en` reader - Gating MBUS Clock"]
 pub type G2D_MCLK_EN_R = crate::BitReader<G2D_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum G2D_MCLK_EN_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -343,7 +343,7 @@ impl<'a, const O: u8> G2D_MCLK_EN_W<'a, O> {
 #[doc = "Field `riscv_mclk_en` reader - Gating MBUS Clock"]
 pub type RISCV_MCLK_EN_R = crate::BitReader<RISCV_MCLK_EN_A>;
 #[doc = "Gating MBUS Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RISCV_MCLK_EN_A {
     #[doc = "0: `0`"]
     MASK = 0,

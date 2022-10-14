@@ -37,7 +37,7 @@ impl From<crate::W<SPI_IER_SPEC>> for W {
 #[doc = "Field `rf_rdy_int_en` reader - RXFIFO Ready Request Interrupt Enable"]
 pub type RF_RDY_INT_EN_R = crate::BitReader<RF_RDY_INT_EN_A>;
 #[doc = "RXFIFO Ready Request Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_RDY_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> RF_RDY_INT_EN_W<'a, O> {
 #[doc = "Field `rf_emp_int_en` reader - RXFIFO Empty Interrupt Enable"]
 pub type RF_EMP_INT_EN_R = crate::BitReader<RF_EMP_INT_EN_A>;
 #[doc = "RXFIFO Empty Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_EMP_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> RF_EMP_INT_EN_W<'a, O> {
 #[doc = "Field `rf_full_int_en` reader - RXFIFO Full Interrupt Enable"]
 pub type RF_FULL_INT_EN_R = crate::BitReader<RF_FULL_INT_EN_A>;
 #[doc = "RXFIFO Full Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_FULL_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> RF_FULL_INT_EN_W<'a, O> {
 #[doc = "Field `tf_erq_int_en` reader - TXFIFO Empty Request Interrupt Enable"]
 pub type TF_ERQ_INT_EN_R = crate::BitReader<TF_ERQ_INT_EN_A>;
 #[doc = "TXFIFO Empty Request Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_ERQ_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> TF_ERQ_INT_EN_W<'a, O> {
 #[doc = "Field `tf_emp_int_en` reader - TXFIFO Empty Interrupt Enable"]
 pub type TF_EMP_INT_EN_R = crate::BitReader<TF_EMP_INT_EN_A>;
 #[doc = "TXFIFO Empty Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_EMP_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -292,7 +292,7 @@ impl<'a, const O: u8> TF_EMP_INT_EN_W<'a, O> {
 #[doc = "Field `tf_full_int_en` reader - TXFIFO Full Interrupt Enable"]
 pub type TF_FULL_INT_EN_R = crate::BitReader<TF_FULL_INT_EN_A>;
 #[doc = "TXFIFO Full Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_FULL_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -343,7 +343,7 @@ impl<'a, const O: u8> TF_FULL_INT_EN_W<'a, O> {
 #[doc = "Field `rf_ovf_int_en` reader - RXFIFO Overflow Interrupt Enable"]
 pub type RF_OVF_INT_EN_R = crate::BitReader<RF_OVF_INT_EN_A>;
 #[doc = "RXFIFO Overflow Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_OVF_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -394,7 +394,7 @@ impl<'a, const O: u8> RF_OVF_INT_EN_W<'a, O> {
 #[doc = "Field `rf_udr_int_en` reader - RXFIFO Underrun Interrupt Enable"]
 pub type RF_UDR_INT_EN_R = crate::BitReader<RF_UDR_INT_EN_A>;
 #[doc = "RXFIFO Underrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_UDR_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -445,7 +445,7 @@ impl<'a, const O: u8> RF_UDR_INT_EN_W<'a, O> {
 #[doc = "Field `tf_ovf_int_en` reader - TXFIFO Overflow Interrupt Enable"]
 pub type TF_OVF_INT_EN_R = crate::BitReader<TF_OVF_INT_EN_A>;
 #[doc = "TXFIFO Overflow Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_OVF_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -496,7 +496,7 @@ impl<'a, const O: u8> TF_OVF_INT_EN_W<'a, O> {
 #[doc = "Field `tf_udr_int_en` reader - TXFIFO Underrun Interrupt Enable"]
 pub type TF_UDR_INT_EN_R = crate::BitReader<TF_UDR_INT_EN_A>;
 #[doc = "TXFIFO Underrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_UDR_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -547,7 +547,7 @@ impl<'a, const O: u8> TF_UDR_INT_EN_W<'a, O> {
 #[doc = "Field `tc_int_en` reader - Transfer Completed Interrupt Enable"]
 pub type TC_INT_EN_R = crate::BitReader<TC_INT_EN_A>;
 #[doc = "Transfer Completed Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TC_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -597,7 +597,7 @@ impl<'a, const O: u8> TC_INT_EN_W<'a, O> {
 #[doc = "Field `ss_int_en` reader - SSI Interrupt Enable"]
 pub type SS_INT_EN_R = crate::BitReader<SS_INT_EN_A>;
 #[doc = "SSI Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SS_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

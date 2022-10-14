@@ -37,7 +37,7 @@ impl From<crate::W<THS_DATA_INTS_SPEC>> for W {
 #[doc = "Field `ths_data_irq_sts` reader - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
 pub type THS_DATA_IRQ_STS_R = crate::BitReader<THS_DATA_IRQ_STS_A>;
 #[doc = "Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum THS_DATA_IRQ_STS_A {
     #[doc = "0: No effect"]
     NO_EFFECT = 0,

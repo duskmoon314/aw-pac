@@ -37,7 +37,7 @@ impl From<crate::W<TVE_DAC_MAP_SPEC>> for W {
 #[doc = "Field `dac_sel` reader - "]
 pub type DAC_SEL_R = crate::FieldReader<u8, DAC_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC_SEL_A {
     #[doc = "1: TVE0"]
@@ -77,7 +77,7 @@ impl<'a, const O: u8> DAC_SEL_W<'a, O> {
 #[doc = "Field `dac_map` reader - "]
 pub type DAC_MAP_R = crate::FieldReader<u8, DAC_MAP_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC_MAP_A {
     #[doc = "0: OUT0"]

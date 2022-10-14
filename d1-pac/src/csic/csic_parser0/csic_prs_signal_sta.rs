@@ -39,7 +39,7 @@ pub type DATA_STA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `pclk_sta` reader - Indicates the pclk status"]
 pub type PCLK_STA_R = crate::BitReader<PCLK_STA_A>;
 #[doc = "Indicates the pclk status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PCLK_STA_A {
     #[doc = "0: low"]
     LOW = 0,

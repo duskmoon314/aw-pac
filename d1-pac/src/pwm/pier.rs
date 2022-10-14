@@ -37,7 +37,7 @@ impl From<crate::W<PIER_SPEC>> for W {
 #[doc = "Field `pcie[0-7]` reader - PWM Channel Interrupt Enable"]
 pub type PCIE_R = crate::BitReader<PCIE_A>;
 #[doc = "PWM Channel Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PCIE_A {
     #[doc = "0: PWM Channel Interrupt Disable"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> PCIE_W<'a, O> {
 #[doc = "Field `pgie[0-3]` reader - PWM Group Interrupt Enable"]
 pub type PGIE_R = crate::BitReader<PGIE_A>;
 #[doc = "PWM Group Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PGIE_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

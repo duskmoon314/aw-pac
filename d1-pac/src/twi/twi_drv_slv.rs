@@ -41,7 +41,7 @@ pub type SLV_ID_X_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TWI_DRV_SLV_S
 #[doc = "Field `cmd` reader - R/W operation to slave device"]
 pub type CMD_R = crate::BitReader<CMD_A>;
 #[doc = "R/W operation to slave device\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CMD_A {
     #[doc = "0: `0`"]
     WRITE = 0,

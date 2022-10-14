@@ -37,7 +37,7 @@ impl From<crate::W<FSYNC_GEN_CTRL_SPEC>> for W {
 #[doc = "Field `fsync_gen_en` reader - Fsync Generate Enable"]
 pub type FSYNC_GEN_EN_R = crate::BitReader<FSYNC_GEN_EN_A>;
 #[doc = "Fsync Generate Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FSYNC_GEN_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> FSYNC_GEN_EN_W<'a, O> {
 #[doc = "Field `sel_vsync_en` reader - Select Vsync Enable"]
 pub type SEL_VSYNC_EN_R = crate::BitReader<SEL_VSYNC_EN_A>;
 #[doc = "Select Vsync Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SEL_VSYNC_EN_A {
     #[doc = "0: Select vsync falling edge to start state machine"]
     FALLING = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> SEL_VSYNC_EN_W<'a, O> {
 #[doc = "Field `hsync_pol_sel` reader - Hsync Polarity Select"]
 pub type HSYNC_POL_SEL_R = crate::BitReader<HSYNC_POL_SEL_A>;
 #[doc = "Hsync Polarity Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HSYNC_POL_SEL_A {
     #[doc = "0: Normal"]
     N_ORMAL = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> HSYNC_POL_SEL_W<'a, O> {
 #[doc = "Field `sensor_dis_value` reader - Sensor Disable Value"]
 pub type SENSOR_DIS_VALUE_R = crate::BitReader<SENSOR_DIS_VALUE_A>;
 #[doc = "Sensor Disable Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SENSOR_DIS_VALUE_A {
     #[doc = "0: Fsync disable period output 0"]
     OUTPUT_0 = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> SENSOR_DIS_VALUE_W<'a, O> {
 #[doc = "Field `sensor_act0_value` reader - Sensor Active0 Value"]
 pub type SENSOR_ACT0_VALUE_R = crate::BitReader<SENSOR_ACT0_VALUE_A>;
 #[doc = "Sensor Active0 Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SENSOR_ACT0_VALUE_A {
     #[doc = "0: Fsync active_0 period output 0"]
     OUTPUT_0 = 0,
@@ -292,7 +292,7 @@ impl<'a, const O: u8> SENSOR_ACT0_VALUE_W<'a, O> {
 #[doc = "Field `sensor_act1_value` reader - Sensor Active1 Value"]
 pub type SENSOR_ACT1_VALUE_R = crate::BitReader<SENSOR_ACT1_VALUE_A>;
 #[doc = "Sensor Active1 Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SENSOR_ACT1_VALUE_A {
     #[doc = "0: Fsync active_1 period output 0"]
     OUTPUT_0 = 0,

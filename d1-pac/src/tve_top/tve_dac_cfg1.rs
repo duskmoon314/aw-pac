@@ -37,7 +37,7 @@ impl From<crate::W<TVE_DAC_CFG1_SPEC>> for W {
 #[doc = "Field `ref1_sel` reader - (a_refslct1\\[3:0\\])\n\nThe reference voltage is used for hot plug detect function."]
 pub type REF1_SEL_R = crate::FieldReader<u8, REF1_SEL_A>;
 #[doc = "(a_refslct1\\[3:0\\])\n\nThe reference voltage is used for hot plug detect function.\n\nValue on reset: 10"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REF1_SEL_A {
     #[doc = "0: 0.50 V"]
@@ -272,7 +272,7 @@ impl<'a, const O: u8> REF1_SEL_W<'a, O> {
 #[doc = "Field `ref2_sel` reader - (a_refslct2\\[1:0\\])"]
 pub type REF2_SEL_R = crate::FieldReader<u8, REF2_SEL_A>;
 #[doc = "(a_refslct2\\[1:0\\])\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REF2_SEL_A {
     #[doc = "0: 0.25 V"]
@@ -351,7 +351,7 @@ impl<'a, const O: u8> REF2_SEL_W<'a, O> {
 #[doc = "Field `ref_int_sel` reader - (A_SEL_DETREF_RES)"]
 pub type REF_INT_SEL_R = crate::BitReader<REF_INT_SEL_A>;
 #[doc = "(A_SEL_DETREF_RES)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum REF_INT_SEL_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -402,7 +402,7 @@ impl<'a, const O: u8> REF_INT_SEL_W<'a, O> {
 #[doc = "Field `ref_ext_sel` reader - (A_SEL_DETREF_LDO)"]
 pub type REF_EXT_SEL_R = crate::BitReader<REF_EXT_SEL_A>;
 #[doc = "(A_SEL_DETREF_LDO)\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum REF_EXT_SEL_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

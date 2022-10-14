@@ -37,7 +37,7 @@ impl From<crate::W<HCI_CTRL3_SPEC>> for W {
 #[doc = "Field `linestate_change_detect_enable` reader - Linestate Change Detect Enable"]
 pub type LINESTATE_CHANGE_DETECT_ENABLE_R = crate::BitReader<LINESTATE_CHANGE_DETECT_ENABLE_A>;
 #[doc = "Linestate Change Detect Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINESTATE_CHANGE_DETECT_ENABLE_A {
     #[doc = "1: Enable"]
     ENABLE = 1,
@@ -89,7 +89,7 @@ impl<'a, const O: u8> LINESTATE_CHANGE_DETECT_ENABLE_W<'a, O> {
 pub type LINESTATE_CHANGE_INTERRUPT_ENABLE_R =
     crate::BitReader<LINESTATE_CHANGE_INTERRUPT_ENABLE_A>;
 #[doc = "Linestate Change Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINESTATE_CHANGE_INTERRUPT_ENABLE_A {
     #[doc = "1: Enable"]
     ENABLE = 1,
@@ -140,7 +140,7 @@ impl<'a, const O: u8> LINESTATE_CHANGE_INTERRUPT_ENABLE_W<'a, O> {
 #[doc = "Field `remote_wakeup_enable` reader - Remote Wakeup Enable"]
 pub type REMOTE_WAKEUP_ENABLE_R = crate::BitReader<REMOTE_WAKEUP_ENABLE_A>;
 #[doc = "Remote Wakeup Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum REMOTE_WAKEUP_ENABLE_A {
     #[doc = "1: Enable"]
     ENABLE = 1,
@@ -191,7 +191,7 @@ impl<'a, const O: u8> REMOTE_WAKEUP_ENABLE_W<'a, O> {
 #[doc = "Field `linestate_change_detect` reader - Linestate Change Detect"]
 pub type LINESTATE_CHANGE_DETECT_R = crate::BitReader<LINESTATE_CHANGE_DETECT_A>;
 #[doc = "Linestate Change Detect\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINESTATE_CHANGE_DETECT_A {
     #[doc = "0: Linestate change not dected"]
     NOT_DECTED = 0,

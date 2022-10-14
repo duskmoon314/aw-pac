@@ -16,7 +16,7 @@ impl From<crate::R<USR_SPEC>> for R {
 #[doc = "Field `busy` reader - UART Busy Bit"]
 pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "UART Busy Bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUSY_A {
     #[doc = "0: `0`"]
     IDLE = 0,
@@ -52,7 +52,7 @@ impl BUSY_R {
 #[doc = "Field `tfnf` reader - TX FIFO Not Full"]
 pub type TFNF_R = crate::BitReader<TFNF_A>;
 #[doc = "TX FIFO Not Full\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TFNF_A {
     #[doc = "0: `0`"]
     FULL = 0,
@@ -88,7 +88,7 @@ impl TFNF_R {
 #[doc = "Field `tfe` reader - TX FIFO Empty"]
 pub type TFE_R = crate::BitReader<TFE_A>;
 #[doc = "TX FIFO Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TFE_A {
     #[doc = "0: `0`"]
     NOT_EMPTY = 0,
@@ -124,7 +124,7 @@ impl TFE_R {
 #[doc = "Field `rfne` reader - RX FIFO Not Empty"]
 pub type RFNE_R = crate::BitReader<RFNE_A>;
 #[doc = "RX FIFO Not Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RFNE_A {
     #[doc = "0: `0`"]
     EMPTY = 0,
@@ -160,7 +160,7 @@ impl RFNE_R {
 #[doc = "Field `rff` reader - RX FIFO Full"]
 pub type RFF_R = crate::BitReader<RFF_A>;
 #[doc = "RX FIFO Full\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RFF_A {
     #[doc = "0: `0`"]
     NOT_FULL = 0,

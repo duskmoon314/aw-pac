@@ -37,7 +37,7 @@ impl From<crate::W<TWI_EFR_SPEC>> for W {
 #[doc = "Field `dbn` reader - Data Byte Number Follow Read Command Control"]
 pub type DBN_R = crate::FieldReader<u8, DBN_A>;
 #[doc = "Data Byte Number Follow Read Command Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DBN_A {
     #[doc = "0: No data byte can be written after the read command"]

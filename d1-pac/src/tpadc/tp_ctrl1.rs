@@ -37,7 +37,7 @@ impl From<crate::W<TP_CTRL1_SPEC>> for W {
 #[doc = "Field `adc_chan_select[0-3]` reader - Analog Input Channel Select"]
 pub type ADC_CHAN_SELECT_R = crate::BitReader<ADC_CHAN_SELECT_A>;
 #[doc = "Analog Input Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_CHAN_SELECT_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> ADC_CHAN_SELECT_W<'a, O> {
 #[doc = "Field `tp_mode_select` reader - Touch Panel Mode and Auxiliary ADC Mode Select"]
 pub type TP_MODE_SELECT_R = crate::BitReader<TP_MODE_SELECT_A>;
 #[doc = "Touch Panel Mode and Auxiliary ADC Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_MODE_SELECT_A {
     #[doc = "0: `0`"]
     TP = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> TP_MODE_SELECT_W<'a, O> {
 #[doc = "Field `tp_en` reader - TP Function Enable"]
 pub type TP_EN_R = crate::BitReader<TP_EN_A>;
 #[doc = "TP Function Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -189,7 +189,7 @@ impl<'a, const O: u8> TP_EN_W<'a, O> {
 #[doc = "Field `tp_dual_en` reader - Touch Panel Double Point Enable"]
 pub type TP_DUAL_EN_R = crate::BitReader<TP_DUAL_EN_A>;
 #[doc = "Touch Panel Double Point Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_DUAL_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -239,7 +239,7 @@ impl<'a, const O: u8> TP_DUAL_EN_W<'a, O> {
 #[doc = "Field `touch_pan_cali_en` reader - Touch Panel Calibration"]
 pub type TOUCH_PAN_CALI_EN_R = crate::BitReader<TOUCH_PAN_CALI_EN_A>;
 #[doc = "Touch Panel Calibration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TOUCH_PAN_CALI_EN_A {
     #[doc = "1: `1`"]
     START = 1,
@@ -278,7 +278,7 @@ impl<'a, const O: u8> TOUCH_PAN_CALI_EN_W<'a, O> {
 #[doc = "Field `chopper_en` reader - T-sensor Chopping Enable"]
 pub type CHOPPER_EN_R = crate::BitReader<CHOPPER_EN_A>;
 #[doc = "T-sensor Chopping Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHOPPER_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -328,7 +328,7 @@ impl<'a, const O: u8> CHOPPER_EN_W<'a, O> {
 #[doc = "Field `stylus_up_debounce_en` reader - Stylus Up Debounce Function Select"]
 pub type STYLUS_UP_DEBOUNCE_EN_R = crate::BitReader<STYLUS_UP_DEBOUNCE_EN_A>;
 #[doc = "Stylus Up Debounce Function Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STYLUS_UP_DEBOUNCE_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

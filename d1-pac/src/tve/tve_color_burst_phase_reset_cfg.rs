@@ -37,7 +37,7 @@ impl From<crate::W<TVE_COLOR_BURST_PHASE_RESET_CFG_SPEC>> for W {
 #[doc = "Field `color_phase_reset` reader - Color burst phase period selection\n\nThese bits select the number of fields or lines after which the color burst phase is reset to its initial value as specified by the ChromaPhase parameter, This parameter is application only for interlaced video."]
 pub type COLOR_PHASE_RESET_R = crate::FieldReader<u8, COLOR_PHASE_RESET_A>;
 #[doc = "Color burst phase period selection\n\nThese bits select the number of fields or lines after which the color burst phase is reset to its initial value as specified by the ChromaPhase parameter, This parameter is application only for interlaced video.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum COLOR_PHASE_RESET_A {
     #[doc = "0: 8 field"]

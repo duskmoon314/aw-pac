@@ -39,7 +39,7 @@ Invert"]
 pub type IO_INV_R = crate::BitReader<IO_INV_A>;
 #[doc = "IO\\[i\\]
 Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_INV_A {
     #[doc = "0: Not invert"]
     N_OT_INVERT = 0,

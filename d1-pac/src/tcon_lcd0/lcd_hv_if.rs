@@ -37,7 +37,7 @@ impl From<crate::W<LCD_HV_IF_SPEC>> for W {
 #[doc = "Field `ccir_csc_dis` reader - LCD convert source from RGB to YUV.\n\nOnly valid when HV mode is “1100”."]
 pub type CCIR_CSC_DIS_R = crate::BitReader<CCIR_CSC_DIS_A>;
 #[doc = "LCD convert source from RGB to YUV.\n\nOnly valid when HV mode is “1100”.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCIR_CSC_DIS_A {
     #[doc = "0: Enable"]
     E_NABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> CCIR_CSC_DIS_W<'a, O> {
 #[doc = "Field `yuv_eav_sav_f_line_dly` reader - Set the delay line mode."]
 pub type YUV_EAV_SAV_F_LINE_DLY_R = crate::FieldReader<u8, YUV_EAV_SAV_F_LINE_DLY_A>;
 #[doc = "Set the delay line mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum YUV_EAV_SAV_F_LINE_DLY_A {
     #[doc = "0: F toggle right after active video line"]
@@ -154,7 +154,7 @@ impl<'a, const O: u8> YUV_EAV_SAV_F_LINE_DLY_W<'a, O> {
 #[doc = "Field `yuv_sm` reader - Serial YUV mode Output sequence 2-pixel-pair of every scan line."]
 pub type YUV_SM_R = crate::FieldReader<u8, YUV_SM_A>;
 #[doc = "Serial YUV mode Output sequence 2-pixel-pair of every scan line.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum YUV_SM_A {
     #[doc = "0: YUYV"]
@@ -233,7 +233,7 @@ impl<'a, const O: u8> YUV_SM_W<'a, O> {
 #[doc = "Field `rgb888_even_order` reader - Serial RGB888 mode Output sequence at even lines of the panel (line 2, 4, 6, 8...)."]
 pub type RGB888_EVEN_ORDER_R = crate::FieldReader<u8, RGB888_EVEN_ORDER_A>;
 #[doc = "Serial RGB888 mode Output sequence at even lines of the panel (line 2, 4, 6, 8...).\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RGB888_EVEN_ORDER_A {
     #[doc = "0: R -> G -> B"]
@@ -299,7 +299,7 @@ impl<'a, const O: u8> RGB888_EVEN_ORDER_W<'a, O> {
 #[doc = "Field `rgb888_odd_order` reader - Serial RGB888 mode Output sequence at odd lines of the panel (line 1, 3, 5, 7...)."]
 pub type RGB888_ODD_ORDER_R = crate::FieldReader<u8, RGB888_ODD_ORDER_A>;
 #[doc = "Serial RGB888 mode Output sequence at odd lines of the panel (line 1, 3, 5, 7...).\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RGB888_ODD_ORDER_A {
     #[doc = "0: R -> G -> B"]
@@ -365,7 +365,7 @@ impl<'a, const O: u8> RGB888_ODD_ORDER_W<'a, O> {
 #[doc = "Field `hv_mode` reader - Set the HV mode of LCD controller"]
 pub type HV_MODE_R = crate::FieldReader<u8, HV_MODE_A>;
 #[doc = "Set the HV mode of LCD controller\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HV_MODE_A {
     #[doc = "0: 24-bit/1-cycle parallel mode"]

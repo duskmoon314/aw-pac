@@ -37,7 +37,7 @@ impl From<crate::W<CSIC_BIST_DATA_MASK_SPEC>> for W {
 #[doc = "Field `bist_data_mask` reader - BIST data mask"]
 pub type BIST_DATA_MASK_R = crate::FieldReader<u32, BIST_DATA_MASK_A>;
 #[doc = "BIST data mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum BIST_DATA_MASK_A {
     #[doc = "0: `0`"]

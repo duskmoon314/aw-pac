@@ -41,7 +41,7 @@ pub type RF_RDY_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, boo
 #[doc = "Field `rf_emp` reader - RXFIFO Empty"]
 pub type RF_EMP_R = crate::BitReader<RF_EMP_A>;
 #[doc = "RXFIFO Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_EMP_A {
     #[doc = "0: `0`"]
     NOT_EMPTY = 0,
@@ -91,7 +91,7 @@ impl<'a, const O: u8> RF_EMP_W<'a, O> {
 #[doc = "Field `rf_full` reader - RXFIFO Full"]
 pub type RF_FULL_R = crate::BitReader<RF_FULL_A>;
 #[doc = "RXFIFO Full\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_FULL_A {
     #[doc = "0: `0`"]
     NOT_FULL = 0,
@@ -145,7 +145,7 @@ pub type TF_READY_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_ISR_SPEC, b
 #[doc = "Field `tf_emp` reader - TXFIFO Empty"]
 pub type TF_EMP_R = crate::BitReader<TF_EMP_A>;
 #[doc = "TXFIFO Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_EMP_A {
     #[doc = "0: `0`"]
     NOT_EMPTY = 0,
@@ -195,7 +195,7 @@ impl<'a, const O: u8> TF_EMP_W<'a, O> {
 #[doc = "Field `tf_full` reader - TXFIFO Full"]
 pub type TF_FULL_R = crate::BitReader<TF_FULL_A>;
 #[doc = "TXFIFO Full\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_FULL_A {
     #[doc = "0: `0`"]
     NOT_FULL = 0,
@@ -245,7 +245,7 @@ impl<'a, const O: u8> TF_FULL_W<'a, O> {
 #[doc = "Field `rf_ovf` reader - RXFIFO Overflow"]
 pub type RF_OVF_R = crate::BitReader<RF_OVF_A>;
 #[doc = "RXFIFO Overflow\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_OVF_A {
     #[doc = "0: `0`"]
     NOT_OVERFLOW = 0,
@@ -295,7 +295,7 @@ impl<'a, const O: u8> RF_OVF_W<'a, O> {
 #[doc = "Field `rf_udr` reader - RXFIFO Underrun"]
 pub type RF_UDR_R = crate::BitReader<RF_UDR_A>;
 #[doc = "RXFIFO Underrun\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_UDR_A {
     #[doc = "0: `0`"]
     NOT_UNDERRUN = 0,
@@ -345,7 +345,7 @@ impl<'a, const O: u8> RF_UDR_W<'a, O> {
 #[doc = "Field `tf_ovf` reader - TXFIFO Overflow"]
 pub type TF_OVF_R = crate::BitReader<TF_OVF_A>;
 #[doc = "TXFIFO Overflow\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_OVF_A {
     #[doc = "0: `0`"]
     NOT_OVERFLOW = 0,
@@ -395,7 +395,7 @@ impl<'a, const O: u8> TF_OVF_W<'a, O> {
 #[doc = "Field `tf_udr` reader - TXFIFO Underrun"]
 pub type TF_UDR_R = crate::BitReader<TF_UDR_A>;
 #[doc = "TXFIFO Underrun\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_UDR_A {
     #[doc = "0: `0`"]
     NOT_UNDERRUN = 0,
@@ -445,7 +445,7 @@ impl<'a, const O: u8> TF_UDR_W<'a, O> {
 #[doc = "Field `tc` reader - Transfer Completed"]
 pub type TC_R = crate::BitReader<TC_A>;
 #[doc = "Transfer Completed\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TC_A {
     #[doc = "0: `0`"]
     BUSY = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<TVE_NOTCH_FILTER_FREQUENCY_SPEC>> for W {
 #[doc = "Field `notch_freq` reader - Luma notch filter center frequency selection\n\nThese bits select the luma notch filter (which is a band-reject filter) center frequency. In two of the selections, the filter width affects also the selection of the center frequency."]
 pub type NOTCH_FREQ_R = crate::FieldReader<u8, NOTCH_FREQ_A>;
 #[doc = "Luma notch filter center frequency selection\n\nThese bits select the luma notch filter (which is a band-reject filter) center frequency. In two of the selections, the filter width affects also the selection of the center frequency.\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NOTCH_FREQ_A {
     #[doc = "0: 1.1875"]

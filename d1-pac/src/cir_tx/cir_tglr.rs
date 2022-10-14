@@ -37,7 +37,7 @@ impl From<crate::W<CIR_TGLR_SPEC>> for W {
 #[doc = "Field `txen` reader - Transmit Block Enable"]
 pub type TXEN_R = crate::BitReader<TXEN_A>;
 #[doc = "Transmit Block Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXEN_A {
     #[doc = "0: Disable the CIR Transmitter"]
     DISABLE = 0,
@@ -91,7 +91,7 @@ pub type TR_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TGLR_SPEC, bool, 
 #[doc = "Field `tppi` reader - Transmit Pulse Polarity Invert"]
 pub type TPPI_R = crate::BitReader<TPPI_A>;
 #[doc = "Transmit Pulse Polarity Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TPPI_A {
     #[doc = "0: Not invert transmit pulse"]
     NOT_INVERT = 0,
@@ -141,7 +141,7 @@ impl<'a, const O: u8> TPPI_W<'a, O> {
 #[doc = "Field `drmc` reader - Duty ratio of modulated carrier is high level/low level."]
 pub type DRMC_R = crate::FieldReader<u8, DRMC_A>;
 #[doc = "Duty ratio of modulated carrier is high level/low level.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DRMC_A {
     #[doc = "0: Low level is equal to high level"]
@@ -206,7 +206,7 @@ impl<'a, const O: u8> DRMC_W<'a, O> {
 #[doc = "Field `ims` reader - Internal Modulation Select"]
 pub type IMS_R = crate::BitReader<IMS_A>;
 #[doc = "Internal Modulation Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IMS_A {
     #[doc = "0: The transmitting signal is not modulated"]
     NOT_MODULATED = 0,

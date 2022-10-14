@@ -39,7 +39,7 @@ Output Trigger Enable"]
 pub type IO_OUTPUT_TRI_EN_R = crate::BitReader<IO_OUTPUT_TRI_EN_A>;
 #[doc = "IO\\[i\\]
 Output Trigger Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_OUTPUT_TRI_EN_A {
     #[doc = "1: Disable"]
     D_ISABLE = 1,

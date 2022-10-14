@@ -41,7 +41,7 @@ pub type BIST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_BIST_CONTRO
 #[doc = "Field `bist_wdata_pat` reader - BIST write data pattern"]
 pub type BIST_WDATA_PAT_R = crate::FieldReader<u8, BIST_WDATA_PAT_A>;
 #[doc = "BIST write data pattern\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BIST_WDATA_PAT_A {
     #[doc = "0: `0`"]
@@ -156,7 +156,7 @@ pub type BIST_REG_SEL_W<'a, const O: u8> =
 #[doc = "Field `bist_busy` reader - BIST busy"]
 pub type BIST_BUSY_R = crate::BitReader<BIST_BUSY_A>;
 #[doc = "BIST busy\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_BUSY_A {
     #[doc = "0: `0`"]
     IDLE = 0,
@@ -192,7 +192,7 @@ impl BIST_BUSY_R {
 #[doc = "Field `bist_stop` reader - BIST stop"]
 pub type BIST_STOP_R = crate::BitReader<BIST_STOP_A>;
 #[doc = "BIST stop\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_STOP_A {
     #[doc = "0: `0`"]
     RUNNING = 0,
@@ -232,7 +232,7 @@ pub type BIST_ERR_PAT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `bist_err_sta` reader - BIST error status"]
 pub type BIST_ERR_STA_R = crate::BitReader<BIST_ERR_STA_A>;
 #[doc = "BIST error status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_ERR_STA_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,

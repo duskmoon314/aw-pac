@@ -37,7 +37,7 @@ impl From<crate::W<DMAC_MODE_SPEC>> for W {
 #[doc = "Field `dma_src_mode` reader - Source Communication Mode Select"]
 pub type DMA_SRC_MODE_R = crate::BitReader<DMA_SRC_MODE_A>;
 #[doc = "Source Communication Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_SRC_MODE_A {
     #[doc = "0: `0`"]
     WAITING = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> DMA_SRC_MODE_W<'a, O> {
 #[doc = "Field `dma_dst_mode` reader - Destination Communication Mode Select"]
 pub type DMA_DST_MODE_R = crate::BitReader<DMA_DST_MODE_A>;
 #[doc = "Destination Communication Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_DST_MODE_A {
     #[doc = "0: `0`"]
     WAITING = 0,

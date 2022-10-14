@@ -37,7 +37,7 @@ impl From<crate::W<RTC_VIO_SPEC>> for W {
 #[doc = "Field `rtc_viou` reader - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
 pub type RTC_VIOU_R = crate::FieldReader<u8, RTC_VIOU_A>;
 #[doc = "RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V.\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTC_VIOU_A {
     #[doc = "0: 1.0 V"]
@@ -168,7 +168,7 @@ impl<'a, const O: u8> RTC_VIOU_W<'a, O> {
 #[doc = "Field `v_sel` reader - VDD Select"]
 pub type V_SEL_R = crate::BitReader<V_SEL_A>;
 #[doc = "VDD Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum V_SEL_A {
     #[doc = "0: Resistance divider"]
     RESISTANCE = 0,

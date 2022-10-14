@@ -37,7 +37,7 @@ impl From<crate::W<TV_SRC_CTL_SPEC>> for W {
 #[doc = "Field `tv_src_sel` reader - TV Source Select"]
 pub type TV_SRC_SEL_R = crate::FieldReader<u8, TV_SRC_SEL_A>;
 #[doc = "TV Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TV_SRC_SEL_A {
     #[doc = "0: DE"]

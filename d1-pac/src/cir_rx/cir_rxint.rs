@@ -37,7 +37,7 @@ impl From<crate::W<CIR_RXINT_SPEC>> for W {
 #[doc = "Field `roi_en` reader - Receiver FIFO Overrun Interrupt Enable"]
 pub type ROI_EN_R = crate::BitReader<ROI_EN_A>;
 #[doc = "Receiver FIFO Overrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ROI_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> ROI_EN_W<'a, O> {
 #[doc = "Field `rpei_en` reader - Receiver Packet End Interrupt Enable"]
 pub type RPEI_EN_R = crate::BitReader<RPEI_EN_A>;
 #[doc = "Receiver Packet End Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RPEI_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> RPEI_EN_W<'a, O> {
 #[doc = "Field `rai_en` reader - RX FIFO Available Interrupt Enable"]
 pub type RAI_EN_R = crate::BitReader<RAI_EN_A>;
 #[doc = "RX FIFO Available Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAI_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -187,7 +187,7 @@ impl<'a, const O: u8> RAI_EN_W<'a, O> {
 #[doc = "Field `drq_en` reader - RX FIFO DMA Enable"]
 pub type DRQ_EN_R = crate::BitReader<DRQ_EN_A>;
 #[doc = "RX FIFO DMA Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

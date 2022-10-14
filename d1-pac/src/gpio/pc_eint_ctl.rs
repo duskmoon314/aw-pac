@@ -37,7 +37,7 @@ impl From<crate::W<PC_EINT_CTL_SPEC>> for W {
 #[doc = "Field `eint_ctl[0-7]` reader - External INT Enable"]
 pub type EINT_CTL_R = crate::BitReader<EINT_CTL_A>;
 #[doc = "External INT Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EINT_CTL_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

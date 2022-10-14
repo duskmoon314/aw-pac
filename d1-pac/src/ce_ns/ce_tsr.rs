@@ -37,7 +37,7 @@ impl From<crate::W<CE_TSR_SPEC>> for W {
 #[doc = "Field `running_channel_number` reader - Running Channel Number"]
 pub type RUNNING_CHANNEL_NUMBER_R = crate::FieldReader<u8, RUNNING_CHANNEL_NUMBER_A>;
 #[doc = "Running Channel Number\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RUNNING_CHANNEL_NUMBER_A {
     #[doc = "0: Task channel 0"]

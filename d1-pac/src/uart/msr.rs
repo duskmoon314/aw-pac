@@ -16,7 +16,7 @@ impl From<crate::R<MSR_SPEC>> for R {
 #[doc = "Field `dcts` reader - Delta Clear to Send"]
 pub type DCTS_R = crate::BitReader<DCTS_A>;
 #[doc = "Delta Clear to Send\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DCTS_A {
     #[doc = "0: `0`"]
     NO_CHANGE = 0,
@@ -52,7 +52,7 @@ impl DCTS_R {
 #[doc = "Field `ddsr` reader - Delta Data Set Ready"]
 pub type DDSR_R = crate::BitReader<DDSR_A>;
 #[doc = "Delta Data Set Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DDSR_A {
     #[doc = "0: `0`"]
     NO_CHANGE = 0,
@@ -88,7 +88,7 @@ impl DDSR_R {
 #[doc = "Field `teri` reader - Trailing Edge Ring Indicator"]
 pub type TERI_R = crate::BitReader<TERI_A>;
 #[doc = "Trailing Edge Ring Indicator\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TERI_A {
     #[doc = "0: `0`"]
     NO_CHANGE = 0,
@@ -124,7 +124,7 @@ impl TERI_R {
 #[doc = "Field `ddcd` reader - Delta Data Carrier Detect"]
 pub type DDCD_R = crate::BitReader<DDCD_A>;
 #[doc = "Delta Data Carrier Detect\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DDCD_A {
     #[doc = "0: `0`"]
     NO_CHANGE = 0,
@@ -160,7 +160,7 @@ impl DDCD_R {
 #[doc = "Field `cts` reader - Line State of Clear To Send"]
 pub type CTS_R = crate::BitReader<CTS_A>;
 #[doc = "Line State of Clear To Send\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTS_A {
     #[doc = "0: `0`"]
     DEASSERTED = 0,
@@ -196,7 +196,7 @@ impl CTS_R {
 #[doc = "Field `dsr` reader - Line State of Data Set Ready"]
 pub type DSR_R = crate::BitReader<DSR_A>;
 #[doc = "Line State of Data Set Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DSR_A {
     #[doc = "0: `0`"]
     DEASSERTED = 0,
@@ -232,7 +232,7 @@ impl DSR_R {
 #[doc = "Field `ri` reader - Line State of Ring Indicator"]
 pub type RI_R = crate::BitReader<RI_A>;
 #[doc = "Line State of Ring Indicator\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RI_A {
     #[doc = "0: `0`"]
     DEASSERTED = 0,
@@ -268,7 +268,7 @@ impl RI_R {
 #[doc = "Field `dcd` reader - Line State of Data Carrier Detect"]
 pub type DCD_R = crate::BitReader<DCD_A>;
 #[doc = "Line State of Data Carrier Detect\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DCD_A {
     #[doc = "0: `0`"]
     DEASSERTED = 0,

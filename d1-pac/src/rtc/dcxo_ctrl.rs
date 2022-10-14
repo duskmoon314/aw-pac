@@ -37,7 +37,7 @@ impl From<crate::W<DCXO_CTRL_SPEC>> for W {
 #[doc = "Field `clk16m_rc_en` reader - The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M."]
 pub type CLK16M_RC_EN_R = crate::BitReader<CLK16M_RC_EN_A>;
 #[doc = "The related register configuration is necessary to ensure the reset debounce circuit has a stable clock source. The first time SoC starts up, by default, the reset debounce circuit of SoC uses 32K divided by RC16M. In power-off, software reads the related bit to ensure whether EXT32K is working normally, if it is normal, first switch the clock source of debounce circuit to EXT32K, then close RC16M. Without EXT32K scenario or external RTC scenario, software confirms firstly whether EXT32K is working normally before switching, or software does not close RC16M.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK16M_RC_EN_A {
     #[doc = "1: Enable"]
     ENABLE = 1,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> CLK16M_RC_EN_W<'a, O> {
 #[doc = "Field `dcxo_en` reader - DCXO enable"]
 pub type DCXO_EN_R = crate::BitReader<DCXO_EN_A>;
 #[doc = "DCXO enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DCXO_EN_A {
     #[doc = "1: Enable"]
     ENABLE = 1,
@@ -147,7 +147,7 @@ pub type DCXO_RFCLK_ENHANCE_W<'a, const O: u8> =
 #[doc = "Field `xtal_mode` reader - Xtal mode enable signal, active high"]
 pub type XTAL_MODE_R = crate::BitReader<XTAL_MODE_A>;
 #[doc = "Xtal mode enable signal, active high\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XTAL_MODE_A {
     #[doc = "0: For external clk input mode"]
     FOR_EXTERNAL = 0,
@@ -213,7 +213,7 @@ pub type DCXO_ICTRL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCXO_CTRL_S
 #[doc = "Field `clk_req_enb` reader - Clock REQ enable"]
 pub type CLK_REQ_ENB_R = crate::BitReader<CLK_REQ_ENB_A>;
 #[doc = "Clock REQ enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_REQ_ENB_A {
     #[doc = "0: Enable DCXO wake up function"]
     ENABLE = 0,

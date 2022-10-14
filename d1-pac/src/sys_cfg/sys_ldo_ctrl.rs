@@ -37,7 +37,7 @@ impl From<crate::W<SYS_LDO_CTRL_SPEC>> for W {
 #[doc = "Field `ldoa_trim` reader - "]
 pub type LDOA_TRIM_R = crate::FieldReader<u8, LDOA_TRIM_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LDOA_TRIM_A {
     #[doc = "0: `0`"]
@@ -480,7 +480,7 @@ impl<'a, const O: u8> LDOA_TRIM_W<'a, O> {
 #[doc = "Field `ldob_trim` reader - "]
 pub type LDOB_TRIM_R = crate::FieldReader<u8, LDOB_TRIM_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LDOB_TRIM_A {
     #[doc = "0: `0`"]

@@ -37,7 +37,7 @@ impl From<crate::W<FCC_SPEC>> for W {
 #[doc = "Field `rx_fifo_clock_enable` reader - "]
 pub type RX_FIFO_CLOCK_ENABLE_R = crate::BitReader<RX_FIFO_CLOCK_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_FIFO_CLOCK_ENABLE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> RX_FIFO_CLOCK_ENABLE_W<'a, O> {
 #[doc = "Field `tx_fifo_clock_enable` reader - "]
 pub type TX_FIFO_CLOCK_ENABLE_R = crate::BitReader<TX_FIFO_CLOCK_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_FIFO_CLOCK_ENABLE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> TX_FIFO_CLOCK_ENABLE_W<'a, O> {
 #[doc = "Field `rx_fifo_clock_mode` reader - "]
 pub type RX_FIFO_CLOCK_MODE_R = crate::BitReader<RX_FIFO_CLOCK_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_FIFO_CLOCK_MODE_A {
     #[doc = "0: Sync mode, writing/reading clocks use apb clock"]
     WR_APB = 0,

@@ -35,10 +35,10 @@ pub struct RegisterBlock {
     #[doc = "0x50 - ADC Digtial Control Register"]
     pub adc_dig_ctrl: ADC_DIG_CTRL,
     #[doc = "0x54 - VRA1 Speedup Down Control Register"]
-    pub vra1speedup_down_ctrl: VRA1SPEEDUP_DOWN_CTRL,
+    pub vra1speedup_ctrl: VRA1SPEEDUP_CTRL,
     _reserved15: [u8; 0x98],
     #[doc = "0xf0 - DAC DAP Control Register"]
-    pub ac_dac_dap_ctrl: AC_DAC_DAP_CTRL,
+    pub ac_dac_dap_ctr: AC_DAC_DAP_CTR,
     _reserved16: [u8; 0x04],
     #[doc = "0xf8 - ADC DAP Control Register"]
     pub ac_adc_dap_ctr: AC_ADC_DAP_CTR,
@@ -90,9 +90,9 @@ pub struct RegisterBlock {
     #[doc = "0x158 - DAC DRC Limiter Threshold Low Setting Register"]
     pub ac_dac_drc_llt: AC_DAC_DRC_LLT,
     #[doc = "0x15c - DAC DRC Limiter Slope High Setting Register"]
-    pub ac_dac_drc_h_kl: AC_DAC_DRC_H_KL,
+    pub ac_dac_drc_hkl: AC_DAC_DRC_HKL,
     #[doc = "0x160 - DAC DRC Limiter Slope Low Setting Register"]
-    pub ac_dac_drc_l_kl: AC_DAC_DRC_L_KL,
+    pub ac_dac_drc_lkl: AC_DAC_DRC_LKL,
     #[doc = "0x164 - DAC DRC Limiter High Output at Limiter Threshold"]
     pub ac_dac_drc_hopl: AC_DAC_DRC_HOPL,
     #[doc = "0x168 - DAC DRC Limiter Low Output at Limiter Threshold"]
@@ -186,9 +186,9 @@ pub struct RegisterBlock {
     #[doc = "0x258 - ADC DRC Limiter Threshold Low Setting Register"]
     pub ac_adc_drc_llt: AC_ADC_DRC_LLT,
     #[doc = "0x25c - ADC DRC Limiter Slope High Setting Register"]
-    pub ac_adc_drc_h_kl: AC_ADC_DRC_H_KL,
+    pub ac_adc_drc_hkl: AC_ADC_DRC_HKL,
     #[doc = "0x260 - ADC DRC Limiter Slope Low Setting Register"]
-    pub ac_adc_drc_l_kl: AC_ADC_DRC_L_KL,
+    pub ac_adc_drc_lkl: AC_ADC_DRC_LKL,
     #[doc = "0x264 - ADC DRC Limiter High Output at Limiter Threshold"]
     pub ac_adc_drc_hopl: AC_ADC_DRC_HOPL,
     #[doc = "0x268 - ADC DRC Limiter Low Output at Limiter Threshold"]
@@ -235,29 +235,28 @@ pub struct RegisterBlock {
     #[doc = "0x2bc - ADC DRC HPF Gain Low Coef Register"]
     pub ac_adc_drc_hpflgain: AC_ADC_DRC_HPFLGAIN,
     _reserved111: [u8; 0x40],
-    #[doc = "0x300 - ADC1 Analog Control Register"]
-    pub adc1: ADC1,
-    #[doc = "0x304 - ADC2 Analog Control Register"]
-    pub adc2: ADC2,
-    #[doc = "0x308 - ADC3 Analog Control Register"]
-    pub adc3: ADC3,
-    _reserved114: [u8; 0x04],
+    #[doc = "0x300..0x30c - ADC\\[i\\]
+Analog Control Register"]
+    pub adc: [ADC; 3],
+    _reserved112: [u8; 0x04],
     #[doc = "0x310 - DAC Analog Control Register"]
     pub dac: DAC,
-    _reserved115: [u8; 0x04],
+    _reserved113: [u8; 0x04],
     #[doc = "0x318 - MICBIAS Analog Control Register"]
     pub micbias: MICBIAS,
     #[doc = "0x31c - BIAS Analog Control Register"]
     pub ramp: RAMP,
     #[doc = "0x320 - BIAS Analog Control Register"]
     pub bias: BIAS,
-    _reserved118: [u8; 0x0c],
-    #[doc = "0x330 - ADC5 Analog Control Register"]
-    pub adc5: ADC5,
-    _reserved119: [u8; 0x0c],
+    _reserved116: [u8; 0x04],
+    #[doc = "0x328 - HMIC Control Register"]
+    pub hmic_ctrl: HMIC_CTRL,
+    #[doc = "0x32c - HMIC Status Register"]
+    pub hmic_sts: HMIC_STS,
+    _reserved118: [u8; 0x10],
     #[doc = "0x340 - Headphone2 Analog Control Register"]
     pub hp2: HP2,
-    _reserved120: [u8; 0x04],
+    _reserved119: [u8; 0x04],
     #[doc = "0x348 - POWER Analog Control Register\n\nThe register is not controlled by the clock and reset of Audio Codec, only controlled by the clock and reset of system bus."]
     pub power: POWER,
 }
@@ -277,7 +276,7 @@ pub mod ac_dac_fifoc;
 pub type AC_DAC_FIFOS = crate::Reg<ac_dac_fifos::AC_DAC_FIFOS_SPEC>;
 #[doc = "DAC FIFO Status Register"]
 pub mod ac_dac_fifos;
-#[doc = "ac_dac_txdata (rw) register accessor: an alias for `Reg<AC_DAC_TXDATA_SPEC>`"]
+#[doc = "ac_dac_txdata (w) register accessor: an alias for `Reg<AC_DAC_TXDATA_SPEC>`"]
 pub type AC_DAC_TXDATA = crate::Reg<ac_dac_txdata::AC_DAC_TXDATA_SPEC>;
 #[doc = "DAC TX DATA Register"]
 pub mod ac_dac_txdata;
@@ -317,14 +316,14 @@ pub mod ac_adc_dg;
 pub type ADC_DIG_CTRL = crate::Reg<adc_dig_ctrl::ADC_DIG_CTRL_SPEC>;
 #[doc = "ADC Digtial Control Register"]
 pub mod adc_dig_ctrl;
-#[doc = "vra1speedup_down_ctrl (rw) register accessor: an alias for `Reg<VRA1SPEEDUP_DOWN_CTRL_SPEC>`"]
-pub type VRA1SPEEDUP_DOWN_CTRL = crate::Reg<vra1speedup_down_ctrl::VRA1SPEEDUP_DOWN_CTRL_SPEC>;
+#[doc = "vra1speedup_ctrl (rw) register accessor: an alias for `Reg<VRA1SPEEDUP_CTRL_SPEC>`"]
+pub type VRA1SPEEDUP_CTRL = crate::Reg<vra1speedup_ctrl::VRA1SPEEDUP_CTRL_SPEC>;
 #[doc = "VRA1 Speedup Down Control Register"]
-pub mod vra1speedup_down_ctrl;
-#[doc = "ac_dac_dap_ctrl (rw) register accessor: an alias for `Reg<AC_DAC_DAP_CTRL_SPEC>`"]
-pub type AC_DAC_DAP_CTRL = crate::Reg<ac_dac_dap_ctrl::AC_DAC_DAP_CTRL_SPEC>;
+pub mod vra1speedup_ctrl;
+#[doc = "ac_dac_dap_ctr (rw) register accessor: an alias for `Reg<AC_DAC_DAP_CTR_SPEC>`"]
+pub type AC_DAC_DAP_CTR = crate::Reg<ac_dac_dap_ctr::AC_DAC_DAP_CTR_SPEC>;
 #[doc = "DAC DAP Control Register"]
-pub mod ac_dac_dap_ctrl;
+pub mod ac_dac_dap_ctr;
 #[doc = "ac_adc_dap_ctr (rw) register accessor: an alias for `Reg<AC_ADC_DAP_CTR_SPEC>`"]
 pub type AC_ADC_DAP_CTR = crate::Reg<ac_adc_dap_ctr::AC_ADC_DAP_CTR_SPEC>;
 #[doc = "ADC DAP Control Register"]
@@ -421,14 +420,14 @@ pub mod ac_dac_drc_hlt;
 pub type AC_DAC_DRC_LLT = crate::Reg<ac_dac_drc_llt::AC_DAC_DRC_LLT_SPEC>;
 #[doc = "DAC DRC Limiter Threshold Low Setting Register"]
 pub mod ac_dac_drc_llt;
-#[doc = "ac_dac_drc_h_kl (rw) register accessor: an alias for `Reg<AC_DAC_DRC_H_KL_SPEC>`"]
-pub type AC_DAC_DRC_H_KL = crate::Reg<ac_dac_drc_h_kl::AC_DAC_DRC_H_KL_SPEC>;
+#[doc = "ac_dac_drc_hkl (rw) register accessor: an alias for `Reg<AC_DAC_DRC_HKL_SPEC>`"]
+pub type AC_DAC_DRC_HKL = crate::Reg<ac_dac_drc_hkl::AC_DAC_DRC_HKL_SPEC>;
 #[doc = "DAC DRC Limiter Slope High Setting Register"]
-pub mod ac_dac_drc_h_kl;
-#[doc = "ac_dac_drc_l_kl (rw) register accessor: an alias for `Reg<AC_DAC_DRC_L_KL_SPEC>`"]
-pub type AC_DAC_DRC_L_KL = crate::Reg<ac_dac_drc_l_kl::AC_DAC_DRC_L_KL_SPEC>;
+pub mod ac_dac_drc_hkl;
+#[doc = "ac_dac_drc_lkl (rw) register accessor: an alias for `Reg<AC_DAC_DRC_LKL_SPEC>`"]
+pub type AC_DAC_DRC_LKL = crate::Reg<ac_dac_drc_lkl::AC_DAC_DRC_LKL_SPEC>;
 #[doc = "DAC DRC Limiter Slope Low Setting Register"]
-pub mod ac_dac_drc_l_kl;
+pub mod ac_dac_drc_lkl;
 #[doc = "ac_dac_drc_hopl (rw) register accessor: an alias for `Reg<AC_DAC_DRC_HOPL_SPEC>`"]
 pub type AC_DAC_DRC_HOPL = crate::Reg<ac_dac_drc_hopl::AC_DAC_DRC_HOPL_SPEC>;
 #[doc = "DAC DRC Limiter High Output at Limiter Threshold"]
@@ -609,14 +608,14 @@ pub mod ac_adc_drc_hlt;
 pub type AC_ADC_DRC_LLT = crate::Reg<ac_adc_drc_llt::AC_ADC_DRC_LLT_SPEC>;
 #[doc = "ADC DRC Limiter Threshold Low Setting Register"]
 pub mod ac_adc_drc_llt;
-#[doc = "ac_adc_drc_h_kl (rw) register accessor: an alias for `Reg<AC_ADC_DRC_H_KL_SPEC>`"]
-pub type AC_ADC_DRC_H_KL = crate::Reg<ac_adc_drc_h_kl::AC_ADC_DRC_H_KL_SPEC>;
+#[doc = "ac_adc_drc_hkl (rw) register accessor: an alias for `Reg<AC_ADC_DRC_HKL_SPEC>`"]
+pub type AC_ADC_DRC_HKL = crate::Reg<ac_adc_drc_hkl::AC_ADC_DRC_HKL_SPEC>;
 #[doc = "ADC DRC Limiter Slope High Setting Register"]
-pub mod ac_adc_drc_h_kl;
-#[doc = "ac_adc_drc_l_kl (rw) register accessor: an alias for `Reg<AC_ADC_DRC_L_KL_SPEC>`"]
-pub type AC_ADC_DRC_L_KL = crate::Reg<ac_adc_drc_l_kl::AC_ADC_DRC_L_KL_SPEC>;
+pub mod ac_adc_drc_hkl;
+#[doc = "ac_adc_drc_lkl (rw) register accessor: an alias for `Reg<AC_ADC_DRC_LKL_SPEC>`"]
+pub type AC_ADC_DRC_LKL = crate::Reg<ac_adc_drc_lkl::AC_ADC_DRC_LKL_SPEC>;
 #[doc = "ADC DRC Limiter Slope Low Setting Register"]
-pub mod ac_adc_drc_l_kl;
+pub mod ac_adc_drc_lkl;
 #[doc = "ac_adc_drc_hopl (rw) register accessor: an alias for `Reg<AC_ADC_DRC_HOPL_SPEC>`"]
 pub type AC_ADC_DRC_HOPL = crate::Reg<ac_adc_drc_hopl::AC_ADC_DRC_HOPL_SPEC>;
 #[doc = "ADC DRC Limiter High Output at Limiter Threshold"]
@@ -705,18 +704,11 @@ pub mod ac_adc_drc_hpfhgain;
 pub type AC_ADC_DRC_HPFLGAIN = crate::Reg<ac_adc_drc_hpflgain::AC_ADC_DRC_HPFLGAIN_SPEC>;
 #[doc = "ADC DRC HPF Gain Low Coef Register"]
 pub mod ac_adc_drc_hpflgain;
-#[doc = "adc1 (rw) register accessor: an alias for `Reg<ADC1_SPEC>`"]
-pub type ADC1 = crate::Reg<adc1::ADC1_SPEC>;
-#[doc = "ADC1 Analog Control Register"]
-pub mod adc1;
-#[doc = "adc2 (rw) register accessor: an alias for `Reg<ADC2_SPEC>`"]
-pub type ADC2 = crate::Reg<adc2::ADC2_SPEC>;
-#[doc = "ADC2 Analog Control Register"]
-pub mod adc2;
-#[doc = "adc3 (rw) register accessor: an alias for `Reg<ADC3_SPEC>`"]
-pub type ADC3 = crate::Reg<adc3::ADC3_SPEC>;
-#[doc = "ADC3 Analog Control Register"]
-pub mod adc3;
+#[doc = "adc (rw) register accessor: an alias for `Reg<ADC_SPEC>`"]
+pub type ADC = crate::Reg<adc::ADC_SPEC>;
+#[doc = "ADC\\[i\\]
+Analog Control Register"]
+pub mod adc;
 #[doc = "dac (rw) register accessor: an alias for `Reg<DAC_SPEC>`"]
 pub type DAC = crate::Reg<dac::DAC_SPEC>;
 #[doc = "DAC Analog Control Register"]
@@ -733,10 +725,14 @@ pub mod ramp;
 pub type BIAS = crate::Reg<bias::BIAS_SPEC>;
 #[doc = "BIAS Analog Control Register"]
 pub mod bias;
-#[doc = "adc5 (rw) register accessor: an alias for `Reg<ADC5_SPEC>`"]
-pub type ADC5 = crate::Reg<adc5::ADC5_SPEC>;
-#[doc = "ADC5 Analog Control Register"]
-pub mod adc5;
+#[doc = "hmic_ctrl (rw) register accessor: an alias for `Reg<HMIC_CTRL_SPEC>`"]
+pub type HMIC_CTRL = crate::Reg<hmic_ctrl::HMIC_CTRL_SPEC>;
+#[doc = "HMIC Control Register"]
+pub mod hmic_ctrl;
+#[doc = "hmic_sts (rw) register accessor: an alias for `Reg<HMIC_STS_SPEC>`"]
+pub type HMIC_STS = crate::Reg<hmic_sts::HMIC_STS_SPEC>;
+#[doc = "HMIC Status Register"]
+pub mod hmic_sts;
 #[doc = "hp2 (rw) register accessor: an alias for `Reg<HP2_SPEC>`"]
 pub type HP2 = crate::Reg<hp2::HP2_SPEC>;
 #[doc = "Headphone2 Analog Control Register"]

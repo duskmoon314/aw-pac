@@ -37,7 +37,7 @@ impl From<crate::W<TVE_DAC1_SPEC>> for W {
 #[doc = "Field `dac0_src_sel` reader - "]
 pub type DAC0_SRC_SEL_R = crate::FieldReader<u8, DAC0_SRC_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC0_SRC_SEL_A {
     #[doc = "0: Composite"]

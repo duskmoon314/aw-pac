@@ -47,7 +47,7 @@ pub type DAC_VOL_L_W<'a, const O: u8> =
 #[doc = "Field `dac_vol_sel` reader - DAC Volume Control Selection Enable"]
 pub type DAC_VOL_SEL_R = crate::BitReader<DAC_VOL_SEL_A>;
 #[doc = "DAC Volume Control Selection Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_VOL_SEL_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

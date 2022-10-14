@@ -34,7 +34,24 @@ impl From<crate::W<AC_DAC_DRC_HLT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_drc_hlt` reader - The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206, The format is 8.24. (The default value is -10 dB)"]
+pub type DAC_DRC_HLT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `dac_drc_hlt` writer - The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206, The format is 8.24. (The default value is -10 dB)"]
+pub type DAC_DRC_HLT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_DAC_DRC_HLT_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206, The format is 8.24. (The default value is -10 dB)"]
+    #[inline(always)]
+    pub fn dac_drc_hlt(&self) -> DAC_DRC_HLT_R {
+        DAC_DRC_HLT_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206, The format is 8.24. (The default value is -10 dB)"]
+    #[inline(always)]
+    pub fn dac_drc_hlt(&mut self) -> DAC_DRC_HLT_W<0> {
+        DAC_DRC_HLT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_DAC_DRC_HLT_SPEC {
 impl crate::Writable for AC_DAC_DRC_HLT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_dac_drc_hlt to value 0"]
+#[doc = "`reset()` method sets ac_dac_drc_hlt to value 0x01a9"]
 impl crate::Resettable for AC_DAC_DRC_HLT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x01a9
     }
 }

@@ -42,7 +42,7 @@ pub type TOTAL_WAIT_TIME1_W<'a, const O: u8> =
 #[doc = "Field `wait_tim1_en` reader - "]
 pub type WAIT_TIM1_EN_R = crate::BitReader<WAIT_TIM1_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WAIT_TIM1_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

@@ -45,7 +45,7 @@ pub type DBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u8, 
 #[doc = "Field `drm` reader - Master Dual Mode RX Enable"]
 pub type DRM_R = crate::BitReader<DRM_A>;
 #[doc = "Master Dual Mode RX Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DRM_A {
     #[doc = "0: `0`"]
     SINGLE = 0,
@@ -95,7 +95,7 @@ impl<'a, const O: u8> DRM_W<'a, O> {
 #[doc = "Field `quad_en` reader - Quad Mode Enable"]
 pub type QUAD_EN_R = crate::BitReader<QUAD_EN_A>;
 #[doc = "Quad Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum QUAD_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

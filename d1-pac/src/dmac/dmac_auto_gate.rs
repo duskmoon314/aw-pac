@@ -37,7 +37,7 @@ impl From<crate::W<DMAC_AUTO_GATE_SPEC>> for W {
 #[doc = "Field `dma_chan_circuit` reader - Auto gating bit of DMA channel circuit"]
 pub type DMA_CHAN_CIRCUIT_R = crate::BitReader<DMA_CHAN_CIRCUIT_A>;
 #[doc = "Auto gating bit of DMA channel circuit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_CHAN_CIRCUIT_A {
     #[doc = "0: `0`"]
     ENABLED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> DMA_CHAN_CIRCUIT_W<'a, O> {
 #[doc = "Field `dma_common_circuit` reader - Auto gating bit of DMA common circuit"]
 pub type DMA_COMMON_CIRCUIT_R = crate::BitReader<DMA_COMMON_CIRCUIT_A>;
 #[doc = "Auto gating bit of DMA common circuit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_COMMON_CIRCUIT_A {
     #[doc = "0: `0`"]
     ENABLED = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> DMA_COMMON_CIRCUIT_W<'a, O> {
 #[doc = "Field `dma_mclk_circuit` reader - Auto gating bit of DMA MCLK interfact circuit"]
 pub type DMA_MCLK_CIRCUIT_R = crate::BitReader<DMA_MCLK_CIRCUIT_A>;
 #[doc = "Auto gating bit of DMA MCLK interfact circuit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_MCLK_CIRCUIT_A {
     #[doc = "0: `0`"]
     ENABLED = 0,

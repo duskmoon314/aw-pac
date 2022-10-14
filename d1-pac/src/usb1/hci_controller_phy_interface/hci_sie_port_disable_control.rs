@@ -37,7 +37,7 @@ impl From<crate::W<HCI_SIE_PORT_DISABLE_CONTROL_SPEC>> for W {
 #[doc = "Field `port_disable_control` reader - Port Disable Control"]
 pub type PORT_DISABLE_CONTROL_R = crate::FieldReader<u8, PORT_DISABLE_CONTROL_A>;
 #[doc = "Port Disable Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PORT_DISABLE_CONTROL_A {
     #[doc = "0: Port Disable when no-se0 detect before SOF"]

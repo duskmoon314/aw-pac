@@ -37,7 +37,7 @@ impl From<crate::W<USB_BGR_SPEC>> for W {
 #[doc = "Field `usbohci_gating[0-1]` reader - USBOHCI Gating Clock"]
 pub type USBOHCI_GATING_R = crate::BitReader<USBOHCI_GATING_A>;
 #[doc = "USBOHCI Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBOHCI_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> USBOHCI_GATING_W<'a, O> {
 #[doc = "Field `usbehci_gating[0-1]` reader - USBEHCI Gating Clock"]
 pub type USBEHCI_GATING_R = crate::BitReader<USBEHCI_GATING_A>;
 #[doc = "USBEHCI Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBEHCI_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> USBEHCI_GATING_W<'a, O> {
 #[doc = "Field `usbotg0_gating` reader - USBOTG0 Gating Clock"]
 pub type USBOTG0_GATING_R = crate::BitReader<USBOTG0_GATING_A>;
 #[doc = "USBOTG0 Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBOTG0_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> USBOTG0_GATING_W<'a, O> {
 #[doc = "Field `usbohci_rst[0-1]` reader - USBOHCI Reset"]
 pub type USBOHCI_RST_R = crate::BitReader<USBOHCI_RST_A>;
 #[doc = "USBOHCI Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBOHCI_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,
@@ -240,7 +240,7 @@ impl<'a, const O: u8> USBOHCI_RST_W<'a, O> {
 #[doc = "Field `usbehci_rst[0-1]` reader - USBEHCI Reset"]
 pub type USBEHCI_RST_R = crate::BitReader<USBEHCI_RST_A>;
 #[doc = "USBEHCI Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBEHCI_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,
@@ -290,7 +290,7 @@ impl<'a, const O: u8> USBEHCI_RST_W<'a, O> {
 #[doc = "Field `usbotg0_rst` reader - USBOTG0 Reset"]
 pub type USBOTG0_RST_R = crate::BitReader<USBOTG0_RST_A>;
 #[doc = "USBOTG0 Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum USBOTG0_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

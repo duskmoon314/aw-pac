@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_TLB_IVLD_MODE_SEL_SPEC>> for W {
 #[doc = "Field `tlb_ivld_mode_sel` reader - "]
 pub type TLB_IVLD_MODE_SEL_R = crate::BitReader<TLB_IVLD_MODE_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TLB_IVLD_MODE_SEL_A {
     #[doc = "0: Invalidate TLB by using the Mask mode"]
     M_ASK_MODE = 0,

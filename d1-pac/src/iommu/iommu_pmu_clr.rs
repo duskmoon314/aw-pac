@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_PMU_CLR_SPEC>> for W {
 #[doc = "Field `pmu_clr` reader - "]
 pub type PMU_CLR_R = crate::BitReader<PMU_CLR_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PMU_CLR_A {
     #[doc = "0: No clear operation or clear operation is completed"]
     N_O_CLEAR_OR_COMPLETED = 0,

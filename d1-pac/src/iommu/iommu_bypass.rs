@@ -39,7 +39,7 @@ bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address 
 pub type M_BP_R = crate::BitReader<M_BP_A>;
 #[doc = "Master\\[i\\]
 bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_BP_A {
     #[doc = "0: Disable bypass function"]
     D_ISABLE = 0,

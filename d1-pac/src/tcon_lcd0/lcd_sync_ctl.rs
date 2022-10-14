@@ -37,7 +37,7 @@ impl From<crate::W<LCD_SYNC_CTL_SPEC>> for W {
 #[doc = "Field `lcd_ctrl_sync_mode` reader - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
 pub type LCD_CTRL_SYNC_MODE_R = crate::BitReader<LCD_CTRL_SYNC_MODE_A>;
 #[doc = "LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_CTRL_SYNC_MODE_A {
     #[doc = "0: Sync in the first time"]
     S_YNC_FIRST = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> LCD_CTRL_SYNC_MODE_W<'a, O> {
 #[doc = "Field `lcd_cyrl_sync_master_slave` reader - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
 pub type LCD_CYRL_SYNC_MASTER_SLAVE_R = crate::BitReader<LCD_CYRL_SYNC_MASTER_SLAVE_A>;
 #[doc = "LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_CYRL_SYNC_MASTER_SLAVE_A {
     #[doc = "0: Master"]
     M_ASTER = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> LCD_CYRL_SYNC_MASTER_SLAVE_W<'a, O> {
 #[doc = "Field `lcd_ctrl_work_mode` reader - LCD Controller Work mode"]
 pub type LCD_CTRL_WORK_MODE_R = crate::BitReader<LCD_CTRL_WORK_MODE_A>;
 #[doc = "LCD Controller Work mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_CTRL_WORK_MODE_A {
     #[doc = "0: Single DSI mode"]
     S_INGLE = 0,

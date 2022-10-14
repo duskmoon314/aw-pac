@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_TX_CTL0_SPEC>> for W {
 #[doc = "Field `tx_frm_len_ctl` reader - Frame Transmit Length Control"]
 pub type TX_FRM_LEN_CTL_R = crate::BitReader<TX_FRM_LEN_CTL_A>;
 #[doc = "Frame Transmit Length Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_FRM_LEN_CTL_A {
     #[doc = "0: `0`"]
     B2048 = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> TX_FRM_LEN_CTL_W<'a, O> {
 #[doc = "Field `tx_en` reader - Enable Transmitter"]
 pub type TX_EN_R = crate::BitReader<TX_EN_A>;
 #[doc = "Enable Transmitter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

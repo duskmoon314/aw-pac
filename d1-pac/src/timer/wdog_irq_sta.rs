@@ -37,7 +37,7 @@ impl From<crate::W<WDOG_IRQ_STA_SPEC>> for W {
 #[doc = "Field `wdog_irq_pend` reader - "]
 pub type WDOG_IRQ_PEND_R = crate::BitReader<WDOG_IRQ_PEND_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDOG_IRQ_PEND_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,

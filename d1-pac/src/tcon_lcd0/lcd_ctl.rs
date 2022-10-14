@@ -37,7 +37,7 @@ impl From<crate::W<LCD_CTL_SPEC>> for W {
 #[doc = "Field `lcd_src_sel` reader - LCD Source Select"]
 pub type LCD_SRC_SEL_R = crate::FieldReader<u8, LCD_SRC_SEL_A>;
 #[doc = "LCD Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LCD_SRC_SEL_A {
     #[doc = "0: DE"]
@@ -172,7 +172,7 @@ pub type LCD_START_DLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_CTL_
 #[doc = "Field `lcd_interlace_en` reader - This flag is valid only when LCD_EN == 1"]
 pub type LCD_INTERLACE_EN_R = crate::BitReader<LCD_INTERLACE_EN_A>;
 #[doc = "This flag is valid only when LCD_EN == 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_INTERLACE_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -227,7 +227,7 @@ pub type LCD_FIFO1_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CTL_SP
 #[doc = "Field `lcd_rb_swap` reader - Enable the function to swap red data and blue data in fifo1."]
 pub type LCD_RB_SWAP_R = crate::BitReader<LCD_RB_SWAP_A>;
 #[doc = "Enable the function to swap red data and blue data in fifo1.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_RB_SWAP_A {
     #[doc = "0: Default"]
     D_EFAULT = 0,
@@ -277,7 +277,7 @@ impl<'a, const O: u8> LCD_RB_SWAP_W<'a, O> {
 #[doc = "Field `lcd_if` reader - Set the interface type of LCD controller"]
 pub type LCD_IF_R = crate::FieldReader<u8, LCD_IF_A>;
 #[doc = "Set the interface type of LCD controller\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LCD_IF_A {
     #[doc = "0: HV (Sync + DE)"]
@@ -329,7 +329,7 @@ impl<'a, const O: u8> LCD_IF_W<'a, O> {
 #[doc = "Field `lcd_en` reader - It executes at the beginning of the first blank line of LCD timing."]
 pub type LCD_EN_R = crate::BitReader<LCD_EN_A>;
 #[doc = "It executes at the beginning of the first blank line of LCD timing.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

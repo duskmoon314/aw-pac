@@ -34,7 +34,24 @@ impl From<crate::W<AC_DAC_DRC_MNGHS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_drc_mnghs` reader - The min gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)"]
+pub type DAC_DRC_MNGHS_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `dac_drc_mnghs` writer - The min gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)"]
+pub type DAC_DRC_MNGHS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_DAC_DRC_MNGHS_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The min gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)"]
+    #[inline(always)]
+    pub fn dac_drc_mnghs(&self) -> DAC_DRC_MNGHS_R {
+        DAC_DRC_MNGHS_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The min gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)"]
+    #[inline(always)]
+    pub fn dac_drc_mnghs(&mut self) -> DAC_DRC_MNGHS_W<0> {
+        DAC_DRC_MNGHS_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_DAC_DRC_MNGHS_SPEC {
 impl crate::Writable for AC_DAC_DRC_MNGHS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_dac_drc_mnghs to value 0"]
+#[doc = "`reset()` method sets ac_dac_drc_mnghs to value 0xf95b"]
 impl crate::Resettable for AC_DAC_DRC_MNGHS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0xf95b
     }
 }

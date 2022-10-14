@@ -37,7 +37,7 @@ impl From<crate::W<LCD_3D_FIFO_SPEC>> for W {
 #[doc = "Field `setting` reader - Set the work mode of 3D FIFO"]
 pub type SETTING_R = crate::FieldReader<u8, SETTING_A>;
 #[doc = "Set the work mode of 3D FIFO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SETTING_A {
     #[doc = "0: Bypass"]
@@ -108,7 +108,7 @@ pub type HALF_LINE_SIZE_W<'a, const O: u8> =
 #[doc = "Field `bist_en` reader - Enable the 3D fifo bist test function"]
 pub type BIST_EN_R = crate::BitReader<BIST_EN_A>;
 #[doc = "Enable the 3D fifo bist test function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

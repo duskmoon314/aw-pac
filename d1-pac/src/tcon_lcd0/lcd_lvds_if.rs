@@ -37,7 +37,7 @@ impl From<crate::W<LCD_LVDS_IF_SPEC>> for W {
 #[doc = "Field `lcd_lvds_data_pol` reader - Set the data polarity of LVDS"]
 pub type LCD_LVDS_DATA_POL_R = crate::FieldReader<u8, LCD_LVDS_DATA_POL_A>;
 #[doc = "Set the data polarity of LVDS\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LCD_LVDS_DATA_POL_A {
     #[doc = "0: Reverse"]
@@ -90,7 +90,7 @@ impl<'a, const O: u8> LCD_LVDS_DATA_POL_W<'a, O> {
 #[doc = "Field `lcd_lvds_clk_pol` reader - Set the clock polarity of LVDS"]
 pub type LCD_LVDS_CLK_POL_R = crate::BitReader<LCD_LVDS_CLK_POL_A>;
 #[doc = "Set the clock polarity of LVDS\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_CLK_POL_A {
     #[doc = "0: Reverse"]
     R_EVERSE = 0,
@@ -141,7 +141,7 @@ impl<'a, const O: u8> LCD_LVDS_CLK_POL_W<'a, O> {
 #[doc = "Field `lcd_lvds_clk_sel` reader - Select the clock source of LVDS"]
 pub type LCD_LVDS_CLK_SEL_R = crate::BitReader<LCD_LVDS_CLK_SEL_A>;
 #[doc = "Select the clock source of LVDS\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_CLK_SEL_A {
     #[doc = "1: LCD CLK"]
     LCD = 1,
@@ -180,7 +180,7 @@ impl<'a, const O: u8> LCD_LVDS_CLK_SEL_W<'a, O> {
 #[doc = "Field `lcd_lvds_correct_mode` reader - Set the LVDS correct mode"]
 pub type LCD_LVDS_CORRECT_MODE_R = crate::BitReader<LCD_LVDS_CORRECT_MODE_A>;
 #[doc = "Set the LVDS correct mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_CORRECT_MODE_A {
     #[doc = "0: Mode0"]
     M_ODE0 = 0,
@@ -231,7 +231,7 @@ impl<'a, const O: u8> LCD_LVDS_CORRECT_MODE_W<'a, O> {
 #[doc = "Field `lcd_lvds_debug_mode` reader - Set the output signal in debug mode"]
 pub type LCD_LVDS_DEBUG_MODE_R = crate::BitReader<LCD_LVDS_DEBUG_MODE_A>;
 #[doc = "Set the output signal in debug mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_DEBUG_MODE_A {
     #[doc = "0: Mode0--Random data"]
     M_ODE0 = 0,
@@ -282,7 +282,7 @@ impl<'a, const O: u8> LCD_LVDS_DEBUG_MODE_W<'a, O> {
 #[doc = "Field `lcd_lvds_debug_en` reader - Enable LVDS debug function"]
 pub type LCD_LVDS_DEBUG_EN_R = crate::BitReader<LCD_LVDS_DEBUG_EN_A>;
 #[doc = "Enable LVDS debug function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_DEBUG_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -333,7 +333,7 @@ impl<'a, const O: u8> LCD_LVDS_DEBUG_EN_W<'a, O> {
 #[doc = "Field `lcd_lvds_bitwidth` reader - Set the bit width of data"]
 pub type LCD_LVDS_BITWIDTH_R = crate::BitReader<LCD_LVDS_BITWIDTH_A>;
 #[doc = "Set the bit width of data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_BITWIDTH_A {
     #[doc = "0: 24-bit"]
     _24_BIT = 0,
@@ -384,7 +384,7 @@ impl<'a, const O: u8> LCD_LVDS_BITWIDTH_W<'a, O> {
 #[doc = "Field `lcd_lvds_mode` reader - Set the LVDS data mode"]
 pub type LCD_LVDS_MODE_R = crate::BitReader<LCD_LVDS_MODE_A>;
 #[doc = "Set the LVDS data mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_MODE_A {
     #[doc = "0: NS mode"]
     NS_MODE = 0,
@@ -435,7 +435,7 @@ impl<'a, const O: u8> LCD_LVDS_MODE_W<'a, O> {
 #[doc = "Field `lcd_lvds_dir` reader - Set the LVDS direction"]
 pub type LCD_LVDS_DIR_R = crate::BitReader<LCD_LVDS_DIR_A>;
 #[doc = "Set the LVDS direction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_DIR_A {
     #[doc = "0: Normal"]
     N_ORMAL = 0,
@@ -486,7 +486,7 @@ impl<'a, const O: u8> LCD_LVDS_DIR_W<'a, O> {
 #[doc = "Field `lcd_lvds_even_odd_dir` reader - Set the order of even field and odd field"]
 pub type LCD_LVDS_EVEN_ODD_DIR_R = crate::BitReader<LCD_LVDS_EVEN_ODD_DIR_A>;
 #[doc = "Set the order of even field and odd field\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_EVEN_ODD_DIR_A {
     #[doc = "0: normal"]
     NORMAL = 0,
@@ -537,7 +537,7 @@ impl<'a, const O: u8> LCD_LVDS_EVEN_ODD_DIR_W<'a, O> {
 #[doc = "Field `lcd_lvds_link` reader - Select work in single link mode or dual link mode"]
 pub type LCD_LVDS_LINK_R = crate::BitReader<LCD_LVDS_LINK_A>;
 #[doc = "Select work in single link mode or dual link mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_LINK_A {
     #[doc = "0: Single link"]
     S_INGLE = 0,
@@ -588,7 +588,7 @@ impl<'a, const O: u8> LCD_LVDS_LINK_W<'a, O> {
 #[doc = "Field `lcd_lvds_en` reader - Enable LVDS interface"]
 pub type LCD_LVDS_EN_R = crate::BitReader<LCD_LVDS_EN_A>;
 #[doc = "Enable LVDS interface\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

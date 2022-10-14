@@ -39,7 +39,7 @@ Interrupt Pending"]
 pub type RECEPTION_MQ_IRQ_PEND_R = crate::BitReader<RECEPTION_MQ_IRQ_PEND_A>;
 #[doc = "Reception Channel\\[i\\]
 Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RECEPTION_MQ_IRQ_PEND_A {
     #[doc = "0: No effect"]
     NO_EFFECT = 0,

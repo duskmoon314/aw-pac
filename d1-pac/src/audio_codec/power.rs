@@ -41,7 +41,7 @@ pub type BG_TRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POWER_SPEC, u8
 #[doc = "Field `hpldo_output_voltage` reader - HPLDO Output Voltage Control"]
 pub type HPLDO_OUTPUT_VOLTAGE_R = crate::FieldReader<u8, HPLDO_OUTPUT_VOLTAGE_A>;
 #[doc = "HPLDO Output Voltage Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HPLDO_OUTPUT_VOLTAGE_A {
     #[doc = "0: `0`"]
@@ -172,7 +172,7 @@ impl<'a, const O: u8> HPLDO_OUTPUT_VOLTAGE_W<'a, O> {
 #[doc = "Field `aldo_output_voltage` reader - ALDO Output Voltage Control"]
 pub type ALDO_OUTPUT_VOLTAGE_R = crate::FieldReader<u8, ALDO_OUTPUT_VOLTAGE_A>;
 #[doc = "ALDO Output Voltage Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ALDO_OUTPUT_VOLTAGE_A {
     #[doc = "0: `0`"]
@@ -302,61 +302,61 @@ impl<'a, const O: u8> ALDO_OUTPUT_VOLTAGE_W<'a, O> {
 }
 #[doc = "Field `avccpor` reader - AVCCPOR Monitor"]
 pub type AVCCPOR_R = crate::BitReader<bool>;
-#[doc = "Field `var1speedup_down_further_ctrl` reader - VRA1 Speedup Down Further Control In Adda Analog"]
-pub type VAR1SPEEDUP_DOWN_FURTHER_CTRL_R = crate::BitReader<VAR1SPEEDUP_DOWN_FURTHER_CTRL_A>;
+#[doc = "Field `var1speedup_further_ctrl` reader - VRA1 Speedup Down Further Control In Adda Analog"]
+pub type VAR1SPEEDUP_FURTHER_CTRL_R = crate::BitReader<VAR1SPEEDUP_FURTHER_CTRL_A>;
 #[doc = "VRA1 Speedup Down Further Control In Adda Analog\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum VAR1SPEEDUP_DOWN_FURTHER_CTRL_A {
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum VAR1SPEEDUP_FURTHER_CTRL_A {
     #[doc = "0: `0`"]
     DIGITAL = 0,
     #[doc = "1: `1`"]
     MANUAL = 1,
 }
-impl From<VAR1SPEEDUP_DOWN_FURTHER_CTRL_A> for bool {
+impl From<VAR1SPEEDUP_FURTHER_CTRL_A> for bool {
     #[inline(always)]
-    fn from(variant: VAR1SPEEDUP_DOWN_FURTHER_CTRL_A) -> Self {
+    fn from(variant: VAR1SPEEDUP_FURTHER_CTRL_A) -> Self {
         variant as u8 != 0
     }
 }
-impl VAR1SPEEDUP_DOWN_FURTHER_CTRL_R {
+impl VAR1SPEEDUP_FURTHER_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VAR1SPEEDUP_DOWN_FURTHER_CTRL_A {
+    pub fn variant(&self) -> VAR1SPEEDUP_FURTHER_CTRL_A {
         match self.bits {
-            false => VAR1SPEEDUP_DOWN_FURTHER_CTRL_A::DIGITAL,
-            true => VAR1SPEEDUP_DOWN_FURTHER_CTRL_A::MANUAL,
+            false => VAR1SPEEDUP_FURTHER_CTRL_A::DIGITAL,
+            true => VAR1SPEEDUP_FURTHER_CTRL_A::MANUAL,
         }
     }
     #[doc = "Checks if the value of the field is `DIGITAL`"]
     #[inline(always)]
     pub fn is_digital(&self) -> bool {
-        *self == VAR1SPEEDUP_DOWN_FURTHER_CTRL_A::DIGITAL
+        *self == VAR1SPEEDUP_FURTHER_CTRL_A::DIGITAL
     }
     #[doc = "Checks if the value of the field is `MANUAL`"]
     #[inline(always)]
     pub fn is_manual(&self) -> bool {
-        *self == VAR1SPEEDUP_DOWN_FURTHER_CTRL_A::MANUAL
+        *self == VAR1SPEEDUP_FURTHER_CTRL_A::MANUAL
     }
 }
-#[doc = "Field `var1speedup_down_further_ctrl` writer - VRA1 Speedup Down Further Control In Adda Analog"]
-pub type VAR1SPEEDUP_DOWN_FURTHER_CTRL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, POWER_SPEC, VAR1SPEEDUP_DOWN_FURTHER_CTRL_A, O>;
-impl<'a, const O: u8> VAR1SPEEDUP_DOWN_FURTHER_CTRL_W<'a, O> {
+#[doc = "Field `var1speedup_further_ctrl` writer - VRA1 Speedup Down Further Control In Adda Analog"]
+pub type VAR1SPEEDUP_FURTHER_CTRL_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, POWER_SPEC, VAR1SPEEDUP_FURTHER_CTRL_A, O>;
+impl<'a, const O: u8> VAR1SPEEDUP_FURTHER_CTRL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn digital(self) -> &'a mut W {
-        self.variant(VAR1SPEEDUP_DOWN_FURTHER_CTRL_A::DIGITAL)
+        self.variant(VAR1SPEEDUP_FURTHER_CTRL_A::DIGITAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
     pub fn manual(self) -> &'a mut W {
-        self.variant(VAR1SPEEDUP_DOWN_FURTHER_CTRL_A::MANUAL)
+        self.variant(VAR1SPEEDUP_FURTHER_CTRL_A::MANUAL)
     }
 }
 #[doc = "Field `hpldo_en` reader - HPLDO Enable"]
 pub type HPLDO_EN_R = crate::BitReader<HPLDO_EN_A>;
 #[doc = "HPLDO Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HPLDO_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -406,7 +406,7 @@ impl<'a, const O: u8> HPLDO_EN_W<'a, O> {
 #[doc = "Field `aldo_en` reader - ALDO Enable"]
 pub type ALDO_EN_R = crate::BitReader<ALDO_EN_A>;
 #[doc = "ALDO Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALDO_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -476,8 +476,8 @@ impl R {
     }
     #[doc = "Bit 29 - VRA1 Speedup Down Further Control In Adda Analog"]
     #[inline(always)]
-    pub fn var1speedup_down_further_ctrl(&self) -> VAR1SPEEDUP_DOWN_FURTHER_CTRL_R {
-        VAR1SPEEDUP_DOWN_FURTHER_CTRL_R::new(((self.bits >> 29) & 1) != 0)
+    pub fn var1speedup_further_ctrl(&self) -> VAR1SPEEDUP_FURTHER_CTRL_R {
+        VAR1SPEEDUP_FURTHER_CTRL_R::new(((self.bits >> 29) & 1) != 0)
     }
     #[doc = "Bit 30 - HPLDO Enable"]
     #[inline(always)]
@@ -508,8 +508,8 @@ impl W {
     }
     #[doc = "Bit 29 - VRA1 Speedup Down Further Control In Adda Analog"]
     #[inline(always)]
-    pub fn var1speedup_down_further_ctrl(&mut self) -> VAR1SPEEDUP_DOWN_FURTHER_CTRL_W<29> {
-        VAR1SPEEDUP_DOWN_FURTHER_CTRL_W::new(self)
+    pub fn var1speedup_further_ctrl(&mut self) -> VAR1SPEEDUP_FURTHER_CTRL_W<29> {
+        VAR1SPEEDUP_FURTHER_CTRL_W::new(self)
     }
     #[doc = "Bit 30 - HPLDO Enable"]
     #[inline(always)]

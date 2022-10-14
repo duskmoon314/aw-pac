@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_TX_CTL1_SPEC>> for W {
 #[doc = "Field `flush_tx_fifo` reader - Flush the data in the TX FIFO"]
 pub type FLUSH_TX_FIFO_R = crate::BitReader<FLUSH_TX_FIFO_A>;
 #[doc = "Flush the data in the TX FIFO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLUSH_TX_FIFO_A {
     #[doc = "0: `0`"]
     ENABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> FLUSH_TX_FIFO_W<'a, O> {
 #[doc = "Field `tx_md` reader - Transmission Mode"]
 pub type TX_MD_R = crate::BitReader<TX_MD_A>;
 #[doc = "Transmission Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_MD_A {
     #[doc = "0: `0`"]
     GREATER_THAN_TH = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> TX_MD_W<'a, O> {
 #[doc = "Field `tx_th` reader - Threshold value of TX DMA FIFO"]
 pub type TX_TH_R = crate::FieldReader<u8, TX_TH_A>;
 #[doc = "Threshold value of TX DMA FIFO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TX_TH_A {
     #[doc = "0: `0`"]
@@ -217,7 +217,7 @@ impl<'a, const O: u8> TX_TH_W<'a, O> {
 #[doc = "Field `tx_dma_en` reader - Transmit DMA Enable"]
 pub type TX_DMA_EN_R = crate::BitReader<TX_DMA_EN_A>;
 #[doc = "Transmit DMA Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_DMA_EN_A {
     #[doc = "0: `0`"]
     STOP = 0,
@@ -268,7 +268,7 @@ impl<'a, const O: u8> TX_DMA_EN_W<'a, O> {
 #[doc = "Field `tx_dma_start` reader - Transmit DMA FSM Start"]
 pub type TX_DMA_START_R = crate::BitReader<TX_DMA_START_A>;
 #[doc = "Transmit DMA FSM Start\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_DMA_START_A {
     #[doc = "0: `0`"]
     NO_VALID = 0,

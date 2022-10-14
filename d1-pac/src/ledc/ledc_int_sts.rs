@@ -37,7 +37,7 @@ impl From<crate::W<LEDC_INT_STS_SPEC>> for W {
 #[doc = "Field `lec_trans_finish_int` reader - "]
 pub type LEC_TRANS_FINISH_INT_R = crate::BitReader<LEC_TRANS_FINISH_INT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LEC_TRANS_FINISH_INT_A {
     #[doc = "0: `0`"]
     NOT_TRANS_COMPLETE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> LEC_TRANS_FINISH_INT_W<'a, O> {
 #[doc = "Field `fifo_cpureq_int` reader - "]
 pub type FIFO_CPUREQ_INT_R = crate::BitReader<FIFO_CPUREQ_INT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_CPUREQ_INT_A {
     #[doc = "0: `0`"]
     NOT_REQUEST = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> FIFO_CPUREQ_INT_W<'a, O> {
 #[doc = "Field `waitdata_timeout_int` reader - "]
 pub type WAITDATA_TIMEOUT_INT_R = crate::BitReader<WAITDATA_TIMEOUT_INT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WAITDATA_TIMEOUT_INT_A {
     #[doc = "0: `0`"]
     NOT_TIMEOUT = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> WAITDATA_TIMEOUT_INT_W<'a, O> {
 #[doc = "Field `fifo_overflow_int` reader - "]
 pub type FIFO_OVERFLOW_INT_R = crate::BitReader<FIFO_OVERFLOW_INT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_OVERFLOW_INT_A {
     #[doc = "0: `0`"]
     NOT_OVERFLOW = 0,

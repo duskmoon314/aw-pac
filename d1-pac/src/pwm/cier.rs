@@ -37,7 +37,7 @@ impl From<crate::W<CIER_SPEC>> for W {
 #[doc = "Field `crie[0-7]` reader - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
 pub type CRIE_R = crate::BitReader<CRIE_A>;
 #[doc = "If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CRIE_A {
     #[doc = "0: Capture channel rise lock interrupt disable"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> CRIE_W<'a, O> {
 #[doc = "Field `cfie[0-7]` reader - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
 pub type CFIE_R = crate::BitReader<CFIE_A>;
 #[doc = "If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CFIE_A {
     #[doc = "0: Capture channel fall lock interrupt disable"]
     DISABLE = 0,

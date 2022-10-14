@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_FUNS_SPEC>> for W {
 #[doc = "Field `host_send_mimc_irqresq` reader - Host Send MMC IRQ Response"]
 pub type HOST_SEND_MIMC_IRQRESQ_R = crate::BitReader<HOST_SEND_MIMC_IRQRESQ_A>;
 #[doc = "Host Send MMC IRQ Response\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HOST_SEND_MIMC_IRQRESQ_A {
     #[doc = "0: `0`"]
     IGNORED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> HOST_SEND_MIMC_IRQRESQ_W<'a, O> {
 #[doc = "Field `read_wait` reader - Read Wait"]
 pub type READ_WAIT_R = crate::BitReader<READ_WAIT_A>;
 #[doc = "Read Wait\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum READ_WAIT_A {
     #[doc = "0: Clear SDIO read wait"]
     CLEAR = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> READ_WAIT_W<'a, O> {
 #[doc = "Field `abt_rdata` reader - Abort Read Data"]
 pub type ABT_RDATA_R = crate::BitReader<ABT_RDATA_A>;
 #[doc = "Abort Read Data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABT_RDATA_A {
     #[doc = "0: `0`"]
     IGNORED = 0,

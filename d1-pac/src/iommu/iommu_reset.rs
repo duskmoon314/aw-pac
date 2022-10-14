@@ -43,7 +43,7 @@ pub type M_RST_R = crate::BitReader<M_RST_A>;
 Reset\n\nMaster\\[i\\]
 address convert lane software reset switch.\n\nWhen Master\\[i\\]
 occurs abnormal, the bit is used to reset PTW Cache individually.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RST_A {
     #[doc = "0: Set reset signal"]
     S_ET = 0,
@@ -96,7 +96,7 @@ impl<'a, const O: u8> M_RST_W<'a, O> {
 #[doc = "Field `mtlb_rst` reader - Macrotlb Reset\n\nMacro TLB address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually."]
 pub type MTLB_RST_R = crate::BitReader<MTLB_RST_A>;
 #[doc = "Macrotlb Reset\n\nMacro TLB address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MTLB_RST_A {
     #[doc = "0: Set reset signal"]
     S_ET = 0,
@@ -146,7 +146,7 @@ impl<'a, const O: u8> MTLB_RST_W<'a, O> {
 #[doc = "Field `pc_rst` reader - PTW Cache Reset\n\nPTW Cache address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually."]
 pub type PC_RST_R = crate::BitReader<PC_RST_A>;
 #[doc = "PTW Cache Reset\n\nPTW Cache address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PC_RST_A {
     #[doc = "0: Set reset signal"]
     S_ET = 0,
@@ -196,7 +196,7 @@ impl<'a, const O: u8> PC_RST_W<'a, O> {
 #[doc = "Field `iommu_reset` reader - IOMMU Software Reset Switch、n\nBefore IOMMU software reset operation, ensure IOMMU never be opened; or all bus operations are completed; or DRAM and the peripherals have opened the corresponding switch, for shielding the effects of IOMMU reset."]
 pub type IOMMU_RESET_R = crate::BitReader<IOMMU_RESET_A>;
 #[doc = "IOMMU Software Reset Switch、n\nBefore IOMMU software reset operation, ensure IOMMU never be opened; or all bus operations are completed; or DRAM and the peripherals have opened the corresponding switch, for shielding the effects of IOMMU reset.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IOMMU_RESET_A {
     #[doc = "0: Set reset signal"]
     S_ET = 0,

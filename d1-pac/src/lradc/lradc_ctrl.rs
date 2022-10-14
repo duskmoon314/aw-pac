@@ -37,7 +37,7 @@ impl From<crate::W<LRADC_CTRL_SPEC>> for W {
 #[doc = "Field `lradc_en` reader - LRADC Enable"]
 pub type LRADC_EN_R = crate::BitReader<LRADC_EN_A>;
 #[doc = "LRADC Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LRADC_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> LRADC_EN_W<'a, O> {
 #[doc = "Field `lradc_sample_rate` reader - LRADC Sample Rate"]
 pub type LRADC_SAMPLE_RATE_R = crate::FieldReader<u8, LRADC_SAMPLE_RATE_A>;
 #[doc = "LRADC Sample Rate\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LRADC_SAMPLE_RATE_A {
     #[doc = "0: 2kHz"]
@@ -166,7 +166,7 @@ impl<'a, const O: u8> LRADC_SAMPLE_RATE_W<'a, O> {
 #[doc = "Field `levelb_vol` reader - Level B Corresponding Data Value Setting (the real voltage value)"]
 pub type LEVELB_VOL_R = crate::FieldReader<u8, LEVELB_VOL_A>;
 #[doc = "Level B Corresponding Data Value Setting (the real voltage value)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LEVELB_VOL_A {
     #[doc = "1: 1.221 V"]
@@ -232,7 +232,7 @@ impl<'a, const O: u8> LEVELB_VOL_W<'a, O> {
 #[doc = "Field `lradc_channel_en` reader - LRADC Channel Enable"]
 pub type LRADC_CHANNEL_EN_R = crate::BitReader<LRADC_CHANNEL_EN_A>;
 #[doc = "LRADC Channel Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LRADC_CHANNEL_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -283,7 +283,7 @@ impl<'a, const O: u8> LRADC_CHANNEL_EN_W<'a, O> {
 #[doc = "Field `lradc_hold_key_en` reader - LRADC Hold Key Enable"]
 pub type LRADC_HOLD_KEY_EN_R = crate::BitReader<LRADC_HOLD_KEY_EN_A>;
 #[doc = "LRADC Hold Key Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LRADC_HOLD_KEY_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -339,7 +339,7 @@ pub type LEVELA_B_CNT_W<'a, const O: u8> =
 #[doc = "Field `key_mode_select` reader - Key Mode Select"]
 pub type KEY_MODE_SELECT_R = crate::FieldReader<u8, KEY_MODE_SELECT_A>;
 #[doc = "Key Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum KEY_MODE_SELECT_A {
     #[doc = "0: `0`"]

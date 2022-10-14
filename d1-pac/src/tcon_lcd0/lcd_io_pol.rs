@@ -44,7 +44,7 @@ pub type DATA_INV_W<'a, const O: u8> =
 #[doc = "Field `io_inv[0-3]` reader - Enable invert function of IO\\[i\\]"]
 pub type IO_INV_R = crate::BitReader<IO_INV_A>;
 #[doc = "Enable invert function of IO\\[i\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_INV_A {
     #[doc = "0: Not invert"]
     N_OT_INVERT = 0,
@@ -94,7 +94,7 @@ impl<'a, const O: u8> IO_INV_W<'a, O> {
 #[doc = "Field `dclk_sel` reader - Set the phase offset of clock and data in hv mode."]
 pub type DCLK_SEL_R = crate::FieldReader<u8, DCLK_SEL_A>;
 #[doc = "Set the phase offset of clock and data in hv mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DCLK_SEL_A {
     #[doc = "0: Used DCLK0 (normal phase offset)"]
@@ -186,7 +186,7 @@ impl<'a, const O: u8> DCLK_SEL_W<'a, O> {
 #[doc = "Field `io_output_sel` reader - When it is set as '1', the d\\[23:0\\], io0, io1, io3 are sync to dclk."]
 pub type IO_OUTPUT_SEL_R = crate::BitReader<IO_OUTPUT_SEL_A>;
 #[doc = "When it is set as '1', the d\\[23:0\\], io0, io1, io3 are sync to dclk.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_OUTPUT_SEL_A {
     #[doc = "0: Normal output"]
     N_ORMAL = 0,

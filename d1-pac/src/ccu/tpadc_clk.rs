@@ -37,7 +37,7 @@ impl From<crate::W<TPADC_CLK_SPEC>> for W {
 #[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLK_SRC_SEL_A {
     #[doc = "0: `0`"]
@@ -90,7 +90,7 @@ impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
 #[doc = "Field `clk_gating` reader - Gating Clock"]
 pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_GATING_A {
     #[doc = "0: `0`"]
     OFF = 0,

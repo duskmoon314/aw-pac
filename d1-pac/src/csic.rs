@@ -10,29 +10,26 @@ pub struct RegisterBlock {
     #[doc = "0x1000..0x151c - CSIC_PARSER0"]
     pub csic_parser0: CSIC_PARSER0,
     _reserved3: [u8; 0x7ae4],
-    #[doc = "0x9000..0x91f8 - CSIC_DMA"]
-    pub csic_dma0: CSIC_DMA,
-    _reserved4: [u8; 0x08],
-    #[doc = "0x9200..0x93f8 - CSIC_DMA"]
-    pub csic_dma1: CSIC_DMA,
+    #[doc = "0x9000 - CSIC_DMA"]
+    pub csic_dma: crate::ArrayProxy<CSIC_DMA, 2, 0x0200>,
 }
 #[doc = "CSIC_CCU"]
-pub use csic_ccu::CSIC_CCU;
+pub use self::csic_ccu::CSIC_CCU;
 #[doc = r"Cluster"]
 #[doc = "CSIC_CCU"]
 pub mod csic_ccu;
 #[doc = "CSIC_TOP"]
-pub use csic_top::CSIC_TOP;
+pub use self::csic_top::CSIC_TOP;
 #[doc = r"Cluster"]
 #[doc = "CSIC_TOP"]
 pub mod csic_top;
 #[doc = "CSIC_PARSER0"]
-pub use csic_parser0::CSIC_PARSER0;
+pub use self::csic_parser0::CSIC_PARSER0;
 #[doc = r"Cluster"]
 #[doc = "CSIC_PARSER0"]
 pub mod csic_parser0;
 #[doc = "CSIC_DMA"]
-pub use csic_dma::CSIC_DMA;
+pub use self::csic_dma::CSIC_DMA;
 #[doc = r"Cluster"]
 #[doc = "CSIC_DMA"]
 pub mod csic_dma;

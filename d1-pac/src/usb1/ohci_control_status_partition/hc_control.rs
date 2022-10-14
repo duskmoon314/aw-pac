@@ -37,7 +37,7 @@ impl From<crate::W<HC_CONTROL_SPEC>> for W {
 #[doc = "Field `control_bulk_service_ratio` reader - This specifies the service ratio between Control and Bulk EDs. Before processing any of the nonperiodic lists, HC must compare the ratio specified with its internal count on how many nonempty Control EDs have been processed, in determining whether to continue serving another Control ED or switching to Bulk EDs. The internal count will be retained when crossing the frame boundary. In case of reset, HCD is responsible for restoring this value."]
 pub type CONTROL_BULK_SERVICE_RATIO_R = crate::FieldReader<u8, CONTROL_BULK_SERVICE_RATIO_A>;
 #[doc = "This specifies the service ratio between Control and Bulk EDs. Before processing any of the nonperiodic lists, HC must compare the ratio specified with its internal count on how many nonempty Control EDs have been processed, in determining whether to continue serving another Control ED or switching to Bulk EDs. The internal count will be retained when crossing the frame boundary. In case of reset, HCD is responsible for restoring this value.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CONTROL_BULK_SERVICE_RATIO_A {
     #[doc = "0: 1:1"]
@@ -136,7 +136,7 @@ pub type BULK_LIST_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HC_CONT
 pub type HOST_CONTROLLER_FUNCTIONAL_STATE_FOR_USB_R =
     crate::FieldReader<u8, HOST_CONTROLLER_FUNCTIONAL_STATE_FOR_USB_A>;
 #[doc = "A transition to USBOperational from another state causes SOF generation to begin 1 ms later. HCD may determine whether HC has begun sending SOFs by reading the StartoFrame field of HcInterruptStatus.\n\nThis field may be changed by HC only when in the USBSUSPEND state. HC may move from the USBSUSPEND state to the USBRESUME state after detecting the resume signaling from a downstream port.\n\nHC enters USBSUSPEND after a software reset, whereas it enters USBRESET after a hardware reset. The latter also resets the Root Hub and asserts subsequent reset signaling to downstream ports.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HOST_CONTROLLER_FUNCTIONAL_STATE_FOR_USB_A {
     #[doc = "0: USB Reset"]

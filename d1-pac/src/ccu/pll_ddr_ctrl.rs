@@ -45,7 +45,7 @@ pub type PLL_INPUT_DIV2_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_DDR_C
 #[doc = "Field `pll_lock_mdsel` reader - PLL Lock Level"]
 pub type PLL_LOCK_MDSEL_R = crate::BitReader<PLL_LOCK_MDSEL_A>;
 #[doc = "PLL Lock Level\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PLL_LOCK_MDSEL_A {
     #[doc = "0: `0`"]
     CC_24_26 = 0,
@@ -96,7 +96,7 @@ impl<'a, const O: u8> PLL_LOCK_MDSEL_W<'a, O> {
 #[doc = "Field `pll_unlock_mdsel` reader - PLL Unlock Level"]
 pub type PLL_UNLOCK_MDSEL_R = crate::FieldReader<u8, PLL_UNLOCK_MDSEL_A>;
 #[doc = "PLL Unlock Level\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PLL_UNLOCK_MDSEL_A {
     #[doc = "0: `0`"]
@@ -166,7 +166,7 @@ pub type PLL_N_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_DDR_CTRL_SPE
 #[doc = "Field `pll_sdm_en` reader - PLL SDM Enable"]
 pub type PLL_SDM_EN_R = crate::BitReader<PLL_SDM_EN_A>;
 #[doc = "PLL SDM Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PLL_SDM_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -217,7 +217,7 @@ impl<'a, const O: u8> PLL_SDM_EN_W<'a, O> {
 #[doc = "Field `pll_output_gate` reader - PLL Output Gating Enable"]
 pub type PLL_OUTPUT_GATE_R = crate::BitReader<PLL_OUTPUT_GATE_A>;
 #[doc = "PLL Output Gating Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PLL_OUTPUT_GATE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -268,7 +268,7 @@ impl<'a, const O: u8> PLL_OUTPUT_GATE_W<'a, O> {
 #[doc = "Field `lock` reader - PLL Lock Status"]
 pub type LOCK_R = crate::BitReader<LOCK_A>;
 #[doc = "PLL Lock Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_A {
     #[doc = "0: `0`"]
     UNLOCKED = 0,
@@ -304,7 +304,7 @@ impl LOCK_R {
 #[doc = "Field `lock_enable` reader - Lock Enable"]
 pub type LOCK_ENABLE_R = crate::BitReader<LOCK_ENABLE_A>;
 #[doc = "Lock Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_ENABLE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -355,7 +355,7 @@ impl<'a, const O: u8> LOCK_ENABLE_W<'a, O> {
 #[doc = "Field `pll_ldo_en` reader - LDO Enable"]
 pub type PLL_LDO_EN_R = crate::BitReader<PLL_LDO_EN_A>;
 #[doc = "LDO Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PLL_LDO_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -406,7 +406,7 @@ impl<'a, const O: u8> PLL_LDO_EN_W<'a, O> {
 #[doc = "Field `pll_en` reader - PLL Enable"]
 pub type PLL_EN_R = crate::BitReader<PLL_EN_A>;
 #[doc = "PLL Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PLL_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

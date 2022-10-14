@@ -47,7 +47,7 @@ pub type RE_SYNC_LINE_NUM_W<'a, const O: u8> =
 #[doc = "Field `re_sync_dis` reader - "]
 pub type RE_SYNC_DIS_R = crate::BitReader<RE_SYNC_DIS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RE_SYNC_DIS_A {
     #[doc = "0: Re-Sync Enable"]
     E_NABLE = 0,

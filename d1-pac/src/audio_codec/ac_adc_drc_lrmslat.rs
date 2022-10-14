@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_LRMSLAT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_lrmslat` reader - The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)"]
+pub type ADC_DRC_LRMSLAT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_lrmslat` writer - The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)"]
+pub type ADC_DRC_LRMSLAT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_LRMSLAT_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)"]
+    #[inline(always)]
+    pub fn adc_drc_lrmslat(&self) -> ADC_DRC_LRMSLAT_R {
+        ADC_DRC_LRMSLAT_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)"]
+    #[inline(always)]
+    pub fn adc_drc_lrmslat(&mut self) -> ADC_DRC_LRMSLAT_W<0> {
+        ADC_DRC_LRMSLAT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_LRMSLAT_SPEC {
 impl crate::Writable for AC_ADC_DRC_LRMSLAT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_lrmslat to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_lrmslat to value 0x2baf"]
 impl crate::Resettable for AC_ADC_DRC_LRMSLAT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x2baf
     }
 }

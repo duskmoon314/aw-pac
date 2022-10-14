@@ -37,7 +37,7 @@ impl From<crate::W<HS_TMR_IRQ_EN_SPEC>> for W {
 #[doc = "Field `hs_tmr_int_en[0-1]` reader - HSTimer Interrupt Enable"]
 pub type HS_TMR_INT_EN_R = crate::BitReader<HS_TMR_INT_EN_A>;
 #[doc = "HSTimer Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HS_TMR_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,

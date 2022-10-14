@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_BASIC_CTL0_SPEC>> for W {
 #[doc = "Field `duplex` reader - EMAC Transfer Mode"]
 pub type DUPLEX_R = crate::BitReader<DUPLEX_A>;
 #[doc = "EMAC Transfer Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DUPLEX_A {
     #[doc = "0: `0`"]
     HALF_DUPLEX = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> DUPLEX_W<'a, O> {
 #[doc = "Field `loopback` reader - EMAC Loopback Mode For Test"]
 pub type LOOPBACK_R = crate::BitReader<LOOPBACK_A>;
 #[doc = "EMAC Loopback Mode For Test\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOOPBACK_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> LOOPBACK_W<'a, O> {
 #[doc = "Field `speed` reader - EMAC Working Speed"]
 pub type SPEED_R = crate::FieldReader<u8, SPEED_A>;
 #[doc = "EMAC Working Speed\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SPEED_A {
     #[doc = "0: `0`"]

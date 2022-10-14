@@ -37,7 +37,7 @@ impl From<crate::W<UART_BGR_SPEC>> for W {
 #[doc = "Field `uart_gating[0-5]` reader - Gating Clock"]
 pub type UART_GATING_R = crate::BitReader<UART_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UART_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> UART_GATING_W<'a, O> {
 #[doc = "Field `uart_rst[0-5]` reader - Reset"]
 pub type UART_RST_R = crate::BitReader<UART_RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UART_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_HKE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_hke` reader - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is <1:5>)"]
+pub type ADC_DRC_HKE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_hke` writer - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is <1:5>)"]
+pub type ADC_DRC_HKE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_HKE_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is <1:5>)"]
+    #[inline(always)]
+    pub fn adc_drc_hke(&self) -> ADC_DRC_HKE_R {
+        ADC_DRC_HKE_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is <1:5>)"]
+    #[inline(always)]
+    pub fn adc_drc_hke(&mut self) -> ADC_DRC_HKE_W<0> {
+        ADC_DRC_HKE_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_HKE_SPEC {
 impl crate::Writable for AC_ADC_DRC_HKE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_hke to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_hke to value 0x0500"]
 impl crate::Resettable for AC_ADC_DRC_HKE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0500
     }
 }

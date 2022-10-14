@@ -37,7 +37,7 @@ impl From<crate::W<CSIC_TOP_EN_SPEC>> for W {
 #[doc = "Field `csic_top_en` reader - "]
 pub type CSIC_TOP_EN_R = crate::BitReader<CSIC_TOP_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSIC_TOP_EN_A {
     #[doc = "0: Reset and disable the CSIC module"]
     R_ESET_DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> CSIC_TOP_EN_W<'a, O> {
 #[doc = "Field `bist_mode_en` reader - "]
 pub type BIST_MODE_EN_R = crate::BitReader<BIST_MODE_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_MODE_EN_A {
     #[doc = "0: Closed"]
     C_LOSED = 0,

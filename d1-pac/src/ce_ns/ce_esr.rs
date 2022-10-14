@@ -37,7 +37,7 @@ impl From<crate::W<CE_ESR_SPEC>> for W {
 #[doc = "Field `task_channel_error_type[0-3]` reader - Task Channel Error Type"]
 pub type TASK_CHANNEL_ERROR_TYPE_R = crate::FieldReader<u8, TASK_CHANNEL_ERROR_TYPE_A>;
 #[doc = "Task Channel Error Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TASK_CHANNEL_ERROR_TYPE_A {
     #[doc = "1: Algorithm not support"]

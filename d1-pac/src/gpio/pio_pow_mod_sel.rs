@@ -37,7 +37,7 @@ impl From<crate::W<PIO_POW_MOD_SEL_SPEC>> for W {
 #[doc = "Field `p_pwr_mod_sel[C,D,E,F,G]` reader - PX_POWER POWER MODE Select"]
 pub type P_PWR_MOD_SEL_R = crate::BitReader<P_PWR_MOD_SEL_A>;
 #[doc = "PX_POWER POWER MODE Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum P_PWR_MOD_SEL_A {
     #[doc = "0: 3.3 V"]
     V33 = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> P_PWR_MOD_SEL_W<'a, O> {
 #[doc = "Field `vcc_io_pwr_mod_sel` reader - VCC_IO POWER MODE Select"]
 pub type VCC_IO_PWR_MOD_SEL_R = crate::BitReader<VCC_IO_PWR_MOD_SEL_A>;
 #[doc = "VCC_IO POWER MODE Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCC_IO_PWR_MOD_SEL_A {
     #[doc = "0: 3.3 V"]
     V33 = 0,

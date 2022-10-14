@@ -37,7 +37,7 @@ impl From<crate::W<THS_ALARM_INTC_SPEC>> for W {
 #[doc = "Field `alarm_int_en` reader - Enable the alarm interrupt for the sensor"]
 pub type ALARM_INT_EN_R = crate::BitReader<ALARM_INT_EN_A>;
 #[doc = "Enable the alarm interrupt for the sensor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALARM_INT_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

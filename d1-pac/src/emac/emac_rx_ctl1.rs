@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_RX_CTL1_SPEC>> for W {
 #[doc = "Field `flush_rx_frm` reader - Flush Receive Frames"]
 pub type FLUSH_RX_FRM_R = crate::BitReader<FLUSH_RX_FRM_A>;
 #[doc = "Flush Receive Frames\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLUSH_RX_FRM_A {
     #[doc = "0: `0`"]
     ENABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> FLUSH_RX_FRM_W<'a, O> {
 #[doc = "Field `rx_md` reader - Receive Mode"]
 pub type RX_MD_R = crate::BitReader<RX_MD_A>;
 #[doc = "Receive Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_MD_A {
     #[doc = "0: `0`"]
     GREATER_THAN_TH = 0,
@@ -142,7 +142,7 @@ pub type RX_RUNT_FRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL1
 #[doc = "Field `rx_err_frm` reader - "]
 pub type RX_ERR_FRM_R = crate::BitReader<RX_ERR_FRM_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_ERR_FRM_A {
     #[doc = "0: `0`"]
     DROP = 0,
@@ -193,7 +193,7 @@ impl<'a, const O: u8> RX_ERR_FRM_W<'a, O> {
 #[doc = "Field `rx_th` reader - Threshold for RX DMA FIFO Start"]
 pub type RX_TH_R = crate::FieldReader<u8, RX_TH_A>;
 #[doc = "Threshold for RX DMA FIFO Start\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_TH_A {
     #[doc = "0: `0`"]
@@ -272,7 +272,7 @@ impl<'a, const O: u8> RX_TH_W<'a, O> {
 #[doc = "Field `rx_flow_ctl_th_act` reader - Threshold for Activating Flow Control"]
 pub type RX_FLOW_CTL_TH_ACT_R = crate::FieldReader<u8, RX_FLOW_CTL_TH_ACT_A>;
 #[doc = "Threshold for Activating Flow Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_FLOW_CTL_TH_ACT_A {
     #[doc = "0: `0`"]
@@ -351,7 +351,7 @@ impl<'a, const O: u8> RX_FLOW_CTL_TH_ACT_W<'a, O> {
 #[doc = "Field `rx_flow_ctl_th_deact` reader - Threshold for Deactivating Flow Control"]
 pub type RX_FLOW_CTL_TH_DEACT_R = crate::FieldReader<u8, RX_FLOW_CTL_TH_DEACT_A>;
 #[doc = "Threshold for Deactivating Flow Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RX_FLOW_CTL_TH_DEACT_A {
     #[doc = "0: `0`"]
@@ -430,7 +430,7 @@ impl<'a, const O: u8> RX_FLOW_CTL_TH_DEACT_W<'a, O> {
 #[doc = "Field `rx_fifo_flow_ctl` reader - Receive FIFO Flow Control Enable"]
 pub type RX_FIFO_FLOW_CTL_R = crate::BitReader<RX_FIFO_FLOW_CTL_A>;
 #[doc = "Receive FIFO Flow Control Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_FIFO_FLOW_CTL_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -481,7 +481,7 @@ impl<'a, const O: u8> RX_FIFO_FLOW_CTL_W<'a, O> {
 #[doc = "Field `rx_ema_en` reader - Receive DMA Enable"]
 pub type RX_EMA_EN_R = crate::BitReader<RX_EMA_EN_A>;
 #[doc = "Receive DMA Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_EMA_EN_A {
     #[doc = "0: `0`"]
     STOP = 0,

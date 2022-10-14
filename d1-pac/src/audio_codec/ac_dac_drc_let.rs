@@ -34,7 +34,24 @@ impl From<crate::W<AC_DAC_DRC_LET_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_drc_let` reader - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206. The format is 8.24. (The default value is -70 dB)"]
+pub type DAC_DRC_LET_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `dac_drc_let` writer - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206. The format is 8.24. (The default value is -70 dB)"]
+pub type DAC_DRC_LET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_DAC_DRC_LET_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206. The format is 8.24. (The default value is -70 dB)"]
+    #[inline(always)]
+    pub fn dac_drc_let(&self) -> DAC_DRC_LET_R {
+        DAC_DRC_LET_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206. The format is 8.24. (The default value is -70 dB)"]
+    #[inline(always)]
+    pub fn dac_drc_let(&mut self) -> DAC_DRC_LET_W<0> {
+        DAC_DRC_LET_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_DAC_DRC_LET_SPEC {
 impl crate::Writable for AC_DAC_DRC_LET_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_dac_drc_let to value 0"]
+#[doc = "`reset()` method sets ac_dac_drc_let to value 0x7291"]
 impl crate::Resettable for AC_DAC_DRC_LET_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x7291
     }
 }

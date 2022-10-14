@@ -62,7 +62,7 @@ pub type DBI_CLKO_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_1_S
 #[doc = "Field `dbi_clko_mod` reader - DBI Output Clock Mode"]
 pub type DBI_CLKO_MOD_R = crate::BitReader<DBI_CLKO_MOD_A>;
 #[doc = "DBI Output Clock Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBI_CLKO_MOD_A {
     #[doc = "0: `0`"]
     ALWAYS_ON = 0,
@@ -113,7 +113,7 @@ impl<'a, const O: u8> DBI_CLKO_MOD_W<'a, O> {
 #[doc = "Field `dbi_rxclk_inv` reader - DBI RX Clock Inverse"]
 pub type DBI_RXCLK_INV_R = crate::BitReader<DBI_RXCLK_INV_A>;
 #[doc = "DBI RX Clock Inverse\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBI_RXCLK_INV_A {
     #[doc = "0: `0`"]
     POSITIVE = 0,
@@ -164,7 +164,7 @@ impl<'a, const O: u8> DBI_RXCLK_INV_W<'a, O> {
 #[doc = "Field `rgb666_fmt` reader - 2 Data Lane RGB666 Format"]
 pub type RGB666_FMT_R = crate::FieldReader<u8, RGB666_FMT_A>;
 #[doc = "2 Data Lane RGB666 Format\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RGB666_FMT_A {
     #[doc = "0: `0`"]
@@ -230,7 +230,7 @@ impl<'a, const O: u8> RGB666_FMT_W<'a, O> {
 #[doc = "Field `dbi_en_mode_sel` reader - DBI Enable Mode Select"]
 pub type DBI_EN_MODE_SEL_R = crate::FieldReader<u8, DBI_EN_MODE_SEL_A>;
 #[doc = "DBI Enable Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DBI_EN_MODE_SEL_A {
     #[doc = "0: `0`"]

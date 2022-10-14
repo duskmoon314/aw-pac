@@ -37,7 +37,7 @@ impl From<crate::W<PG_EINT_CFG1_SPEC>> for W {
 #[doc = "Field `eint_cfg[8-15]` reader - External INT Mode"]
 pub type EINT_CFG_R = crate::FieldReader<u8, EINT_CFG_A>;
 #[doc = "External INT Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EINT_CFG_A {
     #[doc = "0: `0`"]

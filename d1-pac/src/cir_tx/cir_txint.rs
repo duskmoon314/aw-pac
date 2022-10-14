@@ -37,7 +37,7 @@ impl From<crate::W<CIR_TXINT_SPEC>> for W {
 #[doc = "Field `tpei_tui_en` reader - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
 pub type TPEI_TUI_EN_R = crate::BitReader<TPEI_TUI_EN_A>;
 #[doc = "Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TPEI_TUI_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> TPEI_TUI_EN_W<'a, O> {
 #[doc = "Field `tai_en` reader - TX FIFO Available Interrupt Enable"]
 pub type TAI_EN_R = crate::BitReader<TAI_EN_A>;
 #[doc = "TX FIFO Available Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TAI_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> TAI_EN_W<'a, O> {
 #[doc = "Field `drq_en` reader - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
 pub type DRQ_EN_R = crate::BitReader<DRQ_EN_A>;
 #[doc = "TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

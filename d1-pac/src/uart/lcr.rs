@@ -37,7 +37,7 @@ impl From<crate::W<LCR_SPEC>> for W {
 #[doc = "Field `dls` reader - Data Length Select"]
 pub type DLS_R = crate::FieldReader<u8, DLS_A>;
 #[doc = "Data Length Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DLS_A {
     #[doc = "0: 5 bits"]
@@ -115,7 +115,7 @@ impl<'a, const O: u8> DLS_W<'a, O> {
 #[doc = "Field `stop` reader - Number of stop bits"]
 pub type STOP_R = crate::BitReader<STOP_A>;
 #[doc = "Number of stop bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STOP_A {
     #[doc = "0: 1 stop bit"]
     ONE = 0,
@@ -165,7 +165,7 @@ impl<'a, const O: u8> STOP_W<'a, O> {
 #[doc = "Field `pen` reader - Parity Enable"]
 pub type PEN_R = crate::BitReader<PEN_A>;
 #[doc = "Parity Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PEN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,
@@ -215,7 +215,7 @@ impl<'a, const O: u8> PEN_W<'a, O> {
 #[doc = "Field `eps` reader - Even Parity Select"]
 pub type EPS_R = crate::FieldReader<u8, EPS_A>;
 #[doc = "Even Parity Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EPS_A {
     #[doc = "0: `0`"]
@@ -297,7 +297,7 @@ pub type BC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, bool, O>;
 #[doc = "Field `dlab` reader - Divisor Latch Access Bit"]
 pub type DLAB_R = crate::BitReader<DLAB_A>;
 #[doc = "Divisor Latch Access Bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DLAB_A {
     #[doc = "0: `0`"]
     RX_BUFFER = 0,

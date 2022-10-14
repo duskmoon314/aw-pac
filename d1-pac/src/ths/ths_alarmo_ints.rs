@@ -37,7 +37,7 @@ impl From<crate::W<THS_ALARMO_INTS_SPEC>> for W {
 #[doc = "Field `alarm_off_sts` reader - Alarm interrupt off pending for sensor\n\nWrite 1 to clear the pending status."]
 pub type ALARM_OFF_STS_R = crate::BitReader<ALARM_OFF_STS_A>;
 #[doc = "Alarm interrupt off pending for sensor\n\nWrite 1 to clear the pending status.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALARM_OFF_STS_A {
     #[doc = "0: No effect"]
     NO_EFFECT = 0,

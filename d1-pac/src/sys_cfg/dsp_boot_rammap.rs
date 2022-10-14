@@ -37,7 +37,7 @@ impl From<crate::W<DSP_BOOT_RAMMAP_SPEC>> for W {
 #[doc = "Field `dsp_boot_sram_remap_enable` reader - "]
 pub type DSP_BOOT_SRAM_REMAP_ENABLE_R = crate::BitReader<DSP_BOOT_SRAM_REMAP_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DSP_BOOT_SRAM_REMAP_ENABLE_A {
     #[doc = "0: `0`"]
     DSP_SYS = 0,

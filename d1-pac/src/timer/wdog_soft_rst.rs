@@ -37,7 +37,7 @@ impl From<crate::W<WDOG_SOFT_RST_SPEC>> for W {
 #[doc = "Field `soft_rst_en` reader - Soft Reset Enable"]
 pub type SOFT_RST_EN_R = crate::BitReader<SOFT_RST_EN_A>;
 #[doc = "Soft Reset Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SOFT_RST_EN_A {
     #[doc = "0: `0`"]
     DEASSERT = 0,

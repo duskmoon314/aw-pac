@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_TX_FLOW_CTL_SPEC>> for W {
 #[doc = "Field `tx_flow_ctl_en` reader - TX Flow Control Enable"]
 pub type TX_FLOW_CTL_EN_R = crate::BitReader<TX_FLOW_CTL_EN_A>;
 #[doc = "TX Flow Control Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_FLOW_CTL_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> TX_FLOW_CTL_EN_W<'a, O> {
 #[doc = "Field `zqp_frm_en` reader - "]
 pub type ZQP_FRM_EN_R = crate::BitReader<ZQP_FRM_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ZQP_FRM_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

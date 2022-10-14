@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_HKN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_hkn` reader - The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is <1:1>)"]
+pub type ADC_DRC_HKN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_hkn` writer - The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is <1:1>)"]
+pub type ADC_DRC_HKN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_HKN_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is <1:1>)"]
+    #[inline(always)]
+    pub fn adc_drc_hkn(&self) -> ADC_DRC_HKN_R {
+        ADC_DRC_HKN_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is <1:1>)"]
+    #[inline(always)]
+    pub fn adc_drc_hkn(&mut self) -> ADC_DRC_HKN_W<0> {
+        ADC_DRC_HKN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_HKN_SPEC {
 impl crate::Writable for AC_ADC_DRC_HKN_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_hkn to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_hkn to value 0x0100"]
 impl crate::Resettable for AC_ADC_DRC_HKN_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0100
     }
 }

@@ -37,7 +37,7 @@ impl From<crate::W<MCR_SPEC>> for W {
 #[doc = "Field `dtr` reader - Data Terminal Ready"]
 pub type DTR_R = crate::BitReader<DTR_A>;
 #[doc = "Data Terminal Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DTR_A {
     #[doc = "0: `0`"]
     DEASSERTED = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> DTR_W<'a, O> {
 #[doc = "Field `rts` reader - Request to Send"]
 pub type RTS_R = crate::BitReader<RTS_A>;
 #[doc = "Request to Send\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTS_A {
     #[doc = "0: `0`"]
     DEASSERTED = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> RTS_W<'a, O> {
 #[doc = "Field `loop` reader - Loop Back Mode"]
 pub type LOOP_R = crate::BitReader<LOOP_A>;
 #[doc = "Loop Back Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOOP_A {
     #[doc = "0: `0`"]
     NORMAL = 0,
@@ -187,7 +187,7 @@ impl<'a, const O: u8> LOOP_W<'a, O> {
 #[doc = "Field `afce` reader - Auto Flow Control Enable"]
 pub type AFCE_R = crate::BitReader<AFCE_A>;
 #[doc = "Auto Flow Control Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AFCE_A {
     #[doc = "0: `0`"]
     DISABLED = 0,
@@ -237,7 +237,7 @@ impl<'a, const O: u8> AFCE_W<'a, O> {
 #[doc = "Field `function` reader - UART Function: Select IrDA or RS485"]
 pub type FUNCTION_R = crate::FieldReader<u8, FUNCTION_A>;
 #[doc = "UART Function: Select IrDA or RS485\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FUNCTION_A {
     #[doc = "0: `0`"]

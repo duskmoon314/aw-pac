@@ -37,7 +37,7 @@ impl From<crate::W<TVE_SLAVE_PARAMETER_SPEC>> for W {
 #[doc = "Field `slave_mode` reader - Slave mode selection\n\nThis bit selects whether the Video Encoder is sync slave, partial slave or sync master. It should be set to B'0'."]
 pub type SLAVE_MODE_R = crate::BitReader<SLAVE_MODE_A>;
 #[doc = "Slave mode selection\n\nThis bit selects whether the Video Encoder is sync slave, partial slave or sync master. It should be set to B'0'.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SLAVE_MODE_A {
     #[doc = "0: The Video Encoder is not a full sync slave (i.e. it is a partial sync slave or a sync master)"]
     NOT_FULL_SYNC_SLAVE = 0,
@@ -76,7 +76,7 @@ impl<'a, const O: u8> SLAVE_MODE_W<'a, O> {
 #[doc = "Field `slave_thresh` reader - Horizontal line adjustment threshold selection\n\nThis bit selects whether the number of lines after which the Video Encoder starts the horizontal line length adjustment is slave mode is 0 or 30."]
 pub type SLAVE_THRESH_R = crate::BitReader<SLAVE_THRESH_A>;
 #[doc = "Horizontal line adjustment threshold selection\n\nThis bit selects whether the number of lines after which the Video Encoder starts the horizontal line length adjustment is slave mode is 0 or 30.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SLAVE_THRESH_A {
     #[doc = "0: Number of lines is 0"]
     _0 = 0,

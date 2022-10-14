@@ -37,7 +37,7 @@ impl From<crate::W<PRS_NCSIC_IF_CFG_SPEC>> for W {
 #[doc = "Field `csi_if` reader - "]
 pub type CSI_IF_R = crate::FieldReader<u8, CSI_IF_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSI_IF_A {
     #[doc = "0: RAW or YUV420/YUYV422 (each cycle one component input)"]
@@ -116,7 +116,7 @@ impl<'a, const O: u8> CSI_IF_W<'a, O> {
 #[doc = "Field `input_seq` reader - Input data sequence, only valid for YUV422 and YUV420 input format"]
 pub type INPUT_SEQ_R = crate::FieldReader<u8, INPUT_SEQ_A>;
 #[doc = "Input data sequence, only valid for YUV422 and YUV420 input format\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT_SEQ_A {
     #[doc = "0: `0`"]
@@ -195,7 +195,7 @@ impl<'a, const O: u8> INPUT_SEQ_W<'a, O> {
 #[doc = "Field `if_data_width` reader - "]
 pub type IF_DATA_WIDTH_R = crate::FieldReader<u8, IF_DATA_WIDTH_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IF_DATA_WIDTH_A {
     #[doc = "0: 8 bit data bus"]
@@ -289,7 +289,7 @@ will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to t
 pub type SEQ_8PLUS2_R = crate::FieldReader<u8, SEQ_8PLUS2_A>;
 #[doc = "When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\]
 will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SEQ_8PLUS2_A {
     #[doc = "0: 6'bx + D\\[9:8\\], D\\[7:0\\]"]
@@ -371,7 +371,7 @@ impl<'a, const O: u8> SEQ_8PLUS2_W<'a, O> {
 #[doc = "Field `ddr_sample_mode_en` reader - "]
 pub type DDR_SAMPLE_MODE_EN_R = crate::BitReader<DDR_SAMPLE_MODE_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DDR_SAMPLE_MODE_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -422,7 +422,7 @@ impl<'a, const O: u8> DDR_SAMPLE_MODE_EN_W<'a, O> {
 #[doc = "Field `field_dt_mode` reader - only valid when CSI_IF is YUB and source type is interlaced"]
 pub type FIELD_DT_MODE_R = crate::FieldReader<u8, FIELD_DT_MODE_A>;
 #[doc = "only valid when CSI_IF is YUB and source type is interlaced\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FIELD_DT_MODE_A {
     #[doc = "0: by both field and vsync"]
@@ -488,7 +488,7 @@ impl<'a, const O: u8> FIELD_DT_MODE_W<'a, O> {
 #[doc = "Field `clk_pol` reader - Data clock type"]
 pub type CLK_POL_R = crate::BitReader<CLK_POL_A>;
 #[doc = "Data clock type\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_POL_A {
     #[doc = "0: active in rising edge"]
     RISING = 0,
@@ -539,7 +539,7 @@ impl<'a, const O: u8> CLK_POL_W<'a, O> {
 #[doc = "Field `href_pol` reader - Href polarity\n\nThis register is not applied to CCIR656 interface"]
 pub type HREF_POL_R = crate::BitReader<HREF_POL_A>;
 #[doc = "Href polarity\n\nThis register is not applied to CCIR656 interface\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HREF_POL_A {
     #[doc = "0: `0`"]
     NEGATIVE = 0,
@@ -590,7 +590,7 @@ impl<'a, const O: u8> HREF_POL_W<'a, O> {
 #[doc = "Field `vref_pol` reader - Vref polarity\n\nThis register is not applied to CCIR656 interface"]
 pub type VREF_POL_R = crate::BitReader<VREF_POL_A>;
 #[doc = "Vref polarity\n\nThis register is not applied to CCIR656 interface\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VREF_POL_A {
     #[doc = "0: `0`"]
     NEGATIVE = 0,
@@ -641,7 +641,7 @@ impl<'a, const O: u8> VREF_POL_W<'a, O> {
 #[doc = "Field `field` reader - Field polarity (For YUV HV timing) / Field sequence (For BT656 timing)"]
 pub type FIELD_R = crate::BitReader<FIELD_A>;
 #[doc = "Field polarity (For YUV HV timing) / Field sequence (For BT656 timing)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIELD_A {
     #[doc = "0: `0`"]
     NEGATIVE_NORMAL_SEQ = 0,
@@ -691,7 +691,7 @@ impl<'a, const O: u8> FIELD_W<'a, O> {
 #[doc = "Field `source_type` reader - Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3"]
 pub type SOURCE_TYPE_R = crate::FieldReader<u8, SOURCE_TYPE_A>;
 #[doc = "Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SOURCE_TYPE_A {
     #[doc = "0: `0`"]
@@ -749,7 +749,7 @@ pub type FIELD_DT_PCLK_SHIFT_W<'a, const O: u8> =
 #[doc = "Field `yuv420_line_order` reader - "]
 pub type YUV420_LINE_ORDER_R = crate::BitReader<YUV420_LINE_ORDER_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum YUV420_LINE_ORDER_A {
     #[doc = "0: YUV420 input in Y_YC_Y_YC line order"]
     Y_YC_Y_YC = 0,

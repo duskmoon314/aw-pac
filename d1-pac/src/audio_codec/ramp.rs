@@ -37,7 +37,7 @@ impl From<crate::W<RAMP_SPEC>> for W {
 #[doc = "Field `rd_en` reader - Ramp Digital Enable"]
 pub type RD_EN_R = crate::BitReader<RD_EN_A>;
 #[doc = "Ramp Digital Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RD_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> RD_EN_W<'a, O> {
 #[doc = "Field `rmc_en` reader - Ramp Manual Control Enable"]
 pub type RMC_EN_R = crate::BitReader<RMC_EN_A>;
 #[doc = "Ramp Manual Control Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RMC_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> RMC_EN_W<'a, O> {
 #[doc = "Field `rmu_en` reader - Ramp Manual Up Enable"]
 pub type RMU_EN_R = crate::BitReader<RMU_EN_A>;
 #[doc = "Ramp Manual Up Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RMU_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -187,7 +187,7 @@ impl<'a, const O: u8> RMU_EN_W<'a, O> {
 #[doc = "Field `rmd_en` reader - Ramp Manual Down Enable"]
 pub type RMD_EN_R = crate::BitReader<RMD_EN_A>;
 #[doc = "Ramp Manual Down Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RMD_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -237,7 +237,7 @@ impl<'a, const O: u8> RMD_EN_W<'a, O> {
 #[doc = "Field `ramp_step` reader - RK Frequency Gear, Control Ramp Rise/Fall Total Time\n\nRamp Rise/Fall Total Time = (Ramp Step/Ramp Clk Freq)*4096"]
 pub type RAMP_STEP_R = crate::FieldReader<u8, RAMP_STEP_A>;
 #[doc = "RK Frequency Gear, Control Ramp Rise/Fall Total Time\n\nRamp Rise/Fall Total Time = (Ramp Step/Ramp Clk Freq)*4096\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RAMP_STEP_A {
     #[doc = "0: `0`"]
@@ -368,7 +368,7 @@ impl<'a, const O: u8> RAMP_STEP_W<'a, O> {
 #[doc = "Field `gap_step` reader - Gap Step"]
 pub type GAP_STEP_R = crate::FieldReader<u8, GAP_STEP_A>;
 #[doc = "Gap Step\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GAP_STEP_A {
     #[doc = "0: `0`"]
@@ -447,7 +447,7 @@ impl<'a, const O: u8> GAP_STEP_W<'a, O> {
 #[doc = "Field `ramp_hold_step` reader - Ramp Hold Step\n\nRamp Hold Time = Ramp Hold Step/Ramp Clk Freq"]
 pub type RAMP_HOLD_STEP_R = crate::FieldReader<u8, RAMP_HOLD_STEP_A>;
 #[doc = "Ramp Hold Step\n\nRamp Hold Time = Ramp Hold Step/Ramp Clk Freq\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RAMP_HOLD_STEP_A {
     #[doc = "0: `0`"]
@@ -578,7 +578,7 @@ impl<'a, const O: u8> RAMP_HOLD_STEP_W<'a, O> {
 #[doc = "Field `hp_pull_out_en` reader - Headphone Pullout Enable"]
 pub type HP_PULL_OUT_EN_R = crate::BitReader<HP_PULL_OUT_EN_A>;
 #[doc = "Headphone Pullout Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HP_PULL_OUT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -633,7 +633,7 @@ pub type RAMP_CLK_DIV_M_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RAMP_SP
 #[doc = "Field `ramp_srst` reader - Ramp Soft Reset"]
 pub type RAMP_SRST_R = crate::BitReader<RAMP_SRST_A>;
 #[doc = "Ramp Soft Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMP_SRST_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -683,7 +683,7 @@ impl<'a, const O: u8> RAMP_SRST_W<'a, O> {
 #[doc = "Field `ramp_fall_int` reader - RK Downward Decrease Finish and Rampen Pull Down Instruction"]
 pub type RAMP_FALL_INT_R = crate::BitReader<RAMP_FALL_INT_A>;
 #[doc = "RK Downward Decrease Finish and Rampen Pull Down Instruction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMP_FALL_INT_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -734,7 +734,7 @@ impl<'a, const O: u8> RAMP_FALL_INT_W<'a, O> {
 #[doc = "Field `ramp_fall_int_en` reader - RAMP Fall Int Enable"]
 pub type RAMP_FALL_INT_EN_R = crate::BitReader<RAMP_FALL_INT_EN_A>;
 #[doc = "RAMP Fall Int Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMP_FALL_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -785,7 +785,7 @@ impl<'a, const O: u8> RAMP_FALL_INT_EN_W<'a, O> {
 #[doc = "Field `ramp_rise_int` reader - RK Increase Upward Finish and Rampen Pull Down Instruction"]
 pub type RAMP_RISE_INT_R = crate::BitReader<RAMP_RISE_INT_A>;
 #[doc = "RK Increase Upward Finish and Rampen Pull Down Instruction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMP_RISE_INT_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -836,7 +836,7 @@ impl<'a, const O: u8> RAMP_RISE_INT_W<'a, O> {
 #[doc = "Field `ramp_rise_int_en` reader - RAMP Rise Interrupt Enable"]
 pub type RAMP_RISE_INT_EN_R = crate::BitReader<RAMP_RISE_INT_EN_A>;
 #[doc = "RAMP Rise Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMP_RISE_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

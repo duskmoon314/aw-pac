@@ -37,7 +37,7 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `ctrl` reader - PLIC Control"]
 pub type CTRL_R = crate::BitReader<CTRL_A>;
 #[doc = "PLIC Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CTRL_A {
     #[doc = "0: Only the machine mode can access to all registers in PLIC. Supervisor mode can only access the interrupt threshold register and the interrupt response/completion register."]
     M = 0,

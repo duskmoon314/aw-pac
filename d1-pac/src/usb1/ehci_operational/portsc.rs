@@ -63,7 +63,7 @@ pub type FORCE_PORT_RESUME_W<'a, const O: u8> = crate::BitWriter<'a, u32, PORTSC
 #[doc = "Field `suspend` reader - Suspend\n\nPort Enabled Bit and Suspend bit of this register define the port states\n\nWhen in suspend state, downstream propagation of data is blocked on this port, except for port reset. The blocking occurs at the end of the current transaction, if a transaction was in progress when this bit was written to 1. In the suspend state, the port is sensitive to resume detection. Not that the bit status does not change until the port is suspend and that there may be a delay in suspending a port if there is a transaction currently in progress on the USB.\n\nA write of zero to this bit is ignored by the host controller. The host controller will unconditionally set this bit to a zero when:\n\n1. Software sets the Force Port Resume bit to a zero(from a one).\n2. Software sets the Port Reset bit to a one(from a zero).\n\nIf host software sets this bit to a one when the port is not enabled(i.e. Port enabled bit is a zero), the results are undefined.\n\nThis field is zero if Port Power is zero.\n\nThe default value in this field is '0'."]
 pub type SUSPEND_R = crate::BitReader<SUSPEND_A>;
 #[doc = "Suspend\n\nPort Enabled Bit and Suspend bit of this register define the port states\n\nWhen in suspend state, downstream propagation of data is blocked on this port, except for port reset. The blocking occurs at the end of the current transaction, if a transaction was in progress when this bit was written to 1. In the suspend state, the port is sensitive to resume detection. Not that the bit status does not change until the port is suspend and that there may be a delay in suspending a port if there is a transaction currently in progress on the USB.\n\nA write of zero to this bit is ignored by the host controller. The host controller will unconditionally set this bit to a zero when:\n\n1. Software sets the Force Port Resume bit to a zero(from a one).\n2. Software sets the Port Reset bit to a one(from a zero).\n\nIf host software sets this bit to a one when the port is not enabled(i.e. Port enabled bit is a zero), the results are undefined.\n\nThis field is zero if Port Power is zero.\n\nThe default value in this field is '0'.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SUSPEND_A {
     #[doc = "0: Not suspend"]
     NOT_SUSPEND = 0,
@@ -117,7 +117,7 @@ pub type PORT_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, PORTSC_SPEC, 
 #[doc = "Field `line_status` reader - Line Status\n\nThese bits relect the current logical levels of the D+ (bit11) and D- (bit10) signal lines. These bits are used for detection of low-speed USB devices prior to port reset and enable sequence. This read only field is valid only when the port enable bit is zero and the current connect status bit is set to a one."]
 pub type LINE_STATUS_R = crate::FieldReader<u8, LINE_STATUS_A>;
 #[doc = "Line Status\n\nThese bits relect the current logical levels of the D+ (bit11) and D- (bit10) signal lines. These bits are used for detection of low-speed USB devices prior to port reset and enable sequence. This read only field is valid only when the port enable bit is zero and the current connect status bit is set to a one.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LINE_STATUS_A {
     #[doc = "0: Not Low-speed device, perform EHCI reset."]
@@ -175,7 +175,7 @@ pub type PORT_OWNER_W<'a, const O: u8> = crate::BitWriter<'a, u32, PORTSC_SPEC, 
 #[doc = "Field `port_test_control` reader - Port Test Control\n\nThe value in this field specifies the test mode of the port."]
 pub type PORT_TEST_CONTROL_R = crate::FieldReader<u8, PORT_TEST_CONTROL_A>;
 #[doc = "Port Test Control\n\nThe value in this field specifies the test mode of the port.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PORT_TEST_CONTROL_A {
     #[doc = "0: The port is NOT operating in a test mode."]

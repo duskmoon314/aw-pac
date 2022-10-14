@@ -37,7 +37,7 @@ impl From<crate::W<TVE_DAC_TEST_SPEC>> for W {
 #[doc = "Field `dac_test_enable` reader - "]
 pub type DAC_TEST_ENABLE_R = crate::BitReader<DAC_TEST_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_TEST_ENABLE_A {
     #[doc = "1: Repeat DAC data from DAC sram"]
     R_EPEAT = 1,
@@ -76,7 +76,7 @@ impl<'a, const O: u8> DAC_TEST_ENABLE_W<'a, O> {
 #[doc = "Field `dac_test_sel` reader - "]
 pub type DAC_TEST_SEL_R = crate::FieldReader<u8, DAC_TEST_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC_TEST_SEL_A {
     #[doc = "0: DAC0"]

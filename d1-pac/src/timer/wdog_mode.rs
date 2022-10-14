@@ -37,7 +37,7 @@ impl From<crate::W<WDOG_MODE_SPEC>> for W {
 #[doc = "Field `wdog_en` reader - Watchdog Enable"]
 pub type WDOG_EN_R = crate::BitReader<WDOG_EN_A>;
 #[doc = "Watchdog Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDOG_EN_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> WDOG_EN_W<'a, O> {
 #[doc = "Field `wdog_intv_value` reader - Watchdog Interval Value"]
 pub type WDOG_INTV_VALUE_R = crate::FieldReader<u8, WDOG_INTV_VALUE_A>;
 #[doc = "Watchdog Interval Value\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WDOG_INTV_VALUE_A {
     #[doc = "0: `0`"]

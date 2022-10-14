@@ -37,7 +37,7 @@ impl From<crate::W<ALARM0_IRQ_STA_SPEC>> for W {
 #[doc = "Field `alarm0_irq_pend` reader - Alarm 0 IRQ Pending bit"]
 pub type ALARM0_IRQ_PEND_R = crate::BitReader<ALARM0_IRQ_PEND_A>;
 #[doc = "Alarm 0 IRQ Pending bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALARM0_IRQ_PEND_A {
     #[doc = "0: No effect"]
     NO_EFFECT = 0,

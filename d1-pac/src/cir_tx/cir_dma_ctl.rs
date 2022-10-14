@@ -37,7 +37,7 @@ impl From<crate::W<CIR_DMA_CTL_SPEC>> for W {
 #[doc = "Field `dma` reader - Handshake Configuration"]
 pub type DMA_R = crate::FieldReader<u8, DMA_A>;
 #[doc = "Handshake Configuration\n\nValue on reset: 165"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DMA_A {
     #[doc = "165: DMA waiting cycle mode"]

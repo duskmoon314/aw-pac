@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_CTYPE_SPEC>> for W {
 #[doc = "Field `card_wid` reader - Card Width"]
 pub type CARD_WID_R = crate::FieldReader<u8, CARD_WID_A>;
 #[doc = "Card Width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CARD_WID_A {
     #[doc = "0: 1-bit width"]

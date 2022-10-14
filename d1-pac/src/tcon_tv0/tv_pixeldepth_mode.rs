@@ -37,7 +37,7 @@ impl From<crate::W<TV_PIXELDEPTH_MODE_SPEC>> for W {
 #[doc = "Field `colorbar_pd_mode` reader - Colorbar Pixeldepth mode"]
 pub type COLORBAR_PD_MODE_R = crate::BitReader<COLORBAR_PD_MODE_A>;
 #[doc = "Colorbar Pixeldepth mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COLORBAR_PD_MODE_A {
     #[doc = "0: 8 bit mode\n\nWhen data source is the embedded colorbar, the 8-bit colorbar pattern is transmitted."]
     B_IT8 = 0,

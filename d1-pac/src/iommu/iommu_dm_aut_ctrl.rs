@@ -39,7 +39,7 @@ write permission control for master \\[j\\]"]
 pub type DM1_M_WT_AUT_CTRL_R = crate::BitReader<DM1_M_WT_AUT_CTRL_A>;
 #[doc = "Domain \\[i + 1\\]
 write permission control for master \\[j\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DM1_M_WT_AUT_CTRL_A {
     #[doc = "0: The write-operation is permitted"]
     PERMITTED = 0,
@@ -93,7 +93,7 @@ read permission control for master \\[j\\]"]
 pub type DM1_M_RD_AUT_CTRL_R = crate::BitReader<DM1_M_RD_AUT_CTRL_A>;
 #[doc = "Domain \\[i + 1\\]
 read permission control for master \\[j\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DM1_M_RD_AUT_CTRL_A {
     #[doc = "0: The read-operation is permitted"]
     PERMITTED = 0,
@@ -147,7 +147,7 @@ write permission control for master \\[j\\]"]
 pub type DM0_M_WT_AUT_CTRL_R = crate::BitReader<DM0_M_WT_AUT_CTRL_A>;
 #[doc = "Domain \\[i\\]
 write permission control for master \\[j\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DM0_M_WT_AUT_CTRL_A {
     #[doc = "0: The write-operation is permitted"]
     PERMITTED = 0,
@@ -201,7 +201,7 @@ read permission control for master \\[j\\]"]
 pub type DM0_M_RD_AUT_CTRL_R = crate::BitReader<DM0_M_RD_AUT_CTRL_A>;
 #[doc = "Domain \\[i\\]
 read permission control for master \\[j\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DM0_M_RD_AUT_CTRL_A {
     #[doc = "0: The read-operation is permitted"]
     PERMITTED = 0,

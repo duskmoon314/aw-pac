@@ -37,7 +37,7 @@ impl From<crate::W<LOSC_CTRL_SPEC>> for W {
 #[doc = "Field `losc_src_sel` reader - LOSC Clock Source Select"]
 pub type LOSC_SRC_SEL_R = crate::BitReader<LOSC_SRC_SEL_A>;
 #[doc = "LOSC Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOSC_SRC_SEL_A {
     #[doc = "0: Low frequency clock from 16M RC"]
     LOW = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> LOSC_SRC_SEL_W<'a, O> {
 #[doc = "Field `rtc_src_sel` reader - RTC_TIMER Clock Source Select"]
 pub type RTC_SRC_SEL_R = crate::BitReader<RTC_SRC_SEL_A>;
 #[doc = "RTC_TIMER Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTC_SRC_SEL_A {
     #[doc = "0: LOSC_SRC"]
     LOSC_SRC = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> RTC_SRC_SEL_W<'a, O> {
 #[doc = "Field `ext_losc_gsm` reader - External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock."]
 pub type EXT_LOSC_GSM_R = crate::FieldReader<u8, EXT_LOSC_GSM_A>;
 #[doc = "External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EXT_LOSC_GSM_A {
     #[doc = "0: Low"]
@@ -192,7 +192,7 @@ impl<'a, const O: u8> EXT_LOSC_GSM_W<'a, O> {
 #[doc = "Field `ext_losc_en` reader - External 32.768 kHz Crystal Enable"]
 pub type EXT_LOSC_EN_R = crate::BitReader<EXT_LOSC_EN_A>;
 #[doc = "External 32.768 kHz Crystal Enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EXT_LOSC_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -251,7 +251,7 @@ pub type RTC_HHMMSS_ACCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, LOSC_CTR
 #[doc = "Field `losc_auto_swt_32k_sel_en` reader - LOSC auto switch 32K clk source select enable"]
 pub type LOSC_AUTO_SWT_32K_SEL_EN_R = crate::BitReader<LOSC_AUTO_SWT_32K_SEL_EN_A>;
 #[doc = "LOSC auto switch 32K clk source select enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOSC_AUTO_SWT_32K_SEL_EN_A {
     #[doc = "0: Disable. When the losc losts, the 32k clk source will not change to RC"]
     DISABLE = 0,
@@ -302,7 +302,7 @@ impl<'a, const O: u8> LOSC_AUTO_SWT_32K_SEL_EN_W<'a, O> {
 #[doc = "Field `losc_auto_swt_function` reader - LOSC auto switch function disable"]
 pub type LOSC_AUTO_SWT_FUNCTION_R = crate::BitReader<LOSC_AUTO_SWT_FUNCTION_A>;
 #[doc = "LOSC auto switch function disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOSC_AUTO_SWT_FUNCTION_A {
     #[doc = "0: Enable"]
     ENABLE = 0,

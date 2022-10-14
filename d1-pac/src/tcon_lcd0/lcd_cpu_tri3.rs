@@ -47,7 +47,7 @@ pub type COUNTER_N_W<'a, const O: u8> =
 #[doc = "Field `tri_int_mode` reader - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
 pub type TRI_INT_MODE_R = crate::FieldReader<u8, TRI_INT_MODE_A>;
 #[doc = "When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TRI_INT_MODE_A {
     #[doc = "0: Disable"]

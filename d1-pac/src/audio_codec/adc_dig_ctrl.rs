@@ -34,7 +34,146 @@ impl From<crate::W<ADC_DIG_CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_channel_en` reader - Bit 3: ADC4 enabled\n\nBit 2: ADC3 enabled\n\nBit 1: ADC2 enabled\n\nBit 0: ADC1 enabled"]
+pub type ADC_CHANNEL_EN_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `adc_channel_en` writer - Bit 3: ADC4 enabled\n\nBit 2: ADC3 enabled\n\nBit 1: ADC2 enabled\n\nBit 0: ADC1 enabled"]
+pub type ADC_CHANNEL_EN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ADC_DIG_CTRL_SPEC, u8, u8, 3, O>;
+#[doc = "Field `adc1_2_vol_en` reader - ADC1/2 Volume Control Enable"]
+pub type ADC1_2_VOL_EN_R = crate::BitReader<ADC1_2_VOL_EN_A>;
+#[doc = "ADC1/2 Volume Control Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ADC1_2_VOL_EN_A {
+    #[doc = "0: Disabled"]
+    D_ISABLED = 0,
+    #[doc = "1: Enabled"]
+    E_NABLED = 1,
+}
+impl From<ADC1_2_VOL_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC1_2_VOL_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ADC1_2_VOL_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC1_2_VOL_EN_A {
+        match self.bits {
+            false => ADC1_2_VOL_EN_A::D_ISABLED,
+            true => ADC1_2_VOL_EN_A::E_NABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[inline(always)]
+    pub fn is_d_isabled(&self) -> bool {
+        *self == ADC1_2_VOL_EN_A::D_ISABLED
+    }
+    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[inline(always)]
+    pub fn is_e_nabled(&self) -> bool {
+        *self == ADC1_2_VOL_EN_A::E_NABLED
+    }
+}
+#[doc = "Field `adc1_2_vol_en` writer - ADC1/2 Volume Control Enable"]
+pub type ADC1_2_VOL_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC_DIG_CTRL_SPEC, ADC1_2_VOL_EN_A, O>;
+impl<'a, const O: u8> ADC1_2_VOL_EN_W<'a, O> {
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn d_isabled(self) -> &'a mut W {
+        self.variant(ADC1_2_VOL_EN_A::D_ISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn e_nabled(self) -> &'a mut W {
+        self.variant(ADC1_2_VOL_EN_A::E_NABLED)
+    }
+}
+#[doc = "Field `adc3_vol_en` reader - ADC3 Volume Control Enable"]
+pub type ADC3_VOL_EN_R = crate::BitReader<ADC3_VOL_EN_A>;
+#[doc = "ADC3 Volume Control Enable\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ADC3_VOL_EN_A {
+    #[doc = "0: Disabled"]
+    D_ISABLED = 0,
+    #[doc = "1: Enabled"]
+    E_NABLED = 1,
+}
+impl From<ADC3_VOL_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC3_VOL_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ADC3_VOL_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC3_VOL_EN_A {
+        match self.bits {
+            false => ADC3_VOL_EN_A::D_ISABLED,
+            true => ADC3_VOL_EN_A::E_NABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[inline(always)]
+    pub fn is_d_isabled(&self) -> bool {
+        *self == ADC3_VOL_EN_A::D_ISABLED
+    }
+    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[inline(always)]
+    pub fn is_e_nabled(&self) -> bool {
+        *self == ADC3_VOL_EN_A::E_NABLED
+    }
+}
+#[doc = "Field `adc3_vol_en` writer - ADC3 Volume Control Enable"]
+pub type ADC3_VOL_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, ADC_DIG_CTRL_SPEC, ADC3_VOL_EN_A, O>;
+impl<'a, const O: u8> ADC3_VOL_EN_W<'a, O> {
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn d_isabled(self) -> &'a mut W {
+        self.variant(ADC3_VOL_EN_A::D_ISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn e_nabled(self) -> &'a mut W {
+        self.variant(ADC3_VOL_EN_A::E_NABLED)
+    }
+}
+impl R {
+    #[doc = "Bits 0:2 - Bit 3: ADC4 enabled\n\nBit 2: ADC3 enabled\n\nBit 1: ADC2 enabled\n\nBit 0: ADC1 enabled"]
+    #[inline(always)]
+    pub fn adc_channel_en(&self) -> ADC_CHANNEL_EN_R {
+        ADC_CHANNEL_EN_R::new((self.bits & 7) as u8)
+    }
+    #[doc = "Bit 16 - ADC1/2 Volume Control Enable"]
+    #[inline(always)]
+    pub fn adc1_2_vol_en(&self) -> ADC1_2_VOL_EN_R {
+        ADC1_2_VOL_EN_R::new(((self.bits >> 16) & 1) != 0)
+    }
+    #[doc = "Bit 17 - ADC3 Volume Control Enable"]
+    #[inline(always)]
+    pub fn adc3_vol_en(&self) -> ADC3_VOL_EN_R {
+        ADC3_VOL_EN_R::new(((self.bits >> 17) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bits 0:2 - Bit 3: ADC4 enabled\n\nBit 2: ADC3 enabled\n\nBit 1: ADC2 enabled\n\nBit 0: ADC1 enabled"]
+    #[inline(always)]
+    pub fn adc_channel_en(&mut self) -> ADC_CHANNEL_EN_W<0> {
+        ADC_CHANNEL_EN_W::new(self)
+    }
+    #[doc = "Bit 16 - ADC1/2 Volume Control Enable"]
+    #[inline(always)]
+    pub fn adc1_2_vol_en(&mut self) -> ADC1_2_VOL_EN_W<16> {
+        ADC1_2_VOL_EN_W::new(self)
+    }
+    #[doc = "Bit 17 - ADC3 Volume Control Enable"]
+    #[inline(always)]
+    pub fn adc3_vol_en(&mut self) -> ADC3_VOL_EN_W<17> {
+        ADC3_VOL_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

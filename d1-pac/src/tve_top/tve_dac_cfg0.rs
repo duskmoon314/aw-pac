@@ -37,7 +37,7 @@ impl From<crate::W<TVE_DAC_CFG0_SPEC>> for W {
 #[doc = "Field `dac_en` reader - "]
 pub type DAC_EN_R = crate::BitReader<DAC_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> DAC_EN_W<'a, O> {
 #[doc = "Field `bias_ref_int_en` reader - (A_EN_RESREF)"]
 pub type BIAS_REF_INT_EN_R = crate::BitReader<BIAS_REF_INT_EN_A>;
 #[doc = "(A_EN_RESREF)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIAS_REF_INT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> BIAS_REF_INT_EN_W<'a, O> {
 #[doc = "Field `bias_int_sel` reader - (A_SEL_BIAS_RES)"]
 pub type BIAS_INT_SEL_R = crate::BitReader<BIAS_INT_SEL_A>;
 #[doc = "(A_SEL_BIAS_RES)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIAS_INT_SEL_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -189,7 +189,7 @@ impl<'a, const O: u8> BIAS_INT_SEL_W<'a, O> {
 #[doc = "Field `bias_ext_sel` reader - (A_SEL_BIAS_ADDA)"]
 pub type BIAS_EXT_SEL_R = crate::BitReader<BIAS_EXT_SEL_A>;
 #[doc = "(A_SEL_BIAS_ADDA)\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIAS_EXT_SEL_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -249,7 +249,7 @@ pub type CALI_IN_W<'a, const O: u8> =
 #[doc = "Field `dac_clock_invert` reader - "]
 pub type DAC_CLOCK_INVERT_R = crate::BitReader<DAC_CLOCK_INVERT_A>;
 #[doc = "\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_CLOCK_INVERT_A {
     #[doc = "0: Not invert"]
     N_OT_INVERT = 0,

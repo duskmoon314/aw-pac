@@ -37,7 +37,7 @@ impl From<crate::W<MSGBOX_BGR_SPEC>> for W {
 #[doc = "Field `msgbox_gating[0-2]` reader - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
 pub type MSGBOX_GATING_R = crate::BitReader<MSGBOX_GATING_A>;
 #[doc = "Gating Clock for CPU, DSP, RISC-V MSGBOX\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MSGBOX_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> MSGBOX_GATING_W<'a, O> {
 #[doc = "Field `msgbox_rst[0-2]` reader - CPU, DSP, RISC-V MSGBOX Reset"]
 pub type MSGBOX_RST_R = crate::BitReader<MSGBOX_RST_A>;
 #[doc = "CPU, DSP, RISC-V MSGBOX Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MSGBOX_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

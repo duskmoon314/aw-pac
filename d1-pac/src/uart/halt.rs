@@ -37,7 +37,7 @@ impl From<crate::W<HALT_SPEC>> for W {
 #[doc = "Field `halt_tx` reader - "]
 pub type HALT_TX_R = crate::BitReader<HALT_TX_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HALT_TX_A {
     #[doc = "0: `0`"]
     DISABLED = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> HALT_TX_W<'a, O> {
 #[doc = "Field `chcfg_at_busy` reader - "]
 pub type CHCFG_AT_BUSY_R = crate::BitReader<CHCFG_AT_BUSY_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHCFG_AT_BUSY_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> CHCFG_AT_BUSY_W<'a, O> {
 #[doc = "Field `change_update` reader - "]
 pub type CHANGE_UPDATE_R = crate::BitReader<CHANGE_UPDATE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHANGE_UPDATE_A {
     #[doc = "0: `0`"]
     FINISHED = 0,
@@ -189,7 +189,7 @@ impl<'a, const O: u8> CHANGE_UPDATE_W<'a, O> {
 #[doc = "Field `sir_tx_invert` reader - SIR TX Pulse Polarity Invert"]
 pub type SIR_TX_INVERT_R = crate::BitReader<SIR_TX_INVERT_A>;
 #[doc = "SIR TX Pulse Polarity Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SIR_TX_INVERT_A {
     #[doc = "0: `0`"]
     NOT_INVERT = 0,
@@ -240,7 +240,7 @@ impl<'a, const O: u8> SIR_TX_INVERT_W<'a, O> {
 #[doc = "Field `sir_rx_invert` reader - SIR RX Pulse Polarity Invert"]
 pub type SIR_RX_INVERT_R = crate::BitReader<SIR_RX_INVERT_A>;
 #[doc = "SIR RX Pulse Polarity Invert\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SIR_RX_INVERT_A {
     #[doc = "0: `0`"]
     NOT_INVERT = 0,

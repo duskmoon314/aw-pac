@@ -39,7 +39,7 @@ permission invalid interrupt status bit"]
 pub type MICRO_TLB_INVALID_STA_R = crate::BitReader<MICRO_TLB_INVALID_STA_A>;
 #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt status bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_INVALID_STA_A {
     #[doc = "0: Interrupt does not happen or interrupt is cleared"]
     NOT_HAPPEN_OR_CLEARED = 0,
@@ -77,7 +77,7 @@ page table invalid interrupt status bit"]
 pub type L_PAGE_TABLE_INVALID_STA_R = crate::BitReader<L_PAGE_TABLE_INVALID_STA_A>;
 #[doc = "Level\\[i\\]
 page table invalid interrupt status bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L_PAGE_TABLE_INVALID_STA_A {
     #[doc = "0: Interrupt does not happen or interrupt is cleared"]
     NOT_HAPPEN_OR_CLEARED = 0,

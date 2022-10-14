@@ -34,7 +34,129 @@ impl From<crate::W<AC_ADC_DG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ad_swp1` reader - ADC output channel swap enable (for digital filter)"]
+pub type AD_SWP1_R = crate::BitReader<AD_SWP1_A>;
+#[doc = "ADC output channel swap enable (for digital filter)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum AD_SWP1_A {
+    #[doc = "0: Disabled"]
+    D_ISABLED = 0,
+    #[doc = "1: Enabled"]
+    E_NABLED = 1,
+}
+impl From<AD_SWP1_A> for bool {
+    #[inline(always)]
+    fn from(variant: AD_SWP1_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl AD_SWP1_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AD_SWP1_A {
+        match self.bits {
+            false => AD_SWP1_A::D_ISABLED,
+            true => AD_SWP1_A::E_NABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[inline(always)]
+    pub fn is_d_isabled(&self) -> bool {
+        *self == AD_SWP1_A::D_ISABLED
+    }
+    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[inline(always)]
+    pub fn is_e_nabled(&self) -> bool {
+        *self == AD_SWP1_A::E_NABLED
+    }
+}
+#[doc = "Field `ad_swp1` writer - ADC output channel swap enable (for digital filter)"]
+pub type AD_SWP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_ADC_DG_SPEC, AD_SWP1_A, O>;
+impl<'a, const O: u8> AD_SWP1_W<'a, O> {
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn d_isabled(self) -> &'a mut W {
+        self.variant(AD_SWP1_A::D_ISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn e_nabled(self) -> &'a mut W {
+        self.variant(AD_SWP1_A::E_NABLED)
+    }
+}
+#[doc = "Field `ad_swp2` reader - ADC output channel swap enable (for digital filter)"]
+pub type AD_SWP2_R = crate::BitReader<AD_SWP2_A>;
+#[doc = "ADC output channel swap enable (for digital filter)\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum AD_SWP2_A {
+    #[doc = "0: Disabled"]
+    D_ISABLED = 0,
+    #[doc = "1: Enabled"]
+    E_NABLED = 1,
+}
+impl From<AD_SWP2_A> for bool {
+    #[inline(always)]
+    fn from(variant: AD_SWP2_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl AD_SWP2_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> AD_SWP2_A {
+        match self.bits {
+            false => AD_SWP2_A::D_ISABLED,
+            true => AD_SWP2_A::E_NABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[inline(always)]
+    pub fn is_d_isabled(&self) -> bool {
+        *self == AD_SWP2_A::D_ISABLED
+    }
+    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[inline(always)]
+    pub fn is_e_nabled(&self) -> bool {
+        *self == AD_SWP2_A::E_NABLED
+    }
+}
+#[doc = "Field `ad_swp2` writer - ADC output channel swap enable (for digital filter)"]
+pub type AD_SWP2_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_ADC_DG_SPEC, AD_SWP2_A, O>;
+impl<'a, const O: u8> AD_SWP2_W<'a, O> {
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn d_isabled(self) -> &'a mut W {
+        self.variant(AD_SWP2_A::D_ISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn e_nabled(self) -> &'a mut W {
+        self.variant(AD_SWP2_A::E_NABLED)
+    }
+}
+impl R {
+    #[doc = "Bit 24 - ADC output channel swap enable (for digital filter)"]
+    #[inline(always)]
+    pub fn ad_swp1(&self) -> AD_SWP1_R {
+        AD_SWP1_R::new(((self.bits >> 24) & 1) != 0)
+    }
+    #[doc = "Bit 25 - ADC output channel swap enable (for digital filter)"]
+    #[inline(always)]
+    pub fn ad_swp2(&self) -> AD_SWP2_R {
+        AD_SWP2_R::new(((self.bits >> 25) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "Bit 24 - ADC output channel swap enable (for digital filter)"]
+    #[inline(always)]
+    pub fn ad_swp1(&mut self) -> AD_SWP1_W<24> {
+        AD_SWP1_W::new(self)
+    }
+    #[doc = "Bit 25 - ADC output channel swap enable (for digital filter)"]
+    #[inline(always)]
+    pub fn ad_swp2(&mut self) -> AD_SWP2_W<25> {
+        AD_SWP2_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

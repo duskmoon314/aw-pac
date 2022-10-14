@@ -37,7 +37,7 @@ impl From<crate::W<PLL_LOCK_DBG_CTRL_SPEC>> for W {
 #[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLK_SRC_SEL_A {
     #[doc = "0: `0`"]
@@ -168,7 +168,7 @@ impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
 #[doc = "Field `pll_lock_flag_en` reader - Debug Enable"]
 pub type PLL_LOCK_FLAG_EN_R = crate::BitReader<PLL_LOCK_FLAG_EN_A>;
 #[doc = "Debug Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PLL_LOCK_FLAG_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

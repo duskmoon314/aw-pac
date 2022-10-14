@@ -37,7 +37,7 @@ impl From<crate::W<PER_SPEC>> for W {
 #[doc = "Field `pwm_en[0-7]` reader - When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform."]
 pub type PWM_EN_R = crate::BitReader<PWM_EN_A>;
 #[doc = "When PWM is enabled, the 16-bit up-counter starts working and PWM channel is permitted to output PWM waveform.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM_EN_A {
     #[doc = "0: PWM disable"]
     DISABLE = 0,

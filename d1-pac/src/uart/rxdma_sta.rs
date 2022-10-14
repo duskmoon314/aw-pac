@@ -37,7 +37,7 @@ impl From<crate::W<RXDMA_STA_SPEC>> for W {
 #[doc = "Field `busy` reader - "]
 pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUSY_A {
     #[doc = "0: `0`"]
     IDLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> BUSY_W<'a, O> {
 #[doc = "Field `buffer_read_address_updating` reader - "]
 pub type BUFFER_READ_ADDRESS_UPDATING_R = crate::BitReader<BUFFER_READ_ADDRESS_UPDATING_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUFFER_READ_ADDRESS_UPDATING_A {
     #[doc = "0: `0`"]
     READY = 0,

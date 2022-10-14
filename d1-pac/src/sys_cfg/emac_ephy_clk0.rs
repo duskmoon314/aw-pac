@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_EPHY_CLK0_SPEC>> for W {
 #[doc = "Field `etcs` reader - "]
 pub type ETCS_R = crate::FieldReader<u8, ETCS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ETCS_A {
     #[doc = "0: `0`"]
@@ -103,7 +103,7 @@ impl<'a, const O: u8> ETCS_W<'a, O> {
 #[doc = "Field `epit` reader - "]
 pub type EPIT_R = crate::BitReader<EPIT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EPIT_A {
     #[doc = "0: `0`"]
     MII = 0,
@@ -153,7 +153,7 @@ impl<'a, const O: u8> EPIT_W<'a, O> {
 #[doc = "Field `etxie` reader - "]
 pub type ETXIE_R = crate::BitReader<ETXIE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ETXIE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -203,7 +203,7 @@ impl<'a, const O: u8> ETXIE_W<'a, O> {
 #[doc = "Field `erxie` reader - "]
 pub type ERXIE_R = crate::BitReader<ERXIE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ERXIE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -261,7 +261,7 @@ pub type ETXDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_S
 #[doc = "Field `rmii_en` reader - "]
 pub type RMII_EN_R = crate::BitReader<RMII_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RMII_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -311,7 +311,7 @@ impl<'a, const O: u8> RMII_EN_W<'a, O> {
 #[doc = "Field `phy_select` reader - "]
 pub type PHY_SELECT_R = crate::BitReader<PHY_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PHY_SELECT_A {
     #[doc = "0: `0`"]
     EXTERNAL = 0,
@@ -362,7 +362,7 @@ impl<'a, const O: u8> PHY_SELECT_W<'a, O> {
 #[doc = "Field `shutdown` reader - "]
 pub type SHUTDOWN_R = crate::BitReader<SHUTDOWN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SHUTDOWN_A {
     #[doc = "0: `0`"]
     POWER_UP = 0,
@@ -413,7 +413,7 @@ impl<'a, const O: u8> SHUTDOWN_W<'a, O> {
 #[doc = "Field `led_pol` reader - "]
 pub type LED_POL_R = crate::BitReader<LED_POL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LED_POL_A {
     #[doc = "0: `0`"]
     HIGH = 0,
@@ -463,7 +463,7 @@ impl<'a, const O: u8> LED_POL_W<'a, O> {
 #[doc = "Field `clk_sel` reader - "]
 pub type CLK_SEL_R = crate::BitReader<CLK_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_SEL_A {
     #[doc = "0: `0`"]
     F25M = 0,
@@ -518,7 +518,7 @@ pub type PHY_ADDR_W<'a, const O: u8> =
 #[doc = "Field `ephy_mode` reader - "]
 pub type EPHY_MODE_R = crate::FieldReader<u8, EPHY_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EPHY_MODE_A {
     #[doc = "0: `0`"]
@@ -584,7 +584,7 @@ impl<'a, const O: u8> EPHY_MODE_W<'a, O> {
 #[doc = "Field `xmii_sel` reader - "]
 pub type XMII_SEL_R = crate::BitReader<XMII_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum XMII_SEL_A {
     #[doc = "0: `0`"]
     INTERNAL = 0,

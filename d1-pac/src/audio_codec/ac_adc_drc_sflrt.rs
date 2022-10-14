@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_SFLRT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_sflrt` reader - The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)"]
+pub type ADC_DRC_SFLRT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_sflrt` writer - The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)"]
+pub type ADC_DRC_SFLRT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_SFLRT_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)"]
+    #[inline(always)]
+    pub fn adc_drc_sflrt(&self) -> ADC_DRC_SFLRT_R {
+        ADC_DRC_SFLRT_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)"]
+    #[inline(always)]
+    pub fn adc_drc_sflrt(&mut self) -> ADC_DRC_SFLRT_W<0> {
+        ADC_DRC_SFLRT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_SFLRT_SPEC {
 impl crate::Writable for AC_ADC_DRC_SFLRT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_sflrt to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_sflrt to value 0x0f04"]
 impl crate::Resettable for AC_ADC_DRC_SFLRT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0f04
     }
 }

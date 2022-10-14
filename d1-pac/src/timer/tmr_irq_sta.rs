@@ -37,7 +37,7 @@ impl From<crate::W<TMR_IRQ_STA_SPEC>> for W {
 #[doc = "Field `tmr0_irq_pend` reader - "]
 pub type TMR0_IRQ_PEND_R = crate::BitReader<TMR0_IRQ_PEND_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TMR0_IRQ_PEND_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> TMR0_IRQ_PEND_W<'a, O> {
 #[doc = "Field `tmr1_irq_pend` reader - "]
 pub type TMR1_IRQ_PEND_R = crate::BitReader<TMR1_IRQ_PEND_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TMR1_IRQ_PEND_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<TVE_DAC_STATUS_SPEC>> for W {
 #[doc = "Field `dac_status` reader - "]
 pub type DAC_STATUS_R = crate::FieldReader<u8, DAC_STATUS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC_STATUS_A {
     #[doc = "0: Unconnected"]

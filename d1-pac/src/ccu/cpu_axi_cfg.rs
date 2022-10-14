@@ -45,7 +45,7 @@ pub type CPU_DIV2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CPU_AXI_CFG_S
 #[doc = "Field `pll_cpu_out_ext_divp` reader - PLL Output External Divider P"]
 pub type PLL_CPU_OUT_EXT_DIVP_R = crate::FieldReader<u8, PLL_CPU_OUT_EXT_DIVP_A>;
 #[doc = "PLL Output External Divider P\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PLL_CPU_OUT_EXT_DIVP_A {
     #[doc = "0: `0`"]
@@ -111,7 +111,7 @@ impl<'a, const O: u8> PLL_CPU_OUT_EXT_DIVP_W<'a, O> {
 #[doc = "Field `cpu_clk_sel` reader - Clock Source Select"]
 pub type CPU_CLK_SEL_R = crate::FieldReader<u8, CPU_CLK_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CPU_CLK_SEL_A {
     #[doc = "0: `0`"]

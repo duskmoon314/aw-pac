@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_INT_STA_SPEC>> for W {
 #[doc = "Field `tx_p` reader - Frame Transmission Interrupt Pending"]
 pub type TX_P_R = crate::BitReader<TX_P_A>;
 #[doc = "Frame Transmission Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TX_P_W<'a, O> {
 #[doc = "Field `tx_dma_stopped_p` reader - Transmission DMA Stopped Interrupt Pending"]
 pub type TX_DMA_STOPPED_P_R = crate::BitReader<TX_DMA_STOPPED_P_A>;
 #[doc = "Transmission DMA Stopped Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_DMA_STOPPED_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> TX_DMA_STOPPED_P_W<'a, O> {
 #[doc = "Field `tx_buf_ua_p` reader - TX Buffer UA Interrupt Pending"]
 pub type TX_BUF_UA_P_R = crate::BitReader<TX_BUF_UA_P_A>;
 #[doc = "TX Buffer UA Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_BUF_UA_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -189,7 +189,7 @@ impl<'a, const O: u8> TX_BUF_UA_P_W<'a, O> {
 #[doc = "Field `tx_timeout_p` reader - Transmitter Timeout Interrupt Pending"]
 pub type TX_TIMEOUT_P_R = crate::BitReader<TX_TIMEOUT_P_A>;
 #[doc = "Transmitter Timeout Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_TIMEOUT_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -240,7 +240,7 @@ impl<'a, const O: u8> TX_TIMEOUT_P_W<'a, O> {
 #[doc = "Field `tx_underflow_p` reader - TX FIFO Underflow Interrupt Pending"]
 pub type TX_UNDERFLOW_P_R = crate::BitReader<TX_UNDERFLOW_P_A>;
 #[doc = "TX FIFO Underflow Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_UNDERFLOW_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -291,7 +291,7 @@ impl<'a, const O: u8> TX_UNDERFLOW_P_W<'a, O> {
 #[doc = "Field `tx_early_p` reader - Total interrupt pending which the frame is transmitted to FIFO"]
 pub type TX_EARLY_P_R = crate::BitReader<TX_EARLY_P_A>;
 #[doc = "Total interrupt pending which the frame is transmitted to FIFO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_EARLY_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -342,7 +342,7 @@ impl<'a, const O: u8> TX_EARLY_P_W<'a, O> {
 #[doc = "Field `rx_p` reader - Frame RX Completed Interrupt Pending"]
 pub type RX_P_R = crate::BitReader<RX_P_A>;
 #[doc = "Frame RX Completed Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -392,7 +392,7 @@ impl<'a, const O: u8> RX_P_W<'a, O> {
 #[doc = "Field `rx_buf_ua_p` reader - RX Buffer UA Interrupt Pending"]
 pub type RX_BUF_UA_P_R = crate::BitReader<RX_BUF_UA_P_A>;
 #[doc = "RX Buffer UA Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_BUF_UA_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -448,7 +448,7 @@ pub type RX_DMA_STOPPED_P_W<'a, const O: u8> =
 #[doc = "Field `rx_timeout_p` reader - RX Timeout Interrupt Pending"]
 pub type RX_TIMEOUT_P_R = crate::BitReader<RX_TIMEOUT_P_A>;
 #[doc = "RX Timeout Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_TIMEOUT_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -499,7 +499,7 @@ impl<'a, const O: u8> RX_TIMEOUT_P_W<'a, O> {
 #[doc = "Field `rx_overflow_p` reader - RX FIFO Overflow Error Interrupt Pending"]
 pub type RX_OVERFLOW_P_R = crate::BitReader<RX_OVERFLOW_P_A>;
 #[doc = "RX FIFO Overflow Error Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_OVERFLOW_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -550,7 +550,7 @@ impl<'a, const O: u8> RX_OVERFLOW_P_W<'a, O> {
 #[doc = "Field `rx_early_p` reader - RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending"]
 pub type RX_EARLY_P_R = crate::BitReader<RX_EARLY_P_A>;
 #[doc = "RX DMA Filled First Data Buffer of the Receive Frame Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_EARLY_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -601,7 +601,7 @@ impl<'a, const O: u8> RX_EARLY_P_W<'a, O> {
 #[doc = "Field `rgmii_link_sta_p` reader - RMII Link Status Changed Interrupt Pending"]
 pub type RGMII_LINK_STA_P_R = crate::BitReader<RGMII_LINK_STA_P_A>;
 #[doc = "RMII Link Status Changed Interrupt Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RGMII_LINK_STA_P_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,

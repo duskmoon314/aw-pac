@@ -18,7 +18,7 @@ pub type DMA_SRC_DRQ_TYPE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dma_src_block_size` reader - DMA Source Block Size"]
 pub type DMA_SRC_BLOCK_SIZE_R = crate::FieldReader<u8, DMA_SRC_BLOCK_SIZE_A>;
 #[doc = "DMA Source Block Size\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DMA_SRC_BLOCK_SIZE_A {
     #[doc = "0: `0`"]
@@ -72,7 +72,7 @@ impl DMA_SRC_BLOCK_SIZE_R {
 #[doc = "Field `dma_src_addr_mode` reader - DMA Source Address Mode"]
 pub type DMA_SRC_ADDR_MODE_R = crate::BitReader<DMA_SRC_ADDR_MODE_A>;
 #[doc = "DMA Source Address Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_SRC_ADDR_MODE_A {
     #[doc = "0: `0`"]
     LINEAR = 0,
@@ -108,7 +108,7 @@ impl DMA_SRC_ADDR_MODE_R {
 #[doc = "Field `dma_src_data_width` reader - DMA Source Data Width"]
 pub type DMA_SRC_DATA_WIDTH_R = crate::FieldReader<u8, DMA_SRC_DATA_WIDTH_A>;
 #[doc = "DMA Source Data Width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DMA_SRC_DATA_WIDTH_A {
     #[doc = "0: 8 bit"]
@@ -164,7 +164,7 @@ pub type DMA_DEST_DRQ_TYPE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `dma_dest_block_size` reader - DMA Destination Block Size"]
 pub type DMA_DEST_BLOCK_SIZE_R = crate::FieldReader<u8, DMA_DEST_BLOCK_SIZE_A>;
 #[doc = "DMA Destination Block Size\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DMA_DEST_BLOCK_SIZE_A {
     #[doc = "0: `0`"]
@@ -218,7 +218,7 @@ impl DMA_DEST_BLOCK_SIZE_R {
 #[doc = "Field `dma_addr_mode` reader - DMA Destination Address Mode"]
 pub type DMA_ADDR_MODE_R = crate::BitReader<DMA_ADDR_MODE_A>;
 #[doc = "DMA Destination Address Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_ADDR_MODE_A {
     #[doc = "0: `0`"]
     LINEAR = 0,
@@ -254,7 +254,7 @@ impl DMA_ADDR_MODE_R {
 #[doc = "Field `dma_dest_data_width` reader - DMA Destination Data Width"]
 pub type DMA_DEST_DATA_WIDTH_R = crate::FieldReader<u8, DMA_DEST_DATA_WIDTH_A>;
 #[doc = "DMA Destination Data Width\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DMA_DEST_DATA_WIDTH_A {
     #[doc = "0: 8 bit"]
@@ -308,7 +308,7 @@ impl DMA_DEST_DATA_WIDTH_R {
 #[doc = "Field `bmode_sel` reader - "]
 pub type BMODE_SEL_R = crate::BitReader<BMODE_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BMODE_SEL_A {
     #[doc = "0: `0`"]
     NORMAL = 0,

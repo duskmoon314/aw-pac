@@ -37,7 +37,7 @@ impl From<crate::W<TV_DATA_IO_POL0_SPEC>> for W {
 #[doc = "Field `g_y_ch_data_inv` reader - G Y Channel Data Inv"]
 pub type G_Y_CH_DATA_INV_R = crate::FieldReader<u16, G_Y_CH_DATA_INV_A>;
 #[doc = "G Y Channel Data Inv\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum G_Y_CH_DATA_INV_A {
     #[doc = "0: normal polarity"]
@@ -90,7 +90,7 @@ impl<'a, const O: u8> G_Y_CH_DATA_INV_W<'a, O> {
 #[doc = "Field `r_cb_ch_data_inv` reader - R CB Channel Data Inv"]
 pub type R_CB_CH_DATA_INV_R = crate::FieldReader<u16, R_CB_CH_DATA_INV_A>;
 #[doc = "R CB Channel Data Inv\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum R_CB_CH_DATA_INV_A {
     #[doc = "0: normal polarity"]

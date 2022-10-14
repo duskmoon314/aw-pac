@@ -37,7 +37,7 @@ impl From<crate::W<TVE_DAC_CFG3_SPEC>> for W {
 #[doc = "Field `force_data_en` reader - "]
 pub type FORCE_DATA_EN_R = crate::BitReader<FORCE_DATA_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FORCE_DATA_EN_A {
     #[doc = "0: DAC input data from TVE"]
     TVE = 0,

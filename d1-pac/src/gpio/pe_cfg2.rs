@@ -37,7 +37,7 @@ impl From<crate::W<PE_CFG2_SPEC>> for W {
 #[doc = "Field `pe16_select` reader - PE16 Select"]
 pub type PE16_SELECT_R = crate::FieldReader<u8, PE16_SELECT_A>;
 #[doc = "PE16 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PE16_SELECT_A {
     #[doc = "0: `0`"]
@@ -181,7 +181,7 @@ impl<'a, const O: u8> PE16_SELECT_W<'a, O> {
 #[doc = "Field `pe17_select` reader - PE17 Select"]
 pub type PE17_SELECT_R = crate::FieldReader<u8, PE17_SELECT_A>;
 #[doc = "PE17 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PE17_SELECT_A {
     #[doc = "0: `0`"]

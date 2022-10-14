@@ -37,7 +37,7 @@ impl From<crate::W<ALARM0_ENABLE_SPEC>> for W {
 #[doc = "Field `alm_0_en` reader - Alarm 0 Enable"]
 pub type ALM_0_EN_R = crate::BitReader<ALM_0_EN_A>;
 #[doc = "Alarm 0 Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALM_0_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

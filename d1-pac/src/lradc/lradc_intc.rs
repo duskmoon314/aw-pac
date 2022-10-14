@@ -37,7 +37,7 @@ impl From<crate::W<LRADC_INTC_SPEC>> for W {
 #[doc = "Field `adc0_data_irq_en` reader - ADC0 Data Interrupt Enable"]
 pub type ADC0_DATA_IRQ_EN_R = crate::BitReader<ADC0_DATA_IRQ_EN_A>;
 #[doc = "ADC0 Data Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_DATA_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> ADC0_DATA_IRQ_EN_W<'a, O> {
 #[doc = "Field `adc0_keydown_irq_en` reader - ADC0 Key Down Interrupt Enable"]
 pub type ADC0_KEYDOWN_IRQ_EN_R = crate::BitReader<ADC0_KEYDOWN_IRQ_EN_A>;
 #[doc = "ADC0 Key Down Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_KEYDOWN_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> ADC0_KEYDOWN_IRQ_EN_W<'a, O> {
 #[doc = "Field `adc0_hold_irq_en` reader - ADC0 Hold Key Interrupt Enable"]
 pub type ADC0_HOLD_IRQ_EN_R = crate::BitReader<ADC0_HOLD_IRQ_EN_A>;
 #[doc = "ADC0 Hold Key Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_HOLD_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> ADC0_HOLD_IRQ_EN_W<'a, O> {
 #[doc = "Field `adc0_alrdy_hold_irq_en` reader - ADC0 Already Hold Key Interrupt Enable"]
 pub type ADC0_ALRDY_HOLD_IRQ_EN_R = crate::BitReader<ADC0_ALRDY_HOLD_IRQ_EN_A>;
 #[doc = "ADC0 Already Hold Key Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_ALRDY_HOLD_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> ADC0_ALRDY_HOLD_IRQ_EN_W<'a, O> {
 #[doc = "Field `adc0_keyup_irq_en` reader - ADC0 Key Up Interrupt Enable"]
 pub type ADC0_KEYUP_IRQ_EN_R = crate::BitReader<ADC0_KEYUP_IRQ_EN_A>;
 #[doc = "ADC0 Key Up Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_KEYUP_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

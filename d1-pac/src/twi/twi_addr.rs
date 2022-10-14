@@ -37,7 +37,7 @@ impl From<crate::W<TWI_ADDR_SPEC>> for W {
 #[doc = "Field `gce` reader - "]
 pub type GCE_R = crate::BitReader<GCE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GCE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

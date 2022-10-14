@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_LKE_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_lke` reader - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must be larger than 50. The format is 8.24. (The default value is <1:5>)"]
+pub type ADC_DRC_LKE_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_lke` writer - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must be larger than 50. The format is 8.24. (The default value is <1:5>)"]
+pub type ADC_DRC_LKE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_LKE_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must be larger than 50. The format is 8.24. (The default value is <1:5>)"]
+    #[inline(always)]
+    pub fn adc_drc_lke(&self) -> ADC_DRC_LKE_R {
+        ADC_DRC_LKE_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must be larger than 50. The format is 8.24. (The default value is <1:5>)"]
+    #[inline(always)]
+    pub fn adc_drc_lke(&mut self) -> ADC_DRC_LKE_W<0> {
+        ADC_DRC_LKE_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

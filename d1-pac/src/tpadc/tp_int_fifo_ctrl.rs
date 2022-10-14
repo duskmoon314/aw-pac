@@ -37,7 +37,7 @@ impl From<crate::W<TP_INT_FIFO_CTRL_SPEC>> for W {
 #[doc = "Field `tp_down_irq_en` reader - TP First Touch (Stylus DOWN) IRQ Enable"]
 pub type TP_DOWN_IRQ_EN_R = crate::BitReader<TP_DOWN_IRQ_EN_A>;
 #[doc = "TP First Touch (Stylus DOWN) IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_DOWN_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> TP_DOWN_IRQ_EN_W<'a, O> {
 #[doc = "Field `tp_up_irq_en` reader - TP Last Touch (Stylus UP) IRQ Enable"]
 pub type TP_UP_IRQ_EN_R = crate::BitReader<TP_UP_IRQ_EN_A>;
 #[doc = "TP Last Touch (Stylus UP) IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_UP_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> TP_UP_IRQ_EN_W<'a, O> {
 #[doc = "Field `tp_fifo_flush` reader - TP FIFO Flush"]
 pub type TP_FIFO_FLUSH_R = crate::BitReader<TP_FIFO_FLUSH_A>;
 #[doc = "TP FIFO Flush\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_FIFO_FLUSH_A {
     #[doc = "1: `1`"]
     FLUSH = 1,
@@ -178,7 +178,7 @@ impl<'a, const O: u8> TP_FIFO_FLUSH_W<'a, O> {
 #[doc = "Field `tp_data_erq_en` reader - TP FIFO Data Available DRQ Enable"]
 pub type TP_DATA_ERQ_EN_R = crate::BitReader<TP_DATA_ERQ_EN_A>;
 #[doc = "TP FIFO Data Available DRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_DATA_ERQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -234,7 +234,7 @@ pub type TP_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
 #[doc = "Field `tp_data_xy_change` reader - TP FIFO XY Data Interchange Function Select"]
 pub type TP_DATA_XY_CHANGE_R = crate::BitReader<TP_DATA_XY_CHANGE_A>;
 #[doc = "TP FIFO XY Data Interchange Function Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_DATA_XY_CHANGE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -285,7 +285,7 @@ impl<'a, const O: u8> TP_DATA_XY_CHANGE_W<'a, O> {
 #[doc = "Field `tp_data_irq_en` reader - TP FIFO Data Interrupt Enable"]
 pub type TP_DATA_IRQ_EN_R = crate::BitReader<TP_DATA_IRQ_EN_A>;
 #[doc = "TP FIFO Data Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_DATA_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -336,7 +336,7 @@ impl<'a, const O: u8> TP_DATA_IRQ_EN_W<'a, O> {
 #[doc = "Field `tp_overrun_irq_en` reader - TP FIFO Overrun Interrupt Enable"]
 pub type TP_OVERRUN_IRQ_EN_R = crate::BitReader<TP_OVERRUN_IRQ_EN_A>;
 #[doc = "TP FIFO Overrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_OVERRUN_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

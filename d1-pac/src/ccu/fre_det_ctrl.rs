@@ -37,7 +37,7 @@ impl From<crate::W<FRE_DET_CTRL_SPEC>> for W {
 #[doc = "Field `fre_det_fun_en` reader - Frequence Detect Function Enable"]
 pub type FRE_DET_FUN_EN_R = crate::BitReader<FRE_DET_FUN_EN_A>;
 #[doc = "Frequence Detect Function Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FRE_DET_FUN_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> FRE_DET_FUN_EN_W<'a, O> {
 #[doc = "Field `fre_det_irq_en` reader - Frequence Detect IRQ Enable"]
 pub type FRE_DET_IRQ_EN_R = crate::BitReader<FRE_DET_IRQ_EN_A>;
 #[doc = "Frequence Detect IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FRE_DET_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -143,7 +143,7 @@ pub type DET_TIME_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRE_DET_CTRL_
 #[doc = "Field `error_flag` reader - Error Flag"]
 pub type ERROR_FLAG_R = crate::BitReader<ERROR_FLAG_A>;
 #[doc = "Error Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ERROR_FLAG_A {
     #[doc = "0: `0`"]
     W0C = 0,

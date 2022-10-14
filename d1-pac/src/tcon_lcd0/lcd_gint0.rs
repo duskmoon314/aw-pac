@@ -73,7 +73,7 @@ pub type LCD_VB_INT_FLAG_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, LCD_GI
 #[doc = "Field `lcd_tri_counter_int_en` reader - Enable the trigger counter interrupt"]
 pub type LCD_TRI_COUNTER_INT_EN_R = crate::BitReader<LCD_TRI_COUNTER_INT_EN_A>;
 #[doc = "Enable the trigger counter interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_TRI_COUNTER_INT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -124,7 +124,7 @@ impl<'a, const O: u8> LCD_TRI_COUNTER_INT_EN_W<'a, O> {
 #[doc = "Field `lcd_tri_finish_int_en` reader - Enable the trigger finish interrupt"]
 pub type LCD_TRI_FINISH_INT_EN_R = crate::BitReader<LCD_TRI_FINISH_INT_EN_A>;
 #[doc = "Enable the trigger finish interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_TRI_FINISH_INT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -175,7 +175,7 @@ impl<'a, const O: u8> LCD_TRI_FINISH_INT_EN_W<'a, O> {
 #[doc = "Field `lcd_line_int_en` reader - Enable the line interrupt"]
 pub type LCD_LINE_INT_EN_R = crate::BitReader<LCD_LINE_INT_EN_A>;
 #[doc = "Enable the line interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LINE_INT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -226,7 +226,7 @@ impl<'a, const O: u8> LCD_LINE_INT_EN_W<'a, O> {
 #[doc = "Field `lcd_vb_int_en` reader - Enable the Vb interrupt"]
 pub type LCD_VB_INT_EN_R = crate::BitReader<LCD_VB_INT_EN_A>;
 #[doc = "Enable the Vb interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_VB_INT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

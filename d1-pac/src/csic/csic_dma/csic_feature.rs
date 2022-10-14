@@ -37,7 +37,7 @@ impl From<crate::W<CSIC_FEATURE_SPEC>> for W {
 #[doc = "Field `dma0_embedded_fbc` reader - "]
 pub type DMA0_EMBEDDED_FBC_R = crate::BitReader<DMA0_EMBEDDED_FBC_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA0_EMBEDDED_FBC_A {
     #[doc = "0: No Embedded DMA"]
     N_O_E_MBEDDED = 0,
@@ -73,7 +73,7 @@ impl DMA0_EMBEDDED_FBC_R {
 #[doc = "Field `dma0_embedded_lbc` reader - "]
 pub type DMA0_EMBEDDED_LBC_R = crate::BitReader<DMA0_EMBEDDED_LBC_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA0_EMBEDDED_LBC_A {
     #[doc = "0: No Embedded LBC"]
     N_O_E_MBEDDED = 0,

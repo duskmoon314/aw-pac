@@ -34,7 +34,23 @@ impl From<crate::W<AC_DAC_CNT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tx_cnt` reader - TX Sample Counter\n\nThe audio sample number of sending into TXFIFO.\n\nWhen one sample is put into TXFIFO by DMA or by host IO, the TX sample counter register increases by one. The TX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value."]
+pub type TX_CNT_R = crate::FieldReader<u32, u32>;
+#[doc = "Field `tx_cnt` writer - TX Sample Counter\n\nThe audio sample number of sending into TXFIFO.\n\nWhen one sample is put into TXFIFO by DMA or by host IO, the TX sample counter register increases by one. The TX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value."]
+pub type TX_CNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AC_DAC_CNT_SPEC, u32, u32, 32, O>;
+impl R {
+    #[doc = "Bits 0:31 - TX Sample Counter\n\nThe audio sample number of sending into TXFIFO.\n\nWhen one sample is put into TXFIFO by DMA or by host IO, the TX sample counter register increases by one. The TX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value."]
+    #[inline(always)]
+    pub fn tx_cnt(&self) -> TX_CNT_R {
+        TX_CNT_R::new(self.bits)
+    }
+}
 impl W {
+    #[doc = "Bits 0:31 - TX Sample Counter\n\nThe audio sample number of sending into TXFIFO.\n\nWhen one sample is put into TXFIFO by DMA or by host IO, the TX sample counter register increases by one. The TX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value."]
+    #[inline(always)]
+    pub fn tx_cnt(&mut self) -> TX_CNT_W<0> {
+        TX_CNT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

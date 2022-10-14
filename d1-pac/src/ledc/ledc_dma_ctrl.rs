@@ -42,7 +42,7 @@ pub type LEDC_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
 #[doc = "Field `ledc_dma_en` reader - "]
 pub type LEDC_DMA_EN_R = crate::BitReader<LEDC_DMA_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LEDC_DMA_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

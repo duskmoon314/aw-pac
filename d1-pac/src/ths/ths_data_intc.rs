@@ -37,7 +37,7 @@ impl From<crate::W<THS_DATA_INTC_SPEC>> for W {
 #[doc = "Field `ths_data_irq_en` reader - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
 pub type THS_DATA_IRQ_EN_R = crate::BitReader<THS_DATA_IRQ_EN_A>;
 #[doc = "Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum THS_DATA_IRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

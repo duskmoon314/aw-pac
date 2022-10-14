@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_SFLAT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_sflat` reader - The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)"]
+pub type ADC_DRC_SFLAT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_sflat` writer - The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)"]
+pub type ADC_DRC_SFLAT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_SFLAT_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)"]
+    #[inline(always)]
+    pub fn adc_drc_sflat(&self) -> ADC_DRC_SFLAT_R {
+        ADC_DRC_SFLAT_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)"]
+    #[inline(always)]
+    pub fn adc_drc_sflat(&mut self) -> ADC_DRC_SFLAT_W<0> {
+        ADC_DRC_SFLAT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_SFLAT_SPEC {
 impl crate::Writable for AC_ADC_DRC_SFLAT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_sflat to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_sflat to value 0x5600"]
 impl crate::Resettable for AC_ADC_DRC_SFLAT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x5600
     }
 }

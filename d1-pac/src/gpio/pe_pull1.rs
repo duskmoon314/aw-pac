@@ -37,7 +37,7 @@ impl From<crate::W<PE_PULL1_SPEC>> for W {
 #[doc = "Field `pe_pull[16-17]` reader - PE Pull_up/down Select"]
 pub type PE_PULL_R = crate::FieldReader<u8, PE_PULL_A>;
 #[doc = "PE Pull_up/down Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PE_PULL_A {
     #[doc = "0: `0`"]

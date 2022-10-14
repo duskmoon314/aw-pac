@@ -37,7 +37,7 @@ impl From<crate::W<PD_CFG1_SPEC>> for W {
 #[doc = "Field `pd8_select` reader - PD8 Select"]
 pub type PD8_SELECT_R = crate::FieldReader<u8, PD8_SELECT_A>;
 #[doc = "PD8 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD8_SELECT_A {
     #[doc = "0: `0`"]
@@ -168,7 +168,7 @@ impl<'a, const O: u8> PD8_SELECT_W<'a, O> {
 #[doc = "Field `pd9_select` reader - PD9 Select"]
 pub type PD9_SELECT_R = crate::FieldReader<u8, PD9_SELECT_A>;
 #[doc = "PD9 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD9_SELECT_A {
     #[doc = "0: `0`"]
@@ -299,7 +299,7 @@ impl<'a, const O: u8> PD9_SELECT_W<'a, O> {
 #[doc = "Field `pd10_select` reader - PD10 Select"]
 pub type PD10_SELECT_R = crate::FieldReader<u8, PD10_SELECT_A>;
 #[doc = "PD10 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD10_SELECT_A {
     #[doc = "0: `0`"]
@@ -430,7 +430,7 @@ impl<'a, const O: u8> PD10_SELECT_W<'a, O> {
 #[doc = "Field `pd11_select` reader - PD11 Select"]
 pub type PD11_SELECT_R = crate::FieldReader<u8, PD11_SELECT_A>;
 #[doc = "PD11 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD11_SELECT_A {
     #[doc = "0: `0`"]
@@ -561,7 +561,7 @@ impl<'a, const O: u8> PD11_SELECT_W<'a, O> {
 #[doc = "Field `pd12_select` reader - PD12 Select"]
 pub type PD12_SELECT_R = crate::FieldReader<u8, PD12_SELECT_A>;
 #[doc = "PD12 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD12_SELECT_A {
     #[doc = "0: `0`"]
@@ -692,7 +692,7 @@ impl<'a, const O: u8> PD12_SELECT_W<'a, O> {
 #[doc = "Field `pd13_select` reader - PD13 Select"]
 pub type PD13_SELECT_R = crate::FieldReader<u8, PD13_SELECT_A>;
 #[doc = "PD13 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD13_SELECT_A {
     #[doc = "0: `0`"]
@@ -823,7 +823,7 @@ impl<'a, const O: u8> PD13_SELECT_W<'a, O> {
 #[doc = "Field `pd14_select` reader - PD14 Select"]
 pub type PD14_SELECT_R = crate::FieldReader<u8, PD14_SELECT_A>;
 #[doc = "PD14 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD14_SELECT_A {
     #[doc = "0: `0`"]
@@ -954,7 +954,7 @@ impl<'a, const O: u8> PD14_SELECT_W<'a, O> {
 #[doc = "Field `pd15_select` reader - PD15 Select"]
 pub type PD15_SELECT_R = crate::FieldReader<u8, PD15_SELECT_A>;
 #[doc = "PD15 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PD15_SELECT_A {
     #[doc = "0: `0`"]

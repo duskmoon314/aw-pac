@@ -45,7 +45,7 @@ pub type AXI_DIV_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RISCV_CLK_
 #[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLK_SRC_SEL_A {
     #[doc = "0: `0`"]

@@ -37,7 +37,7 @@ impl From<crate::W<CISR_SPEC>> for W {
 #[doc = "Field `cris[0-7]` reader - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
 pub type CRIS_R = crate::BitReader<CRIS_A>;
 #[doc = "Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CRIS_A {
     #[doc = "0: `0`"]
     NOT_PENDING = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> CRIS_W<'a, O> {
 #[doc = "Field `cfis[0-7]` reader - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
 pub type CFIS_R = crate::BitReader<CFIS_A>;
 #[doc = "Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CFIS_A {
     #[doc = "0: `0`"]
     NOT_PENDING = 0,

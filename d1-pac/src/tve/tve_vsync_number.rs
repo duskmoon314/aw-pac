@@ -37,7 +37,7 @@ impl From<crate::W<TVE_VSYNC_NUMBER_SPEC>> for W {
 #[doc = "Field `vsync5` reader - VSync5 Number of equalization pulse selection\n\nThis bit selects whether the number of equalization pulses is 5 or 6. This parameter is applicable only for interlaced video."]
 pub type VSYNC5_R = crate::BitReader<VSYNC5_A>;
 #[doc = "VSync5 Number of equalization pulse selection\n\nThis bit selects whether the number of equalization pulses is 5 or 6. This parameter is applicable only for interlaced video.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VSYNC5_A {
     #[doc = "0: 5 equalization pulse(default)"]
     _5 = 0,

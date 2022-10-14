@@ -37,7 +37,7 @@ impl From<crate::W<TP_CTRL3_SPEC>> for W {
 #[doc = "Field `filter_type` reader - Filter Type"]
 pub type FILTER_TYPE_R = crate::FieldReader<u8, FILTER_TYPE_A>;
 #[doc = "Filter Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FILTER_TYPE_A {
     #[doc = "0: 4 / 2"]
@@ -116,7 +116,7 @@ impl<'a, const O: u8> FILTER_TYPE_W<'a, O> {
 #[doc = "Field `filter_en` reader - Filter Enable"]
 pub type FILTER_EN_R = crate::BitReader<FILTER_EN_A>;
 #[doc = "Filter Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FILTER_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

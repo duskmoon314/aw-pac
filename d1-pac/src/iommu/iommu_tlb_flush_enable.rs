@@ -39,7 +39,7 @@ Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can cl
 pub type MI_TLB_FS_R = crate::BitReader<MI_TLB_FS_A>;
 #[doc = "Micro TLB\\[i\\]
 Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MI_TLB_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
     N_O_CLEAR_OR_COMPLETED = 0,
@@ -91,7 +91,7 @@ impl<'a, const O: u8> MI_TLB_FS_W<'a, O> {
 #[doc = "Field `ma_tlb_fs` reader - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
 pub type MA_TLB_FS_R = crate::BitReader<MA_TLB_FS_A>;
 #[doc = "Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MA_TLB_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
     N_O_CLEAR_OR_COMPLETED = 0,
@@ -142,7 +142,7 @@ impl<'a, const O: u8> MA_TLB_FS_W<'a, O> {
 #[doc = "Field `pc_fs` reader - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
 pub type PC_FS_R = crate::BitReader<PC_FS_A>;
 #[doc = "PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PC_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
     N_O_CLEAR_OR_COMPLETED = 0,

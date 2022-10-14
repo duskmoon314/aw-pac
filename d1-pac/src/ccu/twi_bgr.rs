@@ -37,7 +37,7 @@ impl From<crate::W<TWI_BGR_SPEC>> for W {
 #[doc = "Field `twi_gating[0-3]` reader - Gating Clock"]
 pub type TWI_GATING_R = crate::BitReader<TWI_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TWI_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TWI_GATING_W<'a, O> {
 #[doc = "Field `twi_rst[0-3]` reader - Reset"]
 pub type TWI_RST_R = crate::BitReader<TWI_RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TWI_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

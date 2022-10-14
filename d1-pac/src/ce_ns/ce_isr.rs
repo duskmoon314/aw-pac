@@ -37,7 +37,7 @@ impl From<crate::W<CE_ISR_SPEC>> for W {
 #[doc = "Field `task_pending[0-3]` reader - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
 pub type TASK_PENDING_R = crate::FieldReader<u8, TASK_PENDING_A>;
 #[doc = "Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TASK_PENDING_A {
     #[doc = "0: Task not finished"]

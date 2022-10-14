@@ -37,7 +37,7 @@ impl From<crate::W<CE_ICR_SPEC>> for W {
 #[doc = "Field `task_irq_en[0-3]` reader - Task Channel 3-0 Interrupt Enable"]
 pub type TASK_IRQ_EN_R = crate::FieldReader<u8, TASK_IRQ_EN_A>;
 #[doc = "Task Channel 3-0 Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TASK_IRQ_EN_A {
     #[doc = "0: Disable"]

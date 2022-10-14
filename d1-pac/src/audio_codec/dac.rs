@@ -41,7 +41,7 @@ pub type LINEOUT_VOL_CTRL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DAC_S
 #[doc = "Field `lineoutr_diffen` reader - Right Channel LINEOUT Output Control"]
 pub type LINEOUTR_DIFFEN_R = crate::BitReader<LINEOUTR_DIFFEN_A>;
 #[doc = "Right Channel LINEOUT Output Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINEOUTR_DIFFEN_A {
     #[doc = "0: `0`"]
     SINGLE = 0,
@@ -92,7 +92,7 @@ impl<'a, const O: u8> LINEOUTR_DIFFEN_W<'a, O> {
 #[doc = "Field `lineoutl_diffen` reader - Left Channel LINEOUT Output Control"]
 pub type LINEOUTL_DIFFEN_R = crate::BitReader<LINEOUTL_DIFFEN_A>;
 #[doc = "Left Channel LINEOUT Output Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINEOUTL_DIFFEN_A {
     #[doc = "0: `0`"]
     SINGLE = 0,
@@ -143,7 +143,7 @@ impl<'a, const O: u8> LINEOUTL_DIFFEN_W<'a, O> {
 #[doc = "Field `rmute` reader - DACR to Right Channel LINEOUT Mute Control"]
 pub type RMUTE_R = crate::BitReader<RMUTE_A>;
 #[doc = "DACR to Right Channel LINEOUT Mute Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RMUTE_A {
     #[doc = "0: `0`"]
     MUTE = 0,
@@ -193,7 +193,7 @@ impl<'a, const O: u8> RMUTE_W<'a, O> {
 #[doc = "Field `lineoutren` reader - Right Channel LINEOUT Enable"]
 pub type LINEOUTREN_R = crate::BitReader<LINEOUTREN_A>;
 #[doc = "Right Channel LINEOUT Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINEOUTREN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -243,7 +243,7 @@ impl<'a, const O: u8> LINEOUTREN_W<'a, O> {
 #[doc = "Field `lmute` reader - DACL to Left Channel LINEOUT Mute Control"]
 pub type LMUTE_R = crate::BitReader<LMUTE_A>;
 #[doc = "DACL to Left Channel LINEOUT Mute Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LMUTE_A {
     #[doc = "0: `0`"]
     MUTE = 0,
@@ -293,7 +293,7 @@ impl<'a, const O: u8> LMUTE_W<'a, O> {
 #[doc = "Field `lineoutlen` reader - Left Channel LINEOUT Enable"]
 pub type LINEOUTLEN_R = crate::BitReader<LINEOUTLEN_A>;
 #[doc = "Left Channel LINEOUT Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINEOUTLEN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -343,7 +343,7 @@ impl<'a, const O: u8> LINEOUTLEN_W<'a, O> {
 #[doc = "Field `dacr_en` reader - DACR Enable"]
 pub type DACR_EN_R = crate::BitReader<DACR_EN_A>;
 #[doc = "DACR Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DACR_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -393,7 +393,7 @@ impl<'a, const O: u8> DACR_EN_W<'a, O> {
 #[doc = "Field `dacl_en` reader - DACL Enable"]
 pub type DACL_EN_R = crate::BitReader<DACL_EN_A>;
 #[doc = "DACL Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DACL_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -443,7 +443,7 @@ impl<'a, const O: u8> DACL_EN_W<'a, O> {
 #[doc = "Field `iopdacs` reader - OPDAC L/R Bias Current Select"]
 pub type IOPDACS_R = crate::FieldReader<u8, IOPDACS_A>;
 #[doc = "OPDAC L/R Bias Current Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IOPDACS_A {
     #[doc = "0: `0`"]
@@ -522,7 +522,7 @@ impl<'a, const O: u8> IOPDACS_W<'a, O> {
 #[doc = "Field `ilineoutamps` reader - LINEOUT L/R AMP Bias Current Select"]
 pub type ILINEOUTAMPS_R = crate::FieldReader<u8, ILINEOUTAMPS_A>;
 #[doc = "LINEOUT L/R AMP Bias Current Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ILINEOUTAMPS_A {
     #[doc = "0: `0`"]
@@ -601,7 +601,7 @@ impl<'a, const O: u8> ILINEOUTAMPS_W<'a, O> {
 #[doc = "Field `iopvrs` reader - VRA2 Buffer OP and Headphone Feedback Buffer OP Bias Current Select"]
 pub type IOPVRS_R = crate::FieldReader<u8, IOPVRS_A>;
 #[doc = "VRA2 Buffer OP and Headphone Feedback Buffer OP Bias Current Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IOPVRS_A {
     #[doc = "0: `0`"]
@@ -679,7 +679,7 @@ impl<'a, const O: u8> IOPVRS_W<'a, O> {
 #[doc = "Field `current_test_select` reader - Internal Current Sink Test Enable (from MICIN3P pin)"]
 pub type CURRENT_TEST_SELECT_R = crate::BitReader<CURRENT_TEST_SELECT_A>;
 #[doc = "Internal Current Sink Test Enable (from MICIN3P pin)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CURRENT_TEST_SELECT_A {
     #[doc = "0: `0`"]
     NORMAL = 0,

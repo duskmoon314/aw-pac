@@ -41,7 +41,7 @@ pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCLK_FAN_SPEC, u8,
 #[doc = "Field `gating` reader - Gating for PCLK"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 #[doc = "Gating for PCLK\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GATING_A {
     #[doc = "0: `0`"]
     OFF = 0,

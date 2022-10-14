@@ -37,7 +37,7 @@ impl From<crate::W<CIR_TAC_SPEC>> for W {
 #[doc = "Field `tac` reader - TX FIFO Available Space Counter"]
 pub type TAC_R = crate::FieldReader<u8, TAC_A>;
 #[doc = "TX FIFO Available Space Counter\n\nValue on reset: 128"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TAC_A {
     #[doc = "0: No available space in TX FIFO"]

@@ -37,7 +37,7 @@ impl From<crate::W<CCU_FAN_SPEC>> for W {
 #[doc = "Field `clk_fanout_sel[0-2]` reader - "]
 pub type CLK_FANOUT_SEL_R = crate::FieldReader<u8, CLK_FANOUT_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLK_FANOUT_SEL_A {
     #[doc = "0: `0`"]
@@ -155,7 +155,7 @@ impl<'a, const O: u8> CLK_FANOUT_SEL_W<'a, O> {
 #[doc = "Field `clk_fanout_en[0-2]` reader - Gating for CLK_FANOUT"]
 pub type CLK_FANOUT_EN_R = crate::BitReader<CLK_FANOUT_EN_A>;
 #[doc = "Gating for CLK_FANOUT\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_FANOUT_EN_A {
     #[doc = "0: `0`"]
     OFF = 0,

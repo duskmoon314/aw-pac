@@ -44,7 +44,7 @@ pub type DATA_OUTPUT_TRI_EN_W<'a, const O: u8> =
 #[doc = "Field `io_output_tri_en[0-3]` reader - Enable the output of IO\\[i\\]"]
 pub type IO_OUTPUT_TRI_EN_R = crate::BitReader<IO_OUTPUT_TRI_EN_A>;
 #[doc = "Enable the output of IO\\[i\\]\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_OUTPUT_TRI_EN_A {
     #[doc = "1: Disable"]
     D_ISABLE = 1,
@@ -95,7 +95,7 @@ impl<'a, const O: u8> IO_OUTPUT_TRI_EN_W<'a, O> {
 #[doc = "Field `rgb_endian` reader - Set the endian of data bits"]
 pub type RGB_ENDIAN_R = crate::BitReader<RGB_ENDIAN_A>;
 #[doc = "Set the endian of data bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RGB_ENDIAN_A {
     #[doc = "0: Normal"]
     N_ORMAL = 0,

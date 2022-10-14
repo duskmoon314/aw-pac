@@ -37,7 +37,7 @@ impl From<crate::W<PCGR_SPEC>> for W {
 #[doc = "Field `pwm_clk_gating[0-7]` reader - Gating clock for PWM"]
 pub type PWM_CLK_GATING_R = crate::BitReader<PWM_CLK_GATING_A>;
 #[doc = "Gating clock for PWM\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM_CLK_GATING_A {
     #[doc = "0: Mask"]
     MASK = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> PWM_CLK_GATING_W<'a, O> {
 #[doc = "Field `pwm_clk_bypass[0-7]` reader - Bypass clock source (after pre-scale) to PWM output"]
 pub type PWM_CLK_BYPASS_R = crate::BitReader<PWM_CLK_BYPASS_A>;
 #[doc = "Bypass clock source (after pre-scale) to PWM output\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM_CLK_BYPASS_A {
     #[doc = "0: not bypass"]
     NOT_BYPASS = 0,

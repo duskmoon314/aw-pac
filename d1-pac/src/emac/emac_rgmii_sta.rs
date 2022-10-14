@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_RGMII_STA_SPEC>> for W {
 #[doc = "Field `rgmii_link_md` reader - The link mode of the RGMII interface"]
 pub type RGMII_LINK_MD_R = crate::BitReader<RGMII_LINK_MD_A>;
 #[doc = "The link mode of the RGMII interface\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RGMII_LINK_MD_A {
     #[doc = "0: `0`"]
     HALF_DUPLEX = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> RGMII_LINK_MD_W<'a, O> {
 #[doc = "Field `rgmii_link_spd` reader - The link speed of the RGMII interface"]
 pub type RGMII_LINK_SPD_R = crate::FieldReader<u8, RGMII_LINK_SPD_A>;
 #[doc = "The link speed of the RGMII interface\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RGMII_LINK_SPD_A {
     #[doc = "0: `0`"]
@@ -154,7 +154,7 @@ impl<'a, const O: u8> RGMII_LINK_SPD_W<'a, O> {
 #[doc = "Field `rgmii_link` reader - The link status of the RGMII interface"]
 pub type RGMII_LINK_R = crate::BitReader<RGMII_LINK_A>;
 #[doc = "The link status of the RGMII interface\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RGMII_LINK_A {
     #[doc = "0: `0`"]
     DOWN = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_AUTO_GATING_SPEC>> for W {
 #[doc = "Field `iommu_auto_gating` reader - IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module."]
 pub type IOMMU_AUTO_GATING_R = crate::BitReader<IOMMU_AUTO_GATING_A>;
 #[doc = "IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IOMMU_AUTO_GATING_A {
     #[doc = "0: Disable auto gating function"]
     D_ISABLE = 0,

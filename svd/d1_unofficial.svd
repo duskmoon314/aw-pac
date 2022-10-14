@@ -22955,11 +22955,27 @@
           <name>ac_dac_txdata</name>
           <description>DAC TX DATA Register</description>
           <addressOffset>0x20</addressOffset>
+          <access>write-only</access>
+          <fields>
+            <field>
+              <name>tx_data</name>
+              <description>Write the transmitting left and right channel sample data to this register one by one. Write the left channel sample data first and then the right channel sample.</description>
+              <bitRange>[31:0]</bitRange>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_cnt</name>
           <description>DAC TX FIFO Counter Register</description>
           <addressOffset>0x24</addressOffset>
+          <fields>
+            <field>
+              <name>tx_cnt</name>
+              <description>TX Sample Counter\n\nThe audio sample number of sending into TXFIFO.\n\nWhen one sample is put into TXFIFO by DMA or by host IO, the TX sample counter register increases by one. The TX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value.</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_dg</name>
@@ -23067,536 +23083,2797 @@
           <name>ac_adc_fifoc</name>
           <description>ADC FIFO Control Register</description>
           <addressOffset>0x30</addressOffset>
+          <resetValue>0x00000400</resetValue>
+          <resetMask>0xFF310FFF</resetMask>
+          <fields>
+            <field>
+              <name>adfs</name>
+              <description>Sample Rate of ADC \n\n44.1 kHz/22.05 kHz/11.025 kHz can be supported by Audio PLL Configure Bit.</description>
+              <bitRange>[31:29]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>48_K_H_Z</name>
+                  <description>48 kHz</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>24_K_H_Z</name>
+                  <description>24 kHz</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>12_K_H_Z</name>
+                  <description>12 kHz</description>
+                  <value>0x4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>32_K_H_Z</name>
+                  <description>32 kHz</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>16_K_H_Z</name>
+                  <description>16 kHz</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8_K_H_Z</name>
+                  <description>8 kHz</description>
+                  <value>0x5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>R_ESERVED</name>
+                  <description>Reserved</description>
+                  <value>0x7</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>en_ad</name>
+              <description>ADC Digital Part Enable</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adcfdt</name>
+              <description>ADC FIFO delay time for writing data after EN_AD</description>
+              <bitRange>[27:26]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>5_MS</name>
+                  <description>5 ms</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>10_MS</name>
+                  <description>10 ms</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>20_MS</name>
+                  <description>20 ms</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>30_MS</name>
+                  <description>30 ms</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adcdfen</name>
+              <description>ADC FIFO delay function for writing data after EN_AD</description>
+              <bitRange>[25:25]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_fifo_mode</name>
+              <description>RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA[31:0] = {FIFO_O[19:0], 12'h0}\n\nMode 1: RXDATA[31:0] = {12{FIFO_O[19]}, FIFO_O[19:0]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA[31:0] = {FIFO_O[19:4], 16'h0}\n\nMode 1: RXDATA[31:0] = {16{FIFO_O[19]}, FIFO_O[19:4]}</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>E_XPANDING_ZERO</name>
+                  <description>Expanding '0' at LSB of TX FIFO register</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_XPANDING_SIGN</name>
+                  <description>Expanding received sample sign bit at MSB of TX FIFO register</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_sync_en_start</name>
+              <description>The bit takes effect only when RX_SYNC_EN is set to 1. System Domain: Audio codec/I2S0/I2S1/I2S2/DMIC/OWA RX Synchronize Enable Start.</description>
+              <bitRange>[21:21]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_sync_en</name>
+              <description>Audiocodec RX Synchronize Enable</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_sample_bits</name>
+              <description>Receiving Audio Sample Resolution</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>16_BITS</name>
+                  <description>16 bits</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>20_BITS</name>
+                  <description>20 bits</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rx_fifo_trg_level</name>
+              <description>RX FIFO Trigger Level (RXTL[5:0])\n\nInterrupt and DMA request trigger level for RX FIFO normal condition IRQ/DRQ generated when WLEVEL > RXTL[5:0]</description>
+              <bitRange>[11:4]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>adc_drq_en</name>
+              <description>ADC FIFO Data Available DRQ Enable</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_irq_en</name>
+              <description>ADC FIFO Data Available IRQ Enable</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_overrun_irq_en</name>
+              <description>ADC FIFO Overrun IRQ Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_fifo_flush</name>
+              <description>ADC FIFO Flush\n\nWrite '1' to flush TX FIFO, self clear to '0'.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>clear</modifiedWriteValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>adc_vol_ctrl1</name>
           <description>ADC Volume Control1 Register</description>
           <addressOffset>0x34</addressOffset>
+          <resetValue>0xA0A0A0A0</resetValue>
+          <resetMask>0xFFFFFFFF</resetMask>
+          <fields>
+            <field>
+              <dim>3</dim>
+              <dimIncrement>0x8</dimIncrement>
+              <dimIndex>1-3</dimIndex>
+              <name>adc%s_vol</name>
+              <description>ADC[i] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>M_UTE</name>
+                  <description>Mute</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N_119_25_D_B</name>
+                  <description>-119.25 dB ...</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>0_D_B</name>
+                  <description>0 dB</description>
+                  <value>0xA0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>71_25_D_B</name>
+                  <description>71.25 dB</description>
+                  <value>0xFF</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_fifos</name>
           <description>ADC FIFO Status Register</description>
           <addressOffset>0x38</addressOffset>
+          <resetValue>0x00000001</resetValue>
+          <resetMask>0x0081FF0B</resetMask>
+          <fields>
+            <field>
+              <name>rxa</name>
+              <description>RX FIFO Available</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_O_AVAILABLE</name>
+                  <description>No available data in RX FIFO</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M_ORE</name>
+                  <description>More than one sample in RX FIFO (>= 1 word)</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxa_cnt</name>
+              <description>RX FIFO Available Sample Word Counter</description>
+              <bitRange>[16:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>rxa_int</name>
+              <description>RX FIFO Data Available Pending Interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_O_P_ENDING</name>
+                  <description>No Pending IRQ</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>PENDING</name>
+                  <description>Data Available Pending IRQ\n\nWrite '1' to clear this interrupt or automatic clear if the interrupt condition fails.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>rxo_int</name>
+              <description>RX FIFO Overrun Pending Interrupt</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_O_P_ENDING</name>
+                  <description>No Pending IRQ</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>FIFO</name>
+                  <description>FIFO Overrun Pending IRQ\n\nWrite '1' to clear this interrupt.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_rxdata</name>
           <description>ADC RX Data Register</description>
           <addressOffset>0x40</addressOffset>
+          <fields>
+            <field>
+              <name>rx_data</name>
+              <description>RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data comes first and then the right channel sample.</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_cnt</name>
           <description>ADC RX Counter Register</description>
           <addressOffset>0x44</addressOffset>
+          <fields>
+            <field>
+              <name>rx_cnt</name>
+              <description>RX Sample Counter\n\nThe audio sample number of writing into RXFIFO. When one sample is written by Digital Audio Engine, the RX sample counter register increases by one. The RX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value.</description>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_dg</name>
           <description>ADC Debug Register</description>
           <addressOffset>0x4C</addressOffset>
+          <fields>
+            <field>
+              <name>ad_swp2</name>
+              <description>ADC output channel swap enable (for digital filter)</description>
+              <bitRange>[25:25]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ad_swp1</name>
+              <description>ADC output channel swap enable (for digital filter)</description>
+              <bitRange>[24:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>adc_dig_ctrl</name>
           <description>ADC Digtial Control Register</description>
           <addressOffset>0x50</addressOffset>
+          <fields>
+            <field>
+              <name>adc3_vol_en</name>
+              <description>ADC3 Volume Control Enable</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc1_2_vol_en</name>
+              <description>ADC1/2 Volume Control Enable</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_channel_en</name>
+              <description>Bit 3: ADC4 enabled\n\nBit 2: ADC3 enabled\n\nBit 1: ADC2 enabled\n\nBit 0: ADC1 enabled</description>
+              <bitRange>[2:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>vra1speedup_down_ctrl</name>
+          <name>vra1speedup_ctrl</name>
           <description>VRA1 Speedup Down Control Register</description>
           <addressOffset>0x54</addressOffset>
+          <fields>
+            <field>
+              <name>vra1speedup_state</name>
+              <description>Only if VAR1SPEEDUP_Further_CTRL (0x310[22]) is set 0, VAR1Speedup Down State is valid.</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>NOT_WORK</name>
+                  <description>VAR1Speedup_Down does not work.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WORK</name>
+                  <description>VAR1Speedup_Down works.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>vra1speedup_ctrl</name>
+              <description>VAR1Speedup Down Manual Control Enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled.\n\nVAR1Speedup Down converts to 1 immediately.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>vra1speedup_rst_ctrl</name>
+              <description>VAR1Speedup Down RST Manual Control Enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled.\n\nVAR1Speedup Down reset 0 immediately.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>ac_dac_dap_ctrl</name>
+          <name>ac_dac_dap_ctr</name>
           <description>DAC DAP Control Register</description>
           <addressOffset>0xF0</addressOffset>
+          <fields>
+            <field>
+              <name>ddap_en</name>
+              <description>DAP for DRC enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_YPASSED</name>
+                  <description>Bypassed</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddap_drc_en</name>
+              <description>DRC enable control</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ddap_hpf_en</name>
+              <description>HPF enable control</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_dap_ctr</name>
           <description>ADC DAP Control Register</description>
           <addressOffset>0xF8</addressOffset>
+          <fields>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>1,0</dimIndex>
+              <name>adc_dap%s_en</name>
+              <description>DAP[i] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>B_YPASSED</name>
+                  <description>Bypassed</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>1,0</dimIndex>
+              <name>adc_drc%s_en</name>
+              <description>ADC DRC[i] enable control</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>0x4</dimIncrement>
+              <dimIndex>1,0</dimIndex>
+              <name>adc_hpf%s_en</name>
+              <description>ADC HPF[i] enable control</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hhpfc</name>
           <description>DAC DRC High HPF Coef Register</description>
           <addressOffset>0x100</addressOffset>
+          <resetValue>0x000000FF</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>hhpfc</name>
+              <description>HPF coefficient setting and the data is 3.24 format.</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lhpfc</name>
           <description>DAC DRC Low HPF Coef Register</description>
           <addressOffset>0x104</addressOffset>
+          <resetValue>0x0000FAC1</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>lhpfc</name>
+              <description>HPF coefficient setting and the data is 3.24 format.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_ctrl</name>
           <description>DAC DRC Control Register</description>
           <addressOffset>0x108</addressOffset>
+          <resetValue>0x00000080</resetValue>
+          <resetMask>0x0000BFFF</resetMask>
+          <fields>
+            <field>
+              <name>drc_dealy_buffer_data_output_state</name>
+              <description>DRC delay buffer data output state when The DRC delay function is enabled and the DRC function is disabled. After disabling the DRC function and this bit goes to 0, write the DRC delay function bit to 0.</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_OT_COMPLETED</name>
+                  <description>Not completed</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_OMPLETED</name>
+                  <description>Completed</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>signal_delay_time_setting</name>
+              <description>Signal delay time setting\n\nDelay time = 8*(n + 1) fs, n less than 30\n\nWhen the delay function is disabled, the signal delay time is unused.</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>dac_drc_delay_buf_en</name>
+              <description>The delay buffer use or not when the DRC is disabled and the DRC buffer data output completely.</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_O_NOT_USE_THE_BUFFER</name>
+                  <description>Do not use the buffer.</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>U_SE_THE_BUFFER</name>
+                  <description>Use the buffer.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drc_gain_max_limit_en</name>
+              <description>DRC gain max limit enable</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drc_gain_min_limit_en</name>
+              <description>DRC gain min limit enable When this function is enabled, it will overwrite the noise detect function.</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drc_detect_noise_en</name>
+              <description>Control the DRC to detect noise when ET is enabled.</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drc_signal_func_sel</name>
+              <description>Signal function select\n\nWhen the signal function selects the Peak filter, the RMS parameter is unused. (AC_DRC_LRMSHAT, AC_DRC_LRMSLAT, AC_DRC_LRMSHAT, AC_DRC_LRMSLAT)\n\nWhen the signal function selects the RMS filter, the Peak filter parameter is unused. (AC_DRC_LPFHAT, AC_DRC_LPFLAT, AC_DRC_RPFHAT, AC_DRC_RPFLAT, AC_DRC_LPFHRT, AC_DRC_LPFLRT, AC_DRC_RPFHRT, and AC_DRC_RPFLRT)</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RMS</name>
+                  <description>RMS filter</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P_EAK</name>
+                  <description>Peak filter</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drc_delay_func_en</name>
+              <description>Delay function enable</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled\n\nWhen the bit is disabled, the signal delay time is unused.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drc_lt_en</name>
+              <description>DRC LT enable</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled\n\nWhen the bit is disabled, Kl and OPL parameter is unused.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dac_drc_et_en</name>
+              <description>DRC ET enable</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled\n\nWhen the bit is disabled, Ke and OPE parameter is unused.</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lpfhat</name>
           <description>DAC DRC Left Peak Filter High Attack Time Coef Register</description>
           <addressOffset>0x10C</addressOffset>
+          <resetValue>0x0000000B</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lpfhat</name>
+              <description>The left peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lpflat</name>
           <description>DAC DRC Left Peak Filter Low Attack Time Coef Register</description>
           <addressOffset>0x110</addressOffset>
+          <resetValue>0x000077BF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lpflat</name>
+              <description>The left peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_rpfhat</name>
           <description>DAC DRC Right Peak Filter High Attack Time Coef Register</description>
           <addressOffset>0x114</addressOffset>
+          <resetValue>0x0000000B</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_rpfhat</name>
+              <description>The right peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_rpflat</name>
           <description>DAC DRC Peak Filter Low Attack Time Coef Register</description>
           <addressOffset>0x118</addressOffset>
+          <resetValue>0x000077BF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_rpflat</name>
+              <description>The left peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lpfhrt</name>
           <description>DAC DRC Left Peak Filter High Release Time Coef Register</description>
           <addressOffset>0x11C</addressOffset>
+          <resetValue>0x000000FF</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lpfhrt</name>
+              <description>The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lpflrt</name>
           <description>DAC DRC Left Peak Filter Low Release Time Coef Register</description>
           <addressOffset>0x120</addressOffset>
+          <resetValue>0x0000E1F8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lpflrt</name>
+              <description>The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_rpfhrt</name>
           <description>DAC DRC Right Peak filter High Release Time Coef Register</description>
           <addressOffset>0x124</addressOffset>
+          <resetValue>0x000000FF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_rpfhrt</name>
+              <description>The right peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_rpflrt</name>
           <description>DAC DRC Right Peak filter Low Release Time Coef Register</description>
           <addressOffset>0x128</addressOffset>
+          <resetValue>0x0000E1F8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_rpflrt</name>
+              <description>The right peak filter release time parameter setting, which is determined by the equation that AT = exp(-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lrmshat</name>
           <description>DAC DRC Left RMS Filter High Coef Register</description>
           <addressOffset>0x12C</addressOffset>
+          <resetValue>0x00000001</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lrmshat</name>
+              <description>The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lrmslat</name>
           <description>DAC DRC Left RMS Filter Low Coef Register</description>
           <addressOffset>0x130</addressOffset>
+          <resetValue>0x00002BAF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lrmslat</name>
+              <description>The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_rrmshat</name>
           <description>DAC DRC Right RMS Filter High Coef Register</description>
           <addressOffset>0x134</addressOffset>
+          <resetValue>0x00002BAF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_rrmshat</name>
+              <description>The right RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_rrmslat</name>
           <description>DAC DRC Right RMS Filter Low Coef Register</description>
           <addressOffset>0x138</addressOffset>
+          <resetValue>0x00002BAF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_rrmslat</name>
+              <description>The right RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hct</name>
           <description>DAC DRC Compressor Threshold High Setting Register</description>
           <addressOffset>0x13C</addressOffset>
+          <resetValue>0x000006A4</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hct</name>
+              <description>The compressor threshold setting, which is set by the equation that CTin = -CT/6.0206. The format is 8.24. (The default value is - 40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lct</name>
           <description>DAC DRC Compressor Slope High Setting Register</description>
           <addressOffset>0x140</addressOffset>
+          <resetValue>0x0000D3C0</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lct</name>
+              <description>The compressor threshold setting, which is set by the equation that CTin = -CT/6.0206. The format is 8.24. (The default value is - 40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hkc</name>
           <description>DAC DRC Compressor Slope High Setting Register</description>
           <addressOffset>0x144</addressOffset>
+          <resetValue>0x00000080</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hkc</name>
+              <description>The slope of the compressor, which is determined by the equation that Kc = 1/R. R is the ratio of the compressor, which is always an integer. The format is 8.24. (The default value is 2:1)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lkc</name>
           <description>DAC DRC Compressor Slope Low Setting Register</description>
           <addressOffset>0x148</addressOffset>
+          <fields>
+            <field>
+              <name>dac_drc_lkc</name>
+              <description>The slope of the compressor, which is determined by the equation that Kc = 1/R. R is the ratio of the compressor, which is always an integer. The format is 8.24. (The default value is 2:1)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hopc</name>
           <description>DAC DRC Compressor High Output at Compressor Threshold Register</description>
           <addressOffset>0x14C</addressOffset>
+          <resetValue>0x0000F95B</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hopc</name>
+              <description>The output of the compressor, which is determined by the equation -OPC/6.0206. The format is 8.24 (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lopc</name>
           <description>DAC DRC Compressor Low Output at Compressor Threshold Register</description>
           <addressOffset>0x150</addressOffset>
+          <resetValue>0x00002C3F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lopc</name>
+              <description>The output of the compressor, which is determined by the equation OPC/6.0206. The format is 8.24. (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hlt</name>
           <description>DAC DRC Limiter Threshold High Setting Register</description>
           <addressOffset>0x154</addressOffset>
+          <resetValue>0x000001A9</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hlt</name>
+              <description>The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206, The format is 8.24. (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_llt</name>
           <description>DAC DRC Limiter Threshold Low Setting Register</description>
           <addressOffset>0x158</addressOffset>
+          <resetValue>0x000034F0</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_llt</name>
+              <description>The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206. The format is 8.24. (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>ac_dac_drc_h_kl</name>
+          <name>ac_dac_drc_hkl</name>
           <description>DAC DRC Limiter Slope High Setting Register</description>
           <addressOffset>0x15C</addressOffset>
+          <resetValue>0x00000005</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hkl</name>
+              <description>The slope of the limiter which is determined by the equation that Kl = 1/R. R is the ratio of the limiter, which is always an integer. The format is 8.24. (The default value is &lt;50:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>ac_dac_drc_l_kl</name>
+          <name>ac_dac_drc_lkl</name>
           <description>DAC DRC Limiter Slope Low Setting Register</description>
           <addressOffset>0x160</addressOffset>
+          <resetValue>0x00001EB8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lkl</name>
+              <description>The slope of the limiter, which is determined by the equation that Kl = 1/R. R is the ratio of the limiter, which is always an integer. The format is 8.24. (The default value is &lt;50:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hopl</name>
           <description>DAC DRC Limiter High Output at Limiter Threshold</description>
           <addressOffset>0x164</addressOffset>
+          <resetValue>0x0000FBD8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hopl</name>
+              <description>The output of the limiter, which is determined by equation OPT/6.0206. The format is 8.24. (The default value is -25 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lopl</name>
           <description>DAC DRC Limiter Low Output at Limiter Threshold</description>
           <addressOffset>0x168</addressOffset>
+          <resetValue>0x0000FBA7</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lopl</name>
+              <description>The output of the limiter, which is determined by equation OPT/6.0206. The format is 8.24. (The default value is -25 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_het</name>
           <description>DAC DRC Expander Threshold High Setting Register</description>
           <addressOffset>0x16C</addressOffset>
+          <resetValue>0x00000BA0</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_het</name>
+              <description>The expander threshold setting, which is set by the equation that ETin = -ET/6.0206. The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_let</name>
           <description>DAC DRC Expander Threshold Low Setting Register</description>
           <addressOffset>0x170</addressOffset>
+          <resetValue>0x00007291</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_let</name>
+              <description>The expander threshold setting, which is set by the equation that ETin = -ET/6.0206. The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hke</name>
           <description>DAC DRC Expander Slope High Setting Register</description>
           <addressOffset>0x174</addressOffset>
+          <resetValue>0x00000500</resetValue>
+          <resetMask>0x00003FFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hke</name>
+              <description>The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is &lt;1:5>)</description>
+              <bitRange>[13:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lke</name>
           <description>DAC DRC Expander Slope Low Setting Register</description>
           <addressOffset>0x178</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lke</name>
+              <description>The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is &lt;1:5>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hope</name>
           <description>DAC DRC Expander High Output at Expander Threshold</description>
           <addressOffset>0x17C</addressOffset>
+          <resetValue>0x0000F45F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hope</name>
+              <description>The output of the expander, which is determined by equation OPE/6.0206. The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lope</name>
           <description>DAC DRC Expander Low Output at Expander Threshold</description>
           <addressOffset>0x180</addressOffset>
+          <resetValue>0x00008D6E</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lope</name>
+              <description>The output of the expander which is determined by equation OPE/6.0206. The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hkn</name>
           <description>DAC DRC Linear Slope High Setting Register</description>
           <addressOffset>0x184</addressOffset>
+          <resetValue>0x00000100</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hkn</name>
+              <description>The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is &lt;1:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_lkn</name>
           <description>DAC DRC Linear Slope Low Setting Register</description>
           <addressOffset>0x188</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_lkn</name>
+              <description>The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is &lt;1:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_sfhat</name>
           <description>DAC DRC Smooth filter Gain High Attack Time Coef Register</description>
           <addressOffset>0x18C</addressOffset>
+          <resetValue>0x00000002</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_sfhat</name>
+              <description>The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_sflat</name>
           <description>DAC DRC Smooth filter Gain Low Attack Time Coef Register</description>
           <addressOffset>0x190</addressOffset>
+          <resetValue>0x00005600</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_sflat</name>
+              <description>The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_sfhrt</name>
           <description>DAC DRC Smooth filter Gain High Release Time Coef Register</description>
           <addressOffset>0x194</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_sfhrt</name>
+              <description>The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_sflrt</name>
           <description>DAC DRC Smooth filter Gain Low Release Time Coef Register</description>
           <addressOffset>0x198</addressOffset>
+          <resetValue>0x00000F04</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_sflrt</name>
+              <description>The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_mxghs</name>
           <description>DAC DRC MAX Gain High Setting Register</description>
           <addressOffset>0x19C</addressOffset>
+          <resetValue>0x0000FE56</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_mxghs</name>
+              <description>The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB &lt; MXG &lt; 30 dB (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_mxgls</name>
           <description>DAC DRC MAX Gain Low Setting Register</description>
           <addressOffset>0x1A0</addressOffset>
+          <resetValue>0x0000CB0F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_mxgls</name>
+              <description>The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB &lt; MXG &lt; 30 dB (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_mnghs</name>
           <description>DAC DRC MIN Gain High Setting Register</description>
           <addressOffset>0x1A4</addressOffset>
+          <resetValue>0x0000F95B</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_mnghs</name>
+              <description>The min gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_mngls</name>
           <description>DAC DRC MIN Gain Low Setting Register</description>
           <addressOffset>0x1A8</addressOffset>
+          <resetValue>0x00002C3F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_mngls</name>
+              <description>The min gain setting, which is determined by equation MXG =MNG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_epshc</name>
           <description>DAC DRC Expander Smooth Time High Coef Register</description>
           <addressOffset>0x1AC</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_epshc</name>
+              <description>The gain smooth filter release and attack time parameter setting in expander region, which are determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_epslc</name>
           <description>DAC DRC Expander Smooth Time Low Coef Register</description>
           <addressOffset>0x1B0</addressOffset>
+          <resetValue>0x0000640C</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_epslc</name>
+              <description>The gain smooth filter release and attack time parameter setting in expander region, which are determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hpfhgain</name>
           <description>DAC DRC HPF Gain High Coef Register</description>
           <addressOffset>0x1B8</addressOffset>
+          <resetValue>0x00000100</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hpfhgain</name>
+              <description>The gain of HPF coefficient. The format is 3.24. (gain = 1)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_dac_drc_hpflgain</name>
           <description>DAC DRC HPF Gain Low Coef Register</description>
           <addressOffset>0x1BC</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>dac_drc_hpflgain</name>
+              <description>The gain of HPF coefficient. The format is 3.24. (gain = 1)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hhpfc</name>
           <description>ADC DRC High HPF Coef Register</description>
           <addressOffset>0x200</addressOffset>
+          <resetValue>0x000000FF</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>hhpfc</name>
+              <description>HPF coefficient setting and the data is 3.24 format.</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lhpfc</name>
           <description>ADC DRC Low HPF Coef Register</description>
           <addressOffset>0x204</addressOffset>
+          <resetValue>0x0000FAC1</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>lhpfc</name>
+              <description>HPF coefficient setting and the data is 3.24 format.</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_ctrl</name>
           <description>ADC DRC Control Register</description>
           <addressOffset>0x208</addressOffset>
+          <resetValue>0x00000080</resetValue>
+          <resetMask>0x0000BFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_delay_buf_output_state</name>
+              <description>DRC delay buffer data output state when The DRC delay function is enabled and the DRC function is disabled. After disabled DRC function and this bit goes to 0, the user should write the DRC delay function bit to 0.</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-only</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_OT_COMPLETED</name>
+                  <description>Not completed</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>C_OMPLETED</name>
+                  <description>Completed</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_signal_delay_time_set</name>
+              <description>Signal delay time setting\n\nDelay time = 8*(n + 1) fs, n &lt; 6'h30\n\nWhen the delay function is disabled, the signal delay time is unused.</description>
+              <bitRange>[13:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>adc_drc_delay_buf_en</name>
+              <description>The delay buffer use or not when the DRC is disabled and the DRC buffer data output completely.</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_O_NOT_USE_THE_BUFFER</name>
+                  <description>Do not use the buffer</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>U_SE_THE_BUFFER</name>
+                  <description>Use the buffer</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_gain_max_limit_en</name>
+              <description>DRC gain max limit enable</description>
+              <bitRange>[6:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_gain_min_limit_en</name>
+              <description>DRC gain min limit enable\n\nWhen this fuction is enabled, it will overwrite the noise detect function.</description>
+              <bitRange>[5:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_detect_noise_en</name>
+              <description>Control the DRC to detect noise when ET is enabled</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_signal_func_sel</name>
+              <description>Signal function select\n\nWhen the signal function selects the Peak filter, the RMS parameter is unused. (AC_DRC_LRMSHAT, AC_DRC_LRMSLAT, AC_DRC_LRMSHAT, and AC_DRC_LRMSLAT)\n\nWhen the signal function selects the RMS filter, the Peak filter parameter is unused. (AC_DRC_LPFHAT, AC_DRC_LPFLAT, AC_DRC_RPFHAT, AC_DRC_RPFLAT, AC_DRC_LPFHRT, AC_DRC_LPFLRT, AC_DRC_RPFHRT, and AC_DRC_RPFLRT)</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>RMS</name>
+                  <description>RMS filter</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P_EAK</name>
+                  <description>Peak filter</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_delay_func_en</name>
+              <description>Delay function enable\n\nWhen the bit is disabled, the signal delay time is unused.</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_lt_en</name>
+              <description>DRC LT enable\n\nWhen the bit is disabled, Kl and OPL parameter is unused.</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_drc_et_en</name>
+              <description>DRC ET enable\n\nWhen the bit is disabled, Ke and OPE parameter is unused.</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lpfhat</name>
           <description>ADC DRC Left Peak Filter High Attack Time Coef Register</description>
           <addressOffset>0x20C</addressOffset>
+          <resetValue>0x0000000B</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lpfhat</name>
+              <description>The left peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lpflat</name>
           <description>ADC DRC Left Peak Filter Low Attack Time Coef Register</description>
           <addressOffset>0x210</addressOffset>
+          <resetValue>0x000077BF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lpflat</name>
+              <description>The left peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_rpfhat</name>
           <description>ADC DRC Right Peak Filter High Attack Time Coef Register</description>
           <addressOffset>0x214</addressOffset>
+          <resetValue>0x0000000B</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_rpfhat</name>
+              <description>The right peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_rpflat</name>
           <description>ADC DRC Right Peak Filter Low Attack Time Coef Register</description>
           <addressOffset>0x218</addressOffset>
+          <resetValue>0x000077BF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_rpflat</name>
+              <description>The right peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lpfhrt</name>
           <description>ADC DRC Left Peak Filter High Release Time Coef Register</description>
           <addressOffset>0x21C</addressOffset>
+          <resetValue>0x000000FF</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lpfhrt</name>
+              <description>The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lpflrt</name>
           <description>ADC DRC Left Peak Filter Low Release Time Coef Register</description>
           <addressOffset>0x220</addressOffset>
+          <resetValue>0x0000E1F8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lpflrt</name>
+              <description>The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_rpfhrt</name>
           <description>ADC DRC Right Peak Filter High Release Time Coef Register</description>
           <addressOffset>0x224</addressOffset>
+          <resetValue>0x000000FF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_rpfhrt</name>
+              <description>The right peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_rpflrt</name>
           <description>ADC DRC Right Peak Filter Low Release Time Coef Register</description>
           <addressOffset>0x228</addressOffset>
+          <resetValue>0x0000E1F8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_rpflrt</name>
+              <description>The right peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lrmshat</name>
           <description>ADC DRC Left RMS Filter High Coef Register</description>
           <addressOffset>0x22C</addressOffset>
+          <resetValue>0x00000001</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lrmshat</name>
+              <description>The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lrmslat</name>
           <description>ADC DRC Left RMS Filter Low Coef Register</description>
           <addressOffset>0x230</addressOffset>
+          <resetValue>0x00002BAF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lrmslat</name>
+              <description>The left RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_rrmshat</name>
           <description>ADC DRC Right RMS Filter High Coef Register</description>
           <addressOffset>0x234</addressOffset>
+          <resetValue>0x00000001</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_rrmshat</name>
+              <description>The right RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_rrmslat</name>
           <description>ADC DRC Right RMS Filter Low Coef Register</description>
           <addressOffset>0x238</addressOffset>
+          <resetValue>0x00002BAF</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_rrmslat</name>
+              <description>The right RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hct</name>
           <description>ADC DRC Compressor Threshold High Setting Register</description>
           <addressOffset>0x23C</addressOffset>
+          <resetValue>0x000006A4</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hct</name>
+              <description>The compressor threshold setting, which is set by the equation that CTin = -CT/6.0206. The format is 8.24. (The default value is - 40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lct</name>
           <description>ADC DRC Compressor Slope High Setting Register</description>
           <addressOffset>0x240</addressOffset>
+          <resetValue>0x0000D3C0</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lct</name>
+              <description>The compressor threshold setting, which is set by the equation that CTin = -CT/6.0206. The format is 8.24. (The default value is - 40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hkc</name>
           <description>ADC DRC Compressor Slope High Setting Register</description>
           <addressOffset>0x244</addressOffset>
+          <resetValue>0x00000080</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hkc</name>
+              <description>The slope of the compressor which is determined by the equation that Kc = 1/R. R is the ratio of the compressor, which is always an integer. The format is 8.24. (The default value is &lt;2:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lkc</name>
           <description>ADC DRC Compressor Slope Low Setting Register</description>
           <addressOffset>0x248</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lkc</name>
+              <description>The slope of the compressor, which is determined by the equation that Kc = 1/R. R is the ratio of the compressor, which is always an integer. The format is 8.24. (The default value is &lt;2:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hopc</name>
           <description>ADC DRC Compressor High Output at Compressor Threshold Register</description>
           <addressOffset>0x24C</addressOffset>
+          <resetValue>0x0000F95B</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hopc</name>
+              <description>The output of the compressor, which is determined by the equation -OPC/6.0206. The format is 8.24. (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lopc</name>
           <description>ADC DRC Compressor Low Output at Compressor Threshold Register</description>
           <addressOffset>0x250</addressOffset>
+          <resetValue>0x00002C3F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lopc</name>
+              <description>The output of the compressor, which is determined by the equation OPC/6.0206. The format is 8.24. (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hlt</name>
           <description>ADC DRC Limiter Threshold High Setting Register</description>
           <addressOffset>0x254</addressOffset>
+          <resetValue>0x000001A9</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hlt</name>
+              <description>The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206. The format is 8.24. (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_llt</name>
           <description>ADC DRC Limiter Threshold Low Setting Register</description>
           <addressOffset>0x258</addressOffset>
+          <resetValue>0x000034F0</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_llt</name>
+              <description>The limiter threshold setting, which is set by the equation that LTin = -LT/6.0206. The format is 8.24. (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>ac_adc_drc_h_kl</name>
+          <name>ac_adc_drc_hkl</name>
           <description>ADC DRC Limiter Slope High Setting Register</description>
           <addressOffset>0x25C</addressOffset>
+          <resetValue>0x00000005</resetValue>
+          <resetMask>0x00003FFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hkl</name>
+              <description>The slope of the limiter, which is determined by the equation that Kl = 1/R. R is the ratio of the limiter, which is always an integer. The format is 8.24. (The default value is &lt;50:1>)</description>
+              <bitRange>[13:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>ac_adc_drc_l_kl</name>
+          <name>ac_adc_drc_lkl</name>
           <description>ADC DRC Limiter Slope Low Setting Register</description>
           <addressOffset>0x260</addressOffset>
+          <resetValue>0x00001EB8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lkl</name>
+              <description>The slope of the limiter, which is determined by the equation that Kl = 1/R. R is the ratio of the limiter, which is always an integer. The format is 8.24. (The default value is &lt;50:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hopl</name>
           <description>ADC DRC Limiter High Output at Limiter Threshold</description>
           <addressOffset>0x264</addressOffset>
+          <resetValue>0x0000FBD8</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hopl</name>
+              <description>The output of the limiter, which is determined by equation OPT/6.0206. The format is 8.24. (The default value is -25 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lopl</name>
           <description>ADC DRC Limiter Low Output at Limiter Threshold</description>
           <addressOffset>0x268</addressOffset>
+          <resetValue>0x0000FBA7</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lopl</name>
+              <description>The output of the limiter which is determined by equation OPT/6.0206. The format is 8.24. (The default value is -25 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_het</name>
           <description>ADC DRC Expander Threshold High Setting Register</description>
           <addressOffset>0x26C</addressOffset>
+          <resetValue>0x00000BA0</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_het</name>
+              <description>The expander threshold setting, which is set by the equation that ETin = -ET/6.0206, The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_let</name>
           <description>ADC DRC Expander Threshold Low Setting Register</description>
           <addressOffset>0x270</addressOffset>
+          <resetValue>0x00007291</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_let</name>
+              <description>The expander threshold setting, which is set by the equation that ETin = -ET/6.0206, The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hke</name>
           <description>ADC DRC Expander Slope High Setting Register</description>
           <addressOffset>0x274</addressOffset>
+          <resetValue>0x00000500</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hke</name>
+              <description>The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is &lt;1:5>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lke</name>
           <description>ADC DRC Expander Slope Low Setting Register</description>
           <addressOffset>0x278</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lke</name>
+              <description>The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must be larger than 50. The format is 8.24. (The default value is &lt;1:5>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hope</name>
           <description>ADC DRC Expander High Output at Expander Threshold</description>
           <addressOffset>0x27C</addressOffset>
+          <resetValue>0x0000F45F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hope</name>
+              <description>The output of the expander, which is determined by equation OPE/6.0206. The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lope</name>
           <description>ADC DRC Expander Low Output at Expander Threshold</description>
           <addressOffset>0x280</addressOffset>
+          <resetValue>0x00008D6E</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lope</name>
+              <description>The output of the expander, which is determined by equation OPE/6.0206. The format is 8.24. (The default value is -70 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hkn</name>
           <description>ADC DRC Linear Slope High Setting Register</description>
           <addressOffset>0x284</addressOffset>
+          <resetValue>0x00000100</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hkn</name>
+              <description>The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is &lt;1:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_lkn</name>
           <description>ADC DRC Linear Slope Low Setting Register</description>
           <addressOffset>0x288</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_lkn</name>
+              <description>The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is &lt;1:1>)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_sfhat</name>
           <description>ADC DRC Smooth filter Gain High Attack Time Coef Register</description>
           <addressOffset>0x28C</addressOffset>
+          <resetValue>0x00000002</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_sfhat</name>
+              <description>The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_sflat</name>
           <description>ADC DRC Smooth filter Gain Low Attack Time Coef Register</description>
           <addressOffset>0x290</addressOffset>
+          <resetValue>0x00005600</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_sflat</name>
+              <description>The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_sfhrt</name>
           <description>ADC DRC Smooth filter Gain High Release Time Coef Register</description>
           <addressOffset>0x294</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_sfhrt</name>
+              <description>The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_sflrt</name>
           <description>ADC DRC Smooth filter Gain Low Release Time Coef Register</description>
           <addressOffset>0x298</addressOffset>
+          <resetValue>0x00000F04</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_sflrt</name>
+              <description>The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_mxghs</name>
           <description>ADC DRC MAX Gain High Setting Register</description>
           <addressOffset>0x29C</addressOffset>
+          <resetValue>0x0000FE56</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_mxghs</name>
+              <description>The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB &lt; MXG &lt; 30 dB (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_mxgls</name>
           <description>ADC DRC MAX Gain Low Setting Register</description>
           <addressOffset>0x2A0</addressOffset>
+          <resetValue>0x0000CB0F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_mxgls</name>
+              <description>The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB &lt; MXG &lt; 30 dB (The default value is -10 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_mnghs</name>
           <description>ADC DRC MIN Gain High Setting Register</description>
           <addressOffset>0x2A4</addressOffset>
+          <resetValue>0x0000F95B</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_mnghs</name>
+              <description>The min gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_mngls</name>
           <description>ADC DRC MIN Gain Low Setting Register</description>
           <addressOffset>0x2A8</addressOffset>
+          <resetValue>0x00002C3F</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_mngls</name>
+              <description>The min gain setting, which is determined by equation MXG =MNG/6.0206. The format is 8.24 and must -60 dB ≤ MNG ≤ -40 dB (The default value is -40 dB)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_epshc</name>
           <description>ADC DRC Expander Smooth Time High Coef Register</description>
           <addressOffset>0x2AC</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_epshc</name>
+              <description>The gain smooth filter release and attack time parameter setting in expander region, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_epslc</name>
           <description>ADC DRC Expander Smooth Time Low Coef Register</description>
           <addressOffset>0x2B0</addressOffset>
+          <resetValue>0x0000640C</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_epslc</name>
+              <description>The gain smooth filter release and attack time parameter setting in expander region, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hpfhgain</name>
           <description>ADC DRC HPF Gain High Coef Register</description>
           <addressOffset>0x2B8</addressOffset>
+          <resetValue>0x00000100</resetValue>
+          <resetMask>0x000007FF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hpfhgain</name>
+              <description>The gain of HPF coefficient setting, which format is 3.24. (gain = 1)</description>
+              <bitRange>[10:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ac_adc_drc_hpflgain</name>
           <description>ADC DRC HPF Gain Low Coef Register</description>
           <addressOffset>0x2BC</addressOffset>
+          <resetValue>0x00000000</resetValue>
+          <resetMask>0x0000FFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_drc_hpflgain</name>
+              <description>The gain of HPF coefficient setting, which format is 3.24. (gain = 1)</description>
+              <bitRange>[15:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>adc1</name>
-          <description>ADC1 Analog Control Register</description>
+          <dim>3</dim>
+          <dimIncrement>0x4</dimIncrement>
+          <name>adc%s</name>
+          <description>ADC[i] Analog Control Register</description>
           <addressOffset>0x300</addressOffset>
-        </register>
-        <register>
-          <name>adc2</name>
-          <description>ADC2 Analog Control Register</description>
-          <addressOffset>0x304</addressOffset>
-        </register>
-        <register>
-          <name>adc3</name>
-          <description>ADC3 Analog Control Register</description>
-          <addressOffset>0x308</addressOffset>
+          <resetValue>0x001CC055</resetValue>
+          <resetMask>0xFFFFDFFF</resetMask>
+          <fields>
+            <field>
+              <name>adc_en</name>
+              <description>ADC Channel Enable</description>
+              <bitRange>[31:31]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mic_pga_en</name>
+              <description>MIC PGA Enable</description>
+              <bitRange>[30:30]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_d_itcher_c_ontrol</name>
+              <description>Dither Control</description>
+              <bitRange>[29:29]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_EW_D_ITHER_O_FF</name>
+                  <description>New Dither Off</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>N_EW_D_ITHER_O_N</name>
+                  <description>New Dither On</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mic_sin_en</name>
+              <description>MIC Single Input Enable</description>
+              <bitRange>[28:28]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fminlen</name>
+              <description>FMINL Enable</description>
+              <bitRange>[27:27]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>fminlg</name>
+              <description>FMINL Gain Control</description>
+              <bitRange>[26:26]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0_D_B</name>
+                  <description>0 dB</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6_D_B</name>
+                  <description>6 dB</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>dsm_dither_lvl</name>
+              <description>Dither Level Control (Dither level is positive ralated to the ctrl bits)</description>
+              <bitRange>[25:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_O</name>
+                  <description>No Level</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M_IN</name>
+                  <description>Min Level</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M_IDDLE</name>
+                  <description>Middle Level</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>M_AX</name>
+                  <description>Max Level</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lineinlen</name>
+              <description>LINEINL Enable</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>lineinlg</name>
+              <description>LINEINL Gain Control</description>
+              <bitRange>[22:22]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0_D_B</name>
+                  <description>0 dB</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>6_D_B</name>
+                  <description>6 dB</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>iopbuffer</name>
+              <description>PGA Vcm Buffer OP Bias Current Select</description>
+              <bitRange>[21:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>6_U_A</name>
+                  <description>6 uA</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>7_U_A</name>
+                  <description>7 uA</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8_U_A</name>
+                  <description>8 uA</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>9_U_A</name>
+                  <description>9 uA</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_pga_ctrl_rcm</name>
+              <description>ADC PGA Common Mode Input Impedance Control for MICIN</description>
+              <bitRange>[19:18]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>100K</name>
+                  <description>100 kΩ</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>75K</name>
+                  <description>75 kΩ</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>50K</name>
+                  <description>50 kΩ</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>25K</name>
+                  <description>25 kΩ</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_pga_in_vcm_ctrl</name>
+              <description>ADC PGA Common-Mode Voltage Control</description>
+              <bitRange>[17:16]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>900M</name>
+                  <description>900 mV</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>800M</name>
+                  <description>800 mV</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>750M</name>
+                  <description>750 mV</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>700M</name>
+                  <description>700 mV</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>iopadc</name>
+              <description>ADC1-ADC3 Bias Current Select</description>
+              <bitRange>[15:14]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1U</name>
+                  <description>1 uA</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2U</name>
+                  <description>2 uA</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>3U</name>
+                  <description>3 uA</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4U</name>
+                  <description>4 uA</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_pga_gain_ctrl</name>
+              <description>ADC PGA gain settings:\n\n\n\n0x0: 0 dB \t0x10: 21 dB \n\n0x1: 6 dB \t0x11: 22 dB \n\n0x2: 6 dB \t0x12: 23 dB \n\n0x3: 6 dB \t0x13: 24 dB \n\n0x4: 9 dB \t0x14: 25 dB \n\n0x5: 10 dB\t0x15: 26 dB \n\n0x6: 11 dB\t0x16: 27 dB \n\n0x7: 12 dB\t0x17: 28 dB \n\n0x8: 13 dB\t0x18: 29 dB \n\n0x9: 14 dB\t0x19: 30 dB \n\n0xA: 15 dB\t0x1A: 31 dB \n\n0xB: 16 dB\t0x1B: 32 dB \n\n0xC: 17 dB\t0x1C: 33 dB \n\n0xD: 18 dB\t0x1D: 34 dB \n\n0xE: 19 dB\t0x1E: 35 dB \n\n0xF: 20 dB\t0x1F: 36 dB</description>
+              <bitRange>[12:8]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>adc_iopaaf</name>
+              <description>ADC OP AAF Bias Current Select\n\nIOPADC is defined by ADC_REG&lt;15:14> from 1 uA to 4 uA.\n\nFor example: ADC_REG&lt;15:14> = 11, IOPADC = 4 uA \n\n00: 1.50*4 uA = 6 uA \n\n01: 1.75*4 uA = 7 uA \n\n10: 2.00*4 uA = 8 uA \n\n11: 2.25*4 uA = 9 uA</description>
+              <bitRange>[7:6]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1_50</name>
+                  <description>1.50*IOPADC</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_75</name>
+                  <description>1.75*IOPADC</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_00</name>
+                  <description>2.00*IOPADC</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_25</name>
+                  <description>2.25*IOPADC</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <dim>2</dim>
+              <dimIncrement>0x2</dimIncrement>
+              <dimIndex>2,1</dimIndex>
+              <name>adc_iopsdm%s</name>
+              <description>ADC OP SDM Bias Current Select [i]\n\nIOPADC is defined by ADC_REG&lt;15:14> from 1 uA to 4 uA.</description>
+              <bitRange>[5:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1_50</name>
+                  <description>1.50*IOPADC</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_75</name>
+                  <description>1.75*IOPADC</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_00</name>
+                  <description>2.00*IOPADC</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_25</name>
+                  <description>2.25*IOPADC</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>adc_iopmic</name>
+              <description>ADC OP MIC Bias Current Select\n\nIOPADC is defined by ADC_REG&lt;15:14> from 1 uA to 4 uA.</description>
+              <bitRange>[1:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1_50</name>
+                  <description>1.50*IOPADC</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_75</name>
+                  <description>1.75*IOPADC</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_00</name>
+                  <description>2.00*IOPADC</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_25</name>
+                  <description>2.25*IOPADC</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>dac</name>
@@ -23818,6 +26095,368 @@
           <name>micbias</name>
           <description>MICBIAS Analog Control Register</description>
           <addressOffset>0x318</addressOffset>
+          <resetValue>0x40003030</resetValue>
+          <resetMask>0x7FFFFCFC</resetMask>
+          <fields>
+            <field>
+              <name>seldetadcfs</name>
+              <description>Select sample interval of the ADC sample\\ 2 ^ (SELDETADCFS + 1) ms</description>
+              <bitRange>[30:28]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>seldetadcdb</name>
+              <description>Select debounce time when jack removal</description>
+              <bitRange>[27:26]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>128_MS</name>
+                  <description>128 ms</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>256_MS</name>
+                  <description>256 ms</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>512_MS</name>
+                  <description>512 ms</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1024_MS</name>
+                  <description>1024 ms</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>seldetadcbf</name>
+              <description>Select the time to enable HBIAS before MICADC work</description>
+              <bitRange>[25:24]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>2_MS</name>
+                  <description>2 ms</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4_MS</name>
+                  <description>4 ms</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>8_MS</name>
+                  <description>8 ms</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>16_MS</name>
+                  <description>16 ms</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>jackdeten</name>
+              <description>Jack detect enable</description>
+              <bitRange>[23:23]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLE</name>
+                  <description>Disable</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLE</name>
+                  <description>Enable</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>seldetadcdy</name>
+              <description>Select the delay time to pull low the micdet when jack removal</description>
+              <bitRange>[22:21]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>0_5_MS</name>
+                  <description>0.5 ms</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_MS</name>
+                  <description>1 ms</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_5_MS</name>
+                  <description>1.5 ms</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_MS</name>
+                  <description>2 ms</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>micadcen</name>
+              <description>Microphone detect ADC enable</description>
+              <bitRange>[20:20]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>popfree</name>
+              <description>When this bit is 0, HBIAS MICADC is controlled by registor</description>
+              <bitRange>[19:19]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>det_mode</name>
+              <description>MIC Detect Mode</description>
+              <bitRange>[18:18]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>LOW</name>
+                  <description>Jack in pull low</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>HIGH</name>
+                  <description>Jack in pull high</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>autoplen</name>
+              <description>Enable the function to auto pull low MICDET when jack removal</description>
+              <bitRange>[17:17]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>micdetpl</name>
+              <description>When this bit is 1and AUTOPLEN is 0, the MICDET is pulled down to GND.</description>
+              <bitRange>[16:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>hmicbiasen</name>
+              <description>Headphone Microphone Bias Enable</description>
+              <bitRange>[15:15]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hbiassel</name>
+              <description>HMICBIAS Voltage Level Select</description>
+              <bitRange>[14:13]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1_88_V</name>
+                  <description>1.88 V</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_09_V</name>
+                  <description>2.09 V</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_33_V</name>
+                  <description>2.33 V</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_55_V</name>
+                  <description>2.55 V</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hmic_bias_chopper_en</name>
+              <description>HMIC BIAS Chopper Enable</description>
+              <bitRange>[12:12]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hmic_bias_chopper_clk_sel</name>
+              <description>HMIC BIAS Chopper Clock Select</description>
+              <bitRange>[11:10]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>250_K_H_Z</name>
+                  <description>250 kHz</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>500_K_H_Z</name>
+                  <description>500 kHz</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_M_H_Z</name>
+                  <description>1 MHz</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_M_H_Z</name>
+                  <description>2 MHz</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mmicbiasen</name>
+              <description>Master Microphone Bias Enable</description>
+              <bitRange>[7:7]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mbiassel</name>
+              <description>MMICBIAS Voltage Level Select</description>
+              <bitRange>[6:5]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>1_88_V</name>
+                  <description>1.88 V</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_09_V</name>
+                  <description>2.09 V</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_33_V</name>
+                  <description>2.33 V</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_50_V</name>
+                  <description>2.50 V</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mmic_bias_chopper_en</name>
+              <description>MMIC BIAS Chopper Enable</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mmic_bias_chopper_clk_sel</name>
+              <description>MMIC BIAS Chopper Clock Select</description>
+              <bitRange>[3:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>250_K_H_Z</name>
+                  <description>250 kHz</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>500_K_H_Z</name>
+                  <description>500 kHz</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_M_H_Z</name>
+                  <description>1 MHz</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_M_H_Z</name>
+                  <description>2 MHz</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ramp</name>
@@ -24086,11 +26725,259 @@
           <name>bias</name>
           <description>BIAS Analog Control Register</description>
           <addressOffset>0x320</addressOffset>
+          <resetValue>0x00000080</resetValue>
+          <resetMask>0x000000FF</resetMask>
+          <fields>
+            <field>
+              <name>biasdata</name>
+              <description>Bias Current Register Setting Data</description>
+              <bitRange>[7:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
-          <name>adc5</name>
-          <description>ADC5 Analog Control Register</description>
-          <addressOffset>0x330</addressOffset>
+          <name>hmic_ctrl</name>
+          <description>HMIC Control Register</description>
+          <addressOffset>0x328</addressOffset>
+          <resetValue>0x00000008</resetValue>
+          <resetMask>0x007FFFFF</resetMask>
+          <fields>
+            <field>
+              <name>hmic_sample_select</name>
+              <description>Down Sample Setting Select</description>
+              <bitRange>[22:21]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>BY_1</name>
+                  <description>Down by 1, 128 Hz</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BY_2</name>
+                  <description>Down by 2, 64 Hz</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BY_4</name>
+                  <description>Down by 4, 32 Hz</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>BY_8</name>
+                  <description>Down by 8, 16 Hz</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mdata_threshold</name>
+              <description>MIC DET EN Threshold Value</description>
+              <bitRange>[20:16]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>hmic_sf</name>
+              <description>HMIC Smooth Filter setting</description>
+              <bitRange>[15:14]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>BYPASS</name>
+                  <description>bypass</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MEAN_2</name>
+                  <description>(x1+x2)/2</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MEAN_4</name>
+                  <description>(x1+x2+x3+x4)/4</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>MEAN_8</name>
+                  <description>(x1+x2+x3+x4+x5+x6+x7+x8)/8</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hmic_m</name>
+              <description>Debounce when the MIC Key down or up.\n\n(HMIC_M + 1) sample data</description>
+              <bitRange>[13:10]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>hmic_n</name>
+              <description>Debounce when earphone plug in or pull out 125 ms to 2 s</description>
+              <bitRange>[9:6]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>mdata_threshold_debounce</name>
+              <description>MDATA Threshold Debounce</description>
+              <bitRange>[5:3]</bitRange>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>jack_out_irq_en</name>
+              <description>MIC Detect Interrupt Set</description>
+              <bitRange>[2:2]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>jack_in_irq_en</name>
+              <description>MIC Detect Interrupt Set</description>
+              <bitRange>[1:1]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mic_det_irq_en</name>
+              <description>MIC Detect Interrupt Set</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>D_ISABLED</name>
+                  <description>Disabled</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>E_NABLED</name>
+                  <description>Enabled</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>hmic_sts</name>
+          <description>HMIC Status Register</description>
+          <addressOffset>0x32C</addressOffset>
+          <resetValue>0x00006000</resetValue>
+          <resetMask>0x00007F19</resetMask>
+          <fields>
+            <field>
+              <name>mdata_discard</name>
+              <description>After MIC DATA data is received, the first N-data will be discarded.</description>
+              <bitRange>[14:13]</bitRange>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_ONE</name>
+                  <description>None discarded</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>1_DATA</name>
+                  <description>1-data discarded</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>2_DATA</name>
+                  <description>2-data discarded</description>
+                  <value>0x2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>4_DATA</name>
+                  <description>4-data discarded</description>
+                  <value>0x3</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>hmic_data</name>
+              <description>HMIC Average Data</description>
+              <bitRange>[12:8]</bitRange>
+              <access>read-only</access>
+            </field>
+            <field>
+              <name>jack_det_oirq</name>
+              <description>Jack output detect pending interrupt</description>
+              <bitRange>[4:4]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_O_P_ENDING</name>
+                  <description>No Pending IRQ</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P_ENDING</name>
+                  <description>Pending IRQ</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>jack_det_iirq</name>
+              <description>Jack input detect pending interrupt</description>
+              <bitRange>[3:3]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_O_P_ENDING</name>
+                  <description>No Pending IRQ</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P_ENDING</name>
+                  <description>Pending IRQ</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>mic_det_st</name>
+              <description>MIC detect pending interrupt</description>
+              <bitRange>[0:0]</bitRange>
+              <access>read-write</access>
+              <modifiedWriteValues>oneToClear</modifiedWriteValues>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>N_O_PENDING</name>
+                  <description>No pending IRQ</description>
+                  <value>0x0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>P_ENDING</name>
+                  <description>Pending IRQ</description>
+                  <value>0x1</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+          </fields>
         </register>
         <register>
           <name>hp2</name>
@@ -24401,7 +27288,7 @@
               </enumeratedValues>
             </field>
             <field>
-              <name>var1speedup_down_further_ctrl</name>
+              <name>var1speedup_further_ctrl</name>
               <description>VRA1 Speedup Down Further Control In Adda Analog</description>
               <bitRange>[29:29]</bitRange>
               <enumeratedValues>

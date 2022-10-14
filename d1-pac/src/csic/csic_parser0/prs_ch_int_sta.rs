@@ -37,7 +37,7 @@ impl From<crate::W<PRS_CH_INT_STA_SPEC>> for W {
 #[doc = "Field `input_src_pd[0-1]` reader - "]
 pub type INPUT_SRC_PD_R = crate::BitReader<INPUT_SRC_PD_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INPUT_SRC_PD_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> INPUT_SRC_PD_W<'a, O> {
 #[doc = "Field `mul_err_pd` reader - Multi-channel writing error pending"]
 pub type MUL_ERR_PD_R = crate::BitReader<MUL_ERR_PD_A>;
 #[doc = "Multi-channel writing error pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MUL_ERR_PD_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,

@@ -76,7 +76,7 @@ bit is set, this bit is set only after a Root Hub reset to inform the system tha
 pub type CONNECT_STATUS_CHANGE_R = crate::BitReader<CONNECT_STATUS_CHANGE_A>;
 #[doc = "This bit is set whenever a connect or disconnect event occurs. The HCD writes a '1' to clear this bit. Writing a '0' has no effect. If CurrentConnectStatus is cleared when a SetPortReset,SetPortEnable , or SetPortSuspend write occurs, this bit is set to force the driver to re-evaluate the connection status since these writes should not occur if the port is disconnected.\n\nNote: If the DeviceRemovable\\[NDP\\]
 bit is set, this bit is set only after a Root Hub reset to inform the system that the device is attached.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CONNECT_STATUS_CHANGE_A {
     #[doc = "0: no change in CurrentConnectStatus"]
     NO_CHANGE = 0,
@@ -128,7 +128,7 @@ impl<'a, const O: u8> CONNECT_STATUS_CHANGE_W<'a, O> {
 #[doc = "Field `port_enable_status_change` reader - This bit is set when hardware events cause the PortEnableStatus bit to be cleared. Changes from HCD writes do not set this bit. The HCD writes a '1' to clear this bit. Writing a '0' has no effect."]
 pub type PORT_ENABLE_STATUS_CHANGE_R = crate::BitReader<PORT_ENABLE_STATUS_CHANGE_A>;
 #[doc = "This bit is set when hardware events cause the PortEnableStatus bit to be cleared. Changes from HCD writes do not set this bit. The HCD writes a '1' to clear this bit. Writing a '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PORT_ENABLE_STATUS_CHANGE_A {
     #[doc = "0: no change in PortEnableStatus"]
     NO_CHANGE = 0,
@@ -179,7 +179,7 @@ impl<'a, const O: u8> PORT_ENABLE_STATUS_CHANGE_W<'a, O> {
 #[doc = "Field `port_suspend_status_change` reader - This bit is set when the full resume sequence has been completed. This sequence includes the 20-s resume pulse, LS EOP, and 3-ms resychronization delay. The HCD writes a '1' to clear this bit. Writing a '0' has no effect. This bit is also cleared when ResetStatusChange is set."]
 pub type PORT_SUSPEND_STATUS_CHANGE_R = crate::BitReader<PORT_SUSPEND_STATUS_CHANGE_A>;
 #[doc = "This bit is set when the full resume sequence has been completed. This sequence includes the 20-s resume pulse, LS EOP, and 3-ms resychronization delay. The HCD writes a '1' to clear this bit. Writing a '0' has no effect. This bit is also cleared when ResetStatusChange is set.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PORT_SUSPEND_STATUS_CHANGE_A {
     #[doc = "0: resume is not completed"]
     NOT_COMPLETE = 0,
@@ -231,7 +231,7 @@ impl<'a, const O: u8> PORT_SUSPEND_STATUS_CHANGE_W<'a, O> {
 pub type PORT_OVER_CURRENT_INDICATOR_CHANGE_R =
     crate::BitReader<PORT_OVER_CURRENT_INDICATOR_CHANGE_A>;
 #[doc = "This bit is valid only if overcurrent conditions are reported on a per-port basis. This bit is set when Root Hub changes the PortOverCurrentIndicator bit. The HCD writes a ‘1’ to clear this bit. Writing a ‘0’ has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PORT_OVER_CURRENT_INDICATOR_CHANGE_A {
     #[doc = "0: no change in PortOverCurrentIndicator"]
     NO_CHANGE = 0,
@@ -282,7 +282,7 @@ impl<'a, const O: u8> PORT_OVER_CURRENT_INDICATOR_CHANGE_W<'a, O> {
 #[doc = "Field `port_reset_status_change` reader - This bit is set at the end of the 10ms port reset signal. The HCD writes a '1' to clear this bit. Writing a '0' has no effect."]
 pub type PORT_RESET_STATUS_CHANGE_R = crate::BitReader<PORT_RESET_STATUS_CHANGE_A>;
 #[doc = "This bit is set at the end of the 10ms port reset signal. The HCD writes a '1' to clear this bit. Writing a '0' has no effect.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PORT_RESET_STATUS_CHANGE_A {
     #[doc = "0: port reset is not complete"]
     NOC_COMPLETE = 0,

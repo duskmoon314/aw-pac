@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_PC_IVLD_ENABLE_SPEC>> for W {
 #[doc = "Field `pc_ivld_enable` reader - Enable PTW Cache invalidation operation\n\nAfter invalidation operation is completed, the bit can clear automatically.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation."]
 pub type PC_IVLD_ENABLE_R = crate::BitReader<PC_IVLD_ENABLE_A>;
 #[doc = "Enable PTW Cache invalidation operation\n\nAfter invalidation operation is completed, the bit can clear automatically.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PC_IVLD_ENABLE_A {
     #[doc = "0: No operation or operation is completed"]
     N_O_OPERATION_OR_COMPLETED = 0,

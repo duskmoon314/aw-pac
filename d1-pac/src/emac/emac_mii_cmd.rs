@@ -41,7 +41,7 @@ pub type MII_BUSY_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_MII_CMD_SP
 #[doc = "Field `mii_wr` reader - MII Write and Read"]
 pub type MII_WR_R = crate::BitReader<MII_WR_A>;
 #[doc = "MII Write and Read\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MII_WR_A {
     #[doc = "0: `0`"]
     R = 0,
@@ -100,7 +100,7 @@ pub type PHY_ADDR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_MII_CMD_
 #[doc = "Field `mdc_div_ratio_m` reader - MDC Clock DIvider Ratio"]
 pub type MDC_DIV_RATIO_M_R = crate::FieldReader<u8, MDC_DIV_RATIO_M_A>;
 #[doc = "MDC Clock DIvider Ratio\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MDC_DIV_RATIO_M_A {
     #[doc = "0: `0`"]

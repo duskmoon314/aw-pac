@@ -37,7 +37,7 @@ impl From<crate::W<PIO_POW_MS_CTL_SPEC>> for W {
 #[doc = "Field `vcc_p_ws_vol_mod_sel[C,D,E,F,G]` reader - VCC_PX Withstand Voltage Mode Select Control"]
 pub type VCC_P_WS_VOL_MOD_SEL_R = crate::BitReader<VCC_P_WS_VOL_MOD_SEL_A>;
 #[doc = "VCC_PX Withstand Voltage Mode Select Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCC_P_WS_VOL_MOD_SEL_A {
     #[doc = "0: `0`"]
     ENABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> VCC_P_WS_VOL_MOD_SEL_W<'a, O> {
 #[doc = "Field `vccio_ws_vol_mod_sel` reader - VCC_IO Withstand Voltage Mode Select Control"]
 pub type VCCIO_WS_VOL_MOD_SEL_R = crate::BitReader<VCCIO_WS_VOL_MOD_SEL_A>;
 #[doc = "VCC_IO Withstand Voltage Mode Select Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCCIO_WS_VOL_MOD_SEL_A {
     #[doc = "0: `0`"]
     ENABLE = 0,

@@ -42,7 +42,7 @@ pub type CPU_GATING_FIELD_W<'a, const O: u8> =
 #[doc = "Field `cpu_gating` reader - Gating Special Clock"]
 pub type CPU_GATING_R = crate::BitReader<CPU_GATING_A>;
 #[doc = "Gating Special Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CPU_GATING_A {
     #[doc = "0: `0`"]
     OFF = 0,

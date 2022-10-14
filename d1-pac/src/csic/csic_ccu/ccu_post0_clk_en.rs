@@ -37,7 +37,7 @@ impl From<crate::W<CCU_POST0_CLK_EN_SPEC>> for W {
 #[doc = "Field `mcsi_bk_clk_enable[0-1]` reader - "]
 pub type MCSI_BK_CLK_ENABLE_R = crate::BitReader<MCSI_BK_CLK_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MCSI_BK_CLK_ENABLE_A {
     #[doc = "0: BK\\[i\\]
 clock disable"]
@@ -92,7 +92,7 @@ clock enable,when MCSI_POST0_CLK_ENABLE is 1"]
 #[doc = "Field `mcsi_post0_clk_enable` reader - "]
 pub type MCSI_POST0_CLK_ENABLE_R = crate::BitReader<MCSI_POST0_CLK_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MCSI_POST0_CLK_ENABLE_A {
     #[doc = "0: POST0 clock disable"]
     DISABLE = 0,

@@ -39,7 +39,7 @@ Interrupt Enable"]
 pub type TRANSMIT_MQ_IRQ_EN_R = crate::BitReader<TRANSMIT_MQ_IRQ_EN_A>;
 #[doc = "Transmit Channel\\[i\\]
 Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRANSMIT_MQ_IRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

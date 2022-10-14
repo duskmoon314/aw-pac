@@ -37,7 +37,7 @@ impl From<crate::W<LCD_SAFE_PERIOD_SPEC>> for W {
 #[doc = "Field `safe_period_mode` reader - Select the save mode"]
 pub type SAFE_PERIOD_MODE_R = crate::FieldReader<u8, SAFE_PERIOD_MODE_A>;
 #[doc = "Select the save mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SAFE_PERIOD_MODE_A {
     #[doc = "0: unsafe"]

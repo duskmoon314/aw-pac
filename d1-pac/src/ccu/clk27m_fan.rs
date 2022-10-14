@@ -45,7 +45,7 @@ pub type DIV1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLK27M_FAN_SPEC, 
 #[doc = "Field `clk_src_sel` reader - Clock Source Select"]
 pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLK_SRC_SEL_A {
     #[doc = "0: `0`"]
@@ -98,7 +98,7 @@ impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
 #[doc = "Field `gating` reader - Gating for CLK27M"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 #[doc = "Gating for CLK27M\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GATING_A {
     #[doc = "0: `0`"]
     OFF = 0,

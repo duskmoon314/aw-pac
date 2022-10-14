@@ -37,7 +37,7 @@ impl From<crate::W<MTH_SPEC>> for W {
 #[doc = "Field `priority` reader - "]
 pub type PRIORITY_R = crate::FieldReader<u8, PRIORITY_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRIORITY_A {
     #[doc = "0: Priority 0 (never interrupt)"]

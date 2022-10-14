@@ -37,7 +37,7 @@ impl From<crate::W<RXDMA_CTRL_SPEC>> for W {
 #[doc = "Field `enable` reader - "]
 pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENABLE_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> ENABLE_W<'a, O> {
 #[doc = "Field `mode` reader - "]
 pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_A {
     #[doc = "0: `0`"]
     CONTINOUS = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> MODE_W<'a, O> {
 #[doc = "Field `blk_size` reader - "]
 pub type BLK_SIZE_R = crate::FieldReader<u8, BLK_SIZE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BLK_SIZE_A {
     #[doc = "0: `0`"]
@@ -216,7 +216,7 @@ impl<'a, const O: u8> BLK_SIZE_W<'a, O> {
 #[doc = "Field `ahb_burst_mode` reader - Set for AHB port burst supported"]
 pub type AHB_BURST_MODE_R = crate::FieldReader<u8, AHB_BURST_MODE_A>;
 #[doc = "Set for AHB port burst supported\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AHB_BURST_MODE_A {
     #[doc = "0: `0`"]

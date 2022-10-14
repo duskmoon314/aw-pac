@@ -37,7 +37,7 @@ impl From<crate::W<TV_CTL_SPEC>> for W {
 #[doc = "Field `tv_src_sel` reader - TV Source Select\n\nNote: The priority of this bit is higher than TV_SRC_SEL(bit\\[2:0\\]) in TV_SRC_CTL_REG."]
 pub type TV_SRC_SEL_R = crate::BitReader<TV_SRC_SEL_A>;
 #[doc = "TV Source Select\n\nNote: The priority of this bit is higher than TV_SRC_SEL(bit\\[2:0\\]) in TV_SRC_CTL_REG.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_SRC_SEL_A {
     #[doc = "1: BLUE data"]
     BLUE_DATA = 1,
@@ -81,7 +81,7 @@ need to be enabled."]
 pub type TV_EN_R = crate::BitReader<TV_EN_A>;
 #[doc = "When enable TCON_TV, this bit and the 0x0000\\[bit31\\]
 need to be enabled.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

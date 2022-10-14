@@ -37,7 +37,7 @@ impl From<crate::W<I2S_BGR_SPEC>> for W {
 #[doc = "Field `i2s_gating[0-2]` reader - Gating Clock"]
 pub type I2S_GATING_R = crate::BitReader<I2S_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I2S_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> I2S_GATING_W<'a, O> {
 #[doc = "Field `i2s_rst[0-2]` reader - Reset"]
 pub type I2S_RST_R = crate::BitReader<I2S_RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum I2S_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

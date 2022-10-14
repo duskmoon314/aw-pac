@@ -37,7 +37,7 @@ impl From<crate::W<SPI_GCR_SPEC>> for W {
 #[doc = "Field `en` reader - SPI Module Enable Control"]
 pub type EN_R = crate::BitReader<EN_A>;
 #[doc = "SPI Module Enable Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> EN_W<'a, O> {
 #[doc = "Field `mode` reader - SPI Function Mode Select"]
 pub type MODE_R = crate::BitReader<MODE_A>;
 #[doc = "SPI Function Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_A {
     #[doc = "0: `0`"]
     SLAVE = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> MODE_W<'a, O> {
 #[doc = "Field `mode_selec` reader - Sample timing Mode Select"]
 pub type MODE_SELEC_R = crate::BitReader<MODE_SELEC_A>;
 #[doc = "Sample timing Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_SELEC_A {
     #[doc = "0: Old mode of Sample Timing"]
     OLD_MODE = 0,
@@ -187,7 +187,7 @@ impl<'a, const O: u8> MODE_SELEC_W<'a, O> {
 #[doc = "Field `tp_en` reader - Transmit Pause Enable"]
 pub type TP_EN_R = crate::BitReader<TP_EN_A>;
 #[doc = "Transmit Pause Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_EN_A {
     #[doc = "0: normal operation, ignore RXFIFO status"]
     NORMAL = 0,

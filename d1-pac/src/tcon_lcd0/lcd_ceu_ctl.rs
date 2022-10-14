@@ -42,7 +42,7 @@ pub type BT656_F_MASK_VALUE_W<'a, const O: u8> =
 #[doc = "Field `bt656_f_mask` reader - BT656 F Mask"]
 pub type BT656_F_MASK_R = crate::BitReader<BT656_F_MASK_A>;
 #[doc = "BT656 F Mask\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BT656_F_MASK_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -93,7 +93,7 @@ impl<'a, const O: u8> BT656_F_MASK_W<'a, O> {
 #[doc = "Field `ceu_en` reader - Enable CEU function"]
 pub type CEU_EN_R = crate::BitReader<CEU_EN_A>;
 #[doc = "Enable CEU function\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEU_EN_A {
     #[doc = "0: Bypass"]
     B_YPASS = 0,

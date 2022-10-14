@@ -16,7 +16,7 @@ impl From<crate::R<SPINLOCK_SYSTATUS_SPEC>> for R {
 #[doc = "Field `iu0` reader - In-Use flag0"]
 pub type IU0_R = crate::BitReader<IU0_A>;
 #[doc = "In-Use flag0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IU0_A {
     #[doc = "0: All lock registers 0-31 are not taken"]
     ALL_NOT_TAKEN = 0,
@@ -52,7 +52,7 @@ impl IU0_R {
 #[doc = "Field `locks_num` reader - Number of lock registers implemented"]
 pub type LOCKS_NUM_R = crate::FieldReader<u8, LOCKS_NUM_A>;
 #[doc = "Number of lock registers implemented\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LOCKS_NUM_A {
     #[doc = "0: 256 lock registers"]

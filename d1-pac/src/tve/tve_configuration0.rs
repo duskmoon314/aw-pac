@@ -37,7 +37,7 @@ impl From<crate::W<TVE_CONFIGURATION0_SPEC>> for W {
 #[doc = "Field `uv_order` reader - This bit selects if the sample order at the chroma input to the Video Encoder is Cb first (i.e. Cb 0 Cr 0 Cb 1 Cr 1) or Cr first (i.e. Cr 0 Cb 0 Cr 1 Cb 1)."]
 pub type UV_ORDER_R = crate::BitReader<UV_ORDER_A>;
 #[doc = "This bit selects if the sample order at the chroma input to the Video Encoder is Cb first (i.e. Cb 0 Cr 0 Cb 1 Cr 1) or Cr first (i.e. Cr 0 Cb 0 Cr 1 Cb 1).\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UV_ORDER_A {
     #[doc = "0: The chroma sample input order is Cb first"]
     C_B = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> UV_ORDER_W<'a, O> {
 #[doc = "Field `invert_top` reader - Field parity input signal (top_field) polarity selection.\n\nThis bit selects whether the top field is indicated by a high level of the field parity signal or by the low level. The bit is applicable both when the Video Encoder is the sync master and when the Video Encoder is the sync slave."]
 pub type INVERT_TOP_R = crate::BitReader<INVERT_TOP_A>;
 #[doc = "Field parity input signal (top_field) polarity selection.\n\nThis bit selects whether the top field is indicated by a high level of the field parity signal or by the low level. The bit is applicable both when the Video Encoder is the sync master and when the Video Encoder is the sync slave.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INVERT_TOP_A {
     #[doc = "0: Top field is indicated by low level"]
     LOW = 0,

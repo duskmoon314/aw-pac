@@ -42,7 +42,7 @@ pub type DBI_TIMER_VALUE_W<'a, const O: u8> =
 #[doc = "Field `dbi_tm_en` reader - DBI Timer Enable"]
 pub type DBI_TM_EN_R = crate::BitReader<DBI_TM_EN_A>;
 #[doc = "DBI Timer Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBI_TM_EN_A {
     #[doc = "0: `0`"]
     ENABLE = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<PCCR45_SPEC>> for W {
 #[doc = "Field `pwm45_clk_div_m` reader - PWM45 Clock Divide M"]
 pub type PWM45_CLK_DIV_M_R = crate::FieldReader<u8, PWM45_CLK_DIV_M_A>;
 #[doc = "PWM45 Clock Divide M\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PWM45_CLK_DIV_M_A {
     #[doc = "0: /1"]
@@ -181,7 +181,7 @@ impl<'a, const O: u8> PWM45_CLK_DIV_M_W<'a, O> {
 #[doc = "Field `pwm45_clk_src_sel` reader - Select PWM45 Clock Source"]
 pub type PWM45_CLK_SRC_SEL_R = crate::FieldReader<u8, PWM45_CLK_SRC_SEL_A>;
 #[doc = "Select PWM45 Clock Source\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PWM45_CLK_SRC_SEL_A {
     #[doc = "0: HOSC"]

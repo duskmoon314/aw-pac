@@ -37,7 +37,7 @@ impl From<crate::W<EFUSE_HV_PWRSWT_CTRL_SPEC>> for W {
 #[doc = "Field `efuse_1_8v_power_switch_control` reader - 1: Open power switch 0: Close power switch"]
 pub type EFUSE_1_8V_POWER_SWITCH_CONTROL_R = crate::BitReader<EFUSE_1_8V_POWER_SWITCH_CONTROL_A>;
 #[doc = "1: Open power switch 0: Close power switch\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EFUSE_1_8V_POWER_SWITCH_CONTROL_A {
     #[doc = "1: Open power switch"]
     OPEN = 1,

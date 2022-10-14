@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_INT_EN_SPEC>> for W {
 #[doc = "Field `tx_int_en` reader - Transmit Interrupt"]
 pub type TX_INT_EN_R = crate::BitReader<TX_INT_EN_A>;
 #[doc = "Transmit Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TX_INT_EN_W<'a, O> {
 #[doc = "Field `tx_dma_stopped_int_en` reader - Transmit DMA FSM Stopped Interrupt"]
 pub type TX_DMA_STOPPED_INT_EN_R = crate::BitReader<TX_DMA_STOPPED_INT_EN_A>;
 #[doc = "Transmit DMA FSM Stopped Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_DMA_STOPPED_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> TX_DMA_STOPPED_INT_EN_W<'a, O> {
 #[doc = "Field `tx_buf_ua_int_en` reader - Transmit Buffer Available Interrupt"]
 pub type TX_BUF_UA_INT_EN_R = crate::BitReader<TX_BUF_UA_INT_EN_A>;
 #[doc = "Transmit Buffer Available Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_BUF_UA_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -189,7 +189,7 @@ impl<'a, const O: u8> TX_BUF_UA_INT_EN_W<'a, O> {
 #[doc = "Field `tx_timeout_int_en` reader - Transmit Timeout Interrupt"]
 pub type TX_TIMEOUT_INT_EN_R = crate::BitReader<TX_TIMEOUT_INT_EN_A>;
 #[doc = "Transmit Timeout Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_TIMEOUT_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -240,7 +240,7 @@ impl<'a, const O: u8> TX_TIMEOUT_INT_EN_W<'a, O> {
 #[doc = "Field `tx_underflow_int_en` reader - Transmit Underflow Interrupt"]
 pub type TX_UNDERFLOW_INT_EN_R = crate::BitReader<TX_UNDERFLOW_INT_EN_A>;
 #[doc = "Transmit Underflow Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_UNDERFLOW_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -291,7 +291,7 @@ impl<'a, const O: u8> TX_UNDERFLOW_INT_EN_W<'a, O> {
 #[doc = "Field `tx_early_int_en` reader - Early Transmit Interrupt"]
 pub type TX_EARLY_INT_EN_R = crate::BitReader<TX_EARLY_INT_EN_A>;
 #[doc = "Early Transmit Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_EARLY_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -342,7 +342,7 @@ impl<'a, const O: u8> TX_EARLY_INT_EN_W<'a, O> {
 #[doc = "Field `rx_int_en` reader - Receive Interrupt"]
 pub type RX_INT_EN_R = crate::BitReader<RX_INT_EN_A>;
 #[doc = "Receive Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -392,7 +392,7 @@ impl<'a, const O: u8> RX_INT_EN_W<'a, O> {
 #[doc = "Field `rx_buf_ua_int_en` reader - Receive Buffer Unavailable Interrupt"]
 pub type RX_BUF_UA_INT_EN_R = crate::BitReader<RX_BUF_UA_INT_EN_A>;
 #[doc = "Receive Buffer Unavailable Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_BUF_UA_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -443,7 +443,7 @@ impl<'a, const O: u8> RX_BUF_UA_INT_EN_W<'a, O> {
 #[doc = "Field `rx_dma_stopped_int_en` reader - Receive DMA FSM Stopped Interrupt"]
 pub type RX_DMA_STOPPED_INT_EN_R = crate::BitReader<RX_DMA_STOPPED_INT_EN_A>;
 #[doc = "Receive DMA FSM Stopped Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_DMA_STOPPED_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -494,7 +494,7 @@ impl<'a, const O: u8> RX_DMA_STOPPED_INT_EN_W<'a, O> {
 #[doc = "Field `rx_timeout_int_en` reader - Receive Timeout Interrupt"]
 pub type RX_TIMEOUT_INT_EN_R = crate::BitReader<RX_TIMEOUT_INT_EN_A>;
 #[doc = "Receive Timeout Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_TIMEOUT_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -545,7 +545,7 @@ impl<'a, const O: u8> RX_TIMEOUT_INT_EN_W<'a, O> {
 #[doc = "Field `rx_overflow_int_en` reader - Receive Overflow Interrupt"]
 pub type RX_OVERFLOW_INT_EN_R = crate::BitReader<RX_OVERFLOW_INT_EN_A>;
 #[doc = "Receive Overflow Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_OVERFLOW_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -596,7 +596,7 @@ impl<'a, const O: u8> RX_OVERFLOW_INT_EN_W<'a, O> {
 #[doc = "Field `rx_early_int_en` reader - Early Receive Interrupt"]
 pub type RX_EARLY_INT_EN_R = crate::BitReader<RX_EARLY_INT_EN_A>;
 #[doc = "Early Receive Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_EARLY_INT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

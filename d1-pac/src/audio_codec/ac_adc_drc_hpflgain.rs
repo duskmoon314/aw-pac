@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_HPFLGAIN_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_hpflgain` reader - The gain of HPF coefficient setting, which format is 3.24. (gain = 1)"]
+pub type ADC_DRC_HPFLGAIN_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_hpflgain` writer - The gain of HPF coefficient setting, which format is 3.24. (gain = 1)"]
+pub type ADC_DRC_HPFLGAIN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_HPFLGAIN_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The gain of HPF coefficient setting, which format is 3.24. (gain = 1)"]
+    #[inline(always)]
+    pub fn adc_drc_hpflgain(&self) -> ADC_DRC_HPFLGAIN_R {
+        ADC_DRC_HPFLGAIN_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The gain of HPF coefficient setting, which format is 3.24. (gain = 1)"]
+    #[inline(always)]
+    pub fn adc_drc_hpflgain(&mut self) -> ADC_DRC_HPFLGAIN_W<0> {
+        ADC_DRC_HPFLGAIN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

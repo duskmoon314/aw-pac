@@ -37,7 +37,7 @@ impl From<crate::W<PISR_SPEC>> for W {
 #[doc = "Field `pis[0-7]` reader - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
 pub type PIS_R = crate::BitReader<PIS_A>;
 #[doc = "PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PIS_A {
     #[doc = "0: `0`"]
     NOT_PENDING = 0,

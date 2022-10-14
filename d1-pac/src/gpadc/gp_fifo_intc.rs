@@ -46,7 +46,7 @@ pub type FIFO_TRIG_LEVEL_W<'a, const O: u8> =
 #[doc = "Field `fifo_data_irq_en` reader - ADC FIFO Data Available IRQ Enable"]
 pub type FIFO_DATA_IRQ_EN_R = crate::BitReader<FIFO_DATA_IRQ_EN_A>;
 #[doc = "ADC FIFO Data Available IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_DATA_IRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -97,7 +97,7 @@ impl<'a, const O: u8> FIFO_DATA_IRQ_EN_W<'a, O> {
 #[doc = "Field `fifo_overrun_irq_en` reader - ADC FIFO Overrun IRQ Enable"]
 pub type FIFO_OVERRUN_IRQ_EN_R = crate::BitReader<FIFO_OVERRUN_IRQ_EN_A>;
 #[doc = "ADC FIFO Overrun IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_OVERRUN_IRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -148,7 +148,7 @@ impl<'a, const O: u8> FIFO_OVERRUN_IRQ_EN_W<'a, O> {
 #[doc = "Field `fifo_data_drq_en` reader - ADC FIFO Date DRQ Enable"]
 pub type FIFO_DATA_DRQ_EN_R = crate::BitReader<FIFO_DATA_DRQ_EN_A>;
 #[doc = "ADC FIFO Date DRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_DATA_DRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<TVE_NOTCH_WIDTH_COMP_YUV_EN_SPEC>> for W {
 #[doc = "Field `comp_yuv_en` reader - This bit selects if the components video output are the RGB components or the YUV components."]
 pub type COMP_YUV_EN_R = crate::BitReader<COMP_YUV_EN_A>;
 #[doc = "This bit selects if the components video output are the RGB components or the YUV components.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COMP_YUV_EN_A {
     #[doc = "0: The three component outputs are the RGB components."]
     RGB = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> COMP_YUV_EN_W<'a, O> {
 #[doc = "Field `notch_width` reader - Luma notch filter width selection\n\nThis bit selects the luma notch filter (which is a band-reject filter) width."]
 pub type NOTCH_WIDTH_R = crate::BitReader<NOTCH_WIDTH_A>;
 #[doc = "Luma notch filter width selection\n\nThis bit selects the luma notch filter (which is a band-reject filter) width.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NOTCH_WIDTH_A {
     #[doc = "0: Narrow"]
     N_ARROW = 0,

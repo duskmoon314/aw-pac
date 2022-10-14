@@ -39,7 +39,7 @@ pub type TV_CURRENT_LINE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `line_buf_bypass` reader - Line Buf fer Bypass"]
 pub type LINE_BUF_BYPASS_R = crate::BitReader<LINE_BUF_BYPASS_A>;
 #[doc = "Line Buf fer Bypass\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINE_BUF_BYPASS_A {
     #[doc = "0: Used"]
     U_SED = 0,
@@ -90,7 +90,7 @@ impl<'a, const O: u8> LINE_BUF_BYPASS_W<'a, O> {
 #[doc = "Field `tv_field_pol` reader - TV Field Polarity"]
 pub type TV_FIELD_POL_R = crate::BitReader<TV_FIELD_POL_A>;
 #[doc = "TV Field Polarity\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_FIELD_POL_A {
     #[doc = "0: Second field"]
     S_ECOND = 0,

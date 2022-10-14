@@ -37,7 +37,7 @@ impl From<crate::W<HCI_INTERFACE_SPEC>> for W {
 #[doc = "Field `ulpi_bypass_enable` reader - ULPI bypass enable"]
 pub type ULPI_BYPASS_ENABLE_R = crate::BitReader<ULPI_BYPASS_ENABLE_A>;
 #[doc = "ULPI bypass enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ULPI_BYPASS_ENABLE_A {
     #[doc = "1: Enable UTMI interface, disable ULPI interface"]
     UTMI = 1,
@@ -89,7 +89,7 @@ impl<'a, const O: u8> ULPI_BYPASS_ENABLE_W<'a, O> {
 pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A>;
 #[doc = "Master interface INCRX align enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A {
     #[doc = "1: Start INCRx burst only on burst x-align address"]
     BURST_X_ALIGN_ADDRESS = 1,
@@ -143,7 +143,7 @@ is enabled"]
 pub type AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A>;
 #[doc = "Master interface burst type INCR4 enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_A {
     #[doc = "1: Use INCR4 when appropriate"]
     USE_INCR4 = 1,
@@ -200,7 +200,7 @@ impl<'a, const O: u8> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<'a, O> {
 pub type AHB_MASTER_INTERFACE_INCR8_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_INCR8_ENABLE_A>;
 #[doc = "Master interface INCR8 enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AHB_MASTER_INTERFACE_INCR8_ENABLE_A {
     #[doc = "1: Use INCR8 when appropriate"]
     USE_INCR8 = 1,
@@ -252,7 +252,7 @@ impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<'a, O> {
 pub type AHB_MASTER_INTERFACE_INCR16_ENABLE_R =
     crate::BitReader<AHB_MASTER_INTERFACE_INCR16_ENABLE_A>;
 #[doc = "Master interface INCR16 enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AHB_MASTER_INTERFACE_INCR16_ENABLE_A {
     #[doc = "1: Use INCR16 when appropriate"]
     USE_INCR16 = 1,
@@ -303,7 +303,7 @@ impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<'a, O> {
 #[doc = "Field `pp2vbus` reader - "]
 pub type PP2VBUS_R = crate::BitReader<PP2VBUS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PP2VBUS_A {
     #[doc = "1: ULPI wrapper interface will automatically set or clear DrvVbus register in ULPI PHY according to the port power status form the root hub"]
     AUTO = 1,
@@ -353,7 +353,7 @@ impl<'a, const O: u8> PP2VBUS_W<'a, O> {
 #[doc = "Field `resume_k_to_se0_transition` reader - "]
 pub type RESUME_K_TO_SE0_TRANSITION_R = crate::BitReader<RESUME_K_TO_SE0_TRANSITION_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESUME_K_TO_SE0_TRANSITION_A {
     #[doc = "1: Within 2 us of the resume-K to SE0 transition"]
     WITHIN_2US = 1,
@@ -404,7 +404,7 @@ impl<'a, const O: u8> RESUME_K_TO_SE0_TRANSITION_W<'a, O> {
 #[doc = "Field `ohci_count_select` reader - OHCI count select"]
 pub type OHCI_COUNT_SELECT_R = crate::BitReader<OHCI_COUNT_SELECT_A>;
 #[doc = "OHCI count select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OHCI_COUNT_SELECT_A {
     #[doc = "1: Simulation mode. The counters will be much shorter then real time"]
     SIMULATION = 1,
@@ -455,7 +455,7 @@ impl<'a, const O: u8> OHCI_COUNT_SELECT_W<'a, O> {
 #[doc = "Field `dma_transfer_status_enable` reader - DMA Transfer Status Enable"]
 pub type DMA_TRANSFER_STATUS_ENABLE_R = crate::BitReader<DMA_TRANSFER_STATUS_ENABLE_A>;
 #[doc = "DMA Transfer Status Enable\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_TRANSFER_STATUS_ENABLE_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

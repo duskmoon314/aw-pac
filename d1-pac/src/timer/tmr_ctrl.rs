@@ -37,7 +37,7 @@ impl From<crate::W<TMR_CTRL_SPEC>> for W {
 #[doc = "Field `tmr_en` reader - "]
 pub type TMR_EN_R = crate::BitReader<TMR_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TMR_EN_A {
     #[doc = "0: `0`"]
     STOP_PAUSE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TMR_EN_W<'a, O> {
 #[doc = "Field `tmr_reload` reader - "]
 pub type TMR_RELOAD_R = crate::BitReader<TMR_RELOAD_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TMR_RELOAD_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> TMR_RELOAD_W<'a, O> {
 #[doc = "Field `tmr_clk_src` reader - "]
 pub type TMR_CLK_SRC_R = crate::FieldReader<u8, TMR_CLK_SRC_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TMR_CLK_SRC_A {
     #[doc = "0: `0`"]
@@ -190,7 +190,7 @@ impl<'a, const O: u8> TMR_CLK_SRC_W<'a, O> {
 #[doc = "Field `tmr_clk_pres` reader - "]
 pub type TMR_CLK_PRES_R = crate::FieldReader<u8, TMR_CLK_PRES_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TMR_CLK_PRES_A {
     #[doc = "0: `0`"]
@@ -321,7 +321,7 @@ impl<'a, const O: u8> TMR_CLK_PRES_W<'a, O> {
 #[doc = "Field `tmr_mode` reader - "]
 pub type TMR_MODE_R = crate::BitReader<TMR_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TMR_MODE_A {
     #[doc = "0: `0`"]
     PERIODIC = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_PC_IVLD_MODE_SEL_SPEC>> for W {
 #[doc = "Field `pc_ivld_mode_sel` reader - PTW Cache Invalid Mode Select"]
 pub type PC_IVLD_MODE_SEL_R = crate::BitReader<PC_IVLD_MODE_SEL_A>;
 #[doc = "PTW Cache Invalid Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PC_IVLD_MODE_SEL_A {
     #[doc = "0: Invalidate PTW by using the Mask mode"]
     M_ASK_MODE = 0,

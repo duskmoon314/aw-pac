@@ -37,7 +37,7 @@ impl From<crate::W<DSP_BGR_SPEC>> for W {
 #[doc = "Field `cfg_gating` reader - Gating Clock"]
 pub type CFG_GATING_R = crate::BitReader<CFG_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CFG_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> CFG_GATING_W<'a, O> {
 #[doc = "Field `rst` reader - Reset"]
 pub type RST_R = crate::BitReader<RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> RST_W<'a, O> {
 #[doc = "Field `cfg_rst` reader - Reset"]
 pub type CFG_RST_R = crate::BitReader<CFG_RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CFG_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,
@@ -187,7 +187,7 @@ impl<'a, const O: u8> CFG_RST_W<'a, O> {
 #[doc = "Field `dbg_rst` reader - Reset"]
 pub type DBG_RST_R = crate::BitReader<DBG_RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBG_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

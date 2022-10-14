@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_BASIC_CTL1_SPEC>> for W {
 #[doc = "Field `soft_rst` reader - Soft Reset all Registers and Logic"]
 pub type SOFT_RST_R = crate::BitReader<SOFT_RST_A>;
 #[doc = "Soft Reset all Registers and Logic\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SOFT_RST_A {
     #[doc = "0: `0`"]
     NO_VALID = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> SOFT_RST_W<'a, O> {
 #[doc = "Field `rx_tx_pri` reader - RX TX DMA Priority"]
 pub type RX_TX_PRI_R = crate::BitReader<RX_TX_PRI_A>;
 #[doc = "RX TX DMA Priority\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_TX_PRI_A {
     #[doc = "0: `0`"]
     SAME = 0,

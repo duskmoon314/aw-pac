@@ -47,7 +47,7 @@ pub type DAC0_AUTO_DETECT_INTERRUPT_EN_W<'a, const O: u8> =
 #[doc = "Field `dac_auto_detect_mode_sel` reader - "]
 pub type DAC_AUTO_DETECT_MODE_SEL_R = crate::BitReader<DAC_AUTO_DETECT_MODE_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_AUTO_DETECT_MODE_SEL_A {
     #[doc = "0: Old Mode"]
     O_LD = 0,

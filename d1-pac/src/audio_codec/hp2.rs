@@ -37,7 +37,7 @@ impl From<crate::W<HP2_SPEC>> for W {
 #[doc = "Field `hpfb_buf_output_current` reader - Headphone Feedback Buffer Output Current Select\n\nI = 7uA"]
 pub type HPFB_BUF_OUTPUT_CURRENT_R = crate::FieldReader<u8, HPFB_BUF_OUTPUT_CURRENT_A>;
 #[doc = "Headphone Feedback Buffer Output Current Select\n\nI = 7uA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HPFB_BUF_OUTPUT_CURRENT_A {
     #[doc = "0: `0`"]
@@ -116,7 +116,7 @@ impl<'a, const O: u8> HPFB_BUF_OUTPUT_CURRENT_W<'a, O> {
 #[doc = "Field `ramp_final_state_res` reader - Ramp Final State Resistor"]
 pub type RAMP_FINAL_STATE_RES_R = crate::FieldReader<u8, RAMP_FINAL_STATE_RES_A>;
 #[doc = "Ramp Final State Resistor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RAMP_FINAL_STATE_RES_A {
     #[doc = "0: `0`"]
@@ -195,7 +195,7 @@ impl<'a, const O: u8> RAMP_FINAL_STATE_RES_W<'a, O> {
 #[doc = "Field `ramp_out_en` reader - Ramp Output Switch Enable"]
 pub type RAMP_OUT_EN_R = crate::BitReader<RAMP_OUT_EN_A>;
 #[doc = "Ramp Output Switch Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMP_OUT_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -245,7 +245,7 @@ impl<'a, const O: u8> RAMP_OUT_EN_W<'a, O> {
 #[doc = "Field `ramp_final_control` reader - Headphone Ramp Final Step Control"]
 pub type RAMP_FINAL_CONTROL_R = crate::BitReader<RAMP_FINAL_CONTROL_A>;
 #[doc = "Headphone Ramp Final Step Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMP_FINAL_CONTROL_A {
     #[doc = "0: `0`"]
     SELECT_RAMP = 0,
@@ -296,7 +296,7 @@ impl<'a, const O: u8> RAMP_FINAL_CONTROL_W<'a, O> {
 #[doc = "Field `hpfb_in_en` reader - Headphone Feedback PAD IN Switch Enable"]
 pub type HPFB_IN_EN_R = crate::BitReader<HPFB_IN_EN_A>;
 #[doc = "Headphone Feedback PAD IN Switch Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HPFB_IN_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -346,7 +346,7 @@ impl<'a, const O: u8> HPFB_IN_EN_W<'a, O> {
 #[doc = "Field `rampen` reader - Ramp DAC Enable"]
 pub type RAMPEN_R = crate::BitReader<RAMPEN_A>;
 #[doc = "Ramp DAC Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RAMPEN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -396,7 +396,7 @@ impl<'a, const O: u8> RAMPEN_W<'a, O> {
 #[doc = "Field `rswitch` reader - RSwitch"]
 pub type RSWITCH_R = crate::BitReader<RSWITCH_A>;
 #[doc = "RSwitch\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RSWITCH_A {
     #[doc = "0: `0`"]
     HPOUT = 0,
@@ -446,7 +446,7 @@ impl<'a, const O: u8> RSWITCH_W<'a, O> {
 #[doc = "Field `hp_drvouten` reader - Headphone Driver Output Enable"]
 pub type HP_DRVOUTEN_R = crate::BitReader<HP_DRVOUTEN_A>;
 #[doc = "Headphone Driver Output Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HP_DRVOUTEN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -496,7 +496,7 @@ impl<'a, const O: u8> HP_DRVOUTEN_W<'a, O> {
 #[doc = "Field `hp_drven` reader - Headphone Driver Enable"]
 pub type HP_DRVEN_R = crate::BitReader<HP_DRVEN_A>;
 #[doc = "Headphone Driver Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HP_DRVEN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -546,7 +546,7 @@ impl<'a, const O: u8> HP_DRVEN_W<'a, O> {
 #[doc = "Field `iophp` reader - Headphone L/R OP Bias Current Select"]
 pub type IOPHP_R = crate::FieldReader<u8, IOPHP_A>;
 #[doc = "Headphone L/R OP Bias Current Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IOPHP_A {
     #[doc = "0: `0`"]
@@ -624,7 +624,7 @@ impl<'a, const O: u8> IOPHP_W<'a, O> {
 #[doc = "Field `opdrv_cur` reader - Headphone OP Output Stage Current Setting"]
 pub type OPDRV_CUR_R = crate::FieldReader<u8, OPDRV_CUR_A>;
 #[doc = "Headphone OP Output Stage Current Setting\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OPDRV_CUR_A {
     #[doc = "0: `0`"]
@@ -677,7 +677,7 @@ impl<'a, const O: u8> OPDRV_CUR_W<'a, O> {
 #[doc = "Field `hpfb_res` reader - Headphone Feedback Big Resistor Control"]
 pub type HPFB_RES_R = crate::FieldReader<u8, HPFB_RES_A>;
 #[doc = "Headphone Feedback Big Resistor Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HPFB_RES_A {
     #[doc = "0: `0`"]
@@ -756,7 +756,7 @@ impl<'a, const O: u8> HPFB_RES_W<'a, O> {
 #[doc = "Field `headphone_gain` reader - Headphone Gain"]
 pub type HEADPHONE_GAIN_R = crate::FieldReader<u8, HEADPHONE_GAIN_A>;
 #[doc = "Headphone Gain\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HEADPHONE_GAIN_A {
     #[doc = "0: `0`"]
@@ -887,7 +887,7 @@ impl<'a, const O: u8> HEADPHONE_GAIN_W<'a, O> {
 #[doc = "Field `hpfb_buf_en` reader - Headphone Feedback Buffer OP Enable"]
 pub type HPFB_BUF_EN_R = crate::BitReader<HPFB_BUF_EN_A>;
 #[doc = "Headphone Feedback Buffer OP Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HPFB_BUF_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

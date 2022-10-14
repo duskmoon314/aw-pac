@@ -37,7 +37,7 @@ impl From<crate::W<TVE_VIDEO_CHROMA_BW_COMP_GAIN_SPEC>> for W {
 #[doc = "Field `comp_ch_gain` reader - Chroma gain selection for the composite video signal.\n\nThese bits specify the gain of the chroma signal for composing with the luma signal to generate the composite video signal:"]
 pub type COMP_CH_GAIN_R = crate::FieldReader<u8, COMP_CH_GAIN_A>;
 #[doc = "Chroma gain selection for the composite video signal.\n\nThese bits specify the gain of the chroma signal for composing with the luma signal to generate the composite video signal:\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum COMP_CH_GAIN_A {
     #[doc = "0: 100%"]
@@ -116,7 +116,7 @@ impl<'a, const O: u8> COMP_CH_GAIN_W<'a, O> {
 #[doc = "Field `chroma_bw` reader - Chroma filter bandwidth selection\n\nThis bit specifies whether the bandwidth of the chroma filter is:"]
 pub type CHROMA_BW_R = crate::FieldReader<u8, CHROMA_BW_A>;
 #[doc = "Chroma filter bandwidth selection\n\nThis bit specifies whether the bandwidth of the chroma filter is:\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHROMA_BW_A {
     #[doc = "0: Narrow width 0.6 MHz"]

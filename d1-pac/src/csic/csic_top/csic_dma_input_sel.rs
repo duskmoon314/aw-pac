@@ -37,7 +37,7 @@ impl From<crate::W<CSIC_DMA_INPUT_SEL_SPEC>> for W {
 #[doc = "Field `input_sel` reader - Input selection for DMA\\[i\\]"]
 pub type INPUT_SEL_R = crate::FieldReader<u8, INPUT_SEL_A>;
 #[doc = "Input selection for DMA\\[i\\]\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT_SEL_A {
     #[doc = "0: `0`"]

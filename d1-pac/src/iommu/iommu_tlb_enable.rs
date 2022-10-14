@@ -39,7 +39,7 @@ enable bit"]
 pub type MICRO_TLB_ENABLE_R = crate::BitReader<MICRO_TLB_ENABLE_A>;
 #[doc = "Micro TLB\\[i\\]
 enable bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_ENABLE_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -91,7 +91,7 @@ impl<'a, const O: u8> MICRO_TLB_ENABLE_W<'a, O> {
 #[doc = "Field `macro_tlb_enable` reader - Macro TLB enable bit"]
 pub type MACRO_TLB_ENABLE_R = crate::BitReader<MACRO_TLB_ENABLE_A>;
 #[doc = "Macro TLB enable bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MACRO_TLB_ENABLE_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -142,7 +142,7 @@ impl<'a, const O: u8> MACRO_TLB_ENABLE_W<'a, O> {
 #[doc = "Field `ptw_cache_enable` reader - PTW Cache enable bit"]
 pub type PTW_CACHE_ENABLE_R = crate::BitReader<PTW_CACHE_ENABLE_A>;
 #[doc = "PTW Cache enable bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PTW_CACHE_ENABLE_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

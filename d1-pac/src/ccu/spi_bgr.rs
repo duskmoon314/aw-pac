@@ -37,7 +37,7 @@ impl From<crate::W<SPI_BGR_SPEC>> for W {
 #[doc = "Field `spi_gating[0-1]` reader - Gating Clock"]
 pub type SPI_GATING_R = crate::BitReader<SPI_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SPI_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> SPI_GATING_W<'a, O> {
 #[doc = "Field `spi_rst[0-1]` reader - Reset"]
 pub type SPI_RST_R = crate::BitReader<SPI_RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SPI_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

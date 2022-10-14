@@ -37,7 +37,7 @@ impl From<crate::W<WDOG_CFG_SPEC>> for W {
 #[doc = "Field `wdog_mode` reader - Configure the operating mode for the watchdog"]
 pub type WDOG_MODE_R = crate::FieldReader<u8, WDOG_MODE_A>;
 #[doc = "Configure the operating mode for the watchdog\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WDOG_MODE_A {
     #[doc = "1: `1`"]
@@ -90,7 +90,7 @@ impl<'a, const O: u8> WDOG_MODE_W<'a, O> {
 #[doc = "Field `wdog_clk_src` reader - Select the clock source for the watchdog."]
 pub type WDOG_CLK_SRC_R = crate::BitReader<WDOG_CLK_SRC_A>;
 #[doc = "Select the clock source for the watchdog.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDOG_CLK_SRC_A {
     #[doc = "0: `0`"]
     HOSC_32K = 0,

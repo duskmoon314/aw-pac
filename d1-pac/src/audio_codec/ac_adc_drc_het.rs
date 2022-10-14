@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_HET_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_het` reader - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206, The format is 8.24. (The default value is -70 dB)"]
+pub type ADC_DRC_HET_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_het` writer - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206, The format is 8.24. (The default value is -70 dB)"]
+pub type ADC_DRC_HET_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_HET_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206, The format is 8.24. (The default value is -70 dB)"]
+    #[inline(always)]
+    pub fn adc_drc_het(&self) -> ADC_DRC_HET_R {
+        ADC_DRC_HET_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206, The format is 8.24. (The default value is -70 dB)"]
+    #[inline(always)]
+    pub fn adc_drc_het(&mut self) -> ADC_DRC_HET_W<0> {
+        ADC_DRC_HET_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_HET_SPEC {
 impl crate::Writable for AC_ADC_DRC_HET_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_het to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_het to value 0x0ba0"]
 impl crate::Resettable for AC_ADC_DRC_HET_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0ba0
     }
 }

@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_MXGLS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_drc_mxgls` reader - The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB < MXG < 30 dB (The default value is -10 dB)"]
+pub type ADC_DRC_MXGLS_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `adc_drc_mxgls` writer - The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB < MXG < 30 dB (The default value is -10 dB)"]
+pub type ADC_DRC_MXGLS_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_MXGLS_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB < MXG < 30 dB (The default value is -10 dB)"]
+    #[inline(always)]
+    pub fn adc_drc_mxgls(&self) -> ADC_DRC_MXGLS_R {
+        ADC_DRC_MXGLS_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB < MXG < 30 dB (The default value is -10 dB)"]
+    #[inline(always)]
+    pub fn adc_drc_mxgls(&mut self) -> ADC_DRC_MXGLS_W<0> {
+        ADC_DRC_MXGLS_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_MXGLS_SPEC {
 impl crate::Writable for AC_ADC_DRC_MXGLS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_mxgls to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_mxgls to value 0xcb0f"]
 impl crate::Resettable for AC_ADC_DRC_MXGLS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0xcb0f
     }
 }

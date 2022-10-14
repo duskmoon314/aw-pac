@@ -37,7 +37,7 @@ impl From<crate::W<PF_EINT_STATUS_SPEC>> for W {
 #[doc = "Field `eint_status[0-6]` reader - External INT Pending Bit"]
 pub type EINT_STATUS_R = crate::BitReader<EINT_STATUS_A>;
 #[doc = "External INT Pending Bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EINT_STATUS_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,

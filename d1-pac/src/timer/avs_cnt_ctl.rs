@@ -37,7 +37,7 @@ impl From<crate::W<AVS_CNT_CTL_SPEC>> for W {
 #[doc = "Field `avs_cnt_en[0-1]` reader - Audio Video Sync Counter Enable"]
 pub type AVS_CNT_EN_R = crate::BitReader<AVS_CNT_EN_A>;
 #[doc = "Audio Video Sync Counter Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AVS_CNT_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> AVS_CNT_EN_W<'a, O> {
 #[doc = "Field `avs_cnt_ps[0-1]` reader - Audio Video Sync Counter Pause Control"]
 pub type AVS_CNT_PS_R = crate::BitReader<AVS_CNT_PS_A>;
 #[doc = "Audio Video Sync Counter Pause Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AVS_CNT_PS_A {
     #[doc = "0: `0`"]
     NOT_PAUSE = 0,

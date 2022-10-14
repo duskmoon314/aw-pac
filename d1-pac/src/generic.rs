@@ -119,6 +119,10 @@ where
     #[doc = " Writes 0 to a `Writable` register."]
     #[doc = ""]
     #[doc = " Similar to `write`, but unused bits will contain 0."]
+    #[doc = " "]
+    #[doc = " # Safety"]
+    #[doc = " "]
+    #[doc = " Unsafe to use with registers which don't allow to write 0."]
     #[inline(always)]
     pub unsafe fn write_with_zero<F>(&self, f: F)
     where
@@ -215,6 +219,10 @@ pub struct W<REG: RegisterSpec + ?Sized> {
 }
 impl<REG: RegisterSpec> W<REG> {
     #[doc = " Writes raw bits to the register."]
+    #[doc = " "]
+    #[doc = " # Safety"]
+    #[doc = " "]
+    #[doc = " Read datasheet or reference manual to find what values are allowed to pass."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: REG::Ux) -> &mut Self {
         self.bits = bits;
@@ -574,3 +582,49 @@ impl_proxy!(u8);
 impl_proxy!(u16);
 impl_proxy!(u32);
 impl_proxy!(u64);
+#[doc = " Access an array of `COUNT` items of type `T` with the items `STRIDE` bytes"]
+#[doc = " apart.  This is a zero-sized-type.  No objects of this type are ever"]
+#[doc = " actually created, it is only a convenience for wrapping pointer arithmetic."]
+#[doc = ""]
+#[doc = " There is no safe way to produce items of this type.  Unsafe code can produce"]
+#[doc = " references by pointer casting.  It is up to the unsafe code doing that, to"]
+#[doc = " ensure that the memory really is backed by appropriate content."]
+#[doc = ""]
+#[doc = " Typically, this is used for accessing hardware registers."]
+pub struct ArrayProxy<T, const COUNT: usize, const STRIDE: usize> {
+    #[doc = " As well as providing a PhantomData, this field is non-public, and"]
+    #[doc = " therefore ensures that code outside of this module can never create"]
+    #[doc = " an ArrayProxy."]
+    _array: marker::PhantomData<T>,
+}
+#[allow(clippy::len_without_is_empty)]
+impl<T, const C: usize, const S: usize> ArrayProxy<T, C, S> {
+    #[doc = " Get a reference from an [ArrayProxy]
+with no bounds checking."]
+    pub unsafe fn get_ref(&self, index: usize) -> &T {
+        let base = self as *const Self as usize;
+        let address = base + S * index;
+        &*(address as *const T)
+    }
+    #[doc = " Get a reference from an [ArrayProxy], or return `None` if the index"]
+    #[doc = " is out of bounds."]
+    pub fn get(&self, index: usize) -> Option<&T> {
+        if index < C {
+            Some(unsafe { self.get_ref(index) })
+        } else {
+            None
+        }
+    }
+    #[doc = " Return the number of items."]
+    pub fn len(&self) -> usize {
+        C
+    }
+}
+impl<T, const C: usize, const S: usize> core::ops::Index<usize> for ArrayProxy<T, C, S> {
+    type Output = T;
+    fn index(&self, index: usize) -> &T {
+        #[allow(clippy::no_effect)]
+        [(); C][index];
+        unsafe { self.get_ref(index) }
+    }
+}

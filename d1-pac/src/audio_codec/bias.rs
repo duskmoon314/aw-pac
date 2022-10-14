@@ -34,7 +34,23 @@ impl From<crate::W<BIAS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `biasdata` reader - Bias Current Register Setting Data"]
+pub type BIASDATA_R = crate::FieldReader<u8, u8>;
+#[doc = "Field `biasdata` writer - Bias Current Register Setting Data"]
+pub type BIASDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIAS_SPEC, u8, u8, 8, O>;
+impl R {
+    #[doc = "Bits 0:7 - Bias Current Register Setting Data"]
+    #[inline(always)]
+    pub fn biasdata(&self) -> BIASDATA_R {
+        BIASDATA_R::new((self.bits & 0xff) as u8)
+    }
+}
 impl W {
+    #[doc = "Bits 0:7 - Bias Current Register Setting Data"]
+    #[inline(always)]
+    pub fn biasdata(&mut self) -> BIASDATA_W<0> {
+        BIASDATA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +71,10 @@ impl crate::Readable for BIAS_SPEC {
 impl crate::Writable for BIAS_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets bias to value 0"]
+#[doc = "`reset()` method sets bias to value 0x80"]
 impl crate::Resettable for BIAS_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x80
     }
 }

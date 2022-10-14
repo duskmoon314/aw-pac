@@ -37,7 +37,7 @@ impl From<crate::W<TV_DATA_IO_TRI1_SPEC>> for W {
 #[doc = "Field `b_cr_ch_data_out_tri_en` reader - B CR Channel Data Output Trigger Enable"]
 pub type B_CR_CH_DATA_OUT_TRI_EN_R = crate::FieldReader<u16, B_CR_CH_DATA_OUT_TRI_EN_A>;
 #[doc = "B CR Channel Data Output Trigger Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum B_CR_CH_DATA_OUT_TRI_EN_A {
     #[doc = "0: disable"]

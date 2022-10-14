@@ -41,7 +41,7 @@ pub type CCLK_DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_CLKDIV_S
 #[doc = "Field `cclk_enb` reader - Card Clock Enable"]
 pub type CCLK_ENB_R = crate::BitReader<CCLK_ENB_A>;
 #[doc = "Card Clock Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCLK_ENB_A {
     #[doc = "0: Card Clock is off"]
     OFF = 0,
@@ -91,7 +91,7 @@ impl<'a, const O: u8> CCLK_ENB_W<'a, O> {
 #[doc = "Field `cclk_ctrl` reader - Card Clock Output Control"]
 pub type CCLK_CTRL_R = crate::BitReader<CCLK_CTRL_A>;
 #[doc = "Card Clock Output Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCLK_CTRL_A {
     #[doc = "0: Card clock is always on"]
     ON = 0,
@@ -141,7 +141,7 @@ impl<'a, const O: u8> CCLK_CTRL_W<'a, O> {
 #[doc = "Field `mask_data0` reader - "]
 pub type MASK_DATA0_R = crate::BitReader<MASK_DATA0_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MASK_DATA0_A {
     #[doc = "0: Do not mask data0 when update clock"]
     NOT_MASK = 0,

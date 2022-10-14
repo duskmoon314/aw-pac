@@ -37,7 +37,7 @@ impl From<crate::W<USB0_CLK_SPEC>> for W {
 #[doc = "Field `clk12m_sel` reader - OHCI 12M Source Select"]
 pub type CLK12M_SEL_R = crate::FieldReader<u8, CLK12M_SEL_A>;
 #[doc = "OHCI 12M Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLK12M_SEL_A {
     #[doc = "0: `0`"]
@@ -103,7 +103,7 @@ impl<'a, const O: u8> CLK12M_SEL_W<'a, O> {
 #[doc = "Field `rstn` reader - PHY Reset"]
 pub type RSTN_R = crate::BitReader<RSTN_A>;
 #[doc = "PHY Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RSTN_A {
     #[doc = "0: `0`"]
     ASSERT = 0,
@@ -153,7 +153,7 @@ impl<'a, const O: u8> RSTN_W<'a, O> {
 #[doc = "Field `clken` reader - Gating Special Clock"]
 pub type CLKEN_R = crate::BitReader<CLKEN_A>;
 #[doc = "Gating Special Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLKEN_A {
     #[doc = "0: `0`"]
     OFF = 0,

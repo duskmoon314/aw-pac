@@ -37,7 +37,7 @@ impl From<crate::W<TVE_LOW_PASS_CONTROL_SPEC>> for W {
 #[doc = "Field `en` reader - LP function enable"]
 pub type EN_R = crate::BitReader<EN_A>;
 #[doc = "LP function enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> EN_W<'a, O> {
 #[doc = "Field `enable_deflicker` reader - Enable_deflicker"]
 pub type ENABLE_DEFLICKER_R = crate::BitReader<ENABLE_DEFLICKER_A>;
 #[doc = "Enable_deflicker\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENABLE_DEFLICKER_A {
     #[doc = "0: Disable deflicker"]
     D_ISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> ENABLE_DEFLICKER_W<'a, O> {
 #[doc = "Field `fix_coef_deflicker` reader - Fix_coef_deflicker"]
 pub type FIX_COEF_DEFLICKER_R = crate::BitReader<FIX_COEF_DEFLICKER_A>;
 #[doc = "Fix_coef_deflicker\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIX_COEF_DEFLICKER_A {
     #[doc = "0: Auto deflicker"]
     A_UTO = 0,

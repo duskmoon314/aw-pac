@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_ENABLE_SPEC>> for W {
 #[doc = "Field `enable` reader - IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the Translation Table Base register; or ensure all masters are in bypass status or no the status of sending bus demand(such as reset)"]
 pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 #[doc = "IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the Translation Table Base register; or ensure all masters are in bypass status or no the status of sending bus demand(such as reset)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENABLE_A {
     #[doc = "0: Disable IOMMU"]
     D_ISABLE = 0,

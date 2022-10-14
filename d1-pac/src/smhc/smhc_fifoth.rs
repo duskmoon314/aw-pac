@@ -45,7 +45,7 @@ pub type RX_TL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_FIFOTH_SPEC
 #[doc = "Field `bsize_of_trans` reader - sBurst Size of Multiple Transaction"]
 pub type BSIZE_OF_TRANS_R = crate::FieldReader<u8, BSIZE_OF_TRANS_A>;
 #[doc = "sBurst Size of Multiple Transaction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BSIZE_OF_TRANS_A {
     #[doc = "0: 1 transfer"]

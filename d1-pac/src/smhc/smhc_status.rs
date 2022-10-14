@@ -16,7 +16,7 @@ impl From<crate::R<SMHC_STATUS_SPEC>> for R {
 #[doc = "Field `fifo_rx_level` reader - FIFO RX Water Level Flag"]
 pub type FIFO_RX_LEVEL_R = crate::BitReader<FIFO_RX_LEVEL_A>;
 #[doc = "FIFO RX Water Level Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_RX_LEVEL_A {
     #[doc = "0: FIFO does not reach the receive trigger level"]
     NOT_REACH = 0,
@@ -52,7 +52,7 @@ impl FIFO_RX_LEVEL_R {
 #[doc = "Field `fifo_tx_level` reader - FIFO TX Water Level Flag"]
 pub type FIFO_TX_LEVEL_R = crate::BitReader<FIFO_TX_LEVEL_A>;
 #[doc = "FIFO TX Water Level Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_TX_LEVEL_A {
     #[doc = "0: FIFO does not reach the transmit trigger level"]
     NOT_REACH = 0,
@@ -88,7 +88,7 @@ impl FIFO_TX_LEVEL_R {
 #[doc = "Field `fifo_empty` reader - FIFO Empty"]
 pub type FIFO_EMPTY_R = crate::BitReader<FIFO_EMPTY_A>;
 #[doc = "FIFO Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_EMPTY_A {
     #[doc = "0: FIFO is not empty"]
     NOT_SEMPTY = 0,
@@ -124,7 +124,7 @@ impl FIFO_EMPTY_R {
 #[doc = "Field `fifo_full` reader - sFIFO Full"]
 pub type FIFO_FULL_R = crate::BitReader<FIFO_FULL_A>;
 #[doc = "sFIFO Full\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_FULL_A {
     #[doc = "0: FIFO is not full"]
     NOT_FULL = 0,
@@ -160,7 +160,7 @@ impl FIFO_FULL_R {
 #[doc = "Field `fsm_sta` reader - Command FSM States"]
 pub type FSM_STA_R = crate::FieldReader<u8, FSM_STA_A>;
 #[doc = "Command FSM States\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FSM_STA_A {
     #[doc = "0: Idle"]
@@ -312,7 +312,7 @@ Statuss"]
 pub type CARD_PRESENT_R = crate::BitReader<CARD_PRESENT_A>;
 #[doc = "Data\\[3\\]
 Statuss\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CARD_PRESENT_A {
     #[doc = "0: The card is not present"]
     NOT_PRESENT = 0,
@@ -348,7 +348,7 @@ impl CARD_PRESENT_R {
 #[doc = "Field `card_busy` reader - Card Data Busy"]
 pub type CARD_BUSY_R = crate::BitReader<CARD_BUSY_A>;
 #[doc = "Card Data Busy\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CARD_BUSY_A {
     #[doc = "0: Card data is not busy"]
     NOT_BUSY = 0,

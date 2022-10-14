@@ -37,7 +37,7 @@ impl From<crate::W<TV_GCTL_SPEC>> for W {
 #[doc = "Field `cec_ddc_pad_sel` reader - CEC DDC PAD Select"]
 pub type CEC_DDC_PAD_SEL_R = crate::BitReader<CEC_DDC_PAD_SEL_A>;
 #[doc = "CEC DDC PAD Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEC_DDC_PAD_SEL_A {
     #[doc = "1: TCON_TV internal pad for cec scl sal"]
     INTERNAL_PAD = 1,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> CEC_DDC_PAD_SEL_W<'a, O> {
 #[doc = "Field `tv_en` reader - When it is disabled, the module will be reset to idle state."]
 pub type TV_EN_R = crate::BitReader<TV_EN_A>;
 #[doc = "When it is disabled, the module will be reset to idle state.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

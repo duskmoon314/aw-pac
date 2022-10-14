@@ -37,7 +37,7 @@ impl From<crate::W<AC_DAC_DPC_SPEC>> for W {
 #[doc = "Field `hub_en` reader - Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable."]
 pub type HUB_EN_R = crate::BitReader<HUB_EN_A>;
 #[doc = "Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HUB_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -93,7 +93,7 @@ pub type DVOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AC_DAC_DPC_SPEC, 
 #[doc = "Field `hpf_en` reader - High Pass Filter Enable"]
 pub type HPF_EN_R = crate::BitReader<HPF_EN_A>;
 #[doc = "High Pass Filter Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HPF_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -143,7 +143,7 @@ impl<'a, const O: u8> HPF_EN_W<'a, O> {
 #[doc = "Field `dwa` reader - DWA Function Disable"]
 pub type DWA_R = crate::BitReader<DWA_A>;
 #[doc = "DWA Function Disable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DWA_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -197,7 +197,7 @@ pub type MODQU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AC_DAC_DPC_SPEC,
 #[doc = "Field `en_da` reader - DAC Digital Part Enable"]
 pub type EN_DA_R = crate::BitReader<EN_DA_A>;
 #[doc = "DAC Digital Part Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EN_DA_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

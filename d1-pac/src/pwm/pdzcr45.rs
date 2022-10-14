@@ -37,7 +37,7 @@ impl From<crate::W<PDZCR45_SPEC>> for W {
 #[doc = "Field `pwm45_dz_en` reader - PWM45 Dead Zone Enable"]
 pub type PWM45_DZ_EN_R = crate::BitReader<PWM45_DZ_EN_A>;
 #[doc = "PWM45 Dead Zone Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM45_DZ_EN_A {
     #[doc = "0: Dead Zone disable"]
     DISABLE = 0,

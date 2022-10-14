@@ -37,7 +37,7 @@ impl From<crate::W<CCR_SPEC>> for W {
 #[doc = "Field `capinv` reader - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
 pub type CAPINV_R = crate::BitReader<CAPINV_A>;
 #[doc = "Inverse the signal input from capture channel before 16-bit counter of capture channel.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CAPINV_A {
     #[doc = "0: not inverse"]
     NOT_INVERSE = 0,

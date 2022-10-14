@@ -37,7 +37,7 @@ impl From<crate::W<TV_FILL_CTL_SPEC>> for W {
 #[doc = "Field `tv_fill_en` reader - TV Fill Enable"]
 pub type TV_FILL_EN_R = crate::BitReader<TV_FILL_EN_A>;
 #[doc = "TV Fill Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_FILL_EN_A {
     #[doc = "0: Bypass"]
     B_YPASS = 0,

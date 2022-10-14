@@ -37,7 +37,7 @@ impl From<crate::W<WDOG_CTRL_SPEC>> for W {
 #[doc = "Field `wdog_restart` reader - Watchdog Restart"]
 pub type WDOG_RESTART_R = crate::BitReader<WDOG_RESTART_A>;
 #[doc = "Watchdog Restart\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDOG_RESTART_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<CIR_TCR_SPEC>> for W {
 #[doc = "Field `tts` reader - Type of the transmission signal"]
 pub type TTS_R = crate::BitReader<TTS_A>;
 #[doc = "Type of the transmission signal\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TTS_A {
     #[doc = "0: The transmitting wave is a single non-cyclical pulse."]
     NON_CYCLICAL = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TTS_W<'a, O> {
 #[doc = "Field `rcs` reader - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
 pub type RCS_R = crate::FieldReader<u8, RCS_A>;
 #[doc = "Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RCS_A {
     #[doc = "0: CIR Transmit reference clock is ir_clk"]
@@ -217,7 +217,7 @@ impl<'a, const O: u8> RCS_W<'a, O> {
 #[doc = "Field `css` reader - Cyclical Pulse Start/Stop Control"]
 pub type CSS_R = crate::BitReader<CSS_A>;
 #[doc = "Cyclical Pulse Start/Stop Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CSS_A {
     #[doc = "0: Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
     STOP = 0,

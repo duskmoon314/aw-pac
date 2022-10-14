@@ -16,7 +16,7 @@ impl From<crate::R<LSR_SPEC>> for R {
 #[doc = "Field `dr` reader - Data Ready"]
 pub type DR_R = crate::BitReader<DR_A>;
 #[doc = "Data Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DR_A {
     #[doc = "1: `1`"]
     READY = 1,
@@ -45,7 +45,7 @@ impl DR_R {
 #[doc = "Field `oe` reader - Overrun Error"]
 pub type OE_R = crate::BitReader<OE_A>;
 #[doc = "Overrun Error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OE_A {
     #[doc = "1: `1`"]
     ERROR = 1,
@@ -74,7 +74,7 @@ impl OE_R {
 #[doc = "Field `pe` reader - Parity Error"]
 pub type PE_R = crate::BitReader<PE_A>;
 #[doc = "Parity Error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PE_A {
     #[doc = "1: `1`"]
     ERROR = 1,
@@ -103,7 +103,7 @@ impl PE_R {
 #[doc = "Field `fe` reader - Framing Error"]
 pub type FE_R = crate::BitReader<FE_A>;
 #[doc = "Framing Error\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FE_A {
     #[doc = "1: `1`"]
     ERROR = 1,
@@ -134,7 +134,7 @@ pub type BI_R = crate::BitReader<bool>;
 #[doc = "Field `thre` reader - TX Holding Register Empty"]
 pub type THRE_R = crate::BitReader<THRE_A>;
 #[doc = "TX Holding Register Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum THRE_A {
     #[doc = "1: `1`"]
     EMPTY = 1,
@@ -163,7 +163,7 @@ impl THRE_R {
 #[doc = "Field `temt` reader - Transmitter Empty"]
 pub type TEMT_R = crate::BitReader<TEMT_A>;
 #[doc = "Transmitter Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TEMT_A {
     #[doc = "1: `1`"]
     EMPTY = 1,
@@ -192,7 +192,7 @@ impl TEMT_R {
 #[doc = "Field `fifoerr` reader - RX Data Error in FIFO"]
 pub type FIFOERR_R = crate::BitReader<FIFOERR_A>;
 #[doc = "RX Data Error in FIFO\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFOERR_A {
     #[doc = "1: `1`"]
     ERROR = 1,

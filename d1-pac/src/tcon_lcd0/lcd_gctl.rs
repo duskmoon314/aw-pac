@@ -37,7 +37,7 @@ impl From<crate::W<LCD_GCTL_SPEC>> for W {
 #[doc = "Field `lcd_gamma_en` reader - Enable the Gamma correction function."]
 pub type LCD_GAMMA_EN_R = crate::BitReader<LCD_GAMMA_EN_A>;
 #[doc = "Enable the Gamma correction function.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_GAMMA_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> LCD_GAMMA_EN_W<'a, O> {
 #[doc = "Field `lcd_en` reader - When it is disabled, the module will be reset to idle state."]
 pub type LCD_EN_R = crate::BitReader<LCD_EN_A>;
 #[doc = "When it is disabled, the module will be reset to idle state.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

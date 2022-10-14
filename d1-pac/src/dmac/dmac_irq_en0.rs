@@ -37,7 +37,7 @@ impl From<crate::W<DMAC_IRQ_EN0_SPEC>> for W {
 #[doc = "Field `dma_hlaf_irq_en[0-7]` reader - Enable the half package interrupt of DMA"]
 pub type DMA_HLAF_IRQ_EN_R = crate::BitReader<DMA_HLAF_IRQ_EN_A>;
 #[doc = "Enable the half package interrupt of DMA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_HLAF_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> DMA_HLAF_IRQ_EN_W<'a, O> {
 #[doc = "Field `dma_pkg_irq_en[0-7]` reader - Enable the package end interrupt of DMA"]
 pub type DMA_PKG_IRQ_EN_R = crate::BitReader<DMA_PKG_IRQ_EN_A>;
 #[doc = "Enable the package end interrupt of DMA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_PKG_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> DMA_PKG_IRQ_EN_W<'a, O> {
 #[doc = "Field `dma_queue_irq_en[0-7]` reader - Enable the queue end interrupt of DMA"]
 pub type DMA_QUEUE_IRQ_EN_R = crate::BitReader<DMA_QUEUE_IRQ_EN_A>;
 #[doc = "Enable the queue end interrupt of DMA\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_QUEUE_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,

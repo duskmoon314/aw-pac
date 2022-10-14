@@ -39,7 +39,7 @@ Interrupt Enable"]
 pub type LOCK_IRQ_EN_R = crate::BitReader<LOCK_IRQ_EN_A>;
 #[doc = "Lock\\[i\\]
 Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,

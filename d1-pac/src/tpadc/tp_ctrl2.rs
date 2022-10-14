@@ -42,7 +42,7 @@ pub type PRE_MEA_THRE_CNT_W<'a, const O: u8> =
 #[doc = "Field `pre_mea_en` reader - TP Pressure Measurement Enable Control"]
 pub type PRE_MEA_EN_R = crate::BitReader<PRE_MEA_EN_A>;
 #[doc = "TP Pressure Measurement Enable Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRE_MEA_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -92,7 +92,7 @@ impl<'a, const O: u8> PRE_MEA_EN_W<'a, O> {
 #[doc = "Field `tp_fifo_mode_select` reader - TP Access Data Mode Select"]
 pub type TP_FIFO_MODE_SELECT_R = crate::FieldReader<u8, TP_FIFO_MODE_SELECT_A>;
 #[doc = "TP Access Data Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TP_FIFO_MODE_SELECT_A {
     #[doc = "0: FIFO store X1 Y1 data for single touch no pressure mode"]

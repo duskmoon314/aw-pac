@@ -26,7 +26,7 @@ pub type RFIFOR_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCR_SPEC, bool, O
 #[doc = "Field `xfifor` writer - "]
 pub type XFIFOR_W<'a, const O: u8> = crate::BitWriter<'a, u32, FCR_SPEC, bool, O>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMAM_AW {
     #[doc = "0: `0`"]
     MODE_0 = 0,
@@ -54,7 +54,7 @@ impl<'a, const O: u8> DMAM_W<'a, O> {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TFT_AW {
     #[doc = "0: `0`"]
@@ -97,7 +97,7 @@ impl<'a, const O: u8> TFT_W<'a, O> {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RT_AW {
     #[doc = "0: `0`"]

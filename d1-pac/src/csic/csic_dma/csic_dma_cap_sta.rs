@@ -41,7 +41,7 @@ pub type VCAP_STA_R = crate::BitReader<bool>;
 #[doc = "Field `field_sta` reader - The status of the received field"]
 pub type FIELD_STA_R = crate::BitReader<FIELD_STA_A>;
 #[doc = "The status of the received field\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIELD_STA_A {
     #[doc = "0: Field 0"]
     F_IELD_0 = 0,

@@ -16,7 +16,7 @@ impl From<crate::R<IIR_SPEC>> for R {
 #[doc = "Field `iid` reader - Interrupt ID"]
 pub type IID_R = crate::FieldReader<u8, IID_A>;
 #[doc = "Interrupt ID\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IID_A {
     #[doc = "0: `0`"]
@@ -102,7 +102,7 @@ impl IID_R {
 #[doc = "Field `feflag` reader - FIFOs Enable Flag"]
 pub type FEFLAG_R = crate::FieldReader<u8, FEFLAG_A>;
 #[doc = "FIFOs Enable Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FEFLAG_A {
     #[doc = "0: `0`"]

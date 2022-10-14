@@ -34,7 +34,24 @@ impl From<crate::W<AC_ADC_DRC_LHPFC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `lhpfc` reader - HPF coefficient setting and the data is 3.24 format."]
+pub type LHPFC_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `lhpfc` writer - HPF coefficient setting and the data is 3.24 format."]
+pub type LHPFC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_ADC_DRC_LHPFC_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - HPF coefficient setting and the data is 3.24 format."]
+    #[inline(always)]
+    pub fn lhpfc(&self) -> LHPFC_R {
+        LHPFC_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - HPF coefficient setting and the data is 3.24 format."]
+    #[inline(always)]
+    pub fn lhpfc(&mut self) -> LHPFC_W<0> {
+        LHPFC_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_ADC_DRC_LHPFC_SPEC {
 impl crate::Writable for AC_ADC_DRC_LHPFC_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_adc_drc_lhpfc to value 0"]
+#[doc = "`reset()` method sets ac_adc_drc_lhpfc to value 0xfac1"]
 impl crate::Resettable for AC_ADC_DRC_LHPFC_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0xfac1
     }
 }

@@ -37,7 +37,7 @@ impl From<crate::W<GP_DATA_INTC_SPEC>> for W {
 #[doc = "Field `ch_data_irq_en[0-1]` reader - Channel Data Interrupt Enable"]
 pub type CH_DATA_IRQ_EN_R = crate::BitReader<CH_DATA_IRQ_EN_A>;
 #[doc = "Channel Data Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH_DATA_IRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

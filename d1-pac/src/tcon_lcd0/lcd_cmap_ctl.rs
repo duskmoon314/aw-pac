@@ -37,7 +37,7 @@ impl From<crate::W<LCD_CMAP_CTL_SPEC>> for W {
 #[doc = "Field `out_format` reader - Set the pixel output format in color map function."]
 pub type OUT_FORMAT_R = crate::BitReader<OUT_FORMAT_A>;
 #[doc = "Set the pixel output format in color map function.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OUT_FORMAT_A {
     #[doc = "0: 4 pixel output mode: Out0 -> Out1 -> Out2 -> Out3"]
     P4 = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> OUT_FORMAT_W<'a, O> {
 #[doc = "Field `color_map_en` reader - Enable the color map function. This module only works when X is divided by 4."]
 pub type COLOR_MAP_EN_R = crate::BitReader<COLOR_MAP_EN_A>;
 #[doc = "Enable the color map function. This module only works when X is divided by 4.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COLOR_MAP_EN_A {
     #[doc = "0: Bypass"]
     B_YPASS = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<PB_EINT_DEB_SPEC>> for W {
 #[doc = "Field `pio_int_clk_select` reader - PIO Interrupt Clock Select"]
 pub type PIO_INT_CLK_SELECT_R = crate::BitReader<PIO_INT_CLK_SELECT_A>;
 #[doc = "PIO Interrupt Clock Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PIO_INT_CLK_SELECT_A {
     #[doc = "0: `0`"]
     LOSC_32K_HZ = 0,

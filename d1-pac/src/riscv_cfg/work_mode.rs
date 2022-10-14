@@ -16,7 +16,7 @@ impl From<crate::R<WORK_MODE_SPEC>> for R {
 #[doc = "Field `wm_sta` reader - Work Mode Status"]
 pub type WM_STA_R = crate::FieldReader<u8, WM_STA_A>;
 #[doc = "Work Mode Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WM_STA_A {
     #[doc = "0: `0`"]

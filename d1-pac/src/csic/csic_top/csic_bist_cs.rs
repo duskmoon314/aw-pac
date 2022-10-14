@@ -37,7 +37,7 @@ impl From<crate::W<CSIC_BIST_CS_SPEC>> for W {
 #[doc = "Field `bist_cs` reader - "]
 pub type BIST_CS_R = crate::FieldReader<u8, BIST_CS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BIST_CS_A {
     #[doc = "0: Set when BK0 memory bist"]

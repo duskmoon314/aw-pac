@@ -37,7 +37,7 @@ impl From<crate::W<GP_DATAH_INTC_SPEC>> for W {
 #[doc = "Field `ch_hig_irq_en[0-1]` reader - Channel Voltage High Available Interrupt Enable"]
 pub type CH_HIG_IRQ_EN_R = crate::BitReader<CH_HIG_IRQ_EN_A>;
 #[doc = "Channel Voltage High Available Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH_HIG_IRQ_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

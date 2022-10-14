@@ -37,7 +37,7 @@ impl From<crate::W<CCU_FAN_GATE_SPEC>> for W {
 #[doc = "Field `clk24m_en` reader - Gating for CLK24M"]
 pub type CLK24M_EN_R = crate::BitReader<CLK24M_EN_A>;
 #[doc = "Gating for CLK24M\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK24M_EN_A {
     #[doc = "0: `0`"]
     OFF = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> CLK24M_EN_W<'a, O> {
 #[doc = "Field `clk12m_en` reader - Gating for CLK12M"]
 pub type CLK12M_EN_R = crate::BitReader<CLK12M_EN_A>;
 #[doc = "Gating for CLK12M\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK12M_EN_A {
     #[doc = "0: `0`"]
     OFF = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> CLK12M_EN_W<'a, O> {
 #[doc = "Field `clk16m_en` reader - Gating for CLK16M"]
 pub type CLK16M_EN_R = crate::BitReader<CLK16M_EN_A>;
 #[doc = "Gating for CLK16M\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK16M_EN_A {
     #[doc = "0: `0`"]
     OFF = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> CLK16M_EN_W<'a, O> {
 #[doc = "Field `clk25m_en` reader - Gating for CLK25M"]
 pub type CLK25M_EN_R = crate::BitReader<CLK25M_EN_A>;
 #[doc = "Gating for CLK25M\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK25M_EN_A {
     #[doc = "0: `0`"]
     OFF = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> CLK25M_EN_W<'a, O> {
 #[doc = "Field `clk32k_en` reader - Gating for CLK32K"]
 pub type CLK32K_EN_R = crate::BitReader<CLK32K_EN_A>;
 #[doc = "Gating for CLK32K\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK32K_EN_A {
     #[doc = "0: `0`"]
     OFF = 0,

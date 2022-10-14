@@ -41,7 +41,7 @@ pub type SCS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u8
 #[doc = "Field `nthr` reader - Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware."]
 pub type NTHR_R = crate::FieldReader<u8, NTHR_A>;
 #[doc = "Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware.\n\nValue on reset: 10"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum NTHR_A {
     #[doc = "0: All samples are recorded into RX FIFO"]
@@ -881,7 +881,7 @@ pub type ATHR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_RXCFG_SPEC, u
 #[doc = "Field `athc` reader - Active Threshold Control for CIR"]
 pub type ATHC_R = crate::BitReader<ATHC_A>;
 #[doc = "Active Threshold Control for CIR\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ATHC_A {
     #[doc = "0: ATHR in a unit of (Sample Clock)"]
     SAMPLE = 0,

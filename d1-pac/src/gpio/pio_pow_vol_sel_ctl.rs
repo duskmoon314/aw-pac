@@ -37,7 +37,7 @@ impl From<crate::W<PIO_POW_VOL_SEL_CTL_SPEC>> for W {
 #[doc = "Field `vcc_pf_pwr_vol_sel` reader - VCC_PF Power Voltage Select Control"]
 pub type VCC_PF_PWR_VOL_SEL_R = crate::BitReader<VCC_PF_PWR_VOL_SEL_A>;
 #[doc = "VCC_PF Power Voltage Select Control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCC_PF_PWR_VOL_SEL_A {
     #[doc = "0: 1.8V"]
     V18 = 0,

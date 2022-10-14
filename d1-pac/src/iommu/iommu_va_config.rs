@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_VA_CONFIG_SPEC>> for W {
 #[doc = "Field `va_config_start` reader - "]
 pub type VA_CONFIG_START_R = crate::BitReader<VA_CONFIG_START_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VA_CONFIG_START_A {
     #[doc = "0: No operation or operation is completed"]
     N_O_OPERATION_OR_COMPLETED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> VA_CONFIG_START_W<'a, O> {
 #[doc = "Field `va_config` reader - Virtual Address Configuration"]
 pub type VA_CONFIG_R = crate::BitReader<VA_CONFIG_A>;
 #[doc = "Virtual Address Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VA_CONFIG_A {
     #[doc = "0: Read operation"]
     R_EAD = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> VA_CONFIG_W<'a, O> {
 #[doc = "Field `mode_sel` reader - "]
 pub type MODE_SEL_R = crate::BitReader<MODE_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_SEL_A {
     #[doc = "0: Prefetch"]
     P_REFETCH = 0,

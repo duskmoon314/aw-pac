@@ -39,7 +39,7 @@ pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `fifo_data_pending` reader - ADC FIFO Data Available Pending Bit"]
 pub type FIFO_DATA_PENDING_R = crate::BitReader<FIFO_DATA_PENDING_A>;
 #[doc = "ADC FIFO Data Available Pending Bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_DATA_PENDING_A {
     #[doc = "0: NO Pending IRQ"]
     NO_PENDING = 0,
@@ -90,7 +90,7 @@ impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
 #[doc = "Field `fifo_overrun_pending` reader - ADC FIFO Overrun IRQ Pending"]
 pub type FIFO_OVERRUN_PENDING_R = crate::BitReader<FIFO_OVERRUN_PENDING_A>;
 #[doc = "ADC FIFO Overrun IRQ Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_OVERRUN_PENDING_A {
     #[doc = "0: No Pending IRQ"]
     NP_PENDING = 0,

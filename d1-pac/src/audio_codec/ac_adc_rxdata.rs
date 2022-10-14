@@ -34,6 +34,15 @@ impl From<crate::W<AC_ADC_RXDATA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `rx_data` reader - RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data comes first and then the right channel sample."]
+pub type RX_DATA_R = crate::FieldReader<u32, u32>;
+impl R {
+    #[doc = "Bits 0:31 - RX Sample\n\nThe host can get one sample by reading this register. The left channel sample data comes first and then the right channel sample."]
+    #[inline(always)]
+    pub fn rx_data(&self) -> RX_DATA_R {
+        RX_DATA_R::new(self.bits)
+    }
+}
 impl W {
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]

@@ -37,7 +37,7 @@ impl From<crate::W<PRS_CH_INFMT_SPEC>> for W {
 #[doc = "Field `input_fmt` reader - input data format"]
 pub type INPUT_FMT_R = crate::FieldReader<u8, INPUT_FMT_A>;
 #[doc = "input data format\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT_FMT_A {
     #[doc = "0: RAW stream"]

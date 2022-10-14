@@ -42,7 +42,7 @@ pub type RTC_SPI_CLK_DIV_W<'a, const O: u8> =
 #[doc = "Field `rtc_spi_clk_gating` reader - RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time."]
 pub type RTC_SPI_CLK_GATING_R = crate::BitReader<RTC_SPI_CLK_GATING_A>;
 #[doc = "RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RTC_SPI_CLK_GATING_A {
     #[doc = "0: Gating"]
     GATING = 0,

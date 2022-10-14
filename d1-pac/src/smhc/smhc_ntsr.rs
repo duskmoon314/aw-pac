@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_NTSR_SPEC>> for W {
 #[doc = "Field `hs400_new_sample_en` reader - "]
 pub type HS400_NEW_SAMPLE_EN_R = crate::BitReader<HS400_NEW_SAMPLE_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HS400_NEW_SAMPLE_EN_A {
     #[doc = "0: Disable hs400 new sample method"]
     DISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> HS400_NEW_SAMPLE_EN_W<'a, O> {
 #[doc = "Field `cmd_sample_timing_phase` reader - "]
 pub type CMD_SAMPLE_TIMING_PHASE_R = crate::FieldReader<u8, CMD_SAMPLE_TIMING_PHASE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CMD_SAMPLE_TIMING_PHASE_A {
     #[doc = "0: Sample timing phase offset 90"]
@@ -167,7 +167,7 @@ impl<'a, const O: u8> CMD_SAMPLE_TIMING_PHASE_W<'a, O> {
 #[doc = "Field `dat_sample_timing_phase` reader - "]
 pub type DAT_SAMPLE_TIMING_PHASE_R = crate::FieldReader<u8, DAT_SAMPLE_TIMING_PHASE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAT_SAMPLE_TIMING_PHASE_A {
     #[doc = "0: Sample timing phase offset 90"]
@@ -246,7 +246,7 @@ impl<'a, const O: u8> DAT_SAMPLE_TIMING_PHASE_W<'a, O> {
 #[doc = "Field `cmd_send_rx_phase_clr` reader - Clear command rx phase before sending the command"]
 pub type CMD_SEND_RX_PHASE_CLR_R = crate::BitReader<CMD_SEND_RX_PHASE_CLR_A>;
 #[doc = "Clear command rx phase before sending the command\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CMD_SEND_RX_PHASE_CLR_A {
     #[doc = "0: Disabled"]
     DISABLED = 0,
@@ -297,7 +297,7 @@ impl<'a, const O: u8> CMD_SEND_RX_PHASE_CLR_W<'a, O> {
 #[doc = "Field `dat_recv_rx_phase_clr` reader - Clear the input phase of data lines before receiving the data"]
 pub type DAT_RECV_RX_PHASE_CLR_R = crate::BitReader<DAT_RECV_RX_PHASE_CLR_A>;
 #[doc = "Clear the input phase of data lines before receiving the data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAT_RECV_RX_PHASE_CLR_A {
     #[doc = "0: Disabled"]
     DISABLED = 0,
@@ -348,7 +348,7 @@ impl<'a, const O: u8> DAT_RECV_RX_PHASE_CLR_W<'a, O> {
 #[doc = "Field `dat_trans_rx_phase_clr` reader - Clear the input phase of data lines before transferring the data"]
 pub type DAT_TRANS_RX_PHASE_CLR_R = crate::BitReader<DAT_TRANS_RX_PHASE_CLR_A>;
 #[doc = "Clear the input phase of data lines before transferring the data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAT_TRANS_RX_PHASE_CLR_A {
     #[doc = "0: Disabled"]
     DISABLED = 0,
@@ -399,7 +399,7 @@ impl<'a, const O: u8> DAT_TRANS_RX_PHASE_CLR_W<'a, O> {
 #[doc = "Field `dat_crc_status_rx_phase_clr` reader - Clear the input phase of data lines before receiving the CRC status"]
 pub type DAT_CRC_STATUS_RX_PHASE_CLR_R = crate::BitReader<DAT_CRC_STATUS_RX_PHASE_CLR_A>;
 #[doc = "Clear the input phase of data lines before receiving the CRC status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAT_CRC_STATUS_RX_PHASE_CLR_A {
     #[doc = "0: Disabled"]
     DISABLED = 0,
@@ -450,7 +450,7 @@ impl<'a, const O: u8> DAT_CRC_STATUS_RX_PHASE_CLR_W<'a, O> {
 #[doc = "Field `cmd_dat_rx_phase_clr` reader - Clear the input phase of command lines and data lines during the update clock operation"]
 pub type CMD_DAT_RX_PHASE_CLR_R = crate::BitReader<CMD_DAT_RX_PHASE_CLR_A>;
 #[doc = "Clear the input phase of command lines and data lines during the update clock operation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CMD_DAT_RX_PHASE_CLR_A {
     #[doc = "0: Disabled"]
     DISABLED = 0,
@@ -501,7 +501,7 @@ impl<'a, const O: u8> CMD_DAT_RX_PHASE_CLR_W<'a, O> {
 #[doc = "Field `mode_select` reader - "]
 pub type MODE_SELECT_R = crate::BitReader<MODE_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MODE_SELECT_A {
     #[doc = "0: Old mode of Sample/Output Timing"]
     OLD_MODE = 0,

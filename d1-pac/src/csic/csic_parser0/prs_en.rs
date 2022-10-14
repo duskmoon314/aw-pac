@@ -37,7 +37,7 @@ impl From<crate::W<PRS_EN_SPEC>> for W {
 #[doc = "Field `prs_en` reader - "]
 pub type PRS_EN_R = crate::BitReader<PRS_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRS_EN_A {
     #[doc = "0: Reset and disable the parser module"]
     R_ESET_DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> PRS_EN_W<'a, O> {
 #[doc = "Field `prs_mode` reader - "]
 pub type PRS_MODE_R = crate::BitReader<PRS_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRS_MODE_A {
     #[doc = "1: MCSI"]
     MCSI = 1,
@@ -125,7 +125,7 @@ impl<'a, const O: u8> PRS_MODE_W<'a, O> {
 #[doc = "Field `prs_ch_mode` reader - "]
 pub type PRS_CH_MODE_R = crate::BitReader<PRS_CH_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRS_CH_MODE_A {
     #[doc = "0: Parser output channel 0-3 corresponding from input channel 0-3"]
     CORRESPONDING = 0,
@@ -175,7 +175,7 @@ impl<'a, const O: u8> PRS_CH_MODE_W<'a, O> {
 #[doc = "Field `pclk_en` reader - "]
 pub type PCLK_EN_R = crate::BitReader<PCLK_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PCLK_EN_A {
     #[doc = "0: Gate pclk input"]
     G_ATE = 0,
@@ -225,7 +225,7 @@ impl<'a, const O: u8> PCLK_EN_W<'a, O> {
 #[doc = "Field `ncsic_en` reader - "]
 pub type NCSIC_EN_R = crate::BitReader<NCSIC_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NCSIC_EN_A {
     #[doc = "0: Reset and disable the NCSIC module"]
     R_ESET_DISABLE = 0,

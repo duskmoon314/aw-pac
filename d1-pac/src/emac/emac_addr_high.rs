@@ -47,7 +47,7 @@ pub type MAC_ADDR_BYTE_CTL_W<'a, const O: u8> =
 #[doc = "Field `mac_addr_type` reader - MAC Address Type"]
 pub type MAC_ADDR_TYPE_R = crate::BitReader<MAC_ADDR_TYPE_A>;
 #[doc = "MAC Address Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MAC_ADDR_TYPE_A {
     #[doc = "0: `0`"]
     DST = 0,
@@ -98,7 +98,7 @@ impl<'a, const O: u8> MAC_ADDR_TYPE_W<'a, O> {
 #[doc = "Field `mac_addr_ctl` reader - MAC Address Valid"]
 pub type MAC_ADDR_CTL_R = crate::BitReader<MAC_ADDR_CTL_A>;
 #[doc = "MAC Address Valid\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MAC_ADDR_CTL_A {
     #[doc = "0: `0`"]
     INVALID = 0,

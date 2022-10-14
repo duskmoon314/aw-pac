@@ -37,7 +37,7 @@ impl From<crate::W<RESCAL_CTRL_SPEC>> for W {
 #[doc = "Field `cal_en` reader - Auto Calibration Enable"]
 pub type CAL_EN_R = crate::BitReader<CAL_EN_A>;
 #[doc = "Auto Calibration Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CAL_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> CAL_EN_W<'a, O> {
 #[doc = "Field `cal_ana_en` reader - Calibration Circuits Analog Enable"]
 pub type CAL_ANA_EN_R = crate::BitReader<CAL_ANA_EN_A>;
 #[doc = "Calibration Circuits Analog Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CAL_ANA_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> CAL_ANA_EN_W<'a, O> {
 #[doc = "Field `rescal_mode` reader - RESCAL Calibration Mode Select"]
 pub type RESCAL_MODE_R = crate::BitReader<RESCAL_MODE_A>;
 #[doc = "RESCAL Calibration Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESCAL_MODE_A {
     #[doc = "0: `0`"]
     AUTO_CALIBRATION = 0,
@@ -177,7 +177,7 @@ impl<'a, const O: u8> RESCAL_MODE_W<'a, O> {
 #[doc = "Field `ddr_res240_trimming_sel` reader - 240ohms Resistor Trimming Source Select"]
 pub type DDR_RES240_TRIMMING_SEL_R = crate::BitReader<DDR_RES240_TRIMMING_SEL_A>;
 #[doc = "240ohms Resistor Trimming Source Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DDR_RES240_TRIMMING_SEL_A {
     #[doc = "0: `0`"]
     RESCAL = 0,

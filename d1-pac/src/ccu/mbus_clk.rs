@@ -37,7 +37,7 @@ impl From<crate::W<MBUS_CLK_SPEC>> for W {
 #[doc = "Field `mbus_rst` reader - MBUS Reset"]
 pub type MBUS_RST_R = crate::BitReader<MBUS_RST_A>;
 #[doc = "MBUS Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MBUS_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

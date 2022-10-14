@@ -37,7 +37,7 @@ impl From<crate::W<PRS_CAP_SPEC>> for W {
 #[doc = "Field `ch_scap_on[0-3]` reader - Still capture control: Capture a single still image frame on channel \\[i\\].\n\nThe field is **cleared** (set to zero) following a read operation."]
 pub type CH_SCAP_ON_R = crate::BitReader<CH_SCAP_ON_A>;
 #[doc = "Still capture control: Capture a single still image frame on channel \\[i\\].\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH_SCAP_ON_A {
     #[doc = "0: Disable still capture"]
     D_ISABLE = 0,
@@ -73,7 +73,7 @@ impl CH_SCAP_ON_R {
 #[doc = "Field `ch_vcap_on[0-3]` reader - Video capture control: Capture the video image data stream on channel \\[i\\]."]
 pub type CH_VCAP_ON_R = crate::BitReader<CH_VCAP_ON_A>;
 #[doc = "Video capture control: Capture the video image data stream on channel \\[i\\].\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH_VCAP_ON_A {
     #[doc = "0: Disable video capture\n\nIf video capture is in progress, the CSI stops capturing image data at the end of the current frame, and all of the current frame data is written to output FIFO."]
     D_ISABLE = 0,
@@ -123,7 +123,7 @@ impl<'a, const O: u8> CH_VCAP_ON_W<'a, O> {
 #[doc = "Field `ch_fps_ds[0-3]` reader - Fps down sample"]
 pub type CH_FPS_DS_R = crate::FieldReader<u8, CH_FPS_DS_A>;
 #[doc = "Fps down sample\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CH_FPS_DS_A {
     #[doc = "0: no down sample"]

@@ -16,7 +16,7 @@ impl From<crate::R<PRS_CH_INPUT_PARA0_SPEC>> for R {
 #[doc = "Field `input_src_type` reader - "]
 pub type INPUT_SRC_TYPE_R = crate::BitReader<INPUT_SRC_TYPE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INPUT_SRC_TYPE_A {
     #[doc = "0: `0`"]
     PROGRESS = 0,

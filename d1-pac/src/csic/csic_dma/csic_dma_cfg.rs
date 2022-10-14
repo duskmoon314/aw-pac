@@ -37,7 +37,7 @@ impl From<crate::W<CSIC_DMA_CFG_SPEC>> for W {
 #[doc = "Field `min_sdr_wr_size` reader - Minimum size of SDRAM block write"]
 pub type MIN_SDR_WR_SIZE_R = crate::FieldReader<u8, MIN_SDR_WR_SIZE_A>;
 #[doc = "Minimum size of SDRAM block write\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MIN_SDR_WR_SIZE_A {
     #[doc = "0: 256 bytes (if hflip is enabled, always select 256 bytes)"]
@@ -116,7 +116,7 @@ impl<'a, const O: u8> MIN_SDR_WR_SIZE_W<'a, O> {
 #[doc = "Field `fps_ds` reader - Fps down sample"]
 pub type FPS_DS_R = crate::FieldReader<u8, FPS_DS_A>;
 #[doc = "Fps down sample\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FPS_DS_A {
     #[doc = "0: no down sample"]
@@ -338,7 +338,7 @@ impl<'a, const O: u8> FPS_DS_W<'a, O> {
 #[doc = "Field `field_sel` reader - Field selection"]
 pub type FIELD_SEL_R = crate::FieldReader<u8, FIELD_SEL_A>;
 #[doc = "Field selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FIELD_SEL_A {
     #[doc = "0: Capturing with field 0"]
@@ -404,7 +404,7 @@ impl<'a, const O: u8> FIELD_SEL_W<'a, O> {
 #[doc = "Field `hflip_en` reader - Horizontal flip enable\n\nWhen enabled, the received data will be arranged in horizontal flip."]
 pub type HFLIP_EN_R = crate::BitReader<HFLIP_EN_A>;
 #[doc = "Horizontal flip enable\n\nWhen enabled, the received data will be arranged in horizontal flip.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HFLIP_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -454,7 +454,7 @@ impl<'a, const O: u8> HFLIP_EN_W<'a, O> {
 #[doc = "Field `vflip_en` reader - Vertical flip enable\n\nWhen enabled, the received data will be arranged in vertical flip."]
 pub type VFLIP_EN_R = crate::BitReader<VFLIP_EN_A>;
 #[doc = "Vertical flip enable\n\nWhen enabled, the received data will be arranged in vertical flip.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VFLIP_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -509,7 +509,7 @@ pub type OUTPUT_FMT_W<'a, const O: u8> =
 #[doc = "Field `yuv_10bit_store_configuration` reader - 10-bit store configuration"]
 pub type YUV_10BIT_STORE_CONFIGURATION_R = crate::BitReader<YUV_10BIT_STORE_CONFIGURATION_A>;
 #[doc = "10-bit store configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum YUV_10BIT_STORE_CONFIGURATION_A {
     #[doc = "0: YUV 10-bit stored in low 10-bit of a 16-bit word"]
     LOW = 0,
@@ -560,7 +560,7 @@ impl<'a, const O: u8> YUV_10BIT_STORE_CONFIGURATION_W<'a, O> {
 #[doc = "Field `yuv_10bit_cut_8bit` reader - 10-bit input cut to 8-bit"]
 pub type YUV_10BIT_CUT_8BIT_R = crate::BitReader<YUV_10BIT_CUT_8BIT_A>;
 #[doc = "10-bit input cut to 8-bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum YUV_10BIT_CUT_8BIT_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

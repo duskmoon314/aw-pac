@@ -34,7 +34,24 @@ impl From<crate::W<AC_DAC_DRC_LPFLRT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_drc_lpflrt` reader - The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)"]
+pub type DAC_DRC_LPFLRT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `dac_drc_lpflrt` writer - The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)"]
+pub type DAC_DRC_LPFLRT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_DAC_DRC_LPFLRT_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)"]
+    #[inline(always)]
+    pub fn dac_drc_lpflrt(&self) -> DAC_DRC_LPFLRT_R {
+        DAC_DRC_LPFLRT_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The left peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)"]
+    #[inline(always)]
+    pub fn dac_drc_lpflrt(&mut self) -> DAC_DRC_LPFLRT_W<0> {
+        DAC_DRC_LPFLRT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_DAC_DRC_LPFLRT_SPEC {
 impl crate::Writable for AC_DAC_DRC_LPFLRT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_dac_drc_lpflrt to value 0"]
+#[doc = "`reset()` method sets ac_dac_drc_lpflrt to value 0xe1f8"]
 impl crate::Resettable for AC_DAC_DRC_LPFLRT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0xe1f8
     }
 }

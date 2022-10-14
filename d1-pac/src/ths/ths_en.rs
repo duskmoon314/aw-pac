@@ -37,7 +37,7 @@ impl From<crate::W<THS_EN_SPEC>> for W {
 #[doc = "Field `ths_en` reader - Enable temperature measurement sensor"]
 pub type THS_EN_R = crate::BitReader<THS_EN_A>;
 #[doc = "Enable temperature measurement sensor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum THS_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

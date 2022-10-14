@@ -37,7 +37,7 @@ impl From<crate::W<CIR_TXSTA_SPEC>> for W {
 #[doc = "Field `tpe_tur` reader - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
 pub type TPE_TUR_R = crate::BitReader<TPE_TUR_A>;
 #[doc = "Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TPE_TUR_A {
     #[doc = "0: Transmissions of address, control and data fields not completed / No transmitter FIFO underrun"]
     NOT_COMPLETE_OR_TRANSMIT = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TPE_TUR_W<'a, O> {
 #[doc = "Field `tai` reader - TX FIFO Available Interrupt Flag"]
 pub type TAI_R = crate::BitReader<TAI_A>;
 #[doc = "TX FIFO Available Interrupt Flag\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TAI_A {
     #[doc = "0: TX FIFO not available by its level"]
     NOT_AVAILABLE = 0,
@@ -139,7 +139,7 @@ pub type DRQ_R = crate::BitReader<bool>;
 #[doc = "Field `stct` reader - Status of CIR Transmitter"]
 pub type STCT_R = crate::BitReader<STCT_A>;
 #[doc = "Status of CIR Transmitter\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STCT_A {
     #[doc = "0: Idle"]
     IDLE = 0,

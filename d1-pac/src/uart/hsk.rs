@@ -37,7 +37,7 @@ impl From<crate::W<HSK_SPEC>> for W {
 #[doc = "Field `hsk` reader - Handshake configuration"]
 pub type HSK_R = crate::FieldReader<u8, HSK_A>;
 #[doc = "Handshake configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HSK_A {
     #[doc = "165: `10100101`"]

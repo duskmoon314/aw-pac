@@ -37,7 +37,7 @@ impl From<crate::W<TP_INT_FIFO_STAT_SPEC>> for W {
 #[doc = "Field `tp_down_pending` reader - TP First Touch (Stylus DOWN) Pending"]
 pub type TP_DOWN_PENDING_R = crate::BitReader<TP_DOWN_PENDING_A>;
 #[doc = "TP First Touch (Stylus DOWN) Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_DOWN_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> TP_DOWN_PENDING_W<'a, O> {
 #[doc = "Field `tp_up_pending` reader - TP Last Touch (Stylus UP) Pending"]
 pub type TP_UP_PENDING_R = crate::BitReader<TP_UP_PENDING_A>;
 #[doc = "TP Last Touch (Stylus UP) Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_UP_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> TP_UP_PENDING_W<'a, O> {
 #[doc = "Field `tp_idle_flg` reader - TP Idle Flag"]
 pub type TP_IDLE_FLG_R = crate::BitReader<TP_IDLE_FLG_A>;
 #[doc = "TP Idle Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TP_IDLE_FLG_A {
     #[doc = "0: `0`"]
     IDLE = 0,
@@ -177,7 +177,7 @@ pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `fifo_data_pending` reader - TP FIFO Data Available Pending"]
 pub type FIFO_DATA_PENDING_R = crate::BitReader<FIFO_DATA_PENDING_A>;
 #[doc = "TP FIFO Data Available Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_DATA_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -228,7 +228,7 @@ impl<'a, const O: u8> FIFO_DATA_PENDING_W<'a, O> {
 #[doc = "Field `fifo_overrun_pending` reader - TP FIFO Overrun Pending"]
 pub type FIFO_OVERRUN_PENDING_R = crate::BitReader<FIFO_OVERRUN_PENDING_A>;
 #[doc = "TP FIFO Overrun Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_OVERRUN_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,

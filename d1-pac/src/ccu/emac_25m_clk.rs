@@ -37,7 +37,7 @@ impl From<crate::W<EMAC_25M_CLK_SPEC>> for W {
 #[doc = "Field `clk_gating` reader - Gating Special Clock"]
 pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 #[doc = "Gating Special Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_GATING_A {
     #[doc = "0: `0`"]
     OFF = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> CLK_GATING_W<'a, O> {
 #[doc = "Field `clk_src_gating` reader - Gating the Source Clock of Special Clock"]
 pub type CLK_SRC_GATING_R = crate::BitReader<CLK_SRC_GATING_A>;
 #[doc = "Gating the Source Clock of Special Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_SRC_GATING_A {
     #[doc = "0: `0`"]
     OFF = 0,

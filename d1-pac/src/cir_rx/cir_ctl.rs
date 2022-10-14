@@ -37,7 +37,7 @@ impl From<crate::W<CIR_CTL_SPEC>> for W {
 #[doc = "Field `gen` reader - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
 pub type GEN_R = crate::BitReader<GEN_A>;
 #[doc = "Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GEN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> GEN_W<'a, O> {
 #[doc = "Field `rxen` reader - Receiver Block Enable"]
 pub type RXEN_R = crate::BitReader<RXEN_A>;
 #[doc = "Receiver Block Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXEN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> RXEN_W<'a, O> {
 #[doc = "Field `ciren` reader - CIR Enable"]
 pub type CIREN_R = crate::FieldReader<u8, CIREN_A>;
 #[doc = "CIR Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CIREN_A {
     #[doc = "3: CIR mode enable"]
@@ -176,7 +176,7 @@ impl<'a, const O: u8> CIREN_W<'a, O> {
 #[doc = "Field `apam` reader - Active Pulse Accept Mode"]
 pub type APAM_R = crate::FieldReader<u8, APAM_A>;
 #[doc = "Active Pulse Accept Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum APAM_A {
     #[doc = "0: Both positive and negative pulses are valid as a leading code"]

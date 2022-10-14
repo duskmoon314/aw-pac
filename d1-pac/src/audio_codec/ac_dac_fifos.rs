@@ -37,7 +37,7 @@ impl From<crate::W<AC_DAC_FIFOS_SPEC>> for W {
 #[doc = "Field `txo_int` reader - TX FIFO Overrun Pending Interrupt"]
 pub type TXO_INT_R = crate::BitReader<TXO_INT_A>;
 #[doc = "TX FIFO Overrun Pending Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXO_INT_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TXO_INT_W<'a, O> {
 #[doc = "Field `txu_int` reader - TX FIFO Underrun Pending Interrupt"]
 pub type TXU_INT_R = crate::BitReader<TXU_INT_A>;
 #[doc = "TX FIFO Underrun Pending Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXU_INT_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> TXU_INT_W<'a, O> {
 #[doc = "Field `txe_int` reader - TX FIFO Empty Pending Interrupt"]
 pub type TXE_INT_R = crate::BitReader<TXE_INT_A>;
 #[doc = "TX FIFO Empty Pending Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TXE_INT_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -189,7 +189,7 @@ pub type TXE_CNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `tx_empty` reader - TX FIFO Empty"]
 pub type TX_EMPTY_R = crate::BitReader<TX_EMPTY_A>;
 #[doc = "TX FIFO Empty\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_EMPTY_A {
     #[doc = "0: `0`"]
     NO_ROOM = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<GP_DATAH_INTS_SPEC>> for W {
 #[doc = "Field `ch_hig_pengding[0-1]` reader - Channel Voltage High Available Interrupt Status"]
 pub type CH_HIG_PENGDING_R = crate::BitReader<CH_HIG_PENGDING_A>;
 #[doc = "Channel Voltage High Available Interrupt Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CH_HIG_PENGDING_A {
     #[doc = "0: No Pending IRQ"]
     NO_PENDING = 0,

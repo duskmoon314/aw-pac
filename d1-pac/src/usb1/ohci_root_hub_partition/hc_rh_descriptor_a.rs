@@ -39,7 +39,7 @@ pub type NUMBER_DOWNSTREAM_PORTS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `no_power_swithcing` reader - NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode specifies global or per-port switching."]
 pub type NO_POWER_SWITHCING_R = crate::BitReader<NO_POWER_SWITHCING_A>;
 #[doc = "NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode specifies global or per-port switching.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NO_POWER_SWITHCING_A {
     #[doc = "0: Ports are power switched"]
     SWITCHED = 0,
@@ -90,7 +90,7 @@ impl<'a, const O: u8> NO_POWER_SWITHCING_W<'a, O> {
 #[doc = "Field `power_switching_mode` reader - PowerSwitchingMode\n\nThis bit is used to specify how the power switching of the Root Hub ports is controlled. It is implementation-specific. This field is only valid if the NoPowerSwitching field is cleared."]
 pub type POWER_SWITCHING_MODE_R = crate::BitReader<POWER_SWITCHING_MODE_A>;
 #[doc = "PowerSwitchingMode\n\nThis bit is used to specify how the power switching of the Root Hub ports is controlled. It is implementation-specific. This field is only valid if the NoPowerSwitching field is cleared.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum POWER_SWITCHING_MODE_A {
     #[doc = "0: All ports are powered at the same time"]
     SAME_TIME = 0,
@@ -143,7 +143,7 @@ pub type DEVICE_R = crate::BitReader<bool>;
 #[doc = "Field `over_current_protection_mode` reader - OverCurrentProtectionMode\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. At reset, these fields should reflect the same mode as PowerSwitchingMode. This field is valid only if the NoOverCurrentProtection field is cleared. 0 Over-current status is reported collectively for all downstream ports. 1 Over-current status is reported on per-port basis."]
 pub type OVER_CURRENT_PROTECTION_MODE_R = crate::BitReader<OVER_CURRENT_PROTECTION_MODE_A>;
 #[doc = "OverCurrentProtectionMode\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. At reset, these fields should reflect the same mode as PowerSwitchingMode. This field is valid only if the NoOverCurrentProtection field is cleared. 0 Over-current status is reported collectively for all downstream ports. 1 Over-current status is reported on per-port basis.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OVER_CURRENT_PROTECTION_MODE_A {
     #[doc = "0: Over-current status is reported collectively for all downstream ports"]
     REPORT = 0,
@@ -194,7 +194,7 @@ impl<'a, const O: u8> OVER_CURRENT_PROTECTION_MODE_W<'a, O> {
 #[doc = "Field `no_over_current_protection` reader - NoOverCurrentProtection\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. When this bit is cleared, the OverCurrentProtectionMode field specifies global or per-port reporting."]
 pub type NO_OVER_CURRENT_PROTECTION_R = crate::BitReader<NO_OVER_CURRENT_PROTECTION_A>;
 #[doc = "NoOverCurrentProtection\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. When this bit is cleared, the OverCurrentProtectionMode field specifies global or per-port reporting.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NO_OVER_CURRENT_PROTECTION_A {
     #[doc = "0: Over-current status is reported collectively for all downstream ports"]
     REPORT = 0,

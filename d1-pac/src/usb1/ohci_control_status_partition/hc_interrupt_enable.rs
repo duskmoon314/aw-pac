@@ -37,7 +37,7 @@ impl From<crate::W<HC_INTERRUPT_ENABLE_SPEC>> for W {
 #[doc = "Field `scheduling_overrun` reader - SchedulingOverrun Interrupt Enable"]
 pub type SCHEDULING_OVERRUN_R = crate::BitReader<SCHEDULING_OVERRUN_A>;
 #[doc = "SchedulingOverrun Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SCHEDULING_OVERRUN_A {
     #[doc = "0: Ignore"]
     IGNORE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> SCHEDULING_OVERRUN_W<'a, O> {
 #[doc = "Field `writeback_done_head` reader - WritebackDoneHead Interrupt Enable"]
 pub type WRITEBACK_DONE_HEAD_R = crate::BitReader<WRITEBACK_DONE_HEAD_A>;
 #[doc = "WritebackDoneHead Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WRITEBACK_DONE_HEAD_A {
     #[doc = "0: Ignore"]
     IGNORE = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> WRITEBACK_DONE_HEAD_W<'a, O> {
 #[doc = "Field `start_of_frame` reader - StartofFrame Interrupt Enable"]
 pub type START_OF_FRAME_R = crate::BitReader<START_OF_FRAME_A>;
 #[doc = "StartofFrame Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum START_OF_FRAME_A {
     #[doc = "0: Ignore"]
     IGNORE = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> START_OF_FRAME_W<'a, O> {
 #[doc = "Field `resume_detected` reader - ResumeDetected Interrupt Enable"]
 pub type RESUME_DETECTED_R = crate::BitReader<RESUME_DETECTED_A>;
 #[doc = "ResumeDetected Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESUME_DETECTED_A {
     #[doc = "0: Ignore"]
     IGNORE = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> RESUME_DETECTED_W<'a, O> {
 #[doc = "Field `unrecoverable_error` reader - UnrecoverableError Interrupt Enable"]
 pub type UNRECOVERABLE_ERROR_R = crate::BitReader<UNRECOVERABLE_ERROR_A>;
 #[doc = "UnrecoverableError Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UNRECOVERABLE_ERROR_A {
     #[doc = "0: Ignore"]
     IGNORE = 0,
@@ -292,7 +292,7 @@ impl<'a, const O: u8> UNRECOVERABLE_ERROR_W<'a, O> {
 #[doc = "Field `frame_number_overflow` reader - FrameNumberOverflow Interrupt Enable"]
 pub type FRAME_NUMBER_OVERFLOW_R = crate::BitReader<FRAME_NUMBER_OVERFLOW_A>;
 #[doc = "FrameNumberOverflow Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FRAME_NUMBER_OVERFLOW_A {
     #[doc = "0: Ignore"]
     IGNORE = 0,
@@ -343,7 +343,7 @@ impl<'a, const O: u8> FRAME_NUMBER_OVERFLOW_W<'a, O> {
 #[doc = "Field `root_hub_status_change` reader - RootHubStatusChange Interrupt Enable"]
 pub type ROOT_HUB_STATUS_CHANGE_R = crate::BitReader<ROOT_HUB_STATUS_CHANGE_A>;
 #[doc = "RootHubStatusChange Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ROOT_HUB_STATUS_CHANGE_A {
     #[doc = "0: Ignore"]
     IGNORE = 0,

@@ -41,7 +41,7 @@ pub type PTN_GEN_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_PTN_GEN_
 #[doc = "Field `ptn_start` reader - CSIC Pattern Generating Start\n\nSoftware write this bit to \"1\" to start pattern generating from DRAM. When finished, the hardware will clear this bit to \"0\" automatically. Generating cycles depends on PTN_CYCLE."]
 pub type PTN_START_R = crate::BitReader<PTN_START_A>;
 #[doc = "CSIC Pattern Generating Start\n\nSoftware write this bit to \"1\" to start pattern generating from DRAM. When finished, the hardware will clear this bit to \"0\" automatically. Generating cycles depends on PTN_CYCLE.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PTN_START_A {
     #[doc = "0: Finish"]
     F_INISH = 0,

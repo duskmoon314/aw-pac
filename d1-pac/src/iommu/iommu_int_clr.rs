@@ -36,7 +36,7 @@ impl From<crate::W<IOMMU_INT_CLR_SPEC>> for W {
 }
 #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt clear bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_INVALID_CLR_AW {
     #[doc = "0: Invalid operation"]
     I_NVALID = 0,
@@ -67,7 +67,7 @@ impl<'a, const O: u8> MICRO_TLB_INVALID_CLR_W<'a, O> {
 }
 #[doc = "Level\\[i\\]
 page table invalid interrupt clear bit\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L_PAGE_TABLE_INVALID_CLR_AW {
     #[doc = "0: Invalid operation"]
     I_NVALID = 0,

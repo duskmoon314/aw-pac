@@ -39,7 +39,7 @@ permission invalid interrupt enable"]
 pub type MICRO_TLB_INVALID_EN_R = crate::BitReader<MICRO_TLB_INVALID_EN_A>;
 #[doc = "Micro TLB\\[i\\]
 permission invalid interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_INVALID_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
@@ -93,7 +93,7 @@ page table invalid interrupt enable"]
 pub type L_PAGE_TABLE_INVALID_EN_R = crate::BitReader<L_PAGE_TABLE_INVALID_EN_A>;
 #[doc = "Level\\[i\\]
 page table invalid interrupt enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L_PAGE_TABLE_INVALID_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
@@ -145,7 +145,7 @@ impl<'a, const O: u8> L_PAGE_TABLE_INVALID_EN_W<'a, O> {
 #[doc = "Field `dbg_pf_dram_iv_l1_pt_en` reader - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
 pub type DBG_PF_DRAM_IV_L1_PT_EN_R = crate::BitReader<DBG_PF_DRAM_IV_L1_PT_EN_A>;
 #[doc = "Debug or Prefetch DRAM Invalid Level1 Page Table Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBG_PF_DRAM_IV_L1_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
@@ -196,7 +196,7 @@ impl<'a, const O: u8> DBG_PF_DRAM_IV_L1_PT_EN_W<'a, O> {
 #[doc = "Field `dbg_pf_pc_iv_l1_pt_en` reader - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
 pub type DBG_PF_PC_IV_L1_PT_EN_R = crate::BitReader<DBG_PF_PC_IV_L1_PT_EN_A>;
 #[doc = "Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBG_PF_PC_IV_L1_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
@@ -247,7 +247,7 @@ impl<'a, const O: u8> DBG_PF_PC_IV_L1_PT_EN_W<'a, O> {
 #[doc = "Field `dbg_pf_l2_iv_pt_en` reader - Debug or Prefetch Invalid Page Table Enable"]
 pub type DBG_PF_L2_IV_PT_EN_R = crate::BitReader<DBG_PF_L2_IV_PT_EN_A>;
 #[doc = "Debug or Prefetch Invalid Page Table Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DBG_PF_L2_IV_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,

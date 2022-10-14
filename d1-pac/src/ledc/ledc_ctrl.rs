@@ -37,7 +37,7 @@ impl From<crate::W<LEDC_CTRL_SPEC>> for W {
 #[doc = "Field `ledc_en` reader - "]
 pub type LEDC_EN_R = crate::BitReader<LEDC_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LEDC_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -91,7 +91,7 @@ pub type LEDC_SOFT_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTR
 #[doc = "Field `led_msb_[B,R,G,TOP]` reader - "]
 pub type LED_MSB__R = crate::BitReader<LED_MSB__A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LED_MSB__A {
     #[doc = "0: `0`"]
     LSB = 0,
@@ -141,7 +141,7 @@ impl<'a, const O: u8> LED_MSB__W<'a, O> {
 #[doc = "Field `led_rgb_mode` reader - "]
 pub type LED_RGB_MODE_R = crate::FieldReader<u8, LED_RGB_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LED_RGB_MODE_A {
     #[doc = "0: `0`"]

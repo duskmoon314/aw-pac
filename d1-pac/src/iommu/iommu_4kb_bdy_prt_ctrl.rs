@@ -39,7 +39,7 @@ impl From<crate::W<IOMMU_4KB_BDY_PRT_CTRL_SPEC>> for W {
 pub type M_4KB_BDY_PRT_CTRL_R = crate::BitReader<M_4KB_BDY_PRT_CTRL_A>;
 #[doc = "Master\\[i\\]
 4 KB boundary protect control bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_4KB_BDY_PRT_CTRL_A {
     #[doc = "0: Disable 4 KB boundary protect"]
     D_ISABLE = 0,

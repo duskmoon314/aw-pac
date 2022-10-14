@@ -43,7 +43,7 @@ pub type LVDS_PLR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_LVDS_ANA_
 #[doc = "Field `lvds_plrc` reader - LVDS clock channel direction."]
 pub type LVDS_PLRC_R = crate::BitReader<LVDS_PLRC_A>;
 #[doc = "LVDS clock channel direction.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LVDS_PLRC_A {
     #[doc = "0: Normal"]
     N_ORMAL = 0,
@@ -94,7 +94,7 @@ impl<'a, const O: u8> LVDS_PLRC_W<'a, O> {
 #[doc = "Field `lvds_r` reader - Adjust current flowing through R of R to change the common signals amplitude."]
 pub type LVDS_R_R = crate::FieldReader<u8, LVDS_R_A>;
 #[doc = "Adjust current flowing through R of R to change the common signals amplitude.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LVDS_R_A {
     #[doc = "0: 0.925 V"]
@@ -233,7 +233,7 @@ pub type LVDS_DENC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_LVDS_ANA_S
 #[doc = "Field `lvds_c` reader - Adjust current flowing through Rload of Rx to change the differential signals amplitude."]
 pub type LVDS_C_R = crate::FieldReader<u8, LVDS_C_A>;
 #[doc = "Adjust current flowing through Rload of Rx to change the differential signals amplitude.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LVDS_C_A {
     #[doc = "0: 216 mV"]
@@ -371,7 +371,7 @@ pub type LVDS_HPREN_DRV_W<'a, const O: u8> =
 #[doc = "Field `lvds_hpren_drvc` reader - Enable clock channel drive"]
 pub type LVDS_HPREN_DRVC_R = crate::BitReader<LVDS_HPREN_DRVC_A>;
 #[doc = "Enable clock channel drive\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LVDS_HPREN_DRVC_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -430,7 +430,7 @@ pub type EN_LVDS_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_LVDS_ANA_SPE
 #[doc = "Field `lvds_en_mb` reader - Enable the bias circuit of the LVDS_Ana module."]
 pub type LVDS_EN_MB_R = crate::BitReader<LVDS_EN_MB_A>;
 #[doc = "Enable the bias circuit of the LVDS_Ana module.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LVDS_EN_MB_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

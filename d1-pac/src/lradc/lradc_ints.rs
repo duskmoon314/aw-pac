@@ -37,7 +37,7 @@ impl From<crate::W<LRADC_INTS_SPEC>> for W {
 #[doc = "Field `adc0_data_pending` reader - ADC0 Data Pending"]
 pub type ADC0_DATA_PENDING_R = crate::BitReader<ADC0_DATA_PENDING_A>;
 #[doc = "ADC0 Data Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_DATA_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> ADC0_DATA_PENDING_W<'a, O> {
 #[doc = "Field `adc0_keydown_pending` reader - ADC0 Key Down Pending"]
 pub type ADC0_KEYDOWN_PENDING_R = crate::BitReader<ADC0_KEYDOWN_PENDING_A>;
 #[doc = "ADC0 Key Down Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_KEYDOWN_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> ADC0_KEYDOWN_PENDING_W<'a, O> {
 #[doc = "Field `adc0_hold_pending` reader - ADC0 Hold Key Pending"]
 pub type ADC0_HOLD_PENDING_R = crate::BitReader<ADC0_HOLD_PENDING_A>;
 #[doc = "ADC0 Hold Key Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_HOLD_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> ADC0_HOLD_PENDING_W<'a, O> {
 #[doc = "Field `adc0_alrdy_hold_pending` reader - ADC0 Already Hold Key Pending"]
 pub type ADC0_ALRDY_HOLD_PENDING_R = crate::BitReader<ADC0_ALRDY_HOLD_PENDING_A>;
 #[doc = "ADC0 Already Hold Key Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_ALRDY_HOLD_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> ADC0_ALRDY_HOLD_PENDING_W<'a, O> {
 #[doc = "Field `adc0_keyup_pending` reader - ADC0 Key Up Pending"]
 pub type ADC0_KEYUP_PENDING_R = crate::BitReader<ADC0_KEYUP_PENDING_A>;
 #[doc = "ADC0 Key Up Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC0_KEYUP_PENDING_A {
     #[doc = "0: `0`"]
     NO_PENDING = 0,

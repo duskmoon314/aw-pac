@@ -18,7 +18,7 @@ status"]
 pub type LOCK_STATUS_R = crate::BitReader<LOCK_STATUS_A>;
 #[doc = "Lock\\[i\\]
 status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_STATUS_A {
     #[doc = "0: `0`"]
     FREE = 0,

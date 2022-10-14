@@ -37,7 +37,7 @@ impl From<crate::W<DMAC_EN_SPEC>> for W {
 #[doc = "Field `dma_en` reader - DMA Channel Enable"]
 pub type DMA_EN_R = crate::BitReader<DMA_EN_A>;
 #[doc = "DMA Channel Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,

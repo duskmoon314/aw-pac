@@ -42,7 +42,7 @@ pub type C_DELAY_BEFORE_DITHER_W<'a, const O: u8> =
 #[doc = "Field `notch_en` reader - Luma notch filter on/off selection\n\nNote: This bit selects if the luma notch filter is operating or bypassed."]
 pub type NOTCH_EN_R = crate::BitReader<NOTCH_EN_A>;
 #[doc = "Luma notch filter on/off selection\n\nNote: This bit selects if the luma notch filter is operating or bypassed.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NOTCH_EN_A {
     #[doc = "0: The luma notch filter is bypassed"]
     BYPASSED = 0,
@@ -93,7 +93,7 @@ impl<'a, const O: u8> NOTCH_EN_W<'a, O> {
 #[doc = "Field `luma_filter_bypass` reader - "]
 pub type LUMA_FILTER_BYPASS_R = crate::BitReader<LUMA_FILTER_BYPASS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LUMA_FILTER_BYPASS_A {
     #[doc = "0: Luma Filter Enable"]
     E_NABLE = 0,
@@ -144,7 +144,7 @@ impl<'a, const O: u8> LUMA_FILTER_BYPASS_W<'a, O> {
 #[doc = "Field `chroma_filter_stage__bypass[3,2,1]` reader - "]
 pub type CHROMA_FILTER_STAGE__BYPASS_R = crate::BitReader<CHROMA_FILTER_STAGE__BYPASS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHROMA_FILTER_STAGE__BYPASS_A {
     #[doc = "0: Chroma Filter Stage \\[i\\]
 Enable"]
@@ -199,7 +199,7 @@ bypass"]
 #[doc = "Field `chroma_hd_mode_filter_en` reader - "]
 pub type CHROMA_HD_MODE_FILTER_EN_R = crate::BitReader<CHROMA_HD_MODE_FILTER_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHROMA_HD_MODE_FILTER_EN_A {
     #[doc = "0: Chroma HD Filter Disable"]
     D_ISABLE = 0,
@@ -250,7 +250,7 @@ impl<'a, const O: u8> CHROMA_HD_MODE_FILTER_EN_W<'a, O> {
 #[doc = "Field `chroma_filter_1_444_en` reader - "]
 pub type CHROMA_FILTER_1_444_EN_R = crate::BitReader<CHROMA_FILTER_1_444_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHROMA_FILTER_1_444_EN_A {
     #[doc = "0: Chroma Filter 1 444 Disable"]
     D_ISABLE = 0,
@@ -301,7 +301,7 @@ impl<'a, const O: u8> CHROMA_FILTER_1_444_EN_W<'a, O> {
 #[doc = "Field `hd_mode_cr_filter_bypass` reader - "]
 pub type HD_MODE_CR_FILTER_BYPASS_R = crate::BitReader<HD_MODE_CR_FILTER_BYPASS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HD_MODE_CR_FILTER_BYPASS_A {
     #[doc = "0: Bypass Enable"]
     E_NABLE = 0,
@@ -352,7 +352,7 @@ impl<'a, const O: u8> HD_MODE_CR_FILTER_BYPASS_W<'a, O> {
 #[doc = "Field `hd_mode_cb_filter_bypass` reader - "]
 pub type HD_MODE_CB_FILTER_BYPASS_R = crate::BitReader<HD_MODE_CB_FILTER_BYPASS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HD_MODE_CB_FILTER_BYPASS_A {
     #[doc = "0: Bypass Enable"]
     E_NABLE = 0,
@@ -408,7 +408,7 @@ pub type Y_DELAY_BEFORE_DITHER_W<'a, const O: u8> =
 #[doc = "Field `luma_filter_lti_enable` reader - "]
 pub type LUMA_FILTER_LTI_ENABLE_R = crate::BitReader<LUMA_FILTER_LTI_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LUMA_FILTER_LTI_ENABLE_A {
     #[doc = "0: Disable Luma filter lti"]
     D_ISABLE = 0,
@@ -459,7 +459,7 @@ impl<'a, const O: u8> LUMA_FILTER_LTI_ENABLE_W<'a, O> {
 #[doc = "Field `chroma_filter_active_valid` reader - "]
 pub type CHROMA_FILTER_ACTIVE_VALID_R = crate::BitReader<CHROMA_FILTER_ACTIVE_VALID_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHROMA_FILTER_ACTIVE_VALID_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

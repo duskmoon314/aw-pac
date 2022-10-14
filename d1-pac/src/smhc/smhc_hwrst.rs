@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_HWRST_SPEC>> for W {
 #[doc = "Field `hw_rst` reader - "]
 pub type HW_RST_R = crate::BitReader<HW_RST_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HW_RST_A {
     #[doc = "0: Active mode"]
     ACTIVE = 0,

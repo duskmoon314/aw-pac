@@ -39,7 +39,7 @@ read permission overwrite control"]
 pub type M_RD_AUT_OVWT_CTRL_R = crate::BitReader<M_RD_AUT_OVWT_CTRL_A>;
 #[doc = "Master\\[i\\]
 read permission overwrite control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RD_AUT_OVWT_CTRL_A {
     #[doc = "0: The read-operation is permitted"]
     PERMITTED = 0,
@@ -93,7 +93,7 @@ write permission overwrite control"]
 pub type M_WT_AUT_OVWT_CTRL_R = crate::BitReader<M_WT_AUT_OVWT_CTRL_A>;
 #[doc = "Master\\[i\\]
 write permission overwrite control\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_WT_AUT_OVWT_CTRL_A {
     #[doc = "0: The write-operation is permitted"]
     PERMITTED = 0,
@@ -145,7 +145,7 @@ impl<'a, const O: u8> M_WT_AUT_OVWT_CTRL_W<'a, O> {
 #[doc = "Field `dm_aut_ovwt_enable` reader - Domain write/read permission overwrite enable"]
 pub type DM_AUT_OVWT_ENABLE_R = crate::BitReader<DM_AUT_OVWT_ENABLE_A>;
 #[doc = "Domain write/read permission overwrite enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DM_AUT_OVWT_ENABLE_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

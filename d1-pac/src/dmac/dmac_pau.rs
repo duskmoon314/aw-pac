@@ -37,7 +37,7 @@ impl From<crate::W<DMAC_PAU_SPEC>> for W {
 #[doc = "Field `dma_pause` reader - Pause the DMA Channel Transfer Data"]
 pub type DMA_PAUSE_R = crate::BitReader<DMA_PAUSE_A>;
 #[doc = "Pause the DMA Channel Transfer Data\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_PAUSE_A {
     #[doc = "0: `0`"]
     RESUME = 0,

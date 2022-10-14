@@ -41,7 +41,7 @@ pub type PWM_PRESCAL_K_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SPEC
 #[doc = "Field `pwm_act_sta` reader - PWM Active State"]
 pub type PWM_ACT_STA_R = crate::BitReader<PWM_ACT_STA_A>;
 #[doc = "PWM Active State\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM_ACT_STA_A {
     #[doc = "0: low level"]
     LOW = 0,
@@ -91,7 +91,7 @@ impl<'a, const O: u8> PWM_ACT_STA_W<'a, O> {
 #[doc = "Field `pwm_mode` reader - PWM Output Mode Select"]
 pub type PWM_MODE_R = crate::BitReader<PWM_MODE_A>;
 #[doc = "PWM Output Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM_MODE_A {
     #[doc = "0: Cycle mode"]
     CYCLE = 0,
@@ -141,7 +141,7 @@ impl<'a, const O: u8> PWM_MODE_W<'a, O> {
 #[doc = "Field `pwm_pul_start` reader - PWM Pulse Output Start"]
 pub type PWM_PUL_START_R = crate::BitReader<PWM_PUL_START_A>;
 #[doc = "PWM Pulse Output Start\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM_PUL_START_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,
@@ -192,7 +192,7 @@ impl<'a, const O: u8> PWM_PUL_START_W<'a, O> {
 #[doc = "Field `pwm_period_rdy` reader - PWM Period Register Ready"]
 pub type PWM_PERIOD_RDY_R = crate::BitReader<PWM_PERIOD_RDY_A>;
 #[doc = "PWM Period Register Ready\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PWM_PERIOD_RDY_A {
     #[doc = "0: PWM period register is ready to write"]
     READY = 0,

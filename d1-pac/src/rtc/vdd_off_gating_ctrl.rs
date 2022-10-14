@@ -37,7 +37,7 @@ impl From<crate::W<VDD_OFF_GATING_CTRL_SPEC>> for W {
 #[doc = "Field `vccio_det_bypass_en` reader - "]
 pub type VCCIO_DET_BYPASS_EN_R = crate::BitReader<VCCIO_DET_BYPASS_EN_A>;
 #[doc = "\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VCCIO_DET_BYPASS_EN_A {
     #[doc = "0: not bypass"]
     NOT_BYPASS = 0,

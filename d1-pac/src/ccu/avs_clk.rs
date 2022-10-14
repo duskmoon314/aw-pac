@@ -37,7 +37,7 @@ impl From<crate::W<AVS_CLK_SPEC>> for W {
 #[doc = "Field `clk_gating` reader - Gating Clock"]
 pub type CLK_GATING_R = crate::BitReader<CLK_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_GATING_A {
     #[doc = "0: `0`"]
     OFF = 0,

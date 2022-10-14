@@ -34,7 +34,261 @@ impl From<crate::W<AC_ADC_DAP_CTR_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `adc_hpf_en[1,0]` reader - ADC HPF\\[i\\]
+enable control"]
+pub type ADC_HPF_EN_R = crate::BitReader<ADC_HPF_EN_A>;
+#[doc = "ADC HPF\\[i\\]
+enable control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ADC_HPF_EN_A {
+    #[doc = "0: Disabled"]
+    D_ISABLED = 0,
+    #[doc = "1: Enabled"]
+    E_NABLED = 1,
+}
+impl From<ADC_HPF_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC_HPF_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ADC_HPF_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC_HPF_EN_A {
+        match self.bits {
+            false => ADC_HPF_EN_A::D_ISABLED,
+            true => ADC_HPF_EN_A::E_NABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[inline(always)]
+    pub fn is_d_isabled(&self) -> bool {
+        *self == ADC_HPF_EN_A::D_ISABLED
+    }
+    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[inline(always)]
+    pub fn is_e_nabled(&self) -> bool {
+        *self == ADC_HPF_EN_A::E_NABLED
+    }
+}
+#[doc = "Field `adc_hpf_en[1,0]` writer - ADC HPF\\[i\\]
+enable control"]
+pub type ADC_HPF_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, AC_ADC_DAP_CTR_SPEC, ADC_HPF_EN_A, O>;
+impl<'a, const O: u8> ADC_HPF_EN_W<'a, O> {
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn d_isabled(self) -> &'a mut W {
+        self.variant(ADC_HPF_EN_A::D_ISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn e_nabled(self) -> &'a mut W {
+        self.variant(ADC_HPF_EN_A::E_NABLED)
+    }
+}
+#[doc = "Field `adc_drc_en[1,0]` reader - ADC DRC\\[i\\]
+enable control"]
+pub type ADC_DRC_EN_R = crate::BitReader<ADC_DRC_EN_A>;
+#[doc = "ADC DRC\\[i\\]
+enable control\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ADC_DRC_EN_A {
+    #[doc = "0: Disabled"]
+    D_ISABLED = 0,
+    #[doc = "1: Enabled"]
+    E_NABLED = 1,
+}
+impl From<ADC_DRC_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC_DRC_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ADC_DRC_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC_DRC_EN_A {
+        match self.bits {
+            false => ADC_DRC_EN_A::D_ISABLED,
+            true => ADC_DRC_EN_A::E_NABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[inline(always)]
+    pub fn is_d_isabled(&self) -> bool {
+        *self == ADC_DRC_EN_A::D_ISABLED
+    }
+    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[inline(always)]
+    pub fn is_e_nabled(&self) -> bool {
+        *self == ADC_DRC_EN_A::E_NABLED
+    }
+}
+#[doc = "Field `adc_drc_en[1,0]` writer - ADC DRC\\[i\\]
+enable control"]
+pub type ADC_DRC_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, AC_ADC_DAP_CTR_SPEC, ADC_DRC_EN_A, O>;
+impl<'a, const O: u8> ADC_DRC_EN_W<'a, O> {
+    #[doc = "Disabled"]
+    #[inline(always)]
+    pub fn d_isabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_EN_A::D_ISABLED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn e_nabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_EN_A::E_NABLED)
+    }
+}
+#[doc = "Field `adc_dap_en[1,0]` reader - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+pub type ADC_DAP_EN_R = crate::BitReader<ADC_DAP_EN_A>;
+#[doc = "DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ADC_DAP_EN_A {
+    #[doc = "0: Bypassed"]
+    B_YPASSED = 0,
+    #[doc = "1: Enabled"]
+    E_NABLED = 1,
+}
+impl From<ADC_DAP_EN_A> for bool {
+    #[inline(always)]
+    fn from(variant: ADC_DAP_EN_A) -> Self {
+        variant as u8 != 0
+    }
+}
+impl ADC_DAP_EN_R {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ADC_DAP_EN_A {
+        match self.bits {
+            false => ADC_DAP_EN_A::B_YPASSED,
+            true => ADC_DAP_EN_A::E_NABLED,
+        }
+    }
+    #[doc = "Checks if the value of the field is `B_YPASSED`"]
+    #[inline(always)]
+    pub fn is_b_ypassed(&self) -> bool {
+        *self == ADC_DAP_EN_A::B_YPASSED
+    }
+    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[inline(always)]
+    pub fn is_e_nabled(&self) -> bool {
+        *self == ADC_DAP_EN_A::E_NABLED
+    }
+}
+#[doc = "Field `adc_dap_en[1,0]` writer - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+pub type ADC_DAP_EN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, AC_ADC_DAP_CTR_SPEC, ADC_DAP_EN_A, O>;
+impl<'a, const O: u8> ADC_DAP_EN_W<'a, O> {
+    #[doc = "Bypassed"]
+    #[inline(always)]
+    pub fn b_ypassed(self) -> &'a mut W {
+        self.variant(ADC_DAP_EN_A::B_YPASSED)
+    }
+    #[doc = "Enabled"]
+    #[inline(always)]
+    pub fn e_nabled(self) -> &'a mut W {
+        self.variant(ADC_DAP_EN_A::E_NABLED)
+    }
+}
+impl R {
+    #[doc = "Bit 28 - ADC HPF\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_hpf1_en(&self) -> ADC_HPF_EN_R {
+        ADC_HPF_EN_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    #[doc = "Bit 32 - ADC HPF\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_hpf0_en(&self) -> ADC_HPF_EN_R {
+        ADC_HPF_EN_R::new(((self.bits >> 32) & 1) != 0)
+    }
+    #[doc = "Bit 29 - ADC DRC\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_drc1_en(&self) -> ADC_DRC_EN_R {
+        ADC_DRC_EN_R::new(((self.bits >> 29) & 1) != 0)
+    }
+    #[doc = "Bit 33 - ADC DRC\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_drc0_en(&self) -> ADC_DRC_EN_R {
+        ADC_DRC_EN_R::new(((self.bits >> 33) & 1) != 0)
+    }
+    #[doc = "Bit 31 - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[inline(always)]
+    pub fn adc_dap1_en(&self) -> ADC_DAP_EN_R {
+        ADC_DAP_EN_R::new(((self.bits >> 31) & 1) != 0)
+    }
+    #[doc = "Bit 35 - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[inline(always)]
+    pub fn adc_dap0_en(&self) -> ADC_DAP_EN_R {
+        ADC_DAP_EN_R::new(((self.bits >> 35) & 1) != 0)
+    }
+}
 impl W {
+    #[doc = "ADC HPF\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub unsafe fn adc_hpf_en<const O: u8>(&mut self) -> ADC_HPF_EN_W<O> {
+        ADC_HPF_EN_W::new(self)
+    }
+    #[doc = "Bit 28 - ADC HPF\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_hpf1_en(&mut self) -> ADC_HPF_EN_W<28> {
+        ADC_HPF_EN_W::new(self)
+    }
+    #[doc = "Bit 32 - ADC HPF\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_hpf0_en(&mut self) -> ADC_HPF_EN_W<32> {
+        ADC_HPF_EN_W::new(self)
+    }
+    #[doc = "ADC DRC\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub unsafe fn adc_drc_en<const O: u8>(&mut self) -> ADC_DRC_EN_W<O> {
+        ADC_DRC_EN_W::new(self)
+    }
+    #[doc = "Bit 29 - ADC DRC\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_drc1_en(&mut self) -> ADC_DRC_EN_W<29> {
+        ADC_DRC_EN_W::new(self)
+    }
+    #[doc = "Bit 33 - ADC DRC\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_drc0_en(&mut self) -> ADC_DRC_EN_W<33> {
+        ADC_DRC_EN_W::new(self)
+    }
+    #[doc = "DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[inline(always)]
+    pub unsafe fn adc_dap_en<const O: u8>(&mut self) -> ADC_DAP_EN_W<O> {
+        ADC_DAP_EN_W::new(self)
+    }
+    #[doc = "Bit 31 - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[inline(always)]
+    pub fn adc_dap1_en(&mut self) -> ADC_DAP_EN_W<31> {
+        ADC_DAP_EN_W::new(self)
+    }
+    #[doc = "Bit 35 - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[inline(always)]
+    pub fn adc_dap0_en(&mut self) -> ADC_DAP_EN_W<35> {
+        ADC_DAP_EN_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_TLB_PREFETCH_SPEC>> for W {
 #[doc = "Field `mi_tlb_pf[0-6]` reader - Micro TLB6 prefetch enable"]
 pub type MI_TLB_PF_R = crate::BitReader<MI_TLB_PF_A>;
 #[doc = "Micro TLB6 prefetch enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MI_TLB_PF_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> MI_TLB_PF_W<'a, O> {
 #[doc = "Field `pf_vl_pt_to_mt` reader - Prefetch Value Pagetable to Macro TLB\n\nIf the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB."]
 pub type PF_VL_PT_TO_MT_R = crate::BitReader<PF_VL_PT_TO_MT_A>;
 #[doc = "Prefetch Value Pagetable to Macro TLB\n\nIf the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PF_VL_PT_TO_MT_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> PF_VL_PT_TO_MT_W<'a, O> {
 #[doc = "Field `pf_vl_pt_to_pc` reader - Prefetch Value Pagetable to PTW Cache\n\nIf the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache."]
 pub type PF_VL_PT_TO_PC_R = crate::BitReader<PF_VL_PT_TO_PC_A>;
 #[doc = "Prefetch Value Pagetable to PTW Cache\n\nIf the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PF_VL_PT_TO_PC_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

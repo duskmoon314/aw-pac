@@ -37,7 +37,7 @@ impl From<crate::W<TWI_CNTR_SPEC>> for W {
 #[doc = "Field `clk_count_mode` reader - "]
 pub type CLK_COUNT_MODE_R = crate::BitReader<CLK_COUNT_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_COUNT_MODE_A {
     #[doc = "0: scl clock high period count on oscl"]
     OSCL = 0,
@@ -104,7 +104,7 @@ pub type M_STA_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_CNTR_SPEC, boo
 #[doc = "Field `bus_en` reader - TWI Bus Enable"]
 pub type BUS_EN_R = crate::BitReader<BUS_EN_A>;
 #[doc = "TWI Bus Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUS_EN_A {
     #[doc = "0: `0`"]
     IGNORED = 0,
@@ -154,7 +154,7 @@ impl<'a, const O: u8> BUS_EN_W<'a, O> {
 #[doc = "Field `int_en` reader - Interrupt Enable"]
 pub type INT_EN_R = crate::BitReader<INT_EN_A>;
 #[doc = "Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum INT_EN_A {
     #[doc = "0: The interrupt line always low"]
     LOW = 0,

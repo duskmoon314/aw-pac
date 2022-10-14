@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_CSDC_SPEC>> for W {
 #[doc = "Field `crc_det_para` reader - "]
 pub type CRC_DET_PARA_R = crate::FieldReader<u8, CRC_DET_PARA_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CRC_DET_PARA_A {
     #[doc = "6: `110`"]

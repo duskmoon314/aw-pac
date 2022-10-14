@@ -37,7 +37,7 @@ impl From<crate::W<GP_CTRL_SPEC>> for W {
 #[doc = "Field `adc_en` reader - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
 pub type ADC_EN_R = crate::BitReader<ADC_EN_A>;
 #[doc = "ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> ADC_EN_W<'a, O> {
 #[doc = "Field `adc_cali_en` reader - ADC Calibration"]
 pub type ADC_CALI_EN_R = crate::BitReader<ADC_CALI_EN_A>;
 #[doc = "ADC Calibration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_CALI_EN_A {
     #[doc = "1: Start Calibration, it is cleared to 0 after calibration"]
     START = 1,
@@ -125,7 +125,7 @@ impl<'a, const O: u8> ADC_CALI_EN_W<'a, O> {
 #[doc = "Field `gpadc_work_mode` reader - GPADC Work Mode"]
 pub type GPADC_WORK_MODE_R = crate::FieldReader<u8, GPADC_WORK_MODE_A>;
 #[doc = "GPADC Work Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum GPADC_WORK_MODE_A {
     #[doc = "0: Single conversion mode"]

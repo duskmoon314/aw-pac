@@ -37,7 +37,7 @@ impl From<crate::W<HS_TMR_IRQ_STAS_SPEC>> for W {
 #[doc = "Field `hs_tmr_irq_pend[0-1]` reader - HSTimer IRQ Pending"]
 pub type HS_TMR_IRQ_PEND_R = crate::BitReader<HS_TMR_IRQ_PEND_A>;
 #[doc = "HSTimer IRQ Pending\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HS_TMR_IRQ_PEND_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,

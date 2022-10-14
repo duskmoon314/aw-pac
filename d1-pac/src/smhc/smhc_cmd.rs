@@ -41,7 +41,7 @@ pub type CMD_IDX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_CMD_SPEC,
 #[doc = "Field `resp_rcv` reader - Response Receive"]
 pub type RESP_RCV_R = crate::BitReader<RESP_RCV_A>;
 #[doc = "Response Receive\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESP_RCV_A {
     #[doc = "0: Command without response"]
     WITHOUT = 0,
@@ -91,7 +91,7 @@ impl<'a, const O: u8> RESP_RCV_W<'a, O> {
 #[doc = "Field `long_resp` reader - Response Type"]
 pub type LONG_RESP_R = crate::BitReader<LONG_RESP_A>;
 #[doc = "Response Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LONG_RESP_A {
     #[doc = "0: Short Response (48 bits)"]
     SHORT = 0,
@@ -141,7 +141,7 @@ impl<'a, const O: u8> LONG_RESP_W<'a, O> {
 #[doc = "Field `chk_resp_crc` reader - Check Response CRC"]
 pub type CHK_RESP_CRC_R = crate::BitReader<CHK_RESP_CRC_A>;
 #[doc = "Check Response CRC\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHK_RESP_CRC_A {
     #[doc = "0: Do not check response CRC"]
     NOT_CHECK = 0,
@@ -192,7 +192,7 @@ impl<'a, const O: u8> CHK_RESP_CRC_W<'a, O> {
 #[doc = "Field `data_trans` reader - Data Transfer"]
 pub type DATA_TRANS_R = crate::BitReader<DATA_TRANS_A>;
 #[doc = "Data Transfer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DATA_TRANS_A {
     #[doc = "0: Without data transfer"]
     WITHOUT = 0,
@@ -242,7 +242,7 @@ impl<'a, const O: u8> DATA_TRANS_W<'a, O> {
 #[doc = "Field `trans_dir` reader - Transfer Direction"]
 pub type TRANS_DIR_R = crate::BitReader<TRANS_DIR_A>;
 #[doc = "Transfer Direction\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRANS_DIR_A {
     #[doc = "0: Read operation"]
     READ = 0,
@@ -292,7 +292,7 @@ impl<'a, const O: u8> TRANS_DIR_W<'a, O> {
 #[doc = "Field `trans_mode` reader - Transfer Mode"]
 pub type TRANS_MODE_R = crate::BitReader<TRANS_MODE_A>;
 #[doc = "Transfer Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRANS_MODE_A {
     #[doc = "0: Block data transfer command"]
     BLOCK = 0,
@@ -342,7 +342,7 @@ impl<'a, const O: u8> TRANS_MODE_W<'a, O> {
 #[doc = "Field `stop_cmd_flag` reader - Send Stop CMD Automatically (CMD12)"]
 pub type STOP_CMD_FLAG_R = crate::BitReader<STOP_CMD_FLAG_A>;
 #[doc = "Send Stop CMD Automatically (CMD12)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STOP_CMD_FLAG_A {
     #[doc = "0: Do not send stop command at the end of the data transfer"]
     NO_STOP = 0,
@@ -393,7 +393,7 @@ impl<'a, const O: u8> STOP_CMD_FLAG_W<'a, O> {
 #[doc = "Field `wait_pre_over` reader - Wait for Data Transfer Over"]
 pub type WAIT_PRE_OVER_R = crate::BitReader<WAIT_PRE_OVER_A>;
 #[doc = "Wait for Data Transfer Over\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WAIT_PRE_OVER_A {
     #[doc = "0: Send command at once, does not care about data transferring"]
     AT_ONCE = 0,
@@ -444,7 +444,7 @@ impl<'a, const O: u8> WAIT_PRE_OVER_W<'a, O> {
 #[doc = "Field `stop_abt_cmd` reader - Stop Abort Command"]
 pub type STOP_ABT_CMD_R = crate::BitReader<STOP_ABT_CMD_A>;
 #[doc = "Stop Abort Command\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STOP_ABT_CMD_A {
     #[doc = "0: Normal command sending"]
     NORMAL = 0,
@@ -495,7 +495,7 @@ impl<'a, const O: u8> STOP_ABT_CMD_W<'a, O> {
 #[doc = "Field `send_init_seq` reader - Send Initialization"]
 pub type SEND_INIT_SEQ_R = crate::BitReader<SEND_INIT_SEQ_A>;
 #[doc = "Send Initialization\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SEND_INIT_SEQ_A {
     #[doc = "0: Normal command sending"]
     NORMAL = 0,
@@ -546,7 +546,7 @@ impl<'a, const O: u8> SEND_INIT_SEQ_W<'a, O> {
 #[doc = "Field `prg_clk` reader - Change Clock"]
 pub type PRG_CLK_R = crate::BitReader<PRG_CLK_A>;
 #[doc = "Change Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PRG_CLK_A {
     #[doc = "0: Normal command"]
     NORMAL = 0,
@@ -596,7 +596,7 @@ impl<'a, const O: u8> PRG_CLK_W<'a, O> {
 #[doc = "Field `boot_mod` reader - Boot Mode"]
 pub type BOOT_MOD_R = crate::FieldReader<u8, BOOT_MOD_A>;
 #[doc = "Boot Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BOOT_MOD_A {
     #[doc = "0: Normal command"]
@@ -670,7 +670,7 @@ pub type BOOT_ABT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, 
 #[doc = "Field `vol_sw` reader - Voltage Switch"]
 pub type VOL_SW_R = crate::BitReader<VOL_SW_A>;
 #[doc = "Voltage Switch\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VOL_SW_A {
     #[doc = "0: Normal command"]
     NORMAL = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<THS_FILTER_SPEC>> for W {
 #[doc = "Field `filter_type` reader - Averaging filter type"]
 pub type FILTER_TYPE_R = crate::FieldReader<u8, FILTER_TYPE_A>;
 #[doc = "Averaging filter type\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FILTER_TYPE_A {
     #[doc = "0: 2"]
@@ -116,7 +116,7 @@ impl<'a, const O: u8> FILTER_TYPE_W<'a, O> {
 #[doc = "Field `filter_en` reader - Filter enable"]
 pub type FILTER_EN_R = crate::BitReader<FILTER_EN_A>;
 #[doc = "Filter enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FILTER_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

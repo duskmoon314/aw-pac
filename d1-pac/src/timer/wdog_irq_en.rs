@@ -37,7 +37,7 @@ impl From<crate::W<WDOG_IRQ_EN_SPEC>> for W {
 #[doc = "Field `wdog_irq_en` reader - "]
 pub type WDOG_IRQ_EN_R = crate::BitReader<WDOG_IRQ_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum WDOG_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,

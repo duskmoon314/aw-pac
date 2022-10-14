@@ -45,7 +45,7 @@ pub type HOST_CONTROLLER_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, US
 #[doc = "Field `frame_list_size` reader - This field is R/W only if Programmable Frame List Flag in the HCCPARAMS register is set to one. This field specifies the size of the Frame list."]
 pub type FRAME_LIST_SIZE_R = crate::FieldReader<u8, FRAME_LIST_SIZE_A>;
 #[doc = "This field is R/W only if Programmable Frame List Flag in the HCCPARAMS register is set to one. This field specifies the size of the Frame list.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FRAME_LIST_SIZE_A {
     #[doc = "0: 1024 frames"]
@@ -111,7 +111,7 @@ impl<'a, const O: u8> FRAME_LIST_SIZE_W<'a, O> {
 #[doc = "Field `periodic_schedule_enable` reader - Periodic Schedule Enable\n\nThis bit controls whether the host controller skips processing the Periodic Schedule."]
 pub type PERIODIC_SCHEDULE_ENABLE_R = crate::BitReader<PERIODIC_SCHEDULE_ENABLE_A>;
 #[doc = "Periodic Schedule Enable\n\nThis bit controls whether the host controller skips processing the Periodic Schedule.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PERIODIC_SCHEDULE_ENABLE_A {
     #[doc = "0: Do not process the Periodic Schedule"]
     DISABLE = 0,
@@ -162,7 +162,7 @@ impl<'a, const O: u8> PERIODIC_SCHEDULE_ENABLE_W<'a, O> {
 #[doc = "Field `asynchronous_schedule_enable` reader - Asynchronous Schedule Enable\n\nThis bit controls whether the host controller skips processing the Asynchronous Schedule."]
 pub type ASYNCHRONOUS_SCHEDULE_ENABLE_R = crate::BitReader<ASYNCHRONOUS_SCHEDULE_ENABLE_A>;
 #[doc = "Asynchronous Schedule Enable\n\nThis bit controls whether the host controller skips processing the Asynchronous Schedule.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ASYNCHRONOUS_SCHEDULE_ENABLE_A {
     #[doc = "0: Do not process the Asynchronous Schedule"]
     DISABLE = 0,
@@ -227,7 +227,7 @@ pub type ASYNCHRONOUS_SCHEDULE_PARK_MODE_ENABLE_R = crate::BitReader<bool>;
 #[doc = "Field `interrupt_threshold_control` reader - Interrupt Threshold Control\n\nThe value in this field is used by system software to select the maximum rate at which the host controller will issue interrupts."]
 pub type INTERRUPT_THRESHOLD_CONTROL_R = crate::FieldReader<u8, INTERRUPT_THRESHOLD_CONTROL_A>;
 #[doc = "Interrupt Threshold Control\n\nThe value in this field is used by system software to select the maximum rate at which the host controller will issue interrupts.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INTERRUPT_THRESHOLD_CONTROL_A {
     #[doc = "1: 1 micro-frame"]

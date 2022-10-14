@@ -37,7 +37,7 @@ impl From<crate::W<RISCV_AXI_PMU_CTRL_SPEC>> for W {
 #[doc = "Field `pmu_en` reader - PMU Enable"]
 pub type PMU_EN_R = crate::BitReader<PMU_EN_A>;
 #[doc = "PMU Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PMU_EN_A {
     #[doc = "0: `0`"]
     DISABLED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> PMU_EN_W<'a, O> {
 #[doc = "Field `pmu_clr` reader - PMU Clear"]
 pub type PMU_CLR_R = crate::BitReader<PMU_CLR_A>;
 #[doc = "PMU Clear\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PMU_CLR_A {
     #[doc = "0: `0`"]
     NO_OPERATION = 0,

@@ -67,7 +67,7 @@ pub type CLK_N_W<'a, const O: u8> =
 #[doc = "Field `clk_duty` reader - Setting duty cycle of clock as master"]
 pub type CLK_DUTY_R = crate::BitReader<CLK_DUTY_A>;
 #[doc = "Setting duty cycle of clock as master\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_DUTY_A {
     #[doc = "0: 50%"]
     P50 = 0,
@@ -116,7 +116,7 @@ impl<'a, const O: u8> CLK_DUTY_W<'a, O> {
     }
 }
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_COUNT_MODE_AW {
     #[doc = "0: scl clock high period count on oscl"]
     OSCL = 0,

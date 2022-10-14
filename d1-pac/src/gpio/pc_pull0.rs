@@ -37,7 +37,7 @@ impl From<crate::W<PC_PULL0_SPEC>> for W {
 #[doc = "Field `pc_pull[0-7]` reader - PC Pull_up/down Select"]
 pub type PC_PULL_R = crate::FieldReader<u8, PC_PULL_A>;
 #[doc = "PC Pull_up/down Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PC_PULL_A {
     #[doc = "0: `0`"]

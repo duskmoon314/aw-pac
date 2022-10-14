@@ -39,7 +39,7 @@ out-of-order control bit"]
 pub type M_OOO_CTRL_R = crate::BitReader<M_OOO_CTRL_A>;
 #[doc = "Master\\[i\\]
 out-of-order control bit\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_OOO_CTRL_A {
     #[doc = "0: Disable out-of-order"]
     D_ISABLE = 0,

@@ -45,7 +45,7 @@ pub type TV_VB_INT_FLAG_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_GINT0_
 #[doc = "Field `tv_line_int_en` reader - TV Line Interrupt Enable"]
 pub type TV_LINE_INT_EN_R = crate::BitReader<TV_LINE_INT_EN_A>;
 #[doc = "TV Line Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_LINE_INT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -96,7 +96,7 @@ impl<'a, const O: u8> TV_LINE_INT_EN_W<'a, O> {
 #[doc = "Field `tv_vb_int_en` reader - TV Vb Interrupt Enable"]
 pub type TV_VB_INT_EN_R = crate::BitReader<TV_VB_INT_EN_A>;
 #[doc = "TV Vb Interrupt Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_VB_INT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,

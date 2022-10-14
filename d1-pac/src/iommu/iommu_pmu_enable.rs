@@ -37,7 +37,7 @@ impl From<crate::W<IOMMU_PMU_ENABLE_SPEC>> for W {
 #[doc = "Field `pmu_enable` reader - "]
 pub type PMU_ENABLE_R = crate::BitReader<PMU_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PMU_ENABLE_A {
     #[doc = "0: Disable statistical function"]
     D_ISABLE = 0,

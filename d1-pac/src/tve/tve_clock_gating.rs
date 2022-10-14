@@ -37,7 +37,7 @@ impl From<crate::W<TVE_CLOCK_GATING_SPEC>> for W {
 #[doc = "Field `tve_en` reader - Video Encoder enable, default disable, write 1 to take it out of the reset state"]
 pub type TVE_EN_R = crate::BitReader<TVE_EN_A>;
 #[doc = "Video Encoder enable, default disable, write 1 to take it out of the reset state\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TVE_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TVE_EN_W<'a, O> {
 #[doc = "Field `upsample_for_cvbs` reader - "]
 pub type UPSAMPLE_FOR_CVBS_R = crate::FieldReader<u8, UPSAMPLE_FOR_CVBS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum UPSAMPLE_FOR_CVBS_A {
     #[doc = "0: 27 MHz"]
@@ -166,7 +166,7 @@ impl<'a, const O: u8> UPSAMPLE_FOR_CVBS_W<'a, O> {
 #[doc = "Field `upsample_for_ypbpr` reader - "]
 pub type UPSAMPLE_FOR_YPBPR_R = crate::BitReader<UPSAMPLE_FOR_YPBPR_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum UPSAMPLE_FOR_YPBPR_A {
     #[doc = "0: 1x"]
     X1 = 0,
@@ -217,7 +217,7 @@ impl<'a, const O: u8> UPSAMPLE_FOR_YPBPR_W<'a, O> {
 #[doc = "Field `bist_en` reader - "]
 pub type BIST_EN_R = crate::BitReader<BIST_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_EN_A {
     #[doc = "0: Normal mode"]
     N_ORMAL = 0,
@@ -268,7 +268,7 @@ impl<'a, const O: u8> BIST_EN_W<'a, O> {
 #[doc = "Field `clock_gate_dis` reader - "]
 pub type CLOCK_GATE_DIS_R = crate::BitReader<CLOCK_GATE_DIS_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLOCK_GATE_DIS_A {
     #[doc = "0: Enable"]
     E_NABLE = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<MSGBOX_WR_INT_THRESHOLD_SPEC>> for W {
 #[doc = "Field `msg_wr_int_threshold_cfg` reader - Configure the FIFO empty level to trigger the write interrupt for user1"]
 pub type MSG_WR_INT_THRESHOLD_CFG_R = crate::FieldReader<u8, MSG_WR_INT_THRESHOLD_CFG_A>;
 #[doc = "Configure the FIFO empty level to trigger the write interrupt for user1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MSG_WR_INT_THRESHOLD_CFG_A {
     #[doc = "0: `0`"]

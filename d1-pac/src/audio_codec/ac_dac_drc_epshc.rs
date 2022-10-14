@@ -34,7 +34,24 @@ impl From<crate::W<AC_DAC_DRC_EPSHC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_drc_epshc` reader - The gain smooth filter release and attack time parameter setting in expander region, which are determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)"]
+pub type DAC_DRC_EPSHC_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `dac_drc_epshc` writer - The gain smooth filter release and attack time parameter setting in expander region, which are determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)"]
+pub type DAC_DRC_EPSHC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_DAC_DRC_EPSHC_SPEC, u16, u16, 11, O>;
+impl R {
+    #[doc = "Bits 0:10 - The gain smooth filter release and attack time parameter setting in expander region, which are determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)"]
+    #[inline(always)]
+    pub fn dac_drc_epshc(&self) -> DAC_DRC_EPSHC_R {
+        DAC_DRC_EPSHC_R::new((self.bits & 0x07ff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:10 - The gain smooth filter release and attack time parameter setting in expander region, which are determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)"]
+    #[inline(always)]
+    pub fn dac_drc_epshc(&mut self) -> DAC_DRC_EPSHC_W<0> {
+        DAC_DRC_EPSHC_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {

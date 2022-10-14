@@ -37,7 +37,7 @@ impl From<crate::W<PB_CFG1_SPEC>> for W {
 #[doc = "Field `pb8_select` reader - "]
 pub type PB8_SELECT_R = crate::FieldReader<u8, PB8_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PB8_SELECT_A {
     #[doc = "0: `0`"]
@@ -194,7 +194,7 @@ impl<'a, const O: u8> PB8_SELECT_W<'a, O> {
 #[doc = "Field `pb9_select` reader - "]
 pub type PB9_SELECT_R = crate::FieldReader<u8, PB9_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PB9_SELECT_A {
     #[doc = "0: `0`"]
@@ -351,7 +351,7 @@ impl<'a, const O: u8> PB9_SELECT_W<'a, O> {
 #[doc = "Field `pb10_select` reader - "]
 pub type PB10_SELECT_R = crate::FieldReader<u8, PB10_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PB10_SELECT_A {
     #[doc = "0: `0`"]
@@ -508,7 +508,7 @@ impl<'a, const O: u8> PB10_SELECT_W<'a, O> {
 #[doc = "Field `pb11_select` reader - "]
 pub type PB11_SELECT_R = crate::FieldReader<u8, PB11_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PB11_SELECT_A {
     #[doc = "0: `0`"]
@@ -665,7 +665,7 @@ impl<'a, const O: u8> PB11_SELECT_W<'a, O> {
 #[doc = "Field `pb12_select` reader - "]
 pub type PB12_SELECT_R = crate::FieldReader<u8, PB12_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PB12_SELECT_A {
     #[doc = "0: `0`"]

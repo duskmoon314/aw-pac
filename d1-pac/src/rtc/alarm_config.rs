@@ -37,7 +37,7 @@ impl From<crate::W<ALARM_CONFIG_SPEC>> for W {
 #[doc = "Field `alarm_wakeup` reader - Configuration of alarm wake up output."]
 pub type ALARM_WAKEUP_R = crate::BitReader<ALARM_WAKEUP_A>;
 #[doc = "Configuration of alarm wake up output.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ALARM_WAKEUP_A {
     #[doc = "0: Disable alarm wake up output"]
     DISABLE = 0,

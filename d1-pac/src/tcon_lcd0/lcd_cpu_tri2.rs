@@ -47,7 +47,7 @@ pub type SYNC_MODE_W<'a, const O: u8> =
 #[doc = "Field `trans_start_mode` reader - Select the FIFOs used in CPU mode."]
 pub type TRANS_START_MODE_R = crate::BitReader<TRANS_START_MODE_A>;
 #[doc = "Select the FIFOs used in CPU mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRANS_START_MODE_A {
     #[doc = "0: ECC_FIFO+TRI_FIFO"]
     ECC_FIFO_TRI_FIFO = 0,

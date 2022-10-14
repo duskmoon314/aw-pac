@@ -37,7 +37,7 @@ impl From<crate::W<AC_DAC_FIFOC_SPEC>> for W {
 #[doc = "Field `fifo_flush` reader - DAC FIFO Flush"]
 pub type FIFO_FLUSH_R = crate::BitReader<FIFO_FLUSH_A>;
 #[doc = "DAC FIFO Flush\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_FLUSH_A {
     #[doc = "0: `0`"]
     SELF_CLEAR = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> FIFO_FLUSH_W<'a, O> {
 #[doc = "Field `fifo_overrun_irq_en` reader - DAC FIFO Overrun IRQ Enable"]
 pub type FIFO_OVERRUN_IRQ_EN_R = crate::BitReader<FIFO_OVERRUN_IRQ_EN_A>;
 #[doc = "DAC FIFO Overrun IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_OVERRUN_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> FIFO_OVERRUN_IRQ_EN_W<'a, O> {
 #[doc = "Field `fifo_underrun_irq_en` reader - DAC FIFO Underrun IRQ Enable"]
 pub type FIFO_UNDERRUN_IRQ_EN_R = crate::BitReader<FIFO_UNDERRUN_IRQ_EN_A>;
 #[doc = "DAC FIFO Underrun IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_UNDERRUN_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -190,7 +190,7 @@ impl<'a, const O: u8> FIFO_UNDERRUN_IRQ_EN_W<'a, O> {
 #[doc = "Field `dac_irq_en` reader - DAC FIFO Empty IRQ Enable"]
 pub type DAC_IRQ_EN_R = crate::BitReader<DAC_IRQ_EN_A>;
 #[doc = "DAC FIFO Empty IRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_IRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -241,7 +241,7 @@ impl<'a, const O: u8> DAC_IRQ_EN_W<'a, O> {
 #[doc = "Field `dac_drq_en` reader - DAC FIFO Empty DRQ Enable"]
 pub type DAC_DRQ_EN_R = crate::BitReader<DAC_DRQ_EN_A>;
 #[doc = "DAC FIFO Empty DRQ Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_DRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -292,7 +292,7 @@ impl<'a, const O: u8> DAC_DRQ_EN_W<'a, O> {
 #[doc = "Field `tx_sample_bits` reader - Transmitting Audio Sample Resolution"]
 pub type TX_SAMPLE_BITS_R = crate::BitReader<TX_SAMPLE_BITS_A>;
 #[doc = "Transmitting Audio Sample Resolution\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_SAMPLE_BITS_A {
     #[doc = "0: `0`"]
     BITS_16 = 0,
@@ -343,7 +343,7 @@ impl<'a, const O: u8> TX_SAMPLE_BITS_W<'a, O> {
 #[doc = "Field `dac_mono_en` reader - DAC Mono Enable"]
 pub type DAC_MONO_EN_R = crate::BitReader<DAC_MONO_EN_A>;
 #[doc = "DAC Mono Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_MONO_EN_A {
     #[doc = "0: `0`"]
     STEREO = 0,
@@ -394,7 +394,7 @@ impl<'a, const O: u8> DAC_MONO_EN_W<'a, O> {
 #[doc = "Field `dac_drq_clr_cnt` reader - DAC DRQ clear count"]
 pub type DAC_DRQ_CLR_CNT_R = crate::FieldReader<u8, DAC_DRQ_CLR_CNT_A>;
 #[doc = "DAC DRQ clear count\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC_DRQ_CLR_CNT_A {
     #[doc = "0: `0`"]
@@ -478,7 +478,7 @@ pub type TX_TRIG_LEVEL_W<'a, const O: u8> =
 #[doc = "Field `fifo_mode` reader - "]
 pub type FIFO_MODE_R = crate::FieldReader<u8, FIFO_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FIFO_MODE_A {
     #[doc = "0: `0`"]
@@ -531,7 +531,7 @@ impl<'a, const O: u8> FIFO_MODE_W<'a, O> {
 #[doc = "Field `send_last` reader - Audio sample select when TX FIFO underrun"]
 pub type SEND_LAST_R = crate::BitReader<SEND_LAST_A>;
 #[doc = "Audio sample select when TX FIFO underrun\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SEND_LAST_A {
     #[doc = "0: `0`"]
     ZERO = 0,
@@ -582,7 +582,7 @@ impl<'a, const O: u8> SEND_LAST_W<'a, O> {
 #[doc = "Field `fir_ver` reader - FIR Version"]
 pub type FIR_VER_R = crate::BitReader<FIR_VER_A>;
 #[doc = "FIR Version\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIR_VER_A {
     #[doc = "0: `0`"]
     TAP_64 = 0,
@@ -632,7 +632,7 @@ impl<'a, const O: u8> FIR_VER_W<'a, O> {
 #[doc = "Field `dac_fs` reader - Sample Rate of DAC"]
 pub type DAC_FS_R = crate::FieldReader<u8, DAC_FS_A>;
 #[doc = "Sample Rate of DAC\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAC_FS_A {
     #[doc = "0: `0`"]

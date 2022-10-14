@@ -37,7 +37,7 @@ impl From<crate::W<CCU_PARSER_CLK_EN_SPEC>> for W {
 #[doc = "Field `mcsi_parser0_clk_enable` reader - "]
 pub type MCSI_PARSER0_CLK_ENABLE_R = crate::BitReader<MCSI_PARSER0_CLK_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MCSI_PARSER0_CLK_ENABLE_A {
     #[doc = "0: CSI Parser0 clock disable"]
     DISABLE = 0,

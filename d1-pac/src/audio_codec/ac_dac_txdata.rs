@@ -1,18 +1,3 @@
-#[doc = "Register `ac_dac_txdata` reader"]
-pub struct R(crate::R<AC_DAC_TXDATA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AC_DAC_TXDATA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AC_DAC_TXDATA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AC_DAC_TXDATA_SPEC>) -> Self {
-        R(reader)
-    }
-}
 #[doc = "Register `ac_dac_txdata` writer"]
 pub struct W(crate::W<AC_DAC_TXDATA_SPEC>);
 impl core::ops::Deref for W {
@@ -34,7 +19,15 @@ impl From<crate::W<AC_DAC_TXDATA_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `tx_data` writer - Write the transmitting left and right channel sample data to this register one by one. Write the left channel sample data first and then the right channel sample."]
+pub type TX_DATA_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_DAC_TXDATA_SPEC, u32, u32, 32, O>;
 impl W {
+    #[doc = "Bits 0:31 - Write the transmitting left and right channel sample data to this register one by one. Write the left channel sample data first and then the right channel sample."]
+    #[inline(always)]
+    pub fn tx_data(&mut self) -> TX_DATA_W<0> {
+        TX_DATA_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -42,14 +35,10 @@ impl W {
         self
     }
 }
-#[doc = "DAC TX DATA Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ac_dac_txdata](index.html) module"]
+#[doc = "DAC TX DATA Register\n\nThis register you can [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ac_dac_txdata](index.html) module"]
 pub struct AC_DAC_TXDATA_SPEC;
 impl crate::RegisterSpec for AC_DAC_TXDATA_SPEC {
     type Ux = u32;
-}
-#[doc = "`read()` method returns [ac_dac_txdata::R](R) reader structure"]
-impl crate::Readable for AC_DAC_TXDATA_SPEC {
-    type Reader = R;
 }
 #[doc = "`write(|w| ..)` method takes [ac_dac_txdata::W](W) writer structure"]
 impl crate::Writable for AC_DAC_TXDATA_SPEC {

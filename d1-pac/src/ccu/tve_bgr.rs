@@ -37,7 +37,7 @@ impl From<crate::W<TVE_BGR_SPEC>> for W {
 #[doc = "Field `top_gating` reader - Gating Clock"]
 pub type TOP_GATING_R = crate::BitReader<TOP_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TOP_GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> TOP_GATING_W<'a, O> {
 #[doc = "Field `gating` reader - Gating Clock"]
 pub type GATING_R = crate::BitReader<GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GATING_A {
     #[doc = "0: `0`"]
     MASK = 0,
@@ -137,7 +137,7 @@ impl<'a, const O: u8> GATING_W<'a, O> {
 #[doc = "Field `top_rst` reader - Reset"]
 pub type TOP_RST_R = crate::BitReader<TOP_RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TOP_RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,
@@ -187,7 +187,7 @@ impl<'a, const O: u8> TOP_RST_W<'a, O> {
 #[doc = "Field `rst` reader - Reset"]
 pub type RST_R = crate::BitReader<RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

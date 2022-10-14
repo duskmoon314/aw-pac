@@ -41,7 +41,7 @@ pub type VC_CLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, PHY_CONTROL_SPEC,
 #[doc = "Field `siddq` reader - "]
 pub type SIDDQ_R = crate::BitReader<SIDDQ_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SIDDQ_A {
     #[doc = "1: Write 1 to disable phy"]
     DISABLE = 1,

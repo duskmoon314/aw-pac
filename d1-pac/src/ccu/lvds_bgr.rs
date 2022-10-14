@@ -37,7 +37,7 @@ impl From<crate::W<LVDS_BGR_SPEC>> for W {
 #[doc = "Field `rst` reader - Reset"]
 pub type RST_R = crate::BitReader<RST_A>;
 #[doc = "Reset\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RST_A {
     #[doc = "0: `0`"]
     ASSERT = 0,

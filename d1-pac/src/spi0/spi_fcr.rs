@@ -41,7 +41,7 @@ pub type RF_TRIG_LEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_FCR_
 #[doc = "Field `rf_drq_en` reader - RXFIFO DMA Request Enable"]
 pub type RF_DRQ_EN_R = crate::BitReader<RF_DRQ_EN_A>;
 #[doc = "RXFIFO DMA Request Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_DRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -91,7 +91,7 @@ impl<'a, const O: u8> RF_DRQ_EN_W<'a, O> {
 #[doc = "Field `rf_test_en` reader - RXFIFO Test Mode Enable"]
 pub type RF_TEST_EN_R = crate::BitReader<RF_TEST_EN_A>;
 #[doc = "RXFIFO Test Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RF_TEST_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -149,7 +149,7 @@ pub type TF_TRIG_LEVEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_FCR_
 #[doc = "Field `tf_drq_en` reader - TXFIFO DMA Request Enable"]
 pub type TF_DRQ_EN_R = crate::BitReader<TF_DRQ_EN_A>;
 #[doc = "TXFIFO DMA Request Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_DRQ_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,
@@ -199,7 +199,7 @@ impl<'a, const O: u8> TF_DRQ_EN_W<'a, O> {
 #[doc = "Field `tf_test_en` reader - TXFIFO Test Mode Enable"]
 pub type TF_TEST_EN_R = crate::BitReader<TF_TEST_EN_A>;
 #[doc = "TXFIFO Test Mode Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TF_TEST_EN_A {
     #[doc = "0: `0`"]
     DISABLE = 0,

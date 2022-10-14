@@ -37,7 +37,7 @@ impl From<crate::W<DBI_CTL_0_SPEC>> for W {
 #[doc = "Field `vi_src_type` reader - Video Source Type"]
 pub type VI_SRC_TYPE_R = crate::BitReader<VI_SRC_TYPE_A>;
 #[doc = "Video Source Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VI_SRC_TYPE_A {
     #[doc = "0: `0`"]
     RGB32 = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> VI_SRC_TYPE_W<'a, O> {
 #[doc = "Field `element_a_pos` reader - Element A Position"]
 pub type ELEMENT_A_POS_R = crate::BitReader<ELEMENT_A_POS_A>;
 #[doc = "Element A Position\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ELEMENT_A_POS_A {
     #[doc = "0: `0`"]
     _31_24 = 0,
@@ -139,7 +139,7 @@ impl<'a, const O: u8> ELEMENT_A_POS_W<'a, O> {
 #[doc = "Field `rgb_bo` reader - RGB Bit Order"]
 pub type RGB_BO_R = crate::BitReader<RGB_BO_A>;
 #[doc = "RGB Bit Order\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RGB_BO_A {
     #[doc = "0: `0`"]
     DATA = 0,
@@ -193,7 +193,7 @@ pub type DUM_VAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, DBI_CTL_0_SPEC, 
 #[doc = "Field `rgb_src_fmt` reader - RGB Source Format"]
 pub type RGB_SRC_FMT_R = crate::FieldReader<u8, RGB_SRC_FMT_A>;
 #[doc = "RGB Source Format\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RGB_SRC_FMT_A {
     #[doc = "0: `0`"]
@@ -350,7 +350,7 @@ impl<'a, const O: u8> RGB_SRC_FMT_W<'a, O> {
 #[doc = "Field `dbi_interface` reader - "]
 pub type DBI_INTERFACE_R = crate::FieldReader<u8, DBI_INTERFACE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DBI_INTERFACE_A {
     #[doc = "0: 3 Line Interface I"]
@@ -442,7 +442,7 @@ impl<'a, const O: u8> DBI_INTERFACE_W<'a, O> {
 #[doc = "Field `dat_fmt` reader - Output Data Format"]
 pub type DAT_FMT_R = crate::FieldReader<u8, DAT_FMT_A>;
 #[doc = "Output Data Format\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DAT_FMT_A {
     #[doc = "0: `0`"]
@@ -534,7 +534,7 @@ impl<'a, const O: u8> DAT_FMT_W<'a, O> {
 #[doc = "Field `tran_mod` reader - Transmit Mode"]
 pub type TRAN_MOD_R = crate::BitReader<TRAN_MOD_A>;
 #[doc = "Transmit Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRAN_MOD_A {
     #[doc = "0: `0`"]
     COMMAND_PARAMETER = 0,
@@ -584,7 +584,7 @@ impl<'a, const O: u8> TRAN_MOD_W<'a, O> {
 #[doc = "Field `rgb_seq` reader - Output RGB Sequence"]
 pub type RGB_SEQ_R = crate::FieldReader<u8, RGB_SEQ_A>;
 #[doc = "Output RGB Sequence\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RGB_SEQ_A {
     #[doc = "0: `0`"]
@@ -689,7 +689,7 @@ impl<'a, const O: u8> RGB_SEQ_W<'a, O> {
 #[doc = "Field `dat_seq` reader - Output Data Sequence"]
 pub type DAT_SEQ_R = crate::BitReader<DAT_SEQ_A>;
 #[doc = "Output Data Sequence\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAT_SEQ_A {
     #[doc = "0: `0`"]
     MSB = 0,
@@ -743,7 +743,7 @@ pub type WCDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DBI_CTL_0_SPEC, u
 #[doc = "Field `cmdt` reader - Command Type"]
 pub type CMDT_R = crate::BitReader<CMDT_A>;
 #[doc = "Command Type\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CMDT_A {
     #[doc = "0: `0`"]
     WRITE = 0,

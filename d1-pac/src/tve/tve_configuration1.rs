@@ -37,7 +37,7 @@ impl From<crate::W<TVE_CONFIGURATION1_SPEC>> for W {
 #[doc = "Field `bypass_yclamp` reader - Y input clamping selection\n\nThis bit selects whether the Video Encoder Y input is clamped to 64 to 940 or not. When not clamped the expected range is 0 to 1023. The U and V inputs are always clamped to the range 64 to 960."]
 pub type BYPASS_YCLAMP_R = crate::BitReader<BYPASS_YCLAMP_A>;
 #[doc = "Y input clamping selection\n\nThis bit selects whether the Video Encoder Y input is clamped to 64 to 940 or not. When not clamped the expected range is 0 to 1023. The U and V inputs are always clamped to the range 64 to 960.\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BYPASS_YCLAMP_A {
     #[doc = "0: The Video Encoder Y input is clamped"]
     CLAMPED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> BYPASS_YCLAMP_W<'a, O> {
 #[doc = "Field `rgb_setup` reader - \"Set-up\" enable for RGB outputs. This bit specifies if the \"set-up\" implied value (black_level - blank_level) specified for the CVBS signal is used also for the RGB signals."]
 pub type RGB_SETUP_R = crate::BitReader<RGB_SETUP_A>;
 #[doc = "\"Set-up\" enable for RGB outputs. This bit specifies if the \"set-up\" implied value (black_level - blank_level) specified for the CVBS signal is used also for the RGB signals.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RGB_SETUP_A {
     #[doc = "0: The \"set-up\" is not used, or i.e. comp_yuv is equal to b'1'."]
     NOT_USED = 0,

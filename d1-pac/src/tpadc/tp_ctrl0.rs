@@ -41,7 +41,7 @@ pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u1
 #[doc = "Field `fs_div` reader - ADC Sample Frequency Divider"]
 pub type FS_DIV_R = crate::FieldReader<u8, FS_DIV_A>;
 #[doc = "ADC Sample Frequency Divider\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FS_DIV_A {
     #[doc = "0: CLK_IN / 2 ^ (20 - 0)"]
@@ -276,7 +276,7 @@ impl<'a, const O: u8> FS_DIV_W<'a, O> {
 #[doc = "Field `adc_clk_divider` reader - ADC Clock Divider (CLK_IN)"]
 pub type ADC_CLK_DIVIDER_R = crate::FieldReader<u8, ADC_CLK_DIVIDER_A>;
 #[doc = "ADC Clock Divider (CLK_IN)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADC_CLK_DIVIDER_A {
     #[doc = "0: CLK / 2"]
@@ -355,7 +355,7 @@ impl<'a, const O: u8> ADC_CLK_DIVIDER_W<'a, O> {
 #[doc = "Field `adc_first_dly_mode` reader - ADC First Convert Delay Mode Select"]
 pub type ADC_FIRST_DLY_MODE_R = crate::BitReader<ADC_FIRST_DLY_MODE_A>;
 #[doc = "ADC First Convert Delay Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_FIRST_DLY_MODE_A {
     #[doc = "0: CLK_IN / 16"]
     C16 = 0,

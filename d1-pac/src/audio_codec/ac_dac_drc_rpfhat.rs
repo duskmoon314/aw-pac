@@ -34,7 +34,24 @@ impl From<crate::W<AC_DAC_DRC_RPFHAT_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `dac_drc_rpfhat` reader - The right peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)"]
+pub type DAC_DRC_RPFHAT_R = crate::FieldReader<u16, u16>;
+#[doc = "Field `dac_drc_rpfhat` writer - The right peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)"]
+pub type DAC_DRC_RPFHAT_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, AC_DAC_DRC_RPFHAT_SPEC, u16, u16, 16, O>;
+impl R {
+    #[doc = "Bits 0:15 - The right peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)"]
+    #[inline(always)]
+    pub fn dac_drc_rpfhat(&self) -> DAC_DRC_RPFHAT_R {
+        DAC_DRC_RPFHAT_R::new((self.bits & 0xffff) as u16)
+    }
+}
 impl W {
+    #[doc = "Bits 0:15 - The right peak filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/ta). The format is 3.24. (The default value is 1 ms)"]
+    #[inline(always)]
+    pub fn dac_drc_rpfhat(&mut self) -> DAC_DRC_RPFHAT_W<0> {
+        DAC_DRC_RPFHAT_W::new(self)
+    }
     #[doc = "Writes raw bits to the register."]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
@@ -55,10 +72,10 @@ impl crate::Readable for AC_DAC_DRC_RPFHAT_SPEC {
 impl crate::Writable for AC_DAC_DRC_RPFHAT_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ac_dac_drc_rpfhat to value 0"]
+#[doc = "`reset()` method sets ac_dac_drc_rpfhat to value 0x0b"]
 impl crate::Resettable for AC_DAC_DRC_RPFHAT_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {
-        0
+        0x0b
     }
 }

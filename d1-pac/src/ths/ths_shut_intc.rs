@@ -37,7 +37,7 @@ impl From<crate::W<THS_SHUT_INTC_SPEC>> for W {
 #[doc = "Field `shut_int_en` reader - Enable the shutdown interrupt for the sensor"]
 pub type SHUT_INT_EN_R = crate::BitReader<SHUT_INT_EN_A>;
 #[doc = "Enable the shutdown interrupt for the sensor\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SHUT_INT_EN_A {
     #[doc = "0: Disable"]
     DISABLE = 0,

@@ -37,7 +37,7 @@ impl From<crate::W<SPINLOCK_LOCK_SPEC>> for W {
 #[doc = "Field `taken` reader - Lock State"]
 pub type TAKEN_R = crate::BitReader<TAKEN_A>;
 #[doc = "Lock State\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TAKEN_A {
     #[doc = "0: Read 0x0: The lock was previously Not Taken (free). The requester is granted the lock.\n\nWrite 0x0: Set the lock to Not Taken (free)."]
     FREE = 0,

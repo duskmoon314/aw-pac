@@ -39,7 +39,7 @@ Interrupt Status"]
 pub type LOCK_IRQ_STATUS_R = crate::BitReader<LOCK_IRQ_STATUS_A>;
 #[doc = "Lock\\[i\\]
 Interrupt Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LOCK_IRQ_STATUS_A {
     #[doc = "0: `0`"]
     NO_EFFECT = 0,

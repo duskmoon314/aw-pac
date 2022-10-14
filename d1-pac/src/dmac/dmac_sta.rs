@@ -18,7 +18,7 @@ Status"]
 pub type DMA_STATUS_R = crate::BitReader<DMA_STATUS_A>;
 #[doc = "DMA Channel\\[15:0\\]
 Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_STATUS_A {
     #[doc = "0: `0`"]
     IDLE = 0,
@@ -54,7 +54,7 @@ impl DMA_STATUS_R {
 #[doc = "Field `mbus_fifo_status` reader - MBUS FIFO Status"]
 pub type MBUS_FIFO_STATUS_R = crate::BitReader<MBUS_FIFO_STATUS_A>;
 #[doc = "MBUS FIFO Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MBUS_FIFO_STATUS_A {
     #[doc = "0: `0`"]
     EMPTY = 0,

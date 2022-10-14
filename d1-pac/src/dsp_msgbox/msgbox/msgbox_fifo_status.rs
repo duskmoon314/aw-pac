@@ -16,7 +16,7 @@ impl From<crate::R<MSGBOX_FIFO_STATUS_SPEC>> for R {
 #[doc = "Field `fifo_not_ava_flag` reader - FIFO Not Available Flag"]
 pub type FIFO_NOT_AVA_FLAG_R = crate::BitReader<FIFO_NOT_AVA_FLAG_A>;
 #[doc = "FIFO Not Available Flag\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIFO_NOT_AVA_FLAG_A {
     #[doc = "0: The Message FIFO queue empty level reaches the configured threshold"]
     AVAILABLE = 0,

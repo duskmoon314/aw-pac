@@ -37,7 +37,7 @@ impl From<crate::W<SMHC_THLD_SPEC>> for W {
 #[doc = "Field `card_rd_thld_enb` reader - Card Read Threshold Enable"]
 pub type CARD_RD_THLD_ENB_R = crate::BitReader<CARD_RD_THLD_ENB_A>;
 #[doc = "Card Read Threshold Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CARD_RD_THLD_ENB_A {
     #[doc = "0: Card read threshold disabled"]
     DISABLED = 0,
@@ -88,7 +88,7 @@ impl<'a, const O: u8> CARD_RD_THLD_ENB_W<'a, O> {
 #[doc = "Field `bcig` reader - Busy Clear Interrupt Generation"]
 pub type BCIG_R = crate::BitReader<BCIG_A>;
 #[doc = "Busy Clear Interrupt Generation\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BCIG_A {
     #[doc = "0: Busy clear interrupt disabled"]
     DISABLED = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> BCIG_W<'a, O> {
 #[doc = "Field `card_wr_thld_enb` reader - Card Read/Write Threshold Enable"]
 pub type CARD_WR_THLD_ENB_R = crate::BitReader<CARD_WR_THLD_ENB_A>;
 #[doc = "Card Read/Write Threshold Enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CARD_WR_THLD_ENB_A {
     #[doc = "0: Card write threshold disabled"]
     DISABLED = 0,

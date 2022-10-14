@@ -16,7 +16,7 @@ impl From<crate::R<TWI_STAT_SPEC>> for R {
 #[doc = "Field `sta` reader - "]
 pub type STA_R = crate::FieldReader<u8, STA_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STA_A {
     #[doc = "0: Bus error"]

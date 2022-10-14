@@ -65,7 +65,7 @@ pub type ABN_INT_SUM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_IDST_SP
 #[doc = "Field `idmac_err_sta` reader - Error Bits"]
 pub type IDMAC_ERR_STA_R = crate::FieldReader<u8, IDMAC_ERR_STA_A>;
 #[doc = "Error Bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IDMAC_ERR_STA_A {
     #[doc = "1: Host Abort received during the transmission"]

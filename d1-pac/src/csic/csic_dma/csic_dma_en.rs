@@ -37,7 +37,7 @@ impl From<crate::W<CSIC_DMA_EN_SPEC>> for W {
 #[doc = "Field `bk_top_en` reader - "]
 pub type BK_TOP_EN_R = crate::BitReader<BK_TOP_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BK_TOP_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -87,7 +87,7 @@ impl<'a, const O: u8> BK_TOP_EN_W<'a, O> {
 #[doc = "Field `clk_cnt_en` reader - clk count per frame enable"]
 pub type CLK_CNT_EN_R = crate::BitReader<CLK_CNT_EN_A>;
 #[doc = "clk count per frame enable\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_CNT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -138,7 +138,7 @@ impl<'a, const O: u8> CLK_CNT_EN_W<'a, O> {
 #[doc = "Field `clk_cnt_spl` reader - Sampling time for clk counter per frame"]
 pub type CLK_CNT_SPL_R = crate::BitReader<CLK_CNT_SPL_A>;
 #[doc = "Sampling time for clk counter per frame\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_CNT_SPL_A {
     #[doc = "0: Sampling clock counter every frame done"]
     FRAME_DONE = 0,
@@ -189,7 +189,7 @@ impl<'a, const O: u8> CLK_CNT_SPL_W<'a, O> {
 #[doc = "Field `dma_en` reader - When BK_TOP_EN is enabled, setting 1 to this bit indicates the module works in DMA mode."]
 pub type DMA_EN_R = crate::BitReader<DMA_EN_A>;
 #[doc = "When BK_TOP_EN is enabled, setting 1 to this bit indicates the module works in DMA mode.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -239,7 +239,7 @@ impl<'a, const O: u8> DMA_EN_W<'a, O> {
 #[doc = "Field `frame_cnt_en` reader - When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add."]
 pub type FRAME_CNT_EN_R = crate::BitReader<FRAME_CNT_EN_A>;
 #[doc = "When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FRAME_CNT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -290,7 +290,7 @@ impl<'a, const O: u8> FRAME_CNT_EN_W<'a, O> {
 #[doc = "Field `vi_to_cnt_en` reader - Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input."]
 pub type VI_TO_CNT_EN_R = crate::BitReader<VI_TO_CNT_EN_A>;
 #[doc = "Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VI_TO_CNT_EN_A {
     #[doc = "0: Disable"]
     D_ISABLE = 0,
@@ -341,7 +341,7 @@ impl<'a, const O: u8> VI_TO_CNT_EN_W<'a, O> {
 #[doc = "Field `buf_addr_mode` reader - "]
 pub type BUF_ADDR_MODE_R = crate::BitReader<BUF_ADDR_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUF_ADDR_MODE_A {
     #[doc = "0: Buffer Address Register Mode"]
     R_EGISTER = 0,
@@ -392,7 +392,7 @@ impl<'a, const O: u8> BUF_ADDR_MODE_W<'a, O> {
 #[doc = "Field `flip_size_cfg_mode` reader - FLIP SIZE set by software or calculated by hardware"]
 pub type FLIP_SIZE_CFG_MODE_R = crate::BitReader<FLIP_SIZE_CFG_MODE_A>;
 #[doc = "FLIP SIZE set by software or calculated by hardware\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FLIP_SIZE_CFG_MODE_A {
     #[doc = "0: Hardware"]
     H_ARDWARE = 0,
@@ -443,7 +443,7 @@ impl<'a, const O: u8> FLIP_SIZE_CFG_MODE_W<'a, O> {
 #[doc = "Field `buf_length_cfg_mode` reader - Buffer length set by software or calculated by hardware"]
 pub type BUF_LENGTH_CFG_MODE_R = crate::BitReader<BUF_LENGTH_CFG_MODE_A>;
 #[doc = "Buffer length set by software or calculated by hardware\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BUF_LENGTH_CFG_MODE_A {
     #[doc = "0: Hardware"]
     H_ARDWARE = 0,
@@ -494,7 +494,7 @@ impl<'a, const O: u8> BUF_LENGTH_CFG_MODE_W<'a, O> {
 #[doc = "Field `vflip_buf_addr_cfg_mode` reader - Vflip buffer address set by software or calculated by hardware"]
 pub type VFLIP_BUF_ADDR_CFG_MODE_R = crate::BitReader<VFLIP_BUF_ADDR_CFG_MODE_A>;
 #[doc = "Vflip buffer address set by software or calculated by hardware\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VFLIP_BUF_ADDR_CFG_MODE_A {
     #[doc = "0: Hardware"]
     H_ARDWARE = 0,
