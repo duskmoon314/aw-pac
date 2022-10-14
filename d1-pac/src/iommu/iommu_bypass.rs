@@ -42,9 +42,9 @@ bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_BP_A {
     #[doc = "0: Disable bypass function"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable bypass function"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<M_BP_A> for bool {
     #[inline(always)]
@@ -57,19 +57,19 @@ impl M_BP_R {
     #[inline(always)]
     pub fn variant(&self) -> M_BP_A {
         match self.bits {
-            false => M_BP_A::D_ISABLE,
-            true => M_BP_A::E_NABLE,
+            false => M_BP_A::DISABLE,
+            true => M_BP_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == M_BP_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == M_BP_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == M_BP_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == M_BP_A::ENABLE
     }
 }
 #[doc = "Field `m_bp[0-6]` writer - Master\\[i\\]
@@ -78,13 +78,13 @@ pub type M_BP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_BYPASS_SPEC, 
 impl<'a, const O: u8> M_BP_W<'a, O> {
     #[doc = "Disable bypass function"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(M_BP_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(M_BP_A::DISABLE)
     }
     #[doc = "Enable bypass function"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(M_BP_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(M_BP_A::ENABLE)
     }
 }
 impl R {

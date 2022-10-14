@@ -40,9 +40,9 @@ pub type ADC_DRC_ET_EN_R = crate::BitReader<ADC_DRC_ET_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_ET_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRC_ET_EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl ADC_DRC_ET_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_ET_EN_A {
         match self.bits {
-            false => ADC_DRC_ET_EN_A::D_ISABLED,
-            true => ADC_DRC_ET_EN_A::E_NABLED,
+            false => ADC_DRC_ET_EN_A::DISABLED,
+            true => ADC_DRC_ET_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRC_ET_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRC_ET_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRC_ET_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRC_ET_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drc_et_en` writer - DRC ET enable\n\nWhen the bit is disabled, Ke and OPE parameter is unused."]
@@ -76,13 +76,13 @@ pub type ADC_DRC_ET_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRC_ET_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_ET_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_ET_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_ET_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_ET_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drc_lt_en` reader - DRC LT enable\n\nWhen the bit is disabled, Kl and OPL parameter is unused."]
@@ -91,9 +91,9 @@ pub type ADC_DRC_LT_EN_R = crate::BitReader<ADC_DRC_LT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_LT_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRC_LT_EN_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl ADC_DRC_LT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_LT_EN_A {
         match self.bits {
-            false => ADC_DRC_LT_EN_A::D_ISABLED,
-            true => ADC_DRC_LT_EN_A::E_NABLED,
+            false => ADC_DRC_LT_EN_A::DISABLED,
+            true => ADC_DRC_LT_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRC_LT_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRC_LT_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRC_LT_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRC_LT_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drc_lt_en` writer - DRC LT enable\n\nWhen the bit is disabled, Kl and OPL parameter is unused."]
@@ -127,13 +127,13 @@ pub type ADC_DRC_LT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRC_LT_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_LT_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_LT_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_LT_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_LT_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drc_delay_func_en` reader - Delay function enable\n\nWhen the bit is disabled, the signal delay time is unused."]
@@ -142,9 +142,9 @@ pub type ADC_DRC_DELAY_FUNC_EN_R = crate::BitReader<ADC_DRC_DELAY_FUNC_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_DELAY_FUNC_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRC_DELAY_FUNC_EN_A> for bool {
     #[inline(always)]
@@ -157,19 +157,19 @@ impl ADC_DRC_DELAY_FUNC_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_DELAY_FUNC_EN_A {
         match self.bits {
-            false => ADC_DRC_DELAY_FUNC_EN_A::D_ISABLED,
-            true => ADC_DRC_DELAY_FUNC_EN_A::E_NABLED,
+            false => ADC_DRC_DELAY_FUNC_EN_A::DISABLED,
+            true => ADC_DRC_DELAY_FUNC_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRC_DELAY_FUNC_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRC_DELAY_FUNC_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRC_DELAY_FUNC_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRC_DELAY_FUNC_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drc_delay_func_en` writer - Delay function enable\n\nWhen the bit is disabled, the signal delay time is unused."]
@@ -178,13 +178,13 @@ pub type ADC_DRC_DELAY_FUNC_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRC_DELAY_FUNC_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_DELAY_FUNC_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_DELAY_FUNC_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_DELAY_FUNC_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_DELAY_FUNC_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drc_signal_func_sel` reader - Signal function select\n\nWhen the signal function selects the Peak filter, the RMS parameter is unused. (AC_DRC_LRMSHAT, AC_DRC_LRMSLAT, AC_DRC_LRMSHAT, and AC_DRC_LRMSLAT)\n\nWhen the signal function selects the RMS filter, the Peak filter parameter is unused. (AC_DRC_LPFHAT, AC_DRC_LPFLAT, AC_DRC_RPFHAT, AC_DRC_RPFLAT, AC_DRC_LPFHRT, AC_DRC_LPFLRT, AC_DRC_RPFHRT, and AC_DRC_RPFLRT)"]
@@ -244,9 +244,9 @@ pub type ADC_DRC_DETECT_NOISE_EN_R = crate::BitReader<ADC_DRC_DETECT_NOISE_EN_A>
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_DETECT_NOISE_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRC_DETECT_NOISE_EN_A> for bool {
     #[inline(always)]
@@ -259,19 +259,19 @@ impl ADC_DRC_DETECT_NOISE_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_DETECT_NOISE_EN_A {
         match self.bits {
-            false => ADC_DRC_DETECT_NOISE_EN_A::D_ISABLED,
-            true => ADC_DRC_DETECT_NOISE_EN_A::E_NABLED,
+            false => ADC_DRC_DETECT_NOISE_EN_A::DISABLED,
+            true => ADC_DRC_DETECT_NOISE_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRC_DETECT_NOISE_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRC_DETECT_NOISE_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRC_DETECT_NOISE_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRC_DETECT_NOISE_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drc_detect_noise_en` writer - Control the DRC to detect noise when ET is enabled"]
@@ -280,13 +280,13 @@ pub type ADC_DRC_DETECT_NOISE_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRC_DETECT_NOISE_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_DETECT_NOISE_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_DETECT_NOISE_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_DETECT_NOISE_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_DETECT_NOISE_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drc_gain_min_limit_en` reader - DRC gain min limit enable\n\nWhen this fuction is enabled, it will overwrite the noise detect function."]
@@ -295,9 +295,9 @@ pub type ADC_DRC_GAIN_MIN_LIMIT_EN_R = crate::BitReader<ADC_DRC_GAIN_MIN_LIMIT_E
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_GAIN_MIN_LIMIT_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRC_GAIN_MIN_LIMIT_EN_A> for bool {
     #[inline(always)]
@@ -310,19 +310,19 @@ impl ADC_DRC_GAIN_MIN_LIMIT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_GAIN_MIN_LIMIT_EN_A {
         match self.bits {
-            false => ADC_DRC_GAIN_MIN_LIMIT_EN_A::D_ISABLED,
-            true => ADC_DRC_GAIN_MIN_LIMIT_EN_A::E_NABLED,
+            false => ADC_DRC_GAIN_MIN_LIMIT_EN_A::DISABLED,
+            true => ADC_DRC_GAIN_MIN_LIMIT_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRC_GAIN_MIN_LIMIT_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRC_GAIN_MIN_LIMIT_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRC_GAIN_MIN_LIMIT_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRC_GAIN_MIN_LIMIT_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drc_gain_min_limit_en` writer - DRC gain min limit enable\n\nWhen this fuction is enabled, it will overwrite the noise detect function."]
@@ -331,13 +331,13 @@ pub type ADC_DRC_GAIN_MIN_LIMIT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRC_GAIN_MIN_LIMIT_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_GAIN_MIN_LIMIT_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_GAIN_MIN_LIMIT_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_GAIN_MIN_LIMIT_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_GAIN_MIN_LIMIT_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drc_gain_max_limit_en` reader - DRC gain max limit enable"]
@@ -346,9 +346,9 @@ pub type ADC_DRC_GAIN_MAX_LIMIT_EN_R = crate::BitReader<ADC_DRC_GAIN_MAX_LIMIT_E
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_GAIN_MAX_LIMIT_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRC_GAIN_MAX_LIMIT_EN_A> for bool {
     #[inline(always)]
@@ -361,19 +361,19 @@ impl ADC_DRC_GAIN_MAX_LIMIT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_GAIN_MAX_LIMIT_EN_A {
         match self.bits {
-            false => ADC_DRC_GAIN_MAX_LIMIT_EN_A::D_ISABLED,
-            true => ADC_DRC_GAIN_MAX_LIMIT_EN_A::E_NABLED,
+            false => ADC_DRC_GAIN_MAX_LIMIT_EN_A::DISABLED,
+            true => ADC_DRC_GAIN_MAX_LIMIT_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRC_GAIN_MAX_LIMIT_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRC_GAIN_MAX_LIMIT_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRC_GAIN_MAX_LIMIT_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRC_GAIN_MAX_LIMIT_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drc_gain_max_limit_en` writer - DRC gain max limit enable"]
@@ -382,13 +382,13 @@ pub type ADC_DRC_GAIN_MAX_LIMIT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRC_GAIN_MAX_LIMIT_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_GAIN_MAX_LIMIT_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_GAIN_MAX_LIMIT_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_GAIN_MAX_LIMIT_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_GAIN_MAX_LIMIT_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drc_delay_buf_en` reader - The delay buffer use or not when the DRC is disabled and the DRC buffer data output completely."]
@@ -453,9 +453,9 @@ pub type ADC_DRC_DELAY_BUF_OUTPUT_STATE_R = crate::BitReader<ADC_DRC_DELAY_BUF_O
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_DELAY_BUF_OUTPUT_STATE_A {
     #[doc = "0: Not completed"]
-    N_OT_COMPLETED = 0,
+    NOT_COMPLETED = 0,
     #[doc = "1: Completed"]
-    C_OMPLETED = 1,
+    COMPLETED = 1,
 }
 impl From<ADC_DRC_DELAY_BUF_OUTPUT_STATE_A> for bool {
     #[inline(always)]
@@ -468,19 +468,19 @@ impl ADC_DRC_DELAY_BUF_OUTPUT_STATE_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_DELAY_BUF_OUTPUT_STATE_A {
         match self.bits {
-            false => ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::N_OT_COMPLETED,
-            true => ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::C_OMPLETED,
+            false => ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::NOT_COMPLETED,
+            true => ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::COMPLETED,
         }
     }
-    #[doc = "Checks if the value of the field is `N_OT_COMPLETED`"]
+    #[doc = "Checks if the value of the field is `NOT_COMPLETED`"]
     #[inline(always)]
-    pub fn is_n_ot_completed(&self) -> bool {
-        *self == ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::N_OT_COMPLETED
+    pub fn is_not_completed(&self) -> bool {
+        *self == ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::NOT_COMPLETED
     }
-    #[doc = "Checks if the value of the field is `C_OMPLETED`"]
+    #[doc = "Checks if the value of the field is `COMPLETED`"]
     #[inline(always)]
-    pub fn is_c_ompleted(&self) -> bool {
-        *self == ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::C_OMPLETED
+    pub fn is_completed(&self) -> bool {
+        *self == ADC_DRC_DELAY_BUF_OUTPUT_STATE_A::COMPLETED
     }
 }
 impl R {

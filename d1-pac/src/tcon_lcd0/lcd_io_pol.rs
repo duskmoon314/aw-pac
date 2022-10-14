@@ -47,9 +47,9 @@ pub type IO_INV_R = crate::BitReader<IO_INV_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_INV_A {
     #[doc = "0: Not invert"]
-    N_OT_INVERT = 0,
+    NOT_INVERT = 0,
     #[doc = "1: Invert"]
-    I_NVERT = 1,
+    INVERT = 1,
 }
 impl From<IO_INV_A> for bool {
     #[inline(always)]
@@ -62,19 +62,19 @@ impl IO_INV_R {
     #[inline(always)]
     pub fn variant(&self) -> IO_INV_A {
         match self.bits {
-            false => IO_INV_A::N_OT_INVERT,
-            true => IO_INV_A::I_NVERT,
+            false => IO_INV_A::NOT_INVERT,
+            true => IO_INV_A::INVERT,
         }
     }
-    #[doc = "Checks if the value of the field is `N_OT_INVERT`"]
+    #[doc = "Checks if the value of the field is `NOT_INVERT`"]
     #[inline(always)]
-    pub fn is_n_ot_invert(&self) -> bool {
-        *self == IO_INV_A::N_OT_INVERT
+    pub fn is_not_invert(&self) -> bool {
+        *self == IO_INV_A::NOT_INVERT
     }
-    #[doc = "Checks if the value of the field is `I_NVERT`"]
+    #[doc = "Checks if the value of the field is `INVERT`"]
     #[inline(always)]
-    pub fn is_i_nvert(&self) -> bool {
-        *self == IO_INV_A::I_NVERT
+    pub fn is_invert(&self) -> bool {
+        *self == IO_INV_A::INVERT
     }
 }
 #[doc = "Field `io_inv[0-3]` writer - Enable invert function of IO\\[i\\]"]
@@ -82,13 +82,13 @@ pub type IO_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_IO_POL_SPEC, 
 impl<'a, const O: u8> IO_INV_W<'a, O> {
     #[doc = "Not invert"]
     #[inline(always)]
-    pub fn n_ot_invert(self) -> &'a mut W {
-        self.variant(IO_INV_A::N_OT_INVERT)
+    pub fn not_invert(self) -> &'a mut W {
+        self.variant(IO_INV_A::NOT_INVERT)
     }
     #[doc = "Invert"]
     #[inline(always)]
-    pub fn i_nvert(self) -> &'a mut W {
-        self.variant(IO_INV_A::I_NVERT)
+    pub fn invert(self) -> &'a mut W {
+        self.variant(IO_INV_A::INVERT)
     }
 }
 #[doc = "Field `dclk_sel` reader - Set the phase offset of clock and data in hv mode."]
@@ -189,7 +189,7 @@ pub type IO_OUTPUT_SEL_R = crate::BitReader<IO_OUTPUT_SEL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_OUTPUT_SEL_A {
     #[doc = "0: Normal output"]
-    N_ORMAL = 0,
+    NORMAL = 0,
     #[doc = "1: Register output"]
     R_EGISTER = 1,
 }
@@ -204,14 +204,14 @@ impl IO_OUTPUT_SEL_R {
     #[inline(always)]
     pub fn variant(&self) -> IO_OUTPUT_SEL_A {
         match self.bits {
-            false => IO_OUTPUT_SEL_A::N_ORMAL,
+            false => IO_OUTPUT_SEL_A::NORMAL,
             true => IO_OUTPUT_SEL_A::R_EGISTER,
         }
     }
-    #[doc = "Checks if the value of the field is `N_ORMAL`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_n_ormal(&self) -> bool {
-        *self == IO_OUTPUT_SEL_A::N_ORMAL
+    pub fn is_normal(&self) -> bool {
+        *self == IO_OUTPUT_SEL_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `R_EGISTER`"]
     #[inline(always)]
@@ -225,8 +225,8 @@ pub type IO_OUTPUT_SEL_W<'a, const O: u8> =
 impl<'a, const O: u8> IO_OUTPUT_SEL_W<'a, O> {
     #[doc = "Normal output"]
     #[inline(always)]
-    pub fn n_ormal(self) -> &'a mut W {
-        self.variant(IO_OUTPUT_SEL_A::N_ORMAL)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(IO_OUTPUT_SEL_A::NORMAL)
     }
     #[doc = "Register output"]
     #[inline(always)]

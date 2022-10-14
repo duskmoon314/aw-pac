@@ -40,9 +40,9 @@ pub type BK_TOP_EN_R = crate::BitReader<BK_TOP_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BK_TOP_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<BK_TOP_EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl BK_TOP_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> BK_TOP_EN_A {
         match self.bits {
-            false => BK_TOP_EN_A::D_ISABLE,
-            true => BK_TOP_EN_A::E_NABLE,
+            false => BK_TOP_EN_A::DISABLE,
+            true => BK_TOP_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BK_TOP_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == BK_TOP_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BK_TOP_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == BK_TOP_EN_A::ENABLE
     }
 }
 #[doc = "Field `bk_top_en` writer - "]
@@ -75,13 +75,13 @@ pub type BK_TOP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_DMA_EN_SP
 impl<'a, const O: u8> BK_TOP_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BK_TOP_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BK_TOP_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BK_TOP_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BK_TOP_EN_A::ENABLE)
     }
 }
 #[doc = "Field `clk_cnt_en` reader - clk count per frame enable"]
@@ -90,9 +90,9 @@ pub type CLK_CNT_EN_R = crate::BitReader<CLK_CNT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLK_CNT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<CLK_CNT_EN_A> for bool {
     #[inline(always)]
@@ -105,19 +105,19 @@ impl CLK_CNT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> CLK_CNT_EN_A {
         match self.bits {
-            false => CLK_CNT_EN_A::D_ISABLE,
-            true => CLK_CNT_EN_A::E_NABLE,
+            false => CLK_CNT_EN_A::DISABLE,
+            true => CLK_CNT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == CLK_CNT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == CLK_CNT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == CLK_CNT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == CLK_CNT_EN_A::ENABLE
     }
 }
 #[doc = "Field `clk_cnt_en` writer - clk count per frame enable"]
@@ -126,13 +126,13 @@ pub type CLK_CNT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> CLK_CNT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(CLK_CNT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CLK_CNT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(CLK_CNT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CLK_CNT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `clk_cnt_spl` reader - Sampling time for clk counter per frame"]
@@ -192,9 +192,9 @@ pub type DMA_EN_R = crate::BitReader<DMA_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<DMA_EN_A> for bool {
     #[inline(always)]
@@ -207,19 +207,19 @@ impl DMA_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> DMA_EN_A {
         match self.bits {
-            false => DMA_EN_A::D_ISABLE,
-            true => DMA_EN_A::E_NABLE,
+            false => DMA_EN_A::DISABLE,
+            true => DMA_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == DMA_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == DMA_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == DMA_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == DMA_EN_A::ENABLE
     }
 }
 #[doc = "Field `dma_en` writer - When BK_TOP_EN is enabled, setting 1 to this bit indicates the module works in DMA mode."]
@@ -227,13 +227,13 @@ pub type DMA_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC,
 impl<'a, const O: u8> DMA_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(DMA_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(DMA_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(DMA_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DMA_EN_A::ENABLE)
     }
 }
 #[doc = "Field `frame_cnt_en` reader - When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add."]
@@ -242,9 +242,9 @@ pub type FRAME_CNT_EN_R = crate::BitReader<FRAME_CNT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FRAME_CNT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<FRAME_CNT_EN_A> for bool {
     #[inline(always)]
@@ -257,19 +257,19 @@ impl FRAME_CNT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> FRAME_CNT_EN_A {
         match self.bits {
-            false => FRAME_CNT_EN_A::D_ISABLE,
-            true => FRAME_CNT_EN_A::E_NABLE,
+            false => FRAME_CNT_EN_A::DISABLE,
+            true => FRAME_CNT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == FRAME_CNT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == FRAME_CNT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == FRAME_CNT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == FRAME_CNT_EN_A::ENABLE
     }
 }
 #[doc = "Field `frame_cnt_en` writer - When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add."]
@@ -278,13 +278,13 @@ pub type FRAME_CNT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> FRAME_CNT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(FRAME_CNT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(FRAME_CNT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(FRAME_CNT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(FRAME_CNT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `vi_to_cnt_en` reader - Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input."]
@@ -293,9 +293,9 @@ pub type VI_TO_CNT_EN_R = crate::BitReader<VI_TO_CNT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VI_TO_CNT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<VI_TO_CNT_EN_A> for bool {
     #[inline(always)]
@@ -308,19 +308,19 @@ impl VI_TO_CNT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> VI_TO_CNT_EN_A {
         match self.bits {
-            false => VI_TO_CNT_EN_A::D_ISABLE,
-            true => VI_TO_CNT_EN_A::E_NABLE,
+            false => VI_TO_CNT_EN_A::DISABLE,
+            true => VI_TO_CNT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == VI_TO_CNT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == VI_TO_CNT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == VI_TO_CNT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == VI_TO_CNT_EN_A::ENABLE
     }
 }
 #[doc = "Field `vi_to_cnt_en` writer - Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input."]
@@ -329,13 +329,13 @@ pub type VI_TO_CNT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> VI_TO_CNT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(VI_TO_CNT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(VI_TO_CNT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(VI_TO_CNT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(VI_TO_CNT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `buf_addr_mode` reader - "]

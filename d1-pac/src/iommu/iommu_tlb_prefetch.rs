@@ -40,9 +40,9 @@ pub type MI_TLB_PF_R = crate::BitReader<MI_TLB_PF_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MI_TLB_PF_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<MI_TLB_PF_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl MI_TLB_PF_R {
     #[inline(always)]
     pub fn variant(&self) -> MI_TLB_PF_A {
         match self.bits {
-            false => MI_TLB_PF_A::D_ISABLE,
-            true => MI_TLB_PF_A::E_NABLE,
+            false => MI_TLB_PF_A::DISABLE,
+            true => MI_TLB_PF_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == MI_TLB_PF_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == MI_TLB_PF_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == MI_TLB_PF_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == MI_TLB_PF_A::ENABLE
     }
 }
 #[doc = "Field `mi_tlb_pf[0-6]` writer - Micro TLB6 prefetch enable"]
@@ -76,13 +76,13 @@ pub type MI_TLB_PF_W<'a, const O: u8> =
 impl<'a, const O: u8> MI_TLB_PF_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(MI_TLB_PF_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(MI_TLB_PF_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(MI_TLB_PF_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MI_TLB_PF_A::ENABLE)
     }
 }
 #[doc = "Field `pf_vl_pt_to_mt` reader - Prefetch Value Pagetable to Macro TLB\n\nIf the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB."]
@@ -91,9 +91,9 @@ pub type PF_VL_PT_TO_MT_R = crate::BitReader<PF_VL_PT_TO_MT_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PF_VL_PT_TO_MT_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable If the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB."]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<PF_VL_PT_TO_MT_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl PF_VL_PT_TO_MT_R {
     #[inline(always)]
     pub fn variant(&self) -> PF_VL_PT_TO_MT_A {
         match self.bits {
-            false => PF_VL_PT_TO_MT_A::D_ISABLE,
-            true => PF_VL_PT_TO_MT_A::E_NABLE,
+            false => PF_VL_PT_TO_MT_A::DISABLE,
+            true => PF_VL_PT_TO_MT_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == PF_VL_PT_TO_MT_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == PF_VL_PT_TO_MT_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == PF_VL_PT_TO_MT_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == PF_VL_PT_TO_MT_A::ENABLE
     }
 }
 #[doc = "Field `pf_vl_pt_to_mt` writer - Prefetch Value Pagetable to Macro TLB\n\nIf the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB."]
@@ -127,13 +127,13 @@ pub type PF_VL_PT_TO_MT_W<'a, const O: u8> =
 impl<'a, const O: u8> PF_VL_PT_TO_MT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(PF_VL_PT_TO_MT_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PF_VL_PT_TO_MT_A::DISABLE)
     }
     #[doc = "Enable If the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB."]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(PF_VL_PT_TO_MT_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PF_VL_PT_TO_MT_A::ENABLE)
     }
 }
 #[doc = "Field `pf_vl_pt_to_pc` reader - Prefetch Value Pagetable to PTW Cache\n\nIf the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache."]
@@ -142,9 +142,9 @@ pub type PF_VL_PT_TO_PC_R = crate::BitReader<PF_VL_PT_TO_PC_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PF_VL_PT_TO_PC_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable If the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache."]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<PF_VL_PT_TO_PC_A> for bool {
     #[inline(always)]
@@ -157,19 +157,19 @@ impl PF_VL_PT_TO_PC_R {
     #[inline(always)]
     pub fn variant(&self) -> PF_VL_PT_TO_PC_A {
         match self.bits {
-            false => PF_VL_PT_TO_PC_A::D_ISABLE,
-            true => PF_VL_PT_TO_PC_A::E_NABLE,
+            false => PF_VL_PT_TO_PC_A::DISABLE,
+            true => PF_VL_PT_TO_PC_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == PF_VL_PT_TO_PC_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == PF_VL_PT_TO_PC_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == PF_VL_PT_TO_PC_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == PF_VL_PT_TO_PC_A::ENABLE
     }
 }
 #[doc = "Field `pf_vl_pt_to_pc` writer - Prefetch Value Pagetable to PTW Cache\n\nIf the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache."]
@@ -178,13 +178,13 @@ pub type PF_VL_PT_TO_PC_W<'a, const O: u8> =
 impl<'a, const O: u8> PF_VL_PT_TO_PC_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(PF_VL_PT_TO_PC_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PF_VL_PT_TO_PC_A::DISABLE)
     }
     #[doc = "Enable If the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache."]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(PF_VL_PT_TO_PC_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PF_VL_PT_TO_PC_A::ENABLE)
     }
 }
 impl R {

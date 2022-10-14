@@ -42,9 +42,9 @@ Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can cl
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MI_TLB_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
-    N_O_CLEAR_OR_COMPLETED = 0,
+    NO_CLEAR_OR_COMPLETED = 0,
     #[doc = "1: Enable clear operation"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<MI_TLB_FS_A> for bool {
     #[inline(always)]
@@ -57,19 +57,19 @@ impl MI_TLB_FS_R {
     #[inline(always)]
     pub fn variant(&self) -> MI_TLB_FS_A {
         match self.bits {
-            false => MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED,
-            true => MI_TLB_FS_A::E_NABLE,
+            false => MI_TLB_FS_A::NO_CLEAR_OR_COMPLETED,
+            true => MI_TLB_FS_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_CLEAR_OR_COMPLETED`"]
+    #[doc = "Checks if the value of the field is `NO_CLEAR_OR_COMPLETED`"]
     #[inline(always)]
-    pub fn is_n_o_clear_or_completed(&self) -> bool {
-        *self == MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED
+    pub fn is_no_clear_or_completed(&self) -> bool {
+        *self == MI_TLB_FS_A::NO_CLEAR_OR_COMPLETED
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == MI_TLB_FS_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == MI_TLB_FS_A::ENABLE
     }
 }
 #[doc = "Field `mi_tlb_fs[0-6]` writer - Micro TLB\\[i\\]
@@ -79,13 +79,13 @@ pub type MI_TLB_FS_W<'a, const O: u8> =
 impl<'a, const O: u8> MI_TLB_FS_W<'a, O> {
     #[doc = "No clear operation or clear operation is completed"]
     #[inline(always)]
-    pub fn n_o_clear_or_completed(self) -> &'a mut W {
-        self.variant(MI_TLB_FS_A::N_O_CLEAR_OR_COMPLETED)
+    pub fn no_clear_or_completed(self) -> &'a mut W {
+        self.variant(MI_TLB_FS_A::NO_CLEAR_OR_COMPLETED)
     }
     #[doc = "Enable clear operation"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(MI_TLB_FS_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MI_TLB_FS_A::ENABLE)
     }
 }
 #[doc = "Field `ma_tlb_fs` reader - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
@@ -94,9 +94,9 @@ pub type MA_TLB_FS_R = crate::BitReader<MA_TLB_FS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MA_TLB_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
-    N_O_CLEAR_OR_COMPLETED = 0,
+    NO_CLEAR_OR_COMPLETED = 0,
     #[doc = "1: Enable clear operation"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<MA_TLB_FS_A> for bool {
     #[inline(always)]
@@ -109,19 +109,19 @@ impl MA_TLB_FS_R {
     #[inline(always)]
     pub fn variant(&self) -> MA_TLB_FS_A {
         match self.bits {
-            false => MA_TLB_FS_A::N_O_CLEAR_OR_COMPLETED,
-            true => MA_TLB_FS_A::E_NABLE,
+            false => MA_TLB_FS_A::NO_CLEAR_OR_COMPLETED,
+            true => MA_TLB_FS_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_CLEAR_OR_COMPLETED`"]
+    #[doc = "Checks if the value of the field is `NO_CLEAR_OR_COMPLETED`"]
     #[inline(always)]
-    pub fn is_n_o_clear_or_completed(&self) -> bool {
-        *self == MA_TLB_FS_A::N_O_CLEAR_OR_COMPLETED
+    pub fn is_no_clear_or_completed(&self) -> bool {
+        *self == MA_TLB_FS_A::NO_CLEAR_OR_COMPLETED
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == MA_TLB_FS_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == MA_TLB_FS_A::ENABLE
     }
 }
 #[doc = "Field `ma_tlb_fs` writer - Macro TLB Flush\n\nClear Macro TLB\n\nAfter the Flush operation is completed, the bit can clear automatically."]
@@ -130,13 +130,13 @@ pub type MA_TLB_FS_W<'a, const O: u8> =
 impl<'a, const O: u8> MA_TLB_FS_W<'a, O> {
     #[doc = "No clear operation or clear operation is completed"]
     #[inline(always)]
-    pub fn n_o_clear_or_completed(self) -> &'a mut W {
-        self.variant(MA_TLB_FS_A::N_O_CLEAR_OR_COMPLETED)
+    pub fn no_clear_or_completed(self) -> &'a mut W {
+        self.variant(MA_TLB_FS_A::NO_CLEAR_OR_COMPLETED)
     }
     #[doc = "Enable clear operation"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(MA_TLB_FS_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MA_TLB_FS_A::ENABLE)
     }
 }
 #[doc = "Field `pc_fs` reader - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
@@ -145,9 +145,9 @@ pub type PC_FS_R = crate::BitReader<PC_FS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PC_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
-    N_O_CLEAR_OR_COMPLETED = 0,
+    NO_CLEAR_OR_COMPLETED = 0,
     #[doc = "1: Enable clear operation"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<PC_FS_A> for bool {
     #[inline(always)]
@@ -160,19 +160,19 @@ impl PC_FS_R {
     #[inline(always)]
     pub fn variant(&self) -> PC_FS_A {
         match self.bits {
-            false => PC_FS_A::N_O_CLEAR_OR_COMPLETED,
-            true => PC_FS_A::E_NABLE,
+            false => PC_FS_A::NO_CLEAR_OR_COMPLETED,
+            true => PC_FS_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_CLEAR_OR_COMPLETED`"]
+    #[doc = "Checks if the value of the field is `NO_CLEAR_OR_COMPLETED`"]
     #[inline(always)]
-    pub fn is_n_o_clear_or_completed(&self) -> bool {
-        *self == PC_FS_A::N_O_CLEAR_OR_COMPLETED
+    pub fn is_no_clear_or_completed(&self) -> bool {
+        *self == PC_FS_A::NO_CLEAR_OR_COMPLETED
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == PC_FS_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == PC_FS_A::ENABLE
     }
 }
 #[doc = "Field `pc_fs` writer - PTW Cache Flush Clear PTW Cache\n\nAfter the Flush operation is completed, the bit can clear automatically."]
@@ -181,13 +181,13 @@ pub type PC_FS_W<'a, const O: u8> =
 impl<'a, const O: u8> PC_FS_W<'a, O> {
     #[doc = "No clear operation or clear operation is completed"]
     #[inline(always)]
-    pub fn n_o_clear_or_completed(self) -> &'a mut W {
-        self.variant(PC_FS_A::N_O_CLEAR_OR_COMPLETED)
+    pub fn no_clear_or_completed(self) -> &'a mut W {
+        self.variant(PC_FS_A::NO_CLEAR_OR_COMPLETED)
     }
     #[doc = "Enable clear operation"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(PC_FS_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PC_FS_A::ENABLE)
     }
 }
 impl R {

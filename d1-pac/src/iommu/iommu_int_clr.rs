@@ -39,9 +39,9 @@ permission invalid interrupt clear bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_INVALID_CLR_AW {
     #[doc = "0: Invalid operation"]
-    I_NVALID = 0,
+    INVALID = 0,
     #[doc = "1: Clear interrupt Note: The bit is not used."]
-    C_LEAR = 1,
+    CLEAR = 1,
 }
 impl From<MICRO_TLB_INVALID_CLR_AW> for bool {
     #[inline(always)]
@@ -56,13 +56,13 @@ pub type MICRO_TLB_INVALID_CLR_W<'a, const O: u8> =
 impl<'a, const O: u8> MICRO_TLB_INVALID_CLR_W<'a, O> {
     #[doc = "Invalid operation"]
     #[inline(always)]
-    pub fn i_nvalid(self) -> &'a mut W {
-        self.variant(MICRO_TLB_INVALID_CLR_AW::I_NVALID)
+    pub fn invalid(self) -> &'a mut W {
+        self.variant(MICRO_TLB_INVALID_CLR_AW::INVALID)
     }
     #[doc = "Clear interrupt Note: The bit is not used."]
     #[inline(always)]
-    pub fn c_lear(self) -> &'a mut W {
-        self.variant(MICRO_TLB_INVALID_CLR_AW::C_LEAR)
+    pub fn clear(self) -> &'a mut W {
+        self.variant(MICRO_TLB_INVALID_CLR_AW::CLEAR)
     }
 }
 #[doc = "Level\\[i\\]
@@ -70,9 +70,9 @@ page table invalid interrupt clear bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L_PAGE_TABLE_INVALID_CLR_AW {
     #[doc = "0: Invalid operation"]
-    I_NVALID = 0,
+    INVALID = 0,
     #[doc = "1: Clear interrupt"]
-    C_LEAR = 1,
+    CLEAR = 1,
 }
 impl From<L_PAGE_TABLE_INVALID_CLR_AW> for bool {
     #[inline(always)]
@@ -87,13 +87,13 @@ pub type L_PAGE_TABLE_INVALID_CLR_W<'a, const O: u8> =
 impl<'a, const O: u8> L_PAGE_TABLE_INVALID_CLR_W<'a, O> {
     #[doc = "Invalid operation"]
     #[inline(always)]
-    pub fn i_nvalid(self) -> &'a mut W {
-        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::I_NVALID)
+    pub fn invalid(self) -> &'a mut W {
+        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::INVALID)
     }
     #[doc = "Clear interrupt"]
     #[inline(always)]
-    pub fn c_lear(self) -> &'a mut W {
-        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::C_LEAR)
+    pub fn clear(self) -> &'a mut W {
+        self.variant(L_PAGE_TABLE_INVALID_CLR_AW::CLEAR)
     }
 }
 impl W {

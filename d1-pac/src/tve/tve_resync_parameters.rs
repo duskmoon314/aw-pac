@@ -50,9 +50,9 @@ pub type RE_SYNC_DIS_R = crate::BitReader<RE_SYNC_DIS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RE_SYNC_DIS_A {
     #[doc = "0: Re-Sync Enable"]
-    E_NABLE = 0,
+    ENABLE = 0,
     #[doc = "1: Re-Sync Disable"]
-    D_ISABLE = 1,
+    DISABLE = 1,
 }
 impl From<RE_SYNC_DIS_A> for bool {
     #[inline(always)]
@@ -65,19 +65,19 @@ impl RE_SYNC_DIS_R {
     #[inline(always)]
     pub fn variant(&self) -> RE_SYNC_DIS_A {
         match self.bits {
-            false => RE_SYNC_DIS_A::E_NABLE,
-            true => RE_SYNC_DIS_A::D_ISABLE,
+            false => RE_SYNC_DIS_A::ENABLE,
+            true => RE_SYNC_DIS_A::DISABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == RE_SYNC_DIS_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == RE_SYNC_DIS_A::ENABLE
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == RE_SYNC_DIS_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == RE_SYNC_DIS_A::DISABLE
     }
 }
 #[doc = "Field `re_sync_dis` writer - "]
@@ -86,13 +86,13 @@ pub type RE_SYNC_DIS_W<'a, const O: u8> =
 impl<'a, const O: u8> RE_SYNC_DIS_W<'a, O> {
     #[doc = "Re-Sync Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(RE_SYNC_DIS_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(RE_SYNC_DIS_A::ENABLE)
     }
     #[doc = "Re-Sync Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(RE_SYNC_DIS_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(RE_SYNC_DIS_A::DISABLE)
     }
 }
 #[doc = "Field `re_sync_field` reader - Re-sync field"]

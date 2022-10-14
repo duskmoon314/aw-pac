@@ -697,7 +697,7 @@ pub enum SOURCE_TYPE_A {
     #[doc = "0: `0`"]
     P_ROGRESSED = 0,
     #[doc = "1: `1`"]
-    I_NTERLACED = 1,
+    INTERLACED = 1,
 }
 impl From<SOURCE_TYPE_A> for u8 {
     #[inline(always)]
@@ -711,7 +711,7 @@ impl SOURCE_TYPE_R {
     pub fn variant(&self) -> Option<SOURCE_TYPE_A> {
         match self.bits {
             0 => Some(SOURCE_TYPE_A::P_ROGRESSED),
-            1 => Some(SOURCE_TYPE_A::I_NTERLACED),
+            1 => Some(SOURCE_TYPE_A::INTERLACED),
             _ => None,
         }
     }
@@ -720,10 +720,10 @@ impl SOURCE_TYPE_R {
     pub fn is_p_rogressed(&self) -> bool {
         *self == SOURCE_TYPE_A::P_ROGRESSED
     }
-    #[doc = "Checks if the value of the field is `I_NTERLACED`"]
+    #[doc = "Checks if the value of the field is `INTERLACED`"]
     #[inline(always)]
-    pub fn is_i_nterlaced(&self) -> bool {
-        *self == SOURCE_TYPE_A::I_NTERLACED
+    pub fn is_interlaced(&self) -> bool {
+        *self == SOURCE_TYPE_A::INTERLACED
     }
 }
 #[doc = "Field `source_type` writer - Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3"]
@@ -737,8 +737,8 @@ impl<'a, const O: u8> SOURCE_TYPE_W<'a, O> {
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn i_nterlaced(self) -> &'a mut W {
-        self.variant(SOURCE_TYPE_A::I_NTERLACED)
+    pub fn interlaced(self) -> &'a mut W {
+        self.variant(SOURCE_TYPE_A::INTERLACED)
     }
 }
 #[doc = "Field `field_dt_pclk_shift` reader - Only for vsync detected field mode, the odd field permitted pclk\n\nshift = 4 * FIELD_DT_PCLK_SHIFT"]

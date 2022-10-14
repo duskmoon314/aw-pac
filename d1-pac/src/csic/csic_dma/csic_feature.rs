@@ -40,7 +40,7 @@ pub type DMA0_EMBEDDED_FBC_R = crate::BitReader<DMA0_EMBEDDED_FBC_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA0_EMBEDDED_FBC_A {
     #[doc = "0: No Embedded DMA"]
-    N_O_E_MBEDDED = 0,
+    NO_E_MBEDDED = 0,
     #[doc = "1: Embedded FBC"]
     E_MBEDDED = 1,
 }
@@ -55,14 +55,14 @@ impl DMA0_EMBEDDED_FBC_R {
     #[inline(always)]
     pub fn variant(&self) -> DMA0_EMBEDDED_FBC_A {
         match self.bits {
-            false => DMA0_EMBEDDED_FBC_A::N_O_E_MBEDDED,
+            false => DMA0_EMBEDDED_FBC_A::NO_E_MBEDDED,
             true => DMA0_EMBEDDED_FBC_A::E_MBEDDED,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_E_MBEDDED`"]
+    #[doc = "Checks if the value of the field is `NO_E_MBEDDED`"]
     #[inline(always)]
-    pub fn is_n_o_e_mbedded(&self) -> bool {
-        *self == DMA0_EMBEDDED_FBC_A::N_O_E_MBEDDED
+    pub fn is_no_e_mbedded(&self) -> bool {
+        *self == DMA0_EMBEDDED_FBC_A::NO_E_MBEDDED
     }
     #[doc = "Checks if the value of the field is `E_MBEDDED`"]
     #[inline(always)]
@@ -76,7 +76,7 @@ pub type DMA0_EMBEDDED_LBC_R = crate::BitReader<DMA0_EMBEDDED_LBC_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA0_EMBEDDED_LBC_A {
     #[doc = "0: No Embedded LBC"]
-    N_O_E_MBEDDED = 0,
+    NO_E_MBEDDED = 0,
     #[doc = "1: Embedded LBC"]
     E_MBEDDED = 1,
 }
@@ -91,14 +91,14 @@ impl DMA0_EMBEDDED_LBC_R {
     #[inline(always)]
     pub fn variant(&self) -> DMA0_EMBEDDED_LBC_A {
         match self.bits {
-            false => DMA0_EMBEDDED_LBC_A::N_O_E_MBEDDED,
+            false => DMA0_EMBEDDED_LBC_A::NO_E_MBEDDED,
             true => DMA0_EMBEDDED_LBC_A::E_MBEDDED,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_E_MBEDDED`"]
+    #[doc = "Checks if the value of the field is `NO_E_MBEDDED`"]
     #[inline(always)]
-    pub fn is_n_o_e_mbedded(&self) -> bool {
-        *self == DMA0_EMBEDDED_LBC_A::N_O_E_MBEDDED
+    pub fn is_no_e_mbedded(&self) -> bool {
+        *self == DMA0_EMBEDDED_LBC_A::NO_E_MBEDDED
     }
     #[doc = "Checks if the value of the field is `E_MBEDDED`"]
     #[inline(always)]

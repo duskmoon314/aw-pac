@@ -40,9 +40,9 @@ pub type DDAP_HPF_EN_R = crate::BitReader<DDAP_HPF_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DDAP_HPF_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<DDAP_HPF_EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl DDAP_HPF_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> DDAP_HPF_EN_A {
         match self.bits {
-            false => DDAP_HPF_EN_A::D_ISABLED,
-            true => DDAP_HPF_EN_A::E_NABLED,
+            false => DDAP_HPF_EN_A::DISABLED,
+            true => DDAP_HPF_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == DDAP_HPF_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == DDAP_HPF_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == DDAP_HPF_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == DDAP_HPF_EN_A::ENABLED
     }
 }
 #[doc = "Field `ddap_hpf_en` writer - HPF enable control"]
@@ -76,13 +76,13 @@ pub type DDAP_HPF_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> DDAP_HPF_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(DDAP_HPF_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(DDAP_HPF_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(DDAP_HPF_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DDAP_HPF_EN_A::ENABLED)
     }
 }
 #[doc = "Field `ddap_drc_en` reader - DRC enable control"]
@@ -91,9 +91,9 @@ pub type DDAP_DRC_EN_R = crate::BitReader<DDAP_DRC_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DDAP_DRC_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<DDAP_DRC_EN_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl DDAP_DRC_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> DDAP_DRC_EN_A {
         match self.bits {
-            false => DDAP_DRC_EN_A::D_ISABLED,
-            true => DDAP_DRC_EN_A::E_NABLED,
+            false => DDAP_DRC_EN_A::DISABLED,
+            true => DDAP_DRC_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == DDAP_DRC_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == DDAP_DRC_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == DDAP_DRC_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == DDAP_DRC_EN_A::ENABLED
     }
 }
 #[doc = "Field `ddap_drc_en` writer - DRC enable control"]
@@ -127,13 +127,13 @@ pub type DDAP_DRC_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> DDAP_DRC_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(DDAP_DRC_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(DDAP_DRC_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(DDAP_DRC_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DDAP_DRC_EN_A::ENABLED)
     }
 }
 #[doc = "Field `ddap_en` reader - DAP for DRC enable"]
@@ -142,9 +142,9 @@ pub type DDAP_EN_R = crate::BitReader<DDAP_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DDAP_EN_A {
     #[doc = "0: Bypassed"]
-    B_YPASSED = 0,
+    BYPASSED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<DDAP_EN_A> for bool {
     #[inline(always)]
@@ -157,19 +157,19 @@ impl DDAP_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> DDAP_EN_A {
         match self.bits {
-            false => DDAP_EN_A::B_YPASSED,
-            true => DDAP_EN_A::E_NABLED,
+            false => DDAP_EN_A::BYPASSED,
+            true => DDAP_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `B_YPASSED`"]
+    #[doc = "Checks if the value of the field is `BYPASSED`"]
     #[inline(always)]
-    pub fn is_b_ypassed(&self) -> bool {
-        *self == DDAP_EN_A::B_YPASSED
+    pub fn is_bypassed(&self) -> bool {
+        *self == DDAP_EN_A::BYPASSED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == DDAP_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == DDAP_EN_A::ENABLED
     }
 }
 #[doc = "Field `ddap_en` writer - DAP for DRC enable"]
@@ -177,13 +177,13 @@ pub type DDAP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_DAC_DAP_CTR_S
 impl<'a, const O: u8> DDAP_EN_W<'a, O> {
     #[doc = "Bypassed"]
     #[inline(always)]
-    pub fn b_ypassed(self) -> &'a mut W {
-        self.variant(DDAP_EN_A::B_YPASSED)
+    pub fn bypassed(self) -> &'a mut W {
+        self.variant(DDAP_EN_A::BYPASSED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(DDAP_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(DDAP_EN_A::ENABLED)
     }
 }
 impl R {

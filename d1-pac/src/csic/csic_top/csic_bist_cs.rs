@@ -41,9 +41,9 @@ pub type BIST_CS_R = crate::FieldReader<u8, BIST_CS_A>;
 #[repr(u8)]
 pub enum BIST_CS_A {
     #[doc = "0: Set when BK0 memory bist"]
-    S_ET_BK0 = 0,
+    SET_BK0 = 0,
     #[doc = "1: Set when BK1 memory bist"]
-    S_ET_BK1 = 1,
+    SET_BK1 = 1,
 }
 impl From<BIST_CS_A> for u8 {
     #[inline(always)]
@@ -56,20 +56,20 @@ impl BIST_CS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<BIST_CS_A> {
         match self.bits {
-            0 => Some(BIST_CS_A::S_ET_BK0),
-            1 => Some(BIST_CS_A::S_ET_BK1),
+            0 => Some(BIST_CS_A::SET_BK0),
+            1 => Some(BIST_CS_A::SET_BK1),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `S_ET_BK0`"]
+    #[doc = "Checks if the value of the field is `SET_BK0`"]
     #[inline(always)]
-    pub fn is_s_et_bk0(&self) -> bool {
-        *self == BIST_CS_A::S_ET_BK0
+    pub fn is_set_bk0(&self) -> bool {
+        *self == BIST_CS_A::SET_BK0
     }
-    #[doc = "Checks if the value of the field is `S_ET_BK1`"]
+    #[doc = "Checks if the value of the field is `SET_BK1`"]
     #[inline(always)]
-    pub fn is_s_et_bk1(&self) -> bool {
-        *self == BIST_CS_A::S_ET_BK1
+    pub fn is_set_bk1(&self) -> bool {
+        *self == BIST_CS_A::SET_BK1
     }
 }
 #[doc = "Field `bist_cs` writer - "]
@@ -78,13 +78,13 @@ pub type BIST_CS_W<'a, const O: u8> =
 impl<'a, const O: u8> BIST_CS_W<'a, O> {
     #[doc = "Set when BK0 memory bist"]
     #[inline(always)]
-    pub fn s_et_bk0(self) -> &'a mut W {
-        self.variant(BIST_CS_A::S_ET_BK0)
+    pub fn set_bk0(self) -> &'a mut W {
+        self.variant(BIST_CS_A::SET_BK0)
     }
     #[doc = "Set when BK1 memory bist"]
     #[inline(always)]
-    pub fn s_et_bk1(self) -> &'a mut W {
-        self.variant(BIST_CS_A::S_ET_BK1)
+    pub fn set_bk1(self) -> &'a mut W {
+        self.variant(BIST_CS_A::SET_BK1)
     }
 }
 impl R {

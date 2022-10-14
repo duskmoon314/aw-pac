@@ -41,11 +41,11 @@ pub type SETTING_R = crate::FieldReader<u8, SETTING_A>;
 #[repr(u8)]
 pub enum SETTING_A {
     #[doc = "0: Bypass"]
-    B_YPASS = 0,
+    BYPASS = 0,
     #[doc = "1: Used as normal FIFO"]
-    N_ORMAL = 1,
+    NORMAL = 1,
     #[doc = "2: Used as 3D interlace FIFO"]
-    I_NTERLACE_3D = 2,
+    INTERLACE_3D = 2,
 }
 impl From<SETTING_A> for u8 {
     #[inline(always)]
@@ -58,26 +58,26 @@ impl SETTING_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<SETTING_A> {
         match self.bits {
-            0 => Some(SETTING_A::B_YPASS),
-            1 => Some(SETTING_A::N_ORMAL),
-            2 => Some(SETTING_A::I_NTERLACE_3D),
+            0 => Some(SETTING_A::BYPASS),
+            1 => Some(SETTING_A::NORMAL),
+            2 => Some(SETTING_A::INTERLACE_3D),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
-    pub fn is_b_ypass(&self) -> bool {
-        *self == SETTING_A::B_YPASS
+    pub fn is_bypass(&self) -> bool {
+        *self == SETTING_A::BYPASS
     }
-    #[doc = "Checks if the value of the field is `N_ORMAL`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_n_ormal(&self) -> bool {
-        *self == SETTING_A::N_ORMAL
+    pub fn is_normal(&self) -> bool {
+        *self == SETTING_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `I_NTERLACE_3D`"]
+    #[doc = "Checks if the value of the field is `INTERLACE_3D`"]
     #[inline(always)]
-    pub fn is_i_nterlace_3d(&self) -> bool {
-        *self == SETTING_A::I_NTERLACE_3D
+    pub fn is_interlace_3d(&self) -> bool {
+        *self == SETTING_A::INTERLACE_3D
     }
 }
 #[doc = "Field `setting` writer - Set the work mode of 3D FIFO"]
@@ -86,18 +86,18 @@ pub type SETTING_W<'a, const O: u8> =
 impl<'a, const O: u8> SETTING_W<'a, O> {
     #[doc = "Bypass"]
     #[inline(always)]
-    pub fn b_ypass(self) -> &'a mut W {
-        self.variant(SETTING_A::B_YPASS)
+    pub fn bypass(self) -> &'a mut W {
+        self.variant(SETTING_A::BYPASS)
     }
     #[doc = "Used as normal FIFO"]
     #[inline(always)]
-    pub fn n_ormal(self) -> &'a mut W {
-        self.variant(SETTING_A::N_ORMAL)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(SETTING_A::NORMAL)
     }
     #[doc = "Used as 3D interlace FIFO"]
     #[inline(always)]
-    pub fn i_nterlace_3d(self) -> &'a mut W {
-        self.variant(SETTING_A::I_NTERLACE_3D)
+    pub fn interlace_3d(self) -> &'a mut W {
+        self.variant(SETTING_A::INTERLACE_3D)
     }
 }
 #[doc = "Field `half_line_size` reader - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
@@ -111,9 +111,9 @@ pub type BIST_EN_R = crate::BitReader<BIST_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<BIST_EN_A> for bool {
     #[inline(always)]
@@ -126,19 +126,19 @@ impl BIST_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> BIST_EN_A {
         match self.bits {
-            false => BIST_EN_A::D_ISABLE,
-            true => BIST_EN_A::E_NABLE,
+            false => BIST_EN_A::DISABLE,
+            true => BIST_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BIST_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == BIST_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BIST_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == BIST_EN_A::ENABLE
     }
 }
 #[doc = "Field `bist_en` writer - Enable the 3D fifo bist test function"]
@@ -146,13 +146,13 @@ pub type BIST_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_3D_FIFO_SPEC
 impl<'a, const O: u8> BIST_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BIST_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BIST_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BIST_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BIST_EN_A::ENABLE)
     }
 }
 impl R {

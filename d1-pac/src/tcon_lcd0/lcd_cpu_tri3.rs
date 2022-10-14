@@ -51,7 +51,7 @@ pub type TRI_INT_MODE_R = crate::FieldReader<u8, TRI_INT_MODE_A>;
 #[repr(u8)]
 pub enum TRI_INT_MODE_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Counter mode"]
     C_OUNTER = 1,
     #[doc = "2: TE rising mode"]
@@ -70,17 +70,17 @@ impl TRI_INT_MODE_R {
     #[inline(always)]
     pub fn variant(&self) -> TRI_INT_MODE_A {
         match self.bits {
-            0 => TRI_INT_MODE_A::D_ISABLE,
+            0 => TRI_INT_MODE_A::DISABLE,
             1 => TRI_INT_MODE_A::C_OUNTER,
             2 => TRI_INT_MODE_A::TE_RISING,
             3 => TRI_INT_MODE_A::TE_FALLING,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == TRI_INT_MODE_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == TRI_INT_MODE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `C_OUNTER`"]
     #[inline(always)]
@@ -104,8 +104,8 @@ pub type TRI_INT_MODE_W<'a, const O: u8> =
 impl<'a, const O: u8> TRI_INT_MODE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(TRI_INT_MODE_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TRI_INT_MODE_A::DISABLE)
     }
     #[doc = "Counter mode"]
     #[inline(always)]

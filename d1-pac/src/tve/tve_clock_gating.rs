@@ -40,9 +40,9 @@ pub type TVE_EN_R = crate::BitReader<TVE_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TVE_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<TVE_EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl TVE_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> TVE_EN_A {
         match self.bits {
-            false => TVE_EN_A::D_ISABLE,
-            true => TVE_EN_A::E_NABLE,
+            false => TVE_EN_A::DISABLE,
+            true => TVE_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == TVE_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == TVE_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == TVE_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == TVE_EN_A::ENABLE
     }
 }
 #[doc = "Field `tve_en` writer - Video Encoder enable, default disable, write 1 to take it out of the reset state"]
@@ -75,13 +75,13 @@ pub type TVE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVE_CLOCK_GATING_
 impl<'a, const O: u8> TVE_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(TVE_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TVE_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(TVE_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TVE_EN_A::ENABLE)
     }
 }
 #[doc = "Field `upsample_for_cvbs` reader - "]
@@ -220,7 +220,7 @@ pub type BIST_EN_R = crate::BitReader<BIST_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIST_EN_A {
     #[doc = "0: Normal mode"]
-    N_ORMAL = 0,
+    NORMAL = 0,
     #[doc = "1: Bist mode"]
     B_IST = 1,
 }
@@ -235,14 +235,14 @@ impl BIST_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> BIST_EN_A {
         match self.bits {
-            false => BIST_EN_A::N_ORMAL,
+            false => BIST_EN_A::NORMAL,
             true => BIST_EN_A::B_IST,
         }
     }
-    #[doc = "Checks if the value of the field is `N_ORMAL`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_n_ormal(&self) -> bool {
-        *self == BIST_EN_A::N_ORMAL
+    pub fn is_normal(&self) -> bool {
+        *self == BIST_EN_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `B_IST`"]
     #[inline(always)]
@@ -256,8 +256,8 @@ pub type BIST_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> BIST_EN_W<'a, O> {
     #[doc = "Normal mode"]
     #[inline(always)]
-    pub fn n_ormal(self) -> &'a mut W {
-        self.variant(BIST_EN_A::N_ORMAL)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(BIST_EN_A::NORMAL)
     }
     #[doc = "Bist mode"]
     #[inline(always)]
@@ -271,9 +271,9 @@ pub type CLOCK_GATE_DIS_R = crate::BitReader<CLOCK_GATE_DIS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CLOCK_GATE_DIS_A {
     #[doc = "0: Enable"]
-    E_NABLE = 0,
+    ENABLE = 0,
     #[doc = "1: Disable"]
-    D_ISABLE = 1,
+    DISABLE = 1,
 }
 impl From<CLOCK_GATE_DIS_A> for bool {
     #[inline(always)]
@@ -286,19 +286,19 @@ impl CLOCK_GATE_DIS_R {
     #[inline(always)]
     pub fn variant(&self) -> CLOCK_GATE_DIS_A {
         match self.bits {
-            false => CLOCK_GATE_DIS_A::E_NABLE,
-            true => CLOCK_GATE_DIS_A::D_ISABLE,
+            false => CLOCK_GATE_DIS_A::ENABLE,
+            true => CLOCK_GATE_DIS_A::DISABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == CLOCK_GATE_DIS_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == CLOCK_GATE_DIS_A::ENABLE
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == CLOCK_GATE_DIS_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == CLOCK_GATE_DIS_A::DISABLE
     }
 }
 #[doc = "Field `clock_gate_dis` writer - "]
@@ -307,13 +307,13 @@ pub type CLOCK_GATE_DIS_W<'a, const O: u8> =
 impl<'a, const O: u8> CLOCK_GATE_DIS_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(CLOCK_GATE_DIS_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CLOCK_GATE_DIS_A::ENABLE)
     }
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(CLOCK_GATE_DIS_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CLOCK_GATE_DIS_A::DISABLE)
     }
 }
 impl R {

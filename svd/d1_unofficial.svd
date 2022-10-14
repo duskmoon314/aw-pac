@@ -9998,7 +9998,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>S_ET</name>
+                  <name>SET</name>
                   <description>Set reset signal</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -10016,7 +10016,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>S_ET</name>
+                  <name>SET</name>
                   <description>Set reset signal</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -10034,7 +10034,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>S_ET</name>
+                  <name>SET</name>
                   <description>Set reset signal</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -10054,7 +10054,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>S_ET</name>
+                  <name>SET</name>
                   <description>Set reset signal</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -10079,12 +10079,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable IOMMU</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable IOMMU</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10108,12 +10108,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable bypass function</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable bypass function</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10135,12 +10135,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable auto gating function</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable auto gating function</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10171,12 +10171,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable out-of-order</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable out-of-order</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10200,12 +10200,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable 4 KB boundary protect</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable 4 KB boundary protect</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10240,12 +10240,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10258,12 +10258,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10278,12 +10278,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10305,12 +10305,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable If the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10323,12 +10323,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable If the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10343,12 +10343,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10368,12 +10368,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_CLEAR_OR_COMPLETED</name>
+                  <name>NO_CLEAR_OR_COMPLETED</name>
                   <description>No clear operation or clear operation is completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable clear operation</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10386,12 +10386,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_CLEAR_OR_COMPLETED</name>
+                  <name>NO_CLEAR_OR_COMPLETED</name>
                   <description>No clear operation or clear operation is completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable clear operation</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10406,12 +10406,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_CLEAR_OR_COMPLETED</name>
+                  <name>NO_CLEAR_OR_COMPLETED</name>
                   <description>No clear operation or clear operation is completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable clear operation</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10507,12 +10507,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_OPERATION_OR_COMPLETED</name>
+                  <name>NO_OPERATION_OR_COMPLETED</name>
                   <description>No operation or operation is completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable invalidation operation</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10583,12 +10583,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_OPERATION_OR_COMPLETED</name>
+                  <name>NO_OPERATION_OR_COMPLETED</name>
                   <description>No operation or operation is completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable invalidation operation</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10706,12 +10706,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10776,7 +10776,7 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable interrupt</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10794,7 +10794,7 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable interrupt</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10812,7 +10812,7 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable interrupt</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10832,7 +10832,7 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable interrupt</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10852,7 +10852,7 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable interrupt</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10874,12 +10874,12 @@
               <access>write-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>I_NVALID</name>
+                  <name>INVALID</name>
                   <description>Invalid operation</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>C_LEAR</name>
+                  <name>CLEAR</name>
                   <description>Clear interrupt</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -10894,12 +10894,12 @@
               <access>write-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>I_NVALID</name>
+                  <name>INVALID</name>
                   <description>Invalid operation</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>C_LEAR</name>
+                  <name>CLEAR</name>
                   <description>Clear interrupt Note: The bit is not used.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -11108,7 +11108,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_OPERATION_OR_COMPLETED</name>
+                  <name>NO_OPERATION_OR_COMPLETED</name>
                   <description>No operation or operation is completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -11132,12 +11132,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable statistical function</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable statistical function</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -11156,12 +11156,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_CLEAR_OR_COMPLETED</name>
+                  <name>NO_CLEAR_OR_COMPLETED</name>
                   <description>No clear operation or clear operation is completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>C_LEAR</name>
+                  <name>CLEAR</name>
                   <description>Clear counter data</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12470,12 +12470,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12488,12 +12488,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12513,12 +12513,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12531,12 +12531,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12549,12 +12549,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12567,12 +12567,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12661,12 +12661,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12830,12 +12830,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12854,17 +12854,17 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>B_YPASS</name>
+                  <name>BYPASS</name>
                   <description>Bypass</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Used as normal FIFO</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>I_NTERLACE_3D</name>
+                  <name>INTERLACE_3D</name>
                   <description>Used as 3D interlace FIFO</description>
                   <value>0x2</value>
                 </enumeratedValue>
@@ -12884,12 +12884,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12943,12 +12943,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -12972,37 +12972,37 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>C_OLOR_C_HECK</name>
+                  <name>COLOR_CHECK</name>
                   <description>Color Check</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>G_RAYSCALE_C_HECK</name>
+                  <name>GRAYSCALE_CHECK</name>
                   <description>Grayscale Check</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>B_LACK_BY_W_HITE_C_HECK</name>
+                  <name>BLACK_BY_WHITE_CHECK</name>
                   <description>Black by White Check</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>T_EST_D_ATA_ALL_0</name>
+                  <name>TEST_DATA_ALL_0</name>
                   <description>Test Data all 0</description>
                   <value>0x4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>T_EST_D_ATA_ALL_1</name>
+                  <name>TEST_DATA_ALL_1</name>
                   <description>Test Data all 1</description>
                   <value>0x5</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>R_EVERSED</name>
+                  <name>REVERSED</name>
                   <description>Reversed</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>G_RIDDING_C_HECK</name>
+                  <name>GRIDDING_CHECK</name>
                   <description>Gridding Check</description>
                   <value>0x7</value>
                 </enumeratedValue>
@@ -13247,12 +13247,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13385,12 +13385,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13403,12 +13403,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13481,12 +13481,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13535,12 +13535,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>R_EVERSE</name>
+                  <name>REVERSE</name>
                   <description>Reverse</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13589,12 +13589,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13656,12 +13656,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>R_EVERSE</name>
+                  <name>REVERSE</name>
                   <description>Reverse</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13674,12 +13674,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>R_EVERSE</name>
+                  <name>REVERSE</name>
                   <description>Reverse</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13699,7 +13699,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal output</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -13752,12 +13752,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_OT_INVERT</name>
+                  <name>NOT_INVERT</name>
                   <description>Not invert</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>I_NVERT</name>
+                  <name>INVERT</name>
                   <description>Invert</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13785,7 +13785,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -13805,12 +13805,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -13836,7 +13836,7 @@
               <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_OT_UNDERFLOW</name>
+                  <name>NOT_UNDERFLOW</name>
                   <description>Not underflow</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -13854,12 +13854,12 @@
               <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>S_ECOND</name>
+                  <name>SECOND</name>
                   <description>Second field</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>F_IRST</name>
+                  <name>FIRST</name>
                   <description>First field</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13885,12 +13885,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>B_YPASS</name>
+                  <name>BYPASS</name>
                   <description>Bypass</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -13903,12 +13903,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14118,7 +14118,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -14165,12 +14165,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14221,12 +14221,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>B_YPASS</name>
+                  <name>BYPASS</name>
                   <description>Bypass</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14352,12 +14352,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14382,12 +14382,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14406,42 +14406,42 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>216_M_V</name>
+                  <name>216MV</name>
                   <description>216 mV</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>252_M_V</name>
+                  <name>252MV</name>
                   <description>252 mV</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>276_M_V</name>
+                  <name>276MV</name>
                   <description>276 mV</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>312_M_V</name>
+                  <name>312MV</name>
                   <description>312 mV</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>336_M_V</name>
+                  <name>336MV</name>
                   <description>336 mV</description>
                   <value>0x4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>372_M_V</name>
+                  <name>372MV</name>
                   <description>372 mV</description>
                   <value>0x5</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>395_M_V</name>
+                  <name>395MV</name>
                   <description>395 mV</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>432_M_V</name>
+                  <name>432MV</name>
                   <description>432 mV</description>
                   <value>0x7</value>
                 </enumeratedValue>
@@ -14514,12 +14514,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>R_EVERSE</name>
+                  <name>REVERSE</name>
                   <description>Reverse</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14605,7 +14605,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -14641,12 +14641,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14820,12 +14820,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14863,12 +14863,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14881,12 +14881,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -14936,22 +14936,22 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>C_OLOR</name>
+                  <name>COLOR</name>
                   <description>Color Check</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>G_RAYSCALE</name>
+                  <name>GRAYSCALE</name>
                   <description>Grayscale Check</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>B_LACK_B_Y_W_HITE</name>
+                  <name>BLACK_BY_WHITE</name>
                   <description>Black by White Check</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>G_RIDDING</name>
+                  <name>GRIDDING</name>
                   <description>Gridding Check</description>
                   <value>0x7</value>
                 </enumeratedValue>
@@ -14971,12 +14971,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15131,12 +15131,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_OT_INVERT</name>
+                  <name>NOT_INVERT</name>
                   <description>Not invert</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>I_NVERT</name>
+                  <name>INVERT</name>
                   <description>Invert</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15158,12 +15158,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -15189,12 +15189,12 @@
               <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>S_ECOND</name>
+                  <name>SECOND</name>
                   <description>Second field</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>F_IRST</name>
+                  <name>FIRST</name>
                   <description>First field</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15212,7 +15212,7 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>B_YPASS</name>
+                  <name>BYPASS</name>
                   <description>Bypass</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15238,12 +15238,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>B_YPASS</name>
+                  <name>BYPASS</name>
                   <description>Bypass</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15389,12 +15389,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>B_YPASS</name>
+                  <name>BYPASS</name>
                   <description>Bypass</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15691,12 +15691,12 @@
               <bitRange>[31:31]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_OT_INVERT</name>
+                  <name>NOT_INVERT</name>
                   <description>Not invert</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>I_NVERT</name>
+                  <name>INVERT</name>
                   <description>Invert</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15717,12 +15717,12 @@
               <bitRange>[9:9]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15734,12 +15734,12 @@
               <bitRange>[8:8]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15751,12 +15751,12 @@
               <bitRange>[4:4]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15767,12 +15767,12 @@
               <bitRange>[0:0]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15793,12 +15793,12 @@
               <bitRange>[9:9]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -15810,12 +15810,12 @@
               <bitRange>[8:8]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16042,12 +16042,12 @@
               <bitRange>[31:31]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16058,7 +16058,7 @@
               <bitRange>[28:28]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_ORMAL</name>
+                  <name>NORMAL</name>
                   <description>Normal mode</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -16117,12 +16117,12 @@
               <bitRange>[0:0]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16142,12 +16142,12 @@
               <bitRange>[29:29]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16399,12 +16399,12 @@
               <bitRange>[31:31]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16415,12 +16415,12 @@
               <bitRange>[30:30]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable Luma filter lti</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable Luma filter lti</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16435,12 +16435,12 @@
               <bitRange>[24:24]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Bypass Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Bypass Disable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16451,12 +16451,12 @@
               <bitRange>[23:23]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Bypass Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Bypass Disable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16467,12 +16467,12 @@
               <bitRange>[22:22]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Chroma Filter 1 444 Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Chroma Filter 1 444 Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16483,12 +16483,12 @@
               <bitRange>[21:21]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Chroma HD Filter Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Chroma HD Filter Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -16502,7 +16502,7 @@
               <bitRange>[18:18]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Chroma Filter Stage [i] Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -16518,7 +16518,7 @@
               <bitRange>[17:17]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Luma Filter Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -17135,12 +17135,12 @@
               <bitRange>[30:30]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Re-Sync Enable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Re-Sync Disable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -17316,12 +17316,12 @@
               <bitRange>[8:8]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable deflicker</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable deflicker</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -17333,12 +17333,12 @@
               <bitRange>[0:0]</bitRange>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -17589,12 +17589,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>R_ESET_DISABLE</name>
+                    <name>RESET_DISABLE</name>
                     <description>Reset and disable the CSIC module</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable the CSIC module</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -17816,12 +17816,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>S_ET_BK0</name>
+                    <name>SET_BK0</name>
                     <description>Set when BK0 memory bist</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>S_ET_BK1</name>
+                    <name>SET_BK1</name>
                     <description>Set when BK1 memory bist</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -18072,12 +18072,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>R_ESET_DISABLE</name>
+                    <name>RESET_DISABLE</name>
                     <description>Reset and disable the NCSIC module</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable the NCSIC module</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -18094,7 +18094,7 @@
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable pclk input</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -18135,12 +18135,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>R_ESET_DISABLE</name>
+                    <name>RESET_DISABLE</name>
                     <description>Reset and disable the parser module</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable the parser module</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -18185,7 +18185,7 @@
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>I_NTERLACED</name>
+                    <name>INTERLACED</name>
                     <value>0x1</value>
                   </enumeratedValue>
                 </enumeratedValues>
@@ -18496,12 +18496,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable video capture\n\nIf video capture is in progress, the CSI stops capturing image data at the end of the current frame, and all of the current frame data is written to output FIFO.</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable video capture\n\nThe CSI starts capturing image data at the start of the next frame.</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -18517,12 +18517,12 @@
                 <readAction>clear</readAction>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable still capture</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable still capture\n\nThe CSI module starts capturing image data at the start of the next frame. The CSI module captures only one frame of image data. This bit is self cleared and always reads as a 0.</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19025,12 +19025,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19043,12 +19043,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19061,12 +19061,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19097,12 +19097,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19114,12 +19114,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19145,12 +19145,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19187,12 +19187,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19205,12 +19205,12 @@
                 <access>read-write</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>D_ISABLE</name>
+                    <name>DISABLE</name>
                     <description>Disable</description>
                     <value>0x0</value>
                   </enumeratedValue>
                   <enumeratedValue>
-                    <name>E_NABLE</name>
+                    <name>ENABLE</name>
                     <description>Enable</description>
                     <value>0x1</value>
                   </enumeratedValue>
@@ -19977,7 +19977,7 @@
                 <access>read-only</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>N_O_E_MBEDDED</name>
+                    <name>NO_E_MBEDDED</name>
                     <description>No Embedded LBC</description>
                     <value>0x0</value>
                   </enumeratedValue>
@@ -19994,7 +19994,7 @@
                 <access>read-only</access>
                 <enumeratedValues>
                   <enumeratedValue>
-                    <name>N_O_E_MBEDDED</name>
+                    <name>NO_E_MBEDDED</name>
                     <description>No Embedded DMA</description>
                     <value>0x0</value>
                   </enumeratedValue>
@@ -23093,32 +23093,32 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>48_K_H_Z</name>
+                  <name>48KHZ</name>
                   <description>48 kHz</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>24_K_H_Z</name>
+                  <name>24KHZ</name>
                   <description>24 kHz</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>12_K_H_Z</name>
+                  <name>12KHZ</name>
                   <description>12 kHz</description>
                   <value>0x4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>32_K_H_Z</name>
+                  <name>32KHZ</name>
                   <description>32 kHz</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>16_K_H_Z</name>
+                  <name>16KHZ</name>
                   <description>16 kHz</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>8_K_H_Z</name>
+                  <name>8KHZ</name>
                   <description>8 kHz</description>
                   <value>0x5</value>
                 </enumeratedValue>
@@ -23136,12 +23136,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23182,12 +23182,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23218,12 +23218,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23236,12 +23236,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23278,12 +23278,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23296,12 +23296,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23314,12 +23314,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23356,17 +23356,17 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>N_119_25_D_B</name>
+                  <name>N_119_25DB</name>
                   <description>-119.25 dB ...</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>0_D_B</name>
+                  <name>0DB</name>
                   <description>0 dB</description>
                   <value>0xA0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>71_25_D_B</name>
+                  <name>71_25DB</name>
                   <description>71.25 dB</description>
                   <value>0xFF</value>
                 </enumeratedValue>
@@ -23388,12 +23388,12 @@
               <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_AVAILABLE</name>
+                  <name>NO_AVAILABLE</name>
                   <description>No available data in RX FIFO</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>M_ORE</name>
+                  <name>MORE</name>
                   <description>More than one sample in RX FIFO (>= 1 word)</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23413,7 +23413,7 @@
               <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_P_ENDING</name>
+                  <name>NO_PENDING</name>
                   <description>No Pending IRQ</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -23432,12 +23432,12 @@
               <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_P_ENDING</name>
+                  <name>NO_PENDING</name>
                   <description>No Pending IRQ</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>FIFO</name>
+                  <name>PENDING</name>
                   <description>FIFO Overrun Pending IRQ\n\nWrite '1' to clear this interrupt.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23483,12 +23483,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23501,12 +23501,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23526,12 +23526,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23544,12 +23544,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23593,12 +23593,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled.\n\nVAR1Speedup Down converts to 1 immediately.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23611,12 +23611,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms.</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled.\n\nVAR1Speedup Down reset 0 immediately.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23636,12 +23636,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>B_YPASSED</name>
+                  <name>BYPASSED</name>
                   <description>Bypassed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23654,12 +23654,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23672,12 +23672,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23696,16 +23696,16 @@
               <dimIndex>1,0</dimIndex>
               <name>adc_dap%s_en</name>
               <description>DAP[i] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3</description>
-              <bitRange>[31:31]</bitRange>
+              <bitRange>[27:27]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>B_YPASSED</name>
+                  <name>BYPASSED</name>
                   <description>Bypassed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23717,16 +23717,16 @@
               <dimIndex>1,0</dimIndex>
               <name>adc_drc%s_en</name>
               <description>ADC DRC[i] enable control</description>
-              <bitRange>[29:29]</bitRange>
+              <bitRange>[25:25]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23738,16 +23738,16 @@
               <dimIndex>1,0</dimIndex>
               <name>adc_hpf%s_en</name>
               <description>ADC HPF[i] enable control</description>
-              <bitRange>[28:28]</bitRange>
+              <bitRange>[24:24]</bitRange>
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23799,12 +23799,12 @@
               <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_OT_COMPLETED</name>
+                  <name>NOT_COMPLETED</name>
                   <description>Not completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>C_OMPLETED</name>
+                  <name>COMPLETED</name>
                   <description>Completed</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23841,12 +23841,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23859,12 +23859,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23877,12 +23877,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23913,12 +23913,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled\n\nWhen the bit is disabled, the signal delay time is unused.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23931,12 +23931,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled\n\nWhen the bit is disabled, Kl and OPL parameter is unused.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -23949,12 +23949,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled\n\nWhen the bit is disabled, Ke and OPE parameter is unused.</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -24664,12 +24664,12 @@
               <access>read-only</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_OT_COMPLETED</name>
+                  <name>NOT_COMPLETED</name>
                   <description>Not completed</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>C_OMPLETED</name>
+                  <name>COMPLETED</name>
                   <description>Completed</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -24706,12 +24706,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -24724,12 +24724,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -24742,12 +24742,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -24778,12 +24778,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -24796,12 +24796,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -24814,12 +24814,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25503,12 +25503,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25521,12 +25521,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25557,12 +25557,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25575,12 +25575,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25593,12 +25593,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>0_D_B</name>
+                  <name>0DB</name>
                   <description>0 dB</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>6_D_B</name>
+                  <name>6DB</name>
                   <description>6 dB</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25639,12 +25639,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25657,12 +25657,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>0_D_B</name>
+                  <name>0DB</name>
                   <description>0 dB</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>6_D_B</name>
+                  <name>6DB</name>
                   <description>6 dB</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -25675,22 +25675,22 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>6_U_A</name>
+                  <name>6UA</name>
                   <description>6 uA</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>7_U_A</name>
+                  <name>7UA</name>
                   <description>7 uA</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>8_U_A</name>
+                  <name>8UA</name>
                   <description>8 uA</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>9_U_A</name>
+                  <name>9UA</name>
                   <description>9 uA</description>
                   <value>0x3</value>
                 </enumeratedValue>
@@ -26167,12 +26167,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLE</name>
+                  <name>DISABLE</name>
                   <description>Disable</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLE</name>
+                  <name>ENABLE</name>
                   <description>Enable</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26213,12 +26213,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26255,12 +26255,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26279,12 +26279,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26325,12 +26325,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26343,22 +26343,22 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>250_K_H_Z</name>
+                  <name>250KHZ</name>
                   <description>250 kHz</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>500_K_H_Z</name>
+                  <name>500KHZ</name>
                   <description>500 kHz</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>1_M_H_Z</name>
+                  <name>1MHZ</name>
                   <description>1 MHz</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>2_M_H_Z</name>
+                  <name>2MHZ</name>
                   <description>2 MHz</description>
                   <value>0x3</value>
                 </enumeratedValue>
@@ -26371,12 +26371,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26417,12 +26417,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26435,22 +26435,22 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>250_K_H_Z</name>
+                  <name>250KHZ</name>
                   <description>250 kHz</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>500_K_H_Z</name>
+                  <name>500KHZ</name>
                   <description>500 kHz</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>1_M_H_Z</name>
+                  <name>1MHZ</name>
                   <description>1 MHz</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>2_M_H_Z</name>
+                  <name>2MHZ</name>
                   <description>2 MHz</description>
                   <value>0x3</value>
                 </enumeratedValue>
@@ -26830,12 +26830,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26848,12 +26848,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26866,12 +26866,12 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>D_ISABLED</name>
+                  <name>DISABLED</name>
                   <description>Disabled</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>E_NABLED</name>
+                  <name>ENABLED</name>
                   <description>Enabled</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26893,7 +26893,7 @@
               <access>read-write</access>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_ONE</name>
+                  <name>NONE</name>
                   <description>None discarded</description>
                   <value>0x0</value>
                 </enumeratedValue>
@@ -26928,12 +26928,12 @@
               <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_P_ENDING</name>
+                  <name>NO_PENDING</name>
                   <description>No Pending IRQ</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>P_ENDING</name>
+                  <name>PENDING</name>
                   <description>Pending IRQ</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26947,12 +26947,12 @@
               <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_P_ENDING</name>
+                  <name>NO_PENDING</name>
                   <description>No Pending IRQ</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>P_ENDING</name>
+                  <name>PENDING</name>
                   <description>Pending IRQ</description>
                   <value>0x1</value>
                 </enumeratedValue>
@@ -26966,12 +26966,12 @@
               <modifiedWriteValues>oneToClear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
-                  <name>N_O_PENDING</name>
+                  <name>NO_PENDING</name>
                   <description>No pending IRQ</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>P_ENDING</name>
+                  <name>PENDING</name>
                   <description>Pending IRQ</description>
                   <value>0x1</value>
                 </enumeratedValue>

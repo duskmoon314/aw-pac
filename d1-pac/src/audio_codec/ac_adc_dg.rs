@@ -40,9 +40,9 @@ pub type AD_SWP1_R = crate::BitReader<AD_SWP1_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AD_SWP1_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<AD_SWP1_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl AD_SWP1_R {
     #[inline(always)]
     pub fn variant(&self) -> AD_SWP1_A {
         match self.bits {
-            false => AD_SWP1_A::D_ISABLED,
-            true => AD_SWP1_A::E_NABLED,
+            false => AD_SWP1_A::DISABLED,
+            true => AD_SWP1_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == AD_SWP1_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == AD_SWP1_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == AD_SWP1_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == AD_SWP1_A::ENABLED
     }
 }
 #[doc = "Field `ad_swp1` writer - ADC output channel swap enable (for digital filter)"]
@@ -75,13 +75,13 @@ pub type AD_SWP1_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_ADC_DG_SPEC, 
 impl<'a, const O: u8> AD_SWP1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(AD_SWP1_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(AD_SWP1_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(AD_SWP1_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(AD_SWP1_A::ENABLED)
     }
 }
 #[doc = "Field `ad_swp2` reader - ADC output channel swap enable (for digital filter)"]
@@ -90,9 +90,9 @@ pub type AD_SWP2_R = crate::BitReader<AD_SWP2_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AD_SWP2_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<AD_SWP2_A> for bool {
     #[inline(always)]
@@ -105,19 +105,19 @@ impl AD_SWP2_R {
     #[inline(always)]
     pub fn variant(&self) -> AD_SWP2_A {
         match self.bits {
-            false => AD_SWP2_A::D_ISABLED,
-            true => AD_SWP2_A::E_NABLED,
+            false => AD_SWP2_A::DISABLED,
+            true => AD_SWP2_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == AD_SWP2_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == AD_SWP2_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == AD_SWP2_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == AD_SWP2_A::ENABLED
     }
 }
 #[doc = "Field `ad_swp2` writer - ADC output channel swap enable (for digital filter)"]
@@ -125,13 +125,13 @@ pub type AD_SWP2_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_ADC_DG_SPEC, 
 impl<'a, const O: u8> AD_SWP2_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(AD_SWP2_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(AD_SWP2_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(AD_SWP2_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(AD_SWP2_A::ENABLED)
     }
 }
 impl R {

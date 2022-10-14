@@ -40,9 +40,9 @@ pub type MIC_DET_ST_R = crate::BitReader<MIC_DET_ST_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MIC_DET_ST_A {
     #[doc = "0: No pending IRQ"]
-    N_O_PENDING = 0,
+    NO_PENDING = 0,
     #[doc = "1: Pending IRQ"]
-    P_ENDING = 1,
+    PENDING = 1,
 }
 impl From<MIC_DET_ST_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl MIC_DET_ST_R {
     #[inline(always)]
     pub fn variant(&self) -> MIC_DET_ST_A {
         match self.bits {
-            false => MIC_DET_ST_A::N_O_PENDING,
-            true => MIC_DET_ST_A::P_ENDING,
+            false => MIC_DET_ST_A::NO_PENDING,
+            true => MIC_DET_ST_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_PENDING`"]
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
-    pub fn is_n_o_pending(&self) -> bool {
-        *self == MIC_DET_ST_A::N_O_PENDING
+    pub fn is_no_pending(&self) -> bool {
+        *self == MIC_DET_ST_A::NO_PENDING
     }
-    #[doc = "Checks if the value of the field is `P_ENDING`"]
+    #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
-    pub fn is_p_ending(&self) -> bool {
-        *self == MIC_DET_ST_A::P_ENDING
+    pub fn is_pending(&self) -> bool {
+        *self == MIC_DET_ST_A::PENDING
     }
 }
 #[doc = "Field `mic_det_st` writer - MIC detect pending interrupt"]
@@ -76,13 +76,13 @@ pub type MIC_DET_ST_W<'a, const O: u8> =
 impl<'a, const O: u8> MIC_DET_ST_W<'a, O> {
     #[doc = "No pending IRQ"]
     #[inline(always)]
-    pub fn n_o_pending(self) -> &'a mut W {
-        self.variant(MIC_DET_ST_A::N_O_PENDING)
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(MIC_DET_ST_A::NO_PENDING)
     }
     #[doc = "Pending IRQ"]
     #[inline(always)]
-    pub fn p_ending(self) -> &'a mut W {
-        self.variant(MIC_DET_ST_A::P_ENDING)
+    pub fn pending(self) -> &'a mut W {
+        self.variant(MIC_DET_ST_A::PENDING)
     }
 }
 #[doc = "Field `jack_det_iirq` reader - Jack input detect pending interrupt"]
@@ -91,9 +91,9 @@ pub type JACK_DET_IIRQ_R = crate::BitReader<JACK_DET_IIRQ_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JACK_DET_IIRQ_A {
     #[doc = "0: No Pending IRQ"]
-    N_O_P_ENDING = 0,
+    NO_PENDING = 0,
     #[doc = "1: Pending IRQ"]
-    P_ENDING = 1,
+    PENDING = 1,
 }
 impl From<JACK_DET_IIRQ_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl JACK_DET_IIRQ_R {
     #[inline(always)]
     pub fn variant(&self) -> JACK_DET_IIRQ_A {
         match self.bits {
-            false => JACK_DET_IIRQ_A::N_O_P_ENDING,
-            true => JACK_DET_IIRQ_A::P_ENDING,
+            false => JACK_DET_IIRQ_A::NO_PENDING,
+            true => JACK_DET_IIRQ_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_P_ENDING`"]
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
-    pub fn is_n_o_p_ending(&self) -> bool {
-        *self == JACK_DET_IIRQ_A::N_O_P_ENDING
+    pub fn is_no_pending(&self) -> bool {
+        *self == JACK_DET_IIRQ_A::NO_PENDING
     }
-    #[doc = "Checks if the value of the field is `P_ENDING`"]
+    #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
-    pub fn is_p_ending(&self) -> bool {
-        *self == JACK_DET_IIRQ_A::P_ENDING
+    pub fn is_pending(&self) -> bool {
+        *self == JACK_DET_IIRQ_A::PENDING
     }
 }
 #[doc = "Field `jack_det_iirq` writer - Jack input detect pending interrupt"]
@@ -127,13 +127,13 @@ pub type JACK_DET_IIRQ_W<'a, const O: u8> =
 impl<'a, const O: u8> JACK_DET_IIRQ_W<'a, O> {
     #[doc = "No Pending IRQ"]
     #[inline(always)]
-    pub fn n_o_p_ending(self) -> &'a mut W {
-        self.variant(JACK_DET_IIRQ_A::N_O_P_ENDING)
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(JACK_DET_IIRQ_A::NO_PENDING)
     }
     #[doc = "Pending IRQ"]
     #[inline(always)]
-    pub fn p_ending(self) -> &'a mut W {
-        self.variant(JACK_DET_IIRQ_A::P_ENDING)
+    pub fn pending(self) -> &'a mut W {
+        self.variant(JACK_DET_IIRQ_A::PENDING)
     }
 }
 #[doc = "Field `jack_det_oirq` reader - Jack output detect pending interrupt"]
@@ -142,9 +142,9 @@ pub type JACK_DET_OIRQ_R = crate::BitReader<JACK_DET_OIRQ_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JACK_DET_OIRQ_A {
     #[doc = "0: No Pending IRQ"]
-    N_O_P_ENDING = 0,
+    NO_PENDING = 0,
     #[doc = "1: Pending IRQ"]
-    P_ENDING = 1,
+    PENDING = 1,
 }
 impl From<JACK_DET_OIRQ_A> for bool {
     #[inline(always)]
@@ -157,19 +157,19 @@ impl JACK_DET_OIRQ_R {
     #[inline(always)]
     pub fn variant(&self) -> JACK_DET_OIRQ_A {
         match self.bits {
-            false => JACK_DET_OIRQ_A::N_O_P_ENDING,
-            true => JACK_DET_OIRQ_A::P_ENDING,
+            false => JACK_DET_OIRQ_A::NO_PENDING,
+            true => JACK_DET_OIRQ_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_P_ENDING`"]
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
-    pub fn is_n_o_p_ending(&self) -> bool {
-        *self == JACK_DET_OIRQ_A::N_O_P_ENDING
+    pub fn is_no_pending(&self) -> bool {
+        *self == JACK_DET_OIRQ_A::NO_PENDING
     }
-    #[doc = "Checks if the value of the field is `P_ENDING`"]
+    #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
-    pub fn is_p_ending(&self) -> bool {
-        *self == JACK_DET_OIRQ_A::P_ENDING
+    pub fn is_pending(&self) -> bool {
+        *self == JACK_DET_OIRQ_A::PENDING
     }
 }
 #[doc = "Field `jack_det_oirq` writer - Jack output detect pending interrupt"]
@@ -178,13 +178,13 @@ pub type JACK_DET_OIRQ_W<'a, const O: u8> =
 impl<'a, const O: u8> JACK_DET_OIRQ_W<'a, O> {
     #[doc = "No Pending IRQ"]
     #[inline(always)]
-    pub fn n_o_p_ending(self) -> &'a mut W {
-        self.variant(JACK_DET_OIRQ_A::N_O_P_ENDING)
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(JACK_DET_OIRQ_A::NO_PENDING)
     }
     #[doc = "Pending IRQ"]
     #[inline(always)]
-    pub fn p_ending(self) -> &'a mut W {
-        self.variant(JACK_DET_OIRQ_A::P_ENDING)
+    pub fn pending(self) -> &'a mut W {
+        self.variant(JACK_DET_OIRQ_A::PENDING)
     }
 }
 #[doc = "Field `hmic_data` reader - HMIC Average Data"]
@@ -196,7 +196,7 @@ pub type MDATA_DISCARD_R = crate::FieldReader<u8, MDATA_DISCARD_A>;
 #[repr(u8)]
 pub enum MDATA_DISCARD_A {
     #[doc = "0: None discarded"]
-    N_ONE = 0,
+    NONE = 0,
     #[doc = "1: 1-data discarded"]
     _1_DATA = 1,
     #[doc = "2: 2-data discarded"]
@@ -215,17 +215,17 @@ impl MDATA_DISCARD_R {
     #[inline(always)]
     pub fn variant(&self) -> MDATA_DISCARD_A {
         match self.bits {
-            0 => MDATA_DISCARD_A::N_ONE,
+            0 => MDATA_DISCARD_A::NONE,
             1 => MDATA_DISCARD_A::_1_DATA,
             2 => MDATA_DISCARD_A::_2_DATA,
             3 => MDATA_DISCARD_A::_4_DATA,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `N_ONE`"]
+    #[doc = "Checks if the value of the field is `NONE`"]
     #[inline(always)]
-    pub fn is_n_one(&self) -> bool {
-        *self == MDATA_DISCARD_A::N_ONE
+    pub fn is_none(&self) -> bool {
+        *self == MDATA_DISCARD_A::NONE
     }
     #[doc = "Checks if the value of the field is `_1_DATA`"]
     #[inline(always)]
@@ -249,8 +249,8 @@ pub type MDATA_DISCARD_W<'a, const O: u8> =
 impl<'a, const O: u8> MDATA_DISCARD_W<'a, O> {
     #[doc = "None discarded"]
     #[inline(always)]
-    pub fn n_one(self) -> &'a mut W {
-        self.variant(MDATA_DISCARD_A::N_ONE)
+    pub fn none(self) -> &'a mut W {
+        self.variant(MDATA_DISCARD_A::NONE)
     }
     #[doc = "1-data discarded"]
     #[inline(always)]

@@ -45,11 +45,11 @@ pub enum ADC_VOL_A {
     #[doc = "0: Mute"]
     M_UTE = 0,
     #[doc = "1: -119.25 dB ..."]
-    N_119_25_D_B = 1,
+    N_119_25DB = 1,
     #[doc = "160: 0 dB"]
-    _0_D_B = 160,
+    _0DB = 160,
     #[doc = "255: 71.25 dB"]
-    _71_25_D_B = 255,
+    _71_25DB = 255,
 }
 impl From<ADC_VOL_A> for u8 {
     #[inline(always)]
@@ -63,9 +63,9 @@ impl ADC_VOL_R {
     pub fn variant(&self) -> Option<ADC_VOL_A> {
         match self.bits {
             0 => Some(ADC_VOL_A::M_UTE),
-            1 => Some(ADC_VOL_A::N_119_25_D_B),
-            160 => Some(ADC_VOL_A::_0_D_B),
-            255 => Some(ADC_VOL_A::_71_25_D_B),
+            1 => Some(ADC_VOL_A::N_119_25DB),
+            160 => Some(ADC_VOL_A::_0DB),
+            255 => Some(ADC_VOL_A::_71_25DB),
             _ => None,
         }
     }
@@ -74,20 +74,20 @@ impl ADC_VOL_R {
     pub fn is_m_ute(&self) -> bool {
         *self == ADC_VOL_A::M_UTE
     }
-    #[doc = "Checks if the value of the field is `N_119_25_D_B`"]
+    #[doc = "Checks if the value of the field is `N_119_25DB`"]
     #[inline(always)]
-    pub fn is_n_119_25_d_b(&self) -> bool {
-        *self == ADC_VOL_A::N_119_25_D_B
+    pub fn is_n_119_25db(&self) -> bool {
+        *self == ADC_VOL_A::N_119_25DB
     }
-    #[doc = "Checks if the value of the field is `_0_D_B`"]
+    #[doc = "Checks if the value of the field is `_0DB`"]
     #[inline(always)]
-    pub fn is_0_d_b(&self) -> bool {
-        *self == ADC_VOL_A::_0_D_B
+    pub fn is_0db(&self) -> bool {
+        *self == ADC_VOL_A::_0DB
     }
-    #[doc = "Checks if the value of the field is `_71_25_D_B`"]
+    #[doc = "Checks if the value of the field is `_71_25DB`"]
     #[inline(always)]
-    pub fn is_71_25_d_b(&self) -> bool {
-        *self == ADC_VOL_A::_71_25_D_B
+    pub fn is_71_25db(&self) -> bool {
+        *self == ADC_VOL_A::_71_25DB
     }
 }
 #[doc = "Field `adc_vol[1-3]` writer - ADC\\[i\\]
@@ -102,18 +102,18 @@ impl<'a, const O: u8> ADC_VOL_W<'a, O> {
     }
     #[doc = "-119.25 dB ..."]
     #[inline(always)]
-    pub fn n_119_25_d_b(self) -> &'a mut W {
-        self.variant(ADC_VOL_A::N_119_25_D_B)
+    pub fn n_119_25db(self) -> &'a mut W {
+        self.variant(ADC_VOL_A::N_119_25DB)
     }
     #[doc = "0 dB"]
     #[inline(always)]
-    pub fn _0_d_b(self) -> &'a mut W {
-        self.variant(ADC_VOL_A::_0_D_B)
+    pub fn _0db(self) -> &'a mut W {
+        self.variant(ADC_VOL_A::_0DB)
     }
     #[doc = "71.25 dB"]
     #[inline(always)]
-    pub fn _71_25_d_b(self) -> &'a mut W {
-        self.variant(ADC_VOL_A::_71_25_D_B)
+    pub fn _71_25db(self) -> &'a mut W {
+        self.variant(ADC_VOL_A::_71_25DB)
     }
 }
 impl R {

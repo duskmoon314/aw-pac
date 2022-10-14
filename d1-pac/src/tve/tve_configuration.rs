@@ -709,9 +709,9 @@ pub type BYPASS_TV_R = crate::BitReader<BYPASS_TV_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BYPASS_TV_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<BYPASS_TV_A> for bool {
     #[inline(always)]
@@ -724,19 +724,19 @@ impl BYPASS_TV_R {
     #[inline(always)]
     pub fn variant(&self) -> BYPASS_TV_A {
         match self.bits {
-            false => BYPASS_TV_A::D_ISABLE,
-            true => BYPASS_TV_A::E_NABLE,
+            false => BYPASS_TV_A::DISABLE,
+            true => BYPASS_TV_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BYPASS_TV_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == BYPASS_TV_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BYPASS_TV_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == BYPASS_TV_A::ENABLE
     }
 }
 #[doc = "Field `bypass_tv` writer - "]
@@ -745,13 +745,13 @@ pub type BYPASS_TV_W<'a, const O: u8> =
 impl<'a, const O: u8> BYPASS_TV_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BYPASS_TV_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BYPASS_TV_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BYPASS_TV_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BYPASS_TV_A::ENABLE)
     }
 }
 impl R {

@@ -76,9 +76,9 @@ pub type LCD_TRI_COUNTER_INT_EN_R = crate::BitReader<LCD_TRI_COUNTER_INT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_TRI_COUNTER_INT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<LCD_TRI_COUNTER_INT_EN_A> for bool {
     #[inline(always)]
@@ -91,19 +91,19 @@ impl LCD_TRI_COUNTER_INT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_TRI_COUNTER_INT_EN_A {
         match self.bits {
-            false => LCD_TRI_COUNTER_INT_EN_A::D_ISABLE,
-            true => LCD_TRI_COUNTER_INT_EN_A::E_NABLE,
+            false => LCD_TRI_COUNTER_INT_EN_A::DISABLE,
+            true => LCD_TRI_COUNTER_INT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LCD_TRI_COUNTER_INT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == LCD_TRI_COUNTER_INT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LCD_TRI_COUNTER_INT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == LCD_TRI_COUNTER_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `lcd_tri_counter_int_en` writer - Enable the trigger counter interrupt"]
@@ -112,13 +112,13 @@ pub type LCD_TRI_COUNTER_INT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_TRI_COUNTER_INT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LCD_TRI_COUNTER_INT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LCD_TRI_COUNTER_INT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LCD_TRI_COUNTER_INT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LCD_TRI_COUNTER_INT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `lcd_tri_finish_int_en` reader - Enable the trigger finish interrupt"]
@@ -127,9 +127,9 @@ pub type LCD_TRI_FINISH_INT_EN_R = crate::BitReader<LCD_TRI_FINISH_INT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_TRI_FINISH_INT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<LCD_TRI_FINISH_INT_EN_A> for bool {
     #[inline(always)]
@@ -142,19 +142,19 @@ impl LCD_TRI_FINISH_INT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_TRI_FINISH_INT_EN_A {
         match self.bits {
-            false => LCD_TRI_FINISH_INT_EN_A::D_ISABLE,
-            true => LCD_TRI_FINISH_INT_EN_A::E_NABLE,
+            false => LCD_TRI_FINISH_INT_EN_A::DISABLE,
+            true => LCD_TRI_FINISH_INT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LCD_TRI_FINISH_INT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == LCD_TRI_FINISH_INT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LCD_TRI_FINISH_INT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == LCD_TRI_FINISH_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `lcd_tri_finish_int_en` writer - Enable the trigger finish interrupt"]
@@ -163,13 +163,13 @@ pub type LCD_TRI_FINISH_INT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_TRI_FINISH_INT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LCD_TRI_FINISH_INT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LCD_TRI_FINISH_INT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LCD_TRI_FINISH_INT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LCD_TRI_FINISH_INT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `lcd_line_int_en` reader - Enable the line interrupt"]
@@ -178,9 +178,9 @@ pub type LCD_LINE_INT_EN_R = crate::BitReader<LCD_LINE_INT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LINE_INT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<LCD_LINE_INT_EN_A> for bool {
     #[inline(always)]
@@ -193,19 +193,19 @@ impl LCD_LINE_INT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_LINE_INT_EN_A {
         match self.bits {
-            false => LCD_LINE_INT_EN_A::D_ISABLE,
-            true => LCD_LINE_INT_EN_A::E_NABLE,
+            false => LCD_LINE_INT_EN_A::DISABLE,
+            true => LCD_LINE_INT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LCD_LINE_INT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == LCD_LINE_INT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LCD_LINE_INT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == LCD_LINE_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `lcd_line_int_en` writer - Enable the line interrupt"]
@@ -214,13 +214,13 @@ pub type LCD_LINE_INT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_LINE_INT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LCD_LINE_INT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LCD_LINE_INT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LCD_LINE_INT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LCD_LINE_INT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `lcd_vb_int_en` reader - Enable the Vb interrupt"]
@@ -229,9 +229,9 @@ pub type LCD_VB_INT_EN_R = crate::BitReader<LCD_VB_INT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_VB_INT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<LCD_VB_INT_EN_A> for bool {
     #[inline(always)]
@@ -244,19 +244,19 @@ impl LCD_VB_INT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_VB_INT_EN_A {
         match self.bits {
-            false => LCD_VB_INT_EN_A::D_ISABLE,
-            true => LCD_VB_INT_EN_A::E_NABLE,
+            false => LCD_VB_INT_EN_A::DISABLE,
+            true => LCD_VB_INT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LCD_VB_INT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == LCD_VB_INT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LCD_VB_INT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == LCD_VB_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `lcd_vb_int_en` writer - Enable the Vb interrupt"]
@@ -265,13 +265,13 @@ pub type LCD_VB_INT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_VB_INT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LCD_VB_INT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LCD_VB_INT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LCD_VB_INT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LCD_VB_INT_EN_A::ENABLE)
     }
 }
 impl R {

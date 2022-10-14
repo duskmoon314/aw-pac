@@ -47,9 +47,9 @@ pub type IO_OUTPUT_TRI_EN_R = crate::BitReader<IO_OUTPUT_TRI_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_OUTPUT_TRI_EN_A {
     #[doc = "1: Disable"]
-    D_ISABLE = 1,
+    DISABLE = 1,
     #[doc = "0: Enable"]
-    E_NABLE = 0,
+    ENABLE = 0,
 }
 impl From<IO_OUTPUT_TRI_EN_A> for bool {
     #[inline(always)]
@@ -62,19 +62,19 @@ impl IO_OUTPUT_TRI_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> IO_OUTPUT_TRI_EN_A {
         match self.bits {
-            true => IO_OUTPUT_TRI_EN_A::D_ISABLE,
-            false => IO_OUTPUT_TRI_EN_A::E_NABLE,
+            true => IO_OUTPUT_TRI_EN_A::DISABLE,
+            false => IO_OUTPUT_TRI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == IO_OUTPUT_TRI_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == IO_OUTPUT_TRI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == IO_OUTPUT_TRI_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == IO_OUTPUT_TRI_EN_A::ENABLE
     }
 }
 #[doc = "Field `io_output_tri_en[0-3]` writer - Enable the output of IO\\[i\\]"]
@@ -83,13 +83,13 @@ pub type IO_OUTPUT_TRI_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> IO_OUTPUT_TRI_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(IO_OUTPUT_TRI_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IO_OUTPUT_TRI_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(IO_OUTPUT_TRI_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(IO_OUTPUT_TRI_EN_A::ENABLE)
     }
 }
 #[doc = "Field `rgb_endian` reader - Set the endian of data bits"]
@@ -98,7 +98,7 @@ pub type RGB_ENDIAN_R = crate::BitReader<RGB_ENDIAN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RGB_ENDIAN_A {
     #[doc = "0: Normal"]
-    N_ORMAL = 0,
+    NORMAL = 0,
     #[doc = "1: Bits_invert"]
     B_ITS_INVERT = 1,
 }
@@ -113,14 +113,14 @@ impl RGB_ENDIAN_R {
     #[inline(always)]
     pub fn variant(&self) -> RGB_ENDIAN_A {
         match self.bits {
-            false => RGB_ENDIAN_A::N_ORMAL,
+            false => RGB_ENDIAN_A::NORMAL,
             true => RGB_ENDIAN_A::B_ITS_INVERT,
         }
     }
-    #[doc = "Checks if the value of the field is `N_ORMAL`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_n_ormal(&self) -> bool {
-        *self == RGB_ENDIAN_A::N_ORMAL
+    pub fn is_normal(&self) -> bool {
+        *self == RGB_ENDIAN_A::NORMAL
     }
     #[doc = "Checks if the value of the field is `B_ITS_INVERT`"]
     #[inline(always)]
@@ -134,8 +134,8 @@ pub type RGB_ENDIAN_W<'a, const O: u8> =
 impl<'a, const O: u8> RGB_ENDIAN_W<'a, O> {
     #[doc = "Normal"]
     #[inline(always)]
-    pub fn n_ormal(self) -> &'a mut W {
-        self.variant(RGB_ENDIAN_A::N_ORMAL)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(RGB_ENDIAN_A::NORMAL)
     }
     #[doc = "Bits_invert"]
     #[inline(always)]

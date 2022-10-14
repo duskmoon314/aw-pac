@@ -42,9 +42,9 @@ enable control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_HPF_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_HPF_EN_A> for bool {
     #[inline(always)]
@@ -57,19 +57,19 @@ impl ADC_HPF_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_HPF_EN_A {
         match self.bits {
-            false => ADC_HPF_EN_A::D_ISABLED,
-            true => ADC_HPF_EN_A::E_NABLED,
+            false => ADC_HPF_EN_A::DISABLED,
+            true => ADC_HPF_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_HPF_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_HPF_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_HPF_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_HPF_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_hpf_en[1,0]` writer - ADC HPF\\[i\\]
@@ -79,13 +79,13 @@ pub type ADC_HPF_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_HPF_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_HPF_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_HPF_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_HPF_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_HPF_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drc_en[1,0]` reader - ADC DRC\\[i\\]
@@ -96,9 +96,9 @@ enable control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRC_EN_A> for bool {
     #[inline(always)]
@@ -111,19 +111,19 @@ impl ADC_DRC_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRC_EN_A {
         match self.bits {
-            false => ADC_DRC_EN_A::D_ISABLED,
-            true => ADC_DRC_EN_A::E_NABLED,
+            false => ADC_DRC_EN_A::DISABLED,
+            true => ADC_DRC_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRC_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRC_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRC_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRC_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drc_en[1,0]` writer - ADC DRC\\[i\\]
@@ -133,13 +133,13 @@ pub type ADC_DRC_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRC_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRC_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRC_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_dap_en[1,0]` reader - DAP\\[i\\]
@@ -150,9 +150,9 @@ for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3\n\nValue on reset: 0"
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DAP_EN_A {
     #[doc = "0: Bypassed"]
-    B_YPASSED = 0,
+    BYPASSED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DAP_EN_A> for bool {
     #[inline(always)]
@@ -165,19 +165,19 @@ impl ADC_DAP_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DAP_EN_A {
         match self.bits {
-            false => ADC_DAP_EN_A::B_YPASSED,
-            true => ADC_DAP_EN_A::E_NABLED,
+            false => ADC_DAP_EN_A::BYPASSED,
+            true => ADC_DAP_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `B_YPASSED`"]
+    #[doc = "Checks if the value of the field is `BYPASSED`"]
     #[inline(always)]
-    pub fn is_b_ypassed(&self) -> bool {
-        *self == ADC_DAP_EN_A::B_YPASSED
+    pub fn is_bypassed(&self) -> bool {
+        *self == ADC_DAP_EN_A::BYPASSED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DAP_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DAP_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_dap_en[1,0]` writer - DAP\\[i\\]
@@ -187,51 +187,51 @@ pub type ADC_DAP_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DAP_EN_W<'a, O> {
     #[doc = "Bypassed"]
     #[inline(always)]
-    pub fn b_ypassed(self) -> &'a mut W {
-        self.variant(ADC_DAP_EN_A::B_YPASSED)
+    pub fn bypassed(self) -> &'a mut W {
+        self.variant(ADC_DAP_EN_A::BYPASSED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DAP_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DAP_EN_A::ENABLED)
     }
 }
 impl R {
-    #[doc = "Bit 28 - ADC HPF\\[i\\]
+    #[doc = "Bit 24 - ADC HPF\\[i\\]
 enable control"]
     #[inline(always)]
     pub fn adc_hpf1_en(&self) -> ADC_HPF_EN_R {
-        ADC_HPF_EN_R::new(((self.bits >> 28) & 1) != 0)
+        ADC_HPF_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 32 - ADC HPF\\[i\\]
+    #[doc = "Bit 28 - ADC HPF\\[i\\]
 enable control"]
     #[inline(always)]
     pub fn adc_hpf0_en(&self) -> ADC_HPF_EN_R {
-        ADC_HPF_EN_R::new(((self.bits >> 32) & 1) != 0)
+        ADC_HPF_EN_R::new(((self.bits >> 28) & 1) != 0)
+    }
+    #[doc = "Bit 25 - ADC DRC\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_drc1_en(&self) -> ADC_DRC_EN_R {
+        ADC_DRC_EN_R::new(((self.bits >> 25) & 1) != 0)
     }
     #[doc = "Bit 29 - ADC DRC\\[i\\]
 enable control"]
     #[inline(always)]
-    pub fn adc_drc1_en(&self) -> ADC_DRC_EN_R {
+    pub fn adc_drc0_en(&self) -> ADC_DRC_EN_R {
         ADC_DRC_EN_R::new(((self.bits >> 29) & 1) != 0)
     }
-    #[doc = "Bit 33 - ADC DRC\\[i\\]
-enable control"]
+    #[doc = "Bit 27 - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
-    pub fn adc_drc0_en(&self) -> ADC_DRC_EN_R {
-        ADC_DRC_EN_R::new(((self.bits >> 33) & 1) != 0)
+    pub fn adc_dap1_en(&self) -> ADC_DAP_EN_R {
+        ADC_DAP_EN_R::new(((self.bits >> 27) & 1) != 0)
     }
     #[doc = "Bit 31 - DAP\\[i\\]
 for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
-    pub fn adc_dap1_en(&self) -> ADC_DAP_EN_R {
-        ADC_DAP_EN_R::new(((self.bits >> 31) & 1) != 0)
-    }
-    #[doc = "Bit 35 - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
-    #[inline(always)]
     pub fn adc_dap0_en(&self) -> ADC_DAP_EN_R {
-        ADC_DAP_EN_R::new(((self.bits >> 35) & 1) != 0)
+        ADC_DAP_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
@@ -241,16 +241,16 @@ enable control"]
     pub unsafe fn adc_hpf_en<const O: u8>(&mut self) -> ADC_HPF_EN_W<O> {
         ADC_HPF_EN_W::new(self)
     }
+    #[doc = "Bit 24 - ADC HPF\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_hpf1_en(&mut self) -> ADC_HPF_EN_W<24> {
+        ADC_HPF_EN_W::new(self)
+    }
     #[doc = "Bit 28 - ADC HPF\\[i\\]
 enable control"]
     #[inline(always)]
-    pub fn adc_hpf1_en(&mut self) -> ADC_HPF_EN_W<28> {
-        ADC_HPF_EN_W::new(self)
-    }
-    #[doc = "Bit 32 - ADC HPF\\[i\\]
-enable control"]
-    #[inline(always)]
-    pub fn adc_hpf0_en(&mut self) -> ADC_HPF_EN_W<32> {
+    pub fn adc_hpf0_en(&mut self) -> ADC_HPF_EN_W<28> {
         ADC_HPF_EN_W::new(self)
     }
     #[doc = "ADC DRC\\[i\\]
@@ -259,16 +259,16 @@ enable control"]
     pub unsafe fn adc_drc_en<const O: u8>(&mut self) -> ADC_DRC_EN_W<O> {
         ADC_DRC_EN_W::new(self)
     }
+    #[doc = "Bit 25 - ADC DRC\\[i\\]
+enable control"]
+    #[inline(always)]
+    pub fn adc_drc1_en(&mut self) -> ADC_DRC_EN_W<25> {
+        ADC_DRC_EN_W::new(self)
+    }
     #[doc = "Bit 29 - ADC DRC\\[i\\]
 enable control"]
     #[inline(always)]
-    pub fn adc_drc1_en(&mut self) -> ADC_DRC_EN_W<29> {
-        ADC_DRC_EN_W::new(self)
-    }
-    #[doc = "Bit 33 - ADC DRC\\[i\\]
-enable control"]
-    #[inline(always)]
-    pub fn adc_drc0_en(&mut self) -> ADC_DRC_EN_W<33> {
+    pub fn adc_drc0_en(&mut self) -> ADC_DRC_EN_W<29> {
         ADC_DRC_EN_W::new(self)
     }
     #[doc = "DAP\\[i\\]
@@ -277,16 +277,16 @@ for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     pub unsafe fn adc_dap_en<const O: u8>(&mut self) -> ADC_DAP_EN_W<O> {
         ADC_DAP_EN_W::new(self)
     }
+    #[doc = "Bit 27 - DAP\\[i\\]
+for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[inline(always)]
+    pub fn adc_dap1_en(&mut self) -> ADC_DAP_EN_W<27> {
+        ADC_DAP_EN_W::new(self)
+    }
     #[doc = "Bit 31 - DAP\\[i\\]
 for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
-    pub fn adc_dap1_en(&mut self) -> ADC_DAP_EN_W<31> {
-        ADC_DAP_EN_W::new(self)
-    }
-    #[doc = "Bit 35 - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
-    #[inline(always)]
-    pub fn adc_dap0_en(&mut self) -> ADC_DAP_EN_W<35> {
+    pub fn adc_dap0_en(&mut self) -> ADC_DAP_EN_W<31> {
         ADC_DAP_EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]

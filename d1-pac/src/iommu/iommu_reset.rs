@@ -46,7 +46,7 @@ occurs abnormal, the bit is used to reset PTW Cache individually.\n\nValue on re
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RST_A {
     #[doc = "0: Set reset signal"]
-    S_ET = 0,
+    SET = 0,
     #[doc = "1: Release reset signal"]
     R_ELEASE = 1,
 }
@@ -61,14 +61,14 @@ impl M_RST_R {
     #[inline(always)]
     pub fn variant(&self) -> M_RST_A {
         match self.bits {
-            false => M_RST_A::S_ET,
+            false => M_RST_A::SET,
             true => M_RST_A::R_ELEASE,
         }
     }
-    #[doc = "Checks if the value of the field is `S_ET`"]
+    #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
-    pub fn is_s_et(&self) -> bool {
-        *self == M_RST_A::S_ET
+    pub fn is_set(&self) -> bool {
+        *self == M_RST_A::SET
     }
     #[doc = "Checks if the value of the field is `R_ELEASE`"]
     #[inline(always)]
@@ -84,8 +84,8 @@ pub type M_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_RESET_SPEC, 
 impl<'a, const O: u8> M_RST_W<'a, O> {
     #[doc = "Set reset signal"]
     #[inline(always)]
-    pub fn s_et(self) -> &'a mut W {
-        self.variant(M_RST_A::S_ET)
+    pub fn set(self) -> &'a mut W {
+        self.variant(M_RST_A::SET)
     }
     #[doc = "Release reset signal"]
     #[inline(always)]
@@ -99,7 +99,7 @@ pub type MTLB_RST_R = crate::BitReader<MTLB_RST_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MTLB_RST_A {
     #[doc = "0: Set reset signal"]
-    S_ET = 0,
+    SET = 0,
     #[doc = "1: Release reset signal"]
     R_ELEASE = 1,
 }
@@ -114,14 +114,14 @@ impl MTLB_RST_R {
     #[inline(always)]
     pub fn variant(&self) -> MTLB_RST_A {
         match self.bits {
-            false => MTLB_RST_A::S_ET,
+            false => MTLB_RST_A::SET,
             true => MTLB_RST_A::R_ELEASE,
         }
     }
-    #[doc = "Checks if the value of the field is `S_ET`"]
+    #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
-    pub fn is_s_et(&self) -> bool {
-        *self == MTLB_RST_A::S_ET
+    pub fn is_set(&self) -> bool {
+        *self == MTLB_RST_A::SET
     }
     #[doc = "Checks if the value of the field is `R_ELEASE`"]
     #[inline(always)]
@@ -134,8 +134,8 @@ pub type MTLB_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_RESET_SPE
 impl<'a, const O: u8> MTLB_RST_W<'a, O> {
     #[doc = "Set reset signal"]
     #[inline(always)]
-    pub fn s_et(self) -> &'a mut W {
-        self.variant(MTLB_RST_A::S_ET)
+    pub fn set(self) -> &'a mut W {
+        self.variant(MTLB_RST_A::SET)
     }
     #[doc = "Release reset signal"]
     #[inline(always)]
@@ -149,7 +149,7 @@ pub type PC_RST_R = crate::BitReader<PC_RST_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PC_RST_A {
     #[doc = "0: Set reset signal"]
-    S_ET = 0,
+    SET = 0,
     #[doc = "1: Release reset signal"]
     R_ELEASE = 1,
 }
@@ -164,14 +164,14 @@ impl PC_RST_R {
     #[inline(always)]
     pub fn variant(&self) -> PC_RST_A {
         match self.bits {
-            false => PC_RST_A::S_ET,
+            false => PC_RST_A::SET,
             true => PC_RST_A::R_ELEASE,
         }
     }
-    #[doc = "Checks if the value of the field is `S_ET`"]
+    #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
-    pub fn is_s_et(&self) -> bool {
-        *self == PC_RST_A::S_ET
+    pub fn is_set(&self) -> bool {
+        *self == PC_RST_A::SET
     }
     #[doc = "Checks if the value of the field is `R_ELEASE`"]
     #[inline(always)]
@@ -184,8 +184,8 @@ pub type PC_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_RESET_SPEC,
 impl<'a, const O: u8> PC_RST_W<'a, O> {
     #[doc = "Set reset signal"]
     #[inline(always)]
-    pub fn s_et(self) -> &'a mut W {
-        self.variant(PC_RST_A::S_ET)
+    pub fn set(self) -> &'a mut W {
+        self.variant(PC_RST_A::SET)
     }
     #[doc = "Release reset signal"]
     #[inline(always)]
@@ -199,7 +199,7 @@ pub type IOMMU_RESET_R = crate::BitReader<IOMMU_RESET_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IOMMU_RESET_A {
     #[doc = "0: Set reset signal"]
-    S_ET = 0,
+    SET = 0,
     #[doc = "1: Release reset signal"]
     R_ELEASE = 1,
 }
@@ -214,14 +214,14 @@ impl IOMMU_RESET_R {
     #[inline(always)]
     pub fn variant(&self) -> IOMMU_RESET_A {
         match self.bits {
-            false => IOMMU_RESET_A::S_ET,
+            false => IOMMU_RESET_A::SET,
             true => IOMMU_RESET_A::R_ELEASE,
         }
     }
-    #[doc = "Checks if the value of the field is `S_ET`"]
+    #[doc = "Checks if the value of the field is `SET`"]
     #[inline(always)]
-    pub fn is_s_et(&self) -> bool {
-        *self == IOMMU_RESET_A::S_ET
+    pub fn is_set(&self) -> bool {
+        *self == IOMMU_RESET_A::SET
     }
     #[doc = "Checks if the value of the field is `R_ELEASE`"]
     #[inline(always)]
@@ -235,8 +235,8 @@ pub type IOMMU_RESET_W<'a, const O: u8> =
 impl<'a, const O: u8> IOMMU_RESET_W<'a, O> {
     #[doc = "Set reset signal"]
     #[inline(always)]
-    pub fn s_et(self) -> &'a mut W {
-        self.variant(IOMMU_RESET_A::S_ET)
+    pub fn set(self) -> &'a mut W {
+        self.variant(IOMMU_RESET_A::SET)
     }
     #[doc = "Release reset signal"]
     #[inline(always)]

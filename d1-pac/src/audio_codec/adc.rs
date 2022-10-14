@@ -518,13 +518,13 @@ pub type IOPBUFFER_R = crate::FieldReader<u8, IOPBUFFER_A>;
 #[repr(u8)]
 pub enum IOPBUFFER_A {
     #[doc = "0: 6 uA"]
-    _6_U_A = 0,
+    _6UA = 0,
     #[doc = "1: 7 uA"]
-    _7_U_A = 1,
+    _7UA = 1,
     #[doc = "2: 8 uA"]
-    _8_U_A = 2,
+    _8UA = 2,
     #[doc = "3: 9 uA"]
-    _9_U_A = 3,
+    _9UA = 3,
 }
 impl From<IOPBUFFER_A> for u8 {
     #[inline(always)]
@@ -537,32 +537,32 @@ impl IOPBUFFER_R {
     #[inline(always)]
     pub fn variant(&self) -> IOPBUFFER_A {
         match self.bits {
-            0 => IOPBUFFER_A::_6_U_A,
-            1 => IOPBUFFER_A::_7_U_A,
-            2 => IOPBUFFER_A::_8_U_A,
-            3 => IOPBUFFER_A::_9_U_A,
+            0 => IOPBUFFER_A::_6UA,
+            1 => IOPBUFFER_A::_7UA,
+            2 => IOPBUFFER_A::_8UA,
+            3 => IOPBUFFER_A::_9UA,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_6_U_A`"]
+    #[doc = "Checks if the value of the field is `_6UA`"]
     #[inline(always)]
-    pub fn is_6_u_a(&self) -> bool {
-        *self == IOPBUFFER_A::_6_U_A
+    pub fn is_6ua(&self) -> bool {
+        *self == IOPBUFFER_A::_6UA
     }
-    #[doc = "Checks if the value of the field is `_7_U_A`"]
+    #[doc = "Checks if the value of the field is `_7UA`"]
     #[inline(always)]
-    pub fn is_7_u_a(&self) -> bool {
-        *self == IOPBUFFER_A::_7_U_A
+    pub fn is_7ua(&self) -> bool {
+        *self == IOPBUFFER_A::_7UA
     }
-    #[doc = "Checks if the value of the field is `_8_U_A`"]
+    #[doc = "Checks if the value of the field is `_8UA`"]
     #[inline(always)]
-    pub fn is_8_u_a(&self) -> bool {
-        *self == IOPBUFFER_A::_8_U_A
+    pub fn is_8ua(&self) -> bool {
+        *self == IOPBUFFER_A::_8UA
     }
-    #[doc = "Checks if the value of the field is `_9_U_A`"]
+    #[doc = "Checks if the value of the field is `_9UA`"]
     #[inline(always)]
-    pub fn is_9_u_a(&self) -> bool {
-        *self == IOPBUFFER_A::_9_U_A
+    pub fn is_9ua(&self) -> bool {
+        *self == IOPBUFFER_A::_9UA
     }
 }
 #[doc = "Field `iopbuffer` writer - PGA Vcm Buffer OP Bias Current Select"]
@@ -571,23 +571,23 @@ pub type IOPBUFFER_W<'a, const O: u8> =
 impl<'a, const O: u8> IOPBUFFER_W<'a, O> {
     #[doc = "6 uA"]
     #[inline(always)]
-    pub fn _6_u_a(self) -> &'a mut W {
-        self.variant(IOPBUFFER_A::_6_U_A)
+    pub fn _6ua(self) -> &'a mut W {
+        self.variant(IOPBUFFER_A::_6UA)
     }
     #[doc = "7 uA"]
     #[inline(always)]
-    pub fn _7_u_a(self) -> &'a mut W {
-        self.variant(IOPBUFFER_A::_7_U_A)
+    pub fn _7ua(self) -> &'a mut W {
+        self.variant(IOPBUFFER_A::_7UA)
     }
     #[doc = "8 uA"]
     #[inline(always)]
-    pub fn _8_u_a(self) -> &'a mut W {
-        self.variant(IOPBUFFER_A::_8_U_A)
+    pub fn _8ua(self) -> &'a mut W {
+        self.variant(IOPBUFFER_A::_8UA)
     }
     #[doc = "9 uA"]
     #[inline(always)]
-    pub fn _9_u_a(self) -> &'a mut W {
-        self.variant(IOPBUFFER_A::_9_U_A)
+    pub fn _9ua(self) -> &'a mut W {
+        self.variant(IOPBUFFER_A::_9UA)
     }
 }
 #[doc = "Field `lineinlg` reader - LINEINL Gain Control"]
@@ -596,9 +596,9 @@ pub type LINEINLG_R = crate::BitReader<LINEINLG_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINEINLG_A {
     #[doc = "0: 0 dB"]
-    _0_D_B = 0,
+    _0DB = 0,
     #[doc = "1: 6 dB"]
-    _6_D_B = 1,
+    _6DB = 1,
 }
 impl From<LINEINLG_A> for bool {
     #[inline(always)]
@@ -611,19 +611,19 @@ impl LINEINLG_R {
     #[inline(always)]
     pub fn variant(&self) -> LINEINLG_A {
         match self.bits {
-            false => LINEINLG_A::_0_D_B,
-            true => LINEINLG_A::_6_D_B,
+            false => LINEINLG_A::_0DB,
+            true => LINEINLG_A::_6DB,
         }
     }
-    #[doc = "Checks if the value of the field is `_0_D_B`"]
+    #[doc = "Checks if the value of the field is `_0DB`"]
     #[inline(always)]
-    pub fn is_0_d_b(&self) -> bool {
-        *self == LINEINLG_A::_0_D_B
+    pub fn is_0db(&self) -> bool {
+        *self == LINEINLG_A::_0DB
     }
-    #[doc = "Checks if the value of the field is `_6_D_B`"]
+    #[doc = "Checks if the value of the field is `_6DB`"]
     #[inline(always)]
-    pub fn is_6_d_b(&self) -> bool {
-        *self == LINEINLG_A::_6_D_B
+    pub fn is_6db(&self) -> bool {
+        *self == LINEINLG_A::_6DB
     }
 }
 #[doc = "Field `lineinlg` writer - LINEINL Gain Control"]
@@ -631,13 +631,13 @@ pub type LINEINLG_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_SPEC, LINEI
 impl<'a, const O: u8> LINEINLG_W<'a, O> {
     #[doc = "0 dB"]
     #[inline(always)]
-    pub fn _0_d_b(self) -> &'a mut W {
-        self.variant(LINEINLG_A::_0_D_B)
+    pub fn _0db(self) -> &'a mut W {
+        self.variant(LINEINLG_A::_0DB)
     }
     #[doc = "6 dB"]
     #[inline(always)]
-    pub fn _6_d_b(self) -> &'a mut W {
-        self.variant(LINEINLG_A::_6_D_B)
+    pub fn _6db(self) -> &'a mut W {
+        self.variant(LINEINLG_A::_6DB)
     }
 }
 #[doc = "Field `lineinlen` reader - LINEINL Enable"]
@@ -646,9 +646,9 @@ pub type LINEINLEN_R = crate::BitReader<LINEINLEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LINEINLEN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<LINEINLEN_A> for bool {
     #[inline(always)]
@@ -661,19 +661,19 @@ impl LINEINLEN_R {
     #[inline(always)]
     pub fn variant(&self) -> LINEINLEN_A {
         match self.bits {
-            false => LINEINLEN_A::D_ISABLE,
-            true => LINEINLEN_A::E_NABLE,
+            false => LINEINLEN_A::DISABLE,
+            true => LINEINLEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LINEINLEN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == LINEINLEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LINEINLEN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == LINEINLEN_A::ENABLE
     }
 }
 #[doc = "Field `lineinlen` writer - LINEINL Enable"]
@@ -681,13 +681,13 @@ pub type LINEINLEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_SPEC, LINE
 impl<'a, const O: u8> LINEINLEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LINEINLEN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LINEINLEN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LINEINLEN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LINEINLEN_A::ENABLE)
     }
 }
 #[doc = "Field `dsm_dither_lvl` reader - Dither Level Control (Dither level is positive ralated to the ctrl bits)"]
@@ -775,9 +775,9 @@ pub type FMINLG_R = crate::BitReader<FMINLG_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FMINLG_A {
     #[doc = "0: 0 dB"]
-    _0_D_B = 0,
+    _0DB = 0,
     #[doc = "1: 6 dB"]
-    _6_D_B = 1,
+    _6DB = 1,
 }
 impl From<FMINLG_A> for bool {
     #[inline(always)]
@@ -790,19 +790,19 @@ impl FMINLG_R {
     #[inline(always)]
     pub fn variant(&self) -> FMINLG_A {
         match self.bits {
-            false => FMINLG_A::_0_D_B,
-            true => FMINLG_A::_6_D_B,
+            false => FMINLG_A::_0DB,
+            true => FMINLG_A::_6DB,
         }
     }
-    #[doc = "Checks if the value of the field is `_0_D_B`"]
+    #[doc = "Checks if the value of the field is `_0DB`"]
     #[inline(always)]
-    pub fn is_0_d_b(&self) -> bool {
-        *self == FMINLG_A::_0_D_B
+    pub fn is_0db(&self) -> bool {
+        *self == FMINLG_A::_0DB
     }
-    #[doc = "Checks if the value of the field is `_6_D_B`"]
+    #[doc = "Checks if the value of the field is `_6DB`"]
     #[inline(always)]
-    pub fn is_6_d_b(&self) -> bool {
-        *self == FMINLG_A::_6_D_B
+    pub fn is_6db(&self) -> bool {
+        *self == FMINLG_A::_6DB
     }
 }
 #[doc = "Field `fminlg` writer - FMINL Gain Control"]
@@ -810,13 +810,13 @@ pub type FMINLG_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_SPEC, FMINLG_
 impl<'a, const O: u8> FMINLG_W<'a, O> {
     #[doc = "0 dB"]
     #[inline(always)]
-    pub fn _0_d_b(self) -> &'a mut W {
-        self.variant(FMINLG_A::_0_D_B)
+    pub fn _0db(self) -> &'a mut W {
+        self.variant(FMINLG_A::_0DB)
     }
     #[doc = "6 dB"]
     #[inline(always)]
-    pub fn _6_d_b(self) -> &'a mut W {
-        self.variant(FMINLG_A::_6_D_B)
+    pub fn _6db(self) -> &'a mut W {
+        self.variant(FMINLG_A::_6DB)
     }
 }
 #[doc = "Field `fminlen` reader - FMINL Enable"]
@@ -825,9 +825,9 @@ pub type FMINLEN_R = crate::BitReader<FMINLEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FMINLEN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<FMINLEN_A> for bool {
     #[inline(always)]
@@ -840,19 +840,19 @@ impl FMINLEN_R {
     #[inline(always)]
     pub fn variant(&self) -> FMINLEN_A {
         match self.bits {
-            false => FMINLEN_A::D_ISABLE,
-            true => FMINLEN_A::E_NABLE,
+            false => FMINLEN_A::DISABLE,
+            true => FMINLEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == FMINLEN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == FMINLEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == FMINLEN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == FMINLEN_A::ENABLE
     }
 }
 #[doc = "Field `fminlen` writer - FMINL Enable"]
@@ -860,13 +860,13 @@ pub type FMINLEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_SPEC, FMINLE
 impl<'a, const O: u8> FMINLEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(FMINLEN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(FMINLEN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(FMINLEN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(FMINLEN_A::ENABLE)
     }
 }
 #[doc = "Field `mic_sin_en` reader - MIC Single Input Enable"]
@@ -875,9 +875,9 @@ pub type MIC_SIN_EN_R = crate::BitReader<MIC_SIN_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MIC_SIN_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<MIC_SIN_EN_A> for bool {
     #[inline(always)]
@@ -890,19 +890,19 @@ impl MIC_SIN_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> MIC_SIN_EN_A {
         match self.bits {
-            false => MIC_SIN_EN_A::D_ISABLE,
-            true => MIC_SIN_EN_A::E_NABLE,
+            false => MIC_SIN_EN_A::DISABLE,
+            true => MIC_SIN_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == MIC_SIN_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == MIC_SIN_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == MIC_SIN_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == MIC_SIN_EN_A::ENABLE
     }
 }
 #[doc = "Field `mic_sin_en` writer - MIC Single Input Enable"]
@@ -910,13 +910,13 @@ pub type MIC_SIN_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_SPEC, MIC
 impl<'a, const O: u8> MIC_SIN_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(MIC_SIN_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(MIC_SIN_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(MIC_SIN_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MIC_SIN_EN_A::ENABLE)
     }
 }
 #[doc = "Field `adc_d_itcher_c_ontrol` reader - Dither Control"]
@@ -976,9 +976,9 @@ pub type MIC_PGA_EN_R = crate::BitReader<MIC_PGA_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MIC_PGA_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<MIC_PGA_EN_A> for bool {
     #[inline(always)]
@@ -991,19 +991,19 @@ impl MIC_PGA_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> MIC_PGA_EN_A {
         match self.bits {
-            false => MIC_PGA_EN_A::D_ISABLED,
-            true => MIC_PGA_EN_A::E_NABLED,
+            false => MIC_PGA_EN_A::DISABLED,
+            true => MIC_PGA_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == MIC_PGA_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == MIC_PGA_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == MIC_PGA_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == MIC_PGA_EN_A::ENABLED
     }
 }
 #[doc = "Field `mic_pga_en` writer - MIC PGA Enable"]
@@ -1011,13 +1011,13 @@ pub type MIC_PGA_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_SPEC, MIC
 impl<'a, const O: u8> MIC_PGA_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(MIC_PGA_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MIC_PGA_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(MIC_PGA_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(MIC_PGA_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_en` reader - ADC Channel Enable"]
@@ -1026,9 +1026,9 @@ pub type ADC_EN_R = crate::BitReader<ADC_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_EN_A> for bool {
     #[inline(always)]
@@ -1041,19 +1041,19 @@ impl ADC_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_EN_A {
         match self.bits {
-            false => ADC_EN_A::D_ISABLED,
-            true => ADC_EN_A::E_NABLED,
+            false => ADC_EN_A::DISABLED,
+            true => ADC_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_en` writer - ADC Channel Enable"]
@@ -1061,13 +1061,13 @@ pub type ADC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADC_SPEC, ADC_EN_
 impl<'a, const O: u8> ADC_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_EN_A::ENABLED)
     }
 }
 impl R {

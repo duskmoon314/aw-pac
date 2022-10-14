@@ -42,9 +42,9 @@ Invert\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_INV_A {
     #[doc = "0: Not invert"]
-    N_OT_INVERT = 0,
+    NOT_INVERT = 0,
     #[doc = "1: Invert"]
-    I_NVERT = 1,
+    INVERT = 1,
 }
 impl From<IO_INV_A> for bool {
     #[inline(always)]
@@ -57,19 +57,19 @@ impl IO_INV_R {
     #[inline(always)]
     pub fn variant(&self) -> IO_INV_A {
         match self.bits {
-            false => IO_INV_A::N_OT_INVERT,
-            true => IO_INV_A::I_NVERT,
+            false => IO_INV_A::NOT_INVERT,
+            true => IO_INV_A::INVERT,
         }
     }
-    #[doc = "Checks if the value of the field is `N_OT_INVERT`"]
+    #[doc = "Checks if the value of the field is `NOT_INVERT`"]
     #[inline(always)]
-    pub fn is_n_ot_invert(&self) -> bool {
-        *self == IO_INV_A::N_OT_INVERT
+    pub fn is_not_invert(&self) -> bool {
+        *self == IO_INV_A::NOT_INVERT
     }
-    #[doc = "Checks if the value of the field is `I_NVERT`"]
+    #[doc = "Checks if the value of the field is `INVERT`"]
     #[inline(always)]
-    pub fn is_i_nvert(&self) -> bool {
-        *self == IO_INV_A::I_NVERT
+    pub fn is_invert(&self) -> bool {
+        *self == IO_INV_A::INVERT
     }
 }
 #[doc = "Field `io_inv[0-3]` writer - IO\\[i\\]
@@ -78,13 +78,13 @@ pub type IO_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_IO_POL_SPEC, I
 impl<'a, const O: u8> IO_INV_W<'a, O> {
     #[doc = "Not invert"]
     #[inline(always)]
-    pub fn n_ot_invert(self) -> &'a mut W {
-        self.variant(IO_INV_A::N_OT_INVERT)
+    pub fn not_invert(self) -> &'a mut W {
+        self.variant(IO_INV_A::NOT_INVERT)
     }
     #[doc = "Invert"]
     #[inline(always)]
-    pub fn i_nvert(self) -> &'a mut W {
-        self.variant(IO_INV_A::I_NVERT)
+    pub fn invert(self) -> &'a mut W {
+        self.variant(IO_INV_A::INVERT)
     }
 }
 impl R {

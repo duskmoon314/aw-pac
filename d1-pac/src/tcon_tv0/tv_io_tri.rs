@@ -42,9 +42,9 @@ Output Trigger Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_OUTPUT_TRI_EN_A {
     #[doc = "1: Disable"]
-    D_ISABLE = 1,
+    DISABLE = 1,
     #[doc = "0: Enable"]
-    E_NABLE = 0,
+    ENABLE = 0,
 }
 impl From<IO_OUTPUT_TRI_EN_A> for bool {
     #[inline(always)]
@@ -57,19 +57,19 @@ impl IO_OUTPUT_TRI_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> IO_OUTPUT_TRI_EN_A {
         match self.bits {
-            true => IO_OUTPUT_TRI_EN_A::D_ISABLE,
-            false => IO_OUTPUT_TRI_EN_A::E_NABLE,
+            true => IO_OUTPUT_TRI_EN_A::DISABLE,
+            false => IO_OUTPUT_TRI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == IO_OUTPUT_TRI_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == IO_OUTPUT_TRI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == IO_OUTPUT_TRI_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == IO_OUTPUT_TRI_EN_A::ENABLE
     }
 }
 #[doc = "Field `io_output_tri_en[0-3]` writer - IO\\[i\\]
@@ -79,13 +79,13 @@ pub type IO_OUTPUT_TRI_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> IO_OUTPUT_TRI_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(IO_OUTPUT_TRI_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IO_OUTPUT_TRI_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(IO_OUTPUT_TRI_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(IO_OUTPUT_TRI_EN_A::ENABLE)
     }
 }
 impl R {

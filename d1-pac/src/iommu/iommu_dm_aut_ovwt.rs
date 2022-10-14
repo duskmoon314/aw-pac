@@ -148,9 +148,9 @@ pub type DM_AUT_OVWT_ENABLE_R = crate::BitReader<DM_AUT_OVWT_ENABLE_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DM_AUT_OVWT_ENABLE_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<DM_AUT_OVWT_ENABLE_A> for bool {
     #[inline(always)]
@@ -163,19 +163,19 @@ impl DM_AUT_OVWT_ENABLE_R {
     #[inline(always)]
     pub fn variant(&self) -> DM_AUT_OVWT_ENABLE_A {
         match self.bits {
-            false => DM_AUT_OVWT_ENABLE_A::D_ISABLE,
-            true => DM_AUT_OVWT_ENABLE_A::E_NABLE,
+            false => DM_AUT_OVWT_ENABLE_A::DISABLE,
+            true => DM_AUT_OVWT_ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == DM_AUT_OVWT_ENABLE_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == DM_AUT_OVWT_ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == DM_AUT_OVWT_ENABLE_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == DM_AUT_OVWT_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `dm_aut_ovwt_enable` writer - Domain write/read permission overwrite enable"]
@@ -184,13 +184,13 @@ pub type DM_AUT_OVWT_ENABLE_W<'a, const O: u8> =
 impl<'a, const O: u8> DM_AUT_OVWT_ENABLE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(DM_AUT_OVWT_ENABLE_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(DM_AUT_OVWT_ENABLE_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(DM_AUT_OVWT_ENABLE_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DM_AUT_OVWT_ENABLE_A::ENABLE)
     }
 }
 impl R {

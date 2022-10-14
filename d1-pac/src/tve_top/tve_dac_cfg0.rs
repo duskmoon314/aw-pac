@@ -40,9 +40,9 @@ pub type DAC_EN_R = crate::BitReader<DAC_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<DAC_EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl DAC_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> DAC_EN_A {
         match self.bits {
-            false => DAC_EN_A::D_ISABLE,
-            true => DAC_EN_A::E_NABLE,
+            false => DAC_EN_A::DISABLE,
+            true => DAC_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == DAC_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == DAC_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == DAC_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == DAC_EN_A::ENABLE
     }
 }
 #[doc = "Field `dac_en` writer - "]
@@ -75,13 +75,13 @@ pub type DAC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVE_DAC_CFG0_SPEC
 impl<'a, const O: u8> DAC_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(DAC_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(DAC_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(DAC_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DAC_EN_A::ENABLE)
     }
 }
 #[doc = "Field `bias_ref_int_en` reader - (A_EN_RESREF)"]
@@ -90,9 +90,9 @@ pub type BIAS_REF_INT_EN_R = crate::BitReader<BIAS_REF_INT_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIAS_REF_INT_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<BIAS_REF_INT_EN_A> for bool {
     #[inline(always)]
@@ -105,19 +105,19 @@ impl BIAS_REF_INT_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> BIAS_REF_INT_EN_A {
         match self.bits {
-            false => BIAS_REF_INT_EN_A::D_ISABLE,
-            true => BIAS_REF_INT_EN_A::E_NABLE,
+            false => BIAS_REF_INT_EN_A::DISABLE,
+            true => BIAS_REF_INT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BIAS_REF_INT_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == BIAS_REF_INT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BIAS_REF_INT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == BIAS_REF_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `bias_ref_int_en` writer - (A_EN_RESREF)"]
@@ -126,13 +126,13 @@ pub type BIAS_REF_INT_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> BIAS_REF_INT_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BIAS_REF_INT_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BIAS_REF_INT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BIAS_REF_INT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BIAS_REF_INT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `bias_int_sel` reader - (A_SEL_BIAS_RES)"]
@@ -141,9 +141,9 @@ pub type BIAS_INT_SEL_R = crate::BitReader<BIAS_INT_SEL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIAS_INT_SEL_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<BIAS_INT_SEL_A> for bool {
     #[inline(always)]
@@ -156,19 +156,19 @@ impl BIAS_INT_SEL_R {
     #[inline(always)]
     pub fn variant(&self) -> BIAS_INT_SEL_A {
         match self.bits {
-            false => BIAS_INT_SEL_A::D_ISABLE,
-            true => BIAS_INT_SEL_A::E_NABLE,
+            false => BIAS_INT_SEL_A::DISABLE,
+            true => BIAS_INT_SEL_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BIAS_INT_SEL_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == BIAS_INT_SEL_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BIAS_INT_SEL_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == BIAS_INT_SEL_A::ENABLE
     }
 }
 #[doc = "Field `bias_int_sel` writer - (A_SEL_BIAS_RES)"]
@@ -177,13 +177,13 @@ pub type BIAS_INT_SEL_W<'a, const O: u8> =
 impl<'a, const O: u8> BIAS_INT_SEL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BIAS_INT_SEL_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BIAS_INT_SEL_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BIAS_INT_SEL_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BIAS_INT_SEL_A::ENABLE)
     }
 }
 #[doc = "Field `bias_ext_sel` reader - (A_SEL_BIAS_ADDA)"]
@@ -192,9 +192,9 @@ pub type BIAS_EXT_SEL_R = crate::BitReader<BIAS_EXT_SEL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BIAS_EXT_SEL_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<BIAS_EXT_SEL_A> for bool {
     #[inline(always)]
@@ -207,19 +207,19 @@ impl BIAS_EXT_SEL_R {
     #[inline(always)]
     pub fn variant(&self) -> BIAS_EXT_SEL_A {
         match self.bits {
-            false => BIAS_EXT_SEL_A::D_ISABLE,
-            true => BIAS_EXT_SEL_A::E_NABLE,
+            false => BIAS_EXT_SEL_A::DISABLE,
+            true => BIAS_EXT_SEL_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BIAS_EXT_SEL_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == BIAS_EXT_SEL_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BIAS_EXT_SEL_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == BIAS_EXT_SEL_A::ENABLE
     }
 }
 #[doc = "Field `bias_ext_sel` writer - (A_SEL_BIAS_ADDA)"]
@@ -228,13 +228,13 @@ pub type BIAS_EXT_SEL_W<'a, const O: u8> =
 impl<'a, const O: u8> BIAS_EXT_SEL_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BIAS_EXT_SEL_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BIAS_EXT_SEL_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BIAS_EXT_SEL_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BIAS_EXT_SEL_A::ENABLE)
     }
 }
 #[doc = "Field `low_bias` reader - 500 uA to 4 mA"]
@@ -252,9 +252,9 @@ pub type DAC_CLOCK_INVERT_R = crate::BitReader<DAC_CLOCK_INVERT_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DAC_CLOCK_INVERT_A {
     #[doc = "0: Not invert"]
-    N_OT_INVERT = 0,
+    NOT_INVERT = 0,
     #[doc = "1: Invert"]
-    I_NVERT = 1,
+    INVERT = 1,
 }
 impl From<DAC_CLOCK_INVERT_A> for bool {
     #[inline(always)]
@@ -267,19 +267,19 @@ impl DAC_CLOCK_INVERT_R {
     #[inline(always)]
     pub fn variant(&self) -> DAC_CLOCK_INVERT_A {
         match self.bits {
-            false => DAC_CLOCK_INVERT_A::N_OT_INVERT,
-            true => DAC_CLOCK_INVERT_A::I_NVERT,
+            false => DAC_CLOCK_INVERT_A::NOT_INVERT,
+            true => DAC_CLOCK_INVERT_A::INVERT,
         }
     }
-    #[doc = "Checks if the value of the field is `N_OT_INVERT`"]
+    #[doc = "Checks if the value of the field is `NOT_INVERT`"]
     #[inline(always)]
-    pub fn is_n_ot_invert(&self) -> bool {
-        *self == DAC_CLOCK_INVERT_A::N_OT_INVERT
+    pub fn is_not_invert(&self) -> bool {
+        *self == DAC_CLOCK_INVERT_A::NOT_INVERT
     }
-    #[doc = "Checks if the value of the field is `I_NVERT`"]
+    #[doc = "Checks if the value of the field is `INVERT`"]
     #[inline(always)]
-    pub fn is_i_nvert(&self) -> bool {
-        *self == DAC_CLOCK_INVERT_A::I_NVERT
+    pub fn is_invert(&self) -> bool {
+        *self == DAC_CLOCK_INVERT_A::INVERT
     }
 }
 #[doc = "Field `dac_clock_invert` writer - "]
@@ -288,13 +288,13 @@ pub type DAC_CLOCK_INVERT_W<'a, const O: u8> =
 impl<'a, const O: u8> DAC_CLOCK_INVERT_W<'a, O> {
     #[doc = "Not invert"]
     #[inline(always)]
-    pub fn n_ot_invert(self) -> &'a mut W {
-        self.variant(DAC_CLOCK_INVERT_A::N_OT_INVERT)
+    pub fn not_invert(self) -> &'a mut W {
+        self.variant(DAC_CLOCK_INVERT_A::NOT_INVERT)
     }
     #[doc = "Invert"]
     #[inline(always)]
-    pub fn i_nvert(self) -> &'a mut W {
-        self.variant(DAC_CLOCK_INVERT_A::I_NVERT)
+    pub fn invert(self) -> &'a mut W {
+        self.variant(DAC_CLOCK_INVERT_A::INVERT)
     }
 }
 impl R {

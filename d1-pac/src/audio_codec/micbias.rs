@@ -41,13 +41,13 @@ pub type MMIC_BIAS_CHOPPER_CLK_SEL_R = crate::FieldReader<u8, MMIC_BIAS_CHOPPER_
 #[repr(u8)]
 pub enum MMIC_BIAS_CHOPPER_CLK_SEL_A {
     #[doc = "0: 250 kHz"]
-    _250_K_H_Z = 0,
+    _250KHZ = 0,
     #[doc = "1: 500 kHz"]
-    _500_K_H_Z = 1,
+    _500KHZ = 1,
     #[doc = "2: 1 MHz"]
-    _1_M_H_Z = 2,
+    _1MHZ = 2,
     #[doc = "3: 2 MHz"]
-    _2_M_H_Z = 3,
+    _2MHZ = 3,
 }
 impl From<MMIC_BIAS_CHOPPER_CLK_SEL_A> for u8 {
     #[inline(always)]
@@ -60,32 +60,32 @@ impl MMIC_BIAS_CHOPPER_CLK_SEL_R {
     #[inline(always)]
     pub fn variant(&self) -> MMIC_BIAS_CHOPPER_CLK_SEL_A {
         match self.bits {
-            0 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_250_K_H_Z,
-            1 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_500_K_H_Z,
-            2 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_1_M_H_Z,
-            3 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_2_M_H_Z,
+            0 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ,
+            1 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ,
+            2 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ,
+            3 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_250_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_250KHZ`"]
     #[inline(always)]
-    pub fn is_250_k_h_z(&self) -> bool {
-        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_250_K_H_Z
+    pub fn is_250khz(&self) -> bool {
+        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ
     }
-    #[doc = "Checks if the value of the field is `_500_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_500KHZ`"]
     #[inline(always)]
-    pub fn is_500_k_h_z(&self) -> bool {
-        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_500_K_H_Z
+    pub fn is_500khz(&self) -> bool {
+        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ
     }
-    #[doc = "Checks if the value of the field is `_1_M_H_Z`"]
+    #[doc = "Checks if the value of the field is `_1MHZ`"]
     #[inline(always)]
-    pub fn is_1_m_h_z(&self) -> bool {
-        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_1_M_H_Z
+    pub fn is_1mhz(&self) -> bool {
+        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ
     }
-    #[doc = "Checks if the value of the field is `_2_M_H_Z`"]
+    #[doc = "Checks if the value of the field is `_2MHZ`"]
     #[inline(always)]
-    pub fn is_2_m_h_z(&self) -> bool {
-        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_2_M_H_Z
+    pub fn is_2mhz(&self) -> bool {
+        *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ
     }
 }
 #[doc = "Field `mmic_bias_chopper_clk_sel` writer - MMIC BIAS Chopper Clock Select"]
@@ -94,23 +94,23 @@ pub type MMIC_BIAS_CHOPPER_CLK_SEL_W<'a, const O: u8> =
 impl<'a, const O: u8> MMIC_BIAS_CHOPPER_CLK_SEL_W<'a, O> {
     #[doc = "250 kHz"]
     #[inline(always)]
-    pub fn _250_k_h_z(self) -> &'a mut W {
-        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_250_K_H_Z)
+    pub fn _250khz(self) -> &'a mut W {
+        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ)
     }
     #[doc = "500 kHz"]
     #[inline(always)]
-    pub fn _500_k_h_z(self) -> &'a mut W {
-        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_500_K_H_Z)
+    pub fn _500khz(self) -> &'a mut W {
+        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ)
     }
     #[doc = "1 MHz"]
     #[inline(always)]
-    pub fn _1_m_h_z(self) -> &'a mut W {
-        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_1_M_H_Z)
+    pub fn _1mhz(self) -> &'a mut W {
+        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ)
     }
     #[doc = "2 MHz"]
     #[inline(always)]
-    pub fn _2_m_h_z(self) -> &'a mut W {
-        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_2_M_H_Z)
+    pub fn _2mhz(self) -> &'a mut W {
+        self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ)
     }
 }
 #[doc = "Field `mmic_bias_chopper_en` reader - MMIC BIAS Chopper Enable"]
@@ -119,9 +119,9 @@ pub type MMIC_BIAS_CHOPPER_EN_R = crate::BitReader<MMIC_BIAS_CHOPPER_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MMIC_BIAS_CHOPPER_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<MMIC_BIAS_CHOPPER_EN_A> for bool {
     #[inline(always)]
@@ -134,19 +134,19 @@ impl MMIC_BIAS_CHOPPER_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> MMIC_BIAS_CHOPPER_EN_A {
         match self.bits {
-            false => MMIC_BIAS_CHOPPER_EN_A::D_ISABLED,
-            true => MMIC_BIAS_CHOPPER_EN_A::E_NABLED,
+            false => MMIC_BIAS_CHOPPER_EN_A::DISABLED,
+            true => MMIC_BIAS_CHOPPER_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == MMIC_BIAS_CHOPPER_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == MMIC_BIAS_CHOPPER_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == MMIC_BIAS_CHOPPER_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == MMIC_BIAS_CHOPPER_EN_A::ENABLED
     }
 }
 #[doc = "Field `mmic_bias_chopper_en` writer - MMIC BIAS Chopper Enable"]
@@ -155,13 +155,13 @@ pub type MMIC_BIAS_CHOPPER_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> MMIC_BIAS_CHOPPER_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(MMIC_BIAS_CHOPPER_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MMIC_BIAS_CHOPPER_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(MMIC_BIAS_CHOPPER_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(MMIC_BIAS_CHOPPER_EN_A::ENABLED)
     }
 }
 #[doc = "Field `mbiassel` reader - MMICBIAS Voltage Level Select"]
@@ -249,9 +249,9 @@ pub type MMICBIASEN_R = crate::BitReader<MMICBIASEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MMICBIASEN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<MMICBIASEN_A> for bool {
     #[inline(always)]
@@ -264,19 +264,19 @@ impl MMICBIASEN_R {
     #[inline(always)]
     pub fn variant(&self) -> MMICBIASEN_A {
         match self.bits {
-            false => MMICBIASEN_A::D_ISABLED,
-            true => MMICBIASEN_A::E_NABLED,
+            false => MMICBIASEN_A::DISABLED,
+            true => MMICBIASEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == MMICBIASEN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == MMICBIASEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == MMICBIASEN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == MMICBIASEN_A::ENABLED
     }
 }
 #[doc = "Field `mmicbiasen` writer - Master Microphone Bias Enable"]
@@ -284,13 +284,13 @@ pub type MMICBIASEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC,
 impl<'a, const O: u8> MMICBIASEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(MMICBIASEN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MMICBIASEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(MMICBIASEN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(MMICBIASEN_A::ENABLED)
     }
 }
 #[doc = "Field `hmic_bias_chopper_clk_sel` reader - HMIC BIAS Chopper Clock Select"]
@@ -300,13 +300,13 @@ pub type HMIC_BIAS_CHOPPER_CLK_SEL_R = crate::FieldReader<u8, HMIC_BIAS_CHOPPER_
 #[repr(u8)]
 pub enum HMIC_BIAS_CHOPPER_CLK_SEL_A {
     #[doc = "0: 250 kHz"]
-    _250_K_H_Z = 0,
+    _250KHZ = 0,
     #[doc = "1: 500 kHz"]
-    _500_K_H_Z = 1,
+    _500KHZ = 1,
     #[doc = "2: 1 MHz"]
-    _1_M_H_Z = 2,
+    _1MHZ = 2,
     #[doc = "3: 2 MHz"]
-    _2_M_H_Z = 3,
+    _2MHZ = 3,
 }
 impl From<HMIC_BIAS_CHOPPER_CLK_SEL_A> for u8 {
     #[inline(always)]
@@ -319,32 +319,32 @@ impl HMIC_BIAS_CHOPPER_CLK_SEL_R {
     #[inline(always)]
     pub fn variant(&self) -> HMIC_BIAS_CHOPPER_CLK_SEL_A {
         match self.bits {
-            0 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_250_K_H_Z,
-            1 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_500_K_H_Z,
-            2 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_1_M_H_Z,
-            3 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_2_M_H_Z,
+            0 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ,
+            1 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ,
+            2 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ,
+            3 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_250_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_250KHZ`"]
     #[inline(always)]
-    pub fn is_250_k_h_z(&self) -> bool {
-        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_250_K_H_Z
+    pub fn is_250khz(&self) -> bool {
+        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ
     }
-    #[doc = "Checks if the value of the field is `_500_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_500KHZ`"]
     #[inline(always)]
-    pub fn is_500_k_h_z(&self) -> bool {
-        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_500_K_H_Z
+    pub fn is_500khz(&self) -> bool {
+        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ
     }
-    #[doc = "Checks if the value of the field is `_1_M_H_Z`"]
+    #[doc = "Checks if the value of the field is `_1MHZ`"]
     #[inline(always)]
-    pub fn is_1_m_h_z(&self) -> bool {
-        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_1_M_H_Z
+    pub fn is_1mhz(&self) -> bool {
+        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ
     }
-    #[doc = "Checks if the value of the field is `_2_M_H_Z`"]
+    #[doc = "Checks if the value of the field is `_2MHZ`"]
     #[inline(always)]
-    pub fn is_2_m_h_z(&self) -> bool {
-        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_2_M_H_Z
+    pub fn is_2mhz(&self) -> bool {
+        *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ
     }
 }
 #[doc = "Field `hmic_bias_chopper_clk_sel` writer - HMIC BIAS Chopper Clock Select"]
@@ -353,23 +353,23 @@ pub type HMIC_BIAS_CHOPPER_CLK_SEL_W<'a, const O: u8> =
 impl<'a, const O: u8> HMIC_BIAS_CHOPPER_CLK_SEL_W<'a, O> {
     #[doc = "250 kHz"]
     #[inline(always)]
-    pub fn _250_k_h_z(self) -> &'a mut W {
-        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_250_K_H_Z)
+    pub fn _250khz(self) -> &'a mut W {
+        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ)
     }
     #[doc = "500 kHz"]
     #[inline(always)]
-    pub fn _500_k_h_z(self) -> &'a mut W {
-        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_500_K_H_Z)
+    pub fn _500khz(self) -> &'a mut W {
+        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ)
     }
     #[doc = "1 MHz"]
     #[inline(always)]
-    pub fn _1_m_h_z(self) -> &'a mut W {
-        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_1_M_H_Z)
+    pub fn _1mhz(self) -> &'a mut W {
+        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ)
     }
     #[doc = "2 MHz"]
     #[inline(always)]
-    pub fn _2_m_h_z(self) -> &'a mut W {
-        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_2_M_H_Z)
+    pub fn _2mhz(self) -> &'a mut W {
+        self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ)
     }
 }
 #[doc = "Field `hmic_bias_chopper_en` reader - HMIC BIAS Chopper Enable"]
@@ -378,9 +378,9 @@ pub type HMIC_BIAS_CHOPPER_EN_R = crate::BitReader<HMIC_BIAS_CHOPPER_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HMIC_BIAS_CHOPPER_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<HMIC_BIAS_CHOPPER_EN_A> for bool {
     #[inline(always)]
@@ -393,19 +393,19 @@ impl HMIC_BIAS_CHOPPER_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> HMIC_BIAS_CHOPPER_EN_A {
         match self.bits {
-            false => HMIC_BIAS_CHOPPER_EN_A::D_ISABLED,
-            true => HMIC_BIAS_CHOPPER_EN_A::E_NABLED,
+            false => HMIC_BIAS_CHOPPER_EN_A::DISABLED,
+            true => HMIC_BIAS_CHOPPER_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == HMIC_BIAS_CHOPPER_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == HMIC_BIAS_CHOPPER_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == HMIC_BIAS_CHOPPER_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == HMIC_BIAS_CHOPPER_EN_A::ENABLED
     }
 }
 #[doc = "Field `hmic_bias_chopper_en` writer - HMIC BIAS Chopper Enable"]
@@ -414,13 +414,13 @@ pub type HMIC_BIAS_CHOPPER_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> HMIC_BIAS_CHOPPER_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(HMIC_BIAS_CHOPPER_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(HMIC_BIAS_CHOPPER_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(HMIC_BIAS_CHOPPER_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(HMIC_BIAS_CHOPPER_EN_A::ENABLED)
     }
 }
 #[doc = "Field `hbiassel` reader - HMICBIAS Voltage Level Select"]
@@ -508,9 +508,9 @@ pub type HMICBIASEN_R = crate::BitReader<HMICBIASEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HMICBIASEN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<HMICBIASEN_A> for bool {
     #[inline(always)]
@@ -523,19 +523,19 @@ impl HMICBIASEN_R {
     #[inline(always)]
     pub fn variant(&self) -> HMICBIASEN_A {
         match self.bits {
-            false => HMICBIASEN_A::D_ISABLED,
-            true => HMICBIASEN_A::E_NABLED,
+            false => HMICBIASEN_A::DISABLED,
+            true => HMICBIASEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == HMICBIASEN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == HMICBIASEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == HMICBIASEN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == HMICBIASEN_A::ENABLED
     }
 }
 #[doc = "Field `hmicbiasen` writer - Headphone Microphone Bias Enable"]
@@ -543,13 +543,13 @@ pub type HMICBIASEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC,
 impl<'a, const O: u8> HMICBIASEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(HMICBIASEN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(HMICBIASEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(HMICBIASEN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(HMICBIASEN_A::ENABLED)
     }
 }
 #[doc = "Field `micdetpl` reader - When this bit is 1and AUTOPLEN is 0, the MICDET is pulled down to GND."]
@@ -562,9 +562,9 @@ pub type AUTOPLEN_R = crate::BitReader<AUTOPLEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum AUTOPLEN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<AUTOPLEN_A> for bool {
     #[inline(always)]
@@ -577,19 +577,19 @@ impl AUTOPLEN_R {
     #[inline(always)]
     pub fn variant(&self) -> AUTOPLEN_A {
         match self.bits {
-            false => AUTOPLEN_A::D_ISABLED,
-            true => AUTOPLEN_A::E_NABLED,
+            false => AUTOPLEN_A::DISABLED,
+            true => AUTOPLEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == AUTOPLEN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == AUTOPLEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == AUTOPLEN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == AUTOPLEN_A::ENABLED
     }
 }
 #[doc = "Field `autoplen` writer - Enable the function to auto pull low MICDET when jack removal"]
@@ -597,13 +597,13 @@ pub type AUTOPLEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, A
 impl<'a, const O: u8> AUTOPLEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(AUTOPLEN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(AUTOPLEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(AUTOPLEN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(AUTOPLEN_A::ENABLED)
     }
 }
 #[doc = "Field `det_mode` reader - MIC Detect Mode"]
@@ -666,9 +666,9 @@ pub type MICADCEN_R = crate::BitReader<MICADCEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICADCEN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<MICADCEN_A> for bool {
     #[inline(always)]
@@ -681,19 +681,19 @@ impl MICADCEN_R {
     #[inline(always)]
     pub fn variant(&self) -> MICADCEN_A {
         match self.bits {
-            false => MICADCEN_A::D_ISABLED,
-            true => MICADCEN_A::E_NABLED,
+            false => MICADCEN_A::DISABLED,
+            true => MICADCEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == MICADCEN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == MICADCEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == MICADCEN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == MICADCEN_A::ENABLED
     }
 }
 #[doc = "Field `micadcen` writer - Microphone detect ADC enable"]
@@ -701,13 +701,13 @@ pub type MICADCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, M
 impl<'a, const O: u8> MICADCEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(MICADCEN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MICADCEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(MICADCEN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(MICADCEN_A::ENABLED)
     }
 }
 #[doc = "Field `seldetadcdy` reader - Select the delay time to pull low the micdet when jack removal"]
@@ -795,9 +795,9 @@ pub type JACKDETEN_R = crate::BitReader<JACKDETEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JACKDETEN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<JACKDETEN_A> for bool {
     #[inline(always)]
@@ -810,19 +810,19 @@ impl JACKDETEN_R {
     #[inline(always)]
     pub fn variant(&self) -> JACKDETEN_A {
         match self.bits {
-            false => JACKDETEN_A::D_ISABLE,
-            true => JACKDETEN_A::E_NABLE,
+            false => JACKDETEN_A::DISABLE,
+            true => JACKDETEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == JACKDETEN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == JACKDETEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == JACKDETEN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == JACKDETEN_A::ENABLE
     }
 }
 #[doc = "Field `jackdeten` writer - Jack detect enable"]
@@ -830,13 +830,13 @@ pub type JACKDETEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, 
 impl<'a, const O: u8> JACKDETEN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(JACKDETEN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(JACKDETEN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(JACKDETEN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(JACKDETEN_A::ENABLE)
     }
 }
 #[doc = "Field `seldetadcbf` reader - Select the time to enable HBIAS before MICADC work"]

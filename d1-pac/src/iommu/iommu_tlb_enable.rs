@@ -42,9 +42,9 @@ enable bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_ENABLE_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<MICRO_TLB_ENABLE_A> for bool {
     #[inline(always)]
@@ -57,19 +57,19 @@ impl MICRO_TLB_ENABLE_R {
     #[inline(always)]
     pub fn variant(&self) -> MICRO_TLB_ENABLE_A {
         match self.bits {
-            false => MICRO_TLB_ENABLE_A::D_ISABLE,
-            true => MICRO_TLB_ENABLE_A::E_NABLE,
+            false => MICRO_TLB_ENABLE_A::DISABLE,
+            true => MICRO_TLB_ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == MICRO_TLB_ENABLE_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == MICRO_TLB_ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == MICRO_TLB_ENABLE_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == MICRO_TLB_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `micro_tlb_enable[0-6]` writer - Micro TLB\\[i\\]
@@ -79,13 +79,13 @@ pub type MICRO_TLB_ENABLE_W<'a, const O: u8> =
 impl<'a, const O: u8> MICRO_TLB_ENABLE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(MICRO_TLB_ENABLE_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(MICRO_TLB_ENABLE_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(MICRO_TLB_ENABLE_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MICRO_TLB_ENABLE_A::ENABLE)
     }
 }
 #[doc = "Field `macro_tlb_enable` reader - Macro TLB enable bit"]
@@ -94,9 +94,9 @@ pub type MACRO_TLB_ENABLE_R = crate::BitReader<MACRO_TLB_ENABLE_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MACRO_TLB_ENABLE_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<MACRO_TLB_ENABLE_A> for bool {
     #[inline(always)]
@@ -109,19 +109,19 @@ impl MACRO_TLB_ENABLE_R {
     #[inline(always)]
     pub fn variant(&self) -> MACRO_TLB_ENABLE_A {
         match self.bits {
-            false => MACRO_TLB_ENABLE_A::D_ISABLE,
-            true => MACRO_TLB_ENABLE_A::E_NABLE,
+            false => MACRO_TLB_ENABLE_A::DISABLE,
+            true => MACRO_TLB_ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == MACRO_TLB_ENABLE_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == MACRO_TLB_ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == MACRO_TLB_ENABLE_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == MACRO_TLB_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `macro_tlb_enable` writer - Macro TLB enable bit"]
@@ -130,13 +130,13 @@ pub type MACRO_TLB_ENABLE_W<'a, const O: u8> =
 impl<'a, const O: u8> MACRO_TLB_ENABLE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(MACRO_TLB_ENABLE_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(MACRO_TLB_ENABLE_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(MACRO_TLB_ENABLE_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MACRO_TLB_ENABLE_A::ENABLE)
     }
 }
 #[doc = "Field `ptw_cache_enable` reader - PTW Cache enable bit"]
@@ -145,9 +145,9 @@ pub type PTW_CACHE_ENABLE_R = crate::BitReader<PTW_CACHE_ENABLE_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum PTW_CACHE_ENABLE_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<PTW_CACHE_ENABLE_A> for bool {
     #[inline(always)]
@@ -160,19 +160,19 @@ impl PTW_CACHE_ENABLE_R {
     #[inline(always)]
     pub fn variant(&self) -> PTW_CACHE_ENABLE_A {
         match self.bits {
-            false => PTW_CACHE_ENABLE_A::D_ISABLE,
-            true => PTW_CACHE_ENABLE_A::E_NABLE,
+            false => PTW_CACHE_ENABLE_A::DISABLE,
+            true => PTW_CACHE_ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == PTW_CACHE_ENABLE_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == PTW_CACHE_ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == PTW_CACHE_ENABLE_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == PTW_CACHE_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `ptw_cache_enable` writer - PTW Cache enable bit"]
@@ -181,13 +181,13 @@ pub type PTW_CACHE_ENABLE_W<'a, const O: u8> =
 impl<'a, const O: u8> PTW_CACHE_ENABLE_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(PTW_CACHE_ENABLE_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PTW_CACHE_ENABLE_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(PTW_CACHE_ENABLE_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PTW_CACHE_ENABLE_A::ENABLE)
     }
 }
 impl R {

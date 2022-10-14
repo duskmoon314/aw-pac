@@ -43,13 +43,13 @@ pub enum TV_SRC_SEL_A {
     #[doc = "0: DE"]
     DE = 0,
     #[doc = "1: Color Check"]
-    C_OLOR = 1,
+    COLOR = 1,
     #[doc = "2: Grayscale Check"]
-    G_RAYSCALE = 2,
+    GRAYSCALE = 2,
     #[doc = "3: Black by White Check"]
-    B_LACK_B_Y_W_HITE = 3,
+    BLACK_BY_WHITE = 3,
     #[doc = "7: Gridding Check"]
-    G_RIDDING = 7,
+    GRIDDING = 7,
 }
 impl From<TV_SRC_SEL_A> for u8 {
     #[inline(always)]
@@ -63,10 +63,10 @@ impl TV_SRC_SEL_R {
     pub fn variant(&self) -> Option<TV_SRC_SEL_A> {
         match self.bits {
             0 => Some(TV_SRC_SEL_A::DE),
-            1 => Some(TV_SRC_SEL_A::C_OLOR),
-            2 => Some(TV_SRC_SEL_A::G_RAYSCALE),
-            3 => Some(TV_SRC_SEL_A::B_LACK_B_Y_W_HITE),
-            7 => Some(TV_SRC_SEL_A::G_RIDDING),
+            1 => Some(TV_SRC_SEL_A::COLOR),
+            2 => Some(TV_SRC_SEL_A::GRAYSCALE),
+            3 => Some(TV_SRC_SEL_A::BLACK_BY_WHITE),
+            7 => Some(TV_SRC_SEL_A::GRIDDING),
             _ => None,
         }
     }
@@ -75,25 +75,25 @@ impl TV_SRC_SEL_R {
     pub fn is_de(&self) -> bool {
         *self == TV_SRC_SEL_A::DE
     }
-    #[doc = "Checks if the value of the field is `C_OLOR`"]
+    #[doc = "Checks if the value of the field is `COLOR`"]
     #[inline(always)]
-    pub fn is_c_olor(&self) -> bool {
-        *self == TV_SRC_SEL_A::C_OLOR
+    pub fn is_color(&self) -> bool {
+        *self == TV_SRC_SEL_A::COLOR
     }
-    #[doc = "Checks if the value of the field is `G_RAYSCALE`"]
+    #[doc = "Checks if the value of the field is `GRAYSCALE`"]
     #[inline(always)]
-    pub fn is_g_rayscale(&self) -> bool {
-        *self == TV_SRC_SEL_A::G_RAYSCALE
+    pub fn is_grayscale(&self) -> bool {
+        *self == TV_SRC_SEL_A::GRAYSCALE
     }
-    #[doc = "Checks if the value of the field is `B_LACK_B_Y_W_HITE`"]
+    #[doc = "Checks if the value of the field is `BLACK_BY_WHITE`"]
     #[inline(always)]
-    pub fn is_b_lack_b_y_w_hite(&self) -> bool {
-        *self == TV_SRC_SEL_A::B_LACK_B_Y_W_HITE
+    pub fn is_black_by_white(&self) -> bool {
+        *self == TV_SRC_SEL_A::BLACK_BY_WHITE
     }
-    #[doc = "Checks if the value of the field is `G_RIDDING`"]
+    #[doc = "Checks if the value of the field is `GRIDDING`"]
     #[inline(always)]
-    pub fn is_g_ridding(&self) -> bool {
-        *self == TV_SRC_SEL_A::G_RIDDING
+    pub fn is_gridding(&self) -> bool {
+        *self == TV_SRC_SEL_A::GRIDDING
     }
 }
 #[doc = "Field `tv_src_sel` writer - TV Source Select"]
@@ -107,23 +107,23 @@ impl<'a, const O: u8> TV_SRC_SEL_W<'a, O> {
     }
     #[doc = "Color Check"]
     #[inline(always)]
-    pub fn c_olor(self) -> &'a mut W {
-        self.variant(TV_SRC_SEL_A::C_OLOR)
+    pub fn color(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::COLOR)
     }
     #[doc = "Grayscale Check"]
     #[inline(always)]
-    pub fn g_rayscale(self) -> &'a mut W {
-        self.variant(TV_SRC_SEL_A::G_RAYSCALE)
+    pub fn grayscale(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::GRAYSCALE)
     }
     #[doc = "Black by White Check"]
     #[inline(always)]
-    pub fn b_lack_b_y_w_hite(self) -> &'a mut W {
-        self.variant(TV_SRC_SEL_A::B_LACK_B_Y_W_HITE)
+    pub fn black_by_white(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::BLACK_BY_WHITE)
     }
     #[doc = "Gridding Check"]
     #[inline(always)]
-    pub fn g_ridding(self) -> &'a mut W {
-        self.variant(TV_SRC_SEL_A::G_RIDDING)
+    pub fn gridding(self) -> &'a mut W {
+        self.variant(TV_SRC_SEL_A::GRIDDING)
     }
 }
 impl R {

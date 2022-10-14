@@ -40,7 +40,7 @@ pub type VA_CONFIG_START_R = crate::BitReader<VA_CONFIG_START_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VA_CONFIG_START_A {
     #[doc = "0: No operation or operation is completed"]
-    N_O_OPERATION_OR_COMPLETED = 0,
+    NO_OPERATION_OR_COMPLETED = 0,
     #[doc = "1: Start"]
     S_TART = 1,
 }
@@ -55,14 +55,14 @@ impl VA_CONFIG_START_R {
     #[inline(always)]
     pub fn variant(&self) -> VA_CONFIG_START_A {
         match self.bits {
-            false => VA_CONFIG_START_A::N_O_OPERATION_OR_COMPLETED,
+            false => VA_CONFIG_START_A::NO_OPERATION_OR_COMPLETED,
             true => VA_CONFIG_START_A::S_TART,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_OPERATION_OR_COMPLETED`"]
+    #[doc = "Checks if the value of the field is `NO_OPERATION_OR_COMPLETED`"]
     #[inline(always)]
-    pub fn is_n_o_operation_or_completed(&self) -> bool {
-        *self == VA_CONFIG_START_A::N_O_OPERATION_OR_COMPLETED
+    pub fn is_no_operation_or_completed(&self) -> bool {
+        *self == VA_CONFIG_START_A::NO_OPERATION_OR_COMPLETED
     }
     #[doc = "Checks if the value of the field is `S_TART`"]
     #[inline(always)]
@@ -76,8 +76,8 @@ pub type VA_CONFIG_START_W<'a, const O: u8> =
 impl<'a, const O: u8> VA_CONFIG_START_W<'a, O> {
     #[doc = "No operation or operation is completed"]
     #[inline(always)]
-    pub fn n_o_operation_or_completed(self) -> &'a mut W {
-        self.variant(VA_CONFIG_START_A::N_O_OPERATION_OR_COMPLETED)
+    pub fn no_operation_or_completed(self) -> &'a mut W {
+        self.variant(VA_CONFIG_START_A::NO_OPERATION_OR_COMPLETED)
     }
     #[doc = "Start"]
     #[inline(always)]

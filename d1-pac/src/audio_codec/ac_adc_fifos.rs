@@ -40,9 +40,9 @@ pub type RXO_INT_R = crate::BitReader<RXO_INT_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXO_INT_A {
     #[doc = "0: No Pending IRQ"]
-    N_O_P_ENDING = 0,
+    NO_PENDING = 0,
     #[doc = "1: FIFO Overrun Pending IRQ\n\nWrite '1' to clear this interrupt."]
-    FIFO = 1,
+    PENDING = 1,
 }
 impl From<RXO_INT_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl RXO_INT_R {
     #[inline(always)]
     pub fn variant(&self) -> RXO_INT_A {
         match self.bits {
-            false => RXO_INT_A::N_O_P_ENDING,
-            true => RXO_INT_A::FIFO,
+            false => RXO_INT_A::NO_PENDING,
+            true => RXO_INT_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_P_ENDING`"]
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
-    pub fn is_n_o_p_ending(&self) -> bool {
-        *self == RXO_INT_A::N_O_P_ENDING
+    pub fn is_no_pending(&self) -> bool {
+        *self == RXO_INT_A::NO_PENDING
     }
-    #[doc = "Checks if the value of the field is `FIFO`"]
+    #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
-    pub fn is_fifo(&self) -> bool {
-        *self == RXO_INT_A::FIFO
+    pub fn is_pending(&self) -> bool {
+        *self == RXO_INT_A::PENDING
     }
 }
 #[doc = "Field `rxo_int` writer - RX FIFO Overrun Pending Interrupt"]
@@ -75,13 +75,13 @@ pub type RXO_INT_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, AC_ADC_FIFOS_S
 impl<'a, const O: u8> RXO_INT_W<'a, O> {
     #[doc = "No Pending IRQ"]
     #[inline(always)]
-    pub fn n_o_p_ending(self) -> &'a mut W {
-        self.variant(RXO_INT_A::N_O_P_ENDING)
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(RXO_INT_A::NO_PENDING)
     }
     #[doc = "FIFO Overrun Pending IRQ\n\nWrite '1' to clear this interrupt."]
     #[inline(always)]
-    pub fn fifo(self) -> &'a mut W {
-        self.variant(RXO_INT_A::FIFO)
+    pub fn pending(self) -> &'a mut W {
+        self.variant(RXO_INT_A::PENDING)
     }
 }
 #[doc = "Field `rxa_int` reader - RX FIFO Data Available Pending Interrupt"]
@@ -90,7 +90,7 @@ pub type RXA_INT_R = crate::BitReader<RXA_INT_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXA_INT_A {
     #[doc = "0: No Pending IRQ"]
-    N_O_P_ENDING = 0,
+    NO_PENDING = 0,
     #[doc = "1: Data Available Pending IRQ\n\nWrite '1' to clear this interrupt or automatic clear if the interrupt condition fails."]
     PENDING = 1,
 }
@@ -105,14 +105,14 @@ impl RXA_INT_R {
     #[inline(always)]
     pub fn variant(&self) -> RXA_INT_A {
         match self.bits {
-            false => RXA_INT_A::N_O_P_ENDING,
+            false => RXA_INT_A::NO_PENDING,
             true => RXA_INT_A::PENDING,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_P_ENDING`"]
+    #[doc = "Checks if the value of the field is `NO_PENDING`"]
     #[inline(always)]
-    pub fn is_n_o_p_ending(&self) -> bool {
-        *self == RXA_INT_A::N_O_P_ENDING
+    pub fn is_no_pending(&self) -> bool {
+        *self == RXA_INT_A::NO_PENDING
     }
     #[doc = "Checks if the value of the field is `PENDING`"]
     #[inline(always)]
@@ -125,8 +125,8 @@ pub type RXA_INT_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, AC_ADC_FIFOS_S
 impl<'a, const O: u8> RXA_INT_W<'a, O> {
     #[doc = "No Pending IRQ"]
     #[inline(always)]
-    pub fn n_o_p_ending(self) -> &'a mut W {
-        self.variant(RXA_INT_A::N_O_P_ENDING)
+    pub fn no_pending(self) -> &'a mut W {
+        self.variant(RXA_INT_A::NO_PENDING)
     }
     #[doc = "Data Available Pending IRQ\n\nWrite '1' to clear this interrupt or automatic clear if the interrupt condition fails."]
     #[inline(always)]
@@ -142,9 +142,9 @@ pub type RXA_R = crate::BitReader<RXA_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RXA_A {
     #[doc = "0: No available data in RX FIFO"]
-    N_O_AVAILABLE = 0,
+    NO_AVAILABLE = 0,
     #[doc = "1: More than one sample in RX FIFO (>= 1 word)"]
-    M_ORE = 1,
+    MORE = 1,
 }
 impl From<RXA_A> for bool {
     #[inline(always)]
@@ -157,19 +157,19 @@ impl RXA_R {
     #[inline(always)]
     pub fn variant(&self) -> RXA_A {
         match self.bits {
-            false => RXA_A::N_O_AVAILABLE,
-            true => RXA_A::M_ORE,
+            false => RXA_A::NO_AVAILABLE,
+            true => RXA_A::MORE,
         }
     }
-    #[doc = "Checks if the value of the field is `N_O_AVAILABLE`"]
+    #[doc = "Checks if the value of the field is `NO_AVAILABLE`"]
     #[inline(always)]
-    pub fn is_n_o_available(&self) -> bool {
-        *self == RXA_A::N_O_AVAILABLE
+    pub fn is_no_available(&self) -> bool {
+        *self == RXA_A::NO_AVAILABLE
     }
-    #[doc = "Checks if the value of the field is `M_ORE`"]
+    #[doc = "Checks if the value of the field is `MORE`"]
     #[inline(always)]
-    pub fn is_m_ore(&self) -> bool {
-        *self == RXA_A::M_ORE
+    pub fn is_more(&self) -> bool {
+        *self == RXA_A::MORE
     }
 }
 impl R {

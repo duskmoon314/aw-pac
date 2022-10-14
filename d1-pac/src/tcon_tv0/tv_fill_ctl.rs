@@ -40,9 +40,9 @@ pub type TV_FILL_EN_R = crate::BitReader<TV_FILL_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_FILL_EN_A {
     #[doc = "0: Bypass"]
-    B_YPASS = 0,
+    BYPASS = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<TV_FILL_EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl TV_FILL_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> TV_FILL_EN_A {
         match self.bits {
-            false => TV_FILL_EN_A::B_YPASS,
-            true => TV_FILL_EN_A::E_NABLE,
+            false => TV_FILL_EN_A::BYPASS,
+            true => TV_FILL_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
-    pub fn is_b_ypass(&self) -> bool {
-        *self == TV_FILL_EN_A::B_YPASS
+    pub fn is_bypass(&self) -> bool {
+        *self == TV_FILL_EN_A::BYPASS
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == TV_FILL_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == TV_FILL_EN_A::ENABLE
     }
 }
 #[doc = "Field `tv_fill_en` writer - TV Fill Enable"]
@@ -76,13 +76,13 @@ pub type TV_FILL_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> TV_FILL_EN_W<'a, O> {
     #[doc = "Bypass"]
     #[inline(always)]
-    pub fn b_ypass(self) -> &'a mut W {
-        self.variant(TV_FILL_EN_A::B_YPASS)
+    pub fn bypass(self) -> &'a mut W {
+        self.variant(TV_FILL_EN_A::BYPASS)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(TV_FILL_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TV_FILL_EN_A::ENABLE)
     }
 }
 impl R {

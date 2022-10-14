@@ -40,9 +40,9 @@ pub type VRA1SPEEDUP_RST_CTRL_R = crate::BitReader<VRA1SPEEDUP_RST_CTRL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VRA1SPEEDUP_RST_CTRL_A {
     #[doc = "0: Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms."]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled.\n\nVAR1Speedup Down reset 0 immediately."]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<VRA1SPEEDUP_RST_CTRL_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl VRA1SPEEDUP_RST_CTRL_R {
     #[inline(always)]
     pub fn variant(&self) -> VRA1SPEEDUP_RST_CTRL_A {
         match self.bits {
-            false => VRA1SPEEDUP_RST_CTRL_A::D_ISABLED,
-            true => VRA1SPEEDUP_RST_CTRL_A::E_NABLED,
+            false => VRA1SPEEDUP_RST_CTRL_A::DISABLED,
+            true => VRA1SPEEDUP_RST_CTRL_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == VRA1SPEEDUP_RST_CTRL_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == VRA1SPEEDUP_RST_CTRL_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == VRA1SPEEDUP_RST_CTRL_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == VRA1SPEEDUP_RST_CTRL_A::ENABLED
     }
 }
 #[doc = "Field `vra1speedup_rst_ctrl` writer - VAR1Speedup Down RST Manual Control Enable"]
@@ -76,13 +76,13 @@ pub type VRA1SPEEDUP_RST_CTRL_W<'a, const O: u8> =
 impl<'a, const O: u8> VRA1SPEEDUP_RST_CTRL_W<'a, O> {
     #[doc = "Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms."]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(VRA1SPEEDUP_RST_CTRL_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(VRA1SPEEDUP_RST_CTRL_A::DISABLED)
     }
     #[doc = "Enabled.\n\nVAR1Speedup Down reset 0 immediately."]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(VRA1SPEEDUP_RST_CTRL_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(VRA1SPEEDUP_RST_CTRL_A::ENABLED)
     }
 }
 #[doc = "Field `vra1speedup_ctrl` reader - VAR1Speedup Down Manual Control Enable"]
@@ -91,9 +91,9 @@ pub type VRA1SPEEDUP_CTRL_R = crate::BitReader<VRA1SPEEDUP_CTRL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VRA1SPEEDUP_CTRL_A {
     #[doc = "0: Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms."]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled.\n\nVAR1Speedup Down converts to 1 immediately."]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<VRA1SPEEDUP_CTRL_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl VRA1SPEEDUP_CTRL_R {
     #[inline(always)]
     pub fn variant(&self) -> VRA1SPEEDUP_CTRL_A {
         match self.bits {
-            false => VRA1SPEEDUP_CTRL_A::D_ISABLED,
-            true => VRA1SPEEDUP_CTRL_A::E_NABLED,
+            false => VRA1SPEEDUP_CTRL_A::DISABLED,
+            true => VRA1SPEEDUP_CTRL_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == VRA1SPEEDUP_CTRL_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == VRA1SPEEDUP_CTRL_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == VRA1SPEEDUP_CTRL_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == VRA1SPEEDUP_CTRL_A::ENABLED
     }
 }
 #[doc = "Field `vra1speedup_ctrl` writer - VAR1Speedup Down Manual Control Enable"]
@@ -127,13 +127,13 @@ pub type VRA1SPEEDUP_CTRL_W<'a, const O: u8> =
 impl<'a, const O: u8> VRA1SPEEDUP_CTRL_W<'a, O> {
     #[doc = "Disabled.\n\nVAR1Speedup Down converts to 1 after the bus rst releases 32 ms."]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(VRA1SPEEDUP_CTRL_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(VRA1SPEEDUP_CTRL_A::DISABLED)
     }
     #[doc = "Enabled.\n\nVAR1Speedup Down converts to 1 immediately."]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(VRA1SPEEDUP_CTRL_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(VRA1SPEEDUP_CTRL_A::ENABLED)
     }
 }
 #[doc = "Field `vra1speedup_state` reader - Only if VAR1SPEEDUP_Further_CTRL (0x310\\[22\\]) is set 0, VAR1Speedup Down State is valid."]

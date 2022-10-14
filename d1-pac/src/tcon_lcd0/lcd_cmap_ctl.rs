@@ -91,9 +91,9 @@ pub type COLOR_MAP_EN_R = crate::BitReader<COLOR_MAP_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum COLOR_MAP_EN_A {
     #[doc = "0: Bypass"]
-    B_YPASS = 0,
+    BYPASS = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<COLOR_MAP_EN_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl COLOR_MAP_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> COLOR_MAP_EN_A {
         match self.bits {
-            false => COLOR_MAP_EN_A::B_YPASS,
-            true => COLOR_MAP_EN_A::E_NABLE,
+            false => COLOR_MAP_EN_A::BYPASS,
+            true => COLOR_MAP_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
-    pub fn is_b_ypass(&self) -> bool {
-        *self == COLOR_MAP_EN_A::B_YPASS
+    pub fn is_bypass(&self) -> bool {
+        *self == COLOR_MAP_EN_A::BYPASS
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == COLOR_MAP_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == COLOR_MAP_EN_A::ENABLE
     }
 }
 #[doc = "Field `color_map_en` writer - Enable the color map function. This module only works when X is divided by 4."]
@@ -127,13 +127,13 @@ pub type COLOR_MAP_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> COLOR_MAP_EN_W<'a, O> {
     #[doc = "Bypass"]
     #[inline(always)]
-    pub fn b_ypass(self) -> &'a mut W {
-        self.variant(COLOR_MAP_EN_A::B_YPASS)
+    pub fn bypass(self) -> &'a mut W {
+        self.variant(COLOR_MAP_EN_A::BYPASS)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(COLOR_MAP_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(COLOR_MAP_EN_A::ENABLE)
     }
 }
 impl R {

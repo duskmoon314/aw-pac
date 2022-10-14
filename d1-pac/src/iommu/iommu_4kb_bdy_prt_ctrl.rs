@@ -42,9 +42,9 @@ pub type M_4KB_BDY_PRT_CTRL_R = crate::BitReader<M_4KB_BDY_PRT_CTRL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_4KB_BDY_PRT_CTRL_A {
     #[doc = "0: Disable 4 KB boundary protect"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable 4 KB boundary protect"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<M_4KB_BDY_PRT_CTRL_A> for bool {
     #[inline(always)]
@@ -57,19 +57,19 @@ impl M_4KB_BDY_PRT_CTRL_R {
     #[inline(always)]
     pub fn variant(&self) -> M_4KB_BDY_PRT_CTRL_A {
         match self.bits {
-            false => M_4KB_BDY_PRT_CTRL_A::D_ISABLE,
-            true => M_4KB_BDY_PRT_CTRL_A::E_NABLE,
+            false => M_4KB_BDY_PRT_CTRL_A::DISABLE,
+            true => M_4KB_BDY_PRT_CTRL_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == M_4KB_BDY_PRT_CTRL_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == M_4KB_BDY_PRT_CTRL_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == M_4KB_BDY_PRT_CTRL_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == M_4KB_BDY_PRT_CTRL_A::ENABLE
     }
 }
 #[doc = "Field `m_4kb_bdy_prt_ctrl[0-6]` writer - Master\\[i\\]
@@ -79,13 +79,13 @@ pub type M_4KB_BDY_PRT_CTRL_W<'a, const O: u8> =
 impl<'a, const O: u8> M_4KB_BDY_PRT_CTRL_W<'a, O> {
     #[doc = "Disable 4 KB boundary protect"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(M_4KB_BDY_PRT_CTRL_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(M_4KB_BDY_PRT_CTRL_A::DISABLE)
     }
     #[doc = "Enable 4 KB boundary protect"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(M_4KB_BDY_PRT_CTRL_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(M_4KB_BDY_PRT_CTRL_A::ENABLE)
     }
 }
 impl R {

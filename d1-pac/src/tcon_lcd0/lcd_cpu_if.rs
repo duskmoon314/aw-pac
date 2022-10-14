@@ -94,9 +94,9 @@ pub type TRI_FIFO_EN_R = crate::BitReader<TRI_FIFO_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRI_FIFO_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<TRI_FIFO_EN_A> for bool {
     #[inline(always)]
@@ -109,19 +109,19 @@ impl TRI_FIFO_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> TRI_FIFO_EN_A {
         match self.bits {
-            false => TRI_FIFO_EN_A::D_ISABLE,
-            true => TRI_FIFO_EN_A::E_NABLE,
+            false => TRI_FIFO_EN_A::DISABLE,
+            true => TRI_FIFO_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == TRI_FIFO_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == TRI_FIFO_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == TRI_FIFO_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == TRI_FIFO_EN_A::ENABLE
     }
 }
 #[doc = "Field `tri_fifo_en` writer - Enable the trigger FIFO"]
@@ -130,13 +130,13 @@ pub type TRI_FIFO_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> TRI_FIFO_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(TRI_FIFO_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TRI_FIFO_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(TRI_FIFO_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TRI_FIFO_EN_A::ENABLE)
     }
 }
 #[doc = "Field `tri_fifo_bist_en` reader - Entry address is 0xFF8"]
@@ -145,9 +145,9 @@ pub type TRI_FIFO_BIST_EN_R = crate::BitReader<TRI_FIFO_BIST_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TRI_FIFO_BIST_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<TRI_FIFO_BIST_EN_A> for bool {
     #[inline(always)]
@@ -160,19 +160,19 @@ impl TRI_FIFO_BIST_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> TRI_FIFO_BIST_EN_A {
         match self.bits {
-            false => TRI_FIFO_BIST_EN_A::D_ISABLE,
-            true => TRI_FIFO_BIST_EN_A::E_NABLE,
+            false => TRI_FIFO_BIST_EN_A::DISABLE,
+            true => TRI_FIFO_BIST_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == TRI_FIFO_BIST_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == TRI_FIFO_BIST_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == TRI_FIFO_BIST_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == TRI_FIFO_BIST_EN_A::ENABLE
     }
 }
 #[doc = "Field `tri_fifo_bist_en` writer - Entry address is 0xFF8"]
@@ -181,13 +181,13 @@ pub type TRI_FIFO_BIST_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> TRI_FIFO_BIST_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(TRI_FIFO_BIST_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TRI_FIFO_BIST_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(TRI_FIFO_BIST_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TRI_FIFO_BIST_EN_A::ENABLE)
     }
 }
 #[doc = "Field `flush` reader - Direct transfer mode\n\nIf it is enabled, FIFO1 is regardless of the HV timing, the pixels data keep being transferred unless the input FIFO was empty.\n\nData output rate is controlled by DCLK."]

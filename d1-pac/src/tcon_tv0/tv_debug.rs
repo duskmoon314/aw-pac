@@ -44,7 +44,7 @@ pub enum LINE_BUF_BYPASS_A {
     #[doc = "0: Used"]
     U_SED = 0,
     #[doc = "1: Bypass"]
-    B_YPASS = 1,
+    BYPASS = 1,
 }
 impl From<LINE_BUF_BYPASS_A> for bool {
     #[inline(always)]
@@ -58,7 +58,7 @@ impl LINE_BUF_BYPASS_R {
     pub fn variant(&self) -> LINE_BUF_BYPASS_A {
         match self.bits {
             false => LINE_BUF_BYPASS_A::U_SED,
-            true => LINE_BUF_BYPASS_A::B_YPASS,
+            true => LINE_BUF_BYPASS_A::BYPASS,
         }
     }
     #[doc = "Checks if the value of the field is `U_SED`"]
@@ -66,10 +66,10 @@ impl LINE_BUF_BYPASS_R {
     pub fn is_u_sed(&self) -> bool {
         *self == LINE_BUF_BYPASS_A::U_SED
     }
-    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
-    pub fn is_b_ypass(&self) -> bool {
-        *self == LINE_BUF_BYPASS_A::B_YPASS
+    pub fn is_bypass(&self) -> bool {
+        *self == LINE_BUF_BYPASS_A::BYPASS
     }
 }
 #[doc = "Field `line_buf_bypass` writer - Line Buf fer Bypass"]
@@ -83,8 +83,8 @@ impl<'a, const O: u8> LINE_BUF_BYPASS_W<'a, O> {
     }
     #[doc = "Bypass"]
     #[inline(always)]
-    pub fn b_ypass(self) -> &'a mut W {
-        self.variant(LINE_BUF_BYPASS_A::B_YPASS)
+    pub fn bypass(self) -> &'a mut W {
+        self.variant(LINE_BUF_BYPASS_A::BYPASS)
     }
 }
 #[doc = "Field `tv_field_pol` reader - TV Field Polarity"]
@@ -93,9 +93,9 @@ pub type TV_FIELD_POL_R = crate::BitReader<TV_FIELD_POL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_FIELD_POL_A {
     #[doc = "0: Second field"]
-    S_ECOND = 0,
+    SECOND = 0,
     #[doc = "1: First field"]
-    F_IRST = 1,
+    FIRST = 1,
 }
 impl From<TV_FIELD_POL_A> for bool {
     #[inline(always)]
@@ -108,19 +108,19 @@ impl TV_FIELD_POL_R {
     #[inline(always)]
     pub fn variant(&self) -> TV_FIELD_POL_A {
         match self.bits {
-            false => TV_FIELD_POL_A::S_ECOND,
-            true => TV_FIELD_POL_A::F_IRST,
+            false => TV_FIELD_POL_A::SECOND,
+            true => TV_FIELD_POL_A::FIRST,
         }
     }
-    #[doc = "Checks if the value of the field is `S_ECOND`"]
+    #[doc = "Checks if the value of the field is `SECOND`"]
     #[inline(always)]
-    pub fn is_s_econd(&self) -> bool {
-        *self == TV_FIELD_POL_A::S_ECOND
+    pub fn is_second(&self) -> bool {
+        *self == TV_FIELD_POL_A::SECOND
     }
-    #[doc = "Checks if the value of the field is `F_IRST`"]
+    #[doc = "Checks if the value of the field is `FIRST`"]
     #[inline(always)]
-    pub fn is_f_irst(&self) -> bool {
-        *self == TV_FIELD_POL_A::F_IRST
+    pub fn is_first(&self) -> bool {
+        *self == TV_FIELD_POL_A::FIRST
     }
 }
 #[doc = "Field `tv_fifo_u` reader - TV FIFO Underflow"]

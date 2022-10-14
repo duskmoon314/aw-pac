@@ -40,9 +40,9 @@ pub type CCIR_CSC_DIS_R = crate::BitReader<CCIR_CSC_DIS_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CCIR_CSC_DIS_A {
     #[doc = "0: Enable"]
-    E_NABLE = 0,
+    ENABLE = 0,
     #[doc = "1: Disable"]
-    D_ISABLE = 1,
+    DISABLE = 1,
 }
 impl From<CCIR_CSC_DIS_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl CCIR_CSC_DIS_R {
     #[inline(always)]
     pub fn variant(&self) -> CCIR_CSC_DIS_A {
         match self.bits {
-            false => CCIR_CSC_DIS_A::E_NABLE,
-            true => CCIR_CSC_DIS_A::D_ISABLE,
+            false => CCIR_CSC_DIS_A::ENABLE,
+            true => CCIR_CSC_DIS_A::DISABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == CCIR_CSC_DIS_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == CCIR_CSC_DIS_A::ENABLE
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == CCIR_CSC_DIS_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == CCIR_CSC_DIS_A::DISABLE
     }
 }
 #[doc = "Field `ccir_csc_dis` writer - LCD convert source from RGB to YUV.\n\nOnly valid when HV mode is “1100”."]
@@ -76,13 +76,13 @@ pub type CCIR_CSC_DIS_W<'a, const O: u8> =
 impl<'a, const O: u8> CCIR_CSC_DIS_W<'a, O> {
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(CCIR_CSC_DIS_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CCIR_CSC_DIS_A::ENABLE)
     }
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(CCIR_CSC_DIS_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(CCIR_CSC_DIS_A::DISABLE)
     }
 }
 #[doc = "Field `yuv_eav_sav_f_line_dly` reader - Set the delay line mode."]

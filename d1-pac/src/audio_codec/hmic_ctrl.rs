@@ -40,9 +40,9 @@ pub type MIC_DET_IRQ_EN_R = crate::BitReader<MIC_DET_IRQ_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MIC_DET_IRQ_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<MIC_DET_IRQ_EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl MIC_DET_IRQ_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> MIC_DET_IRQ_EN_A {
         match self.bits {
-            false => MIC_DET_IRQ_EN_A::D_ISABLED,
-            true => MIC_DET_IRQ_EN_A::E_NABLED,
+            false => MIC_DET_IRQ_EN_A::DISABLED,
+            true => MIC_DET_IRQ_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == MIC_DET_IRQ_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == MIC_DET_IRQ_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == MIC_DET_IRQ_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == MIC_DET_IRQ_EN_A::ENABLED
     }
 }
 #[doc = "Field `mic_det_irq_en` writer - MIC Detect Interrupt Set"]
@@ -76,13 +76,13 @@ pub type MIC_DET_IRQ_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> MIC_DET_IRQ_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(MIC_DET_IRQ_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(MIC_DET_IRQ_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(MIC_DET_IRQ_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(MIC_DET_IRQ_EN_A::ENABLED)
     }
 }
 #[doc = "Field `jack_in_irq_en` reader - MIC Detect Interrupt Set"]
@@ -91,9 +91,9 @@ pub type JACK_IN_IRQ_EN_R = crate::BitReader<JACK_IN_IRQ_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JACK_IN_IRQ_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<JACK_IN_IRQ_EN_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl JACK_IN_IRQ_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> JACK_IN_IRQ_EN_A {
         match self.bits {
-            false => JACK_IN_IRQ_EN_A::D_ISABLED,
-            true => JACK_IN_IRQ_EN_A::E_NABLED,
+            false => JACK_IN_IRQ_EN_A::DISABLED,
+            true => JACK_IN_IRQ_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == JACK_IN_IRQ_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == JACK_IN_IRQ_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == JACK_IN_IRQ_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == JACK_IN_IRQ_EN_A::ENABLED
     }
 }
 #[doc = "Field `jack_in_irq_en` writer - MIC Detect Interrupt Set"]
@@ -127,13 +127,13 @@ pub type JACK_IN_IRQ_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> JACK_IN_IRQ_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(JACK_IN_IRQ_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(JACK_IN_IRQ_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(JACK_IN_IRQ_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(JACK_IN_IRQ_EN_A::ENABLED)
     }
 }
 #[doc = "Field `jack_out_irq_en` reader - MIC Detect Interrupt Set"]
@@ -142,9 +142,9 @@ pub type JACK_OUT_IRQ_EN_R = crate::BitReader<JACK_OUT_IRQ_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum JACK_OUT_IRQ_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<JACK_OUT_IRQ_EN_A> for bool {
     #[inline(always)]
@@ -157,19 +157,19 @@ impl JACK_OUT_IRQ_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> JACK_OUT_IRQ_EN_A {
         match self.bits {
-            false => JACK_OUT_IRQ_EN_A::D_ISABLED,
-            true => JACK_OUT_IRQ_EN_A::E_NABLED,
+            false => JACK_OUT_IRQ_EN_A::DISABLED,
+            true => JACK_OUT_IRQ_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == JACK_OUT_IRQ_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == JACK_OUT_IRQ_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == JACK_OUT_IRQ_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == JACK_OUT_IRQ_EN_A::ENABLED
     }
 }
 #[doc = "Field `jack_out_irq_en` writer - MIC Detect Interrupt Set"]
@@ -178,13 +178,13 @@ pub type JACK_OUT_IRQ_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> JACK_OUT_IRQ_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(JACK_OUT_IRQ_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(JACK_OUT_IRQ_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(JACK_OUT_IRQ_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(JACK_OUT_IRQ_EN_A::ENABLED)
     }
 }
 #[doc = "Field `mdata_threshold_debounce` reader - MDATA Threshold Debounce"]

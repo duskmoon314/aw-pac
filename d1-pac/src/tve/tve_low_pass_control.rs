@@ -40,9 +40,9 @@ pub type EN_R = crate::BitReader<EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<EN_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl EN_R {
     #[inline(always)]
     pub fn variant(&self) -> EN_A {
         match self.bits {
-            false => EN_A::D_ISABLE,
-            true => EN_A::E_NABLE,
+            false => EN_A::DISABLE,
+            true => EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == EN_A::ENABLE
     }
 }
 #[doc = "Field `en` writer - LP function enable"]
@@ -75,13 +75,13 @@ pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVE_LOW_PASS_CONTROL_
 impl<'a, const O: u8> EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(EN_A::ENABLE)
     }
 }
 #[doc = "Field `enable_deflicker` reader - Enable_deflicker"]
@@ -90,9 +90,9 @@ pub type ENABLE_DEFLICKER_R = crate::BitReader<ENABLE_DEFLICKER_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENABLE_DEFLICKER_A {
     #[doc = "0: Disable deflicker"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable deflicker"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<ENABLE_DEFLICKER_A> for bool {
     #[inline(always)]
@@ -105,19 +105,19 @@ impl ENABLE_DEFLICKER_R {
     #[inline(always)]
     pub fn variant(&self) -> ENABLE_DEFLICKER_A {
         match self.bits {
-            false => ENABLE_DEFLICKER_A::D_ISABLE,
-            true => ENABLE_DEFLICKER_A::E_NABLE,
+            false => ENABLE_DEFLICKER_A::DISABLE,
+            true => ENABLE_DEFLICKER_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == ENABLE_DEFLICKER_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == ENABLE_DEFLICKER_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == ENABLE_DEFLICKER_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == ENABLE_DEFLICKER_A::ENABLE
     }
 }
 #[doc = "Field `enable_deflicker` writer - Enable_deflicker"]
@@ -126,13 +126,13 @@ pub type ENABLE_DEFLICKER_W<'a, const O: u8> =
 impl<'a, const O: u8> ENABLE_DEFLICKER_W<'a, O> {
     #[doc = "Disable deflicker"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(ENABLE_DEFLICKER_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(ENABLE_DEFLICKER_A::DISABLE)
     }
     #[doc = "Enable deflicker"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(ENABLE_DEFLICKER_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(ENABLE_DEFLICKER_A::ENABLE)
     }
 }
 #[doc = "Field `fix_coef_deflicker` reader - Fix_coef_deflicker"]

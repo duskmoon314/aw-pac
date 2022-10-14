@@ -45,9 +45,9 @@ pub type ADC1_2_VOL_EN_R = crate::BitReader<ADC1_2_VOL_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC1_2_VOL_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC1_2_VOL_EN_A> for bool {
     #[inline(always)]
@@ -60,19 +60,19 @@ impl ADC1_2_VOL_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC1_2_VOL_EN_A {
         match self.bits {
-            false => ADC1_2_VOL_EN_A::D_ISABLED,
-            true => ADC1_2_VOL_EN_A::E_NABLED,
+            false => ADC1_2_VOL_EN_A::DISABLED,
+            true => ADC1_2_VOL_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC1_2_VOL_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC1_2_VOL_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC1_2_VOL_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC1_2_VOL_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc1_2_vol_en` writer - ADC1/2 Volume Control Enable"]
@@ -81,13 +81,13 @@ pub type ADC1_2_VOL_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC1_2_VOL_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC1_2_VOL_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC1_2_VOL_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC1_2_VOL_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC1_2_VOL_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc3_vol_en` reader - ADC3 Volume Control Enable"]
@@ -96,9 +96,9 @@ pub type ADC3_VOL_EN_R = crate::BitReader<ADC3_VOL_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC3_VOL_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC3_VOL_EN_A> for bool {
     #[inline(always)]
@@ -111,19 +111,19 @@ impl ADC3_VOL_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC3_VOL_EN_A {
         match self.bits {
-            false => ADC3_VOL_EN_A::D_ISABLED,
-            true => ADC3_VOL_EN_A::E_NABLED,
+            false => ADC3_VOL_EN_A::DISABLED,
+            true => ADC3_VOL_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC3_VOL_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC3_VOL_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC3_VOL_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC3_VOL_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc3_vol_en` writer - ADC3 Volume Control Enable"]
@@ -132,13 +132,13 @@ pub type ADC3_VOL_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC3_VOL_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC3_VOL_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC3_VOL_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC3_VOL_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC3_VOL_EN_A::ENABLED)
     }
 }
 impl R {

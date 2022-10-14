@@ -45,9 +45,9 @@ pub type ADC_OVERRUN_IRQ_EN_R = crate::BitReader<ADC_OVERRUN_IRQ_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_OVERRUN_IRQ_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_OVERRUN_IRQ_EN_A> for bool {
     #[inline(always)]
@@ -60,19 +60,19 @@ impl ADC_OVERRUN_IRQ_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_OVERRUN_IRQ_EN_A {
         match self.bits {
-            false => ADC_OVERRUN_IRQ_EN_A::D_ISABLED,
-            true => ADC_OVERRUN_IRQ_EN_A::E_NABLED,
+            false => ADC_OVERRUN_IRQ_EN_A::DISABLED,
+            true => ADC_OVERRUN_IRQ_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_OVERRUN_IRQ_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_OVERRUN_IRQ_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_OVERRUN_IRQ_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_OVERRUN_IRQ_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_overrun_irq_en` writer - ADC FIFO Overrun IRQ Enable"]
@@ -81,13 +81,13 @@ pub type ADC_OVERRUN_IRQ_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_OVERRUN_IRQ_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_OVERRUN_IRQ_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_OVERRUN_IRQ_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_OVERRUN_IRQ_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_OVERRUN_IRQ_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_irq_en` reader - ADC FIFO Data Available IRQ Enable"]
@@ -96,9 +96,9 @@ pub type ADC_IRQ_EN_R = crate::BitReader<ADC_IRQ_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_IRQ_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_IRQ_EN_A> for bool {
     #[inline(always)]
@@ -111,19 +111,19 @@ impl ADC_IRQ_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_IRQ_EN_A {
         match self.bits {
-            false => ADC_IRQ_EN_A::D_ISABLED,
-            true => ADC_IRQ_EN_A::E_NABLED,
+            false => ADC_IRQ_EN_A::DISABLED,
+            true => ADC_IRQ_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_IRQ_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_IRQ_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_IRQ_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_IRQ_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_irq_en` writer - ADC FIFO Data Available IRQ Enable"]
@@ -132,13 +132,13 @@ pub type ADC_IRQ_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_IRQ_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_IRQ_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_IRQ_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_IRQ_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_IRQ_EN_A::ENABLED)
     }
 }
 #[doc = "Field `adc_drq_en` reader - ADC FIFO Data Available DRQ Enable"]
@@ -147,9 +147,9 @@ pub type ADC_DRQ_EN_R = crate::BitReader<ADC_DRQ_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRQ_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADC_DRQ_EN_A> for bool {
     #[inline(always)]
@@ -162,19 +162,19 @@ impl ADC_DRQ_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADC_DRQ_EN_A {
         match self.bits {
-            false => ADC_DRQ_EN_A::D_ISABLED,
-            true => ADC_DRQ_EN_A::E_NABLED,
+            false => ADC_DRQ_EN_A::DISABLED,
+            true => ADC_DRQ_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADC_DRQ_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADC_DRQ_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADC_DRQ_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADC_DRQ_EN_A::ENABLED
     }
 }
 #[doc = "Field `adc_drq_en` writer - ADC FIFO Data Available DRQ Enable"]
@@ -183,13 +183,13 @@ pub type ADC_DRQ_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> ADC_DRQ_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADC_DRQ_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADC_DRQ_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADC_DRQ_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADC_DRQ_EN_A::ENABLED)
     }
 }
 #[doc = "Field `rx_fifo_trg_level` reader - RX FIFO Trigger Level (RXTL\\[5:0\\])\n\nInterrupt and DMA request trigger level for RX FIFO normal condition IRQ/DRQ generated when WLEVEL > RXTL\\[5:0\\]"]
@@ -254,9 +254,9 @@ pub type RX_SYNC_EN_R = crate::BitReader<RX_SYNC_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_SYNC_EN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<RX_SYNC_EN_A> for bool {
     #[inline(always)]
@@ -269,19 +269,19 @@ impl RX_SYNC_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> RX_SYNC_EN_A {
         match self.bits {
-            false => RX_SYNC_EN_A::D_ISABLED,
-            true => RX_SYNC_EN_A::E_NABLED,
+            false => RX_SYNC_EN_A::DISABLED,
+            true => RX_SYNC_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == RX_SYNC_EN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == RX_SYNC_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == RX_SYNC_EN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == RX_SYNC_EN_A::ENABLED
     }
 }
 #[doc = "Field `rx_sync_en` writer - Audiocodec RX Synchronize Enable"]
@@ -290,13 +290,13 @@ pub type RX_SYNC_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> RX_SYNC_EN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(RX_SYNC_EN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(RX_SYNC_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(RX_SYNC_EN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(RX_SYNC_EN_A::ENABLED)
     }
 }
 #[doc = "Field `rx_sync_en_start` reader - The bit takes effect only when RX_SYNC_EN is set to 1. System Domain: Audio codec/I2S0/I2S1/I2S2/DMIC/OWA RX Synchronize Enable Start."]
@@ -305,9 +305,9 @@ pub type RX_SYNC_EN_START_R = crate::BitReader<RX_SYNC_EN_START_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_SYNC_EN_START_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<RX_SYNC_EN_START_A> for bool {
     #[inline(always)]
@@ -320,19 +320,19 @@ impl RX_SYNC_EN_START_R {
     #[inline(always)]
     pub fn variant(&self) -> RX_SYNC_EN_START_A {
         match self.bits {
-            false => RX_SYNC_EN_START_A::D_ISABLED,
-            true => RX_SYNC_EN_START_A::E_NABLED,
+            false => RX_SYNC_EN_START_A::DISABLED,
+            true => RX_SYNC_EN_START_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == RX_SYNC_EN_START_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == RX_SYNC_EN_START_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == RX_SYNC_EN_START_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == RX_SYNC_EN_START_A::ENABLED
     }
 }
 #[doc = "Field `rx_sync_en_start` writer - The bit takes effect only when RX_SYNC_EN is set to 1. System Domain: Audio codec/I2S0/I2S1/I2S2/DMIC/OWA RX Synchronize Enable Start."]
@@ -341,13 +341,13 @@ pub type RX_SYNC_EN_START_W<'a, const O: u8> =
 impl<'a, const O: u8> RX_SYNC_EN_START_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(RX_SYNC_EN_START_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(RX_SYNC_EN_START_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(RX_SYNC_EN_START_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(RX_SYNC_EN_START_A::ENABLED)
     }
 }
 #[doc = "Field `rx_fifo_mode` reader - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
@@ -419,9 +419,9 @@ pub type ADCDFEN_R = crate::BitReader<ADCDFEN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADCDFEN_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<ADCDFEN_A> for bool {
     #[inline(always)]
@@ -434,19 +434,19 @@ impl ADCDFEN_R {
     #[inline(always)]
     pub fn variant(&self) -> ADCDFEN_A {
         match self.bits {
-            false => ADCDFEN_A::D_ISABLED,
-            true => ADCDFEN_A::E_NABLED,
+            false => ADCDFEN_A::DISABLED,
+            true => ADCDFEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == ADCDFEN_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == ADCDFEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == ADCDFEN_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == ADCDFEN_A::ENABLED
     }
 }
 #[doc = "Field `adcdfen` writer - ADC FIFO delay function for writing data after EN_AD"]
@@ -454,13 +454,13 @@ pub type ADCDFEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_ADC_FIFOC_SPE
 impl<'a, const O: u8> ADCDFEN_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(ADCDFEN_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(ADCDFEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(ADCDFEN_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(ADCDFEN_A::ENABLED)
     }
 }
 #[doc = "Field `adcfdt` reader - ADC FIFO delay time for writing data after EN_AD"]
@@ -548,9 +548,9 @@ pub type EN_AD_R = crate::BitReader<EN_AD_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum EN_AD_A {
     #[doc = "0: Disabled"]
-    D_ISABLED = 0,
+    DISABLED = 0,
     #[doc = "1: Enabled"]
-    E_NABLED = 1,
+    ENABLED = 1,
 }
 impl From<EN_AD_A> for bool {
     #[inline(always)]
@@ -563,19 +563,19 @@ impl EN_AD_R {
     #[inline(always)]
     pub fn variant(&self) -> EN_AD_A {
         match self.bits {
-            false => EN_AD_A::D_ISABLED,
-            true => EN_AD_A::E_NABLED,
+            false => EN_AD_A::DISABLED,
+            true => EN_AD_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLED`"]
+    #[doc = "Checks if the value of the field is `DISABLED`"]
     #[inline(always)]
-    pub fn is_d_isabled(&self) -> bool {
-        *self == EN_AD_A::D_ISABLED
+    pub fn is_disabled(&self) -> bool {
+        *self == EN_AD_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `E_NABLED`"]
+    #[doc = "Checks if the value of the field is `ENABLED`"]
     #[inline(always)]
-    pub fn is_e_nabled(&self) -> bool {
-        *self == EN_AD_A::E_NABLED
+    pub fn is_enabled(&self) -> bool {
+        *self == EN_AD_A::ENABLED
     }
 }
 #[doc = "Field `en_ad` writer - ADC Digital Part Enable"]
@@ -583,13 +583,13 @@ pub type EN_AD_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_ADC_FIFOC_SPEC,
 impl<'a, const O: u8> EN_AD_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn d_isabled(self) -> &'a mut W {
-        self.variant(EN_AD_A::D_ISABLED)
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(EN_AD_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn e_nabled(self) -> &'a mut W {
-        self.variant(EN_AD_A::E_NABLED)
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(EN_AD_A::ENABLED)
     }
 }
 #[doc = "Field `adfs` reader - Sample Rate of ADC \n\n44.1 kHz/22.05 kHz/11.025 kHz can be supported by Audio PLL Configure Bit."]
@@ -599,17 +599,17 @@ pub type ADFS_R = crate::FieldReader<u8, ADFS_A>;
 #[repr(u8)]
 pub enum ADFS_A {
     #[doc = "0: 48 kHz"]
-    _48_K_H_Z = 0,
+    _48KHZ = 0,
     #[doc = "2: 24 kHz"]
-    _24_K_H_Z = 2,
+    _24KHZ = 2,
     #[doc = "4: 12 kHz"]
-    _12_K_H_Z = 4,
+    _12KHZ = 4,
     #[doc = "1: 32 kHz"]
-    _32_K_H_Z = 1,
+    _32KHZ = 1,
     #[doc = "3: 16 kHz"]
-    _16_K_H_Z = 3,
+    _16KHZ = 3,
     #[doc = "5: 8 kHz"]
-    _8_K_H_Z = 5,
+    _8KHZ = 5,
     #[doc = "7: Reserved"]
     R_ESERVED = 7,
 }
@@ -624,45 +624,45 @@ impl ADFS_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<ADFS_A> {
         match self.bits {
-            0 => Some(ADFS_A::_48_K_H_Z),
-            2 => Some(ADFS_A::_24_K_H_Z),
-            4 => Some(ADFS_A::_12_K_H_Z),
-            1 => Some(ADFS_A::_32_K_H_Z),
-            3 => Some(ADFS_A::_16_K_H_Z),
-            5 => Some(ADFS_A::_8_K_H_Z),
+            0 => Some(ADFS_A::_48KHZ),
+            2 => Some(ADFS_A::_24KHZ),
+            4 => Some(ADFS_A::_12KHZ),
+            1 => Some(ADFS_A::_32KHZ),
+            3 => Some(ADFS_A::_16KHZ),
+            5 => Some(ADFS_A::_8KHZ),
             7 => Some(ADFS_A::R_ESERVED),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_48_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_48KHZ`"]
     #[inline(always)]
-    pub fn is_48_k_h_z(&self) -> bool {
-        *self == ADFS_A::_48_K_H_Z
+    pub fn is_48khz(&self) -> bool {
+        *self == ADFS_A::_48KHZ
     }
-    #[doc = "Checks if the value of the field is `_24_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_24KHZ`"]
     #[inline(always)]
-    pub fn is_24_k_h_z(&self) -> bool {
-        *self == ADFS_A::_24_K_H_Z
+    pub fn is_24khz(&self) -> bool {
+        *self == ADFS_A::_24KHZ
     }
-    #[doc = "Checks if the value of the field is `_12_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_12KHZ`"]
     #[inline(always)]
-    pub fn is_12_k_h_z(&self) -> bool {
-        *self == ADFS_A::_12_K_H_Z
+    pub fn is_12khz(&self) -> bool {
+        *self == ADFS_A::_12KHZ
     }
-    #[doc = "Checks if the value of the field is `_32_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_32KHZ`"]
     #[inline(always)]
-    pub fn is_32_k_h_z(&self) -> bool {
-        *self == ADFS_A::_32_K_H_Z
+    pub fn is_32khz(&self) -> bool {
+        *self == ADFS_A::_32KHZ
     }
-    #[doc = "Checks if the value of the field is `_16_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_16KHZ`"]
     #[inline(always)]
-    pub fn is_16_k_h_z(&self) -> bool {
-        *self == ADFS_A::_16_K_H_Z
+    pub fn is_16khz(&self) -> bool {
+        *self == ADFS_A::_16KHZ
     }
-    #[doc = "Checks if the value of the field is `_8_K_H_Z`"]
+    #[doc = "Checks if the value of the field is `_8KHZ`"]
     #[inline(always)]
-    pub fn is_8_k_h_z(&self) -> bool {
-        *self == ADFS_A::_8_K_H_Z
+    pub fn is_8khz(&self) -> bool {
+        *self == ADFS_A::_8KHZ
     }
     #[doc = "Checks if the value of the field is `R_ESERVED`"]
     #[inline(always)]
@@ -675,33 +675,33 @@ pub type ADFS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AC_ADC_FIFOC_SPEC
 impl<'a, const O: u8> ADFS_W<'a, O> {
     #[doc = "48 kHz"]
     #[inline(always)]
-    pub fn _48_k_h_z(self) -> &'a mut W {
-        self.variant(ADFS_A::_48_K_H_Z)
+    pub fn _48khz(self) -> &'a mut W {
+        self.variant(ADFS_A::_48KHZ)
     }
     #[doc = "24 kHz"]
     #[inline(always)]
-    pub fn _24_k_h_z(self) -> &'a mut W {
-        self.variant(ADFS_A::_24_K_H_Z)
+    pub fn _24khz(self) -> &'a mut W {
+        self.variant(ADFS_A::_24KHZ)
     }
     #[doc = "12 kHz"]
     #[inline(always)]
-    pub fn _12_k_h_z(self) -> &'a mut W {
-        self.variant(ADFS_A::_12_K_H_Z)
+    pub fn _12khz(self) -> &'a mut W {
+        self.variant(ADFS_A::_12KHZ)
     }
     #[doc = "32 kHz"]
     #[inline(always)]
-    pub fn _32_k_h_z(self) -> &'a mut W {
-        self.variant(ADFS_A::_32_K_H_Z)
+    pub fn _32khz(self) -> &'a mut W {
+        self.variant(ADFS_A::_32KHZ)
     }
     #[doc = "16 kHz"]
     #[inline(always)]
-    pub fn _16_k_h_z(self) -> &'a mut W {
-        self.variant(ADFS_A::_16_K_H_Z)
+    pub fn _16khz(self) -> &'a mut W {
+        self.variant(ADFS_A::_16KHZ)
     }
     #[doc = "8 kHz"]
     #[inline(always)]
-    pub fn _8_k_h_z(self) -> &'a mut W {
-        self.variant(ADFS_A::_8_K_H_Z)
+    pub fn _8khz(self) -> &'a mut W {
+        self.variant(ADFS_A::_8KHZ)
     }
     #[doc = "Reserved"]
     #[inline(always)]

@@ -41,9 +41,9 @@ pub type LCD_LVDS_DATA_POL_R = crate::FieldReader<u8, LCD_LVDS_DATA_POL_A>;
 #[repr(u8)]
 pub enum LCD_LVDS_DATA_POL_A {
     #[doc = "0: Reverse"]
-    R_EVERSE = 0,
+    REVERSE = 0,
     #[doc = "1: Normal"]
-    N_ORMAL = 1,
+    NORMAL = 1,
 }
 impl From<LCD_LVDS_DATA_POL_A> for u8 {
     #[inline(always)]
@@ -56,20 +56,20 @@ impl LCD_LVDS_DATA_POL_R {
     #[inline(always)]
     pub fn variant(&self) -> Option<LCD_LVDS_DATA_POL_A> {
         match self.bits {
-            0 => Some(LCD_LVDS_DATA_POL_A::R_EVERSE),
-            1 => Some(LCD_LVDS_DATA_POL_A::N_ORMAL),
+            0 => Some(LCD_LVDS_DATA_POL_A::REVERSE),
+            1 => Some(LCD_LVDS_DATA_POL_A::NORMAL),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `R_EVERSE`"]
+    #[doc = "Checks if the value of the field is `REVERSE`"]
     #[inline(always)]
-    pub fn is_r_everse(&self) -> bool {
-        *self == LCD_LVDS_DATA_POL_A::R_EVERSE
+    pub fn is_reverse(&self) -> bool {
+        *self == LCD_LVDS_DATA_POL_A::REVERSE
     }
-    #[doc = "Checks if the value of the field is `N_ORMAL`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_n_ormal(&self) -> bool {
-        *self == LCD_LVDS_DATA_POL_A::N_ORMAL
+    pub fn is_normal(&self) -> bool {
+        *self == LCD_LVDS_DATA_POL_A::NORMAL
     }
 }
 #[doc = "Field `lcd_lvds_data_pol` writer - Set the data polarity of LVDS"]
@@ -78,13 +78,13 @@ pub type LCD_LVDS_DATA_POL_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_LVDS_DATA_POL_W<'a, O> {
     #[doc = "Reverse"]
     #[inline(always)]
-    pub fn r_everse(self) -> &'a mut W {
-        self.variant(LCD_LVDS_DATA_POL_A::R_EVERSE)
+    pub fn reverse(self) -> &'a mut W {
+        self.variant(LCD_LVDS_DATA_POL_A::REVERSE)
     }
     #[doc = "Normal"]
     #[inline(always)]
-    pub fn n_ormal(self) -> &'a mut W {
-        self.variant(LCD_LVDS_DATA_POL_A::N_ORMAL)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(LCD_LVDS_DATA_POL_A::NORMAL)
     }
 }
 #[doc = "Field `lcd_lvds_clk_pol` reader - Set the clock polarity of LVDS"]
@@ -93,9 +93,9 @@ pub type LCD_LVDS_CLK_POL_R = crate::BitReader<LCD_LVDS_CLK_POL_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_CLK_POL_A {
     #[doc = "0: Reverse"]
-    R_EVERSE = 0,
+    REVERSE = 0,
     #[doc = "1: Normal"]
-    N_ORMAL = 1,
+    NORMAL = 1,
 }
 impl From<LCD_LVDS_CLK_POL_A> for bool {
     #[inline(always)]
@@ -108,19 +108,19 @@ impl LCD_LVDS_CLK_POL_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_LVDS_CLK_POL_A {
         match self.bits {
-            false => LCD_LVDS_CLK_POL_A::R_EVERSE,
-            true => LCD_LVDS_CLK_POL_A::N_ORMAL,
+            false => LCD_LVDS_CLK_POL_A::REVERSE,
+            true => LCD_LVDS_CLK_POL_A::NORMAL,
         }
     }
-    #[doc = "Checks if the value of the field is `R_EVERSE`"]
+    #[doc = "Checks if the value of the field is `REVERSE`"]
     #[inline(always)]
-    pub fn is_r_everse(&self) -> bool {
-        *self == LCD_LVDS_CLK_POL_A::R_EVERSE
+    pub fn is_reverse(&self) -> bool {
+        *self == LCD_LVDS_CLK_POL_A::REVERSE
     }
-    #[doc = "Checks if the value of the field is `N_ORMAL`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_n_ormal(&self) -> bool {
-        *self == LCD_LVDS_CLK_POL_A::N_ORMAL
+    pub fn is_normal(&self) -> bool {
+        *self == LCD_LVDS_CLK_POL_A::NORMAL
     }
 }
 #[doc = "Field `lcd_lvds_clk_pol` writer - Set the clock polarity of LVDS"]
@@ -129,13 +129,13 @@ pub type LCD_LVDS_CLK_POL_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_LVDS_CLK_POL_W<'a, O> {
     #[doc = "Reverse"]
     #[inline(always)]
-    pub fn r_everse(self) -> &'a mut W {
-        self.variant(LCD_LVDS_CLK_POL_A::R_EVERSE)
+    pub fn reverse(self) -> &'a mut W {
+        self.variant(LCD_LVDS_CLK_POL_A::REVERSE)
     }
     #[doc = "Normal"]
     #[inline(always)]
-    pub fn n_ormal(self) -> &'a mut W {
-        self.variant(LCD_LVDS_CLK_POL_A::N_ORMAL)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(LCD_LVDS_CLK_POL_A::NORMAL)
     }
 }
 #[doc = "Field `lcd_lvds_clk_sel` reader - Select the clock source of LVDS"]
@@ -285,9 +285,9 @@ pub type LCD_LVDS_DEBUG_EN_R = crate::BitReader<LCD_LVDS_DEBUG_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_DEBUG_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<LCD_LVDS_DEBUG_EN_A> for bool {
     #[inline(always)]
@@ -300,19 +300,19 @@ impl LCD_LVDS_DEBUG_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_LVDS_DEBUG_EN_A {
         match self.bits {
-            false => LCD_LVDS_DEBUG_EN_A::D_ISABLE,
-            true => LCD_LVDS_DEBUG_EN_A::E_NABLE,
+            false => LCD_LVDS_DEBUG_EN_A::DISABLE,
+            true => LCD_LVDS_DEBUG_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LCD_LVDS_DEBUG_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == LCD_LVDS_DEBUG_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LCD_LVDS_DEBUG_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == LCD_LVDS_DEBUG_EN_A::ENABLE
     }
 }
 #[doc = "Field `lcd_lvds_debug_en` writer - Enable LVDS debug function"]
@@ -321,13 +321,13 @@ pub type LCD_LVDS_DEBUG_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_LVDS_DEBUG_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LCD_LVDS_DEBUG_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LCD_LVDS_DEBUG_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LCD_LVDS_DEBUG_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LCD_LVDS_DEBUG_EN_A::ENABLE)
     }
 }
 #[doc = "Field `lcd_lvds_bitwidth` reader - Set the bit width of data"]
@@ -438,9 +438,9 @@ pub type LCD_LVDS_DIR_R = crate::BitReader<LCD_LVDS_DIR_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_DIR_A {
     #[doc = "0: Normal"]
-    N_ORMAL = 0,
+    NORMAL = 0,
     #[doc = "1: Reverse"]
-    R_EVERSE = 1,
+    REVERSE = 1,
 }
 impl From<LCD_LVDS_DIR_A> for bool {
     #[inline(always)]
@@ -453,19 +453,19 @@ impl LCD_LVDS_DIR_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_LVDS_DIR_A {
         match self.bits {
-            false => LCD_LVDS_DIR_A::N_ORMAL,
-            true => LCD_LVDS_DIR_A::R_EVERSE,
+            false => LCD_LVDS_DIR_A::NORMAL,
+            true => LCD_LVDS_DIR_A::REVERSE,
         }
     }
-    #[doc = "Checks if the value of the field is `N_ORMAL`"]
+    #[doc = "Checks if the value of the field is `NORMAL`"]
     #[inline(always)]
-    pub fn is_n_ormal(&self) -> bool {
-        *self == LCD_LVDS_DIR_A::N_ORMAL
+    pub fn is_normal(&self) -> bool {
+        *self == LCD_LVDS_DIR_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `R_EVERSE`"]
+    #[doc = "Checks if the value of the field is `REVERSE`"]
     #[inline(always)]
-    pub fn is_r_everse(&self) -> bool {
-        *self == LCD_LVDS_DIR_A::R_EVERSE
+    pub fn is_reverse(&self) -> bool {
+        *self == LCD_LVDS_DIR_A::REVERSE
     }
 }
 #[doc = "Field `lcd_lvds_dir` writer - Set the LVDS direction"]
@@ -474,13 +474,13 @@ pub type LCD_LVDS_DIR_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_LVDS_DIR_W<'a, O> {
     #[doc = "Normal"]
     #[inline(always)]
-    pub fn n_ormal(self) -> &'a mut W {
-        self.variant(LCD_LVDS_DIR_A::N_ORMAL)
+    pub fn normal(self) -> &'a mut W {
+        self.variant(LCD_LVDS_DIR_A::NORMAL)
     }
     #[doc = "Reverse"]
     #[inline(always)]
-    pub fn r_everse(self) -> &'a mut W {
-        self.variant(LCD_LVDS_DIR_A::R_EVERSE)
+    pub fn reverse(self) -> &'a mut W {
+        self.variant(LCD_LVDS_DIR_A::REVERSE)
     }
 }
 #[doc = "Field `lcd_lvds_even_odd_dir` reader - Set the order of even field and odd field"]
@@ -591,9 +591,9 @@ pub type LCD_LVDS_EN_R = crate::BitReader<LCD_LVDS_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum LCD_LVDS_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<LCD_LVDS_EN_A> for bool {
     #[inline(always)]
@@ -606,19 +606,19 @@ impl LCD_LVDS_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> LCD_LVDS_EN_A {
         match self.bits {
-            false => LCD_LVDS_EN_A::D_ISABLE,
-            true => LCD_LVDS_EN_A::E_NABLE,
+            false => LCD_LVDS_EN_A::DISABLE,
+            true => LCD_LVDS_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == LCD_LVDS_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == LCD_LVDS_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == LCD_LVDS_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == LCD_LVDS_EN_A::ENABLE
     }
 }
 #[doc = "Field `lcd_lvds_en` writer - Enable LVDS interface"]
@@ -627,13 +627,13 @@ pub type LCD_LVDS_EN_W<'a, const O: u8> =
 impl<'a, const O: u8> LCD_LVDS_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(LCD_LVDS_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(LCD_LVDS_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(LCD_LVDS_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(LCD_LVDS_EN_A::ENABLE)
     }
 }
 impl R {

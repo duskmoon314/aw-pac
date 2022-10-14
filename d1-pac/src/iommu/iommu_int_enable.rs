@@ -44,7 +44,7 @@ pub enum MICRO_TLB_INVALID_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<MICRO_TLB_INVALID_EN_A> for bool {
     #[inline(always)]
@@ -58,7 +58,7 @@ impl MICRO_TLB_INVALID_EN_R {
     pub fn variant(&self) -> MICRO_TLB_INVALID_EN_A {
         match self.bits {
             false => MICRO_TLB_INVALID_EN_A::M_ASK,
-            true => MICRO_TLB_INVALID_EN_A::E_NABLE,
+            true => MICRO_TLB_INVALID_EN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
@@ -66,10 +66,10 @@ impl MICRO_TLB_INVALID_EN_R {
     pub fn is_m_ask(&self) -> bool {
         *self == MICRO_TLB_INVALID_EN_A::M_ASK
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == MICRO_TLB_INVALID_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == MICRO_TLB_INVALID_EN_A::ENABLE
     }
 }
 #[doc = "Field `micro_tlb_invalid_en[0-6]` writer - Micro TLB\\[i\\]
@@ -84,8 +84,8 @@ impl<'a, const O: u8> MICRO_TLB_INVALID_EN_W<'a, O> {
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(MICRO_TLB_INVALID_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(MICRO_TLB_INVALID_EN_A::ENABLE)
     }
 }
 #[doc = "Field `l_page_table_invalid_en[0-1]` reader - Level\\[i\\]
@@ -98,7 +98,7 @@ pub enum L_PAGE_TABLE_INVALID_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<L_PAGE_TABLE_INVALID_EN_A> for bool {
     #[inline(always)]
@@ -112,7 +112,7 @@ impl L_PAGE_TABLE_INVALID_EN_R {
     pub fn variant(&self) -> L_PAGE_TABLE_INVALID_EN_A {
         match self.bits {
             false => L_PAGE_TABLE_INVALID_EN_A::M_ASK,
-            true => L_PAGE_TABLE_INVALID_EN_A::E_NABLE,
+            true => L_PAGE_TABLE_INVALID_EN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
@@ -120,10 +120,10 @@ impl L_PAGE_TABLE_INVALID_EN_R {
     pub fn is_m_ask(&self) -> bool {
         *self == L_PAGE_TABLE_INVALID_EN_A::M_ASK
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == L_PAGE_TABLE_INVALID_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == L_PAGE_TABLE_INVALID_EN_A::ENABLE
     }
 }
 #[doc = "Field `l_page_table_invalid_en[0-1]` writer - Level\\[i\\]
@@ -138,8 +138,8 @@ impl<'a, const O: u8> L_PAGE_TABLE_INVALID_EN_W<'a, O> {
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(L_PAGE_TABLE_INVALID_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(L_PAGE_TABLE_INVALID_EN_A::ENABLE)
     }
 }
 #[doc = "Field `dbg_pf_dram_iv_l1_pt_en` reader - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
@@ -150,7 +150,7 @@ pub enum DBG_PF_DRAM_IV_L1_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<DBG_PF_DRAM_IV_L1_PT_EN_A> for bool {
     #[inline(always)]
@@ -164,7 +164,7 @@ impl DBG_PF_DRAM_IV_L1_PT_EN_R {
     pub fn variant(&self) -> DBG_PF_DRAM_IV_L1_PT_EN_A {
         match self.bits {
             false => DBG_PF_DRAM_IV_L1_PT_EN_A::M_ASK,
-            true => DBG_PF_DRAM_IV_L1_PT_EN_A::E_NABLE,
+            true => DBG_PF_DRAM_IV_L1_PT_EN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
@@ -172,10 +172,10 @@ impl DBG_PF_DRAM_IV_L1_PT_EN_R {
     pub fn is_m_ask(&self) -> bool {
         *self == DBG_PF_DRAM_IV_L1_PT_EN_A::M_ASK
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == DBG_PF_DRAM_IV_L1_PT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == DBG_PF_DRAM_IV_L1_PT_EN_A::ENABLE
     }
 }
 #[doc = "Field `dbg_pf_dram_iv_l1_pt_en` writer - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
@@ -189,8 +189,8 @@ impl<'a, const O: u8> DBG_PF_DRAM_IV_L1_PT_EN_W<'a, O> {
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(DBG_PF_DRAM_IV_L1_PT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DBG_PF_DRAM_IV_L1_PT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `dbg_pf_pc_iv_l1_pt_en` reader - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
@@ -201,7 +201,7 @@ pub enum DBG_PF_PC_IV_L1_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<DBG_PF_PC_IV_L1_PT_EN_A> for bool {
     #[inline(always)]
@@ -215,7 +215,7 @@ impl DBG_PF_PC_IV_L1_PT_EN_R {
     pub fn variant(&self) -> DBG_PF_PC_IV_L1_PT_EN_A {
         match self.bits {
             false => DBG_PF_PC_IV_L1_PT_EN_A::M_ASK,
-            true => DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE,
+            true => DBG_PF_PC_IV_L1_PT_EN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
@@ -223,10 +223,10 @@ impl DBG_PF_PC_IV_L1_PT_EN_R {
     pub fn is_m_ask(&self) -> bool {
         *self == DBG_PF_PC_IV_L1_PT_EN_A::M_ASK
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == DBG_PF_PC_IV_L1_PT_EN_A::ENABLE
     }
 }
 #[doc = "Field `dbg_pf_pc_iv_l1_pt_en` writer - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
@@ -240,8 +240,8 @@ impl<'a, const O: u8> DBG_PF_PC_IV_L1_PT_EN_W<'a, O> {
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(DBG_PF_PC_IV_L1_PT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DBG_PF_PC_IV_L1_PT_EN_A::ENABLE)
     }
 }
 #[doc = "Field `dbg_pf_l2_iv_pt_en` reader - Debug or Prefetch Invalid Page Table Enable"]
@@ -252,7 +252,7 @@ pub enum DBG_PF_L2_IV_PT_EN_A {
     #[doc = "0: Mask interrupt"]
     M_ASK = 0,
     #[doc = "1: Enable interrupt"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<DBG_PF_L2_IV_PT_EN_A> for bool {
     #[inline(always)]
@@ -266,7 +266,7 @@ impl DBG_PF_L2_IV_PT_EN_R {
     pub fn variant(&self) -> DBG_PF_L2_IV_PT_EN_A {
         match self.bits {
             false => DBG_PF_L2_IV_PT_EN_A::M_ASK,
-            true => DBG_PF_L2_IV_PT_EN_A::E_NABLE,
+            true => DBG_PF_L2_IV_PT_EN_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `M_ASK`"]
@@ -274,10 +274,10 @@ impl DBG_PF_L2_IV_PT_EN_R {
     pub fn is_m_ask(&self) -> bool {
         *self == DBG_PF_L2_IV_PT_EN_A::M_ASK
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == DBG_PF_L2_IV_PT_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == DBG_PF_L2_IV_PT_EN_A::ENABLE
     }
 }
 #[doc = "Field `dbg_pf_l2_iv_pt_en` writer - Debug or Prefetch Invalid Page Table Enable"]
@@ -291,8 +291,8 @@ impl<'a, const O: u8> DBG_PF_L2_IV_PT_EN_W<'a, O> {
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(DBG_PF_L2_IV_PT_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(DBG_PF_L2_IV_PT_EN_A::ENABLE)
     }
 }
 impl R {

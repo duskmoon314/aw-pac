@@ -40,9 +40,9 @@ pub type IOMMU_AUTO_GATING_R = crate::BitReader<IOMMU_AUTO_GATING_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IOMMU_AUTO_GATING_A {
     #[doc = "0: Disable auto gating function"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable auto gating function"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<IOMMU_AUTO_GATING_A> for bool {
     #[inline(always)]
@@ -55,19 +55,19 @@ impl IOMMU_AUTO_GATING_R {
     #[inline(always)]
     pub fn variant(&self) -> IOMMU_AUTO_GATING_A {
         match self.bits {
-            false => IOMMU_AUTO_GATING_A::D_ISABLE,
-            true => IOMMU_AUTO_GATING_A::E_NABLE,
+            false => IOMMU_AUTO_GATING_A::DISABLE,
+            true => IOMMU_AUTO_GATING_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == IOMMU_AUTO_GATING_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == IOMMU_AUTO_GATING_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == IOMMU_AUTO_GATING_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == IOMMU_AUTO_GATING_A::ENABLE
     }
 }
 #[doc = "Field `iommu_auto_gating` writer - IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module."]
@@ -76,13 +76,13 @@ pub type IOMMU_AUTO_GATING_W<'a, const O: u8> =
 impl<'a, const O: u8> IOMMU_AUTO_GATING_W<'a, O> {
     #[doc = "Disable auto gating function"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(IOMMU_AUTO_GATING_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(IOMMU_AUTO_GATING_A::DISABLE)
     }
     #[doc = "Enable auto gating function"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(IOMMU_AUTO_GATING_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(IOMMU_AUTO_GATING_A::ENABLE)
     }
 }
 impl R {

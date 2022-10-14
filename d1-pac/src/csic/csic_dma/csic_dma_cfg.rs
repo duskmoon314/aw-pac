@@ -407,9 +407,9 @@ pub type HFLIP_EN_R = crate::BitReader<HFLIP_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum HFLIP_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<HFLIP_EN_A> for bool {
     #[inline(always)]
@@ -422,19 +422,19 @@ impl HFLIP_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> HFLIP_EN_A {
         match self.bits {
-            false => HFLIP_EN_A::D_ISABLE,
-            true => HFLIP_EN_A::E_NABLE,
+            false => HFLIP_EN_A::DISABLE,
+            true => HFLIP_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == HFLIP_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == HFLIP_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == HFLIP_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == HFLIP_EN_A::ENABLE
     }
 }
 #[doc = "Field `hflip_en` writer - Horizontal flip enable\n\nWhen enabled, the received data will be arranged in horizontal flip."]
@@ -442,13 +442,13 @@ pub type HFLIP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_DMA_CFG_SP
 impl<'a, const O: u8> HFLIP_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(HFLIP_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(HFLIP_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(HFLIP_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(HFLIP_EN_A::ENABLE)
     }
 }
 #[doc = "Field `vflip_en` reader - Vertical flip enable\n\nWhen enabled, the received data will be arranged in vertical flip."]
@@ -457,9 +457,9 @@ pub type VFLIP_EN_R = crate::BitReader<VFLIP_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VFLIP_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<VFLIP_EN_A> for bool {
     #[inline(always)]
@@ -472,19 +472,19 @@ impl VFLIP_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> VFLIP_EN_A {
         match self.bits {
-            false => VFLIP_EN_A::D_ISABLE,
-            true => VFLIP_EN_A::E_NABLE,
+            false => VFLIP_EN_A::DISABLE,
+            true => VFLIP_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == VFLIP_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == VFLIP_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == VFLIP_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == VFLIP_EN_A::ENABLE
     }
 }
 #[doc = "Field `vflip_en` writer - Vertical flip enable\n\nWhen enabled, the received data will be arranged in vertical flip."]
@@ -492,13 +492,13 @@ pub type VFLIP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_DMA_CFG_SP
 impl<'a, const O: u8> VFLIP_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(VFLIP_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(VFLIP_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(VFLIP_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(VFLIP_EN_A::ENABLE)
     }
 }
 #[doc = "Field `output_fmt` reader - Output data format\n\nWhen the input format is set to RAW stream\n\n0000: field-raw-8\n\n0001: field-raw-10\n\n0010: field-raw-12\n\n0011: reserved\n\n0100: field-rgb565\n\n0101: field-rgb888\n\n0110: field-prgb888\n\n0111: reserved\n\n1000: frame-raw-8\n\n1001: frame-raw-10\n\n1010: frame-raw-12\n\n1011: reserved\n\n1100: frame-rgb565\n\n1101: frame-rgb888\n\n1110: frame-prgb888\n\n1111: reserved\n\nWhen the input format is set to YUV422\n\n0000: field planar YCbCr 422\n\n0001: field planar YCbCr 420\n\n0010: frame planar YCbCr 420\n\n0011: frame planar YCbCr 422\n\n0100: field planar YCbCr 422 UV combined (UV sequence)\n\n0101: field planar YCbCr 420 UV combined (UV sequence)\n\n0110: frame planar YCbCr 420 UV combined (UV sequence)\n\n0111: frame planar YCbCr 422 UV combined (UV sequence)\n\n1000: filed planar YCbCr 422 UV combined (VU sequence)\n\n1001: field planar YCbCr 420 UV combined (VU sequence)\n\n1010: frame planar YCbCr 420 UV combined (VU sequence)\n\n1011: frame planar YCbCr 422 UV combined (VU sequence)\n\n1100: reserved\n\n1101: field YCbCr 400\n\n1110: reserved\n\n1111: frame YCbCr 400\n\nWhen the input format is set to YUV420\n\n0000: reserved\n\n0001: field planar YCbCr 420\n\n0010: frame planar YCbCr 420\n\n0011: reserved\n\n0100: reserved\n\n0101: field planar YCbCr 420 UV combined (UV sequence)\n\n0110: frame planar YCbCr 420 UV combined (UV sequence) 0111~1000: reserved\n\n1001: field planar YCbCr 420 UV combined (VU sequence)\n\n1010: frame planar YCbCr 420 UV combined (VU sequence) 1011~1100: reserved\n\n1101: field YCbCr 400\n\n1110: reserved\n\n1111: frame YCbCr 400"]
@@ -563,9 +563,9 @@ pub type YUV_10BIT_CUT_8BIT_R = crate::BitReader<YUV_10BIT_CUT_8BIT_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum YUV_10BIT_CUT_8BIT_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<YUV_10BIT_CUT_8BIT_A> for bool {
     #[inline(always)]
@@ -578,19 +578,19 @@ impl YUV_10BIT_CUT_8BIT_R {
     #[inline(always)]
     pub fn variant(&self) -> YUV_10BIT_CUT_8BIT_A {
         match self.bits {
-            false => YUV_10BIT_CUT_8BIT_A::D_ISABLE,
-            true => YUV_10BIT_CUT_8BIT_A::E_NABLE,
+            false => YUV_10BIT_CUT_8BIT_A::DISABLE,
+            true => YUV_10BIT_CUT_8BIT_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == YUV_10BIT_CUT_8BIT_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == YUV_10BIT_CUT_8BIT_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == YUV_10BIT_CUT_8BIT_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == YUV_10BIT_CUT_8BIT_A::ENABLE
     }
 }
 #[doc = "Field `yuv_10bit_cut_8bit` writer - 10-bit input cut to 8-bit"]
@@ -599,13 +599,13 @@ pub type YUV_10BIT_CUT_8BIT_W<'a, const O: u8> =
 impl<'a, const O: u8> YUV_10BIT_CUT_8BIT_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(YUV_10BIT_CUT_8BIT_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(YUV_10BIT_CUT_8BIT_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(YUV_10BIT_CUT_8BIT_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(YUV_10BIT_CUT_8BIT_A::ENABLE)
     }
 }
 #[doc = "Field `pad_val` reader - Padding value when OUTPUT_FMT is prgb888\n\n0x00-0xff"]

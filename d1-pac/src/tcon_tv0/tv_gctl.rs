@@ -91,9 +91,9 @@ pub type TV_EN_R = crate::BitReader<TV_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TV_EN_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<TV_EN_A> for bool {
     #[inline(always)]
@@ -106,19 +106,19 @@ impl TV_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> TV_EN_A {
         match self.bits {
-            false => TV_EN_A::D_ISABLE,
-            true => TV_EN_A::E_NABLE,
+            false => TV_EN_A::DISABLE,
+            true => TV_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == TV_EN_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == TV_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == TV_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == TV_EN_A::ENABLE
     }
 }
 #[doc = "Field `tv_en` writer - When it is disabled, the module will be reset to idle state."]
@@ -126,13 +126,13 @@ pub type TV_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_GCTL_SPEC, TV_E
 impl<'a, const O: u8> TV_EN_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(TV_EN_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(TV_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(TV_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(TV_EN_A::ENABLE)
     }
 }
 impl R {

@@ -45,9 +45,9 @@ pub type BT656_F_MASK_R = crate::BitReader<BT656_F_MASK_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum BT656_F_MASK_A {
     #[doc = "0: Disable"]
-    D_ISABLE = 0,
+    DISABLE = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<BT656_F_MASK_A> for bool {
     #[inline(always)]
@@ -60,19 +60,19 @@ impl BT656_F_MASK_R {
     #[inline(always)]
     pub fn variant(&self) -> BT656_F_MASK_A {
         match self.bits {
-            false => BT656_F_MASK_A::D_ISABLE,
-            true => BT656_F_MASK_A::E_NABLE,
+            false => BT656_F_MASK_A::DISABLE,
+            true => BT656_F_MASK_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `D_ISABLE`"]
+    #[doc = "Checks if the value of the field is `DISABLE`"]
     #[inline(always)]
-    pub fn is_d_isable(&self) -> bool {
-        *self == BT656_F_MASK_A::D_ISABLE
+    pub fn is_disable(&self) -> bool {
+        *self == BT656_F_MASK_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == BT656_F_MASK_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == BT656_F_MASK_A::ENABLE
     }
 }
 #[doc = "Field `bt656_f_mask` writer - BT656 F Mask"]
@@ -81,13 +81,13 @@ pub type BT656_F_MASK_W<'a, const O: u8> =
 impl<'a, const O: u8> BT656_F_MASK_W<'a, O> {
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn d_isable(self) -> &'a mut W {
-        self.variant(BT656_F_MASK_A::D_ISABLE)
+    pub fn disable(self) -> &'a mut W {
+        self.variant(BT656_F_MASK_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(BT656_F_MASK_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(BT656_F_MASK_A::ENABLE)
     }
 }
 #[doc = "Field `ceu_en` reader - Enable CEU function"]
@@ -96,9 +96,9 @@ pub type CEU_EN_R = crate::BitReader<CEU_EN_A>;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CEU_EN_A {
     #[doc = "0: Bypass"]
-    B_YPASS = 0,
+    BYPASS = 0,
     #[doc = "1: Enable"]
-    E_NABLE = 1,
+    ENABLE = 1,
 }
 impl From<CEU_EN_A> for bool {
     #[inline(always)]
@@ -111,19 +111,19 @@ impl CEU_EN_R {
     #[inline(always)]
     pub fn variant(&self) -> CEU_EN_A {
         match self.bits {
-            false => CEU_EN_A::B_YPASS,
-            true => CEU_EN_A::E_NABLE,
+            false => CEU_EN_A::BYPASS,
+            true => CEU_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `B_YPASS`"]
+    #[doc = "Checks if the value of the field is `BYPASS`"]
     #[inline(always)]
-    pub fn is_b_ypass(&self) -> bool {
-        *self == CEU_EN_A::B_YPASS
+    pub fn is_bypass(&self) -> bool {
+        *self == CEU_EN_A::BYPASS
     }
-    #[doc = "Checks if the value of the field is `E_NABLE`"]
+    #[doc = "Checks if the value of the field is `ENABLE`"]
     #[inline(always)]
-    pub fn is_e_nable(&self) -> bool {
-        *self == CEU_EN_A::E_NABLE
+    pub fn is_enable(&self) -> bool {
+        *self == CEU_EN_A::ENABLE
     }
 }
 #[doc = "Field `ceu_en` writer - Enable CEU function"]
@@ -131,13 +131,13 @@ pub type CEU_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCD_CEU_CTL_SPEC,
 impl<'a, const O: u8> CEU_EN_W<'a, O> {
     #[doc = "Bypass"]
     #[inline(always)]
-    pub fn b_ypass(self) -> &'a mut W {
-        self.variant(CEU_EN_A::B_YPASS)
+    pub fn bypass(self) -> &'a mut W {
+        self.variant(CEU_EN_A::BYPASS)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn e_nable(self) -> &'a mut W {
-        self.variant(CEU_EN_A::E_NABLE)
+    pub fn enable(self) -> &'a mut W {
+        self.variant(CEU_EN_A::ENABLE)
     }
 }
 impl R {
