@@ -42,8 +42,7 @@ impl W {
         self
     }
 }
-#[doc = "IOMMU PMU Access Low \\[i\\]
-Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iommu_pmu_access_low](index.html) module"]
+#[doc = "IOMMU PMU Access Low \\[i\\] Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iommu_pmu_access_low](index.html) module"]
 pub struct IOMMU_PMU_ACCESS_LOW_SPEC;
 impl crate::RegisterSpec for IOMMU_PMU_ACCESS_LOW_SPEC {
     type Ux = u32;

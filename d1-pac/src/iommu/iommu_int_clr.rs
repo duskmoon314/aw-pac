@@ -34,8 +34,7 @@ impl From<crate::W<IOMMU_INT_CLR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Micro TLB\\[i\\]
-permission invalid interrupt clear bit\n\nValue on reset: 0"]
+#[doc = "Micro TLB\\[i\\] permission invalid interrupt clear bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_INVALID_CLR_AW {
     #[doc = "0: Invalid operation"]
@@ -49,8 +48,7 @@ impl From<MICRO_TLB_INVALID_CLR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `micro_tlb_invalid_clr[0-6]` writer - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+#[doc = "Field `micro_tlb_invalid_clr[0-6]` writer - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
 pub type MICRO_TLB_INVALID_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_INT_CLR_SPEC, MICRO_TLB_INVALID_CLR_AW, O>;
 impl<'a, const O: u8> MICRO_TLB_INVALID_CLR_W<'a, O> {
@@ -65,8 +63,7 @@ impl<'a, const O: u8> MICRO_TLB_INVALID_CLR_W<'a, O> {
         self.variant(MICRO_TLB_INVALID_CLR_AW::CLEAR)
     }
 }
-#[doc = "Level\\[i\\]
-page table invalid interrupt clear bit\n\nValue on reset: 0"]
+#[doc = "Level\\[i\\] page table invalid interrupt clear bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L_PAGE_TABLE_INVALID_CLR_AW {
     #[doc = "0: Invalid operation"]
@@ -80,8 +77,7 @@ impl From<L_PAGE_TABLE_INVALID_CLR_AW> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `l_page_table_invalid_clr[0-1]` writer - Level\\[i\\]
-page table invalid interrupt clear bit"]
+#[doc = "Field `l_page_table_invalid_clr[0-1]` writer - Level\\[i\\] page table invalid interrupt clear bit"]
 pub type L_PAGE_TABLE_INVALID_CLR_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_INT_CLR_SPEC, L_PAGE_TABLE_INVALID_CLR_AW, O>;
 impl<'a, const O: u8> L_PAGE_TABLE_INVALID_CLR_W<'a, O> {
@@ -97,70 +93,59 @@ impl<'a, const O: u8> L_PAGE_TABLE_INVALID_CLR_W<'a, O> {
     }
 }
 impl W {
-    #[doc = "Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub unsafe fn micro_tlb_invalid_clr<const O: u8>(&mut self) -> MICRO_TLB_INVALID_CLR_W<O> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 0 - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Bit 0 - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb0_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<0> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 2 - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Bit 2 - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb1_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<2> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 4 - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Bit 4 - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb2_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<4> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 6 - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Bit 6 - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb3_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<6> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 8 - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Bit 8 - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb4_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<8> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 10 - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Bit 10 - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb5_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<10> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 12 - Micro TLB\\[i\\]
-permission invalid interrupt clear bit"]
+    #[doc = "Bit 12 - Micro TLB\\[i\\] permission invalid interrupt clear bit"]
     #[inline(always)]
     pub fn micro_tlb6_invalid_clr(&mut self) -> MICRO_TLB_INVALID_CLR_W<12> {
         MICRO_TLB_INVALID_CLR_W::new(self)
     }
-    #[doc = "Level\\[i\\]
-page table invalid interrupt clear bit"]
+    #[doc = "Level\\[i\\] page table invalid interrupt clear bit"]
     #[inline(always)]
     pub unsafe fn l_page_table_invalid_clr<const O: u8>(
         &mut self,
     ) -> L_PAGE_TABLE_INVALID_CLR_W<O> {
         L_PAGE_TABLE_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 16 - Level\\[i\\]
-page table invalid interrupt clear bit"]
+    #[doc = "Bit 16 - Level\\[i\\] page table invalid interrupt clear bit"]
     #[inline(always)]
     pub fn l0_page_table_invalid_clr(&mut self) -> L_PAGE_TABLE_INVALID_CLR_W<16> {
         L_PAGE_TABLE_INVALID_CLR_W::new(self)
     }
-    #[doc = "Bit 17 - Level\\[i\\]
-page table invalid interrupt clear bit"]
+    #[doc = "Bit 17 - Level\\[i\\] page table invalid interrupt clear bit"]
     #[inline(always)]
     pub fn l1_page_table_invalid_clr(&mut self) -> L_PAGE_TABLE_INVALID_CLR_W<17> {
         L_PAGE_TABLE_INVALID_CLR_W::new(self)

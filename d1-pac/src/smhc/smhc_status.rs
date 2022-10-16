@@ -307,11 +307,9 @@ impl FSM_STA_R {
         *self == FSM_STA_A::WAIT
     }
 }
-#[doc = "Field `card_present` reader - Data\\[3\\]
-Statuss"]
+#[doc = "Field `card_present` reader - Data\\[3\\] Statuss"]
 pub type CARD_PRESENT_R = crate::BitReader<CARD_PRESENT_A>;
-#[doc = "Data\\[3\\]
-Statuss\n\nValue on reset: 0"]
+#[doc = "Data\\[3\\] Statuss\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CARD_PRESENT_A {
     #[doc = "0: The card is not present"]
@@ -415,8 +413,7 @@ impl R {
     pub fn fsm_sta(&self) -> FSM_STA_R {
         FSM_STA_R::new(((self.bits >> 4) & 0x0f) as u8)
     }
-    #[doc = "Bit 8 - Data\\[3\\]
-Statuss"]
+    #[doc = "Bit 8 - Data\\[3\\] Statuss"]
     #[inline(always)]
     pub fn card_present(&self) -> CARD_PRESENT_R {
         CARD_PRESENT_R::new(((self.bits >> 8) & 1) != 0)

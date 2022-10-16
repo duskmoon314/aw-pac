@@ -54,8 +54,7 @@ pub struct CSIC_DMA {
     #[doc = "0x70 - CSIC DMA PCLK Statistic Register"]
     pub csic_dma_pclk_stat: CSIC_DMA_PCLK_STAT,
     _reserved25: [u8; 0x0c],
-    #[doc = "0x80..0x8c - CSIC DMA BUF Address FIFO\\[i\\]
-Entry Register"]
+    #[doc = "0x80..0x8c - CSIC DMA BUF Address FIFO\\[i\\] Entry Register"]
     pub csic_dma_buf_addr_fifo_entry: [CSIC_DMA_BUF_ADDR_FIFO_ENTRY; 3],
     #[doc = "0x8c - CSIC DMA BUF Threshold Register"]
     pub csic_dma_buf_th: CSIC_DMA_BUF_TH,
@@ -174,8 +173,7 @@ pub mod csic_dma_pclk_stat;
 #[doc = "csic_dma_buf_addr_fifo_entry (rw) register accessor: an alias for `Reg<CSIC_DMA_BUF_ADDR_FIFO_ENTRY_SPEC>`"]
 pub type CSIC_DMA_BUF_ADDR_FIFO_ENTRY =
     crate::Reg<csic_dma_buf_addr_fifo_entry::CSIC_DMA_BUF_ADDR_FIFO_ENTRY_SPEC>;
-#[doc = "CSIC DMA BUF Address FIFO\\[i\\]
-Entry Register"]
+#[doc = "CSIC DMA BUF Address FIFO\\[i\\] Entry Register"]
 pub mod csic_dma_buf_addr_fifo_entry;
 #[doc = "csic_dma_buf_th (rw) register accessor: an alias for `Reg<CSIC_DMA_BUF_TH_SPEC>`"]
 pub type CSIC_DMA_BUF_TH = crate::Reg<csic_dma_buf_th::CSIC_DMA_BUF_TH_SPEC>;

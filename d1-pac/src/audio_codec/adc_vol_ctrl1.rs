@@ -34,11 +34,9 @@ impl From<crate::W<ADC_VOL_CTRL1_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `adc_vol[1-3]` reader - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+#[doc = "Field `adc_vol[1-3]` reader - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
 pub type ADC_VOL_R = crate::FieldReader<u8, ADC_VOL_A>;
-#[doc = "ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)\n\nValue on reset: 160"]
+#[doc = "ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)\n\nValue on reset: 160"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADC_VOL_A {
@@ -90,8 +88,7 @@ impl ADC_VOL_R {
         *self == ADC_VOL_A::_71_25DB
     }
 }
-#[doc = "Field `adc_vol[1-3]` writer - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+#[doc = "Field `adc_vol[1-3]` writer - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
 pub type ADC_VOL_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, ADC_VOL_CTRL1_SPEC, u8, ADC_VOL_A, 8, O>;
 impl<'a, const O: u8> ADC_VOL_W<'a, O> {
@@ -117,52 +114,44 @@ impl<'a, const O: u8> ADC_VOL_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub unsafe fn adc_vol(&self, n: u8) -> ADC_VOL_R {
         ADC_VOL_R::new(((self.bits >> ((n - 1) * 8)) & 0xff) as u8)
     }
-    #[doc = "Bits 0:7 - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "Bits 0:7 - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub fn adc1_vol(&self) -> ADC_VOL_R {
         ADC_VOL_R::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 8:15 - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "Bits 8:15 - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub fn adc2_vol(&self) -> ADC_VOL_R {
         ADC_VOL_R::new(((self.bits >> 8) & 0xff) as u8)
     }
-    #[doc = "Bits 16:23 - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "Bits 16:23 - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub fn adc3_vol(&self) -> ADC_VOL_R {
         ADC_VOL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = "ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub unsafe fn adc_vol<const O: u8>(&mut self) -> ADC_VOL_W<O> {
         ADC_VOL_W::new(self)
     }
-    #[doc = "Bits 0:7 - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "Bits 0:7 - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub fn adc1_vol(&mut self) -> ADC_VOL_W<0> {
         ADC_VOL_W::new(self)
     }
-    #[doc = "Bits 8:15 - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "Bits 8:15 - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub fn adc2_vol(&mut self) -> ADC_VOL_W<8> {
         ADC_VOL_W::new(self)
     }
-    #[doc = "Bits 16:23 - ADC\\[i\\]
-channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
+    #[doc = "Bits 16:23 - ADC\\[i\\] channel volume (-119.25 dB To 71.25 dB, 0.75 dB/Step)"]
     #[inline(always)]
     pub fn adc3_vol(&mut self) -> ADC_VOL_W<16> {
         ADC_VOL_W::new(self)

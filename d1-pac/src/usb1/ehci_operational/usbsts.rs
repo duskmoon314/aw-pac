@@ -46,13 +46,9 @@ pub type USBERRINT_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC,
 pub type PORT_CHANGE_DETECT_R = crate::BitReader<bool>;
 #[doc = "Field `port_change_detect` writer - Port Change Detect\n\nThe Host Controller sets this bit to a one when any port for which the Port Owner bit is set to zero has a change bit transition from a zero to a one or a Force Port Resume bit transition from a zero to a one as a result of a J-K transition detected on a suspended port. This bit will also be set as a result of the Connect Status Chang being set to a one after system software has relinquished ownership of a connected port by writing a one to a port's Port Owner bit."]
 pub type PORT_CHANGE_DETECT_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
-#[doc = "Field `frame_list_rollover` reader - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
-toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\]
-toggles."]
+#[doc = "Field `frame_list_rollover` reader - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\] toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\] toggles."]
 pub type FRAME_LIST_ROLLOVER_R = crate::BitReader<bool>;
-#[doc = "Field `frame_list_rollover` writer - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
-toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\]
-toggles."]
+#[doc = "Field `frame_list_rollover` writer - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\] toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\] toggles."]
 pub type FRAME_LIST_ROLLOVER_W<'a, const O: u8> = crate::BitWriter0C<'a, u32, USBSTS_SPEC, bool, O>;
 #[doc = "Field `host_system_error` reader - Host System Error\n\nThe Host Controller set this bit to 1 when a serious error occurs during a host system access involving the Host Controller module. When this error occurs, the Host Controller clears the Run/Stop bit in the Command register to prevent further execution of the scheduled TDs."]
 pub type HOST_SYSTEM_ERROR_R = crate::BitReader<bool>;
@@ -87,9 +83,7 @@ impl R {
     pub fn port_change_detect(&self) -> PORT_CHANGE_DETECT_R {
         PORT_CHANGE_DETECT_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
-toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\]
-toggles."]
+    #[doc = "Bit 3 - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\] toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\] toggles."]
     #[inline(always)]
     pub fn frame_list_rollover(&self) -> FRAME_LIST_ROLLOVER_R {
         FRAME_LIST_ROLLOVER_R::new(((self.bits >> 3) & 1) != 0)
@@ -141,9 +135,7 @@ impl W {
     pub fn port_change_detect(&mut self) -> PORT_CHANGE_DETECT_W<2> {
         PORT_CHANGE_DETECT_W::new(self)
     }
-    #[doc = "Bit 3 - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\]
-toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\]
-toggles."]
+    #[doc = "Bit 3 - Frame List Rollover\n\nThe Host Controller sets this bit to a one when the Frame List Index rolls over from its maximum value to zero. The exact value at which the rollover occurs depends on the frame list size. For example, if the frame list size is 1024, the Frame Index Register rolls over every time FRINDEX \\[13\\] toggles. Similarly, if the size is 512, the Host Controller sets this bit to a one every time FRINDEX \\[12\\] toggles."]
     #[inline(always)]
     pub fn frame_list_rollover(&mut self) -> FRAME_LIST_ROLLOVER_W<3> {
         FRAME_LIST_ROLLOVER_W::new(self)

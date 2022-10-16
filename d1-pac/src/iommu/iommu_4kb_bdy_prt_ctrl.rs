@@ -34,11 +34,9 @@ impl From<crate::W<IOMMU_4KB_BDY_PRT_CTRL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `m_4kb_bdy_prt_ctrl[0-6]` reader - Master\\[i\\]
-4 KB boundary protect control bit"]
+#[doc = "Field `m_4kb_bdy_prt_ctrl[0-6]` reader - Master\\[i\\] 4 KB boundary protect control bit"]
 pub type M_4KB_BDY_PRT_CTRL_R = crate::BitReader<M_4KB_BDY_PRT_CTRL_A>;
-#[doc = "Master\\[i\\]
-4 KB boundary protect control bit\n\nValue on reset: 1"]
+#[doc = "Master\\[i\\] 4 KB boundary protect control bit\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_4KB_BDY_PRT_CTRL_A {
     #[doc = "0: Disable 4 KB boundary protect"]
@@ -72,8 +70,7 @@ impl M_4KB_BDY_PRT_CTRL_R {
         *self == M_4KB_BDY_PRT_CTRL_A::ENABLE
     }
 }
-#[doc = "Field `m_4kb_bdy_prt_ctrl[0-6]` writer - Master\\[i\\]
-4 KB boundary protect control bit"]
+#[doc = "Field `m_4kb_bdy_prt_ctrl[0-6]` writer - Master\\[i\\] 4 KB boundary protect control bit"]
 pub type M_4KB_BDY_PRT_CTRL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_4KB_BDY_PRT_CTRL_SPEC, M_4KB_BDY_PRT_CTRL_A, O>;
 impl<'a, const O: u8> M_4KB_BDY_PRT_CTRL_W<'a, O> {
@@ -89,100 +86,84 @@ impl<'a, const O: u8> M_4KB_BDY_PRT_CTRL_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub unsafe fn m_4kb_bdy_prt_ctrl(&self, n: u8) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new(((self.bits >> n) & 1) != 0)
     }
-    #[doc = "Bit 0 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 0 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m0_4kb_bdy_prt_ctrl(&self) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 1 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m1_4kb_bdy_prt_ctrl(&self) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 2 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m2_4kb_bdy_prt_ctrl(&self) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 3 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m3_4kb_bdy_prt_ctrl(&self) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 4 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m4_4kb_bdy_prt_ctrl(&self) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 5 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m5_4kb_bdy_prt_ctrl(&self) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 6 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m6_4kb_bdy_prt_ctrl(&self) -> M_4KB_BDY_PRT_CTRL_R {
         M_4KB_BDY_PRT_CTRL_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub unsafe fn m_4kb_bdy_prt_ctrl<const O: u8>(&mut self) -> M_4KB_BDY_PRT_CTRL_W<O> {
         M_4KB_BDY_PRT_CTRL_W::new(self)
     }
-    #[doc = "Bit 0 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 0 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m0_4kb_bdy_prt_ctrl(&mut self) -> M_4KB_BDY_PRT_CTRL_W<0> {
         M_4KB_BDY_PRT_CTRL_W::new(self)
     }
-    #[doc = "Bit 1 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 1 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m1_4kb_bdy_prt_ctrl(&mut self) -> M_4KB_BDY_PRT_CTRL_W<1> {
         M_4KB_BDY_PRT_CTRL_W::new(self)
     }
-    #[doc = "Bit 2 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 2 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m2_4kb_bdy_prt_ctrl(&mut self) -> M_4KB_BDY_PRT_CTRL_W<2> {
         M_4KB_BDY_PRT_CTRL_W::new(self)
     }
-    #[doc = "Bit 3 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 3 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m3_4kb_bdy_prt_ctrl(&mut self) -> M_4KB_BDY_PRT_CTRL_W<3> {
         M_4KB_BDY_PRT_CTRL_W::new(self)
     }
-    #[doc = "Bit 4 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 4 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m4_4kb_bdy_prt_ctrl(&mut self) -> M_4KB_BDY_PRT_CTRL_W<4> {
         M_4KB_BDY_PRT_CTRL_W::new(self)
     }
-    #[doc = "Bit 5 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 5 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m5_4kb_bdy_prt_ctrl(&mut self) -> M_4KB_BDY_PRT_CTRL_W<5> {
         M_4KB_BDY_PRT_CTRL_W::new(self)
     }
-    #[doc = "Bit 6 - Master\\[i\\]
-4 KB boundary protect control bit"]
+    #[doc = "Bit 6 - Master\\[i\\] 4 KB boundary protect control bit"]
     #[inline(always)]
     pub fn m6_4kb_bdy_prt_ctrl(&mut self) -> M_4KB_BDY_PRT_CTRL_W<6> {
         M_4KB_BDY_PRT_CTRL_W::new(self)

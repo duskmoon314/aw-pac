@@ -510,8 +510,7 @@ impl crate::Readable for PRIO_SPEC {
 impl crate::Writable for PRIO_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets prio[%s]
-to value 0"]
+#[doc = "`reset()` method sets prio[%s] to value 0"]
 impl crate::Resettable for PRIO_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

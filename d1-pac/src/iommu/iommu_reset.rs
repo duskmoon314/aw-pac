@@ -34,15 +34,9 @@ impl From<crate::W<IOMMU_RESET_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `m_rst[0-6]` reader - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+#[doc = "Field `m_rst[0-6]` reader - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
 pub type M_RST_R = crate::BitReader<M_RST_A>;
-#[doc = "Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually.\n\nValue on reset: 1"]
+#[doc = "Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually.\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RST_A {
     #[doc = "0: Set reset signal"]
@@ -76,10 +70,7 @@ impl M_RST_R {
         *self == M_RST_A::R_ELEASE
     }
 }
-#[doc = "Field `m_rst[0-6]` writer - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+#[doc = "Field `m_rst[0-6]` writer - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
 pub type M_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, IOMMU_RESET_SPEC, M_RST_A, O>;
 impl<'a, const O: u8> M_RST_W<'a, O> {
     #[doc = "Set reset signal"]
@@ -245,66 +236,42 @@ impl<'a, const O: u8> IOMMU_RESET_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub unsafe fn m_rst(&self, n: u8) -> M_RST_R {
         M_RST_R::new(((self.bits >> n) & 1) != 0)
     }
-    #[doc = "Bit 0 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 0 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m0_rst(&self) -> M_RST_R {
         M_RST_R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 1 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m1_rst(&self) -> M_RST_R {
         M_RST_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 2 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m2_rst(&self) -> M_RST_R {
         M_RST_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 3 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m3_rst(&self) -> M_RST_R {
         M_RST_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 4 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m4_rst(&self) -> M_RST_R {
         M_RST_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 5 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m5_rst(&self) -> M_RST_R {
         M_RST_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 6 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m6_rst(&self) -> M_RST_R {
         M_RST_R::new(((self.bits >> 6) & 1) != 0)
@@ -326,66 +293,42 @@ occurs abnormal, the bit is used to reset PTW Cache individually."]
     }
 }
 impl W {
-    #[doc = "Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub unsafe fn m_rst<const O: u8>(&mut self) -> M_RST_W<O> {
         M_RST_W::new(self)
     }
-    #[doc = "Bit 0 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 0 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m0_rst(&mut self) -> M_RST_W<0> {
         M_RST_W::new(self)
     }
-    #[doc = "Bit 1 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 1 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m1_rst(&mut self) -> M_RST_W<1> {
         M_RST_W::new(self)
     }
-    #[doc = "Bit 2 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 2 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m2_rst(&mut self) -> M_RST_W<2> {
         M_RST_W::new(self)
     }
-    #[doc = "Bit 3 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 3 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m3_rst(&mut self) -> M_RST_W<3> {
         M_RST_W::new(self)
     }
-    #[doc = "Bit 4 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 4 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m4_rst(&mut self) -> M_RST_W<4> {
         M_RST_W::new(self)
     }
-    #[doc = "Bit 5 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 5 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m5_rst(&mut self) -> M_RST_W<5> {
         M_RST_W::new(self)
     }
-    #[doc = "Bit 6 - Master\\[i\\]
-Reset\n\nMaster\\[i\\]
-address convert lane software reset switch.\n\nWhen Master\\[i\\]
-occurs abnormal, the bit is used to reset PTW Cache individually."]
+    #[doc = "Bit 6 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
     pub fn m6_rst(&mut self) -> M_RST_W<6> {
         M_RST_W::new(self)

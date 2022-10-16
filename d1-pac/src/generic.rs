@@ -599,8 +599,7 @@ pub struct ArrayProxy<T, const COUNT: usize, const STRIDE: usize> {
 }
 #[allow(clippy::len_without_is_empty)]
 impl<T, const C: usize, const S: usize> ArrayProxy<T, C, S> {
-    #[doc = " Get a reference from an [ArrayProxy]
-with no bounds checking."]
+    #[doc = " Get a reference from an [ArrayProxy] with no bounds checking."]
     pub unsafe fn get_ref(&self, index: usize) -> &T {
         let base = self as *const Self as usize;
         let address = base + S * index;

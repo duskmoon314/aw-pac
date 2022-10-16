@@ -64,11 +64,9 @@ pub type FRAME_NUMBER_OVERFLOW_R = crate::BitReader<bool>;
 #[doc = "Field `frame_number_overflow` writer - FrameNumberOverflow\n\nThis bit is set when the MSb of (bit 15) changes value, from 0 to 1 or from 1 to 0, and after has been updated."]
 pub type FRAME_NUMBER_OVERFLOW_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
-#[doc = "Field `root_hub_status_change` reader - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\]
-has changed."]
+#[doc = "Field `root_hub_status_change` reader - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\] has changed."]
 pub type ROOT_HUB_STATUS_CHANGE_R = crate::BitReader<bool>;
-#[doc = "Field `root_hub_status_change` writer - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\]
-has changed."]
+#[doc = "Field `root_hub_status_change` writer - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\] has changed."]
 pub type ROOT_HUB_STATUS_CHANGE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HC_INTERRUPT_STATUS_SPEC, bool, O>;
 impl R {
@@ -102,8 +100,7 @@ impl R {
     pub fn frame_number_overflow(&self) -> FRAME_NUMBER_OVERFLOW_R {
         FRAME_NUMBER_OVERFLOW_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\]
-has changed."]
+    #[doc = "Bit 6 - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\] has changed."]
     #[inline(always)]
     pub fn root_hub_status_change(&self) -> ROOT_HUB_STATUS_CHANGE_R {
         ROOT_HUB_STATUS_CHANGE_R::new(((self.bits >> 6) & 1) != 0)
@@ -140,8 +137,7 @@ impl W {
     pub fn frame_number_overflow(&mut self) -> FRAME_NUMBER_OVERFLOW_W<5> {
         FRAME_NUMBER_OVERFLOW_W::new(self)
     }
-    #[doc = "Bit 6 - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\]
-has changed."]
+    #[doc = "Bit 6 - RootHubStatusChange\n\nThis bit is set when the content of or the content of any of \\[ NumberofDownstreamPort \\] has changed."]
     #[inline(always)]
     pub fn root_hub_status_change(&mut self) -> ROOT_HUB_STATUS_CHANGE_W<6> {
         ROOT_HUB_STATUS_CHANGE_W::new(self)

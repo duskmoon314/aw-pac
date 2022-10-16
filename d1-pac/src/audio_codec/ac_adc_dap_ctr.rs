@@ -34,11 +34,9 @@ impl From<crate::W<AC_ADC_DAP_CTR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `adc_hpf_en[1,0]` reader - ADC HPF\\[i\\]
-enable control"]
+#[doc = "Field `adc_hpf_en[1,0]` reader - ADC HPF\\[i\\] enable control"]
 pub type ADC_HPF_EN_R = crate::BitReader<ADC_HPF_EN_A>;
-#[doc = "ADC HPF\\[i\\]
-enable control\n\nValue on reset: 0"]
+#[doc = "ADC HPF\\[i\\] enable control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_HPF_EN_A {
     #[doc = "0: Disabled"]
@@ -72,8 +70,7 @@ impl ADC_HPF_EN_R {
         *self == ADC_HPF_EN_A::ENABLED
     }
 }
-#[doc = "Field `adc_hpf_en[1,0]` writer - ADC HPF\\[i\\]
-enable control"]
+#[doc = "Field `adc_hpf_en[1,0]` writer - ADC HPF\\[i\\] enable control"]
 pub type ADC_HPF_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, AC_ADC_DAP_CTR_SPEC, ADC_HPF_EN_A, O>;
 impl<'a, const O: u8> ADC_HPF_EN_W<'a, O> {
@@ -88,11 +85,9 @@ impl<'a, const O: u8> ADC_HPF_EN_W<'a, O> {
         self.variant(ADC_HPF_EN_A::ENABLED)
     }
 }
-#[doc = "Field `adc_drc_en[1,0]` reader - ADC DRC\\[i\\]
-enable control"]
+#[doc = "Field `adc_drc_en[1,0]` reader - ADC DRC\\[i\\] enable control"]
 pub type ADC_DRC_EN_R = crate::BitReader<ADC_DRC_EN_A>;
-#[doc = "ADC DRC\\[i\\]
-enable control\n\nValue on reset: 0"]
+#[doc = "ADC DRC\\[i\\] enable control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DRC_EN_A {
     #[doc = "0: Disabled"]
@@ -126,8 +121,7 @@ impl ADC_DRC_EN_R {
         *self == ADC_DRC_EN_A::ENABLED
     }
 }
-#[doc = "Field `adc_drc_en[1,0]` writer - ADC DRC\\[i\\]
-enable control"]
+#[doc = "Field `adc_drc_en[1,0]` writer - ADC DRC\\[i\\] enable control"]
 pub type ADC_DRC_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, AC_ADC_DAP_CTR_SPEC, ADC_DRC_EN_A, O>;
 impl<'a, const O: u8> ADC_DRC_EN_W<'a, O> {
@@ -142,11 +136,9 @@ impl<'a, const O: u8> ADC_DRC_EN_W<'a, O> {
         self.variant(ADC_DRC_EN_A::ENABLED)
     }
 }
-#[doc = "Field `adc_dap_en[1,0]` reader - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+#[doc = "Field `adc_dap_en[1,0]` reader - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
 pub type ADC_DAP_EN_R = crate::BitReader<ADC_DAP_EN_A>;
-#[doc = "DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3\n\nValue on reset: 0"]
+#[doc = "DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ADC_DAP_EN_A {
     #[doc = "0: Bypassed"]
@@ -180,8 +172,7 @@ impl ADC_DAP_EN_R {
         *self == ADC_DAP_EN_A::ENABLED
     }
 }
-#[doc = "Field `adc_dap_en[1,0]` writer - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+#[doc = "Field `adc_dap_en[1,0]` writer - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
 pub type ADC_DAP_EN_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, AC_ADC_DAP_CTR_SPEC, ADC_DAP_EN_A, O>;
 impl<'a, const O: u8> ADC_DAP_EN_W<'a, O> {
@@ -197,94 +188,79 @@ impl<'a, const O: u8> ADC_DAP_EN_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Bit 24 - ADC HPF\\[i\\]
-enable control"]
+    #[doc = "Bit 24 - ADC HPF\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_hpf1_en(&self) -> ADC_HPF_EN_R {
         ADC_HPF_EN_R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 28 - ADC HPF\\[i\\]
-enable control"]
+    #[doc = "Bit 28 - ADC HPF\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_hpf0_en(&self) -> ADC_HPF_EN_R {
         ADC_HPF_EN_R::new(((self.bits >> 28) & 1) != 0)
     }
-    #[doc = "Bit 25 - ADC DRC\\[i\\]
-enable control"]
+    #[doc = "Bit 25 - ADC DRC\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_drc1_en(&self) -> ADC_DRC_EN_R {
         ADC_DRC_EN_R::new(((self.bits >> 25) & 1) != 0)
     }
-    #[doc = "Bit 29 - ADC DRC\\[i\\]
-enable control"]
+    #[doc = "Bit 29 - ADC DRC\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_drc0_en(&self) -> ADC_DRC_EN_R {
         ADC_DRC_EN_R::new(((self.bits >> 29) & 1) != 0)
     }
-    #[doc = "Bit 27 - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[doc = "Bit 27 - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
     pub fn adc_dap1_en(&self) -> ADC_DAP_EN_R {
         ADC_DAP_EN_R::new(((self.bits >> 27) & 1) != 0)
     }
-    #[doc = "Bit 31 - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[doc = "Bit 31 - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
     pub fn adc_dap0_en(&self) -> ADC_DAP_EN_R {
         ADC_DAP_EN_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "ADC HPF\\[i\\]
-enable control"]
+    #[doc = "ADC HPF\\[i\\] enable control"]
     #[inline(always)]
     pub unsafe fn adc_hpf_en<const O: u8>(&mut self) -> ADC_HPF_EN_W<O> {
         ADC_HPF_EN_W::new(self)
     }
-    #[doc = "Bit 24 - ADC HPF\\[i\\]
-enable control"]
+    #[doc = "Bit 24 - ADC HPF\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_hpf1_en(&mut self) -> ADC_HPF_EN_W<24> {
         ADC_HPF_EN_W::new(self)
     }
-    #[doc = "Bit 28 - ADC HPF\\[i\\]
-enable control"]
+    #[doc = "Bit 28 - ADC HPF\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_hpf0_en(&mut self) -> ADC_HPF_EN_W<28> {
         ADC_HPF_EN_W::new(self)
     }
-    #[doc = "ADC DRC\\[i\\]
-enable control"]
+    #[doc = "ADC DRC\\[i\\] enable control"]
     #[inline(always)]
     pub unsafe fn adc_drc_en<const O: u8>(&mut self) -> ADC_DRC_EN_W<O> {
         ADC_DRC_EN_W::new(self)
     }
-    #[doc = "Bit 25 - ADC DRC\\[i\\]
-enable control"]
+    #[doc = "Bit 25 - ADC DRC\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_drc1_en(&mut self) -> ADC_DRC_EN_W<25> {
         ADC_DRC_EN_W::new(self)
     }
-    #[doc = "Bit 29 - ADC DRC\\[i\\]
-enable control"]
+    #[doc = "Bit 29 - ADC DRC\\[i\\] enable control"]
     #[inline(always)]
     pub fn adc_drc0_en(&mut self) -> ADC_DRC_EN_W<29> {
         ADC_DRC_EN_W::new(self)
     }
-    #[doc = "DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[doc = "DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
     pub unsafe fn adc_dap_en<const O: u8>(&mut self) -> ADC_DAP_EN_W<O> {
         ADC_DAP_EN_W::new(self)
     }
-    #[doc = "Bit 27 - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[doc = "Bit 27 - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
     pub fn adc_dap1_en(&mut self) -> ADC_DAP_EN_W<27> {
         ADC_DAP_EN_W::new(self)
     }
-    #[doc = "Bit 31 - DAP\\[i\\]
-for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
+    #[doc = "Bit 31 - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
     pub fn adc_dap0_en(&mut self) -> ADC_DAP_EN_W<31> {
         ADC_DAP_EN_W::new(self)

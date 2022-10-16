@@ -34,11 +34,9 @@ impl From<crate::W<PGR_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `cs` reader - If bit\\[i\\]
-is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
+#[doc = "Field `cs` reader - If bit\\[i\\] is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 pub type CS_R = crate::FieldReader<u16, u16>;
-#[doc = "Field `cs` writer - If bit\\[i\\]
-is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
+#[doc = "Field `cs` writer - If bit\\[i\\] is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
 pub type CS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PGR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `en` reader - PWM Group Enable."]
 pub type EN_R = crate::BitReader<bool>;
@@ -49,8 +47,7 @@ pub type START_R = crate::BitReader<bool>;
 #[doc = "Field `start` writer - The PWM channels selected in CS start to output PWM waveform at the same time."]
 pub type START_W<'a, const O: u8> = crate::BitWriter<'a, u32, PGR_SPEC, bool, O>;
 impl R {
-    #[doc = "Bits 0:15 - If bit\\[i\\]
-is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
+    #[doc = "Bits 0:15 - If bit\\[i\\] is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
     #[inline(always)]
     pub fn cs(&self) -> CS_R {
         CS_R::new((self.bits & 0xffff) as u16)
@@ -67,8 +64,7 @@ is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
     }
 }
 impl W {
-    #[doc = "Bits 0:15 - If bit\\[i\\]
-is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
+    #[doc = "Bits 0:15 - If bit\\[i\\] is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
     #[inline(always)]
     pub fn cs(&mut self) -> CS_W<0> {
         CS_W::new(self)
@@ -90,8 +86,7 @@ is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
         self
     }
 }
-#[doc = "PWM Group\\[g\\]
-Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pgr](index.html) module"]
+#[doc = "PWM Group\\[g\\] Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pgr](index.html) module"]
 pub struct PGR_SPEC;
 impl crate::RegisterSpec for PGR_SPEC {
     type Ux = u32;

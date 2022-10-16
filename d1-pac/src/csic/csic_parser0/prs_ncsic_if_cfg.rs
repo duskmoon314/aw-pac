@@ -284,11 +284,9 @@ impl<'a, const O: u8> IF_DATA_WIDTH_W<'a, O> {
         self.variant(IF_DATA_WIDTH_A::_2X8BIT)
     }
 }
-#[doc = "Field `seq_8plus2` reader - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\]
-will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
+#[doc = "Field `seq_8plus2` reader - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
 pub type SEQ_8PLUS2_R = crate::FieldReader<u8, SEQ_8PLUS2_A>;
-#[doc = "When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\]
-will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences\n\nValue on reset: 0"]
+#[doc = "When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SEQ_8PLUS2_A {
@@ -296,8 +294,7 @@ pub enum SEQ_8PLUS2_A {
     PD98_D70 = 0,
     #[doc = "1: D\\[9:2\\], 6'bx + D\\[1:0\\]"]
     D92_PD10 = 1,
-    #[doc = "2: D\\[7:0\\], D\\[9:8\\]
-+ 6'bx"]
+    #[doc = "2: D\\[7:0\\], D\\[9:8\\] + 6'bx"]
     D70_D98P = 2,
     #[doc = "3: D\\[7:0\\], 6'bx + D\\[9:8\\]"]
     D70_PD98 = 3,
@@ -341,8 +338,7 @@ impl SEQ_8PLUS2_R {
         *self == SEQ_8PLUS2_A::D70_PD98
     }
 }
-#[doc = "Field `seq_8plus2` writer - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\]
-will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
+#[doc = "Field `seq_8plus2` writer - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
 pub type SEQ_8PLUS2_W<'a, const O: u8> =
     crate::FieldWriterSafe<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, SEQ_8PLUS2_A, 2, O>;
 impl<'a, const O: u8> SEQ_8PLUS2_W<'a, O> {
@@ -356,8 +352,7 @@ impl<'a, const O: u8> SEQ_8PLUS2_W<'a, O> {
     pub fn d92_pd10(self) -> &'a mut W {
         self.variant(SEQ_8PLUS2_A::D92_PD10)
     }
-    #[doc = "D\\[7:0\\], D\\[9:8\\]
-+ 6'bx"]
+    #[doc = "D\\[7:0\\], D\\[9:8\\] + 6'bx"]
     #[inline(always)]
     pub fn d70_d98p(self) -> &'a mut W {
         self.variant(SEQ_8PLUS2_A::D70_D98P)
@@ -813,8 +808,7 @@ impl R {
     pub fn if_data_width(&self) -> IF_DATA_WIDTH_R {
         IF_DATA_WIDTH_R::new(((self.bits >> 8) & 7) as u8)
     }
-    #[doc = "Bits 11:12 - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\]
-will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
+    #[doc = "Bits 11:12 - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
     #[inline(always)]
     pub fn seq_8plus2(&self) -> SEQ_8PLUS2_R {
         SEQ_8PLUS2_R::new(((self.bits >> 11) & 3) as u8)
@@ -881,8 +875,7 @@ impl W {
     pub fn if_data_width(&mut self) -> IF_DATA_WIDTH_W<8> {
         IF_DATA_WIDTH_W::new(self)
     }
-    #[doc = "Bits 11:12 - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\]
-will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
+    #[doc = "Bits 11:12 - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
     #[inline(always)]
     pub fn seq_8plus2(&mut self) -> SEQ_8PLUS2_W<11> {
         SEQ_8PLUS2_W::new(self)

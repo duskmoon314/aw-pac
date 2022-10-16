@@ -35,8 +35,7 @@ pub struct RegisterBlock {
     #[doc = "0x80 - PWM Enable Register"]
     pub per: PER,
     _reserved14: [u8; 0x0c],
-    #[doc = "0x90..0xa0 - PWM Group\\[g\\]
-Register"]
+    #[doc = "0x90..0xa0 - PWM Group\\[g\\] Register"]
     pub pgr: [PGR; 4],
     _reserved15: [u8; 0x20],
     #[doc = "0xc0 - Capture Enable Register"]
@@ -220,8 +219,7 @@ pub type PER = crate::Reg<per::PER_SPEC>;
 pub mod per;
 #[doc = "pgr (rw) register accessor: an alias for `Reg<PGR_SPEC>`"]
 pub type PGR = crate::Reg<pgr::PGR_SPEC>;
-#[doc = "PWM Group\\[g\\]
-Register"]
+#[doc = "PWM Group\\[g\\] Register"]
 pub mod pgr;
 #[doc = "cer (rw) register accessor: an alias for `Reg<CER_SPEC>`"]
 pub type CER = crate::Reg<cer::CER_SPEC>;

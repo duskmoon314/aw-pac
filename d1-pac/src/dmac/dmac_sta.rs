@@ -13,11 +13,9 @@ impl From<crate::R<DMAC_STA_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `dma_status[0-15]` reader - DMA Channel\\[15:0\\]
-Status"]
+#[doc = "Field `dma_status[0-15]` reader - DMA Channel\\[15:0\\] Status"]
 pub type DMA_STATUS_R = crate::BitReader<DMA_STATUS_A>;
-#[doc = "DMA Channel\\[15:0\\]
-Status\n\nValue on reset: 0"]
+#[doc = "DMA Channel\\[15:0\\] Status\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum DMA_STATUS_A {
     #[doc = "0: `0`"]
@@ -88,104 +86,87 @@ impl MBUS_FIFO_STATUS_R {
     }
 }
 impl R {
-    #[doc = "DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub unsafe fn dma_status(&self, n: u8) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
-    #[doc = "Bit 0 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 0 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status0(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 1 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status1(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 2 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status2(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 3 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status3(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 4 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status4(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 5 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status5(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 6 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status6(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 7 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 7 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status7(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bit 8 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 8 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status8(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 9 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 9 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status9(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 9) & 1) != 0)
     }
-    #[doc = "Bit 10 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 10 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status10(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 11 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 11 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status11(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 12 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status12(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Bit 13 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 13 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status13(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 14 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status14(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 14) & 1) != 0)
     }
-    #[doc = "Bit 15 - DMA Channel\\[15:0\\]
-Status"]
+    #[doc = "Bit 15 - DMA Channel\\[15:0\\] Status"]
     #[inline(always)]
     pub fn dma_status15(&self) -> DMA_STATUS_R {
         DMA_STATUS_R::new(((self.bits >> 15) & 1) != 0)

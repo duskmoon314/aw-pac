@@ -238,11 +238,9 @@ impl<'a, const O: u8> DMA_ENB_W<'a, O> {
         self.variant(DMA_ENB_A::ENABLE)
     }
 }
-#[doc = "Field `cd_dbc_enb` reader - Card Detect (Data\\[3\\]
-status) De-bounce Enable"]
+#[doc = "Field `cd_dbc_enb` reader - Card Detect (Data\\[3\\] status) De-bounce Enable"]
 pub type CD_DBC_ENB_R = crate::BitReader<CD_DBC_ENB_A>;
-#[doc = "Card Detect (Data\\[3\\]
-status) De-bounce Enable\n\nValue on reset: 0"]
+#[doc = "Card Detect (Data\\[3\\] status) De-bounce Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CD_DBC_ENB_A {
     #[doc = "0: Disable de-bounce"]
@@ -276,8 +274,7 @@ impl CD_DBC_ENB_R {
         *self == CD_DBC_ENB_A::ENABLE
     }
 }
-#[doc = "Field `cd_dbc_enb` writer - Card Detect (Data\\[3\\]
-status) De-bounce Enable"]
+#[doc = "Field `cd_dbc_enb` writer - Card Detect (Data\\[3\\] status) De-bounce Enable"]
 pub type CD_DBC_ENB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CTRL_SPEC, CD_DBC_ENB_A, O>;
 impl<'a, const O: u8> CD_DBC_ENB_W<'a, O> {
     #[doc = "Disable de-bounce"]
@@ -521,8 +518,7 @@ impl R {
     pub fn dma_enb(&self) -> DMA_ENB_R {
         DMA_ENB_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 8 - Card Detect (Data\\[3\\]
-status) De-bounce Enable"]
+    #[doc = "Bit 8 - Card Detect (Data\\[3\\] status) De-bounce Enable"]
     #[inline(always)]
     pub fn cd_dbc_enb(&self) -> CD_DBC_ENB_R {
         CD_DBC_ENB_R::new(((self.bits >> 8) & 1) != 0)
@@ -574,8 +570,7 @@ impl W {
     pub fn dma_enb(&mut self) -> DMA_ENB_W<5> {
         DMA_ENB_W::new(self)
     }
-    #[doc = "Bit 8 - Card Detect (Data\\[3\\]
-status) De-bounce Enable"]
+    #[doc = "Bit 8 - Card Detect (Data\\[3\\] status) De-bounce Enable"]
     #[inline(always)]
     pub fn cd_dbc_enb(&mut self) -> CD_DBC_ENB_W<8> {
         CD_DBC_ENB_W::new(self)

@@ -34,11 +34,9 @@ impl From<crate::W<TV_IO_POL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `io_inv[0-3]` reader - IO\\[i\\]
-Invert"]
+#[doc = "Field `io_inv[0-3]` reader - IO\\[i\\] Invert"]
 pub type IO_INV_R = crate::BitReader<IO_INV_A>;
-#[doc = "IO\\[i\\]
-Invert\n\nValue on reset: 0"]
+#[doc = "IO\\[i\\] Invert\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IO_INV_A {
     #[doc = "0: Not invert"]
@@ -72,8 +70,7 @@ impl IO_INV_R {
         *self == IO_INV_A::INVERT
     }
 }
-#[doc = "Field `io_inv[0-3]` writer - IO\\[i\\]
-Invert"]
+#[doc = "Field `io_inv[0-3]` writer - IO\\[i\\] Invert"]
 pub type IO_INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_IO_POL_SPEC, IO_INV_A, O>;
 impl<'a, const O: u8> IO_INV_W<'a, O> {
     #[doc = "Not invert"]
@@ -88,64 +85,54 @@ impl<'a, const O: u8> IO_INV_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "IO\\[i\\]
-Invert"]
+    #[doc = "IO\\[i\\] Invert"]
     #[inline(always)]
     pub unsafe fn io_inv(&self, n: u8) -> IO_INV_R {
         IO_INV_R::new(((self.bits >> (n + 24)) & 1) != 0)
     }
-    #[doc = "Bit 24 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 24 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io0_inv(&self) -> IO_INV_R {
         IO_INV_R::new(((self.bits >> 24) & 1) != 0)
     }
-    #[doc = "Bit 25 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 25 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io1_inv(&self) -> IO_INV_R {
         IO_INV_R::new(((self.bits >> 25) & 1) != 0)
     }
-    #[doc = "Bit 26 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 26 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io2_inv(&self) -> IO_INV_R {
         IO_INV_R::new(((self.bits >> 26) & 1) != 0)
     }
-    #[doc = "Bit 27 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 27 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io3_inv(&self) -> IO_INV_R {
         IO_INV_R::new(((self.bits >> 27) & 1) != 0)
     }
 }
 impl W {
-    #[doc = "IO\\[i\\]
-Invert"]
+    #[doc = "IO\\[i\\] Invert"]
     #[inline(always)]
     pub unsafe fn io_inv<const O: u8>(&mut self) -> IO_INV_W<O> {
         IO_INV_W::new(self)
     }
-    #[doc = "Bit 24 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 24 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io0_inv(&mut self) -> IO_INV_W<24> {
         IO_INV_W::new(self)
     }
-    #[doc = "Bit 25 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 25 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io1_inv(&mut self) -> IO_INV_W<25> {
         IO_INV_W::new(self)
     }
-    #[doc = "Bit 26 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 26 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io2_inv(&mut self) -> IO_INV_W<26> {
         IO_INV_W::new(self)
     }
-    #[doc = "Bit 27 - IO\\[i\\]
-Invert"]
+    #[doc = "Bit 27 - IO\\[i\\] Invert"]
     #[inline(always)]
     pub fn io3_inv(&mut self) -> IO_INV_W<27> {
         IO_INV_W::new(self)

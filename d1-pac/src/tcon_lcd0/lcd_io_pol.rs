@@ -34,11 +34,9 @@ impl From<crate::W<LCD_IO_POL_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `data_inv` reader - LCD output port D\\[23:0\\]
-polarity control, with independent bit control."]
+#[doc = "Field `data_inv` reader - LCD output port D\\[23:0\\] polarity control, with independent bit control."]
 pub type DATA_INV_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `data_inv` writer - LCD output port D\\[23:0\\]
-polarity control, with independent bit control."]
+#[doc = "Field `data_inv` writer - LCD output port D\\[23:0\\] polarity control, with independent bit control."]
 pub type DATA_INV_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_IO_POL_SPEC, u32, u32, 24, O>;
 #[doc = "Field `io_inv[0-3]` reader - Enable invert function of IO\\[i\\]"]
@@ -235,8 +233,7 @@ impl<'a, const O: u8> IO_OUTPUT_SEL_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\]
-polarity control, with independent bit control."]
+    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] polarity control, with independent bit control."]
     #[inline(always)]
     pub fn data_inv(&self) -> DATA_INV_R {
         DATA_INV_R::new((self.bits & 0x00ff_ffff) as u32)
@@ -278,8 +275,7 @@ polarity control, with independent bit control."]
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\]
-polarity control, with independent bit control."]
+    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] polarity control, with independent bit control."]
     #[inline(always)]
     pub fn data_inv(&mut self) -> DATA_INV_W<0> {
         DATA_INV_W::new(self)

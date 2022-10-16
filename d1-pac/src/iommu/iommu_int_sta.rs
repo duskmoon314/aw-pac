@@ -34,11 +34,9 @@ impl From<crate::W<IOMMU_INT_STA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `micro_tlb_invalid_sta[0-6]` reader - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+#[doc = "Field `micro_tlb_invalid_sta[0-6]` reader - Micro TLB\\[i\\] permission invalid interrupt status bit"]
 pub type MICRO_TLB_INVALID_STA_R = crate::BitReader<MICRO_TLB_INVALID_STA_A>;
-#[doc = "Micro TLB\\[i\\]
-permission invalid interrupt status bit\n\nValue on reset: 0"]
+#[doc = "Micro TLB\\[i\\] permission invalid interrupt status bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MICRO_TLB_INVALID_STA_A {
     #[doc = "0: Interrupt does not happen or interrupt is cleared"]
@@ -72,11 +70,9 @@ impl MICRO_TLB_INVALID_STA_R {
         *self == MICRO_TLB_INVALID_STA_A::HAPPENS
     }
 }
-#[doc = "Field `l_page_table_invalid_sta[0-1]` reader - Level\\[i\\]
-page table invalid interrupt status bit"]
+#[doc = "Field `l_page_table_invalid_sta[0-1]` reader - Level\\[i\\] page table invalid interrupt status bit"]
 pub type L_PAGE_TABLE_INVALID_STA_R = crate::BitReader<L_PAGE_TABLE_INVALID_STA_A>;
-#[doc = "Level\\[i\\]
-page table invalid interrupt status bit\n\nValue on reset: 0"]
+#[doc = "Level\\[i\\] page table invalid interrupt status bit\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum L_PAGE_TABLE_INVALID_STA_A {
     #[doc = "0: Interrupt does not happen or interrupt is cleared"]
@@ -111,68 +107,57 @@ impl L_PAGE_TABLE_INVALID_STA_R {
     }
 }
 impl R {
-    #[doc = "Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub unsafe fn micro_tlb_invalid_sta(&self, n: u8) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> (n * 2)) & 1) != 0)
     }
-    #[doc = "Bit 0 - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Bit 0 - Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb0_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 2 - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Bit 2 - Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb1_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 4 - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Bit 4 - Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb2_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 6 - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Bit 6 - Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb3_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Bit 8 - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Bit 8 - Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb4_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> 8) & 1) != 0)
     }
-    #[doc = "Bit 10 - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Bit 10 - Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb5_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> 10) & 1) != 0)
     }
-    #[doc = "Bit 12 - Micro TLB\\[i\\]
-permission invalid interrupt status bit"]
+    #[doc = "Bit 12 - Micro TLB\\[i\\] permission invalid interrupt status bit"]
     #[inline(always)]
     pub fn micro_tlb6_invalid_sta(&self) -> MICRO_TLB_INVALID_STA_R {
         MICRO_TLB_INVALID_STA_R::new(((self.bits >> 12) & 1) != 0)
     }
-    #[doc = "Level\\[i\\]
-page table invalid interrupt status bit"]
+    #[doc = "Level\\[i\\] page table invalid interrupt status bit"]
     #[inline(always)]
     pub unsafe fn l_page_table_invalid_sta(&self, n: u8) -> L_PAGE_TABLE_INVALID_STA_R {
         L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> (n + 16)) & 1) != 0)
     }
-    #[doc = "Bit 16 - Level\\[i\\]
-page table invalid interrupt status bit"]
+    #[doc = "Bit 16 - Level\\[i\\] page table invalid interrupt status bit"]
     #[inline(always)]
     pub fn l0_page_table_invalid_sta(&self) -> L_PAGE_TABLE_INVALID_STA_R {
         L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bit 17 - Level\\[i\\]
-page table invalid interrupt status bit"]
+    #[doc = "Bit 17 - Level\\[i\\] page table invalid interrupt status bit"]
     #[inline(always)]
     pub fn l1_page_table_invalid_sta(&self) -> L_PAGE_TABLE_INVALID_STA_R {
         L_PAGE_TABLE_INVALID_STA_R::new(((self.bits >> 17) & 1) != 0)

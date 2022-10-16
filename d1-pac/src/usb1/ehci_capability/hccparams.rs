@@ -17,9 +17,7 @@ impl From<crate::R<HCCPARAMS_SPEC>> for R {
 pub type PROGRAMMABLE_FRAME_LIST_FLAG_R = crate::BitReader<bool>;
 #[doc = "Field `asynchronous_schedule_park_capability` reader - Asynchronous Schedule Park Capability\n\nIf this bit is set to a one, then the host controller supports the park feature for high-speed queue heads in the Asynchronous Schedule. The feature can be disabled or enabled and set to a specific level by using the Asynchronous Schedule Park Mode Enable and Asynchronous Schedule Park Mode Count fields in the USBCMD register."]
 pub type ASYNCHRONOUS_SCHEDULE_PARK_CAPABILITY_R = crate::BitReader<bool>;
-#[doc = "Field `isochronous_scheduling_threshold` reader - Isochronous Scheduling Threshold\n\nThis field indicates, relative to the current position of the executing host controller, where software can reliably update the isochronous schedule.\n\nWhen bit\\[7\\]
-is zero, the value of the least significant 3 bits indicates the number of micro-frames a host controller can hold a set of isochronous data structures(one or more) before flushing the state. When bit\\[7\\]
-is a one, then host software assumes the host controller may cache an isochronous data structure for an entire frame."]
+#[doc = "Field `isochronous_scheduling_threshold` reader - Isochronous Scheduling Threshold\n\nThis field indicates, relative to the current position of the executing host controller, where software can reliably update the isochronous schedule.\n\nWhen bit\\[7\\] is zero, the value of the least significant 3 bits indicates the number of micro-frames a host controller can hold a set of isochronous data structures(one or more) before flushing the state. When bit\\[7\\] is a one, then host software assumes the host controller may cache an isochronous data structure for an entire frame."]
 pub type ISOCHRONOUS_SCHEDULING_THRESHOLD_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `eecp` reader - EHCI Extended Capabilities Pointer (EECP)\n\nThis optional field indicates the existence of a capabilities list. A value of 00b indicates no extended capabilities are implemented. A non-zero value in this register indicates the offset in PCI configuration space of the first EHCI extended capabiliby. The pointer value must be 40h or greater if implemented to maintain to consistency of the PCI header defined for this calss of device."]
 pub type EECP_R = crate::FieldReader<u8, u8>;
@@ -34,9 +32,7 @@ impl R {
     pub fn asynchronous_schedule_park_capability(&self) -> ASYNCHRONOUS_SCHEDULE_PARK_CAPABILITY_R {
         ASYNCHRONOUS_SCHEDULE_PARK_CAPABILITY_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bits 4:7 - Isochronous Scheduling Threshold\n\nThis field indicates, relative to the current position of the executing host controller, where software can reliably update the isochronous schedule.\n\nWhen bit\\[7\\]
-is zero, the value of the least significant 3 bits indicates the number of micro-frames a host controller can hold a set of isochronous data structures(one or more) before flushing the state. When bit\\[7\\]
-is a one, then host software assumes the host controller may cache an isochronous data structure for an entire frame."]
+    #[doc = "Bits 4:7 - Isochronous Scheduling Threshold\n\nThis field indicates, relative to the current position of the executing host controller, where software can reliably update the isochronous schedule.\n\nWhen bit\\[7\\] is zero, the value of the least significant 3 bits indicates the number of micro-frames a host controller can hold a set of isochronous data structures(one or more) before flushing the state. When bit\\[7\\] is a one, then host software assumes the host controller may cache an isochronous data structure for an entire frame."]
     #[inline(always)]
     pub fn isochronous_scheduling_threshold(&self) -> ISOCHRONOUS_SCHEDULING_THRESHOLD_R {
         ISOCHRONOUS_SCHEDULING_THRESHOLD_R::new(((self.bits >> 4) & 0x0f) as u8)

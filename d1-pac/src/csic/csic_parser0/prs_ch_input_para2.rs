@@ -29,8 +29,7 @@ impl R {
         INPUT_VB_R::new(((self.bits >> 16) & 0x3fff) as u16)
     }
 }
-#[doc = "Parser Channel\\[i\\]
-Input Parameter2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch_input_para2](index.html) module"]
+#[doc = "Parser Channel\\[i\\] Input Parameter2 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch_input_para2](index.html) module"]
 pub struct PRS_CH_INPUT_PARA2_SPEC;
 impl crate::RegisterSpec for PRS_CH_INPUT_PARA2_SPEC {
     type Ux = u32;

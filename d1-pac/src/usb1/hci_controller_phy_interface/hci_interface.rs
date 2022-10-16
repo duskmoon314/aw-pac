@@ -93,8 +93,7 @@ pub type AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_R =
 pub enum AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A {
     #[doc = "1: Start INCRx burst only on burst x-align address"]
     BURST_X_ALIGN_ADDRESS = 1,
-    #[doc = "0: Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\]
-is enabled"]
+    #[doc = "0: Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\] is enabled"]
     ANY_DOUBLE_WORD_BOUNDARY = 0,
 }
 impl From<AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A> for bool {
@@ -132,8 +131,7 @@ impl<'a, const O: u8> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<'a, O> {
     pub fn burst_x_align_address(self) -> &'a mut W {
         self.variant(AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::BURST_X_ALIGN_ADDRESS)
     }
-    #[doc = "Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\]
-is enabled"]
+    #[doc = "Start burst on any double word boundary Note: This bit must enable if any bit of bit\\[11:9\\] is enabled"]
     #[inline(always)]
     pub fn any_double_word_boundary(self) -> &'a mut W {
         self.variant(AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_A::ANY_DOUBLE_WORD_BOUNDARY)

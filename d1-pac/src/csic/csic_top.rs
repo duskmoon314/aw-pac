@@ -15,8 +15,7 @@ pub struct CSIC_TOP {
     #[doc = "0x28 - CSIC Pattern ISP Size Register"]
     pub csic_ptn_isp_size: CSIC_PTN_ISP_SIZE,
     _reserved6: [u8; 0x74],
-    #[doc = "0xa0..0xa8 - CSIC DMA\\[i\\]
-Input Select Register"]
+    #[doc = "0xa0..0xa8 - CSIC DMA\\[i\\] Input Select Register"]
     pub csic_dma_input_sel: [CSIC_DMA_INPUT_SEL; 2],
     _reserved7: [u8; 0x34],
     #[doc = "0xdc - CSIC BIST CS Register"]
@@ -63,8 +62,7 @@ pub type CSIC_PTN_ISP_SIZE = crate::Reg<csic_ptn_isp_size::CSIC_PTN_ISP_SIZE_SPE
 pub mod csic_ptn_isp_size;
 #[doc = "csic_dma_input_sel (rw) register accessor: an alias for `Reg<CSIC_DMA_INPUT_SEL_SPEC>`"]
 pub type CSIC_DMA_INPUT_SEL = crate::Reg<csic_dma_input_sel::CSIC_DMA_INPUT_SEL_SPEC>;
-#[doc = "CSIC DMA\\[i\\]
-Input Select Register"]
+#[doc = "CSIC DMA\\[i\\] Input Select Register"]
 pub mod csic_dma_input_sel;
 #[doc = "csic_bist_cs (rw) register accessor: an alias for `Reg<CSIC_BIST_CS_SPEC>`"]
 pub type CSIC_BIST_CS = crate::Reg<csic_bist_cs::CSIC_BIST_CS_SPEC>;

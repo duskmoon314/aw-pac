@@ -235,8 +235,7 @@ pub struct RegisterBlock {
     #[doc = "0x2bc - ADC DRC HPF Gain Low Coef Register"]
     pub ac_adc_drc_hpflgain: AC_ADC_DRC_HPFLGAIN,
     _reserved111: [u8; 0x40],
-    #[doc = "0x300..0x30c - ADC\\[i\\]
-Analog Control Register"]
+    #[doc = "0x300..0x30c - ADC\\[i\\] Analog Control Register"]
     pub adc: [ADC; 3],
     _reserved112: [u8; 0x04],
     #[doc = "0x310 - DAC Analog Control Register"]
@@ -706,8 +705,7 @@ pub type AC_ADC_DRC_HPFLGAIN = crate::Reg<ac_adc_drc_hpflgain::AC_ADC_DRC_HPFLGA
 pub mod ac_adc_drc_hpflgain;
 #[doc = "adc (rw) register accessor: an alias for `Reg<ADC_SPEC>`"]
 pub type ADC = crate::Reg<adc::ADC_SPEC>;
-#[doc = "ADC\\[i\\]
-Analog Control Register"]
+#[doc = "ADC\\[i\\] Analog Control Register"]
 pub mod adc;
 #[doc = "dac (rw) register accessor: an alias for `Reg<DAC_SPEC>`"]
 pub type DAC = crate::Reg<dac::DAC_SPEC>;

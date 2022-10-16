@@ -34,11 +34,9 @@ impl From<crate::W<IOMMU_TLB_FLUSH_ENABLE_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `mi_tlb_fs[0-6]` reader - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+#[doc = "Field `mi_tlb_fs[0-6]` reader - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
 pub type MI_TLB_FS_R = crate::BitReader<MI_TLB_FS_A>;
-#[doc = "Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
+#[doc = "Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MI_TLB_FS_A {
     #[doc = "0: No clear operation or clear operation is completed"]
@@ -72,8 +70,7 @@ impl MI_TLB_FS_R {
         *self == MI_TLB_FS_A::ENABLE
     }
 }
-#[doc = "Field `mi_tlb_fs[0-6]` writer - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+#[doc = "Field `mi_tlb_fs[0-6]` writer - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
 pub type MI_TLB_FS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, IOMMU_TLB_FLUSH_ENABLE_SPEC, MI_TLB_FS_A, O>;
 impl<'a, const O: u8> MI_TLB_FS_W<'a, O> {
@@ -191,50 +188,42 @@ impl<'a, const O: u8> PC_FS_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub unsafe fn mi_tlb_fs(&self, n: u8) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> n) & 1) != 0)
     }
-    #[doc = "Bit 0 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 0 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb0_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 1 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb1_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 2 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb2_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 3 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb3_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 4 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb4_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 5 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb5_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> 5) & 1) != 0)
     }
-    #[doc = "Bit 6 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 6 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb6_fs(&self) -> MI_TLB_FS_R {
         MI_TLB_FS_R::new(((self.bits >> 6) & 1) != 0)
@@ -251,50 +240,42 @@ Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can cl
     }
 }
 impl W {
-    #[doc = "Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub unsafe fn mi_tlb_fs<const O: u8>(&mut self) -> MI_TLB_FS_W<O> {
         MI_TLB_FS_W::new(self)
     }
-    #[doc = "Bit 0 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 0 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb0_fs(&mut self) -> MI_TLB_FS_W<0> {
         MI_TLB_FS_W::new(self)
     }
-    #[doc = "Bit 1 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 1 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb1_fs(&mut self) -> MI_TLB_FS_W<1> {
         MI_TLB_FS_W::new(self)
     }
-    #[doc = "Bit 2 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 2 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb2_fs(&mut self) -> MI_TLB_FS_W<2> {
         MI_TLB_FS_W::new(self)
     }
-    #[doc = "Bit 3 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 3 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb3_fs(&mut self) -> MI_TLB_FS_W<3> {
         MI_TLB_FS_W::new(self)
     }
-    #[doc = "Bit 4 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 4 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb4_fs(&mut self) -> MI_TLB_FS_W<4> {
         MI_TLB_FS_W::new(self)
     }
-    #[doc = "Bit 5 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 5 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb5_fs(&mut self) -> MI_TLB_FS_W<5> {
         MI_TLB_FS_W::new(self)
     }
-    #[doc = "Bit 6 - Micro TLB\\[i\\]
-Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
+    #[doc = "Bit 6 - Micro TLB\\[i\\] Flush Clear Micro TLB6\n\nAfter the Flush operation is completed, the bit can clear automatically."]
     #[inline(always)]
     pub fn mi_tlb6_fs(&mut self) -> MI_TLB_FS_W<6> {
         MI_TLB_FS_W::new(self)

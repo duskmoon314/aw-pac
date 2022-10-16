@@ -34,11 +34,9 @@ impl From<crate::W<LCD_LVDS_ANA_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `lvds_plr` reader - LVDS data channel \\[3:0\\]
-direction."]
+#[doc = "Field `lvds_plr` reader - LVDS data channel \\[3:0\\] direction."]
 pub type LVDS_PLR_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `lvds_plr` writer - LVDS data channel \\[3:0\\]
-direction."]
+#[doc = "Field `lvds_plr` writer - LVDS data channel \\[3:0\\] direction."]
 pub type LVDS_PLR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_LVDS_ANA_SPEC, u8, u8, 4, O>;
 #[doc = "Field `lvds_plrc` reader - LVDS clock channel direction."]
 pub type LVDS_PLRC_R = crate::BitReader<LVDS_PLRC_A>;
@@ -361,11 +359,9 @@ impl<'a, const O: u8> LVDS_C_W<'a, O> {
         self.variant(LVDS_C_A::_432MV)
     }
 }
-#[doc = "Field `lvds_hpren_drv` reader - Enable data channel\\[3:0\\]
-drive"]
+#[doc = "Field `lvds_hpren_drv` reader - Enable data channel\\[3:0\\] drive"]
 pub type LVDS_HPREN_DRV_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `lvds_hpren_drv` writer - Enable data channel\\[3:0\\]
-drive"]
+#[doc = "Field `lvds_hpren_drv` writer - Enable data channel\\[3:0\\] drive"]
 pub type LVDS_HPREN_DRV_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_LVDS_ANA_SPEC, u8, u8, 4, O>;
 #[doc = "Field `lvds_hpren_drvc` reader - Enable clock channel drive"]
@@ -479,8 +475,7 @@ impl<'a, const O: u8> LVDS_EN_MB_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Bits 0:3 - LVDS data channel \\[3:0\\]
-direction."]
+    #[doc = "Bits 0:3 - LVDS data channel \\[3:0\\] direction."]
     #[inline(always)]
     pub fn lvds_plr(&self) -> LVDS_PLR_R {
         LVDS_PLR_R::new((self.bits & 0x0f) as u8)
@@ -510,8 +505,7 @@ direction."]
     pub fn lvds_c(&self) -> LVDS_C_R {
         LVDS_C_R::new(((self.bits >> 17) & 7) as u8)
     }
-    #[doc = "Bits 20:23 - Enable data channel\\[3:0\\]
-drive"]
+    #[doc = "Bits 20:23 - Enable data channel\\[3:0\\] drive"]
     #[inline(always)]
     pub fn lvds_hpren_drv(&self) -> LVDS_HPREN_DRV_R {
         LVDS_HPREN_DRV_R::new(((self.bits >> 20) & 0x0f) as u8)
@@ -538,8 +532,7 @@ drive"]
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - LVDS data channel \\[3:0\\]
-direction."]
+    #[doc = "Bits 0:3 - LVDS data channel \\[3:0\\] direction."]
     #[inline(always)]
     pub fn lvds_plr(&mut self) -> LVDS_PLR_W<0> {
         LVDS_PLR_W::new(self)
@@ -569,8 +562,7 @@ direction."]
     pub fn lvds_c(&mut self) -> LVDS_C_W<17> {
         LVDS_C_W::new(self)
     }
-    #[doc = "Bits 20:23 - Enable data channel\\[3:0\\]
-drive"]
+    #[doc = "Bits 20:23 - Enable data channel\\[3:0\\] drive"]
     #[inline(always)]
     pub fn lvds_hpren_drv(&mut self) -> LVDS_HPREN_DRV_W<20> {
         LVDS_HPREN_DRV_W::new(self)

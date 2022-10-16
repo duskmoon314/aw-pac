@@ -55,8 +55,7 @@ impl crate::Readable for MIE_SPEC {
 impl crate::Writable for MIE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets mie[%s]
-to value 0"]
+#[doc = "`reset()` method sets mie[%s] to value 0"]
 impl crate::Resettable for MIE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

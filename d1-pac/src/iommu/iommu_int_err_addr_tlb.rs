@@ -13,12 +13,10 @@ impl From<crate::R<IOMMU_INT_ERR_ADDR_TLB_SPEC>> for R {
         R(reader)
     }
 }
-#[doc = "Field `int_err_addr` reader - Virtual address that caused Micro TLB\\[i\\]
-to interrupt"]
+#[doc = "Field `int_err_addr` reader - Virtual address that caused Micro TLB\\[i\\] to interrupt"]
 pub type INT_ERR_ADDR_R = crate::FieldReader<u32, u32>;
 impl R {
-    #[doc = "Bits 0:31 - Virtual address that caused Micro TLB\\[i\\]
-to interrupt"]
+    #[doc = "Bits 0:31 - Virtual address that caused Micro TLB\\[i\\] to interrupt"]
     #[inline(always)]
     pub fn int_err_addr(&self) -> INT_ERR_ADDR_R {
         INT_ERR_ADDR_R::new(self.bits)

@@ -136,15 +136,9 @@ impl<'a, const O: u8> RGB_SETUP_W<'a, O> {
         self.variant(RGB_SETUP_A::USED)
     }
 }
-#[doc = "Field `rgb_sync` reader - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\]
-specify if the R signal has embedded syncs, the bit\\[25\\]
-specify if the G signal has embedded syncs and the bit\\[24\\]
-specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
+#[doc = "Field `rgb_sync` reader - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\] specify if the R signal has embedded syncs, the bit\\[25\\] specify if the G signal has embedded syncs and the bit\\[24\\] specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
 pub type RGB_SYNC_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `rgb_sync` writer - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\]
-specify if the R signal has embedded syncs, the bit\\[25\\]
-specify if the G signal has embedded syncs and the bit\\[24\\]
-specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
+#[doc = "Field `rgb_sync` writer - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\] specify if the R signal has embedded syncs, the bit\\[25\\] specify if the G signal has embedded syncs and the bit\\[24\\] specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
 pub type RGB_SYNC_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, TVE_CONFIGURATION1_SPEC, u8, u8, 3, O>;
 impl R {
@@ -158,10 +152,7 @@ impl R {
     pub fn rgb_setup(&self) -> RGB_SETUP_R {
         RGB_SETUP_R::new(((self.bits >> 16) & 1) != 0)
     }
-    #[doc = "Bits 24:26 - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\]
-specify if the R signal has embedded syncs, the bit\\[25\\]
-specify if the G signal has embedded syncs and the bit\\[24\\]
-specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
+    #[doc = "Bits 24:26 - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\] specify if the R signal has embedded syncs, the bit\\[25\\] specify if the G signal has embedded syncs and the bit\\[24\\] specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
     #[inline(always)]
     pub fn rgb_sync(&self) -> RGB_SYNC_R {
         RGB_SYNC_R::new(((self.bits >> 24) & 7) as u8)
@@ -178,10 +169,7 @@ impl W {
     pub fn rgb_setup(&mut self) -> RGB_SETUP_W<16> {
         RGB_SETUP_W::new(self)
     }
-    #[doc = "Bits 24:26 - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\]
-specify if the R signal has embedded syncs, the bit\\[25\\]
-specify if the G signal has embedded syncs and the bit\\[24\\]
-specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
+    #[doc = "Bits 24:26 - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\] specify if the R signal has embedded syncs, the bit\\[25\\] specify if the G signal has embedded syncs and the bit\\[24\\] specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
     #[inline(always)]
     pub fn rgb_sync(&mut self) -> RGB_SYNC_W<24> {
         RGB_SYNC_W::new(self)

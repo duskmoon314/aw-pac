@@ -350,17 +350,9 @@ impl<'a, const O: u8> RX_SYNC_EN_START_W<'a, O> {
         self.variant(RX_SYNC_EN_START_A::ENABLED)
     }
 }
-#[doc = "Field `rx_fifo_mode` reader - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
+#[doc = "Field `rx_fifo_mode` reader - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\] = {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\] = {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
 pub type RX_FIFO_MODE_R = crate::BitReader<RX_FIFO_MODE_A>;
-#[doc = "RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}\n\nValue on reset: 0"]
+#[doc = "RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\] = {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\] = {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_FIFO_MODE_A {
     #[doc = "0: Expanding '0' at LSB of TX FIFO register"]
@@ -394,11 +386,7 @@ impl RX_FIFO_MODE_R {
         *self == RX_FIFO_MODE_A::E_XPANDING_SIGN
     }
 }
-#[doc = "Field `rx_fifo_mode` writer - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
+#[doc = "Field `rx_fifo_mode` writer - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\] = {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\] = {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
 pub type RX_FIFO_MODE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, AC_ADC_FIFOC_SPEC, RX_FIFO_MODE_A, O>;
 impl<'a, const O: u8> RX_FIFO_MODE_W<'a, O> {
@@ -750,11 +738,7 @@ impl R {
     pub fn rx_sync_en_start(&self) -> RX_SYNC_EN_START_R {
         RX_SYNC_EN_START_R::new(((self.bits >> 21) & 1) != 0)
     }
-    #[doc = "Bit 24 - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
+    #[doc = "Bit 24 - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\] = {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\] = {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
     #[inline(always)]
     pub fn rx_fifo_mode(&self) -> RX_FIFO_MODE_R {
         RX_FIFO_MODE_R::new(((self.bits >> 24) & 1) != 0)
@@ -821,11 +805,7 @@ impl W {
     pub fn rx_sync_en_start(&mut self) -> RX_SYNC_EN_START_W<21> {
         RX_SYNC_EN_START_W::new(self)
     }
-    #[doc = "Bit 24 - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\]
-= {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\]
-= {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
+    #[doc = "Bit 24 - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\] = {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\] = {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
     #[inline(always)]
     pub fn rx_fifo_mode(&mut self) -> RX_FIFO_MODE_W<24> {
         RX_FIFO_MODE_W::new(self)

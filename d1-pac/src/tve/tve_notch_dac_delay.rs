@@ -146,11 +146,9 @@ pub type CHROMA_FILTER_STAGE__BYPASS_R = crate::BitReader<CHROMA_FILTER_STAGE__B
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CHROMA_FILTER_STAGE__BYPASS_A {
-    #[doc = "0: Chroma Filter Stage \\[i\\]
-Enable"]
+    #[doc = "0: Chroma Filter Stage \\[i\\] Enable"]
     ENABLE = 0,
-    #[doc = "1: Chroma Filter Stage \\[i\\]
-bypass"]
+    #[doc = "1: Chroma Filter Stage \\[i\\] bypass"]
     BYPASS = 1,
 }
 impl From<CHROMA_FILTER_STAGE__BYPASS_A> for bool {
@@ -183,14 +181,12 @@ impl CHROMA_FILTER_STAGE__BYPASS_R {
 pub type CHROMA_FILTER_STAGE__BYPASS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, TVE_NOTCH_DAC_DELAY_SPEC, CHROMA_FILTER_STAGE__BYPASS_A, O>;
 impl<'a, const O: u8> CHROMA_FILTER_STAGE__BYPASS_W<'a, O> {
-    #[doc = "Chroma Filter Stage \\[i\\]
-Enable"]
+    #[doc = "Chroma Filter Stage \\[i\\] Enable"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(CHROMA_FILTER_STAGE__BYPASS_A::ENABLE)
     }
-    #[doc = "Chroma Filter Stage \\[i\\]
-bypass"]
+    #[doc = "Chroma Filter Stage \\[i\\] bypass"]
     #[inline(always)]
     pub fn bypass(self) -> &'a mut W {
         self.variant(CHROMA_FILTER_STAGE__BYPASS_A::BYPASS)

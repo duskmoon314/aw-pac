@@ -29,8 +29,7 @@ impl R {
         HBLK_TIME_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
-#[doc = "Parser Channel\\[i\\]
-Line Time Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch0_line_time](index.html) module"]
+#[doc = "Parser Channel\\[i\\] Line Time Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch0_line_time](index.html) module"]
 pub struct PRS_CH0_LINE_TIME_SPEC;
 impl crate::RegisterSpec for PRS_CH0_LINE_TIME_SPEC {
     type Ux = u32;

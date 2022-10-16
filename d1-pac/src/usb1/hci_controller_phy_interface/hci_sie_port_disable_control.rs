@@ -112,11 +112,9 @@ pub type RESUME_SEL_R = crate::BitReader<bool>;
 #[doc = "Field `resume_sel` writer - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
 pub type RESUME_SEL_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
-#[doc = "Field `se0_status` reader - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
-is 10b or 11b"]
+#[doc = "Field `se0_status` reader - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\] is 10b or 11b"]
 pub type SE0_STATUS_R = crate::BitReader<bool>;
-#[doc = "Field `se0_status` writer - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
-is 10b or 11b"]
+#[doc = "Field `se0_status` writer - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\] is 10b or 11b"]
 pub type SE0_STATUS_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, HCI_SIE_PORT_DISABLE_CONTROL_SPEC, bool, O>;
 impl R {
@@ -130,8 +128,7 @@ impl R {
     pub fn resume_sel(&self) -> RESUME_SEL_R {
         RESUME_SEL_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
-is 10b or 11b"]
+    #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\] is 10b or 11b"]
     #[inline(always)]
     pub fn se0_status(&self) -> SE0_STATUS_R {
         SE0_STATUS_R::new(((self.bits >> 16) & 1) != 0)
@@ -148,8 +145,7 @@ impl W {
     pub fn resume_sel(&mut self) -> RESUME_SEL_W<4> {
         RESUME_SEL_W::new(self)
     }
-    #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\]
-is 10b or 11b"]
+    #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\] is 10b or 11b"]
     #[inline(always)]
     pub fn se0_status(&mut self) -> SE0_STATUS_W<16> {
         SE0_STATUS_W::new(self)

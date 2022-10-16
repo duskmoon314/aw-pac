@@ -55,8 +55,7 @@ impl crate::Readable for IP_SPEC {
 impl crate::Writable for IP_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets ip[%s]
-to value 0"]
+#[doc = "`reset()` method sets ip[%s] to value 0"]
 impl crate::Resettable for IP_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

@@ -34,18 +34,15 @@ impl From<crate::W<PLL_CPU_TUN_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `pll_b_out` reader - PLL-B-OUT \\[6:0\\]
-for verify"]
+#[doc = "Field `pll_b_out` reader - PLL-B-OUT \\[6:0\\] for verify"]
 pub type PLL_B_OUT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `pll_reg_od1` reader - PLL-REG-OD1 for verify"]
 pub type PLL_REG_OD1_R = crate::BitReader<bool>;
 #[doc = "Field `pll_reg_od1` writer - PLL-REG-OD1 for verify"]
 pub type PLL_REG_OD1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PLL_CPU_TUN_SPEC, bool, O>;
-#[doc = "Field `pll_b_in` reader - PLL-B-IN \\[6:0\\]
-for verify"]
+#[doc = "Field `pll_b_in` reader - PLL-B-IN \\[6:0\\] for verify"]
 pub type PLL_B_IN_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `pll_b_in` writer - PLL-B-IN \\[6:0\\]
-for verify"]
+#[doc = "Field `pll_b_in` writer - PLL-B-IN \\[6:0\\] for verify"]
 pub type PLL_B_IN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_CPU_TUN_SPEC, u8, u8, 7, O>;
 #[doc = "Field `pll_reg_od` reader - PLL-REG-OD0 for verify"]
 pub type PLL_REG_OD_R = crate::BitReader<bool>;
@@ -66,8 +63,7 @@ pub type PLL_VCO_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `pll_vco` writer - VCO range control"]
 pub type PLL_VCO_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_CPU_TUN_SPEC, u8, u8, 3, O>;
 impl R {
-    #[doc = "Bits 0:6 - PLL-B-OUT \\[6:0\\]
-for verify"]
+    #[doc = "Bits 0:6 - PLL-B-OUT \\[6:0\\] for verify"]
     #[inline(always)]
     pub fn pll_b_out(&self) -> PLL_B_OUT_R {
         PLL_B_OUT_R::new((self.bits & 0x7f) as u8)
@@ -77,8 +73,7 @@ for verify"]
     pub fn pll_reg_od1(&self) -> PLL_REG_OD1_R {
         PLL_REG_OD1_R::new(((self.bits >> 7) & 1) != 0)
     }
-    #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\]
-for verify"]
+    #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\] for verify"]
     #[inline(always)]
     pub fn pll_b_in(&self) -> PLL_B_IN_R {
         PLL_B_IN_R::new(((self.bits >> 8) & 0x7f) as u8)
@@ -110,8 +105,7 @@ impl W {
     pub fn pll_reg_od1(&mut self) -> PLL_REG_OD1_W<7> {
         PLL_REG_OD1_W::new(self)
     }
-    #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\]
-for verify"]
+    #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\] for verify"]
     #[inline(always)]
     pub fn pll_b_in(&mut self) -> PLL_B_IN_W<8> {
         PLL_B_IN_W::new(self)

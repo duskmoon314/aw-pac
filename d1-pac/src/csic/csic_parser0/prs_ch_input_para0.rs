@@ -56,8 +56,7 @@ impl R {
         INPUT_SRC_TYPE_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "Parser Channel\\[i\\]
-Input Parameter0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch_input_para0](index.html) module"]
+#[doc = "Parser Channel\\[i\\] Input Parameter0 Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ch_input_para0](index.html) module"]
 pub struct PRS_CH_INPUT_PARA0_SPEC;
 impl crate::RegisterSpec for PRS_CH_INPUT_PARA0_SPEC {
     type Ux = u32;

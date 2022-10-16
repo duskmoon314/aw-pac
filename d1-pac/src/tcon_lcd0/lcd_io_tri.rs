@@ -34,11 +34,9 @@ impl From<crate::W<LCD_IO_TRI_SPEC>> for W {
         W(writer)
     }
 }
-#[doc = "Field `data_output_tri_en` reader - LCD output port D\\[23:0\\]
-output enable, with independent bit control."]
+#[doc = "Field `data_output_tri_en` reader - LCD output port D\\[23:0\\] output enable, with independent bit control."]
 pub type DATA_OUTPUT_TRI_EN_R = crate::FieldReader<u32, u32>;
-#[doc = "Field `data_output_tri_en` writer - LCD output port D\\[23:0\\]
-output enable, with independent bit control."]
+#[doc = "Field `data_output_tri_en` writer - LCD output port D\\[23:0\\] output enable, with independent bit control."]
 pub type DATA_OUTPUT_TRI_EN_W<'a, const O: u8> =
     crate::FieldWriter<'a, u32, LCD_IO_TRI_SPEC, u32, u32, 24, O>;
 #[doc = "Field `io_output_tri_en[0-3]` reader - Enable the output of IO\\[i\\]"]
@@ -144,8 +142,7 @@ impl<'a, const O: u8> RGB_ENDIAN_W<'a, O> {
     }
 }
 impl R {
-    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\]
-output enable, with independent bit control."]
+    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] output enable, with independent bit control."]
     #[inline(always)]
     pub fn data_output_tri_en(&self) -> DATA_OUTPUT_TRI_EN_R {
         DATA_OUTPUT_TRI_EN_R::new((self.bits & 0x00ff_ffff) as u32)
@@ -182,8 +179,7 @@ output enable, with independent bit control."]
     }
 }
 impl W {
-    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\]
-output enable, with independent bit control."]
+    #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] output enable, with independent bit control."]
     #[inline(always)]
     pub fn data_output_tri_en(&mut self) -> DATA_OUTPUT_TRI_EN_W<0> {
         DATA_OUTPUT_TRI_EN_W::new(self)

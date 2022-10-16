@@ -39,11 +39,9 @@ pub type MCSI_BK_CLK_ENABLE_R = crate::BitReader<MCSI_BK_CLK_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MCSI_BK_CLK_ENABLE_A {
-    #[doc = "0: BK\\[i\\]
-clock disable"]
+    #[doc = "0: BK\\[i\\] clock disable"]
     DISABLE = 0,
-    #[doc = "1: BK\\[i\\]
-clock enable,when MCSI_POST0_CLK_ENABLE is 1"]
+    #[doc = "1: BK\\[i\\] clock enable,when MCSI_POST0_CLK_ENABLE is 1"]
     ENABLE = 1,
 }
 impl From<MCSI_BK_CLK_ENABLE_A> for bool {
@@ -76,14 +74,12 @@ impl MCSI_BK_CLK_ENABLE_R {
 pub type MCSI_BK_CLK_ENABLE_W<'a, const O: u8> =
     crate::BitWriter<'a, u32, CCU_POST0_CLK_EN_SPEC, MCSI_BK_CLK_ENABLE_A, O>;
 impl<'a, const O: u8> MCSI_BK_CLK_ENABLE_W<'a, O> {
-    #[doc = "BK\\[i\\]
-clock disable"]
+    #[doc = "BK\\[i\\] clock disable"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
         self.variant(MCSI_BK_CLK_ENABLE_A::DISABLE)
     }
-    #[doc = "BK\\[i\\]
-clock enable,when MCSI_POST0_CLK_ENABLE is 1"]
+    #[doc = "BK\\[i\\] clock enable,when MCSI_POST0_CLK_ENABLE is 1"]
     #[inline(always)]
     pub fn enable(self) -> &'a mut W {
         self.variant(MCSI_BK_CLK_ENABLE_A::ENABLE)

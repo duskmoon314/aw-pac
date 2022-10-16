@@ -55,8 +55,7 @@ impl crate::Readable for SIE_SPEC {
 impl crate::Writable for SIE_SPEC {
     type Writer = W;
 }
-#[doc = "`reset()` method sets sie[%s]
-to value 0"]
+#[doc = "`reset()` method sets sie[%s] to value 0"]
 impl crate::Resettable for SIE_SPEC {
     #[inline(always)]
     fn reset_value() -> Self::Ux {

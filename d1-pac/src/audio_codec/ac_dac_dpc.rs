@@ -84,11 +84,9 @@ impl<'a, const O: u8> HUB_EN_W<'a, O> {
         self.variant(HUB_EN_A::ENABLE)
     }
 }
-#[doc = "Field `dvol` reader - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
-* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+#[doc = "Field `dvol` reader - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\] * (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
 pub type DVOL_R = crate::FieldReader<u8, u8>;
-#[doc = "Field `dvol` writer - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
-* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+#[doc = "Field `dvol` writer - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\] * (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
 pub type DVOL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, AC_DAC_DPC_SPEC, u8, u8, 6, O>;
 #[doc = "Field `hpf_en` reader - High Pass Filter Enable"]
 pub type HPF_EN_R = crate::BitReader<HPF_EN_A>;
@@ -250,8 +248,7 @@ impl R {
     pub fn hub_en(&self) -> HUB_EN_R {
         HUB_EN_R::new((self.bits & 1) != 0)
     }
-    #[doc = "Bits 12:17 - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
-* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+    #[doc = "Bits 12:17 - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\] * (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
     #[inline(always)]
     pub fn dvol(&self) -> DVOL_R {
         DVOL_R::new(((self.bits >> 12) & 0x3f) as u8)
@@ -283,8 +280,7 @@ impl W {
     pub fn hub_en(&mut self) -> HUB_EN_W<0> {
         HUB_EN_W::new(self)
     }
-    #[doc = "Bits 12:17 - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\]
-* (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
+    #[doc = "Bits 12:17 - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\] * (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
     #[inline(always)]
     pub fn dvol(&mut self) -> DVOL_W<12> {
         DVOL_W::new(self)
