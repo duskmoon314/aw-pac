@@ -1,60 +1,69 @@
 use std::{
     fs::{self, File},
     io::Write,
-    path::{Path, PathBuf},
+    path::PathBuf,
     process::Command,
 };
 
 use anyhow::{Error, Result};
-use clap::{Args, Parser, Subcommand};
+use clap::{Parser, Subcommand};
 use form::create_directory_structure;
-use phf::phf_map;
+use serde::Deserialize;
 use svd2rust::{generate::device::render, load_from, util::build_rs, Config, Target};
 use svdtools::convert::convert_cli::{convert, ParserConfig};
 
 #[macro_use]
 extern crate log;
 
-struct ChipMeta {
-    svd_name: &'static str,
-    crate_name: &'static str,
-    target: Target,
+#[allow(dead_code)]
+#[derive(Deserialize, Clone)]
+struct PacMeta {
+    chip_name: Vec<String>,
+    crate_name: String,
+    svd_name: String,
+    target: String,
+    patch: bool,
 }
 
-static CHIPS: phf::Map<&'static str, ChipMeta> = phf_map! {
-    "d1" => ChipMeta {
-        svd_name: "d1_unofficial",
-        crate_name: "d1-pac",
-        target: Target::RISCV
-    },
-};
+#[derive(Deserialize)]
+struct XtaskConfig {
+    pacs: Vec<PacMeta>,
+}
+
+fn parse_config() -> Result<XtaskConfig> {
+    let config =
+        fs::read_to_string(PathBuf::from(env!("CARGO_WORKSPACE_DIR")).join(".xtask.toml"))?;
+    let config: XtaskConfig = toml::from_str(&config)?;
+    Ok(config)
+}
+
+fn get_meta_from_config(config: &XtaskConfig, chip_name: &str) -> Result<PacMeta> {
+    let meta = config
+        .pacs
+        .iter()
+        .find(|meta| meta.chip_name.contains(&chip_name.to_string()))
+        .ok_or_else(|| Error::msg(format!("Chip {} not found in config", chip_name)))?;
+    Ok(meta.clone())
+}
 
 #[derive(Debug, Parser)]
 #[command(about, long_about = None)]
 struct Cli {
     #[clap(subcommand)]
     command: Commands,
+
+    /// Names of chips to do xtask on
+    #[arg(global = true)]
+    chips: Vec<String>,
 }
 
 #[derive(Debug, Subcommand)]
 enum Commands {
     /// Generate code from svd files
-    Gen(GenArgs),
+    Codegen,
 
     /// Format svd files
-    Fmt(FmtArgs),
-}
-
-#[derive(Debug, Args)]
-struct GenArgs {
-    /// Names of Chips
-    chips: Vec<String>,
-}
-
-#[derive(Debug, Args)]
-struct FmtArgs {
-    /// Names of Chips
-    chips: Vec<String>,
+    SvdFmt,
 }
 
 fn main() -> Result<()> {
@@ -62,27 +71,28 @@ fn main() -> Result<()> {
         .filter_module("xtask", log::LevelFilter::Info)
         .init();
     let cli = Cli::parse();
+    let cfg = parse_config()?;
 
     match cli.command {
-        Commands::Gen(args) => {
-            for chip in args.chips {
-                let meta = CHIPS.get(chip.as_str()).unwrap();
-                if fs::remove_dir_all(&PathBuf::from(meta.crate_name).join("src")).is_err() {
+        Commands::Codegen => {
+            for chip in cli.chips {
+                let meta = get_meta_from_config(&cfg, &chip)?;
+                if fs::remove_dir_all(&PathBuf::from(&meta.crate_name).join("src")).is_err() {
                     warn!("unable to remove src directory");
                 }
-                generate_code(meta)?;
-                format(meta)?;
+                generate_code(&meta)?;
+                format_code(&meta)?;
 
-                info!("Finished generating code for {}", meta.crate_name);
+                info!("Finished generating code for {}", &meta.crate_name);
             }
 
             Ok(())
         }
 
-        Commands::Fmt(args) => {
-            for chip in args.chips {
-                let meta = CHIPS.get(chip.as_str()).unwrap();
-                format_svd(meta)?;
+        Commands::SvdFmt => {
+            for chip in cli.chips {
+                let meta = get_meta_from_config(&cfg, &chip)?;
+                format_svd(&meta)?;
             }
 
             Ok(())
@@ -90,17 +100,18 @@ fn main() -> Result<()> {
     }
 }
 
-fn generate_code(meta: &ChipMeta) -> Result<()> {
+fn generate_code(meta: &PacMeta) -> Result<()> {
     info!(
         "Generating code for {} from {}.svd",
         meta.crate_name, meta.svd_name
     );
 
-    let svd_path = format!("svd/{}.svd", meta.svd_name);
-    let out_path = PathBuf::from(meta.crate_name);
+    let svd_path =
+        PathBuf::from(env!("CARGO_WORKSPACE_DIR")).join(format!("svd/{}.svd", meta.svd_name));
+    let out_path = PathBuf::from(env!("CARGO_WORKSPACE_DIR")).join(&meta.crate_name);
 
     let config = Config {
-        target: meta.target,
+        target: Target::parse(&meta.target)?,
         output_dir: out_path.clone(),
         const_generic: true,
 
@@ -123,9 +134,9 @@ fn generate_code(meta: &ChipMeta) -> Result<()> {
     Ok(())
 }
 
-fn format(meta: &ChipMeta) -> Result<()> {
+fn format_code(meta: &PacMeta) -> Result<()> {
     info!("running `form` and `rustfmt` on PAC");
-    let path = Path::new(meta.crate_name);
+    let path = PathBuf::from(env!("CARGO_WORKSPACE_DIR")).join(&meta.crate_name);
     let lib_file = path.join("lib.rs");
 
     let base_dir = path.join("src");
@@ -142,11 +153,12 @@ fn format(meta: &ChipMeta) -> Result<()> {
     Ok(())
 }
 
-fn format_svd(meta: &ChipMeta) -> Result<()> {
+fn format_svd(meta: &PacMeta) -> Result<()> {
     info!("formatting svd file: {}.svd", meta.svd_name);
 
-    let svd_path = PathBuf::from(format!("svd/{}.svd", meta.svd_name));
-    let svd_format_config = PathBuf::from("svd/.svdfmt.yaml");
+    let svd_path =
+        PathBuf::from(env!("CARGO_WORKSPACE_DIR")).join(format!("svd/{}.svd", meta.svd_name));
+    let svd_format_config = PathBuf::from(env!("CARGO_WORKSPACE_DIR")).join("svd/.svdfmt.yaml");
 
     convert(
         &svd_path,

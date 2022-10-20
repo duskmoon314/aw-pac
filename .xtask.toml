@@ -1,0 +1,27 @@
+[[pacs]]
+chip_name = ["D1", "d1", "d1s", "f133"]
+crate_name = "d1-pac"
+svd_name = "d1_unofficial"
+target = "riscv"
+patch = false
+
+[[pacs]]
+chip_name = ["r528", "t113"]
+crate_name = "r528-pac"
+svd_name = "r528_unofficial"
+target = "none"
+patch = true
+
+[[pacs]]
+chip_name = ["v853"]
+crate_name = "v853-pac"
+svd_name = "v853_unofficial"
+target = "none"
+patch = false
+
+[[pacs]]
+chip_name = ["xr806"]
+crate_name = "xr806-pac"
+svd_name = "xr806_unofficial"
+target = "cortex-m"
+patch = false

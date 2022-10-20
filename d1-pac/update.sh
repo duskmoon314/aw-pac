@@ -3,4 +3,4 @@ set -x
 set -e
 
 cd ..
-cargo xtask gen d1
+cargo xtask codegen d1
