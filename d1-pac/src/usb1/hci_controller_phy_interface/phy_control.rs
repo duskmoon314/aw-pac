@@ -130,26 +130,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - vc_clk"]
     #[inline(always)]
+    #[must_use]
     pub fn vc_clk(&mut self) -> VC_CLK_W<0> {
         VC_CLK_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn siddq(&mut self) -> SIDDQ_W<3> {
         SIDDQ_W::new(self)
     }
     #[doc = "Bit 7 - vc_di"]
     #[inline(always)]
+    #[must_use]
     pub fn vc_di(&mut self) -> VC_DI_W<7> {
         VC_DI_W::new(self)
     }
     #[doc = "Bits 8:15 - vc_addr"]
     #[inline(always)]
+    #[must_use]
     pub fn vc_addr(&mut self) -> VC_ADDR_W<8> {
         VC_ADDR_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
+    #[must_use]
     pub fn bist_en_a(&mut self) -> BIST_EN_A_W<16> {
         BIST_EN_A_W::new(self)
     }
@@ -172,11 +177,10 @@ impl crate::Readable for PHY_CONTROL_SPEC {
 #[doc = "`write(|w| ..)` method takes [phy_control::W](W) writer structure"]
 impl crate::Writable for PHY_CONTROL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets phy_control to value 0"]
 impl crate::Resettable for PHY_CONTROL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

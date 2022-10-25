@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Task Descriptor Address\n\nConfigure as the first address of the descriptor structure."]
     #[inline(always)]
+    #[must_use]
     pub fn task(&mut self) -> TASK_W<0> {
         TASK_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for CE_TDA_SPEC {
 #[doc = "`write(|w| ..)` method takes [ce_tda::W](W) writer structure"]
 impl crate::Writable for CE_TDA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ce_tda to value 0"]
 impl crate::Resettable for CE_TDA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

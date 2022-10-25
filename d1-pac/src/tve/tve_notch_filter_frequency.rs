@@ -175,6 +175,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Luma notch filter center frequency selection\n\nThese bits select the luma notch filter (which is a band-reject filter) center frequency. In two of the selections, the filter width affects also the selection of the center frequency."]
     #[inline(always)]
+    #[must_use]
     pub fn notch_freq(&mut self) -> NOTCH_FREQ_W<0> {
         NOTCH_FREQ_W::new(self)
     }
@@ -197,11 +198,10 @@ impl crate::Readable for TVE_NOTCH_FILTER_FREQUENCY_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_notch_filter_frequency::W](W) writer structure"]
 impl crate::Writable for TVE_NOTCH_FILTER_FREQUENCY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_notch_filter_frequency to value 0x02"]
 impl crate::Resettable for TVE_NOTCH_FILTER_FREQUENCY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

@@ -170,21 +170,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
+    #[must_use]
     pub fn div0(&mut self) -> DIV0_W<0> {
         DIV0_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
+    #[must_use]
     pub fn div1(&mut self) -> DIV1_W<8> {
         DIV1_W::new(self)
     }
     #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bit 31 - Gating for CLK27M"]
     #[inline(always)]
+    #[must_use]
     pub fn gating(&mut self) -> GATING_W<31> {
         GATING_W::new(self)
     }
@@ -207,11 +211,10 @@ impl crate::Readable for CLK27M_FAN_SPEC {
 #[doc = "`write(|w| ..)` method takes [clk27m_fan::W](W) writer structure"]
 impl crate::Writable for CLK27M_FAN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets clk27m_fan to value 0"]
 impl crate::Resettable for CLK27M_FAN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

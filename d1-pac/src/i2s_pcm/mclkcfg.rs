@@ -335,11 +335,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Frequency Division Coefficient"]
     #[inline(always)]
+    #[must_use]
     pub fn asrc_mclk_freq_div_coe(&mut self) -> ASRC_MCLK_FREQ_DIV_COE_W<0> {
         ASRC_MCLK_FREQ_DIV_COE_W::new(self)
     }
     #[doc = "Bit 16 - ASRC Clock Gate Enable Control"]
     #[inline(always)]
+    #[must_use]
     pub fn asrc_mclk_gate(&mut self) -> ASRC_MCLK_GATE_W<16> {
         ASRC_MCLK_GATE_W::new(self)
     }
@@ -362,11 +364,10 @@ impl crate::Readable for MCLKCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [mclkcfg::W](W) writer structure"]
 impl crate::Writable for MCLKCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets mclkcfg to value 0"]
 impl crate::Resettable for MCLKCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

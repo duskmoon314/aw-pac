@@ -123,7 +123,7 @@ impl PMU_CLR_R {
 }
 #[doc = "Field `pmu_clr` writer - PMU Clear"]
 pub type PMU_CLR_W<'a, const O: u8> =
-    crate::BitWriter0C<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_CLR_A, O>;
+    crate::BitWriter<'a, u32, RISCV_AXI_PMU_CTRL_SPEC, PMU_CLR_A, O>;
 impl<'a, const O: u8> PMU_CLR_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
@@ -151,11 +151,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - PMU Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pmu_en(&mut self) -> PMU_EN_W<0> {
         PMU_EN_W::new(self)
     }
     #[doc = "Bit 1 - PMU Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn pmu_clr(&mut self) -> PMU_CLR_W<1> {
         PMU_CLR_W::new(self)
     }
@@ -178,11 +180,10 @@ impl crate::Readable for RISCV_AXI_PMU_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [riscv_axi_pmu_ctrl::W](W) writer structure"]
 impl crate::Writable for RISCV_AXI_PMU_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets riscv_axi_pmu_ctrl to value 0"]
 impl crate::Resettable for RISCV_AXI_PMU_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

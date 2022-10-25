@@ -40,8 +40,5 @@ impl crate::Readable for RESCAL_STATUS_SPEC {
 }
 #[doc = "`reset()` method sets rescal_status to value 0"]
 impl crate::Resettable for RESCAL_STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

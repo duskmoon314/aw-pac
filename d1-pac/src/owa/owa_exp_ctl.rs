@@ -54,11 +54,10 @@ impl crate::Readable for OWA_EXP_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [owa_exp_ctl::W](W) writer structure"]
 impl crate::Writable for OWA_EXP_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets owa_exp_ctl to value 0"]
 impl crate::Resettable for OWA_EXP_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

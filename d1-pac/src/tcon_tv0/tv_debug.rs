@@ -152,11 +152,13 @@ impl R {
 impl W {
     #[doc = "Bit 13 - Line Buf fer Bypass"]
     #[inline(always)]
+    #[must_use]
     pub fn line_buf_bypass(&mut self) -> LINE_BUF_BYPASS_W<13> {
         LINE_BUF_BYPASS_W::new(self)
     }
     #[doc = "Bit 30 - TV FIFO Underflow"]
     #[inline(always)]
+    #[must_use]
     pub fn tv_fifo_u(&mut self) -> TV_FIFO_U_W<30> {
         TV_FIFO_U_W::new(self)
     }
@@ -179,11 +181,10 @@ impl crate::Readable for TV_DEBUG_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_debug::W](W) writer structure"]
 impl crate::Writable for TV_DEBUG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_debug to value 0"]
 impl crate::Resettable for TV_DEBUG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

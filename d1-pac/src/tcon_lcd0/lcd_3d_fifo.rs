@@ -175,16 +175,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Set the work mode of 3D FIFO"]
     #[inline(always)]
+    #[must_use]
     pub fn setting(&mut self) -> SETTING_W<0> {
         SETTING_W::new(self)
     }
     #[doc = "Bits 4:13 - The number of data in half line=3D_FIFO_HALF_LINE_SIZE+1, only valid when 3D_FIFO_SETTING is set as 2."]
     #[inline(always)]
+    #[must_use]
     pub fn half_line_size(&mut self) -> HALF_LINE_SIZE_W<4> {
         HALF_LINE_SIZE_W::new(self)
     }
     #[doc = "Bit 31 - Enable the 3D fifo bist test function"]
     #[inline(always)]
+    #[must_use]
     pub fn bist_en(&mut self) -> BIST_EN_W<31> {
         BIST_EN_W::new(self)
     }
@@ -207,11 +210,10 @@ impl crate::Readable for LCD_3D_FIFO_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_3d_fifo::W](W) writer structure"]
 impl crate::Writable for LCD_3D_FIFO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_3d_fifo to value 0"]
 impl crate::Resettable for LCD_3D_FIFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

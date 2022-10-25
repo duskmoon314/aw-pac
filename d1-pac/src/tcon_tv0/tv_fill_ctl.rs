@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 31 - TV Fill Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tv_fill_en(&mut self) -> TV_FILL_EN_W<31> {
         TV_FILL_EN_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for TV_FILL_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_fill_ctl::W](W) writer structure"]
 impl crate::Writable for TV_FILL_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_fill_ctl to value 0"]
 impl crate::Resettable for TV_FILL_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

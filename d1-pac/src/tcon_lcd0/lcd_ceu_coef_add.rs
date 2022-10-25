@@ -43,12 +43,13 @@ impl R {
     #[doc = "Bits 0:18 - Signed 19-bit value, range of (-16384, 16384)."]
     #[inline(always)]
     pub fn ceu_coef_add_value(&self) -> CEU_COEF_ADD_VALUE_R {
-        CEU_COEF_ADD_VALUE_R::new((self.bits & 0x0007_ffff) as u32)
+        CEU_COEF_ADD_VALUE_R::new(self.bits & 0x0007_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:18 - Signed 19-bit value, range of (-16384, 16384)."]
     #[inline(always)]
+    #[must_use]
     pub fn ceu_coef_add_value(&mut self) -> CEU_COEF_ADD_VALUE_W<0> {
         CEU_COEF_ADD_VALUE_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for LCD_CEU_COEF_ADD_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_ceu_coef_add::W](W) writer structure"]
 impl crate::Writable for LCD_CEU_COEF_ADD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_ceu_coef_add%s to value 0"]
 impl crate::Resettable for LCD_CEU_COEF_ADD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

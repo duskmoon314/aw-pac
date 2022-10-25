@@ -190,86 +190,103 @@ impl R {
 impl W {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pe_pull<const O: u8>(&mut self) -> PE_PULL_W<O> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe0_pull(&mut self) -> PE_PULL_W<0> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 2:3 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe1_pull(&mut self) -> PE_PULL_W<2> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 4:5 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe2_pull(&mut self) -> PE_PULL_W<4> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 6:7 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe3_pull(&mut self) -> PE_PULL_W<6> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 8:9 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe4_pull(&mut self) -> PE_PULL_W<8> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 10:11 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe5_pull(&mut self) -> PE_PULL_W<10> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 12:13 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe6_pull(&mut self) -> PE_PULL_W<12> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 14:15 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe7_pull(&mut self) -> PE_PULL_W<14> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 16:17 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe8_pull(&mut self) -> PE_PULL_W<16> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 18:19 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe9_pull(&mut self) -> PE_PULL_W<18> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 20:21 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe10_pull(&mut self) -> PE_PULL_W<20> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 22:23 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe11_pull(&mut self) -> PE_PULL_W<22> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 24:25 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe12_pull(&mut self) -> PE_PULL_W<24> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 26:27 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe13_pull(&mut self) -> PE_PULL_W<26> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 28:29 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe14_pull(&mut self) -> PE_PULL_W<28> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 30:31 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe15_pull(&mut self) -> PE_PULL_W<30> {
         PE_PULL_W::new(self)
     }
@@ -292,11 +309,10 @@ impl crate::Readable for PE_PULL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pe_pull0::W](W) writer structure"]
 impl crate::Writable for PE_PULL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pe_pull0 to value 0"]
 impl crate::Resettable for PE_PULL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

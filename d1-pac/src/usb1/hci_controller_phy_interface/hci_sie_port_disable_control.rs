@@ -137,16 +137,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Port Disable Control"]
     #[inline(always)]
+    #[must_use]
     pub fn port_disable_control(&mut self) -> PORT_DISABLE_CONTROL_W<0> {
         PORT_DISABLE_CONTROL_W::new(self)
     }
     #[doc = "Bit 4 - resume_sel\n\nWhen set k-se0 transition 2 us, setting this bit to 1, which is cooperated with ss_utmi_backward_enb_i."]
     #[inline(always)]
+    #[must_use]
     pub fn resume_sel(&mut self) -> RESUME_SEL_W<4> {
         RESUME_SEL_W::new(self)
     }
     #[doc = "Bit 16 - SE0 Status\n\nThis bit is set when no-se0 is detected before SOF when bit\\[1:0\\] is 10b or 11b"]
     #[inline(always)]
+    #[must_use]
     pub fn se0_status(&mut self) -> SE0_STATUS_W<16> {
         SE0_STATUS_W::new(self)
     }
@@ -169,11 +172,10 @@ impl crate::Readable for HCI_SIE_PORT_DISABLE_CONTROL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hci_sie_port_disable_control::W](W) writer structure"]
 impl crate::Writable for HCI_SIE_PORT_DISABLE_CONTROL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hci_sie_port_disable_control to value 0"]
 impl crate::Resettable for HCI_SIE_PORT_DISABLE_CONTROL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -169,21 +169,25 @@ impl R {
 impl W {
     #[doc = "Bit 12 - TV Line Interrupt Flag\n\nTrigger when SY1 match the current TV scan line\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn tv_line_int_flag(&mut self) -> TV_LINE_INT_FLAG_W<12> {
         TV_LINE_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 14 - TV Vb Interrupt Flag\n\nAsserted during vertical no-display period every frame.\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn tv_vb_int_flag(&mut self) -> TV_VB_INT_FLAG_W<14> {
         TV_VB_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 28 - TV Line Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tv_line_int_en(&mut self) -> TV_LINE_INT_EN_W<28> {
         TV_LINE_INT_EN_W::new(self)
     }
     #[doc = "Bit 30 - TV Vb Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tv_vb_int_en(&mut self) -> TV_VB_INT_EN_W<30> {
         TV_VB_INT_EN_W::new(self)
     }
@@ -206,11 +210,10 @@ impl crate::Readable for TV_GINT0_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_gint0::W](W) writer structure"]
 impl crate::Writable for TV_GINT0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_gint0 to value 0"]
 impl crate::Resettable for TV_GINT0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

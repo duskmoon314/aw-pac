@@ -105,16 +105,19 @@ impl R {
 impl W {
     #[doc = "Channel Data Available Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_data_pengding<const O: u8>(&mut self) -> CH_DATA_PENGDING_W<O> {
         CH_DATA_PENGDING_W::new(self)
     }
     #[doc = "Bit 0 - Channel Data Available Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub fn ch0_data_pengding(&mut self) -> CH_DATA_PENGDING_W<0> {
         CH_DATA_PENGDING_W::new(self)
     }
     #[doc = "Bit 1 - Channel Data Available Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_data_pengding(&mut self) -> CH_DATA_PENGDING_W<1> {
         CH_DATA_PENGDING_W::new(self)
     }
@@ -137,11 +140,10 @@ impl crate::Readable for GP_DATA_INTS_SPEC {
 #[doc = "`write(|w| ..)` method takes [gp_data_ints::W](W) writer structure"]
 impl crate::Writable for GP_DATA_INTS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x01;
 }
 #[doc = "`reset()` method sets gp_data_ints to value 0"]
 impl crate::Resettable for GP_DATA_INTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -250,21 +250,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Auto Calibration Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cal_en(&mut self) -> CAL_EN_W<0> {
         CAL_EN_W::new(self)
     }
     #[doc = "Bit 1 - Calibration Circuits Analog Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cal_ana_en(&mut self) -> CAL_ANA_EN_W<1> {
         CAL_ANA_EN_W::new(self)
     }
     #[doc = "Bit 2 - RESCAL Calibration Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn rescal_mode(&mut self) -> RESCAL_MODE_W<2> {
         RESCAL_MODE_W::new(self)
     }
     #[doc = "Bit 8 - 240ohms Resistor Trimming Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ddr_res240_trimming_sel(&mut self) -> DDR_RES240_TRIMMING_SEL_W<8> {
         DDR_RES240_TRIMMING_SEL_W::new(self)
     }
@@ -287,11 +291,10 @@ impl crate::Readable for RESCAL_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [rescal_ctrl::W](W) writer structure"]
 impl crate::Writable for RESCAL_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets rescal_ctrl to value 0"]
 impl crate::Resettable for RESCAL_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - DMA_MODE:Buffer length of luminance Y in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y and chroma C in YC line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
     #[inline(always)]
+    #[must_use]
     pub fn buf_len(&mut self) -> BUF_LEN_W<0> {
         BUF_LEN_W::new(self)
     }
     #[doc = "Bits 16:29 - DMA_MODE: Buffer length of chroma C in a line. Unit is byte.\n\nLBC_MODE: Buffer length Stride of luminance Y in ONLY Y line. Unit is byte.\n\nOnly Readable when BUF_LENGTH_CFG_MODE is set 0."]
     #[inline(always)]
+    #[must_use]
     pub fn buf_len_c(&mut self) -> BUF_LEN_C_W<16> {
         BUF_LEN_C_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for CSIC_DMA_BUF_LEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_buf_len::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_BUF_LEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_buf_len to value 0x0280_0500"]
 impl crate::Resettable for CSIC_DMA_BUF_LEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0280_0500
-    }
+    const RESET_VALUE: Self::Ux = 0x0280_0500;
 }

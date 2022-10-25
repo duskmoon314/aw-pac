@@ -24,8 +24,5 @@ impl crate::Readable for SMHC_RESP0_SPEC {
 }
 #[doc = "`reset()` method sets smhc_resp0 to value 0"]
 impl crate::Resettable for SMHC_RESP0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

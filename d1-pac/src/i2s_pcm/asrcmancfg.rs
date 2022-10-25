@@ -94,7 +94,7 @@ impl R {
     #[doc = "Bits 0:25 - ASRD Ration Value Manual Configure"]
     #[inline(always)]
     pub fn asrc_ratio_value_manual_cfg(&self) -> ASRC_RATIO_VALUE_MANUAL_CFG_R {
-        ASRC_RATIO_VALUE_MANUAL_CFG_R::new((self.bits & 0x03ff_ffff) as u32)
+        ASRC_RATIO_VALUE_MANUAL_CFG_R::new(self.bits & 0x03ff_ffff)
     }
     #[doc = "Bit 31 - Manual Configuration of ASRC Ratio Enable"]
     #[inline(always)]
@@ -105,11 +105,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:25 - ASRD Ration Value Manual Configure"]
     #[inline(always)]
+    #[must_use]
     pub fn asrc_ratio_value_manual_cfg(&mut self) -> ASRC_RATIO_VALUE_MANUAL_CFG_W<0> {
         ASRC_RATIO_VALUE_MANUAL_CFG_W::new(self)
     }
     #[doc = "Bit 31 - Manual Configuration of ASRC Ratio Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn asrc_ratio_manual_en(&mut self) -> ASRC_RATIO_MANUAL_EN_W<31> {
         ASRC_RATIO_MANUAL_EN_W::new(self)
     }
@@ -132,11 +134,10 @@ impl crate::Readable for ASRCMANCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [asrcmancfg::W](W) writer structure"]
 impl crate::Writable for ASRCMANCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets asrcmancfg to value 0"]
 impl crate::Resettable for ASRCMANCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

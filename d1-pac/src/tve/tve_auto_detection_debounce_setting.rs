@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - The de_bounce time for hot plug detect function."]
     #[inline(always)]
+    #[must_use]
     pub fn dac0_de_bounce_times(&mut self) -> DAC0_DE_BOUNCE_TIMES_W<0> {
         DAC0_DE_BOUNCE_TIMES_W::new(self)
     }
     #[doc = "Bits 16:25 - DAC test register."]
     #[inline(always)]
+    #[must_use]
     pub fn dac_test_register(&mut self) -> DAC_TEST_REGISTER_W<16> {
         DAC_TEST_REGISTER_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for TVE_AUTO_DETECTION_DEBOUNCE_SETTING_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_auto_detection_debounce_setting::W](W) writer structure"]
 impl crate::Writable for TVE_AUTO_DETECTION_DEBOUNCE_SETTING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_auto_detection_debounce_setting to value 0"]
 impl crate::Resettable for TVE_AUTO_DETECTION_DEBOUNCE_SETTING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

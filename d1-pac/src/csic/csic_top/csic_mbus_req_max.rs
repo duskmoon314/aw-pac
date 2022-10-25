@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Maximum of request commands for the master granted in MCSI_MEM arbiter is N+1."]
     #[inline(always)]
+    #[must_use]
     pub fn mcsi_mem_req_max(&mut self) -> MCSI_MEM_REQ_MAX_W<0> {
         MCSI_MEM_REQ_MAX_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for CSIC_MBUS_REQ_MAX_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_mbus_req_max::W](W) writer structure"]
 impl crate::Writable for CSIC_MBUS_REQ_MAX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_mbus_req_max to value 0x0f"]
 impl crate::Resettable for CSIC_MBUS_REQ_MAX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0f
-    }
+    const RESET_VALUE: Self::Ux = 0x0f;
 }

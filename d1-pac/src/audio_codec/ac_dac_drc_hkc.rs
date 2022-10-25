@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The slope of the compressor, which is determined by the equation that Kc = 1/R. R is the ratio of the compressor, which is always an integer. The format is 8.24. (The default value is 2:1)"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_hkc(&mut self) -> DAC_DRC_HKC_W<0> {
         DAC_DRC_HKC_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_DAC_DRC_HKC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_hkc::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_HKC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_hkc to value 0x80"]
 impl crate::Resettable for AC_DAC_DRC_HKC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

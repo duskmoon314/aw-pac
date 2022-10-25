@@ -125,21 +125,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - Usual set as the length of a line."]
     #[inline(always)]
+    #[must_use]
     pub fn trans_start_set(&mut self) -> TRANS_START_SET_W<0> {
         TRANS_START_SET_W::new(self)
     }
     #[doc = "Bits 13:14 - Set the sync mode in CPU interface."]
     #[inline(always)]
+    #[must_use]
     pub fn sync_mode(&mut self) -> SYNC_MODE_W<13> {
         SYNC_MODE_W::new(self)
     }
     #[doc = "Bit 15 - Select the FIFOs used in CPU mode."]
     #[inline(always)]
+    #[must_use]
     pub fn trans_start_mode(&mut self) -> TRANS_START_MODE_W<15> {
         TRANS_START_MODE_W::new(self)
     }
     #[doc = "Bits 16:31 - T_dly = (Start_Delay +1) * be_clk*8."]
     #[inline(always)]
+    #[must_use]
     pub fn start_dly(&mut self) -> START_DLY_W<16> {
         START_DLY_W::new(self)
     }
@@ -162,11 +166,10 @@ impl crate::Readable for LCD_CPU_TRI2_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_tri2::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_TRI2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cpu_tri2 to value 0"]
 impl crate::Resettable for LCD_CPU_TRI2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

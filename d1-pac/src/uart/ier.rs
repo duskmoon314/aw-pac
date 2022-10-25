@@ -369,31 +369,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable Received Data Available Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn erbfi(&mut self) -> ERBFI_W<0> {
         ERBFI_W::new(self)
     }
     #[doc = "Bit 1 - Enable Transmit Holding Register Empty Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn etbei(&mut self) -> ETBEI_W<1> {
         ETBEI_W::new(self)
     }
     #[doc = "Bit 2 - Enable Receiver Line Status Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn elsi(&mut self) -> ELSI_W<2> {
         ELSI_W::new(self)
     }
     #[doc = "Bit 3 - Enable Modem Status Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn edssi(&mut self) -> EDSSI_W<3> {
         EDSSI_W::new(self)
     }
     #[doc = "Bit 4 - RS485 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rs485_int_en(&mut self) -> RS485_INT_EN_W<4> {
         RS485_INT_EN_W::new(self)
     }
     #[doc = "Bit 7 - Programmable THRE Interrupt Mode Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ptime(&mut self) -> PTIME_W<7> {
         PTIME_W::new(self)
     }
@@ -416,11 +422,10 @@ impl crate::Readable for IER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ier::W](W) writer structure"]
 impl crate::Writable for IER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ier to value 0"]
 impl crate::Resettable for IER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

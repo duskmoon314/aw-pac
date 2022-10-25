@@ -475,21 +475,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - (a_refslct1\\[3:0\\])\n\nThe reference voltage is used for hot plug detect function."]
     #[inline(always)]
+    #[must_use]
     pub fn ref1_sel(&mut self) -> REF1_SEL_W<0> {
         REF1_SEL_W::new(self)
     }
     #[doc = "Bits 4:5 - (a_refslct2\\[1:0\\])"]
     #[inline(always)]
+    #[must_use]
     pub fn ref2_sel(&mut self) -> REF2_SEL_W<4> {
         REF2_SEL_W::new(self)
     }
     #[doc = "Bit 8 - (A_SEL_DETREF_RES)"]
     #[inline(always)]
+    #[must_use]
     pub fn ref_int_sel(&mut self) -> REF_INT_SEL_W<8> {
         REF_INT_SEL_W::new(self)
     }
     #[doc = "Bit 9 - (A_SEL_DETREF_LDO)"]
     #[inline(always)]
+    #[must_use]
     pub fn ref_ext_sel(&mut self) -> REF_EXT_SEL_W<9> {
         REF_EXT_SEL_W::new(self)
     }
@@ -512,11 +516,10 @@ impl crate::Readable for TVE_DAC_CFG1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_dac_cfg1::W](W) writer structure"]
 impl crate::Writable for TVE_DAC_CFG1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_dac_cfg1 to value 0x023a"]
 impl crate::Resettable for TVE_DAC_CFG1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x023a
-    }
+    const RESET_VALUE: Self::Ux = 0x023a;
 }

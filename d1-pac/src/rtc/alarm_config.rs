@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Configuration of alarm wake up output."]
     #[inline(always)]
+    #[must_use]
     pub fn alarm_wakeup(&mut self) -> ALARM_WAKEUP_W<0> {
         ALARM_WAKEUP_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for ALARM_CONFIG_SPEC {
 #[doc = "`write(|w| ..)` method takes [alarm_config::W](W) writer structure"]
 impl crate::Writable for ALARM_CONFIG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets alarm_config to value 0"]
 impl crate::Resettable for ALARM_CONFIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

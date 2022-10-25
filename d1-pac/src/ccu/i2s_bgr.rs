@@ -179,41 +179,49 @@ impl R {
 impl W {
     #[doc = "Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn i2s_gating<const O: u8>(&mut self) -> I2S_GATING_W<O> {
         I2S_GATING_W::new(self)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn i2s0_gating(&mut self) -> I2S_GATING_W<0> {
         I2S_GATING_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn i2s1_gating(&mut self) -> I2S_GATING_W<1> {
         I2S_GATING_W::new(self)
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn i2s2_gating(&mut self) -> I2S_GATING_W<2> {
         I2S_GATING_W::new(self)
     }
     #[doc = "Reset"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn i2s_rst<const O: u8>(&mut self) -> I2S_RST_W<O> {
         I2S_RST_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn i2s0_rst(&mut self) -> I2S_RST_W<16> {
         I2S_RST_W::new(self)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn i2s1_rst(&mut self) -> I2S_RST_W<17> {
         I2S_RST_W::new(self)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn i2s2_rst(&mut self) -> I2S_RST_W<18> {
         I2S_RST_W::new(self)
     }
@@ -236,11 +244,10 @@ impl crate::Readable for I2S_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_bgr::W](W) writer structure"]
 impl crate::Writable for I2S_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_bgr to value 0"]
 impl crate::Resettable for I2S_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

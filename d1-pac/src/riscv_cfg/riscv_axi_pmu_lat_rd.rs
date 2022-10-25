@@ -24,8 +24,5 @@ impl crate::Readable for RISCV_AXI_PMU_LAT_RD_SPEC {
 }
 #[doc = "`reset()` method sets riscv_axi_pmu_lat_rd to value 0"]
 impl crate::Resettable for RISCV_AXI_PMU_LAT_RD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -242,51 +242,61 @@ impl R {
 impl W {
     #[doc = "Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn mi_tlb_pf<const O: u8>(&mut self) -> MI_TLB_PF_W<O> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 0 - Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mi_tlb0_pf(&mut self) -> MI_TLB_PF_W<0> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 1 - Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mi_tlb1_pf(&mut self) -> MI_TLB_PF_W<1> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 2 - Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mi_tlb2_pf(&mut self) -> MI_TLB_PF_W<2> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 3 - Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mi_tlb3_pf(&mut self) -> MI_TLB_PF_W<3> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 4 - Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mi_tlb4_pf(&mut self) -> MI_TLB_PF_W<4> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 5 - Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mi_tlb5_pf(&mut self) -> MI_TLB_PF_W<5> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 6 - Micro TLB6 prefetch enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mi_tlb6_pf(&mut self) -> MI_TLB_PF_W<6> {
         MI_TLB_PF_W::new(self)
     }
     #[doc = "Bit 16 - Prefetch Value Pagetable to Macro TLB\n\nIf the function is enabled, the prefetch function will not update the invalid Level2 page table to Macro TLB."]
     #[inline(always)]
+    #[must_use]
     pub fn pf_vl_pt_to_mt(&mut self) -> PF_VL_PT_TO_MT_W<16> {
         PF_VL_PT_TO_MT_W::new(self)
     }
     #[doc = "Bit 17 - Prefetch Value Pagetable to PTW Cache\n\nIf the function is enabled, the prefetch function will not update the invalid Level1 page table to PTW cache."]
     #[inline(always)]
+    #[must_use]
     pub fn pf_vl_pt_to_pc(&mut self) -> PF_VL_PT_TO_PC_W<17> {
         PF_VL_PT_TO_PC_W::new(self)
     }
@@ -309,11 +319,10 @@ impl crate::Readable for IOMMU_TLB_PREFETCH_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_tlb_prefetch::W](W) writer structure"]
 impl crate::Writable for IOMMU_TLB_PREFETCH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_tlb_prefetch to value 0x0003_0000"]
 impl crate::Resettable for IOMMU_TLB_PREFETCH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0003_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0003_0000;
 }

@@ -189,51 +189,61 @@ impl R {
 impl W {
     #[doc = "Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn twi_gating<const O: u8>(&mut self) -> TWI_GATING_W<O> {
         TWI_GATING_W::new(self)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn twi0_gating(&mut self) -> TWI_GATING_W<0> {
         TWI_GATING_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn twi1_gating(&mut self) -> TWI_GATING_W<1> {
         TWI_GATING_W::new(self)
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn twi2_gating(&mut self) -> TWI_GATING_W<2> {
         TWI_GATING_W::new(self)
     }
     #[doc = "Bit 3 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn twi3_gating(&mut self) -> TWI_GATING_W<3> {
         TWI_GATING_W::new(self)
     }
     #[doc = "Reset"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn twi_rst<const O: u8>(&mut self) -> TWI_RST_W<O> {
         TWI_RST_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn twi0_rst(&mut self) -> TWI_RST_W<16> {
         TWI_RST_W::new(self)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn twi1_rst(&mut self) -> TWI_RST_W<17> {
         TWI_RST_W::new(self)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn twi2_rst(&mut self) -> TWI_RST_W<18> {
         TWI_RST_W::new(self)
     }
     #[doc = "Bit 19 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn twi3_rst(&mut self) -> TWI_RST_W<19> {
         TWI_RST_W::new(self)
     }
@@ -256,11 +266,10 @@ impl crate::Readable for TWI_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_bgr::W](W) writer structure"]
 impl crate::Writable for TWI_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_bgr to value 0"]
 impl crate::Resettable for TWI_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

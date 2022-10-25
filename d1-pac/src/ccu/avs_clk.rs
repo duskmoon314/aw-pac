@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 31 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_gating(&mut self) -> CLK_GATING_W<31> {
         CLK_GATING_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for AVS_CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [avs_clk::W](W) writer structure"]
 impl crate::Writable for AVS_CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets avs_clk to value 0"]
 impl crate::Resettable for AVS_CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

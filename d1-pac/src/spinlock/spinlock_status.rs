@@ -227,8 +227,5 @@ impl crate::Readable for SPINLOCK_STATUS_SPEC {
 }
 #[doc = "`reset()` method sets spinlock_status to value 0"]
 impl crate::Resettable for SPINLOCK_STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

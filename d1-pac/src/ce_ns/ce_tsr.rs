@@ -115,11 +115,10 @@ impl crate::Readable for CE_TSR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ce_tsr::W](W) writer structure"]
 impl crate::Writable for CE_TSR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ce_tsr to value 0"]
 impl crate::Resettable for CE_TSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

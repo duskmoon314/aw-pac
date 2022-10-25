@@ -24,8 +24,5 @@ impl crate::Readable for DMAC_CUR_DEST_SPEC {
 }
 #[doc = "`reset()` method sets dmac_cur_dest%s to value 0"]
 impl crate::Resettable for DMAC_CUR_DEST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bit 16 - Command Drive Phase Select"]
     #[inline(always)]
+    #[must_use]
     pub fn cmd_drv_ph_sel(&mut self) -> CMD_DRV_PH_SEL_W<16> {
         CMD_DRV_PH_SEL_W::new(self)
     }
     #[doc = "Bit 17 - Data Drive Phase Select"]
     #[inline(always)]
+    #[must_use]
     pub fn dat_drv_ph_sel(&mut self) -> DAT_DRV_PH_SEL_W<17> {
         DAT_DRV_PH_SEL_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for SMHC_DRV_DL_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_drv_dl::W](W) writer structure"]
 impl crate::Writable for SMHC_DRV_DL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_drv_dl to value 0"]
 impl crate::Resettable for SMHC_DRV_DL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

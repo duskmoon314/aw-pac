@@ -829,41 +829,49 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - TVMode_Select\n\nNote: Changing this register value will cause some relative register setting to relative value."]
     #[inline(always)]
+    #[must_use]
     pub fn tvmode_select(&mut self) -> TVMODE_SELECT_W<0> {
         TVMODE_SELECT_W::new(self)
     }
     #[doc = "Bit 4 - Mode_1080i_1250Line_Sel"]
     #[inline(always)]
+    #[must_use]
     pub fn mode_1080i_1250line_sel(&mut self) -> MODE_1080I_1250LINE_SEL_W<4> {
         MODE_1080I_1250LINE_SEL_W::new(self)
     }
     #[doc = "Bit 8 - Standard Color bar input selection\n\nThis bit selects whether the Video Encoder video data input is replaced by an internal standard color bar generator or not."]
     #[inline(always)]
+    #[must_use]
     pub fn color_bar_mode(&mut self) -> COLOR_BAR_MODE_W<8> {
         COLOR_BAR_MODE_W::new(self)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
+    #[must_use]
     pub fn color_bar_type(&mut self) -> COLOR_BAR_TYPE_W<9> {
         COLOR_BAR_TYPE_W::new(self)
     }
     #[doc = "Bit 16 - Composite video enables selection\n\nThis bit selects whether the composite video output (CVBS) is enabled or disabled."]
     #[inline(always)]
+    #[must_use]
     pub fn cvbs_en(&mut self) -> CVBS_EN_W<16> {
         CVBS_EN_W::new(self)
     }
     #[doc = "Bit 17 - S-port Video enable Selection.\n\nThis bit selects whether the S-port(Y/C) video output is enabled or disabled."]
     #[inline(always)]
+    #[must_use]
     pub fn yc_en(&mut self) -> YC_EN_W<17> {
         YC_EN_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
+    #[must_use]
     pub fn yuv_rgb_output_en(&mut self) -> YUV_RGB_OUTPUT_EN_W<18> {
         YUV_RGB_OUTPUT_EN_W::new(self)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
+    #[must_use]
     pub fn input_chroma_data_sampling_rate_sel(
         &mut self,
     ) -> INPUT_CHROMA_DATA_SAMPLING_RATE_SEL_W<19> {
@@ -871,31 +879,37 @@ impl W {
     }
     #[doc = "Bit 20 - Cb_Cr_Seq_For_422_Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn cb_cr_seq_for_422_mode(&mut self) -> CB_CR_SEQ_FOR_422_MODE_W<20> {
         CB_CR_SEQ_FOR_422_MODE_W::new(self)
     }
     #[doc = "Bit 24"]
     #[inline(always)]
+    #[must_use]
     pub fn core_control_logic_clock_sel(&mut self) -> CORE_CONTROL_LOGIC_CLOCK_SEL_W<24> {
         CORE_CONTROL_LOGIC_CLOCK_SEL_W::new(self)
     }
     #[doc = "Bit 25"]
     #[inline(always)]
+    #[must_use]
     pub fn core_datapath_logic_clock_sel(&mut self) -> CORE_DATAPATH_LOGIC_CLOCK_SEL_W<25> {
         CORE_DATAPATH_LOGIC_CLOCK_SEL_W::new(self)
     }
     #[doc = "Bit 26"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_control_logic_clock_sel(&mut self) -> DAC_CONTROL_LOGIC_CLOCK_SEL_W<26> {
         DAC_CONTROL_LOGIC_CLOCK_SEL_W::new(self)
     }
     #[doc = "Bits 27:28"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_src_sel(&mut self) -> DAC_SRC_SEL_W<27> {
         DAC_SRC_SEL_W::new(self)
     }
     #[doc = "Bit 29"]
     #[inline(always)]
+    #[must_use]
     pub fn bypass_tv(&mut self) -> BYPASS_TV_W<29> {
         BYPASS_TV_W::new(self)
     }
@@ -918,11 +932,10 @@ impl crate::Readable for TVE_CONFIGURATION_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_configuration::W](W) writer structure"]
 impl crate::Writable for TVE_CONFIGURATION_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_configuration to value 0x0001_0000"]
 impl crate::Resettable for TVE_CONFIGURATION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0001_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0001_0000;
 }

@@ -152,8 +152,5 @@ impl crate::Readable for SMHC_MINTSTS_SPEC {
 }
 #[doc = "`reset()` method sets smhc_mintsts to value 0"]
 impl crate::Resettable for SMHC_MINTSTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

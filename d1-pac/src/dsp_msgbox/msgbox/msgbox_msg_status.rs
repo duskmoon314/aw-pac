@@ -33,8 +33,5 @@ impl crate::Readable for MSGBOX_MSG_STATUS_SPEC {
 }
 #[doc = "`reset()` method sets msgbox_msg_status%s to value 0"]
 impl crate::Resettable for MSGBOX_MSG_STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

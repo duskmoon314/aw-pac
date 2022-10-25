@@ -181,26 +181,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - TX Flow Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_flow_ctl_en(&mut self) -> TX_FLOW_CTL_EN_W<0> {
         TX_FLOW_CTL_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn zqp_frm_en(&mut self) -> ZQP_FRM_EN_W<1> {
         ZQP_FRM_EN_W::new(self)
     }
     #[doc = "Bits 4:19"]
     #[inline(always)]
+    #[must_use]
     pub fn pause_time(&mut self) -> PAUSE_TIME_W<4> {
         PAUSE_TIME_W::new(self)
     }
     #[doc = "Bits 20:21"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_pause_frm_slot(&mut self) -> TX_PAUSE_FRM_SLOT_W<20> {
         TX_PAUSE_FRM_SLOT_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_flow_ctl_sta(&mut self) -> TX_FLOW_CTL_STA_W<31> {
         TX_FLOW_CTL_STA_W::new(self)
     }
@@ -223,11 +228,10 @@ impl crate::Readable for EMAC_TX_FLOW_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_tx_flow_ctl::W](W) writer structure"]
 impl crate::Writable for EMAC_TX_FLOW_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_tx_flow_ctl to value 0"]
 impl crate::Resettable for EMAC_TX_FLOW_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

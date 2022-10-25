@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - FrameRemaining\n\nThis counter is decremented at each bit time. When it reaches zero, it is reset by loading the FrameInterval value specified in at the next bit time boundary. When entering the USBOPERATIONAL state, HC re-loads the content with the FrameInterval of and uses the updated value from the next SOF."]
     #[inline(always)]
+    #[must_use]
     pub fn frame_remaining(&mut self) -> FRAME_REMAINING_W<0> {
         FRAME_REMAINING_W::new(self)
     }
     #[doc = "Bit 31 - FrameRemaining Toggle\n\nThis bit is loaded from the FrameIntervalToggle field of whenever FrameRemaining reaches 0. This bit is used by HCD for the synchronization between FrameInterval and FrameRemaining."]
     #[inline(always)]
+    #[must_use]
     pub fn frame_remaining_toggle(&mut self) -> FRAME_REMAINING_TOGGLE_W<31> {
         FRAME_REMAINING_TOGGLE_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for HC_FM_REMAINING_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_fm_remaining::W](W) writer structure"]
 impl crate::Writable for HC_FM_REMAINING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_fm_remaining to value 0"]
 impl crate::Resettable for HC_FM_REMAINING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

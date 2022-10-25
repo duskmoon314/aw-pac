@@ -145,36 +145,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_int(&mut self) -> TX_INT_W<0> {
         TX_INT_W::new(self)
     }
     #[doc = "Bit 1 - Receive Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_int(&mut self) -> RX_INT_W<1> {
         RX_INT_W::new(self)
     }
     #[doc = "Bit 2 - Fatal Bus Error Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn fatal_berr_int(&mut self) -> FATAL_BERR_INT_W<2> {
         FATAL_BERR_INT_W::new(self)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn des_unavl_int(&mut self) -> DES_UNAVL_INT_W<4> {
         DES_UNAVL_INT_W::new(self)
     }
     #[doc = "Bit 5 - Card Error Summary"]
     #[inline(always)]
+    #[must_use]
     pub fn err_flag_sum(&mut self) -> ERR_FLAG_SUM_W<5> {
         ERR_FLAG_SUM_W::new(self)
     }
     #[doc = "Bit 8 - Normal Interrupt Summary"]
     #[inline(always)]
+    #[must_use]
     pub fn nor_int_sum(&mut self) -> NOR_INT_SUM_W<8> {
         NOR_INT_SUM_W::new(self)
     }
     #[doc = "Bit 9 - Abnormal Interrupt Summary"]
     #[inline(always)]
+    #[must_use]
     pub fn abn_int_sum(&mut self) -> ABN_INT_SUM_W<9> {
         ABN_INT_SUM_W::new(self)
     }
@@ -197,11 +204,10 @@ impl crate::Readable for SMHC_IDST_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_idst::W](W) writer structure"]
 impl crate::Writable for SMHC_IDST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_idst to value 0"]
 impl crate::Resettable for SMHC_IDST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Fast Boot Information \\[i\\], refer to BROM spec."]
     #[inline(always)]
+    #[must_use]
     pub fn fboot_info(&mut self) -> FBOOT_INFO_W<0> {
         FBOOT_INFO_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for FBOOT_INFO_SPEC {
 #[doc = "`write(|w| ..)` method takes [fboot_info::W](W) writer structure"]
 impl crate::Writable for FBOOT_INFO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fboot_info%s to value 0"]
 impl crate::Resettable for FBOOT_INFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -77,8 +77,5 @@ impl crate::Readable for WORK_MODE_SPEC {
 }
 #[doc = "`reset()` method sets work_mode to value 0"]
 impl crate::Resettable for WORK_MODE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -101,8 +101,5 @@ impl crate::Readable for EMAC_TX_DMA_STA_SPEC {
 }
 #[doc = "`reset()` method sets emac_tx_dma_sta to value 0"]
 impl crate::Resettable for EMAC_TX_DMA_STA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -134,46 +134,55 @@ impl R {
 impl W {
     #[doc = "External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn eint_ctl<const O: u8>(&mut self) -> EINT_CTL_W<O> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 0 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint0_ctl(&mut self) -> EINT_CTL_W<0> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 1 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint1_ctl(&mut self) -> EINT_CTL_W<1> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 2 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint2_ctl(&mut self) -> EINT_CTL_W<2> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 3 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint3_ctl(&mut self) -> EINT_CTL_W<3> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 4 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint4_ctl(&mut self) -> EINT_CTL_W<4> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 5 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint5_ctl(&mut self) -> EINT_CTL_W<5> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 6 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint6_ctl(&mut self) -> EINT_CTL_W<6> {
         EINT_CTL_W::new(self)
     }
     #[doc = "Bit 7 - External INT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn eint7_ctl(&mut self) -> EINT_CTL_W<7> {
         EINT_CTL_W::new(self)
     }
@@ -196,11 +205,10 @@ impl crate::Readable for PC_EINT_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pc_eint_ctl::W](W) writer structure"]
 impl crate::Writable for PC_EINT_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pc_eint_ctl to value 0"]
 impl crate::Resettable for PC_EINT_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -180,41 +180,49 @@ impl R {
 impl W {
     #[doc = "Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn smhc_gating<const O: u8>(&mut self) -> SMHC_GATING_W<O> {
         SMHC_GATING_W::new(self)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn smhc0_gating(&mut self) -> SMHC_GATING_W<0> {
         SMHC_GATING_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn smhc1_gating(&mut self) -> SMHC_GATING_W<1> {
         SMHC_GATING_W::new(self)
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn smhc2_gating(&mut self) -> SMHC_GATING_W<2> {
         SMHC_GATING_W::new(self)
     }
     #[doc = "Reset"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn smhc_rst<const O: u8>(&mut self) -> SMHC_RST_W<O> {
         SMHC_RST_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn smhc0_rst(&mut self) -> SMHC_RST_W<16> {
         SMHC_RST_W::new(self)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn smhc1_rst(&mut self) -> SMHC_RST_W<17> {
         SMHC_RST_W::new(self)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn smhc2_rst(&mut self) -> SMHC_RST_W<18> {
         SMHC_RST_W::new(self)
     }
@@ -237,11 +245,10 @@ impl crate::Readable for SMHC_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_bgr::W](W) writer structure"]
 impl crate::Writable for SMHC_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_bgr to value 0"]
 impl crate::Resettable for SMHC_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

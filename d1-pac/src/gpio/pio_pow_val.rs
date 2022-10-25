@@ -60,8 +60,5 @@ impl crate::Readable for PIO_POW_VAL_SPEC {
 }
 #[doc = "`reset()` method sets pio_pow_val to value 0"]
 impl crate::Resettable for PIO_POW_VAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

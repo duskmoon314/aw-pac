@@ -216,16 +216,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
+    #[must_use]
     pub fn factor_m(&mut self) -> FACTOR_M_W<0> {
         FACTOR_M_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
+    #[must_use]
     pub fn factor_n(&mut self) -> FACTOR_N_W<8> {
         FACTOR_N_W::new(self)
     }
     #[doc = "Bits 24:25 - Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
@@ -248,11 +251,10 @@ impl crate::Readable for PSI_CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [psi_clk::W](W) writer structure"]
 impl crate::Writable for PSI_CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets psi_clk to value 0"]
 impl crate::Resettable for PSI_CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

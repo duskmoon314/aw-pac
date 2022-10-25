@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The output of the expander which is determined by equation OPE/6.0206. The format is 8.24. (The default value is -70 dB)"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_lope(&mut self) -> DAC_DRC_LOPE_W<0> {
         DAC_DRC_LOPE_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_DAC_DRC_LOPE_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_lope::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_LOPE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_lope to value 0x8d6e"]
 impl crate::Resettable for AC_DAC_DRC_LOPE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x8d6e
-    }
+    const RESET_VALUE: Self::Ux = 0x8d6e;
 }

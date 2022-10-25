@@ -268,26 +268,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receiver FIFO Overrun Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn roi_en(&mut self) -> ROI_EN_W<0> {
         ROI_EN_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Packet End Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rpei_en(&mut self) -> RPEI_EN_W<1> {
         RPEI_EN_W::new(self)
     }
     #[doc = "Bit 4 - RX FIFO Available Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rai_en(&mut self) -> RAI_EN_W<4> {
         RAI_EN_W::new(self)
     }
     #[doc = "Bit 5 - RX FIFO DMA Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn drq_en(&mut self) -> DRQ_EN_W<5> {
         DRQ_EN_W::new(self)
     }
     #[doc = "Bits 8:13 - RX FIFO available received byte level for interrupt and DMA request\n\nTRIGGER_LEVEL = RAL + 1"]
     #[inline(always)]
+    #[must_use]
     pub fn ral(&mut self) -> RAL_W<8> {
         RAL_W::new(self)
     }
@@ -310,11 +315,10 @@ impl crate::Readable for CIR_RXINT_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_rxint::W](W) writer structure"]
 impl crate::Writable for CIR_RXINT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_rxint to value 0"]
 impl crate::Resettable for CIR_RXINT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -319,26 +319,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ADC0 Data Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_data_irq_en(&mut self) -> ADC0_DATA_IRQ_EN_W<0> {
         ADC0_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - ADC0 Key Down Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_keydown_irq_en(&mut self) -> ADC0_KEYDOWN_IRQ_EN_W<1> {
         ADC0_KEYDOWN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - ADC0 Hold Key Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_hold_irq_en(&mut self) -> ADC0_HOLD_IRQ_EN_W<2> {
         ADC0_HOLD_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 3 - ADC0 Already Hold Key Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_alrdy_hold_irq_en(&mut self) -> ADC0_ALRDY_HOLD_IRQ_EN_W<3> {
         ADC0_ALRDY_HOLD_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - ADC0 Key Up Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_keyup_irq_en(&mut self) -> ADC0_KEYUP_IRQ_EN_W<4> {
         ADC0_KEYUP_IRQ_EN_W::new(self)
     }
@@ -361,11 +366,10 @@ impl crate::Readable for LRADC_INTC_SPEC {
 #[doc = "`write(|w| ..)` method takes [lradc_intc::W](W) writer structure"]
 impl crate::Writable for LRADC_INTC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lradc_intc to value 0"]
 impl crate::Resettable for LRADC_INTC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

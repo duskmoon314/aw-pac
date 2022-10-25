@@ -967,31 +967,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Sample Clock Select for CIR"]
     #[inline(always)]
+    #[must_use]
     pub fn scs(&mut self) -> SCS_W<0> {
         SCS_W::new(self)
     }
     #[doc = "Bits 2:7 - Noise Threshold for CIR\n\nWhen the duration of the signal pulse (high or low level) is less than NTHR, the pulse is taken as noise and should be discarded by hardware."]
     #[inline(always)]
+    #[must_use]
     pub fn nthr(&mut self) -> NTHR_W<2> {
         NTHR_W::new(self)
     }
     #[doc = "Bits 8:15 - Idle Threshold for CIR\n\nThe Receiver uses it to decide whether the CIR command is received. If there is no CIR signal on the air, the receiver is staying in IDLE status. One active pulse will bring the receiver from IDLE status to Receiving status. After the CIR receiver ends, the inputting signal will keep the specified level (high or low level) for a long time. The receiver can use this idle signal duration to decide that it has received the CIR command. The corresponding flag is asserted. If the corresponding interrupt is enabled, the interrupt line is asserted to the CPU.\n\nWhen the duration of the signal keeps one status (high or low level) for the specified duration ((ITHR + 1)*128 sample_clk), this means that the previous CIR command is finished."]
     #[inline(always)]
+    #[must_use]
     pub fn ithr(&mut self) -> ITHR_W<8> {
         ITHR_W::new(self)
     }
     #[doc = "Bits 16:22 - Active Threshold for CIR\n\nThese bits control the duration of CIR from the idle to the active state. The duration can be calculated by ((ATHR + 1)*(ATHC? Sample Clock: 128*Sample Clock))."]
     #[inline(always)]
+    #[must_use]
     pub fn athr(&mut self) -> ATHR_W<16> {
         ATHR_W::new(self)
     }
     #[doc = "Bit 23 - Active Threshold Control for CIR"]
     #[inline(always)]
+    #[must_use]
     pub fn athc(&mut self) -> ATHC_W<23> {
         ATHC_W::new(self)
     }
     #[doc = "Bit 24 - Bit2 of Sample Clock Select for CIR\n\nThis bit is defined by SCS bits below."]
     #[inline(always)]
+    #[must_use]
     pub fn scs2(&mut self) -> SCS2_W<24> {
         SCS2_W::new(self)
     }
@@ -1014,11 +1020,10 @@ impl crate::Readable for CIR_RXCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_rxcfg::W](W) writer structure"]
 impl crate::Writable for CIR_RXCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_rxcfg to value 0x1828"]
 impl crate::Resettable for CIR_RXCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1828
-    }
+    const RESET_VALUE: Self::Ux = 0x1828;
 }

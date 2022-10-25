@@ -493,31 +493,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - BG Output Voltage Trimming\n\nOnly low 6-bit is used. The BG output voltage range is from 0.7 V to 1.208 V"]
     #[inline(always)]
+    #[must_use]
     pub fn bg_trim(&mut self) -> BG_TRIM_W<0> {
         BG_TRIM_W::new(self)
     }
     #[doc = "Bits 8:10 - HPLDO Output Voltage Control"]
     #[inline(always)]
+    #[must_use]
     pub fn hpldo_output_voltage(&mut self) -> HPLDO_OUTPUT_VOLTAGE_W<8> {
         HPLDO_OUTPUT_VOLTAGE_W::new(self)
     }
     #[doc = "Bits 12:14 - ALDO Output Voltage Control"]
     #[inline(always)]
+    #[must_use]
     pub fn aldo_output_voltage(&mut self) -> ALDO_OUTPUT_VOLTAGE_W<12> {
         ALDO_OUTPUT_VOLTAGE_W::new(self)
     }
     #[doc = "Bit 29 - VRA1 Speedup Down Further Control In Adda Analog"]
     #[inline(always)]
+    #[must_use]
     pub fn var1speedup_further_ctrl(&mut self) -> VAR1SPEEDUP_FURTHER_CTRL_W<29> {
         VAR1SPEEDUP_FURTHER_CTRL_W::new(self)
     }
     #[doc = "Bit 30 - HPLDO Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hpldo_en(&mut self) -> HPLDO_EN_W<30> {
         HPLDO_EN_W::new(self)
     }
     #[doc = "Bit 31 - ALDO Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn aldo_en(&mut self) -> ALDO_EN_W<31> {
         ALDO_EN_W::new(self)
     }
@@ -540,11 +546,10 @@ impl crate::Readable for POWER_SPEC {
 #[doc = "`write(|w| ..)` method takes [power::W](W) writer structure"]
 impl crate::Writable for POWER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets power to value 0"]
 impl crate::Resettable for POWER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -138,16 +138,19 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_test_enable(&mut self) -> DAC_TEST_ENABLE_W<0> {
         DAC_TEST_ENABLE_W::new(self)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_test_sel(&mut self) -> DAC_TEST_SEL_W<4> {
         DAC_TEST_SEL_W::new(self)
     }
     #[doc = "Bits 16:25 - DAC TEST DATA LENGTH"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_test_length(&mut self) -> DAC_TEST_LENGTH_W<16> {
         DAC_TEST_LENGTH_W::new(self)
     }
@@ -170,11 +173,10 @@ impl crate::Readable for TVE_DAC_TEST_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_dac_test::W](W) writer structure"]
 impl crate::Writable for TVE_DAC_TEST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_dac_test to value 0"]
 impl crate::Resettable for TVE_DAC_TEST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

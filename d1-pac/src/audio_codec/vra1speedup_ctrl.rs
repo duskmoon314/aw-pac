@@ -192,11 +192,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VAR1Speedup Down RST Manual Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn vra1speedup_rst_ctrl(&mut self) -> VRA1SPEEDUP_RST_CTRL_W<0> {
         VRA1SPEEDUP_RST_CTRL_W::new(self)
     }
     #[doc = "Bit 1 - VAR1Speedup Down Manual Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn vra1speedup_ctrl(&mut self) -> VRA1SPEEDUP_CTRL_W<1> {
         VRA1SPEEDUP_CTRL_W::new(self)
     }
@@ -219,11 +221,10 @@ impl crate::Readable for VRA1SPEEDUP_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [vra1speedup_ctrl::W](W) writer structure"]
 impl crate::Writable for VRA1SPEEDUP_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets vra1speedup_ctrl to value 0"]
 impl crate::Resettable for VRA1SPEEDUP_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

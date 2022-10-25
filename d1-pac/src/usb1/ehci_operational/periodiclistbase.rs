@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 12:31 - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
     #[inline(always)]
+    #[must_use]
     pub fn base_address(&mut self) -> BASE_ADDRESS_W<12> {
         BASE_ADDRESS_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for PERIODICLISTBASE_SPEC {
 #[doc = "`write(|w| ..)` method takes [periodiclistbase::W](W) writer structure"]
 impl crate::Writable for PERIODICLISTBASE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets periodiclistbase to value 0"]
 impl crate::Resettable for PERIODICLISTBASE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

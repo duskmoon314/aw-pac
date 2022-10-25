@@ -792,16 +792,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receiver FIFO Overrun"]
     #[inline(always)]
+    #[must_use]
     pub fn roi(&mut self) -> ROI_W<0> {
         ROI_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Packet End Flag"]
     #[inline(always)]
+    #[must_use]
     pub fn rpe(&mut self) -> RPE_W<1> {
         RPE_W::new(self)
     }
     #[doc = "Bit 4 - RX FIFO Available"]
     #[inline(always)]
+    #[must_use]
     pub fn ra(&mut self) -> RA_W<4> {
         RA_W::new(self)
     }
@@ -824,11 +827,10 @@ impl crate::Readable for CIR_RXSTA_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_rxsta::W](W) writer structure"]
 impl crate::Writable for CIR_RXSTA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x13;
 }
 #[doc = "`reset()` method sets cir_rxsta to value 0"]
 impl crate::Resettable for CIR_RXSTA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

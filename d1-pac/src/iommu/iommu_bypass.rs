@@ -129,41 +129,49 @@ impl R {
 impl W {
     #[doc = "Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn m_bp<const O: u8>(&mut self) -> M_BP_W<O> {
         M_BP_W::new(self)
     }
     #[doc = "Bit 0 - Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub fn m0_bp(&mut self) -> M_BP_W<0> {
         M_BP_W::new(self)
     }
     #[doc = "Bit 1 - Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub fn m1_bp(&mut self) -> M_BP_W<1> {
         M_BP_W::new(self)
     }
     #[doc = "Bit 2 - Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub fn m2_bp(&mut self) -> M_BP_W<2> {
         M_BP_W::new(self)
     }
     #[doc = "Bit 3 - Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub fn m3_bp(&mut self) -> M_BP_W<3> {
         M_BP_W::new(self)
     }
     #[doc = "Bit 4 - Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub fn m4_bp(&mut self) -> M_BP_W<4> {
         M_BP_W::new(self)
     }
     #[doc = "Bit 5 - Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub fn m5_bp(&mut self) -> M_BP_W<5> {
         M_BP_W::new(self)
     }
     #[doc = "Bit 6 - Master\\[i\\] bypass switch\n\nAfter bypass function is opened, IOMMU can not map the address of Master6 sending, and directly output the virtual address to MBUS as physical address."]
     #[inline(always)]
+    #[must_use]
     pub fn m6_bp(&mut self) -> M_BP_W<6> {
         M_BP_W::new(self)
     }
@@ -186,11 +194,10 @@ impl crate::Readable for IOMMU_BYPASS_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_bypass::W](W) writer structure"]
 impl crate::Writable for IOMMU_BYPASS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_bypass to value 0x7f"]
 impl crate::Resettable for IOMMU_BYPASS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x7f
-    }
+    const RESET_VALUE: Self::Ux = 0x7f;
 }

@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 14:31 - Translation Table Base\n\nLevel1 page table starting address, aligned to 16 KB.\n\nWhen operating the register, IOMMU address mapping function must be closed, namely IOMMU_ENABLE is 0; Or Bypass function of all main equipment is set to 1, or no the state of transfer bus commands (such as setting)."]
     #[inline(always)]
+    #[must_use]
     pub fn ttb(&mut self) -> TTB_W<14> {
         TTB_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for IOMMU_TTB_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_ttb::W](W) writer structure"]
 impl crate::Writable for IOMMU_TTB_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_ttb to value 0"]
 impl crate::Resettable for IOMMU_TTB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

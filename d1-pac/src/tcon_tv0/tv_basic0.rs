@@ -58,11 +58,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Source Height Is Y+1"]
     #[inline(always)]
+    #[must_use]
     pub fn height_yi(&mut self) -> HEIGHT_YI_W<0> {
         HEIGHT_YI_W::new(self)
     }
     #[doc = "Bits 16:27 - Source Width Is X+1"]
     #[inline(always)]
+    #[must_use]
     pub fn width_xi(&mut self) -> WIDTH_XI_W<16> {
         WIDTH_XI_W::new(self)
     }
@@ -85,11 +87,10 @@ impl crate::Readable for TV_BASIC0_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_basic0::W](W) writer structure"]
 impl crate::Writable for TV_BASIC0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_basic0 to value 0"]
 impl crate::Resettable for TV_BASIC0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

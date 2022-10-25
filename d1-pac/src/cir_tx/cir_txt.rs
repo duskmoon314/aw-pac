@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Non-cyclical Pulse Transmit Threshold\n\nThe controller will trigger transmitting the data in the FIFO when the data byte number has reached the Transmit Threshold set in this field."]
     #[inline(always)]
+    #[must_use]
     pub fn nctt(&mut self) -> NCTT_W<0> {
         NCTT_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for CIR_TXT_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_txt::W](W) writer structure"]
 impl crate::Writable for CIR_TXT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_txt to value 0"]
 impl crate::Resettable for CIR_TXT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

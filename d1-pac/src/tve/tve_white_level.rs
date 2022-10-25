@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Specify the white level setting. 10-bit unsigned integer. Allowed range is from black_level+1 or vbi_blank_level +1 (whichever is greater) to 1023."]
     #[inline(always)]
+    #[must_use]
     pub fn white_level(&mut self) -> WHITE_LEVEL_W<0> {
         WHITE_LEVEL_W::new(self)
     }
     #[doc = "Bits 16:25 - Specify the breezeway level setting. 10-bit unsigned integer. Allowed range is from 0 to 1023."]
     #[inline(always)]
+    #[must_use]
     pub fn hd_sync_breezeway_level(&mut self) -> HD_SYNC_BREEZEWAY_LEVEL_W<16> {
         HD_SYNC_BREEZEWAY_LEVEL_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for TVE_WHITE_LEVEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_white_level::W](W) writer structure"]
 impl crate::Writable for TVE_WHITE_LEVEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_white_level to value 0x01e8_0320"]
 impl crate::Resettable for TVE_WHITE_LEVEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01e8_0320
-    }
+    const RESET_VALUE: Self::Ux = 0x01e8_0320;
 }

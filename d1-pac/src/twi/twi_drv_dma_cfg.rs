@@ -78,21 +78,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:5"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_trig(&mut self) -> TX_TRIG_W<0> {
         TX_TRIG_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_tx_en(&mut self) -> DMA_TX_EN_W<8> {
         DMA_TX_EN_W::new(self)
     }
     #[doc = "Bits 16:21"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_trig(&mut self) -> RX_TRIG_W<16> {
         RX_TRIG_W::new(self)
     }
     #[doc = "Bits 23:24"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_rx_en(&mut self) -> DMA_RX_EN_W<23> {
         DMA_RX_EN_W::new(self)
     }
@@ -115,11 +119,10 @@ impl crate::Readable for TWI_DRV_DMA_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_drv_dma_cfg::W](W) writer structure"]
 impl crate::Writable for TWI_DRV_DMA_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_drv_dma_cfg to value 0"]
 impl crate::Resettable for TWI_DRV_DMA_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

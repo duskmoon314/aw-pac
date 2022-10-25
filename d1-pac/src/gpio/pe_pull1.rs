@@ -120,16 +120,19 @@ impl R {
 impl W {
     #[doc = "PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pe_pull<const O: u8>(&mut self) -> PE_PULL_W<O> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 0:1 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe16_pull(&mut self) -> PE_PULL_W<0> {
         PE_PULL_W::new(self)
     }
     #[doc = "Bits 2:3 - PE Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe17_pull(&mut self) -> PE_PULL_W<2> {
         PE_PULL_W::new(self)
     }
@@ -152,11 +155,10 @@ impl crate::Readable for PE_PULL1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pe_pull1::W](W) writer structure"]
 impl crate::Writable for PE_PULL1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pe_pull1 to value 0"]
 impl crate::Resettable for PE_PULL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

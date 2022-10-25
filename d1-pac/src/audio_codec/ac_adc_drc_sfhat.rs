@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - The smooth filter attack time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 5 ms)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_sfhat(&mut self) -> ADC_DRC_SFHAT_W<0> {
         ADC_DRC_SFHAT_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_SFHAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_sfhat::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_SFHAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_sfhat to value 0x02"]
 impl crate::Resettable for AC_ADC_DRC_SFHAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

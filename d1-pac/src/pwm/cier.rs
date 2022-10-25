@@ -229,91 +229,109 @@ impl R {
 impl W {
     #[doc = "If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn crie<const O: u8>(&mut self) -> CRIE_W<O> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 0 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie0(&mut self) -> CRIE_W<0> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 2 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie1(&mut self) -> CRIE_W<2> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 4 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie2(&mut self) -> CRIE_W<4> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 6 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie3(&mut self) -> CRIE_W<6> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 8 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie4(&mut self) -> CRIE_W<8> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 10 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie5(&mut self) -> CRIE_W<10> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 12 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie6(&mut self) -> CRIE_W<12> {
         CRIE_W::new(self)
     }
     #[doc = "Bit 14 - If the enable bit is set to 1, when the capture channel captures rising edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn crie7(&mut self) -> CRIE_W<14> {
         CRIE_W::new(self)
     }
     #[doc = "If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn cfie<const O: u8>(&mut self) -> CFIE_W<O> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 1 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie0(&mut self) -> CFIE_W<1> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 3 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie1(&mut self) -> CFIE_W<3> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 5 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie2(&mut self) -> CFIE_W<5> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 7 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie3(&mut self) -> CFIE_W<7> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 9 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie4(&mut self) -> CFIE_W<9> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 11 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie5(&mut self) -> CFIE_W<11> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 13 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie6(&mut self) -> CFIE_W<13> {
         CFIE_W::new(self)
     }
     #[doc = "Bit 15 - If the enable bit is set to 1, when the capture channel captures falling edge, it generates a capture channel pending."]
     #[inline(always)]
+    #[must_use]
     pub fn cfie7(&mut self) -> CFIE_W<15> {
         CFIE_W::new(self)
     }
@@ -336,11 +354,10 @@ impl crate::Readable for CIER_SPEC {
 #[doc = "`write(|w| ..)` method takes [cier::W](W) writer structure"]
 impl crate::Writable for CIER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cier to value 0"]
 impl crate::Resettable for CIER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

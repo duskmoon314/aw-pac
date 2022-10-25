@@ -346,26 +346,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Video Encoder enable, default disable, write 1 to take it out of the reset state"]
     #[inline(always)]
+    #[must_use]
     pub fn tve_en(&mut self) -> TVE_EN_W<0> {
         TVE_EN_W::new(self)
     }
     #[doc = "Bits 20:21"]
     #[inline(always)]
+    #[must_use]
     pub fn upsample_for_cvbs(&mut self) -> UPSAMPLE_FOR_CVBS_W<20> {
         UPSAMPLE_FOR_CVBS_W::new(self)
     }
     #[doc = "Bit 22"]
     #[inline(always)]
+    #[must_use]
     pub fn upsample_for_ypbpr(&mut self) -> UPSAMPLE_FOR_YPBPR_W<22> {
         UPSAMPLE_FOR_YPBPR_W::new(self)
     }
     #[doc = "Bit 28"]
     #[inline(always)]
+    #[must_use]
     pub fn bist_en(&mut self) -> BIST_EN_W<28> {
         BIST_EN_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn clock_gate_dis(&mut self) -> CLOCK_GATE_DIS_W<31> {
         CLOCK_GATE_DIS_W::new(self)
     }
@@ -388,11 +393,10 @@ impl crate::Readable for TVE_CLOCK_GATING_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_clock_gating::W](W) writer structure"]
 impl crate::Writable for TVE_CLOCK_GATING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_clock_gating to value 0"]
 impl crate::Resettable for TVE_CLOCK_GATING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

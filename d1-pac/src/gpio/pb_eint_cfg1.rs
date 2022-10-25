@@ -161,31 +161,37 @@ impl R {
 impl W {
     #[doc = "External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn eint_cfg<const O: u8>(&mut self) -> EINT_CFG_W<O> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint8_cfg(&mut self) -> EINT_CFG_W<0> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 4:7 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint9_cfg(&mut self) -> EINT_CFG_W<4> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 8:11 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint10_cfg(&mut self) -> EINT_CFG_W<8> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 12:15 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint11_cfg(&mut self) -> EINT_CFG_W<12> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 16:19 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint12_cfg(&mut self) -> EINT_CFG_W<16> {
         EINT_CFG_W::new(self)
     }
@@ -208,11 +214,10 @@ impl crate::Readable for PB_EINT_CFG1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pb_eint_cfg1::W](W) writer structure"]
 impl crate::Writable for PB_EINT_CFG1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pb_eint_cfg1 to value 0"]
 impl crate::Resettable for PB_EINT_CFG1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

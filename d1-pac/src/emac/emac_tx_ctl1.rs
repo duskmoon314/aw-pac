@@ -346,26 +346,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Flush the data in the TX FIFO"]
     #[inline(always)]
+    #[must_use]
     pub fn flush_tx_fifo(&mut self) -> FLUSH_TX_FIFO_W<0> {
         FLUSH_TX_FIFO_W::new(self)
     }
     #[doc = "Bit 1 - Transmission Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_md(&mut self) -> TX_MD_W<1> {
         TX_MD_W::new(self)
     }
     #[doc = "Bits 8:10 - Threshold value of TX DMA FIFO"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_th(&mut self) -> TX_TH_W<8> {
         TX_TH_W::new(self)
     }
     #[doc = "Bit 30 - Transmit DMA Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_dma_en(&mut self) -> TX_DMA_EN_W<30> {
         TX_DMA_EN_W::new(self)
     }
     #[doc = "Bit 31 - Transmit DMA FSM Start"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_dma_start(&mut self) -> TX_DMA_START_W<31> {
         TX_DMA_START_W::new(self)
     }
@@ -388,11 +393,10 @@ impl crate::Readable for EMAC_TX_CTL1_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_tx_ctl1::W](W) writer structure"]
 impl crate::Writable for EMAC_TX_CTL1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_tx_ctl1 to value 0"]
 impl crate::Resettable for EMAC_TX_CTL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

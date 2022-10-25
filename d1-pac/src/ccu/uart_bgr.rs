@@ -210,71 +210,85 @@ impl R {
 impl W {
     #[doc = "Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn uart_gating<const O: u8>(&mut self) -> UART_GATING_W<O> {
         UART_GATING_W::new(self)
     }
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn uart0_gating(&mut self) -> UART_GATING_W<0> {
         UART_GATING_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn uart1_gating(&mut self) -> UART_GATING_W<1> {
         UART_GATING_W::new(self)
     }
     #[doc = "Bit 2 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn uart2_gating(&mut self) -> UART_GATING_W<2> {
         UART_GATING_W::new(self)
     }
     #[doc = "Bit 3 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn uart3_gating(&mut self) -> UART_GATING_W<3> {
         UART_GATING_W::new(self)
     }
     #[doc = "Bit 4 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn uart4_gating(&mut self) -> UART_GATING_W<4> {
         UART_GATING_W::new(self)
     }
     #[doc = "Bit 5 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn uart5_gating(&mut self) -> UART_GATING_W<5> {
         UART_GATING_W::new(self)
     }
     #[doc = "Reset"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn uart_rst<const O: u8>(&mut self) -> UART_RST_W<O> {
         UART_RST_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn uart0_rst(&mut self) -> UART_RST_W<16> {
         UART_RST_W::new(self)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn uart1_rst(&mut self) -> UART_RST_W<17> {
         UART_RST_W::new(self)
     }
     #[doc = "Bit 18 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn uart2_rst(&mut self) -> UART_RST_W<18> {
         UART_RST_W::new(self)
     }
     #[doc = "Bit 19 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn uart3_rst(&mut self) -> UART_RST_W<19> {
         UART_RST_W::new(self)
     }
     #[doc = "Bit 20 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn uart4_rst(&mut self) -> UART_RST_W<20> {
         UART_RST_W::new(self)
     }
     #[doc = "Bit 21 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn uart5_rst(&mut self) -> UART_RST_W<21> {
         UART_RST_W::new(self)
     }
@@ -297,11 +311,10 @@ impl crate::Readable for UART_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [uart_bgr::W](W) writer structure"]
 impl crate::Writable for UART_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets uart_bgr to value 0"]
 impl crate::Resettable for UART_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

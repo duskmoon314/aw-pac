@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn ceu_coef_range_max(&mut self) -> CEU_COEF_RANGE_MAX_W<0> {
         CEU_COEF_RANGE_MAX_W::new(self)
     }
     #[doc = "Bits 16:25 - Unsigned 10-bit Value, range of \\[0, 1023\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn ceu_coef_range_min(&mut self) -> CEU_COEF_RANGE_MIN_W<16> {
         CEU_COEF_RANGE_MIN_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for TV_CEU_COEF_RANG_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_ceu_coef_rang::W](W) writer structure"]
 impl crate::Writable for TV_CEU_COEF_RANG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_ceu_coef_rang%s to value 0"]
 impl crate::Resettable for TV_CEU_COEF_RANG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

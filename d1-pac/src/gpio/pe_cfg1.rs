@@ -1322,41 +1322,49 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - PE8 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe8_select(&mut self) -> PE8_SELECT_W<0> {
         PE8_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7 - PE9 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe9_select(&mut self) -> PE9_SELECT_W<4> {
         PE9_SELECT_W::new(self)
     }
     #[doc = "Bits 8:11 - PE10 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe10_select(&mut self) -> PE10_SELECT_W<8> {
         PE10_SELECT_W::new(self)
     }
     #[doc = "Bits 12:15 - PE11 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe11_select(&mut self) -> PE11_SELECT_W<12> {
         PE11_SELECT_W::new(self)
     }
     #[doc = "Bits 16:19 - PE12 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe12_select(&mut self) -> PE12_SELECT_W<16> {
         PE12_SELECT_W::new(self)
     }
     #[doc = "Bits 20:23 - PE13 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe13_select(&mut self) -> PE13_SELECT_W<20> {
         PE13_SELECT_W::new(self)
     }
     #[doc = "Bits 24:27 - PE14 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe14_select(&mut self) -> PE14_SELECT_W<24> {
         PE14_SELECT_W::new(self)
     }
     #[doc = "Bits 28:31 - PE15 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe15_select(&mut self) -> PE15_SELECT_W<28> {
         PE15_SELECT_W::new(self)
     }
@@ -1379,11 +1387,10 @@ impl crate::Readable for PE_CFG1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pe_cfg1::W](W) writer structure"]
 impl crate::Writable for PE_CFG1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pe_cfg1 to value 0"]
 impl crate::Resettable for PE_CFG1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

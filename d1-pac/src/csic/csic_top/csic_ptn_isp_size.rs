@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - Width Horizontal size, only valid for ISP mode pattern generation."]
     #[inline(always)]
+    #[must_use]
     pub fn width(&mut self) -> WIDTH_W<0> {
         WIDTH_W::new(self)
     }
     #[doc = "Bits 16:28 - Height Vertical size, only valid for ISP mode pattern generation."]
     #[inline(always)]
+    #[must_use]
     pub fn height(&mut self) -> HEIGHT_W<16> {
         HEIGHT_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for CSIC_PTN_ISP_SIZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_ptn_isp_size::W](W) writer structure"]
 impl crate::Writable for CSIC_PTN_ISP_SIZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_ptn_isp_size to value 0"]
 impl crate::Resettable for CSIC_PTN_ISP_SIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - Vertical line start. Data is valid from this line."]
     #[inline(always)]
+    #[must_use]
     pub fn ver_start(&mut self) -> VER_START_W<0> {
         VER_START_W::new(self)
     }
     #[doc = "Bits 16:28 - Valid line number of a frame."]
     #[inline(always)]
+    #[must_use]
     pub fn ver_len(&mut self) -> VER_LEN_W<16> {
         VER_LEN_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for PRS_CH_OUTPUT_VSIZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs_ch_output_vsize::W](W) writer structure"]
 impl crate::Writable for PRS_CH_OUTPUT_VSIZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets prs_ch%s_output_vsize to value 0x02d0_0000"]
 impl crate::Resettable for PRS_CH_OUTPUT_VSIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02d0_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x02d0_0000;
 }

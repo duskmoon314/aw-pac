@@ -149,11 +149,13 @@ impl R {
 impl W {
     #[doc = "Bit 24 - ADC output channel swap enable (for digital filter)"]
     #[inline(always)]
+    #[must_use]
     pub fn ad_swp1(&mut self) -> AD_SWP1_W<24> {
         AD_SWP1_W::new(self)
     }
     #[doc = "Bit 25 - ADC output channel swap enable (for digital filter)"]
     #[inline(always)]
+    #[must_use]
     pub fn ad_swp2(&mut self) -> AD_SWP2_W<25> {
         AD_SWP2_W::new(self)
     }
@@ -176,11 +178,10 @@ impl crate::Readable for AC_ADC_DG_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_dg::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_dg to value 0"]
 impl crate::Resettable for AC_ADC_DG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

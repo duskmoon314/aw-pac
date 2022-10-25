@@ -606,56 +606,67 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn bk_top_en(&mut self) -> BK_TOP_EN_W<0> {
         BK_TOP_EN_W::new(self)
     }
     #[doc = "Bit 1 - clk count per frame enable"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_cnt_en(&mut self) -> CLK_CNT_EN_W<1> {
         CLK_CNT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Sampling time for clk counter per frame"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_cnt_spl(&mut self) -> CLK_CNT_SPL_W<2> {
         CLK_CNT_SPL_W::new(self)
     }
     #[doc = "Bit 4 - When BK_TOP_EN is enabled, setting 1 to this bit indicates the module works in DMA mode."]
     #[inline(always)]
+    #[must_use]
     pub fn dma_en(&mut self) -> DMA_EN_W<4> {
         DMA_EN_W::new(self)
     }
     #[doc = "Bit 5 - When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add."]
     #[inline(always)]
+    #[must_use]
     pub fn frame_cnt_en(&mut self) -> FRAME_CNT_EN_W<5> {
         FRAME_CNT_EN_W::new(self)
     }
     #[doc = "Bit 6 - Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input."]
     #[inline(always)]
+    #[must_use]
     pub fn vi_to_cnt_en(&mut self) -> VI_TO_CNT_EN_W<6> {
         VI_TO_CNT_EN_W::new(self)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
+    #[must_use]
     pub fn buf_addr_mode(&mut self) -> BUF_ADDR_MODE_W<7> {
         BUF_ADDR_MODE_W::new(self)
     }
     #[doc = "Bit 28 - FLIP SIZE set by software or calculated by hardware"]
     #[inline(always)]
+    #[must_use]
     pub fn flip_size_cfg_mode(&mut self) -> FLIP_SIZE_CFG_MODE_W<28> {
         FLIP_SIZE_CFG_MODE_W::new(self)
     }
     #[doc = "Bit 29 - Buffer length set by software or calculated by hardware"]
     #[inline(always)]
+    #[must_use]
     pub fn buf_length_cfg_mode(&mut self) -> BUF_LENGTH_CFG_MODE_W<29> {
         BUF_LENGTH_CFG_MODE_W::new(self)
     }
     #[doc = "Bit 30 - Vflip buffer address set by software or calculated by hardware"]
     #[inline(always)]
+    #[must_use]
     pub fn vflip_buf_addr_cfg_mode(&mut self) -> VFLIP_BUF_ADDR_CFG_MODE_W<30> {
         VFLIP_BUF_ADDR_CFG_MODE_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn ver_en(&mut self) -> VER_EN_W<31> {
         VER_EN_W::new(self)
     }
@@ -678,11 +689,10 @@ impl crate::Readable for CSIC_DMA_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_en::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_en to value 0x7000_0000"]
 impl crate::Resettable for CSIC_DMA_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x7000_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x7000_0000;
 }

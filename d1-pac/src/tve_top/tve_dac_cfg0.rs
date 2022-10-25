@@ -337,36 +337,43 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_en(&mut self) -> DAC_EN_W<0> {
         DAC_EN_W::new(self)
     }
     #[doc = "Bit 4 - (A_EN_RESREF)"]
     #[inline(always)]
+    #[must_use]
     pub fn bias_ref_int_en(&mut self) -> BIAS_REF_INT_EN_W<4> {
         BIAS_REF_INT_EN_W::new(self)
     }
     #[doc = "Bit 8 - (A_SEL_BIAS_RES)"]
     #[inline(always)]
+    #[must_use]
     pub fn bias_int_sel(&mut self) -> BIAS_INT_SEL_W<8> {
         BIAS_INT_SEL_W::new(self)
     }
     #[doc = "Bit 9 - (A_SEL_BIAS_ADDA)"]
     #[inline(always)]
+    #[must_use]
     pub fn bias_ext_sel(&mut self) -> BIAS_EXT_SEL_W<9> {
         BIAS_EXT_SEL_W::new(self)
     }
     #[doc = "Bits 12:15 - 500 uA to 4 mA"]
     #[inline(always)]
+    #[must_use]
     pub fn low_bias(&mut self) -> LOW_BIAS_W<12> {
         LOW_BIAS_W::new(self)
     }
     #[doc = "Bits 16:25"]
     #[inline(always)]
+    #[must_use]
     pub fn cali_in(&mut self) -> CALI_IN_W<16> {
         CALI_IN_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_clock_invert(&mut self) -> DAC_CLOCK_INVERT_W<31> {
         DAC_CLOCK_INVERT_W::new(self)
     }
@@ -389,11 +396,10 @@ impl crate::Readable for TVE_DAC_CFG0_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_dac_cfg0::W](W) writer structure"]
 impl crate::Writable for TVE_DAC_CFG0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_dac_cfg0 to value 0x8000_4200"]
 impl crate::Resettable for TVE_DAC_CFG0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x8000_4200
-    }
+    const RESET_VALUE: Self::Ux = 0x8000_4200;
 }

@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - Valid components of a line when in HFLIP mode. Unit is pixel component.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
     #[inline(always)]
+    #[must_use]
     pub fn valid_len(&mut self) -> VALID_LEN_W<0> {
         VALID_LEN_W::new(self)
     }
     #[doc = "Bits 16:28 - Vertical line number when in VFLIP mode. Unit is line.\n\nOnly Readable when FLIP_SIZE_CFG_MODE is set to 0."]
     #[inline(always)]
+    #[must_use]
     pub fn ver_len(&mut self) -> VER_LEN_W<16> {
         VER_LEN_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for CSIC_DMA_FLIP_SIZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_flip_size::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_FLIP_SIZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_flip_size to value 0x02d0_0500"]
 impl crate::Resettable for CSIC_DMA_FLIP_SIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02d0_0500
-    }
+    const RESET_VALUE: Self::Ux = 0x02d0_0500;
 }

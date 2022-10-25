@@ -194,41 +194,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SDA manual output enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sda_moe(&mut self) -> SDA_MOE_W<0> {
         SDA_MOE_W::new(self)
     }
     #[doc = "Bit 1 - SCL manual output enable"]
     #[inline(always)]
+    #[must_use]
     pub fn scl_moe(&mut self) -> SCL_MOE_W<1> {
         SCL_MOE_W::new(self)
     }
     #[doc = "Bit 2 - SDA manual output value"]
     #[inline(always)]
+    #[must_use]
     pub fn sda_mov(&mut self) -> SDA_MOV_W<2> {
         SDA_MOV_W::new(self)
     }
     #[doc = "Bit 3 - SCL manual output value"]
     #[inline(always)]
+    #[must_use]
     pub fn scl_mov(&mut self) -> SCL_MOV_W<3> {
         SCL_MOV_W::new(self)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_m(&mut self) -> CLK_M_W<8> {
         CLK_M_W::new(self)
     }
     #[doc = "Bits 12:14"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_n(&mut self) -> CLK_N_W<12> {
         CLK_N_W::new(self)
     }
     #[doc = "Bit 15 - Setting duty cycle of clock as master"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_duty(&mut self) -> CLK_DUTY_W<15> {
         CLK_DUTY_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W<16> {
         CLK_COUNT_MODE_W::new(self)
     }
@@ -251,11 +259,10 @@ impl crate::Readable for TWI_DRV_BUS_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_drv_bus_ctrl::W](W) writer structure"]
 impl crate::Writable for TWI_DRV_BUS_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_drv_bus_ctrl to value 0"]
 impl crate::Resettable for TWI_DRV_BUS_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

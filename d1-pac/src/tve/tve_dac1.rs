@@ -84,6 +84,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:6"]
     #[inline(always)]
+    #[must_use]
     pub fn dac0_src_sel(&mut self) -> DAC0_SRC_SEL_W<4> {
         DAC0_SRC_SEL_W::new(self)
     }
@@ -106,11 +107,10 @@ impl crate::Readable for TVE_DAC1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_dac1::W](W) writer structure"]
 impl crate::Writable for TVE_DAC1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_dac1 to value 0"]
 impl crate::Resettable for TVE_DAC1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

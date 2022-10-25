@@ -173,51 +173,61 @@ impl R {
 impl W {
     #[doc = "RX Channel [4-7] mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_map<const O: u8>(&mut self) -> CH_MAP_W<O> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 0:3 - RX Channel 4 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch4_map(&mut self) -> CH_MAP_W<0> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 8:11 - RX Channel 5 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch5_map(&mut self) -> CH_MAP_W<8> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 16:19 - RX Channel 6 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch6_map(&mut self) -> CH_MAP_W<16> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 24:27 - RX Channel 7 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch7_map(&mut self) -> CH_MAP_W<24> {
         CH_MAP_W::new(self)
     }
     #[doc = "RX Channel [4-7] Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_select<const O: u8>(&mut self) -> CH_SELECT_W<O> {
         CH_SELECT_W::new(self)
     }
     #[doc = "Bits 4:5 - RX Channel 4 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ch4_select(&mut self) -> CH_SELECT_W<4> {
         CH_SELECT_W::new(self)
     }
     #[doc = "Bits 12:13 - RX Channel 5 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ch5_select(&mut self) -> CH_SELECT_W<12> {
         CH_SELECT_W::new(self)
     }
     #[doc = "Bits 20:21 - RX Channel 6 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ch6_select(&mut self) -> CH_SELECT_W<20> {
         CH_SELECT_W::new(self)
     }
     #[doc = "Bits 28:29 - RX Channel 7 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ch7_select(&mut self) -> CH_SELECT_W<28> {
         CH_SELECT_W::new(self)
     }
@@ -240,11 +250,10 @@ impl crate::Readable for I2S_PCM_RXCHMAP2_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_rxchmap2::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_RXCHMAP2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_rxchmap2 to value 0"]
 impl crate::Resettable for I2S_PCM_RXCHMAP2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

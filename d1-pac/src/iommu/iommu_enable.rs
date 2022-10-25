@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - IOMMU module enable switch\n\nBefore IOMMU address mapping function opens, configure the Translation Table Base register; or ensure all masters are in bypass status or no the status of sending bus demand(such as reset)"]
     #[inline(always)]
+    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<0> {
         ENABLE_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for IOMMU_ENABLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_enable::W](W) writer structure"]
 impl crate::Writable for IOMMU_ENABLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_enable to value 0"]
 impl crate::Resettable for IOMMU_ENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

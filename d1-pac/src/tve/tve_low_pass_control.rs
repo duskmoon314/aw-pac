@@ -216,21 +216,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LP function enable"]
     #[inline(always)]
+    #[must_use]
     pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Bit 8 - Enable_deflicker"]
     #[inline(always)]
+    #[must_use]
     pub fn enable_deflicker(&mut self) -> ENABLE_DEFLICKER_W<8> {
         ENABLE_DEFLICKER_W::new(self)
     }
     #[doc = "Bit 9 - Fix_coef_deflicker"]
     #[inline(always)]
+    #[must_use]
     pub fn fix_coef_deflicker(&mut self) -> FIX_COEF_DEFLICKER_W<9> {
         FIX_COEF_DEFLICKER_W::new(self)
     }
     #[doc = "Bits 10:13 - User_deflicker_coef\n\nup: coef/32\n\nCenter: 1-coef/16\n\nDown: coef/32"]
     #[inline(always)]
+    #[must_use]
     pub fn user_deflicker_coef(&mut self) -> USER_DEFLICKER_COEF_W<10> {
         USER_DEFLICKER_COEF_W::new(self)
     }
@@ -253,11 +257,10 @@ impl crate::Readable for TVE_LOW_PASS_CONTROL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_low_pass_control::W](W) writer structure"]
 impl crate::Writable for TVE_LOW_PASS_CONTROL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_low_pass_control to value 0"]
 impl crate::Resettable for TVE_LOW_PASS_CONTROL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

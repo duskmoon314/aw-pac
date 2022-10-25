@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:9"]
     #[inline(always)]
+    #[must_use]
     pub fn sclaim(&mut self) -> SCLAIM_W<0> {
         SCLAIM_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for SCLAIM_SPEC {
 #[doc = "`write(|w| ..)` method takes [sclaim::W](W) writer structure"]
 impl crate::Writable for SCLAIM_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets sclaim to value 0"]
 impl crate::Resettable for SCLAIM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

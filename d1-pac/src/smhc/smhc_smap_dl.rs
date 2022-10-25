@@ -82,16 +82,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Sample Delay Software"]
     #[inline(always)]
+    #[must_use]
     pub fn samp_dl_sw(&mut self) -> SAMP_DL_SW_W<0> {
         SAMP_DL_SW_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn samp_dl_sw_en(&mut self) -> SAMP_DL_SW_EN_W<7> {
         SAMP_DL_SW_EN_W::new(self)
     }
     #[doc = "Bit 15 - Sample Delay Calibration Start"]
     #[inline(always)]
+    #[must_use]
     pub fn samp_dl_cal_start(&mut self) -> SAMP_DL_CAL_START_W<15> {
         SAMP_DL_CAL_START_W::new(self)
     }
@@ -114,11 +117,10 @@ impl crate::Readable for SMHC_SMAP_DL_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_smap_dl::W](W) writer structure"]
 impl crate::Writable for SMHC_SMAP_DL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_smap_dl to value 0"]
 impl crate::Resettable for SMHC_SMAP_DL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

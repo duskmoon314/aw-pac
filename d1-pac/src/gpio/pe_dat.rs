@@ -42,12 +42,13 @@ impl R {
     #[doc = "Bits 0:17 - PE Data"]
     #[inline(always)]
     pub fn pe_dat(&self) -> PE_DAT_R {
-        PE_DAT_R::new((self.bits & 0x0003_ffff) as u32)
+        PE_DAT_R::new(self.bits & 0x0003_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:17 - PE Data"]
     #[inline(always)]
+    #[must_use]
     pub fn pe_dat(&mut self) -> PE_DAT_W<0> {
         PE_DAT_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for PE_DAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [pe_dat::W](W) writer structure"]
 impl crate::Writable for PE_DAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pe_dat to value 0"]
 impl crate::Resettable for PE_DAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

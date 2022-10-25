@@ -70,11 +70,10 @@ impl crate::Readable for CSIC_DMA_FIFO_STAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_fifo_stat::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_FIFO_STAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_fifo_stat to value 0"]
 impl crate::Resettable for CSIC_DMA_FIFO_STAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

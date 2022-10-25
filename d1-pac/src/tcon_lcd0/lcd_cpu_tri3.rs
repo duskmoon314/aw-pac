@@ -143,16 +143,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - The value of counter factor"]
     #[inline(always)]
+    #[must_use]
     pub fn counter_m(&mut self) -> COUNTER_M_W<0> {
         COUNTER_M_W::new(self)
     }
     #[doc = "Bits 8:23 - The value of counter factor"]
     #[inline(always)]
+    #[must_use]
     pub fn counter_n(&mut self) -> COUNTER_N_W<8> {
         COUNTER_N_W::new(self)
     }
     #[doc = "Bits 28:29 - When set as 01, the Tri_Counter_Int occurs in cycle of (Count_N+1) * (Count_M+1) * 4 dclk.\n\nWhen set as 10 or 11, the io0 is map as TE input."]
     #[inline(always)]
+    #[must_use]
     pub fn tri_int_mode(&mut self) -> TRI_INT_MODE_W<28> {
         TRI_INT_MODE_W::new(self)
     }
@@ -175,11 +178,10 @@ impl crate::Readable for LCD_CPU_TRI3_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_tri3::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_TRI3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cpu_tri3 to value 0"]
 impl crate::Resettable for LCD_CPU_TRI3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

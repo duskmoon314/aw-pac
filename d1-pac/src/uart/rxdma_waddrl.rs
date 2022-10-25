@@ -24,8 +24,5 @@ impl crate::Readable for RXDMA_WADDRL_SPEC {
 }
 #[doc = "`reset()` method sets rxdma_waddrl to value 0"]
 impl crate::Resettable for RXDMA_WADDRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

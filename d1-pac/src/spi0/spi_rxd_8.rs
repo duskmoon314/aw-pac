@@ -54,11 +54,10 @@ impl crate::Readable for SPI_RXD_8_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_rxd_8::W](W) writer structure"]
 impl crate::Writable for SPI_RXD_8_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_rxd_8 to value 0"]
 impl crate::Resettable for SPI_RXD_8_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

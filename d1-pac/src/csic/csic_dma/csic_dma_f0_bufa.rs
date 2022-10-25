@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - When BK_TOP_EN is enabled, FBC_EN is enabled, DMA_EN is disabled, these bits indicate output address of overhead data in FBC mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is disabled, these bits indicate FIFO 0 output buffer-A address in DMA mode.\n\nWhen BK_TOP_EN is enabled, FBC_EN is disabled, DMA_EN is enabled, LBC_EN is enabled, these bits indicate the output buffer address in LBC mode."]
     #[inline(always)]
+    #[must_use]
     pub fn f0_bufa(&mut self) -> F0_BUFA_W<0> {
         F0_BUFA_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for CSIC_DMA_F0_BUFA_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_f0_bufa::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_F0_BUFA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_f0_bufa to value 0"]
 impl crate::Resettable for CSIC_DMA_F0_BUFA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

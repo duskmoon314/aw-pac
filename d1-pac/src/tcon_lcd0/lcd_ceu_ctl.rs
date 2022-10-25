@@ -160,16 +160,19 @@ impl R {
 impl W {
     #[doc = "Bit 29 - BT656 F Mask Value"]
     #[inline(always)]
+    #[must_use]
     pub fn bt656_f_mask_value(&mut self) -> BT656_F_MASK_VALUE_W<29> {
         BT656_F_MASK_VALUE_W::new(self)
     }
     #[doc = "Bit 30 - BT656 F Mask"]
     #[inline(always)]
+    #[must_use]
     pub fn bt656_f_mask(&mut self) -> BT656_F_MASK_W<30> {
         BT656_F_MASK_W::new(self)
     }
     #[doc = "Bit 31 - Enable CEU function"]
     #[inline(always)]
+    #[must_use]
     pub fn ceu_en(&mut self) -> CEU_EN_W<31> {
         CEU_EN_W::new(self)
     }
@@ -192,11 +195,10 @@ impl crate::Readable for LCD_CEU_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_ceu_ctl::W](W) writer structure"]
 impl crate::Writable for LCD_CEU_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_ceu_ctl to value 0"]
 impl crate::Resettable for LCD_CEU_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

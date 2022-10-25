@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - It indicates the throughput writing to this register at last time.\n\nWriting to this register will clear it to 0."]
     #[inline(always)]
+    #[must_use]
     pub fn tp_num(&mut self) -> TP_NUM_W<0> {
         TP_NUM_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for CE_TPR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ce_tpr::W](W) writer structure"]
 impl crate::Writable for CE_TPR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ce_tpr to value 0"]
 impl crate::Resettable for CE_TPR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

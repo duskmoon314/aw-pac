@@ -142,31 +142,37 @@ impl<'a, const O: u8> RT_W<'a, O> {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn fifoe(&mut self) -> FIFOE_W<0> {
         FIFOE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn rfifor(&mut self) -> RFIFOR_W<1> {
         RFIFOR_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
+    #[must_use]
     pub fn xfifor(&mut self) -> XFIFOR_W<2> {
         XFIFOR_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn dmam(&mut self) -> DMAM_W<3> {
         DMAM_W::new(self)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
+    #[must_use]
     pub fn tft(&mut self) -> TFT_W<4> {
         TFT_W::new(self)
     }
     #[doc = "Bits 6:7"]
     #[inline(always)]
+    #[must_use]
     pub fn rt(&mut self) -> RT_W<6> {
         RT_W::new(self)
     }
@@ -185,11 +191,10 @@ impl crate::RegisterSpec for FCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [fcr::W](W) writer structure"]
 impl crate::Writable for FCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fcr to value 0"]
 impl crate::Resettable for FCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

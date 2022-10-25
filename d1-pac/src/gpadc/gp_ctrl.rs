@@ -235,31 +235,37 @@ impl R {
 impl W {
     #[doc = "Bit 16 - ADC Function Enable\n\nBefore the bit is enabled, configure ADC parameters including the work mode and channel number, etc."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_en(&mut self) -> ADC_EN_W<16> {
         ADC_EN_W::new(self)
     }
     #[doc = "Bit 17 - ADC Calibration"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_cali_en(&mut self) -> ADC_CALI_EN_W<17> {
         ADC_CALI_EN_W::new(self)
     }
     #[doc = "Bits 18:19 - GPADC Work Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn gpadc_work_mode(&mut self) -> GPADC_WORK_MODE_W<18> {
         GPADC_WORK_MODE_W::new(self)
     }
     #[doc = "Bits 20:21 - ADC OP Bias\n\nAdjust the bandwidth of the ADC amplifier"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_op_bias(&mut self) -> ADC_OP_BIAS_W<20> {
         ADC_OP_BIAS_W::new(self)
     }
     #[doc = "Bit 23 - ADC Auto Calibration"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_autocali_en(&mut self) -> ADC_AUTOCALI_EN_W<23> {
         ADC_AUTOCALI_EN_W::new(self)
     }
     #[doc = "Bits 24:31 - ADC First Convert Delay Setting\n\nADC conversion of each channel is delayed by N samples"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W<24> {
         ADC_FIRST_DLY_W::new(self)
     }
@@ -282,11 +288,10 @@ impl crate::Readable for GP_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [gp_ctrl::W](W) writer structure"]
 impl crate::Writable for GP_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets gp_ctrl to value 0x0080_0000"]
 impl crate::Resettable for GP_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0080_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0080_0000;
 }

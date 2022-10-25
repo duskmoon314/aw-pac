@@ -203,91 +203,109 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Response Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn re_int_en(&mut self) -> RE_INT_EN_W<1> {
         RE_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Command Complete Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cc_int_en(&mut self) -> CC_INT_EN_W<2> {
         CC_INT_EN_W::new(self)
     }
     #[doc = "Bit 3 - Data Transfer Complete Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dtc_int_en(&mut self) -> DTC_INT_EN_W<3> {
         DTC_INT_EN_W::new(self)
     }
     #[doc = "Bit 4 - Data Transmit Request Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dtr_int_en(&mut self) -> DTR_INT_EN_W<4> {
         DTR_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - Data Receive Request Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn drr_int_en(&mut self) -> DRR_INT_EN_W<5> {
         DRR_INT_EN_W::new(self)
     }
     #[doc = "Bit 6 - Response CRC Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rce_int_en(&mut self) -> RCE_INT_EN_W<6> {
         RCE_INT_EN_W::new(self)
     }
     #[doc = "Bit 7 - Data CRC Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dce_int_en(&mut self) -> DCE_INT_EN_W<7> {
         DCE_INT_EN_W::new(self)
     }
     #[doc = "Bit 8 - Response Timeout/Boot ACK Received Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rto_back_int_en(&mut self) -> RTO_BACK_INT_EN_W<8> {
         RTO_BACK_INT_EN_W::new(self)
     }
     #[doc = "Bit 9 - Data Timeout/Boot Data Start Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dto_bds_int_en(&mut self) -> DTO_BDS_INT_EN_W<9> {
         DTO_BDS_INT_EN_W::new(self)
     }
     #[doc = "Bit 10 - Data Starvation Timeout/V1.8 Switch Done Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dsto_vsd_int_en(&mut self) -> DSTO_VSD_INT_EN_W<10> {
         DSTO_VSD_INT_EN_W::new(self)
     }
     #[doc = "Bit 11 - FIFO Underrun/Overflow Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fu_fo_int_en(&mut self) -> FU_FO_INT_EN_W<11> {
         FU_FO_INT_EN_W::new(self)
     }
     #[doc = "Bit 12 - Command Busy and Illegal Write Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cb_iw_int_en(&mut self) -> CB_IW_INT_EN_W<12> {
         CB_IW_INT_EN_W::new(self)
     }
     #[doc = "Bit 13 - Data Start Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dse_bc_int_en(&mut self) -> DSE_BC_INT_EN_W<13> {
         DSE_BC_INT_EN_W::new(self)
     }
     #[doc = "Bit 14 - Auto Command Done Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn acd_int_en(&mut self) -> ACD_INT_EN_W<14> {
         ACD_INT_EN_W::new(self)
     }
     #[doc = "Bit 15 - Data End-bit Error Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dee_int_en(&mut self) -> DEE_INT_EN_W<15> {
         DEE_INT_EN_W::new(self)
     }
     #[doc = "Bit 16 - SDIO Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sdio_int_en(&mut self) -> SDIO_INT_EN_W<16> {
         SDIO_INT_EN_W::new(self)
     }
     #[doc = "Bit 30 - Card Inserted Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn card_insert_int_en(&mut self) -> CARD_INSERT_INT_EN_W<30> {
         CARD_INSERT_INT_EN_W::new(self)
     }
     #[doc = "Bit 31 - Card Removed Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn card_removal_int_en(&mut self) -> CARD_REMOVAL_INT_EN_W<31> {
         CARD_REMOVAL_INT_EN_W::new(self)
     }
@@ -310,11 +328,10 @@ impl crate::Readable for SMHC_INTMASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_intmask::W](W) writer structure"]
 impl crate::Writable for SMHC_INTMASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_intmask to value 0"]
 impl crate::Resettable for SMHC_INTMASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Return 0x16AA only if the KEY_FIELD is set as 0x16AA when read those bits, otherwise return 0x0."]
     #[inline(always)]
+    #[must_use]
     pub fn id_data(&mut self) -> ID_DATA_W<0> {
         ID_DATA_W::new(self)
     }
     #[doc = "Bits 16:31 - Key Field\n\nThe field should be written as 0x16AA. Writing any other value in this field aborts the write-operation."]
     #[inline(always)]
+    #[must_use]
     pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for IC_CHARA_SPEC {
 #[doc = "`write(|w| ..)` method takes [ic_chara::W](W) writer structure"]
 impl crate::Writable for IC_CHARA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ic_chara to value 0"]
 impl crate::Resettable for IC_CHARA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

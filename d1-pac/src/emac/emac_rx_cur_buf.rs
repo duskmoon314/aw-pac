@@ -24,8 +24,5 @@ impl crate::Readable for EMAC_RX_CUR_BUF_SPEC {
 }
 #[doc = "`reset()` method sets emac_rx_cur_buf to value 0"]
 impl crate::Resettable for EMAC_RX_CUR_BUF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

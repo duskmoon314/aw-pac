@@ -251,21 +251,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Factor M"]
     #[inline(always)]
+    #[must_use]
     pub fn cpu_div1(&mut self) -> CPU_DIV1_W<0> {
         CPU_DIV1_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
+    #[must_use]
     pub fn cpu_div2(&mut self) -> CPU_DIV2_W<8> {
         CPU_DIV2_W::new(self)
     }
     #[doc = "Bits 16:17 - PLL Output External Divider P"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_cpu_out_ext_divp(&mut self) -> PLL_CPU_OUT_EXT_DIVP_W<16> {
         PLL_CPU_OUT_EXT_DIVP_W::new(self)
     }
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn cpu_clk_sel(&mut self) -> CPU_CLK_SEL_W<24> {
         CPU_CLK_SEL_W::new(self)
     }
@@ -288,11 +292,10 @@ impl crate::Readable for CPU_AXI_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cpu_axi_cfg::W](W) writer structure"]
 impl crate::Writable for CPU_AXI_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cpu_axi_cfg to value 0"]
 impl crate::Resettable for CPU_AXI_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

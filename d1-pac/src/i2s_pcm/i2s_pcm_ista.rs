@@ -369,31 +369,37 @@ impl R {
 impl W {
     #[doc = "Bit 4 - TXFIFO Empty Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn txe_int(&mut self) -> TXE_INT_W<4> {
         TXE_INT_W::new(self)
     }
     #[doc = "Bit 4 - RXFIFO Data Available Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxa_int(&mut self) -> RXA_INT_W<4> {
         RXA_INT_W::new(self)
     }
     #[doc = "Bit 5 - TXFIFO Overrun Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn txo_int(&mut self) -> TXO_INT_W<5> {
         TXO_INT_W::new(self)
     }
     #[doc = "Bit 5 - RXFIFO Overrun Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxo_int(&mut self) -> RXO_INT_W<5> {
         RXO_INT_W::new(self)
     }
     #[doc = "Bit 6 - TXFIFO Underrun Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn txu_int(&mut self) -> TXU_INT_W<6> {
         TXU_INT_W::new(self)
     }
     #[doc = "Bit 6 - RXFIFO Underrun Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxu_int(&mut self) -> RXU_INT_W<6> {
         RXU_INT_W::new(self)
     }
@@ -416,11 +422,10 @@ impl crate::Readable for I2S_PCM_ISTA_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_ista::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_ISTA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_ista to value 0"]
 impl crate::Resettable for I2S_PCM_ISTA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

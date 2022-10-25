@@ -69,16 +69,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - TX Channel (Slot Enable)\n\nThe bit\\[15:0\\] refer to Slot \\[15:0\\]. When one or more slots are disabled, the affected slots are set to the disable state."]
     #[inline(always)]
+    #[must_use]
     pub fn chen(&mut self) -> CHEN_W<0> {
         CHEN_W::new(self)
     }
     #[doc = "Bits 16:19 - TX Channel (Slot) number select for each output\n\nNum channels = N + 1"]
     #[inline(always)]
+    #[must_use]
     pub fn chsel(&mut self) -> CHSEL_W<16> {
         CHSEL_W::new(self)
     }
     #[doc = "Bits 20:21 - TX Offset Tune (TX Data offset to LRCK)\n\n0: No offset\n\nN: Data is offset by N BCLKs to LRCK"]
     #[inline(always)]
+    #[must_use]
     pub fn offset(&mut self) -> OFFSET_W<20> {
         OFFSET_W::new(self)
     }
@@ -101,11 +104,10 @@ impl crate::Readable for I2S_PCM_TX0CHSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_tx0chsel::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_TX0CHSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_tx0chsel to value 0"]
 impl crate::Resettable for I2S_PCM_TX0CHSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

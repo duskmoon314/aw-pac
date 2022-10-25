@@ -33,8 +33,5 @@ impl crate::Readable for RFL_SPEC {
 }
 #[doc = "`reset()` method sets rfl to value 0"]
 impl crate::Resettable for RFL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

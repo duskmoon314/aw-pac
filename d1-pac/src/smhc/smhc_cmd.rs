@@ -811,86 +811,103 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - CMD Index"]
     #[inline(always)]
+    #[must_use]
     pub fn cmd_idx(&mut self) -> CMD_IDX_W<0> {
         CMD_IDX_W::new(self)
     }
     #[doc = "Bit 6 - Response Receive"]
     #[inline(always)]
+    #[must_use]
     pub fn resp_rcv(&mut self) -> RESP_RCV_W<6> {
         RESP_RCV_W::new(self)
     }
     #[doc = "Bit 7 - Response Type"]
     #[inline(always)]
+    #[must_use]
     pub fn long_resp(&mut self) -> LONG_RESP_W<7> {
         LONG_RESP_W::new(self)
     }
     #[doc = "Bit 8 - Check Response CRC"]
     #[inline(always)]
+    #[must_use]
     pub fn chk_resp_crc(&mut self) -> CHK_RESP_CRC_W<8> {
         CHK_RESP_CRC_W::new(self)
     }
     #[doc = "Bit 9 - Data Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn data_trans(&mut self) -> DATA_TRANS_W<9> {
         DATA_TRANS_W::new(self)
     }
     #[doc = "Bit 10 - Transfer Direction"]
     #[inline(always)]
+    #[must_use]
     pub fn trans_dir(&mut self) -> TRANS_DIR_W<10> {
         TRANS_DIR_W::new(self)
     }
     #[doc = "Bit 11 - Transfer Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn trans_mode(&mut self) -> TRANS_MODE_W<11> {
         TRANS_MODE_W::new(self)
     }
     #[doc = "Bit 12 - Send Stop CMD Automatically (CMD12)"]
     #[inline(always)]
+    #[must_use]
     pub fn stop_cmd_flag(&mut self) -> STOP_CMD_FLAG_W<12> {
         STOP_CMD_FLAG_W::new(self)
     }
     #[doc = "Bit 13 - Wait for Data Transfer Over"]
     #[inline(always)]
+    #[must_use]
     pub fn wait_pre_over(&mut self) -> WAIT_PRE_OVER_W<13> {
         WAIT_PRE_OVER_W::new(self)
     }
     #[doc = "Bit 14 - Stop Abort Command"]
     #[inline(always)]
+    #[must_use]
     pub fn stop_abt_cmd(&mut self) -> STOP_ABT_CMD_W<14> {
         STOP_ABT_CMD_W::new(self)
     }
     #[doc = "Bit 15 - Send Initialization"]
     #[inline(always)]
+    #[must_use]
     pub fn send_init_seq(&mut self) -> SEND_INIT_SEQ_W<15> {
         SEND_INIT_SEQ_W::new(self)
     }
     #[doc = "Bit 21 - Change Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn prg_clk(&mut self) -> PRG_CLK_W<21> {
         PRG_CLK_W::new(self)
     }
     #[doc = "Bits 24:25 - Boot Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn boot_mod(&mut self) -> BOOT_MOD_W<24> {
         BOOT_MOD_W::new(self)
     }
     #[doc = "Bit 26 - Expect Boot Acknowledge"]
     #[inline(always)]
+    #[must_use]
     pub fn exp_boot_ack(&mut self) -> EXP_BOOT_ACK_W<26> {
         EXP_BOOT_ACK_W::new(self)
     }
     #[doc = "Bit 27 - Boot Abort"]
     #[inline(always)]
+    #[must_use]
     pub fn boot_abt(&mut self) -> BOOT_ABT_W<27> {
         BOOT_ABT_W::new(self)
     }
     #[doc = "Bit 28 - Voltage Switch"]
     #[inline(always)]
+    #[must_use]
     pub fn vol_sw(&mut self) -> VOL_SW_W<28> {
         VOL_SW_W::new(self)
     }
     #[doc = "Bit 31 - Start Command"]
     #[inline(always)]
+    #[must_use]
     pub fn cmd_load(&mut self) -> CMD_LOAD_W<31> {
         CMD_LOAD_W::new(self)
     }
@@ -913,11 +930,10 @@ impl crate::Readable for SMHC_CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_cmd::W](W) writer structure"]
 impl crate::Writable for SMHC_CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_cmd to value 0"]
 impl crate::Resettable for SMHC_CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

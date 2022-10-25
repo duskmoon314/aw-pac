@@ -175,8 +175,7 @@ impl PWM_PUL_START_R {
     }
 }
 #[doc = "Field `pwm_pul_start` writer - PWM Pulse Output Start"]
-pub type PWM_PUL_START_W<'a, const O: u8> =
-    crate::BitWriter0C<'a, u32, PCR_SPEC, PWM_PUL_START_A, O>;
+pub type PWM_PUL_START_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_PUL_START_A, O>;
 impl<'a, const O: u8> PWM_PUL_START_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
@@ -264,26 +263,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - PWM pre-scale K, actual pre-scale is (K + 1)"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm_prescal_k(&mut self) -> PWM_PRESCAL_K_W<0> {
         PWM_PRESCAL_K_W::new(self)
     }
     #[doc = "Bit 8 - PWM Active State"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm_act_sta(&mut self) -> PWM_ACT_STA_W<8> {
         PWM_ACT_STA_W::new(self)
     }
     #[doc = "Bit 9 - PWM Output Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm_mode(&mut self) -> PWM_MODE_W<9> {
         PWM_MODE_W::new(self)
     }
     #[doc = "Bit 10 - PWM Pulse Output Start"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm_pul_start(&mut self) -> PWM_PUL_START_W<10> {
         PWM_PUL_START_W::new(self)
     }
     #[doc = "Bits 16:31 - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm_pul_num(&mut self) -> PWM_PUL_NUM_W<16> {
         PWM_PUL_NUM_W::new(self)
     }
@@ -306,11 +310,10 @@ impl crate::Readable for PCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcr::W](W) writer structure"]
 impl crate::Writable for PCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pcr%s to value 0"]
 impl crate::Resettable for PCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

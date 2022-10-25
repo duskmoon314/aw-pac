@@ -517,36 +517,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Slot Width Select"]
     #[inline(always)]
+    #[must_use]
     pub fn sw(&mut self) -> SW_W<0> {
         SW_W::new(self)
     }
     #[doc = "Bit 3 - Edge Transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn edge_transfer(&mut self) -> EDGE_TRANSFER_W<3> {
         EDGE_TRANSFER_W::new(self)
     }
     #[doc = "Bits 4:6 - Sample Resolution"]
     #[inline(always)]
+    #[must_use]
     pub fn sr(&mut self) -> SR_W<4> {
         SR_W::new(self)
     }
     #[doc = "Bit 7 - BCLK Polarity"]
     #[inline(always)]
+    #[must_use]
     pub fn blck_polarity(&mut self) -> BLCK_POLARITY_W<7> {
         BLCK_POLARITY_W::new(self)
     }
     #[doc = "Bits 8:17 - Number of BCLKs per channel of the sample frame. This value is interpreted as follows:\n\nPCM mode: Number of BCLKs within (Left + Right) channel width.\n\nI2S/Left-justified/Right-justified: Number of BCLKs within each channel width (Left or Right)\n\nPeriod = N + 1\n\ne.g. N = 7: 8 BCLKs width"]
     #[inline(always)]
+    #[must_use]
     pub fn lrck_period(&mut self) -> LRCK_PERIOD_W<8> {
         LRCK_PERIOD_W::new(self)
     }
     #[doc = "Bit 19 - LRCK Polarity"]
     #[inline(always)]
+    #[must_use]
     pub fn lrck_polarity(&mut self) -> LRCK_POLARITY_W<19> {
         LRCK_POLARITY_W::new(self)
     }
     #[doc = "Bit 30 - LRCK Width (only applies to the PCM mode)"]
     #[inline(always)]
+    #[must_use]
     pub fn lrck_width(&mut self) -> LRCK_WIDTH_W<30> {
         LRCK_WIDTH_W::new(self)
     }
@@ -569,11 +576,10 @@ impl crate::Readable for I2S_PCM_FMT0_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_fmt0::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_FMT0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_fmt0 to value 0"]
 impl crate::Resettable for I2S_PCM_FMT0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

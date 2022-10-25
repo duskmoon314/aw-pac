@@ -518,36 +518,43 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn twi_drv_en(&mut self) -> TWI_DRV_EN_W<0> {
         TWI_DRV_EN_W::new(self)
     }
     #[doc = "Bit 1 - Software reset"]
     #[inline(always)]
+    #[must_use]
     pub fn soft_reset(&mut self) -> SOFT_RESET_W<1> {
         SOFT_RESET_W::new(self)
     }
     #[doc = "Bits 8:15 - Timeout number"]
     #[inline(always)]
+    #[must_use]
     pub fn timeout_n(&mut self) -> TIMEOUT_N_W<8> {
         TIMEOUT_N_W::new(self)
     }
     #[doc = "Bits 24:27 - Transition result"]
     #[inline(always)]
+    #[must_use]
     pub fn tran_result(&mut self) -> TRAN_RESULT_W<24> {
         TRAN_RESULT_W::new(self)
     }
     #[doc = "Bit 28 - Read transition mode"]
     #[inline(always)]
+    #[must_use]
     pub fn read_tran_mode(&mut self) -> READ_TRAN_MODE_W<28> {
         READ_TRAN_MODE_W::new(self)
     }
     #[doc = "Bit 29 - Restart mode"]
     #[inline(always)]
+    #[must_use]
     pub fn restart_mode(&mut self) -> RESTART_MODE_W<29> {
         RESTART_MODE_W::new(self)
     }
     #[doc = "Bit 31 - Start transmission"]
     #[inline(always)]
+    #[must_use]
     pub fn start_tran(&mut self) -> START_TRAN_W<31> {
         START_TRAN_W::new(self)
     }
@@ -570,11 +577,10 @@ impl crate::Readable for TWI_DRV_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_drv_ctrl::W](W) writer structure"]
 impl crate::Writable for TWI_DRV_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_drv_ctrl to value 0"]
 impl crate::Resettable for TWI_DRV_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

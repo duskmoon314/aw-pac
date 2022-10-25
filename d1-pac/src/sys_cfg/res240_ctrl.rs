@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - 240ohms Resistor trimming bit"]
     #[inline(always)]
+    #[must_use]
     pub fn ddr_res240_trim(&mut self) -> DDR_RES240_TRIM_W<0> {
         DDR_RES240_TRIM_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for RES240_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [res240_ctrl::W](W) writer structure"]
 impl crate::Writable for RES240_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets res240_ctrl to value 0"]
 impl crate::Resettable for RES240_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

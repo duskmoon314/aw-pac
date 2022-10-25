@@ -284,16 +284,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Type of the transmission signal"]
     #[inline(always)]
+    #[must_use]
     pub fn tts(&mut self) -> TTS_W<0> {
         TTS_W::new(self)
     }
     #[doc = "Bits 1:3 - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
     #[inline(always)]
+    #[must_use]
     pub fn rcs(&mut self) -> RCS_W<1> {
         RCS_W::new(self)
     }
     #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
     #[inline(always)]
+    #[must_use]
     pub fn css(&mut self) -> CSS_W<7> {
         CSS_W::new(self)
     }
@@ -316,11 +319,10 @@ impl crate::Readable for CIR_TCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_tcr::W](W) writer structure"]
 impl crate::Writable for CIR_TCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_tcr to value 0"]
 impl crate::Resettable for CIR_TCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -341,21 +341,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - TWI_SDA Line State Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sda_ctl_en(&mut self) -> SDA_CTL_EN_W<0> {
         SDA_CTL_EN_W::new(self)
     }
     #[doc = "Bit 1 - TWI_SDA Line State Control Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn sda_ctl(&mut self) -> SDA_CTL_W<1> {
         SDA_CTL_W::new(self)
     }
     #[doc = "Bit 2 - TWI_SCL Line State Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn scl_ctl_en(&mut self) -> SCL_CTL_EN_W<2> {
         SCL_CTL_EN_W::new(self)
     }
     #[doc = "Bit 3 - TWI_SCL Line State Control Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn scl_ctl(&mut self) -> SCL_CTL_W<3> {
         SCL_CTL_W::new(self)
     }
@@ -378,11 +382,10 @@ impl crate::Readable for TWI_LCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_lcr::W](W) writer structure"]
 impl crate::Writable for TWI_LCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_lcr to value 0"]
 impl crate::Resettable for TWI_LCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

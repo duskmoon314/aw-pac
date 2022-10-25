@@ -596,56 +596,67 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Work Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn wms(&mut self) -> WMS_W<0> {
         WMS_W::new(self)
     }
     #[doc = "Bits 2:3 - SPI Chip Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ss_sel(&mut self) -> SS_SEL_W<2> {
         SS_SEL_W::new(self)
     }
     #[doc = "Bit 5 - SPI Chip Select Signal Polarity Control"]
     #[inline(always)]
+    #[must_use]
     pub fn spol(&mut self) -> SPOL_W<5> {
         SPOL_W::new(self)
     }
     #[doc = "Bit 6 - SS Output Owner Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ss_owner(&mut self) -> SS_OWNER_W<6> {
         SS_OWNER_W::new(self)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
+    #[must_use]
     pub fn ss_level(&mut self) -> SS_LEVEL_W<7> {
         SS_LEVEL_W::new(self)
     }
     #[doc = "Bits 8:13 - Configure the length of serial data frame of TX"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_frm_len(&mut self) -> TX_FRM_LEN_W<8> {
         TX_FRM_LEN_W::new(self)
     }
     #[doc = "Bits 16:21 - Configure the length of serial data frame of RX"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_frm_len(&mut self) -> RX_FRM_LEN_W<16> {
         RX_FRM_LEN_W::new(self)
     }
     #[doc = "Bit 24 - Transfer Bits Completed Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tbc_int_en(&mut self) -> TBC_INT_EN_W<24> {
         TBC_INT_EN_W::new(self)
     }
     #[doc = "Bit 25 - Transfer Bits Completed"]
     #[inline(always)]
+    #[must_use]
     pub fn tbc(&mut self) -> TBC_W<25> {
         TBC_W::new(self)
     }
     #[doc = "Bit 30 - Master Sample Standard"]
     #[inline(always)]
+    #[must_use]
     pub fn msms(&mut self) -> MSMS_W<30> {
         MSMS_W::new(self)
     }
     #[doc = "Bit 31 - Transfer Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tce(&mut self) -> TCE_W<31> {
         TCE_W::new(self)
     }
@@ -668,11 +679,10 @@ impl crate::Readable for SPI_BATC_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_batc::W](W) writer structure"]
 impl crate::Writable for SPI_BATC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_batc to value 0"]
 impl crate::Resettable for SPI_BATC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

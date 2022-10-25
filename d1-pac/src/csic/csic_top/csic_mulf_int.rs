@@ -75,21 +75,25 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn mulf_done_en(&mut self) -> MULF_DONE_EN_W<0> {
         MULF_DONE_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn mulf_err_en(&mut self) -> MULF_ERR_EN_W<1> {
         MULF_ERR_EN_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
+    #[must_use]
     pub fn mulf_done_pd(&mut self) -> MULF_DONE_PD_W<16> {
         MULF_DONE_PD_W::new(self)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
+    #[must_use]
     pub fn mulf_err_pd(&mut self) -> MULF_ERR_PD_W<17> {
         MULF_ERR_PD_W::new(self)
     }
@@ -112,11 +116,10 @@ impl crate::Readable for CSIC_MULF_INT_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_mulf_int::W](W) writer structure"]
 impl crate::Writable for CSIC_MULF_INT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x0003_0000;
 }
 #[doc = "`reset()` method sets csic_mulf_int to value 0"]
 impl crate::Resettable for CSIC_MULF_INT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

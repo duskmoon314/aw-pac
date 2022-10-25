@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - TX Sample Counter\n\nThe audio sample number of sending into TXFIFO.\n\nWhen one sample is put into TXFIFO by DMA or by host IO, the TX sample counter register increases by one. The TX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value."]
     #[inline(always)]
+    #[must_use]
     pub fn tx_cnt(&mut self) -> TX_CNT_W<0> {
         TX_CNT_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for AC_DAC_CNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_cnt::W](W) writer structure"]
 impl crate::Writable for AC_DAC_CNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_cnt to value 0"]
 impl crate::Resettable for AC_DAC_CNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

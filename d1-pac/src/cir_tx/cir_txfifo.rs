@@ -39,6 +39,7 @@ pub type TBF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CIR_TXFIFO_SPEC, u
 impl W {
     #[doc = "Bits 0:7 - Transmit Byte FIFO\n\nWhen the transmission is triggered, the data in the FIFO will be transmitted until the data number is transmitted completely."]
     #[inline(always)]
+    #[must_use]
     pub fn tbf(&mut self) -> TBF_W<0> {
         TBF_W::new(self)
     }
@@ -61,11 +62,10 @@ impl crate::Readable for CIR_TXFIFO_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_txfifo::W](W) writer structure"]
 impl crate::Writable for CIR_TXFIFO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_txfifo to value 0"]
 impl crate::Resettable for CIR_TXFIFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -110,6 +110,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - input data format"]
     #[inline(always)]
+    #[must_use]
     pub fn input_fmt(&mut self) -> INPUT_FMT_W<0> {
         INPUT_FMT_W::new(self)
     }
@@ -132,11 +133,10 @@ impl crate::Readable for PRS_CH_INFMT_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs_ch_infmt::W](W) writer structure"]
 impl crate::Writable for PRS_CH_INFMT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets prs_ch%s_infmt to value 0x03"]
 impl crate::Resettable for PRS_CH_INFMT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x03
-    }
+    const RESET_VALUE: Self::Ux = 0x03;
 }

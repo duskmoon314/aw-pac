@@ -379,31 +379,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Data Length Select"]
     #[inline(always)]
+    #[must_use]
     pub fn dls(&mut self) -> DLS_W<0> {
         DLS_W::new(self)
     }
     #[doc = "Bit 2 - Number of stop bits"]
     #[inline(always)]
+    #[must_use]
     pub fn stop(&mut self) -> STOP_W<2> {
         STOP_W::new(self)
     }
     #[doc = "Bit 3 - Parity Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pen(&mut self) -> PEN_W<3> {
         PEN_W::new(self)
     }
     #[doc = "Bits 4:5 - Even Parity Select"]
     #[inline(always)]
+    #[must_use]
     pub fn eps(&mut self) -> EPS_W<4> {
         EPS_W::new(self)
     }
     #[doc = "Bit 6 - Break Control Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn bc(&mut self) -> BC_W<6> {
         BC_W::new(self)
     }
     #[doc = "Bit 7 - Divisor Latch Access Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn dlab(&mut self) -> DLAB_W<7> {
         DLAB_W::new(self)
     }
@@ -426,11 +432,10 @@ impl crate::Readable for LCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcr::W](W) writer structure"]
 impl crate::Writable for LCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcr to value 0"]
 impl crate::Resettable for LCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

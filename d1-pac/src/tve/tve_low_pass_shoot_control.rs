@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Undershoot gain control."]
     #[inline(always)]
+    #[must_use]
     pub fn neg_gain(&mut self) -> NEG_GAIN_W<0> {
         NEG_GAIN_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for TVE_LOW_PASS_SHOOT_CONTROL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_low_pass_shoot_control::W](W) writer structure"]
 impl crate::Writable for TVE_LOW_PASS_SHOOT_CONTROL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_low_pass_shoot_control to value 0"]
 impl crate::Resettable for TVE_LOW_PASS_SHOOT_CONTROL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

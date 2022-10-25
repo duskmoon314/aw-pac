@@ -33,8 +33,5 @@ impl crate::Readable for HCSP_PORTROUTE_SPEC {
 }
 #[doc = "`reset()` method sets hcsp_portroute to value 0"]
 impl crate::Resettable for HCSP_PORTROUTE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

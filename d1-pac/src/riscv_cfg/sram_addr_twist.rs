@@ -52,11 +52,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SRAM Address Twist Flag"]
     #[inline(always)]
+    #[must_use]
     pub fn sram_addr_ts_fg(&mut self) -> SRAM_ADDR_TS_FG_W<0> {
         SRAM_ADDR_TS_FG_W::new(self)
     }
     #[doc = "Bits 16:31 - SRAM Twist Keyfield"]
     #[inline(always)]
+    #[must_use]
     pub fn sram_ts_kf(&mut self) -> SRAM_TS_KF_W<16> {
         SRAM_TS_KF_W::new(self)
     }
@@ -79,11 +81,10 @@ impl crate::Readable for SRAM_ADDR_TWIST_SPEC {
 #[doc = "`write(|w| ..)` method takes [sram_addr_twist::W](W) writer structure"]
 impl crate::Writable for SRAM_ADDR_TWIST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets sram_addr_twist to value 0"]
 impl crate::Resettable for SRAM_ADDR_TWIST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -105,11 +105,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - RTC Reg CFG SPI Clock Divider: M\n\nActual SPI Clock = AHBS1/(M+1), (0 to 15) The default frequency of AHBS1 is 200 MHz, and the default frequency of SPI Clock is 20 MHz.\n\nNote: The SPI clock can not exceed 50 MHz, or else the RTC register may be abnormal."]
     #[inline(always)]
+    #[must_use]
     pub fn rtc_spi_clk_div(&mut self) -> RTC_SPI_CLK_DIV_W<0> {
         RTC_SPI_CLK_DIV_W::new(self)
     }
     #[doc = "Bit 31 - RTC Reg CFG SPI Clock Gating\n\nBefore configurating RTC register, the clock divider of SPI needs be configured firstly, then clock gating needs be enabled.\n\nNote: Frequency division and clock gating can not be set at the same time."]
     #[inline(always)]
+    #[must_use]
     pub fn rtc_spi_clk_gating(&mut self) -> RTC_SPI_CLK_GATING_W<31> {
         RTC_SPI_CLK_GATING_W::new(self)
     }
@@ -132,11 +134,10 @@ impl crate::Readable for RTC_SPI_CLK_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [rtc_spi_clk_ctrl::W](W) writer structure"]
 impl crate::Writable for RTC_SPI_CLK_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets rtc_spi_clk_ctrl to value 0x09"]
 impl crate::Resettable for RTC_SPI_CLK_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x09
-    }
+    const RESET_VALUE: Self::Ux = 0x09;
 }

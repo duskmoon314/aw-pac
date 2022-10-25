@@ -84,26 +84,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_int_enb(&mut self) -> TX_INT_ENB_W<0> {
         TX_INT_ENB_W::new(self)
     }
     #[doc = "Bit 1 - Receive Interrupt Enables"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_int_enb(&mut self) -> RX_INT_ENB_W<1> {
         RX_INT_ENB_W::new(self)
     }
     #[doc = "Bit 2 - Fatal Bus Error Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ferr_int_enb(&mut self) -> FERR_INT_ENB_W<2> {
         FERR_INT_ENB_W::new(self)
     }
     #[doc = "Bit 4 - Descriptor Unavailable Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn des_unavl_int_enb(&mut self) -> DES_UNAVL_INT_ENB_W<4> {
         DES_UNAVL_INT_ENB_W::new(self)
     }
     #[doc = "Bit 5 - Card Error Summary Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn err_sum_int_enb(&mut self) -> ERR_SUM_INT_ENB_W<5> {
         ERR_SUM_INT_ENB_W::new(self)
     }
@@ -126,11 +131,10 @@ impl crate::Readable for SMHC_IDIE_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_idie::W](W) writer structure"]
 impl crate::Writable for SMHC_IDIE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_idie to value 0"]
 impl crate::Resettable for SMHC_IDIE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

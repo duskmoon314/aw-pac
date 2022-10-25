@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Specify the Cb color gain. 8-bit unsigned fraction."]
     #[inline(always)]
+    #[must_use]
     pub fn cb_gain(&mut self) -> CB_GAIN_W<0> {
         CB_GAIN_W::new(self)
     }
     #[doc = "Bits 8:15 - Specify the Cr color gain. 8-bit unsigned fraction."]
     #[inline(always)]
+    #[must_use]
     pub fn cr_gain(&mut self) -> CR_GAIN_W<8> {
         CR_GAIN_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for TVE_CBCR_GAIN_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_cbcr_gain::W](W) writer structure"]
 impl crate::Writable for TVE_CBCR_GAIN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_cbcr_gain to value 0xa0a0"]
 impl crate::Resettable for TVE_CBCR_GAIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xa0a0
-    }
+    const RESET_VALUE: Self::Ux = 0xa0a0;
 }

@@ -248,41 +248,49 @@ impl R {
 impl W {
     #[doc = ""]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn clk_fanout_sel<const O: u8>(&mut self) -> CLK_FANOUT_SEL_W<O> {
         CLK_FANOUT_SEL_W::new(self)
     }
     #[doc = "Bits 0:2"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_fanout0_sel(&mut self) -> CLK_FANOUT_SEL_W<0> {
         CLK_FANOUT_SEL_W::new(self)
     }
     #[doc = "Bits 3:5"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_fanout1_sel(&mut self) -> CLK_FANOUT_SEL_W<3> {
         CLK_FANOUT_SEL_W::new(self)
     }
     #[doc = "Bits 6:8"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_fanout2_sel(&mut self) -> CLK_FANOUT_SEL_W<6> {
         CLK_FANOUT_SEL_W::new(self)
     }
     #[doc = "Gating for CLK_FANOUT"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn clk_fanout_en<const O: u8>(&mut self) -> CLK_FANOUT_EN_W<O> {
         CLK_FANOUT_EN_W::new(self)
     }
     #[doc = "Bit 21 - Gating for CLK_FANOUT"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_fanout0_en(&mut self) -> CLK_FANOUT_EN_W<21> {
         CLK_FANOUT_EN_W::new(self)
     }
     #[doc = "Bit 22 - Gating for CLK_FANOUT"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_fanout1_en(&mut self) -> CLK_FANOUT_EN_W<22> {
         CLK_FANOUT_EN_W::new(self)
     }
     #[doc = "Bit 23 - Gating for CLK_FANOUT"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_fanout2_en(&mut self) -> CLK_FANOUT_EN_W<23> {
         CLK_FANOUT_EN_W::new(self)
     }
@@ -305,11 +313,10 @@ impl crate::Readable for CCU_FAN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ccu_fan::W](W) writer structure"]
 impl crate::Writable for CCU_FAN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ccu_fan to value 0"]
 impl crate::Resettable for CCU_FAN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

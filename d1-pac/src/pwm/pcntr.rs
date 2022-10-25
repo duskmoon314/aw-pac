@@ -56,6 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - PWM counter value is set for phase control."]
     #[inline(always)]
+    #[must_use]
     pub fn pwm_counter_start(&mut self) -> PWM_COUNTER_START_W<16> {
         PWM_COUNTER_START_W::new(self)
     }
@@ -78,11 +79,10 @@ impl crate::Readable for PCNTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcntr::W](W) writer structure"]
 impl crate::Writable for PCNTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pcntr%s to value 0"]
 impl crate::Resettable for PCNTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

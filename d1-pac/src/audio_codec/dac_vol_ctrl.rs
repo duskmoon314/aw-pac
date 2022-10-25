@@ -115,16 +115,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_vol_r(&mut self) -> DAC_VOL_R_W<0> {
         DAC_VOL_R_W::new(self)
     }
     #[doc = "Bits 8:15 - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_vol_l(&mut self) -> DAC_VOL_L_W<8> {
         DAC_VOL_L_W::new(self)
     }
     #[doc = "Bit 16 - DAC Volume Control Selection Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_vol_sel(&mut self) -> DAC_VOL_SEL_W<16> {
         DAC_VOL_SEL_W::new(self)
     }
@@ -147,11 +150,10 @@ impl crate::Readable for DAC_VOL_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dac_vol_ctrl::W](W) writer structure"]
 impl crate::Writable for DAC_VOL_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dac_vol_ctrl to value 0"]
 impl crate::Resettable for DAC_VOL_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

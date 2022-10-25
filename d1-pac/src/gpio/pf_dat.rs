@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - PF Data"]
     #[inline(always)]
+    #[must_use]
     pub fn pf_dat(&mut self) -> PF_DAT_W<0> {
         PF_DAT_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for PF_DAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [pf_dat::W](W) writer structure"]
 impl crate::Writable for PF_DAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pf_dat to value 0"]
 impl crate::Resettable for PF_DAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

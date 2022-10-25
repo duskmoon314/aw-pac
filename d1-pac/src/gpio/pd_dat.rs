@@ -42,12 +42,13 @@ impl R {
     #[doc = "Bits 0:22"]
     #[inline(always)]
     pub fn pd_dat(&self) -> PD_DAT_R {
-        PD_DAT_R::new((self.bits & 0x007f_ffff) as u32)
+        PD_DAT_R::new(self.bits & 0x007f_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:22"]
     #[inline(always)]
+    #[must_use]
     pub fn pd_dat(&mut self) -> PD_DAT_W<0> {
         PD_DAT_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for PD_DAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [pd_dat::W](W) writer structure"]
 impl crate::Writable for PD_DAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pd_dat to value 0"]
 impl crate::Resettable for PD_DAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

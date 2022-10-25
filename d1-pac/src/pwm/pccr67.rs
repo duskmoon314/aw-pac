@@ -246,11 +246,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - PWM67 Clock Divide M"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm67_clk_div_m(&mut self) -> PWM67_CLK_DIV_M_W<0> {
         PWM67_CLK_DIV_M_W::new(self)
     }
     #[doc = "Bits 7:8 - Select PWM67 Clock Source"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm67_clk_src_sel(&mut self) -> PWM67_CLK_SRC_SEL_W<7> {
         PWM67_CLK_SRC_SEL_W::new(self)
     }
@@ -273,11 +275,10 @@ impl crate::Readable for PCCR67_SPEC {
 #[doc = "`write(|w| ..)` method takes [pccr67::W](W) writer structure"]
 impl crate::Writable for PCCR67_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pccr67 to value 0"]
 impl crate::Resettable for PCCR67_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

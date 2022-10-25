@@ -24,8 +24,5 @@ impl crate::Readable for SPINLOCK_LOCKID_SPEC {
 }
 #[doc = "`reset()` method sets spinlock_lockid%s to value 0"]
 impl crate::Resettable for SPINLOCK_LOCKID_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

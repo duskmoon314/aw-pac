@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Tdclk = Tsclk/DCLKDIV\n\nNote:\n\n1.If dclk1 and dclk2 are used, DCLKDIV >=6\n\n2.If only dclk is used, DCLKDIV >=1"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_dclk_div(&mut self) -> LCD_DCLK_DIV_W<0> {
         LCD_DCLK_DIV_W::new(self)
     }
     #[doc = "Bits 28:31 - LCD clock enable\n\n"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_dclk_en(&mut self) -> LCD_DCLK_EN_W<28> {
         LCD_DCLK_EN_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for LCD_DCLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_dclk::W](W) writer structure"]
 impl crate::Writable for LCD_DCLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_dclk to value 0"]
 impl crate::Resettable for LCD_DCLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

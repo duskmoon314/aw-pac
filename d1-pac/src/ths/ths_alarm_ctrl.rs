@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Thermal sensor alarm threshold for hysteresis temperature"]
     #[inline(always)]
+    #[must_use]
     pub fn alarm_t_hyst(&mut self) -> ALARM_T_HYST_W<0> {
         ALARM_T_HYST_W::new(self)
     }
     #[doc = "Bits 16:27 - Thermal sensor alarm threshold for hot temperature"]
     #[inline(always)]
+    #[must_use]
     pub fn alarm_t_hot(&mut self) -> ALARM_T_HOT_W<16> {
         ALARM_T_HOT_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for THS_ALARM_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ths_alarm_ctrl::W](W) writer structure"]
 impl crate::Writable for THS_ALARM_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ths_alarm_ctrl to value 0x05a0_0684"]
 impl crate::Resettable for THS_ALARM_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x05a0_0684
-    }
+    const RESET_VALUE: Self::Ux = 0x05a0_0684;
 }

@@ -107,11 +107,10 @@ impl crate::Readable for TVE_DAC_STATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_dac_status::W](W) writer structure"]
 impl crate::Writable for TVE_DAC_STATUS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_dac_status to value 0"]
 impl crate::Resettable for TVE_DAC_STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

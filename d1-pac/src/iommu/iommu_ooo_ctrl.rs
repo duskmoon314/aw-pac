@@ -130,41 +130,49 @@ impl R {
 impl W {
     #[doc = "Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn m_ooo_ctrl<const O: u8>(&mut self) -> M_OOO_CTRL_W<O> {
         M_OOO_CTRL_W::new(self)
     }
     #[doc = "Bit 0 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub fn m0_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<0> {
         M_OOO_CTRL_W::new(self)
     }
     #[doc = "Bit 1 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub fn m1_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<1> {
         M_OOO_CTRL_W::new(self)
     }
     #[doc = "Bit 2 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub fn m2_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<2> {
         M_OOO_CTRL_W::new(self)
     }
     #[doc = "Bit 3 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub fn m3_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<3> {
         M_OOO_CTRL_W::new(self)
     }
     #[doc = "Bit 4 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub fn m4_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<4> {
         M_OOO_CTRL_W::new(self)
     }
     #[doc = "Bit 5 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub fn m5_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<5> {
         M_OOO_CTRL_W::new(self)
     }
     #[doc = "Bit 6 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
+    #[must_use]
     pub fn m6_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<6> {
         M_OOO_CTRL_W::new(self)
     }
@@ -187,11 +195,10 @@ impl crate::Readable for IOMMU_OOO_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_ooo_ctrl::W](W) writer structure"]
 impl crate::Writable for IOMMU_OOO_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_ooo_ctrl to value 0x7f"]
 impl crate::Resettable for IOMMU_OOO_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x7f
-    }
+    const RESET_VALUE: Self::Ux = 0x7f;
 }

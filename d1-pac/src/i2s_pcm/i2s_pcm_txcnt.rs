@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - TX Sample Counter"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_cnt(&mut self) -> TX_CNT_W<0> {
         TX_CNT_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for I2S_PCM_TXCNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_txcnt::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_TXCNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_txcnt to value 0"]
 impl crate::Resettable for I2S_PCM_TXCNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -701,61 +701,73 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Set the data polarity of LVDS"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_data_pol(&mut self) -> LCD_LVDS_DATA_POL_W<0> {
         LCD_LVDS_DATA_POL_W::new(self)
     }
     #[doc = "Bit 4 - Set the clock polarity of LVDS"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_clk_pol(&mut self) -> LCD_LVDS_CLK_POL_W<4> {
         LCD_LVDS_CLK_POL_W::new(self)
     }
     #[doc = "Bit 20 - Select the clock source of LVDS"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_clk_sel(&mut self) -> LCD_LVDS_CLK_SEL_W<20> {
         LCD_LVDS_CLK_SEL_W::new(self)
     }
     #[doc = "Bit 23 - Set the LVDS correct mode"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_correct_mode(&mut self) -> LCD_LVDS_CORRECT_MODE_W<23> {
         LCD_LVDS_CORRECT_MODE_W::new(self)
     }
     #[doc = "Bit 24 - Set the output signal in debug mode"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_debug_mode(&mut self) -> LCD_LVDS_DEBUG_MODE_W<24> {
         LCD_LVDS_DEBUG_MODE_W::new(self)
     }
     #[doc = "Bit 25 - Enable LVDS debug function"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_debug_en(&mut self) -> LCD_LVDS_DEBUG_EN_W<25> {
         LCD_LVDS_DEBUG_EN_W::new(self)
     }
     #[doc = "Bit 26 - Set the bit width of data"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_bitwidth(&mut self) -> LCD_LVDS_BITWIDTH_W<26> {
         LCD_LVDS_BITWIDTH_W::new(self)
     }
     #[doc = "Bit 27 - Set the LVDS data mode"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_mode(&mut self) -> LCD_LVDS_MODE_W<27> {
         LCD_LVDS_MODE_W::new(self)
     }
     #[doc = "Bit 28 - Set the LVDS direction"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_dir(&mut self) -> LCD_LVDS_DIR_W<28> {
         LCD_LVDS_DIR_W::new(self)
     }
     #[doc = "Bit 29 - Set the order of even field and odd field"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_even_odd_dir(&mut self) -> LCD_LVDS_EVEN_ODD_DIR_W<29> {
         LCD_LVDS_EVEN_ODD_DIR_W::new(self)
     }
     #[doc = "Bit 30 - Select work in single link mode or dual link mode"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_link(&mut self) -> LCD_LVDS_LINK_W<30> {
         LCD_LVDS_LINK_W::new(self)
     }
     #[doc = "Bit 31 - Enable LVDS interface"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_lvds_en(&mut self) -> LCD_LVDS_EN_W<31> {
         LCD_LVDS_EN_W::new(self)
     }
@@ -778,11 +790,10 @@ impl crate::Readable for LCD_LVDS_IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_lvds_if::W](W) writer structure"]
 impl crate::Writable for LCD_LVDS_IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_lvds_if to value 0"]
 impl crate::Resettable for LCD_LVDS_IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

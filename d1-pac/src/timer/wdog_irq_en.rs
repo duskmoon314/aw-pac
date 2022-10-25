@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn wdog_irq_en(&mut self) -> WDOG_IRQ_EN_W<0> {
         WDOG_IRQ_EN_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for WDOG_IRQ_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [wdog_irq_en::W](W) writer structure"]
 impl crate::Writable for WDOG_IRQ_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets wdog_irq_en to value 0"]
 impl crate::Resettable for WDOG_IRQ_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

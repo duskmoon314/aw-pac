@@ -130,26 +130,31 @@ impl R {
 impl W {
     #[doc = "Task Channel Error Type"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn task_channel_error_type<const O: u8>(&mut self) -> TASK_CHANNEL_ERROR_TYPE_W<O> {
         TASK_CHANNEL_ERROR_TYPE_W::new(self)
     }
     #[doc = "Bits 0:3 - Task Channel Error Type"]
     #[inline(always)]
+    #[must_use]
     pub fn task_channel0_error_type(&mut self) -> TASK_CHANNEL_ERROR_TYPE_W<0> {
         TASK_CHANNEL_ERROR_TYPE_W::new(self)
     }
     #[doc = "Bits 4:7 - Task Channel Error Type"]
     #[inline(always)]
+    #[must_use]
     pub fn task_channel1_error_type(&mut self) -> TASK_CHANNEL_ERROR_TYPE_W<4> {
         TASK_CHANNEL_ERROR_TYPE_W::new(self)
     }
     #[doc = "Bits 8:11 - Task Channel Error Type"]
     #[inline(always)]
+    #[must_use]
     pub fn task_channel2_error_type(&mut self) -> TASK_CHANNEL_ERROR_TYPE_W<8> {
         TASK_CHANNEL_ERROR_TYPE_W::new(self)
     }
     #[doc = "Bits 12:15 - Task Channel Error Type"]
     #[inline(always)]
+    #[must_use]
     pub fn task_channel3_error_type(&mut self) -> TASK_CHANNEL_ERROR_TYPE_W<12> {
         TASK_CHANNEL_ERROR_TYPE_W::new(self)
     }
@@ -172,11 +177,10 @@ impl crate::Readable for CE_ESR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ce_esr::W](W) writer structure"]
 impl crate::Writable for CE_ESR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x0f;
 }
 #[doc = "`reset()` method sets ce_esr to value 0"]
 impl crate::Resettable for CE_ESR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

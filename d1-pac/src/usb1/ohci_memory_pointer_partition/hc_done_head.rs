@@ -56,6 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:31 - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
     #[inline(always)]
+    #[must_use]
     pub fn dh_31_4(&mut self) -> DH_31_4_W<4> {
         DH_31_4_W::new(self)
     }
@@ -78,11 +79,10 @@ impl crate::Readable for HC_DONE_HEAD_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_done_head::W](W) writer structure"]
 impl crate::Writable for HC_DONE_HEAD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_done_head to value 0"]
 impl crate::Resettable for HC_DONE_HEAD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

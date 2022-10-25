@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
+    #[must_use]
     pub fn dll(&mut self) -> DLL_W<0> {
         DLL_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for DLL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dll::W](W) writer structure"]
 impl crate::Writable for DLL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dll to value 0"]
 impl crate::Resettable for DLL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

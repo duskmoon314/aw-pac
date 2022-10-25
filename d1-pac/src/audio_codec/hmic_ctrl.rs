@@ -413,46 +413,55 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MIC Detect Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn mic_det_irq_en(&mut self) -> MIC_DET_IRQ_EN_W<0> {
         MIC_DET_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - MIC Detect Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn jack_in_irq_en(&mut self) -> JACK_IN_IRQ_EN_W<1> {
         JACK_IN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - MIC Detect Interrupt Set"]
     #[inline(always)]
+    #[must_use]
     pub fn jack_out_irq_en(&mut self) -> JACK_OUT_IRQ_EN_W<2> {
         JACK_OUT_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 3:5 - MDATA Threshold Debounce"]
     #[inline(always)]
+    #[must_use]
     pub fn mdata_threshold_debounce(&mut self) -> MDATA_THRESHOLD_DEBOUNCE_W<3> {
         MDATA_THRESHOLD_DEBOUNCE_W::new(self)
     }
     #[doc = "Bits 6:9 - Debounce when earphone plug in or pull out 125 ms to 2 s"]
     #[inline(always)]
+    #[must_use]
     pub fn hmic_n(&mut self) -> HMIC_N_W<6> {
         HMIC_N_W::new(self)
     }
     #[doc = "Bits 10:13 - Debounce when the MIC Key down or up.\n\n(HMIC_M + 1) sample data"]
     #[inline(always)]
+    #[must_use]
     pub fn hmic_m(&mut self) -> HMIC_M_W<10> {
         HMIC_M_W::new(self)
     }
     #[doc = "Bits 14:15 - HMIC Smooth Filter setting"]
     #[inline(always)]
+    #[must_use]
     pub fn hmic_sf(&mut self) -> HMIC_SF_W<14> {
         HMIC_SF_W::new(self)
     }
     #[doc = "Bits 16:20 - MIC DET EN Threshold Value"]
     #[inline(always)]
+    #[must_use]
     pub fn mdata_threshold(&mut self) -> MDATA_THRESHOLD_W<16> {
         MDATA_THRESHOLD_W::new(self)
     }
     #[doc = "Bits 21:22 - Down Sample Setting Select"]
     #[inline(always)]
+    #[must_use]
     pub fn hmic_sample_select(&mut self) -> HMIC_SAMPLE_SELECT_W<21> {
         HMIC_SAMPLE_SELECT_W::new(self)
     }
@@ -475,11 +484,10 @@ impl crate::Readable for HMIC_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hmic_ctrl::W](W) writer structure"]
 impl crate::Writable for HMIC_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hmic_ctrl to value 0x08"]
 impl crate::Resettable for HMIC_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x08
-    }
+    const RESET_VALUE: Self::Ux = 0x08;
 }

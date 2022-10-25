@@ -75,8 +75,5 @@ impl crate::Readable for IOMMU_LPG_INT_SPEC {
 }
 #[doc = "`reset()` method sets iommu_l%spg_int to value 0"]
 impl crate::Resettable for IOMMU_LPG_INT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

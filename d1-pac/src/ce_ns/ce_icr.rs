@@ -117,26 +117,31 @@ impl R {
 impl W {
     #[doc = "Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn task_irq_en<const O: u8>(&mut self) -> TASK_IRQ_EN_W<O> {
         TASK_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 0:3 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn task0_irq_en(&mut self) -> TASK_IRQ_EN_W<0> {
         TASK_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 1:4 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn task1_irq_en(&mut self) -> TASK_IRQ_EN_W<1> {
         TASK_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 2:5 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn task2_irq_en(&mut self) -> TASK_IRQ_EN_W<2> {
         TASK_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 3:6 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn task3_irq_en(&mut self) -> TASK_IRQ_EN_W<3> {
         TASK_IRQ_EN_W::new(self)
     }
@@ -159,11 +164,10 @@ impl crate::Readable for CE_ICR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ce_icr::W](W) writer structure"]
 impl crate::Writable for CE_ICR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ce_icr to value 0"]
 impl crate::Resettable for CE_ICR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

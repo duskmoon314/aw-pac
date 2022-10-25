@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - DeviceRemovable\n\nEach bit is dedicated to a port of the Root Hub. When cleared, the attached device is removable. When set, the attached device is not removable."]
     #[inline(always)]
+    #[must_use]
     pub fn device_removable(&mut self) -> DEVICE_REMOVABLE_W<0> {
         DEVICE_REMOVABLE_W::new(self)
     }
     #[doc = "Bits 16:31 - PortPowerControlMask\n\nEach bit indicates if a port is affected by a global power control command when PowerSwitchingMode is set. When set, the port's power state is only affected by per-port power control ( Set/ClearPortPower ). When cleared, the port is controlled by the global power switch ( Set/ClearGlobalPower ). If the device is configured to global switching mode ( PowerSwitchingMode = 0 ), this field is not valid."]
     #[inline(always)]
+    #[must_use]
     pub fn port_power_control_mask(&mut self) -> PORT_POWER_CONTROL_MASK_W<16> {
         PORT_POWER_CONTROL_MASK_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for HC_RH_DESCRIPTOR_B_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_rh_descriptor_b::W](W) writer structure"]
 impl crate::Writable for HC_RH_DESCRIPTOR_B_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_rh_descriptor_b to value 0"]
 impl crate::Resettable for HC_RH_DESCRIPTOR_B_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

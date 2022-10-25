@@ -40,8 +40,5 @@ impl crate::Readable for PRS_CH0_LINE_TIME_SPEC {
 }
 #[doc = "`reset()` method sets prs_ch%s0_line_time to value 0"]
 impl crate::Resettable for PRS_CH0_LINE_TIME_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

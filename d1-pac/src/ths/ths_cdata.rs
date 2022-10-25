@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Thermal sensor calibration data"]
     #[inline(always)]
+    #[must_use]
     pub fn ths_cdata(&mut self) -> THS_CDATA_W<0> {
         THS_CDATA_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for THS_CDATA_SPEC {
 #[doc = "`write(|w| ..)` method takes [ths_cdata::W](W) writer structure"]
 impl crate::Writable for THS_CDATA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ths_cdata to value 0x0800"]
 impl crate::Resettable for THS_CDATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0800
-    }
+    const RESET_VALUE: Self::Ux = 0x0800;
 }

@@ -98,31 +98,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - USB Interrupt Enable\n\nWhen this bit is 1, and the USBINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBINT bit"]
     #[inline(always)]
+    #[must_use]
     pub fn usb_interrupt_enable(&mut self) -> USB_INTERRUPT_ENABLE_W<0> {
         USB_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - USB Error Interrupt Enable\n\nWhen this bit is 1, and the USBERRINT bit in the USBSTS register is 1,the host controller will issue an interrupt at the next interrupt threshold.\n\nThe interrupt is acknowledged by software clearing the USBERRINT bit."]
     #[inline(always)]
+    #[must_use]
     pub fn usb_error_interrupt_enable(&mut self) -> USB_ERROR_INTERRUPT_ENABLE_W<1> {
         USB_ERROR_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Bit 2 - Port Change Interrupt Enable\n\nWhen this bit is 1, and the Port Chang Detect bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Port Chang Detect bit."]
     #[inline(always)]
+    #[must_use]
     pub fn port_change_interrupt_enable(&mut self) -> PORT_CHANGE_INTERRUPT_ENABLE_W<2> {
         PORT_CHANGE_INTERRUPT_ENABLE_W::new(self)
     }
     #[doc = "Bit 3 - Frame List Rollover Enable\n\nWhen this bit is 1, and the Frame List Rollover bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Frame List Rollover bit."]
     #[inline(always)]
+    #[must_use]
     pub fn frame_list_rollover_enable(&mut self) -> FRAME_LIST_ROLLOVER_ENABLE_W<3> {
         FRAME_LIST_ROLLOVER_ENABLE_W::new(self)
     }
     #[doc = "Bit 4 - Host System Error Enable\n\n When this bit is 1, and the Host System Error Status bit in the USBSTS register is 1, the host controller will issue an interrupt. The interrupt is acknowledged by software clearing the Host System Error bit."]
     #[inline(always)]
+    #[must_use]
     pub fn host_system_error_enable(&mut self) -> HOST_SYSTEM_ERROR_ENABLE_W<4> {
         HOST_SYSTEM_ERROR_ENABLE_W::new(self)
     }
     #[doc = "Bit 5 - Interrupt on Async Advance Enable\n\nWhen this bit is 1, and the Interrupt on Async Advance bit in the USBSTS register is 1, the host controller will issue an interrupt at the next interrupt threshold. The interrupt is acknowledged by software clearing the Interrupt on Async Advance bit."]
     #[inline(always)]
+    #[must_use]
     pub fn interrupt_on_async_advance_enable(&mut self) -> INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_W<5> {
         INTERRUPT_ON_ASYNC_ADVANCE_ENABLE_W::new(self)
     }
@@ -145,11 +151,10 @@ impl crate::Readable for USBINTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [usbintr::W](W) writer structure"]
 impl crate::Writable for USBINTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets usbintr to value 0"]
 impl crate::Resettable for USBINTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

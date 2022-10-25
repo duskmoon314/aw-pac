@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Specify the amplitude of the Cb burst. 8 bit 2's complement integer. Allowed range is from (-127) to 127."]
     #[inline(always)]
+    #[must_use]
     pub fn cb_burst_level(&mut self) -> CB_BURST_LEVEL_W<0> {
         CB_BURST_LEVEL_W::new(self)
     }
     #[doc = "Bits 8:15 - Specify the amplitude of the Cr burst. 8 bit 2's complement integer. Allowed range is from (-127) to 127."]
     #[inline(always)]
+    #[must_use]
     pub fn cr_burst_level(&mut self) -> CR_BURST_LEVEL_W<8> {
         CR_BURST_LEVEL_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for TVE_CBCR_LEVEL_GAIN_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_cbcr_level_gain::W](W) writer structure"]
 impl crate::Writable for TVE_CBCR_LEVEL_GAIN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_cbcr_level_gain to value 0x4f"]
 impl crate::Resettable for TVE_CBCR_LEVEL_GAIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x4f
-    }
+    const RESET_VALUE: Self::Ux = 0x4f;
 }

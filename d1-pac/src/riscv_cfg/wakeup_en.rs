@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Wakeup Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn wp_en(&mut self) -> WP_EN_W<0> {
         WP_EN_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for WAKEUP_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [wakeup_en::W](W) writer structure"]
 impl crate::Writable for WAKEUP_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets wakeup_en to value 0"]
 impl crate::Resettable for WAKEUP_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

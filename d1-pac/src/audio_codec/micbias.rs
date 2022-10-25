@@ -1096,91 +1096,109 @@ impl R {
 impl W {
     #[doc = "Bits 2:3 - MMIC BIAS Chopper Clock Select"]
     #[inline(always)]
+    #[must_use]
     pub fn mmic_bias_chopper_clk_sel(&mut self) -> MMIC_BIAS_CHOPPER_CLK_SEL_W<2> {
         MMIC_BIAS_CHOPPER_CLK_SEL_W::new(self)
     }
     #[doc = "Bit 4 - MMIC BIAS Chopper Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mmic_bias_chopper_en(&mut self) -> MMIC_BIAS_CHOPPER_EN_W<4> {
         MMIC_BIAS_CHOPPER_EN_W::new(self)
     }
     #[doc = "Bits 5:6 - MMICBIAS Voltage Level Select"]
     #[inline(always)]
+    #[must_use]
     pub fn mbiassel(&mut self) -> MBIASSEL_W<5> {
         MBIASSEL_W::new(self)
     }
     #[doc = "Bit 7 - Master Microphone Bias Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mmicbiasen(&mut self) -> MMICBIASEN_W<7> {
         MMICBIASEN_W::new(self)
     }
     #[doc = "Bits 10:11 - HMIC BIAS Chopper Clock Select"]
     #[inline(always)]
+    #[must_use]
     pub fn hmic_bias_chopper_clk_sel(&mut self) -> HMIC_BIAS_CHOPPER_CLK_SEL_W<10> {
         HMIC_BIAS_CHOPPER_CLK_SEL_W::new(self)
     }
     #[doc = "Bit 12 - HMIC BIAS Chopper Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hmic_bias_chopper_en(&mut self) -> HMIC_BIAS_CHOPPER_EN_W<12> {
         HMIC_BIAS_CHOPPER_EN_W::new(self)
     }
     #[doc = "Bits 13:14 - HMICBIAS Voltage Level Select"]
     #[inline(always)]
+    #[must_use]
     pub fn hbiassel(&mut self) -> HBIASSEL_W<13> {
         HBIASSEL_W::new(self)
     }
     #[doc = "Bit 15 - Headphone Microphone Bias Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hmicbiasen(&mut self) -> HMICBIASEN_W<15> {
         HMICBIASEN_W::new(self)
     }
     #[doc = "Bit 16 - When this bit is 1and AUTOPLEN is 0, the MICDET is pulled down to GND."]
     #[inline(always)]
+    #[must_use]
     pub fn micdetpl(&mut self) -> MICDETPL_W<16> {
         MICDETPL_W::new(self)
     }
     #[doc = "Bit 17 - Enable the function to auto pull low MICDET when jack removal"]
     #[inline(always)]
+    #[must_use]
     pub fn autoplen(&mut self) -> AUTOPLEN_W<17> {
         AUTOPLEN_W::new(self)
     }
     #[doc = "Bit 18 - MIC Detect Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn det_mode(&mut self) -> DET_MODE_W<18> {
         DET_MODE_W::new(self)
     }
     #[doc = "Bit 19 - When this bit is 0, HBIAS MICADC is controlled by registor"]
     #[inline(always)]
+    #[must_use]
     pub fn popfree(&mut self) -> POPFREE_W<19> {
         POPFREE_W::new(self)
     }
     #[doc = "Bit 20 - Microphone detect ADC enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micadcen(&mut self) -> MICADCEN_W<20> {
         MICADCEN_W::new(self)
     }
     #[doc = "Bits 21:22 - Select the delay time to pull low the micdet when jack removal"]
     #[inline(always)]
+    #[must_use]
     pub fn seldetadcdy(&mut self) -> SELDETADCDY_W<21> {
         SELDETADCDY_W::new(self)
     }
     #[doc = "Bit 23 - Jack detect enable"]
     #[inline(always)]
+    #[must_use]
     pub fn jackdeten(&mut self) -> JACKDETEN_W<23> {
         JACKDETEN_W::new(self)
     }
     #[doc = "Bits 24:25 - Select the time to enable HBIAS before MICADC work"]
     #[inline(always)]
+    #[must_use]
     pub fn seldetadcbf(&mut self) -> SELDETADCBF_W<24> {
         SELDETADCBF_W::new(self)
     }
     #[doc = "Bits 26:27 - Select debounce time when jack removal"]
     #[inline(always)]
+    #[must_use]
     pub fn seldetadcdb(&mut self) -> SELDETADCDB_W<26> {
         SELDETADCDB_W::new(self)
     }
     #[doc = "Bits 28:30 - Select sample interval of the ADC sample\\\\ 2 ^ (SELDETADCFS + 1) ms"]
     #[inline(always)]
+    #[must_use]
     pub fn seldetadcfs(&mut self) -> SELDETADCFS_W<28> {
         SELDETADCFS_W::new(self)
     }
@@ -1203,11 +1221,10 @@ impl crate::Readable for MICBIAS_SPEC {
 #[doc = "`write(|w| ..)` method takes [micbias::W](W) writer structure"]
 impl crate::Writable for MICBIAS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets micbias to value 0x4000_3030"]
 impl crate::Resettable for MICBIAS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x4000_3030
-    }
+    const RESET_VALUE: Self::Ux = 0x4000_3030;
 }

@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Internal OSC 32K Clock Prescalar value N.\n\nThe clock output = Internal RC/32/N."]
     #[inline(always)]
+    #[must_use]
     pub fn intosc_32k_clk_prescal(&mut self) -> INTOSC_32K_CLK_PRESCAL_W<0> {
         INTOSC_32K_CLK_PRESCAL_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for INTOSC_CLK_PRESCAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [intosc_clk_prescal::W](W) writer structure"]
 impl crate::Writable for INTOSC_CLK_PRESCAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets intosc_clk_prescal to value 0x0f"]
 impl crate::Resettable for INTOSC_CLK_PRESCAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0f
-    }
+    const RESET_VALUE: Self::Ux = 0x0f;
 }

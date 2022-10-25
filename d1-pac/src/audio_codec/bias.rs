@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Bias Current Register Setting Data"]
     #[inline(always)]
+    #[must_use]
     pub fn biasdata(&mut self) -> BIASDATA_W<0> {
         BIASDATA_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for BIAS_SPEC {
 #[doc = "`write(|w| ..)` method takes [bias::W](W) writer structure"]
 impl crate::Writable for BIAS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets bias to value 0x80"]
 impl crate::Resettable for BIAS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

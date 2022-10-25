@@ -97,6 +97,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:25 - B CR CHANNE DATA INV"]
     #[inline(always)]
+    #[must_use]
     pub fn b_cr_ch_data_inv(&mut self) -> B_CR_CH_DATA_INV_W<16> {
         B_CR_CH_DATA_INV_W::new(self)
     }
@@ -119,11 +120,10 @@ impl crate::Readable for TV_DATA_IO_POL1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_data_io_pol1::W](W) writer structure"]
 impl crate::Writable for TV_DATA_IO_POL1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_data_io_pol1 to value 0"]
 impl crate::Resettable for TV_DATA_IO_POL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

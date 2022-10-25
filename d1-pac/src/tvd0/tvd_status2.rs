@@ -54,11 +54,10 @@ impl crate::Readable for TVD_STATUS2_SPEC {
 #[doc = "`write(|w| ..)` method takes [tvd_status2::W](W) writer structure"]
 impl crate::Writable for TVD_STATUS2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tvd_status2 to value 0"]
 impl crate::Resettable for TVD_STATUS2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

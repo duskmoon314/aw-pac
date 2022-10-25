@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn start(&mut self) -> START_W<0> {
         START_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for RXDMA_STR_SPEC {
 #[doc = "`write(|w| ..)` method takes [rxdma_str::W](W) writer structure"]
 impl crate::Writable for RXDMA_STR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets rxdma_str to value 0"]
 impl crate::Resettable for RXDMA_STR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -56,6 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:31 - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
     #[inline(always)]
+    #[must_use]
     pub fn ehcd_31_4(&mut self) -> EHCD_31_4_W<4> {
         EHCD_31_4_W::new(self)
     }
@@ -78,11 +79,10 @@ impl crate::Readable for HC_CONTROL_HEAD_ED_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_control_head_ed::W](W) writer structure"]
 impl crate::Writable for HC_CONTROL_HEAD_ED_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_control_head_ed to value 0"]
 impl crate::Resettable for HC_CONTROL_HEAD_ED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

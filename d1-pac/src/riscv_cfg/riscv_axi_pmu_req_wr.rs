@@ -24,8 +24,5 @@ impl crate::Readable for RISCV_AXI_PMU_REQ_WR_SPEC {
 }
 #[doc = "`reset()` method sets riscv_axi_pmu_req_wr to value 0"]
 impl crate::Resettable for RISCV_AXI_PMU_REQ_WR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -66,16 +66,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Current second Range from 0 to 59."]
     #[inline(always)]
+    #[must_use]
     pub fn second(&mut self) -> SECOND_W<0> {
         SECOND_W::new(self)
     }
     #[doc = "Bits 8:13 - Current minute Range from 0 to 59."]
     #[inline(always)]
+    #[must_use]
     pub fn minute(&mut self) -> MINUTE_W<8> {
         MINUTE_W::new(self)
     }
     #[doc = "Bits 16:20 - Current hour Range from 0 to 23."]
     #[inline(always)]
+    #[must_use]
     pub fn hour(&mut self) -> HOUR_W<16> {
         HOUR_W::new(self)
     }
@@ -98,11 +101,10 @@ impl crate::Readable for ALARM0_CUR_VLU_SPEC {
 #[doc = "`write(|w| ..)` method takes [alarm0_cur_vlu::W](W) writer structure"]
 impl crate::Writable for ALARM0_CUR_VLU_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets alarm0_cur_vlu to value 0"]
 impl crate::Resettable for ALARM0_CUR_VLU_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

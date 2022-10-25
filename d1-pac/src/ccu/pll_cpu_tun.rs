@@ -102,31 +102,37 @@ impl R {
 impl W {
     #[doc = "Bit 7 - PLL-REG-OD1 for verify"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_reg_od1(&mut self) -> PLL_REG_OD1_W<7> {
         PLL_REG_OD1_W::new(self)
     }
     #[doc = "Bits 8:14 - PLL-B-IN \\[6:0\\] for verify"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_b_in(&mut self) -> PLL_B_IN_W<8> {
         PLL_B_IN_W::new(self)
     }
     #[doc = "Bit 15 - PLL-REG-OD0 for verify"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_reg_od(&mut self) -> PLL_REG_OD_W<15> {
         PLL_REG_OD_W::new(self)
     }
     #[doc = "Bits 16:22 - Counter initial control"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_cnt_int(&mut self) -> PLL_CNT_INT_W<16> {
         PLL_CNT_INT_W::new(self)
     }
     #[doc = "Bits 24:26 - KVCO gain control"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_vco_gain(&mut self) -> PLL_VCO_GAIN_W<24> {
         PLL_VCO_GAIN_W::new(self)
     }
     #[doc = "Bits 28:30 - VCO range control"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_vco(&mut self) -> PLL_VCO_W<28> {
         PLL_VCO_W::new(self)
     }
@@ -149,11 +155,10 @@ impl crate::Readable for PLL_CPU_TUN_SPEC {
 #[doc = "`write(|w| ..)` method takes [pll_cpu_tun::W](W) writer structure"]
 impl crate::Writable for PLL_CPU_TUN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pll_cpu_tun to value 0"]
 impl crate::Resettable for PLL_CPU_TUN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

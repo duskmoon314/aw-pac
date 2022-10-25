@@ -170,21 +170,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - TX Channel/Slot number between CPU/DMA and RXFIFO\n\nChannel or slot = N + 1"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_slot_num(&mut self) -> TX_SLOT_NUM_W<0> {
         TX_SLOT_NUM_W::new(self)
     }
     #[doc = "Bits 4:7 - RX Channel/Slot number between CPU/DMA and RXFIFO\n\nChannel or slot = N + 1"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_slot_num(&mut self) -> RX_SLOT_NUM_W<4> {
         RX_SLOT_NUM_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_state(&mut self) -> TX_STATE_W<8> {
         TX_STATE_W::new(self)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_slot_hiz(&mut self) -> TX_SLOT_HIZ_W<9> {
         TX_SLOT_HIZ_W::new(self)
     }
@@ -207,11 +211,10 @@ impl crate::Readable for I2S_PCM_CHCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_chcfg::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_CHCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_chcfg to value 0"]
 impl crate::Resettable for I2S_PCM_CHCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

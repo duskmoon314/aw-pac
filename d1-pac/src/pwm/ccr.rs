@@ -130,26 +130,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Inverse the signal input from capture channel before 16-bit counter of capture channel."]
     #[inline(always)]
+    #[must_use]
     pub fn capinv(&mut self) -> CAPINV_W<0> {
         CAPINV_W::new(self)
     }
     #[doc = "Bit 1 - Falling edge capture trigger enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cfte(&mut self) -> CFTE_W<1> {
         CFTE_W::new(self)
     }
     #[doc = "Bit 2 - Rising edge capture trigger enable"]
     #[inline(always)]
+    #[must_use]
     pub fn crte(&mut self) -> CRTE_W<2> {
         CRTE_W::new(self)
     }
     #[doc = "Bit 3 - When the capture channel captures a falling edge, the current value of the 16-bit up-counter is latched to CFLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
     #[inline(always)]
+    #[must_use]
     pub fn cflf(&mut self) -> CFLF_W<3> {
         CFLF_W::new(self)
     }
     #[doc = "Bit 4 - When the capture channel captures a rising edge, the current value of the 16-bit up-counter is latched to CRLR, and then this bit is set 1 by hardware.\n\nWrite 1 to clear this bit."]
     #[inline(always)]
+    #[must_use]
     pub fn crlf(&mut self) -> CRLF_W<4> {
         CRLF_W::new(self)
     }
@@ -172,11 +177,10 @@ impl crate::Readable for CCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ccr::W](W) writer structure"]
 impl crate::Writable for CCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x18;
 }
 #[doc = "`reset()` method sets ccr%s to value 0"]
 impl crate::Resettable for CCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

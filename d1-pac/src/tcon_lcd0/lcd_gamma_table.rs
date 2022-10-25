@@ -69,16 +69,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Blue Component"]
     #[inline(always)]
+    #[must_use]
     pub fn blue_comp(&mut self) -> BLUE_COMP_W<0> {
         BLUE_COMP_W::new(self)
     }
     #[doc = "Bits 8:15 - Green Component"]
     #[inline(always)]
+    #[must_use]
     pub fn green_comp(&mut self) -> GREEN_COMP_W<8> {
         GREEN_COMP_W::new(self)
     }
     #[doc = "Bits 16:23 - Red Component"]
     #[inline(always)]
+    #[must_use]
     pub fn red_comp(&mut self) -> RED_COMP_W<16> {
         RED_COMP_W::new(self)
     }
@@ -101,11 +104,10 @@ impl crate::Readable for LCD_GAMMA_TABLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_gamma_table::W](W) writer structure"]
 impl crate::Writable for LCD_GAMMA_TABLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_gamma_table%s to value 0"]
 impl crate::Resettable for LCD_GAMMA_TABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

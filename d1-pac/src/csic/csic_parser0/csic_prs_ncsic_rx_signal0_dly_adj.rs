@@ -79,21 +79,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Pclk_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
+    #[must_use]
     pub fn pclk_dly(&mut self) -> PCLK_DLY_W<0> {
         PCLK_DLY_W::new(self)
     }
     #[doc = "Bits 8:12 - Hsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
+    #[must_use]
     pub fn hsync_dly(&mut self) -> HSYNC_DLY_W<8> {
         HSYNC_DLY_W::new(self)
     }
     #[doc = "Bits 16:20 - Vsync_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
+    #[must_use]
     pub fn vsync_dly(&mut self) -> VSYNC_DLY_W<16> {
         VSYNC_DLY_W::new(self)
     }
     #[doc = "Bits 24:28 - Filed_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
+    #[must_use]
     pub fn filed_dly(&mut self) -> FILED_DLY_W<24> {
         FILED_DLY_W::new(self)
     }
@@ -116,11 +120,10 @@ impl crate::Readable for CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_prs_ncsic_rx_signal0_dly_adj::W](W) writer structure"]
 impl crate::Writable for CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_prs_ncsic_rx_signal0_dly_adj to value 0"]
 impl crate::Resettable for CSIC_PRS_NCSIC_RX_SIGNAL0_DLY_ADJ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The slope of the expander, which is determined by the equation that Ke = 1/R. R is the ratio of the expander, which is always an integer and the ke must larger than 50. The format is 8.24. (The default value is <1:5>)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_hke(&mut self) -> ADC_DRC_HKE_W<0> {
         ADC_DRC_HKE_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_HKE_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_hke::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_HKE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_hke to value 0x0500"]
 impl crate::Resettable for AC_ADC_DRC_HKE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0500
-    }
+    const RESET_VALUE: Self::Ux = 0x0500;
 }

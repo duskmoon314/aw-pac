@@ -588,51 +588,61 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Flush Receive Frames"]
     #[inline(always)]
+    #[must_use]
     pub fn flush_rx_frm(&mut self) -> FLUSH_RX_FRM_W<0> {
         FLUSH_RX_FRM_W::new(self)
     }
     #[doc = "Bit 1 - Receive Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_md(&mut self) -> RX_MD_W<1> {
         RX_MD_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_runt_frm(&mut self) -> RX_RUNT_FRM_W<2> {
         RX_RUNT_FRM_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_err_frm(&mut self) -> RX_ERR_FRM_W<3> {
         RX_ERR_FRM_W::new(self)
     }
     #[doc = "Bits 4:5 - Threshold for RX DMA FIFO Start"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_th(&mut self) -> RX_TH_W<4> {
         RX_TH_W::new(self)
     }
     #[doc = "Bits 20:21 - Threshold for Activating Flow Control"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_flow_ctl_th_act(&mut self) -> RX_FLOW_CTL_TH_ACT_W<20> {
         RX_FLOW_CTL_TH_ACT_W::new(self)
     }
     #[doc = "Bits 22:23 - Threshold for Deactivating Flow Control"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_flow_ctl_th_deact(&mut self) -> RX_FLOW_CTL_TH_DEACT_W<22> {
         RX_FLOW_CTL_TH_DEACT_W::new(self)
     }
     #[doc = "Bit 24 - Receive FIFO Flow Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_fifo_flow_ctl(&mut self) -> RX_FIFO_FLOW_CTL_W<24> {
         RX_FIFO_FLOW_CTL_W::new(self)
     }
     #[doc = "Bit 30 - Receive DMA Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_ema_en(&mut self) -> RX_EMA_EN_W<30> {
         RX_EMA_EN_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_dma_start(&mut self) -> RX_DMA_START_W<31> {
         RX_DMA_START_W::new(self)
     }
@@ -655,11 +665,10 @@ impl crate::Readable for EMAC_RX_CTL1_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_rx_ctl1::W](W) writer structure"]
 impl crate::Writable for EMAC_RX_CTL1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_rx_ctl1 to value 0"]
 impl crate::Resettable for EMAC_RX_CTL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

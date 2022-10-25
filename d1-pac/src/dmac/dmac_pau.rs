@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Pause the DMA Channel Transfer Data"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_pause(&mut self) -> DMA_PAUSE_W<0> {
         DMA_PAUSE_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for DMAC_PAU_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmac_pau::W](W) writer structure"]
 impl crate::Writable for DMAC_PAU_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dmac_pau%s to value 0"]
 impl crate::Resettable for DMAC_PAU_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

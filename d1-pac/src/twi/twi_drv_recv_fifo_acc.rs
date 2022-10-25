@@ -33,8 +33,5 @@ impl crate::Readable for TWI_DRV_RECV_FIFO_ACC_SPEC {
 }
 #[doc = "`reset()` method sets twi_drv_recv_fifo_acc to value 0"]
 impl crate::Resettable for TWI_DRV_RECV_FIFO_ACC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

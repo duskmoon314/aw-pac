@@ -205,16 +205,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit Packet End Interrupt Enable for Cyclical Pulse / Transmitter FIFO Underrun Interrupt Enable for Non-cyclical Pulse"]
     #[inline(always)]
+    #[must_use]
     pub fn tpei_tui_en(&mut self) -> TPEI_TUI_EN_W<0> {
         TPEI_TUI_EN_W::new(self)
     }
     #[doc = "Bit 1 - TX FIFO Available Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tai_en(&mut self) -> TAI_EN_W<1> {
         TAI_EN_W::new(self)
     }
     #[doc = "Bit 2 - TX FIFO DMA Enable\n\nWhen it is set to '1', the TX FIFO DRQ is asserted if the number of the transmitting data in the FIFO is less than the RAL. The DRQ is de-asserted when the condition fails."]
     #[inline(always)]
+    #[must_use]
     pub fn drq_en(&mut self) -> DRQ_EN_W<2> {
         DRQ_EN_W::new(self)
     }
@@ -237,11 +240,10 @@ impl crate::Readable for CIR_TXINT_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_txint::W](W) writer structure"]
 impl crate::Writable for CIR_TXINT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_txint to value 0"]
 impl crate::Resettable for CIR_TXINT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

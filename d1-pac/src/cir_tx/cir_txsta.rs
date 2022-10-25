@@ -197,11 +197,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmitter Packet End Flag for Cyclical Pulse / TUR Transmitter FIFO Underrun Flag for Non-cyclical Pulse"]
     #[inline(always)]
+    #[must_use]
     pub fn tpe_tur(&mut self) -> TPE_TUR_W<0> {
         TPE_TUR_W::new(self)
     }
     #[doc = "Bit 1 - TX FIFO Available Interrupt Flag"]
     #[inline(always)]
+    #[must_use]
     pub fn tai(&mut self) -> TAI_W<1> {
         TAI_W::new(self)
     }
@@ -224,11 +226,10 @@ impl crate::Readable for CIR_TXSTA_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_txsta::W](W) writer structure"]
 impl crate::Writable for CIR_TXSTA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x01;
 }
 #[doc = "`reset()` method sets cir_txsta to value 0x02"]
 impl crate::Resettable for CIR_TXSTA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02
-    }
+    const RESET_VALUE: Self::Ux = 0x02;
 }

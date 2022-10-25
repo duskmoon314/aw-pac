@@ -56,6 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:31 - This is advanced to the next ED after the HC has served the present one. HC continues processing the list from where it left off in the last Frame. When it reaches the end of the Bulk list, HC checks the ControlListFilled of HcControl. If set, it copies the content of HcBulkHeadED to HcBulkCurrentED and clears the bit. If it is not set, it does nothing. HCD is only allowed to modify this register when the BulkListEnable of HcControl is cleared. When set, the HCD only reads the instantaneous value of this register. This is initially set to zero to indicate the end of the Bulk list."]
     #[inline(always)]
+    #[must_use]
     pub fn bced_31_4(&mut self) -> BCED_31_4_W<4> {
         BCED_31_4_W::new(self)
     }
@@ -78,11 +79,10 @@ impl crate::Readable for HC_BULK_CURRENT_ED_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_bulk_current_ed::W](W) writer structure"]
 impl crate::Writable for HC_BULK_CURRENT_ED_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_bulk_current_ed to value 0"]
 impl crate::Resettable for HC_BULK_CURRENT_ED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -207,16 +207,19 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn va_config_start(&mut self) -> VA_CONFIG_START_W<0> {
         VA_CONFIG_START_W::new(self)
     }
     #[doc = "Bit 8 - Virtual Address Configuration"]
     #[inline(always)]
+    #[must_use]
     pub fn va_config(&mut self) -> VA_CONFIG_W<8> {
         VA_CONFIG_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn mode_sel(&mut self) -> MODE_SEL_W<31> {
         MODE_SEL_W::new(self)
     }
@@ -239,11 +242,10 @@ impl crate::Readable for IOMMU_VA_CONFIG_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_va_config::W](W) writer structure"]
 impl crate::Writable for IOMMU_VA_CONFIG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_va_config to value 0"]
 impl crate::Resettable for IOMMU_VA_CONFIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

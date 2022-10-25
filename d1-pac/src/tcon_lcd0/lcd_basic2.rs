@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Tvbp = (VBP +1) * Thsync"]
     #[inline(always)]
+    #[must_use]
     pub fn vbp(&mut self) -> VBP_W<0> {
         VBP_W::new(self)
     }
     #[doc = "Bits 16:28 - TVT = (VT)/2 * Thsync\n\nVT/2 >= (VBP+1 ) + (Y+1) +2"]
     #[inline(always)]
+    #[must_use]
     pub fn vt(&mut self) -> VT_W<16> {
         VT_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for LCD_BASIC2_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_basic2::W](W) writer structure"]
 impl crate::Writable for LCD_BASIC2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_basic2 to value 0"]
 impl crate::Resettable for LCD_BASIC2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

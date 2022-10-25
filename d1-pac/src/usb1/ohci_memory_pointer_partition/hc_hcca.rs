@@ -55,6 +55,7 @@ impl R {
 impl W {
     #[doc = "Bits 8:31 - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
     #[inline(always)]
+    #[must_use]
     pub fn hcca_31_8(&mut self) -> HCCA_31_8_W<8> {
         HCCA_31_8_W::new(self)
     }
@@ -77,11 +78,10 @@ impl crate::Readable for HC_HCCA_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_hcca::W](W) writer structure"]
 impl crate::Writable for HC_HCCA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_hcca to value 0"]
 impl crate::Resettable for HC_HCCA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

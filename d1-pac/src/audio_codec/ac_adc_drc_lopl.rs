@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The output of the limiter which is determined by equation OPT/6.0206. The format is 8.24. (The default value is -25 dB)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_lopl(&mut self) -> ADC_DRC_LOPL_W<0> {
         ADC_DRC_LOPL_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_LOPL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_lopl::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_LOPL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_lopl to value 0xfba7"]
 impl crate::Resettable for AC_ADC_DRC_LOPL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xfba7
-    }
+    const RESET_VALUE: Self::Ux = 0xfba7;
 }

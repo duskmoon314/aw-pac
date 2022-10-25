@@ -283,26 +283,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit Block Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn txen(&mut self) -> TXEN_W<0> {
         TXEN_W::new(self)
     }
     #[doc = "Bit 1 - Transmit Reset\n\nWhen this bit is set, the transmitting is reset. The FIFO will be flushed, the TIC filed and the CSS field will be cleared during Transmit Reset. This field will automatically be cleared when the Transmit Reset is finished, and the CIR transmitter will state Idle."]
     #[inline(always)]
+    #[must_use]
     pub fn tr(&mut self) -> TR_W<1> {
         TR_W::new(self)
     }
     #[doc = "Bit 2 - Transmit Pulse Polarity Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn tppi(&mut self) -> TPPI_W<2> {
         TPPI_W::new(self)
     }
     #[doc = "Bits 5:6 - Duty ratio of modulated carrier is high level/low level."]
     #[inline(always)]
+    #[must_use]
     pub fn drmc(&mut self) -> DRMC_W<5> {
         DRMC_W::new(self)
     }
     #[doc = "Bit 7 - Internal Modulation Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ims(&mut self) -> IMS_W<7> {
         IMS_W::new(self)
     }
@@ -325,11 +330,10 @@ impl crate::Readable for CIR_TGLR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_tglr::W](W) writer structure"]
 impl crate::Writable for CIR_TGLR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_tglr to value 0"]
 impl crate::Resettable for CIR_TGLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

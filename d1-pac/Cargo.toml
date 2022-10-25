@@ -1,6 +1,6 @@
 [package]
 name = "d1-pac"
-version = "0.0.29"
+version = "0.0.30"
 edition = "2021"
 authors = ["duskmoon (Campbell He) <kp.campbell.he@duskmoon314.com>"]
 description = "Peripheral access API for Allwinner D1 SoC generated from unofficial SVD file"
@@ -16,6 +16,10 @@ include = ["src/**/*", "README.md", "device.x", "build.rs"]
 bare-metal = "1.0.0"
 riscv = "0.9.0"
 vcell = "0.1.3"
+
+[dependencies.critical-section]
+optional = true
+version = "1.0"
 
 [dependencies.riscv-rt]
 optional = true

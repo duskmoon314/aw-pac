@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Specify the total number of lines in a video frame. 11 bits unsigned integer. Allowed range is 0 to 2048. For interlaced video: When NTSC, and FirstVideoLine is greater than 20, then NumLines is restricted to be greater than 2*(FirstVideoLine+18).\n\nWhen NTSC, and FirstVideoLine is not greater than 20, then NumLines is restricted to be greater than 77. When PAL, and FirstVideoLine is greater than 22, then NumLines is restricted to be greater than 2*(FirstVideoLine+18). When PAL, and FirstVideoLine is not greater than 22, then NumLines is restricted to be greater than 81.\n\nIf NumLines is even, then it is restricted to be divisible by 4. If NumLines is odd, then it is restricted to be divisible by 4 with a remainder of 1."]
     #[inline(always)]
+    #[must_use]
     pub fn num_lines(&mut self) -> NUM_LINES_W<0> {
         NUM_LINES_W::new(self)
     }
     #[doc = "Bits 16:23 - Specify the index of the first line in a field/frame to have active video. 8 bits unsigned integer.\n\nFor interlaced video: When VSync5=B'0', FirstVideoLine is restricted to be greater than 7. When VSync5=B'1', FirstVideoLine is restricted to be greater than 9."]
     #[inline(always)]
+    #[must_use]
     pub fn first_video_line(&mut self) -> FIRST_VIDEO_LINE_W<16> {
         FIRST_VIDEO_LINE_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for TVE_LINE_NUMBER_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_line_number::W](W) writer structure"]
 impl crate::Writable for TVE_LINE_NUMBER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_line_number to value 0x0016_020d"]
 impl crate::Resettable for TVE_LINE_NUMBER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0016_020d
-    }
+    const RESET_VALUE: Self::Ux = 0x0016_020d;
 }

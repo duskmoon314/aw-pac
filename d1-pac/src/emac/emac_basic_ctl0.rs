@@ -221,16 +221,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - EMAC Transfer Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn duplex(&mut self) -> DUPLEX_W<0> {
         DUPLEX_W::new(self)
     }
     #[doc = "Bit 1 - EMAC Loopback Mode For Test"]
     #[inline(always)]
+    #[must_use]
     pub fn loopback(&mut self) -> LOOPBACK_W<1> {
         LOOPBACK_W::new(self)
     }
     #[doc = "Bits 2:3 - EMAC Working Speed"]
     #[inline(always)]
+    #[must_use]
     pub fn speed(&mut self) -> SPEED_W<2> {
         SPEED_W::new(self)
     }
@@ -253,11 +256,10 @@ impl crate::Readable for EMAC_BASIC_CTL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_basic_ctl0::W](W) writer structure"]
 impl crate::Writable for EMAC_BASIC_CTL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_basic_ctl0 to value 0"]
 impl crate::Resettable for EMAC_BASIC_CTL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -25,6 +25,7 @@ pub type TX_DATA_W<'a, const O: u8> =
 impl W {
     #[doc = "Bits 0:31 - Write the transmitting left and right channel sample data to this register one by one. Write the left channel sample data first and then the right channel sample."]
     #[inline(always)]
+    #[must_use]
     pub fn tx_data(&mut self) -> TX_DATA_W<0> {
         TX_DATA_W::new(self)
     }
@@ -43,11 +44,10 @@ impl crate::RegisterSpec for AC_DAC_TXDATA_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_txdata::W](W) writer structure"]
 impl crate::Writable for AC_DAC_TXDATA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_txdata to value 0"]
 impl crate::Resettable for AC_DAC_TXDATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

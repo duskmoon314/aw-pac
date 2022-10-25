@@ -33,8 +33,5 @@ impl crate::Readable for RBR_SPEC {
 }
 #[doc = "`reset()` method sets rbr to value 0"]
 impl crate::Resettable for RBR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

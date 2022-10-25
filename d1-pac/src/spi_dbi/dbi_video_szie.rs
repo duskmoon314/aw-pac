@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:10"]
     #[inline(always)]
+    #[must_use]
     pub fn h_size(&mut self) -> H_SIZE_W<0> {
         H_SIZE_W::new(self)
     }
     #[doc = "Bits 16:26"]
     #[inline(always)]
+    #[must_use]
     pub fn v_size(&mut self) -> V_SIZE_W<16> {
         V_SIZE_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for DBI_VIDEO_SZIE_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbi_video_szie::W](W) writer structure"]
 impl crate::Writable for DBI_VIDEO_SZIE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dbi_video_szie to value 0"]
 impl crate::Resettable for DBI_VIDEO_SZIE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

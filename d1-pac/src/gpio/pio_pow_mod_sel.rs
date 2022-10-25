@@ -171,36 +171,43 @@ impl R {
 impl W {
     #[doc = "PX_POWER POWER MODE Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn p_pwr_mod_sel<const O: u8>(&mut self) -> P_PWR_MOD_SEL_W<O> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 2 - PX_POWER POWER MODE Select"]
     #[inline(always)]
+    #[must_use]
     pub fn p_c_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<2> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 3 - PX_POWER POWER MODE Select"]
     #[inline(always)]
+    #[must_use]
     pub fn p_d_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<3> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 4 - PX_POWER POWER MODE Select"]
     #[inline(always)]
+    #[must_use]
     pub fn p_e_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<4> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 5 - PX_POWER POWER MODE Select"]
     #[inline(always)]
+    #[must_use]
     pub fn p_f_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<5> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 6 - PX_POWER POWER MODE Select"]
     #[inline(always)]
+    #[must_use]
     pub fn p_g_pwr_mod_sel(&mut self) -> P_PWR_MOD_SEL_W<6> {
         P_PWR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 12 - VCC_IO POWER MODE Select"]
     #[inline(always)]
+    #[must_use]
     pub fn vcc_io_pwr_mod_sel(&mut self) -> VCC_IO_PWR_MOD_SEL_W<12> {
         VCC_IO_PWR_MOD_SEL_W::new(self)
     }
@@ -223,11 +230,10 @@ impl crate::Readable for PIO_POW_MOD_SEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pio_pow_mod_sel::W](W) writer structure"]
 impl crate::Writable for PIO_POW_MOD_SEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pio_pow_mod_sel to value 0"]
 impl crate::Resettable for PIO_POW_MOD_SEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

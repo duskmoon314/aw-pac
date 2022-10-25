@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
+    #[must_use]
     pub fn data_count(&mut self) -> DATA_COUNT_W<0> {
         DATA_COUNT_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for RXDMA_DCNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [rxdma_dcnt::W](W) writer structure"]
 impl crate::Writable for RXDMA_DCNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets rxdma_dcnt to value 0"]
 impl crate::Resettable for RXDMA_DCNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

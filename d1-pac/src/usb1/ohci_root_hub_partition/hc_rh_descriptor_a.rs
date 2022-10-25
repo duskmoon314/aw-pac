@@ -287,26 +287,31 @@ impl R {
 impl W {
     #[doc = "Bit 8 - NoPowerSwithcing\n\nThese bits are used to specify whether power switching is supported or ports are always powered. It is implementation- specific. When this bit is cleared, the PowerSwitchingMode specifies global or per-port switching."]
     #[inline(always)]
+    #[must_use]
     pub fn no_power_swithcing(&mut self) -> NO_POWER_SWITHCING_W<8> {
         NO_POWER_SWITHCING_W::new(self)
     }
     #[doc = "Bit 9 - PowerSwitchingMode\n\nThis bit is used to specify how the power switching of the Root Hub ports is controlled. It is implementation-specific. This field is only valid if the NoPowerSwitching field is cleared."]
     #[inline(always)]
+    #[must_use]
     pub fn power_switching_mode(&mut self) -> POWER_SWITCHING_MODE_W<9> {
         POWER_SWITCHING_MODE_W::new(self)
     }
     #[doc = "Bit 11 - OverCurrentProtectionMode\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. At reset, these fields should reflect the same mode as PowerSwitchingMode. This field is valid only if the NoOverCurrentProtection field is cleared. 0 Over-current status is reported collectively for all downstream ports. 1 Over-current status is reported on per-port basis."]
     #[inline(always)]
+    #[must_use]
     pub fn over_current_protection_mode(&mut self) -> OVER_CURRENT_PROTECTION_MODE_W<11> {
         OVER_CURRENT_PROTECTION_MODE_W::new(self)
     }
     #[doc = "Bit 12 - NoOverCurrentProtection\n\nThis bit describes how the overcurrent status for the Root Hub ports are reported. When this bit is cleared, the OverCurrentProtectionMode field specifies global or per-port reporting."]
     #[inline(always)]
+    #[must_use]
     pub fn no_over_current_protection(&mut self) -> NO_OVER_CURRENT_PROTECTION_W<12> {
         NO_OVER_CURRENT_PROTECTION_W::new(self)
     }
     #[doc = "Bits 24:31 - PowerOnToPowerGoodTime\\[POTPGT\\]\n\nThis byte specifies the duration HCD has to wait before accessing a powered-on port of the Root Hub. It is implementation-specific. The unit of time is 2 ms. The duration is calculated as POTPGT * 2ms."]
     #[inline(always)]
+    #[must_use]
     pub fn power_on_to_power_good_time(&mut self) -> POWER_ON_TO_POWER_GOOD_TIME_W<24> {
         POWER_ON_TO_POWER_GOOD_TIME_W::new(self)
     }
@@ -329,11 +334,10 @@ impl crate::Readable for HC_RH_DESCRIPTOR_A_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_rh_descriptor_a::W](W) writer structure"]
 impl crate::Writable for HC_RH_DESCRIPTOR_A_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_rh_descriptor_a to value 0x0200_1201"]
 impl crate::Resettable for HC_RH_DESCRIPTOR_A_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0200_1201
-    }
+    const RESET_VALUE: Self::Ux = 0x0200_1201;
 }

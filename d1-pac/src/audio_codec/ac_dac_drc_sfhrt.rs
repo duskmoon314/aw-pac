@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - The gain smooth filter release time parameter setting, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 200 ms)"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_sfhrt(&mut self) -> DAC_DRC_SFHRT_W<0> {
         DAC_DRC_SFHRT_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_DAC_DRC_SFHRT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_sfhrt::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_SFHRT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_sfhrt to value 0"]
 impl crate::Resettable for AC_DAC_DRC_SFHRT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

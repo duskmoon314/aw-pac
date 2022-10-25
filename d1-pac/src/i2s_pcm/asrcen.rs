@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 31 - ASRC Function Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn asrc_fn(&mut self) -> ASRC_FN_W<31> {
         ASRC_FN_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for ASRCEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [asrcen::W](W) writer structure"]
 impl crate::Writable for ASRCEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets asrcen to value 0"]
 impl crate::Resettable for ASRCEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

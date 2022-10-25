@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Specify the blank level setting for non active lines. 10-bit unsigned integer. Allow range is from 0 to 1023."]
     #[inline(always)]
+    #[must_use]
     pub fn vblank_level(&mut self) -> VBLANK_LEVEL_W<0> {
         VBLANK_LEVEL_W::new(self)
     }
     #[doc = "Bits 16:25 - Specify the sync pulse level setting. 8-bit unsigned integer. Allowed range is from 0 to ABlankLevel-1 or VBlankLevel-1 (whichever is smaller)."]
     #[inline(always)]
+    #[must_use]
     pub fn sync_level(&mut self) -> SYNC_LEVEL_W<16> {
         SYNC_LEVEL_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for TVE_SYNC_VBI_LEVEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_sync_vbi_level::W](W) writer structure"]
 impl crate::Writable for TVE_SYNC_VBI_LEVEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_sync_vbi_level to value 0x0010_00f0"]
 impl crate::Resettable for TVE_SYNC_VBI_LEVEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_00f0
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_00f0;
 }

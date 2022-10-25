@@ -849,26 +849,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]
+    #[must_use]
     pub fn pb8_select(&mut self) -> PB8_SELECT_W<0> {
         PB8_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7"]
     #[inline(always)]
+    #[must_use]
     pub fn pb9_select(&mut self) -> PB9_SELECT_W<4> {
         PB9_SELECT_W::new(self)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
+    #[must_use]
     pub fn pb10_select(&mut self) -> PB10_SELECT_W<8> {
         PB10_SELECT_W::new(self)
     }
     #[doc = "Bits 12:15"]
     #[inline(always)]
+    #[must_use]
     pub fn pb11_select(&mut self) -> PB11_SELECT_W<12> {
         PB11_SELECT_W::new(self)
     }
     #[doc = "Bits 16:19"]
     #[inline(always)]
+    #[must_use]
     pub fn pb12_select(&mut self) -> PB12_SELECT_W<16> {
         PB12_SELECT_W::new(self)
     }
@@ -891,11 +896,10 @@ impl crate::Readable for PB_CFG1_SPEC {
 #[doc = "`write(|w| ..)` method takes [pb_cfg1::W](W) writer structure"]
 impl crate::Writable for PB_CFG1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pb_cfg1 to value 0"]
 impl crate::Resettable for PB_CFG1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

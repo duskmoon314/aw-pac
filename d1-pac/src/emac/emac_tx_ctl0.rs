@@ -150,11 +150,13 @@ impl R {
 impl W {
     #[doc = "Bit 30 - Frame Transmit Length Control"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_frm_len_ctl(&mut self) -> TX_FRM_LEN_CTL_W<30> {
         TX_FRM_LEN_CTL_W::new(self)
     }
     #[doc = "Bit 31 - Enable Transmitter"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_en(&mut self) -> TX_EN_W<31> {
         TX_EN_W::new(self)
     }
@@ -177,11 +179,10 @@ impl crate::Readable for EMAC_TX_CTL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_tx_ctl0::W](W) writer structure"]
 impl crate::Writable for EMAC_TX_CTL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_tx_ctl0 to value 0"]
 impl crate::Resettable for EMAC_TX_CTL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

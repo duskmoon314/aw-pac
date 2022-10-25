@@ -479,41 +479,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - RXFIFO Data Available Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxai_en(&mut self) -> RXAI_EN_W<0> {
         RXAI_EN_W::new(self)
     }
     #[doc = "Bit 1 - RXFIFO Overrun Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxoi_en(&mut self) -> RXOI_EN_W<1> {
         RXOI_EN_W::new(self)
     }
     #[doc = "Bit 2 - RXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxui_en(&mut self) -> RXUI_EN_W<2> {
         RXUI_EN_W::new(self)
     }
     #[doc = "Bit 3 - RXFIFO Data Available DRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_drq(&mut self) -> RX_DRQ_W<3> {
         RX_DRQ_W::new(self)
     }
     #[doc = "Bit 4 - TXFIFO Empty Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn txei_en(&mut self) -> TXEI_EN_W<4> {
         TXEI_EN_W::new(self)
     }
     #[doc = "Bit 5 - TXFIFO Overrun Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn txoi_en(&mut self) -> TXOI_EN_W<5> {
         TXOI_EN_W::new(self)
     }
     #[doc = "Bit 6 - TXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn txui_en(&mut self) -> TXUI_EN_W<6> {
         TXUI_EN_W::new(self)
     }
     #[doc = "Bit 7 - TXFIFO Empty DRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_drq(&mut self) -> TX_DRQ_W<7> {
         TX_DRQ_W::new(self)
     }
@@ -536,11 +544,10 @@ impl crate::Readable for I2S_PCM_INT_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_int::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_INT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_int to value 0"]
 impl crate::Resettable for I2S_PCM_INT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

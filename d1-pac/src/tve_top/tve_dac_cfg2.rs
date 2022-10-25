@@ -66,16 +66,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:5"]
     #[inline(always)]
+    #[must_use]
     pub fn r_set(&mut self) -> R_SET_W<0> {
         R_SET_W::new(self)
     }
     #[doc = "Bits 6:7"]
     #[inline(always)]
+    #[must_use]
     pub fn s2s1(&mut self) -> S2S1_W<6> {
         S2S1_W::new(self)
     }
     #[doc = "Bits 8:12 - (I config output current for different peak voltage)"]
     #[inline(always)]
+    #[must_use]
     pub fn ab(&mut self) -> AB_W<8> {
         AB_W::new(self)
     }
@@ -98,11 +101,10 @@ impl crate::Readable for TVE_DAC_CFG2_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_dac_cfg2::W](W) writer structure"]
 impl crate::Writable for TVE_DAC_CFG2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_dac_cfg2 to value 0"]
 impl crate::Resettable for TVE_DAC_CFG2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

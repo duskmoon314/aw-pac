@@ -161,16 +161,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Y input clamping selection\n\nThis bit selects whether the Video Encoder Y input is clamped to 64 to 940 or not. When not clamped the expected range is 0 to 1023. The U and V inputs are always clamped to the range 64 to 960."]
     #[inline(always)]
+    #[must_use]
     pub fn bypass_yclamp(&mut self) -> BYPASS_YCLAMP_W<0> {
         BYPASS_YCLAMP_W::new(self)
     }
     #[doc = "Bit 16 - \"Set-up\" enable for RGB outputs. This bit specifies if the \"set-up\" implied value (black_level - blank_level) specified for the CVBS signal is used also for the RGB signals."]
     #[inline(always)]
+    #[must_use]
     pub fn rgb_setup(&mut self) -> RGB_SETUP_W<16> {
         RGB_SETUP_W::new(self)
     }
     #[doc = "Bits 24:26 - R, G and B signals sync embedding selection.\n\nThese bits specify whether the sync signal is added to each of the R, G and B components (b'1') or not (b'0'). The bit\\[26\\] specify if the R signal has embedded syncs, the bit\\[25\\] specify if the G signal has embedded syncs and the bit\\[24\\] specify if the B signal has embedded syncs. When comp_yuv is equal to b'1', these bits are N.A. and should be set to b'000'. When the value is different from b'000', RGB_Setup should be set to b'1'."]
     #[inline(always)]
+    #[must_use]
     pub fn rgb_sync(&mut self) -> RGB_SYNC_W<24> {
         RGB_SYNC_W::new(self)
     }
@@ -193,11 +196,10 @@ impl crate::Readable for TVE_CONFIGURATION1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_configuration1::W](W) writer structure"]
 impl crate::Writable for TVE_CONFIGURATION1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_configuration1 to value 0x01"]
 impl crate::Resettable for TVE_CONFIGURATION1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 30 - MBUS Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn mbus_rst(&mut self) -> MBUS_RST_W<30> {
         MBUS_RST_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for MBUS_CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [mbus_clk::W](W) writer structure"]
 impl crate::Writable for MBUS_CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets mbus_clk to value 0"]
 impl crate::Resettable for MBUS_CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

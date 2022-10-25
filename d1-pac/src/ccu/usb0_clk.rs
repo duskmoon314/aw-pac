@@ -220,16 +220,19 @@ impl R {
 impl W {
     #[doc = "Bits 24:25 - OHCI 12M Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W<24> {
         CLK12M_SEL_W::new(self)
     }
     #[doc = "Bit 30 - PHY Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn rstn(&mut self) -> RSTN_W<30> {
         RSTN_W::new(self)
     }
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn clken(&mut self) -> CLKEN_W<31> {
         CLKEN_W::new(self)
     }
@@ -252,11 +255,10 @@ impl crate::Readable for USB0_CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [usb0_clk::W](W) writer structure"]
 impl crate::Writable for USB0_CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets usb0_clk to value 0"]
 impl crate::Resettable for USB0_CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

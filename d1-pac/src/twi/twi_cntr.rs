@@ -241,36 +241,43 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W<0> {
         CLK_COUNT_MODE_W::new(self)
     }
     #[doc = "Bit 2 - Assert Acknowledge"]
     #[inline(always)]
+    #[must_use]
     pub fn a_ack(&mut self) -> A_ACK_W<2> {
         A_ACK_W::new(self)
     }
     #[doc = "Bit 3 - Interrupt Flag"]
     #[inline(always)]
+    #[must_use]
     pub fn int_flag(&mut self) -> INT_FLAG_W<3> {
         INT_FLAG_W::new(self)
     }
     #[doc = "Bit 4 - Master Mode Stop"]
     #[inline(always)]
+    #[must_use]
     pub fn m_stp(&mut self) -> M_STP_W<4> {
         M_STP_W::new(self)
     }
     #[doc = "Bit 5 - Master Mode Start"]
     #[inline(always)]
+    #[must_use]
     pub fn m_sta(&mut self) -> M_STA_W<5> {
         M_STA_W::new(self)
     }
     #[doc = "Bit 6 - TWI Bus Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn bus_en(&mut self) -> BUS_EN_W<6> {
         BUS_EN_W::new(self)
     }
     #[doc = "Bit 7 - Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn int_en(&mut self) -> INT_EN_W<7> {
         INT_EN_W::new(self)
     }
@@ -293,11 +300,10 @@ impl crate::Readable for TWI_CNTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_cntr::W](W) writer structure"]
 impl crate::Writable for TWI_CNTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_cntr to value 0"]
 impl crate::Resettable for TWI_CNTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

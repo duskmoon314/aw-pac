@@ -54,8 +54,5 @@ impl crate::Readable for HCCPARAMS_SPEC {
 }
 #[doc = "`reset()` method sets hccparams to value 0"]
 impl crate::Resettable for HCCPARAMS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

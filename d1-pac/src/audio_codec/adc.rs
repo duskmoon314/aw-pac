@@ -1165,96 +1165,115 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - ADC OP MIC Bias Current Select\n\nIOPADC is defined by ADC_REG<15:14> from 1 uA to 4 uA."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_iopmic(&mut self) -> ADC_IOPMIC_W<0> {
         ADC_IOPMIC_W::new(self)
     }
     #[doc = "ADC OP SDM Bias Current Select \\[i\\]\n\nIOPADC is defined by ADC_REG<15:14> from 1 uA to 4 uA."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn adc_iopsdm<const O: u8>(&mut self) -> ADC_IOPSDM_W<O> {
         ADC_IOPSDM_W::new(self)
     }
     #[doc = "Bits 4:5 - ADC OP SDM Bias Current Select \\[i\\]\n\nIOPADC is defined by ADC_REG<15:14> from 1 uA to 4 uA."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_iopsdm2(&mut self) -> ADC_IOPSDM_W<4> {
         ADC_IOPSDM_W::new(self)
     }
     #[doc = "Bits 6:7 - ADC OP SDM Bias Current Select \\[i\\]\n\nIOPADC is defined by ADC_REG<15:14> from 1 uA to 4 uA."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_iopsdm1(&mut self) -> ADC_IOPSDM_W<6> {
         ADC_IOPSDM_W::new(self)
     }
     #[doc = "Bits 6:7 - ADC OP AAF Bias Current Select\n\nIOPADC is defined by ADC_REG<15:14> from 1 uA to 4 uA.\n\nFor example: ADC_REG<15:14> = 11, IOPADC = 4 uA \n\n00: 1.50*4 uA = 6 uA \n\n01: 1.75*4 uA = 7 uA \n\n10: 2.00*4 uA = 8 uA \n\n11: 2.25*4 uA = 9 uA"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_iopaaf(&mut self) -> ADC_IOPAAF_W<6> {
         ADC_IOPAAF_W::new(self)
     }
     #[doc = "Bits 8:12 - ADC PGA gain settings:\n\n\n\n0x0: 0 dB \\t0x10: 21 dB \n\n0x1: 6 dB \\t0x11: 22 dB \n\n0x2: 6 dB \\t0x12: 23 dB \n\n0x3: 6 dB \\t0x13: 24 dB \n\n0x4: 9 dB \\t0x14: 25 dB \n\n0x5: 10 dB\\t0x15: 26 dB \n\n0x6: 11 dB\\t0x16: 27 dB \n\n0x7: 12 dB\\t0x17: 28 dB \n\n0x8: 13 dB\\t0x18: 29 dB \n\n0x9: 14 dB\\t0x19: 30 dB \n\n0xA: 15 dB\\t0x1A: 31 dB \n\n0xB: 16 dB\\t0x1B: 32 dB \n\n0xC: 17 dB\\t0x1C: 33 dB \n\n0xD: 18 dB\\t0x1D: 34 dB \n\n0xE: 19 dB\\t0x1E: 35 dB \n\n0xF: 20 dB\\t0x1F: 36 dB"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_pga_gain_ctrl(&mut self) -> ADC_PGA_GAIN_CTRL_W<8> {
         ADC_PGA_GAIN_CTRL_W::new(self)
     }
     #[doc = "Bits 14:15 - ADC1-ADC3 Bias Current Select"]
     #[inline(always)]
+    #[must_use]
     pub fn iopadc(&mut self) -> IOPADC_W<14> {
         IOPADC_W::new(self)
     }
     #[doc = "Bits 16:17 - ADC PGA Common-Mode Voltage Control"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_pga_in_vcm_ctrl(&mut self) -> ADC_PGA_IN_VCM_CTRL_W<16> {
         ADC_PGA_IN_VCM_CTRL_W::new(self)
     }
     #[doc = "Bits 18:19 - ADC PGA Common Mode Input Impedance Control for MICIN"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_pga_ctrl_rcm(&mut self) -> ADC_PGA_CTRL_RCM_W<18> {
         ADC_PGA_CTRL_RCM_W::new(self)
     }
     #[doc = "Bits 20:21 - PGA Vcm Buffer OP Bias Current Select"]
     #[inline(always)]
+    #[must_use]
     pub fn iopbuffer(&mut self) -> IOPBUFFER_W<20> {
         IOPBUFFER_W::new(self)
     }
     #[doc = "Bit 22 - LINEINL Gain Control"]
     #[inline(always)]
+    #[must_use]
     pub fn lineinlg(&mut self) -> LINEINLG_W<22> {
         LINEINLG_W::new(self)
     }
     #[doc = "Bit 23 - LINEINL Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lineinlen(&mut self) -> LINEINLEN_W<23> {
         LINEINLEN_W::new(self)
     }
     #[doc = "Bits 24:25 - Dither Level Control (Dither level is positive ralated to the ctrl bits)"]
     #[inline(always)]
+    #[must_use]
     pub fn dsm_dither_lvl(&mut self) -> DSM_DITHER_LVL_W<24> {
         DSM_DITHER_LVL_W::new(self)
     }
     #[doc = "Bit 26 - FMINL Gain Control"]
     #[inline(always)]
+    #[must_use]
     pub fn fminlg(&mut self) -> FMINLG_W<26> {
         FMINLG_W::new(self)
     }
     #[doc = "Bit 27 - FMINL Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fminlen(&mut self) -> FMINLEN_W<27> {
         FMINLEN_W::new(self)
     }
     #[doc = "Bit 28 - MIC Single Input Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mic_sin_en(&mut self) -> MIC_SIN_EN_W<28> {
         MIC_SIN_EN_W::new(self)
     }
     #[doc = "Bit 29 - Dither Control"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_d_itcher_c_ontrol(&mut self) -> ADC_D_ITCHER_C_ONTROL_W<29> {
         ADC_D_ITCHER_C_ONTROL_W::new(self)
     }
     #[doc = "Bit 30 - MIC PGA Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn mic_pga_en(&mut self) -> MIC_PGA_EN_W<30> {
         MIC_PGA_EN_W::new(self)
     }
     #[doc = "Bit 31 - ADC Channel Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_en(&mut self) -> ADC_EN_W<31> {
         ADC_EN_W::new(self)
     }
@@ -1277,11 +1296,10 @@ impl crate::Readable for ADC_SPEC {
 #[doc = "`write(|w| ..)` method takes [adc::W](W) writer structure"]
 impl crate::Writable for ADC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets adc%s to value 0x001c_c055"]
 impl crate::Resettable for ADC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x001c_c055
-    }
+    const RESET_VALUE: Self::Ux = 0x001c_c055;
 }

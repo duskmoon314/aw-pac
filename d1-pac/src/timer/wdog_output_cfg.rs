@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Configure the valid time for the watchdog reset signal."]
     #[inline(always)]
+    #[must_use]
     pub fn wdog_output_config(&mut self) -> WDOG_OUTPUT_CONFIG_W<0> {
         WDOG_OUTPUT_CONFIG_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for WDOG_OUTPUT_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [wdog_output_cfg::W](W) writer structure"]
 impl crate::Writable for WDOG_OUTPUT_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets wdog_output_cfg to value 0"]
 impl crate::Resettable for WDOG_OUTPUT_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

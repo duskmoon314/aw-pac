@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Wait clock counter"]
     #[inline(always)]
+    #[must_use]
     pub fn wwc(&mut self) -> WWC_W<0> {
         WWC_W::new(self)
     }
     #[doc = "Bits 16:19 - Dual mode direction switch wait clock counter"]
     #[inline(always)]
+    #[must_use]
     pub fn swc(&mut self) -> SWC_W<16> {
         SWC_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for SPI_WCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_wcr::W](W) writer structure"]
 impl crate::Writable for SPI_WCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_wcr to value 0"]
 impl crate::Resettable for SPI_WCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

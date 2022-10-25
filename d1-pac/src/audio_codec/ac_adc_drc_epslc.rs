@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The gain smooth filter release and attack time parameter setting in expander region, which is determined by the equation that RT = 1-exp (-2.2Ts/tr). The format is 3.24. (The default value is 30 ms)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_epslc(&mut self) -> ADC_DRC_EPSLC_W<0> {
         ADC_DRC_EPSLC_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_EPSLC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_epslc::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_EPSLC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_epslc to value 0x640c"]
 impl crate::Resettable for AC_ADC_DRC_EPSLC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x640c
-    }
+    const RESET_VALUE: Self::Ux = 0x640c;
 }

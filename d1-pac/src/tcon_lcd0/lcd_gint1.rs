@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:27 - Scan line for LCD line trigger (including inactive lines).\n\nSetting it for the specified line for trigger0.\n\nNote: SY0 is writable only when LINE_TRG0 is disabled."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_line_int_num(&mut self) -> LCD_LINE_INT_NUM_W<16> {
         LCD_LINE_INT_NUM_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for LCD_GINT1_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_gint1::W](W) writer structure"]
 impl crate::Writable for LCD_GINT1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_gint1 to value 0"]
 impl crate::Resettable for LCD_GINT1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -69,16 +69,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - FrameInterval\n\nThis specifies the interval between two consecutive SOFs in bit times. The nominal value is set to be 11,999. HCD should store the current value of this field before resetting HC. By setting the HostControllerReset field of as this will cause the HC to reset this field to its nominal value. HCD may choose to restore the stored value upon the completion of the Reset sequence."]
     #[inline(always)]
+    #[must_use]
     pub fn frame_interval(&mut self) -> FRAME_INTERVAL_W<0> {
         FRAME_INTERVAL_W::new(self)
     }
     #[doc = "Bits 16:30 - FSLargestDataPacket\n\nThis field specifies a value which is loaded into the Largest Data Packet Counter at the beginning of each frame. The counter value represents the largest amount of data in bits which can be sent or received by the HC in a single transaction at any given time without causing scheduling overrun. The field value is calculated by the HCD."]
     #[inline(always)]
+    #[must_use]
     pub fn fs_largest_data_packet(&mut self) -> FS_LARGEST_DATA_PACKET_W<16> {
         FS_LARGEST_DATA_PACKET_W::new(self)
     }
     #[doc = "Bit 31 - FrameIntervalToggler HCD toggles this bit whenever it loads a new value to FrameInterval."]
     #[inline(always)]
+    #[must_use]
     pub fn frame_interval_toggler(&mut self) -> FRAME_INTERVAL_TOGGLER_W<31> {
         FRAME_INTERVAL_TOGGLER_W::new(self)
     }
@@ -101,11 +104,10 @@ impl crate::Readable for HC_FM_INTERVAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_fm_interval::W](W) writer structure"]
 impl crate::Writable for HC_FM_INTERVAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_fm_interval to value 0x2edf"]
 impl crate::Resettable for HC_FM_INTERVAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x2edf
-    }
+    const RESET_VALUE: Self::Ux = 0x2edf;
 }

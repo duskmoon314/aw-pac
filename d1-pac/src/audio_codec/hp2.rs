@@ -1009,71 +1009,85 @@ impl R {
 impl W {
     #[doc = "Bits 8:9 - Headphone Feedback Buffer Output Current Select\n\nI = 7uA"]
     #[inline(always)]
+    #[must_use]
     pub fn hpfb_buf_output_current(&mut self) -> HPFB_BUF_OUTPUT_CURRENT_W<8> {
         HPFB_BUF_OUTPUT_CURRENT_W::new(self)
     }
     #[doc = "Bits 13:14 - Ramp Final State Resistor"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_final_state_res(&mut self) -> RAMP_FINAL_STATE_RES_W<13> {
         RAMP_FINAL_STATE_RES_W::new(self)
     }
     #[doc = "Bit 15 - Ramp Output Switch Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_out_en(&mut self) -> RAMP_OUT_EN_W<15> {
         RAMP_OUT_EN_W::new(self)
     }
     #[doc = "Bit 16 - Headphone Ramp Final Step Control"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_final_control(&mut self) -> RAMP_FINAL_CONTROL_W<16> {
         RAMP_FINAL_CONTROL_W::new(self)
     }
     #[doc = "Bit 17 - Headphone Feedback PAD IN Switch Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hpfb_in_en(&mut self) -> HPFB_IN_EN_W<17> {
         HPFB_IN_EN_W::new(self)
     }
     #[doc = "Bit 18 - Ramp DAC Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rampen(&mut self) -> RAMPEN_W<18> {
         RAMPEN_W::new(self)
     }
     #[doc = "Bit 19 - RSwitch"]
     #[inline(always)]
+    #[must_use]
     pub fn rswitch(&mut self) -> RSWITCH_W<19> {
         RSWITCH_W::new(self)
     }
     #[doc = "Bit 20 - Headphone Driver Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hp_drvouten(&mut self) -> HP_DRVOUTEN_W<20> {
         HP_DRVOUTEN_W::new(self)
     }
     #[doc = "Bit 21 - Headphone Driver Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hp_drven(&mut self) -> HP_DRVEN_W<21> {
         HP_DRVEN_W::new(self)
     }
     #[doc = "Bits 22:23 - Headphone L/R OP Bias Current Select"]
     #[inline(always)]
+    #[must_use]
     pub fn iophp(&mut self) -> IOPHP_W<22> {
         IOPHP_W::new(self)
     }
     #[doc = "Bits 24:25 - Headphone OP Output Stage Current Setting"]
     #[inline(always)]
+    #[must_use]
     pub fn opdrv_cur(&mut self) -> OPDRV_CUR_W<24> {
         OPDRV_CUR_W::new(self)
     }
     #[doc = "Bits 26:27 - Headphone Feedback Big Resistor Control"]
     #[inline(always)]
+    #[must_use]
     pub fn hpfb_res(&mut self) -> HPFB_RES_W<26> {
         HPFB_RES_W::new(self)
     }
     #[doc = "Bits 28:30 - Headphone Gain"]
     #[inline(always)]
+    #[must_use]
     pub fn headphone_gain(&mut self) -> HEADPHONE_GAIN_W<28> {
         HEADPHONE_GAIN_W::new(self)
     }
     #[doc = "Bit 31 - Headphone Feedback Buffer OP Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hpfb_buf_en(&mut self) -> HPFB_BUF_EN_W<31> {
         HPFB_BUF_EN_W::new(self)
     }
@@ -1096,11 +1110,10 @@ impl crate::Readable for HP2_SPEC {
 #[doc = "`write(|w| ..)` method takes [hp2::W](W) writer structure"]
 impl crate::Writable for HP2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hp2 to value 0"]
 impl crate::Resettable for HP2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

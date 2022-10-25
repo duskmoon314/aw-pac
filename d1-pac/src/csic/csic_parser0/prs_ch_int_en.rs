@@ -161,21 +161,25 @@ impl R {
 impl W {
     #[doc = ""]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn input_para_int_en<const O: u8>(&mut self) -> INPUT_PARA_INT_EN_W<O> {
         INPUT_PARA_INT_EN_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn input_para0_int_en(&mut self) -> INPUT_PARA_INT_EN_W<0> {
         INPUT_PARA_INT_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn input_para1_int_en(&mut self) -> INPUT_PARA_INT_EN_W<1> {
         INPUT_PARA_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Multi-channel writing error\n\nIndicates error has been detected for writing data to a wrong channel"]
     #[inline(always)]
+    #[must_use]
     pub fn mul_err_int_en(&mut self) -> MUL_ERR_INT_EN_W<2> {
         MUL_ERR_INT_EN_W::new(self)
     }
@@ -198,11 +202,10 @@ impl crate::Readable for PRS_CH_INT_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs_ch_int_en::W](W) writer structure"]
 impl crate::Writable for PRS_CH_INT_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets prs_ch%s_int_en to value 0"]
 impl crate::Resettable for PRS_CH_INT_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

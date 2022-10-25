@@ -336,36 +336,43 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn halt_tx(&mut self) -> HALT_TX_W<0> {
         HALT_TX_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn chcfg_at_busy(&mut self) -> CHCFG_AT_BUSY_W<1> {
         CHCFG_AT_BUSY_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
+    #[must_use]
     pub fn change_update(&mut self) -> CHANGE_UPDATE_W<2> {
         CHANGE_UPDATE_W::new(self)
     }
     #[doc = "Bit 4 - SIR TX Pulse Polarity Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn sir_tx_invert(&mut self) -> SIR_TX_INVERT_W<4> {
         SIR_TX_INVERT_W::new(self)
     }
     #[doc = "Bit 5 - SIR RX Pulse Polarity Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn sir_rx_invert(&mut self) -> SIR_RX_INVERT_W<5> {
         SIR_RX_INVERT_W::new(self)
     }
     #[doc = "Bit 6 - The Transmission of RX_DRQ"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_pte_rx(&mut self) -> DMA_PTE_RX_W<6> {
         DMA_PTE_RX_W::new(self)
     }
     #[doc = "Bit 7 - The sending of TX_REQ"]
     #[inline(always)]
+    #[must_use]
     pub fn pte(&mut self) -> PTE_W<7> {
         PTE_W::new(self)
     }
@@ -388,11 +395,10 @@ impl crate::Readable for HALT_SPEC {
 #[doc = "`write(|w| ..)` method takes [halt::W](W) writer structure"]
 impl crate::Writable for HALT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets halt to value 0"]
 impl crate::Resettable for HALT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

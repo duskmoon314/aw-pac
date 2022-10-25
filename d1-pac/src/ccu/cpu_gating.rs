@@ -105,11 +105,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - CPU Gating Field"]
     #[inline(always)]
+    #[must_use]
     pub fn cpu_gating_field(&mut self) -> CPU_GATING_FIELD_W<0> {
         CPU_GATING_FIELD_W::new(self)
     }
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn cpu_gating(&mut self) -> CPU_GATING_W<31> {
         CPU_GATING_W::new(self)
     }
@@ -132,11 +134,10 @@ impl crate::Readable for CPU_GATING_SPEC {
 #[doc = "`write(|w| ..)` method takes [cpu_gating::W](W) writer structure"]
 impl crate::Writable for CPU_GATING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cpu_gating to value 0"]
 impl crate::Resettable for CPU_GATING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

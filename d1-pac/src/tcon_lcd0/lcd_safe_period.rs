@@ -156,16 +156,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Select the save mode"]
     #[inline(always)]
+    #[must_use]
     pub fn safe_period_mode(&mut self) -> SAFE_PERIOD_MODE_W<0> {
         SAFE_PERIOD_MODE_W::new(self)
     }
     #[doc = "Bits 4:15 - Set a fixed line and during the line time, the LCD controller allow dram controller to change frequency. The fixed line should be set in the blanking area."]
     #[inline(always)]
+    #[must_use]
     pub fn safe_period_line(&mut self) -> SAFE_PERIOD_LINE_W<4> {
         SAFE_PERIOD_LINE_W::new(self)
     }
     #[doc = "Bits 16:28 - When the data length in line buffer is more than SAFE_PERIOD_FIFO_NUM, the LCD controller will allow dram controller to stop working to change frequency."]
     #[inline(always)]
+    #[must_use]
     pub fn safe_period_fifo_num(&mut self) -> SAFE_PERIOD_FIFO_NUM_W<16> {
         SAFE_PERIOD_FIFO_NUM_W::new(self)
     }
@@ -188,11 +191,10 @@ impl crate::Readable for LCD_SAFE_PERIOD_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_safe_period::W](W) writer structure"]
 impl crate::Writable for LCD_SAFE_PERIOD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_safe_period to value 0"]
 impl crate::Resettable for LCD_SAFE_PERIOD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

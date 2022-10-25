@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable the interrupt of sensor_data update\n\nIf enabled, when the measured sensor_data is updated, it will generate an interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn ths_data_irq_en(&mut self) -> THS_DATA_IRQ_EN_W<0> {
         THS_DATA_IRQ_EN_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for THS_DATA_INTC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ths_data_intc::W](W) writer structure"]
 impl crate::Writable for THS_DATA_INTC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ths_data_intc to value 0"]
 impl crate::Resettable for THS_DATA_INTC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

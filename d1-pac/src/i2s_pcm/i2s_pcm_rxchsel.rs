@@ -58,11 +58,13 @@ impl R {
 impl W {
     #[doc = "Bits 16:19 - RX Channel (Slot) number select for each output\n\nNum channels = N + 1"]
     #[inline(always)]
+    #[must_use]
     pub fn chsel(&mut self) -> CHSEL_W<16> {
         CHSEL_W::new(self)
     }
     #[doc = "Bits 20:21 - RX Offset Tune (RX Data offset to LRCK)\n\n0: No offset\n\nN: Data is offset by N BCLKs to LRCK"]
     #[inline(always)]
+    #[must_use]
     pub fn offset(&mut self) -> OFFSET_W<20> {
         OFFSET_W::new(self)
     }
@@ -85,11 +87,10 @@ impl crate::Readable for I2S_PCM_RXCHSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_rxchsel::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_RXCHSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_rxchsel to value 0"]
 impl crate::Resettable for I2S_PCM_RXCHSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

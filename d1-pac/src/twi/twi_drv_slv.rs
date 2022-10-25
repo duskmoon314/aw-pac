@@ -112,16 +112,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - SLAX\\[7:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn slv_id_x(&mut self) -> SLV_ID_X_W<0> {
         SLV_ID_X_W::new(self)
     }
     #[doc = "Bit 8 - R/W operation to slave device"]
     #[inline(always)]
+    #[must_use]
     pub fn cmd(&mut self) -> CMD_W<8> {
         CMD_W::new(self)
     }
     #[doc = "Bits 9:15 - Slave device ID"]
     #[inline(always)]
+    #[must_use]
     pub fn slv_id(&mut self) -> SLV_ID_W<9> {
         SLV_ID_W::new(self)
     }
@@ -144,11 +147,10 @@ impl crate::Readable for TWI_DRV_SLV_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_drv_slv::W](W) writer structure"]
 impl crate::Writable for TWI_DRV_SLV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_drv_slv to value 0"]
 impl crate::Resettable for TWI_DRV_SLV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

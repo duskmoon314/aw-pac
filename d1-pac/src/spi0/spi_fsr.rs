@@ -68,8 +68,5 @@ impl crate::Readable for SPI_FSR_SPEC {
 }
 #[doc = "`reset()` method sets spi_fsr to value 0"]
 impl crate::Resettable for SPI_FSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

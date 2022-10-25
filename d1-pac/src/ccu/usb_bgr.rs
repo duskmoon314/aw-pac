@@ -412,71 +412,85 @@ impl R {
 impl W {
     #[doc = "USBOHCI Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn usbohci_gating<const O: u8>(&mut self) -> USBOHCI_GATING_W<O> {
         USBOHCI_GATING_W::new(self)
     }
     #[doc = "Bit 0 - USBOHCI Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn usbohci0_gating(&mut self) -> USBOHCI_GATING_W<0> {
         USBOHCI_GATING_W::new(self)
     }
     #[doc = "Bit 1 - USBOHCI Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn usbohci1_gating(&mut self) -> USBOHCI_GATING_W<1> {
         USBOHCI_GATING_W::new(self)
     }
     #[doc = "USBEHCI Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn usbehci_gating<const O: u8>(&mut self) -> USBEHCI_GATING_W<O> {
         USBEHCI_GATING_W::new(self)
     }
     #[doc = "Bit 4 - USBEHCI Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn usbehci0_gating(&mut self) -> USBEHCI_GATING_W<4> {
         USBEHCI_GATING_W::new(self)
     }
     #[doc = "Bit 5 - USBEHCI Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn usbehci1_gating(&mut self) -> USBEHCI_GATING_W<5> {
         USBEHCI_GATING_W::new(self)
     }
     #[doc = "Bit 8 - USBOTG0 Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn usbotg0_gating(&mut self) -> USBOTG0_GATING_W<8> {
         USBOTG0_GATING_W::new(self)
     }
     #[doc = "USBOHCI Reset"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn usbohci_rst<const O: u8>(&mut self) -> USBOHCI_RST_W<O> {
         USBOHCI_RST_W::new(self)
     }
     #[doc = "Bit 16 - USBOHCI Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn usbohci0_rst(&mut self) -> USBOHCI_RST_W<16> {
         USBOHCI_RST_W::new(self)
     }
     #[doc = "Bit 17 - USBOHCI Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn usbohci1_rst(&mut self) -> USBOHCI_RST_W<17> {
         USBOHCI_RST_W::new(self)
     }
     #[doc = "USBEHCI Reset"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn usbehci_rst<const O: u8>(&mut self) -> USBEHCI_RST_W<O> {
         USBEHCI_RST_W::new(self)
     }
     #[doc = "Bit 20 - USBEHCI Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn usbehci0_rst(&mut self) -> USBEHCI_RST_W<20> {
         USBEHCI_RST_W::new(self)
     }
     #[doc = "Bit 21 - USBEHCI Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn usbehci1_rst(&mut self) -> USBEHCI_RST_W<21> {
         USBEHCI_RST_W::new(self)
     }
     #[doc = "Bit 24 - USBOTG0 Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn usbotg0_rst(&mut self) -> USBOTG0_RST_W<24> {
         USBOTG0_RST_W::new(self)
     }
@@ -499,11 +513,10 @@ impl crate::Readable for USB_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [usb_bgr::W](W) writer structure"]
 impl crate::Writable for USB_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets usb_bgr to value 0"]
 impl crate::Resettable for USB_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

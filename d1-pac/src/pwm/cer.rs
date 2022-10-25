@@ -134,46 +134,55 @@ impl R {
 impl W {
     #[doc = "When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn cap_en<const O: u8>(&mut self) -> CAP_EN_W<O> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 0 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap0_en(&mut self) -> CAP_EN_W<0> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 1 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap1_en(&mut self) -> CAP_EN_W<1> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 2 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap2_en(&mut self) -> CAP_EN_W<2> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 3 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap3_en(&mut self) -> CAP_EN_W<3> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 4 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap4_en(&mut self) -> CAP_EN_W<4> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 5 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap5_en(&mut self) -> CAP_EN_W<5> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 6 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap6_en(&mut self) -> CAP_EN_W<6> {
         CAP_EN_W::new(self)
     }
     #[doc = "Bit 7 - When enabling the capture function, the 16-bit up-counter starts working, and the capture channel is permitted to capture external falling edge or rising edge."]
     #[inline(always)]
+    #[must_use]
     pub fn cap7_en(&mut self) -> CAP_EN_W<7> {
         CAP_EN_W::new(self)
     }
@@ -196,11 +205,10 @@ impl crate::Readable for CER_SPEC {
 #[doc = "`write(|w| ..)` method takes [cer::W](W) writer structure"]
 impl crate::Writable for CER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cer to value 0"]
 impl crate::Resettable for CER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

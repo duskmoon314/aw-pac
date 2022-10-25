@@ -222,16 +222,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default."]
     #[inline(always)]
+    #[must_use]
     pub fn fanout_32k_gating(&mut self) -> FANOUT_32K_GATING_W<0> {
         FANOUT_32K_GATING_W::new(self)
     }
     #[doc = "Bits 1:2 - LOSC output source select"]
     #[inline(always)]
+    #[must_use]
     pub fn losc_out_src_sel(&mut self) -> LOSC_OUT_SRC_SEL_W<1> {
         LOSC_OUT_SRC_SEL_W::new(self)
     }
     #[doc = "Bit 16 - HOSC to 32k divider enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hosc_to_32k_divider_enable(&mut self) -> HOSC_TO_32K_DIVIDER_ENABLE_W<16> {
         HOSC_TO_32K_DIVIDER_ENABLE_W::new(self)
     }
@@ -254,11 +257,10 @@ impl crate::Readable for FOUT_32K_CTRL_GATING_SPEC {
 #[doc = "`write(|w| ..)` method takes [fout_32k_ctrl_gating::W](W) writer structure"]
 impl crate::Writable for FOUT_32K_CTRL_GATING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fout_32k_ctrl_gating to value 0"]
 impl crate::Resettable for FOUT_32K_CTRL_GATING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

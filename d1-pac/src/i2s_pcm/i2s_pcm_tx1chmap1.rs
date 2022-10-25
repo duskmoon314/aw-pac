@@ -89,46 +89,55 @@ impl R {
 impl W {
     #[doc = "Channel [0-7] mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_map<const O: u8>(&mut self) -> CH_MAP_W<O> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 0:3 - Channel 0 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch0_map(&mut self) -> CH_MAP_W<0> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 4:7 - Channel 1 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_map(&mut self) -> CH_MAP_W<4> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 8:11 - Channel 2 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch2_map(&mut self) -> CH_MAP_W<8> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 12:15 - Channel 3 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch3_map(&mut self) -> CH_MAP_W<12> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 16:19 - Channel 4 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch4_map(&mut self) -> CH_MAP_W<16> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 20:23 - Channel 5 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch5_map(&mut self) -> CH_MAP_W<20> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 24:27 - Channel 6 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch6_map(&mut self) -> CH_MAP_W<24> {
         CH_MAP_W::new(self)
     }
     #[doc = "Bits 28:31 - Channel 7 mapping\n\n0000: The first sample\n\n...\n\n1111: The sixteenth sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch7_map(&mut self) -> CH_MAP_W<28> {
         CH_MAP_W::new(self)
     }
@@ -151,11 +160,10 @@ impl crate::Readable for I2S_PCM_TX1CHMAP1_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_tx1chmap1::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_TX1CHMAP1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_tx1chmap1 to value 0"]
 impl crate::Resettable for I2S_PCM_TX1CHMAP1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

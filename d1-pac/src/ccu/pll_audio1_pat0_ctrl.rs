@@ -262,7 +262,7 @@ impl R {
     #[doc = "Bits 0:16 - Wave Bottom"]
     #[inline(always)]
     pub fn wave_bot(&self) -> WAVE_BOT_R {
-        WAVE_BOT_R::new((self.bits & 0x0001_ffff) as u32)
+        WAVE_BOT_R::new(self.bits & 0x0001_ffff)
     }
     #[doc = "Bits 17:18 - Frequency"]
     #[inline(always)]
@@ -293,31 +293,37 @@ impl R {
 impl W {
     #[doc = "Bits 0:16 - Wave Bottom"]
     #[inline(always)]
+    #[must_use]
     pub fn wave_bot(&mut self) -> WAVE_BOT_W<0> {
         WAVE_BOT_W::new(self)
     }
     #[doc = "Bits 17:18 - Frequency"]
     #[inline(always)]
+    #[must_use]
     pub fn freq(&mut self) -> FREQ_W<17> {
         FREQ_W::new(self)
     }
     #[doc = "Bit 19 - SDM Clock Select"]
     #[inline(always)]
+    #[must_use]
     pub fn sdm_clk_sel(&mut self) -> SDM_CLK_SEL_W<19> {
         SDM_CLK_SEL_W::new(self)
     }
     #[doc = "Bits 20:28 - Wave Step"]
     #[inline(always)]
+    #[must_use]
     pub fn wave_step(&mut self) -> WAVE_STEP_W<20> {
         WAVE_STEP_W::new(self)
     }
     #[doc = "Bits 29:30 - Spread Frequency Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn spr_freq_mode(&mut self) -> SPR_FREQ_MODE_W<29> {
         SPR_FREQ_MODE_W::new(self)
     }
     #[doc = "Bit 31 - Sigma-Delta Pattern Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sig_delt_pat_en(&mut self) -> SIG_DELT_PAT_EN_W<31> {
         SIG_DELT_PAT_EN_W::new(self)
     }
@@ -340,11 +346,10 @@ impl crate::Readable for PLL_AUDIO1_PAT0_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pll_audio1_pat0_ctrl::W](W) writer structure"]
 impl crate::Writable for PLL_AUDIO1_PAT0_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pll_audio1_pat0_ctrl to value 0"]
 impl crate::Resettable for PLL_AUDIO1_PAT0_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

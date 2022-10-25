@@ -151,11 +151,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - This bit selects if the sample order at the chroma input to the Video Encoder is Cb first (i.e. Cb 0 Cr 0 Cb 1 Cr 1) or Cr first (i.e. Cr 0 Cb 0 Cr 1 Cb 1)."]
     #[inline(always)]
+    #[must_use]
     pub fn uv_order(&mut self) -> UV_ORDER_W<0> {
         UV_ORDER_W::new(self)
     }
     #[doc = "Bit 8 - Field parity input signal (top_field) polarity selection.\n\nThis bit selects whether the top field is indicated by a high level of the field parity signal or by the low level. The bit is applicable both when the Video Encoder is the sync master and when the Video Encoder is the sync slave."]
     #[inline(always)]
+    #[must_use]
     pub fn invert_top(&mut self) -> INVERT_TOP_W<8> {
         INVERT_TOP_W::new(self)
     }
@@ -178,11 +180,10 @@ impl crate::Readable for TVE_CONFIGURATION0_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_configuration0::W](W) writer structure"]
 impl crate::Writable for TVE_CONFIGURATION0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_configuration0 to value 0"]
 impl crate::Resettable for TVE_CONFIGURATION0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

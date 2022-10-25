@@ -135,46 +135,55 @@ impl R {
 impl W {
     #[doc = "External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn eint_status<const O: u8>(&mut self) -> EINT_STATUS_W<O> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 0 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint0_status(&mut self) -> EINT_STATUS_W<0> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 1 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint1_status(&mut self) -> EINT_STATUS_W<1> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 2 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint2_status(&mut self) -> EINT_STATUS_W<2> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 3 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint3_status(&mut self) -> EINT_STATUS_W<3> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 4 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint4_status(&mut self) -> EINT_STATUS_W<4> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 5 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint5_status(&mut self) -> EINT_STATUS_W<5> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 6 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint6_status(&mut self) -> EINT_STATUS_W<6> {
         EINT_STATUS_W::new(self)
     }
     #[doc = "Bit 7 - External INT Pending Bit"]
     #[inline(always)]
+    #[must_use]
     pub fn eint7_status(&mut self) -> EINT_STATUS_W<7> {
         EINT_STATUS_W::new(self)
     }
@@ -197,11 +206,10 @@ impl crate::Readable for PC_EINT_STATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [pc_eint_status::W](W) writer structure"]
 impl crate::Writable for PC_EINT_STATUS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pc_eint_status to value 0"]
 impl crate::Resettable for PC_EINT_STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

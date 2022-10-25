@@ -105,16 +105,19 @@ impl R {
 impl W {
     #[doc = "Channel Voltage High Available Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_hig_irq_en<const O: u8>(&mut self) -> CH_HIG_IRQ_EN_W<O> {
         CH_HIG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - Channel Voltage High Available Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ch0_hig_irq_en(&mut self) -> CH_HIG_IRQ_EN_W<0> {
         CH_HIG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - Channel Voltage High Available Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_hig_irq_en(&mut self) -> CH_HIG_IRQ_EN_W<1> {
         CH_HIG_IRQ_EN_W::new(self)
     }
@@ -137,11 +140,10 @@ impl crate::Readable for GP_DATAH_INTC_SPEC {
 #[doc = "`write(|w| ..)` method takes [gp_datah_intc::W](W) writer structure"]
 impl crate::Writable for GP_DATAH_INTC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets gp_datah_intc to value 0"]
 impl crate::Resettable for GP_DATAH_INTC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

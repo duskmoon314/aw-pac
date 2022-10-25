@@ -336,31 +336,37 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<0> {
         ENABLE_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn mode(&mut self) -> MODE_W<1> {
         MODE_W::new(self)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
+    #[must_use]
     pub fn blk_size(&mut self) -> BLK_SIZE_W<2> {
         BLK_SIZE_W::new(self)
     }
     #[doc = "Bits 4:5 - Set for AHB port burst supported"]
     #[inline(always)]
+    #[must_use]
     pub fn ahb_burst_mode(&mut self) -> AHB_BURST_MODE_W<4> {
         AHB_BURST_MODE_W::new(self)
     }
     #[doc = "Bit 6 - RXDMA Timeout Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W<6> {
         TIMEOUT_ENABLE_W::new(self)
     }
     #[doc = "Bits 8:23 - RXDMA Timeout Threshold\n\nUnit is 1 UART bit time"]
     #[inline(always)]
+    #[must_use]
     pub fn timeout_threshold(&mut self) -> TIMEOUT_THRESHOLD_W<8> {
         TIMEOUT_THRESHOLD_W::new(self)
     }
@@ -383,11 +389,10 @@ impl crate::Readable for RXDMA_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [rxdma_ctrl::W](W) writer structure"]
 impl crate::Writable for RXDMA_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets rxdma_ctrl to value 0"]
 impl crate::Resettable for RXDMA_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

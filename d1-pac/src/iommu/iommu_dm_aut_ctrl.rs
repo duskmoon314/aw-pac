@@ -403,161 +403,193 @@ impl R {
 impl W {
     #[doc = "Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dm1_m_wt_aut_ctrl<const O: u8>(&mut self) -> DM1_M_WT_AUT_CTRL_W<O> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 17 - Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m0_wt_aut_ctrl(&mut self) -> DM1_M_WT_AUT_CTRL_W<17> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 19 - Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m1_wt_aut_ctrl(&mut self) -> DM1_M_WT_AUT_CTRL_W<19> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 21 - Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m2_wt_aut_ctrl(&mut self) -> DM1_M_WT_AUT_CTRL_W<21> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 23 - Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m3_wt_aut_ctrl(&mut self) -> DM1_M_WT_AUT_CTRL_W<23> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 25 - Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m4_wt_aut_ctrl(&mut self) -> DM1_M_WT_AUT_CTRL_W<25> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 27 - Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m5_wt_aut_ctrl(&mut self) -> DM1_M_WT_AUT_CTRL_W<27> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 29 - Domain \\[i + 1\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m6_wt_aut_ctrl(&mut self) -> DM1_M_WT_AUT_CTRL_W<29> {
         DM1_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dm1_m_rd_aut_ctrl<const O: u8>(&mut self) -> DM1_M_RD_AUT_CTRL_W<O> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 17 - Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m0_rd_aut_ctrl(&mut self) -> DM1_M_RD_AUT_CTRL_W<17> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 19 - Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m1_rd_aut_ctrl(&mut self) -> DM1_M_RD_AUT_CTRL_W<19> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 21 - Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m2_rd_aut_ctrl(&mut self) -> DM1_M_RD_AUT_CTRL_W<21> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 23 - Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m3_rd_aut_ctrl(&mut self) -> DM1_M_RD_AUT_CTRL_W<23> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 25 - Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m4_rd_aut_ctrl(&mut self) -> DM1_M_RD_AUT_CTRL_W<25> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 27 - Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m5_rd_aut_ctrl(&mut self) -> DM1_M_RD_AUT_CTRL_W<27> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 29 - Domain \\[i + 1\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm1_m6_rd_aut_ctrl(&mut self) -> DM1_M_RD_AUT_CTRL_W<29> {
         DM1_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dm0_m_wt_aut_ctrl<const O: u8>(&mut self) -> DM0_M_WT_AUT_CTRL_W<O> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 17 - Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m0_wt_aut_ctrl(&mut self) -> DM0_M_WT_AUT_CTRL_W<17> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 19 - Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m1_wt_aut_ctrl(&mut self) -> DM0_M_WT_AUT_CTRL_W<19> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 21 - Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m2_wt_aut_ctrl(&mut self) -> DM0_M_WT_AUT_CTRL_W<21> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 23 - Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m3_wt_aut_ctrl(&mut self) -> DM0_M_WT_AUT_CTRL_W<23> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 25 - Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m4_wt_aut_ctrl(&mut self) -> DM0_M_WT_AUT_CTRL_W<25> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 27 - Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m5_wt_aut_ctrl(&mut self) -> DM0_M_WT_AUT_CTRL_W<27> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 29 - Domain \\[i\\] write permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m6_wt_aut_ctrl(&mut self) -> DM0_M_WT_AUT_CTRL_W<29> {
         DM0_M_WT_AUT_CTRL_W::new(self)
     }
     #[doc = "Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dm0_m_rd_aut_ctrl<const O: u8>(&mut self) -> DM0_M_RD_AUT_CTRL_W<O> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 17 - Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m0_rd_aut_ctrl(&mut self) -> DM0_M_RD_AUT_CTRL_W<17> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 19 - Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m1_rd_aut_ctrl(&mut self) -> DM0_M_RD_AUT_CTRL_W<19> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 21 - Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m2_rd_aut_ctrl(&mut self) -> DM0_M_RD_AUT_CTRL_W<21> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 23 - Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m3_rd_aut_ctrl(&mut self) -> DM0_M_RD_AUT_CTRL_W<23> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 25 - Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m4_rd_aut_ctrl(&mut self) -> DM0_M_RD_AUT_CTRL_W<25> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 27 - Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m5_rd_aut_ctrl(&mut self) -> DM0_M_RD_AUT_CTRL_W<27> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
     #[doc = "Bit 29 - Domain \\[i\\] read permission control for master \\[j\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn dm0_m6_rd_aut_ctrl(&mut self) -> DM0_M_RD_AUT_CTRL_W<29> {
         DM0_M_RD_AUT_CTRL_W::new(self)
     }
@@ -580,11 +612,10 @@ impl crate::Readable for IOMMU_DM_AUT_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_dm_aut_ctrl::W](W) writer structure"]
 impl crate::Writable for IOMMU_DM_AUT_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_dm_aut_ctrl%s to value 0"]
 impl crate::Resettable for IOMMU_DM_AUT_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

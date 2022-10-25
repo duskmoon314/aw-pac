@@ -205,16 +205,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Host Send MMC IRQ Response"]
     #[inline(always)]
+    #[must_use]
     pub fn host_send_mimc_irqresq(&mut self) -> HOST_SEND_MIMC_IRQRESQ_W<0> {
         HOST_SEND_MIMC_IRQRESQ_W::new(self)
     }
     #[doc = "Bit 1 - Read Wait"]
     #[inline(always)]
+    #[must_use]
     pub fn read_wait(&mut self) -> READ_WAIT_W<1> {
         READ_WAIT_W::new(self)
     }
     #[doc = "Bit 2 - Abort Read Data"]
     #[inline(always)]
+    #[must_use]
     pub fn abt_rdata(&mut self) -> ABT_RDATA_W<2> {
         ABT_RDATA_W::new(self)
     }
@@ -237,11 +240,10 @@ impl crate::Readable for SMHC_FUNS_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_funs::W](W) writer structure"]
 impl crate::Writable for SMHC_FUNS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_funs to value 0"]
 impl crate::Resettable for SMHC_FUNS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

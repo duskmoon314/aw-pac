@@ -145,41 +145,49 @@ impl R {
 impl W {
     #[doc = "PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pf_pull<const O: u8>(&mut self) -> PF_PULL_W<O> {
         PF_PULL_W::new(self)
     }
     #[doc = "Bits 0:1 - PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf0_pull(&mut self) -> PF_PULL_W<0> {
         PF_PULL_W::new(self)
     }
     #[doc = "Bits 2:3 - PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf1_pull(&mut self) -> PF_PULL_W<2> {
         PF_PULL_W::new(self)
     }
     #[doc = "Bits 4:5 - PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf2_pull(&mut self) -> PF_PULL_W<4> {
         PF_PULL_W::new(self)
     }
     #[doc = "Bits 6:7 - PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf3_pull(&mut self) -> PF_PULL_W<6> {
         PF_PULL_W::new(self)
     }
     #[doc = "Bits 8:9 - PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf4_pull(&mut self) -> PF_PULL_W<8> {
         PF_PULL_W::new(self)
     }
     #[doc = "Bits 10:11 - PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf5_pull(&mut self) -> PF_PULL_W<10> {
         PF_PULL_W::new(self)
     }
     #[doc = "Bits 12:13 - PF Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf6_pull(&mut self) -> PF_PULL_W<12> {
         PF_PULL_W::new(self)
     }
@@ -202,11 +210,10 @@ impl crate::Readable for PF_PULL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pf_pull0::W](W) writer structure"]
 impl crate::Writable for PF_PULL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pf_pull0 to value 0"]
 impl crate::Resettable for PF_PULL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

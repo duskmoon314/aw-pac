@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Specify the ratio between the color burst frequency. 32 bits unsigned fraction. The default value is h21f07c1f, which is compatible with NTSC spec."]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_freq(&mut self) -> CHROMA_FREQ_W<0> {
         CHROMA_FREQ_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for TVE_CHROMA_FREQUENCY_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_chroma_frequency::W](W) writer structure"]
 impl crate::Writable for TVE_CHROMA_FREQUENCY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_chroma_frequency to value 0x21f0_7c1f"]
 impl crate::Resettable for TVE_CHROMA_FREQUENCY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x21f0_7c1f
-    }
+    const RESET_VALUE: Self::Ux = 0x21f0_7c1f;
 }

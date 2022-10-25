@@ -94,7 +94,7 @@ impl R {
     #[doc = "Bits 0:30"]
     #[inline(always)]
     pub fn total_wait_time1(&self) -> TOTAL_WAIT_TIME1_R {
-        TOTAL_WAIT_TIME1_R::new((self.bits & 0x7fff_ffff) as u32)
+        TOTAL_WAIT_TIME1_R::new(self.bits & 0x7fff_ffff)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
@@ -105,11 +105,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:30"]
     #[inline(always)]
+    #[must_use]
     pub fn total_wait_time1(&mut self) -> TOTAL_WAIT_TIME1_W<0> {
         TOTAL_WAIT_TIME1_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn wait_tim1_en(&mut self) -> WAIT_TIM1_EN_W<31> {
         WAIT_TIM1_EN_W::new(self)
     }
@@ -132,11 +134,10 @@ impl crate::Readable for LEDC_WAIT_TIME1_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ledc_wait_time1_ctrl::W](W) writer structure"]
 impl crate::Writable for LEDC_WAIT_TIME1_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ledc_wait_time1_ctrl to value 0"]
 impl crate::Resettable for LEDC_WAIT_TIME1_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

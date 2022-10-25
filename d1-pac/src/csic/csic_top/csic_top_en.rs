@@ -151,11 +151,13 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn csic_top_en(&mut self) -> CSIC_TOP_EN_W<0> {
         CSIC_TOP_EN_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
+    #[must_use]
     pub fn bist_mode_en(&mut self) -> BIST_MODE_EN_W<2> {
         BIST_MODE_EN_W::new(self)
     }
@@ -178,11 +180,10 @@ impl crate::Readable for CSIC_TOP_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_top_en::W](W) writer structure"]
 impl crate::Writable for CSIC_TOP_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_top_en to value 0"]
 impl crate::Resettable for CSIC_TOP_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

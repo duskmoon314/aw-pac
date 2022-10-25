@@ -54,11 +54,10 @@ impl crate::Readable for OWA_FCTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [owa_fctl::W](W) writer structure"]
 impl crate::Writable for OWA_FCTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets owa_fctl to value 0"]
 impl crate::Resettable for OWA_FCTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

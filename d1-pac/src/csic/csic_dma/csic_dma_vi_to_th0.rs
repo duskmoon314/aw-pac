@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Video Input Timeout Threshold0\n\nSet VIDEO_INPUT_TO_INT_PD when VI Counter reaches TH0 after VI_TO_CNT_EN is set, the Time Unit is a 12M clock period."]
     #[inline(always)]
+    #[must_use]
     pub fn vi_to_th0(&mut self) -> VI_TO_TH0_W<0> {
         VI_TO_TH0_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for CSIC_DMA_VI_TO_TH0_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_vi_to_th0::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_VI_TO_TH0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_vi_to_th0 to value 0"]
 impl crate::Resettable for CSIC_DMA_VI_TO_TH0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

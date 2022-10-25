@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Higher 2 bits of DMA channel descriptor high address\n\nDMA Channel Descriptor Address = {bit\\[1:0\\], bit\\[31:2\\], 2'b00}"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_desc_high_addr(&mut self) -> DMA_DESC_HIGH_ADDR_W<0> {
         DMA_DESC_HIGH_ADDR_W::new(self)
     }
     #[doc = "Bits 2:31 - Lower 30 bits of DMA channel descriptor address"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_desc_addr(&mut self) -> DMA_DESC_ADDR_W<2> {
         DMA_DESC_ADDR_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for DMAC_DESC_ADDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmac_desc_addr::W](W) writer structure"]
 impl crate::Writable for DMAC_DESC_ADDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dmac_desc_addr%s to value 0"]
 impl crate::Resettable for DMAC_DESC_ADDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

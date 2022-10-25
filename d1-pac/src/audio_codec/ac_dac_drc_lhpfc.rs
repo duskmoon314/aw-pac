@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - HPF coefficient setting and the data is 3.24 format."]
     #[inline(always)]
+    #[must_use]
     pub fn lhpfc(&mut self) -> LHPFC_W<0> {
         LHPFC_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_DAC_DRC_LHPFC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_lhpfc::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_LHPFC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_lhpfc to value 0xfac1"]
 impl crate::Resettable for AC_DAC_DRC_LHPFC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xfac1
-    }
+    const RESET_VALUE: Self::Ux = 0xfac1;
 }

@@ -33,8 +33,5 @@ impl crate::Readable for LRADC_DATA_SPEC {
 }
 #[doc = "`reset()` method sets lradc_data to value 0"]
 impl crate::Resettable for LRADC_DATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

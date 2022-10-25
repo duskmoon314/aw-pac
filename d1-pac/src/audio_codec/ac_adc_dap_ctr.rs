@@ -222,46 +222,55 @@ impl R {
 impl W {
     #[doc = "ADC HPF\\[i\\] enable control"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn adc_hpf_en<const O: u8>(&mut self) -> ADC_HPF_EN_W<O> {
         ADC_HPF_EN_W::new(self)
     }
     #[doc = "Bit 24 - ADC HPF\\[i\\] enable control"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_hpf1_en(&mut self) -> ADC_HPF_EN_W<24> {
         ADC_HPF_EN_W::new(self)
     }
     #[doc = "Bit 28 - ADC HPF\\[i\\] enable control"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_hpf0_en(&mut self) -> ADC_HPF_EN_W<28> {
         ADC_HPF_EN_W::new(self)
     }
     #[doc = "ADC DRC\\[i\\] enable control"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn adc_drc_en<const O: u8>(&mut self) -> ADC_DRC_EN_W<O> {
         ADC_DRC_EN_W::new(self)
     }
     #[doc = "Bit 25 - ADC DRC\\[i\\] enable control"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc1_en(&mut self) -> ADC_DRC_EN_W<25> {
         ADC_DRC_EN_W::new(self)
     }
     #[doc = "Bit 29 - ADC DRC\\[i\\] enable control"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc0_en(&mut self) -> ADC_DRC_EN_W<29> {
         ADC_DRC_EN_W::new(self)
     }
     #[doc = "DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn adc_dap_en<const O: u8>(&mut self) -> ADC_DAP_EN_W<O> {
         ADC_DAP_EN_W::new(self)
     }
     #[doc = "Bit 27 - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_dap1_en(&mut self) -> ADC_DAP_EN_W<27> {
         ADC_DAP_EN_W::new(self)
     }
     #[doc = "Bit 31 - DAP\\[i\\] for ADC enable\n\nDAP0 control ADC1/2\n\nDAP1 control ADC3"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_dap0_en(&mut self) -> ADC_DAP_EN_W<31> {
         ADC_DAP_EN_W::new(self)
     }
@@ -284,11 +293,10 @@ impl crate::Readable for AC_ADC_DAP_CTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_dap_ctr::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DAP_CTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_dap_ctr to value 0"]
 impl crate::Resettable for AC_ADC_DAP_CTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

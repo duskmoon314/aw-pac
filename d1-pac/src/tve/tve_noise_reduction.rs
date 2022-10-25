@@ -58,11 +58,13 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Bits 16:23"]
     #[inline(always)]
+    #[must_use]
     pub fn t_value(&mut self) -> T_VALUE_W<16> {
         T_VALUE_W::new(self)
     }
@@ -85,11 +87,10 @@ impl crate::Readable for TVE_NOISE_REDUCTION_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_noise_reduction::W](W) writer structure"]
 impl crate::Writable for TVE_NOISE_REDUCTION_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_noise_reduction to value 0"]
 impl crate::Resettable for TVE_NOISE_REDUCTION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - The slope of the limiter, which is determined by the equation that Kl = 1/R. R is the ratio of the limiter, which is always an integer. The format is 8.24. (The default value is <50:1>)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_hkl(&mut self) -> ADC_DRC_HKL_W<0> {
         ADC_DRC_HKL_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_HKL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_hkl::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_HKL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_hkl to value 0x05"]
 impl crate::Resettable for AC_ADC_DRC_HKL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x05
-    }
+    const RESET_VALUE: Self::Ux = 0x05;
 }

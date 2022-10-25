@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - ADC acquire time\n\n(n+1)/CLK_IN\n\nDefault value: 2 us"]
     #[inline(always)]
+    #[must_use]
     pub fn tacq(&mut self) -> TACQ_W<0> {
         TACQ_W::new(self)
     }
     #[doc = "Bits 16:31 - ADC sample frequency divider\n\nCLK_IN/(n+1)\n\nDefault value: 50K"]
     #[inline(always)]
+    #[must_use]
     pub fn fs_div(&mut self) -> FS_DIV_W<16> {
         FS_DIV_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for GP_SR_CON_SPEC {
 #[doc = "`write(|w| ..)` method takes [gp_sr_con::W](W) writer structure"]
 impl crate::Writable for GP_SR_CON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets gp_sr_con to value 0x01df_002f"]
 impl crate::Resettable for GP_SR_CON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01df_002f
-    }
+    const RESET_VALUE: Self::Ux = 0x01df_002f;
 }

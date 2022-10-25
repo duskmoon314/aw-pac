@@ -54,11 +54,10 @@ impl crate::Readable for IOMMU_WBUF_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_wbuf_ctrl::W](W) writer structure"]
 impl crate::Writable for IOMMU_WBUF_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_wbuf_ctrl to value 0x7f"]
 impl crate::Resettable for IOMMU_WBUF_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x7f
-    }
+    const RESET_VALUE: Self::Ux = 0x7f;
 }

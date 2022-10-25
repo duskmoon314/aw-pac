@@ -58,11 +58,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Bypass enable"]
     #[inline(always)]
+    #[must_use]
     pub fn bypass_en(&mut self) -> BYPASS_EN_W<0> {
         BYPASS_EN_W::new(self)
     }
     #[doc = "Bits 1:4 - Stop Clock Control"]
     #[inline(always)]
+    #[must_use]
     pub fn stop_clk_ctrl(&mut self) -> STOP_CLK_CTRL_W<1> {
         STOP_CLK_CTRL_W::new(self)
     }
@@ -85,11 +87,10 @@ impl crate::Readable for SMHC_SFC_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_sfc::W](W) writer structure"]
 impl crate::Writable for SMHC_SFC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_sfc to value 0"]
 impl crate::Resettable for SMHC_SFC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

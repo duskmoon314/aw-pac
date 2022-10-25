@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act1_time+1."]
     #[inline(always)]
+    #[must_use]
     pub fn sensor_act1_time(&mut self) -> SENSOR_ACT1_TIME_W<0> {
         SENSOR_ACT1_TIME_W::new(self)
     }
     #[doc = "Bits 16:27 - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act0_time+1."]
     #[inline(always)]
+    #[must_use]
     pub fn sensor_act0_time(&mut self) -> SENSOR_ACT0_TIME_W<16> {
         SENSOR_ACT0_TIME_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for FSYNC_GEN_DLY_SPEC {
 #[doc = "`write(|w| ..)` method takes [fsync_gen_dly::W](W) writer structure"]
 impl crate::Writable for FSYNC_GEN_DLY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fsync_gen_dly to value 0"]
 impl crate::Resettable for FSYNC_GEN_DLY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

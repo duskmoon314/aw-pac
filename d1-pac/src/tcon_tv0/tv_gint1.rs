@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Scan line for TV line trigger(including inactive lines)\n\nSetting it for the specified line for trigger 1.\n\nNote: SY1 is writable only when LINE_TRG1 is disabled."]
     #[inline(always)]
+    #[must_use]
     pub fn tv_line_int_num(&mut self) -> TV_LINE_INT_NUM_W<0> {
         TV_LINE_INT_NUM_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for TV_GINT1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_gint1::W](W) writer structure"]
 impl crate::Writable for TV_GINT1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_gint1 to value 0"]
 impl crate::Resettable for TV_GINT1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

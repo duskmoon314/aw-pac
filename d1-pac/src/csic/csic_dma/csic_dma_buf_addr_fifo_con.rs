@@ -78,11 +78,10 @@ impl crate::Readable for CSIC_DMA_BUF_ADDR_FIFO_CON_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_buf_addr_fifo_con::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_BUF_ADDR_FIFO_CON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_buf_addr_fifo_con to value 0"]
 impl crate::Resettable for CSIC_DMA_BUF_ADDR_FIFO_CON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

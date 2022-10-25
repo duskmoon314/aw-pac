@@ -130,6 +130,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Color burst phase period selection\n\nThese bits select the number of fields or lines after which the color burst phase is reset to its initial value as specified by the ChromaPhase parameter, This parameter is application only for interlaced video."]
     #[inline(always)]
+    #[must_use]
     pub fn color_phase_reset(&mut self) -> COLOR_PHASE_RESET_W<0> {
         COLOR_PHASE_RESET_W::new(self)
     }
@@ -152,11 +153,10 @@ impl crate::Readable for TVE_COLOR_BURST_PHASE_RESET_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_color_burst_phase_reset_cfg::W](W) writer structure"]
 impl crate::Writable for TVE_COLOR_BURST_PHASE_RESET_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_color_burst_phase_reset_cfg to value 0"]
 impl crate::Resettable for TVE_COLOR_BURST_PHASE_RESET_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

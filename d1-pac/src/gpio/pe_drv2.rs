@@ -133,16 +133,19 @@ impl R {
 impl W {
     #[doc = "PE Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pe_drv<const O: u8>(&mut self) -> PE_DRV_W<O> {
         PE_DRV_W::new(self)
     }
     #[doc = "Bits 0:1 - PE Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe16_drv(&mut self) -> PE_DRV_W<0> {
         PE_DRV_W::new(self)
     }
     #[doc = "Bits 4:5 - PE Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe17_drv(&mut self) -> PE_DRV_W<4> {
         PE_DRV_W::new(self)
     }
@@ -165,11 +168,10 @@ impl crate::Readable for PE_DRV2_SPEC {
 #[doc = "`write(|w| ..)` method takes [pe_drv2::W](W) writer structure"]
 impl crate::Writable for PE_DRV2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pe_drv2 to value 0"]
 impl crate::Resettable for PE_DRV2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

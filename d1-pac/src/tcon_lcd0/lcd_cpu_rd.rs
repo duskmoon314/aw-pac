@@ -40,7 +40,7 @@ impl R {
     #[doc = "Bits 0:23 - Data read on 8080 bus, launch a new read operation on 8080 bus."]
     #[inline(always)]
     pub fn data_rd0(&self) -> DATA_RD0_R {
-        DATA_RD0_R::new((self.bits & 0x00ff_ffff) as u32)
+        DATA_RD0_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
@@ -63,11 +63,10 @@ impl crate::Readable for LCD_CPU_RD_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_rd::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_RD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cpu_rd%s to value 0"]
 impl crate::Resettable for LCD_CPU_RD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

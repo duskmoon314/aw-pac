@@ -151,11 +151,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - This bit selects if the components video output are the RGB components or the YUV components."]
     #[inline(always)]
+    #[must_use]
     pub fn comp_yuv_en(&mut self) -> COMP_YUV_EN_W<0> {
         COMP_YUV_EN_W::new(self)
     }
     #[doc = "Bit 8 - Luma notch filter width selection\n\nThis bit selects the luma notch filter (which is a band-reject filter) width."]
     #[inline(always)]
+    #[must_use]
     pub fn notch_width(&mut self) -> NOTCH_WIDTH_W<8> {
         NOTCH_WIDTH_W::new(self)
     }
@@ -178,11 +180,10 @@ impl crate::Readable for TVE_NOTCH_WIDTH_COMP_YUV_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_notch_width_comp_yuv_en::W](W) writer structure"]
 impl crate::Writable for TVE_NOTCH_WIDTH_COMP_YUV_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_notch_width_comp_yuv_en to value 0x0101"]
 impl crate::Resettable for TVE_NOTCH_WIDTH_COMP_YUV_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0101
-    }
+    const RESET_VALUE: Self::Ux = 0x0101;
 }

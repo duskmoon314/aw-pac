@@ -231,91 +231,109 @@ impl R {
 impl W {
     #[doc = "Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pwm_clk_gating<const O: u8>(&mut self) -> PWM_CLK_GATING_W<O> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 0 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm0_clk_gating(&mut self) -> PWM_CLK_GATING_W<0> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 1 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm1_clk_gating(&mut self) -> PWM_CLK_GATING_W<1> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 2 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm2_clk_gating(&mut self) -> PWM_CLK_GATING_W<2> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 3 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm3_clk_gating(&mut self) -> PWM_CLK_GATING_W<3> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 4 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm4_clk_gating(&mut self) -> PWM_CLK_GATING_W<4> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 5 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm5_clk_gating(&mut self) -> PWM_CLK_GATING_W<5> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 6 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm6_clk_gating(&mut self) -> PWM_CLK_GATING_W<6> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bit 7 - Gating clock for PWM"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm7_clk_gating(&mut self) -> PWM_CLK_GATING_W<7> {
         PWM_CLK_GATING_W::new(self)
     }
     #[doc = "Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pwm_clk_bypass<const O: u8>(&mut self) -> PWM_CLK_BYPASS_W<O> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 16 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm0_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<16> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 17 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm1_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<17> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 18 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm2_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<18> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 19 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm3_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<19> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 20 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm4_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<20> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 21 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm5_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<21> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 22 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm6_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<22> {
         PWM_CLK_BYPASS_W::new(self)
     }
     #[doc = "Bit 23 - Bypass clock source (after pre-scale) to PWM output"]
     #[inline(always)]
+    #[must_use]
     pub fn pwm7_clk_bypass(&mut self) -> PWM_CLK_BYPASS_W<23> {
         PWM_CLK_BYPASS_W::new(self)
     }
@@ -338,11 +356,10 @@ impl crate::Readable for PCGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pcgr::W](W) writer structure"]
 impl crate::Writable for PCGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pcgr to value 0"]
 impl crate::Resettable for PCGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

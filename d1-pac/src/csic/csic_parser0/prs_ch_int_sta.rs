@@ -161,21 +161,25 @@ impl R {
 impl W {
     #[doc = ""]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn input_src_pd<const O: u8>(&mut self) -> INPUT_SRC_PD_W<O> {
         INPUT_SRC_PD_W::new(self)
     }
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn input_src_pd0(&mut self) -> INPUT_SRC_PD_W<0> {
         INPUT_SRC_PD_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn input_src_pd1(&mut self) -> INPUT_SRC_PD_W<1> {
         INPUT_SRC_PD_W::new(self)
     }
     #[doc = "Bit 2 - Multi-channel writing error pending"]
     #[inline(always)]
+    #[must_use]
     pub fn mul_err_pd(&mut self) -> MUL_ERR_PD_W<2> {
         MUL_ERR_PD_W::new(self)
     }
@@ -198,11 +202,10 @@ impl crate::Readable for PRS_CH_INT_STA_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs_ch_int_sta::W](W) writer structure"]
 impl crate::Writable for PRS_CH_INT_STA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x05;
 }
 #[doc = "`reset()` method sets prs_ch%s_int_sta to value 0"]
 impl crate::Resettable for PRS_CH_INT_STA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

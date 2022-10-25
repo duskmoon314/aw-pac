@@ -298,21 +298,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - MIC detect pending interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn mic_det_st(&mut self) -> MIC_DET_ST_W<0> {
         MIC_DET_ST_W::new(self)
     }
     #[doc = "Bit 3 - Jack input detect pending interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn jack_det_iirq(&mut self) -> JACK_DET_IIRQ_W<3> {
         JACK_DET_IIRQ_W::new(self)
     }
     #[doc = "Bit 4 - Jack output detect pending interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn jack_det_oirq(&mut self) -> JACK_DET_OIRQ_W<4> {
         JACK_DET_OIRQ_W::new(self)
     }
     #[doc = "Bits 13:14 - After MIC DATA data is received, the first N-data will be discarded."]
     #[inline(always)]
+    #[must_use]
     pub fn mdata_discard(&mut self) -> MDATA_DISCARD_W<13> {
         MDATA_DISCARD_W::new(self)
     }
@@ -335,11 +339,10 @@ impl crate::Readable for HMIC_STS_SPEC {
 #[doc = "`write(|w| ..)` method takes [hmic_sts::W](W) writer structure"]
 impl crate::Writable for HMIC_STS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x19;
 }
 #[doc = "`reset()` method sets hmic_sts to value 0x6000"]
 impl crate::Resettable for HMIC_STS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x6000
-    }
+    const RESET_VALUE: Self::Ux = 0x6000;
 }

@@ -180,16 +180,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
+    #[must_use]
     pub fn div_cfg(&mut self) -> DIV_CFG_W<0> {
         DIV_CFG_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
+    #[must_use]
     pub fn axi_div_cfg(&mut self) -> AXI_DIV_CFG_W<8> {
         AXI_DIV_CFG_W::new(self)
     }
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
@@ -212,11 +215,10 @@ impl crate::Readable for RISCV_CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [riscv_clk::W](W) writer structure"]
 impl crate::Writable for RISCV_CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets riscv_clk to value 0"]
 impl crate::Resettable for RISCV_CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

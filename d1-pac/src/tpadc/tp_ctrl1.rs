@@ -446,61 +446,73 @@ impl R {
 impl W {
     #[doc = "Analog Input Channel Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn adc_chan_select<const O: u8>(&mut self) -> ADC_CHAN_SELECT_W<O> {
         ADC_CHAN_SELECT_W::new(self)
     }
     #[doc = "Bit 0 - Analog Input Channel Select"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_chan0_select(&mut self) -> ADC_CHAN_SELECT_W<0> {
         ADC_CHAN_SELECT_W::new(self)
     }
     #[doc = "Bit 1 - Analog Input Channel Select"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_chan1_select(&mut self) -> ADC_CHAN_SELECT_W<1> {
         ADC_CHAN_SELECT_W::new(self)
     }
     #[doc = "Bit 2 - Analog Input Channel Select"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_chan2_select(&mut self) -> ADC_CHAN_SELECT_W<2> {
         ADC_CHAN_SELECT_W::new(self)
     }
     #[doc = "Bit 3 - Analog Input Channel Select"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_chan3_select(&mut self) -> ADC_CHAN_SELECT_W<3> {
         ADC_CHAN_SELECT_W::new(self)
     }
     #[doc = "Bit 4 - Touch Panel Mode and Auxiliary ADC Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_mode_select(&mut self) -> TP_MODE_SELECT_W<4> {
         TP_MODE_SELECT_W::new(self)
     }
     #[doc = "Bit 5 - TP Function Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_en(&mut self) -> TP_EN_W<5> {
         TP_EN_W::new(self)
     }
     #[doc = "Bit 6 - Touch Panel Double Point Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_dual_en(&mut self) -> TP_DUAL_EN_W<6> {
         TP_DUAL_EN_W::new(self)
     }
     #[doc = "Bit 7 - Touch Panel Calibration"]
     #[inline(always)]
+    #[must_use]
     pub fn touch_pan_cali_en(&mut self) -> TOUCH_PAN_CALI_EN_W<7> {
         TOUCH_PAN_CALI_EN_W::new(self)
     }
     #[doc = "Bit 8 - T-sensor Chopping Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn chopper_en(&mut self) -> CHOPPER_EN_W<8> {
         CHOPPER_EN_W::new(self)
     }
     #[doc = "Bit 9 - Stylus Up Debounce Function Select"]
     #[inline(always)]
+    #[must_use]
     pub fn stylus_up_debounce_en(&mut self) -> STYLUS_UP_DEBOUNCE_EN_W<9> {
         STYLUS_UP_DEBOUNCE_EN_W::new(self)
     }
     #[doc = "Bits 12:19 - Stylus Up Debounce Time Setting"]
     #[inline(always)]
+    #[must_use]
     pub fn stylus_up_debounce(&mut self) -> STYLUS_UP_DEBOUNCE_W<12> {
         STYLUS_UP_DEBOUNCE_W::new(self)
     }
@@ -523,11 +535,10 @@ impl crate::Readable for TP_CTRL1_SPEC {
 #[doc = "`write(|w| ..)` method takes [tp_ctrl1::W](W) writer structure"]
 impl crate::Writable for TP_CTRL1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tp_ctrl1 to value 0"]
 impl crate::Resettable for TP_CTRL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

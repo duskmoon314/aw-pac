@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Specify the width of the video line in encoder clock cycles. 12- bit unsigned multiple of 4 integer. Allowed range is from 0 to 4092."]
     #[inline(always)]
+    #[must_use]
     pub fn active_line(&mut self) -> ACTIVE_LINE_W<0> {
         ACTIVE_LINE_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for TVE_VIDEO_ACTIVE_LINE_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_video_active_line::W](W) writer structure"]
 impl crate::Writable for TVE_VIDEO_ACTIVE_LINE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_video_active_line to value 0x05a0"]
 impl crate::Resettable for TVE_VIDEO_ACTIVE_LINE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x05a0
-    }
+    const RESET_VALUE: Self::Ux = 0x05a0;
 }

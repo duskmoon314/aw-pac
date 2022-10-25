@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - TP Common Data"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_cdat(&mut self) -> TP_CDAT_W<0> {
         TP_CDAT_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for TP_CALI_DATA_SPEC {
 #[doc = "`write(|w| ..)` method takes [tp_cali_data::W](W) writer structure"]
 impl crate::Writable for TP_CALI_DATA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tp_cali_data to value 0"]
 impl crate::Resettable for TP_CALI_DATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

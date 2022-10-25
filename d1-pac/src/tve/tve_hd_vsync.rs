@@ -61,11 +61,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11"]
     #[inline(always)]
+    #[must_use]
     pub fn front_porch_like_in_hd_mode_vsync(&mut self) -> FRONT_PORCH_LIKE_IN_HD_MODE_VSYNC_W<0> {
         FRONT_PORCH_LIKE_IN_HD_MODE_VSYNC_W::new(self)
     }
     #[doc = "Bits 16:27"]
     #[inline(always)]
+    #[must_use]
     pub fn broad_plus_cycle_number_in_hd_mode_vsync(
         &mut self,
     ) -> BROAD_PLUS_CYCLE_NUMBER_IN_HD_MODE_VSYNC_W<16> {
@@ -90,11 +92,10 @@ impl crate::Readable for TVE_HD_VSYNC_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_hd_vsync::W](W) writer structure"]
 impl crate::Writable for TVE_HD_VSYNC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_hd_vsync to value 0x16"]
 impl crate::Resettable for TVE_HD_VSYNC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x16
-    }
+    const RESET_VALUE: Self::Ux = 0x16;
 }

@@ -855,61 +855,73 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Video Source Type"]
     #[inline(always)]
+    #[must_use]
     pub fn vi_src_type(&mut self) -> VI_SRC_TYPE_W<0> {
         VI_SRC_TYPE_W::new(self)
     }
     #[doc = "Bit 1 - Element A Position"]
     #[inline(always)]
+    #[must_use]
     pub fn element_a_pos(&mut self) -> ELEMENT_A_POS_W<1> {
         ELEMENT_A_POS_W::new(self)
     }
     #[doc = "Bit 2 - RGB Bit Order"]
     #[inline(always)]
+    #[must_use]
     pub fn rgb_bo(&mut self) -> RGB_BO_W<2> {
         RGB_BO_W::new(self)
     }
     #[doc = "Bit 3 - Dummy Cycle Value"]
     #[inline(always)]
+    #[must_use]
     pub fn dum_val(&mut self) -> DUM_VAL_W<3> {
         DUM_VAL_W::new(self)
     }
     #[doc = "Bits 4:7 - RGB Source Format"]
     #[inline(always)]
+    #[must_use]
     pub fn rgb_src_fmt(&mut self) -> RGB_SRC_FMT_W<4> {
         RGB_SRC_FMT_W::new(self)
     }
     #[doc = "Bits 8:10"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_interface(&mut self) -> DBI_INTERFACE_W<8> {
         DBI_INTERFACE_W::new(self)
     }
     #[doc = "Bits 12:14 - Output Data Format"]
     #[inline(always)]
+    #[must_use]
     pub fn dat_fmt(&mut self) -> DAT_FMT_W<12> {
         DAT_FMT_W::new(self)
     }
     #[doc = "Bit 15 - Transmit Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tran_mod(&mut self) -> TRAN_MOD_W<15> {
         TRAN_MOD_W::new(self)
     }
     #[doc = "Bits 16:18 - Output RGB Sequence"]
     #[inline(always)]
+    #[must_use]
     pub fn rgb_seq(&mut self) -> RGB_SEQ_W<16> {
         RGB_SEQ_W::new(self)
     }
     #[doc = "Bit 19 - Output Data Sequence"]
     #[inline(always)]
+    #[must_use]
     pub fn dat_seq(&mut self) -> DAT_SEQ_W<19> {
         DAT_SEQ_W::new(self)
     }
     #[doc = "Bits 20:30 - Write Command Dummy Cycles"]
     #[inline(always)]
+    #[must_use]
     pub fn wcdc(&mut self) -> WCDC_W<20> {
         WCDC_W::new(self)
     }
     #[doc = "Bit 31 - Command Type"]
     #[inline(always)]
+    #[must_use]
     pub fn cmdt(&mut self) -> CMDT_W<31> {
         CMDT_W::new(self)
     }
@@ -932,11 +944,10 @@ impl crate::Readable for DBI_CTL_0_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbi_ctl_0::W](W) writer structure"]
 impl crate::Writable for DBI_CTL_0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dbi_ctl_0 to value 0"]
 impl crate::Resettable for DBI_CTL_0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

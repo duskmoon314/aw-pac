@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Set the stop position of the slave LCD. This value is the number of pixels between the stop position and the end of the HFP. Stop_pos = HFP - Stop_val. 0<Stop_pos<HFP-2\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
+    #[must_use]
     pub fn stop_val(&mut self) -> STOP_VAL_W<0> {
         STOP_VAL_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for LCD_SLAVE_STOP_POS_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_slave_stop_pos::W](W) writer structure"]
 impl crate::Writable for LCD_SLAVE_STOP_POS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_slave_stop_pos to value 0"]
 impl crate::Resettable for LCD_SLAVE_STOP_POS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

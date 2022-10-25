@@ -66,16 +66,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - If bit\\[i\\] is set, the PWM i is selected as one channel of PWM Group\\[g\\]."]
     #[inline(always)]
+    #[must_use]
     pub fn cs(&mut self) -> CS_W<0> {
         CS_W::new(self)
     }
     #[doc = "Bit 16 - PWM Group Enable."]
     #[inline(always)]
+    #[must_use]
     pub fn en(&mut self) -> EN_W<16> {
         EN_W::new(self)
     }
     #[doc = "Bit 17 - The PWM channels selected in CS start to output PWM waveform at the same time."]
     #[inline(always)]
+    #[must_use]
     pub fn start(&mut self) -> START_W<17> {
         START_W::new(self)
     }
@@ -98,11 +101,10 @@ impl crate::Readable for PGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pgr::W](W) writer structure"]
 impl crate::Writable for PGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pgr%s to value 0"]
 impl crate::Resettable for PGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

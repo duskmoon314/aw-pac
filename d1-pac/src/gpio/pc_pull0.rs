@@ -150,46 +150,55 @@ impl R {
 impl W {
     #[doc = "PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pc_pull<const O: u8>(&mut self) -> PC_PULL_W<O> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 0:1 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc0_pull(&mut self) -> PC_PULL_W<0> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 2:3 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc1_pull(&mut self) -> PC_PULL_W<2> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 4:5 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc2_pull(&mut self) -> PC_PULL_W<4> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 6:7 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc3_pull(&mut self) -> PC_PULL_W<6> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 8:9 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc4_pull(&mut self) -> PC_PULL_W<8> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 10:11 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc5_pull(&mut self) -> PC_PULL_W<10> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 12:13 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc6_pull(&mut self) -> PC_PULL_W<12> {
         PC_PULL_W::new(self)
     }
     #[doc = "Bits 14:15 - PC Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc7_pull(&mut self) -> PC_PULL_W<14> {
         PC_PULL_W::new(self)
     }
@@ -212,11 +221,10 @@ impl crate::Readable for PC_PULL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pc_pull0::W](W) writer structure"]
 impl crate::Writable for PC_PULL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pc_pull0 to value 0"]
 impl crate::Resettable for PC_PULL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -231,8 +231,5 @@ impl crate::Readable for USR_SPEC {
 }
 #[doc = "`reset()` method sets usr to value 0"]
 impl crate::Resettable for USR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

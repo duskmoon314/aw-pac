@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - The LINE_CNT_NUM value is set by user,when internal line counter reach the set value, the LC_PD will be set."]
     #[inline(always)]
+    #[must_use]
     pub fn line_cnt_num(&mut self) -> LINE_CNT_NUM_W<0> {
         LINE_CNT_NUM_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for CSIC_DMA_LINE_CNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_line_cnt::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_LINE_CNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_line_cnt to value 0"]
 impl crate::Resettable for CSIC_DMA_LINE_CNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

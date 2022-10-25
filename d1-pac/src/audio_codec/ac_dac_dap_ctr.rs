@@ -206,16 +206,19 @@ impl R {
 impl W {
     #[doc = "Bit 28 - HPF enable control"]
     #[inline(always)]
+    #[must_use]
     pub fn ddap_hpf_en(&mut self) -> DDAP_HPF_EN_W<28> {
         DDAP_HPF_EN_W::new(self)
     }
     #[doc = "Bit 29 - DRC enable control"]
     #[inline(always)]
+    #[must_use]
     pub fn ddap_drc_en(&mut self) -> DDAP_DRC_EN_W<29> {
         DDAP_DRC_EN_W::new(self)
     }
     #[doc = "Bit 31 - DAP for DRC enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ddap_en(&mut self) -> DDAP_EN_W<31> {
         DDAP_EN_W::new(self)
     }
@@ -238,11 +241,10 @@ impl crate::Readable for AC_DAC_DAP_CTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_dap_ctr::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DAP_CTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_dap_ctr to value 0"]
 impl crate::Resettable for AC_DAC_DAP_CTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

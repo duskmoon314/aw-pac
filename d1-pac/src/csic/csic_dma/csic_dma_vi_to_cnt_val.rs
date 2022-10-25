@@ -63,11 +63,10 @@ impl crate::Readable for CSIC_DMA_VI_TO_CNT_VAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_vi_to_cnt_val::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_VI_TO_CNT_VAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_vi_to_cnt_val to value 0"]
 impl crate::Resettable for CSIC_DMA_VI_TO_CNT_VAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

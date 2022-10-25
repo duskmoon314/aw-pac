@@ -214,21 +214,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Card Clock Divider"]
     #[inline(always)]
+    #[must_use]
     pub fn cclk_div(&mut self) -> CCLK_DIV_W<0> {
         CCLK_DIV_W::new(self)
     }
     #[doc = "Bit 16 - Card Clock Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cclk_enb(&mut self) -> CCLK_ENB_W<16> {
         CCLK_ENB_W::new(self)
     }
     #[doc = "Bit 17 - Card Clock Output Control"]
     #[inline(always)]
+    #[must_use]
     pub fn cclk_ctrl(&mut self) -> CCLK_CTRL_W<17> {
         CCLK_CTRL_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn mask_data0(&mut self) -> MASK_DATA0_W<31> {
         MASK_DATA0_W::new(self)
     }
@@ -251,11 +255,10 @@ impl crate::Readable for SMHC_CLKDIV_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_clkdiv::W](W) writer structure"]
 impl crate::Writable for SMHC_CLKDIV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_clkdiv to value 0"]
 impl crate::Resettable for SMHC_CLKDIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

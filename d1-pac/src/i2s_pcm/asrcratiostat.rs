@@ -145,7 +145,7 @@ impl R {
     #[doc = "Bits 0:25 - Adaptive Ratio Computational Value"]
     #[inline(always)]
     pub fn adapt_comput_value(&self) -> ADAPT_COMPUT_VALUE_R {
-        ADAPT_COMPUT_VALUE_R::new((self.bits & 0x03ff_ffff) as u32)
+        ADAPT_COMPUT_VALUE_R::new(self.bits & 0x03ff_ffff)
     }
     #[doc = "Bit 28 - Adaptive Ratio Computational Lock"]
     #[inline(always)]
@@ -161,16 +161,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:25 - Adaptive Ratio Computational Value"]
     #[inline(always)]
+    #[must_use]
     pub fn adapt_comput_value(&mut self) -> ADAPT_COMPUT_VALUE_W<0> {
         ADAPT_COMPUT_VALUE_W::new(self)
     }
     #[doc = "Bit 28 - Adaptive Ratio Computational Lock"]
     #[inline(always)]
+    #[must_use]
     pub fn adapt_comput_lock(&mut self) -> ADAPT_COMPUT_LOCK_W<28> {
         ADAPT_COMPUT_LOCK_W::new(self)
     }
     #[doc = "Bit 29 - ASRC Receive Data Buffer Overflow State\n\nIt can control thye mute with lock."]
     #[inline(always)]
+    #[must_use]
     pub fn asrc_buf_overflow_sta(&mut self) -> ASRC_BUF_OVERFLOW_STA_W<29> {
         ASRC_BUF_OVERFLOW_STA_W::new(self)
     }
@@ -193,11 +196,10 @@ impl crate::Readable for ASRCRATIOSTAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [asrcratiostat::W](W) writer structure"]
 impl crate::Writable for ASRCRATIOSTAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets asrcratiostat to value 0"]
 impl crate::Resettable for ASRCRATIOSTAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

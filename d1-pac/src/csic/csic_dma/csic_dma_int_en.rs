@@ -164,66 +164,79 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Capture done\n\nIndicates the CSI has completed capturing the image data. For still capture, the bit is set when one frame data has been written to buffer. For video capture, the bit is set when the last frame has been written to buffer after video capture has been disabled. For CCIR656 interface, if the output format is frame planar YCbCr 420 mode, the frame end means the field2 end, the other frame end means field end."]
     #[inline(always)]
+    #[must_use]
     pub fn cd_int_en(&mut self) -> CD_INT_EN_W<0> {
         CD_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - Frame done\n\nIndicates the CSI has finished capturing an image frame. Applies to video capture mode. The bit is set after each completed frame capturing data is written to buffer as long as video capture remains enabled."]
     #[inline(always)]
+    #[must_use]
     pub fn fd_int_en(&mut self) -> FD_INT_EN_W<1> {
         FD_INT_EN_W::new(self)
     }
     #[doc = "Bit 2 - FIFO 0 overflow\n\nThe bit is set when the FIFO 0 became overflow."]
     #[inline(always)]
+    #[must_use]
     pub fn fifo0_of_int_en(&mut self) -> FIFO0_OF_INT_EN_W<2> {
         FIFO0_OF_INT_EN_W::new(self)
     }
     #[doc = "Bit 3 - FIFO 1 overflow\n\nThe bit is set when the FIFO 1 became overflow."]
     #[inline(always)]
+    #[must_use]
     pub fn fifo1_of_int_en(&mut self) -> FIFO1_OF_INT_EN_W<3> {
         FIFO1_OF_INT_EN_W::new(self)
     }
     #[doc = "Bit 4 - FIFO 2 overflow\n\nThe bit is set when the FIFO 2 became overflow."]
     #[inline(always)]
+    #[must_use]
     pub fn fifo2_of_int_en(&mut self) -> FIFO2_OF_INT_EN_W<4> {
         FIFO2_OF_INT_EN_W::new(self)
     }
     #[doc = "Bit 5 - Line counter flag The bit is set when the specific line has been written to dram every frame. The line number is set in the line counter register."]
     #[inline(always)]
+    #[must_use]
     pub fn lc_int_en(&mut self) -> LC_INT_EN_W<5> {
         LC_INT_EN_W::new(self)
     }
     #[doc = "Bit 6 - Hblank FIFO overflow The bit is set when 3 FIFOs still overflow after the hblank."]
     #[inline(always)]
+    #[must_use]
     pub fn hb_of_int_en(&mut self) -> HB_OF_INT_EN_W<6> {
         HB_OF_INT_EN_W::new(self)
     }
     #[doc = "Bit 7 - vsync flag\n\nThe bit is set when vsync come. And at this time load the buffer address for the coming frame. So after this irq come, changing the buffer address could only effect next frame"]
     #[inline(always)]
+    #[must_use]
     pub fn vs_int_en(&mut self) -> VS_INT_EN_W<7> {
         VS_INT_EN_W::new(self)
     }
     #[doc = "Bit 11 - Set a INT when clear Frame cnt."]
     #[inline(always)]
+    #[must_use]
     pub fn clr_frame_cnt_int_en(&mut self) -> CLR_FRAME_CNT_INT_EN_W<11> {
         CLR_FRAME_CNT_INT_EN_W::new(self)
     }
     #[doc = "Bit 12 - Set an INT when no video input exceeds the setting threshold time"]
     #[inline(always)]
+    #[must_use]
     pub fn video_input_to_int_en(&mut self) -> VIDEO_INPUT_TO_INT_EN_W<12> {
         VIDEO_INPUT_TO_INT_EN_W::new(self)
     }
     #[doc = "Bit 13 - Set an INT when content in BUF Address FIFO less than CSIC_DMA_BUFA_FIFO_THRESHOLD, only use in BUF Address FIFO MODE."]
     #[inline(always)]
+    #[must_use]
     pub fn buf_addr_fifo_int_en(&mut self) -> BUF_ADDR_FIFO_INT_EN_W<13> {
         BUF_ADDR_FIFO_INT_EN_W::new(self)
     }
     #[doc = "Bit 14 - Set an INT when the value of CSIC_DMA_STORED_FRM_CNT reaches CSIC_DMA_STORED_FRM_THRESHOLD, only use in BUF Address FIFO MODE."]
     #[inline(always)]
+    #[must_use]
     pub fn stored_frm_cnt_int_en(&mut self) -> STORED_FRM_CNT_INT_EN_W<14> {
         STORED_FRM_CNT_INT_EN_W::new(self)
     }
     #[doc = "Bit 15 - Set an INT when frame starts with empty Buffer Address FIFO, only use in BUF Address FIFO MODE."]
     #[inline(always)]
+    #[must_use]
     pub fn frm_lost_int_en(&mut self) -> FRM_LOST_INT_EN_W<15> {
         FRM_LOST_INT_EN_W::new(self)
     }
@@ -246,11 +259,10 @@ impl crate::Readable for CSIC_DMA_INT_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_int_en::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_INT_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_int_en to value 0"]
 impl crate::Resettable for CSIC_DMA_INT_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

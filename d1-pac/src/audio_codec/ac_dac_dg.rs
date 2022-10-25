@@ -361,26 +361,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - ADDA Loop Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn adda_loop_mode(&mut self) -> ADDA_LOOP_MODE_W<0> {
         ADDA_LOOP_MODE_W::new(self)
     }
     #[doc = "Bit 6 - DAC Output Channel Swap Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn da_swp(&mut self) -> DA_SWP_W<6> {
         DA_SWP_W::new(self)
     }
     #[doc = "Bit 8 - CODEC Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn codec_clk_select(&mut self) -> CODEC_CLK_SELECT_W<8> {
         CODEC_CLK_SELECT_W::new(self)
     }
     #[doc = "Bits 9:10 - DAC Pattern Select"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_pattern_select(&mut self) -> DAC_PATTERN_SELECT_W<9> {
         DAC_PATTERN_SELECT_W::new(self)
     }
     #[doc = "Bit 11 - DAC Modulator Debug Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_modu_select(&mut self) -> DAC_MODU_SELECT_W<11> {
         DAC_MODU_SELECT_W::new(self)
     }
@@ -403,11 +408,10 @@ impl crate::Readable for AC_DAC_DG_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_dg::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_dg to value 0"]
 impl crate::Resettable for AC_DAC_DG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

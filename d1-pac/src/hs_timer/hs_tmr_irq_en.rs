@@ -105,16 +105,19 @@ impl R {
 impl W {
     #[doc = "HSTimer Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn hs_tmr_int_en<const O: u8>(&mut self) -> HS_TMR_INT_EN_W<O> {
         HS_TMR_INT_EN_W::new(self)
     }
     #[doc = "Bit 0 - HSTimer Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hs_tmr0_int_en(&mut self) -> HS_TMR_INT_EN_W<0> {
         HS_TMR_INT_EN_W::new(self)
     }
     #[doc = "Bit 1 - HSTimer Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hs_tmr1_int_en(&mut self) -> HS_TMR_INT_EN_W<1> {
         HS_TMR_INT_EN_W::new(self)
     }
@@ -137,11 +140,10 @@ impl crate::Readable for HS_TMR_IRQ_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [hs_tmr_irq_en::W](W) writer structure"]
 impl crate::Writable for HS_TMR_IRQ_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hs_tmr_irq_en to value 0"]
 impl crate::Resettable for HS_TMR_IRQ_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

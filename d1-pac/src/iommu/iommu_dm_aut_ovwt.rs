@@ -277,86 +277,103 @@ impl R {
 impl W {
     #[doc = "Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn m_rd_aut_ovwt_ctrl<const O: u8>(&mut self) -> M_RD_AUT_OVWT_CTRL_W<O> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 0 - Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m0_rd_aut_ovwt_ctrl(&mut self) -> M_RD_AUT_OVWT_CTRL_W<0> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 2 - Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m1_rd_aut_ovwt_ctrl(&mut self) -> M_RD_AUT_OVWT_CTRL_W<2> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 4 - Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m2_rd_aut_ovwt_ctrl(&mut self) -> M_RD_AUT_OVWT_CTRL_W<4> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 6 - Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m3_rd_aut_ovwt_ctrl(&mut self) -> M_RD_AUT_OVWT_CTRL_W<6> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 8 - Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m4_rd_aut_ovwt_ctrl(&mut self) -> M_RD_AUT_OVWT_CTRL_W<8> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 10 - Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m5_rd_aut_ovwt_ctrl(&mut self) -> M_RD_AUT_OVWT_CTRL_W<10> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 12 - Master\\[i\\] read permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m6_rd_aut_ovwt_ctrl(&mut self) -> M_RD_AUT_OVWT_CTRL_W<12> {
         M_RD_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn m_wt_aut_ovwt_ctrl<const O: u8>(&mut self) -> M_WT_AUT_OVWT_CTRL_W<O> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 1 - Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m0_wt_aut_ovwt_ctrl(&mut self) -> M_WT_AUT_OVWT_CTRL_W<1> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 3 - Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m1_wt_aut_ovwt_ctrl(&mut self) -> M_WT_AUT_OVWT_CTRL_W<3> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 5 - Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m2_wt_aut_ovwt_ctrl(&mut self) -> M_WT_AUT_OVWT_CTRL_W<5> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 7 - Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m3_wt_aut_ovwt_ctrl(&mut self) -> M_WT_AUT_OVWT_CTRL_W<7> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 9 - Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m4_wt_aut_ovwt_ctrl(&mut self) -> M_WT_AUT_OVWT_CTRL_W<9> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 11 - Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m5_wt_aut_ovwt_ctrl(&mut self) -> M_WT_AUT_OVWT_CTRL_W<11> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 13 - Master\\[i\\] write permission overwrite control"]
     #[inline(always)]
+    #[must_use]
     pub fn m6_wt_aut_ovwt_ctrl(&mut self) -> M_WT_AUT_OVWT_CTRL_W<13> {
         M_WT_AUT_OVWT_CTRL_W::new(self)
     }
     #[doc = "Bit 31 - Domain write/read permission overwrite enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dm_aut_ovwt_enable(&mut self) -> DM_AUT_OVWT_ENABLE_W<31> {
         DM_AUT_OVWT_ENABLE_W::new(self)
     }
@@ -379,11 +396,10 @@ impl crate::Readable for IOMMU_DM_AUT_OVWT_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_dm_aut_ovwt::W](W) writer structure"]
 impl crate::Writable for IOMMU_DM_AUT_OVWT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_dm_aut_ovwt to value 0"]
 impl crate::Resettable for IOMMU_DM_AUT_OVWT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

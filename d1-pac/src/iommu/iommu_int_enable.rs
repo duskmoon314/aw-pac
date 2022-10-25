@@ -364,71 +364,85 @@ impl R {
 impl W {
     #[doc = "Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn micro_tlb_invalid_en<const O: u8>(&mut self) -> MICRO_TLB_INVALID_EN_W<O> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 0 - Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb0_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<0> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 2 - Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb1_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<2> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 4 - Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb2_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<4> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 6 - Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb3_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<6> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 8 - Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb4_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<8> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 10 - Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb5_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<10> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 12 - Micro TLB\\[i\\] permission invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb6_invalid_en(&mut self) -> MICRO_TLB_INVALID_EN_W<12> {
         MICRO_TLB_INVALID_EN_W::new(self)
     }
     #[doc = "Level\\[i\\] page table invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn l_page_table_invalid_en<const O: u8>(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<O> {
         L_PAGE_TABLE_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 16 - Level\\[i\\] page table invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn l0_page_table_invalid_en(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<16> {
         L_PAGE_TABLE_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 17 - Level\\[i\\] page table invalid interrupt enable"]
     #[inline(always)]
+    #[must_use]
     pub fn l1_page_table_invalid_en(&mut self) -> L_PAGE_TABLE_INVALID_EN_W<17> {
         L_PAGE_TABLE_INVALID_EN_W::new(self)
     }
     #[doc = "Bit 18 - Debug or Prefetch DRAM Invalid Level1 Page Table Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dbg_pf_dram_iv_l1_pt_en(&mut self) -> DBG_PF_DRAM_IV_L1_PT_EN_W<18> {
         DBG_PF_DRAM_IV_L1_PT_EN_W::new(self)
     }
     #[doc = "Bit 19 - Debug or Prefetch PTW Cache Invalid Level1 Page Table Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dbg_pf_pc_iv_l1_pt_en(&mut self) -> DBG_PF_PC_IV_L1_PT_EN_W<19> {
         DBG_PF_PC_IV_L1_PT_EN_W::new(self)
     }
     #[doc = "Bit 20 - Debug or Prefetch Invalid Page Table Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dbg_pf_l2_iv_pt_en(&mut self) -> DBG_PF_L2_IV_PT_EN_W<20> {
         DBG_PF_L2_IV_PT_EN_W::new(self)
     }
@@ -451,11 +465,10 @@ impl crate::Readable for IOMMU_INT_ENABLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_int_enable::W](W) writer structure"]
 impl crate::Writable for IOMMU_INT_ENABLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_int_enable to value 0"]
 impl crate::Resettable for IOMMU_INT_ENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -399,8 +399,5 @@ impl crate::Readable for DMAC_CFG_SPEC {
 }
 #[doc = "`reset()` method sets dmac_cfg%s to value 0"]
 impl crate::Resettable for DMAC_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

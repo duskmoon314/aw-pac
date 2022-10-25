@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Lock State"]
     #[inline(always)]
+    #[must_use]
     pub fn taken(&mut self) -> TAKEN_W<0> {
         TAKEN_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for SPINLOCK_LOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [spinlock_lock::W](W) writer structure"]
 impl crate::Writable for SPINLOCK_LOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spinlock_lock%s to value 0"]
 impl crate::Resettable for SPINLOCK_LOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

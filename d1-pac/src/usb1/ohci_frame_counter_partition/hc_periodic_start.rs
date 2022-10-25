@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - PeriodicStart\n\nAfter a hardware reset, this field is cleared. This is then set by HCD during the HC initialization. The value is calculated roughly as 10% off from. A typical value will be 0x2A3F (or 0x3e67). When reaches the value specified, processing of the periodic lists will have priority over Control/Bulk processing. HC will therefore start processing the Interrupt list after completing the current Control or Bulk transaction that is in progress."]
     #[inline(always)]
+    #[must_use]
     pub fn periodic_start(&mut self) -> PERIODIC_START_W<0> {
         PERIODIC_START_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for HC_PERIODIC_START_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_periodic_start::W](W) writer structure"]
 impl crate::Writable for HC_PERIODIC_START_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_periodic_start to value 0"]
 impl crate::Resettable for HC_PERIODIC_START_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

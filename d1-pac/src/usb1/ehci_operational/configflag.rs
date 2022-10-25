@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Configure Flag (CF)\n\nHost software sets this bit as the last action in its process of configuring the Host Controller."]
     #[inline(always)]
+    #[must_use]
     pub fn cf(&mut self) -> CF_W<0> {
         CF_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for CONFIGFLAG_SPEC {
 #[doc = "`write(|w| ..)` method takes [configflag::W](W) writer structure"]
 impl crate::Writable for CONFIGFLAG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets configflag to value 0"]
 impl crate::Resettable for CONFIGFLAG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

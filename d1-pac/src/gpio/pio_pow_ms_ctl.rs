@@ -171,36 +171,43 @@ impl R {
 impl W {
     #[doc = "VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn vcc_p_ws_vol_mod_sel<const O: u8>(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<O> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 2 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
+    #[must_use]
     pub fn vcc_p_c_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<2> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 3 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
+    #[must_use]
     pub fn vcc_p_d_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<3> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 4 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
+    #[must_use]
     pub fn vcc_p_e_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<4> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 5 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
+    #[must_use]
     pub fn vcc_p_f_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<5> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 6 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
+    #[must_use]
     pub fn vcc_p_g_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<6> {
         VCC_P_WS_VOL_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 12 - VCC_IO Withstand Voltage Mode Select Control"]
     #[inline(always)]
+    #[must_use]
     pub fn vccio_ws_vol_mod_sel(&mut self) -> VCCIO_WS_VOL_MOD_SEL_W<12> {
         VCCIO_WS_VOL_MOD_SEL_W::new(self)
     }
@@ -223,11 +230,10 @@ impl crate::Readable for PIO_POW_MS_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pio_pow_ms_ctl::W](W) writer structure"]
 impl crate::Writable for PIO_POW_MS_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pio_pow_ms_ctl to value 0"]
 impl crate::Resettable for PIO_POW_MS_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

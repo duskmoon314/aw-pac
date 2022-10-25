@@ -104,11 +104,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The Cycle Number of Pulse Extend.\n\nThe cycle is BCLK and is at least 1."]
     #[inline(always)]
+    #[must_use]
     pub fn cyclenum(&mut self) -> CYCLENUM_W<0> {
         CYCLENUM_W::new(self)
     }
     #[doc = "Bit 16 - Extend the bit when using ASRC."]
     #[inline(always)]
+    #[must_use]
     pub fn extend(&mut self) -> EXTEND_W<16> {
         EXTEND_W::new(self)
     }
@@ -131,11 +133,10 @@ impl crate::Readable for FSIN_EXTCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [fsin_extcfg::W](W) writer structure"]
 impl crate::Writable for FSIN_EXTCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fsin_extcfg to value 0"]
 impl crate::Resettable for FSIN_EXTCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -68,8 +68,5 @@ impl crate::Readable for DBI_DEBUG_0_SPEC {
 }
 #[doc = "`reset()` method sets dbi_debug_0 to value 0"]
 impl crate::Resettable for DBI_DEBUG_0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

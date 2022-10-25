@@ -19,7 +19,7 @@ impl R {
     #[doc = "Bits 0:24 - DMA Channel Byte Counter Left"]
     #[inline(always)]
     pub fn dma_bcnt_left(&self) -> DMA_BCNT_LEFT_R {
-        DMA_BCNT_LEFT_R::new((self.bits & 0x01ff_ffff) as u32)
+        DMA_BCNT_LEFT_R::new(self.bits & 0x01ff_ffff)
     }
 }
 #[doc = "DMAC Channel Byte Counter Left Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmac_bcnt_left](index.html) module"]
@@ -33,8 +33,5 @@ impl crate::Readable for DMAC_BCNT_LEFT_SPEC {
 }
 #[doc = "`reset()` method sets dmac_bcnt_left%s to value 0"]
 impl crate::Resettable for DMAC_BCNT_LEFT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -347,26 +347,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Set the test mode of dither function"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_frm_test(&mut self) -> LCD_FRM_TEST_W<0> {
         LCD_FRM_TEST_W::new(self)
     }
     #[doc = "Bit 4 - The B component output bits in dither function"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_frm_mode_b(&mut self) -> LCD_FRM_MODE_B_W<4> {
         LCD_FRM_MODE_B_W::new(self)
     }
     #[doc = "Bit 5 - The G component output bits in dither function"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_frm_mode_g(&mut self) -> LCD_FRM_MODE_G_W<5> {
         LCD_FRM_MODE_G_W::new(self)
     }
     #[doc = "Bit 6 - The R component output bits in dither function"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_frm_mode_r(&mut self) -> LCD_FRM_MODE_R_W<6> {
         LCD_FRM_MODE_R_W::new(self)
     }
     #[doc = "Bit 31 - Enable the dither function"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_frm_en(&mut self) -> LCD_FRM_EN_W<31> {
         LCD_FRM_EN_W::new(self)
     }
@@ -389,11 +394,10 @@ impl crate::Readable for LCD_FRM_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_frm_ctl::W](W) writer structure"]
 impl crate::Writable for LCD_FRM_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_frm_ctl to value 0"]
 impl crate::Resettable for LCD_FRM_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

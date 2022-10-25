@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The slope of the linear, which is determined by the equation that Kn = 1/R. R is the ratio of the linear, which is always an integer. The format is 8.24. (The default value is <1:1>)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_hkn(&mut self) -> ADC_DRC_HKN_W<0> {
         ADC_DRC_HKN_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_HKN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_hkn::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_HKN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_hkn to value 0x0100"]
 impl crate::Resettable for AC_ADC_DRC_HKN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0100;
 }

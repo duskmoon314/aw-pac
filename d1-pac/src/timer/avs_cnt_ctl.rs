@@ -171,31 +171,37 @@ impl R {
 impl W {
     #[doc = "Audio Video Sync Counter Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn avs_cnt_en<const O: u8>(&mut self) -> AVS_CNT_EN_W<O> {
         AVS_CNT_EN_W::new(self)
     }
     #[doc = "Bit 0 - Audio Video Sync Counter Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn avs_cnt0_en(&mut self) -> AVS_CNT_EN_W<0> {
         AVS_CNT_EN_W::new(self)
     }
     #[doc = "Bit 1 - Audio Video Sync Counter Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn avs_cnt1_en(&mut self) -> AVS_CNT_EN_W<1> {
         AVS_CNT_EN_W::new(self)
     }
     #[doc = "Audio Video Sync Counter Pause Control"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn avs_cnt_ps<const O: u8>(&mut self) -> AVS_CNT_PS_W<O> {
         AVS_CNT_PS_W::new(self)
     }
     #[doc = "Bit 8 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
+    #[must_use]
     pub fn avs_cnt0_ps(&mut self) -> AVS_CNT_PS_W<8> {
         AVS_CNT_PS_W::new(self)
     }
     #[doc = "Bit 9 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
+    #[must_use]
     pub fn avs_cnt1_ps(&mut self) -> AVS_CNT_PS_W<9> {
         AVS_CNT_PS_W::new(self)
     }
@@ -218,11 +224,10 @@ impl crate::Readable for AVS_CNT_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [avs_cnt_ctl::W](W) writer structure"]
 impl crate::Writable for AVS_CNT_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets avs_cnt_ctl to value 0"]
 impl crate::Resettable for AVS_CNT_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

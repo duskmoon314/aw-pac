@@ -54,11 +54,10 @@ impl crate::Readable for EMAC_RX_HASH1_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_rx_hash1::W](W) writer structure"]
 impl crate::Writable for EMAC_RX_HASH1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_rx_hash1 to value 0"]
 impl crate::Resettable for EMAC_RX_HASH1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

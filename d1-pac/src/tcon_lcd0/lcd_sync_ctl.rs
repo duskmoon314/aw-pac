@@ -207,16 +207,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LCD Controller Sync Mode\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_ctrl_sync_mode(&mut self) -> LCD_CTRL_SYNC_MODE_W<0> {
         LCD_CTRL_SYNC_MODE_W::new(self)
     }
     #[doc = "Bit 4 - LCD Controller Sync Master Slave\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_cyrl_sync_master_slave(&mut self) -> LCD_CYRL_SYNC_MASTER_SLAVE_W<4> {
         LCD_CYRL_SYNC_MASTER_SLAVE_W::new(self)
     }
     #[doc = "Bit 8 - LCD Controller Work mode"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_ctrl_work_mode(&mut self) -> LCD_CTRL_WORK_MODE_W<8> {
         LCD_CTRL_WORK_MODE_W::new(self)
     }
@@ -239,11 +242,10 @@ impl crate::Readable for LCD_SYNC_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_sync_ctl::W](W) writer structure"]
 impl crate::Writable for LCD_SYNC_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_sync_ctl to value 0"]
 impl crate::Resettable for LCD_SYNC_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

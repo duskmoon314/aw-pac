@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Channel 1 Voltage Low Value"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_cmp_low_data(&mut self) -> CH1_CMP_LOW_DATA_W<0> {
         CH1_CMP_LOW_DATA_W::new(self)
     }
     #[doc = "Bits 16:27 - Channel 1 Voltage High Value"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_cmp_hig_data(&mut self) -> CH1_CMP_HIG_DATA_W<16> {
         CH1_CMP_HIG_DATA_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for GP_CH1_CMP_DATA_SPEC {
 #[doc = "`write(|w| ..)` method takes [gp_ch1_cmp_data::W](W) writer structure"]
 impl crate::Writable for GP_CH1_CMP_DATA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets gp_ch1_cmp_data to value 0x0bff_0400"]
 impl crate::Resettable for GP_CH1_CMP_DATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0bff_0400
-    }
+    const RESET_VALUE: Self::Ux = 0x0bff_0400;
 }

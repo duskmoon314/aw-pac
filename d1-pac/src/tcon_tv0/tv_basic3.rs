@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Horizontal back porch\n\nThbp = (HBP +1) * Thdclk"]
     #[inline(always)]
+    #[must_use]
     pub fn h_bp(&mut self) -> H_BP_W<0> {
         H_BP_W::new(self)
     }
     #[doc = "Bits 16:28 - Horizontal total time\n\nThcycle = (HT+1) * Thdclk"]
     #[inline(always)]
+    #[must_use]
     pub fn h_t(&mut self) -> H_T_W<16> {
         H_T_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for TV_BASIC3_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_basic3::W](W) writer structure"]
 impl crate::Writable for TV_BASIC3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_basic3 to value 0"]
 impl crate::Resettable for TV_BASIC3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

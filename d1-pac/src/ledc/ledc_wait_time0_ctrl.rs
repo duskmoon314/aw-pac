@@ -105,11 +105,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
+    #[must_use]
     pub fn total_wait_time0(&mut self) -> TOTAL_WAIT_TIME0_W<0> {
         TOTAL_WAIT_TIME0_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
+    #[must_use]
     pub fn wait_tim0_en(&mut self) -> WAIT_TIM0_EN_W<8> {
         WAIT_TIM0_EN_W::new(self)
     }
@@ -132,11 +134,10 @@ impl crate::Readable for LEDC_WAIT_TIME0_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ledc_wait_time0_ctrl::W](W) writer structure"]
 impl crate::Writable for LEDC_WAIT_TIME0_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ledc_wait_time0_ctrl to value 0"]
 impl crate::Resettable for LEDC_WAIT_TIME0_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -222,16 +222,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - The link mode of the RGMII interface"]
     #[inline(always)]
+    #[must_use]
     pub fn rgmii_link_md(&mut self) -> RGMII_LINK_MD_W<0> {
         RGMII_LINK_MD_W::new(self)
     }
     #[doc = "Bits 1:2 - The link speed of the RGMII interface"]
     #[inline(always)]
+    #[must_use]
     pub fn rgmii_link_spd(&mut self) -> RGMII_LINK_SPD_W<1> {
         RGMII_LINK_SPD_W::new(self)
     }
     #[doc = "Bit 3 - The link status of the RGMII interface"]
     #[inline(always)]
+    #[must_use]
     pub fn rgmii_link(&mut self) -> RGMII_LINK_W<3> {
         RGMII_LINK_W::new(self)
     }
@@ -254,11 +257,10 @@ impl crate::Readable for EMAC_RGMII_STA_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_rgmii_sta::W](W) writer structure"]
 impl crate::Writable for EMAC_RGMII_STA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_rgmii_sta to value 0"]
 impl crate::Resettable for EMAC_RGMII_STA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

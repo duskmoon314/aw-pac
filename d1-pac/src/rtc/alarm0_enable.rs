@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Alarm 0 Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn alm_0_en(&mut self) -> ALM_0_EN_W<0> {
         ALM_0_EN_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for ALARM0_ENABLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [alarm0_enable::W](W) writer structure"]
 impl crate::Writable for ALARM0_ENABLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets alarm0_enable to value 0"]
 impl crate::Resettable for ALARM0_ENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

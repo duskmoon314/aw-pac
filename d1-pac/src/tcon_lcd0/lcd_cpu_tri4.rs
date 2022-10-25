@@ -98,7 +98,7 @@ impl R {
     #[doc = "Bits 0:23 - Valid in first Block."]
     #[inline(always)]
     pub fn d23_to_d0_first_valid(&self) -> D23_TO_D0_FIRST_VALID_R {
-        D23_TO_D0_FIRST_VALID_R::new((self.bits & 0x00ff_ffff) as u32)
+        D23_TO_D0_FIRST_VALID_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Bit 24 - Valid in first Block."]
     #[inline(always)]
@@ -114,16 +114,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - Valid in first Block."]
     #[inline(always)]
+    #[must_use]
     pub fn d23_to_d0_first_valid(&mut self) -> D23_TO_D0_FIRST_VALID_W<0> {
         D23_TO_D0_FIRST_VALID_W::new(self)
     }
     #[doc = "Bit 24 - Valid in first Block."]
     #[inline(always)]
+    #[must_use]
     pub fn a1_first_valid(&mut self) -> A1_FIRST_VALID_W<24> {
         A1_FIRST_VALID_W::new(self)
     }
     #[doc = "Bit 28 - Enable the plug mode used in dsi command mode."]
     #[inline(always)]
+    #[must_use]
     pub fn plug_mode_en(&mut self) -> PLUG_MODE_EN_W<28> {
         PLUG_MODE_EN_W::new(self)
     }
@@ -146,11 +149,10 @@ impl crate::Readable for LCD_CPU_TRI4_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_tri4::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_TRI4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cpu_tri4 to value 0"]
 impl crate::Resettable for LCD_CPU_TRI4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

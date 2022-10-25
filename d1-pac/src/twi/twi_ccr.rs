@@ -112,16 +112,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_n(&mut self) -> CLK_N_W<0> {
         CLK_N_W::new(self)
     }
     #[doc = "Bits 3:6"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_m(&mut self) -> CLK_M_W<3> {
         CLK_M_W::new(self)
     }
     #[doc = "Bit 7 - Setting duty cycle of clock as master"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_duty(&mut self) -> CLK_DUTY_W<7> {
         CLK_DUTY_W::new(self)
     }
@@ -144,11 +147,10 @@ impl crate::Readable for TWI_CCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_ccr::W](W) writer structure"]
 impl crate::Writable for TWI_CCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_ccr to value 0"]
 impl crate::Resettable for TWI_CCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -56,6 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 4:31 - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
     #[inline(always)]
+    #[must_use]
     pub fn pced_31_4(&mut self) -> PCED_31_4_W<4> {
         PCED_31_4_W::new(self)
     }
@@ -78,11 +79,10 @@ impl crate::Readable for HC_PERIOD_CURRENT_ED_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_period_current_ed::W](W) writer structure"]
 impl crate::Writable for HC_PERIOD_CURRENT_ED_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_period_current_ed to value 0"]
 impl crate::Resettable for HC_PERIOD_CURRENT_ED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

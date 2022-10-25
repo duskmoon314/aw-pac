@@ -115,41 +115,49 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn tran_com_pd(&mut self) -> TRAN_COM_PD_W<0> {
         TRAN_COM_PD_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn tran_err_pd(&mut self) -> TRAN_ERR_PD_W<1> {
         TRAN_ERR_PD_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_req_pd(&mut self) -> TX_REQ_PD_W<2> {
         TX_REQ_PD_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_req_pd(&mut self) -> RX_REQ_PD_W<3> {
         RX_REQ_PD_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
+    #[must_use]
     pub fn tran_com_int_en(&mut self) -> TRAN_COM_INT_EN_W<16> {
         TRAN_COM_INT_EN_W::new(self)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
+    #[must_use]
     pub fn tran_err_int_en(&mut self) -> TRAN_ERR_INT_EN_W<17> {
         TRAN_ERR_INT_EN_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_req_int_en(&mut self) -> TX_REQ_INT_EN_W<18> {
         TX_REQ_INT_EN_W::new(self)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_req_int_en(&mut self) -> RX_REQ_INT_EN_W<19> {
         RX_REQ_INT_EN_W::new(self)
     }
@@ -172,11 +180,10 @@ impl crate::Readable for TWI_DRV_INT_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_drv_int_ctrl::W](W) writer structure"]
 impl crate::Writable for TWI_DRV_INT_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_drv_int_ctrl to value 0"]
 impl crate::Resettable for TWI_DRV_INT_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

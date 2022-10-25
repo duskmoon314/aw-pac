@@ -176,46 +176,55 @@ impl R {
 impl W {
     #[doc = "External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn eint_cfg<const O: u8>(&mut self) -> EINT_CFG_W<O> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint0_cfg(&mut self) -> EINT_CFG_W<0> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 4:7 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint1_cfg(&mut self) -> EINT_CFG_W<4> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 8:11 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint2_cfg(&mut self) -> EINT_CFG_W<8> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 12:15 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint3_cfg(&mut self) -> EINT_CFG_W<12> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 16:19 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint4_cfg(&mut self) -> EINT_CFG_W<16> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 20:23 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint5_cfg(&mut self) -> EINT_CFG_W<20> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 24:27 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint6_cfg(&mut self) -> EINT_CFG_W<24> {
         EINT_CFG_W::new(self)
     }
     #[doc = "Bits 28:31 - External INT Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn eint7_cfg(&mut self) -> EINT_CFG_W<28> {
         EINT_CFG_W::new(self)
     }
@@ -238,11 +247,10 @@ impl crate::Readable for PG_EINT_CFG0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pg_eint_cfg0::W](W) writer structure"]
 impl crate::Writable for PG_EINT_CFG0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pg_eint_cfg0 to value 0"]
 impl crate::Resettable for PG_EINT_CFG0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

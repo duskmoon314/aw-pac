@@ -59,16 +59,19 @@ impl R {
 impl W {
     #[doc = "OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn out_even<const O: u8>(&mut self) -> OUT_EVEN_W<O> {
         OUT_EVEN_W::new(self)
     }
     #[doc = "Bits 0:15 - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn out_even0(&mut self) -> OUT_EVEN_W<0> {
         OUT_EVEN_W::new(self)
     }
     #[doc = "Bits 16:31 - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn out_even1(&mut self) -> OUT_EVEN_W<16> {
         OUT_EVEN_W::new(self)
     }
@@ -91,11 +94,10 @@ impl crate::Readable for LCD_CMAP_EVEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cmap_even::W](W) writer structure"]
 impl crate::Writable for LCD_CMAP_EVEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cmap_even%s to value 0"]
 impl crate::Resettable for LCD_CMAP_EVEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Use for DAC data input at auto detect pluse. Set the pulse amplitude."]
     #[inline(always)]
+    #[must_use]
     pub fn detect_pulse_value(&mut self) -> DETECT_PULSE_VALUE_W<0> {
         DETECT_PULSE_VALUE_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for TVE_AUTO_DETECT_CFG0_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_auto_detect_cfg0::W](W) writer structure"]
 impl crate::Writable for TVE_AUTO_DETECT_CFG0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_auto_detect_cfg0 to value 0"]
 impl crate::Resettable for TVE_AUTO_DETECT_CFG0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

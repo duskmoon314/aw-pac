@@ -155,16 +155,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Configure the operating mode for the watchdog"]
     #[inline(always)]
+    #[must_use]
     pub fn wdog_mode(&mut self) -> WDOG_MODE_W<0> {
         WDOG_MODE_W::new(self)
     }
     #[doc = "Bit 8 - Select the clock source for the watchdog."]
     #[inline(always)]
+    #[must_use]
     pub fn wdog_clk_src(&mut self) -> WDOG_CLK_SRC_W<8> {
         WDOG_CLK_SRC_W::new(self)
     }
     #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
+    #[must_use]
     pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
@@ -187,11 +190,10 @@ impl crate::Readable for WDOG_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [wdog_cfg::W](W) writer structure"]
 impl crate::Writable for WDOG_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets wdog_cfg to value 0"]
 impl crate::Resettable for WDOG_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

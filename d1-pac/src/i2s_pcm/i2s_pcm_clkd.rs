@@ -548,16 +548,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - MCLK Divide ratio from PLL_AUDIO"]
     #[inline(always)]
+    #[must_use]
     pub fn mclkdiv(&mut self) -> MCLKDIV_W<0> {
         MCLKDIV_W::new(self)
     }
     #[doc = "Bits 4:7 - BCLK Divide ratio from PLL_AUDIO"]
     #[inline(always)]
+    #[must_use]
     pub fn bclkdiv(&mut self) -> BCLKDIV_W<4> {
         BCLKDIV_W::new(self)
     }
     #[doc = "Bit 8 - MCLK Output Enable\n\nNote: Whether in slave or master mode, when this bit is set to ‘1’, MCLK should be output."]
     #[inline(always)]
+    #[must_use]
     pub fn mclko_en(&mut self) -> MCLKO_EN_W<8> {
         MCLKO_EN_W::new(self)
     }
@@ -580,11 +583,10 @@ impl crate::Readable for I2S_PCM_CLKD_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_clkd::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_CLKD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_clkd to value 0"]
 impl crate::Resettable for I2S_PCM_CLKD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

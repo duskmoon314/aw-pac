@@ -339,61 +339,73 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Asserted at the fsync signal in every frame\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn fsync_int_flag(&mut self) -> FSYNC_INT_FLAG_W<0> {
         FSYNC_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 1 - Asserted at the first valid line in every frame\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn de_int_flag(&mut self) -> DE_INT_FLAG_W<1> {
         DE_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 2 - Enable the fsync interrupt to set signal inverse polarity.\n\nWhen FSYNC is positive, this bit must be 1.\n\nAnd vice versa."]
     #[inline(always)]
+    #[must_use]
     pub fn fsync_int_inv(&mut self) -> FSYNC_INT_INV_W<2> {
         FSYNC_INT_INV_W::new(self)
     }
     #[doc = "Bit 9 - Only used in dsi video mode, tri when sync by dsi but not finish\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_tri_underflow_flag(&mut self) -> LCD_TRI_UNDERFLOW_FLAG_W<9> {
         LCD_TRI_UNDERFLOW_FLAG_W::new(self)
     }
     #[doc = "Bit 10 - Trigger when tri counter reaches this value\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_tri_counter_int_flag(&mut self) -> LCD_TRI_COUNTER_INT_FLAG_W<10> {
         LCD_TRI_COUNTER_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 11 - Trigger when cpu trigger mode finished\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_tri_finish_int_flag(&mut self) -> LCD_TRI_FINISH_INT_FLAG_W<11> {
         LCD_TRI_FINISH_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 13 - Trigger when SY0 match the current LCD scan line\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_line_int_flag(&mut self) -> LCD_LINE_INT_FLAG_W<13> {
         LCD_LINE_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 15 - Asserted during vertical no-display period every frame\n\nWrite 0 to clear it."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_vb_int_flag(&mut self) -> LCD_VB_INT_FLAG_W<15> {
         LCD_VB_INT_FLAG_W::new(self)
     }
     #[doc = "Bit 26 - Enable the trigger counter interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_tri_counter_int_en(&mut self) -> LCD_TRI_COUNTER_INT_EN_W<26> {
         LCD_TRI_COUNTER_INT_EN_W::new(self)
     }
     #[doc = "Bit 27 - Enable the trigger finish interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_tri_finish_int_en(&mut self) -> LCD_TRI_FINISH_INT_EN_W<27> {
         LCD_TRI_FINISH_INT_EN_W::new(self)
     }
     #[doc = "Bit 29 - Enable the line interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_line_int_en(&mut self) -> LCD_LINE_INT_EN_W<29> {
         LCD_LINE_INT_EN_W::new(self)
     }
     #[doc = "Bit 31 - Enable the Vb interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_vb_int_en(&mut self) -> LCD_VB_INT_EN_W<31> {
         LCD_VB_INT_EN_W::new(self)
     }
@@ -416,11 +428,10 @@ impl crate::Readable for LCD_GINT0_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_gint0::W](W) writer structure"]
 impl crate::Writable for LCD_GINT0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0xae07;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_gint0 to value 0"]
 impl crate::Resettable for LCD_GINT0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

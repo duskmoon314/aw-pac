@@ -161,16 +161,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Soft Reset all Registers and Logic"]
     #[inline(always)]
+    #[must_use]
     pub fn soft_rst(&mut self) -> SOFT_RST_W<0> {
         SOFT_RST_W::new(self)
     }
     #[doc = "Bit 1 - RX TX DMA Priority"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_tx_pri(&mut self) -> RX_TX_PRI_W<1> {
         RX_TX_PRI_W::new(self)
     }
     #[doc = "Bits 24:29 - The burst length of RX and TX DMA transfer"]
     #[inline(always)]
+    #[must_use]
     pub fn burst_len(&mut self) -> BURST_LEN_W<24> {
         BURST_LEN_W::new(self)
     }
@@ -193,11 +196,10 @@ impl crate::Readable for EMAC_BASIC_CTL1_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_basic_ctl1::W](W) writer structure"]
 impl crate::Writable for EMAC_BASIC_CTL1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_basic_ctl1 to value 0"]
 impl crate::Resettable for EMAC_BASIC_CTL1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

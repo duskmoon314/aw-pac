@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable temperature measurement sensor"]
     #[inline(always)]
+    #[must_use]
     pub fn ths_en(&mut self) -> THS_EN_W<0> {
         THS_EN_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for THS_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ths_en::W](W) writer structure"]
 impl crate::Writable for THS_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ths_en to value 0"]
 impl crate::Resettable for THS_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Must be even\n\nSpecify the width of the front porch in encoder clock cycles. 6 bits unsigned even integer. Allowed range is form 10 to 62.\n\nThe default value is 32.\n\nFor 1080i mode, the value is 44."]
     #[inline(always)]
+    #[must_use]
     pub fn front_porch(&mut self) -> FRONT_PORCH_W<0> {
         FRONT_PORCH_W::new(self)
     }
     #[doc = "Bits 16:24 - Specify the width of the back porch in encoder clock cycles. Min value is (burst_width+breeze_way+17). 8 bits unsigned integer.\n\nThe default value is 118.\n\nFor 720p mode, the value is 260.\n\nFor 1080i/p mode, the value is 192."]
     #[inline(always)]
+    #[must_use]
     pub fn back_porch(&mut self) -> BACK_PORCH_W<16> {
         BACK_PORCH_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for TVE_FRONT_BACK_PORCH_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_front_back_porch::W](W) writer structure"]
 impl crate::Writable for TVE_FRONT_BACK_PORCH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_front_back_porch to value 0x0076_0020"]
 impl crate::Resettable for TVE_FRONT_BACK_PORCH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0076_0020
-    }
+    const RESET_VALUE: Self::Ux = 0x0076_0020;
 }

@@ -207,16 +207,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Auto gating bit of DMA channel circuit"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_chan_circuit(&mut self) -> DMA_CHAN_CIRCUIT_W<0> {
         DMA_CHAN_CIRCUIT_W::new(self)
     }
     #[doc = "Bit 1 - Auto gating bit of DMA common circuit"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_common_circuit(&mut self) -> DMA_COMMON_CIRCUIT_W<1> {
         DMA_COMMON_CIRCUIT_W::new(self)
     }
     #[doc = "Bit 2 - Auto gating bit of DMA MCLK interfact circuit"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_mclk_circuit(&mut self) -> DMA_MCLK_CIRCUIT_W<2> {
         DMA_MCLK_CIRCUIT_W::new(self)
     }
@@ -239,11 +242,10 @@ impl crate::Readable for DMAC_AUTO_GATE_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmac_auto_gate::W](W) writer structure"]
 impl crate::Writable for DMAC_AUTO_GATE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dmac_auto_gate to value 0"]
 impl crate::Resettable for DMAC_AUTO_GATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

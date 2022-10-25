@@ -538,46 +538,55 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DRC ET enable\n\nWhen the bit is disabled, Ke and OPE parameter is unused."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_et_en(&mut self) -> ADC_DRC_ET_EN_W<0> {
         ADC_DRC_ET_EN_W::new(self)
     }
     #[doc = "Bit 1 - DRC LT enable\n\nWhen the bit is disabled, Kl and OPL parameter is unused."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_lt_en(&mut self) -> ADC_DRC_LT_EN_W<1> {
         ADC_DRC_LT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Delay function enable\n\nWhen the bit is disabled, the signal delay time is unused."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_delay_func_en(&mut self) -> ADC_DRC_DELAY_FUNC_EN_W<2> {
         ADC_DRC_DELAY_FUNC_EN_W::new(self)
     }
     #[doc = "Bit 3 - Signal function select\n\nWhen the signal function selects the Peak filter, the RMS parameter is unused. (AC_DRC_LRMSHAT, AC_DRC_LRMSLAT, AC_DRC_LRMSHAT, and AC_DRC_LRMSLAT)\n\nWhen the signal function selects the RMS filter, the Peak filter parameter is unused. (AC_DRC_LPFHAT, AC_DRC_LPFLAT, AC_DRC_RPFHAT, AC_DRC_RPFLAT, AC_DRC_LPFHRT, AC_DRC_LPFLRT, AC_DRC_RPFHRT, and AC_DRC_RPFLRT)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_signal_func_sel(&mut self) -> ADC_DRC_SIGNAL_FUNC_SEL_W<3> {
         ADC_DRC_SIGNAL_FUNC_SEL_W::new(self)
     }
     #[doc = "Bit 4 - Control the DRC to detect noise when ET is enabled"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_detect_noise_en(&mut self) -> ADC_DRC_DETECT_NOISE_EN_W<4> {
         ADC_DRC_DETECT_NOISE_EN_W::new(self)
     }
     #[doc = "Bit 5 - DRC gain min limit enable\n\nWhen this fuction is enabled, it will overwrite the noise detect function."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_gain_min_limit_en(&mut self) -> ADC_DRC_GAIN_MIN_LIMIT_EN_W<5> {
         ADC_DRC_GAIN_MIN_LIMIT_EN_W::new(self)
     }
     #[doc = "Bit 6 - DRC gain max limit enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_gain_max_limit_en(&mut self) -> ADC_DRC_GAIN_MAX_LIMIT_EN_W<6> {
         ADC_DRC_GAIN_MAX_LIMIT_EN_W::new(self)
     }
     #[doc = "Bit 7 - The delay buffer use or not when the DRC is disabled and the DRC buffer data output completely."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_delay_buf_en(&mut self) -> ADC_DRC_DELAY_BUF_EN_W<7> {
         ADC_DRC_DELAY_BUF_EN_W::new(self)
     }
     #[doc = "Bits 8:13 - Signal delay time setting\n\nDelay time = 8*(n + 1) fs, n < 6'h30\n\nWhen the delay function is disabled, the signal delay time is unused."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_signal_delay_time_set(&mut self) -> ADC_DRC_SIGNAL_DELAY_TIME_SET_W<8> {
         ADC_DRC_SIGNAL_DELAY_TIME_SET_W::new(self)
     }
@@ -600,11 +609,10 @@ impl crate::Readable for AC_ADC_DRC_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_ctrl::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_ctrl to value 0x80"]
 impl crate::Resettable for AC_ADC_DRC_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

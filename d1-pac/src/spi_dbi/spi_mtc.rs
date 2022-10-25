@@ -42,12 +42,13 @@ impl R {
     #[doc = "Bits 0:23 - Master Write Transmit Counter"]
     #[inline(always)]
     pub fn mwtc(&self) -> MWTC_R {
-        MWTC_R::new((self.bits & 0x00ff_ffff) as u32)
+        MWTC_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Master Write Transmit Counter"]
     #[inline(always)]
+    #[must_use]
     pub fn mwtc(&mut self) -> MWTC_W<0> {
         MWTC_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for SPI_MTC_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_mtc::W](W) writer structure"]
 impl crate::Writable for SPI_MTC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_mtc to value 0"]
 impl crate::Resettable for SPI_MTC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

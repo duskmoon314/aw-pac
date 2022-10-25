@@ -24,8 +24,5 @@ impl crate::Readable for EMAC_TX_CUR_DESC_SPEC {
 }
 #[doc = "`reset()` method sets emac_tx_cur_desc to value 0"]
 impl crate::Resettable for EMAC_TX_CUR_DESC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

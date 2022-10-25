@@ -259,21 +259,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn top_gating(&mut self) -> TOP_GATING_W<0> {
         TOP_GATING_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn gating(&mut self) -> GATING_W<1> {
         GATING_W::new(self)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn top_rst(&mut self) -> TOP_RST_W<16> {
         TOP_RST_W::new(self)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn rst(&mut self) -> RST_W<17> {
         RST_W::new(self)
     }
@@ -296,11 +300,10 @@ impl crate::Readable for TVE_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_bgr::W](W) writer structure"]
 impl crate::Writable for TVE_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_bgr to value 0"]
 impl crate::Resettable for TVE_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

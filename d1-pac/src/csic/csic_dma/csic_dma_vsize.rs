@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - Vertical line start\n\nData is valid from this line."]
     #[inline(always)]
+    #[must_use]
     pub fn ver_start(&mut self) -> VER_START_W<0> {
         VER_START_W::new(self)
     }
     #[doc = "Bits 16:28 - When BK_TOP_EN is enabled, DMA_EN is enabled, these bits indicate Valid line number of a frame in DMA mode."]
     #[inline(always)]
+    #[must_use]
     pub fn ver_len(&mut self) -> VER_LEN_W<16> {
         VER_LEN_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for CSIC_DMA_VSIZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_vsize::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_VSIZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_vsize to value 0x02d0_0000"]
 impl crate::Resettable for CSIC_DMA_VSIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x02d0_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x02d0_0000;
 }

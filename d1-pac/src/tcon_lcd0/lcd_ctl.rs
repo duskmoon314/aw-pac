@@ -416,36 +416,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - LCD Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_src_sel(&mut self) -> LCD_SRC_SEL_W<0> {
         LCD_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 4:8 - The unit of delay is T_line.\n\nNote: Valid only when LCD_EN == 1"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_start_dly(&mut self) -> LCD_START_DLY_W<4> {
         LCD_START_DLY_W::new(self)
     }
     #[doc = "Bit 20 - This flag is valid only when LCD_EN == 1"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_interlace_en(&mut self) -> LCD_INTERLACE_EN_W<20> {
         LCD_INTERLACE_EN_W::new(self)
     }
     #[doc = "Bit 21 - Writing 1 and then 0 to this bit will reset FIFO 1\n\nNote: 1 holding time must more than 1 DCLK"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_fifo1_rst(&mut self) -> LCD_FIFO1_RST_W<21> {
         LCD_FIFO1_RST_W::new(self)
     }
     #[doc = "Bit 23 - Enable the function to swap red data and blue data in fifo1."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_rb_swap(&mut self) -> LCD_RB_SWAP_W<23> {
         LCD_RB_SWAP_W::new(self)
     }
     #[doc = "Bits 24:25 - Set the interface type of LCD controller"]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_if(&mut self) -> LCD_IF_W<24> {
         LCD_IF_W::new(self)
     }
     #[doc = "Bit 31 - It executes at the beginning of the first blank line of LCD timing."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_en(&mut self) -> LCD_EN_W<31> {
         LCD_EN_W::new(self)
     }
@@ -468,11 +475,10 @@ impl crate::Readable for LCD_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_ctl::W](W) writer structure"]
 impl crate::Writable for LCD_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_ctl to value 0"]
 impl crate::Resettable for LCD_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

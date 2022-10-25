@@ -43,12 +43,13 @@ impl R {
     #[doc = "Bits 0:23 - Fill End"]
     #[inline(always)]
     pub fn fill_end(&self) -> FILL_END_R {
-        FILL_END_R::new((self.bits & 0x00ff_ffff) as u32)
+        FILL_END_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Fill End"]
     #[inline(always)]
+    #[must_use]
     pub fn fill_end(&mut self) -> FILL_END_W<0> {
         FILL_END_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for TV_FILL_END_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_fill_end::W](W) writer structure"]
 impl crate::Writable for TV_FILL_END_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_fill_end%s to value 0"]
 impl crate::Resettable for TV_FILL_END_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

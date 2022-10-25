@@ -114,16 +114,19 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Pattern Generation Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_gen_en(&mut self) -> PTN_GEN_EN_W<0> {
         PTN_GEN_EN_W::new(self)
     }
     #[doc = "Bit 4 - CSIC Pattern Generating Start\n\nSoftware write this bit to \"1\" to start pattern generating from DRAM. When finished, the hardware will clear this bit to \"0\" automatically. Generating cycles depends on PTN_CYCLE."]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_start(&mut self) -> PTN_START_W<4> {
         PTN_START_W::new(self)
     }
     #[doc = "Bits 16:23 - Pattern generating cycle counter.\n\nThe pattern in dram will be generated in cycles of PTN_CYCLE+1."]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_cycle(&mut self) -> PTN_CYCLE_W<16> {
         PTN_CYCLE_W::new(self)
     }
@@ -146,11 +149,10 @@ impl crate::Readable for CSIC_PTN_GEN_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_ptn_gen_en::W](W) writer structure"]
 impl crate::Writable for CSIC_PTN_GEN_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_ptn_gen_en to value 0"]
 impl crate::Resettable for CSIC_PTN_GEN_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

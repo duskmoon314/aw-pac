@@ -69,26 +69,31 @@ impl R {
 impl W {
     #[doc = "The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_id<const O: u8>(&mut self) -> CH_ID_W<O> {
         CH_ID_W::new(self)
     }
     #[doc = "Bits 0:3 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
+    #[must_use]
     pub fn ch0_id(&mut self) -> CH_ID_W<0> {
         CH_ID_W::new(self)
     }
     #[doc = "Bits 8:11 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_id(&mut self) -> CH_ID_W<8> {
         CH_ID_W::new(self)
     }
     #[doc = "Bits 16:19 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
+    #[must_use]
     pub fn ch2_id(&mut self) -> CH_ID_W<16> {
         CH_ID_W::new(self)
     }
     #[doc = "Bits 24:27 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
+    #[must_use]
     pub fn ch3_id(&mut self) -> CH_ID_W<24> {
         CH_ID_W::new(self)
     }
@@ -111,11 +116,10 @@ impl crate::Readable for CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_prs_ncsic_bt656_head_cfg::W](W) writer structure"]
 impl crate::Writable for CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_prs_ncsic_bt656_head_cfg to value 0x0302_0100"]
 impl crate::Resettable for CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0302_0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0302_0100;
 }

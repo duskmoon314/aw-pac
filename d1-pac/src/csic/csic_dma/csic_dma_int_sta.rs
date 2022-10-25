@@ -164,66 +164,79 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Capture done"]
     #[inline(always)]
+    #[must_use]
     pub fn cd_pd(&mut self) -> CD_PD_W<0> {
         CD_PD_W::new(self)
     }
     #[doc = "Bit 1 - Frame done"]
     #[inline(always)]
+    #[must_use]
     pub fn fd_pd(&mut self) -> FD_PD_W<1> {
         FD_PD_W::new(self)
     }
     #[doc = "Bit 2 - FIFO 0 overflow"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo0_of_pd(&mut self) -> FIFO0_OF_PD_W<2> {
         FIFO0_OF_PD_W::new(self)
     }
     #[doc = "Bit 3 - FIFO 1 overflow"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo1_of_pd(&mut self) -> FIFO1_OF_PD_W<3> {
         FIFO1_OF_PD_W::new(self)
     }
     #[doc = "Bit 4 - FIFO 2 overflow"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo2_of_pd(&mut self) -> FIFO2_OF_PD_W<4> {
         FIFO2_OF_PD_W::new(self)
     }
     #[doc = "Bit 5 - Line counter flag"]
     #[inline(always)]
+    #[must_use]
     pub fn lc_pd(&mut self) -> LC_PD_W<5> {
         LC_PD_W::new(self)
     }
     #[doc = "Bit 6 - Line information FIFO (16 lines) overflow"]
     #[inline(always)]
+    #[must_use]
     pub fn li_of_pd(&mut self) -> LI_OF_PD_W<6> {
         LI_OF_PD_W::new(self)
     }
     #[doc = "Bit 7 - vsync flag"]
     #[inline(always)]
+    #[must_use]
     pub fn vs_pd(&mut self) -> VS_PD_W<7> {
         VS_PD_W::new(self)
     }
     #[doc = "Bit 11 - Set a INT when clear Frame cnt."]
     #[inline(always)]
+    #[must_use]
     pub fn clr_frame_cnt_int(&mut self) -> CLR_FRAME_CNT_INT_W<11> {
         CLR_FRAME_CNT_INT_W::new(self)
     }
     #[doc = "Bit 12 - Set an INT Pending when no video input exceeds the setting threshold time."]
     #[inline(always)]
+    #[must_use]
     pub fn video_input_to_int_pd(&mut self) -> VIDEO_INPUT_TO_INT_PD_W<12> {
         VIDEO_INPUT_TO_INT_PD_W::new(self)
     }
     #[doc = "Bit 13 - Set an INT when content in BUF Address FIFO less than CSIC_DMA_BUFA_FIFO_THRESHOLD, only use in BUF Address FIFO MODE."]
     #[inline(always)]
+    #[must_use]
     pub fn buf_addr_fifo_int_pd(&mut self) -> BUF_ADDR_FIFO_INT_PD_W<13> {
         BUF_ADDR_FIFO_INT_PD_W::new(self)
     }
     #[doc = "Bit 14 - Set an INT when the value of CSIC_DMA_STORED_FRM_CNT reaches CSIC_DMA_STORED_FRM_THRESHOLD, only use in BUF Address FIFO MODE."]
     #[inline(always)]
+    #[must_use]
     pub fn stored_frm_cnt_int_pd(&mut self) -> STORED_FRM_CNT_INT_PD_W<14> {
         STORED_FRM_CNT_INT_PD_W::new(self)
     }
     #[doc = "Bit 15 - Set an INT when frame starts with empty Buffer Address FIFO, only use in BUF Address FIFO MODE."]
     #[inline(always)]
+    #[must_use]
     pub fn frm_lost_int_pd(&mut self) -> FRM_LOST_INT_PD_W<15> {
         FRM_LOST_INT_PD_W::new(self)
     }
@@ -246,11 +259,10 @@ impl crate::Readable for CSIC_DMA_INT_STA_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_int_sta::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_INT_STA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0xf8ff;
 }
 #[doc = "`reset()` method sets csic_dma_int_sta to value 0"]
 impl crate::Resettable for CSIC_DMA_INT_STA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

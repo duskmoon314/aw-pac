@@ -58,11 +58,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
+    #[must_use]
     pub fn data_byte(&mut self) -> DATA_BYTE_W<0> {
         DATA_BYTE_W::new(self)
     }
     #[doc = "Bits 16:23"]
     #[inline(always)]
+    #[must_use]
     pub fn addr_byte(&mut self) -> ADDR_BYTE_W<16> {
         ADDR_BYTE_W::new(self)
     }
@@ -85,11 +87,10 @@ impl crate::Readable for TWI_DRV_FMT_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_drv_fmt::W](W) writer structure"]
 impl crate::Writable for TWI_DRV_FMT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_drv_fmt to value 0"]
 impl crate::Resettable for TWI_DRV_FMT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -458,46 +458,55 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - PLL M"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_m(&mut self) -> PLL_M_W<0> {
         PLL_M_W::new(self)
     }
     #[doc = "Bit 5 - PLL Lock Level"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_lock_mdsel(&mut self) -> PLL_LOCK_MDSEL_W<5> {
         PLL_LOCK_MDSEL_W::new(self)
     }
     #[doc = "Bits 6:7 - PLL Unlock Level"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_unlock_mdsel(&mut self) -> PLL_UNLOCK_MDSEL_W<6> {
         PLL_UNLOCK_MDSEL_W::new(self)
     }
     #[doc = "Bits 8:15 - PLL N"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_n(&mut self) -> PLL_N_W<8> {
         PLL_N_W::new(self)
     }
     #[doc = "Bits 24:26 - PLL Lock Time"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_lock_time(&mut self) -> PLL_LOCK_TIME_W<24> {
         PLL_LOCK_TIME_W::new(self)
     }
     #[doc = "Bit 27 - PLL Output Gating Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_output_gate(&mut self) -> PLL_OUTPUT_GATE_W<27> {
         PLL_OUTPUT_GATE_W::new(self)
     }
     #[doc = "Bit 29 - Lock Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock_enable(&mut self) -> LOCK_ENABLE_W<29> {
         LOCK_ENABLE_W::new(self)
     }
     #[doc = "Bit 30 - LDO Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_ldo_en(&mut self) -> PLL_LDO_EN_W<30> {
         PLL_LDO_EN_W::new(self)
     }
     #[doc = "Bit 31 - PLL Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn pll_en(&mut self) -> PLL_EN_W<31> {
         PLL_EN_W::new(self)
     }
@@ -520,11 +529,10 @@ impl crate::Readable for PLL_CPU_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pll_cpu_ctrl::W](W) writer structure"]
 impl crate::Writable for PLL_CPU_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pll_cpu_ctrl to value 0"]
 impl crate::Resettable for PLL_CPU_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

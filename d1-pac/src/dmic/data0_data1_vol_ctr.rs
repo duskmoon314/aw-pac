@@ -54,11 +54,10 @@ impl crate::Readable for DATA0_DATA1_VOL_CTR_SPEC {
 #[doc = "`write(|w| ..)` method takes [data0_data1_vol_ctr::W](W) writer structure"]
 impl crate::Writable for DATA0_DATA1_VOL_CTR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets data0_data1_vol_ctr to value 0"]
 impl crate::Resettable for DATA0_DATA1_VOL_CTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

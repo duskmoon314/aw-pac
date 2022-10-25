@@ -201,91 +201,109 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Response Error"]
     #[inline(always)]
+    #[must_use]
     pub fn re(&mut self) -> RE_W<1> {
         RE_W::new(self)
     }
     #[doc = "Bit 2 - Command Complete"]
     #[inline(always)]
+    #[must_use]
     pub fn cc(&mut self) -> CC_W<2> {
         CC_W::new(self)
     }
     #[doc = "Bit 3 - Data Transfer Complete"]
     #[inline(always)]
+    #[must_use]
     pub fn dtc(&mut self) -> DTC_W<3> {
         DTC_W::new(self)
     }
     #[doc = "Bit 4 - Data Transmit Request"]
     #[inline(always)]
+    #[must_use]
     pub fn dtr(&mut self) -> DTR_W<4> {
         DTR_W::new(self)
     }
     #[doc = "Bit 5 - Data Receive Request"]
     #[inline(always)]
+    #[must_use]
     pub fn drr(&mut self) -> DRR_W<5> {
         DRR_W::new(self)
     }
     #[doc = "Bit 6 - Response CRC Error"]
     #[inline(always)]
+    #[must_use]
     pub fn rce(&mut self) -> RCE_W<6> {
         RCE_W::new(self)
     }
     #[doc = "Bit 7 - Data CRC Error"]
     #[inline(always)]
+    #[must_use]
     pub fn dce(&mut self) -> DCE_W<7> {
         DCE_W::new(self)
     }
     #[doc = "Bit 8 - Response Timeout/Boot ACK Received"]
     #[inline(always)]
+    #[must_use]
     pub fn rto_back(&mut self) -> RTO_BACK_W<8> {
         RTO_BACK_W::new(self)
     }
     #[doc = "Bit 9 - Data Timeout/Boot Data Start"]
     #[inline(always)]
+    #[must_use]
     pub fn dto_bds(&mut self) -> DTO_BDS_W<9> {
         DTO_BDS_W::new(self)
     }
     #[doc = "Bit 10 - Data Starvation Timeout/V1.8 Switch Done"]
     #[inline(always)]
+    #[must_use]
     pub fn dsto_vsd(&mut self) -> DSTO_VSD_W<10> {
         DSTO_VSD_W::new(self)
     }
     #[doc = "Bit 11 - FIFO Underrun/Overflow"]
     #[inline(always)]
+    #[must_use]
     pub fn fu_fo(&mut self) -> FU_FO_W<11> {
         FU_FO_W::new(self)
     }
     #[doc = "Bit 12 - Command Busy and Illegal Write"]
     #[inline(always)]
+    #[must_use]
     pub fn cb_iw(&mut self) -> CB_IW_W<12> {
         CB_IW_W::new(self)
     }
     #[doc = "Bit 13 - Data Start Error/Busy Clear"]
     #[inline(always)]
+    #[must_use]
     pub fn dse_bc(&mut self) -> DSE_BC_W<13> {
         DSE_BC_W::new(self)
     }
     #[doc = "Bit 14 - Auto Command Done"]
     #[inline(always)]
+    #[must_use]
     pub fn acd(&mut self) -> ACD_W<14> {
         ACD_W::new(self)
     }
     #[doc = "Bit 15 - Data End-bit Error"]
     #[inline(always)]
+    #[must_use]
     pub fn dee(&mut self) -> DEE_W<15> {
         DEE_W::new(self)
     }
     #[doc = "Bit 16 - SDIO Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn sdioi_int(&mut self) -> SDIOI_INT_W<16> {
         SDIOI_INT_W::new(self)
     }
     #[doc = "Bit 30 - Card Inserted"]
     #[inline(always)]
+    #[must_use]
     pub fn card_insert(&mut self) -> CARD_INSERT_W<30> {
         CARD_INSERT_W::new(self)
     }
     #[doc = "Bit 31 - Card Removed"]
     #[inline(always)]
+    #[must_use]
     pub fn card_removal(&mut self) -> CARD_REMOVAL_W<31> {
         CARD_REMOVAL_W::new(self)
     }
@@ -308,11 +326,10 @@ impl crate::Readable for SMHC_RINTSTS_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_rintsts::W](W) writer structure"]
 impl crate::Writable for SMHC_RINTSTS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_rintsts to value 0"]
 impl crate::Resettable for SMHC_RINTSTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 16:31 - ADC acquire time\n\nCLK_IN/(n + 1)\n\nThe default value is 2 us."]
     #[inline(always)]
+    #[must_use]
     pub fn tacq(&mut self) -> TACQ_W<16> {
         TACQ_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for THS_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ths_ctrl::W](W) writer structure"]
 impl crate::Writable for THS_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ths_ctrl to value 0x01df_002f"]
 impl crate::Resettable for THS_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01df_002f
-    }
+    const RESET_VALUE: Self::Ux = 0x01df_002f;
 }

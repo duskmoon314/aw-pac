@@ -93,7 +93,7 @@ impl R {
     #[doc = "Bits 0:30"]
     #[inline(always)]
     pub fn dbi_timer_value(&self) -> DBI_TIMER_VALUE_R {
-        DBI_TIMER_VALUE_R::new((self.bits & 0x7fff_ffff) as u32)
+        DBI_TIMER_VALUE_R::new(self.bits & 0x7fff_ffff)
     }
     #[doc = "Bit 31 - DBI Timer Enable"]
     #[inline(always)]
@@ -104,11 +104,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:30"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_timer_value(&mut self) -> DBI_TIMER_VALUE_W<0> {
         DBI_TIMER_VALUE_W::new(self)
     }
     #[doc = "Bit 31 - DBI Timer Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_tm_en(&mut self) -> DBI_TM_EN_W<31> {
         DBI_TM_EN_W::new(self)
     }
@@ -131,11 +133,10 @@ impl crate::Readable for DBI_TIMER_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbi_timer::W](W) writer structure"]
 impl crate::Writable for DBI_TIMER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dbi_timer to value 0"]
 impl crate::Resettable for DBI_TIMER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

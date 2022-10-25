@@ -534,56 +534,67 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - LVDS data channel \\[3:0\\] direction."]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_plr(&mut self) -> LVDS_PLR_W<0> {
         LVDS_PLR_W::new(self)
     }
     #[doc = "Bit 4 - LVDS clock channel direction."]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_plrc(&mut self) -> LVDS_PLRC_W<4> {
         LVDS_PLRC_W::new(self)
     }
     #[doc = "Bits 8:10 - Adjust current flowing through R of R to change the common signals amplitude."]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_r(&mut self) -> LVDS_R_W<8> {
         LVDS_R_W::new(self)
     }
     #[doc = "Bits 12:15 - Choose data output or PLL test clock output in LVDS_tx."]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_den(&mut self) -> LVDS_DEN_W<12> {
         LVDS_DEN_W::new(self)
     }
     #[doc = "Bit 16 - Choose data output or PLL test clock output in LVDS_tx."]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_denc(&mut self) -> LVDS_DENC_W<16> {
         LVDS_DENC_W::new(self)
     }
     #[doc = "Bits 17:19 - Adjust current flowing through Rload of Rx to change the differential signals amplitude."]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_c(&mut self) -> LVDS_C_W<17> {
         LVDS_C_W::new(self)
     }
     #[doc = "Bits 20:23 - Enable data channel\\[3:0\\] drive"]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_hpren_drv(&mut self) -> LVDS_HPREN_DRV_W<20> {
         LVDS_HPREN_DRV_W::new(self)
     }
     #[doc = "Bit 24 - Enable clock channel drive"]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_hpren_drvc(&mut self) -> LVDS_HPREN_DRVC_W<24> {
         LVDS_HPREN_DRVC_W::new(self)
     }
     #[doc = "Bit 28 - Enable the 24M clock"]
     #[inline(always)]
+    #[must_use]
     pub fn en_24m(&mut self) -> EN_24M_W<28> {
         EN_24M_W::new(self)
     }
     #[doc = "Bit 29 - Enable LVDS"]
     #[inline(always)]
+    #[must_use]
     pub fn en_lvds(&mut self) -> EN_LVDS_W<29> {
         EN_LVDS_W::new(self)
     }
     #[doc = "Bit 31 - Enable the bias circuit of the LVDS_Ana module."]
     #[inline(always)]
+    #[must_use]
     pub fn lvds_en_mb(&mut self) -> LVDS_EN_MB_W<31> {
         LVDS_EN_MB_W::new(self)
     }
@@ -606,11 +617,10 @@ impl crate::Readable for LCD_LVDS_ANA_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_lvds_ana::W](W) writer structure"]
 impl crate::Writable for LCD_LVDS_ANA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_lvds_ana%s to value 0"]
 impl crate::Resettable for LCD_LVDS_ANA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

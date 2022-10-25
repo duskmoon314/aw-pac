@@ -539,46 +539,55 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DRC ET enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_et_en(&mut self) -> DAC_DRC_ET_EN_W<0> {
         DAC_DRC_ET_EN_W::new(self)
     }
     #[doc = "Bit 1 - DRC LT enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_lt_en(&mut self) -> DAC_DRC_LT_EN_W<1> {
         DAC_DRC_LT_EN_W::new(self)
     }
     #[doc = "Bit 2 - Delay function enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_delay_func_en(&mut self) -> DAC_DRC_DELAY_FUNC_EN_W<2> {
         DAC_DRC_DELAY_FUNC_EN_W::new(self)
     }
     #[doc = "Bit 3 - Signal function select\n\nWhen the signal function selects the Peak filter, the RMS parameter is unused. (AC_DRC_LRMSHAT, AC_DRC_LRMSLAT, AC_DRC_LRMSHAT, AC_DRC_LRMSLAT)\n\nWhen the signal function selects the RMS filter, the Peak filter parameter is unused. (AC_DRC_LPFHAT, AC_DRC_LPFLAT, AC_DRC_RPFHAT, AC_DRC_RPFLAT, AC_DRC_LPFHRT, AC_DRC_LPFLRT, AC_DRC_RPFHRT, and AC_DRC_RPFLRT)"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_signal_func_sel(&mut self) -> DAC_DRC_SIGNAL_FUNC_SEL_W<3> {
         DAC_DRC_SIGNAL_FUNC_SEL_W::new(self)
     }
     #[doc = "Bit 4 - Control the DRC to detect noise when ET is enabled."]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_detect_noise_en(&mut self) -> DAC_DRC_DETECT_NOISE_EN_W<4> {
         DAC_DRC_DETECT_NOISE_EN_W::new(self)
     }
     #[doc = "Bit 5 - DRC gain min limit enable When this function is enabled, it will overwrite the noise detect function."]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_gain_min_limit_en(&mut self) -> DAC_DRC_GAIN_MIN_LIMIT_EN_W<5> {
         DAC_DRC_GAIN_MIN_LIMIT_EN_W::new(self)
     }
     #[doc = "Bit 6 - DRC gain max limit enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_gain_max_limit_en(&mut self) -> DAC_DRC_GAIN_MAX_LIMIT_EN_W<6> {
         DAC_DRC_GAIN_MAX_LIMIT_EN_W::new(self)
     }
     #[doc = "Bit 7 - The delay buffer use or not when the DRC is disabled and the DRC buffer data output completely."]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_delay_buf_en(&mut self) -> DAC_DRC_DELAY_BUF_EN_W<7> {
         DAC_DRC_DELAY_BUF_EN_W::new(self)
     }
     #[doc = "Bits 8:13 - Signal delay time setting\n\nDelay time = 8*(n + 1) fs, n less than 30\n\nWhen the delay function is disabled, the signal delay time is unused."]
     #[inline(always)]
+    #[must_use]
     pub fn signal_delay_time_setting(&mut self) -> SIGNAL_DELAY_TIME_SETTING_W<8> {
         SIGNAL_DELAY_TIME_SETTING_W::new(self)
     }
@@ -601,11 +610,10 @@ impl crate::Readable for AC_DAC_DRC_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_ctrl::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_ctrl to value 0x80"]
 impl crate::Resettable for AC_DAC_DRC_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80
-    }
+    const RESET_VALUE: Self::Ux = 0x80;
 }

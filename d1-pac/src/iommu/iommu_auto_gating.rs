@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - IOMMU circuit auto gating control\n\nThe purpose is to decrease power consumption of the module."]
     #[inline(always)]
+    #[must_use]
     pub fn iommu_auto_gating(&mut self) -> IOMMU_AUTO_GATING_W<0> {
         IOMMU_AUTO_GATING_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for IOMMU_AUTO_GATING_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_auto_gating::W](W) writer structure"]
 impl crate::Writable for IOMMU_AUTO_GATING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_auto_gating to value 0x01"]
 impl crate::Resettable for IOMMU_AUTO_GATING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

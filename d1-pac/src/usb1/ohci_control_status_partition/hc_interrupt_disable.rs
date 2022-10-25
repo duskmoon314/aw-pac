@@ -441,41 +441,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SchedulingOverrun Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn scheduling_overrun(&mut self) -> SCHEDULING_OVERRUN_W<0> {
         SCHEDULING_OVERRUN_W::new(self)
     }
     #[doc = "Bit 1 - WritebackDoneHead Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn writeback_done_head(&mut self) -> WRITEBACK_DONE_HEAD_W<1> {
         WRITEBACK_DONE_HEAD_W::new(self)
     }
     #[doc = "Bit 2 - StartofFrame Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn start_of_frame(&mut self) -> START_OF_FRAME_W<2> {
         START_OF_FRAME_W::new(self)
     }
     #[doc = "Bit 3 - ResumeDetected Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn resume_detected(&mut self) -> RESUME_DETECTED_W<3> {
         RESUME_DETECTED_W::new(self)
     }
     #[doc = "Bit 4 - UnrecoverableError Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn unrecoverable_error(&mut self) -> UNRECOVERABLE_ERROR_W<4> {
         UNRECOVERABLE_ERROR_W::new(self)
     }
     #[doc = "Bit 5 - FrameNumberOverflow Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn frame_number_overflow(&mut self) -> FRAME_NUMBER_OVERFLOW_W<5> {
         FRAME_NUMBER_OVERFLOW_W::new(self)
     }
     #[doc = "Bit 6 - RootHubStatusChange Interrupt Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn root_hub_status_change(&mut self) -> ROOT_HUB_STATUS_CHANGE_W<6> {
         ROOT_HUB_STATUS_CHANGE_W::new(self)
     }
     #[doc = "Bit 31 - MasterInterruptEnable\n\nA '0' writtern to this field is ignored by HC. A '1' written to this field disables interrupt generation due to events specified in the other bits of this register. This field is set after a hardware or software reset."]
     #[inline(always)]
+    #[must_use]
     pub fn master_interrupt_disable(&mut self) -> MASTER_INTERRUPT_DISABLE_W<31> {
         MASTER_INTERRUPT_DISABLE_W::new(self)
     }
@@ -498,11 +506,10 @@ impl crate::Readable for HC_INTERRUPT_DISABLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_interrupt_disable::W](W) writer structure"]
 impl crate::Writable for HC_INTERRUPT_DISABLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_interrupt_disable to value 0"]
 impl crate::Resettable for HC_INTERRUPT_DISABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

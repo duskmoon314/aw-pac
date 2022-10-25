@@ -370,56 +370,67 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Read Data Number of Bytes"]
     #[inline(always)]
+    #[must_use]
     pub fn rdbn(&mut self) -> RDBN_W<0> {
         RDBN_W::new(self)
     }
     #[doc = "Bits 8:15 - Read Command Dummy Cycles"]
     #[inline(always)]
+    #[must_use]
     pub fn rcdc(&mut self) -> RCDC_W<8> {
         RCDC_W::new(self)
     }
     #[doc = "Bit 20 - Bit Order of Read Data"]
     #[inline(always)]
+    #[must_use]
     pub fn rdat_lsb(&mut self) -> RDAT_LSB_W<20> {
         RDAT_LSB_W::new(self)
     }
     #[doc = "Bit 21 - RGB 16 Data Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn rgb16_data_source_select(&mut self) -> RGB16_DATA_SOURCE_SELECT_W<21> {
         RGB16_DATA_SOURCE_SELECT_W::new(self)
     }
     #[doc = "Bit 22 - DCX Data Value"]
     #[inline(always)]
+    #[must_use]
     pub fn dcx_data(&mut self) -> DCX_DATA_W<22> {
         DCX_DATA_W::new(self)
     }
     #[doc = "Bit 23 - DBI Clock Output Inverse"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_clko_inv(&mut self) -> DBI_CLKO_INV_W<23> {
         DBI_CLKO_INV_W::new(self)
     }
     #[doc = "Bit 24 - DBI Output Clock Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_clko_mod(&mut self) -> DBI_CLKO_MOD_W<24> {
         DBI_CLKO_MOD_W::new(self)
     }
     #[doc = "Bit 25 - DBI RX Clock Inverse"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_rxclk_inv(&mut self) -> DBI_RXCLK_INV_W<25> {
         DBI_RXCLK_INV_W::new(self)
     }
     #[doc = "Bits 26:27 - 2 Data Lane RGB666 Format"]
     #[inline(always)]
+    #[must_use]
     pub fn rgb666_fmt(&mut self) -> RGB666_FMT_W<26> {
         RGB666_FMT_W::new(self)
     }
     #[doc = "Bits 29:30 - DBI Enable Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_en_mode_sel(&mut self) -> DBI_EN_MODE_SEL_W<29> {
         DBI_EN_MODE_SEL_W::new(self)
     }
     #[doc = "Bit 31 - DBI Soft Trigger"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_soft_trg(&mut self) -> DBI_SOFT_TRG_W<31> {
         DBI_SOFT_TRG_W::new(self)
     }
@@ -442,11 +453,10 @@ impl crate::Readable for DBI_CTL_1_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbi_ctl_1::W](W) writer structure"]
 impl crate::Writable for DBI_CTL_1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dbi_ctl_1 to value 0"]
 impl crate::Resettable for DBI_CTL_1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

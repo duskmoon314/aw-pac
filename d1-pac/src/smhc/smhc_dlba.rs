@@ -54,11 +54,10 @@ impl crate::Readable for SMHC_DLBA_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_dlba::W](W) writer structure"]
 impl crate::Writable for SMHC_DLBA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_dlba to value 0"]
 impl crate::Resettable for SMHC_DLBA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

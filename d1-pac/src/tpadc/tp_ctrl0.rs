@@ -438,26 +438,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
     #[inline(always)]
+    #[must_use]
     pub fn tacq(&mut self) -> TACQ_W<0> {
         TACQ_W::new(self)
     }
     #[doc = "Bits 16:19 - ADC Sample Frequency Divider"]
     #[inline(always)]
+    #[must_use]
     pub fn fs_div(&mut self) -> FS_DIV_W<16> {
         FS_DIV_W::new(self)
     }
     #[doc = "Bits 20:21 - ADC Clock Divider (CLK_IN)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_clk_divider(&mut self) -> ADC_CLK_DIVIDER_W<20> {
         ADC_CLK_DIVIDER_W::new(self)
     }
     #[doc = "Bit 23 - ADC First Convert Delay Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_first_dly_mode(&mut self) -> ADC_FIRST_DLY_MODE_W<23> {
         ADC_FIRST_DLY_MODE_W::new(self)
     }
     #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W<24> {
         ADC_FIRST_DLY_W::new(self)
     }
@@ -480,11 +485,10 @@ impl crate::Readable for TP_CTRL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [tp_ctrl0::W](W) writer structure"]
 impl crate::Writable for TP_CTRL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tp_ctrl0 to value 0"]
 impl crate::Resettable for TP_CTRL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

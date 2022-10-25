@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Tvspw = (VSPW+1) * Thsync\n\nVT/2 > (VSPW+1)"]
     #[inline(always)]
+    #[must_use]
     pub fn vspw(&mut self) -> VSPW_W<0> {
         VSPW_W::new(self)
     }
     #[doc = "Bits 16:25 - Thspw = (HSPW+1) * Tdclk\n\nHT > (HSPW+1)"]
     #[inline(always)]
+    #[must_use]
     pub fn hspw(&mut self) -> HSPW_W<16> {
         HSPW_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for LCD_BASIC3_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_basic3::W](W) writer structure"]
 impl crate::Writable for LCD_BASIC3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_basic3 to value 0"]
 impl crate::Resettable for LCD_BASIC3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

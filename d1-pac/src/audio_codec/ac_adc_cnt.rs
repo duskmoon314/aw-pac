@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - RX Sample Counter\n\nThe audio sample number of writing into RXFIFO. When one sample is written by Digital Audio Engine, the RX sample counter register increases by one. The RX sample counter register can be set to any initial valve at any time. After being updated by the initial value, the counter register should count from this initial value."]
     #[inline(always)]
+    #[must_use]
     pub fn rx_cnt(&mut self) -> RX_CNT_W<0> {
         RX_CNT_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for AC_ADC_CNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_cnt::W](W) writer structure"]
 impl crate::Writable for AC_ADC_CNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_cnt to value 0"]
 impl crate::Resettable for AC_ADC_CNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

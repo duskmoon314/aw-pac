@@ -45,7 +45,7 @@ impl R {
     #[doc = "Bits 0:23 - The instant value of internal frame clock counter.\n\nWhen frame done interrupt comes, the software can query this counter for judging whether it is the time for updating the double buffer address registers."]
     #[inline(always)]
     pub fn itnl_clk_cnt(&self) -> ITNL_CLK_CNT_R {
-        ITNL_CLK_CNT_R::new((self.bits & 0x00ff_ffff) as u32)
+        ITNL_CLK_CNT_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Bits 24:31 - The accumulated value of FRM_CLK_CNT for software frame rate statics. Every interrupt of frame is done, the software checks this accumulated value and clears it to 0. If the ACC_CLK_CNT is larger than 1, the software has lost frame.\n\nWhen frame done or vsync comes, ACC_CLK_CNT = ACC_CLK_CNT + 1, and cleared to 0 when writing this register."]
     #[inline(always)]
@@ -56,6 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 24:31 - The accumulated value of FRM_CLK_CNT for software frame rate statics. Every interrupt of frame is done, the software checks this accumulated value and clears it to 0. If the ACC_CLK_CNT is larger than 1, the software has lost frame.\n\nWhen frame done or vsync comes, ACC_CLK_CNT = ACC_CLK_CNT + 1, and cleared to 0 when writing this register."]
     #[inline(always)]
+    #[must_use]
     pub fn acc_clk_cnt(&mut self) -> ACC_CLK_CNT_W<24> {
         ACC_CLK_CNT_W::new(self)
     }
@@ -78,11 +79,10 @@ impl crate::Readable for CSIC_DMA_ACC_ITNL_CLK_CNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_acc_itnl_clk_cnt::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_ACC_ITNL_CLK_CNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_acc_itnl_clk_cnt to value 0"]
 impl crate::Resettable for CSIC_DMA_ACC_ITNL_CLK_CNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

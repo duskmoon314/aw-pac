@@ -54,11 +54,10 @@ impl crate::Readable for DMIC_INTS_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmic_ints::W](W) writer structure"]
 impl crate::Writable for DMIC_INTS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dmic_ints to value 0"]
 impl crate::Resettable for DMIC_INTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

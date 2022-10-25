@@ -33,8 +33,5 @@ impl crate::Readable for CFLR_SPEC {
 }
 #[doc = "`reset()` method sets cflr%s to value 0"]
 impl crate::Resettable for CFLR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

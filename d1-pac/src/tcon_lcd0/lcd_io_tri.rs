@@ -145,7 +145,7 @@ impl R {
     #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] output enable, with independent bit control."]
     #[inline(always)]
     pub fn data_output_tri_en(&self) -> DATA_OUTPUT_TRI_EN_R {
-        DATA_OUTPUT_TRI_EN_R::new((self.bits & 0x00ff_ffff) as u32)
+        DATA_OUTPUT_TRI_EN_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Enable the output of IO\\[i\\]"]
     #[inline(always)]
@@ -181,36 +181,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] output enable, with independent bit control."]
     #[inline(always)]
+    #[must_use]
     pub fn data_output_tri_en(&mut self) -> DATA_OUTPUT_TRI_EN_W<0> {
         DATA_OUTPUT_TRI_EN_W::new(self)
     }
     #[doc = "Enable the output of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn io_output_tri_en<const O: u8>(&mut self) -> IO_OUTPUT_TRI_EN_W<O> {
         IO_OUTPUT_TRI_EN_W::new(self)
     }
     #[doc = "Bit 24 - Enable the output of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io0_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<24> {
         IO_OUTPUT_TRI_EN_W::new(self)
     }
     #[doc = "Bit 25 - Enable the output of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io1_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<25> {
         IO_OUTPUT_TRI_EN_W::new(self)
     }
     #[doc = "Bit 26 - Enable the output of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io2_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<26> {
         IO_OUTPUT_TRI_EN_W::new(self)
     }
     #[doc = "Bit 27 - Enable the output of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io3_output_tri_en(&mut self) -> IO_OUTPUT_TRI_EN_W<27> {
         IO_OUTPUT_TRI_EN_W::new(self)
     }
     #[doc = "Bit 28 - Set the endian of data bits"]
     #[inline(always)]
+    #[must_use]
     pub fn rgb_endian(&mut self) -> RGB_ENDIAN_W<28> {
         RGB_ENDIAN_W::new(self)
     }
@@ -233,11 +240,10 @@ impl crate::Readable for LCD_IO_TRI_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_io_tri::W](W) writer structure"]
 impl crate::Writable for LCD_IO_TRI_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_io_tri to value 0x0fff_ffff"]
 impl crate::Resettable for LCD_IO_TRI_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0fff_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0x0fff_ffff;
 }

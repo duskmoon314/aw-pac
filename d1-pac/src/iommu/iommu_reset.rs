@@ -295,56 +295,67 @@ impl R {
 impl W {
     #[doc = "Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn m_rst<const O: u8>(&mut self) -> M_RST_W<O> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 0 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn m0_rst(&mut self) -> M_RST_W<0> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 1 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn m1_rst(&mut self) -> M_RST_W<1> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 2 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn m2_rst(&mut self) -> M_RST_W<2> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 3 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn m3_rst(&mut self) -> M_RST_W<3> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 4 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn m4_rst(&mut self) -> M_RST_W<4> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 5 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn m5_rst(&mut self) -> M_RST_W<5> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 6 - Master\\[i\\] Reset\n\nMaster\\[i\\] address convert lane software reset switch.\n\nWhen Master\\[i\\] occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn m6_rst(&mut self) -> M_RST_W<6> {
         M_RST_W::new(self)
     }
     #[doc = "Bit 16 - Macrotlb Reset\n\nMacro TLB address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn mtlb_rst(&mut self) -> MTLB_RST_W<16> {
         MTLB_RST_W::new(self)
     }
     #[doc = "Bit 17 - PTW Cache Reset\n\nPTW Cache address convert lane software reset switch.\n\nWhen PTW Cache occurs abnormal, the bit is used to reset PTW Cache individually."]
     #[inline(always)]
+    #[must_use]
     pub fn pc_rst(&mut self) -> PC_RST_W<17> {
         PC_RST_W::new(self)
     }
     #[doc = "Bit 31 - IOMMU Software Reset Switch、n\nBefore IOMMU software reset operation, ensure IOMMU never be opened; or all bus operations are completed; or DRAM and the peripherals have opened the corresponding switch, for shielding the effects of IOMMU reset."]
     #[inline(always)]
+    #[must_use]
     pub fn iommu_reset(&mut self) -> IOMMU_RESET_W<31> {
         IOMMU_RESET_W::new(self)
     }
@@ -367,11 +378,10 @@ impl crate::Readable for IOMMU_RESET_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_reset::W](W) writer structure"]
 impl crate::Writable for IOMMU_RESET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_reset to value 0x8003_007f"]
 impl crate::Resettable for IOMMU_RESET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x8003_007f
-    }
+    const RESET_VALUE: Self::Ux = 0x8003_007f;
 }

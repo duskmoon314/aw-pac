@@ -263,21 +263,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Global Enable\n\nA disable on this bit overrides any other block or channel enables and flushes all FIFOs."]
     #[inline(always)]
+    #[must_use]
     pub fn gen(&mut self) -> GEN_W<0> {
         GEN_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Block Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxen(&mut self) -> RXEN_W<1> {
         RXEN_W::new(self)
     }
     #[doc = "Bits 4:5 - CIR Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ciren(&mut self) -> CIREN_W<4> {
         CIREN_W::new(self)
     }
     #[doc = "Bits 6:7 - Active Pulse Accept Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn apam(&mut self) -> APAM_W<6> {
         APAM_W::new(self)
     }
@@ -300,11 +304,10 @@ impl crate::Readable for CIR_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_ctl::W](W) writer structure"]
 impl crate::Writable for CIR_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_ctl to value 0"]
 impl crate::Resettable for CIR_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -67,8 +67,5 @@ impl crate::Readable for PRS_CH_INPUT_PARA0_SPEC {
 }
 #[doc = "`reset()` method sets prs_ch%s_input_para0 to value 0"]
 impl crate::Resettable for PRS_CH_INPUT_PARA0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

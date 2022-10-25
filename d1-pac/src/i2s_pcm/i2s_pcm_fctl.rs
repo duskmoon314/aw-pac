@@ -315,36 +315,43 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - RXFIFO Output Mode\n\nExample for 20-bit received audio sample:\n\nMode 0: APB_RDATA\\[31:0\\] = {RXFIFO\\[31:12\\], 12’h0}\n\nMode 1: APB_RDATA\\[31:0\\] = {12{RXFIFO\\[31\\]}, RXFIFO\\[31:12\\]}\n\nMode 2: APB_RDATA \\[31:0\\] = {RXFIFO\\[31:16\\], 16’h0}\n\nMode 3: APB_RDATA\\[31:0\\] = {16{RXFIFO\\[31\\], RXFIFO\\[31:16\\]}"]
     #[inline(always)]
+    #[must_use]
     pub fn rxom(&mut self) -> RXOM_W<0> {
         RXOM_W::new(self)
     }
     #[doc = "Bit 2 - TXFIFO Input Mode\n\nExample for 20-bit transmitted audio sample:\n\nMode 0: TXFIFO\\[31:0\\] = {APB_WDATA\\[31:12\\], 12’h0}\n\nMode 1: TXFIFO\\[31:0\\] = {APB_WDATA\\[19:0\\], 12’h0}"]
     #[inline(always)]
+    #[must_use]
     pub fn txim(&mut self) -> TXIM_W<2> {
         TXIM_W::new(self)
     }
     #[doc = "Bits 4:9 - RXFIFO Empty Trigger Level\n\nInterrupt and DMA request trigger level for RXFIFO normal condition.\n\nTrigger Level = RXTL + 1"]
     #[inline(always)]
+    #[must_use]
     pub fn rxtl(&mut self) -> RXTL_W<4> {
         RXTL_W::new(self)
     }
     #[doc = "Bits 12:18 - TXFIFO Empty Trigger Level\n\nInterrupt and DMA request trigger level for TXFIFO normal condition.\n\nTrigger Level = TXTL"]
     #[inline(always)]
+    #[must_use]
     pub fn txtl(&mut self) -> TXTL_W<12> {
         TXTL_W::new(self)
     }
     #[doc = "Bit 24 - Flush RXFIFO"]
     #[inline(always)]
+    #[must_use]
     pub fn frx(&mut self) -> FRX_W<24> {
         FRX_W::new(self)
     }
     #[doc = "Bit 25 - Flush TXFIFO"]
     #[inline(always)]
+    #[must_use]
     pub fn ftx(&mut self) -> FTX_W<25> {
         FTX_W::new(self)
     }
     #[doc = "Bit 31 - Audio Hub Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hub_en(&mut self) -> HUB_EN_W<31> {
         HUB_EN_W::new(self)
     }
@@ -367,11 +374,10 @@ impl crate::Readable for I2S_PCM_FCTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_fctl::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_FCTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_fctl to value 0"]
 impl crate::Resettable for I2S_PCM_FCTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

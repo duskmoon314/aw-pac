@@ -329,26 +329,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Data Terminal Ready"]
     #[inline(always)]
+    #[must_use]
     pub fn dtr(&mut self) -> DTR_W<0> {
         DTR_W::new(self)
     }
     #[doc = "Bit 1 - Request to Send"]
     #[inline(always)]
+    #[must_use]
     pub fn rts(&mut self) -> RTS_W<1> {
         RTS_W::new(self)
     }
     #[doc = "Bit 4 - Loop Back Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn loop_(&mut self) -> LOOP_W<4> {
         LOOP_W::new(self)
     }
     #[doc = "Bit 5 - Auto Flow Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn afce(&mut self) -> AFCE_W<5> {
         AFCE_W::new(self)
     }
     #[doc = "Bits 6:7 - UART Function: Select IrDA or RS485"]
     #[inline(always)]
+    #[must_use]
     pub fn function(&mut self) -> FUNCTION_W<6> {
         FUNCTION_W::new(self)
     }
@@ -371,11 +376,10 @@ impl crate::Readable for MCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [mcr::W](W) writer structure"]
 impl crate::Writable for MCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets mcr to value 0"]
 impl crate::Resettable for MCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

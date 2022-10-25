@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 20 - fsout Clock Gate Enable Control"]
     #[inline(always)]
+    #[must_use]
     pub fn fsout_gate(&mut self) -> FSOUT_GATE_W<20> {
         FSOUT_GATE_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for FSOUT_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [fsout_cfg::W](W) writer structure"]
 impl crate::Writable for FSOUT_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fsout_cfg to value 0"]
 impl crate::Resettable for FSOUT_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

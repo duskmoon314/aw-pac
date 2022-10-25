@@ -125,21 +125,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Re-sync line pixel from TCON"]
     #[inline(always)]
+    #[must_use]
     pub fn re_sync_pixel_num(&mut self) -> RE_SYNC_PIXEL_NUM_W<0> {
         RE_SYNC_PIXEL_NUM_W::new(self)
     }
     #[doc = "Bits 16:26 - Re-sync line number from TCON"]
     #[inline(always)]
+    #[must_use]
     pub fn re_sync_line_num(&mut self) -> RE_SYNC_LINE_NUM_W<16> {
         RE_SYNC_LINE_NUM_W::new(self)
     }
     #[doc = "Bit 30"]
     #[inline(always)]
+    #[must_use]
     pub fn re_sync_dis(&mut self) -> RE_SYNC_DIS_W<30> {
         RE_SYNC_DIS_W::new(self)
     }
     #[doc = "Bit 31 - Re-sync field"]
     #[inline(always)]
+    #[must_use]
     pub fn re_sync_field(&mut self) -> RE_SYNC_FIELD_W<31> {
         RE_SYNC_FIELD_W::new(self)
     }
@@ -162,11 +166,10 @@ impl crate::Readable for TVE_RESYNC_PARAMETERS_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_resync_parameters::W](W) writer structure"]
 impl crate::Writable for TVE_RESYNC_PARAMETERS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_resync_parameters to value 0x0010_0001"]
 impl crate::Resettable for TVE_RESYNC_PARAMETERS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_0001
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_0001;
 }

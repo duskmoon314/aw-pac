@@ -284,21 +284,25 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn lec_trans_finish_int(&mut self) -> LEC_TRANS_FINISH_INT_W<0> {
         LEC_TRANS_FINISH_INT_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_cpureq_int(&mut self) -> FIFO_CPUREQ_INT_W<1> {
         FIFO_CPUREQ_INT_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn waitdata_timeout_int(&mut self) -> WAITDATA_TIMEOUT_INT_W<3> {
         WAITDATA_TIMEOUT_INT_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_overflow_int(&mut self) -> FIFO_OVERFLOW_INT_W<4> {
         FIFO_OVERFLOW_INT_W::new(self)
     }
@@ -321,11 +325,10 @@ impl crate::Readable for LEDC_INT_STS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ledc_int_sts::W](W) writer structure"]
 impl crate::Writable for LEDC_INT_STS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x1b;
 }
 #[doc = "`reset()` method sets ledc_int_sts to value 0"]
 impl crate::Resettable for LEDC_INT_STS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

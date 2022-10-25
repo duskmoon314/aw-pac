@@ -337,11 +337,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - PE16 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe16_select(&mut self) -> PE16_SELECT_W<0> {
         PE16_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7 - PE17 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pe17_select(&mut self) -> PE17_SELECT_W<4> {
         PE17_SELECT_W::new(self)
     }
@@ -364,11 +366,10 @@ impl crate::Readable for PE_CFG2_SPEC {
 #[doc = "`write(|w| ..)` method takes [pe_cfg2::W](W) writer structure"]
 impl crate::Writable for PE_CFG2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pe_cfg2 to value 0"]
 impl crate::Resettable for PE_CFG2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

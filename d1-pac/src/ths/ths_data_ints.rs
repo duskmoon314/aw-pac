@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Indicates the pending status of the sensor's data interrupt.\n\nWrite 1 to clear the pending status."]
     #[inline(always)]
+    #[must_use]
     pub fn ths_data_irq_sts(&mut self) -> THS_DATA_IRQ_STS_W<0> {
         THS_DATA_IRQ_STS_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for THS_DATA_INTS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ths_data_ints::W](W) writer structure"]
 impl crate::Writable for THS_DATA_INTS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x01;
 }
 #[doc = "`reset()` method sets ths_data_ints to value 0"]
 impl crate::Resettable for THS_DATA_INTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

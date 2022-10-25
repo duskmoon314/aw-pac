@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - horizontal back porch (in HD line)\n\nTvbp = (VBP +1) * Th"]
     #[inline(always)]
+    #[must_use]
     pub fn v_bp(&mut self) -> V_BP_W<0> {
         V_BP_W::new(self)
     }
     #[doc = "Bits 16:28 - horizontal total time (in HD line)\n\nTvt = VT/2 * Th"]
     #[inline(always)]
+    #[must_use]
     pub fn v_t(&mut self) -> V_T_W<16> {
         V_T_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for TV_BASIC4_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_basic4::W](W) writer structure"]
 impl crate::Writable for TV_BASIC4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_basic4 to value 0"]
 impl crate::Resettable for TV_BASIC4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

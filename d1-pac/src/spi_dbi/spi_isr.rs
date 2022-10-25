@@ -561,61 +561,73 @@ impl R {
 impl W {
     #[doc = "Bit 0 - RXFIFO Ready"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_rdy(&mut self) -> RF_RDY_W<0> {
         RF_RDY_W::new(self)
     }
     #[doc = "Bit 1 - RXFIFO Empty"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_emp(&mut self) -> RF_EMP_W<1> {
         RF_EMP_W::new(self)
     }
     #[doc = "Bit 2 - RXFIFO Full"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_full(&mut self) -> RF_FULL_W<2> {
         RF_FULL_W::new(self)
     }
     #[doc = "Bit 4 - TXFIFO Ready"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_ready(&mut self) -> TF_READY_W<4> {
         TF_READY_W::new(self)
     }
     #[doc = "Bit 5 - TXFIFO Empty"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_emp(&mut self) -> TF_EMP_W<5> {
         TF_EMP_W::new(self)
     }
     #[doc = "Bit 6 - TXFIFO Full"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_full(&mut self) -> TF_FULL_W<6> {
         TF_FULL_W::new(self)
     }
     #[doc = "Bit 8 - RXFIFO Overflow"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_ovf(&mut self) -> RF_OVF_W<8> {
         RF_OVF_W::new(self)
     }
     #[doc = "Bit 9 - RXFIFO Underrun"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_udr(&mut self) -> RF_UDR_W<9> {
         RF_UDR_W::new(self)
     }
     #[doc = "Bit 10 - TXFIFO Overflow"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_ovf(&mut self) -> TF_OVF_W<10> {
         TF_OVF_W::new(self)
     }
     #[doc = "Bit 11 - TXFIFO Underrun"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_udr(&mut self) -> TF_UDR_W<11> {
         TF_UDR_W::new(self)
     }
     #[doc = "Bit 12 - Transfer Completed"]
     #[inline(always)]
+    #[must_use]
     pub fn tc(&mut self) -> TC_W<12> {
         TC_W::new(self)
     }
     #[doc = "Bit 13 - SS Invalid Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ssi(&mut self) -> SSI_W<13> {
         SSI_W::new(self)
     }
@@ -638,11 +650,10 @@ impl crate::Readable for SPI_ISR_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_isr::W](W) writer structure"]
 impl crate::Writable for SPI_ISR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_isr to value 0"]
 impl crate::Resettable for SPI_ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

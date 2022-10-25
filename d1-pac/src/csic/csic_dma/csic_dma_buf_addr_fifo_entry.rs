@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - FIFO Entry of Buffer Address FIFO\\[i\\] for input frames to be stored, only used in Buffer Addr FIFO Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn csic_dma_buf_addr_fifo_entry(&mut self) -> CSIC_DMA_BUF_ADDR_FIFO_ENTRY_W<0> {
         CSIC_DMA_BUF_ADDR_FIFO_ENTRY_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for CSIC_DMA_BUF_ADDR_FIFO_ENTRY_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_buf_addr_fifo_entry::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_BUF_ADDR_FIFO_ENTRY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_buf_addr_fifo%s_entry to value 0"]
 impl crate::Resettable for CSIC_DMA_BUF_ADDR_FIFO_ENTRY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

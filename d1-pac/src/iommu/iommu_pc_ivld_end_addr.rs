@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 20:31 - PTW Cache invalid end address, 1 MB aligned."]
     #[inline(always)]
+    #[must_use]
     pub fn pc_ivld_ea(&mut self) -> PC_IVLD_EA_W<20> {
         PC_IVLD_EA_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for IOMMU_PC_IVLD_END_ADDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_pc_ivld_end_addr::W](W) writer structure"]
 impl crate::Writable for IOMMU_PC_IVLD_END_ADDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_pc_ivld_end_addr to value 0"]
 impl crate::Resettable for IOMMU_PC_IVLD_END_ADDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

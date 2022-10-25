@@ -277,31 +277,37 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Audio Hub Enable\n\nThe bit takes effect only when the EN_DA is set to 1.\n\nSystem Domain: Audio Codec/I2S0/I2S1/I2S2/OWA TXFIFO Hub Enable."]
     #[inline(always)]
+    #[must_use]
     pub fn hub_en(&mut self) -> HUB_EN_W<0> {
         HUB_EN_W::new(self)
     }
     #[doc = "Bits 12:17 - Digital Volume Control: DVC\n\nATT = DVC\\[5:0\\] * (-1.16 dB)\n\n64 steps, -1.16 dB/step"]
     #[inline(always)]
+    #[must_use]
     pub fn dvol(&mut self) -> DVOL_W<12> {
         DVOL_W::new(self)
     }
     #[doc = "Bit 18 - High Pass Filter Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hpf_en(&mut self) -> HPF_EN_W<18> {
         HPF_EN_W::new(self)
     }
     #[doc = "Bit 24 - DWA Function Disable"]
     #[inline(always)]
+    #[must_use]
     pub fn dwa(&mut self) -> DWA_W<24> {
         DWA_W::new(self)
     }
     #[doc = "Bits 25:28 - Internal DAC Quantization Levels.\n\nLevels = \\[7*(21 + MODQU\\[3:0\\])\\]/128\n\nDefault levels = 7*21/128 = 1.15"]
     #[inline(always)]
+    #[must_use]
     pub fn modqu(&mut self) -> MODQU_W<25> {
         MODQU_W::new(self)
     }
     #[doc = "Bit 31 - DAC Digital Part Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn en_da(&mut self) -> EN_DA_W<31> {
         EN_DA_W::new(self)
     }
@@ -324,11 +330,10 @@ impl crate::Readable for AC_DAC_DPC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_dpc::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DPC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_dpc to value 0"]
 impl crate::Resettable for AC_DAC_DPC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -33,8 +33,5 @@ impl crate::Readable for PPCNTR_SPEC {
 }
 #[doc = "`reset()` method sets ppcntr%s to value 0"]
 impl crate::Resettable for PPCNTR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

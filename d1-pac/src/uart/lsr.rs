@@ -271,8 +271,5 @@ impl crate::Readable for LSR_SPEC {
 }
 #[doc = "`reset()` method sets lsr to value 0"]
 impl crate::Resettable for LSR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

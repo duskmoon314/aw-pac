@@ -24,8 +24,5 @@ impl crate::Readable for LEDC_FIFO_DATA_SPEC {
 }
 #[doc = "`reset()` method sets ledc_fifo_data%s to value 0"]
 impl crate::Resettable for LEDC_FIFO_DATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

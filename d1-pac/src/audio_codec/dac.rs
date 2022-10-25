@@ -797,66 +797,79 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - LINEOUT Volume Control.\n\nTotal 30 level from 0x1F to 0x02 with the volume 0 dB to -43.5 dB, -1.5 dB/step, mute when 00000 or 00001"]
     #[inline(always)]
+    #[must_use]
     pub fn lineout_vol_ctrl(&mut self) -> LINEOUT_VOL_CTRL_W<0> {
         LINEOUT_VOL_CTRL_W::new(self)
     }
     #[doc = "Bit 5 - Right Channel LINEOUT Output Control"]
     #[inline(always)]
+    #[must_use]
     pub fn lineoutr_diffen(&mut self) -> LINEOUTR_DIFFEN_W<5> {
         LINEOUTR_DIFFEN_W::new(self)
     }
     #[doc = "Bit 6 - Left Channel LINEOUT Output Control"]
     #[inline(always)]
+    #[must_use]
     pub fn lineoutl_diffen(&mut self) -> LINEOUTL_DIFFEN_W<6> {
         LINEOUTL_DIFFEN_W::new(self)
     }
     #[doc = "Bit 10 - DACR to Right Channel LINEOUT Mute Control"]
     #[inline(always)]
+    #[must_use]
     pub fn rmute(&mut self) -> RMUTE_W<10> {
         RMUTE_W::new(self)
     }
     #[doc = "Bit 11 - Right Channel LINEOUT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lineoutren(&mut self) -> LINEOUTREN_W<11> {
         LINEOUTREN_W::new(self)
     }
     #[doc = "Bit 12 - DACL to Left Channel LINEOUT Mute Control"]
     #[inline(always)]
+    #[must_use]
     pub fn lmute(&mut self) -> LMUTE_W<12> {
         LMUTE_W::new(self)
     }
     #[doc = "Bit 13 - Left Channel LINEOUT Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lineoutlen(&mut self) -> LINEOUTLEN_W<13> {
         LINEOUTLEN_W::new(self)
     }
     #[doc = "Bit 14 - DACR Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dacr_en(&mut self) -> DACR_EN_W<14> {
         DACR_EN_W::new(self)
     }
     #[doc = "Bit 15 - DACL Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dacl_en(&mut self) -> DACL_EN_W<15> {
         DACL_EN_W::new(self)
     }
     #[doc = "Bits 16:17 - OPDAC L/R Bias Current Select"]
     #[inline(always)]
+    #[must_use]
     pub fn iopdacs(&mut self) -> IOPDACS_W<16> {
         IOPDACS_W::new(self)
     }
     #[doc = "Bits 18:19 - LINEOUT L/R AMP Bias Current Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ilineoutamps(&mut self) -> ILINEOUTAMPS_W<18> {
         ILINEOUTAMPS_W::new(self)
     }
     #[doc = "Bits 20:21 - VRA2 Buffer OP and Headphone Feedback Buffer OP Bias Current Select"]
     #[inline(always)]
+    #[must_use]
     pub fn iopvrs(&mut self) -> IOPVRS_W<20> {
         IOPVRS_W::new(self)
     }
     #[doc = "Bit 23 - Internal Current Sink Test Enable (from MICIN3P pin)"]
     #[inline(always)]
+    #[must_use]
     pub fn current_test_select(&mut self) -> CURRENT_TEST_SELECT_W<23> {
         CURRENT_TEST_SELECT_W::new(self)
     }
@@ -879,11 +892,10 @@ impl crate::Readable for DAC_SPEC {
 #[doc = "`write(|w| ..)` method takes [dac::W](W) writer structure"]
 impl crate::Writable for DAC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dac to value 0"]
 impl crate::Resettable for DAC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

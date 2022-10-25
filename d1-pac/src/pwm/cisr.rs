@@ -229,91 +229,109 @@ impl R {
 impl W {
     #[doc = "Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn cris<const O: u8>(&mut self) -> CRIS_W<O> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 0 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris0(&mut self) -> CRIS_W<0> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 2 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris1(&mut self) -> CRIS_W<2> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 4 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris2(&mut self) -> CRIS_W<4> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 6 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris3(&mut self) -> CRIS_W<6> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 8 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris4(&mut self) -> CRIS_W<8> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 10 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris5(&mut self) -> CRIS_W<10> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 12 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris6(&mut self) -> CRIS_W<12> {
         CRIS_W::new(self)
     }
     #[doc = "Bit 14 - Status of the capture channel rising lock interrupt\n\nWhen the capture channel captures rising edge, if the rise lock interrupt ( CRIE ) is enabled, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cris7(&mut self) -> CRIS_W<14> {
         CRIS_W::new(self)
     }
     #[doc = "Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn cfis<const O: u8>(&mut self) -> CFIS_W<O> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 1 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis0(&mut self) -> CFIS_W<1> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 3 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis1(&mut self) -> CFIS_W<3> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 5 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis2(&mut self) -> CFIS_W<5> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 7 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis3(&mut self) -> CFIS_W<7> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 9 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis4(&mut self) -> CFIS_W<9> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 11 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis5(&mut self) -> CFIS_W<11> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 13 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis6(&mut self) -> CFIS_W<13> {
         CFIS_W::new(self)
     }
     #[doc = "Bit 15 - Status of the capture channel falling lock interrupt\n\nWhen the capture channel captures falling edge, if the fall lock interrupt ( CFIE ) is enabled, this bit is set to 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: The capture channel interrupt is not pending.\n\nReads 1: The capture channel interrupt is pending.\n\nWrites 0: no effect.\n\nWrites 1: Clear the status of the capture channel interrupt."]
     #[inline(always)]
+    #[must_use]
     pub fn cfis7(&mut self) -> CFIS_W<15> {
         CFIS_W::new(self)
     }
@@ -336,11 +354,10 @@ impl crate::Readable for CISR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cisr::W](W) writer structure"]
 impl crate::Writable for CISR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x03;
 }
 #[doc = "`reset()` method sets cisr to value 0"]
 impl crate::Resettable for CISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

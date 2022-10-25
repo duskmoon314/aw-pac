@@ -111,21 +111,25 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn vccio_det_bypass_en(&mut self) -> VCCIO_DET_BYPASS_EN_W<0> {
         VCCIO_DET_BYPASS_EN_W::new(self)
     }
     #[doc = "Bits 4:11 - - Bit\\[7:5\\]: Reserved, default=0\n- Bit\\[4\\]: Bypass debounce circuit, defaule=0\n- Bit\\[3\\]: Enable control, defaule=0 \n - 0: Disable VCC-IO detection\n - 1: Force the detection output\n- Bit\\[2:0\\]: Gear adjustment\n - 000: Detection threshold is 2.5 V\n - 001: Detection threshold is 2.6 V\n - 010: Detection threshold is 2.7 V (default)\n - 011: Detection threshold is 2.8 V\n - 100: Detection threshold is 2.9 V\n - 101: Detection threshold is 3 V\n - 110: N/A\n - 111: N/A"]
     #[inline(always)]
+    #[must_use]
     pub fn vccio_det_spare(&mut self) -> VCCIO_DET_SPARE_W<4> {
         VCCIO_DET_SPARE_W::new(self)
     }
     #[doc = "Bit 15 - Power off gating control signal\n\n(For Debug Use Only)\n\nWhen use vdd_sys to RTC isolation software control, write this bit to 1. It will only be cleared by resetb release."]
     #[inline(always)]
+    #[must_use]
     pub fn pwroff_gat_rtc_cfg(&mut self) -> PWROFF_GAT_RTC_CFG_W<15> {
         PWROFF_GAT_RTC_CFG_W::new(self)
     }
     #[doc = "Bits 16:31 - Key Field\n\nThis field should be filled with 0x16AA, and then the bit 15 can be configured."]
     #[inline(always)]
+    #[must_use]
     pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
@@ -148,11 +152,10 @@ impl crate::Readable for VDD_OFF_GATING_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [vdd_off_gating_ctrl::W](W) writer structure"]
 impl crate::Writable for VDD_OFF_GATING_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets vdd_off_gating_ctrl to value 0x21"]
 impl crate::Resettable for VDD_OFF_GATING_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x21
-    }
+    const RESET_VALUE: Self::Ux = 0x21;
 }

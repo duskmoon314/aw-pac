@@ -242,51 +242,61 @@ impl R {
 impl W {
     #[doc = "Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn micro_tlb_enable<const O: u8>(&mut self) -> MICRO_TLB_ENABLE_W<O> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 0 - Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb0_enable(&mut self) -> MICRO_TLB_ENABLE_W<0> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 1 - Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb1_enable(&mut self) -> MICRO_TLB_ENABLE_W<1> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 2 - Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb2_enable(&mut self) -> MICRO_TLB_ENABLE_W<2> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 3 - Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb3_enable(&mut self) -> MICRO_TLB_ENABLE_W<3> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 4 - Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb4_enable(&mut self) -> MICRO_TLB_ENABLE_W<4> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 5 - Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb5_enable(&mut self) -> MICRO_TLB_ENABLE_W<5> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 6 - Micro TLB\\[i\\] enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn micro_tlb6_enable(&mut self) -> MICRO_TLB_ENABLE_W<6> {
         MICRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 16 - Macro TLB enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn macro_tlb_enable(&mut self) -> MACRO_TLB_ENABLE_W<16> {
         MACRO_TLB_ENABLE_W::new(self)
     }
     #[doc = "Bit 17 - PTW Cache enable bit"]
     #[inline(always)]
+    #[must_use]
     pub fn ptw_cache_enable(&mut self) -> PTW_CACHE_ENABLE_W<17> {
         PTW_CACHE_ENABLE_W::new(self)
     }
@@ -309,11 +319,10 @@ impl crate::Readable for IOMMU_TLB_ENABLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_tlb_enable::W](W) writer structure"]
 impl crate::Writable for IOMMU_TLB_ENABLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_tlb_enable to value 0x0003_007f"]
 impl crate::Resettable for IOMMU_TLB_ENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0003_007f
-    }
+    const RESET_VALUE: Self::Ux = 0x0003_007f;
 }

@@ -33,8 +33,5 @@ impl crate::Readable for HCIVERSION_SPEC {
 }
 #[doc = "`reset()` method sets hciversion to value 0"]
 impl crate::Resettable for HCIVERSION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

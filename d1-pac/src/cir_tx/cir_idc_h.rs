@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Idle Duration Counter Threshold (High 4 bits)\n\nIdle Duration = 128*IDC*Ts (IDC = 0-4095)\n\nIt is used in cyclical transmission mode. When all the data in FIFO is transmitted, the signals can be transmitted after a specific time."]
     #[inline(always)]
+    #[must_use]
     pub fn idc_h(&mut self) -> IDC_H_W<0> {
         IDC_H_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for CIR_IDC_H_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_idc_h::W](W) writer structure"]
 impl crate::Writable for CIR_IDC_H_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_idc_h to value 0"]
 impl crate::Resettable for CIR_IDC_H_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

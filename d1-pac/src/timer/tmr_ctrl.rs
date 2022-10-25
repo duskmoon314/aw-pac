@@ -398,26 +398,31 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn tmr_en(&mut self) -> TMR_EN_W<0> {
         TMR_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn tmr_reload(&mut self) -> TMR_RELOAD_W<1> {
         TMR_RELOAD_W::new(self)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
+    #[must_use]
     pub fn tmr_clk_src(&mut self) -> TMR_CLK_SRC_W<2> {
         TMR_CLK_SRC_W::new(self)
     }
     #[doc = "Bits 4:6"]
     #[inline(always)]
+    #[must_use]
     pub fn tmr_clk_pres(&mut self) -> TMR_CLK_PRES_W<4> {
         TMR_CLK_PRES_W::new(self)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
+    #[must_use]
     pub fn tmr_mode(&mut self) -> TMR_MODE_W<7> {
         TMR_MODE_W::new(self)
     }
@@ -440,11 +445,10 @@ impl crate::Readable for TMR_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tmr_ctrl::W](W) writer structure"]
 impl crate::Writable for TMR_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tmr%s_ctrl to value 0"]
 impl crate::Resettable for TMR_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

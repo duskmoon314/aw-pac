@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
+    #[must_use]
     pub fn mii_data(&mut self) -> MII_DATA_W<0> {
         MII_DATA_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for EMAC_MII_DATA_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_mii_data::W](W) writer structure"]
 impl crate::Writable for EMAC_MII_DATA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_mii_data to value 0"]
 impl crate::Resettable for EMAC_MII_DATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

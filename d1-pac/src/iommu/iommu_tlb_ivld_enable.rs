@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable TLB invalidation operation\n\nAfter invalidation operation is completed, the bit can clear automatically.\n\nWhen operating invalidation operation, TLB/Cache operation has not affected.\n\nAfter or before invalidation operation starts, there is no absolute relationship between the same address switch operation and invalidation operation."]
     #[inline(always)]
+    #[must_use]
     pub fn tlb_ivld_enable(&mut self) -> TLB_IVLD_ENABLE_W<0> {
         TLB_IVLD_ENABLE_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for IOMMU_TLB_IVLD_ENABLE_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_tlb_ivld_enable::W](W) writer structure"]
 impl crate::Writable for IOMMU_TLB_IVLD_ENABLE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_tlb_ivld_enable to value 0"]
 impl crate::Resettable for IOMMU_TLB_IVLD_ENABLE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

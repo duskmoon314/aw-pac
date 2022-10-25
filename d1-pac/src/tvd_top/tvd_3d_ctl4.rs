@@ -54,11 +54,10 @@ impl crate::Readable for TVD_3D_CTL4_SPEC {
 #[doc = "`write(|w| ..)` method takes [tvd_3d_ctl4::W](W) writer structure"]
 impl crate::Writable for TVD_3D_CTL4_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tvd_3d_ctl4 to value 0"]
 impl crate::Resettable for TVD_3D_CTL4_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

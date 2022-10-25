@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Data corresponding to read/write virtual address"]
     #[inline(always)]
+    #[must_use]
     pub fn va_data(&mut self) -> VA_DATA_W<0> {
         VA_DATA_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for IOMMU_VA_DATA_SPEC {
 #[doc = "`write(|w| ..)` method takes [iommu_va_data::W](W) writer structure"]
 impl crate::Writable for IOMMU_VA_DATA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets iommu_va_data to value 0"]
 impl crate::Resettable for IOMMU_VA_DATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

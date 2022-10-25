@@ -43,12 +43,13 @@ impl R {
     #[doc = "Bits 0:24 - Set the seed used in dither function\n\nNote: Avoid setting it to 0."]
     #[inline(always)]
     pub fn seed_value(&self) -> SEED_VALUE_R {
-        SEED_VALUE_R::new((self.bits & 0x01ff_ffff) as u32)
+        SEED_VALUE_R::new(self.bits & 0x01ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:24 - Set the seed used in dither function\n\nNote: Avoid setting it to 0."]
     #[inline(always)]
+    #[must_use]
     pub fn seed_value(&mut self) -> SEED_VALUE_W<0> {
         SEED_VALUE_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for LCD_FRM_SEED_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_frm_seed::W](W) writer structure"]
 impl crate::Writable for LCD_FRM_SEED_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_frm_seed%s to value 0"]
 impl crate::Resettable for LCD_FRM_SEED_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

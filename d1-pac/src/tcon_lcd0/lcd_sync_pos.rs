@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Set the line number of master LCD controller which is used to trigger the slave LCD controller to start working.\n\nNote:It is only set in master LCD controller.It is not necessarily to set in slave LCD controller.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_sync_line_num(&mut self) -> LCD_SYNC_LINE_NUM_W<0> {
         LCD_SYNC_LINE_NUM_W::new(self)
     }
     #[doc = "Bits 16:27 - Set the pixel number of master LCD controller which is used to trigger the slave LCD controller to start working.This value is the number of pixels between the trigger point and the end of the line.\n\nTri pos = Tline*LCD_Sync_Line_Num+Tpixel*(HT-LCD_Sync_Pixel_Num)\n\nNote: Only use in Single DSI mode."]
     #[inline(always)]
+    #[must_use]
     pub fn lcd_sync_pixel_num(&mut self) -> LCD_SYNC_PIXEL_NUM_W<16> {
         LCD_SYNC_PIXEL_NUM_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for LCD_SYNC_POS_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_sync_pos::W](W) writer structure"]
 impl crate::Writable for LCD_SYNC_POS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_sync_pos to value 0"]
 impl crate::Resettable for LCD_SYNC_POS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -948,81 +948,97 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SPI Clock/Data Phase Control"]
     #[inline(always)]
+    #[must_use]
     pub fn cpha(&mut self) -> CPHA_W<0> {
         CPHA_W::new(self)
     }
     #[doc = "Bit 1 - SPI Clock Polarity Control"]
     #[inline(always)]
+    #[must_use]
     pub fn cpol(&mut self) -> CPOL_W<1> {
         CPOL_W::new(self)
     }
     #[doc = "Bit 2 - SPI Chip Select Signal Polarity Control"]
     #[inline(always)]
+    #[must_use]
     pub fn spol(&mut self) -> SPOL_W<2> {
         SPOL_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn ssctl(&mut self) -> SSCTL_W<3> {
         SSCTL_W::new(self)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
+    #[must_use]
     pub fn ss_sel(&mut self) -> SS_SEL_W<4> {
         SS_SEL_W::new(self)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
+    #[must_use]
     pub fn ss_owner(&mut self) -> SS_OWNER_W<6> {
         SS_OWNER_W::new(self)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
+    #[must_use]
     pub fn ss_level(&mut self) -> SS_LEVEL_W<7> {
         SS_LEVEL_W::new(self)
     }
     #[doc = "Bit 8 - Discard Hash Burst"]
     #[inline(always)]
+    #[must_use]
     pub fn dhb(&mut self) -> DHB_W<8> {
         DHB_W::new(self)
     }
     #[doc = "Bit 9 - Dummy Burst Type"]
     #[inline(always)]
+    #[must_use]
     pub fn ddb(&mut self) -> DDB_W<9> {
         DDB_W::new(self)
     }
     #[doc = "Bit 10 - Rapids Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn rpsm(&mut self) -> RPSM_W<10> {
         RPSM_W::new(self)
     }
     #[doc = "Bit 11 - Master Sample Data Control"]
     #[inline(always)]
+    #[must_use]
     pub fn sdc(&mut self) -> SDC_W<11> {
         SDC_W::new(self)
     }
     #[doc = "Bit 12 - First Transmit Bit Select"]
     #[inline(always)]
+    #[must_use]
     pub fn fbs(&mut self) -> FBS_W<12> {
         FBS_W::new(self)
     }
     #[doc = "Bit 13 - Master Sample Data Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn sdm(&mut self) -> SDM_W<13> {
         SDM_W::new(self)
     }
     #[doc = "Bit 14 - Sending Data Delay Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn sddm(&mut self) -> SDDM_W<14> {
         SDDM_W::new(self)
     }
     #[doc = "Bit 15 - Master Sample Data Control register1"]
     #[inline(always)]
+    #[must_use]
     pub fn sdc1(&mut self) -> SDC1_W<15> {
         SDC1_W::new(self)
     }
     #[doc = "Bit 31 - Exchange Burst"]
     #[inline(always)]
+    #[must_use]
     pub fn xch(&mut self) -> XCH_W<31> {
         XCH_W::new(self)
     }
@@ -1045,11 +1061,10 @@ impl crate::Readable for SPI_TCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_tcr::W](W) writer structure"]
 impl crate::Writable for SPI_TCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_tcr to value 0"]
 impl crate::Resettable for SPI_TCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

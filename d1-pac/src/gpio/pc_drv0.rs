@@ -163,46 +163,55 @@ impl R {
 impl W {
     #[doc = "PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pc_drv<const O: u8>(&mut self) -> PC_DRV_W<O> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 0:1 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc0_drv(&mut self) -> PC_DRV_W<0> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 4:5 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc1_drv(&mut self) -> PC_DRV_W<4> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 8:9 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc2_drv(&mut self) -> PC_DRV_W<8> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 12:13 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc3_drv(&mut self) -> PC_DRV_W<12> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 16:17 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc4_drv(&mut self) -> PC_DRV_W<16> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 20:21 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc5_drv(&mut self) -> PC_DRV_W<20> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 24:25 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc6_drv(&mut self) -> PC_DRV_W<24> {
         PC_DRV_W::new(self)
     }
     #[doc = "Bits 28:29 - PC Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pc7_drv(&mut self) -> PC_DRV_W<28> {
         PC_DRV_W::new(self)
     }
@@ -225,11 +234,10 @@ impl crate::Readable for PC_DRV0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pc_drv0::W](W) writer structure"]
 impl crate::Writable for PC_DRV0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pc_drv0 to value 0"]
 impl crate::Resettable for PC_DRV0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

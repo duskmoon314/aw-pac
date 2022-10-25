@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The right RMS filter average time parameter setting, which is determined by the equation that AT = 1-exp (-2.2Ts/tav). The format is 3.24. (The default value is 10 ms)"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_rrmslat(&mut self) -> DAC_DRC_RRMSLAT_W<0> {
         DAC_DRC_RRMSLAT_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_DAC_DRC_RRMSLAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_rrmslat::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_RRMSLAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_rrmslat to value 0x2baf"]
 impl crate::Resettable for AC_DAC_DRC_RRMSLAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x2baf
-    }
+    const RESET_VALUE: Self::Ux = 0x2baf;
 }

@@ -236,7 +236,7 @@ impl R {
     #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] polarity control, with independent bit control."]
     #[inline(always)]
     pub fn data_inv(&self) -> DATA_INV_R {
-        DATA_INV_R::new((self.bits & 0x00ff_ffff) as u32)
+        DATA_INV_R::new(self.bits & 0x00ff_ffff)
     }
     #[doc = "Enable invert function of IO\\[i\\]"]
     #[inline(always)]
@@ -277,41 +277,49 @@ impl R {
 impl W {
     #[doc = "Bits 0:23 - LCD output port D\\[23:0\\] polarity control, with independent bit control."]
     #[inline(always)]
+    #[must_use]
     pub fn data_inv(&mut self) -> DATA_INV_W<0> {
         DATA_INV_W::new(self)
     }
     #[doc = "Enable invert function of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn io_inv<const O: u8>(&mut self) -> IO_INV_W<O> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 24 - Enable invert function of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io0_inv(&mut self) -> IO_INV_W<24> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 25 - Enable invert function of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io1_inv(&mut self) -> IO_INV_W<25> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 26 - Enable invert function of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io2_inv(&mut self) -> IO_INV_W<26> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 27 - Enable invert function of IO\\[i\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn io3_inv(&mut self) -> IO_INV_W<27> {
         IO_INV_W::new(self)
     }
     #[doc = "Bits 28:30 - Set the phase offset of clock and data in hv mode."]
     #[inline(always)]
+    #[must_use]
     pub fn dclk_sel(&mut self) -> DCLK_SEL_W<28> {
         DCLK_SEL_W::new(self)
     }
     #[doc = "Bit 31 - When it is set as '1', the d\\[23:0\\], io0, io1, io3 are sync to dclk."]
     #[inline(always)]
+    #[must_use]
     pub fn io_output_sel(&mut self) -> IO_OUTPUT_SEL_W<31> {
         IO_OUTPUT_SEL_W::new(self)
     }
@@ -334,11 +342,10 @@ impl crate::Readable for LCD_IO_POL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_io_pol::W](W) writer structure"]
 impl crate::Writable for LCD_IO_POL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_io_pol to value 0"]
 impl crate::Resettable for LCD_IO_POL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

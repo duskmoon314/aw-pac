@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - Signed 13-bit value, range of (-16,16)."]
     #[inline(always)]
+    #[must_use]
     pub fn ceu_coef_mul_value(&mut self) -> CEU_COEF_MUL_VALUE_W<0> {
         CEU_COEF_MUL_VALUE_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for LCD_CEU_COEF_MUL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_ceu_coef_mul::W](W) writer structure"]
 impl crate::Writable for LCD_CEU_COEF_MUL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_ceu_coef_mul%s to value 0"]
 impl crate::Resettable for LCD_CEU_COEF_MUL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

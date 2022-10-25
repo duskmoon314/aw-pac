@@ -959,71 +959,85 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Ramp Digital Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rd_en(&mut self) -> RD_EN_W<0> {
         RD_EN_W::new(self)
     }
     #[doc = "Bit 1 - Ramp Manual Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rmc_en(&mut self) -> RMC_EN_W<1> {
         RMC_EN_W::new(self)
     }
     #[doc = "Bit 2 - Ramp Manual Up Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rmu_en(&mut self) -> RMU_EN_W<2> {
         RMU_EN_W::new(self)
     }
     #[doc = "Bit 3 - Ramp Manual Down Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rmd_en(&mut self) -> RMD_EN_W<3> {
         RMD_EN_W::new(self)
     }
     #[doc = "Bits 4:6 - RK Frequency Gear, Control Ramp Rise/Fall Total Time\n\nRamp Rise/Fall Total Time = (Ramp Step/Ramp Clk Freq)*4096"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_step(&mut self) -> RAMP_STEP_W<4> {
         RAMP_STEP_W::new(self)
     }
     #[doc = "Bits 8:9 - Gap Step"]
     #[inline(always)]
+    #[must_use]
     pub fn gap_step(&mut self) -> GAP_STEP_W<8> {
         GAP_STEP_W::new(self)
     }
     #[doc = "Bits 12:14 - Ramp Hold Step\n\nRamp Hold Time = Ramp Hold Step/Ramp Clk Freq"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_hold_step(&mut self) -> RAMP_HOLD_STEP_W<12> {
         RAMP_HOLD_STEP_W::new(self)
     }
     #[doc = "Bit 15 - Headphone Pullout Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hp_pull_out_en(&mut self) -> HP_PULL_OUT_EN_W<15> {
         HP_PULL_OUT_EN_W::new(self)
     }
     #[doc = "Bits 16:20 - Analog Ramp Clk Div Freq Value : M (from 0 to 31, Default: 24).\n\nAna_Ramp_Clk= 24MHz/(M+1)\n\nDefault Ramp Clk Freq: 24MHz/(24+1)=960 kHz"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_clk_div_m(&mut self) -> RAMP_CLK_DIV_M_W<16> {
         RAMP_CLK_DIV_M_W::new(self)
     }
     #[doc = "Bit 24 - Ramp Soft Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_srst(&mut self) -> RAMP_SRST_W<24> {
         RAMP_SRST_W::new(self)
     }
     #[doc = "Bit 28 - RK Downward Decrease Finish and Rampen Pull Down Instruction"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_fall_int(&mut self) -> RAMP_FALL_INT_W<28> {
         RAMP_FALL_INT_W::new(self)
     }
     #[doc = "Bit 29 - RAMP Fall Int Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_fall_int_en(&mut self) -> RAMP_FALL_INT_EN_W<29> {
         RAMP_FALL_INT_EN_W::new(self)
     }
     #[doc = "Bit 30 - RK Increase Upward Finish and Rampen Pull Down Instruction"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_rise_int(&mut self) -> RAMP_RISE_INT_W<30> {
         RAMP_RISE_INT_W::new(self)
     }
     #[doc = "Bit 31 - RAMP Rise Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ramp_rise_int_en(&mut self) -> RAMP_RISE_INT_EN_W<31> {
         RAMP_RISE_INT_EN_W::new(self)
     }
@@ -1046,11 +1060,10 @@ impl crate::Readable for RAMP_SPEC {
 #[doc = "`write(|w| ..)` method takes [ramp::W](W) writer structure"]
 impl crate::Writable for RAMP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ramp to value 0"]
 impl crate::Resettable for RAMP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

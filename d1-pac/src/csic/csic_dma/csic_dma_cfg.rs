@@ -662,46 +662,55 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Minimum size of SDRAM block write"]
     #[inline(always)]
+    #[must_use]
     pub fn min_sdr_wr_size(&mut self) -> MIN_SDR_WR_SIZE_W<0> {
         MIN_SDR_WR_SIZE_W::new(self)
     }
     #[doc = "Bits 6:9 - Fps down sample"]
     #[inline(always)]
+    #[must_use]
     pub fn fps_ds(&mut self) -> FPS_DS_W<6> {
         FPS_DS_W::new(self)
     }
     #[doc = "Bits 10:11 - Field selection"]
     #[inline(always)]
+    #[must_use]
     pub fn field_sel(&mut self) -> FIELD_SEL_W<10> {
         FIELD_SEL_W::new(self)
     }
     #[doc = "Bit 12 - Horizontal flip enable\n\nWhen enabled, the received data will be arranged in horizontal flip."]
     #[inline(always)]
+    #[must_use]
     pub fn hflip_en(&mut self) -> HFLIP_EN_W<12> {
         HFLIP_EN_W::new(self)
     }
     #[doc = "Bit 13 - Vertical flip enable\n\nWhen enabled, the received data will be arranged in vertical flip."]
     #[inline(always)]
+    #[must_use]
     pub fn vflip_en(&mut self) -> VFLIP_EN_W<13> {
         VFLIP_EN_W::new(self)
     }
     #[doc = "Bits 16:19 - Output data format\n\nWhen the input format is set to RAW stream\n\n0000: field-raw-8\n\n0001: field-raw-10\n\n0010: field-raw-12\n\n0011: reserved\n\n0100: field-rgb565\n\n0101: field-rgb888\n\n0110: field-prgb888\n\n0111: reserved\n\n1000: frame-raw-8\n\n1001: frame-raw-10\n\n1010: frame-raw-12\n\n1011: reserved\n\n1100: frame-rgb565\n\n1101: frame-rgb888\n\n1110: frame-prgb888\n\n1111: reserved\n\nWhen the input format is set to YUV422\n\n0000: field planar YCbCr 422\n\n0001: field planar YCbCr 420\n\n0010: frame planar YCbCr 420\n\n0011: frame planar YCbCr 422\n\n0100: field planar YCbCr 422 UV combined (UV sequence)\n\n0101: field planar YCbCr 420 UV combined (UV sequence)\n\n0110: frame planar YCbCr 420 UV combined (UV sequence)\n\n0111: frame planar YCbCr 422 UV combined (UV sequence)\n\n1000: filed planar YCbCr 422 UV combined (VU sequence)\n\n1001: field planar YCbCr 420 UV combined (VU sequence)\n\n1010: frame planar YCbCr 420 UV combined (VU sequence)\n\n1011: frame planar YCbCr 422 UV combined (VU sequence)\n\n1100: reserved\n\n1101: field YCbCr 400\n\n1110: reserved\n\n1111: frame YCbCr 400\n\nWhen the input format is set to YUV420\n\n0000: reserved\n\n0001: field planar YCbCr 420\n\n0010: frame planar YCbCr 420\n\n0011: reserved\n\n0100: reserved\n\n0101: field planar YCbCr 420 UV combined (UV sequence)\n\n0110: frame planar YCbCr 420 UV combined (UV sequence) 0111~1000: reserved\n\n1001: field planar YCbCr 420 UV combined (VU sequence)\n\n1010: frame planar YCbCr 420 UV combined (VU sequence) 1011~1100: reserved\n\n1101: field YCbCr 400\n\n1110: reserved\n\n1111: frame YCbCr 400"]
     #[inline(always)]
+    #[must_use]
     pub fn output_fmt(&mut self) -> OUTPUT_FMT_W<16> {
         OUTPUT_FMT_W::new(self)
     }
     #[doc = "Bit 20 - 10-bit store configuration"]
     #[inline(always)]
+    #[must_use]
     pub fn yuv_10bit_store_configuration(&mut self) -> YUV_10BIT_STORE_CONFIGURATION_W<20> {
         YUV_10BIT_STORE_CONFIGURATION_W::new(self)
     }
     #[doc = "Bit 21 - 10-bit input cut to 8-bit"]
     #[inline(always)]
+    #[must_use]
     pub fn yuv_10bit_cut_8bit(&mut self) -> YUV_10BIT_CUT_8BIT_W<21> {
         YUV_10BIT_CUT_8BIT_W::new(self)
     }
     #[doc = "Bits 24:31 - Padding value when OUTPUT_FMT is prgb888\n\n0x00-0xff"]
     #[inline(always)]
+    #[must_use]
     pub fn pad_val(&mut self) -> PAD_VAL_W<24> {
         PAD_VAL_W::new(self)
     }
@@ -724,11 +733,10 @@ impl crate::Readable for CSIC_DMA_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_cfg::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_cfg to value 0"]
 impl crate::Resettable for CSIC_DMA_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

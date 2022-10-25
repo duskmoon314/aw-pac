@@ -56,6 +56,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The number of data blocks. It is usually set as Y."]
     #[inline(always)]
+    #[must_use]
     pub fn block_num(&mut self) -> BLOCK_NUM_W<0> {
         BLOCK_NUM_W::new(self)
     }
@@ -78,11 +79,10 @@ impl crate::Readable for LCD_CPU_TRI1_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_tri1::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_TRI1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cpu_tri1 to value 0"]
 impl crate::Resettable for LCD_CPU_TRI1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

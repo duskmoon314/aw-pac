@@ -327,136 +327,163 @@ impl R {
 impl W {
     #[doc = "Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dma_hlaf_irq_en<const O: u8>(&mut self) -> DMA_HLAF_IRQ_EN_W<O> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma8_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<0> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma9_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<4> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 8 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma10_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<8> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 12 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma11_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<12> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 16 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma12_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<16> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 20 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma13_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<20> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 24 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma14_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<24> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 28 - Enable the half package interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma15_hlaf_irq_en(&mut self) -> DMA_HLAF_IRQ_EN_W<28> {
         DMA_HLAF_IRQ_EN_W::new(self)
     }
     #[doc = "Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dma_pkg_irq_en<const O: u8>(&mut self) -> DMA_PKG_IRQ_EN_W<O> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma8_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<1> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 5 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma9_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<5> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 9 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma10_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<9> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 13 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma11_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<13> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 17 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma12_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<17> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 21 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma13_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<21> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 25 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma14_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<25> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 29 - Enable the package end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma15_pkg_irq_en(&mut self) -> DMA_PKG_IRQ_EN_W<29> {
         DMA_PKG_IRQ_EN_W::new(self)
     }
     #[doc = "Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dma_queue_irq_en<const O: u8>(&mut self) -> DMA_QUEUE_IRQ_EN_W<O> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma8_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<2> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 6 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma9_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<6> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 10 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma10_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<10> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 14 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma11_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<14> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 18 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma12_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<18> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 22 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma13_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<22> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 26 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma14_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<26> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 30 - Enable the queue end interrupt of DMA"]
     #[inline(always)]
+    #[must_use]
     pub fn dma15_queue_irq_en(&mut self) -> DMA_QUEUE_IRQ_EN_W<30> {
         DMA_QUEUE_IRQ_EN_W::new(self)
     }
@@ -479,11 +506,10 @@ impl crate::Readable for DMAC_IRQ_EN1_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmac_irq_en1::W](W) writer structure"]
 impl crate::Writable for DMAC_IRQ_EN1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dmac_irq_en1 to value 0"]
 impl crate::Resettable for DMAC_IRQ_EN1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

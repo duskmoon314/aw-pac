@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - Frame Index\n\nThe value in this register increment at the end of each time frame (e.g. micro-frame). Bits\\[N:3\\] are used for the Frame List current index. It means that each location of the frame list is accessed 8 times (frames or Micro-frames) before moving to the next index. The following illustrates values of N based on the value of the Frame List Size field in the USBCMD register."]
     #[inline(always)]
+    #[must_use]
     pub fn frame_index(&mut self) -> FRAME_INDEX_W<0> {
         FRAME_INDEX_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for FRINDEX_SPEC {
 #[doc = "`write(|w| ..)` method takes [frindex::W](W) writer structure"]
 impl crate::Writable for FRINDEX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets frindex to value 0"]
 impl crate::Resettable for FRINDEX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

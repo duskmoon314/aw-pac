@@ -155,11 +155,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - G Y Channel Data Output Trigger Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn g_y_ch_data_out_tri_en(&mut self) -> G_Y_CH_DATA_OUT_TRI_EN_W<0> {
         G_Y_CH_DATA_OUT_TRI_EN_W::new(self)
     }
     #[doc = "Bits 16:25 - R CB Channel Data Output Trigger Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn r_cb_ch_data_out_tri_en(&mut self) -> R_CB_CH_DATA_OUT_TRI_EN_W<16> {
         R_CB_CH_DATA_OUT_TRI_EN_W::new(self)
     }
@@ -182,11 +184,10 @@ impl crate::Readable for TV_DATA_IO_TRI0_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_data_io_tri0::W](W) writer structure"]
 impl crate::Writable for TV_DATA_IO_TRI0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_data_io_tri0 to value 0"]
 impl crate::Resettable for TV_DATA_IO_TRI0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

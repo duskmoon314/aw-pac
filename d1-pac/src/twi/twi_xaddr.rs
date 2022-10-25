@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Extend Slave Address\n\nSLAX\\[7:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn slax(&mut self) -> SLAX_W<0> {
         SLAX_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for TWI_XADDR_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_xaddr::W](W) writer structure"]
 impl crate::Writable for TWI_XADDR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_xaddr to value 0"]
 impl crate::Resettable for TWI_XADDR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

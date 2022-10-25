@@ -482,46 +482,55 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable trigger mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tri_en(&mut self) -> TRI_EN_W<0> {
         TRI_EN_W::new(self)
     }
     #[doc = "Bit 1 - Software must make sure that write '1' only when this flag is '0'.\n\nWriting '1' starts a frame flush and writing '0' has no effect.\n\nThis flag indicates the frame flush is running."]
     #[inline(always)]
+    #[must_use]
     pub fn tri_start(&mut self) -> TRI_START_W<1> {
         TRI_START_W::new(self)
     }
     #[doc = "Bit 2 - Enable the trigger FIFO"]
     #[inline(always)]
+    #[must_use]
     pub fn tri_fifo_en(&mut self) -> TRI_FIFO_EN_W<2> {
         TRI_FIFO_EN_W::new(self)
     }
     #[doc = "Bit 3 - Entry address is 0xFF8"]
     #[inline(always)]
+    #[must_use]
     pub fn tri_fifo_bist_en(&mut self) -> TRI_FIFO_BIST_EN_W<3> {
         TRI_FIFO_BIST_EN_W::new(self)
     }
     #[doc = "Bit 16 - Direct transfer mode\n\nIf it is enabled, FIFO1 is regardless of the HV timing, the pixels data keep being transferred unless the input FIFO was empty.\n\nData output rate is controlled by DCLK."]
     #[inline(always)]
+    #[must_use]
     pub fn flush(&mut self) -> FLUSH_W<16> {
         FLUSH_W::new(self)
     }
     #[doc = "Bit 17 - Auto transfer mode\n\nIf it is 1, all the valid data during this frame are written to panel.\n\nNote: This bit is sampled by Vsync."]
     #[inline(always)]
+    #[must_use]
     pub fn auto(&mut self) -> AUTO_W<17> {
         AUTO_W::new(self)
     }
     #[doc = "Bit 25 - Pin A1 value in 8080 mode WR/RD execute"]
     #[inline(always)]
+    #[must_use]
     pub fn ca(&mut self) -> CA_W<25> {
         CA_W::new(self)
     }
     #[doc = "Bit 26 - Pin A1 value in 8080 mode auto/flash states"]
     #[inline(always)]
+    #[must_use]
     pub fn da(&mut self) -> DA_W<26> {
         DA_W::new(self)
     }
     #[doc = "Bits 28:31 - Set the cpu interface work mode"]
     #[inline(always)]
+    #[must_use]
     pub fn cpu_mode(&mut self) -> CPU_MODE_W<28> {
         CPU_MODE_W::new(self)
     }
@@ -544,11 +553,10 @@ impl crate::Readable for LCD_CPU_IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_if::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x02;
 }
 #[doc = "`reset()` method sets lcd_cpu_if to value 0"]
 impl crate::Resettable for LCD_CPU_IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

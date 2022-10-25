@@ -39,6 +39,7 @@ pub type DATA_WR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LCD_CPU_WR_SPE
 impl W {
     #[doc = "Bits 0:23 - Data write on 8080 bus, launch a write operation on 8080 bus."]
     #[inline(always)]
+    #[must_use]
     pub fn data_wr(&mut self) -> DATA_WR_W<0> {
         DATA_WR_W::new(self)
     }
@@ -61,11 +62,10 @@ impl crate::Readable for LCD_CPU_WR_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_wr::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_WR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cpu_wr to value 0"]
 impl crate::Resettable for LCD_CPU_WR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

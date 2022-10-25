@@ -95,6 +95,7 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn dsp_boot_sram_remap_enable(&mut self) -> DSP_BOOT_SRAM_REMAP_ENABLE_W<0> {
         DSP_BOOT_SRAM_REMAP_ENABLE_W::new(self)
     }
@@ -117,11 +118,10 @@ impl crate::Readable for DSP_BOOT_RAMMAP_SPEC {
 #[doc = "`write(|w| ..)` method takes [dsp_boot_rammap::W](W) writer structure"]
 impl crate::Writable for DSP_BOOT_RAMMAP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dsp_boot_rammap to value 0"]
 impl crate::Resettable for DSP_BOOT_RAMMAP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

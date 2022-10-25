@@ -117,26 +117,31 @@ impl R {
 impl W {
     #[doc = "Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn task_pending<const O: u8>(&mut self) -> TASK_PENDING_W<O> {
         TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 0:3 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
+    #[must_use]
     pub fn task0_pending(&mut self) -> TASK_PENDING_W<0> {
         TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 1:4 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
+    #[must_use]
     pub fn task1_pending(&mut self) -> TASK_PENDING_W<1> {
         TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 2:5 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
+    #[must_use]
     pub fn task2_pending(&mut self) -> TASK_PENDING_W<2> {
         TASK_PENDING_W::new(self)
     }
     #[doc = "Bits 3:6 - Task Channel 3-0 End Pending\n\nIt indicates whether task is completed.\n\nWrite the corresponding channel bit of the register to clear the end flag."]
     #[inline(always)]
+    #[must_use]
     pub fn task3_pending(&mut self) -> TASK_PENDING_W<3> {
         TASK_PENDING_W::new(self)
     }
@@ -159,11 +164,10 @@ impl crate::Readable for CE_ISR_SPEC {
 #[doc = "`write(|w| ..)` method takes [ce_isr::W](W) writer structure"]
 impl crate::Writable for CE_ISR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x0f;
 }
 #[doc = "`reset()` method sets ce_isr to value 0"]
 impl crate::Resettable for CE_ISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

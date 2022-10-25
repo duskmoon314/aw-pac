@@ -54,11 +54,10 @@ impl crate::Readable for WAKEUP_MASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [wakeup_mask::W](W) writer structure"]
 impl crate::Writable for WAKEUP_MASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets wakeup_mask%s to value 0"]
 impl crate::Resettable for WAKEUP_MASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

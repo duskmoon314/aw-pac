@@ -54,11 +54,10 @@ impl crate::Readable for HS_TMR_INTV_LO_SPEC {
 #[doc = "`write(|w| ..)` method takes [hs_tmr_intv_lo::W](W) writer structure"]
 impl crate::Writable for HS_TMR_INTV_LO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hs_tmr%s_intv_lo to value 0"]
 impl crate::Resettable for HS_TMR_INTV_LO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

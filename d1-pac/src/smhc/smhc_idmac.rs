@@ -68,21 +68,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DMA Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn idmac_rst(&mut self) -> IDMAC_RST_W<0> {
         IDMAC_RST_W::new(self)
     }
     #[doc = "Bit 1 - Fixed Burst"]
     #[inline(always)]
+    #[must_use]
     pub fn fix_bust_ctrl(&mut self) -> FIX_BUST_CTRL_W<1> {
         FIX_BUST_CTRL_W::new(self)
     }
     #[doc = "Bit 7 - IDMAC Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn idmac_enb(&mut self) -> IDMAC_ENB_W<7> {
         IDMAC_ENB_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn des_load_ctrl(&mut self) -> DES_LOAD_CTRL_W<31> {
         DES_LOAD_CTRL_W::new(self)
     }
@@ -105,11 +109,10 @@ impl crate::Readable for SMHC_IDMAC_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_idmac::W](W) writer structure"]
 impl crate::Writable for SMHC_IDMAC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_idmac to value 0"]
 impl crate::Resettable for SMHC_IDMAC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

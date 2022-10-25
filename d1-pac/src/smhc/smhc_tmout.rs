@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Response Timeout Limit"]
     #[inline(always)]
+    #[must_use]
     pub fn rto_lmt(&mut self) -> RTO_LMT_W<0> {
         RTO_LMT_W::new(self)
     }
     #[doc = "Bits 8:31 - Data Iimeout Limit"]
     #[inline(always)]
+    #[must_use]
     pub fn dto_lmt(&mut self) -> DTO_LMT_W<8> {
         DTO_LMT_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for SMHC_TMOUT_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_tmout::W](W) writer structure"]
 impl crate::Writable for SMHC_TMOUT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_tmout to value 0"]
 impl crate::Resettable for SMHC_TMOUT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

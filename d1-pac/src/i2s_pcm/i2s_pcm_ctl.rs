@@ -682,76 +682,91 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Global Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn gen(&mut self) -> GEN_W<0> {
         GEN_W::new(self)
     }
     #[doc = "Bit 1 - Receiver Block Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rxen(&mut self) -> RXEN_W<1> {
         RXEN_W::new(self)
     }
     #[doc = "Bit 2 - Transmitter Block Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn txen(&mut self) -> TXEN_W<2> {
         TXEN_W::new(self)
     }
     #[doc = "Bit 3 - Loopback Test"]
     #[inline(always)]
+    #[must_use]
     pub fn loopback(&mut self) -> LOOPBACK_W<3> {
         LOOPBACK_W::new(self)
     }
     #[doc = "Bits 4:5 - Mode Selection"]
     #[inline(always)]
+    #[must_use]
     pub fn mode_sel(&mut self) -> MODE_SEL_W<4> {
         MODE_SEL_W::new(self)
     }
     #[doc = "Bit 6 - Data Output Mute Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn out_mute(&mut self) -> OUT_MUTE_W<6> {
         OUT_MUTE_W::new(self)
     }
     #[doc = "Data[0-3] Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn dout_en<const O: u8>(&mut self) -> DOUT_EN_W<O> {
         DOUT_EN_W::new(self)
     }
     #[doc = "Bit 8 - Data0 Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dout0_en(&mut self) -> DOUT_EN_W<8> {
         DOUT_EN_W::new(self)
     }
     #[doc = "Bit 9 - Data1 Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dout1_en(&mut self) -> DOUT_EN_W<9> {
         DOUT_EN_W::new(self)
     }
     #[doc = "Bit 10 - Data2 Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dout2_en(&mut self) -> DOUT_EN_W<10> {
         DOUT_EN_W::new(self)
     }
     #[doc = "Bit 11 - Data3 Output Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dout3_en(&mut self) -> DOUT_EN_W<11> {
         DOUT_EN_W::new(self)
     }
     #[doc = "Bit 17 - LRCK Direction Select"]
     #[inline(always)]
+    #[must_use]
     pub fn lrck_out(&mut self) -> LRCK_OUT_W<17> {
         LRCK_OUT_W::new(self)
     }
     #[doc = "Bit 18 - Bit Clock Direction Select"]
     #[inline(always)]
+    #[must_use]
     pub fn bclk_out(&mut self) -> BCLK_OUT_W<18> {
         BCLK_OUT_W::new(self)
     }
     #[doc = "Bit 20 - RX Synchronize Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_sync_en(&mut self) -> RX_SYNC_EN_W<20> {
         RX_SYNC_EN_W::new(self)
     }
     #[doc = "Bit 21 - RX Synchronize Enable Start"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_sync_en_start(&mut self) -> RX_SYNC_EN_START_W<21> {
         RX_SYNC_EN_START_W::new(self)
     }
@@ -774,11 +789,10 @@ impl crate::Readable for I2S_PCM_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_ctl::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_ctl to value 0"]
 impl crate::Resettable for I2S_PCM_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

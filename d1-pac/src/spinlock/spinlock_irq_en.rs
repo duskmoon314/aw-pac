@@ -255,166 +255,199 @@ impl R {
 impl W {
     #[doc = "Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn lock_irq_en<const O: u8>(&mut self) -> LOCK_IRQ_EN_W<O> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock0_irq_en(&mut self) -> LOCK_IRQ_EN_W<0> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock1_irq_en(&mut self) -> LOCK_IRQ_EN_W<1> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock2_irq_en(&mut self) -> LOCK_IRQ_EN_W<2> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 3 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock3_irq_en(&mut self) -> LOCK_IRQ_EN_W<3> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock4_irq_en(&mut self) -> LOCK_IRQ_EN_W<4> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 5 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock5_irq_en(&mut self) -> LOCK_IRQ_EN_W<5> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 6 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock6_irq_en(&mut self) -> LOCK_IRQ_EN_W<6> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 7 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock7_irq_en(&mut self) -> LOCK_IRQ_EN_W<7> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 8 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock8_irq_en(&mut self) -> LOCK_IRQ_EN_W<8> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 9 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock9_irq_en(&mut self) -> LOCK_IRQ_EN_W<9> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 10 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock10_irq_en(&mut self) -> LOCK_IRQ_EN_W<10> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 11 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock11_irq_en(&mut self) -> LOCK_IRQ_EN_W<11> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 12 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock12_irq_en(&mut self) -> LOCK_IRQ_EN_W<12> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 13 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock13_irq_en(&mut self) -> LOCK_IRQ_EN_W<13> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 14 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock14_irq_en(&mut self) -> LOCK_IRQ_EN_W<14> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 15 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock15_irq_en(&mut self) -> LOCK_IRQ_EN_W<15> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 16 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock16_irq_en(&mut self) -> LOCK_IRQ_EN_W<16> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 17 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock17_irq_en(&mut self) -> LOCK_IRQ_EN_W<17> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 18 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock18_irq_en(&mut self) -> LOCK_IRQ_EN_W<18> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 19 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock19_irq_en(&mut self) -> LOCK_IRQ_EN_W<19> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 20 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock20_irq_en(&mut self) -> LOCK_IRQ_EN_W<20> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 21 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock21_irq_en(&mut self) -> LOCK_IRQ_EN_W<21> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 22 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock22_irq_en(&mut self) -> LOCK_IRQ_EN_W<22> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 23 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock23_irq_en(&mut self) -> LOCK_IRQ_EN_W<23> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 24 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock24_irq_en(&mut self) -> LOCK_IRQ_EN_W<24> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 25 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock25_irq_en(&mut self) -> LOCK_IRQ_EN_W<25> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 26 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock26_irq_en(&mut self) -> LOCK_IRQ_EN_W<26> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 27 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock27_irq_en(&mut self) -> LOCK_IRQ_EN_W<27> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 28 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock28_irq_en(&mut self) -> LOCK_IRQ_EN_W<28> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 29 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock29_irq_en(&mut self) -> LOCK_IRQ_EN_W<29> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 30 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock30_irq_en(&mut self) -> LOCK_IRQ_EN_W<30> {
         LOCK_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 31 - Lock\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn lock31_irq_en(&mut self) -> LOCK_IRQ_EN_W<31> {
         LOCK_IRQ_EN_W::new(self)
     }
@@ -437,11 +470,10 @@ impl crate::Readable for SPINLOCK_IRQ_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [spinlock_irq_en::W](W) writer structure"]
 impl crate::Writable for SPINLOCK_IRQ_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spinlock_irq_en to value 0"]
 impl crate::Resettable for SPINLOCK_IRQ_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

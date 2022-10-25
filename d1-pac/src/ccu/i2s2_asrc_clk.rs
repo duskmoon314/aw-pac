@@ -273,21 +273,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
+    #[must_use]
     pub fn factor_m(&mut self) -> FACTOR_M_W<0> {
         FACTOR_M_W::new(self)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
+    #[must_use]
     pub fn factor_n(&mut self) -> FACTOR_N_W<8> {
         FACTOR_N_W::new(self)
     }
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
         CLK_SRC_SEL_W::new(self)
     }
     #[doc = "Bit 31 - Gating Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_gating(&mut self) -> CLK_GATING_W<31> {
         CLK_GATING_W::new(self)
     }
@@ -310,11 +314,10 @@ impl crate::Readable for I2S2_ASRC_CLK_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s2_asrc_clk::W](W) writer structure"]
 impl crate::Writable for I2S2_ASRC_CLK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s2_asrc_clk to value 0"]
 impl crate::Resettable for I2S2_ASRC_CLK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

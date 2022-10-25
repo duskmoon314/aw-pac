@@ -422,51 +422,61 @@ impl R {
 impl W {
     #[doc = "Video capture control: Capture the video image data stream on channel \\[i\\]."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_vcap_on<const O: u8>(&mut self) -> CH_VCAP_ON_W<O> {
         CH_VCAP_ON_W::new(self)
     }
     #[doc = "Bit 1 - Video capture control: Capture the video image data stream on channel \\[i\\]."]
     #[inline(always)]
+    #[must_use]
     pub fn ch0_vcap_on(&mut self) -> CH_VCAP_ON_W<1> {
         CH_VCAP_ON_W::new(self)
     }
     #[doc = "Bit 9 - Video capture control: Capture the video image data stream on channel \\[i\\]."]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_vcap_on(&mut self) -> CH_VCAP_ON_W<9> {
         CH_VCAP_ON_W::new(self)
     }
     #[doc = "Bit 17 - Video capture control: Capture the video image data stream on channel \\[i\\]."]
     #[inline(always)]
+    #[must_use]
     pub fn ch2_vcap_on(&mut self) -> CH_VCAP_ON_W<17> {
         CH_VCAP_ON_W::new(self)
     }
     #[doc = "Bit 25 - Video capture control: Capture the video image data stream on channel \\[i\\]."]
     #[inline(always)]
+    #[must_use]
     pub fn ch3_vcap_on(&mut self) -> CH_VCAP_ON_W<25> {
         CH_VCAP_ON_W::new(self)
     }
     #[doc = "Fps down sample"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn ch_fps_ds<const O: u8>(&mut self) -> CH_FPS_DS_W<O> {
         CH_FPS_DS_W::new(self)
     }
     #[doc = "Bits 2:5 - Fps down sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch0_fps_ds(&mut self) -> CH_FPS_DS_W<2> {
         CH_FPS_DS_W::new(self)
     }
     #[doc = "Bits 10:13 - Fps down sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch1_fps_ds(&mut self) -> CH_FPS_DS_W<10> {
         CH_FPS_DS_W::new(self)
     }
     #[doc = "Bits 18:21 - Fps down sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch2_fps_ds(&mut self) -> CH_FPS_DS_W<18> {
         CH_FPS_DS_W::new(self)
     }
     #[doc = "Bits 26:29 - Fps down sample"]
     #[inline(always)]
+    #[must_use]
     pub fn ch3_fps_ds(&mut self) -> CH_FPS_DS_W<26> {
         CH_FPS_DS_W::new(self)
     }
@@ -489,11 +499,10 @@ impl crate::Readable for PRS_CAP_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs_cap::W](W) writer structure"]
 impl crate::Writable for PRS_CAP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets prs_cap to value 0"]
 impl crate::Resettable for PRS_CAP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

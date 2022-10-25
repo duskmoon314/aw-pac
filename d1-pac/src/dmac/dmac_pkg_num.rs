@@ -24,8 +24,5 @@ impl crate::Readable for DMAC_PKG_NUM_SPEC {
 }
 #[doc = "`reset()` method sets dmac_pkg_num%s to value 0"]
 impl crate::Resettable for DMAC_PKG_NUM_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

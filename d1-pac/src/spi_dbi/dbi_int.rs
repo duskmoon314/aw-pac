@@ -166,71 +166,85 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn line_done_int_en(&mut self) -> LINE_DONE_INT_EN_W<0> {
         LINE_DONE_INT_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn fram_done_int_en(&mut self) -> FRAM_DONE_INT_EN_W<1> {
         FRAM_DONE_INT_EN_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
+    #[must_use]
     pub fn te_int_en(&mut self) -> TE_INT_EN_W<2> {
         TE_INT_EN_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn rd_done_int_en(&mut self) -> RD_DONE_INT_EN_W<3> {
         RD_DONE_INT_EN_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
+    #[must_use]
     pub fn timer_int_en(&mut self) -> TIMER_INT_EN_W<4> {
         TIMER_INT_EN_W::new(self)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_fifo_full_int_en(&mut self) -> DBI_FIFO_FULL_INT_EN_W<5> {
         DBI_FIFO_FULL_INT_EN_W::new(self)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_fifo_empty_int_en(&mut self) -> DBI_FIFO_EMPTY_INT_EN_W<6> {
         DBI_FIFO_EMPTY_INT_EN_W::new(self)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
+    #[must_use]
     pub fn line_done_int(&mut self) -> LINE_DONE_INT_W<8> {
         LINE_DONE_INT_W::new(self)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
+    #[must_use]
     pub fn fram_done_int(&mut self) -> FRAM_DONE_INT_W<9> {
         FRAM_DONE_INT_W::new(self)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
+    #[must_use]
     pub fn te_int(&mut self) -> TE_INT_W<10> {
         TE_INT_W::new(self)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
+    #[must_use]
     pub fn rd_done_int(&mut self) -> RD_DONE_INT_W<11> {
         RD_DONE_INT_W::new(self)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
+    #[must_use]
     pub fn timer_int(&mut self) -> TIMER_INT_W<12> {
         TIMER_INT_W::new(self)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_fifo_full_int(&mut self) -> DBI_FIFO_FULL_INT_W<13> {
         DBI_FIFO_FULL_INT_W::new(self)
     }
     #[doc = "Bit 14"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_fifo_empty_int(&mut self) -> DBI_FIFO_EMPTY_INT_W<14> {
         DBI_FIFO_EMPTY_INT_W::new(self)
     }
@@ -253,11 +267,10 @@ impl crate::Readable for DBI_INT_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbi_int::W](W) writer structure"]
 impl crate::Writable for DBI_INT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dbi_int to value 0"]
 impl crate::Resettable for DBI_INT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

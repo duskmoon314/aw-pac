@@ -319,26 +319,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ADC0 Data Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_data_pending(&mut self) -> ADC0_DATA_PENDING_W<0> {
         ADC0_DATA_PENDING_W::new(self)
     }
     #[doc = "Bit 1 - ADC0 Key Down Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_keydown_pending(&mut self) -> ADC0_KEYDOWN_PENDING_W<1> {
         ADC0_KEYDOWN_PENDING_W::new(self)
     }
     #[doc = "Bit 2 - ADC0 Hold Key Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_hold_pending(&mut self) -> ADC0_HOLD_PENDING_W<2> {
         ADC0_HOLD_PENDING_W::new(self)
     }
     #[doc = "Bit 3 - ADC0 Already Hold Key Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_alrdy_hold_pending(&mut self) -> ADC0_ALRDY_HOLD_PENDING_W<3> {
         ADC0_ALRDY_HOLD_PENDING_W::new(self)
     }
     #[doc = "Bit 4 - ADC0 Key Up Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn adc0_keyup_pending(&mut self) -> ADC0_KEYUP_PENDING_W<4> {
         ADC0_KEYUP_PENDING_W::new(self)
     }
@@ -361,11 +366,10 @@ impl crate::Readable for LRADC_INTS_SPEC {
 #[doc = "`write(|w| ..)` method takes [lradc_ints::W](W) writer structure"]
 impl crate::Writable for LRADC_INTS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x1f;
 }
 #[doc = "`reset()` method sets lradc_ints to value 0"]
 impl crate::Resettable for LRADC_INTS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

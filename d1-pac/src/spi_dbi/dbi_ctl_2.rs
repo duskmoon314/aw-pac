@@ -174,41 +174,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - TE Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn te_en(&mut self) -> TE_EN_W<0> {
         TE_EN_W::new(self)
     }
     #[doc = "Bit 1 - TE edge trigger select"]
     #[inline(always)]
+    #[must_use]
     pub fn te_trig_sel(&mut self) -> TE_TRIG_SEL_W<1> {
         TE_TRIG_SEL_W::new(self)
     }
     #[doc = "Bit 2 - TE debounce function select"]
     #[inline(always)]
+    #[must_use]
     pub fn te_dbc_sel(&mut self) -> TE_DBC_SEL_W<2> {
         TE_DBC_SEL_W::new(self)
     }
     #[doc = "Bits 3:4 - DBI SDI PIN FUnction Select"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_sdi_sel(&mut self) -> DBI_SDI_SEL_W<3> {
         DBI_SDI_SEL_W::new(self)
     }
     #[doc = "Bit 5 - DBI DCX PIN Function Select"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_dcx_sel(&mut self) -> DBI_DCX_SEL_W<5> {
         DBI_DCX_SEL_W::new(self)
     }
     #[doc = "Bit 6 - DBI SDI PIN Output Select"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_sdq_out_sel(&mut self) -> DBI_SDQ_OUT_SEL_W<6> {
         DBI_SDQ_OUT_SEL_W::new(self)
     }
     #[doc = "Bits 8:14 - DBI FIFO Empty Request Trigger Level"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_trig_level(&mut self) -> DBI_TRIG_LEVEL_W<8> {
         DBI_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 15 - DBI FIFO DMA Request Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dbi_fifo_drq_en(&mut self) -> DBI_FIFO_DRQ_EN_W<15> {
         DBI_FIFO_DRQ_EN_W::new(self)
     }
@@ -231,11 +239,10 @@ impl crate::Readable for DBI_CTL_2_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbi_ctl_2::W](W) writer structure"]
 impl crate::Writable for DBI_CTL_2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets dbi_ctl_2 to value 0"]
 impl crate::Resettable for DBI_CTL_2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

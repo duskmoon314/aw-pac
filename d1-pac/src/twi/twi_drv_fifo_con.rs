@@ -79,21 +79,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:5"]
     #[inline(always)]
+    #[must_use]
     pub fn send_fifo_content(&mut self) -> SEND_FIFO_CONTENT_W<0> {
         SEND_FIFO_CONTENT_W::new(self)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
+    #[must_use]
     pub fn send_fifo_clear(&mut self) -> SEND_FIFO_CLEAR_W<6> {
         SEND_FIFO_CLEAR_W::new(self)
     }
     #[doc = "Bits 16:21"]
     #[inline(always)]
+    #[must_use]
     pub fn recv_fifo_content(&mut self) -> RECV_FIFO_CONTENT_W<16> {
         RECV_FIFO_CONTENT_W::new(self)
     }
     #[doc = "Bit 22"]
     #[inline(always)]
+    #[must_use]
     pub fn recv_fifo_clear(&mut self) -> RECV_FIFO_CLEAR_W<22> {
         RECV_FIFO_CLEAR_W::new(self)
     }
@@ -116,11 +120,10 @@ impl crate::Readable for TWI_DRV_FIFO_CON_SPEC {
 #[doc = "`write(|w| ..)` method takes [twi_drv_fifo_con::W](W) writer structure"]
 impl crate::Writable for TWI_DRV_FIFO_CON_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets twi_drv_fifo_con to value 0"]
 impl crate::Resettable for TWI_DRV_FIFO_CON_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

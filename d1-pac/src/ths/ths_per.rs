@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 12:31 - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
     #[inline(always)]
+    #[must_use]
     pub fn thermal_per(&mut self) -> THERMAL_PER_W<12> {
         THERMAL_PER_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for THS_PER_SPEC {
 #[doc = "`write(|w| ..)` method takes [ths_per::W](W) writer structure"]
 impl crate::Writable for THS_PER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ths_per to value 0x0003_a000"]
 impl crate::Resettable for THS_PER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0003_a000
-    }
+    const RESET_VALUE: Self::Ux = 0x0003_a000;
 }

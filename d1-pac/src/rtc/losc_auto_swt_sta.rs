@@ -177,6 +177,7 @@ impl R {
 impl W {
     #[doc = "Bit 1 - LOSC auto switch pending"]
     #[inline(always)]
+    #[must_use]
     pub fn losc_auto_swt_pend(&mut self) -> LOSC_AUTO_SWT_PEND_W<1> {
         LOSC_AUTO_SWT_PEND_W::new(self)
     }
@@ -199,11 +200,10 @@ impl crate::Readable for LOSC_AUTO_SWT_STA_SPEC {
 #[doc = "`write(|w| ..)` method takes [losc_auto_swt_sta::W](W) writer structure"]
 impl crate::Writable for LOSC_AUTO_SWT_STA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x02;
 }
 #[doc = "`reset()` method sets losc_auto_swt_sta to value 0"]
 impl crate::Resettable for LOSC_AUTO_SWT_STA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

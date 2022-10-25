@@ -547,51 +547,61 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Software Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn soft_rst(&mut self) -> SOFT_RST_W<0> {
         SOFT_RST_W::new(self)
     }
     #[doc = "Bit 1 - FIFO Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_rst(&mut self) -> FIFO_RST_W<1> {
         FIFO_RST_W::new(self)
     }
     #[doc = "Bit 2 - DMA Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_rst(&mut self) -> DMA_RST_W<2> {
         DMA_RST_W::new(self)
     }
     #[doc = "Bit 4 - GLobal Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ine_enb(&mut self) -> INE_ENB_W<4> {
         INE_ENB_W::new(self)
     }
     #[doc = "Bit 5 - DMA Global Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_enb(&mut self) -> DMA_ENB_W<5> {
         DMA_ENB_W::new(self)
     }
     #[doc = "Bit 8 - Card Detect (Data\\[3\\] status) De-bounce Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn cd_dbc_enb(&mut self) -> CD_DBC_ENB_W<8> {
         CD_DBC_ENB_W::new(self)
     }
     #[doc = "Bit 10 - DDR Mode Select"]
     #[inline(always)]
+    #[must_use]
     pub fn ddr_mod_sel(&mut self) -> DDR_MOD_SEL_W<10> {
         DDR_MOD_SEL_W::new(self)
     }
     #[doc = "Bit 11 - Time unit for data line"]
     #[inline(always)]
+    #[must_use]
     pub fn time_unit_dat(&mut self) -> TIME_UNIT_DAT_W<11> {
         TIME_UNIT_DAT_W::new(self)
     }
     #[doc = "Bit 12 - Time unit for command line"]
     #[inline(always)]
+    #[must_use]
     pub fn time_unit_cmd(&mut self) -> TIME_UNIT_CMD_W<12> {
         TIME_UNIT_CMD_W::new(self)
     }
     #[doc = "Bit 31 - FIFO Accesss Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_ac_mod(&mut self) -> FIFO_AC_MOD_W<31> {
         FIFO_AC_MOD_W::new(self)
     }
@@ -614,11 +624,10 @@ impl crate::Readable for SMHC_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_ctrl::W](W) writer structure"]
 impl crate::Writable for SMHC_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_ctrl to value 0"]
 impl crate::Resettable for SMHC_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

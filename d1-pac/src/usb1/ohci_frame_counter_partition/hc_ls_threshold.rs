@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - LSThreshold\n\nThis field contains a value which is compared to the FrameRemaining field prior to initiating a Low Speed transaction. The transaction is started only if FrameRemaining this field. The value is calculated by HCD with the consideration of transmission and setup overhead."]
     #[inline(always)]
+    #[must_use]
     pub fn ls_threshold(&mut self) -> LS_THRESHOLD_W<0> {
         LS_THRESHOLD_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for HC_LS_THRESHOLD_SPEC {
 #[doc = "`write(|w| ..)` method takes [hc_ls_threshold::W](W) writer structure"]
 impl crate::Writable for HC_LS_THRESHOLD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hc_ls_threshold to value 0x0628"]
 impl crate::Resettable for HC_LS_THRESHOLD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0628
-    }
+    const RESET_VALUE: Self::Ux = 0x0628;
 }

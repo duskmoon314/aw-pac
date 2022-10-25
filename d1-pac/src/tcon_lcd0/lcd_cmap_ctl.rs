@@ -151,11 +151,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Set the pixel output format in color map function."]
     #[inline(always)]
+    #[must_use]
     pub fn out_format(&mut self) -> OUT_FORMAT_W<0> {
         OUT_FORMAT_W::new(self)
     }
     #[doc = "Bit 31 - Enable the color map function. This module only works when X is divided by 4."]
     #[inline(always)]
+    #[must_use]
     pub fn color_map_en(&mut self) -> COLOR_MAP_EN_W<31> {
         COLOR_MAP_EN_W::new(self)
     }
@@ -178,11 +180,10 @@ impl crate::Readable for LCD_CMAP_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cmap_ctl::W](W) writer structure"]
 impl crate::Writable for LCD_CMAP_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cmap_ctl to value 0"]
 impl crate::Resettable for LCD_CMAP_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

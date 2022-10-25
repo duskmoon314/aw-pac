@@ -573,21 +573,25 @@ impl R {
 impl W {
     #[doc = "Bits 12:15"]
     #[inline(always)]
+    #[must_use]
     pub fn c_delay_before_dither(&mut self) -> C_DELAY_BEFORE_DITHER_W<12> {
         C_DELAY_BEFORE_DITHER_W::new(self)
     }
     #[doc = "Bit 16 - Luma notch filter on/off selection\n\nNote: This bit selects if the luma notch filter is operating or bypassed."]
     #[inline(always)]
+    #[must_use]
     pub fn notch_en(&mut self) -> NOTCH_EN_W<16> {
         NOTCH_EN_W::new(self)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
+    #[must_use]
     pub fn luma_filter_bypass(&mut self) -> LUMA_FILTER_BYPASS_W<17> {
         LUMA_FILTER_BYPASS_W::new(self)
     }
     #[doc = ""]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn chroma_filter_stage__bypass<const O: u8>(
         &mut self,
     ) -> CHROMA_FILTER_STAGE__BYPASS_W<O> {
@@ -595,51 +599,61 @@ impl W {
     }
     #[doc = "Bit 18"]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_filter_stage_3_bypass(&mut self) -> CHROMA_FILTER_STAGE__BYPASS_W<18> {
         CHROMA_FILTER_STAGE__BYPASS_W::new(self)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_filter_stage_2_bypass(&mut self) -> CHROMA_FILTER_STAGE__BYPASS_W<19> {
         CHROMA_FILTER_STAGE__BYPASS_W::new(self)
     }
     #[doc = "Bit 20"]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_filter_stage_1_bypass(&mut self) -> CHROMA_FILTER_STAGE__BYPASS_W<20> {
         CHROMA_FILTER_STAGE__BYPASS_W::new(self)
     }
     #[doc = "Bit 21"]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_hd_mode_filter_en(&mut self) -> CHROMA_HD_MODE_FILTER_EN_W<21> {
         CHROMA_HD_MODE_FILTER_EN_W::new(self)
     }
     #[doc = "Bit 22"]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_filter_1_444_en(&mut self) -> CHROMA_FILTER_1_444_EN_W<22> {
         CHROMA_FILTER_1_444_EN_W::new(self)
     }
     #[doc = "Bit 23"]
     #[inline(always)]
+    #[must_use]
     pub fn hd_mode_cr_filter_bypass(&mut self) -> HD_MODE_CR_FILTER_BYPASS_W<23> {
         HD_MODE_CR_FILTER_BYPASS_W::new(self)
     }
     #[doc = "Bit 24"]
     #[inline(always)]
+    #[must_use]
     pub fn hd_mode_cb_filter_bypass(&mut self) -> HD_MODE_CB_FILTER_BYPASS_W<24> {
         HD_MODE_CB_FILTER_BYPASS_W::new(self)
     }
     #[doc = "Bits 25:27"]
     #[inline(always)]
+    #[must_use]
     pub fn y_delay_before_dither(&mut self) -> Y_DELAY_BEFORE_DITHER_W<25> {
         Y_DELAY_BEFORE_DITHER_W::new(self)
     }
     #[doc = "Bit 30"]
     #[inline(always)]
+    #[must_use]
     pub fn luma_filter_lti_enable(&mut self) -> LUMA_FILTER_LTI_ENABLE_W<30> {
         LUMA_FILTER_LTI_ENABLE_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_filter_active_valid(&mut self) -> CHROMA_FILTER_ACTIVE_VALID_W<31> {
         CHROMA_FILTER_ACTIVE_VALID_W::new(self)
     }
@@ -662,11 +676,10 @@ impl crate::Readable for TVE_NOTCH_DAC_DELAY_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_notch_dac_delay::W](W) writer structure"]
 impl crate::Writable for TVE_NOTCH_DAC_DELAY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_notch_dac_delay to value 0x0201_4924"]
 impl crate::Resettable for TVE_NOTCH_DAC_DELAY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0201_4924
-    }
+    const RESET_VALUE: Self::Ux = 0x0201_4924;
 }

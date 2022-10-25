@@ -54,11 +54,10 @@ impl crate::Readable for SPI_TBR_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_tbr::W](W) writer structure"]
 impl crate::Writable for SPI_TBR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_tbr to value 0"]
 impl crate::Resettable for SPI_TBR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -359,26 +359,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - HSTimer Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hs_tmr_en(&mut self) -> HS_TMR_EN_W<0> {
         HS_TMR_EN_W::new(self)
     }
     #[doc = "Bit 1 - HSTimer Reload"]
     #[inline(always)]
+    #[must_use]
     pub fn hs_tmr_reload(&mut self) -> HS_TMR_RELOAD_W<1> {
         HS_TMR_RELOAD_W::new(self)
     }
     #[doc = "Bits 4:6 - Select the pre-scale for the HSTimer clock sources"]
     #[inline(always)]
+    #[must_use]
     pub fn hs_tmr_clk(&mut self) -> HS_TMR_CLK_W<4> {
         HS_TMR_CLK_W::new(self)
     }
     #[doc = "Bit 7 - Select the timing mode for HSTimer"]
     #[inline(always)]
+    #[must_use]
     pub fn hs_tmr_mode(&mut self) -> HS_TMR_MODE_W<7> {
         HS_TMR_MODE_W::new(self)
     }
     #[doc = "Bit 31 - Select the operating mode for HSTimer"]
     #[inline(always)]
+    #[must_use]
     pub fn hs_tmr_test(&mut self) -> HS_TMR_TEST_W<31> {
         HS_TMR_TEST_W::new(self)
     }
@@ -401,11 +406,10 @@ impl crate::Readable for HS_TMR_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hs_tmr_ctrl::W](W) writer structure"]
 impl crate::Writable for HS_TMR_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x02;
 }
 #[doc = "`reset()` method sets hs_tmr%s_ctrl to value 0"]
 impl crate::Resettable for HS_TMR_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

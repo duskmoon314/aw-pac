@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - The size of data block. It is usually set as X."]
     #[inline(always)]
+    #[must_use]
     pub fn block_size(&mut self) -> BLOCK_SIZE_W<0> {
         BLOCK_SIZE_W::new(self)
     }
     #[doc = "Bits 16:27 - The spaces between data blocks. It should be set >20*pixel."]
     #[inline(always)]
+    #[must_use]
     pub fn block_space(&mut self) -> BLOCK_SPACE_W<16> {
         BLOCK_SPACE_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for LCD_CPU_TRI0_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_cpu_tri0::W](W) writer structure"]
 impl crate::Writable for LCD_CPU_TRI0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_cpu_tri0 to value 0"]
 impl crate::Resettable for LCD_CPU_TRI0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

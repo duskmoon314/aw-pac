@@ -80,16 +80,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Data Storbe Delay Software"]
     #[inline(always)]
+    #[must_use]
     pub fn ds_dl_sw(&mut self) -> DS_DL_SW_W<0> {
         DS_DL_SW_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ds_dl_sw_en(&mut self) -> DS_DL_SW_EN_W<7> {
         DS_DL_SW_EN_W::new(self)
     }
     #[doc = "Bit 15 - Data Strobe Delay Calibration Start"]
     #[inline(always)]
+    #[must_use]
     pub fn ds_dl_cal_start(&mut self) -> DS_DL_CAL_START_W<15> {
         DS_DL_CAL_START_W::new(self)
     }
@@ -112,11 +115,10 @@ impl crate::Readable for SMHC_DS_DL_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_ds_dl::W](W) writer structure"]
 impl crate::Writable for SMHC_DS_DL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_ds_dl to value 0"]
 impl crate::Resettable for SMHC_DS_DL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

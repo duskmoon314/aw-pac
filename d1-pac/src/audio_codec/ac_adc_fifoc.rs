@@ -37,8 +37,7 @@ impl From<crate::W<AC_ADC_FIFOC_SPEC>> for W {
 #[doc = "Field `adc_fifo_flush` reader - ADC FIFO Flush\n\nWrite '1' to flush TX FIFO, self clear to '0'."]
 pub type ADC_FIFO_FLUSH_R = crate::BitReader<bool>;
 #[doc = "Field `adc_fifo_flush` writer - ADC FIFO Flush\n\nWrite '1' to flush TX FIFO, self clear to '0'."]
-pub type ADC_FIFO_FLUSH_W<'a, const O: u8> =
-    crate::BitWriter0C<'a, u32, AC_ADC_FIFOC_SPEC, bool, O>;
+pub type ADC_FIFO_FLUSH_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_ADC_FIFOC_SPEC, bool, O>;
 #[doc = "Field `adc_overrun_irq_en` reader - ADC FIFO Overrun IRQ Enable"]
 pub type ADC_OVERRUN_IRQ_EN_R = crate::BitReader<ADC_OVERRUN_IRQ_EN_A>;
 #[doc = "ADC FIFO Overrun IRQ Enable\n\nValue on reset: 0"]
@@ -767,66 +766,79 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ADC FIFO Flush\n\nWrite '1' to flush TX FIFO, self clear to '0'."]
     #[inline(always)]
+    #[must_use]
     pub fn adc_fifo_flush(&mut self) -> ADC_FIFO_FLUSH_W<0> {
         ADC_FIFO_FLUSH_W::new(self)
     }
     #[doc = "Bit 1 - ADC FIFO Overrun IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_overrun_irq_en(&mut self) -> ADC_OVERRUN_IRQ_EN_W<1> {
         ADC_OVERRUN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - ADC FIFO Data Available IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_irq_en(&mut self) -> ADC_IRQ_EN_W<2> {
         ADC_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 3 - ADC FIFO Data Available DRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drq_en(&mut self) -> ADC_DRQ_EN_W<3> {
         ADC_DRQ_EN_W::new(self)
     }
     #[doc = "Bits 4:11 - RX FIFO Trigger Level (RXTL\\[5:0\\])\n\nInterrupt and DMA request trigger level for RX FIFO normal condition IRQ/DRQ generated when WLEVEL > RXTL\\[5:0\\]"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_fifo_trg_level(&mut self) -> RX_FIFO_TRG_LEVEL_W<4> {
         RX_FIFO_TRG_LEVEL_W::new(self)
     }
     #[doc = "Bit 16 - Receiving Audio Sample Resolution"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_sample_bits(&mut self) -> RX_SAMPLE_BITS_W<16> {
         RX_SAMPLE_BITS_W::new(self)
     }
     #[doc = "Bit 20 - Audiocodec RX Synchronize Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_sync_en(&mut self) -> RX_SYNC_EN_W<20> {
         RX_SYNC_EN_W::new(self)
     }
     #[doc = "Bit 21 - The bit takes effect only when RX_SYNC_EN is set to 1. System Domain: Audio codec/I2S0/I2S1/I2S2/DMIC/OWA RX Synchronize Enable Start."]
     #[inline(always)]
+    #[must_use]
     pub fn rx_sync_en_start(&mut self) -> RX_SYNC_EN_START_W<21> {
         RX_SYNC_EN_START_W::new(self)
     }
     #[doc = "Bit 24 - RX FIFO Output Mode (Mode 0, 1) \n\nFor 20-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:0\\], 12'h0}\n\nMode 1: RXDATA\\[31:0\\] = {12{FIFO_O\\[19\\]}, FIFO_O\\[19:0\\]}\n\nFor 16-bit received audio sample:\n\nMode 0: RXDATA\\[31:0\\] = {FIFO_O\\[19:4\\], 16'h0}\n\nMode 1: RXDATA\\[31:0\\] = {16{FIFO_O\\[19\\]}, FIFO_O\\[19:4\\]}"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_fifo_mode(&mut self) -> RX_FIFO_MODE_W<24> {
         RX_FIFO_MODE_W::new(self)
     }
     #[doc = "Bit 25 - ADC FIFO delay function for writing data after EN_AD"]
     #[inline(always)]
+    #[must_use]
     pub fn adcdfen(&mut self) -> ADCDFEN_W<25> {
         ADCDFEN_W::new(self)
     }
     #[doc = "Bits 26:27 - ADC FIFO delay time for writing data after EN_AD"]
     #[inline(always)]
+    #[must_use]
     pub fn adcfdt(&mut self) -> ADCFDT_W<26> {
         ADCFDT_W::new(self)
     }
     #[doc = "Bit 28 - ADC Digital Part Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn en_ad(&mut self) -> EN_AD_W<28> {
         EN_AD_W::new(self)
     }
     #[doc = "Bits 29:31 - Sample Rate of ADC \n\n44.1 kHz/22.05 kHz/11.025 kHz can be supported by Audio PLL Configure Bit."]
     #[inline(always)]
+    #[must_use]
     pub fn adfs(&mut self) -> ADFS_W<29> {
         ADFS_W::new(self)
     }
@@ -849,11 +861,10 @@ impl crate::Readable for AC_ADC_FIFOC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_fifoc::W](W) writer structure"]
 impl crate::Writable for AC_ADC_FIFOC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_fifoc to value 0x0400"]
 impl crate::Resettable for AC_ADC_FIFOC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0400
-    }
+    const RESET_VALUE: Self::Ux = 0x0400;
 }

@@ -115,26 +115,31 @@ impl R {
 impl W {
     #[doc = "Reception Channel\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn reception_mq_irq_en<const O: u8>(&mut self) -> RECEPTION_MQ_IRQ_EN_W<O> {
         RECEPTION_MQ_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 0 - Reception Channel\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn reception_mq0_irq_en(&mut self) -> RECEPTION_MQ_IRQ_EN_W<0> {
         RECEPTION_MQ_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - Reception Channel\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn reception_mq1_irq_en(&mut self) -> RECEPTION_MQ_IRQ_EN_W<2> {
         RECEPTION_MQ_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - Reception Channel\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn reception_mq2_irq_en(&mut self) -> RECEPTION_MQ_IRQ_EN_W<4> {
         RECEPTION_MQ_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 6 - Reception Channel\\[i\\] Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn reception_mq3_irq_en(&mut self) -> RECEPTION_MQ_IRQ_EN_W<6> {
         RECEPTION_MQ_IRQ_EN_W::new(self)
     }
@@ -157,11 +162,10 @@ impl crate::Readable for MSGBOX_RD_IRQ_EN_SPEC {
 #[doc = "`write(|w| ..)` method takes [msgbox_rd_irq_en::W](W) writer structure"]
 impl crate::Writable for MSGBOX_RD_IRQ_EN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets msgbox_rd_irq_en to value 0"]
 impl crate::Resettable for MSGBOX_RD_IRQ_EN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

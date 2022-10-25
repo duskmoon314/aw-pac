@@ -181,41 +181,49 @@ impl R {
 impl W {
     #[doc = "Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn msgbox_gating<const O: u8>(&mut self) -> MSGBOX_GATING_W<O> {
         MSGBOX_GATING_W::new(self)
     }
     #[doc = "Bit 0 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
+    #[must_use]
     pub fn msgbox0_gating(&mut self) -> MSGBOX_GATING_W<0> {
         MSGBOX_GATING_W::new(self)
     }
     #[doc = "Bit 1 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
+    #[must_use]
     pub fn msgbox1_gating(&mut self) -> MSGBOX_GATING_W<1> {
         MSGBOX_GATING_W::new(self)
     }
     #[doc = "Bit 2 - Gating Clock for CPU, DSP, RISC-V MSGBOX"]
     #[inline(always)]
+    #[must_use]
     pub fn msgbox2_gating(&mut self) -> MSGBOX_GATING_W<2> {
         MSGBOX_GATING_W::new(self)
     }
     #[doc = "CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn msgbox_rst<const O: u8>(&mut self) -> MSGBOX_RST_W<O> {
         MSGBOX_RST_W::new(self)
     }
     #[doc = "Bit 16 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn msgbox0_rst(&mut self) -> MSGBOX_RST_W<16> {
         MSGBOX_RST_W::new(self)
     }
     #[doc = "Bit 17 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn msgbox1_rst(&mut self) -> MSGBOX_RST_W<17> {
         MSGBOX_RST_W::new(self)
     }
     #[doc = "Bit 18 - CPU, DSP, RISC-V MSGBOX Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn msgbox2_rst(&mut self) -> MSGBOX_RST_W<18> {
         MSGBOX_RST_W::new(self)
     }
@@ -238,11 +246,10 @@ impl crate::Readable for MSGBOX_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [msgbox_bgr::W](W) writer structure"]
 impl crate::Writable for MSGBOX_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets msgbox_bgr to value 0"]
 impl crate::Resettable for MSGBOX_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

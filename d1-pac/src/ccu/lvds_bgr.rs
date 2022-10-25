@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn rst(&mut self) -> RST_W<16> {
         RST_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for LVDS_BGR_SPEC {
 #[doc = "`write(|w| ..)` method takes [lvds_bgr::W](W) writer structure"]
 impl crate::Writable for LVDS_BGR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lvds_bgr to value 0"]
 impl crate::Resettable for LVDS_BGR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

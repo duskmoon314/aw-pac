@@ -295,41 +295,49 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - RXFIFO Ready Request Trigger Level"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_trig_level(&mut self) -> RF_TRIG_LEVEL_W<0> {
         RF_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 8 - RXFIFO DMA Request Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_drq_en(&mut self) -> RF_DRQ_EN_W<8> {
         RF_DRQ_EN_W::new(self)
     }
     #[doc = "Bit 14 - RXFIFO Test Mode Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_test_en(&mut self) -> RF_TEST_EN_W<14> {
         RF_TEST_EN_W::new(self)
     }
     #[doc = "Bit 15 - RXFIFO Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn rf_rst(&mut self) -> RF_RST_W<15> {
         RF_RST_W::new(self)
     }
     #[doc = "Bits 16:23 - TXFIFO Empty Request Trigger Level"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_trig_level(&mut self) -> TF_TRIG_LEVEL_W<16> {
         TF_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 24 - TXFIFO DMA Request Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_drq_en(&mut self) -> TF_DRQ_EN_W<24> {
         TF_DRQ_EN_W::new(self)
     }
     #[doc = "Bit 30 - TXFIFO Test Mode Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_test_en(&mut self) -> TF_TEST_EN_W<30> {
         TF_TEST_EN_W::new(self)
     }
     #[doc = "Bit 31 - TXFIFO Reset"]
     #[inline(always)]
+    #[must_use]
     pub fn tf_rst(&mut self) -> TF_RST_W<31> {
         TF_RST_W::new(self)
     }
@@ -352,11 +360,10 @@ impl crate::Readable for SPI_FCR_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_fcr::W](W) writer structure"]
 impl crate::Writable for SPI_FCR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_fcr to value 0"]
 impl crate::Resettable for SPI_FCR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

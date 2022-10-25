@@ -94,6 +94,7 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Receiver Pulse Polarity Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn rppi(&mut self) -> RPPI_W<2> {
         RPPI_W::new(self)
     }
@@ -116,11 +117,10 @@ impl crate::Readable for CIR_RXPCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_rxpcfg::W](W) writer structure"]
 impl crate::Writable for CIR_RXPCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_rxpcfg to value 0x04"]
 impl crate::Resettable for CIR_RXPCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+    const RESET_VALUE: Self::Ux = 0x04;
 }

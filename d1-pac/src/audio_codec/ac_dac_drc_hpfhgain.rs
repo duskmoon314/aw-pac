@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - The gain of HPF coefficient. The format is 3.24. (gain = 1)"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_hpfhgain(&mut self) -> DAC_DRC_HPFHGAIN_W<0> {
         DAC_DRC_HPFHGAIN_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_DAC_DRC_HPFHGAIN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_hpfhgain::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_HPFHGAIN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_hpfhgain to value 0x0100"]
 impl crate::Resettable for AC_DAC_DRC_HPFHGAIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0100;
 }

@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Vertical Sync Pulse Width (in lines)\n\nTvspw = (VSPW+1) * Th\n\nNote: VT/2 > (VSPW+1)"]
     #[inline(always)]
+    #[must_use]
     pub fn v_spw(&mut self) -> V_SPW_W<0> {
         V_SPW_W::new(self)
     }
     #[doc = "Bits 16:25 - Horizontal Sync Pulse Width (in dclk)\n\nThspw = (HSPW+1) * Tdclk\n\nNote: HT > (HSPW+1)"]
     #[inline(always)]
+    #[must_use]
     pub fn h_spw(&mut self) -> H_SPW_W<16> {
         H_SPW_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for TV_BASIC5_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_basic5::W](W) writer structure"]
 impl crate::Writable for TV_BASIC5_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_basic5 to value 0"]
 impl crate::Resettable for TV_BASIC5_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

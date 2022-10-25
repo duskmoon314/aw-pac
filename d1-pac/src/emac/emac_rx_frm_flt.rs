@@ -668,56 +668,67 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receive All Frame"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_all(&mut self) -> RX_ALL_W<0> {
         RX_ALL_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn flt_md(&mut self) -> FLT_MD_W<1> {
         FLT_MD_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
+    #[must_use]
     pub fn da_inv_filter(&mut self) -> DA_INV_FILTER_W<4> {
         DA_INV_FILTER_W::new(self)
     }
     #[doc = "Bit 5 - Receive SA Invert Filter Set"]
     #[inline(always)]
+    #[must_use]
     pub fn sa_inv_filter(&mut self) -> SA_INV_FILTER_W<5> {
         SA_INV_FILTER_W::new(self)
     }
     #[doc = "Bit 6 - Receive SA Filter Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sa_filter_en(&mut self) -> SA_FILTER_EN_W<6> {
         SA_FILTER_EN_W::new(self)
     }
     #[doc = "Bit 8 - Filter Unicast Frames Set"]
     #[inline(always)]
+    #[must_use]
     pub fn hash_unicast(&mut self) -> HASH_UNICAST_W<8> {
         HASH_UNICAST_W::new(self)
     }
     #[doc = "Bit 9 - Filter Multicast Frames Set"]
     #[inline(always)]
+    #[must_use]
     pub fn hash_multicast(&mut self) -> HASH_MULTICAST_W<9> {
         HASH_MULTICAST_W::new(self)
     }
     #[doc = "Bits 12:13 - Receive Control Frames Filter"]
     #[inline(always)]
+    #[must_use]
     pub fn ctl_frm_filter(&mut self) -> CTL_FRM_FILTER_W<12> {
         CTL_FRM_FILTER_W::new(self)
     }
     #[doc = "Bit 16 - Receive All Multicast Frames Filter"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_all_multicast(&mut self) -> RX_ALL_MULTICAST_W<16> {
         RX_ALL_MULTICAST_W::new(self)
     }
     #[doc = "Bit 17 - Disable Receive Broadcast Frames"]
     #[inline(always)]
+    #[must_use]
     pub fn dis_broadcast(&mut self) -> DIS_BROADCAST_W<17> {
         DIS_BROADCAST_W::new(self)
     }
     #[doc = "Bit 31 - Disable Address Filter"]
     #[inline(always)]
+    #[must_use]
     pub fn dis_addr_filter(&mut self) -> DIS_ADDR_FILTER_W<31> {
         DIS_ADDR_FILTER_W::new(self)
     }
@@ -740,11 +751,10 @@ impl crate::Readable for EMAC_RX_FRM_FLT_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_rx_frm_flt::W](W) writer structure"]
 impl crate::Writable for EMAC_RX_FRM_FLT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_rx_frm_flt to value 0"]
 impl crate::Resettable for EMAC_RX_FRM_FLT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

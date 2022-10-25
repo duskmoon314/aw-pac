@@ -59,16 +59,19 @@ impl R {
 impl W {
     #[doc = "The divisor factor of AVS"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn avs_cnt_d<const O: u8>(&mut self) -> AVS_CNT_D_W<O> {
         AVS_CNT_D_W::new(self)
     }
     #[doc = "Bits 0:11 - The divisor factor of AVS"]
     #[inline(always)]
+    #[must_use]
     pub fn avs_cnt0_d(&mut self) -> AVS_CNT_D_W<0> {
         AVS_CNT_D_W::new(self)
     }
     #[doc = "Bits 16:27 - The divisor factor of AVS"]
     #[inline(always)]
+    #[must_use]
     pub fn avs_cnt1_d(&mut self) -> AVS_CNT_D_W<16> {
         AVS_CNT_D_W::new(self)
     }
@@ -91,11 +94,10 @@ impl crate::Readable for AVS_CNT_DIV_SPEC {
 #[doc = "`write(|w| ..)` method takes [avs_cnt_div::W](W) writer structure"]
 impl crate::Writable for AVS_CNT_DIV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets avs_cnt_div to value 0"]
 impl crate::Resettable for AVS_CNT_DIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

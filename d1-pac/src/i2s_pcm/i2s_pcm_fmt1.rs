@@ -361,26 +361,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Tx PCM Data Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_pdm(&mut self) -> TX_PDM_W<0> {
         TX_PDM_W::new(self)
     }
     #[doc = "Bits 2:3 - Rx PCM Data Mode"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_pdm(&mut self) -> RX_PDM_W<2> {
         RX_PDM_W::new(self)
     }
     #[doc = "Bits 4:5 - Sign Extended in Slot (Sample Resolution < Slot Width)"]
     #[inline(always)]
+    #[must_use]
     pub fn sext(&mut self) -> SEXT_W<4> {
         SEXT_W::new(self)
     }
     #[doc = "Bit 6 - Tx MSB/LSB First Select"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_mls(&mut self) -> TX_MLS_W<6> {
         TX_MLS_W::new(self)
     }
     #[doc = "Bit 7 - Rx MSB/LSB First Select"]
     #[inline(always)]
+    #[must_use]
     pub fn rx_mls(&mut self) -> RX_MLS_W<7> {
         RX_MLS_W::new(self)
     }
@@ -403,11 +408,10 @@ impl crate::Readable for I2S_PCM_FMT1_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_fmt1::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_FMT1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_fmt1 to value 0"]
 impl crate::Resettable for I2S_PCM_FMT1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

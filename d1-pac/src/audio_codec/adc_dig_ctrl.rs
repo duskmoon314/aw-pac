@@ -161,16 +161,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Bit 3: ADC4 enabled\n\nBit 2: ADC3 enabled\n\nBit 1: ADC2 enabled\n\nBit 0: ADC1 enabled"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_channel_en(&mut self) -> ADC_CHANNEL_EN_W<0> {
         ADC_CHANNEL_EN_W::new(self)
     }
     #[doc = "Bit 16 - ADC1/2 Volume Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc1_2_vol_en(&mut self) -> ADC1_2_VOL_EN_W<16> {
         ADC1_2_VOL_EN_W::new(self)
     }
     #[doc = "Bit 17 - ADC3 Volume Control Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn adc3_vol_en(&mut self) -> ADC3_VOL_EN_W<17> {
         ADC3_VOL_EN_W::new(self)
     }
@@ -193,11 +196,10 @@ impl crate::Readable for ADC_DIG_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [adc_dig_ctrl::W](W) writer structure"]
 impl crate::Writable for ADC_DIG_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets adc_dig_ctrl to value 0"]
 impl crate::Resettable for ADC_DIG_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

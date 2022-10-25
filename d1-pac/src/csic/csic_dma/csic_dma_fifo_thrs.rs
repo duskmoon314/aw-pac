@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - When FIFO occupied memory exceed the threshold, dram frequency can not change."]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_thrs(&mut self) -> FIFO_THRS_W<0> {
         FIFO_THRS_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for CSIC_DMA_FIFO_THRS_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_fifo_thrs::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_FIFO_THRS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_fifo_thrs to value 0x0400"]
 impl crate::Resettable for CSIC_DMA_FIFO_THRS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0400
-    }
+    const RESET_VALUE: Self::Ux = 0x0400;
 }

@@ -82,16 +82,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - HS400 Delay Software"]
     #[inline(always)]
+    #[must_use]
     pub fn hs400_dl_sw(&mut self) -> HS400_DL_SW_W<0> {
         HS400_DL_SW_W::new(self)
     }
     #[doc = "Bit 7 - Sample Delay Software Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn hs400_dl_sw_en(&mut self) -> HS400_DL_SW_EN_W<7> {
         HS400_DL_SW_EN_W::new(self)
     }
     #[doc = "Bit 15 - HS400 Delay Calibration Start"]
     #[inline(always)]
+    #[must_use]
     pub fn hs400_dl_cal_start(&mut self) -> HS400_DL_CAL_START_W<15> {
         HS400_DL_CAL_START_W::new(self)
     }
@@ -114,11 +117,10 @@ impl crate::Readable for SMHC_HS400_DL_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_hs400_dl::W](W) writer structure"]
 impl crate::Writable for SMHC_HS400_DL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_hs400_dl to value 0"]
 impl crate::Resettable for SMHC_HS400_DL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

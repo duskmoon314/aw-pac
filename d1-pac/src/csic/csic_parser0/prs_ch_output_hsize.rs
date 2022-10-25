@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:12 - Horizontal pixel unit start. Pixel is valid from this pixel."]
     #[inline(always)]
+    #[must_use]
     pub fn hor_start(&mut self) -> HOR_START_W<0> {
         HOR_START_W::new(self)
     }
     #[doc = "Bits 16:28 - Horizontal pixel unit length. Valid pixel of a line."]
     #[inline(always)]
+    #[must_use]
     pub fn hor_len(&mut self) -> HOR_LEN_W<16> {
         HOR_LEN_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for PRS_CH_OUTPUT_HSIZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs_ch_output_hsize::W](W) writer structure"]
 impl crate::Writable for PRS_CH_OUTPUT_HSIZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets prs_ch%s_output_hsize to value 0x0500_0000"]
 impl crate::Resettable for PRS_CH_OUTPUT_HSIZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0500_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0500_0000;
 }

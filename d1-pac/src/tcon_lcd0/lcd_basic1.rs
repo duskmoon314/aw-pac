@@ -57,11 +57,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:11 - Horizontal back porch (in dclk)\n\nThbp = (HBP +1) * Tdclk"]
     #[inline(always)]
+    #[must_use]
     pub fn hbp(&mut self) -> HBP_W<0> {
         HBP_W::new(self)
     }
     #[doc = "Bits 16:28 - Thcycle = (HT+1) * Tdclk\n\nComputation:\n\n1) parallel: HT = X + BLANK\n\nLimitation:\n\n1) parallel: HT >= (HBP +1) + (X+1) +2\n\n2) serial 1: HT >= (HBP +1) + (X+1) *3+2\n\n3) serial 2: HT >= (HBP +1) + (X+1) *3/2+2"]
     #[inline(always)]
+    #[must_use]
     pub fn ht(&mut self) -> HT_W<16> {
         HT_W::new(self)
     }
@@ -84,11 +86,10 @@ impl crate::Readable for LCD_BASIC1_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_basic1::W](W) writer structure"]
 impl crate::Writable for LCD_BASIC1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_basic1 to value 0"]
 impl crate::Resettable for LCD_BASIC1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

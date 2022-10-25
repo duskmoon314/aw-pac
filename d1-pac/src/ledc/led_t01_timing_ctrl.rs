@@ -79,21 +79,25 @@ impl R {
 impl W {
     #[doc = "Bits 0:5"]
     #[inline(always)]
+    #[must_use]
     pub fn t0l_time(&mut self) -> T0L_TIME_W<0> {
         T0L_TIME_W::new(self)
     }
     #[doc = "Bits 6:10"]
     #[inline(always)]
+    #[must_use]
     pub fn t0h_time(&mut self) -> T0H_TIME_W<6> {
         T0H_TIME_W::new(self)
     }
     #[doc = "Bits 16:20"]
     #[inline(always)]
+    #[must_use]
     pub fn t1l_time(&mut self) -> T1L_TIME_W<16> {
         T1L_TIME_W::new(self)
     }
     #[doc = "Bits 21:26"]
     #[inline(always)]
+    #[must_use]
     pub fn t1h_time(&mut self) -> T1H_TIME_W<21> {
         T1H_TIME_W::new(self)
     }
@@ -116,11 +120,10 @@ impl crate::Readable for LED_T01_TIMING_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [led_t01_timing_ctrl::W](W) writer structure"]
 impl crate::Writable for LED_T01_TIMING_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets led_t01_timing_ctrl to value 0"]
 impl crate::Resettable for LED_T01_TIMING_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

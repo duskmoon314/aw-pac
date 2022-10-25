@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - TX Sample\n\nTransmitting left, right channel sample data should be written to this register one by one. The left channel sample data is first and then the right channel sample."]
     #[inline(always)]
+    #[must_use]
     pub fn txdata(&mut self) -> TXDATA_W<0> {
         TXDATA_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for I2S_PCM_TXFIFO_SPEC {
 #[doc = "`write(|w| ..)` method takes [i2s_pcm_txfifo::W](W) writer structure"]
 impl crate::Writable for I2S_PCM_TXFIFO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets i2s_pcm_txfifo to value 0"]
 impl crate::Resettable for I2S_PCM_TXFIFO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

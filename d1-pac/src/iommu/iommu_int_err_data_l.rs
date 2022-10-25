@@ -33,8 +33,5 @@ impl crate::Readable for IOMMU_INT_ERR_DATA_L_SPEC {
 }
 #[doc = "`reset()` method sets iommu_int_err_data_l%s to value 0"]
 impl crate::Resettable for IOMMU_INT_ERR_DATA_L_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

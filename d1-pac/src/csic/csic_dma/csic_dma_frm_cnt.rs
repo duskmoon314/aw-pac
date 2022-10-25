@@ -66,11 +66,13 @@ impl R {
 impl W {
     #[doc = "Bits 16:30 - Frame cnt clear cycle\n\nN*T_{SYNC}"]
     #[inline(always)]
+    #[must_use]
     pub fn pclk_dma_clr_distance(&mut self) -> PCLK_DMA_CLR_DISTANCE_W<16> {
         PCLK_DMA_CLR_DISTANCE_W::new(self)
     }
     #[doc = "Bit 31 - When the bit set to 1, Frame cnt is cleared to 0."]
     #[inline(always)]
+    #[must_use]
     pub fn frm_cnt_clr(&mut self) -> FRM_CNT_CLR_W<31> {
         FRM_CNT_CLR_W::new(self)
     }
@@ -93,11 +95,10 @@ impl crate::Readable for CSIC_DMA_FRM_CNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_frm_cnt::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_FRM_CNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x8000_0000;
 }
 #[doc = "`reset()` method sets csic_dma_frm_cnt to value 0x0001_0000"]
 impl crate::Resettable for CSIC_DMA_FRM_CNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0001_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0001_0000;
 }

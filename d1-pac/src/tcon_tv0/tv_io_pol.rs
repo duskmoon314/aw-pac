@@ -114,26 +114,31 @@ impl R {
 impl W {
     #[doc = "IO\\[i\\] Invert"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn io_inv<const O: u8>(&mut self) -> IO_INV_W<O> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 24 - IO\\[i\\] Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn io0_inv(&mut self) -> IO_INV_W<24> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 25 - IO\\[i\\] Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn io1_inv(&mut self) -> IO_INV_W<25> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 26 - IO\\[i\\] Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn io2_inv(&mut self) -> IO_INV_W<26> {
         IO_INV_W::new(self)
     }
     #[doc = "Bit 27 - IO\\[i\\] Invert"]
     #[inline(always)]
+    #[must_use]
     pub fn io3_inv(&mut self) -> IO_INV_W<27> {
         IO_INV_W::new(self)
     }
@@ -156,11 +161,10 @@ impl crate::Readable for TV_IO_POL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_io_pol::W](W) writer structure"]
 impl crate::Writable for TV_IO_POL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_io_pol to value 0"]
 impl crate::Resettable for TV_IO_POL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

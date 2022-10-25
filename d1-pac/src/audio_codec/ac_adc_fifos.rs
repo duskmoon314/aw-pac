@@ -197,11 +197,13 @@ impl R {
 impl W {
     #[doc = "Bit 1 - RX FIFO Overrun Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxo_int(&mut self) -> RXO_INT_W<1> {
         RXO_INT_W::new(self)
     }
     #[doc = "Bit 3 - RX FIFO Data Available Pending Interrupt"]
     #[inline(always)]
+    #[must_use]
     pub fn rxa_int(&mut self) -> RXA_INT_W<3> {
         RXA_INT_W::new(self)
     }
@@ -224,11 +226,10 @@ impl crate::Readable for AC_ADC_FIFOS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_fifos::W](W) writer structure"]
 impl crate::Writable for AC_ADC_FIFOS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x0a;
 }
 #[doc = "`reset()` method sets ac_adc_fifos to value 0x01"]
 impl crate::Resettable for AC_ADC_FIFOS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

@@ -431,36 +431,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Gating MBUS Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn dma_mclk_en(&mut self) -> DMA_MCLK_EN_W<0> {
         DMA_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 1 - Gating MBUS Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn ve_mclk_en(&mut self) -> VE_MCLK_EN_W<1> {
         VE_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 2 - Gating MBUS Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn ce_mclk_en(&mut self) -> CE_MCLK_EN_W<2> {
         CE_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 7 - Gating MBUS Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn tvin_mclk_en(&mut self) -> TVIN_MCLK_EN_W<7> {
         TVIN_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 8 - Gating MBUS Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn csi_mclk_en(&mut self) -> CSI_MCLK_EN_W<8> {
         CSI_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 10 - Gating MBUS Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn g2d_mclk_en(&mut self) -> G2D_MCLK_EN_W<10> {
         G2D_MCLK_EN_W::new(self)
     }
     #[doc = "Bit 11 - Gating MBUS Clock"]
     #[inline(always)]
+    #[must_use]
     pub fn riscv_mclk_en(&mut self) -> RISCV_MCLK_EN_W<11> {
         RISCV_MCLK_EN_W::new(self)
     }
@@ -483,11 +490,10 @@ impl crate::Readable for MBUS_MAT_CLK_GATING_SPEC {
 #[doc = "`write(|w| ..)` method takes [mbus_mat_clk_gating::W](W) writer structure"]
 impl crate::Writable for MBUS_MAT_CLK_GATING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets mbus_mat_clk_gating to value 0"]
 impl crate::Resettable for MBUS_MAT_CLK_GATING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

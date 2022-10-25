@@ -158,41 +158,49 @@ impl R {
 impl W {
     #[doc = "PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pf_drv<const O: u8>(&mut self) -> PF_DRV_W<O> {
         PF_DRV_W::new(self)
     }
     #[doc = "Bits 0:1 - PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf0_drv(&mut self) -> PF_DRV_W<0> {
         PF_DRV_W::new(self)
     }
     #[doc = "Bits 4:5 - PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf1_drv(&mut self) -> PF_DRV_W<4> {
         PF_DRV_W::new(self)
     }
     #[doc = "Bits 8:9 - PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf2_drv(&mut self) -> PF_DRV_W<8> {
         PF_DRV_W::new(self)
     }
     #[doc = "Bits 12:13 - PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf3_drv(&mut self) -> PF_DRV_W<12> {
         PF_DRV_W::new(self)
     }
     #[doc = "Bits 16:17 - PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf4_drv(&mut self) -> PF_DRV_W<16> {
         PF_DRV_W::new(self)
     }
     #[doc = "Bits 20:21 - PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf5_drv(&mut self) -> PF_DRV_W<20> {
         PF_DRV_W::new(self)
     }
     #[doc = "Bits 24:25 - PF Multi_Driving Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pf6_drv(&mut self) -> PF_DRV_W<24> {
         PF_DRV_W::new(self)
     }
@@ -215,11 +223,10 @@ impl crate::Readable for PF_DRV0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pf_drv0::W](W) writer structure"]
 impl crate::Writable for PF_DRV0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pf_drv0 to value 0"]
 impl crate::Resettable for PF_DRV0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

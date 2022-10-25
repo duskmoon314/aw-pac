@@ -298,26 +298,31 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Clocks delayed before pattern generating start."]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_gen_dly(&mut self) -> PTN_GEN_DLY_W<0> {
         PTN_GEN_DLY_W::new(self)
     }
     #[doc = "Bits 8:9 - Packet generator clock divider"]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_gen_clk_div(&mut self) -> PTN_GEN_CLK_DIV_W<8> {
         PTN_GEN_CLK_DIV_W::new(self)
     }
     #[doc = "Bits 16:19 - Pattern mode selection"]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_mode(&mut self) -> PTN_MODE_W<16> {
         PTN_MODE_W::new(self)
     }
     #[doc = "Bits 20:21"]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_gen_data_width(&mut self) -> PTN_GEN_DATA_WIDTH_W<20> {
         PTN_GEN_DATA_WIDTH_W::new(self)
     }
     #[doc = "Bits 24:25 - Pattern Generator output port selection"]
     #[inline(always)]
+    #[must_use]
     pub fn ptn_port_sel(&mut self) -> PTN_PORT_SEL_W<24> {
         PTN_PORT_SEL_W::new(self)
     }
@@ -340,11 +345,10 @@ impl crate::Readable for CSIC_PTN_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_ptn_ctrl::W](W) writer structure"]
 impl crate::Writable for CSIC_PTN_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_ptn_ctrl to value 0x0f"]
 impl crate::Resettable for CSIC_PTN_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0f
-    }
+    const RESET_VALUE: Self::Ux = 0x0f;
 }

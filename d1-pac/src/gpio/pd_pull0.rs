@@ -190,86 +190,103 @@ impl R {
 impl W {
     #[doc = "PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pd_pull<const O: u8>(&mut self) -> PD_PULL_W<O> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 0:1 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd0_pull(&mut self) -> PD_PULL_W<0> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 2:3 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd1_pull(&mut self) -> PD_PULL_W<2> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 4:5 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd2_pull(&mut self) -> PD_PULL_W<4> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 6:7 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd3_pull(&mut self) -> PD_PULL_W<6> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 8:9 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd4_pull(&mut self) -> PD_PULL_W<8> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 10:11 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd5_pull(&mut self) -> PD_PULL_W<10> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 12:13 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd6_pull(&mut self) -> PD_PULL_W<12> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 14:15 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd7_pull(&mut self) -> PD_PULL_W<14> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 16:17 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd8_pull(&mut self) -> PD_PULL_W<16> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 18:19 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd9_pull(&mut self) -> PD_PULL_W<18> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 20:21 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd10_pull(&mut self) -> PD_PULL_W<20> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 22:23 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd11_pull(&mut self) -> PD_PULL_W<22> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 24:25 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd12_pull(&mut self) -> PD_PULL_W<24> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 26:27 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd13_pull(&mut self) -> PD_PULL_W<26> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 28:29 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd14_pull(&mut self) -> PD_PULL_W<28> {
         PD_PULL_W::new(self)
     }
     #[doc = "Bits 30:31 - PD Pull_up/down Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd15_pull(&mut self) -> PD_PULL_W<30> {
         PD_PULL_W::new(self)
     }
@@ -292,11 +309,10 @@ impl crate::Readable for PD_PULL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pd_pull0::W](W) writer structure"]
 impl crate::Writable for PD_PULL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pd_pull0 to value 0"]
 impl crate::Resettable for PD_PULL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

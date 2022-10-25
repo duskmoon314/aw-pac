@@ -188,8 +188,5 @@ impl crate::Readable for DMAC_STA_SPEC {
 }
 #[doc = "`reset()` method sets dmac_sta to value 0"]
 impl crate::Resettable for DMAC_STA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

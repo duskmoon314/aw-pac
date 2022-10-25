@@ -207,11 +207,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Chroma gain selection for the composite video signal.\n\nThese bits specify the gain of the chroma signal for composing with the luma signal to generate the composite video signal:"]
     #[inline(always)]
+    #[must_use]
     pub fn comp_ch_gain(&mut self) -> COMP_CH_GAIN_W<0> {
         COMP_CH_GAIN_W::new(self)
     }
     #[doc = "Bits 16:17 - Chroma filter bandwidth selection\n\nThis bit specifies whether the bandwidth of the chroma filter is:"]
     #[inline(always)]
+    #[must_use]
     pub fn chroma_bw(&mut self) -> CHROMA_BW_W<16> {
         CHROMA_BW_W::new(self)
     }
@@ -234,11 +236,10 @@ impl crate::Readable for TVE_VIDEO_CHROMA_BW_COMP_GAIN_SPEC {
 #[doc = "`write(|w| ..)` method takes [tve_video_chroma_bw_comp_gain::W](W) writer structure"]
 impl crate::Writable for TVE_VIDEO_CHROMA_BW_COMP_GAIN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tve_video_chroma_bw_comp_gain to value 0"]
 impl crate::Resettable for TVE_VIDEO_CHROMA_BW_COMP_GAIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

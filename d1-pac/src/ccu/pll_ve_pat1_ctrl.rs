@@ -51,7 +51,7 @@ impl R {
     #[doc = "Bits 0:16 - Fraction In"]
     #[inline(always)]
     pub fn frac_in(&self) -> FRAC_IN_R {
-        FRAC_IN_R::new((self.bits & 0x0001_ffff) as u32)
+        FRAC_IN_R::new(self.bits & 0x0001_ffff)
     }
     #[doc = "Bit 20 - Fraction Enable"]
     #[inline(always)]
@@ -67,16 +67,19 @@ impl R {
 impl W {
     #[doc = "Bits 0:16 - Fraction In"]
     #[inline(always)]
+    #[must_use]
     pub fn frac_in(&mut self) -> FRAC_IN_W<0> {
         FRAC_IN_W::new(self)
     }
     #[doc = "Bit 20 - Fraction Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn frac_en(&mut self) -> FRAC_EN_W<20> {
         FRAC_EN_W::new(self)
     }
     #[doc = "Bit 24 - Dither Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dither_en(&mut self) -> DITHER_EN_W<24> {
         DITHER_EN_W::new(self)
     }
@@ -99,11 +102,10 @@ impl crate::Readable for PLL_VE_PAT1_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pll_ve_pat1_ctrl::W](W) writer structure"]
 impl crate::Writable for PLL_VE_PAT1_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pll_ve_pat1_ctrl to value 0"]
 impl crate::Resettable for PLL_VE_PAT1_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

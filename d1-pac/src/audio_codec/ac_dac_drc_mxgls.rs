@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The max gain setting, which is determined by equation MXG =MXG/6.0206. The format is 8.24 and must -20 dB < MXG < 30 dB (The default value is -10 dB)"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drc_mxgls(&mut self) -> DAC_DRC_MXGLS_W<0> {
         DAC_DRC_MXGLS_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_DAC_DRC_MXGLS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_drc_mxgls::W](W) writer structure"]
 impl crate::Writable for AC_DAC_DRC_MXGLS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_drc_mxgls to value 0xcb0f"]
 impl crate::Resettable for AC_DAC_DRC_MXGLS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xcb0f
-    }
+    const RESET_VALUE: Self::Ux = 0xcb0f;
 }

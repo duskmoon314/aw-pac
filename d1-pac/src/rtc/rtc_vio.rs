@@ -230,11 +230,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - RTC_VIO Voltage Select\n\nThe RTC-VIO is provided power for RTC digital part.\n\nThese bits are useful for regulating the RTC_VIO from 0.65 V to 1.3 V."]
     #[inline(always)]
+    #[must_use]
     pub fn rtc_viou(&mut self) -> RTC_VIOU_W<0> {
         RTC_VIOU_W::new(self)
     }
     #[doc = "Bit 4 - VDD Select"]
     #[inline(always)]
+    #[must_use]
     pub fn v_sel(&mut self) -> V_SEL_W<4> {
         V_SEL_W::new(self)
     }
@@ -257,11 +259,10 @@ impl crate::Readable for RTC_VIO_SPEC {
 #[doc = "`write(|w| ..)` method takes [rtc_vio::W](W) writer structure"]
 impl crate::Writable for RTC_VIO_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets rtc_vio to value 0x04"]
 impl crate::Resettable for RTC_VIO_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x04
-    }
+    const RESET_VALUE: Self::Ux = 0x04;
 }

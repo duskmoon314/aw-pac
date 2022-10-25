@@ -40,7 +40,7 @@ impl R {
     #[doc = "Bits 0:23 - Counter value between every frame. For instant hardware frame rate statics.\n\nThe internal counter is added by one every 12 MHz clock cycle. When frame done or vsync comes, the internal counter value is sampled to FRM_CLK_CNT, and cleared to 0."]
     #[inline(always)]
     pub fn frm_clk_cnt(&self) -> FRM_CLK_CNT_R {
-        FRM_CLK_CNT_R::new((self.bits & 0x00ff_ffff) as u32)
+        FRM_CLK_CNT_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
@@ -63,11 +63,10 @@ impl crate::Readable for CSIC_DMA_FRM_CLK_CNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_frm_clk_cnt::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_FRM_CLK_CNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_frm_clk_cnt to value 0"]
 impl crate::Resettable for CSIC_DMA_FRM_CLK_CNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

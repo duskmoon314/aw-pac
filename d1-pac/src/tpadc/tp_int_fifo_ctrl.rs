@@ -429,41 +429,49 @@ impl R {
 impl W {
     #[doc = "Bit 0 - TP First Touch (Stylus DOWN) IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_down_irq_en(&mut self) -> TP_DOWN_IRQ_EN_W<0> {
         TP_DOWN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 1 - TP Last Touch (Stylus UP) IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_up_irq_en(&mut self) -> TP_UP_IRQ_EN_W<1> {
         TP_UP_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - TP FIFO Flush"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_fifo_flush(&mut self) -> TP_FIFO_FLUSH_W<4> {
         TP_FIFO_FLUSH_W::new(self)
     }
     #[doc = "Bit 7 - TP FIFO Data Available DRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_data_erq_en(&mut self) -> TP_DATA_ERQ_EN_W<7> {
         TP_DATA_ERQ_EN_W::new(self)
     }
     #[doc = "Bits 8:12 - TP FIFO Data Available Trigger Level"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_fifo_trig_level(&mut self) -> TP_FIFO_TRIG_LEVEL_W<8> {
         TP_FIFO_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bit 13 - TP FIFO XY Data Interchange Function Select"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_data_xy_change(&mut self) -> TP_DATA_XY_CHANGE_W<13> {
         TP_DATA_XY_CHANGE_W::new(self)
     }
     #[doc = "Bit 16 - TP FIFO Data Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_data_irq_en(&mut self) -> TP_DATA_IRQ_EN_W<16> {
         TP_DATA_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 17 - TP FIFO Overrun Interrupt Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_overrun_irq_en(&mut self) -> TP_OVERRUN_IRQ_EN_W<17> {
         TP_OVERRUN_IRQ_EN_W::new(self)
     }
@@ -486,11 +494,10 @@ impl crate::Readable for TP_INT_FIFO_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tp_int_fifo_ctrl::W](W) writer structure"]
 impl crate::Writable for TP_INT_FIFO_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tp_int_fifo_ctrl to value 0"]
 impl crate::Resettable for TP_INT_FIFO_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

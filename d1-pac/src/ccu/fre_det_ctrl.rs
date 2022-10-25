@@ -216,21 +216,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Frequence Detect Function Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fre_det_fun_en(&mut self) -> FRE_DET_FUN_EN_W<0> {
         FRE_DET_FUN_EN_W::new(self)
     }
     #[doc = "Bit 1 - Frequence Detect IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fre_det_irq_en(&mut self) -> FRE_DET_IRQ_EN_W<1> {
         FRE_DET_IRQ_EN_W::new(self)
     }
     #[doc = "Bits 4:8 - Detect Time"]
     #[inline(always)]
+    #[must_use]
     pub fn det_time(&mut self) -> DET_TIME_W<4> {
         DET_TIME_W::new(self)
     }
     #[doc = "Bit 31 - Error Flag"]
     #[inline(always)]
+    #[must_use]
     pub fn error_flag(&mut self) -> ERROR_FLAG_W<31> {
         ERROR_FLAG_W::new(self)
     }
@@ -253,11 +257,10 @@ impl crate::Readable for FRE_DET_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [fre_det_ctrl::W](W) writer structure"]
 impl crate::Writable for FRE_DET_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x8000_0000;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fre_det_ctrl to value 0"]
 impl crate::Resettable for FRE_DET_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -150,11 +150,13 @@ impl R {
 impl W {
     #[doc = "Bit 1 - CEC DDC PAD Select"]
     #[inline(always)]
+    #[must_use]
     pub fn cec_ddc_pad_sel(&mut self) -> CEC_DDC_PAD_SEL_W<1> {
         CEC_DDC_PAD_SEL_W::new(self)
     }
     #[doc = "Bit 31 - When it is disabled, the module will be reset to idle state."]
     #[inline(always)]
+    #[must_use]
     pub fn tv_en(&mut self) -> TV_EN_W<31> {
         TV_EN_W::new(self)
     }
@@ -177,11 +179,10 @@ impl crate::Readable for TV_GCTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [tv_gctl::W](W) writer structure"]
 impl crate::Writable for TV_GCTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets tv_gctl to value 0"]
 impl crate::Resettable for TV_GCTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

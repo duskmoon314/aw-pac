@@ -398,46 +398,55 @@ impl R {
 impl W {
     #[doc = "Bit 0 - LOSC Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn losc_src_sel(&mut self) -> LOSC_SRC_SEL_W<0> {
         LOSC_SRC_SEL_W::new(self)
     }
     #[doc = "Bit 1 - RTC_TIMER Clock Source Select"]
     #[inline(always)]
+    #[must_use]
     pub fn rtc_src_sel(&mut self) -> RTC_SRC_SEL_W<1> {
         RTC_SRC_SEL_W::new(self)
     }
     #[doc = "Bits 2:3 - External 32.768 kHz Crystal GSM\n\nWhen GSM is changed, the 32K oscillation circuit will arise transient instability. If the autoswitch function (bit 15) is enabled, 32K changes to RC16M with certain probability. The GSM can influence the time of 32K starting oscillation, the more the GSM, the shorter the time of starting oscillation. So modifying GSM is not recommended.\n\nIf you need to modify the GSM, firstly disable the auto switch function (bit 15), with a delay of 50 us, then change the GSM, the 32K clock source is changed to external clock."]
     #[inline(always)]
+    #[must_use]
     pub fn ext_losc_gsm(&mut self) -> EXT_LOSC_GSM_W<2> {
         EXT_LOSC_GSM_W::new(self)
     }
     #[doc = "Bit 4 - External 32.768 kHz Crystal Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ext_losc_en(&mut self) -> EXT_LOSC_EN_W<4> {
         EXT_LOSC_EN_W::new(self)
     }
     #[doc = "Bit 7 - RTC DAY access\n\nAfter writing the RTC DAY register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC DAY register, the DAY register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
     #[inline(always)]
+    #[must_use]
     pub fn rtc_day_acce(&mut self) -> RTC_DAY_ACCE_W<7> {
         RTC_DAY_ACCE_W::new(self)
     }
     #[doc = "Bit 8 - RTC Hour Minute Second access\n\nAfter writing the RTC HH-MM-SS Register, this bit is set and it will be cleared until the real writing operation is finished. After writing the RTC HH-MM-SS Register, the RTC HH-MM-SS Register will be refreshed for at most one second.\n\nNote: Make sure that the bit is 0 for time configuration."]
     #[inline(always)]
+    #[must_use]
     pub fn rtc_hhmmss_acce(&mut self) -> RTC_HHMMSS_ACCE_W<8> {
         RTC_HHMMSS_ACCE_W::new(self)
     }
     #[doc = "Bit 14 - LOSC auto switch 32K clk source select enable"]
     #[inline(always)]
+    #[must_use]
     pub fn losc_auto_swt_32k_sel_en(&mut self) -> LOSC_AUTO_SWT_32K_SEL_EN_W<14> {
         LOSC_AUTO_SWT_32K_SEL_EN_W::new(self)
     }
     #[doc = "Bit 15 - LOSC auto switch function disable"]
     #[inline(always)]
+    #[must_use]
     pub fn losc_auto_swt_function(&mut self) -> LOSC_AUTO_SWT_FUNCTION_W<15> {
         LOSC_AUTO_SWT_FUNCTION_W::new(self)
     }
     #[doc = "Bits 16:31 - Key Field\n\nThis field should be filled with 0x16AA, and then the bit0 and bit1 can be written with the new value."]
     #[inline(always)]
+    #[must_use]
     pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
@@ -460,11 +469,10 @@ impl crate::Readable for LOSC_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [losc_ctrl::W](W) writer structure"]
 impl crate::Writable for LOSC_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets losc_ctrl to value 0x4010"]
 impl crate::Resettable for LOSC_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x4010
-    }
+    const RESET_VALUE: Self::Ux = 0x4010;
 }

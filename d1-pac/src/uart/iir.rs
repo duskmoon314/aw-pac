@@ -160,8 +160,5 @@ impl crate::Readable for IIR_SPEC {
 }
 #[doc = "`reset()` method sets iir to value 0"]
 impl crate::Resettable for IIR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

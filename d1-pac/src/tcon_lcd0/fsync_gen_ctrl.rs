@@ -385,36 +385,43 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Fsync Generate Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fsync_gen_en(&mut self) -> FSYNC_GEN_EN_W<0> {
         FSYNC_GEN_EN_W::new(self)
     }
     #[doc = "Bit 1 - Select Vsync Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn sel_vsync_en(&mut self) -> SEL_VSYNC_EN_W<1> {
         SEL_VSYNC_EN_W::new(self)
     }
     #[doc = "Bit 2 - Hsync Polarity Select"]
     #[inline(always)]
+    #[must_use]
     pub fn hsync_pol_sel(&mut self) -> HSYNC_POL_SEL_W<2> {
         HSYNC_POL_SEL_W::new(self)
     }
     #[doc = "Bit 4 - Sensor Disable Value"]
     #[inline(always)]
+    #[must_use]
     pub fn sensor_dis_value(&mut self) -> SENSOR_DIS_VALUE_W<4> {
         SENSOR_DIS_VALUE_W::new(self)
     }
     #[doc = "Bit 5 - Sensor Active0 Value"]
     #[inline(always)]
+    #[must_use]
     pub fn sensor_act0_value(&mut self) -> SENSOR_ACT0_VALUE_W<5> {
         SENSOR_ACT0_VALUE_W::new(self)
     }
     #[doc = "Bit 6 - Sensor Active1 Value"]
     #[inline(always)]
+    #[must_use]
     pub fn sensor_act1_value(&mut self) -> SENSOR_ACT1_VALUE_W<6> {
         SENSOR_ACT1_VALUE_W::new(self)
     }
     #[doc = "Bits 8:18 - Delay 0-2047 Hsync Period\n\nWhen hsync_pol_sel is 0, the actual delay is sensor_dis_time-1.\n\nWhen hsync_pol_sel is 1, the actual delay is sensor_dis_time."]
     #[inline(always)]
+    #[must_use]
     pub fn sensor_dis_time(&mut self) -> SENSOR_DIS_TIME_W<8> {
         SENSOR_DIS_TIME_W::new(self)
     }
@@ -437,11 +444,10 @@ impl crate::Readable for FSYNC_GEN_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [fsync_gen_ctrl::W](W) writer structure"]
 impl crate::Writable for FSYNC_GEN_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets fsync_gen_ctrl to value 0"]
 impl crate::Resettable for FSYNC_GEN_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

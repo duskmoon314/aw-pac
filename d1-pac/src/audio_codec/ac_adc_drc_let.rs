@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The expander threshold setting, which is set by the equation that ETin = -ET/6.0206, The format is 8.24. (The default value is -70 dB)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_let(&mut self) -> ADC_DRC_LET_W<0> {
         ADC_DRC_LET_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_LET_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_let::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_LET_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_let to value 0x7291"]
 impl crate::Resettable for AC_ADC_DRC_LET_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x7291
-    }
+    const RESET_VALUE: Self::Ux = 0x7291;
 }

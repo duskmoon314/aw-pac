@@ -540,11 +540,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ULPI bypass enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ulpi_bypass_enable(&mut self) -> ULPI_BYPASS_ENABLE_W<0> {
         ULPI_BYPASS_ENABLE_W::new(self)
     }
     #[doc = "Bit 8 - Master interface INCRX align enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ahb_master_interface_incrx_align_enable(
         &mut self,
     ) -> AHB_MASTER_INTERFACE_INCRX_ALIGN_ENABLE_W<8> {
@@ -552,6 +554,7 @@ impl W {
     }
     #[doc = "Bit 9 - Master interface burst type INCR4 enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ahb_master_interface_burst_type_incr4_enable(
         &mut self,
     ) -> AHB_MASTER_INTERFACE_BURST_TYPE_INCR4_ENABLE_W<9> {
@@ -559,11 +562,13 @@ impl W {
     }
     #[doc = "Bit 10 - Master interface INCR8 enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ahb_master_interface_incr8_enable(&mut self) -> AHB_MASTER_INTERFACE_INCR8_ENABLE_W<10> {
         AHB_MASTER_INTERFACE_INCR8_ENABLE_W::new(self)
     }
     #[doc = "Bit 11 - Master interface INCR16 enable"]
     #[inline(always)]
+    #[must_use]
     pub fn ahb_master_interface_incr16_enable(
         &mut self,
     ) -> AHB_MASTER_INTERFACE_INCR16_ENABLE_W<11> {
@@ -571,16 +576,19 @@ impl W {
     }
     #[doc = "Bit 12"]
     #[inline(always)]
+    #[must_use]
     pub fn pp2vbus(&mut self) -> PP2VBUS_W<12> {
         PP2VBUS_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
+    #[must_use]
     pub fn resume_k_to_se0_transition(&mut self) -> RESUME_K_TO_SE0_TRANSITION_W<18> {
         RESUME_K_TO_SE0_TRANSITION_W::new(self)
     }
     #[doc = "Bit 25 - OHCI count select"]
     #[inline(always)]
+    #[must_use]
     pub fn ohci_count_select(&mut self) -> OHCI_COUNT_SELECT_W<25> {
         OHCI_COUNT_SELECT_W::new(self)
     }
@@ -603,11 +611,10 @@ impl crate::Readable for HCI_INTERFACE_SPEC {
 #[doc = "`write(|w| ..)` method takes [hci_interface::W](W) writer structure"]
 impl crate::Writable for HCI_INTERFACE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets hci_interface to value 0x1000_0000"]
 impl crate::Resettable for HCI_INTERFACE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1000_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x1000_0000;
 }

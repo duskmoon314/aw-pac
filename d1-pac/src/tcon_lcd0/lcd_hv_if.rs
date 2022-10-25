@@ -489,31 +489,37 @@ impl R {
 impl W {
     #[doc = "Bit 19 - LCD convert source from RGB to YUV.\n\nOnly valid when HV mode is “1100”."]
     #[inline(always)]
+    #[must_use]
     pub fn ccir_csc_dis(&mut self) -> CCIR_CSC_DIS_W<19> {
         CCIR_CSC_DIS_W::new(self)
     }
     #[doc = "Bits 20:21 - Set the delay line mode."]
     #[inline(always)]
+    #[must_use]
     pub fn yuv_eav_sav_f_line_dly(&mut self) -> YUV_EAV_SAV_F_LINE_DLY_W<20> {
         YUV_EAV_SAV_F_LINE_DLY_W::new(self)
     }
     #[doc = "Bits 22:23 - Serial YUV mode Output sequence 2-pixel-pair of every scan line."]
     #[inline(always)]
+    #[must_use]
     pub fn yuv_sm(&mut self) -> YUV_SM_W<22> {
         YUV_SM_W::new(self)
     }
     #[doc = "Bits 24:25 - Serial RGB888 mode Output sequence at even lines of the panel (line 2, 4, 6, 8...)."]
     #[inline(always)]
+    #[must_use]
     pub fn rgb888_even_order(&mut self) -> RGB888_EVEN_ORDER_W<24> {
         RGB888_EVEN_ORDER_W::new(self)
     }
     #[doc = "Bits 26:27 - Serial RGB888 mode Output sequence at odd lines of the panel (line 1, 3, 5, 7...)."]
     #[inline(always)]
+    #[must_use]
     pub fn rgb888_odd_order(&mut self) -> RGB888_ODD_ORDER_W<26> {
         RGB888_ODD_ORDER_W::new(self)
     }
     #[doc = "Bits 28:31 - Set the HV mode of LCD controller"]
     #[inline(always)]
+    #[must_use]
     pub fn hv_mode(&mut self) -> HV_MODE_W<28> {
         HV_MODE_W::new(self)
     }
@@ -536,11 +542,10 @@ impl crate::Readable for LCD_HV_IF_SPEC {
 #[doc = "`write(|w| ..)` method takes [lcd_hv_if::W](W) writer structure"]
 impl crate::Writable for LCD_HV_IF_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets lcd_hv_if to value 0"]
 impl crate::Resettable for LCD_HV_IF_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

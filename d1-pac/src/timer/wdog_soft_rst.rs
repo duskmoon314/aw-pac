@@ -98,11 +98,13 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Soft Reset Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn soft_rst_en(&mut self) -> SOFT_RST_EN_W<0> {
         SOFT_RST_EN_W::new(self)
     }
     #[doc = "Bits 16:31 - Key Field"]
     #[inline(always)]
+    #[must_use]
     pub fn key_field(&mut self) -> KEY_FIELD_W<16> {
         KEY_FIELD_W::new(self)
     }
@@ -125,11 +127,10 @@ impl crate::Readable for WDOG_SOFT_RST_SPEC {
 #[doc = "`write(|w| ..)` method takes [wdog_soft_rst::W](W) writer structure"]
 impl crate::Writable for WDOG_SOFT_RST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets wdog_soft_rst to value 0"]
 impl crate::Resettable for WDOG_SOFT_RST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

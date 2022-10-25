@@ -717,76 +717,91 @@ impl R {
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]
+    #[must_use]
     pub fn etcs(&mut self) -> ETCS_W<0> {
         ETCS_W::new(self)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
+    #[must_use]
     pub fn epit(&mut self) -> EPIT_W<2> {
         EPIT_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn etxie(&mut self) -> ETXIE_W<3> {
         ETXIE_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
+    #[must_use]
     pub fn erxie(&mut self) -> ERXIE_W<4> {
         ERXIE_W::new(self)
     }
     #[doc = "Bits 5:9"]
     #[inline(always)]
+    #[must_use]
     pub fn erxdc(&mut self) -> ERXDC_W<5> {
         ERXDC_W::new(self)
     }
     #[doc = "Bits 10:12"]
     #[inline(always)]
+    #[must_use]
     pub fn etxdc(&mut self) -> ETXDC_W<10> {
         ETXDC_W::new(self)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
+    #[must_use]
     pub fn rmii_en(&mut self) -> RMII_EN_W<13> {
         RMII_EN_W::new(self)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
+    #[must_use]
     pub fn phy_select(&mut self) -> PHY_SELECT_W<15> {
         PHY_SELECT_W::new(self)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
+    #[must_use]
     pub fn shutdown(&mut self) -> SHUTDOWN_W<16> {
         SHUTDOWN_W::new(self)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
+    #[must_use]
     pub fn led_pol(&mut self) -> LED_POL_W<17> {
         LED_POL_W::new(self)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_sel(&mut self) -> CLK_SEL_W<18> {
         CLK_SEL_W::new(self)
     }
     #[doc = "Bits 20:24"]
     #[inline(always)]
+    #[must_use]
     pub fn phy_addr(&mut self) -> PHY_ADDR_W<20> {
         PHY_ADDR_W::new(self)
     }
     #[doc = "Bits 25:26"]
     #[inline(always)]
+    #[must_use]
     pub fn ephy_mode(&mut self) -> EPHY_MODE_W<25> {
         EPHY_MODE_W::new(self)
     }
     #[doc = "Bit 27"]
     #[inline(always)]
+    #[must_use]
     pub fn xmii_sel(&mut self) -> XMII_SEL_W<27> {
         XMII_SEL_W::new(self)
     }
     #[doc = "Bits 28:31"]
     #[inline(always)]
+    #[must_use]
     pub fn bps_efuse(&mut self) -> BPS_EFUSE_W<28> {
         BPS_EFUSE_W::new(self)
     }
@@ -809,11 +824,10 @@ impl crate::Readable for EMAC_EPHY_CLK0_SPEC {
 #[doc = "`write(|w| ..)` method takes [emac_ephy_clk0::W](W) writer structure"]
 impl crate::Writable for EMAC_EPHY_CLK0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets emac_ephy_clk0 to value 0"]
 impl crate::Resettable for EMAC_EPHY_CLK0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

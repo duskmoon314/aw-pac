@@ -163,71 +163,85 @@ impl R {
 impl W {
     #[doc = "PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pis<const O: u8>(&mut self) -> PIS_W<O> {
         PIS_W::new(self)
     }
     #[doc = "Bit 0 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis0(&mut self) -> PIS_W<0> {
         PIS_W::new(self)
     }
     #[doc = "Bit 1 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis1(&mut self) -> PIS_W<1> {
         PIS_W::new(self)
     }
     #[doc = "Bit 2 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis2(&mut self) -> PIS_W<2> {
         PIS_W::new(self)
     }
     #[doc = "Bit 3 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis3(&mut self) -> PIS_W<3> {
         PIS_W::new(self)
     }
     #[doc = "Bit 4 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis4(&mut self) -> PIS_W<4> {
         PIS_W::new(self)
     }
     #[doc = "Bit 5 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis5(&mut self) -> PIS_W<5> {
         PIS_W::new(self)
     }
     #[doc = "Bit 6 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis6(&mut self) -> PIS_W<6> {
         PIS_W::new(self)
     }
     #[doc = "Bit 7 - PWM Channel Interrupt Status\n\nWhen the PWM channel counter reaches the Entire Cycle Value, this bit is set 1 by hardware. Writing 1 to clear this bit.\n\nReads 0: PWM channel 0 interrupt is not pending.\n\nReads 1: PWM channel 0 interrupt is pending.\n\nWrites 0: No effect.\n\nWrites 1: Clear PWM channel 0 interrupt status."]
     #[inline(always)]
+    #[must_use]
     pub fn pis7(&mut self) -> PIS_W<7> {
         PIS_W::new(self)
     }
     #[doc = "PWM Group Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub unsafe fn pgis<const O: u8>(&mut self) -> PGIS_W<O> {
         PGIS_W::new(self)
     }
     #[doc = "Bit 16 - PWM Group Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub fn pgis0(&mut self) -> PGIS_W<16> {
         PGIS_W::new(self)
     }
     #[doc = "Bit 17 - PWM Group Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub fn pgis1(&mut self) -> PGIS_W<17> {
         PGIS_W::new(self)
     }
     #[doc = "Bit 18 - PWM Group Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub fn pgis2(&mut self) -> PGIS_W<18> {
         PGIS_W::new(self)
     }
     #[doc = "Bit 19 - PWM Group Interrupt Status"]
     #[inline(always)]
+    #[must_use]
     pub fn pgis3(&mut self) -> PGIS_W<19> {
         PGIS_W::new(self)
     }
@@ -250,11 +264,10 @@ impl crate::Readable for PISR_SPEC {
 #[doc = "`write(|w| ..)` method takes [pisr::W](W) writer structure"]
 impl crate::Writable for PISR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x0001_0001;
 }
 #[doc = "`reset()` method sets pisr to value 0"]
 impl crate::Resettable for PISR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -42,12 +42,13 @@ impl R {
     #[doc = "Bits 0:23 - Master Burst Counter"]
     #[inline(always)]
     pub fn mbc(&self) -> MBC_R {
-        MBC_R::new((self.bits & 0x00ff_ffff) as u32)
+        MBC_R::new(self.bits & 0x00ff_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:23 - Master Burst Counter"]
     #[inline(always)]
+    #[must_use]
     pub fn mbc(&mut self) -> MBC_W<0> {
         MBC_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for SPI_MBC_SPEC {
 #[doc = "`write(|w| ..)` method takes [spi_mbc::W](W) writer structure"]
 impl crate::Writable for SPI_MBC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets spi_mbc to value 0"]
 impl crate::Resettable for SPI_MBC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

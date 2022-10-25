@@ -830,66 +830,79 @@ impl R {
 impl W {
     #[doc = "Bit 0 - DAC FIFO Flush"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_flush(&mut self) -> FIFO_FLUSH_W<0> {
         FIFO_FLUSH_W::new(self)
     }
     #[doc = "Bit 1 - DAC FIFO Overrun IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_overrun_irq_en(&mut self) -> FIFO_OVERRUN_IRQ_EN_W<1> {
         FIFO_OVERRUN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 2 - DAC FIFO Underrun IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_underrun_irq_en(&mut self) -> FIFO_UNDERRUN_IRQ_EN_W<2> {
         FIFO_UNDERRUN_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 3 - DAC FIFO Empty IRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_irq_en(&mut self) -> DAC_IRQ_EN_W<3> {
         DAC_IRQ_EN_W::new(self)
     }
     #[doc = "Bit 4 - DAC FIFO Empty DRQ Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drq_en(&mut self) -> DAC_DRQ_EN_W<4> {
         DAC_DRQ_EN_W::new(self)
     }
     #[doc = "Bit 5 - Transmitting Audio Sample Resolution"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_sample_bits(&mut self) -> TX_SAMPLE_BITS_W<5> {
         TX_SAMPLE_BITS_W::new(self)
     }
     #[doc = "Bit 6 - DAC Mono Enable"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_mono_en(&mut self) -> DAC_MONO_EN_W<6> {
         DAC_MONO_EN_W::new(self)
     }
     #[doc = "Bits 8:14 - DAC DRQ clear count"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_drq_clr_cnt(&mut self) -> DAC_DRQ_CLR_CNT_W<8> {
         DAC_DRQ_CLR_CNT_W::new(self)
     }
     #[doc = "Bits 8:14 - TX FIFO Empty Trigger Level"]
     #[inline(always)]
+    #[must_use]
     pub fn tx_trig_level(&mut self) -> TX_TRIG_LEVEL_W<8> {
         TX_TRIG_LEVEL_W::new(self)
     }
     #[doc = "Bits 24:25"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_mode(&mut self) -> FIFO_MODE_W<24> {
         FIFO_MODE_W::new(self)
     }
     #[doc = "Bit 26 - Audio sample select when TX FIFO underrun"]
     #[inline(always)]
+    #[must_use]
     pub fn send_last(&mut self) -> SEND_LAST_W<26> {
         SEND_LAST_W::new(self)
     }
     #[doc = "Bit 28 - FIR Version"]
     #[inline(always)]
+    #[must_use]
     pub fn fir_ver(&mut self) -> FIR_VER_W<28> {
         FIR_VER_W::new(self)
     }
     #[doc = "Bits 29:31 - Sample Rate of DAC"]
     #[inline(always)]
+    #[must_use]
     pub fn dac_fs(&mut self) -> DAC_FS_W<29> {
         DAC_FS_W::new(self)
     }
@@ -912,11 +925,10 @@ impl crate::Readable for AC_DAC_FIFOC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_dac_fifoc::W](W) writer structure"]
 impl crate::Writable for AC_DAC_FIFOC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_dac_fifoc to value 0"]
 impl crate::Resettable for AC_DAC_FIFOC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

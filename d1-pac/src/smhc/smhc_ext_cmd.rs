@@ -48,6 +48,7 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Send CMD23 Automatically"]
     #[inline(always)]
+    #[must_use]
     pub fn auto_cmd23_en(&mut self) -> AUTO_CMD23_EN_W<0> {
         AUTO_CMD23_EN_W::new(self)
     }
@@ -70,11 +71,10 @@ impl crate::Readable for SMHC_EXT_CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [smhc_ext_cmd::W](W) writer structure"]
 impl crate::Writable for SMHC_EXT_CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets smhc_ext_cmd to value 0"]
 impl crate::Resettable for SMHC_EXT_CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

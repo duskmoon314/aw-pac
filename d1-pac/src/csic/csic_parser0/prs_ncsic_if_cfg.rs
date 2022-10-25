@@ -862,66 +862,79 @@ impl R {
 impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
+    #[must_use]
     pub fn csi_if(&mut self) -> CSI_IF_W<0> {
         CSI_IF_W::new(self)
     }
     #[doc = "Bits 6:7 - Input data sequence, only valid for YUV422 and YUV420 input format"]
     #[inline(always)]
+    #[must_use]
     pub fn input_seq(&mut self) -> INPUT_SEQ_W<6> {
         INPUT_SEQ_W::new(self)
     }
     #[doc = "Bits 8:10"]
     #[inline(always)]
+    #[must_use]
     pub fn if_data_width(&mut self) -> IF_DATA_WIDTH_W<8> {
         IF_DATA_WIDTH_W::new(self)
     }
     #[doc = "Bits 11:12 - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
     #[inline(always)]
+    #[must_use]
     pub fn seq_8plus2(&mut self) -> SEQ_8PLUS2_W<11> {
         SEQ_8PLUS2_W::new(self)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
+    #[must_use]
     pub fn ddr_sample_mode_en(&mut self) -> DDR_SAMPLE_MODE_EN_W<13> {
         DDR_SAMPLE_MODE_EN_W::new(self)
     }
     #[doc = "Bits 14:15 - only valid when CSI_IF is YUB and source type is interlaced"]
     #[inline(always)]
+    #[must_use]
     pub fn field_dt_mode(&mut self) -> FIELD_DT_MODE_W<14> {
         FIELD_DT_MODE_W::new(self)
     }
     #[doc = "Bit 16 - Data clock type"]
     #[inline(always)]
+    #[must_use]
     pub fn clk_pol(&mut self) -> CLK_POL_W<16> {
         CLK_POL_W::new(self)
     }
     #[doc = "Bit 17 - Href polarity\n\nThis register is not applied to CCIR656 interface"]
     #[inline(always)]
+    #[must_use]
     pub fn href_pol(&mut self) -> HREF_POL_W<17> {
         HREF_POL_W::new(self)
     }
     #[doc = "Bit 18 - Vref polarity\n\nThis register is not applied to CCIR656 interface"]
     #[inline(always)]
+    #[must_use]
     pub fn vref_pol(&mut self) -> VREF_POL_W<18> {
         VREF_POL_W::new(self)
     }
     #[doc = "Bit 19 - Field polarity (For YUV HV timing) / Field sequence (For BT656 timing)"]
     #[inline(always)]
+    #[must_use]
     pub fn field(&mut self) -> FIELD_W<19> {
         FIELD_W::new(self)
     }
     #[doc = "Bits 20:23 - Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3"]
     #[inline(always)]
+    #[must_use]
     pub fn source_type(&mut self) -> SOURCE_TYPE_W<20> {
         SOURCE_TYPE_W::new(self)
     }
     #[doc = "Bits 24:27 - Only for vsync detected field mode, the odd field permitted pclk\n\nshift = 4 * FIELD_DT_PCLK_SHIFT"]
     #[inline(always)]
+    #[must_use]
     pub fn field_dt_pclk_shift(&mut self) -> FIELD_DT_PCLK_SHIFT_W<24> {
         FIELD_DT_PCLK_SHIFT_W::new(self)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
+    #[must_use]
     pub fn yuv420_line_order(&mut self) -> YUV420_LINE_ORDER_W<31> {
         YUV420_LINE_ORDER_W::new(self)
     }
@@ -944,11 +957,10 @@ impl crate::Readable for PRS_NCSIC_IF_CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [prs_ncsic_if_cfg::W](W) writer structure"]
 impl crate::Writable for PRS_NCSIC_IF_CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets prs_ncsic_if_cfg to value 0x0105_0080"]
 impl crate::Resettable for PRS_NCSIC_IF_CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0105_0080
-    }
+    const RESET_VALUE: Self::Ux = 0x0105_0080;
 }

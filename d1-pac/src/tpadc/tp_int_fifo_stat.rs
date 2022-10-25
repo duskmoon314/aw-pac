@@ -311,21 +311,25 @@ impl R {
 impl W {
     #[doc = "Bit 0 - TP First Touch (Stylus DOWN) Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_down_pending(&mut self) -> TP_DOWN_PENDING_W<0> {
         TP_DOWN_PENDING_W::new(self)
     }
     #[doc = "Bit 1 - TP Last Touch (Stylus UP) Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn tp_up_pending(&mut self) -> TP_UP_PENDING_W<1> {
         TP_UP_PENDING_W::new(self)
     }
     #[doc = "Bit 16 - TP FIFO Data Available Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_data_pending(&mut self) -> FIFO_DATA_PENDING_W<16> {
         FIFO_DATA_PENDING_W::new(self)
     }
     #[doc = "Bit 17 - TP FIFO Overrun Pending"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_overrun_pending(&mut self) -> FIFO_OVERRUN_PENDING_W<17> {
         FIFO_OVERRUN_PENDING_W::new(self)
     }
@@ -348,11 +352,10 @@ impl crate::Readable for TP_INT_FIFO_STAT_SPEC {
 #[doc = "`write(|w| ..)` method takes [tp_int_fifo_stat::W](W) writer structure"]
 impl crate::Writable for TP_INT_FIFO_STAT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x0003_0003;
 }
 #[doc = "`reset()` method sets tp_int_fifo_stat to value 0"]
 impl crate::Resettable for TP_INT_FIFO_STAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -319,26 +319,31 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
+    #[must_use]
     pub fn led_trans_finish_int_en(&mut self) -> LED_TRANS_FINISH_INT_EN_W<0> {
         LED_TRANS_FINISH_INT_EN_W::new(self)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_cpureq_int_en(&mut self) -> FIFO_CPUREQ_INT_EN_W<1> {
         FIFO_CPUREQ_INT_EN_W::new(self)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
+    #[must_use]
     pub fn waitdata_timeout_int_en(&mut self) -> WAITDATA_TIMEOUT_INT_EN_W<3> {
         WAITDATA_TIMEOUT_INT_EN_W::new(self)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
+    #[must_use]
     pub fn fifo_overflow_int_en(&mut self) -> FIFO_OVERFLOW_INT_EN_W<4> {
         FIFO_OVERFLOW_INT_EN_W::new(self)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
+    #[must_use]
     pub fn global_int_en(&mut self) -> GLOBAL_INT_EN_W<5> {
         GLOBAL_INT_EN_W::new(self)
     }
@@ -361,11 +366,10 @@ impl crate::Readable for LEDC_INT_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ledc_int_ctrl::W](W) writer structure"]
 impl crate::Writable for LEDC_INT_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ledc_int_ctrl to value 0"]
 impl crate::Resettable for LEDC_INT_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

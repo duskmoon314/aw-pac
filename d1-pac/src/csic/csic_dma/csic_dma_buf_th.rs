@@ -59,11 +59,13 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - when content in Buffer Address FIFO less than the threshold, an interrupt is set, only used in Buffer Addr FIFO Mode."]
     #[inline(always)]
+    #[must_use]
     pub fn csic_dma_buf_addr_fifo_threshold(&mut self) -> CSIC_DMA_BUF_ADDR_FIFO_THRESHOLD_W<0> {
         CSIC_DMA_BUF_ADDR_FIFO_THRESHOLD_W::new(self)
     }
     #[doc = "Bits 16:21 - when stored frame counter value reaches the threshold , counter is cleared to 0 , only used in Buffer Addr FIFO Mode."]
     #[inline(always)]
+    #[must_use]
     pub fn csic_dma_stored_frm_threshold(&mut self) -> CSIC_DMA_STORED_FRM_THRESHOLD_W<16> {
         CSIC_DMA_STORED_FRM_THRESHOLD_W::new(self)
     }
@@ -86,11 +88,10 @@ impl crate::Readable for CSIC_DMA_BUF_TH_SPEC {
 #[doc = "`write(|w| ..)` method takes [csic_dma_buf_th::W](W) writer structure"]
 impl crate::Writable for CSIC_DMA_BUF_TH_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets csic_dma_buf_th to value 0x0020_0000"]
 impl crate::Resettable for CSIC_DMA_BUF_TH_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0020_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0020_0000;
 }

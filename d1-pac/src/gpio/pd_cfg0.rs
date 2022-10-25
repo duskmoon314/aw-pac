@@ -1127,41 +1127,49 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - PD0 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd0_select(&mut self) -> PD0_SELECT_W<0> {
         PD0_SELECT_W::new(self)
     }
     #[doc = "Bits 4:7 - PD1 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd1_select(&mut self) -> PD1_SELECT_W<4> {
         PD1_SELECT_W::new(self)
     }
     #[doc = "Bits 8:11 - PD2 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd2_select(&mut self) -> PD2_SELECT_W<8> {
         PD2_SELECT_W::new(self)
     }
     #[doc = "Bits 12:15 - PD3 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd3_select(&mut self) -> PD3_SELECT_W<12> {
         PD3_SELECT_W::new(self)
     }
     #[doc = "Bits 16:19 - PD4 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd4_select(&mut self) -> PD4_SELECT_W<16> {
         PD4_SELECT_W::new(self)
     }
     #[doc = "Bits 20:23 - PD5 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd5_select(&mut self) -> PD5_SELECT_W<20> {
         PD5_SELECT_W::new(self)
     }
     #[doc = "Bits 24:27 - PD6 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd6_select(&mut self) -> PD6_SELECT_W<24> {
         PD6_SELECT_W::new(self)
     }
     #[doc = "Bits 28:31 - PD7 Select"]
     #[inline(always)]
+    #[must_use]
     pub fn pd7_select(&mut self) -> PD7_SELECT_W<28> {
         PD7_SELECT_W::new(self)
     }
@@ -1184,11 +1192,10 @@ impl crate::Readable for PD_CFG0_SPEC {
 #[doc = "`write(|w| ..)` method takes [pd_cfg0::W](W) writer structure"]
 impl crate::Writable for PD_CFG0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets pd_cfg0 to value 0"]
 impl crate::Resettable for PD_CFG0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

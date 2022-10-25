@@ -96,6 +96,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Handshake Configuration"]
     #[inline(always)]
+    #[must_use]
     pub fn dma(&mut self) -> DMA_W<0> {
         DMA_W::new(self)
     }
@@ -118,11 +119,10 @@ impl crate::Readable for CIR_DMA_CTL_SPEC {
 #[doc = "`write(|w| ..)` method takes [cir_dma_ctl::W](W) writer structure"]
 impl crate::Writable for CIR_DMA_CTL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets cir_dma_ctl to value 0xa5"]
 impl crate::Resettable for CIR_DMA_CTL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xa5
-    }
+    const RESET_VALUE: Self::Ux = 0xa5;
 }

@@ -49,6 +49,7 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - The right peak filter release time parameter setting, which is determined by the equation that RT = exp (-2.2Ts/tr). The format is 3.24. (The default value is 100 ms)"]
     #[inline(always)]
+    #[must_use]
     pub fn adc_drc_rpfhrt(&mut self) -> ADC_DRC_RPFHRT_W<0> {
         ADC_DRC_RPFHRT_W::new(self)
     }
@@ -71,11 +72,10 @@ impl crate::Readable for AC_ADC_DRC_RPFHRT_SPEC {
 #[doc = "`write(|w| ..)` method takes [ac_adc_drc_rpfhrt::W](W) writer structure"]
 impl crate::Writable for AC_ADC_DRC_RPFHRT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ac_adc_drc_rpfhrt to value 0xff"]
 impl crate::Resettable for AC_ADC_DRC_RPFHRT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xff
-    }
+    const RESET_VALUE: Self::Ux = 0xff;
 }

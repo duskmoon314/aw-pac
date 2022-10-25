@@ -285,8 +285,5 @@ impl crate::Readable for TWI_STAT_SPEC {
 }
 #[doc = "`reset()` method sets twi_stat to value 0"]
 impl crate::Resettable for TWI_STAT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
