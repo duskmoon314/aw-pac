@@ -43,7 +43,7 @@ impl R {
     #[doc = "Bits 12:31 - Temperature measurement period\n\n4096*(n + 1)/CLK_IN\n\nThe default value is 10 ms."]
     #[inline(always)]
     pub fn thermal_per(&self) -> THERMAL_PER_R {
-        THERMAL_PER_R::new(((self.bits >> 12) & 0x000f_ffff) as u32)
+        THERMAL_PER_R::new((self.bits >> 12) & 0x000f_ffff)
     }
 }
 impl W {

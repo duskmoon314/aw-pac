@@ -50,7 +50,7 @@ impl R {
     #[doc = "Bits 4:31 - The HcControlHeadED register contains the physical address of the first Endpoint Descriptor of the Control list. HC traverse the Control list starting with the HcControlHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
     #[inline(always)]
     pub fn ehcd_31_4(&self) -> EHCD_31_4_R {
-        EHCD_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
+        EHCD_31_4_R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
 impl W {

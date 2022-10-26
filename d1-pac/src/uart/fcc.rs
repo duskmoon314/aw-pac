@@ -208,7 +208,7 @@ impl R {
     #[doc = "Bits 8:31"]
     #[inline(always)]
     pub fn fifo_depth(&self) -> FIFO_DEPTH_R {
-        FIFO_DEPTH_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
+        FIFO_DEPTH_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {

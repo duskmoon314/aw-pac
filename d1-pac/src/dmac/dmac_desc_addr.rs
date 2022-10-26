@@ -53,7 +53,7 @@ impl R {
     #[doc = "Bits 2:31 - Lower 30 bits of DMA channel descriptor address"]
     #[inline(always)]
     pub fn dma_desc_addr(&self) -> DMA_DESC_ADDR_R {
-        DMA_DESC_ADDR_R::new(((self.bits >> 2) & 0x3fff_ffff) as u32)
+        DMA_DESC_ADDR_R::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
 impl W {

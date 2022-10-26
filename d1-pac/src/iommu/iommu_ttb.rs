@@ -42,7 +42,7 @@ impl R {
     #[doc = "Bits 14:31 - Translation Table Base\n\nLevel1 page table starting address, aligned to 16 KB.\n\nWhen operating the register, IOMMU address mapping function must be closed, namely IOMMU_ENABLE is 0; Or Bypass function of all main equipment is set to 1, or no the state of transfer bus commands (such as setting)."]
     #[inline(always)]
     pub fn ttb(&self) -> TTB_R {
-        TTB_R::new(((self.bits >> 14) & 0x0003_ffff) as u32)
+        TTB_R::new((self.bits >> 14) & 0x0003_ffff)
     }
 }
 impl W {

@@ -50,7 +50,7 @@ impl R {
     #[doc = "Bits 4:31 - This is advanced to the next ED after the HC has served the present one. HC continues processing the list from where it left off in the last Frame. When it reaches the end of the Bulk list, HC checks the ControlListFilled of HcControl. If set, it copies the content of HcBulkHeadED to HcBulkCurrentED and clears the bit. If it is not set, it does nothing. HCD is only allowed to modify this register when the BulkListEnable of HcControl is cleared. When set, the HCD only reads the instantaneous value of this register. This is initially set to zero to indicate the end of the Bulk list."]
     #[inline(always)]
     pub fn bced_31_4(&self) -> BCED_31_4_R {
-        BCED_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
+        BCED_31_4_R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
 impl W {

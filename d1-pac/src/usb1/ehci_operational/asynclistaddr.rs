@@ -42,7 +42,7 @@ impl R {
     #[doc = "Bits 5:31 - Link Pointer (LP)\n\nThis field contains the address of the next asynchronous queue head to be executed.\n\nThese bits correspond to memory address signals \\[31:5\\], respectively"]
     #[inline(always)]
     pub fn lp(&self) -> LP_R {
-        LP_R::new(((self.bits >> 5) & 0x07ff_ffff) as u32)
+        LP_R::new((self.bits >> 5) & 0x07ff_ffff)
     }
 }
 impl W {

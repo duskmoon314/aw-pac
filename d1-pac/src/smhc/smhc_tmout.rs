@@ -51,7 +51,7 @@ impl R {
     #[doc = "Bits 8:31 - Data Iimeout Limit"]
     #[inline(always)]
     pub fn dto_lmt(&self) -> DTO_LMT_R {
-        DTO_LMT_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
+        DTO_LMT_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {

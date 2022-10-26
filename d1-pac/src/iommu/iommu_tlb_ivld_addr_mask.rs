@@ -43,7 +43,7 @@ impl R {
     #[doc = "Bits 12:31 - TLB invalid address mask register, 4 KB aligned"]
     #[inline(always)]
     pub fn tlb_ivld_addr_mask(&self) -> TLB_IVLD_ADDR_MASK_R {
-        TLB_IVLD_ADDR_MASK_R::new(((self.bits >> 12) & 0x000f_ffff) as u32)
+        TLB_IVLD_ADDR_MASK_R::new((self.bits >> 12) & 0x000f_ffff)
     }
 }
 impl W {

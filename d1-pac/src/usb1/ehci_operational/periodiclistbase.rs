@@ -43,7 +43,7 @@ impl R {
     #[doc = "Bits 12:31 - Base Address\n\nThese bits correspond to memory address signals \\[31:12\\], respectively.\n\nThis register contains the beginning address of the Periodic Frame List in the system memory.\n\nSystem software loads this register prior to starting the schedule execution by the Host Controller. The memory structure referenced by this physical memory pointer is assumed to be 4 Kbyte aligned. The contents of this register are combined with the Frame Index Register (FRINDEX) to enable the Host Controller to step through the Periodic Frame List in sequence."]
     #[inline(always)]
     pub fn base_address(&self) -> BASE_ADDRESS_R {
-        BASE_ADDRESS_R::new(((self.bits >> 12) & 0x000f_ffff) as u32)
+        BASE_ADDRESS_R::new((self.bits >> 12) & 0x000f_ffff)
     }
 }
 impl W {

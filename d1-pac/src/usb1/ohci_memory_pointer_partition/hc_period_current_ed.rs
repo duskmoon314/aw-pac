@@ -50,7 +50,7 @@ impl R {
     #[doc = "Bits 4:31 - This is used by HC to point to the head of one of the Periodec list which will be processed in the current Frame. The content of this register is updated by HC after a periodic ED has been processed. HCD may read the content in determining which ED is currently being processed at the time of reading."]
     #[inline(always)]
     pub fn pced_31_4(&self) -> PCED_31_4_R {
-        PCED_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
+        PCED_31_4_R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
 impl W {

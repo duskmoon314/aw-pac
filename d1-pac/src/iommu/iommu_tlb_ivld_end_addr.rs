@@ -43,7 +43,7 @@ impl R {
     #[doc = "Bits 12:31 - TLB invalid end address, 4 KB aligned."]
     #[inline(always)]
     pub fn tlb_ivld_end_addr(&self) -> TLB_IVLD_END_ADDR_R {
-        TLB_IVLD_END_ADDR_R::new(((self.bits >> 12) & 0x000f_ffff) as u32)
+        TLB_IVLD_END_ADDR_R::new((self.bits >> 12) & 0x000f_ffff)
     }
 }
 impl W {

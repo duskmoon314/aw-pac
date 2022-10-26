@@ -50,7 +50,7 @@ impl R {
     #[doc = "Bits 4:31 - The pointer is advanced to the next ED after serving the present one. HC will continue processing the list from where it left off in the last Frame. When it reaches the end of the Control list, HC checks the ControlListFilled of in HcCommandStatus. If set, it copies the content of HcControlHeadED to HcControlCurrentED and clears the bit. If not set, it does nothing.\n\nHCD is allowed to modify this register only when the ControlListEnable of HcControl is cleared. When set, HCD only reads the instantaneous value of this register. Initially, this is set to zero to indicate the end of the Control list."]
     #[inline(always)]
     pub fn cced_31_4(&self) -> CCED_31_4_R {
-        CCED_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
+        CCED_31_4_R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
 impl W {

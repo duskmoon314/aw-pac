@@ -49,7 +49,7 @@ impl R {
     #[doc = "Bits 8:31 - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
     #[inline(always)]
     pub fn hcca_31_8(&self) -> HCCA_31_8_R {
-        HCCA_31_8_R::new(((self.bits >> 8) & 0x00ff_ffff) as u32)
+        HCCA_31_8_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {

@@ -50,7 +50,7 @@ impl R {
     #[doc = "Bits 4:31 - When a TD is completed, HC writes the content of HcDoneHead to the NextTD field of the TD. HC then overwrites the content of HcDoneHead with the address of this TD. This is set to zero whenever HC writes the content of this register to HCCA. It also sets the WritebackDoneHead of HcInterruptStatus."]
     #[inline(always)]
     pub fn dh_31_4(&self) -> DH_31_4_R {
-        DH_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
+        DH_31_4_R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
 impl W {

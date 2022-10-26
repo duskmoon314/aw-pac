@@ -50,7 +50,7 @@ impl R {
     #[doc = "Bits 4:31 - The HcBulkHeadED register contains the physical address of the first Endpoint Descriptor of the Bulk list. HC traverses the Bulk list starting with the HcBulkHeadED pointer. The content is loaded from HCCA during the initialization of HC."]
     #[inline(always)]
     pub fn bhed_31_4(&self) -> BHED_31_4_R {
-        BHED_31_4_R::new(((self.bits >> 4) & 0x0fff_ffff) as u32)
+        BHED_31_4_R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
 impl W {
