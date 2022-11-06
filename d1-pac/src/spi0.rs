@@ -47,33 +47,33 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[7:0\\]: Transmit Data in byte method"]
     #[inline(always)]
-    pub fn spi_txd_8(&self) -> &SPI_TXD_8 {
-        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const SPI_TXD_8) }
+    pub const fn spi_txd_8(&self) -> &SPI_TXD_8 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(512usize).cast() }
     }
     #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[15:0\\]: Transmit Data in half-word method"]
     #[inline(always)]
-    pub fn spi_txd_16(&self) -> &SPI_TXD_16 {
-        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const SPI_TXD_16) }
+    pub const fn spi_txd_16(&self) -> &SPI_TXD_16 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(512usize).cast() }
     }
     #[doc = "0x200 - SPI TX Data Register\n\nTDATA \\[31:0\\]: Transmit Data in word method"]
     #[inline(always)]
-    pub fn spi_txd(&self) -> &SPI_TXD {
-        unsafe { &*(((self as *const Self) as *const u8).add(512usize) as *const SPI_TXD) }
+    pub const fn spi_txd(&self) -> &SPI_TXD {
+        unsafe { &*(self as *const Self).cast::<u8>().add(512usize).cast() }
     }
     #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[7:0\\]: Receive Data and access in byte method"]
     #[inline(always)]
-    pub fn spi_rxd_8(&self) -> &SPI_RXD_8 {
-        unsafe { &*(((self as *const Self) as *const u8).add(768usize) as *const SPI_RXD_8) }
+    pub const fn spi_rxd_8(&self) -> &SPI_RXD_8 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(768usize).cast() }
     }
     #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[15:0\\]: Receive Data and access in half-word method"]
     #[inline(always)]
-    pub fn spi_rxd_16(&self) -> &SPI_RXD_16 {
-        unsafe { &*(((self as *const Self) as *const u8).add(768usize) as *const SPI_RXD_16) }
+    pub const fn spi_rxd_16(&self) -> &SPI_RXD_16 {
+        unsafe { &*(self as *const Self).cast::<u8>().add(768usize).cast() }
     }
     #[doc = "0x300 - SPI RX Data Register\n\nRDATA \\[31:0\\]: Receive Data and access in word method"]
     #[inline(always)]
-    pub fn spi_rxd(&self) -> &SPI_RXD {
-        unsafe { &*(((self as *const Self) as *const u8).add(768usize) as *const SPI_RXD) }
+    pub const fn spi_rxd(&self) -> &SPI_RXD {
+        unsafe { &*(self as *const Self).cast::<u8>().add(768usize).cast() }
     }
 }
 #[doc = "spi_gcr (rw) register accessor: an alias for `Reg<SPI_GCR_SPEC>`"]

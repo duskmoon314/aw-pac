@@ -70,38 +70,38 @@ pub struct RegisterBlock {
 impl RegisterBlock {
     #[doc = "0x00 - UART Divisor Latch Low Register"]
     #[inline(always)]
-    pub fn dll(&self) -> &DLL {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const DLL) }
+    pub const fn dll(&self) -> &DLL {
+        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
     }
     #[doc = "0x00 - UART Transmit Holding Register"]
     #[inline(always)]
-    pub fn thr(&self) -> &THR {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const THR) }
+    pub const fn thr(&self) -> &THR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
     }
     #[doc = "0x00 - UART Receive Buffer Register"]
     #[inline(always)]
-    pub fn rbr(&self) -> &RBR {
-        unsafe { &*(((self as *const Self) as *const u8).add(0usize) as *const RBR) }
+    pub const fn rbr(&self) -> &RBR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(0usize).cast() }
     }
     #[doc = "0x04 - UART Interrupt Enable Register"]
     #[inline(always)]
-    pub fn ier(&self) -> &IER {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const IER) }
+    pub const fn ier(&self) -> &IER {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x04 - UART Divisor Latch High Register"]
     #[inline(always)]
-    pub fn dlh(&self) -> &DLH {
-        unsafe { &*(((self as *const Self) as *const u8).add(4usize) as *const DLH) }
+    pub const fn dlh(&self) -> &DLH {
+        unsafe { &*(self as *const Self).cast::<u8>().add(4usize).cast() }
     }
     #[doc = "0x08 - UART FIFO Control Register"]
     #[inline(always)]
-    pub fn fcr(&self) -> &FCR {
-        unsafe { &*(((self as *const Self) as *const u8).add(8usize) as *const FCR) }
+    pub const fn fcr(&self) -> &FCR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
     }
     #[doc = "0x08 - UART Interrupt Identity Register"]
     #[inline(always)]
-    pub fn iir(&self) -> &IIR {
-        unsafe { &*(((self as *const Self) as *const u8).add(8usize) as *const IIR) }
+    pub const fn iir(&self) -> &IIR {
+        unsafe { &*(self as *const Self).cast::<u8>().add(8usize).cast() }
     }
 }
 #[doc = "rbr (r) register accessor: an alias for `Reg<RBR_SPEC>`"]

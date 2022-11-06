@@ -22,13 +22,13 @@ pub struct EHCI_OPERATIONAL {
 impl EHCI_OPERATIONAL {
     #[doc = "0x14 - EHCI Periodic Frame List Base Address Register"]
     #[inline(always)]
-    pub fn periodiclistbase(&self) -> &PERIODICLISTBASE {
-        unsafe { &*(((self as *const Self) as *const u8).add(20usize) as *const PERIODICLISTBASE) }
+    pub const fn periodiclistbase(&self) -> &PERIODICLISTBASE {
+        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
     }
     #[doc = "0x14 - EHCI USB Status Register"]
     #[inline(always)]
-    pub fn usbsts(&self) -> &USBSTS {
-        unsafe { &*(((self as *const Self) as *const u8).add(20usize) as *const USBSTS) }
+    pub const fn usbsts(&self) -> &USBSTS {
+        unsafe { &*(self as *const Self).cast::<u8>().add(20usize).cast() }
     }
 }
 #[doc = "usbcmd (rw) register accessor: an alias for `Reg<USBCMD_SPEC>`"]
