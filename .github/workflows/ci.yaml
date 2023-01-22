@@ -29,11 +29,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: ${{ matrix.rust }}
-          override: true
+      - name: Setup Rust toolchain
+        run: rustup default ${{ matrix.rust }}
       - name: Install Rust targets
         run: rustup target add --toolchain=${{ matrix.rust }} ${{ matrix.target }}
       - name: Build crate
@@ -62,11 +59,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
       - name: Install Rust targets
         run: rustup target add ${{ matrix.target }}
       - name: Build crate
