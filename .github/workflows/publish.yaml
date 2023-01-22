@@ -14,11 +14,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
       - name: Install Rust targets
         run: rustup target add riscv64imac-unknown-none-elf
       - uses: katyo/publish-crates@v1
@@ -32,11 +27,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
       - name: Install Rust targets
         run: rustup target add armv7a-none-eabi
       - uses: katyo/publish-crates@v1
@@ -50,11 +40,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
       - name: Install Rust targets
         run: rustup target add thumbv8m.main-none-eabi
       - uses: katyo/publish-crates@v1
@@ -68,11 +53,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions-rs/toolchain@v1
-        with:
-          profile: minimal
-          toolchain: stable
-          override: true
       - name: Install Rust targets
         run: rustup target add armv7a-none-eabi
       - uses: katyo/publish-crates@v1
