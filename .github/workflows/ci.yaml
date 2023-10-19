@@ -28,7 +28,7 @@ jobs:
             target: armv7a-none-eabi
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Rust toolchain
         run: rustup default ${{ matrix.rust }}
       - name: Install Rust targets
@@ -58,7 +58,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Rust targets
         run: rustup target add ${{ matrix.target }}
       - name: Build crate
