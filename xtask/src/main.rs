@@ -112,8 +112,7 @@ fn generate_code(meta: &PacMeta) -> Result<()> {
 
     let config = Config {
         target: Target::parse(&meta.target)?,
-        output_dir: out_path.clone(),
-        const_generic: true,
+        output_dir: Some(out_path.clone()),
 
         ..Default::default()
     };
