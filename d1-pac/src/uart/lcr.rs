@@ -1,41 +1,9 @@
 #[doc = "Register `lcr` reader"]
-pub struct R(crate::R<LCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LCR_SPEC>;
 #[doc = "Register `lcr` writer"]
-pub struct W(crate::W<LCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LCR_SPEC>;
 #[doc = "Field `dls` reader - Data Length Select"]
-pub type DLS_R = crate::FieldReader<u8, DLS_A>;
+pub type DLS_R = crate::FieldReader<DLS_A>;
 #[doc = "Data Length Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<DLS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DLS_A {
+    type Ux = u8;
+}
 impl DLS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DLS_A {
+    pub const fn variant(&self) -> DLS_A {
         match self.bits {
             0 => DLS_A::FIVE,
             1 => DLS_A::SIX,
@@ -67,48 +38,52 @@ impl DLS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `FIVE`"]
+    #[doc = "5 bits"]
     #[inline(always)]
     pub fn is_five(&self) -> bool {
         *self == DLS_A::FIVE
     }
-    #[doc = "Checks if the value of the field is `SIX`"]
+    #[doc = "6 bits"]
     #[inline(always)]
     pub fn is_six(&self) -> bool {
         *self == DLS_A::SIX
     }
-    #[doc = "Checks if the value of the field is `SEVEN`"]
+    #[doc = "7 bits"]
     #[inline(always)]
     pub fn is_seven(&self) -> bool {
         *self == DLS_A::SEVEN
     }
-    #[doc = "Checks if the value of the field is `EIGHT`"]
+    #[doc = "8 bits"]
     #[inline(always)]
     pub fn is_eight(&self) -> bool {
         *self == DLS_A::EIGHT
     }
 }
 #[doc = "Field `dls` writer - Data Length Select"]
-pub type DLS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, LCR_SPEC, u8, DLS_A, 2, O>;
-impl<'a, const O: u8> DLS_W<'a, O> {
+pub type DLS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DLS_A>;
+impl<'a, REG> DLS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "5 bits"]
     #[inline(always)]
-    pub fn five(self) -> &'a mut W {
+    pub fn five(self) -> &'a mut crate::W<REG> {
         self.variant(DLS_A::FIVE)
     }
     #[doc = "6 bits"]
     #[inline(always)]
-    pub fn six(self) -> &'a mut W {
+    pub fn six(self) -> &'a mut crate::W<REG> {
         self.variant(DLS_A::SIX)
     }
     #[doc = "7 bits"]
     #[inline(always)]
-    pub fn seven(self) -> &'a mut W {
+    pub fn seven(self) -> &'a mut crate::W<REG> {
         self.variant(DLS_A::SEVEN)
     }
     #[doc = "8 bits"]
     #[inline(always)]
-    pub fn eight(self) -> &'a mut W {
+    pub fn eight(self) -> &'a mut crate::W<REG> {
         self.variant(DLS_A::EIGHT)
     }
 }
@@ -131,34 +106,37 @@ impl From<STOP_A> for bool {
 impl STOP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOP_A {
+    pub const fn variant(&self) -> STOP_A {
         match self.bits {
             false => STOP_A::ONE,
             true => STOP_A::TWO,
         }
     }
-    #[doc = "Checks if the value of the field is `ONE`"]
+    #[doc = "1 stop bit"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
         *self == STOP_A::ONE
     }
-    #[doc = "Checks if the value of the field is `TWO`"]
+    #[doc = "1.5 stop bits when DLS(LCR\\[1:0\\]) is zero, else 2 stop bits"]
     #[inline(always)]
     pub fn is_two(&self) -> bool {
         *self == STOP_A::TWO
     }
 }
 #[doc = "Field `stop` writer - Number of stop bits"]
-pub type STOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, STOP_A, O>;
-impl<'a, const O: u8> STOP_W<'a, O> {
+pub type STOP_W<'a, REG> = crate::BitWriter<'a, REG, STOP_A>;
+impl<'a, REG> STOP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "1 stop bit"]
     #[inline(always)]
-    pub fn one(self) -> &'a mut W {
+    pub fn one(self) -> &'a mut crate::W<REG> {
         self.variant(STOP_A::ONE)
     }
     #[doc = "1.5 stop bits when DLS(LCR\\[1:0\\]) is zero, else 2 stop bits"]
     #[inline(always)]
-    pub fn two(self) -> &'a mut W {
+    pub fn two(self) -> &'a mut crate::W<REG> {
         self.variant(STOP_A::TWO)
     }
 }
@@ -181,39 +159,42 @@ impl From<PEN_A> for bool {
 impl PEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PEN_A {
+    pub const fn variant(&self) -> PEN_A {
         match self.bits {
             false => PEN_A::DISABLED,
             true => PEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == PEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == PEN_A::ENABLED
     }
 }
 #[doc = "Field `pen` writer - Parity Enable"]
-pub type PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, PEN_A, O>;
-impl<'a, const O: u8> PEN_W<'a, O> {
+pub type PEN_W<'a, REG> = crate::BitWriter<'a, REG, PEN_A>;
+impl<'a, REG> PEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(PEN_A::DISABLED)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(PEN_A::ENABLED)
     }
 }
 #[doc = "Field `eps` reader - Even Parity Select"]
-pub type EPS_R = crate::FieldReader<u8, EPS_A>;
+pub type EPS_R = crate::FieldReader<EPS_A>;
 #[doc = "Even Parity Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -233,10 +214,13 @@ impl From<EPS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EPS_A {
+    type Ux = u8;
+}
 impl EPS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPS_A {
+    pub const fn variant(&self) -> EPS_A {
         match self.bits {
             0 => EPS_A::ODD,
             1 => EPS_A::EVEN,
@@ -245,55 +229,59 @@ impl EPS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `ODD`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_odd(&self) -> bool {
         *self == EPS_A::ODD
     }
-    #[doc = "Checks if the value of the field is `EVEN`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_even(&self) -> bool {
         *self == EPS_A::EVEN
     }
-    #[doc = "Checks if the value of the field is `RS485_DATA`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_rs485_data(&self) -> bool {
         *self == EPS_A::RS485_DATA
     }
-    #[doc = "Checks if the value of the field is `RS485_ADDR`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_rs485_addr(&self) -> bool {
         *self == EPS_A::RS485_ADDR
     }
 }
 #[doc = "Field `eps` writer - Even Parity Select"]
-pub type EPS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, LCR_SPEC, u8, EPS_A, 2, O>;
-impl<'a, const O: u8> EPS_W<'a, O> {
+pub type EPS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, EPS_A>;
+impl<'a, REG> EPS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn odd(self) -> &'a mut W {
+    pub fn odd(self) -> &'a mut crate::W<REG> {
         self.variant(EPS_A::ODD)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn even(self) -> &'a mut W {
+    pub fn even(self) -> &'a mut crate::W<REG> {
         self.variant(EPS_A::EVEN)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn rs485_data(self) -> &'a mut W {
+    pub fn rs485_data(self) -> &'a mut crate::W<REG> {
         self.variant(EPS_A::RS485_DATA)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn rs485_addr(self) -> &'a mut W {
+    pub fn rs485_addr(self) -> &'a mut crate::W<REG> {
         self.variant(EPS_A::RS485_ADDR)
     }
 }
 #[doc = "Field `bc` reader - Break Control Bit"]
-pub type BC_R = crate::BitReader<bool>;
+pub type BC_R = crate::BitReader;
 #[doc = "Field `bc` writer - Break Control Bit"]
-pub type BC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, bool, O>;
+pub type BC_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `dlab` reader - Divisor Latch Access Bit"]
 pub type DLAB_R = crate::BitReader<DLAB_A>;
 #[doc = "Divisor Latch Access Bit\n\nValue on reset: 0"]
@@ -313,34 +301,37 @@ impl From<DLAB_A> for bool {
 impl DLAB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DLAB_A {
+    pub const fn variant(&self) -> DLAB_A {
         match self.bits {
             false => DLAB_A::RX_BUFFER,
             true => DLAB_A::DIVISOR_LATCH,
         }
     }
-    #[doc = "Checks if the value of the field is `RX_BUFFER`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_rx_buffer(&self) -> bool {
         *self == DLAB_A::RX_BUFFER
     }
-    #[doc = "Checks if the value of the field is `DIVISOR_LATCH`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_divisor_latch(&self) -> bool {
         *self == DLAB_A::DIVISOR_LATCH
     }
 }
 #[doc = "Field `dlab` writer - Divisor Latch Access Bit"]
-pub type DLAB_W<'a, const O: u8> = crate::BitWriter<'a, u32, LCR_SPEC, DLAB_A, O>;
-impl<'a, const O: u8> DLAB_W<'a, O> {
+pub type DLAB_W<'a, REG> = crate::BitWriter<'a, REG, DLAB_A>;
+impl<'a, REG> DLAB_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn rx_buffer(self) -> &'a mut W {
+    pub fn rx_buffer(self) -> &'a mut crate::W<REG> {
         self.variant(DLAB_A::RX_BUFFER)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn divisor_latch(self) -> &'a mut W {
+    pub fn divisor_latch(self) -> &'a mut crate::W<REG> {
         self.variant(DLAB_A::DIVISOR_LATCH)
     }
 }
@@ -380,58 +371,59 @@ impl W {
     #[doc = "Bits 0:1 - Data Length Select"]
     #[inline(always)]
     #[must_use]
-    pub fn dls(&mut self) -> DLS_W<0> {
-        DLS_W::new(self)
+    pub fn dls(&mut self) -> DLS_W<LCR_SPEC> {
+        DLS_W::new(self, 0)
     }
     #[doc = "Bit 2 - Number of stop bits"]
     #[inline(always)]
     #[must_use]
-    pub fn stop(&mut self) -> STOP_W<2> {
-        STOP_W::new(self)
+    pub fn stop(&mut self) -> STOP_W<LCR_SPEC> {
+        STOP_W::new(self, 2)
     }
     #[doc = "Bit 3 - Parity Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pen(&mut self) -> PEN_W<3> {
-        PEN_W::new(self)
+    pub fn pen(&mut self) -> PEN_W<LCR_SPEC> {
+        PEN_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Even Parity Select"]
     #[inline(always)]
     #[must_use]
-    pub fn eps(&mut self) -> EPS_W<4> {
-        EPS_W::new(self)
+    pub fn eps(&mut self) -> EPS_W<LCR_SPEC> {
+        EPS_W::new(self, 4)
     }
     #[doc = "Bit 6 - Break Control Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn bc(&mut self) -> BC_W<6> {
-        BC_W::new(self)
+    pub fn bc(&mut self) -> BC_W<LCR_SPEC> {
+        BC_W::new(self, 6)
     }
     #[doc = "Bit 7 - Divisor Latch Access Bit"]
     #[inline(always)]
     #[must_use]
-    pub fn dlab(&mut self) -> DLAB_W<7> {
-        DLAB_W::new(self)
+    pub fn dlab(&mut self) -> DLAB_W<LCR_SPEC> {
+        DLAB_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UART Line Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcr](index.html) module"]
+#[doc = "UART Line Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LCR_SPEC;
 impl crate::RegisterSpec for LCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lcr::R](R) reader structure"]
-impl crate::Readable for LCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`lcr::R`](R) reader structure"]
+impl crate::Readable for LCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`lcr::W`](W) writer structure"]
 impl crate::Writable for LCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

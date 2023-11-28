@@ -1,18 +1,5 @@
 #[doc = "Register `ver` reader"]
-pub struct R(crate::R<VER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<VER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<VER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<VER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<VER_SPEC>;
 #[doc = "Field `fel_sel_pad_sta` reader - Fel Select Pin Status"]
 pub type FEL_SEL_PAD_STA_R = crate::BitReader<FEL_SEL_PAD_STA_A>;
 #[doc = "Fel Select Pin Status\n\nValue on reset: 0"]
@@ -32,25 +19,25 @@ impl From<FEL_SEL_PAD_STA_A> for bool {
 impl FEL_SEL_PAD_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FEL_SEL_PAD_STA_A {
+    pub const fn variant(&self) -> FEL_SEL_PAD_STA_A {
         match self.bits {
             false => FEL_SEL_PAD_STA_A::RUN_FEL,
             true => FEL_SEL_PAD_STA_A::TRY_MEDIA_BOOT,
         }
     }
-    #[doc = "Checks if the value of the field is `RUN_FEL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_run_fel(&self) -> bool {
         *self == FEL_SEL_PAD_STA_A::RUN_FEL
     }
-    #[doc = "Checks if the value of the field is `TRY_MEDIA_BOOT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_try_media_boot(&self) -> bool {
         *self == FEL_SEL_PAD_STA_A::TRY_MEDIA_BOOT
     }
 }
 #[doc = "Field `boot_sel_pad_sta` reader - "]
-pub type BOOT_SEL_PAD_STA_R = crate::FieldReader<u8, u8>;
+pub type BOOT_SEL_PAD_STA_R = crate::FieldReader;
 impl R {
     #[doc = "Bit 8 - Fel Select Pin Status"]
     #[inline(always)]
@@ -63,15 +50,13 @@ impl R {
         BOOT_SEL_PAD_STA_R::new(((self.bits >> 11) & 3) as u8)
     }
 }
-#[doc = "Version Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ver](index.html) module"]
+#[doc = "Version Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ver::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct VER_SPEC;
 impl crate::RegisterSpec for VER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ver::R](R) reader structure"]
-impl crate::Readable for VER_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`ver::R`](R) reader structure"]
+impl crate::Readable for VER_SPEC {}
 #[doc = "`reset()` method sets ver to value 0"]
 impl crate::Resettable for VER_SPEC {
     const RESET_VALUE: Self::Ux = 0;

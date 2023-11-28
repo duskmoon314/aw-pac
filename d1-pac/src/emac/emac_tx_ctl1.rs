@@ -1,39 +1,7 @@
 #[doc = "Register `emac_tx_ctl1` reader"]
-pub struct R(crate::R<EMAC_TX_CTL1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EMAC_TX_CTL1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EMAC_TX_CTL1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EMAC_TX_CTL1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EMAC_TX_CTL1_SPEC>;
 #[doc = "Register `emac_tx_ctl1` writer"]
-pub struct W(crate::W<EMAC_TX_CTL1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EMAC_TX_CTL1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EMAC_TX_CTL1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EMAC_TX_CTL1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EMAC_TX_CTL1_SPEC>;
 #[doc = "Field `flush_tx_fifo` reader - Flush the data in the TX FIFO"]
 pub type FLUSH_TX_FIFO_R = crate::BitReader<FLUSH_TX_FIFO_A>;
 #[doc = "Flush the data in the TX FIFO\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<FLUSH_TX_FIFO_A> for bool {
 impl FLUSH_TX_FIFO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLUSH_TX_FIFO_A {
+    pub const fn variant(&self) -> FLUSH_TX_FIFO_A {
         match self.bits {
             false => FLUSH_TX_FIFO_A::ENABLE,
             true => FLUSH_TX_FIFO_A::DISABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == FLUSH_TX_FIFO_A::ENABLE
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == FLUSH_TX_FIFO_A::DISABLE
     }
 }
 #[doc = "Field `flush_tx_fifo` writer - Flush the data in the TX FIFO"]
-pub type FLUSH_TX_FIFO_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, FLUSH_TX_FIFO_A, O>;
-impl<'a, const O: u8> FLUSH_TX_FIFO_W<'a, O> {
+pub type FLUSH_TX_FIFO_W<'a, REG> = crate::BitWriter<'a, REG, FLUSH_TX_FIFO_A>;
+impl<'a, REG> FLUSH_TX_FIFO_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(FLUSH_TX_FIFO_A::ENABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(FLUSH_TX_FIFO_A::DISABLE)
     }
 }
@@ -104,39 +74,42 @@ impl From<TX_MD_A> for bool {
 impl TX_MD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_MD_A {
+    pub const fn variant(&self) -> TX_MD_A {
         match self.bits {
             false => TX_MD_A::GREATER_THAN_TH,
             true => TX_MD_A::LOCATE_FULL_FRAME,
         }
     }
-    #[doc = "Checks if the value of the field is `GREATER_THAN_TH`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_greater_than_th(&self) -> bool {
         *self == TX_MD_A::GREATER_THAN_TH
     }
-    #[doc = "Checks if the value of the field is `LOCATE_FULL_FRAME`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_locate_full_frame(&self) -> bool {
         *self == TX_MD_A::LOCATE_FULL_FRAME
     }
 }
 #[doc = "Field `tx_md` writer - Transmission Mode"]
-pub type TX_MD_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_MD_A, O>;
-impl<'a, const O: u8> TX_MD_W<'a, O> {
+pub type TX_MD_W<'a, REG> = crate::BitWriter<'a, REG, TX_MD_A>;
+impl<'a, REG> TX_MD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn greater_than_th(self) -> &'a mut W {
+    pub fn greater_than_th(self) -> &'a mut crate::W<REG> {
         self.variant(TX_MD_A::GREATER_THAN_TH)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn locate_full_frame(self) -> &'a mut W {
+    pub fn locate_full_frame(self) -> &'a mut crate::W<REG> {
         self.variant(TX_MD_A::LOCATE_FULL_FRAME)
     }
 }
 #[doc = "Field `tx_th` reader - Threshold value of TX DMA FIFO"]
-pub type TX_TH_R = crate::FieldReader<u8, TX_TH_A>;
+pub type TX_TH_R = crate::FieldReader<TX_TH_A>;
 #[doc = "Threshold value of TX DMA FIFO\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -156,10 +129,13 @@ impl From<TX_TH_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TX_TH_A {
+    type Ux = u8;
+}
 impl TX_TH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TX_TH_A> {
+    pub const fn variant(&self) -> Option<TX_TH_A> {
         match self.bits {
             0 => Some(TX_TH_A::T64),
             1 => Some(TX_TH_A::T128),
@@ -168,49 +144,52 @@ impl TX_TH_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `T64`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_t64(&self) -> bool {
         *self == TX_TH_A::T64
     }
-    #[doc = "Checks if the value of the field is `T128`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_t128(&self) -> bool {
         *self == TX_TH_A::T128
     }
-    #[doc = "Checks if the value of the field is `T192`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_t192(&self) -> bool {
         *self == TX_TH_A::T192
     }
-    #[doc = "Checks if the value of the field is `T256`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_t256(&self) -> bool {
         *self == TX_TH_A::T256
     }
 }
 #[doc = "Field `tx_th` writer - Threshold value of TX DMA FIFO"]
-pub type TX_TH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EMAC_TX_CTL1_SPEC, u8, TX_TH_A, 3, O>;
-impl<'a, const O: u8> TX_TH_W<'a, O> {
+pub type TX_TH_W<'a, REG> = crate::FieldWriter<'a, REG, 3, TX_TH_A>;
+impl<'a, REG> TX_TH_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn t64(self) -> &'a mut W {
+    pub fn t64(self) -> &'a mut crate::W<REG> {
         self.variant(TX_TH_A::T64)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn t128(self) -> &'a mut W {
+    pub fn t128(self) -> &'a mut crate::W<REG> {
         self.variant(TX_TH_A::T128)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn t192(self) -> &'a mut W {
+    pub fn t192(self) -> &'a mut crate::W<REG> {
         self.variant(TX_TH_A::T192)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn t256(self) -> &'a mut W {
+    pub fn t256(self) -> &'a mut crate::W<REG> {
         self.variant(TX_TH_A::T256)
     }
 }
@@ -233,35 +212,37 @@ impl From<TX_DMA_EN_A> for bool {
 impl TX_DMA_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_DMA_EN_A {
+    pub const fn variant(&self) -> TX_DMA_EN_A {
         match self.bits {
             false => TX_DMA_EN_A::STOP,
             true => TX_DMA_EN_A::START,
         }
     }
-    #[doc = "Checks if the value of the field is `STOP`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
         *self == TX_DMA_EN_A::STOP
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == TX_DMA_EN_A::START
     }
 }
 #[doc = "Field `tx_dma_en` writer - Transmit DMA Enable"]
-pub type TX_DMA_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_EN_A, O>;
-impl<'a, const O: u8> TX_DMA_EN_W<'a, O> {
+pub type TX_DMA_EN_W<'a, REG> = crate::BitWriter<'a, REG, TX_DMA_EN_A>;
+impl<'a, REG> TX_DMA_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn stop(self) -> &'a mut W {
+    pub fn stop(self) -> &'a mut crate::W<REG> {
         self.variant(TX_DMA_EN_A::STOP)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
+    pub fn start(self) -> &'a mut crate::W<REG> {
         self.variant(TX_DMA_EN_A::START)
     }
 }
@@ -284,35 +265,37 @@ impl From<TX_DMA_START_A> for bool {
 impl TX_DMA_START_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_DMA_START_A {
+    pub const fn variant(&self) -> TX_DMA_START_A {
         match self.bits {
             false => TX_DMA_START_A::NO_VALID,
             true => TX_DMA_START_A::START,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_VALID`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_no_valid(&self) -> bool {
         *self == TX_DMA_START_A::NO_VALID
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == TX_DMA_START_A::START
     }
 }
 #[doc = "Field `tx_dma_start` writer - Transmit DMA FSM Start"]
-pub type TX_DMA_START_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_TX_CTL1_SPEC, TX_DMA_START_A, O>;
-impl<'a, const O: u8> TX_DMA_START_W<'a, O> {
+pub type TX_DMA_START_W<'a, REG> = crate::BitWriter<'a, REG, TX_DMA_START_A>;
+impl<'a, REG> TX_DMA_START_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn no_valid(self) -> &'a mut W {
+    pub fn no_valid(self) -> &'a mut crate::W<REG> {
         self.variant(TX_DMA_START_A::NO_VALID)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
+    pub fn start(self) -> &'a mut crate::W<REG> {
         self.variant(TX_DMA_START_A::START)
     }
 }
@@ -347,52 +330,53 @@ impl W {
     #[doc = "Bit 0 - Flush the data in the TX FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn flush_tx_fifo(&mut self) -> FLUSH_TX_FIFO_W<0> {
-        FLUSH_TX_FIFO_W::new(self)
+    pub fn flush_tx_fifo(&mut self) -> FLUSH_TX_FIFO_W<EMAC_TX_CTL1_SPEC> {
+        FLUSH_TX_FIFO_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmission Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_md(&mut self) -> TX_MD_W<1> {
-        TX_MD_W::new(self)
+    pub fn tx_md(&mut self) -> TX_MD_W<EMAC_TX_CTL1_SPEC> {
+        TX_MD_W::new(self, 1)
     }
     #[doc = "Bits 8:10 - Threshold value of TX DMA FIFO"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_th(&mut self) -> TX_TH_W<8> {
-        TX_TH_W::new(self)
+    pub fn tx_th(&mut self) -> TX_TH_W<EMAC_TX_CTL1_SPEC> {
+        TX_TH_W::new(self, 8)
     }
     #[doc = "Bit 30 - Transmit DMA Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_dma_en(&mut self) -> TX_DMA_EN_W<30> {
-        TX_DMA_EN_W::new(self)
+    pub fn tx_dma_en(&mut self) -> TX_DMA_EN_W<EMAC_TX_CTL1_SPEC> {
+        TX_DMA_EN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Transmit DMA FSM Start"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_dma_start(&mut self) -> TX_DMA_START_W<31> {
-        TX_DMA_START_W::new(self)
+    pub fn tx_dma_start(&mut self) -> TX_DMA_START_W<EMAC_TX_CTL1_SPEC> {
+        TX_DMA_START_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EMAC Transmit Control Register1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emac_tx_ctl1](index.html) module"]
+#[doc = "EMAC Transmit Control Register1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emac_tx_ctl1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emac_tx_ctl1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EMAC_TX_CTL1_SPEC;
 impl crate::RegisterSpec for EMAC_TX_CTL1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [emac_tx_ctl1::R](R) reader structure"]
-impl crate::Readable for EMAC_TX_CTL1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [emac_tx_ctl1::W](W) writer structure"]
+#[doc = "`read()` method returns [`emac_tx_ctl1::R`](R) reader structure"]
+impl crate::Readable for EMAC_TX_CTL1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`emac_tx_ctl1::W`](W) writer structure"]
 impl crate::Writable for EMAC_TX_CTL1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

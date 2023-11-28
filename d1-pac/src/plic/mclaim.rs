@@ -1,43 +1,11 @@
 #[doc = "Register `mclaim` reader"]
-pub struct R(crate::R<MCLAIM_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MCLAIM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MCLAIM_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MCLAIM_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MCLAIM_SPEC>;
 #[doc = "Register `mclaim` writer"]
-pub struct W(crate::W<MCLAIM_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MCLAIM_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MCLAIM_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MCLAIM_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MCLAIM_SPEC>;
 #[doc = "Field `mclaim` reader - "]
-pub type MCLAIM_R = crate::FieldReader<u16, u16>;
+pub type MCLAIM_R = crate::FieldReader<u16>;
 #[doc = "Field `mclaim` writer - "]
-pub type MCLAIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MCLAIM_SPEC, u16, u16, 10, O>;
+pub type MCLAIM_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     #[doc = "Bits 0:9"]
     #[inline(always)]
@@ -49,28 +17,29 @@ impl W {
     #[doc = "Bits 0:9"]
     #[inline(always)]
     #[must_use]
-    pub fn mclaim(&mut self) -> MCLAIM_W<0> {
-        MCLAIM_W::new(self)
+    pub fn mclaim(&mut self) -> MCLAIM_W<MCLAIM_SPEC> {
+        MCLAIM_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Machine Mode Claim/Complete Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [mclaim](index.html) module"]
+#[doc = "Machine Mode Claim/Complete Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`mclaim::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`mclaim::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MCLAIM_SPEC;
 impl crate::RegisterSpec for MCLAIM_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [mclaim::R](R) reader structure"]
-impl crate::Readable for MCLAIM_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [mclaim::W](W) writer structure"]
+#[doc = "`read()` method returns [`mclaim::R`](R) reader structure"]
+impl crate::Readable for MCLAIM_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`mclaim::W`](W) writer structure"]
 impl crate::Writable for MCLAIM_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `csic_dma_en` reader"]
-pub struct R(crate::R<CSIC_DMA_EN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSIC_DMA_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSIC_DMA_EN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSIC_DMA_EN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CSIC_DMA_EN_SPEC>;
 #[doc = "Register `csic_dma_en` writer"]
-pub struct W(crate::W<CSIC_DMA_EN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSIC_DMA_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSIC_DMA_EN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSIC_DMA_EN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CSIC_DMA_EN_SPEC>;
 #[doc = "Field `bk_top_en` reader - "]
 pub type BK_TOP_EN_R = crate::BitReader<BK_TOP_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<BK_TOP_EN_A> for bool {
 impl BK_TOP_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BK_TOP_EN_A {
+    pub const fn variant(&self) -> BK_TOP_EN_A {
         match self.bits {
             false => BK_TOP_EN_A::DISABLE,
             true => BK_TOP_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == BK_TOP_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == BK_TOP_EN_A::ENABLE
     }
 }
 #[doc = "Field `bk_top_en` writer - "]
-pub type BK_TOP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, BK_TOP_EN_A, O>;
-impl<'a, const O: u8> BK_TOP_EN_W<'a, O> {
+pub type BK_TOP_EN_W<'a, REG> = crate::BitWriter<'a, REG, BK_TOP_EN_A>;
+impl<'a, REG> BK_TOP_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(BK_TOP_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(BK_TOP_EN_A::ENABLE)
     }
 }
@@ -103,35 +74,37 @@ impl From<CLK_CNT_EN_A> for bool {
 impl CLK_CNT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_CNT_EN_A {
+    pub const fn variant(&self) -> CLK_CNT_EN_A {
         match self.bits {
             false => CLK_CNT_EN_A::DISABLE,
             true => CLK_CNT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == CLK_CNT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == CLK_CNT_EN_A::ENABLE
     }
 }
 #[doc = "Field `clk_cnt_en` writer - clk count per frame enable"]
-pub type CLK_CNT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, CLK_CNT_EN_A, O>;
-impl<'a, const O: u8> CLK_CNT_EN_W<'a, O> {
+pub type CLK_CNT_EN_W<'a, REG> = crate::BitWriter<'a, REG, CLK_CNT_EN_A>;
+impl<'a, REG> CLK_CNT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_CNT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_CNT_EN_A::ENABLE)
     }
 }
@@ -154,35 +127,37 @@ impl From<CLK_CNT_SPL_A> for bool {
 impl CLK_CNT_SPL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_CNT_SPL_A {
+    pub const fn variant(&self) -> CLK_CNT_SPL_A {
         match self.bits {
             false => CLK_CNT_SPL_A::FRAME_DONE,
             true => CLK_CNT_SPL_A::VSYNC,
         }
     }
-    #[doc = "Checks if the value of the field is `FRAME_DONE`"]
+    #[doc = "Sampling clock counter every frame done"]
     #[inline(always)]
     pub fn is_frame_done(&self) -> bool {
         *self == CLK_CNT_SPL_A::FRAME_DONE
     }
-    #[doc = "Checks if the value of the field is `VSYNC`"]
+    #[doc = "Sampling clock counter every vsync"]
     #[inline(always)]
     pub fn is_vsync(&self) -> bool {
         *self == CLK_CNT_SPL_A::VSYNC
     }
 }
 #[doc = "Field `clk_cnt_spl` writer - Sampling time for clk counter per frame"]
-pub type CLK_CNT_SPL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, CLK_CNT_SPL_A, O>;
-impl<'a, const O: u8> CLK_CNT_SPL_W<'a, O> {
+pub type CLK_CNT_SPL_W<'a, REG> = crate::BitWriter<'a, REG, CLK_CNT_SPL_A>;
+impl<'a, REG> CLK_CNT_SPL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Sampling clock counter every frame done"]
     #[inline(always)]
-    pub fn frame_done(self) -> &'a mut W {
+    pub fn frame_done(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_CNT_SPL_A::FRAME_DONE)
     }
     #[doc = "Sampling clock counter every vsync"]
     #[inline(always)]
-    pub fn vsync(self) -> &'a mut W {
+    pub fn vsync(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_CNT_SPL_A::VSYNC)
     }
 }
@@ -205,34 +180,37 @@ impl From<DMA_EN_A> for bool {
 impl DMA_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA_EN_A {
+    pub const fn variant(&self) -> DMA_EN_A {
         match self.bits {
             false => DMA_EN_A::DISABLE,
             true => DMA_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == DMA_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == DMA_EN_A::ENABLE
     }
 }
 #[doc = "Field `dma_en` writer - When BK_TOP_EN is enabled, setting 1 to this bit indicates the module works in DMA mode."]
-pub type DMA_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, DMA_EN_A, O>;
-impl<'a, const O: u8> DMA_EN_W<'a, O> {
+pub type DMA_EN_W<'a, REG> = crate::BitWriter<'a, REG, DMA_EN_A>;
+impl<'a, REG> DMA_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(DMA_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(DMA_EN_A::ENABLE)
     }
 }
@@ -255,35 +233,37 @@ impl From<FRAME_CNT_EN_A> for bool {
 impl FRAME_CNT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FRAME_CNT_EN_A {
+    pub const fn variant(&self) -> FRAME_CNT_EN_A {
         match self.bits {
             false => FRAME_CNT_EN_A::DISABLE,
             true => FRAME_CNT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == FRAME_CNT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == FRAME_CNT_EN_A::ENABLE
     }
 }
 #[doc = "Field `frame_cnt_en` writer - When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add."]
-pub type FRAME_CNT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, FRAME_CNT_EN_A, O>;
-impl<'a, const O: u8> FRAME_CNT_EN_W<'a, O> {
+pub type FRAME_CNT_EN_W<'a, REG> = crate::BitWriter<'a, REG, FRAME_CNT_EN_A>;
+impl<'a, REG> FRAME_CNT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(FRAME_CNT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(FRAME_CNT_EN_A::ENABLE)
     }
 }
@@ -306,35 +286,37 @@ impl From<VI_TO_CNT_EN_A> for bool {
 impl VI_TO_CNT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VI_TO_CNT_EN_A {
+    pub const fn variant(&self) -> VI_TO_CNT_EN_A {
         match self.bits {
             false => VI_TO_CNT_EN_A::DISABLE,
             true => VI_TO_CNT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == VI_TO_CNT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == VI_TO_CNT_EN_A::ENABLE
     }
 }
 #[doc = "Field `vi_to_cnt_en` writer - Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input."]
-pub type VI_TO_CNT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, VI_TO_CNT_EN_A, O>;
-impl<'a, const O: u8> VI_TO_CNT_EN_W<'a, O> {
+pub type VI_TO_CNT_EN_W<'a, REG> = crate::BitWriter<'a, REG, VI_TO_CNT_EN_A>;
+impl<'a, REG> VI_TO_CNT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(VI_TO_CNT_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(VI_TO_CNT_EN_A::ENABLE)
     }
 }
@@ -357,35 +339,37 @@ impl From<BUF_ADDR_MODE_A> for bool {
 impl BUF_ADDR_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUF_ADDR_MODE_A {
+    pub const fn variant(&self) -> BUF_ADDR_MODE_A {
         match self.bits {
             false => BUF_ADDR_MODE_A::R_EGISTER,
             true => BUF_ADDR_MODE_A::FIFO,
         }
     }
-    #[doc = "Checks if the value of the field is `R_EGISTER`"]
+    #[doc = "Buffer Address Register Mode"]
     #[inline(always)]
     pub fn is_r_egister(&self) -> bool {
         *self == BUF_ADDR_MODE_A::R_EGISTER
     }
-    #[doc = "Checks if the value of the field is `FIFO`"]
+    #[doc = "Buffer Address FIFO Mode"]
     #[inline(always)]
     pub fn is_fifo(&self) -> bool {
         *self == BUF_ADDR_MODE_A::FIFO
     }
 }
 #[doc = "Field `buf_addr_mode` writer - "]
-pub type BUF_ADDR_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, BUF_ADDR_MODE_A, O>;
-impl<'a, const O: u8> BUF_ADDR_MODE_W<'a, O> {
+pub type BUF_ADDR_MODE_W<'a, REG> = crate::BitWriter<'a, REG, BUF_ADDR_MODE_A>;
+impl<'a, REG> BUF_ADDR_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Buffer Address Register Mode"]
     #[inline(always)]
-    pub fn r_egister(self) -> &'a mut W {
+    pub fn r_egister(self) -> &'a mut crate::W<REG> {
         self.variant(BUF_ADDR_MODE_A::R_EGISTER)
     }
     #[doc = "Buffer Address FIFO Mode"]
     #[inline(always)]
-    pub fn fifo(self) -> &'a mut W {
+    pub fn fifo(self) -> &'a mut crate::W<REG> {
         self.variant(BUF_ADDR_MODE_A::FIFO)
     }
 }
@@ -408,35 +392,37 @@ impl From<FLIP_SIZE_CFG_MODE_A> for bool {
 impl FLIP_SIZE_CFG_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FLIP_SIZE_CFG_MODE_A {
+    pub const fn variant(&self) -> FLIP_SIZE_CFG_MODE_A {
         match self.bits {
             false => FLIP_SIZE_CFG_MODE_A::H_ARDWARE,
             true => FLIP_SIZE_CFG_MODE_A::S_OFTWARE,
         }
     }
-    #[doc = "Checks if the value of the field is `H_ARDWARE`"]
+    #[doc = "Hardware"]
     #[inline(always)]
     pub fn is_h_ardware(&self) -> bool {
         *self == FLIP_SIZE_CFG_MODE_A::H_ARDWARE
     }
-    #[doc = "Checks if the value of the field is `S_OFTWARE`"]
+    #[doc = "Software"]
     #[inline(always)]
     pub fn is_s_oftware(&self) -> bool {
         *self == FLIP_SIZE_CFG_MODE_A::S_OFTWARE
     }
 }
 #[doc = "Field `flip_size_cfg_mode` writer - FLIP SIZE set by software or calculated by hardware"]
-pub type FLIP_SIZE_CFG_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, FLIP_SIZE_CFG_MODE_A, O>;
-impl<'a, const O: u8> FLIP_SIZE_CFG_MODE_W<'a, O> {
+pub type FLIP_SIZE_CFG_MODE_W<'a, REG> = crate::BitWriter<'a, REG, FLIP_SIZE_CFG_MODE_A>;
+impl<'a, REG> FLIP_SIZE_CFG_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Hardware"]
     #[inline(always)]
-    pub fn h_ardware(self) -> &'a mut W {
+    pub fn h_ardware(self) -> &'a mut crate::W<REG> {
         self.variant(FLIP_SIZE_CFG_MODE_A::H_ARDWARE)
     }
     #[doc = "Software"]
     #[inline(always)]
-    pub fn s_oftware(self) -> &'a mut W {
+    pub fn s_oftware(self) -> &'a mut crate::W<REG> {
         self.variant(FLIP_SIZE_CFG_MODE_A::S_OFTWARE)
     }
 }
@@ -459,35 +445,37 @@ impl From<BUF_LENGTH_CFG_MODE_A> for bool {
 impl BUF_LENGTH_CFG_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUF_LENGTH_CFG_MODE_A {
+    pub const fn variant(&self) -> BUF_LENGTH_CFG_MODE_A {
         match self.bits {
             false => BUF_LENGTH_CFG_MODE_A::H_ARDWARE,
             true => BUF_LENGTH_CFG_MODE_A::S_OFTWARE,
         }
     }
-    #[doc = "Checks if the value of the field is `H_ARDWARE`"]
+    #[doc = "Hardware"]
     #[inline(always)]
     pub fn is_h_ardware(&self) -> bool {
         *self == BUF_LENGTH_CFG_MODE_A::H_ARDWARE
     }
-    #[doc = "Checks if the value of the field is `S_OFTWARE`"]
+    #[doc = "Software"]
     #[inline(always)]
     pub fn is_s_oftware(&self) -> bool {
         *self == BUF_LENGTH_CFG_MODE_A::S_OFTWARE
     }
 }
 #[doc = "Field `buf_length_cfg_mode` writer - Buffer length set by software or calculated by hardware"]
-pub type BUF_LENGTH_CFG_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, BUF_LENGTH_CFG_MODE_A, O>;
-impl<'a, const O: u8> BUF_LENGTH_CFG_MODE_W<'a, O> {
+pub type BUF_LENGTH_CFG_MODE_W<'a, REG> = crate::BitWriter<'a, REG, BUF_LENGTH_CFG_MODE_A>;
+impl<'a, REG> BUF_LENGTH_CFG_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Hardware"]
     #[inline(always)]
-    pub fn h_ardware(self) -> &'a mut W {
+    pub fn h_ardware(self) -> &'a mut crate::W<REG> {
         self.variant(BUF_LENGTH_CFG_MODE_A::H_ARDWARE)
     }
     #[doc = "Software"]
     #[inline(always)]
-    pub fn s_oftware(self) -> &'a mut W {
+    pub fn s_oftware(self) -> &'a mut crate::W<REG> {
         self.variant(BUF_LENGTH_CFG_MODE_A::S_OFTWARE)
     }
 }
@@ -510,42 +498,44 @@ impl From<VFLIP_BUF_ADDR_CFG_MODE_A> for bool {
 impl VFLIP_BUF_ADDR_CFG_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VFLIP_BUF_ADDR_CFG_MODE_A {
+    pub const fn variant(&self) -> VFLIP_BUF_ADDR_CFG_MODE_A {
         match self.bits {
             false => VFLIP_BUF_ADDR_CFG_MODE_A::H_ARDWARE,
             true => VFLIP_BUF_ADDR_CFG_MODE_A::S_OFTWARE,
         }
     }
-    #[doc = "Checks if the value of the field is `H_ARDWARE`"]
+    #[doc = "Hardware"]
     #[inline(always)]
     pub fn is_h_ardware(&self) -> bool {
         *self == VFLIP_BUF_ADDR_CFG_MODE_A::H_ARDWARE
     }
-    #[doc = "Checks if the value of the field is `S_OFTWARE`"]
+    #[doc = "Software"]
     #[inline(always)]
     pub fn is_s_oftware(&self) -> bool {
         *self == VFLIP_BUF_ADDR_CFG_MODE_A::S_OFTWARE
     }
 }
 #[doc = "Field `vflip_buf_addr_cfg_mode` writer - Vflip buffer address set by software or calculated by hardware"]
-pub type VFLIP_BUF_ADDR_CFG_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, VFLIP_BUF_ADDR_CFG_MODE_A, O>;
-impl<'a, const O: u8> VFLIP_BUF_ADDR_CFG_MODE_W<'a, O> {
+pub type VFLIP_BUF_ADDR_CFG_MODE_W<'a, REG> = crate::BitWriter<'a, REG, VFLIP_BUF_ADDR_CFG_MODE_A>;
+impl<'a, REG> VFLIP_BUF_ADDR_CFG_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Hardware"]
     #[inline(always)]
-    pub fn h_ardware(self) -> &'a mut W {
+    pub fn h_ardware(self) -> &'a mut crate::W<REG> {
         self.variant(VFLIP_BUF_ADDR_CFG_MODE_A::H_ARDWARE)
     }
     #[doc = "Software"]
     #[inline(always)]
-    pub fn s_oftware(self) -> &'a mut W {
+    pub fn s_oftware(self) -> &'a mut crate::W<REG> {
         self.variant(VFLIP_BUF_ADDR_CFG_MODE_A::S_OFTWARE)
     }
 }
 #[doc = "Field `ver_en` reader - "]
-pub type VER_EN_R = crate::BitReader<bool>;
+pub type VER_EN_R = crate::BitReader;
 #[doc = "Field `ver_en` writer - "]
-pub type VER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_DMA_EN_SPEC, bool, O>;
+pub type VER_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -607,88 +597,89 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn bk_top_en(&mut self) -> BK_TOP_EN_W<0> {
-        BK_TOP_EN_W::new(self)
+    pub fn bk_top_en(&mut self) -> BK_TOP_EN_W<CSIC_DMA_EN_SPEC> {
+        BK_TOP_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - clk count per frame enable"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_cnt_en(&mut self) -> CLK_CNT_EN_W<1> {
-        CLK_CNT_EN_W::new(self)
+    pub fn clk_cnt_en(&mut self) -> CLK_CNT_EN_W<CSIC_DMA_EN_SPEC> {
+        CLK_CNT_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Sampling time for clk counter per frame"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_cnt_spl(&mut self) -> CLK_CNT_SPL_W<2> {
-        CLK_CNT_SPL_W::new(self)
+    pub fn clk_cnt_spl(&mut self) -> CLK_CNT_SPL_W<CSIC_DMA_EN_SPEC> {
+        CLK_CNT_SPL_W::new(self, 2)
     }
     #[doc = "Bit 4 - When BK_TOP_EN is enabled, setting 1 to this bit indicates the module works in DMA mode."]
     #[inline(always)]
     #[must_use]
-    pub fn dma_en(&mut self) -> DMA_EN_W<4> {
-        DMA_EN_W::new(self)
+    pub fn dma_en(&mut self) -> DMA_EN_W<CSIC_DMA_EN_SPEC> {
+        DMA_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - When BK_TOP_EN is enabled, setting 1 to this bit indicates the Frame counter starts to add."]
     #[inline(always)]
     #[must_use]
-    pub fn frame_cnt_en(&mut self) -> FRAME_CNT_EN_W<5> {
-        FRAME_CNT_EN_W::new(self)
+    pub fn frame_cnt_en(&mut self) -> FRAME_CNT_EN_W<CSIC_DMA_EN_SPEC> {
+        FRAME_CNT_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Enable Video Input Timeout counter, add 1 when there is no effective video input in a 12M clock, clear to 0 when detecting effective video input."]
     #[inline(always)]
     #[must_use]
-    pub fn vi_to_cnt_en(&mut self) -> VI_TO_CNT_EN_W<6> {
-        VI_TO_CNT_EN_W::new(self)
+    pub fn vi_to_cnt_en(&mut self) -> VI_TO_CNT_EN_W<CSIC_DMA_EN_SPEC> {
+        VI_TO_CNT_EN_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn buf_addr_mode(&mut self) -> BUF_ADDR_MODE_W<7> {
-        BUF_ADDR_MODE_W::new(self)
+    pub fn buf_addr_mode(&mut self) -> BUF_ADDR_MODE_W<CSIC_DMA_EN_SPEC> {
+        BUF_ADDR_MODE_W::new(self, 7)
     }
     #[doc = "Bit 28 - FLIP SIZE set by software or calculated by hardware"]
     #[inline(always)]
     #[must_use]
-    pub fn flip_size_cfg_mode(&mut self) -> FLIP_SIZE_CFG_MODE_W<28> {
-        FLIP_SIZE_CFG_MODE_W::new(self)
+    pub fn flip_size_cfg_mode(&mut self) -> FLIP_SIZE_CFG_MODE_W<CSIC_DMA_EN_SPEC> {
+        FLIP_SIZE_CFG_MODE_W::new(self, 28)
     }
     #[doc = "Bit 29 - Buffer length set by software or calculated by hardware"]
     #[inline(always)]
     #[must_use]
-    pub fn buf_length_cfg_mode(&mut self) -> BUF_LENGTH_CFG_MODE_W<29> {
-        BUF_LENGTH_CFG_MODE_W::new(self)
+    pub fn buf_length_cfg_mode(&mut self) -> BUF_LENGTH_CFG_MODE_W<CSIC_DMA_EN_SPEC> {
+        BUF_LENGTH_CFG_MODE_W::new(self, 29)
     }
     #[doc = "Bit 30 - Vflip buffer address set by software or calculated by hardware"]
     #[inline(always)]
     #[must_use]
-    pub fn vflip_buf_addr_cfg_mode(&mut self) -> VFLIP_BUF_ADDR_CFG_MODE_W<30> {
-        VFLIP_BUF_ADDR_CFG_MODE_W::new(self)
+    pub fn vflip_buf_addr_cfg_mode(&mut self) -> VFLIP_BUF_ADDR_CFG_MODE_W<CSIC_DMA_EN_SPEC> {
+        VFLIP_BUF_ADDR_CFG_MODE_W::new(self, 30)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
     #[must_use]
-    pub fn ver_en(&mut self) -> VER_EN_W<31> {
-        VER_EN_W::new(self)
+    pub fn ver_en(&mut self) -> VER_EN_W<CSIC_DMA_EN_SPEC> {
+        VER_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CSIC DMA Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csic_dma_en](index.html) module"]
+#[doc = "CSIC DMA Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csic_dma_en::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csic_dma_en::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSIC_DMA_EN_SPEC;
 impl crate::RegisterSpec for CSIC_DMA_EN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csic_dma_en::R](R) reader structure"]
-impl crate::Readable for CSIC_DMA_EN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csic_dma_en::W](W) writer structure"]
+#[doc = "`read()` method returns [`csic_dma_en::R`](R) reader structure"]
+impl crate::Readable for CSIC_DMA_EN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`csic_dma_en::W`](W) writer structure"]
 impl crate::Writable for CSIC_DMA_EN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

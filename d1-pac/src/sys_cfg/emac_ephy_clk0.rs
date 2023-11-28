@@ -1,41 +1,9 @@
 #[doc = "Register `emac_ephy_clk0` reader"]
-pub struct R(crate::R<EMAC_EPHY_CLK0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EMAC_EPHY_CLK0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EMAC_EPHY_CLK0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EMAC_EPHY_CLK0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EMAC_EPHY_CLK0_SPEC>;
 #[doc = "Register `emac_ephy_clk0` writer"]
-pub struct W(crate::W<EMAC_EPHY_CLK0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EMAC_EPHY_CLK0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EMAC_EPHY_CLK0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EMAC_EPHY_CLK0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EMAC_EPHY_CLK0_SPEC>;
 #[doc = "Field `etcs` reader - "]
-pub type ETCS_R = crate::FieldReader<u8, ETCS_A>;
+pub type ETCS_R = crate::FieldReader<ETCS_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -53,10 +21,13 @@ impl From<ETCS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for ETCS_A {
+    type Ux = u8;
+}
 impl ETCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<ETCS_A> {
+    pub const fn variant(&self) -> Option<ETCS_A> {
         match self.bits {
             0 => Some(ETCS_A::MII),
             1 => Some(ETCS_A::EXTERNAL_GMII_RGMII),
@@ -64,39 +35,42 @@ impl ETCS_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MII`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_mii(&self) -> bool {
         *self == ETCS_A::MII
     }
-    #[doc = "Checks if the value of the field is `EXTERNAL_GMII_RGMII`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_external_gmii_rgmii(&self) -> bool {
         *self == ETCS_A::EXTERNAL_GMII_RGMII
     }
-    #[doc = "Checks if the value of the field is `INTERNAL_GMII_RGMII`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_internal_gmii_rgmii(&self) -> bool {
         *self == ETCS_A::INTERNAL_GMII_RGMII
     }
 }
 #[doc = "Field `etcs` writer - "]
-pub type ETCS_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, ETCS_A, 2, O>;
-impl<'a, const O: u8> ETCS_W<'a, O> {
+pub type ETCS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, ETCS_A>;
+impl<'a, REG> ETCS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn mii(self) -> &'a mut W {
+    pub fn mii(self) -> &'a mut crate::W<REG> {
         self.variant(ETCS_A::MII)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn external_gmii_rgmii(self) -> &'a mut W {
+    pub fn external_gmii_rgmii(self) -> &'a mut crate::W<REG> {
         self.variant(ETCS_A::EXTERNAL_GMII_RGMII)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn internal_gmii_rgmii(self) -> &'a mut W {
+    pub fn internal_gmii_rgmii(self) -> &'a mut crate::W<REG> {
         self.variant(ETCS_A::INTERNAL_GMII_RGMII)
     }
 }
@@ -119,34 +93,37 @@ impl From<EPIT_A> for bool {
 impl EPIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EPIT_A {
+    pub const fn variant(&self) -> EPIT_A {
         match self.bits {
             false => EPIT_A::MII,
             true => EPIT_A::RGMII,
         }
     }
-    #[doc = "Checks if the value of the field is `MII`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_mii(&self) -> bool {
         *self == EPIT_A::MII
     }
-    #[doc = "Checks if the value of the field is `RGMII`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_rgmii(&self) -> bool {
         *self == EPIT_A::RGMII
     }
 }
 #[doc = "Field `epit` writer - "]
-pub type EPIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, EPIT_A, O>;
-impl<'a, const O: u8> EPIT_W<'a, O> {
+pub type EPIT_W<'a, REG> = crate::BitWriter<'a, REG, EPIT_A>;
+impl<'a, REG> EPIT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn mii(self) -> &'a mut W {
+    pub fn mii(self) -> &'a mut crate::W<REG> {
         self.variant(EPIT_A::MII)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn rgmii(self) -> &'a mut W {
+    pub fn rgmii(self) -> &'a mut crate::W<REG> {
         self.variant(EPIT_A::RGMII)
     }
 }
@@ -169,34 +146,37 @@ impl From<ETXIE_A> for bool {
 impl ETXIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ETXIE_A {
+    pub const fn variant(&self) -> ETXIE_A {
         match self.bits {
             false => ETXIE_A::DISABLE,
             true => ETXIE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == ETXIE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == ETXIE_A::ENABLE
     }
 }
 #[doc = "Field `etxie` writer - "]
-pub type ETXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ETXIE_A, O>;
-impl<'a, const O: u8> ETXIE_W<'a, O> {
+pub type ETXIE_W<'a, REG> = crate::BitWriter<'a, REG, ETXIE_A>;
+impl<'a, REG> ETXIE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(ETXIE_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(ETXIE_A::ENABLE)
     }
 }
@@ -219,45 +199,48 @@ impl From<ERXIE_A> for bool {
 impl ERXIE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ERXIE_A {
+    pub const fn variant(&self) -> ERXIE_A {
         match self.bits {
             false => ERXIE_A::DISABLE,
             true => ERXIE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == ERXIE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == ERXIE_A::ENABLE
     }
 }
 #[doc = "Field `erxie` writer - "]
-pub type ERXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, ERXIE_A, O>;
-impl<'a, const O: u8> ERXIE_W<'a, O> {
+pub type ERXIE_W<'a, REG> = crate::BitWriter<'a, REG, ERXIE_A>;
+impl<'a, REG> ERXIE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(ERXIE_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(ERXIE_A::ENABLE)
     }
 }
 #[doc = "Field `erxdc` reader - "]
-pub type ERXDC_R = crate::FieldReader<u8, u8>;
+pub type ERXDC_R = crate::FieldReader;
 #[doc = "Field `erxdc` writer - "]
-pub type ERXDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, O>;
+pub type ERXDC_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `etxdc` reader - "]
-pub type ETXDC_R = crate::FieldReader<u8, u8>;
+pub type ETXDC_R = crate::FieldReader;
 #[doc = "Field `etxdc` writer - "]
-pub type ETXDC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 3, O>;
+pub type ETXDC_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `rmii_en` reader - "]
 pub type RMII_EN_R = crate::BitReader<RMII_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -277,34 +260,37 @@ impl From<RMII_EN_A> for bool {
 impl RMII_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RMII_EN_A {
+    pub const fn variant(&self) -> RMII_EN_A {
         match self.bits {
             false => RMII_EN_A::DISABLE,
             true => RMII_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RMII_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RMII_EN_A::ENABLE
     }
 }
 #[doc = "Field `rmii_en` writer - "]
-pub type RMII_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, RMII_EN_A, O>;
-impl<'a, const O: u8> RMII_EN_W<'a, O> {
+pub type RMII_EN_W<'a, REG> = crate::BitWriter<'a, REG, RMII_EN_A>;
+impl<'a, REG> RMII_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RMII_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RMII_EN_A::ENABLE)
     }
 }
@@ -327,35 +313,37 @@ impl From<PHY_SELECT_A> for bool {
 impl PHY_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PHY_SELECT_A {
+    pub const fn variant(&self) -> PHY_SELECT_A {
         match self.bits {
             false => PHY_SELECT_A::EXTERNAL,
             true => PHY_SELECT_A::INTERNAL,
         }
     }
-    #[doc = "Checks if the value of the field is `EXTERNAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_external(&self) -> bool {
         *self == PHY_SELECT_A::EXTERNAL
     }
-    #[doc = "Checks if the value of the field is `INTERNAL`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_internal(&self) -> bool {
         *self == PHY_SELECT_A::INTERNAL
     }
 }
 #[doc = "Field `phy_select` writer - "]
-pub type PHY_SELECT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, PHY_SELECT_A, O>;
-impl<'a, const O: u8> PHY_SELECT_W<'a, O> {
+pub type PHY_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, PHY_SELECT_A>;
+impl<'a, REG> PHY_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn external(self) -> &'a mut W {
+    pub fn external(self) -> &'a mut crate::W<REG> {
         self.variant(PHY_SELECT_A::EXTERNAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn internal(self) -> &'a mut W {
+    pub fn internal(self) -> &'a mut crate::W<REG> {
         self.variant(PHY_SELECT_A::INTERNAL)
     }
 }
@@ -378,35 +366,37 @@ impl From<SHUTDOWN_A> for bool {
 impl SHUTDOWN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SHUTDOWN_A {
+    pub const fn variant(&self) -> SHUTDOWN_A {
         match self.bits {
             false => SHUTDOWN_A::POWER_UP,
             true => SHUTDOWN_A::SHUT_DOWN,
         }
     }
-    #[doc = "Checks if the value of the field is `POWER_UP`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_power_up(&self) -> bool {
         *self == SHUTDOWN_A::POWER_UP
     }
-    #[doc = "Checks if the value of the field is `SHUT_DOWN`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_shut_down(&self) -> bool {
         *self == SHUTDOWN_A::SHUT_DOWN
     }
 }
 #[doc = "Field `shutdown` writer - "]
-pub type SHUTDOWN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, SHUTDOWN_A, O>;
-impl<'a, const O: u8> SHUTDOWN_W<'a, O> {
+pub type SHUTDOWN_W<'a, REG> = crate::BitWriter<'a, REG, SHUTDOWN_A>;
+impl<'a, REG> SHUTDOWN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn power_up(self) -> &'a mut W {
+    pub fn power_up(self) -> &'a mut crate::W<REG> {
         self.variant(SHUTDOWN_A::POWER_UP)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn shut_down(self) -> &'a mut W {
+    pub fn shut_down(self) -> &'a mut crate::W<REG> {
         self.variant(SHUTDOWN_A::SHUT_DOWN)
     }
 }
@@ -429,34 +419,37 @@ impl From<LED_POL_A> for bool {
 impl LED_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LED_POL_A {
+    pub const fn variant(&self) -> LED_POL_A {
         match self.bits {
             false => LED_POL_A::HIGH,
             true => LED_POL_A::LOW,
         }
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == LED_POL_A::HIGH
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == LED_POL_A::LOW
     }
 }
 #[doc = "Field `led_pol` writer - "]
-pub type LED_POL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, LED_POL_A, O>;
-impl<'a, const O: u8> LED_POL_W<'a, O> {
+pub type LED_POL_W<'a, REG> = crate::BitWriter<'a, REG, LED_POL_A>;
+impl<'a, REG> LED_POL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(LED_POL_A::HIGH)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(LED_POL_A::LOW)
     }
 }
@@ -479,44 +472,46 @@ impl From<CLK_SEL_A> for bool {
 impl CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_SEL_A {
+    pub const fn variant(&self) -> CLK_SEL_A {
         match self.bits {
             false => CLK_SEL_A::F25M,
             true => CLK_SEL_A::F24M,
         }
     }
-    #[doc = "Checks if the value of the field is `F25M`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_f25m(&self) -> bool {
         *self == CLK_SEL_A::F25M
     }
-    #[doc = "Checks if the value of the field is `F24M`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_f24m(&self) -> bool {
         *self == CLK_SEL_A::F24M
     }
 }
 #[doc = "Field `clk_sel` writer - "]
-pub type CLK_SEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, CLK_SEL_A, O>;
-impl<'a, const O: u8> CLK_SEL_W<'a, O> {
+pub type CLK_SEL_W<'a, REG> = crate::BitWriter<'a, REG, CLK_SEL_A>;
+impl<'a, REG> CLK_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn f25m(self) -> &'a mut W {
+    pub fn f25m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SEL_A::F25M)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn f24m(self) -> &'a mut W {
+    pub fn f24m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SEL_A::F24M)
     }
 }
 #[doc = "Field `phy_addr` reader - "]
-pub type PHY_ADDR_R = crate::FieldReader<u8, u8>;
+pub type PHY_ADDR_R = crate::FieldReader;
 #[doc = "Field `phy_addr` writer - "]
-pub type PHY_ADDR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 5, O>;
+pub type PHY_ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `ephy_mode` reader - "]
-pub type EPHY_MODE_R = crate::FieldReader<u8, EPHY_MODE_A>;
+pub type EPHY_MODE_R = crate::FieldReader<EPHY_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -534,10 +529,13 @@ impl From<EPHY_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EPHY_MODE_A {
+    type Ux = u8;
+}
 impl EPHY_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EPHY_MODE_A> {
+    pub const fn variant(&self) -> Option<EPHY_MODE_A> {
         match self.bits {
             0 => Some(EPHY_MODE_A::NORMAL),
             1 => Some(EPHY_MODE_A::SIMULATION),
@@ -545,39 +543,42 @@ impl EPHY_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == EPHY_MODE_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `SIMULATION`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_simulation(&self) -> bool {
         *self == EPHY_MODE_A::SIMULATION
     }
-    #[doc = "Checks if the value of the field is `AFE_TEST`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_afe_test(&self) -> bool {
         *self == EPHY_MODE_A::AFE_TEST
     }
 }
 #[doc = "Field `ephy_mode` writer - "]
-pub type EPHY_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, EPHY_MODE_A, 2, O>;
-impl<'a, const O: u8> EPHY_MODE_W<'a, O> {
+pub type EPHY_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, EPHY_MODE_A>;
+impl<'a, REG> EPHY_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(EPHY_MODE_A::NORMAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn simulation(self) -> &'a mut W {
+    pub fn simulation(self) -> &'a mut crate::W<REG> {
         self.variant(EPHY_MODE_A::SIMULATION)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn afe_test(self) -> &'a mut W {
+    pub fn afe_test(self) -> &'a mut crate::W<REG> {
         self.variant(EPHY_MODE_A::AFE_TEST)
     }
 }
@@ -600,43 +601,44 @@ impl From<XMII_SEL_A> for bool {
 impl XMII_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> XMII_SEL_A {
+    pub const fn variant(&self) -> XMII_SEL_A {
         match self.bits {
             false => XMII_SEL_A::INTERNAL,
             true => XMII_SEL_A::EXTERNAL,
         }
     }
-    #[doc = "Checks if the value of the field is `INTERNAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_internal(&self) -> bool {
         *self == XMII_SEL_A::INTERNAL
     }
-    #[doc = "Checks if the value of the field is `EXTERNAL`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_external(&self) -> bool {
         *self == XMII_SEL_A::EXTERNAL
     }
 }
 #[doc = "Field `xmii_sel` writer - "]
-pub type XMII_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, XMII_SEL_A, O>;
-impl<'a, const O: u8> XMII_SEL_W<'a, O> {
+pub type XMII_SEL_W<'a, REG> = crate::BitWriter<'a, REG, XMII_SEL_A>;
+impl<'a, REG> XMII_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn internal(self) -> &'a mut W {
+    pub fn internal(self) -> &'a mut crate::W<REG> {
         self.variant(XMII_SEL_A::INTERNAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn external(self) -> &'a mut W {
+    pub fn external(self) -> &'a mut crate::W<REG> {
         self.variant(XMII_SEL_A::EXTERNAL)
     }
 }
 #[doc = "Field `bps_efuse` reader - "]
-pub type BPS_EFUSE_R = crate::FieldReader<u8, u8>;
+pub type BPS_EFUSE_R = crate::FieldReader;
 #[doc = "Field `bps_efuse` writer - "]
-pub type BPS_EFUSE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, EMAC_EPHY_CLK0_SPEC, u8, u8, 4, O>;
+pub type BPS_EFUSE_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
     #[doc = "Bits 0:1"]
     #[inline(always)]
@@ -718,112 +720,113 @@ impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]
     #[must_use]
-    pub fn etcs(&mut self) -> ETCS_W<0> {
-        ETCS_W::new(self)
+    pub fn etcs(&mut self) -> ETCS_W<EMAC_EPHY_CLK0_SPEC> {
+        ETCS_W::new(self, 0)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn epit(&mut self) -> EPIT_W<2> {
-        EPIT_W::new(self)
+    pub fn epit(&mut self) -> EPIT_W<EMAC_EPHY_CLK0_SPEC> {
+        EPIT_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn etxie(&mut self) -> ETXIE_W<3> {
-        ETXIE_W::new(self)
+    pub fn etxie(&mut self) -> ETXIE_W<EMAC_EPHY_CLK0_SPEC> {
+        ETXIE_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn erxie(&mut self) -> ERXIE_W<4> {
-        ERXIE_W::new(self)
+    pub fn erxie(&mut self) -> ERXIE_W<EMAC_EPHY_CLK0_SPEC> {
+        ERXIE_W::new(self, 4)
     }
     #[doc = "Bits 5:9"]
     #[inline(always)]
     #[must_use]
-    pub fn erxdc(&mut self) -> ERXDC_W<5> {
-        ERXDC_W::new(self)
+    pub fn erxdc(&mut self) -> ERXDC_W<EMAC_EPHY_CLK0_SPEC> {
+        ERXDC_W::new(self, 5)
     }
     #[doc = "Bits 10:12"]
     #[inline(always)]
     #[must_use]
-    pub fn etxdc(&mut self) -> ETXDC_W<10> {
-        ETXDC_W::new(self)
+    pub fn etxdc(&mut self) -> ETXDC_W<EMAC_EPHY_CLK0_SPEC> {
+        ETXDC_W::new(self, 10)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn rmii_en(&mut self) -> RMII_EN_W<13> {
-        RMII_EN_W::new(self)
+    pub fn rmii_en(&mut self) -> RMII_EN_W<EMAC_EPHY_CLK0_SPEC> {
+        RMII_EN_W::new(self, 13)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn phy_select(&mut self) -> PHY_SELECT_W<15> {
-        PHY_SELECT_W::new(self)
+    pub fn phy_select(&mut self) -> PHY_SELECT_W<EMAC_EPHY_CLK0_SPEC> {
+        PHY_SELECT_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     #[must_use]
-    pub fn shutdown(&mut self) -> SHUTDOWN_W<16> {
-        SHUTDOWN_W::new(self)
+    pub fn shutdown(&mut self) -> SHUTDOWN_W<EMAC_EPHY_CLK0_SPEC> {
+        SHUTDOWN_W::new(self, 16)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     #[must_use]
-    pub fn led_pol(&mut self) -> LED_POL_W<17> {
-        LED_POL_W::new(self)
+    pub fn led_pol(&mut self) -> LED_POL_W<EMAC_EPHY_CLK0_SPEC> {
+        LED_POL_W::new(self, 17)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_sel(&mut self) -> CLK_SEL_W<18> {
-        CLK_SEL_W::new(self)
+    pub fn clk_sel(&mut self) -> CLK_SEL_W<EMAC_EPHY_CLK0_SPEC> {
+        CLK_SEL_W::new(self, 18)
     }
     #[doc = "Bits 20:24"]
     #[inline(always)]
     #[must_use]
-    pub fn phy_addr(&mut self) -> PHY_ADDR_W<20> {
-        PHY_ADDR_W::new(self)
+    pub fn phy_addr(&mut self) -> PHY_ADDR_W<EMAC_EPHY_CLK0_SPEC> {
+        PHY_ADDR_W::new(self, 20)
     }
     #[doc = "Bits 25:26"]
     #[inline(always)]
     #[must_use]
-    pub fn ephy_mode(&mut self) -> EPHY_MODE_W<25> {
-        EPHY_MODE_W::new(self)
+    pub fn ephy_mode(&mut self) -> EPHY_MODE_W<EMAC_EPHY_CLK0_SPEC> {
+        EPHY_MODE_W::new(self, 25)
     }
     #[doc = "Bit 27"]
     #[inline(always)]
     #[must_use]
-    pub fn xmii_sel(&mut self) -> XMII_SEL_W<27> {
-        XMII_SEL_W::new(self)
+    pub fn xmii_sel(&mut self) -> XMII_SEL_W<EMAC_EPHY_CLK0_SPEC> {
+        XMII_SEL_W::new(self, 27)
     }
     #[doc = "Bits 28:31"]
     #[inline(always)]
     #[must_use]
-    pub fn bps_efuse(&mut self) -> BPS_EFUSE_W<28> {
-        BPS_EFUSE_W::new(self)
+    pub fn bps_efuse(&mut self) -> BPS_EFUSE_W<EMAC_EPHY_CLK0_SPEC> {
+        BPS_EFUSE_W::new(self, 28)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EMAC-EPHY Clock Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emac_ephy_clk0](index.html) module"]
+#[doc = "EMAC-EPHY Clock Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emac_ephy_clk0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emac_ephy_clk0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EMAC_EPHY_CLK0_SPEC;
 impl crate::RegisterSpec for EMAC_EPHY_CLK0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [emac_ephy_clk0::R](R) reader structure"]
-impl crate::Readable for EMAC_EPHY_CLK0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [emac_ephy_clk0::W](W) writer structure"]
+#[doc = "`read()` method returns [`emac_ephy_clk0::R`](R) reader structure"]
+impl crate::Readable for EMAC_EPHY_CLK0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`emac_ephy_clk0::W`](W) writer structure"]
 impl crate::Writable for EMAC_EPHY_CLK0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

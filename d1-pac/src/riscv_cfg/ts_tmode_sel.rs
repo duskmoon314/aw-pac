@@ -1,39 +1,7 @@
 #[doc = "Register `ts_tmode_sel` reader"]
-pub struct R(crate::R<TS_TMODE_SEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TS_TMODE_SEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TS_TMODE_SEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TS_TMODE_SEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TS_TMODE_SEL_SPEC>;
 #[doc = "Register `ts_tmode_sel` writer"]
-pub struct W(crate::W<TS_TMODE_SEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TS_TMODE_SEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TS_TMODE_SEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TS_TMODE_SEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TS_TMODE_SEL_SPEC>;
 #[doc = "Field `ts_test_mode_en` reader - Timestamp Test Mode Enable"]
 pub type TS_TEST_MODE_EN_R = crate::BitReader<TS_TEST_MODE_EN_A>;
 #[doc = "Timestamp Test Mode Enable\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<TS_TEST_MODE_EN_A> for bool {
 impl TS_TEST_MODE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TS_TEST_MODE_EN_A {
+    pub const fn variant(&self) -> TS_TEST_MODE_EN_A {
         match self.bits {
             false => TS_TEST_MODE_EN_A::NORMAL,
             true => TS_TEST_MODE_EN_A::TEST,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == TS_TEST_MODE_EN_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `TEST`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_test(&self) -> bool {
         *self == TS_TEST_MODE_EN_A::TEST
     }
 }
 #[doc = "Field `ts_test_mode_en` writer - Timestamp Test Mode Enable"]
-pub type TS_TEST_MODE_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TS_TMODE_SEL_SPEC, TS_TEST_MODE_EN_A, O>;
-impl<'a, const O: u8> TS_TEST_MODE_EN_W<'a, O> {
+pub type TS_TEST_MODE_EN_W<'a, REG> = crate::BitWriter<'a, REG, TS_TEST_MODE_EN_A>;
+impl<'a, REG> TS_TEST_MODE_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(TS_TEST_MODE_EN_A::NORMAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn test(self) -> &'a mut W {
+    pub fn test(self) -> &'a mut crate::W<REG> {
         self.variant(TS_TEST_MODE_EN_A::TEST)
     }
 }
@@ -96,28 +66,29 @@ impl W {
     #[doc = "Bit 0 - Timestamp Test Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ts_test_mode_en(&mut self) -> TS_TEST_MODE_EN_W<0> {
-        TS_TEST_MODE_EN_W::new(self)
+    pub fn ts_test_mode_en(&mut self) -> TS_TEST_MODE_EN_W<TS_TMODE_SEL_SPEC> {
+        TS_TEST_MODE_EN_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Timestamp Test Mode Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ts_tmode_sel](index.html) module"]
+#[doc = "Timestamp Test Mode Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ts_tmode_sel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ts_tmode_sel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TS_TMODE_SEL_SPEC;
 impl crate::RegisterSpec for TS_TMODE_SEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ts_tmode_sel::R](R) reader structure"]
-impl crate::Readable for TS_TMODE_SEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ts_tmode_sel::W](W) writer structure"]
+#[doc = "`read()` method returns [`ts_tmode_sel::R`](R) reader structure"]
+impl crate::Readable for TS_TMODE_SEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ts_tmode_sel::W`](W) writer structure"]
 impl crate::Writable for TS_TMODE_SEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

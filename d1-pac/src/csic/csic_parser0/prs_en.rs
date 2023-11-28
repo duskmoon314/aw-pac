@@ -1,39 +1,7 @@
 #[doc = "Register `prs_en` reader"]
-pub struct R(crate::R<PRS_EN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRS_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRS_EN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRS_EN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PRS_EN_SPEC>;
 #[doc = "Register `prs_en` writer"]
-pub struct W(crate::W<PRS_EN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PRS_EN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PRS_EN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PRS_EN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PRS_EN_SPEC>;
 #[doc = "Field `prs_en` reader - "]
 pub type PRS_EN_R = crate::BitReader<PRS_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<PRS_EN_A> for bool {
 impl PRS_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRS_EN_A {
+    pub const fn variant(&self) -> PRS_EN_A {
         match self.bits {
             false => PRS_EN_A::RESET_DISABLE,
             true => PRS_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `RESET_DISABLE`"]
+    #[doc = "Reset and disable the parser module"]
     #[inline(always)]
     pub fn is_reset_disable(&self) -> bool {
         *self == PRS_EN_A::RESET_DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable the parser module"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == PRS_EN_A::ENABLE
     }
 }
 #[doc = "Field `prs_en` writer - "]
-pub type PRS_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS_EN_SPEC, PRS_EN_A, O>;
-impl<'a, const O: u8> PRS_EN_W<'a, O> {
+pub type PRS_EN_W<'a, REG> = crate::BitWriter<'a, REG, PRS_EN_A>;
+impl<'a, REG> PRS_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Reset and disable the parser module"]
     #[inline(always)]
-    pub fn reset_disable(self) -> &'a mut W {
+    pub fn reset_disable(self) -> &'a mut crate::W<REG> {
         self.variant(PRS_EN_A::RESET_DISABLE)
     }
     #[doc = "Enable the parser module"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(PRS_EN_A::ENABLE)
     }
 }
@@ -101,24 +72,27 @@ impl From<PRS_MODE_A> for bool {
 impl PRS_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PRS_MODE_A> {
+    pub const fn variant(&self) -> Option<PRS_MODE_A> {
         match self.bits {
             true => Some(PRS_MODE_A::MCSI),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MCSI`"]
+    #[doc = "MCSI"]
     #[inline(always)]
     pub fn is_mcsi(&self) -> bool {
         *self == PRS_MODE_A::MCSI
     }
 }
 #[doc = "Field `prs_mode` writer - "]
-pub type PRS_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS_EN_SPEC, PRS_MODE_A, O>;
-impl<'a, const O: u8> PRS_MODE_W<'a, O> {
+pub type PRS_MODE_W<'a, REG> = crate::BitWriter<'a, REG, PRS_MODE_A>;
+impl<'a, REG> PRS_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "MCSI"]
     #[inline(always)]
-    pub fn mcsi(self) -> &'a mut W {
+    pub fn mcsi(self) -> &'a mut crate::W<REG> {
         self.variant(PRS_MODE_A::MCSI)
     }
 }
@@ -141,34 +115,37 @@ impl From<PRS_CH_MODE_A> for bool {
 impl PRS_CH_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRS_CH_MODE_A {
+    pub const fn variant(&self) -> PRS_CH_MODE_A {
         match self.bits {
             false => PRS_CH_MODE_A::CORRESPONDING,
             true => PRS_CH_MODE_A::ALL_FROM_0,
         }
     }
-    #[doc = "Checks if the value of the field is `CORRESPONDING`"]
+    #[doc = "Parser output channel 0-3 corresponding from input channel 0-3"]
     #[inline(always)]
     pub fn is_corresponding(&self) -> bool {
         *self == PRS_CH_MODE_A::CORRESPONDING
     }
-    #[doc = "Checks if the value of the field is `ALL_FROM_0`"]
+    #[doc = "Parser output channel 0-3 all from input channel 0 (MIPI SEHDR)"]
     #[inline(always)]
     pub fn is_all_from_0(&self) -> bool {
         *self == PRS_CH_MODE_A::ALL_FROM_0
     }
 }
 #[doc = "Field `prs_ch_mode` writer - "]
-pub type PRS_CH_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS_EN_SPEC, PRS_CH_MODE_A, O>;
-impl<'a, const O: u8> PRS_CH_MODE_W<'a, O> {
+pub type PRS_CH_MODE_W<'a, REG> = crate::BitWriter<'a, REG, PRS_CH_MODE_A>;
+impl<'a, REG> PRS_CH_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Parser output channel 0-3 corresponding from input channel 0-3"]
     #[inline(always)]
-    pub fn corresponding(self) -> &'a mut W {
+    pub fn corresponding(self) -> &'a mut crate::W<REG> {
         self.variant(PRS_CH_MODE_A::CORRESPONDING)
     }
     #[doc = "Parser output channel 0-3 all from input channel 0 (MIPI SEHDR)"]
     #[inline(always)]
-    pub fn all_from_0(self) -> &'a mut W {
+    pub fn all_from_0(self) -> &'a mut crate::W<REG> {
         self.variant(PRS_CH_MODE_A::ALL_FROM_0)
     }
 }
@@ -191,34 +168,37 @@ impl From<PCLK_EN_A> for bool {
 impl PCLK_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PCLK_EN_A {
+    pub const fn variant(&self) -> PCLK_EN_A {
         match self.bits {
             false => PCLK_EN_A::G_ATE,
             true => PCLK_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `G_ATE`"]
+    #[doc = "Gate pclk input"]
     #[inline(always)]
     pub fn is_g_ate(&self) -> bool {
         *self == PCLK_EN_A::G_ATE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable pclk input"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == PCLK_EN_A::ENABLE
     }
 }
 #[doc = "Field `pclk_en` writer - "]
-pub type PCLK_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS_EN_SPEC, PCLK_EN_A, O>;
-impl<'a, const O: u8> PCLK_EN_W<'a, O> {
+pub type PCLK_EN_W<'a, REG> = crate::BitWriter<'a, REG, PCLK_EN_A>;
+impl<'a, REG> PCLK_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Gate pclk input"]
     #[inline(always)]
-    pub fn g_ate(self) -> &'a mut W {
+    pub fn g_ate(self) -> &'a mut crate::W<REG> {
         self.variant(PCLK_EN_A::G_ATE)
     }
     #[doc = "Enable pclk input"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(PCLK_EN_A::ENABLE)
     }
 }
@@ -241,34 +221,37 @@ impl From<NCSIC_EN_A> for bool {
 impl NCSIC_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> NCSIC_EN_A {
+    pub const fn variant(&self) -> NCSIC_EN_A {
         match self.bits {
             false => NCSIC_EN_A::RESET_DISABLE,
             true => NCSIC_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `RESET_DISABLE`"]
+    #[doc = "Reset and disable the NCSIC module"]
     #[inline(always)]
     pub fn is_reset_disable(&self) -> bool {
         *self == NCSIC_EN_A::RESET_DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable the NCSIC module"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == NCSIC_EN_A::ENABLE
     }
 }
 #[doc = "Field `ncsic_en` writer - "]
-pub type NCSIC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS_EN_SPEC, NCSIC_EN_A, O>;
-impl<'a, const O: u8> NCSIC_EN_W<'a, O> {
+pub type NCSIC_EN_W<'a, REG> = crate::BitWriter<'a, REG, NCSIC_EN_A>;
+impl<'a, REG> NCSIC_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Reset and disable the NCSIC module"]
     #[inline(always)]
-    pub fn reset_disable(self) -> &'a mut W {
+    pub fn reset_disable(self) -> &'a mut crate::W<REG> {
         self.variant(NCSIC_EN_A::RESET_DISABLE)
     }
     #[doc = "Enable the NCSIC module"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(NCSIC_EN_A::ENABLE)
     }
 }
@@ -303,52 +286,53 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn prs_en(&mut self) -> PRS_EN_W<0> {
-        PRS_EN_W::new(self)
+    pub fn prs_en(&mut self) -> PRS_EN_W<PRS_EN_SPEC> {
+        PRS_EN_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn prs_mode(&mut self) -> PRS_MODE_W<1> {
-        PRS_MODE_W::new(self)
+    pub fn prs_mode(&mut self) -> PRS_MODE_W<PRS_EN_SPEC> {
+        PRS_MODE_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn prs_ch_mode(&mut self) -> PRS_CH_MODE_W<2> {
-        PRS_CH_MODE_W::new(self)
+    pub fn prs_ch_mode(&mut self) -> PRS_CH_MODE_W<PRS_EN_SPEC> {
+        PRS_CH_MODE_W::new(self, 2)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
     #[must_use]
-    pub fn pclk_en(&mut self) -> PCLK_EN_W<15> {
-        PCLK_EN_W::new(self)
+    pub fn pclk_en(&mut self) -> PCLK_EN_W<PRS_EN_SPEC> {
+        PCLK_EN_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     #[must_use]
-    pub fn ncsic_en(&mut self) -> NCSIC_EN_W<16> {
-        NCSIC_EN_W::new(self)
+    pub fn ncsic_en(&mut self) -> NCSIC_EN_W<PRS_EN_SPEC> {
+        NCSIC_EN_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Parser Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_en](index.html) module"]
+#[doc = "Parser Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prs_en::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prs_en::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRS_EN_SPEC;
 impl crate::RegisterSpec for PRS_EN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [prs_en::R](R) reader structure"]
-impl crate::Readable for PRS_EN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [prs_en::W](W) writer structure"]
+#[doc = "`read()` method returns [`prs_en::R`](R) reader structure"]
+impl crate::Readable for PRS_EN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`prs_en::W`](W) writer structure"]
 impl crate::Writable for PRS_EN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

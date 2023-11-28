@@ -1,41 +1,9 @@
 #[doc = "Register `pccr23` reader"]
-pub struct R(crate::R<PCCR23_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCCR23_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCCR23_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCCR23_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PCCR23_SPEC>;
 #[doc = "Register `pccr23` writer"]
-pub struct W(crate::W<PCCR23_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PCCR23_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PCCR23_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PCCR23_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PCCR23_SPEC>;
 #[doc = "Field `pwm23_clk_div_m` reader - PWM23 Clock Divide M"]
-pub type PWM23_CLK_DIV_M_R = crate::FieldReader<u8, PWM23_CLK_DIV_M_A>;
+pub type PWM23_CLK_DIV_M_R = crate::FieldReader<PWM23_CLK_DIV_M_A>;
 #[doc = "PWM23 Clock Divide M\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -65,10 +33,13 @@ impl From<PWM23_CLK_DIV_M_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PWM23_CLK_DIV_M_A {
+    type Ux = u8;
+}
 impl PWM23_CLK_DIV_M_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PWM23_CLK_DIV_M_A> {
+    pub const fn variant(&self) -> Option<PWM23_CLK_DIV_M_A> {
         match self.bits {
             0 => Some(PWM23_CLK_DIV_M_A::M1),
             1 => Some(PWM23_CLK_DIV_M_A::M2),
@@ -82,104 +53,107 @@ impl PWM23_CLK_DIV_M_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `M1`"]
+    #[doc = "/1"]
     #[inline(always)]
     pub fn is_m1(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M1
     }
-    #[doc = "Checks if the value of the field is `M2`"]
+    #[doc = "/2"]
     #[inline(always)]
     pub fn is_m2(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M2
     }
-    #[doc = "Checks if the value of the field is `M4`"]
+    #[doc = "/4"]
     #[inline(always)]
     pub fn is_m4(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M4
     }
-    #[doc = "Checks if the value of the field is `M8`"]
+    #[doc = "/8"]
     #[inline(always)]
     pub fn is_m8(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M8
     }
-    #[doc = "Checks if the value of the field is `M16`"]
+    #[doc = "/16"]
     #[inline(always)]
     pub fn is_m16(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M16
     }
-    #[doc = "Checks if the value of the field is `M32`"]
+    #[doc = "/32"]
     #[inline(always)]
     pub fn is_m32(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M32
     }
-    #[doc = "Checks if the value of the field is `M64`"]
+    #[doc = "/64"]
     #[inline(always)]
     pub fn is_m64(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M64
     }
-    #[doc = "Checks if the value of the field is `M128`"]
+    #[doc = "/128"]
     #[inline(always)]
     pub fn is_m128(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M128
     }
-    #[doc = "Checks if the value of the field is `M256`"]
+    #[doc = "/256"]
     #[inline(always)]
     pub fn is_m256(&self) -> bool {
         *self == PWM23_CLK_DIV_M_A::M256
     }
 }
 #[doc = "Field `pwm23_clk_div_m` writer - PWM23 Clock Divide M"]
-pub type PWM23_CLK_DIV_M_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_DIV_M_A, 4, O>;
-impl<'a, const O: u8> PWM23_CLK_DIV_M_W<'a, O> {
+pub type PWM23_CLK_DIV_M_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PWM23_CLK_DIV_M_A>;
+impl<'a, REG> PWM23_CLK_DIV_M_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "/1"]
     #[inline(always)]
-    pub fn m1(self) -> &'a mut W {
+    pub fn m1(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M1)
     }
     #[doc = "/2"]
     #[inline(always)]
-    pub fn m2(self) -> &'a mut W {
+    pub fn m2(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M2)
     }
     #[doc = "/4"]
     #[inline(always)]
-    pub fn m4(self) -> &'a mut W {
+    pub fn m4(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M4)
     }
     #[doc = "/8"]
     #[inline(always)]
-    pub fn m8(self) -> &'a mut W {
+    pub fn m8(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M8)
     }
     #[doc = "/16"]
     #[inline(always)]
-    pub fn m16(self) -> &'a mut W {
+    pub fn m16(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M16)
     }
     #[doc = "/32"]
     #[inline(always)]
-    pub fn m32(self) -> &'a mut W {
+    pub fn m32(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M32)
     }
     #[doc = "/64"]
     #[inline(always)]
-    pub fn m64(self) -> &'a mut W {
+    pub fn m64(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M64)
     }
     #[doc = "/128"]
     #[inline(always)]
-    pub fn m128(self) -> &'a mut W {
+    pub fn m128(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M128)
     }
     #[doc = "/256"]
     #[inline(always)]
-    pub fn m256(self) -> &'a mut W {
+    pub fn m256(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_DIV_M_A::M256)
     }
 }
 #[doc = "Field `pwm23_clk_src_sel` reader - Select PWM23 Clock Source"]
-pub type PWM23_CLK_SRC_SEL_R = crate::FieldReader<u8, PWM23_CLK_SRC_SEL_A>;
+pub type PWM23_CLK_SRC_SEL_R = crate::FieldReader<PWM23_CLK_SRC_SEL_A>;
 #[doc = "Select PWM23 Clock Source\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -195,39 +169,45 @@ impl From<PWM23_CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PWM23_CLK_SRC_SEL_A {
+    type Ux = u8;
+}
 impl PWM23_CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PWM23_CLK_SRC_SEL_A> {
+    pub const fn variant(&self) -> Option<PWM23_CLK_SRC_SEL_A> {
         match self.bits {
             0 => Some(PWM23_CLK_SRC_SEL_A::HOSC),
             1 => Some(PWM23_CLK_SRC_SEL_A::APB0),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `HOSC`"]
+    #[doc = "HOSC"]
     #[inline(always)]
     pub fn is_hosc(&self) -> bool {
         *self == PWM23_CLK_SRC_SEL_A::HOSC
     }
-    #[doc = "Checks if the value of the field is `APB0`"]
+    #[doc = "APB0"]
     #[inline(always)]
     pub fn is_apb0(&self) -> bool {
         *self == PWM23_CLK_SRC_SEL_A::APB0
     }
 }
 #[doc = "Field `pwm23_clk_src_sel` writer - Select PWM23 Clock Source"]
-pub type PWM23_CLK_SRC_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PCCR23_SPEC, u8, PWM23_CLK_SRC_SEL_A, 2, O>;
-impl<'a, const O: u8> PWM23_CLK_SRC_SEL_W<'a, O> {
+pub type PWM23_CLK_SRC_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, PWM23_CLK_SRC_SEL_A>;
+impl<'a, REG> PWM23_CLK_SRC_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "HOSC"]
     #[inline(always)]
-    pub fn hosc(self) -> &'a mut W {
+    pub fn hosc(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_SRC_SEL_A::HOSC)
     }
     #[doc = "APB0"]
     #[inline(always)]
-    pub fn apb0(self) -> &'a mut W {
+    pub fn apb0(self) -> &'a mut crate::W<REG> {
         self.variant(PWM23_CLK_SRC_SEL_A::APB0)
     }
 }
@@ -247,34 +227,35 @@ impl W {
     #[doc = "Bits 0:3 - PWM23 Clock Divide M"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm23_clk_div_m(&mut self) -> PWM23_CLK_DIV_M_W<0> {
-        PWM23_CLK_DIV_M_W::new(self)
+    pub fn pwm23_clk_div_m(&mut self) -> PWM23_CLK_DIV_M_W<PCCR23_SPEC> {
+        PWM23_CLK_DIV_M_W::new(self, 0)
     }
     #[doc = "Bits 7:8 - Select PWM23 Clock Source"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm23_clk_src_sel(&mut self) -> PWM23_CLK_SRC_SEL_W<7> {
-        PWM23_CLK_SRC_SEL_W::new(self)
+    pub fn pwm23_clk_src_sel(&mut self) -> PWM23_CLK_SRC_SEL_W<PCCR23_SPEC> {
+        PWM23_CLK_SRC_SEL_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM23 Clock Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pccr23](index.html) module"]
+#[doc = "PWM23 Clock Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pccr23::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pccr23::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCCR23_SPEC;
 impl crate::RegisterSpec for PCCR23_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pccr23::R](R) reader structure"]
-impl crate::Readable for PCCR23_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pccr23::W](W) writer structure"]
+#[doc = "`read()` method returns [`pccr23::R`](R) reader structure"]
+impl crate::Readable for PCCR23_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pccr23::W`](W) writer structure"]
 impl crate::Writable for PCCR23_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

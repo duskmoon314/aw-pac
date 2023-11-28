@@ -1,39 +1,7 @@
 #[doc = "Register `asrcmbiststat` reader"]
-pub struct R(crate::R<ASRCMBISTSTAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ASRCMBISTSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ASRCMBISTSTAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ASRCMBISTSTAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ASRCMBISTSTAT_SPEC>;
 #[doc = "Register `asrcmbiststat` writer"]
-pub struct W(crate::W<ASRCMBISTSTAT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ASRCMBISTSTAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ASRCMBISTSTAT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ASRCMBISTSTAT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ASRCMBISTSTAT_SPEC>;
 #[doc = "Field `ram_busy_status` reader - RAM busy status"]
 pub type RAM_BUSY_STATUS_R = crate::BitReader<RAM_BUSY_STATUS_A>;
 #[doc = "RAM busy status\n\nValue on reset: 0"]
@@ -53,18 +21,18 @@ impl From<RAM_BUSY_STATUS_A> for bool {
 impl RAM_BUSY_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAM_BUSY_STATUS_A {
+    pub const fn variant(&self) -> RAM_BUSY_STATUS_A {
         match self.bits {
             false => RAM_BUSY_STATUS_A::IDLE,
             true => RAM_BUSY_STATUS_A::BUSY,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == RAM_BUSY_STATUS_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == RAM_BUSY_STATUS_A::BUSY
@@ -89,27 +57,27 @@ impl From<RAM_STOP_STATUS_A> for bool {
 impl RAM_STOP_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAM_STOP_STATUS_A {
+    pub const fn variant(&self) -> RAM_STOP_STATUS_A {
         match self.bits {
             false => RAM_STOP_STATUS_A::RUNNING,
             true => RAM_STOP_STATUS_A::STOP,
         }
     }
-    #[doc = "Checks if the value of the field is `RUNNING`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_running(&self) -> bool {
         *self == RAM_STOP_STATUS_A::RUNNING
     }
-    #[doc = "Checks if the value of the field is `STOP`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
         *self == RAM_STOP_STATUS_A::STOP
     }
 }
 #[doc = "Field `ram_bist_error_cycle` reader - RAM BIST error cycle"]
-pub type RAM_BIST_ERROR_CYCLE_R = crate::FieldReader<u8, u8>;
+pub type RAM_BIST_ERROR_CYCLE_R = crate::FieldReader;
 #[doc = "Field `ram_bist_error_pattern` reader - RAM BIST error pattern"]
-pub type RAM_BIST_ERROR_PATTERN_R = crate::FieldReader<u8, u8>;
+pub type RAM_BIST_ERROR_PATTERN_R = crate::FieldReader;
 #[doc = "Field `ram_bist_err_status` reader - RAM BIST error status"]
 pub type RAM_BIST_ERR_STATUS_R = crate::BitReader<RAM_BIST_ERR_STATUS_A>;
 #[doc = "RAM BIST error status\n\nValue on reset: 0"]
@@ -129,18 +97,18 @@ impl From<RAM_BIST_ERR_STATUS_A> for bool {
 impl RAM_BIST_ERR_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAM_BIST_ERR_STATUS_A {
+    pub const fn variant(&self) -> RAM_BIST_ERR_STATUS_A {
         match self.bits {
             false => RAM_BIST_ERR_STATUS_A::NO_EFFECT,
             true => RAM_BIST_ERR_STATUS_A::ERROR,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
         *self == RAM_BIST_ERR_STATUS_A::NO_EFFECT
     }
-    #[doc = "Checks if the value of the field is `ERROR`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
         *self == RAM_BIST_ERR_STATUS_A::ERROR
@@ -165,27 +133,27 @@ impl From<ROM_BUSY_STATUS_A> for bool {
 impl ROM_BUSY_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ROM_BUSY_STATUS_A {
+    pub const fn variant(&self) -> ROM_BUSY_STATUS_A {
         match self.bits {
             false => ROM_BUSY_STATUS_A::IDLE,
             true => ROM_BUSY_STATUS_A::BUSY,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == ROM_BUSY_STATUS_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == ROM_BUSY_STATUS_A::BUSY
     }
 }
 #[doc = "Field `rom_bist_error_sum` reader - ROM BIST error sum"]
-pub type ROM_BIST_ERROR_SUM_R = crate::BitReader<bool>;
+pub type ROM_BIST_ERROR_SUM_R = crate::BitReader;
 #[doc = "Field `rom_bist_error_xor` reader - ROM BIST error xor"]
-pub type ROM_BIST_ERROR_XOR_R = crate::BitReader<bool>;
+pub type ROM_BIST_ERROR_XOR_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - RAM busy status"]
     #[inline(always)]
@@ -229,25 +197,26 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "ASRC MBIST Test Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [asrcmbiststat](index.html) module"]
+#[doc = "ASRC MBIST Test Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`asrcmbiststat::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`asrcmbiststat::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ASRCMBISTSTAT_SPEC;
 impl crate::RegisterSpec for ASRCMBISTSTAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [asrcmbiststat::R](R) reader structure"]
-impl crate::Readable for ASRCMBISTSTAT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [asrcmbiststat::W](W) writer structure"]
+#[doc = "`read()` method returns [`asrcmbiststat::R`](R) reader structure"]
+impl crate::Readable for ASRCMBISTSTAT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`asrcmbiststat::W`](W) writer structure"]
 impl crate::Writable for ASRCMBISTSTAT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

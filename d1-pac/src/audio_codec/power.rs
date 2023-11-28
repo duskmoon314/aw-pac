@@ -1,45 +1,13 @@
 #[doc = "Register `power` reader"]
-pub struct R(crate::R<POWER_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<POWER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<POWER_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<POWER_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<POWER_SPEC>;
 #[doc = "Register `power` writer"]
-pub struct W(crate::W<POWER_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<POWER_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<POWER_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<POWER_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<POWER_SPEC>;
 #[doc = "Field `bg_trim` reader - BG Output Voltage Trimming\n\nOnly low 6-bit is used. The BG output voltage range is from 0.7 V to 1.208 V"]
-pub type BG_TRIM_R = crate::FieldReader<u8, u8>;
+pub type BG_TRIM_R = crate::FieldReader;
 #[doc = "Field `bg_trim` writer - BG Output Voltage Trimming\n\nOnly low 6-bit is used. The BG output voltage range is from 0.7 V to 1.208 V"]
-pub type BG_TRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POWER_SPEC, u8, u8, 8, O>;
+pub type BG_TRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `hpldo_output_voltage` reader - HPLDO Output Voltage Control"]
-pub type HPLDO_OUTPUT_VOLTAGE_R = crate::FieldReader<u8, HPLDO_OUTPUT_VOLTAGE_A>;
+pub type HPLDO_OUTPUT_VOLTAGE_R = crate::FieldReader<HPLDO_OUTPUT_VOLTAGE_A>;
 #[doc = "HPLDO Output Voltage Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -67,10 +35,13 @@ impl From<HPLDO_OUTPUT_VOLTAGE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HPLDO_OUTPUT_VOLTAGE_A {
+    type Ux = u8;
+}
 impl HPLDO_OUTPUT_VOLTAGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPLDO_OUTPUT_VOLTAGE_A {
+    pub const fn variant(&self) -> HPLDO_OUTPUT_VOLTAGE_A {
         match self.bits {
             0 => HPLDO_OUTPUT_VOLTAGE_A::V165,
             1 => HPLDO_OUTPUT_VOLTAGE_A::V170,
@@ -83,94 +54,98 @@ impl HPLDO_OUTPUT_VOLTAGE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `V165`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_v165(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V165
     }
-    #[doc = "Checks if the value of the field is `V170`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_v170(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V170
     }
-    #[doc = "Checks if the value of the field is `V175`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_v175(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V175
     }
-    #[doc = "Checks if the value of the field is `V180`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_v180(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V180
     }
-    #[doc = "Checks if the value of the field is `V185`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_v185(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V185
     }
-    #[doc = "Checks if the value of the field is `V190`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_v190(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V190
     }
-    #[doc = "Checks if the value of the field is `V195`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_v195(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V195
     }
-    #[doc = "Checks if the value of the field is `V200`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_v200(&self) -> bool {
         *self == HPLDO_OUTPUT_VOLTAGE_A::V200
     }
 }
 #[doc = "Field `hpldo_output_voltage` writer - HPLDO Output Voltage Control"]
-pub type HPLDO_OUTPUT_VOLTAGE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, POWER_SPEC, u8, HPLDO_OUTPUT_VOLTAGE_A, 3, O>;
-impl<'a, const O: u8> HPLDO_OUTPUT_VOLTAGE_W<'a, O> {
+pub type HPLDO_OUTPUT_VOLTAGE_W<'a, REG> =
+    crate::FieldWriterSafe<'a, REG, 3, HPLDO_OUTPUT_VOLTAGE_A>;
+impl<'a, REG> HPLDO_OUTPUT_VOLTAGE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn v165(self) -> &'a mut W {
+    pub fn v165(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V165)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn v170(self) -> &'a mut W {
+    pub fn v170(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V170)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn v175(self) -> &'a mut W {
+    pub fn v175(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V175)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn v180(self) -> &'a mut W {
+    pub fn v180(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V180)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn v185(self) -> &'a mut W {
+    pub fn v185(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V185)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn v190(self) -> &'a mut W {
+    pub fn v190(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V190)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn v195(self) -> &'a mut W {
+    pub fn v195(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V195)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn v200(self) -> &'a mut W {
+    pub fn v200(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_OUTPUT_VOLTAGE_A::V200)
     }
 }
 #[doc = "Field `aldo_output_voltage` reader - ALDO Output Voltage Control"]
-pub type ALDO_OUTPUT_VOLTAGE_R = crate::FieldReader<u8, ALDO_OUTPUT_VOLTAGE_A>;
+pub type ALDO_OUTPUT_VOLTAGE_R = crate::FieldReader<ALDO_OUTPUT_VOLTAGE_A>;
 #[doc = "ALDO Output Voltage Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -198,10 +173,13 @@ impl From<ALDO_OUTPUT_VOLTAGE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for ALDO_OUTPUT_VOLTAGE_A {
+    type Ux = u8;
+}
 impl ALDO_OUTPUT_VOLTAGE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ALDO_OUTPUT_VOLTAGE_A {
+    pub const fn variant(&self) -> ALDO_OUTPUT_VOLTAGE_A {
         match self.bits {
             0 => ALDO_OUTPUT_VOLTAGE_A::V165,
             1 => ALDO_OUTPUT_VOLTAGE_A::V170,
@@ -214,94 +192,97 @@ impl ALDO_OUTPUT_VOLTAGE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `V165`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_v165(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V165
     }
-    #[doc = "Checks if the value of the field is `V170`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_v170(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V170
     }
-    #[doc = "Checks if the value of the field is `V175`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_v175(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V175
     }
-    #[doc = "Checks if the value of the field is `V180`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_v180(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V180
     }
-    #[doc = "Checks if the value of the field is `V185`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_v185(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V185
     }
-    #[doc = "Checks if the value of the field is `V190`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_v190(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V190
     }
-    #[doc = "Checks if the value of the field is `V195`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_v195(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V195
     }
-    #[doc = "Checks if the value of the field is `V200`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_v200(&self) -> bool {
         *self == ALDO_OUTPUT_VOLTAGE_A::V200
     }
 }
 #[doc = "Field `aldo_output_voltage` writer - ALDO Output Voltage Control"]
-pub type ALDO_OUTPUT_VOLTAGE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, POWER_SPEC, u8, ALDO_OUTPUT_VOLTAGE_A, 3, O>;
-impl<'a, const O: u8> ALDO_OUTPUT_VOLTAGE_W<'a, O> {
+pub type ALDO_OUTPUT_VOLTAGE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, ALDO_OUTPUT_VOLTAGE_A>;
+impl<'a, REG> ALDO_OUTPUT_VOLTAGE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn v165(self) -> &'a mut W {
+    pub fn v165(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V165)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn v170(self) -> &'a mut W {
+    pub fn v170(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V170)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn v175(self) -> &'a mut W {
+    pub fn v175(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V175)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn v180(self) -> &'a mut W {
+    pub fn v180(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V180)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn v185(self) -> &'a mut W {
+    pub fn v185(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V185)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn v190(self) -> &'a mut W {
+    pub fn v190(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V190)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn v195(self) -> &'a mut W {
+    pub fn v195(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V195)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn v200(self) -> &'a mut W {
+    pub fn v200(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_OUTPUT_VOLTAGE_A::V200)
     }
 }
 #[doc = "Field `avccpor` reader - AVCCPOR Monitor"]
-pub type AVCCPOR_R = crate::BitReader<bool>;
+pub type AVCCPOR_R = crate::BitReader;
 #[doc = "Field `var1speedup_further_ctrl` reader - VRA1 Speedup Down Further Control In Adda Analog"]
 pub type VAR1SPEEDUP_FURTHER_CTRL_R = crate::BitReader<VAR1SPEEDUP_FURTHER_CTRL_A>;
 #[doc = "VRA1 Speedup Down Further Control In Adda Analog\n\nValue on reset: 0"]
@@ -321,35 +302,38 @@ impl From<VAR1SPEEDUP_FURTHER_CTRL_A> for bool {
 impl VAR1SPEEDUP_FURTHER_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VAR1SPEEDUP_FURTHER_CTRL_A {
+    pub const fn variant(&self) -> VAR1SPEEDUP_FURTHER_CTRL_A {
         match self.bits {
             false => VAR1SPEEDUP_FURTHER_CTRL_A::DIGITAL,
             true => VAR1SPEEDUP_FURTHER_CTRL_A::MANUAL,
         }
     }
-    #[doc = "Checks if the value of the field is `DIGITAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_digital(&self) -> bool {
         *self == VAR1SPEEDUP_FURTHER_CTRL_A::DIGITAL
     }
-    #[doc = "Checks if the value of the field is `MANUAL`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_manual(&self) -> bool {
         *self == VAR1SPEEDUP_FURTHER_CTRL_A::MANUAL
     }
 }
 #[doc = "Field `var1speedup_further_ctrl` writer - VRA1 Speedup Down Further Control In Adda Analog"]
-pub type VAR1SPEEDUP_FURTHER_CTRL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, POWER_SPEC, VAR1SPEEDUP_FURTHER_CTRL_A, O>;
-impl<'a, const O: u8> VAR1SPEEDUP_FURTHER_CTRL_W<'a, O> {
+pub type VAR1SPEEDUP_FURTHER_CTRL_W<'a, REG> =
+    crate::BitWriter<'a, REG, VAR1SPEEDUP_FURTHER_CTRL_A>;
+impl<'a, REG> VAR1SPEEDUP_FURTHER_CTRL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn digital(self) -> &'a mut W {
+    pub fn digital(self) -> &'a mut crate::W<REG> {
         self.variant(VAR1SPEEDUP_FURTHER_CTRL_A::DIGITAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn manual(self) -> &'a mut W {
+    pub fn manual(self) -> &'a mut crate::W<REG> {
         self.variant(VAR1SPEEDUP_FURTHER_CTRL_A::MANUAL)
     }
 }
@@ -372,34 +356,37 @@ impl From<HPLDO_EN_A> for bool {
 impl HPLDO_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPLDO_EN_A {
+    pub const fn variant(&self) -> HPLDO_EN_A {
         match self.bits {
             false => HPLDO_EN_A::DISABLE,
             true => HPLDO_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == HPLDO_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == HPLDO_EN_A::ENABLE
     }
 }
 #[doc = "Field `hpldo_en` writer - HPLDO Enable"]
-pub type HPLDO_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWER_SPEC, HPLDO_EN_A, O>;
-impl<'a, const O: u8> HPLDO_EN_W<'a, O> {
+pub type HPLDO_EN_W<'a, REG> = crate::BitWriter<'a, REG, HPLDO_EN_A>;
+impl<'a, REG> HPLDO_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(HPLDO_EN_A::ENABLE)
     }
 }
@@ -422,34 +409,37 @@ impl From<ALDO_EN_A> for bool {
 impl ALDO_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ALDO_EN_A {
+    pub const fn variant(&self) -> ALDO_EN_A {
         match self.bits {
             false => ALDO_EN_A::DISABLE,
             true => ALDO_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == ALDO_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == ALDO_EN_A::ENABLE
     }
 }
 #[doc = "Field `aldo_en` writer - ALDO Enable"]
-pub type ALDO_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, POWER_SPEC, ALDO_EN_A, O>;
-impl<'a, const O: u8> ALDO_EN_W<'a, O> {
+pub type ALDO_EN_W<'a, REG> = crate::BitWriter<'a, REG, ALDO_EN_A>;
+impl<'a, REG> ALDO_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(ALDO_EN_A::ENABLE)
     }
 }
@@ -494,58 +484,59 @@ impl W {
     #[doc = "Bits 0:7 - BG Output Voltage Trimming\n\nOnly low 6-bit is used. The BG output voltage range is from 0.7 V to 1.208 V"]
     #[inline(always)]
     #[must_use]
-    pub fn bg_trim(&mut self) -> BG_TRIM_W<0> {
-        BG_TRIM_W::new(self)
+    pub fn bg_trim(&mut self) -> BG_TRIM_W<POWER_SPEC> {
+        BG_TRIM_W::new(self, 0)
     }
     #[doc = "Bits 8:10 - HPLDO Output Voltage Control"]
     #[inline(always)]
     #[must_use]
-    pub fn hpldo_output_voltage(&mut self) -> HPLDO_OUTPUT_VOLTAGE_W<8> {
-        HPLDO_OUTPUT_VOLTAGE_W::new(self)
+    pub fn hpldo_output_voltage(&mut self) -> HPLDO_OUTPUT_VOLTAGE_W<POWER_SPEC> {
+        HPLDO_OUTPUT_VOLTAGE_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - ALDO Output Voltage Control"]
     #[inline(always)]
     #[must_use]
-    pub fn aldo_output_voltage(&mut self) -> ALDO_OUTPUT_VOLTAGE_W<12> {
-        ALDO_OUTPUT_VOLTAGE_W::new(self)
+    pub fn aldo_output_voltage(&mut self) -> ALDO_OUTPUT_VOLTAGE_W<POWER_SPEC> {
+        ALDO_OUTPUT_VOLTAGE_W::new(self, 12)
     }
     #[doc = "Bit 29 - VRA1 Speedup Down Further Control In Adda Analog"]
     #[inline(always)]
     #[must_use]
-    pub fn var1speedup_further_ctrl(&mut self) -> VAR1SPEEDUP_FURTHER_CTRL_W<29> {
-        VAR1SPEEDUP_FURTHER_CTRL_W::new(self)
+    pub fn var1speedup_further_ctrl(&mut self) -> VAR1SPEEDUP_FURTHER_CTRL_W<POWER_SPEC> {
+        VAR1SPEEDUP_FURTHER_CTRL_W::new(self, 29)
     }
     #[doc = "Bit 30 - HPLDO Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hpldo_en(&mut self) -> HPLDO_EN_W<30> {
-        HPLDO_EN_W::new(self)
+    pub fn hpldo_en(&mut self) -> HPLDO_EN_W<POWER_SPEC> {
+        HPLDO_EN_W::new(self, 30)
     }
     #[doc = "Bit 31 - ALDO Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn aldo_en(&mut self) -> ALDO_EN_W<31> {
-        ALDO_EN_W::new(self)
+    pub fn aldo_en(&mut self) -> ALDO_EN_W<POWER_SPEC> {
+        ALDO_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "POWER Analog Control Register\n\nThe register is not controlled by the clock and reset of Audio Codec, only controlled by the clock and reset of system bus.\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [power](index.html) module"]
+#[doc = "POWER Analog Control Register\n\nThe register is not controlled by the clock and reset of Audio Codec, only controlled by the clock and reset of system bus.\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`power::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`power::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct POWER_SPEC;
 impl crate::RegisterSpec for POWER_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [power::R](R) reader structure"]
-impl crate::Readable for POWER_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [power::W](W) writer structure"]
+#[doc = "`read()` method returns [`power::R`](R) reader structure"]
+impl crate::Readable for POWER_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`power::W`](W) writer structure"]
 impl crate::Writable for POWER_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,41 +1,9 @@
 #[doc = "Register `csic_dma%s_input_sel` reader"]
-pub struct R(crate::R<CSIC_DMA_INPUT_SEL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSIC_DMA_INPUT_SEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSIC_DMA_INPUT_SEL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSIC_DMA_INPUT_SEL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CSIC_DMA_INPUT_SEL_SPEC>;
 #[doc = "Register `csic_dma%s_input_sel` writer"]
-pub struct W(crate::W<CSIC_DMA_INPUT_SEL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSIC_DMA_INPUT_SEL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSIC_DMA_INPUT_SEL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSIC_DMA_INPUT_SEL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CSIC_DMA_INPUT_SEL_SPEC>;
 #[doc = "Field `input_sel` reader - Input selection for DMA\\[i\\]"]
-pub type INPUT_SEL_R = crate::FieldReader<u8, INPUT_SEL_A>;
+pub type INPUT_SEL_R = crate::FieldReader<INPUT_SEL_A>;
 #[doc = "Input selection for DMA\\[i\\]\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<INPUT_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for INPUT_SEL_A {
+    type Ux = u8;
+}
 impl INPUT_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<INPUT_SEL_A> {
+    pub const fn variant(&self) -> Option<INPUT_SEL_A> {
         match self.bits {
             0 => Some(INPUT_SEL_A::ISP0_CH0),
             1 => Some(INPUT_SEL_A::ISP0_CH1),
@@ -67,49 +38,52 @@ impl INPUT_SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ISP0_CH0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_isp0_ch0(&self) -> bool {
         *self == INPUT_SEL_A::ISP0_CH0
     }
-    #[doc = "Checks if the value of the field is `ISP0_CH1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_isp0_ch1(&self) -> bool {
         *self == INPUT_SEL_A::ISP0_CH1
     }
-    #[doc = "Checks if the value of the field is `ISP0_CH2`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_isp0_ch2(&self) -> bool {
         *self == INPUT_SEL_A::ISP0_CH2
     }
-    #[doc = "Checks if the value of the field is `ISP0_CH3`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_isp0_ch3(&self) -> bool {
         *self == INPUT_SEL_A::ISP0_CH3
     }
 }
 #[doc = "Field `input_sel` writer - Input selection for DMA\\[i\\]"]
-pub type INPUT_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CSIC_DMA_INPUT_SEL_SPEC, u8, INPUT_SEL_A, 4, O>;
-impl<'a, const O: u8> INPUT_SEL_W<'a, O> {
+pub type INPUT_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 4, INPUT_SEL_A>;
+impl<'a, REG> INPUT_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn isp0_ch0(self) -> &'a mut W {
+    pub fn isp0_ch0(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEL_A::ISP0_CH0)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn isp0_ch1(self) -> &'a mut W {
+    pub fn isp0_ch1(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEL_A::ISP0_CH1)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn isp0_ch2(self) -> &'a mut W {
+    pub fn isp0_ch2(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEL_A::ISP0_CH2)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn isp0_ch3(self) -> &'a mut W {
+    pub fn isp0_ch3(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEL_A::ISP0_CH3)
     }
 }
@@ -124,28 +98,29 @@ impl W {
     #[doc = "Bits 0:3 - Input selection for DMA\\[i\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn input_sel(&mut self) -> INPUT_SEL_W<0> {
-        INPUT_SEL_W::new(self)
+    pub fn input_sel(&mut self) -> INPUT_SEL_W<CSIC_DMA_INPUT_SEL_SPEC> {
+        INPUT_SEL_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CSIC DMA\\[i\\] Input Select Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csic_dma_input_sel](index.html) module"]
+#[doc = "CSIC DMA\\[i\\] Input Select Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csic_dma_input_sel::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csic_dma_input_sel::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSIC_DMA_INPUT_SEL_SPEC;
 impl crate::RegisterSpec for CSIC_DMA_INPUT_SEL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csic_dma_input_sel::R](R) reader structure"]
-impl crate::Readable for CSIC_DMA_INPUT_SEL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csic_dma_input_sel::W](W) writer structure"]
+#[doc = "`read()` method returns [`csic_dma_input_sel::R`](R) reader structure"]
+impl crate::Readable for CSIC_DMA_INPUT_SEL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`csic_dma_input_sel::W`](W) writer structure"]
 impl crate::Writable for CSIC_DMA_INPUT_SEL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

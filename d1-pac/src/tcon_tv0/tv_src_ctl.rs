@@ -1,41 +1,9 @@
 #[doc = "Register `tv_src_ctl` reader"]
-pub struct R(crate::R<TV_SRC_CTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TV_SRC_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TV_SRC_CTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TV_SRC_CTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TV_SRC_CTL_SPEC>;
 #[doc = "Register `tv_src_ctl` writer"]
-pub struct W(crate::W<TV_SRC_CTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TV_SRC_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TV_SRC_CTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TV_SRC_CTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TV_SRC_CTL_SPEC>;
 #[doc = "Field `tv_src_sel` reader - TV Source Select"]
-pub type TV_SRC_SEL_R = crate::FieldReader<u8, TV_SRC_SEL_A>;
+pub type TV_SRC_SEL_R = crate::FieldReader<TV_SRC_SEL_A>;
 #[doc = "TV Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -57,10 +25,13 @@ impl From<TV_SRC_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TV_SRC_SEL_A {
+    type Ux = u8;
+}
 impl TV_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TV_SRC_SEL_A> {
+    pub const fn variant(&self) -> Option<TV_SRC_SEL_A> {
         match self.bits {
             0 => Some(TV_SRC_SEL_A::DE),
             1 => Some(TV_SRC_SEL_A::COLOR),
@@ -70,59 +41,62 @@ impl TV_SRC_SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DE`"]
+    #[doc = "DE"]
     #[inline(always)]
     pub fn is_de(&self) -> bool {
         *self == TV_SRC_SEL_A::DE
     }
-    #[doc = "Checks if the value of the field is `COLOR`"]
+    #[doc = "Color Check"]
     #[inline(always)]
     pub fn is_color(&self) -> bool {
         *self == TV_SRC_SEL_A::COLOR
     }
-    #[doc = "Checks if the value of the field is `GRAYSCALE`"]
+    #[doc = "Grayscale Check"]
     #[inline(always)]
     pub fn is_grayscale(&self) -> bool {
         *self == TV_SRC_SEL_A::GRAYSCALE
     }
-    #[doc = "Checks if the value of the field is `BLACK_BY_WHITE`"]
+    #[doc = "Black by White Check"]
     #[inline(always)]
     pub fn is_black_by_white(&self) -> bool {
         *self == TV_SRC_SEL_A::BLACK_BY_WHITE
     }
-    #[doc = "Checks if the value of the field is `GRIDDING`"]
+    #[doc = "Gridding Check"]
     #[inline(always)]
     pub fn is_gridding(&self) -> bool {
         *self == TV_SRC_SEL_A::GRIDDING
     }
 }
 #[doc = "Field `tv_src_sel` writer - TV Source Select"]
-pub type TV_SRC_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_SRC_CTL_SPEC, u8, TV_SRC_SEL_A, 3, O>;
-impl<'a, const O: u8> TV_SRC_SEL_W<'a, O> {
+pub type TV_SRC_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, TV_SRC_SEL_A>;
+impl<'a, REG> TV_SRC_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "DE"]
     #[inline(always)]
-    pub fn de(self) -> &'a mut W {
+    pub fn de(self) -> &'a mut crate::W<REG> {
         self.variant(TV_SRC_SEL_A::DE)
     }
     #[doc = "Color Check"]
     #[inline(always)]
-    pub fn color(self) -> &'a mut W {
+    pub fn color(self) -> &'a mut crate::W<REG> {
         self.variant(TV_SRC_SEL_A::COLOR)
     }
     #[doc = "Grayscale Check"]
     #[inline(always)]
-    pub fn grayscale(self) -> &'a mut W {
+    pub fn grayscale(self) -> &'a mut crate::W<REG> {
         self.variant(TV_SRC_SEL_A::GRAYSCALE)
     }
     #[doc = "Black by White Check"]
     #[inline(always)]
-    pub fn black_by_white(self) -> &'a mut W {
+    pub fn black_by_white(self) -> &'a mut crate::W<REG> {
         self.variant(TV_SRC_SEL_A::BLACK_BY_WHITE)
     }
     #[doc = "Gridding Check"]
     #[inline(always)]
-    pub fn gridding(self) -> &'a mut W {
+    pub fn gridding(self) -> &'a mut crate::W<REG> {
         self.variant(TV_SRC_SEL_A::GRIDDING)
     }
 }
@@ -137,28 +111,29 @@ impl W {
     #[doc = "Bits 0:2 - TV Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tv_src_sel(&mut self) -> TV_SRC_SEL_W<0> {
-        TV_SRC_SEL_W::new(self)
+    pub fn tv_src_sel(&mut self) -> TV_SRC_SEL_W<TV_SRC_CTL_SPEC> {
+        TV_SRC_SEL_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TV Source Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tv_src_ctl](index.html) module"]
+#[doc = "TV Source Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv_src_ctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tv_src_ctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TV_SRC_CTL_SPEC;
 impl crate::RegisterSpec for TV_SRC_CTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tv_src_ctl::R](R) reader structure"]
-impl crate::Readable for TV_SRC_CTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tv_src_ctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`tv_src_ctl::R`](R) reader structure"]
+impl crate::Readable for TV_SRC_CTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tv_src_ctl::W`](W) writer structure"]
 impl crate::Writable for TV_SRC_CTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

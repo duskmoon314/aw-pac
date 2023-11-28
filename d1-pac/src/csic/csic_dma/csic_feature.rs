@@ -1,39 +1,7 @@
 #[doc = "Register `csic_feature` reader"]
-pub struct R(crate::R<CSIC_FEATURE_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSIC_FEATURE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSIC_FEATURE_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSIC_FEATURE_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CSIC_FEATURE_SPEC>;
 #[doc = "Register `csic_feature` writer"]
-pub struct W(crate::W<CSIC_FEATURE_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSIC_FEATURE_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSIC_FEATURE_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSIC_FEATURE_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CSIC_FEATURE_SPEC>;
 #[doc = "Field `dma0_embedded_fbc` reader - "]
 pub type DMA0_EMBEDDED_FBC_R = crate::BitReader<DMA0_EMBEDDED_FBC_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,18 +21,18 @@ impl From<DMA0_EMBEDDED_FBC_A> for bool {
 impl DMA0_EMBEDDED_FBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA0_EMBEDDED_FBC_A {
+    pub const fn variant(&self) -> DMA0_EMBEDDED_FBC_A {
         match self.bits {
             false => DMA0_EMBEDDED_FBC_A::NO_E_MBEDDED,
             true => DMA0_EMBEDDED_FBC_A::E_MBEDDED,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_E_MBEDDED`"]
+    #[doc = "No Embedded DMA"]
     #[inline(always)]
     pub fn is_no_e_mbedded(&self) -> bool {
         *self == DMA0_EMBEDDED_FBC_A::NO_E_MBEDDED
     }
-    #[doc = "Checks if the value of the field is `E_MBEDDED`"]
+    #[doc = "Embedded FBC"]
     #[inline(always)]
     pub fn is_e_mbedded(&self) -> bool {
         *self == DMA0_EMBEDDED_FBC_A::E_MBEDDED
@@ -89,18 +57,18 @@ impl From<DMA0_EMBEDDED_LBC_A> for bool {
 impl DMA0_EMBEDDED_LBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA0_EMBEDDED_LBC_A {
+    pub const fn variant(&self) -> DMA0_EMBEDDED_LBC_A {
         match self.bits {
             false => DMA0_EMBEDDED_LBC_A::NO_E_MBEDDED,
             true => DMA0_EMBEDDED_LBC_A::E_MBEDDED,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_E_MBEDDED`"]
+    #[doc = "No Embedded LBC"]
     #[inline(always)]
     pub fn is_no_e_mbedded(&self) -> bool {
         *self == DMA0_EMBEDDED_LBC_A::NO_E_MBEDDED
     }
-    #[doc = "Checks if the value of the field is `E_MBEDDED`"]
+    #[doc = "Embedded LBC"]
     #[inline(always)]
     pub fn is_e_mbedded(&self) -> bool {
         *self == DMA0_EMBEDDED_LBC_A::E_MBEDDED
@@ -119,25 +87,26 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CSIC DMA Feature List Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csic_feature](index.html) module"]
+#[doc = "CSIC DMA Feature List Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csic_feature::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csic_feature::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSIC_FEATURE_SPEC;
 impl crate::RegisterSpec for CSIC_FEATURE_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csic_feature::R](R) reader structure"]
-impl crate::Readable for CSIC_FEATURE_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csic_feature::W](W) writer structure"]
+#[doc = "`read()` method returns [`csic_feature::R`](R) reader structure"]
+impl crate::Readable for CSIC_FEATURE_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`csic_feature::W`](W) writer structure"]
 impl crate::Writable for CSIC_FEATURE_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

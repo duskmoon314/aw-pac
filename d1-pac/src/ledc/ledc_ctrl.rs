@@ -1,39 +1,7 @@
 #[doc = "Register `ledc_ctrl` reader"]
-pub struct R(crate::R<LEDC_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LEDC_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LEDC_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LEDC_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LEDC_CTRL_SPEC>;
 #[doc = "Register `ledc_ctrl` writer"]
-pub struct W(crate::W<LEDC_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LEDC_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LEDC_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LEDC_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LEDC_CTRL_SPEC>;
 #[doc = "Field `ledc_en` reader - "]
 pub type LEDC_EN_R = crate::BitReader<LEDC_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,41 +21,44 @@ impl From<LEDC_EN_A> for bool {
 impl LEDC_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LEDC_EN_A {
+    pub const fn variant(&self) -> LEDC_EN_A {
         match self.bits {
             false => LEDC_EN_A::DISABLE,
             true => LEDC_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == LEDC_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == LEDC_EN_A::ENABLE
     }
 }
 #[doc = "Field `ledc_en` writer - "]
-pub type LEDC_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, LEDC_EN_A, O>;
-impl<'a, const O: u8> LEDC_EN_W<'a, O> {
+pub type LEDC_EN_W<'a, REG> = crate::BitWriter<'a, REG, LEDC_EN_A>;
+impl<'a, REG> LEDC_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(LEDC_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(LEDC_EN_A::ENABLE)
     }
 }
 #[doc = "Field `ledc_soft_reset` reader - "]
-pub type LEDC_SOFT_RESET_R = crate::BitReader<bool>;
+pub type LEDC_SOFT_RESET_R = crate::BitReader;
 #[doc = "Field `ledc_soft_reset` writer - "]
-pub type LEDC_SOFT_RESET_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, O>;
+pub type LEDC_SOFT_RESET_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `led_msb_[B,R,G,TOP]` reader - "]
 pub type LED_MSB__R = crate::BitReader<LED_MSB__A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -107,39 +78,42 @@ impl From<LED_MSB__A> for bool {
 impl LED_MSB__R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LED_MSB__A {
+    pub const fn variant(&self) -> LED_MSB__A {
         match self.bits {
             false => LED_MSB__A::LSB,
             true => LED_MSB__A::MSB,
         }
     }
-    #[doc = "Checks if the value of the field is `LSB`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_lsb(&self) -> bool {
         *self == LED_MSB__A::LSB
     }
-    #[doc = "Checks if the value of the field is `MSB`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_msb(&self) -> bool {
         *self == LED_MSB__A::MSB
     }
 }
 #[doc = "Field `led_msb_[B,R,G,TOP]` writer - "]
-pub type LED_MSB__W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, LED_MSB__A, O>;
-impl<'a, const O: u8> LED_MSB__W<'a, O> {
+pub type LED_MSB__W<'a, REG> = crate::BitWriter<'a, REG, LED_MSB__A>;
+impl<'a, REG> LED_MSB__W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn lsb(self) -> &'a mut W {
+    pub fn lsb(self) -> &'a mut crate::W<REG> {
         self.variant(LED_MSB__A::LSB)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn msb(self) -> &'a mut W {
+    pub fn msb(self) -> &'a mut crate::W<REG> {
         self.variant(LED_MSB__A::MSB)
     }
 }
 #[doc = "Field `led_rgb_mode` reader - "]
-pub type LED_RGB_MODE_R = crate::FieldReader<u8, LED_RGB_MODE_A>;
+pub type LED_RGB_MODE_R = crate::FieldReader<LED_RGB_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -163,10 +137,13 @@ impl From<LED_RGB_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for LED_RGB_MODE_A {
+    type Ux = u8;
+}
 impl LED_RGB_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LED_RGB_MODE_A> {
+    pub const fn variant(&self) -> Option<LED_RGB_MODE_A> {
         match self.bits {
             0 => Some(LED_RGB_MODE_A::GRB),
             1 => Some(LED_RGB_MODE_A::GBR),
@@ -177,81 +154,83 @@ impl LED_RGB_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `GRB`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_grb(&self) -> bool {
         *self == LED_RGB_MODE_A::GRB
     }
-    #[doc = "Checks if the value of the field is `GBR`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_gbr(&self) -> bool {
         *self == LED_RGB_MODE_A::GBR
     }
-    #[doc = "Checks if the value of the field is `RGB`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_rgb(&self) -> bool {
         *self == LED_RGB_MODE_A::RGB
     }
-    #[doc = "Checks if the value of the field is `RBG`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_rbg(&self) -> bool {
         *self == LED_RGB_MODE_A::RBG
     }
-    #[doc = "Checks if the value of the field is `BGR`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_bgr(&self) -> bool {
         *self == LED_RGB_MODE_A::BGR
     }
-    #[doc = "Checks if the value of the field is `BRG`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_brg(&self) -> bool {
         *self == LED_RGB_MODE_A::BRG
     }
 }
 #[doc = "Field `led_rgb_mode` writer - "]
-pub type LED_RGB_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u8, LED_RGB_MODE_A, 3, O>;
-impl<'a, const O: u8> LED_RGB_MODE_W<'a, O> {
+pub type LED_RGB_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, LED_RGB_MODE_A>;
+impl<'a, REG> LED_RGB_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn grb(self) -> &'a mut W {
+    pub fn grb(self) -> &'a mut crate::W<REG> {
         self.variant(LED_RGB_MODE_A::GRB)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn gbr(self) -> &'a mut W {
+    pub fn gbr(self) -> &'a mut crate::W<REG> {
         self.variant(LED_RGB_MODE_A::GBR)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn rgb(self) -> &'a mut W {
+    pub fn rgb(self) -> &'a mut crate::W<REG> {
         self.variant(LED_RGB_MODE_A::RGB)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn rbg(self) -> &'a mut W {
+    pub fn rbg(self) -> &'a mut crate::W<REG> {
         self.variant(LED_RGB_MODE_A::RBG)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn bgr(self) -> &'a mut W {
+    pub fn bgr(self) -> &'a mut crate::W<REG> {
         self.variant(LED_RGB_MODE_A::BGR)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn brg(self) -> &'a mut W {
+    pub fn brg(self) -> &'a mut crate::W<REG> {
         self.variant(LED_RGB_MODE_A::BRG)
     }
 }
 #[doc = "Field `reset_led_en` reader - "]
-pub type RESET_LED_EN_R = crate::BitReader<bool>;
+pub type RESET_LED_EN_R = crate::BitReader;
 #[doc = "Field `reset_led_en` writer - "]
-pub type RESET_LED_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, LEDC_CTRL_SPEC, bool, O>;
+pub type RESET_LED_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `total_data_length` reader - "]
-pub type TOTAL_DATA_LENGTH_R = crate::FieldReader<u16, u16>;
+pub type TOTAL_DATA_LENGTH_R = crate::FieldReader<u16>;
 #[doc = "Field `total_data_length` writer - "]
-pub type TOTAL_DATA_LENGTH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LEDC_CTRL_SPEC, u16, u16, 13, O>;
+pub type TOTAL_DATA_LENGTH_W<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -263,22 +242,29 @@ impl R {
     pub fn ledc_soft_reset(&self) -> LEDC_SOFT_RESET_R {
         LEDC_SOFT_RESET_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2"]
+    #[doc = "\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `led_msb_B` field"]
+    #[inline(always)]
+    pub fn led_msb_(&self, n: u8) -> LED_MSB__R {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
+        LED_MSB__R::new(((self.bits >> (n + 2)) & 1) != 0)
+    }
+    #[doc = "Bit 2 - led_msb_B"]
     #[inline(always)]
     pub fn led_msb_b(&self) -> LED_MSB__R {
         LED_MSB__R::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - led_msb_R"]
     #[inline(always)]
     pub fn led_msb_r(&self) -> LED_MSB__R {
         LED_MSB__R::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - led_msb_G"]
     #[inline(always)]
     pub fn led_msb_g(&self) -> LED_MSB__R {
         LED_MSB__R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5"]
+    #[doc = "Bit 5 - led_msb_TOP"]
     #[inline(always)]
     pub fn led_msb_top(&self) -> LED_MSB__R {
         LED_MSB__R::new(((self.bits >> 5) & 1) != 0)
@@ -303,82 +289,85 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn ledc_en(&mut self) -> LEDC_EN_W<0> {
-        LEDC_EN_W::new(self)
+    pub fn ledc_en(&mut self) -> LEDC_EN_W<LEDC_CTRL_SPEC> {
+        LEDC_EN_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn ledc_soft_reset(&mut self) -> LEDC_SOFT_RESET_W<1> {
-        LEDC_SOFT_RESET_W::new(self)
+    pub fn ledc_soft_reset(&mut self) -> LEDC_SOFT_RESET_W<LEDC_CTRL_SPEC> {
+        LEDC_SOFT_RESET_W::new(self, 1)
     }
-    #[doc = ""]
+    #[doc = "\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `led_msb_B` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn led_msb_<const O: u8>(&mut self) -> LED_MSB__W<O> {
-        LED_MSB__W::new(self)
+    pub fn led_msb_(&mut self, n: u8) -> LED_MSB__W<LEDC_CTRL_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
+        LED_MSB__W::new(self, n + 2)
     }
-    #[doc = "Bit 2"]
+    #[doc = "Bit 2 - led_msb_B"]
     #[inline(always)]
     #[must_use]
-    pub fn led_msb_b(&mut self) -> LED_MSB__W<2> {
-        LED_MSB__W::new(self)
+    pub fn led_msb_b(&mut self) -> LED_MSB__W<LEDC_CTRL_SPEC> {
+        LED_MSB__W::new(self, 2)
     }
-    #[doc = "Bit 3"]
+    #[doc = "Bit 3 - led_msb_R"]
     #[inline(always)]
     #[must_use]
-    pub fn led_msb_r(&mut self) -> LED_MSB__W<3> {
-        LED_MSB__W::new(self)
+    pub fn led_msb_r(&mut self) -> LED_MSB__W<LEDC_CTRL_SPEC> {
+        LED_MSB__W::new(self, 3)
     }
-    #[doc = "Bit 4"]
+    #[doc = "Bit 4 - led_msb_G"]
     #[inline(always)]
     #[must_use]
-    pub fn led_msb_g(&mut self) -> LED_MSB__W<4> {
-        LED_MSB__W::new(self)
+    pub fn led_msb_g(&mut self) -> LED_MSB__W<LEDC_CTRL_SPEC> {
+        LED_MSB__W::new(self, 4)
     }
-    #[doc = "Bit 5"]
+    #[doc = "Bit 5 - led_msb_TOP"]
     #[inline(always)]
     #[must_use]
-    pub fn led_msb_top(&mut self) -> LED_MSB__W<5> {
-        LED_MSB__W::new(self)
+    pub fn led_msb_top(&mut self) -> LED_MSB__W<LEDC_CTRL_SPEC> {
+        LED_MSB__W::new(self, 5)
     }
     #[doc = "Bits 6:8"]
     #[inline(always)]
     #[must_use]
-    pub fn led_rgb_mode(&mut self) -> LED_RGB_MODE_W<6> {
-        LED_RGB_MODE_W::new(self)
+    pub fn led_rgb_mode(&mut self) -> LED_RGB_MODE_W<LEDC_CTRL_SPEC> {
+        LED_RGB_MODE_W::new(self, 6)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
     #[must_use]
-    pub fn reset_led_en(&mut self) -> RESET_LED_EN_W<10> {
-        RESET_LED_EN_W::new(self)
+    pub fn reset_led_en(&mut self) -> RESET_LED_EN_W<LEDC_CTRL_SPEC> {
+        RESET_LED_EN_W::new(self, 10)
     }
     #[doc = "Bits 16:28"]
     #[inline(always)]
     #[must_use]
-    pub fn total_data_length(&mut self) -> TOTAL_DATA_LENGTH_W<16> {
-        TOTAL_DATA_LENGTH_W::new(self)
+    pub fn total_data_length(&mut self) -> TOTAL_DATA_LENGTH_W<LEDC_CTRL_SPEC> {
+        TOTAL_DATA_LENGTH_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "LEDC Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ledc_ctrl](index.html) module"]
+#[doc = "LEDC Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ledc_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ledc_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LEDC_CTRL_SPEC;
 impl crate::RegisterSpec for LEDC_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ledc_ctrl::R](R) reader structure"]
-impl crate::Readable for LEDC_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ledc_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ledc_ctrl::R`](R) reader structure"]
+impl crate::Readable for LEDC_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ledc_ctrl::W`](W) writer structure"]
 impl crate::Writable for LEDC_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

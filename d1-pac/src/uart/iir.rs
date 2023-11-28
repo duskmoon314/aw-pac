@@ -1,20 +1,7 @@
 #[doc = "Register `iir` reader"]
-pub struct R(crate::R<IIR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IIR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IIR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IIR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IIR_SPEC>;
 #[doc = "Field `iid` reader - Interrupt ID"]
-pub type IID_R = crate::FieldReader<u8, IID_A>;
+pub type IID_R = crate::FieldReader<IID_A>;
 #[doc = "Interrupt ID\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -42,10 +29,13 @@ impl From<IID_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for IID_A {
+    type Ux = u8;
+}
 impl IID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<IID_A> {
+    pub const fn variant(&self) -> Option<IID_A> {
         match self.bits {
             0 => Some(IID_A::MODEM_STATUS),
             1 => Some(IID_A::NO_INTERRUPT_PENDING),
@@ -58,49 +48,49 @@ impl IID_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MODEM_STATUS`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_modem_status(&self) -> bool {
         *self == IID_A::MODEM_STATUS
     }
-    #[doc = "Checks if the value of the field is `NO_INTERRUPT_PENDING`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_no_interrupt_pending(&self) -> bool {
         *self == IID_A::NO_INTERRUPT_PENDING
     }
-    #[doc = "Checks if the value of the field is `THR_EMPTY`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_thr_empty(&self) -> bool {
         *self == IID_A::THR_EMPTY
     }
-    #[doc = "Checks if the value of the field is `RS485_INTERRUPT`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_rs485_interrupt(&self) -> bool {
         *self == IID_A::RS485_INTERRUPT
     }
-    #[doc = "Checks if the value of the field is `RECEIVED_DATA_AVAILABLE`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_received_data_available(&self) -> bool {
         *self == IID_A::RECEIVED_DATA_AVAILABLE
     }
-    #[doc = "Checks if the value of the field is `RECEIVER_LINE_STATUS`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_receiver_line_status(&self) -> bool {
         *self == IID_A::RECEIVER_LINE_STATUS
     }
-    #[doc = "Checks if the value of the field is `BUSY_DETECT`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_busy_detect(&self) -> bool {
         *self == IID_A::BUSY_DETECT
     }
-    #[doc = "Checks if the value of the field is `CHARACTER_TIMEOUT`"]
+    #[doc = "`1100`"]
     #[inline(always)]
     pub fn is_character_timeout(&self) -> bool {
         *self == IID_A::CHARACTER_TIMEOUT
     }
 }
 #[doc = "Field `feflag` reader - FIFOs Enable Flag"]
-pub type FEFLAG_R = crate::FieldReader<u8, FEFLAG_A>;
+pub type FEFLAG_R = crate::FieldReader<FEFLAG_A>;
 #[doc = "FIFOs Enable Flag\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -116,22 +106,25 @@ impl From<FEFLAG_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for FEFLAG_A {
+    type Ux = u8;
+}
 impl FEFLAG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FEFLAG_A> {
+    pub const fn variant(&self) -> Option<FEFLAG_A> {
         match self.bits {
             0 => Some(FEFLAG_A::DISABLE),
             3 => Some(FEFLAG_A::ENABLE),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == FEFLAG_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == FEFLAG_A::ENABLE
@@ -149,15 +142,13 @@ impl R {
         FEFLAG_R::new(((self.bits >> 6) & 3) as u8)
     }
 }
-#[doc = "UART Interrupt Identity Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iir](index.html) module"]
+#[doc = "UART Interrupt Identity Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`iir::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IIR_SPEC;
 impl crate::RegisterSpec for IIR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [iir::R](R) reader structure"]
-impl crate::Readable for IIR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`iir::R`](R) reader structure"]
+impl crate::Readable for IIR_SPEC {}
 #[doc = "`reset()` method sets iir to value 0"]
 impl crate::Resettable for IIR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

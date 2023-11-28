@@ -1,43 +1,11 @@
 #[doc = "Register `gp_cdata` reader"]
-pub struct R(crate::R<GP_CDATA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<GP_CDATA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<GP_CDATA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<GP_CDATA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<GP_CDATA_SPEC>;
 #[doc = "Register `gp_cdata` writer"]
-pub struct W(crate::W<GP_CDATA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<GP_CDATA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<GP_CDATA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<GP_CDATA_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<GP_CDATA_SPEC>;
 #[doc = "Field `gp_cdata` reader - GPADC Calibration Data"]
-pub type GP_CDATA_R = crate::FieldReader<u16, u16>;
+pub type GP_CDATA_R = crate::FieldReader<u16>;
 #[doc = "Field `gp_cdata` writer - GPADC Calibration Data"]
-pub type GP_CDATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, GP_CDATA_SPEC, u16, u16, 12, O>;
+pub type GP_CDATA_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - GPADC Calibration Data"]
     #[inline(always)]
@@ -49,28 +17,29 @@ impl W {
     #[doc = "Bits 0:11 - GPADC Calibration Data"]
     #[inline(always)]
     #[must_use]
-    pub fn gp_cdata(&mut self) -> GP_CDATA_W<0> {
-        GP_CDATA_W::new(self)
+    pub fn gp_cdata(&mut self) -> GP_CDATA_W<GP_CDATA_SPEC> {
+        GP_CDATA_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "GPADC Calibration Data Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [gp_cdata](index.html) module"]
+#[doc = "GPADC Calibration Data Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`gp_cdata::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`gp_cdata::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct GP_CDATA_SPEC;
 impl crate::RegisterSpec for GP_CDATA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [gp_cdata::R](R) reader structure"]
-impl crate::Readable for GP_CDATA_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [gp_cdata::W](W) writer structure"]
+#[doc = "`read()` method returns [`gp_cdata::R`](R) reader structure"]
+impl crate::Readable for GP_CDATA_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`gp_cdata::W`](W) writer structure"]
 impl crate::Writable for GP_CDATA_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

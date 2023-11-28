@@ -1,39 +1,7 @@
 #[doc = "Register `dmac_pau%s` reader"]
-pub struct R(crate::R<DMAC_PAU_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DMAC_PAU_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DMAC_PAU_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DMAC_PAU_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DMAC_PAU_SPEC>;
 #[doc = "Register `dmac_pau%s` writer"]
-pub struct W(crate::W<DMAC_PAU_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DMAC_PAU_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DMAC_PAU_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DMAC_PAU_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DMAC_PAU_SPEC>;
 #[doc = "Field `dma_pause` reader - Pause the DMA Channel Transfer Data"]
 pub type DMA_PAUSE_R = crate::BitReader<DMA_PAUSE_A>;
 #[doc = "Pause the DMA Channel Transfer Data\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<DMA_PAUSE_A> for bool {
 impl DMA_PAUSE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA_PAUSE_A {
+    pub const fn variant(&self) -> DMA_PAUSE_A {
         match self.bits {
             false => DMA_PAUSE_A::RESUME,
             true => DMA_PAUSE_A::PAUSE,
         }
     }
-    #[doc = "Checks if the value of the field is `RESUME`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_resume(&self) -> bool {
         *self == DMA_PAUSE_A::RESUME
     }
-    #[doc = "Checks if the value of the field is `PAUSE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_pause(&self) -> bool {
         *self == DMA_PAUSE_A::PAUSE
     }
 }
 #[doc = "Field `dma_pause` writer - Pause the DMA Channel Transfer Data"]
-pub type DMA_PAUSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DMAC_PAU_SPEC, DMA_PAUSE_A, O>;
-impl<'a, const O: u8> DMA_PAUSE_W<'a, O> {
+pub type DMA_PAUSE_W<'a, REG> = crate::BitWriter<'a, REG, DMA_PAUSE_A>;
+impl<'a, REG> DMA_PAUSE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn resume(self) -> &'a mut W {
+    pub fn resume(self) -> &'a mut crate::W<REG> {
         self.variant(DMA_PAUSE_A::RESUME)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn pause(self) -> &'a mut W {
+    pub fn pause(self) -> &'a mut crate::W<REG> {
         self.variant(DMA_PAUSE_A::PAUSE)
     }
 }
@@ -95,28 +66,29 @@ impl W {
     #[doc = "Bit 0 - Pause the DMA Channel Transfer Data"]
     #[inline(always)]
     #[must_use]
-    pub fn dma_pause(&mut self) -> DMA_PAUSE_W<0> {
-        DMA_PAUSE_W::new(self)
+    pub fn dma_pause(&mut self) -> DMA_PAUSE_W<DMAC_PAU_SPEC> {
+        DMA_PAUSE_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DMAC Channel Pause Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmac_pau](index.html) module"]
+#[doc = "DMAC Channel Pause Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_pau::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dmac_pau::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DMAC_PAU_SPEC;
 impl crate::RegisterSpec for DMAC_PAU_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dmac_pau::R](R) reader structure"]
-impl crate::Readable for DMAC_PAU_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dmac_pau::W](W) writer structure"]
+#[doc = "`read()` method returns [`dmac_pau::R`](R) reader structure"]
+impl crate::Readable for DMAC_PAU_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dmac_pau::W`](W) writer structure"]
 impl crate::Writable for DMAC_PAU_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

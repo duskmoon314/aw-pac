@@ -1,54 +1,41 @@
 #[doc = "Register `smhc_mintsts` reader"]
-pub struct R(crate::R<SMHC_MINTSTS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SMHC_MINTSTS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SMHC_MINTSTS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SMHC_MINTSTS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SMHC_MINTSTS_SPEC>;
 #[doc = "Field `m_re_int` reader - Response Errors"]
-pub type M_RE_INT_R = crate::BitReader<bool>;
+pub type M_RE_INT_R = crate::BitReader;
 #[doc = "Field `m_cc_int` reader - Command Complete"]
-pub type M_CC_INT_R = crate::BitReader<bool>;
+pub type M_CC_INT_R = crate::BitReader;
 #[doc = "Field `m_dtc_int` reader - Data Transfer Complete"]
-pub type M_DTC_INT_R = crate::BitReader<bool>;
+pub type M_DTC_INT_R = crate::BitReader;
 #[doc = "Field `m_dtr_int` reader - Data Transmit Request"]
-pub type M_DTR_INT_R = crate::BitReader<bool>;
+pub type M_DTR_INT_R = crate::BitReader;
 #[doc = "Field `m_drr_int` reader - Data Receive Request"]
-pub type M_DRR_INT_R = crate::BitReader<bool>;
+pub type M_DRR_INT_R = crate::BitReader;
 #[doc = "Field `m_rce_int` reader - Response CRC Error"]
-pub type M_RCE_INT_R = crate::BitReader<bool>;
+pub type M_RCE_INT_R = crate::BitReader;
 #[doc = "Field `m_dce_int` reader - Data CRC Error"]
-pub type M_DCE_INT_R = crate::BitReader<bool>;
+pub type M_DCE_INT_R = crate::BitReader;
 #[doc = "Field `m_rto_back_int` reader - Response Timeout/Boot ACK Received"]
-pub type M_RTO_BACK_INT_R = crate::BitReader<bool>;
+pub type M_RTO_BACK_INT_R = crate::BitReader;
 #[doc = "Field `m_dto_bds_int` reader - Data Timeout/Boot Data Start"]
-pub type M_DTO_BDS_INT_R = crate::BitReader<bool>;
+pub type M_DTO_BDS_INT_R = crate::BitReader;
 #[doc = "Field `m_dsto_vsd_int` reader - Data Starvation Timeout/V1.8 Switch Done"]
-pub type M_DSTO_VSD_INT_R = crate::BitReader<bool>;
+pub type M_DSTO_VSD_INT_R = crate::BitReader;
 #[doc = "Field `m_fu_fo_int` reader - FIFO Underrun/Overflow"]
-pub type M_FU_FO_INT_R = crate::BitReader<bool>;
+pub type M_FU_FO_INT_R = crate::BitReader;
 #[doc = "Field `m_cb_iw_int` reader - Command Busy and Illegal Write"]
-pub type M_CB_IW_INT_R = crate::BitReader<bool>;
+pub type M_CB_IW_INT_R = crate::BitReader;
 #[doc = "Field `m_dse_bc_int` reader - Data Start Error/Busy Clear"]
-pub type M_DSE_BC_INT_R = crate::BitReader<bool>;
+pub type M_DSE_BC_INT_R = crate::BitReader;
 #[doc = "Field `m_acd_int` reader - Auto Command Done"]
-pub type M_ACD_INT_R = crate::BitReader<bool>;
+pub type M_ACD_INT_R = crate::BitReader;
 #[doc = "Field `m_dee_int` reader - Data End-bit Error"]
-pub type M_DEE_INT_R = crate::BitReader<bool>;
+pub type M_DEE_INT_R = crate::BitReader;
 #[doc = "Field `m_sdio_int` reader - SDIO Interrupt"]
-pub type M_SDIO_INT_R = crate::BitReader<bool>;
+pub type M_SDIO_INT_R = crate::BitReader;
 #[doc = "Field `m_card_insert` reader - Card Inserted"]
-pub type M_CARD_INSERT_R = crate::BitReader<bool>;
+pub type M_CARD_INSERT_R = crate::BitReader;
 #[doc = "Field `m_card_removal_int` reader - Card Removed"]
-pub type M_CARD_REMOVAL_INT_R = crate::BitReader<bool>;
+pub type M_CARD_REMOVAL_INT_R = crate::BitReader;
 impl R {
     #[doc = "Bit 1 - Response Errors"]
     #[inline(always)]
@@ -141,15 +128,13 @@ impl R {
         M_CARD_REMOVAL_INT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Masked Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smhc_mintsts](index.html) module"]
+#[doc = "Masked Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`smhc_mintsts::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SMHC_MINTSTS_SPEC;
 impl crate::RegisterSpec for SMHC_MINTSTS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [smhc_mintsts::R](R) reader structure"]
-impl crate::Readable for SMHC_MINTSTS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`smhc_mintsts::R`](R) reader structure"]
+impl crate::Readable for SMHC_MINTSTS_SPEC {}
 #[doc = "`reset()` method sets smhc_mintsts to value 0"]
 impl crate::Resettable for SMHC_MINTSTS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

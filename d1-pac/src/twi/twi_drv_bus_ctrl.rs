@@ -1,69 +1,35 @@
 #[doc = "Register `twi_drv_bus_ctrl` reader"]
-pub struct R(crate::R<TWI_DRV_BUS_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TWI_DRV_BUS_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TWI_DRV_BUS_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TWI_DRV_BUS_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TWI_DRV_BUS_CTRL_SPEC>;
 #[doc = "Register `twi_drv_bus_ctrl` writer"]
-pub struct W(crate::W<TWI_DRV_BUS_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TWI_DRV_BUS_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TWI_DRV_BUS_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TWI_DRV_BUS_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TWI_DRV_BUS_CTRL_SPEC>;
 #[doc = "Field `sda_moe` reader - SDA manual output enable"]
-pub type SDA_MOE_R = crate::BitReader<bool>;
+pub type SDA_MOE_R = crate::BitReader;
 #[doc = "Field `sda_moe` writer - SDA manual output enable"]
-pub type SDA_MOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+pub type SDA_MOE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `scl_moe` reader - SCL manual output enable"]
-pub type SCL_MOE_R = crate::BitReader<bool>;
+pub type SCL_MOE_R = crate::BitReader;
 #[doc = "Field `scl_moe` writer - SCL manual output enable"]
-pub type SCL_MOE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+pub type SCL_MOE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `sda_mov` reader - SDA manual output value"]
-pub type SDA_MOV_R = crate::BitReader<bool>;
+pub type SDA_MOV_R = crate::BitReader;
 #[doc = "Field `sda_mov` writer - SDA manual output value"]
-pub type SDA_MOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+pub type SDA_MOV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `scl_mov` reader - SCL manual output value"]
-pub type SCL_MOV_R = crate::BitReader<bool>;
+pub type SCL_MOV_R = crate::BitReader;
 #[doc = "Field `scl_mov` writer - SCL manual output value"]
-pub type SCL_MOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, bool, O>;
+pub type SCL_MOV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `sda_sta` reader - SDA current status"]
-pub type SDA_STA_R = crate::BitReader<bool>;
+pub type SDA_STA_R = crate::BitReader;
 #[doc = "Field `scl_sta` reader - SCL current status"]
-pub type SCL_STA_R = crate::BitReader<bool>;
+pub type SCL_STA_R = crate::BitReader;
 #[doc = "Field `clk_m` reader - "]
-pub type CLK_M_R = crate::FieldReader<u8, u8>;
+pub type CLK_M_R = crate::FieldReader;
 #[doc = "Field `clk_m` writer - "]
-pub type CLK_M_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 4, O>;
+pub type CLK_M_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `clk_n` reader - "]
-pub type CLK_N_R = crate::FieldReader<u8, u8>;
+pub type CLK_N_R = crate::FieldReader;
 #[doc = "Field `clk_n` writer - "]
-pub type CLK_N_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, u8, u8, 3, O>;
+pub type CLK_N_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 #[doc = "Field `clk_duty` reader - Setting duty cycle of clock as master"]
 pub type CLK_DUTY_R = crate::BitReader<CLK_DUTY_A>;
 #[doc = "Setting duty cycle of clock as master\n\nValue on reset: 0"]
@@ -83,35 +49,37 @@ impl From<CLK_DUTY_A> for bool {
 impl CLK_DUTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_DUTY_A {
+    pub const fn variant(&self) -> CLK_DUTY_A {
         match self.bits {
             false => CLK_DUTY_A::P50,
             true => CLK_DUTY_A::P40,
         }
     }
-    #[doc = "Checks if the value of the field is `P50`"]
+    #[doc = "50%"]
     #[inline(always)]
     pub fn is_p50(&self) -> bool {
         *self == CLK_DUTY_A::P50
     }
-    #[doc = "Checks if the value of the field is `P40`"]
+    #[doc = "40%"]
     #[inline(always)]
     pub fn is_p40(&self) -> bool {
         *self == CLK_DUTY_A::P40
     }
 }
 #[doc = "Field `clk_duty` writer - Setting duty cycle of clock as master"]
-pub type CLK_DUTY_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, CLK_DUTY_A, O>;
-impl<'a, const O: u8> CLK_DUTY_W<'a, O> {
+pub type CLK_DUTY_W<'a, REG> = crate::BitWriter<'a, REG, CLK_DUTY_A>;
+impl<'a, REG> CLK_DUTY_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "50%"]
     #[inline(always)]
-    pub fn p50(self) -> &'a mut W {
+    pub fn p50(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_DUTY_A::P50)
     }
     #[doc = "40%"]
     #[inline(always)]
-    pub fn p40(self) -> &'a mut W {
+    pub fn p40(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_DUTY_A::P40)
     }
 }
@@ -130,17 +98,19 @@ impl From<CLK_COUNT_MODE_AW> for bool {
     }
 }
 #[doc = "Field `clk_count_mode` writer - "]
-pub type CLK_COUNT_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TWI_DRV_BUS_CTRL_SPEC, CLK_COUNT_MODE_AW, O>;
-impl<'a, const O: u8> CLK_COUNT_MODE_W<'a, O> {
+pub type CLK_COUNT_MODE_W<'a, REG> = crate::BitWriter<'a, REG, CLK_COUNT_MODE_AW>;
+impl<'a, REG> CLK_COUNT_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "scl clock high period count on oscl"]
     #[inline(always)]
-    pub fn oscl(self) -> &'a mut W {
+    pub fn oscl(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_COUNT_MODE_AW::OSCL)
     }
     #[doc = "scl clock high period count on iscl"]
     #[inline(always)]
-    pub fn iscl(self) -> &'a mut W {
+    pub fn iscl(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_COUNT_MODE_AW::ISCL)
     }
 }
@@ -195,70 +165,71 @@ impl W {
     #[doc = "Bit 0 - SDA manual output enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sda_moe(&mut self) -> SDA_MOE_W<0> {
-        SDA_MOE_W::new(self)
+    pub fn sda_moe(&mut self) -> SDA_MOE_W<TWI_DRV_BUS_CTRL_SPEC> {
+        SDA_MOE_W::new(self, 0)
     }
     #[doc = "Bit 1 - SCL manual output enable"]
     #[inline(always)]
     #[must_use]
-    pub fn scl_moe(&mut self) -> SCL_MOE_W<1> {
-        SCL_MOE_W::new(self)
+    pub fn scl_moe(&mut self) -> SCL_MOE_W<TWI_DRV_BUS_CTRL_SPEC> {
+        SCL_MOE_W::new(self, 1)
     }
     #[doc = "Bit 2 - SDA manual output value"]
     #[inline(always)]
     #[must_use]
-    pub fn sda_mov(&mut self) -> SDA_MOV_W<2> {
-        SDA_MOV_W::new(self)
+    pub fn sda_mov(&mut self) -> SDA_MOV_W<TWI_DRV_BUS_CTRL_SPEC> {
+        SDA_MOV_W::new(self, 2)
     }
     #[doc = "Bit 3 - SCL manual output value"]
     #[inline(always)]
     #[must_use]
-    pub fn scl_mov(&mut self) -> SCL_MOV_W<3> {
-        SCL_MOV_W::new(self)
+    pub fn scl_mov(&mut self) -> SCL_MOV_W<TWI_DRV_BUS_CTRL_SPEC> {
+        SCL_MOV_W::new(self, 3)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_m(&mut self) -> CLK_M_W<8> {
-        CLK_M_W::new(self)
+    pub fn clk_m(&mut self) -> CLK_M_W<TWI_DRV_BUS_CTRL_SPEC> {
+        CLK_M_W::new(self, 8)
     }
     #[doc = "Bits 12:14"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_n(&mut self) -> CLK_N_W<12> {
-        CLK_N_W::new(self)
+    pub fn clk_n(&mut self) -> CLK_N_W<TWI_DRV_BUS_CTRL_SPEC> {
+        CLK_N_W::new(self, 12)
     }
     #[doc = "Bit 15 - Setting duty cycle of clock as master"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_duty(&mut self) -> CLK_DUTY_W<15> {
-        CLK_DUTY_W::new(self)
+    pub fn clk_duty(&mut self) -> CLK_DUTY_W<TWI_DRV_BUS_CTRL_SPEC> {
+        CLK_DUTY_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W<16> {
-        CLK_COUNT_MODE_W::new(self)
+    pub fn clk_count_mode(&mut self) -> CLK_COUNT_MODE_W<TWI_DRV_BUS_CTRL_SPEC> {
+        CLK_COUNT_MODE_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TWI_DRV Bus Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [twi_drv_bus_ctrl](index.html) module"]
+#[doc = "TWI_DRV Bus Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`twi_drv_bus_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`twi_drv_bus_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TWI_DRV_BUS_CTRL_SPEC;
 impl crate::RegisterSpec for TWI_DRV_BUS_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [twi_drv_bus_ctrl::R](R) reader structure"]
-impl crate::Readable for TWI_DRV_BUS_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [twi_drv_bus_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`twi_drv_bus_ctrl::R`](R) reader structure"]
+impl crate::Readable for TWI_DRV_BUS_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`twi_drv_bus_ctrl::W`](W) writer structure"]
 impl crate::Writable for TWI_DRV_BUS_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

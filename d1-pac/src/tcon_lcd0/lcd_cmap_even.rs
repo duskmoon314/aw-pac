@@ -1,48 +1,17 @@
 #[doc = "Register `lcd_cmap_even%s` reader"]
-pub struct R(crate::R<LCD_CMAP_EVEN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LCD_CMAP_EVEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LCD_CMAP_EVEN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LCD_CMAP_EVEN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LCD_CMAP_EVEN_SPEC>;
 #[doc = "Register `lcd_cmap_even%s` writer"]
-pub struct W(crate::W<LCD_CMAP_EVEN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LCD_CMAP_EVEN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LCD_CMAP_EVEN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LCD_CMAP_EVEN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LCD_CMAP_EVEN_SPEC>;
 #[doc = "Field `out_even[0-1]` reader - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
-pub type OUT_EVEN_R = crate::FieldReader<u16, u16>;
+pub type OUT_EVEN_R = crate::FieldReader<u16>;
 #[doc = "Field `out_even[0-1]` writer - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
-pub type OUT_EVEN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LCD_CMAP_EVEN_SPEC, u16, u16, 16, O>;
+pub type OUT_EVEN_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
-    #[doc = "OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
+    #[doc = "OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `out_even0` field"]
     #[inline(always)]
-    pub unsafe fn out_even(&self, n: u8) -> OUT_EVEN_R {
+    pub fn out_even(&self, n: u8) -> OUT_EVEN_R {
+        #[allow(clippy::no_effect)]
+        [(); 2][n as usize];
         OUT_EVEN_R::new(((self.bits >> (n * 16)) & 0xffff) as u16)
     }
     #[doc = "Bits 0:15 - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
@@ -57,43 +26,46 @@ impl R {
     }
 }
 impl W {
-    #[doc = "OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
+    #[doc = "OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `out_even0` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn out_even<const O: u8>(&mut self) -> OUT_EVEN_W<O> {
-        OUT_EVEN_W::new(self)
+    pub fn out_even(&mut self, n: u8) -> OUT_EVEN_W<LCD_CMAP_EVEN_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 2][n as usize];
+        OUT_EVEN_W::new(self, n * 16)
     }
     #[doc = "Bits 0:15 - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn out_even0(&mut self) -> OUT_EVEN_W<0> {
-        OUT_EVEN_W::new(self)
+    pub fn out_even0(&mut self) -> OUT_EVEN_W<LCD_CMAP_EVEN_SPEC> {
+        OUT_EVEN_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - OUT_EVEN\\[2i + j\\]\n\nIndicates the output order of components.\n\nbit15-12: Reserved\n\nbit11-08: Out_Even\\[23:16\\]\n\nbit07-04: Out_Even0\\[15:8\\]\n\nbit03-00: Out_Even0\\[7:0\\]"]
     #[inline(always)]
     #[must_use]
-    pub fn out_even1(&mut self) -> OUT_EVEN_W<16> {
-        OUT_EVEN_W::new(self)
+    pub fn out_even1(&mut self) -> OUT_EVEN_W<LCD_CMAP_EVEN_SPEC> {
+        OUT_EVEN_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "LCD Color Map Even Line Register\\[i\\]\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lcd_cmap_even](index.html) module"]
+#[doc = "LCD Color Map Even Line Register\\[i\\]\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lcd_cmap_even::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`lcd_cmap_even::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LCD_CMAP_EVEN_SPEC;
 impl crate::RegisterSpec for LCD_CMAP_EVEN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lcd_cmap_even::R](R) reader structure"]
-impl crate::Readable for LCD_CMAP_EVEN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [lcd_cmap_even::W](W) writer structure"]
+#[doc = "`read()` method returns [`lcd_cmap_even::R`](R) reader structure"]
+impl crate::Readable for LCD_CMAP_EVEN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`lcd_cmap_even::W`](W) writer structure"]
 impl crate::Writable for LCD_CMAP_EVEN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

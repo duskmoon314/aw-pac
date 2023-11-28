@@ -1,45 +1,13 @@
 #[doc = "Register `tp_ctrl0` reader"]
-pub struct R(crate::R<TP_CTRL0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TP_CTRL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TP_CTRL0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TP_CTRL0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TP_CTRL0_SPEC>;
 #[doc = "Register `tp_ctrl0` writer"]
-pub struct W(crate::W<TP_CTRL0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TP_CTRL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TP_CTRL0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TP_CTRL0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TP_CTRL0_SPEC>;
 #[doc = "Field `tacq` reader - Touch panel ADC acquire time"]
-pub type TACQ_R = crate::FieldReader<u16, u16>;
+pub type TACQ_R = crate::FieldReader<u16>;
 #[doc = "Field `tacq` writer - Touch panel ADC acquire time"]
-pub type TACQ_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u16, u16, 16, O>;
+pub type TACQ_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 #[doc = "Field `fs_div` reader - ADC Sample Frequency Divider"]
-pub type FS_DIV_R = crate::FieldReader<u8, FS_DIV_A>;
+pub type FS_DIV_R = crate::FieldReader<FS_DIV_A>;
 #[doc = "ADC Sample Frequency Divider\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -83,10 +51,13 @@ impl From<FS_DIV_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for FS_DIV_A {
+    type Ux = u8;
+}
 impl FS_DIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FS_DIV_A {
+    pub const fn variant(&self) -> FS_DIV_A {
         match self.bits {
             0 => FS_DIV_A::C2P0,
             1 => FS_DIV_A::C2P1,
@@ -107,174 +78,177 @@ impl FS_DIV_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `C2P0`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 0)"]
     #[inline(always)]
     pub fn is_c2p0(&self) -> bool {
         *self == FS_DIV_A::C2P0
     }
-    #[doc = "Checks if the value of the field is `C2P1`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 1)"]
     #[inline(always)]
     pub fn is_c2p1(&self) -> bool {
         *self == FS_DIV_A::C2P1
     }
-    #[doc = "Checks if the value of the field is `C2P2`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 2)"]
     #[inline(always)]
     pub fn is_c2p2(&self) -> bool {
         *self == FS_DIV_A::C2P2
     }
-    #[doc = "Checks if the value of the field is `C2P3`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 3)"]
     #[inline(always)]
     pub fn is_c2p3(&self) -> bool {
         *self == FS_DIV_A::C2P3
     }
-    #[doc = "Checks if the value of the field is `C2P4`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 4)"]
     #[inline(always)]
     pub fn is_c2p4(&self) -> bool {
         *self == FS_DIV_A::C2P4
     }
-    #[doc = "Checks if the value of the field is `C2P5`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 5)"]
     #[inline(always)]
     pub fn is_c2p5(&self) -> bool {
         *self == FS_DIV_A::C2P5
     }
-    #[doc = "Checks if the value of the field is `C2P6`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 6)"]
     #[inline(always)]
     pub fn is_c2p6(&self) -> bool {
         *self == FS_DIV_A::C2P6
     }
-    #[doc = "Checks if the value of the field is `C2P7`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 7)"]
     #[inline(always)]
     pub fn is_c2p7(&self) -> bool {
         *self == FS_DIV_A::C2P7
     }
-    #[doc = "Checks if the value of the field is `C2P8`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 8)"]
     #[inline(always)]
     pub fn is_c2p8(&self) -> bool {
         *self == FS_DIV_A::C2P8
     }
-    #[doc = "Checks if the value of the field is `C2P9`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 9)"]
     #[inline(always)]
     pub fn is_c2p9(&self) -> bool {
         *self == FS_DIV_A::C2P9
     }
-    #[doc = "Checks if the value of the field is `C2P10`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 10)"]
     #[inline(always)]
     pub fn is_c2p10(&self) -> bool {
         *self == FS_DIV_A::C2P10
     }
-    #[doc = "Checks if the value of the field is `C2P11`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 11)"]
     #[inline(always)]
     pub fn is_c2p11(&self) -> bool {
         *self == FS_DIV_A::C2P11
     }
-    #[doc = "Checks if the value of the field is `C2P12`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 12)"]
     #[inline(always)]
     pub fn is_c2p12(&self) -> bool {
         *self == FS_DIV_A::C2P12
     }
-    #[doc = "Checks if the value of the field is `C2P13`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 13)"]
     #[inline(always)]
     pub fn is_c2p13(&self) -> bool {
         *self == FS_DIV_A::C2P13
     }
-    #[doc = "Checks if the value of the field is `C2P14`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 14)"]
     #[inline(always)]
     pub fn is_c2p14(&self) -> bool {
         *self == FS_DIV_A::C2P14
     }
-    #[doc = "Checks if the value of the field is `C2P15`"]
+    #[doc = "CLK_IN / 2 ^ (20 - 15)"]
     #[inline(always)]
     pub fn is_c2p15(&self) -> bool {
         *self == FS_DIV_A::C2P15
     }
 }
 #[doc = "Field `fs_div` writer - ADC Sample Frequency Divider"]
-pub type FS_DIV_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, FS_DIV_A, 4, O>;
-impl<'a, const O: u8> FS_DIV_W<'a, O> {
+pub type FS_DIV_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 4, FS_DIV_A>;
+impl<'a, REG> FS_DIV_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CLK_IN / 2 ^ (20 - 0)"]
     #[inline(always)]
-    pub fn c2p0(self) -> &'a mut W {
+    pub fn c2p0(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P0)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 1)"]
     #[inline(always)]
-    pub fn c2p1(self) -> &'a mut W {
+    pub fn c2p1(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P1)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 2)"]
     #[inline(always)]
-    pub fn c2p2(self) -> &'a mut W {
+    pub fn c2p2(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P2)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 3)"]
     #[inline(always)]
-    pub fn c2p3(self) -> &'a mut W {
+    pub fn c2p3(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P3)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 4)"]
     #[inline(always)]
-    pub fn c2p4(self) -> &'a mut W {
+    pub fn c2p4(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P4)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 5)"]
     #[inline(always)]
-    pub fn c2p5(self) -> &'a mut W {
+    pub fn c2p5(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P5)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 6)"]
     #[inline(always)]
-    pub fn c2p6(self) -> &'a mut W {
+    pub fn c2p6(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P6)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 7)"]
     #[inline(always)]
-    pub fn c2p7(self) -> &'a mut W {
+    pub fn c2p7(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P7)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 8)"]
     #[inline(always)]
-    pub fn c2p8(self) -> &'a mut W {
+    pub fn c2p8(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P8)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 9)"]
     #[inline(always)]
-    pub fn c2p9(self) -> &'a mut W {
+    pub fn c2p9(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P9)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 10)"]
     #[inline(always)]
-    pub fn c2p10(self) -> &'a mut W {
+    pub fn c2p10(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P10)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 11)"]
     #[inline(always)]
-    pub fn c2p11(self) -> &'a mut W {
+    pub fn c2p11(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P11)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 12)"]
     #[inline(always)]
-    pub fn c2p12(self) -> &'a mut W {
+    pub fn c2p12(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P12)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 13)"]
     #[inline(always)]
-    pub fn c2p13(self) -> &'a mut W {
+    pub fn c2p13(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P13)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 14)"]
     #[inline(always)]
-    pub fn c2p14(self) -> &'a mut W {
+    pub fn c2p14(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P14)
     }
     #[doc = "CLK_IN / 2 ^ (20 - 15)"]
     #[inline(always)]
-    pub fn c2p15(self) -> &'a mut W {
+    pub fn c2p15(self) -> &'a mut crate::W<REG> {
         self.variant(FS_DIV_A::C2P15)
     }
 }
 #[doc = "Field `adc_clk_divider` reader - ADC Clock Divider (CLK_IN)"]
-pub type ADC_CLK_DIVIDER_R = crate::FieldReader<u8, ADC_CLK_DIVIDER_A>;
+pub type ADC_CLK_DIVIDER_R = crate::FieldReader<ADC_CLK_DIVIDER_A>;
 #[doc = "ADC Clock Divider (CLK_IN)\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -294,10 +268,13 @@ impl From<ADC_CLK_DIVIDER_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for ADC_CLK_DIVIDER_A {
+    type Ux = u8;
+}
 impl ADC_CLK_DIVIDER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADC_CLK_DIVIDER_A {
+    pub const fn variant(&self) -> ADC_CLK_DIVIDER_A {
         match self.bits {
             0 => ADC_CLK_DIVIDER_A::C2,
             1 => ADC_CLK_DIVIDER_A::C3,
@@ -306,49 +283,52 @@ impl ADC_CLK_DIVIDER_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `C2`"]
+    #[doc = "CLK / 2"]
     #[inline(always)]
     pub fn is_c2(&self) -> bool {
         *self == ADC_CLK_DIVIDER_A::C2
     }
-    #[doc = "Checks if the value of the field is `C3`"]
+    #[doc = "CLK / 3"]
     #[inline(always)]
     pub fn is_c3(&self) -> bool {
         *self == ADC_CLK_DIVIDER_A::C3
     }
-    #[doc = "Checks if the value of the field is `C6`"]
+    #[doc = "CLK / 6"]
     #[inline(always)]
     pub fn is_c6(&self) -> bool {
         *self == ADC_CLK_DIVIDER_A::C6
     }
-    #[doc = "Checks if the value of the field is `C1`"]
+    #[doc = "CLK / 1"]
     #[inline(always)]
     pub fn is_c1(&self) -> bool {
         *self == ADC_CLK_DIVIDER_A::C1
     }
 }
 #[doc = "Field `adc_clk_divider` writer - ADC Clock Divider (CLK_IN)"]
-pub type ADC_CLK_DIVIDER_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, TP_CTRL0_SPEC, u8, ADC_CLK_DIVIDER_A, 2, O>;
-impl<'a, const O: u8> ADC_CLK_DIVIDER_W<'a, O> {
+pub type ADC_CLK_DIVIDER_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, ADC_CLK_DIVIDER_A>;
+impl<'a, REG> ADC_CLK_DIVIDER_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CLK / 2"]
     #[inline(always)]
-    pub fn c2(self) -> &'a mut W {
+    pub fn c2(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_CLK_DIVIDER_A::C2)
     }
     #[doc = "CLK / 3"]
     #[inline(always)]
-    pub fn c3(self) -> &'a mut W {
+    pub fn c3(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_CLK_DIVIDER_A::C3)
     }
     #[doc = "CLK / 6"]
     #[inline(always)]
-    pub fn c6(self) -> &'a mut W {
+    pub fn c6(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_CLK_DIVIDER_A::C6)
     }
     #[doc = "CLK / 1"]
     #[inline(always)]
-    pub fn c1(self) -> &'a mut W {
+    pub fn c1(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_CLK_DIVIDER_A::C1)
     }
 }
@@ -371,43 +351,44 @@ impl From<ADC_FIRST_DLY_MODE_A> for bool {
 impl ADC_FIRST_DLY_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADC_FIRST_DLY_MODE_A {
+    pub const fn variant(&self) -> ADC_FIRST_DLY_MODE_A {
         match self.bits {
             false => ADC_FIRST_DLY_MODE_A::C16,
             true => ADC_FIRST_DLY_MODE_A::C16_256,
         }
     }
-    #[doc = "Checks if the value of the field is `C16`"]
+    #[doc = "CLK_IN / 16"]
     #[inline(always)]
     pub fn is_c16(&self) -> bool {
         *self == ADC_FIRST_DLY_MODE_A::C16
     }
-    #[doc = "Checks if the value of the field is `C16_256`"]
+    #[doc = "CLK_IN / 16 * 256"]
     #[inline(always)]
     pub fn is_c16_256(&self) -> bool {
         *self == ADC_FIRST_DLY_MODE_A::C16_256
     }
 }
 #[doc = "Field `adc_first_dly_mode` writer - ADC First Convert Delay Mode Select"]
-pub type ADC_FIRST_DLY_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_CTRL0_SPEC, ADC_FIRST_DLY_MODE_A, O>;
-impl<'a, const O: u8> ADC_FIRST_DLY_MODE_W<'a, O> {
+pub type ADC_FIRST_DLY_MODE_W<'a, REG> = crate::BitWriter<'a, REG, ADC_FIRST_DLY_MODE_A>;
+impl<'a, REG> ADC_FIRST_DLY_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "CLK_IN / 16"]
     #[inline(always)]
-    pub fn c16(self) -> &'a mut W {
+    pub fn c16(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_FIRST_DLY_MODE_A::C16)
     }
     #[doc = "CLK_IN / 16 * 256"]
     #[inline(always)]
-    pub fn c16_256(self) -> &'a mut W {
+    pub fn c16_256(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_FIRST_DLY_MODE_A::C16_256)
     }
 }
 #[doc = "Field `adc_first_dly` reader - ADC First Convert Delay Time (T_FCDT) Setting"]
-pub type ADC_FIRST_DLY_R = crate::FieldReader<u8, u8>;
+pub type ADC_FIRST_DLY_R = crate::FieldReader;
 #[doc = "Field `adc_first_dly` writer - ADC First Convert Delay Time (T_FCDT) Setting"]
-pub type ADC_FIRST_DLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TP_CTRL0_SPEC, u8, u8, 8, O>;
+pub type ADC_FIRST_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
     #[inline(always)]
@@ -439,52 +420,53 @@ impl W {
     #[doc = "Bits 0:15 - Touch panel ADC acquire time"]
     #[inline(always)]
     #[must_use]
-    pub fn tacq(&mut self) -> TACQ_W<0> {
-        TACQ_W::new(self)
+    pub fn tacq(&mut self) -> TACQ_W<TP_CTRL0_SPEC> {
+        TACQ_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - ADC Sample Frequency Divider"]
     #[inline(always)]
     #[must_use]
-    pub fn fs_div(&mut self) -> FS_DIV_W<16> {
-        FS_DIV_W::new(self)
+    pub fn fs_div(&mut self) -> FS_DIV_W<TP_CTRL0_SPEC> {
+        FS_DIV_W::new(self, 16)
     }
     #[doc = "Bits 20:21 - ADC Clock Divider (CLK_IN)"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_clk_divider(&mut self) -> ADC_CLK_DIVIDER_W<20> {
-        ADC_CLK_DIVIDER_W::new(self)
+    pub fn adc_clk_divider(&mut self) -> ADC_CLK_DIVIDER_W<TP_CTRL0_SPEC> {
+        ADC_CLK_DIVIDER_W::new(self, 20)
     }
     #[doc = "Bit 23 - ADC First Convert Delay Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_first_dly_mode(&mut self) -> ADC_FIRST_DLY_MODE_W<23> {
-        ADC_FIRST_DLY_MODE_W::new(self)
+    pub fn adc_first_dly_mode(&mut self) -> ADC_FIRST_DLY_MODE_W<TP_CTRL0_SPEC> {
+        ADC_FIRST_DLY_MODE_W::new(self, 23)
     }
     #[doc = "Bits 24:31 - ADC First Convert Delay Time (T_FCDT) Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W<24> {
-        ADC_FIRST_DLY_W::new(self)
+    pub fn adc_first_dly(&mut self) -> ADC_FIRST_DLY_W<TP_CTRL0_SPEC> {
+        ADC_FIRST_DLY_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TP Control Register 0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tp_ctrl0](index.html) module"]
+#[doc = "TP Control Register 0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tp_ctrl0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tp_ctrl0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TP_CTRL0_SPEC;
 impl crate::RegisterSpec for TP_CTRL0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tp_ctrl0::R](R) reader structure"]
-impl crate::Readable for TP_CTRL0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tp_ctrl0::W](W) writer structure"]
+#[doc = "`read()` method returns [`tp_ctrl0::R`](R) reader structure"]
+impl crate::Readable for TP_CTRL0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tp_ctrl0::W`](W) writer structure"]
 impl crate::Writable for TP_CTRL0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

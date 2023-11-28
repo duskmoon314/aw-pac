@@ -1,48 +1,17 @@
 #[doc = "Register `csic_prs_ncsic_bt656_head_cfg` reader"]
-pub struct R(crate::R<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>;
 #[doc = "Register `csic_prs_ncsic_bt656_head_cfg` writer"]
-pub struct W(crate::W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC>;
 #[doc = "Field `ch_id[0-3]` reader - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
-pub type CH_ID_R = crate::FieldReader<u8, u8>;
+pub type CH_ID_R = crate::FieldReader;
 #[doc = "Field `ch_id[0-3]` writer - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
-pub type CH_ID_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC, u8, u8, 4, O>;
+pub type CH_ID_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 impl R {
-    #[doc = "The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
+    #[doc = "The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `ch0_id` field"]
     #[inline(always)]
-    pub unsafe fn ch_id(&self, n: u8) -> CH_ID_R {
+    pub fn ch_id(&self, n: u8) -> CH_ID_R {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
         CH_ID_R::new(((self.bits >> (n * 8)) & 0x0f) as u8)
     }
     #[doc = "Bits 0:3 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
@@ -67,55 +36,58 @@ impl R {
     }
 }
 impl W {
-    #[doc = "The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
+    #[doc = "The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `ch0_id` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn ch_id<const O: u8>(&mut self) -> CH_ID_W<O> {
-        CH_ID_W::new(self)
+    pub fn ch_id(&mut self, n: u8) -> CH_ID_W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
+        CH_ID_W::new(self, n * 8)
     }
     #[doc = "Bits 0:3 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ch0_id(&mut self) -> CH_ID_W<0> {
-        CH_ID_W::new(self)
+    pub fn ch0_id(&mut self) -> CH_ID_W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC> {
+        CH_ID_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ch1_id(&mut self) -> CH_ID_W<8> {
-        CH_ID_W::new(self)
+    pub fn ch1_id(&mut self) -> CH_ID_W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC> {
+        CH_ID_W::new(self, 8)
     }
     #[doc = "Bits 16:19 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ch2_id(&mut self) -> CH_ID_W<16> {
-        CH_ID_W::new(self)
+    pub fn ch2_id(&mut self) -> CH_ID_W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC> {
+        CH_ID_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - The low 4-bit of BT656 header for channel \\[i\\]\n\nOnly valid in BT656 multi-channel mode"]
     #[inline(always)]
     #[must_use]
-    pub fn ch3_id(&mut self) -> CH_ID_W<24> {
-        CH_ID_W::new(self)
+    pub fn ch3_id(&mut self) -> CH_ID_W<CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC> {
+        CH_ID_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CSIC Parser NCSIC BT656 Header Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csic_prs_ncsic_bt656_head_cfg](index.html) module"]
+#[doc = "CSIC Parser NCSIC BT656 Header Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csic_prs_ncsic_bt656_head_cfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csic_prs_ncsic_bt656_head_cfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC;
 impl crate::RegisterSpec for CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csic_prs_ncsic_bt656_head_cfg::R](R) reader structure"]
-impl crate::Readable for CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csic_prs_ncsic_bt656_head_cfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`csic_prs_ncsic_bt656_head_cfg::R`](R) reader structure"]
+impl crate::Readable for CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`csic_prs_ncsic_bt656_head_cfg::W`](W) writer structure"]
 impl crate::Writable for CSIC_PRS_NCSIC_BT656_HEAD_CFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

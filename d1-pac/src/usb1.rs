@@ -1,22 +1,52 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00..0x10 - EHCI Capability Register"]
-    pub ehci_capability: EHCI_CAPABILITY,
-    #[doc = "0x10..0x58 - EHCI Operational Register"]
-    pub ehci_operational: EHCI_OPERATIONAL,
+    ehci_capability: EHCI_CAPABILITY,
+    ehci_operational: EHCI_OPERATIONAL,
     _reserved2: [u8; 0x03ac],
-    #[doc = "0x404..0x418 - OHCI Control and Status Partition Register"]
-    pub ohci_control_status_partition: OHCI_CONTROL_STATUS_PARTITION,
-    #[doc = "0x418..0x434 - OHCI Memory Pointer Partition Register"]
-    pub ohci_memory_pointer_partition: OHCI_MEMORY_POINTER_PARTITION,
-    #[doc = "0x434..0x448 - OHCI Frame Counter Partition Register"]
-    pub ohci_frame_counter_partition: OHCI_FRAME_COUNTER_PARTITION,
-    #[doc = "0x448..0x458 - OHCI Root Hub Partition Register"]
-    pub ohci_root_hub_partition: OHCI_ROOT_HUB_PARTITION,
+    ohci_control_status_partition: OHCI_CONTROL_STATUS_PARTITION,
+    ohci_memory_pointer_partition: OHCI_MEMORY_POINTER_PARTITION,
+    ohci_frame_counter_partition: OHCI_FRAME_COUNTER_PARTITION,
+    ohci_root_hub_partition: OHCI_ROOT_HUB_PARTITION,
     _reserved6: [u8; 0x03a8],
+    hci_controller_phy_interface: HCI_CONTROLLER_PHY_INTERFACE,
+}
+impl RegisterBlock {
+    #[doc = "0x00..0x10 - EHCI Capability Register"]
+    #[inline(always)]
+    pub const fn ehci_capability(&self) -> &EHCI_CAPABILITY {
+        &self.ehci_capability
+    }
+    #[doc = "0x10..0x58 - EHCI Operational Register"]
+    #[inline(always)]
+    pub const fn ehci_operational(&self) -> &EHCI_OPERATIONAL {
+        &self.ehci_operational
+    }
+    #[doc = "0x404..0x418 - OHCI Control and Status Partition Register"]
+    #[inline(always)]
+    pub const fn ohci_control_status_partition(&self) -> &OHCI_CONTROL_STATUS_PARTITION {
+        &self.ohci_control_status_partition
+    }
+    #[doc = "0x418..0x434 - OHCI Memory Pointer Partition Register"]
+    #[inline(always)]
+    pub const fn ohci_memory_pointer_partition(&self) -> &OHCI_MEMORY_POINTER_PARTITION {
+        &self.ohci_memory_pointer_partition
+    }
+    #[doc = "0x434..0x448 - OHCI Frame Counter Partition Register"]
+    #[inline(always)]
+    pub const fn ohci_frame_counter_partition(&self) -> &OHCI_FRAME_COUNTER_PARTITION {
+        &self.ohci_frame_counter_partition
+    }
+    #[doc = "0x448..0x458 - OHCI Root Hub Partition Register"]
+    #[inline(always)]
+    pub const fn ohci_root_hub_partition(&self) -> &OHCI_ROOT_HUB_PARTITION {
+        &self.ohci_root_hub_partition
+    }
     #[doc = "0x800..0x82c - HCI Controller and PHY Interface Register"]
-    pub hci_controller_phy_interface: HCI_CONTROLLER_PHY_INTERFACE,
+    #[inline(always)]
+    pub const fn hci_controller_phy_interface(&self) -> &HCI_CONTROLLER_PHY_INTERFACE {
+        &self.hci_controller_phy_interface
+    }
 }
 #[doc = "EHCI Capability Register"]
 pub use self::ehci_capability::EHCI_CAPABILITY;

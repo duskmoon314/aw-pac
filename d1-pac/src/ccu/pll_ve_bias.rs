@@ -1,43 +1,11 @@
 #[doc = "Register `pll_ve_bias` reader"]
-pub struct R(crate::R<PLL_VE_BIAS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PLL_VE_BIAS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PLL_VE_BIAS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PLL_VE_BIAS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PLL_VE_BIAS_SPEC>;
 #[doc = "Register `pll_ve_bias` writer"]
-pub struct W(crate::W<PLL_VE_BIAS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PLL_VE_BIAS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PLL_VE_BIAS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PLL_VE_BIAS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PLL_VE_BIAS_SPEC>;
 #[doc = "Field `pll_cp` reader - PLL current bias control"]
-pub type PLL_CP_R = crate::FieldReader<u8, u8>;
+pub type PLL_CP_R = crate::FieldReader;
 #[doc = "Field `pll_cp` writer - PLL current bias control"]
-pub type PLL_CP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PLL_VE_BIAS_SPEC, u8, u8, 5, O>;
+pub type PLL_CP_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]
@@ -49,28 +17,29 @@ impl W {
     #[doc = "Bits 16:20 - PLL current bias control"]
     #[inline(always)]
     #[must_use]
-    pub fn pll_cp(&mut self) -> PLL_CP_W<16> {
-        PLL_CP_W::new(self)
+    pub fn pll_cp(&mut self) -> PLL_CP_W<PLL_VE_BIAS_SPEC> {
+        PLL_CP_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PLL_VE Bias Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_ve_bias](index.html) module"]
+#[doc = "PLL_VE Bias Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_ve_bias::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pll_ve_bias::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PLL_VE_BIAS_SPEC;
 impl crate::RegisterSpec for PLL_VE_BIAS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pll_ve_bias::R](R) reader structure"]
-impl crate::Readable for PLL_VE_BIAS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pll_ve_bias::W](W) writer structure"]
+#[doc = "`read()` method returns [`pll_ve_bias::R`](R) reader structure"]
+impl crate::Readable for PLL_VE_BIAS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pll_ve_bias::W`](W) writer structure"]
 impl crate::Writable for PLL_VE_BIAS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

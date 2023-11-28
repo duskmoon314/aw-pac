@@ -1,39 +1,7 @@
 #[doc = "Register `tve_dac_test` reader"]
-pub struct R(crate::R<TVE_DAC_TEST_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TVE_DAC_TEST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TVE_DAC_TEST_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TVE_DAC_TEST_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TVE_DAC_TEST_SPEC>;
 #[doc = "Register `tve_dac_test` writer"]
-pub struct W(crate::W<TVE_DAC_TEST_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TVE_DAC_TEST_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TVE_DAC_TEST_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TVE_DAC_TEST_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TVE_DAC_TEST_SPEC>;
 #[doc = "Field `dac_test_enable` reader - "]
 pub type DAC_TEST_ENABLE_R = crate::BitReader<DAC_TEST_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -51,30 +19,32 @@ impl From<DAC_TEST_ENABLE_A> for bool {
 impl DAC_TEST_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DAC_TEST_ENABLE_A> {
+    pub const fn variant(&self) -> Option<DAC_TEST_ENABLE_A> {
         match self.bits {
             true => Some(DAC_TEST_ENABLE_A::R_EPEAT),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `R_EPEAT`"]
+    #[doc = "Repeat DAC data from DAC sram"]
     #[inline(always)]
     pub fn is_r_epeat(&self) -> bool {
         *self == DAC_TEST_ENABLE_A::R_EPEAT
     }
 }
 #[doc = "Field `dac_test_enable` writer - "]
-pub type DAC_TEST_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TVE_DAC_TEST_SPEC, DAC_TEST_ENABLE_A, O>;
-impl<'a, const O: u8> DAC_TEST_ENABLE_W<'a, O> {
+pub type DAC_TEST_ENABLE_W<'a, REG> = crate::BitWriter<'a, REG, DAC_TEST_ENABLE_A>;
+impl<'a, REG> DAC_TEST_ENABLE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Repeat DAC data from DAC sram"]
     #[inline(always)]
-    pub fn r_epeat(self) -> &'a mut W {
+    pub fn r_epeat(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_TEST_ENABLE_A::R_EPEAT)
     }
 }
 #[doc = "Field `dac_test_sel` reader - "]
-pub type DAC_TEST_SEL_R = crate::FieldReader<u8, DAC_TEST_SEL_A>;
+pub type DAC_TEST_SEL_R = crate::FieldReader<DAC_TEST_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -88,36 +58,41 @@ impl From<DAC_TEST_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DAC_TEST_SEL_A {
+    type Ux = u8;
+}
 impl DAC_TEST_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DAC_TEST_SEL_A> {
+    pub const fn variant(&self) -> Option<DAC_TEST_SEL_A> {
         match self.bits {
             0 => Some(DAC_TEST_SEL_A::DAC0),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DAC0`"]
+    #[doc = "DAC0"]
     #[inline(always)]
     pub fn is_dac0(&self) -> bool {
         *self == DAC_TEST_SEL_A::DAC0
     }
 }
 #[doc = "Field `dac_test_sel` writer - "]
-pub type DAC_TEST_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TVE_DAC_TEST_SPEC, u8, DAC_TEST_SEL_A, 2, O>;
-impl<'a, const O: u8> DAC_TEST_SEL_W<'a, O> {
+pub type DAC_TEST_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, DAC_TEST_SEL_A>;
+impl<'a, REG> DAC_TEST_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "DAC0"]
     #[inline(always)]
-    pub fn dac0(self) -> &'a mut W {
+    pub fn dac0(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_TEST_SEL_A::DAC0)
     }
 }
 #[doc = "Field `dac_test_length` reader - DAC TEST DATA LENGTH"]
-pub type DAC_TEST_LENGTH_R = crate::FieldReader<u16, u16>;
+pub type DAC_TEST_LENGTH_R = crate::FieldReader<u16>;
 #[doc = "Field `dac_test_length` writer - DAC TEST DATA LENGTH"]
-pub type DAC_TEST_LENGTH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TVE_DAC_TEST_SPEC, u16, u16, 10, O>;
+pub type DAC_TEST_LENGTH_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -139,40 +114,41 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_test_enable(&mut self) -> DAC_TEST_ENABLE_W<0> {
-        DAC_TEST_ENABLE_W::new(self)
+    pub fn dac_test_enable(&mut self) -> DAC_TEST_ENABLE_W<TVE_DAC_TEST_SPEC> {
+        DAC_TEST_ENABLE_W::new(self, 0)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_test_sel(&mut self) -> DAC_TEST_SEL_W<4> {
-        DAC_TEST_SEL_W::new(self)
+    pub fn dac_test_sel(&mut self) -> DAC_TEST_SEL_W<TVE_DAC_TEST_SPEC> {
+        DAC_TEST_SEL_W::new(self, 4)
     }
     #[doc = "Bits 16:25 - DAC TEST DATA LENGTH"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_test_length(&mut self) -> DAC_TEST_LENGTH_W<16> {
-        DAC_TEST_LENGTH_W::new(self)
+    pub fn dac_test_length(&mut self) -> DAC_TEST_LENGTH_W<TVE_DAC_TEST_SPEC> {
+        DAC_TEST_LENGTH_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TV Encoder DAC TEST Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tve_dac_test](index.html) module"]
+#[doc = "TV Encoder DAC TEST Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tve_dac_test::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tve_dac_test::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TVE_DAC_TEST_SPEC;
 impl crate::RegisterSpec for TVE_DAC_TEST_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tve_dac_test::R](R) reader structure"]
-impl crate::Readable for TVE_DAC_TEST_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tve_dac_test::W](W) writer structure"]
+#[doc = "`read()` method returns [`tve_dac_test::R`](R) reader structure"]
+impl crate::Readable for TVE_DAC_TEST_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tve_dac_test::W`](W) writer structure"]
 impl crate::Writable for TVE_DAC_TEST_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

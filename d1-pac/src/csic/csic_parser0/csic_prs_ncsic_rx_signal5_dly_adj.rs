@@ -1,59 +1,23 @@
 #[doc = "Register `csic_prs_ncsic_rx_signal5_dly_adj` reader"]
-pub struct R(crate::R<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>;
 #[doc = "Register `csic_prs_ncsic_rx_signal5_dly_adj` writer"]
-pub struct W(crate::W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC>;
 #[doc = "Field `d4_dly` reader - D4_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D4_DLY_R = crate::FieldReader<u8, u8>;
+pub type D4_DLY_R = crate::FieldReader;
 #[doc = "Field `d4_dly` writer - D4_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D4_DLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC, u8, u8, 5, O>;
+pub type D4_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `d5_dly` reader - D5_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D5_DLY_R = crate::FieldReader<u8, u8>;
+pub type D5_DLY_R = crate::FieldReader;
 #[doc = "Field `d5_dly` writer - D5_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D5_DLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC, u8, u8, 5, O>;
+pub type D5_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `d6_dly` reader - D6_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D6_DLY_R = crate::FieldReader<u8, u8>;
+pub type D6_DLY_R = crate::FieldReader;
 #[doc = "Field `d6_dly` writer - D6_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D6_DLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC, u8, u8, 5, O>;
+pub type D6_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `d7_dly` reader - D7_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D7_DLY_R = crate::FieldReader<u8, u8>;
+pub type D7_DLY_R = crate::FieldReader;
 #[doc = "Field `d7_dly` writer - D7_dly 32 Step for adjust, 1 step = 0.2 ns"]
-pub type D7_DLY_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC, u8, u8, 5, O>;
+pub type D7_DLY_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 impl R {
     #[doc = "Bits 0:4 - D4_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
@@ -80,46 +44,47 @@ impl W {
     #[doc = "Bits 0:4 - D4_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
     #[must_use]
-    pub fn d4_dly(&mut self) -> D4_DLY_W<0> {
-        D4_DLY_W::new(self)
+    pub fn d4_dly(&mut self) -> D4_DLY_W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC> {
+        D4_DLY_W::new(self, 0)
     }
     #[doc = "Bits 8:12 - D5_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
     #[must_use]
-    pub fn d5_dly(&mut self) -> D5_DLY_W<8> {
-        D5_DLY_W::new(self)
+    pub fn d5_dly(&mut self) -> D5_DLY_W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC> {
+        D5_DLY_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - D6_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
     #[must_use]
-    pub fn d6_dly(&mut self) -> D6_DLY_W<16> {
-        D6_DLY_W::new(self)
+    pub fn d6_dly(&mut self) -> D6_DLY_W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC> {
+        D6_DLY_W::new(self, 16)
     }
     #[doc = "Bits 24:28 - D7_dly 32 Step for adjust, 1 step = 0.2 ns"]
     #[inline(always)]
     #[must_use]
-    pub fn d7_dly(&mut self) -> D7_DLY_W<24> {
-        D7_DLY_W::new(self)
+    pub fn d7_dly(&mut self) -> D7_DLY_W<CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC> {
+        D7_DLY_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CSIC Parser NCSIC RX Signal5 Delay Adjust Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csic_prs_ncsic_rx_signal5_dly_adj](index.html) module"]
+#[doc = "CSIC Parser NCSIC RX Signal5 Delay Adjust Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csic_prs_ncsic_rx_signal5_dly_adj::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csic_prs_ncsic_rx_signal5_dly_adj::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC;
 impl crate::RegisterSpec for CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csic_prs_ncsic_rx_signal5_dly_adj::R](R) reader structure"]
-impl crate::Readable for CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csic_prs_ncsic_rx_signal5_dly_adj::W](W) writer structure"]
+#[doc = "`read()` method returns [`csic_prs_ncsic_rx_signal5_dly_adj::R`](R) reader structure"]
+impl crate::Readable for CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`csic_prs_ncsic_rx_signal5_dly_adj::W`](W) writer structure"]
 impl crate::Writable for CSIC_PRS_NCSIC_RX_SIGNAL5_DLY_ADJ_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

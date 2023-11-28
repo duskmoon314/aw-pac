@@ -1,39 +1,7 @@
 #[doc = "Register `tvd_bgr` reader"]
-pub struct R(crate::R<TVD_BGR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TVD_BGR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TVD_BGR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TVD_BGR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TVD_BGR_SPEC>;
 #[doc = "Register `tvd_bgr` writer"]
-pub struct W(crate::W<TVD_BGR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TVD_BGR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TVD_BGR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TVD_BGR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TVD_BGR_SPEC>;
 #[doc = "Field `top_gating` reader - Gating Clock"]
 pub type TOP_GATING_R = crate::BitReader<TOP_GATING_A>;
 #[doc = "Gating Clock\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<TOP_GATING_A> for bool {
 impl TOP_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TOP_GATING_A {
+    pub const fn variant(&self) -> TOP_GATING_A {
         match self.bits {
             false => TOP_GATING_A::MASK,
             true => TOP_GATING_A::PASS,
         }
     }
-    #[doc = "Checks if the value of the field is `MASK`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
         *self == TOP_GATING_A::MASK
     }
-    #[doc = "Checks if the value of the field is `PASS`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
         *self == TOP_GATING_A::PASS
     }
 }
 #[doc = "Field `top_gating` writer - Gating Clock"]
-pub type TOP_GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_GATING_A, O>;
-impl<'a, const O: u8> TOP_GATING_W<'a, O> {
+pub type TOP_GATING_W<'a, REG> = crate::BitWriter<'a, REG, TOP_GATING_A>;
+impl<'a, REG> TOP_GATING_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
+    pub fn mask(self) -> &'a mut crate::W<REG> {
         self.variant(TOP_GATING_A::MASK)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
+    pub fn pass(self) -> &'a mut crate::W<REG> {
         self.variant(TOP_GATING_A::PASS)
     }
 }
@@ -103,34 +74,37 @@ impl From<GATING_A> for bool {
 impl GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GATING_A {
+    pub const fn variant(&self) -> GATING_A {
         match self.bits {
             false => GATING_A::MASK,
             true => GATING_A::PASS,
         }
     }
-    #[doc = "Checks if the value of the field is `MASK`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
         *self == GATING_A::MASK
     }
-    #[doc = "Checks if the value of the field is `PASS`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_pass(&self) -> bool {
         *self == GATING_A::PASS
     }
 }
 #[doc = "Field `gating` writer - Gating Clock"]
-pub type GATING_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, GATING_A, O>;
-impl<'a, const O: u8> GATING_W<'a, O> {
+pub type GATING_W<'a, REG> = crate::BitWriter<'a, REG, GATING_A>;
+impl<'a, REG> GATING_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
+    pub fn mask(self) -> &'a mut crate::W<REG> {
         self.variant(GATING_A::MASK)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn pass(self) -> &'a mut W {
+    pub fn pass(self) -> &'a mut crate::W<REG> {
         self.variant(GATING_A::PASS)
     }
 }
@@ -153,34 +127,37 @@ impl From<TOP_RST_A> for bool {
 impl TOP_RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TOP_RST_A {
+    pub const fn variant(&self) -> TOP_RST_A {
         match self.bits {
             false => TOP_RST_A::ASSERT,
             true => TOP_RST_A::DEASSERT,
         }
     }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
         *self == TOP_RST_A::ASSERT
     }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
         *self == TOP_RST_A::DEASSERT
     }
 }
 #[doc = "Field `top_rst` writer - Reset"]
-pub type TOP_RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, TOP_RST_A, O>;
-impl<'a, const O: u8> TOP_RST_W<'a, O> {
+pub type TOP_RST_W<'a, REG> = crate::BitWriter<'a, REG, TOP_RST_A>;
+impl<'a, REG> TOP_RST_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
+    pub fn assert(self) -> &'a mut crate::W<REG> {
         self.variant(TOP_RST_A::ASSERT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
+    pub fn deassert(self) -> &'a mut crate::W<REG> {
         self.variant(TOP_RST_A::DEASSERT)
     }
 }
@@ -203,34 +180,37 @@ impl From<RST_A> for bool {
 impl RST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RST_A {
+    pub const fn variant(&self) -> RST_A {
         match self.bits {
             false => RST_A::ASSERT,
             true => RST_A::DEASSERT,
         }
     }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
         *self == RST_A::ASSERT
     }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
         *self == RST_A::DEASSERT
     }
 }
 #[doc = "Field `rst` writer - Reset"]
-pub type RST_W<'a, const O: u8> = crate::BitWriter<'a, u32, TVD_BGR_SPEC, RST_A, O>;
-impl<'a, const O: u8> RST_W<'a, O> {
+pub type RST_W<'a, REG> = crate::BitWriter<'a, REG, RST_A>;
+impl<'a, REG> RST_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
+    pub fn assert(self) -> &'a mut crate::W<REG> {
         self.variant(RST_A::ASSERT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
+    pub fn deassert(self) -> &'a mut crate::W<REG> {
         self.variant(RST_A::DEASSERT)
     }
 }
@@ -260,46 +240,47 @@ impl W {
     #[doc = "Bit 0 - Gating Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn top_gating(&mut self) -> TOP_GATING_W<0> {
-        TOP_GATING_W::new(self)
+    pub fn top_gating(&mut self) -> TOP_GATING_W<TVD_BGR_SPEC> {
+        TOP_GATING_W::new(self, 0)
     }
     #[doc = "Bit 1 - Gating Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn gating(&mut self) -> GATING_W<1> {
-        GATING_W::new(self)
+    pub fn gating(&mut self) -> GATING_W<TVD_BGR_SPEC> {
+        GATING_W::new(self, 1)
     }
     #[doc = "Bit 16 - Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn top_rst(&mut self) -> TOP_RST_W<16> {
-        TOP_RST_W::new(self)
+    pub fn top_rst(&mut self) -> TOP_RST_W<TVD_BGR_SPEC> {
+        TOP_RST_W::new(self, 16)
     }
     #[doc = "Bit 17 - Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn rst(&mut self) -> RST_W<17> {
-        RST_W::new(self)
+    pub fn rst(&mut self) -> RST_W<TVD_BGR_SPEC> {
+        RST_W::new(self, 17)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TVD Bus Gating Reset Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tvd_bgr](index.html) module"]
+#[doc = "TVD Bus Gating Reset Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tvd_bgr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tvd_bgr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TVD_BGR_SPEC;
 impl crate::RegisterSpec for TVD_BGR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tvd_bgr::R](R) reader structure"]
-impl crate::Readable for TVD_BGR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tvd_bgr::W](W) writer structure"]
+#[doc = "`read()` method returns [`tvd_bgr::R`](R) reader structure"]
+impl crate::Readable for TVD_BGR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tvd_bgr::W`](W) writer structure"]
 impl crate::Writable for TVD_BGR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

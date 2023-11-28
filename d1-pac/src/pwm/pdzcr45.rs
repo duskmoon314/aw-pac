@@ -1,39 +1,7 @@
 #[doc = "Register `pdzcr45` reader"]
-pub struct R(crate::R<PDZCR45_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PDZCR45_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PDZCR45_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PDZCR45_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PDZCR45_SPEC>;
 #[doc = "Register `pdzcr45` writer"]
-pub struct W(crate::W<PDZCR45_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PDZCR45_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PDZCR45_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PDZCR45_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PDZCR45_SPEC>;
 #[doc = "Field `pwm45_dz_en` reader - PWM45 Dead Zone Enable"]
 pub type PWM45_DZ_EN_R = crate::BitReader<PWM45_DZ_EN_A>;
 #[doc = "PWM45 Dead Zone Enable\n\nValue on reset: 0"]
@@ -53,41 +21,44 @@ impl From<PWM45_DZ_EN_A> for bool {
 impl PWM45_DZ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWM45_DZ_EN_A {
+    pub const fn variant(&self) -> PWM45_DZ_EN_A {
         match self.bits {
             false => PWM45_DZ_EN_A::DISABLE,
             true => PWM45_DZ_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Dead Zone disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == PWM45_DZ_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Dead Zone enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == PWM45_DZ_EN_A::ENABLE
     }
 }
 #[doc = "Field `pwm45_dz_en` writer - PWM45 Dead Zone Enable"]
-pub type PWM45_DZ_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PDZCR45_SPEC, PWM45_DZ_EN_A, O>;
-impl<'a, const O: u8> PWM45_DZ_EN_W<'a, O> {
+pub type PWM45_DZ_EN_W<'a, REG> = crate::BitWriter<'a, REG, PWM45_DZ_EN_A>;
+impl<'a, REG> PWM45_DZ_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Dead Zone disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(PWM45_DZ_EN_A::DISABLE)
     }
     #[doc = "Dead Zone enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(PWM45_DZ_EN_A::ENABLE)
     }
 }
 #[doc = "Field `pwm45_dz_intv` reader - PWM45 Dead Zone Interval Value"]
-pub type PWM45_DZ_INTV_R = crate::FieldReader<u8, u8>;
+pub type PWM45_DZ_INTV_R = crate::FieldReader;
 #[doc = "Field `pwm45_dz_intv` writer - PWM45 Dead Zone Interval Value"]
-pub type PWM45_DZ_INTV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PDZCR45_SPEC, u8, u8, 8, O>;
+pub type PWM45_DZ_INTV_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bit 0 - PWM45 Dead Zone Enable"]
     #[inline(always)]
@@ -104,34 +75,35 @@ impl W {
     #[doc = "Bit 0 - PWM45 Dead Zone Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm45_dz_en(&mut self) -> PWM45_DZ_EN_W<0> {
-        PWM45_DZ_EN_W::new(self)
+    pub fn pwm45_dz_en(&mut self) -> PWM45_DZ_EN_W<PDZCR45_SPEC> {
+        PWM45_DZ_EN_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - PWM45 Dead Zone Interval Value"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm45_dz_intv(&mut self) -> PWM45_DZ_INTV_W<8> {
-        PWM45_DZ_INTV_W::new(self)
+    pub fn pwm45_dz_intv(&mut self) -> PWM45_DZ_INTV_W<PDZCR45_SPEC> {
+        PWM45_DZ_INTV_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM45 Dead Zone Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pdzcr45](index.html) module"]
+#[doc = "PWM45 Dead Zone Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pdzcr45::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pdzcr45::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PDZCR45_SPEC;
 impl crate::RegisterSpec for PDZCR45_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pdzcr45::R](R) reader structure"]
-impl crate::Readable for PDZCR45_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pdzcr45::W](W) writer structure"]
+#[doc = "`read()` method returns [`pdzcr45::R`](R) reader structure"]
+impl crate::Readable for PDZCR45_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pdzcr45::W`](W) writer structure"]
 impl crate::Writable for PDZCR45_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

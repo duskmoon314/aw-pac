@@ -1,55 +1,23 @@
 #[doc = "Register `csic_mulf_int` reader"]
-pub struct R(crate::R<CSIC_MULF_INT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CSIC_MULF_INT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CSIC_MULF_INT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CSIC_MULF_INT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CSIC_MULF_INT_SPEC>;
 #[doc = "Register `csic_mulf_int` writer"]
-pub struct W(crate::W<CSIC_MULF_INT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CSIC_MULF_INT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CSIC_MULF_INT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CSIC_MULF_INT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CSIC_MULF_INT_SPEC>;
 #[doc = "Field `mulf_done_en` reader - "]
-pub type MULF_DONE_EN_R = crate::BitReader<bool>;
+pub type MULF_DONE_EN_R = crate::BitReader;
 #[doc = "Field `mulf_done_en` writer - "]
-pub type MULF_DONE_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+pub type MULF_DONE_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `mulf_err_en` reader - "]
-pub type MULF_ERR_EN_R = crate::BitReader<bool>;
+pub type MULF_ERR_EN_R = crate::BitReader;
 #[doc = "Field `mulf_err_en` writer - "]
-pub type MULF_ERR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+pub type MULF_ERR_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `mulf_done_pd` reader - "]
-pub type MULF_DONE_PD_R = crate::BitReader<bool>;
+pub type MULF_DONE_PD_R = crate::BitReader;
 #[doc = "Field `mulf_done_pd` writer - "]
-pub type MULF_DONE_PD_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+pub type MULF_DONE_PD_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 #[doc = "Field `mulf_err_pd` reader - "]
-pub type MULF_ERR_PD_R = crate::BitReader<bool>;
+pub type MULF_ERR_PD_R = crate::BitReader;
 #[doc = "Field `mulf_err_pd` writer - "]
-pub type MULF_ERR_PD_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CSIC_MULF_INT_SPEC, bool, O>;
+pub type MULF_ERR_PD_W<'a, REG> = crate::BitWriter1C<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -76,46 +44,47 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn mulf_done_en(&mut self) -> MULF_DONE_EN_W<0> {
-        MULF_DONE_EN_W::new(self)
+    pub fn mulf_done_en(&mut self) -> MULF_DONE_EN_W<CSIC_MULF_INT_SPEC> {
+        MULF_DONE_EN_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn mulf_err_en(&mut self) -> MULF_ERR_EN_W<1> {
-        MULF_ERR_EN_W::new(self)
+    pub fn mulf_err_en(&mut self) -> MULF_ERR_EN_W<CSIC_MULF_INT_SPEC> {
+        MULF_ERR_EN_W::new(self, 1)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
     #[must_use]
-    pub fn mulf_done_pd(&mut self) -> MULF_DONE_PD_W<16> {
-        MULF_DONE_PD_W::new(self)
+    pub fn mulf_done_pd(&mut self) -> MULF_DONE_PD_W<CSIC_MULF_INT_SPEC> {
+        MULF_DONE_PD_W::new(self, 16)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     #[must_use]
-    pub fn mulf_err_pd(&mut self) -> MULF_ERR_PD_W<17> {
-        MULF_ERR_PD_W::new(self)
+    pub fn mulf_err_pd(&mut self) -> MULF_ERR_PD_W<CSIC_MULF_INT_SPEC> {
+        MULF_ERR_PD_W::new(self, 17)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CSIC Multi-Frame Interrupt Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [csic_mulf_int](index.html) module"]
+#[doc = "CSIC Multi-Frame Interrupt Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`csic_mulf_int::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`csic_mulf_int::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CSIC_MULF_INT_SPEC;
 impl crate::RegisterSpec for CSIC_MULF_INT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [csic_mulf_int::R](R) reader structure"]
-impl crate::Readable for CSIC_MULF_INT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [csic_mulf_int::W](W) writer structure"]
+#[doc = "`read()` method returns [`csic_mulf_int::R`](R) reader structure"]
+impl crate::Readable for CSIC_MULF_INT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`csic_mulf_int::W`](W) writer structure"]
 impl crate::Writable for CSIC_MULF_INT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x0003_0000;
 }

@@ -1,41 +1,9 @@
 #[doc = "Register `i2s_pcm_fsta` reader"]
-pub struct R(crate::R<I2S_PCM_FSTA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<I2S_PCM_FSTA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<I2S_PCM_FSTA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<I2S_PCM_FSTA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<I2S_PCM_FSTA_SPEC>;
 #[doc = "Register `i2s_pcm_fsta` writer"]
-pub struct W(crate::W<I2S_PCM_FSTA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<I2S_PCM_FSTA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<I2S_PCM_FSTA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<I2S_PCM_FSTA_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<I2S_PCM_FSTA_SPEC>;
 #[doc = "Field `rxa_cnt` reader - RXFIFO Available sample word counter"]
-pub type RXA_CNT_R = crate::FieldReader<u8, u8>;
+pub type RXA_CNT_R = crate::FieldReader;
 #[doc = "Field `rxa` reader - RXFIFO Available"]
 pub type RXA_R = crate::BitReader<RXA_A>;
 #[doc = "RXFIFO Available\n\nValue on reset: 0"]
@@ -43,7 +11,7 @@ pub type RXA_R = crate::BitReader<RXA_A>;
 pub enum RXA_A {
     #[doc = "0: No Available data in RXFIFO"]
     NO_AVAILABLE = 0,
-    #[doc = "1: More than one sample in RXFIFO (<= 1 Word)"]
+    #[doc = "1: More than one sample in RXFIFO (&lt;= 1 Word)"]
     AVAILABLE = 1,
 }
 impl From<RXA_A> for bool {
@@ -55,25 +23,25 @@ impl From<RXA_A> for bool {
 impl RXA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXA_A {
+    pub const fn variant(&self) -> RXA_A {
         match self.bits {
             false => RXA_A::NO_AVAILABLE,
             true => RXA_A::AVAILABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_AVAILABLE`"]
+    #[doc = "No Available data in RXFIFO"]
     #[inline(always)]
     pub fn is_no_available(&self) -> bool {
         *self == RXA_A::NO_AVAILABLE
     }
-    #[doc = "Checks if the value of the field is `AVAILABLE`"]
+    #[doc = "More than one sample in RXFIFO (&lt;= 1 Word)"]
     #[inline(always)]
     pub fn is_available(&self) -> bool {
         *self == RXA_A::AVAILABLE
     }
 }
 #[doc = "Field `txe_cnt` reader - TXFIFO Empty space word counter"]
-pub type TXE_CNT_R = crate::FieldReader<u8, u8>;
+pub type TXE_CNT_R = crate::FieldReader;
 #[doc = "Field `txe` reader - TXFIFO Empty"]
 pub type TXE_R = crate::BitReader<TXE_A>;
 #[doc = "TXFIFO Empty\n\nValue on reset: 0"]
@@ -93,18 +61,18 @@ impl From<TXE_A> for bool {
 impl TXE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXE_A {
+    pub const fn variant(&self) -> TXE_A {
         match self.bits {
             false => TXE_A::NOT_EMPTY,
             true => TXE_A::EMPTY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
+    #[doc = "No room for new sample in TXFIFO"]
     #[inline(always)]
     pub fn is_not_empty(&self) -> bool {
         *self == TXE_A::NOT_EMPTY
     }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[doc = "More than one sample in RXFIFO (>= 1 Word)"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
         *self == TXE_A::EMPTY
@@ -133,25 +101,26 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "I2S/PCM FIFO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2s_pcm_fsta](index.html) module"]
+#[doc = "I2S/PCM FIFO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2s_pcm_fsta::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2s_pcm_fsta::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2S_PCM_FSTA_SPEC;
 impl crate::RegisterSpec for I2S_PCM_FSTA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [i2s_pcm_fsta::R](R) reader structure"]
-impl crate::Readable for I2S_PCM_FSTA_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [i2s_pcm_fsta::W](W) writer structure"]
+#[doc = "`read()` method returns [`i2s_pcm_fsta::R`](R) reader structure"]
+impl crate::Readable for I2S_PCM_FSTA_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`i2s_pcm_fsta::W`](W) writer structure"]
 impl crate::Writable for I2S_PCM_FSTA_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

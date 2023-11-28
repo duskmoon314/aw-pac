@@ -1,39 +1,7 @@
 #[doc = "Register `fcc` reader"]
-pub struct R(crate::R<FCC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FCC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FCC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FCC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FCC_SPEC>;
 #[doc = "Register `fcc` writer"]
-pub struct W(crate::W<FCC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FCC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FCC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FCC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FCC_SPEC>;
 #[doc = "Field `rx_fifo_clock_enable` reader - "]
 pub type RX_FIFO_CLOCK_ENABLE_R = crate::BitReader<RX_FIFO_CLOCK_ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<RX_FIFO_CLOCK_ENABLE_A> for bool {
 impl RX_FIFO_CLOCK_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_FIFO_CLOCK_ENABLE_A {
+    pub const fn variant(&self) -> RX_FIFO_CLOCK_ENABLE_A {
         match self.bits {
             false => RX_FIFO_CLOCK_ENABLE_A::DISABLE,
             true => RX_FIFO_CLOCK_ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RX_FIFO_CLOCK_ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RX_FIFO_CLOCK_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `rx_fifo_clock_enable` writer - "]
-pub type RX_FIFO_CLOCK_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_ENABLE_A, O>;
-impl<'a, const O: u8> RX_FIFO_CLOCK_ENABLE_W<'a, O> {
+pub type RX_FIFO_CLOCK_ENABLE_W<'a, REG> = crate::BitWriter<'a, REG, RX_FIFO_CLOCK_ENABLE_A>;
+impl<'a, REG> RX_FIFO_CLOCK_ENABLE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_FIFO_CLOCK_ENABLE_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_FIFO_CLOCK_ENABLE_A::ENABLE)
     }
 }
@@ -104,35 +74,37 @@ impl From<TX_FIFO_CLOCK_ENABLE_A> for bool {
 impl TX_FIFO_CLOCK_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_FIFO_CLOCK_ENABLE_A {
+    pub const fn variant(&self) -> TX_FIFO_CLOCK_ENABLE_A {
         match self.bits {
             false => TX_FIFO_CLOCK_ENABLE_A::DISABLE,
             true => TX_FIFO_CLOCK_ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TX_FIFO_CLOCK_ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TX_FIFO_CLOCK_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `tx_fifo_clock_enable` writer - "]
-pub type TX_FIFO_CLOCK_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, FCC_SPEC, TX_FIFO_CLOCK_ENABLE_A, O>;
-impl<'a, const O: u8> TX_FIFO_CLOCK_ENABLE_W<'a, O> {
+pub type TX_FIFO_CLOCK_ENABLE_W<'a, REG> = crate::BitWriter<'a, REG, TX_FIFO_CLOCK_ENABLE_A>;
+impl<'a, REG> TX_FIFO_CLOCK_ENABLE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TX_FIFO_CLOCK_ENABLE_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TX_FIFO_CLOCK_ENABLE_A::ENABLE)
     }
 }
@@ -155,40 +127,42 @@ impl From<RX_FIFO_CLOCK_MODE_A> for bool {
 impl RX_FIFO_CLOCK_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_FIFO_CLOCK_MODE_A {
+    pub const fn variant(&self) -> RX_FIFO_CLOCK_MODE_A {
         match self.bits {
             false => RX_FIFO_CLOCK_MODE_A::WR_APB,
             true => RX_FIFO_CLOCK_MODE_A::W_APB_R_AHB,
         }
     }
-    #[doc = "Checks if the value of the field is `WR_APB`"]
+    #[doc = "Sync mode, writing/reading clocks use apb clock"]
     #[inline(always)]
     pub fn is_wr_apb(&self) -> bool {
         *self == RX_FIFO_CLOCK_MODE_A::WR_APB
     }
-    #[doc = "Checks if the value of the field is `W_APB_R_AHB`"]
+    #[doc = "Sync mode, writing clock uses apb clock, reading clock uses ahb clock"]
     #[inline(always)]
     pub fn is_w_apb_r_ahb(&self) -> bool {
         *self == RX_FIFO_CLOCK_MODE_A::W_APB_R_AHB
     }
 }
 #[doc = "Field `rx_fifo_clock_mode` writer - "]
-pub type RX_FIFO_CLOCK_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, FCC_SPEC, RX_FIFO_CLOCK_MODE_A, O>;
-impl<'a, const O: u8> RX_FIFO_CLOCK_MODE_W<'a, O> {
+pub type RX_FIFO_CLOCK_MODE_W<'a, REG> = crate::BitWriter<'a, REG, RX_FIFO_CLOCK_MODE_A>;
+impl<'a, REG> RX_FIFO_CLOCK_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Sync mode, writing/reading clocks use apb clock"]
     #[inline(always)]
-    pub fn wr_apb(self) -> &'a mut W {
+    pub fn wr_apb(self) -> &'a mut crate::W<REG> {
         self.variant(RX_FIFO_CLOCK_MODE_A::WR_APB)
     }
     #[doc = "Sync mode, writing clock uses apb clock, reading clock uses ahb clock"]
     #[inline(always)]
-    pub fn w_apb_r_ahb(self) -> &'a mut W {
+    pub fn w_apb_r_ahb(self) -> &'a mut crate::W<REG> {
         self.variant(RX_FIFO_CLOCK_MODE_A::W_APB_R_AHB)
     }
 }
 #[doc = "Field `fifo_depth` reader - "]
-pub type FIFO_DEPTH_R = crate::FieldReader<u32, u32>;
+pub type FIFO_DEPTH_R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -215,40 +189,41 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_fifo_clock_enable(&mut self) -> RX_FIFO_CLOCK_ENABLE_W<0> {
-        RX_FIFO_CLOCK_ENABLE_W::new(self)
+    pub fn rx_fifo_clock_enable(&mut self) -> RX_FIFO_CLOCK_ENABLE_W<FCC_SPEC> {
+        RX_FIFO_CLOCK_ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_fifo_clock_enable(&mut self) -> TX_FIFO_CLOCK_ENABLE_W<1> {
-        TX_FIFO_CLOCK_ENABLE_W::new(self)
+    pub fn tx_fifo_clock_enable(&mut self) -> TX_FIFO_CLOCK_ENABLE_W<FCC_SPEC> {
+        TX_FIFO_CLOCK_ENABLE_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_fifo_clock_mode(&mut self) -> RX_FIFO_CLOCK_MODE_W<2> {
-        RX_FIFO_CLOCK_MODE_W::new(self)
+    pub fn rx_fifo_clock_mode(&mut self) -> RX_FIFO_CLOCK_MODE_W<FCC_SPEC> {
+        RX_FIFO_CLOCK_MODE_W::new(self, 2)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UART FIFO Clock Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fcc](index.html) module"]
+#[doc = "UART FIFO Clock Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fcc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fcc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FCC_SPEC;
 impl crate::RegisterSpec for FCC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fcc::R](R) reader structure"]
-impl crate::Readable for FCC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fcc::W](W) writer structure"]
+#[doc = "`read()` method returns [`fcc::R`](R) reader structure"]
+impl crate::Readable for FCC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fcc::W`](W) writer structure"]
 impl crate::Writable for FCC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,49 +1,17 @@
 #[doc = "Register `riscv_clk` reader"]
-pub struct R(crate::R<RISCV_CLK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RISCV_CLK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RISCV_CLK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RISCV_CLK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RISCV_CLK_SPEC>;
 #[doc = "Register `riscv_clk` writer"]
-pub struct W(crate::W<RISCV_CLK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RISCV_CLK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RISCV_CLK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RISCV_CLK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RISCV_CLK_SPEC>;
 #[doc = "Field `div_cfg` reader - Factor M"]
-pub type DIV_CFG_R = crate::FieldReader<u8, u8>;
+pub type DIV_CFG_R = crate::FieldReader;
 #[doc = "Field `div_cfg` writer - Factor M"]
-pub type DIV_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 5, O>;
+pub type DIV_CFG_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `axi_div_cfg` reader - Factor N"]
-pub type AXI_DIV_CFG_R = crate::FieldReader<u8, u8>;
+pub type AXI_DIV_CFG_R = crate::FieldReader;
 #[doc = "Field `axi_div_cfg` writer - Factor N"]
-pub type AXI_DIV_CFG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, u8, 2, O>;
+pub type AXI_DIV_CFG_W<'a, REG> = crate::FieldWriter<'a, REG, 2>;
 #[doc = "Field `clk_src_sel` reader - Clock Source Select"]
-pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
+pub type CLK_SRC_SEL_R = crate::FieldReader<CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -69,10 +37,13 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CLK_SRC_SEL_A {
+    type Ux = u8;
+}
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLK_SRC_SEL_A> {
+    pub const fn variant(&self) -> Option<CLK_SRC_SEL_A> {
         match self.bits {
             0 => Some(CLK_SRC_SEL_A::HOSC),
             1 => Some(CLK_SRC_SEL_A::CLK32K),
@@ -84,79 +55,82 @@ impl CLK_SRC_SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `HOSC`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_hosc(&self) -> bool {
         *self == CLK_SRC_SEL_A::HOSC
     }
-    #[doc = "Checks if the value of the field is `CLK32K`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_clk32k(&self) -> bool {
         *self == CLK_SRC_SEL_A::CLK32K
     }
-    #[doc = "Checks if the value of the field is `CLK16M_RC`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_clk16m_rc(&self) -> bool {
         *self == CLK_SRC_SEL_A::CLK16M_RC
     }
-    #[doc = "Checks if the value of the field is `PLL_PERI_800M`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_pll_peri_800m(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_PERI_800M
     }
-    #[doc = "Checks if the value of the field is `PLL_PERI_1X`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_pll_peri_1x(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_PERI_1X
     }
-    #[doc = "Checks if the value of the field is `PLL_CPU`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_pll_cpu(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_CPU
     }
-    #[doc = "Checks if the value of the field is `PLL_AUDIO1_DIV2`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_pll_audio1_div2(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_AUDIO1_DIV2
     }
 }
 #[doc = "Field `clk_src_sel` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, RISCV_CLK_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
-impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
+pub type CLK_SRC_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CLK_SRC_SEL_A>;
+impl<'a, REG> CLK_SRC_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn hosc(self) -> &'a mut W {
+    pub fn hosc(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::HOSC)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn clk32k(self) -> &'a mut W {
+    pub fn clk32k(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::CLK32K)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn clk16m_rc(self) -> &'a mut W {
+    pub fn clk16m_rc(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::CLK16M_RC)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pll_peri_800m(self) -> &'a mut W {
+    pub fn pll_peri_800m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_PERI_800M)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn pll_peri_1x(self) -> &'a mut W {
+    pub fn pll_peri_1x(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_PERI_1X)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn pll_cpu(self) -> &'a mut W {
+    pub fn pll_cpu(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_CPU)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn pll_audio1_div2(self) -> &'a mut W {
+    pub fn pll_audio1_div2(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_AUDIO1_DIV2)
     }
 }
@@ -181,40 +155,41 @@ impl W {
     #[doc = "Bits 0:4 - Factor M"]
     #[inline(always)]
     #[must_use]
-    pub fn div_cfg(&mut self) -> DIV_CFG_W<0> {
-        DIV_CFG_W::new(self)
+    pub fn div_cfg(&mut self) -> DIV_CFG_W<RISCV_CLK_SPEC> {
+        DIV_CFG_W::new(self, 0)
     }
     #[doc = "Bits 8:9 - Factor N"]
     #[inline(always)]
     #[must_use]
-    pub fn axi_div_cfg(&mut self) -> AXI_DIV_CFG_W<8> {
-        AXI_DIV_CFG_W::new(self)
+    pub fn axi_div_cfg(&mut self) -> AXI_DIV_CFG_W<RISCV_CLK_SPEC> {
+        AXI_DIV_CFG_W::new(self, 8)
     }
     #[doc = "Bits 24:26 - Clock Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<24> {
-        CLK_SRC_SEL_W::new(self)
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<RISCV_CLK_SPEC> {
+        CLK_SRC_SEL_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "RISC-V Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [riscv_clk](index.html) module"]
+#[doc = "RISC-V Clock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`riscv_clk::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`riscv_clk::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RISCV_CLK_SPEC;
 impl crate::RegisterSpec for RISCV_CLK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [riscv_clk::R](R) reader structure"]
-impl crate::Readable for RISCV_CLK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [riscv_clk::W](W) writer structure"]
+#[doc = "`read()` method returns [`riscv_clk::R`](R) reader structure"]
+impl crate::Readable for RISCV_CLK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`riscv_clk::W`](W) writer structure"]
 impl crate::Writable for RISCV_CLK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

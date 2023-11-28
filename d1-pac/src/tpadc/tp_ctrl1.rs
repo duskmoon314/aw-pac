@@ -1,39 +1,7 @@
 #[doc = "Register `tp_ctrl1` reader"]
-pub struct R(crate::R<TP_CTRL1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TP_CTRL1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TP_CTRL1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TP_CTRL1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TP_CTRL1_SPEC>;
 #[doc = "Register `tp_ctrl1` writer"]
-pub struct W(crate::W<TP_CTRL1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TP_CTRL1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TP_CTRL1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TP_CTRL1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TP_CTRL1_SPEC>;
 #[doc = "Field `adc_chan_select[0-3]` reader - Analog Input Channel Select"]
 pub type ADC_CHAN_SELECT_R = crate::BitReader<ADC_CHAN_SELECT_A>;
 #[doc = "Analog Input Channel Select\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<ADC_CHAN_SELECT_A> for bool {
 impl ADC_CHAN_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ADC_CHAN_SELECT_A {
+    pub const fn variant(&self) -> ADC_CHAN_SELECT_A {
         match self.bits {
             false => ADC_CHAN_SELECT_A::DISABLE,
             true => ADC_CHAN_SELECT_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == ADC_CHAN_SELECT_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == ADC_CHAN_SELECT_A::ENABLE
     }
 }
 #[doc = "Field `adc_chan_select[0-3]` writer - Analog Input Channel Select"]
-pub type ADC_CHAN_SELECT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, ADC_CHAN_SELECT_A, O>;
-impl<'a, const O: u8> ADC_CHAN_SELECT_W<'a, O> {
+pub type ADC_CHAN_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, ADC_CHAN_SELECT_A>;
+impl<'a, REG> ADC_CHAN_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_CHAN_SELECT_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(ADC_CHAN_SELECT_A::ENABLE)
     }
 }
@@ -104,35 +74,37 @@ impl From<TP_MODE_SELECT_A> for bool {
 impl TP_MODE_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TP_MODE_SELECT_A {
+    pub const fn variant(&self) -> TP_MODE_SELECT_A {
         match self.bits {
             false => TP_MODE_SELECT_A::TP,
             true => TP_MODE_SELECT_A::AUXILIARY_ADC,
         }
     }
-    #[doc = "Checks if the value of the field is `TP`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_tp(&self) -> bool {
         *self == TP_MODE_SELECT_A::TP
     }
-    #[doc = "Checks if the value of the field is `AUXILIARY_ADC`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_auxiliary_adc(&self) -> bool {
         *self == TP_MODE_SELECT_A::AUXILIARY_ADC
     }
 }
 #[doc = "Field `tp_mode_select` writer - Touch Panel Mode and Auxiliary ADC Mode Select"]
-pub type TP_MODE_SELECT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_MODE_SELECT_A, O>;
-impl<'a, const O: u8> TP_MODE_SELECT_W<'a, O> {
+pub type TP_MODE_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, TP_MODE_SELECT_A>;
+impl<'a, REG> TP_MODE_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn tp(self) -> &'a mut W {
+    pub fn tp(self) -> &'a mut crate::W<REG> {
         self.variant(TP_MODE_SELECT_A::TP)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn auxiliary_adc(self) -> &'a mut W {
+    pub fn auxiliary_adc(self) -> &'a mut crate::W<REG> {
         self.variant(TP_MODE_SELECT_A::AUXILIARY_ADC)
     }
 }
@@ -155,34 +127,37 @@ impl From<TP_EN_A> for bool {
 impl TP_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TP_EN_A {
+    pub const fn variant(&self) -> TP_EN_A {
         match self.bits {
             false => TP_EN_A::DISABLE,
             true => TP_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TP_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TP_EN_A::ENABLE
     }
 }
 #[doc = "Field `tp_en` writer - TP Function Enable"]
-pub type TP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_EN_A, O>;
-impl<'a, const O: u8> TP_EN_W<'a, O> {
+pub type TP_EN_W<'a, REG> = crate::BitWriter<'a, REG, TP_EN_A>;
+impl<'a, REG> TP_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TP_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TP_EN_A::ENABLE)
     }
 }
@@ -205,34 +180,37 @@ impl From<TP_DUAL_EN_A> for bool {
 impl TP_DUAL_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TP_DUAL_EN_A {
+    pub const fn variant(&self) -> TP_DUAL_EN_A {
         match self.bits {
             false => TP_DUAL_EN_A::DISABLE,
             true => TP_DUAL_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TP_DUAL_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TP_DUAL_EN_A::ENABLE
     }
 }
 #[doc = "Field `tp_dual_en` writer - Touch Panel Double Point Enable"]
-pub type TP_DUAL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TP_DUAL_EN_A, O>;
-impl<'a, const O: u8> TP_DUAL_EN_W<'a, O> {
+pub type TP_DUAL_EN_W<'a, REG> = crate::BitWriter<'a, REG, TP_DUAL_EN_A>;
+impl<'a, REG> TP_DUAL_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TP_DUAL_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TP_DUAL_EN_A::ENABLE)
     }
 }
@@ -253,25 +231,27 @@ impl From<TOUCH_PAN_CALI_EN_A> for bool {
 impl TOUCH_PAN_CALI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TOUCH_PAN_CALI_EN_A> {
+    pub const fn variant(&self) -> Option<TOUCH_PAN_CALI_EN_A> {
         match self.bits {
             true => Some(TOUCH_PAN_CALI_EN_A::START),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == TOUCH_PAN_CALI_EN_A::START
     }
 }
 #[doc = "Field `touch_pan_cali_en` writer - Touch Panel Calibration"]
-pub type TOUCH_PAN_CALI_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, TOUCH_PAN_CALI_EN_A, O>;
-impl<'a, const O: u8> TOUCH_PAN_CALI_EN_W<'a, O> {
+pub type TOUCH_PAN_CALI_EN_W<'a, REG> = crate::BitWriter<'a, REG, TOUCH_PAN_CALI_EN_A>;
+impl<'a, REG> TOUCH_PAN_CALI_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
+    pub fn start(self) -> &'a mut crate::W<REG> {
         self.variant(TOUCH_PAN_CALI_EN_A::START)
     }
 }
@@ -294,34 +274,37 @@ impl From<CHOPPER_EN_A> for bool {
 impl CHOPPER_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHOPPER_EN_A {
+    pub const fn variant(&self) -> CHOPPER_EN_A {
         match self.bits {
             false => CHOPPER_EN_A::DISABLE,
             true => CHOPPER_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == CHOPPER_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == CHOPPER_EN_A::ENABLE
     }
 }
 #[doc = "Field `chopper_en` writer - T-sensor Chopping Enable"]
-pub type CHOPPER_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TP_CTRL1_SPEC, CHOPPER_EN_A, O>;
-impl<'a, const O: u8> CHOPPER_EN_W<'a, O> {
+pub type CHOPPER_EN_W<'a, REG> = crate::BitWriter<'a, REG, CHOPPER_EN_A>;
+impl<'a, REG> CHOPPER_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(CHOPPER_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(CHOPPER_EN_A::ENABLE)
     }
 }
@@ -344,47 +327,50 @@ impl From<STYLUS_UP_DEBOUNCE_EN_A> for bool {
 impl STYLUS_UP_DEBOUNCE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STYLUS_UP_DEBOUNCE_EN_A {
+    pub const fn variant(&self) -> STYLUS_UP_DEBOUNCE_EN_A {
         match self.bits {
             false => STYLUS_UP_DEBOUNCE_EN_A::DISABLE,
             true => STYLUS_UP_DEBOUNCE_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == STYLUS_UP_DEBOUNCE_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == STYLUS_UP_DEBOUNCE_EN_A::ENABLE
     }
 }
 #[doc = "Field `stylus_up_debounce_en` writer - Stylus Up Debounce Function Select"]
-pub type STYLUS_UP_DEBOUNCE_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TP_CTRL1_SPEC, STYLUS_UP_DEBOUNCE_EN_A, O>;
-impl<'a, const O: u8> STYLUS_UP_DEBOUNCE_EN_W<'a, O> {
+pub type STYLUS_UP_DEBOUNCE_EN_W<'a, REG> = crate::BitWriter<'a, REG, STYLUS_UP_DEBOUNCE_EN_A>;
+impl<'a, REG> STYLUS_UP_DEBOUNCE_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(STYLUS_UP_DEBOUNCE_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(STYLUS_UP_DEBOUNCE_EN_A::ENABLE)
     }
 }
 #[doc = "Field `stylus_up_debounce` reader - Stylus Up Debounce Time Setting"]
-pub type STYLUS_UP_DEBOUNCE_R = crate::FieldReader<u8, u8>;
+pub type STYLUS_UP_DEBOUNCE_R = crate::FieldReader;
 #[doc = "Field `stylus_up_debounce` writer - Stylus Up Debounce Time Setting"]
-pub type STYLUS_UP_DEBOUNCE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TP_CTRL1_SPEC, u8, u8, 8, O>;
+pub type STYLUS_UP_DEBOUNCE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
-    #[doc = "Analog Input Channel Select"]
+    #[doc = "Analog Input Channel Select\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `adc_chan0_select` field"]
     #[inline(always)]
-    pub unsafe fn adc_chan_select(&self, n: u8) -> ADC_CHAN_SELECT_R {
+    pub fn adc_chan_select(&self, n: u8) -> ADC_CHAN_SELECT_R {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
         ADC_CHAN_SELECT_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Analog Input Channel Select"]
@@ -444,97 +430,100 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Analog Input Channel Select"]
+    #[doc = "Analog Input Channel Select\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `adc_chan0_select` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn adc_chan_select<const O: u8>(&mut self) -> ADC_CHAN_SELECT_W<O> {
-        ADC_CHAN_SELECT_W::new(self)
+    pub fn adc_chan_select(&mut self, n: u8) -> ADC_CHAN_SELECT_W<TP_CTRL1_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
+        ADC_CHAN_SELECT_W::new(self, n)
     }
     #[doc = "Bit 0 - Analog Input Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_chan0_select(&mut self) -> ADC_CHAN_SELECT_W<0> {
-        ADC_CHAN_SELECT_W::new(self)
+    pub fn adc_chan0_select(&mut self) -> ADC_CHAN_SELECT_W<TP_CTRL1_SPEC> {
+        ADC_CHAN_SELECT_W::new(self, 0)
     }
     #[doc = "Bit 1 - Analog Input Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_chan1_select(&mut self) -> ADC_CHAN_SELECT_W<1> {
-        ADC_CHAN_SELECT_W::new(self)
+    pub fn adc_chan1_select(&mut self) -> ADC_CHAN_SELECT_W<TP_CTRL1_SPEC> {
+        ADC_CHAN_SELECT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Analog Input Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_chan2_select(&mut self) -> ADC_CHAN_SELECT_W<2> {
-        ADC_CHAN_SELECT_W::new(self)
+    pub fn adc_chan2_select(&mut self) -> ADC_CHAN_SELECT_W<TP_CTRL1_SPEC> {
+        ADC_CHAN_SELECT_W::new(self, 2)
     }
     #[doc = "Bit 3 - Analog Input Channel Select"]
     #[inline(always)]
     #[must_use]
-    pub fn adc_chan3_select(&mut self) -> ADC_CHAN_SELECT_W<3> {
-        ADC_CHAN_SELECT_W::new(self)
+    pub fn adc_chan3_select(&mut self) -> ADC_CHAN_SELECT_W<TP_CTRL1_SPEC> {
+        ADC_CHAN_SELECT_W::new(self, 3)
     }
     #[doc = "Bit 4 - Touch Panel Mode and Auxiliary ADC Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn tp_mode_select(&mut self) -> TP_MODE_SELECT_W<4> {
-        TP_MODE_SELECT_W::new(self)
+    pub fn tp_mode_select(&mut self) -> TP_MODE_SELECT_W<TP_CTRL1_SPEC> {
+        TP_MODE_SELECT_W::new(self, 4)
     }
     #[doc = "Bit 5 - TP Function Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tp_en(&mut self) -> TP_EN_W<5> {
-        TP_EN_W::new(self)
+    pub fn tp_en(&mut self) -> TP_EN_W<TP_CTRL1_SPEC> {
+        TP_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - Touch Panel Double Point Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tp_dual_en(&mut self) -> TP_DUAL_EN_W<6> {
-        TP_DUAL_EN_W::new(self)
+    pub fn tp_dual_en(&mut self) -> TP_DUAL_EN_W<TP_CTRL1_SPEC> {
+        TP_DUAL_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - Touch Panel Calibration"]
     #[inline(always)]
     #[must_use]
-    pub fn touch_pan_cali_en(&mut self) -> TOUCH_PAN_CALI_EN_W<7> {
-        TOUCH_PAN_CALI_EN_W::new(self)
+    pub fn touch_pan_cali_en(&mut self) -> TOUCH_PAN_CALI_EN_W<TP_CTRL1_SPEC> {
+        TOUCH_PAN_CALI_EN_W::new(self, 7)
     }
     #[doc = "Bit 8 - T-sensor Chopping Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn chopper_en(&mut self) -> CHOPPER_EN_W<8> {
-        CHOPPER_EN_W::new(self)
+    pub fn chopper_en(&mut self) -> CHOPPER_EN_W<TP_CTRL1_SPEC> {
+        CHOPPER_EN_W::new(self, 8)
     }
     #[doc = "Bit 9 - Stylus Up Debounce Function Select"]
     #[inline(always)]
     #[must_use]
-    pub fn stylus_up_debounce_en(&mut self) -> STYLUS_UP_DEBOUNCE_EN_W<9> {
-        STYLUS_UP_DEBOUNCE_EN_W::new(self)
+    pub fn stylus_up_debounce_en(&mut self) -> STYLUS_UP_DEBOUNCE_EN_W<TP_CTRL1_SPEC> {
+        STYLUS_UP_DEBOUNCE_EN_W::new(self, 9)
     }
     #[doc = "Bits 12:19 - Stylus Up Debounce Time Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn stylus_up_debounce(&mut self) -> STYLUS_UP_DEBOUNCE_W<12> {
-        STYLUS_UP_DEBOUNCE_W::new(self)
+    pub fn stylus_up_debounce(&mut self) -> STYLUS_UP_DEBOUNCE_W<TP_CTRL1_SPEC> {
+        STYLUS_UP_DEBOUNCE_W::new(self, 12)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TP Control Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tp_ctrl1](index.html) module"]
+#[doc = "TP Control Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tp_ctrl1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tp_ctrl1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TP_CTRL1_SPEC;
 impl crate::RegisterSpec for TP_CTRL1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tp_ctrl1::R](R) reader structure"]
-impl crate::Readable for TP_CTRL1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tp_ctrl1::W](W) writer structure"]
+#[doc = "`read()` method returns [`tp_ctrl1::R`](R) reader structure"]
+impl crate::Readable for TP_CTRL1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tp_ctrl1::W`](W) writer structure"]
 impl crate::Writable for TP_CTRL1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

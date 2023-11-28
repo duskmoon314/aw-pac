@@ -1,39 +1,7 @@
 #[doc = "Register `pio_pow_ms_ctl` reader"]
-pub struct R(crate::R<PIO_POW_MS_CTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PIO_POW_MS_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PIO_POW_MS_CTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PIO_POW_MS_CTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PIO_POW_MS_CTL_SPEC>;
 #[doc = "Register `pio_pow_ms_ctl` writer"]
-pub struct W(crate::W<PIO_POW_MS_CTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PIO_POW_MS_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PIO_POW_MS_CTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PIO_POW_MS_CTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PIO_POW_MS_CTL_SPEC>;
 #[doc = "Field `vcc_p_ws_vol_mod_sel[C,D,E,F,G]` reader - VCC_PX Withstand Voltage Mode Select Control"]
 pub type VCC_P_WS_VOL_MOD_SEL_R = crate::BitReader<VCC_P_WS_VOL_MOD_SEL_A>;
 #[doc = "VCC_PX Withstand Voltage Mode Select Control\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<VCC_P_WS_VOL_MOD_SEL_A> for bool {
 impl VCC_P_WS_VOL_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCC_P_WS_VOL_MOD_SEL_A {
+    pub const fn variant(&self) -> VCC_P_WS_VOL_MOD_SEL_A {
         match self.bits {
             false => VCC_P_WS_VOL_MOD_SEL_A::ENABLE,
             true => VCC_P_WS_VOL_MOD_SEL_A::DISABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == VCC_P_WS_VOL_MOD_SEL_A::ENABLE
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == VCC_P_WS_VOL_MOD_SEL_A::DISABLE
     }
 }
 #[doc = "Field `vcc_p_ws_vol_mod_sel[C,D,E,F,G]` writer - VCC_PX Withstand Voltage Mode Select Control"]
-pub type VCC_P_WS_VOL_MOD_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCC_P_WS_VOL_MOD_SEL_A, O>;
-impl<'a, const O: u8> VCC_P_WS_VOL_MOD_SEL_W<'a, O> {
+pub type VCC_P_WS_VOL_MOD_SEL_W<'a, REG> = crate::BitWriter<'a, REG, VCC_P_WS_VOL_MOD_SEL_A>;
+impl<'a, REG> VCC_P_WS_VOL_MOD_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(VCC_P_WS_VOL_MOD_SEL_A::ENABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(VCC_P_WS_VOL_MOD_SEL_A::DISABLE)
     }
 }
@@ -104,39 +74,48 @@ impl From<VCCIO_WS_VOL_MOD_SEL_A> for bool {
 impl VCCIO_WS_VOL_MOD_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VCCIO_WS_VOL_MOD_SEL_A {
+    pub const fn variant(&self) -> VCCIO_WS_VOL_MOD_SEL_A {
         match self.bits {
             false => VCCIO_WS_VOL_MOD_SEL_A::ENABLE,
             true => VCCIO_WS_VOL_MOD_SEL_A::DISABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == VCCIO_WS_VOL_MOD_SEL_A::ENABLE
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == VCCIO_WS_VOL_MOD_SEL_A::DISABLE
     }
 }
 #[doc = "Field `vccio_ws_vol_mod_sel` writer - VCC_IO Withstand Voltage Mode Select Control"]
-pub type VCCIO_WS_VOL_MOD_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PIO_POW_MS_CTL_SPEC, VCCIO_WS_VOL_MOD_SEL_A, O>;
-impl<'a, const O: u8> VCCIO_WS_VOL_MOD_SEL_W<'a, O> {
+pub type VCCIO_WS_VOL_MOD_SEL_W<'a, REG> = crate::BitWriter<'a, REG, VCCIO_WS_VOL_MOD_SEL_A>;
+impl<'a, REG> VCCIO_WS_VOL_MOD_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(VCCIO_WS_VOL_MOD_SEL_A::ENABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(VCCIO_WS_VOL_MOD_SEL_A::DISABLE)
     }
 }
 impl R {
+    #[doc = "VCC_PX Withstand Voltage Mode Select Control\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `vcc_pC_ws_vol_mod_sel` field"]
+    #[inline(always)]
+    pub fn vcc_p_ws_vol_mod_sel(&self, n: u8) -> VCC_P_WS_VOL_MOD_SEL_R {
+        #[allow(clippy::no_effect)]
+        [(); 5][n as usize];
+        VCC_P_WS_VOL_MOD_SEL_R::new(((self.bits >> (n + 2)) & 1) != 0)
+    }
     #[doc = "Bit 2 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     pub fn vcc_p_c_ws_vol_mod_sel(&self) -> VCC_P_WS_VOL_MOD_SEL_R {
@@ -169,67 +148,70 @@ impl R {
     }
 }
 impl W {
-    #[doc = "VCC_PX Withstand Voltage Mode Select Control"]
+    #[doc = "VCC_PX Withstand Voltage Mode Select Control\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `vcc_pC_ws_vol_mod_sel` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn vcc_p_ws_vol_mod_sel<const O: u8>(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<O> {
-        VCC_P_WS_VOL_MOD_SEL_W::new(self)
+    pub fn vcc_p_ws_vol_mod_sel(&mut self, n: u8) -> VCC_P_WS_VOL_MOD_SEL_W<PIO_POW_MS_CTL_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 5][n as usize];
+        VCC_P_WS_VOL_MOD_SEL_W::new(self, n + 2)
     }
     #[doc = "Bit 2 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcc_p_c_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<2> {
-        VCC_P_WS_VOL_MOD_SEL_W::new(self)
+    pub fn vcc_p_c_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<PIO_POW_MS_CTL_SPEC> {
+        VCC_P_WS_VOL_MOD_SEL_W::new(self, 2)
     }
     #[doc = "Bit 3 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcc_p_d_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<3> {
-        VCC_P_WS_VOL_MOD_SEL_W::new(self)
+    pub fn vcc_p_d_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<PIO_POW_MS_CTL_SPEC> {
+        VCC_P_WS_VOL_MOD_SEL_W::new(self, 3)
     }
     #[doc = "Bit 4 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcc_p_e_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<4> {
-        VCC_P_WS_VOL_MOD_SEL_W::new(self)
+    pub fn vcc_p_e_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<PIO_POW_MS_CTL_SPEC> {
+        VCC_P_WS_VOL_MOD_SEL_W::new(self, 4)
     }
     #[doc = "Bit 5 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcc_p_f_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<5> {
-        VCC_P_WS_VOL_MOD_SEL_W::new(self)
+    pub fn vcc_p_f_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<PIO_POW_MS_CTL_SPEC> {
+        VCC_P_WS_VOL_MOD_SEL_W::new(self, 5)
     }
     #[doc = "Bit 6 - VCC_PX Withstand Voltage Mode Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vcc_p_g_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<6> {
-        VCC_P_WS_VOL_MOD_SEL_W::new(self)
+    pub fn vcc_p_g_ws_vol_mod_sel(&mut self) -> VCC_P_WS_VOL_MOD_SEL_W<PIO_POW_MS_CTL_SPEC> {
+        VCC_P_WS_VOL_MOD_SEL_W::new(self, 6)
     }
     #[doc = "Bit 12 - VCC_IO Withstand Voltage Mode Select Control"]
     #[inline(always)]
     #[must_use]
-    pub fn vccio_ws_vol_mod_sel(&mut self) -> VCCIO_WS_VOL_MOD_SEL_W<12> {
-        VCCIO_WS_VOL_MOD_SEL_W::new(self)
+    pub fn vccio_ws_vol_mod_sel(&mut self) -> VCCIO_WS_VOL_MOD_SEL_W<PIO_POW_MS_CTL_SPEC> {
+        VCCIO_WS_VOL_MOD_SEL_W::new(self, 12)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PIO Group Withstand Voltage Mode Select Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pio_pow_ms_ctl](index.html) module"]
+#[doc = "PIO Group Withstand Voltage Mode Select Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pio_pow_ms_ctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pio_pow_ms_ctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PIO_POW_MS_CTL_SPEC;
 impl crate::RegisterSpec for PIO_POW_MS_CTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pio_pow_ms_ctl::R](R) reader structure"]
-impl crate::Readable for PIO_POW_MS_CTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pio_pow_ms_ctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`pio_pow_ms_ctl::R`](R) reader structure"]
+impl crate::Readable for PIO_POW_MS_CTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pio_pow_ms_ctl::W`](W) writer structure"]
 impl crate::Writable for PIO_POW_MS_CTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

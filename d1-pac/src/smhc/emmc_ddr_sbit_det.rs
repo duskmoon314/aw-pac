@@ -1,39 +1,7 @@
 #[doc = "Register `emmc_ddr_sbit_det` reader"]
-pub struct R(crate::R<EMMC_DDR_SBIT_DET_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EMMC_DDR_SBIT_DET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EMMC_DDR_SBIT_DET_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EMMC_DDR_SBIT_DET_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EMMC_DDR_SBIT_DET_SPEC>;
 #[doc = "Register `emmc_ddr_sbit_det` writer"]
-pub struct W(crate::W<EMMC_DDR_SBIT_DET_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EMMC_DDR_SBIT_DET_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EMMC_DDR_SBIT_DET_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EMMC_DDR_SBIT_DET_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EMMC_DDR_SBIT_DET_SPEC>;
 #[doc = "Field `half_start_bit` reader - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
 pub type HALF_START_BIT_R = crate::BitReader<HALF_START_BIT_A>;
 #[doc = "Control for start bit detection mechanism inside mstorage based on duration of start bit\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<HALF_START_BIT_A> for bool {
 impl HALF_START_BIT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HALF_START_BIT_A {
+    pub const fn variant(&self) -> HALF_START_BIT_A {
         match self.bits {
             false => HALF_START_BIT_A::FULL,
             true => HALF_START_BIT_A::LESS,
         }
     }
-    #[doc = "Checks if the value of the field is `FULL`"]
+    #[doc = "Full cycle"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
         *self == HALF_START_BIT_A::FULL
     }
-    #[doc = "Checks if the value of the field is `LESS`"]
+    #[doc = "Less than one full cycle"]
     #[inline(always)]
     pub fn is_less(&self) -> bool {
         *self == HALF_START_BIT_A::LESS
     }
 }
 #[doc = "Field `half_start_bit` writer - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
-pub type HALF_START_BIT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HALF_START_BIT_A, O>;
-impl<'a, const O: u8> HALF_START_BIT_W<'a, O> {
+pub type HALF_START_BIT_W<'a, REG> = crate::BitWriter<'a, REG, HALF_START_BIT_A>;
+impl<'a, REG> HALF_START_BIT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Full cycle"]
     #[inline(always)]
-    pub fn full(self) -> &'a mut W {
+    pub fn full(self) -> &'a mut crate::W<REG> {
         self.variant(HALF_START_BIT_A::FULL)
     }
     #[doc = "Less than one full cycle"]
     #[inline(always)]
-    pub fn less(self) -> &'a mut W {
+    pub fn less(self) -> &'a mut crate::W<REG> {
         self.variant(HALF_START_BIT_A::LESS)
     }
 }
@@ -104,35 +74,37 @@ impl From<HS400_MD_EN_A> for bool {
 impl HS400_MD_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HS400_MD_EN_A {
+    pub const fn variant(&self) -> HS400_MD_EN_A {
         match self.bits {
             false => HS400_MD_EN_A::DISABLED,
             true => HS400_MD_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == HS400_MD_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == HS400_MD_EN_A::ENABLED
     }
 }
 #[doc = "Field `hs400_md_en` writer - HS400 Mode Enable"]
-pub type HS400_MD_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMMC_DDR_SBIT_DET_SPEC, HS400_MD_EN_A, O>;
-impl<'a, const O: u8> HS400_MD_EN_W<'a, O> {
+pub type HS400_MD_EN_W<'a, REG> = crate::BitWriter<'a, REG, HS400_MD_EN_A>;
+impl<'a, REG> HS400_MD_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(HS400_MD_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(HS400_MD_EN_A::ENABLED)
     }
 }
@@ -152,34 +124,35 @@ impl W {
     #[doc = "Bit 0 - Control for start bit detection mechanism inside mstorage based on duration of start bit"]
     #[inline(always)]
     #[must_use]
-    pub fn half_start_bit(&mut self) -> HALF_START_BIT_W<0> {
-        HALF_START_BIT_W::new(self)
+    pub fn half_start_bit(&mut self) -> HALF_START_BIT_W<EMMC_DDR_SBIT_DET_SPEC> {
+        HALF_START_BIT_W::new(self, 0)
     }
     #[doc = "Bit 31 - HS400 Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hs400_md_en(&mut self) -> HS400_MD_EN_W<31> {
-        HS400_MD_EN_W::new(self)
+    pub fn hs400_md_en(&mut self) -> HS400_MD_EN_W<EMMC_DDR_SBIT_DET_SPEC> {
+        HS400_MD_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "eMMC4.5 DDR Start Bit Detection Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emmc_ddr_sbit_det](index.html) module"]
+#[doc = "eMMC4.5 DDR Start Bit Detection Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emmc_ddr_sbit_det::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emmc_ddr_sbit_det::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EMMC_DDR_SBIT_DET_SPEC;
 impl crate::RegisterSpec for EMMC_DDR_SBIT_DET_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [emmc_ddr_sbit_det::R](R) reader structure"]
-impl crate::Readable for EMMC_DDR_SBIT_DET_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [emmc_ddr_sbit_det::W](W) writer structure"]
+#[doc = "`read()` method returns [`emmc_ddr_sbit_det::R`](R) reader structure"]
+impl crate::Readable for EMMC_DDR_SBIT_DET_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`emmc_ddr_sbit_det::W`](W) writer structure"]
 impl crate::Writable for EMMC_DDR_SBIT_DET_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

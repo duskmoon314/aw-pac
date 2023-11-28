@@ -1,17 +1,43 @@
 #[doc = r"Register block"]
 #[repr(C)]
 pub struct RegisterBlock {
-    #[doc = "0x00..0x10 - CSIC_CCU"]
-    pub csic_ccu: CSIC_CCU,
+    csic_ccu: CSIC_CCU,
     _reserved1: [u8; 0x07f0],
-    #[doc = "0x800..0x908 - CSIC_TOP"]
-    pub csic_top: CSIC_TOP,
+    csic_top: CSIC_TOP,
     _reserved2: [u8; 0x06f8],
-    #[doc = "0x1000..0x151c - CSIC_PARSER0"]
-    pub csic_parser0: CSIC_PARSER0,
+    csic_parser0: CSIC_PARSER0,
     _reserved3: [u8; 0x7ae4],
-    #[doc = "0x9000 - CSIC_DMA"]
-    pub csic_dma: crate::ArrayProxy<CSIC_DMA, 2, 0x0200>,
+    csic_dma: (),
+}
+impl RegisterBlock {
+    #[doc = "0x00..0x10 - CSIC_CCU"]
+    #[inline(always)]
+    pub const fn csic_ccu(&self) -> &CSIC_CCU {
+        &self.csic_ccu
+    }
+    #[doc = "0x800..0x908 - CSIC_TOP"]
+    #[inline(always)]
+    pub const fn csic_top(&self) -> &CSIC_TOP {
+        &self.csic_top
+    }
+    #[doc = "0x1000..0x151c - CSIC_PARSER0"]
+    #[inline(always)]
+    pub const fn csic_parser0(&self) -> &CSIC_PARSER0 {
+        &self.csic_parser0
+    }
+    #[doc = "0x9000..0x93f0 - CSIC_DMA"]
+    #[inline(always)]
+    pub const fn csic_dma(&self, n: usize) -> &CSIC_DMA {
+        #[allow(clippy::no_effect)]
+        [(); 2][n];
+        unsafe {
+            &*(self as *const Self)
+                .cast::<u8>()
+                .add(36864)
+                .add(512 * n)
+                .cast()
+        }
+    }
 }
 #[doc = "CSIC_CCU"]
 pub use self::csic_ccu::CSIC_CCU;

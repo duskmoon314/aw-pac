@@ -1,39 +1,7 @@
 #[doc = "Register `cir_tcr` reader"]
-pub struct R(crate::R<CIR_TCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CIR_TCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CIR_TCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CIR_TCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CIR_TCR_SPEC>;
 #[doc = "Register `cir_tcr` writer"]
-pub struct W(crate::W<CIR_TCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CIR_TCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CIR_TCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CIR_TCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CIR_TCR_SPEC>;
 #[doc = "Field `tts` reader - Type of the transmission signal"]
 pub type TTS_R = crate::BitReader<TTS_A>;
 #[doc = "Type of the transmission signal\n\nValue on reset: 0"]
@@ -53,39 +21,42 @@ impl From<TTS_A> for bool {
 impl TTS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TTS_A {
+    pub const fn variant(&self) -> TTS_A {
         match self.bits {
             false => TTS_A::NON_CYCLICAL,
             true => TTS_A::CYCLICAL,
         }
     }
-    #[doc = "Checks if the value of the field is `NON_CYCLICAL`"]
+    #[doc = "The transmitting wave is a single non-cyclical pulse."]
     #[inline(always)]
     pub fn is_non_cyclical(&self) -> bool {
         *self == TTS_A::NON_CYCLICAL
     }
-    #[doc = "Checks if the value of the field is `CYCLICAL`"]
+    #[doc = "The transmitting wave is a cyclical short-pulse."]
     #[inline(always)]
     pub fn is_cyclical(&self) -> bool {
         *self == TTS_A::CYCLICAL
     }
 }
 #[doc = "Field `tts` writer - Type of the transmission signal"]
-pub type TTS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, TTS_A, O>;
-impl<'a, const O: u8> TTS_W<'a, O> {
+pub type TTS_W<'a, REG> = crate::BitWriter<'a, REG, TTS_A>;
+impl<'a, REG> TTS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The transmitting wave is a single non-cyclical pulse."]
     #[inline(always)]
-    pub fn non_cyclical(self) -> &'a mut W {
+    pub fn non_cyclical(self) -> &'a mut crate::W<REG> {
         self.variant(TTS_A::NON_CYCLICAL)
     }
     #[doc = "The transmitting wave is a cyclical short-pulse."]
     #[inline(always)]
-    pub fn cyclical(self) -> &'a mut W {
+    pub fn cyclical(self) -> &'a mut crate::W<REG> {
         self.variant(TTS_A::CYCLICAL)
     }
 }
 #[doc = "Field `rcs` reader - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
-pub type RCS_R = crate::FieldReader<u8, RCS_A>;
+pub type RCS_R = crate::FieldReader<RCS_A>;
 #[doc = "Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -113,10 +84,13 @@ impl From<RCS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for RCS_A {
+    type Ux = u8;
+}
 impl RCS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RCS_A {
+    pub const fn variant(&self) -> RCS_A {
         match self.bits {
             0 => RCS_A::IR_CLK,
             1 => RCS_A::IR_CLK_2,
@@ -129,88 +103,92 @@ impl RCS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `IR_CLK`"]
+    #[doc = "CIR Transmit reference clock is ir_clk"]
     #[inline(always)]
     pub fn is_ir_clk(&self) -> bool {
         *self == RCS_A::IR_CLK
     }
-    #[doc = "Checks if the value of the field is `IR_CLK_2`"]
+    #[doc = "CIR Transmit reference clock is ir_clk/2"]
     #[inline(always)]
     pub fn is_ir_clk_2(&self) -> bool {
         *self == RCS_A::IR_CLK_2
     }
-    #[doc = "Checks if the value of the field is `IR_CLK_4`"]
+    #[doc = "CIR Transmit reference clock is ir_clk/4"]
     #[inline(always)]
     pub fn is_ir_clk_4(&self) -> bool {
         *self == RCS_A::IR_CLK_4
     }
-    #[doc = "Checks if the value of the field is `IR_CLK_8`"]
+    #[doc = "CIR Transmit reference clock is ir_clk/8"]
     #[inline(always)]
     pub fn is_ir_clk_8(&self) -> bool {
         *self == RCS_A::IR_CLK_8
     }
-    #[doc = "Checks if the value of the field is `IR_CLK_64`"]
+    #[doc = "CIR Transmit reference clock is ir_clk/64"]
     #[inline(always)]
     pub fn is_ir_clk_64(&self) -> bool {
         *self == RCS_A::IR_CLK_64
     }
-    #[doc = "Checks if the value of the field is `IR_CLK_128`"]
+    #[doc = "CIR Transmit reference clock is ir_clk/128"]
     #[inline(always)]
     pub fn is_ir_clk_128(&self) -> bool {
         *self == RCS_A::IR_CLK_128
     }
-    #[doc = "Checks if the value of the field is `IR_CLK_256`"]
+    #[doc = "CIR Transmit reference clock is ir_clk/256"]
     #[inline(always)]
     pub fn is_ir_clk_256(&self) -> bool {
         *self == RCS_A::IR_CLK_256
     }
-    #[doc = "Checks if the value of the field is `IR_CLK_512`"]
+    #[doc = "CIR Transmit reference clock is ir_clk/512"]
     #[inline(always)]
     pub fn is_ir_clk_512(&self) -> bool {
         *self == RCS_A::IR_CLK_512
     }
 }
 #[doc = "Field `rcs` writer - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
-pub type RCS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CIR_TCR_SPEC, u8, RCS_A, 3, O>;
-impl<'a, const O: u8> RCS_W<'a, O> {
+pub type RCS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, RCS_A>;
+impl<'a, REG> RCS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "CIR Transmit reference clock is ir_clk"]
     #[inline(always)]
-    pub fn ir_clk(self) -> &'a mut W {
+    pub fn ir_clk(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK)
     }
     #[doc = "CIR Transmit reference clock is ir_clk/2"]
     #[inline(always)]
-    pub fn ir_clk_2(self) -> &'a mut W {
+    pub fn ir_clk_2(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK_2)
     }
     #[doc = "CIR Transmit reference clock is ir_clk/4"]
     #[inline(always)]
-    pub fn ir_clk_4(self) -> &'a mut W {
+    pub fn ir_clk_4(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK_4)
     }
     #[doc = "CIR Transmit reference clock is ir_clk/8"]
     #[inline(always)]
-    pub fn ir_clk_8(self) -> &'a mut W {
+    pub fn ir_clk_8(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK_8)
     }
     #[doc = "CIR Transmit reference clock is ir_clk/64"]
     #[inline(always)]
-    pub fn ir_clk_64(self) -> &'a mut W {
+    pub fn ir_clk_64(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK_64)
     }
     #[doc = "CIR Transmit reference clock is ir_clk/128"]
     #[inline(always)]
-    pub fn ir_clk_128(self) -> &'a mut W {
+    pub fn ir_clk_128(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK_128)
     }
     #[doc = "CIR Transmit reference clock is ir_clk/256"]
     #[inline(always)]
-    pub fn ir_clk_256(self) -> &'a mut W {
+    pub fn ir_clk_256(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK_256)
     }
     #[doc = "CIR Transmit reference clock is ir_clk/512"]
     #[inline(always)]
-    pub fn ir_clk_512(self) -> &'a mut W {
+    pub fn ir_clk_512(self) -> &'a mut crate::W<REG> {
         self.variant(RCS_A::IR_CLK_512)
     }
 }
@@ -233,34 +211,37 @@ impl From<CSS_A> for bool {
 impl CSS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CSS_A {
+    pub const fn variant(&self) -> CSS_A {
         match self.bits {
             false => CSS_A::STOP,
             true => CSS_A::START,
         }
     }
-    #[doc = "Checks if the value of the field is `STOP`"]
+    #[doc = "Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
         *self == CSS_A::STOP
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "Start. Start to transmit when it is set to '1'."]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == CSS_A::START
     }
 }
 #[doc = "Field `css` writer - Cyclical Pulse Start/Stop Control"]
-pub type CSS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CIR_TCR_SPEC, CSS_A, O>;
-impl<'a, const O: u8> CSS_W<'a, O> {
+pub type CSS_W<'a, REG> = crate::BitWriter<'a, REG, CSS_A>;
+impl<'a, REG> CSS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Stop when cleared to '0'. From start to stop, all data in FIFO must be transmitted."]
     #[inline(always)]
-    pub fn stop(self) -> &'a mut W {
+    pub fn stop(self) -> &'a mut crate::W<REG> {
         self.variant(CSS_A::STOP)
     }
     #[doc = "Start. Start to transmit when it is set to '1'."]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
+    pub fn start(self) -> &'a mut crate::W<REG> {
         self.variant(CSS_A::START)
     }
 }
@@ -285,40 +266,41 @@ impl W {
     #[doc = "Bit 0 - Type of the transmission signal"]
     #[inline(always)]
     #[must_use]
-    pub fn tts(&mut self) -> TTS_W<0> {
-        TTS_W::new(self)
+    pub fn tts(&mut self) -> TTS_W<CIR_TCR_SPEC> {
+        TTS_W::new(self, 0)
     }
     #[doc = "Bits 1:3 - Reference Clock Select for CIR Transmit\n\nThe data in TX_FIFO is used to describe the pulse in Run-Length Code. The basic unit of pulse width is Reference Clock."]
     #[inline(always)]
     #[must_use]
-    pub fn rcs(&mut self) -> RCS_W<1> {
-        RCS_W::new(self)
+    pub fn rcs(&mut self) -> RCS_W<CIR_TCR_SPEC> {
+        RCS_W::new(self, 1)
     }
     #[doc = "Bit 7 - Cyclical Pulse Start/Stop Control"]
     #[inline(always)]
     #[must_use]
-    pub fn css(&mut self) -> CSS_W<7> {
-        CSS_W::new(self)
+    pub fn css(&mut self) -> CSS_W<CIR_TCR_SPEC> {
+        CSS_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CIR Transmit Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cir_tcr](index.html) module"]
+#[doc = "CIR Transmit Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cir_tcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cir_tcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CIR_TCR_SPEC;
 impl crate::RegisterSpec for CIR_TCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cir_tcr::R](R) reader structure"]
-impl crate::Readable for CIR_TCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cir_tcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`cir_tcr::R`](R) reader structure"]
+impl crate::Readable for CIR_TCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cir_tcr::W`](W) writer structure"]
 impl crate::Writable for CIR_TCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `rxdma_ctrl` reader"]
-pub struct R(crate::R<RXDMA_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXDMA_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXDMA_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXDMA_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RXDMA_CTRL_SPEC>;
 #[doc = "Register `rxdma_ctrl` writer"]
-pub struct W(crate::W<RXDMA_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RXDMA_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RXDMA_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RXDMA_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RXDMA_CTRL_SPEC>;
 #[doc = "Field `enable` reader - "]
 pub type ENABLE_R = crate::BitReader<ENABLE_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<ENABLE_A> for bool {
 impl ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ENABLE_A {
+    pub const fn variant(&self) -> ENABLE_A {
         match self.bits {
             false => ENABLE_A::DISABLE,
             true => ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `enable` writer - "]
-pub type ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, ENABLE_A, O>;
-impl<'a, const O: u8> ENABLE_W<'a, O> {
+pub type ENABLE_W<'a, REG> = crate::BitWriter<'a, REG, ENABLE_A>;
+impl<'a, REG> ENABLE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(ENABLE_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(ENABLE_A::ENABLE)
     }
 }
@@ -103,39 +74,42 @@ impl From<MODE_A> for bool {
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub const fn variant(&self) -> MODE_A {
         match self.bits {
             false => MODE_A::CONTINOUS,
             true => MODE_A::LIMITED,
         }
     }
-    #[doc = "Checks if the value of the field is `CONTINOUS`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_continous(&self) -> bool {
         *self == MODE_A::CONTINOUS
     }
-    #[doc = "Checks if the value of the field is `LIMITED`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_limited(&self) -> bool {
         *self == MODE_A::LIMITED
     }
 }
 #[doc = "Field `mode` writer - "]
-pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, MODE_A, O>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG> = crate::BitWriter<'a, REG, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn continous(self) -> &'a mut W {
+    pub fn continous(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::CONTINOUS)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn limited(self) -> &'a mut W {
+    pub fn limited(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::LIMITED)
     }
 }
 #[doc = "Field `blk_size` reader - "]
-pub type BLK_SIZE_R = crate::FieldReader<u8, BLK_SIZE_A>;
+pub type BLK_SIZE_R = crate::FieldReader<BLK_SIZE_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -155,10 +129,13 @@ impl From<BLK_SIZE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for BLK_SIZE_A {
+    type Ux = u8;
+}
 impl BLK_SIZE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BLK_SIZE_A {
+    pub const fn variant(&self) -> BLK_SIZE_A {
         match self.bits {
             0 => BLK_SIZE_A::B8,
             1 => BLK_SIZE_A::B16,
@@ -167,54 +144,57 @@ impl BLK_SIZE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `B8`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_b8(&self) -> bool {
         *self == BLK_SIZE_A::B8
     }
-    #[doc = "Checks if the value of the field is `B16`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_b16(&self) -> bool {
         *self == BLK_SIZE_A::B16
     }
-    #[doc = "Checks if the value of the field is `B32`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_b32(&self) -> bool {
         *self == BLK_SIZE_A::B32
     }
-    #[doc = "Checks if the value of the field is `B64`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_b64(&self) -> bool {
         *self == BLK_SIZE_A::B64
     }
 }
 #[doc = "Field `blk_size` writer - "]
-pub type BLK_SIZE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, RXDMA_CTRL_SPEC, u8, BLK_SIZE_A, 2, O>;
-impl<'a, const O: u8> BLK_SIZE_W<'a, O> {
+pub type BLK_SIZE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, BLK_SIZE_A>;
+impl<'a, REG> BLK_SIZE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn b8(self) -> &'a mut W {
+    pub fn b8(self) -> &'a mut crate::W<REG> {
         self.variant(BLK_SIZE_A::B8)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn b16(self) -> &'a mut W {
+    pub fn b16(self) -> &'a mut crate::W<REG> {
         self.variant(BLK_SIZE_A::B16)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn b32(self) -> &'a mut W {
+    pub fn b32(self) -> &'a mut crate::W<REG> {
         self.variant(BLK_SIZE_A::B32)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn b64(self) -> &'a mut W {
+    pub fn b64(self) -> &'a mut crate::W<REG> {
         self.variant(BLK_SIZE_A::B64)
     }
 }
 #[doc = "Field `ahb_burst_mode` reader - Set for AHB port burst supported"]
-pub type AHB_BURST_MODE_R = crate::FieldReader<u8, AHB_BURST_MODE_A>;
+pub type AHB_BURST_MODE_R = crate::FieldReader<AHB_BURST_MODE_A>;
 #[doc = "Set for AHB port burst supported\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -234,10 +214,13 @@ impl From<AHB_BURST_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for AHB_BURST_MODE_A {
+    type Ux = u8;
+}
 impl AHB_BURST_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AHB_BURST_MODE_A {
+    pub const fn variant(&self) -> AHB_BURST_MODE_A {
         match self.bits {
             0 => AHB_BURST_MODE_A::SINGLE,
             1 => AHB_BURST_MODE_A::INCR4,
@@ -246,61 +229,63 @@ impl AHB_BURST_MODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SINGLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
         *self == AHB_BURST_MODE_A::SINGLE
     }
-    #[doc = "Checks if the value of the field is `INCR4`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_incr4(&self) -> bool {
         *self == AHB_BURST_MODE_A::INCR4
     }
-    #[doc = "Checks if the value of the field is `INCR8`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_incr8(&self) -> bool {
         *self == AHB_BURST_MODE_A::INCR8
     }
-    #[doc = "Checks if the value of the field is `INCR16`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_incr16(&self) -> bool {
         *self == AHB_BURST_MODE_A::INCR16
     }
 }
 #[doc = "Field `ahb_burst_mode` writer - Set for AHB port burst supported"]
-pub type AHB_BURST_MODE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, RXDMA_CTRL_SPEC, u8, AHB_BURST_MODE_A, 2, O>;
-impl<'a, const O: u8> AHB_BURST_MODE_W<'a, O> {
+pub type AHB_BURST_MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, AHB_BURST_MODE_A>;
+impl<'a, REG> AHB_BURST_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn single(self) -> &'a mut W {
+    pub fn single(self) -> &'a mut crate::W<REG> {
         self.variant(AHB_BURST_MODE_A::SINGLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn incr4(self) -> &'a mut W {
+    pub fn incr4(self) -> &'a mut crate::W<REG> {
         self.variant(AHB_BURST_MODE_A::INCR4)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn incr8(self) -> &'a mut W {
+    pub fn incr8(self) -> &'a mut crate::W<REG> {
         self.variant(AHB_BURST_MODE_A::INCR8)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn incr16(self) -> &'a mut W {
+    pub fn incr16(self) -> &'a mut crate::W<REG> {
         self.variant(AHB_BURST_MODE_A::INCR16)
     }
 }
 #[doc = "Field `timeout_enable` reader - RXDMA Timeout Enable"]
-pub type TIMEOUT_ENABLE_R = crate::BitReader<bool>;
+pub type TIMEOUT_ENABLE_R = crate::BitReader;
 #[doc = "Field `timeout_enable` writer - RXDMA Timeout Enable"]
-pub type TIMEOUT_ENABLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_CTRL_SPEC, bool, O>;
+pub type TIMEOUT_ENABLE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `timeout_threshold` reader - RXDMA Timeout Threshold\n\nUnit is 1 UART bit time"]
-pub type TIMEOUT_THRESHOLD_R = crate::FieldReader<u16, u16>;
+pub type TIMEOUT_THRESHOLD_R = crate::FieldReader<u16>;
 #[doc = "Field `timeout_threshold` writer - RXDMA Timeout Threshold\n\nUnit is 1 UART bit time"]
-pub type TIMEOUT_THRESHOLD_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, RXDMA_CTRL_SPEC, u16, u16, 16, O>;
+pub type TIMEOUT_THRESHOLD_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -337,58 +322,59 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn enable(&mut self) -> ENABLE_W<0> {
-        ENABLE_W::new(self)
+    pub fn enable(&mut self) -> ENABLE_W<RXDMA_CTRL_SPEC> {
+        ENABLE_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<1> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<RXDMA_CTRL_SPEC> {
+        MODE_W::new(self, 1)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
     #[must_use]
-    pub fn blk_size(&mut self) -> BLK_SIZE_W<2> {
-        BLK_SIZE_W::new(self)
+    pub fn blk_size(&mut self) -> BLK_SIZE_W<RXDMA_CTRL_SPEC> {
+        BLK_SIZE_W::new(self, 2)
     }
     #[doc = "Bits 4:5 - Set for AHB port burst supported"]
     #[inline(always)]
     #[must_use]
-    pub fn ahb_burst_mode(&mut self) -> AHB_BURST_MODE_W<4> {
-        AHB_BURST_MODE_W::new(self)
+    pub fn ahb_burst_mode(&mut self) -> AHB_BURST_MODE_W<RXDMA_CTRL_SPEC> {
+        AHB_BURST_MODE_W::new(self, 4)
     }
     #[doc = "Bit 6 - RXDMA Timeout Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W<6> {
-        TIMEOUT_ENABLE_W::new(self)
+    pub fn timeout_enable(&mut self) -> TIMEOUT_ENABLE_W<RXDMA_CTRL_SPEC> {
+        TIMEOUT_ENABLE_W::new(self, 6)
     }
     #[doc = "Bits 8:23 - RXDMA Timeout Threshold\n\nUnit is 1 UART bit time"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout_threshold(&mut self) -> TIMEOUT_THRESHOLD_W<8> {
-        TIMEOUT_THRESHOLD_W::new(self)
+    pub fn timeout_threshold(&mut self) -> TIMEOUT_THRESHOLD_W<RXDMA_CTRL_SPEC> {
+        TIMEOUT_THRESHOLD_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UART RXDMA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdma_ctrl](index.html) module"]
+#[doc = "UART RXDMA Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdma_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rxdma_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDMA_CTRL_SPEC;
 impl crate::RegisterSpec for RXDMA_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxdma_ctrl::R](R) reader structure"]
-impl crate::Readable for RXDMA_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rxdma_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`rxdma_ctrl::R`](R) reader structure"]
+impl crate::Readable for RXDMA_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rxdma_ctrl::W`](W) writer structure"]
 impl crate::Writable for RXDMA_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,46 +1,13 @@
 #[doc = "Register `pll_audio1_pat0_ctrl` reader"]
-pub struct R(crate::R<PLL_AUDIO1_PAT0_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PLL_AUDIO1_PAT0_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PLL_AUDIO1_PAT0_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PLL_AUDIO1_PAT0_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PLL_AUDIO1_PAT0_CTRL_SPEC>;
 #[doc = "Register `pll_audio1_pat0_ctrl` writer"]
-pub struct W(crate::W<PLL_AUDIO1_PAT0_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PLL_AUDIO1_PAT0_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PLL_AUDIO1_PAT0_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PLL_AUDIO1_PAT0_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PLL_AUDIO1_PAT0_CTRL_SPEC>;
 #[doc = "Field `wave_bot` reader - Wave Bottom"]
-pub type WAVE_BOT_R = crate::FieldReader<u32, u32>;
+pub type WAVE_BOT_R = crate::FieldReader<u32>;
 #[doc = "Field `wave_bot` writer - Wave Bottom"]
-pub type WAVE_BOT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PLL_AUDIO1_PAT0_CTRL_SPEC, u32, u32, 17, O>;
+pub type WAVE_BOT_W<'a, REG> = crate::FieldWriter<'a, REG, 17, u32>;
 #[doc = "Field `freq` reader - Frequency"]
-pub type FREQ_R = crate::FieldReader<u8, FREQ_A>;
+pub type FREQ_R = crate::FieldReader<FREQ_A>;
 #[doc = "Frequency\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -60,10 +27,13 @@ impl From<FREQ_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for FREQ_A {
+    type Ux = u8;
+}
 impl FREQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FREQ_A {
+    pub const fn variant(&self) -> FREQ_A {
         match self.bits {
             0 => FREQ_A::F_31_5_K,
             1 => FREQ_A::F_32_K,
@@ -72,49 +42,52 @@ impl FREQ_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `F_31_5_K`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_f_31_5_k(&self) -> bool {
         *self == FREQ_A::F_31_5_K
     }
-    #[doc = "Checks if the value of the field is `F_32_K`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_f_32_k(&self) -> bool {
         *self == FREQ_A::F_32_K
     }
-    #[doc = "Checks if the value of the field is `F_32_5_K`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_f_32_5_k(&self) -> bool {
         *self == FREQ_A::F_32_5_K
     }
-    #[doc = "Checks if the value of the field is `F_33_K`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_f_33_k(&self) -> bool {
         *self == FREQ_A::F_33_K
     }
 }
 #[doc = "Field `freq` writer - Frequency"]
-pub type FREQ_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, PLL_AUDIO1_PAT0_CTRL_SPEC, u8, FREQ_A, 2, O>;
-impl<'a, const O: u8> FREQ_W<'a, O> {
+pub type FREQ_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, FREQ_A>;
+impl<'a, REG> FREQ_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn f_31_5_k(self) -> &'a mut W {
+    pub fn f_31_5_k(self) -> &'a mut crate::W<REG> {
         self.variant(FREQ_A::F_31_5_K)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn f_32_k(self) -> &'a mut W {
+    pub fn f_32_k(self) -> &'a mut crate::W<REG> {
         self.variant(FREQ_A::F_32_K)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn f_32_5_k(self) -> &'a mut W {
+    pub fn f_32_5_k(self) -> &'a mut crate::W<REG> {
         self.variant(FREQ_A::F_32_5_K)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn f_33_k(self) -> &'a mut W {
+    pub fn f_33_k(self) -> &'a mut crate::W<REG> {
         self.variant(FREQ_A::F_33_K)
     }
 }
@@ -137,45 +110,46 @@ impl From<SDM_CLK_SEL_A> for bool {
 impl SDM_CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDM_CLK_SEL_A {
+    pub const fn variant(&self) -> SDM_CLK_SEL_A {
         match self.bits {
             false => SDM_CLK_SEL_A::F_24_M,
             true => SDM_CLK_SEL_A::F_12_M,
         }
     }
-    #[doc = "Checks if the value of the field is `F_24_M`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_f_24_m(&self) -> bool {
         *self == SDM_CLK_SEL_A::F_24_M
     }
-    #[doc = "Checks if the value of the field is `F_12_M`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_f_12_m(&self) -> bool {
         *self == SDM_CLK_SEL_A::F_12_M
     }
 }
 #[doc = "Field `sdm_clk_sel` writer - SDM Clock Select"]
-pub type SDM_CLK_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PLL_AUDIO1_PAT0_CTRL_SPEC, SDM_CLK_SEL_A, O>;
-impl<'a, const O: u8> SDM_CLK_SEL_W<'a, O> {
+pub type SDM_CLK_SEL_W<'a, REG> = crate::BitWriter<'a, REG, SDM_CLK_SEL_A>;
+impl<'a, REG> SDM_CLK_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn f_24_m(self) -> &'a mut W {
+    pub fn f_24_m(self) -> &'a mut crate::W<REG> {
         self.variant(SDM_CLK_SEL_A::F_24_M)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn f_12_m(self) -> &'a mut W {
+    pub fn f_12_m(self) -> &'a mut crate::W<REG> {
         self.variant(SDM_CLK_SEL_A::F_12_M)
     }
 }
 #[doc = "Field `wave_step` reader - Wave Step"]
-pub type WAVE_STEP_R = crate::FieldReader<u16, u16>;
+pub type WAVE_STEP_R = crate::FieldReader<u16>;
 #[doc = "Field `wave_step` writer - Wave Step"]
-pub type WAVE_STEP_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PLL_AUDIO1_PAT0_CTRL_SPEC, u16, u16, 9, O>;
+pub type WAVE_STEP_W<'a, REG> = crate::FieldWriter<'a, REG, 9, u16>;
 #[doc = "Field `spr_freq_mode` reader - Spread Frequency Mode"]
-pub type SPR_FREQ_MODE_R = crate::FieldReader<u8, SPR_FREQ_MODE_A>;
+pub type SPR_FREQ_MODE_R = crate::FieldReader<SPR_FREQ_MODE_A>;
 #[doc = "Spread Frequency Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -195,10 +169,13 @@ impl From<SPR_FREQ_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SPR_FREQ_MODE_A {
+    type Ux = u8;
+}
 impl SPR_FREQ_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SPR_FREQ_MODE_A {
+    pub const fn variant(&self) -> SPR_FREQ_MODE_A {
         match self.bits {
             0 => SPR_FREQ_MODE_A::DC0,
             1 => SPR_FREQ_MODE_A::DC1,
@@ -207,57 +184,59 @@ impl SPR_FREQ_MODE_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `DC0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_dc0(&self) -> bool {
         *self == SPR_FREQ_MODE_A::DC0
     }
-    #[doc = "Checks if the value of the field is `DC1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_dc1(&self) -> bool {
         *self == SPR_FREQ_MODE_A::DC1
     }
-    #[doc = "Checks if the value of the field is `TRIANGULAR_1`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_triangular_1(&self) -> bool {
         *self == SPR_FREQ_MODE_A::TRIANGULAR_1
     }
-    #[doc = "Checks if the value of the field is `TRIANGULAR_N`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_triangular_n(&self) -> bool {
         *self == SPR_FREQ_MODE_A::TRIANGULAR_N
     }
 }
 #[doc = "Field `spr_freq_mode` writer - Spread Frequency Mode"]
-pub type SPR_FREQ_MODE_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, PLL_AUDIO1_PAT0_CTRL_SPEC, u8, SPR_FREQ_MODE_A, 2, O>;
-impl<'a, const O: u8> SPR_FREQ_MODE_W<'a, O> {
+pub type SPR_FREQ_MODE_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SPR_FREQ_MODE_A>;
+impl<'a, REG> SPR_FREQ_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn dc0(self) -> &'a mut W {
+    pub fn dc0(self) -> &'a mut crate::W<REG> {
         self.variant(SPR_FREQ_MODE_A::DC0)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn dc1(self) -> &'a mut W {
+    pub fn dc1(self) -> &'a mut crate::W<REG> {
         self.variant(SPR_FREQ_MODE_A::DC1)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn triangular_1(self) -> &'a mut W {
+    pub fn triangular_1(self) -> &'a mut crate::W<REG> {
         self.variant(SPR_FREQ_MODE_A::TRIANGULAR_1)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn triangular_n(self) -> &'a mut W {
+    pub fn triangular_n(self) -> &'a mut crate::W<REG> {
         self.variant(SPR_FREQ_MODE_A::TRIANGULAR_N)
     }
 }
 #[doc = "Field `sig_delt_pat_en` reader - Sigma-Delta Pattern Enable"]
-pub type SIG_DELT_PAT_EN_R = crate::BitReader<bool>;
+pub type SIG_DELT_PAT_EN_R = crate::BitReader;
 #[doc = "Field `sig_delt_pat_en` writer - Sigma-Delta Pattern Enable"]
-pub type SIG_DELT_PAT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PLL_AUDIO1_PAT0_CTRL_SPEC, bool, O>;
+pub type SIG_DELT_PAT_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:16 - Wave Bottom"]
     #[inline(always)]
@@ -294,58 +273,59 @@ impl W {
     #[doc = "Bits 0:16 - Wave Bottom"]
     #[inline(always)]
     #[must_use]
-    pub fn wave_bot(&mut self) -> WAVE_BOT_W<0> {
-        WAVE_BOT_W::new(self)
+    pub fn wave_bot(&mut self) -> WAVE_BOT_W<PLL_AUDIO1_PAT0_CTRL_SPEC> {
+        WAVE_BOT_W::new(self, 0)
     }
     #[doc = "Bits 17:18 - Frequency"]
     #[inline(always)]
     #[must_use]
-    pub fn freq(&mut self) -> FREQ_W<17> {
-        FREQ_W::new(self)
+    pub fn freq(&mut self) -> FREQ_W<PLL_AUDIO1_PAT0_CTRL_SPEC> {
+        FREQ_W::new(self, 17)
     }
     #[doc = "Bit 19 - SDM Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn sdm_clk_sel(&mut self) -> SDM_CLK_SEL_W<19> {
-        SDM_CLK_SEL_W::new(self)
+    pub fn sdm_clk_sel(&mut self) -> SDM_CLK_SEL_W<PLL_AUDIO1_PAT0_CTRL_SPEC> {
+        SDM_CLK_SEL_W::new(self, 19)
     }
     #[doc = "Bits 20:28 - Wave Step"]
     #[inline(always)]
     #[must_use]
-    pub fn wave_step(&mut self) -> WAVE_STEP_W<20> {
-        WAVE_STEP_W::new(self)
+    pub fn wave_step(&mut self) -> WAVE_STEP_W<PLL_AUDIO1_PAT0_CTRL_SPEC> {
+        WAVE_STEP_W::new(self, 20)
     }
     #[doc = "Bits 29:30 - Spread Frequency Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn spr_freq_mode(&mut self) -> SPR_FREQ_MODE_W<29> {
-        SPR_FREQ_MODE_W::new(self)
+    pub fn spr_freq_mode(&mut self) -> SPR_FREQ_MODE_W<PLL_AUDIO1_PAT0_CTRL_SPEC> {
+        SPR_FREQ_MODE_W::new(self, 29)
     }
     #[doc = "Bit 31 - Sigma-Delta Pattern Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn sig_delt_pat_en(&mut self) -> SIG_DELT_PAT_EN_W<31> {
-        SIG_DELT_PAT_EN_W::new(self)
+    pub fn sig_delt_pat_en(&mut self) -> SIG_DELT_PAT_EN_W<PLL_AUDIO1_PAT0_CTRL_SPEC> {
+        SIG_DELT_PAT_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PLL_AUDIO1 Pattern0 Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_audio1_pat0_ctrl](index.html) module"]
+#[doc = "PLL_AUDIO1 Pattern0 Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_audio1_pat0_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pll_audio1_pat0_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PLL_AUDIO1_PAT0_CTRL_SPEC;
 impl crate::RegisterSpec for PLL_AUDIO1_PAT0_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pll_audio1_pat0_ctrl::R](R) reader structure"]
-impl crate::Readable for PLL_AUDIO1_PAT0_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pll_audio1_pat0_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`pll_audio1_pat0_ctrl::R`](R) reader structure"]
+impl crate::Readable for PLL_AUDIO1_PAT0_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pll_audio1_pat0_ctrl::W`](W) writer structure"]
 impl crate::Writable for PLL_AUDIO1_PAT0_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

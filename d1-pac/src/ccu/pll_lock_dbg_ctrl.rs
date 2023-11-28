@@ -1,41 +1,9 @@
 #[doc = "Register `pll_lock_dbg_ctrl` reader"]
-pub struct R(crate::R<PLL_LOCK_DBG_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PLL_LOCK_DBG_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PLL_LOCK_DBG_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PLL_LOCK_DBG_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PLL_LOCK_DBG_CTRL_SPEC>;
 #[doc = "Register `pll_lock_dbg_ctrl` writer"]
-pub struct W(crate::W<PLL_LOCK_DBG_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PLL_LOCK_DBG_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PLL_LOCK_DBG_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PLL_LOCK_DBG_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PLL_LOCK_DBG_CTRL_SPEC>;
 #[doc = "Field `clk_src_sel` reader - Clock Source Select"]
-pub type CLK_SRC_SEL_R = crate::FieldReader<u8, CLK_SRC_SEL_A>;
+pub type CLK_SRC_SEL_R = crate::FieldReader<CLK_SRC_SEL_A>;
 #[doc = "Clock Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -63,10 +31,13 @@ impl From<CLK_SRC_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CLK_SRC_SEL_A {
+    type Ux = u8;
+}
 impl CLK_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_SRC_SEL_A {
+    pub const fn variant(&self) -> CLK_SRC_SEL_A {
         match self.bits {
             0 => CLK_SRC_SEL_A::PLL_CPUX,
             1 => CLK_SRC_SEL_A::PLL_DDR,
@@ -79,89 +50,92 @@ impl CLK_SRC_SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PLL_CPUX`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_pll_cpux(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_CPUX
     }
-    #[doc = "Checks if the value of the field is `PLL_DDR`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_pll_ddr(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_DDR
     }
-    #[doc = "Checks if the value of the field is `PLL_PERI_2X`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_pll_peri_2x(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_PERI_2X
     }
-    #[doc = "Checks if the value of the field is `PLL_VIDEO0_4X`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_pll_video0_4x(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_VIDEO0_4X
     }
-    #[doc = "Checks if the value of the field is `PLL_VIDEO1_4X`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_pll_video1_4x(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_VIDEO1_4X
     }
-    #[doc = "Checks if the value of the field is `PLL_VE`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_pll_ve(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_VE
     }
-    #[doc = "Checks if the value of the field is `PLL_AUDIO0`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_pll_audio0(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_AUDIO0
     }
-    #[doc = "Checks if the value of the field is `PLL_AUDIO1`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_pll_audio1(&self) -> bool {
         *self == CLK_SRC_SEL_A::PLL_AUDIO1
     }
 }
 #[doc = "Field `clk_src_sel` writer - Clock Source Select"]
-pub type CLK_SRC_SEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, u8, CLK_SRC_SEL_A, 3, O>;
-impl<'a, const O: u8> CLK_SRC_SEL_W<'a, O> {
+pub type CLK_SRC_SEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, CLK_SRC_SEL_A>;
+impl<'a, REG> CLK_SRC_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn pll_cpux(self) -> &'a mut W {
+    pub fn pll_cpux(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_CPUX)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn pll_ddr(self) -> &'a mut W {
+    pub fn pll_ddr(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_DDR)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn pll_peri_2x(self) -> &'a mut W {
+    pub fn pll_peri_2x(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_PERI_2X)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pll_video0_4x(self) -> &'a mut W {
+    pub fn pll_video0_4x(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_VIDEO0_4X)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn pll_video1_4x(self) -> &'a mut W {
+    pub fn pll_video1_4x(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_VIDEO1_4X)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn pll_ve(self) -> &'a mut W {
+    pub fn pll_ve(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_VE)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn pll_audio0(self) -> &'a mut W {
+    pub fn pll_audio0(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_AUDIO0)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn pll_audio1(self) -> &'a mut W {
+    pub fn pll_audio1(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_SRC_SEL_A::PLL_AUDIO1)
     }
 }
@@ -184,35 +158,37 @@ impl From<PLL_LOCK_FLAG_EN_A> for bool {
 impl PLL_LOCK_FLAG_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PLL_LOCK_FLAG_EN_A {
+    pub const fn variant(&self) -> PLL_LOCK_FLAG_EN_A {
         match self.bits {
             false => PLL_LOCK_FLAG_EN_A::DISABLE,
             true => PLL_LOCK_FLAG_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == PLL_LOCK_FLAG_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == PLL_LOCK_FLAG_EN_A::ENABLE
     }
 }
 #[doc = "Field `pll_lock_flag_en` writer - Debug Enable"]
-pub type PLL_LOCK_FLAG_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PLL_LOCK_DBG_CTRL_SPEC, PLL_LOCK_FLAG_EN_A, O>;
-impl<'a, const O: u8> PLL_LOCK_FLAG_EN_W<'a, O> {
+pub type PLL_LOCK_FLAG_EN_W<'a, REG> = crate::BitWriter<'a, REG, PLL_LOCK_FLAG_EN_A>;
+impl<'a, REG> PLL_LOCK_FLAG_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(PLL_LOCK_FLAG_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(PLL_LOCK_FLAG_EN_A::ENABLE)
     }
 }
@@ -232,34 +208,35 @@ impl W {
     #[doc = "Bits 20:22 - Clock Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<20> {
-        CLK_SRC_SEL_W::new(self)
+    pub fn clk_src_sel(&mut self) -> CLK_SRC_SEL_W<PLL_LOCK_DBG_CTRL_SPEC> {
+        CLK_SRC_SEL_W::new(self, 20)
     }
     #[doc = "Bit 31 - Debug Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn pll_lock_flag_en(&mut self) -> PLL_LOCK_FLAG_EN_W<31> {
-        PLL_LOCK_FLAG_EN_W::new(self)
+    pub fn pll_lock_flag_en(&mut self) -> PLL_LOCK_FLAG_EN_W<PLL_LOCK_DBG_CTRL_SPEC> {
+        PLL_LOCK_FLAG_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PLL Lock Debug Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pll_lock_dbg_ctrl](index.html) module"]
+#[doc = "PLL Lock Debug Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pll_lock_dbg_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pll_lock_dbg_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PLL_LOCK_DBG_CTRL_SPEC;
 impl crate::RegisterSpec for PLL_LOCK_DBG_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pll_lock_dbg_ctrl::R](R) reader structure"]
-impl crate::Readable for PLL_LOCK_DBG_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pll_lock_dbg_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`pll_lock_dbg_ctrl::R`](R) reader structure"]
+impl crate::Readable for PLL_LOCK_DBG_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pll_lock_dbg_ctrl::W`](W) writer structure"]
 impl crate::Writable for PLL_LOCK_DBG_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

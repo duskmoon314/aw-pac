@@ -1,18 +1,5 @@
 #[doc = "Register `lsr` reader"]
-pub struct R(crate::R<LSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LSR_SPEC>;
 #[doc = "Field `dr` reader - Data Ready"]
 pub type DR_R = crate::BitReader<DR_A>;
 #[doc = "Data Ready\n\nValue on reset: 0"]
@@ -30,13 +17,13 @@ impl From<DR_A> for bool {
 impl DR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DR_A> {
+    pub const fn variant(&self) -> Option<DR_A> {
         match self.bits {
             true => Some(DR_A::READY),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `READY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
         *self == DR_A::READY
@@ -59,13 +46,13 @@ impl From<OE_A> for bool {
 impl OE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OE_A> {
+    pub const fn variant(&self) -> Option<OE_A> {
         match self.bits {
             true => Some(OE_A::ERROR),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ERROR`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
         *self == OE_A::ERROR
@@ -88,13 +75,13 @@ impl From<PE_A> for bool {
 impl PE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PE_A> {
+    pub const fn variant(&self) -> Option<PE_A> {
         match self.bits {
             true => Some(PE_A::ERROR),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ERROR`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
         *self == PE_A::ERROR
@@ -117,20 +104,20 @@ impl From<FE_A> for bool {
 impl FE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FE_A> {
+    pub const fn variant(&self) -> Option<FE_A> {
         match self.bits {
             true => Some(FE_A::ERROR),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ERROR`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
         *self == FE_A::ERROR
     }
 }
 #[doc = "Field `bi` reader - Break Interrupt"]
-pub type BI_R = crate::BitReader<bool>;
+pub type BI_R = crate::BitReader;
 #[doc = "Field `thre` reader - TX Holding Register Empty"]
 pub type THRE_R = crate::BitReader<THRE_A>;
 #[doc = "TX Holding Register Empty\n\nValue on reset: 0"]
@@ -148,13 +135,13 @@ impl From<THRE_A> for bool {
 impl THRE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<THRE_A> {
+    pub const fn variant(&self) -> Option<THRE_A> {
         match self.bits {
             true => Some(THRE_A::EMPTY),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
         *self == THRE_A::EMPTY
@@ -177,13 +164,13 @@ impl From<TEMT_A> for bool {
 impl TEMT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TEMT_A> {
+    pub const fn variant(&self) -> Option<TEMT_A> {
         match self.bits {
             true => Some(TEMT_A::EMPTY),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
         *self == TEMT_A::EMPTY
@@ -206,13 +193,13 @@ impl From<FIFOERR_A> for bool {
 impl FIFOERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FIFOERR_A> {
+    pub const fn variant(&self) -> Option<FIFOERR_A> {
         match self.bits {
             true => Some(FIFOERR_A::ERROR),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `ERROR`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_error(&self) -> bool {
         *self == FIFOERR_A::ERROR
@@ -260,15 +247,13 @@ impl R {
         FIFOERR_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
-#[doc = "UART Line Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [lsr](index.html) module"]
+#[doc = "UART Line Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`lsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LSR_SPEC;
 impl crate::RegisterSpec for LSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [lsr::R](R) reader structure"]
-impl crate::Readable for LSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`lsr::R`](R) reader structure"]
+impl crate::Readable for LSR_SPEC {}
 #[doc = "`reset()` method sets lsr to value 0"]
 impl crate::Resettable for LSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

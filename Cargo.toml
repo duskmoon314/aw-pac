@@ -1,2 +1,3 @@
 [workspace]
+resolver = "2"
 members = ["d1-pac", "r528-pac", "xr806-pac", "v853-pac", "xtask"]

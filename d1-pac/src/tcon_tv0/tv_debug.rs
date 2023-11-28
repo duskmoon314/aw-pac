@@ -1,41 +1,9 @@
 #[doc = "Register `tv_debug` reader"]
-pub struct R(crate::R<TV_DEBUG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TV_DEBUG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TV_DEBUG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TV_DEBUG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TV_DEBUG_SPEC>;
 #[doc = "Register `tv_debug` writer"]
-pub struct W(crate::W<TV_DEBUG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TV_DEBUG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TV_DEBUG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TV_DEBUG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TV_DEBUG_SPEC>;
 #[doc = "Field `tv_current_line` reader - TV Current Line"]
-pub type TV_CURRENT_LINE_R = crate::FieldReader<u16, u16>;
+pub type TV_CURRENT_LINE_R = crate::FieldReader<u16>;
 #[doc = "Field `line_buf_bypass` reader - Line Buf fer Bypass"]
 pub type LINE_BUF_BYPASS_R = crate::BitReader<LINE_BUF_BYPASS_A>;
 #[doc = "Line Buf fer Bypass\n\nValue on reset: 0"]
@@ -55,35 +23,37 @@ impl From<LINE_BUF_BYPASS_A> for bool {
 impl LINE_BUF_BYPASS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LINE_BUF_BYPASS_A {
+    pub const fn variant(&self) -> LINE_BUF_BYPASS_A {
         match self.bits {
             false => LINE_BUF_BYPASS_A::U_SED,
             true => LINE_BUF_BYPASS_A::BYPASS,
         }
     }
-    #[doc = "Checks if the value of the field is `U_SED`"]
+    #[doc = "Used"]
     #[inline(always)]
     pub fn is_u_sed(&self) -> bool {
         *self == LINE_BUF_BYPASS_A::U_SED
     }
-    #[doc = "Checks if the value of the field is `BYPASS`"]
+    #[doc = "Bypass"]
     #[inline(always)]
     pub fn is_bypass(&self) -> bool {
         *self == LINE_BUF_BYPASS_A::BYPASS
     }
 }
 #[doc = "Field `line_buf_bypass` writer - Line Buf fer Bypass"]
-pub type LINE_BUF_BYPASS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TV_DEBUG_SPEC, LINE_BUF_BYPASS_A, O>;
-impl<'a, const O: u8> LINE_BUF_BYPASS_W<'a, O> {
+pub type LINE_BUF_BYPASS_W<'a, REG> = crate::BitWriter<'a, REG, LINE_BUF_BYPASS_A>;
+impl<'a, REG> LINE_BUF_BYPASS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Used"]
     #[inline(always)]
-    pub fn u_sed(self) -> &'a mut W {
+    pub fn u_sed(self) -> &'a mut crate::W<REG> {
         self.variant(LINE_BUF_BYPASS_A::U_SED)
     }
     #[doc = "Bypass"]
     #[inline(always)]
-    pub fn bypass(self) -> &'a mut W {
+    pub fn bypass(self) -> &'a mut crate::W<REG> {
         self.variant(LINE_BUF_BYPASS_A::BYPASS)
     }
 }
@@ -106,27 +76,27 @@ impl From<TV_FIELD_POL_A> for bool {
 impl TV_FIELD_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TV_FIELD_POL_A {
+    pub const fn variant(&self) -> TV_FIELD_POL_A {
         match self.bits {
             false => TV_FIELD_POL_A::SECOND,
             true => TV_FIELD_POL_A::FIRST,
         }
     }
-    #[doc = "Checks if the value of the field is `SECOND`"]
+    #[doc = "Second field"]
     #[inline(always)]
     pub fn is_second(&self) -> bool {
         *self == TV_FIELD_POL_A::SECOND
     }
-    #[doc = "Checks if the value of the field is `FIRST`"]
+    #[doc = "First field"]
     #[inline(always)]
     pub fn is_first(&self) -> bool {
         *self == TV_FIELD_POL_A::FIRST
     }
 }
 #[doc = "Field `tv_fifo_u` reader - TV FIFO Underflow"]
-pub type TV_FIFO_U_R = crate::BitReader<bool>;
+pub type TV_FIFO_U_R = crate::BitReader;
 #[doc = "Field `tv_fifo_u` writer - TV FIFO Underflow"]
-pub type TV_FIFO_U_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_DEBUG_SPEC, bool, O>;
+pub type TV_FIFO_U_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:11 - TV Current Line"]
     #[inline(always)]
@@ -153,34 +123,35 @@ impl W {
     #[doc = "Bit 13 - Line Buf fer Bypass"]
     #[inline(always)]
     #[must_use]
-    pub fn line_buf_bypass(&mut self) -> LINE_BUF_BYPASS_W<13> {
-        LINE_BUF_BYPASS_W::new(self)
+    pub fn line_buf_bypass(&mut self) -> LINE_BUF_BYPASS_W<TV_DEBUG_SPEC> {
+        LINE_BUF_BYPASS_W::new(self, 13)
     }
     #[doc = "Bit 30 - TV FIFO Underflow"]
     #[inline(always)]
     #[must_use]
-    pub fn tv_fifo_u(&mut self) -> TV_FIFO_U_W<30> {
-        TV_FIFO_U_W::new(self)
+    pub fn tv_fifo_u(&mut self) -> TV_FIFO_U_W<TV_DEBUG_SPEC> {
+        TV_FIFO_U_W::new(self, 30)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TV Debug Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tv_debug](index.html) module"]
+#[doc = "TV Debug Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv_debug::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tv_debug::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TV_DEBUG_SPEC;
 impl crate::RegisterSpec for TV_DEBUG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tv_debug::R](R) reader structure"]
-impl crate::Readable for TV_DEBUG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tv_debug::W](W) writer structure"]
+#[doc = "`read()` method returns [`tv_debug::R`](R) reader structure"]
+impl crate::Readable for TV_DEBUG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tv_debug::W`](W) writer structure"]
 impl crate::Writable for TV_DEBUG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

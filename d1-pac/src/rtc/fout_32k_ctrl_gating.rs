@@ -1,39 +1,7 @@
 #[doc = "Register `fout_32k_ctrl_gating` reader"]
-pub struct R(crate::R<FOUT_32K_CTRL_GATING_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FOUT_32K_CTRL_GATING_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FOUT_32K_CTRL_GATING_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FOUT_32K_CTRL_GATING_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FOUT_32K_CTRL_GATING_SPEC>;
 #[doc = "Register `fout_32k_ctrl_gating` writer"]
-pub struct W(crate::W<FOUT_32K_CTRL_GATING_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FOUT_32K_CTRL_GATING_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FOUT_32K_CTRL_GATING_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FOUT_32K_CTRL_GATING_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FOUT_32K_CTRL_GATING_SPEC>;
 #[doc = "Field `fanout_32k_gating` reader - LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default."]
 pub type FANOUT_32K_GATING_R = crate::BitReader<FANOUT_32K_GATING_A>;
 #[doc = "LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default.\n\nValue on reset: 0"]
@@ -53,40 +21,42 @@ impl From<FANOUT_32K_GATING_A> for bool {
 impl FANOUT_32K_GATING_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FANOUT_32K_GATING_A {
+    pub const fn variant(&self) -> FANOUT_32K_GATING_A {
         match self.bits {
             false => FANOUT_32K_GATING_A::MASK,
             true => FANOUT_32K_GATING_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `MASK`"]
+    #[doc = "Mask LOSC output gating"]
     #[inline(always)]
     pub fn is_mask(&self) -> bool {
         *self == FANOUT_32K_GATING_A::MASK
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable LOSC output gating"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == FANOUT_32K_GATING_A::ENABLE
     }
 }
 #[doc = "Field `fanout_32k_gating` writer - LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default."]
-pub type FANOUT_32K_GATING_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, FOUT_32K_CTRL_GATING_SPEC, FANOUT_32K_GATING_A, O>;
-impl<'a, const O: u8> FANOUT_32K_GATING_W<'a, O> {
+pub type FANOUT_32K_GATING_W<'a, REG> = crate::BitWriter<'a, REG, FANOUT_32K_GATING_A>;
+impl<'a, REG> FANOUT_32K_GATING_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Mask LOSC output gating"]
     #[inline(always)]
-    pub fn mask(self) -> &'a mut W {
+    pub fn mask(self) -> &'a mut crate::W<REG> {
         self.variant(FANOUT_32K_GATING_A::MASK)
     }
     #[doc = "Enable LOSC output gating"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(FANOUT_32K_GATING_A::ENABLE)
     }
 }
 #[doc = "Field `losc_out_src_sel` reader - LOSC output source select"]
-pub type LOSC_OUT_SRC_SEL_R = crate::FieldReader<u8, LOSC_OUT_SRC_SEL_A>;
+pub type LOSC_OUT_SRC_SEL_R = crate::FieldReader<LOSC_OUT_SRC_SEL_A>;
 #[doc = "LOSC output source select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -104,10 +74,13 @@ impl From<LOSC_OUT_SRC_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for LOSC_OUT_SRC_SEL_A {
+    type Ux = u8;
+}
 impl LOSC_OUT_SRC_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LOSC_OUT_SRC_SEL_A> {
+    pub const fn variant(&self) -> Option<LOSC_OUT_SRC_SEL_A> {
         match self.bits {
             0 => Some(LOSC_OUT_SRC_SEL_A::RTC_32K),
             1 => Some(LOSC_OUT_SRC_SEL_A::LOSC),
@@ -115,39 +88,42 @@ impl LOSC_OUT_SRC_SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `RTC_32K`"]
+    #[doc = "RTC_32K (select by RC_CLK_SRC_SEL LOSC_SRC_SEL)"]
     #[inline(always)]
     pub fn is_rtc_32k(&self) -> bool {
         *self == LOSC_OUT_SRC_SEL_A::RTC_32K
     }
-    #[doc = "Checks if the value of the field is `LOSC`"]
+    #[doc = "LOSC"]
     #[inline(always)]
     pub fn is_losc(&self) -> bool {
         *self == LOSC_OUT_SRC_SEL_A::LOSC
     }
-    #[doc = "Checks if the value of the field is `HOSC`"]
+    #[doc = "HOSC divided 32K"]
     #[inline(always)]
     pub fn is_hosc(&self) -> bool {
         *self == LOSC_OUT_SRC_SEL_A::HOSC
     }
 }
 #[doc = "Field `losc_out_src_sel` writer - LOSC output source select"]
-pub type LOSC_OUT_SRC_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, FOUT_32K_CTRL_GATING_SPEC, u8, LOSC_OUT_SRC_SEL_A, 2, O>;
-impl<'a, const O: u8> LOSC_OUT_SRC_SEL_W<'a, O> {
+pub type LOSC_OUT_SRC_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, LOSC_OUT_SRC_SEL_A>;
+impl<'a, REG> LOSC_OUT_SRC_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "RTC_32K (select by RC_CLK_SRC_SEL LOSC_SRC_SEL)"]
     #[inline(always)]
-    pub fn rtc_32k(self) -> &'a mut W {
+    pub fn rtc_32k(self) -> &'a mut crate::W<REG> {
         self.variant(LOSC_OUT_SRC_SEL_A::RTC_32K)
     }
     #[doc = "LOSC"]
     #[inline(always)]
-    pub fn losc(self) -> &'a mut W {
+    pub fn losc(self) -> &'a mut crate::W<REG> {
         self.variant(LOSC_OUT_SRC_SEL_A::LOSC)
     }
     #[doc = "HOSC divided 32K"]
     #[inline(always)]
-    pub fn hosc(self) -> &'a mut W {
+    pub fn hosc(self) -> &'a mut crate::W<REG> {
         self.variant(LOSC_OUT_SRC_SEL_A::HOSC)
     }
 }
@@ -170,35 +146,38 @@ impl From<HOSC_TO_32K_DIVIDER_ENABLE_A> for bool {
 impl HOSC_TO_32K_DIVIDER_ENABLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HOSC_TO_32K_DIVIDER_ENABLE_A {
+    pub const fn variant(&self) -> HOSC_TO_32K_DIVIDER_ENABLE_A {
         match self.bits {
             false => HOSC_TO_32K_DIVIDER_ENABLE_A::DISABLE,
             true => HOSC_TO_32K_DIVIDER_ENABLE_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable the hosc 24M to 32K divider circuit"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == HOSC_TO_32K_DIVIDER_ENABLE_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable the hosc 24M to 32K divider circuit"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == HOSC_TO_32K_DIVIDER_ENABLE_A::ENABLE
     }
 }
 #[doc = "Field `hosc_to_32k_divider_enable` writer - HOSC to 32k divider enable"]
-pub type HOSC_TO_32K_DIVIDER_ENABLE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, FOUT_32K_CTRL_GATING_SPEC, HOSC_TO_32K_DIVIDER_ENABLE_A, O>;
-impl<'a, const O: u8> HOSC_TO_32K_DIVIDER_ENABLE_W<'a, O> {
+pub type HOSC_TO_32K_DIVIDER_ENABLE_W<'a, REG> =
+    crate::BitWriter<'a, REG, HOSC_TO_32K_DIVIDER_ENABLE_A>;
+impl<'a, REG> HOSC_TO_32K_DIVIDER_ENABLE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable the hosc 24M to 32K divider circuit"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(HOSC_TO_32K_DIVIDER_ENABLE_A::DISABLE)
     }
     #[doc = "Enable the hosc 24M to 32K divider circuit"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(HOSC_TO_32K_DIVIDER_ENABLE_A::ENABLE)
     }
 }
@@ -223,40 +202,43 @@ impl W {
     #[doc = "Bit 0 - LOSC out gating enable\n\nConfiguration of LOSC output, and there is no LOSC output by default."]
     #[inline(always)]
     #[must_use]
-    pub fn fanout_32k_gating(&mut self) -> FANOUT_32K_GATING_W<0> {
-        FANOUT_32K_GATING_W::new(self)
+    pub fn fanout_32k_gating(&mut self) -> FANOUT_32K_GATING_W<FOUT_32K_CTRL_GATING_SPEC> {
+        FANOUT_32K_GATING_W::new(self, 0)
     }
     #[doc = "Bits 1:2 - LOSC output source select"]
     #[inline(always)]
     #[must_use]
-    pub fn losc_out_src_sel(&mut self) -> LOSC_OUT_SRC_SEL_W<1> {
-        LOSC_OUT_SRC_SEL_W::new(self)
+    pub fn losc_out_src_sel(&mut self) -> LOSC_OUT_SRC_SEL_W<FOUT_32K_CTRL_GATING_SPEC> {
+        LOSC_OUT_SRC_SEL_W::new(self, 1)
     }
     #[doc = "Bit 16 - HOSC to 32k divider enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hosc_to_32k_divider_enable(&mut self) -> HOSC_TO_32K_DIVIDER_ENABLE_W<16> {
-        HOSC_TO_32K_DIVIDER_ENABLE_W::new(self)
+    pub fn hosc_to_32k_divider_enable(
+        &mut self,
+    ) -> HOSC_TO_32K_DIVIDER_ENABLE_W<FOUT_32K_CTRL_GATING_SPEC> {
+        HOSC_TO_32K_DIVIDER_ENABLE_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "32K Fanout Control Gating Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fout_32k_ctrl_gating](index.html) module"]
+#[doc = "32K Fanout Control Gating Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fout_32k_ctrl_gating::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fout_32k_ctrl_gating::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FOUT_32K_CTRL_GATING_SPEC;
 impl crate::RegisterSpec for FOUT_32K_CTRL_GATING_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fout_32k_ctrl_gating::R](R) reader structure"]
-impl crate::Readable for FOUT_32K_CTRL_GATING_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fout_32k_ctrl_gating::W](W) writer structure"]
+#[doc = "`read()` method returns [`fout_32k_ctrl_gating::R`](R) reader structure"]
+impl crate::Readable for FOUT_32K_CTRL_GATING_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fout_32k_ctrl_gating::W`](W) writer structure"]
 impl crate::Writable for FOUT_32K_CTRL_GATING_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

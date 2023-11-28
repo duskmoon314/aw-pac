@@ -1,39 +1,7 @@
 #[doc = "Register `hs_tmr%s_ctrl` reader"]
-pub struct R(crate::R<HS_TMR_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HS_TMR_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HS_TMR_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HS_TMR_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HS_TMR_CTRL_SPEC>;
 #[doc = "Register `hs_tmr%s_ctrl` writer"]
-pub struct W(crate::W<HS_TMR_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HS_TMR_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HS_TMR_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HS_TMR_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HS_TMR_CTRL_SPEC>;
 #[doc = "Field `hs_tmr_en` reader - HSTimer Enable"]
 pub type HS_TMR_EN_R = crate::BitReader<HS_TMR_EN_A>;
 #[doc = "HSTimer Enable\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<HS_TMR_EN_A> for bool {
 impl HS_TMR_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HS_TMR_EN_A {
+    pub const fn variant(&self) -> HS_TMR_EN_A {
         match self.bits {
             false => HS_TMR_EN_A::STOP_PAUSE,
             true => HS_TMR_EN_A::START,
         }
     }
-    #[doc = "Checks if the value of the field is `STOP_PAUSE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_stop_pause(&self) -> bool {
         *self == HS_TMR_EN_A::STOP_PAUSE
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == HS_TMR_EN_A::START
     }
 }
 #[doc = "Field `hs_tmr_en` writer - HSTimer Enable"]
-pub type HS_TMR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_EN_A, O>;
-impl<'a, const O: u8> HS_TMR_EN_W<'a, O> {
+pub type HS_TMR_EN_W<'a, REG> = crate::BitWriter<'a, REG, HS_TMR_EN_A>;
+impl<'a, REG> HS_TMR_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn stop_pause(self) -> &'a mut W {
+    pub fn stop_pause(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_EN_A::STOP_PAUSE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
+    pub fn start(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_EN_A::START)
     }
 }
@@ -103,40 +74,42 @@ impl From<HS_TMR_RELOAD_A> for bool {
 impl HS_TMR_RELOAD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HS_TMR_RELOAD_A {
+    pub const fn variant(&self) -> HS_TMR_RELOAD_A {
         match self.bits {
             false => HS_TMR_RELOAD_A::NO_EFFECT,
             true => HS_TMR_RELOAD_A::RELOAD,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
         *self == HS_TMR_RELOAD_A::NO_EFFECT
     }
-    #[doc = "Checks if the value of the field is `RELOAD`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_reload(&self) -> bool {
         *self == HS_TMR_RELOAD_A::RELOAD
     }
 }
 #[doc = "Field `hs_tmr_reload` writer - HSTimer Reload"]
-pub type HS_TMR_RELOAD_W<'a, const O: u8> =
-    crate::BitWriter1S<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_RELOAD_A, O>;
-impl<'a, const O: u8> HS_TMR_RELOAD_W<'a, O> {
+pub type HS_TMR_RELOAD_W<'a, REG> = crate::BitWriter1S<'a, REG, HS_TMR_RELOAD_A>;
+impl<'a, REG> HS_TMR_RELOAD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn no_effect(self) -> &'a mut W {
+    pub fn no_effect(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_RELOAD_A::NO_EFFECT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn reload(self) -> &'a mut W {
+    pub fn reload(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_RELOAD_A::RELOAD)
     }
 }
 #[doc = "Field `hs_tmr_clk` reader - Select the pre-scale for the HSTimer clock sources"]
-pub type HS_TMR_CLK_R = crate::FieldReader<u8, HS_TMR_CLK_A>;
+pub type HS_TMR_CLK_R = crate::FieldReader<HS_TMR_CLK_A>;
 #[doc = "Select the pre-scale for the HSTimer clock sources\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -158,10 +131,13 @@ impl From<HS_TMR_CLK_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HS_TMR_CLK_A {
+    type Ux = u8;
+}
 impl HS_TMR_CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<HS_TMR_CLK_A> {
+    pub const fn variant(&self) -> Option<HS_TMR_CLK_A> {
         match self.bits {
             0 => Some(HS_TMR_CLK_A::P1),
             1 => Some(HS_TMR_CLK_A::P2),
@@ -171,59 +147,62 @@ impl HS_TMR_CLK_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `P1`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_p1(&self) -> bool {
         *self == HS_TMR_CLK_A::P1
     }
-    #[doc = "Checks if the value of the field is `P2`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_p2(&self) -> bool {
         *self == HS_TMR_CLK_A::P2
     }
-    #[doc = "Checks if the value of the field is `P4`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_p4(&self) -> bool {
         *self == HS_TMR_CLK_A::P4
     }
-    #[doc = "Checks if the value of the field is `P8`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_p8(&self) -> bool {
         *self == HS_TMR_CLK_A::P8
     }
-    #[doc = "Checks if the value of the field is `P16`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_p16(&self) -> bool {
         *self == HS_TMR_CLK_A::P16
     }
 }
 #[doc = "Field `hs_tmr_clk` writer - Select the pre-scale for the HSTimer clock sources"]
-pub type HS_TMR_CLK_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HS_TMR_CTRL_SPEC, u8, HS_TMR_CLK_A, 3, O>;
-impl<'a, const O: u8> HS_TMR_CLK_W<'a, O> {
+pub type HS_TMR_CLK_W<'a, REG> = crate::FieldWriter<'a, REG, 3, HS_TMR_CLK_A>;
+impl<'a, REG> HS_TMR_CLK_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn p1(self) -> &'a mut W {
+    pub fn p1(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_CLK_A::P1)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn p2(self) -> &'a mut W {
+    pub fn p2(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_CLK_A::P2)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn p4(self) -> &'a mut W {
+    pub fn p4(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_CLK_A::P4)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn p8(self) -> &'a mut W {
+    pub fn p8(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_CLK_A::P8)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn p16(self) -> &'a mut W {
+    pub fn p16(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_CLK_A::P16)
     }
 }
@@ -246,35 +225,37 @@ impl From<HS_TMR_MODE_A> for bool {
 impl HS_TMR_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HS_TMR_MODE_A {
+    pub const fn variant(&self) -> HS_TMR_MODE_A {
         match self.bits {
             false => HS_TMR_MODE_A::PERIODIC,
             true => HS_TMR_MODE_A::ONE_SHOT,
         }
     }
-    #[doc = "Checks if the value of the field is `PERIODIC`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_periodic(&self) -> bool {
         *self == HS_TMR_MODE_A::PERIODIC
     }
-    #[doc = "Checks if the value of the field is `ONE_SHOT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_one_shot(&self) -> bool {
         *self == HS_TMR_MODE_A::ONE_SHOT
     }
 }
 #[doc = "Field `hs_tmr_mode` writer - Select the timing mode for HSTimer"]
-pub type HS_TMR_MODE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_MODE_A, O>;
-impl<'a, const O: u8> HS_TMR_MODE_W<'a, O> {
+pub type HS_TMR_MODE_W<'a, REG> = crate::BitWriter<'a, REG, HS_TMR_MODE_A>;
+impl<'a, REG> HS_TMR_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn periodic(self) -> &'a mut W {
+    pub fn periodic(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_MODE_A::PERIODIC)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn one_shot(self) -> &'a mut W {
+    pub fn one_shot(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_MODE_A::ONE_SHOT)
     }
 }
@@ -297,35 +278,37 @@ impl From<HS_TMR_TEST_A> for bool {
 impl HS_TMR_TEST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HS_TMR_TEST_A {
+    pub const fn variant(&self) -> HS_TMR_TEST_A {
         match self.bits {
             false => HS_TMR_TEST_A::NORMAL,
             true => HS_TMR_TEST_A::TEST,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == HS_TMR_TEST_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `TEST`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_test(&self) -> bool {
         *self == HS_TMR_TEST_A::TEST
     }
 }
 #[doc = "Field `hs_tmr_test` writer - Select the operating mode for HSTimer"]
-pub type HS_TMR_TEST_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HS_TMR_CTRL_SPEC, HS_TMR_TEST_A, O>;
-impl<'a, const O: u8> HS_TMR_TEST_W<'a, O> {
+pub type HS_TMR_TEST_W<'a, REG> = crate::BitWriter<'a, REG, HS_TMR_TEST_A>;
+impl<'a, REG> HS_TMR_TEST_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_TEST_A::NORMAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn test(self) -> &'a mut W {
+    pub fn test(self) -> &'a mut crate::W<REG> {
         self.variant(HS_TMR_TEST_A::TEST)
     }
 }
@@ -360,52 +343,53 @@ impl W {
     #[doc = "Bit 0 - HSTimer Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_tmr_en(&mut self) -> HS_TMR_EN_W<0> {
-        HS_TMR_EN_W::new(self)
+    pub fn hs_tmr_en(&mut self) -> HS_TMR_EN_W<HS_TMR_CTRL_SPEC> {
+        HS_TMR_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - HSTimer Reload"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_tmr_reload(&mut self) -> HS_TMR_RELOAD_W<1> {
-        HS_TMR_RELOAD_W::new(self)
+    pub fn hs_tmr_reload(&mut self) -> HS_TMR_RELOAD_W<HS_TMR_CTRL_SPEC> {
+        HS_TMR_RELOAD_W::new(self, 1)
     }
     #[doc = "Bits 4:6 - Select the pre-scale for the HSTimer clock sources"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_tmr_clk(&mut self) -> HS_TMR_CLK_W<4> {
-        HS_TMR_CLK_W::new(self)
+    pub fn hs_tmr_clk(&mut self) -> HS_TMR_CLK_W<HS_TMR_CTRL_SPEC> {
+        HS_TMR_CLK_W::new(self, 4)
     }
     #[doc = "Bit 7 - Select the timing mode for HSTimer"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_tmr_mode(&mut self) -> HS_TMR_MODE_W<7> {
-        HS_TMR_MODE_W::new(self)
+    pub fn hs_tmr_mode(&mut self) -> HS_TMR_MODE_W<HS_TMR_CTRL_SPEC> {
+        HS_TMR_MODE_W::new(self, 7)
     }
     #[doc = "Bit 31 - Select the operating mode for HSTimer"]
     #[inline(always)]
     #[must_use]
-    pub fn hs_tmr_test(&mut self) -> HS_TMR_TEST_W<31> {
-        HS_TMR_TEST_W::new(self)
+    pub fn hs_tmr_test(&mut self) -> HS_TMR_TEST_W<HS_TMR_CTRL_SPEC> {
+        HS_TMR_TEST_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "HS Timer Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hs_tmr_ctrl](index.html) module"]
+#[doc = "HS Timer Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hs_tmr_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hs_tmr_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HS_TMR_CTRL_SPEC;
 impl crate::RegisterSpec for HS_TMR_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hs_tmr_ctrl::R](R) reader structure"]
-impl crate::Readable for HS_TMR_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hs_tmr_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`hs_tmr_ctrl::R`](R) reader structure"]
+impl crate::Readable for HS_TMR_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hs_tmr_ctrl::W`](W) writer structure"]
 impl crate::Writable for HS_TMR_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x02;
 }

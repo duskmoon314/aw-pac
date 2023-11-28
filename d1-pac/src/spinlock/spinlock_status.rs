@@ -1,18 +1,5 @@
 #[doc = "Register `spinlock_status` reader"]
-pub struct R(crate::R<SPINLOCK_STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPINLOCK_STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPINLOCK_STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPINLOCK_STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SPINLOCK_STATUS_SPEC>;
 #[doc = "Field `lock_status[0-31]` reader - Lock\\[i\\] status"]
 pub type LOCK_STATUS_R = crate::BitReader<LOCK_STATUS_A>;
 #[doc = "Lock\\[i\\] status\n\nValue on reset: 0"]
@@ -32,27 +19,29 @@ impl From<LOCK_STATUS_A> for bool {
 impl LOCK_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOCK_STATUS_A {
+    pub const fn variant(&self) -> LOCK_STATUS_A {
         match self.bits {
             false => LOCK_STATUS_A::FREE,
             true => LOCK_STATUS_A::TAKEN,
         }
     }
-    #[doc = "Checks if the value of the field is `FREE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_free(&self) -> bool {
         *self == LOCK_STATUS_A::FREE
     }
-    #[doc = "Checks if the value of the field is `TAKEN`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_taken(&self) -> bool {
         *self == LOCK_STATUS_A::TAKEN
     }
 }
 impl R {
-    #[doc = "Lock\\[i\\] status"]
+    #[doc = "Lock\\[i\\] status\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `lock0_status` field"]
     #[inline(always)]
-    pub unsafe fn lock_status(&self, n: u8) -> LOCK_STATUS_R {
+    pub fn lock_status(&self, n: u8) -> LOCK_STATUS_R {
+        #[allow(clippy::no_effect)]
+        [(); 32][n as usize];
         LOCK_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Lock\\[i\\] status"]
@@ -216,15 +205,13 @@ impl R {
         LOCK_STATUS_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Spinlock Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spinlock_status](index.html) module"]
+#[doc = "Spinlock Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spinlock_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPINLOCK_STATUS_SPEC;
 impl crate::RegisterSpec for SPINLOCK_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spinlock_status::R](R) reader structure"]
-impl crate::Readable for SPINLOCK_STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`spinlock_status::R`](R) reader structure"]
+impl crate::Readable for SPINLOCK_STATUS_SPEC {}
 #[doc = "`reset()` method sets spinlock_status to value 0"]
 impl crate::Resettable for SPINLOCK_STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

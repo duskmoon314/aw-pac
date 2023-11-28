@@ -1,30 +1,17 @@
 #[doc = "Register `spi_fsr` reader"]
-pub struct R(crate::R<SPI_FSR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPI_FSR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPI_FSR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPI_FSR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SPI_FSR_SPEC>;
 #[doc = "Field `rf_cnt` reader - RXFIFO Counter\n\nThese bits indicate the number of bytes in RXFIFO"]
-pub type RF_CNT_R = crate::FieldReader<u8, u8>;
+pub type RF_CNT_R = crate::FieldReader;
 #[doc = "Field `rb_cnt` reader - RXFIFO Write Buffer Counter"]
-pub type RB_CNT_R = crate::FieldReader<u8, u8>;
+pub type RB_CNT_R = crate::FieldReader;
 #[doc = "Field `rb_wr` reader - RXFIFO Write Buffer Write Enable"]
-pub type RB_WR_R = crate::BitReader<bool>;
+pub type RB_WR_R = crate::BitReader;
 #[doc = "Field `tf_cnt` reader - TXFIFO Counter\n\nThese bits indicate the number of bytes in TXFIFO"]
-pub type TF_CNT_R = crate::FieldReader<u8, u8>;
+pub type TF_CNT_R = crate::FieldReader;
 #[doc = "Field `tb_cnt` reader - TXFIFO Write Buffer Counter"]
-pub type TB_CNT_R = crate::FieldReader<u8, u8>;
+pub type TB_CNT_R = crate::FieldReader;
 #[doc = "Field `tb_wr` reader - TXFIFO Write Buffer Write Enable"]
-pub type TB_WR_R = crate::BitReader<bool>;
+pub type TB_WR_R = crate::BitReader;
 impl R {
     #[doc = "Bits 0:7 - RXFIFO Counter\n\nThese bits indicate the number of bytes in RXFIFO"]
     #[inline(always)]
@@ -57,15 +44,13 @@ impl R {
         TB_WR_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "SPI FIFO Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_fsr](index.html) module"]
+#[doc = "SPI FIFO Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_fsr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPI_FSR_SPEC;
 impl crate::RegisterSpec for SPI_FSR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spi_fsr::R](R) reader structure"]
-impl crate::Readable for SPI_FSR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`spi_fsr::R`](R) reader structure"]
+impl crate::Readable for SPI_FSR_SPEC {}
 #[doc = "`reset()` method sets spi_fsr to value 0"]
 impl crate::Resettable for SPI_FSR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

@@ -1,41 +1,9 @@
 #[doc = "Register `spi_batc` reader"]
-pub struct R(crate::R<SPI_BATC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPI_BATC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPI_BATC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPI_BATC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SPI_BATC_SPEC>;
 #[doc = "Register `spi_batc` writer"]
-pub struct W(crate::W<SPI_BATC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SPI_BATC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SPI_BATC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SPI_BATC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SPI_BATC_SPEC>;
 #[doc = "Field `wms` reader - Work Mode Select"]
-pub type WMS_R = crate::FieldReader<u8, WMS_A>;
+pub type WMS_R = crate::FieldReader<WMS_A>;
 #[doc = "Work Mode Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -53,10 +21,13 @@ impl From<WMS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for WMS_A {
+    type Ux = u8;
+}
 impl WMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WMS_A {
+    pub const fn variant(&self) -> WMS_A {
         match self.bits {
             0 => WMS_A::BYTE_ALIGNED,
             2 => WMS_A::BIT_ALIGNED_3WIRE,
@@ -64,43 +35,47 @@ impl WMS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `BYTE_ALIGNED`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_byte_aligned(&self) -> bool {
         *self == WMS_A::BYTE_ALIGNED
     }
-    #[doc = "Checks if the value of the field is `BIT_ALIGNED_3WIRE`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_bit_aligned_3wire(&self) -> bool {
         *self == WMS_A::BIT_ALIGNED_3WIRE
     }
-    #[doc = "Checks if the value of the field is `BIT_ALIGNED_STANDARD`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_bit_aligned_standard(&self) -> bool {
         *self == WMS_A::BIT_ALIGNED_STANDARD
     }
 }
 #[doc = "Field `wms` writer - Work Mode Select"]
-pub type WMS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, WMS_A, 2, O>;
-impl<'a, const O: u8> WMS_W<'a, O> {
+pub type WMS_W<'a, REG> = crate::FieldWriter<'a, REG, 2, WMS_A>;
+impl<'a, REG> WMS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn byte_aligned(self) -> &'a mut W {
+    pub fn byte_aligned(self) -> &'a mut crate::W<REG> {
         self.variant(WMS_A::BYTE_ALIGNED)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn bit_aligned_3wire(self) -> &'a mut W {
+    pub fn bit_aligned_3wire(self) -> &'a mut crate::W<REG> {
         self.variant(WMS_A::BIT_ALIGNED_3WIRE)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn bit_aligned_standard(self) -> &'a mut W {
+    pub fn bit_aligned_standard(self) -> &'a mut crate::W<REG> {
         self.variant(WMS_A::BIT_ALIGNED_STANDARD)
     }
 }
 #[doc = "Field `ss_sel` reader - SPI Chip Select"]
-pub type SS_SEL_R = crate::FieldReader<u8, SS_SEL_A>;
+pub type SS_SEL_R = crate::FieldReader<SS_SEL_A>;
 #[doc = "SPI Chip Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -120,10 +95,13 @@ impl From<SS_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SS_SEL_A {
+    type Ux = u8;
+}
 impl SS_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_SEL_A {
+    pub const fn variant(&self) -> SS_SEL_A {
         match self.bits {
             0 => SS_SEL_A::SS0,
             1 => SS_SEL_A::SS1,
@@ -132,49 +110,52 @@ impl SS_SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SS0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_ss0(&self) -> bool {
         *self == SS_SEL_A::SS0
     }
-    #[doc = "Checks if the value of the field is `SS1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_ss1(&self) -> bool {
         *self == SS_SEL_A::SS1
     }
-    #[doc = "Checks if the value of the field is `SS2`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_ss2(&self) -> bool {
         *self == SS_SEL_A::SS2
     }
-    #[doc = "Checks if the value of the field is `SS3`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_ss3(&self) -> bool {
         *self == SS_SEL_A::SS3
     }
 }
 #[doc = "Field `ss_sel` writer - SPI Chip Select"]
-pub type SS_SEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, SPI_BATC_SPEC, u8, SS_SEL_A, 2, O>;
-impl<'a, const O: u8> SS_SEL_W<'a, O> {
+pub type SS_SEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SS_SEL_A>;
+impl<'a, REG> SS_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn ss0(self) -> &'a mut W {
+    pub fn ss0(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS0)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn ss1(self) -> &'a mut W {
+    pub fn ss1(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS1)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn ss2(self) -> &'a mut W {
+    pub fn ss2(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS2)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn ss3(self) -> &'a mut W {
+    pub fn ss3(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS3)
     }
 }
@@ -197,34 +178,37 @@ impl From<SPOL_A> for bool {
 impl SPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SPOL_A {
+    pub const fn variant(&self) -> SPOL_A {
         match self.bits {
             false => SPOL_A::HIGH,
             true => SPOL_A::LOW,
         }
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == SPOL_A::HIGH
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == SPOL_A::LOW
     }
 }
 #[doc = "Field `spol` writer - SPI Chip Select Signal Polarity Control"]
-pub type SPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SPOL_A, O>;
-impl<'a, const O: u8> SPOL_W<'a, O> {
+pub type SPOL_W<'a, REG> = crate::BitWriter<'a, REG, SPOL_A>;
+impl<'a, REG> SPOL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(SPOL_A::HIGH)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(SPOL_A::LOW)
     }
 }
@@ -247,34 +231,37 @@ impl From<SS_OWNER_A> for bool {
 impl SS_OWNER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_OWNER_A {
+    pub const fn variant(&self) -> SS_OWNER_A {
         match self.bits {
             false => SS_OWNER_A::SPI_CONTROLLER,
             true => SS_OWNER_A::SOFTWARE,
         }
     }
-    #[doc = "Checks if the value of the field is `SPI_CONTROLLER`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_spi_controller(&self) -> bool {
         *self == SS_OWNER_A::SPI_CONTROLLER
     }
-    #[doc = "Checks if the value of the field is `SOFTWARE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_software(&self) -> bool {
         *self == SS_OWNER_A::SOFTWARE
     }
 }
 #[doc = "Field `ss_owner` writer - SS Output Owner Select"]
-pub type SS_OWNER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SS_OWNER_A, O>;
-impl<'a, const O: u8> SS_OWNER_W<'a, O> {
+pub type SS_OWNER_W<'a, REG> = crate::BitWriter<'a, REG, SS_OWNER_A>;
+impl<'a, REG> SS_OWNER_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn spi_controller(self) -> &'a mut W {
+    pub fn spi_controller(self) -> &'a mut crate::W<REG> {
         self.variant(SS_OWNER_A::SPI_CONTROLLER)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn software(self) -> &'a mut W {
+    pub fn software(self) -> &'a mut crate::W<REG> {
         self.variant(SS_OWNER_A::SOFTWARE)
     }
 }
@@ -297,45 +284,48 @@ impl From<SS_LEVEL_A> for bool {
 impl SS_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_LEVEL_A {
+    pub const fn variant(&self) -> SS_LEVEL_A {
         match self.bits {
             false => SS_LEVEL_A::LOW,
             true => SS_LEVEL_A::HIGH,
         }
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == SS_LEVEL_A::LOW
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == SS_LEVEL_A::HIGH
     }
 }
 #[doc = "Field `ss_level` writer - "]
-pub type SS_LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, SS_LEVEL_A, O>;
-impl<'a, const O: u8> SS_LEVEL_W<'a, O> {
+pub type SS_LEVEL_W<'a, REG> = crate::BitWriter<'a, REG, SS_LEVEL_A>;
+impl<'a, REG> SS_LEVEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(SS_LEVEL_A::LOW)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(SS_LEVEL_A::HIGH)
     }
 }
 #[doc = "Field `tx_frm_len` reader - Configure the length of serial data frame of TX"]
-pub type TX_FRM_LEN_R = crate::FieldReader<u8, u8>;
+pub type TX_FRM_LEN_R = crate::FieldReader;
 #[doc = "Field `tx_frm_len` writer - Configure the length of serial data frame of TX"]
-pub type TX_FRM_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, u8, 6, O>;
+pub type TX_FRM_LEN_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `rx_frm_len` reader - Configure the length of serial data frame of RX"]
-pub type RX_FRM_LEN_R = crate::FieldReader<u8, u8>;
+pub type RX_FRM_LEN_R = crate::FieldReader;
 #[doc = "Field `rx_frm_len` writer - Configure the length of serial data frame of RX"]
-pub type RX_FRM_LEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BATC_SPEC, u8, u8, 6, O>;
+pub type RX_FRM_LEN_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `tbc_int_en` reader - Transfer Bits Completed Interrupt Enable"]
 pub type TBC_INT_EN_R = crate::BitReader<TBC_INT_EN_A>;
 #[doc = "Transfer Bits Completed Interrupt Enable\n\nValue on reset: 0"]
@@ -355,34 +345,37 @@ impl From<TBC_INT_EN_A> for bool {
 impl TBC_INT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBC_INT_EN_A {
+    pub const fn variant(&self) -> TBC_INT_EN_A {
         match self.bits {
             false => TBC_INT_EN_A::DISABLE,
             true => TBC_INT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TBC_INT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TBC_INT_EN_A::ENABLE
     }
 }
 #[doc = "Field `tbc_int_en` writer - Transfer Bits Completed Interrupt Enable"]
-pub type TBC_INT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TBC_INT_EN_A, O>;
-impl<'a, const O: u8> TBC_INT_EN_W<'a, O> {
+pub type TBC_INT_EN_W<'a, REG> = crate::BitWriter<'a, REG, TBC_INT_EN_A>;
+impl<'a, REG> TBC_INT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TBC_INT_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TBC_INT_EN_A::ENABLE)
     }
 }
@@ -405,34 +398,37 @@ impl From<TBC_A> for bool {
 impl TBC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TBC_A {
+    pub const fn variant(&self) -> TBC_A {
         match self.bits {
             false => TBC_A::BUSY,
             true => TBC_A::COMPLETED,
         }
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == TBC_A::BUSY
     }
-    #[doc = "Checks if the value of the field is `COMPLETED`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_completed(&self) -> bool {
         *self == TBC_A::COMPLETED
     }
 }
 #[doc = "Field `tbc` writer - Transfer Bits Completed"]
-pub type TBC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TBC_A, O>;
-impl<'a, const O: u8> TBC_W<'a, O> {
+pub type TBC_W<'a, REG> = crate::BitWriter<'a, REG, TBC_A>;
+impl<'a, REG> TBC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn busy(self) -> &'a mut W {
+    pub fn busy(self) -> &'a mut crate::W<REG> {
         self.variant(TBC_A::BUSY)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn completed(self) -> &'a mut W {
+    pub fn completed(self) -> &'a mut crate::W<REG> {
         self.variant(TBC_A::COMPLETED)
     }
 }
@@ -455,34 +451,37 @@ impl From<MSMS_A> for bool {
 impl MSMS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MSMS_A {
+    pub const fn variant(&self) -> MSMS_A {
         match self.bits {
             false => MSMS_A::DELAY,
             true => MSMS_A::STANDARD,
         }
     }
-    #[doc = "Checks if the value of the field is `DELAY`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_delay(&self) -> bool {
         *self == MSMS_A::DELAY
     }
-    #[doc = "Checks if the value of the field is `STANDARD`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_standard(&self) -> bool {
         *self == MSMS_A::STANDARD
     }
 }
 #[doc = "Field `msms` writer - Master Sample Standard"]
-pub type MSMS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, MSMS_A, O>;
-impl<'a, const O: u8> MSMS_W<'a, O> {
+pub type MSMS_W<'a, REG> = crate::BitWriter<'a, REG, MSMS_A>;
+impl<'a, REG> MSMS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn delay(self) -> &'a mut W {
+    pub fn delay(self) -> &'a mut crate::W<REG> {
         self.variant(MSMS_A::DELAY)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn standard(self) -> &'a mut W {
+    pub fn standard(self) -> &'a mut crate::W<REG> {
         self.variant(MSMS_A::STANDARD)
     }
 }
@@ -505,34 +504,37 @@ impl From<TCE_A> for bool {
 impl TCE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TCE_A {
+    pub const fn variant(&self) -> TCE_A {
         match self.bits {
             false => TCE_A::IDLE,
             true => TCE_A::INIT,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == TCE_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `INIT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_init(&self) -> bool {
         *self == TCE_A::INIT
     }
 }
 #[doc = "Field `tce` writer - Transfer Control Enable"]
-pub type TCE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BATC_SPEC, TCE_A, O>;
-impl<'a, const O: u8> TCE_W<'a, O> {
+pub type TCE_W<'a, REG> = crate::BitWriter<'a, REG, TCE_A>;
+impl<'a, REG> TCE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn idle(self) -> &'a mut W {
+    pub fn idle(self) -> &'a mut crate::W<REG> {
         self.variant(TCE_A::IDLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn init(self) -> &'a mut W {
+    pub fn init(self) -> &'a mut crate::W<REG> {
         self.variant(TCE_A::INIT)
     }
 }
@@ -597,88 +599,89 @@ impl W {
     #[doc = "Bits 0:1 - Work Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn wms(&mut self) -> WMS_W<0> {
-        WMS_W::new(self)
+    pub fn wms(&mut self) -> WMS_W<SPI_BATC_SPEC> {
+        WMS_W::new(self, 0)
     }
     #[doc = "Bits 2:3 - SPI Chip Select"]
     #[inline(always)]
     #[must_use]
-    pub fn ss_sel(&mut self) -> SS_SEL_W<2> {
-        SS_SEL_W::new(self)
+    pub fn ss_sel(&mut self) -> SS_SEL_W<SPI_BATC_SPEC> {
+        SS_SEL_W::new(self, 2)
     }
     #[doc = "Bit 5 - SPI Chip Select Signal Polarity Control"]
     #[inline(always)]
     #[must_use]
-    pub fn spol(&mut self) -> SPOL_W<5> {
-        SPOL_W::new(self)
+    pub fn spol(&mut self) -> SPOL_W<SPI_BATC_SPEC> {
+        SPOL_W::new(self, 5)
     }
     #[doc = "Bit 6 - SS Output Owner Select"]
     #[inline(always)]
     #[must_use]
-    pub fn ss_owner(&mut self) -> SS_OWNER_W<6> {
-        SS_OWNER_W::new(self)
+    pub fn ss_owner(&mut self) -> SS_OWNER_W<SPI_BATC_SPEC> {
+        SS_OWNER_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn ss_level(&mut self) -> SS_LEVEL_W<7> {
-        SS_LEVEL_W::new(self)
+    pub fn ss_level(&mut self) -> SS_LEVEL_W<SPI_BATC_SPEC> {
+        SS_LEVEL_W::new(self, 7)
     }
     #[doc = "Bits 8:13 - Configure the length of serial data frame of TX"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_frm_len(&mut self) -> TX_FRM_LEN_W<8> {
-        TX_FRM_LEN_W::new(self)
+    pub fn tx_frm_len(&mut self) -> TX_FRM_LEN_W<SPI_BATC_SPEC> {
+        TX_FRM_LEN_W::new(self, 8)
     }
     #[doc = "Bits 16:21 - Configure the length of serial data frame of RX"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_frm_len(&mut self) -> RX_FRM_LEN_W<16> {
-        RX_FRM_LEN_W::new(self)
+    pub fn rx_frm_len(&mut self) -> RX_FRM_LEN_W<SPI_BATC_SPEC> {
+        RX_FRM_LEN_W::new(self, 16)
     }
     #[doc = "Bit 24 - Transfer Bits Completed Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tbc_int_en(&mut self) -> TBC_INT_EN_W<24> {
-        TBC_INT_EN_W::new(self)
+    pub fn tbc_int_en(&mut self) -> TBC_INT_EN_W<SPI_BATC_SPEC> {
+        TBC_INT_EN_W::new(self, 24)
     }
     #[doc = "Bit 25 - Transfer Bits Completed"]
     #[inline(always)]
     #[must_use]
-    pub fn tbc(&mut self) -> TBC_W<25> {
-        TBC_W::new(self)
+    pub fn tbc(&mut self) -> TBC_W<SPI_BATC_SPEC> {
+        TBC_W::new(self, 25)
     }
     #[doc = "Bit 30 - Master Sample Standard"]
     #[inline(always)]
     #[must_use]
-    pub fn msms(&mut self) -> MSMS_W<30> {
-        MSMS_W::new(self)
+    pub fn msms(&mut self) -> MSMS_W<SPI_BATC_SPEC> {
+        MSMS_W::new(self, 30)
     }
     #[doc = "Bit 31 - Transfer Control Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tce(&mut self) -> TCE_W<31> {
-        TCE_W::new(self)
+    pub fn tce(&mut self) -> TCE_W<SPI_BATC_SPEC> {
+        TCE_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SPI Bit-Aligned Transfer Configure Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_batc](index.html) module"]
+#[doc = "SPI Bit-Aligned Transfer Configure Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_batc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_batc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPI_BATC_SPEC;
 impl crate::RegisterSpec for SPI_BATC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spi_batc::R](R) reader structure"]
-impl crate::Readable for SPI_BATC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [spi_batc::W](W) writer structure"]
+#[doc = "`read()` method returns [`spi_batc::R`](R) reader structure"]
+impl crate::Readable for SPI_BATC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`spi_batc::W`](W) writer structure"]
 impl crate::Writable for SPI_BATC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

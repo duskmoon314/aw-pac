@@ -1,47 +1,15 @@
 #[doc = "Register `spi_bcc` reader"]
-pub struct R(crate::R<SPI_BCC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPI_BCC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPI_BCC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPI_BCC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SPI_BCC_SPEC>;
 #[doc = "Register `spi_bcc` writer"]
-pub struct W(crate::W<SPI_BCC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SPI_BCC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SPI_BCC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SPI_BCC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SPI_BCC_SPEC>;
 #[doc = "Field `stc` reader - Master Single Mode Transmit Counter"]
-pub type STC_R = crate::FieldReader<u32, u32>;
+pub type STC_R = crate::FieldReader<u32>;
 #[doc = "Field `stc` writer - Master Single Mode Transmit Counter"]
-pub type STC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u32, u32, 24, O>;
+pub type STC_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 #[doc = "Field `dbc` reader - Master Dummy Burst Counter"]
-pub type DBC_R = crate::FieldReader<u8, u8>;
+pub type DBC_R = crate::FieldReader;
 #[doc = "Field `dbc` writer - Master Dummy Burst Counter"]
-pub type DBC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SPI_BCC_SPEC, u8, u8, 4, O>;
+pub type DBC_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `drm` reader - Master Dual Mode RX Enable"]
 pub type DRM_R = crate::BitReader<DRM_A>;
 #[doc = "Master Dual Mode RX Enable\n\nValue on reset: 0"]
@@ -61,34 +29,37 @@ impl From<DRM_A> for bool {
 impl DRM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DRM_A {
+    pub const fn variant(&self) -> DRM_A {
         match self.bits {
             false => DRM_A::SINGLE,
             true => DRM_A::DUAL,
         }
     }
-    #[doc = "Checks if the value of the field is `SINGLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_single(&self) -> bool {
         *self == DRM_A::SINGLE
     }
-    #[doc = "Checks if the value of the field is `DUAL`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_dual(&self) -> bool {
         *self == DRM_A::DUAL
     }
 }
 #[doc = "Field `drm` writer - Master Dual Mode RX Enable"]
-pub type DRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, DRM_A, O>;
-impl<'a, const O: u8> DRM_W<'a, O> {
+pub type DRM_W<'a, REG> = crate::BitWriter<'a, REG, DRM_A>;
+impl<'a, REG> DRM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn single(self) -> &'a mut W {
+    pub fn single(self) -> &'a mut crate::W<REG> {
         self.variant(DRM_A::SINGLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn dual(self) -> &'a mut W {
+    pub fn dual(self) -> &'a mut crate::W<REG> {
         self.variant(DRM_A::DUAL)
     }
 }
@@ -111,34 +82,37 @@ impl From<QUAD_EN_A> for bool {
 impl QUAD_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> QUAD_EN_A {
+    pub const fn variant(&self) -> QUAD_EN_A {
         match self.bits {
             false => QUAD_EN_A::DISABLE,
             true => QUAD_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == QUAD_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == QUAD_EN_A::ENABLE
     }
 }
 #[doc = "Field `quad_en` writer - Quad Mode Enable"]
-pub type QUAD_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_BCC_SPEC, QUAD_EN_A, O>;
-impl<'a, const O: u8> QUAD_EN_W<'a, O> {
+pub type QUAD_EN_W<'a, REG> = crate::BitWriter<'a, REG, QUAD_EN_A>;
+impl<'a, REG> QUAD_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(QUAD_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(QUAD_EN_A::ENABLE)
     }
 }
@@ -168,46 +142,47 @@ impl W {
     #[doc = "Bits 0:23 - Master Single Mode Transmit Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn stc(&mut self) -> STC_W<0> {
-        STC_W::new(self)
+    pub fn stc(&mut self) -> STC_W<SPI_BCC_SPEC> {
+        STC_W::new(self, 0)
     }
     #[doc = "Bits 24:27 - Master Dummy Burst Counter"]
     #[inline(always)]
     #[must_use]
-    pub fn dbc(&mut self) -> DBC_W<24> {
-        DBC_W::new(self)
+    pub fn dbc(&mut self) -> DBC_W<SPI_BCC_SPEC> {
+        DBC_W::new(self, 24)
     }
     #[doc = "Bit 28 - Master Dual Mode RX Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn drm(&mut self) -> DRM_W<28> {
-        DRM_W::new(self)
+    pub fn drm(&mut self) -> DRM_W<SPI_BCC_SPEC> {
+        DRM_W::new(self, 28)
     }
     #[doc = "Bit 29 - Quad Mode Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn quad_en(&mut self) -> QUAD_EN_W<29> {
-        QUAD_EN_W::new(self)
+    pub fn quad_en(&mut self) -> QUAD_EN_W<SPI_BCC_SPEC> {
+        QUAD_EN_W::new(self, 29)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SPI Master Burst Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_bcc](index.html) module"]
+#[doc = "SPI Master Burst Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_bcc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_bcc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPI_BCC_SPEC;
 impl crate::RegisterSpec for SPI_BCC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spi_bcc::R](R) reader structure"]
-impl crate::Readable for SPI_BCC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [spi_bcc::W](W) writer structure"]
+#[doc = "`read()` method returns [`spi_bcc::R`](R) reader structure"]
+impl crate::Readable for SPI_BCC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`spi_bcc::W`](W) writer structure"]
 impl crate::Writable for SPI_BCC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,43 +1,11 @@
 #[doc = "Register `pcr%s` reader"]
-pub struct R(crate::R<PCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PCR_SPEC>;
 #[doc = "Register `pcr%s` writer"]
-pub struct W(crate::W<PCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PCR_SPEC>;
 #[doc = "Field `pwm_prescal_k` reader - PWM pre-scale K, actual pre-scale is (K + 1)"]
-pub type PWM_PRESCAL_K_R = crate::FieldReader<u8, u8>;
+pub type PWM_PRESCAL_K_R = crate::FieldReader;
 #[doc = "Field `pwm_prescal_k` writer - PWM pre-scale K, actual pre-scale is (K + 1)"]
-pub type PWM_PRESCAL_K_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SPEC, u8, u8, 8, O>;
+pub type PWM_PRESCAL_K_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `pwm_act_sta` reader - PWM Active State"]
 pub type PWM_ACT_STA_R = crate::BitReader<PWM_ACT_STA_A>;
 #[doc = "PWM Active State\n\nValue on reset: 0"]
@@ -57,34 +25,37 @@ impl From<PWM_ACT_STA_A> for bool {
 impl PWM_ACT_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWM_ACT_STA_A {
+    pub const fn variant(&self) -> PWM_ACT_STA_A {
         match self.bits {
             false => PWM_ACT_STA_A::LOW,
             true => PWM_ACT_STA_A::HIGH,
         }
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "low level"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == PWM_ACT_STA_A::LOW
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "high level"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == PWM_ACT_STA_A::HIGH
     }
 }
 #[doc = "Field `pwm_act_sta` writer - PWM Active State"]
-pub type PWM_ACT_STA_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_ACT_STA_A, O>;
-impl<'a, const O: u8> PWM_ACT_STA_W<'a, O> {
+pub type PWM_ACT_STA_W<'a, REG> = crate::BitWriter<'a, REG, PWM_ACT_STA_A>;
+impl<'a, REG> PWM_ACT_STA_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "low level"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(PWM_ACT_STA_A::LOW)
     }
     #[doc = "high level"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(PWM_ACT_STA_A::HIGH)
     }
 }
@@ -107,34 +78,37 @@ impl From<PWM_MODE_A> for bool {
 impl PWM_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWM_MODE_A {
+    pub const fn variant(&self) -> PWM_MODE_A {
         match self.bits {
             false => PWM_MODE_A::CYCLE,
             true => PWM_MODE_A::PULSE,
         }
     }
-    #[doc = "Checks if the value of the field is `CYCLE`"]
+    #[doc = "Cycle mode"]
     #[inline(always)]
     pub fn is_cycle(&self) -> bool {
         *self == PWM_MODE_A::CYCLE
     }
-    #[doc = "Checks if the value of the field is `PULSE`"]
+    #[doc = "Pulse mode"]
     #[inline(always)]
     pub fn is_pulse(&self) -> bool {
         *self == PWM_MODE_A::PULSE
     }
 }
 #[doc = "Field `pwm_mode` writer - PWM Output Mode Select"]
-pub type PWM_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_MODE_A, O>;
-impl<'a, const O: u8> PWM_MODE_W<'a, O> {
+pub type PWM_MODE_W<'a, REG> = crate::BitWriter<'a, REG, PWM_MODE_A>;
+impl<'a, REG> PWM_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Cycle mode"]
     #[inline(always)]
-    pub fn cycle(self) -> &'a mut W {
+    pub fn cycle(self) -> &'a mut crate::W<REG> {
         self.variant(PWM_MODE_A::CYCLE)
     }
     #[doc = "Pulse mode"]
     #[inline(always)]
-    pub fn pulse(self) -> &'a mut W {
+    pub fn pulse(self) -> &'a mut crate::W<REG> {
         self.variant(PWM_MODE_A::PULSE)
     }
 }
@@ -157,34 +131,37 @@ impl From<PWM_PUL_START_A> for bool {
 impl PWM_PUL_START_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWM_PUL_START_A {
+    pub const fn variant(&self) -> PWM_PUL_START_A {
         match self.bits {
             false => PWM_PUL_START_A::NO_EFFECT,
             true => PWM_PUL_START_A::START,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
         *self == PWM_PUL_START_A::NO_EFFECT
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "Output pulse for PWM_CYCLE_NM + 1"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == PWM_PUL_START_A::START
     }
 }
 #[doc = "Field `pwm_pul_start` writer - PWM Pulse Output Start"]
-pub type PWM_PUL_START_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCR_SPEC, PWM_PUL_START_A, O>;
-impl<'a, const O: u8> PWM_PUL_START_W<'a, O> {
+pub type PWM_PUL_START_W<'a, REG> = crate::BitWriter<'a, REG, PWM_PUL_START_A>;
+impl<'a, REG> PWM_PUL_START_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn no_effect(self) -> &'a mut W {
+    pub fn no_effect(self) -> &'a mut crate::W<REG> {
         self.variant(PWM_PUL_START_A::NO_EFFECT)
     }
     #[doc = "Output pulse for PWM_CYCLE_NM + 1"]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
+    pub fn start(self) -> &'a mut crate::W<REG> {
         self.variant(PWM_PUL_START_A::START)
     }
 }
@@ -207,27 +184,27 @@ impl From<PWM_PERIOD_RDY_A> for bool {
 impl PWM_PERIOD_RDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PWM_PERIOD_RDY_A {
+    pub const fn variant(&self) -> PWM_PERIOD_RDY_A {
         match self.bits {
             false => PWM_PERIOD_RDY_A::READY,
             true => PWM_PERIOD_RDY_A::BUSY,
         }
     }
-    #[doc = "Checks if the value of the field is `READY`"]
+    #[doc = "PWM period register is ready to write"]
     #[inline(always)]
     pub fn is_ready(&self) -> bool {
         *self == PWM_PERIOD_RDY_A::READY
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "PWM period register is busy"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == PWM_PERIOD_RDY_A::BUSY
     }
 }
 #[doc = "Field `pwm_pul_num` reader - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
-pub type PWM_PUL_NUM_R = crate::FieldReader<u16, u16>;
+pub type PWM_PUL_NUM_R = crate::FieldReader<u16>;
 #[doc = "Field `pwm_pul_num` writer - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
-pub type PWM_PUL_NUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PCR_SPEC, u16, u16, 16, O>;
+pub type PWM_PUL_NUM_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:7 - PWM pre-scale K, actual pre-scale is (K + 1)"]
     #[inline(always)]
@@ -264,52 +241,53 @@ impl W {
     #[doc = "Bits 0:7 - PWM pre-scale K, actual pre-scale is (K + 1)"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm_prescal_k(&mut self) -> PWM_PRESCAL_K_W<0> {
-        PWM_PRESCAL_K_W::new(self)
+    pub fn pwm_prescal_k(&mut self) -> PWM_PRESCAL_K_W<PCR_SPEC> {
+        PWM_PRESCAL_K_W::new(self, 0)
     }
     #[doc = "Bit 8 - PWM Active State"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm_act_sta(&mut self) -> PWM_ACT_STA_W<8> {
-        PWM_ACT_STA_W::new(self)
+    pub fn pwm_act_sta(&mut self) -> PWM_ACT_STA_W<PCR_SPEC> {
+        PWM_ACT_STA_W::new(self, 8)
     }
     #[doc = "Bit 9 - PWM Output Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm_mode(&mut self) -> PWM_MODE_W<9> {
-        PWM_MODE_W::new(self)
+    pub fn pwm_mode(&mut self) -> PWM_MODE_W<PCR_SPEC> {
+        PWM_MODE_W::new(self, 9)
     }
     #[doc = "Bit 10 - PWM Pulse Output Start"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm_pul_start(&mut self) -> PWM_PUL_START_W<10> {
-        PWM_PUL_START_W::new(self)
+    pub fn pwm_pul_start(&mut self) -> PWM_PUL_START_W<PCR_SPEC> {
+        PWM_PUL_START_W::new(self, 10)
     }
     #[doc = "Bits 16:31 - In pulse mode, the PWM outputs pulse for PWM_CYCLE_NUM + 1 times and then stops"]
     #[inline(always)]
     #[must_use]
-    pub fn pwm_pul_num(&mut self) -> PWM_PUL_NUM_W<16> {
-        PWM_PUL_NUM_W::new(self)
+    pub fn pwm_pul_num(&mut self) -> PWM_PUL_NUM_W<PCR_SPEC> {
+        PWM_PUL_NUM_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PWM Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pcr](index.html) module"]
+#[doc = "PWM Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PCR_SPEC;
 impl crate::RegisterSpec for PCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pcr::R](R) reader structure"]
-impl crate::Readable for PCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`pcr::R`](R) reader structure"]
+impl crate::Readable for PCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pcr::W`](W) writer structure"]
 impl crate::Writable for PCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

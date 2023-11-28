@@ -1,48 +1,15 @@
 #[doc = "Register `tv_basic0` reader"]
-pub struct R(crate::R<TV_BASIC0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TV_BASIC0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TV_BASIC0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TV_BASIC0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TV_BASIC0_SPEC>;
 #[doc = "Register `tv_basic0` writer"]
-pub struct W(crate::W<TV_BASIC0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TV_BASIC0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TV_BASIC0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TV_BASIC0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TV_BASIC0_SPEC>;
 #[doc = "Field `height_yi` reader - Source Height Is Y+1"]
-pub type HEIGHT_YI_R = crate::FieldReader<u16, u16>;
+pub type HEIGHT_YI_R = crate::FieldReader<u16>;
 #[doc = "Field `height_yi` writer - Source Height Is Y+1"]
-pub type HEIGHT_YI_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_BASIC0_SPEC, u16, u16, 12, O>;
+pub type HEIGHT_YI_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `width_xi` reader - Source Width Is X+1"]
-pub type WIDTH_XI_R = crate::FieldReader<u16, u16>;
+pub type WIDTH_XI_R = crate::FieldReader<u16>;
 #[doc = "Field `width_xi` writer - Source Width Is X+1"]
-pub type WIDTH_XI_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TV_BASIC0_SPEC, u16, u16, 12, O>;
+pub type WIDTH_XI_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - Source Height Is Y+1"]
     #[inline(always)]
@@ -59,34 +26,35 @@ impl W {
     #[doc = "Bits 0:11 - Source Height Is Y+1"]
     #[inline(always)]
     #[must_use]
-    pub fn height_yi(&mut self) -> HEIGHT_YI_W<0> {
-        HEIGHT_YI_W::new(self)
+    pub fn height_yi(&mut self) -> HEIGHT_YI_W<TV_BASIC0_SPEC> {
+        HEIGHT_YI_W::new(self, 0)
     }
     #[doc = "Bits 16:27 - Source Width Is X+1"]
     #[inline(always)]
     #[must_use]
-    pub fn width_xi(&mut self) -> WIDTH_XI_W<16> {
-        WIDTH_XI_W::new(self)
+    pub fn width_xi(&mut self) -> WIDTH_XI_W<TV_BASIC0_SPEC> {
+        WIDTH_XI_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TV Basic Timing Register0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tv_basic0](index.html) module"]
+#[doc = "TV Basic Timing Register0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv_basic0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tv_basic0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TV_BASIC0_SPEC;
 impl crate::RegisterSpec for TV_BASIC0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tv_basic0::R](R) reader structure"]
-impl crate::Readable for TV_BASIC0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tv_basic0::W](W) writer structure"]
+#[doc = "`read()` method returns [`tv_basic0::R`](R) reader structure"]
+impl crate::Readable for TV_BASIC0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tv_basic0::W`](W) writer structure"]
 impl crate::Writable for TV_BASIC0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `spi_tcr` reader"]
-pub struct R(crate::R<SPI_TCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPI_TCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPI_TCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPI_TCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SPI_TCR_SPEC>;
 #[doc = "Register `spi_tcr` writer"]
-pub struct W(crate::W<SPI_TCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SPI_TCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SPI_TCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SPI_TCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SPI_TCR_SPEC>;
 #[doc = "Field `cpha` reader - SPI Clock/Data Phase Control"]
 pub type CPHA_R = crate::BitReader<CPHA_A>;
 #[doc = "SPI Clock/Data Phase Control\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<CPHA_A> for bool {
 impl CPHA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPHA_A {
+    pub const fn variant(&self) -> CPHA_A {
         match self.bits {
             false => CPHA_A::P0,
             true => CPHA_A::P1,
         }
     }
-    #[doc = "Checks if the value of the field is `P0`"]
+    #[doc = "Phase 0 (Leading edge for sample data)"]
     #[inline(always)]
     pub fn is_p0(&self) -> bool {
         *self == CPHA_A::P0
     }
-    #[doc = "Checks if the value of the field is `P1`"]
+    #[doc = "Phase 1 (Leading edge for setup data)"]
     #[inline(always)]
     pub fn is_p1(&self) -> bool {
         *self == CPHA_A::P1
     }
 }
 #[doc = "Field `cpha` writer - SPI Clock/Data Phase Control"]
-pub type CPHA_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, CPHA_A, O>;
-impl<'a, const O: u8> CPHA_W<'a, O> {
+pub type CPHA_W<'a, REG> = crate::BitWriter<'a, REG, CPHA_A>;
+impl<'a, REG> CPHA_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Phase 0 (Leading edge for sample data)"]
     #[inline(always)]
-    pub fn p0(self) -> &'a mut W {
+    pub fn p0(self) -> &'a mut crate::W<REG> {
         self.variant(CPHA_A::P0)
     }
     #[doc = "Phase 1 (Leading edge for setup data)"]
     #[inline(always)]
-    pub fn p1(self) -> &'a mut W {
+    pub fn p1(self) -> &'a mut crate::W<REG> {
         self.variant(CPHA_A::P1)
     }
 }
@@ -103,34 +74,37 @@ impl From<CPOL_A> for bool {
 impl CPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CPOL_A {
+    pub const fn variant(&self) -> CPOL_A {
         match self.bits {
             false => CPOL_A::HIGH,
             true => CPOL_A::LOW,
         }
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "Active high polarity"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == CPOL_A::HIGH
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "Active low polarity"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == CPOL_A::LOW
     }
 }
 #[doc = "Field `cpol` writer - SPI Clock Polarity Control"]
-pub type CPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, CPOL_A, O>;
-impl<'a, const O: u8> CPOL_W<'a, O> {
+pub type CPOL_W<'a, REG> = crate::BitWriter<'a, REG, CPOL_A>;
+impl<'a, REG> CPOL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active high polarity"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(CPOL_A::HIGH)
     }
     #[doc = "Active low polarity"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(CPOL_A::LOW)
     }
 }
@@ -153,34 +127,37 @@ impl From<SPOL_A> for bool {
 impl SPOL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SPOL_A {
+    pub const fn variant(&self) -> SPOL_A {
         match self.bits {
             false => SPOL_A::HIGH,
             true => SPOL_A::LOW,
         }
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "Active high polarity"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == SPOL_A::HIGH
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "Active low polarity"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == SPOL_A::LOW
     }
 }
 #[doc = "Field `spol` writer - SPI Chip Select Signal Polarity Control"]
-pub type SPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SPOL_A, O>;
-impl<'a, const O: u8> SPOL_W<'a, O> {
+pub type SPOL_W<'a, REG> = crate::BitWriter<'a, REG, SPOL_A>;
+impl<'a, REG> SPOL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Active high polarity"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(SPOL_A::HIGH)
     }
     #[doc = "Active low polarity"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(SPOL_A::LOW)
     }
 }
@@ -203,39 +180,42 @@ impl From<SSCTL_A> for bool {
 impl SSCTL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SSCTL_A {
+    pub const fn variant(&self) -> SSCTL_A {
         match self.bits {
             false => SSCTL_A::ASSERT,
             true => SSCTL_A::NEGATE,
         }
     }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[doc = "SPI_SSx remains asserted between SPI bursts"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
         *self == SSCTL_A::ASSERT
     }
-    #[doc = "Checks if the value of the field is `NEGATE`"]
+    #[doc = "Negate SPI_SSx between SPI bursts"]
     #[inline(always)]
     pub fn is_negate(&self) -> bool {
         *self == SSCTL_A::NEGATE
     }
 }
 #[doc = "Field `ssctl` writer - "]
-pub type SSCTL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SSCTL_A, O>;
-impl<'a, const O: u8> SSCTL_W<'a, O> {
+pub type SSCTL_W<'a, REG> = crate::BitWriter<'a, REG, SSCTL_A>;
+impl<'a, REG> SSCTL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "SPI_SSx remains asserted between SPI bursts"]
     #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
+    pub fn assert(self) -> &'a mut crate::W<REG> {
         self.variant(SSCTL_A::ASSERT)
     }
     #[doc = "Negate SPI_SSx between SPI bursts"]
     #[inline(always)]
-    pub fn negate(self) -> &'a mut W {
+    pub fn negate(self) -> &'a mut crate::W<REG> {
         self.variant(SSCTL_A::NEGATE)
     }
 }
 #[doc = "Field `ss_sel` reader - "]
-pub type SS_SEL_R = crate::FieldReader<u8, SS_SEL_A>;
+pub type SS_SEL_R = crate::FieldReader<SS_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -255,10 +235,13 @@ impl From<SS_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SS_SEL_A {
+    type Ux = u8;
+}
 impl SS_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_SEL_A {
+    pub const fn variant(&self) -> SS_SEL_A {
         match self.bits {
             0 => SS_SEL_A::SS0,
             1 => SS_SEL_A::SS1,
@@ -267,49 +250,52 @@ impl SS_SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `SS0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_ss0(&self) -> bool {
         *self == SS_SEL_A::SS0
     }
-    #[doc = "Checks if the value of the field is `SS1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_ss1(&self) -> bool {
         *self == SS_SEL_A::SS1
     }
-    #[doc = "Checks if the value of the field is `SS2`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_ss2(&self) -> bool {
         *self == SS_SEL_A::SS2
     }
-    #[doc = "Checks if the value of the field is `SS3`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_ss3(&self) -> bool {
         *self == SS_SEL_A::SS3
     }
 }
 #[doc = "Field `ss_sel` writer - "]
-pub type SS_SEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, SPI_TCR_SPEC, u8, SS_SEL_A, 2, O>;
-impl<'a, const O: u8> SS_SEL_W<'a, O> {
+pub type SS_SEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SS_SEL_A>;
+impl<'a, REG> SS_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn ss0(self) -> &'a mut W {
+    pub fn ss0(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS0)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn ss1(self) -> &'a mut W {
+    pub fn ss1(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS1)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn ss2(self) -> &'a mut W {
+    pub fn ss2(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS2)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn ss3(self) -> &'a mut W {
+    pub fn ss3(self) -> &'a mut crate::W<REG> {
         self.variant(SS_SEL_A::SS3)
     }
 }
@@ -332,34 +318,37 @@ impl From<SS_OWNER_A> for bool {
 impl SS_OWNER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_OWNER_A {
+    pub const fn variant(&self) -> SS_OWNER_A {
         match self.bits {
             false => SS_OWNER_A::SPI_CONTROLLER,
             true => SS_OWNER_A::SOFTWARE,
         }
     }
-    #[doc = "Checks if the value of the field is `SPI_CONTROLLER`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_spi_controller(&self) -> bool {
         *self == SS_OWNER_A::SPI_CONTROLLER
     }
-    #[doc = "Checks if the value of the field is `SOFTWARE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_software(&self) -> bool {
         *self == SS_OWNER_A::SOFTWARE
     }
 }
 #[doc = "Field `ss_owner` writer - "]
-pub type SS_OWNER_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SS_OWNER_A, O>;
-impl<'a, const O: u8> SS_OWNER_W<'a, O> {
+pub type SS_OWNER_W<'a, REG> = crate::BitWriter<'a, REG, SS_OWNER_A>;
+impl<'a, REG> SS_OWNER_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn spi_controller(self) -> &'a mut W {
+    pub fn spi_controller(self) -> &'a mut crate::W<REG> {
         self.variant(SS_OWNER_A::SPI_CONTROLLER)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn software(self) -> &'a mut W {
+    pub fn software(self) -> &'a mut crate::W<REG> {
         self.variant(SS_OWNER_A::SOFTWARE)
     }
 }
@@ -382,34 +371,37 @@ impl From<SS_LEVEL_A> for bool {
 impl SS_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SS_LEVEL_A {
+    pub const fn variant(&self) -> SS_LEVEL_A {
         match self.bits {
             false => SS_LEVEL_A::LOW,
             true => SS_LEVEL_A::HIGH,
         }
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == SS_LEVEL_A::LOW
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == SS_LEVEL_A::HIGH
     }
 }
 #[doc = "Field `ss_level` writer - "]
-pub type SS_LEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SS_LEVEL_A, O>;
-impl<'a, const O: u8> SS_LEVEL_W<'a, O> {
+pub type SS_LEVEL_W<'a, REG> = crate::BitWriter<'a, REG, SS_LEVEL_A>;
+impl<'a, REG> SS_LEVEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(SS_LEVEL_A::LOW)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(SS_LEVEL_A::HIGH)
     }
 }
@@ -432,34 +424,37 @@ impl From<DHB_A> for bool {
 impl DHB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DHB_A {
+    pub const fn variant(&self) -> DHB_A {
         match self.bits {
             false => DHB_A::RECEIVE,
             true => DHB_A::DISCARD,
         }
     }
-    #[doc = "Checks if the value of the field is `RECEIVE`"]
+    #[doc = "Receiving all SPI bursts in the BC period"]
     #[inline(always)]
     pub fn is_receive(&self) -> bool {
         *self == DHB_A::RECEIVE
     }
-    #[doc = "Checks if the value of the field is `DISCARD`"]
+    #[doc = "Discard unused SPI bursts"]
     #[inline(always)]
     pub fn is_discard(&self) -> bool {
         *self == DHB_A::DISCARD
     }
 }
 #[doc = "Field `dhb` writer - Discard Hash Burst"]
-pub type DHB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, DHB_A, O>;
-impl<'a, const O: u8> DHB_W<'a, O> {
+pub type DHB_W<'a, REG> = crate::BitWriter<'a, REG, DHB_A>;
+impl<'a, REG> DHB_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Receiving all SPI bursts in the BC period"]
     #[inline(always)]
-    pub fn receive(self) -> &'a mut W {
+    pub fn receive(self) -> &'a mut crate::W<REG> {
         self.variant(DHB_A::RECEIVE)
     }
     #[doc = "Discard unused SPI bursts"]
     #[inline(always)]
-    pub fn discard(self) -> &'a mut W {
+    pub fn discard(self) -> &'a mut crate::W<REG> {
         self.variant(DHB_A::DISCARD)
     }
 }
@@ -482,34 +477,37 @@ impl From<DDB_A> for bool {
 impl DDB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DDB_A {
+    pub const fn variant(&self) -> DDB_A {
         match self.bits {
             false => DDB_A::ZERO,
             true => DDB_A::ONE,
         }
     }
-    #[doc = "Checks if the value of the field is `ZERO`"]
+    #[doc = "The bit value of dummy SPI burst is zero"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
         *self == DDB_A::ZERO
     }
-    #[doc = "Checks if the value of the field is `ONE`"]
+    #[doc = "The bit value of dummy SPI burst is one"]
     #[inline(always)]
     pub fn is_one(&self) -> bool {
         *self == DDB_A::ONE
     }
 }
 #[doc = "Field `ddb` writer - Dummy Burst Type"]
-pub type DDB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, DDB_A, O>;
-impl<'a, const O: u8> DDB_W<'a, O> {
+pub type DDB_W<'a, REG> = crate::BitWriter<'a, REG, DDB_A>;
+impl<'a, REG> DDB_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "The bit value of dummy SPI burst is zero"]
     #[inline(always)]
-    pub fn zero(self) -> &'a mut W {
+    pub fn zero(self) -> &'a mut crate::W<REG> {
         self.variant(DDB_A::ZERO)
     }
     #[doc = "The bit value of dummy SPI burst is one"]
     #[inline(always)]
-    pub fn one(self) -> &'a mut W {
+    pub fn one(self) -> &'a mut crate::W<REG> {
         self.variant(DDB_A::ONE)
     }
 }
@@ -532,34 +530,37 @@ impl From<RPSM_A> for bool {
 impl RPSM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPSM_A {
+    pub const fn variant(&self) -> RPSM_A {
         match self.bits {
             false => RPSM_A::NORMAL,
             true => RPSM_A::RAPID,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal write mode"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == RPSM_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `RAPID`"]
+    #[doc = "Rapid write mode"]
     #[inline(always)]
     pub fn is_rapid(&self) -> bool {
         *self == RPSM_A::RAPID
     }
 }
 #[doc = "Field `rpsm` writer - Rapids Mode Select"]
-pub type RPSM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, RPSM_A, O>;
-impl<'a, const O: u8> RPSM_W<'a, O> {
+pub type RPSM_W<'a, REG> = crate::BitWriter<'a, REG, RPSM_A>;
+impl<'a, REG> RPSM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal write mode"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(RPSM_A::NORMAL)
     }
     #[doc = "Rapid write mode"]
     #[inline(always)]
-    pub fn rapid(self) -> &'a mut W {
+    pub fn rapid(self) -> &'a mut crate::W<REG> {
         self.variant(RPSM_A::RAPID)
     }
 }
@@ -582,34 +583,37 @@ impl From<SDC_A> for bool {
 impl SDC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDC_A {
+    pub const fn variant(&self) -> SDC_A {
         match self.bits {
             false => SDC_A::NORMAL,
             true => SDC_A::DELAY,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal operation, do not delay the internal read sample point"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == SDC_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `DELAY`"]
+    #[doc = "Delay the internal read sample point"]
     #[inline(always)]
     pub fn is_delay(&self) -> bool {
         *self == SDC_A::DELAY
     }
 }
 #[doc = "Field `sdc` writer - Master Sample Data Control"]
-pub type SDC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SDC_A, O>;
-impl<'a, const O: u8> SDC_W<'a, O> {
+pub type SDC_W<'a, REG> = crate::BitWriter<'a, REG, SDC_A>;
+impl<'a, REG> SDC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal operation, do not delay the internal read sample point"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(SDC_A::NORMAL)
     }
     #[doc = "Delay the internal read sample point"]
     #[inline(always)]
-    pub fn delay(self) -> &'a mut W {
+    pub fn delay(self) -> &'a mut crate::W<REG> {
         self.variant(SDC_A::DELAY)
     }
 }
@@ -632,34 +636,37 @@ impl From<FBS_A> for bool {
 impl FBS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FBS_A {
+    pub const fn variant(&self) -> FBS_A {
         match self.bits {
             false => FBS_A::MSB,
             true => FBS_A::LSB,
         }
     }
-    #[doc = "Checks if the value of the field is `MSB`"]
+    #[doc = "MSB first"]
     #[inline(always)]
     pub fn is_msb(&self) -> bool {
         *self == FBS_A::MSB
     }
-    #[doc = "Checks if the value of the field is `LSB`"]
+    #[doc = "LSB first"]
     #[inline(always)]
     pub fn is_lsb(&self) -> bool {
         *self == FBS_A::LSB
     }
 }
 #[doc = "Field `fbs` writer - First Transmit Bit Select"]
-pub type FBS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, FBS_A, O>;
-impl<'a, const O: u8> FBS_W<'a, O> {
+pub type FBS_W<'a, REG> = crate::BitWriter<'a, REG, FBS_A>;
+impl<'a, REG> FBS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "MSB first"]
     #[inline(always)]
-    pub fn msb(self) -> &'a mut W {
+    pub fn msb(self) -> &'a mut crate::W<REG> {
         self.variant(FBS_A::MSB)
     }
     #[doc = "LSB first"]
     #[inline(always)]
-    pub fn lsb(self) -> &'a mut W {
+    pub fn lsb(self) -> &'a mut crate::W<REG> {
         self.variant(FBS_A::LSB)
     }
 }
@@ -682,34 +689,37 @@ impl From<SDM_A> for bool {
 impl SDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDM_A {
+    pub const fn variant(&self) -> SDM_A {
         match self.bits {
             false => SDM_A::DELAY,
             true => SDM_A::NORMAL,
         }
     }
-    #[doc = "Checks if the value of the field is `DELAY`"]
+    #[doc = "delay sample mode"]
     #[inline(always)]
     pub fn is_delay(&self) -> bool {
         *self == SDM_A::DELAY
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "normal sample mode"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == SDM_A::NORMAL
     }
 }
 #[doc = "Field `sdm` writer - Master Sample Data Mode"]
-pub type SDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SDM_A, O>;
-impl<'a, const O: u8> SDM_W<'a, O> {
+pub type SDM_W<'a, REG> = crate::BitWriter<'a, REG, SDM_A>;
+impl<'a, REG> SDM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "delay sample mode"]
     #[inline(always)]
-    pub fn delay(self) -> &'a mut W {
+    pub fn delay(self) -> &'a mut crate::W<REG> {
         self.variant(SDM_A::DELAY)
     }
     #[doc = "normal sample mode"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(SDM_A::NORMAL)
     }
 }
@@ -732,34 +742,37 @@ impl From<SDDM_A> for bool {
 impl SDDM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDDM_A {
+    pub const fn variant(&self) -> SDDM_A {
         match self.bits {
             false => SDDM_A::NORMAL,
             true => SDDM_A::DELAY,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "normal sending"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == SDDM_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `DELAY`"]
+    #[doc = "delay sending"]
     #[inline(always)]
     pub fn is_delay(&self) -> bool {
         *self == SDDM_A::DELAY
     }
 }
 #[doc = "Field `sddm` writer - Sending Data Delay Mode"]
-pub type SDDM_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SDDM_A, O>;
-impl<'a, const O: u8> SDDM_W<'a, O> {
+pub type SDDM_W<'a, REG> = crate::BitWriter<'a, REG, SDDM_A>;
+impl<'a, REG> SDDM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "normal sending"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(SDDM_A::NORMAL)
     }
     #[doc = "delay sending"]
     #[inline(always)]
-    pub fn delay(self) -> &'a mut W {
+    pub fn delay(self) -> &'a mut crate::W<REG> {
         self.variant(SDDM_A::DELAY)
     }
 }
@@ -782,34 +795,37 @@ impl From<SDC1_A> for bool {
 impl SDC1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SDC1_A {
+    pub const fn variant(&self) -> SDC1_A {
         match self.bits {
             false => SDC1_A::NORMAL,
             true => SDC1_A::DELAY,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "normal operation, do not delay the internal read sample point"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == SDC1_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `DELAY`"]
+    #[doc = "delay the internal read sample point"]
     #[inline(always)]
     pub fn is_delay(&self) -> bool {
         *self == SDC1_A::DELAY
     }
 }
 #[doc = "Field `sdc1` writer - Master Sample Data Control register1"]
-pub type SDC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, SDC1_A, O>;
-impl<'a, const O: u8> SDC1_W<'a, O> {
+pub type SDC1_W<'a, REG> = crate::BitWriter<'a, REG, SDC1_A>;
+impl<'a, REG> SDC1_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "normal operation, do not delay the internal read sample point"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(SDC1_A::NORMAL)
     }
     #[doc = "delay the internal read sample point"]
     #[inline(always)]
-    pub fn delay(self) -> &'a mut W {
+    pub fn delay(self) -> &'a mut crate::W<REG> {
         self.variant(SDC1_A::DELAY)
     }
 }
@@ -832,34 +848,37 @@ impl From<XCH_A> for bool {
 impl XCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> XCH_A {
+    pub const fn variant(&self) -> XCH_A {
         match self.bits {
             false => XCH_A::IDLE,
             true => XCH_A::INITIATE_EXCHANGE,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == XCH_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `INITIATE_EXCHANGE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_initiate_exchange(&self) -> bool {
         *self == XCH_A::INITIATE_EXCHANGE
     }
 }
 #[doc = "Field `xch` writer - Exchange Burst"]
-pub type XCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_TCR_SPEC, XCH_A, O>;
-impl<'a, const O: u8> XCH_W<'a, O> {
+pub type XCH_W<'a, REG> = crate::BitWriter<'a, REG, XCH_A>;
+impl<'a, REG> XCH_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn idle(self) -> &'a mut W {
+    pub fn idle(self) -> &'a mut crate::W<REG> {
         self.variant(XCH_A::IDLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn initiate_exchange(self) -> &'a mut W {
+    pub fn initiate_exchange(self) -> &'a mut crate::W<REG> {
         self.variant(XCH_A::INITIATE_EXCHANGE)
     }
 }
@@ -949,118 +968,119 @@ impl W {
     #[doc = "Bit 0 - SPI Clock/Data Phase Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cpha(&mut self) -> CPHA_W<0> {
-        CPHA_W::new(self)
+    pub fn cpha(&mut self) -> CPHA_W<SPI_TCR_SPEC> {
+        CPHA_W::new(self, 0)
     }
     #[doc = "Bit 1 - SPI Clock Polarity Control"]
     #[inline(always)]
     #[must_use]
-    pub fn cpol(&mut self) -> CPOL_W<1> {
-        CPOL_W::new(self)
+    pub fn cpol(&mut self) -> CPOL_W<SPI_TCR_SPEC> {
+        CPOL_W::new(self, 1)
     }
     #[doc = "Bit 2 - SPI Chip Select Signal Polarity Control"]
     #[inline(always)]
     #[must_use]
-    pub fn spol(&mut self) -> SPOL_W<2> {
-        SPOL_W::new(self)
+    pub fn spol(&mut self) -> SPOL_W<SPI_TCR_SPEC> {
+        SPOL_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn ssctl(&mut self) -> SSCTL_W<3> {
-        SSCTL_W::new(self)
+    pub fn ssctl(&mut self) -> SSCTL_W<SPI_TCR_SPEC> {
+        SSCTL_W::new(self, 3)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
     #[must_use]
-    pub fn ss_sel(&mut self) -> SS_SEL_W<4> {
-        SS_SEL_W::new(self)
+    pub fn ss_sel(&mut self) -> SS_SEL_W<SPI_TCR_SPEC> {
+        SS_SEL_W::new(self, 4)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
     #[must_use]
-    pub fn ss_owner(&mut self) -> SS_OWNER_W<6> {
-        SS_OWNER_W::new(self)
+    pub fn ss_owner(&mut self) -> SS_OWNER_W<SPI_TCR_SPEC> {
+        SS_OWNER_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn ss_level(&mut self) -> SS_LEVEL_W<7> {
-        SS_LEVEL_W::new(self)
+    pub fn ss_level(&mut self) -> SS_LEVEL_W<SPI_TCR_SPEC> {
+        SS_LEVEL_W::new(self, 7)
     }
     #[doc = "Bit 8 - Discard Hash Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn dhb(&mut self) -> DHB_W<8> {
-        DHB_W::new(self)
+    pub fn dhb(&mut self) -> DHB_W<SPI_TCR_SPEC> {
+        DHB_W::new(self, 8)
     }
     #[doc = "Bit 9 - Dummy Burst Type"]
     #[inline(always)]
     #[must_use]
-    pub fn ddb(&mut self) -> DDB_W<9> {
-        DDB_W::new(self)
+    pub fn ddb(&mut self) -> DDB_W<SPI_TCR_SPEC> {
+        DDB_W::new(self, 9)
     }
     #[doc = "Bit 10 - Rapids Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn rpsm(&mut self) -> RPSM_W<10> {
-        RPSM_W::new(self)
+    pub fn rpsm(&mut self) -> RPSM_W<SPI_TCR_SPEC> {
+        RPSM_W::new(self, 10)
     }
     #[doc = "Bit 11 - Master Sample Data Control"]
     #[inline(always)]
     #[must_use]
-    pub fn sdc(&mut self) -> SDC_W<11> {
-        SDC_W::new(self)
+    pub fn sdc(&mut self) -> SDC_W<SPI_TCR_SPEC> {
+        SDC_W::new(self, 11)
     }
     #[doc = "Bit 12 - First Transmit Bit Select"]
     #[inline(always)]
     #[must_use]
-    pub fn fbs(&mut self) -> FBS_W<12> {
-        FBS_W::new(self)
+    pub fn fbs(&mut self) -> FBS_W<SPI_TCR_SPEC> {
+        FBS_W::new(self, 12)
     }
     #[doc = "Bit 13 - Master Sample Data Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sdm(&mut self) -> SDM_W<13> {
-        SDM_W::new(self)
+    pub fn sdm(&mut self) -> SDM_W<SPI_TCR_SPEC> {
+        SDM_W::new(self, 13)
     }
     #[doc = "Bit 14 - Sending Data Delay Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn sddm(&mut self) -> SDDM_W<14> {
-        SDDM_W::new(self)
+    pub fn sddm(&mut self) -> SDDM_W<SPI_TCR_SPEC> {
+        SDDM_W::new(self, 14)
     }
     #[doc = "Bit 15 - Master Sample Data Control register1"]
     #[inline(always)]
     #[must_use]
-    pub fn sdc1(&mut self) -> SDC1_W<15> {
-        SDC1_W::new(self)
+    pub fn sdc1(&mut self) -> SDC1_W<SPI_TCR_SPEC> {
+        SDC1_W::new(self, 15)
     }
     #[doc = "Bit 31 - Exchange Burst"]
     #[inline(always)]
     #[must_use]
-    pub fn xch(&mut self) -> XCH_W<31> {
-        XCH_W::new(self)
+    pub fn xch(&mut self) -> XCH_W<SPI_TCR_SPEC> {
+        XCH_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SPI Transfer Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_tcr](index.html) module"]
+#[doc = "SPI Transfer Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_tcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_tcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPI_TCR_SPEC;
 impl crate::RegisterSpec for SPI_TCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spi_tcr::R](R) reader structure"]
-impl crate::Readable for SPI_TCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [spi_tcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`spi_tcr::R`](R) reader structure"]
+impl crate::Readable for SPI_TCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`spi_tcr::W`](W) writer structure"]
 impl crate::Writable for SPI_TCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

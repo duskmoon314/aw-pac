@@ -1,39 +1,7 @@
 #[doc = "Register `halt` reader"]
-pub struct R(crate::R<HALT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HALT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HALT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HALT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HALT_SPEC>;
 #[doc = "Register `halt` writer"]
-pub struct W(crate::W<HALT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HALT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HALT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HALT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HALT_SPEC>;
 #[doc = "Field `halt_tx` reader - "]
 pub type HALT_TX_R = crate::BitReader<HALT_TX_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<HALT_TX_A> for bool {
 impl HALT_TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HALT_TX_A {
+    pub const fn variant(&self) -> HALT_TX_A {
         match self.bits {
             false => HALT_TX_A::DISABLED,
             true => HALT_TX_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == HALT_TX_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == HALT_TX_A::ENABLED
     }
 }
 #[doc = "Field `halt_tx` writer - "]
-pub type HALT_TX_W<'a, const O: u8> = crate::BitWriter<'a, u32, HALT_SPEC, HALT_TX_A, O>;
-impl<'a, const O: u8> HALT_TX_W<'a, O> {
+pub type HALT_TX_W<'a, REG> = crate::BitWriter<'a, REG, HALT_TX_A>;
+impl<'a, REG> HALT_TX_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(HALT_TX_A::DISABLED)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(HALT_TX_A::ENABLED)
     }
 }
@@ -103,35 +74,37 @@ impl From<CHCFG_AT_BUSY_A> for bool {
 impl CHCFG_AT_BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHCFG_AT_BUSY_A {
+    pub const fn variant(&self) -> CHCFG_AT_BUSY_A {
         match self.bits {
             false => CHCFG_AT_BUSY_A::DISABLE,
             true => CHCFG_AT_BUSY_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == CHCFG_AT_BUSY_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == CHCFG_AT_BUSY_A::ENABLE
     }
 }
 #[doc = "Field `chcfg_at_busy` writer - "]
-pub type CHCFG_AT_BUSY_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HALT_SPEC, CHCFG_AT_BUSY_A, O>;
-impl<'a, const O: u8> CHCFG_AT_BUSY_W<'a, O> {
+pub type CHCFG_AT_BUSY_W<'a, REG> = crate::BitWriter<'a, REG, CHCFG_AT_BUSY_A>;
+impl<'a, REG> CHCFG_AT_BUSY_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(CHCFG_AT_BUSY_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(CHCFG_AT_BUSY_A::ENABLE)
     }
 }
@@ -154,35 +127,37 @@ impl From<CHANGE_UPDATE_A> for bool {
 impl CHANGE_UPDATE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHANGE_UPDATE_A {
+    pub const fn variant(&self) -> CHANGE_UPDATE_A {
         match self.bits {
             false => CHANGE_UPDATE_A::FINISHED,
             true => CHANGE_UPDATE_A::UPDATE_TRIGGER,
         }
     }
-    #[doc = "Checks if the value of the field is `FINISHED`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_finished(&self) -> bool {
         *self == CHANGE_UPDATE_A::FINISHED
     }
-    #[doc = "Checks if the value of the field is `UPDATE_TRIGGER`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_update_trigger(&self) -> bool {
         *self == CHANGE_UPDATE_A::UPDATE_TRIGGER
     }
 }
 #[doc = "Field `change_update` writer - "]
-pub type CHANGE_UPDATE_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HALT_SPEC, CHANGE_UPDATE_A, O>;
-impl<'a, const O: u8> CHANGE_UPDATE_W<'a, O> {
+pub type CHANGE_UPDATE_W<'a, REG> = crate::BitWriter<'a, REG, CHANGE_UPDATE_A>;
+impl<'a, REG> CHANGE_UPDATE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn finished(self) -> &'a mut W {
+    pub fn finished(self) -> &'a mut crate::W<REG> {
         self.variant(CHANGE_UPDATE_A::FINISHED)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn update_trigger(self) -> &'a mut W {
+    pub fn update_trigger(self) -> &'a mut crate::W<REG> {
         self.variant(CHANGE_UPDATE_A::UPDATE_TRIGGER)
     }
 }
@@ -205,35 +180,37 @@ impl From<SIR_TX_INVERT_A> for bool {
 impl SIR_TX_INVERT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SIR_TX_INVERT_A {
+    pub const fn variant(&self) -> SIR_TX_INVERT_A {
         match self.bits {
             false => SIR_TX_INVERT_A::NOT_INVERT,
             true => SIR_TX_INVERT_A::INVERT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_INVERT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_invert(&self) -> bool {
         *self == SIR_TX_INVERT_A::NOT_INVERT
     }
-    #[doc = "Checks if the value of the field is `INVERT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_invert(&self) -> bool {
         *self == SIR_TX_INVERT_A::INVERT
     }
 }
 #[doc = "Field `sir_tx_invert` writer - SIR TX Pulse Polarity Invert"]
-pub type SIR_TX_INVERT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HALT_SPEC, SIR_TX_INVERT_A, O>;
-impl<'a, const O: u8> SIR_TX_INVERT_W<'a, O> {
+pub type SIR_TX_INVERT_W<'a, REG> = crate::BitWriter<'a, REG, SIR_TX_INVERT_A>;
+impl<'a, REG> SIR_TX_INVERT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not_invert(self) -> &'a mut W {
+    pub fn not_invert(self) -> &'a mut crate::W<REG> {
         self.variant(SIR_TX_INVERT_A::NOT_INVERT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn invert(self) -> &'a mut W {
+    pub fn invert(self) -> &'a mut crate::W<REG> {
         self.variant(SIR_TX_INVERT_A::INVERT)
     }
 }
@@ -256,46 +233,48 @@ impl From<SIR_RX_INVERT_A> for bool {
 impl SIR_RX_INVERT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SIR_RX_INVERT_A {
+    pub const fn variant(&self) -> SIR_RX_INVERT_A {
         match self.bits {
             false => SIR_RX_INVERT_A::NOT_INVERT,
             true => SIR_RX_INVERT_A::INVERT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_INVERT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_invert(&self) -> bool {
         *self == SIR_RX_INVERT_A::NOT_INVERT
     }
-    #[doc = "Checks if the value of the field is `INVERT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_invert(&self) -> bool {
         *self == SIR_RX_INVERT_A::INVERT
     }
 }
 #[doc = "Field `sir_rx_invert` writer - SIR RX Pulse Polarity Invert"]
-pub type SIR_RX_INVERT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HALT_SPEC, SIR_RX_INVERT_A, O>;
-impl<'a, const O: u8> SIR_RX_INVERT_W<'a, O> {
+pub type SIR_RX_INVERT_W<'a, REG> = crate::BitWriter<'a, REG, SIR_RX_INVERT_A>;
+impl<'a, REG> SIR_RX_INVERT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not_invert(self) -> &'a mut W {
+    pub fn not_invert(self) -> &'a mut crate::W<REG> {
         self.variant(SIR_RX_INVERT_A::NOT_INVERT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn invert(self) -> &'a mut W {
+    pub fn invert(self) -> &'a mut crate::W<REG> {
         self.variant(SIR_RX_INVERT_A::INVERT)
     }
 }
 #[doc = "Field `dma_pte_rx` reader - The Transmission of RX_DRQ"]
-pub type DMA_PTE_RX_R = crate::BitReader<bool>;
+pub type DMA_PTE_RX_R = crate::BitReader;
 #[doc = "Field `dma_pte_rx` writer - The Transmission of RX_DRQ"]
-pub type DMA_PTE_RX_W<'a, const O: u8> = crate::BitWriter<'a, u32, HALT_SPEC, bool, O>;
+pub type DMA_PTE_RX_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `pte` reader - The sending of TX_REQ"]
-pub type PTE_R = crate::BitReader<bool>;
+pub type PTE_R = crate::BitReader;
 #[doc = "Field `pte` writer - The sending of TX_REQ"]
-pub type PTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, HALT_SPEC, bool, O>;
+pub type PTE_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -337,64 +316,65 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn halt_tx(&mut self) -> HALT_TX_W<0> {
-        HALT_TX_W::new(self)
+    pub fn halt_tx(&mut self) -> HALT_TX_W<HALT_SPEC> {
+        HALT_TX_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn chcfg_at_busy(&mut self) -> CHCFG_AT_BUSY_W<1> {
-        CHCFG_AT_BUSY_W::new(self)
+    pub fn chcfg_at_busy(&mut self) -> CHCFG_AT_BUSY_W<HALT_SPEC> {
+        CHCFG_AT_BUSY_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn change_update(&mut self) -> CHANGE_UPDATE_W<2> {
-        CHANGE_UPDATE_W::new(self)
+    pub fn change_update(&mut self) -> CHANGE_UPDATE_W<HALT_SPEC> {
+        CHANGE_UPDATE_W::new(self, 2)
     }
     #[doc = "Bit 4 - SIR TX Pulse Polarity Invert"]
     #[inline(always)]
     #[must_use]
-    pub fn sir_tx_invert(&mut self) -> SIR_TX_INVERT_W<4> {
-        SIR_TX_INVERT_W::new(self)
+    pub fn sir_tx_invert(&mut self) -> SIR_TX_INVERT_W<HALT_SPEC> {
+        SIR_TX_INVERT_W::new(self, 4)
     }
     #[doc = "Bit 5 - SIR RX Pulse Polarity Invert"]
     #[inline(always)]
     #[must_use]
-    pub fn sir_rx_invert(&mut self) -> SIR_RX_INVERT_W<5> {
-        SIR_RX_INVERT_W::new(self)
+    pub fn sir_rx_invert(&mut self) -> SIR_RX_INVERT_W<HALT_SPEC> {
+        SIR_RX_INVERT_W::new(self, 5)
     }
     #[doc = "Bit 6 - The Transmission of RX_DRQ"]
     #[inline(always)]
     #[must_use]
-    pub fn dma_pte_rx(&mut self) -> DMA_PTE_RX_W<6> {
-        DMA_PTE_RX_W::new(self)
+    pub fn dma_pte_rx(&mut self) -> DMA_PTE_RX_W<HALT_SPEC> {
+        DMA_PTE_RX_W::new(self, 6)
     }
     #[doc = "Bit 7 - The sending of TX_REQ"]
     #[inline(always)]
     #[must_use]
-    pub fn pte(&mut self) -> PTE_W<7> {
-        PTE_W::new(self)
+    pub fn pte(&mut self) -> PTE_W<HALT_SPEC> {
+        PTE_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UART Halt TX Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [halt](index.html) module"]
+#[doc = "UART Halt TX Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`halt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`halt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HALT_SPEC;
 impl crate::RegisterSpec for HALT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [halt::R](R) reader structure"]
-impl crate::Readable for HALT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [halt::W](W) writer structure"]
+#[doc = "`read()` method returns [`halt::R`](R) reader structure"]
+impl crate::Readable for HALT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`halt::W`](W) writer structure"]
 impl crate::Writable for HALT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

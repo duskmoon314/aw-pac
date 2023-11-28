@@ -1,55 +1,23 @@
 #[doc = "Register `rxdma_is` reader"]
-pub struct R(crate::R<RXDMA_IS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXDMA_IS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXDMA_IS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXDMA_IS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RXDMA_IS_SPEC>;
 #[doc = "Register `rxdma_is` writer"]
-pub struct W(crate::W<RXDMA_IS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RXDMA_IS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RXDMA_IS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RXDMA_IS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RXDMA_IS_SPEC>;
 #[doc = "Field `limit_done` reader - "]
-pub type LIMIT_DONE_R = crate::BitReader<bool>;
+pub type LIMIT_DONE_R = crate::BitReader;
 #[doc = "Field `limit_done` writer - "]
-pub type LIMIT_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
+pub type LIMIT_DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `blk_done` reader - "]
-pub type BLK_DONE_R = crate::BitReader<bool>;
+pub type BLK_DONE_R = crate::BitReader;
 #[doc = "Field `blk_done` writer - "]
-pub type BLK_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
+pub type BLK_DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `timeout_done` reader - "]
-pub type TIMEOUT_DONE_R = crate::BitReader<bool>;
+pub type TIMEOUT_DONE_R = crate::BitReader;
 #[doc = "Field `timeout_done` writer - "]
-pub type TIMEOUT_DONE_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
+pub type TIMEOUT_DONE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `buffer_overrun` reader - "]
-pub type BUFFER_OVERRUN_R = crate::BitReader<bool>;
+pub type BUFFER_OVERRUN_R = crate::BitReader;
 #[doc = "Field `buffer_overrun` writer - "]
-pub type BUFFER_OVERRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, RXDMA_IS_SPEC, bool, O>;
+pub type BUFFER_OVERRUN_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -76,46 +44,47 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn limit_done(&mut self) -> LIMIT_DONE_W<0> {
-        LIMIT_DONE_W::new(self)
+    pub fn limit_done(&mut self) -> LIMIT_DONE_W<RXDMA_IS_SPEC> {
+        LIMIT_DONE_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn blk_done(&mut self) -> BLK_DONE_W<1> {
-        BLK_DONE_W::new(self)
+    pub fn blk_done(&mut self) -> BLK_DONE_W<RXDMA_IS_SPEC> {
+        BLK_DONE_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
     #[must_use]
-    pub fn timeout_done(&mut self) -> TIMEOUT_DONE_W<2> {
-        TIMEOUT_DONE_W::new(self)
+    pub fn timeout_done(&mut self) -> TIMEOUT_DONE_W<RXDMA_IS_SPEC> {
+        TIMEOUT_DONE_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn buffer_overrun(&mut self) -> BUFFER_OVERRUN_W<3> {
-        BUFFER_OVERRUN_W::new(self)
+    pub fn buffer_overrun(&mut self) -> BUFFER_OVERRUN_W<RXDMA_IS_SPEC> {
+        BUFFER_OVERRUN_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UART RXDMA Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdma_is](index.html) module"]
+#[doc = "UART RXDMA Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdma_is::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rxdma_is::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDMA_IS_SPEC;
 impl crate::RegisterSpec for RXDMA_IS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxdma_is::R](R) reader structure"]
-impl crate::Readable for RXDMA_IS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rxdma_is::W](W) writer structure"]
+#[doc = "`read()` method returns [`rxdma_is::R`](R) reader structure"]
+impl crate::Readable for RXDMA_IS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rxdma_is::W`](W) writer structure"]
 impl crate::Writable for RXDMA_IS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

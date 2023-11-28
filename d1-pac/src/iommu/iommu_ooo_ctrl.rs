@@ -1,39 +1,7 @@
 #[doc = "Register `iommu_ooo_ctrl` reader"]
-pub struct R(crate::R<IOMMU_OOO_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<IOMMU_OOO_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<IOMMU_OOO_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<IOMMU_OOO_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<IOMMU_OOO_CTRL_SPEC>;
 #[doc = "Register `iommu_ooo_ctrl` writer"]
-pub struct W(crate::W<IOMMU_OOO_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<IOMMU_OOO_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<IOMMU_OOO_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<IOMMU_OOO_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<IOMMU_OOO_CTRL_SPEC>;
 #[doc = "Field `m_ooo_ctrl[0-6]` reader - Master\\[i\\] out-of-order control bit"]
 pub type M_OOO_CTRL_R = crate::BitReader<M_OOO_CTRL_A>;
 #[doc = "Master\\[i\\] out-of-order control bit\n\nValue on reset: 1"]
@@ -53,42 +21,46 @@ impl From<M_OOO_CTRL_A> for bool {
 impl M_OOO_CTRL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> M_OOO_CTRL_A {
+    pub const fn variant(&self) -> M_OOO_CTRL_A {
         match self.bits {
             false => M_OOO_CTRL_A::DISABLE,
             true => M_OOO_CTRL_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable out-of-order"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == M_OOO_CTRL_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable out-of-order"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == M_OOO_CTRL_A::ENABLE
     }
 }
 #[doc = "Field `m_ooo_ctrl[0-6]` writer - Master\\[i\\] out-of-order control bit"]
-pub type M_OOO_CTRL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, IOMMU_OOO_CTRL_SPEC, M_OOO_CTRL_A, O>;
-impl<'a, const O: u8> M_OOO_CTRL_W<'a, O> {
+pub type M_OOO_CTRL_W<'a, REG> = crate::BitWriter<'a, REG, M_OOO_CTRL_A>;
+impl<'a, REG> M_OOO_CTRL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable out-of-order"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(M_OOO_CTRL_A::DISABLE)
     }
     #[doc = "Enable out-of-order"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(M_OOO_CTRL_A::ENABLE)
     }
 }
 impl R {
-    #[doc = "Master\\[i\\] out-of-order control bit"]
+    #[doc = "Master\\[i\\] out-of-order control bit\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `m0_ooo_ctrl` field"]
     #[inline(always)]
-    pub unsafe fn m_ooo_ctrl(&self, n: u8) -> M_OOO_CTRL_R {
+    pub fn m_ooo_ctrl(&self, n: u8) -> M_OOO_CTRL_R {
+        #[allow(clippy::no_effect)]
+        [(); 7][n as usize];
         M_OOO_CTRL_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Master\\[i\\] out-of-order control bit"]
@@ -128,73 +100,76 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Master\\[i\\] out-of-order control bit"]
+    #[doc = "Master\\[i\\] out-of-order control bit\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `m0_ooo_ctrl` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn m_ooo_ctrl<const O: u8>(&mut self) -> M_OOO_CTRL_W<O> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m_ooo_ctrl(&mut self, n: u8) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 7][n as usize];
+        M_OOO_CTRL_W::new(self, n)
     }
     #[doc = "Bit 0 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
     #[must_use]
-    pub fn m0_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<0> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m0_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        M_OOO_CTRL_W::new(self, 0)
     }
     #[doc = "Bit 1 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
     #[must_use]
-    pub fn m1_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<1> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m1_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        M_OOO_CTRL_W::new(self, 1)
     }
     #[doc = "Bit 2 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
     #[must_use]
-    pub fn m2_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<2> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m2_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        M_OOO_CTRL_W::new(self, 2)
     }
     #[doc = "Bit 3 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
     #[must_use]
-    pub fn m3_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<3> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m3_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        M_OOO_CTRL_W::new(self, 3)
     }
     #[doc = "Bit 4 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
     #[must_use]
-    pub fn m4_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<4> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m4_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        M_OOO_CTRL_W::new(self, 4)
     }
     #[doc = "Bit 5 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
     #[must_use]
-    pub fn m5_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<5> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m5_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        M_OOO_CTRL_W::new(self, 5)
     }
     #[doc = "Bit 6 - Master\\[i\\] out-of-order control bit"]
     #[inline(always)]
     #[must_use]
-    pub fn m6_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<6> {
-        M_OOO_CTRL_W::new(self)
+    pub fn m6_ooo_ctrl(&mut self) -> M_OOO_CTRL_W<IOMMU_OOO_CTRL_SPEC> {
+        M_OOO_CTRL_W::new(self, 6)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "IOMMU Out of Order Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [iommu_ooo_ctrl](index.html) module"]
+#[doc = "IOMMU Out of Order Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`iommu_ooo_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`iommu_ooo_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IOMMU_OOO_CTRL_SPEC;
 impl crate::RegisterSpec for IOMMU_OOO_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [iommu_ooo_ctrl::R](R) reader structure"]
-impl crate::Readable for IOMMU_OOO_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [iommu_ooo_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`iommu_ooo_ctrl::R`](R) reader structure"]
+impl crate::Readable for IOMMU_OOO_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`iommu_ooo_ctrl::W`](W) writer structure"]
 impl crate::Writable for IOMMU_OOO_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

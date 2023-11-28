@@ -1,39 +1,7 @@
 #[doc = "Register `i2s_pcm_ctl` reader"]
-pub struct R(crate::R<I2S_PCM_CTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<I2S_PCM_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<I2S_PCM_CTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<I2S_PCM_CTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<I2S_PCM_CTL_SPEC>;
 #[doc = "Register `i2s_pcm_ctl` writer"]
-pub struct W(crate::W<I2S_PCM_CTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<I2S_PCM_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<I2S_PCM_CTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<I2S_PCM_CTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<I2S_PCM_CTL_SPEC>;
 #[doc = "Field `gen` reader - Global Enable"]
 pub type GEN_R = crate::BitReader<GEN_A>;
 #[doc = "Global Enable\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<GEN_A> for bool {
 impl GEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> GEN_A {
+    pub const fn variant(&self) -> GEN_A {
         match self.bits {
             false => GEN_A::DISABLE,
             true => GEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == GEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == GEN_A::ENABLE
     }
 }
 #[doc = "Field `gen` writer - Global Enable"]
-pub type GEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, GEN_A, O>;
-impl<'a, const O: u8> GEN_W<'a, O> {
+pub type GEN_W<'a, REG> = crate::BitWriter<'a, REG, GEN_A>;
+impl<'a, REG> GEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(GEN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(GEN_A::ENABLE)
     }
 }
@@ -103,34 +74,37 @@ impl From<RXEN_A> for bool {
 impl RXEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXEN_A {
+    pub const fn variant(&self) -> RXEN_A {
         match self.bits {
             false => RXEN_A::DISABLE,
             true => RXEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RXEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RXEN_A::ENABLE
     }
 }
 #[doc = "Field `rxen` writer - Receiver Block Enable"]
-pub type RXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, RXEN_A, O>;
-impl<'a, const O: u8> RXEN_W<'a, O> {
+pub type RXEN_W<'a, REG> = crate::BitWriter<'a, REG, RXEN_A>;
+impl<'a, REG> RXEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RXEN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RXEN_A::ENABLE)
     }
 }
@@ -153,34 +127,37 @@ impl From<TXEN_A> for bool {
 impl TXEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXEN_A {
+    pub const fn variant(&self) -> TXEN_A {
         match self.bits {
             false => TXEN_A::DISABLE,
             true => TXEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TXEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TXEN_A::ENABLE
     }
 }
 #[doc = "Field `txen` writer - Transmitter Block Enable"]
-pub type TXEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, TXEN_A, O>;
-impl<'a, const O: u8> TXEN_W<'a, O> {
+pub type TXEN_W<'a, REG> = crate::BitWriter<'a, REG, TXEN_A>;
+impl<'a, REG> TXEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TXEN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TXEN_A::ENABLE)
     }
 }
@@ -203,39 +180,42 @@ impl From<LOOPBACK_A> for bool {
 impl LOOPBACK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LOOPBACK_A {
+    pub const fn variant(&self) -> LOOPBACK_A {
         match self.bits {
             false => LOOPBACK_A::NORMAL,
             true => LOOPBACK_A::TEST,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == LOOPBACK_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `TEST`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_test(&self) -> bool {
         *self == LOOPBACK_A::TEST
     }
 }
 #[doc = "Field `loopback` writer - Loopback Test"]
-pub type LOOPBACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, LOOPBACK_A, O>;
-impl<'a, const O: u8> LOOPBACK_W<'a, O> {
+pub type LOOPBACK_W<'a, REG> = crate::BitWriter<'a, REG, LOOPBACK_A>;
+impl<'a, REG> LOOPBACK_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(LOOPBACK_A::NORMAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn test(self) -> &'a mut W {
+    pub fn test(self) -> &'a mut crate::W<REG> {
         self.variant(LOOPBACK_A::TEST)
     }
 }
 #[doc = "Field `mode_sel` reader - Mode Selection"]
-pub type MODE_SEL_R = crate::FieldReader<u8, MODE_SEL_A>;
+pub type MODE_SEL_R = crate::FieldReader<MODE_SEL_A>;
 #[doc = "Mode Selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -253,10 +233,13 @@ impl From<MODE_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MODE_SEL_A {
+    type Ux = u8;
+}
 impl MODE_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_SEL_A {
+    pub const fn variant(&self) -> MODE_SEL_A {
         match self.bits {
             0 => MODE_SEL_A::PCM,
             1 => MODE_SEL_A::LEFT,
@@ -264,39 +247,42 @@ impl MODE_SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PCM`"]
+    #[doc = "PCM Mode (offset 0: Long Frame, offset 1: Short Frame)"]
     #[inline(always)]
     pub fn is_pcm(&self) -> bool {
         *self == MODE_SEL_A::PCM
     }
-    #[doc = "Checks if the value of the field is `LEFT`"]
+    #[doc = "Left-justified Mode (offset 0: LJ Mode, offset 1: I2S Mode)"]
     #[inline(always)]
     pub fn is_left(&self) -> bool {
         *self == MODE_SEL_A::LEFT
     }
-    #[doc = "Checks if the value of the field is `RIGHT`"]
+    #[doc = "Right-justified Mode"]
     #[inline(always)]
     pub fn is_right(&self) -> bool {
         *self == MODE_SEL_A::RIGHT
     }
 }
 #[doc = "Field `mode_sel` writer - Mode Selection"]
-pub type MODE_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, I2S_PCM_CTL_SPEC, u8, MODE_SEL_A, 2, O>;
-impl<'a, const O: u8> MODE_SEL_W<'a, O> {
+pub type MODE_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, MODE_SEL_A>;
+impl<'a, REG> MODE_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "PCM Mode (offset 0: Long Frame, offset 1: Short Frame)"]
     #[inline(always)]
-    pub fn pcm(self) -> &'a mut W {
+    pub fn pcm(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_SEL_A::PCM)
     }
     #[doc = "Left-justified Mode (offset 0: LJ Mode, offset 1: I2S Mode)"]
     #[inline(always)]
-    pub fn left(self) -> &'a mut W {
+    pub fn left(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_SEL_A::LEFT)
     }
     #[doc = "Right-justified Mode"]
     #[inline(always)]
-    pub fn right(self) -> &'a mut W {
+    pub fn right(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_SEL_A::RIGHT)
     }
 }
@@ -319,34 +305,37 @@ impl From<OUT_MUTE_A> for bool {
 impl OUT_MUTE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> OUT_MUTE_A {
+    pub const fn variant(&self) -> OUT_MUTE_A {
         match self.bits {
             false => OUT_MUTE_A::NORMAL,
             true => OUT_MUTE_A::ZERO,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == OUT_MUTE_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `ZERO`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
         *self == OUT_MUTE_A::ZERO
     }
 }
 #[doc = "Field `out_mute` writer - Data Output Mute Enable"]
-pub type OUT_MUTE_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, OUT_MUTE_A, O>;
-impl<'a, const O: u8> OUT_MUTE_W<'a, O> {
+pub type OUT_MUTE_W<'a, REG> = crate::BitWriter<'a, REG, OUT_MUTE_A>;
+impl<'a, REG> OUT_MUTE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(OUT_MUTE_A::NORMAL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn zero(self) -> &'a mut W {
+    pub fn zero(self) -> &'a mut crate::W<REG> {
         self.variant(OUT_MUTE_A::ZERO)
     }
 }
@@ -369,34 +358,37 @@ impl From<DOUT_EN_A> for bool {
 impl DOUT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DOUT_EN_A {
+    pub const fn variant(&self) -> DOUT_EN_A {
         match self.bits {
             false => DOUT_EN_A::DISABLE,
             true => DOUT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled, Hi-Z State"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == DOUT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == DOUT_EN_A::ENABLE
     }
 }
 #[doc = "Field `dout_en[0-3]` writer - Data%s Output Enable"]
-pub type DOUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, DOUT_EN_A, O>;
-impl<'a, const O: u8> DOUT_EN_W<'a, O> {
+pub type DOUT_EN_W<'a, REG> = crate::BitWriter<'a, REG, DOUT_EN_A>;
+impl<'a, REG> DOUT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled, Hi-Z State"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(DOUT_EN_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(DOUT_EN_A::ENABLE)
     }
 }
@@ -419,34 +411,37 @@ impl From<LRCK_OUT_A> for bool {
 impl LRCK_OUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LRCK_OUT_A {
+    pub const fn variant(&self) -> LRCK_OUT_A {
         match self.bits {
             false => LRCK_OUT_A::INPUT,
             true => LRCK_OUT_A::OUTPUT,
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
         *self == LRCK_OUT_A::INPUT
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == LRCK_OUT_A::OUTPUT
     }
 }
 #[doc = "Field `lrck_out` writer - LRCK Direction Select"]
-pub type LRCK_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, LRCK_OUT_A, O>;
-impl<'a, const O: u8> LRCK_OUT_W<'a, O> {
+pub type LRCK_OUT_W<'a, REG> = crate::BitWriter<'a, REG, LRCK_OUT_A>;
+impl<'a, REG> LRCK_OUT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn input(self) -> &'a mut W {
+    pub fn input(self) -> &'a mut crate::W<REG> {
         self.variant(LRCK_OUT_A::INPUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(LRCK_OUT_A::OUTPUT)
     }
 }
@@ -469,34 +464,37 @@ impl From<BCLK_OUT_A> for bool {
 impl BCLK_OUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BCLK_OUT_A {
+    pub const fn variant(&self) -> BCLK_OUT_A {
         match self.bits {
             false => BCLK_OUT_A::INPUT,
             true => BCLK_OUT_A::OUTPUT,
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
         *self == BCLK_OUT_A::INPUT
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == BCLK_OUT_A::OUTPUT
     }
 }
 #[doc = "Field `bclk_out` writer - Bit Clock Direction Select"]
-pub type BCLK_OUT_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, BCLK_OUT_A, O>;
-impl<'a, const O: u8> BCLK_OUT_W<'a, O> {
+pub type BCLK_OUT_W<'a, REG> = crate::BitWriter<'a, REG, BCLK_OUT_A>;
+impl<'a, REG> BCLK_OUT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn input(self) -> &'a mut W {
+    pub fn input(self) -> &'a mut crate::W<REG> {
         self.variant(BCLK_OUT_A::INPUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(BCLK_OUT_A::OUTPUT)
     }
 }
@@ -519,35 +517,37 @@ impl From<RX_SYNC_EN_A> for bool {
 impl RX_SYNC_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_SYNC_EN_A {
+    pub const fn variant(&self) -> RX_SYNC_EN_A {
         match self.bits {
             false => RX_SYNC_EN_A::DISABLE,
             true => RX_SYNC_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RX_SYNC_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RX_SYNC_EN_A::ENABLE
     }
 }
 #[doc = "Field `rx_sync_en` writer - RX Synchronize Enable"]
-pub type RX_SYNC_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, RX_SYNC_EN_A, O>;
-impl<'a, const O: u8> RX_SYNC_EN_W<'a, O> {
+pub type RX_SYNC_EN_W<'a, REG> = crate::BitWriter<'a, REG, RX_SYNC_EN_A>;
+impl<'a, REG> RX_SYNC_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_SYNC_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_SYNC_EN_A::ENABLE)
     }
 }
@@ -570,35 +570,37 @@ impl From<RX_SYNC_EN_START_A> for bool {
 impl RX_SYNC_EN_START_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_SYNC_EN_START_A {
+    pub const fn variant(&self) -> RX_SYNC_EN_START_A {
         match self.bits {
             false => RX_SYNC_EN_START_A::DISABLE,
             true => RX_SYNC_EN_START_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RX_SYNC_EN_START_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RX_SYNC_EN_START_A::ENABLE
     }
 }
 #[doc = "Field `rx_sync_en_start` writer - RX Synchronize Enable Start"]
-pub type RX_SYNC_EN_START_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, I2S_PCM_CTL_SPEC, RX_SYNC_EN_START_A, O>;
-impl<'a, const O: u8> RX_SYNC_EN_START_W<'a, O> {
+pub type RX_SYNC_EN_START_W<'a, REG> = crate::BitWriter<'a, REG, RX_SYNC_EN_START_A>;
+impl<'a, REG> RX_SYNC_EN_START_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_SYNC_EN_START_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_SYNC_EN_START_A::ENABLE)
     }
 }
@@ -633,9 +635,11 @@ impl R {
     pub fn out_mute(&self) -> OUT_MUTE_R {
         OUT_MUTE_R::new(((self.bits >> 6) & 1) != 0)
     }
-    #[doc = "Data[0-3] Output Enable"]
+    #[doc = "Data[0-3] Output Enable\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `dout0_en` field"]
     #[inline(always)]
-    pub unsafe fn dout_en(&self, n: u8) -> DOUT_EN_R {
+    pub fn dout_en(&self, n: u8) -> DOUT_EN_R {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
         DOUT_EN_R::new(((self.bits >> (n + 8)) & 1) != 0)
     }
     #[doc = "Bit 8 - Data0 Output Enable"]
@@ -683,112 +687,115 @@ impl W {
     #[doc = "Bit 0 - Global Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn gen(&mut self) -> GEN_W<0> {
-        GEN_W::new(self)
+    pub fn gen(&mut self) -> GEN_W<I2S_PCM_CTL_SPEC> {
+        GEN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receiver Block Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxen(&mut self) -> RXEN_W<1> {
-        RXEN_W::new(self)
+    pub fn rxen(&mut self) -> RXEN_W<I2S_PCM_CTL_SPEC> {
+        RXEN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Transmitter Block Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txen(&mut self) -> TXEN_W<2> {
-        TXEN_W::new(self)
+    pub fn txen(&mut self) -> TXEN_W<I2S_PCM_CTL_SPEC> {
+        TXEN_W::new(self, 2)
     }
     #[doc = "Bit 3 - Loopback Test"]
     #[inline(always)]
     #[must_use]
-    pub fn loopback(&mut self) -> LOOPBACK_W<3> {
-        LOOPBACK_W::new(self)
+    pub fn loopback(&mut self) -> LOOPBACK_W<I2S_PCM_CTL_SPEC> {
+        LOOPBACK_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Mode Selection"]
     #[inline(always)]
     #[must_use]
-    pub fn mode_sel(&mut self) -> MODE_SEL_W<4> {
-        MODE_SEL_W::new(self)
+    pub fn mode_sel(&mut self) -> MODE_SEL_W<I2S_PCM_CTL_SPEC> {
+        MODE_SEL_W::new(self, 4)
     }
     #[doc = "Bit 6 - Data Output Mute Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn out_mute(&mut self) -> OUT_MUTE_W<6> {
-        OUT_MUTE_W::new(self)
+    pub fn out_mute(&mut self) -> OUT_MUTE_W<I2S_PCM_CTL_SPEC> {
+        OUT_MUTE_W::new(self, 6)
     }
-    #[doc = "Data[0-3] Output Enable"]
+    #[doc = "Data[0-3] Output Enable\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `dout0_en` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn dout_en<const O: u8>(&mut self) -> DOUT_EN_W<O> {
-        DOUT_EN_W::new(self)
+    pub fn dout_en(&mut self, n: u8) -> DOUT_EN_W<I2S_PCM_CTL_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
+        DOUT_EN_W::new(self, n + 8)
     }
     #[doc = "Bit 8 - Data0 Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dout0_en(&mut self) -> DOUT_EN_W<8> {
-        DOUT_EN_W::new(self)
+    pub fn dout0_en(&mut self) -> DOUT_EN_W<I2S_PCM_CTL_SPEC> {
+        DOUT_EN_W::new(self, 8)
     }
     #[doc = "Bit 9 - Data1 Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dout1_en(&mut self) -> DOUT_EN_W<9> {
-        DOUT_EN_W::new(self)
+    pub fn dout1_en(&mut self) -> DOUT_EN_W<I2S_PCM_CTL_SPEC> {
+        DOUT_EN_W::new(self, 9)
     }
     #[doc = "Bit 10 - Data2 Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dout2_en(&mut self) -> DOUT_EN_W<10> {
-        DOUT_EN_W::new(self)
+    pub fn dout2_en(&mut self) -> DOUT_EN_W<I2S_PCM_CTL_SPEC> {
+        DOUT_EN_W::new(self, 10)
     }
     #[doc = "Bit 11 - Data3 Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dout3_en(&mut self) -> DOUT_EN_W<11> {
-        DOUT_EN_W::new(self)
+    pub fn dout3_en(&mut self) -> DOUT_EN_W<I2S_PCM_CTL_SPEC> {
+        DOUT_EN_W::new(self, 11)
     }
     #[doc = "Bit 17 - LRCK Direction Select"]
     #[inline(always)]
     #[must_use]
-    pub fn lrck_out(&mut self) -> LRCK_OUT_W<17> {
-        LRCK_OUT_W::new(self)
+    pub fn lrck_out(&mut self) -> LRCK_OUT_W<I2S_PCM_CTL_SPEC> {
+        LRCK_OUT_W::new(self, 17)
     }
     #[doc = "Bit 18 - Bit Clock Direction Select"]
     #[inline(always)]
     #[must_use]
-    pub fn bclk_out(&mut self) -> BCLK_OUT_W<18> {
-        BCLK_OUT_W::new(self)
+    pub fn bclk_out(&mut self) -> BCLK_OUT_W<I2S_PCM_CTL_SPEC> {
+        BCLK_OUT_W::new(self, 18)
     }
     #[doc = "Bit 20 - RX Synchronize Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_sync_en(&mut self) -> RX_SYNC_EN_W<20> {
-        RX_SYNC_EN_W::new(self)
+    pub fn rx_sync_en(&mut self) -> RX_SYNC_EN_W<I2S_PCM_CTL_SPEC> {
+        RX_SYNC_EN_W::new(self, 20)
     }
     #[doc = "Bit 21 - RX Synchronize Enable Start"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_sync_en_start(&mut self) -> RX_SYNC_EN_START_W<21> {
-        RX_SYNC_EN_START_W::new(self)
+    pub fn rx_sync_en_start(&mut self) -> RX_SYNC_EN_START_W<I2S_PCM_CTL_SPEC> {
+        RX_SYNC_EN_START_W::new(self, 21)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "I2S/PCM Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2s_pcm_ctl](index.html) module"]
+#[doc = "I2S/PCM Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2s_pcm_ctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2s_pcm_ctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2S_PCM_CTL_SPEC;
 impl crate::RegisterSpec for I2S_PCM_CTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [i2s_pcm_ctl::R](R) reader structure"]
-impl crate::Readable for I2S_PCM_CTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [i2s_pcm_ctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`i2s_pcm_ctl::R`](R) reader structure"]
+impl crate::Readable for I2S_PCM_CTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`i2s_pcm_ctl::W`](W) writer structure"]
 impl crate::Writable for I2S_PCM_CTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

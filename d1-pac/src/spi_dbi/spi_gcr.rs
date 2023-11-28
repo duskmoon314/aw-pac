@@ -1,39 +1,7 @@
 #[doc = "Register `spi_gcr` reader"]
-pub struct R(crate::R<SPI_GCR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SPI_GCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SPI_GCR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SPI_GCR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SPI_GCR_SPEC>;
 #[doc = "Register `spi_gcr` writer"]
-pub struct W(crate::W<SPI_GCR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SPI_GCR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SPI_GCR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SPI_GCR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SPI_GCR_SPEC>;
 #[doc = "Field `en` reader - SPI Module Enable Control"]
 pub type EN_R = crate::BitReader<EN_A>;
 #[doc = "SPI Module Enable Control\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<EN_A> for bool {
 impl EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> EN_A {
+    pub const fn variant(&self) -> EN_A {
         match self.bits {
             false => EN_A::DISABLE,
             true => EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == EN_A::ENABLE
     }
 }
 #[doc = "Field `en` writer - SPI Module Enable Control"]
-pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, EN_A, O>;
-impl<'a, const O: u8> EN_W<'a, O> {
+pub type EN_W<'a, REG> = crate::BitWriter<'a, REG, EN_A>;
+impl<'a, REG> EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(EN_A::ENABLE)
     }
 }
@@ -103,34 +74,37 @@ impl From<MODE_A> for bool {
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_A {
+    pub const fn variant(&self) -> MODE_A {
         match self.bits {
             false => MODE_A::SLAVE,
             true => MODE_A::MASTER,
         }
     }
-    #[doc = "Checks if the value of the field is `SLAVE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_slave(&self) -> bool {
         *self == MODE_A::SLAVE
     }
-    #[doc = "Checks if the value of the field is `MASTER`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_master(&self) -> bool {
         *self == MODE_A::MASTER
     }
 }
 #[doc = "Field `mode` writer - SPI Function Mode Select"]
-pub type MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_A, O>;
-impl<'a, const O: u8> MODE_W<'a, O> {
+pub type MODE_W<'a, REG> = crate::BitWriter<'a, REG, MODE_A>;
+impl<'a, REG> MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn slave(self) -> &'a mut W {
+    pub fn slave(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::SLAVE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn master(self) -> &'a mut W {
+    pub fn master(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_A::MASTER)
     }
 }
@@ -153,34 +127,37 @@ impl From<MODE_SELEC_A> for bool {
 impl MODE_SELEC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MODE_SELEC_A {
+    pub const fn variant(&self) -> MODE_SELEC_A {
         match self.bits {
             false => MODE_SELEC_A::OLD_MODE,
             true => MODE_SELEC_A::NEW_MODE,
         }
     }
-    #[doc = "Checks if the value of the field is `OLD_MODE`"]
+    #[doc = "Old mode of Sample Timing"]
     #[inline(always)]
     pub fn is_old_mode(&self) -> bool {
         *self == MODE_SELEC_A::OLD_MODE
     }
-    #[doc = "Checks if the value of the field is `NEW_MODE`"]
+    #[doc = "New mode of Sample Timing"]
     #[inline(always)]
     pub fn is_new_mode(&self) -> bool {
         *self == MODE_SELEC_A::NEW_MODE
     }
 }
 #[doc = "Field `mode_selec` writer - Sample timing Mode Select"]
-pub type MODE_SELEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, MODE_SELEC_A, O>;
-impl<'a, const O: u8> MODE_SELEC_W<'a, O> {
+pub type MODE_SELEC_W<'a, REG> = crate::BitWriter<'a, REG, MODE_SELEC_A>;
+impl<'a, REG> MODE_SELEC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Old mode of Sample Timing"]
     #[inline(always)]
-    pub fn old_mode(self) -> &'a mut W {
+    pub fn old_mode(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_SELEC_A::OLD_MODE)
     }
     #[doc = "New mode of Sample Timing"]
     #[inline(always)]
-    pub fn new_mode(self) -> &'a mut W {
+    pub fn new_mode(self) -> &'a mut crate::W<REG> {
         self.variant(MODE_SELEC_A::NEW_MODE)
     }
 }
@@ -203,41 +180,44 @@ impl From<TP_EN_A> for bool {
 impl TP_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TP_EN_A {
+    pub const fn variant(&self) -> TP_EN_A {
         match self.bits {
             false => TP_EN_A::NORMAL,
             true => TP_EN_A::STOP_WHEN_FULL,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "normal operation, ignore RXFIFO status"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == TP_EN_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `STOP_WHEN_FULL`"]
+    #[doc = "Stop transmit data when RXFIFO full"]
     #[inline(always)]
     pub fn is_stop_when_full(&self) -> bool {
         *self == TP_EN_A::STOP_WHEN_FULL
     }
 }
 #[doc = "Field `tp_en` writer - Transmit Pause Enable"]
-pub type TP_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, TP_EN_A, O>;
-impl<'a, const O: u8> TP_EN_W<'a, O> {
+pub type TP_EN_W<'a, REG> = crate::BitWriter<'a, REG, TP_EN_A>;
+impl<'a, REG> TP_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "normal operation, ignore RXFIFO status"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(TP_EN_A::NORMAL)
     }
     #[doc = "Stop transmit data when RXFIFO full"]
     #[inline(always)]
-    pub fn stop_when_full(self) -> &'a mut W {
+    pub fn stop_when_full(self) -> &'a mut crate::W<REG> {
         self.variant(TP_EN_A::STOP_WHEN_FULL)
     }
 }
 #[doc = "Field `srst` reader - Soft reset"]
-pub type SRST_R = crate::BitReader<bool>;
+pub type SRST_R = crate::BitReader;
 #[doc = "Field `srst` writer - Soft reset"]
-pub type SRST_W<'a, const O: u8> = crate::BitWriter<'a, u32, SPI_GCR_SPEC, bool, O>;
+pub type SRST_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bit 0 - SPI Module Enable Control"]
     #[inline(always)]
@@ -269,52 +249,53 @@ impl W {
     #[doc = "Bit 0 - SPI Module Enable Control"]
     #[inline(always)]
     #[must_use]
-    pub fn en(&mut self) -> EN_W<0> {
-        EN_W::new(self)
+    pub fn en(&mut self) -> EN_W<SPI_GCR_SPEC> {
+        EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - SPI Function Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mode(&mut self) -> MODE_W<1> {
-        MODE_W::new(self)
+    pub fn mode(&mut self) -> MODE_W<SPI_GCR_SPEC> {
+        MODE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Sample timing Mode Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mode_selec(&mut self) -> MODE_SELEC_W<2> {
-        MODE_SELEC_W::new(self)
+    pub fn mode_selec(&mut self) -> MODE_SELEC_W<SPI_GCR_SPEC> {
+        MODE_SELEC_W::new(self, 2)
     }
     #[doc = "Bit 7 - Transmit Pause Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tp_en(&mut self) -> TP_EN_W<7> {
-        TP_EN_W::new(self)
+    pub fn tp_en(&mut self) -> TP_EN_W<SPI_GCR_SPEC> {
+        TP_EN_W::new(self, 7)
     }
     #[doc = "Bit 31 - Soft reset"]
     #[inline(always)]
     #[must_use]
-    pub fn srst(&mut self) -> SRST_W<31> {
-        SRST_W::new(self)
+    pub fn srst(&mut self) -> SRST_W<SPI_GCR_SPEC> {
+        SRST_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "SPI Global Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [spi_gcr](index.html) module"]
+#[doc = "SPI Global Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`spi_gcr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`spi_gcr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SPI_GCR_SPEC;
 impl crate::RegisterSpec for SPI_GCR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [spi_gcr::R](R) reader structure"]
-impl crate::Readable for SPI_GCR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [spi_gcr::W](W) writer structure"]
+#[doc = "`read()` method returns [`spi_gcr::R`](R) reader structure"]
+impl crate::Readable for SPI_GCR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`spi_gcr::W`](W) writer structure"]
 impl crate::Writable for SPI_GCR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

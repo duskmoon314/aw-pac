@@ -1,20 +1,7 @@
 #[doc = "Register `twi_stat` reader"]
-pub struct R(crate::R<TWI_STAT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TWI_STAT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TWI_STAT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TWI_STAT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TWI_STAT_SPEC>;
 #[doc = "Field `sta` reader - "]
-pub type STA_R = crate::FieldReader<u8, STA_A>;
+pub type STA_R = crate::FieldReader<STA_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -84,10 +71,13 @@ impl From<STA_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for STA_A {
+    type Ux = u8;
+}
 impl STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<STA_A> {
+    pub const fn variant(&self) -> Option<STA_A> {
         match self.bits {
             0 => Some(STA_A::BE),
             8 => Some(STA_A::SCT),
@@ -121,147 +111,147 @@ impl STA_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BE`"]
+    #[doc = "Bus error"]
     #[inline(always)]
     pub fn is_be(&self) -> bool {
         *self == STA_A::BE
     }
-    #[doc = "Checks if the value of the field is `SCT`"]
+    #[doc = "START condition transmitted"]
     #[inline(always)]
     pub fn is_sct(&self) -> bool {
         *self == STA_A::SCT
     }
-    #[doc = "Checks if the value of the field is `RSCT`"]
+    #[doc = "Repeated START condition transmitted"]
     #[inline(always)]
     pub fn is_rsct(&self) -> bool {
         *self == STA_A::RSCT
     }
-    #[doc = "Checks if the value of the field is `AWBT_AR`"]
+    #[doc = "Address + Write bit transmitted, ACK received"]
     #[inline(always)]
     pub fn is_awbt_ar(&self) -> bool {
         *self == STA_A::AWBT_AR
     }
-    #[doc = "Checks if the value of the field is `AWBT_ANR`"]
+    #[doc = "Address + Write bit transmitted, ACK not received"]
     #[inline(always)]
     pub fn is_awbt_anr(&self) -> bool {
         *self == STA_A::AWBT_ANR
     }
-    #[doc = "Checks if the value of the field is `DBTM_AR`"]
+    #[doc = "Data byte transmitted in master mode, ACK received"]
     #[inline(always)]
     pub fn is_dbtm_ar(&self) -> bool {
         *self == STA_A::DBTM_AR
     }
-    #[doc = "Checks if the value of the field is `DBTM_ANR`"]
+    #[doc = "Data byte transmitted in master mode, ACK not received"]
     #[inline(always)]
     pub fn is_dbtm_anr(&self) -> bool {
         *self == STA_A::DBTM_ANR
     }
-    #[doc = "Checks if the value of the field is `AL_A_DB`"]
+    #[doc = "Arbitration lost in address or data byte"]
     #[inline(always)]
     pub fn is_al_a_db(&self) -> bool {
         *self == STA_A::AL_A_DB
     }
-    #[doc = "Checks if the value of the field is `ARBT_AR`"]
+    #[doc = "Address + Read bit transmitted, ACK received"]
     #[inline(always)]
     pub fn is_arbt_ar(&self) -> bool {
         *self == STA_A::ARBT_AR
     }
-    #[doc = "Checks if the value of the field is `ARBT_ANR`"]
+    #[doc = "Address + Read bit transmitted, ACK not received"]
     #[inline(always)]
     pub fn is_arbt_anr(&self) -> bool {
         *self == STA_A::ARBT_ANR
     }
-    #[doc = "Checks if the value of the field is `DBRM_AT`"]
+    #[doc = "Data byte received in master mode, ACK transmitted"]
     #[inline(always)]
     pub fn is_dbrm_at(&self) -> bool {
         *self == STA_A::DBRM_AT
     }
-    #[doc = "Checks if the value of the field is `DBRM_ANT`"]
+    #[doc = "Data byte received in master mode, not ACK transmitted"]
     #[inline(always)]
     pub fn is_dbrm_ant(&self) -> bool {
         *self == STA_A::DBRM_ANT
     }
-    #[doc = "Checks if the value of the field is `SAWR_AT`"]
+    #[doc = "Slave address + Write bit received, ACK transmitted"]
     #[inline(always)]
     pub fn is_sawr_at(&self) -> bool {
         *self == STA_A::SAWR_AT
     }
-    #[doc = "Checks if the value of the field is `AL_AM_SAWR_AT`"]
+    #[doc = "Arbitration lost in the address as master, slave address + Write bit received, ACK transmitted"]
     #[inline(always)]
     pub fn is_al_am_sawr_at(&self) -> bool {
         *self == STA_A::AL_AM_SAWR_AT
     }
-    #[doc = "Checks if the value of the field is `GCAR_AT`"]
+    #[doc = "General Call address received, ACK transmitted"]
     #[inline(always)]
     pub fn is_gcar_at(&self) -> bool {
         *self == STA_A::GCAR_AT
     }
-    #[doc = "Checks if the value of the field is `AL_AM_GCAR_AT`"]
+    #[doc = "Arbitration lost in the address as master, General Call address received, ACK transmitted"]
     #[inline(always)]
     pub fn is_al_am_gcar_at(&self) -> bool {
         *self == STA_A::AL_AM_GCAR_AT
     }
-    #[doc = "Checks if the value of the field is `DBR_SAR_AT`"]
+    #[doc = "Data byte received after slave address received, ACK transmitted"]
     #[inline(always)]
     pub fn is_dbr_sar_at(&self) -> bool {
         *self == STA_A::DBR_SAR_AT
     }
-    #[doc = "Checks if the value of the field is `DBR_SAR_ANT`"]
+    #[doc = "Data byte received after slave address received, not ACK transmitted"]
     #[inline(always)]
     pub fn is_dbr_sar_ant(&self) -> bool {
         *self == STA_A::DBR_SAR_ANT
     }
-    #[doc = "Checks if the value of the field is `DBR_GCR_AT`"]
+    #[doc = "Data byte received after General Call received, ACK transmitted"]
     #[inline(always)]
     pub fn is_dbr_gcr_at(&self) -> bool {
         *self == STA_A::DBR_GCR_AT
     }
-    #[doc = "Checks if the value of the field is `DBR_GCR_ANT`"]
+    #[doc = "Data byte received after General Call received, not ACK transmitted"]
     #[inline(always)]
     pub fn is_dbr_gcr_ant(&self) -> bool {
         *self == STA_A::DBR_GCR_ANT
     }
-    #[doc = "Checks if the value of the field is `SRSCRS`"]
+    #[doc = "STOP or repeated START condition received in slave mode"]
     #[inline(always)]
     pub fn is_srscrs(&self) -> bool {
         *self == STA_A::SRSCRS
     }
-    #[doc = "Checks if the value of the field is `SARR_AT`"]
+    #[doc = "Slave address + Read bit received, ACK transmitted"]
     #[inline(always)]
     pub fn is_sarr_at(&self) -> bool {
         *self == STA_A::SARR_AT
     }
-    #[doc = "Checks if the value of the field is `AL_AM_SARR_AT`"]
+    #[doc = "Arbitration lost in the address as master, slave address + Read bit received, ACK transmitted"]
     #[inline(always)]
     pub fn is_al_am_sarr_at(&self) -> bool {
         *self == STA_A::AL_AM_SARR_AT
     }
-    #[doc = "Checks if the value of the field is `DBTS_AR`"]
+    #[doc = "Data byte transmitted in slave mode, ACK received"]
     #[inline(always)]
     pub fn is_dbts_ar(&self) -> bool {
         *self == STA_A::DBTS_AR
     }
-    #[doc = "Checks if the value of the field is `DBTS_ANR`"]
+    #[doc = "Data byte transmitted in slave mode, ACK not received"]
     #[inline(always)]
     pub fn is_dbts_anr(&self) -> bool {
         *self == STA_A::DBTS_ANR
     }
-    #[doc = "Checks if the value of the field is `LBTS_AR`"]
+    #[doc = "The Last byte transmitted in slave mode, ACK received"]
     #[inline(always)]
     pub fn is_lbts_ar(&self) -> bool {
         *self == STA_A::LBTS_AR
     }
-    #[doc = "Checks if the value of the field is `SAWT_AR`"]
+    #[doc = "Second Address byte + Write bit transmitted, ACK received"]
     #[inline(always)]
     pub fn is_sawt_ar(&self) -> bool {
         *self == STA_A::SAWT_AR
     }
-    #[doc = "Checks if the value of the field is `SAWT_ANR`"]
+    #[doc = "Second Address byte + Write bit transmitted, ACK not received"]
     #[inline(always)]
     pub fn is_sawt_anr(&self) -> bool {
         *self == STA_A::SAWT_ANR
     }
-    #[doc = "Checks if the value of the field is `NRSI`"]
+    #[doc = "No relevant status information, INT_FLAG=0"]
     #[inline(always)]
     pub fn is_nrsi(&self) -> bool {
         *self == STA_A::NRSI
@@ -274,15 +264,13 @@ impl R {
         STA_R::new((self.bits & 0xff) as u8)
     }
 }
-#[doc = "TWI Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [twi_stat](index.html) module"]
+#[doc = "TWI Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`twi_stat::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TWI_STAT_SPEC;
 impl crate::RegisterSpec for TWI_STAT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [twi_stat::R](R) reader structure"]
-impl crate::Readable for TWI_STAT_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`twi_stat::R`](R) reader structure"]
+impl crate::Readable for TWI_STAT_SPEC {}
 #[doc = "`reset()` method sets twi_stat to value 0"]
 impl crate::Resettable for TWI_STAT_SPEC {
     const RESET_VALUE: Self::Ux = 0;

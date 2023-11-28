@@ -1,41 +1,9 @@
 #[doc = "Register `sys_ldo_ctrl` reader"]
-pub struct R(crate::R<SYS_LDO_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SYS_LDO_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SYS_LDO_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SYS_LDO_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SYS_LDO_CTRL_SPEC>;
 #[doc = "Register `sys_ldo_ctrl` writer"]
-pub struct W(crate::W<SYS_LDO_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SYS_LDO_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SYS_LDO_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SYS_LDO_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SYS_LDO_CTRL_SPEC>;
 #[doc = "Field `ldoa_trim` reader - "]
-pub type LDOA_TRIM_R = crate::FieldReader<u8, LDOA_TRIM_A>;
+pub type LDOA_TRIM_R = crate::FieldReader<LDOA_TRIM_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -111,10 +79,13 @@ impl From<LDOA_TRIM_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for LDOA_TRIM_A {
+    type Ux = u8;
+}
 impl LDOA_TRIM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LDOA_TRIM_A> {
+    pub const fn variant(&self) -> Option<LDOA_TRIM_A> {
         match self.bits {
             0 => Some(LDOA_TRIM_A::O1_593),
             1 => Some(LDOA_TRIM_A::O1_607),
@@ -151,334 +122,337 @@ impl LDOA_TRIM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `O1_593`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_o1_593(&self) -> bool {
         *self == LDOA_TRIM_A::O1_593
     }
-    #[doc = "Checks if the value of the field is `O1_607`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_o1_607(&self) -> bool {
         *self == LDOA_TRIM_A::O1_607
     }
-    #[doc = "Checks if the value of the field is `O1_627`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_o1_627(&self) -> bool {
         *self == LDOA_TRIM_A::O1_627
     }
-    #[doc = "Checks if the value of the field is `O1_64`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_o1_64(&self) -> bool {
         *self == LDOA_TRIM_A::O1_64
     }
-    #[doc = "Checks if the value of the field is `O1_653`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_o1_653(&self) -> bool {
         *self == LDOA_TRIM_A::O1_653
     }
-    #[doc = "Checks if the value of the field is `O1_667`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_o1_667(&self) -> bool {
         *self == LDOA_TRIM_A::O1_667
     }
-    #[doc = "Checks if the value of the field is `O1_680`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_o1_680(&self) -> bool {
         *self == LDOA_TRIM_A::O1_680
     }
-    #[doc = "Checks if the value of the field is `O1_693`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_o1_693(&self) -> bool {
         *self == LDOA_TRIM_A::O1_693
     }
-    #[doc = "Checks if the value of the field is `O1_707`"]
+    #[doc = "`1000`"]
     #[inline(always)]
     pub fn is_o1_707(&self) -> bool {
         *self == LDOA_TRIM_A::O1_707
     }
-    #[doc = "Checks if the value of the field is `O1_720`"]
+    #[doc = "`1001`"]
     #[inline(always)]
     pub fn is_o1_720(&self) -> bool {
         *self == LDOA_TRIM_A::O1_720
     }
-    #[doc = "Checks if the value of the field is `O1_733`"]
+    #[doc = "`1010`"]
     #[inline(always)]
     pub fn is_o1_733(&self) -> bool {
         *self == LDOA_TRIM_A::O1_733
     }
-    #[doc = "Checks if the value of the field is `O1_747`"]
+    #[doc = "`1011`"]
     #[inline(always)]
     pub fn is_o1_747(&self) -> bool {
         *self == LDOA_TRIM_A::O1_747
     }
-    #[doc = "Checks if the value of the field is `O1_76`"]
+    #[doc = "`1100`"]
     #[inline(always)]
     pub fn is_o1_76(&self) -> bool {
         *self == LDOA_TRIM_A::O1_76
     }
-    #[doc = "Checks if the value of the field is `O1_773`"]
+    #[doc = "`1101`"]
     #[inline(always)]
     pub fn is_o1_773(&self) -> bool {
         *self == LDOA_TRIM_A::O1_773
     }
-    #[doc = "Checks if the value of the field is `O1_787`"]
+    #[doc = "`1110`"]
     #[inline(always)]
     pub fn is_o1_787(&self) -> bool {
         *self == LDOA_TRIM_A::O1_787
     }
-    #[doc = "Checks if the value of the field is `O1_8`"]
+    #[doc = "`1111`"]
     #[inline(always)]
     pub fn is_o1_8(&self) -> bool {
         *self == LDOA_TRIM_A::O1_8
     }
-    #[doc = "Checks if the value of the field is `O1_813`"]
+    #[doc = "`10000`"]
     #[inline(always)]
     pub fn is_o1_813(&self) -> bool {
         *self == LDOA_TRIM_A::O1_813
     }
-    #[doc = "Checks if the value of the field is `O1_827`"]
+    #[doc = "`10001`"]
     #[inline(always)]
     pub fn is_o1_827(&self) -> bool {
         *self == LDOA_TRIM_A::O1_827
     }
-    #[doc = "Checks if the value of the field is `O1_84`"]
+    #[doc = "`10010`"]
     #[inline(always)]
     pub fn is_o1_84(&self) -> bool {
         *self == LDOA_TRIM_A::O1_84
     }
-    #[doc = "Checks if the value of the field is `O1_853`"]
+    #[doc = "`10011`"]
     #[inline(always)]
     pub fn is_o1_853(&self) -> bool {
         *self == LDOA_TRIM_A::O1_853
     }
-    #[doc = "Checks if the value of the field is `O1_867`"]
+    #[doc = "`10100`"]
     #[inline(always)]
     pub fn is_o1_867(&self) -> bool {
         *self == LDOA_TRIM_A::O1_867
     }
-    #[doc = "Checks if the value of the field is `O1_88`"]
+    #[doc = "`10101`"]
     #[inline(always)]
     pub fn is_o1_88(&self) -> bool {
         *self == LDOA_TRIM_A::O1_88
     }
-    #[doc = "Checks if the value of the field is `O1_893`"]
+    #[doc = "`10110`"]
     #[inline(always)]
     pub fn is_o1_893(&self) -> bool {
         *self == LDOA_TRIM_A::O1_893
     }
-    #[doc = "Checks if the value of the field is `O1_907`"]
+    #[doc = "`10111`"]
     #[inline(always)]
     pub fn is_o1_907(&self) -> bool {
         *self == LDOA_TRIM_A::O1_907
     }
-    #[doc = "Checks if the value of the field is `O1_92`"]
+    #[doc = "`11000`"]
     #[inline(always)]
     pub fn is_o1_92(&self) -> bool {
         *self == LDOA_TRIM_A::O1_92
     }
-    #[doc = "Checks if the value of the field is `O1_933`"]
+    #[doc = "`11001`"]
     #[inline(always)]
     pub fn is_o1_933(&self) -> bool {
         *self == LDOA_TRIM_A::O1_933
     }
-    #[doc = "Checks if the value of the field is `O1_947`"]
+    #[doc = "`11010`"]
     #[inline(always)]
     pub fn is_o1_947(&self) -> bool {
         *self == LDOA_TRIM_A::O1_947
     }
-    #[doc = "Checks if the value of the field is `O1_96`"]
+    #[doc = "`11011`"]
     #[inline(always)]
     pub fn is_o1_96(&self) -> bool {
         *self == LDOA_TRIM_A::O1_96
     }
-    #[doc = "Checks if the value of the field is `O1_973`"]
+    #[doc = "`11100`"]
     #[inline(always)]
     pub fn is_o1_973(&self) -> bool {
         *self == LDOA_TRIM_A::O1_973
     }
-    #[doc = "Checks if the value of the field is `O1_987`"]
+    #[doc = "`11101`"]
     #[inline(always)]
     pub fn is_o1_987(&self) -> bool {
         *self == LDOA_TRIM_A::O1_987
     }
-    #[doc = "Checks if the value of the field is `O2`"]
+    #[doc = "`11110`"]
     #[inline(always)]
     pub fn is_o2(&self) -> bool {
         *self == LDOA_TRIM_A::O2
     }
-    #[doc = "Checks if the value of the field is `O2_013`"]
+    #[doc = "`11111`"]
     #[inline(always)]
     pub fn is_o2_013(&self) -> bool {
         *self == LDOA_TRIM_A::O2_013
     }
 }
 #[doc = "Field `ldoa_trim` writer - "]
-pub type LDOA_TRIM_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOA_TRIM_A, 8, O>;
-impl<'a, const O: u8> LDOA_TRIM_W<'a, O> {
+pub type LDOA_TRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 8, LDOA_TRIM_A>;
+impl<'a, REG> LDOA_TRIM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn o1_593(self) -> &'a mut W {
+    pub fn o1_593(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_593)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn o1_607(self) -> &'a mut W {
+    pub fn o1_607(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_607)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn o1_627(self) -> &'a mut W {
+    pub fn o1_627(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_627)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn o1_64(self) -> &'a mut W {
+    pub fn o1_64(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_64)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn o1_653(self) -> &'a mut W {
+    pub fn o1_653(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_653)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn o1_667(self) -> &'a mut W {
+    pub fn o1_667(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_667)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn o1_680(self) -> &'a mut W {
+    pub fn o1_680(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_680)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn o1_693(self) -> &'a mut W {
+    pub fn o1_693(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_693)
     }
     #[doc = "`1000`"]
     #[inline(always)]
-    pub fn o1_707(self) -> &'a mut W {
+    pub fn o1_707(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_707)
     }
     #[doc = "`1001`"]
     #[inline(always)]
-    pub fn o1_720(self) -> &'a mut W {
+    pub fn o1_720(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_720)
     }
     #[doc = "`1010`"]
     #[inline(always)]
-    pub fn o1_733(self) -> &'a mut W {
+    pub fn o1_733(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_733)
     }
     #[doc = "`1011`"]
     #[inline(always)]
-    pub fn o1_747(self) -> &'a mut W {
+    pub fn o1_747(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_747)
     }
     #[doc = "`1100`"]
     #[inline(always)]
-    pub fn o1_76(self) -> &'a mut W {
+    pub fn o1_76(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_76)
     }
     #[doc = "`1101`"]
     #[inline(always)]
-    pub fn o1_773(self) -> &'a mut W {
+    pub fn o1_773(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_773)
     }
     #[doc = "`1110`"]
     #[inline(always)]
-    pub fn o1_787(self) -> &'a mut W {
+    pub fn o1_787(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_787)
     }
     #[doc = "`1111`"]
     #[inline(always)]
-    pub fn o1_8(self) -> &'a mut W {
+    pub fn o1_8(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_8)
     }
     #[doc = "`10000`"]
     #[inline(always)]
-    pub fn o1_813(self) -> &'a mut W {
+    pub fn o1_813(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_813)
     }
     #[doc = "`10001`"]
     #[inline(always)]
-    pub fn o1_827(self) -> &'a mut W {
+    pub fn o1_827(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_827)
     }
     #[doc = "`10010`"]
     #[inline(always)]
-    pub fn o1_84(self) -> &'a mut W {
+    pub fn o1_84(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_84)
     }
     #[doc = "`10011`"]
     #[inline(always)]
-    pub fn o1_853(self) -> &'a mut W {
+    pub fn o1_853(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_853)
     }
     #[doc = "`10100`"]
     #[inline(always)]
-    pub fn o1_867(self) -> &'a mut W {
+    pub fn o1_867(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_867)
     }
     #[doc = "`10101`"]
     #[inline(always)]
-    pub fn o1_88(self) -> &'a mut W {
+    pub fn o1_88(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_88)
     }
     #[doc = "`10110`"]
     #[inline(always)]
-    pub fn o1_893(self) -> &'a mut W {
+    pub fn o1_893(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_893)
     }
     #[doc = "`10111`"]
     #[inline(always)]
-    pub fn o1_907(self) -> &'a mut W {
+    pub fn o1_907(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_907)
     }
     #[doc = "`11000`"]
     #[inline(always)]
-    pub fn o1_92(self) -> &'a mut W {
+    pub fn o1_92(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_92)
     }
     #[doc = "`11001`"]
     #[inline(always)]
-    pub fn o1_933(self) -> &'a mut W {
+    pub fn o1_933(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_933)
     }
     #[doc = "`11010`"]
     #[inline(always)]
-    pub fn o1_947(self) -> &'a mut W {
+    pub fn o1_947(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_947)
     }
     #[doc = "`11011`"]
     #[inline(always)]
-    pub fn o1_96(self) -> &'a mut W {
+    pub fn o1_96(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_96)
     }
     #[doc = "`11100`"]
     #[inline(always)]
-    pub fn o1_973(self) -> &'a mut W {
+    pub fn o1_973(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_973)
     }
     #[doc = "`11101`"]
     #[inline(always)]
-    pub fn o1_987(self) -> &'a mut W {
+    pub fn o1_987(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O1_987)
     }
     #[doc = "`11110`"]
     #[inline(always)]
-    pub fn o2(self) -> &'a mut W {
+    pub fn o2(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O2)
     }
     #[doc = "`11111`"]
     #[inline(always)]
-    pub fn o2_013(self) -> &'a mut W {
+    pub fn o2_013(self) -> &'a mut crate::W<REG> {
         self.variant(LDOA_TRIM_A::O2_013)
     }
 }
 #[doc = "Field `ldob_trim` reader - "]
-pub type LDOB_TRIM_R = crate::FieldReader<u8, LDOB_TRIM_A>;
+pub type LDOB_TRIM_R = crate::FieldReader<LDOB_TRIM_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -618,10 +592,13 @@ impl From<LDOB_TRIM_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for LDOB_TRIM_A {
+    type Ux = u8;
+}
 impl LDOB_TRIM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<LDOB_TRIM_A> {
+    pub const fn variant(&self) -> Option<LDOB_TRIM_A> {
         match self.bits {
             0 => Some(LDOB_TRIM_A::O1_167),
             1 => Some(LDOB_TRIM_A::O1_18),
@@ -690,656 +667,659 @@ impl LDOB_TRIM_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `O1_167`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_o1_167(&self) -> bool {
         *self == LDOB_TRIM_A::O1_167
     }
-    #[doc = "Checks if the value of the field is `O1_18`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_o1_18(&self) -> bool {
         *self == LDOB_TRIM_A::O1_18
     }
-    #[doc = "Checks if the value of the field is `O1_193`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_o1_193(&self) -> bool {
         *self == LDOB_TRIM_A::O1_193
     }
-    #[doc = "Checks if the value of the field is `O1_207`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_o1_207(&self) -> bool {
         *self == LDOB_TRIM_A::O1_207
     }
-    #[doc = "Checks if the value of the field is `O1_22`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_o1_22(&self) -> bool {
         *self == LDOB_TRIM_A::O1_22
     }
-    #[doc = "Checks if the value of the field is `O1_233`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_o1_233(&self) -> bool {
         *self == LDOB_TRIM_A::O1_233
     }
-    #[doc = "Checks if the value of the field is `O1_247`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_o1_247(&self) -> bool {
         *self == LDOB_TRIM_A::O1_247
     }
-    #[doc = "Checks if the value of the field is `O1_260`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_o1_260(&self) -> bool {
         *self == LDOB_TRIM_A::O1_260
     }
-    #[doc = "Checks if the value of the field is `O1_273`"]
+    #[doc = "`1000`"]
     #[inline(always)]
     pub fn is_o1_273(&self) -> bool {
         *self == LDOB_TRIM_A::O1_273
     }
-    #[doc = "Checks if the value of the field is `O1_287`"]
+    #[doc = "`1001`"]
     #[inline(always)]
     pub fn is_o1_287(&self) -> bool {
         *self == LDOB_TRIM_A::O1_287
     }
-    #[doc = "Checks if the value of the field is `O1_3`"]
+    #[doc = "`1010`"]
     #[inline(always)]
     pub fn is_o1_3(&self) -> bool {
         *self == LDOB_TRIM_A::O1_3
     }
-    #[doc = "Checks if the value of the field is `O1_313`"]
+    #[doc = "`1011`"]
     #[inline(always)]
     pub fn is_o1_313(&self) -> bool {
         *self == LDOB_TRIM_A::O1_313
     }
-    #[doc = "Checks if the value of the field is `O1_327`"]
+    #[doc = "`1100`"]
     #[inline(always)]
     pub fn is_o1_327(&self) -> bool {
         *self == LDOB_TRIM_A::O1_327
     }
-    #[doc = "Checks if the value of the field is `O1_340`"]
+    #[doc = "`1101`"]
     #[inline(always)]
     pub fn is_o1_340(&self) -> bool {
         *self == LDOB_TRIM_A::O1_340
     }
-    #[doc = "Checks if the value of the field is `O1_353`"]
+    #[doc = "`1110`"]
     #[inline(always)]
     pub fn is_o1_353(&self) -> bool {
         *self == LDOB_TRIM_A::O1_353
     }
-    #[doc = "Checks if the value of the field is `O1_367`"]
+    #[doc = "`1111`"]
     #[inline(always)]
     pub fn is_o1_367(&self) -> bool {
         *self == LDOB_TRIM_A::O1_367
     }
-    #[doc = "Checks if the value of the field is `O1_38`"]
+    #[doc = "`10000`"]
     #[inline(always)]
     pub fn is_o1_38(&self) -> bool {
         *self == LDOB_TRIM_A::O1_38
     }
-    #[doc = "Checks if the value of the field is `O1_393`"]
+    #[doc = "`10001`"]
     #[inline(always)]
     pub fn is_o1_393(&self) -> bool {
         *self == LDOB_TRIM_A::O1_393
     }
-    #[doc = "Checks if the value of the field is `O1_407`"]
+    #[doc = "`10010`"]
     #[inline(always)]
     pub fn is_o1_407(&self) -> bool {
         *self == LDOB_TRIM_A::O1_407
     }
-    #[doc = "Checks if the value of the field is `O1_42`"]
+    #[doc = "`10011`"]
     #[inline(always)]
     pub fn is_o1_42(&self) -> bool {
         *self == LDOB_TRIM_A::O1_42
     }
-    #[doc = "Checks if the value of the field is `O1_433`"]
+    #[doc = "`10100`"]
     #[inline(always)]
     pub fn is_o1_433(&self) -> bool {
         *self == LDOB_TRIM_A::O1_433
     }
-    #[doc = "Checks if the value of the field is `O1_447`"]
+    #[doc = "`10101`"]
     #[inline(always)]
     pub fn is_o1_447(&self) -> bool {
         *self == LDOB_TRIM_A::O1_447
     }
-    #[doc = "Checks if the value of the field is `O1_46`"]
+    #[doc = "`10110`"]
     #[inline(always)]
     pub fn is_o1_46(&self) -> bool {
         *self == LDOB_TRIM_A::O1_46
     }
-    #[doc = "Checks if the value of the field is `O1_473`"]
+    #[doc = "`10111`"]
     #[inline(always)]
     pub fn is_o1_473(&self) -> bool {
         *self == LDOB_TRIM_A::O1_473
     }
-    #[doc = "Checks if the value of the field is `O1_487`"]
+    #[doc = "`11000`"]
     #[inline(always)]
     pub fn is_o1_487(&self) -> bool {
         *self == LDOB_TRIM_A::O1_487
     }
-    #[doc = "Checks if the value of the field is `O1_5`"]
+    #[doc = "`11001`"]
     #[inline(always)]
     pub fn is_o1_5(&self) -> bool {
         *self == LDOB_TRIM_A::O1_5
     }
-    #[doc = "Checks if the value of the field is `O1_513`"]
+    #[doc = "`11010`"]
     #[inline(always)]
     pub fn is_o1_513(&self) -> bool {
         *self == LDOB_TRIM_A::O1_513
     }
-    #[doc = "Checks if the value of the field is `O1_527`"]
+    #[doc = "`11011`"]
     #[inline(always)]
     pub fn is_o1_527(&self) -> bool {
         *self == LDOB_TRIM_A::O1_527
     }
-    #[doc = "Checks if the value of the field is `O1_54`"]
+    #[doc = "`11100`"]
     #[inline(always)]
     pub fn is_o1_54(&self) -> bool {
         *self == LDOB_TRIM_A::O1_54
     }
-    #[doc = "Checks if the value of the field is `O1_553`"]
+    #[doc = "`11101`"]
     #[inline(always)]
     pub fn is_o1_553(&self) -> bool {
         *self == LDOB_TRIM_A::O1_553
     }
-    #[doc = "Checks if the value of the field is `O1_567`"]
+    #[doc = "`11110`"]
     #[inline(always)]
     pub fn is_o1_567(&self) -> bool {
         *self == LDOB_TRIM_A::O1_567
     }
-    #[doc = "Checks if the value of the field is `O1_58`"]
+    #[doc = "`11111`"]
     #[inline(always)]
     pub fn is_o1_58(&self) -> bool {
         *self == LDOB_TRIM_A::O1_58
     }
-    #[doc = "Checks if the value of the field is `O1_593`"]
+    #[doc = "`100000`"]
     #[inline(always)]
     pub fn is_o1_593(&self) -> bool {
         *self == LDOB_TRIM_A::O1_593
     }
-    #[doc = "Checks if the value of the field is `O1_607`"]
+    #[doc = "`100001`"]
     #[inline(always)]
     pub fn is_o1_607(&self) -> bool {
         *self == LDOB_TRIM_A::O1_607
     }
-    #[doc = "Checks if the value of the field is `O1_627`"]
+    #[doc = "`100010`"]
     #[inline(always)]
     pub fn is_o1_627(&self) -> bool {
         *self == LDOB_TRIM_A::O1_627
     }
-    #[doc = "Checks if the value of the field is `O1_64`"]
+    #[doc = "`100011`"]
     #[inline(always)]
     pub fn is_o1_64(&self) -> bool {
         *self == LDOB_TRIM_A::O1_64
     }
-    #[doc = "Checks if the value of the field is `O1_653`"]
+    #[doc = "`100100`"]
     #[inline(always)]
     pub fn is_o1_653(&self) -> bool {
         *self == LDOB_TRIM_A::O1_653
     }
-    #[doc = "Checks if the value of the field is `O1_667`"]
+    #[doc = "`100101`"]
     #[inline(always)]
     pub fn is_o1_667(&self) -> bool {
         *self == LDOB_TRIM_A::O1_667
     }
-    #[doc = "Checks if the value of the field is `O1_680`"]
+    #[doc = "`100110`"]
     #[inline(always)]
     pub fn is_o1_680(&self) -> bool {
         *self == LDOB_TRIM_A::O1_680
     }
-    #[doc = "Checks if the value of the field is `O1_693`"]
+    #[doc = "`100111`"]
     #[inline(always)]
     pub fn is_o1_693(&self) -> bool {
         *self == LDOB_TRIM_A::O1_693
     }
-    #[doc = "Checks if the value of the field is `O1_707`"]
+    #[doc = "`101000`"]
     #[inline(always)]
     pub fn is_o1_707(&self) -> bool {
         *self == LDOB_TRIM_A::O1_707
     }
-    #[doc = "Checks if the value of the field is `O1_720`"]
+    #[doc = "`101001`"]
     #[inline(always)]
     pub fn is_o1_720(&self) -> bool {
         *self == LDOB_TRIM_A::O1_720
     }
-    #[doc = "Checks if the value of the field is `O1_733`"]
+    #[doc = "`101010`"]
     #[inline(always)]
     pub fn is_o1_733(&self) -> bool {
         *self == LDOB_TRIM_A::O1_733
     }
-    #[doc = "Checks if the value of the field is `O1_747`"]
+    #[doc = "`101011`"]
     #[inline(always)]
     pub fn is_o1_747(&self) -> bool {
         *self == LDOB_TRIM_A::O1_747
     }
-    #[doc = "Checks if the value of the field is `O1_76`"]
+    #[doc = "`101100`"]
     #[inline(always)]
     pub fn is_o1_76(&self) -> bool {
         *self == LDOB_TRIM_A::O1_76
     }
-    #[doc = "Checks if the value of the field is `O1_773`"]
+    #[doc = "`101101`"]
     #[inline(always)]
     pub fn is_o1_773(&self) -> bool {
         *self == LDOB_TRIM_A::O1_773
     }
-    #[doc = "Checks if the value of the field is `O1_787`"]
+    #[doc = "`101110`"]
     #[inline(always)]
     pub fn is_o1_787(&self) -> bool {
         *self == LDOB_TRIM_A::O1_787
     }
-    #[doc = "Checks if the value of the field is `O1_8`"]
+    #[doc = "`101111`"]
     #[inline(always)]
     pub fn is_o1_8(&self) -> bool {
         *self == LDOB_TRIM_A::O1_8
     }
-    #[doc = "Checks if the value of the field is `O1_813`"]
+    #[doc = "`110000`"]
     #[inline(always)]
     pub fn is_o1_813(&self) -> bool {
         *self == LDOB_TRIM_A::O1_813
     }
-    #[doc = "Checks if the value of the field is `O1_827`"]
+    #[doc = "`110001`"]
     #[inline(always)]
     pub fn is_o1_827(&self) -> bool {
         *self == LDOB_TRIM_A::O1_827
     }
-    #[doc = "Checks if the value of the field is `O1_84`"]
+    #[doc = "`110010`"]
     #[inline(always)]
     pub fn is_o1_84(&self) -> bool {
         *self == LDOB_TRIM_A::O1_84
     }
-    #[doc = "Checks if the value of the field is `O1_853`"]
+    #[doc = "`110011`"]
     #[inline(always)]
     pub fn is_o1_853(&self) -> bool {
         *self == LDOB_TRIM_A::O1_853
     }
-    #[doc = "Checks if the value of the field is `O1_867`"]
+    #[doc = "`110100`"]
     #[inline(always)]
     pub fn is_o1_867(&self) -> bool {
         *self == LDOB_TRIM_A::O1_867
     }
-    #[doc = "Checks if the value of the field is `O1_88`"]
+    #[doc = "`110101`"]
     #[inline(always)]
     pub fn is_o1_88(&self) -> bool {
         *self == LDOB_TRIM_A::O1_88
     }
-    #[doc = "Checks if the value of the field is `O1_893`"]
+    #[doc = "`110110`"]
     #[inline(always)]
     pub fn is_o1_893(&self) -> bool {
         *self == LDOB_TRIM_A::O1_893
     }
-    #[doc = "Checks if the value of the field is `O1_907`"]
+    #[doc = "`110111`"]
     #[inline(always)]
     pub fn is_o1_907(&self) -> bool {
         *self == LDOB_TRIM_A::O1_907
     }
-    #[doc = "Checks if the value of the field is `O1_92`"]
+    #[doc = "`111000`"]
     #[inline(always)]
     pub fn is_o1_92(&self) -> bool {
         *self == LDOB_TRIM_A::O1_92
     }
-    #[doc = "Checks if the value of the field is `O1_933`"]
+    #[doc = "`111001`"]
     #[inline(always)]
     pub fn is_o1_933(&self) -> bool {
         *self == LDOB_TRIM_A::O1_933
     }
-    #[doc = "Checks if the value of the field is `O1_947`"]
+    #[doc = "`111010`"]
     #[inline(always)]
     pub fn is_o1_947(&self) -> bool {
         *self == LDOB_TRIM_A::O1_947
     }
-    #[doc = "Checks if the value of the field is `O1_96`"]
+    #[doc = "`111011`"]
     #[inline(always)]
     pub fn is_o1_96(&self) -> bool {
         *self == LDOB_TRIM_A::O1_96
     }
-    #[doc = "Checks if the value of the field is `O1_973`"]
+    #[doc = "`111100`"]
     #[inline(always)]
     pub fn is_o1_973(&self) -> bool {
         *self == LDOB_TRIM_A::O1_973
     }
-    #[doc = "Checks if the value of the field is `O1_987`"]
+    #[doc = "`111101`"]
     #[inline(always)]
     pub fn is_o1_987(&self) -> bool {
         *self == LDOB_TRIM_A::O1_987
     }
-    #[doc = "Checks if the value of the field is `O2`"]
+    #[doc = "`111110`"]
     #[inline(always)]
     pub fn is_o2(&self) -> bool {
         *self == LDOB_TRIM_A::O2
     }
-    #[doc = "Checks if the value of the field is `O2_013`"]
+    #[doc = "`111111`"]
     #[inline(always)]
     pub fn is_o2_013(&self) -> bool {
         *self == LDOB_TRIM_A::O2_013
     }
 }
 #[doc = "Field `ldob_trim` writer - "]
-pub type LDOB_TRIM_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, LDOB_TRIM_A, 8, O>;
-impl<'a, const O: u8> LDOB_TRIM_W<'a, O> {
+pub type LDOB_TRIM_W<'a, REG> = crate::FieldWriter<'a, REG, 8, LDOB_TRIM_A>;
+impl<'a, REG> LDOB_TRIM_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn o1_167(self) -> &'a mut W {
+    pub fn o1_167(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_167)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn o1_18(self) -> &'a mut W {
+    pub fn o1_18(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_18)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn o1_193(self) -> &'a mut W {
+    pub fn o1_193(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_193)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn o1_207(self) -> &'a mut W {
+    pub fn o1_207(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_207)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn o1_22(self) -> &'a mut W {
+    pub fn o1_22(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_22)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn o1_233(self) -> &'a mut W {
+    pub fn o1_233(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_233)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn o1_247(self) -> &'a mut W {
+    pub fn o1_247(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_247)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn o1_260(self) -> &'a mut W {
+    pub fn o1_260(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_260)
     }
     #[doc = "`1000`"]
     #[inline(always)]
-    pub fn o1_273(self) -> &'a mut W {
+    pub fn o1_273(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_273)
     }
     #[doc = "`1001`"]
     #[inline(always)]
-    pub fn o1_287(self) -> &'a mut W {
+    pub fn o1_287(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_287)
     }
     #[doc = "`1010`"]
     #[inline(always)]
-    pub fn o1_3(self) -> &'a mut W {
+    pub fn o1_3(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_3)
     }
     #[doc = "`1011`"]
     #[inline(always)]
-    pub fn o1_313(self) -> &'a mut W {
+    pub fn o1_313(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_313)
     }
     #[doc = "`1100`"]
     #[inline(always)]
-    pub fn o1_327(self) -> &'a mut W {
+    pub fn o1_327(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_327)
     }
     #[doc = "`1101`"]
     #[inline(always)]
-    pub fn o1_340(self) -> &'a mut W {
+    pub fn o1_340(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_340)
     }
     #[doc = "`1110`"]
     #[inline(always)]
-    pub fn o1_353(self) -> &'a mut W {
+    pub fn o1_353(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_353)
     }
     #[doc = "`1111`"]
     #[inline(always)]
-    pub fn o1_367(self) -> &'a mut W {
+    pub fn o1_367(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_367)
     }
     #[doc = "`10000`"]
     #[inline(always)]
-    pub fn o1_38(self) -> &'a mut W {
+    pub fn o1_38(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_38)
     }
     #[doc = "`10001`"]
     #[inline(always)]
-    pub fn o1_393(self) -> &'a mut W {
+    pub fn o1_393(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_393)
     }
     #[doc = "`10010`"]
     #[inline(always)]
-    pub fn o1_407(self) -> &'a mut W {
+    pub fn o1_407(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_407)
     }
     #[doc = "`10011`"]
     #[inline(always)]
-    pub fn o1_42(self) -> &'a mut W {
+    pub fn o1_42(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_42)
     }
     #[doc = "`10100`"]
     #[inline(always)]
-    pub fn o1_433(self) -> &'a mut W {
+    pub fn o1_433(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_433)
     }
     #[doc = "`10101`"]
     #[inline(always)]
-    pub fn o1_447(self) -> &'a mut W {
+    pub fn o1_447(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_447)
     }
     #[doc = "`10110`"]
     #[inline(always)]
-    pub fn o1_46(self) -> &'a mut W {
+    pub fn o1_46(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_46)
     }
     #[doc = "`10111`"]
     #[inline(always)]
-    pub fn o1_473(self) -> &'a mut W {
+    pub fn o1_473(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_473)
     }
     #[doc = "`11000`"]
     #[inline(always)]
-    pub fn o1_487(self) -> &'a mut W {
+    pub fn o1_487(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_487)
     }
     #[doc = "`11001`"]
     #[inline(always)]
-    pub fn o1_5(self) -> &'a mut W {
+    pub fn o1_5(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_5)
     }
     #[doc = "`11010`"]
     #[inline(always)]
-    pub fn o1_513(self) -> &'a mut W {
+    pub fn o1_513(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_513)
     }
     #[doc = "`11011`"]
     #[inline(always)]
-    pub fn o1_527(self) -> &'a mut W {
+    pub fn o1_527(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_527)
     }
     #[doc = "`11100`"]
     #[inline(always)]
-    pub fn o1_54(self) -> &'a mut W {
+    pub fn o1_54(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_54)
     }
     #[doc = "`11101`"]
     #[inline(always)]
-    pub fn o1_553(self) -> &'a mut W {
+    pub fn o1_553(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_553)
     }
     #[doc = "`11110`"]
     #[inline(always)]
-    pub fn o1_567(self) -> &'a mut W {
+    pub fn o1_567(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_567)
     }
     #[doc = "`11111`"]
     #[inline(always)]
-    pub fn o1_58(self) -> &'a mut W {
+    pub fn o1_58(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_58)
     }
     #[doc = "`100000`"]
     #[inline(always)]
-    pub fn o1_593(self) -> &'a mut W {
+    pub fn o1_593(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_593)
     }
     #[doc = "`100001`"]
     #[inline(always)]
-    pub fn o1_607(self) -> &'a mut W {
+    pub fn o1_607(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_607)
     }
     #[doc = "`100010`"]
     #[inline(always)]
-    pub fn o1_627(self) -> &'a mut W {
+    pub fn o1_627(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_627)
     }
     #[doc = "`100011`"]
     #[inline(always)]
-    pub fn o1_64(self) -> &'a mut W {
+    pub fn o1_64(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_64)
     }
     #[doc = "`100100`"]
     #[inline(always)]
-    pub fn o1_653(self) -> &'a mut W {
+    pub fn o1_653(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_653)
     }
     #[doc = "`100101`"]
     #[inline(always)]
-    pub fn o1_667(self) -> &'a mut W {
+    pub fn o1_667(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_667)
     }
     #[doc = "`100110`"]
     #[inline(always)]
-    pub fn o1_680(self) -> &'a mut W {
+    pub fn o1_680(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_680)
     }
     #[doc = "`100111`"]
     #[inline(always)]
-    pub fn o1_693(self) -> &'a mut W {
+    pub fn o1_693(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_693)
     }
     #[doc = "`101000`"]
     #[inline(always)]
-    pub fn o1_707(self) -> &'a mut W {
+    pub fn o1_707(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_707)
     }
     #[doc = "`101001`"]
     #[inline(always)]
-    pub fn o1_720(self) -> &'a mut W {
+    pub fn o1_720(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_720)
     }
     #[doc = "`101010`"]
     #[inline(always)]
-    pub fn o1_733(self) -> &'a mut W {
+    pub fn o1_733(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_733)
     }
     #[doc = "`101011`"]
     #[inline(always)]
-    pub fn o1_747(self) -> &'a mut W {
+    pub fn o1_747(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_747)
     }
     #[doc = "`101100`"]
     #[inline(always)]
-    pub fn o1_76(self) -> &'a mut W {
+    pub fn o1_76(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_76)
     }
     #[doc = "`101101`"]
     #[inline(always)]
-    pub fn o1_773(self) -> &'a mut W {
+    pub fn o1_773(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_773)
     }
     #[doc = "`101110`"]
     #[inline(always)]
-    pub fn o1_787(self) -> &'a mut W {
+    pub fn o1_787(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_787)
     }
     #[doc = "`101111`"]
     #[inline(always)]
-    pub fn o1_8(self) -> &'a mut W {
+    pub fn o1_8(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_8)
     }
     #[doc = "`110000`"]
     #[inline(always)]
-    pub fn o1_813(self) -> &'a mut W {
+    pub fn o1_813(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_813)
     }
     #[doc = "`110001`"]
     #[inline(always)]
-    pub fn o1_827(self) -> &'a mut W {
+    pub fn o1_827(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_827)
     }
     #[doc = "`110010`"]
     #[inline(always)]
-    pub fn o1_84(self) -> &'a mut W {
+    pub fn o1_84(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_84)
     }
     #[doc = "`110011`"]
     #[inline(always)]
-    pub fn o1_853(self) -> &'a mut W {
+    pub fn o1_853(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_853)
     }
     #[doc = "`110100`"]
     #[inline(always)]
-    pub fn o1_867(self) -> &'a mut W {
+    pub fn o1_867(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_867)
     }
     #[doc = "`110101`"]
     #[inline(always)]
-    pub fn o1_88(self) -> &'a mut W {
+    pub fn o1_88(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_88)
     }
     #[doc = "`110110`"]
     #[inline(always)]
-    pub fn o1_893(self) -> &'a mut W {
+    pub fn o1_893(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_893)
     }
     #[doc = "`110111`"]
     #[inline(always)]
-    pub fn o1_907(self) -> &'a mut W {
+    pub fn o1_907(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_907)
     }
     #[doc = "`111000`"]
     #[inline(always)]
-    pub fn o1_92(self) -> &'a mut W {
+    pub fn o1_92(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_92)
     }
     #[doc = "`111001`"]
     #[inline(always)]
-    pub fn o1_933(self) -> &'a mut W {
+    pub fn o1_933(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_933)
     }
     #[doc = "`111010`"]
     #[inline(always)]
-    pub fn o1_947(self) -> &'a mut W {
+    pub fn o1_947(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_947)
     }
     #[doc = "`111011`"]
     #[inline(always)]
-    pub fn o1_96(self) -> &'a mut W {
+    pub fn o1_96(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_96)
     }
     #[doc = "`111100`"]
     #[inline(always)]
-    pub fn o1_973(self) -> &'a mut W {
+    pub fn o1_973(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_973)
     }
     #[doc = "`111101`"]
     #[inline(always)]
-    pub fn o1_987(self) -> &'a mut W {
+    pub fn o1_987(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O1_987)
     }
     #[doc = "`111110`"]
     #[inline(always)]
-    pub fn o2(self) -> &'a mut W {
+    pub fn o2(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O2)
     }
     #[doc = "`111111`"]
     #[inline(always)]
-    pub fn o2_013(self) -> &'a mut W {
+    pub fn o2_013(self) -> &'a mut crate::W<REG> {
         self.variant(LDOB_TRIM_A::O2_013)
     }
 }
 #[doc = "Field `spare` reader - "]
-pub type SPARE_R = crate::FieldReader<u8, u8>;
+pub type SPARE_R = crate::FieldReader;
 #[doc = "Field `spare` writer - "]
-pub type SPARE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYS_LDO_CTRL_SPEC, u8, u8, 8, O>;
+pub type SPARE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl R {
     #[doc = "Bits 0:7"]
     #[inline(always)]
@@ -1361,40 +1341,41 @@ impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
     #[must_use]
-    pub fn ldoa_trim(&mut self) -> LDOA_TRIM_W<0> {
-        LDOA_TRIM_W::new(self)
+    pub fn ldoa_trim(&mut self) -> LDOA_TRIM_W<SYS_LDO_CTRL_SPEC> {
+        LDOA_TRIM_W::new(self, 0)
     }
     #[doc = "Bits 8:15"]
     #[inline(always)]
     #[must_use]
-    pub fn ldob_trim(&mut self) -> LDOB_TRIM_W<8> {
-        LDOB_TRIM_W::new(self)
+    pub fn ldob_trim(&mut self) -> LDOB_TRIM_W<SYS_LDO_CTRL_SPEC> {
+        LDOB_TRIM_W::new(self, 8)
     }
     #[doc = "Bits 24:31"]
     #[inline(always)]
     #[must_use]
-    pub fn spare(&mut self) -> SPARE_W<24> {
-        SPARE_W::new(self)
+    pub fn spare(&mut self) -> SPARE_W<SYS_LDO_CTRL_SPEC> {
+        SPARE_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "System LDO Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sys_ldo_ctrl](index.html) module"]
+#[doc = "System LDO Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sys_ldo_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sys_ldo_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SYS_LDO_CTRL_SPEC;
 impl crate::RegisterSpec for SYS_LDO_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sys_ldo_ctrl::R](R) reader structure"]
-impl crate::Readable for SYS_LDO_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sys_ldo_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`sys_ldo_ctrl::R`](R) reader structure"]
+impl crate::Readable for SYS_LDO_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sys_ldo_ctrl::W`](W) writer structure"]
 impl crate::Writable for SYS_LDO_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

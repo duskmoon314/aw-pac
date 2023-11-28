@@ -1,39 +1,7 @@
 #[doc = "Register `ledc_int_sts` reader"]
-pub struct R(crate::R<LEDC_INT_STS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LEDC_INT_STS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LEDC_INT_STS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LEDC_INT_STS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LEDC_INT_STS_SPEC>;
 #[doc = "Register `ledc_int_sts` writer"]
-pub struct W(crate::W<LEDC_INT_STS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LEDC_INT_STS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LEDC_INT_STS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LEDC_INT_STS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LEDC_INT_STS_SPEC>;
 #[doc = "Field `lec_trans_finish_int` reader - "]
 pub type LEC_TRANS_FINISH_INT_R = crate::BitReader<LEC_TRANS_FINISH_INT_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<LEC_TRANS_FINISH_INT_A> for bool {
 impl LEC_TRANS_FINISH_INT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LEC_TRANS_FINISH_INT_A {
+    pub const fn variant(&self) -> LEC_TRANS_FINISH_INT_A {
         match self.bits {
             false => LEC_TRANS_FINISH_INT_A::NOT_TRANS_COMPLETE,
             true => LEC_TRANS_FINISH_INT_A::TRANS_COMPLETE,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_TRANS_COMPLETE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_trans_complete(&self) -> bool {
         *self == LEC_TRANS_FINISH_INT_A::NOT_TRANS_COMPLETE
     }
-    #[doc = "Checks if the value of the field is `TRANS_COMPLETE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_trans_complete(&self) -> bool {
         *self == LEC_TRANS_FINISH_INT_A::TRANS_COMPLETE
     }
 }
 #[doc = "Field `lec_trans_finish_int` writer - "]
-pub type LEC_TRANS_FINISH_INT_W<'a, const O: u8> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, LEC_TRANS_FINISH_INT_A, O>;
-impl<'a, const O: u8> LEC_TRANS_FINISH_INT_W<'a, O> {
+pub type LEC_TRANS_FINISH_INT_W<'a, REG> = crate::BitWriter1C<'a, REG, LEC_TRANS_FINISH_INT_A>;
+impl<'a, REG> LEC_TRANS_FINISH_INT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not_trans_complete(self) -> &'a mut W {
+    pub fn not_trans_complete(self) -> &'a mut crate::W<REG> {
         self.variant(LEC_TRANS_FINISH_INT_A::NOT_TRANS_COMPLETE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn trans_complete(self) -> &'a mut W {
+    pub fn trans_complete(self) -> &'a mut crate::W<REG> {
         self.variant(LEC_TRANS_FINISH_INT_A::TRANS_COMPLETE)
     }
 }
@@ -104,35 +74,37 @@ impl From<FIFO_CPUREQ_INT_A> for bool {
 impl FIFO_CPUREQ_INT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_CPUREQ_INT_A {
+    pub const fn variant(&self) -> FIFO_CPUREQ_INT_A {
         match self.bits {
             false => FIFO_CPUREQ_INT_A::NOT_REQUEST,
             true => FIFO_CPUREQ_INT_A::REQUEST,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_REQUEST`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_request(&self) -> bool {
         *self == FIFO_CPUREQ_INT_A::NOT_REQUEST
     }
-    #[doc = "Checks if the value of the field is `REQUEST`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_request(&self) -> bool {
         *self == FIFO_CPUREQ_INT_A::REQUEST
     }
 }
 #[doc = "Field `fifo_cpureq_int` writer - "]
-pub type FIFO_CPUREQ_INT_W<'a, const O: u8> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_CPUREQ_INT_A, O>;
-impl<'a, const O: u8> FIFO_CPUREQ_INT_W<'a, O> {
+pub type FIFO_CPUREQ_INT_W<'a, REG> = crate::BitWriter1C<'a, REG, FIFO_CPUREQ_INT_A>;
+impl<'a, REG> FIFO_CPUREQ_INT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not_request(self) -> &'a mut W {
+    pub fn not_request(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_CPUREQ_INT_A::NOT_REQUEST)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn request(self) -> &'a mut W {
+    pub fn request(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_CPUREQ_INT_A::REQUEST)
     }
 }
@@ -155,35 +127,37 @@ impl From<WAITDATA_TIMEOUT_INT_A> for bool {
 impl WAITDATA_TIMEOUT_INT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WAITDATA_TIMEOUT_INT_A {
+    pub const fn variant(&self) -> WAITDATA_TIMEOUT_INT_A {
         match self.bits {
             false => WAITDATA_TIMEOUT_INT_A::NOT_TIMEOUT,
             true => WAITDATA_TIMEOUT_INT_A::TIMEOUT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_TIMEOUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_timeout(&self) -> bool {
         *self == WAITDATA_TIMEOUT_INT_A::NOT_TIMEOUT
     }
-    #[doc = "Checks if the value of the field is `TIMEOUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_timeout(&self) -> bool {
         *self == WAITDATA_TIMEOUT_INT_A::TIMEOUT
     }
 }
 #[doc = "Field `waitdata_timeout_int` writer - "]
-pub type WAITDATA_TIMEOUT_INT_W<'a, const O: u8> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, WAITDATA_TIMEOUT_INT_A, O>;
-impl<'a, const O: u8> WAITDATA_TIMEOUT_INT_W<'a, O> {
+pub type WAITDATA_TIMEOUT_INT_W<'a, REG> = crate::BitWriter1C<'a, REG, WAITDATA_TIMEOUT_INT_A>;
+impl<'a, REG> WAITDATA_TIMEOUT_INT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not_timeout(self) -> &'a mut W {
+    pub fn not_timeout(self) -> &'a mut crate::W<REG> {
         self.variant(WAITDATA_TIMEOUT_INT_A::NOT_TIMEOUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn timeout(self) -> &'a mut W {
+    pub fn timeout(self) -> &'a mut crate::W<REG> {
         self.variant(WAITDATA_TIMEOUT_INT_A::TIMEOUT)
     }
 }
@@ -206,44 +180,46 @@ impl From<FIFO_OVERFLOW_INT_A> for bool {
 impl FIFO_OVERFLOW_INT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_OVERFLOW_INT_A {
+    pub const fn variant(&self) -> FIFO_OVERFLOW_INT_A {
         match self.bits {
             false => FIFO_OVERFLOW_INT_A::NOT_OVERFLOW,
             true => FIFO_OVERFLOW_INT_A::OVERFLOW,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_OVERFLOW`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_overflow(&self) -> bool {
         *self == FIFO_OVERFLOW_INT_A::NOT_OVERFLOW
     }
-    #[doc = "Checks if the value of the field is `OVERFLOW`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_overflow(&self) -> bool {
         *self == FIFO_OVERFLOW_INT_A::OVERFLOW
     }
 }
 #[doc = "Field `fifo_overflow_int` writer - "]
-pub type FIFO_OVERFLOW_INT_W<'a, const O: u8> =
-    crate::BitWriter1C<'a, u32, LEDC_INT_STS_SPEC, FIFO_OVERFLOW_INT_A, O>;
-impl<'a, const O: u8> FIFO_OVERFLOW_INT_W<'a, O> {
+pub type FIFO_OVERFLOW_INT_W<'a, REG> = crate::BitWriter1C<'a, REG, FIFO_OVERFLOW_INT_A>;
+impl<'a, REG> FIFO_OVERFLOW_INT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not_overflow(self) -> &'a mut W {
+    pub fn not_overflow(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_OVERFLOW_INT_A::NOT_OVERFLOW)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn overflow(self) -> &'a mut W {
+    pub fn overflow(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_OVERFLOW_INT_A::OVERFLOW)
     }
 }
 #[doc = "Field `fifo_wlw` reader - "]
-pub type FIFO_WLW_R = crate::FieldReader<u8, u8>;
+pub type FIFO_WLW_R = crate::FieldReader;
 #[doc = "Field `fifo_full` reader - "]
-pub type FIFO_FULL_R = crate::BitReader<bool>;
+pub type FIFO_FULL_R = crate::BitReader;
 #[doc = "Field `fifo_empty` reader - "]
-pub type FIFO_EMPTY_R = crate::BitReader<bool>;
+pub type FIFO_EMPTY_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0"]
     #[inline(always)]
@@ -285,46 +261,47 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn lec_trans_finish_int(&mut self) -> LEC_TRANS_FINISH_INT_W<0> {
-        LEC_TRANS_FINISH_INT_W::new(self)
+    pub fn lec_trans_finish_int(&mut self) -> LEC_TRANS_FINISH_INT_W<LEDC_INT_STS_SPEC> {
+        LEC_TRANS_FINISH_INT_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_cpureq_int(&mut self) -> FIFO_CPUREQ_INT_W<1> {
-        FIFO_CPUREQ_INT_W::new(self)
+    pub fn fifo_cpureq_int(&mut self) -> FIFO_CPUREQ_INT_W<LEDC_INT_STS_SPEC> {
+        FIFO_CPUREQ_INT_W::new(self, 1)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
     #[must_use]
-    pub fn waitdata_timeout_int(&mut self) -> WAITDATA_TIMEOUT_INT_W<3> {
-        WAITDATA_TIMEOUT_INT_W::new(self)
+    pub fn waitdata_timeout_int(&mut self) -> WAITDATA_TIMEOUT_INT_W<LEDC_INT_STS_SPEC> {
+        WAITDATA_TIMEOUT_INT_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_overflow_int(&mut self) -> FIFO_OVERFLOW_INT_W<4> {
-        FIFO_OVERFLOW_INT_W::new(self)
+    pub fn fifo_overflow_int(&mut self) -> FIFO_OVERFLOW_INT_W<LEDC_INT_STS_SPEC> {
+        FIFO_OVERFLOW_INT_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "LEDC Interrupt Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ledc_int_sts](index.html) module"]
+#[doc = "LEDC Interrupt Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ledc_int_sts::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ledc_int_sts::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LEDC_INT_STS_SPEC;
 impl crate::RegisterSpec for LEDC_INT_STS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ledc_int_sts::R](R) reader structure"]
-impl crate::Readable for LEDC_INT_STS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ledc_int_sts::W](W) writer structure"]
+#[doc = "`read()` method returns [`ledc_int_sts::R`](R) reader structure"]
+impl crate::Readable for LEDC_INT_STS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ledc_int_sts::W`](W) writer structure"]
 impl crate::Writable for LEDC_INT_STS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x1b;
 }

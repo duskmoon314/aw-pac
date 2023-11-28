@@ -1,49 +1,15 @@
 #[doc = "Register `dac_vol_ctrl` reader"]
-pub struct R(crate::R<DAC_VOL_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DAC_VOL_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DAC_VOL_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DAC_VOL_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DAC_VOL_CTRL_SPEC>;
 #[doc = "Register `dac_vol_ctrl` writer"]
-pub struct W(crate::W<DAC_VOL_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<DAC_VOL_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<DAC_VOL_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<DAC_VOL_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<DAC_VOL_CTRL_SPEC>;
 #[doc = "Field `dac_vol_r` reader - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
-pub type DAC_VOL_R_R = crate::FieldReader<u8, u8>;
+pub type DAC_VOL_R_R = crate::FieldReader;
 #[doc = "Field `dac_vol_r` writer - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
-pub type DAC_VOL_R_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DAC_VOL_CTRL_SPEC, u8, u8, 8, O>;
+pub type DAC_VOL_R_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `dac_vol_l` reader - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
-pub type DAC_VOL_L_R = crate::FieldReader<u8, u8>;
+pub type DAC_VOL_L_R = crate::FieldReader;
 #[doc = "Field `dac_vol_l` writer - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
-pub type DAC_VOL_L_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, DAC_VOL_CTRL_SPEC, u8, u8, 8, O>;
+pub type DAC_VOL_L_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `dac_vol_sel` reader - DAC Volume Control Selection Enable"]
 pub type DAC_VOL_SEL_R = crate::BitReader<DAC_VOL_SEL_A>;
 #[doc = "DAC Volume Control Selection Enable\n\nValue on reset: 0"]
@@ -63,35 +29,37 @@ impl From<DAC_VOL_SEL_A> for bool {
 impl DAC_VOL_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DAC_VOL_SEL_A {
+    pub const fn variant(&self) -> DAC_VOL_SEL_A {
         match self.bits {
             false => DAC_VOL_SEL_A::DISABLE,
             true => DAC_VOL_SEL_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == DAC_VOL_SEL_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == DAC_VOL_SEL_A::ENABLE
     }
 }
 #[doc = "Field `dac_vol_sel` writer - DAC Volume Control Selection Enable"]
-pub type DAC_VOL_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, DAC_VOL_CTRL_SPEC, DAC_VOL_SEL_A, O>;
-impl<'a, const O: u8> DAC_VOL_SEL_W<'a, O> {
+pub type DAC_VOL_SEL_W<'a, REG> = crate::BitWriter<'a, REG, DAC_VOL_SEL_A>;
+impl<'a, REG> DAC_VOL_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_VOL_SEL_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_VOL_SEL_A::ENABLE)
     }
 }
@@ -116,40 +84,41 @@ impl W {
     #[doc = "Bits 0:7 - DAC right channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_vol_r(&mut self) -> DAC_VOL_R_W<0> {
-        DAC_VOL_R_W::new(self)
+    pub fn dac_vol_r(&mut self) -> DAC_VOL_R_W<DAC_VOL_CTRL_SPEC> {
+        DAC_VOL_R_W::new(self, 0)
     }
     #[doc = "Bits 8:15 - DAC left channel volum\n\n(-119.25 dB to 71.25 dB, 0.75 dB/Step)\n\n0x00: Mute\n\n0x01: -119.25 dB\n\n...\n\n0x9F = -0.75 dB\n\n0xA0 = 0 dB\n\n0xA1 = 0.75 dB\n\n...\n\n0xFF = 71.25 dBe"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_vol_l(&mut self) -> DAC_VOL_L_W<8> {
-        DAC_VOL_L_W::new(self)
+    pub fn dac_vol_l(&mut self) -> DAC_VOL_L_W<DAC_VOL_CTRL_SPEC> {
+        DAC_VOL_L_W::new(self, 8)
     }
     #[doc = "Bit 16 - DAC Volume Control Selection Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_vol_sel(&mut self) -> DAC_VOL_SEL_W<16> {
-        DAC_VOL_SEL_W::new(self)
+    pub fn dac_vol_sel(&mut self) -> DAC_VOL_SEL_W<DAC_VOL_CTRL_SPEC> {
+        DAC_VOL_SEL_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DAC Volume Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dac_vol_ctrl](index.html) module"]
+#[doc = "DAC Volume Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dac_vol_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`dac_vol_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DAC_VOL_CTRL_SPEC;
 impl crate::RegisterSpec for DAC_VOL_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dac_vol_ctrl::R](R) reader structure"]
-impl crate::Readable for DAC_VOL_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [dac_vol_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`dac_vol_ctrl::R`](R) reader structure"]
+impl crate::Readable for DAC_VOL_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`dac_vol_ctrl::W`](W) writer structure"]
 impl crate::Writable for DAC_VOL_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

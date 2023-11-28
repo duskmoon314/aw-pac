@@ -1,41 +1,9 @@
 #[doc = "Register `sth` reader"]
-pub struct R(crate::R<STH_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<STH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<STH_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<STH_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<STH_SPEC>;
 #[doc = "Register `sth` writer"]
-pub struct W(crate::W<STH_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<STH_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<STH_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<STH_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<STH_SPEC>;
 #[doc = "Field `priority` reader - "]
-pub type PRIORITY_R = crate::FieldReader<u8, PRIORITY_A>;
+pub type PRIORITY_R = crate::FieldReader<PRIORITY_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -111,10 +79,13 @@ impl From<PRIORITY_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PRIORITY_A {
+    type Ux = u8;
+}
 impl PRIORITY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRIORITY_A {
+    pub const fn variant(&self) -> PRIORITY_A {
         match self.bits {
             0 => PRIORITY_A::P0,
             1 => PRIORITY_A::P1,
@@ -151,329 +122,332 @@ impl PRIORITY_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `P0`"]
+    #[doc = "Priority 0 (never interrupt)"]
     #[inline(always)]
     pub fn is_p0(&self) -> bool {
         *self == PRIORITY_A::P0
     }
-    #[doc = "Checks if the value of the field is `P1`"]
+    #[doc = "Priority 1"]
     #[inline(always)]
     pub fn is_p1(&self) -> bool {
         *self == PRIORITY_A::P1
     }
-    #[doc = "Checks if the value of the field is `P2`"]
+    #[doc = "Priority 2"]
     #[inline(always)]
     pub fn is_p2(&self) -> bool {
         *self == PRIORITY_A::P2
     }
-    #[doc = "Checks if the value of the field is `P3`"]
+    #[doc = "Priority 3"]
     #[inline(always)]
     pub fn is_p3(&self) -> bool {
         *self == PRIORITY_A::P3
     }
-    #[doc = "Checks if the value of the field is `P4`"]
+    #[doc = "Priority 4"]
     #[inline(always)]
     pub fn is_p4(&self) -> bool {
         *self == PRIORITY_A::P4
     }
-    #[doc = "Checks if the value of the field is `P5`"]
+    #[doc = "Priority 5"]
     #[inline(always)]
     pub fn is_p5(&self) -> bool {
         *self == PRIORITY_A::P5
     }
-    #[doc = "Checks if the value of the field is `P6`"]
+    #[doc = "Priority 6"]
     #[inline(always)]
     pub fn is_p6(&self) -> bool {
         *self == PRIORITY_A::P6
     }
-    #[doc = "Checks if the value of the field is `P7`"]
+    #[doc = "Priority 7"]
     #[inline(always)]
     pub fn is_p7(&self) -> bool {
         *self == PRIORITY_A::P7
     }
-    #[doc = "Checks if the value of the field is `P8`"]
+    #[doc = "Priority 8"]
     #[inline(always)]
     pub fn is_p8(&self) -> bool {
         *self == PRIORITY_A::P8
     }
-    #[doc = "Checks if the value of the field is `P9`"]
+    #[doc = "Priority 9"]
     #[inline(always)]
     pub fn is_p9(&self) -> bool {
         *self == PRIORITY_A::P9
     }
-    #[doc = "Checks if the value of the field is `P10`"]
+    #[doc = "Priority 10"]
     #[inline(always)]
     pub fn is_p10(&self) -> bool {
         *self == PRIORITY_A::P10
     }
-    #[doc = "Checks if the value of the field is `P11`"]
+    #[doc = "Priority 11"]
     #[inline(always)]
     pub fn is_p11(&self) -> bool {
         *self == PRIORITY_A::P11
     }
-    #[doc = "Checks if the value of the field is `P12`"]
+    #[doc = "Priority 12"]
     #[inline(always)]
     pub fn is_p12(&self) -> bool {
         *self == PRIORITY_A::P12
     }
-    #[doc = "Checks if the value of the field is `P13`"]
+    #[doc = "Priority 13"]
     #[inline(always)]
     pub fn is_p13(&self) -> bool {
         *self == PRIORITY_A::P13
     }
-    #[doc = "Checks if the value of the field is `P14`"]
+    #[doc = "Priority 14"]
     #[inline(always)]
     pub fn is_p14(&self) -> bool {
         *self == PRIORITY_A::P14
     }
-    #[doc = "Checks if the value of the field is `P15`"]
+    #[doc = "Priority 15"]
     #[inline(always)]
     pub fn is_p15(&self) -> bool {
         *self == PRIORITY_A::P15
     }
-    #[doc = "Checks if the value of the field is `P16`"]
+    #[doc = "Priority 16"]
     #[inline(always)]
     pub fn is_p16(&self) -> bool {
         *self == PRIORITY_A::P16
     }
-    #[doc = "Checks if the value of the field is `P17`"]
+    #[doc = "Priority 17"]
     #[inline(always)]
     pub fn is_p17(&self) -> bool {
         *self == PRIORITY_A::P17
     }
-    #[doc = "Checks if the value of the field is `P18`"]
+    #[doc = "Priority 18"]
     #[inline(always)]
     pub fn is_p18(&self) -> bool {
         *self == PRIORITY_A::P18
     }
-    #[doc = "Checks if the value of the field is `P19`"]
+    #[doc = "Priority 19"]
     #[inline(always)]
     pub fn is_p19(&self) -> bool {
         *self == PRIORITY_A::P19
     }
-    #[doc = "Checks if the value of the field is `P20`"]
+    #[doc = "Priority 20"]
     #[inline(always)]
     pub fn is_p20(&self) -> bool {
         *self == PRIORITY_A::P20
     }
-    #[doc = "Checks if the value of the field is `P21`"]
+    #[doc = "Priority 21"]
     #[inline(always)]
     pub fn is_p21(&self) -> bool {
         *self == PRIORITY_A::P21
     }
-    #[doc = "Checks if the value of the field is `P22`"]
+    #[doc = "Priority 22"]
     #[inline(always)]
     pub fn is_p22(&self) -> bool {
         *self == PRIORITY_A::P22
     }
-    #[doc = "Checks if the value of the field is `P23`"]
+    #[doc = "Priority 23"]
     #[inline(always)]
     pub fn is_p23(&self) -> bool {
         *self == PRIORITY_A::P23
     }
-    #[doc = "Checks if the value of the field is `P24`"]
+    #[doc = "Priority 24"]
     #[inline(always)]
     pub fn is_p24(&self) -> bool {
         *self == PRIORITY_A::P24
     }
-    #[doc = "Checks if the value of the field is `P25`"]
+    #[doc = "Priority 25"]
     #[inline(always)]
     pub fn is_p25(&self) -> bool {
         *self == PRIORITY_A::P25
     }
-    #[doc = "Checks if the value of the field is `P26`"]
+    #[doc = "Priority 26"]
     #[inline(always)]
     pub fn is_p26(&self) -> bool {
         *self == PRIORITY_A::P26
     }
-    #[doc = "Checks if the value of the field is `P27`"]
+    #[doc = "Priority 27"]
     #[inline(always)]
     pub fn is_p27(&self) -> bool {
         *self == PRIORITY_A::P27
     }
-    #[doc = "Checks if the value of the field is `P28`"]
+    #[doc = "Priority 28"]
     #[inline(always)]
     pub fn is_p28(&self) -> bool {
         *self == PRIORITY_A::P28
     }
-    #[doc = "Checks if the value of the field is `P29`"]
+    #[doc = "Priority 29"]
     #[inline(always)]
     pub fn is_p29(&self) -> bool {
         *self == PRIORITY_A::P29
     }
-    #[doc = "Checks if the value of the field is `P30`"]
+    #[doc = "Priority 30"]
     #[inline(always)]
     pub fn is_p30(&self) -> bool {
         *self == PRIORITY_A::P30
     }
-    #[doc = "Checks if the value of the field is `P31`"]
+    #[doc = "Priority 31"]
     #[inline(always)]
     pub fn is_p31(&self) -> bool {
         *self == PRIORITY_A::P31
     }
 }
 #[doc = "Field `priority` writer - "]
-pub type PRIORITY_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, STH_SPEC, u8, PRIORITY_A, 5, O>;
-impl<'a, const O: u8> PRIORITY_W<'a, O> {
+pub type PRIORITY_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 5, PRIORITY_A>;
+impl<'a, REG> PRIORITY_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Priority 0 (never interrupt)"]
     #[inline(always)]
-    pub fn p0(self) -> &'a mut W {
+    pub fn p0(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P0)
     }
     #[doc = "Priority 1"]
     #[inline(always)]
-    pub fn p1(self) -> &'a mut W {
+    pub fn p1(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P1)
     }
     #[doc = "Priority 2"]
     #[inline(always)]
-    pub fn p2(self) -> &'a mut W {
+    pub fn p2(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P2)
     }
     #[doc = "Priority 3"]
     #[inline(always)]
-    pub fn p3(self) -> &'a mut W {
+    pub fn p3(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P3)
     }
     #[doc = "Priority 4"]
     #[inline(always)]
-    pub fn p4(self) -> &'a mut W {
+    pub fn p4(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P4)
     }
     #[doc = "Priority 5"]
     #[inline(always)]
-    pub fn p5(self) -> &'a mut W {
+    pub fn p5(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P5)
     }
     #[doc = "Priority 6"]
     #[inline(always)]
-    pub fn p6(self) -> &'a mut W {
+    pub fn p6(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P6)
     }
     #[doc = "Priority 7"]
     #[inline(always)]
-    pub fn p7(self) -> &'a mut W {
+    pub fn p7(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P7)
     }
     #[doc = "Priority 8"]
     #[inline(always)]
-    pub fn p8(self) -> &'a mut W {
+    pub fn p8(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P8)
     }
     #[doc = "Priority 9"]
     #[inline(always)]
-    pub fn p9(self) -> &'a mut W {
+    pub fn p9(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P9)
     }
     #[doc = "Priority 10"]
     #[inline(always)]
-    pub fn p10(self) -> &'a mut W {
+    pub fn p10(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P10)
     }
     #[doc = "Priority 11"]
     #[inline(always)]
-    pub fn p11(self) -> &'a mut W {
+    pub fn p11(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P11)
     }
     #[doc = "Priority 12"]
     #[inline(always)]
-    pub fn p12(self) -> &'a mut W {
+    pub fn p12(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P12)
     }
     #[doc = "Priority 13"]
     #[inline(always)]
-    pub fn p13(self) -> &'a mut W {
+    pub fn p13(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P13)
     }
     #[doc = "Priority 14"]
     #[inline(always)]
-    pub fn p14(self) -> &'a mut W {
+    pub fn p14(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P14)
     }
     #[doc = "Priority 15"]
     #[inline(always)]
-    pub fn p15(self) -> &'a mut W {
+    pub fn p15(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P15)
     }
     #[doc = "Priority 16"]
     #[inline(always)]
-    pub fn p16(self) -> &'a mut W {
+    pub fn p16(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P16)
     }
     #[doc = "Priority 17"]
     #[inline(always)]
-    pub fn p17(self) -> &'a mut W {
+    pub fn p17(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P17)
     }
     #[doc = "Priority 18"]
     #[inline(always)]
-    pub fn p18(self) -> &'a mut W {
+    pub fn p18(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P18)
     }
     #[doc = "Priority 19"]
     #[inline(always)]
-    pub fn p19(self) -> &'a mut W {
+    pub fn p19(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P19)
     }
     #[doc = "Priority 20"]
     #[inline(always)]
-    pub fn p20(self) -> &'a mut W {
+    pub fn p20(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P20)
     }
     #[doc = "Priority 21"]
     #[inline(always)]
-    pub fn p21(self) -> &'a mut W {
+    pub fn p21(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P21)
     }
     #[doc = "Priority 22"]
     #[inline(always)]
-    pub fn p22(self) -> &'a mut W {
+    pub fn p22(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P22)
     }
     #[doc = "Priority 23"]
     #[inline(always)]
-    pub fn p23(self) -> &'a mut W {
+    pub fn p23(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P23)
     }
     #[doc = "Priority 24"]
     #[inline(always)]
-    pub fn p24(self) -> &'a mut W {
+    pub fn p24(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P24)
     }
     #[doc = "Priority 25"]
     #[inline(always)]
-    pub fn p25(self) -> &'a mut W {
+    pub fn p25(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P25)
     }
     #[doc = "Priority 26"]
     #[inline(always)]
-    pub fn p26(self) -> &'a mut W {
+    pub fn p26(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P26)
     }
     #[doc = "Priority 27"]
     #[inline(always)]
-    pub fn p27(self) -> &'a mut W {
+    pub fn p27(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P27)
     }
     #[doc = "Priority 28"]
     #[inline(always)]
-    pub fn p28(self) -> &'a mut W {
+    pub fn p28(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P28)
     }
     #[doc = "Priority 29"]
     #[inline(always)]
-    pub fn p29(self) -> &'a mut W {
+    pub fn p29(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P29)
     }
     #[doc = "Priority 30"]
     #[inline(always)]
-    pub fn p30(self) -> &'a mut W {
+    pub fn p30(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P30)
     }
     #[doc = "Priority 31"]
     #[inline(always)]
-    pub fn p31(self) -> &'a mut W {
+    pub fn p31(self) -> &'a mut crate::W<REG> {
         self.variant(PRIORITY_A::P31)
     }
 }
@@ -488,28 +462,29 @@ impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     #[must_use]
-    pub fn priority(&mut self) -> PRIORITY_W<0> {
-        PRIORITY_W::new(self)
+    pub fn priority(&mut self) -> PRIORITY_W<STH_SPEC> {
+        PRIORITY_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Supervisor Mode Priority Threshold Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [sth](index.html) module"]
+#[doc = "Supervisor Mode Priority Threshold Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`sth::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sth::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct STH_SPEC;
 impl crate::RegisterSpec for STH_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [sth::R](R) reader structure"]
-impl crate::Readable for STH_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [sth::W](W) writer structure"]
+#[doc = "`read()` method returns [`sth::R`](R) reader structure"]
+impl crate::Readable for STH_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`sth::W`](W) writer structure"]
 impl crate::Writable for STH_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,41 +1,9 @@
 #[doc = "Register `ce_icr` reader"]
-pub struct R(crate::R<CE_ICR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CE_ICR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CE_ICR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CE_ICR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CE_ICR_SPEC>;
 #[doc = "Register `ce_icr` writer"]
-pub struct W(crate::W<CE_ICR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CE_ICR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CE_ICR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CE_ICR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CE_ICR_SPEC>;
 #[doc = "Field `task_irq_en[0-3]` reader - Task Channel 3-0 Interrupt Enable"]
-pub type TASK_IRQ_EN_R = crate::FieldReader<u8, TASK_IRQ_EN_A>;
+pub type TASK_IRQ_EN_R = crate::FieldReader<TASK_IRQ_EN_A>;
 #[doc = "Task Channel 3-0 Interrupt Enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -51,46 +19,54 @@ impl From<TASK_IRQ_EN_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TASK_IRQ_EN_A {
+    type Ux = u8;
+}
 impl TASK_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TASK_IRQ_EN_A> {
+    pub const fn variant(&self) -> Option<TASK_IRQ_EN_A> {
         match self.bits {
             0 => Some(TASK_IRQ_EN_A::DISABLE),
             1 => Some(TASK_IRQ_EN_A::ENABLE),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TASK_IRQ_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TASK_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `task_irq_en[0-3]` writer - Task Channel 3-0 Interrupt Enable"]
-pub type TASK_IRQ_EN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CE_ICR_SPEC, u8, TASK_IRQ_EN_A, 4, O>;
-impl<'a, const O: u8> TASK_IRQ_EN_W<'a, O> {
+pub type TASK_IRQ_EN_W<'a, REG> = crate::FieldWriter<'a, REG, 4, TASK_IRQ_EN_A>;
+impl<'a, REG> TASK_IRQ_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TASK_IRQ_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TASK_IRQ_EN_A::ENABLE)
     }
 }
 impl R {
-    #[doc = "Task Channel 3-0 Interrupt Enable"]
+    #[doc = "Task Channel 3-0 Interrupt Enable\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `task0_irq_en` field"]
     #[inline(always)]
-    pub unsafe fn task_irq_en(&self, n: u8) -> TASK_IRQ_EN_R {
+    pub fn task_irq_en(&self, n: u8) -> TASK_IRQ_EN_R {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
         TASK_IRQ_EN_R::new(((self.bits >> n) & 0x0f) as u8)
     }
     #[doc = "Bits 0:3 - Task Channel 3-0 Interrupt Enable"]
@@ -115,55 +91,58 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Task Channel 3-0 Interrupt Enable"]
+    #[doc = "Task Channel 3-0 Interrupt Enable\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `task0_irq_en` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn task_irq_en<const O: u8>(&mut self) -> TASK_IRQ_EN_W<O> {
-        TASK_IRQ_EN_W::new(self)
+    pub fn task_irq_en(&mut self, n: u8) -> TASK_IRQ_EN_W<CE_ICR_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 4][n as usize];
+        TASK_IRQ_EN_W::new(self, n)
     }
     #[doc = "Bits 0:3 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn task0_irq_en(&mut self) -> TASK_IRQ_EN_W<0> {
-        TASK_IRQ_EN_W::new(self)
+    pub fn task0_irq_en(&mut self) -> TASK_IRQ_EN_W<CE_ICR_SPEC> {
+        TASK_IRQ_EN_W::new(self, 0)
     }
     #[doc = "Bits 1:4 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn task1_irq_en(&mut self) -> TASK_IRQ_EN_W<1> {
-        TASK_IRQ_EN_W::new(self)
+    pub fn task1_irq_en(&mut self) -> TASK_IRQ_EN_W<CE_ICR_SPEC> {
+        TASK_IRQ_EN_W::new(self, 1)
     }
     #[doc = "Bits 2:5 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn task2_irq_en(&mut self) -> TASK_IRQ_EN_W<2> {
-        TASK_IRQ_EN_W::new(self)
+    pub fn task2_irq_en(&mut self) -> TASK_IRQ_EN_W<CE_ICR_SPEC> {
+        TASK_IRQ_EN_W::new(self, 2)
     }
     #[doc = "Bits 3:6 - Task Channel 3-0 Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn task3_irq_en(&mut self) -> TASK_IRQ_EN_W<3> {
-        TASK_IRQ_EN_W::new(self)
+    pub fn task3_irq_en(&mut self) -> TASK_IRQ_EN_W<CE_ICR_SPEC> {
+        TASK_IRQ_EN_W::new(self, 3)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Interrupt Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ce_icr](index.html) module"]
+#[doc = "Interrupt Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ce_icr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ce_icr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CE_ICR_SPEC;
 impl crate::RegisterSpec for CE_ICR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ce_icr::R](R) reader structure"]
-impl crate::Readable for CE_ICR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ce_icr::W](W) writer structure"]
+#[doc = "`read()` method returns [`ce_icr::R`](R) reader structure"]
+impl crate::Readable for CE_ICR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ce_icr::W`](W) writer structure"]
 impl crate::Writable for CE_ICR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

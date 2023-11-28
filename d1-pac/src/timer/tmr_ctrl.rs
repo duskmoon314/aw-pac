@@ -1,39 +1,7 @@
 #[doc = "Register `tmr%s_ctrl` reader"]
-pub struct R(crate::R<TMR_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TMR_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TMR_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TMR_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TMR_CTRL_SPEC>;
 #[doc = "Register `tmr%s_ctrl` writer"]
-pub struct W(crate::W<TMR_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TMR_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TMR_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TMR_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TMR_CTRL_SPEC>;
 #[doc = "Field `tmr_en` reader - "]
 pub type TMR_EN_R = crate::BitReader<TMR_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<TMR_EN_A> for bool {
 impl TMR_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TMR_EN_A {
+    pub const fn variant(&self) -> TMR_EN_A {
         match self.bits {
             false => TMR_EN_A::STOP_PAUSE,
             true => TMR_EN_A::START,
         }
     }
-    #[doc = "Checks if the value of the field is `STOP_PAUSE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_stop_pause(&self) -> bool {
         *self == TMR_EN_A::STOP_PAUSE
     }
-    #[doc = "Checks if the value of the field is `START`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_start(&self) -> bool {
         *self == TMR_EN_A::START
     }
 }
 #[doc = "Field `tmr_en` writer - "]
-pub type TMR_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_EN_A, O>;
-impl<'a, const O: u8> TMR_EN_W<'a, O> {
+pub type TMR_EN_W<'a, REG> = crate::BitWriter<'a, REG, TMR_EN_A>;
+impl<'a, REG> TMR_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn stop_pause(self) -> &'a mut W {
+    pub fn stop_pause(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_EN_A::STOP_PAUSE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn start(self) -> &'a mut W {
+    pub fn start(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_EN_A::START)
     }
 }
@@ -103,39 +74,42 @@ impl From<TMR_RELOAD_A> for bool {
 impl TMR_RELOAD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TMR_RELOAD_A {
+    pub const fn variant(&self) -> TMR_RELOAD_A {
         match self.bits {
             false => TMR_RELOAD_A::NO_EFFECT,
             true => TMR_RELOAD_A::RELOAD,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_EFFECT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_no_effect(&self) -> bool {
         *self == TMR_RELOAD_A::NO_EFFECT
     }
-    #[doc = "Checks if the value of the field is `RELOAD`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_reload(&self) -> bool {
         *self == TMR_RELOAD_A::RELOAD
     }
 }
 #[doc = "Field `tmr_reload` writer - "]
-pub type TMR_RELOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_RELOAD_A, O>;
-impl<'a, const O: u8> TMR_RELOAD_W<'a, O> {
+pub type TMR_RELOAD_W<'a, REG> = crate::BitWriter<'a, REG, TMR_RELOAD_A>;
+impl<'a, REG> TMR_RELOAD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn no_effect(self) -> &'a mut W {
+    pub fn no_effect(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_RELOAD_A::NO_EFFECT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn reload(self) -> &'a mut W {
+    pub fn reload(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_RELOAD_A::RELOAD)
     }
 }
 #[doc = "Field `tmr_clk_src` reader - "]
-pub type TMR_CLK_SRC_R = crate::FieldReader<u8, TMR_CLK_SRC_A>;
+pub type TMR_CLK_SRC_R = crate::FieldReader<TMR_CLK_SRC_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -151,44 +125,50 @@ impl From<TMR_CLK_SRC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TMR_CLK_SRC_A {
+    type Ux = u8;
+}
 impl TMR_CLK_SRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<TMR_CLK_SRC_A> {
+    pub const fn variant(&self) -> Option<TMR_CLK_SRC_A> {
         match self.bits {
             0 => Some(TMR_CLK_SRC_A::LOSC),
             1 => Some(TMR_CLK_SRC_A::OSC24_M),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `LOSC`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_losc(&self) -> bool {
         *self == TMR_CLK_SRC_A::LOSC
     }
-    #[doc = "Checks if the value of the field is `OSC24_M`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_osc24_m(&self) -> bool {
         *self == TMR_CLK_SRC_A::OSC24_M
     }
 }
 #[doc = "Field `tmr_clk_src` writer - "]
-pub type TMR_CLK_SRC_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_SRC_A, 2, O>;
-impl<'a, const O: u8> TMR_CLK_SRC_W<'a, O> {
+pub type TMR_CLK_SRC_W<'a, REG> = crate::FieldWriter<'a, REG, 2, TMR_CLK_SRC_A>;
+impl<'a, REG> TMR_CLK_SRC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn losc(self) -> &'a mut W {
+    pub fn losc(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_SRC_A::LOSC)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn osc24_m(self) -> &'a mut W {
+    pub fn osc24_m(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_SRC_A::OSC24_M)
     }
 }
 #[doc = "Field `tmr_clk_pres` reader - "]
-pub type TMR_CLK_PRES_R = crate::FieldReader<u8, TMR_CLK_PRES_A>;
+pub type TMR_CLK_PRES_R = crate::FieldReader<TMR_CLK_PRES_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -216,10 +196,13 @@ impl From<TMR_CLK_PRES_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for TMR_CLK_PRES_A {
+    type Ux = u8;
+}
 impl TMR_CLK_PRES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TMR_CLK_PRES_A {
+    pub const fn variant(&self) -> TMR_CLK_PRES_A {
         match self.bits {
             0 => TMR_CLK_PRES_A::P1,
             1 => TMR_CLK_PRES_A::P2,
@@ -232,89 +215,92 @@ impl TMR_CLK_PRES_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `P1`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_p1(&self) -> bool {
         *self == TMR_CLK_PRES_A::P1
     }
-    #[doc = "Checks if the value of the field is `P2`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_p2(&self) -> bool {
         *self == TMR_CLK_PRES_A::P2
     }
-    #[doc = "Checks if the value of the field is `P4`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_p4(&self) -> bool {
         *self == TMR_CLK_PRES_A::P4
     }
-    #[doc = "Checks if the value of the field is `P8`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_p8(&self) -> bool {
         *self == TMR_CLK_PRES_A::P8
     }
-    #[doc = "Checks if the value of the field is `P16`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_p16(&self) -> bool {
         *self == TMR_CLK_PRES_A::P16
     }
-    #[doc = "Checks if the value of the field is `P32`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_p32(&self) -> bool {
         *self == TMR_CLK_PRES_A::P32
     }
-    #[doc = "Checks if the value of the field is `P64`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_p64(&self) -> bool {
         *self == TMR_CLK_PRES_A::P64
     }
-    #[doc = "Checks if the value of the field is `P128`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_p128(&self) -> bool {
         *self == TMR_CLK_PRES_A::P128
     }
 }
 #[doc = "Field `tmr_clk_pres` writer - "]
-pub type TMR_CLK_PRES_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, TMR_CTRL_SPEC, u8, TMR_CLK_PRES_A, 3, O>;
-impl<'a, const O: u8> TMR_CLK_PRES_W<'a, O> {
+pub type TMR_CLK_PRES_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, TMR_CLK_PRES_A>;
+impl<'a, REG> TMR_CLK_PRES_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn p1(self) -> &'a mut W {
+    pub fn p1(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P1)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn p2(self) -> &'a mut W {
+    pub fn p2(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P2)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn p4(self) -> &'a mut W {
+    pub fn p4(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P4)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn p8(self) -> &'a mut W {
+    pub fn p8(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P8)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn p16(self) -> &'a mut W {
+    pub fn p16(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P16)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn p32(self) -> &'a mut W {
+    pub fn p32(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P32)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn p64(self) -> &'a mut W {
+    pub fn p64(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P64)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn p128(self) -> &'a mut W {
+    pub fn p128(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_CLK_PRES_A::P128)
     }
 }
@@ -337,34 +323,37 @@ impl From<TMR_MODE_A> for bool {
 impl TMR_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TMR_MODE_A {
+    pub const fn variant(&self) -> TMR_MODE_A {
         match self.bits {
             false => TMR_MODE_A::PERIODIC,
             true => TMR_MODE_A::SINGLE_COUNTING,
         }
     }
-    #[doc = "Checks if the value of the field is `PERIODIC`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_periodic(&self) -> bool {
         *self == TMR_MODE_A::PERIODIC
     }
-    #[doc = "Checks if the value of the field is `SINGLE_COUNTING`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_single_counting(&self) -> bool {
         *self == TMR_MODE_A::SINGLE_COUNTING
     }
 }
 #[doc = "Field `tmr_mode` writer - "]
-pub type TMR_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, TMR_CTRL_SPEC, TMR_MODE_A, O>;
-impl<'a, const O: u8> TMR_MODE_W<'a, O> {
+pub type TMR_MODE_W<'a, REG> = crate::BitWriter<'a, REG, TMR_MODE_A>;
+impl<'a, REG> TMR_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn periodic(self) -> &'a mut W {
+    pub fn periodic(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_MODE_A::PERIODIC)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn single_counting(self) -> &'a mut W {
+    pub fn single_counting(self) -> &'a mut crate::W<REG> {
         self.variant(TMR_MODE_A::SINGLE_COUNTING)
     }
 }
@@ -399,52 +388,53 @@ impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
     #[must_use]
-    pub fn tmr_en(&mut self) -> TMR_EN_W<0> {
-        TMR_EN_W::new(self)
+    pub fn tmr_en(&mut self) -> TMR_EN_W<TMR_CTRL_SPEC> {
+        TMR_EN_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
     #[must_use]
-    pub fn tmr_reload(&mut self) -> TMR_RELOAD_W<1> {
-        TMR_RELOAD_W::new(self)
+    pub fn tmr_reload(&mut self) -> TMR_RELOAD_W<TMR_CTRL_SPEC> {
+        TMR_RELOAD_W::new(self, 1)
     }
     #[doc = "Bits 2:3"]
     #[inline(always)]
     #[must_use]
-    pub fn tmr_clk_src(&mut self) -> TMR_CLK_SRC_W<2> {
-        TMR_CLK_SRC_W::new(self)
+    pub fn tmr_clk_src(&mut self) -> TMR_CLK_SRC_W<TMR_CTRL_SPEC> {
+        TMR_CLK_SRC_W::new(self, 2)
     }
     #[doc = "Bits 4:6"]
     #[inline(always)]
     #[must_use]
-    pub fn tmr_clk_pres(&mut self) -> TMR_CLK_PRES_W<4> {
-        TMR_CLK_PRES_W::new(self)
+    pub fn tmr_clk_pres(&mut self) -> TMR_CLK_PRES_W<TMR_CTRL_SPEC> {
+        TMR_CLK_PRES_W::new(self, 4)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
     #[must_use]
-    pub fn tmr_mode(&mut self) -> TMR_MODE_W<7> {
-        TMR_MODE_W::new(self)
+    pub fn tmr_mode(&mut self) -> TMR_MODE_W<TMR_CTRL_SPEC> {
+        TMR_MODE_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Timer IRQ Enable Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tmr_ctrl](index.html) module"]
+#[doc = "Timer IRQ Enable Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tmr_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tmr_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TMR_CTRL_SPEC;
 impl crate::RegisterSpec for TMR_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tmr_ctrl::R](R) reader structure"]
-impl crate::Readable for TMR_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tmr_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`tmr_ctrl::R`](R) reader structure"]
+impl crate::Readable for TMR_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tmr_ctrl::W`](W) writer structure"]
 impl crate::Writable for TMR_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `pc_eint_deb` reader"]
-pub struct R(crate::R<PC_EINT_DEB_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PC_EINT_DEB_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PC_EINT_DEB_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PC_EINT_DEB_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PC_EINT_DEB_SPEC>;
 #[doc = "Register `pc_eint_deb` writer"]
-pub struct W(crate::W<PC_EINT_DEB_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PC_EINT_DEB_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PC_EINT_DEB_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PC_EINT_DEB_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PC_EINT_DEB_SPEC>;
 #[doc = "Field `pio_int_clk_select` reader - PIO Interrupt Clock Select"]
 pub type PIO_INT_CLK_SELECT_R = crate::BitReader<PIO_INT_CLK_SELECT_A>;
 #[doc = "PIO Interrupt Clock Select\n\nValue on reset: 0"]
@@ -53,43 +21,44 @@ impl From<PIO_INT_CLK_SELECT_A> for bool {
 impl PIO_INT_CLK_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PIO_INT_CLK_SELECT_A {
+    pub const fn variant(&self) -> PIO_INT_CLK_SELECT_A {
         match self.bits {
             false => PIO_INT_CLK_SELECT_A::LOSC_32K_HZ,
             true => PIO_INT_CLK_SELECT_A::HOSC_24M_HZ,
         }
     }
-    #[doc = "Checks if the value of the field is `LOSC_32K_HZ`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_losc_32k_hz(&self) -> bool {
         *self == PIO_INT_CLK_SELECT_A::LOSC_32K_HZ
     }
-    #[doc = "Checks if the value of the field is `HOSC_24M_HZ`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_hosc_24m_hz(&self) -> bool {
         *self == PIO_INT_CLK_SELECT_A::HOSC_24M_HZ
     }
 }
 #[doc = "Field `pio_int_clk_select` writer - PIO Interrupt Clock Select"]
-pub type PIO_INT_CLK_SELECT_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PC_EINT_DEB_SPEC, PIO_INT_CLK_SELECT_A, O>;
-impl<'a, const O: u8> PIO_INT_CLK_SELECT_W<'a, O> {
+pub type PIO_INT_CLK_SELECT_W<'a, REG> = crate::BitWriter<'a, REG, PIO_INT_CLK_SELECT_A>;
+impl<'a, REG> PIO_INT_CLK_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn losc_32k_hz(self) -> &'a mut W {
+    pub fn losc_32k_hz(self) -> &'a mut crate::W<REG> {
         self.variant(PIO_INT_CLK_SELECT_A::LOSC_32K_HZ)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn hosc_24m_hz(self) -> &'a mut W {
+    pub fn hosc_24m_hz(self) -> &'a mut crate::W<REG> {
         self.variant(PIO_INT_CLK_SELECT_A::HOSC_24M_HZ)
     }
 }
 #[doc = "Field `deb_clk_pre_scale` reader - Debounce Clock Pre_scale n"]
-pub type DEB_CLK_PRE_SCALE_R = crate::FieldReader<u8, u8>;
+pub type DEB_CLK_PRE_SCALE_R = crate::FieldReader;
 #[doc = "Field `deb_clk_pre_scale` writer - Debounce Clock Pre_scale n"]
-pub type DEB_CLK_PRE_SCALE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PC_EINT_DEB_SPEC, u8, u8, 3, O>;
+pub type DEB_CLK_PRE_SCALE_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bit 0 - PIO Interrupt Clock Select"]
     #[inline(always)]
@@ -106,34 +75,35 @@ impl W {
     #[doc = "Bit 0 - PIO Interrupt Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pio_int_clk_select(&mut self) -> PIO_INT_CLK_SELECT_W<0> {
-        PIO_INT_CLK_SELECT_W::new(self)
+    pub fn pio_int_clk_select(&mut self) -> PIO_INT_CLK_SELECT_W<PC_EINT_DEB_SPEC> {
+        PIO_INT_CLK_SELECT_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Debounce Clock Pre_scale n"]
     #[inline(always)]
     #[must_use]
-    pub fn deb_clk_pre_scale(&mut self) -> DEB_CLK_PRE_SCALE_W<4> {
-        DEB_CLK_PRE_SCALE_W::new(self)
+    pub fn deb_clk_pre_scale(&mut self) -> DEB_CLK_PRE_SCALE_W<PC_EINT_DEB_SPEC> {
+        DEB_CLK_PRE_SCALE_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PC External Interrupt Debounce Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pc_eint_deb](index.html) module"]
+#[doc = "PC External Interrupt Debounce Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pc_eint_deb::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pc_eint_deb::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PC_EINT_DEB_SPEC;
 impl crate::RegisterSpec for PC_EINT_DEB_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pc_eint_deb::R](R) reader structure"]
-impl crate::Readable for PC_EINT_DEB_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pc_eint_deb::W](W) writer structure"]
+#[doc = "`read()` method returns [`pc_eint_deb::R`](R) reader structure"]
+impl crate::Readable for PC_EINT_DEB_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pc_eint_deb::W`](W) writer structure"]
 impl crate::Writable for PC_EINT_DEB_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

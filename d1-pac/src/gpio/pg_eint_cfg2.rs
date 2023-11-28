@@ -1,41 +1,9 @@
 #[doc = "Register `pg_eint_cfg2` reader"]
-pub struct R(crate::R<PG_EINT_CFG2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PG_EINT_CFG2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PG_EINT_CFG2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PG_EINT_CFG2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PG_EINT_CFG2_SPEC>;
 #[doc = "Register `pg_eint_cfg2` writer"]
-pub struct W(crate::W<PG_EINT_CFG2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PG_EINT_CFG2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PG_EINT_CFG2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PG_EINT_CFG2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PG_EINT_CFG2_SPEC>;
 #[doc = "Field `eint_cfg[16-18]` reader - External INT Mode"]
-pub type EINT_CFG_R = crate::FieldReader<u8, EINT_CFG_A>;
+pub type EINT_CFG_R = crate::FieldReader<EINT_CFG_A>;
 #[doc = "External INT Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -57,10 +25,13 @@ impl From<EINT_CFG_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for EINT_CFG_A {
+    type Ux = u8;
+}
 impl EINT_CFG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<EINT_CFG_A> {
+    pub const fn variant(&self) -> Option<EINT_CFG_A> {
         match self.bits {
             0 => Some(EINT_CFG_A::POSITIVE_EDGE),
             1 => Some(EINT_CFG_A::NEGATIVE_EDGE),
@@ -70,67 +41,72 @@ impl EINT_CFG_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `POSITIVE_EDGE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_positive_edge(&self) -> bool {
         *self == EINT_CFG_A::POSITIVE_EDGE
     }
-    #[doc = "Checks if the value of the field is `NEGATIVE_EDGE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_negative_edge(&self) -> bool {
         *self == EINT_CFG_A::NEGATIVE_EDGE
     }
-    #[doc = "Checks if the value of the field is `HIGH_LEVEL`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_high_level(&self) -> bool {
         *self == EINT_CFG_A::HIGH_LEVEL
     }
-    #[doc = "Checks if the value of the field is `LOW_LEVEL`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_low_level(&self) -> bool {
         *self == EINT_CFG_A::LOW_LEVEL
     }
-    #[doc = "Checks if the value of the field is `DOUBLE_EDGE`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_double_edge(&self) -> bool {
         *self == EINT_CFG_A::DOUBLE_EDGE
     }
 }
 #[doc = "Field `eint_cfg[16-18]` writer - External INT Mode"]
-pub type EINT_CFG_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PG_EINT_CFG2_SPEC, u8, EINT_CFG_A, 4, O>;
-impl<'a, const O: u8> EINT_CFG_W<'a, O> {
+pub type EINT_CFG_W<'a, REG> = crate::FieldWriter<'a, REG, 4, EINT_CFG_A>;
+impl<'a, REG> EINT_CFG_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn positive_edge(self) -> &'a mut W {
+    pub fn positive_edge(self) -> &'a mut crate::W<REG> {
         self.variant(EINT_CFG_A::POSITIVE_EDGE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn negative_edge(self) -> &'a mut W {
+    pub fn negative_edge(self) -> &'a mut crate::W<REG> {
         self.variant(EINT_CFG_A::NEGATIVE_EDGE)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn high_level(self) -> &'a mut W {
+    pub fn high_level(self) -> &'a mut crate::W<REG> {
         self.variant(EINT_CFG_A::HIGH_LEVEL)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn low_level(self) -> &'a mut W {
+    pub fn low_level(self) -> &'a mut crate::W<REG> {
         self.variant(EINT_CFG_A::LOW_LEVEL)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn double_edge(self) -> &'a mut W {
+    pub fn double_edge(self) -> &'a mut crate::W<REG> {
         self.variant(EINT_CFG_A::DOUBLE_EDGE)
     }
 }
 impl R {
-    #[doc = "External INT Mode"]
+    #[doc = "External INT Mode\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `eint16_cfg` field"]
     #[inline(always)]
-    pub unsafe fn eint_cfg(&self, n: u8) -> EINT_CFG_R {
-        EINT_CFG_R::new(((self.bits >> ((n - 16) * 4)) & 0x0f) as u8)
+    pub fn eint_cfg(&self, n: u8) -> EINT_CFG_R {
+        #[allow(clippy::no_effect)]
+        [(); 3][n as usize];
+        EINT_CFG_R::new(((self.bits >> (n * 4)) & 0x0f) as u8)
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]
@@ -149,49 +125,52 @@ impl R {
     }
 }
 impl W {
-    #[doc = "External INT Mode"]
+    #[doc = "External INT Mode\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `eint16_cfg` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn eint_cfg<const O: u8>(&mut self) -> EINT_CFG_W<O> {
-        EINT_CFG_W::new(self)
+    pub fn eint_cfg(&mut self, n: u8) -> EINT_CFG_W<PG_EINT_CFG2_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 3][n as usize];
+        EINT_CFG_W::new(self, n * 4)
     }
     #[doc = "Bits 0:3 - External INT Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn eint16_cfg(&mut self) -> EINT_CFG_W<0> {
-        EINT_CFG_W::new(self)
+    pub fn eint16_cfg(&mut self) -> EINT_CFG_W<PG_EINT_CFG2_SPEC> {
+        EINT_CFG_W::new(self, 0)
     }
     #[doc = "Bits 4:7 - External INT Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn eint17_cfg(&mut self) -> EINT_CFG_W<4> {
-        EINT_CFG_W::new(self)
+    pub fn eint17_cfg(&mut self) -> EINT_CFG_W<PG_EINT_CFG2_SPEC> {
+        EINT_CFG_W::new(self, 4)
     }
     #[doc = "Bits 8:11 - External INT Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn eint18_cfg(&mut self) -> EINT_CFG_W<8> {
-        EINT_CFG_W::new(self)
+    pub fn eint18_cfg(&mut self) -> EINT_CFG_W<PG_EINT_CFG2_SPEC> {
+        EINT_CFG_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PG External Interrupt Configure Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pg_eint_cfg2](index.html) module"]
+#[doc = "PG External Interrupt Configure Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pg_eint_cfg2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pg_eint_cfg2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PG_EINT_CFG2_SPEC;
 impl crate::RegisterSpec for PG_EINT_CFG2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pg_eint_cfg2::R](R) reader structure"]
-impl crate::Readable for PG_EINT_CFG2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pg_eint_cfg2::W](W) writer structure"]
+#[doc = "`read()` method returns [`pg_eint_cfg2::R`](R) reader structure"]
+impl crate::Readable for PG_EINT_CFG2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pg_eint_cfg2::W`](W) writer structure"]
 impl crate::Writable for PG_EINT_CFG2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

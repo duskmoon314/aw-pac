@@ -1,39 +1,7 @@
 #[doc = "Register `tv_gctl` reader"]
-pub struct R(crate::R<TV_GCTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TV_GCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TV_GCTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TV_GCTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TV_GCTL_SPEC>;
 #[doc = "Register `tv_gctl` writer"]
-pub struct W(crate::W<TV_GCTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TV_GCTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TV_GCTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TV_GCTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TV_GCTL_SPEC>;
 #[doc = "Field `cec_ddc_pad_sel` reader - CEC DDC PAD Select"]
 pub type CEC_DDC_PAD_SEL_R = crate::BitReader<CEC_DDC_PAD_SEL_A>;
 #[doc = "CEC DDC PAD Select\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<CEC_DDC_PAD_SEL_A> for bool {
 impl CEC_DDC_PAD_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CEC_DDC_PAD_SEL_A {
+    pub const fn variant(&self) -> CEC_DDC_PAD_SEL_A {
         match self.bits {
             true => CEC_DDC_PAD_SEL_A::INTERNAL_PAD,
             false => CEC_DDC_PAD_SEL_A::GPIO_PAD,
         }
     }
-    #[doc = "Checks if the value of the field is `INTERNAL_PAD`"]
+    #[doc = "TCON_TV internal pad for cec scl sal"]
     #[inline(always)]
     pub fn is_internal_pad(&self) -> bool {
         *self == CEC_DDC_PAD_SEL_A::INTERNAL_PAD
     }
-    #[doc = "Checks if the value of the field is `GPIO_PAD`"]
+    #[doc = "GPIO pad for cec scl sal"]
     #[inline(always)]
     pub fn is_gpio_pad(&self) -> bool {
         *self == CEC_DDC_PAD_SEL_A::GPIO_PAD
     }
 }
 #[doc = "Field `cec_ddc_pad_sel` writer - CEC DDC PAD Select"]
-pub type CEC_DDC_PAD_SEL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, TV_GCTL_SPEC, CEC_DDC_PAD_SEL_A, O>;
-impl<'a, const O: u8> CEC_DDC_PAD_SEL_W<'a, O> {
+pub type CEC_DDC_PAD_SEL_W<'a, REG> = crate::BitWriter<'a, REG, CEC_DDC_PAD_SEL_A>;
+impl<'a, REG> CEC_DDC_PAD_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "TCON_TV internal pad for cec scl sal"]
     #[inline(always)]
-    pub fn internal_pad(self) -> &'a mut W {
+    pub fn internal_pad(self) -> &'a mut crate::W<REG> {
         self.variant(CEC_DDC_PAD_SEL_A::INTERNAL_PAD)
     }
     #[doc = "GPIO pad for cec scl sal"]
     #[inline(always)]
-    pub fn gpio_pad(self) -> &'a mut W {
+    pub fn gpio_pad(self) -> &'a mut crate::W<REG> {
         self.variant(CEC_DDC_PAD_SEL_A::GPIO_PAD)
     }
 }
@@ -104,34 +74,37 @@ impl From<TV_EN_A> for bool {
 impl TV_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TV_EN_A {
+    pub const fn variant(&self) -> TV_EN_A {
         match self.bits {
             false => TV_EN_A::DISABLE,
             true => TV_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TV_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TV_EN_A::ENABLE
     }
 }
 #[doc = "Field `tv_en` writer - When it is disabled, the module will be reset to idle state."]
-pub type TV_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TV_GCTL_SPEC, TV_EN_A, O>;
-impl<'a, const O: u8> TV_EN_W<'a, O> {
+pub type TV_EN_W<'a, REG> = crate::BitWriter<'a, REG, TV_EN_A>;
+impl<'a, REG> TV_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TV_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TV_EN_A::ENABLE)
     }
 }
@@ -151,34 +124,35 @@ impl W {
     #[doc = "Bit 1 - CEC DDC PAD Select"]
     #[inline(always)]
     #[must_use]
-    pub fn cec_ddc_pad_sel(&mut self) -> CEC_DDC_PAD_SEL_W<1> {
-        CEC_DDC_PAD_SEL_W::new(self)
+    pub fn cec_ddc_pad_sel(&mut self) -> CEC_DDC_PAD_SEL_W<TV_GCTL_SPEC> {
+        CEC_DDC_PAD_SEL_W::new(self, 1)
     }
     #[doc = "Bit 31 - When it is disabled, the module will be reset to idle state."]
     #[inline(always)]
     #[must_use]
-    pub fn tv_en(&mut self) -> TV_EN_W<31> {
-        TV_EN_W::new(self)
+    pub fn tv_en(&mut self) -> TV_EN_W<TV_GCTL_SPEC> {
+        TV_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TV Global Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tv_gctl](index.html) module"]
+#[doc = "TV Global Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv_gctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tv_gctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TV_GCTL_SPEC;
 impl crate::RegisterSpec for TV_GCTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tv_gctl::R](R) reader structure"]
-impl crate::Readable for TV_GCTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tv_gctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`tv_gctl::R`](R) reader structure"]
+impl crate::Readable for TV_GCTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tv_gctl::W`](W) writer structure"]
 impl crate::Writable for TV_GCTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

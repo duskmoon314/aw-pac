@@ -1,28 +1,15 @@
 #[doc = "Register `hcsparams` reader"]
-pub struct R(crate::R<HCSPARAMS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HCSPARAMS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HCSPARAMS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HCSPARAMS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HCSPARAMS_SPEC>;
 #[doc = "Field `n_ports` reader - This field specifies the number of physical downstream ports implemented on this host controller. The value of this field determines how many port registers are addressable in the Operational Register Space. Valid values are in the range of 0x1 to 0x0f."]
-pub type N_PORTS_R = crate::FieldReader<u8, u8>;
+pub type N_PORTS_R = crate::FieldReader;
 #[doc = "Field `port_routing_rules` reader - This field indicates the method used by this implementation for how all ports are mapped to companion controllers."]
-pub type PORT_ROUTING_RULES_R = crate::BitReader<bool>;
+pub type PORT_ROUTING_RULES_R = crate::BitReader;
 #[doc = "Field `n_pcc` reader - Number of Port per Companion Controller (N_PCC)\n\nThis field indicates the number of ports supported per companion host controller host controller. It is used to indicate the port routing configuration to system software."]
-pub type N_PCC_R = crate::FieldReader<u8, u8>;
+pub type N_PCC_R = crate::FieldReader;
 #[doc = "Field `n_cc` reader - Number of Companion Controller (N_CC)\n\nThis field indicates the number of companion controllers associated with this USB2.0 host controller. A zero in this field indicates there are no companion host controllers. And a value larger than zero in this field indicates there are companion USB1.1 host controller(s)."]
-pub type N_CC_R = crate::FieldReader<u8, u8>;
+pub type N_CC_R = crate::FieldReader;
 #[doc = "Field `debug_port_number` reader - This register identifies which of the host controller ports is the debug port. The value is the port number (one based) of the debug port."]
-pub type DEBUG_PORT_NUMBER_R = crate::FieldReader<u8, u8>;
+pub type DEBUG_PORT_NUMBER_R = crate::FieldReader;
 impl R {
     #[doc = "Bits 0:3 - This field specifies the number of physical downstream ports implemented on this host controller. The value of this field determines how many port registers are addressable in the Operational Register Space. Valid values are in the range of 0x1 to 0x0f."]
     #[inline(always)]
@@ -50,15 +37,13 @@ impl R {
         DEBUG_PORT_NUMBER_R::new(((self.bits >> 20) & 0x0f) as u8)
     }
 }
-#[doc = "EHCI Host Control Structural Parameter Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hcsparams](index.html) module"]
+#[doc = "EHCI Host Control Structural Parameter Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hcsparams::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HCSPARAMS_SPEC;
 impl crate::RegisterSpec for HCSPARAMS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hcsparams::R](R) reader structure"]
-impl crate::Readable for HCSPARAMS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`hcsparams::R`](R) reader structure"]
+impl crate::Readable for HCSPARAMS_SPEC {}
 #[doc = "`reset()` method sets hcsparams to value 0"]
 impl crate::Resettable for HCSPARAMS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

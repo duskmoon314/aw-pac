@@ -1,43 +1,11 @@
 #[doc = "Register `emac_rx_ctl0` reader"]
-pub struct R(crate::R<EMAC_RX_CTL0_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<EMAC_RX_CTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<EMAC_RX_CTL0_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<EMAC_RX_CTL0_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<EMAC_RX_CTL0_SPEC>;
 #[doc = "Register `emac_rx_ctl0` writer"]
-pub struct W(crate::W<EMAC_RX_CTL0_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<EMAC_RX_CTL0_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<EMAC_RX_CTL0_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<EMAC_RX_CTL0_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<EMAC_RX_CTL0_SPEC>;
 #[doc = "Field `rx_flow_ctl_en` reader - "]
-pub type RX_FLOW_CTL_EN_R = crate::BitReader<bool>;
+pub type RX_FLOW_CTL_EN_R = crate::BitReader;
 #[doc = "Field `rx_flow_ctl_en` writer - "]
-pub type RX_FLOW_CTL_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, O>;
+pub type RX_FLOW_CTL_EN_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `rx_pause_frm_md` reader - "]
 pub type RX_PAUSE_FRM_MD_R = crate::BitReader<RX_PAUSE_FRM_MD_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -57,35 +25,37 @@ impl From<RX_PAUSE_FRM_MD_A> for bool {
 impl RX_PAUSE_FRM_MD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_PAUSE_FRM_MD_A {
+    pub const fn variant(&self) -> RX_PAUSE_FRM_MD_A {
         match self.bits {
             false => RX_PAUSE_FRM_MD_A::ONLY_MULTICAST,
             true => RX_PAUSE_FRM_MD_A::ALSO_UNICAST_MAC0,
         }
     }
-    #[doc = "Checks if the value of the field is `ONLY_MULTICAST`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_only_multicast(&self) -> bool {
         *self == RX_PAUSE_FRM_MD_A::ONLY_MULTICAST
     }
-    #[doc = "Checks if the value of the field is `ALSO_UNICAST_MAC0`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_also_unicast_mac0(&self) -> bool {
         *self == RX_PAUSE_FRM_MD_A::ALSO_UNICAST_MAC0
     }
 }
 #[doc = "Field `rx_pause_frm_md` writer - "]
-pub type RX_PAUSE_FRM_MD_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_PAUSE_FRM_MD_A, O>;
-impl<'a, const O: u8> RX_PAUSE_FRM_MD_W<'a, O> {
+pub type RX_PAUSE_FRM_MD_W<'a, REG> = crate::BitWriter<'a, REG, RX_PAUSE_FRM_MD_A>;
+impl<'a, REG> RX_PAUSE_FRM_MD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn only_multicast(self) -> &'a mut W {
+    pub fn only_multicast(self) -> &'a mut crate::W<REG> {
         self.variant(RX_PAUSE_FRM_MD_A::ONLY_MULTICAST)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn also_unicast_mac0(self) -> &'a mut W {
+    pub fn also_unicast_mac0(self) -> &'a mut crate::W<REG> {
         self.variant(RX_PAUSE_FRM_MD_A::ALSO_UNICAST_MAC0)
     }
 }
@@ -108,42 +78,44 @@ impl From<CHECK_CRC_A> for bool {
 impl CHECK_CRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHECK_CRC_A {
+    pub const fn variant(&self) -> CHECK_CRC_A {
         match self.bits {
             false => CHECK_CRC_A::DISABLE,
             true => CHECK_CRC_A::CHECK,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == CHECK_CRC_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `CHECK`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_check(&self) -> bool {
         *self == CHECK_CRC_A::CHECK
     }
 }
 #[doc = "Field `check_crc` writer - Check CRC Enable"]
-pub type CHECK_CRC_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, CHECK_CRC_A, O>;
-impl<'a, const O: u8> CHECK_CRC_W<'a, O> {
+pub type CHECK_CRC_W<'a, REG> = crate::BitWriter<'a, REG, CHECK_CRC_A>;
+impl<'a, REG> CHECK_CRC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(CHECK_CRC_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn check(self) -> &'a mut W {
+    pub fn check(self) -> &'a mut crate::W<REG> {
         self.variant(CHECK_CRC_A::CHECK)
     }
 }
 #[doc = "Field `strip_fcs` reader - "]
-pub type STRIP_FCS_R = crate::BitReader<bool>;
+pub type STRIP_FCS_R = crate::BitReader;
 #[doc = "Field `strip_fcs` writer - "]
-pub type STRIP_FCS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, bool, O>;
+pub type STRIP_FCS_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `jumbo_frm_en` reader - Jumbo Frame Enable"]
 pub type JUMBO_FRM_EN_R = crate::BitReader<JUMBO_FRM_EN_A>;
 #[doc = "Jumbo Frame Enable\n\nValue on reset: 0"]
@@ -163,35 +135,37 @@ impl From<JUMBO_FRM_EN_A> for bool {
 impl JUMBO_FRM_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> JUMBO_FRM_EN_A {
+    pub const fn variant(&self) -> JUMBO_FRM_EN_A {
         match self.bits {
             false => JUMBO_FRM_EN_A::DISABLE,
             true => JUMBO_FRM_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == JUMBO_FRM_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == JUMBO_FRM_EN_A::ENABLE
     }
 }
 #[doc = "Field `jumbo_frm_en` writer - Jumbo Frame Enable"]
-pub type JUMBO_FRM_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, JUMBO_FRM_EN_A, O>;
-impl<'a, const O: u8> JUMBO_FRM_EN_W<'a, O> {
+pub type JUMBO_FRM_EN_W<'a, REG> = crate::BitWriter<'a, REG, JUMBO_FRM_EN_A>;
+impl<'a, REG> JUMBO_FRM_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(JUMBO_FRM_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(JUMBO_FRM_EN_A::ENABLE)
     }
 }
@@ -214,35 +188,37 @@ impl From<RX_FRM_LEN_CTL_A> for bool {
 impl RX_FRM_LEN_CTL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_FRM_LEN_CTL_A {
+    pub const fn variant(&self) -> RX_FRM_LEN_CTL_A {
         match self.bits {
             false => RX_FRM_LEN_CTL_A::B2048,
             true => RX_FRM_LEN_CTL_A::B16384,
         }
     }
-    #[doc = "Checks if the value of the field is `B2048`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_b2048(&self) -> bool {
         *self == RX_FRM_LEN_CTL_A::B2048
     }
-    #[doc = "Checks if the value of the field is `B16384`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_b16384(&self) -> bool {
         *self == RX_FRM_LEN_CTL_A::B16384
     }
 }
 #[doc = "Field `rx_frm_len_ctl` writer - Frame Receive Length Control"]
-pub type RX_FRM_LEN_CTL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_FRM_LEN_CTL_A, O>;
-impl<'a, const O: u8> RX_FRM_LEN_CTL_W<'a, O> {
+pub type RX_FRM_LEN_CTL_W<'a, REG> = crate::BitWriter<'a, REG, RX_FRM_LEN_CTL_A>;
+impl<'a, REG> RX_FRM_LEN_CTL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn b2048(self) -> &'a mut W {
+    pub fn b2048(self) -> &'a mut crate::W<REG> {
         self.variant(RX_FRM_LEN_CTL_A::B2048)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn b16384(self) -> &'a mut W {
+    pub fn b16384(self) -> &'a mut crate::W<REG> {
         self.variant(RX_FRM_LEN_CTL_A::B16384)
     }
 }
@@ -265,34 +241,37 @@ impl From<RX_EN_A> for bool {
 impl RX_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_EN_A {
+    pub const fn variant(&self) -> RX_EN_A {
         match self.bits {
             false => RX_EN_A::DISABLE,
             true => RX_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RX_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RX_EN_A::ENABLE
     }
 }
 #[doc = "Field `rx_en` writer - Enable Receiver"]
-pub type RX_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EMAC_RX_CTL0_SPEC, RX_EN_A, O>;
-impl<'a, const O: u8> RX_EN_W<'a, O> {
+pub type RX_EN_W<'a, REG> = crate::BitWriter<'a, REG, RX_EN_A>;
+impl<'a, REG> RX_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_EN_A::ENABLE)
     }
 }
@@ -337,64 +316,65 @@ impl W {
     #[doc = "Bit 16"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_flow_ctl_en(&mut self) -> RX_FLOW_CTL_EN_W<16> {
-        RX_FLOW_CTL_EN_W::new(self)
+    pub fn rx_flow_ctl_en(&mut self) -> RX_FLOW_CTL_EN_W<EMAC_RX_CTL0_SPEC> {
+        RX_FLOW_CTL_EN_W::new(self, 16)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_pause_frm_md(&mut self) -> RX_PAUSE_FRM_MD_W<17> {
-        RX_PAUSE_FRM_MD_W::new(self)
+    pub fn rx_pause_frm_md(&mut self) -> RX_PAUSE_FRM_MD_W<EMAC_RX_CTL0_SPEC> {
+        RX_PAUSE_FRM_MD_W::new(self, 17)
     }
     #[doc = "Bit 27 - Check CRC Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn check_crc(&mut self) -> CHECK_CRC_W<27> {
-        CHECK_CRC_W::new(self)
+    pub fn check_crc(&mut self) -> CHECK_CRC_W<EMAC_RX_CTL0_SPEC> {
+        CHECK_CRC_W::new(self, 27)
     }
     #[doc = "Bit 28"]
     #[inline(always)]
     #[must_use]
-    pub fn strip_fcs(&mut self) -> STRIP_FCS_W<28> {
-        STRIP_FCS_W::new(self)
+    pub fn strip_fcs(&mut self) -> STRIP_FCS_W<EMAC_RX_CTL0_SPEC> {
+        STRIP_FCS_W::new(self, 28)
     }
     #[doc = "Bit 29 - Jumbo Frame Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn jumbo_frm_en(&mut self) -> JUMBO_FRM_EN_W<29> {
-        JUMBO_FRM_EN_W::new(self)
+    pub fn jumbo_frm_en(&mut self) -> JUMBO_FRM_EN_W<EMAC_RX_CTL0_SPEC> {
+        JUMBO_FRM_EN_W::new(self, 29)
     }
     #[doc = "Bit 30 - Frame Receive Length Control"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_frm_len_ctl(&mut self) -> RX_FRM_LEN_CTL_W<30> {
-        RX_FRM_LEN_CTL_W::new(self)
+    pub fn rx_frm_len_ctl(&mut self) -> RX_FRM_LEN_CTL_W<EMAC_RX_CTL0_SPEC> {
+        RX_FRM_LEN_CTL_W::new(self, 30)
     }
     #[doc = "Bit 31 - Enable Receiver"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_en(&mut self) -> RX_EN_W<31> {
-        RX_EN_W::new(self)
+    pub fn rx_en(&mut self) -> RX_EN_W<EMAC_RX_CTL0_SPEC> {
+        RX_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "EMAC Receive Control Register0\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [emac_rx_ctl0](index.html) module"]
+#[doc = "EMAC Receive Control Register0\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`emac_rx_ctl0::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`emac_rx_ctl0::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct EMAC_RX_CTL0_SPEC;
 impl crate::RegisterSpec for EMAC_RX_CTL0_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [emac_rx_ctl0::R](R) reader structure"]
-impl crate::Readable for EMAC_RX_CTL0_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [emac_rx_ctl0::W](W) writer structure"]
+#[doc = "`read()` method returns [`emac_rx_ctl0::R`](R) reader structure"]
+impl crate::Readable for EMAC_RX_CTL0_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`emac_rx_ctl0::W`](W) writer structure"]
 impl crate::Writable for EMAC_RX_CTL0_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

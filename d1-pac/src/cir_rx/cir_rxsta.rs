@@ -1,39 +1,7 @@
 #[doc = "Register `cir_rxsta` reader"]
-pub struct R(crate::R<CIR_RXSTA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CIR_RXSTA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CIR_RXSTA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CIR_RXSTA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CIR_RXSTA_SPEC>;
 #[doc = "Register `cir_rxsta` writer"]
-pub struct W(crate::W<CIR_RXSTA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CIR_RXSTA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CIR_RXSTA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CIR_RXSTA_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CIR_RXSTA_SPEC>;
 #[doc = "Field `roi` reader - Receiver FIFO Overrun"]
 pub type ROI_R = crate::BitReader<ROI_A>;
 #[doc = "Receiver FIFO Overrun\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<ROI_A> for bool {
 impl ROI_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ROI_A {
+    pub const fn variant(&self) -> ROI_A {
         match self.bits {
             false => ROI_A::NOT_OVERRUN,
             true => ROI_A::OVERRUN,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_OVERRUN`"]
+    #[doc = "Receiver FIFO not overrun"]
     #[inline(always)]
     pub fn is_not_overrun(&self) -> bool {
         *self == ROI_A::NOT_OVERRUN
     }
-    #[doc = "Checks if the value of the field is `OVERRUN`"]
+    #[doc = "Receiver FIFO overrun"]
     #[inline(always)]
     pub fn is_overrun(&self) -> bool {
         *self == ROI_A::OVERRUN
     }
 }
 #[doc = "Field `roi` writer - Receiver FIFO Overrun"]
-pub type ROI_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, ROI_A, O>;
-impl<'a, const O: u8> ROI_W<'a, O> {
+pub type ROI_W<'a, REG> = crate::BitWriter1C<'a, REG, ROI_A>;
+impl<'a, REG> ROI_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Receiver FIFO not overrun"]
     #[inline(always)]
-    pub fn not_overrun(self) -> &'a mut W {
+    pub fn not_overrun(self) -> &'a mut crate::W<REG> {
         self.variant(ROI_A::NOT_OVERRUN)
     }
     #[doc = "Receiver FIFO overrun"]
     #[inline(always)]
-    pub fn overrun(self) -> &'a mut W {
+    pub fn overrun(self) -> &'a mut crate::W<REG> {
         self.variant(ROI_A::OVERRUN)
     }
 }
@@ -103,34 +74,37 @@ impl From<RPE_A> for bool {
 impl RPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RPE_A {
+    pub const fn variant(&self) -> RPE_A {
         match self.bits {
             false => RPE_A::NOT_DETECTED,
             true => RPE_A::STO_FIELD,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_DETECTED`"]
+    #[doc = "STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
     #[inline(always)]
     pub fn is_not_detected(&self) -> bool {
         *self == RPE_A::NOT_DETECTED
     }
-    #[doc = "Checks if the value of the field is `STO_FIELD`"]
+    #[doc = "STO field or packet abort symbol (7'b0000,000 and 8'b0000,0000 for MIR and FIR) is detected. In CIR mode, one CIR symbol is received."]
     #[inline(always)]
     pub fn is_sto_field(&self) -> bool {
         *self == RPE_A::STO_FIELD
     }
 }
 #[doc = "Field `rpe` writer - Receiver Packet End Flag"]
-pub type RPE_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RPE_A, O>;
-impl<'a, const O: u8> RPE_W<'a, O> {
+pub type RPE_W<'a, REG> = crate::BitWriter1C<'a, REG, RPE_A>;
+impl<'a, REG> RPE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "STO was not detected. In CIR mode, one CIR symbol is receiving or not detected."]
     #[inline(always)]
-    pub fn not_detected(self) -> &'a mut W {
+    pub fn not_detected(self) -> &'a mut crate::W<REG> {
         self.variant(RPE_A::NOT_DETECTED)
     }
     #[doc = "STO field or packet abort symbol (7'b0000,000 and 8'b0000,0000 for MIR and FIR) is detected. In CIR mode, one CIR symbol is received."]
     #[inline(always)]
-    pub fn sto_field(self) -> &'a mut W {
+    pub fn sto_field(self) -> &'a mut crate::W<REG> {
         self.variant(RPE_A::STO_FIELD)
     }
 }
@@ -153,34 +127,37 @@ impl From<RA_A> for bool {
 impl RA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RA_A {
+    pub const fn variant(&self) -> RA_A {
         match self.bits {
             false => RA_A::NO_AVAILABLE,
             true => RA_A::AVAILABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_AVAILABLE`"]
+    #[doc = "RX FIFO not available according to its level"]
     #[inline(always)]
     pub fn is_no_available(&self) -> bool {
         *self == RA_A::NO_AVAILABLE
     }
-    #[doc = "Checks if the value of the field is `AVAILABLE`"]
+    #[doc = "RX FIFO available according to its level Writing 1 clears this bit."]
     #[inline(always)]
     pub fn is_available(&self) -> bool {
         *self == RA_A::AVAILABLE
     }
 }
 #[doc = "Field `ra` writer - RX FIFO Available"]
-pub type RA_W<'a, const O: u8> = crate::BitWriter1C<'a, u32, CIR_RXSTA_SPEC, RA_A, O>;
-impl<'a, const O: u8> RA_W<'a, O> {
+pub type RA_W<'a, REG> = crate::BitWriter1C<'a, REG, RA_A>;
+impl<'a, REG> RA_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "RX FIFO not available according to its level"]
     #[inline(always)]
-    pub fn no_available(self) -> &'a mut W {
+    pub fn no_available(self) -> &'a mut crate::W<REG> {
         self.variant(RA_A::NO_AVAILABLE)
     }
     #[doc = "RX FIFO available according to its level Writing 1 clears this bit."]
     #[inline(always)]
-    pub fn available(self) -> &'a mut W {
+    pub fn available(self) -> &'a mut crate::W<REG> {
         self.variant(RA_A::AVAILABLE)
     }
 }
@@ -203,25 +180,25 @@ impl From<STAT_A> for bool {
 impl STAT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STAT_A {
+    pub const fn variant(&self) -> STAT_A {
         match self.bits {
             false => STAT_A::IDLE,
             true => STAT_A::BUSY,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "Idle"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == STAT_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "Busy"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == STAT_A::BUSY
     }
 }
 #[doc = "Field `rac` reader - RX FIFO Available Counter"]
-pub type RAC_R = crate::FieldReader<u8, RAC_A>;
+pub type RAC_R = crate::FieldReader<RAC_A>;
 #[doc = "RX FIFO Available Counter\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -363,10 +340,13 @@ impl From<RAC_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for RAC_A {
+    type Ux = u8;
+}
 impl RAC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<RAC_A> {
+    pub const fn variant(&self) -> Option<RAC_A> {
         match self.bits {
             0 => Some(RAC_A::B0),
             1 => Some(RAC_A::B1),
@@ -436,327 +416,327 @@ impl RAC_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `B0`"]
+    #[doc = "No available data in RX FIFO"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == RAC_A::B0
     }
-    #[doc = "Checks if the value of the field is `B1`"]
+    #[doc = "1 byte available in RX FIFO"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == RAC_A::B1
     }
-    #[doc = "Checks if the value of the field is `B2`"]
+    #[doc = "2 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b2(&self) -> bool {
         *self == RAC_A::B2
     }
-    #[doc = "Checks if the value of the field is `B3`"]
+    #[doc = "3 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b3(&self) -> bool {
         *self == RAC_A::B3
     }
-    #[doc = "Checks if the value of the field is `B4`"]
+    #[doc = "4 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b4(&self) -> bool {
         *self == RAC_A::B4
     }
-    #[doc = "Checks if the value of the field is `B5`"]
+    #[doc = "5 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b5(&self) -> bool {
         *self == RAC_A::B5
     }
-    #[doc = "Checks if the value of the field is `B6`"]
+    #[doc = "6 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b6(&self) -> bool {
         *self == RAC_A::B6
     }
-    #[doc = "Checks if the value of the field is `B7`"]
+    #[doc = "7 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b7(&self) -> bool {
         *self == RAC_A::B7
     }
-    #[doc = "Checks if the value of the field is `B8`"]
+    #[doc = "8 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b8(&self) -> bool {
         *self == RAC_A::B8
     }
-    #[doc = "Checks if the value of the field is `B9`"]
+    #[doc = "9 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b9(&self) -> bool {
         *self == RAC_A::B9
     }
-    #[doc = "Checks if the value of the field is `B10`"]
+    #[doc = "10 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b10(&self) -> bool {
         *self == RAC_A::B10
     }
-    #[doc = "Checks if the value of the field is `B11`"]
+    #[doc = "11 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b11(&self) -> bool {
         *self == RAC_A::B11
     }
-    #[doc = "Checks if the value of the field is `B12`"]
+    #[doc = "12 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b12(&self) -> bool {
         *self == RAC_A::B12
     }
-    #[doc = "Checks if the value of the field is `B13`"]
+    #[doc = "13 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b13(&self) -> bool {
         *self == RAC_A::B13
     }
-    #[doc = "Checks if the value of the field is `B14`"]
+    #[doc = "14 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b14(&self) -> bool {
         *self == RAC_A::B14
     }
-    #[doc = "Checks if the value of the field is `B15`"]
+    #[doc = "15 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b15(&self) -> bool {
         *self == RAC_A::B15
     }
-    #[doc = "Checks if the value of the field is `B16`"]
+    #[doc = "16 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b16(&self) -> bool {
         *self == RAC_A::B16
     }
-    #[doc = "Checks if the value of the field is `B17`"]
+    #[doc = "17 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b17(&self) -> bool {
         *self == RAC_A::B17
     }
-    #[doc = "Checks if the value of the field is `B18`"]
+    #[doc = "18 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b18(&self) -> bool {
         *self == RAC_A::B18
     }
-    #[doc = "Checks if the value of the field is `B19`"]
+    #[doc = "19 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b19(&self) -> bool {
         *self == RAC_A::B19
     }
-    #[doc = "Checks if the value of the field is `B20`"]
+    #[doc = "20 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b20(&self) -> bool {
         *self == RAC_A::B20
     }
-    #[doc = "Checks if the value of the field is `B21`"]
+    #[doc = "21 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b21(&self) -> bool {
         *self == RAC_A::B21
     }
-    #[doc = "Checks if the value of the field is `B22`"]
+    #[doc = "22 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b22(&self) -> bool {
         *self == RAC_A::B22
     }
-    #[doc = "Checks if the value of the field is `B23`"]
+    #[doc = "23 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b23(&self) -> bool {
         *self == RAC_A::B23
     }
-    #[doc = "Checks if the value of the field is `B24`"]
+    #[doc = "24 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b24(&self) -> bool {
         *self == RAC_A::B24
     }
-    #[doc = "Checks if the value of the field is `B25`"]
+    #[doc = "25 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b25(&self) -> bool {
         *self == RAC_A::B25
     }
-    #[doc = "Checks if the value of the field is `B26`"]
+    #[doc = "26 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b26(&self) -> bool {
         *self == RAC_A::B26
     }
-    #[doc = "Checks if the value of the field is `B27`"]
+    #[doc = "27 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b27(&self) -> bool {
         *self == RAC_A::B27
     }
-    #[doc = "Checks if the value of the field is `B28`"]
+    #[doc = "28 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b28(&self) -> bool {
         *self == RAC_A::B28
     }
-    #[doc = "Checks if the value of the field is `B29`"]
+    #[doc = "29 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b29(&self) -> bool {
         *self == RAC_A::B29
     }
-    #[doc = "Checks if the value of the field is `B30`"]
+    #[doc = "30 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b30(&self) -> bool {
         *self == RAC_A::B30
     }
-    #[doc = "Checks if the value of the field is `B31`"]
+    #[doc = "31 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b31(&self) -> bool {
         *self == RAC_A::B31
     }
-    #[doc = "Checks if the value of the field is `B32`"]
+    #[doc = "32 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b32(&self) -> bool {
         *self == RAC_A::B32
     }
-    #[doc = "Checks if the value of the field is `B33`"]
+    #[doc = "33 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b33(&self) -> bool {
         *self == RAC_A::B33
     }
-    #[doc = "Checks if the value of the field is `B34`"]
+    #[doc = "34 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b34(&self) -> bool {
         *self == RAC_A::B34
     }
-    #[doc = "Checks if the value of the field is `B35`"]
+    #[doc = "35 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b35(&self) -> bool {
         *self == RAC_A::B35
     }
-    #[doc = "Checks if the value of the field is `B36`"]
+    #[doc = "36 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b36(&self) -> bool {
         *self == RAC_A::B36
     }
-    #[doc = "Checks if the value of the field is `B37`"]
+    #[doc = "37 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b37(&self) -> bool {
         *self == RAC_A::B37
     }
-    #[doc = "Checks if the value of the field is `B38`"]
+    #[doc = "38 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b38(&self) -> bool {
         *self == RAC_A::B38
     }
-    #[doc = "Checks if the value of the field is `B39`"]
+    #[doc = "39 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b39(&self) -> bool {
         *self == RAC_A::B39
     }
-    #[doc = "Checks if the value of the field is `B40`"]
+    #[doc = "40 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b40(&self) -> bool {
         *self == RAC_A::B40
     }
-    #[doc = "Checks if the value of the field is `B41`"]
+    #[doc = "41 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b41(&self) -> bool {
         *self == RAC_A::B41
     }
-    #[doc = "Checks if the value of the field is `B42`"]
+    #[doc = "42 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b42(&self) -> bool {
         *self == RAC_A::B42
     }
-    #[doc = "Checks if the value of the field is `B43`"]
+    #[doc = "43 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b43(&self) -> bool {
         *self == RAC_A::B43
     }
-    #[doc = "Checks if the value of the field is `B44`"]
+    #[doc = "44 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b44(&self) -> bool {
         *self == RAC_A::B44
     }
-    #[doc = "Checks if the value of the field is `B45`"]
+    #[doc = "45 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b45(&self) -> bool {
         *self == RAC_A::B45
     }
-    #[doc = "Checks if the value of the field is `B46`"]
+    #[doc = "46 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b46(&self) -> bool {
         *self == RAC_A::B46
     }
-    #[doc = "Checks if the value of the field is `B47`"]
+    #[doc = "47 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b47(&self) -> bool {
         *self == RAC_A::B47
     }
-    #[doc = "Checks if the value of the field is `B48`"]
+    #[doc = "48 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b48(&self) -> bool {
         *self == RAC_A::B48
     }
-    #[doc = "Checks if the value of the field is `B49`"]
+    #[doc = "49 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b49(&self) -> bool {
         *self == RAC_A::B49
     }
-    #[doc = "Checks if the value of the field is `B50`"]
+    #[doc = "50 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b50(&self) -> bool {
         *self == RAC_A::B50
     }
-    #[doc = "Checks if the value of the field is `B51`"]
+    #[doc = "51 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b51(&self) -> bool {
         *self == RAC_A::B51
     }
-    #[doc = "Checks if the value of the field is `B52`"]
+    #[doc = "52 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b52(&self) -> bool {
         *self == RAC_A::B52
     }
-    #[doc = "Checks if the value of the field is `B53`"]
+    #[doc = "53 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b53(&self) -> bool {
         *self == RAC_A::B53
     }
-    #[doc = "Checks if the value of the field is `B54`"]
+    #[doc = "54 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b54(&self) -> bool {
         *self == RAC_A::B54
     }
-    #[doc = "Checks if the value of the field is `B55`"]
+    #[doc = "55 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b55(&self) -> bool {
         *self == RAC_A::B55
     }
-    #[doc = "Checks if the value of the field is `B56`"]
+    #[doc = "56 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b56(&self) -> bool {
         *self == RAC_A::B56
     }
-    #[doc = "Checks if the value of the field is `B57`"]
+    #[doc = "57 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b57(&self) -> bool {
         *self == RAC_A::B57
     }
-    #[doc = "Checks if the value of the field is `B58`"]
+    #[doc = "58 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b58(&self) -> bool {
         *self == RAC_A::B58
     }
-    #[doc = "Checks if the value of the field is `B59`"]
+    #[doc = "59 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b59(&self) -> bool {
         *self == RAC_A::B59
     }
-    #[doc = "Checks if the value of the field is `B60`"]
+    #[doc = "60 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b60(&self) -> bool {
         *self == RAC_A::B60
     }
-    #[doc = "Checks if the value of the field is `B61`"]
+    #[doc = "61 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b61(&self) -> bool {
         *self == RAC_A::B61
     }
-    #[doc = "Checks if the value of the field is `B62`"]
+    #[doc = "62 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b62(&self) -> bool {
         *self == RAC_A::B62
     }
-    #[doc = "Checks if the value of the field is `B63`"]
+    #[doc = "63 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b63(&self) -> bool {
         *self == RAC_A::B63
     }
-    #[doc = "Checks if the value of the field is `B64`"]
+    #[doc = "64 bytes available in RX FIFO"]
     #[inline(always)]
     pub fn is_b64(&self) -> bool {
         *self == RAC_A::B64
@@ -793,40 +773,41 @@ impl W {
     #[doc = "Bit 0 - Receiver FIFO Overrun"]
     #[inline(always)]
     #[must_use]
-    pub fn roi(&mut self) -> ROI_W<0> {
-        ROI_W::new(self)
+    pub fn roi(&mut self) -> ROI_W<CIR_RXSTA_SPEC> {
+        ROI_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receiver Packet End Flag"]
     #[inline(always)]
     #[must_use]
-    pub fn rpe(&mut self) -> RPE_W<1> {
-        RPE_W::new(self)
+    pub fn rpe(&mut self) -> RPE_W<CIR_RXSTA_SPEC> {
+        RPE_W::new(self, 1)
     }
     #[doc = "Bit 4 - RX FIFO Available"]
     #[inline(always)]
     #[must_use]
-    pub fn ra(&mut self) -> RA_W<4> {
-        RA_W::new(self)
+    pub fn ra(&mut self) -> RA_W<CIR_RXSTA_SPEC> {
+        RA_W::new(self, 4)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CIR Receiver Status Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [cir_rxsta](index.html) module"]
+#[doc = "CIR Receiver Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`cir_rxsta::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`cir_rxsta::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CIR_RXSTA_SPEC;
 impl crate::RegisterSpec for CIR_RXSTA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [cir_rxsta::R](R) reader structure"]
-impl crate::Readable for CIR_RXSTA_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [cir_rxsta::W](W) writer structure"]
+#[doc = "`read()` method returns [`cir_rxsta::R`](R) reader structure"]
+impl crate::Readable for CIR_RXSTA_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`cir_rxsta::W`](W) writer structure"]
 impl crate::Writable for CIR_RXSTA_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0x13;
 }

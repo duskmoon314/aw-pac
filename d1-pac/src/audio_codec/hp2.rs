@@ -1,41 +1,9 @@
 #[doc = "Register `hp2` reader"]
-pub struct R(crate::R<HP2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HP2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HP2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HP2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HP2_SPEC>;
 #[doc = "Register `hp2` writer"]
-pub struct W(crate::W<HP2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HP2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HP2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HP2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HP2_SPEC>;
 #[doc = "Field `hpfb_buf_output_current` reader - Headphone Feedback Buffer Output Current Select\n\nI = 7uA"]
-pub type HPFB_BUF_OUTPUT_CURRENT_R = crate::FieldReader<u8, HPFB_BUF_OUTPUT_CURRENT_A>;
+pub type HPFB_BUF_OUTPUT_CURRENT_R = crate::FieldReader<HPFB_BUF_OUTPUT_CURRENT_A>;
 #[doc = "Headphone Feedback Buffer Output Current Select\n\nI = 7uA\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<HPFB_BUF_OUTPUT_CURRENT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HPFB_BUF_OUTPUT_CURRENT_A {
+    type Ux = u8;
+}
 impl HPFB_BUF_OUTPUT_CURRENT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPFB_BUF_OUTPUT_CURRENT_A {
+    pub const fn variant(&self) -> HPFB_BUF_OUTPUT_CURRENT_A {
         match self.bits {
             0 => HPFB_BUF_OUTPUT_CURRENT_A::I35,
             1 => HPFB_BUF_OUTPUT_CURRENT_A::I28,
@@ -67,54 +38,58 @@ impl HPFB_BUF_OUTPUT_CURRENT_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `I35`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_i35(&self) -> bool {
         *self == HPFB_BUF_OUTPUT_CURRENT_A::I35
     }
-    #[doc = "Checks if the value of the field is `I28`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_i28(&self) -> bool {
         *self == HPFB_BUF_OUTPUT_CURRENT_A::I28
     }
-    #[doc = "Checks if the value of the field is `I45`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_i45(&self) -> bool {
         *self == HPFB_BUF_OUTPUT_CURRENT_A::I45
     }
-    #[doc = "Checks if the value of the field is `I38`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_i38(&self) -> bool {
         *self == HPFB_BUF_OUTPUT_CURRENT_A::I38
     }
 }
 #[doc = "Field `hpfb_buf_output_current` writer - Headphone Feedback Buffer Output Current Select\n\nI = 7uA"]
-pub type HPFB_BUF_OUTPUT_CURRENT_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, HP2_SPEC, u8, HPFB_BUF_OUTPUT_CURRENT_A, 2, O>;
-impl<'a, const O: u8> HPFB_BUF_OUTPUT_CURRENT_W<'a, O> {
+pub type HPFB_BUF_OUTPUT_CURRENT_W<'a, REG> =
+    crate::FieldWriterSafe<'a, REG, 2, HPFB_BUF_OUTPUT_CURRENT_A>;
+impl<'a, REG> HPFB_BUF_OUTPUT_CURRENT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn i35(self) -> &'a mut W {
+    pub fn i35(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_BUF_OUTPUT_CURRENT_A::I35)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn i28(self) -> &'a mut W {
+    pub fn i28(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_BUF_OUTPUT_CURRENT_A::I28)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn i45(self) -> &'a mut W {
+    pub fn i45(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_BUF_OUTPUT_CURRENT_A::I45)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn i38(self) -> &'a mut W {
+    pub fn i38(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_BUF_OUTPUT_CURRENT_A::I38)
     }
 }
 #[doc = "Field `ramp_final_state_res` reader - Ramp Final State Resistor"]
-pub type RAMP_FINAL_STATE_RES_R = crate::FieldReader<u8, RAMP_FINAL_STATE_RES_A>;
+pub type RAMP_FINAL_STATE_RES_R = crate::FieldReader<RAMP_FINAL_STATE_RES_A>;
 #[doc = "Ramp Final State Resistor\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -134,10 +109,13 @@ impl From<RAMP_FINAL_STATE_RES_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for RAMP_FINAL_STATE_RES_A {
+    type Ux = u8;
+}
 impl RAMP_FINAL_STATE_RES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMP_FINAL_STATE_RES_A {
+    pub const fn variant(&self) -> RAMP_FINAL_STATE_RES_A {
         match self.bits {
             0 => RAMP_FINAL_STATE_RES_A::R2500,
             1 => RAMP_FINAL_STATE_RES_A::R5K,
@@ -146,49 +124,53 @@ impl RAMP_FINAL_STATE_RES_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `R2500`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_r2500(&self) -> bool {
         *self == RAMP_FINAL_STATE_RES_A::R2500
     }
-    #[doc = "Checks if the value of the field is `R5K`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_r5k(&self) -> bool {
         *self == RAMP_FINAL_STATE_RES_A::R5K
     }
-    #[doc = "Checks if the value of the field is `R10K`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_r10k(&self) -> bool {
         *self == RAMP_FINAL_STATE_RES_A::R10K
     }
-    #[doc = "Checks if the value of the field is `R20K`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_r20k(&self) -> bool {
         *self == RAMP_FINAL_STATE_RES_A::R20K
     }
 }
 #[doc = "Field `ramp_final_state_res` writer - Ramp Final State Resistor"]
-pub type RAMP_FINAL_STATE_RES_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, HP2_SPEC, u8, RAMP_FINAL_STATE_RES_A, 2, O>;
-impl<'a, const O: u8> RAMP_FINAL_STATE_RES_W<'a, O> {
+pub type RAMP_FINAL_STATE_RES_W<'a, REG> =
+    crate::FieldWriterSafe<'a, REG, 2, RAMP_FINAL_STATE_RES_A>;
+impl<'a, REG> RAMP_FINAL_STATE_RES_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn r2500(self) -> &'a mut W {
+    pub fn r2500(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_FINAL_STATE_RES_A::R2500)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn r5k(self) -> &'a mut W {
+    pub fn r5k(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_FINAL_STATE_RES_A::R5K)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn r10k(self) -> &'a mut W {
+    pub fn r10k(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_FINAL_STATE_RES_A::R10K)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn r20k(self) -> &'a mut W {
+    pub fn r20k(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_FINAL_STATE_RES_A::R20K)
     }
 }
@@ -211,34 +193,37 @@ impl From<RAMP_OUT_EN_A> for bool {
 impl RAMP_OUT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMP_OUT_EN_A {
+    pub const fn variant(&self) -> RAMP_OUT_EN_A {
         match self.bits {
             false => RAMP_OUT_EN_A::DISABLE,
             true => RAMP_OUT_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RAMP_OUT_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RAMP_OUT_EN_A::ENABLE
     }
 }
 #[doc = "Field `ramp_out_en` writer - Ramp Output Switch Enable"]
-pub type RAMP_OUT_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HP2_SPEC, RAMP_OUT_EN_A, O>;
-impl<'a, const O: u8> RAMP_OUT_EN_W<'a, O> {
+pub type RAMP_OUT_EN_W<'a, REG> = crate::BitWriter<'a, REG, RAMP_OUT_EN_A>;
+impl<'a, REG> RAMP_OUT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_OUT_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_OUT_EN_A::ENABLE)
     }
 }
@@ -261,35 +246,37 @@ impl From<RAMP_FINAL_CONTROL_A> for bool {
 impl RAMP_FINAL_CONTROL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMP_FINAL_CONTROL_A {
+    pub const fn variant(&self) -> RAMP_FINAL_CONTROL_A {
         match self.bits {
             false => RAMP_FINAL_CONTROL_A::SELECT_RAMP,
             true => RAMP_FINAL_CONTROL_A::SELECT_HPFB_BUFFER,
         }
     }
-    #[doc = "Checks if the value of the field is `SELECT_RAMP`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_select_ramp(&self) -> bool {
         *self == RAMP_FINAL_CONTROL_A::SELECT_RAMP
     }
-    #[doc = "Checks if the value of the field is `SELECT_HPFB_BUFFER`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_select_hpfb_buffer(&self) -> bool {
         *self == RAMP_FINAL_CONTROL_A::SELECT_HPFB_BUFFER
     }
 }
 #[doc = "Field `ramp_final_control` writer - Headphone Ramp Final Step Control"]
-pub type RAMP_FINAL_CONTROL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, HP2_SPEC, RAMP_FINAL_CONTROL_A, O>;
-impl<'a, const O: u8> RAMP_FINAL_CONTROL_W<'a, O> {
+pub type RAMP_FINAL_CONTROL_W<'a, REG> = crate::BitWriter<'a, REG, RAMP_FINAL_CONTROL_A>;
+impl<'a, REG> RAMP_FINAL_CONTROL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn select_ramp(self) -> &'a mut W {
+    pub fn select_ramp(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_FINAL_CONTROL_A::SELECT_RAMP)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn select_hpfb_buffer(self) -> &'a mut W {
+    pub fn select_hpfb_buffer(self) -> &'a mut crate::W<REG> {
         self.variant(RAMP_FINAL_CONTROL_A::SELECT_HPFB_BUFFER)
     }
 }
@@ -312,34 +299,37 @@ impl From<HPFB_IN_EN_A> for bool {
 impl HPFB_IN_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPFB_IN_EN_A {
+    pub const fn variant(&self) -> HPFB_IN_EN_A {
         match self.bits {
             false => HPFB_IN_EN_A::DISABLE,
             true => HPFB_IN_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == HPFB_IN_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == HPFB_IN_EN_A::ENABLE
     }
 }
 #[doc = "Field `hpfb_in_en` writer - Headphone Feedback PAD IN Switch Enable"]
-pub type HPFB_IN_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HP2_SPEC, HPFB_IN_EN_A, O>;
-impl<'a, const O: u8> HPFB_IN_EN_W<'a, O> {
+pub type HPFB_IN_EN_W<'a, REG> = crate::BitWriter<'a, REG, HPFB_IN_EN_A>;
+impl<'a, REG> HPFB_IN_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_IN_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_IN_EN_A::ENABLE)
     }
 }
@@ -362,34 +352,37 @@ impl From<RAMPEN_A> for bool {
 impl RAMPEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RAMPEN_A {
+    pub const fn variant(&self) -> RAMPEN_A {
         match self.bits {
             false => RAMPEN_A::DISABLE,
             true => RAMPEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RAMPEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RAMPEN_A::ENABLE
     }
 }
 #[doc = "Field `rampen` writer - Ramp DAC Enable"]
-pub type RAMPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HP2_SPEC, RAMPEN_A, O>;
-impl<'a, const O: u8> RAMPEN_W<'a, O> {
+pub type RAMPEN_W<'a, REG> = crate::BitWriter<'a, REG, RAMPEN_A>;
+impl<'a, REG> RAMPEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RAMPEN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RAMPEN_A::ENABLE)
     }
 }
@@ -412,34 +405,37 @@ impl From<RSWITCH_A> for bool {
 impl RSWITCH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RSWITCH_A {
+    pub const fn variant(&self) -> RSWITCH_A {
         match self.bits {
             false => RSWITCH_A::HPOUT,
             true => RSWITCH_A::VRA1,
         }
     }
-    #[doc = "Checks if the value of the field is `HPOUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_hpout(&self) -> bool {
         *self == RSWITCH_A::HPOUT
     }
-    #[doc = "Checks if the value of the field is `VRA1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_vra1(&self) -> bool {
         *self == RSWITCH_A::VRA1
     }
 }
 #[doc = "Field `rswitch` writer - RSwitch"]
-pub type RSWITCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, HP2_SPEC, RSWITCH_A, O>;
-impl<'a, const O: u8> RSWITCH_W<'a, O> {
+pub type RSWITCH_W<'a, REG> = crate::BitWriter<'a, REG, RSWITCH_A>;
+impl<'a, REG> RSWITCH_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn hpout(self) -> &'a mut W {
+    pub fn hpout(self) -> &'a mut crate::W<REG> {
         self.variant(RSWITCH_A::HPOUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn vra1(self) -> &'a mut W {
+    pub fn vra1(self) -> &'a mut crate::W<REG> {
         self.variant(RSWITCH_A::VRA1)
     }
 }
@@ -462,34 +458,37 @@ impl From<HP_DRVOUTEN_A> for bool {
 impl HP_DRVOUTEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HP_DRVOUTEN_A {
+    pub const fn variant(&self) -> HP_DRVOUTEN_A {
         match self.bits {
             false => HP_DRVOUTEN_A::DISABLE,
             true => HP_DRVOUTEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == HP_DRVOUTEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == HP_DRVOUTEN_A::ENABLE
     }
 }
 #[doc = "Field `hp_drvouten` writer - Headphone Driver Output Enable"]
-pub type HP_DRVOUTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HP2_SPEC, HP_DRVOUTEN_A, O>;
-impl<'a, const O: u8> HP_DRVOUTEN_W<'a, O> {
+pub type HP_DRVOUTEN_W<'a, REG> = crate::BitWriter<'a, REG, HP_DRVOUTEN_A>;
+impl<'a, REG> HP_DRVOUTEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(HP_DRVOUTEN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(HP_DRVOUTEN_A::ENABLE)
     }
 }
@@ -512,39 +511,42 @@ impl From<HP_DRVEN_A> for bool {
 impl HP_DRVEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HP_DRVEN_A {
+    pub const fn variant(&self) -> HP_DRVEN_A {
         match self.bits {
             false => HP_DRVEN_A::DISABLE,
             true => HP_DRVEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == HP_DRVEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == HP_DRVEN_A::ENABLE
     }
 }
 #[doc = "Field `hp_drven` writer - Headphone Driver Enable"]
-pub type HP_DRVEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HP2_SPEC, HP_DRVEN_A, O>;
-impl<'a, const O: u8> HP_DRVEN_W<'a, O> {
+pub type HP_DRVEN_W<'a, REG> = crate::BitWriter<'a, REG, HP_DRVEN_A>;
+impl<'a, REG> HP_DRVEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(HP_DRVEN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(HP_DRVEN_A::ENABLE)
     }
 }
 #[doc = "Field `iophp` reader - Headphone L/R OP Bias Current Select"]
-pub type IOPHP_R = crate::FieldReader<u8, IOPHP_A>;
+pub type IOPHP_R = crate::FieldReader<IOPHP_A>;
 #[doc = "Headphone L/R OP Bias Current Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -564,10 +566,13 @@ impl From<IOPHP_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for IOPHP_A {
+    type Ux = u8;
+}
 impl IOPHP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> IOPHP_A {
+    pub const fn variant(&self) -> IOPHP_A {
         match self.bits {
             0 => IOPHP_A::C6U,
             1 => IOPHP_A::C7U,
@@ -576,53 +581,57 @@ impl IOPHP_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `C6U`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_c6u(&self) -> bool {
         *self == IOPHP_A::C6U
     }
-    #[doc = "Checks if the value of the field is `C7U`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_c7u(&self) -> bool {
         *self == IOPHP_A::C7U
     }
-    #[doc = "Checks if the value of the field is `C8U`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_c8u(&self) -> bool {
         *self == IOPHP_A::C8U
     }
-    #[doc = "Checks if the value of the field is `C9U`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_c9u(&self) -> bool {
         *self == IOPHP_A::C9U
     }
 }
 #[doc = "Field `iophp` writer - Headphone L/R OP Bias Current Select"]
-pub type IOPHP_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HP2_SPEC, u8, IOPHP_A, 2, O>;
-impl<'a, const O: u8> IOPHP_W<'a, O> {
+pub type IOPHP_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, IOPHP_A>;
+impl<'a, REG> IOPHP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn c6u(self) -> &'a mut W {
+    pub fn c6u(self) -> &'a mut crate::W<REG> {
         self.variant(IOPHP_A::C6U)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn c7u(self) -> &'a mut W {
+    pub fn c7u(self) -> &'a mut crate::W<REG> {
         self.variant(IOPHP_A::C7U)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn c8u(self) -> &'a mut W {
+    pub fn c8u(self) -> &'a mut crate::W<REG> {
         self.variant(IOPHP_A::C8U)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn c9u(self) -> &'a mut W {
+    pub fn c9u(self) -> &'a mut crate::W<REG> {
         self.variant(IOPHP_A::C9U)
     }
 }
 #[doc = "Field `opdrv_cur` reader - Headphone OP Output Stage Current Setting"]
-pub type OPDRV_CUR_R = crate::FieldReader<u8, OPDRV_CUR_A>;
+pub type OPDRV_CUR_R = crate::FieldReader<OPDRV_CUR_A>;
 #[doc = "Headphone OP Output Stage Current Setting\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -638,44 +647,50 @@ impl From<OPDRV_CUR_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for OPDRV_CUR_A {
+    type Ux = u8;
+}
 impl OPDRV_CUR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<OPDRV_CUR_A> {
+    pub const fn variant(&self) -> Option<OPDRV_CUR_A> {
         match self.bits {
             0 => Some(OPDRV_CUR_A::MIN),
             3 => Some(OPDRV_CUR_A::MAX),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `MIN`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_min(&self) -> bool {
         *self == OPDRV_CUR_A::MIN
     }
-    #[doc = "Checks if the value of the field is `MAX`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_max(&self) -> bool {
         *self == OPDRV_CUR_A::MAX
     }
 }
 #[doc = "Field `opdrv_cur` writer - Headphone OP Output Stage Current Setting"]
-pub type OPDRV_CUR_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, HP2_SPEC, u8, OPDRV_CUR_A, 2, O>;
-impl<'a, const O: u8> OPDRV_CUR_W<'a, O> {
+pub type OPDRV_CUR_W<'a, REG> = crate::FieldWriter<'a, REG, 2, OPDRV_CUR_A>;
+impl<'a, REG> OPDRV_CUR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn min(self) -> &'a mut W {
+    pub fn min(self) -> &'a mut crate::W<REG> {
         self.variant(OPDRV_CUR_A::MIN)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn max(self) -> &'a mut W {
+    pub fn max(self) -> &'a mut crate::W<REG> {
         self.variant(OPDRV_CUR_A::MAX)
     }
 }
 #[doc = "Field `hpfb_res` reader - Headphone Feedback Big Resistor Control"]
-pub type HPFB_RES_R = crate::FieldReader<u8, HPFB_RES_A>;
+pub type HPFB_RES_R = crate::FieldReader<HPFB_RES_A>;
 #[doc = "Headphone Feedback Big Resistor Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -695,10 +710,13 @@ impl From<HPFB_RES_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HPFB_RES_A {
+    type Ux = u8;
+}
 impl HPFB_RES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPFB_RES_A {
+    pub const fn variant(&self) -> HPFB_RES_A {
         match self.bits {
             0 => HPFB_RES_A::R880K,
             1 => HPFB_RES_A::R1000K,
@@ -707,54 +725,57 @@ impl HPFB_RES_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `R880K`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_r880k(&self) -> bool {
         *self == HPFB_RES_A::R880K
     }
-    #[doc = "Checks if the value of the field is `R1000K`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_r1000k(&self) -> bool {
         *self == HPFB_RES_A::R1000K
     }
-    #[doc = "Checks if the value of the field is `R1080K`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_r1080k(&self) -> bool {
         *self == HPFB_RES_A::R1080K
     }
-    #[doc = "Checks if the value of the field is `R1200K`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_r1200k(&self) -> bool {
         *self == HPFB_RES_A::R1200K
     }
 }
 #[doc = "Field `hpfb_res` writer - Headphone Feedback Big Resistor Control"]
-pub type HPFB_RES_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, HP2_SPEC, u8, HPFB_RES_A, 2, O>;
-impl<'a, const O: u8> HPFB_RES_W<'a, O> {
+pub type HPFB_RES_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, HPFB_RES_A>;
+impl<'a, REG> HPFB_RES_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn r880k(self) -> &'a mut W {
+    pub fn r880k(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_RES_A::R880K)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn r1000k(self) -> &'a mut W {
+    pub fn r1000k(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_RES_A::R1000K)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn r1080k(self) -> &'a mut W {
+    pub fn r1080k(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_RES_A::R1080K)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn r1200k(self) -> &'a mut W {
+    pub fn r1200k(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_RES_A::R1200K)
     }
 }
 #[doc = "Field `headphone_gain` reader - Headphone Gain"]
-pub type HEADPHONE_GAIN_R = crate::FieldReader<u8, HEADPHONE_GAIN_A>;
+pub type HEADPHONE_GAIN_R = crate::FieldReader<HEADPHONE_GAIN_A>;
 #[doc = "Headphone Gain\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -782,10 +803,13 @@ impl From<HEADPHONE_GAIN_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HEADPHONE_GAIN_A {
+    type Ux = u8;
+}
 impl HEADPHONE_GAIN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HEADPHONE_GAIN_A {
+    pub const fn variant(&self) -> HEADPHONE_GAIN_A {
         match self.bits {
             0 => HEADPHONE_GAIN_A::DB0,
             1 => HEADPHONE_GAIN_A::DB6,
@@ -798,89 +822,92 @@ impl HEADPHONE_GAIN_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `DB0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_db0(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB0
     }
-    #[doc = "Checks if the value of the field is `DB6`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_db6(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB6
     }
-    #[doc = "Checks if the value of the field is `DB12`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_db12(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB12
     }
-    #[doc = "Checks if the value of the field is `DB18`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_db18(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB18
     }
-    #[doc = "Checks if the value of the field is `DB24`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_db24(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB24
     }
-    #[doc = "Checks if the value of the field is `DB30`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_db30(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB30
     }
-    #[doc = "Checks if the value of the field is `DB36`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_db36(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB36
     }
-    #[doc = "Checks if the value of the field is `DB42`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_db42(&self) -> bool {
         *self == HEADPHONE_GAIN_A::DB42
     }
 }
 #[doc = "Field `headphone_gain` writer - Headphone Gain"]
-pub type HEADPHONE_GAIN_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, HP2_SPEC, u8, HEADPHONE_GAIN_A, 3, O>;
-impl<'a, const O: u8> HEADPHONE_GAIN_W<'a, O> {
+pub type HEADPHONE_GAIN_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, HEADPHONE_GAIN_A>;
+impl<'a, REG> HEADPHONE_GAIN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn db0(self) -> &'a mut W {
+    pub fn db0(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB0)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn db6(self) -> &'a mut W {
+    pub fn db6(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB6)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn db12(self) -> &'a mut W {
+    pub fn db12(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB12)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn db18(self) -> &'a mut W {
+    pub fn db18(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB18)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn db24(self) -> &'a mut W {
+    pub fn db24(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB24)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn db30(self) -> &'a mut W {
+    pub fn db30(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB30)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn db36(self) -> &'a mut W {
+    pub fn db36(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB36)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn db42(self) -> &'a mut W {
+    pub fn db42(self) -> &'a mut crate::W<REG> {
         self.variant(HEADPHONE_GAIN_A::DB42)
     }
 }
@@ -903,34 +930,37 @@ impl From<HPFB_BUF_EN_A> for bool {
 impl HPFB_BUF_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HPFB_BUF_EN_A {
+    pub const fn variant(&self) -> HPFB_BUF_EN_A {
         match self.bits {
             false => HPFB_BUF_EN_A::DISABLE,
             true => HPFB_BUF_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == HPFB_BUF_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == HPFB_BUF_EN_A::ENABLE
     }
 }
 #[doc = "Field `hpfb_buf_en` writer - Headphone Feedback Buffer OP Enable"]
-pub type HPFB_BUF_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HP2_SPEC, HPFB_BUF_EN_A, O>;
-impl<'a, const O: u8> HPFB_BUF_EN_W<'a, O> {
+pub type HPFB_BUF_EN_W<'a, REG> = crate::BitWriter<'a, REG, HPFB_BUF_EN_A>;
+impl<'a, REG> HPFB_BUF_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_BUF_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(HPFB_BUF_EN_A::ENABLE)
     }
 }
@@ -1010,106 +1040,107 @@ impl W {
     #[doc = "Bits 8:9 - Headphone Feedback Buffer Output Current Select\n\nI = 7uA"]
     #[inline(always)]
     #[must_use]
-    pub fn hpfb_buf_output_current(&mut self) -> HPFB_BUF_OUTPUT_CURRENT_W<8> {
-        HPFB_BUF_OUTPUT_CURRENT_W::new(self)
+    pub fn hpfb_buf_output_current(&mut self) -> HPFB_BUF_OUTPUT_CURRENT_W<HP2_SPEC> {
+        HPFB_BUF_OUTPUT_CURRENT_W::new(self, 8)
     }
     #[doc = "Bits 13:14 - Ramp Final State Resistor"]
     #[inline(always)]
     #[must_use]
-    pub fn ramp_final_state_res(&mut self) -> RAMP_FINAL_STATE_RES_W<13> {
-        RAMP_FINAL_STATE_RES_W::new(self)
+    pub fn ramp_final_state_res(&mut self) -> RAMP_FINAL_STATE_RES_W<HP2_SPEC> {
+        RAMP_FINAL_STATE_RES_W::new(self, 13)
     }
     #[doc = "Bit 15 - Ramp Output Switch Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn ramp_out_en(&mut self) -> RAMP_OUT_EN_W<15> {
-        RAMP_OUT_EN_W::new(self)
+    pub fn ramp_out_en(&mut self) -> RAMP_OUT_EN_W<HP2_SPEC> {
+        RAMP_OUT_EN_W::new(self, 15)
     }
     #[doc = "Bit 16 - Headphone Ramp Final Step Control"]
     #[inline(always)]
     #[must_use]
-    pub fn ramp_final_control(&mut self) -> RAMP_FINAL_CONTROL_W<16> {
-        RAMP_FINAL_CONTROL_W::new(self)
+    pub fn ramp_final_control(&mut self) -> RAMP_FINAL_CONTROL_W<HP2_SPEC> {
+        RAMP_FINAL_CONTROL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Headphone Feedback PAD IN Switch Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hpfb_in_en(&mut self) -> HPFB_IN_EN_W<17> {
-        HPFB_IN_EN_W::new(self)
+    pub fn hpfb_in_en(&mut self) -> HPFB_IN_EN_W<HP2_SPEC> {
+        HPFB_IN_EN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Ramp DAC Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rampen(&mut self) -> RAMPEN_W<18> {
-        RAMPEN_W::new(self)
+    pub fn rampen(&mut self) -> RAMPEN_W<HP2_SPEC> {
+        RAMPEN_W::new(self, 18)
     }
     #[doc = "Bit 19 - RSwitch"]
     #[inline(always)]
     #[must_use]
-    pub fn rswitch(&mut self) -> RSWITCH_W<19> {
-        RSWITCH_W::new(self)
+    pub fn rswitch(&mut self) -> RSWITCH_W<HP2_SPEC> {
+        RSWITCH_W::new(self, 19)
     }
     #[doc = "Bit 20 - Headphone Driver Output Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hp_drvouten(&mut self) -> HP_DRVOUTEN_W<20> {
-        HP_DRVOUTEN_W::new(self)
+    pub fn hp_drvouten(&mut self) -> HP_DRVOUTEN_W<HP2_SPEC> {
+        HP_DRVOUTEN_W::new(self, 20)
     }
     #[doc = "Bit 21 - Headphone Driver Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hp_drven(&mut self) -> HP_DRVEN_W<21> {
-        HP_DRVEN_W::new(self)
+    pub fn hp_drven(&mut self) -> HP_DRVEN_W<HP2_SPEC> {
+        HP_DRVEN_W::new(self, 21)
     }
     #[doc = "Bits 22:23 - Headphone L/R OP Bias Current Select"]
     #[inline(always)]
     #[must_use]
-    pub fn iophp(&mut self) -> IOPHP_W<22> {
-        IOPHP_W::new(self)
+    pub fn iophp(&mut self) -> IOPHP_W<HP2_SPEC> {
+        IOPHP_W::new(self, 22)
     }
     #[doc = "Bits 24:25 - Headphone OP Output Stage Current Setting"]
     #[inline(always)]
     #[must_use]
-    pub fn opdrv_cur(&mut self) -> OPDRV_CUR_W<24> {
-        OPDRV_CUR_W::new(self)
+    pub fn opdrv_cur(&mut self) -> OPDRV_CUR_W<HP2_SPEC> {
+        OPDRV_CUR_W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Headphone Feedback Big Resistor Control"]
     #[inline(always)]
     #[must_use]
-    pub fn hpfb_res(&mut self) -> HPFB_RES_W<26> {
-        HPFB_RES_W::new(self)
+    pub fn hpfb_res(&mut self) -> HPFB_RES_W<HP2_SPEC> {
+        HPFB_RES_W::new(self, 26)
     }
     #[doc = "Bits 28:30 - Headphone Gain"]
     #[inline(always)]
     #[must_use]
-    pub fn headphone_gain(&mut self) -> HEADPHONE_GAIN_W<28> {
-        HEADPHONE_GAIN_W::new(self)
+    pub fn headphone_gain(&mut self) -> HEADPHONE_GAIN_W<HP2_SPEC> {
+        HEADPHONE_GAIN_W::new(self, 28)
     }
     #[doc = "Bit 31 - Headphone Feedback Buffer OP Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hpfb_buf_en(&mut self) -> HPFB_BUF_EN_W<31> {
-        HPFB_BUF_EN_W::new(self)
+    pub fn hpfb_buf_en(&mut self) -> HPFB_BUF_EN_W<HP2_SPEC> {
+        HPFB_BUF_EN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Headphone2 Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hp2](index.html) module"]
+#[doc = "Headphone2 Analog Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hp2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hp2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HP2_SPEC;
 impl crate::RegisterSpec for HP2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hp2::R](R) reader structure"]
-impl crate::Readable for HP2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hp2::W](W) writer structure"]
+#[doc = "`read()` method returns [`hp2::R`](R) reader structure"]
+impl crate::Readable for HP2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hp2::W`](W) writer structure"]
 impl crate::Writable for HP2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

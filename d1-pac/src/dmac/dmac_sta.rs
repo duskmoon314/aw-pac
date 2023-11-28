@@ -1,18 +1,5 @@
 #[doc = "Register `dmac_sta` reader"]
-pub struct R(crate::R<DMAC_STA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<DMAC_STA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<DMAC_STA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<DMAC_STA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<DMAC_STA_SPEC>;
 #[doc = "Field `dma_status[0-15]` reader - DMA Channel\\[15:0\\] Status"]
 pub type DMA_STATUS_R = crate::BitReader<DMA_STATUS_A>;
 #[doc = "DMA Channel\\[15:0\\] Status\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<DMA_STATUS_A> for bool {
 impl DMA_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DMA_STATUS_A {
+    pub const fn variant(&self) -> DMA_STATUS_A {
         match self.bits {
             false => DMA_STATUS_A::IDLE,
             true => DMA_STATUS_A::BUSY,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == DMA_STATUS_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == DMA_STATUS_A::BUSY
@@ -68,27 +55,29 @@ impl From<MBUS_FIFO_STATUS_A> for bool {
 impl MBUS_FIFO_STATUS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MBUS_FIFO_STATUS_A {
+    pub const fn variant(&self) -> MBUS_FIFO_STATUS_A {
         match self.bits {
             false => MBUS_FIFO_STATUS_A::EMPTY,
             true => MBUS_FIFO_STATUS_A::NOT_EMPTY,
         }
     }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
         *self == MBUS_FIFO_STATUS_A::EMPTY
     }
-    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_not_empty(&self) -> bool {
         *self == MBUS_FIFO_STATUS_A::NOT_EMPTY
     }
 }
 impl R {
-    #[doc = "DMA Channel\\[15:0\\] Status"]
+    #[doc = "DMA Channel\\[15:0\\] Status\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `dma_status0` field"]
     #[inline(always)]
-    pub unsafe fn dma_status(&self, n: u8) -> DMA_STATUS_R {
+    pub fn dma_status(&self, n: u8) -> DMA_STATUS_R {
+        #[allow(clippy::no_effect)]
+        [(); 16][n as usize];
         DMA_STATUS_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - DMA Channel\\[15:0\\] Status"]
@@ -177,15 +166,13 @@ impl R {
         MBUS_FIFO_STATUS_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "DMAC Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [dmac_sta](index.html) module"]
+#[doc = "DMAC Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`dmac_sta::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct DMAC_STA_SPEC;
 impl crate::RegisterSpec for DMAC_STA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [dmac_sta::R](R) reader structure"]
-impl crate::Readable for DMAC_STA_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`dmac_sta::R`](R) reader structure"]
+impl crate::Readable for DMAC_STA_SPEC {}
 #[doc = "`reset()` method sets dmac_sta to value 0"]
 impl crate::Resettable for DMAC_STA_SPEC {
     const RESET_VALUE: Self::Ux = 0;

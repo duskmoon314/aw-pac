@@ -1,44 +1,11 @@
 #[doc = "Register `tv_fill_begin%s` reader"]
-pub struct R(crate::R<TV_FILL_BEGIN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TV_FILL_BEGIN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TV_FILL_BEGIN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TV_FILL_BEGIN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TV_FILL_BEGIN_SPEC>;
 #[doc = "Register `tv_fill_begin%s` writer"]
-pub struct W(crate::W<TV_FILL_BEGIN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TV_FILL_BEGIN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TV_FILL_BEGIN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TV_FILL_BEGIN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TV_FILL_BEGIN_SPEC>;
 #[doc = "Field `fill_begin` reader - Fill Begin"]
-pub type FILL_BEGIN_R = crate::FieldReader<u32, u32>;
+pub type FILL_BEGIN_R = crate::FieldReader<u32>;
 #[doc = "Field `fill_begin` writer - Fill Begin"]
-pub type FILL_BEGIN_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_FILL_BEGIN_SPEC, u32, u32, 24, O>;
+pub type FILL_BEGIN_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:23 - Fill Begin"]
     #[inline(always)]
@@ -50,28 +17,29 @@ impl W {
     #[doc = "Bits 0:23 - Fill Begin"]
     #[inline(always)]
     #[must_use]
-    pub fn fill_begin(&mut self) -> FILL_BEGIN_W<0> {
-        FILL_BEGIN_W::new(self)
+    pub fn fill_begin(&mut self) -> FILL_BEGIN_W<TV_FILL_BEGIN_SPEC> {
+        FILL_BEGIN_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TV Fill Data Begin Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tv_fill_begin](index.html) module"]
+#[doc = "TV Fill Data Begin Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv_fill_begin::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tv_fill_begin::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TV_FILL_BEGIN_SPEC;
 impl crate::RegisterSpec for TV_FILL_BEGIN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tv_fill_begin::R](R) reader structure"]
-impl crate::Readable for TV_FILL_BEGIN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tv_fill_begin::W](W) writer structure"]
+#[doc = "`read()` method returns [`tv_fill_begin::R`](R) reader structure"]
+impl crate::Readable for TV_FILL_BEGIN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tv_fill_begin::W`](W) writer structure"]
 impl crate::Writable for TV_FILL_BEGIN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

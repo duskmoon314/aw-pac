@@ -1,44 +1,11 @@
 #[doc = "Register `ledc_dma_ctrl` reader"]
-pub struct R(crate::R<LEDC_DMA_CTRL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<LEDC_DMA_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<LEDC_DMA_CTRL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<LEDC_DMA_CTRL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<LEDC_DMA_CTRL_SPEC>;
 #[doc = "Register `ledc_dma_ctrl` writer"]
-pub struct W(crate::W<LEDC_DMA_CTRL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<LEDC_DMA_CTRL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<LEDC_DMA_CTRL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<LEDC_DMA_CTRL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<LEDC_DMA_CTRL_SPEC>;
 #[doc = "Field `ledc_fifo_trig_level` reader - "]
-pub type LEDC_FIFO_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
+pub type LEDC_FIFO_TRIG_LEVEL_R = crate::FieldReader;
 #[doc = "Field `ledc_fifo_trig_level` writer - "]
-pub type LEDC_FIFO_TRIG_LEVEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, LEDC_DMA_CTRL_SPEC, u8, u8, 5, O>;
+pub type LEDC_FIFO_TRIG_LEVEL_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `ledc_dma_en` reader - "]
 pub type LEDC_DMA_EN_R = crate::BitReader<LEDC_DMA_EN_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -58,35 +25,37 @@ impl From<LEDC_DMA_EN_A> for bool {
 impl LEDC_DMA_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LEDC_DMA_EN_A {
+    pub const fn variant(&self) -> LEDC_DMA_EN_A {
         match self.bits {
             false => LEDC_DMA_EN_A::DISABLE,
             true => LEDC_DMA_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == LEDC_DMA_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == LEDC_DMA_EN_A::ENABLE
     }
 }
 #[doc = "Field `ledc_dma_en` writer - "]
-pub type LEDC_DMA_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, LEDC_DMA_CTRL_SPEC, LEDC_DMA_EN_A, O>;
-impl<'a, const O: u8> LEDC_DMA_EN_W<'a, O> {
+pub type LEDC_DMA_EN_W<'a, REG> = crate::BitWriter<'a, REG, LEDC_DMA_EN_A>;
+impl<'a, REG> LEDC_DMA_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(LEDC_DMA_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(LEDC_DMA_EN_A::ENABLE)
     }
 }
@@ -106,34 +75,35 @@ impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     #[must_use]
-    pub fn ledc_fifo_trig_level(&mut self) -> LEDC_FIFO_TRIG_LEVEL_W<0> {
-        LEDC_FIFO_TRIG_LEVEL_W::new(self)
+    pub fn ledc_fifo_trig_level(&mut self) -> LEDC_FIFO_TRIG_LEVEL_W<LEDC_DMA_CTRL_SPEC> {
+        LEDC_FIFO_TRIG_LEVEL_W::new(self, 0)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
     #[must_use]
-    pub fn ledc_dma_en(&mut self) -> LEDC_DMA_EN_W<5> {
-        LEDC_DMA_EN_W::new(self)
+    pub fn ledc_dma_en(&mut self) -> LEDC_DMA_EN_W<LEDC_DMA_CTRL_SPEC> {
+        LEDC_DMA_EN_W::new(self, 5)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "LEDC DMA Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ledc_dma_ctrl](index.html) module"]
+#[doc = "LEDC DMA Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ledc_dma_ctrl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ledc_dma_ctrl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct LEDC_DMA_CTRL_SPEC;
 impl crate::RegisterSpec for LEDC_DMA_CTRL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ledc_dma_ctrl::R](R) reader structure"]
-impl crate::Readable for LEDC_DMA_CTRL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ledc_dma_ctrl::W](W) writer structure"]
+#[doc = "`read()` method returns [`ledc_dma_ctrl::R`](R) reader structure"]
+impl crate::Readable for LEDC_DMA_CTRL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ledc_dma_ctrl::W`](W) writer structure"]
 impl crate::Writable for LEDC_DMA_CTRL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -13,6 +13,6 @@ env_logger = "0.10"
 form = "0.11"
 log = "0.4"
 serde = { version = "1.0", features = ["derive"] }
-svd2rust = "0.31"
+svd2rust = "0.31.1"
 svdtools = "0.3"
 toml = "0.8.0"

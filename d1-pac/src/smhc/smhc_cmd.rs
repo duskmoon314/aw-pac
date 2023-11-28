@@ -1,43 +1,11 @@
 #[doc = "Register `smhc_cmd` reader"]
-pub struct R(crate::R<SMHC_CMD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SMHC_CMD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SMHC_CMD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SMHC_CMD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SMHC_CMD_SPEC>;
 #[doc = "Register `smhc_cmd` writer"]
-pub struct W(crate::W<SMHC_CMD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<SMHC_CMD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<SMHC_CMD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<SMHC_CMD_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<SMHC_CMD_SPEC>;
 #[doc = "Field `cmd_idx` reader - CMD Index"]
-pub type CMD_IDX_R = crate::FieldReader<u8, u8>;
+pub type CMD_IDX_R = crate::FieldReader;
 #[doc = "Field `cmd_idx` writer - CMD Index"]
-pub type CMD_IDX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, u8, 6, O>;
+pub type CMD_IDX_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
 #[doc = "Field `resp_rcv` reader - Response Receive"]
 pub type RESP_RCV_R = crate::BitReader<RESP_RCV_A>;
 #[doc = "Response Receive\n\nValue on reset: 0"]
@@ -57,34 +25,37 @@ impl From<RESP_RCV_A> for bool {
 impl RESP_RCV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RESP_RCV_A {
+    pub const fn variant(&self) -> RESP_RCV_A {
         match self.bits {
             false => RESP_RCV_A::WITHOUT,
             true => RESP_RCV_A::WITH,
         }
     }
-    #[doc = "Checks if the value of the field is `WITHOUT`"]
+    #[doc = "Command without response"]
     #[inline(always)]
     pub fn is_without(&self) -> bool {
         *self == RESP_RCV_A::WITHOUT
     }
-    #[doc = "Checks if the value of the field is `WITH`"]
+    #[doc = "Command with response"]
     #[inline(always)]
     pub fn is_with(&self) -> bool {
         *self == RESP_RCV_A::WITH
     }
 }
 #[doc = "Field `resp_rcv` writer - Response Receive"]
-pub type RESP_RCV_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, RESP_RCV_A, O>;
-impl<'a, const O: u8> RESP_RCV_W<'a, O> {
+pub type RESP_RCV_W<'a, REG> = crate::BitWriter<'a, REG, RESP_RCV_A>;
+impl<'a, REG> RESP_RCV_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Command without response"]
     #[inline(always)]
-    pub fn without(self) -> &'a mut W {
+    pub fn without(self) -> &'a mut crate::W<REG> {
         self.variant(RESP_RCV_A::WITHOUT)
     }
     #[doc = "Command with response"]
     #[inline(always)]
-    pub fn with(self) -> &'a mut W {
+    pub fn with(self) -> &'a mut crate::W<REG> {
         self.variant(RESP_RCV_A::WITH)
     }
 }
@@ -107,34 +78,37 @@ impl From<LONG_RESP_A> for bool {
 impl LONG_RESP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> LONG_RESP_A {
+    pub const fn variant(&self) -> LONG_RESP_A {
         match self.bits {
             false => LONG_RESP_A::SHORT,
             true => LONG_RESP_A::LONG,
         }
     }
-    #[doc = "Checks if the value of the field is `SHORT`"]
+    #[doc = "Short Response (48 bits)"]
     #[inline(always)]
     pub fn is_short(&self) -> bool {
         *self == LONG_RESP_A::SHORT
     }
-    #[doc = "Checks if the value of the field is `LONG`"]
+    #[doc = "Long Response (136 bits)"]
     #[inline(always)]
     pub fn is_long(&self) -> bool {
         *self == LONG_RESP_A::LONG
     }
 }
 #[doc = "Field `long_resp` writer - Response Type"]
-pub type LONG_RESP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, LONG_RESP_A, O>;
-impl<'a, const O: u8> LONG_RESP_W<'a, O> {
+pub type LONG_RESP_W<'a, REG> = crate::BitWriter<'a, REG, LONG_RESP_A>;
+impl<'a, REG> LONG_RESP_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Short Response (48 bits)"]
     #[inline(always)]
-    pub fn short(self) -> &'a mut W {
+    pub fn short(self) -> &'a mut crate::W<REG> {
         self.variant(LONG_RESP_A::SHORT)
     }
     #[doc = "Long Response (136 bits)"]
     #[inline(always)]
-    pub fn long(self) -> &'a mut W {
+    pub fn long(self) -> &'a mut crate::W<REG> {
         self.variant(LONG_RESP_A::LONG)
     }
 }
@@ -157,35 +131,37 @@ impl From<CHK_RESP_CRC_A> for bool {
 impl CHK_RESP_CRC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CHK_RESP_CRC_A {
+    pub const fn variant(&self) -> CHK_RESP_CRC_A {
         match self.bits {
             false => CHK_RESP_CRC_A::NOT_CHECK,
             true => CHK_RESP_CRC_A::CHECK,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_CHECK`"]
+    #[doc = "Do not check response CRC"]
     #[inline(always)]
     pub fn is_not_check(&self) -> bool {
         *self == CHK_RESP_CRC_A::NOT_CHECK
     }
-    #[doc = "Checks if the value of the field is `CHECK`"]
+    #[doc = "Check response CRC"]
     #[inline(always)]
     pub fn is_check(&self) -> bool {
         *self == CHK_RESP_CRC_A::CHECK
     }
 }
 #[doc = "Field `chk_resp_crc` writer - Check Response CRC"]
-pub type CHK_RESP_CRC_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, CHK_RESP_CRC_A, O>;
-impl<'a, const O: u8> CHK_RESP_CRC_W<'a, O> {
+pub type CHK_RESP_CRC_W<'a, REG> = crate::BitWriter<'a, REG, CHK_RESP_CRC_A>;
+impl<'a, REG> CHK_RESP_CRC_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Do not check response CRC"]
     #[inline(always)]
-    pub fn not_check(self) -> &'a mut W {
+    pub fn not_check(self) -> &'a mut crate::W<REG> {
         self.variant(CHK_RESP_CRC_A::NOT_CHECK)
     }
     #[doc = "Check response CRC"]
     #[inline(always)]
-    pub fn check(self) -> &'a mut W {
+    pub fn check(self) -> &'a mut crate::W<REG> {
         self.variant(CHK_RESP_CRC_A::CHECK)
     }
 }
@@ -208,34 +184,37 @@ impl From<DATA_TRANS_A> for bool {
 impl DATA_TRANS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DATA_TRANS_A {
+    pub const fn variant(&self) -> DATA_TRANS_A {
         match self.bits {
             false => DATA_TRANS_A::WITHOUT,
             true => DATA_TRANS_A::WITH,
         }
     }
-    #[doc = "Checks if the value of the field is `WITHOUT`"]
+    #[doc = "Without data transfer"]
     #[inline(always)]
     pub fn is_without(&self) -> bool {
         *self == DATA_TRANS_A::WITHOUT
     }
-    #[doc = "Checks if the value of the field is `WITH`"]
+    #[doc = "With data transfer"]
     #[inline(always)]
     pub fn is_with(&self) -> bool {
         *self == DATA_TRANS_A::WITH
     }
 }
 #[doc = "Field `data_trans` writer - Data Transfer"]
-pub type DATA_TRANS_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, DATA_TRANS_A, O>;
-impl<'a, const O: u8> DATA_TRANS_W<'a, O> {
+pub type DATA_TRANS_W<'a, REG> = crate::BitWriter<'a, REG, DATA_TRANS_A>;
+impl<'a, REG> DATA_TRANS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Without data transfer"]
     #[inline(always)]
-    pub fn without(self) -> &'a mut W {
+    pub fn without(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_TRANS_A::WITHOUT)
     }
     #[doc = "With data transfer"]
     #[inline(always)]
-    pub fn with(self) -> &'a mut W {
+    pub fn with(self) -> &'a mut crate::W<REG> {
         self.variant(DATA_TRANS_A::WITH)
     }
 }
@@ -258,34 +237,37 @@ impl From<TRANS_DIR_A> for bool {
 impl TRANS_DIR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRANS_DIR_A {
+    pub const fn variant(&self) -> TRANS_DIR_A {
         match self.bits {
             false => TRANS_DIR_A::READ,
             true => TRANS_DIR_A::WRITE,
         }
     }
-    #[doc = "Checks if the value of the field is `READ`"]
+    #[doc = "Read operation"]
     #[inline(always)]
     pub fn is_read(&self) -> bool {
         *self == TRANS_DIR_A::READ
     }
-    #[doc = "Checks if the value of the field is `WRITE`"]
+    #[doc = "Write operation"]
     #[inline(always)]
     pub fn is_write(&self) -> bool {
         *self == TRANS_DIR_A::WRITE
     }
 }
 #[doc = "Field `trans_dir` writer - Transfer Direction"]
-pub type TRANS_DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_DIR_A, O>;
-impl<'a, const O: u8> TRANS_DIR_W<'a, O> {
+pub type TRANS_DIR_W<'a, REG> = crate::BitWriter<'a, REG, TRANS_DIR_A>;
+impl<'a, REG> TRANS_DIR_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Read operation"]
     #[inline(always)]
-    pub fn read(self) -> &'a mut W {
+    pub fn read(self) -> &'a mut crate::W<REG> {
         self.variant(TRANS_DIR_A::READ)
     }
     #[doc = "Write operation"]
     #[inline(always)]
-    pub fn write(self) -> &'a mut W {
+    pub fn write(self) -> &'a mut crate::W<REG> {
         self.variant(TRANS_DIR_A::WRITE)
     }
 }
@@ -308,34 +290,37 @@ impl From<TRANS_MODE_A> for bool {
 impl TRANS_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TRANS_MODE_A {
+    pub const fn variant(&self) -> TRANS_MODE_A {
         match self.bits {
             false => TRANS_MODE_A::BLOCK,
             true => TRANS_MODE_A::STREAM,
         }
     }
-    #[doc = "Checks if the value of the field is `BLOCK`"]
+    #[doc = "Block data transfer command"]
     #[inline(always)]
     pub fn is_block(&self) -> bool {
         *self == TRANS_MODE_A::BLOCK
     }
-    #[doc = "Checks if the value of the field is `STREAM`"]
+    #[doc = "Stream data transfer commmand"]
     #[inline(always)]
     pub fn is_stream(&self) -> bool {
         *self == TRANS_MODE_A::STREAM
     }
 }
 #[doc = "Field `trans_mode` writer - Transfer Mode"]
-pub type TRANS_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, TRANS_MODE_A, O>;
-impl<'a, const O: u8> TRANS_MODE_W<'a, O> {
+pub type TRANS_MODE_W<'a, REG> = crate::BitWriter<'a, REG, TRANS_MODE_A>;
+impl<'a, REG> TRANS_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Block data transfer command"]
     #[inline(always)]
-    pub fn block(self) -> &'a mut W {
+    pub fn block(self) -> &'a mut crate::W<REG> {
         self.variant(TRANS_MODE_A::BLOCK)
     }
     #[doc = "Stream data transfer commmand"]
     #[inline(always)]
-    pub fn stream(self) -> &'a mut W {
+    pub fn stream(self) -> &'a mut crate::W<REG> {
         self.variant(TRANS_MODE_A::STREAM)
     }
 }
@@ -358,35 +343,37 @@ impl From<STOP_CMD_FLAG_A> for bool {
 impl STOP_CMD_FLAG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOP_CMD_FLAG_A {
+    pub const fn variant(&self) -> STOP_CMD_FLAG_A {
         match self.bits {
             false => STOP_CMD_FLAG_A::NO_STOP,
             true => STOP_CMD_FLAG_A::AUTO_STOP,
         }
     }
-    #[doc = "Checks if the value of the field is `NO_STOP`"]
+    #[doc = "Do not send stop command at the end of the data transfer"]
     #[inline(always)]
     pub fn is_no_stop(&self) -> bool {
         *self == STOP_CMD_FLAG_A::NO_STOP
     }
-    #[doc = "Checks if the value of the field is `AUTO_STOP`"]
+    #[doc = "Send stop command automatically at the end of the data transfer"]
     #[inline(always)]
     pub fn is_auto_stop(&self) -> bool {
         *self == STOP_CMD_FLAG_A::AUTO_STOP
     }
 }
 #[doc = "Field `stop_cmd_flag` writer - Send Stop CMD Automatically (CMD12)"]
-pub type STOP_CMD_FLAG_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_CMD_FLAG_A, O>;
-impl<'a, const O: u8> STOP_CMD_FLAG_W<'a, O> {
+pub type STOP_CMD_FLAG_W<'a, REG> = crate::BitWriter<'a, REG, STOP_CMD_FLAG_A>;
+impl<'a, REG> STOP_CMD_FLAG_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Do not send stop command at the end of the data transfer"]
     #[inline(always)]
-    pub fn no_stop(self) -> &'a mut W {
+    pub fn no_stop(self) -> &'a mut crate::W<REG> {
         self.variant(STOP_CMD_FLAG_A::NO_STOP)
     }
     #[doc = "Send stop command automatically at the end of the data transfer"]
     #[inline(always)]
-    pub fn auto_stop(self) -> &'a mut W {
+    pub fn auto_stop(self) -> &'a mut crate::W<REG> {
         self.variant(STOP_CMD_FLAG_A::AUTO_STOP)
     }
 }
@@ -409,35 +396,37 @@ impl From<WAIT_PRE_OVER_A> for bool {
 impl WAIT_PRE_OVER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> WAIT_PRE_OVER_A {
+    pub const fn variant(&self) -> WAIT_PRE_OVER_A {
         match self.bits {
             false => WAIT_PRE_OVER_A::AT_ONCE,
             true => WAIT_PRE_OVER_A::WAIT,
         }
     }
-    #[doc = "Checks if the value of the field is `AT_ONCE`"]
+    #[doc = "Send command at once, does not care about data transferring"]
     #[inline(always)]
     pub fn is_at_once(&self) -> bool {
         *self == WAIT_PRE_OVER_A::AT_ONCE
     }
-    #[doc = "Checks if the value of the field is `WAIT`"]
+    #[doc = "Wait for data transfer completion before sending the current command"]
     #[inline(always)]
     pub fn is_wait(&self) -> bool {
         *self == WAIT_PRE_OVER_A::WAIT
     }
 }
 #[doc = "Field `wait_pre_over` writer - Wait for Data Transfer Over"]
-pub type WAIT_PRE_OVER_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, WAIT_PRE_OVER_A, O>;
-impl<'a, const O: u8> WAIT_PRE_OVER_W<'a, O> {
+pub type WAIT_PRE_OVER_W<'a, REG> = crate::BitWriter<'a, REG, WAIT_PRE_OVER_A>;
+impl<'a, REG> WAIT_PRE_OVER_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Send command at once, does not care about data transferring"]
     #[inline(always)]
-    pub fn at_once(self) -> &'a mut W {
+    pub fn at_once(self) -> &'a mut crate::W<REG> {
         self.variant(WAIT_PRE_OVER_A::AT_ONCE)
     }
     #[doc = "Wait for data transfer completion before sending the current command"]
     #[inline(always)]
-    pub fn wait(self) -> &'a mut W {
+    pub fn wait(self) -> &'a mut crate::W<REG> {
         self.variant(WAIT_PRE_OVER_A::WAIT)
     }
 }
@@ -460,35 +449,37 @@ impl From<STOP_ABT_CMD_A> for bool {
 impl STOP_ABT_CMD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> STOP_ABT_CMD_A {
+    pub const fn variant(&self) -> STOP_ABT_CMD_A {
         match self.bits {
             false => STOP_ABT_CMD_A::NORMAL,
             true => STOP_ABT_CMD_A::STOP,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal command sending"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == STOP_ABT_CMD_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `STOP`"]
+    #[doc = "Send Stop or Abort command to stop the current data transfer in progress"]
     #[inline(always)]
     pub fn is_stop(&self) -> bool {
         *self == STOP_ABT_CMD_A::STOP
     }
 }
 #[doc = "Field `stop_abt_cmd` writer - Stop Abort Command"]
-pub type STOP_ABT_CMD_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, STOP_ABT_CMD_A, O>;
-impl<'a, const O: u8> STOP_ABT_CMD_W<'a, O> {
+pub type STOP_ABT_CMD_W<'a, REG> = crate::BitWriter<'a, REG, STOP_ABT_CMD_A>;
+impl<'a, REG> STOP_ABT_CMD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal command sending"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(STOP_ABT_CMD_A::NORMAL)
     }
     #[doc = "Send Stop or Abort command to stop the current data transfer in progress"]
     #[inline(always)]
-    pub fn stop(self) -> &'a mut W {
+    pub fn stop(self) -> &'a mut crate::W<REG> {
         self.variant(STOP_ABT_CMD_A::STOP)
     }
 }
@@ -511,35 +502,37 @@ impl From<SEND_INIT_SEQ_A> for bool {
 impl SEND_INIT_SEQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SEND_INIT_SEQ_A {
+    pub const fn variant(&self) -> SEND_INIT_SEQ_A {
         match self.bits {
             false => SEND_INIT_SEQ_A::NORMAL,
             true => SEND_INIT_SEQ_A::INIT_CMD,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal command sending"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == SEND_INIT_SEQ_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `INIT_CMD`"]
+    #[doc = "Send initialization sequence before sending this command"]
     #[inline(always)]
     pub fn is_init_cmd(&self) -> bool {
         *self == SEND_INIT_SEQ_A::INIT_CMD
     }
 }
 #[doc = "Field `send_init_seq` writer - Send Initialization"]
-pub type SEND_INIT_SEQ_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, SMHC_CMD_SPEC, SEND_INIT_SEQ_A, O>;
-impl<'a, const O: u8> SEND_INIT_SEQ_W<'a, O> {
+pub type SEND_INIT_SEQ_W<'a, REG> = crate::BitWriter<'a, REG, SEND_INIT_SEQ_A>;
+impl<'a, REG> SEND_INIT_SEQ_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal command sending"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(SEND_INIT_SEQ_A::NORMAL)
     }
     #[doc = "Send initialization sequence before sending this command"]
     #[inline(always)]
-    pub fn init_cmd(self) -> &'a mut W {
+    pub fn init_cmd(self) -> &'a mut crate::W<REG> {
         self.variant(SEND_INIT_SEQ_A::INIT_CMD)
     }
 }
@@ -562,39 +555,42 @@ impl From<PRG_CLK_A> for bool {
 impl PRG_CLK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PRG_CLK_A {
+    pub const fn variant(&self) -> PRG_CLK_A {
         match self.bits {
             false => PRG_CLK_A::NORMAL,
             true => PRG_CLK_A::CHANGE,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal command"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == PRG_CLK_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `CHANGE`"]
+    #[doc = "Change Card Clock"]
     #[inline(always)]
     pub fn is_change(&self) -> bool {
         *self == PRG_CLK_A::CHANGE
     }
 }
 #[doc = "Field `prg_clk` writer - Change Clock"]
-pub type PRG_CLK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, PRG_CLK_A, O>;
-impl<'a, const O: u8> PRG_CLK_W<'a, O> {
+pub type PRG_CLK_W<'a, REG> = crate::BitWriter<'a, REG, PRG_CLK_A>;
+impl<'a, REG> PRG_CLK_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal command"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(PRG_CLK_A::NORMAL)
     }
     #[doc = "Change Card Clock"]
     #[inline(always)]
-    pub fn change(self) -> &'a mut W {
+    pub fn change(self) -> &'a mut crate::W<REG> {
         self.variant(PRG_CLK_A::CHANGE)
     }
 }
 #[doc = "Field `boot_mod` reader - Boot Mode"]
-pub type BOOT_MOD_R = crate::FieldReader<u8, BOOT_MOD_A>;
+pub type BOOT_MOD_R = crate::FieldReader<BOOT_MOD_A>;
 #[doc = "Boot Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -612,10 +608,13 @@ impl From<BOOT_MOD_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for BOOT_MOD_A {
+    type Ux = u8;
+}
 impl BOOT_MOD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<BOOT_MOD_A> {
+    pub const fn variant(&self) -> Option<BOOT_MOD_A> {
         match self.bits {
             0 => Some(BOOT_MOD_A::NORMAL),
             1 => Some(BOOT_MOD_A::MANDATORY_BOOT),
@@ -623,50 +622,53 @@ impl BOOT_MOD_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal command"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == BOOT_MOD_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `MANDATORY_BOOT`"]
+    #[doc = "Mandatory Boot operation"]
     #[inline(always)]
     pub fn is_mandatory_boot(&self) -> bool {
         *self == BOOT_MOD_A::MANDATORY_BOOT
     }
-    #[doc = "Checks if the value of the field is `ALTERNATE_BOOT`"]
+    #[doc = "Alternate Boot operation"]
     #[inline(always)]
     pub fn is_alternate_boot(&self) -> bool {
         *self == BOOT_MOD_A::ALTERNATE_BOOT
     }
 }
 #[doc = "Field `boot_mod` writer - Boot Mode"]
-pub type BOOT_MOD_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, SMHC_CMD_SPEC, u8, BOOT_MOD_A, 2, O>;
-impl<'a, const O: u8> BOOT_MOD_W<'a, O> {
+pub type BOOT_MOD_W<'a, REG> = crate::FieldWriter<'a, REG, 2, BOOT_MOD_A>;
+impl<'a, REG> BOOT_MOD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "Normal command"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(BOOT_MOD_A::NORMAL)
     }
     #[doc = "Mandatory Boot operation"]
     #[inline(always)]
-    pub fn mandatory_boot(self) -> &'a mut W {
+    pub fn mandatory_boot(self) -> &'a mut crate::W<REG> {
         self.variant(BOOT_MOD_A::MANDATORY_BOOT)
     }
     #[doc = "Alternate Boot operation"]
     #[inline(always)]
-    pub fn alternate_boot(self) -> &'a mut W {
+    pub fn alternate_boot(self) -> &'a mut crate::W<REG> {
         self.variant(BOOT_MOD_A::ALTERNATE_BOOT)
     }
 }
 #[doc = "Field `exp_boot_ack` reader - Expect Boot Acknowledge"]
-pub type EXP_BOOT_ACK_R = crate::BitReader<bool>;
+pub type EXP_BOOT_ACK_R = crate::BitReader;
 #[doc = "Field `exp_boot_ack` writer - Expect Boot Acknowledge"]
-pub type EXP_BOOT_ACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
+pub type EXP_BOOT_ACK_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `boot_abt` reader - Boot Abort"]
-pub type BOOT_ABT_R = crate::BitReader<bool>;
+pub type BOOT_ABT_R = crate::BitReader;
 #[doc = "Field `boot_abt` writer - Boot Abort"]
-pub type BOOT_ABT_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
+pub type BOOT_ABT_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `vol_sw` reader - Voltage Switch"]
 pub type VOL_SW_R = crate::BitReader<VOL_SW_A>;
 #[doc = "Voltage Switch\n\nValue on reset: 0"]
@@ -686,41 +688,44 @@ impl From<VOL_SW_A> for bool {
 impl VOL_SW_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VOL_SW_A {
+    pub const fn variant(&self) -> VOL_SW_A {
         match self.bits {
             false => VOL_SW_A::NORMAL,
             true => VOL_SW_A::VOLTAGE_SWITCH,
         }
     }
-    #[doc = "Checks if the value of the field is `NORMAL`"]
+    #[doc = "Normal command"]
     #[inline(always)]
     pub fn is_normal(&self) -> bool {
         *self == VOL_SW_A::NORMAL
     }
-    #[doc = "Checks if the value of the field is `VOLTAGE_SWITCH`"]
+    #[doc = "Voltage switch command, set for CMD11 only"]
     #[inline(always)]
     pub fn is_voltage_switch(&self) -> bool {
         *self == VOL_SW_A::VOLTAGE_SWITCH
     }
 }
 #[doc = "Field `vol_sw` writer - Voltage Switch"]
-pub type VOL_SW_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, VOL_SW_A, O>;
-impl<'a, const O: u8> VOL_SW_W<'a, O> {
+pub type VOL_SW_W<'a, REG> = crate::BitWriter<'a, REG, VOL_SW_A>;
+impl<'a, REG> VOL_SW_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Normal command"]
     #[inline(always)]
-    pub fn normal(self) -> &'a mut W {
+    pub fn normal(self) -> &'a mut crate::W<REG> {
         self.variant(VOL_SW_A::NORMAL)
     }
     #[doc = "Voltage switch command, set for CMD11 only"]
     #[inline(always)]
-    pub fn voltage_switch(self) -> &'a mut W {
+    pub fn voltage_switch(self) -> &'a mut crate::W<REG> {
         self.variant(VOL_SW_A::VOLTAGE_SWITCH)
     }
 }
 #[doc = "Field `cmd_load` reader - Start Command"]
-pub type CMD_LOAD_R = crate::BitReader<bool>;
+pub type CMD_LOAD_R = crate::BitReader;
 #[doc = "Field `cmd_load` writer - Start Command"]
-pub type CMD_LOAD_W<'a, const O: u8> = crate::BitWriter<'a, u32, SMHC_CMD_SPEC, bool, O>;
+pub type CMD_LOAD_W<'a, REG> = crate::BitWriter<'a, REG>;
 impl R {
     #[doc = "Bits 0:5 - CMD Index"]
     #[inline(always)]
@@ -812,124 +817,125 @@ impl W {
     #[doc = "Bits 0:5 - CMD Index"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_idx(&mut self) -> CMD_IDX_W<0> {
-        CMD_IDX_W::new(self)
+    pub fn cmd_idx(&mut self) -> CMD_IDX_W<SMHC_CMD_SPEC> {
+        CMD_IDX_W::new(self, 0)
     }
     #[doc = "Bit 6 - Response Receive"]
     #[inline(always)]
     #[must_use]
-    pub fn resp_rcv(&mut self) -> RESP_RCV_W<6> {
-        RESP_RCV_W::new(self)
+    pub fn resp_rcv(&mut self) -> RESP_RCV_W<SMHC_CMD_SPEC> {
+        RESP_RCV_W::new(self, 6)
     }
     #[doc = "Bit 7 - Response Type"]
     #[inline(always)]
     #[must_use]
-    pub fn long_resp(&mut self) -> LONG_RESP_W<7> {
-        LONG_RESP_W::new(self)
+    pub fn long_resp(&mut self) -> LONG_RESP_W<SMHC_CMD_SPEC> {
+        LONG_RESP_W::new(self, 7)
     }
     #[doc = "Bit 8 - Check Response CRC"]
     #[inline(always)]
     #[must_use]
-    pub fn chk_resp_crc(&mut self) -> CHK_RESP_CRC_W<8> {
-        CHK_RESP_CRC_W::new(self)
+    pub fn chk_resp_crc(&mut self) -> CHK_RESP_CRC_W<SMHC_CMD_SPEC> {
+        CHK_RESP_CRC_W::new(self, 8)
     }
     #[doc = "Bit 9 - Data Transfer"]
     #[inline(always)]
     #[must_use]
-    pub fn data_trans(&mut self) -> DATA_TRANS_W<9> {
-        DATA_TRANS_W::new(self)
+    pub fn data_trans(&mut self) -> DATA_TRANS_W<SMHC_CMD_SPEC> {
+        DATA_TRANS_W::new(self, 9)
     }
     #[doc = "Bit 10 - Transfer Direction"]
     #[inline(always)]
     #[must_use]
-    pub fn trans_dir(&mut self) -> TRANS_DIR_W<10> {
-        TRANS_DIR_W::new(self)
+    pub fn trans_dir(&mut self) -> TRANS_DIR_W<SMHC_CMD_SPEC> {
+        TRANS_DIR_W::new(self, 10)
     }
     #[doc = "Bit 11 - Transfer Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn trans_mode(&mut self) -> TRANS_MODE_W<11> {
-        TRANS_MODE_W::new(self)
+    pub fn trans_mode(&mut self) -> TRANS_MODE_W<SMHC_CMD_SPEC> {
+        TRANS_MODE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Send Stop CMD Automatically (CMD12)"]
     #[inline(always)]
     #[must_use]
-    pub fn stop_cmd_flag(&mut self) -> STOP_CMD_FLAG_W<12> {
-        STOP_CMD_FLAG_W::new(self)
+    pub fn stop_cmd_flag(&mut self) -> STOP_CMD_FLAG_W<SMHC_CMD_SPEC> {
+        STOP_CMD_FLAG_W::new(self, 12)
     }
     #[doc = "Bit 13 - Wait for Data Transfer Over"]
     #[inline(always)]
     #[must_use]
-    pub fn wait_pre_over(&mut self) -> WAIT_PRE_OVER_W<13> {
-        WAIT_PRE_OVER_W::new(self)
+    pub fn wait_pre_over(&mut self) -> WAIT_PRE_OVER_W<SMHC_CMD_SPEC> {
+        WAIT_PRE_OVER_W::new(self, 13)
     }
     #[doc = "Bit 14 - Stop Abort Command"]
     #[inline(always)]
     #[must_use]
-    pub fn stop_abt_cmd(&mut self) -> STOP_ABT_CMD_W<14> {
-        STOP_ABT_CMD_W::new(self)
+    pub fn stop_abt_cmd(&mut self) -> STOP_ABT_CMD_W<SMHC_CMD_SPEC> {
+        STOP_ABT_CMD_W::new(self, 14)
     }
     #[doc = "Bit 15 - Send Initialization"]
     #[inline(always)]
     #[must_use]
-    pub fn send_init_seq(&mut self) -> SEND_INIT_SEQ_W<15> {
-        SEND_INIT_SEQ_W::new(self)
+    pub fn send_init_seq(&mut self) -> SEND_INIT_SEQ_W<SMHC_CMD_SPEC> {
+        SEND_INIT_SEQ_W::new(self, 15)
     }
     #[doc = "Bit 21 - Change Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn prg_clk(&mut self) -> PRG_CLK_W<21> {
-        PRG_CLK_W::new(self)
+    pub fn prg_clk(&mut self) -> PRG_CLK_W<SMHC_CMD_SPEC> {
+        PRG_CLK_W::new(self, 21)
     }
     #[doc = "Bits 24:25 - Boot Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn boot_mod(&mut self) -> BOOT_MOD_W<24> {
-        BOOT_MOD_W::new(self)
+    pub fn boot_mod(&mut self) -> BOOT_MOD_W<SMHC_CMD_SPEC> {
+        BOOT_MOD_W::new(self, 24)
     }
     #[doc = "Bit 26 - Expect Boot Acknowledge"]
     #[inline(always)]
     #[must_use]
-    pub fn exp_boot_ack(&mut self) -> EXP_BOOT_ACK_W<26> {
-        EXP_BOOT_ACK_W::new(self)
+    pub fn exp_boot_ack(&mut self) -> EXP_BOOT_ACK_W<SMHC_CMD_SPEC> {
+        EXP_BOOT_ACK_W::new(self, 26)
     }
     #[doc = "Bit 27 - Boot Abort"]
     #[inline(always)]
     #[must_use]
-    pub fn boot_abt(&mut self) -> BOOT_ABT_W<27> {
-        BOOT_ABT_W::new(self)
+    pub fn boot_abt(&mut self) -> BOOT_ABT_W<SMHC_CMD_SPEC> {
+        BOOT_ABT_W::new(self, 27)
     }
     #[doc = "Bit 28 - Voltage Switch"]
     #[inline(always)]
     #[must_use]
-    pub fn vol_sw(&mut self) -> VOL_SW_W<28> {
-        VOL_SW_W::new(self)
+    pub fn vol_sw(&mut self) -> VOL_SW_W<SMHC_CMD_SPEC> {
+        VOL_SW_W::new(self, 28)
     }
     #[doc = "Bit 31 - Start Command"]
     #[inline(always)]
     #[must_use]
-    pub fn cmd_load(&mut self) -> CMD_LOAD_W<31> {
-        CMD_LOAD_W::new(self)
+    pub fn cmd_load(&mut self) -> CMD_LOAD_W<SMHC_CMD_SPEC> {
+        CMD_LOAD_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Command Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smhc_cmd](index.html) module"]
+#[doc = "Command Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`smhc_cmd::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`smhc_cmd::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SMHC_CMD_SPEC;
 impl crate::RegisterSpec for SMHC_CMD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [smhc_cmd::R](R) reader structure"]
-impl crate::Readable for SMHC_CMD_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [smhc_cmd::W](W) writer structure"]
+#[doc = "`read()` method returns [`smhc_cmd::R`](R) reader structure"]
+impl crate::Readable for SMHC_CMD_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`smhc_cmd::W`](W) writer structure"]
 impl crate::Writable for SMHC_CMD_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

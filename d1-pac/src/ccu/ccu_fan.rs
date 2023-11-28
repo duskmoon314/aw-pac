@@ -1,41 +1,9 @@
 #[doc = "Register `ccu_fan` reader"]
-pub struct R(crate::R<CCU_FAN_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<CCU_FAN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<CCU_FAN_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<CCU_FAN_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<CCU_FAN_SPEC>;
 #[doc = "Register `ccu_fan` writer"]
-pub struct W(crate::W<CCU_FAN_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<CCU_FAN_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<CCU_FAN_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<CCU_FAN_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<CCU_FAN_SPEC>;
 #[doc = "Field `clk_fanout_sel[0-2]` reader - "]
-pub type CLK_FANOUT_SEL_R = crate::FieldReader<u8, CLK_FANOUT_SEL_A>;
+pub type CLK_FANOUT_SEL_R = crate::FieldReader<CLK_FANOUT_SEL_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -61,10 +29,13 @@ impl From<CLK_FANOUT_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CLK_FANOUT_SEL_A {
+    type Ux = u8;
+}
 impl CLK_FANOUT_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLK_FANOUT_SEL_A> {
+    pub const fn variant(&self) -> Option<CLK_FANOUT_SEL_A> {
         match self.bits {
             0 => Some(CLK_FANOUT_SEL_A::CLK32K),
             1 => Some(CLK_FANOUT_SEL_A::CLK12M),
@@ -76,79 +47,82 @@ impl CLK_FANOUT_SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `CLK32K`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_clk32k(&self) -> bool {
         *self == CLK_FANOUT_SEL_A::CLK32K
     }
-    #[doc = "Checks if the value of the field is `CLK12M`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_clk12m(&self) -> bool {
         *self == CLK_FANOUT_SEL_A::CLK12M
     }
-    #[doc = "Checks if the value of the field is `CLK16M`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_clk16m(&self) -> bool {
         *self == CLK_FANOUT_SEL_A::CLK16M
     }
-    #[doc = "Checks if the value of the field is `CLK24M`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_clk24m(&self) -> bool {
         *self == CLK_FANOUT_SEL_A::CLK24M
     }
-    #[doc = "Checks if the value of the field is `CLK25M`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_clk25m(&self) -> bool {
         *self == CLK_FANOUT_SEL_A::CLK25M
     }
-    #[doc = "Checks if the value of the field is `CLK27M`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_clk27m(&self) -> bool {
         *self == CLK_FANOUT_SEL_A::CLK27M
     }
-    #[doc = "Checks if the value of the field is `PCLK`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_pclk(&self) -> bool {
         *self == CLK_FANOUT_SEL_A::PCLK
     }
 }
 #[doc = "Field `clk_fanout_sel[0-2]` writer - "]
-pub type CLK_FANOUT_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, CCU_FAN_SPEC, u8, CLK_FANOUT_SEL_A, 3, O>;
-impl<'a, const O: u8> CLK_FANOUT_SEL_W<'a, O> {
+pub type CLK_FANOUT_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 3, CLK_FANOUT_SEL_A>;
+impl<'a, REG> CLK_FANOUT_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn clk32k(self) -> &'a mut W {
+    pub fn clk32k(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_SEL_A::CLK32K)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn clk12m(self) -> &'a mut W {
+    pub fn clk12m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_SEL_A::CLK12M)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn clk16m(self) -> &'a mut W {
+    pub fn clk16m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_SEL_A::CLK16M)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn clk24m(self) -> &'a mut W {
+    pub fn clk24m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_SEL_A::CLK24M)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn clk25m(self) -> &'a mut W {
+    pub fn clk25m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_SEL_A::CLK25M)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn clk27m(self) -> &'a mut W {
+    pub fn clk27m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_SEL_A::CLK27M)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn pclk(self) -> &'a mut W {
+    pub fn pclk(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_SEL_A::PCLK)
     }
 }
@@ -171,62 +145,68 @@ impl From<CLK_FANOUT_EN_A> for bool {
 impl CLK_FANOUT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_FANOUT_EN_A {
+    pub const fn variant(&self) -> CLK_FANOUT_EN_A {
         match self.bits {
             false => CLK_FANOUT_EN_A::OFF,
             true => CLK_FANOUT_EN_A::ON,
         }
     }
-    #[doc = "Checks if the value of the field is `OFF`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
         *self == CLK_FANOUT_EN_A::OFF
     }
-    #[doc = "Checks if the value of the field is `ON`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
         *self == CLK_FANOUT_EN_A::ON
     }
 }
 #[doc = "Field `clk_fanout_en[0-2]` writer - Gating for CLK_FANOUT"]
-pub type CLK_FANOUT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, CCU_FAN_SPEC, CLK_FANOUT_EN_A, O>;
-impl<'a, const O: u8> CLK_FANOUT_EN_W<'a, O> {
+pub type CLK_FANOUT_EN_W<'a, REG> = crate::BitWriter<'a, REG, CLK_FANOUT_EN_A>;
+impl<'a, REG> CLK_FANOUT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn off(self) -> &'a mut W {
+    pub fn off(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_EN_A::OFF)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut W {
+    pub fn on(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_FANOUT_EN_A::ON)
     }
 }
 impl R {
-    #[doc = ""]
+    #[doc = "\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `clk_fanout0_sel` field"]
     #[inline(always)]
-    pub unsafe fn clk_fanout_sel(&self, n: u8) -> CLK_FANOUT_SEL_R {
+    pub fn clk_fanout_sel(&self, n: u8) -> CLK_FANOUT_SEL_R {
+        #[allow(clippy::no_effect)]
+        [(); 3][n as usize];
         CLK_FANOUT_SEL_R::new(((self.bits >> (n * 3)) & 7) as u8)
     }
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - clk_fanout0_sel"]
     #[inline(always)]
     pub fn clk_fanout0_sel(&self) -> CLK_FANOUT_SEL_R {
         CLK_FANOUT_SEL_R::new((self.bits & 7) as u8)
     }
-    #[doc = "Bits 3:5"]
+    #[doc = "Bits 3:5 - clk_fanout1_sel"]
     #[inline(always)]
     pub fn clk_fanout1_sel(&self) -> CLK_FANOUT_SEL_R {
         CLK_FANOUT_SEL_R::new(((self.bits >> 3) & 7) as u8)
     }
-    #[doc = "Bits 6:8"]
+    #[doc = "Bits 6:8 - clk_fanout2_sel"]
     #[inline(always)]
     pub fn clk_fanout2_sel(&self) -> CLK_FANOUT_SEL_R {
         CLK_FANOUT_SEL_R::new(((self.bits >> 6) & 7) as u8)
     }
-    #[doc = "Gating for CLK_FANOUT"]
+    #[doc = "Gating for CLK_FANOUT\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `clk_fanout0_en` field"]
     #[inline(always)]
-    pub unsafe fn clk_fanout_en(&self, n: u8) -> CLK_FANOUT_EN_R {
+    pub fn clk_fanout_en(&self, n: u8) -> CLK_FANOUT_EN_R {
+        #[allow(clippy::no_effect)]
+        [(); 3][n as usize];
         CLK_FANOUT_EN_R::new(((self.bits >> (n + 21)) & 1) != 0)
     }
     #[doc = "Bit 21 - Gating for CLK_FANOUT"]
@@ -246,73 +226,78 @@ impl R {
     }
 }
 impl W {
-    #[doc = ""]
+    #[doc = "\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `clk_fanout0_sel` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn clk_fanout_sel<const O: u8>(&mut self) -> CLK_FANOUT_SEL_W<O> {
-        CLK_FANOUT_SEL_W::new(self)
+    pub fn clk_fanout_sel(&mut self, n: u8) -> CLK_FANOUT_SEL_W<CCU_FAN_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 3][n as usize];
+        CLK_FANOUT_SEL_W::new(self, n * 3)
     }
-    #[doc = "Bits 0:2"]
+    #[doc = "Bits 0:2 - clk_fanout0_sel"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_fanout0_sel(&mut self) -> CLK_FANOUT_SEL_W<0> {
-        CLK_FANOUT_SEL_W::new(self)
+    pub fn clk_fanout0_sel(&mut self) -> CLK_FANOUT_SEL_W<CCU_FAN_SPEC> {
+        CLK_FANOUT_SEL_W::new(self, 0)
     }
-    #[doc = "Bits 3:5"]
+    #[doc = "Bits 3:5 - clk_fanout1_sel"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_fanout1_sel(&mut self) -> CLK_FANOUT_SEL_W<3> {
-        CLK_FANOUT_SEL_W::new(self)
+    pub fn clk_fanout1_sel(&mut self) -> CLK_FANOUT_SEL_W<CCU_FAN_SPEC> {
+        CLK_FANOUT_SEL_W::new(self, 3)
     }
-    #[doc = "Bits 6:8"]
+    #[doc = "Bits 6:8 - clk_fanout2_sel"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_fanout2_sel(&mut self) -> CLK_FANOUT_SEL_W<6> {
-        CLK_FANOUT_SEL_W::new(self)
+    pub fn clk_fanout2_sel(&mut self) -> CLK_FANOUT_SEL_W<CCU_FAN_SPEC> {
+        CLK_FANOUT_SEL_W::new(self, 6)
     }
-    #[doc = "Gating for CLK_FANOUT"]
+    #[doc = "Gating for CLK_FANOUT\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `clk_fanout0_en` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn clk_fanout_en<const O: u8>(&mut self) -> CLK_FANOUT_EN_W<O> {
-        CLK_FANOUT_EN_W::new(self)
+    pub fn clk_fanout_en(&mut self, n: u8) -> CLK_FANOUT_EN_W<CCU_FAN_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 3][n as usize];
+        CLK_FANOUT_EN_W::new(self, n + 21)
     }
     #[doc = "Bit 21 - Gating for CLK_FANOUT"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_fanout0_en(&mut self) -> CLK_FANOUT_EN_W<21> {
-        CLK_FANOUT_EN_W::new(self)
+    pub fn clk_fanout0_en(&mut self) -> CLK_FANOUT_EN_W<CCU_FAN_SPEC> {
+        CLK_FANOUT_EN_W::new(self, 21)
     }
     #[doc = "Bit 22 - Gating for CLK_FANOUT"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_fanout1_en(&mut self) -> CLK_FANOUT_EN_W<22> {
-        CLK_FANOUT_EN_W::new(self)
+    pub fn clk_fanout1_en(&mut self) -> CLK_FANOUT_EN_W<CCU_FAN_SPEC> {
+        CLK_FANOUT_EN_W::new(self, 22)
     }
     #[doc = "Bit 23 - Gating for CLK_FANOUT"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_fanout2_en(&mut self) -> CLK_FANOUT_EN_W<23> {
-        CLK_FANOUT_EN_W::new(self)
+    pub fn clk_fanout2_en(&mut self) -> CLK_FANOUT_EN_W<CCU_FAN_SPEC> {
+        CLK_FANOUT_EN_W::new(self, 23)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "CCU FANOUT Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ccu_fan](index.html) module"]
+#[doc = "CCU FANOUT Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ccu_fan::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ccu_fan::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CCU_FAN_SPEC;
 impl crate::RegisterSpec for CCU_FAN_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ccu_fan::R](R) reader structure"]
-impl crate::Readable for CCU_FAN_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ccu_fan::W](W) writer structure"]
+#[doc = "`read()` method returns [`ccu_fan::R`](R) reader structure"]
+impl crate::Readable for CCU_FAN_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ccu_fan::W`](W) writer structure"]
 impl crate::Writable for CCU_FAN_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

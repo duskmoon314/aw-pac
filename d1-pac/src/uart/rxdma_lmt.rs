@@ -1,44 +1,11 @@
 #[doc = "Register `rxdma_lmt` reader"]
-pub struct R(crate::R<RXDMA_LMT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<RXDMA_LMT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<RXDMA_LMT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<RXDMA_LMT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<RXDMA_LMT_SPEC>;
 #[doc = "Register `rxdma_lmt` writer"]
-pub struct W(crate::W<RXDMA_LMT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<RXDMA_LMT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<RXDMA_LMT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<RXDMA_LMT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<RXDMA_LMT_SPEC>;
 #[doc = "Field `limit_size` reader - "]
-pub type LIMIT_SIZE_R = crate::FieldReader<u16, u16>;
+pub type LIMIT_SIZE_R = crate::FieldReader<u16>;
 #[doc = "Field `limit_size` writer - "]
-pub type LIMIT_SIZE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, RXDMA_LMT_SPEC, u16, u16, 16, O>;
+pub type LIMIT_SIZE_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl R {
     #[doc = "Bits 0:15"]
     #[inline(always)]
@@ -50,28 +17,29 @@ impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
     #[must_use]
-    pub fn limit_size(&mut self) -> LIMIT_SIZE_W<0> {
-        LIMIT_SIZE_W::new(self)
+    pub fn limit_size(&mut self) -> LIMIT_SIZE_W<RXDMA_LMT_SPEC> {
+        LIMIT_SIZE_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "UART RXDMA Limit Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [rxdma_lmt](index.html) module"]
+#[doc = "UART RXDMA Limit Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`rxdma_lmt::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`rxdma_lmt::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RXDMA_LMT_SPEC;
 impl crate::RegisterSpec for RXDMA_LMT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [rxdma_lmt::R](R) reader structure"]
-impl crate::Readable for RXDMA_LMT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [rxdma_lmt::W](W) writer structure"]
+#[doc = "`read()` method returns [`rxdma_lmt::R`](R) reader structure"]
+impl crate::Readable for RXDMA_LMT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`rxdma_lmt::W`](W) writer structure"]
 impl crate::Writable for RXDMA_LMT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

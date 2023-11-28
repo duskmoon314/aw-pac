@@ -1,18 +1,5 @@
 #[doc = "Register `usr` reader"]
-pub struct R(crate::R<USR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<USR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<USR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<USR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<USR_SPEC>;
 #[doc = "Field `busy` reader - UART Busy Bit"]
 pub type BUSY_R = crate::BitReader<BUSY_A>;
 #[doc = "UART Busy Bit\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<BUSY_A> for bool {
 impl BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> BUSY_A {
+    pub const fn variant(&self) -> BUSY_A {
         match self.bits {
             false => BUSY_A::IDLE,
             true => BUSY_A::BUSY,
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == BUSY_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == BUSY_A::BUSY
@@ -68,18 +55,18 @@ impl From<TFNF_A> for bool {
 impl TFNF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TFNF_A {
+    pub const fn variant(&self) -> TFNF_A {
         match self.bits {
             false => TFNF_A::FULL,
             true => TFNF_A::NOT_FULL,
         }
     }
-    #[doc = "Checks if the value of the field is `FULL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
         *self == TFNF_A::FULL
     }
-    #[doc = "Checks if the value of the field is `NOT_FULL`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_not_full(&self) -> bool {
         *self == TFNF_A::NOT_FULL
@@ -104,18 +91,18 @@ impl From<TFE_A> for bool {
 impl TFE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TFE_A {
+    pub const fn variant(&self) -> TFE_A {
         match self.bits {
             false => TFE_A::NOT_EMPTY,
             true => TFE_A::EMPTY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_empty(&self) -> bool {
         *self == TFE_A::NOT_EMPTY
     }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
         *self == TFE_A::EMPTY
@@ -140,18 +127,18 @@ impl From<RFNE_A> for bool {
 impl RFNE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RFNE_A {
+    pub const fn variant(&self) -> RFNE_A {
         match self.bits {
             false => RFNE_A::EMPTY,
             true => RFNE_A::NOT_EMPTY,
         }
     }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
         *self == RFNE_A::EMPTY
     }
-    #[doc = "Checks if the value of the field is `NOT_EMPTY`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_not_empty(&self) -> bool {
         *self == RFNE_A::NOT_EMPTY
@@ -176,18 +163,18 @@ impl From<RFF_A> for bool {
 impl RFF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RFF_A {
+    pub const fn variant(&self) -> RFF_A {
         match self.bits {
             false => RFF_A::NOT_FULL,
             true => RFF_A::FULL,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_FULL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_full(&self) -> bool {
         *self == RFF_A::NOT_FULL
     }
-    #[doc = "Checks if the value of the field is `FULL`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
         *self == RFF_A::FULL
@@ -220,15 +207,13 @@ impl R {
         RFF_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
-#[doc = "UART Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usr](index.html) module"]
+#[doc = "UART Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`usr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct USR_SPEC;
 impl crate::RegisterSpec for USR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [usr::R](R) reader structure"]
-impl crate::Readable for USR_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`usr::R`](R) reader structure"]
+impl crate::Readable for USR_SPEC {}
 #[doc = "`reset()` method sets usr to value 0"]
 impl crate::Resettable for USR_SPEC {
     const RESET_VALUE: Self::Ux = 0;

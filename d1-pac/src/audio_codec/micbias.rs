@@ -1,41 +1,9 @@
 #[doc = "Register `micbias` reader"]
-pub struct R(crate::R<MICBIAS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<MICBIAS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<MICBIAS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<MICBIAS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<MICBIAS_SPEC>;
 #[doc = "Register `micbias` writer"]
-pub struct W(crate::W<MICBIAS_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<MICBIAS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<MICBIAS_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<MICBIAS_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<MICBIAS_SPEC>;
 #[doc = "Field `mmic_bias_chopper_clk_sel` reader - MMIC BIAS Chopper Clock Select"]
-pub type MMIC_BIAS_CHOPPER_CLK_SEL_R = crate::FieldReader<u8, MMIC_BIAS_CHOPPER_CLK_SEL_A>;
+pub type MMIC_BIAS_CHOPPER_CLK_SEL_R = crate::FieldReader<MMIC_BIAS_CHOPPER_CLK_SEL_A>;
 #[doc = "MMIC BIAS Chopper Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<MMIC_BIAS_CHOPPER_CLK_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MMIC_BIAS_CHOPPER_CLK_SEL_A {
+    type Ux = u8;
+}
 impl MMIC_BIAS_CHOPPER_CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMIC_BIAS_CHOPPER_CLK_SEL_A {
+    pub const fn variant(&self) -> MMIC_BIAS_CHOPPER_CLK_SEL_A {
         match self.bits {
             0 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ,
             1 => MMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ,
@@ -67,49 +38,53 @@ impl MMIC_BIAS_CHOPPER_CLK_SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_250KHZ`"]
+    #[doc = "250 kHz"]
     #[inline(always)]
     pub fn is_250khz(&self) -> bool {
         *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ
     }
-    #[doc = "Checks if the value of the field is `_500KHZ`"]
+    #[doc = "500 kHz"]
     #[inline(always)]
     pub fn is_500khz(&self) -> bool {
         *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ
     }
-    #[doc = "Checks if the value of the field is `_1MHZ`"]
+    #[doc = "1 MHz"]
     #[inline(always)]
     pub fn is_1mhz(&self) -> bool {
         *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ
     }
-    #[doc = "Checks if the value of the field is `_2MHZ`"]
+    #[doc = "2 MHz"]
     #[inline(always)]
     pub fn is_2mhz(&self) -> bool {
         *self == MMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ
     }
 }
 #[doc = "Field `mmic_bias_chopper_clk_sel` writer - MMIC BIAS Chopper Clock Select"]
-pub type MMIC_BIAS_CHOPPER_CLK_SEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MICBIAS_SPEC, u8, MMIC_BIAS_CHOPPER_CLK_SEL_A, 2, O>;
-impl<'a, const O: u8> MMIC_BIAS_CHOPPER_CLK_SEL_W<'a, O> {
+pub type MMIC_BIAS_CHOPPER_CLK_SEL_W<'a, REG> =
+    crate::FieldWriterSafe<'a, REG, 2, MMIC_BIAS_CHOPPER_CLK_SEL_A>;
+impl<'a, REG> MMIC_BIAS_CHOPPER_CLK_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "250 kHz"]
     #[inline(always)]
-    pub fn _250khz(self) -> &'a mut W {
+    pub fn _250khz(self) -> &'a mut crate::W<REG> {
         self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ)
     }
     #[doc = "500 kHz"]
     #[inline(always)]
-    pub fn _500khz(self) -> &'a mut W {
+    pub fn _500khz(self) -> &'a mut crate::W<REG> {
         self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ)
     }
     #[doc = "1 MHz"]
     #[inline(always)]
-    pub fn _1mhz(self) -> &'a mut W {
+    pub fn _1mhz(self) -> &'a mut crate::W<REG> {
         self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ)
     }
     #[doc = "2 MHz"]
     #[inline(always)]
-    pub fn _2mhz(self) -> &'a mut W {
+    pub fn _2mhz(self) -> &'a mut crate::W<REG> {
         self.variant(MMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ)
     }
 }
@@ -132,40 +107,42 @@ impl From<MMIC_BIAS_CHOPPER_EN_A> for bool {
 impl MMIC_BIAS_CHOPPER_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMIC_BIAS_CHOPPER_EN_A {
+    pub const fn variant(&self) -> MMIC_BIAS_CHOPPER_EN_A {
         match self.bits {
             false => MMIC_BIAS_CHOPPER_EN_A::DISABLED,
             true => MMIC_BIAS_CHOPPER_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == MMIC_BIAS_CHOPPER_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == MMIC_BIAS_CHOPPER_EN_A::ENABLED
     }
 }
 #[doc = "Field `mmic_bias_chopper_en` writer - MMIC BIAS Chopper Enable"]
-pub type MMIC_BIAS_CHOPPER_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MICBIAS_SPEC, MMIC_BIAS_CHOPPER_EN_A, O>;
-impl<'a, const O: u8> MMIC_BIAS_CHOPPER_EN_W<'a, O> {
+pub type MMIC_BIAS_CHOPPER_EN_W<'a, REG> = crate::BitWriter<'a, REG, MMIC_BIAS_CHOPPER_EN_A>;
+impl<'a, REG> MMIC_BIAS_CHOPPER_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(MMIC_BIAS_CHOPPER_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(MMIC_BIAS_CHOPPER_EN_A::ENABLED)
     }
 }
 #[doc = "Field `mbiassel` reader - MMICBIAS Voltage Level Select"]
-pub type MBIASSEL_R = crate::FieldReader<u8, MBIASSEL_A>;
+pub type MBIASSEL_R = crate::FieldReader<MBIASSEL_A>;
 #[doc = "MMICBIAS Voltage Level Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -185,10 +162,13 @@ impl From<MBIASSEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for MBIASSEL_A {
+    type Ux = u8;
+}
 impl MBIASSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MBIASSEL_A {
+    pub const fn variant(&self) -> MBIASSEL_A {
         match self.bits {
             0 => MBIASSEL_A::_1_88_V,
             1 => MBIASSEL_A::_2_09_V,
@@ -197,49 +177,52 @@ impl MBIASSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_1_88_V`"]
+    #[doc = "1.88 V"]
     #[inline(always)]
     pub fn is_1_88_v(&self) -> bool {
         *self == MBIASSEL_A::_1_88_V
     }
-    #[doc = "Checks if the value of the field is `_2_09_V`"]
+    #[doc = "2.09 V"]
     #[inline(always)]
     pub fn is_2_09_v(&self) -> bool {
         *self == MBIASSEL_A::_2_09_V
     }
-    #[doc = "Checks if the value of the field is `_2_33_V`"]
+    #[doc = "2.33 V"]
     #[inline(always)]
     pub fn is_2_33_v(&self) -> bool {
         *self == MBIASSEL_A::_2_33_V
     }
-    #[doc = "Checks if the value of the field is `_2_50_V`"]
+    #[doc = "2.50 V"]
     #[inline(always)]
     pub fn is_2_50_v(&self) -> bool {
         *self == MBIASSEL_A::_2_50_V
     }
 }
 #[doc = "Field `mbiassel` writer - MMICBIAS Voltage Level Select"]
-pub type MBIASSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MICBIAS_SPEC, u8, MBIASSEL_A, 2, O>;
-impl<'a, const O: u8> MBIASSEL_W<'a, O> {
+pub type MBIASSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, MBIASSEL_A>;
+impl<'a, REG> MBIASSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1.88 V"]
     #[inline(always)]
-    pub fn _1_88_v(self) -> &'a mut W {
+    pub fn _1_88_v(self) -> &'a mut crate::W<REG> {
         self.variant(MBIASSEL_A::_1_88_V)
     }
     #[doc = "2.09 V"]
     #[inline(always)]
-    pub fn _2_09_v(self) -> &'a mut W {
+    pub fn _2_09_v(self) -> &'a mut crate::W<REG> {
         self.variant(MBIASSEL_A::_2_09_V)
     }
     #[doc = "2.33 V"]
     #[inline(always)]
-    pub fn _2_33_v(self) -> &'a mut W {
+    pub fn _2_33_v(self) -> &'a mut crate::W<REG> {
         self.variant(MBIASSEL_A::_2_33_V)
     }
     #[doc = "2.50 V"]
     #[inline(always)]
-    pub fn _2_50_v(self) -> &'a mut W {
+    pub fn _2_50_v(self) -> &'a mut crate::W<REG> {
         self.variant(MBIASSEL_A::_2_50_V)
     }
 }
@@ -262,39 +245,42 @@ impl From<MMICBIASEN_A> for bool {
 impl MMICBIASEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MMICBIASEN_A {
+    pub const fn variant(&self) -> MMICBIASEN_A {
         match self.bits {
             false => MMICBIASEN_A::DISABLED,
             true => MMICBIASEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == MMICBIASEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == MMICBIASEN_A::ENABLED
     }
 }
 #[doc = "Field `mmicbiasen` writer - Master Microphone Bias Enable"]
-pub type MMICBIASEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, MMICBIASEN_A, O>;
-impl<'a, const O: u8> MMICBIASEN_W<'a, O> {
+pub type MMICBIASEN_W<'a, REG> = crate::BitWriter<'a, REG, MMICBIASEN_A>;
+impl<'a, REG> MMICBIASEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(MMICBIASEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(MMICBIASEN_A::ENABLED)
     }
 }
 #[doc = "Field `hmic_bias_chopper_clk_sel` reader - HMIC BIAS Chopper Clock Select"]
-pub type HMIC_BIAS_CHOPPER_CLK_SEL_R = crate::FieldReader<u8, HMIC_BIAS_CHOPPER_CLK_SEL_A>;
+pub type HMIC_BIAS_CHOPPER_CLK_SEL_R = crate::FieldReader<HMIC_BIAS_CHOPPER_CLK_SEL_A>;
 #[doc = "HMIC BIAS Chopper Clock Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -314,10 +300,13 @@ impl From<HMIC_BIAS_CHOPPER_CLK_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HMIC_BIAS_CHOPPER_CLK_SEL_A {
+    type Ux = u8;
+}
 impl HMIC_BIAS_CHOPPER_CLK_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HMIC_BIAS_CHOPPER_CLK_SEL_A {
+    pub const fn variant(&self) -> HMIC_BIAS_CHOPPER_CLK_SEL_A {
         match self.bits {
             0 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ,
             1 => HMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ,
@@ -326,49 +315,53 @@ impl HMIC_BIAS_CHOPPER_CLK_SEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_250KHZ`"]
+    #[doc = "250 kHz"]
     #[inline(always)]
     pub fn is_250khz(&self) -> bool {
         *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ
     }
-    #[doc = "Checks if the value of the field is `_500KHZ`"]
+    #[doc = "500 kHz"]
     #[inline(always)]
     pub fn is_500khz(&self) -> bool {
         *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ
     }
-    #[doc = "Checks if the value of the field is `_1MHZ`"]
+    #[doc = "1 MHz"]
     #[inline(always)]
     pub fn is_1mhz(&self) -> bool {
         *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ
     }
-    #[doc = "Checks if the value of the field is `_2MHZ`"]
+    #[doc = "2 MHz"]
     #[inline(always)]
     pub fn is_2mhz(&self) -> bool {
         *self == HMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ
     }
 }
 #[doc = "Field `hmic_bias_chopper_clk_sel` writer - HMIC BIAS Chopper Clock Select"]
-pub type HMIC_BIAS_CHOPPER_CLK_SEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MICBIAS_SPEC, u8, HMIC_BIAS_CHOPPER_CLK_SEL_A, 2, O>;
-impl<'a, const O: u8> HMIC_BIAS_CHOPPER_CLK_SEL_W<'a, O> {
+pub type HMIC_BIAS_CHOPPER_CLK_SEL_W<'a, REG> =
+    crate::FieldWriterSafe<'a, REG, 2, HMIC_BIAS_CHOPPER_CLK_SEL_A>;
+impl<'a, REG> HMIC_BIAS_CHOPPER_CLK_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "250 kHz"]
     #[inline(always)]
-    pub fn _250khz(self) -> &'a mut W {
+    pub fn _250khz(self) -> &'a mut crate::W<REG> {
         self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_250KHZ)
     }
     #[doc = "500 kHz"]
     #[inline(always)]
-    pub fn _500khz(self) -> &'a mut W {
+    pub fn _500khz(self) -> &'a mut crate::W<REG> {
         self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_500KHZ)
     }
     #[doc = "1 MHz"]
     #[inline(always)]
-    pub fn _1mhz(self) -> &'a mut W {
+    pub fn _1mhz(self) -> &'a mut crate::W<REG> {
         self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_1MHZ)
     }
     #[doc = "2 MHz"]
     #[inline(always)]
-    pub fn _2mhz(self) -> &'a mut W {
+    pub fn _2mhz(self) -> &'a mut crate::W<REG> {
         self.variant(HMIC_BIAS_CHOPPER_CLK_SEL_A::_2MHZ)
     }
 }
@@ -391,40 +384,42 @@ impl From<HMIC_BIAS_CHOPPER_EN_A> for bool {
 impl HMIC_BIAS_CHOPPER_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HMIC_BIAS_CHOPPER_EN_A {
+    pub const fn variant(&self) -> HMIC_BIAS_CHOPPER_EN_A {
         match self.bits {
             false => HMIC_BIAS_CHOPPER_EN_A::DISABLED,
             true => HMIC_BIAS_CHOPPER_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == HMIC_BIAS_CHOPPER_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == HMIC_BIAS_CHOPPER_EN_A::ENABLED
     }
 }
 #[doc = "Field `hmic_bias_chopper_en` writer - HMIC BIAS Chopper Enable"]
-pub type HMIC_BIAS_CHOPPER_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, MICBIAS_SPEC, HMIC_BIAS_CHOPPER_EN_A, O>;
-impl<'a, const O: u8> HMIC_BIAS_CHOPPER_EN_W<'a, O> {
+pub type HMIC_BIAS_CHOPPER_EN_W<'a, REG> = crate::BitWriter<'a, REG, HMIC_BIAS_CHOPPER_EN_A>;
+impl<'a, REG> HMIC_BIAS_CHOPPER_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(HMIC_BIAS_CHOPPER_EN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(HMIC_BIAS_CHOPPER_EN_A::ENABLED)
     }
 }
 #[doc = "Field `hbiassel` reader - HMICBIAS Voltage Level Select"]
-pub type HBIASSEL_R = crate::FieldReader<u8, HBIASSEL_A>;
+pub type HBIASSEL_R = crate::FieldReader<HBIASSEL_A>;
 #[doc = "HMICBIAS Voltage Level Select\n\nValue on reset: 1"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -444,10 +439,13 @@ impl From<HBIASSEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for HBIASSEL_A {
+    type Ux = u8;
+}
 impl HBIASSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HBIASSEL_A {
+    pub const fn variant(&self) -> HBIASSEL_A {
         match self.bits {
             0 => HBIASSEL_A::_1_88_V,
             1 => HBIASSEL_A::_2_09_V,
@@ -456,49 +454,52 @@ impl HBIASSEL_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_1_88_V`"]
+    #[doc = "1.88 V"]
     #[inline(always)]
     pub fn is_1_88_v(&self) -> bool {
         *self == HBIASSEL_A::_1_88_V
     }
-    #[doc = "Checks if the value of the field is `_2_09_V`"]
+    #[doc = "2.09 V"]
     #[inline(always)]
     pub fn is_2_09_v(&self) -> bool {
         *self == HBIASSEL_A::_2_09_V
     }
-    #[doc = "Checks if the value of the field is `_2_33_V`"]
+    #[doc = "2.33 V"]
     #[inline(always)]
     pub fn is_2_33_v(&self) -> bool {
         *self == HBIASSEL_A::_2_33_V
     }
-    #[doc = "Checks if the value of the field is `_2_55_V`"]
+    #[doc = "2.55 V"]
     #[inline(always)]
     pub fn is_2_55_v(&self) -> bool {
         *self == HBIASSEL_A::_2_55_V
     }
 }
 #[doc = "Field `hbiassel` writer - HMICBIAS Voltage Level Select"]
-pub type HBIASSEL_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MICBIAS_SPEC, u8, HBIASSEL_A, 2, O>;
-impl<'a, const O: u8> HBIASSEL_W<'a, O> {
+pub type HBIASSEL_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, HBIASSEL_A>;
+impl<'a, REG> HBIASSEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "1.88 V"]
     #[inline(always)]
-    pub fn _1_88_v(self) -> &'a mut W {
+    pub fn _1_88_v(self) -> &'a mut crate::W<REG> {
         self.variant(HBIASSEL_A::_1_88_V)
     }
     #[doc = "2.09 V"]
     #[inline(always)]
-    pub fn _2_09_v(self) -> &'a mut W {
+    pub fn _2_09_v(self) -> &'a mut crate::W<REG> {
         self.variant(HBIASSEL_A::_2_09_V)
     }
     #[doc = "2.33 V"]
     #[inline(always)]
-    pub fn _2_33_v(self) -> &'a mut W {
+    pub fn _2_33_v(self) -> &'a mut crate::W<REG> {
         self.variant(HBIASSEL_A::_2_33_V)
     }
     #[doc = "2.55 V"]
     #[inline(always)]
-    pub fn _2_55_v(self) -> &'a mut W {
+    pub fn _2_55_v(self) -> &'a mut crate::W<REG> {
         self.variant(HBIASSEL_A::_2_55_V)
     }
 }
@@ -521,41 +522,44 @@ impl From<HMICBIASEN_A> for bool {
 impl HMICBIASEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HMICBIASEN_A {
+    pub const fn variant(&self) -> HMICBIASEN_A {
         match self.bits {
             false => HMICBIASEN_A::DISABLED,
             true => HMICBIASEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == HMICBIASEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == HMICBIASEN_A::ENABLED
     }
 }
 #[doc = "Field `hmicbiasen` writer - Headphone Microphone Bias Enable"]
-pub type HMICBIASEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, HMICBIASEN_A, O>;
-impl<'a, const O: u8> HMICBIASEN_W<'a, O> {
+pub type HMICBIASEN_W<'a, REG> = crate::BitWriter<'a, REG, HMICBIASEN_A>;
+impl<'a, REG> HMICBIASEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(HMICBIASEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(HMICBIASEN_A::ENABLED)
     }
 }
 #[doc = "Field `micdetpl` reader - When this bit is 1and AUTOPLEN is 0, the MICDET is pulled down to GND."]
-pub type MICDETPL_R = crate::BitReader<bool>;
+pub type MICDETPL_R = crate::BitReader;
 #[doc = "Field `micdetpl` writer - When this bit is 1and AUTOPLEN is 0, the MICDET is pulled down to GND."]
-pub type MICDETPL_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, bool, O>;
+pub type MICDETPL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `autoplen` reader - Enable the function to auto pull low MICDET when jack removal"]
 pub type AUTOPLEN_R = crate::BitReader<AUTOPLEN_A>;
 #[doc = "Enable the function to auto pull low MICDET when jack removal\n\nValue on reset: 0"]
@@ -575,34 +579,37 @@ impl From<AUTOPLEN_A> for bool {
 impl AUTOPLEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AUTOPLEN_A {
+    pub const fn variant(&self) -> AUTOPLEN_A {
         match self.bits {
             false => AUTOPLEN_A::DISABLED,
             true => AUTOPLEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == AUTOPLEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == AUTOPLEN_A::ENABLED
     }
 }
 #[doc = "Field `autoplen` writer - Enable the function to auto pull low MICDET when jack removal"]
-pub type AUTOPLEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, AUTOPLEN_A, O>;
-impl<'a, const O: u8> AUTOPLEN_W<'a, O> {
+pub type AUTOPLEN_W<'a, REG> = crate::BitWriter<'a, REG, AUTOPLEN_A>;
+impl<'a, REG> AUTOPLEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(AUTOPLEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(AUTOPLEN_A::ENABLED)
     }
 }
@@ -625,41 +632,44 @@ impl From<DET_MODE_A> for bool {
 impl DET_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DET_MODE_A {
+    pub const fn variant(&self) -> DET_MODE_A {
         match self.bits {
             false => DET_MODE_A::LOW,
             true => DET_MODE_A::HIGH,
         }
     }
-    #[doc = "Checks if the value of the field is `LOW`"]
+    #[doc = "Jack in pull low"]
     #[inline(always)]
     pub fn is_low(&self) -> bool {
         *self == DET_MODE_A::LOW
     }
-    #[doc = "Checks if the value of the field is `HIGH`"]
+    #[doc = "Jack in pull high"]
     #[inline(always)]
     pub fn is_high(&self) -> bool {
         *self == DET_MODE_A::HIGH
     }
 }
 #[doc = "Field `det_mode` writer - MIC Detect Mode"]
-pub type DET_MODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, DET_MODE_A, O>;
-impl<'a, const O: u8> DET_MODE_W<'a, O> {
+pub type DET_MODE_W<'a, REG> = crate::BitWriter<'a, REG, DET_MODE_A>;
+impl<'a, REG> DET_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Jack in pull low"]
     #[inline(always)]
-    pub fn low(self) -> &'a mut W {
+    pub fn low(self) -> &'a mut crate::W<REG> {
         self.variant(DET_MODE_A::LOW)
     }
     #[doc = "Jack in pull high"]
     #[inline(always)]
-    pub fn high(self) -> &'a mut W {
+    pub fn high(self) -> &'a mut crate::W<REG> {
         self.variant(DET_MODE_A::HIGH)
     }
 }
 #[doc = "Field `popfree` reader - When this bit is 0, HBIAS MICADC is controlled by registor"]
-pub type POPFREE_R = crate::BitReader<bool>;
+pub type POPFREE_R = crate::BitReader;
 #[doc = "Field `popfree` writer - When this bit is 0, HBIAS MICADC is controlled by registor"]
-pub type POPFREE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, bool, O>;
+pub type POPFREE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `micadcen` reader - Microphone detect ADC enable"]
 pub type MICADCEN_R = crate::BitReader<MICADCEN_A>;
 #[doc = "Microphone detect ADC enable\n\nValue on reset: 0"]
@@ -679,39 +689,42 @@ impl From<MICADCEN_A> for bool {
 impl MICADCEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> MICADCEN_A {
+    pub const fn variant(&self) -> MICADCEN_A {
         match self.bits {
             false => MICADCEN_A::DISABLED,
             true => MICADCEN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == MICADCEN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == MICADCEN_A::ENABLED
     }
 }
 #[doc = "Field `micadcen` writer - Microphone detect ADC enable"]
-pub type MICADCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, MICADCEN_A, O>;
-impl<'a, const O: u8> MICADCEN_W<'a, O> {
+pub type MICADCEN_W<'a, REG> = crate::BitWriter<'a, REG, MICADCEN_A>;
+impl<'a, REG> MICADCEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(MICADCEN_A::DISABLED)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(MICADCEN_A::ENABLED)
     }
 }
 #[doc = "Field `seldetadcdy` reader - Select the delay time to pull low the micdet when jack removal"]
-pub type SELDETADCDY_R = crate::FieldReader<u8, SELDETADCDY_A>;
+pub type SELDETADCDY_R = crate::FieldReader<SELDETADCDY_A>;
 #[doc = "Select the delay time to pull low the micdet when jack removal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -731,10 +744,13 @@ impl From<SELDETADCDY_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SELDETADCDY_A {
+    type Ux = u8;
+}
 impl SELDETADCDY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELDETADCDY_A {
+    pub const fn variant(&self) -> SELDETADCDY_A {
         match self.bits {
             0 => SELDETADCDY_A::_0_5_MS,
             1 => SELDETADCDY_A::_1_MS,
@@ -743,49 +759,52 @@ impl SELDETADCDY_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_0_5_MS`"]
+    #[doc = "0.5 ms"]
     #[inline(always)]
     pub fn is_0_5_ms(&self) -> bool {
         *self == SELDETADCDY_A::_0_5_MS
     }
-    #[doc = "Checks if the value of the field is `_1_MS`"]
+    #[doc = "1 ms"]
     #[inline(always)]
     pub fn is_1_ms(&self) -> bool {
         *self == SELDETADCDY_A::_1_MS
     }
-    #[doc = "Checks if the value of the field is `_1_5_MS`"]
+    #[doc = "1.5 ms"]
     #[inline(always)]
     pub fn is_1_5_ms(&self) -> bool {
         *self == SELDETADCDY_A::_1_5_MS
     }
-    #[doc = "Checks if the value of the field is `_2_MS`"]
+    #[doc = "2 ms"]
     #[inline(always)]
     pub fn is_2_ms(&self) -> bool {
         *self == SELDETADCDY_A::_2_MS
     }
 }
 #[doc = "Field `seldetadcdy` writer - Select the delay time to pull low the micdet when jack removal"]
-pub type SELDETADCDY_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MICBIAS_SPEC, u8, SELDETADCDY_A, 2, O>;
-impl<'a, const O: u8> SELDETADCDY_W<'a, O> {
+pub type SELDETADCDY_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SELDETADCDY_A>;
+impl<'a, REG> SELDETADCDY_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "0.5 ms"]
     #[inline(always)]
-    pub fn _0_5_ms(self) -> &'a mut W {
+    pub fn _0_5_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDY_A::_0_5_MS)
     }
     #[doc = "1 ms"]
     #[inline(always)]
-    pub fn _1_ms(self) -> &'a mut W {
+    pub fn _1_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDY_A::_1_MS)
     }
     #[doc = "1.5 ms"]
     #[inline(always)]
-    pub fn _1_5_ms(self) -> &'a mut W {
+    pub fn _1_5_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDY_A::_1_5_MS)
     }
     #[doc = "2 ms"]
     #[inline(always)]
-    pub fn _2_ms(self) -> &'a mut W {
+    pub fn _2_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDY_A::_2_MS)
     }
 }
@@ -808,39 +827,42 @@ impl From<JACKDETEN_A> for bool {
 impl JACKDETEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> JACKDETEN_A {
+    pub const fn variant(&self) -> JACKDETEN_A {
         match self.bits {
             false => JACKDETEN_A::DISABLE,
             true => JACKDETEN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == JACKDETEN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == JACKDETEN_A::ENABLE
     }
 }
 #[doc = "Field `jackdeten` writer - Jack detect enable"]
-pub type JACKDETEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MICBIAS_SPEC, JACKDETEN_A, O>;
-impl<'a, const O: u8> JACKDETEN_W<'a, O> {
+pub type JACKDETEN_W<'a, REG> = crate::BitWriter<'a, REG, JACKDETEN_A>;
+impl<'a, REG> JACKDETEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(JACKDETEN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(JACKDETEN_A::ENABLE)
     }
 }
 #[doc = "Field `seldetadcbf` reader - Select the time to enable HBIAS before MICADC work"]
-pub type SELDETADCBF_R = crate::FieldReader<u8, SELDETADCBF_A>;
+pub type SELDETADCBF_R = crate::FieldReader<SELDETADCBF_A>;
 #[doc = "Select the time to enable HBIAS before MICADC work\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -860,10 +882,13 @@ impl From<SELDETADCBF_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SELDETADCBF_A {
+    type Ux = u8;
+}
 impl SELDETADCBF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELDETADCBF_A {
+    pub const fn variant(&self) -> SELDETADCBF_A {
         match self.bits {
             0 => SELDETADCBF_A::_2_MS,
             1 => SELDETADCBF_A::_4_MS,
@@ -872,54 +897,57 @@ impl SELDETADCBF_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_2_MS`"]
+    #[doc = "2 ms"]
     #[inline(always)]
     pub fn is_2_ms(&self) -> bool {
         *self == SELDETADCBF_A::_2_MS
     }
-    #[doc = "Checks if the value of the field is `_4_MS`"]
+    #[doc = "4 ms"]
     #[inline(always)]
     pub fn is_4_ms(&self) -> bool {
         *self == SELDETADCBF_A::_4_MS
     }
-    #[doc = "Checks if the value of the field is `_8_MS`"]
+    #[doc = "8 ms"]
     #[inline(always)]
     pub fn is_8_ms(&self) -> bool {
         *self == SELDETADCBF_A::_8_MS
     }
-    #[doc = "Checks if the value of the field is `_16_MS`"]
+    #[doc = "16 ms"]
     #[inline(always)]
     pub fn is_16_ms(&self) -> bool {
         *self == SELDETADCBF_A::_16_MS
     }
 }
 #[doc = "Field `seldetadcbf` writer - Select the time to enable HBIAS before MICADC work"]
-pub type SELDETADCBF_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MICBIAS_SPEC, u8, SELDETADCBF_A, 2, O>;
-impl<'a, const O: u8> SELDETADCBF_W<'a, O> {
+pub type SELDETADCBF_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SELDETADCBF_A>;
+impl<'a, REG> SELDETADCBF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "2 ms"]
     #[inline(always)]
-    pub fn _2_ms(self) -> &'a mut W {
+    pub fn _2_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCBF_A::_2_MS)
     }
     #[doc = "4 ms"]
     #[inline(always)]
-    pub fn _4_ms(self) -> &'a mut W {
+    pub fn _4_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCBF_A::_4_MS)
     }
     #[doc = "8 ms"]
     #[inline(always)]
-    pub fn _8_ms(self) -> &'a mut W {
+    pub fn _8_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCBF_A::_8_MS)
     }
     #[doc = "16 ms"]
     #[inline(always)]
-    pub fn _16_ms(self) -> &'a mut W {
+    pub fn _16_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCBF_A::_16_MS)
     }
 }
 #[doc = "Field `seldetadcdb` reader - Select debounce time when jack removal"]
-pub type SELDETADCDB_R = crate::FieldReader<u8, SELDETADCDB_A>;
+pub type SELDETADCDB_R = crate::FieldReader<SELDETADCDB_A>;
 #[doc = "Select debounce time when jack removal\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -939,10 +967,13 @@ impl From<SELDETADCDB_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SELDETADCDB_A {
+    type Ux = u8;
+}
 impl SELDETADCDB_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SELDETADCDB_A {
+    pub const fn variant(&self) -> SELDETADCDB_A {
         match self.bits {
             0 => SELDETADCDB_A::_128_MS,
             1 => SELDETADCDB_A::_256_MS,
@@ -951,56 +982,59 @@ impl SELDETADCDB_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_128_MS`"]
+    #[doc = "128 ms"]
     #[inline(always)]
     pub fn is_128_ms(&self) -> bool {
         *self == SELDETADCDB_A::_128_MS
     }
-    #[doc = "Checks if the value of the field is `_256_MS`"]
+    #[doc = "256 ms"]
     #[inline(always)]
     pub fn is_256_ms(&self) -> bool {
         *self == SELDETADCDB_A::_256_MS
     }
-    #[doc = "Checks if the value of the field is `_512_MS`"]
+    #[doc = "512 ms"]
     #[inline(always)]
     pub fn is_512_ms(&self) -> bool {
         *self == SELDETADCDB_A::_512_MS
     }
-    #[doc = "Checks if the value of the field is `_1024_MS`"]
+    #[doc = "1024 ms"]
     #[inline(always)]
     pub fn is_1024_ms(&self) -> bool {
         *self == SELDETADCDB_A::_1024_MS
     }
 }
 #[doc = "Field `seldetadcdb` writer - Select debounce time when jack removal"]
-pub type SELDETADCDB_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, MICBIAS_SPEC, u8, SELDETADCDB_A, 2, O>;
-impl<'a, const O: u8> SELDETADCDB_W<'a, O> {
+pub type SELDETADCDB_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SELDETADCDB_A>;
+impl<'a, REG> SELDETADCDB_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "128 ms"]
     #[inline(always)]
-    pub fn _128_ms(self) -> &'a mut W {
+    pub fn _128_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDB_A::_128_MS)
     }
     #[doc = "256 ms"]
     #[inline(always)]
-    pub fn _256_ms(self) -> &'a mut W {
+    pub fn _256_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDB_A::_256_MS)
     }
     #[doc = "512 ms"]
     #[inline(always)]
-    pub fn _512_ms(self) -> &'a mut W {
+    pub fn _512_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDB_A::_512_MS)
     }
     #[doc = "1024 ms"]
     #[inline(always)]
-    pub fn _1024_ms(self) -> &'a mut W {
+    pub fn _1024_ms(self) -> &'a mut crate::W<REG> {
         self.variant(SELDETADCDB_A::_1024_MS)
     }
 }
 #[doc = "Field `seldetadcfs` reader - Select sample interval of the ADC sample\\\\ 2 ^ (SELDETADCFS + 1) ms"]
-pub type SELDETADCFS_R = crate::FieldReader<u8, u8>;
+pub type SELDETADCFS_R = crate::FieldReader;
 #[doc = "Field `seldetadcfs` writer - Select sample interval of the ADC sample\\\\ 2 ^ (SELDETADCFS + 1) ms"]
-pub type SELDETADCFS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MICBIAS_SPEC, u8, u8, 3, O>;
+pub type SELDETADCFS_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
 impl R {
     #[doc = "Bits 2:3 - MMIC BIAS Chopper Clock Select"]
     #[inline(always)]
@@ -1097,130 +1131,131 @@ impl W {
     #[doc = "Bits 2:3 - MMIC BIAS Chopper Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mmic_bias_chopper_clk_sel(&mut self) -> MMIC_BIAS_CHOPPER_CLK_SEL_W<2> {
-        MMIC_BIAS_CHOPPER_CLK_SEL_W::new(self)
+    pub fn mmic_bias_chopper_clk_sel(&mut self) -> MMIC_BIAS_CHOPPER_CLK_SEL_W<MICBIAS_SPEC> {
+        MMIC_BIAS_CHOPPER_CLK_SEL_W::new(self, 2)
     }
     #[doc = "Bit 4 - MMIC BIAS Chopper Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mmic_bias_chopper_en(&mut self) -> MMIC_BIAS_CHOPPER_EN_W<4> {
-        MMIC_BIAS_CHOPPER_EN_W::new(self)
+    pub fn mmic_bias_chopper_en(&mut self) -> MMIC_BIAS_CHOPPER_EN_W<MICBIAS_SPEC> {
+        MMIC_BIAS_CHOPPER_EN_W::new(self, 4)
     }
     #[doc = "Bits 5:6 - MMICBIAS Voltage Level Select"]
     #[inline(always)]
     #[must_use]
-    pub fn mbiassel(&mut self) -> MBIASSEL_W<5> {
-        MBIASSEL_W::new(self)
+    pub fn mbiassel(&mut self) -> MBIASSEL_W<MICBIAS_SPEC> {
+        MBIASSEL_W::new(self, 5)
     }
     #[doc = "Bit 7 - Master Microphone Bias Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn mmicbiasen(&mut self) -> MMICBIASEN_W<7> {
-        MMICBIASEN_W::new(self)
+    pub fn mmicbiasen(&mut self) -> MMICBIASEN_W<MICBIAS_SPEC> {
+        MMICBIASEN_W::new(self, 7)
     }
     #[doc = "Bits 10:11 - HMIC BIAS Chopper Clock Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hmic_bias_chopper_clk_sel(&mut self) -> HMIC_BIAS_CHOPPER_CLK_SEL_W<10> {
-        HMIC_BIAS_CHOPPER_CLK_SEL_W::new(self)
+    pub fn hmic_bias_chopper_clk_sel(&mut self) -> HMIC_BIAS_CHOPPER_CLK_SEL_W<MICBIAS_SPEC> {
+        HMIC_BIAS_CHOPPER_CLK_SEL_W::new(self, 10)
     }
     #[doc = "Bit 12 - HMIC BIAS Chopper Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hmic_bias_chopper_en(&mut self) -> HMIC_BIAS_CHOPPER_EN_W<12> {
-        HMIC_BIAS_CHOPPER_EN_W::new(self)
+    pub fn hmic_bias_chopper_en(&mut self) -> HMIC_BIAS_CHOPPER_EN_W<MICBIAS_SPEC> {
+        HMIC_BIAS_CHOPPER_EN_W::new(self, 12)
     }
     #[doc = "Bits 13:14 - HMICBIAS Voltage Level Select"]
     #[inline(always)]
     #[must_use]
-    pub fn hbiassel(&mut self) -> HBIASSEL_W<13> {
-        HBIASSEL_W::new(self)
+    pub fn hbiassel(&mut self) -> HBIASSEL_W<MICBIAS_SPEC> {
+        HBIASSEL_W::new(self, 13)
     }
     #[doc = "Bit 15 - Headphone Microphone Bias Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn hmicbiasen(&mut self) -> HMICBIASEN_W<15> {
-        HMICBIASEN_W::new(self)
+    pub fn hmicbiasen(&mut self) -> HMICBIASEN_W<MICBIAS_SPEC> {
+        HMICBIASEN_W::new(self, 15)
     }
     #[doc = "Bit 16 - When this bit is 1and AUTOPLEN is 0, the MICDET is pulled down to GND."]
     #[inline(always)]
     #[must_use]
-    pub fn micdetpl(&mut self) -> MICDETPL_W<16> {
-        MICDETPL_W::new(self)
+    pub fn micdetpl(&mut self) -> MICDETPL_W<MICBIAS_SPEC> {
+        MICDETPL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Enable the function to auto pull low MICDET when jack removal"]
     #[inline(always)]
     #[must_use]
-    pub fn autoplen(&mut self) -> AUTOPLEN_W<17> {
-        AUTOPLEN_W::new(self)
+    pub fn autoplen(&mut self) -> AUTOPLEN_W<MICBIAS_SPEC> {
+        AUTOPLEN_W::new(self, 17)
     }
     #[doc = "Bit 18 - MIC Detect Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn det_mode(&mut self) -> DET_MODE_W<18> {
-        DET_MODE_W::new(self)
+    pub fn det_mode(&mut self) -> DET_MODE_W<MICBIAS_SPEC> {
+        DET_MODE_W::new(self, 18)
     }
     #[doc = "Bit 19 - When this bit is 0, HBIAS MICADC is controlled by registor"]
     #[inline(always)]
     #[must_use]
-    pub fn popfree(&mut self) -> POPFREE_W<19> {
-        POPFREE_W::new(self)
+    pub fn popfree(&mut self) -> POPFREE_W<MICBIAS_SPEC> {
+        POPFREE_W::new(self, 19)
     }
     #[doc = "Bit 20 - Microphone detect ADC enable"]
     #[inline(always)]
     #[must_use]
-    pub fn micadcen(&mut self) -> MICADCEN_W<20> {
-        MICADCEN_W::new(self)
+    pub fn micadcen(&mut self) -> MICADCEN_W<MICBIAS_SPEC> {
+        MICADCEN_W::new(self, 20)
     }
     #[doc = "Bits 21:22 - Select the delay time to pull low the micdet when jack removal"]
     #[inline(always)]
     #[must_use]
-    pub fn seldetadcdy(&mut self) -> SELDETADCDY_W<21> {
-        SELDETADCDY_W::new(self)
+    pub fn seldetadcdy(&mut self) -> SELDETADCDY_W<MICBIAS_SPEC> {
+        SELDETADCDY_W::new(self, 21)
     }
     #[doc = "Bit 23 - Jack detect enable"]
     #[inline(always)]
     #[must_use]
-    pub fn jackdeten(&mut self) -> JACKDETEN_W<23> {
-        JACKDETEN_W::new(self)
+    pub fn jackdeten(&mut self) -> JACKDETEN_W<MICBIAS_SPEC> {
+        JACKDETEN_W::new(self, 23)
     }
     #[doc = "Bits 24:25 - Select the time to enable HBIAS before MICADC work"]
     #[inline(always)]
     #[must_use]
-    pub fn seldetadcbf(&mut self) -> SELDETADCBF_W<24> {
-        SELDETADCBF_W::new(self)
+    pub fn seldetadcbf(&mut self) -> SELDETADCBF_W<MICBIAS_SPEC> {
+        SELDETADCBF_W::new(self, 24)
     }
     #[doc = "Bits 26:27 - Select debounce time when jack removal"]
     #[inline(always)]
     #[must_use]
-    pub fn seldetadcdb(&mut self) -> SELDETADCDB_W<26> {
-        SELDETADCDB_W::new(self)
+    pub fn seldetadcdb(&mut self) -> SELDETADCDB_W<MICBIAS_SPEC> {
+        SELDETADCDB_W::new(self, 26)
     }
     #[doc = "Bits 28:30 - Select sample interval of the ADC sample\\\\ 2 ^ (SELDETADCFS + 1) ms"]
     #[inline(always)]
     #[must_use]
-    pub fn seldetadcfs(&mut self) -> SELDETADCFS_W<28> {
-        SELDETADCFS_W::new(self)
+    pub fn seldetadcfs(&mut self) -> SELDETADCFS_W<MICBIAS_SPEC> {
+        SELDETADCFS_W::new(self, 28)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "MICBIAS Analog Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [micbias](index.html) module"]
+#[doc = "MICBIAS Analog Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`micbias::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`micbias::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct MICBIAS_SPEC;
 impl crate::RegisterSpec for MICBIAS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [micbias::R](R) reader structure"]
-impl crate::Readable for MICBIAS_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [micbias::W](W) writer structure"]
+#[doc = "`read()` method returns [`micbias::R`](R) reader structure"]
+impl crate::Readable for MICBIAS_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`micbias::W`](W) writer structure"]
 impl crate::Writable for MICBIAS_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

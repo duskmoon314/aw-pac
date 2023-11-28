@@ -1,39 +1,7 @@
 #[doc = "Register `asrcmbistcfg` reader"]
-pub struct R(crate::R<ASRCMBISTCFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<ASRCMBISTCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<ASRCMBISTCFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<ASRCMBISTCFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<ASRCMBISTCFG_SPEC>;
 #[doc = "Register `asrcmbistcfg` writer"]
-pub struct W(crate::W<ASRCMBISTCFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<ASRCMBISTCFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<ASRCMBISTCFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<ASRCMBISTCFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<ASRCMBISTCFG_SPEC>;
 #[doc = "Field `asrc_rom_bist_en` reader - ASRC ROM BIST Enable"]
 pub type ASRC_ROM_BIST_EN_R = crate::BitReader<ASRC_ROM_BIST_EN_A>;
 #[doc = "ASRC ROM BIST Enable\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<ASRC_ROM_BIST_EN_A> for bool {
 impl ASRC_ROM_BIST_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASRC_ROM_BIST_EN_A {
+    pub const fn variant(&self) -> ASRC_ROM_BIST_EN_A {
         match self.bits {
             false => ASRC_ROM_BIST_EN_A::DISABLE,
             true => ASRC_ROM_BIST_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == ASRC_ROM_BIST_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == ASRC_ROM_BIST_EN_A::ENABLE
     }
 }
 #[doc = "Field `asrc_rom_bist_en` writer - ASRC ROM BIST Enable"]
-pub type ASRC_ROM_BIST_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, ASRCMBISTCFG_SPEC, ASRC_ROM_BIST_EN_A, O>;
-impl<'a, const O: u8> ASRC_ROM_BIST_EN_W<'a, O> {
+pub type ASRC_ROM_BIST_EN_W<'a, REG> = crate::BitWriter<'a, REG, ASRC_ROM_BIST_EN_A>;
+impl<'a, REG> ASRC_ROM_BIST_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(ASRC_ROM_BIST_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(ASRC_ROM_BIST_EN_A::ENABLE)
     }
 }
@@ -104,35 +74,37 @@ impl From<ASRC_RAM_BIST_EN_A> for bool {
 impl ASRC_RAM_BIST_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> ASRC_RAM_BIST_EN_A {
+    pub const fn variant(&self) -> ASRC_RAM_BIST_EN_A {
         match self.bits {
             false => ASRC_RAM_BIST_EN_A::DISABLE,
             true => ASRC_RAM_BIST_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disable"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == ASRC_RAM_BIST_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enable"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == ASRC_RAM_BIST_EN_A::ENABLE
     }
 }
 #[doc = "Field `asrc_ram_bist_en` writer - ASTC RAM BIST Enable"]
-pub type ASRC_RAM_BIST_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, ASRCMBISTCFG_SPEC, ASRC_RAM_BIST_EN_A, O>;
-impl<'a, const O: u8> ASRC_RAM_BIST_EN_W<'a, O> {
+pub type ASRC_RAM_BIST_EN_W<'a, REG> = crate::BitWriter<'a, REG, ASRC_RAM_BIST_EN_A>;
+impl<'a, REG> ASRC_RAM_BIST_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disable"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(ASRC_RAM_BIST_EN_A::DISABLE)
     }
     #[doc = "Enable"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(ASRC_RAM_BIST_EN_A::ENABLE)
     }
 }
@@ -152,34 +124,35 @@ impl W {
     #[doc = "Bit 0 - ASRC ROM BIST Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn asrc_rom_bist_en(&mut self) -> ASRC_ROM_BIST_EN_W<0> {
-        ASRC_ROM_BIST_EN_W::new(self)
+    pub fn asrc_rom_bist_en(&mut self) -> ASRC_ROM_BIST_EN_W<ASRCMBISTCFG_SPEC> {
+        ASRC_ROM_BIST_EN_W::new(self, 0)
     }
     #[doc = "Bit 8 - ASTC RAM BIST Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn asrc_ram_bist_en(&mut self) -> ASRC_RAM_BIST_EN_W<8> {
-        ASRC_RAM_BIST_EN_W::new(self)
+    pub fn asrc_ram_bist_en(&mut self) -> ASRC_RAM_BIST_EN_W<ASRCMBISTCFG_SPEC> {
+        ASRC_RAM_BIST_EN_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "ASRC MBIST Test Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [asrcmbistcfg](index.html) module"]
+#[doc = "ASRC MBIST Test Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`asrcmbistcfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`asrcmbistcfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct ASRCMBISTCFG_SPEC;
 impl crate::RegisterSpec for ASRCMBISTCFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [asrcmbistcfg::R](R) reader structure"]
-impl crate::Readable for ASRCMBISTCFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [asrcmbistcfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`asrcmbistcfg::R`](R) reader structure"]
+impl crate::Readable for ASRCMBISTCFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`asrcmbistcfg::W`](W) writer structure"]
 impl crate::Writable for ASRCMBISTCFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `avs_cnt_ctl` reader"]
-pub struct R(crate::R<AVS_CNT_CTL_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AVS_CNT_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AVS_CNT_CTL_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AVS_CNT_CTL_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AVS_CNT_CTL_SPEC>;
 #[doc = "Register `avs_cnt_ctl` writer"]
-pub struct W(crate::W<AVS_CNT_CTL_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<AVS_CNT_CTL_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<AVS_CNT_CTL_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<AVS_CNT_CTL_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<AVS_CNT_CTL_SPEC>;
 #[doc = "Field `avs_cnt_en[0-1]` reader - Audio Video Sync Counter Enable"]
 pub type AVS_CNT_EN_R = crate::BitReader<AVS_CNT_EN_A>;
 #[doc = "Audio Video Sync Counter Enable\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<AVS_CNT_EN_A> for bool {
 impl AVS_CNT_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AVS_CNT_EN_A {
+    pub const fn variant(&self) -> AVS_CNT_EN_A {
         match self.bits {
             false => AVS_CNT_EN_A::DISABLED,
             true => AVS_CNT_EN_A::ENABLED,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLED`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disabled(&self) -> bool {
         *self == AVS_CNT_EN_A::DISABLED
     }
-    #[doc = "Checks if the value of the field is `ENABLED`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enabled(&self) -> bool {
         *self == AVS_CNT_EN_A::ENABLED
     }
 }
 #[doc = "Field `avs_cnt_en[0-1]` writer - Audio Video Sync Counter Enable"]
-pub type AVS_CNT_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AVS_CNT_CTL_SPEC, AVS_CNT_EN_A, O>;
-impl<'a, const O: u8> AVS_CNT_EN_W<'a, O> {
+pub type AVS_CNT_EN_W<'a, REG> = crate::BitWriter<'a, REG, AVS_CNT_EN_A>;
+impl<'a, REG> AVS_CNT_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disabled(self) -> &'a mut W {
+    pub fn disabled(self) -> &'a mut crate::W<REG> {
         self.variant(AVS_CNT_EN_A::DISABLED)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enabled(self) -> &'a mut W {
+    pub fn enabled(self) -> &'a mut crate::W<REG> {
         self.variant(AVS_CNT_EN_A::ENABLED)
     }
 }
@@ -104,42 +74,46 @@ impl From<AVS_CNT_PS_A> for bool {
 impl AVS_CNT_PS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> AVS_CNT_PS_A {
+    pub const fn variant(&self) -> AVS_CNT_PS_A {
         match self.bits {
             false => AVS_CNT_PS_A::NOT_PAUSE,
             true => AVS_CNT_PS_A::PAUSE,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_PAUSE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_not_pause(&self) -> bool {
         *self == AVS_CNT_PS_A::NOT_PAUSE
     }
-    #[doc = "Checks if the value of the field is `PAUSE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_pause(&self) -> bool {
         *self == AVS_CNT_PS_A::PAUSE
     }
 }
 #[doc = "Field `avs_cnt_ps[0-1]` writer - Audio Video Sync Counter Pause Control"]
-pub type AVS_CNT_PS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AVS_CNT_CTL_SPEC, AVS_CNT_PS_A, O>;
-impl<'a, const O: u8> AVS_CNT_PS_W<'a, O> {
+pub type AVS_CNT_PS_W<'a, REG> = crate::BitWriter<'a, REG, AVS_CNT_PS_A>;
+impl<'a, REG> AVS_CNT_PS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn not_pause(self) -> &'a mut W {
+    pub fn not_pause(self) -> &'a mut crate::W<REG> {
         self.variant(AVS_CNT_PS_A::NOT_PAUSE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn pause(self) -> &'a mut W {
+    pub fn pause(self) -> &'a mut crate::W<REG> {
         self.variant(AVS_CNT_PS_A::PAUSE)
     }
 }
 impl R {
-    #[doc = "Audio Video Sync Counter Enable"]
+    #[doc = "Audio Video Sync Counter Enable\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `avs_cnt0_en` field"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_en(&self, n: u8) -> AVS_CNT_EN_R {
+    pub fn avs_cnt_en(&self, n: u8) -> AVS_CNT_EN_R {
+        #[allow(clippy::no_effect)]
+        [(); 2][n as usize];
         AVS_CNT_EN_R::new(((self.bits >> n) & 1) != 0)
     }
     #[doc = "Bit 0 - Audio Video Sync Counter Enable"]
@@ -152,9 +126,11 @@ impl R {
     pub fn avs_cnt1_en(&self) -> AVS_CNT_EN_R {
         AVS_CNT_EN_R::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Audio Video Sync Counter Pause Control"]
+    #[doc = "Audio Video Sync Counter Pause Control\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `avs_cnt0_ps` field"]
     #[inline(always)]
-    pub unsafe fn avs_cnt_ps(&self, n: u8) -> AVS_CNT_PS_R {
+    pub fn avs_cnt_ps(&self, n: u8) -> AVS_CNT_PS_R {
+        #[allow(clippy::no_effect)]
+        [(); 2][n as usize];
         AVS_CNT_PS_R::new(((self.bits >> (n + 8)) & 1) != 0)
     }
     #[doc = "Bit 8 - Audio Video Sync Counter Pause Control"]
@@ -169,61 +145,66 @@ impl R {
     }
 }
 impl W {
-    #[doc = "Audio Video Sync Counter Enable"]
+    #[doc = "Audio Video Sync Counter Enable\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `avs_cnt0_en` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn avs_cnt_en<const O: u8>(&mut self) -> AVS_CNT_EN_W<O> {
-        AVS_CNT_EN_W::new(self)
+    pub fn avs_cnt_en(&mut self, n: u8) -> AVS_CNT_EN_W<AVS_CNT_CTL_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 2][n as usize];
+        AVS_CNT_EN_W::new(self, n)
     }
     #[doc = "Bit 0 - Audio Video Sync Counter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn avs_cnt0_en(&mut self) -> AVS_CNT_EN_W<0> {
-        AVS_CNT_EN_W::new(self)
+    pub fn avs_cnt0_en(&mut self) -> AVS_CNT_EN_W<AVS_CNT_CTL_SPEC> {
+        AVS_CNT_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Audio Video Sync Counter Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn avs_cnt1_en(&mut self) -> AVS_CNT_EN_W<1> {
-        AVS_CNT_EN_W::new(self)
+    pub fn avs_cnt1_en(&mut self) -> AVS_CNT_EN_W<AVS_CNT_CTL_SPEC> {
+        AVS_CNT_EN_W::new(self, 1)
     }
-    #[doc = "Audio Video Sync Counter Pause Control"]
+    #[doc = "Audio Video Sync Counter Pause Control\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `avs_cnt0_ps` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn avs_cnt_ps<const O: u8>(&mut self) -> AVS_CNT_PS_W<O> {
-        AVS_CNT_PS_W::new(self)
+    pub fn avs_cnt_ps(&mut self, n: u8) -> AVS_CNT_PS_W<AVS_CNT_CTL_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 2][n as usize];
+        AVS_CNT_PS_W::new(self, n + 8)
     }
     #[doc = "Bit 8 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
     #[must_use]
-    pub fn avs_cnt0_ps(&mut self) -> AVS_CNT_PS_W<8> {
-        AVS_CNT_PS_W::new(self)
+    pub fn avs_cnt0_ps(&mut self) -> AVS_CNT_PS_W<AVS_CNT_CTL_SPEC> {
+        AVS_CNT_PS_W::new(self, 8)
     }
     #[doc = "Bit 9 - Audio Video Sync Counter Pause Control"]
     #[inline(always)]
     #[must_use]
-    pub fn avs_cnt1_ps(&mut self) -> AVS_CNT_PS_W<9> {
-        AVS_CNT_PS_W::new(self)
+    pub fn avs_cnt1_ps(&mut self) -> AVS_CNT_PS_W<AVS_CNT_CTL_SPEC> {
+        AVS_CNT_PS_W::new(self, 9)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "AVS Counter Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [avs_cnt_ctl](index.html) module"]
+#[doc = "AVS Counter Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`avs_cnt_ctl::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`avs_cnt_ctl::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AVS_CNT_CTL_SPEC;
 impl crate::RegisterSpec for AVS_CNT_CTL_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [avs_cnt_ctl::R](R) reader structure"]
-impl crate::Readable for AVS_CNT_CTL_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [avs_cnt_ctl::W](W) writer structure"]
+#[doc = "`read()` method returns [`avs_cnt_ctl::R`](R) reader structure"]
+impl crate::Readable for AVS_CNT_CTL_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`avs_cnt_ctl::W`](W) writer structure"]
 impl crate::Writable for AVS_CNT_CTL_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

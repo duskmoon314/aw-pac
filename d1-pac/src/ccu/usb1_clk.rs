@@ -1,41 +1,9 @@
 #[doc = "Register `usb1_clk` reader"]
-pub struct R(crate::R<USB1_CLK_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<USB1_CLK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<USB1_CLK_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<USB1_CLK_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<USB1_CLK_SPEC>;
 #[doc = "Register `usb1_clk` writer"]
-pub struct W(crate::W<USB1_CLK_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<USB1_CLK_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<USB1_CLK_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<USB1_CLK_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<USB1_CLK_SPEC>;
 #[doc = "Field `clk12m_sel` reader - OHCI 12M Source Select"]
-pub type CLK12M_SEL_R = crate::FieldReader<u8, CLK12M_SEL_A>;
+pub type CLK12M_SEL_R = crate::FieldReader<CLK12M_SEL_A>;
 #[doc = "OHCI 12M Source Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -53,10 +21,13 @@ impl From<CLK12M_SEL_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CLK12M_SEL_A {
+    type Ux = u8;
+}
 impl CLK12M_SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CLK12M_SEL_A> {
+    pub const fn variant(&self) -> Option<CLK12M_SEL_A> {
         match self.bits {
             0 => Some(CLK12M_SEL_A::DIV_48M),
             1 => Some(CLK12M_SEL_A::DIV_24M),
@@ -64,39 +35,42 @@ impl CLK12M_SEL_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `DIV_48M`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_div_48m(&self) -> bool {
         *self == CLK12M_SEL_A::DIV_48M
     }
-    #[doc = "Checks if the value of the field is `DIV_24M`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_div_24m(&self) -> bool {
         *self == CLK12M_SEL_A::DIV_24M
     }
-    #[doc = "Checks if the value of the field is `RTC_32K`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_rtc_32k(&self) -> bool {
         *self == CLK12M_SEL_A::RTC_32K
     }
 }
 #[doc = "Field `clk12m_sel` writer - OHCI 12M Source Select"]
-pub type CLK12M_SEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, USB1_CLK_SPEC, u8, CLK12M_SEL_A, 2, O>;
-impl<'a, const O: u8> CLK12M_SEL_W<'a, O> {
+pub type CLK12M_SEL_W<'a, REG> = crate::FieldWriter<'a, REG, 2, CLK12M_SEL_A>;
+impl<'a, REG> CLK12M_SEL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn div_48m(self) -> &'a mut W {
+    pub fn div_48m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK12M_SEL_A::DIV_48M)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn div_24m(self) -> &'a mut W {
+    pub fn div_24m(self) -> &'a mut crate::W<REG> {
         self.variant(CLK12M_SEL_A::DIV_24M)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn rtc_32k(self) -> &'a mut W {
+    pub fn rtc_32k(self) -> &'a mut crate::W<REG> {
         self.variant(CLK12M_SEL_A::RTC_32K)
     }
 }
@@ -119,34 +93,37 @@ impl From<RSTN_A> for bool {
 impl RSTN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RSTN_A {
+    pub const fn variant(&self) -> RSTN_A {
         match self.bits {
             false => RSTN_A::ASSERT,
             true => RSTN_A::DEASSERT,
         }
     }
-    #[doc = "Checks if the value of the field is `ASSERT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_assert(&self) -> bool {
         *self == RSTN_A::ASSERT
     }
-    #[doc = "Checks if the value of the field is `DEASSERT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_deassert(&self) -> bool {
         *self == RSTN_A::DEASSERT
     }
 }
 #[doc = "Field `rstn` writer - PHY Reset"]
-pub type RSTN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, RSTN_A, O>;
-impl<'a, const O: u8> RSTN_W<'a, O> {
+pub type RSTN_W<'a, REG> = crate::BitWriter<'a, REG, RSTN_A>;
+impl<'a, REG> RSTN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn assert(self) -> &'a mut W {
+    pub fn assert(self) -> &'a mut crate::W<REG> {
         self.variant(RSTN_A::ASSERT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn deassert(self) -> &'a mut W {
+    pub fn deassert(self) -> &'a mut crate::W<REG> {
         self.variant(RSTN_A::DEASSERT)
     }
 }
@@ -169,34 +146,37 @@ impl From<CLKEN_A> for bool {
 impl CLKEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLKEN_A {
+    pub const fn variant(&self) -> CLKEN_A {
         match self.bits {
             false => CLKEN_A::OFF,
             true => CLKEN_A::ON,
         }
     }
-    #[doc = "Checks if the value of the field is `OFF`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_off(&self) -> bool {
         *self == CLKEN_A::OFF
     }
-    #[doc = "Checks if the value of the field is `ON`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_on(&self) -> bool {
         *self == CLKEN_A::ON
     }
 }
 #[doc = "Field `clken` writer - Gating Special Clock"]
-pub type CLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, USB1_CLK_SPEC, CLKEN_A, O>;
-impl<'a, const O: u8> CLKEN_W<'a, O> {
+pub type CLKEN_W<'a, REG> = crate::BitWriter<'a, REG, CLKEN_A>;
+impl<'a, REG> CLKEN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn off(self) -> &'a mut W {
+    pub fn off(self) -> &'a mut crate::W<REG> {
         self.variant(CLKEN_A::OFF)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn on(self) -> &'a mut W {
+    pub fn on(self) -> &'a mut crate::W<REG> {
         self.variant(CLKEN_A::ON)
     }
 }
@@ -221,40 +201,41 @@ impl W {
     #[doc = "Bits 24:25 - OHCI 12M Source Select"]
     #[inline(always)]
     #[must_use]
-    pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W<24> {
-        CLK12M_SEL_W::new(self)
+    pub fn clk12m_sel(&mut self) -> CLK12M_SEL_W<USB1_CLK_SPEC> {
+        CLK12M_SEL_W::new(self, 24)
     }
     #[doc = "Bit 30 - PHY Reset"]
     #[inline(always)]
     #[must_use]
-    pub fn rstn(&mut self) -> RSTN_W<30> {
-        RSTN_W::new(self)
+    pub fn rstn(&mut self) -> RSTN_W<USB1_CLK_SPEC> {
+        RSTN_W::new(self, 30)
     }
     #[doc = "Bit 31 - Gating Special Clock"]
     #[inline(always)]
     #[must_use]
-    pub fn clken(&mut self) -> CLKEN_W<31> {
-        CLKEN_W::new(self)
+    pub fn clken(&mut self) -> CLKEN_W<USB1_CLK_SPEC> {
+        CLKEN_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "USB1 Clock Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [usb1_clk](index.html) module"]
+#[doc = "USB1 Clock Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`usb1_clk::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`usb1_clk::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct USB1_CLK_SPEC;
 impl crate::RegisterSpec for USB1_CLK_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [usb1_clk::R](R) reader structure"]
-impl crate::Readable for USB1_CLK_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [usb1_clk::W](W) writer structure"]
+#[doc = "`read()` method returns [`usb1_clk::R`](R) reader structure"]
+impl crate::Readable for USB1_CLK_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`usb1_clk::W`](W) writer structure"]
 impl crate::Writable for USB1_CLK_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

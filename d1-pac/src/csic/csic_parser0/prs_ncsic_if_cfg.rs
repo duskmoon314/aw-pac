@@ -1,41 +1,9 @@
 #[doc = "Register `prs_ncsic_if_cfg` reader"]
-pub struct R(crate::R<PRS_NCSIC_IF_CFG_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PRS_NCSIC_IF_CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PRS_NCSIC_IF_CFG_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PRS_NCSIC_IF_CFG_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PRS_NCSIC_IF_CFG_SPEC>;
 #[doc = "Register `prs_ncsic_if_cfg` writer"]
-pub struct W(crate::W<PRS_NCSIC_IF_CFG_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PRS_NCSIC_IF_CFG_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PRS_NCSIC_IF_CFG_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PRS_NCSIC_IF_CFG_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PRS_NCSIC_IF_CFG_SPEC>;
 #[doc = "Field `csi_if` reader - "]
-pub type CSI_IF_R = crate::FieldReader<u8, CSI_IF_A>;
+pub type CSI_IF_R = crate::FieldReader<CSI_IF_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<CSI_IF_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for CSI_IF_A {
+    type Ux = u8;
+}
 impl CSI_IF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<CSI_IF_A> {
+    pub const fn variant(&self) -> Option<CSI_IF_A> {
         match self.bits {
             0 => Some(CSI_IF_A::RAW_YUV420_YUYV422),
             4 => Some(CSI_IF_A::BT656_1CH),
@@ -67,54 +38,57 @@ impl CSI_IF_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `RAW_YUV420_YUYV422`"]
+    #[doc = "RAW or YUV420/YUYV422 (each cycle one component input)"]
     #[inline(always)]
     pub fn is_raw_yuv420_yuyv422(&self) -> bool {
         *self == CSI_IF_A::RAW_YUV420_YUYV422
     }
-    #[doc = "Checks if the value of the field is `BT656_1CH`"]
+    #[doc = "BT656 1 channel"]
     #[inline(always)]
     pub fn is_bt656_1ch(&self) -> bool {
         *self == CSI_IF_A::BT656_1CH
     }
-    #[doc = "Checks if the value of the field is `BT656_2CH`"]
+    #[doc = "BT656 2 channel (All data interleaved in one data bus)"]
     #[inline(always)]
     pub fn is_bt656_2ch(&self) -> bool {
         *self == CSI_IF_A::BT656_2CH
     }
-    #[doc = "Checks if the value of the field is `BT656_4CH`"]
+    #[doc = "BT656 4 channel (All data interleaved in one data bus)"]
     #[inline(always)]
     pub fn is_bt656_4ch(&self) -> bool {
         *self == CSI_IF_A::BT656_4CH
     }
 }
 #[doc = "Field `csi_if` writer - "]
-pub type CSI_IF_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, CSI_IF_A, 5, O>;
-impl<'a, const O: u8> CSI_IF_W<'a, O> {
+pub type CSI_IF_W<'a, REG> = crate::FieldWriter<'a, REG, 5, CSI_IF_A>;
+impl<'a, REG> CSI_IF_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "RAW or YUV420/YUYV422 (each cycle one component input)"]
     #[inline(always)]
-    pub fn raw_yuv420_yuyv422(self) -> &'a mut W {
+    pub fn raw_yuv420_yuyv422(self) -> &'a mut crate::W<REG> {
         self.variant(CSI_IF_A::RAW_YUV420_YUYV422)
     }
     #[doc = "BT656 1 channel"]
     #[inline(always)]
-    pub fn bt656_1ch(self) -> &'a mut W {
+    pub fn bt656_1ch(self) -> &'a mut crate::W<REG> {
         self.variant(CSI_IF_A::BT656_1CH)
     }
     #[doc = "BT656 2 channel (All data interleaved in one data bus)"]
     #[inline(always)]
-    pub fn bt656_2ch(self) -> &'a mut W {
+    pub fn bt656_2ch(self) -> &'a mut crate::W<REG> {
         self.variant(CSI_IF_A::BT656_2CH)
     }
     #[doc = "BT656 4 channel (All data interleaved in one data bus)"]
     #[inline(always)]
-    pub fn bt656_4ch(self) -> &'a mut W {
+    pub fn bt656_4ch(self) -> &'a mut crate::W<REG> {
         self.variant(CSI_IF_A::BT656_4CH)
     }
 }
 #[doc = "Field `input_seq` reader - Input data sequence, only valid for YUV422 and YUV420 input format"]
-pub type INPUT_SEQ_R = crate::FieldReader<u8, INPUT_SEQ_A>;
+pub type INPUT_SEQ_R = crate::FieldReader<INPUT_SEQ_A>;
 #[doc = "Input data sequence, only valid for YUV422 and YUV420 input format\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -134,10 +108,13 @@ impl From<INPUT_SEQ_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for INPUT_SEQ_A {
+    type Ux = u8;
+}
 impl INPUT_SEQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> INPUT_SEQ_A {
+    pub const fn variant(&self) -> INPUT_SEQ_A {
         match self.bits {
             0 => INPUT_SEQ_A::YUYV,
             1 => INPUT_SEQ_A::YVYU,
@@ -146,54 +123,57 @@ impl INPUT_SEQ_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `YUYV`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_yuyv(&self) -> bool {
         *self == INPUT_SEQ_A::YUYV
     }
-    #[doc = "Checks if the value of the field is `YVYU`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_yvyu(&self) -> bool {
         *self == INPUT_SEQ_A::YVYU
     }
-    #[doc = "Checks if the value of the field is `UYVY`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_uyvy(&self) -> bool {
         *self == INPUT_SEQ_A::UYVY
     }
-    #[doc = "Checks if the value of the field is `VYUY`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_vyuy(&self) -> bool {
         *self == INPUT_SEQ_A::VYUY
     }
 }
 #[doc = "Field `input_seq` writer - Input data sequence, only valid for YUV422 and YUV420 input format"]
-pub type INPUT_SEQ_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, INPUT_SEQ_A, 2, O>;
-impl<'a, const O: u8> INPUT_SEQ_W<'a, O> {
+pub type INPUT_SEQ_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, INPUT_SEQ_A>;
+impl<'a, REG> INPUT_SEQ_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn yuyv(self) -> &'a mut W {
+    pub fn yuyv(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEQ_A::YUYV)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn yvyu(self) -> &'a mut W {
+    pub fn yvyu(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEQ_A::YVYU)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn uyvy(self) -> &'a mut W {
+    pub fn uyvy(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEQ_A::UYVY)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn vyuy(self) -> &'a mut W {
+    pub fn vyuy(self) -> &'a mut crate::W<REG> {
         self.variant(INPUT_SEQ_A::VYUY)
     }
 }
 #[doc = "Field `if_data_width` reader - "]
-pub type IF_DATA_WIDTH_R = crate::FieldReader<u8, IF_DATA_WIDTH_A>;
+pub type IF_DATA_WIDTH_R = crate::FieldReader<IF_DATA_WIDTH_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -215,10 +195,13 @@ impl From<IF_DATA_WIDTH_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for IF_DATA_WIDTH_A {
+    type Ux = u8;
+}
 impl IF_DATA_WIDTH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<IF_DATA_WIDTH_A> {
+    pub const fn variant(&self) -> Option<IF_DATA_WIDTH_A> {
         match self.bits {
             0 => Some(IF_DATA_WIDTH_A::_8BIT),
             1 => Some(IF_DATA_WIDTH_A::_10BIT),
@@ -228,64 +211,67 @@ impl IF_DATA_WIDTH_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `_8BIT`"]
+    #[doc = "8 bit data bus"]
     #[inline(always)]
     pub fn is_8bit(&self) -> bool {
         *self == IF_DATA_WIDTH_A::_8BIT
     }
-    #[doc = "Checks if the value of the field is `_10BIT`"]
+    #[doc = "10 bit data bus"]
     #[inline(always)]
     pub fn is_10bit(&self) -> bool {
         *self == IF_DATA_WIDTH_A::_10BIT
     }
-    #[doc = "Checks if the value of the field is `_12BIT`"]
+    #[doc = "12 bit data bus"]
     #[inline(always)]
     pub fn is_12bit(&self) -> bool {
         *self == IF_DATA_WIDTH_A::_12BIT
     }
-    #[doc = "Checks if the value of the field is `_8P2BIT`"]
+    #[doc = "8 + 2 bit data bus"]
     #[inline(always)]
     pub fn is_8p2bit(&self) -> bool {
         *self == IF_DATA_WIDTH_A::_8P2BIT
     }
-    #[doc = "Checks if the value of the field is `_2X8BIT`"]
+    #[doc = "2 * 8 bit data bus"]
     #[inline(always)]
     pub fn is_2x8bit(&self) -> bool {
         *self == IF_DATA_WIDTH_A::_2X8BIT
     }
 }
 #[doc = "Field `if_data_width` writer - "]
-pub type IF_DATA_WIDTH_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, IF_DATA_WIDTH_A, 3, O>;
-impl<'a, const O: u8> IF_DATA_WIDTH_W<'a, O> {
+pub type IF_DATA_WIDTH_W<'a, REG> = crate::FieldWriter<'a, REG, 3, IF_DATA_WIDTH_A>;
+impl<'a, REG> IF_DATA_WIDTH_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "8 bit data bus"]
     #[inline(always)]
-    pub fn _8bit(self) -> &'a mut W {
+    pub fn _8bit(self) -> &'a mut crate::W<REG> {
         self.variant(IF_DATA_WIDTH_A::_8BIT)
     }
     #[doc = "10 bit data bus"]
     #[inline(always)]
-    pub fn _10bit(self) -> &'a mut W {
+    pub fn _10bit(self) -> &'a mut crate::W<REG> {
         self.variant(IF_DATA_WIDTH_A::_10BIT)
     }
     #[doc = "12 bit data bus"]
     #[inline(always)]
-    pub fn _12bit(self) -> &'a mut W {
+    pub fn _12bit(self) -> &'a mut crate::W<REG> {
         self.variant(IF_DATA_WIDTH_A::_12BIT)
     }
     #[doc = "8 + 2 bit data bus"]
     #[inline(always)]
-    pub fn _8p2bit(self) -> &'a mut W {
+    pub fn _8p2bit(self) -> &'a mut crate::W<REG> {
         self.variant(IF_DATA_WIDTH_A::_8P2BIT)
     }
     #[doc = "2 * 8 bit data bus"]
     #[inline(always)]
-    pub fn _2x8bit(self) -> &'a mut W {
+    pub fn _2x8bit(self) -> &'a mut crate::W<REG> {
         self.variant(IF_DATA_WIDTH_A::_2X8BIT)
     }
 }
 #[doc = "Field `seq_8plus2` reader - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
-pub type SEQ_8PLUS2_R = crate::FieldReader<u8, SEQ_8PLUS2_A>;
+pub type SEQ_8PLUS2_R = crate::FieldReader<SEQ_8PLUS2_A>;
 #[doc = "When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -305,10 +291,13 @@ impl From<SEQ_8PLUS2_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SEQ_8PLUS2_A {
+    type Ux = u8;
+}
 impl SEQ_8PLUS2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SEQ_8PLUS2_A {
+    pub const fn variant(&self) -> SEQ_8PLUS2_A {
         match self.bits {
             0 => SEQ_8PLUS2_A::PD98_D70,
             1 => SEQ_8PLUS2_A::D92_PD10,
@@ -317,49 +306,52 @@ impl SEQ_8PLUS2_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `PD98_D70`"]
+    #[doc = "6'bx + D\\[9:8\\], D\\[7:0\\]"]
     #[inline(always)]
     pub fn is_pd98_d70(&self) -> bool {
         *self == SEQ_8PLUS2_A::PD98_D70
     }
-    #[doc = "Checks if the value of the field is `D92_PD10`"]
+    #[doc = "D\\[9:2\\], 6'bx + D\\[1:0\\]"]
     #[inline(always)]
     pub fn is_d92_pd10(&self) -> bool {
         *self == SEQ_8PLUS2_A::D92_PD10
     }
-    #[doc = "Checks if the value of the field is `D70_D98P`"]
+    #[doc = "D\\[7:0\\], D\\[9:8\\] + 6'bx"]
     #[inline(always)]
     pub fn is_d70_d98p(&self) -> bool {
         *self == SEQ_8PLUS2_A::D70_D98P
     }
-    #[doc = "Checks if the value of the field is `D70_PD98`"]
+    #[doc = "D\\[7:0\\], 6'bx + D\\[9:8\\]"]
     #[inline(always)]
     pub fn is_d70_pd98(&self) -> bool {
         *self == SEQ_8PLUS2_A::D70_PD98
     }
 }
 #[doc = "Field `seq_8plus2` writer - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
-pub type SEQ_8PLUS2_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, SEQ_8PLUS2_A, 2, O>;
-impl<'a, const O: u8> SEQ_8PLUS2_W<'a, O> {
+pub type SEQ_8PLUS2_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, SEQ_8PLUS2_A>;
+impl<'a, REG> SEQ_8PLUS2_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "6'bx + D\\[9:8\\], D\\[7:0\\]"]
     #[inline(always)]
-    pub fn pd98_d70(self) -> &'a mut W {
+    pub fn pd98_d70(self) -> &'a mut crate::W<REG> {
         self.variant(SEQ_8PLUS2_A::PD98_D70)
     }
     #[doc = "D\\[9:2\\], 6'bx + D\\[1:0\\]"]
     #[inline(always)]
-    pub fn d92_pd10(self) -> &'a mut W {
+    pub fn d92_pd10(self) -> &'a mut crate::W<REG> {
         self.variant(SEQ_8PLUS2_A::D92_PD10)
     }
     #[doc = "D\\[7:0\\], D\\[9:8\\] + 6'bx"]
     #[inline(always)]
-    pub fn d70_d98p(self) -> &'a mut W {
+    pub fn d70_d98p(self) -> &'a mut crate::W<REG> {
         self.variant(SEQ_8PLUS2_A::D70_D98P)
     }
     #[doc = "D\\[7:0\\], 6'bx + D\\[9:8\\]"]
     #[inline(always)]
-    pub fn d70_pd98(self) -> &'a mut W {
+    pub fn d70_pd98(self) -> &'a mut crate::W<REG> {
         self.variant(SEQ_8PLUS2_A::D70_PD98)
     }
 }
@@ -382,40 +374,42 @@ impl From<DDR_SAMPLE_MODE_EN_A> for bool {
 impl DDR_SAMPLE_MODE_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DDR_SAMPLE_MODE_EN_A {
+    pub const fn variant(&self) -> DDR_SAMPLE_MODE_EN_A {
         match self.bits {
             false => DDR_SAMPLE_MODE_EN_A::DISABLE,
             true => DDR_SAMPLE_MODE_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == DDR_SAMPLE_MODE_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == DDR_SAMPLE_MODE_EN_A::ENABLE
     }
 }
 #[doc = "Field `ddr_sample_mode_en` writer - "]
-pub type DDR_SAMPLE_MODE_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, DDR_SAMPLE_MODE_EN_A, O>;
-impl<'a, const O: u8> DDR_SAMPLE_MODE_EN_W<'a, O> {
+pub type DDR_SAMPLE_MODE_EN_W<'a, REG> = crate::BitWriter<'a, REG, DDR_SAMPLE_MODE_EN_A>;
+impl<'a, REG> DDR_SAMPLE_MODE_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(DDR_SAMPLE_MODE_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(DDR_SAMPLE_MODE_EN_A::ENABLE)
     }
 }
 #[doc = "Field `field_dt_mode` reader - only valid when CSI_IF is YUB and source type is interlaced"]
-pub type FIELD_DT_MODE_R = crate::FieldReader<u8, FIELD_DT_MODE_A>;
+pub type FIELD_DT_MODE_R = crate::FieldReader<FIELD_DT_MODE_A>;
 #[doc = "only valid when CSI_IF is YUB and source type is interlaced\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -433,10 +427,13 @@ impl From<FIELD_DT_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for FIELD_DT_MODE_A {
+    type Ux = u8;
+}
 impl FIELD_DT_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FIELD_DT_MODE_A> {
+    pub const fn variant(&self) -> Option<FIELD_DT_MODE_A> {
         match self.bits {
             0 => Some(FIELD_DT_MODE_A::BY_FIELD_VSYNC),
             1 => Some(FIELD_DT_MODE_A::BY_FIELD),
@@ -444,39 +441,42 @@ impl FIELD_DT_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BY_FIELD_VSYNC`"]
+    #[doc = "by both field and vsync"]
     #[inline(always)]
     pub fn is_by_field_vsync(&self) -> bool {
         *self == FIELD_DT_MODE_A::BY_FIELD_VSYNC
     }
-    #[doc = "Checks if the value of the field is `BY_FIELD`"]
+    #[doc = "by field"]
     #[inline(always)]
     pub fn is_by_field(&self) -> bool {
         *self == FIELD_DT_MODE_A::BY_FIELD
     }
-    #[doc = "Checks if the value of the field is `BY_VSYNC`"]
+    #[doc = "by vsync"]
     #[inline(always)]
     pub fn is_by_vsync(&self) -> bool {
         *self == FIELD_DT_MODE_A::BY_VSYNC
     }
 }
 #[doc = "Field `field_dt_mode` writer - only valid when CSI_IF is YUB and source type is interlaced"]
-pub type FIELD_DT_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, FIELD_DT_MODE_A, 2, O>;
-impl<'a, const O: u8> FIELD_DT_MODE_W<'a, O> {
+pub type FIELD_DT_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, FIELD_DT_MODE_A>;
+impl<'a, REG> FIELD_DT_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "by both field and vsync"]
     #[inline(always)]
-    pub fn by_field_vsync(self) -> &'a mut W {
+    pub fn by_field_vsync(self) -> &'a mut crate::W<REG> {
         self.variant(FIELD_DT_MODE_A::BY_FIELD_VSYNC)
     }
     #[doc = "by field"]
     #[inline(always)]
-    pub fn by_field(self) -> &'a mut W {
+    pub fn by_field(self) -> &'a mut crate::W<REG> {
         self.variant(FIELD_DT_MODE_A::BY_FIELD)
     }
     #[doc = "by vsync"]
     #[inline(always)]
-    pub fn by_vsync(self) -> &'a mut W {
+    pub fn by_vsync(self) -> &'a mut crate::W<REG> {
         self.variant(FIELD_DT_MODE_A::BY_VSYNC)
     }
 }
@@ -499,35 +499,37 @@ impl From<CLK_POL_A> for bool {
 impl CLK_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CLK_POL_A {
+    pub const fn variant(&self) -> CLK_POL_A {
         match self.bits {
             false => CLK_POL_A::RISING,
             true => CLK_POL_A::FALLING,
         }
     }
-    #[doc = "Checks if the value of the field is `RISING`"]
+    #[doc = "active in rising edge"]
     #[inline(always)]
     pub fn is_rising(&self) -> bool {
         *self == CLK_POL_A::RISING
     }
-    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[doc = "active in falling edge"]
     #[inline(always)]
     pub fn is_falling(&self) -> bool {
         *self == CLK_POL_A::FALLING
     }
 }
 #[doc = "Field `clk_pol` writer - Data clock type"]
-pub type CLK_POL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, CLK_POL_A, O>;
-impl<'a, const O: u8> CLK_POL_W<'a, O> {
+pub type CLK_POL_W<'a, REG> = crate::BitWriter<'a, REG, CLK_POL_A>;
+impl<'a, REG> CLK_POL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "active in rising edge"]
     #[inline(always)]
-    pub fn rising(self) -> &'a mut W {
+    pub fn rising(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_POL_A::RISING)
     }
     #[doc = "active in falling edge"]
     #[inline(always)]
-    pub fn falling(self) -> &'a mut W {
+    pub fn falling(self) -> &'a mut crate::W<REG> {
         self.variant(CLK_POL_A::FALLING)
     }
 }
@@ -550,35 +552,37 @@ impl From<HREF_POL_A> for bool {
 impl HREF_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> HREF_POL_A {
+    pub const fn variant(&self) -> HREF_POL_A {
         match self.bits {
             false => HREF_POL_A::NEGATIVE,
             true => HREF_POL_A::POSITIVE,
         }
     }
-    #[doc = "Checks if the value of the field is `NEGATIVE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_negative(&self) -> bool {
         *self == HREF_POL_A::NEGATIVE
     }
-    #[doc = "Checks if the value of the field is `POSITIVE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_positive(&self) -> bool {
         *self == HREF_POL_A::POSITIVE
     }
 }
 #[doc = "Field `href_pol` writer - Href polarity\n\nThis register is not applied to CCIR656 interface"]
-pub type HREF_POL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, HREF_POL_A, O>;
-impl<'a, const O: u8> HREF_POL_W<'a, O> {
+pub type HREF_POL_W<'a, REG> = crate::BitWriter<'a, REG, HREF_POL_A>;
+impl<'a, REG> HREF_POL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn negative(self) -> &'a mut W {
+    pub fn negative(self) -> &'a mut crate::W<REG> {
         self.variant(HREF_POL_A::NEGATIVE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn positive(self) -> &'a mut W {
+    pub fn positive(self) -> &'a mut crate::W<REG> {
         self.variant(HREF_POL_A::POSITIVE)
     }
 }
@@ -601,35 +605,37 @@ impl From<VREF_POL_A> for bool {
 impl VREF_POL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> VREF_POL_A {
+    pub const fn variant(&self) -> VREF_POL_A {
         match self.bits {
             false => VREF_POL_A::NEGATIVE,
             true => VREF_POL_A::POSITIVE,
         }
     }
-    #[doc = "Checks if the value of the field is `NEGATIVE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_negative(&self) -> bool {
         *self == VREF_POL_A::NEGATIVE
     }
-    #[doc = "Checks if the value of the field is `POSITIVE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_positive(&self) -> bool {
         *self == VREF_POL_A::POSITIVE
     }
 }
 #[doc = "Field `vref_pol` writer - Vref polarity\n\nThis register is not applied to CCIR656 interface"]
-pub type VREF_POL_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, VREF_POL_A, O>;
-impl<'a, const O: u8> VREF_POL_W<'a, O> {
+pub type VREF_POL_W<'a, REG> = crate::BitWriter<'a, REG, VREF_POL_A>;
+impl<'a, REG> VREF_POL_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn negative(self) -> &'a mut W {
+    pub fn negative(self) -> &'a mut crate::W<REG> {
         self.variant(VREF_POL_A::NEGATIVE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn positive(self) -> &'a mut W {
+    pub fn positive(self) -> &'a mut crate::W<REG> {
         self.variant(VREF_POL_A::POSITIVE)
     }
 }
@@ -652,39 +658,42 @@ impl From<FIELD_A> for bool {
 impl FIELD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIELD_A {
+    pub const fn variant(&self) -> FIELD_A {
         match self.bits {
             false => FIELD_A::NEGATIVE_NORMAL_SEQ,
             true => FIELD_A::POSITIVE_INVERSE_SEQ,
         }
     }
-    #[doc = "Checks if the value of the field is `NEGATIVE_NORMAL_SEQ`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_negative_normal_seq(&self) -> bool {
         *self == FIELD_A::NEGATIVE_NORMAL_SEQ
     }
-    #[doc = "Checks if the value of the field is `POSITIVE_INVERSE_SEQ`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_positive_inverse_seq(&self) -> bool {
         *self == FIELD_A::POSITIVE_INVERSE_SEQ
     }
 }
 #[doc = "Field `field` writer - Field polarity (For YUV HV timing) / Field sequence (For BT656 timing)"]
-pub type FIELD_W<'a, const O: u8> = crate::BitWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, FIELD_A, O>;
-impl<'a, const O: u8> FIELD_W<'a, O> {
+pub type FIELD_W<'a, REG> = crate::BitWriter<'a, REG, FIELD_A>;
+impl<'a, REG> FIELD_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn negative_normal_seq(self) -> &'a mut W {
+    pub fn negative_normal_seq(self) -> &'a mut crate::W<REG> {
         self.variant(FIELD_A::NEGATIVE_NORMAL_SEQ)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn positive_inverse_seq(self) -> &'a mut W {
+    pub fn positive_inverse_seq(self) -> &'a mut crate::W<REG> {
         self.variant(FIELD_A::POSITIVE_INVERSE_SEQ)
     }
 }
 #[doc = "Field `source_type` reader - Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3"]
-pub type SOURCE_TYPE_R = crate::FieldReader<u8, SOURCE_TYPE_A>;
+pub type SOURCE_TYPE_R = crate::FieldReader<SOURCE_TYPE_A>;
 #[doc = "Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -700,47 +709,52 @@ impl From<SOURCE_TYPE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SOURCE_TYPE_A {
+    type Ux = u8;
+}
 impl SOURCE_TYPE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SOURCE_TYPE_A> {
+    pub const fn variant(&self) -> Option<SOURCE_TYPE_A> {
         match self.bits {
             0 => Some(SOURCE_TYPE_A::P_ROGRESSED),
             1 => Some(SOURCE_TYPE_A::INTERLACED),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `P_ROGRESSED`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_p_rogressed(&self) -> bool {
         *self == SOURCE_TYPE_A::P_ROGRESSED
     }
-    #[doc = "Checks if the value of the field is `INTERLACED`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_interlaced(&self) -> bool {
         *self == SOURCE_TYPE_A::INTERLACED
     }
 }
 #[doc = "Field `source_type` writer - Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3"]
-pub type SOURCE_TYPE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, SOURCE_TYPE_A, 4, O>;
-impl<'a, const O: u8> SOURCE_TYPE_W<'a, O> {
+pub type SOURCE_TYPE_W<'a, REG> = crate::FieldWriter<'a, REG, 4, SOURCE_TYPE_A>;
+impl<'a, REG> SOURCE_TYPE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn p_rogressed(self) -> &'a mut W {
+    pub fn p_rogressed(self) -> &'a mut crate::W<REG> {
         self.variant(SOURCE_TYPE_A::P_ROGRESSED)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn interlaced(self) -> &'a mut W {
+    pub fn interlaced(self) -> &'a mut crate::W<REG> {
         self.variant(SOURCE_TYPE_A::INTERLACED)
     }
 }
 #[doc = "Field `field_dt_pclk_shift` reader - Only for vsync detected field mode, the odd field permitted pclk\n\nshift = 4 * FIELD_DT_PCLK_SHIFT"]
-pub type FIELD_DT_PCLK_SHIFT_R = crate::FieldReader<u8, u8>;
+pub type FIELD_DT_PCLK_SHIFT_R = crate::FieldReader;
 #[doc = "Field `field_dt_pclk_shift` writer - Only for vsync detected field mode, the odd field permitted pclk\n\nshift = 4 * FIELD_DT_PCLK_SHIFT"]
-pub type FIELD_DT_PCLK_SHIFT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, u8, u8, 4, O>;
+pub type FIELD_DT_PCLK_SHIFT_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `yuv420_line_order` reader - "]
 pub type YUV420_LINE_ORDER_R = crate::BitReader<YUV420_LINE_ORDER_A>;
 #[doc = "\n\nValue on reset: 0"]
@@ -760,35 +774,37 @@ impl From<YUV420_LINE_ORDER_A> for bool {
 impl YUV420_LINE_ORDER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> YUV420_LINE_ORDER_A {
+    pub const fn variant(&self) -> YUV420_LINE_ORDER_A {
         match self.bits {
             false => YUV420_LINE_ORDER_A::Y_YC_Y_YC,
             true => YUV420_LINE_ORDER_A::YC_Y_YC_Y,
         }
     }
-    #[doc = "Checks if the value of the field is `Y_YC_Y_YC`"]
+    #[doc = "YUV420 input in Y_YC_Y_YC line order"]
     #[inline(always)]
     pub fn is_y_yc_y_yc(&self) -> bool {
         *self == YUV420_LINE_ORDER_A::Y_YC_Y_YC
     }
-    #[doc = "Checks if the value of the field is `YC_Y_YC_Y`"]
+    #[doc = "YUV420 input in YC_Y_YC_Y line order"]
     #[inline(always)]
     pub fn is_yc_y_yc_y(&self) -> bool {
         *self == YUV420_LINE_ORDER_A::YC_Y_YC_Y
     }
 }
 #[doc = "Field `yuv420_line_order` writer - "]
-pub type YUV420_LINE_ORDER_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, PRS_NCSIC_IF_CFG_SPEC, YUV420_LINE_ORDER_A, O>;
-impl<'a, const O: u8> YUV420_LINE_ORDER_W<'a, O> {
+pub type YUV420_LINE_ORDER_W<'a, REG> = crate::BitWriter<'a, REG, YUV420_LINE_ORDER_A>;
+impl<'a, REG> YUV420_LINE_ORDER_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "YUV420 input in Y_YC_Y_YC line order"]
     #[inline(always)]
-    pub fn y_yc_y_yc(self) -> &'a mut W {
+    pub fn y_yc_y_yc(self) -> &'a mut crate::W<REG> {
         self.variant(YUV420_LINE_ORDER_A::Y_YC_Y_YC)
     }
     #[doc = "YUV420 input in YC_Y_YC_Y line order"]
     #[inline(always)]
-    pub fn yc_y_yc_y(self) -> &'a mut W {
+    pub fn yc_y_yc_y(self) -> &'a mut crate::W<REG> {
         self.variant(YUV420_LINE_ORDER_A::YC_Y_YC_Y)
     }
 }
@@ -863,100 +879,101 @@ impl W {
     #[doc = "Bits 0:4"]
     #[inline(always)]
     #[must_use]
-    pub fn csi_if(&mut self) -> CSI_IF_W<0> {
-        CSI_IF_W::new(self)
+    pub fn csi_if(&mut self) -> CSI_IF_W<PRS_NCSIC_IF_CFG_SPEC> {
+        CSI_IF_W::new(self, 0)
     }
     #[doc = "Bits 6:7 - Input data sequence, only valid for YUV422 and YUV420 input format"]
     #[inline(always)]
     #[must_use]
-    pub fn input_seq(&mut self) -> INPUT_SEQ_W<6> {
-        INPUT_SEQ_W::new(self)
+    pub fn input_seq(&mut self) -> INPUT_SEQ_W<PRS_NCSIC_IF_CFG_SPEC> {
+        INPUT_SEQ_W::new(self, 6)
     }
     #[doc = "Bits 8:10"]
     #[inline(always)]
     #[must_use]
-    pub fn if_data_width(&mut self) -> IF_DATA_WIDTH_W<8> {
-        IF_DATA_WIDTH_W::new(self)
+    pub fn if_data_width(&mut self) -> IF_DATA_WIDTH_W<PRS_NCSIC_IF_CFG_SPEC> {
+        IF_DATA_WIDTH_W::new(self, 8)
     }
     #[doc = "Bits 11:12 - When select IF_DATA_WIDTH to be 8+2bit, odd/even pixel byte at CSI-D\\[11:4\\] will be rearranged to D\\[11:2\\]+2'b0 at the actual CSI data bus according to these sequences"]
     #[inline(always)]
     #[must_use]
-    pub fn seq_8plus2(&mut self) -> SEQ_8PLUS2_W<11> {
-        SEQ_8PLUS2_W::new(self)
+    pub fn seq_8plus2(&mut self) -> SEQ_8PLUS2_W<PRS_NCSIC_IF_CFG_SPEC> {
+        SEQ_8PLUS2_W::new(self, 11)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
     #[must_use]
-    pub fn ddr_sample_mode_en(&mut self) -> DDR_SAMPLE_MODE_EN_W<13> {
-        DDR_SAMPLE_MODE_EN_W::new(self)
+    pub fn ddr_sample_mode_en(&mut self) -> DDR_SAMPLE_MODE_EN_W<PRS_NCSIC_IF_CFG_SPEC> {
+        DDR_SAMPLE_MODE_EN_W::new(self, 13)
     }
     #[doc = "Bits 14:15 - only valid when CSI_IF is YUB and source type is interlaced"]
     #[inline(always)]
     #[must_use]
-    pub fn field_dt_mode(&mut self) -> FIELD_DT_MODE_W<14> {
-        FIELD_DT_MODE_W::new(self)
+    pub fn field_dt_mode(&mut self) -> FIELD_DT_MODE_W<PRS_NCSIC_IF_CFG_SPEC> {
+        FIELD_DT_MODE_W::new(self, 14)
     }
     #[doc = "Bit 16 - Data clock type"]
     #[inline(always)]
     #[must_use]
-    pub fn clk_pol(&mut self) -> CLK_POL_W<16> {
-        CLK_POL_W::new(self)
+    pub fn clk_pol(&mut self) -> CLK_POL_W<PRS_NCSIC_IF_CFG_SPEC> {
+        CLK_POL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Href polarity\n\nThis register is not applied to CCIR656 interface"]
     #[inline(always)]
     #[must_use]
-    pub fn href_pol(&mut self) -> HREF_POL_W<17> {
-        HREF_POL_W::new(self)
+    pub fn href_pol(&mut self) -> HREF_POL_W<PRS_NCSIC_IF_CFG_SPEC> {
+        HREF_POL_W::new(self, 17)
     }
     #[doc = "Bit 18 - Vref polarity\n\nThis register is not applied to CCIR656 interface"]
     #[inline(always)]
     #[must_use]
-    pub fn vref_pol(&mut self) -> VREF_POL_W<18> {
-        VREF_POL_W::new(self)
+    pub fn vref_pol(&mut self) -> VREF_POL_W<PRS_NCSIC_IF_CFG_SPEC> {
+        VREF_POL_W::new(self, 18)
     }
     #[doc = "Bit 19 - Field polarity (For YUV HV timing) / Field sequence (For BT656 timing)"]
     #[inline(always)]
     #[must_use]
-    pub fn field(&mut self) -> FIELD_W<19> {
-        FIELD_W::new(self)
+    pub fn field(&mut self) -> FIELD_W<PRS_NCSIC_IF_CFG_SPEC> {
+        FIELD_W::new(self, 19)
     }
     #[doc = "Bits 20:23 - Bit 20-23 corresponding to the SRC_TYPEs for channel 0-3"]
     #[inline(always)]
     #[must_use]
-    pub fn source_type(&mut self) -> SOURCE_TYPE_W<20> {
-        SOURCE_TYPE_W::new(self)
+    pub fn source_type(&mut self) -> SOURCE_TYPE_W<PRS_NCSIC_IF_CFG_SPEC> {
+        SOURCE_TYPE_W::new(self, 20)
     }
     #[doc = "Bits 24:27 - Only for vsync detected field mode, the odd field permitted pclk\n\nshift = 4 * FIELD_DT_PCLK_SHIFT"]
     #[inline(always)]
     #[must_use]
-    pub fn field_dt_pclk_shift(&mut self) -> FIELD_DT_PCLK_SHIFT_W<24> {
-        FIELD_DT_PCLK_SHIFT_W::new(self)
+    pub fn field_dt_pclk_shift(&mut self) -> FIELD_DT_PCLK_SHIFT_W<PRS_NCSIC_IF_CFG_SPEC> {
+        FIELD_DT_PCLK_SHIFT_W::new(self, 24)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
     #[must_use]
-    pub fn yuv420_line_order(&mut self) -> YUV420_LINE_ORDER_W<31> {
-        YUV420_LINE_ORDER_W::new(self)
+    pub fn yuv420_line_order(&mut self) -> YUV420_LINE_ORDER_W<PRS_NCSIC_IF_CFG_SPEC> {
+        YUV420_LINE_ORDER_W::new(self, 31)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "Parser NCSIC Interface Configuration Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [prs_ncsic_if_cfg](index.html) module"]
+#[doc = "Parser NCSIC Interface Configuration Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`prs_ncsic_if_cfg::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`prs_ncsic_if_cfg::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PRS_NCSIC_IF_CFG_SPEC;
 impl crate::RegisterSpec for PRS_NCSIC_IF_CFG_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [prs_ncsic_if_cfg::R](R) reader structure"]
-impl crate::Readable for PRS_NCSIC_IF_CFG_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [prs_ncsic_if_cfg::W](W) writer structure"]
+#[doc = "`read()` method returns [`prs_ncsic_if_cfg::R`](R) reader structure"]
+impl crate::Readable for PRS_NCSIC_IF_CFG_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`prs_ncsic_if_cfg::W`](W) writer structure"]
 impl crate::Writable for PRS_NCSIC_IF_CFG_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

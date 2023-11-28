@@ -1,41 +1,9 @@
 #[doc = "Register `pd_drv2` reader"]
-pub struct R(crate::R<PD_DRV2_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PD_DRV2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PD_DRV2_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PD_DRV2_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PD_DRV2_SPEC>;
 #[doc = "Register `pd_drv2` writer"]
-pub struct W(crate::W<PD_DRV2_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PD_DRV2_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PD_DRV2_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PD_DRV2_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PD_DRV2_SPEC>;
 #[doc = "Field `pd_drv[16-22]` reader - PD Multi_Driving Select"]
-pub type PD_DRV_R = crate::FieldReader<u8, PD_DRV_A>;
+pub type PD_DRV_R = crate::FieldReader<PD_DRV_A>;
 #[doc = "PD Multi_Driving Select\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<PD_DRV_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PD_DRV_A {
+    type Ux = u8;
+}
 impl PD_DRV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> PD_DRV_A {
+    pub const fn variant(&self) -> PD_DRV_A {
         match self.bits {
             0 => PD_DRV_A::L0,
             1 => PD_DRV_A::L1,
@@ -67,57 +38,62 @@ impl PD_DRV_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `L0`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_l0(&self) -> bool {
         *self == PD_DRV_A::L0
     }
-    #[doc = "Checks if the value of the field is `L1`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_l1(&self) -> bool {
         *self == PD_DRV_A::L1
     }
-    #[doc = "Checks if the value of the field is `L2`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_l2(&self) -> bool {
         *self == PD_DRV_A::L2
     }
-    #[doc = "Checks if the value of the field is `L3`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_l3(&self) -> bool {
         *self == PD_DRV_A::L3
     }
 }
 #[doc = "Field `pd_drv[16-22]` writer - PD Multi_Driving Select"]
-pub type PD_DRV_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, PD_DRV2_SPEC, u8, PD_DRV_A, 2, O>;
-impl<'a, const O: u8> PD_DRV_W<'a, O> {
+pub type PD_DRV_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, PD_DRV_A>;
+impl<'a, REG> PD_DRV_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn l0(self) -> &'a mut W {
+    pub fn l0(self) -> &'a mut crate::W<REG> {
         self.variant(PD_DRV_A::L0)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn l1(self) -> &'a mut W {
+    pub fn l1(self) -> &'a mut crate::W<REG> {
         self.variant(PD_DRV_A::L1)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn l2(self) -> &'a mut W {
+    pub fn l2(self) -> &'a mut crate::W<REG> {
         self.variant(PD_DRV_A::L2)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn l3(self) -> &'a mut W {
+    pub fn l3(self) -> &'a mut crate::W<REG> {
         self.variant(PD_DRV_A::L3)
     }
 }
 impl R {
-    #[doc = "PD Multi_Driving Select"]
+    #[doc = "PD Multi_Driving Select\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `pd16_drv` field"]
     #[inline(always)]
-    pub unsafe fn pd_drv(&self, n: u8) -> PD_DRV_R {
-        PD_DRV_R::new(((self.bits >> ((n - 16) * 4)) & 3) as u8)
+    pub fn pd_drv(&self, n: u8) -> PD_DRV_R {
+        #[allow(clippy::no_effect)]
+        [(); 7][n as usize];
+        PD_DRV_R::new(((self.bits >> (n * 4)) & 3) as u8)
     }
     #[doc = "Bits 0:1 - PD Multi_Driving Select"]
     #[inline(always)]
@@ -156,73 +132,76 @@ impl R {
     }
 }
 impl W {
-    #[doc = "PD Multi_Driving Select"]
+    #[doc = "PD Multi_Driving Select\n\nNOTE: `n` is number of field in register. `n == 0` corresponds to `pd16_drv` field"]
     #[inline(always)]
     #[must_use]
-    pub unsafe fn pd_drv<const O: u8>(&mut self) -> PD_DRV_W<O> {
-        PD_DRV_W::new(self)
+    pub fn pd_drv(&mut self, n: u8) -> PD_DRV_W<PD_DRV2_SPEC> {
+        #[allow(clippy::no_effect)]
+        [(); 7][n as usize];
+        PD_DRV_W::new(self, n * 4)
     }
     #[doc = "Bits 0:1 - PD Multi_Driving Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pd16_drv(&mut self) -> PD_DRV_W<0> {
-        PD_DRV_W::new(self)
+    pub fn pd16_drv(&mut self) -> PD_DRV_W<PD_DRV2_SPEC> {
+        PD_DRV_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - PD Multi_Driving Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pd17_drv(&mut self) -> PD_DRV_W<4> {
-        PD_DRV_W::new(self)
+    pub fn pd17_drv(&mut self) -> PD_DRV_W<PD_DRV2_SPEC> {
+        PD_DRV_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - PD Multi_Driving Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pd18_drv(&mut self) -> PD_DRV_W<8> {
-        PD_DRV_W::new(self)
+    pub fn pd18_drv(&mut self) -> PD_DRV_W<PD_DRV2_SPEC> {
+        PD_DRV_W::new(self, 8)
     }
     #[doc = "Bits 12:13 - PD Multi_Driving Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pd19_drv(&mut self) -> PD_DRV_W<12> {
-        PD_DRV_W::new(self)
+    pub fn pd19_drv(&mut self) -> PD_DRV_W<PD_DRV2_SPEC> {
+        PD_DRV_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - PD Multi_Driving Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pd20_drv(&mut self) -> PD_DRV_W<16> {
-        PD_DRV_W::new(self)
+    pub fn pd20_drv(&mut self) -> PD_DRV_W<PD_DRV2_SPEC> {
+        PD_DRV_W::new(self, 16)
     }
     #[doc = "Bits 20:21 - PD Multi_Driving Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pd21_drv(&mut self) -> PD_DRV_W<20> {
-        PD_DRV_W::new(self)
+    pub fn pd21_drv(&mut self) -> PD_DRV_W<PD_DRV2_SPEC> {
+        PD_DRV_W::new(self, 20)
     }
     #[doc = "Bits 24:25 - PD Multi_Driving Select"]
     #[inline(always)]
     #[must_use]
-    pub fn pd22_drv(&mut self) -> PD_DRV_W<24> {
-        PD_DRV_W::new(self)
+    pub fn pd22_drv(&mut self) -> PD_DRV_W<PD_DRV2_SPEC> {
+        PD_DRV_W::new(self, 24)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PD Multi_Driving Register 2\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pd_drv2](index.html) module"]
+#[doc = "PD Multi_Driving Register 2\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pd_drv2::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pd_drv2::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PD_DRV2_SPEC;
 impl crate::RegisterSpec for PD_DRV2_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pd_drv2::R](R) reader structure"]
-impl crate::Readable for PD_DRV2_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pd_drv2::W](W) writer structure"]
+#[doc = "`read()` method returns [`pd_drv2::R`](R) reader structure"]
+impl crate::Readable for PD_DRV2_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pd_drv2::W`](W) writer structure"]
 impl crate::Writable for PD_DRV2_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

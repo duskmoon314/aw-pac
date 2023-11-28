@@ -1,18 +1,5 @@
 #[doc = "Register `smhc_status` reader"]
-pub struct R(crate::R<SMHC_STATUS_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<SMHC_STATUS_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<SMHC_STATUS_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<SMHC_STATUS_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<SMHC_STATUS_SPEC>;
 #[doc = "Field `fifo_rx_level` reader - FIFO RX Water Level Flag"]
 pub type FIFO_RX_LEVEL_R = crate::BitReader<FIFO_RX_LEVEL_A>;
 #[doc = "FIFO RX Water Level Flag\n\nValue on reset: 0"]
@@ -32,18 +19,18 @@ impl From<FIFO_RX_LEVEL_A> for bool {
 impl FIFO_RX_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_RX_LEVEL_A {
+    pub const fn variant(&self) -> FIFO_RX_LEVEL_A {
         match self.bits {
             false => FIFO_RX_LEVEL_A::NOT_REACH,
             true => FIFO_RX_LEVEL_A::REACH,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_REACH`"]
+    #[doc = "FIFO does not reach the receive trigger level"]
     #[inline(always)]
     pub fn is_not_reach(&self) -> bool {
         *self == FIFO_RX_LEVEL_A::NOT_REACH
     }
-    #[doc = "Checks if the value of the field is `REACH`"]
+    #[doc = "FIFO reaches the receive trigger level"]
     #[inline(always)]
     pub fn is_reach(&self) -> bool {
         *self == FIFO_RX_LEVEL_A::REACH
@@ -68,18 +55,18 @@ impl From<FIFO_TX_LEVEL_A> for bool {
 impl FIFO_TX_LEVEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_TX_LEVEL_A {
+    pub const fn variant(&self) -> FIFO_TX_LEVEL_A {
         match self.bits {
             false => FIFO_TX_LEVEL_A::NOT_REACH,
             true => FIFO_TX_LEVEL_A::REACH,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_REACH`"]
+    #[doc = "FIFO does not reach the transmit trigger level"]
     #[inline(always)]
     pub fn is_not_reach(&self) -> bool {
         *self == FIFO_TX_LEVEL_A::NOT_REACH
     }
-    #[doc = "Checks if the value of the field is `REACH`"]
+    #[doc = "FIFO reaches the transmit trigger level"]
     #[inline(always)]
     pub fn is_reach(&self) -> bool {
         *self == FIFO_TX_LEVEL_A::REACH
@@ -104,18 +91,18 @@ impl From<FIFO_EMPTY_A> for bool {
 impl FIFO_EMPTY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_EMPTY_A {
+    pub const fn variant(&self) -> FIFO_EMPTY_A {
         match self.bits {
             false => FIFO_EMPTY_A::NOT_SEMPTY,
             true => FIFO_EMPTY_A::EMPTY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_SEMPTY`"]
+    #[doc = "FIFO is not empty"]
     #[inline(always)]
     pub fn is_not_sempty(&self) -> bool {
         *self == FIFO_EMPTY_A::NOT_SEMPTY
     }
-    #[doc = "Checks if the value of the field is `EMPTY`"]
+    #[doc = "FIFO is empty"]
     #[inline(always)]
     pub fn is_empty(&self) -> bool {
         *self == FIFO_EMPTY_A::EMPTY
@@ -140,25 +127,25 @@ impl From<FIFO_FULL_A> for bool {
 impl FIFO_FULL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_FULL_A {
+    pub const fn variant(&self) -> FIFO_FULL_A {
         match self.bits {
             false => FIFO_FULL_A::NOT_FULL,
             true => FIFO_FULL_A::FULL,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_FULL`"]
+    #[doc = "FIFO is not full"]
     #[inline(always)]
     pub fn is_not_full(&self) -> bool {
         *self == FIFO_FULL_A::NOT_FULL
     }
-    #[doc = "Checks if the value of the field is `FULL`"]
+    #[doc = "FIFO is full"]
     #[inline(always)]
     pub fn is_full(&self) -> bool {
         *self == FIFO_FULL_A::FULL
     }
 }
 #[doc = "Field `fsm_sta` reader - Command FSM States"]
-pub type FSM_STA_R = crate::FieldReader<u8, FSM_STA_A>;
+pub type FSM_STA_R = crate::FieldReader<FSM_STA_A>;
 #[doc = "Command FSM States\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -202,10 +189,13 @@ impl From<FSM_STA_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for FSM_STA_A {
+    type Ux = u8;
+}
 impl FSM_STA_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FSM_STA_A {
+    pub const fn variant(&self) -> FSM_STA_A {
         match self.bits {
             0 => FSM_STA_A::IDLE,
             1 => FSM_STA_A::SIS,
@@ -226,82 +216,82 @@ impl FSM_STA_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `IDLE`"]
+    #[doc = "Idle"]
     #[inline(always)]
     pub fn is_idle(&self) -> bool {
         *self == FSM_STA_A::IDLE
     }
-    #[doc = "Checks if the value of the field is `SIS`"]
+    #[doc = "Send init sequence"]
     #[inline(always)]
     pub fn is_sis(&self) -> bool {
         *self == FSM_STA_A::SIS
     }
-    #[doc = "Checks if the value of the field is `TXCSB`"]
+    #[doc = "TX CMD start bit"]
     #[inline(always)]
     pub fn is_txcsb(&self) -> bool {
         *self == FSM_STA_A::TXCSB
     }
-    #[doc = "Checks if the value of the field is `TXCTB`"]
+    #[doc = "TX CMD TX bit"]
     #[inline(always)]
     pub fn is_txctb(&self) -> bool {
         *self == FSM_STA_A::TXCTB
     }
-    #[doc = "Checks if the value of the field is `TXCIA`"]
+    #[doc = "TX CMD index + argument"]
     #[inline(always)]
     pub fn is_txcia(&self) -> bool {
         *self == FSM_STA_A::TXCIA
     }
-    #[doc = "Checks if the value of the field is `TXCC`"]
+    #[doc = "TX CMD CRC7"]
     #[inline(always)]
     pub fn is_txcc(&self) -> bool {
         *self == FSM_STA_A::TXCC
     }
-    #[doc = "Checks if the value of the field is `TXCEB`"]
+    #[doc = "TX CMD end bit"]
     #[inline(always)]
     pub fn is_txceb(&self) -> bool {
         *self == FSM_STA_A::TXCEB
     }
-    #[doc = "Checks if the value of the field is `RXRSB`"]
+    #[doc = "RX response start bit"]
     #[inline(always)]
     pub fn is_rxrsb(&self) -> bool {
         *self == FSM_STA_A::RXRSB
     }
-    #[doc = "Checks if the value of the field is `RXRIR`"]
+    #[doc = "RX response IRQ responses"]
     #[inline(always)]
     pub fn is_rxrir(&self) -> bool {
         *self == FSM_STA_A::RXRIR
     }
-    #[doc = "Checks if the value of the field is `RXRTB`"]
+    #[doc = "RX response TX bit"]
     #[inline(always)]
     pub fn is_rxrtb(&self) -> bool {
         *self == FSM_STA_A::RXRTB
     }
-    #[doc = "Checks if the value of the field is `RXRCI`"]
+    #[doc = "RX response CMD index"]
     #[inline(always)]
     pub fn is_rxrci(&self) -> bool {
         *self == FSM_STA_A::RXRCI
     }
-    #[doc = "Checks if the value of the field is `RXRD`"]
+    #[doc = "RX response data"]
     #[inline(always)]
     pub fn is_rxrd(&self) -> bool {
         *self == FSM_STA_A::RXRD
     }
-    #[doc = "Checks if the value of the field is `RXRC`"]
+    #[doc = "RX response CRC7"]
     #[inline(always)]
     pub fn is_rxrc(&self) -> bool {
         *self == FSM_STA_A::RXRC
     }
-    #[doc = "Checks if the value of the field is `RXREB`"]
+    #[doc = "RX response end bit"]
     #[inline(always)]
     pub fn is_rxreb(&self) -> bool {
         *self == FSM_STA_A::RXREB
     }
-    #[doc = "Checks if the value of the field is `CPWN`"]
+    #[doc = "CMD path wait NCC"]
     #[inline(always)]
     pub fn is_cpwn(&self) -> bool {
         *self == FSM_STA_A::CPWN
     }
-    #[doc = "Checks if the value of the field is `WAIT`"]
+    #[doc = "Wait; CMD-to-response turn around"]
     #[inline(always)]
     pub fn is_wait(&self) -> bool {
         *self == FSM_STA_A::WAIT
@@ -326,18 +316,18 @@ impl From<CARD_PRESENT_A> for bool {
 impl CARD_PRESENT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_PRESENT_A {
+    pub const fn variant(&self) -> CARD_PRESENT_A {
         match self.bits {
             false => CARD_PRESENT_A::NOT_PRESENT,
             true => CARD_PRESENT_A::PRESENT,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_PRESENT`"]
+    #[doc = "The card is not present"]
     #[inline(always)]
     pub fn is_not_present(&self) -> bool {
         *self == CARD_PRESENT_A::NOT_PRESENT
     }
-    #[doc = "Checks if the value of the field is `PRESENT`"]
+    #[doc = "The card is present"]
     #[inline(always)]
     pub fn is_present(&self) -> bool {
         *self == CARD_PRESENT_A::PRESENT
@@ -362,31 +352,31 @@ impl From<CARD_BUSY_A> for bool {
 impl CARD_BUSY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> CARD_BUSY_A {
+    pub const fn variant(&self) -> CARD_BUSY_A {
         match self.bits {
             false => CARD_BUSY_A::NOT_BUSY,
             true => CARD_BUSY_A::BUSY,
         }
     }
-    #[doc = "Checks if the value of the field is `NOT_BUSY`"]
+    #[doc = "Card data is not busy"]
     #[inline(always)]
     pub fn is_not_busy(&self) -> bool {
         *self == CARD_BUSY_A::NOT_BUSY
     }
-    #[doc = "Checks if the value of the field is `BUSY`"]
+    #[doc = "Card data is busy"]
     #[inline(always)]
     pub fn is_busy(&self) -> bool {
         *self == CARD_BUSY_A::BUSY
     }
 }
 #[doc = "Field `fsm_busy` reader - Data FSM Busy"]
-pub type FSM_BUSY_R = crate::BitReader<bool>;
+pub type FSM_BUSY_R = crate::BitReader;
 #[doc = "Field `resp_idx` reader - Response Index"]
-pub type RESP_IDX_R = crate::FieldReader<u8, u8>;
+pub type RESP_IDX_R = crate::FieldReader;
 #[doc = "Field `fifo_level` reader - FIFO Level"]
-pub type FIFO_LEVEL_R = crate::FieldReader<u16, u16>;
+pub type FIFO_LEVEL_R = crate::FieldReader<u16>;
 #[doc = "Field `dma_req` reader - DMA Request"]
-pub type DMA_REQ_R = crate::BitReader<bool>;
+pub type DMA_REQ_R = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - FIFO RX Water Level Flag"]
     #[inline(always)]
@@ -444,15 +434,13 @@ impl R {
         DMA_REQ_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Status Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [smhc_status](index.html) module"]
+#[doc = "Status Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`smhc_status::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SMHC_STATUS_SPEC;
 impl crate::RegisterSpec for SMHC_STATUS_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [smhc_status::R](R) reader structure"]
-impl crate::Readable for SMHC_STATUS_SPEC {
-    type Reader = R;
-}
+#[doc = "`read()` method returns [`smhc_status::R`](R) reader structure"]
+impl crate::Readable for SMHC_STATUS_SPEC {}
 #[doc = "`reset()` method sets smhc_status to value 0"]
 impl crate::Resettable for SMHC_STATUS_SPEC {
     const RESET_VALUE: Self::Ux = 0;

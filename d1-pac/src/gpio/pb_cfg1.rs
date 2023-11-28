@@ -1,41 +1,9 @@
 #[doc = "Register `pb_cfg1` reader"]
-pub struct R(crate::R<PB_CFG1_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<PB_CFG1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<PB_CFG1_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<PB_CFG1_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<PB_CFG1_SPEC>;
 #[doc = "Register `pb_cfg1` writer"]
-pub struct W(crate::W<PB_CFG1_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<PB_CFG1_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<PB_CFG1_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<PB_CFG1_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<PB_CFG1_SPEC>;
 #[doc = "Field `pb8_select` reader - "]
-pub type PB8_SELECT_R = crate::FieldReader<u8, PB8_SELECT_A>;
+pub type PB8_SELECT_R = crate::FieldReader<PB8_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -67,10 +35,13 @@ impl From<PB8_SELECT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PB8_SELECT_A {
+    type Ux = u8;
+}
 impl PB8_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PB8_SELECT_A> {
+    pub const fn variant(&self) -> Option<PB8_SELECT_A> {
         match self.bits {
             0 => Some(PB8_SELECT_A::INPUT),
             1 => Some(PB8_SELECT_A::OUTPUT),
@@ -85,114 +56,117 @@ impl PB8_SELECT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
         *self == PB8_SELECT_A::INPUT
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == PB8_SELECT_A::OUTPUT
     }
-    #[doc = "Checks if the value of the field is `DMIC_DATA3`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_dmic_data3(&self) -> bool {
         *self == PB8_SELECT_A::DMIC_DATA3
     }
-    #[doc = "Checks if the value of the field is `PWM5`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_pwm5(&self) -> bool {
         *self == PB8_SELECT_A::PWM5
     }
-    #[doc = "Checks if the value of the field is `TWI2_SCK`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_twi2_sck(&self) -> bool {
         *self == PB8_SELECT_A::TWI2_SCK
     }
-    #[doc = "Checks if the value of the field is `SPI1_HOLD_DBI_DCX_DBI_WRX`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_spi1_hold_dbi_dcx_dbi_wrx(&self) -> bool {
         *self == PB8_SELECT_A::SPI1_HOLD_DBI_DCX_DBI_WRX
     }
-    #[doc = "Checks if the value of the field is `UART0_TX`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_uart0_tx(&self) -> bool {
         *self == PB8_SELECT_A::UART0_TX
     }
-    #[doc = "Checks if the value of the field is `UART1_TX`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_uart1_tx(&self) -> bool {
         *self == PB8_SELECT_A::UART1_TX
     }
-    #[doc = "Checks if the value of the field is `PB_EINT8`"]
+    #[doc = "`1110`"]
     #[inline(always)]
     pub fn is_pb_eint8(&self) -> bool {
         *self == PB8_SELECT_A::PB_EINT8
     }
-    #[doc = "Checks if the value of the field is `IO_DISABLE`"]
+    #[doc = "`1111`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
         *self == PB8_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `pb8_select` writer - "]
-pub type PB8_SELECT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB8_SELECT_A, 4, O>;
-impl<'a, const O: u8> PB8_SELECT_W<'a, O> {
+pub type PB8_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PB8_SELECT_A>;
+impl<'a, REG> PB8_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn input(self) -> &'a mut W {
+    pub fn input(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::INPUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::OUTPUT)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn dmic_data3(self) -> &'a mut W {
+    pub fn dmic_data3(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::DMIC_DATA3)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pwm5(self) -> &'a mut W {
+    pub fn pwm5(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::PWM5)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn twi2_sck(self) -> &'a mut W {
+    pub fn twi2_sck(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::TWI2_SCK)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_hold_dbi_dcx_dbi_wrx(self) -> &'a mut W {
+    pub fn spi1_hold_dbi_dcx_dbi_wrx(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::SPI1_HOLD_DBI_DCX_DBI_WRX)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn uart0_tx(self) -> &'a mut W {
+    pub fn uart0_tx(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::UART0_TX)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn uart1_tx(self) -> &'a mut W {
+    pub fn uart1_tx(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::UART1_TX)
     }
     #[doc = "`1110`"]
     #[inline(always)]
-    pub fn pb_eint8(self) -> &'a mut W {
+    pub fn pb_eint8(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::PB_EINT8)
     }
     #[doc = "`1111`"]
     #[inline(always)]
-    pub fn io_disable(self) -> &'a mut W {
+    pub fn io_disable(self) -> &'a mut crate::W<REG> {
         self.variant(PB8_SELECT_A::IO_DISABLE)
     }
 }
 #[doc = "Field `pb9_select` reader - "]
-pub type PB9_SELECT_R = crate::FieldReader<u8, PB9_SELECT_A>;
+pub type PB9_SELECT_R = crate::FieldReader<PB9_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -224,10 +198,13 @@ impl From<PB9_SELECT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PB9_SELECT_A {
+    type Ux = u8;
+}
 impl PB9_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PB9_SELECT_A> {
+    pub const fn variant(&self) -> Option<PB9_SELECT_A> {
         match self.bits {
             0 => Some(PB9_SELECT_A::INPUT),
             1 => Some(PB9_SELECT_A::OUTPUT),
@@ -242,114 +219,117 @@ impl PB9_SELECT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
         *self == PB9_SELECT_A::INPUT
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == PB9_SELECT_A::OUTPUT
     }
-    #[doc = "Checks if the value of the field is `DMIC_DATA2`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_dmic_data2(&self) -> bool {
         *self == PB9_SELECT_A::DMIC_DATA2
     }
-    #[doc = "Checks if the value of the field is `PWM6`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_pwm6(&self) -> bool {
         *self == PB9_SELECT_A::PWM6
     }
-    #[doc = "Checks if the value of the field is `TWI2_SDA`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_twi2_sda(&self) -> bool {
         *self == PB9_SELECT_A::TWI2_SDA
     }
-    #[doc = "Checks if the value of the field is `SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_spi1_miso_dbi_sdi_dbi_te_dbi_dcx(&self) -> bool {
         *self == PB9_SELECT_A::SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX
     }
-    #[doc = "Checks if the value of the field is `UART0_RX`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_uart0_rx(&self) -> bool {
         *self == PB9_SELECT_A::UART0_RX
     }
-    #[doc = "Checks if the value of the field is `UART1_RX`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_uart1_rx(&self) -> bool {
         *self == PB9_SELECT_A::UART1_RX
     }
-    #[doc = "Checks if the value of the field is `PB_EINT9`"]
+    #[doc = "`1110`"]
     #[inline(always)]
     pub fn is_pb_eint9(&self) -> bool {
         *self == PB9_SELECT_A::PB_EINT9
     }
-    #[doc = "Checks if the value of the field is `IO_DISABLE`"]
+    #[doc = "`1111`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
         *self == PB9_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `pb9_select` writer - "]
-pub type PB9_SELECT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB9_SELECT_A, 4, O>;
-impl<'a, const O: u8> PB9_SELECT_W<'a, O> {
+pub type PB9_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PB9_SELECT_A>;
+impl<'a, REG> PB9_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn input(self) -> &'a mut W {
+    pub fn input(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::INPUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::OUTPUT)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn dmic_data2(self) -> &'a mut W {
+    pub fn dmic_data2(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::DMIC_DATA2)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pwm6(self) -> &'a mut W {
+    pub fn pwm6(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::PWM6)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn twi2_sda(self) -> &'a mut W {
+    pub fn twi2_sda(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::TWI2_SDA)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_miso_dbi_sdi_dbi_te_dbi_dcx(self) -> &'a mut W {
+    pub fn spi1_miso_dbi_sdi_dbi_te_dbi_dcx(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::SPI1_MISO_DBI_SDI_DBI_TE_DBI_DCX)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn uart0_rx(self) -> &'a mut W {
+    pub fn uart0_rx(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::UART0_RX)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn uart1_rx(self) -> &'a mut W {
+    pub fn uart1_rx(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::UART1_RX)
     }
     #[doc = "`1110`"]
     #[inline(always)]
-    pub fn pb_eint9(self) -> &'a mut W {
+    pub fn pb_eint9(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::PB_EINT9)
     }
     #[doc = "`1111`"]
     #[inline(always)]
-    pub fn io_disable(self) -> &'a mut W {
+    pub fn io_disable(self) -> &'a mut crate::W<REG> {
         self.variant(PB9_SELECT_A::IO_DISABLE)
     }
 }
 #[doc = "Field `pb10_select` reader - "]
-pub type PB10_SELECT_R = crate::FieldReader<u8, PB10_SELECT_A>;
+pub type PB10_SELECT_R = crate::FieldReader<PB10_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -381,10 +361,13 @@ impl From<PB10_SELECT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PB10_SELECT_A {
+    type Ux = u8;
+}
 impl PB10_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PB10_SELECT_A> {
+    pub const fn variant(&self) -> Option<PB10_SELECT_A> {
         match self.bits {
             0 => Some(PB10_SELECT_A::INPUT),
             1 => Some(PB10_SELECT_A::OUTPUT),
@@ -399,114 +382,117 @@ impl PB10_SELECT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
         *self == PB10_SELECT_A::INPUT
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == PB10_SELECT_A::OUTPUT
     }
-    #[doc = "Checks if the value of the field is `DMIC_DATA1`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_dmic_data1(&self) -> bool {
         *self == PB10_SELECT_A::DMIC_DATA1
     }
-    #[doc = "Checks if the value of the field is `PWM7`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_pwm7(&self) -> bool {
         *self == PB10_SELECT_A::PWM7
     }
-    #[doc = "Checks if the value of the field is `TWI0_SCK`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_twi0_sck(&self) -> bool {
         *self == PB10_SELECT_A::TWI0_SCK
     }
-    #[doc = "Checks if the value of the field is `SPI1_MOSI_DBI_SDO`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_spi1_mosi_dbi_sdo(&self) -> bool {
         *self == PB10_SELECT_A::SPI1_MOSI_DBI_SDO
     }
-    #[doc = "Checks if the value of the field is `CLK_FANOUT0`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_clk_fanout0(&self) -> bool {
         *self == PB10_SELECT_A::CLK_FANOUT0
     }
-    #[doc = "Checks if the value of the field is `UART1_RTS`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_uart1_rts(&self) -> bool {
         *self == PB10_SELECT_A::UART1_RTS
     }
-    #[doc = "Checks if the value of the field is `PB_EINT10`"]
+    #[doc = "`1110`"]
     #[inline(always)]
     pub fn is_pb_eint10(&self) -> bool {
         *self == PB10_SELECT_A::PB_EINT10
     }
-    #[doc = "Checks if the value of the field is `IO_DISABLE`"]
+    #[doc = "`1111`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
         *self == PB10_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `pb10_select` writer - "]
-pub type PB10_SELECT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB10_SELECT_A, 4, O>;
-impl<'a, const O: u8> PB10_SELECT_W<'a, O> {
+pub type PB10_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PB10_SELECT_A>;
+impl<'a, REG> PB10_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn input(self) -> &'a mut W {
+    pub fn input(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::INPUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::OUTPUT)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn dmic_data1(self) -> &'a mut W {
+    pub fn dmic_data1(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::DMIC_DATA1)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pwm7(self) -> &'a mut W {
+    pub fn pwm7(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::PWM7)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn twi0_sck(self) -> &'a mut W {
+    pub fn twi0_sck(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::TWI0_SCK)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_mosi_dbi_sdo(self) -> &'a mut W {
+    pub fn spi1_mosi_dbi_sdo(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::SPI1_MOSI_DBI_SDO)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn clk_fanout0(self) -> &'a mut W {
+    pub fn clk_fanout0(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::CLK_FANOUT0)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn uart1_rts(self) -> &'a mut W {
+    pub fn uart1_rts(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::UART1_RTS)
     }
     #[doc = "`1110`"]
     #[inline(always)]
-    pub fn pb_eint10(self) -> &'a mut W {
+    pub fn pb_eint10(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::PB_EINT10)
     }
     #[doc = "`1111`"]
     #[inline(always)]
-    pub fn io_disable(self) -> &'a mut W {
+    pub fn io_disable(self) -> &'a mut crate::W<REG> {
         self.variant(PB10_SELECT_A::IO_DISABLE)
     }
 }
 #[doc = "Field `pb11_select` reader - "]
-pub type PB11_SELECT_R = crate::FieldReader<u8, PB11_SELECT_A>;
+pub type PB11_SELECT_R = crate::FieldReader<PB11_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -538,10 +524,13 @@ impl From<PB11_SELECT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PB11_SELECT_A {
+    type Ux = u8;
+}
 impl PB11_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PB11_SELECT_A> {
+    pub const fn variant(&self) -> Option<PB11_SELECT_A> {
         match self.bits {
             0 => Some(PB11_SELECT_A::INPUT),
             1 => Some(PB11_SELECT_A::OUTPUT),
@@ -556,114 +545,117 @@ impl PB11_SELECT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
         *self == PB11_SELECT_A::INPUT
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == PB11_SELECT_A::OUTPUT
     }
-    #[doc = "Checks if the value of the field is `DMIC_DATA0`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_dmic_data0(&self) -> bool {
         *self == PB11_SELECT_A::DMIC_DATA0
     }
-    #[doc = "Checks if the value of the field is `PWM2`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_pwm2(&self) -> bool {
         *self == PB11_SELECT_A::PWM2
     }
-    #[doc = "Checks if the value of the field is `TWI0_SDA`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_twi0_sda(&self) -> bool {
         *self == PB11_SELECT_A::TWI0_SDA
     }
-    #[doc = "Checks if the value of the field is `SPI1_CLK_DBI_SCLK`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_spi1_clk_dbi_sclk(&self) -> bool {
         *self == PB11_SELECT_A::SPI1_CLK_DBI_SCLK
     }
-    #[doc = "Checks if the value of the field is `CLK_FANOUT1`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_clk_fanout1(&self) -> bool {
         *self == PB11_SELECT_A::CLK_FANOUT1
     }
-    #[doc = "Checks if the value of the field is `UART1_CTS`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_uart1_cts(&self) -> bool {
         *self == PB11_SELECT_A::UART1_CTS
     }
-    #[doc = "Checks if the value of the field is `PB_EINT11`"]
+    #[doc = "`1110`"]
     #[inline(always)]
     pub fn is_pb_eint11(&self) -> bool {
         *self == PB11_SELECT_A::PB_EINT11
     }
-    #[doc = "Checks if the value of the field is `IO_DISABLE`"]
+    #[doc = "`1111`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
         *self == PB11_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `pb11_select` writer - "]
-pub type PB11_SELECT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB11_SELECT_A, 4, O>;
-impl<'a, const O: u8> PB11_SELECT_W<'a, O> {
+pub type PB11_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PB11_SELECT_A>;
+impl<'a, REG> PB11_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn input(self) -> &'a mut W {
+    pub fn input(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::INPUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::OUTPUT)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn dmic_data0(self) -> &'a mut W {
+    pub fn dmic_data0(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::DMIC_DATA0)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pwm2(self) -> &'a mut W {
+    pub fn pwm2(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::PWM2)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn twi0_sda(self) -> &'a mut W {
+    pub fn twi0_sda(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::TWI0_SDA)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_clk_dbi_sclk(self) -> &'a mut W {
+    pub fn spi1_clk_dbi_sclk(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::SPI1_CLK_DBI_SCLK)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn clk_fanout1(self) -> &'a mut W {
+    pub fn clk_fanout1(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::CLK_FANOUT1)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn uart1_cts(self) -> &'a mut W {
+    pub fn uart1_cts(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::UART1_CTS)
     }
     #[doc = "`1110`"]
     #[inline(always)]
-    pub fn pb_eint11(self) -> &'a mut W {
+    pub fn pb_eint11(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::PB_EINT11)
     }
     #[doc = "`1111`"]
     #[inline(always)]
-    pub fn io_disable(self) -> &'a mut W {
+    pub fn io_disable(self) -> &'a mut crate::W<REG> {
         self.variant(PB11_SELECT_A::IO_DISABLE)
     }
 }
 #[doc = "Field `pb12_select` reader - "]
-pub type PB12_SELECT_R = crate::FieldReader<u8, PB12_SELECT_A>;
+pub type PB12_SELECT_R = crate::FieldReader<PB12_SELECT_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -695,10 +687,13 @@ impl From<PB12_SELECT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for PB12_SELECT_A {
+    type Ux = u8;
+}
 impl PB12_SELECT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<PB12_SELECT_A> {
+    pub const fn variant(&self) -> Option<PB12_SELECT_A> {
         match self.bits {
             0 => Some(PB12_SELECT_A::INPUT),
             1 => Some(PB12_SELECT_A::OUTPUT),
@@ -713,109 +708,112 @@ impl PB12_SELECT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `INPUT`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
         *self == PB12_SELECT_A::INPUT
     }
-    #[doc = "Checks if the value of the field is `OUTPUT`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
         *self == PB12_SELECT_A::OUTPUT
     }
-    #[doc = "Checks if the value of the field is `DMIC_CLK`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_dmic_clk(&self) -> bool {
         *self == PB12_SELECT_A::DMIC_CLK
     }
-    #[doc = "Checks if the value of the field is `PWM0`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_pwm0(&self) -> bool {
         *self == PB12_SELECT_A::PWM0
     }
-    #[doc = "Checks if the value of the field is `OWA_IN`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_owa_in(&self) -> bool {
         *self == PB12_SELECT_A::OWA_IN
     }
-    #[doc = "Checks if the value of the field is `SPI1_CS_DBI_CSX`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_spi1_cs_dbi_csx(&self) -> bool {
         *self == PB12_SELECT_A::SPI1_CS_DBI_CSX
     }
-    #[doc = "Checks if the value of the field is `CLK_FANOUT2`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_clk_fanout2(&self) -> bool {
         *self == PB12_SELECT_A::CLK_FANOUT2
     }
-    #[doc = "Checks if the value of the field is `IR_RX`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_ir_rx(&self) -> bool {
         *self == PB12_SELECT_A::IR_RX
     }
-    #[doc = "Checks if the value of the field is `PB_EINT12`"]
+    #[doc = "`1110`"]
     #[inline(always)]
     pub fn is_pb_eint12(&self) -> bool {
         *self == PB12_SELECT_A::PB_EINT12
     }
-    #[doc = "Checks if the value of the field is `IO_DISABLE`"]
+    #[doc = "`1111`"]
     #[inline(always)]
     pub fn is_io_disable(&self) -> bool {
         *self == PB12_SELECT_A::IO_DISABLE
     }
 }
 #[doc = "Field `pb12_select` writer - "]
-pub type PB12_SELECT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, PB_CFG1_SPEC, u8, PB12_SELECT_A, 4, O>;
-impl<'a, const O: u8> PB12_SELECT_W<'a, O> {
+pub type PB12_SELECT_W<'a, REG> = crate::FieldWriter<'a, REG, 4, PB12_SELECT_A>;
+impl<'a, REG> PB12_SELECT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn input(self) -> &'a mut W {
+    pub fn input(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::INPUT)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn output(self) -> &'a mut W {
+    pub fn output(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::OUTPUT)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn dmic_clk(self) -> &'a mut W {
+    pub fn dmic_clk(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::DMIC_CLK)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn pwm0(self) -> &'a mut W {
+    pub fn pwm0(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::PWM0)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn owa_in(self) -> &'a mut W {
+    pub fn owa_in(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::OWA_IN)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn spi1_cs_dbi_csx(self) -> &'a mut W {
+    pub fn spi1_cs_dbi_csx(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::SPI1_CS_DBI_CSX)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn clk_fanout2(self) -> &'a mut W {
+    pub fn clk_fanout2(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::CLK_FANOUT2)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn ir_rx(self) -> &'a mut W {
+    pub fn ir_rx(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::IR_RX)
     }
     #[doc = "`1110`"]
     #[inline(always)]
-    pub fn pb_eint12(self) -> &'a mut W {
+    pub fn pb_eint12(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::PB_EINT12)
     }
     #[doc = "`1111`"]
     #[inline(always)]
-    pub fn io_disable(self) -> &'a mut W {
+    pub fn io_disable(self) -> &'a mut crate::W<REG> {
         self.variant(PB12_SELECT_A::IO_DISABLE)
     }
 }
@@ -850,52 +848,53 @@ impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]
     #[must_use]
-    pub fn pb8_select(&mut self) -> PB8_SELECT_W<0> {
-        PB8_SELECT_W::new(self)
+    pub fn pb8_select(&mut self) -> PB8_SELECT_W<PB_CFG1_SPEC> {
+        PB8_SELECT_W::new(self, 0)
     }
     #[doc = "Bits 4:7"]
     #[inline(always)]
     #[must_use]
-    pub fn pb9_select(&mut self) -> PB9_SELECT_W<4> {
-        PB9_SELECT_W::new(self)
+    pub fn pb9_select(&mut self) -> PB9_SELECT_W<PB_CFG1_SPEC> {
+        PB9_SELECT_W::new(self, 4)
     }
     #[doc = "Bits 8:11"]
     #[inline(always)]
     #[must_use]
-    pub fn pb10_select(&mut self) -> PB10_SELECT_W<8> {
-        PB10_SELECT_W::new(self)
+    pub fn pb10_select(&mut self) -> PB10_SELECT_W<PB_CFG1_SPEC> {
+        PB10_SELECT_W::new(self, 8)
     }
     #[doc = "Bits 12:15"]
     #[inline(always)]
     #[must_use]
-    pub fn pb11_select(&mut self) -> PB11_SELECT_W<12> {
-        PB11_SELECT_W::new(self)
+    pub fn pb11_select(&mut self) -> PB11_SELECT_W<PB_CFG1_SPEC> {
+        PB11_SELECT_W::new(self, 12)
     }
     #[doc = "Bits 16:19"]
     #[inline(always)]
     #[must_use]
-    pub fn pb12_select(&mut self) -> PB12_SELECT_W<16> {
-        PB12_SELECT_W::new(self)
+    pub fn pb12_select(&mut self) -> PB12_SELECT_W<PB_CFG1_SPEC> {
+        PB12_SELECT_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "PB Configure Register 1\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [pb_cfg1](index.html) module"]
+#[doc = "PB Configure Register 1\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`pb_cfg1::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`pb_cfg1::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PB_CFG1_SPEC;
 impl crate::RegisterSpec for PB_CFG1_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [pb_cfg1::R](R) reader structure"]
-impl crate::Readable for PB_CFG1_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [pb_cfg1::W](W) writer structure"]
+#[doc = "`read()` method returns [`pb_cfg1::R`](R) reader structure"]
+impl crate::Readable for PB_CFG1_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`pb_cfg1::W`](W) writer structure"]
 impl crate::Writable for PB_CFG1_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

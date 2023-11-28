@@ -1,41 +1,9 @@
 #[doc = "Register `twi_efr` reader"]
-pub struct R(crate::R<TWI_EFR_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TWI_EFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TWI_EFR_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TWI_EFR_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TWI_EFR_SPEC>;
 #[doc = "Register `twi_efr` writer"]
-pub struct W(crate::W<TWI_EFR_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TWI_EFR_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TWI_EFR_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TWI_EFR_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TWI_EFR_SPEC>;
 #[doc = "Field `dbn` reader - Data Byte Number Follow Read Command Control"]
-pub type DBN_R = crate::FieldReader<u8, DBN_A>;
+pub type DBN_R = crate::FieldReader<DBN_A>;
 #[doc = "Data Byte Number Follow Read Command Control\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -55,10 +23,13 @@ impl From<DBN_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DBN_A {
+    type Ux = u8;
+}
 impl DBN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DBN_A {
+    pub const fn variant(&self) -> DBN_A {
         match self.bits {
             0 => DBN_A::B0,
             1 => DBN_A::B1,
@@ -67,48 +38,52 @@ impl DBN_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `B0`"]
+    #[doc = "No data byte can be written after the read command"]
     #[inline(always)]
     pub fn is_b0(&self) -> bool {
         *self == DBN_A::B0
     }
-    #[doc = "Checks if the value of the field is `B1`"]
+    #[doc = "1-byte data can be written after the read command"]
     #[inline(always)]
     pub fn is_b1(&self) -> bool {
         *self == DBN_A::B1
     }
-    #[doc = "Checks if the value of the field is `B2`"]
+    #[doc = "2-byte data can be written after the read command"]
     #[inline(always)]
     pub fn is_b2(&self) -> bool {
         *self == DBN_A::B2
     }
-    #[doc = "Checks if the value of the field is `B3`"]
+    #[doc = "3-byte data can be written after the read command"]
     #[inline(always)]
     pub fn is_b3(&self) -> bool {
         *self == DBN_A::B3
     }
 }
 #[doc = "Field `dbn` writer - Data Byte Number Follow Read Command Control"]
-pub type DBN_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TWI_EFR_SPEC, u8, DBN_A, 2, O>;
-impl<'a, const O: u8> DBN_W<'a, O> {
+pub type DBN_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 2, DBN_A>;
+impl<'a, REG> DBN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "No data byte can be written after the read command"]
     #[inline(always)]
-    pub fn b0(self) -> &'a mut W {
+    pub fn b0(self) -> &'a mut crate::W<REG> {
         self.variant(DBN_A::B0)
     }
     #[doc = "1-byte data can be written after the read command"]
     #[inline(always)]
-    pub fn b1(self) -> &'a mut W {
+    pub fn b1(self) -> &'a mut crate::W<REG> {
         self.variant(DBN_A::B1)
     }
     #[doc = "2-byte data can be written after the read command"]
     #[inline(always)]
-    pub fn b2(self) -> &'a mut W {
+    pub fn b2(self) -> &'a mut crate::W<REG> {
         self.variant(DBN_A::B2)
     }
     #[doc = "3-byte data can be written after the read command"]
     #[inline(always)]
-    pub fn b3(self) -> &'a mut W {
+    pub fn b3(self) -> &'a mut crate::W<REG> {
         self.variant(DBN_A::B3)
     }
 }
@@ -123,28 +98,29 @@ impl W {
     #[doc = "Bits 0:1 - Data Byte Number Follow Read Command Control"]
     #[inline(always)]
     #[must_use]
-    pub fn dbn(&mut self) -> DBN_W<0> {
-        DBN_W::new(self)
+    pub fn dbn(&mut self) -> DBN_W<TWI_EFR_SPEC> {
+        DBN_W::new(self, 0)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TWI Enhance Feature Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [twi_efr](index.html) module"]
+#[doc = "TWI Enhance Feature Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`twi_efr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`twi_efr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TWI_EFR_SPEC;
 impl crate::RegisterSpec for TWI_EFR_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [twi_efr::R](R) reader structure"]
-impl crate::Readable for TWI_EFR_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [twi_efr::W](W) writer structure"]
+#[doc = "`read()` method returns [`twi_efr::R`](R) reader structure"]
+impl crate::Readable for TWI_EFR_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`twi_efr::W`](W) writer structure"]
 impl crate::Writable for TWI_EFR_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

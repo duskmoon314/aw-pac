@@ -1,49 +1,15 @@
 #[doc = "Register `fsync_gen_dly` reader"]
-pub struct R(crate::R<FSYNC_GEN_DLY_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<FSYNC_GEN_DLY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<FSYNC_GEN_DLY_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<FSYNC_GEN_DLY_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<FSYNC_GEN_DLY_SPEC>;
 #[doc = "Register `fsync_gen_dly` writer"]
-pub struct W(crate::W<FSYNC_GEN_DLY_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<FSYNC_GEN_DLY_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<FSYNC_GEN_DLY_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<FSYNC_GEN_DLY_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<FSYNC_GEN_DLY_SPEC>;
 #[doc = "Field `sensor_act1_time` reader - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act1_time+1."]
-pub type SENSOR_ACT1_TIME_R = crate::FieldReader<u16, u16>;
+pub type SENSOR_ACT1_TIME_R = crate::FieldReader<u16>;
 #[doc = "Field `sensor_act1_time` writer - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act1_time+1."]
-pub type SENSOR_ACT1_TIME_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, FSYNC_GEN_DLY_SPEC, u16, u16, 12, O>;
+pub type SENSOR_ACT1_TIME_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `sensor_act0_time` reader - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act0_time+1."]
-pub type SENSOR_ACT0_TIME_R = crate::FieldReader<u16, u16>;
+pub type SENSOR_ACT0_TIME_R = crate::FieldReader<u16>;
 #[doc = "Field `sensor_act0_time` writer - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act0_time+1."]
-pub type SENSOR_ACT0_TIME_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, FSYNC_GEN_DLY_SPEC, u16, u16, 12, O>;
+pub type SENSOR_ACT0_TIME_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 impl R {
     #[doc = "Bits 0:11 - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act1_time+1."]
     #[inline(always)]
@@ -60,34 +26,35 @@ impl W {
     #[doc = "Bits 0:11 - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act1_time+1."]
     #[inline(always)]
     #[must_use]
-    pub fn sensor_act1_time(&mut self) -> SENSOR_ACT1_TIME_W<0> {
-        SENSOR_ACT1_TIME_W::new(self)
+    pub fn sensor_act1_time(&mut self) -> SENSOR_ACT1_TIME_W<FSYNC_GEN_DLY_SPEC> {
+        SENSOR_ACT1_TIME_W::new(self, 0)
     }
     #[doc = "Bits 16:27 - Delay 0-4095 Pixel clk Period\n\nThe actual delay is sensor_act0_time+1."]
     #[inline(always)]
     #[must_use]
-    pub fn sensor_act0_time(&mut self) -> SENSOR_ACT0_TIME_W<16> {
-        SENSOR_ACT0_TIME_W::new(self)
+    pub fn sensor_act0_time(&mut self) -> SENSOR_ACT0_TIME_W<FSYNC_GEN_DLY_SPEC> {
+        SENSOR_ACT0_TIME_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "FSYNC_GEN_DLY\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [fsync_gen_dly](index.html) module"]
+#[doc = "FSYNC_GEN_DLY\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`fsync_gen_dly::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`fsync_gen_dly::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct FSYNC_GEN_DLY_SPEC;
 impl crate::RegisterSpec for FSYNC_GEN_DLY_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [fsync_gen_dly::R](R) reader structure"]
-impl crate::Readable for FSYNC_GEN_DLY_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [fsync_gen_dly::W](W) writer structure"]
+#[doc = "`read()` method returns [`fsync_gen_dly::R`](R) reader structure"]
+impl crate::Readable for FSYNC_GEN_DLY_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`fsync_gen_dly::W`](W) writer structure"]
 impl crate::Writable for FSYNC_GEN_DLY_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

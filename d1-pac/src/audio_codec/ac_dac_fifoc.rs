@@ -1,39 +1,7 @@
 #[doc = "Register `ac_dac_fifoc` reader"]
-pub struct R(crate::R<AC_DAC_FIFOC_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<AC_DAC_FIFOC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<AC_DAC_FIFOC_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<AC_DAC_FIFOC_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<AC_DAC_FIFOC_SPEC>;
 #[doc = "Register `ac_dac_fifoc` writer"]
-pub struct W(crate::W<AC_DAC_FIFOC_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<AC_DAC_FIFOC_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<AC_DAC_FIFOC_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<AC_DAC_FIFOC_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<AC_DAC_FIFOC_SPEC>;
 #[doc = "Field `fifo_flush` reader - DAC FIFO Flush"]
 pub type FIFO_FLUSH_R = crate::BitReader<FIFO_FLUSH_A>;
 #[doc = "DAC FIFO Flush\n\nValue on reset: 0"]
@@ -53,35 +21,37 @@ impl From<FIFO_FLUSH_A> for bool {
 impl FIFO_FLUSH_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_FLUSH_A {
+    pub const fn variant(&self) -> FIFO_FLUSH_A {
         match self.bits {
             false => FIFO_FLUSH_A::SELF_CLEAR,
             true => FIFO_FLUSH_A::FLUSH,
         }
     }
-    #[doc = "Checks if the value of the field is `SELF_CLEAR`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_self_clear(&self) -> bool {
         *self == FIFO_FLUSH_A::SELF_CLEAR
     }
-    #[doc = "Checks if the value of the field is `FLUSH`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_flush(&self) -> bool {
         *self == FIFO_FLUSH_A::FLUSH
     }
 }
 #[doc = "Field `fifo_flush` writer - DAC FIFO Flush"]
-pub type FIFO_FLUSH_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, FIFO_FLUSH_A, O>;
-impl<'a, const O: u8> FIFO_FLUSH_W<'a, O> {
+pub type FIFO_FLUSH_W<'a, REG> = crate::BitWriter<'a, REG, FIFO_FLUSH_A>;
+impl<'a, REG> FIFO_FLUSH_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn self_clear(self) -> &'a mut W {
+    pub fn self_clear(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_FLUSH_A::SELF_CLEAR)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn flush(self) -> &'a mut W {
+    pub fn flush(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_FLUSH_A::FLUSH)
     }
 }
@@ -104,35 +74,37 @@ impl From<FIFO_OVERRUN_IRQ_EN_A> for bool {
 impl FIFO_OVERRUN_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_OVERRUN_IRQ_EN_A {
+    pub const fn variant(&self) -> FIFO_OVERRUN_IRQ_EN_A {
         match self.bits {
             false => FIFO_OVERRUN_IRQ_EN_A::DISABLE,
             true => FIFO_OVERRUN_IRQ_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == FIFO_OVERRUN_IRQ_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == FIFO_OVERRUN_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `fifo_overrun_irq_en` writer - DAC FIFO Overrun IRQ Enable"]
-pub type FIFO_OVERRUN_IRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, FIFO_OVERRUN_IRQ_EN_A, O>;
-impl<'a, const O: u8> FIFO_OVERRUN_IRQ_EN_W<'a, O> {
+pub type FIFO_OVERRUN_IRQ_EN_W<'a, REG> = crate::BitWriter<'a, REG, FIFO_OVERRUN_IRQ_EN_A>;
+impl<'a, REG> FIFO_OVERRUN_IRQ_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_OVERRUN_IRQ_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_OVERRUN_IRQ_EN_A::ENABLE)
     }
 }
@@ -155,35 +127,37 @@ impl From<FIFO_UNDERRUN_IRQ_EN_A> for bool {
 impl FIFO_UNDERRUN_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIFO_UNDERRUN_IRQ_EN_A {
+    pub const fn variant(&self) -> FIFO_UNDERRUN_IRQ_EN_A {
         match self.bits {
             false => FIFO_UNDERRUN_IRQ_EN_A::DISABLE,
             true => FIFO_UNDERRUN_IRQ_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == FIFO_UNDERRUN_IRQ_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == FIFO_UNDERRUN_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `fifo_underrun_irq_en` writer - DAC FIFO Underrun IRQ Enable"]
-pub type FIFO_UNDERRUN_IRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, FIFO_UNDERRUN_IRQ_EN_A, O>;
-impl<'a, const O: u8> FIFO_UNDERRUN_IRQ_EN_W<'a, O> {
+pub type FIFO_UNDERRUN_IRQ_EN_W<'a, REG> = crate::BitWriter<'a, REG, FIFO_UNDERRUN_IRQ_EN_A>;
+impl<'a, REG> FIFO_UNDERRUN_IRQ_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_UNDERRUN_IRQ_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_UNDERRUN_IRQ_EN_A::ENABLE)
     }
 }
@@ -206,35 +180,37 @@ impl From<DAC_IRQ_EN_A> for bool {
 impl DAC_IRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DAC_IRQ_EN_A {
+    pub const fn variant(&self) -> DAC_IRQ_EN_A {
         match self.bits {
             false => DAC_IRQ_EN_A::DISABLE,
             true => DAC_IRQ_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == DAC_IRQ_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == DAC_IRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `dac_irq_en` writer - DAC FIFO Empty IRQ Enable"]
-pub type DAC_IRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, DAC_IRQ_EN_A, O>;
-impl<'a, const O: u8> DAC_IRQ_EN_W<'a, O> {
+pub type DAC_IRQ_EN_W<'a, REG> = crate::BitWriter<'a, REG, DAC_IRQ_EN_A>;
+impl<'a, REG> DAC_IRQ_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_IRQ_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_IRQ_EN_A::ENABLE)
     }
 }
@@ -257,35 +233,37 @@ impl From<DAC_DRQ_EN_A> for bool {
 impl DAC_DRQ_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DAC_DRQ_EN_A {
+    pub const fn variant(&self) -> DAC_DRQ_EN_A {
         match self.bits {
             false => DAC_DRQ_EN_A::DISABLE,
             true => DAC_DRQ_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == DAC_DRQ_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == DAC_DRQ_EN_A::ENABLE
     }
 }
 #[doc = "Field `dac_drq_en` writer - DAC FIFO Empty DRQ Enable"]
-pub type DAC_DRQ_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, DAC_DRQ_EN_A, O>;
-impl<'a, const O: u8> DAC_DRQ_EN_W<'a, O> {
+pub type DAC_DRQ_EN_W<'a, REG> = crate::BitWriter<'a, REG, DAC_DRQ_EN_A>;
+impl<'a, REG> DAC_DRQ_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_DRQ_EN_A::DISABLE)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_DRQ_EN_A::ENABLE)
     }
 }
@@ -308,35 +286,37 @@ impl From<TX_SAMPLE_BITS_A> for bool {
 impl TX_SAMPLE_BITS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_SAMPLE_BITS_A {
+    pub const fn variant(&self) -> TX_SAMPLE_BITS_A {
         match self.bits {
             false => TX_SAMPLE_BITS_A::BITS_16,
             true => TX_SAMPLE_BITS_A::BITS_20,
         }
     }
-    #[doc = "Checks if the value of the field is `BITS_16`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_bits_16(&self) -> bool {
         *self == TX_SAMPLE_BITS_A::BITS_16
     }
-    #[doc = "Checks if the value of the field is `BITS_20`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_bits_20(&self) -> bool {
         *self == TX_SAMPLE_BITS_A::BITS_20
     }
 }
 #[doc = "Field `tx_sample_bits` writer - Transmitting Audio Sample Resolution"]
-pub type TX_SAMPLE_BITS_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, TX_SAMPLE_BITS_A, O>;
-impl<'a, const O: u8> TX_SAMPLE_BITS_W<'a, O> {
+pub type TX_SAMPLE_BITS_W<'a, REG> = crate::BitWriter<'a, REG, TX_SAMPLE_BITS_A>;
+impl<'a, REG> TX_SAMPLE_BITS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn bits_16(self) -> &'a mut W {
+    pub fn bits_16(self) -> &'a mut crate::W<REG> {
         self.variant(TX_SAMPLE_BITS_A::BITS_16)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn bits_20(self) -> &'a mut W {
+    pub fn bits_20(self) -> &'a mut crate::W<REG> {
         self.variant(TX_SAMPLE_BITS_A::BITS_20)
     }
 }
@@ -359,40 +339,42 @@ impl From<DAC_MONO_EN_A> for bool {
 impl DAC_MONO_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DAC_MONO_EN_A {
+    pub const fn variant(&self) -> DAC_MONO_EN_A {
         match self.bits {
             false => DAC_MONO_EN_A::STEREO,
             true => DAC_MONO_EN_A::MONO,
         }
     }
-    #[doc = "Checks if the value of the field is `STEREO`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_stereo(&self) -> bool {
         *self == DAC_MONO_EN_A::STEREO
     }
-    #[doc = "Checks if the value of the field is `MONO`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_mono(&self) -> bool {
         *self == DAC_MONO_EN_A::MONO
     }
 }
 #[doc = "Field `dac_mono_en` writer - DAC Mono Enable"]
-pub type DAC_MONO_EN_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, DAC_MONO_EN_A, O>;
-impl<'a, const O: u8> DAC_MONO_EN_W<'a, O> {
+pub type DAC_MONO_EN_W<'a, REG> = crate::BitWriter<'a, REG, DAC_MONO_EN_A>;
+impl<'a, REG> DAC_MONO_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn stereo(self) -> &'a mut W {
+    pub fn stereo(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_MONO_EN_A::STEREO)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn mono(self) -> &'a mut W {
+    pub fn mono(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_MONO_EN_A::MONO)
     }
 }
 #[doc = "Field `dac_drq_clr_cnt` reader - DAC DRQ clear count"]
-pub type DAC_DRQ_CLR_CNT_R = crate::FieldReader<u8, DAC_DRQ_CLR_CNT_A>;
+pub type DAC_DRQ_CLR_CNT_R = crate::FieldReader<DAC_DRQ_CLR_CNT_A>;
 #[doc = "DAC DRQ clear count\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -412,10 +394,13 @@ impl From<DAC_DRQ_CLR_CNT_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DAC_DRQ_CLR_CNT_A {
+    type Ux = u8;
+}
 impl DAC_DRQ_CLR_CNT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<DAC_DRQ_CLR_CNT_A> {
+    pub const fn variant(&self) -> Option<DAC_DRQ_CLR_CNT_A> {
         match self.bits {
             0 => Some(DAC_DRQ_CLR_CNT_A::WLEVEL),
             1 => Some(DAC_DRQ_CLR_CNT_A::N4),
@@ -424,59 +409,61 @@ impl DAC_DRQ_CLR_CNT_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `WLEVEL`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_wlevel(&self) -> bool {
         *self == DAC_DRQ_CLR_CNT_A::WLEVEL
     }
-    #[doc = "Checks if the value of the field is `N4`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_n4(&self) -> bool {
         *self == DAC_DRQ_CLR_CNT_A::N4
     }
-    #[doc = "Checks if the value of the field is `N8`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_n8(&self) -> bool {
         *self == DAC_DRQ_CLR_CNT_A::N8
     }
-    #[doc = "Checks if the value of the field is `N16`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_n16(&self) -> bool {
         *self == DAC_DRQ_CLR_CNT_A::N16
     }
 }
 #[doc = "Field `dac_drq_clr_cnt` writer - DAC DRQ clear count"]
-pub type DAC_DRQ_CLR_CNT_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, AC_DAC_FIFOC_SPEC, u8, DAC_DRQ_CLR_CNT_A, 7, O>;
-impl<'a, const O: u8> DAC_DRQ_CLR_CNT_W<'a, O> {
+pub type DAC_DRQ_CLR_CNT_W<'a, REG> = crate::FieldWriter<'a, REG, 7, DAC_DRQ_CLR_CNT_A>;
+impl<'a, REG> DAC_DRQ_CLR_CNT_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn wlevel(self) -> &'a mut W {
+    pub fn wlevel(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_DRQ_CLR_CNT_A::WLEVEL)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn n4(self) -> &'a mut W {
+    pub fn n4(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_DRQ_CLR_CNT_A::N4)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn n8(self) -> &'a mut W {
+    pub fn n8(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_DRQ_CLR_CNT_A::N8)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn n16(self) -> &'a mut W {
+    pub fn n16(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_DRQ_CLR_CNT_A::N16)
     }
 }
 #[doc = "Field `tx_trig_level` reader - TX FIFO Empty Trigger Level"]
-pub type TX_TRIG_LEVEL_R = crate::FieldReader<u8, u8>;
+pub type TX_TRIG_LEVEL_R = crate::FieldReader;
 #[doc = "Field `tx_trig_level` writer - TX FIFO Empty Trigger Level"]
-pub type TX_TRIG_LEVEL_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, AC_DAC_FIFOC_SPEC, u8, u8, 7, O>;
+pub type TX_TRIG_LEVEL_W<'a, REG> = crate::FieldWriter<'a, REG, 7>;
 #[doc = "Field `fifo_mode` reader - "]
-pub type FIFO_MODE_R = crate::FieldReader<u8, FIFO_MODE_A>;
+pub type FIFO_MODE_R = crate::FieldReader<FIFO_MODE_A>;
 #[doc = "\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -492,39 +479,45 @@ impl From<FIFO_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for FIFO_MODE_A {
+    type Ux = u8;
+}
 impl FIFO_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<FIFO_MODE_A> {
+    pub const fn variant(&self) -> Option<FIFO_MODE_A> {
         match self.bits {
             0 => Some(FIFO_MODE_A::BIG_ENDIAN),
             1 => Some(FIFO_MODE_A::LITTLE_ENDIAN),
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `BIG_ENDIAN`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_big_endian(&self) -> bool {
         *self == FIFO_MODE_A::BIG_ENDIAN
     }
-    #[doc = "Checks if the value of the field is `LITTLE_ENDIAN`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_little_endian(&self) -> bool {
         *self == FIFO_MODE_A::LITTLE_ENDIAN
     }
 }
 #[doc = "Field `fifo_mode` writer - "]
-pub type FIFO_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, AC_DAC_FIFOC_SPEC, u8, FIFO_MODE_A, 2, O>;
-impl<'a, const O: u8> FIFO_MODE_W<'a, O> {
+pub type FIFO_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 2, FIFO_MODE_A>;
+impl<'a, REG> FIFO_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn big_endian(self) -> &'a mut W {
+    pub fn big_endian(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_MODE_A::BIG_ENDIAN)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn little_endian(self) -> &'a mut W {
+    pub fn little_endian(self) -> &'a mut crate::W<REG> {
         self.variant(FIFO_MODE_A::LITTLE_ENDIAN)
     }
 }
@@ -547,35 +540,37 @@ impl From<SEND_LAST_A> for bool {
 impl SEND_LAST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> SEND_LAST_A {
+    pub const fn variant(&self) -> SEND_LAST_A {
         match self.bits {
             false => SEND_LAST_A::ZERO,
             true => SEND_LAST_A::LAST,
         }
     }
-    #[doc = "Checks if the value of the field is `ZERO`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_zero(&self) -> bool {
         *self == SEND_LAST_A::ZERO
     }
-    #[doc = "Checks if the value of the field is `LAST`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_last(&self) -> bool {
         *self == SEND_LAST_A::LAST
     }
 }
 #[doc = "Field `send_last` writer - Audio sample select when TX FIFO underrun"]
-pub type SEND_LAST_W<'a, const O: u8> =
-    crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, SEND_LAST_A, O>;
-impl<'a, const O: u8> SEND_LAST_W<'a, O> {
+pub type SEND_LAST_W<'a, REG> = crate::BitWriter<'a, REG, SEND_LAST_A>;
+impl<'a, REG> SEND_LAST_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn zero(self) -> &'a mut W {
+    pub fn zero(self) -> &'a mut crate::W<REG> {
         self.variant(SEND_LAST_A::ZERO)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn last(self) -> &'a mut W {
+    pub fn last(self) -> &'a mut crate::W<REG> {
         self.variant(SEND_LAST_A::LAST)
     }
 }
@@ -598,39 +593,42 @@ impl From<FIR_VER_A> for bool {
 impl FIR_VER_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> FIR_VER_A {
+    pub const fn variant(&self) -> FIR_VER_A {
         match self.bits {
             false => FIR_VER_A::TAP_64,
             true => FIR_VER_A::TAP_32,
         }
     }
-    #[doc = "Checks if the value of the field is `TAP_64`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_tap_64(&self) -> bool {
         *self == FIR_VER_A::TAP_64
     }
-    #[doc = "Checks if the value of the field is `TAP_32`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_tap_32(&self) -> bool {
         *self == FIR_VER_A::TAP_32
     }
 }
 #[doc = "Field `fir_ver` writer - FIR Version"]
-pub type FIR_VER_W<'a, const O: u8> = crate::BitWriter<'a, u32, AC_DAC_FIFOC_SPEC, FIR_VER_A, O>;
-impl<'a, const O: u8> FIR_VER_W<'a, O> {
+pub type FIR_VER_W<'a, REG> = crate::BitWriter<'a, REG, FIR_VER_A>;
+impl<'a, REG> FIR_VER_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn tap_64(self) -> &'a mut W {
+    pub fn tap_64(self) -> &'a mut crate::W<REG> {
         self.variant(FIR_VER_A::TAP_64)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn tap_32(self) -> &'a mut W {
+    pub fn tap_32(self) -> &'a mut crate::W<REG> {
         self.variant(FIR_VER_A::TAP_32)
     }
 }
 #[doc = "Field `dac_fs` reader - Sample Rate of DAC"]
-pub type DAC_FS_R = crate::FieldReader<u8, DAC_FS_A>;
+pub type DAC_FS_R = crate::FieldReader<DAC_FS_A>;
 #[doc = "Sample Rate of DAC\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -658,10 +656,13 @@ impl From<DAC_FS_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for DAC_FS_A {
+    type Ux = u8;
+}
 impl DAC_FS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> DAC_FS_A {
+    pub const fn variant(&self) -> DAC_FS_A {
         match self.bits {
             0 => DAC_FS_A::FS48K,
             1 => DAC_FS_A::FS32K,
@@ -674,89 +675,92 @@ impl DAC_FS_R {
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `FS48K`"]
+    #[doc = "`0`"]
     #[inline(always)]
     pub fn is_fs48k(&self) -> bool {
         *self == DAC_FS_A::FS48K
     }
-    #[doc = "Checks if the value of the field is `FS32K`"]
+    #[doc = "`1`"]
     #[inline(always)]
     pub fn is_fs32k(&self) -> bool {
         *self == DAC_FS_A::FS32K
     }
-    #[doc = "Checks if the value of the field is `FS24K`"]
+    #[doc = "`10`"]
     #[inline(always)]
     pub fn is_fs24k(&self) -> bool {
         *self == DAC_FS_A::FS24K
     }
-    #[doc = "Checks if the value of the field is `FS16K`"]
+    #[doc = "`11`"]
     #[inline(always)]
     pub fn is_fs16k(&self) -> bool {
         *self == DAC_FS_A::FS16K
     }
-    #[doc = "Checks if the value of the field is `FS12K`"]
+    #[doc = "`100`"]
     #[inline(always)]
     pub fn is_fs12k(&self) -> bool {
         *self == DAC_FS_A::FS12K
     }
-    #[doc = "Checks if the value of the field is `FS8K`"]
+    #[doc = "`101`"]
     #[inline(always)]
     pub fn is_fs8k(&self) -> bool {
         *self == DAC_FS_A::FS8K
     }
-    #[doc = "Checks if the value of the field is `FS192K`"]
+    #[doc = "`110`"]
     #[inline(always)]
     pub fn is_fs192k(&self) -> bool {
         *self == DAC_FS_A::FS192K
     }
-    #[doc = "Checks if the value of the field is `FS96K`"]
+    #[doc = "`111`"]
     #[inline(always)]
     pub fn is_fs96k(&self) -> bool {
         *self == DAC_FS_A::FS96K
     }
 }
 #[doc = "Field `dac_fs` writer - Sample Rate of DAC"]
-pub type DAC_FS_W<'a, const O: u8> =
-    crate::FieldWriterSafe<'a, u32, AC_DAC_FIFOC_SPEC, u8, DAC_FS_A, 3, O>;
-impl<'a, const O: u8> DAC_FS_W<'a, O> {
+pub type DAC_FS_W<'a, REG> = crate::FieldWriterSafe<'a, REG, 3, DAC_FS_A>;
+impl<'a, REG> DAC_FS_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "`0`"]
     #[inline(always)]
-    pub fn fs48k(self) -> &'a mut W {
+    pub fn fs48k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS48K)
     }
     #[doc = "`1`"]
     #[inline(always)]
-    pub fn fs32k(self) -> &'a mut W {
+    pub fn fs32k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS32K)
     }
     #[doc = "`10`"]
     #[inline(always)]
-    pub fn fs24k(self) -> &'a mut W {
+    pub fn fs24k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS24K)
     }
     #[doc = "`11`"]
     #[inline(always)]
-    pub fn fs16k(self) -> &'a mut W {
+    pub fn fs16k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS16K)
     }
     #[doc = "`100`"]
     #[inline(always)]
-    pub fn fs12k(self) -> &'a mut W {
+    pub fn fs12k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS12K)
     }
     #[doc = "`101`"]
     #[inline(always)]
-    pub fn fs8k(self) -> &'a mut W {
+    pub fn fs8k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS8K)
     }
     #[doc = "`110`"]
     #[inline(always)]
-    pub fn fs192k(self) -> &'a mut W {
+    pub fn fs192k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS192K)
     }
     #[doc = "`111`"]
     #[inline(always)]
-    pub fn fs96k(self) -> &'a mut W {
+    pub fn fs96k(self) -> &'a mut crate::W<REG> {
         self.variant(DAC_FS_A::FS96K)
     }
 }
@@ -831,100 +835,101 @@ impl W {
     #[doc = "Bit 0 - DAC FIFO Flush"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_flush(&mut self) -> FIFO_FLUSH_W<0> {
-        FIFO_FLUSH_W::new(self)
+    pub fn fifo_flush(&mut self) -> FIFO_FLUSH_W<AC_DAC_FIFOC_SPEC> {
+        FIFO_FLUSH_W::new(self, 0)
     }
     #[doc = "Bit 1 - DAC FIFO Overrun IRQ Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_overrun_irq_en(&mut self) -> FIFO_OVERRUN_IRQ_EN_W<1> {
-        FIFO_OVERRUN_IRQ_EN_W::new(self)
+    pub fn fifo_overrun_irq_en(&mut self) -> FIFO_OVERRUN_IRQ_EN_W<AC_DAC_FIFOC_SPEC> {
+        FIFO_OVERRUN_IRQ_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - DAC FIFO Underrun IRQ Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_underrun_irq_en(&mut self) -> FIFO_UNDERRUN_IRQ_EN_W<2> {
-        FIFO_UNDERRUN_IRQ_EN_W::new(self)
+    pub fn fifo_underrun_irq_en(&mut self) -> FIFO_UNDERRUN_IRQ_EN_W<AC_DAC_FIFOC_SPEC> {
+        FIFO_UNDERRUN_IRQ_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - DAC FIFO Empty IRQ Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_irq_en(&mut self) -> DAC_IRQ_EN_W<3> {
-        DAC_IRQ_EN_W::new(self)
+    pub fn dac_irq_en(&mut self) -> DAC_IRQ_EN_W<AC_DAC_FIFOC_SPEC> {
+        DAC_IRQ_EN_W::new(self, 3)
     }
     #[doc = "Bit 4 - DAC FIFO Empty DRQ Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_drq_en(&mut self) -> DAC_DRQ_EN_W<4> {
-        DAC_DRQ_EN_W::new(self)
+    pub fn dac_drq_en(&mut self) -> DAC_DRQ_EN_W<AC_DAC_FIFOC_SPEC> {
+        DAC_DRQ_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmitting Audio Sample Resolution"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_sample_bits(&mut self) -> TX_SAMPLE_BITS_W<5> {
-        TX_SAMPLE_BITS_W::new(self)
+    pub fn tx_sample_bits(&mut self) -> TX_SAMPLE_BITS_W<AC_DAC_FIFOC_SPEC> {
+        TX_SAMPLE_BITS_W::new(self, 5)
     }
     #[doc = "Bit 6 - DAC Mono Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_mono_en(&mut self) -> DAC_MONO_EN_W<6> {
-        DAC_MONO_EN_W::new(self)
+    pub fn dac_mono_en(&mut self) -> DAC_MONO_EN_W<AC_DAC_FIFOC_SPEC> {
+        DAC_MONO_EN_W::new(self, 6)
     }
     #[doc = "Bits 8:14 - DAC DRQ clear count"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_drq_clr_cnt(&mut self) -> DAC_DRQ_CLR_CNT_W<8> {
-        DAC_DRQ_CLR_CNT_W::new(self)
+    pub fn dac_drq_clr_cnt(&mut self) -> DAC_DRQ_CLR_CNT_W<AC_DAC_FIFOC_SPEC> {
+        DAC_DRQ_CLR_CNT_W::new(self, 8)
     }
     #[doc = "Bits 8:14 - TX FIFO Empty Trigger Level"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_trig_level(&mut self) -> TX_TRIG_LEVEL_W<8> {
-        TX_TRIG_LEVEL_W::new(self)
+    pub fn tx_trig_level(&mut self) -> TX_TRIG_LEVEL_W<AC_DAC_FIFOC_SPEC> {
+        TX_TRIG_LEVEL_W::new(self, 8)
     }
     #[doc = "Bits 24:25"]
     #[inline(always)]
     #[must_use]
-    pub fn fifo_mode(&mut self) -> FIFO_MODE_W<24> {
-        FIFO_MODE_W::new(self)
+    pub fn fifo_mode(&mut self) -> FIFO_MODE_W<AC_DAC_FIFOC_SPEC> {
+        FIFO_MODE_W::new(self, 24)
     }
     #[doc = "Bit 26 - Audio sample select when TX FIFO underrun"]
     #[inline(always)]
     #[must_use]
-    pub fn send_last(&mut self) -> SEND_LAST_W<26> {
-        SEND_LAST_W::new(self)
+    pub fn send_last(&mut self) -> SEND_LAST_W<AC_DAC_FIFOC_SPEC> {
+        SEND_LAST_W::new(self, 26)
     }
     #[doc = "Bit 28 - FIR Version"]
     #[inline(always)]
     #[must_use]
-    pub fn fir_ver(&mut self) -> FIR_VER_W<28> {
-        FIR_VER_W::new(self)
+    pub fn fir_ver(&mut self) -> FIR_VER_W<AC_DAC_FIFOC_SPEC> {
+        FIR_VER_W::new(self, 28)
     }
     #[doc = "Bits 29:31 - Sample Rate of DAC"]
     #[inline(always)]
     #[must_use]
-    pub fn dac_fs(&mut self) -> DAC_FS_W<29> {
-        DAC_FS_W::new(self)
+    pub fn dac_fs(&mut self) -> DAC_FS_W<AC_DAC_FIFOC_SPEC> {
+        DAC_FS_W::new(self, 29)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "DAC FIFO Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [ac_dac_fifoc](index.html) module"]
+#[doc = "DAC FIFO Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`ac_dac_fifoc::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`ac_dac_fifoc::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AC_DAC_FIFOC_SPEC;
 impl crate::RegisterSpec for AC_DAC_FIFOC_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [ac_dac_fifoc::R](R) reader structure"]
-impl crate::Readable for AC_DAC_FIFOC_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [ac_dac_fifoc::W](W) writer structure"]
+#[doc = "`read()` method returns [`ac_dac_fifoc::R`](R) reader structure"]
+impl crate::Readable for AC_DAC_FIFOC_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`ac_dac_fifoc::W`](W) writer structure"]
 impl crate::Writable for AC_DAC_FIFOC_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

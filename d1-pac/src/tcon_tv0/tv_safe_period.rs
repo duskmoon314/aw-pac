@@ -1,41 +1,9 @@
 #[doc = "Register `tv_safe_period` reader"]
-pub struct R(crate::R<TV_SAFE_PERIOD_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<TV_SAFE_PERIOD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<TV_SAFE_PERIOD_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<TV_SAFE_PERIOD_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<TV_SAFE_PERIOD_SPEC>;
 #[doc = "Register `tv_safe_period` writer"]
-pub struct W(crate::W<TV_SAFE_PERIOD_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<TV_SAFE_PERIOD_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<TV_SAFE_PERIOD_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<TV_SAFE_PERIOD_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<TV_SAFE_PERIOD_SPEC>;
 #[doc = "Field `safe_period_mode` reader - Safe Period Mode"]
-pub type SAFE_PERIOD_MODE_R = crate::FieldReader<u8, SAFE_PERIOD_MODE_A>;
+pub type SAFE_PERIOD_MODE_R = crate::FieldReader<SAFE_PERIOD_MODE_A>;
 #[doc = "Safe Period Mode\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
@@ -57,10 +25,13 @@ impl From<SAFE_PERIOD_MODE_A> for u8 {
         variant as _
     }
 }
+impl crate::FieldSpec for SAFE_PERIOD_MODE_A {
+    type Ux = u8;
+}
 impl SAFE_PERIOD_MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> Option<SAFE_PERIOD_MODE_A> {
+    pub const fn variant(&self) -> Option<SAFE_PERIOD_MODE_A> {
         match self.bits {
             0 => Some(SAFE_PERIOD_MODE_A::UNSAFE),
             1 => Some(SAFE_PERIOD_MODE_A::SAFE),
@@ -70,72 +41,73 @@ impl SAFE_PERIOD_MODE_R {
             _ => None,
         }
     }
-    #[doc = "Checks if the value of the field is `UNSAFE`"]
+    #[doc = "unsafe"]
     #[inline(always)]
     pub fn is_unsafe(&self) -> bool {
         *self == SAFE_PERIOD_MODE_A::UNSAFE
     }
-    #[doc = "Checks if the value of the field is `SAFE`"]
+    #[doc = "safe"]
     #[inline(always)]
     pub fn is_safe(&self) -> bool {
         *self == SAFE_PERIOD_MODE_A::SAFE
     }
-    #[doc = "Checks if the value of the field is `SAFE_LINE_BUF_CURR_NUM_GT_SAFE_PERIOD_FIFO_NUM`"]
+    #[doc = "safe at LINE_BUF_CURR_NUM > SAFE_PERIOD_FIFO_NUM"]
     #[inline(always)]
     pub fn is_safe_line_buf_curr_num_gt_safe_period_fifo_num(&self) -> bool {
         *self == SAFE_PERIOD_MODE_A::SAFE_LINE_BUF_CURR_NUM_GT_SAFE_PERIOD_FIFO_NUM
     }
-    #[doc = "Checks if the value of the field is `SAFE_2_SYNC_ACTIVE`"]
+    #[doc = "safe at 2 and safe at sync active"]
     #[inline(always)]
     pub fn is_safe_2_sync_active(&self) -> bool {
         *self == SAFE_PERIOD_MODE_A::SAFE_2_SYNC_ACTIVE
     }
-    #[doc = "Checks if the value of the field is `SAFE_LINE`"]
+    #[doc = "safe at line"]
     #[inline(always)]
     pub fn is_safe_line(&self) -> bool {
         *self == SAFE_PERIOD_MODE_A::SAFE_LINE
     }
 }
 #[doc = "Field `safe_period_mode` writer - Safe Period Mode"]
-pub type SAFE_PERIOD_MODE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_SAFE_PERIOD_SPEC, u8, SAFE_PERIOD_MODE_A, 3, O>;
-impl<'a, const O: u8> SAFE_PERIOD_MODE_W<'a, O> {
+pub type SAFE_PERIOD_MODE_W<'a, REG> = crate::FieldWriter<'a, REG, 3, SAFE_PERIOD_MODE_A>;
+impl<'a, REG> SAFE_PERIOD_MODE_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+    REG::Ux: From<u8>,
+{
     #[doc = "unsafe"]
     #[inline(always)]
-    pub fn unsafe_(self) -> &'a mut W {
+    pub fn unsafe_(self) -> &'a mut crate::W<REG> {
         self.variant(SAFE_PERIOD_MODE_A::UNSAFE)
     }
     #[doc = "safe"]
     #[inline(always)]
-    pub fn safe(self) -> &'a mut W {
+    pub fn safe(self) -> &'a mut crate::W<REG> {
         self.variant(SAFE_PERIOD_MODE_A::SAFE)
     }
     #[doc = "safe at LINE_BUF_CURR_NUM > SAFE_PERIOD_FIFO_NUM"]
     #[inline(always)]
-    pub fn safe_line_buf_curr_num_gt_safe_period_fifo_num(self) -> &'a mut W {
+    pub fn safe_line_buf_curr_num_gt_safe_period_fifo_num(self) -> &'a mut crate::W<REG> {
         self.variant(SAFE_PERIOD_MODE_A::SAFE_LINE_BUF_CURR_NUM_GT_SAFE_PERIOD_FIFO_NUM)
     }
     #[doc = "safe at 2 and safe at sync active"]
     #[inline(always)]
-    pub fn safe_2_sync_active(self) -> &'a mut W {
+    pub fn safe_2_sync_active(self) -> &'a mut crate::W<REG> {
         self.variant(SAFE_PERIOD_MODE_A::SAFE_2_SYNC_ACTIVE)
     }
     #[doc = "safe at line"]
     #[inline(always)]
-    pub fn safe_line(self) -> &'a mut W {
+    pub fn safe_line(self) -> &'a mut crate::W<REG> {
         self.variant(SAFE_PERIOD_MODE_A::SAFE_LINE)
     }
 }
 #[doc = "Field `safe_period_line` reader - Safe Period Line"]
-pub type SAFE_PERIOD_LINE_R = crate::FieldReader<u16, u16>;
+pub type SAFE_PERIOD_LINE_R = crate::FieldReader<u16>;
 #[doc = "Field `safe_period_line` writer - Safe Period Line"]
-pub type SAFE_PERIOD_LINE_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_SAFE_PERIOD_SPEC, u16, u16, 12, O>;
+pub type SAFE_PERIOD_LINE_W<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
 #[doc = "Field `safe_period_fifo_num` reader - Safe Period FIFO Number"]
-pub type SAFE_PERIOD_FIFO_NUM_R = crate::FieldReader<u16, u16>;
+pub type SAFE_PERIOD_FIFO_NUM_R = crate::FieldReader<u16>;
 #[doc = "Field `safe_period_fifo_num` writer - Safe Period FIFO Number"]
-pub type SAFE_PERIOD_FIFO_NUM_W<'a, const O: u8> =
-    crate::FieldWriter<'a, u32, TV_SAFE_PERIOD_SPEC, u16, u16, 13, O>;
+pub type SAFE_PERIOD_FIFO_NUM_W<'a, REG> = crate::FieldWriter<'a, REG, 13, u16>;
 impl R {
     #[doc = "Bits 0:2 - Safe Period Mode"]
     #[inline(always)]
@@ -157,40 +129,41 @@ impl W {
     #[doc = "Bits 0:2 - Safe Period Mode"]
     #[inline(always)]
     #[must_use]
-    pub fn safe_period_mode(&mut self) -> SAFE_PERIOD_MODE_W<0> {
-        SAFE_PERIOD_MODE_W::new(self)
+    pub fn safe_period_mode(&mut self) -> SAFE_PERIOD_MODE_W<TV_SAFE_PERIOD_SPEC> {
+        SAFE_PERIOD_MODE_W::new(self, 0)
     }
     #[doc = "Bits 4:15 - Safe Period Line"]
     #[inline(always)]
     #[must_use]
-    pub fn safe_period_line(&mut self) -> SAFE_PERIOD_LINE_W<4> {
-        SAFE_PERIOD_LINE_W::new(self)
+    pub fn safe_period_line(&mut self) -> SAFE_PERIOD_LINE_W<TV_SAFE_PERIOD_SPEC> {
+        SAFE_PERIOD_LINE_W::new(self, 4)
     }
     #[doc = "Bits 16:28 - Safe Period FIFO Number"]
     #[inline(always)]
     #[must_use]
-    pub fn safe_period_fifo_num(&mut self) -> SAFE_PERIOD_FIFO_NUM_W<16> {
-        SAFE_PERIOD_FIFO_NUM_W::new(self)
+    pub fn safe_period_fifo_num(&mut self) -> SAFE_PERIOD_FIFO_NUM_W<TV_SAFE_PERIOD_SPEC> {
+        SAFE_PERIOD_FIFO_NUM_W::new(self, 16)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "TV Safe Period Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [tv_safe_period](index.html) module"]
+#[doc = "TV Safe Period Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`tv_safe_period::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`tv_safe_period::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TV_SAFE_PERIOD_SPEC;
 impl crate::RegisterSpec for TV_SAFE_PERIOD_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [tv_safe_period::R](R) reader structure"]
-impl crate::Readable for TV_SAFE_PERIOD_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [tv_safe_period::W](W) writer structure"]
+#[doc = "`read()` method returns [`tv_safe_period::R`](R) reader structure"]
+impl crate::Readable for TV_SAFE_PERIOD_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`tv_safe_period::W`](W) writer structure"]
 impl crate::Writable for TV_SAFE_PERIOD_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

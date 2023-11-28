@@ -1,45 +1,13 @@
 #[doc = "Register `hc_hcca` reader"]
-pub struct R(crate::R<HC_HCCA_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<HC_HCCA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<HC_HCCA_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<HC_HCCA_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<HC_HCCA_SPEC>;
 #[doc = "Register `hc_hcca` writer"]
-pub struct W(crate::W<HC_HCCA_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<HC_HCCA_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<HC_HCCA_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<HC_HCCA_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<HC_HCCA_SPEC>;
 #[doc = "Field `hcca_7_0` reader - The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read."]
-pub type HCCA_7_0_R = crate::FieldReader<u8, u8>;
+pub type HCCA_7_0_R = crate::FieldReader;
 #[doc = "Field `hcca_31_8` reader - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
-pub type HCCA_31_8_R = crate::FieldReader<u32, u32>;
+pub type HCCA_31_8_R = crate::FieldReader<u32>;
 #[doc = "Field `hcca_31_8` writer - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
-pub type HCCA_31_8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HC_HCCA_SPEC, u32, u32, 24, O>;
+pub type HCCA_31_8_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
     #[doc = "Bits 0:7 - The alignment restriction in HcHCCA register is evaluated by examining the number of zeros in the lower order bits. The minimum alignment is 256 bytes, therefore, bits 0 through 7 must always return 0 when read."]
     #[inline(always)]
@@ -56,28 +24,29 @@ impl W {
     #[doc = "Bits 8:31 - This is the base address of the Host Controller Communication Area. This area is used to hold the control structures and the Interrupt table that are accessed by both the Host Controller and the Host Controller Driver."]
     #[inline(always)]
     #[must_use]
-    pub fn hcca_31_8(&mut self) -> HCCA_31_8_W<8> {
-        HCCA_31_8_W::new(self)
+    pub fn hcca_31_8(&mut self) -> HCCA_31_8_W<HC_HCCA_SPEC> {
+        HCCA_31_8_W::new(self, 8)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "OHCI HCCA Base\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [hc_hcca](index.html) module"]
+#[doc = "OHCI HCCA Base\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`hc_hcca::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`hc_hcca::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct HC_HCCA_SPEC;
 impl crate::RegisterSpec for HC_HCCA_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [hc_hcca::R](R) reader structure"]
-impl crate::Readable for HC_HCCA_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [hc_hcca::W](W) writer structure"]
+#[doc = "`read()` method returns [`hc_hcca::R`](R) reader structure"]
+impl crate::Readable for HC_HCCA_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`hc_hcca::W`](W) writer structure"]
 impl crate::Writable for HC_HCCA_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }

@@ -1,39 +1,7 @@
 #[doc = "Register `i2s_pcm_int` reader"]
-pub struct R(crate::R<I2S_PCM_INT_SPEC>);
-impl core::ops::Deref for R {
-    type Target = crate::R<I2S_PCM_INT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl From<crate::R<I2S_PCM_INT_SPEC>> for R {
-    #[inline(always)]
-    fn from(reader: crate::R<I2S_PCM_INT_SPEC>) -> Self {
-        R(reader)
-    }
-}
+pub type R = crate::R<I2S_PCM_INT_SPEC>;
 #[doc = "Register `i2s_pcm_int` writer"]
-pub struct W(crate::W<I2S_PCM_INT_SPEC>);
-impl core::ops::Deref for W {
-    type Target = crate::W<I2S_PCM_INT_SPEC>;
-    #[inline(always)]
-    fn deref(&self) -> &Self::Target {
-        &self.0
-    }
-}
-impl core::ops::DerefMut for W {
-    #[inline(always)]
-    fn deref_mut(&mut self) -> &mut Self::Target {
-        &mut self.0
-    }
-}
-impl From<crate::W<I2S_PCM_INT_SPEC>> for W {
-    #[inline(always)]
-    fn from(writer: crate::W<I2S_PCM_INT_SPEC>) -> Self {
-        W(writer)
-    }
-}
+pub type W = crate::W<I2S_PCM_INT_SPEC>;
 #[doc = "Field `rxai_en` reader - RXFIFO Data Available Interrupt Enable"]
 pub type RXAI_EN_R = crate::BitReader<RXAI_EN_A>;
 #[doc = "RXFIFO Data Available Interrupt Enable\n\nValue on reset: 0"]
@@ -53,34 +21,37 @@ impl From<RXAI_EN_A> for bool {
 impl RXAI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXAI_EN_A {
+    pub const fn variant(&self) -> RXAI_EN_A {
         match self.bits {
             false => RXAI_EN_A::DISABLE,
             true => RXAI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RXAI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RXAI_EN_A::ENABLE
     }
 }
 #[doc = "Field `rxai_en` writer - RXFIFO Data Available Interrupt Enable"]
-pub type RXAI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, RXAI_EN_A, O>;
-impl<'a, const O: u8> RXAI_EN_W<'a, O> {
+pub type RXAI_EN_W<'a, REG> = crate::BitWriter<'a, REG, RXAI_EN_A>;
+impl<'a, REG> RXAI_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RXAI_EN_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RXAI_EN_A::ENABLE)
     }
 }
@@ -103,34 +74,37 @@ impl From<RXOI_EN_A> for bool {
 impl RXOI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXOI_EN_A {
+    pub const fn variant(&self) -> RXOI_EN_A {
         match self.bits {
             false => RXOI_EN_A::DISABLE,
             true => RXOI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RXOI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RXOI_EN_A::ENABLE
     }
 }
 #[doc = "Field `rxoi_en` writer - RXFIFO Overrun Interrupt Enable"]
-pub type RXOI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, RXOI_EN_A, O>;
-impl<'a, const O: u8> RXOI_EN_W<'a, O> {
+pub type RXOI_EN_W<'a, REG> = crate::BitWriter<'a, REG, RXOI_EN_A>;
+impl<'a, REG> RXOI_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RXOI_EN_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RXOI_EN_A::ENABLE)
     }
 }
@@ -153,34 +127,37 @@ impl From<RXUI_EN_A> for bool {
 impl RXUI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RXUI_EN_A {
+    pub const fn variant(&self) -> RXUI_EN_A {
         match self.bits {
             false => RXUI_EN_A::DISABLE,
             true => RXUI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RXUI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RXUI_EN_A::ENABLE
     }
 }
 #[doc = "Field `rxui_en` writer - RXFIFO Underrun Interrupt Enable"]
-pub type RXUI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, RXUI_EN_A, O>;
-impl<'a, const O: u8> RXUI_EN_W<'a, O> {
+pub type RXUI_EN_W<'a, REG> = crate::BitWriter<'a, REG, RXUI_EN_A>;
+impl<'a, REG> RXUI_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RXUI_EN_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RXUI_EN_A::ENABLE)
     }
 }
@@ -203,34 +180,37 @@ impl From<RX_DRQ_A> for bool {
 impl RX_DRQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> RX_DRQ_A {
+    pub const fn variant(&self) -> RX_DRQ_A {
         match self.bits {
             false => RX_DRQ_A::DISABLE,
             true => RX_DRQ_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == RX_DRQ_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == RX_DRQ_A::ENABLE
     }
 }
 #[doc = "Field `rx_drq` writer - RXFIFO Data Available DRQ Enable"]
-pub type RX_DRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, RX_DRQ_A, O>;
-impl<'a, const O: u8> RX_DRQ_W<'a, O> {
+pub type RX_DRQ_W<'a, REG> = crate::BitWriter<'a, REG, RX_DRQ_A>;
+impl<'a, REG> RX_DRQ_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_DRQ_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(RX_DRQ_A::ENABLE)
     }
 }
@@ -253,34 +233,37 @@ impl From<TXEI_EN_A> for bool {
 impl TXEI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXEI_EN_A {
+    pub const fn variant(&self) -> TXEI_EN_A {
         match self.bits {
             false => TXEI_EN_A::DISABLE,
             true => TXEI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TXEI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TXEI_EN_A::ENABLE
     }
 }
 #[doc = "Field `txei_en` writer - TXFIFO Empty Interrupt Enable"]
-pub type TXEI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, TXEI_EN_A, O>;
-impl<'a, const O: u8> TXEI_EN_W<'a, O> {
+pub type TXEI_EN_W<'a, REG> = crate::BitWriter<'a, REG, TXEI_EN_A>;
+impl<'a, REG> TXEI_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TXEI_EN_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TXEI_EN_A::ENABLE)
     }
 }
@@ -303,34 +286,37 @@ impl From<TXOI_EN_A> for bool {
 impl TXOI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXOI_EN_A {
+    pub const fn variant(&self) -> TXOI_EN_A {
         match self.bits {
             false => TXOI_EN_A::DISABLE,
             true => TXOI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TXOI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TXOI_EN_A::ENABLE
     }
 }
 #[doc = "Field `txoi_en` writer - TXFIFO Overrun Interrupt Enable"]
-pub type TXOI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, TXOI_EN_A, O>;
-impl<'a, const O: u8> TXOI_EN_W<'a, O> {
+pub type TXOI_EN_W<'a, REG> = crate::BitWriter<'a, REG, TXOI_EN_A>;
+impl<'a, REG> TXOI_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TXOI_EN_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TXOI_EN_A::ENABLE)
     }
 }
@@ -353,34 +339,37 @@ impl From<TXUI_EN_A> for bool {
 impl TXUI_EN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TXUI_EN_A {
+    pub const fn variant(&self) -> TXUI_EN_A {
         match self.bits {
             false => TXUI_EN_A::DISABLE,
             true => TXUI_EN_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TXUI_EN_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TXUI_EN_A::ENABLE
     }
 }
 #[doc = "Field `txui_en` writer - TXFIFO Underrun Interrupt Enable"]
-pub type TXUI_EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, TXUI_EN_A, O>;
-impl<'a, const O: u8> TXUI_EN_W<'a, O> {
+pub type TXUI_EN_W<'a, REG> = crate::BitWriter<'a, REG, TXUI_EN_A>;
+impl<'a, REG> TXUI_EN_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TXUI_EN_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TXUI_EN_A::ENABLE)
     }
 }
@@ -403,34 +392,37 @@ impl From<TX_DRQ_A> for bool {
 impl TX_DRQ_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub fn variant(&self) -> TX_DRQ_A {
+    pub const fn variant(&self) -> TX_DRQ_A {
         match self.bits {
             false => TX_DRQ_A::DISABLE,
             true => TX_DRQ_A::ENABLE,
         }
     }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[doc = "Disabled"]
     #[inline(always)]
     pub fn is_disable(&self) -> bool {
         *self == TX_DRQ_A::DISABLE
     }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[doc = "Enabled"]
     #[inline(always)]
     pub fn is_enable(&self) -> bool {
         *self == TX_DRQ_A::ENABLE
     }
 }
 #[doc = "Field `tx_drq` writer - TXFIFO Empty DRQ Enable"]
-pub type TX_DRQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, I2S_PCM_INT_SPEC, TX_DRQ_A, O>;
-impl<'a, const O: u8> TX_DRQ_W<'a, O> {
+pub type TX_DRQ_W<'a, REG> = crate::BitWriter<'a, REG, TX_DRQ_A>;
+impl<'a, REG> TX_DRQ_W<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
     #[doc = "Disabled"]
     #[inline(always)]
-    pub fn disable(self) -> &'a mut W {
+    pub fn disable(self) -> &'a mut crate::W<REG> {
         self.variant(TX_DRQ_A::DISABLE)
     }
     #[doc = "Enabled"]
     #[inline(always)]
-    pub fn enable(self) -> &'a mut W {
+    pub fn enable(self) -> &'a mut crate::W<REG> {
         self.variant(TX_DRQ_A::ENABLE)
     }
 }
@@ -480,70 +472,71 @@ impl W {
     #[doc = "Bit 0 - RXFIFO Data Available Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxai_en(&mut self) -> RXAI_EN_W<0> {
-        RXAI_EN_W::new(self)
+    pub fn rxai_en(&mut self) -> RXAI_EN_W<I2S_PCM_INT_SPEC> {
+        RXAI_EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - RXFIFO Overrun Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxoi_en(&mut self) -> RXOI_EN_W<1> {
-        RXOI_EN_W::new(self)
+    pub fn rxoi_en(&mut self) -> RXOI_EN_W<I2S_PCM_INT_SPEC> {
+        RXOI_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - RXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rxui_en(&mut self) -> RXUI_EN_W<2> {
-        RXUI_EN_W::new(self)
+    pub fn rxui_en(&mut self) -> RXUI_EN_W<I2S_PCM_INT_SPEC> {
+        RXUI_EN_W::new(self, 2)
     }
     #[doc = "Bit 3 - RXFIFO Data Available DRQ Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn rx_drq(&mut self) -> RX_DRQ_W<3> {
-        RX_DRQ_W::new(self)
+    pub fn rx_drq(&mut self) -> RX_DRQ_W<I2S_PCM_INT_SPEC> {
+        RX_DRQ_W::new(self, 3)
     }
     #[doc = "Bit 4 - TXFIFO Empty Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txei_en(&mut self) -> TXEI_EN_W<4> {
-        TXEI_EN_W::new(self)
+    pub fn txei_en(&mut self) -> TXEI_EN_W<I2S_PCM_INT_SPEC> {
+        TXEI_EN_W::new(self, 4)
     }
     #[doc = "Bit 5 - TXFIFO Overrun Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txoi_en(&mut self) -> TXOI_EN_W<5> {
-        TXOI_EN_W::new(self)
+    pub fn txoi_en(&mut self) -> TXOI_EN_W<I2S_PCM_INT_SPEC> {
+        TXOI_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - TXFIFO Underrun Interrupt Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn txui_en(&mut self) -> TXUI_EN_W<6> {
-        TXUI_EN_W::new(self)
+    pub fn txui_en(&mut self) -> TXUI_EN_W<I2S_PCM_INT_SPEC> {
+        TXUI_EN_W::new(self, 6)
     }
     #[doc = "Bit 7 - TXFIFO Empty DRQ Enable"]
     #[inline(always)]
     #[must_use]
-    pub fn tx_drq(&mut self) -> TX_DRQ_W<7> {
-        TX_DRQ_W::new(self)
+    pub fn tx_drq(&mut self) -> TX_DRQ_W<I2S_PCM_INT_SPEC> {
+        TX_DRQ_W::new(self, 7)
     }
-    #[doc = "Writes raw bits to the register."]
+    #[doc = r" Writes raw bits to the register."]
+    #[doc = r""]
+    #[doc = r" # Safety"]
+    #[doc = r""]
+    #[doc = r" Passing incorrect value can cause undefined behaviour. See reference manual"]
     #[inline(always)]
     pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.0.bits(bits);
+        self.bits = bits;
         self
     }
 }
-#[doc = "I2S/PCM DMA and Interrupt Control Register\n\nThis register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [i2s_pcm_int](index.html) module"]
+#[doc = "I2S/PCM DMA and Interrupt Control Register\n\nYou can [`read`](crate::generic::Reg::read) this register and get [`i2s_pcm_int::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`i2s_pcm_int::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct I2S_PCM_INT_SPEC;
 impl crate::RegisterSpec for I2S_PCM_INT_SPEC {
     type Ux = u32;
 }
-#[doc = "`read()` method returns [i2s_pcm_int::R](R) reader structure"]
-impl crate::Readable for I2S_PCM_INT_SPEC {
-    type Reader = R;
-}
-#[doc = "`write(|w| ..)` method takes [i2s_pcm_int::W](W) writer structure"]
+#[doc = "`read()` method returns [`i2s_pcm_int::R`](R) reader structure"]
+impl crate::Readable for I2S_PCM_INT_SPEC {}
+#[doc = "`write(|w| ..)` method takes [`i2s_pcm_int::W`](W) writer structure"]
 impl crate::Writable for I2S_PCM_INT_SPEC {
-    type Writer = W;
     const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
