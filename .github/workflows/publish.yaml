@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Rust targets
         run: rustup target add riscv64imac-unknown-none-elf
       - uses: katyo/publish-crates@v2
@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Rust targets
         run: rustup target add armv7a-none-eabi
       - uses: katyo/publish-crates@v2
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Rust targets
         run: rustup target add thumbv8m.main-none-eabi
       - uses: katyo/publish-crates@v2
@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Install Rust targets
         run: rustup target add armv7a-none-eabi
       - uses: katyo/publish-crates@v2
